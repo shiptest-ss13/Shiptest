@@ -244,24 +244,18 @@
 		msg += "[t_He] [t_has] pale skin.\n"
 
 
+	if(LAZYLEN(get_bandaged_parts()))
+		. += "[t_He] [t_is] bandaged with something.\n"
+
 	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts()
 	if(LAZYLEN(bleed_check))
 		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
-		else
-			var/bleed_msg = "[t_He] [t_is] bandaged with something.\n"
+		else			
 			for(var/obj/item/bodypart/BP in bleed_check)
-				//if(!BP.dressing)
-					//bleed_msg = "<B>[t_He] [t_is] bleeding!</B>\n"
-					//break
-			msg += bleed_msg
-	/*if(bleedsuppress)
-		msg += "[t_He] [t_is] bandaged with something.\n"
-	else if(bleed_rate || LAZYLEN(get_bleeding_parts()))
-		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
-			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
-		else
-			msg += "<B>[t_He] [t_is] bleeding!</B>\n"*/
+				if(!BP.GetComponent(/datum/component/bandage))
+					. += "<B>[t_He] [t_is] bleeding!</B>\n"
+					break
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
@@ -412,12 +406,12 @@
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
+	for(var/obj/item/bodypart/BP as anything in get_bandaged_parts())
+		var/datum/component/bandage/B = BP.GetComponent(/datum/component/bandage)
+		. += span_notice("Their [BP] is dressed with [B.bandage_name]")
+	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts())
 		var/bleed_text
-		//if(BP.dressing)
-			//. += span_notice("Their [BP] is dressed with [BP.dressing.name]")
-			//continue
-		if(!BP.bleeding)
+		if(BP.GetComponent(/datum/component/bandage))
 			continue
 		switch(BP.bleeding)
 			if(0 to 0.5)

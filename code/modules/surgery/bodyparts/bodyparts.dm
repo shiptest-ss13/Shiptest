@@ -337,6 +337,17 @@
 		return
 	bleeding = round(clamp(bleeding+value, 0, maximum), 0.01)
 
+/obj/item/bodypart/proc/apply_dressing(heal_amt, lifespan, bandage_name, user)
+	if(is_pseudopart)
+		return FALSE
+	if(!get_damage() && !bleeding)
+		to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] is already fully healed!"))
+		return FALSE
+	if(GetComponent(/datum/component/bandage))
+		to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
+		return FALSE
+	return AddComponent(/datum/component/bandage, heal_amt, lifespan, bandage_name)
+
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)
 	var/total = brute_dam + burn_dam

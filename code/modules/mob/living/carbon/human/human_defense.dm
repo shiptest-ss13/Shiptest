@@ -778,7 +778,7 @@
 	for(var/t in missing)
 		combined_msg += "<span class='boldannounce'>Your [parse_zone(t)] is missing!</span>"
 
-	if(bleed_rate)
+	if(LAZYLEN(get_bleeding_parts()))
 		combined_msg += "<span class='danger'>You are bleeding!</span>"
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)

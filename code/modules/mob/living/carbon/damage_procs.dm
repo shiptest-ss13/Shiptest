@@ -275,3 +275,10 @@
 		if(BP.bleeding)
 			parts += BP
 	return parts
+
+/mob/living/carbon/proc/get_bandaged_parts()
+	var/list/obj/item/bodypart/parts = list()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.GetComponent(/datum/component/bandage))
+			parts += BP
+	return parts

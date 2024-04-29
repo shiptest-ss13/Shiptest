@@ -1,35 +1,17 @@
-/datum/healing_surface
-	// What this is referred to in player-facing terms, can be a combination
-	var/name = "scab"
-	/// Layer this applies stuff to, higher layers will impede interacting with lower layers
-	var/layer
-	/// List of items this will drop when healing is finished
-	var/list/trash_items = list()
-	/// Amount of healing this directs to brute damage
-	var/brute_coeff = 0
-	/// Amount of healing this directs to burn damage
-	var/burn_coeff = 0
-
-/datum/healing_surface/
-
-
-
-
-
 #define BANDAGE_DAMAGE_COEFF 5
 
 /datum/component/bandage
 	/// How much damage do we heal?
 	var/healing_speed = 0.2
 	/// How many healing ticks will this bandage apply? Reduced by incoming damage and other nasties
-	var/cleanliness = 300
+	var/durability = 300
 	/// What is dropped when the bandage is removed?
-	var/trash_item = /obj/effect/decal/cleanable/wrapping
-	var/bandage_name = "bandage"
-	///a
+	var/trash_item = null
+	var/bandage_name = "gauze"
+	/// The person this bandage is applied to
 	var/mob/living/mummy
 
-/datum/component/bandage/Initialize(_healing_speed, _cleanliness, _bandage_name, _trash_item)
+/datum/component/bandage/Initialize(_healing_speed, _durability, _bandage_name, _trash_item)
 	if(!istype(parent, /obj/item/bodypart))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/bodypart/BP = parent
@@ -38,8 +20,8 @@
 		return COMPONENT_INCOMPATIBLE
 	if(_healing_speed)
 		healing_speed = _healing_speed
-	if(_cleanliness)
-		cleanliness = _cleanliness
+	if(_durability)
+		durability = _durability
 	if(_bandage_name)
 		bandage_name = _bandage_name
 	if(_trash_item)
@@ -50,8 +32,8 @@
 /datum/component/bandage/proc/check_damage(damage, damagetype = BRUTE, def_zone = null)
 	if(parent != mummy.get_bodypart(check_zone(def_zone)))
 		return
-	cleanliness = cleanliness - damage * BANDAGE_DAMAGE_COEFF
-	if(cleanliness <= 0)
+	durability = durability - damage * BANDAGE_DAMAGE_COEFF
+	if(durability <= 0)
 		drop_bandage()
 
 
@@ -59,11 +41,11 @@
 	var/obj/item/bodypart/heal_target = parent
 	var/actual_heal_speed = healing_speed //TODO: add modifiers to this (scope 2)
 	heal_target.heal_damage(actual_heal_speed, actual_heal_speed)
-	cleanliness --
+	durability--
 	if(heal_target.bleeding)
-		cleanliness = round(cleanliness - max(heal_target.bleeding, 1))
+		durability = round(durability - max(heal_target.bleeding, 1))
 		heal_target.adjust_bleeding(-actual_heal_speed)
-	if(cleanliness <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
+	if(durability <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
 		drop_bandage()
 
 /datum/component/bandage/proc/drop_bandage()
@@ -74,3 +56,5 @@
 	else
 		to_chat(mummy, span_notice("The [bandage_name] on your [parent] has healed what it can."))
 	qdel(src)
+
+#undef BANDAGE_DAMAGE_COEFF

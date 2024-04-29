@@ -161,15 +161,9 @@
 		if(!BP)
 			to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
 			return
-		if(!BP.get_damage() && !BP.bleeding)
-			to_chat(user, span_warning("[C]'s [parse_zone(BP.body_zone)] is already fully healed!"))
-			return
-		if(BP.GetComponent(/datum/component/bandage))
-			to_chat(user, span_warning("[C] is already being treated!"))
-			return
-		BP.AddComponent(/datum/component/bandage, healing_rate, lifespan, "gauze")
-		user.visible_message(span_notice("[user] wraps [C]'s [parse_zone(BP.body_zone)] with [src]."), span_notice("You wrap [C]'s [parse_zone(check_zone(user.zone_selected))] with [src]."), span_hear("You hear ruffling cloth."))
-		return TRUE
+		if(BP.apply_dressing(healing_rate, lifespan, "gauze", user))
+			user.visible_message(span_notice("[user] wraps [C]'s [parse_zone(BP.body_zone)] with [src]."), span_notice("You wrap [C]'s [parse_zone(check_zone(user.zone_selected))] with [src]."), span_hear("You hear ruffling cloth."))
+			return TRUE
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
