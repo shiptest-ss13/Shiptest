@@ -59,6 +59,12 @@
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/syndicate/assistant/gorlex/ngr
+	name = "Syndicate - Junior Agent (New Gorlex Republic)"
+
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	alt_uniform = null
+
 /datum/outfit/job/syndicate/assistant/gec
 	name = "Syndicate - Deckhand (GEC)"
 	id_assignment = "Deckhand"
@@ -420,6 +426,11 @@
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
+
+/datum/outfit/job/syndicate/ce/gorlex/ngr
+	name = "Syndicate - Foreman (New Gorlex Republic)"
+
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 
 //Chief Medical Officer
 
@@ -918,6 +929,7 @@
 	id_assignment = "Wrecker"
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
+	accessory = /obj/item/clothing/accessory/armband/cargo
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
 
