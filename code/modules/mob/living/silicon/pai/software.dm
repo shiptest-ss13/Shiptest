@@ -355,6 +355,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 			if("encryptionkeys")
 				if(href_list["toggle"])
 					encryptmod = TRUE
+					radio.subspace_transmission = TRUE
 
 			if("translator")
 				if(href_list["toggle"])	//This is permanent.

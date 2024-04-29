@@ -139,7 +139,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/item/bedsheet/brown,
-/obj/structure/sign/poster/minutemen/lanchester{
+/obj/structure/sign/poster/clip/lanchester{
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/black,
@@ -670,7 +670,6 @@
 	name = "Air to Distro"
 	},
 /obj/effect/turf_decal/hardline_small,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 4;
 	name = "Input to Waste"
@@ -679,6 +678,7 @@
 	pixel_x = 10;
 	pixel_y = 22
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "jB" = (
@@ -890,11 +890,9 @@
 /obj/item/clothing/head/hardhat,
 /obj/item/clothing/shoes/combat,
 /obj/effect/turf_decal/hardline_small/right,
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_x = 28
+	name = "engineering closet"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -908,16 +906,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "mu" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "solgov_wall";
 	icon_state = "solgov_wall";
 	name = "vanguard's locker";
-	pixel_x = -28;
 	req_access_txt = "20"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -1184,7 +1180,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "sS" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -1209,10 +1205,9 @@
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -1737,9 +1732,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Bu" = (
-/obj/structure/closet/wall{
-	icon_door = "grey_wall";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	icon_door = "grey_wall"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1868,10 +1862,8 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/number/six,
-/obj/structure/closet/wall/orange{
-	dir = 8;
+/obj/structure/closet/wall/orange/directional/east{
 	name = "tool closet";
-	pixel_x = 28;
 	req_access_txt = "11"
 	},
 /obj/item/pipe_dispenser,
@@ -1952,7 +1944,7 @@
 /area/ship/maintenance/starboard)
 "DP" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -2149,10 +2141,9 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2167,13 +2158,16 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer2{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Hn" = (
@@ -2204,7 +2198,7 @@
 /obj/item/clothing/head/helmet/swat/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/melee/baton/loaded,
@@ -2214,13 +2208,15 @@
 	pixel_y = 23
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_door = "med_wall";
 	name = "medical locker";
-	pixel_y = 28;
 	req_access_txt = "5"
 	},
 /obj/item/storage/firstaid/regular{
@@ -2379,6 +2375,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "JL" = (
@@ -2388,6 +2387,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Kr" = (
@@ -2916,7 +2916,7 @@
 /area/ship/bridge)
 "TQ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -2994,7 +2994,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/maintenance/port)
 "VD" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/popcorn,

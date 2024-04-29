@@ -11,6 +11,7 @@
 #define VV_TYPE "Custom Typepath"
 #define VV_FILE "File"
 #define VV_LIST "List"
+#define VV_COLOR "Color"
 #define VV_NEW_ATOM "New Atom"
 #define VV_NEW_DATUM "New Datum"
 #define VV_NEW_TYPE "New Custom Typepath"

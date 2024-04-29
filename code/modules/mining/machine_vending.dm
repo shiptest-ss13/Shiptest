@@ -11,7 +11,6 @@
 	shoot_inventory_chance = 0
 	circuit = /obj/item/circuitboard/machine/vending/mining_equipment
 	refill_canister = /obj/item/vending_refill/mining_equipment
-	payment_department = ACCOUNT_CAR
 	vend_ready = "Good luck, you're going to need it."
 	mining_point_vendor = TRUE
 	default_price = 100
