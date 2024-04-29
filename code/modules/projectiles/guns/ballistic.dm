@@ -33,8 +33,6 @@
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
 		. += "[icon_state]_bolt"
-	if (suppressed)
-		. += "[icon_state]_suppressor"
 	if (magazine)
 		if (special_mags)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
