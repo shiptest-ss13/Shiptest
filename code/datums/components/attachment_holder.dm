@@ -112,7 +112,7 @@
 		attachments += attachment
 		var/atom/parent = src.parent
 		parent.update_icon()
-
+	
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)

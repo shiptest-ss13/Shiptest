@@ -1,6 +1,6 @@
 /*
 /obj/item/attachment/scope
-	name = "bayonet"
+	name = "scope"
 	icon_state = "scope"
 	slot = ATTACHMENT_SLOT_SCOPE
 	var/zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.

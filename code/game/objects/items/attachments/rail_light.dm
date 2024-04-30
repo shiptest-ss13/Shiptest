@@ -1,5 +1,5 @@
 /obj/item/attachment/rail_light
-	name = "Rail Light"
+	name = "rail light"
 	desc = "Rail mounted gun light for better visibility down range."
 	icon_state = "raillight"
 	has_toggle = TRUE

@@ -44,6 +44,9 @@
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
 
+	var/datum/action/attachment_action = new /datum/action/attachment(parent)
+	actions += attachment_action
+
 /datum/component/attachment/Destroy(force, silent)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	if(actions && length(actions))
@@ -79,6 +82,9 @@
 		return FALSE
 
 	parent.forceMove(holder)
+	if(length(actions))
+		holder.actions += actions
+
 	return TRUE
 
 /datum/component/attachment/proc/try_detach(obj/item/parent, obj/item/holder, mob/user)
@@ -89,6 +95,9 @@
 
 	if(on_attach && !on_detach.Invoke(holder, user))
 		return FALSE
+
+	if(length(actions))
+		holder.actions -= actions
 
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
@@ -112,3 +121,10 @@
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER
 	return attachment_slot_to_bflag(slot)
+
+/datum/action/attachment
+	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
+	button_icon_state = null
+
+/datum/action/attachment/New(target)
+	name = target.name
