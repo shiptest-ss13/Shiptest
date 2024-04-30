@@ -181,7 +181,7 @@
 				C.update_damage_overlays()
 			return TRUE
 	if(affecting.can_bandage(user))
-		affecting.AddComponent(/datum/component/bandage, healing_rate, lifespan, bandage_name)
+		affecting.AddComponent(/datum/component/bandage, healing_rate, lifespan, name)
 		to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
 		return TRUE
 	to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
