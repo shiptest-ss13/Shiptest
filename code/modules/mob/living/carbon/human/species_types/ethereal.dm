@@ -46,6 +46,11 @@
 	loreblurb = "Elzuosa are an uncommon and unusual species best described as crystalline, electrically-powered plantpeople. They hail from the warm planet Kalixcis, where they evolved alongside the Sarathi. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
+	var/datum/action/innate/root/rooting
+	// how long to charge while rooting
+	var/root_time = (10 SECONDS)
+	// how much charge you get from rooting
+	var/root_charge_gain = (10 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
@@ -62,6 +67,8 @@
 	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, PROC_REF(on_emp_act))
 	ethereal_light = ethereal.mob_light()
 	spec_updatehealth(ethereal)
+	rooting = new
+	rooting.Grant(C)
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
@@ -73,7 +80,45 @@
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
 	QDEL_NULL(ethereal_light)
+	if(rooting)
+		rooting.Remove(C)
 	return ..()
+
+/datum/action/innate/root
+	name = "Root"
+	desc = "Root into good soil to gain charge."
+	check_flags = AB_CHECK_CONSCIOUS
+	button_icon_state = "fire"
+	icon_icon = 'icons/effects/fire.dmi'
+	background_icon_state = "bg_alien"
+
+/datum/action/innate/root/Activate()
+	var/mob/living/carbon/human/H = owner
+	var/datum/species/elzuose/E = H.dna.species
+	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
+	var/charge_limit = ELZUOSE_CHARGE_FULL
+	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
+	if(stomach.crystal_charge > charge_limit)
+		to_chat(H, "<span class='warning'>Your charge is full!</span>")
+		return
+	E.drain_time = world.time + E.root_time
+	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
+	while(do_after(H, E.root_time, target = H))
+		E.drain_time = world.time + E.root_time
+		if(stomach.crystal_charge > charge_limit)
+			return
+		if(istype(stomach))
+			to_chat(H, "<span class='notice'>You receive some charge from the APC.</span>")
+			stomach.adjust_charge(E.root_charge_gain)
+		else
+			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!!</span>")
+
+
+/datum/action/innate/root/IsAvailable()
+	if(..())
+		//var/mob/living/carbon/human/H = owner
+		// todo: check for GRASS
+		return TRUE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)
 	if(unique)
