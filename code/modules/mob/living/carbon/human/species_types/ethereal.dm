@@ -107,11 +107,14 @@
 		E.drain_time = world.time + E.root_time
 		if(stomach.crystal_charge > charge_limit)
 			stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
 			return
 		if(istype(stomach))
 			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
+			if(stomach.crystal_charge > charge_limit)
+				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
+				return
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
 
