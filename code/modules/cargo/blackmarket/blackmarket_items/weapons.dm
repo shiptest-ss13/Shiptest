@@ -6,9 +6,10 @@
 	desc = "Get the janitor back at his own game with this affordable prank kit."
 	item = /obj/item/restraints/legcuffs/beartrap
 
-	price_min = 300
-	price_max = 550
-	stock_max = 3
+	price_min = 150
+	price_max = 400
+	stock_min = 3
+	stock_max = 7
 	availability_prob = 40
 
 /datum/blackmarket_item/weapon/shotgun_dart
@@ -52,7 +53,7 @@
 	price_min = 1500
 	price_max = 3500
 	stock = 1
-	availability_prob = 20
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/derringer
 	name = "Derringer"
@@ -81,7 +82,7 @@
 	price_min = 100
 	price_max = 600
 	stock_max = 6
-	availability_prob = 40
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/himehabu_mag
 	name = "Himehabu Magazines"
@@ -90,6 +91,7 @@
 
 	price_min = 100
 	price_max = 200
+	stock_min = 3
 	stock_max = 6
 	availability_prob = 0
 
@@ -131,7 +133,8 @@
 
 	price_min = 750
 	price_max = 1250
-	stock_max = 3
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/weapon/e50
@@ -162,7 +165,7 @@
 
 	price_min = 500
 	price_max = 1000
-	stock_max = 2
+	stock = 2
 	availability_prob = 0
 
 /datum/blackmarket_item/weapon/bg_16
@@ -201,7 +204,7 @@
 	desc = "Ripley with a laser cannon? Odysseus with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
 	item = /obj/item/mecha_parts/concealed_weapon_bay
 
-	price_min = 1250
+	price_min = 1000
 	price_max = 2000
 	stock_max = 3
 	availability_prob = 30
@@ -213,7 +216,7 @@
 	pair_item = /datum/blackmarket_item/weapon/model_h_mag
 
 	price_min = 2000
-	price_max = 4000
+	price_max = 3500
 	stock = 2
 	availability_prob = 35
 
@@ -281,19 +284,20 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
 	pair_item = /datum/blackmarket_item/weapon/proto_gauss_mag
 
-	price_min = 4000
+	price_min = 3500
 	price_max = 6000
-	stock = 1
-	availability_prob = 20
+	stock = 2
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/proto_gauss_mag
 	name = "Prototype Gauss Rifle Magazine"
 	desc = "A 25 round ferromagnetic pellet magazine for the prototype gauss rifle."
 	item = /obj/item/ammo_box/magazine/gauss
 
-	price_min = 750
-	price_max = 1250
-	stock_max = 2
+	price_min = 600
+	price_max = 1100
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/weapon/tec

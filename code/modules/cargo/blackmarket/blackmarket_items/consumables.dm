@@ -178,7 +178,8 @@
 	item = /obj/item/stack/medical/suture
 
 	price_min = 200
-	price_max = 500
+	price_max = 450
+	stock_min = 2
 	stock_max = 5
 	availability_prob = 40
 
@@ -188,7 +189,8 @@
 	item = /obj/item/stack/medical/mesh
 
 	price_min = 200
-	price_max = 500
+	price_max = 450
+	stock_min = 2
 	stock_max = 5
 	availability_prob = 40
 
@@ -198,7 +200,8 @@
 	item = /obj/item/stack/medical/bruise_pack
 
 	price_min = 300
-	price_max = 600
+	price_max = 500
+	stock_min = 2
 	stock_max = 5
 	availability_prob = 30
 
@@ -208,6 +211,7 @@
 	item = /obj/item/stack/medical/ointment
 
 	price_min = 300
-	price_max = 600
+	price_max = 500
+	stock_min = 2
 	stock_max = 5
 	availability_prob = 30

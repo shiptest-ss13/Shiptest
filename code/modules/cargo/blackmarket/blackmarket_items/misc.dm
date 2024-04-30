@@ -47,7 +47,7 @@
 	item = /obj/structure/closet/crate/freezer/surplus_limbs/organs
 
 	price_min = 1000
-	price_max = 3000
+	price_max = 2500
 	stock_max = 3
 	availability_prob = 30
 
@@ -57,7 +57,7 @@
 	item = /obj/structure/closet/crate/secure/loot
 
 	price_min = 250
-	price_max = 500
+	price_max = 400
 	availability_prob = 100
 	unlimited =  TRUE
 
@@ -86,7 +86,7 @@
 	desc = "Good people died to get these. Luckily, we aren't good people."
 	item = /obj/item/documents
 
-	price_min = 2000
+	price_min = 1000
 	price_max = 10000
 	stock = 1
 	availability_prob = 40

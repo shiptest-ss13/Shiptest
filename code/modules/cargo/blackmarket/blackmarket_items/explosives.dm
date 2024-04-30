@@ -18,6 +18,7 @@
 
 	price_min = 100
 	price_max = 500
+	stock_min = 2
 	stock_max = 5
 	availability_prob = 25
 
@@ -51,7 +52,7 @@
 	price_min = 400
 	price_max = 700
 	stock_min = 2
-	stock_max = 3
+	stock_max = 4
 	availability_prob = 25
 
 /datum/blackmarket_item/explosive/slipocalypse

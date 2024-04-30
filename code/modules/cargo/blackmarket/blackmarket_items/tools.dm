@@ -59,7 +59,7 @@
 	price_min = 500
 	price_max = 2000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 30
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
@@ -68,8 +68,9 @@
 
 	price_min = 50
 	price_max = 300
-	stock_max = 3
-	availability_prob = 40
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 70
 
 /datum/blackmarket_item/tool/riot_shield
 	name = "Riot Shield"
@@ -188,7 +189,7 @@
 	item = /obj/item/tank/jetpack/improvised
 
 	price_min = 500
-	price_max = 1250
+	price_max = 1000
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 70
