@@ -54,7 +54,7 @@
 		new trash_item(get_turf(mummy))
 		mummy.visible_message(span_notice("The [bandage_name] on [mummy]'s [parent] falls to the floor."), span_notice("The [bandage_name] on your [parent] falls to the floor."))
 	else
-		to_chat(mummy, span_notice("The [bandage_name] on your [parent] has healed what it can."))
+		to_chat(mummy, span_notice("The [bandage_name] on your [parent] finished healing."))
 	qdel(src)
 
 #undef BANDAGE_DAMAGE_COEFF

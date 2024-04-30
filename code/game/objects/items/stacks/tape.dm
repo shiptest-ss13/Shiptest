@@ -174,17 +174,17 @@
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return
-	if(ishuman(C))
-		if(affecting.apply_dressing(healing_rate, lifespan, name, user))
-			to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
-			return TRUE
 	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
 		if(affecting.brute_dam)
 			user.visible_message("<span class='notice'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE
-		to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
+	if(affecting.can_bandage(user))
+		affecting.AddComponent(/datum/component/bandage, healing_rate, lifespan, bandage_name)
+		to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
+		return TRUE
+	to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
 	if(target.is_muzzled() || target.is_mouth_covered())
