@@ -158,11 +158,10 @@
 	baseturfs = /turf/open/indestructible/airblock
 
 /turf/open/Initalize_Atmos(times_fired)
-	if(!blocks_air)
-		if(!istype(air,/datum/gas_mixture/turf))
-			air = new(2500,src)
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
+	if(!istype(air,/datum/gas_mixture/turf))
+		air = new(2500, src)
+	air.copy_from_turf(src)
+	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
 
 	update_visuals()
 

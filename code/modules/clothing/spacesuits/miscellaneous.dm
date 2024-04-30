@@ -151,8 +151,6 @@ Contains:
 /obj/item/clothing/suit/space/pirate
 	name = "pirate coat"
 	desc = "Yarr."
-	icon_state = "pirate"
-	item_state = "pirate"
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = 0
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)

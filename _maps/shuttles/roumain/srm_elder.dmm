@@ -30,6 +30,9 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "al" = (
@@ -207,9 +210,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
 "cg" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -345,17 +346,27 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = 8;
-	pixel_y = 2
-	},
 /obj/item/ammo_box/c38_box{
 	pixel_x = -6;
 	pixel_y = 1
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 8;
-	pixel_y = -2
+	pixel_y = -4
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -805,10 +816,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 8
 	},
@@ -840,9 +848,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "iT" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
@@ -903,12 +909,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "jr" = (
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "jv" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1293,9 +1299,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
 "pd" = (
@@ -1830,9 +1834,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
 "wm" = (
@@ -1877,10 +1879,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/bridge)
 "wE" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "xe" = (
@@ -2016,9 +2015,10 @@
 	pixel_x = -7
 	},
 /obj/item/gun/ballistic/revolver/montagne,
-/obj/item/ammo_box/c38/match,
-/obj/item/ammo_box/c38/match,
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2043,7 +2043,7 @@
 /area/ship/engineering/engine)
 "zX" = (
 /obj/structure/table/wood,
-/obj/machinery/fax,
+/obj/machinery/fax/roumain,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
@@ -2158,9 +2158,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/bridge)
 "AY" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/structure/railing{
 	dir = 8
 	},
@@ -2311,10 +2309,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Cr" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Cx" = (
@@ -2385,9 +2380,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "CF" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
@@ -2651,9 +2644,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "HB" = (
-/obj/structure/closet/wall/blue{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/blue/directional/east{
 	name = "Spare EVA Closet"
 	},
 /obj/item/clothing/suit/space/eva{
@@ -2684,10 +2675,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "Ii" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
 	},
@@ -3872,9 +3860,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
 "Wy" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -4148,10 +4134,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/hallway/starboard)
 "ZI" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
 	},

@@ -1,22 +1,6 @@
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
-#define FIRING_PIN_REMOVAL_DELAY 50
 
-#define MANUFACTURER_NONE null
-#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
-#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
-#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
-#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
-#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
-#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
-#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
-#define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
-#define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
-#define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
-#define MANUFACTURER_DONKCO "the Donk! Co. logo"
-#define MANUFACTURER_PGF "the Etherbor Industries emblem"
-#define MANUFACTURER_IMPORT "Lanchester Import Co."
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -49,7 +33,6 @@
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	var/sawn_desc = null					//description change if weapon is sawn-off
@@ -68,7 +51,6 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
 	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
-	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 
 	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
 	var/obj/item/flashlight/seclite/gun_light
@@ -134,12 +116,13 @@
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
 
+	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
+	var/safety_wording = "safety"
+
 /obj/item/gun/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	if(pin)
-		pin = new pin(src)
 	if(gun_light)
 		alight = new(src)
 	muzzle_flash = new(src, muzzleflash_iconstate)
@@ -173,8 +156,6 @@
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/Destroy()
-	if(isobj(pin)) //Can still be the initial path, then we skip
-		QDEL_NULL(pin)
 	if(gun_light)
 		QDEL_NULL(gun_light)
 	if(bayonet)
@@ -190,8 +171,6 @@
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
-	if(A == pin)
-		pin = null
 	if(A == chambered)
 		chambered = null
 		update_appearance()
@@ -203,12 +182,6 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(pin)
-		. += "It has \a [pin] installed."
-		. += "<span class='info'>[pin] looks like it could be removed with some <b>tools</b>.</span>"
-	else
-		. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
-
 	if(gun_light)
 		. += "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight) //if it has a light and this is false, the light is permanent.
@@ -237,6 +210,7 @@
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
 //check if there's enough ammo/energy/whatever to shoot one time
@@ -260,9 +234,9 @@
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
-	if(wielded_fully && recoil)
+	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
-	else if(!wielded_fully && recoil_unwielded)
+	else if(!wielded_fully)
 		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)
@@ -329,9 +303,6 @@
 		shoot_with_empty_chamber(user)
 		return
 
-	if(check_botched(user))
-		return
-
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
@@ -349,33 +320,6 @@
 				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
 
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
-
-/obj/item/gun/proc/check_botched(mob/living/user, params)
-	if(clumsy_check)
-		if(istype(user))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>You shoot yourself in the foot with [src]!</span>")
-				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-				process_fire(user, user, FALSE, params, shot_leg)
-				SEND_SIGNAL(user, COMSIG_MOB_CLUMSY_SHOOT_FOOT)
-				user.dropItemToGround(src, TRUE)
-				return TRUE
-
-/obj/item/gun/can_trigger_gun(mob/living/user)
-	. = ..()
-	if(!handle_pins(user))
-		return FALSE
-
-/obj/item/gun/proc/handle_pins(mob/living/user)
-	if(pin)
-		if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-			return TRUE
-		else
-			pin.auth_fail(user)
-			return FALSE
-	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
-	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
 	return
@@ -540,8 +484,8 @@
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 		)
 
 	update_appearance()
@@ -572,40 +516,6 @@
 		return remove_gun_attachment(user, I, gun_light, "unscrewed")
 	else if(picked_option == "Knife")
 		return remove_gun_attachment(user, I, bayonet, "unfix")
-
-/obj/item/gun/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is spliced out of [src] by [user], melting part of the pin in the process.</span>",
-								"<span class='warning'>You splice [pin] out of [src] with [I], melting part of the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-
-/obj/item/gun/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is ripped out of [src] by [user], mangling the pin in the process.</span>",
-								"<span class='warning'>You rip [pin] out of [src] with [I], mangling the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
 
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
@@ -735,10 +645,13 @@
 		var/mutable_appearance/safety_overlay
 		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
 		if(safety)
-			safety_overlay.icon_state = "safety-on"
+			safety_overlay.icon_state = "[safety_wording]-on"
 		else
-			safety_overlay.icon_state = "safety-off"
+			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
+
+#define BRAINS_BLOWN_THROW_RANGE 2
+#define BRAINS_BLOWN_THROW_SPEED 1
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
@@ -747,37 +660,58 @@
 	if(semicd)
 		return
 
+	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
+		shoot_with_empty_chamber(user)
+		return
+
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
+			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
+			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
 	semicd = TRUE
 
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message(span_notice("[user] has decided to spare [target]."), span_notice("[user] has decided to spare your life!"))
 		semicd = FALSE
 		return
 
 	semicd = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
+	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
-	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
+	if(chambered && chambered.BB && can_trigger_gun(user))
+		chambered.BB.damage *= 3
+		//Check is here for safeties and such, brain will be removed after
+		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
 
-	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+		var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
+		if(brain_to_blast)
 
-/obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
-	if(pin)
-		qdel(pin)
-	pin = new /obj/item/firing_pin
+			//Check if the projectile is actually damaging and not of type STAMINA
+			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				return
+
+			//Remove brain of the mob shot
+			brain_to_blast.Remove(target)
+
+			var/turf/splat_turf = get_turf(target)
+			//Move the brain of the person shot to selected turf
+			brain_to_blast.forceMove(splat_turf)
+
+			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
+			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, brain_to_blast, 1, FALSE, target)
+			//Throw the brain that has been removed away and place a gibspawner on landing
+			brain_to_blast.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
+
+#undef BRAINS_BLOWN_THROW_RANGE
+#undef BRAINS_BLOWN_THROW_SPEED
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
@@ -952,5 +886,4 @@
 		azoom = new()
 		azoom.gun = src
 
-#undef FIRING_PIN_REMOVAL_DELAY
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER
