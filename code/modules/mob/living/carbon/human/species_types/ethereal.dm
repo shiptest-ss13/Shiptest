@@ -111,7 +111,9 @@
 			to_chat(H, "<span class='notice'>You receive some charge from the APC.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
 		else
-			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!!</span>")
+			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
+	if(stomach.crystal_charge > charge_limit)
+		stomach.crystal_charge = ELZUOSE_CHARGE_FULL
 
 
 /datum/action/innate/root/IsAvailable()
