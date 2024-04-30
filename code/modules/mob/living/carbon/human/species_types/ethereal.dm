@@ -92,12 +92,18 @@
 	icon_icon = 'icons/effects/fire.dmi'
 	background_icon_state = "bg_alien"
 
+// to do: stationary rooting/uprooting. healing, no rooting in space suit
 /datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/elzuose/E = H.dna.species
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
 	var/charge_limit = ELZUOSE_CHARGE_FULL
 	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
+	if(H.wear_suit && istype(H.wear_suit, /obj/item/clothing))
+		var/obj/item/clothing/CS = H.wear_suit
+		if (CS.clothing_flags & THICKMATERIAL)
+			to_chat(H, "<span class='warning'>Your suit is too thick to root in!</span>")
+			return
 	if(stomach.crystal_charge > charge_limit)
 		to_chat(H, "<span class='warning'>Your charge is full!</span>")
 		return
@@ -112,7 +118,8 @@
 			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
 			// mood is borked
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
+			//SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
+
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
 				return
