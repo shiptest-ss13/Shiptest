@@ -125,8 +125,7 @@
 	if(..())
 		var/mob/living/carbon/human/H = owner
 		var/turf/terrain = get_turf(H)
-		// todo: check for GRASS
-		if(terrain == /turf/open/floor/plating/grass)
+		if(istype(terrain,/turf/open/floor/plating/grass))
 			return TRUE
 		return FALSE
 
