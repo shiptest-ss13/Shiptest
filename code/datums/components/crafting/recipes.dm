@@ -25,6 +25,7 @@
 /datum/crafting_recipe/proc/check_requirements(mob/user, list/collected_requirements)
 	return TRUE
 
+/*
 /datum/crafting_recipe/energy_bayonet
 	name = "Plasma Bayonet"
 	result = /obj/item/attachment/e_bayonet
@@ -41,6 +42,7 @@
 	tools = list(
 		TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_MULTITOOL
 	)
+*/
 
 /datum/crafting_recipe/IED
 	name = "IED"

@@ -7,6 +7,7 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_preattack
 	var/list/datum/action/actions
+	var/datum/action/attachment_action
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -44,8 +45,8 @@
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
 
-	var/datum/action/attachment_action = new /datum/action/attachment(parent)
-	actions += attachment_action
+	attachment_action = new /datum/action/attachment(parent)
+	actions += list(attachment_action)
 
 /datum/component/attachment/Destroy(force, silent)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
@@ -84,6 +85,8 @@
 	parent.forceMove(holder)
 	if(length(actions))
 		holder.actions += actions
+		for(var/datum/action/attachment_action in actions)
+			attachment_action.Grant(user)
 
 	return TRUE
 
@@ -97,6 +100,8 @@
 		return FALSE
 
 	if(length(actions))
+		for(var/datum/action/attachment_action in actions)
+			attachment_action.Remove(user)
 		holder.actions -= actions
 
 	if(user.can_put_in_hand(parent))
@@ -125,6 +130,3 @@
 /datum/action/attachment
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
 	button_icon_state = null
-
-/datum/action/attachment/New(target)
-	name = target.name

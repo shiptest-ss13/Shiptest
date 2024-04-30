@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/bipod
 	name = "bipod"
 	desc = "A bipod that can be attached to a weapon to improve stability."
@@ -45,3 +46,4 @@
 	gun.w_class = initial(gun.w_class)
 	gun.wield_delay = initial(gun.unfolded_wield_delay)
 	gun.wield_slowdown = initial(gun.unfolded_slowdown)
+*/
