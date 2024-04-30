@@ -111,6 +111,7 @@
 		if(istype(stomach))
 			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
+			// mood is borked
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
@@ -122,9 +123,12 @@
 
 /datum/action/innate/root/IsAvailable()
 	if(..())
-		//var/mob/living/carbon/human/H = owner
+		var/mob/living/carbon/human/H = owner
+		var/turf/terrain = get_turf(H)
 		// todo: check for GRASS
-		return TRUE
+		if(terrain == /turf/open/floor/plating/grass)
+			return TRUE
+		return FALSE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)
 	if(unique)
