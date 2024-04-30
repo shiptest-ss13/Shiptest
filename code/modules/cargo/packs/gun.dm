@@ -121,7 +121,7 @@
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
-	desc = "Contains a expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."
+	desc = "Contains an expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."
 	cost = 1250
 	contains = list(/obj/item/gun/ballistic/rifle/illestren)
 	crate_name = "rifle crate"
