@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/scope
 	name = "bayonet"
 	icon_state = "scope"
@@ -22,3 +23,4 @@
 	gun.actions -= gun.azoom
 	qdel(gun.azoom)
 	return TRUE
+*/

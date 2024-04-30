@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/e_bayonet
 	name = "bayonet"
 	desc = "Stabby-Stabby"
@@ -36,6 +37,7 @@
 			return COMPONENT_NO_ATTACK
 		melee_attack_chain(user, target, params)
 		return COMPONENT_NO_ATTACK
+*/
 
 /obj/item/attachment/bayonet
 	name = "bayonet"
