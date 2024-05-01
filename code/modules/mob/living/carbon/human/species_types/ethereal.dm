@@ -135,7 +135,7 @@
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
 
-	// Do afters arent completed, you were moved for whatever reason
+	// Do afters weren't completed, you were moved for whatever reason
 	to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
 	H.apply_damage(10,BRUTE,BODY_ZONE_CHEST)
 	H.apply_damage(10,BRUTE,BODY_ZONE_L_LEG)
@@ -149,7 +149,7 @@
 	if(..())
 		var/mob/living/carbon/human/H = owner
 		var/turf/terrain = get_turf(H)
-		if(istype(terrain,/turf/open/floor/plating/grass))
+		if(istype(terrain,/turf/open/floor/plating/grass) || istype(terrain,/turf/open/floor/grass/ship) ||  istype(terrain,/turf/open/floor/ship/dirt) ||  istype(terrain,/turf/open/floor/plating/dirt))
 			return TRUE
 		return FALSE
 
