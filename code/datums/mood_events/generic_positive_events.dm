@@ -242,5 +242,5 @@
 
 /datum/mood_event/joywire
 	description = "<span class='boldnicegreen'>I feel so joyous! Oh, so joyous! WOOOOOOOOOOOOOOOOOOOOOO!!</span>\n"
-	mood_change = 20
+	mood_change = 16
 	timeout = 10 SECONDS
