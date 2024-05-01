@@ -48,7 +48,7 @@
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
 	// how long to charge while rooting
-	var/root_time = (10 SECONDS)
+	var/root_time = (7.5 SECONDS)
 	// how much charge you get from rooting
 	var/root_charge_gain = (10 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
@@ -108,31 +108,33 @@
 		to_chat(H, "<span class='warning'>Your charge is full!</span>")
 		return
 	E.drain_time = world.time + E.root_time
-	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root.</span>")
+	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>")
 	if(!do_after(H,E.root_time, target = H))
-	to_chat(H, "<span class='warning'>You were interupted!</span>")
+		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
 	ADD_TRAIT(H,TRAIT_IMMOBILIZED,src)
 	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
 	while(do_after(H, E.root_time, target = H))
-		E.drain_time = world.time + E.root_time
-		if(stomach.crystal_charge > charge_limit)
-			stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-			break
 		if(istype(stomach))
 			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
-			H.adjustBruteLoss(-1)
-			H.adjustFireLoss(-1)
+			H.adjustBruteLoss(-3)
+			H.adjustFireLoss(-3)
 			// mood is borked
 			//SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
 
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
+				to_chat(H, "<span class='notice'>You finish rooting and begin digging yourself out.</span>")
+				if(do_after(H, E.root_time,target = H))
+					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 				break
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
-	to_chat(H, "<span class='warning'>You finish rooting.</span>")
+	// else
+	// 	to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
+	// 	H.adjustBruteLoss(20)
+
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,src)
 
 // to do, other grass types, see if dirt plots is possible
