@@ -159,8 +159,6 @@
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 	return
 
-// to do see if dirt plots is possible
-
 /datum/action/innate/root/IsAvailable()
 	if(..())
 		var/mob/living/carbon/human/H = owner
