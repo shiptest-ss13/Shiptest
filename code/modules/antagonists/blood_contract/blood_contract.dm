@@ -26,10 +26,10 @@
 
 	H.add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)
 
-	var/obj/effect/mine/pickup/bloodbath/B = new(H)
+	var/obj/item/mine/pressure/pickup/bloodbath/B = new(H)
 	B.duration = duration
 
-	INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/effect/mine/pickup/bloodbath, mineEffect), H) //could use moving out from the mine
+	INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pressure/pickup/bloodbath, mine_effect), H) //could use moving out from the mine
 
 	for(var/mob/living/carbon/human/P in GLOB.player_list)
 		if(P == H)

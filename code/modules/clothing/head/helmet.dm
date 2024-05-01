@@ -508,7 +508,6 @@
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
 	desc = "A blue cap worn by high-ranking officers of SolGov."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
 	strip_delay = 80
@@ -516,7 +515,6 @@
 /obj/item/clothing/head/solgov/terragov
 	name = "\improper TerraGov officer's cap"
 	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
 
@@ -527,7 +525,6 @@
 	item_state = "sonnensoldner_hat"
 	worn_y_offset = 4
 	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/solgov/captain
 	name = "\improper SolGov bicorne hat"
@@ -536,7 +533,6 @@
 	item_state = "solgov_bicorne"
 	worn_y_offset = 2
 	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
