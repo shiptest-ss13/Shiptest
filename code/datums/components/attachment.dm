@@ -36,7 +36,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE, PROC_REF(handle_examine))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
-	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
+	if(attach_features_flags & ATTACH_TOGGLE)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 		attachment_toggle_action = new /datum/action/attachment(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
@@ -56,7 +56,7 @@
 
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
-	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
+	if(attach_features_flags & ATTACH_TOGGLE)
 		INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
 
 
@@ -82,7 +82,7 @@
 
 	parent.forceMove(holder)
 
-	iif(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
+	if(attach_features_flags & ATTACH_TOGGLE)
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
 		attachment_toggle_action.Grant(user)
@@ -98,7 +98,7 @@
 	if(on_attach && !on_detach.Invoke(holder, user))
 		return FALSE
 
-	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
+	if(attach_features_flags & ATTACH_TOGGLE)
 		holder.actions -= list(attachment_toggle_action)
 		attachment_toggle_action.gun = null
 		attachment_toggle_action.Remove(user)
