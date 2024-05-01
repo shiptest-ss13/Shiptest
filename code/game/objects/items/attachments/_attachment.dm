@@ -12,6 +12,9 @@
 
 	var/datum/component/attachment/attachment_comp
 
+	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
+	var/toggle_off_sound = 'sound/items/flashlight_off.ogg'
+
 	///Determines the amount of pixels to move the icon state for the overlay. in the x direction
 	var/pixel_shift_x = 16
 	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
@@ -38,6 +41,7 @@
 /obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
+	playsound(user, toggled ? toggle_on_sound : toggle_off_sound, 40, TRUE)
 	toggled = !toggled
 	icon_state = "[initial(icon_state)][toggled ? "-on" : ""]"
 

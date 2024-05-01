@@ -28,9 +28,10 @@
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
-	if(default_attachments)
+	if(length(default_attachments))
 		for(var/obj/item/attachment/attachment in default_attachments)
-			INVOKE_ASYNC(src, PROC_REF(do_attach), attachment, null)
+			var/obj/item/attachment/new_attachment = new(attachment)
+			INVOKE_ASYNC(src, PROC_REF(do_attach), new_attachment, null)
 
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
@@ -112,7 +113,7 @@
 		attachments += attachment
 		var/atom/parent = src.parent
 		parent.update_icon()
-	
+
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)

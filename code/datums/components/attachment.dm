@@ -7,8 +7,7 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_preattack
 	var/list/datum/action/actions
-	var/list/datum/action/test_actions
-	var/datum/action/test_attachment_action
+	var/datum/action/attachment/attachment_toggle_action
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -46,9 +45,8 @@
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
 
-	test_attachment_action = new /datum/action/item_action/toggle/attachment(parent)
-	actions += list(test_attachment_action)
-	test_actions += list(test_attachment_action)
+	if(has_toggle)
+		attachment_toggle_action = new /datum/action/attachment(parent)
 
 /datum/component/attachment/Destroy(force, silent)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
@@ -85,10 +83,11 @@
 		return FALSE
 
 	parent.forceMove(holder)
-	if(length(actions))
-		holder.actions += actions
-		for(var/datum/action/item_action/toggle/attachment_action in actions)
-			attachment_action.Grant(user)
+
+	if(has_toggle)
+		holder.actions += list(attachment_toggle_action)
+		attachment_toggle_action.gun = holder
+		attachment_toggle_action.Grant(user)
 
 	return TRUE
 
@@ -101,13 +100,10 @@
 	if(on_attach && !on_detach.Invoke(holder, user))
 		return FALSE
 
-	if(length(actions))
-		for(var/datum/action/item_action/toggle/attachment_action in actions)
-			attachment_action.Remove(user)
-		to_chat(user, length(actions))
-		holder.actions -= actions
-		to_chat(user, length(actions))
-		test_actions += actions
+	if(has_toggle)
+		holder.actions -= list(attachment_toggle_action)
+		attachment_toggle_action.gun = null
+		attachment_toggle_action.Remove(user)
 
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
@@ -132,4 +128,36 @@
 	SIGNAL_HANDLER
 	return attachment_slot_to_bflag(slot)
 
-/datum/action/item_action/toggle/attachment
+/datum/action/attachment
+	name = "Toggle Attachment"
+	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
+	button_icon_state = null
+	var/obj/item/gun/gun = null
+
+/datum/action/attachment/New(Target)
+	..()
+	name = "Toggle [target.name]"
+	button.name = name
+	icon_icon = target.icon
+	button_icon_state = target.icon_state
+
+/datum/action/attachment/Trigger()
+	..()
+	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
+
+/datum/action/attachment/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
+	if(button_icon && button_icon_state)
+		// If set, use the custom icon that we set instead
+		// of the item appearence
+		..()
+	else if((target && current_button.appearance_cache != target.appearance) || force) //replace with /ref comparison if this is not valid.
+		var/obj/item/I = target
+		var/old_layer = I.layer
+		var/old_plane = I.plane
+		I.layer = FLOAT_LAYER //AAAH
+		I.plane = FLOAT_PLANE //^ what that guy said
+		current_button.cut_overlays()
+		current_button.add_overlay(I)
+		I.layer = old_layer
+		I.plane = old_plane
+		current_button.appearance_cache = I.appearance
