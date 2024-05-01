@@ -43,7 +43,6 @@
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	//change this on non-gun things
 	var/dry_fire_text = "click"
 
 /*
@@ -53,7 +52,7 @@
 	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
 	var/tac_reloads = TRUE
 	///If we have the 'snowflake mechanic,' how long should it take to reload?
-	var/tactical_reload_delay  = 1 SECONDS
+	var/tactical_reload_delay = 1 SECONDS
 
 //BALLISTIC
 	///Compatible magazines with the gun
@@ -276,7 +275,7 @@
 	var/safety_wording = "safety"
 
 /*
- *  Spawn Info (Stuff that becomes useless onces the gun is spawned)
+ *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
 */
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()

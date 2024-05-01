@@ -93,6 +93,8 @@
 /////////////////
 // ATTACHMENTS //
 /////////////////
+#define TRAIT_ATTACHABLE "attachable"
+
 #define COMSIG_ATTACHMENT_ATTACH "attach-attach"
 #define COMSIG_ATTACHMENT_DETACH "attach-detach"
 #define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
@@ -101,12 +103,15 @@
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
 
+#define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
+
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
 #define ATTACHMENT_SLOT_MUZZLE "attach-slot-muzzle"
 #define ATTACHMENT_SLOT_SCOPE "attach-slot-scope"
 #define ATTACHMENT_SLOT_GRIP "attach-slot-grip"
 #define ATTACHMENT_SLOT_RAIL "attach-slot-rail"
 
+/*
 #define BIT_ATTACHMENT_SLOT_MUZZLE (1<<0)
 #define BIT_ATTACHMENT_SLOT_SCOPE (1<<1)
 #define BIT_ATTACHMENT_SLOT_GRIP (1<<2)
@@ -118,17 +123,7 @@ DEFINE_BITFIELD(attach_slots, list(
 	ATTACHMENT_SLOT_GRIP = BIT_ATTACHMENT_SLOT_GRIP,
 	ATTACHMENT_SLOT_RAIL = BIT_ATTACHMENT_SLOT_RAIL
 ))
-
-#define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
-
-#define TRAIT_ATTACHABLE "attachable"
-
-#define ATTACHMENT_DEFAULT_SLOT_AVAILABLE list( \
-	ATTACHMENT_SLOT_MUZZLE = 1, \
-	ATTACHMENT_SLOT_SCOPE = 1, \
-	ATTACHMENT_SLOT_GRIP = 1, \
-	ATTACHMENT_SLOT_RAIL = 1, \
-)
+*/
 
 /proc/attachment_slot_to_bflag(slot)
 	switch(slot)
@@ -151,6 +146,13 @@ DEFINE_BITFIELD(attach_slots, list(
 			return ATTACHMENT_SLOT_GRIP
 		if(1<<3)
 			return ATTACHMENT_SLOT_RAIL
+
+#define ATTACHMENT_DEFAULT_SLOT_AVAILABLE list( \
+	ATTACHMENT_SLOT_MUZZLE = 1, \
+	ATTACHMENT_SLOT_SCOPE = 1, \
+	ATTACHMENT_SLOT_GRIP = 1, \
+	ATTACHMENT_SLOT_RAIL = 1, \
+)
 
 //attach_features_flags
 #define ATTACH_REMOVABLE (1<<0)

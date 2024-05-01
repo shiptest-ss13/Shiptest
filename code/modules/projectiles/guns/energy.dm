@@ -12,7 +12,7 @@
 	ammo_x_offset = 2
 
 	tac_reloads = FALSE
-	tactical_reload_delay  = 1.2 SECONDS
+	tactical_reload_delay = 1.2 SECONDS
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
