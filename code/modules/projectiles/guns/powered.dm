@@ -55,7 +55,7 @@
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
-		playsound(src, load_sound, sound_volume, load_sound_vary)
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
@@ -63,7 +63,7 @@
 		return FALSE
 
 /obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	playsound(src, load_sound, sound_volume, load_sound_vary)
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	cell = null

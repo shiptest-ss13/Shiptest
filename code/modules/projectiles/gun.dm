@@ -288,8 +288,6 @@
 	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
-	//Volume of loading/unloading cell sounds
-	var/sound_volume = 40
 
 	//play empty alarm if no battery
 	var/empty_battery_sound = FALSE
