@@ -239,3 +239,8 @@
 	description = "Fishing is relaxing"
 	mood_change = 5
 	timeout = 3 MINUTES
+
+/datum/mood_event/ecstatic
+	description = "<span class='nicegreen'>I feel so bubbly... nothing can go wrong...</span>\n"
+	mood_change = 20
+	timeout = 10 SECONDS

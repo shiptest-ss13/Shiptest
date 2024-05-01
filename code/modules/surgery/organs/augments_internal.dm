@@ -137,6 +137,17 @@
 /obj/item/organ/cyberimp/brain/anti_stun/proc/reboot()
 	organ_flags &= ~ORGAN_FAILING
 
+/obj/item/organ/cyberimp/brain/joywire
+	name = "joywire implant"
+	desc = "A widely popular (and addictive) implant that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled."
+	implant_color = "#FFABE0"
+	slot = ORGAN_SLOT_BRAIN_JOYWIRE
+
+/obj/item/organ/cyberimp/brain/joywire/on_life()
+	if(owner || !(organ_flags & ORGAN_FAILING))
+		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "ecstatic", /datum/mood_event/ecstatic)
+		ADD_TRAIT (owner, TRAIT_AGEUSIA, TRAIT_GENERIC)
+
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth
 	zone = BODY_ZONE_PRECISE_MOUTH
