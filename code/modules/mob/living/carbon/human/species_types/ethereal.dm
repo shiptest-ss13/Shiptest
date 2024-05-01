@@ -95,32 +95,35 @@
 /datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/elzuose/E = H.dna.species
+	var/turf/terrain = get_turf(H)
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
 	var/charge_limit = ELZUOSE_CHARGE_FULL
 	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
+
 	if(H.wear_suit && istype(H.wear_suit, /obj/item/clothing))
 		var/obj/item/clothing/CS = H.wear_suit
 		if (CS.clothing_flags & THICKMATERIAL)
-			to_chat(H, "<span class='warning'>Your suit is too thick to root in!</span>")
+			to_chat(H, "<span class='warning'>Your [CS.name] is too thick to root in!</span>")
 			return
+
 	if(stomach.crystal_charge > charge_limit)
 		to_chat(H, "<span class='warning'>Your charge is full!</span>")
 		return
 	E.drain_time = world.time + E.root_time
 	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>")
+
 	if(!do_after(H,E.root_time, target = H))
 		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
 	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-	ADD_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
 	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
+
 	while(do_after(H, E.root_time, target = H))
 		if(istype(stomach))
 			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
 			stomach.adjust_charge(E.root_charge_gain)
 			H.adjustBruteLoss(-3)
 			H.adjustFireLoss(-3)
-			// mood is borked
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "root", /datum/mood_event/root)
 
 			if(stomach.crystal_charge > charge_limit)
@@ -129,19 +132,32 @@
 				if(do_after(H, E.root_time,target = H))
 					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 					REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-					REMOVE_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
-				return
+					return
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
+			break
 
-	// Do afters weren't completed, you were moved for whatever reason
-	to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
-	H.apply_damage(10,BRUTE,BODY_ZONE_CHEST)
-	H.apply_damage(10,BRUTE,BODY_ZONE_L_LEG)
-	H.apply_damage(10,BRUTE,BODY_ZONE_R_LEG)
-	H.say("*scream")
+	// Your rooting do afters weren't completed
+	if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
+		//You got moved and uprooted, time to suffer the consequences.
+		to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
+		H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+		H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+		H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+		H.say("*scream")
+		REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+		return
+
+	while(HAS_TRAIT_FROM(H, TRAIT_IMMOBILIZED, SPECIES_TRAIT))
+		// Rooting was interupted, so we start digging yourself out.
+		to_chat(H, "<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>")
+		if(do_after(H, E.root_time,target = H))
+			to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
+			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+			return
+
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-	REMOVE_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
+	return
 
 // to do see if dirt plots is possible
 
