@@ -7,7 +7,8 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_preattack
 	var/list/datum/action/actions
-	var/datum/action/attachment_action
+	var/list/datum/action/test_actions
+	var/datum/action/test_attachment_action
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -45,8 +46,9 @@
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
 
-	attachment_action = new /datum/action/attachment(parent)
-	actions += list(attachment_action)
+	test_attachment_action = new /datum/action/item_action/toggle/attachment(parent)
+	actions += list(test_attachment_action)
+	test_actions += list(test_attachment_action)
 
 /datum/component/attachment/Destroy(force, silent)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
@@ -85,7 +87,7 @@
 	parent.forceMove(holder)
 	if(length(actions))
 		holder.actions += actions
-		for(var/datum/action/attachment_action in actions)
+		for(var/datum/action/item_action/toggle/attachment_action in actions)
 			attachment_action.Grant(user)
 
 	return TRUE
@@ -100,9 +102,12 @@
 		return FALSE
 
 	if(length(actions))
-		for(var/datum/action/attachment_action in actions)
+		for(var/datum/action/item_action/toggle/attachment_action in actions)
 			attachment_action.Remove(user)
+		to_chat(user, length(actions))
 		holder.actions -= actions
+		to_chat(user, length(actions))
+		test_actions += actions
 
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
@@ -127,6 +132,4 @@
 	SIGNAL_HANDLER
 	return attachment_slot_to_bflag(slot)
 
-/datum/action/attachment
-	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
-	button_icon_state = null
+/datum/action/item_action/toggle/attachment
