@@ -52,6 +52,7 @@
 		to_chat(user, "<span class='warning'>You cannot attach [src] while it is active!</span>")
 		return FALSE
 
+	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
 	return TRUE
 
 /obj/item/attachment/proc/Detach(obj/item/gun/gun, mob/user)
@@ -59,6 +60,8 @@
 
 	if(toggled)
 		Toggle(gun, user)
+
+	playsound(src.loc, 'sound/weapons/gun/pistol/mag_release_alt.ogg', 75, 1)
 	return TRUE
 
 /obj/item/attachment/proc/PreAttack(obj/item/gun/gun, atom/target, mob/user, list/params)

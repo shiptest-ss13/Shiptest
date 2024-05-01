@@ -50,6 +50,10 @@
  *  Reloading
 */
 	var/obj/item/ammo_casing/chambered = null
+	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
+	var/tac_reloads = TRUE
+	///If we have the 'snowflake mechanic,' how long should it take to reload?
+	var/tactical_reload_delay  = 1 SECONDS
 
 /*
  *  Operation
@@ -58,9 +62,6 @@
 	var/suppressed = null
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
-	//description change if weapon is sawn-off
-	var/sawn_desc = null
-	var/sawn_off = FALSE
 
 	//true if the gun is wielded via twohanded component, shouldnt affect anything else
 	var/wielded = FALSE
@@ -120,8 +121,6 @@
 /*
  *  Attachment
 */
-	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
-	var/list/default_attachments = list()
 	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
 	var/list/valid_attachments = list()
 	///Reference to our attachment holder to prevent subtypes having to call GetComponent
@@ -154,49 +153,21 @@
 	var/safety_wording = "safety"
 
 /*
- *  Ballistic... For now
+ *  Spawn Info (Stuff that becomes useless onces the gun is spawned)
 */
-	///sound when inserting magazine
-	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
-	///sound when inserting an empty magazine
-	var/load_empty_sound = 'sound/weapons/gun/general/magazine_insert_empty.ogg'
-	///volume of loading sound
-	var/load_sound_volume = 40
-	///whether loading sound should vary
-	var/load_sound_vary = TRUE
-	///sound of racking
-	var/rack_sound = 'sound/weapons/gun/general/bolt_rack.ogg'
-	///volume of racking
-	var/rack_sound_volume = 60
-	///whether racking sound should vary
-	var/rack_sound_vary = TRUE
-	///sound of when the bolt is locked back manually
-	var/lock_back_sound = 'sound/weapons/gun/general/slide_lock_1.ogg'
-	///volume of lock back
-	var/lock_back_sound_volume = 60
-	///whether lock back varies
-	var/lock_back_sound_vary = TRUE
-	///Sound of ejecting a magazine
-	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg'
-	///sound of ejecting an empty magazine
-	var/eject_empty_sound = 'sound/weapons/gun/general/magazine_remove_empty.ogg'
-	///volume of ejecting a magazine
-	var/eject_sound_volume = 40
-	///whether eject sound should vary
-	var/eject_sound_vary = TRUE
-	///sound of dropping the bolt or releasing a slide
-	var/bolt_drop_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
-	///volume of bolt drop/slide release
-	var/bolt_drop_sound_volume = 60
-	///empty alarm sound (if enabled)
-	var/empty_alarm_sound = 'sound/weapons/gun/general/empty_alarm.ogg'
-	///empty alarm volume sound
-	var/empty_alarm_volume = 70
-	///whether empty alarm sound varies
-	var/empty_alarm_vary = TRUE
+	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
+	var/list/default_attachments = list()
 
-	///Whether the gun will spawn loaded with a magazine
-	var/spawnwithmagazine = TRUE
+
+/*
+ *
+ *  Ballistic... For now
+ *
+*/
+
+/*
+ *  Reloading
+*/
 	///Compatible magazines with the gun
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
 	///Whether the sprite has a visible magazine or not
@@ -211,73 +182,140 @@
 	var/empty_autoeject = FALSE
 	///Whether the gun supports multiple special mag types
 	var/special_mags = FALSE
-	///The bolt type of the gun, affects quite a bit of functionality, see gun.dm in defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
-	var/bolt_type = BOLT_TYPE_STANDARD
-	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
-	var/bolt_locked = FALSE
-	///Whether the gun has to be racked each shot or not.
-	var/semi_auto = TRUE
+
 	///Actual magazine currently contained within the gun
 	var/obj/item/ammo_box/magazine/magazine
 	///whether the gun ejects the chambered casing
 	var/casing_ejector = TRUE
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
-	///Phrasing of the bolt in examine and notification messages; ex: bolt, slide, etc.
-	var/bolt_wording = "bolt"
+
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
 	///Phrasing of the cartridge in examine and notification messages; ex: bullet, shell, dart, etc.
 	var/cartridge_wording = "bullet"
+
+	///sound when inserting magazine
+	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
+	///sound when inserting an empty magazine
+	var/load_empty_sound = 'sound/weapons/gun/general/magazine_insert_empty.ogg'
+	///volume of loading sound
+	var/load_sound_volume = 40
+	///whether loading sound should vary
+	var/load_sound_vary = TRUE
+	///Sound of ejecting a magazine
+	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg'
+	///sound of ejecting an empty magazine
+	var/eject_empty_sound = 'sound/weapons/gun/general/magazine_remove_empty.ogg'
+	///volume of ejecting a magazine
+	var/eject_sound_volume = 40
+	///whether eject sound should vary
+	var/eject_sound_vary = TRUE
+
+/*
+ *  Operation
+*/
+	///Whether the gun has to be racked each shot or not.
+	var/semi_auto = TRUE
+	///The bolt type of the gun, affects quite a bit of functionality, see gun.dm in defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
+	var/bolt_type = BOLT_TYPE_STANDARD
+	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
+	var/bolt_locked = FALSE
+	///Phrasing of the bolt in examine and notification messages; ex: bolt, slide, etc.
+	var/bolt_wording = "bolt"
 	///length between individual racks
 	var/rack_delay = 5
 	///time of the most recent rack, used for cooldown purposes
 	var/recent_rack = 0
+
 	///Whether the gun can be sawn off by sawing tools
 	var/can_be_sawn_off = FALSE
+	//description change if weapon is sawn-off
+	var/sawn_desc = null
+	var/sawn_off = FALSE
 
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = TRUE
-	///If we have the 'snowflake mechanic,' how long should it take to reload?
-	var/tactical_reload_delay  = 1 SECONDS
+	///sound of racking
+	var/rack_sound = 'sound/weapons/gun/general/bolt_rack.ogg'
+	///volume of racking
+	var/rack_sound_volume = 60
+	///whether racking sound should vary
+	var/rack_sound_vary = TRUE
+	///sound of when the bolt is locked back manually
+	var/lock_back_sound = 'sound/weapons/gun/general/slide_lock_1.ogg'
+	///volume of lock back
+	var/lock_back_sound_volume = 60
+	///whether lock back varies
+	var/lock_back_sound_vary = TRUE
+
+	///sound of dropping the bolt or releasing a slide
+	var/bolt_drop_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
+	///volume of bolt drop/slide release
+	var/bolt_drop_sound_volume = 60
+	///empty alarm sound (if enabled)
+	var/empty_alarm_sound = 'sound/weapons/gun/general/empty_alarm.ogg'
+	///empty alarm volume sound
+	var/empty_alarm_volume = 70
+	///whether empty alarm sound varies
+	var/empty_alarm_vary = TRUE
 
 /*
+ *  Spawn Info (Stuff that becomes useless onces the gun is spawned)
+*/
+	///Whether the gun will spawn loaded with a magazine
+	var/spawnwithmagazine = TRUE
+
+
+/*
+ *
  * Enegry and powered... For now
+ *
+*/
+
+/*
+ *  Reloading
 */
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
 	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/modifystate = 0
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
-	//The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/select = 1
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
-	//Do we handle overlays with base update_appearance()?
-	var/automatic_charge_overlays = TRUE
-	var/charge_sections = 4
-
-	//if this gun uses a stateful charge bar for more detail
-	var/shaded_charge = FALSE
 	var/selfcharge = 0
 	var/charge_tick = 0
 	var/charge_delay = 4
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
-	//set to true so the gun is given an empty cell
-	var/dead_cell = FALSE
-
-	//play empty alarm if no battery
-	var/empty_battery_sound = FALSE
-	///if the gun's cell cannot be replaced
-	var/internal_cell = FALSE
-
 	///Used for large and small cells
 	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 	//Volume of loading/unloading cell sounds
 	var/sound_volume = 40
+
+	//play empty alarm if no battery
+	var/empty_battery_sound = FALSE
+	///if the gun's cell cannot be replaced
+	var/internal_cell = FALSE
+
+	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
+	//The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
+	var/select = 1
+
+/*
+ *  Overlay
+*/
+	//Do we handle overlays with base update_appearance()?
+	var/automatic_charge_overlays = TRUE
+	var/charge_sections = 4
+	//if this gun uses a stateful charge bar for more detail
+	var/shaded_charge = FALSE
+	//Modifies WHOS state //im SOMEWHAT this is wether or not the overlay changes based on the ammo type selected
+	var/modifystate = TRUE
+
+/*
+ *  Spawn Info
+*/
+	//set to true so the gun is given an empty cell
+	var/dead_cell = FALSE
 
 /obj/item/gun/Initialize()
 	. = ..()

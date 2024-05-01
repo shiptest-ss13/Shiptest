@@ -4,7 +4,7 @@
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
-	modifystate = 1
+	modifystate = TRUE
 	ammo_x_offset = 2
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
