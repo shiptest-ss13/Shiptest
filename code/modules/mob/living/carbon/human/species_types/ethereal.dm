@@ -140,18 +140,17 @@
 			break
 
 	// Your rooting do afters weren't completed
-	if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
-		//You got moved and uprooted, time to suffer the consequences.
-		to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
-		H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
-		H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
-		H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-		H.say("*scream")
-		REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-		return
-
 	while(HAS_TRAIT_FROM(H, TRAIT_IMMOBILIZED, SPECIES_TRAIT))
 		// Rooting was interupted, so we start digging yourself out.
+		if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
+			//You got moved and uprooted, time to suffer the consequences.
+			to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
+			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+			H.say("*scream")
+			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+			return
 		to_chat(H, "<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>")
 		if(do_after(H, E.dig_time,target = H))
 			to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
