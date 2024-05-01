@@ -88,11 +88,10 @@
 	name = "Root"
 	desc = "Root into good soil to gain charge."
 	check_flags = AB_CHECK_CONSCIOUS
-	button_icon_state = "fire"
-	icon_icon = 'icons/effects/fire.dmi'
+	button_icon_state = "plant-22"
+	icon_icon = 'icons/obj/flora/plants.dmi'
 	background_icon_state = "bg_alien"
 
-// to do: uprooting.
 /datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/elzuose/E = H.dna.species
@@ -122,7 +121,7 @@
 			H.adjustBruteLoss(-3)
 			H.adjustFireLoss(-3)
 			// mood is borked
-			//SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "rooted", /datum/mood_event/rooted)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "root", /datum/mood_event/root)
 
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
@@ -140,10 +139,11 @@
 	H.apply_damage(10,BRUTE,BODY_ZONE_CHEST)
 	H.apply_damage(10,BRUTE,BODY_ZONE_L_LEG)
 	H.apply_damage(10,BRUTE,BODY_ZONE_R_LEG)
+	H.say("*scream")
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 	REMOVE_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
 
-// to do, other grass types, see if dirt plots is possible
+// to do see if dirt plots is possible
 
 /datum/action/innate/root/IsAvailable()
 	if(..())
