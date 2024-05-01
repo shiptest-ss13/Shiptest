@@ -148,6 +148,25 @@
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire", /datum/mood_event/joywire)
 		ADD_TRAIT (owner, TRAIT_AGEUSIA, TRAIT_GENERIC)
 
+/obj/item/organ/cyberimp/brain/joywire/emp_act(severity)
+	. = ..()
+	if(!owner || . & EMP_PROTECT_SELF)
+		return
+	organ_flags |= ORGAN_FAILING
+	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "joywire")
+	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire_emp", /datum/mood_event/joywire_emp)
+	to_chat(owner, "<span class='boldwarning'>That feeling of dream-like, distilled joy is suddenly diluted, lesser now, to sit by a growing, seething pain! Oh, how miserable it is now!</span>")
+
+/obj/item/organ/cyberimp/brain/mindscrew
+	name = "mindscrew implant"
+	desc = "A horrific after-market modification of the Joywire Implant that stimulates intense pain in the brain. Dramatically, dramatically hurts mood, and lingers for a time after removal."
+	implant_color = "#5E1108"
+	slot = ORGAN_SLOT_BRAIN_JOYWIRE
+
+/obj/item/organ/cyberimp/brain/mindscrew/on_life()
+	if(owner || !(organ_flags & ORGAN_FAILING))
+		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "mindscrew", /datum/mood_event/mindscrew)
+
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth
 	zone = BODY_ZONE_PRECISE_MOUTH

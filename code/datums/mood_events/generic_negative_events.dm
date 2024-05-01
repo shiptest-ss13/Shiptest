@@ -292,3 +292,13 @@
 	description = "<span class='warning'>I was forced to eat cement...</span>\n"
 	mood_change = -6
 	timeout = 4 MINUTES
+
+/datum/mood_event/joywire_emp
+	description = "<span class='boldwarning'>ITS GONE!! ITS GONE!! I'm... I'm never getting it back...</span>\n"
+	mood_change = -30
+	timeout = 5 MINUTES
+
+/datum/mood_event/mindscrew
+	description = "<span class='boldwarning'>...SHIIIIIT. It isn't ending... it isn't ending, come on...</span>\n"
+	mood_change = -18
+	timeout = 3 MINUTES
