@@ -63,7 +63,7 @@
 		if(attach.name in .)
 			stack_trace("two attachments with same name; this shouldn't happen and will cause failures")
 			continue
-		if(only_toggles && !attach.has_toggle)
+		if(only_toggles && !CHECK_BITFIELD(attach.attach_features_flags, ATTACH_TOGGLE))
 			continue
 		.[attach.name] = attach
 
@@ -128,7 +128,8 @@
 /datum/component/attachment_holder/proc/handle_detach(obj/item/parent, obj/item/tool, mob/user)
 	var/list/list = list()
 	for(var/obj/item/attach as anything in attachments)
-		list[attach.name] = attach
+		if(CHECK_BITFIELD(attach.attach_features_flags, ATTACH_REMOVABLE))
+			list[attach.name] = attach
 	var/selected = tgui_input_list(user, "Select Attachment", "Detach", list)
 	if(!parent.Adjacent(user) || !selected || !tool || !tool.use_tool(parent, user, 2 SECONDS * tool.toolspeed))
 		return

@@ -3,7 +3,7 @@
 	name = "bipod"
 	desc = "A bipod that can be attached to a weapon to improve stability."
 	icon_state = "laserpointer"
-	has_toggle = TRUE
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_TOGGLE
 
 /obj/item/attachment/bipod/Attach(obj/item/gun/gun, mob/user)
 	gun.has_bipod = TRUE
@@ -15,7 +15,7 @@
 	name = "foldable stock"
 	desc = "A foldable stock that can be attached to a weapon to improve stability."
 	icon_state = "laserpointer"
-	has_toggle = TRUE
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_TOGGLE
 
 /obj/item/attachment/foldable_stock/Attach(obj/item/gun/gun, mob/user)
 	gun.w_class = WEIGHT_CLASS_NORMAL

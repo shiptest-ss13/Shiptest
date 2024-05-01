@@ -152,6 +152,10 @@ DEFINE_BITFIELD(attach_slots, list(
 		if(1<<3)
 			return ATTACHMENT_SLOT_RAIL
 
+//attach_features_flags
+#define ATTACH_REMOVABLE (1<<0)
+#define ATTACH_TOGGLE (1<<1)
+
 /////////////////
 // PROJECTILES //
 /////////////////

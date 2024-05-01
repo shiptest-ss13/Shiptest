@@ -1,6 +1,6 @@
 /datum/component/attachment
 	var/slot
-	var/has_toggle
+	var/attach_features_flags
 	var/list/valid_parent_types
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
@@ -11,7 +11,7 @@
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
-		has_toggle = FALSE,
+		attach_features_flags = ATTACH_REMOVABLE,
 		valid_parent_types = list(/obj/item/gun),
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
@@ -24,7 +24,7 @@
 		return COMPONENT_INCOMPATIBLE
 
 	src.slot = slot
-	src.has_toggle = has_toggle
+	src.attach_features_flags = attach_features_flags
 	src.valid_parent_types = valid_parent_types
 	src.on_attach = on_attach
 	src.on_detach = on_detach
@@ -36,17 +36,15 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE, PROC_REF(handle_examine))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
-	if(has_toggle)
+	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
+		attachment_toggle_action = new /datum/action/attachment(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
-
-	if(has_toggle)
-		attachment_toggle_action = new /datum/action/attachment(parent)
 
 /datum/component/attachment/Destroy(force, silent)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
@@ -58,8 +56,8 @@
 
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
-
-	INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
+	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
+		INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
 
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
@@ -84,7 +82,7 @@
 
 	parent.forceMove(holder)
 
-	if(has_toggle)
+	iif(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
 		attachment_toggle_action.Grant(user)
@@ -100,7 +98,7 @@
 	if(on_attach && !on_detach.Invoke(holder, user))
 		return FALSE
 
-	if(has_toggle)
+	if(CHECK_BITFIELD(attach_features_flags, ATTACH_TOGGLE))
 		holder.actions -= list(attachment_toggle_action)
 		attachment_toggle_action.gun = null
 		attachment_toggle_action.Remove(user)

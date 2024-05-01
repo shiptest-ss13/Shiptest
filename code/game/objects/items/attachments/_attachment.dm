@@ -4,14 +4,13 @@
 	icon = 'icons/obj/guns/attachments.dmi'
 
 	var/slot = ATTACHMENT_SLOT_RAIL
+	///various yes no flags associated with attachments. See defines for these: [ATTACH_REMOVABLE]
+	var/attach_features_flags = ATTACH_REMOVABLE
 	var/list/valid_parents = list()
 	var/list/signals = list()
-
-	var/has_toggle = FALSE
-	var/toggled = FALSE
-
 	var/datum/component/attachment/attachment_comp
 
+	var/toggled = FALSE
 	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
 	var/toggle_off_sound = 'sound/items/flashlight_off.ogg'
 
@@ -25,7 +24,7 @@
 	attachment_comp = AddComponent( \
 		/datum/component/attachment, \
 		slot, \
-		has_toggle, \
+		attach_features_flags, \
 		valid_parents, \
 		CALLBACK(src, PROC_REF(Attach)), \
 		CALLBACK(src, PROC_REF(Detach)), \

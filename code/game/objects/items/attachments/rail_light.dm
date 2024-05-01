@@ -2,7 +2,7 @@
 	name = "rail light"
 	desc = "Rail mounted gun light for better visibility down range."
 	icon_state = "raillight"
-	has_toggle = TRUE
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_TOGGLE
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 

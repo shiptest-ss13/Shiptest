@@ -5,7 +5,7 @@
 	icon_state = "ebayonet"
 	force = 2
 
-	has_toggle = TRUE
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_TOGGLE
 	var/force_on = 20
 	var/extended = FALSE
 	var/reach_extended = 2

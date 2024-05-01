@@ -2,7 +2,7 @@
 	name = "Laser Sight"
 	desc = "This laser sight is designed to be rail-mounted on a compatible firearm to provide increased accuracy."
 	icon_state = "laserpointer"
-	has_toggle = TRUE
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_TOGGLE
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 
