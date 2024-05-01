@@ -23,8 +23,6 @@
 	new /obj/item/clothing/under/rank/command/captain/skirt(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
-	new /obj/item/clothing/under/rank/command/captain/parade(src)
-	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace/captunic(src)
 	new /obj/item/clothing/head/crown/fancy(src)
