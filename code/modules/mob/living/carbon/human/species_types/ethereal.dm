@@ -47,10 +47,12 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
+	// how it takes to enter and exit rooting
+	var/dig_time = (7.5 SECONDS)
 	// how long to charge while rooting
-	var/root_time = (7.5 SECONDS)
+	var/root_time = (4 SECONDS)
 	// how much charge you get from rooting
-	var/root_charge_gain = (10 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+	var/root_charge_gain = (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
@@ -112,7 +114,7 @@
 	E.drain_time = world.time + E.root_time
 	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>")
 
-	if(!do_after(H,E.root_time, target = H))
+	if(!do_after(H,E.dig_time, target = H))
 		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
 	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
@@ -129,7 +131,7 @@
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
 				to_chat(H, "<span class='notice'>You finish rooting and begin digging yourself out.</span>")
-				if(do_after(H, E.root_time,target = H))
+				if(do_after(H, E.dig_time,target = H))
 					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 					REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 					return
@@ -151,7 +153,7 @@
 	while(HAS_TRAIT_FROM(H, TRAIT_IMMOBILIZED, SPECIES_TRAIT))
 		// Rooting was interupted, so we start digging yourself out.
 		to_chat(H, "<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>")
-		if(do_after(H, E.root_time,target = H))
+		if(do_after(H, E.dig_time,target = H))
 			to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 			return
