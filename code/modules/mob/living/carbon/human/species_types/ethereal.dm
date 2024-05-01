@@ -92,7 +92,7 @@
 	icon_icon = 'icons/effects/fire.dmi'
 	background_icon_state = "bg_alien"
 
-// to do: stationary rooting/uprooting.
+// to do: uprooting.
 /datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/elzuose/E = H.dna.species
@@ -112,7 +112,8 @@
 	if(!do_after(H,E.root_time, target = H))
 		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
-	ADD_TRAIT(H,TRAIT_IMMOBILIZED,src)
+	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	ADD_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
 	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
 	while(do_after(H, E.root_time, target = H))
 		if(istype(stomach))
@@ -128,14 +129,19 @@
 				to_chat(H, "<span class='notice'>You finish rooting and begin digging yourself out.</span>")
 				if(do_after(H, E.root_time,target = H))
 					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
-				break
+					REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+					REMOVE_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
+				return
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
-	// else
-	// 	to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
-	// 	H.adjustBruteLoss(20)
 
-	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,src)
+	// Do afters arent completed, you were moved for whatever reason
+	to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
+	H.apply_damage(10,BRUTE,BODY_ZONE_CHEST)
+	H.apply_damage(10,BRUTE,BODY_ZONE_L_LEG)
+	H.apply_damage(10,BRUTE,BODY_ZONE_R_LEG)
+	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	REMOVE_TRAIT(H,TRAIT_HANDS_BLOCKED,SPECIES_TRAIT)
 
 // to do, other grass types, see if dirt plots is possible
 
