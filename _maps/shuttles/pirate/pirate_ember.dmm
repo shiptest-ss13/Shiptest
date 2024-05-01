@@ -205,10 +205,7 @@
 /area/ship/hallway/central)
 "aZ" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -1068,7 +1065,7 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/security/range)
 "fD" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/pet/penguin/emperor,
 /turf/open/floor/carpet/nanoweave,
@@ -1414,10 +1411,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "hq" = (
-/obj/structure/closet/wall{
-	name = "Atmospheric locker";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Atmospheric locker"
 	},
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /obj/item/clothing/suit/fire/atmos,
@@ -1464,10 +1459,7 @@
 /turf/open/floor/plating/rust,
 /area/ship/medical)
 "hy" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/wrapping,
 /obj/item/kirbyplants/random,
@@ -1996,6 +1988,20 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/metal/fifty{
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/metal/fifty{
+	pixel_y = 6;
+	pixel_x = 6
+	},
+/obj/item/stack/sheet/mineral/plastitanium/fifty{
+	pixel_x = -3
+	},
+/obj/item/stack/sheet/mineral/plastitanium/twenty{
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "kc" = (
@@ -2423,10 +2429,8 @@
 	},
 /area/ship/engineering/electrical)
 "mi" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "armory locker";
-	pixel_x = -28;
 	req_one_access_txt = "1"
 	},
 /obj/effect/turf_decal/techfloor{
@@ -2722,11 +2726,9 @@
 /area/ship/maintenance/fore)
 "nx" = (
 /obj/effect/turf_decal/techfloor,
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_y = -28
+	name = "engineering closet"
 	},
 /obj/item/clothing/suit/toggle/industrial,
 /obj/item/clothing/under/utility,
@@ -2849,10 +2851,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Firearm Locker";
-	pixel_y = -28
+/obj/structure/closet/wall/red/directional/south{
+	name = "Firearm Locker"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
@@ -3301,9 +3301,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "qr" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/item/seeds/berry{
 	pixel_x = -8;
 	pixel_y = 6
@@ -3339,10 +3337,8 @@
 	pixel_x = 1;
 	pixel_y = -4
 	},
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Component Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Component Storage"
 	},
 /obj/item/stack/cable_coil/blue,
 /obj/item/stack/cable_coil/orange{
@@ -3565,10 +3561,7 @@
 "rJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/item/reagent_containers/syringe/contraband/fentanyl{
 	pixel_x = -3;
 	pixel_y = 4
@@ -3609,10 +3602,7 @@
 /turf/closed/wall/rust,
 /area/ship/crew/canteen)
 "rQ" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3707,19 +3697,9 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/obj/item/stack/sheet/metal/fifty{
-	pixel_y = 2
-	},
-/obj/item/stack/sheet/metal/fifty{
-	pixel_y = 6;
-	pixel_x = 6
-	},
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/mineral/plastitanium/fifty{
-	pixel_x = -3
-	},
-/obj/item/stack/sheet/mineral/plastitanium/twenty{
-	pixel_y = 2
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -4038,10 +4018,6 @@
 /obj/item/storage/box/zipties{
 	pixel_y = 7;
 	pixel_x = 4
-	},
-/obj/item/storage/box/firingpins{
-	pixel_x = -6;
-	pixel_y = 4
 	},
 /obj/item/storage/box/syndie_kit/throwing_weapons,
 /obj/machinery/light/directional/south,
@@ -4549,6 +4525,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/power/ship_gravity/unanchored,
 /turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "vY" = (
@@ -4688,9 +4665,7 @@
 /area/ship/maintenance/central)
 "wC" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -4736,10 +4711,7 @@
 /obj/effect/turf_decal/trimline/transparent/lightgrey/line{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5453,10 +5425,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "AL" = (
-/obj/structure/closet/wall/orange{
-	dir = 8;
-	name = "Engineering locker";
-	pixel_x = 28
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Engineering locker"
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/item/clothing/under/utility,
@@ -5867,9 +5837,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/directional/east{
 	name = "Uniform Closet"
 	},
 /obj/item/clothing/neck/shemagh,
@@ -6102,9 +6070,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/structure/closet/wall/blue{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/blue/directional/east{
 	name = "Bridge Officer's locker"
 	},
 /obj/item/clothing/shoes/workboots,
@@ -6810,9 +6776,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/bridge)
 "Gr" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -6843,11 +6807,9 @@
 /area/ship/maintenance/fore)
 "GF" = (
 /obj/effect/turf_decal/techfloor,
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_y = -28
+	name = "engineering closet"
 	},
 /obj/item/clothing/suit/toggle/industrial,
 /obj/item/clothing/under/utility,
@@ -7751,92 +7713,54 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	name = "Utility Closet";
-	pixel_y = -28;
-	dir = 1
+/obj/structure/closet/wall/directional/south{
+	name = "Utility Closet"
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 9
 	},
@@ -8212,9 +8136,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/structure/closet/wall/blue{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/blue/directional/east{
 	name = "Bridge Officer's locker"
 	},
 /obj/item/clothing/shoes/workboots,
@@ -8568,9 +8490,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ship/security)
@@ -8989,10 +8909,8 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Pn" = (
-/obj/structure/closet/wall/red{
-	name = "Ammo locker";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/red/directional/west{
+	name = "Ammo locker"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -9282,10 +9200,7 @@
 "QH" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/communications)
@@ -9919,10 +9834,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 26
 	},
