@@ -47,7 +47,7 @@
 	modifystate = TRUE
 	ammo_x_offset = 1
 	selfcharge = 1
-	shaded_charge = 1
+	shaded_charge = TRUE
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
@@ -107,7 +107,7 @@
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=4000)
-	suppressed = null
+	suppressed = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 
