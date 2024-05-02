@@ -14,7 +14,6 @@
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_age_max = 300
 	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
@@ -51,7 +50,7 @@
 	// how it takes to enter and exit rooting
 	var/dig_time = (7.5 SECONDS)
 	// how long to charge while rooting
-	var/root_time = (3 SECONDS)
+	var/root_time = (4 SECONDS)
 	// how much charge you get from rooting
 	var/root_charge_gain = (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
@@ -114,7 +113,7 @@
 		return
 	E.drain_time = world.time + E.root_time
 	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>")
-	H.visible_message("<span_class='notice'>[H] is digging into the ground.</span>","<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>","<span_class='notice'>You hear digging.</span>")
+
 	if(!do_after(H,E.dig_time, target = H))
 		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
@@ -131,7 +130,7 @@
 
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-				H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>You finish rooting and begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
+				to_chat(H, "<span class='notice'>You finish rooting and begin digging yourself out.</span>")
 				if(do_after(H, E.dig_time,target = H))
 					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 					REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
@@ -145,7 +144,7 @@
 		// Rooting was interupted, so we start digging yourself out.
 		if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
 			//You got moved and uprooted, time to suffer the consequences.
-			H.visible_message("<span_class='warning'>[H] is forcefully uprooted. That looked like it hurt.</span>","<span class='warning'>You're forcefully unrooted! Ouch!</span>","<span_class='warning'>You hear someone scream in pain..</span>")
+			to_chat(H, "<span class='warning'>You're forcefully unrooted! Ouch!</span>")
 			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
@@ -154,7 +153,7 @@
 			return
 		to_chat(H, "<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>")
 		if(do_after(H, E.dig_time,target = H))
-			H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>You finish rooting and begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
+			to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
 			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 			return
 
