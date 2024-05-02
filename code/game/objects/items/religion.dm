@@ -206,14 +206,6 @@
 /obj/item/banner/command/check_inspiration(mob/living/carbon/human/H)
 	return HAS_TRAIT(H, TRAIT_MINDSHIELD) //Command is stalwart but rewards their allies.
 
-/datum/crafting_recipe/command_banner
-	name = "Command Banner"
-	result = /obj/item/banner/command/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/command/captain/parade = 1)
-	category = CAT_MISC
-
 /obj/item/banner/red
 	name = "red banner"
 	icon_state = "banner-red"
