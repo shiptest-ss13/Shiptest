@@ -157,12 +157,6 @@
 	desc = "An extraordinarily fashionable haori, utilized by Cybersun captains. Weaved with armored fabric to protect the user from gunshots."
 	icon_state = "carapace_cybersun"
 
-/obj/item/clothing/suit/armor/vest/capcarapace/alt
-	name = "captain's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "carapace_ntformal"
-	item_state = "capspacesuit"
-
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
 	desc = "Worn by a captain to show their class."
