@@ -35,7 +35,6 @@
 	custom_price = 55
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
-
 	if(!target)
 		return
 
