@@ -351,7 +351,7 @@
 
 /obj/item/clothing/head/nanotrasen/captain/peaked
 	name = "captain's peaked cap"
-	desc = "A decorated blue peaked cap, rife with laurels and gold thread, with a large badge on the front displaying the Nanotrasen, Inc. logo. This hat practically oozes authority.
+	desc = "A decorated blue peaked cap, rife with laurels and gold thread, with a large badge on the front displaying the Nanotrasen, Inc. logo. This hat practically oozes authority."
 	icon_state = "com_peaked"
 	item_state = "bluecloth"
 
