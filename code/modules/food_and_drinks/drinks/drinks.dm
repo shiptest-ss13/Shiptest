@@ -133,6 +133,8 @@
 		if(bartender_check(target) && ranged)
 			return
 	var/obj/item/broken_bottle/smashed_bottle = new (loc)
+	if(!ranged && thrower)
+		thrower.put_in_hands(smashed_bottle)
 	smashed_bottle.icon_state = icon_state
 	var/icon/new_icon = new(icon, icon_state)
 	new_icon.Blend(smashed_bottle.broken_outline, ICON_OVERLAY, rand(5), 1)
