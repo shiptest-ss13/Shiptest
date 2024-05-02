@@ -690,14 +690,50 @@ LIVE_MINE_HELPER(pressure/sound)
 
 /obj/effect/spawner/minefield
 	name = "minefield spawner"
-	var/minerange = 9
+	//Radius of the minefield
+	var/mine_range = 10
+	//How many mines it TRYS to spawn
+	var/mine_count = 25
+	//Warning signed to be littered around
+	var/sign_count = 10
+	//How much its offset starting from the edge of the minefield
+	var/sign_offset = 1
+	//its the max extra offset added ontop of the range and offset.
+	var/sign_random = 1
 	var/minetype = /obj/item/mine/pressure/explosive/rusty/live
 
 /obj/effect/spawner/minefield/Initialize(mapload)
 	. = ..()
-	for(var/turf/open/T in view(minerange,loc))
-		if(prob(5))
-			new minetype(T)
+	for(mine_count)
+		var/mine_turf = get_mine_turf()
+		if(isopenturf(mine_turf))
+			var/has_mine = FALSE
+			for(var/thing in get_turf(mine_turf))
+				if(istype(thing, /obj/item/mine))
+					has_mine = TRUE
+			if(!has_mine)
+				new minetype(mine_turf)
+
+/obj/effect/spawner/minefield/proc/get_mine_turf
+	var/angle = rand(0, 1) * 2 * PI
+	var/distance = rand(0, 1) * (mine_range * mine_range)
+	var/x_cord = round(sqrt(distance) * cos(angle))
+	var/y_cord = round(sqrt(distance) * sin(angle))
+	var/turf/center_turf = get_turf(src)
+	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
+	return(mine_turf)
+
+/obj/effect/spawner/minefield/proc/get_sign_turf
+	var/angle = rand(0, 1) * 2 * PI
+	var/distance = mine_range + sign_offset + (sign_offset * rand(0, 1))
+	var/x_cord = round(distance) * cos(angle)
+	var/y_cord = round(distance) * sin(angle)
+	var/turf/center_turf = get_turf(src)
+	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
+	return(mine_turf)
+
+//Math behind the madness https://www.desmos.com/calculator/pvqs6sfxvg
+/obj/effect/spawner/minefield/proc/random_cord()
 
 /obj/effect/spawner/minefield/random
 	name = "random minefield spawner"
