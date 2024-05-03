@@ -215,7 +215,7 @@
 /obj/machinery/light/dim/directional/north,
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -7;
-	pixel_y = 10
+	pixel_y = 8
 	},
 /obj/item/paper_bin{
 	pixel_y = 9;
@@ -641,20 +641,16 @@
 	pixel_y = -10;
 	pixel_x = -19
 	},
-/obj/structure/closet/cabinet{
-	name = "Bartender's Cabinet"
-	},
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/accessory/waistcoat,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/head/that,
-/obj/item/clothing/glasses/sunglasses/reagent,
+/obj/structure/closet/cabinet,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
 /obj/item/toy/cards/deck/kotahi,
 /obj/item/toy/cards/deck/syndicate,
+/obj/item/toy/cards/deck/cas,
+/obj/item/toy/cards/deck/cas/black,
+/obj/item/storage/pill_bottle/dice/hazard,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "iC" = (
@@ -1364,6 +1360,9 @@
 /obj/item/candle{
 	pixel_y = 16
 	},
+/obj/item/clothing/mask/vape/cigar{
+	pixel_y = -2
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "rr" = (
@@ -1472,7 +1471,8 @@
 	color = "#543C30"
 	},
 /obj/item/kirbyplants/random{
-	pixel_y = 20
+	pixel_y = 20;
+	pixel_x = 10
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/wood/walnut,
@@ -1794,9 +1794,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#543C30"
-	},
-/obj/item/clothing/mask/vape/cigar{
-	pixel_y = -2
 	},
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/wood/mahogany,
@@ -2200,13 +2197,13 @@
 /area/ship/crew/canteen)
 "CM" = (
 /obj/structure/table/wood,
-/obj/item/toy/cards/deck/cas{
-	pixel_y = 8;
-	pixel_x = 10
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
 	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/sandwich{
+	pixel_x = 15;
+	pixel_y = 13
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
@@ -2638,10 +2635,6 @@
 	},
 /obj/item/pen,
 /obj/machinery/newscaster/directional/east,
-/obj/item/toy/cards/deck/cas/black{
-	pixel_y = 4;
-	pixel_x = -16
-	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "Id" = (
@@ -3213,7 +3206,7 @@
 	color = "#332521"
 	},
 /obj/item/lighter{
-	pixel_x = -3;
+	pixel_x = -5;
 	pixel_y = 3
 	},
 /obj/item/reagent_containers/glass/rag{
@@ -3221,6 +3214,10 @@
 	pixel_y = 1
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/clothing/glasses/sunglasses/reagent{
+	pixel_y = 5;
+	pixel_x = 9
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "PM" = (
@@ -3325,7 +3322,7 @@
 "Ry" = (
 /obj/structure/closet/crate/wooden{
 	anchored = 1;
-	name = "suits crate"
+	name = "suit crate"
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -3338,17 +3335,22 @@
 /obj/machinery/firealarm/directional/east,
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/airalarm/directional/south,
-/obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/item/clothing/under/suit/waiter,
 /obj/item/clothing/under/suit/sl,
-/obj/item/clothing/under/suit/charcoal,
 /obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/head/that,
 /obj/item/clothing/gloves/color/evening,
-/obj/item/clothing/gloves/color/evening,
+/obj/item/clothing/gloves/color/white,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
 "Rz" = (
