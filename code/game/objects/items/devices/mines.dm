@@ -694,7 +694,7 @@ LIVE_MINE_HELPER(pressure/sound)
 	//Radius of the minefield
 	var/mine_range = 10
 	//How many mines it TRYS to spawn
-	var/mine_count = 25
+	var/mine_count = 10
 	//Warning signs to be littered around
 	var/sign_count = 10
 	//How much its offset starting from the edge of the minefield
@@ -707,11 +707,11 @@ LIVE_MINE_HELPER(pressure/sound)
 /obj/effect/spawner/minefield/Initialize(mapload)
 	. = ..()
 	spawn_mines()
-	spawn_signs()
+	//spawn_signs()
 
 /obj/effect/spawner/minefield/proc/spawn_mines()
 	var/mines_spawned = 0
-	for(mine_count)
+	for(var/i mine_count)
 		var/turf/mine_turf = get_turf_from_distance(mine_random_decimal() * (mine_range ** 2))
 		if(isopenturf(mine_turf))
 			var/has_mine = FALSE
@@ -740,11 +740,16 @@ LIVE_MINE_HELPER(pressure/sound)
 
 // 0 to 1 with.. 4 decimal places?
 /obj/effect/spawner/minefield/proc/mine_random_decimal()
-	return rand(0, MINE_DECIMAL_PERCISION) / MINE_DECIMAL_PERCISION
+	var/rand_num = rand(0, MINE_DECIMAL_PERCISION) / MINE_DECIMAL_PERCISION
+	return rand_num
 
 //Should make adding signs less copy paste
 /obj/effect/spawner/minefield/proc/get_turf_from_distance(distance)
-	var/angle = mine_random_decimal() * 2 * PI
+	var/angle = mine_random_decimal() * 360
+	var/cosangle = cos(angle)
+	var/sinangle = sin(angle)
+	var/cosdistance = sqrt(distance) * cosangle
+	var/sindistance = sqrt(distance) * sinangle
 	var/x_cord = round(sqrt(distance) * cos(angle))
 	var/y_cord = round(sqrt(distance) * sin(angle))
 	var/turf/center_turf = get_turf(src)
