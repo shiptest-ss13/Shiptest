@@ -1,3 +1,12 @@
+#define EMPTY_GUN_HELPER(gun_type)				\
+	/obj/item/gun/ballistic/##gun_type/no_mag {	\
+		spawnwithmagazine = TRUE;				\
+	}
+
+EMPTY_GUN_HELPER(automatic/pistol)
+EMPTY_GUN_HELPER(automatic/pistol/candor)
+EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
+
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
 /obj/item/gun/ballistic
