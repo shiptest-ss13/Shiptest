@@ -678,6 +678,7 @@ LIVE_MINE_HELPER(pressure/sound)
 // spawners (random mines, minefields, non-guaranteed mine)
 //
 
+#define MINE_DECIMAL_PERCISION 10000
 /obj/effect/spawner/lootdrop/mine
 	name = "live mine spawner (random)"
 	lootcount = 1
@@ -694,18 +695,24 @@ LIVE_MINE_HELPER(pressure/sound)
 	var/mine_range = 10
 	//How many mines it TRYS to spawn
 	var/mine_count = 25
-	//Warning signed to be littered around
+	//Warning signs to be littered around
 	var/sign_count = 10
 	//How much its offset starting from the edge of the minefield
 	var/sign_offset = 1
 	//its the max extra offset added ontop of the range and offset.
 	var/sign_random = 1
 	var/minetype = /obj/item/mine/pressure/explosive/rusty/live
+	var/signtype = /obj/structure/sign/warning/explosives
 
 /obj/effect/spawner/minefield/Initialize(mapload)
 	. = ..()
+	spawn_mines()
+	spawn_signs()
+
+/obj/effect/spawner/minefield/proc/spawn_mines()
+	var/mines_spawned = 0
 	for(mine_count)
-		var/mine_turf = get_mine_turf()
+		var/turf/mine_turf = get_turf_from_distance(mine_random_decimal() * (mine_range ** 2))
 		if(isopenturf(mine_turf))
 			var/has_mine = FALSE
 			for(var/thing in get_turf(mine_turf))
@@ -713,20 +720,40 @@ LIVE_MINE_HELPER(pressure/sound)
 					has_mine = TRUE
 			if(!has_mine)
 				new minetype(mine_turf)
+				mines_spawned++
+	return mines_spawned
 
-/obj/effect/spawner/minefield/proc/get_mine_turf()
-	var/angle = rand(0, 1) * 2 * PI
-	var/distance = rand(0, 1) * (mine_range * mine_range)
+/obj/effect/spawner/minefield/proc/spawn_signs()
+	var/signs_spawned = 0
+	for(sign_count)
+		var/distance = (mine_range + sign_offset + (sign_offset * mine_random_decimal()))**2
+		var/turf/sign_turf = get_turf_from_distance(distance)
+		if(isopenturf(sign_turf))
+			var/has_stuff = FALSE
+			for(var/thing in get_turf(sign_turf))
+				if(istype(thing, /obj/item/mine || /obj/structure/sign))
+					has_stuff = TRUE
+			if(!has_stuff)
+				new signtype(sign_turf)
+				signs_spawned++
+	return signs_spawned
+
+// 0 to 1 with.. 4 decimal places?
+/obj/effect/spawner/minefield/proc/mine_random_decimal()
+	return rand(0, MINE_DECIMAL_PERCISION) / MINE_DECIMAL_PERCISION
+
+//Should make adding signs less copy paste
+/obj/effect/spawner/minefield/proc/get_turf_from_distance(distance)
+	var/angle = mine_random_decimal() * 2 * PI
 	var/x_cord = round(sqrt(distance) * cos(angle))
 	var/y_cord = round(sqrt(distance) * sin(angle))
 	var/turf/center_turf = get_turf(src)
 	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
 	return(mine_turf)
-
 /*
 /obj/effect/spawner/minefield/proc/get_sign_turf
 	var/angle = rand(0, 1) * 2 * PI
-	var/distance = mine_range + sign_offset + (sign_offset * rand(0, 1))
+	var/distance = mine_range + sign_offset + (sign_offset * mine_random_decimal())
 	var/x_cord = round(distance) * cos(angle)
 	var/y_cord = round(distance) * sin(angle)
 	var/turf/center_turf = get_turf(src)
@@ -741,3 +768,5 @@ LIVE_MINE_HELPER(pressure/sound)
 /obj/effect/spawner/minefield/manhack
 	name = "manhack field spawner"
 	minetype = /obj/item/mine/proximity/spawner/manhack/live
+
+#undef MINE_DECIMAL_PERCISION
