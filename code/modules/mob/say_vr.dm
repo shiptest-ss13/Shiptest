@@ -25,7 +25,7 @@
 		if(length(msg) <= MAX_SHORTFLAVOR_LEN)
 			return "<span class='notice'>[msg]</span>"
 		else
-			return "<span class='notice'>[copytext(msg, 1, MAX_SHORTFLAVOR_LEN - 3)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">Examine Closely...</span></a>"
+			return "<span class='notice'>[copytext(msg, 1, MAX_SHORTFLAVOR_LEN - 3)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</span></a>"
 
 /mob/proc/get_top_level_mob()
 	if(istype(src.loc,/mob)&&src.loc!=src)
