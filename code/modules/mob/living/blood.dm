@@ -12,7 +12,7 @@
 		addtimer(CALLBACK(src, PROC_REF(resume_bleeding)), amount)
 
 /mob/living/carbon/human/proc/resume_bleeding()
-	if(stat != DEAD && bleed_rate)
+	if(stat != DEAD && get_bleeding_parts(TRUE))
 		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")*/
 
 
@@ -28,7 +28,6 @@
 /mob/living/carbon/human/handle_blood()
 
 	if(NOBLOOD in dna.species.species_traits)
-		bleed_rate = 0
 		return
 
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
@@ -82,7 +81,6 @@
 				if(!HAS_TRAIT(src, TRAIT_NODEATH))
 					death()
 
-		var/temp_bleed = 0
 		//Bleeding out
 		var/limb_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
@@ -95,10 +93,8 @@
 					BP.adjust_bleeding(0.5, BLOOD_LOSS_DAMAGE_CAP)
 			limb_bleed += BP.bleeding
 
-		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects naturally decrease
-
-		if((bleed_rate || limb_bleed) && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
-			bleed(bleed_rate + limb_bleed)
+		if((limb_bleed) && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
+			bleed(limb_bleed)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
@@ -125,7 +121,6 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts())
 		BP.bleeding = 0
-	bleed_rate = 0
 
 /****************************************************
 				BLOOD TRANSFERS
