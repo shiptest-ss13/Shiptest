@@ -231,6 +231,8 @@
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
+EMPTY_GUN_HELPER(shotgun/bulldog)
+
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
@@ -238,6 +240,8 @@
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	manufacturer = MANUFACTURER_INTEQ
+
+EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 
 /obj/item/gun/ballistic/shotgun/bulldog/suns
 	name = "\improper Bulldog-C Shotgun"

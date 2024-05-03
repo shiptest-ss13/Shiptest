@@ -34,8 +34,7 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
-/obj/item/gun/ballistic/automatic/pistol/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol)
 
 /obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
 	. = ..()
@@ -65,19 +64,17 @@
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	recoil = -2
 
-/obj/item/gun/ballistic/automatic/pistol/candor/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
 
+EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
+
 /obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
 	. = ..()
 	. += "[initial(icon_state)]_factory"
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag
-	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
@@ -154,8 +151,7 @@
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "\improper Commissioner"
@@ -164,8 +160,7 @@
 	item_state = "commander-inteq"
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"

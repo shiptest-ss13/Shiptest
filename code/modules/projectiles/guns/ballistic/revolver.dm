@@ -456,6 +456,7 @@
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
@@ -475,6 +476,8 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+
+EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
