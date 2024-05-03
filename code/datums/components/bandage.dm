@@ -2,9 +2,9 @@
 
 /datum/component/bandage
 	/// How much damage do we heal?
-	var/healing_speed = 0.2
+	var/healing_speed = 0
 	/// How fast do we stop bleeding?
-	var/bleed_reduction = 0.2
+	var/bleed_reduction = 0
 	/// How many healing ticks will this bandage apply? Reduced by incoming damage and other nasties
 	var/durability = 300
 	/// What is dropped when the bandage is removed?
@@ -13,7 +13,7 @@
 	/// The person this bandage is applied to
 	var/mob/living/mummy
 
-/datum/component/bandage/Initialize(_healing_speed, _durability, _bandage_name, _trash_item)
+/datum/component/bandage/Initialize(_healing_speed, bleed_reduction, _durability, _bandage_name, _trash_item)
 	if(!istype(parent, /obj/item/bodypart))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/bodypart/BP = parent

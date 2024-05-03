@@ -162,7 +162,7 @@
 			to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
 			return
 		if(BP.can_bandage(user))
-			BP.AddComponent(/datum/component/bandage, healing_rate, lifespan, "gauze")
+			BP.AddComponent(/datum/component/bandage, healing_rate, bleed_reduction, lifespan, "gauze")
 			user.visible_message(span_notice("[user] wraps [C]'s [parse_zone(BP.body_zone)] with [src]."), span_notice("You wrap [C]'s [parse_zone(check_zone(user.zone_selected))] with [src]."), span_hear("You hear ruffling cloth."))
 			return TRUE
 

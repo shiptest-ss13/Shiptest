@@ -88,13 +88,12 @@
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
 			if(BP.GetComponent(/datum/component/bandage))
 				continue
-			limb_bleed += BP.bleeding
-
 			//We want an accurate reading of .len
 			listclearnulls(BP.embedded_objects)
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
-					temp_bleed += 0.5
+					BP.adjust_bleeding(0.5, BLOOD_LOSS_DAMAGE_CAP)
+			limb_bleed += BP.bleeding
 
 		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects naturally decrease
 
