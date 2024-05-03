@@ -714,7 +714,7 @@ LIVE_MINE_HELPER(pressure/sound)
 			if(!has_mine)
 				new minetype(mine_turf)
 
-/obj/effect/spawner/minefield/proc/get_mine_turf
+/obj/effect/spawner/minefield/proc/get_mine_turf()
 	var/angle = rand(0, 1) * 2 * PI
 	var/distance = rand(0, 1) * (mine_range * mine_range)
 	var/x_cord = round(sqrt(distance) * cos(angle))
@@ -723,6 +723,7 @@ LIVE_MINE_HELPER(pressure/sound)
 	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
 	return(mine_turf)
 
+/*
 /obj/effect/spawner/minefield/proc/get_sign_turf
 	var/angle = rand(0, 1) * 2 * PI
 	var/distance = mine_range + sign_offset + (sign_offset * rand(0, 1))
@@ -731,9 +732,7 @@ LIVE_MINE_HELPER(pressure/sound)
 	var/turf/center_turf = get_turf(src)
 	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
 	return(mine_turf)
-
-//Math behind the madness https://www.desmos.com/calculator/pvqs6sfxvg
-/obj/effect/spawner/minefield/proc/random_cord()
+*/
 
 /obj/effect/spawner/minefield/random
 	name = "random minefield spawner"
