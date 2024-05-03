@@ -247,8 +247,8 @@
 		break_bone()
 
 	// Bleeding is applied here
-	if((sharpness && brute_dam+brute > bleed_threshold && brute > bleed_damage_min) || (brute_dam+brute > bleed_threshold_blunt && brute > bleed_damage_min_blunt))
-		adjust_bleeding(brute/max_damage)
+	if(brute_dam+brute > (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute > (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
+		adjust_bleeding(brute/max_damage, BLOOD_LOSS_DAMAGE_CAP)
 
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
@@ -335,6 +335,8 @@
 /obj/item/bodypart/proc/adjust_bleeding(value, maximum = BLOOD_LOSS_MAXIMUM)
 	if(bleeding > maximum)
 		return
+	if(owner.dna && (NOBLOOD in owner.dna.species.species_traits))
+		return
 	bleeding = round(clamp(bleeding+value, 0, maximum), 0.01)
 
 /obj/item/bodypart/proc/can_bandage(user)
@@ -347,7 +349,6 @@
 	if(GetComponent(/datum/component/bandage))
 		to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
 		return FALSE
-	return 
 
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)

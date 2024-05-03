@@ -4,7 +4,7 @@
 				BLOOD SYSTEM
 ****************************************************/
 
-/mob/living/carbon/human/proc/suppress_bloodloss(amount)
+/*mob/living/carbon/human/proc/suppress_bloodloss(amount) //KILLING these
 	if(bleedsuppress)
 		return
 	else
@@ -12,9 +12,8 @@
 		addtimer(CALLBACK(src, PROC_REF(resume_bleeding)), amount)
 
 /mob/living/carbon/human/proc/resume_bleeding()
-	bleedsuppress = 0
 	if(stat != DEAD && bleed_rate)
-		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")
+		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")*/
 
 
 /mob/living/carbon/monkey/handle_blood()
@@ -97,7 +96,7 @@
 				if(!embeddies.isEmbedHarmless())
 					temp_bleed += 0.5
 
-		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
+		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects naturally decrease
 
 		if((bleed_rate || limb_bleed) && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 			bleed(bleed_rate + limb_bleed)
@@ -125,7 +124,7 @@
 
 /mob/living/carbon/human/restore_blood()
 	blood_volume = BLOOD_VOLUME_NORMAL
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
+	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts())
 		BP.bleeding = 0
 	bleed_rate = 0
 

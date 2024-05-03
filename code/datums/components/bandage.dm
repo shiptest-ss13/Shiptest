@@ -3,6 +3,8 @@
 /datum/component/bandage
 	/// How much damage do we heal?
 	var/healing_speed = 0.2
+	/// How fast do we stop bleeding?
+	var/bleed_reduction = 0.2
 	/// How many healing ticks will this bandage apply? Reduced by incoming damage and other nasties
 	var/durability = 300
 	/// What is dropped when the bandage is removed?
@@ -44,15 +46,15 @@
 	durability--
 	if(heal_target.bleeding)
 		durability = round(durability - max(heal_target.bleeding, 1))
-		heal_target.adjust_bleeding(-actual_heal_speed)
+		heal_target.adjust_bleeding(-bleed_reduction)
 	if(durability <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
 		drop_bandage()
 
 /datum/component/bandage/proc/drop_bandage()
-	
+	var/obj/item/bodypart/BP = parent
 	if(trash_item)
 		new trash_item(get_turf(mummy))
-		mummy.visible_message(span_notice("The [bandage_name] on [mummy]'s [parent] falls to the floor."), span_notice("The [bandage_name] on your [parent] falls to the floor."))
+		mummy.visible_message(span_notice("The [bandage_name] on [mummy]'s [parse_zone(BP.body_zone)] falls to the floor."), span_notice("The [bandage_name] on your [parse_zone(BP.body_zone)] falls to the floor."))
 	else
 		to_chat(mummy, span_notice("The [bandage_name] on your [parent] finished healing."))
 	qdel(src)
