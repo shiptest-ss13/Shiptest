@@ -1,6 +1,24 @@
 /datum/reagent/consumable/ethanol/trickwine
 	name = "Trickwine"
 	description = "How is this even possible"
+	var/datum/status_effect/trickwine/debuff/debuff_effect = null
+	var/datum/status_effect/trickwine/buff/buff_effect = null
+
+/datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
+	..()
+	if(buff_effect)
+		consumer.apply_status_effect(buff_effect, src)
+
+/datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/consumer)
+	if(buff_effect && consumer.has_status_effect(buff_effect))
+		consumer.remove_status_effect((buff_effect))
+	..()
+
+/datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
+	if(method == TOUCH)
+		if(debuff_effect)
+			exposed_mob.apply_status_effect(debuff_effect, src, reac_volume)
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
 	name = "Ashwine"
@@ -52,7 +70,6 @@
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	M.adjustFireLoss(-1)
 	return ..()
-
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -176,6 +193,7 @@
 	glass_name = "Prismwine"
 	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	breakaway_flask_icon_state = "baflaskprismwine"
+	debuff_effect = /datum/status_effect/trickwine/debuff/prism
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
@@ -195,17 +213,70 @@
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
-		if(istype(M, /mob/living/simple_animal/hostile/asteroid))
-			var/mob/living/simple_animal/hostile/asteroid/the_animal = M
-			the_animal.armor.modifyRating(energy = -50)
-			spawn(reac_volume SECONDS)
-				the_animal.armor.modifyRating(energy = 50)
-		if(ishuman(M))
-			var/mob/living/carbon/human/the_human = M
-			if(the_human.physiology.burn_mod < 2)
-				the_human.physiology.burn_mod *= 2
-				the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
-				spawn(reac_volume SECONDS)
-					the_human.physiology.burn_mod *= 0.5
-					the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
+		M.apply_status_effect(/datum/status_effect/speed_boost, reac_volume SECONDS)
 	return ..()
+
+////////////////////
+// STATUS EFFECTS //
+////////////////////
+/atom/movable/screen/alert/status_effect/trickwine
+	name = "Trickwine"
+	desc = "Your empowered or weakened by a trickwine!"
+	icon_state = "breakaway_flask"
+
+/datum/status_effect/trickwine
+	id = "trick_wine"
+	duration = 5 SECONDS
+	examine_text = span_notice("They seem to be affected by a trickwine.")
+	alert_type = /atom/movable/screen/alert/status_effect/trickwine
+
+/datum/status_effect/trickwine/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
+	if(!trickwine_reagent)
+		CRASH("A trickwine status effect was created without a attached reagent")
+	. = ..()
+
+///////////
+// BUFFS //
+///////////
+/datum/status_effect/trickwine/buff
+	id = "trick_wine_buff"
+	examine_text = span_notice("IDK what to make this yet")
+
+/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
+	examine_text = span_notice("They seem to be affected by [trickwine_reagent.name].")
+	. = ..()
+
+/////////////
+// DEBUFFS //
+/////////////
+/datum/status_effect/trickwine/debuff
+	id = "trick_wine_debuff"
+	examine_text = span_notice("They seem to be covered in a trickwine.")
+
+/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration)
+	if(isnum(set_duration))
+		duration = set_duration
+	examine_text = span_notice("They seem to be covered in [trickwine_reagent.name].")
+	. = ..()
+
+/datum/status_effect/trickwine/debuff/prism
+	id = "prism_wine_debuff"
+
+/datum/status_effect/trickwine/debuff/prism/on_apply()
+	if(istype(owner, /mob/living/simple_animal/hostile/asteroid))
+		var/mob/living/simple_animal/hostile/asteroid/the_animal = owner
+		the_animal.armor.modifyRating(energy = -50)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/the_human = owner
+		if(the_human.physiology.burn_mod < 2)
+			the_human.physiology.burn_mod *= 2
+			the_human.visible_message(span_warning("[the_human] seems weakened!"))
+
+/datum/status_effect/trickwine/debuff/prism/on_remove()
+	if(istype(owner, /mob/living/simple_animal/hostile/asteroid))
+		var/mob/living/simple_animal/hostile/asteroid/the_animal = owner
+		the_animal.armor.modifyRating(energy = 50)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/the_human = owner
+		the_human.physiology.burn_mod *= 0.5
+		the_human.visible_message(span_warning("[the_human] has returned to normal!"))
