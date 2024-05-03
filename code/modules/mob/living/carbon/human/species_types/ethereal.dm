@@ -119,6 +119,7 @@
 		to_chat(H, "<span class='warning'>You were interupted!</span>")
 		return
 	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	ADD_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
 
 	while(do_after(H, E.root_time, target = H))
@@ -132,10 +133,7 @@
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
 				H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>You finish rooting and begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
-				if(do_after(H, E.dig_time,target = H))
-					to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
-					REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-					return
+				E.digout(H, E)
 		else
 			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
 			break
@@ -151,15 +149,21 @@
 			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
 			H.say("*scream")
 			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+			REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 			return
-		to_chat(H, "<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>")
-		if(do_after(H, E.dig_time,target = H))
-			H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>You finish rooting and begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
-			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-			return
+		H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
+		E.digout(H, E)
 
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 	return
+
+/datum/species/elzuose/proc/digout(mob/living/carbon/human/H, datum/species/elzuose/E)
+	if(do_after(H, E.dig_time,target = H))
+		to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
+		REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+		REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
+		return
 
 /datum/action/innate/root/IsAvailable()
 	if(..())
