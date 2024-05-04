@@ -140,7 +140,7 @@
 /obj/item/reagent_containers/food/snacks/energybar
 	name = "High-power energy bars"
 	icon_state = "energybar"
-	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Ethereal."
+	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Elzuosa."
 	trash = /obj/item/trash/energybar
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 3)
 	filling_color = "#97ee63"
