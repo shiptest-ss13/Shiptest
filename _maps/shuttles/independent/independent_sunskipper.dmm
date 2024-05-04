@@ -424,7 +424,8 @@
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
 	pixel_x = -5;
-	pixel_y = 5
+	pixel_y = 5;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -3214,10 +3215,6 @@
 	pixel_y = 1
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/glasses/sunglasses/reagent{
-	pixel_y = 5;
-	pixel_x = 9
-	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "PM" = (
