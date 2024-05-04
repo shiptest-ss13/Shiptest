@@ -207,6 +207,7 @@
 /datum/overmap/event/wormhole
 	name = "wormhole"
 	desc = "A hole through space. If you go through here, you might end up anywhere."
+	base_icon_state = "wormhole"
 	token_icon_state = "wormhole"
 	spread_chance = 0
 	chain_rate = 0

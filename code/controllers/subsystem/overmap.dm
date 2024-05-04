@@ -238,6 +238,9 @@ SUBSYSTEM_DEF(overmap)
 	name = null
 	has_outpost = FALSE
 
+/datum/overmap_star_system/wilderness/oldgen
+	generator_type = OVERMAP_GENERATOR_RANDOM
+
 /datum/overmap_star_system/outposted
 	name = "Ligmata Teagarden Memorial sector"
 	has_outpost = TRUE

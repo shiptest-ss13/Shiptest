@@ -41,6 +41,10 @@
 	var/max_missions = 15
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
+	/// List of all of the things this outpost offers
+	var/list/supply_packs = list()
+	/// our 'Order number'
+	var/ordernum = 1
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
@@ -64,6 +68,7 @@
 	Rename(gen_outpost_name())
 
 	fill_missions()
+	populate_cargo()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
@@ -139,6 +144,15 @@
 		var/mission_type = get_weighted_mission_type()
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
+
+/datum/overmap/outpost/proc/populate_cargo()
+	ordernum = rand(1, 9000)
+
+	for(var/pack in subtypesof(/datum/supply_pack))
+		var/datum/supply_pack/P = new pack()
+		if(!P.contains)
+			continue
+		supply_packs[P.type] = P
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
