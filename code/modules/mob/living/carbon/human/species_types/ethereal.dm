@@ -143,7 +143,7 @@
 		// Rooting was interupted, so we start digging yourself out.
 		if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
 			//You got moved and uprooted, time to suffer the consequences.
-			H.visible_message("<span_class='warning'>[H] is forcefully uprooted. That looked like it hurt.</span>","<span class='warning'>You're forcefully unrooted! Ouch!</span>","<span_class='warning'>You hear someone scream in pain.</span>")
+			H.visible_message("<span_class='warning'>[H] is forcefully uprooted. That looked like it hurt.</span>","<span class='warning'>You're forcefully unrooted! Ouch!</span>","<span_class='warning'>You hear someone scream in pain..</span>")
 			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
