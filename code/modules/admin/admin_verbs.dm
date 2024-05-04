@@ -214,7 +214,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/client/proc/check_timer_sources,
-	/client/proc/view_manifest,
 	/client/proc/air_status, //Air things
 	/client/proc/air_status_loc, //More air things
 	/client/proc/manipulate_organs,

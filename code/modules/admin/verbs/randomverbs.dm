@@ -767,19 +767,6 @@
 	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
 
-/client/proc/view_manifest()
-	set name = "View Crew Manifest"
-	set category = "Admin.Game"
-
-	if(world.time < crew_manifest_delay)
-		return
-	crew_manifest_delay = world.time + (1 SECONDS)
-
-	if(!GLOB.crew_manifest_tgui)
-		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
-
-	GLOB.crew_manifest_tgui.ui_interact(src)
-
 /client/proc/modify_goals()
 	set category = "Debug"
 	set name = "Modify goals"
