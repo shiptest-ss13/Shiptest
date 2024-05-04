@@ -121,7 +121,6 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/polymorph_all,
 	/client/proc/show_tip,
 	/client/proc/smite,
-	/client/proc/spawn_ruin,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
 GLOBAL_LIST_INIT(admin_verbs_spawn, list(
@@ -130,7 +129,9 @@ GLOBAL_LIST_INIT(admin_verbs_spawn, list(
 	/datum/admins/proc/spawn_cargo,
 	/datum/admins/proc/spawn_objasmob,
 	/datum/admins/proc/beaker_panel,
-	/datum/admins/proc/gift
+	/datum/admins/proc/gift,
+	/client/proc/spawn_ruin,
+	/client/proc/spawn_outpost /* Allows admins to spawn a new outpost. */
 	))
 GLOBAL_PROTECT(admin_verbs_spawn)
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
@@ -169,10 +170,13 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/cmd_display_del_log,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
+	/client/proc/cmd_admin_grantfullaccess,
+	/client/proc/cmd_assume_direct_control,	//-errorage
+	/client/proc/cmd_give_direct_control,
 	/client/proc/getserverlogs,		/*for accessing server logs*/
 	/client/proc/getcurrentlogs,		/*for accessing server logs for the current round*/
 	/client/proc/restart_controller,
-	/client/proc/enable_debug_verbs,
+	/client/proc/disable_debug_verbs,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
 	/client/proc/SDQL2_query,
@@ -205,12 +209,17 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	#endif
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
-	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
-	/client/proc/check_timer_sources
+	/client/proc/check_timer_sources,
+	/client/proc/view_manifest,
+	/client/proc/air_status, //Air things
+	/client/proc/air_status_loc, //More air things
+	/client/proc/manipulate_organs,
+	/client/proc/set_server_fps,	//allows you to set the ticklag.
+	/client/proc/start_singlo,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -269,10 +278,9 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/Debug2,
 	/client/proc/reload_admins,
 	/client/proc/cmd_debug_make_powernets,
-	/client/proc/startSinglo,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
-	/client/proc/enable_debug_verbs,
+	/client/proc/disable_debug_verbs,
 	/proc/possess,
 	/proc/release,
 	/client/proc/reload_admins,
@@ -305,7 +313,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if(rights & R_SERVER)
 			add_verb(src, GLOB.admin_verbs_server)
 		if(rights & R_DEBUG)
-			add_verb(src, GLOB.admin_verbs_debug)
+			add_verb(src, list(GLOB.admin_verbs_debug, GLOB.admin_verbs_debug_extra))
 		if(rights & R_POSSESS)
 			add_verb(src, GLOB.admin_verbs_possess)
 		if(rights & R_PERMISSIONS)
@@ -338,7 +346,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		/client/proc/play_web_sound,
 		GLOB.admin_verbs_spawn,
 		/*Debug verbs added by "show debug verbs"*/
-		GLOB.admin_verbs_debug_mapping,
+		GLOB.admin_verbs_debug_extra,
 		/client/proc/disable_debug_verbs,
 		/client/proc/readmin
 		))
@@ -503,7 +511,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stealth Mode") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/drop_bomb()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
 
@@ -545,7 +553,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/drop_dynex_bomb()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Drop DynEx Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
 
@@ -592,7 +600,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("[key_name_admin(usr)] has  modified Dynamic Explosion Scale: [ex_scale]")
 
 /client/proc/give_spell(mob/T in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Give Spell"
 	set desc = "Gives a spell to a mob."
 
@@ -616,7 +624,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		message_admins("<span class='danger'>Spells given to mindless mobs will not be transferred in mindswap or cloning!</span>")
 
 /client/proc/remove_spell(mob/T in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Remove Spell"
 	set desc = "Remove a spell from the selected mob."
 
@@ -629,7 +637,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			SSblackbox.record_feedback("tally", "admin_verb", 1, "Remove Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/give_disease(mob/living/T in GLOB.mob_living_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Give Disease"
 	set desc = "Gives a Disease to a mob."
 	if(!istype(T))
@@ -644,7 +652,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D].</span>")
 
 /client/proc/object_say(obj/O in world)
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "OSay"
 	set desc = "Makes an object say something."
 	var/message = input(usr, "What do you want the message to be?", "Make Sound") as text | null
@@ -654,9 +662,10 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] made [O] at [AREACOORD(O)] say \"[message]\"")
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [O] at [AREACOORD(O)]. say \"[message]\"</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Object Say") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
-	set category = "Admin.Events"
+	set category = "Event"
 	if (!(holder.rank.rights & R_BUILD))
 		return
 	if(src.mob)

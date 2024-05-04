@@ -215,7 +215,7 @@
 
 
 /datum/admins/proc/access_news_network() //MARKER
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Access Newscaster Network"
 	set desc = "Allows you to view, add and edit news feeds."
 
@@ -700,7 +700,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
 /datum/admins/proc/spawn_atom(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn an atom"
 	set name = "Spawn"
 
@@ -729,9 +729,9 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/podspawn_atom(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn an atom via supply drop"
-	set name = "Podspawn"
+	set name = "Supply drop spawn"
 
 	if(!check_rights(R_SPAWN))
 		return
@@ -753,7 +753,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Podspawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/spawn_cargo(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn a cargo crate"
 	set name = "Spawn Cargo"
 
