@@ -1,13 +1,13 @@
 /datum/reagent/consumable/ethanol/trickwine
 	name = "Trickwine"
 	description = "How is this even possible"
-	var/datum/status_effect/trickwine/debuff/debuff_effect = null
-	var/datum/status_effect/trickwine/buff/buff_effect = null
+	var/datum/status_effect/trickwine/debuff_effect = null
+	var/datum/status_effect/trickwine/buff_effect = null
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
-	..()
 	if(buff_effect)
 		consumer.apply_status_effect(buff_effect, src)
+	..()
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/consumer)
 	if(buff_effect && consumer.has_status_effect(buff_effect))
@@ -17,7 +17,7 @@
 /datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(debuff_effect)
-			exposed_mob.apply_status_effect(debuff_effect, src, reac_volume)
+			exposed_mob.apply_status_effect(debuff_effect, src, reac_volume SECONDS)
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
@@ -159,18 +159,7 @@
 	glass_name = "Forcewine"
 	glass_desc = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
 	breakaway_flask_icon_state = "baflaskforcewine"
-
-/datum/reagent/consumable/ethanol/trickwine/force_wine/on_mob_metabolize(mob/living/M)
-	..()
-	ADD_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
-	ADD_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
-	M.visible_message("<span class='warning'>[M] glows a dim grey aura</span>")
-
-/datum/reagent/consumable/ethanol/trickwine/force_wine/on_mob_end_metabolize(mob/living/M)
-	M.visible_message("<span class='warning'>[M]'s aura fades away </span>")
-	REMOVE_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
-	REMOVE_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
-	..()
+	buff_effect = /datum/status_effect/trickwine/buff/force
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -211,11 +200,6 @@
 	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 	..()
 
-/datum/reagent/consumable/ethanol/trickwine/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH)
-		M.apply_status_effect(/datum/status_effect/speed_boost, reac_volume SECONDS)
-	return ..()
-
 ////////////////////
 // STATUS EFFECTS //
 ////////////////////
@@ -224,17 +208,37 @@
 	desc = "Your empowered or weakened by a trickwine!"
 	icon_state = "breakaway_flask"
 
+/atom/movable/screen/alert/status_effect/trickwine/proc/setup(datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
+	name = trickwine_reagent.name
+	icon_state = "template"
+	cut_overlays()
+	var/icon/flask_icon = icon('icons/obj/drinks/drinks.dmi', trickwine_reagent.breakaway_flask_icon_state)
+	add_overlay(flask_icon)
+
 /datum/status_effect/trickwine
 	id = "trick_wine"
-	duration = 5 SECONDS
 	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
+	var/flask_icon_state
+	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
 
-/datum/status_effect/trickwine/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
+/datum/status_effect/trickwine/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
+	flask_icon_state = trickwine_reagent.breakaway_flask_icon_state
+	. = ..()
 	if(!trickwine_reagent)
 		CRASH("A trickwine status effect was created without a attached reagent")
-	. = ..()
+	if(istype(linked_alert, /atom/movable/screen/alert/status_effect/trickwine))
+		var/atom/movable/screen/alert/status_effect/trickwine/trickwine_alert = linked_alert
+		trickwine_alert.setup(trickwine_reagent)
 
+/datum/status_effect/trickwine/on_apply()
+	owner.visible_message(span_notice("[owner] is affected by a wine!"), span_notice("You are affected by trickwine!"))
+	owner.add_filter(id, 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
+	return ..()
+
+/datum/status_effect/trickwine/on_remove()
+	owner.visible_message(span_notice("[owner] is no longer affected by a wine!"), span_notice("You are no longer affected by trickwine!"))
+	owner.remove_filter(id)
 ///////////
 // BUFFS //
 ///////////
@@ -242,9 +246,23 @@
 	id = "trick_wine_buff"
 	examine_text = span_notice("IDK what to make this yet")
 
-/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
-	examine_text = span_notice("They seem to be affected by [trickwine_reagent.name].")
+/datum/status_effect/trickwine/buff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	. = ..()
+	examine_text = span_notice("They seem to be affected by [trickwine_reagent.name].")
+
+/datum/status_effect/trickwine/buff/force
+	id = "force_wine_buff"
+
+/datum/status_effect/trickwine/buff/force/on_apply()
+	ADD_TRAIT(owner, TRAIT_ANTIMAGIC, "trickwine")
+	ADD_TRAIT(owner, TRAIT_MINDSHIELD, "trickwine")
+	owner.visible_message(span_warning("[owner] glows a dim grey aura"))
+	return ..()
+
+/datum/status_effect/trickwine/buff/force/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, "trickwine")
+	REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, "trickwine")
+	owner.visible_message(span_warning("[owner]'s aura fades away"))
 
 /////////////
 // DEBUFFS //
@@ -253,11 +271,11 @@
 	id = "trick_wine_debuff"
 	examine_text = span_notice("They seem to be covered in a trickwine.")
 
-/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, /datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration)
+/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration = null)
 	if(isnum(set_duration))
 		duration = set_duration
-	examine_text = span_notice("They seem to be covered in [trickwine_reagent.name].")
 	. = ..()
+	examine_text = span_notice("They seem to be covered in [trickwine_reagent.name].")
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
@@ -271,6 +289,7 @@
 		if(the_human.physiology.burn_mod < 2)
 			the_human.physiology.burn_mod *= 2
 			the_human.visible_message(span_warning("[the_human] seems weakened!"))
+	return ..()
 
 /datum/status_effect/trickwine/debuff/prism/on_remove()
 	if(istype(owner, /mob/living/simple_animal/hostile/asteroid))
