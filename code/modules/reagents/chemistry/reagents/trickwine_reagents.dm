@@ -182,23 +182,8 @@
 	glass_name = "Prismwine"
 	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	breakaway_flask_icon_state = "baflaskprismwine"
+	buff_effect = /datum/status_effect/trickwine/buff/prism
 	debuff_effect = /datum/status_effect/trickwine/debuff/prism
-
-/datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
-	..()
-	ADD_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 0.5
-	M.add_filter("prism-wine", 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
-	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
-
-/datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
-	REMOVE_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 2
-	M.remove_filter("prism-wine")
-	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
-	..()
 
 ////////////////////
 // STATUS EFFECTS //
@@ -221,24 +206,27 @@
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
 	var/flask_icon_state
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
+	var/reagent_color = "#FFFFFF"
 
 /datum/status_effect/trickwine/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	flask_icon_state = trickwine_reagent.breakaway_flask_icon_state
 	. = ..()
 	if(!trickwine_reagent)
 		CRASH("A trickwine status effect was created without a attached reagent")
+	reagent_color = trickwine_reagent.color
 	if(istype(linked_alert, /atom/movable/screen/alert/status_effect/trickwine))
 		var/atom/movable/screen/alert/status_effect/trickwine/trickwine_alert = linked_alert
 		trickwine_alert.setup(trickwine_reagent)
 
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] is affected by a wine!"), span_notice("You are affected by trickwine!"))
-	owner.add_filter(id, 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
+	owner.add_filter(id, 2, list("type"="outline", "color"=reagent_color, "size"=1))
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
 	owner.visible_message(span_notice("[owner] is no longer affected by a wine!"), span_notice("You are no longer affected by trickwine!"))
 	owner.remove_filter(id)
+
 ///////////
 // BUFFS //
 ///////////
@@ -254,15 +242,35 @@
 	id = "force_wine_buff"
 
 /datum/status_effect/trickwine/buff/force/on_apply()
-	ADD_TRAIT(owner, TRAIT_ANTIMAGIC, "trickwine")
-	ADD_TRAIT(owner, TRAIT_MINDSHIELD, "trickwine")
+	ADD_TRAIT(owner, TRAIT_ANTIMAGIC, id)
+	ADD_TRAIT(owner, TRAIT_MINDSHIELD, id)
 	owner.visible_message(span_warning("[owner] glows a dim grey aura"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/force/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, "trickwine")
-	REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, "trickwine")
+	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, id)
+	REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, id)
 	owner.visible_message(span_warning("[owner]'s aura fades away"))
+	..()
+
+/datum/status_effect/trickwine/buff/prism
+	id = "prism_wine_buff"
+
+/datum/status_effect/trickwine/buff/prism/on_apply()
+	ADD_TRAIT(owner, TRAIT_REFLECTIVE, id)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/the_human = owner
+		the_human.physiology.burn_mod *= 0.5
+	owner.visible_message(span_warning("[owner] seems to shimmer with power!"))
+	return ..()
+
+/datum/status_effect/trickwine/buff/prism/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_REFLECTIVE, id)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/the_human = owner
+		the_human.physiology.burn_mod *= 2
+	owner.visible_message(span_warning("[owner] has returned to normal!"))
+	..()
 
 /////////////
 // DEBUFFS //
@@ -286,9 +294,8 @@
 		the_animal.armor.modifyRating(energy = -50)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
-		if(the_human.physiology.burn_mod < 2)
-			the_human.physiology.burn_mod *= 2
-			the_human.visible_message(span_warning("[the_human] seems weakened!"))
+		the_human.physiology.burn_mod *= 2
+		the_human.visible_message(span_warning("[the_human] seems weakened!"))
 	return ..()
 
 /datum/status_effect/trickwine/debuff/prism/on_remove()
@@ -299,3 +306,4 @@
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
 		the_human.visible_message(span_warning("[the_human] has returned to normal!"))
+	..()
