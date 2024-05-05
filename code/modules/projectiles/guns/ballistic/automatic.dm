@@ -10,8 +10,9 @@
 	can_suppress = TRUE
 	burst_size = 3
 	fire_delay = 2
-	current_firemode = FIREMODE_SEMIAUTO
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	var/default_firemode = FIREMODE_SEMIAUTO
+	var/firemode_index
+	var/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
