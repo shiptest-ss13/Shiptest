@@ -514,6 +514,15 @@
 		to_chat(user, "<span class='warning'>It is fastened to the floor!</span>")
 		return FALSE
 	return TRUE
+/obj/machinery/power/shieldwallgen/atmos/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(I.tool_behaviour == TOOL_MULTITOOL && !panel_open)
+		var/obj/item/multitool/multi = I
+		if (istype(multi.buffer,/obj/item/assembly/control/shieldwallgen))
+			var/obj/item/assembly/control/shieldwallgen/controller = multi.buffer
+			id = controller.id
+
+
 
 /// Same as in the normal shieldwallgen, but with the shieldwalls replaced with atmos shieldwalls
 /obj/machinery/power/shieldwallgen/atmos/setup_field(direction)

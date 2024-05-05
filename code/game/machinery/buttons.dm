@@ -91,6 +91,11 @@
 				req_access = board.accesses
 			to_chat(user, "<span class='notice'>You add [W] to the button.</span>")
 
+		if(device && W.tool_behaviour == TOOL_MULTITOOL)
+			var/obj/item/multitool/multi = W
+			if(istype(device, /obj/item/assembly/control) || istype(device,/obj/item/assembly/control/shieldwallgen))
+				multi.buffer = device
+
 		if(!device && !board && W.tool_behaviour == TOOL_WRENCH)
 			to_chat(user, "<span class='notice'>You start unsecuring the button frame...</span>")
 			W.play_tool_sound(src)

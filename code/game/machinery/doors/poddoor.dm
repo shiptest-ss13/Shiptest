@@ -36,10 +36,15 @@
 
 	if(panel_open && !density)
 		if(W.tool_behaviour == TOOL_MULTITOOL)
-			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
-			if(change_id)
-				id = clamp(round(change_id, 1), 1, 100)
-				to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+			var/obj/item/multitool/multi = W
+			if (istype(multi.buffer,/obj/item/assembly/control))
+				var/obj/item/assembly/control/controller = multi.buffer
+				id = controller.id
+			else
+				var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
+				if(change_id)
+					id = clamp(round(change_id, 1), 1, 100)
+					to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
 
 		if(W.tool_behaviour == TOOL_CROWBAR)
 			to_chat(user, "<span class='notice'>You start to remove the airlock electronics.</span>")
