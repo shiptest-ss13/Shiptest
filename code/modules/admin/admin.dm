@@ -1024,7 +1024,6 @@
 	set name = "View Manifest"
 	set desc = "Opens the Manifest UI."
 
-
 	if(!GLOB.crew_manifest_tgui)
 		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
