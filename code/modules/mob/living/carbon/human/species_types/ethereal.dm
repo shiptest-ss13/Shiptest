@@ -106,25 +106,24 @@
 	if(H.wear_suit && istype(H.wear_suit, /obj/item/clothing))
 		var/obj/item/clothing/CS = H.wear_suit
 		if (CS.clothing_flags & THICKMATERIAL)
-			to_chat(H, "<span class='warning'>Your [CS.name] is too thick to root in!</span>")
+			to_chat(H, span_warning("Your [CS.name] is too thick to root in!"))
 			return
 
 	if(stomach.crystal_charge > charge_limit)
-		to_chat(H, "<span class='warning'>Your charge is full!</span>")
+		to_chat(H,span_warning("Your charge is full!"))
 		return
 	E.drain_time = world.time + E.root_time
-	to_chat(H, "<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>")
-	H.visible_message("<span_class='notice'>[H] is digging into the ground.</span>","<span class='warning'>You start to dig yourself into the ground to root. You won't won't be able to move once you start the process.</span>","<span_class='notice'>You hear digging.</span>")
+	H.visible_message(span_notice("[H] is digging into the ground"),span_warning("You start to dig yourself into the ground to root. You won't won't be able to move once you start the process."),span_notice("You hear digging."))
 	if(!do_after(H,E.dig_time, target = H))
-		to_chat(H, "<span class='warning'>You were interupted!</span>")
+		to_chat(H,span_warning("You were interupted!"))
 		return
 	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 	ADD_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
-	to_chat(H, "<span class='notice'>You root into the ground and begin to feed.</span>")
+	to_chat(H, span_notice("You root into the ground and begin to feed."))
 
 	while(do_after(H, E.root_time, target = H))
 		if(istype(stomach))
-			to_chat(H, "<span class='notice'>You receive some charge from rooting.</span>")
+			to_chat(H, span_notice("You receive some charge from rooting."))
 			stomach.adjust_charge(E.root_charge_gain)
 			H.adjustBruteLoss(-3)
 			H.adjustFireLoss(-3)
@@ -132,10 +131,10 @@
 
 			if(stomach.crystal_charge > charge_limit)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-				H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>You finish rooting and begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
+				H.visible_message(span_notice("[H] is digging out of the ground."),span_notice("You finish rooting and begin digging yourself out."),span_notice("You hear digging."))
 				E.digout(H, E)
 		else
-			to_chat(H, "<span class='warning'>You can't recieve charge from rooting!</span>")
+			to_chat(H,span_warning("You can't recieve charge from rooting!"))
 			break
 
 	// Your rooting do afters weren't completed
@@ -143,7 +142,7 @@
 		// Rooting was interupted, so we start digging yourself out.
 		if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
 			//You got moved and uprooted, time to suffer the consequences.
-			H.visible_message("<span_class='warning'>[H] is forcefully uprooted. That looked like it hurt.</span>","<span class='warning'>You're forcefully unrooted! Ouch!</span>","<span_class='warning'>You hear someone scream in pain.</span>")
+			H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
 			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
@@ -151,7 +150,7 @@
 			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 			REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 			return
-		H.visible_message("<span_class='notice'>[H] is digging out of the ground.</span>","<span class='notice'>Your rooting was interupted and you begin digging yourself out.</span>","<span_class='notice'>You hear digging.</span>")
+		H.visible_message(span_notice("[H] is digging out of the ground."),span_notice(">Your rooting was interupted and you begin digging yourself out."),span_notice("You hear digging."))
 		E.digout(H, E)
 
 	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
@@ -160,7 +159,7 @@
 
 /datum/species/elzuose/proc/digout(mob/living/carbon/human/H, datum/species/elzuose/E)
 	if(do_after(H, E.dig_time,target = H))
-		to_chat(H, "<span class='notice'>You finish digging yourself out.</span>")
+		to_chat(H,span_notice("You finish digging yourself out."))
 		REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 		REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 		return
@@ -238,7 +237,7 @@
 /datum/species/elzuose/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
 	spec_updatehealth(H)
-	to_chat(H, "<span class='notice'>You feel the light of your body leave you.</span>")
+	to_chat(H, span_notice("You feel the light of your body leave you."))
 	switch(severity)
 		if(EMP_LIGHT)
 			addtimer(CALLBACK(src, PROC_REF(stop_emp), H), 10 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 10 seconds
@@ -250,8 +249,8 @@
 		return
 	emag_effect = TRUE
 	if(user)
-		to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
-	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
+		to_chat(user, span_notice("You tap [H] on the back with your card."))
+	H.visible_message(span_danger("[H] starts flickering in an array of colors!"))
 	handle_emag(H)
 	addtimer(CALLBACK(src, PROC_REF(stop_emag), H), 30 SECONDS) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
 
@@ -262,7 +261,7 @@
 /datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/H)
 	EMPeffect = FALSE
 	spec_updatehealth(H)
-	to_chat(H, "<span class='notice'>You feel more energized as your shine comes back.</span>")
+	to_chat(H, span_notice("You feel more energized as your shine comes back."))
 
 /datum/species/elzuose/proc/handle_emag(mob/living/carbon/human/H)
 	if(!emag_effect)
@@ -274,7 +273,7 @@
 /datum/species/elzuose/proc/stop_emag(mob/living/carbon/human/H)
 	emag_effect = FALSE
 	spec_updatehealth(H)
-	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
+	H.visible_message(span_danger("[H] stops flickering and goes back to their normal state!"))
 
 /datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
@@ -303,8 +302,8 @@
 			H.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/H)
-	to_chat(H, "<span class='warning'>You begin to lose control over your charge!</span>")
-	H.visible_message("<span class='danger'>[H] begins to spark violently!</span>")
+	to_chat(H,span_warning("You begin to lose control over your charge!"))
+	H.visible_message(span_danger("[H] begins to spark violently!"))
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	H.add_overlay(overcharge)
@@ -316,12 +315,12 @@
 		tesla_zap(H, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
 			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
-		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
-		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
+		to_chat(H,span_warning("You violently discharge energy!"))
+		H.visible_message(span_danger("[H] violently discharges energy!"))
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
 			var/datum/disease/D = new /datum/disease/heart_failure
 			H.ForceContractDisease(D)
-			to_chat(H, "<span class='userdanger'>You're pretty sure you just felt your heart stop for a second there..</span>")
+			to_chat(H, span_userdanger("You're pretty sure you just felt your heart stop for a second there."))
 			H.playsound_local(H, 'sound/effects/singlebeat.ogg', 100, 0)
 		H.Paralyze(100)
 		return
@@ -339,7 +338,7 @@
 			return
 
 		if (emag_effect == TRUE)
-			to_chat(user, "<span class='danger'>The multitool can't get a lock on [H]'s EM frequency</span>")
+			to_chat(user, span_warning("The multitool can't get a lock on [H]'s EM frequency!"))
 			return
 
 		if(user != H)
@@ -347,7 +346,7 @@
 			default_color = "#" + GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 			current_color = health_adjusted_color(H, default_color)
 			spec_updatehealth(H)
-			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
+			H.visible_message(span_danger("[H]'s EM frequency is scrambled to a random color."))
 		else
 			// select new color
 			var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference",default_color) as color|null
@@ -357,8 +356,8 @@
 					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
 					current_color = health_adjusted_color(H, default_color)
 					spec_updatehealth(H)
-					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+					H.visible_message(span_notice("[H] modulates \his EM frequency to [new_etherealcolor]"))
 				else
-					to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+					to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 	else
 		. = ..()
