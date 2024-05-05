@@ -3,6 +3,8 @@
 	name = "\improper Sarathi"
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
+	species_age_min = 17
+	species_age_max = 175
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
