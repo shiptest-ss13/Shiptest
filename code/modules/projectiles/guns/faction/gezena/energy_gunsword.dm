@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/obj/guns/faction/gezena/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/faction/gezena/righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 
 	modifystate = TRUE
 
@@ -72,7 +72,7 @@
 	desc = "Etherbor's current and sidearm offering. While intended for marines, it's also available for civillians"
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 
 	modifystate = FALSE
 
