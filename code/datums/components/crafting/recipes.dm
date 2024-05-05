@@ -275,6 +275,7 @@
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
 				/obj/item/stock_parts/micro_laser = 1,
 				/obj/item/stock_parts/capacitor = 1,
+				/obj/item/stock_parts/scanning_module = 1,
 				/datum/reagent/iron = 5,
 				/datum/reagent/uranium = 5)
 	tools = list(TOOL_SCREWDRIVER)
