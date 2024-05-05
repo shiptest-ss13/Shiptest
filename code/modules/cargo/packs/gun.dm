@@ -30,6 +30,12 @@
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
 
+/datum/supply_pack/gun/candors
+	name = "Candor Pistol Crate"
+	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
+	cost = 1000
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/candor)
+
 /datum/supply_pack/gun/revolver
 	name = "Scarborough Revolver Crate"
 	desc = "Contains a concealable Scarborough revolver, chambered in .357."
