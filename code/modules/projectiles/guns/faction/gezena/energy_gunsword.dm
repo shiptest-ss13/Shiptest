@@ -73,8 +73,7 @@
 	desc = "Etherbor's current and sidearm offering. While intended for marines, it's also available for civillians"
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
-	w_class = WEIGHT_CLASS_SMALL
-
+	w_class = WEIGHT_CLASS_NORMAL
 	modifystate = FALSE
 
 	wield_delay = 0.2 SECONDS
