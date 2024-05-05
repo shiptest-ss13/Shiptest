@@ -43,7 +43,7 @@
 
 /datum/supply_pack/gun/detrevolver
 	name = "Hunter's Pride Detective Revolver Crate"
-	desc = "Contains a concealable Solarian revolver, chambered in .38."
+	desc = "Contains a concealable revolver, originally commissioned by Nanotrasen and produced by Hunter's Pride, chambered in .38."
 	cost = 600
 	contains = list(/obj/item/gun/ballistic/revolver/detective)
 
