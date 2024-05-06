@@ -10,33 +10,6 @@
 	pass_flags_self = LETPASSTHROW
 	can_buckle = TRUE
 	buckle_lying = 90 //we turn to you!
-	var/datum/religion_sect/sect_to_altar // easy access!
-	var/datum/religion_rites/performing_rite
-
-/obj/structure/altar_of_gods/examine(mob/user)
-	. = ..()
-	var/can_i_see = FALSE
-	if(isobserver(user))
-		can_i_see = TRUE
-
-	if(!can_i_see || !sect_to_altar)
-		return
-
-	. += "<span class='notice'>The sect currently has [round(sect_to_altar.favor)] favor with [GLOB.deity].</span>"
-	if(!sect_to_altar.rites_list)
-		return
-	. += "List of available Rites:"
-	. += sect_to_altar.rites_list
-
-
-/obj/structure/altar_of_gods/Initialize(mapload)
-	. = ..()
-	if(GLOB.religious_sect)
-		sect_to_altar = GLOB.religious_sect
-		if(sect_to_altar.altar_icon)
-			icon = sect_to_altar.altar_icon
-		if(sect_to_altar.altar_icon_state)
-			icon_state = sect_to_altar.altar_icon_state
 
 /obj/structure/altar_of_gods/attack_hand(mob/living/user)
 	if(!Adjacent(user) || !user.pulling)
@@ -52,10 +25,3 @@
 		return ..()
 	pushed_mob.forceMove(loc)
 	return ..()
-
-/obj/structure/altar_of_gods/proc/generate_available_sects(mob/user) //eventually want to add sects you get from unlocking certain achievements
-	. = list()
-	for(var/i in subtypesof(/datum/religion_sect))
-		var/datum/religion_sect/not_a_real_instance_rs = i
-		if(initial(not_a_real_instance_rs.starter))
-			. += list(initial(not_a_real_instance_rs.name) = i)
