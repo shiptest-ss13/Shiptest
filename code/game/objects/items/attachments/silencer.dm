@@ -4,7 +4,7 @@
 	icon_state = "silencer"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	pixel_shift_x = 1
-	pixel_shift_y = 1
+	pixel_shift_y = 2
 
 /obj/item/attachment/silencer/Attach(obj/item/gun/gun, mob/user)
 	. = ..()

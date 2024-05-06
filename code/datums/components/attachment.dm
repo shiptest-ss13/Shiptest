@@ -58,6 +58,8 @@
 	SIGNAL_HANDLER
 	if(attach_features_flags & ATTACH_TOGGLE)
 		INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
+		holder.update_icon()
+		attachment_toggle_action.UpdateButtonIcon()
 
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
@@ -142,6 +144,11 @@
 /datum/action/attachment/Trigger()
 	..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
+
+/datum/action/attachment/UpdateButtonIcon()
+	icon_icon = target.icon
+	button_icon_state = target.icon_state
+	..()
 
 /datum/action/attachment/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
 	if(button_icon && button_icon_state)

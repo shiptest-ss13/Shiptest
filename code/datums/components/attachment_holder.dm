@@ -79,24 +79,23 @@
 	if(!attach)
 		return
 	SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TOGGLE, parent, user)
-	parent.update_icon()
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	if(length(attachments))
-		examine_list += "<span class='notice'>It has [length(attachments)] attachment\s.</span>"
+		examine_list += span_notice("It has [length(attachments)] attachment\s.")
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	for(var/key in slot_room)
-		examine_list += "<span class='notice'>It has [slot_room[key]] slot\s for [key] attachments.</span>"
+		examine_list += span_notice("It has [slot_room[key]] slot\s for [key] attachments.")
 	if(length(attachments))
-		examine_list += "<span class='notice'>It has the following attachments:</span>"
+		examine_list += span_notice("It has the following attachments:")
 		for(var/obj/item/attach as anything in attachments)
-			examine_list += "<span class='notice'>\t- [attach.name]</span>"
-		examine_list += "<span class='notice'>\tThey can be removed with a <i>crowbar</i></span>"
-	for(var/attach_type in valid_types)
-		examine_list += "<span class='notice'>It can accept [attach_type]</span>"
+			examine_list += span_notice("\t- [attach.name]")
+		examine_list += span_notice("\tThey can be removed with a <i>crowbar</i>")
+	for(var/obj/attach_type as anything in valid_types)
+		examine_list += span_notice("It can accept [initial(attach_type.name)]")
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE_MORE, user, examine_list)
 
@@ -104,10 +103,10 @@
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
 	if(!(attachment.type in valid_types))
-		to_chat(user, "<span class='notice'>[attachment] is not a valid attachment for this [parent]!</span>")
+		to_chat(user, span_notice("[attachment] is not a valid attachment for this [parent]!"))
 		return
 	if(!slot_room[slot])
-		to_chat(user, "<span class='notice'>[parent] does not contain room for [attachment]!</span>")
+		to_chat(user, span_notice("[parent] does not contain room for [attachment]!"))
 		return
 	slot_room[slot]--
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user)
