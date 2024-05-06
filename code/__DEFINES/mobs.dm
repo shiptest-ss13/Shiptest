@@ -31,6 +31,8 @@
 // Bloodloss
 #define BLOOD_LOSS_MAXIMUM 30
 #define BLOOD_LOSS_DAMAGE_CAP 2
+#define BLOOD_CAUTERIZATION_RATIO 10
+#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
 
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0

@@ -1,3 +1,27 @@
+/mob/living/carbon/attackby(obj/item/W, mob/user, params)
+	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
+	var/has_painkillers = user.reagents.has_reagent(/datum/reagent/medicine/morphine, needs_metabolizing = TRUE)
+	if(!user.a_intent == INTENT_HELP || !W.get_temperature() || !BP?.bleeding)
+		return ..()
+	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam > 5) //prioritize healing if we're synthetic
+		return ..()
+	. = TRUE
+	var/heal_time = 2 SECONDS
+	playsound(user, 'sound/surgery/cautery1.ogg', 20)
+	balloon_alert(user, "cauterizing...")
+	if(src == user && !has_painkillers)
+		heal_time *= 2 //oof ouch owie
+	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
+	if(do_after(user, heal_time, target = src))
+		playsound(user, 'sound/surgery/cautery2.ogg', 20)
+		BP.AddComponent(/datum/component/bandage, 0, 0.02, W.get_temperature()/BLOOD_CAUTERIZATION_RATIO, "cauterization") // this is the "I would really rather not be bleeding right now" option
+		BP.receive_damage(burn = W.get_temperature()/BLOOD_CAUTERIZATION_DAMAGE_RATIO) //my body is a MACHINE that turns BLEEDING into BURN DAMAGE
+		user.visible_message(span_nicegreen("[user] cauterizes some of [user == src ? "their" : "[src]'s"] bleeding!"), span_nicegreen("You cauterize some of [user == src ? "your" : "[src]'s"] bleeding!"))
+	else
+		to_chat(user, span_warning("You were interrupted!"))
+		
+
+
 /mob/living/carbon/get_eye_protection()
 	. = ..()
 	var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)

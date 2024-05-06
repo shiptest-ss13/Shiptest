@@ -382,6 +382,12 @@
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
 
+
+/obj/item/ration_heater/get_temperature()
+	if(!uses)
+		return 0
+	. = ..()
+
 /obj/item/ration_heater/proc/clear_cooking(datum/source)
 	SIGNAL_HANDLER
 	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)

@@ -93,7 +93,7 @@
 					BP.adjust_bleeding(0.5, BLOOD_LOSS_DAMAGE_CAP)
 			limb_bleed += BP.bleeding
 
-		if((limb_bleed) && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
+		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
 			bleed(limb_bleed)
 
 //Makes a blood drop, leaking amt units of blood from the mob

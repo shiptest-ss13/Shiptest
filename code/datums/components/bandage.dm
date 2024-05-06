@@ -45,7 +45,7 @@
 	heal_target.heal_damage(actual_heal_speed, actual_heal_speed)
 	durability--
 	if(heal_target.bleeding)
-		durability = round(durability - max(heal_target.bleeding, 1))
+		durability = round(durability - clamp(heal_target.bleeding, 1, 5)) //heavier bleeding reduces bandage lifespan
 		heal_target.adjust_bleeding(-bleed_reduction)
 	if(durability <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
 		drop_bandage()

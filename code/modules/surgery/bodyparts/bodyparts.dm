@@ -344,10 +344,12 @@
 	if(is_pseudopart)
 		return FALSE
 	if(!get_damage() && !bleeding)
-		to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] is already fully healed!"))
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] is already fully healed!"))
 		return FALSE
 	if(GetComponent(/datum/component/bandage))
-		to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
 		return FALSE
 
 //Returns total damage.
