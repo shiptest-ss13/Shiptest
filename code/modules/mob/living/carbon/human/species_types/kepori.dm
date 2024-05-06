@@ -57,6 +57,8 @@
 	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/kepori
 	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
+	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
+
 /datum/species/kepori/New()
 	. = ..()
 	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
