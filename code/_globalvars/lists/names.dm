@@ -46,5 +46,4 @@ GLOBAL_LIST_INIT(preferences_custom_names, list(
 	"mime" = list("pref_name" = "Mime", "qdesc" = "mime name" , "group" = "fun", "allow_null" = FALSE),
 	"cyborg" = list("pref_name" = "Cyborg", "qdesc" = "cyborg name (Leave empty to use default naming scheme)", "group" = "silicons", "allow_null" = TRUE),
 	"ai" = list("pref_name" = "AI", "qdesc" = "ai name", "group" = "silicons", "allow_null" = FALSE),
-	"religion" = list("pref_name" = "religion", "qdesc" = "Religion" , "group" = "religion", "allow_null" = FALSE),
 	))
