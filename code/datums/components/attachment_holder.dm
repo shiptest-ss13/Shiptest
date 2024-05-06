@@ -83,18 +83,20 @@
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	if(length(attachments))
-		examine_list += "<span class='notice'>It has [length(attachments)] attachments.</span>"
-
+		examine_list += "<span class='notice'>It has [length(attachments)] attachment\s.</span>"
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
-	if(!length(attachments))
-		return
-	examine_list += "<span class='notice'>It has the following attachments:</span>"
-	for(var/obj/item/attach as anything in attachments)
-		examine_list += "<span class='notice'>\t- [attach.name]</span>"
-	examine_list += "<span class='notice'>\tThey can be removed with a <i>crowbar</i></span>"
+	for(var/key in slot_room)
+		examine_list += "<span class='notice'>It has [slot_room[key]] slot\s for [key] attachments.</span>"
+	if(length(attachments))
+		examine_list += "<span class='notice'>It has the following attachments:</span>"
+		for(var/obj/item/attach as anything in attachments)
+			examine_list += "<span class='notice'>\t- [attach.name]</span>"
+		examine_list += "<span class='notice'>\tThey can be removed with a <i>crowbar</i></span>"
+	for(var/attach_type in valid_types)
+		examine_list += "<span class='notice'>It can accept [attach_type]</span>"
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE_MORE, user, examine_list)
 
@@ -159,6 +161,4 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
-			user.do_attack_animation(target_atom)
-			parent.update_icon()
 			return TRUE
