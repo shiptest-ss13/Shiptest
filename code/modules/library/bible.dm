@@ -45,7 +45,7 @@
 	name = "Ashen Sachet"
 	desc = "A small sachet filled with ashes. These are most commonly ancient-growth tree or a slain predetor the owner hunted themselves, each having a diffrent meaning to the "
 
-/*
+/* Need a place for them to spawn..
 /datum/outfit/job/roumain/flamebearer
 	name = "Saint-Roumain Militia - Flamebearer"
 	id_assignment = "flamebearer"
