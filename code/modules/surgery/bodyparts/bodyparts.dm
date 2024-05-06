@@ -569,12 +569,12 @@
 			if(S.fixed_mut_color)
 				species_color = S.fixed_mut_color
 			else
-				species_color = H.dna.features["mcolor"]
+				species_color = H.dna.features[FEATURE_MUTANT_COLOR]
 		else
 			species_color = null
 
 		if(overlay_icon_state)
-			species_secondary_color = H.dna.features["mcolor2"]
+			species_secondary_color = H.dna.features[FEATURE_MUTANT_COLOR2]
 
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)

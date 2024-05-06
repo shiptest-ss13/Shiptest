@@ -40,97 +40,32 @@
 	return pick(GLOB.backpacklist)
 
 #warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
+// ! randomization
 /proc/random_features()
-	// ! this is so fucking stupid
-	if(!GLOB.tails_list_human.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
-	if(!GLOB.tails_list_lizard.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
-	if(!GLOB.face_markings_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/face_markings, GLOB.face_markings_list)
-	if(!GLOB.horns_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, GLOB.horns_list)
-	if(!GLOB.ears_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ears, GLOB.horns_list)
-	if(!GLOB.frills_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/frills, GLOB.frills_list)
-	if(!GLOB.spines_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spines, GLOB.spines_list)
-	if(!GLOB.legs_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/legs, GLOB.legs_list)
-	if(!GLOB.body_markings_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings, GLOB.body_markings_list)
-	if(!GLOB.wings_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, GLOB.wings_list)
-	if(!GLOB.moth_wings_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_wings, GLOB.moth_wings_list)
-	if(!GLOB.moth_fluff_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_fluff, GLOB.moth_fluff_list)
-	if(!GLOB.moth_markings_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_markings, GLOB.moth_markings_list)
-	if(!GLOB.squid_face_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/squid_face, GLOB.squid_face_list)
-	if(!GLOB.ipc_screens_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_screens, GLOB.ipc_screens_list)
-	if(!GLOB.ipc_antennas_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
-	if(!GLOB.ipc_chassis_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
-	if(!GLOB.spider_legs_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
-	if(!GLOB.spider_spinneret_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_spinneret, GLOB.spider_spinneret_list)
-	if(!GLOB.spider_mandibles_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
-	if(!GLOB.kepori_feathers_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
-	if(!GLOB.kepori_tail_feathers_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_tail_feathers_list)
-	if(!GLOB.vox_head_quills_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
-	if(!GLOB.vox_neck_quills_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
-	if(!GLOB.elzu_horns_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
-	if(!GLOB.tails_list_elzu.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
-	//For now we will always return none for tail_human and ears.
-	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
-	return list(
-		"body_markings" = pick(GLOB.body_markings_list),
-		"body_size" = pick(GLOB.body_sizes),
-		"ears" = "None",
-		"elzu_horns" = pick(GLOB.elzu_horns_list),
-		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
-		"flavor_text" = "",
-		"frills" = pick(GLOB.frills_list),
-		"horns" = pick(GLOB.horns_list),
-		"ipc_antenna" = pick(GLOB.ipc_antennas_list),
-		"ipc_brain" = pick(GLOB.ipc_brain_list),
-		"ipc_chassis" = pick(GLOB.ipc_chassis_list),
-		"ipc_screen" = pick(GLOB.ipc_screens_list),
-		"kepori_body_feathers" = pick(GLOB.kepori_body_feathers_list),
-		"kepori_feathers" = pick(GLOB.kepori_feathers_list),
-		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
-		"legs" = "Normal Legs",
-		"mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"mcolor2" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"moth_fluff" = pick(GLOB.moth_fluff_list),
-		"moth_markings" = pick(GLOB.moth_markings_list),
-		"moth_wings" = pick(GLOB.moth_wings_list),
-		"face_markings" = pick(GLOB.face_markings_list),
-		"spider_legs" = pick(GLOB.spider_legs_list),
-		"spider_mandibles" = pick(GLOB.spider_mandibles_list),
-		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
-		"spines" = pick(GLOB.spines_list),
-		"squid_face" = pick(GLOB.squid_face_list),
-		"tail_human" = "None",
-		"tail_lizard" = pick(GLOB.tails_list_lizard),
-		"tail_elzu" = pick(GLOB.tails_list_elzu),
-		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
-		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
-		"wings" = "None",
+	var/feature_list = list(
+		FEATURE_FLAVOR_TEXT = "",
+
+		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		FEATURE_ETHEREAL_COLOR = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
+		FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
+		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
+		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
+
+		FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
 	)
+
+	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
+		// do not consider non-randomizable part types
+		if(!initial(abstr_part_type.randomizable))
+			continue
+		// look into the list to get the list of options
+		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
+		// pick an option to add to features
+		var/part_type_id = initial(abstr_part_type.mutant_string)
+		feature_list[part_type_id] = pick(part_option_names)
+
+	return feature_list
 
 /proc/random_hairstyle(gender)
 	switch(gender)

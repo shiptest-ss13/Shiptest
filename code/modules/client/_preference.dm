@@ -16,8 +16,9 @@ GLOBAL_LIST_EMPTY_TYPED(pref_application_order, /datum/preference)
 GLOBAL_VAR_INIT(preference_traverse_key, 0)
 
 // ! this is REALLY stupid
-/world/New(...)
+/datum/controller/global_vars/Initialize(...)
 	. = ..()
+	make_datum_references_lists()
 	init_pref_datums()
 
 /proc/init_pref_datums()

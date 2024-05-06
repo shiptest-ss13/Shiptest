@@ -2,7 +2,7 @@
 	create_dna()
 	return //No randomisation
 
-// ! YET ANOTHER FUCKING RANDOMIZATION PROC (though TBF i'm pretty sure this is a wiki thing)
+// ! randomization (tbf, this is a wiki thing)
 /mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0)
 	gender = list(MALE, FEMALE)[seed % 2 + 1]
 	skin_tone = GLOB.skin_tones[seed % length(GLOB.skin_tones) + 1]
@@ -10,31 +10,27 @@
 	hair_color = color_natural_from_seed(seed)
 	eye_color = short_color_from_seed(seed)
 
+	var/list/feature_list = list(
+		FEATURE_MUTANT_COLOR = short_color_from_seed(seed * 2),
+		FEATURE_MUTANT_COLOR2 = short_color_from_seed(seed * 3),
+
+		//AAAAAAAAAAAAAAAAAAAAAAAAAA
+		FEATURE_ETHEREAL_COLOR = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]],
+		FEATURE_IPC_CHASSIS = GLOB.ipc_chassis_list[seed % length(GLOB.ipc_chassis_list) + 1]
+	)
+
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
-	dna.features["mcolor"] = short_color_from_seed(seed * 2)
-	dna.features["mcolor2"] = short_color_from_seed(seed * 3)
-	//AAAAAAAAAAAAAAAAAAAAAAAAAA
-	dna.features["ethcolor"] = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]]
-	dna.features["tail_lizard"] = GLOB.tails_list_lizard[seed % length(GLOB.tails_list_lizard) + 1]
-	dna.features["face_markings"] = GLOB.face_markings_list[seed % length(GLOB.face_markings_list) + 1]
-	dna.features["horns"] = GLOB.horns_list[seed % length(GLOB.horns_list) + 1]
-	dna.features["frills"] = GLOB.frills_list[seed % length(GLOB.frills_list) + 1]
-	dna.features["spines"] = GLOB.spines_list[seed % length(GLOB.spines_list) + 1]
-	dna.features["body_markings"] = GLOB.body_markings_list[seed % length(GLOB.body_markings_list) + 1]
-	dna.features["moth_wings"] = GLOB.moth_wings_list[seed % length(GLOB.moth_wings_list) + 1]
-	dna.features["moth_fluff"] = GLOB.moth_fluff_list[seed % length(GLOB.moth_fluff_list) + 1]
-	dna.features["spider_legs"] = GLOB.spider_legs_list[seed % length(GLOB.spider_legs_list) + 1]
-	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[seed % length(GLOB.spider_spinneret_list) + 1]
-	dna.features["spider_mandibles"] = GLOB.spider_mandibles_list[seed % length(GLOB.spider_mandibles_list) + 1]
-	dna.features["squid_face"] = GLOB.squid_face_list[seed % length(GLOB.squid_face_list) + 1]
-	dna.features["kepori_feathers"] = GLOB.kepori_feathers_list[seed % length(GLOB.kepori_feathers_list) + 1]
-	dna.features["kepori_body_feathers"] = GLOB.kepori_body_feathers_list[seed % length(GLOB.kepori_body_feathers_list) + 1]
-	dna.features["vox_head_quills"] = GLOB.vox_head_quills_list[seed % length(GLOB.vox_head_quills_list) + 1]
-	dna.features["vox_neck_quills"] = GLOB.vox_neck_quills_list[seed % length(GLOB.vox_neck_quills_list) + 1]
-	dna.features["elzu_horns"] = GLOB.elzu_horns_list[seed % length(GLOB.elzu_horns_list) + 1]
-	dna.features["tail_elzu"] = GLOB.tails_list_elzu[seed % length(GLOB.tails_list_elzu) + 1]
-	dna.features["ipc_chassis"] = GLOB.ipc_chassis_list[seed % length(GLOB.ipc_chassis_list) + 1]
-	dna.features["ipc_screen"] = GLOB.ipc_screens_list[seed % length(GLOB.ipc_screens_list) + 1]
+	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
+		// do not consider non-randomizable part types
+		if(!initial(abstr_part_type.randomizable))
+			continue
+		// look into the list to get the list of options
+		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
+		// pick an option to add to features
+		var/part_type_id = initial(abstr_part_type.mutant_string)
+		feature_list[part_type_id] = part_option_names[seed % length(part_option_names) + 1]
+
+	dna.features = feature_list
 
 	update_body()
 	update_hair()

@@ -13,45 +13,15 @@ GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear in
 GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
 	//Socks
 GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
+	// IPC chassises
+GLOBAL_LIST_EMPTY(ipc_chassis_list) // stores /datum/sprite_accessory/ipc_chassis indexed by name
+
 	//Body Sizes
 GLOBAL_LIST_INIT(body_sizes, list("Normal" = BODY_SIZE_NORMAL, "Short" = BODY_SIZE_SHORT, "Tall" = BODY_SIZE_TALL))
-	//lizard Bits (all datum lists indexed by name)
-GLOBAL_LIST_EMPTY(body_markings_list)
-GLOBAL_LIST_EMPTY(tails_list_lizard)
-GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
-GLOBAL_LIST_EMPTY(face_markings_list)
-GLOBAL_LIST_EMPTY(horns_list)
-GLOBAL_LIST_EMPTY(frills_list)
-GLOBAL_LIST_EMPTY(spines_list)
-GLOBAL_LIST_EMPTY(legs_list)
-GLOBAL_LIST_EMPTY(animated_spines_list)
 
-	//Mutant Human bits
-GLOBAL_LIST_EMPTY(tails_list_human)
-GLOBAL_LIST_EMPTY(animated_tails_list_human)
-GLOBAL_LIST_EMPTY(ears_list)
-GLOBAL_LIST_EMPTY(wings_list)
-GLOBAL_LIST_EMPTY(wings_open_list)
-GLOBAL_LIST_EMPTY(r_wings_list)
-GLOBAL_LIST_EMPTY(moth_wings_list)
-GLOBAL_LIST_EMPTY(moth_fluff_list)
-GLOBAL_LIST_EMPTY(moth_markings_list)
-GLOBAL_LIST_EMPTY(squid_face_list)
-GLOBAL_LIST_EMPTY(ipc_screens_list)
-GLOBAL_LIST_EMPTY(ipc_antennas_list)
-GLOBAL_LIST_EMPTY(ipc_chassis_list)
+GLOBAL_LIST_INIT(legs_list, list(FEATURE_NORMAL_LEGS, FEATURE_DIGITIGRADE_LEGS))
+
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
-GLOBAL_LIST_EMPTY(spider_legs_list)
-GLOBAL_LIST_EMPTY(spider_spinneret_list)
-GLOBAL_LIST_EMPTY(spider_mandibles_list)
-GLOBAL_LIST_EMPTY(kepori_feathers_list)
-GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
-GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
-GLOBAL_LIST_EMPTY(vox_head_quills_list)
-GLOBAL_LIST_EMPTY(vox_neck_quills_list)
-GLOBAL_LIST_EMPTY(elzu_horns_list)
-GLOBAL_LIST_EMPTY(tails_list_elzu)
-GLOBAL_LIST_EMPTY(animated_tails_list_elzu)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",

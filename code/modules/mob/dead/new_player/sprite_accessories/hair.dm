@@ -4,7 +4,6 @@
 
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
-	body_zone = BODY_ZONE_HEAD
 
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
@@ -776,7 +775,6 @@
 
 /datum/sprite_accessory/hair_gradient
 	icon = 'icons/mob/hair_gradients.dmi'
-	body_zone = BODY_ZONE_HEAD
 
 /datum/sprite_accessory/hair_gradient/none
 	name = "None"

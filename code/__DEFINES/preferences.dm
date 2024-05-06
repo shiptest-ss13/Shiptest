@@ -154,3 +154,6 @@
 #define FEATURE_IPC_BRAIN "ipc_brain"
 
 #define FEATURE_LEGS_TYPE "legs"
+// These are the *values* in the features list which are keyed by FEATURE_LEGS_TYPE, used to distinguish normal legs from digitigrade ones.
+#define FEATURE_NORMAL_LEGS "Normal Legs"
+#define FEATURE_DIGITIGRADE_LEGS "Digitigrade Legs"

@@ -10,7 +10,7 @@
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
-	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", FEATURE_LEGS_TYPE = "Normal Legs", FEATURE_BODY_SIZE = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS, FEATURE_BODY_SIZE = "Normal")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'

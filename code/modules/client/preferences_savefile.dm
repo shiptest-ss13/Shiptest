@@ -393,8 +393,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["skin_tone"], skin_tone)
 	READ_FILE(S["hairstyle_name"], hairstyle)
 	READ_FILE(S["facial_style_name"], facial_hairstyle)
-	READ_FILE(S["feature_grad_style"], features["grad_style"])
-	READ_FILE(S["feature_grad_color"], features["grad_color"])
+	READ_FILE(S["feature_grad_style"], features[FEATURE_GRADIENT_STYLE])
+	READ_FILE(S["feature_grad_color"], features[FEATURE_GRADIENT_COLOR])
 	READ_FILE(S["underwear"], underwear)
 	READ_FILE(S["underwear_color"], underwear_color)
 	READ_FILE(S["undershirt"], undershirt)
@@ -406,19 +406,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["randomise"],  randomise)
-	READ_FILE(S["body_size"], features["body_size"])
+	READ_FILE(S["body_size"], features[FEATURE_BODY_SIZE])
 	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
-	READ_FILE(S["feature_mcolor"], features["mcolor"])
-	READ_FILE(S["feature_mcolor2"], features["mcolor2"])
-	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
+	READ_FILE(S["feature_mcolor"], features[FEATURE_MUTANT_COLOR])
+	READ_FILE(S["feature_mcolor2"], features[FEATURE_MUTANT_COLOR2])
+	READ_FILE(S["feature_ethcolor"], features[FEATURE_ETHEREAL_COLOR])
 	READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
 	// READ_FILE(S["feature_lizard_face_markings"], features["face_markings"])
 	READ_FILE(S["feature_lizard_horns"], features["horns"])
 	READ_FILE(S["feature_lizard_frills"], features["frills"])
 	READ_FILE(S["feature_lizard_spines"], features["spines"])
 	// READ_FILE(S["feature_lizard_body_markings"], features["body_markings"])
-	READ_FILE(S["feature_lizard_legs"], features["legs"])
+	READ_FILE(S["feature_lizard_legs"], features[FEATURE_LEGS_TYPE])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	// READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
@@ -431,8 +431,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// READ_FILE(S["feature_squid_face"], features["squid_face"])
 	READ_FILE(S["feature_ipc_screen"], features["ipc_screen"])
 	// READ_FILE(S["feature_ipc_antenna"], features["ipc_antenna"])
-	READ_FILE(S["feature_ipc_chassis"], features["ipc_chassis"])
-	READ_FILE(S["feature_ipc_brain"], features["ipc_brain"])
+	READ_FILE(S["feature_ipc_chassis"], features[FEATURE_IPC_CHASSIS])
+	READ_FILE(S["feature_ipc_brain"], features[FEATURE_IPC_BRAIN])
 	// READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
 	// READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
 	// READ_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
@@ -468,7 +468,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["all_quirks"], all_quirks)
 
 	//Flavor Text
-	S["feature_flavor_text"]		>> features["flavor_text"]
+	S["feature_flavor_text"]		>> features[FEATURE_FLAVOR_TEXT]
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -486,11 +486,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!custom_names[custom_name_id])
 			custom_names[custom_name_id] = get_default_name(custom_name_id)
 
-	if(!features["mcolor"] || text2num(features["mcolor"], 16) == 0)
-		features["mcolor"] = random_color()
+	if(!features[FEATURE_MUTANT_COLOR] || text2num(features[FEATURE_MUTANT_COLOR], 16) == 0)
+		features[FEATURE_MUTANT_COLOR] = random_color()
 
-	if(!features["ethcolor"] || text2num(features["ethcolor"], 16) == 0)
-		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
+	if(!features[FEATURE_ETHEREAL_COLOR] || text2num(features[FEATURE_ETHEREAL_COLOR], 16) == 0)
+		features[FEATURE_ETHEREAL_COLOR] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
 	randomise = SANITIZE_LIST(randomise)
 
@@ -524,23 +524,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"])
 	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"])
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
-	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
-	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
+	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/lizard])
+	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/human], "None")
 	// features["face_markings"]	= sanitize_inlist(features["face_markings"], GLOB.face_markings_list)
-	features["horns"] 	= sanitize_inlist(features["horns"], GLOB.horns_list)
-	features["ears"]	= sanitize_inlist(features["ears"], GLOB.ears_list, "None")
-	features["frills"] 	= sanitize_inlist(features["frills"], GLOB.frills_list)
-	features["spines"] 	= sanitize_inlist(features["spines"], GLOB.spines_list)
+	features["horns"] 	= sanitize_inlist(features["horns"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/horns])
+	features["ears"]	= sanitize_inlist(features["ears"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ears], "None")
+	features["frills"] 	= sanitize_inlist(features["frills"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/frills])
+	features["spines"] 	= sanitize_inlist(features["spines"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/spines])
 	// features["body_markings"] 	= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
-	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
-	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
+	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, FEATURE_NORMAL_LEGS)
+	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/moth_wings], "Plain")
 	// features["moth_fluff"] 	= sanitize_inlist(features["moth_fluff"], GLOB.moth_fluff_list, "Plain")
 	// features["spider_legs"] = sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
 	// features["spider_spinneret"] = sanitize_inlist(features["spider_spinneret"], GLOB.spider_spinneret_list, "Plain")
 	// features["spider_mandibles"]	= sanitize_inlist(features["spider_mandibles"], GLOB.spider_mandibles_list, "Plain")
 	// features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 	// features["squid_face"]	= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
-	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
+	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens])
 	// features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["ipc_brain"] = sanitize_inlist(features["ipc_brain"], GLOB.ipc_brain_list)
@@ -550,7 +550,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	// features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	// features["elzu_horns"] 	= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
-	features["tail_elzu"]	= sanitize_inlist(features["tail_elzu"], GLOB.tails_list_elzu)
+	features["tail_elzu"]	= sanitize_inlist(features["tail_elzu"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/elzu])
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)

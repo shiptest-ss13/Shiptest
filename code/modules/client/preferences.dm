@@ -50,13 +50,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	// ! this is hell
+	// ! this is hell. need to update based on defines
 	var/list/features = list(
-							"mcolor" = "FFF",
-							"mcolor2" = "FFF",
-							"grad_style" = "None",
-							"grad_color" = "FFF",
-							"ethcolor" = "9c3030",
+							FEATURE_MUTANT_COLOR = "FFF",
+							FEATURE_MUTANT_COLOR2 = "FFF",
+							FEATURE_FLAVOR_TEXT = "",
+							FEATURE_BODY_SIZE = "Normal",
+
+							FEATURE_GRADIENT_STYLE = "None",
+							FEATURE_GRADIENT_COLOR = "FFF",
+							FEATURE_ETHEREAL_COLOR = "9c3030",
+
+							FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
+							FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)",
+							FEATURE_IPC_BRAIN = "Posibrain",
+
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
 							// "face_markings" = "None",
@@ -66,7 +74,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"frills" = "None",
 							"spines" = "None",
 							// "body_markings" = "None",
-							"legs" = "Normal Legs",
 							"moth_wings" = "Plain",
 							// "moth_fluff" = "Plain",
 							// "moth_markings" = "None",
@@ -76,17 +83,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							// "squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							// "ipc_antenna" = "None",
-							"ipc_chassis" = "Morpheus Cyberkinetics (Custom)",
-							"ipc_brain" = "Posibrain",
 							// "kepori_feathers" = "Plain",
 							// "kepori_body_feathers" = "Plain",
 							// "kepori_tail_feathers" = "Fan",
 							// "vox_head_quills" = "Plain",
 							// "vox_neck_quills" = "Plain",
 							// "elzu_horns" = "None",
-							"elzu_tail" = "None",
-							"flavor_text" = "",
-							"body_size" = "Normal"
+							"elzu_tail" = "None"
 						)
 	var/list/randomise = list( // ! handled by "toggle_random" href. maybe improperly sanitized. annoying
 							RANDOM_UNDERWEAR = TRUE,
@@ -2188,13 +2191,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("tail_lizard")
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
+					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/lizard]
 					if(new_tail)
 						features["tail_lizard"] = new_tail
 
 				if("tail_human")
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_human
+					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/human]
 					if(new_tail)
 						features["tail_human"] = new_tail
 
@@ -2208,25 +2211,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("horns")
 					var/new_horns
-					new_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.horns_list
+					new_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/horns]
 					if(new_horns)
 						features["horns"] = new_horns
 
 				if("ears")
 					var/new_ears
-					new_ears = input(user, "Choose your character's mutant ears:", "Character Preference") as null|anything in GLOB.ears_list
+					new_ears = input(user, "Choose your character's mutant ears:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ears]
 					if(new_ears)
 						features["ears"] = new_ears
 
 				if("frills")
 					var/new_frills
-					new_frills = input(user, "Choose your character's frills:", "Character Preference") as null|anything in GLOB.frills_list
+					new_frills = input(user, "Choose your character's frills:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/frills]
 					if(new_frills)
 						features["frills"] = new_frills
 
 				if("spines")
 					var/new_spines
-					new_spines = input(user, "Choose your character's spines:", "Character Preference") as null|anything in GLOB.spines_list
+					new_spines = input(user, "Choose your character's spines:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/spines]
 					if(new_spines)
 						features["spines"] = new_spines
 
@@ -2246,7 +2249,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("moth_wings")
 					var/new_moth_wings
-					new_moth_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.moth_wings_list
+					new_moth_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/moth_wings]
 					if(new_moth_wings)
 						features["moth_wings"] = new_moth_wings
 
@@ -2301,7 +2304,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("ipc_screen")
 					var/new_ipc_screen
 
-					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
+					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens]
 
 					if(new_ipc_screen)
 						features["ipc_screen"] = new_ipc_screen
@@ -2380,7 +2383,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("tail_elzu")
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_elzu
+					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/elzu]
 					if(new_tail)
 						features["tail_elzu"] = new_tail
 
