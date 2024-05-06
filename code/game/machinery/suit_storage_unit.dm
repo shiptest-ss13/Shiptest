@@ -193,7 +193,7 @@
 	update_appearance()
 
 /obj/machinery/suit_storage_unit/RefreshParts()
-	for(var/obj/stock_parts/micro_laser/lasers in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/lasers in component_parts)
 		uv_cycles -= lasers.rating
 
 /obj/machinery/suit_storage_unit/Destroy()
@@ -585,6 +585,7 @@
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
 		open_machine()
+	// todo, make it not deconstruct while locked
 	if(default_deconstruction_crowbar(I) && !locked)
 		return TRUE
 
