@@ -15,12 +15,12 @@
 	if(!Adjacent(usr) || !over.Adjacent(usr))
 		return // should stop you from dragging through windows
 
-	over.MouseDrop_T(src,usr)
+	over.MouseDrop_T(src,usr,params)
 	return
 
 // receive a mousedrop
-/atom/proc/MouseDrop_T(atom/dropping, mob/user)
-	SEND_SIGNAL(src, COMSIG_MOUSEDROPPED_ONTO, dropping, user)
+/atom/proc/MouseDrop_T(atom/dropping, mob/user, params)
+	SEND_SIGNAL(src, COMSIG_MOUSEDROPPED_ONTO, dropping, user, params)
 	return
 
 
@@ -108,7 +108,7 @@
 			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
 		mouseObject = over_object
 		// register signal to new mouseObject
-		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, .proc/clear_mouseObject)
+		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, PROC_REF(clear_mouseObject))
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())
 		selected_target[1] = over_object

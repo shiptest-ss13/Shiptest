@@ -12,9 +12,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 2
-	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ah" = (
@@ -88,10 +86,8 @@
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/regular,
-/obj/structure/closet/wall/white{
-	dir = 1;
-	name = "Medical Supplies";
-	pixel_y = -32
+/obj/structure/closet/wall/white/directional/south{
+	name = "Medical Supplies"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -494,7 +490,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "lP" = (
@@ -607,7 +602,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "pa" = (
-/obj/machinery/fax,
+/obj/machinery/fax/syndicate,
 /obj/item/toy/figure/detective{
 	name = "Intel Buddy";
 	pixel_x = 5;
@@ -892,11 +887,24 @@
 /obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"tV" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "uq" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"uR" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "vk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1125,6 +1133,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"Ah" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "AM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1139,6 +1153,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1176,7 +1193,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (
-/obj/machinery/porta_turret/ship,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "CU" = (
@@ -1231,9 +1250,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 8
 	},
@@ -1293,7 +1310,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GV" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 4;
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Hd" = (
@@ -1357,9 +1378,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/machinery/computer/cryopod/directional/west,
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -1396,10 +1415,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"KA" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "KP" = (
-/obj/structure/closet/wall{
-	name = "emergency rum cabinet";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "emergency rum cabinet"
 	},
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
@@ -1688,9 +1712,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
@@ -1737,7 +1759,16 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/space_heater,
+/obj/structure/closet/secure_closet/engineering_personal,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/yellow,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "SL" = (
@@ -1766,14 +1797,10 @@
 /area/ship/engineering)
 "Ul" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/closet/secure_closet/engineering_personal,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/glasses/welding,
-/obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UZ" = (
@@ -1836,7 +1863,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "Vw" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/poster/contraband/red_rum{
 	pixel_y = 32
@@ -1844,11 +1871,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "VJ" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Xa" = (
@@ -1948,6 +1973,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/grey{
 	dir = 1
 	},
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ZI" = (
@@ -1966,7 +1992,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
-CR
+uR
 YQ
 YQ
 ru
@@ -2069,7 +2095,7 @@ nO
 "}
 (7,1,1) = {"
 YQ
-CR
+KA
 kM
 kM
 kM
@@ -2081,7 +2107,7 @@ cZ
 jj
 jj
 jj
-CR
+Ah
 YQ
 "}
 (8,1,1) = {"
@@ -2276,7 +2302,7 @@ YQ
 YQ
 YQ
 YQ
-GV
+tV
 bO
 bO
 dA

@@ -93,7 +93,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			visible_message("<span class='notice'>[src] dispenses.. woah, a gun! Way past cool.</span>", "<span class='notice'>You hear a chime and a shot.</span>")
 			user.client.give_award(/datum/award/achievement/misc/pulse, user)
 			return
-
 		var/prizeselect
 		if(prize_override)
 			prizeselect = pickweight(prize_override)
@@ -773,7 +772,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 						var/mob/living/L = usr
 						L.Stun(200, ignore_canstun = TRUE) //you can't run :^)
 					var/S = new /obj/singularity/academy(usr.loc)
-					addtimer(CALLBACK(src, /atom/movable/proc/say, "[S] winks out, just as suddenly as it appeared."), 50)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, say), "[S] winks out, just as suddenly as it appeared."), 50)
 					QDEL_IN(S, 50)
 			else
 				event = null

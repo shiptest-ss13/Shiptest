@@ -7,7 +7,11 @@
 	var/datum/parsed_map/cached_map
 	var/keep_cached_map = FALSE
 
-	///if true, turfs loaded from this template are placed on top of the turfs already there, defaults to TRUE
+	/// Defaults to TRUE.
+	/// If TRUE, the baseturfs of the new turfs (ignoring baseturf_bottom and space) are added
+	/// to the top of the pre-existing baseturf lists, in accordance with the behavior of PlaceOnTop.
+	/// If FALSE, the old turfs are replaced entirely, including their baseturfs.
+	/// Note that FALSE-case behavior is altered from the original implementation, which ignored baseturfs entirely; it was intended for holodecks, which have been removed.
 	var/should_place_on_top = TRUE
 
 	///if true, creates a list of all atoms created by this template loading, defaults to FALSE
@@ -148,7 +152,6 @@
 
 	for(var/turf/turf_to_disable as anything in border)
 		turf_to_disable.blocks_air = TRUE
-		turf_to_disable.set_sleeping(TRUE)
 		turf_to_disable.air_update_turf(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want

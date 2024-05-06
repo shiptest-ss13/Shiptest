@@ -24,7 +24,7 @@
 /obj/machinery/mineral/proc/register_input_turf()
 	input_turf = get_step(src, input_dir)
 	if(input_turf) // make sure there is actually a turf
-		RegisterSignal(input_turf, COMSIG_ATOM_ENTERED, .proc/pickup_item)
+		RegisterSignal(input_turf, COMSIG_ATOM_ENTERED, PROC_REF(pickup_item))
 
 /// Unregisters signals that are registered the machine's input turf, if it has one.
 /obj/machinery/mineral/proc/unregister_input_turf()
@@ -253,7 +253,7 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.use_materials(alloy.materials, amount)
 
-	generate_mineral(alloy.build_path)
+	generate_mineral(alloy.build_path, amount)
 
 /obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D)
 	if(D.make_reagents.len)
@@ -271,8 +271,8 @@
 
 	return build_amount
 
-/obj/machinery/mineral/processing_unit/proc/generate_mineral(P)
-	var/O = new P(src)
+/obj/machinery/mineral/processing_unit/proc/generate_mineral(P, amount)
+	var/O = new P(src, amount)
 	unload_mineral(O)
 
 /obj/machinery/mineral/processing_unit/on_deconstruction()

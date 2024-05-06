@@ -1,5 +1,5 @@
 /datum/species/plasmaman
-	name = "\improper Plasmaman"
+	name = "\improper Phorid"
 	id = SPECIES_PLASMAMAN
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
@@ -165,9 +165,6 @@
 
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown
-
-		if("Lieutenant")	//WS edit plasmaman customization
-			O = new /datum/outfit/plasmaman/lieutenant	//WS edit plasmaman customization
 
 		if("SolGov Representative") //WS edit sgr
 			O = new /datum/outfit/plasmaman/solgov

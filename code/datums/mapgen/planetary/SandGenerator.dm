@@ -92,7 +92,10 @@
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 8,
+		/obj/structure/vein = 8,
+		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
+		/obj/structure/vein/classthree = 2,
 		/obj/effect/spawner/lootdrop/anomaly/sand = 1,
 	)
 	mob_spawn_chance = 4
@@ -192,7 +195,9 @@
 		/obj/structure/flora/ash/puce = 1,
 	)
 	feature_spawn_list = list(
+		/obj/structure/vein = 8,
 		/obj/structure/geyser/random = 4,
+		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
 		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 1
 	)

@@ -99,7 +99,7 @@
 				em_starting = TRUE
 				icon_state = "holopad_ringing"
 				calling = TRUE
-				addtimer(CALLBACK(src, .proc/stop_starting), 300)
+				addtimer(CALLBACK(src, PROC_REF(stop_starting)), 300)
 			else
 				QDEL_NULL(em)
 				em_cooldown = TRUE

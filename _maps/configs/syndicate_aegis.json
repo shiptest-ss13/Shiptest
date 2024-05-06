@@ -1,5 +1,5 @@
 {
-	"prefix": "SSV",
+	"prefix": "SUNS",
 	"map_name": "Aegis-class Long Term Care Ship",
 	"map_short_name": "Aegis-class",
 	"map_path": "_maps/shuttles/syndicate/syndicate_aegis.dmm",
@@ -18,38 +18,38 @@
 	],
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain/syndicate",
+			"outfit": "/datum/outfit/job/syndicate/captain/suns",
 			"officer": true,
 			"slots": 1
 		},
 
 		"Lead Doctor": {
-			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+			"outfit": "/datum/outfit/job/syndicate/cmo/suns",
 			"slots": 1
 		},
 
 		"Ship Doctor":{
-			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"outfit": "/datum/outfit/job/syndicate/doctor/suns",
 			"slots": 2
 		},
 
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer/syndicate",
+			"outfit": "/datum/outfit/job/syndicate/engineer/suns",
 			"slots": 1
 		},
 
 		"Deck Service Assistant": {
-			"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
+			"outfit": "/datum/outfit/job/syndicate/botanist/suns",
 			"slots": 2
 		},
 
 		"Ship Psychologist": {
-			"outfit": "/datum/outfit/job/psychologist/syndicate/nsv",
+			"outfit": "/datum/outfit/job/syndicate/psychologist/suns",
 			"slots": 1
 		},
 
 		"Long Term Patient": {
-			"outfit": "/datum/outfit/job/prisoner/syndicatepatient",
+			"outfit": "/datum/outfit/job/syndicate/patient",
 			"slots": 2
 		}
 	},

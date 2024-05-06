@@ -27,11 +27,10 @@
 			AddComponent(/datum/component/infective, diseases_to_add)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
+	AddElement(/datum/element/beauty, beauty)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 

@@ -156,7 +156,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/old_color = color
 	color = "#960000"
 	animate(src, color = old_color, time = 10, flags = ANIMATION_PARALLEL)
-	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 10)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 10)
 
 /mob/dead/observer/Destroy()
 	// Update our old body's medhud since we're abandoning it
@@ -435,7 +435,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	usr.abstract_move(pick(get_area_turfs(thearea)))
+	var/list/area_turfs = get_area_turfs(thearea)
+
+	if(!length(area_turfs))
+		return
+
+	usr.abstract_move(pick(area_turfs))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()

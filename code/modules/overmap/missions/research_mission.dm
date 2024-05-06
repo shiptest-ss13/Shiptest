@@ -4,7 +4,7 @@
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
 	value = 3000 // base value, before adding bonus for number of things to fly through
-	duration = 30 MINUTES
+	duration = 60 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric
@@ -20,7 +20,7 @@
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
-	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, .proc/ship_moved)
+	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 
 /datum/mission/research/Destroy()
 	scanner = null
@@ -129,7 +129,7 @@
 		use_power = NO_POWER_USE
 	power_change() // calls update_appearance(), makes sure we're powered
 
-/obj/machinery/mission_scanner/update_icon_state()
+/obj/machinery/mission_scanner/update_appearance(updates)
 	. = ..()
 	if(is_operational)
 		icon_state = "scanner_power"

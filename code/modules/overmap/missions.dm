@@ -35,7 +35,7 @@
 	value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
 
 	source_outpost = _outpost
-	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, .proc/on_vital_delete)
+	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
 /datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
@@ -43,7 +43,7 @@
 	servant = acceptor
 	LAZYREMOVE(source_outpost.missions, src)
 	LAZYADD(servant.missions, src)
-	RegisterSignal(servant, COMSIG_PARENT_QDELETING, .proc/on_vital_delete)
+	RegisterSignal(servant, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
 /datum/mission/proc/on_vital_delete()
@@ -59,11 +59,11 @@
 		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
-	dur_timer = null
+	deltimer(dur_timer)
 	return ..()
 
 /datum/mission/proc/turn_in()
-	servant.ship_account.adjust_money(value)
+	servant.ship_account.adjust_money(value, "mission")
 	qdel(src)
 
 /datum/mission/proc/give_up()
@@ -117,7 +117,7 @@
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
-	RegisterSignal(bound, COMSIG_PARENT_QDELETING, .proc/bound_deleted)
+	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
 	return bound
 
 /**

@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(shuttle)
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
-	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
+	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
 	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
@@ -534,6 +534,32 @@ SUBSYSTEM_DEF(shuttle)
 				return
 			if(user.client)
 				user.client.debug_variables(port.current_ship)
+			return TRUE
+
+		if("blist")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/temp_loc = input(user, "Select outpost to modify ship blacklist status for", "Get Em Outta Here") as null|anything in SSovermap.outposts
+			if(!temp_loc)
+				return
+			var/datum/overmap/outpost/please_leave = temp_loc
+			if(please_leave in port_ship.blacklisted)
+				if(tgui_alert(user, "Rescind ship blacklist?", "Maybe They Aren't So Bad", list("Yes", "No")) == "Yes")
+					port_ship.blacklisted &= ~please_leave
+					message_admins("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+					log_admin("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+				return TRUE
+			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.") as null|text
+			if(!reason)
+				return TRUE
+			if(please_leave in port_ship.blacklisted) //in the event two admins are blacklisting a ship at the same time
+				if(tgui_alert(user, "Ship is already blacklisted, overwrite current reason with your own?", "I call the shots here", list("Yes", "No")) != "Yes")
+					return TRUE
+			port_ship.blacklisted[please_leave] = reason
+			message_admins("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
+			log_admin("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
 			return TRUE
 
 		if("fly")

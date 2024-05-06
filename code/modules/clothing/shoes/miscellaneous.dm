@@ -1,10 +1,6 @@
 /obj/item/clothing/shoes/proc/step_action() //this was made to rewrite clown shoes squeaking
 	SEND_SIGNAL(src, COMSIG_SHOES_STEP_ACTION)
 
-/obj/item/clothing/shoes/sneakers/mime
-	name = "mime shoes"
-	icon_state = "mime"
-
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
@@ -145,7 +141,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Ankle-high combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -362,13 +358,13 @@
 	active = TRUE
 	set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 	set_light_on(active)
-	addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 		lightCycle++
-		addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 	else
 		lightCycle = 0
 		active = FALSE
@@ -434,29 +430,9 @@
 
 /obj/item/clothing/shoes/cowboy/fancy
 	name = "bilton wrangler boots"
-	desc = "A pair of authentic haute couture boots from Japanifornia. You doubt they have ever been close to cattle."
+	desc = "A pair of authentic haute couture boots. You doubt they have ever been close to cattle."
 	icon_state = "cowboy_fancy"
 	permeability_coefficient = 0.08
-
-/obj/item/clothing/shoes/cowboy/lizard
-	name = "lizard skin boots"
-	desc = "You can hear a faint hissing from inside the boots; you hope it is just a mournful ghost."
-	icon_state = "lizardboots_green"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 0) //lizards like to stay warm
-
-/obj/item/clothing/shoes/cowboy/lizard/masterwork
-	name = "\improper Hugs-The-Feet lizard skin boots"
-	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the sector's most bothersome inhabitants."//:c
-	icon_state = "lizardboots_blue"
-
-/obj/effect/spawner/lootdrop/lizardboots
-	name = "random lizard boot quality"
-	desc = "Which ever gets picked, the lizard race loses"
-	icon = 'icons/obj/clothing/shoes.dmi'
-	icon_state = "lizardboots_green"
-	loot = list(
-		/obj/item/clothing/shoes/cowboy/lizard = 7,
-		/obj/item/clothing/shoes/cowboy/lizard/masterwork = 1)
 
 /obj/item/clothing/shoes/cookflops
 	desc = "All this talk of antags, greytiding, and griefing... I just wanna grill for god's sake!"

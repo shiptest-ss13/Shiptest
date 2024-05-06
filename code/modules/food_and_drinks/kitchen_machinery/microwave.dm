@@ -125,43 +125,11 @@
 		return TRUE
 
 	if(broken > 0)
-		if(broken == 2 && O.tool_behaviour == TOOL_WIRECUTTER) // If it's broken and they're using a screwdriver
-			user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
-			if(O.use_tool(src, user, 20))
-				user.visible_message("<span class='notice'>[user] fixes part of \the [src].</span>", "<span class='notice'>You fix part of \the [src].</span>")
-				broken = 1 // Fix it a bit
-		else if(broken == 1 && O.tool_behaviour == TOOL_WELDER) // If it's broken and they're doing the wrench
-			user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
-			if(O.use_tool(src, user, 20))
-				user.visible_message("<span class='notice'>[user] fixes \the [src].</span>", "<span class='notice'>You fix \the [src].</span>")
-				broken = 0
-				update_appearance()
-				return FALSE //to use some fuel
-		else
-			to_chat(user, "<span class='warning'>It's broken!</span>")
-			return TRUE
+		to_chat(user, "<span class='warning'>It's broken!</span>")
+		return TRUE
+
+	if(istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/soap) || istype(O, /obj/item/reagent_containers/glass/rag))
 		return
-
-	if(istype(O, /obj/item/reagent_containers/spray))
-		var/obj/item/reagent_containers/spray/clean_spray = O
-		if(clean_spray.reagents.has_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this))
-			clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this,1)
-			playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -6)
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>You need more space cleaner!</span>")
-		return TRUE
-
-	if(istype(O, /obj/item/soap))
-		var/obj/item/soap/P = O
-		user.visible_message("<span class='notice'>[user] starts to clean \the [src].</span>", "<span class='notice'>You start to clean \the [src]...</span>")
-		if(do_after(user, P.cleanspeed, target = src))
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		return TRUE
 
 	if(dirty == 100) // The microwave is all dirty so can't be used!
 		to_chat(user, "<span class='warning'>\The [src] is dirty!</span>")
@@ -194,6 +162,33 @@
 		return
 
 	..()
+
+/obj/machinery/microwave/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken == 1)
+		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		if(I.use_tool(src, user, 20))
+			user.visible_message("<span class='notice'>[user] fixes \the [src].</span>", "<span class='notice'>You fix \the [src].</span>")
+			broken = 0
+			update_appearance()
+			return TRUE
+
+/obj/machinery/microwave/wirecutter_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken == 2)
+		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		if(I.use_tool(src, user, 20))
+			user.visible_message("<span class='notice'>[user] fixes part of \the [src].</span>", "<span class='notice'>You fix part of \the [src].</span>")
+			broken = 1
+			update_appearance()
+			return TRUE
+
+/obj/machinery/microwave/wash(clean_types)
+	. = ..()
+	if(dirty)
+		dirty = 0
+		update_appearance()
+		return TRUE
 
 /obj/machinery/microwave/AltClick(mob/user)
 	if(user.canUseTopic(src, !issilicon(usr)))
@@ -309,7 +304,7 @@
 		return
 	time--
 	use_power(500)
-	addtimer(CALLBACK(src, .proc/loop, type, time, wait), wait)
+	addtimer(CALLBACK(src, PROC_REF(loop), type, time, wait), wait)
 
 /obj/machinery/microwave/proc/loop_finish()
 	operating = FALSE
@@ -382,7 +377,7 @@
 			tocook = target
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
-			addtimer(CALLBACK(src, .proc/cook), 100)
+			addtimer(CALLBACK(src, PROC_REF(cook)), 100)
 			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()

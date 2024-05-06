@@ -5,7 +5,7 @@
 
 /obj/item/clothing/under/rank/security/head_of_security/nt/lp
 	name = "LP Security Specialist's Jumpsuit"
-	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Security Specialist."
 
 /obj/item/clothing/under/rank/security/head_of_security/alt/lp
 	name = "LP Lieutentant's 'Dramatic' Jumpsuit"
@@ -91,7 +91,7 @@
 
 //Holocalls
 /datum/preset_holoimage/commissioner
-	outfit_type = /datum/outfit/job/captain/nt/lp_lieutenant
+	outfit_type = /datum/outfit/job/nanotrasen/captain/lp
 
 //hardsuits
 /obj/item/clothing/suit/space/hardsuit/ert/lp
@@ -127,7 +127,7 @@
 	item_state = "hardsuit0-ert_security"
 
 /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
 	name = "Loss Prevention Engineering Hardsuit"
 	desc = "The best of the best engineering staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
@@ -135,7 +135,7 @@
 	item_state = "ert_engineer"
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	name = "Loss Prevention Engineering Hardsuit Helmet"
 	desc = "The helmet that comes attached to the LP Team Engineering Hardsuit."
 	icon_state = "hardsuit0-ert_engineer"

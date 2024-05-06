@@ -10,6 +10,8 @@ All ShuttleMove procs go here
 	if(!(move_mode & MOVE_AREA) || !isshuttleturf(src))
 		return move_mode
 
+	clear_adjacencies()
+
 	return move_mode | MOVE_TURF | MOVE_CONTENTS
 
 // Called from the new turf before anything has been moved
@@ -19,6 +21,8 @@ All ShuttleMove procs go here
 	. = move_mode
 	if(!(. & MOVE_TURF))
 		return
+
+	clear_adjacencies()
 
 	for(var/atom/movable/thing as anything in contents)
 		if(ismob(thing))
@@ -109,13 +113,11 @@ All ShuttleMove procs go here
 		CRASH("A turf queued to clean up after a shuttle dock somehow didn't have enough skipovers in baseturfs. [oldT]([oldT.type]):[oldT.loc]")
 
 	if(BT_index != length(baseturfs))
-		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP)
+		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP|CHANGETURF_DEFER_CHANGE)
 
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
-	blocks_air = initial(blocks_air)
-	oldT.blocks_air = initial(oldT.blocks_air)
 	AfterChange()
 	oldT.AfterChange()
 
@@ -211,7 +213,7 @@ All ShuttleMove procs go here
 	for(var/obj/machinery/door/airlock/A in range(1, src))  // includes src
 		A.shuttledocked = FALSE
 		A.air_tight = TRUE
-		INVOKE_ASYNC(A, /obj/machinery/door/.proc/close)
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/door, close))
 
 /obj/machinery/door/airlock/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()

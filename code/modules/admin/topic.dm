@@ -125,13 +125,13 @@
 				log_admin("[key_name(usr)] spawned a blob with base resource gain [strength].")
 				new/datum/round_event/ghost_role/blob(TRUE, strength)
 			if("centcom")
-				message_admins("[key_name(usr)] is creating a CentCom response team...")
+				message_admins("[key_name(usr)] is creating a response team...")
 				if(src.makeEmergencyresponseteam())
-					message_admins("[key_name(usr)] created a CentCom response team.")
-					log_admin("[key_name(usr)] created a CentCom response team.")
+					message_admins("[key_name(usr)] created a response team.")
+					log_admin("[key_name(usr)] created a response team.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create a CentCom response team. Unfortunately, there were not enough candidates available.")
-					log_admin("[key_name(usr)] failed to create a CentCom response team.")
+					message_admins("[key_name_admin(usr)] tried to create a response team. Unfortunately, there were not enough candidates available.")
+					log_admin("[key_name(usr)] failed to create a response team.")
 			if("abductors")
 				message_admins("[key_name(usr)] is creating an abductor team...")
 				if(src.makeAbductorTeam())
@@ -946,7 +946,7 @@
 		L.Unconscious(100)
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome1))
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 1)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 1)")
 
@@ -972,7 +972,7 @@
 		L.Unconscious(100)
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome2))
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 2)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 2)")
 
@@ -995,7 +995,7 @@
 		L.Unconscious(100)
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeadmin))
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Admin.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Admin.)")
 
@@ -1025,7 +1025,7 @@
 		L.Unconscious(100)
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeobserve))
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>"), 5 SECONDS)
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Observer.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Observer.)")
 
@@ -1239,7 +1239,7 @@
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
 		else if(isplasmaman(H))
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(isethereal(H))
+		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
@@ -2218,10 +2218,23 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-	else if(href_list["open_fax_manager"])
+	else if(href_list["show_paper"])
 		if(!check_rights(R_ADMIN))
 			return
-		usr.client.fax_manager()
+
+		var/obj/item/paper/paper_to_show = locate(href_list["show_paper"])
+		if(!istype(paper_to_show))
+			return
+		paper_to_show.ui_interact(usr)
+
+	else if(href_list["show_photo"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/obj/item/photo/photo_to_show = locate(href_list["show_photo"])
+		if(!istype(photo_to_show))
+			return
+		photo_to_show.show(usr)
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

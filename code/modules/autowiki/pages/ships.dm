@@ -73,15 +73,9 @@
 
 	return output
 
-/datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip, filename)
-	//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
-	var/static/list/species = list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)
-	//Length times ascii char of the last letter, good enough(?) #entropy
-	var/seed = length(filename) * text2ascii(filename, length(filename))
+/datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip)
 	//Controlled randomisation
-	wiki_dummy.seeded_randomization(seed)
-	//Each outfit will always have the same species
-	wiki_dummy.set_species(species[seed % length(species) + 1])
+	wiki_dummy.seeded_randomization("[to_equip.outfit]", list(/datum/species/elzuose, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider))
 	//Delete all the old stuff they had
 	wiki_dummy.wipe_state()
 

@@ -7,9 +7,6 @@
 /proc/plasmaman_name()
 	return "[pick(GLOB.plasmaman_names)] \Roman[rand(1,99)]"
 
-/proc/moth_name()
-	return "[pick(GLOB.moth_first)] [pick(GLOB.moth_last)]"
-
 /proc/squid_name()
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
@@ -242,8 +239,17 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"SEV",
 		"SSV",
 	),
+	"New Gorlex Republic" = list(
+		"NGRV",
+	),
+	"CyberSun" = list(
+		"CSSV",
+	),
+	"Student-Union of Naturalistic Sciences" = list(
+		"SUNS",
+	),
 	"SolGov" = list(
-		"SGSV",
+		"SCSV",
 	),
 	"Saint-Roumain Militia" = list(
 		"SRSV",
@@ -252,16 +258,28 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"SV",
 		"IMV",
 		"ISV",
+		"XSV",
 	),
 	"Inteq Risk Management Group" = list(
 		"IRMV",
 	),
-	"Colonial Minutemen" = list(
+	"CLIP Minutemen" = list(
 		"CMSV",
 		"CMGSV",
 	),
-	"NanoTrasen" = list(
+	"Nanotrasen" = list(
 		"NTSV",
+	),
+	"Frontiersmen Fleet" = list(
+		"FFV",
+	),
+	"Saint-Roumaine Militia" = list(
+		"SRSV",
+	),
+	"Pan-Gezenan Federation" = list(
+		"PGF",
+		"PGFMC",
+		"PGFN",
 	),
 ))
 

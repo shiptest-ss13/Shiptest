@@ -24,10 +24,12 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
+	fire_delay = 1
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	wield_delay = 0.2 SECONDS
-	spread = -2
-	spread_unwielded = 4
+	spread = 2
+	spread_unwielded = 5
 	wield_slowdown = 0.15
 
 	muzzleflash_iconstate = "muzzle_flash_light"
@@ -40,24 +42,41 @@
 	var/obj/item/suppressor/S = new(src)
 	install_suppressor(S)
 
-/obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "\improper M1911A8"
-	desc = "A classic .45 handgun. An engraving on the slide marks it as a product of Hunter's Pride."
-	icon_state = "m1911"
+/obj/item/gun/ballistic/automatic/pistol/suns
+	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
+	icon_state = "pistol_suns"
+
+/obj/item/gun/ballistic/automatic/pistol/candor
+	name = "\improper Candor"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
+	icon_state = "candor"
+	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
-	fire_sound = 'sound/weapons/gun/pistol/m1911.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/m1911_cocked.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
-	load_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	recoil = -2
 
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	item_state = "hp_generic_fresh"
+
+/obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
+	. = ..()
+	. += "[initial(icon_state)]_factory"
+
+/obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
@@ -72,6 +91,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_NONE
 	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
@@ -107,6 +127,7 @@
 	name = "flat gun"
 	desc = "A 2 dimensional gun.. what?"
 	icon_state = "flatgun"
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	SHOULD_CALL_PARENT(0)
@@ -126,6 +147,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
+	manufacturer = MANUFACTURER_NANOTRASEN
 	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -140,6 +162,7 @@
 	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards. A yellow IRMG shield is set into the grips. Chambered in 9mm."
 	icon_state = "commander-inteq"
 	item_state = "commander-inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
 	spawnwithmagazine = FALSE
@@ -206,6 +229,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+	manufacturer = MANUFACTURER_SOLARARMORIES
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
@@ -230,22 +254,17 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy plastic gun that is extremely cheap to produce. You get what you pay for."
-	icon_state = "disposable"
+	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+	icon_state = "disposable" //credit to discord user any% for the sprite
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable
 	custom_materials = list(/datum/material/plastic=2000)
 	can_suppress = FALSE
-	var/random_icon = TRUE
+	manufacturer = MANUFACTURER_NONE
+	has_safety = FALSE //thing barely costs anything, why would it have a safety?
+	safety = FALSE
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
-	. = ..()
-	var/picked = pick("none","red","purple","yellow","green","dark")
-	if(random_icon)
-		if(picked == "none")
-			return
-		icon_state = "disposable_[picked]"
-
-/obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user)
+/obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
 	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
 	return
 
@@ -257,7 +276,6 @@
 	name = "pizza disposable gun"
 	desc = "How horrible. Whoever you point at with this won't be very cheesed to meet you." //this is a warcrime against italians // IF YOU'RE GOING TO DO US DIRTY SPELL IT RIGHT
 	icon_state = "disposable_pizza"
-	random_icon = FALSE
 	custom_materials = list(/datum/material/pizza=2000)
 
 //not technically a pistol but whatever

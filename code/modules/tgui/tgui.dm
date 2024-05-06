@@ -92,8 +92,9 @@
 	window.acquire_lock(src)
 	if(!window.is_ready())
 		window.initialize(
+			strict_mode = TRUE,
 			fancy = user.client.prefs.tgui_fancy,
-			inline_assets = list(
+			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui_common),
 				get_asset_datum(/datum/asset/simple/tgui),
 			))
@@ -312,7 +313,7 @@
 			window = window,
 			src_object = src_object)
 		process_status()
-		DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/on_act_message, act_type, payload, state))
+		DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(on_act_message), act_type, payload, state))
 		return FALSE
 	switch(type)
 		if("ready")

@@ -95,13 +95,10 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 12;
-	height = 17;
 	launch_status = 0;
 	name = "mining ship";
 	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
+	preferred_direction = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
@@ -257,6 +254,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gm" = (
@@ -295,9 +296,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
@@ -425,9 +424,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/white{
 	dir = 1
 	},
@@ -566,7 +563,7 @@
 	pixel_x = -9;
 	pixel_y = 7
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
@@ -745,9 +742,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/east,
 /obj/effect/landmark/start/assistant,
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew)
 "pS" = (
@@ -1502,9 +1497,8 @@
 /obj/item/pickaxe/silver,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/structure/closet/wall{
-	name = "equipment closet";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "equipment closet"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1552,8 +1546,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 1
 	},
-/obj/item/clothing/head/caphat/cowboy,
 /obj/item/radio/intercom/wideband/directional/east,
+/obj/item/clothing/suit/armor/vest/capcarapace/duster,
+/obj/item/clothing/head/caphat/cowboy,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ka" = (
@@ -2007,9 +2002,7 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "Tl" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "TP" = (
@@ -2104,9 +2097,9 @@
 	dir = 4
 	},
 /obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "WE" = (
@@ -2127,14 +2120,13 @@
 "WL" = (
 /obj/structure/table,
 /obj/item/storage/belt/utility,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/lights/mixed,
-/obj/item/paper/fluff/ruins/oldstation/generator_manual,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "WZ" = (

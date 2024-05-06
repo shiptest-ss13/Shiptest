@@ -1,5 +1,5 @@
 /obj/structure/sign
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "backing"
 	name = "sign backing"
 	desc = "A plastic sign backing, use a pen to change the decal. It can be detached from the wall with a wrench."
@@ -22,7 +22,7 @@
 /obj/item/sign
 	name = "sign backing"
 	desc = "A plastic sign backing, use a pen to change the decal. It can be placed on a wall."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "backing"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/plastic = 2000)
@@ -249,11 +249,11 @@
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
 
-// colonial minutemen seal
-/obj/structure/sign/minutemen
-	name = "Banner of the Colonial Minutemen"
-	desc = "A seal representing the many colonies comprising the Colonial Minutemen."
-	icon_state = "minutemen"
+// clip seal
+/obj/structure/sign/clip
+	name = "Banner of the Confederated League of Independent Planets"
+	desc = "A seal representing the many colonies comprising the League."
+	icon_state = "clip"
 
 //Numeral signs
 
@@ -298,3 +298,12 @@
 /obj/structure/sign/number/nine
 	name = "nine"
 	icon_state = "9"
+
+/obj/structure/sign/number/random
+	name = "numeral sign"
+	icon_state = "0"
+
+/obj/structure/sign/number/random/Initialize()
+	icon_state = "[rand(0, 9)]"
+	update_icon_state()
+	. = ..()

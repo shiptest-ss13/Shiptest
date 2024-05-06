@@ -108,10 +108,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "aV" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -195,7 +192,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
 "bo" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/item/toy/plush/beeplushie,
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
@@ -459,9 +456,7 @@
 /turf/closed/wall/rust,
 /area/ship/crew/hydroponics)
 "cO" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/item/toy/plush/slimeplushie{
 	pixel_x = 6
 	},
@@ -1305,10 +1300,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "hx" = (
@@ -1426,7 +1418,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "id" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/brown/corner/directional/south,
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
@@ -1523,6 +1515,10 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "iy" = (
@@ -1689,7 +1685,7 @@
 /area/ship/engineering/electrical)
 "jC" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /obj/item/storage/box/lethalshot,
 /obj/effect/turf_decal/siding/red{
 	dir = 10
@@ -1822,9 +1818,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "km" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -30;
+/obj/structure/closet/wall/blue/directional/west{
 	name = "Space Suits";
 	desc = "Contains supplies for space walking."
 	},
@@ -2104,10 +2098,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "lA" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
@@ -2175,7 +2166,7 @@
 /area/ship/crew/toilet)
 "mj" = (
 /obj/item/storage/backpack/satchel/flat/mimir_jackets,
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "mk" = (
@@ -2498,9 +2489,7 @@
 /turf/template_noop,
 /area/template_noop)
 "ob" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
@@ -2675,6 +2664,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "pe" = (
@@ -2976,9 +2968,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "qO" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
 "qR" = (
@@ -3242,7 +3232,6 @@
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/prisoner,
-/obj/item/storage/box/firingpins,
 /obj/item/storage/box/seccarts,
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/zipties,
@@ -3571,10 +3560,7 @@
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "uO" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3714,6 +3700,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
+"vT" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	id = "prison_scrap";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "wa" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -3744,9 +3740,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "wk" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4174,9 +4168,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "yN" = (
-/obj/structure/chair/sofa{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/directional/west,
 /obj/item/toy/plush/among,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
@@ -4509,9 +4501,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "AP" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -30;
+/obj/structure/closet/wall/blue/directional/west{
 	name = "Space Suits";
 	desc = "Contains supplies for space walking."
 	},
@@ -4674,11 +4664,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/conveyor/inverted{
-	id = "prison_scrap";
-	dir = 8
-	},
 /obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4864,10 +4853,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "CP" = (
@@ -5320,9 +5306,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Fn" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
@@ -5772,7 +5756,7 @@
 /area/ship/maintenance/port)
 "Ht" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/hellfire,
 /obj/item/storage/box/rubbershot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/shield/riot,
@@ -5858,9 +5842,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "HZ" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
 "Ib" = (
@@ -5904,9 +5886,7 @@
 /area/ship/hallway/central)
 "Ik" = (
 /obj/item/storage/backpack/satchel/flat/mimir_tech,
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfive)
 "Is" = (
@@ -6043,9 +6023,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/dormthree)
 "Jc" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
@@ -6256,8 +6234,7 @@
 	output_dir = 1
 	},
 /obj/machinery/conveyor{
-	id = "prison_scrap";
-	dir = 1
+	id = "prison_scrap"
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -6342,16 +6319,15 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/hydroponics)
 "KI" = (
-/obj/machinery/conveyor/inverted{
-	id = "prison_scrap";
-	dir = 1
-	},
 /obj/machinery/mineral/stacking_machine{
 	output_dir = 2;
 	input_dir = 1
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
+	},
+/obj/machinery/conveyor{
+	id = "prison_scrap"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -6395,10 +6371,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
@@ -7461,9 +7434,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Rm" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7696,9 +7667,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
 	pixel_x = 8;
 	pixel_y = 2
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims{
-	pixel_y = 10
 	},
 /obj/item/lighter/greyscale{
 	pixel_y = 4;
@@ -7973,9 +7941,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Uw" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 8;
 	pixel_y = -22;
@@ -9129,7 +9095,7 @@ yz
 tY
 jS
 TO
-TO
+vT
 Kk
 wm
 Jy

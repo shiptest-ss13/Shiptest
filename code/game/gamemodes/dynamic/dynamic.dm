@@ -159,10 +159,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			return
 		if(threatadd > 0)
 			create_threat(threatadd)
-			threat_log += "[worldtime2text()]: [key_name(usr)] increased threat by [threatadd] threat."
+			threat_log += "[game_timestamp()]: [key_name(usr)] increased threat by [threatadd] threat."
 		else
 			spend_threat(-threatadd)
-			threat_log += "[worldtime2text()]: [key_name(usr)] decreased threat by [-threatadd] threat."
+			threat_log += "[game_timestamp()]: [key_name(usr)] decreased threat by [-threatadd] threat."
 	else if (href_list["injectlate"])
 		latejoin_injection_cooldown = 0
 		forced_injection = TRUE
@@ -367,7 +367,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/post_setup(report)
 	for(var/datum/dynamic_ruleset/roundstart/rule in executed_rules)
 		rule.candidates.Cut() // The rule should not use candidates at this point as they all are null.
-		addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_roundstart_rule, rule), rule.delay)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_roundstart_rule), rule), rule.delay)
 	..()
 
 /// A simple roundstart proc used when dynamic_forced_roundstart_ruleset has rules in it.
@@ -478,7 +478,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/added_threat = starting_rule.scale_up(extra_rulesets_amount, threat)
 	if(starting_rule.pre_execute())
 		spend_threat(starting_rule.cost + added_threat)
-		threat_log += "[worldtime2text()]: Roundstart [starting_rule.name] spent [starting_rule.cost + added_threat]. [starting_rule.scaling_cost ? "Scaled up[starting_rule.scaled_times]/3 times." : ""]"
+		threat_log += "[game_timestamp()]: Roundstart [starting_rule.name] spent [starting_rule.cost + added_threat]. [starting_rule.scaling_cost ? "Scaled up[starting_rule.scaled_times]/3 times." : ""]"
 		if(starting_rule.flags & HIGHLANDER_RULESET)
 			highlander_executed = TRUE
 		else if(starting_rule.flags & ONLY_RULESET)
@@ -540,7 +540,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		else if(rule.ruletype == "Midround")
 			midround_rules = remove_from_list(midround_rules, rule.type)
 
-	addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_midround_latejoin_rule, rule), rule.delay)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_midround_latejoin_rule), rule), rule.delay)
 	return TRUE
 
 /// An experimental proc to allow admins to call rules on the fly or have rules call other rules.
@@ -572,7 +572,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		new_rule.trim_candidates()
 		if (new_rule.ready(forced))
 			spend_threat(new_rule.cost)
-			threat_log += "[worldtime2text()]: Forced rule [new_rule.name] spent [new_rule.cost]"
+			threat_log += "[game_timestamp()]: Forced rule [new_rule.name] spent [new_rule.cost]"
 			if (new_rule.execute()) // This should never fail since ready() returned 1
 				if(new_rule.flags & HIGHLANDER_RULESET)
 					highlander_executed = TRUE
@@ -591,7 +591,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/proc/execute_midround_latejoin_rule(sent_rule)
 	var/datum/dynamic_ruleset/rule = sent_rule
 	spend_threat(rule.cost)
-	threat_log += "[worldtime2text()]: [rule.ruletype] [rule.name] spent [rule.cost]"
+	threat_log += "[game_timestamp()]: [rule.ruletype] [rule.name] spent [rule.cost]"
 	rule.pre_execute()
 	if (rule.execute())
 		log_game("DYNAMIC: Injected a [rule.ruletype == "latejoin" ? "latejoin" : "midround"] ruleset [rule.name].")

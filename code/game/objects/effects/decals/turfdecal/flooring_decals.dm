@@ -416,14 +416,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 	icon_state = "plaque"
 	icon = 'icons/turf/decals.dmi'
 
-/obj/effect/turf_decal/asteroid
-	name = "random asteroid rubble"
-	icon_state = "asteroid0"
-
-/obj/effect/turf_decal/asteroid/New()
-	icon_state = "asteroid[rand(0,9)]"
-	..()
-
 /obj/effect/turf_decal/chapel
 	name = "chapel"
 	icon_state = "chapel"
@@ -1053,6 +1045,17 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/ntspaceworks_big/eight
 	icon_state = "ntspaceworks_big-8"
 
+//Etherbor Lihmona Shipyards
+
+/obj/effect/turf_decal/etherbor/left
+	icon_state = "etherbor_left"
+
+/obj/effect/turf_decal/etherbor/center
+	icon_state = "etherbor_center"
+
+/obj/effect/turf_decal/etherbor/right
+	icon_state = "etherbor_right"
+
 //Hardline Salvage and Mining
 
 /obj/effect/turf_decal/hardline_small
@@ -1092,3 +1095,17 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/hardline_big/seven
 	icon_state = "hardline_big-7"
+
+//ARROW & AXE DOCKYARDS
+
+/obj/effect/turf_decal/arrowaxe_small
+	name = "small arrow & axe logo"
+
+/obj/effect/turf_decal/arrowaxe_small/left
+	icon_state = "arrowaxe-left"
+
+/obj/effect/turf_decal/arrowaxe_small/center
+	icon_state = "arrowaxe-center"
+
+/obj/effect/turf_decal/arrowaxe_small/right
+	icon_state = "arrowaxe-right"

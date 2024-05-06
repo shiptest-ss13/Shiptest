@@ -36,10 +36,11 @@ SUBSYSTEM_DEF(ticker)
 	var/selected_tip						// What will be the tip of the day?
 
 	var/timeLeft						//pregame timer
-	//var/start_at		WS Edit - Countdown after init
 
-	var/gametime_offset = 432000		//Deciseconds to add to world.time for station time.
-	var/station_time_rate_multiplier = 12		//factor of station time progressal vs real time.
+	/// The "start" of the round in station time, for example, 9 HOURS = 9:00 AM
+	var/gametime_offset = 9 HOURS
+	/// Factor of station time progressal vs real time.
+	var/station_time_rate_multiplier = 1
 
 	var/totalPlayers = 0					//used for pregame stats on statpanel
 	var/totalPlayersReady = 0				//used for pregame stats on statpanel
@@ -57,11 +58,6 @@ SUBSYSTEM_DEF(ticker)
 	var/list/round_end_events
 	var/mode_result = "undefined"
 	var/end_state = "undefined"
-
-	//Crew Objective stuff
-	var/list/successfulCrew = list()
-	var/list/crewobjlist = list()
-	var/list/crewobjjobs = list()
 
 	/// Why an emergency shuttle was called
 	var/emergency_reason
@@ -136,7 +132,6 @@ SUBSYSTEM_DEF(ticker)
 
 		GLOB.syndicate_code_response_regex = codeword_match
 
-	//start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)		WS Edit - Countdown at init
 	if(CONFIG_GET(flag/randomize_shift_time))
 		gametime_offset = rand(0, 23) HOURS
 	else if(CONFIG_GET(flag/shift_time_realtime))
@@ -280,14 +275,14 @@ SUBSYSTEM_DEF(ticker)
 		cb.InvokeAsync()
 	LAZYCLEARLIST(round_start_events)
 
-	log_world("Game start took [(world.timeofday - init_start)/10]s")
+	log_world("Game start took [(REALTIMEOFDAY - init_start)/10]s")
 	round_start_time = world.time
 	round_start_timeofday = world.timeofday
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
 	SSredbot.send_discord_message("ooc", "**A new round has begun.**")
-	SEND_SOUND(world, sound('sound/ai/welcome.ogg'))
+	SEND_SOUND(world, sound('sound/roundstart/addiguana.ogg'))
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
@@ -508,7 +503,7 @@ SUBSYSTEM_DEF(ticker)
 		var/mob/dead/new_player/player = i
 		if(player.ready == PLAYER_READY_TO_OBSERVE && player.mind)
 			//Break chain since this has a sleep input in it
-			addtimer(CALLBACK(player, /mob/dead/new_player.proc/make_me_an_observer), 1)
+			addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/dead/new_player, make_me_an_observer)), 1)
 
 /datum/controller/subsystem/ticker/proc/load_mode()
 	var/mode = trim(file2text("data/mode.txt"))
@@ -576,15 +571,12 @@ SUBSYSTEM_DEF(ticker)
 	update_everything_flag_in_db()
 	if(!round_end_sound)
 		round_end_sound = pick(\
-		'sound/roundend/newroundsexy.ogg',
-		'sound/roundend/apcdestroyed.ogg',
-		'sound/roundend/bangindonk.ogg',
-		'sound/roundend/leavingtg.ogg',
-		'sound/roundend/its_only_game.ogg',
-		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/disappointed.ogg',
-		'sound/roundend/scrunglartiy.ogg',
-		'sound/roundend/petersondisappointed.ogg'\
+		'sound/roundend/deliguana.ogg',
+		'sound/roundend/undecided.ogg',
+		'sound/roundend/repair.ogg',
+		'sound/roundend/boowomp.ogg',
+		'sound/roundend/shiptestingthursday.ogg',
+		'sound/roundend/gayrights.ogg'\
 		)
 	///The reference to the end of round sound that we have chosen.
 	var/sound/end_of_round_sound_ref = sound(round_end_sound)

@@ -465,10 +465,8 @@
 /area/ship/storage)
 "fv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Bartender's locker";
-	pixel_y = -28
+/obj/structure/closet/wall/red/directional/south{
+	name = "Bartender's locker"
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/item/clothing/suit/apron/purple_bartender,
@@ -664,9 +662,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "iE" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1029,10 +1025,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/west,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -1379,7 +1372,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat{
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/revolver/nagant{
+/obj/item/gun/ballistic/revolver/ashhand{
 	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech,
@@ -1760,13 +1753,12 @@
 	pixel_x = -3;
 	pixel_y = -5
 	},
-/obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/n762,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/n762,
-/obj/item/ammo_box/n762_clip,
+/obj/item/ammo_casing/a4570,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
@@ -1840,7 +1832,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47/neutured,
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm/neutured,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -2282,7 +2274,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/gear,
-/obj/item/gun/ballistic/automatic/smg/aks74u{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine{
 	pixel_y = -6
 	},
 /obj/item/gun/ballistic/automatic/zip_pistol,
@@ -2332,13 +2324,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/item/book/manual/wiki/engineering_guide{
+/obj/item/book/manual/wiki/engineering{
 	pixel_x = 5;
 	pixel_y = -7
-	},
-/obj/item/book/manual/wiki/grenades{
-	pixel_x = -3;
-	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
@@ -2590,10 +2578,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/east{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 4
+	color = "#c45c57"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -2818,11 +2805,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/item/book/manual/wiki/engineering_hacking{
+/obj/item/book/manual/wiki/hacking{
 	pixel_x = -8;
 	pixel_y = 6
 	},
-/obj/item/book/manual/wiki/cooking_to_serve_man{
+/obj/item/book/manual/wiki/cooking{
 	pixel_x = 5;
 	pixel_y = -6
 	},
@@ -2862,10 +2849,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/syringe/contraband/bath_salts{
 	pixel_y = 6;
 	pixel_x = -4
@@ -3119,7 +3103,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/fax/frontiersmen,
+/obj/machinery/fax/ruin,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
 "Ls" = (
@@ -3778,11 +3762,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/chair/comfy/brown{
-	color = "#66b266";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#66b266"
 	},
-/obj/item/book/manual/wiki/experimentor{
+/obj/item/book/manual/wiki/surgery{
 	pixel_x = 10;
 	pixel_y = -5
 	},

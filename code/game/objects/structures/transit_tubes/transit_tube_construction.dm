@@ -27,7 +27,7 @@
 
 /obj/structure/c_transit_tube/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_FLIP | ROTATION_VERBS,null,null,CALLBACK(src,.proc/after_rot))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_FLIP | ROTATION_VERBS,null,null,CALLBACK(src, PROC_REF(after_rot)))
 
 /obj/structure/c_transit_tube/proc/after_rot(mob/user,rotation_type)
 	if(flipped_build_type && rotation_type == ROTATION_FLIP)
@@ -46,7 +46,7 @@
 		return
 	to_chat(user, "<span class='notice'>You start attaching the [name]...</span>")
 	add_fingerprint(user)
-	if(I.use_tool(src, user, time_to_unwrench, volume=50, extra_checks=CALLBACK(src, .proc/can_wrench_in_loc, user)))
+	if(I.use_tool(src, user, time_to_unwrench, volume=50, extra_checks=CALLBACK(src, PROC_REF(can_wrench_in_loc), user)))
 		to_chat(user, "<span class='notice'>You attach the [name].</span>")
 		var/obj/structure/transit_tube/R = new build_type(loc, dir)
 		transfer_fingerprints_to(R)
@@ -85,13 +85,11 @@
 //all the dispenser stations
 
 /obj/structure/c_transit_tube/station/dispenser
-	icon_state = "closed_dispenser0"
 	name = "unattached dispenser station"
 	build_type = /obj/structure/transit_tube/station/dispenser
 	flipped_build_type = /obj/structure/transit_tube/station/dispenser/flipped
 
 /obj/structure/c_transit_tube/station/dispenser/flipped
-	icon_state = "closed_station1"
 	flipped = 1
 	build_type = /obj/structure/transit_tube/station/dispenser/flipped
 	flipped_build_type = /obj/structure/transit_tube/station/dispenser
@@ -100,13 +98,11 @@
 
 /obj/structure/c_transit_tube/station/dispenser/reverse
 	name = "unattached terminus dispenser station"
-	icon_state = "closed_terminus0"
 	build_type = /obj/structure/transit_tube/station/dispenser/reverse
 	flipped_build_type = /obj/structure/transit_tube/station/dispenser/reverse/flipped
 	base_icon = "closed_terminus"
 
 /obj/structure/c_transit_tube/station/dispenser/reverse/flipped
-	icon_state = "closed_terminus1"
 	flipped = 1
 	build_type = /obj/structure/transit_tube/station/dispenser/reverse/flipped
 	flipped_build_type = /obj/structure/transit_tube/station/dispenser/reverse

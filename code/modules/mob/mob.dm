@@ -204,27 +204,34 @@
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
-	if(visible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
-
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
 
-		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		var/msg = message
+
+		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
 		else if(T != loc && T != src) //if src is inside something and not a turf.
 			msg = blind_message
 		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //if it is too dark.
 			msg = blind_message
+		else if(visible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.get_face_name())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
 		if(!msg)
 			continue
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+			M.create_chat_message(src, raw_message = message, runechat_flags = visible_message_flags)
 
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
@@ -250,12 +257,24 @@
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
-	if(audible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
 	for(var/mob/M in hearers)
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
-		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		var/msg = raw_msg
+
+		//emote handling
+		if(audible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.GetVoice())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
+			if(runechat_prefs_check(M, audible_message_flags) && M.can_hear())
+				M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
+
+		M.show_message(msg, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
  * Show a message to all mobs in earshot of this one
@@ -453,7 +472,7 @@
 	set name = "Examine"
 	set category = "IC"
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/run_examinate, examinify))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
 
 /mob/proc/run_examinate(atom/examinify)
 
@@ -472,8 +491,8 @@
 		if(isnull(client.recent_examines[examinify]) || client.recent_examines[examinify] < world.time)
 			result = examinify.examine(src)
 			client.recent_examines[examinify] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, examinify), EXAMINE_MORE_TIME)
+			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), examinify), EXAMINE_MORE_TIME)
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
@@ -559,12 +578,21 @@
 	// check to see if their face is blocked or, if not, a signal blocks it
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	if(is_face_visible() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
+/**
+ * Called by using Activate Held Object with an empty hand/limb
+ *
+ * Does nothing by default. The intended use is to allow limbs to call their
+ * own attack_self procs. It is up to the individual mob to override this
+ * parent and actually use it.
+ */
+/mob/proc/limb_attack_self()
+	return
 
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
@@ -608,7 +636,7 @@
 	set category = "Object"
 	set src = usr
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/execute_mode))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_mode)))
 
 ///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
 /mob/proc/execute_mode()
@@ -622,6 +650,8 @@
 	if(I)
 		I.attack_self(src)
 		update_inv_hands()
+		return
+	limb_attack_self()
 
 /mob/verb/do_unique_action()
 	set name = "Do Unique Action"
@@ -670,6 +700,24 @@
 	else
 		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
 
+///Shows guestbook tgui window
+/mob/verb/guestbook()
+	set name = "Guestbook"
+	set category = "IC"
+	set desc = "View your character's Guestbook."
+	// the reason why there are two observer checks in here is because the mind datum sometimes carries over to ghosts.
+	// this is something i should probably fix instead of adding a fallback check, but...
+	if(isobserver(src))
+		to_chat(src, span_warning("You have to be in the current round to do that!"))
+		return
+	if(!mind)
+		var/fail_message = "You have no mind!"
+		if(isobserver(src))
+			fail_message += " You have to be in the current round at some point to have one."
+		to_chat(src, span_warning(fail_message))
+		return
+	mind.guestbook.ui_interact(usr)
+
 /**
  * Allows you to respawn, abandoning your current mob
  *
@@ -705,7 +753,7 @@
 		log_game("[key_name(usr)] AM failed due to disconnect.")
 
 	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
-		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
 		if(time_left > 0)
 			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
@@ -843,7 +891,8 @@
 
 /// Adds this list to the output to the stat browser
 /mob/proc/get_status_tab_items()
-	. = list()
+	. = list("") //we want to offset unique stuff from standard stuff
+	SEND_SIGNAL(src, COMSIG_MOB_GET_STATUS_TAB_ITEMS, .)
 
 /// Gets all relevant proc holders for the browser statpenl
 /mob/proc/get_proc_holders()
@@ -990,7 +1039,7 @@
 			mob_spell_list -= S
 			qdel(S)
 	if(client)
-		client << output(null, "statbrowser:check_spells")
+		client.stat_panel.send_message("check_spells")
 
 ///Return any anti magic atom on this mob that matches the magic type
 /mob/proc/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
@@ -1095,6 +1144,14 @@
 		return LAZYLEN(match_list)
 	return FALSE
 
+/mob/proc/update_joined_player_list(newname, oldname)
+	if(newname == oldname)
+		return
+	if(oldname)
+		GLOB.joined_player_list -= oldname
+	if(newname)
+		GLOB.joined_player_list[newname] = TRUE
+
 
 /**
  * Fully update the name of a mob
@@ -1109,6 +1166,9 @@
 		return 0
 
 	log_played_names(ckey,newname)
+
+	if(GLOB.joined_player_list[oldname])
+		update_joined_player_list(newname, oldname)
 
 	real_name = newname
 	name = newname
@@ -1195,6 +1255,11 @@
 	if(client.mouse_override_icon)
 		client.mouse_pointer_icon = client.mouse_override_icon
 
+/mob/proc/update_names_joined_list(new_name, old_name)
+	if(old_name)
+		GLOB.real_names_joined -= old_name
+	if(new_name)
+		GLOB.real_names_joined[new_name] = TRUE
 
 ///This mob is abile to read books
 /mob/proc/is_literate()
@@ -1419,7 +1484,7 @@
 		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
 	active_storage = new_active_storage
 	if(active_storage)
-		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, .proc/active_storage_deleted)
+		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, PROC_REF(active_storage_deleted))
 
 /mob/proc/active_storage_deleted(datum/source)
 	SIGNAL_HANDLER

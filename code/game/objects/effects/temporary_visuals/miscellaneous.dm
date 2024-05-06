@@ -115,17 +115,14 @@
 /obj/effect/temp_visual/dir_setting/wraith
 	name = "shadow"
 	icon = 'icons/mob/mob.dmi'
-	icon_state = "phase_shift2"
+	icon_state = "revenant_idle"
 	duration = 6
 
 /obj/effect/temp_visual/dir_setting/wraith/angelic
-	icon_state = "phase_shift2_angelic"
 
 /obj/effect/temp_visual/dir_setting/wraith/out
-	icon_state = "phase_shift"
 
 /obj/effect/temp_visual/dir_setting/wraith/out/angelic
-	icon_state = "phase_shift_angelic"
 
 /obj/effect/temp_visual/dir_setting/tailsweep
 	icon_state = "tailsweep"
@@ -157,7 +154,7 @@
 	fades = TRUE
 
 /obj/effect/temp_visual/dir_setting/curse/hand
-	icon_state = "cursehand"
+	icon_state = "cursehand0"
 
 /obj/effect/temp_visual/dir_setting/space_wind
 	icon = 'icons/effects/atmospherics.dmi'
@@ -174,7 +171,7 @@
 	name = "\improper Bluespace energy wave"
 	desc = "A massive, rippling wave of bluepace energy, all rapidly exhausting itself the moment it leaves the concentrated beam of light."
 	icon = 'icons/effects/beam_splash.dmi'
-	icon_state = "beam_splash_l"
+	icon_state = "beam_splash_e"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_y = -16
 	duration = 50
@@ -514,7 +511,7 @@
 	status = rcd_status
 	delay = rcd_delay
 	if (status == RCD_DECONSTRUCT)
-		addtimer(CALLBACK(src, /atom/.proc/update_appearance), 1.1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_appearance)), 1.1 SECONDS)
 		delay -= 11
 		icon_state = "rcd_end_reverse"
 	else
@@ -540,7 +537,7 @@
 		qdel(src)
 	else
 		icon_state = "rcd_end"
-		addtimer(CALLBACK(src, .proc/end), 15)
+		addtimer(CALLBACK(src, PROC_REF(end)), 15)
 
 /obj/effect/constructing_effect/proc/end()
 	qdel(src)

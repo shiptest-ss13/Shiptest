@@ -205,6 +205,7 @@
 	ui_interact(user)
 
 /mob/proc/unset_machine()
+	SIGNAL_HANDLER
 	if(!machine)
 		return
 	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
@@ -216,10 +217,12 @@
 	return
 
 /mob/proc/set_machine(obj/O)
+	if(QDELETED(src) || QDELETED(O))
+		return
 	if(machine)
 		unset_machine()
 	machine = O
-	RegisterSignal(O, COMSIG_PARENT_QDELETING, .proc/unset_machine)
+	RegisterSignal(O, COMSIG_PARENT_QDELETING, PROC_REF(unset_machine))
 	if(istype(O))
 		O.obj_flags |= IN_USE
 
@@ -352,7 +355,7 @@
 		items += list("[reskin_option]" = item_image)
 	sortList(items)
 
-	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, .proc/check_reskin_menu, M), radius = 38, require_near = TRUE)
+	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, PROC_REF(check_reskin_menu), M), radius = 38, require_near = TRUE)
 	if(!pick)
 		return
 	if(!unique_reskin[pick])
@@ -361,7 +364,7 @@
 		current_skin = pick
 	icon_state = unique_reskin[pick]
 	to_chat(M, "[src] is now skinned as '[pick].'")
-	update_icon_state()
+	update_appearance()
 
 /**
  * Checks if we are allowed to interact with a radial menu for reskins
@@ -385,7 +388,7 @@
 		return TRUE
 	return ..()
 
-/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
 // Should move all contained objects to it's location.

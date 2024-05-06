@@ -211,6 +211,8 @@
 	var/json_key
 	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
 	var/load_template_on_initialize = TRUE
+	/// The docking ticket of the ship docking to this port.
+	var/datum/docking_ticket/current_docking_ticket
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
@@ -222,7 +224,7 @@
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
 		if(SSshuttle.initialized && load_template_on_initialize) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
-			INVOKE_ASYNC(src, .proc/load_roundstart)
+			INVOKE_ASYNC(src, PROC_REF(load_roundstart))
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -315,6 +317,9 @@
 
 	///A list of all engines currently linked to the shuttle.
 	var/list/engine_list = list()
+
+	///A list of all gravity generators  currently linked to the shuttle.
+	var/list/gravgen_list = list()
 
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = TRUE
@@ -596,7 +601,7 @@
 		all_shuttle_areas += M.shuttle_areas
 
 	for(var/turf/oldT as anything in old_turfs)
-		if(!(oldT?.loc in all_shuttle_areas))
+		if(!oldT || !(oldT.loc in all_shuttle_areas))
 			continue
 		var/area/old_area = oldT.loc
 		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)

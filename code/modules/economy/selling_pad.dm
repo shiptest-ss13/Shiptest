@@ -34,15 +34,9 @@
 	sell_account = port.current_ship?.ship_account
 
 /obj/machinery/computer/selling_pad_control/attackby(obj/item/I, mob/user)
-	var/value = 0
-	if(istype(I, /obj/item/spacecash/bundle))
-		var/obj/item/spacecash/bundle/C = I
-		value = C.value
-	else if(istype(I, /obj/item/holochip))
-		var/obj/item/holochip/H = I
-		value = H.credits
+	var/value = I.get_item_credit_value()
 	if(value)
-		sell_account.adjust_money(value)
+		sell_account.adjust_money(value, "selling_pad")
 		to_chat(user, "<span class='notice'>You deposit [I]. The Vessel Budget is now [sell_account.account_balance] cr.</span>")
 		qdel(I)
 		return TRUE
@@ -156,7 +150,7 @@
 			total_report.total_amount[E] += ex.total_amount[E]
 			total_report.total_value[E] += ex.total_value[E]
 
-	sell_account.adjust_money(value)
+	sell_account.adjust_money(value, "selling_pad")
 
 	if(!value)
 		status_report += "Nothing"
@@ -176,7 +170,7 @@
 	status_report = "Sending..."
 	sell_pad.visible_message("<span class='notice'>[sell_pad] starts charging up.</span>")
 	sell_pad.icon_state = "lpad-idle"
-	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
+	sending_timer = addtimer(CALLBACK(src, PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/selling_pad_control/proc/stop_sending()
 	if(!sending)

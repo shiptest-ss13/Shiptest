@@ -93,7 +93,7 @@
 		L.visible_message("<span class='revennotice'>A strange purple glow wraps itself around [L] as [L.p_they()] suddenly fall[L.p_s()] unconscious.</span>",
 			"<span class='revendanger'>[desc]</span>")
 		// Don't let them sit suround unconscious forever
-		addtimer(CALLBACK(src, .proc/sleeper_dreams, L), 100)
+		addtimer(CALLBACK(src, PROC_REF(sleeper_dreams), L), 100)
 
 	// Existing sleepers
 	for(var/i in found)
@@ -145,8 +145,13 @@
 /mob/living/simple_animal/drone/snowflake/bardrone/Initialize()
 	. = ..()
 	access_card.access |= ACCESS_CENT_BAR
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/check_barstaff_godmode)
+	become_area_sensitive(ROUNDSTART_TRAIT)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
+
+/mob/living/simple_animal/drone/snowflake/bardrone/Destroy()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
 
 /mob/living/simple_animal/hostile/alien/maid/barmaid
 	gold_core_spawnable = NO_SPAWN
@@ -165,12 +170,14 @@
 	access_card.access = C.get_access()
 	access_card.access |= ACCESS_CENT_BAR
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/check_barstaff_godmode)
+	become_area_sensitive(ROUNDSTART_TRAIT)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
 
 /mob/living/simple_animal/hostile/alien/maid/barmaid/Destroy()
 	qdel(access_card)
-	. = ..()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
 
 /mob/living/simple_animal/proc/check_barstaff_godmode()
 	SIGNAL_HANDLER
@@ -193,7 +200,7 @@
 /obj/structure/table/wood/bar/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -270,7 +277,7 @@
 
 	if(account)
 		if(account.account_balance < threshold - payees[AM])
-			account.adjust_money(-account.account_balance)
+			account.adjust_money(-account.account_balance, "luxury_shuttle")
 			payees[AM] += account.account_balance
 		else
 			var/money_owed = threshold - payees[AM]

@@ -3,7 +3,6 @@
 #define COLOR_INPUT_DISABLED "#F0F0F0"
 #define COLOR_INPUT_ENABLED "#D3B5B5"
 
-//BeginWS
 #define COLOR_DARKMODE_DARKBACKGROUND "#383838"
 #define COLOR_DARKMODE_BACKGROUND "#272727"
 #define COLOR_DARKMODE_HEADER "#ffffff"
@@ -23,7 +22,6 @@
 #define WOOD_COLOR_BLACK "#332521"
 #define WOOD_COLOR_CHOCOLATE "#543C30"
 #define WOOD_COLOR_YELLOW "#E3994E"
-//EndWS
 
 #define COLOR_WHITE "#FFFFFF"
 #define COLOR_OFF_WHITE "#FFF5ED"
@@ -164,6 +162,8 @@
 #define LIGHT_COLOR_LAVA "#C48A18"
 /// Bright, non-saturated red. Leaning slightly towards pink for visibility. rgb(250, 100, 75)
 #define LIGHT_COLOR_FLARE "#FA644B"
+/// Vivid red. Leans a bit darker to accentuate red colors and leave other channels a bit dry.  rgb(200, 25, 25)
+#define LIGHT_COLOR_INTENSE_RED "#C81919"
 /// Weird color, between yellow and green, very slimy. rgb(175, 200, 75)
 #define LIGHT_COLOR_SLIME_LAMP "#AFC84B"
 /// Extremely diluted yellow, close to skin color (for some reason). rgb(250, 225, 175)

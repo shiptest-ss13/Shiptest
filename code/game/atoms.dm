@@ -160,6 +160,7 @@
 	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	///volume wanted for being hit
 	var/hitsound_volume = 50
+
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
@@ -811,7 +812,7 @@
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
 /**
  * We have have actually hit the passed in atom
@@ -975,7 +976,7 @@
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage, handle_mass_item_insertion), things, src_object, user, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")
@@ -1525,7 +1526,7 @@
 	if(custom_materials) //Only runs if custom materials existed at first. Should usually be the case but check anyways
 		for(var/i in custom_materials)
 			var/datum/material/custom_material = SSmaterials.GetMaterialRef(i)
-			custom_material.on_removed(src, material_flags) //Remove the current materials
+			custom_material.on_removed(src, custom_materials[i] * material_modifier, material_flags) //Remove the current materials
 
 	if(!length(materials))
 		return
@@ -1555,6 +1556,7 @@
  * * No gravity if this atom is in is a space turf
  * * Gravity if the area it's in always has gravity
  * * Gravity if there's a gravity generator on the z level
+ * * Gravity if there is a ship gravity generator in a ship
  * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
  * * otherwise no gravity
  */
@@ -1587,12 +1589,22 @@
 	else
 		// See if there's a gravity generator on our map zone
 		var/datum/map_zone/mapzone = T.get_map_zone()
+		var/max_grav = T.virtual_level_trait(ZTRAIT_GRAVITY)
 		if(mapzone?.gravity_generators.len)
-			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
-			return max_grav
-	return T.virtual_level_trait(ZTRAIT_GRAVITY)
+		// Check for ship-based gravity
+		var/area/ship/ship = A
+		if(istype(ship))
+			var/obj/docking_port/mobile/shuttle = ship.mobile_port
+			if(shuttle)
+				for(var/datum/weakref/weakref as anything in shuttle.gravgen_list)
+					var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
+					if(!SG)
+						shuttle.gravgen_list -= weakref
+						continue
+					max_grav = max(SG.active,max_grav)
+		return max_grav
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
@@ -1673,7 +1685,11 @@
 			active_hud.screentip_text.maptext = ""
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
-			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[get_screentip_name(client)]</span>"
+
+/// Returns the atom name that should be used on screentip
+/atom/proc/get_screentip_name(client/hovering_client)
+	return name
 
 ///Called whenever a player is spawned on the same turf as this atom.
 /atom/proc/join_player_here(mob/M)

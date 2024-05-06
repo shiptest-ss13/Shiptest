@@ -289,7 +289,7 @@
 	. = ..()
 	add_atom_colour("#ffffff", FIXED_COLOUR_PRIORITY)
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -368,13 +368,16 @@
 /obj/structure/spacevine/attack_hand(mob/user)
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_hit(src, user)
-	user_unbuckle_mob(user, user)
-	. = ..()
+	if(user.buckled == src)
+		user_unbuckle_mob(user, user)
+	return ..()
 
 /obj/structure/spacevine/attack_paw(mob/living/user)
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_hit(src, user)
-	user_unbuckle_mob(user,user)
+	if(user.buckled == src)
+		user_unbuckle_mob(user, user)
+	return ..()
 
 /obj/structure/spacevine/attack_alien(mob/living/user)
 	eat(user)

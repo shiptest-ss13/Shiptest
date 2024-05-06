@@ -38,12 +38,12 @@
 		return ELEMENT_INCOMPATIBLE
 
 	if(isitem(target))
-		RegisterSignal(target, COMSIG_MOVABLE_IMPACT_ZONE, .proc/checkEmbedMob)
-		RegisterSignal(target, COMSIG_MOVABLE_IMPACT, .proc/checkEmbedOther)
-		RegisterSignal(target, COMSIG_ELEMENT_ATTACH, .proc/severancePackage)
-		RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/examined)
-		RegisterSignal(target, COMSIG_EMBED_TRY_FORCE, .proc/tryForceEmbed)
-		RegisterSignal(target, COMSIG_ITEM_DISABLE_EMBED, .proc/detachFromWeapon)
+		RegisterSignal(target, COMSIG_MOVABLE_IMPACT_ZONE, PROC_REF(checkEmbedMob))
+		RegisterSignal(target, COMSIG_MOVABLE_IMPACT, PROC_REF(checkEmbedOther))
+		RegisterSignal(target, COMSIG_ELEMENT_ATTACH, PROC_REF(severancePackage))
+		RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(examined))
+		RegisterSignal(target, COMSIG_EMBED_TRY_FORCE, PROC_REF(tryForceEmbed))
+		RegisterSignal(target, COMSIG_ITEM_DISABLE_EMBED, PROC_REF(detachFromWeapon))
 		if(!initialized)
 			src.embed_chance = embed_chance
 			src.fall_chance = fall_chance
@@ -60,7 +60,7 @@
 			initialized = TRUE
 	else
 		payload_type = projectile_payload
-		RegisterSignal(target, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/checkEmbedProjectile)
+		RegisterSignal(target, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(checkEmbedProjectile))
 
 
 /datum/element/embed/Detach(obj/target)
@@ -176,23 +176,20 @@
  * If we hit a valid target (carbon or closed turf), we create the shrapnel_type object and immediately call tryEmbed() on it, targeting what we impacted. That will lead
  *	it to call tryForceEmbed() on its own embed element (it's out of our hands here, our projectile is done), where it will run through all the checks it needs to.
  */
-/datum/element/embed/proc/checkEmbedProjectile(obj/projectile/P, atom/movable/firer, atom/hit)
+/datum/element/embed/proc/checkEmbedProjectile(obj/projectile/P, atom/movable/firer, atom/hit, angle, hit_zone)
 	SIGNAL_HANDLER
 
-	if(!iscarbon(hit) && !isclosedturf(hit))
+	if(!iscarbon(hit))
 		Detach(P)
 		return // we don't care
 
 	var/obj/item/payload = new payload_type(get_turf(hit))
-	var/did_embed
-	if(iscarbon(hit))
-		var/mob/living/carbon/C = hit
-		var/obj/item/bodypart/limb = C.get_bodypart(C.check_limb_hit(P.def_zone))
-		did_embed = payload.tryEmbed(limb)
-	else
-		did_embed = payload.tryEmbed(hit)
+	var/mob/living/carbon/C = hit
+	var/obj/item/bodypart/limb = C.get_bodypart(hit_zone)
+	if(!limb)
+		limb = C.get_bodypart()
 
-	if(!did_embed)
+	if(!payload.tryEmbed(limb))
 		payload.failedEmbed()
 	Detach(P)
 
@@ -213,7 +210,6 @@
 
 	var/obj/item/bodypart/limb
 	var/mob/living/carbon/C
-	var/turf/closed/T
 
 	if(!forced && !prob(embed_chance))
 		return
@@ -225,11 +221,8 @@
 			hit_zone = limb.body_zone
 	else if(isbodypart(target))
 		limb = target
+		hit_zone = limb.body_zone
 		C = limb.owner
-	else if(isclosedturf(target))
-		T = target
 
 	if(C)
 		return checkEmbedMob(I, C, hit_zone, forced=TRUE)
-	else if(T)
-		return checkEmbedOther(I, T, forced=TRUE)

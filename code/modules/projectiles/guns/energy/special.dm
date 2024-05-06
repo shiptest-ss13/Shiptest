@@ -12,6 +12,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -24,7 +25,6 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
-	pin = null
 	can_flashlight = TRUE
 	flight_x_offset = 18
 	flight_y_offset = 11
@@ -34,7 +34,6 @@
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
 	icon_state = "decloner"
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
-	pin = null
 	ammo_x_offset = 1
 
 /obj/item/gun/energy/decloner/update_overlays()
@@ -42,10 +41,6 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(!QDELETED(cell) && (cell.charge > shot.e_cost))
 		. += "decloner_spin"
-
-/obj/item/gun/energy/decloner/unrestricted
-	pin = /obj/item/firing_pin
-	ammo_type = list(/obj/item/ammo_casing/energy/declone/weak)
 
 /obj/item/gun/energy/floragun
 	name = "floral somatoray"
@@ -66,7 +61,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/meteor)
 	cell_type = /obj/item/stock_parts/cell/potato
-	clumsy_check = 0 //Admin spawn only, might as well let clowns use it.
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
@@ -103,6 +97,7 @@
 	unique_frequency = TRUE
 	can_flashlight = FALSE
 	max_mod_capacity = 0
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
 	name = "candy corn crossbow"
@@ -119,7 +114,7 @@
 	custom_materials = list(/datum/material/iron=4000)
 	suppressed = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
-	pin = null
+	manufacturer = MANUFACTURER_NONE
 
 
 /obj/item/gun/energy/plasmacutter
@@ -260,7 +255,7 @@
 
 /obj/item/gun/energy/wormhole_projector/proc/create_portal(obj/projectile/beam/wormhole/W, turf/target)
 	var/obj/effect/portal/P = new /obj/effect/portal(target, 300, null, FALSE, null, atmos_link)
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
+	RegisterSignal(P, COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
 	if(istype(W, /obj/projectile/beam/wormhole/orange))
 		qdel(p_orange)
 		p_orange = P
@@ -333,12 +328,10 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
 	cell_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
-	pin = null
 
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
 	desc = "A weapon that can only be used to its full potential by the truly robust."
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/laser/instakill
 	name = "instakill rifle"
@@ -384,7 +377,7 @@
 		return
 	return ..()
 
-/obj/item/gun/energy/gravity_gun/can_shoot()
+/obj/item/gun/energy/gravity_gun/can_shoot(visuals)
 	if(!firing_core)
 		return FALSE
 	return ..()
@@ -401,3 +394,11 @@
 /obj/item/gun/energy/tesla_cannon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/energy/buster
+	name = "replica buster cannon"
+	icon_state = "buster"
+	item_state = "buster"
+	desc = "A replica of T4L1's buster cannon from the popular webseries RILENA. Fires a harmless energy pellet at the target."
+	ammo_type = list(/obj/item/ammo_casing/energy/buster)
+	weapon_weight = WEAPON_LIGHT

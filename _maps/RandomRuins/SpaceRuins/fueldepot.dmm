@@ -148,10 +148,8 @@
 	},
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	name = "armory locker";
-	pixel_x = 28;
-	dir = 8
+/obj/structure/closet/wall/directional/east{
+	name = "armory locker"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
@@ -218,13 +216,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	name = "armory locker";
-	pixel_x = 28;
-	dir = 8
+/obj/structure/closet/wall/directional/east{
+	name = "armory locker"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
 "hL" = (
@@ -311,11 +307,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"kp" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/open/space,
 /area/ruin/unpowered)
 "kN" = (
 /obj/structure/catwalk,
@@ -542,11 +533,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"sE" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/open/space,
-/area/ruin/unpowered)
 "sU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -625,10 +611,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	name = "suit locker";
-	pixel_x = -28;
-	dir = 4
+/obj/structure/closet/wall/directional/west{
+	name = "suit locker"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
@@ -1324,10 +1308,8 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
-/obj/structure/closet/wall{
-	name = "armory locker";
-	pixel_x = 28;
-	dir = 8
+/obj/structure/closet/wall/directional/east{
+	name = "armory locker"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
@@ -1468,10 +1450,8 @@
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
-/obj/structure/closet/wall{
-	name = "suit locker";
-	pixel_x = -28;
-	dir = 4
+/obj/structure/closet/wall/directional/west{
+	name = "suit locker"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
@@ -2547,7 +2527,7 @@ XL
 XL
 XL
 Ut
-sE
+Ut
 ln
 ln
 ZO
@@ -3215,7 +3195,7 @@ ZO
 ZO
 ZO
 ZO
-kp
+Ut
 ZO
 ZO
 ln

@@ -254,7 +254,7 @@
 		var/obj/item/card/id/ID = I
 		var/datum/bank_account/account = ID.registered_account
 		var/target_credits = total_price - credits
-		if(!account.adjust_money(-target_credits))
+		if(!account.adjust_money(-target_credits, "laptop_vendor"))
 			say("Insufficient credits on card to purchase!")
 			return
 		credits += target_credits
@@ -304,6 +304,6 @@
 			credits -= total_price
 			say("Enjoy your new product!")
 			state = 3
-			addtimer(CALLBACK(src, .proc/reset_order), 100)
+			addtimer(CALLBACK(src, PROC_REF(reset_order)), 100)
 			return TRUE
 		return FALSE
