@@ -159,7 +159,7 @@
 /datum/supply_pack/gun/scout
 	name = "Scout Sniper Rifle Crate"
 	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
-	cost = 2500
+	cost = 3500
 	contains = list(/obj/item/gun/ballistic/rifle/scout)
 	crate_name = "rifle crate"
 
