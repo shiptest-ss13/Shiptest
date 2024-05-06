@@ -150,7 +150,7 @@
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/beacon
-	name = "Beacon Break Action Rifle Crate"
+	name = "Contender Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 2250
 	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel/beacon)
@@ -159,7 +159,7 @@
 /datum/supply_pack/gun/scout
 	name = "Scout Sniper Rifle Crate"
 	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
-	cost = 3500
+	cost = 5500
 	contains = list(/obj/item/gun/ballistic/rifle/scout)
 	crate_name = "rifle crate"
 
