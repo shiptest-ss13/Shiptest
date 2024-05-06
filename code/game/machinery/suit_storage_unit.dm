@@ -7,6 +7,7 @@
 	base_icon_state = "ssu_classic"
 	density = TRUE
 	max_integrity = 250
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit
 
 	var/obj/item/clothing/suit/space/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
@@ -250,7 +251,15 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		open_machine()
 		dump_contents()
-		new /obj/item/stack/sheet/metal (loc, 2)
+		on_deconstruction()
+		if(circuit)
+			circuit.forceMove(loc)
+			circuit = null
+		if(length(component_parts))
+			spawn_frame(disassembled)
+			for(var/obj/item/I in component_parts)
+				I.forceMove(loc)
+			component_parts.Cut()
 	qdel(src)
 
 /obj/machinery/suit_storage_unit/interact(mob/living/user)
@@ -572,6 +581,8 @@
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
 		open_machine()
+	if(default_deconstruction_crowbar(I))
+		return TRUE
 
 // Mapping helper unit takes whatever lies on top of it
 /obj/machinery/suit_storage_unit/inherit/Initialize(mapload)
