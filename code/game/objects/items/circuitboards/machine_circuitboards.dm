@@ -1524,6 +1524,4 @@
 /obj/item/circuitboard/machine/suit_storage_unit
 	name = "Suit Storage Unit"
 	build_path = /obj/machinery/suit_storage_unit
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 4,
-	)
+	req_components = list(/obj/item/stock_parts/micro_laser = 3)

@@ -41,7 +41,7 @@
 	*/
 	var/uv_super = FALSE
 	/// How many cycles remain for the decontamination sequence.
-	var/uv_cycles = 6
+	var/uv_cycles = 13
 	/// Cooldown for occupant breakout messages via relaymove()
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
@@ -191,6 +191,10 @@
 	if(storage_type)
 		storage = new storage_type(src)
 	update_appearance()
+
+/obj/machinery/suit_storage_unit/RefreshParts()
+	for(var/obj/stock_parts/micro_laser/lasers in component_parts)
+		uv_cycles -= lasers.rating
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
@@ -581,7 +585,7 @@
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
 		open_machine()
-	if(default_deconstruction_crowbar(I))
+	if(default_deconstruction_crowbar(I) && !locked)
 		return TRUE
 
 // Mapping helper unit takes whatever lies on top of it
