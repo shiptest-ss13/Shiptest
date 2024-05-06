@@ -147,7 +147,7 @@
 	name = ".300 Magnum Stripper Clip Crate"
 	desc = "Contains a five round .300 Magnum stripper clip for sniper rifles such as the HP Scout."
 	contains = list(/obj/item/ammo_box/a300)
-	cost = 500
+	cost = 750
 
 /datum/supply_pack/ammo/ebr_ammo
 	name = "M514 EBR .308 Magazine Crate"
