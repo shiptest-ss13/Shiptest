@@ -41,9 +41,9 @@ Minor Loot = Has negligable/no loot at all, only contains fluff items or just th
 Medium Loot = Has a pool of loot that is useful for the average player or ship, but not in large amounts, and does not have more than one or two boss drops.
 Major Loot = Contains a large pool of loot useful to the average player or ship. Or includes more boss drops or necropolis loot than there are challenges for.
 */
-#define RUIN_TAG_MINOR_LOOT = "Minor Loot"
-#define RUIN_TAG_MEDIUM_LOOT = "Medium Loot"
-#define RUIN_TAG_MAJOR_LOOT = "Major Loot"
+#define RUIN_TAG_MINOR_LOOT "Minor Loot"
+#define RUIN_TAG_MEDIUM_LOOT "Medium Loot"
+#define RUIN_TAG_MAJOR_LOOT "Major Loot"
 
 /*Combat Summary
 No Combat = Contains no enemies or combat challenges.
@@ -51,11 +51,11 @@ Minor Combat Challenge = Has only 1-2 hit melee mobs in small or moderate amount
 Medium Combat Challenge = Contains more than just simple low health melee mobs, or a moderate amount of mobs.
 Boss Combat Challenge = Contains either one or more bossmobs, has a large number of mobs that are either overwhelming or considerably challenging, or has a significant combat challenge overall.
 */
-#define RUIN_TAG_NO_COMBAT = "No Combat"
-#define RUIN_TAG_MINOR_COMBAT = "Minor Combat Challenge"
-#define RUIN_TAG_MEDIUM_COMBAT = "Medium Combat Challenge"
-#define RUIN_TAG_HARD_COMBAT = "Hard Combat Challenge"
-#define RUIN_TAG_BOSS_COMBAT = "Boss Combat Challenge"
+#define RUIN_TAG_NO_COMBAT "No Combat"
+#define RUIN_TAG_MINOR_COMBAT "Minor Combat Challenge"
+#define RUIN_TAG_MEDIUM_COMBAT "Medium Combat Challenge"
+#define RUIN_TAG_HARD_COMBAT "Hard Combat Challenge"
+#define RUIN_TAG_BOSS_COMBAT "Boss Combat Challenge"
 
 
 /*Qualities
@@ -72,15 +72,15 @@ Unknown Details = Something about the map can't be checked with a map editor alo
 Lava = Contains lava or liquid plasma tiles.
 Ghost Role = Contains a ghost role.
 */
-#define RUIN_TAG_MEGAFAUNA = "Megafauna"
-#define RUIN_TAG_ANTAG_GEAR = "Antag Gear"
-#define RUIN_TAG_NECROPOLIS_LOOT = "Necropolis Loot"
-#define RUIN_TAG_LIVEABLE = "Liveable"
-#define RUIN_TAG_INHOSPITABLE = "Inhospitable"
-#define RUIN_TAG_SHELTER = "Shelter"
-#define RUIN_TAG_BAD_SHELTER = "Bad Shelter"
-#define RUIN_TAG_NO_CONTENT = "No Content"
-#define RUIN_TAG_HAZARDOUS = "Hazardous"
-#define RUIN_TAG_UNKNOWN_DETAILS = "Unknown Details"
-#define RUIN_TAG_LAVA = "Lava"
-#define RUIN_TAG_GHOST_ROLE = "Ghost Role"
+#define RUIN_TAG_MEGAFAUNA "Megafauna"
+#define RUIN_TAG_ANTAG_GEAR "Antag Gear"
+#define RUIN_TAG_NECROPOLIS_LOOT "Necropolis Loot"
+#define RUIN_TAG_LIVEABLE "Liveable"
+#define RUIN_TAG_INHOSPITABLE "Inhospitable"
+#define RUIN_TAG_SHELTER "Shelter"
+#define RUIN_TAG_BAD_SHELTER "Bad Shelter"
+#define RUIN_TAG_NO_CONTENT "No Content"
+#define RUIN_TAG_HAZARDOUS "Hazardous"
+#define RUIN_TAG_UNKNOWN_DETAILS "Unknown Details"
+#define RUIN_TAG_LAVA "Lava"
+#define RUIN_TAG_GHOST_ROLE "Ghost Role"

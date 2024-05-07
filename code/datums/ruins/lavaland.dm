@@ -125,7 +125,7 @@
 	id = "crashed_pinnance"
 	description = "A crashed shuttlecraft, looks like the pilot didn't make it."
 	suffix = "lavaland_surface_crashed_pinnance.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT RUIN_TAG_MINOR_LOOT RUIN_TAG_INHOSPITABLE)
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/codelab
 	name = "Nanotrasen Genetic Research Facility"

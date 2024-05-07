@@ -11,28 +11,28 @@
 	id = "solitude"
 	description = "A fortress, although one you are probably more familiar with."
 	suffix = "wasteplanet_fortress_of_solitide.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT RUIN_TAG_LIVEABLE RUIN_TAG_SHELTER)
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/wasteplanet/weaponstest
 	name = "Weapons testing facility"
 	id = "guntested"
 	description = "A abandoned Nanotrasen weapons facility, presumably the place where the X-01 was manufactured."
 	suffix = "wasteplanet_lab.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT RUIN_TAG_SHELTER RUIN_TAG_HAZARDOUS RUIN_TAG_LIVEABLE)
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/wasteplanet/oreprocess
 	name = "Ore Processing Facility"
 	id = "oreprocess"
 	description = "A fortress, although one you are probably more familiar with.."
 	suffix = "wasteplanet_ore_proccessing_facility.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT RUIN_TAG_HAZARDOUS RUIN_TAG_LAVA RUIN_TAG_SHELTER)
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LAVA, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/wasteplanet/pandora
 	id = "pandora_arena"
 	suffix = "wasteplanet_pandora.dmm"
 	name = "Pandora Arena"
 	description = "Some... thing has settled here."
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT RUIN_TAG_MEGAFAUNA, RUIN_TAG_LIVEABLE)
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEGAFAUNA, RUIN_TAG_LIVEABLE)
 
 /* Greeble
 /datum/map_template/ruin/wasteplanet/pod
