@@ -14,6 +14,7 @@
 	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days. \
 	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
 	suffix = "lavaland_surface_biodome_winter.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/lavaland/sin
 	cost = 10
@@ -26,6 +27,7 @@
 	suffix = "lavaland_surface_sloth.dmm"
 	// Generates nothing but atmos runtimes and salt
 	cost = 0
+	ruin_tags = list("Mark", RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_LAVA)
 
 /datum/map_template/ruin/lavaland/hierophant
 	name = "Hierophant's Arena"
@@ -33,6 +35,7 @@
 	description = "A strange, square chunk of metal of massive size. Inside awaits only death and many, many squares."
 	suffix = "lavaland_surface_hierophant.dmm"
 	allow_duplicates = FALSE
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_MEGAFAUNA, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/xeno_nest
 	name = "Xenomorph Nest"
@@ -41,6 +44,7 @@
 	Quality memes."
 	suffix = "lavaland_surface_xeno_nest.dmm"
 	cost = 20
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/survivalcapsule
 	name = "Survival Capsule Ruins"
@@ -48,6 +52,7 @@
 	description = "What was once sanctuary to the common miner, is now their tomb."
 	suffix = "lavaland_surface_survivalpod.dmm"
 	cost = 5
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/lavaland/pizza
 	name = "Ruined Pizza Party"
@@ -56,6 +61,7 @@
 	suffix = "lavaland_surface_pizzaparty.dmm"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/hermit
 	name = "Makeshift Shelter"
@@ -72,6 +78,7 @@
 	suffix = "lavaland_surface_random_ripley.dmm"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/elephant_graveyard
 	name = "Elephant Graveyard"
@@ -80,6 +87,7 @@
 	suffix = "lavaland_surface_elephant_graveyard.dmm"
 	allow_duplicates = FALSE
 	cost = 10
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/comm_outpost
 	name = "Syndicate Comm Outpost"
@@ -88,6 +96,7 @@
 	suffix = "lavaland_surface_comm_outpost.dmm"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_ANTAG_GEAR, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/lavaland/dwarffortress
 	name = "Legion infested Dwarf Fortress"
@@ -95,33 +104,40 @@
 	description = "A forgotten fortress home to only a tragic tale and infested corpses."
 	suffix = "lavaland_surface_dwarffortress.dmm"
 	allow_duplicates = FALSE
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/ashwalker_shrine
 	name = "Ashwalker shrine"
 	id = "ashwalker_shrine"
 	description = "A destroyed ashwalker village. What even happened here?"
 	suffix = "lavaland_surface_ashwalker_shrine.dmm"
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/spookycrash
 	name = "Spooky Crash"
 	id = "spooky_crash"
 	description = "A spooky looking crash."
 	suffix = "lavaland_surface_SPOOKYCRASH.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/crashedpinnance
 	name = "Crashed Research Pinnance"
 	id = "crashed_pinnance"
 	description = "A crashed shuttlecraft, looks like the pilot didn't make it."
 	suffix = "lavaland_surface_crashed_pinnance.dmm"
+	ruin_tags = list(RUIN_TAG_NO_COMBAT RUIN_TAG_MINOR_LOOT RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/lavaland/codelab
 	name = "Nanotrasen Genetic Research Facility"
 	id = "codelab"
 	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
 	suffix = "lavaland_surface_codelab.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
 	id = "lava_canyon"
 	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
 	suffix = "lavaland_surface_lava_canyon.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEGAFAUNA, RUIN_TAG_NECROPOLIS_LOOT, RUIN_TAG_INHOSPITABLE, RUIN_TAG_LAVA)
+
