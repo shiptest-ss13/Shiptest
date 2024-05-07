@@ -27,7 +27,7 @@
 	suffix = "lavaland_surface_sloth.dmm"
 	// Generates nothing but atmos runtimes and salt
 	cost = 0
-	ruin_tags = list("Mark", RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_LAVA)
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_LAVA, "Mark")
 
 /datum/map_template/ruin/lavaland/hierophant
 	name = "Hierophant's Arena"
