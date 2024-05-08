@@ -396,8 +396,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cyberimp_joywire
-	name = "Joywire Implant"
-	desc = "A widely popular (and addictive) implant that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled."
+	name = "\improper Midi-Sed pleasure vivifier"
+	desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled."
 	id = "ci-joywire"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
@@ -408,7 +408,7 @@
 
 /datum/design/cyberimp_mindscrew
 	name = "Mindscrew Implant"
-	desc = "A horrific after-market modification of the Joywire Implant that stimulates intense pain in the brain. Dramatically, dramatically hurts mood, and lingers for a time after removal."
+	desc = "A horrific after-market modification of Midi-Sed's pleasure vivifier that stimulates intense pain in the brain. Dramatically hurts a user's mood and mental state, and lingers for a time after removal."
 	id = "ci-mindscrew"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60

@@ -294,11 +294,11 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/joywire_emp
-	description = "<span class='boldwarning'>ITS GONE!! ITS GONE!! I'm... I'm never getting it back...</span>\n"
+	description = span_boldwarning("IT'S GONE!! IT'S GONE!!\n")
 	mood_change = -30
 	timeout = 5 MINUTES
 
 /datum/mood_event/mindscrew
-	description = "<span class='boldwarning'>...SHIIIIIT. It isn't ending... it isn't ending, come on...</span>\n"
+	description = span_boldwarning("It isn't ending... it isn't ending, come on...\n")
 	mood_change = -18
 	timeout = 3 MINUTES

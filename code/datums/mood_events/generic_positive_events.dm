@@ -241,6 +241,6 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/joywire
-	description = "<span class='boldnicegreen'>I feel so joyous! Oh, so joyous! WOOOOOOOOOOOOOOOOOOOOOO!!</span>\n"
-	mood_change = 16
+	description = span_boldnicegreen("I feel so joyous! Oh, so joyous!\n")
+	mood_change = 8
 	timeout = 10 SECONDS
