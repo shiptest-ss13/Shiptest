@@ -115,7 +115,7 @@
 /area/ship/hallway/fore)
 "bJ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/light/directional/north,
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -190,10 +190,9 @@
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/grimy,
@@ -720,7 +719,7 @@
 /area/ship/security)
 "hx" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -1775,10 +1774,8 @@
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
-/obj/structure/closet/wall{
-	dir = 8;
-	icon_state = "emergency_wall";
-	pixel_x = 28
+/obj/structure/closet/wall/directional/east{
+	icon_state = "emergency_wall"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
@@ -2294,10 +2291,9 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2621,17 +2617,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Da" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "solgov_wall";
 	icon_state = "solgov_wall";
 	name = "vanguard's locker";
-	pixel_x = -28;
 	req_access_txt = "58"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -2801,6 +2795,9 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "EQ" = (
@@ -2898,11 +2895,9 @@
 /area/ship/crew/toilet)
 "GL" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_x = 32
+	name = "engineering closet"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/storage/backpack/industrial,
@@ -3208,9 +3203,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Kv" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
@@ -3264,10 +3257,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "KM" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ld" = (
@@ -3662,8 +3652,9 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/number/zero{
-	dir = 8
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3795,7 +3786,8 @@
 "QL" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	req_access_txt = "20"
+	req_access_txt = null;
+	req_one_access = list(19,3)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4275,9 +4267,9 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/mask/gas/sechailer/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
@@ -4307,6 +4299,10 @@
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/reagent_containers/spray/pepper,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "WG" = (
@@ -4543,10 +4539,7 @@
 	piping_layer = 2
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zz" = (

@@ -183,7 +183,7 @@
 
 /mob/living/silicon/pai/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
 	if(be_close && !in_range(M, src))
-		to_chat(src, "<span class='warning'>You are too far away!</span>")
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	return TRUE
 
@@ -274,7 +274,7 @@
 	if(cable)
 		if(get_dist(src, cable) > 1)
 			var/turf/T = get_turf(src)
-			T.visible_message("<span class='warning'>[cable] rapidly retracts back into its spool.</span>", "<span class='hear'>You hear a click and the sound of wire spooling rapidly.</span>")
+			T.visible_message(span_warning("[cable] rapidly retracts back into its spool."), span_hear("You hear a click and the sound of wire spooling rapidly."))
 			QDEL_NULL(cable)
 	if(hacking)
 		process_hack()
@@ -298,4 +298,17 @@
 		else if(istype(W, /obj/item/encryptionkey))
 			pai.radio.attackby(W, user, params)
 	else
-		to_chat(user, "<span class='alert'>Encryption Key ports not configured.</span>")
+		to_chat(user, span_alert("Encryption Key ports not configured."))
+
+//Wipe
+/mob/living/silicon/pai/verb/wipe_self()
+	var/confirm = alert("Are you sure you want to wipe your own personality? This is PERMANENT.", "Confirm Wipe", "Yes", "No")
+	if(confirm == "Yes")
+		var/turf/T = get_turf(src.loc)
+		T.visible_message(
+			span_notice("[src] flashes a message across its screen,\"Wiping core files. Please acquire a new personality to continue using pAI device functions.\""), null, \
+			span_notice("[src] bleeps electronically."))
+		death(FALSE)
+		ghostize(FALSE)	// Disallows reentering body and disassociates mind
+	else
+		to_chat(src, "Aborting wipe attempt.")

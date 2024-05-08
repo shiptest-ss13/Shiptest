@@ -88,7 +88,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "k" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "crux_windows"
 	},
@@ -232,19 +233,25 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 4
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
 /obj/effect/decal/cleanable/greenglow,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "I" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/structure/sign/minutemen{
+/obj/structure/sign/clip{
 	pixel_y = 28
 	},
 /obj/structure/cable{
@@ -274,9 +281,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -363,7 +368,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
-/obj/structure/sign/minutemen{
+/obj/structure/sign/clip{
 	pixel_y = -32
 	},
 /obj/structure/cable{
@@ -372,11 +377,14 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "X" = (
-/obj/structure/guncase,
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Y" = (
@@ -443,7 +451,7 @@ L
 w
 "}
 (6,1,1) = {"
-k
+w
 w
 h
 v

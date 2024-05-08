@@ -74,34 +74,39 @@
 	autolinkers = list("r_relay")
 
 /obj/machinery/telecomms/relay/preset/nanotrasen
-	freq_listening = list(FREQ_COMMAND, FREQ_NANOTRASEN, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_NANOTRASEN)
 	id = "Nanotrasen Relay"
 	network = "nt_commnet"
 
 /obj/machinery/telecomms/relay/preset/inteq
-	freq_listening = list(FREQ_COMMAND, FREQ_INTEQ, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_INTEQ)
 	id = "IRMG Relay"
 	network = "irmg_commnet"
 
 /obj/machinery/telecomms/relay/preset/minutemen
-	freq_listening = list(FREQ_COMMAND, FREQ_MINUTEMEN, FREQ_COMMON)
-	id = "CMM Relay"
-	network = "cmm_commnet"
+	freq_listening = list(FREQ_COMMAND, FREQ_MINUTEMEN)
+	id = "CLIP Relay"
+	network = "clip_commnet"
 
 /obj/machinery/telecomms/relay/preset/solgov
-	freq_listening = list(FREQ_COMMAND, FREQ_SOLGOV, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_SOLGOV)
 	id = "SolGov Relay"
 	network = "solgov_commnet"
 
 /obj/machinery/telecomms/relay/preset/syndicate
-	freq_listening = list(FREQ_COMMAND, FREQ_SYNDICATE, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_SYNDICATE)
 	id = "Syndicate Relay"
 	network = "synd_commnet"
 
 /obj/machinery/telecomms/relay/preset/frontiersmen
-	freq_listening = list(FREQ_COMMAND, FREQ_PIRATE, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_PIRATE)
 	id = "Frontiersmen Relay"
 	network = "frontier_commnet"
+
+/obj/machinery/telecomms/relay/preset/pgf
+	freq_listening = list(FREQ_COMMAND, FREQ_PGF)
+	id = "PGF Relay"
+	network = "pgf_commnet"
 
 //Generic preset relay
 /obj/machinery/telecomms/relay/preset/auto

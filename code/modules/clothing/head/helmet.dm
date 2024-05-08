@@ -12,7 +12,7 @@
 	strip_delay = 60
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
+	//flags_inv = HIDEHAIR // nah
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -207,12 +207,13 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
-	unique_reskin = list("Urban" = "helmetalt",
+	unique_reskin = list(
+		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
 		"Woodland" = "helmetalt_woodland",
 		"Snow" = "helmetalt_snow",
+		"Urban" = "helmetalt_urban",
 		)
-
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
@@ -273,12 +274,6 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
-
-/obj/item/clothing/head/helmet/riot/minutemen
-	name = "\improper Minutemen riot helmet"
-	desc = "Designed to protect against close range attacks. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
-	icon_state = "riot_minutemen"
-
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
@@ -510,18 +505,9 @@
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/bulletproof/minutemen
-	name = "\improper Minutemen ballistic helmet"
-	desc = "A bulletproof helmet that is worn by members of the Colonial Minutemen."
-	icon_state = "antichristhelm"
-	allow_post_reskins = TRUE
-	unique_reskin = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
 	desc = "A blue cap worn by high-ranking officers of SolGov."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
 	strip_delay = 80
@@ -529,7 +515,6 @@
 /obj/item/clothing/head/solgov/terragov
 	name = "\improper TerraGov officer's cap"
 	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
 
@@ -540,7 +525,6 @@
 	item_state = "sonnensoldner_hat"
 	worn_y_offset = 4
 	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/solgov/captain
 	name = "\improper SolGov bicorne hat"
@@ -549,7 +533,6 @@
 	item_state = "solgov_bicorne"
 	worn_y_offset = 2
 	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
@@ -575,10 +558,12 @@
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
-	unique_reskin = list("Urban" = "m10helm",
+	unique_reskin = list(
+		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
 		"Woodland" = "m10helm_woodland",
 		"Snow" = "m10helm_snow",
+		"Urban" = "m10helm_urban",
 		)
 
 /obj/item/clothing/head/helmet/bulletproof/x11
@@ -588,10 +573,12 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
-	unique_reskin = list("Urban" = "x11helm",
+	unique_reskin = list(
+		"None" = "x11helm",
 		"Desert" = "x11helm_desert",
 		"Woodland" = "x11helm_woodland",
 		"Snow" = "x11helm_snow",
+		"Urban" = "x11helm_urban",
 		)
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier

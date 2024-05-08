@@ -99,15 +99,18 @@
 /obj/item/clothing/under/rank/security/brig_phys/nt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform worn by members of Nanotrasen's Asset Protection Medical Corps."
-	icon_state = "rbrig_phys"
+	icon_state = "security_medic"
 	item_state = "r_suit"
+	mob_overlay_state = "rbrig_phys"
 
 /obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform, with a skirt, worn by members of Nanotrasen's Asset Protection Medical Corps."
-	icon_state = "rbrig_phys_skirt"
+	icon_state = "security_medic_skirt"
+	mob_overlay_state = "rbrig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
 
 // Warden //
 /obj/item/clothing/under/rank/security/warden
@@ -270,14 +273,6 @@
 	desc = "A dark colored uniform worn by private military engineers."
 	icon_state = "military_eng"
 
-/obj/item/clothing/under/rank/security/officer/minutemen
-	name = "colonial minutemen jumpsuit"
-	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
-	icon_state = "minuteman"
-	item_state = "b_suit"
-	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION
-
 /obj/item/clothing/under/rank/security/officer/camo
 	name = "fatigues"
 	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
@@ -290,6 +285,10 @@
 		"Woodland" = "camo_woodland",
 		"Snow" = "camo_snow",
 		)
+
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/clothing/under/rank/security/officer/frontier
 	name = "\improper Frontiersmen uniform"
