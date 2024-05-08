@@ -55,12 +55,12 @@
 	req_access = list(20)
 	},
 /obj/item/storage/backpack/security,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/ngrcap,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/gun/ballistic/revolver,
 /obj/item/ammo_box/a357/match,
@@ -1059,7 +1059,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -1497,14 +1497,10 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
 /obj/item/clothing/head/soft/black,
 /obj/item/clothing/head/soft/black,
 /obj/item/clothing/head/soft/black,
@@ -1647,7 +1643,7 @@
 	req_access = list(56)
 	},
 /obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/ngr/officer,
 /obj/item/clothing/suit/toggle/industrial,
 /obj/item/clothing/gloves/combat,
 /obj/item/storage/belt/utility/chief{
@@ -1942,9 +1938,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Gj" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2797,9 +2791,7 @@
 /area/ship/hallway/central)
 "Tq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/effect/landmark/start/assistant,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/extinguisher_cabinet/directional/west,

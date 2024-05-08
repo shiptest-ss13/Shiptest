@@ -729,7 +729,6 @@
 /datum/outfit/job/independent/chemist/pharma
 	name = "Independent - Chemist (Pharmacology Student)"
 
-	uniform = /obj/item/clothing/under/rank/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/pda/medical

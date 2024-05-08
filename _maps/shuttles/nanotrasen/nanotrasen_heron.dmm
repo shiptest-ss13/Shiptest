@@ -403,9 +403,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bE" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "bF" = (
@@ -2492,9 +2490,8 @@
 /turf/open/floor/wood,
 /area/ship/science/robotics)
 "jO" = (
-/obj/structure/chair/comfy/brown{
-	color = "#c45c57";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#c45c57"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave,
@@ -3377,13 +3374,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/proto{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/proto{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/proto{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -3441,9 +3438,7 @@
 /turf/open/floor/grass,
 /area/ship/hallway/aft)
 "mM" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -6634,7 +6629,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "ym" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
@@ -8027,7 +8022,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "DW" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/ship/security)
@@ -8138,9 +8133,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -8250,7 +8243,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Et" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
@@ -9565,7 +9558,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/structure/sign/poster/official/moth{
 	pixel_y = 32
 	},
@@ -9895,7 +9888,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "KQ" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/toy/plush/moth{
 	pixel_x = 3
@@ -10075,9 +10068,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hangar)
 "LO" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plush/hornet/gay{
 	layer = 2.1;
@@ -11088,7 +11079,7 @@
 	},
 /area/ship/crew/office)
 "Pp" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/item/toy/plush/spider,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -11528,7 +11519,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -12681,9 +12672,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Vo" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/machinery/firealarm/directional/west,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/green,
@@ -12980,9 +12969,7 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "WU" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /obj/machinery/newscaster/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
