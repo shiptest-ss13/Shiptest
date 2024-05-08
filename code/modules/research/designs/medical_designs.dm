@@ -407,7 +407,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_mindscrew
-	name = "Mindscrew Implant"
+	name = "\improper Midi-Sed MNDFCK implant"
 	desc = "A horrific after-market modification of Midi-Sed's pleasure vivifier that stimulates intense pain in the brain. Dramatically hurts a user's mood and mental state, and lingers for a time after removal."
 	id = "ci-mindscrew"
 	build_type = PROTOLATHE | MECHFAB
