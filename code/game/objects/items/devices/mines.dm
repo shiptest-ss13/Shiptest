@@ -737,10 +737,10 @@ LIVE_MINE_HELPER(pressure/sound)
 					has_stuff = TRUE
 			if(!has_stuff)
 				var/obj/sign = new signtype(sign_turf)
-				
+				var/icon/arrow_icon = new(sign.icon, "mine_arrow")
 				var/angle = Get_Angle(src, sign)
-
-				sign.transform = matrix().Turn(angle)
+				arrow_icon.Turn(angle)
+				sign.add_overlay(arrow_icon)
 				signs_spawned++
 	return signs_spawned
 
