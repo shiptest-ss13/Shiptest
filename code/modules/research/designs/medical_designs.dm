@@ -406,17 +406,6 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/cyberimp_mindscrew
-	name = "\improper Midi-Sed MNDFCK implant"
-	desc = "A horrific after-market modification of Midi-Sed's pleasure vivifier that stimulates intense pain in the brain. Dramatically hurts a user's mood and mental state, and lingers for a time after removal."
-	id = "ci-mindscrew"
-	build_type = PROTOLATHE | MECHFAB
-	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/silver = 500)
-	build_path = /obj/item/organ/cyberimp/brain/mindscrew
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/cyberimp_nutriment
 	name = "Nutriment Pump Implant"
 	desc = "This implant with synthesize and pump into your bloodstream a small amount of nutriment when you are starving."
