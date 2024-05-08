@@ -270,6 +270,12 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	"Nanotrasen" = list(
 		"NTSV",
 	),
+	"N+S Logistics" = list(
+		"NSSV",
+	),
+	"Vigilitas Interstellar" = list(
+		"VISV",
+	),
 	"Frontiersmen Fleet" = list(
 		"FFV",
 	),
