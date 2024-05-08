@@ -146,7 +146,7 @@
 			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-			H.say("*scream")
+			H.emote("scream")
 			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
 			REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 			return
