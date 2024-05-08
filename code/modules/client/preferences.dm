@@ -841,7 +841,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
 
 			if("Smoker" in all_quirks)
-				dat += "<h3>Smoker<h3>"
+				dat += "<h3>Smoker</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=preferred_smoke_brand;task=input'>[preferred_smoke_brand]</a><BR>"
 
