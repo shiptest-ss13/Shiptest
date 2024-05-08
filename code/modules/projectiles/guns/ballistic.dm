@@ -9,6 +9,27 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		)
+	)
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if (!spawnwithmagazine)

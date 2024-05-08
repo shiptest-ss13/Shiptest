@@ -22,19 +22,11 @@
 	var/overheat = FALSE
 	var/mob/holder
 
-
 	var/max_mod_capacity = 100
 	var/list/modkits = list()
 
 	var/recharge_timerid
 
-	valid_attachments = list(
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/rail_light
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1
-	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 24,
