@@ -803,6 +803,7 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/nanotrasen //placeholder for sorting these together, add 3x3 NT and Vigilitas logos later
 	icon = 'icons/obj/nanotrasen_floor.dmi'
+	icon_state = "NS-2x2" //also placeholder
 
 /obj/effect/turf_decal/nanotrasen/ns
 	icon_state = "NS-2x2"
