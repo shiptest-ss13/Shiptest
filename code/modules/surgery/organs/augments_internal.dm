@@ -155,7 +155,7 @@
 	organ_flags |= ORGAN_FAILING
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "joywire")
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire_emp", /datum/mood_event/joywire_emp)
-	to_chat(owner, span_boldwarning("That feeling of dream-like, distilled joy is suddenly diluted. Misery sets in...")
+	to_chat(owner, span_boldwarning("That feeling of dream-like, distilled joy is suddenly diluted. Misery sets in..."))
 
 /obj/item/organ/cyberimp/brain/mindscrew
 	name = "\improper Midi-Sed MNDFCK implant"
