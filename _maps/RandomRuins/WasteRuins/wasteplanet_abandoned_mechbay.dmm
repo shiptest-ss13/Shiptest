@@ -1557,7 +1557,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "rT" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /mob/living/simple_animal/hostile/syndicate{
 	name = "Syndicate Engineer";
 	desc = "Death to bad mechanics."
@@ -1677,9 +1677,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "ts" = (
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/left/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -2614,9 +2612,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "Ew" = (
-/obj/structure/chair/sofa{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "EI" = (
@@ -3095,9 +3091,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "KB" = (
-/obj/structure/chair/sofa/corner{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/corner/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "KC" = (
@@ -3425,7 +3419,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Og" = (
-/obj/effect/mine/shrapnel/human_only,
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Oj" = (
@@ -3452,9 +3446,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "OP" = (
-/obj/structure/chair/sofa{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/directional/west,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel,
@@ -4009,7 +4001,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "WR" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/brown/corner/directional/south,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 1
@@ -4127,9 +4119,7 @@
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "Yu" = (
-/obj/structure/closet/wall/white{
-	pixel_y = 29
-	},
+/obj/structure/closet/wall/white/directional/north,
 /obj/item/storage/firstaid/toxin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
