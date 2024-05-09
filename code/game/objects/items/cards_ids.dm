@@ -320,33 +320,33 @@
 
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	if(registered_account)
-		. += "The account linked to the card belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
 	. += "<span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
 
 /obj/item/card/id/examine_more(mob/user)
 	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
 
 	if(registered_name)
-		msg += "This access card is assigned to <B>[registered_name]</B>."
+		msg += "<B>NAME:</B>"
+		msg += "[registered_name]"
 	if(registered_age)
-		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
-	if(mining_points)
-		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+		msg += "<B>AGE:</B>"
+		msg += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
+		msg += "<B>SHIP ACCESS:</B>"
+		msg += "[ship_names.Join(", ")]"
 	if(registered_account)
-		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		msg += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
-		msg += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
+		msg += "<B>ACCOUNT:</B>"
+		msg += "LINKED ACCOUNT HOLDER: '[registered_account.account_holder]'"
+		msg += "BALANCE: [registered_account.account_balance] cr."
+		msg += "<span class='info'><b>Alt-click</b> the ID to pull money from the account in the form of holochips.</span>"
+		msg += "<span class='info'>You can insert credits into the account by pressing holochips, cash, or coins against the ID.</span>"
 		if(registered_account.account_holder == user.real_name)
-			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
+			msg += "<span class='info'>If you lose this ID card, you can reclaim your account by <b>Alt-click</b> a blank ID card and entering your account ID number.</span>"
 	else
-		msg += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
-
+		msg += "<span class='info'>There is no registered account. <b>Alt-click</b> to add one.</span>"
 	return msg
 
 /obj/item/card/id/GetAccess()
