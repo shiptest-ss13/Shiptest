@@ -259,7 +259,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	return
 
 /obj/item/katana/cursed/attack(mob/target, mob/living/carbon/human/user)
-	if(user.mind && user.owns_soul())
+	if(user.mind)
 		to_chat(user, "<span class='warning'>You feel a terrible chill as the emptiness within [src] devours on your life force!</span>")
 		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
 		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))

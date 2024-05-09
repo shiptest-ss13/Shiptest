@@ -69,7 +69,6 @@
 #define MONKEY_BODYPART "monkey"
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
-#define DEVIL_BODYPART "devil"
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"

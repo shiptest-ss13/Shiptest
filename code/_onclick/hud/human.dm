@@ -33,6 +33,7 @@
 	var/mob/living/carbon/human/H = usr
 	H.quick_equip()
 
+/*
 /atom/movable/screen/devil
 	icon = 'icons/hud/screen_devil.dmi'
 	invisibility = INVISIBILITY_ABSTRACT
@@ -61,7 +62,7 @@
 
 /atom/movable/screen/devil/soul_counter/proc/clear()
 	invisibility = INVISIBILITY_ABSTRACT
-
+*/
 /atom/movable/screen/ling
 	icon = 'icons/hud/screen_changeling.dmi'
 	invisibility = INVISIBILITY_ABSTRACT

@@ -721,8 +721,10 @@
 	spell_list += S
 	S.action.Grant(current)
 
+/*
 /datum/mind/proc/owns_soul()
 	return soulOwner == src
+*/
 
 //To remove a specific spell from a mind
 /datum/mind/proc/RemoveSpell(obj/effect/proc_holder/spell/spell)

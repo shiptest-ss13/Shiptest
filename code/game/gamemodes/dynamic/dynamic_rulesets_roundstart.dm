@@ -383,6 +383,7 @@
 			V.assigned_role = "Clown Operative"
 			V.special_role = "Clown Operative"
 
+/*
 //////////////////////////////////////////////
 //                                          //
 //               DEVIL                      //
@@ -437,6 +438,7 @@
 			validtypes -= type
 		else
 			objective.find_target()
+*/
 
 //////////////////////////////////////////////
 //                                          //

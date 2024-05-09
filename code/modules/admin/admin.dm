@@ -851,6 +851,7 @@
 	if(!ai_number)
 		to_chat(usr, "<b>No AIs located</b>" , confidential = TRUE)
 
+/*
 /datum/admins/proc/output_all_devil_info()
 	var/devil_number = 0
 	for(var/datum/mind/D in SSticker.mode.devils)
@@ -866,6 +867,7 @@
 		to_chat(usr, devil.printdevilinfo(), confidential = TRUE)
 	else
 		to_chat(usr, "<b>[M] is not a devil.", confidential = TRUE)
+*/
 
 /datum/admins/proc/dynamic_mode_options(mob/user)
 	var/dat = {"

@@ -542,6 +542,7 @@
 /obj/item/toy/talking/AI/generate_messages()
 	return list(generate_ion_law())
 
+/*
 /obj/item/toy/talking/codex_gigas
 	name = "Toy Codex Gigas"
 	desc = "A tool to help you write fictional devils!"
@@ -567,6 +568,7 @@
 	messages += "[GLOB.lawlorify[LORE][devil.ban]]"
 	messages += "[GLOB.lawlorify[LORE][devil.banish]]"
 	return messages
+*/
 
 /obj/item/toy/talking/owl
 	name = "owl action figure"

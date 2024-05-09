@@ -1,4 +1,3 @@
-#define LAW_DEVIL "devil"
 #define LAW_ZEROTH "zeroth"
 #define LAW_INHERENT "inherent"
 #define LAW_SUPPLIED "supplied"
@@ -15,7 +14,6 @@
 	var/list/ion = list()
 	var/list/hacked = list()
 	var/mob/living/silicon/owner
-	var/list/devillaws = list()
 	var/id = DEFAULT_AI_LAWID
 
 /datum/ai_laws/Destroy(force, ...)
@@ -281,8 +279,6 @@
 
 /datum/ai_laws/proc/get_law_amount(groups)
 	var/law_amount = 0
-	if(devillaws && (LAW_DEVIL in groups))
-		law_amount++
 	if(zeroth && (LAW_ZEROTH in groups))
 		law_amount++
 	if(ion.len && (LAW_ION in groups))
@@ -297,9 +293,6 @@
 			if(length(law) > 0)
 				law_amount++
 	return law_amount
-
-/datum/ai_laws/proc/set_law_sixsixsix(laws)
-	devillaws = laws
 
 /datum/ai_laws/proc/set_zeroth_law(law, law_borg = null)
 	zeroth = law

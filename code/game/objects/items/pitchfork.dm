@@ -41,6 +41,7 @@
 	icon_state = "[base_icon_state]0"
 	return ..()
 
+/*
 /obj/item/pitchfork/demonic
 	name = "demonic pitchfork"
 	desc = "A red pitchfork, it looks like the work of the devil."
@@ -100,3 +101,4 @@
 		playsound(target, 'sound/magic/disintegrate.ogg', 100, TRUE)
 		W.dismantle_wall(devastated = FALSE)
 		return
+*/
