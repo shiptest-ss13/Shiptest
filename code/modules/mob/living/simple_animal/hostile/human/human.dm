@@ -1,22 +1,21 @@
 /mob/living/simple_animal/hostile/human
-	name = "Whitesands Inhabitant"
-	desc = "If you can read this, yell at a coder!"
+	name = "crazed human"
+	desc = "A crazed human, they cannot be reasoned with"
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "survivor_base"
 	icon_living = "survivor_base"
 	icon_dead = null
 	icon_gib = "syndicate_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	minbodytemp = 180
-	unsuitable_atmos_damage = 15
-	atmos_requirements = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
+
 	speak_chance = 20
+	speak_emote = list("groans")
+
 	turns_per_move = 5
-	response_help_continuous = "pushes"
-	response_help_simple = "push"
 	speed = 0
 	maxHealth = 100
 	health = 100
+
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -24,8 +23,18 @@
 	attack_verb_simple = "punch"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	unsuitable_atmos_damage = 15
-	speak_emote = list("groans")
+	response_help_continuous = "pushes"
+	response_help_simple = "push"
+
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
+
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	unsuitable_atmos_damage = 15
+	minbodytemp = 180
+	status_flags = CANPUSH
+	del_on_death = 1
+
+	footstep_type = FOOTSTEP_MOB_SHOE
+
 	faction = list("hermit")
