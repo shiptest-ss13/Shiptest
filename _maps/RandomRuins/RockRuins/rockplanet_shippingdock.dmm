@@ -2106,11 +2106,8 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "sp" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/concrete/slab_3{
-	light_power = 0.6;
-	light_range = 2
-	},
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "sq" = (
 /obj/structure/cable/yellow{
@@ -5130,8 +5127,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "Ro" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/concrete/slab_4{
+/obj/item/stack/rods,
+/turf/open/floor/concrete/slab_1{
 	light_power = 0.6;
 	light_range = 2
 	},
@@ -5191,8 +5188,8 @@
 /area/ruin/rockplanet/shippingdockoffice)
 "RW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/window/southleft,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdockoffice)
 "Sd" = (
@@ -8534,7 +8531,7 @@ yN
 lB
 Ri
 Zs
-mc
+Ro
 ZL
 zU
 MA
@@ -8830,7 +8827,7 @@ vi
 qn
 Zs
 SY
-lB
+sp
 Zs
 lB
 lB
@@ -8840,7 +8837,7 @@ ZL
 CW
 hN
 CW
-sp
+KA
 cv
 Ov
 ib
@@ -8905,7 +8902,7 @@ Qv
 qn
 um
 UA
-Dz
+ZL
 NK
 wp
 wp
@@ -8915,7 +8912,7 @@ NR
 hN
 zU
 zU
-Ro
+Ov
 cv
 Ov
 ib
@@ -9574,7 +9571,7 @@ YO
 Ev
 Ev
 Ov
-Eh
+Ro
 pV
 qB
 qB
@@ -10060,7 +10057,7 @@ Wn
 Wn
 jD
 MA
-Eh
+Ro
 Wn
 XB
 pi
