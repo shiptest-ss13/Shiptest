@@ -16,6 +16,7 @@
 	maxHealth = 100
 	health = 100
 
+	robust_searching = 1
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
