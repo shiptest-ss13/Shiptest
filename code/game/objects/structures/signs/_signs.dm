@@ -223,6 +223,13 @@
 	icon_state = "ns"
 	is_editable = TRUE
 
+/obj/structure/sign/nanotrasen/vigilitas
+	name = "\improper Vigilitas Interstellar logo sign"
+	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
+	desc = "A sign with Vigilitas Interstellar's VI logo on it."
+	icon_state = "vigilitas"
+	is_editable = TRUE
+
 /obj/structure/sign/logo
 	name = "\improper Nanotrasen logo sign"
 	desc = "The Nanotrasen corporate logo."
