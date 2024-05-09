@@ -61,12 +61,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "aM" = (
-/obj/structure/safe/floor,
 /obj/item/documents/nanotrasen,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stock_parts/cell/gun/upgraded,
+/obj/structure/safe,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -1570,11 +1570,11 @@
 "uL" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid,
 /obj/item/reagent_containers/glass/bottle/morphine,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle/charcoal,
 /obj/item/clothing/neck/stethoscope,
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "uV" = (
@@ -1819,7 +1819,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "yK" = (
@@ -2114,10 +2113,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
-"Cp" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/space,
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "Cu" = (
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava/orange,
@@ -3024,9 +3019,7 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 8
 	},
-/obj/structure/closet/wall/white{
-	dir = 4;
-	pixel_x = -32;
+/obj/structure/closet/wall/white/directional/west{
 	name = "shower locker"
 	},
 /obj/item/soap/nanotrasen,
@@ -3498,7 +3491,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Vn" = (
 /obj/structure/grille,
-/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ruin/lavaland/factory/manager_office)
 "Vp" = (
@@ -3894,11 +3887,11 @@ fE
 fE
 fE
 fE
+ns
+Xn
+Xn
 fE
-fE
-fE
-fE
-fE
+Xn
 fE
 fE
 fE
@@ -3943,17 +3936,17 @@ fE
 MH
 MH
 MH
-fE
-fE
-fE
-fE
-fE
+Xn
+Xn
+Xn
+Xn
+ns
 GT
-fE
-fE
-fE
-fE
-fE
+Xn
+Xn
+Xn
+Cu
+Xn
 Xn
 iW
 tV
@@ -4714,7 +4707,7 @@ NM
 NM
 NM
 Xn
-fE
+Xn
 "}
 (19,1,1) = {"
 fE
@@ -4763,7 +4756,7 @@ iP
 Xn
 NM
 Xn
-fE
+Xn
 "}
 (20,1,1) = {"
 fE
@@ -4799,7 +4792,7 @@ Sx
 iP
 Or
 Rv
-Cp
+Ho
 AB
 Za
 Ho
@@ -4812,7 +4805,7 @@ iP
 iP
 kO
 Xn
-fE
+Xn
 "}
 (21,1,1) = {"
 fE
@@ -4861,7 +4854,7 @@ xj
 iP
 iP
 Uu
-fE
+Xn
 "}
 (22,1,1) = {"
 fE
@@ -4910,7 +4903,7 @@ qP
 zx
 iP
 Cu
-fE
+Xn
 "}
 (23,1,1) = {"
 fE
@@ -4959,7 +4952,7 @@ Pg
 Be
 iP
 Uu
-fE
+Xn
 "}
 (24,1,1) = {"
 fE
@@ -5008,7 +5001,7 @@ AP
 Ev
 iP
 Xn
-fE
+Xn
 "}
 (25,1,1) = {"
 fE
@@ -5057,7 +5050,7 @@ iP
 iP
 iP
 Xn
-fE
+Xn
 "}
 (26,1,1) = {"
 LZ
@@ -5106,7 +5099,7 @@ Sx
 Sx
 GT
 gg
-fE
+Xn
 "}
 (27,1,1) = {"
 fE
@@ -5155,7 +5148,7 @@ dk
 ji
 ns
 ns
-fE
+Xn
 "}
 (28,1,1) = {"
 fE
@@ -5204,7 +5197,7 @@ Zx
 qV
 ns
 ns
-fE
+Xn
 "}
 (29,1,1) = {"
 fE
@@ -5253,7 +5246,7 @@ bd
 bd
 Xn
 tR
-fE
+Xn
 "}
 (30,1,1) = {"
 fE
@@ -5302,7 +5295,7 @@ bd
 bd
 bd
 kO
-fE
+Xn
 "}
 (31,1,1) = {"
 fE
@@ -5351,7 +5344,7 @@ Oe
 Oe
 Oe
 bd
-fE
+Xn
 "}
 (32,1,1) = {"
 fE
@@ -6108,8 +6101,8 @@ MH
 MH
 MH
 MH
-fE
-fE
+MH
+MH
 MH
 MH
 MH
