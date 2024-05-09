@@ -68,6 +68,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/door/window/westright{
+	name = "Processor Access Door"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ax" = (
@@ -1291,6 +1294,11 @@
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -2783,6 +2791,9 @@
 	output_dir = 1
 	},
 /obj/structure/plasticflaps/opaque,
+/obj/machinery/door/window/southleft{
+	name = "Processor Access Door"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Td" = (
@@ -2895,6 +2906,11 @@
 /obj/machinery/light/small/directional/east,
 /obj/machinery/cryopod{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
