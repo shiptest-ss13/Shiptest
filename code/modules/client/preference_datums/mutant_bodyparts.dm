@@ -72,14 +72,14 @@
 	external_key = "feature_spider_legs"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/spider_legs
-	default_value = "Plain"
+	default_value = "Carapace"
 
 /datum/preference/mutant_bodypart/spider_spinneret
 	name = "Spider Spinneret"
 	external_key = "feature_spider_spinneret"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/spider_spinneret
-	default_value = "Plain"
+	default_value = "Spikecore"
 
 /datum/preference/mutant_bodypart/moth_markings
 	name = "Moth Markings"
