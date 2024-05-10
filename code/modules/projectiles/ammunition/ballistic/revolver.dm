@@ -1,33 +1,37 @@
-// .357 (Syndie Revolver)
+// .357 (Syndicate Revolver)
 
 /obj/item/ammo_casing/a357
 	name = ".357 bullet casing"
 	desc = "A .357 bullet casing."
 	caliber = ".357"
+	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
-	desc = "A .357 bullet casing, manufactured to exceedingly high standards."
+	desc = "A .357 match bullet casing."
 	caliber = ".357"
 	projectile_type = /obj/projectile/bullet/a357/match
 
 /obj/item/ammo_casing/a357/hp
 	name = ".357 hollow point bullet casing"
 	desc = "A .357 hollow point bullet casing."
+	icon_state = "magnum-brass"
+	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a357/hp
 
-// .45-70 (Hunting Revolver, Contender)
+// .45-70 (Hunting Revolver, Beacon)
 
 /obj/item/ammo_casing/a4570
 	name = ".45-70 bullet casing"
 	desc = "A .45-70 bullet casing."
 	caliber = ".45-70"
+	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
 
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"
-	desc = "A .45-70 bullet casing, manufactured to exceedingly high standards."
+	desc = "A .45-70 match bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a4570/match
 
@@ -39,25 +43,22 @@
 
 /obj/item/ammo_casing/a4570/explosive
 	name = ".45-70 explosive bullet casing"
-	desc = "A .45-70 bullet casing, loaded with a tiny explosive charge."
+	desc = "A .45-70 explosive bullet casing."
 	projectile_type = /obj/projectile/bullet/a4570/explosive
 
-// 7.62x38mmR (Nagant Revolver)
-
-/obj/item/ammo_casing/n762
-	name = "7.62x38mmR bullet casing"
-	desc = "A 7.62x38mmR bullet casing."
-	caliber = "7.62x38mmR"
-	projectile_type = /obj/projectile/bullet/n762
-
-
-// .38 (Detective's Gun)
+// .38 Special (Colt Detective Special & Winchester)
 
 /obj/item/ammo_casing/c38
-	name = ".38 bullet casing"
-	desc = "A .38 bullet casing."
+	name = ".38 Special bullet casing"
+	desc = "A .38 Special bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
+
+/obj/item/ammo_casing/c38/surplus
+	name = ".38 surplus bullet casing"
+	desc = "A .38 surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c38/surplus
+
 
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"
@@ -67,13 +68,13 @@
 
 /obj/item/ammo_casing/c38/match
 	name = ".38 match bullet casing"
-	desc = "A .38 bullet casing, manufactured to exceedingly high standards."
+	desc = "A .38 match bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/match
 
 /obj/item/ammo_casing/c38/match/bouncy
 	name = ".38 rubber bullet casing"
-	desc = "A .38 rubber bullet casing, manufactured to exceedingly high standards."
+	desc = "A .38 rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/match/bouncy
 

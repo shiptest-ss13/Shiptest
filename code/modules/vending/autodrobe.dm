@@ -52,7 +52,6 @@
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/head/bandana = 1,
-		/obj/item/clothing/under/costume/soviet = 1,
 		/obj/item/clothing/head/trapper = 1,
 		/obj/item/clothing/suit/imperium_monk = 1,
 		/obj/item/clothing/mask/gas/cyborg = 1,
@@ -133,7 +132,6 @@
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 180
 	extra_price = 360
-	payment_department = ACCOUNT_SRV
 	light_mask="theater-light-mask"
 
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)

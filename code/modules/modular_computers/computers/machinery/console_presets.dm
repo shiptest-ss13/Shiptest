@@ -25,8 +25,6 @@
 /obj/machinery/modular_computer/console/preset/proc/install_programs()
 	return
 
-
-
 // ===== ENGINEERING CONSOLE =====
 /obj/machinery/modular_computer/console/preset/engineering
 	console_department = "Engineering"
@@ -80,7 +78,6 @@
 	var/obj/item/computer_hardware/hard_drive/hard_drive = cpu.all_components[MC_HDD]
 	hard_drive.store_file(new/datum/computer_file/program/chatclient())
 	hard_drive.store_file(new/datum/computer_file/program/card_mod())
-	hard_drive.store_file(new/datum/computer_file/program/job_management())
 
 // ===== CIVILIAN CONSOLE =====
 /obj/machinery/modular_computer/console/preset/civilian

@@ -1,7 +1,5 @@
 /datum/job/scientist
 	name = "Scientist"
-	total_positions = 5
-	spawn_positions = 3
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/scientist
@@ -33,9 +31,3 @@
 	..()
 	if(prob(0.4))
 		neck = /obj/item/clothing/neck/tie/horrible
-
-/datum/outfit/job/scientist/minutemen
-	name = "Scientist (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	backpack = /obj/item/storage/backpack/security/cmm

@@ -179,7 +179,14 @@
 		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
 			playsound(radio, "sound/effects/radio_chatter.ogg", 20, FALSE)
 			radio.last_chatter_time = world.time
-	//WS edit end
+		if(radio.log)
+			var/name = data["name"]
+			var/list/log_details = list()
+			log_details["name"] = "[name]▸"
+			log_details["message"] = "\"[html_decode(message)]\""
+			log_details["time"] = station_time_timestamp()
+			radio.loglist.Insert(1, list(log_details))
+			radio.log_trim()
 
 	// From the list of radios, find all mobs who can hear those.
 	var/list/receive = get_mobs_in_radio_ranges(radios)

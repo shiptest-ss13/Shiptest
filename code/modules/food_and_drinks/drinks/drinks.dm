@@ -4,7 +4,7 @@
 /obj/item/reagent_containers/food/drinks
 	name = "drink"
 	desc = "yummy"
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = null
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -79,7 +79,7 @@
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
 			bro.cell.use(30)
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/add_reagent, refill, trans), 600)
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, add_reagent), refill, trans), 600)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
@@ -123,7 +123,7 @@
 /obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target)		//Invalid loc
+	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
 	if(bartender_check(target) && ranged)
 		return
@@ -254,13 +254,26 @@
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Dutch hot coco"
-	desc = "Made in Space South America."
+	name = "Pearl Hot Chocolate"
+	desc = "A rich delicacy from the humid regions of Terra."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
 	custom_price = 120
 
+/obj/item/reagent_containers/food/drinks/cafelatte
+	name = "cafe latte"
+	desc = "A nice, strong and refreshing beverage while you're reading."
+	icon_state = "cafe_latte"
+	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
+	custom_price = 200
+
+/obj/item/reagent_containers/food/drinks/soylatte
+	name = "soy latte"
+	desc = "A nice and refreshing beverage while you're reading."
+	icon_state = "soy_latte"
+	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
+	custom_price = 200
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
@@ -274,7 +287,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
@@ -394,7 +407,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks/drinks.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -453,7 +466,7 @@
 /obj/item/reagent_containers/food/drinks/colocup
 	name = "colo cup"
 	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "colocup"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -512,6 +525,13 @@
 	name = "cup"
 	desc = "A cup with the british flag emblazoned on it."
 	icon_state = "britcup"
+	volume = 30
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/rilenacup
+	name = "RILENA mug"
+	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
+	icon_state = "rilenacup"
 	volume = 30
 	spillable = TRUE
 
@@ -738,3 +758,40 @@
 	desc = "A dangerous fusion of flavors!"
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+
+/obj/item/reagent_containers/food/drinks/ration
+	name = "empty ration pouch"
+	desc = "If you ever wondered where air came from..."
+	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	in_container = TRUE
+	reagent_flags = NONE
+	spillable = FALSE
+	w_class = WEIGHT_CLASS_SMALL
+	volume = 50
+
+/obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	reagents.flags |= OPENCONTAINER
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/ration/attack_self(mob/user)
+	if(!is_drainable())
+		open_ration(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		return 0
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
+	name = "Pan-Genezan vodka"
+	desc = "Vodka made from the finest potatoes."
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 15)

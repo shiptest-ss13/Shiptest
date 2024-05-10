@@ -240,12 +240,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		var/obj/structure/bodycontainer/morgue/j = pick(trays)
 		var/mob/living/carbon/human/h = new /mob/living/carbon/human(j, 1)
 		h.death()
-		for (var/part in h.internal_organs) //randomly remove organs from each body, set those we keep to be in stasis
+		for (var/obj/item/organ/internal_organ as anything in h.internal_organs) //randomly remove organs from each body, set those we keep to be in stasis
 			if (prob(40))
-				qdel(part)
+				qdel(internal_organ)
 			else
-				var/obj/item/organ/O = part
-				O.organ_flags |= ORGAN_FROZEN
+				internal_organ.organ_flags |= ORGAN_FROZEN
 		j.update_appearance()
 	qdel(src)
 
@@ -277,11 +276,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 				new /obj/item/toy/balloon/corgi(thing)
 			else
 				openturfs += thing
+
 	//cake + knife to cut it!
-	var/turf/food_turf = get_turf(pick(table))
-	new /obj/item/kitchen/knife(food_turf)
-	var/obj/item/reagent_containers/food/snacks/store/cake/birthday/iancake = new(food_turf)
-	iancake.desc = "Happy birthday, Ian!"
+	if(length(table))
+		var/turf/food_turf = get_turf(pick(table))
+		new /obj/item/kitchen/knife(food_turf)
+		var/obj/item/reagent_containers/food/snacks/store/cake/birthday/iancake = new(food_turf)
+		iancake.desc = "Happy birthday, Ian!"
+
 	//some balloons! this picks an open turf and pops a few balloons in and around that turf, yay.
 	for(var/i in 1 to balloon_clusters)
 		var/turf/clusterspot = pick_n_take(openturfs)

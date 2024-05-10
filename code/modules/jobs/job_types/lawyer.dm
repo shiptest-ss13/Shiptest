@@ -1,7 +1,5 @@
 /datum/job/lawyer
 	name = "Lawyer"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	var/lawyers = 0 //Counts lawyer amount
 
@@ -29,21 +27,3 @@
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	chameleon_extras = /obj/item/stamp/law
-
-/datum/outfit/job/lawyer/corporaterepresentative
-	uniform = /obj/item/clothing/under/suit/navy
-	suit = /obj/item/clothing/suit/toggle/lawyer/navy
-	ears = /obj/item/radio/headset/headset_cent
-	neck = /obj/item/clothing/neck/tie/blue
-	l_hand = /obj/item/clipboard
-	r_pocket = /obj/item/pen/fountain
-
-/datum/outfit/job/lawyer/passenger
-	uniform = /obj/item/clothing/under/suit/black
-	suit = null
-	ears = /obj/item/radio/headset/headset_cent
-	neck = null
-	glasses = /obj/item/clothing/glasses/sunglasses/big
-	l_hand = null
-	r_pocket = /obj/item/spacecash/bundle/mediumrand
-

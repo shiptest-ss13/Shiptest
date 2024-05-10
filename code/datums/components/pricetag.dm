@@ -8,9 +8,9 @@
 	owner = _owner
 	if(_profit_ratio)
 		profit_ratio = _profit_ratio
-	RegisterSignal(parent, list(COMSIG_ITEM_SOLD), .proc/split_profit)
-	RegisterSignal(parent, list(COMSIG_STRUCTURE_UNWRAPPED, COMSIG_ITEM_UNWRAPPED), .proc/Unwrapped)
-	RegisterSignal(parent, list(COMSIG_ITEM_SPLIT_PROFIT, COMSIG_ITEM_SPLIT_PROFIT_DRY), .proc/return_ratio)
+	RegisterSignal(parent, list(COMSIG_ITEM_SOLD), PROC_REF(split_profit))
+	RegisterSignal(parent, list(COMSIG_STRUCTURE_UNWRAPPED, COMSIG_ITEM_UNWRAPPED), PROC_REF(Unwrapped))
+	RegisterSignal(parent, list(COMSIG_ITEM_SPLIT_PROFIT, COMSIG_ITEM_SPLIT_PROFIT_DRY), PROC_REF(return_ratio))
 
 /datum/component/pricetag/proc/Unwrapped()
 	SIGNAL_HANDLER
@@ -23,7 +23,7 @@
 	var/price = item_value
 	if(price)
 		var/adjusted_value = price*(profit_ratio/100)
-		owner.adjust_money(adjusted_value)
+		owner.adjust_money(adjusted_value, "pricetag")
 		owner.bank_card_talk("Sale recorded. [adjusted_value] credits added to account.")
 		return TRUE
 

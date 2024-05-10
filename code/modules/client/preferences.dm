@@ -34,6 +34,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	var/generic_adjective = "Unremarkable"
+
 	var/underwear = "Nude"				//Type of underwear
 	var/underwear_color = "000"			//Greyscale color of underwear
 	var/undershirt = "Nude"				//Type of undershirt
@@ -83,6 +85,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							// "squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							// "ipc_antenna" = "None",
+							"ipc_tail" = "None",
 							// "kepori_feathers" = "Plain",
 							// "kepori_body_feathers" = "Plain",
 							// "kepori_tail_feathers" = "Fan",
@@ -136,6 +139,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	// ! oooagh write a description
 
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
+
+	/// If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit
+	var/brief_outfit = /datum/outfit/centcom/commander
 
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones. // ! what?
@@ -280,6 +286,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/allow_midround_antag = 1 // ! overlaps with "MIDROUND_ANTAG" flag on toggles var
 	var/crew_objectives = TRUE // ! there's a var on the mind with the same name
 
+
+	// ! resort
 	/*
 		Prefdev vars:
 			These will be sorted once I'm done with them.
@@ -772,9 +780,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
 			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
-			if(istype(pref_species, /datum/species/ethereal)) //not the best thing to do tbf but I dont know whats better.
+			if(istype(pref_species, /datum/species/elzuose)) //not the best thing to do tbf but I dont know whats better.
 
-				dat += "<h3>Ethereal Color</h3>"
+				dat += "<h3>Elzuosa Color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
@@ -969,7 +977,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
-				dat += "<h3>Spider Extra Legs Variant</h3>"
+				dat += "<h3>Extra Legs</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=spider_legs;task=input'>[features["spider_legs"]]</a><BR>"
 
@@ -983,7 +991,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("spider_spinneret" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
-				dat += "<h3>Spider Spinneret Markings</h3>"
+				dat += "<h3>Spinneret</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=spider_spinneret;task=input'>[features["spider_spinneret"]]</a><BR>"
 
@@ -993,21 +1001,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					mutant_category = 0
 			*/
 
-			/* REMOVE
-			if("spider_mandibles" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-				dat += "<h3>Spider Mandible Variant</h3>"
-
-				dat += "<a href='?_src_=prefs;preference=spider_mandibles;task=input'>[features["spider_mandibles"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-			*/
-
-			/* REMOVE
 			if("squid_face" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -1053,6 +1046,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 			*/
+
+			if("ipc_tail" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Tail Style</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=ipc_tail;task=input'>[features["ipc_tail"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
 
 			if("ipc_chassis" in pref_species.default_features)
 				if(!mutant_category)
@@ -1224,6 +1230,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Size</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]]</a><BR>"
+
+
+				dat += "<h3>Character Adjective</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=generic_adjective;task=input'>[generic_adjective]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1476,7 +1487,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Radio Messages:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Split Admin Tabs:</b> <a href = '?_src_=prefs;preference=toggle_split_admin_tabs'>[(toggles & SPLIT_ADMIN_TABS)?"Enabled":"Disabled"]</a><br>"
+				dat += "<b>Fast MC Refresh:</b> <a href = '?_src_=prefs;preference=toggle_fast_mc_refresh'>[(toggles & FAST_MC_REFRESH)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
+				dat += "<b>Briefing Officer Outfit:</b> <a href = '?_src_=prefs;preference=briefoutfit;task=input'>[brief_outfit]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
 					dat += "<b>ASAY Color:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Change</a><br>"
@@ -1603,7 +1616,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSmapping)
 		return
 
-	var/datum/map_template/shuttle/ship = SSmapping.ship_purchase_list[tgui_input_list(user, "Please select which ship to preview outfits for.", "Outfit selection", SSmapping.ship_purchase_list)]
+	var/ship_selection = tgui_input_list(user, "Please select which ship to preview outfits for.", "Outfit selection", (list("None") + SSmapping.ship_purchase_list))
+	if(ship_selection == "None")
+		selected_outfit = new /datum/outfit //The base type outfit is nude
+
+	var/datum/map_template/shuttle/ship = SSmapping.ship_purchase_list[ship_selection]
 	if(!ship)
 		return
 
@@ -1710,24 +1727,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
 	var/list/handled_conflicts = list()
-	for(var/quirk_index in SSquirks.quirk_instances)
-		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
-		if(!quirk_instance)
-			continue
-		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
-			quirk_conflicts[quirk_instance.name] = "Mood and mood quirks are disabled."
+	for(var/quirk_name in SSquirks.quirks)
+		var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		if(initial(quirk_type.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+			quirk_conflicts[quirk_name] = "Mood and mood quirks are disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
 				handled_conflicts["mood"] = TRUE
-		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
-			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
+		if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+			quirk_conflicts[quirk_name] = "Quirk unavailable to species."
 			if(!handled_conflicts["species"])
 				handle_quirk_conflict("species", pref_species, user)
 				handled_conflicts["species"] = TRUE
 		for(var/blacklist in SSquirks.quirk_blacklist)
 			for(var/quirk_blacklisted in all_quirks)
-				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_instance.name] && (quirk_instance.name in blacklist) && !(quirk_instance.name == quirk_blacklisted))
-					quirk_conflicts[quirk_instance.name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
+				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_name] && (quirk_name in blacklist) && !(quirk_name == quirk_blacklisted))
+					quirk_conflicts[quirk_name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
 					if(!handled_conflicts["blacklist"])
 						handle_quirk_conflict("blacklist", null, user)
 						handled_conflicts["blacklist"] = TRUE
@@ -1750,24 +1765,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			target_species = additional_argument
 		else
 			return
-	for(var/quirk_owned in all_quirks)
-		var/datum/quirk/quirk_owned_instance = SSquirks.quirk_instances[quirk_owned]
-		balance -= quirk_owned_instance.value
+	for(var/quirk_name in all_quirks)
+		var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		balance -= initial(quirk_type.value)
 		switch(change_type)
 			if("species")
-				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || ((quirk_owned_instance.species_lock["type"] == "blocked") && (target_species.id in quirk_owned_instance.species_lock)))
-					all_quirks_new -= quirk_owned_instance.name
-					balance += quirk_owned_instance.value
+				if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+					all_quirks_new -= quirk_name
+					balance += initial(quirk_type.value)
 			if("mood")
-				if(quirk_owned_instance.mood_quirk)
-					all_quirks_new -= quirk_owned_instance.name
-					balance += quirk_owned_instance.value
+				if(initial(quirk_type.mood_quirk))
+					all_quirks_new -= quirk_name
+					balance += initial(quirk_type.value)
 			if("blacklist")
 				for(var/blacklist in SSquirks.quirk_blacklist)
 					for(var/quirk_blacklisted in all_quirks_new)
-						if((quirk_blacklisted in blacklist) && (quirk_owned_instance.name in blacklist) && !(quirk_owned_instance.name == quirk_blacklisted))
-							all_quirks_new -= quirk_owned_instance.name
-							balance += quirk_owned_instance.value
+						if((quirk_blacklisted in blacklist) && (quirk_name in blacklist) && !(quirk_name == quirk_blacklisted))
+							all_quirks_new -= quirk_name
+							balance += initial(quirk_type.value)
 	if(balance < 0)
 		var/list/positive_quirks = list()
 		for(var/quirk_owned in all_quirks_new)
@@ -2180,7 +2195,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("color_ethereal")
-					var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference","#"+features["ethcolor"]) as color|null
+					var/new_etherealcolor = input(user, "Choose your elzuose color:", "Character Preference","#"+features["ethcolor"]) as color|null
 					if(new_etherealcolor)
 						var/temp_hsv = RGBtoHSV(new_etherealcolor)
 						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright
@@ -2285,22 +2300,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["spider_spinneret"] = new_spider_spinneret
 				*/
 
-				/* REMOVE
-				if("spider_mandibles")
-					var/new_spider_mandibles
-					new_spider_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.spider_mandibles_list
-					if (new_spider_mandibles)
-						features["spider_mandibles"] = new_spider_mandibles
-				*/
-
-				/* REMOVE
-				if("squid_face")
-					var/new_squid_face
-					new_squid_face = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.squid_face_list
-					if (new_squid_face)
-						features["squid_face"] = new_squid_face
-				*/
-
 				if("ipc_screen")
 					var/new_ipc_screen
 
@@ -2318,6 +2317,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
 				*/
+
+				if("ipc_tail")
+					var/new_ipc_tail
+
+					new_ipc_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.ipc_tail_list
+
+					if(new_ipc_tail)
+						features["ipc_tail"] = new_ipc_tail
 
 				if("ipc_chassis")
 					var/new_ipc_chassis
@@ -2402,6 +2409,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_asaycolor)
 						asaycolor = new_asaycolor
 
+				if("briefoutfit")
+					var/list/valid_paths = list()
+					for(var/datum/outfit/outfit_path as anything in subtypesof(/datum/outfit))
+						valid_paths[initial(outfit_path.name)] = outfit_path
+					var/new_outfit = input(user, "Choose your briefing officer outfit:", "Game Preference") as null|anything in valid_paths
+					new_outfit = valid_paths[new_outfit]
+					if(new_outfit)
+						brief_outfit = new_outfit
+
 				if("bag")
 					var/new_backpack = input(user, "Choose your character's style of bag:", "Character Preference")  as null|anything in GLOB.backpacklist
 					if(new_backpack)
@@ -2456,6 +2472,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/phobiaType = input(user, "What are you scared of?", "Character Preference", phobia) as null|anything in SStraumas.phobia_types
 					if(phobiaType)
 						phobia = phobiaType
+
+				if("generic_adjective")
+					var/selectAdj
+					if(istype(pref_species, /datum/species/ipc))
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.ipc_preference_adjectives
+					else
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.preference_adjectives
+					if(selectAdj)
+						generic_adjective = selectAdj
 
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
@@ -2602,6 +2627,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user.client.toggle_hear_radio()
 				if("toggle_split_admin_tabs")
 					toggles ^= SPLIT_ADMIN_TABS
+				if("toggle_fast_mc_refresh")
+					toggles ^= FAST_MC_REFRESH
 				if("toggle_prayers")
 					user.client.toggleprayers()
 				if("toggle_deadmin_always")
@@ -2857,6 +2884,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 
 	character.dna.real_name = character.real_name
+	character.generic_adjective = generic_adjective
 	character.hair_color = hair_color
 	character.facial_hair_color = facial_hair_color
 	character.grad_color = features["grad_color"]

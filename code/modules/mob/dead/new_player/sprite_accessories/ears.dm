@@ -18,13 +18,13 @@
 	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
-	hasinner = 1
+	secondary_color = TRUE
 	color_src = HAIR
 
 /datum/sprite_accessory/mutant_part/ears/cat/slime
 	name = "Slimecat"
 	icon_state = "cat"
-	hasinner = FALSE
+	secondary_color = FALSE
 	color_src = HAIR
 	image_alpha = 150
 
@@ -32,11 +32,11 @@
 	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox"
 	icon_state = "fox"
-	hasinner = 1
+	secondary_color = TRUE
 	color_src = HAIR
 
 /datum/sprite_accessory/mutant_part/ears/elf
 	name = "Elf"
 	icon_state = "elf"
-	hasinner = FALSE
+	secondary_color = FALSE
 	color_src = SKINCOLORS

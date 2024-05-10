@@ -206,14 +206,6 @@
 /obj/item/banner/command/check_inspiration(mob/living/carbon/human/H)
 	return HAS_TRAIT(H, TRAIT_MINDSHIELD) //Command is stalwart but rewards their allies.
 
-/datum/crafting_recipe/command_banner
-	name = "Command Banner"
-	result = /obj/item/banner/command/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/command/captain/parade = 1)
-	category = CAT_MISC
-
 /obj/item/banner/red
 	name = "red banner"
 	icon_state = "banner-red"
@@ -275,51 +267,6 @@
 
 /obj/item/clothing/head/helmet/plate/crusader/red
 	icon_state = "crusader-red"
-
-//Prophet helmet
-/obj/item/clothing/head/helmet/plate/crusader/prophet
-	name = "Prophet's Hat"
-	desc = "A religious-looking hat."
-	mob_overlay_icon = 'icons/mob/large-worn-icons/64x64/head.dmi'
-	flags_1 = 0
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 70, "bio" = 50, "rad" = 50, "fire" = 60, "acid" = 60) //religion protects you from disease and radiation, honk.
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-
-/obj/item/clothing/head/helmet/plate/crusader/prophet/red
-	icon_state = "prophet-red"
-
-/obj/item/clothing/head/helmet/plate/crusader/prophet/blue
-	icon_state = "prophet-blue"
-
-//Structure conversion staff
-/obj/item/godstaff
-	name = "godstaff"
-	desc = "It's a stick..?"
-	icon_state = "godstaff-red"
-	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
-	var/conversion_color = "#ffffff"
-	var/staffcooldown = 0
-	var/staffwait = 30
-
-
-/obj/item/godstaff/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(staffcooldown + staffwait > world.time)
-		return
-	user.visible_message("<span class='notice'>[user] chants deeply and waves [user.p_their()] staff!</span>")
-	if(do_after(user, 20,1,src))
-		target.add_atom_colour(conversion_color, WASHABLE_COLOUR_PRIORITY) //wololo
-	staffcooldown = world.time
-
-/obj/item/godstaff/red
-	icon_state = "godstaff-red"
-	conversion_color = "#ff0000"
-
-/obj/item/godstaff/blue
-	icon_state = "godstaff-blue"
-	conversion_color = "#0000ff"
 
 /obj/item/clothing/gloves/plate
 	name = "Plate Gauntlets"

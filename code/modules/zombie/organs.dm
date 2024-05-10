@@ -30,7 +30,7 @@
 /obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	if(iszombie(M) && old_species && !special)
+	if(iszombie(M) && old_species && !QDELETED(M) && !special)
 		M.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
@@ -63,7 +63,7 @@
 		not even death can stop, you will rise again!</span>")
 	var/revive_time = rand(revive_time_min, revive_time_max)
 	var/flags = TIMER_STOPPABLE
-	timer_id = addtimer(CALLBACK(src, .proc/zombify, owner), revive_time, flags)
+	timer_id = addtimer(CALLBACK(src, PROC_REF(zombify), owner), revive_time, flags)
 
 /obj/item/organ/zombie_infection/proc/zombify(mob/living/carbon/C)
 	timer_id = null

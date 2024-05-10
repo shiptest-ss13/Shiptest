@@ -17,14 +17,18 @@
 /mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1)//WS Edit - Breakable Bones
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
-	if(!damage || (!forced && hit_percent <= 0))
+	if(!damage || (!forced && hit_percent <= 0) || !(flags_1 & INITIALIZED_1))
 		return FALSE
 	var/damage_amount =  forced ? damage : damage * hit_percent
 	switch(damagetype)
 		if(BRUTE)
 			adjustBruteLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(BURN)
 			adjustFireLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(TOX)
 			adjustToxLoss(damage_amount, forced = forced)
 		if(OXY)
@@ -33,6 +37,8 @@
 			adjustCloneLoss(damage_amount, forced = forced)
 		if(STAMINA)
 			adjustStaminaLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 	return TRUE
 
 ///like [apply_damage][/mob/living/proc/apply_damage] except it always uses the damage procs

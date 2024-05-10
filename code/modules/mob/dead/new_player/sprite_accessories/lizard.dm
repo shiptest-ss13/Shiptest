@@ -11,6 +11,7 @@
 
 	icon = 'icons/mob/species/lizard/markings.dmi'
 	color_src = MUTCOLORS_SECONDARY
+	#warn again, need to check if this works
 	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/mutant_part/body_markings/none
@@ -25,9 +26,14 @@
 	name = "Light Belly"
 	icon_state = "lbelly"
 
+/datum/sprite_accessory/mutant_part/body_markings/cracks
+	name = "Cracks"
+	icon_state = "cracks"
+
 //Start tails
 
 // base tails, used for humans + lizards + elzu
+
 /datum/sprite_accessory/mutant_part/tails
 	// we don't add a mutant_string just yet, since the species-based subtypes all have different values
 	// keeping the abstract_type is fine, though
@@ -37,9 +43,6 @@
 	// shared by all tails
 	state_prefix_override = "tail"
 
-	icon = 'icons/mob/species/lizard/tails.dmi'
-	synthetic_icon_state = "synth"
-
 /datum/sprite_accessory/mutant_part/tails_animated
 	abstract_type = /datum/sprite_accessory/mutant_part/tails_animated
 	// not randomizable; due to use of feature_lookup_override_string on subtypes, randomizing these wouldn't even do anything,
@@ -47,12 +50,16 @@
 
 	state_prefix_override = "waggingtail"
 
-	icon = 'icons/mob/species/lizard/tails.dmi'
+// end base tails
 
 // lizard tails
+
 /datum/sprite_accessory/mutant_part/tails/lizard
 	mutant_string = "tail_lizard"
 	abstract_type = /datum/sprite_accessory/mutant_part/tails/lizard
+
+	icon = 'icons/mob/species/lizard/tails.dmi'
+	secondary_color = TRUE
 
 /datum/sprite_accessory/mutant_part/tails_animated/lizard
 	mutant_string = "waggingtail_lizard"
@@ -61,57 +68,54 @@
 	// and you're right! it does
 	feature_lookup_override_string = "tail_lizard"
 
+	icon = 'icons/mob/species/lizard/tails.dmi'
+	secondary_color = TRUE
+
+
 /datum/sprite_accessory/mutant_part/tails/lizard/smooth
-	name = "Smooth"
+	name = "Smooth (Two color)"
 	icon_state = "smooth"
 
 /datum/sprite_accessory/mutant_part/tails_animated/lizard/smooth
-	name = "Smooth"
+	name = "Smooth (Two color)"
 	icon_state = "smooth"
 
-/datum/sprite_accessory/mutant_part/tails/lizard/dtiger
-	name = "Dark Tiger"
-	icon_state = "dtiger"
+/datum/sprite_accessory/mutant_part/tails/lizard/smooth_onecolor
+	name = "Smooth (One color)"
+	icon_state = "smooth2"
+	secondary_color = FALSE
 
-/datum/sprite_accessory/mutant_part/tails_animated/lizard/dtiger
-	name = "Dark Tiger"
-	icon_state = "dtiger"
+/datum/sprite_accessory/mutant_part/tails_animated/lizard/smooth_onecolor
+	name = "Smooth (One color)"
+	icon_state = "smooth2"
+	secondary_color = FALSE
 
-/datum/sprite_accessory/mutant_part/tails/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
 
-/datum/sprite_accessory/mutant_part/tails_animated/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
+/datum/sprite_accessory/mutant_part/tails/lizard/prosthetic
+	name = "Prosthetic"
+	icon_state = "synth"
 
-/datum/sprite_accessory/mutant_part/tails/lizard/spikes
-	name = "Spikes"
-	icon_state = "spikes"
+/datum/sprite_accessory/mutant_part/tails_animated/lizard/prosthetic
+	name = "Prosthetic"
+	icon_state = "synth"
 
-/datum/sprite_accessory/mutant_part/tails_animated/lizard/spikes
-	name = "Spikes"
-	icon_state = "spikes"
 
 /datum/sprite_accessory/mutant_part/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "large" //fight me
 
 /datum/sprite_accessory/mutant_part/tails_animated/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "large"
 
 /datum/sprite_accessory/mutant_part/tails/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/mutant_part/tails_animated/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "none"
+
 
 //Start Face markings
 
@@ -143,6 +147,14 @@
 	name = "Alligator Skink"
 	icon_state = "eye"
 
+/datum/sprite_accessory/mutant_part/face_markings/dome
+	name = "Dome"
+	icon_state = "dome"
+
+/datum/sprite_accessory/mutant_part/face_markings/nose
+	name = "Nose"
+	icon_state = "nose"
+
 //Start Horns
 
 /datum/sprite_accessory/mutant_part/horns
@@ -165,6 +177,7 @@
 /datum/sprite_accessory/mutant_part/horns/broken
 	name = "Broken"
 	icon_state = "broken"
+	// ! this might not work as intended to make synths not display horns, as there is no corresponding "none" icon state in the dmi
 	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/mutant_part/horns/lightning
@@ -213,30 +226,31 @@
 	clothes_flags_inv_hide = HIDEEARS
 
 	icon = 'icons/mob/species/lizard/frills.dmi'
+	secondary_color = TRUE
 
 /datum/sprite_accessory/mutant_part/frills/none
 	name = "None"
 	icon_state = "none"
 
-/datum/sprite_accessory/mutant_part/frills/simple
-	name = "Simple"
-	icon_state = "simple"
-
-/datum/sprite_accessory/mutant_part/frills/short
-	name = "Short"
-	icon_state = "short"
+//Ears are here because having frills+ears would overlap and be weird.
 
 /datum/sprite_accessory/mutant_part/frills/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
 
-/datum/sprite_accessory/mutant_part/frills/frillhawk
-	name = "Frillhawk"
-	icon_state = "frillhawk"
-
 /datum/sprite_accessory/mutant_part/frills/droopy
 	name = "Droopy"
 	icon_state = "droopy"
+
+/datum/sprite_accessory/mutant_part/frills/ears
+	name = "Normal ears"
+	icon_state = "ears"
+
+//End ears
+
+/datum/sprite_accessory/mutant_part/frills/frillhawk
+	name = "Frillhawk"
+	icon_state = "frillhawk"
 
 /datum/sprite_accessory/mutant_part/frills/neck
 	name = "Neck"
@@ -245,6 +259,14 @@
 /datum/sprite_accessory/mutant_part/frills/neckbig
 	name = "Frilled Dragon"
 	icon_state = "neckbig"
+
+/datum/sprite_accessory/mutant_part/frills/short
+	name = "Short"
+	icon_state = "short"
+
+/datum/sprite_accessory/mutant_part/frills/simple
+	name = "Simple"
+	icon_state = "simple"
 
 //Start Spines
 
@@ -255,7 +277,7 @@
 
 	clothes_flags_inv_hide = HIDEJUMPSUIT
 
-	icon = 'icons/mob/species/lizard/tails.dmi'
+	icon = 'icons/mob/species/lizard/spines.dmi'
 
 /datum/sprite_accessory/mutant_part/spines_animated
 	mutant_string = "waggingspines"
@@ -265,7 +287,7 @@
 	feature_lookup_override_string = "spines"
 	clothes_flags_inv_hide = HIDEJUMPSUIT
 
-	icon = 'icons/mob/species/lizard/tails.dmi'
+	icon = 'icons/mob/species/lizard/spines.dmi'
 
 /datum/sprite_accessory/mutant_part/spines/none
 	name = "None"

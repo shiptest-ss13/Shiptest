@@ -149,6 +149,9 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 //subtypesof(), typesof() without the parent path
 #define subtypesof(typepath) (typesof(typepath) - typepath)
 
+/// Takes a datum as input, returns its ref string
+#define text_ref(datum) ref(datum)
+
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))
 
@@ -463,7 +466,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1
 
-#define STATION_HOLODECK (1<<0)
-#define CUSTOM_HOLODECK_ONE (1<<1)
-#define CUSTOM_HOLODECK_TWO (1<<2)
-#define HOLODECK_DEBUG (1<<3)//you should never see this
+#define ROUND_END_NOT_DELAYED 0
+#define ROUND_END_DELAYED 1
+#define ROUND_END_TGS 2

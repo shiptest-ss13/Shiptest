@@ -83,9 +83,6 @@
 /area/ruin/unpowered/corprejectengineering)
 "cN" = (
 /obj/structure/safe/floor,
-/obj/item/stack/sheet/capitalisium{
-	amount = 10
-	},
 /obj/item/hand_tele,
 /obj/item/stack/sheet/mineral/adamantine,
 /obj/item/stack/sheet/mineral/adamantine,
@@ -324,10 +321,7 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "io" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/item/keycard/office{
 	desc = "Only Elite level employees are authorized to handle this keycard. All other employees may face termination if found in possession.";
 	name = "Vault Card";
@@ -843,7 +837,7 @@
 "uE" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/keycard{
-	name = "NanoTrasen Secure Solutions";
+	name = "Nanotrasen Secure Solutions";
 	puzzle_id = "NTB1"
 	},
 /turf/open/floor/wood,
@@ -897,7 +891,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "vP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/cult,
+/obj/item/bedsheet/dorms,
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/corprejectrooms)
 "wl" = (
@@ -1330,7 +1324,6 @@
 "En" = (
 /obj/item/gun/ballistic/automatic/smg/proto,
 /obj/structure/rack,
-/obj/item/firing_pin,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Er" = (
@@ -1395,9 +1388,7 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "Fa" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_x = -27
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable/blue{
 	icon_state = "5-6"
 	},
@@ -1703,7 +1694,7 @@
 "Md" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm/fire,
+/obj/item/ammo_box/magazine/smgm9mm/inc,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)

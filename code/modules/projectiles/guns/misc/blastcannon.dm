@@ -8,7 +8,6 @@
 	force = 10
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 	item_flags = NONE
-	clumsy_check = FALSE
 	randomspread = FALSE
 
 	var/hugbox = TRUE
@@ -26,16 +25,11 @@
 	debug_power = 80
 	bombcheck = FALSE
 
-/obj/item/gun/blastcannon/Initialize()
-	. = ..()
-	if(!pin)
-		pin = new
-
 /obj/item/gun/blastcannon/Destroy()
 	QDEL_NULL(bomb)
 	return ..()
 
-/obj/item/gun/blastcannon/attack_self(mob/user)
+/obj/item/gun/blastcannon/unique_action(mob/living/user)
 	if(bomb)
 		bomb.forceMove(user.loc)
 		user.put_in_hands(bomb)

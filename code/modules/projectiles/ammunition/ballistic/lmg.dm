@@ -1,4 +1,4 @@
-// 7.12x82mm (SAW)
+// 7.12x82mm (L6 SAW)
 
 /obj/item/ammo_casing/mm712x82
 	name = "7.12x82mm bullet casing"
@@ -9,24 +9,24 @@
 
 /obj/item/ammo_casing/mm712x82/ap
 	name = "7.12x82mm armor-piercing bullet casing"
-	desc = "A 7.12x82mm bullet casing with a tungsten core to enhance armor penetration."
-	projectile_type = /obj/projectile/bullet/mm712x82_ap
+	desc = "A 7.12x82mm armor-piercing bullet casing."
+	projectile_type = /obj/projectile/bullet/mm712x82/ap
 	bullet_skin = "ap"
 
-/obj/item/ammo_casing/mm712x82/hollow
-	name = "7.12x82mm hollow-point bullet casing"
-	desc = "A 7.12x82mm bullet casing designed to fragment on impact, improving damage against soft targets."
-	projectile_type = /obj/projectile/bullet/mm712x82_hp
+/obj/item/ammo_casing/mm712x82/hp
+	name = "7.12x82mm hollow point bullet casing"
+	desc = "A 7.12x82mm hollow point bullet casing."
+	projectile_type = /obj/projectile/bullet/mm712x82/hp
 	bullet_skin = "hollow"
 
-/obj/item/ammo_casing/mm712x82/incen
+/obj/item/ammo_casing/mm712x82/inc
 	name = "7.12x82mm incendiary bullet casing"
-	desc = "A 7.12x82mm bullet casing with an incendiary payload."
+	desc = "A 7.12x82mm incendiary bullet casing."
 	projectile_type = /obj/projectile/bullet/incendiary/mm712x82
 	bullet_skin = "incen"
 
 /obj/item/ammo_casing/mm712x82/match
 	name = "7.12x82mm match bullet casing"
-	desc = "A 7.12x82mm bullet casing of exceptionally high grade. A skilled marksman could pull off deadly richochet shots with this."
-	projectile_type = /obj/projectile/bullet/mm712x82_match
+	desc = "A 7.12x82mm match bullet casing."
+	projectile_type = /obj/projectile/bullet/mm712x82/match
 	bullet_skin = "rubber"

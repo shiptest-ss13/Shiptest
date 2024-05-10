@@ -193,18 +193,22 @@
 	anchored = TRUE
 
 /obj/structure/bed/dogbed/proc/update_owner(mob/living/M)
+	if(owner)
+		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
 	owner = M
+	RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
 	name = "[M]'s bed"
 	desc = "[M]'s bed! Looks comfy."
+
+/obj/structure/bed/dogbed/proc/owner_deleted()
+	UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+	owner = null
+	name = initial(name)
+	desc = initial(desc)
 
 /obj/structure/bed/dogbed/buckle_mob(mob/living/M, force, check_loc)
 	. = ..()
 	update_owner(M)
-
-/obj/structure/bed/alien
-	name = "resting contraption"
-	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
-	icon_state = "abed"
 
 //Double Beds, for luxurious sleeping, i.e. the captain and maybe heads - no quirky refrence here. Move along
 /obj/structure/bed/double

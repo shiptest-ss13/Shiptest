@@ -19,7 +19,7 @@
 
 	new /obj/effect/temp_visual/monkeyify(loc)
 
-	transformation_timer = addtimer(CALLBACK(src, .proc/finish_monkeyize, tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
+	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_monkeyize), tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
 
 /mob/living/carbon/proc/finish_monkeyize(tr_flags)
 	transformation_timer = null
@@ -92,7 +92,7 @@
 	if(tr_flags & TR_KEEPORGANS)
 		for(var/X in O.internal_organs)
 			var/obj/item/organ/I = X
-			I.Remove(O, 1)
+			I.Remove(O, TRUE)
 
 		if(mind)
 			mind.transfer_to(O)
@@ -105,11 +105,11 @@
 		for(var/X in internal_organs)
 			var/obj/item/organ/I = X
 			int_organs += I
-			I.Remove(src, 1)
+			I.Remove(src, TRUE)
 
 		for(var/X in int_organs)
 			var/obj/item/organ/I = X
-			I.Insert(O, 1)
+			I.Insert(O, TRUE)
 
 	var/obj/item/bodypart/chest/torso = O.get_bodypart(BODY_ZONE_CHEST)
 	if(cavity_object)
@@ -189,7 +189,7 @@
 	invisibility = INVISIBILITY_MAXIMUM
 	new /obj/effect/temp_visual/monkeyify/humanify(loc)
 
-	transformation_timer = addtimer(CALLBACK(src, .proc/finish_humanize, tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
+	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_humanize), tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
 
 /mob/living/carbon/proc/finish_humanize(tr_flags)
 	transformation_timer = null

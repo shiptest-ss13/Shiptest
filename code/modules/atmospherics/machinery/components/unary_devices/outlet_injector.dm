@@ -57,19 +57,20 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
 	..()
 
-	injecting = 0
+	injecting = TRUE
 
-	if(!on || !is_operational)
+	if(!on || !is_operational || !isopenturf(loc))
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	if(air_contents != null)
-		if(air_contents.return_temperature() > 0)
-			loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
-			air_update_turf()
+	if(!air_contents || air_contents.return_temperature() <= 0)
+		return
 
-		update_parents()
+	loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
+	air_update_turf()
+
+	update_parents()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/proc/inject()
 
@@ -78,7 +79,7 @@
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	injecting = 1
+	injecting = TRUE
 
 	if(air_contents.return_temperature() > 0)
 		loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
@@ -124,7 +125,7 @@
 		on = !on
 
 	if("inject" in signal.data)
-		INVOKE_ASYNC(src, .proc/inject)
+		INVOKE_ASYNC(src, PROC_REF(inject))
 		return
 
 	if("set_volume_rate" in signal.data)
@@ -132,7 +133,7 @@
 		var/datum/gas_mixture/air_contents = airs[1]
 		volume_rate = clamp(number, 0, air_contents.return_volume())
 
-	addtimer(CALLBACK(src, .proc/broadcast_status), 2)
+	addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2)
 
 	if(!("status" in signal.data)) //do not update_icon
 		update_appearance()

@@ -20,6 +20,12 @@
 	if(has_action)
 		action = new base_action(src)
 
+/obj/effect/proc_holder/Destroy()
+	if(!QDELETED(action))
+		qdel(action)
+	action = null
+	return ..()
+
 /obj/effect/proc_holder/proc/on_gain(mob/living/user)
 	return
 
@@ -512,11 +518,22 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	//Checks for obstacles from A to B
 	var/obj/dummy = new(A.loc)
 	dummy.pass_flags |= PASSTABLE
-	for(var/turf/turf in getline(A,B))
-		for(var/atom/movable/AM in turf)
-			if(!AM.CanPass(dummy,turf,1))
+	var/turf/previous_step = get_turf(A)
+	var/first_step = TRUE
+	for(var/turf/next_step as anything in (getline(A, B) - previous_step))
+		if(first_step)
+			for(var/obj/blocker in previous_step)
+				if(!blocker.density || !(blocker.flags_1 & ON_BORDER_1))
+					continue
+				if(blocker.CanPass(dummy, get_dir(previous_step, next_step)))
+					continue
+				return FALSE // Could not leave the first turf.
+			first_step = FALSE
+		for(var/atom/movable/movable as anything in next_step)
+			if(!movable.CanPass(dummy, get_dir(next_step, previous_step)))
 				qdel(dummy)
-				return 0
+				return FALSE
+		previous_step = next_step
 	qdel(dummy)
 	return 1
 

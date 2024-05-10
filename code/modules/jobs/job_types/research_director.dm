@@ -1,8 +1,6 @@
 /datum/job/rd
 	name = "Research Director"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Research_Director" //WS Edit - Wikilinks/Warning
@@ -47,12 +45,3 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	chameleon_extras = /obj/item/stamp/rd
-
-/datum/outfit/job/rd/rig
-	name = "Research Director (Hardsuit)"
-
-	l_hand = null
-	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/rd
-	suit_store = /obj/item/tank/internals/oxygen
-	internals_slot = ITEM_SLOT_SUITSTORE

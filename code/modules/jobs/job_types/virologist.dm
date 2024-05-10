@@ -1,7 +1,5 @@
 /datum/job/virologist
 	name = "Virologist"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Infections" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/virologist
@@ -32,10 +30,3 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/viro
 	box = /obj/item/storage/box/survival/medical
-
-/datum/outfit/job/virologist/pathologist
-	name = "Virologist (Pathologist)"
-
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/laceup
-	neck = /obj/item/clothing/neck/tie/green

@@ -197,9 +197,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/bundles_TC/firestarter
 	name = "Spetsnaz Pyro bundle"
-	desc = "For systematic suppression of carbon lifeforms in close quarters: Contains a lethal New Russian backpack spray, Elite hardsuit, \
-			Stechkin APS pistol, two magazines, a minibomb and a stimulant syringe. \
-			Order NOW and comrade Boris will throw in an extra tracksuit."
+	desc = "For systematic suppression of carbon lifeforms in close quarters: Contains a lethal backpack spray, Elite hardsuit, \
+			Stechkin APS pistol, two magazines, a minibomb and a stimulant syringe."
 	item = /obj/item/storage/backpack/duffelbag/syndie/firestarter
 	cost = 30
 	include_modes = list(/datum/game_mode/nuclear)
@@ -366,22 +365,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
-/datum/uplink_item/dangerous/clownoppin
-	name = "Ultra Hilarious Firing Pin"
-	desc = "A firing pin that, when inserted into a gun, makes that gun only useable by clowns and clumsy people and makes that gun honk whenever anyone tries to fire it."
-	cost = 1 //much cheaper for clown ops than for clowns
-	item = /obj/item/firing_pin/clown/ultra
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-	illegal_tech = FALSE
-
-/datum/uplink_item/dangerous/clownopsuperpin
-	name = "Super Ultra Hilarious Firing Pin"
-	desc = "Like the ultra hilarious firing pin, except the gun you insert this pin into explodes when someone who isn't clumsy or a clown tries to fire it."
-	cost = 4 //much cheaper for clown ops than for clowns
-	item = /obj/item/firing_pin/clown/ultra/selfdestruct
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-	illegal_tech = FALSE
-
 /datum/uplink_item/dangerous/bioterror
 	name = "Biohazardous Chemical Sprayer"
 	desc = "A handheld chemical sprayer that allows a wide dispersal of selected chemicals. Especially tailored by the Tiger \
@@ -518,7 +501,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/dangerous/bolt_action
 	name = "Surplus Rifle"
 	desc = "A horribly outdated bolt action weapon. You've got to be desperate to use this."
-	item = /obj/item/gun/ballistic/rifle/boltaction
+	item = /obj/item/gun/ballistic/rifle/illestren
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear)
 
@@ -533,7 +516,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/dangerous/foamsmg
 	name = "Toy Submachine Gun"
 	desc = "A fully-loaded Donksoft bullpup submachine gun that fires riot grade darts with a 20-round magazine."
-	item = /obj/item/gun/ballistic/automatic/smg/c20r/toy
+	item = /obj/item/gun/ballistic/automatic/smg/c20r/toy/riot
 	cost = 5
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
@@ -542,7 +525,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Toy Machine Gun"
 	desc = "A fully-loaded Donksoft belt-fed machine gun. This weapon has a massive 50-round magazine of devastating \
 			riot grade darts, that can briefly incapacitate someone in just one volley."
-	item = /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy
+	item = /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/riot
 	cost = 10
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
@@ -767,7 +750,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "10mm Incendiary Magazine"
 	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
-	item = /obj/item/ammo_box/magazine/m10mm/fire
+	item = /obj/item/ammo_box/magazine/m10mm/inc
 	cost = 2
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
@@ -889,8 +872,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 9
 
 /datum/uplink_item/ammo/machinegun/hollow
-	name = "7.12x82mm (Hollow-Point) Box Magazine"
-	desc = "A 50-round magazine of 7.12x82mm ammunition for use in the L6 SAW; equipped with hollow-point tips to help \
+	name = "7.12x82mm (hollow point) Box Magazine"
+	desc = "A 50-round magazine of 7.12x82mm ammunition for use in the L6 SAW; equipped with hollow point tips to help \
 			with the unarmored masses of crew."
 	item = /obj/item/ammo_box/magazine/mm712x82/hollow
 
@@ -898,7 +881,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "7.12x82mm (Incendiary) Box Magazine"
 	desc = "A 50-round magazine of 7.12x82mm ammunition for use in the L6 SAW; tipped with a special flammable \
 			mixture that'll ignite anyone struck by the bullet. Some men just want to watch the world burn."
-	item = /obj/item/ammo_box/magazine/mm712x82/incen
+	item = /obj/item/ammo_box/magazine/mm712x82/inc
 
 /datum/uplink_item/ammo/machinegun/match
 	name = "7.12x82mm (Match) Box Magazine"
@@ -949,7 +932,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/ammo/bolt_action
 	name = "Surplus Rifle Clip"
 	desc = "A stripper clip used to quickly load bolt action rifles. Contains 5 rounds."
-	item = 	/obj/item/ammo_box/a762
+	item = 	/obj/item/ammo_box/magazine/illestren_a850r
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear)
 
@@ -1952,30 +1935,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 5
 	item = /obj/item/reverse_bear_trap
 	restricted_roles = list("Clown")
-
-/datum/uplink_item/role_restricted/reverse_revolver
-	name = "Reverse Revolver"
-	desc = "A revolver that always fires at its user. \"Accidentally\" drop your weapon, then watch as the greedy corporate pigs blow their own brains all over the wall. \
-	The revolver itself is actually real. Only clumsy people, and clowns, can fire it normally. Comes in a box of hugs. Honk."
-	cost = 14
-	item = /obj/item/storage/box/hug/reverse_revolver
-	restricted_roles = list("Clown")
-
-/datum/uplink_item/role_restricted/clownpin
-	name = "Ultra Hilarious Firing Pin"
-	desc = "A firing pin that, when inserted into a gun, makes that gun only usable by clowns and clumsy people and makes that gun honk whenever anyone tries to fire it."
-	cost = 4
-	item = /obj/item/firing_pin/clown/ultra
-	restricted_roles = list("Clown")
-	illegal_tech = FALSE
-
-/datum/uplink_item/role_restricted/clownsuperpin
-	name = "Super Ultra Hilarious Firing Pin"
-	desc = "Like the ultra hilarious firing pin, except the gun you insert this pin into explodes when someone who isn't clumsy or a clown tries to fire it."
-	cost = 7
-	item = /obj/item/firing_pin/clown/ultra/selfdestruct
-	restricted_roles = list("Clown")
-	illegal_tech = FALSE
 
 /datum/uplink_item/role_restricted/laser_arm
 	name = "Laser Arm Implant"

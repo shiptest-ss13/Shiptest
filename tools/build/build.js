@@ -55,9 +55,8 @@ export const NoWarningParameter = new Juke.Parameter({
 export const DmMapsIncludeTarget = new Juke.Target({
   executes: async () => {
     const folders = [
-      ...Juke.glob("_maps/map_files/**/modular_pieces/*.dmm"),
+      ...Juke.glob("_maps/outpost/**/*.dmm"),
       ...Juke.glob("_maps/RandomRuins/**/*.dmm"),
-      ...Juke.glob("_maps/RandomZLevels/**/*.dmm"),
       ...Juke.glob("_maps/shuttles/**/*.dmm"),
       ...Juke.glob("_maps/templates/**/*.dmm"),
     ];
@@ -81,7 +80,7 @@ export const DmTarget = new Juke.Target({
     get(DefineParameter).includes("ALL_MAPS") && DmMapsIncludeTarget,
   ],
   inputs: [
-    "_maps/map_files/generic/**",
+    "_maps/map_files/**",
     "code/**",
     "html/**",
     "icons/**",

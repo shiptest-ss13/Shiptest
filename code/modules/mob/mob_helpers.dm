@@ -221,22 +221,36 @@
 	return sanitize(.)
 
 ///Shake the camera of the person viewing the mob SO REAL!
-/proc/shake_camera(mob/M, duration, strength=1)
-	if(!M || !M.client || duration < 1)
+/proc/shake_camera(mob/recoilster, duration, strength=1)
+	if(!recoilster || !recoilster.client || duration < 1)
 		return
-	var/client/C = M.client
-	var/oldx = C.pixel_x
-	var/oldy = C.pixel_y
+	var/client/client_to_shake = recoilster.client
+	var/oldx = client_to_shake.pixel_x
+	var/oldy = client_to_shake.pixel_y
 	var/max = strength*world.icon_size
 	var/min = -(strength*world.icon_size)
 
 	for(var/i in 0 to duration-1)
 		if (i == 0)
-			animate(C, pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
+			animate(client_to_shake, pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 		else
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
+
+/proc/recoil_camera(mob/recoilster, duration, backtime_duration, strength, angle)
+	if(!recoilster || !recoilster.client)
+		return
+	strength *= world.icon_size
+	var/client/client_to_shake = recoilster.client
+	var/oldx = client_to_shake.pixel_x
+	var/oldy = client_to_shake.pixel_y
+
+	//get pixels to move the camera in an angle
+	var/mpx = sin(angle) * strength
+	var/mpy = cos(angle) * strength
+	animate(client_to_shake, pixel_x = oldx+mpx, pixel_y = oldy+mpy, time = duration, flags = ANIMATION_RELATIVE)
+	animate(pixel_x = oldx, pixel_y = oldy, time = backtime_duration, easing = BACK_EASING)
 
 ///Find if the message has the real name of any user mob in the mob_list
 /proc/findname(msg)
@@ -330,9 +344,6 @@
 		return FALSE
 	if(M.mind && M.mind.special_role)//If they have a mind and special role, they are some type of traitor or antagonist.
 		switch(SSticker.mode.config_tag)
-			if("revolution")
-				if(is_revolutionary(M))
-					return 2
 			if("cult")
 				if(M.mind in SSticker.mode.cult)
 					return 2
@@ -348,11 +359,7 @@
 			if("apprentice")
 				if(M.mind in SSticker.mode.apprentices)
 					return 2
-			if("monkey")
-				if(isliving(M))
-					var/mob/living/L = M
-					if(L.diseases && (locate(/datum/disease/transformation/jungle_fever) in L.diseases))
-						return 2
+
 		return TRUE
 	if(M.mind && LAZYLEN(M.mind.antag_datums)) //they have an antag datum!
 		return TRUE
@@ -403,7 +410,7 @@
 					A.name = header
 				A.desc = message
 				A.action = action
-				A.target = source
+				A.target_ref = WEAKREF(source)
 				if(!alert_overlay)
 					alert_overlay = new(source)
 				alert_overlay.layer = FLOAT_LAYER

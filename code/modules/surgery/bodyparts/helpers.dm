@@ -62,6 +62,7 @@
 
 
 /mob/living/proc/get_missing_limbs()
+	RETURN_TYPE(/list)
 	return list()
 
 /mob/living/carbon/get_missing_limbs()

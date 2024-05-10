@@ -103,7 +103,7 @@
 /obj/item/reagent_containers/glass/chem_jug/radium
 	name = "chemical jug (radium)"
 	icon_state = "chem_jug_radium"
-	list_reagents = list(/datum/reagent/radium = 150)
+	list_reagents = list(/datum/reagent/uranium/radium = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/aluminium
 	name = "chemical jug (aluminium)"

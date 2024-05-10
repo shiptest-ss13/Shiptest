@@ -4,6 +4,8 @@
 
 #define isatom(A) (isloc(A))
 
+#define isdatum(thing) (istype(thing, /datum))
+
 #define isweakref(D) (istype(D, /datum/weakref))
 
 //Turfs
@@ -59,7 +61,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isandroid(A) (is_species(A, /datum/species/android))
 #define issynth(A) (is_species(A, /datum/species/synth))
 #define ismilsynth(A) (is_species(A, /datum/species/synth/military))
-#define isgolem(A) (is_species(A, /datum/species/golem))
 #define islizard(A) (is_species(A, /datum/species/lizard))
 #define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
 #define ispodperson(A) (is_species(A, /datum/species/pod))
@@ -72,12 +73,13 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define ismoth(A) (is_species(A, /datum/species/moth))
 #define ishumanbasic(A) (is_species(A, /datum/species/human) && !is_species(A, /datum/species/human/krokodil_addict))
-#define isethereal(A) (is_species(A, /datum/species/ethereal))
+#define iselzuose(A) (is_species(A, /datum/species/elzuose))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
 #define iskepori(A) (is_species(A, /datum/species/kepori))
 #define isipc(A) (is_species(A, /datum/species/ipc))
 #define isspiderperson(A) (is_species(A, /datum/species/spider))
+#define isvox(A) (is_species(A, /datum/species/vox))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
@@ -166,7 +168,9 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isgrenade(A) (istype(A, /obj/item/grenade))
 
-#define islandmine(A) (istype(A, /obj/effect/mine))
+#define islandmine(A) (istype(A, /obj/item/mine))
+
+#define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
 
 #define isammocasing(A) (istype(A, /obj/item/ammo_casing))
 
@@ -221,11 +225,11 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define iseffect(O) (istype(O, /obj/effect))
 
-#define isholoeffect(O) (istype(O, /obj/effect/holodeck_effect))
-
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
+
+#define isProbablyWallMounted(O) (O.pixel_x > 20 || O.pixel_x < -20 || O.pixel_y > 20 || O.pixel_y < -20)
 
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 

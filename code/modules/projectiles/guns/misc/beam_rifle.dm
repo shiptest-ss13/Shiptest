@@ -32,7 +32,6 @@
 	big_gun = TRUE
 	cell_type = "/obj/item/stock_parts/cell/gun/large"
 	canMouseDown = TRUE
-	pin = null
 	var/aiming = FALSE
 	var/aiming_time = 12
 	var/aiming_time_fire_threshold = 5
@@ -82,7 +81,6 @@
 	cell_type = /obj/item/stock_parts/cell/infinite
 	aiming_time = 0
 	recoil = 0
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/beam_rifle/equipped(mob/user)
 	set_user(user)
@@ -148,7 +146,7 @@
 	current_zoom_x = 0
 	current_zoom_y = 0
 
-/obj/item/gun/energy/beam_rifle/attack_self(mob/user)
+/obj/item/gun/energy/beam_rifle/unique_action(mob/living/user)
 	projectile_setting_pierce = !projectile_setting_pierce
 	to_chat(user, "<span class='boldnotice'>You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode.</span>")
 	aiming_beam()
@@ -265,7 +263,7 @@
 		current_user = null
 	if(istype(user))
 		current_user = user
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 		listeningTo = user
 
 /obj/item/gun/energy/beam_rifle/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
@@ -521,7 +519,7 @@
 	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
 	name = "aiming beam"
 	hitsound = null
-	hitsound_wall = null
+	hitsound_non_living = null
 	nodamage = TRUE
 	damage = 0
 	constant_tracer = TRUE

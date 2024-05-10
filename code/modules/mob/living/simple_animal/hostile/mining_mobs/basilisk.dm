@@ -69,7 +69,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
-		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
+		var/atom/target_from = GET_TARGETS_FROM(src)
+		if(isliving(target) && !target.Adjacent(target_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
 			OpenFire(target)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
@@ -92,7 +93,7 @@
 			set_varspeed(0)
 			warmed_up = TRUE
 			projectiletype = /obj/projectile/temp/basilisk/heated
-			addtimer(CALLBACK(src, .proc/cool_down), 3000)
+			addtimer(CALLBACK(src, PROC_REF(cool_down)), 3000)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 	visible_message("<span class='warning'>[src] appears to be cooling down...</span>")

@@ -1,7 +1,5 @@
 /datum/job/janitor
 	name = "Janitor"
-	total_positions = 2
-	spawn_positions = 1
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/janitor
@@ -26,7 +24,3 @@
 	if(GARBAGEDAY in SSevents.holidays)
 		l_pocket = /obj/item/gun/ballistic/revolver
 		r_pocket = /obj/item/ammo_box/a357
-
-/datum/outfit/job/janitor/maid
-	name = "Maid"
-	uniform = /obj/item/clothing/under/rank/civilian/janitor/maid

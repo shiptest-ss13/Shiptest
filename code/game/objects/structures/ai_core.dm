@@ -30,11 +30,10 @@
 
 /obj/structure/AIcore/Destroy()
 	if(circuit)
-		qdel(circuit)
-		circuit = null
+		QDEL_NULL(circuit)
 	if(brain)
-		qdel(brain)
-		brain = null
+		QDEL_NULL(brain)
+	QDEL_NULL(laws)
 	return ..()
 
 /obj/structure/AIcore/latejoin_inactive

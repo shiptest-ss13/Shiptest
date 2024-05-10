@@ -1,0 +1,136 @@
+2023-12-02:
+  GenericDM:
+  - admin: remove sgt report ~~to debug verbs~~
+  Zevotech:
+  - rscdel: spacegym.dmm and associated code removed
+  - rscdel: removed spacegym lootdrops from the colossus
+2023-12-03:
+  GenericDM:
+  - bugfix: you no longer commit violence against machines
+2023-12-04:
+  PositiveEntropy:
+  - rscadd: Revamps blood-red hardsuits, as well as adding their equivalents to each
+      Gorlex branch!
+  - rscdel: The Scarlet Hardsuit has been shelved.
+2023-12-05:
+  MoonTheBird:
+  - rscadd: Added a LOT of RILENA merch. Plushies, drinks, hoodies, shirts, cosplays...
+      And if you're a RILENA fan (positive trait), you get a special pin, like the
+      clown or mime fan!
+2023-12-07:
+  FalloutFalcon:
+  - rscadd: improved radial menu for mining tools
+  - tweak: menus for removing attachments
+  PositiveEntropy:
+  - rscadd: The Li-Tieguai is now officially, a Syndicate ship!
+  meemofcourse:
+  - tweak: The 2nd Battlegroup officer uniform is now the Syndicate Officer uniform
+  - tweak: The 2nd Battlegroup officer jacket and cap have been updated to reflect
+      not being part of the ACLF
+  thgvr:
+  - rscdel: Removes golems
+  tmtmtl30:
+  - bugfix: Small playtime-based ship join restriction edge cases fixed.
+  - bugfix: Ship-spawn unit tests have been fixed and expanded.
+  - bugfix: fixes planetary outposts from having space underneath all the turfs
+2023-12-09:
+  Halcyon:
+  - rscadd: Winter coats have a new coat of paint.
+  MarkSuckerberg:
+  - tweak: Combining eyepatches should now try to put the result into your hands afterwards
+  thgvr:
+  - balance: Goliaths no longer stun you, instead they apply a bear-trap like mass
+      of tentacles that slows you. Resist to break them off.
+2023-12-10:
+  thgvr:
+  - tweak: Multiple Riggs-classes cannot be spawned by players anymore
+2023-12-11:
+  thgvr:
+  - rscadd: Votes have a new look and new sound.
+2023-12-12:
+  JimKil3:
+  - bugfix: Removed a duplicate air alarm in the Kansatsu-class Exploration Vessel
+  MarkSuckerberg:
+  - bugfix: Only one ship can spawn at a time.
+  - tweak: Adjusts spacing of the top-right BYOND window buttons
+  - rscadd: Adds a lore button to the top-right
+  SomeguyManperson:
+  - bugfix: you can no longer fold most syndicate undersuits casually into the letters
+      "SUIT"
+  thgvr:
+  - rscadd: Another Sarathi head marking, "Dome"
+  - rscadd: Sarathi frills now use secondary colors.
+  - rscadd: Sarathi tails now use secondary colors.
+  - rscadd: Added "Cracks" body marking for Sarathi
+  - rscdel: Removed dark tiger, light tiger, and spike Sarathi tails.
+2023-12-13:
+  MarkSuckerberg:
+  - tweak: Round end now shows the ship you spawned on when possible instead of just
+      the sector name
+  - tweak: Slightly moves around the statpanel info to emphasise LST
+  - bugfix: Round time should no longer act strange when midnight passes
+  - bugfix: Respawns should no longer be delayed 24h when done over midnight
+  Zonespace27, Ryll-Ryll, MeeMOfCourse:
+  - tweak: Admins can now spawn an unarmed horde of interns in addition to the old
+      armed horde
+  - tweak: Admins can toggle name randomization for ERT's, as well as if they'd like
+      to be spawned in the briefing room at the time of creation
+  - tweak: Admins can now force ERT's to pick the leader role from the most experienced
+      candidates in terms of playtime
+  - tweak: Menus like Create Response Team and Create Portal Storm now toggle boolean
+      options when clicked, rather than open a popup window to select one of the two
+      options
+  - refactor: Centcom Officials are now a full subtype of ERT, rather than being a
+      separate antagonist type with duplicated functionality
+  - admin: ERTs can now have a custom shuttle that they can spawn on, on a toggle
+      while creating said ERT.
+  - admin: Shiptest-Specific ERTs, and respective files.
+2023-12-17:
+  Immortalartisan:
+  - rscadd: A new sandworld ruin based on deprecated ship pubby
+  unit0016:
+  - rscadd: A new icemoon ruin has been added, should you be in need of service department
+      goodies.
+2023-12-19:
+  SomeguyManperson:
+  - bugfix: AB+ blood is no longer incompatible with + bloodtypes
+  - bugfix: obliterated a floating white pixel on the cleaning skillcape
+  - bugfix: skillcapes are no longer missing a pixel on their left side of the front
+2023-12-21:
+  FalloutFalcon:
+  - bugfix: Material tile sprites
+2023-12-23:
+  FalloutFalcon:
+  - bugfix: Fixes two assistant outfits having the same path
+  GenericDM:
+  - bugfix: crate shelves no longer have layering issues
+  Skies-Of-Blue:
+  - imageadd: Adds missing iconstates to vox hardhats. Taste the void no longer!
+  SomeguyManperson:
+  - bugfix: the charliestation ruin on ice planets now obeys local gravity
+  - bugfix: science goggles are now more accurate when judging the research value
+      of anomalies
+  Zevotech:
+  - bugfix: Removed a flora with a varedited error texture on jungle_paradise
+  thgvr:
+  - tweak: Changed the text shown to shipowners about making a memo.
+2023-12-29:
+  FalloutFalcon:
+  - rscdel: Syndicate Jacket
+  - bugfix: Hos Jacket Invisibility
+  MarkSuckerberg:
+  - admin: The server will now automatically delay round-end when a TGS deployment
+      is incoming
+  - server: Adds more TGS chat commands as well as support for the newer chat message
+      system.
+  SomeguyManperson:
+  - bugfix: the weebstick is no longer held back from its true purpose if you click
+      on a tile you can't see
+  - bugfix: heating rations increases their nutritional value as intended
+  Zevotech:
+  - bugfix: legion core implanting no longer aheals you on use
+  - rscadd: legion core implant now just does a potent organic heal with minor clone
+      damage when used
+  - rscdel: Removes the Lieutenant job datum, locker and clothing
+  - rscadd: The Shetland now has a First Officer and lockers for both them and the
+      captain now

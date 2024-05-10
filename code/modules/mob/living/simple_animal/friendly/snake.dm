@@ -41,6 +41,10 @@
 	var/glasses_overlay_file = 'icons/mob/pets.dmi'
 	var/obj/item/clothing/glasses/glasses = null //snek glasses
 
+/mob/living/simple_animal/hostile/retaliate/poison/snake/Destroy()
+	if(glasses)
+		QDEL_NULL(glasses)
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/ListTargets(atom/the_target)
 	. = oview(vision_range, targets_from) //get list of things in vision range
@@ -156,7 +160,7 @@
 	glasses = new /obj/item/clothing/glasses/regular(src)
 	grant_all_languages()
 	update_overlays()
-	INVOKE_ASYNC(src, .proc/update_phrases)
+	INVOKE_ASYNC(src, PROC_REF(update_phrases))
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/update_phrases()

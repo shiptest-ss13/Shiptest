@@ -67,6 +67,9 @@
 #define ADMIN_COORDJMP(src) "[src ? "[COORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_VERBOSEJMP(src) "[src ? "[AREACOORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_INDIVIDUALLOG(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];individuallog=[REF(user)]'>LOGS</a>)"
+/// Displays "(SHOW)" in the chat, when clicked it tries to show atom(paper) or atom(photo). First you need to set the request_state variable to TRUE for the paper.
+#define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"
+#define ADMIN_SHOW_PHOTO(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_photo=[REF(atom)]'>PHOTO</a>)"
 
 #define ADMIN_PUNISHMENT_BREAK_BONES "Break all bones"
 #define ADMIN_PUNISHMENT_LIGHTNING "Lightning bolt"

@@ -43,16 +43,15 @@
 	var/drawtype
 	var/text_buffer = ""
 
-	var/static/list/graffiti = list("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa","body","cyka","star","poseur tag","prolizard","antilizard")
+	var/static/list/graffiti = list("face","guy","end","body")
+	var/static/list/code = list("getout","empty","unsafe","camp","safepath","jackpot","dismantle")
 	var/static/list/symbols = list("danger","firedanger","electricdanger","biohazard","radiation","safe","evac","space","med","trade","shop","food","peace","like","skull","nay","heart","credit")
-	var/static/list/drawings = list("smallbrush","brush","largebrush","splatter","snake","stickman","carp","ghost","clown","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
-	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint") // These turn to face the same way as the drawer
-	var/static/list/runes = list("rune1","rune2","rune3","rune4","rune5","rune6")
+	var/static/list/drawings = list("smallbrush","brush","splatter","snake","carp","ghost","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
+	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint","dogo","nogo") // These turn to face the same way as the drawer
 	var/static/list/randoms = list(RANDOM_ANY, RANDOM_RUNE, RANDOM_ORIENTED,
 		RANDOM_NUMBER, RANDOM_GRAFFITI, RANDOM_LETTER, RANDOM_SYMBOL, RANDOM_PUNCTUATION, RANDOM_DRAWING)
-	var/static/list/graffiti_large_h = list("yiffhell", "secborg", "paint")
 
-	var/static/list/all_drawables = graffiti + symbols + drawings + oriented + runes + graffiti_large_h
+	var/static/list/all_drawables = graffiti + code + symbols + drawings + oriented
 
 	var/paint_mode = PAINT_NORMAL
 
@@ -176,15 +175,15 @@
 
 	. = list()
 
-	var/list/g_items = list()
+	var/list/g_items = list() //i hate tgcode
 	. += list(list("name" = "Graffiti", "items" = g_items))
 	for(var/g in graffiti)
 		g_items += list(list("item" = g))
 
-	var/list/glh_items = list()
-	. += list(list("name" = "Graffiti Large Horizontal", "items" = glh_items))
-	for(var/glh in graffiti_large_h)
-		glh_items += list(list("item" = glh))
+	var/list/c_items = list()
+	. += list(list("name" = "Code", "items" = c_items))
+	for(var/c in code)
+		c_items += list(list("item" = c))
 
 	var/list/S_items = list()
 	. += list(list("name" = "Symbols", "items" = S_items))
@@ -200,11 +199,6 @@
 	. += list(list(name = "Oriented", "items" = O_items))
 	for(var/O in oriented)
 		O_items += list(list("item" = O))
-
-	var/list/R_items = list()
-	. += list(list(name = "Runes", "items" = R_items))
-	for(var/R in runes)
-		R_items += list(list("item" = R))
 
 	var/list/rand_items = list()
 	. += list(list(name = "Random", "items" = rand_items))
@@ -245,9 +239,6 @@
 				drawtype = stencil
 				. = TRUE
 				text_buffer = ""
-			if(stencil in graffiti_large_h)
-				paint_mode = PAINT_LARGE_HORIZONTAL
-				text_buffer = ""
 			else
 				paint_mode = PAINT_NORMAL
 		if("select_colour")
@@ -281,8 +272,6 @@
 	var/istagger = HAS_TRAIT(user, TRAIT_TAGGER)
 
 	var/cost = 1
-	if(paint_mode == PAINT_LARGE_HORIZONTAL)
-		cost = 5
 	if(istype(target, /obj/item/canvas))
 		cost = 0
 	if(ishuman(user))
@@ -311,8 +300,6 @@
 			drawing = pick(drawings)
 		if(RANDOM_GRAFFITI)
 			drawing = pick(graffiti)
-		if(RANDOM_RUNE)
-			drawing = pick(runes)
 		if(RANDOM_ORIENTED)
 			drawing = pick(oriented)
 		if(RANDOM_NUMBER)
@@ -335,14 +322,6 @@
 		temp = "drawing"
 	else if(drawing in graffiti|oriented)
 		temp = "graffiti"
-
-	var/gang_mode
-	if(user.mind)
-		gang_mode = user.mind.has_antag_datum(/datum/antagonist/gang)
-
-	if(gang_mode && (!can_claim_for_gang(user, target)))
-		return
-
 
 	var/graf_rot
 	if(drawing in oriented)
@@ -375,9 +354,8 @@
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
 		wait_time *= 3
 
-	if(gang_mode || !instant)
-		if(!do_after(user, 50, target = target))
-			return
+	if(!instant && !do_after(user, 50, target = target))
+		return
 
 	if(length(text_buffer))
 		drawing = text_buffer[1]
@@ -387,34 +365,28 @@
 
 	if(actually_paints)
 		var/obj/effect/decal/cleanable/crayon/C
-		if(gang_mode)
-			if(!can_claim_for_gang(user, target))
-				return
-			tag_for_gang(user, target, gang_mode)
-			affected_turfs += target
-		else
-			switch(paint_mode)
-				if(PAINT_NORMAL)
-					C = new(target, paint_color, drawing, temp, graf_rot)
-					C.pixel_x = clickx
-					C.pixel_y = clicky
+		switch(paint_mode)
+			if(PAINT_NORMAL)
+				C = new(target, paint_color, drawing, temp, graf_rot)
+				C.pixel_x = clickx
+				C.pixel_y = clicky
+				affected_turfs += target
+			if(PAINT_LARGE_HORIZONTAL)
+				var/turf/left = locate(target.x-1,target.y,target.z)
+				var/turf/right = locate(target.x+1,target.y,target.z)
+				if(isValidSurface(left) && isValidSurface(right))
+					C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
+					affected_turfs += left
+					affected_turfs += right
 					affected_turfs += target
-				if(PAINT_LARGE_HORIZONTAL)
-					var/turf/left = locate(target.x-1,target.y,target.z)
-					var/turf/right = locate(target.x+1,target.y,target.z)
-					if(isValidSurface(left) && isValidSurface(right))
-						C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
-						affected_turfs += left
-						affected_turfs += right
-						affected_turfs += target
-					else
-						to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
-						return
-			C.add_hiddenprint(user)
-			if(istagger)
-				C.AddComponent(/datum/component/art, GOOD_ART)
-			else
-				C.AddComponent(/datum/component/art, BAD_ART)
+				else
+					to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
+					return
+		C.add_hiddenprint(user)
+		if(istagger)
+			C.AddComponent(/datum/component/art, GOOD_ART)
+		else
+			C.AddComponent(/datum/component/art, BAD_ART)
 
 	if(!instant)
 		to_chat(user, "<span class='notice'>You finish drawing \the [temp].</span>")
@@ -478,19 +450,6 @@
 
 	// stolen from oldgang lmao
 	return TRUE
-
-/obj/item/toy/crayon/proc/tag_for_gang(mob/user, atom/target, datum/antagonist/gang/user_gang)
-	for(var/obj/effect/decal/cleanable/crayon/old_marking in target)
-		qdel(old_marking)
-
-	var/area/territory = get_area(target)
-
-	var/obj/effect/decal/cleanable/crayon/gang/tag = new /obj/effect/decal/cleanable/crayon/gang(target)
-	tag.my_gang = user_gang.my_gang
-	tag.icon_state = "[user_gang.gang_id]_tag"
-	tag.name = "[tag.my_gang.name] gang tag"
-	tag.desc = "Looks like someone's claimed this area for [tag.my_gang.name]."
-	to_chat(user, "<span class='notice'>You tagged [territory] for [tag.my_gang.name]!</span>")
 
 /obj/item/toy/crayon/proc/territory_claimed(area/territory, mob/user)
 	for(var/obj/effect/decal/cleanable/crayon/gang/G in GLOB.gang_tags)

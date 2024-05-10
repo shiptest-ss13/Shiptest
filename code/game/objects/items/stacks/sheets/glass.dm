@@ -66,13 +66,13 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	else if(istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/V = W
 		if (V.get_amount() >= 1 && get_amount() >= 1)
-			var/obj/item/stack/sheet/rglass/RG = new (get_turf(user))
-			RG.add_fingerprint(user)
+			var/obj/item/stack/sheet/rglass/reinforced = new(get_turf(user)) || locate(/obj/item/stack/sheet/rglass) in get_turf(user) // Get the stack it's merged into if it is
+			reinforced.add_fingerprint(user)
 			var/replace = user.get_inactive_held_item()==src
 			V.use(1)
 			use(1)
 			if(QDELETED(src) && replace)
-				user.put_in_hands(RG)
+				user.put_in_hands(reinforced)
 		else
 			to_chat(user, "<span class='warning'>You need one rod and one sheet of glass to make reinforced glass!</span>")
 			return
@@ -119,13 +119,13 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 	if(istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/V = W
 		if (V.get_amount() >= 1 && get_amount() >= 1)
-			var/obj/item/stack/sheet/plasmarglass/RG = new (get_turf(user))
-			RG.add_fingerprint(user)
-			var/replace = user.get_inactive_held_item()==src
+			var/obj/item/stack/sheet/plasmarglass/reinforced = new(get_turf(user)) || locate(/obj/item/stack/sheet/plasmarglass) in get_turf(user) // Get the stack it's merged into if it is
+			reinforced.add_fingerprint(user)
+			var/replace = user.get_inactive_held_item() == src
 			V.use(1)
 			use(1)
 			if(QDELETED(src) && replace)
-				user.put_in_hands(RG)
+				user.put_in_hands(reinforced)
 		else
 			to_chat(user, "<span class='warning'>You need one rod and one sheet of plasma glass to make reinforced plasma glass!</span>")
 			return
@@ -303,7 +303,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -322,7 +322,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/hit_hand = ((user.active_hand_index % 2 == 0) ? "r_" : "l_") + "arm"
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(!H.gloves && !HAS_TRAIT(H, TRAIT_PIERCEIMMUNE)) // golems, etc
+		if(!H.gloves && !HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
 			to_chat(H, "<span class='warning'>[src] cuts into your hand!</span>")
 			H.apply_damage(force*0.5, BRUTE, hit_hand)
 	else if(ismonkey(user))

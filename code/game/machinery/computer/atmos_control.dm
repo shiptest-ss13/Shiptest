@@ -73,9 +73,9 @@
 	frequency = new_frequency
 	radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
-/obj/machinery/air_sensor/Initialize()
+/obj/machinery/air_sensor/Initialize(mapload)
 	. = ..()
-	SSair.start_processing_machine(src)
+	SSair.start_processing_machine(src, mapload)
 	set_frequency(frequency)
 
 /obj/machinery/air_sensor/Destroy()

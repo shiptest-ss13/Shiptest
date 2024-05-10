@@ -99,12 +99,13 @@
 
 	/// If TRUE, the gender prefix for this part's icon states will change between "m" and "f" depending on the gender of the mob.
 	var/gender_specific
-	/// This is the source that this accessory will get its color from. Default is MUTCOLOR, but can also be HAIR, FACEHAIR, EYECOLOR and 0 if none.
+	/// This is the source that this accessory will get its color from. Default is MUTCOLORS, but can also be SKINCOLORS, HAIR, FACEHAIR, EYECOLOR, MUTCOLORS_SECONDARY, and 0 if none.
 	var/color_src = MUTCOLORS
+
 	/// The alpha for the accessory to use.
 	var/image_alpha = 255
-	/// Decides if this sprite has an "inner" part, such as the fleshy parts on ears. These "inner" sprites always use the secondary mutant color.
-	var/hasinner
+	/// Decides if this sprite has an extra overlay, such as the fleshy parts on ears or a secondary tail color. These sprites always use the secondary mutant color.
+	var/secondary_color
 
 	/// The body zone to which this limb is attached. Should be one of the "base" zones (head, chest, l/r leg, l/r arm).
 	/// If this limb is missing, the accessory is not rendered; also used to determine synthetic sprites.
@@ -128,7 +129,7 @@
 	var/randomizable = FALSE
 
 // these are not full icon states, as they are missing the layer suffix!
-/datum/sprite_accessory/mutant_part/proc/get_basic_icon_state(m_gender, limb_synthetic, inner)
+/datum/sprite_accessory/mutant_part/proc/get_basic_icon_state(m_gender, limb_synthetic, secondary)
 	var/gender_prefix = "m"
 	if(gender_specific && m_gender == FEMALE)
 		gender_prefix = "f"
@@ -141,8 +142,8 @@
 	if(synthetic_icon_state && limb_synthetic)
 		state_name = synthetic_icon_state
 
-	if(inner)
-		return "[gender_prefix]_[state_prefix]inner_[state_name]"
+	if(secondary)
+		return "[gender_prefix]_[state_prefix]_secondary_[state_name]"
 	else
 		return "[gender_prefix]_[state_prefix]_[state_name]"
 

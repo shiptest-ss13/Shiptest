@@ -7,7 +7,7 @@ const VendingRow = (props, context) => {
   const { act, data } = useBackend(context);
   const { product, productStock, custom } = props;
   const { miningvendor, all_items_free, user } = data;
-  const free = all_items_free || product.price === 0 || !product.premium;
+  const free = all_items_free || product.price === 0;
   const affix = miningvendor ? ' mp' : ' cr';
   return (
     <Table.Row>

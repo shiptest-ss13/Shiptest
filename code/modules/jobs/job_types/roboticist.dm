@@ -1,7 +1,5 @@
 /datum/job/roboticist
 	name = "Roboticist"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Guide_to_Robotics"
 
 	outfit = /datum/outfit/job/roboticist
@@ -29,12 +27,4 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	pda_slot = ITEM_SLOT_LPOCKET
-
-/datum/outfit/job/roboticist/technician/minutemen
-	name = "Mech Technician (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset/minutemen
-	suit = /obj/item/clothing/suit/toggle/labcoat/science
 

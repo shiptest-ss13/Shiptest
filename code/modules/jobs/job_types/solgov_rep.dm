@@ -4,8 +4,6 @@ SolGov Representative
 
 /datum/job/solgov
 	name = "SolGov Representative"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	officer = TRUE

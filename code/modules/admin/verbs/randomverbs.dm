@@ -65,16 +65,18 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN)		//WS Edit - SolGov Rep
+		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN, "Outpost")		//WS Edit - SolGov Rep
 		if(!sender)
 			return
 		switch(sender)
 			if (RADIO_CHANNEL_SYNDICATE)
 				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("Colonial Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("CLIP Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
+			if ("Outpost")
+				sender = "Outpost Authority"
 		if(!sender)
 			return
 	message_admins("[key_name_admin(src)] has started answering [key_name_admin(H)]'s [sender] request.")
@@ -268,7 +270,7 @@
 		return 0
 
 	var/alien_caste = input(usr, "Please choose which caste to spawn.","Pick a caste",null) as null|anything in list("Queen","Praetorian","Hunter","Sentinel","Drone","Larva")
-	var/obj/effect/landmark/spawn_here = GLOB.xeno_spawn.len ? pick(GLOB.xeno_spawn) : null
+	var/obj/effect/landmark/spawn_here = pick(GLOB.xeno_spawn)
 	var/mob/living/carbon/alien/new_xeno
 	switch(alien_caste)
 		if("Queen")
@@ -285,8 +287,6 @@
 			new_xeno = new /mob/living/carbon/alien/larva(spawn_here)
 		else
 			return 0
-	if(!spawn_here)
-		SSjob.SendToLateJoin(new_xeno, FALSE)
 
 	new_xeno.ckey = ckey
 	var/msg = "<span class='notice'>[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].</span>"
@@ -935,7 +935,7 @@
 						alert("ERROR: Incorrect / improper path given.")
 						return
 				new delivery(pod)
-			new /obj/effect/DPtarget(get_turf(target), pod)
+			new /obj/effect/pod_landingzone(get_turf(target), pod)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD)
 			var/datum/centcom_podlauncher/plaunch  = new(usr)
 			if(!holder)

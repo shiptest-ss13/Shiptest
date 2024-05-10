@@ -44,6 +44,7 @@
 	return old_data
 
 // ! These will need to be given functioning dependencies (and, obviously, squid faces will need to be removed).
+// ! also, ipc tails need to be added
 
 /datum/preference/mutant_bodypart/body_markings
 	name = "Body Markings"

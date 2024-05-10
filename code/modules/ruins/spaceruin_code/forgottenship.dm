@@ -47,14 +47,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	. = ..()
 	AddComponent(/datum/component/gps, "Old Encrypted Signal")
 
-/obj/item/storage/box/firingpins/syndicate
-	name = "box of syndicate firing pins"
-	desc = "A box full of special syndicate firing pins which allow only syndicate operatives to use weapons with those firing pins."
-
-/obj/item/storage/box/firingpins/syndicate/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin/implant/pindicate(src)
-
 ///////////	AI Laws
 
 /obj/item/aiModule/core/full/cybersun
@@ -89,29 +81,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	area_flags = NOTELEPORT | UNIQUE_AREA
 
 	//Cybersun hardsuit
-
-/obj/item/clothing/head/helmet/space/hardsuit/cybersun
-	name = "Cybersun hardsuit helmet"
-	desc = "Prototype hardsuit helmet with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else."
-	icon_state = "cybersun"
-	item_state = "cybersun"
-	hardsuit_type = "cybersun"
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
-	strip_delay = 600
-	actions_types = list()
-
-
-/obj/item/clothing/suit/space/hardsuit/cybersun
-	icon_state = "cybersun"
-	item_state = "cybersun"
-	hardsuit_type = "cybersun"
-	name = "Cybersun hardsuit"
-	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else."
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
-	slowdown = 0
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cybersun
-	actions_types = list(/datum/action/item_action/toggle_helmet)
-	jetpack = /obj/item/tank/jetpack/suit
 
 //Special NT NPCs
 

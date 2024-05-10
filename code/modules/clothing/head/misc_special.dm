@@ -167,7 +167,6 @@
 	desc = "A pair of kitty ears. Meow!"
 	icon_state = "kitty"
 	color = "#999999"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/kitty
 
@@ -182,9 +181,6 @@
 	if(ishuman(user))
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
 
-/obj/item/clothing/head/kitty/genuine
-	desc = "A pair of kitty ears. A tag on the inside says \"Hand made from real cats.\""
-
 /obj/item/clothing/head/hardhat/reindeer
 	name = "novelty reindeer hat"
 	desc = "Some fake antlers and a very fake red nose."
@@ -193,7 +189,6 @@
 	flags_inv = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	light_range = 1 //luminosity when on
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/reindeer
 
@@ -323,7 +318,7 @@
 /obj/item/clothing/head/foilhat/Initialize(mapload)
 	. = ..()
 	if(!warped)
-		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD,  6, TRUE, null, CALLBACK(src, .proc/warp_up))
+		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD,  6, TRUE, null, CALLBACK(src, PROC_REF(warp_up)))
 	else
 		warp_up()
 
@@ -378,3 +373,4 @@
 	. = ..()
 	if(!warped)
 		warp_up()
+

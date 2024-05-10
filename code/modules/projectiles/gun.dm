@@ -1,6 +1,5 @@
 
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
-#define FIRING_PIN_REMOVAL_DELAY 50
+#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
 /obj/item/gun
 	name = "gun"
@@ -21,37 +20,37 @@
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
 
+	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
+	var/manufacturer = MANUFACTURER_NONE
+
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	var/dry_fire_text = "click"				//change this on non-gun things		WS Edit - Dry firing
+	var/dry_fire_text = "click"				//change this on non-gun things
 	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/recoil = 0						//boom boom shake the room
-	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
-	var/sawn_desc = null				//description change if weapon is sawn-off
+	var/sawn_desc = null					//description change if weapon is sawn-off
 	var/sawn_off = FALSE
-	var/burst_size = 1					//how large a burst is
-	var/fire_delay = 0					//rate of fire for burst firing and semi auto
-	var/firing_burst = 0				//Prevent the weapon from firing again while already firing
-	var/semicd = 0						//cooldown handler
+	var/burst_size = 1						//how large a burst is
+	var/fire_delay = 0						//rate of fire for burst firing and semi auto
+	var/firing_burst = 0					//Prevent the weapon from firing again while already firing
+	var/semicd = 0							//cooldown handler
 	var/weapon_weight = WEAPON_LIGHT
 	var/dual_wield_spread = 24			//additional spread when dual wielding
-	var/spread = 0						//Spread induced by the gun itself.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
-	var/projectile_damage_multiplier = 1 //Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
+	var/projectile_damage_multiplier = 1	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
-	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
+	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
 
 	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
 	var/obj/item/flashlight/seclite/gun_light
@@ -77,17 +76,86 @@
 
 	var/pb_knockback = 0
 
+	var/wielded = FALSE // true if the gun is wielded via twohanded component, shouldnt affect anything else
+
+	var/wielded_fully = FALSE // true if the gun is wielded after delay, should affects accuracy
+
+	///How much the bullet scatters when fired while wielded.
+	var/spread	= 4
+	///How much the bullet scatters when fired while unwielded.
+	var/spread_unwielded = 12
+
+	///Screen shake when the weapon is fired while wielded.
+	var/recoil = 0
+	///Screen shake when the weapon is fired while unwielded.
+	var/recoil_unwielded = 0
+	///a multiplier of the duration the recoil takes to go back to normal view, this is (recoil*recoil_backtime_multiplier)+1
+	var/recoil_backtime_multiplier = 2
+	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
+	var/recoil_deviation = 22.5
+
+	///Slowdown for wielding
+	var/wield_slowdown = 0.1
+	///How long between wielding and firing in tenths of seconds
+	var/wield_delay	= 0.4 SECONDS
+	///Storing value for above
+	var/wield_time = 0
+
+	///Effect for the muzzle flash of the gun.
+	var/obj/effect/muzzle_flash/muzzle_flash
+	///Icon state of the muzzle flash effect.
+	var/muzzleflash_iconstate
+	///Brightness of the muzzle flash effect.
+	var/muzzle_flash_lum = 3
+	///Color of the muzzle flash effect.
+	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
+
+	//gun saftey
+	///Does this gun have a saftey and thus can toggle it?
+	var/has_safety = FALSE
+	///If the saftey on? If so, we can't fire the weapon
+	var/safety = FALSE
+
+	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
+	var/safety_wording = "safety"
+
 /obj/item/gun/Initialize()
 	. = ..()
-	if(pin)
-		pin = new pin(src)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(gun_light)
 		alight = new(src)
+	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 
+/obj/item/gun/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed)
+
+/// triggered on wield of two handed item
+/obj/item/gun/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+	INVOKE_ASYNC(src, .proc.do_wield, user)
+
+/obj/item/gun/proc/do_wield(mob/user)
+	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
+	wield_time = world.time + wield_delay
+	if(wield_time > 0)
+		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded)), ignore_loc_change = TRUE))
+			wielded_fully = TRUE
+	else
+		wielded_fully = TRUE
+
+/obj/item/gun/proc/is_wielded()
+	return wielded
+
+/// triggered on unwield of two handed item
+/obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
+	wielded_fully = FALSE
+	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+
 /obj/item/gun/Destroy()
-	if(isobj(pin)) //Can still be the initial path, then we skip
-		QDEL_NULL(pin)
 	if(gun_light)
 		QDEL_NULL(gun_light)
 	if(bayonet)
@@ -96,11 +164,13 @@
 		QDEL_NULL(chambered)
 	if(azoom)
 		QDEL_NULL(azoom)
+	if(isatom(suppressed)) //SUPPRESSED IS USED AS BOTH A TRUE/FALSE AND AS A REF, WHAT THE FUCKKKKKKKKKKKKKKKKK
+		QDEL_NULL(suppressed)
+	if(muzzle_flash)
+		QDEL_NULL(muzzle_flash)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
-	if(A == pin)
-		pin = null
 	if(A == chambered)
 		chambered = null
 		update_appearance()
@@ -112,12 +182,6 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(pin)
-		. += "It has \a [pin] installed."
-		. += "<span class='info'>[pin] looks like it could be removed with some <b>tools</b>.</span>"
-	else
-		. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
-
 	if(gun_light)
 		. += "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight) //if it has a light and this is false, the light is permanent.
@@ -132,6 +196,13 @@
 	else if(can_bayonet)
 		. += "It has a <b>bayonet</b> lug on it."
 
+	if(has_safety)
+		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
+
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+
+
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
 	if(zoomed && user.get_active_held_item() != src)
@@ -139,21 +210,34 @@
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
+	if(safety)
+		return FALSE
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		//WS Edit - Dry firing
-	playsound(src, dry_fire_sound, 30, TRUE)
+	if(!safety)
+		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		playsound(src, dry_fire_sound, 30, TRUE)
+		return
+	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
-	if(recoil)
-		shake_camera(user, recoil + 1, recoil)
+	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
+	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
+	if(muzzle_flash && !muzzle_flash.applied)
+		handle_muzzle_flash(user, muzzle_angle)
+
+	if(wielded_fully)
+		simulate_recoil(user, recoil, actual_angle)
+	else if(!wielded_fully)
+		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -219,12 +303,8 @@
 		shoot_with_empty_chamber(user)
 		return
 
-	if(check_botched(user))
-		return
-
-	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
-	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
-		to_chat(user, "<span class='warning'>You need two hands to fire [src]!</span>")
+	if(weapon_weight == WEAPON_HEAVY && (!wielded))
+		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -237,36 +317,9 @@
 			else if(G.can_trigger_gun(user))
 				bonus_spread += dual_wield_spread
 				loop_counter++
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, bonus_spread), loop_counter)
+				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
 
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
-
-/obj/item/gun/proc/check_botched(mob/living/user, params)
-	if(clumsy_check)
-		if(istype(user))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>You shoot yourself in the foot with [src]!</span>")
-				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-				process_fire(user, user, FALSE, params, shot_leg)
-				SEND_SIGNAL(user, COMSIG_MOB_CLUMSY_SHOOT_FOOT)
-				user.dropItemToGround(src, TRUE)
-				return TRUE
-
-/obj/item/gun/can_trigger_gun(mob/living/user)
-	. = ..()
-	if(!handle_pins(user))
-		return FALSE
-
-/obj/item/gun/proc/handle_pins(mob/living/user)
-	if(pin)
-		if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-			return TRUE
-		else
-			pin.auth_fail(user)
-			return FALSE
-	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
-	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
 	return
@@ -320,8 +373,12 @@
 	var/sprd = 0
 	var/randomized_gun_spread = 0
 	var/rand_spr = rand()
-	if(spread)
+
+	if(wielded_fully && spread)
 		randomized_gun_spread =	rand(0,spread)
+	else if(!wielded_fully && spread_unwielded)
+		randomized_gun_spread =	rand(0,spread_unwielded)
+
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM)) //nice shootin' tex
 		bonus_spread += 25
 	var/randomized_bonus_spread = rand(0, bonus_spread)
@@ -329,7 +386,7 @@
 	if(burst_size > 1)
 		firing_burst = TRUE
 		for(var/i = 1 to burst_size)
-			addtimer(CALLBACK(src, .proc/process_burst, user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i), fire_delay * (i - 1))
+			addtimer(CALLBACK(src, PROC_REF(process_burst), user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i), fire_delay * (i - 1))
 	else
 		if(chambered)
 			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
@@ -337,22 +394,25 @@
 					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			sprd = calculate_spread(user, sprd)
+
 			before_firing(target,user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
 				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message)
+					shoot_live_shot(user, TRUE, target, message)
 				else
-					shoot_live_shot(user, 0, target, message)
+					shoot_live_shot(user, FALSE, target, message)
 		else
 			shoot_with_empty_chamber(user)
 			return
 		process_chamber()
 		update_appearance()
-		semicd = TRUE
-		addtimer(CALLBACK(src, .proc/reset_semicd), fire_delay)
+		if(fire_delay)
+			semicd = TRUE
+			addtimer(CALLBACK(src, PROC_REF(reset_semicd)), fire_delay)
 
 	if(user)
 		user.update_inv_hands()
@@ -407,72 +467,55 @@
 	else
 		return ..()
 
+/obj/item/gun/CtrlClick(mob/user)
+	. = ..()
+	if(!has_safety)
+		return
+
+	if(src != user.get_active_held_item())
+		return
+
+	if(isliving(user) && in_range(src, user))
+		toggle_safety(user)
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+	safety = !safety
+
+	if(!silent)
+		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+		user.visible_message(
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		)
+
+	update_appearance()
+
+
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(.)
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	if((can_flashlight && gun_light) && (can_bayonet && bayonet)) //give them a choice instead of removing both
-		var/list/possible_items = list(gun_light, bayonet)
-		var/obj/item/item_to_remove = input(user, "Select an attachment to remove", "Attachment Removal") as null|obj in sortNames(possible_items)
-		if(!item_to_remove || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-			return
-		return remove_gun_attachment(user, I, item_to_remove)
+	attachment_options = list()
+	get_gun_attachments()
+	if(LAZYLEN(attachment_options) == 1)
+		remove_gun_attachments(user, I, attachment_options[1])
+	else if (LAZYLEN(attachment_options))
+		var/picked_option = show_radial_menu(user, src, attachment_options, radius = 38, require_near = TRUE)
+		remove_gun_attachments(user, I, picked_option)
 
-	else if(gun_light && can_flashlight) //if it has a gun_light and can_flashlight is false, the flashlight is permanently attached.
+/obj/item/gun/proc/get_gun_attachments()
+	if(can_flashlight && gun_light)
+		attachment_options += list("Light" = image(icon = gun_light.icon, icon_state = gun_light.icon_state))
+	if(can_bayonet && bayonet)
+		attachment_options += list("Knife" = image(icon = bayonet.icon, icon_state = bayonet.icon_state))
+
+/obj/item/gun/proc/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
+	if(picked_option == "Light")
 		return remove_gun_attachment(user, I, gun_light, "unscrewed")
-
-	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
+	else if(picked_option == "Knife")
 		return remove_gun_attachment(user, I, bayonet, "unfix")
-
-	/*WS Edit - Fixes Pin Removal
-	else if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is pried out of [src] by [user], destroying the pin in the process.</span>",
-								"<span class='warning'>You pry [pin] out with [I], destroying the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-	WS End */
-
-
-/obj/item/gun/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is spliced out of [src] by [user], melting part of the pin in the process.</span>",
-								"<span class='warning'>You splice [pin] out of [src] with [I], melting part of the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-
-/obj/item/gun/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is ripped out of [src] by [user], mangling the pin in the process.</span>",
-								"<span class='warning'>You rip [pin] out of [src] with [I], mangling the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
 
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
@@ -548,7 +591,7 @@
 	gun_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, gun_light.on ? gun_light.toggle_on_sound : gun_light.toggle_off_sound, 40, TRUE)
 	update_gunlight()
 
 /obj/item/gun/proc/update_gunlight()
@@ -557,13 +600,19 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/obj/item/gun/attack_hand(mob/user)
+	. = ..()
+	update_appearance()
+
 /obj/item/gun/pickup(mob/user)
-	..()
+	. = ..()
+	update_appearance()
 	if(azoom)
 		azoom.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
+	update_appearance()
 	if(azoom)
 		azoom.Remove(user)
 	if(zoomed)
@@ -592,6 +641,18 @@
 		knife_overlay.pixel_y = knife_y_offset
 		. += knife_overlay
 
+	if(ismob(loc) && has_safety)
+		var/mutable_appearance/safety_overlay
+		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
+		if(safety)
+			safety_overlay.icon_state = "[safety_wording]-on"
+		else
+			safety_overlay.icon_state = "[safety_wording]-off"
+		. += safety_overlay
+
+#define BRAINS_BLOWN_THROW_RANGE 2
+#define BRAINS_BLOWN_THROW_SPEED 1
+
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -599,41 +660,175 @@
 	if(semicd)
 		return
 
+	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
+		shoot_with_empty_chamber(user)
+		return
+
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
+			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
+			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
 	semicd = TRUE
 
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message(span_notice("[user] has decided to spare [target]."), span_notice("[user] has decided to spare your life!"))
 		semicd = FALSE
 		return
 
 	semicd = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
+	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
-	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
+	if(chambered && chambered.BB && can_trigger_gun(user))
+		chambered.BB.damage *= 3
+		//Check is here for safeties and such, brain will be removed after
+		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
 
-	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+		var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
+		if(brain_to_blast)
 
-/obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
-	if(pin)
-		qdel(pin)
-	pin = new /obj/item/firing_pin
+			//Check if the projectile is actually damaging and not of type STAMINA
+			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				return
+
+			//Remove brain of the mob shot
+			brain_to_blast.Remove(target)
+
+			var/turf/splat_turf = get_turf(target)
+			//Move the brain of the person shot to selected turf
+			brain_to_blast.forceMove(splat_turf)
+
+			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
+			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, brain_to_blast, 1, FALSE, target)
+			//Throw the brain that has been removed away and place a gibspawner on landing
+			brain_to_blast.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
+
+#undef BRAINS_BLOWN_THROW_RANGE
+#undef BRAINS_BLOWN_THROW_SPEED
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
+
+// We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
+/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+	return recoil_bonus
+
+// We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
+/obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
+	return bonus_spread
+
+/obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
+	var/total_recoil = calculate_recoil(user, recoil_bonus)
+
+	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
+	if(actual_angle > 360)
+		actual_angle -= 360
+	if(total_recoil > 0)
+		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
+		return TRUE
+
+/obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
+	var/atom/movable/flash_loc = user
+	var/prev_light = light_range
+	if(!light_on && (light_range <= muzzle_flash_lum))
+		set_light_range(muzzle_flash_lum)
+		set_light_color(muzzle_flash_color)
+		set_light_on(TRUE)
+		update_light()
+		addtimer(CALLBACK(src, PROC_REF(reset_light_range), prev_light), 1 SECONDS)
+	//Offset the pixels.
+	switch(firing_angle)
+		if(0, 360)
+			muzzle_flash.pixel_x = 0
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(1 to 44)
+			muzzle_flash.pixel_x = round(4 * ((firing_angle) / 45))
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(45)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(46 to 89)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = round(4 * ((90 - firing_angle) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(90)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = 0
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(91 to 134)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = round(-3 * ((firing_angle - 90) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(135)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(136 to 179)
+			muzzle_flash.pixel_x = round(4 * ((180 - firing_angle) / 45))
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(180)
+			muzzle_flash.pixel_x = 0
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(181 to 224)
+			muzzle_flash.pixel_x = round(-6 * ((firing_angle - 180) / 45))
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(225)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(226 to 269)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = round(-6 * ((270 - firing_angle) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(270)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = 0
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(271 to 314)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = round(8 * ((firing_angle - 270) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(315)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(316 to 359)
+			muzzle_flash.pixel_x = round(-6 * ((360 - firing_angle) / 45))
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+
+	muzzle_flash.transform = null
+	muzzle_flash.transform = turn(muzzle_flash.transform, firing_angle)
+	flash_loc.vis_contents += muzzle_flash
+	muzzle_flash.applied = TRUE
+
+	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash), flash_loc, muzzle_flash), 0.2 SECONDS)
+
+/obj/item/gun/proc/reset_light_range(lightrange)
+	set_light_range(lightrange)
+	set_light_color(initial(light_color))
+	if(lightrange <= 0)
+		set_light_on(FALSE)
+	update_light()
+
+/obj/item/gun/proc/remove_muzzle_flash(atom/movable/flash_loc, obj/effect/muzzle_flash/muzzle_flash)
+	if(!QDELETED(flash_loc))
+		flash_loc.vis_contents -= muzzle_flash
+	muzzle_flash.applied = FALSE
 
 /////////////
 // ZOOMING //
@@ -675,7 +870,7 @@
 		zoomed = forced_zoom
 
 	if(zoomed)
-		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
@@ -691,5 +886,4 @@
 		azoom = new()
 		azoom.gun = src
 
-#undef FIRING_PIN_REMOVAL_DELAY
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER

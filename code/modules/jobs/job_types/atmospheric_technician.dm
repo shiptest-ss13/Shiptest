@@ -1,7 +1,5 @@
 /datum/job/atmos
 	name = "Atmospheric Technician"
-	total_positions = 3
-	spawn_positions = 2
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/atmos
@@ -33,28 +31,3 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
-
-/datum/outfit/job/atmos/rig
-	name = "Atmospheric Technician (Hardsuit)"
-
-	mask = /obj/item/clothing/mask/gas/atmos
-	suit = /obj/item/clothing/suit/space/hardsuit/engine/atmos
-	suit_store = /obj/item/tank/internals/oxygen
-	internals_slot = ITEM_SLOT_SUITSTORE
-
-/datum/outfit/job/atmos/gec
-	name = "Atmospheric Technician (GEC)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec/atmos_tech
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat
-	id = /obj/item/card/id/syndicate_command/crew_id
-
-/datum/outfit/job/atmos/frontiersmen
-	name = "Atmospheric Technician (Frontiersmen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
-	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/pirate
-	mask = /obj/item/clothing/mask/gas/atmos

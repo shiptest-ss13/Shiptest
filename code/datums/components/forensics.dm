@@ -25,7 +25,7 @@
 
 /datum/component/forensics/RegisterWithParent()
 	check_blood()
-	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_act)
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_act))
 
 /datum/component/forensics/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_COMPONENT_CLEAN_ACT))
@@ -190,4 +190,6 @@
 		return
 	if(!length(blood_DNA))
 		return
-	parent.AddElement(/datum/element/decal/blood, _color = get_blood_dna_color(blood_DNA))
+	if(isitem(parent))
+		var/obj/item/I = parent
+		I.AddElement(/datum/element/decal/blood, initial(I.icon) || I.icon, initial(I.icon_state) || I.icon_state, _color = get_blood_dna_color(blood_DNA))

@@ -8,19 +8,12 @@
 	randomizable = TRUE
 
 	icon = 'icons/mob/species/rachnid/spider_legs.dmi'
-	color_src = MUTCOLORS
+	color_src = 0
+	secondary_color = TRUE
 
-/datum/sprite_accessory/mutant_part/spider_legs/plain
-	name = "Plain"
-	icon_state = "plain"
-
-/datum/sprite_accessory/mutant_part/spider_legs/fuzzy
-	name = "Fuzzy"
-	icon_state = "fuzzy"
-
-/datum/sprite_accessory/mutant_part/spider_legs/spiky
-	name = "Spiky"
-	icon_state = "spiky"
+/datum/sprite_accessory/mutant_part/spider_legs/carapace
+	name = "Carapace"
+	icon_state = "carapace"
 
 //Start spinner
 
@@ -31,40 +24,25 @@
 
 	icon = 'icons/mob/species/rachnid/spider_spinneret.dmi'
 	color_src = MUTCOLORS
+	secondary_color = TRUE
 
-/datum/sprite_accessory/mutant_part/spider_spinneret/plain
-	name = "Plain"
-	icon_state = "plain"
+/datum/sprite_accessory/mutant_part/spider_spinneret/spikecore
+	name = "Spikecore"
+	icon_state = "spikecore"
 
-/datum/sprite_accessory/mutant_part/spider_spinneret/fuzzy
-	name = "Fuzzy"
-	icon_state = "fuzzy"
+/datum/sprite_accessory/mutant_part/spider_spinneret/cerberus
+	name = "Cerberus"
+	icon_state = "cerberus"
 
-/datum/sprite_accessory/mutant_part/spider_spinneret/black_widow
-	name = "Black Widow"
-	icon_state = "blackwidow"
+/datum/sprite_accessory/mutant_part/spider_spinneret/queen
+	name = "Queen"
+	icon_state = "queen"
 
-//Start mandible
+/datum/sprite_accessory/mutant_part/spider_spinneret/folds
+	name = "Folds"
+	icon_state = "folds"
+	secondary_color = FALSE
 
-/datum/sprite_accessory/mutant_part/spider_mandibles
-	mutant_string = "spider_mandibles"
-	abstract_type = /datum/sprite_accessory/mutant_part/spider_mandibles
-	randomizable = TRUE
-
-	body_zone = BODY_ZONE_HEAD
-	clothes_flags_inv_hide = HIDEFACE
-
-	icon = 'icons/mob/species/rachnid/spider_mandibles.dmi'
-	color_src = MUTCOLORS
-
-/datum/sprite_accessory/mutant_part/spider_mandibles/plain
-	name = "Plain"
-	icon_state = "plain"
-
-/datum/sprite_accessory/mutant_part/spider_mandibles/fuzzy
-	name = "Fuzzy"
-	icon_state = "fuzzy"
-
-/datum/sprite_accessory/mutant_part/spider_mandibles/spiky
-	name = "Spiky"
-	icon_state = "spiky"
+/datum/sprite_accessory/mutant_part/spider_spinneret/prongs
+	name = "Prongs"
+	icon_state = "prongs"

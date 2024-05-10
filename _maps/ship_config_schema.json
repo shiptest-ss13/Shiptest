@@ -20,7 +20,8 @@
 		"description": {
 			"title": "Class Description",
 			"type": "string",
-			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future."
+			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future.",
+			"minLength": 250
 		},
 		"tags": {
 			"title": "Ship Tags",
@@ -32,6 +33,11 @@
 			"type": [ "null", "string" ],
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
+		},
+		"faction_name": {
+			"title": "Faction Name",
+			"type": [ "null", "string" ],
+			"description": "A custom faction name for the ship class. If exluded or left blank, the ship will use the default faction name for the faction that matches the ship's prefix."
 		},
 		"namelists": {
 			"title": "Namelists",
@@ -65,12 +71,13 @@
 					"ACLF",
 					"GEC",
 					"DONK",
-					"COLONIAL MINUTEMEN",
+					"CLIP MINUTEMEN",
 					"SAINT-ROUMAIN",
 					"INSTALLATION",
 					"SOLGOV",
 					"CMM-GOLD",
-					"CMM-BARD"
+					"CMM-BARD",
+					"PGF"
 				]
 			}
 		},

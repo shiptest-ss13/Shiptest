@@ -47,7 +47,7 @@
 							"<span class='userdanger'>[user] forces you to [apply_method] [src].</span>")
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
@@ -182,14 +182,6 @@
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
-///////////////////////////////////////// this pill is used only in a legion mob drop
-/obj/item/reagent_containers/pill/shadowtoxin
-	name = "black pill"
-	desc = "I wouldn't eat this if I were you."
-	icon_state = "pill9"
-	color = "#454545"
-	list_reagents = list(/datum/reagent/mutationtoxin/shadow = 5)
-
 ///////////////////////////////////////// Psychologist inventory pills
 /obj/item/reagent_containers/pill/happinesspsych
 	name = "mood stabilizer pill"
@@ -270,11 +262,11 @@
 
 /*WS Begin - No Cobbychem
 
-/obj/item/reagent_containers/pill/C2/probital
+/obj/item/reagent_containers/pill/c2/probital
 	name = "Probital pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'. Causes fatigue and diluted with granibitaluri."
 	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/C2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
+	list_reagents = list(/datum/reagent/medicine/c2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
 	rename_with_volume = TRUE
 
 WS End */
@@ -296,5 +288,5 @@ WS End */
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
-	icon_state = "sprayer_large"
+	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)

@@ -27,6 +27,8 @@
 	if(!spawn_type)
 		return
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(!spawn_type)
+		return
 	for(var/i = 1 to STR.max_items)
 		new spawn_type(src)
 
@@ -303,13 +305,6 @@
 	. = ..()
 	if(prob(7))
 		spawn_type = /obj/item/clothing/mask/cigarette/candy/nicotine //uh oh!
-
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims
-	name = "\improper Shady Jim's Super Slims packet"
-	desc = "Is your weight slowing you down? Having trouble running away from gravitational singularities? Can't stop stuffing your mouth? Smoke Shady Jim's Super Slims and watch all that fat burn away. Guaranteed results!"
-	icon_state = "shadyjim"
-	base_icon_state = "shadyjim"
-	spawn_type = /obj/item/clothing/mask/cigarette/shadyjims
 
 /obj/item/storage/fancy/cigarettes/cigpack_xeno
 	name = "\improper Xeno Filtered packet"

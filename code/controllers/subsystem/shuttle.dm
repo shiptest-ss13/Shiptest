@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(shuttle)
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
-	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
+	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
 	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
@@ -255,7 +255,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 	new_shuttle.initiate_docking(destination_port)
 	return new_shuttle
@@ -279,7 +279,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
 		WARNING("Template shuttle [new_shuttle] cannot dock at [old_shuttle_location] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
@@ -291,7 +291,7 @@ SUBSYSTEM_DEF(shuttle)
 		to_replace.assigned_transit = null
 		new_shuttle.assigned_transit = old_shuttle_location
 
-	to_replace.jumpToNullSpace() //This will destroy the old shuttle
+	qdel(to_replace, TRUE)
 	new_shuttle.initiate_docking(old_shuttle_location) //This will spawn the new shuttle
 	return new_shuttle
 
@@ -327,8 +327,8 @@ SUBSYSTEM_DEF(shuttle)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
 				if(new_shuttle)
+					stack_trace("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 					qdel(P, TRUE)
-					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
@@ -340,8 +340,7 @@ SUBSYSTEM_DEF(shuttle)
 			T0.empty()
 
 		message_admins(msg)
-		WARNING(msg)
-		return
+		CRASH(msg)
 
 	new_shuttle.docking_points = stationary_ports
 	new_shuttle.current_ship = parent //for any ships that spawn on top of us
@@ -353,13 +352,13 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
 	if(!transit_dock)
+		qdel(src, TRUE)
 		CRASH("No dock found/could be created for shuttle ([template.name]), aborting.")
 
 	var/result = new_shuttle.canDock(transit_dock)
 	if((result != SHUTTLE_CAN_DOCK))
-		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
-		new_shuttle.jumpToNullSpace()
-		return
+		qdel(src, TRUE)
+		CRASH("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)
@@ -535,6 +534,32 @@ SUBSYSTEM_DEF(shuttle)
 				return
 			if(user.client)
 				user.client.debug_variables(port.current_ship)
+			return TRUE
+
+		if("blist")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/temp_loc = input(user, "Select outpost to modify ship blacklist status for", "Get Em Outta Here") as null|anything in SSovermap.outposts
+			if(!temp_loc)
+				return
+			var/datum/overmap/outpost/please_leave = temp_loc
+			if(please_leave in port_ship.blacklisted)
+				if(tgui_alert(user, "Rescind ship blacklist?", "Maybe They Aren't So Bad", list("Yes", "No")) == "Yes")
+					port_ship.blacklisted &= ~please_leave
+					message_admins("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+					log_admin("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+				return TRUE
+			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.") as null|text
+			if(!reason)
+				return TRUE
+			if(please_leave in port_ship.blacklisted) //in the event two admins are blacklisting a ship at the same time
+				if(tgui_alert(user, "Ship is already blacklisted, overwrite current reason with your own?", "I call the shots here", list("Yes", "No")) != "Yes")
+					return TRUE
+			port_ship.blacklisted[please_leave] = reason
+			message_admins("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
+			log_admin("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
 			return TRUE
 
 		if("fly")

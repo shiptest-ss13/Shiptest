@@ -40,12 +40,23 @@ block( \
 	if(istype(T))
 		return T
 
+///Returns a list with all the adjacent open turfs.
 /proc/get_adjacent_open_turfs(atom/center)
-	. = list(get_open_turf_in_dir(center, NORTH),
-			get_open_turf_in_dir(center, SOUTH),
-			get_open_turf_in_dir(center, EAST),
-			get_open_turf_in_dir(center, WEST))
-	listclearnulls(.)
+	var/list/hand_back = list()
+	// Inlined get_open_turf_in_dir, just to be fast
+	var/turf/open/new_turf = get_step(center, NORTH)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, SOUTH)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, EAST)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, WEST)
+	if(istype(new_turf))
+		hand_back += new_turf
+	return hand_back
 
 /proc/get_adjacent_open_areas(atom/center)
 	. = list()
@@ -131,6 +142,28 @@ block( \
 
 	//turfs += centerturf
 	return atoms
+
+/**
+ * Behaves like the orange() proc, but only looks in the outer range of the function (The "peel" of the orange).
+ * Credit to ArcaneMusic for this one
+ */
+/proc/turf_peel(outer_range, inner_range, center, view_based = FALSE)
+	var/list/peel = list()
+	var/list/outer
+	var/list/inner
+	if(view_based)
+		outer = circleviewturfs(center, outer_range)
+		inner = circleviewturfs(center, inner_range)
+	else
+		outer = circlerangeturfs(center, outer_range)
+		inner = circlerangeturfs(center, inner_range)
+	for(var/turf/possible_spawn in outer)
+		if(possible_spawn in inner)
+			continue
+		if(istype(possible_spawn, /turf/closed))
+			continue
+		peel += possible_spawn
+	return peel
 
 /proc/get_dist_euclidian(atom/Loc1 as turf|mob|obj,atom/Loc2 as turf|mob|obj)
 	var/dx = Loc1.x - Loc2.x
@@ -342,7 +375,7 @@ block( \
 /proc/flick_overlay(image/I, list/show_to, duration)
 	for(var/client/C in show_to)
 		C.images += I
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/remove_images_from_clients, I, show_to), duration, TIMER_CLIENT_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_images_from_clients), I, show_to), duration, TIMER_CLIENT_TIME)
 
 /proc/flick_overlay_view(image/I, atom/target, duration) //wrapper for the above, flicks to everyone who can see the target atom
 	var/list/viewing = list()
@@ -352,8 +385,8 @@ block( \
 			viewing += M.client
 	flick_overlay(I, viewing, duration)
 
-/proc/get_active_player_count(alive_check = 0, afk_check = 0, human_check = 0)
-	// Get active players who are playing in the round
+///Get active players who are playing in the round
+/proc/get_active_player_count(alive_check = FALSE, afk_check = FALSE, human_check = FALSE)
 	var/active_players = 0
 	for(var/i = 1; i <= GLOB.player_list.len; i++)
 		var/mob/M = GLOB.player_list[i]
@@ -464,7 +497,6 @@ block( \
 
 	//First we spawn a dude.
 	var/mob/living/carbon/human/new_character = new//The mob being spawned.
-	SSjob.SendToLateJoin(new_character)
 
 	G_found.client.prefs.copy_to(new_character)
 	new_character.dna.update_dna_identity()

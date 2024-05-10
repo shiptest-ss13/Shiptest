@@ -18,11 +18,11 @@ if ! ( [ -x "$has_git" ] && [ -x "$has_grep" ]  && [ -x "$has_curl" ] && [ -f "/
 	if ! [ -x "$has_sudo" ]; then
 		dpkg --add-architecture i386
 		apt-get update
-		apt-get install -y build-essential g++-multilib libc6-i386 libstdc++6:i386 lib32z1 git pkg-config libssl-dev:i386 libssl-dev zlib1g-dev:i386 curl grep
+		apt-get install -y build-essential clang g++-multilib libc6-i386 libstdc++6:i386 lib32z1 git pkg-config libssl-dev:i386 libssl-dev zlib1g-dev:i386 curl grep
 	else
 		sudo dpkg --add-architecture i386
 		sudo apt-get update
-		sudo apt-get install -y build-essential g++-multilib libc6-i386 libstdc++6:i386 lib32z1 git pkg-config libssl-dev:i386 libssl-dev zlib1g-dev:i386 curl grep
+		sudo apt-get install -y build-essential clang g++-multilib libc6-i386 libstdc++6:i386 lib32z1 git pkg-config libssl-dev:i386 libssl-dev zlib1g-dev:i386 curl grep
 	fi
 fi
 
@@ -44,8 +44,8 @@ if ! [ -x "$has_youtubedl" ]; then
 		sudo apt-get update
 		sudo apt-get install -y python3 python3-pip
 	fi
-	pip3 install youtube-dl
+	pip3 install youtube-dl --break-system-packages
 elif [ -x "$has_pip3" ]; then
 	echo "Ensuring youtube-dl is up-to-date with pip3..."
-	pip3 install youtube-dl -U
+	pip3 install youtube-dl -U --break-system-packages
 fi

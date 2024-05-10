@@ -2,6 +2,8 @@
 /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/glasses.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/glasses_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/glasses_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = ITEM_SLOT_EYES
@@ -39,6 +41,12 @@
 	. = ..()
 	if(. && user)
 		user.update_sight()
+		if(icon_state == "welding-g")
+			change_glass_color(user, /datum/client_colour/glass_colour/gray)
+		else if(icon_state == "bustin-g")
+			change_glass_color(user, /datum/client_colour/glass_colour/green)
+		else
+			change_glass_color(user, null)
 
 //called when thermal glasses are emped.
 /obj/item/clothing/glasses/proc/thermal_overload()
@@ -85,6 +93,7 @@
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
+	custom_price = 500
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -128,14 +137,36 @@
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
 	desc = "Yarr."
-	icon_state = "eyepatch"
-	item_state = "eyepatch"
+	icon_state = "eyepatch-0"
+	item_state = "eyepatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "eyepatch-[flipped]"
+	item_state = "eyepatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
+
+/obj/item/clothing/glasses/eyepatch/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/clothing/glasses/eyepatch))
+		var/obj/item/clothing/glasses/eyepatch/old_patch = I
+		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new()
+		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
+		qdel(old_patch)
+		qdel(src)
+		user.put_in_hands(double_patch)
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
 	desc = "Such a dapper eyepiece!"
 	icon_state = "monocle"
-	item_state = "headset" // lol
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/material
@@ -190,6 +221,11 @@
 	icon_state = "circle_glasses"
 	item_state = "circle_glasses"
 
+/obj/item/clothing/glasses/regular/thin
+	name = "thin glasses"
+	desc = "More expensive, more fragile and much less practical, but oh so fashionable."
+	icon_state = "thin_glasses"
+
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses
@@ -209,6 +245,7 @@
 	icon_state = "sunhudbeer"
 	desc = "A pair of sunglasses outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion."
 	clothing_flags = SCAN_REAGENTS
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/sunglasses/reagent/equipped(mob/user, slot)
 	. = ..()
@@ -224,6 +261,7 @@
 	icon_state = "sunhudsci"
 	desc = "A pair of tacky purple sunglasses that allow the wearer to recognize various chemical compounds with only a glance."
 	clothing_flags = SCAN_REAGENTS
+	glass_colour_type = /datum/client_colour/glass_colour/darkpurple
 
 /obj/item/clothing/glasses/sunglasses/garb
 	name = "black gar glasses"
@@ -348,6 +386,21 @@
 		M.color = "#[H.eye_color]"
 		. += M
 
+/obj/item/clothing/glasses/blindfold/eyepatch
+	name = "double eyepatch"
+	desc = "For those pirates who've been at it a while. May interfere with navigating ability."
+	icon_state = "eyepatchd"
+	item_state = "eyepatchd"
+
+/obj/item/clothing/glasses/blindfold/eyepatch/attack_self(mob/user)
+	. = ..()
+	var/obj/item/clothing/glasses/eyepatch/patch_one = new/obj/item/clothing/glasses/eyepatch
+	var/obj/item/clothing/glasses/eyepatch/patch_two = new/obj/item/clothing/glasses/eyepatch
+	patch_one.forceMove(user.drop_location())
+	patch_two.forceMove(user.drop_location())
+	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
+	Destroy()
+
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."
 	icon_state = "bigsunglasses"
@@ -411,8 +464,21 @@
 /obj/item/clothing/glasses/thermal/eyepatch
 	name = "optical thermal eyepatch"
 	desc = "An eyepatch with built-in thermal optics."
-	icon_state = "eyepatch"
-	item_state = "eyepatch"
+	icon_state = "eyepatch-0"
+	item_state = "eyepatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "eyepatch-[flipped]"
+	item_state = "eyepatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/thermal/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
 
 /obj/item/clothing/glasses/cold
 	name = "cold goggles"

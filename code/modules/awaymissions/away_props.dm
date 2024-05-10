@@ -6,11 +6,9 @@
 	invisibility = INVISIBILITY_MAXIMUM
 	anchored = TRUE
 
-/obj/effect/oneway/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/effect/oneway/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	var/turf/T = get_turf(src)
-	var/turf/MT = get_turf(mover)
-	return . && (T == MT || get_dir(MT,T) == dir)
+	return . && border_dir == dir
 
 
 /obj/effect/wind
@@ -45,7 +43,7 @@
 	if(blocked_types.len)
 		blocked_types = typecacheof(blocked_types)
 
-/obj/effect/path_blocker/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/effect/path_blocker/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(blocked_types.len)
 		var/list/mover_contents = mover.GetAllContents()
@@ -67,7 +65,7 @@
 
 /obj/structure/pitgrate/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs,COMSIG_GLOB_BUTTON_PRESSED, .proc/OnButtonPressed)
+	RegisterSignal(SSdcs,COMSIG_GLOB_BUTTON_PRESSED, PROC_REF(OnButtonPressed))
 	if(hidden)
 		update_openspace()
 
@@ -93,7 +91,7 @@
 		obj_flags |= BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	plane = BYOND_LIGHTING_LAYER //What matters it's one above openspace, so our animation is not dependant on what's there. Up to revision with 513
 	animate(src,alpha = talpha,time = 10)
-	addtimer(CALLBACK(src,.proc/reset_plane),10)
+	addtimer(CALLBACK(src, PROC_REF(reset_plane)),10)
 	if(hidden)
 		update_openspace()
 	var/turf/T = get_turf(src)

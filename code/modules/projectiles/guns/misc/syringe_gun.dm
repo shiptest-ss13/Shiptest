@@ -8,7 +8,6 @@
 	throw_range = 7
 	force = 4
 	custom_materials = list(/datum/material/iron=2000)
-	clumsy_check = 0
 	fire_sound = 'sound/items/syringeproj.ogg'
 	var/list/syringes = list()
 	var/max_syringes = 1
@@ -38,7 +37,7 @@
 	. = ..()
 	. += "Can hold [max_syringes] syringe\s. Has [syringes.len] syringe\s remaining."
 
-/obj/item/gun/syringe/attack_self(mob/living/user)
+/obj/item/gun/syringe/unique_action(mob/living/user)
 	if(!syringes.len)
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return 0

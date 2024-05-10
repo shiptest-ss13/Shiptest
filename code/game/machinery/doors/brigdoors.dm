@@ -92,12 +92,12 @@
 	for(var/obj/machinery/door/window/brigdoor/door in targets)
 		if(door.density)
 			continue
-		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/close)
+		INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/machinery/door/window/brigdoor, close))
 
 	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
 		if(airlock.density)
 			continue
-		INVOKE_ASYNC(airlock, /obj/machinery/door/airlock/security/brig.proc/close)
+		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, close))
 
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)
@@ -126,12 +126,12 @@
 	for(var/obj/machinery/door/window/brigdoor/door in targets)
 		if(!door.density)
 			continue
-		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/open)
+		INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/machinery/door/window/brigdoor, open))
 
 	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
 		if(!airlock.density)
 			continue
-		INVOKE_ASYNC(airlock, /obj/machinery/door/airlock/security/brig.proc/open)
+		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, open))
 
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)

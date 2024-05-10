@@ -46,10 +46,15 @@
 		return
 	return ..()
 
+/obj/machinery/blackbox_recorder/deconstruct(disassembled)
+	if(stored)
+		stored.forceMove(drop_location())
+		new /obj/effect/decal/cleanable/oil(loc)
+	return ..()
+
 /obj/machinery/blackbox_recorder/Destroy()
 	if(stored)
-		stored.forceMove(loc)
-		new /obj/effect/decal/cleanable/oil(loc)
+		QDEL_NULL(stored)
 	return ..()
 
 /obj/machinery/blackbox_recorder/update_icon_state()

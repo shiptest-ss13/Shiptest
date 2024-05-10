@@ -72,7 +72,7 @@
 	autolinkers = list("processor4", "inteq", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_five
-	id = "CMM Communications Bus"
+	id = "CLIP Communications Bus"
 	network = "tcommsat"
 	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
 	autolinkers = list("processor5", "minutemen", "messaging")

@@ -178,8 +178,6 @@
 	if(console && console.pad && console.pad.teleport_target)
 		H.forceMove(console.pad.teleport_target)
 		return
-	//Area not chosen / It's not safe area - teleport to arrivals
-	SSjob.SendToLateJoin(H, FALSE)
 	return
 
 /obj/machinery/abductor/experiment/update_icon_state()

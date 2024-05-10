@@ -2,8 +2,9 @@
 #define MIDNIGHT_ROLLOVER 864000
 
 ///displays the current time into the round, with a lot of extra code just there for ensuring it looks okay after an entire day passes
-#define ROUND_TIME ( "[world.time - SSticker.round_start_time > MIDNIGHT_ROLLOVER ? "[round((world.time - SSticker.round_start_time)/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]" )
-
+#define ROUND_TIME ( "[world.time - SSticker.round_start_time > MIDNIGHT_ROLLOVER ? "[round((world.time - SSticker.round_start_time)/MIDNIGHT_ROLLOVER)]:[game_timestamp()]" : game_timestamp()]" )
+///same as above, but based on real time of day
+#define ROUND_REALTIMEOFDAY ( "[REALTIMEOFDAY - SSticker.round_start_timeofday > MIDNIGHT_ROLLOVER ? "[round((REALTIMEOFDAY - SSticker.round_start_timeofday)/MIDNIGHT_ROLLOVER)]:[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" : time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" )
 
 #define JANUARY 1
 #define FEBRUARY 2
@@ -46,6 +47,10 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 #define SATURDAY "Sat"
 #define SUNDAY "Sun"
 
+#define MILLISECONDS *0.01
+
+#define DECISECONDS *1 //the base unit all of these defines are scaled by, because byond uses that as a unit of measurement for some fucking reason
+
 #define SECONDS *10
 
 #define MINUTES SECONDS*60
@@ -53,8 +58,6 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 #define HOURS MINUTES*60
 
 #define TICKS *world.tick_lag
-
-#define MILLISECONDS * 0.01
 
 #define DS2TICKS(DS) ((DS)/world.tick_lag)
 

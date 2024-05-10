@@ -378,8 +378,6 @@
 	var/sale_price = 20
 	///The Account which will receive payment for purchases. Set by the first ID to swipe the tray.
 	var/datum/bank_account/payments_acc = null
-	///We're using the same trick as paper does in order to cache the image, and only load the UI when messed with.
-	var/list/viewing_ui = list()
 
 /obj/structure/displaycase/forsale/update_appearance()	//remind me to fix my shitcode later
 	var/icon/I
@@ -403,7 +401,6 @@
 	if(!ui)
 		ui = new(user, src, "Vendatray", name)
 		ui.set_autoupdate(FALSE)
-		viewing_ui[user] = ui
 		ui.open()
 
 /obj/structure/displaycase/forsale/ui_data(mob/user)
@@ -450,9 +447,7 @@
 				to_chat(usr, "<span class='notice'>You do not possess the funds to purchase this.</span>")
 				return TRUE
 			else
-				account.adjust_money(-sale_price)
-				if(payments_acc)
-					payments_acc.adjust_money(sale_price)
+				payments_acc.transfer_money(account, sale_price)
 				usr.put_in_hands(showpiece)
 				to_chat(usr, "<span class='notice'>You purchase [showpiece] for [sale_price] credits.</span>")
 				playsound(src, 'sound/effects/cashregister.ogg', 40, TRUE)

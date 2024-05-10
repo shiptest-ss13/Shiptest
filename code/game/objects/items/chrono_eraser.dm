@@ -134,6 +134,10 @@
 	if(istype(C))
 		gun = C.gun
 
+/obj/projectile/energy/chrono_beam/Destroy()
+	gun = null
+	return ..()
+
 /obj/projectile/energy/chrono_beam/on_hit(atom/target)
 	if(target && gun && isliving(target))
 		var/obj/structure/chrono_field/F = new(target.loc, target, gun)
@@ -143,7 +147,7 @@
 /obj/item/ammo_casing/energy/chrono_beam
 	name = "eradication beam"
 	projectile_type = /obj/projectile/energy/chrono_beam
-	icon_state = "chronobolt"
+	icon_state = "caseless"
 	e_cost = 0
 	var/obj/item/gun/energy/chrono_gun/gun
 
@@ -152,7 +156,9 @@
 		gun = loc
 	. = ..()
 
-
+/obj/item/ammo_casing/energy/chrono_beam/Destroy()
+	gun = null
+	return ..()
 
 
 

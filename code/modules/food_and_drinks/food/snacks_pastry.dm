@@ -76,7 +76,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/ketchup = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/ketchup = 2)
 	tastes = list("meat" = 1)
-	foodtype = JUNKFOOD | MEAT | GROSS | FRIED | BREAKFAST
+	foodtype = JUNKFOOD | MEAT | GORE | FRIED | BREAKFAST
 	is_decorated = TRUE
 
 /obj/item/reagent_containers/food/snacks/donut/berry
@@ -377,13 +377,14 @@
 
 /obj/item/reagent_containers/food/snacks/soylentgreen
 	name = "\improper Soylent Green"
-	desc = "Not made of people. Honest." //Totally people.
+	desc = "Not made of people. Honest*." //Totally people.
 	icon_state = "soylent_green"
 	trash = /obj/item/trash/waffles
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#9ACD32"
 	tastes = list("waffles" = 7, "people" = 1)
+	// The wafers are supposed to be flavorful and nutritious in the movie. They shouldn't be gross in a dystopian future where the chef regularly feeds people from the morgue to you.
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/soylenviridians
@@ -576,11 +577,32 @@
 	name = "fortune cookie"
 	desc = "A true prophecy in each cookie!"
 	icon_state = "fortune_cookie"
+	trash = /obj/item/paper/paperslip
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	filling_color = "#F4A460"
 	tastes = list("cookie" = 1)
 	foodtype = GRAIN | SUGAR
+
+/obj/item/reagent_containers/food/snacks/fortunecookie/proc/get_fortune()
+	var/atom/drop_location = drop_location()
+	var/obj/item/paper/fortune = locate(/obj/item/paper) in src
+	// If a fortune exists, use that.
+	if (fortune)
+		fortune.forceMove(drop_location)
+		return fortune
+
+	// Otherwise, use a generic one
+	var/obj/item/paper/paperslip/fortune_slip = new trash(drop_location)
+	fortune_slip.name = "fortune slip"
+	// if someone adds lottery tickets in the future, be sure to add random numbers to this
+	fortune_slip.add_raw_text(pick(GLOB.wisdoms))
+
+	return fortune_slip
+
+/obj/item/reagent_containers/food/snacks/fortunecookie/generate_trash()
+	if(trash)
+		get_fortune()
 
 /obj/item/reagent_containers/food/snacks/poppypretzel
 	name = "poppy pretzel"

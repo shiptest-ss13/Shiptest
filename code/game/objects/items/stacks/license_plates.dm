@@ -1,5 +1,6 @@
 /obj/item/stack/license_plates
-	name = "invalid plate"
+	name = "invalid plates"
+	singular_name = "invalid plate"
 	desc = "someone fucked up"
 	icon = 'icons/obj/machines/prison.dmi'
 	icon_state = "empty_plate"
@@ -7,14 +8,16 @@
 	max_amount = 50
 
 /obj/item/stack/license_plates/empty
-	name = "empty license plate"
+	name = "empty license plates"
+	singular_name = "empty licence plate"
 	desc = "Instead of a license plate number, this could contain a quote like \"Live laugh love\"."
 
 /obj/item/stack/license_plates/empty/fifty
 	amount = 50
 
 /obj/item/stack/license_plates/filled
-	name = "license plate"
+	name = "license plates"
+	singular_name = "license plate"
 	desc = "Prison labor paying off."
 	icon_state = "filled_plate_1_1"
 

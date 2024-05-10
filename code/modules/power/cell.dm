@@ -1,6 +1,6 @@
 #define CELL_DRAIN_TIME 35
-#define CELL_POWER_GAIN (3    * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define CELL_POWER_DRAIN (37.5 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_GAIN (3    * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_DRAIN (37.5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /obj/item/stock_parts/cell
 	name = "power cell"
@@ -150,10 +150,10 @@
 
 //WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
-	if(isethereal(user))
+	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
+		var/datum/species/elzuose/E = H.dna.species
+		var/charge_limit = ELZUOSE_CHARGE_DANGEROUS - CELL_POWER_GAIN
 		if(E.drain_time > world.time)
 			return
 		if(charge < CELL_POWER_DRAIN)
@@ -412,7 +412,7 @@
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
-	rating = 0 //gun batteries now incompatible with RPED WS edit
+	rating = 0 //Makes it incompatible with RPED
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
@@ -476,6 +476,19 @@
 	charge = 0
 	update_appearance()
 
+/obj/item/stock_parts/cell/gun/kalix
+	name = "Etherbor EWC-5"
+	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the EWC-5, an energy cell compatible with any Etherbor Industries energy weapons."
+	icon_state = "kalix-cell"
+	maxcharge = 12750 // 15 shots at 850 energy per
+	chargerate = 1750
+
+/obj/item/stock_parts/cell/gun/pgf
+	name = "Etherbor EWC-6m"
+	desc = "Exclusive only to the PGF military, the EWC-6m is an Etherbor energy weapon cell designed for military-grade use, including expanded capacity and output."
+	icon_state = "pgf-cell"
+	maxcharge = 20000 // 20 shots at 1000 energy per
+	chargerate = 2000
 
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN

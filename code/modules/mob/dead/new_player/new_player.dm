@@ -221,7 +221,10 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.","Player Setup","Yes","No")
+	var/less_input_message
+	if(SSlag_switch.measures[DISABLE_DEAD_KEYLOOP])
+		less_input_message = " - Notice: Observer freelook is currently disabled."
+	var/this_is_like_playing_right = tgui_alert(src, "Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.[less_input_message]", "Player Setup", list("Yes","No"))
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
@@ -247,8 +250,8 @@
 		observer.client.init_verbs()
 	observer.update_appearance()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	QDEL_NULL(mind)
+	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	qdel(src)
 	return TRUE
 
@@ -289,6 +292,12 @@
 	if(auth_check)
 		return
 
+	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
+		var/name = client.prefs.real_name
+		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
+			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
+			return FALSE
+
 	var/error = IsJobUnavailable(job, ship, check_playtime)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
@@ -307,7 +316,8 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
+		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
+		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
@@ -320,6 +330,7 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
+		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
@@ -361,10 +372,11 @@
 	GLOB.ship_select_tgui.ui_interact(src)
 
 /mob/dead/new_player/proc/can_join_round(silent = FALSE)
-	if(!GLOB.enter_allowed)
-		if(!silent)
-			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-		return FALSE
+	if(SSlag_switch.measures[DISABLE_NON_OBSJOBS])
+		if(silent)
+			return
+		to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
+		return
 
 	if(!SSticker?.IsRoundInProgress())
 		if(!silent)
@@ -394,6 +406,7 @@
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/H = new(loc)
+	GLOB.joined_player_list += ckey
 
 	var/frn = CONFIG_GET(flag/force_random_names)
 	var/admin_anon_names = SSticker.anonymousnames
@@ -414,12 +427,15 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
+	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE
-		mind.active = 0					//we wish to transfer the key manually
-		mind.transfer_to(H)					//won't transfer key since the mind is not active
+		mind.active = FALSE //we wish to transfer the key manually
+		mind.original_character_slot_index = client.prefs.default_slot
+		mind.transfer_to(H) //won't transfer key since the mind is not active
+		mind.set_original_character(H)
 
 	H.name = real_name
 	client.init_verbs()
@@ -479,8 +495,13 @@
 /mob/dead/new_player/proc/register_for_interview()
 	// First we detain them by removing all the verbs they have on client
 	for (var/procpath/client_verb as anything in client.verbs)
-		if(!(client_verb in GLOB.client_verbs_required))
-			remove_verb(client, client_verb)
+		if(client_verb in GLOB.client_verbs_required)
+			continue
+		remove_verb(client, client_verb)
+
+	// Then remove those on their mob as well
+	for (var/procpath/verb_path as anything in verbs)
+		remove_verb(src, verb_path)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)

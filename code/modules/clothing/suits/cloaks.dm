@@ -12,7 +12,6 @@
 	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
 
-
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
 	desc = "Worn by Securistan, ruling their watch with an iron fist."
@@ -187,7 +186,8 @@
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/polar
 	name = "polar cloak"
-	icon_state = "polhood"
+	icon_state = "hoodie_gray"
+	mob_overlay_state = "polhood"
 	desc = "Wear bear on head show little man you big man, kill bear for cloak."
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	cold_protection = HEAD

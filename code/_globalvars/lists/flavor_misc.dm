@@ -98,7 +98,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 	"Helios",
 	"House",
 	"Inverted",
-	"Lamp",	//WS edit, moff ai display
+	"Lamp",
 	"Matrix",
 	"Monochrome",
 	"Murica",

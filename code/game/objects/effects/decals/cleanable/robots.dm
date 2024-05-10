@@ -35,12 +35,12 @@
 	random_icon_states = list("gibarm", "gibleg")
 
 /obj/effect/decal/cleanable/robot_debris/up
-	icon_state = "gibup1"
-	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6", "gib7","gibup1","gibup1")
+	icon_state = "gibup"
+	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6", "gib7","gibup","gibup")
 
 /obj/effect/decal/cleanable/robot_debris/down
-	icon_state = "gibdown1"
-	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6", "gib7","gibdown1","gibdown1")
+	icon_state = "gibdown"
+	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6", "gib7","gibdown","gibdown")
 
 /obj/effect/decal/cleanable/oil
 	name = "motor oil"
@@ -51,10 +51,6 @@
 	blood_state = BLOOD_STATE_OIL
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
-
-/obj/effect/decal/cleanable/oil/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/fuel/oil, 30)
 
 /obj/effect/decal/cleanable/oil/attackby(obj/item/I, mob/living/user)
 	var/attacked_by_hot_thing = I.get_temperature()

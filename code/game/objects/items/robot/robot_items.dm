@@ -4,7 +4,6 @@
 /obj/item/borg
 	icon = 'icons/mob/robot_items.dmi'
 
-
 /obj/item/borg/stun
 	name = "electrically-charged arm"
 	icon_state = "elecarm"
@@ -367,7 +366,7 @@
 	if(charging)
 		return
 	if(candy < candymax)
-		addtimer(CALLBACK(src, .proc/charge_lollipops), charge_delay)
+		addtimer(CALLBACK(src, PROC_REF(charge_lollipops)), charge_delay)
 		charging = TRUE
 
 /obj/item/borg/lollipop/proc/charge_lollipops()
@@ -543,14 +542,14 @@
 	name = "\improper Hyperkinetic Dampening projector"
 	desc = "A device that projects a dampening field that weakens kinetic energy above a certain threshold. <span class='boldnotice'>Projects a field that drains power per second while active, that will weaken and slow damaging projectiles inside its field.</span> Still being a prototype, it tends to induce a charge on ungrounded metallic surfaces."
 	icon = 'icons/obj/device.dmi'
-	icon_state = "shield"
+	icon_state = "shield0"
 	var/maxenergy = 1500
 	var/energy = 1500
 	var/energy_recharge = 7.5
 	var/energy_recharge_cyborg_drain_coefficient = 0.4
 	var/cyborg_cell_critical_percentage = 0.05
 	var/mob/living/silicon/robot/host = null
-	var/datum/proximity_monitor/advanced/dampening_field
+	var/datum/proximity_monitor/advanced/peaceborg_dampener/dampening_field
 	var/projectile_damage_coefficient = 0.5
 	var/projectile_damage_tick_ecost_coefficient = 2	//Lasers get half their damage chopped off, drains 50 power/tick. Note that fields are processed 5 times per second.
 	var/projectile_speed_coefficient = 1.5		//Higher the coefficient slower the projectile.
@@ -600,10 +599,9 @@
 /obj/item/borg/projectile_dampen/proc/activate_field()
 	if(istype(dampening_field))
 		QDEL_NULL(dampening_field)
-	dampening_field = make_field(/datum/proximity_monitor/advanced/peaceborg_dampener, list("current_range" = field_radius, "host" = src, "projector" = src))
 	var/mob/living/silicon/robot/owner = get_host()
-	if(owner)
-		owner.module.allow_riding = FALSE
+	dampening_field = new(owner, field_radius, TRUE, src)
+	owner?.module.allow_riding = FALSE
 	active = TRUE
 
 /obj/item/borg/projectile_dampen/proc/deactivate_field()
@@ -644,11 +642,6 @@
 /obj/item/borg/projectile_dampen/process()
 	process_recharge()
 	process_usage()
-	update_location()
-
-/obj/item/borg/projectile_dampen/proc/update_location()
-	if(dampening_field)
-		dampening_field.HandleMove()
 
 /obj/item/borg/projectile_dampen/proc/process_usage()
 	var/usage = 0
@@ -698,7 +691,7 @@
 
 /obj/item/borg/sight/xray
 	name = "\proper X-ray vision"
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "securearea"
 	sight_mode = BORGXRAY
 
@@ -716,7 +709,7 @@
 /obj/item/borg/sight/material
 	name = "\proper material vision"
 	sight_mode = BORGMATERIAL
-	icon_state = "material"
+	icon_state = "meson"
 
 /obj/item/borg/sight/hud
 	name = "hud"
@@ -756,7 +749,7 @@
 
 /obj/item/borg/apparatus/Initialize()
 	. = ..()
-	RegisterSignal(loc.loc, COMSIG_BORG_SAFE_DECONSTRUCT, .proc/safedecon)
+	RegisterSignal(loc.loc, COMSIG_BORG_SAFE_DECONSTRUCT, PROC_REF(safedecon))
 
 /obj/item/borg/apparatus/Destroy()
 	if(stored)
@@ -805,7 +798,7 @@
 			var/obj/item/O = A
 			O.forceMove(src)
 			stored = O
-			RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, .proc/on_update_icon)
+			RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, TYPE_PROC_REF(/atom, update_icon))
 			update_appearance()
 			return
 	else
@@ -838,7 +831,7 @@
 /obj/item/borg/apparatus/beaker/Initialize()
 	. = ..()
 	stored = new /obj/item/reagent_containers/glass/beaker/large(src)
-	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, .proc/on_update_icon)
+	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, TYPE_PROC_REF(/atom, update_icon))
 	update_appearance()
 
 /obj/item/borg/apparatus/beaker/Destroy()
@@ -898,7 +891,7 @@
 /obj/item/borg/apparatus/beaker/service/Initialize()
 	. = ..()
 	stored = new /obj/item/reagent_containers/food/drinks/drinkingglass(src)
-	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, .proc/on_update_icon)
+	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, TYPE_PROC_REF(/atom, update_icon))
 	update_appearance()
 
 ////////////////////

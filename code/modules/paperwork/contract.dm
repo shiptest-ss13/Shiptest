@@ -244,8 +244,8 @@
 			user.visible_message("<span class='notice'>With a sudden blaze, [H] stands back up.</span>")
 			H.fakefire()
 			fulfillContract(H, TRUE)//Revival contracts are always signed in blood
-			addtimer(CALLBACK(H, /mob/living/carbon/human.proc/fakefireextinguish), 5, TIMER_UNIQUE)
-		addtimer(CALLBACK(src, "resetcooldown"), 300, TIMER_UNIQUE)
+			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, fakefireextinguish)), 5, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(resetcooldown)), 300, TIMER_UNIQUE)
 	else
 		..()
 
@@ -299,12 +299,14 @@
 		id.access = get_all_accesses()+get_all_centcom_access()
 		id.assignment = "Captain"
 		id.update_label()
+		id.update_appearance()
 	else
 		id = new /obj/item/card/id/gold(user.loc)
 		id.registered_name = user.real_name
 		id.access = get_all_accesses()+get_all_centcom_access()
 		id.assignment = "Captain"
 		id.update_label()
+		id.update_appearance()
 		if(worn)
 			if(istype(worn, /obj/item/pda))
 				var/obj/item/pda/PDA = worn

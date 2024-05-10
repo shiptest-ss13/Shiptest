@@ -23,10 +23,9 @@
 	var/heat_capacity = 0
 	var/interactive = TRUE // So mapmakers can disable interaction.
 
-/obj/machinery/atmospherics/components/unary/thermomachine/Initialize()
+/obj/machinery/atmospherics/components/unary/thermomachine/Initialize(mapload)
 	. = ..()
 	initialize_directions = dir
-	SSair.start_processing_machine(src)	//WS edit, initialize thermomachines to SSairs list of tickable machines
 
 /obj/machinery/atmospherics/components/unary/thermomachine/on_construction(obj_color, set_layer)
 	var/obj/item/circuitboard/machine/thermomachine/board = circuit

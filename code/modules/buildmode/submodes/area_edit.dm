@@ -1,5 +1,6 @@
 /datum/buildmode_mode/area_edit
 	key = "areaedit"
+	use_corner_selection = TRUE
 	var/area/storedarea
 	var/image/areaimage
 
@@ -20,18 +21,19 @@
 	storedarea = null
 	return ..()
 
-/datum/buildmode_mode/area_edit/show_help(client/c)
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
-	to_chat(c, "<span class='notice'>Left Mouse Button on obj/turf/mob  = Paint area</span>")
-	to_chat(c, "<span class='notice'>Right Mouse Button on obj/turf/mob = Select area to paint</span>")
-	to_chat(c, "<span class='notice'>Right Mouse Button on buildmode button = Create new area</span>")
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
+/datum/buildmode_mode/area_edit/show_help(client/target_client)
+	to_chat(target_client, span_purple(examine_block(
+		"[span_bold("Select corner")] -> Left Mouse Button on obj/turf/mob\n\
+		[span_bold("Paint area")] -> Left Mouse Button + Alt on turf/obj/mob\n\
+		[span_bold("Select area to paint")] -> Right Mouse Button on obj/turf/mob\n\
+		[span_bold("Create new area")] -> Right Mouse Button on buildmode button"))
+	)
 
-/datum/buildmode_mode/area_edit/change_settings(client/c)
-	var/target_path = input(c, "Enter typepath:", "Typepath", "/area")
+/datum/buildmode_mode/area_edit/change_settings(client/target_client)
+	var/target_path = input(target_client, "Enter typepath:", "Typepath", "/area")
 	var/areatype = text2path(target_path)
 	if(ispath(areatype,/area))
-		var/areaname = input(c, "Enter area name:", "Area name", "Area")
+		var/areaname = input(target_client, "Enter area name:", "Area name", "Area")
 		if(!areaname || !length(areaname))
 			return
 		storedarea = new areatype
@@ -42,18 +44,32 @@
 		storedarea.name = areaname
 		areaimage.loc = storedarea // color our area
 
-/datum/buildmode_mode/area_edit/handle_click(client/c, params, object)
+/datum/buildmode_mode/area_edit/handle_click(client/target_client, params, object)
 	var/list/modifiers = params2list(params)
 
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
 		if(!storedarea)
-			to_chat(c, "<span class='warning'>Configure or select the area you want to paint first!</span>")
+			to_chat(target_client, "<span class='warning'>Configure or select the area you want to paint first!</span>")
 			return
-		var/turf/T = get_turf(object)
-		if(get_area(T) != storedarea)
-			log_admin("Build Mode: [key_name(c)] added [AREACOORD(T)] to [storedarea]")
-			storedarea.contents.Add(T)
+		if(LAZYACCESS(modifiers, ALT_CLICK))
+			var/turf/T = get_turf(object)
+			if(get_area(T) != storedarea)
+				log_admin("Build Mode: [key_name(target_client)] added [AREACOORD(T)] to [storedarea]")
+				storedarea.contents.Add(T)
+			return
+		return ..()
 	else if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		var/turf/T = get_turf(object)
 		storedarea = get_area(T)
 		areaimage.loc = storedarea // color our area
+
+/datum/buildmode_mode/area_edit/handle_selected_area(client/target_client, params)
+	var/list/modifiers = params2list(params)
+
+	if(LAZYACCESS(modifiers, LEFT_CLICK))
+		var/choice = alert("Are you sure you want to fill area?", "Area Fill Confirmation", "Yes", "No")
+		if(choice != "Yes")
+			return
+		for(var/turf/T in block(get_turf(cornerA),get_turf(cornerB)))
+			storedarea.contents.Add(T)
+		log_admin("Build Mode: [key_name(target_client)] set the area of the region from [AREACOORD(cornerA)] through [AREACOORD(cornerB)] to [storedarea].")

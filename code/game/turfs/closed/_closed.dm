@@ -36,11 +36,6 @@
 /turf/closed/indestructible/singularity_act()
 	return
 
-/turf/closed/indestructible/oldshuttle
-	name = "strange shuttle wall"
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-
 /turf/closed/indestructible/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
@@ -49,9 +44,6 @@
 	base_icon_state = "sandstone_wall"
 	baseturfs = /turf/closed/indestructible/sandstone
 	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/indestructible/oldshuttle/corner
-	icon_state = "corner"
 
 /turf/closed/indestructible/splashscreen
 	name = "Space Station 13"
@@ -82,8 +74,8 @@
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 
 /turf/closed/indestructible/riveted
@@ -162,8 +154,8 @@
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 
 /turf/closed/indestructible/alien
@@ -230,7 +222,7 @@
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
+	icon_state = "fakedoor"
 
 /turf/closed/indestructible/rock
 	name = "dense rock"
@@ -260,6 +252,13 @@
 	pixel_y = -4
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
+
+/turf/closed/indestructible/rock/schist
+	name = "schist"
+	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"

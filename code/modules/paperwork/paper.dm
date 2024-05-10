@@ -60,6 +60,9 @@
 	/// state checking on if it should be shown to a viewer.
 	var/datum/weakref/camera_holder
 
+	///If TRUE, staff can read paper everywhere, but usually from requests panel.
+	var/request_state = FALSE
+
 	/// The (text for the) stamps on the paper.
 	var/list/stamps /// Positioning for the stamp in tgui
 	var/list/stamped /// Overlay info
@@ -161,12 +164,13 @@
  * * bold - Whether this text should be rendered completely bold.
  */
 
-/obj/item/paper/proc/add_raw_text(text, font, color, bold)
+/obj/item/paper/proc/add_raw_text(text, font, color, bold, advanced_html)
 	var/new_input_datum = new /datum/paper_input(
 		text,
 		font,
 		color,
 		bold,
+		advanced_html,
 	)
 
 	input_field_count += get_input_field_count(text)
@@ -320,7 +324,7 @@
 	// Are we on fire?  Hard to read if so
 	if(resistance_flags & ON_FIRE)
 		return UI_CLOSE
-	if(camera_holder && can_show_to_mob_through_camera(user))
+	if(camera_holder && can_show_to_mob_through_camera(user) || request_state)
 		return UI_UPDATE
 	if(!in_range(user, src) && !isobserver(user))
 		return UI_CLOSE
@@ -373,7 +377,7 @@
 		return
 
 // Handle writing items.
-	var/writing_stats = attacking_item.get_writing_implement_details()
+	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
 	if(!writing_stats)
 		ui_interact(user)
@@ -485,8 +489,8 @@
 		var/obj/item/clipboard/clipboard = loc
 		// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 		// use the clipboard's pen, if applicable.
-		if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-			holding = clipboard.haspen
+		if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+			holding = clipboard.pen
 	data["held_item_details"] = istype(holding) ? holding.get_writing_implement_details() : null
 
 
@@ -558,8 +562,8 @@
 				var/obj/item/clipboard/clipboard = loc
 				// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 				// use the clipboard's pen, if applicable.
-				if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-					holding = clipboard.haspen
+				if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+					holding = clipboard.pen
 
 			// As of the time of writing, can_write outputs a message to the user so we don't have to.
 			if(!user.can_write(holding))
@@ -576,7 +580,7 @@
 			// Safe to assume there are writing implement details as user.can_write(...) fails with an invalid writing implement.
 			var/writing_implement_data = holding.get_writing_implement_details()
 
-			add_raw_text(paper_input, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"])
+			add_raw_text(paper_input, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"], check_rights_for(user?.client, R_FUN))
 
 			log_paper("[key_name(user)] wrote to [name]: \"[paper_input]\"")
 			to_chat(user, "You have added to your paper masterpiece!");
@@ -598,8 +602,8 @@
 				var/obj/item/clipboard/clipboard = loc
 				// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 				// use the clipboard's pen, if applicable.
-				if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-					holding = clipboard.haspen
+				if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+					holding = clipboard.pen
 
 			// As of the time of writing, can_write outputs a message to the user so we don't have to.
 			if(!user.can_write(holding))
@@ -663,15 +667,18 @@
 	var/colour = ""
 	/// Whether to render the font bold or not.
 	var/bold = FALSE
+	/// Whether the creator of this input field has the R_FUN permission, thus allowing less sanitization
+	var/advanced_html = FALSE
 
-/datum/paper_input/New(_raw_text, _font, _colour, _bold)
+/datum/paper_input/New(_raw_text, _font, _colour, _bold, _advanced_html)
 	raw_text = _raw_text
 	font = _font
 	colour = _colour
 	bold = _bold
+	advanced_html = _advanced_html
 
 /datum/paper_input/proc/make_copy()
-	return new /datum/paper_input(raw_text, font, colour, bold);
+	return new /datum/paper_input(raw_text, font, colour, bold, advanced_html);
 
 /datum/paper_input/proc/to_list()
 	return list(
@@ -679,6 +686,7 @@
 		font = font,
 		color = colour,
 		bold = bold,
+		advanced_html = advanced_html,
 	)
 
 /// A single instance of a saved stamp on paper.

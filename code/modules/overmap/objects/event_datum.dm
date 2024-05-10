@@ -90,7 +90,7 @@
 		/obj/effect/meteor/irradiated=10,
 		/obj/effect/meteor/tunguska = 1
 	)
-
+/* commented out until ion storms aren't literal torture
 ///ION STORM - explodes your IPCs
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
@@ -128,7 +128,7 @@
 	chance_to_affect = 25
 	chain_rate = 4
 	strength = 6
-
+*/
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
@@ -338,9 +338,11 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/electric/minor = 45,
 	/datum/overmap/event/electric = 40,
 	/datum/overmap/event/electric/major = 35,
+	/* commented out until ion storms aren't literal torture
 	/datum/overmap/event/emp/minor = 45,
 	/datum/overmap/event/emp = 40,
 	/datum/overmap/event/emp/major = 45,
+	*/
 	/datum/overmap/event/meteor/minor = 45,
 	/datum/overmap/event/meteor = 40,
 	/datum/overmap/event/meteor/major = 35,

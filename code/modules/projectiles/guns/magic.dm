@@ -17,9 +17,7 @@
 	var/can_charge = TRUE
 	var/ammo_type
 	var/no_den_usage
-	clumsy_check = 0
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
-	pin = /obj/item/firing_pin/magic
 
 /obj/item/gun/magic/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(no_den_usage)
@@ -51,7 +49,8 @@
 /obj/item/gun/magic/Initialize()
 	. = ..()
 	charges = max_charges
-	chambered = new ammo_type(src)
+	if(ammo_type)
+		chambered = new ammo_type(src)
 	if(can_charge)
 		START_PROCESSING(SSobj, src)
 

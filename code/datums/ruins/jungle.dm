@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\jungleruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/jungle
 	prefix = "_maps/RandomRuins/JungleRuins/"
@@ -54,23 +54,11 @@
 	description = "A rare seedling plant."
 	suffix = "jungle_seedling.dmm"
 
-/datum/map_template/ruin/jungle/demon
-	name = "Demonic Office"
-	id = "demonjungle"
-	description = "They handle the paperwork that comes with selling your soul."
-	suffix = "jungle_demon.dmm"
-
 /datum/map_template/ruin/jungle/hangar
 	name = "Abandoned Hangar"
 	id = "hangar"
 	description = "An abandoned hangar containing exosuits."
 	suffix = "jungle_hangar.dmm"
-
-/datum/map_template/ruin/jungle/spider
-	name = "Jungle Spiders"
-	id = "spiderjungle"
-	description = "A genetic experiment gone wrong."
-	suffix = "jungle_spider.dmm"
 
 /datum/map_template/ruin/jungle/pirate
 	name = "Jungle Pirates"
@@ -89,12 +77,6 @@
 	id = "monkeyvillage"
 	description = "A small village of monkeys."
 	suffix = "jungle_village.dmm"
-
-/datum/map_template/ruin/jungle/witch
-	name = "Jungle Witch"
-	id = "witchjungle"
-	description = "Some heretical sorcerer living in a dingy hut, with a cat."
-	suffix = "jungle_witch.dmm"
 
 /datum/map_template/ruin/jungle/roommates
 	name = "Roommates"
@@ -131,6 +113,12 @@
 	id = "medtech-facility"
 	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
 	suffix = "jungle_medtech_outbreak.dmm"
+
+/datum/map_template/ruin/jungle/cavecrew
+	name = "Frontiersmen Cave"
+	id = "cavecrew"
+	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
+	suffix = "jungle_cavecrew.dmm"
 
 /datum/map_template/ruin/jungle/library
 	name = "Abandoned Library"

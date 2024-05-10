@@ -17,7 +17,7 @@
 	. = ..()
 	if(.)
 		return
-	RegisterSignal(H, COMSIG_MOB_ATTACK_RANGED, .proc/on_ranged_attack)
+	RegisterSignal(H, COMSIG_MOB_ATTACK_RANGED, PROC_REF(on_ranged_attack))
 
 /datum/mutation/human/telekinesis/on_losing(mob/living/carbon/human/H)
 	. = ..()
@@ -32,4 +32,4 @@
 /datum/mutation/human/telekinesis/proc/on_ranged_attack(datum/source, atom/target)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(target, /atom.proc/attack_tk, owner)
+	INVOKE_ASYNC(target, TYPE_PROC_REF(/atom, attack_tk), owner)

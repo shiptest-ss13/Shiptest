@@ -39,6 +39,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/cellcharger
+	name = "Cell Charger Crate"
+	desc = "Contains a cell charger, able to charge all sorts of power cells."
+	cost = 4000
+	contains = list(/obj/machinery/cell_charger)
+
+
 /datum/supply_pack/tools/rped
 	name = "RPED crate"
 	desc = "Tired of deconstructing all of your machines just to replace the power cells? This device has you covered. Actual parts not included."
@@ -116,24 +123,24 @@
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/watertank
-	name = "Water Tank Crate"
+	name = "Fresh Water Supply Crate"
 	desc = "Contains a tank of dihydrogen monoxide. Sounds dangerous."
-	cost = 600
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/hightank
-	name = "Large Water Tank Crate"
+	name = "Large Fresh Water Supply Crate"
 	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
-	cost = 1200
+	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/foamtank
 	name = "Firefighting Foam Tank Crate"
-	desc = "Contains a tank of firefighting foam. Also known as \"plasmaman's bane\"."
+	desc = "Contains a tank of firefighting foam. Also known as \"Phorid's Bane\"."
 	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"

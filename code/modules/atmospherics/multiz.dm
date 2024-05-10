@@ -16,7 +16,7 @@
 	. += multiz_overlay_node
 
 ///Attempts to locate a multiz pipe that's above us, if it finds one it merges us into its pipenet
-/obj/machinery/atmospherics/pipe/simple/multiz/pipeline_expansion()
+/obj/machinery/atmospherics/pipe/simple/multiz/pipeline_expansion(datum/pipeline/reference)
 	icon = 'icons/obj/atmos.dmi' //Just to refresh.
 	var/turf/T = get_turf(src)
 	var/obj/machinery/atmospherics/pipe/simple/multiz/above = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(T.above())

@@ -17,6 +17,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
+"aV" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
 "bu" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -69,6 +77,19 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/engine,
 /area/ruin/powered)
+"cN" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
 "cZ" = (
 /obj/structure/table,
 /obj/machinery/recharger{
@@ -106,6 +127,14 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
+/area/ruin/powered)
+"dQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "dR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -174,6 +203,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
+"fh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/powered)
 "fl" = (
 /obj/structure/table_frame,
 /obj/item/shard{
@@ -208,23 +246,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
-"fG" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/item/shard,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
-	},
+"fO" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"fJ" = (
+"fY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -232,14 +258,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
-"fO" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/turf/open/floor/plating,
+"ge" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "gn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -291,13 +321,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
-"hq" = (
-/obj/structure/chair/office{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "hC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -507,18 +530,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
-"nF" = (
-/obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
 "nQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
@@ -556,6 +567,18 @@
 "oH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"oL" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/powered)
 "oW" = (
 /obj/structure/rack,
@@ -710,20 +733,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
-"sT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
+"sS" = (
+/obj/structure/rack,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/fire{
+	pixel_x = 3;
+	pixel_y = -3
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "tu" = (
 /obj/structure/table,
@@ -741,11 +761,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"uc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "uu" = (
@@ -913,6 +928,14 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/powered)
+"zN" = (
+/obj/effect/spawner/structure/window,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
 "zQ" = (
 /obj/structure/table/glass,
 /obj/effect/turf_decal/industrial/warning{
@@ -982,10 +1005,28 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
+"BD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
 "BH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
+	},
+/area/ruin/powered)
+"BI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
 	},
 /area/ruin/powered)
 "BS" = (
@@ -1057,13 +1098,6 @@
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
-"FM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "FO" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1145,6 +1179,14 @@
 /area/ruin/powered)
 "Jb" = (
 /turf/closed/wall,
+/area/ruin/powered)
+"Jm" = (
+/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Jq" = (
 /obj/effect/turf_decal/industrial/loading,
@@ -1281,17 +1323,12 @@
 "Nb" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/powered)
-"Nd" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
+"NN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
 	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "OB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1364,21 +1401,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/powered)
-"Qa" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/powered)
 "Qc" = (
 /obj/machinery/plumbing/tank,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1401,16 +1423,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
-"Qr" = (
-/obj/machinery/light/directional/south,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "QP" = (
 /obj/machinery/door/airlock/vault/derelict,
@@ -1478,30 +1490,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
-"SL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
 "Tb" = (
 /obj/machinery/plumbing,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
-"Tc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
 "Te" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"TY" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Ub" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -1516,18 +1524,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
-"Ud" = (
-/obj/structure/rack,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/fire{
-	pixel_x = 3;
-	pixel_y = -3
+"Uo" = (
+/obj/item/paper{
+	default_raw_text = "First, pack the medpens in a box, this is nessarary or else the launchpad won't take the pens. Second, leave them on the pad, and click send. From there, they will be managed and transported to mining vendors all over  the galaxy.";
+	name = "Factory loading instructions"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "UH" = (
 /turf/open/floor/plating,
@@ -1588,6 +1590,20 @@
 	},
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"VY" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/shard,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "Wa" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1722,13 +1738,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
-"ZJ" = (
-/obj/item/paper{
-	default_raw_text = "First, pack the medpens in a box, this is nessarary or else the launchpad won't take the pens. Second, leave them on the pad, and click send. From there, they will be managed and transported to mining vendors all over  the galaxy.";
-	name = "Factory loading instructions"
-	},
-/turf/open/floor/engine,
-/area/ruin/powered)
 "ZM" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -1749,6 +1758,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/ruin/powered)
+"ZQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 
 (1,1,1) = {"
@@ -2066,17 +2079,17 @@ ku
 Jb
 kF
 sE
-sE
-nF
-hq
-FM
-Qr
+gS
+cN
+aV
+dQ
+Jm
 Jb
 hY
 kk
 Qq
-fG
-xd
+VY
+Qq
 mh
 Hp
 AO
@@ -2097,17 +2110,17 @@ pB
 dZ
 bu
 sE
-gS
-Nd
-uc
-Ud
-SL
+sE
+KU
+ZQ
+sS
+ge
 Ei
 qs
 Wa
 Qk
-fJ
-eI
+fY
+fh
 zk
 rN
 iP
@@ -2118,7 +2131,7 @@ wq
 QP
 Fd
 Fd
-ZJ
+Uo
 Jq
 lM
 az
@@ -2137,8 +2150,8 @@ FO
 sz
 Rs
 Lj
-sT
-SE
+BI
+TY
 kS
 SE
 SE
@@ -2168,8 +2181,8 @@ Jb
 hY
 en
 Bn
-Qa
-rf
+oL
+zN
 yc
 rf
 rf
@@ -2199,8 +2212,8 @@ Jb
 hn
 ir
 ad
-Tc
-ad
+NN
+BD
 zk
 ad
 oH
