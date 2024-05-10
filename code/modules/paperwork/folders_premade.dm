@@ -26,6 +26,10 @@
 	desc = "A folder with a Syndicate color scheme."
 	icon_state = "folder_syndie"
 
+/obj/item/folder/suns
+	desc = "A fancy purple folder with the SUNS insignia."
+	icon_state = "folder_suns"
+
 /obj/item/folder/documents
 	var/document = /obj/item/documents/nanotrasen
 	name = "folder- 'TOP SECRET'"
@@ -61,3 +65,10 @@
 	document = /obj/item/documents/terragov
 	desc = "A green folder with a Terran Regency seal."
 	icon_state = "folder_terragovred"
+
+/obj/item/folder/documents/suns
+	document = /obj/item/documents/suns
+	desc = "A fancy purple folder with the SUNS insignia."
+	icon_state = "folder_sunsred"
+
+
