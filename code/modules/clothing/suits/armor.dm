@@ -166,23 +166,11 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/capcarapace/alt
-	name = "captain's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "carapace_ntformal"
-	item_state = "capspacesuit"
-
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
 	desc = "Worn by a captain to show their class."
 	icon_state = "carapace_formal"
 	item_state = "bio_suit"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/minutemen
-	name = "Colonial Minutemen general coat"
-	desc = "A very fancy coat used by generals of the Colonial Minutemen."
-	icon_state = "carapace_minutemen"
-	item_state = "carapace_minutemen"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/duster
 	name = "captain's duster"
@@ -203,12 +191,6 @@
 	clothing_flags = BLOCKS_SHOVE_KNOCKDOWN
 	strip_delay = 80
 	equip_delay_other = 60
-
-/obj/item/clothing/suit/armor/riot/minutemen
-	name = "black riot suit"
-	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
-	icon_state = "riot_minutemen"
-
 
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"

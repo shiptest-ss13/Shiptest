@@ -87,7 +87,7 @@
 				/obj/item/assembly/flash/handheld = 1,
 				/obj/item/restraints/handcuffs/cable/zipties = 1,
 				/obj/item/restraints/handcuffs = 1,
-				/obj/item/radio/off = 1,
+				/obj/item/radio = 1,
 				/obj/item/lighter = 3,
 				/obj/item/storage/box/matches = 3,
 				/obj/item/reagent_containers/syringe/contraband/space_drugs = 1,
@@ -1031,13 +1031,13 @@
 		/obj/structure/mecha_wreckage/ripley = 15,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
 		/obj/structure/mecha_wreckage/ripley/mkii = 9,
-		/obj/structure/mecha_wreckage/ripley/cmm = 9
+		/obj/structure/mecha_wreckage/ripley/clip = 9
 		)
 
 /obj/effect/spawner/lootdrop/waste/mechwreck/rare
 	loot = list(
 		/obj/structure/mecha_wreckage/durand = 12.5,
-		/obj/structure/mecha_wreckage/durand/cmm = 12.5,
+		/obj/structure/mecha_wreckage/durand/clip = 12.5,
 		/obj/structure/mecha_wreckage/odysseus = 25,
 		/obj/structure/mecha_wreckage/gygax = 25
 		)

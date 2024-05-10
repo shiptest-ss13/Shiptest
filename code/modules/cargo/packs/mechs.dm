@@ -75,7 +75,7 @@ Build Your Own Suit
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
-	desc = "The kit to a bulky suit most frequently used by the Colonial Minutemen, older models tend to find themselves disassembled and sold off."
+	desc = "The kit to a bulky suit most frequently used by the CLIP Minutemen, older models tend to find themselves disassembled and sold off."
 	cost = 15000
 	contains = list(
 		/obj/item/mecha_parts/chassis/durand,

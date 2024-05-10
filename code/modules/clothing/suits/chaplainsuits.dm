@@ -31,20 +31,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/chaplainsuit/studentuni
-	name = "student robe"
-	desc = "The uniform of a bygone institute of learning."
-	icon_state = "studentuni"
-	item_state = "studentuni"
-	body_parts_covered = ARMS|CHEST
-
-/obj/item/clothing/suit/chaplainsuit/witchhunter
-	name = "witchunter garb"
-	desc = "This worn outfit saw much use back in the day."
-	icon_state = "witchhunter"
-	item_state = "witchhunter"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit
 	name = "monk's habit"
 	desc = "A few steps above rended sackcloth."

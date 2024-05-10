@@ -331,7 +331,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "bq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1180,10 +1180,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/item/storage/firstaid/fire,
 /obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/tech,
@@ -1570,10 +1567,7 @@
 	pixel_x = -25;
 	pixel_y = 24
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "ss" = (
@@ -2227,7 +2221,7 @@
 /obj/structure/catwalk/over,
 /obj/item/cigbutt/roach,
 /obj/item/reagent_containers/food/snacks/burrito,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Dr" = (
 /obj/machinery/door/airlock{
@@ -2484,6 +2478,9 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "KI" = (
@@ -2554,8 +2551,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
-/obj/structure/salvageable/computer{
-	dir = 8
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2589,7 +2587,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "OF" = (
-/obj/machinery/fax,
+/obj/machinery/fax/indie,
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -2622,7 +2620,7 @@
 	dir = 8
 	},
 /obj/item/chair/plastic,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Qh" = (
 /obj/machinery/power/apc/auto_name/directional/south,

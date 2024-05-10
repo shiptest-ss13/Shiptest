@@ -386,10 +386,7 @@
 /obj/item/clothing/suit/hawaiian,
 /obj/item/spacecash/bundle/c1000,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -538,9 +535,7 @@
 /area/ship/hallway/starboard)
 "dq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -741,8 +736,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eS" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/directional/west,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eT" = (
@@ -1018,9 +1016,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "gM" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "gR" = (
@@ -1163,10 +1159,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "hN" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1261,10 +1254,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -1527,9 +1517,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
 "jP" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
@@ -1710,9 +1698,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "ll" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/library)
@@ -2026,9 +2012,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -2036,7 +2020,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "mV" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "na" = (
@@ -2484,8 +2468,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "qa" = (
-/obj/structure/chair/sofa{
-	dir = 4;
+/obj/structure/chair/sofa/brown/directional/east{
 	icon_state = "sofacorner"
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -2691,9 +2674,7 @@
 /obj/item/cultivator,
 /obj/item/storage/box/beakers,
 /obj/item/plant_analyzer,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/clothing/gloves/botanic_leather,
 /obj/effect/turf_decal/siding/wood{
@@ -2893,10 +2874,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sQ" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
@@ -3062,9 +3040,7 @@
 /area/ship/hallway/aft)
 "uf" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/grass,
 /area/ship/hallway/central)
@@ -3241,8 +3217,7 @@
 /turf/open/floor/grass/fairy,
 /area/ship/crew/hydroponics)
 "vB" = (
-/obj/structure/chair/sofa{
-	dir = 4;
+/obj/structure/chair/sofa/brown/directional/east{
 	icon_state = "sofaend_right"
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -3523,9 +3498,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
 "xo" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
@@ -3717,10 +3690,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "ys" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/storage/firstaid/o2,
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 8
@@ -3791,9 +3761,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4074,6 +4042,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bg" = (
@@ -4195,9 +4164,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "BT" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4566,9 +4533,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Et" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "Eu" = (
@@ -4598,10 +4563,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4795,9 +4757,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "FP" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -5063,10 +5023,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/storage/firstaid/o2,
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 8
@@ -5099,9 +5056,7 @@
 	dir = 8;
 	pixel_x = -1
 	},
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -5111,7 +5066,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "HW" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "Ie" = (
@@ -5534,9 +5489,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Lu" = (
-/obj/structure/chair/sofa/right{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/right/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "LA" = (
@@ -5719,9 +5672,7 @@
 	dir = 8;
 	pixel_x = -1
 	},
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
@@ -5731,9 +5682,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "Np" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
@@ -6274,10 +6223,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "QU" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -6425,7 +6371,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "Rw" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -6680,9 +6626,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Tx" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -6763,10 +6707,9 @@
 /obj/item/radio,
 /obj/item/gun/energy/e_gun/advtaser,
 /obj/item/pen/survival,
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "equipment locker";
-	pixel_y = 28;
 	req_access = list(30)
 	},
 /obj/item/card/id/captains_spare,
@@ -6837,7 +6780,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Ui" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "Um" = (
@@ -7186,9 +7129,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "WB" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -7422,9 +7363,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Yc" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -7448,6 +7387,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)

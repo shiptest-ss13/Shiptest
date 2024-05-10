@@ -10,7 +10,7 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "an" = (
-/obj/structure/chair/comfy/brown,
+/obj/structure/chair/comfy/orange/directional/south,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
@@ -200,9 +200,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/office)
 "cg" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /turf/open/floor/carpet/royalblue,
@@ -1160,9 +1158,7 @@
 /turf/template_noop,
 /area/template_noop)
 "lD" = (
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -1343,9 +1339,7 @@
 	id = "sg_par_office";
 	name = "shutter control"
 	},
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/left/directional/north,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -1853,9 +1847,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "rT" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/canteen)
@@ -1866,9 +1858,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/crewtwo)
 "sb" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
@@ -1884,15 +1874,14 @@
 	pixel_x = 8;
 	pixel_y = 12
 	},
-/obj/machinery/fax,
+/obj/machinery/fax/solgov,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "sp" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = 28;
+/obj/structure/closet/secure_closet/wall/directional/north{
 	name = "navigational supplies";
 	req_access_txt = "19"
 	},
@@ -2025,6 +2014,7 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer2{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "ul" = (
@@ -2408,9 +2398,7 @@
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
 "xk" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/canteen)
@@ -2450,7 +2438,8 @@
 /area/ship/hallway/starboard)
 "xU" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/airalarm/directional/south,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "xX" = (
@@ -2483,7 +2472,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/folder/solgov,
 /obj/item/folder/solgov,
-/obj/item/folder/solgov/red,
+/obj/item/folder/documents/solgov,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/head/solgov,
 /obj/item/storage/belt/sabre/solgov,
@@ -2866,11 +2855,9 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = -28;
 	req_access_txt = "19"
 	},
 /turf/open/floor/carpet/royalblue,
@@ -3540,6 +3527,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "IO" = (
@@ -3581,8 +3571,8 @@
 /obj/item/clothing/under/solgov/formal,
 /obj/item/folder/solgov,
 /obj/item/folder/solgov,
-/obj/item/folder/solgov/red,
-/obj/item/folder/solgov/red,
+/obj/item/folder/documents/solgov,
+/obj/item/folder/documents/solgov,
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
 	name = "\proper captain's locker";
@@ -4011,9 +4001,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "MF" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "ML" = (
@@ -4316,10 +4304,7 @@
 /area/ship/cargo/office)
 "Pp" = (
 /obj/structure/table/wood,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/wall/directional/east,
 /obj/item/clipboard,
 /obj/item/paper_bin/carbon,
 /obj/item/clothing/accessory/waistcoat/solgov,
@@ -4490,9 +4475,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "QQ" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/canteen)
@@ -4551,6 +4534,9 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8;
 	name = "Air to Distro"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
@@ -4622,16 +4608,12 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "RS" = (
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
 "Sa" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /obj/machinery/firealarm/directional/south,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/royalblue,

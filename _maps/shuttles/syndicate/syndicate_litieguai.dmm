@@ -67,6 +67,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
+"bz" = (
+/obj/machinery/light/small/directional/south,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "bD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -286,7 +292,7 @@
 /area/ship/hallway/central)
 "hF" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hQ" = (
@@ -1021,11 +1027,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	req_access_txt = "5";
-	pixel_y = 28
+	req_access_txt = "5"
 	},
 /obj/item/ammo_box/magazine/m10mm/rubber,
 /obj/item/ammo_box/magazine/m10mm/rubber,
@@ -1093,9 +1098,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "wt" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/turf_decal/number/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1379,7 +1382,6 @@
 /area/ship/medical)
 "zT" = (
 /obj/effect/turf_decal/number/zero,
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ah" = (
@@ -1403,12 +1405,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "armor locker";
-	req_access_txt = "5";
-	pixel_y = -28
+	req_access_txt = "5"
 	},
 /obj/item/clothing/suit/armor/vest/marine/trauma,
 /obj/item/clothing/suit/armor/vest/marine/trauma,
@@ -1490,12 +1490,10 @@
 /obj/item/storage/belt/medical,
 /obj/item/healthanalyzer/advanced,
 /obj/item/hypospray/mkii/CMO,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "solgov_wall";
 	name = "chief medical officer's closet";
-	req_access_txt = "40";
-	pixel_x = -28
+	req_access_txt = "40"
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/defibrillator/compact/loaded,
@@ -1561,12 +1559,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "clothing locker";
-	req_access_txt = "5";
-	pixel_y = -28
+	req_access_txt = "5"
 	},
 /obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/under/syndicate/medic,
@@ -1649,6 +1645,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2292,7 +2291,7 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 1
 	},
 /area/ship/storage/eva)
@@ -2392,11 +2391,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "equipment locker";
-	req_access_txt = "5";
-	pixel_y = 28
+	req_access_txt = "5"
 	},
 /obj/item/healthanalyzer/advanced,
 /obj/item/healthanalyzer/advanced,
@@ -2790,6 +2788,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/science)
+"VN" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "WB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2842,12 +2844,10 @@
 /obj/item/areaeditor/shuttle,
 /obj/item/megaphone/command,
 /obj/item/clothing/glasses/sunglasses,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "solgov_wall";
 	name = "captain's closet";
-	req_access_txt = "20";
-	pixel_x = -28
+	req_access_txt = "20"
 	},
 /obj/item/gun/ballistic/revolver,
 /obj/item/clothing/suit/armor/vest/capcarapace/cybersun,
@@ -2873,10 +2873,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Xx" = (
@@ -2925,7 +2922,9 @@
 	dir = 4
 	},
 /obj/item/storage/toolbox/electrical,
-/obj/machinery/light/small/directional/south,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "YA" = (
@@ -3158,7 +3157,7 @@ HU
 ZC
 XL
 Yw
-ZC
+bz
 fp
 UG
 vx
@@ -3172,7 +3171,7 @@ gL
 UG
 UG
 Ti
-UO
+VN
 zT
 kh
 UO
@@ -3182,7 +3181,7 @@ ZC
 KS
 Xu
 ZC
-UG
+fp
 UG
 UG
 Ra
@@ -3194,7 +3193,7 @@ tO
 Ra
 UG
 UG
-UG
+Ti
 UO
 wt
 xW
