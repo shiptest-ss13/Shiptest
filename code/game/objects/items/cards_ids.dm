@@ -180,7 +180,20 @@
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
-		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] \the [initial(name)] [(!registered_name) ? "(" : "([registered_name]"][(!assignment) ? ")" : ", [assignment])"].</span>", "<span class='notice'>You show \the [initial(name)] [(!registered_name) ? "(" : "([registered_name],"] [(!assignment) ? ")" : "[assignment])"].</span>")
+		var/id_message = "\the [initial(name)] "
+		var/list/id_info = list()
+		if(assignment)
+			id_info += "JOB: [assignment]"
+		if(registered_name)
+			id_info += "NAME: [registered_name]"
+		if(ship_access)
+			id_info += "SHIP: [ship_access]"
+		for(var/info in id_info)
+			id_message += " [info]"
+		var/self_message = span_notice("You show [id_message]")
+		var/other_message = span_notice("[user] shows you: [icon2html(src, viewers(user))] [id_message]")
+
+		user.visible_message(other_message, self_message)
 	add_fingerprint(user)
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
@@ -332,11 +345,20 @@
 		msg += "<B>AGE:</B>"
 		msg += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
+		msg += "<B>SHIP ACCESS:</B>"
+
+		var/list/ship_factions = list()
+		for(var/datum/overmap/ship/controlled/ship in ship_access)
+			var/faction = ship.get_faction()
+			if(!(faction in ship_factions))
+				ship_factions += faction
+		msg += "<B>[ship_factions.Join(", ")]</B>"
+
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		msg += "<B>SHIP ACCESS:</B>"
 		msg += "[ship_names.Join(", ")]"
+
 	if(registered_account)
 		msg += "<B>ACCOUNT:</B>"
 		msg += "LINKED ACCOUNT HOLDER: '[registered_account.account_holder]'"
