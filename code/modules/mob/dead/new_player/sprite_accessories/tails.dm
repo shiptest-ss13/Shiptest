@@ -33,16 +33,13 @@
 	icon_state = "cat"
 	color_src = HAIR
 
+#warn why... IS this an option????
 /datum/sprite_accessory/mutant_part/tails/human/cat/slime
 	name = "Slimecat"
-	icon_state = "cat"
-	color_src = HAIR
 	image_alpha = 150
 
 /datum/sprite_accessory/mutant_part/tails_animated/human/cat/slime
 	name = "Slimecat"
-	icon_state = "cat"
-	color_src = HAIR
 	image_alpha = 150
 
 /datum/sprite_accessory/mutant_part/tails/human/fox
@@ -58,13 +55,11 @@
 	color_src = HAIR
 
 /datum/sprite_accessory/mutant_part/tails/human/fox/alt
-	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox 2"
 	icon_state = "fox2"
 	color_src = HAIR
 
 /datum/sprite_accessory/mutant_part/tails_animated/human/fox/alt
-	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox 2"
 	icon_state = "fox2"
 	color_src = HAIR

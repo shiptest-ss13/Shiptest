@@ -47,6 +47,7 @@
 
 		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		// ! not a great way of randomizing, due the removal of color_list_ethereal as a necessary requirement for elzu
 		FEATURE_ETHEREAL_COLOR = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
 		FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
 		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
