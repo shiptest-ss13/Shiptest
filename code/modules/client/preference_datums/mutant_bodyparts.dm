@@ -81,13 +81,6 @@
 	mut_part_type = /datum/sprite_accessory/mutant_part/spider_spinneret
 	default_value = "Plain"
 
-/datum/preference/mutant_bodypart/spider_mandibles
-	name = "Spider Mandibles"
-	external_key = "feature_spider_mandibles"
-
-	mut_part_type = /datum/sprite_accessory/mutant_part/spider_mandibles
-	default_value = "Plain"
-
 /datum/preference/mutant_bodypart/moth_markings
 	name = "Moth Markings"
 	external_key = "feature_moth_markings"

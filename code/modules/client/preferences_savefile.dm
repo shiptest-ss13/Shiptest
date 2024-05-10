@@ -547,7 +547,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// features["squid_face"]			= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
 	features["ipc_screen"]				= sanitize_inlist(features["ipc_screen"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens])
 	// features["ipc_antenna"]			= sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
-	features["ipc_tail"]				= sanitize_inlist(features["ipc_tail"], GLOB.ipc_tail_list)
+	features["ipc_tail"]				= sanitize_inlist(features["ipc_tail"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_tail])
 	features["ipc_chassis"]				= sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["ipc_brain"]				= sanitize_inlist(features["ipc_brain"], GLOB.ipc_brain_list)
 	// features["kepori_feathers"]		= sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")

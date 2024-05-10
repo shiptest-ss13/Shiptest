@@ -1001,6 +1001,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					mutant_category = 0
 			*/
 
+			/*
 			if("squid_face" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -2321,7 +2322,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("ipc_tail")
 					var/new_ipc_tail
 
-					new_ipc_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.ipc_tail_list
+					new_ipc_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_tail]
 
 					if(new_ipc_tail)
 						features["ipc_tail"] = new_ipc_tail
