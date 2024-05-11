@@ -155,7 +155,6 @@
 	var/assignment = null
 	var/access_txt // mapping aid
 	var/datum/bank_account/registered_account
-	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
 	var/registered_age = 18 // default age for ss13 players
@@ -173,8 +172,6 @@
 /obj/item/card/id/Destroy()
 	if (registered_account)
 		registered_account.bank_cards -= src
-	if (my_store && my_store.my_card == src)
-		my_store.my_card = null
 	return ..()
 
 /obj/item/card/id/attack_self(mob/user)
@@ -189,162 +186,18 @@
 			if(NAMEOF(src, assignment),NAMEOF(src, registered_name),NAMEOF(src, registered_age))
 				update_label()
 
-/obj/item/card/id/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/holochip))
-		insert_money(W, user)
-		return
-	else if(istype(W, /obj/item/spacecash/bundle))
-		insert_money(W, user, TRUE)
-		return
-	else if(istype(W, /obj/item/coin))
-		insert_money(W, user, TRUE)
-		return
-	else if(istype(W, /obj/item/storage/bag/money))
-		var/obj/item/storage/bag/money/money_bag = W
-		var/list/money_contained = money_bag.contents
-
-		var/money_added = mass_insert_money(money_contained, user)
-
-		if (money_added)
-			to_chat(user, "<span class='notice'>You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account.</span>")
-		return
-	else
-		return ..()
-
-/obj/item/card/id/proc/insert_money(obj/item/I, mob/user, physical_currency)
-	var/cash_money = I.get_item_credit_value()
-	if(!cash_money)
-		to_chat(user, "<span class='warning'>[I] doesn't seem to be worth anything!</span>")
-		return
-
-	if(!registered_account)
-		to_chat(user, "<span class='warning'>[src] doesn't have a linked account to deposit [I] into!</span>")
-		return
-
-	registered_account.adjust_money(cash_money)
-	SSblackbox.record_feedback("amount", "credits_inserted", cash_money)
-	log_econ("[cash_money] credits were inserted into [src] owned by [src.registered_name]")
-	if(physical_currency)
-		to_chat(user, "<span class='notice'>You stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account.</span>")
-	else
-		to_chat(user, "<span class='notice'>You insert [I] into [src], adding [cash_money] credits to the linked account.</span>")
-
-	to_chat(user, "<span class='notice'>The linked account now reports a balance of [registered_account.account_balance] cr.</span>")
-	qdel(I)
-
-/obj/item/card/id/proc/mass_insert_money(list/money, mob/user)
-	if (!money || !money.len)
-		return FALSE
-
-	var/total = 0
-
-	for (var/obj/item/physical_money in money)
-		var/cash_money = physical_money.get_item_credit_value()
-
-		total += cash_money
-
-		registered_account.adjust_money(cash_money)
-	SSblackbox.record_feedback("amount", "credits_inserted", total)
-	log_econ("[total] credits were inserted into [src] owned by [src.registered_name]")
-	QDEL_LIST(money)
-
-	return total
-
-/obj/item/card/id/proc/alt_click_can_use_id(mob/living/user)
-	if(!isliving(user))
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-
-	return TRUE
-
-// Returns true if new account was set.
-/obj/item/card/id/proc/set_new_account(mob/living/user)
-	. = FALSE
-	var/datum/bank_account/old_account = registered_account
-
-	var/new_bank_id = input(user, "Enter your account ID number.", "Account Reclamation", 111111) as num | null
-
-	if (isnull(new_bank_id))
-		return
-
-	if(!alt_click_can_use_id(user))
-		return
-	if(!new_bank_id || new_bank_id < 111111 || new_bank_id > 999999)
-		to_chat(user, "<span class='warning'>The account ID number needs to be between 111111 and 999999.</span>")
-		return
-	if (registered_account && registered_account.account_id == new_bank_id)
-		to_chat(user, "<span class='warning'>The account ID was already assigned to this card.</span>")
-		return
-
-	for(var/A in SSeconomy.bank_accounts)
-		var/datum/bank_account/B = A
-		if(B.account_id == new_bank_id)
-			if (old_account)
-				old_account.bank_cards -= src
-
-			B.bank_cards += src
-			registered_account = B
-			to_chat(user, "<span class='notice'>The provided account has been linked to this ID card.</span>")
-
-			return TRUE
-
-	to_chat(user, "<span class='warning'>The account ID number provided is invalid.</span>")
-	return
-
-/obj/item/card/id/AltClick(mob/living/user)
-	if(!alt_click_can_use_id(user))
-		return
-
-	if(!registered_account)
-		set_new_account(user)
-		return
-
-	var/amount_to_remove =  FLOOR(input(user, "How much do you want to withdraw? Current Balance: [registered_account.account_balance]", "Withdraw Funds", 5) as num|null, 1)
-
-	if(!amount_to_remove || amount_to_remove < 0)
-		return
-	if(!alt_click_can_use_id(user))
-		return
-	if(registered_account.adjust_money(-amount_to_remove))
-		var/obj/item/holochip/holochip = new (user.drop_location(), amount_to_remove)
-		user.put_in_hands(holochip)
-		to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
-		SSblackbox.record_feedback("amount", "credits_removed", amount_to_remove)
-		log_econ("[amount_to_remove] credits were removed from [src] owned by [src.registered_name]")
-		return
-	else
-		var/difference = amount_to_remove - registered_account.account_balance
-		registered_account.bank_card_talk("<span class='warning'>ERROR: The linked account requires [difference] more credit\s to perform that withdrawal.</span>", TRUE)
-
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	if(registered_account)
-		. += "The account linked to the card belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-	. += "<span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
-
-/obj/item/card/id/examine_more(mob/user)
-	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
-
+	. += "<br>CARD INFO:"
 	if(registered_name)
-		msg += "This access card is assigned to <B>[registered_name]</B>."
+		. += "This access card is assigned to <B>[registered_name]</B>."
 	if(registered_age)
-		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
+		. += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
-	if(registered_account)
-		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		msg += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
-		msg += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
-		if(registered_account.account_holder == user.real_name)
-			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
-	else
-		msg += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
-
-	return msg
+		. += "The card has access to the following ships: [ship_names.Join(", ")]"
 
 /obj/item/card/id/GetAccess()
 	return access
@@ -460,7 +313,7 @@ update_label()
 			else
 				return ..()
 
-		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset", "Change Account ID")
+		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset")
 		if(user.incapacitated())
 			return
 		if(popup_input == "Forge/Reset" && !forged)
@@ -511,9 +364,6 @@ update_label()
 			update_label()
 			forged = FALSE
 			to_chat(user, "<span class='notice'>You successfully reset the ID card.</span>")
-			return
-		else if (popup_input == "Change Account ID")
-			set_new_account(user)
 			return
 	return ..()
 

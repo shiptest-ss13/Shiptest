@@ -1,5 +1,6 @@
 /obj/item/card/bank
 	name = "cash card"
+	desc = "Managed by a bank outside the sector."
 	icon_state = "data_1"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 
@@ -145,8 +146,8 @@
 /obj/item/card/bank/examine(mob/user)
 	. = ..()
 	if(registered_account)
-		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		. += "The card indicates that the holder is [registered_account.holder_age] years old. [(registered_account.holder_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
+		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of <B>[registered_account.account_balance] cr</B>."
+		. += "The card indicates that the holder is <B>[registered_account.holder_age] years old</b>. [(registered_account.holder_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 		. += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
 		. += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
 		. += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
