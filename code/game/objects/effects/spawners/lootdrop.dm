@@ -468,7 +468,7 @@
 				/obj/structure/salvageable/destructive_analyzer
 				)
 
-/obj/effect/spawner/lootdrop/whiteship_cere_ripley
+/obj/effect/spawner/lootdrop/ripley
 	name = "25% mech 75% wreckage ripley spawner"
 	loot = list(/obj/mecha/working/ripley/mining = 1,
 				/obj/structure/mecha_wreckage/ripley = 5)
@@ -479,7 +479,7 @@
 	loot = list(
 				/obj/effect/spawner/lootdrop/maintenance = 13,
 				/obj/effect/spawner/lootdrop/salvage_machine = 12,
-				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/effect/spawner/lootdrop/ripley = 12,
 				/obj/structure/closet/crate/secure/loot = 13,
 				"" = 50
 				)
