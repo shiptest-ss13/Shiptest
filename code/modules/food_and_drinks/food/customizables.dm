@@ -50,6 +50,8 @@
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
+			ingredients += I
+			I.reagents.trans_to(src,min(S.reagents.total_volume, 15), transfered_by = user) //limit of 15, we don't want our custom food to be completely filled by just one ingredient with large reagent volume.
 			if(istype(S))
 				if(S.trash)
 					S.generate_trash(get_turf(user))
@@ -60,8 +62,6 @@
 				mix_filling_color(E.filling_color)
 				foodtype |= E.foodtypes
 				update_customizable_overlays(E.filling_color)
-			ingredients += I
-			I.reagents.trans_to(src,min(S.reagents.total_volume, 15), transfered_by = user) //limit of 15, we don't want our custom food to be completely filled by just one ingredient with large reagent volume.
 			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
 			update_food_name(I)
 	else
