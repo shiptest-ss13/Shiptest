@@ -14,8 +14,8 @@
 /datum/bank_account/Destroy()
 	if(add_to_accounts)
 		SSeconomy.bank_accounts -= src
-	for(var/obj/item/card/id/id_card as anything in bank_cards)
-		id_card.registered_account = null
+	for(var/obj/item/card/bank/bank_card as anything in bank_cards)
+		bank_card.registered_account = null
 	SSeconomy.bank_money -= account_balance
 	return ..()
 
@@ -49,10 +49,10 @@
 		return
 	for(var/obj/A in bank_cards)
 		var/icon_source = A
-		if(istype(A, /obj/item/card/id))
-			var/obj/item/card/id/id_card = A
-			if(id_card.uses_overlays)
-				icon_source = id_card.get_cached_flat_icon()
+		if(istype(A, /obj/item/card/bank))
+			var/obj/item/card/bank/bank_card = A
+			if(bank_card.uses_overlays)
+				icon_source = bank_card.get_cached_flat_icon()
 		var/mob/card_holder = recursive_loc_check(A, /mob)
 		if(ismob(card_holder)) //If on a mob
 			if(!card_holder.client || (!(card_holder.client.prefs.chat_toggles & CHAT_BANKCARD) && !force))

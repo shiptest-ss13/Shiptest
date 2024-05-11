@@ -101,6 +101,17 @@
 		if(id_card)
 			return id_card
 
+/mob/living/carbon/human/get_bankcard()
+	//Check hands
+	var/list/obj/item/items_to_check
+	items_to_check += get_active_held_item()
+	items_to_check += get_inactive_held_item()
+	items_to_check += wear_id
+	items_to_check += belt
+	for(var/i in items_to_check)
+		if(i && istype(i, /obj/item/card/bank))
+			return i
+
 /mob/living/carbon/human/get_id_in_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(!held_item)
@@ -137,10 +148,10 @@
 		to_chat(src, "<span class='warning'>You can't bring yourself to use a ranged weapon!</span>")
 		return FALSE
 
-/mob/living/carbon/human/proc/get_bank_account()
+/mob/living/carbon/proc/get_bank_account()
 	RETURN_TYPE(/datum/bank_account)
 	var/datum/bank_account/account
-	var/obj/item/card/id/I = get_idcard()
+	var/obj/item/card/bank/I = get_bankcard()
 
 	if(I && I.registered_account)
 		account = I.registered_account

@@ -33,8 +33,8 @@ GLOBAL_LIST_EMPTY(request_list)
 
 /obj/machinery/bounty_board/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	if(istype(I,/obj/item/card/id))
-		var/obj/item/card/id/current_card = I
+	if(istype(I,/obj/item/card/bank))
+		var/obj/item/card/bank/current_card = I
 		if(current_card.registered_account)
 			current_user = current_card.registered_account
 			return TRUE

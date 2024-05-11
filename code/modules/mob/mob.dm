@@ -1301,6 +1301,9 @@
 /mob/proc/get_idcard(hand_first)
 	return
 
+/mob/proc/get_bankcard()
+	return
+
 /mob/proc/get_id_in_hand()
 	return
 
