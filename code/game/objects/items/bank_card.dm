@@ -1,9 +1,9 @@
 /obj/item/card/bank
 	name = "cash card"
+	icon_state = "data_1"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
-	var/registered_name = null // The name registered_name on the card
-	var/registered_age = 18 // default age for ss13 players
 
+	var/registered_name = null // The name registered_name on the card
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 
@@ -13,13 +13,6 @@
 	if (my_store && my_store.my_card == src)
 		my_store.my_card = null
 	return ..()
-
-/obj/item/card/id/vv_edit_var(var_name, var_value)
-	. = ..()
-	if(.)
-		switch(var_name)
-			if(NAMEOF(src, registered_name),NAMEOF(src, registered_age))
-				update_label()
 
 /obj/item/card/bank/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/holochip))
@@ -143,7 +136,7 @@
 		user.put_in_hands(holochip)
 		to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
 		SSblackbox.record_feedback("amount", "credits_removed", amount_to_remove)
-		log_econ("[amount_to_remove] credits were removed from [src] owned by [src.registered_name]")
+		log_econ("[amount_to_remove] credits were removed from [src] owned by [registered_account.account_holder]")
 		return
 	else
 		var/difference = amount_to_remove - registered_account.account_balance
@@ -151,15 +144,16 @@
 
 /obj/item/card/bank/examine(mob/user)
 	. = ..()
-
-	if(registered_age)
-		. += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
-	if(mining_points)
-		. += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
 	if(registered_account)
 		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
+		. += "The card indicates that the holder is [registered_account.holder_age] years old. [(registered_account.holder_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 		. += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
 		. += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
 		. += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
 	else
 		. += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
+	if(mining_points)
+		. += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+
+/obj/item/card/bank/GetBankCard()
+	return src

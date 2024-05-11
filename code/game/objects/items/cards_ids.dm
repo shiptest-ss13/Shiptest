@@ -149,7 +149,6 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/list/ship_access = list()
 	var/registered_name = null // The name registered_name on the card
@@ -331,8 +330,6 @@
 		msg += "This access card is assigned to <B>[registered_name]</B>."
 	if(registered_age)
 		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
-	if(mining_points)
-		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
 	if(length(ship_access))
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
@@ -719,11 +716,6 @@ update_label()
 	name = "Prisoner #13-007"
 	registered_name = "Prisoner #13-007"
 	icon_state = "prisoner_007"
-
-/obj/item/card/id/mining
-	name = "mining ID"
-	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
-	custom_price = 250
 
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"

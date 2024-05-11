@@ -249,7 +249,7 @@
 	switch(action)
 		if("Claim")
 			var/mob/M = usr
-			var/obj/item/card/id/I = M.get_idcard(TRUE)
+			var/obj/item/card/bank/I = M.get_bankcard()
 			if(points)
 				if(I)
 					I.mining_points += points
