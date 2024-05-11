@@ -1,5 +1,3 @@
-#define BANDAGE_DAMAGE_COEFF 5
-
 /datum/component/bandage
 	/// How much damage do we heal?
 	var/healing_speed = 0
@@ -13,7 +11,7 @@
 	/// The person this bandage is applied to
 	var/mob/living/mummy
 
-/datum/component/bandage/Initialize(_healing_speed, bleed_reduction, _durability, _bandage_name, _trash_item)
+/datum/component/bandage/Initialize(_healing_speed, _bleed_reduction, _durability, _bandage_name, _trash_item)
 	if(!istype(parent, /obj/item/bodypart))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/bodypart/BP = parent
@@ -22,6 +20,8 @@
 		return COMPONENT_INCOMPATIBLE
 	if(_healing_speed)
 		healing_speed = _healing_speed
+	if(_bleed_reduction)
+		bleed_reduction = _bleed_reduction
 	if(_durability)
 		durability = _durability
 	if(_bandage_name)
@@ -34,7 +34,7 @@
 /datum/component/bandage/proc/check_damage(damage, damagetype = BRUTE, def_zone = null)
 	if(parent != mummy.get_bodypart(check_zone(def_zone)))
 		return
-	durability = durability - damage * BANDAGE_DAMAGE_COEFF
+	durability = durability - damage / 100 * initial(durability) //take incoming damage as a % of durability
 	if(durability <= 0)
 		drop_bandage()
 
@@ -44,10 +44,8 @@
 	var/actual_heal_speed = healing_speed //TODO: add modifiers to this (scope 2)
 	heal_target.heal_damage(actual_heal_speed, actual_heal_speed)
 	durability--
-	if(heal_target.bleeding)
-		durability = round(durability - clamp(heal_target.bleeding, 1, 5)) //heavier bleeding reduces bandage lifespan
-		heal_target.adjust_bleeding(-bleed_reduction)
-	if(durability <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
+	heal_target.adjust_bleeding(-bleed_reduction)
+	if(durability <= 0 || ((!heal_target.bleeding || !bleed_reduction) && (!heal_target.get_damage() || !healing_speed))) //remove treatment once it's no longer able to treat
 		drop_bandage()
 
 /datum/component/bandage/proc/drop_bandage()
@@ -58,5 +56,3 @@
 	else
 		to_chat(mummy, span_notice("The [bandage_name] on your [parent] finished healing."))
 	qdel(src)
-
-#undef BANDAGE_DAMAGE_COEFF

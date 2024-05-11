@@ -80,7 +80,7 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	usesound = 'sound/items/tape.ogg'
 
-	var/lifespan = 600
+	var/lifespan = 300
 	var/healing_rate = 0.1
 	var/bleed_reduction = 0.1
 	var/nonorganic_heal = 5
@@ -319,6 +319,6 @@
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
-	lifespan = 1000
+	lifespan = 800
 	nonorganic_heal = 30
 	prefix = "industry-standard sticky"
