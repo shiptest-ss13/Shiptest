@@ -72,6 +72,8 @@
 	spec_updatehealth(ethereal)
 	rooting = new
 	rooting.Grant(C)
+	RegisterSignal(ethereal, COMSIG_DIGOUT, PROC_REF(digout))
+	RegisterSignal(ethereal, COMSIG_MOVABLE_MOVED, PROC_REF(uproot))
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
@@ -82,6 +84,8 @@
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
+	UnregisterSignal(C, COMSIG_DIGOUT)
+	UnregisterSignal(C, COMSIG_TURF_CHANGE)
 	QDEL_NULL(ethereal_light)
 	if(rooting)
 		rooting.Remove(C)
@@ -98,9 +102,7 @@
 /datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/elzuose/E = H.dna.species
-	var/turf/terrain = get_turf(H)
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
-	var/charge_limit = ELZUOSE_CHARGE_FULL
 	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 
 	if(H.wear_suit && istype(H.wear_suit, /obj/item/clothing))
@@ -109,7 +111,7 @@
 			to_chat(H, span_warning("Your [CS.name] is too thick to root in!"))
 			return
 
-	if(stomach.crystal_charge > charge_limit)
+	if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
 		to_chat(H,span_warning("Your charge is full!"))
 		return
 	E.drain_time = world.time + E.root_time
@@ -117,8 +119,9 @@
 	if(!do_after(H,E.dig_time, target = H))
 		to_chat(H,span_warning("You were interupted!"))
 		return
-	ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-	ADD_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
+	H.apply_status_effect(/datum/status_effect/rooted)
+	// ADD_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	// ADD_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
 	to_chat(H, span_notice("You root into the ground and begin to feed."))
 
 	while(do_after(H, E.root_time, target = H))
@@ -127,47 +130,65 @@
 			stomach.adjust_charge(E.root_charge_gain)
 			H.adjustBruteLoss(-3)
 			H.adjustFireLoss(-3)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "root", /datum/mood_event/root)
 
-			if(stomach.crystal_charge > charge_limit)
+			if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-				H.visible_message(span_notice("[H] is digging out of the ground."),span_notice("You finish rooting and begin digging yourself out."),span_notice("You hear digging."))
-				E.digout(H, E)
+				break
+				to_chat(H, span_notice("You're pretty full."))
+				// H.visible_message(span_notice("[H] is digging out of the ground."),span_notice("You finish rooting and begin digging yourself out."),span_notice("You hear digging."))
+				// E.digout(H, E)
 		else
-			to_chat(H,span_warning("You can't recieve charge from rooting!"))
+			to_chat(H,span_warning("You're missing your biological battery and can't recieve charge from rooting!"))
 			break
 
 	// Your rooting do afters weren't completed
-	while(HAS_TRAIT_FROM(H, TRAIT_IMMOBILIZED, SPECIES_TRAIT))
-		// Rooting was interupted, so we start digging yourself out.
-		if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
-			//You got moved and uprooted, time to suffer the consequences.
-			H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
-			H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
-			H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
-			H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-			H.emote("scream")
-			REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-			REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
-			return
-		H.visible_message(span_notice("[H] is digging out of the ground."),span_notice(">Your rooting was interupted and you begin digging yourself out."),span_notice("You hear digging."))
-		E.digout(H, E)
+	// while(HAS_TRAIT_FROM(H, TRAIT_IMMOBILIZED, SPECIES_TRAIT))
+	// while(H.has_status_effect(/datum/status_effect/rooted))
+	// 	// Rooting was interupted, so we start digging yourself out.
+	// 	if(!(get_dist(terrain, H) <= 0 && isturf(H.loc)))
+	// 		//You got moved and uprooted, time to suffer the consequences.
+	// 		H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
+	// 		H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+	// 		H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+	// 		H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+	// 		H.emote("scream")
+	// 		H.remove_status_effect(/datum/status_effect/rooted)
+	// 		// REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+	// 		// REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
+	// 		return
+	// 	H.visible_message(span_notice("[H] is digging out of the ground."),span_notice(">Your rooting was interupted and you begin digging yourself out."),span_notice("You hear digging."))
+	// 	E.digout(H, E)
 
-	REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-	REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
-	return
+	// H.remove_status_effect(/datum/status_effect/rooted)
+	// return
 
-/datum/species/elzuose/proc/digout(mob/living/carbon/human/H, datum/species/elzuose/E)
+// have digout triggered by a register signal???
+/datum/species/elzuose/proc/digout(mob/living/carbon/human/H)
+	var/datum/species/elzuose/E = H.dna.species
 	if(do_after(H, E.dig_time,target = H))
 		to_chat(H,span_notice("You finish digging yourself out."))
-		REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
-		REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
+		H.remove_status_effect(/datum/status_effect/rooted)
+		// REMOVE_TRAIT(H,TRAIT_IMMOBILIZED,SPECIES_TRAIT)
+		// REMOVE_TRAIT(H,TRAIT_PUSHIMMUNE,SPECIES_TRAIT)
+		return
+
+/datum/species/elzuose/proc/uproot(mob/living/carbon/human/H)
+	//You got moved and uprooted, time to suffer the consequences.
+	if(H.has_status_effect(/datum/status_effect/rooted))
+		H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
+		H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+		H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+		H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+		H.emote("scream")
+		H.remove_status_effect(/datum/status_effect/rooted)
 		return
 
 /datum/action/innate/root/IsAvailable()
 	if(..())
 		var/mob/living/carbon/human/H = owner
 		var/turf/terrain = get_turf(H)
+		if(H.has_status_effect(/datum/status_effect/rooted))
+			return FALSE
 		if(istype(terrain,/turf/open/floor/plating/grass) || istype(terrain,/turf/open/floor/grass/ship) ||  istype(terrain,/turf/open/floor/ship/dirt) ||  istype(terrain,/turf/open/floor/plating/dirt))
 			return TRUE
 		return FALSE
