@@ -379,7 +379,6 @@ update_label()
 	icon_state = "syndie"
 	access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
-	registered_age = null
 
 /obj/item/card/id/syndicate_command/crew_id
 	assignment = "Operative"
