@@ -999,7 +999,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			vend_ready = FALSE
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -1051,10 +1051,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
 	if(!private_a)
 		var/mob/living/carbon/human/H
-		var/obj/item/card/id/C
+		var/obj/item/card/bank/C
 		if(ishuman(user))
 			H = user
-			C = H.get_idcard(TRUE)
+			C = H.get_bankcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
 				say("\The [src] has been linked to [C].")
