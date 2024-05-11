@@ -130,20 +130,24 @@
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
 		var/list/cameras = get_available_cameras()
-		var/obj/machinery/camera/C = cameras[c_tag]
-		active_camera = C
+		var/obj/machinery/camera/selected_camera = cameras[c_tag]
+		active_camera = selected_camera
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
 		// Show static if can't use the camera
-		if(!active_camera?.can_use())
+		if(!selected_camera?.can_use())
 			show_camera_static()
 			return TRUE
 
 		var/list/visible_turfs = list()
-		for(var/turf/T in (C.isXRay() \
-				? range(C.view_range, C) \
-				: view(C.view_range, C)))
-			visible_turfs += T
+
+	// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
+		var/cam_location = isliving(selected_camera.loc) ? selected_camera.loc : selected_camera
+
+		var/list/visible_things = selected_camera.isXRay() ? range(selected_camera.view_range, cam_location) : view(selected_camera.view_range, cam_location)
+
+		for(var/turf/visible_turf in visible_things)
+			visible_turfs += visible_turf
 
 		var/list/bbox = get_bbox_of_atoms(visible_turfs)
 		var/size_x = bbox[3] - bbox[1] + 1
@@ -192,6 +196,11 @@
 		if(tempnetwork.len)
 			D["[C.c_tag]"] = C
 	return D
+
+/obj/machinery/computer/security/attackby(obj/item/bodycam/bc, mob/user, params)
+		bc.cameranetwork = network
+		user.balloon_alert(user, "Body camera linked to network.")
+		return
 
 // SECURITY MONITORS
 
