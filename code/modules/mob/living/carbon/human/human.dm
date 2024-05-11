@@ -247,7 +247,7 @@
 		else
 			return
 
-		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator)) //placing an item into the pocket is 4 times faster
+		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator, hidden = TRUE)) //placing an item into the pocket is 4 times faster
 			if(pocket_item)
 				if(pocket_item == (pocket_id == ITEM_SLOT_RPOCKET ? r_store : l_store)) //item still in the pocket we search
 					dropItemToGround(pocket_item)
@@ -430,38 +430,6 @@
 					to_chat(usr, "Added by [c.author] at [c.time]")
 					to_chat(usr, "----------")
 				to_chat(usr, "<b>Notes:</b> [R.fields["notes"]]")
-				return
-
-			if(href_list["add_citation"])
-				var/maxFine = CONFIG_GET(number/maxfine)
-				var/t1 = stripped_input("Please input citation crime:", "Security HUD", "", null)
-				var/fine = FLOOR(input("Please input citation fine, up to [maxFine]:", "Security HUD", 50) as num|null, 1)
-				if(!R || !t1 || !fine || !allowed_access)
-					return
-				if(!H.canUseHUD())
-					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
-					return
-				if(fine < 0)
-					to_chat(usr, "<span class='warning'>You're pretty sure that's not how money works.</span>")
-					return
-				fine = min(fine, maxFine)
-
-				var/crime = GLOB.data_core.createCrimeEntry(t1, "", allowed_access, station_time_timestamp(), fine)
-				for (var/obj/item/pda/P in GLOB.PDAs)
-					if(P.owner == R.fields["name"])
-						var/message = "You have been fined [fine] credits for '[t1]'. Fines may be paid at security."
-						var/datum/signal/subspace/messaging/pda/signal = new(src, list(
-							"name" = "Security Citation",
-							"job" = "Citation Server",
-							"message" = message,
-							"targets" = list("[P.owner] ([P.ownjob])"),
-							"automated" = 1
-						))
-						signal.send_to_receivers()
-						usr.log_message("(PDA: Citation Server) sent \"[message]\" to [signal.format_target()]", LOG_PDA)
-				GLOB.data_core.addCitation(R.fields["id"], crime)
-				investigate_log("New Citation: <strong>[t1]</strong> Fine: [fine] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 				return
 
 			if(href_list["add_crime"])
@@ -1089,6 +1057,12 @@
 	else if(can_be_firemanned(target))
 		fireman_carry(target)
 
+/mob/living/carbon/human/limb_attack_self()
+	var/obj/item/bodypart/arm = hand_bodyparts[active_hand_index]
+	if(arm)
+		arm.attack_self(src)
+	return ..()
+
 /mob/living/carbon/human/MouseDrop(mob/over)
 	. = ..()
 	if(ishuman(over))
@@ -1290,6 +1264,23 @@
 		return FALSE
 	return ..()
 
+/mob/living/carbon/human/CtrlShiftClick(mob/user)
+	. = ..()
+	if(isobserver(user) || !user.mind?.guestbook)
+		return
+	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
+
+/mob/living/carbon/human/get_screentip_name(client/hovering_client)
+	. = ..()
+	var/mob/hovering_mob = hovering_client?.mob
+	if(!hovering_mob?.mind?.guestbook)
+		return .
+	var/face_name = get_face_name("")
+	var/known_name = hovering_mob.mind.guestbook.get_known_name(hovering_mob, src, face_name)
+	if(known_name)
+		return known_name
+	return .
+
 /mob/living/carbon/human/species
 	var/race = null
 
@@ -1307,7 +1298,7 @@
 	race = /datum/species/dullahan
 
 /mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
+	race = /datum/species/elzuose
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly

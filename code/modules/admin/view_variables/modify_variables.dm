@@ -208,7 +208,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 	if(default == VV_NUM)
 		var/dir_text = ""
 		var/tdir = variable
-		if(tdir > 0 && tdir < 16)
+		if(tdir > 0 && tdir < 32)
 			if(tdir & 1)
 				dir_text += "NORTH"
 			if(tdir & 2)
@@ -217,6 +217,10 @@ GLOBAL_PROTECT(VVpixelmovement)
 				dir_text += "EAST"
 			if(tdir & 8)
 				dir_text += "WEST"
+			if(tdir & 16)
+				dir_text += "UP"
+			if(tdir & 32)
+				dir_text += "DOWN"
 
 		if(dir_text)
 			to_chat(usr, "If a direction, direction is: [dir_text]", confidential = TRUE)
@@ -330,7 +334,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 
 	if(default == VV_NUM)
 		var/dir_text = ""
-		if(var_value > 0 && var_value < 16)
+		if(var_value > 0 && var_value < 32)
 			if(var_value & 1)
 				dir_text += "NORTH"
 			if(var_value & 2)
@@ -339,6 +343,10 @@ GLOBAL_PROTECT(VVpixelmovement)
 				dir_text += "EAST"
 			if(var_value & 8)
 				dir_text += "WEST"
+			if(var_value & 16)
+				dir_text += "UP"
+			if(var_value & 32)
+				dir_text += "DOWN"
 
 		if(dir_text)
 			to_chat(src, "If a direction, direction is: [dir_text]", confidential = TRUE)
