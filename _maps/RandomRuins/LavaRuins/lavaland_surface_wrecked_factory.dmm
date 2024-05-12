@@ -1722,14 +1722,12 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "vP" = (
-/mob/living/simple_animal/hostile/nanotrasen/elite{
-	name = "Manager";
-	environment_smash = 0
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /obj/structure/chair/comfy/beige,
+/obj/effect/gibspawner/human,
+/obj/item/clothing/head/nanotrasen/captain,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "vQ" = (
@@ -2058,7 +2056,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -3199,6 +3196,7 @@
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "PR" = (
@@ -3572,7 +3570,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/machinery/suit_storage_unit,
+/obj/machinery/suit_storage_unit/open,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "UJ" = (
@@ -3625,8 +3623,15 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
 "VA" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space,
-/turf/open/floor/carpet/nanoweave,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper{
+	health = 400;
+	name = "Syndicate Commander";
+	environment_smash = 0
+	},
+/turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "VC" = (
 /obj/item/stack/ore/salvage/scrapmetal{
@@ -4948,7 +4953,7 @@ yq
 LP
 vP
 bz
-fB
+VA
 fB
 fB
 fB
@@ -4957,7 +4962,7 @@ yY
 hm
 hm
 pc
-VA
+ZO
 KX
 nm
 hf
