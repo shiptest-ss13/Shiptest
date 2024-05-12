@@ -20,7 +20,7 @@
 	new_record.fields = fields.Copy()
 	return new_record
 
-/*
+
 /// A helper proc to get the front photo of a character from the record.
 /// Handles calling `get_photo()`, read its documentation for more information.
 /datum/data/record/proc/get_front_photo()
@@ -30,7 +30,7 @@
 /// Handles calling `get_photo()`, read its documentation for more information.
 /datum/data/record/proc/get_side_photo()
 	return get_photo("photo_side", WEST)
-*/
+
 
 /**
  * You shouldn't be calling this directly, use `get_front_photo()` or `get_side_photo()`
@@ -50,7 +50,6 @@
  * Returns an empty `/icon` if there was no `character_appearance` entry in the `fields` list,
  * returns the generated/cached photo otherwise.
  */
-/*
 /datum/data/record/proc/get_photo(field_name, orientation)
 	if(fields[field_name])
 		return fields[field_name]
@@ -71,7 +70,6 @@
 	var/obj/item/photo/photo = new(null, picture)
 	fields[field_name] = photo
 	return photo
-*/
 
 /datum/data/record/general
 

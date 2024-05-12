@@ -161,12 +161,14 @@
 				if(3)
 					dat += "<font size='4'><b>Security Record</b></font><br>"
 					if(istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1))
-						if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
-							var/obj/item/photo/P1 = active1.fields[DATACORE_PHOTO]
-							user << browse_rsc(P1.picture.picture_image, "photo_front")
-						if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
-							var/obj/item/photo/P2 = active1.fields[DATACORE_PHOTO_SIDE]
-							user << browse_rsc(P2.picture.picture_image, "photo_side")
+						var/front_photo = active1.get_front_photo()
+						if(istype(front_photo, /obj/item/photo))
+							var/obj/item/photo/photo_front = front_photo
+							user << browse_rsc(photo_front.picture.picture_image, "photo_front")
+						var/side_photo = active1.get_side_photo()
+						if(istype(side_photo, /obj/item/photo))
+							var/obj/item/photo/photo_side = side_photo
+							user << browse_rsc(photo_side.picture.picture_image, "photo_side")
 						dat += {"<table><tr><td><table>
 						<tr><td>Name:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=name'>&nbsp;[active1.fields[DATACORE_NAME]]&nbsp;</A></td></tr>
 						<tr><td>ID:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=id'>&nbsp;[active1.fields[DATACORE_ID]]&nbsp;</A></td></tr>
@@ -387,7 +389,7 @@ What a mess.*/
 							printing = 1
 							sleep(30)
 							if((istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1)))//make sure the record still exists.
-								var/obj/item/photo/photo = active1.fields[DATACORE_PHOTO]
+								var/obj/item/photo/photo = active1.get_front_photo()
 								new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info, headerText)
 							printing = 0
 			if("Print Missing")
@@ -404,7 +406,7 @@ What a mess.*/
 							printing = 1
 							sleep(30)
 							if((istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1)))//make sure the record still exists.
-								var/obj/item/photo/photo = active1.fields[DATACORE_PHOTO]
+								var/obj/item/photo/photo = active1.get_front_photo()
 								new /obj/item/poster/wanted/missing(loc, photo.picture.picture_image, missing_name, info, headerText)
 							printing = 0
 
@@ -472,8 +474,6 @@ What a mess.*/
 				G.fields[DATACORE_GENDER] = "Male"
 				G.fields[DATACORE_AGE] = "Unknown"
 				G.fields[DATACORE_SPECIES] = "Human"
-				G.fields[DATACORE_PHOTO] = new /icon()
-				G.fields[DATACORE_PHOTO_SIDE] = new /icon()
 				G.fields[DATACORE_FINGERPRINT] = "?????"
 				G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
 				G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
@@ -565,14 +565,15 @@ What a mess.*/
 								return
 							active1.fields[DATACORE_SPECIES] = t1
 					if("show_photo_front")
-						if(active1.fields[DATACORE_PHOTO])
-							if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO]
-								P.show(usr)
+						if(active1)
+							var/front_photo = active1.get_front_photo()
+							if(istype(front_photo, /obj/item/photo))
+								var/obj/item/photo/photo = front_photo
+								photo.show(usr)
 					if("upd_photo_front")
 						var/obj/item/photo/photo = get_photo(usr)
 						if(photo)
-							qdel(active1.fields[DATACORE_PHOTO])
+							qdel(active1.fields["photo_front"])
 							//Lets center it to a 32x32.
 							var/icon/I = photo.picture.picture_image
 							var/w = I.Width()
@@ -580,21 +581,24 @@ What a mess.*/
 							var/dw = w - 32
 							var/dh = w - 32
 							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields[DATACORE_PHOTO] = photo
+							active1.fields["photo_front"] = photo
+							investigate_log("[key_name(usr)] updated [active1.fields[DATACORE_NAME]]'s front photo.", INVESTIGATE_RECORDS)
 					if("print_photo_front")
-						if(active1.fields[DATACORE_PHOTO])
-							if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO]
-								print_photo(P.picture.picture_image, active1.fields[DATACORE_NAME])
+						if(active1)
+							var/front_photo = active1.get_front_photo()
+							if(istype(front_photo, /obj/item/photo))
+								var/obj/item/photo/photo_front = front_photo
+								print_photo(photo_front.picture.picture_image, active1.fields[DATACORE_NAME])
 					if("show_photo_side")
-						if(active1.fields[DATACORE_PHOTO_SIDE])
-							if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO_SIDE]
-								P.show(usr)
+						if(active1)
+							var/side_photo = active1.get_side_photo()
+							if(istype(side_photo, /obj/item/photo))
+								var/obj/item/photo/photo = side_photo
+								photo.show(usr)
 					if("upd_photo_side")
 						var/obj/item/photo/photo = get_photo(usr)
 						if(photo)
-							qdel(active1.fields[DATACORE_PHOTO_SIDE])
+							qdel(active1.fields["photo_side"])
 							//Lets center it to a 32x32.
 							var/icon/I = photo.picture.picture_image
 							var/w = I.Width()
@@ -602,12 +606,14 @@ What a mess.*/
 							var/dw = w - 32
 							var/dh = w - 32
 							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields[DATACORE_PHOTO_SIDE] = photo
+							active1.fields["photo_side"] = photo
+							investigate_log("[key_name(usr)] updated [active1.fields[DATACORE_NAME]]'s front photo.", INVESTIGATE_RECORDS)
 					if("print_photo_side")
-						if(active1.fields[DATACORE_PHOTO_SIDE])
-							if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO_SIDE]
-								print_photo(P.picture.picture_image, active1.fields[DATACORE_NAME])
+						if(active1)
+							var/side_photo = active1.get_side_photo()
+							if(istype(side_photo, /obj/item/photo))
+								var/obj/item/photo/photo_side = side_photo
+								print_photo(photo_side.picture.picture_image, active1.fields[DATACORE_NAME])
 					if("crim_add")
 						if(!istype(active1, /datum/data/record/security))
 							return
@@ -788,8 +794,7 @@ What a mess.*/
 					R.fields[DATACORE_SPECIES] = pick(GLOB.roundstart_races)
 				if(8)
 					var/datum/data/record/G = pick(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-					R.fields[DATACORE_PHOTO] = G.fields[DATACORE_PHOTO]
-					R.fields[DATACORE_PHOTO_SIDE] = G.fields[DATACORE_PHOTO_SIDE]
+					R.fields[DATACORE_APPEARANCE] = G.fields[DATACORE_APPEARANCE]
 			continue
 
 		else if(prob(1))

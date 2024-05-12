@@ -284,6 +284,7 @@
 		if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD) && !HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
 			return
 		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_OUTPOST)
+		/*
 		if(href_list["photo_front"] || href_list["photo_side"])
 			if(!R)
 				return
@@ -299,7 +300,7 @@
 			if(P)
 				P.show(H)
 			return
-
+		*/
 		if(href_list["hud"] == "m")
 			if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
 				return

@@ -200,16 +200,7 @@ SUBSYSTEM_DEF(datacore)
 		C = H.client
 
 	var/image = get_id_photo(H, C, show_directions)
-	var/datum/picture/pf = new
-	var/datum/picture/ps = new
-	pf.picture_name = "[H]"
-	ps.picture_name = "[H]"
-	pf.picture_desc = "This is [H]."
-	ps.picture_desc = "This is [H]."
-	pf.picture_image = icon(image, dir = SOUTH)
-	ps.picture_image = icon(image, dir = WEST)
-	var/obj/item/photo/photo_front = new(null, pf)
-	var/obj/item/photo/photo_side = new(null, ps)
+	var/mutable_appearance/character_appearance = new(H.appearance)
 
 	//General Record
 	var/datum/data/record/general/G = new()
@@ -230,9 +221,7 @@ SUBSYSTEM_DEF(datacore)
 		G.fields[DATACORE_GENDER] = "Female"
 	else
 		G.fields[DATACORE_GENDER] = "Other"
-	//G.fields[DATACORE_APPEARANCE] = character_appearance
-	G.fields[DATACORE_PHOTO] = photo_front
-	G.fields[DATACORE_PHOTO_SIDE] = photo_side
+	G.fields[DATACORE_APPEARANCE] = character_appearance
 
 	library[DATACORE_RECORDS_OUTPOST].inject_record(G)
 
@@ -312,22 +301,11 @@ SUBSYSTEM_DEF(datacore)
 	if(!C)
 		C = H.client
 
-	var/image = get_id_photo(H, C, show_directions)
-	var/datum/picture/pf = new
-	var/datum/picture/ps = new
-	pf.picture_name = "[H]"
-	ps.picture_name = "[H]"
-	pf.picture_desc = "This is [H]."
-	ps.picture_desc = "This is [H]."
-	pf.picture_image = icon(image, dir = SOUTH)
-	ps.picture_image = icon(image, dir = WEST)
-	var/obj/item/photo/photo_front = new(null, pf)
-	var/obj/item/photo/photo_side = new(null, ps)
+	var/mutable_appearance/character_appearance = new(H.appearance)
 
 	//General Record
 	var/datum/data/record/general/G = new()
 	G.fields[DATACORE_ID] = id
-
 	G.fields[DATACORE_NAME] = H.real_name
 	G.fields[DATACORE_RANK] = assignment
 	G.fields[DATACORE_INITIAL_RANK] = assignment
@@ -343,9 +321,7 @@ SUBSYSTEM_DEF(datacore)
 		G.fields[DATACORE_GENDER] = "Female"
 	else
 		G.fields[DATACORE_GENDER] = "Other"
-	//G.fields[DATACORE_APPEARANCE] = character_appearance
-	G.fields[DATACORE_PHOTO] = photo_front
-	G.fields[DATACORE_PHOTO_SIDE] = photo_side
+	G.fields[DATACORE_APPEARANCE] = character_appearance
 
 	custom_library.inject_record(G)
 
@@ -367,9 +343,9 @@ SUBSYSTEM_DEF(datacore)
 		/// The object containing the crew info
 		var/list/crew_record = list()
 		crew_record["ref"] = REF(gen_record)
-		crew_record["name"] = gen_record.fields[DATACORE_NAME]
-		crew_record["physical_health"] = gen_record.fields[DATACORE_PHYSICAL_HEALTH]
-		crew_record["mental_health"] = gen_record.fields[DATACORE_MENTAL_HEALTH]
+		crew_record[DATACORE_NAME] = gen_record.fields[DATACORE_NAME]
+		crew_record[DATACORE_PHYSICAL_HEALTH] = gen_record.fields[DATACORE_PHYSICAL_HEALTH]
+		crew_record[DATACORE_MENTAL_HEALTH] = gen_record.fields[DATACORE_MENTAL_HEALTH]
 		general_records_out += list(crew_record)
 	return general_records_out
 
