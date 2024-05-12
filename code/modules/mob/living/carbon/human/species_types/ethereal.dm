@@ -1,6 +1,6 @@
 #define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
-#define GOOD_SOIL list()
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
 
 #define DIG_TIME (7.5 SECONDS)
 
@@ -56,12 +56,6 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
-	// how it takes to enter and exit rooting
-	// var/dig_time = (7.5 SECONDS)
-	// // how long to charge while rooting
-	// var/root_time = (3 SECONDS)
-	// // how much charge you get from rooting
-	// var/root_charge_gain = (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
@@ -154,14 +148,14 @@
 
 /datum/species/elzuose/proc/uproot(mob/living/carbon/human/H)
 	//You got moved and uprooted, time to suffer the consequences.
-	//if(H.has_status_effect(/datum/status_effect/rooted))
-	H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
-	H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
-	H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
-	H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-	H.emote("scream")
-	H.remove_status_effect(/datum/status_effect/rooted)
-	return
+	if(H.has_status_effect(/datum/status_effect/rooted))
+		H.visible_message(span_warning("[H] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
+		H.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+		H.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+		H.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+		H.emote("scream")
+		H.remove_status_effect(/datum/status_effect/rooted)
+		return
 
 /datum/action/innate/root/IsAvailable()
 	if(..())
@@ -169,7 +163,7 @@
 		var/turf/terrain = get_turf(H)
 		if(H.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(istype(terrain,/turf/open/floor/plating/grass) || istype(terrain,/turf/open/floor/grass/ship) ||  istype(terrain,/turf/open/floor/ship/dirt) ||  istype(terrain,/turf/open/floor/plating/dirt))
+		if(is_type_in_list(terrain,GOOD_SOIL))
 			return TRUE
 		return FALSE
 
