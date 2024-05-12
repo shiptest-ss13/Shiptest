@@ -1481,6 +1481,10 @@
 	color = "#543C30"
 	},
 /obj/machinery/vending/cigarette,
+/obj/structure/railing/wood{
+	color = "#543C30";
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "td" = (
@@ -1663,17 +1667,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"vs" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
-	dir = 4
-	},
-/obj/item/kirbyplants/random{
-	pixel_y = 13;
-	pixel_x = 14
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/canteen)
 "vy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -4418,7 +4411,7 @@ nK
 OY
 zj
 SH
-vs
+hh
 Rz
 PM
 uG
