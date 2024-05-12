@@ -241,6 +241,6 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/root
-	description = "<span class='nicegreen'>I rooted recently, it feels good to charge naturally.</span>\n"
+	description = span_nicegreen(I rooted recently, it feels good to charge naturally.\n)"
 	mood_change = 5
 	timeout = 5 MINUTES
