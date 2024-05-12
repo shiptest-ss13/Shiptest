@@ -294,10 +294,10 @@
 /atom/movable/screen/alert/status_effect/rooted
 	name = "Rooted"
 	desc = "You're currently rooted into the ground and can't move. Click here to start digging yourself out."
-	icon_state = "aimed"
-	//icon_icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "dig_out"
 
 /atom/movable/screen/alert/status_effect/rooted/Click(location, control, params)
 	. = ..()
-	// E.digout(H,E)
+	to_chat(owner, span_notice("You begin digging yourself free."))
 	SEND_SIGNAL(owner,COMSIG_DIGOUT)
+

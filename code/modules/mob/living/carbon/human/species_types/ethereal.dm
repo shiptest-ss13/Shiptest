@@ -133,7 +133,7 @@
 
 			if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
-				to_chat(_human, span_notice("You're pretty full."))
+				to_chat(_human, span_notice("You're full on charge!"))
 				break
 
 		else
