@@ -97,7 +97,7 @@
 	icon_icon = 'icons/obj/flora/plants.dmi'
 	background_icon_state = "bg_alien"
 
-/datum/action/innate/root/activate()
+/datum/action/innate/root/Activate()
 	var/mob/living/carbon/human/_human = owner
 	var/datum/species/elzuose/_elzu = _human.dna.species
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
@@ -153,7 +153,7 @@
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 
-/datum/action/innate/root/is_available()
+/datum/action/innate/root/IsAvailable()
 	if(..())
 		var/mob/living/carbon/human/_human = owner
 		var/turf/terrain = get_turf(_human)
@@ -293,8 +293,7 @@
 			_human.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/_human)
-	to_chat(_human,span_warning("You begin to lose control over your charge!"))
-	_human.visible_message(span_danger("[_human] begins to spark violently!"))
+	_human.visible_message(span_danger("[_human] begins to spark violently!"),_human,span_warning("You begin to lose control over your charge!"))
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	_human.add_overlay(overcharge)
@@ -347,7 +346,7 @@
 					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
 					current_color = health_adjusted_color(_human, default_color)
 					spec_updatehealth(_human)
-					_human.visible_message(span_notice("[_human] modulates \his EM frequency to [new_etherealcolor]"))
+					_human.visible_message(span_notice("[_human] modulates [_human.p_their] EM frequency to [new_etherealcolor]"))
 				else
 					to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 	else
