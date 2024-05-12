@@ -346,7 +346,7 @@
 					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
 					current_color = health_adjusted_color(_human, default_color)
 					spec_updatehealth(_human)
-					_human.visible_message(span_notice("[_human] modulates [_human.p_their()] EM frequency to [new_etherealcolor]"))
+					_human.visible_message(span_notice("[_human] modulates [_human.p_their] EM frequency to [new_etherealcolor]"))
 				else
 					to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 	else
