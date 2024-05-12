@@ -199,7 +199,7 @@
 
 /obj/machinery/computer/security/attackby(obj/item/bodycam/bc, mob/user, params)
 		bc.cameranetwork = network
-		user.balloon_alert(user, "Body camera linked to network.")
+		user.balloon_alert(user, "body camera linked to network.")
 		return
 
 // SECURITY MONITORS
