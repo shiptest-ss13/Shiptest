@@ -214,7 +214,7 @@ GLOBAL_LIST_EMPTY(employmentCabinets)
 
 /obj/structure/filingcabinet/employment/proc/fillCurrent()
 	//This proc fills the cabinet with the current crew.
-	for(var/record in SSdatacore.get_records(DATACORE_RECORDS_LOCKED))
+	for(var/record in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 		var/datum/data/record/G = record
 		if(!G)
 			continue

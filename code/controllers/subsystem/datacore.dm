@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(datacore)
 		DATACORE_RECORDS_OUTPOST,
 		DATACORE_RECORDS_SECURITY,
 		DATACORE_RECORDS_MEDICAL,
-		DATACORE_RECORDS_LOCKED
+		//DATACORE_RECORDS_LOCKED
 	)
 
 	var/securityPrintCount = 0
@@ -67,7 +67,8 @@ SUBSYSTEM_DEF(datacore)
 
 /// Removes a person from history. Except locked. That's permanent history.
 /datum/controller/subsystem/datacore/proc/demanifest(name)
-	for(var/id in library - DATACORE_RECORDS_LOCKED)
+	//for(var/id in library - DATACORE_RECORDS_LOCKED)
+	for(var/id in library)
 		var/datum/data/record/R = get_record_by_name(name, id)
 		qdel(R)
 
@@ -255,6 +256,7 @@ SUBSYSTEM_DEF(datacore)
 	S.fields[DATACORE_NOTES] = "No notes."
 	library[DATACORE_RECORDS_SECURITY].inject_record(S)
 
+	/*
 	//Locked Record
 	var/datum/data/record/locked/L = new()
 	L.fields[DATACORE_ID] = id
@@ -278,8 +280,9 @@ SUBSYSTEM_DEF(datacore)
 	L.fields[DATACORE_IMAGE] = image
 	L.fields[DATACORE_MINDREF] = H.mind
 	library[DATACORE_RECORDS_LOCKED].inject_record(L)
-
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MANIFEST_INJECT, G, M, S, L)
+	*/
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MANIFEST_INJECT, G, M, S)
 	return
 
 //For ship records
@@ -333,13 +336,13 @@ SUBSYSTEM_DEF(datacore)
  *
  * @return - list(general_records_out)
  */
-/datum/controller/subsystem/datacore/proc/get_general_records()
-	if(!get_records(DATACORE_RECORDS_OUTPOST))
+/datum/controller/subsystem/datacore/proc/get_general_records(record_key = DATACORE_RECORDS_OUTPOST)
+	if(!get_records(record_key))
 		return list()
 
 	/// The array of records
 	var/list/general_records_out = list()
-	for(var/datum/data/record/gen_record as anything in get_records(DATACORE_RECORDS_OUTPOST))
+	for(var/datum/data/record/gen_record as anything in get_records(record_key))
 		/// The object containing the crew info
 		var/list/crew_record = list()
 		crew_record["ref"] = REF(gen_record)
@@ -356,13 +359,13 @@ SUBSYSTEM_DEF(datacore)
  *
  * @return - list(security_records_out)
  */
-/datum/controller/subsystem/datacore/proc/get_security_records()
-	if(!get_records(DATACORE_RECORDS_SECURITY))
+/datum/controller/subsystem/datacore/proc/get_security_records(record_key = DATACORE_RECORDS_SECURITY)
+	if(!get_records(record_key))
 		return list()
 
 	/// The array of records
 	var/list/security_records_out = list()
-	for(var/datum/data/record/sec_record as anything in get_records(DATACORE_RECORDS_SECURITY))
+	for(var/datum/data/record/sec_record as anything in get_records(record_key))
 		/// The object containing the crew info
 		var/list/crew_record = list()
 		crew_record["ref"] = REF(sec_record)

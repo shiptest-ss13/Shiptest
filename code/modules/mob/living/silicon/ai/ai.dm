@@ -629,7 +629,7 @@
 		if("Crew Member")
 			var/list/personnel_list = list()
 
-			for(var/datum/data/record/t in SSdatacore.get_records(DATACORE_RECORDS_LOCKED))//Look in data core locked.
+			for(var/datum/data/record/t in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))//Look in data core locked.
 				personnel_list["[t.fields[DATACORE_NAME]]: [t.fields[DATACORE_RANK]]"] = t.fields[DATACORE_IMAGE]//Pull names, rank, and image.
 
 			if(personnel_list.len)
