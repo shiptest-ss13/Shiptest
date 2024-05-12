@@ -35,6 +35,11 @@ SUBSYSTEM_DEF(datacore)
 	medicalPrintCount = SSdatacore.medicalPrintCount
 	finished_setup = SSdatacore.finished_setup
 
+/datum/controller/subsystem/datacore/proc/create_library(library_key)
+	var/datum/data_library/new_library = new /datum/data_library
+	library[library_key] = new_library
+	return new_library
+
 /// Returns a data record or null.
 /datum/controller/subsystem/datacore/proc/get_record_by_name(name, record_type = DATACORE_RECORDS_OUTPOST)
 	RETURN_TYPE(/datum/data/record)
@@ -287,6 +292,62 @@ SUBSYSTEM_DEF(datacore)
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MANIFEST_INJECT, G, M, S, L)
 	return
+
+//For ship records
+/datum/controller/subsystem/datacore/proc/inject_library(mob/living/carbon/human/H, client/C, datum/data_library/custom_library)
+	var/static/list/show_directions = list(SOUTH, WEST)
+	if(!(H.mind && (H.mind.assigned_role != H.mind.special_role)))
+		return
+
+	var/assignment
+	if(H.mind.assigned_role)
+		assignment = H.mind.assigned_role
+	else if(H.job)
+		assignment = H.job
+	else
+		assignment = "Unassigned"
+
+	var/static/record_id_num = 1001
+	var/id = num2hex(record_id_num++,6)
+	if(!C)
+		C = H.client
+
+	var/image = get_id_photo(H, C, show_directions)
+	var/datum/picture/pf = new
+	var/datum/picture/ps = new
+	pf.picture_name = "[H]"
+	ps.picture_name = "[H]"
+	pf.picture_desc = "This is [H]."
+	ps.picture_desc = "This is [H]."
+	pf.picture_image = icon(image, dir = SOUTH)
+	ps.picture_image = icon(image, dir = WEST)
+	var/obj/item/photo/photo_front = new(null, pf)
+	var/obj/item/photo/photo_side = new(null, ps)
+
+	//General Record
+	var/datum/data/record/general/G = new()
+	G.fields[DATACORE_ID] = id
+
+	G.fields[DATACORE_NAME] = H.real_name
+	G.fields[DATACORE_RANK] = assignment
+	G.fields[DATACORE_INITIAL_RANK] = assignment
+	G.fields[DATACORE_AGE] = H.age
+	G.fields[DATACORE_SPECIES] = H.dna.species.name
+	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
+	G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
+	G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
+	G.fields[DATACORE_GENDER] = H.gender
+	if(H.gender == "male")
+		G.fields[DATACORE_GENDER] = "Male"
+	else if(H.gender == "female")
+		G.fields[DATACORE_GENDER] = "Female"
+	else
+		G.fields[DATACORE_GENDER] = "Other"
+	//G.fields[DATACORE_APPEARANCE] = character_appearance
+	G.fields[DATACORE_PHOTO] = photo_front
+	G.fields[DATACORE_PHOTO_SIDE] = photo_side
+
+	custom_library.inject_record(G)
 
 /**
  * Supporing proc for getting general records

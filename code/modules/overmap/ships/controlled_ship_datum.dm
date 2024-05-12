@@ -70,6 +70,8 @@
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
+	var/datum/data_library/ship_record
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
@@ -109,6 +111,7 @@
 				Dock(position, TRUE)
 
 			refresh_engines()
+		ship_record = SSdatacore.create_library(src)
 		ship_account = new(name, source_template.starting_funds)
 
 #ifdef UNIT_TESTS
@@ -306,6 +309,9 @@
 	if(!(human_job in job_holder_refs))
 		job_holder_refs[human_job] = list()
 	job_holder_refs[human_job] += WEAKREF(H)
+
+	if(ship_record)
+		SSdatacore.inject_library(H, C, ship_record)
 
 /**
  * adds a mob's real name to a crew's guestbooks
