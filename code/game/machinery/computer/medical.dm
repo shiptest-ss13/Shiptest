@@ -434,9 +434,9 @@
 					active2 = null
 
 			else if(href_list["d_rec"])
-				active1 = SSdatacore.find_record("id", href_list["d_rec"], DATACORE_RECORDS_OUTPOST)
+				active1 = SSdatacore.find_record(DATACORE_ID, href_list["d_rec"], DATACORE_RECORDS_OUTPOST)
 				if(active1)
-					active2 = SSdatacore.find_record("id", href_list["d_rec"], DATACORE_RECORDS_MEDICAL)
+					active2 = SSdatacore.find_record(DATACORE_ID, href_list["d_rec"], DATACORE_RECORDS_MEDICAL)
 				if(!active2)
 					active1 = null
 				screen = 4

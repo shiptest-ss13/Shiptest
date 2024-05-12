@@ -308,18 +308,18 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 
 			if("medicalrecord") // Accessing medical records
 				if(subscreen == 1)
-					medicalActive1 = SSdatacore.find_record("id", href_list["med_rec"], DATACORE_RECORDS_OUTPOST)
+					medicalActive1 = SSdatacore.find_record(DATACORE_ID, href_list["med_rec"], DATACORE_RECORDS_OUTPOST)
 					if(medicalActive1)
-						medicalActive2 = SSdatacore.find_record("id", href_list["med_rec"], DATACORE_RECORDS_MEDICAL)
+						medicalActive2 = SSdatacore.find_record(DATACORE_ID, href_list["med_rec"], DATACORE_RECORDS_MEDICAL)
 					if(!medicalActive2)
 						medicalActive1 = null
 						temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."
 
 			if("securityrecord")
 				if(subscreen == 1)
-					securityActive1 = SSdatacore.find_record("id", href_list["sec_rec"], DATACORE_RECORDS_OUTPOST)
+					securityActive1 = SSdatacore.find_record(DATACORE_ID, href_list["sec_rec"], DATACORE_RECORDS_OUTPOST)
 					if(securityActive1)
-						securityActive2 = SSdatacore.find_record("id", href_list["sec_rec"], DATACORE_RECORDS_SECURITY)
+						securityActive2 = SSdatacore.find_record(DATACORE_ID, href_list["sec_rec"], DATACORE_RECORDS_SECURITY)
 					if(!securityActive2)
 						securityActive1 = null
 						temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."

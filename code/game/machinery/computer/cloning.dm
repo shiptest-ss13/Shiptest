@@ -369,7 +369,7 @@
 
 	else if(href_list["view_rec"])
 		playsound(src, "terminal_type", 25, FALSE)
-		active_record = SSdatacore.find_record("id", href_list["view_rec"], records)
+		active_record = SSdatacore.find_record(DATACORE_ID, href_list["view_rec"], records)
 		if(active_record)
 			menu = 3
 		else
@@ -459,7 +459,7 @@
 		playsound(src, "terminal_type", 25, FALSE)
 
 	else if (href_list["clone"])
-		var/datum/data/record/C = SSdatacore.find_record("id", href_list["clone"], records)
+		var/datum/data/record/C = SSdatacore.find_record(DATACORE_ID, href_list["clone"], records)
 		var/empty = href_list["empty"]
 		//Look for that player! They better be dead!
 		if(C)

@@ -470,17 +470,17 @@ Code:
 
 	switch(href_list["choice"])
 		if("Medical Records")
-			active1 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_OUTPOST)
+			active1 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_OUTPOST)
 			if(active1)
-				active2 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_MEDICAL)
+				active2 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_MEDICAL)
 			host_pda.mode = 441
 			if(!active2)
 				active1 = null
 
 		if("Security Records")
-			active1 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_OUTPOST)
+			active1 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_OUTPOST)
 			if(active1)
-				active3 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_SECURITY)
+				active3 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_SECURITY)
 			host_pda.mode = 451
 			if(!active3)
 				active1 = null
