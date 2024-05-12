@@ -105,7 +105,7 @@
 			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
 				var/perpname = H.get_face_name(H.get_id_name())
-				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
+				var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
 				if(!R || (R.fields["criminal"] == "*Arrest*"))
 					beep = TRUE
 		if(SCANGATE_MINDSHIELD)

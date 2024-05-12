@@ -58,8 +58,8 @@
 	)
 
 	//What the fuck
-	if(length(to_generate) > length(GLOB.data_core.locked))
-		to_generate.Cut(1, length(GLOB.data_core.locked))
+	if(length(to_generate) > length(SSdatacore.get_records(DATACORE_RECORDS_LOCKED)))
+		to_generate.Cut(1, length(SSdatacore.get_records(DATACORE_RECORDS_LOCKED)))
 
 	// We don't want the sum of all the payouts to be under this amount
 	var/lowest_TC_threshold = 30

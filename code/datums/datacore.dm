@@ -80,7 +80,7 @@
 		CHECK_TICK
 
 /datum/datacore/proc/manifest_modify(name, assignment)
-	var/datum/data/record/foundrecord = find_record("name", name, GLOB.data_core.general)
+	var/datum/data/record/foundrecord = SSdatacore.get_record_by_name(name, DATACORE_RECORDS_OUTPOST)
 	if(foundrecord)
 		foundrecord.fields["rank"] = assignment
 
@@ -96,7 +96,7 @@
 		"Service" = GLOB.service_positions,
 		"Silicon" = GLOB.nonhuman_positions
 	)
-	for(var/datum/data/record/t in GLOB.data_core.general)
+	for(var/datum/data/record/t in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
 		var/has_department = FALSE

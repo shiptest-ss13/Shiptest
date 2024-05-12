@@ -315,14 +315,14 @@ Code:
 
 		if (44) //medical records //This thing only displays a single screen so it's hard to really get the sub-menu stuff working.
 			menu = "<h4>[PDAIMG(medical)] Medical Record List</h4>"
-			if(GLOB.data_core.general)
-				for(var/datum/data/record/R in sortRecord(GLOB.data_core.general))
+			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+				for(var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
 					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
 			menu += "<br>"
 		if(441)
 			menu = "<h4>[PDAIMG(medical)] Medical Record</h4>"
 
-			if(active1 in GLOB.data_core.general)
+			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
 				menu += "Gender: [active1.fields["gender"]]<br>"
 				menu += "Age: [active1.fields["age"]]<br>"
@@ -336,7 +336,7 @@ Code:
 			menu += "<br>"
 
 			menu += "<h4>[PDAIMG(medical)] Medical Data</h4>"
-			if(active2 in GLOB.data_core.medical)
+			if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 				menu += "Blood Type: [active2.fields["blood_type"]]<br><br>"
 
 				menu += "Minor Disabilities: [active2.fields["mi_dis"]]<br>"
@@ -358,15 +358,15 @@ Code:
 			menu += "<br>"
 		if (45) //security records
 			menu = "<h4>[PDAIMG(cuffs)] Security Record List</h4>"
-			if(GLOB.data_core.general)
-				for (var/datum/data/record/R in sortRecord(GLOB.data_core.general))
+			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+				for (var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
 					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
 
 			menu += "<br>"
 		if(451)
 			menu = "<h4>[PDAIMG(cuffs)] Security Record</h4>"
 
-			if(active1 in GLOB.data_core.general)
+			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
 				menu += "Gender: [active1.fields["gender"]]<br>"
 				menu += "Age: [active1.fields["age"]]<br>"
@@ -380,7 +380,7 @@ Code:
 			menu += "<br>"
 
 			menu += "<h4>[PDAIMG(cuffs)] Security Data</h4>"
-			if(active3 in GLOB.data_core.security)
+			if(active3 in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
 				menu += "Criminal Status: [active3.fields["criminal"]]<br>"
 
 				menu += text("<BR>\nCrimes:")
@@ -470,17 +470,17 @@ Code:
 
 	switch(href_list["choice"])
 		if("Medical Records")
-			active1 = find_record("id", href_list["target"], GLOB.data_core.general)
+			active1 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_OUTPOST)
 			if(active1)
-				active2 = find_record("id", href_list["target"], GLOB.data_core.medical)
+				active2 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_MEDICAL)
 			host_pda.mode = 441
 			if(!active2)
 				active1 = null
 
 		if("Security Records")
-			active1 = find_record("id", href_list["target"], GLOB.data_core.general)
+			active1 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_OUTPOST)
 			if(active1)
-				active3 = find_record("id", href_list["target"], GLOB.data_core.security)
+				active3 = SSdatacore.find_record("id", href_list["target"], DATACORE_RECORDS_SECURITY)
 			host_pda.mode = 451
 			if(!active3)
 				active1 = null

@@ -177,7 +177,6 @@ SUBSYSTEM_DEF(datacore)
 	return dat
 
 /datum/controller/subsystem/datacore/proc/manifest_inject(mob/living/carbon/human/H, client/C)
-	SHOULD_NOT_SLEEP(TRUE)
 	var/static/list/show_directions = list(SOUTH, WEST)
 	if(!(H.mind && (H.mind.assigned_role != H.mind.special_role)))
 		return

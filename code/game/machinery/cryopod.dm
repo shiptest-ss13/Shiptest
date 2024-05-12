@@ -328,13 +328,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 	// Delete them from datacore.
 	var/announce_rank = null
-	for(var/datum/data/record/R in GLOB.data_core.medical)
+	for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 		if((R.fields["name"] == mob_occupant.real_name))
 			qdel(R)
-	for(var/datum/data/record/T in GLOB.data_core.security)
+	for(var/datum/data/record/T in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
 		if((T.fields["name"] == mob_occupant.real_name))
 			qdel(T)
-	for(var/datum/data/record/G in GLOB.data_core.general)
+	for(var/datum/data/record/G in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 		if((G.fields["name"] == mob_occupant.real_name))
 			announce_rank = G.fields["rank"]
 			qdel(G)

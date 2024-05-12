@@ -289,8 +289,8 @@ Security HUDs! Basic mode shows only the job.
 	var/icon/I = icon(icon, icon_state, dir)
 	holder.pixel_y = I.Height() - world.icon_size
 	var/perpname = get_face_name(get_id_name(""))
-	if(perpname && GLOB.data_core)
-		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
+	if(perpname)
+		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
 		if(R)
 			switch(R.fields["criminal"])
 				if("*Arrest*")

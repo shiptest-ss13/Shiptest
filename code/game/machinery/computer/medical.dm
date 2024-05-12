@@ -62,11 +62,11 @@
 </tr>"}
 
 
-					if(!isnull(GLOB.data_core.general))
-						for(var/datum/data/record/R in sortRecord(GLOB.data_core.general, sortBy, order))
+					if(!isnull(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
+						for(var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST), sortBy, order))
 							var/blood_type = ""
 							var/b_dna = ""
-							for(var/datum/data/record/E in GLOB.data_core.medical)
+							for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 								if((E.fields["name"] == R.fields["name"] && E.fields["id"] == R.fields["id"]))
 									blood_type = E.fields["blood_type"]
 									b_dna = E.fields["b_dna"]
@@ -94,7 +94,7 @@
 				if(4)
 
 					dat += "<table><tr><td><b><font size='4'>Medical Record</font></b></td></tr>"
-					if(active1 in GLOB.data_core.general)
+					if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 						if(istype(active1.fields["photo_front"], /obj/item/photo))
 							var/obj/item/photo/P1 = active1.fields["photo_front"]
 							user << browse_rsc(P1.picture.picture_image, "photo_front")
@@ -115,7 +115,7 @@
 						dat += "<tr><td>General Record Lost!</td></tr>"
 
 					dat += "<tr><td><br><b><font size='4'>Medical Data</font></b></td></tr>"
-					if(active2 in GLOB.data_core.medical)
+					if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 						dat += "<tr><td>Blood Type:</td><td><A href='?src=[REF(src)];field=blood_type'>&nbsp;[active2.fields["blood_type"]]&nbsp;</A></td></tr>"
 						dat += "<tr><td>DNA:</td><td><A href='?src=[REF(src)];field=b_dna'>&nbsp;[active2.fields["b_dna"]]&nbsp;</A></td></tr>"
 						dat += "<tr><td><br>Minor Disabilities:</td><td><br><A href='?src=[REF(src)];field=mi_dis'>&nbsp;[active2.fields["mi_dis"]]&nbsp;</A></td></tr>"
@@ -179,9 +179,9 @@
 	. = ..()
 	if(.)
 		return .
-	if(!(active1 in GLOB.data_core.general))
+	if(!(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
 		active1 = null
-	if(!(active2 in GLOB.data_core.medical))
+	if(!(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL)))
 		active2 = null
 
 	if(usr.contents.Find(src) || (in_range(src, usr) && isturf(loc)) || issilicon(usr) || isAdminGhostAI(usr))
@@ -261,7 +261,7 @@
 
 			else if(href_list["del_all2"])
 				investigate_log("[key_name(usr)] has deleted all medical records.", INVESTIGATE_RECORDS)
-				GLOB.data_core.medical.Cut()
+				SSdatacore.wipe_records(DATACORE_RECORDS_MEDICAL)
 				temp = "All records deleted."
 
 			else if(href_list["field"])
@@ -434,9 +434,9 @@
 					active2 = null
 
 			else if(href_list["d_rec"])
-				active1 = find_record("id", href_list["d_rec"], GLOB.data_core.general)
+				active1 = SSdatacore.find_record("id", href_list["d_rec"], DATACORE_RECORDS_OUTPOST)
 				if(active1)
-					active2 = find_record("id", href_list["d_rec"], GLOB.data_core.medical)
+					active2 = SSdatacore.find_record("id", href_list["d_rec"], DATACORE_RECORDS_MEDICAL)
 				if(!active2)
 					active1 = null
 				screen = 4
@@ -458,12 +458,12 @@
 					R.fields["cdi"] = "None"
 					R.fields["cdi_d"] = "No diseases have been diagnosed at the moment."
 					R.fields["notes"] = "No notes."
-					GLOB.data_core.medical += R
+					SSdatacore.inject_record(R, DATACORE_RECORDS_MEDICAL)
 					active2 = R
 					screen = 4
 
 			else if(href_list["add_c"])
-				if(!(active2 in GLOB.data_core.medical))
+				if(!(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL)))
 					return
 				var/a2 = active2
 				var/t1 = stripped_multiline_input("Add Comment:", "Med. records", null, null)
@@ -485,7 +485,7 @@
 				active1 = null
 				active2 = null
 				t1 = lowertext(t1)
-				for(var/datum/data/record/R in GLOB.data_core.medical)
+				for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 					if((lowertext(R.fields["name"]) == t1 || t1 == lowertext(R.fields["id"]) || t1 == lowertext(R.fields["b_dna"])))
 						active2 = R
 					else
@@ -493,7 +493,7 @@
 				if(!(active2))
 					temp = text("Could not locate record [].", sanitize(t1))
 				else
-					for(var/datum/data/record/E in GLOB.data_core.general)
+					for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 						if((E.fields["name"] == active2.fields["name"] || E.fields["id"] == active2.fields["id"]))
 							active1 = E
 						else
@@ -503,27 +503,27 @@
 			else if(href_list["print_p"])
 				if(!(printing))
 					printing = 1
-					GLOB.data_core.medicalPrintCount++
+					SSdatacore.medicalPrintCount++
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
 					sleep(30)
 					var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
-					var/final_paper_text = "<CENTER><B>Medical Record - (MR-[GLOB.data_core.medicalPrintCount])</B></CENTER><BR>"
-					if(active1 in GLOB.data_core.general)
+					var/final_paper_text = "<CENTER><B>Medical Record - (MR-[SSdatacore.medicalPrintCount])</B></CENTER><BR>"
+					if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
 						final_paper_text += "\nSpecies: [active1.fields["species"]]<BR>"
 						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 					else
 						final_paper_text += "<B>General Record Lost!</B><BR>"
-					if(active2 in GLOB.data_core.medical)
+					if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 						final_paper_text += text("<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: []<BR>\nDNA: []<BR>\n<BR>\nMinor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nMajor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nAllergies: []<BR>\nDetails: []<BR>\n<BR>\nCurrent Diseases: [] (per disease info placed in log/comment section)<BR>\nDetails: []<BR>\n<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["blood_type"], active2.fields["b_dna"], active2.fields["mi_dis"], active2.fields["mi_dis_d"], active2.fields["ma_dis"], active2.fields["ma_dis_d"], active2.fields["alg"], active2.fields["alg_d"], active2.fields["cdi"], active2.fields["cdi_d"], active2.fields["notes"])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
 							final_paper_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
-						printed_paper.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, active1.fields["name"])
+						printed_paper.name = text("MR-[] '[]'", SSdatacore.medicalPrintCount, active1.fields["name"])
 					else
 						final_paper_text += "<B>Medical Record Lost!</B><BR>"
-						printed_paper.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, "Record Lost")
+						printed_paper.name = text("MR-[] '[]'", SSdatacore.medicalPrintCount, "Record Lost")
 					final_paper_text += "</TT>"
 					printed_paper.add_raw_text(final_paper_text)
 					printed_paper.update_appearance()
@@ -536,7 +536,7 @@
 /obj/machinery/computer/med_data/emp_act(severity)
 	. = ..()
 	if(!(machine_stat & (BROKEN|NOPOWER)) && !(. & EMP_PROTECT_SELF))
-		for(var/datum/data/record/R in GLOB.data_core.medical)
+		for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
 			if(prob(10/severity))
 				switch(rand(1,6))
 					if(1)

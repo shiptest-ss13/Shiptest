@@ -369,7 +369,7 @@
 
 	else if(href_list["view_rec"])
 		playsound(src, "terminal_type", 25, FALSE)
-		active_record = find_record("id", href_list["view_rec"], records)
+		active_record = SSdatacore.find_record("id", href_list["view_rec"], records)
 		if(active_record)
 			menu = 3
 		else
@@ -459,7 +459,7 @@
 		playsound(src, "terminal_type", 25, FALSE)
 
 	else if (href_list["clone"])
-		var/datum/data/record/C = find_record("id", href_list["clone"], records)
+		var/datum/data/record/C = SSdatacore.find_record("id", href_list["clone"], records)
 		var/empty = href_list["empty"]
 		//Look for that player! They better be dead!
 		if(C)
@@ -610,9 +610,9 @@
 			imp.implant(mob_occupant)
 		R.fields["imp"] = "[REF(imp)]"
 
-	var/datum/data/record/old_record = find_record("mindref", REF(mob_occupant.mind), records)
+	var/datum/data/record/old_record = SSdatacore.find_record("mindref", REF(mob_occupant.mind), records)
 	if(body_only)
-		old_record = find_record("UE", dna.unique_enzymes, records) //Body-only records cannot be identified by mind, so we use the DNA
+		old_record = SSdatacore.find_record("UE", dna.unique_enzymes, records) //Body-only records cannot be identified by mind, so we use the DNA
 		if(old_record && ((old_record.fields["UI"] != dna.uni_identity) || (!old_record.fields["body_only"]))) //Never overwrite a mind-and-body record if it exists
 			old_record = null
 	if(old_record)

@@ -36,8 +36,8 @@
 		prisoner_list["name"] = prisoner.real_name
 		if(contained_id)
 			can_teleport = TRUE
-		if(!isnull(GLOB.data_core.general))
-			for(var/r in GLOB.data_core.security)
+		if(!isnull(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
+			for(var/r in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
 				var/datum/data/record/R = r
 				if(R.fields["name"] == prisoner_list["name"])
 					temporary_record = R
