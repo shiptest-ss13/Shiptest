@@ -11,9 +11,11 @@
 		/obj/item/reagent_containers/food/drinks/modglass/large = 10,
 		/obj/item/reagent_containers/food/drinks/flask = 3,
 		/obj/item/reagent_containers/food/drinks/ice = 10,
+		/obj/item/reagent_containers/food/drinks/waterbottle/large = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/limejuice = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/lemonjuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/pineapplejuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/cream = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola = 8,
@@ -26,7 +28,8 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 8,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 8,
-		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 8,
+		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/grenadine = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/menthol = 4,
 		/obj/item/reagent_containers/food/drinks/mug/tea = 8,
@@ -48,7 +51,10 @@
 		/obj/item/reagent_containers/food/drinks/bottle/amaretto = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/triplesec = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/coconut = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/cacao = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/menthe = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
 		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
 		/obj/item/garnish/olives = 10,
@@ -56,9 +62,10 @@
 		/obj/item/garnish/umbrellablue = 10,
 		/obj/item/garnish/umbrellagreen = 10
 	)
-	contraband = list(
-		/obj/item/reagent_containers/glass/bottle/ethanol = 4)
+	contraband = list()
 	premium = list(
+		/obj/item/reagent_containers/glass/bottle/ethanol = 4,
+		/obj/item/reagent_containers/glass/bottle/sugar = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/fernet = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)

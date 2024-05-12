@@ -361,7 +361,8 @@
 "dG" = (
 /obj/structure/closet/wall/white/directional/south{
 	name = "Seeds Storage";
-	color = "#50C878"
+	color = "#50C878";
+	storage_capacity = 38
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
@@ -477,15 +478,11 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "fg" = (
-/obj/structure/bed{
-	dir = 1
-	},
-/obj/item/bedsheet/random{
-	dir = 4
-	},
-/obj/structure/curtain/cloth/grey,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/green,
+/obj/structure/dresser{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "fi" = (
@@ -1733,7 +1730,6 @@
 /area/ship/crew/canteen)
 "xe" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/vending/cigarette,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_y = -10;

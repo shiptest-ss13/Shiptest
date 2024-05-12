@@ -162,7 +162,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
-	name = "Uncle Git's special reserve"
+	name = "Uncle Git's special reserve of whiskey"
 	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
@@ -360,6 +360,12 @@
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/triplesec
+	name = "Teeka-Gih's triple sec liqueur"
+	desc = "A bottle of triple sec originating from Bezuts."
+	icon_state = "triplesecbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
@@ -373,6 +379,18 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 	foodtype = FRUIT | BREAKFAST
+
+/obj/item/reagent_containers/food/drinks/bottle/lemonjuice
+	name = "lemon juice"
+	desc = "Lemonade for everyone!"
+	custom_price = 100
+	icon_state = "lemonjuice"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	isGlass = FALSE
+	list_reagents = list(/datum/reagent/consumable/lemonjuice = 100)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
@@ -492,6 +510,20 @@
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/cacao
+	name = "Tali's Pure Cacao Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "cacaobottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/menthe
+	name = "Tali's Pure Mint Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "mintbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////
