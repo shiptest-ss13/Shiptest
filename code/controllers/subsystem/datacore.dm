@@ -12,11 +12,7 @@ SUBSYSTEM_DEF(datacore)
 		DATACORE_RECORDS_STATION,
 		DATACORE_RECORDS_SECURITY,
 		DATACORE_RECORDS_MEDICAL,
-		DATACORE_RECORDS_LOCKED,
-		DATACORE_RECORDS_DAEDALUS,
-		DATACORE_RECORDS_AETHER,
-		DATACORE_RECORDS_HERMES,
-		DATACORE_RECORDS_MARS
+		DATACORE_RECORDS_LOCKED
 	)
 
 	var/securityPrintCount = 0
@@ -64,16 +60,6 @@ SUBSYSTEM_DEF(datacore)
 
 	QDEL_LIST(to_wipe.records)
 
-/// Grab all PDA network IDs by department.
-/datum/controller/subsystem/datacore/proc/get_pda_netids(record_type = DATACORE_RECORDS_STATION)
-	RETURN_TYPE(/list)
-	. = list()
-
-	for(var/datum/data/record/R as anything in get_records(record_type))
-		var/id = R.fields[DATACORE_PDA_ID]
-		if(id)
-			. += id
-
 /// Removes a person from history. Except locked. That's permanent history.
 /datum/controller/subsystem/datacore/proc/demanifest(name)
 	for(var/id in library - DATACORE_RECORDS_LOCKED)
@@ -98,7 +84,7 @@ SUBSYSTEM_DEF(datacore)
 		CHECK_TICK
 
 	finished_setup = TRUE
-	//SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DATACORE_READY, src)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DATACORE_READY, src)
 	invoke_datacore_callbacks()
 
 /// Add a callback to execute when the datacore has loaded
@@ -114,67 +100,51 @@ SUBSYSTEM_DEF(datacore)
 
 	datacore_ready_callbacks.Cut()
 
-/datum/controller/subsystem/datacore/proc/manifest_modify(name, assignment, trim)
+/datum/controller/subsystem/datacore/proc/manifest_modify(name, assignment)
 	var/datum/data/record/foundrecord = library[DATACORE_RECORDS_STATION].get_record_by_name(name)
 	if(foundrecord)
 		foundrecord.fields[DATACORE_RANK] = assignment
-		foundrecord.fields[DATACORE_TRIM] = trim
 
 /datum/controller/subsystem/datacore/proc/get_manifest(record_type = DATACORE_RECORDS_STATION)
-	// First we build up the order in which we want the departments to appear in.
 	var/list/manifest_out = list()
-	for(var/datum/job_department/department as anything in SSjob.departments)
-		if(department.exclude_from_latejoin)
-			continue
-		manifest_out[department.department_name] = list()
-
-	manifest_out[DEPARTMENT_UNASSIGNED] = list()
-
-	var/list/departments_by_type = SSjob.departments_by_type
-
+	var/list/departments = list(
+		"Command" = GLOB.command_positions,
+		"Security" = GLOB.security_positions,
+		"Engineering" = GLOB.engineering_positions,
+		"Medical" = GLOB.medical_positions,
+		"Science" = GLOB.science_positions,
+		"Supply" = GLOB.supply_positions,
+		"Service" = GLOB.service_positions,
+		"Silicon" = GLOB.nonhuman_positions
+	)
 	for(var/datum/data/record/record as anything in SSdatacore.get_records(record_type))
 		var/name = record.fields[DATACORE_NAME]
 		var/rank = record.fields[DATACORE_RANK] // user-visible job
-		var/trim = record.fields[DATACORE_TRIM] // internal jobs by trim type
-		var/datum/job/job = SSjob.GetJob(trim)
-
-		// Filter out jobs that aren't on the manifest, move them to "unassigned"
-		if(!job || !(job.job_flags & JOB_CREW_MANIFEST) || !LAZYLEN(job.departments_list))
-			var/list/misc_list = manifest_out[DEPARTMENT_UNASSIGNED]
-			misc_list[++misc_list.len] = list(
+		var/has_department = FALSE
+		for(var/department in departments)
+			var/list/jobs = departments[department]
+			if((rank in jobs))
+				if(!manifest_out[department])
+					manifest_out[department] = list()
+				// Append to beginning of list if captain or department head
+				if (rank == "Captain" || (department != "Command" && (rank in GLOB.command_positions)))
+					manifest_out[department] = list(list(
+						"name" = name,
+						"rank" = rank
+					)) + manifest_out[department]
+				else
+					manifest_out[department] += list(list(
+						"name" = name,
+						"rank" = rank
+					))
+				has_department = TRUE
+		if(!has_department)
+			if(!manifest_out["Misc"])
+				manifest_out["Misc"] = list()
+			manifest_out["Misc"] += list(list(
 				"name" = name,
-				"rank" = rank,
-				"trim" = trim,
-				)
-			continue
-
-		for(var/department_type as anything in job.departments_list)
-			var/datum/job_department/department = departments_by_type[department_type]
-
-			if(!department)
-				stack_trace("get_manifest() failed to get job department for [department_type] of [job.type]")
-				continue
-
-			if(department.is_not_real_department)
-				continue
-
-			var/list/entry = list(
-				"name" = name,
-				"rank" = rank,
-				"trim" = trim,
-				)
-
-			var/list/department_list = manifest_out[department.department_name]
-			if(istype(job, department.department_head))
-				department_list.Insert(1, null)
-				department_list[1] = entry
-			else
-				department_list[++department_list.len] = entry
-
-	// Trim the empty categories.
-	for (var/department in manifest_out)
-		if(!length(manifest_out[department]))
-			manifest_out -= department
+				"rank" = rank
+			))
 
 	return manifest_out
 
@@ -198,7 +168,7 @@ SUBSYSTEM_DEF(datacore)
 		var/even = FALSE
 		for(var/entry in entries)
 			var/list/entry_list = entry
-			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"] == entry_list["trim"] ? entry_list["rank"] : "[entry_list["rank"]] ([entry_list["trim"]])"]</td></tr>"
+			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"]]</td></tr>"
 			even = !even
 
 	dat += "</table>"
@@ -209,36 +179,44 @@ SUBSYSTEM_DEF(datacore)
 /datum/controller/subsystem/datacore/proc/manifest_inject(mob/living/carbon/human/H, client/C)
 	SHOULD_NOT_SLEEP(TRUE)
 	var/static/list/show_directions = list(SOUTH, WEST)
-	if(!(H.mind?.assigned_role.job_flags & JOB_CREW_MANIFEST))
+	if(!(H.mind && (H.mind.assigned_role != H.mind.special_role)))
 		return
 
-	var/datum/job/job = H.mind.assigned_role
-	var/assignment = H.mind.assigned_role.title
-
-	//PARIAH EDIT ADDITION
-	// The alt job title, if user picked one, or the default
-	var/chosen_assignment = C?.prefs.alt_job_titles[assignment] || assignment
-	//PARIAH EDIT END
+	var/assignment
+	if(H.mind.assigned_role)
+		assignment = H.mind.assigned_role
+	else if(H.job)
+		assignment = H.job
+	else
+		assignment = "Unassigned"
 
 	var/static/record_id_num = 1001
 	var/id = num2hex(record_id_num++,6)
 	if(!C)
 		C = H.client
 
-	var/mutable_appearance/character_appearance = new(H.appearance)
-	remove_non_canon_overlays(character_appearance)
+	var/image = get_id_photo(H, C, show_directions)
+	var/datum/picture/pf = new
+	var/datum/picture/ps = new
+	pf.picture_name = "[H]"
+	ps.picture_name = "[H]"
+	pf.picture_desc = "This is [H]."
+	ps.picture_desc = "This is [H]."
+	pf.picture_image = icon(image, dir = SOUTH)
+	ps.picture_image = icon(image, dir = WEST)
+	var/obj/item/photo/photo_front = new(null, pf)
+	var/obj/item/photo/photo_side = new(null, ps)
 
 	//General Record
 	var/datum/data/record/general/G = new()
 	G.fields[DATACORE_ID] = id
 
 	G.fields[DATACORE_NAME] = H.real_name
-	G.fields[DATACORE_RANK] = chosen_assignment //PARIAH EDIT
-	G.fields[DATACORE_TRIM] = assignment
+	G.fields[DATACORE_RANK] = assignment
 	G.fields[DATACORE_INITIAL_RANK] = assignment
 	G.fields[DATACORE_AGE] = H.age
 	G.fields[DATACORE_SPECIES] = H.dna.species.name
-	G.fields[DATACORE_FINGERPRINT] = H.get_fingerprints(TRUE)
+	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
 	G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
 	G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
 	G.fields[DATACORE_GENDER] = H.gender
@@ -248,19 +226,18 @@ SUBSYSTEM_DEF(datacore)
 		G.fields[DATACORE_GENDER] = "Female"
 	else
 		G.fields[DATACORE_GENDER] = "Other"
-	G.fields[DATACORE_APPEARANCE] = character_appearance
-	var/obj/item/modular_computer/tablet/pda/pda = locate() in H
-	if(pda)
-		var/obj/item/computer_hardware/network_card/packetnet/rfcard = pda.all_components[MC_NET]
-		if(istype(rfcard))
-			G.fields[DATACORE_PDA_ID] = rfcard.hardware_id
+	//G.fields[DATACORE_APPEARANCE] = character_appearance
+	G.fields[DATACORE_PHOTO] = photo_front
+	G.fields[DATACORE_PHOTO_SIDE] = photo_side
 
 	library[DATACORE_RECORDS_STATION].inject_record(G)
 
+/*
 	// Add to company-specific manifests
 	var/datum/job_department/department = SSjob.departments_by_type[job.departments_list?[1]]
 	if(department?.manifest_key)
 		library[department.manifest_key].inject_record(G)
+*/
 
 	//Medical Record
 	var/datum/data/record/medical/M = new()
@@ -268,20 +245,19 @@ SUBSYSTEM_DEF(datacore)
 	M.fields[DATACORE_NAME] = H.real_name
 	M.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type.name
 	M.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
-	M.fields[DATACORE_DISABILITIES] = H.get_quirk_string(FALSE, CAT_QUIRK_DISABILITIES)
-	M.fields[DATACORE_DISABILITIES_DETAILS] = H.get_quirk_string(TRUE, CAT_QUIRK_DISABILITIES)
+	M.fields[DATACORE_DISABILITIES] = "None"
+	M.fields[DATACORE_DISABILITIES_DETAILS] = "No minor disabilities have been declared."
 	M.fields[DATACORE_DISEASES] = "None"
 	M.fields[DATACORE_DISEASES_DETAILS] = "No diseases have been diagnosed at the moment."
-	M.fields[DATACORE_NOTES] = H.get_quirk_string(FALSE, CAT_QUIRK_NOTES)
-	M.fields[DATACORE_NOTES_DETAILS] = H.get_quirk_string(TRUE, CAT_QUIRK_NOTES)
+	M.fields[DATACORE_NOTES] = H.get_trait_string()
 	library[DATACORE_RECORDS_MEDICAL].inject_record(M)
 
 	//Security Record
 	var/datum/data/record/security/S = new()
 	S.fields[DATACORE_ID] = id
 	S.fields[DATACORE_NAME] = H.real_name
-	S.fields[DATACORE_CRIMINAL_STATUS] = CRIMINAL_NONE
-	S.fields[DATACORE_CITATIONS] = list()
+	S.fields[DATACORE_CRIMINAL_STATUS] = "None"
+	//S.fields[DATACORE_CITATIONS] = list()
 	S.fields[DATACORE_CRIMES] = list()
 	S.fields[DATACORE_NOTES] = "No notes."
 	library[DATACORE_RECORDS_SECURITY].inject_record(S)
@@ -290,9 +266,7 @@ SUBSYSTEM_DEF(datacore)
 	var/datum/data/record/locked/L = new()
 	L.fields[DATACORE_ID] = id
 	L.fields[DATACORE_NAME] = H.real_name
-	// L.fields[DATACORE_RANK] = assignment //ORIGINAL
-	L.fields[DATACORE_RANK] = chosen_assignment  //PARIAH EDIT
-	L.fields[DATACORE_TRIM] = assignment
+	L.fields[DATACORE_RANK] = assignment
 	G.fields[DATACORE_INITIAL_RANK] = assignment
 	L.fields[DATACORE_AGE] = H.age
 	L.fields[DATACORE_GENDER] = H.gender
@@ -304,10 +278,11 @@ SUBSYSTEM_DEF(datacore)
 		G.fields[DATACORE_GENDER] = "Other"
 	L.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type
 	L.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
-	L.fields[DATACORE_DNA_IDENTITY] = H.dna.unique_identity
+	L.fields[DATACORE_DNA_IDENTITY] = H.dna.uni_identity
 	L.fields[DATACORE_SPECIES] = H.dna.species.type
 	L.fields[DATACORE_DNA_FEATURES] = H.dna.features
-	L.fields[DATACORE_APPEARANCE] = character_appearance
+	//L.fields[DATACORE_APPEARANCE] = character_appearance
+	L.fields[DATACORE_IMAGE] = image
 	L.fields[DATACORE_MINDREF] = H.mind
 	library[DATACORE_RECORDS_LOCKED].inject_record(L)
 
@@ -372,5 +347,13 @@ SUBSYSTEM_DEF(datacore)
 	c.paid = 0
 	c.dataId = ++securityCrimeCounter
 	return c
+
+/datum/controller/subsystem/datacore/proc/get_id_photo(mob/living/carbon/human/H, client/C, show_directions = list(SOUTH), datum/job/J)
+	var/datum/preferences/P
+	if(!C)
+		C = H.client
+	if(C)
+		P = C.prefs
+	return get_flat_human_icon(null, J, P, DUMMY_HUMAN_SLOT_MANIFEST, show_directions)
 
 #undef DUMMY_HUMAN_SLOT_MANIFEST

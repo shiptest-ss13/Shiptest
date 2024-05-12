@@ -4,7 +4,9 @@
 #define DATACORE_GENDER "gender"
 #define DATACORE_SPECIES "species"
 #define DATACORE_FINGERPRINT "fingerprint"
-#define DATACORE_APPEARANCE "character_appearance"
+//#define DATACORE_APPEARANCE "character_appearance"
+#define DATACORE_PHOTO "photo_front"
+#define DATACORE_PHOTO_SIDE "photo_side"
 #define DATACORE_MINDREF "mind"
 #define DATACORE_DNA_IDENTITY "identity"
 #define DATACORE_DNA_FEATURES "features"
@@ -19,16 +21,15 @@
 #define DATACORE_DISABILITIES_DETAILS "ma_dis_d"
 
 #define DATACORE_NOTES "notes"
-#define DATACORE_NOTES_DETAILS "notes_d"
+//#define DATACORE_NOTES_DETAILS "notes_d"
 
 #define DATACORE_RANK "rank"
 #define DATACORE_INITIAL_RANK "initial_rank"
-#define DATACORE_TRIM "trim"
-#define DATACORE_PDA_ID "pda_id"
+//#define DATACORE_PDA_ID "pda_id"
 
 #define DATACORE_CRIMES "crim"
 #define DATACORE_CRIMINAL_STATUS "criminal"
-#define DATACORE_CITATIONS "citation"
+//#define DATACORE_CITATIONS "citation"
 
 /// Keys for SSdatacore.library
 #define DATACORE_RECORDS_STATION "general"
@@ -36,7 +37,9 @@
 #define DATACORE_RECORDS_MEDICAL "medical"
 #define DATACORE_RECORDS_LOCKED "locked"
 
-#define DATACORE_RECORDS_AETHER "aether"
-#define DATACORE_RECORDS_DAEDALUS "daedalus"
-#define DATACORE_RECORDS_HERMES "hermes"
-#define DATACORE_RECORDS_MARS "mars"
+//#define DATACORE_RECORDS_AETHER "aether"
+//#define DATACORE_RECORDS_DAEDALUS "daedalus"
+//#define DATACORE_RECORDS_HERMES "hermes"
+//#define DATACORE_RECORDS_MARS "mars"
+
+#define DATACORE_IMAGE "image"

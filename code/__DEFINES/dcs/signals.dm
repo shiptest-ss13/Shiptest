@@ -773,3 +773,8 @@
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+
+///Global signal sent when the Datacore's initial manifest is complete
+#define COMSIG_GLOB_DATACORE_READY "datacore_ready"
+///Global signal sent when the datacore is added to via manifest_inject() (datum/data/record/general, datum/data/record/medical, datum/data/record/security, datum/data/record/locked)
+#define COMSIG_GLOB_MANIFEST_INJECT "manifest_inject"

@@ -20,6 +20,7 @@
 	new_record.fields = fields.Copy()
 	return new_record
 
+/*
 /// A helper proc to get the front photo of a character from the record.
 /// Handles calling `get_photo()`, read its documentation for more information.
 /datum/data/record/proc/get_front_photo()
@@ -29,6 +30,7 @@
 /// Handles calling `get_photo()`, read its documentation for more information.
 /datum/data/record/proc/get_side_photo()
 	return get_photo("photo_side", WEST)
+*/
 
 /**
  * You shouldn't be calling this directly, use `get_front_photo()` or `get_side_photo()`
@@ -48,6 +50,7 @@
  * Returns an empty `/icon` if there was no `character_appearance` entry in the `fields` list,
  * returns the generated/cached photo otherwise.
  */
+/*
 /datum/data/record/proc/get_photo(field_name, orientation)
 	if(fields[field_name])
 		return fields[field_name]
@@ -68,6 +71,7 @@
 	var/obj/item/photo/photo = new(null, picture)
 	fields[field_name] = photo
 	return photo
+*/
 
 /datum/data/record/general
 
@@ -85,29 +89,6 @@
 
 	fields[DATACORE_CRIMINAL_STATUS] = new_status
 	return TRUE
-
-/datum/data/record/security/proc/add_citation(datum/data/crime/crime)
-	fields[DATACORE_CITATIONS] |= crime
-
-/datum/data/record/security/proc/remove_citation(cDataId)
-	if(istext(cDataId))
-		cDataId = text2num(cDataId)
-
-	for(var/datum/data/crime/crime in fields[DATACORE_CITATIONS])
-		if(crime.dataId == cDataId)
-			fields[DATACORE_CITATIONS] -= crime
-			return
-
-/datum/data/record/security/proc/pay_citation(cDataId, amount)
-	if(istext(cDataId))
-		cDataId = text2num(cDataId)
-
-	for(var/datum/data/crime/crime in fields[DATACORE_CITATIONS])
-		if(crime.dataId == cDataId)
-			crime.paid = crime.paid + amount
-			var/datum/bank_account/D = SSeconomy.department_accounts_by_id[ACCOUNT_SEC]
-			D.adjust_money(amount)
-			return
 
 /datum/data/record/security/proc/add_crime(datum/data/crime/crime)
 	fields[DATACORE_CRIMES] |= crime
