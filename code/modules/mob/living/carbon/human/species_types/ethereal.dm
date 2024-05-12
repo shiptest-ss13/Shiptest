@@ -1,11 +1,7 @@
 #define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
-
 #define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
-
 #define DIG_TIME (7.5 SECONDS)
-
 #define ROOT_TIME (3 SECONDS)
-
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /datum/species/elzuose
@@ -101,7 +97,7 @@
 	icon_icon = 'icons/obj/flora/plants.dmi'
 	background_icon_state = "bg_alien"
 
-/datum/action/innate/root/Activate()
+/datum/action/innate/root/activate()
 	var/mob/living/carbon/human/_human = owner
 	var/datum/species/elzuose/_elzu = _human.dna.species
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
@@ -157,7 +153,7 @@
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 
-/datum/action/innate/root/IsAvailable()
+/datum/action/innate/root/is_available()
 	if(..())
 		var/mob/living/carbon/human/_human = owner
 		var/turf/terrain = get_turf(_human)
