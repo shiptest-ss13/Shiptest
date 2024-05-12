@@ -180,7 +180,7 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 
 	var/list/names = list()
 	for(var/datum/data/record/t in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))//Picks from crew manifest.
-		names += t.fields["name"]
+		names += t.fields[DATACORE_NAME]
 
 	var/maxwords = words//Extra var to check for duplicates.
 

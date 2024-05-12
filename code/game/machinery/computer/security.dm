@@ -123,8 +123,8 @@
 						for(var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST), sortBy, order))
 							var/crimstat = ""
 							for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-								if((E.fields["name"] == R.fields["name"]) && (E.fields["id"] == R.fields["id"]))
-									crimstat = E.fields["criminal"]
+								if((E.fields[DATACORE_NAME] == R.fields[DATACORE_NAME]) && (E.fields[DATACORE_ID] == R.fields[DATACORE_ID]))
+									crimstat = E.fields[DATACORE_CRIMINAL_STATUS]
 							var/background
 							switch(crimstat)
 								if("*Arrest*")
@@ -141,10 +141,10 @@
 									background = "''" //"'background-color:#FFFFFF;'"
 									crimstat = "No Record."
 							dat += "<tr style=[background]>"
-							dat += text("<td><input type='hidden' value='[] [] [] []'></input><A href='?src=[REF(src)];choice=Browse Record;d_rec=[REF(R)]'>[]</a></td>", R.fields["name"], R.fields["id"], R.fields["rank"], R.fields["fingerprint"], R.fields["name"])
-							dat += text("<td>[]</td>", R.fields["id"])
-							dat += text("<td>[]</td>", R.fields["rank"])
-							dat += text("<td>[]</td>", R.fields["fingerprint"])
+							dat += text("<td><input type='hidden' value='[] [] [] []'></input><A href='?src=[REF(src)];choice=Browse Record;d_rec=[REF(R)]'>[]</a></td>", R.fields[DATACORE_NAME], R.fields[DATACORE_ID], R.fields[DATACORE_RANK], R.fields[DATACORE_FINGERPRINT], R.fields[DATACORE_NAME])
+							dat += text("<td>[]</td>", R.fields[DATACORE_ID])
+							dat += text("<td>[]</td>", R.fields[DATACORE_RANK])
+							dat += text("<td>[]</td>", R.fields[DATACORE_FINGERPRINT])
 							dat += text("<td>[]</td></tr>", crimstat)
 						dat += {"
 						</table></span>
@@ -161,22 +161,22 @@
 				if(3)
 					dat += "<font size='4'><b>Security Record</b></font><br>"
 					if(istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1))
-						if(istype(active1.fields["photo_front"], /obj/item/photo))
-							var/obj/item/photo/P1 = active1.fields["photo_front"]
+						if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
+							var/obj/item/photo/P1 = active1.fields[DATACORE_PHOTO]
 							user << browse_rsc(P1.picture.picture_image, "photo_front")
-						if(istype(active1.fields["photo_side"], /obj/item/photo))
-							var/obj/item/photo/P2 = active1.fields["photo_side"]
+						if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
+							var/obj/item/photo/P2 = active1.fields[DATACORE_PHOTO_SIDE]
 							user << browse_rsc(P2.picture.picture_image, "photo_side")
 						dat += {"<table><tr><td><table>
-						<tr><td>Name:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=name'>&nbsp;[active1.fields["name"]]&nbsp;</A></td></tr>
-						<tr><td>ID:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=id'>&nbsp;[active1.fields["id"]]&nbsp;</A></td></tr>
-						<tr><td>Gender:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=gender'>&nbsp;[active1.fields["gender"]]&nbsp;</A></td></tr>
-						<tr><td>Age:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=age'>&nbsp;[active1.fields["age"]]&nbsp;</A></td></tr>"}
-						dat += "<tr><td>Species:</td><td><A href ='?src=[REF(src)];choice=Edit Field;field=species'>&nbsp;[active1.fields["species"]]&nbsp;</A></td></tr>"
-						dat += {"<tr><td>Rank:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields["rank"]]&nbsp;</A></td></tr>
-						<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=fingerprint'>&nbsp;[active1.fields["fingerprint"]]&nbsp;</A></td></tr>
-						<tr><td>Physical Status:</td><td>&nbsp;[active1.fields["p_stat"]]&nbsp;</td></tr>
-						<tr><td>Mental Status:</td><td>&nbsp;[active1.fields["m_stat"]]&nbsp;</td></tr>
+						<tr><td>Name:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=name'>&nbsp;[active1.fields[DATACORE_NAME]]&nbsp;</A></td></tr>
+						<tr><td>ID:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=id'>&nbsp;[active1.fields[DATACORE_ID]]&nbsp;</A></td></tr>
+						<tr><td>Gender:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=gender'>&nbsp;[active1.fields[DATACORE_GENDER]]&nbsp;</A></td></tr>
+						<tr><td>Age:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=age'>&nbsp;[active1.fields[DATACORE_AGE]]&nbsp;</A></td></tr>"}
+						dat += "<tr><td>Species:</td><td><A href ='?src=[REF(src)];choice=Edit Field;field=species'>&nbsp;[active1.fields[DATACORE_SPECIES]]&nbsp;</A></td></tr>"
+						dat += {"<tr><td>Rank:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields[DATACORE_RANK]]&nbsp;</A></td></tr>
+						<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=fingerprint'>&nbsp;[active1.fields[DATACORE_FINGERPRINT]]&nbsp;</A></td></tr>
+						<tr><td>Physical Status:</td><td>&nbsp;[active1.fields[DATACORE_PHYSICAL_HEALTH]]&nbsp;</td></tr>
+						<tr><td>Mental Status:</td><td>&nbsp;[active1.fields[DATACORE_MENTAL_HEALTH]]&nbsp;</td></tr>
 						</table></td>
 						<td><table><td align = center><a href='?src=[REF(src)];choice=Edit Field;field=show_photo_front'><img src=photo_front height=80 width=80 border=4></a><br>
 						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_front'>Print photo</a><br>
@@ -189,7 +189,7 @@
 						dat += "<br>General Record Lost!<br>"
 					if((istype(active2, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_SECURITY).Find(active2)))
 						dat += "<font size='4'><b>Security Data</b></font>"
-						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
+						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields[DATACORE_CRIMINAL_STATUS]]</A>"
 
 						dat += "<br><br>Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=crim_add'>Add New</A>"
 
@@ -201,7 +201,7 @@
 						<th>Time Added</th>
 						<th>Del</th>
 						</tr>"}
-						for(var/datum/data/crime/c in active2.fields["crim"])
+						for(var/datum/data/crime/c in active2.fields[DATACORE_CRIMES])
 							dat += "<tr><td>[c.crimeName]</td>"
 							if(!c.crimeDetails)
 								dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=add_details;cdataid=[c.dataId]'>\[+\]</A></td>"
@@ -213,7 +213,7 @@
 							dat += "</tr>"
 						dat += "</table>"
 
-						dat += "<br>\nImportant Notes:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A>"
+						dat += "<br>\nImportant Notes:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields[DATACORE_NOTES]]&nbsp;</A>"
 						dat += "<br><br><font size='4'><b>Comments/Log</b></font><br>"
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
@@ -317,7 +317,7 @@ What a mess.*/
 				else
 					active1 = active2 = R
 					for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-						if((E.fields["name"] == R.fields["name"] || E.fields["id"] == R.fields["id"]))
+						if((E.fields[DATACORE_NAME] == R.fields[DATACORE_NAME] || E.fields[DATACORE_ID] == R.fields[DATACORE_ID]))
 							active2 = E
 					screen = 3
 
@@ -330,13 +330,13 @@ What a mess.*/
 					var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
 					var/final_paper_text = "<CENTER><B>Security Record - (SR-[SSdatacore.securityPrintCount])</B></CENTER><BR>"
 					if((istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1)))
-						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						final_paper_text += "\nSpecies: [active1.fields["species"]]<BR>"
-						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields[DATACORE_NAME], active1.fields[DATACORE_ID], active1.fields[DATACORE_GENDER], active1.fields[DATACORE_AGE])
+						final_paper_text += "\nSpecies: [active1.fields[DATACORE_SPECIES]]<BR>"
+						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields[DATACORE_FINGERPRINT], active1.fields[DATACORE_PHYSICAL_HEALTH], active1.fields[DATACORE_MENTAL_HEALTH])
 					else
 						final_paper_text += "<B>General Record Lost!</B><BR>"
 					if((istype(active2, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_SECURITY).Find(active2)))
-						final_paper_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+						final_paper_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields[DATACORE_CRIMINAL_STATUS])
 
 						final_paper_text += "<BR>\n<BR>\nCrimes:<BR>\n"
 						final_paper_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
@@ -346,7 +346,7 @@ What a mess.*/
 <th>Author</th>
 <th>Time Added</th>
 </tr>"}
-						for(var/datum/data/crime/c in active2.fields["crim"])
+						for(var/datum/data/crime/c in active2.fields[DATACORE_CRIMES])
 							final_paper_text += "<tr><td>[c.crimeName]</td>"
 							final_paper_text += "<td>[c.crimeDetails]</td>"
 							final_paper_text += "<td>[c.author]</td>"
@@ -354,12 +354,12 @@ What a mess.*/
 							final_paper_text += "</tr>"
 						final_paper_text += "</table>"
 
-						final_paper_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+						final_paper_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields[DATACORE_NOTES])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
 							final_paper_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
-						printed_paper.name = text("SR-[] '[]'", SSdatacore.securityPrintCount, active1.fields["name"])
+						printed_paper.name = text("SR-[] '[]'", SSdatacore.securityPrintCount, active1.fields[DATACORE_NAME])
 					else
 						final_paper_text += "<B>Security Record Lost!</B><BR>"
 						printed_paper.name = text("SR-[] '[]'", SSdatacore.securityPrintCount, "Record Lost")
@@ -369,13 +369,13 @@ What a mess.*/
 					printing = null
 			if("Print Poster")
 				if(!(printing))
-					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
+					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields[DATACORE_NAME])
 					if(wanted_name)
 						var/default_description = "A poster declaring [wanted_name] to be a dangerous individual, wanted by Nanotrasen. Report any sightings to security immediately."
-						var/list/crimes = active2.fields["crim"]
+						var/list/crimes = active2.fields[DATACORE_CRIMES]
 						if(crimes.len)
 							default_description += "\n[wanted_name] is wanted for the following crimes:\n"
-							for(var/datum/data/crime/c in active2.fields["crim"])
+							for(var/datum/data/crime/c in active2.fields[DATACORE_CRIMES])
 								default_description += "\n[c.crimeName]\n"
 								default_description += "[c.crimeDetails]\n"
 
@@ -387,12 +387,12 @@ What a mess.*/
 							printing = 1
 							sleep(30)
 							if((istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1)))//make sure the record still exists.
-								var/obj/item/photo/photo = active1.fields["photo_front"]
+								var/obj/item/photo/photo = active1.fields[DATACORE_PHOTO]
 								new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info, headerText)
 							printing = 0
 			if("Print Missing")
 				if(!(printing))
-					var/missing_name = stripped_input(usr, "Please enter an alias for the missing person:", "Print Missing Persons Poster", active1.fields["name"])
+					var/missing_name = stripped_input(usr, "Please enter an alias for the missing person:", "Print Missing Persons Poster", active1.fields[DATACORE_NAME])
 					if(missing_name)
 						var/default_description = "A poster declaring [missing_name] to be a missing individual, missed by Nanotrasen. Report any sightings to security immediately."
 
@@ -404,7 +404,7 @@ What a mess.*/
 							printing = 1
 							sleep(30)
 							if((istype(active1, /datum/data/record) && SSdatacore.get_records(DATACORE_RECORDS_OUTPOST).Find(active1)))//make sure the record still exists.
-								var/obj/item/photo/photo = active1.fields["photo_front"]
+								var/obj/item/photo/photo = active1.fields[DATACORE_PHOTO]
 								new /obj/item/poster/wanted/missing(loc, photo.picture.picture_image, missing_name, info, headerText)
 							printing = 0
 
@@ -453,12 +453,12 @@ What a mess.*/
 			if("New Record (Security)")
 				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
 					var/datum/data/record/R = new /datum/data/record()
-					R.fields["name"] = active1.fields["name"]
-					R.fields["id"] = active1.fields["id"]
-					R.name = text("Security Record #[]", R.fields["id"])
-					R.fields["criminal"] = "None"
-					R.fields["crim"] = list()
-					R.fields["notes"] = "No notes."
+					R.fields[DATACORE_NAME] = active1.fields[DATACORE_NAME]
+					R.fields[DATACORE_ID] = active1.fields[DATACORE_ID]
+					R.name = text("Security Record #[]", R.fields[DATACORE_ID])
+					R.fields[DATACORE_CRIMINAL_STATUS] = "None"
+					R.fields[DATACORE_CRIMES] = list()
+					R.fields[DATACORE_NOTES] = "No notes."
 					SSdatacore.inject_record(R, DATACORE_RECORDS_SECURITY)
 					active2 = R
 					screen = 3
@@ -466,46 +466,46 @@ What a mess.*/
 			if("New Record (General)")
 				//General Record
 				var/datum/data/record/G = new /datum/data/record()
-				G.fields["name"] = "New Record"
-				G.fields["id"] = "[num2hex(rand(1, 1.6777215E7), 6)]"
-				G.fields["rank"] = "Unassigned"
-				G.fields["gender"] = "Male"
-				G.fields["age"] = "Unknown"
-				G.fields["species"] = "Human"
-				G.fields["photo_front"] = new /icon()
-				G.fields["photo_side"] = new /icon()
-				G.fields["fingerprint"] = "?????"
-				G.fields["p_stat"] = "Active"
-				G.fields["m_stat"] = "Stable"
+				G.fields[DATACORE_NAME] = "New Record"
+				G.fields[DATACORE_ID] = "[num2hex(rand(1, 1.6777215E7), 6)]"
+				G.fields[DATACORE_RANK] = "Unassigned"
+				G.fields[DATACORE_GENDER] = "Male"
+				G.fields[DATACORE_AGE] = "Unknown"
+				G.fields[DATACORE_SPECIES] = "Human"
+				G.fields[DATACORE_PHOTO] = new /icon()
+				G.fields[DATACORE_PHOTO_SIDE] = new /icon()
+				G.fields[DATACORE_FINGERPRINT] = "?????"
+				G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
+				G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
 				SSdatacore.inject_record(G, DATACORE_RECORDS_OUTPOST)
 				active1 = G
 
 				//Security Record
 				var/datum/data/record/R = new /datum/data/record()
-				R.fields["name"] = active1.fields["name"]
-				R.fields["id"] = active1.fields["id"]
-				R.name = text("Security Record #[]", R.fields["id"])
-				R.fields["criminal"] = "None"
-				R.fields["crim"] = list()
-				R.fields["notes"] = "No notes."
+				R.fields[DATACORE_NAME] = active1.fields[DATACORE_NAME]
+				R.fields[DATACORE_ID] = active1.fields[DATACORE_ID]
+				R.name = text("Security Record #[]", R.fields[DATACORE_ID])
+				R.fields[DATACORE_CRIMINAL_STATUS] = "None"
+				R.fields[DATACORE_CRIMES] = list()
+				R.fields[DATACORE_NOTES] = "No notes."
 				SSdatacore.inject_record(R, DATACORE_RECORDS_SECURITY)
 				active2 = R
 
 				//Medical Record
 				var/datum/data/record/M = new /datum/data/record()
-				M.fields["id"]			= active1.fields["id"]
-				M.fields["name"]		= active1.fields["name"]
-				M.fields["blood_type"]	= "?"
-				M.fields["b_dna"]		= "?????"
+				M.fields[DATACORE_ID]			= active1.fields[DATACORE_ID]
+				M.fields[DATACORE_NAME]		= active1.fields[DATACORE_NAME]
+				M.fields[DATACORE_BLOOD_TYPE]	= "?"
+				M.fields[DATACORE_BLOOD_DNA]		= "?????"
 				M.fields["mi_dis"]		= "None"
 				M.fields["mi_dis_d"]	= "No minor disabilities have been declared."
-				M.fields["ma_dis"]		= "None"
-				M.fields["ma_dis_d"]	= "No major disabilities have been diagnosed."
+				M.fields[DATACORE_DISABILITIES]		= "None"
+				M.fields[DATACORE_DISABILITIES_DETAILS]	= "No major disabilities have been diagnosed."
 				M.fields["alg"]			= "None"
 				M.fields["alg_d"]		= "No allergies have been detected in this patient."
-				M.fields["cdi"]			= "None"
-				M.fields["cdi_d"]		= "No diseases have been diagnosed at the moment."
-				M.fields["notes"]		= "No notes."
+				M.fields[DATACORE_DISEASES]			= "None"
+				M.fields[DATACORE_DISEASES_DETAILS]		= "No diseases have been diagnosed at the moment."
+				M.fields[DATACORE_NOTES]		= "No notes."
 				SSdatacore.inject_record(M, DATACORE_RECORDS_MEDICAL)
 
 
@@ -518,61 +518,61 @@ What a mess.*/
 				switch(href_list["field"])
 					if("name")
 						if(istype(active1, /datum/data/record) || istype(active2, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input name:", "Secure. records", active1.fields["name"], MAX_MESSAGE_LEN)
+							var/t1 = stripped_input(usr, "Please input name:", "Secure. records", active1.fields[DATACORE_NAME], MAX_MESSAGE_LEN)
 							if(!canUseSecurityRecordsConsole(usr, t1, a1))
 								return
 							if(istype(active1, /datum/data/record))
-								active1.fields["name"] = t1
+								active1.fields[DATACORE_NAME] = t1
 							if(istype(active2, /datum/data/record))
-								active2.fields["name"] = t1
+								active2.fields[DATACORE_NAME] = t1
 					if("id")
 						if(istype(active2, /datum/data/record) || istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input id:", "Secure. records", active1.fields["id"], null)
+							var/t1 = stripped_input(usr, "Please input id:", "Secure. records", active1.fields[DATACORE_ID], null)
 							if(!canUseSecurityRecordsConsole(usr, t1, a1))
 								return
 							if(istype(active1, /datum/data/record))
-								active1.fields["id"] = t1
+								active1.fields[DATACORE_ID] = t1
 							if(istype(active2, /datum/data/record))
-								active2.fields["id"] = t1
+								active2.fields[DATACORE_ID] = t1
 					if("fingerprint")
 						if(istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input fingerprint hash:", "Secure. records", active1.fields["fingerprint"], null)
+							var/t1 = stripped_input(usr, "Please input fingerprint hash:", "Secure. records", active1.fields[DATACORE_FINGERPRINT], null)
 							if(!canUseSecurityRecordsConsole(usr, t1, a1))
 								return
-							active1.fields["fingerprint"] = t1
+							active1.fields[DATACORE_FINGERPRINT] = t1
 					if("gender")
 						if(istype(active1, /datum/data/record))
-							if(active1.fields["gender"] == "Male")
-								active1.fields["gender"] = "Female"
-							else if(active1.fields["gender"] == "Female")
-								active1.fields["gender"] = "Other"
+							if(active1.fields[DATACORE_GENDER] == "Male")
+								active1.fields[DATACORE_GENDER] = "Female"
+							else if(active1.fields[DATACORE_GENDER] == "Female")
+								active1.fields[DATACORE_GENDER] = "Other"
 							else
-								active1.fields["gender"] = "Male"
+								active1.fields[DATACORE_GENDER] = "Male"
 					if("age")
 						if(istype(active1, /datum/data/record))
-							var/t1 = input("Please input age:", "Secure. records", active1.fields["age"], null) as num|null
+							var/t1 = input("Please input age:", "Secure. records", active1.fields[DATACORE_AGE], null) as num|null
 
 							if (!t1)
 								return
 
 							if(!canUseSecurityRecordsConsole(usr, "age", a1))
 								return
-							active1.fields["age"] = t1
+							active1.fields[DATACORE_AGE] = t1
 					if("species")
 						if(istype(active1, /datum/data/record))
 							var/t1 = input("Select a species", "Species Selection") as null|anything in GLOB.roundstart_races
 							if(!canUseSecurityRecordsConsole(usr, t1, a1))
 								return
-							active1.fields["species"] = t1
+							active1.fields[DATACORE_SPECIES] = t1
 					if("show_photo_front")
-						if(active1.fields["photo_front"])
-							if(istype(active1.fields["photo_front"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_front"]
+						if(active1.fields[DATACORE_PHOTO])
+							if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
+								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO]
 								P.show(usr)
 					if("upd_photo_front")
 						var/obj/item/photo/photo = get_photo(usr)
 						if(photo)
-							qdel(active1.fields["photo_front"])
+							qdel(active1.fields[DATACORE_PHOTO])
 							//Lets center it to a 32x32.
 							var/icon/I = photo.picture.picture_image
 							var/w = I.Width()
@@ -580,21 +580,21 @@ What a mess.*/
 							var/dw = w - 32
 							var/dh = w - 32
 							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields["photo_front"] = photo
+							active1.fields[DATACORE_PHOTO] = photo
 					if("print_photo_front")
-						if(active1.fields["photo_front"])
-							if(istype(active1.fields["photo_front"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_front"]
-								print_photo(P.picture.picture_image, active1.fields["name"])
+						if(active1.fields[DATACORE_PHOTO])
+							if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
+								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO]
+								print_photo(P.picture.picture_image, active1.fields[DATACORE_NAME])
 					if("show_photo_side")
-						if(active1.fields["photo_side"])
-							if(istype(active1.fields["photo_side"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_side"]
+						if(active1.fields[DATACORE_PHOTO_SIDE])
+							if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
+								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO_SIDE]
 								P.show(usr)
 					if("upd_photo_side")
 						var/obj/item/photo/photo = get_photo(usr)
 						if(photo)
-							qdel(active1.fields["photo_side"])
+							qdel(active1.fields[DATACORE_PHOTO_SIDE])
 							//Lets center it to a 32x32.
 							var/icon/I = photo.picture.picture_image
 							var/w = I.Width()
@@ -602,12 +602,12 @@ What a mess.*/
 							var/dw = w - 32
 							var/dh = w - 32
 							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields["photo_side"] = photo
+							active1.fields[DATACORE_PHOTO_SIDE] = photo
 					if("print_photo_side")
-						if(active1.fields["photo_side"])
-							if(istype(active1.fields["photo_side"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_side"]
-								print_photo(P.picture.picture_image, active1.fields["name"])
+						if(active1.fields[DATACORE_PHOTO_SIDE])
+							if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
+								var/obj/item/photo/P = active1.fields[DATACORE_PHOTO_SIDE]
+								print_photo(P.picture.picture_image, active1.fields[DATACORE_NAME])
 					if("crim_add")
 						if(!istype(active1, /datum/data/record/security))
 							return
@@ -619,7 +619,7 @@ What a mess.*/
 						var/datum/data/record/security/security_record = active1
 						var/crime = SSdatacore.new_crime_entry(t1, t2, authenticated, station_time_timestamp())
 						security_record.add_crime(crime)
-						investigate_log("New Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
+						investigate_log("New Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 					if("crim_delete")
 						if(!istype(active1, /datum/data/record/security) || !href_list["cdataid"])
 							return
@@ -656,10 +656,10 @@ What a mess.*/
 
 					if("notes")
 						if(istype(active2, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please summarize notes:", "Secure. records", active2.fields["notes"], null)
+							var/t1 = stripped_input(usr, "Please summarize notes:", "Secure. records", active2.fields[DATACORE_NOTES], null)
 							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["notes"] = t1
+							active2.fields[DATACORE_NOTES] = t1
 					if("criminal")
 						if(!istype(active1, /datum/data/record/security))
 							return
@@ -689,39 +689,39 @@ What a mess.*/
 				switch(href_list["choice"])
 					if("Change Rank")
 						if(active1)
-							active1.fields["rank"] = strip_html(href_list["rank"])
+							active1.fields[DATACORE_RANK] = strip_html(href_list["rank"])
 							if(href_list["rank"] in get_all_jobs())
 								active1.fields["real_rank"] = href_list["real_rank"]
 
 					if("Change Criminal Status")
 						if(active2)
-							var/old_field = active2.fields["criminal"]
+							var/old_field = active2.fields[DATACORE_CRIMINAL_STATUS]
 							switch(href_list["criminal2"])
 								if("none")
-									active2.fields["criminal"] = "None"
+									active2.fields[DATACORE_CRIMINAL_STATUS] = "None"
 								if("arrest")
-									active2.fields["criminal"] = "*Arrest*"
+									active2.fields[DATACORE_CRIMINAL_STATUS] = "*Arrest*"
 								if("incarcerated")
-									active2.fields["criminal"] = "Incarcerated"
+									active2.fields[DATACORE_CRIMINAL_STATUS] = "Incarcerated"
 								if("paroled")
-									active2.fields["criminal"] = "Paroled"
+									active2.fields[DATACORE_CRIMINAL_STATUS] = "Paroled"
 								if("released")
-									active2.fields["criminal"] = "Discharged"
-							investigate_log("[active1.fields["name"]] has been set from [old_field] to [active2.fields["criminal"]] by [key_name(usr)].", INVESTIGATE_RECORDS)
+									active2.fields[DATACORE_CRIMINAL_STATUS] = "Discharged"
+							investigate_log("[active1.fields[DATACORE_NAME]] has been set from [old_field] to [active2.fields[DATACORE_CRIMINAL_STATUS]] by [key_name(usr)].", INVESTIGATE_RECORDS)
 							for(var/i in GLOB.human_list)
 								var/mob/living/carbon/human/H = i
 								H.sec_hud_set_security_status()
 					if("Delete Record (Security) Execute")
-						investigate_log("[key_name(usr)] has deleted the security records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
+						investigate_log("[key_name(usr)] has deleted the security records for [active1.fields[DATACORE_NAME]].", INVESTIGATE_RECORDS)
 						if(active2)
 							qdel(active2)
 							active2 = null
 
 					if("Delete Record (ALL) Execute")
 						if(active1)
-							investigate_log("[key_name(usr)] has deleted all records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
+							investigate_log("[key_name(usr)] has deleted all records for [active1.fields[DATACORE_NAME]].", INVESTIGATE_RECORDS)
 							for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-								if((R.fields["name"] == active1.fields["name"] || R.fields["id"] == active1.fields["id"]))
+								if((R.fields[DATACORE_NAME] == active1.fields[DATACORE_NAME] || R.fields[DATACORE_ID] == active1.fields[DATACORE_ID]))
 									qdel(R)
 									break
 							qdel(active1)
@@ -771,25 +771,25 @@ What a mess.*/
 			switch(rand(1,8))
 				if(1)
 					if(prob(10))
-						R.fields["name"] = "[pick(lizard_name(MALE),lizard_name(FEMALE))]"
+						R.fields[DATACORE_NAME] = "[pick(lizard_name(MALE),lizard_name(FEMALE))]"
 					else
-						R.fields["name"] = "[pick(pick(GLOB.first_names_male), pick(GLOB.first_names_female))] [pick(GLOB.last_names)]"
+						R.fields[DATACORE_NAME] = "[pick(pick(GLOB.first_names_male), pick(GLOB.first_names_female))] [pick(GLOB.last_names)]"
 				if(2)
-					R.fields["gender"] = pick("Male", "Female", "Other")
+					R.fields[DATACORE_GENDER] = pick("Male", "Female", "Other")
 				if(3)
-					R.fields["age"] = rand(5, 85)
+					R.fields[DATACORE_AGE] = rand(5, 85)
 				if(4)
-					R.fields["criminal"] = pick("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged")
+					R.fields[DATACORE_CRIMINAL_STATUS] = pick("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged")
 				if(5)
-					R.fields["p_stat"] = pick("*Unconscious*", "Active", "Physically Unfit")
+					R.fields[DATACORE_PHYSICAL_HEALTH] = pick("*Unconscious*", "Active", "Physically Unfit")
 				if(6)
-					R.fields["m_stat"] = pick("*Insane*", "*Unstable*", "*Watch*", "Stable")
+					R.fields[DATACORE_MENTAL_HEALTH] = pick("*Insane*", "*Unstable*", "*Watch*", "Stable")
 				if(7)
-					R.fields["species"] = pick(GLOB.roundstart_races)
+					R.fields[DATACORE_SPECIES] = pick(GLOB.roundstart_races)
 				if(8)
 					var/datum/data/record/G = pick(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-					R.fields["photo_front"] = G.fields["photo_front"]
-					R.fields["photo_side"] = G.fields["photo_side"]
+					R.fields[DATACORE_PHOTO] = G.fields[DATACORE_PHOTO]
+					R.fields[DATACORE_PHOTO_SIDE] = G.fields[DATACORE_PHOTO_SIDE]
 			continue
 
 		else if(prob(1))

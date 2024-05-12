@@ -67,26 +67,26 @@
 							var/blood_type = ""
 							var/b_dna = ""
 							for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-								if((E.fields["name"] == R.fields["name"] && E.fields["id"] == R.fields["id"]))
-									blood_type = E.fields["blood_type"]
-									b_dna = E.fields["b_dna"]
+								if((E.fields[DATACORE_NAME] == R.fields[DATACORE_NAME] && E.fields[DATACORE_ID] == R.fields[DATACORE_ID]))
+									blood_type = E.fields[DATACORE_BLOOD_TYPE]
+									b_dna = E.fields[DATACORE_BLOOD_DNA]
 							var/background
 
-							if(R.fields["m_stat"] == "*Insane*" || R.fields["p_stat"] == "*Deceased*")
+							if(R.fields[DATACORE_MENTAL_HEALTH] == "*Insane*" || R.fields[DATACORE_PHYSICAL_HEALTH] == "*Deceased*")
 								background = "'background-color:#990000;'"
-							else if(R.fields["p_stat"] == "*Unconscious*" || R.fields["m_stat"] == "*Unstable*")
+							else if(R.fields[DATACORE_PHYSICAL_HEALTH] == "*Unconscious*" || R.fields[DATACORE_MENTAL_HEALTH] == "*Unstable*")
 								background = "'background-color:#CD6500;'"
-							else if(R.fields["p_stat"] == "Physically Unfit" || R.fields["m_stat"] == "*Watch*")
+							else if(R.fields[DATACORE_PHYSICAL_HEALTH] == "Physically Unfit" || R.fields[DATACORE_MENTAL_HEALTH] == "*Watch*")
 								background = "'background-color:#3BB9FF;'"
 							else
 								background = "'background-color:#4F7529;'"
 
-							dat += text("<tr style=[]><td><A href='?src=[REF(src)];d_rec=[]'>[]</a></td>", background, R.fields["id"], R.fields["name"])
-							dat += text("<td>[]</td>", R.fields["id"])
-							dat += text("<td><b>F:</b> []<BR><b>D:</b> []</td>", R.fields["fingerprint"], b_dna)
+							dat += text("<tr style=[]><td><A href='?src=[REF(src)];d_rec=[]'>[]</a></td>", background, R.fields[DATACORE_ID], R.fields[DATACORE_NAME])
+							dat += text("<td>[]</td>", R.fields[DATACORE_ID])
+							dat += text("<td><b>F:</b> []<BR><b>D:</b> []</td>", R.fields[DATACORE_FINGERPRINT], b_dna)
 							dat += text("<td>[]</td>", blood_type)
-							dat += text("<td>[]</td>", R.fields["p_stat"])
-							dat += text("<td>[]</td></tr>", R.fields["m_stat"])
+							dat += text("<td>[]</td>", R.fields[DATACORE_PHYSICAL_HEALTH])
+							dat += text("<td>[]</td></tr>", R.fields[DATACORE_MENTAL_HEALTH])
 					dat += "</table><hr width='75%' />"
 					dat += "<HR><A href='?src=[REF(src)];screen=1'>Back</A>"
 				if(3)
@@ -95,38 +95,38 @@
 
 					dat += "<table><tr><td><b><font size='4'>Medical Record</font></b></td></tr>"
 					if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-						if(istype(active1.fields["photo_front"], /obj/item/photo))
-							var/obj/item/photo/P1 = active1.fields["photo_front"]
+						if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
+							var/obj/item/photo/P1 = active1.fields[DATACORE_PHOTO]
 							user << browse_rsc(P1.picture.picture_image, "photo_front")
-						if(istype(active1.fields["photo_side"], /obj/item/photo))
-							var/obj/item/photo/P2 = active1.fields["photo_side"]
+						if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
+							var/obj/item/photo/P2 = active1.fields[DATACORE_PHOTO_SIDE]
 							user << browse_rsc(P2.picture.picture_image, "photo_side")
-						dat += "<tr><td>Name:</td><td>[active1.fields["name"]]</td>"
+						dat += "<tr><td>Name:</td><td>[active1.fields[DATACORE_NAME]]</td>"
 						dat += "<td><a href='?src=[REF(src)];field=show_photo_front'><img src=photo_front height=80 width=80 border=4></a></td>"
 						dat += "<td><a href='?src=[REF(src)];field=show_photo_side'><img src=photo_side height=80 width=80 border=4></a></td></tr>"
-						dat += "<tr><td>ID:</td><td>[active1.fields["id"]]</td></tr>"
-						dat += "<tr><td>Gender:</td><td><A href='?src=[REF(src)];field=gender'>&nbsp;[active1.fields["gender"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Age:</td><td><A href='?src=[REF(src)];field=age'>&nbsp;[active1.fields["age"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Species:</td><td><A href='?src=[REF(src)];field=species'>&nbsp;[active1.fields["species"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];field=fingerprint'>&nbsp;[active1.fields["fingerprint"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Physical Status:</td><td><A href='?src=[REF(src)];field=p_stat'>&nbsp;[active1.fields["p_stat"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Mental Status:</td><td><A href='?src=[REF(src)];field=m_stat'>&nbsp;[active1.fields["m_stat"]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>ID:</td><td>[active1.fields[DATACORE_ID]]</td></tr>"
+						dat += "<tr><td>Gender:</td><td><A href='?src=[REF(src)];field=gender'>&nbsp;[active1.fields[DATACORE_GENDER]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Age:</td><td><A href='?src=[REF(src)];field=age'>&nbsp;[active1.fields[DATACORE_AGE]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Species:</td><td><A href='?src=[REF(src)];field=species'>&nbsp;[active1.fields[DATACORE_SPECIES]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];field=fingerprint'>&nbsp;[active1.fields[DATACORE_FINGERPRINT]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Physical Status:</td><td><A href='?src=[REF(src)];field=p_stat'>&nbsp;[active1.fields[DATACORE_PHYSICAL_HEALTH]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Mental Status:</td><td><A href='?src=[REF(src)];field=m_stat'>&nbsp;[active1.fields[DATACORE_MENTAL_HEALTH]]&nbsp;</A></td></tr>"
 					else
 						dat += "<tr><td>General Record Lost!</td></tr>"
 
 					dat += "<tr><td><br><b><font size='4'>Medical Data</font></b></td></tr>"
 					if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-						dat += "<tr><td>Blood Type:</td><td><A href='?src=[REF(src)];field=blood_type'>&nbsp;[active2.fields["blood_type"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>DNA:</td><td><A href='?src=[REF(src)];field=b_dna'>&nbsp;[active2.fields["b_dna"]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Blood Type:</td><td><A href='?src=[REF(src)];field=blood_type'>&nbsp;[active2.fields[DATACORE_BLOOD_TYPE]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>DNA:</td><td><A href='?src=[REF(src)];field=b_dna'>&nbsp;[active2.fields[DATACORE_BLOOD_DNA]]&nbsp;</A></td></tr>"
 						dat += "<tr><td><br>Minor Disabilities:</td><td><br><A href='?src=[REF(src)];field=mi_dis'>&nbsp;[active2.fields["mi_dis"]]&nbsp;</A></td></tr>"
 						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=mi_dis_d'>&nbsp;[active2.fields["mi_dis_d"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td><br>Major Disabilities:</td><td><br><A href='?src=[REF(src)];field=ma_dis'>&nbsp;[active2.fields["ma_dis"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=ma_dis_d'>&nbsp;[active2.fields["ma_dis_d"]]&nbsp;</A></td></tr>"
+						dat += "<tr><td><br>Major Disabilities:</td><td><br><A href='?src=[REF(src)];field=ma_dis'>&nbsp;[active2.fields[DATACORE_DISABILITIES]]&nbsp;</A></td></tr>"
+						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=ma_dis_d'>&nbsp;[active2.fields[DATACORE_DISABILITIES_DETAILS]]&nbsp;</A></td></tr>"
 						dat += "<tr><td><br>Allergies:</td><td><br><A href='?src=[REF(src)];field=alg'>&nbsp;[active2.fields["alg"]]&nbsp;</A></td></tr>"
 						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=alg_d'>&nbsp;[active2.fields["alg_d"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td><br>Current Diseases:</td><td><br><A href='?src=[REF(src)];field=cdi'>&nbsp;[active2.fields["cdi"]]&nbsp;</A></td></tr>" //(per disease info placed in log/comment section)
-						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=cdi_d'>&nbsp;[active2.fields["cdi_d"]]&nbsp;</A></td></tr>"
-						dat += "<tr><td><br>Important Notes:</td><td><br><A href='?src=[REF(src)];field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A></td></tr>"
+						dat += "<tr><td><br>Current Diseases:</td><td><br><A href='?src=[REF(src)];field=cdi'>&nbsp;[active2.fields[DATACORE_DISEASES]]&nbsp;</A></td></tr>" //(per disease info placed in log/comment section)
+						dat += "<tr><td>Details:</td><td><A href='?src=[REF(src)];field=cdi_d'>&nbsp;[active2.fields[DATACORE_DISEASES_DETAILS]]&nbsp;</A></td></tr>"
+						dat += "<tr><td><br>Important Notes:</td><td><br><A href='?src=[REF(src)];field=notes'>&nbsp;[active2.fields[DATACORE_NOTES]]&nbsp;</A></td></tr>"
 
 						dat += "<tr><td><br><b><font size='4'>Comments/Log</font></b></td></tr>"
 						var/counter = 1
@@ -270,30 +270,30 @@
 				switch(href_list["field"])
 					if("fingerprint")
 						if(active1)
-							var/t1 = stripped_input("Please input fingerprint hash:", "Med. records", active1.fields["fingerprint"], null)
+							var/t1 = stripped_input("Please input fingerprint hash:", "Med. records", active1.fields[DATACORE_FINGERPRINT], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, a1))
 								return
-							active1.fields["fingerprint"] = t1
+							active1.fields[DATACORE_FINGERPRINT] = t1
 					if("gender")
 						if(active1)
-							if(active1.fields["gender"] == "Male")
-								active1.fields["gender"] = "Female"
-							else if(active1.fields["gender"] == "Female")
-								active1.fields["gender"] = "Other"
+							if(active1.fields[DATACORE_GENDER] == "Male")
+								active1.fields[DATACORE_GENDER] = "Female"
+							else if(active1.fields[DATACORE_GENDER] == "Female")
+								active1.fields[DATACORE_GENDER] = "Other"
 							else
-								active1.fields["gender"] = "Male"
+								active1.fields[DATACORE_GENDER] = "Male"
 					if("age")
 						if(active1)
-							var/t1 = input("Please input age:", "Med. records", active1.fields["age"], null)  as num
+							var/t1 = input("Please input age:", "Med. records", active1.fields[DATACORE_AGE], null)  as num
 							if(!canUseMedicalRecordsConsole(usr, t1, a1))
 								return
-							active1.fields["age"] = t1
+							active1.fields[DATACORE_AGE] = t1
 					if("species")
 						if(active1)
-							var/t1 = stripped_input("Please input species name", "Med. records", active1.fields["species"], null)
+							var/t1 = stripped_input("Please input species name", "Med. records", active1.fields[DATACORE_SPECIES], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, a1))
 								return
-							active1.fields["species"] = t1
+							active1.fields[DATACORE_SPECIES] = t1
 					if("mi_dis")
 						if(active2)
 							var/t1 = stripped_input("Please input minor disabilities list:", "Med. records", active2.fields["mi_dis"], null)
@@ -308,16 +308,16 @@
 							active2.fields["mi_dis_d"] = t1
 					if("ma_dis")
 						if(active2)
-							var/t1 = stripped_input("Please input major disabilities list:", "Med. records", active2.fields["ma_dis"], null)
+							var/t1 = stripped_input("Please input major disabilities list:", "Med. records", active2.fields[DATACORE_DISABILITIES], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["ma_dis"] = t1
+							active2.fields[DATACORE_DISABILITIES] = t1
 					if("ma_dis_d")
 						if(active2)
-							var/t1 = stripped_input("Please summarize major dis.:", "Med. records", active2.fields["ma_dis_d"], null)
+							var/t1 = stripped_input("Please summarize major dis.:", "Med. records", active2.fields[DATACORE_DISABILITIES_DETAILS], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["ma_dis_d"] = t1
+							active2.fields[DATACORE_DISABILITIES_DETAILS] = t1
 					if("alg")
 						if(active2)
 							var/t1 = stripped_input("Please state allergies:", "Med. records", active2.fields["alg"], null)
@@ -332,22 +332,22 @@
 							active2.fields["alg_d"] = t1
 					if("cdi")
 						if(active2)
-							var/t1 = stripped_input("Please state diseases:", "Med. records", active2.fields["cdi"], null)
+							var/t1 = stripped_input("Please state diseases:", "Med. records", active2.fields[DATACORE_DISEASES], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["cdi"] = t1
+							active2.fields[DATACORE_DISEASES] = t1
 					if("cdi_d")
 						if(active2)
-							var/t1 = stripped_input("Please summarize diseases:", "Med. records", active2.fields["cdi_d"], null)
+							var/t1 = stripped_input("Please summarize diseases:", "Med. records", active2.fields[DATACORE_DISEASES_DETAILS], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["cdi_d"] = t1
+							active2.fields[DATACORE_DISEASES_DETAILS] = t1
 					if("notes")
 						if(active2)
-							var/t1 = stripped_input("Please summarize notes:", "Med. records", active2.fields["notes"], null)
+							var/t1 = stripped_input("Please summarize notes:", "Med. records", active2.fields[DATACORE_NOTES], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["notes"] = t1
+							active2.fields[DATACORE_NOTES] = t1
 					if("p_stat")
 						if(active1)
 							temp = "<B>Physical Condition:</B><BR>\n\t<A href='?src=[REF(src)];temp=1;p_stat=deceased'>*Deceased*</A><BR>\n\t<A href='?src=[REF(src)];temp=1;p_stat=unconscious'>*Unconscious*</A><BR>\n\t<A href='?src=[REF(src)];temp=1;p_stat=active'>Active</A><BR>\n\t<A href='?src=[REF(src)];temp=1;p_stat=unfit'>Physically Unfit</A><BR>"
@@ -359,21 +359,21 @@
 							temp = "<B>Blood Type:</B><BR>\n\t<A href='?src=[REF(src)];temp=1;blood_type=an'>A-</A> <A href='?src=[REF(src)];temp=1;blood_type=ap'>A+</A><BR>\n\t<A href='?src=[REF(src)];temp=1;blood_type=bn'>B-</A> <A href='?src=[REF(src)];temp=1;blood_type=bp'>B+</A><BR>\n\t<A href='?src=[REF(src)];temp=1;blood_type=abn'>AB-</A> <A href='?src=[REF(src)];temp=1;blood_type=abp'>AB+</A><BR>\n\t<A href='?src=[REF(src)];temp=1;blood_type=on'>O-</A> <A href='?src=[REF(src)];temp=1;blood_type=op'>O+</A><BR>"
 					if("b_dna")
 						if(active2)
-							var/t1 = stripped_input("Please input DNA hash:", "Med. records", active2.fields["b_dna"], null)
+							var/t1 = stripped_input("Please input DNA hash:", "Med. records", active2.fields[DATACORE_BLOOD_DNA], null)
 							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
 								return
-							active2.fields["b_dna"] = t1
+							active2.fields[DATACORE_BLOOD_DNA] = t1
 					if("show_photo_front")
 						if(active1)
-							if(active1.fields["photo_front"])
-								if(istype(active1.fields["photo_front"], /obj/item/photo))
-									var/obj/item/photo/P = active1.fields["photo_front"]
+							if(active1.fields[DATACORE_PHOTO])
+								if(istype(active1.fields[DATACORE_PHOTO], /obj/item/photo))
+									var/obj/item/photo/P = active1.fields[DATACORE_PHOTO]
 									P.show(usr)
 					if("show_photo_side")
 						if(active1)
-							if(active1.fields["photo_side"])
-								if(istype(active1.fields["photo_side"], /obj/item/photo))
-									var/obj/item/photo/P = active1.fields["photo_side"]
+							if(active1.fields[DATACORE_PHOTO_SIDE])
+								if(istype(active1.fields[DATACORE_PHOTO_SIDE], /obj/item/photo))
+									var/obj/item/photo/P = active1.fields[DATACORE_PHOTO_SIDE]
 									P.show(usr)
 					else
 
@@ -381,46 +381,46 @@
 				if(active1)
 					switch(href_list["p_stat"])
 						if("deceased")
-							active1.fields["p_stat"] = "*Deceased*"
+							active1.fields[DATACORE_PHYSICAL_HEALTH] = "*Deceased*"
 						if("unconscious")
-							active1.fields["p_stat"] = "*Unconscious*"
+							active1.fields[DATACORE_PHYSICAL_HEALTH] = "*Unconscious*"
 						if("active")
-							active1.fields["p_stat"] = "Active"
+							active1.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
 						if("unfit")
-							active1.fields["p_stat"] = "Physically Unfit"
+							active1.fields[DATACORE_PHYSICAL_HEALTH] = "Physically Unfit"
 
 			else if(href_list["m_stat"])
 				if(active1)
 					switch(href_list["m_stat"])
 						if("insane")
-							active1.fields["m_stat"] = "*Insane*"
+							active1.fields[DATACORE_MENTAL_HEALTH] = "*Insane*"
 						if("unstable")
-							active1.fields["m_stat"] = "*Unstable*"
+							active1.fields[DATACORE_MENTAL_HEALTH] = "*Unstable*"
 						if("watch")
-							active1.fields["m_stat"] = "*Watch*"
+							active1.fields[DATACORE_MENTAL_HEALTH] = "*Watch*"
 						if("stable")
-							active1.fields["m_stat"] = "Stable"
+							active1.fields[DATACORE_MENTAL_HEALTH] = "Stable"
 
 
 			else if(href_list["blood_type"])
 				if(active2)
 					switch(href_list["blood_type"])
 						if("an")
-							active2.fields["blood_type"] = "A-"
+							active2.fields[DATACORE_BLOOD_TYPE] = "A-"
 						if("bn")
-							active2.fields["blood_type"] = "B-"
+							active2.fields[DATACORE_BLOOD_TYPE] = "B-"
 						if("abn")
-							active2.fields["blood_type"] = "AB-"
+							active2.fields[DATACORE_BLOOD_TYPE] = "AB-"
 						if("on")
-							active2.fields["blood_type"] = "O-"
+							active2.fields[DATACORE_BLOOD_TYPE] = "O-"
 						if("ap")
-							active2.fields["blood_type"] = "A+"
+							active2.fields[DATACORE_BLOOD_TYPE] = "A+"
 						if("bp")
-							active2.fields["blood_type"] = "B+"
+							active2.fields[DATACORE_BLOOD_TYPE] = "B+"
 						if("abp")
-							active2.fields["blood_type"] = "AB+"
+							active2.fields[DATACORE_BLOOD_TYPE] = "AB+"
 						if("op")
-							active2.fields["blood_type"] = "O+"
+							active2.fields[DATACORE_BLOOD_TYPE] = "O+"
 
 
 			else if(href_list["del_r"])
@@ -428,7 +428,7 @@
 					temp = "Are you sure you wish to delete the record (Medical Portion Only)?<br>\n\t<A href='?src=[REF(src)];temp=1;del_r2=1'>Yes</A><br>\n\t<A href='?src=[REF(src)];temp=1'>No</A><br>"
 
 			else if(href_list["del_r2"])
-				investigate_log("[key_name(usr)] has deleted the medical records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
+				investigate_log("[key_name(usr)] has deleted the medical records for [active1.fields[DATACORE_NAME]].", INVESTIGATE_RECORDS)
 				if(active2)
 					qdel(active2)
 					active2 = null
@@ -444,20 +444,20 @@
 			else if(href_list["new"])
 				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
 					var/datum/data/record/R = new /datum/data/record()
-					R.fields["name"] = active1.fields["name"]
-					R.fields["id"] = active1.fields["id"]
-					R.name = text("Medical Record #[]", R.fields["id"])
-					R.fields["blood_type"] = "Unknown"
-					R.fields["b_dna"] = "Unknown"
+					R.fields[DATACORE_NAME] = active1.fields[DATACORE_NAME]
+					R.fields[DATACORE_ID] = active1.fields[DATACORE_ID]
+					R.name = text("Medical Record #[]", R.fields[DATACORE_ID])
+					R.fields[DATACORE_BLOOD_TYPE] = "Unknown"
+					R.fields[DATACORE_BLOOD_DNA] = "Unknown"
 					R.fields["mi_dis"] = "None"
 					R.fields["mi_dis_d"] = "No minor disabilities have been diagnosed."
-					R.fields["ma_dis"] = "None"
-					R.fields["ma_dis_d"] = "No major disabilities have been diagnosed."
+					R.fields[DATACORE_DISABILITIES] = "None"
+					R.fields[DATACORE_DISABILITIES_DETAILS] = "No major disabilities have been diagnosed."
 					R.fields["alg"] = "None"
 					R.fields["alg_d"] = "No allergies have been detected in this patient."
-					R.fields["cdi"] = "None"
-					R.fields["cdi_d"] = "No diseases have been diagnosed at the moment."
-					R.fields["notes"] = "No notes."
+					R.fields[DATACORE_DISEASES] = "None"
+					R.fields[DATACORE_DISEASES_DETAILS] = "No diseases have been diagnosed at the moment."
+					R.fields[DATACORE_NOTES] = "No notes."
 					SSdatacore.inject_record(R, DATACORE_RECORDS_MEDICAL)
 					active2 = R
 					screen = 4
@@ -486,7 +486,7 @@
 				active2 = null
 				t1 = lowertext(t1)
 				for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-					if((lowertext(R.fields["name"]) == t1 || t1 == lowertext(R.fields["id"]) || t1 == lowertext(R.fields["b_dna"])))
+					if((lowertext(R.fields[DATACORE_NAME]) == t1 || t1 == lowertext(R.fields[DATACORE_ID]) || t1 == lowertext(R.fields[DATACORE_BLOOD_DNA])))
 						active2 = R
 					else
 						//Foreach continue //goto(3229)
@@ -494,7 +494,7 @@
 					temp = text("Could not locate record [].", sanitize(t1))
 				else
 					for(var/datum/data/record/E in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-						if((E.fields["name"] == active2.fields["name"] || E.fields["id"] == active2.fields["id"]))
+						if((E.fields[DATACORE_NAME] == active2.fields[DATACORE_NAME] || E.fields[DATACORE_ID] == active2.fields[DATACORE_ID]))
 							active1 = E
 						else
 							//Foreach continue //goto(3334)
@@ -509,18 +509,18 @@
 					var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
 					var/final_paper_text = "<CENTER><B>Medical Record - (MR-[SSdatacore.medicalPrintCount])</B></CENTER><BR>"
 					if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						final_paper_text += "\nSpecies: [active1.fields["species"]]<BR>"
-						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields[DATACORE_NAME], active1.fields[DATACORE_ID], active1.fields[DATACORE_GENDER], active1.fields[DATACORE_AGE])
+						final_paper_text += "\nSpecies: [active1.fields[DATACORE_SPECIES]]<BR>"
+						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields[DATACORE_FINGERPRINT], active1.fields[DATACORE_PHYSICAL_HEALTH], active1.fields[DATACORE_MENTAL_HEALTH])
 					else
 						final_paper_text += "<B>General Record Lost!</B><BR>"
 					if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-						final_paper_text += text("<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: []<BR>\nDNA: []<BR>\n<BR>\nMinor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nMajor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nAllergies: []<BR>\nDetails: []<BR>\n<BR>\nCurrent Diseases: [] (per disease info placed in log/comment section)<BR>\nDetails: []<BR>\n<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["blood_type"], active2.fields["b_dna"], active2.fields["mi_dis"], active2.fields["mi_dis_d"], active2.fields["ma_dis"], active2.fields["ma_dis_d"], active2.fields["alg"], active2.fields["alg_d"], active2.fields["cdi"], active2.fields["cdi_d"], active2.fields["notes"])
+						final_paper_text += text("<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: []<BR>\nDNA: []<BR>\n<BR>\nMinor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nMajor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nAllergies: []<BR>\nDetails: []<BR>\n<BR>\nCurrent Diseases: [] (per disease info placed in log/comment section)<BR>\nDetails: []<BR>\n<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields[DATACORE_BLOOD_TYPE], active2.fields[DATACORE_BLOOD_DNA], active2.fields["mi_dis"], active2.fields["mi_dis_d"], active2.fields[DATACORE_DISABILITIES], active2.fields[DATACORE_DISABILITIES_DETAILS], active2.fields["alg"], active2.fields["alg_d"], active2.fields[DATACORE_DISEASES], active2.fields[DATACORE_DISEASES_DETAILS], active2.fields[DATACORE_NOTES])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
 							final_paper_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
-						printed_paper.name = text("MR-[] '[]'", SSdatacore.medicalPrintCount, active1.fields["name"])
+						printed_paper.name = text("MR-[] '[]'", SSdatacore.medicalPrintCount, active1.fields[DATACORE_NAME])
 					else
 						final_paper_text += "<B>Medical Record Lost!</B><BR>"
 						printed_paper.name = text("MR-[] '[]'", SSdatacore.medicalPrintCount, "Record Lost")
@@ -541,20 +541,20 @@
 				switch(rand(1,6))
 					if(1)
 						if(prob(10))
-							R.fields["name"] = random_unique_lizard_name(R.fields["gender"],1)
+							R.fields[DATACORE_NAME] = random_unique_lizard_name(R.fields[DATACORE_GENDER],1)
 						else
-							R.fields["name"] = random_unique_name(R.fields["gender"],1)
+							R.fields[DATACORE_NAME] = random_unique_name(R.fields[DATACORE_GENDER],1)
 					if(2)
-						R.fields["gender"]	= pick("Male", "Female", "Other")
+						R.fields[DATACORE_GENDER]	= pick("Male", "Female", "Other")
 					if(3)
-						R.fields["age"] = rand(AGE_MIN, AGE_MAX)
+						R.fields[DATACORE_AGE] = rand(AGE_MIN, AGE_MAX)
 					if(4)
 						var/datum/blood_type/blood = random_blood_type()
-						R.fields["blood_type"] = blood.name
+						R.fields[DATACORE_BLOOD_TYPE] = blood.name
 					if(5)
-						R.fields["p_stat"] = pick("*Unconscious*", "Active", "Physically Unfit")
+						R.fields[DATACORE_PHYSICAL_HEALTH] = pick("*Unconscious*", "Active", "Physically Unfit")
 					if(6)
-						R.fields["m_stat"] = pick("*Insane*", "*Unstable*", "*Watch*", "Stable")
+						R.fields[DATACORE_MENTAL_HEALTH] = pick("*Insane*", "*Unstable*", "*Watch*", "Stable")
 				continue
 
 			else if(prob(1))

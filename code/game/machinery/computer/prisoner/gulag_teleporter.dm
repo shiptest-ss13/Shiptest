@@ -39,9 +39,9 @@
 		if(!isnull(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
 			for(var/r in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
 				var/datum/data/record/R = r
-				if(R.fields["name"] == prisoner_list["name"])
+				if(R.fields[DATACORE_NAME] == prisoner_list["name"])
 					temporary_record = R
-					prisoner_list["crimstat"] = temporary_record.fields["criminal"]
+					prisoner_list["crimstat"] = temporary_record.fields[DATACORE_CRIMINAL_STATUS]
 
 	data["prisoner"] = prisoner_list
 

@@ -63,7 +63,7 @@
 				. = pod
 
 /proc/grow_clone_from_record(obj/machinery/clonepod/pod, datum/data/record/R, empty)
-	return pod.growclone(R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mindref"], R.fields["last_death"], R.fields["blood_type"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"], R.fields["traumas"], empty)
+	return pod.growclone(R.fields[DATACORE_NAME], R.fields["UI"], R.fields["SE"], R.fields[DATACORE_MINDREF], R.fields["last_death"], R.fields[DATACORE_BLOOD_TYPE], R.fields["mrace"], R.fields[DATACORE_DNA_FEATURES], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"], R.fields["traumas"], empty)
 
 /obj/machinery/computer/cloning/process()
 	if(!(scanner && LAZYLEN(pods) && autoprocess))
@@ -73,7 +73,7 @@
 		scan_occupant(scanner.occupant)
 
 	for(var/datum/data/record/R in records)
-		var/obj/machinery/clonepod/pod = GetAvailableEfficientPod(R.fields["mindref"])
+		var/obj/machinery/clonepod/pod = GetAvailableEfficientPod(R.fields[DATACORE_MINDREF])
 
 		if(!pod)
 			return
@@ -83,8 +83,8 @@
 
 		var/result = grow_clone_from_record(pod, R)
 		if(result & CLONING_SUCCESS)
-			temp = "[R.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
-			log_cloning("Cloning of [key_name(R.fields["mindref"])] automatically started via autoprocess - [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
+			temp = "[R.fields[DATACORE_NAME]] => <font class='good'>Cloning cycle in progress...</font>"
+			log_cloning("Cloning of [key_name(R.fields[DATACORE_MINDREF])] automatically started via autoprocess - [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
 		if(result & CLONING_DELETE_RECORD)
 			records -= R
 
@@ -231,7 +231,7 @@
 			dat += "<h3>Current records</h3>"
 			dat += "<a href='byond://?src=[REF(src)];menu=1'><< Back</a><br><br>"
 			for(var/datum/data/record/R in records)
-				dat += "<h4>[R.fields["name"]]</h4>Scan ID [R.fields["id"]] <a href='byond://?src=[REF(src)];view_rec=[R.fields["id"]]'>View Record</a>"
+				dat += "<h4>[R.fields[DATACORE_NAME]]</h4>Scan ID [R.fields[DATACORE_ID]] <a href='byond://?src=[REF(src)];view_rec=[R.fields[DATACORE_ID]]'>View Record</a>"
 		if(3)
 			dat += "<h3>Selected Record</h3>"
 			dat += "<a href='byond://?src=[REF(src)];menu=2'><< Back</a><br>"
@@ -240,10 +240,10 @@
 				dat += "<font class='bad'>Record not found.</font>"
 			else
 				var/body_only = active_record.fields["body_only"]
-				dat += "<h4>[active_record.fields["name"]][body_only ? " - BODY-ONLY" : ""]</h4>"
-				dat += "Scan ID [active_record.fields["id"]] \
-					[!body_only ? "<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]]'>Clone</a>" : "" ]\
-					<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]];empty=TRUE'>Empty Clone</a><br>"
+				dat += "<h4>[active_record.fields[DATACORE_NAME]][body_only ? " - BODY-ONLY" : ""]</h4>"
+				dat += "Scan ID [active_record.fields[DATACORE_ID]] \
+					[!body_only ? "<a href='byond://?src=[REF(src)];clone=[active_record.fields[DATACORE_ID]]'>Clone</a>" : "" ]\
+					<a href='byond://?src=[REF(src)];clone=[active_record.fields[DATACORE_ID]];empty=TRUE'>Empty Clone</a><br>"
 
 				var/obj/item/implant/health/H = locate(active_record.fields["imp"])
 
@@ -269,7 +269,7 @@
 					var/list/L = list()
 					if(diskette.fields["UI"])
 						L += "Unique Identifier"
-					if(diskette.fields["UE"] && diskette.fields["name"] && diskette.fields["blood_type"])
+					if(diskette.fields["UE"] && diskette.fields[DATACORE_NAME] && diskette.fields[DATACORE_BLOOD_TYPE])
 						L += "Unique Enzymes"
 					if(diskette.fields["SE"])
 						L += "Structural Enzymes"
@@ -399,8 +399,8 @@
 
 
 		else if (menu == 4)
-			log_cloning("[key_name(usr)] deleted [key_name(active_record.fields["mindref"])]'s cloning records from [src] at [AREACOORD(src)].")
-			temp = "[active_record.fields["name"]] => Record deleted."
+			log_cloning("[key_name(usr)] deleted [key_name(active_record.fields[DATACORE_MINDREF])]'s cloning records from [src] at [AREACOORD(src)].")
+			temp = "[active_record.fields[DATACORE_NAME]] => Record deleted."
 			records.Remove(active_record)
 			active_record = null
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -432,7 +432,7 @@
 				if(include_se)
 					overwrite_field_if_available(active_record, diskette, "SE")
 
-				log_cloning("[key_name(usr)] uploaded [key_name(active_record.fields["mindref"])]'s cloning records to [src] at [AREACOORD(src)] via [diskette].")
+				log_cloning("[key_name(usr)] uploaded [key_name(active_record.fields[DATACORE_MINDREF])]'s cloning records to [src] at [AREACOORD(src)] via [diskette].")
 				temp = "Load successful."
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
@@ -448,9 +448,9 @@
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 
-				log_cloning("[key_name(usr)] added [key_name(active_record.fields["mindref"])]'s cloning records to [diskette] via [src] at [AREACOORD(src)].")
+				log_cloning("[key_name(usr)] added [key_name(active_record.fields[DATACORE_MINDREF])]'s cloning records to [diskette] via [src] at [AREACOORD(src)].")
 				diskette.fields = active_record.fields.Copy()
-				diskette.name = "data disk - '[diskette.fields["name"]]'"
+				diskette.name = "data disk - '[diskette.fields[DATACORE_NAME]]'"
 				temp = "Save successful."
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
@@ -484,16 +484,16 @@
 			else
 				var/result = grow_clone_from_record(pod, C, empty)
 				if(result & CLONING_SUCCESS)
-					temp = "[C.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
+					temp = "[C.fields[DATACORE_NAME]] => <font class='good'>Cloning cycle in progress...</font>"
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 					if(active_record == C)
 						active_record = null
 					menu = 1
 					success = TRUE
 					if(!empty)
-						log_cloning("[key_name(usr)] initiated cloning of [key_name(C.fields["mindref"])] via [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
+						log_cloning("[key_name(usr)] initiated cloning of [key_name(C.fields[DATACORE_MINDREF])] via [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
 					else
-						log_cloning("[key_name(usr)] initiated EMPTY cloning of [key_name(C.fields["mindref"])] via [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
+						log_cloning("[key_name(usr)] initiated EMPTY cloning of [key_name(C.fields[DATACORE_MINDREF])] via [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
 				if(result &	CLONING_DELETE_RECORD)
 					if(active_record == C)
 						active_record = null
@@ -501,7 +501,7 @@
 					records -= C
 
 			if(!success)
-				temp = "[C.fields["name"]] => <font class='bad'>Initialisation failure.</font>"
+				temp = "[C.fields[DATACORE_NAME]] => <font class='bad'>Initialisation failure.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 		else
@@ -575,13 +575,13 @@
 		var/datum/species/rando_race = pick(GLOB.roundstart_races)
 		R.fields["mrace"] = rando_race.type
 
-	R.fields["name"] = mob_occupant.real_name
-	R.fields["id"] = copytext_char(md5(mob_occupant.real_name), 2, 6)
+	R.fields[DATACORE_NAME] = mob_occupant.real_name
+	R.fields[DATACORE_ID] = copytext_char(md5(mob_occupant.real_name), 2, 6)
 	R.fields["UE"] = dna.unique_enzymes
 	R.fields["UI"] = dna.uni_identity
 	R.fields["SE"] = dna.mutation_index
-	R.fields["blood_type"] = dna.blood_type
-	R.fields["features"] = dna.features
+	R.fields[DATACORE_BLOOD_TYPE] = dna.blood_type
+	R.fields[DATACORE_DNA_FEATURES] = dna.features
 	R.fields["factions"] = mob_occupant.faction
 	R.fields["quirks"] = list()
 	for(var/V in mob_occupant.roundstart_quirks)
@@ -595,7 +595,7 @@
 		R.fields["traumas"] = B.get_traumas()
 
 	R.fields["bank_account"] = has_bank_account
-	R.fields["mindref"] = "[REF(mob_occupant.mind)]"
+	R.fields[DATACORE_MINDREF] = "[REF(mob_occupant.mind)]"
 	R.fields["last_death"] = mob_occupant.stat == DEAD && mob_occupant.mind ? mob_occupant.mind.last_death : -1
 	R.fields["body_only"] = body_only
 

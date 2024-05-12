@@ -293,9 +293,9 @@
 				return
 			var/obj/item/photo/P = null
 			if(href_list["photo_front"])
-				P = R.fields["photo_front"]
+				P = R.fields[DATACORE_PHOTO]
 			else if(href_list["photo_side"])
-				P = R.fields["photo_side"]
+				P = R.fields[DATACORE_PHOTO_SIDE]
 			if(P)
 				P.show(H)
 			return
@@ -351,7 +351,7 @@
 				to_chat(H, "<span class='warning'>ERROR: Invalid access</span>")
 				return
 			if(href_list["p_stat"])
-				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", R.fields["p_stat"]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
+				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", R.fields[DATACORE_PHYSICAL_HEALTH]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
 				if(!R)
 					return
 				if(!H.canUseHUD())
@@ -359,10 +359,10 @@
 				if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
 					return
 				if(health_status && health_status != "Cancel")
-					R.fields["p_stat"] = health_status
+					R.fields[DATACORE_PHYSICAL_HEALTH] = health_status
 				return
 			if(href_list["m_stat"])
-				var/health_status = input(usr, "Specify a new mental status for this person.", "Medical HUD", R.fields["m_stat"]) in list("Stable", "*Watch*", "*Unstable*", "*Insane*", "Cancel")
+				var/health_status = input(usr, "Specify a new mental status for this person.", "Medical HUD", R.fields[DATACORE_MENTAL_HEALTH]) in list("Stable", "*Watch*", "*Unstable*", "*Insane*", "Cancel")
 				if(!R)
 					return
 				if(!H.canUseHUD())
@@ -370,7 +370,7 @@
 				if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
 					return
 				if(health_status && health_status != "Cancel")
-					R.fields["m_stat"] = health_status
+					R.fields[DATACORE_MENTAL_HEALTH] = health_status
 				return
 			return //Medical HUD ends here.
 
@@ -404,7 +404,7 @@
 				to_chat(usr, "<span class='warning'>ERROR: Unable to locate data core entry for target.</span>")
 				return
 			if(href_list["status"])
-				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", security_record.fields["criminal"]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
+				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", security_record.fields[DATACORE_CRIMINAL_STATUS]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
 				if(setcriminal != "Cancel")
 					if(!R)
 						return
@@ -412,8 +412,8 @@
 						return
 					if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
 						return
-					investigate_log("[key_name(src)] has been set from [security_record.fields["criminal"]] to [setcriminal] by [key_name(usr)].", INVESTIGATE_RECORDS)
-					security_record.fields["criminal"] = setcriminal
+					investigate_log("[key_name(src)] has been set from [security_record.fields[DATACORE_CRIMINAL_STATUS]] to [setcriminal] by [key_name(usr)].", INVESTIGATE_RECORDS)
+					security_record.fields[DATACORE_CRIMINAL_STATUS] = setcriminal
 					sec_hud_set_security_status()
 				return
 
@@ -422,8 +422,8 @@
 					return
 				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
 					return
-				to_chat(usr, "<b>Name:</b> [security_record.fields["name"]]	<b>Criminal Status:</b> [security_record.fields["criminal"]]")
-				for(var/datum/data/crime/c in security_record.fields["crim"])
+				to_chat(usr, "<b>Name:</b> [security_record.fields[DATACORE_NAME]]	<b>Criminal Status:</b> [security_record.fields[DATACORE_CRIMINAL_STATUS]]")
+				for(var/datum/data/crime/c in security_record.fields[DATACORE_CRIMES])
 					to_chat(usr, "<b>Crime:</b> [c.crimeName]")
 					if (c.crimeDetails)
 						to_chat(usr, "<b>Details:</b> [c.crimeDetails]")
@@ -431,7 +431,7 @@
 						to_chat(usr, "<b>Details:</b> <A href='?src=[REF(src)];hud=s;add_details=1;cdataid=[c.dataId]'>\[Add details]</A>")
 					to_chat(usr, "Added by [c.author] at [c.time]")
 					to_chat(usr, "----------")
-				to_chat(usr, "<b>Notes:</b> [security_record.fields["notes"]]")
+				to_chat(usr, "<b>Notes:</b> [security_record.fields[DATACORE_NOTES]]")
 				return
 
 			if(href_list["add_crime"])
@@ -565,8 +565,8 @@
 	if(judgement_criteria & JUDGE_RECORDCHECK)
 		var/perpname = get_face_name(get_id_name())
 		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
-		if(R && R.fields["criminal"])
-			switch(R.fields["criminal"])
+		if(R && R.fields[DATACORE_CRIMINAL_STATUS])
+			switch(R.fields[DATACORE_CRIMINAL_STATUS])
 				if("*Arrest*")
 					threatcount += 5
 				if("Incarcerated")

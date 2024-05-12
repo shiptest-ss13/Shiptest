@@ -292,7 +292,7 @@ Security HUDs! Basic mode shows only the job.
 	if(perpname)
 		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
 		if(R)
-			switch(R.fields["criminal"])
+			switch(R.fields[DATACORE_CRIMINAL_STATUS])
 				if("*Arrest*")
 					holder.icon_state = "hudwanted"
 					return

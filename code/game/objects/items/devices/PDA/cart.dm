@@ -317,19 +317,19 @@ Code:
 			menu = "<h4>[PDAIMG(medical)] Medical Record List</h4>"
 			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 				for(var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
-					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
+					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields[DATACORE_ID]]'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]</a><br>"
 			menu += "<br>"
 		if(441)
 			menu = "<h4>[PDAIMG(medical)] Medical Record</h4>"
 
 			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
-				menu += "Gender: [active1.fields["gender"]]<br>"
-				menu += "Age: [active1.fields["age"]]<br>"
-				menu += "Rank: [active1.fields["rank"]]<br>"
-				menu += "Fingerprint: [active1.fields["fingerprint"]]<br>"
-				menu += "Physical Status: [active1.fields["p_stat"]]<br>"
-				menu += "Mental Status: [active1.fields["m_stat"]]<br>"
+				menu += "Name: [active1.fields[DATACORE_NAME]] ID: [active1.fields[DATACORE_ID]]<br>"
+				menu += "Gender: [active1.fields[DATACORE_GENDER]]<br>"
+				menu += "Age: [active1.fields[DATACORE_AGE]]<br>"
+				menu += "Rank: [active1.fields[DATACORE_RANK]]<br>"
+				menu += "Fingerprint: [active1.fields[DATACORE_FINGERPRINT]]<br>"
+				menu += "Physical Status: [active1.fields[DATACORE_PHYSICAL_HEALTH]]<br>"
+				menu += "Mental Status: [active1.fields[DATACORE_MENTAL_HEALTH]]<br>"
 			else
 				menu += "<b>Record Lost!</b><br>"
 
@@ -337,21 +337,21 @@ Code:
 
 			menu += "<h4>[PDAIMG(medical)] Medical Data</h4>"
 			if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-				menu += "Blood Type: [active2.fields["blood_type"]]<br><br>"
+				menu += "Blood Type: [active2.fields[DATACORE_BLOOD_TYPE]]<br><br>"
 
 				menu += "Minor Disabilities: [active2.fields["mi_dis"]]<br>"
 				menu += "Details: [active2.fields["mi_dis_d"]]<br><br>"
 
-				menu += "Major Disabilities: [active2.fields["ma_dis"]]<br>"
-				menu += "Details: [active2.fields["ma_dis_d"]]<br><br>"
+				menu += "Major Disabilities: [active2.fields[DATACORE_DISABILITIES]]<br>"
+				menu += "Details: [active2.fields[DATACORE_DISABILITIES_DETAILS]]<br><br>"
 
 				menu += "Allergies: [active2.fields["alg"]]<br>"
 				menu += "Details: [active2.fields["alg_d"]]<br><br>"
 
-				menu += "Current Diseases: [active2.fields["cdi"]]<br>"
-				menu += "Details: [active2.fields["cdi_d"]]<br><br>"
+				menu += "Current Diseases: [active2.fields[DATACORE_DISEASES]]<br>"
+				menu += "Details: [active2.fields[DATACORE_DISEASES_DETAILS]]<br><br>"
 
-				menu += "Important Notes: [active2.fields["notes"]]<br>"
+				menu += "Important Notes: [active2.fields[DATACORE_NOTES]]<br>"
 			else
 				menu += "<b>Record Lost!</b><br>"
 
@@ -360,20 +360,20 @@ Code:
 			menu = "<h4>[PDAIMG(cuffs)] Security Record List</h4>"
 			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 				for (var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
-					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
+					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields[DATACORE_ID]]'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]</a><br>"
 
 			menu += "<br>"
 		if(451)
 			menu = "<h4>[PDAIMG(cuffs)] Security Record</h4>"
 
 			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
-				menu += "Gender: [active1.fields["gender"]]<br>"
-				menu += "Age: [active1.fields["age"]]<br>"
-				menu += "Rank: [active1.fields["rank"]]<br>"
-				menu += "Fingerprint: [active1.fields["fingerprint"]]<br>"
-				menu += "Physical Status: [active1.fields["p_stat"]]<br>"
-				menu += "Mental Status: [active1.fields["m_stat"]]<br>"
+				menu += "Name: [active1.fields[DATACORE_NAME]] ID: [active1.fields[DATACORE_ID]]<br>"
+				menu += "Gender: [active1.fields[DATACORE_GENDER]]<br>"
+				menu += "Age: [active1.fields[DATACORE_AGE]]<br>"
+				menu += "Rank: [active1.fields[DATACORE_RANK]]<br>"
+				menu += "Fingerprint: [active1.fields[DATACORE_FINGERPRINT]]<br>"
+				menu += "Physical Status: [active1.fields[DATACORE_PHYSICAL_HEALTH]]<br>"
+				menu += "Mental Status: [active1.fields[DATACORE_MENTAL_HEALTH]]<br>"
 			else
 				menu += "<b>Record Lost!</b><br>"
 
@@ -381,7 +381,7 @@ Code:
 
 			menu += "<h4>[PDAIMG(cuffs)] Security Data</h4>"
 			if(active3 in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-				menu += "Criminal Status: [active3.fields["criminal"]]<br>"
+				menu += "Criminal Status: [active3.fields[DATACORE_CRIMINAL_STATUS]]<br>"
 
 				menu += text("<BR>\nCrimes:")
 
@@ -392,7 +392,7 @@ Code:
 <th>Author</th>
 <th>Time Added</th>
 </tr>"}
-				for(var/datum/data/crime/c in active3.fields["crim"])
+				for(var/datum/data/crime/c in active3.fields[DATACORE_CRIMES])
 					menu += "<tr><td>[c.crimeName]</td>"
 					menu += "<td>[c.crimeDetails]</td>"
 					menu += "<td>[c.author]</td>"
@@ -400,7 +400,7 @@ Code:
 					menu += "</tr>"
 				menu += "</table>"
 				menu += "<BR>\nImportant Notes:<br>"
-				menu += "[active3.fields["notes"]]"
+				menu += "[active3.fields[DATACORE_NOTES]]"
 			else
 				menu += "<b>Record Lost!</b><br>"
 

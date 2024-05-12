@@ -131,20 +131,20 @@
 /obj/structure/filingcabinet/security/proc/populate()
 	if(virgin)
 		for(var/datum/data/record/G in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-			var/datum/data/record/S = SSdatacore.get_record_by_name(G.fields["name"], DATACORE_RECORDS_SECURITY)
+			var/datum/data/record/S = SSdatacore.get_record_by_name(G.fields[DATACORE_NAME], DATACORE_RECORDS_SECURITY)
 			if(!S)
 				continue
 			var/obj/item/paper/sec_record_paper = new /obj/item/paper(src)
 			var/sec_record_text = "<CENTER><B>Security Record</B></CENTER><BR>"
-			sec_record_text += "Name: [G.fields["name"]] ID: [G.fields["id"]]<BR>\nGender: [G.fields["gender"]]<BR>\nAge: [G.fields["age"]]<BR>\nFingerprint: [G.fields["fingerprint"]]<BR>\nPhysical Status: [G.fields["p_stat"]]<BR>\nMental Status: [G.fields["m_stat"]]<BR>"
-			sec_record_text += "<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: [S.fields["criminal"]]<BR>\n<BR>\nCrimes: [S.fields["crim"]]<BR>\nDetails: [S.fields["crim_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[S.fields["notes"]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+			sec_record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+			sec_record_text += "<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: [S.fields[DATACORE_CRIMINAL_STATUS]]<BR>\n<BR>\nCrimes: [S.fields[DATACORE_CRIMES]]<BR>\nDetails: [S.fields["crim_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[S.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
 			var/counter = 1
 			while(S.fields["com_[counter]"])
 				sec_record_text += "[S.fields["com_[counter]"]]<BR>"
 				counter++
 			sec_record_text += "</TT>"
 			sec_record_paper.add_raw_text(sec_record_text)
-			sec_record_paper.name = "paper - '[G.fields["name"]]'"
+			sec_record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
 			sec_record_paper.update_appearance()
 			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
 						//before the records have been generated, so we do this inside the loop.
@@ -166,20 +166,20 @@
 /obj/structure/filingcabinet/medical/proc/populate()
 	if(virgin)
 		for(var/datum/data/record/G in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-			var/datum/data/record/M = SSdatacore.get_record_by_name(G.fields["name"], DATACORE_RECORDS_MEDICAL)
+			var/datum/data/record/M = SSdatacore.get_record_by_name(G.fields[DATACORE_NAME], DATACORE_RECORDS_MEDICAL)
 			if(!M)
 				continue
 			var/obj/item/paper/med_record_paper = new /obj/item/paper(src)
 			var/med_record_text = "<CENTER><B>Medical Record</B></CENTER><BR>"
-			med_record_text += "Name: [G.fields["name"]] ID: [G.fields["id"]]<BR>\nGender: [G.fields["gender"]]<BR>\nAge: [G.fields["age"]]<BR>\nFingerprint: [G.fields["fingerprint"]]<BR>\nPhysical Status: [G.fields["p_stat"]]<BR>\nMental Status: [G.fields["m_stat"]]<BR>"
-			med_record_text += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: [M.fields["blood_type"]]<BR>\nDNA: [M.fields["b_dna"]]<BR>\n<BR>\nMinor Disabilities: [M.fields["mi_dis"]]<BR>\nDetails: [M.fields["mi_dis_d"]]<BR>\n<BR>\nMajor Disabilities: [M.fields["ma_dis"]]<BR>\nDetails: [M.fields["ma_dis_d"]]<BR>\n<BR>\nAllergies: [M.fields["alg"]]<BR>\nDetails: [M.fields["alg_d"]]<BR>\n<BR>\nCurrent Diseases: [M.fields["cdi"]] (per disease info placed in log/comment section)<BR>\nDetails: [M.fields["cdi_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[M.fields["notes"]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+			med_record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+			med_record_text += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: [M.fields[DATACORE_BLOOD_TYPE]]<BR>\nDNA: [M.fields[DATACORE_BLOOD_DNA]]<BR>\n<BR>\nMinor Disabilities: [M.fields["mi_dis"]]<BR>\nDetails: [M.fields["mi_dis_d"]]<BR>\n<BR>\nMajor Disabilities: [M.fields[DATACORE_DISABILITIES]]<BR>\nDetails: [M.fields[DATACORE_DISABILITIES_DETAILS]]<BR>\n<BR>\nAllergies: [M.fields["alg"]]<BR>\nDetails: [M.fields["alg_d"]]<BR>\n<BR>\nCurrent Diseases: [M.fields[DATACORE_DISEASES]] (per disease info placed in log/comment section)<BR>\nDetails: [M.fields[DATACORE_DISEASES_DETAILS]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[M.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
 			var/counter = 1
 			while(M.fields["com_[counter]"])
 				med_record_text += "[M.fields["com_[counter]"]]<BR>"
 				counter++
 			med_record_text += "</TT>"
 			med_record_paper.add_raw_text(med_record_text)
-			med_record_paper.name = "paper - '[G.fields["name"]]'"
+			med_record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
 			med_record_paper.update_appearance()
 			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
 						//before the records have been generated, so we do this inside the loop.
@@ -218,7 +218,7 @@ GLOBAL_LIST_EMPTY(employmentCabinets)
 		var/datum/data/record/G = record
 		if(!G)
 			continue
-		var/datum/mind/M = G.fields["mindref"]
+		var/datum/mind/M = G.fields[DATACORE_MINDREF]
 		if(M && ishuman(M.current))
 			addFile(M.current)
 

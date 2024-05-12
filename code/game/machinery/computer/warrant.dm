@@ -17,7 +17,7 @@
 		if(current)
 			var/background
 			var/notice = ""
-			switch(current.fields["criminal"])
+			switch(current.fields[DATACORE_CRIMINAL_STATUS])
 				if("*Arrest*")
 					background = "background-color:#990000;"
 					notice = "<br>**REPORT TO THE BRIG**"
@@ -33,12 +33,12 @@
 					background = "''" //"'background-color:#FFFFFF;'"
 			dat += "<font size='4'><b>Warrant Data</b></font>"
 			dat += {"<table>
-			<tr><td>Name:</td><td>&nbsp;[current.fields["name"]]&nbsp;</td></tr>
-			<tr><td>ID:</td><td>&nbsp;[current.fields["id"]]&nbsp;</td></tr>
+			<tr><td>Name:</td><td>&nbsp;[current.fields[DATACORE_NAME]]&nbsp;</td></tr>
+			<tr><td>ID:</td><td>&nbsp;[current.fields[DATACORE_ID]]&nbsp;</td></tr>
 			</table>"}
 			dat += {"Criminal Status:<br>
 			<div style='[background] padding: 3px; text-align: center;'>
-			<strong>[current.fields["criminal"]][notice]</strong>
+			<strong>[current.fields[DATACORE_CRIMINAL_STATUS]][notice]</strong>
 			</div>"}
 
 			dat += "<br>Crimes:"
@@ -49,7 +49,7 @@
 			<th>Author</th>
 			<th>Time Added</th>
 			</tr>"}
-			for(var/datum/data/crime/c in current.fields["crim"])
+			for(var/datum/data/crime/c in current.fields[DATACORE_CRIMES])
 				dat += {"<tr><td>[c.crimeName]</td>
 				<td>[c.crimeDetails]</td>
 				<td>[c.author]</td>
@@ -75,7 +75,7 @@
 			authenticated = scan.registered_name
 			if(authenticated)
 				for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-					if(R.fields["name"] == authenticated)
+					if(R.fields[DATACORE_NAME] == authenticated)
 						current = R
 				playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 		if("Logout")

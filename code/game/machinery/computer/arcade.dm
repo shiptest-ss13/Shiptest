@@ -544,8 +544,8 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 		if(!isnull(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
 			for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				if(R.fields["name"] == gamer.name)
-					R.fields["m_stat"] = "*Unstable*"
+				if(R.fields[DATACORE_NAME] == gamer.name)
+					R.fields[DATACORE_MENTAL_HEALTH] = "*Unstable*"
 					return
 
 /obj/machinery/computer/arcade/orion_trail/ui_interact(mob/user)

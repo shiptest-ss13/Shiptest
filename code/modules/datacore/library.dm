@@ -13,9 +13,9 @@
 	if(!istype(new_record))
 		CRASH("You fucked it this time!!!")
 
-	if(!new_record.fields["name"])
+	if(!new_record.fields[DATACORE_NAME])
 		CRASH("Cannot inject a record with no name!")
 
 	records += new_record
-	records_by_name[new_record.fields["name"]] = new_record
+	records_by_name[new_record.fields[DATACORE_NAME]] = new_record
 	new_record.library = src
