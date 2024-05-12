@@ -9,7 +9,7 @@ SUBSYSTEM_DEF(datacore)
 
 	/// A list of data libraries keyed by DATACORE_RECORDS_*
 	var/list/datum/data_library/library = list(
-		DATACORE_RECORDS_STATION,
+		DATACORE_RECORDS_OUTPOST,
 		DATACORE_RECORDS_SECURITY,
 		DATACORE_RECORDS_MEDICAL,
 		DATACORE_RECORDS_LOCKED
@@ -36,13 +36,13 @@ SUBSYSTEM_DEF(datacore)
 	finished_setup = SSdatacore.finished_setup
 
 /// Returns a data record or null.
-/datum/controller/subsystem/datacore/proc/get_record_by_name(name, record_type = DATACORE_RECORDS_STATION)
+/datum/controller/subsystem/datacore/proc/get_record_by_name(name, record_type = DATACORE_RECORDS_OUTPOST)
 	RETURN_TYPE(/datum/data/record)
 
 	return library[record_type].get_record_by_name(name)
 
 /// Returns a data library's records list
-/datum/controller/subsystem/datacore/proc/get_records(record_type = DATACORE_RECORDS_STATION)
+/datum/controller/subsystem/datacore/proc/get_records(record_type = DATACORE_RECORDS_OUTPOST)
 	RETURN_TYPE(/list)
 	return library[record_type].records
 
@@ -101,11 +101,11 @@ SUBSYSTEM_DEF(datacore)
 	datacore_ready_callbacks.Cut()
 
 /datum/controller/subsystem/datacore/proc/manifest_modify(name, assignment)
-	var/datum/data/record/foundrecord = library[DATACORE_RECORDS_STATION].get_record_by_name(name)
+	var/datum/data/record/foundrecord = library[DATACORE_RECORDS_OUTPOST].get_record_by_name(name)
 	if(foundrecord)
 		foundrecord.fields[DATACORE_RANK] = assignment
 
-/datum/controller/subsystem/datacore/proc/get_manifest(record_type = DATACORE_RECORDS_STATION)
+/datum/controller/subsystem/datacore/proc/get_manifest(record_type = DATACORE_RECORDS_OUTPOST)
 	var/list/manifest_out = list()
 	var/list/departments = list(
 		"Command" = GLOB.command_positions,
@@ -148,7 +148,7 @@ SUBSYSTEM_DEF(datacore)
 
 	return manifest_out
 
-/datum/controller/subsystem/datacore/proc/get_manifest_html(record_key = DATACORE_RECORDS_STATION, monochrome = FALSE)
+/datum/controller/subsystem/datacore/proc/get_manifest_html(record_key = DATACORE_RECORDS_OUTPOST, monochrome = FALSE)
 	var/list/manifest = get_manifest(record_key)
 	var/dat = {"
 	<head><style>
@@ -230,7 +230,7 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_PHOTO] = photo_front
 	G.fields[DATACORE_PHOTO_SIDE] = photo_side
 
-	library[DATACORE_RECORDS_STATION].inject_record(G)
+	library[DATACORE_RECORDS_OUTPOST].inject_record(G)
 
 /*
 	// Add to company-specific manifests
@@ -298,12 +298,12 @@ SUBSYSTEM_DEF(datacore)
  * @return - list(general_records_out)
  */
 /datum/controller/subsystem/datacore/proc/get_general_records()
-	if(!get_records(DATACORE_RECORDS_STATION))
+	if(!get_records(DATACORE_RECORDS_OUTPOST))
 		return list()
 
 	/// The array of records
 	var/list/general_records_out = list()
-	for(var/datum/data/record/gen_record as anything in get_records(DATACORE_RECORDS_STATION))
+	for(var/datum/data/record/gen_record as anything in get_records(DATACORE_RECORDS_OUTPOST))
 		/// The object containing the crew info
 		var/list/crew_record = list()
 		crew_record["ref"] = REF(gen_record)
