@@ -1200,6 +1200,7 @@
 	var/list/searching = GetAllContents()
 	var/search_id = 1
 	var/search_pda = 1
+	var/search_bankcard = 1
 
 	for(var/A in searching)
 		if(search_id && istype(A, /obj/item/card/id))
@@ -1207,18 +1208,24 @@
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
 				ID.update_label()
-				if(ID.registered_account?.account_holder == oldname)
-					ID.registered_account.account_holder = newname
-				if(!search_pda)
+				if(!search_pda || !search_bankcard)
 					break
 				search_id = 0
+
+		if(search_bankcard && istype(A, /obj/item/card/bank))
+			var/obj/item/card/bank/bank_card = A
+			if(bank_card.registered_account?.account_holder == oldname)
+				bank_card.registered_account.account_holder = newname
+				if(!search_id || !search_pda)
+					break
+				search_bankcard = 0
 
 		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
 				PDA.update_label()
-				if(!search_id)
+				if(!search_id || !search_bankcard)
 					break
 				search_pda = 0
 

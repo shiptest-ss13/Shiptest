@@ -58,11 +58,11 @@
 		say("Deposited [deposit_value] credits into storage.")
 		update_icon_state()
 		return
-	if(istype(O, /obj/item/card/id))
-		var/obj/item/card/id/Card = O
-		if(Card.registered_account)
-			account = Card.registered_account
-			account_name = Card.registered_name
+	if(istype(O, /obj/item/card/bank))
+		var/obj/item/card/bank/bank_card = O
+		if(bank_card.registered_account)
+			account = bank_card.registered_account
+			account_name = bank_card.registered_name
 			say("New account detected. Console Updated.")
 		else
 			say("No account detected on card. Aborting.")

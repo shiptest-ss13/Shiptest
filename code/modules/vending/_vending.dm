@@ -942,10 +942,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/C
+	var/obj/item/card/bank/C
 	if(ishuman(user))
 		H = user
-		C = H.get_idcard(FALSE)
+		C = H.get_bankcard(FALSE)
 		if(C?.registered_account && C.registered_account == private_a)
 			return TRUE
 

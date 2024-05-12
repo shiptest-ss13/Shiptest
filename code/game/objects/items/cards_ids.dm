@@ -154,7 +154,7 @@
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
-	var/datum/bank_account/registered_account
+	//var/datum/bank_account/registered_account
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
 	var/registered_age = 18 // default age for ss13 players
@@ -168,11 +168,6 @@
 	update_label()
 	update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
-
-/obj/item/card/id/Destroy()
-	if (registered_account)
-		registered_account.bank_cards -= src
-	return ..()
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
@@ -343,17 +338,6 @@ update_label()
 			to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
 			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
 
-			// First time use automatically sets the account id to the user.
-			if (first_use && !registered_account)
-				if(ishuman(user))
-					var/mob/living/carbon/human/accountowner = user
-
-					for(var/bank_account in SSeconomy.bank_accounts)
-						var/datum/bank_account/account = bank_account
-						if(account.account_id == accountowner.account_id)
-							account.bank_cards += src
-							registered_account = account
-							to_chat(user, "<span class='notice'>Your account number has been automatically assigned.</span>")
 			return
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
