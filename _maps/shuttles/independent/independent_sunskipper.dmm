@@ -359,32 +359,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "dG" = (
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/wheat,
-/obj/item/seeds/corn,
-/obj/item/seeds/potato,
-/obj/item/seeds/wheat,
-/obj/item/seeds/tomato,
-/obj/item/seeds/banana,
-/obj/item/seeds/apple,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/chili,
-/obj/item/seeds/carrot,
-/obj/item/seeds/berry,
-/obj/item/seeds/watermelon,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/plump,
-/obj/item/seeds/poppy,
-/obj/item/seeds/cocoapod,
-/obj/item/seeds/grape,
-/obj/item/seeds/soya,
-/obj/item/seeds/coffee,
-/obj/item/seeds/tea,
-/obj/item/seeds/lemon,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/cherry,
 /obj/structure/closet/wall/white/directional/south{
 	name = "Seeds Storage";
 	color = "#50C878"
@@ -392,6 +366,44 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
 	},
+/obj/item/seeds/apple,
+/obj/item/seeds/banana,
+/obj/item/seeds/berry,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/carrot,
+/obj/item/seeds/carrot/parsnip,
+/obj/item/seeds/chanter,
+/obj/item/seeds/cherry,
+/obj/item/seeds/chili,
+/obj/item/seeds/chili/ice,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/cocoapod/vanillapod,
+/obj/item/seeds/coffee/robusta,
+/obj/item/seeds/corn,
+/obj/item/seeds/eggplant,
+/obj/item/seeds/garlic,
+/obj/item/seeds/grape,
+/obj/item/seeds/lemon,
+/obj/item/seeds/lime,
+/obj/item/seeds/onion,
+/obj/item/seeds/orange,
+/obj/item/seeds/peas,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/plump,
+/obj/item/seeds/poppy,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato/sweet,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/redbeet,
+/obj/item/seeds/seaweed,
+/obj/item/seeds/soya,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/tea/astra,
+/obj/item/seeds/tomato,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/wheat,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/whitebeet,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "dW" = (
@@ -1471,11 +1483,7 @@
 	dir = 1;
 	color = "#543C30"
 	},
-/obj/item/kirbyplants/random{
-	pixel_y = 20;
-	pixel_x = 10
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/vending/cigarette,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "td" = (
@@ -1663,13 +1671,10 @@
 	color = "#543C30";
 	dir = 4
 	},
-/obj/structure/closet/crate/bin,
-/obj/item/trash/can,
-/obj/item/trash/candle,
-/obj/structure/railing/wood{
-	color = "#543C30"
+/obj/item/kirbyplants/random{
+	pixel_y = 13;
+	pixel_x = 14
 	},
-/obj/item/trash/candle,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "vy" = (
@@ -2803,8 +2808,12 @@
 	dir = 5;
 	color = "#543C30"
 	},
-/obj/machinery/vending/cigarette,
 /obj/machinery/light/dim/directional/north,
+/obj/structure/closet/crate/bin,
+/obj/item/trash/can,
+/obj/item/trash/candle,
+/obj/item/trash/candle,
+/obj/item/trash/candle,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "KG" = (
@@ -4413,7 +4422,7 @@ nK
 OY
 zj
 SH
-hh
+vs
 Rz
 PM
 uG
@@ -4460,7 +4469,7 @@ UK
 Ll
 uj
 Kl
-vs
+hh
 PM
 vB
 al
