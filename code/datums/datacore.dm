@@ -9,34 +9,6 @@
 	///This list tracks characters spawned in the world and cannot be modified in-game. Currently referenced by respawn_character().
 	var/list/locked = list()
 
-/datum/data
-	var/name = "data"
-
-/datum/data/record
-	name = "record"
-	var/list/fields = list()
-
-/datum/data/record/Destroy()
-	if(src in GLOB.data_core.medical)
-		GLOB.data_core.medical -= src
-	if(src in GLOB.data_core.security)
-		GLOB.data_core.security -= src
-	if(src in GLOB.data_core.general)
-		GLOB.data_core.general -= src
-	if(src in GLOB.data_core.locked)
-		GLOB.data_core.locked -= src
-	. = ..()
-
-/datum/data/crime
-	name = "crime"
-	var/crimeName = ""
-	var/crimeDetails = ""
-	var/author = ""
-	var/time = ""
-	var/fine = 0
-	var/paid = 0
-	var/dataId = 0
-
 /datum/datacore/proc/createCrimeEntry(cname = "", cdetails = "", author = "", time = "", fine = 0)
 	var/datum/data/crime/c = new /datum/data/crime
 	c.crimeName = cname
