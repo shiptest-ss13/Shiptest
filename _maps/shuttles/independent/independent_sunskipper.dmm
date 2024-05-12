@@ -55,10 +55,10 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/north,
 /obj/item/kirbyplants/random{
 	pixel_y = 20
 	},
@@ -442,8 +442,8 @@
 	anchored = 1
 	},
 /obj/item/kitchen/knife{
-	pixel_x = -18;
-	pixel_y = 8
+	pixel_x = -11;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -868,6 +868,20 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/crate/wooden{
+	name = "mining gear crate"
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/kitchen/knife/hunting,
+/obj/item/kitchen/knife/hunting,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "kX" = (
@@ -897,7 +911,7 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/clothing/head/welding,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/reagent_containers/glass/beaker/large/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "lu" = (
@@ -932,15 +946,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "lV" = (
-/obj/structure/rack,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining,
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/airalarm/directional/north,
+/obj/structure/crate_shelf,
+/obj/structure/sign/poster/contraband/space_cube{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mk" = (
@@ -1333,10 +1342,8 @@
 /area/ship/crew/dorm)
 "qG" = (
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/structure/crate_shelf,
-/obj/structure/sign/poster/contraband/space_cola{
-	pixel_y = 32
-	},
+/obj/machinery/autolathe,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "qP" = (
@@ -2865,7 +2872,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ll" = (
-/obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/head/helmet/space/eva,
@@ -2874,14 +2880,17 @@
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/suit/space/eva,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = -32
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/internals{
+	name = "EVA gear crate"
+	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lo" = (
@@ -3553,10 +3562,15 @@
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/fancy/candle_box,
-/obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass{
+	amount = 10
+	},
+/obj/item/stack/sheet/plastic/five,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ve" = (
