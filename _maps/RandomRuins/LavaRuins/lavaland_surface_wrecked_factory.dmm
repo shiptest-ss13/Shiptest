@@ -60,6 +60,10 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
+"aL" = (
+/obj/item/camera,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
 "aM" = (
 /obj/item/documents/nanotrasen,
 /obj/item/spacecash/bundle/c1000,
@@ -551,10 +555,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
-"he" = (
-/obj/item/radio,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
 "hf" = (
 /obj/effect/turf_decal/ntlogo{
 	dir = 8
@@ -605,6 +605,13 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"ia" = (
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/lavaland/factory/manager_office)
 "ih" = (
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/processor,
@@ -1525,6 +1532,10 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"tj" = (
+/obj/item/toy/plush/nukeplushie,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
 "tm" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/r_wall,
@@ -1592,6 +1603,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
+"ui" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
 "us" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 1;
@@ -1761,8 +1776,8 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
-"wm" = (
-/obj/structure/flora/ausbushes/fullgrass/hell,
+"wl" = (
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "wt" = (
@@ -2217,10 +2232,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
-"CV" = (
-/obj/structure/flora/ash/leaf_shroom,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
 "CW" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -2255,10 +2266,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
-"Dr" = (
-/obj/item/camera,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
 "Dt" = (
 /obj/item/rack_parts/shelf,
 /turf/open/floor/plasteel/mono,
@@ -2829,10 +2836,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
-"Kv" = (
-/obj/structure/flora/ash/cacti,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
 "KB" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark/lava,
@@ -3647,12 +3650,9 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
 "VA" = (
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/lavaland/factory/manager_office)
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
 "VC" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = -15;
@@ -3964,7 +3964,7 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
 "ZO" = (
-/obj/item/toy/plush/nukeplushie,
+/obj/item/radio,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "ZS" = (
@@ -5014,7 +5014,7 @@ fE
 MH
 MH
 MH
-Dr
+aL
 gL
 gL
 LZ
@@ -5067,8 +5067,8 @@ Xn
 MH
 MH
 MH
-he
 ZO
+tj
 gL
 LZ
 LZ
@@ -5141,7 +5141,7 @@ Gn
 ty
 JO
 ty
-VA
+ia
 KX
 hh
 HO
@@ -5281,11 +5281,11 @@ Xn
 "}
 (25,1,1) = {"
 fE
-fE
 MH
 MH
 MH
-CV
+MH
+ui
 LZ
 LZ
 LZ
@@ -5335,7 +5335,7 @@ tR
 "}
 (26,1,1) = {"
 fE
-fE
+MH
 MH
 MH
 MH
@@ -5389,7 +5389,7 @@ Xn
 "}
 (27,1,1) = {"
 fE
-MH
+fE
 MH
 MH
 MH
@@ -5457,7 +5457,7 @@ LZ
 LZ
 LZ
 LZ
-Kv
+wl
 LZ
 su
 MH
@@ -5498,7 +5498,7 @@ Xn
 (29,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -5660,8 +5660,8 @@ Xn
 (32,1,1) = {"
 fE
 fE
-fE
-fE
+MH
+MH
 MH
 MH
 MH
@@ -5714,7 +5714,7 @@ Sd
 (33,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -5768,12 +5768,12 @@ Zx
 (34,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
 gL
-wm
+VA
 LZ
 LZ
 LZ
@@ -5823,7 +5823,7 @@ bd
 fE
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -5930,7 +5930,7 @@ bd
 (37,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -5984,7 +5984,7 @@ bd
 (38,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6038,8 +6038,8 @@ bd
 (39,1,1) = {"
 fE
 fE
-fE
-fE
+MH
+MH
 MH
 MH
 MH
@@ -6048,7 +6048,7 @@ LZ
 LZ
 LZ
 LZ
-wm
+VA
 MH
 MH
 MH
@@ -6093,7 +6093,7 @@ fE
 fE
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6146,7 +6146,7 @@ fE
 (41,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6200,7 +6200,7 @@ fE
 (42,1,1) = {"
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6255,7 +6255,7 @@ fE
 fE
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6310,7 +6310,7 @@ fE
 fE
 fE
 fE
-fE
+MH
 MH
 MH
 MH
@@ -6364,10 +6364,10 @@ fE
 fE
 fE
 fE
-fE
-fE
-fE
-fE
+MH
+MH
+MH
+MH
 MH
 MH
 MH
@@ -6419,7 +6419,7 @@ fE
 fE
 fE
 fE
-fE
+MH
 fE
 fE
 fE
