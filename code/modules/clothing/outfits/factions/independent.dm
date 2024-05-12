@@ -611,6 +611,7 @@
 	job_icon = "cook"
 
 	ears = /obj/item/radio/headset/headset_srv
+	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/rank/civilian/chef
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
