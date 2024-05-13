@@ -20,9 +20,9 @@
 	. = ..()
 	. += list(span_notice("Use [src] on any under clothing item to quickly install it."))
 	. += list(span_notice("Use a [span_bold("screwdriver")] to remove it."))
-	. += list(span_notice("While equipped, use your ID card on the vest to activate/deactivate the camera."))
+	. += list(span_notice("While equipped, use your ID card on the clothing item to activate/deactivate the camera."))
 	. += list(span_notice("Unequipping the clothing item will immediately deactivate the camera."))
-	. += list(span_notice("[span_bold("Alt Click")] on a [span_bold("Security Camera Console")] to connect the camera to its network if it isn't showing up."))
+	. += list(span_notice("[span_bold("Use the camera")] on a [span_bold("Security Camera Console")] to connect the camera to its network if it isn't showing up."))
 
 /obj/item/bodycam/AltClick(mob/user)
 	. = ..()
