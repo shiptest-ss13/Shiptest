@@ -273,7 +273,7 @@
 
 			if(chassis_of_choice.is_digi)
 				if(istype(BP,/obj/item/bodypart/leg))
-					BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
+					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
 
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE

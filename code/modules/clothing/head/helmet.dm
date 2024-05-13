@@ -1,6 +1,8 @@
 /obj/item/clothing/head/helmet
 	name = "helmet"
 	desc = "Standard Security gear. Protects the head from impacts."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
@@ -468,16 +470,6 @@
 	resistance_flags = FLAMMABLE
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
-
-/obj/item/clothing/head/helmet/r_trapper
-	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
-	icon_state = "rus_ushanka"
-	item_state = "rus_ushanka"
-	body_parts_covered = HEAD
-	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 20, "bio" = 50, "rad" = 20, "fire" = -10, "acid" = 50)
 
 /obj/item/clothing/head/helmet/infiltrator
 	name = "infiltrator helmet"
