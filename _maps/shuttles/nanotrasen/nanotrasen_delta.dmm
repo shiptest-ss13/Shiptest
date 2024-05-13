@@ -67,6 +67,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/door/window/westright{
+	name = "Processor Access Door"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ax" = (
@@ -164,6 +167,9 @@
 	id = "1984"
 	},
 /obj/effect/turf_decal/weather,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "aR" = (
@@ -227,6 +233,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bc" = (
@@ -240,6 +249,9 @@
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bd" = (
@@ -270,6 +282,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bu" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bw" = (
@@ -288,7 +303,8 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "bx" = (
-/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "by" = (
@@ -683,6 +699,14 @@
 /obj/machinery/door/poddoor{
 	id = "Mining Bay Door"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "delta_dronebay";
+	locked = 1;
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "da" = (
@@ -743,6 +767,9 @@
 "de" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1345,6 +1372,17 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
+"mh" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/weather,
+/obj/machinery/door/poddoor{
+	id = "Mining Bay Door"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "mt" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1408,6 +1446,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
+"nn" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/weather,
+/obj/machinery/door/poddoor{
+	id = "Mining Bay Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "delta_dronebay";
+	locked = 1;
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "nq" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -1570,7 +1627,12 @@
 	machinedir = 8;
 	pixel_y = 26
 	},
-/obj/machinery/light/small/built/directional/west,
+/obj/machinery/button/shieldwallgen{
+	id = "delta_dronebay";
+	pixel_x = -24;
+	pixel_y = 1;
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "rl" = (
@@ -2157,6 +2219,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Go" = (
@@ -2581,6 +2646,9 @@
 	output_dir = 1
 	},
 /obj/structure/plasticflaps/opaque,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Td" = (
@@ -3302,7 +3370,7 @@ aV
 Je
 aQ
 SY
-cX
+nn
 aa
 aa
 aa
@@ -3322,7 +3390,7 @@ bx
 bx
 bx
 bx
-cX
+mh
 aa
 aa
 aa
