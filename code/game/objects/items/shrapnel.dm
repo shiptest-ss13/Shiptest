@@ -147,34 +147,3 @@
 	dismemberment = 30
 	armour_penetration = 0
 
-// /obj/item/ammo_casing/caseless/claymore
-// 	name = "bomblet spray"
-// 	desc = "How are you reading this?"
-// 	pellets = 3
-// 	variance = 40
-// 	projectile_type = /obj/projectile/bullet/claymore
-// 	randomspread = TRUE
-
-// /obj/projectile/bullet/claymore
-// 	name = "explosive bomblet"
-// 	desc = "A small explosive charge that detonates when the shell is breached, used in cluster munitions. Stop reading this, run!"
-// 	icon_state= "pellet"
-// 	damage = 15
-// 	var/hashit = FALSE
-
-// //distribution of explosions along an unpredictable scatter, near the claymore
-// /obj/projectile/bullet/claymore/Initialize()
-// 	range = rand(2,4)
-// 	. = ..()
-
-// /obj/projectile/bullet/claymore/on_hit(atom/target, blocked = FALSE)
-// 	..()
-// 	explosion(target, -1, 0, 0, 0, 0, flame_range = 0)
-// 	hashit = TRUE
-// 	return BULLET_ACT_HIT
-
-// //when the bullet's range reaches 0, explode.
-// /obj/projectile/bullet/claymore/Destroy()
-// 	if(!hashit)
-// 		explosion(src, -1, 0, 0, 0, 0, flame_range = 0)
-// 	. = ..()

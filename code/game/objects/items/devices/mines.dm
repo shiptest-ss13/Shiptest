@@ -419,7 +419,7 @@
 //handles weird cases like ship movement or teleporting
 /obj/item/mine/directional/Moved()
 	. = ..()
-	if(armed & !triggered)
+	if(armed & !triggered & loc)
 		draw_tripwires()
 
 //
