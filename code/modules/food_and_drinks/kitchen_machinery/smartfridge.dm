@@ -245,6 +245,7 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	use_power = IDLE_POWER_USE
+	circuit = null
 	idle_power_usage = 5
 	active_power_usage = 200
 	visible_contents = FALSE
