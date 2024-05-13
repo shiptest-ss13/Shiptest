@@ -146,7 +146,7 @@
 /obj/item/organ/cyberimp/brain/joywire/on_life()
 	if(owner || !(organ_flags & ORGAN_FAILING))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire", /datum/mood_event/joywire)
-		ADD_TRAIT (owner, TRAIT_AGEUSIA, TRAIT_GENERIC)
+		ADD_TRAIT(owner, TRAIT_AGEUSIA, TRAIT_GENERIC)
 
 /obj/item/organ/cyberimp/brain/joywire/emp_act(severity)
 	. = ..()
