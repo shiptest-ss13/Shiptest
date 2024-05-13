@@ -244,3 +244,8 @@
 	description = span_boldnicegreen("I feel so joyous! Oh, so joyous!\n")
 	mood_change = 8
 	timeout = 10 SECONDS
+
+/datum/mood_event/root
+	description = span_nicegreen("I rooted recently, it feels good to charge naturally.\n")
+	mood_change = 5
+	timeout = 5 MINUTES
