@@ -39,19 +39,19 @@
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
 		if(stored_mob && looking.stat != DEAD && prob(25))
 			say_fucky_things()
-		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD || !HAS_TRAIT(looking, TRAIT_DEAF))
-			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
-			playsound(src, 'sound/effects/stall.ogg', 50)
-			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
-				if(prob(20))
-					var/mob/living/carbon/victim = looking
-					var/obj/effect/anomaly/tvstatic/planetary/expansion
-					expansion = new(get_turf(victim))
-					visible_message(span_warning("The static overtakes [victim], taking their place!"))
-					victim.death()
-					expansion.stored_mob = victim
-					victim.forceMove(expansion)
-	return
+		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || HAS_TRAIT(looking, TRAIT_DEAF))
+			continue
+		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
+		playsound(src, 'sound/effects/stall.ogg', 50)
+		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
+			if(prob(20))
+				var/mob/living/carbon/victim = looking
+				var/obj/effect/anomaly/tvstatic/planetary/expansion
+				expansion = new(get_turf(victim))
+				visible_message(span_warning("The static overtakes [victim], [expansion] taking their place!"))
+				victim.death()
+				expansion.stored_mob = victim
+				victim.forceMove(expansion)
 
 
 /obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
