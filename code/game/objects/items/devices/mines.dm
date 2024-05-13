@@ -68,10 +68,14 @@
 //using an unarmed mine inhand deploys it.
 /obj/item/mine/attack_self(mob/user)
 	if(!armed)
+		if(!loccheck(user))
+			to_chat(user, span_warning("There's already a mine at this position!"))
+			return
 		user.visible_message(span_danger("[user] deploys the [src]."), span_notice("You deploy the [src]."))
 
 		user.dropItemToGround(src)
 		anchored = TRUE
+		dir = user.dir
 		playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 
 		if(arm_delay)
@@ -81,6 +85,12 @@
 		else
 			armed = TRUE
 		message_admins("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
+
+/obj/item/mine/proc/loccheck(mob/user)
+	for(var/obj/item/mine/alreadymined in user.loc)
+		if(alreadymined.anchored)
+			return FALSE
+	return TRUE
 
 //let them know the mine's done cooking
 /obj/item/mine/proc/now_armed()
@@ -142,7 +152,7 @@
 		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
 		if(do_after(user, 5 SECONDS, target = src))//SO SO generous. You can still step back from the edge.
 			if(prob(10))
-				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
+				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't go off!"), span_notice("You pick up \the [src], which miraculously doesn't go off!"))
 				disarm()
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
@@ -285,7 +295,7 @@
 	arm_delay = 10 SECONDS//clear the area
 	///needed for the proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
-	var/proximity_range = 2
+	var/proximity_range = 3
 
 /obj/item/mine/proximity/Initialize(mapload)
 	. = ..()
@@ -306,7 +316,6 @@
 	light_range = 1
 
 /obj/item/mine/proximity/disarm()
-	. = ..()
 	QDEL_NULL(proximity_monitor)
 
 /obj/item/mine/proximity/Destroy()
@@ -315,7 +324,11 @@
 	. = ..()
 
 /obj/item/mine/proximity/HasProximity(atom/movable/triggerer)
-	if(!iscarbon(triggerer))//let's keep these on player movements for now.
+	//let's keep these on player movements for now.
+	if(!iscarbon(triggerer))
+		return
+	//Quick and dirty solution for preventing activations behind walls.
+	if(!(triggerer in view(proximity_range, src)))
 		return
 	if(!can_trigger(triggerer))
 		return
@@ -324,6 +337,90 @@
 	trigger_mine(triggerer)
 	QDEL_NULL(proximity_monitor)
 	return
+
+//
+//DIRECTIONAL MINES
+//Once deployed, keeps an eye on a line of turfs in the faced direction. If something moves in them, explode.
+//
+/obj/item/mine/directional
+	name = "directional mine"
+	desc = "An anti-personnel device that activates when an object moves in front of it. This one does nothing and is for testing purposes only."
+
+	blast_delay = 1 DECISECONDS
+	arm_delay = 5 SECONDS
+
+	//range of tripwire
+	var/trigger_range = 4
+
+	//projectile casing to fire in the selected direction when the mine is triggered.
+	//null prevents a projectile from being fired.
+	var/obj/item/ammo_casing/casingtype = null
+
+	//cache of turfs for detection area
+	var/list/tripwire_turfs
+
+	//for aiming the resulting projectiles
+	var/turf/target_turf
+
+//kills any existing tripwires
+/obj/item/mine/directional/proc/remove_tripwires()
+	if(tripwire_turfs)
+		for(var/turf/affected_turf in tripwire_turfs)
+			UnregisterSignal(affected_turf, COMSIG_ATOM_ENTERED)
+		tripwire_turfs = null
+	if(target_turf)
+		target_turf = null
+	return
+
+//sets up tripwires(or recreates them, if already present)
+/obj/item/mine/directional/proc/draw_tripwires()
+	if(tripwire_turfs)
+		remove_tripwires()
+	//we'll also use this to set up the pew
+	target_turf = get_ranged_target_turf(src, dir, trigger_range)
+	var/turf/starting_turf = get_turf(src)
+	tripwire_turfs = get_line(starting_turf, target_turf)
+
+	for(var/turf/affected_turf in tripwire_turfs)
+		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+
+/obj/item/mine/directional/now_armed()
+	draw_tripwires()
+	. = ..()
+
+/obj/item/mine/directional/proc/on_entered(datum/source, atom/movable/arrived)
+	SIGNAL_HANDLER
+	if(!(arrived in view(trigger_range, src)))
+		return
+	if(!can_trigger(arrived))
+		return
+
+	if(ismob(arrived))
+		var/mob/living/fool = arrived
+		fool.do_alert_animation(fool)
+
+	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
+	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+	INVOKE_ASYNC(src, PROC_REF(trigger_mine), arrived)
+
+
+//pew pew
+/obj/item/mine/directional/mine_effect(mob/victim)
+	if(casingtype && target_turf && src.loc != victim.loc)
+		var/obj/item/ammo_casing/casing = new casingtype(src)
+		casing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 60, src)
+	. = ..()
+
+/obj/item/mine/directional/disarm()
+	remove_tripwires()
+	visible_message(span_danger("With a soft clunk, the [src]'s securing bolts retract."))
+	. = ..()
+
+//handles weird cases like ship movement or teleporting
+/obj/item/mine/directional/Moved()
+	. = ..()
+	if(armed & !triggered)
+		draw_tripwires()
 
 //
 //LANDMINE TYPES
@@ -525,6 +622,89 @@
 	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
 	spawn_type = /mob/living/simple_animal/hostile/viscerator
 
+
+//
+//Claymores
+//shrapnel based dir explosive, extreme short range
+//FRONT TOWARDS ENEMY
+//
+
+/obj/item/mine/directional/claymore
+	name = "C-10 Claymore"
+	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
+
+	icon_state = "mine_claymore"
+	base_icon_state = "mine_claymore"
+
+	trigger_range = 2
+
+	//customize explosive power
+	var/range_devastation = -1
+	var/range_heavy = 1
+	var/range_light = 2
+	var/range_flame = 0
+
+	//using this to indicate pb
+	var/range_flash = 1
+
+	//shim for ground icons till world icons get in
+	var/planted = FALSE
+
+	//a second run of shrapnel, intended for maiming especially pb targets
+	var/obj/item/ammo_casing/shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred
+	casingtype = /obj/item/ammo_casing/caseless/shrapnel
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+//world icons would save like 20 lines here
+/obj/item/mine/directional/claymore/update_icon_state()
+	if(planted)
+		base_icon_state = "mine_claymore_planted"
+		icon_state = "mine_claymore_planted"
+	else
+		icon_state = "mine_claymore"
+		base_icon_state = "mine_claymore"
+	. = ..()
+
+/obj/item/mine/directional/claymore/disarm()
+	. = ..()
+	planted = FALSE
+	update_appearance(UPDATE_ICON_STATE)
+
+/obj/item/mine/directional/claymore/attack_self(mob/user)
+	if(!armed && loccheck(user))
+		planted = TRUE
+	. = ..()
+
+/obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
+	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
+		to_chat(user, "<span class='notice'>You begin unscrewing \the [src]'s arming pin...</span>")
+		I.play_tool_sound(src, 50)
+		if(do_after(user, 10 SECONDS, target = src))
+			to_chat(user, "<span class='notice'>You unscrew \the [src]'s arming pin, disarming it.</span>")
+			disarm()
+	else
+		. = ..()
+
+/obj/item/mine/directional/claymore/mine_effect(mob/victim)
+	. = ..()
+	//if you somehow explode it while on the same tile, you win bonus shrapnel
+	//also spews stuff everywhere if it's triggered while not set up
+	if(!target_turf || victim.loc == src.loc)
+		explosion(src, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		var/casingammo = casingtype.projectile_type
+		var/shredammo = shredtype.projectile_type
+		if(casingtype)
+			AddComponent(/datum/component/pellet_cloud, projectile_type = casingammo, magnitude = 1)
+		if(shredtype)
+			AddComponent(/datum/component/pellet_cloud, projectile_type = shredammo, magnitude = 2)
+	else
+		var/blastloc = get_step_towards(src, target_turf)
+		explosion(blastloc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		if(shredtype)
+			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
+			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)
+
 //
 //GIMMICK MINES//
 //pretty much exclusively for adminbus & code dependencies
@@ -669,6 +849,8 @@ LIVE_MINE_HELPER(proximity/explosive)
 LIVE_MINE_HELPER(proximity/explosive/sting)
 LIVE_MINE_HELPER(proximity/spawner/manhack)
 LIVE_MINE_HELPER(proximity/explosive/plasma)
+
+LIVE_MINE_HELPER(directional/claymore)
 
 LIVE_MINE_HELPER(pressure/gas)
 LIVE_MINE_HELPER(pressure/kickmine)

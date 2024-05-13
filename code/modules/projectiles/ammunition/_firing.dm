@@ -8,7 +8,7 @@
 				spread = round((rand() - 0.5) * distro)
 			else //Smart spread
 				spread = round(1 - 0.5) * distro
-		if(!throw_proj(target, targloc, user, params, spread))
+		if(!throw_proj(target, targloc, user, params, spread, fired_from))
 			return FALSE
 	else
 		if(isnull(BB))
@@ -16,12 +16,13 @@
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
 		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, spread, zone_override, params, distro)
 
-	if(click_cooldown_override)
-		user.changeNext_move(click_cooldown_override)
-	else
-		user.changeNext_move(CLICK_CD_RANGE)
+	if(user)
+		if(click_cooldown_override)
+			user.changeNext_move(click_cooldown_override)
+		else
+			user.changeNext_move(CLICK_CD_RANGE)
+		user.newtonian_move(get_dir(target, user))
 
-	user.newtonian_move(get_dir(target, user))
 	update_appearance()
 	return TRUE
 
@@ -46,9 +47,16 @@
 		reagents.trans_to(BB, reagents.total_volume, transfered_by = user) //For chemical darts/bullets
 		qdel(reagents)
 
-/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
-	var/turf/curloc = get_turf(user)
-	if (!istype(targloc) || !istype(curloc) || !BB)
+/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread, atom/fired_from)
+	var/turf/curloc
+	if(user)
+		curloc = get_turf(user)
+	else
+		curloc = get_turf(fired_from)
+	if(!istype(curloc))
+		return FALSE
+
+	if (!istype(targloc) || !BB)
 		return FALSE
 
 	var/firing_dir
@@ -61,8 +69,12 @@
 	if(targloc == curloc)
 		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
 			direct_target = target
-	if(!direct_target)
-		BB.preparePixelProjectile(target, user, params, spread)
+	if (user)
+		if(!direct_target)
+			BB.preparePixelProjectile(target, user, params, spread)
+	else
+		if(!direct_target)
+			BB.preparePixelProjectile(target, fired_from, params, spread)
 	BB.fire(null, direct_target)
 	BB = null
 	return TRUE
