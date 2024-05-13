@@ -773,3 +773,6 @@
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+
+///called when an elzu should unroot
+#define COMSIG_DIGOUT "dig_out"
