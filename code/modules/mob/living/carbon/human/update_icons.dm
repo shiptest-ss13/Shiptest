@@ -379,7 +379,8 @@ There are several things that need to be remembered:
 		var/t_state = I.item_state
 		if(!t_state)
 			t_state = I.icon_state
-
+		//var/handled_by_bodytype = TRUE
+		//s_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi', mob_species = CHECK_USE_AUTOGEN, override_state = t_state)
 		s_store_overlay = mutable_appearance('icons/mob/clothing/belt_mirror.dmi', t_state, -SUIT_STORE_LAYER)
 
 		if(!s_store_overlay)
