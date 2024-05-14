@@ -357,6 +357,8 @@
 	icon_state = "clip-gasmask"
 	strip_delay = 60
 
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+
 	supports_variations = SNOUTED_VARIATION
 
 //gloves

@@ -275,6 +275,10 @@
 				if(istype(BP,/obj/item/bodypart/leg))
 					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
 
+			if(chassis_of_choice.has_snout)
+				if(istype(BP,/obj/item/bodypart/head))
+					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
+
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE
 				BP.species_color = C.dna?.features["mcolor"]

@@ -124,7 +124,7 @@ There are several things that need to be remembered:
 
 		var/mutable_appearance/uniform_overlay
 
-		var/icon_file
+		var/icon_file = U.mob_overlay_icon
 		var/handled_by_bodytype = TRUE
 		if(!uniform_overlay)
 			//Kapu's autistic attempt at digitigrade handling
@@ -212,7 +212,7 @@ There are several things that need to be remembered:
 		update_hud_gloves(I)
 
 		var/handled_by_bodytype = TRUE
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_GLOVES_PATH
@@ -252,7 +252,7 @@ There are several things that need to be remembered:
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
 			var/mutable_appearance/glasses_overlay
 			var/handled_by_bodytype = TRUE
-			var/icon_file
+			var/icon_file = I.mob_overlay_icon
 
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_GLASSES_PATH
@@ -292,7 +292,7 @@ There are several things that need to be remembered:
 		update_hud_ears(I)
 
 		var/handled_by_bodytype = TRUE
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_EARS_PATH
@@ -329,7 +329,7 @@ There are several things that need to be remembered:
 	if(shoes)
 		var/obj/item/I = shoes
 		var/mutable_appearance/shoes_overlay
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 		var/target_overlay = I.icon_state
 		update_hud_shoes(I)
 		var/handled_by_bodytype = TRUE
@@ -379,9 +379,7 @@ There are several things that need to be remembered:
 		var/t_state = I.item_state
 		if(!t_state)
 			t_state = I.icon_state
-		//var/handled_by_bodytype = TRUE
-		//s_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi', mob_species = CHECK_USE_AUTOGEN, override_state = t_state)
-		s_store_overlay = mutable_appearance('icons/mob/clothing/belt_mirror.dmi', t_state, -SUIT_STORE_LAYER)
+		s_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi', override_state = t_state)
 
 		if(!s_store_overlay)
 			return
@@ -394,16 +392,16 @@ There are several things that need to be remembered:
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_HEAD) + 1]
 		inv.update_appearance()
-
 	if(head)
 		var/obj/item/I = head
 		var/mutable_appearance/head_overlay
 		update_hud_head(I)
 		var/handled_by_bodytype = TRUE
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 		var/target_overlay = I.icon_state
 
-		if(islizard(src) || iselzuose(src) && (I.supports_variations & SNOUTED_VARIATION)) //this is awful, dont wanna make a species snouted bitflag though
+		var/obj/item/bodypart/head_bodypart = src.get_bodypart(BODY_ZONE_HEAD)
+		if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 			target_overlay = "[target_overlay]_snouted"
 
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
@@ -441,7 +439,7 @@ There are several things that need to be remembered:
 		var/mutable_appearance/belt_overlay
 		update_hud_belt(I)
 		var/handled_by_bodytype
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 
 		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
 			icon_file = VOX_BELT_PATH
@@ -450,8 +448,8 @@ There are several things that need to be remembered:
 
 		//if((I.supports_variations & KEPORI_VARIATION) && (dna.species.bodytype & BODYTYPE_KEPORI))
 			//icon_file = KEPORI_BELT_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+			//if(I.kepoi_override_icon)
+//				icon_file = I.kepoi_override_icon
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -478,7 +476,7 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_suit
 		var/mutable_appearance/suit_overlay
 		update_hud_wear_suit(I)
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 		var/target_overlay = I.icon_state
 
 		var/handled_by_bodytype = TRUE
@@ -549,12 +547,13 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_mask
 		update_hud_wear_mask(I)
 		var/mutable_appearance/mask_overlay
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 		var/target_overlay = I.icon_state
 		var/handled_by_bodytype = TRUE
 
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
-			if(islizard(src) || iselzuose(src) && (I.supports_variations & SNOUTED_VARIATION)) //this is awful, dont wanna make a species snouted bitflag though
+			var/obj/item/bodypart/head_bodypart = src.get_bodypart(BODY_ZONE_HEAD)
+			if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 				target_overlay = "[target_overlay]_snouted"
 
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
@@ -591,7 +590,7 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_neck
 		update_hud_neck(I)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
-			var/icon_file
+			var/icon_file = I.mob_overlay_icon
 			var/handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
@@ -614,7 +613,7 @@ There are several things that need to be remembered:
 		var/obj/item/I = back
 		var/mutable_appearance/back_overlay
 		update_hud_back(I)
-		var/icon_file
+		var/icon_file = I.mob_overlay_icon
 		var/handled_by_bodytype = TRUE
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_BACK_PATH
