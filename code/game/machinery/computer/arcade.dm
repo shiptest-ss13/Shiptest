@@ -93,7 +93,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			visible_message("<span class='notice'>[src] dispenses.. woah, a gun! Way past cool.</span>", "<span class='notice'>You hear a chime and a shot.</span>")
 			user.client.give_award(/datum/award/achievement/misc/pulse, user)
 			return
-
 		var/prizeselect
 		if(prize_override)
 			prizeselect = pickweight(prize_override)
