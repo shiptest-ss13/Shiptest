@@ -53,6 +53,7 @@
 	var/meritval = round(S.get_amount() * MERITS_PER_ICE * OUTPOST_HYDROGEN_CUT,1) // causes a bit of surplus in the "outpost" supply, even if they use all of these merits for hydrogen.
 	GLOB.hydrogen_stored +=  S.get_amount() * MOLS_PER_ICE
 	new /obj/item/merit/bundle(drop_location(), meritval)
+	qdel(I)
 	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 
 /obj/machinery/computer/electrolyzer_console/attackby(item,mob/user)
