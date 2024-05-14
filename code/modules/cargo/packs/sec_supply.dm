@@ -55,6 +55,7 @@
 	desc = "Contains a shoulder holster, able to hold small arms and ammunition on your suit."
 	cost = 2000
 	contains = list(/obj/item/clothing/accessory/holster)
+	crate_name = "shoulder holster crate"
 
 /*
 		Misc. weapons / protection
