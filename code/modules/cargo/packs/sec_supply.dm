@@ -50,13 +50,6 @@
 					/obj/item/storage/box/handcuffs)
 	crate_name = "security supply crate"
 
-/datum/supply_pack/sec_supply/holster
-	name = "Shoulder Holster Crate"
-	desc = "Contains a shoulder holster, able to hold small arms and ammunition on your suit."
-	cost = 2000
-	contains = list(/obj/item/clothing/accessory/holster)
-	crate_name = "shoulder holster crate"
-
 /*
 		Misc. weapons / protection
 */
