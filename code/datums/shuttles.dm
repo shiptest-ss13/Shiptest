@@ -21,7 +21,8 @@
 	var/prefix = "ISV"
 	/// The full name of the ship's faction.
 	var/faction_name = "Independent"
-	var/unique_ship_access = FALSE
+	/// Whether or not players from other ships can open airlocks.
+	var/unique_ship_access = TRUE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
 	/// will be in the middle of space, instead of at an outpost.
 	var/space_spawn = FALSE
