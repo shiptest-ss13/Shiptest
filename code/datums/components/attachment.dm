@@ -52,6 +52,7 @@
 		var/obj/item/gun/parent = src.parent
 		parent.actions -= actions
 		QDEL_LIST(actions)
+	qdel(attachment_toggle_action)
 	return ..()
 
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
