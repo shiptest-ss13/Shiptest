@@ -668,6 +668,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
 	fire_delay = 0
+	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
 
