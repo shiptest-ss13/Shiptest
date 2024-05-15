@@ -206,7 +206,10 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_CRIMES] = list()
 	G.fields[DATACORE_NOTES] = "No notes."
 
-	custom_library.inject_record(G)
+	if(istype(custom_library, /datum/data_library))
+		custom_library.inject_record(G)
+	else
+		library[custom_library].inject_record(G)
 
 /**
  * Supporing proc for getting general records
