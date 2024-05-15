@@ -13,7 +13,6 @@
 	circuit = /obj/item/circuitboard/computer/cargo/express
 	light_color = COLOR_BRIGHT_ORANGE
 
-	var/requestonly = FALSE
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -41,13 +40,6 @@
 	var/use_beacon = FALSE
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
-
-/obj/machinery/computer/cargo
-	name = "supply request console"
-	desc = "Used to request supplies from cargo."
-	icon_screen = "request"
-	circuit = /obj/item/circuitboard/computer/cargo/request
-	requestonly = TRUE
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
@@ -154,7 +146,6 @@
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
 	var/list/data = list()
-	data["requestonly"] = requestonly
 	data["supplies"] = list()
 	for(var/pack in SSshuttle.supply_packs)
 		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
