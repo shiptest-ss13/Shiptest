@@ -1,41 +1,27 @@
-/mob/living/simple_animal/hostile/cat_butcherer
+/mob/living/simple_animal/hostile/human/cat_butcherer
 	name = "Cat Surgeon"
 	desc = "Feline genemod physiological modification surgery is outlawed in Nanotrasen-controlled sectors. This doctor doesn't seem to care, and thus, is wanted for several warcrimes."
-	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "cat_butcher"
 	icon_living = "cat_butcher"
-	icon_dead = "syndicate_dead"
-	icon_gib = "syndicate_gib"
 	projectiletype = /obj/projectile/bullet/dart/tranq
 	projectilesound = 'sound/items/syringeproj.ogg'
 	ranged = 1
 	ranged_message = "fires the syringe gun at"
 	ranged_cooldown_time = 30
 	speak_chance = 0
-	turns_per_move = 5
-	speed = 0
 	stat_attack = HARD_CRIT
-	robust_searching = 1
-	maxHealth = 100
-	health = 100
-	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	attack_verb_continuous = "slashes at"
 	attack_verb_simple = "slash at"
 	attack_sound = 'sound/weapons/circsawhit.ogg'
-	a_intent = INTENT_HARM
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher, /obj/item/circular_saw, /obj/item/gun/syringe)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 15
 	faction = list("hostile")
 	check_friendly_fire = 1
-	status_flags = CANPUSH
-	del_on_death = 1
 	var/impatience = 0
 
-/mob/living/simple_animal/hostile/cat_butcherer/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/human/cat_butcherer/CanAttack(atom/the_target)
 	if(iscarbon(target))
 		var/mob/living/carbon/human/C = target
 		if(C.getorgan(/obj/item/organ/ears/cat) && C.getorgan(/obj/item/organ/tail/cat) && C.has_trauma_type(/datum/brain_trauma/severe/pacifism))//he wont attack his creations
@@ -45,7 +31,7 @@
 				return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/cat_butcherer/AttackingTarget()
+/mob/living/simple_animal/hostile/human/cat_butcherer/AttackingTarget()
 	if(iscarbon(target))
 		var/mob/living/carbon/human/L = target
 		if(!L.getorgan(/obj/item/organ/ears/cat) && L.stat >= UNCONSCIOUS) //target doesnt have cat ears

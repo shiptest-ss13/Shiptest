@@ -1,35 +1,18 @@
-/mob/living/simple_animal/hostile/pirate
+/mob/living/simple_animal/hostile/human/pirate
 	name = "Pirate"
 	desc = "Does what he wants cause a pirate is free."
-	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "piratemelee"
 	icon_living = "piratemelee"
 	icon_dead = "pirate_dead"
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
-	turns_per_move = 5
-	response_help_continuous = "pushes"
-	response_help_simple = "push"
-	speed = 0
-	maxHealth = 100
-	health = 100
-	harm_intent_damage = 5
-	melee_damage_lower = 10
-	melee_damage_upper = 10
-	attack_verb_continuous = "punches"
-	attack_verb_simple = "punch"
-	attack_sound = 'sound/weapons/punch1.ogg'
-	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	speak_emote = list("yarrs")
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate,
 			/obj/item/melee/transforming/energy/sword/saber/pirate)
-	del_on_death = 1
 	faction = list("pirate")
 
-
-/mob/living/simple_animal/hostile/pirate/melee
+/mob/living/simple_animal/hostile/human/pirate/melee
 	name = "Pirate Swashbuckler"
 	icon_state = "piratemelee"
 	icon_living = "piratemelee"
@@ -44,7 +27,7 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-/mob/living/simple_animal/hostile/pirate/melee/space
+/mob/living/simple_animal/hostile/human/pirate/melee/space
 	name = "Space Pirate Swashbuckler"
 	icon_state = "piratespace"
 	icon_living = "piratespace"
@@ -53,23 +36,23 @@
 	minbodytemp = 0
 	speed = 1
 
-/mob/living/simple_animal/hostile/pirate/melee/space/Initialize()
+/mob/living/simple_animal/hostile/human/pirate/melee/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 
-/mob/living/simple_animal/hostile/pirate/melee/Initialize()
+/mob/living/simple_animal/hostile/human/pirate/melee/Initialize()
 	. = ..()
 	sord = new(src)
 
-/mob/living/simple_animal/hostile/pirate/melee/Destroy()
+/mob/living/simple_animal/hostile/human/pirate/melee/Destroy()
 	QDEL_NULL(sord)
 	return ..()
 
-/mob/living/simple_animal/hostile/pirate/melee/Initialize()
+/mob/living/simple_animal/hostile/human/pirate/melee/Initialize()
 	. = ..()
 	set_light(2)
 
-/mob/living/simple_animal/hostile/pirate/ranged
+/mob/living/simple_animal/hostile/human/pirate/ranged
 	name = "Pirate Gunner"
 	icon_state = "pirateranged"
 	icon_living = "pirateranged"
@@ -84,7 +67,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate/ranged,
 			/obj/item/gun/energy/laser)
 
-/mob/living/simple_animal/hostile/pirate/ranged/space
+/mob/living/simple_animal/hostile/human/pirate/ranged/space
 	name = "Space Pirate Gunner"
 	icon_state = "piratespaceranged"
 	icon_living = "piratespaceranged"
@@ -93,6 +76,6 @@
 	minbodytemp = 0
 	speed = 1
 
-/mob/living/simple_animal/hostile/pirate/ranged/space/Initialize()
+/mob/living/simple_animal/hostile/human/pirate/ranged/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)

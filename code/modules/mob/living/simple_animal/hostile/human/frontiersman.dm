@@ -1,36 +1,20 @@
-/mob/living/simple_animal/hostile/frontier
+/mob/living/simple_animal/hostile/human/frontier
 	name = "Frontiersman"
 	desc = "A frontiersman! A terrorist that would probably kill everyone without mercy."
-	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "frontiersmanmelee"
 	icon_living = "frontiersmanmelee"
 	icon_dead = "frontiersmanmelee_dead"
-	icon_gib = "syndicate_gib"
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
-	turns_per_move = 5
-	speed = 0
-	maxHealth = 100
-	health = 100
 	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	attack_verb_continuous = "punches"
-	attack_verb_simple = "punch"
-	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/kitchen/knife)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 15
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
-	status_flags = CANPUSH
-	del_on_death = 1
 
-	footstep_type = FOOTSTEP_MOB_SHOE
-
-
-/mob/living/simple_animal/hostile/frontier/ranged
+/mob/living/simple_animal/hostile/human/frontier/ranged
 	icon_state = "frontiersmanranged"
 	icon_living = "frontiersmanranged"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
@@ -41,10 +25,10 @@
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
 	casingtype = /obj/item/ammo_casing/a357
 
-/mob/living/simple_animal/hostile/frontier/ranged/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
-/mob/living/simple_animal/hostile/frontier/ranged/mosin
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin
 	icon_state = "frontiersmanrangedrifle"
 	icon_living = "frontiersmanrangedrifle"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
@@ -52,10 +36,10 @@
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
-/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper
 	icon_state = "frontiersmanrangedelite"
 	icon_living = "frontiersmanrangedelite"
 	maxHealth = 170
@@ -65,10 +49,10 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/brimstone)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
 	icon_state = "frontiersmanrangedak47"
 	icon_living = "frontiersmanrangedak47"
 	projectilesound = 'sound/weapons/gun/rifle/skm.ogg'
@@ -78,10 +62,10 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/automatic/assault/skm)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm/neutured
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle
 	icon_state = "frontiersmanrangedmosin"
 	icon_living = "frontiersmanrangedmosin"
 
@@ -90,10 +74,10 @@
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy
 	icon_state = "frontiersmanrangedminigun"
 	icon_living = "frontiersmanrangedminigun"
 	projectilesound = 'sound/weapons/laser4.ogg'
@@ -105,10 +89,10 @@
 	projectiletype = /obj/projectile/beam/weak/penetrator
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy)
 
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless)
 
-/mob/living/simple_animal/hostile/frontier/ranged/officer
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	name = "Frontiersman Officer"
 	icon_state = "frontiersmanofficer"
 	icon_living = "frontiersmanofficer"
@@ -119,10 +103,10 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/APS)
 
-/mob/living/simple_animal/hostile/frontier/ranged/officer/neutured
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer)
 
-/mob/living/simple_animal/hostile/frontier/ranged/officer/Aggro()
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/Aggro()
 	..()
 	summon_backup(15)
 	say(pick("Help!!", "They're right here!!", "Don't let me die!!"))
