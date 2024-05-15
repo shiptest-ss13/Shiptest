@@ -10,7 +10,7 @@
 	desc = "This console allows the user to communicate with a nearby outpost to \
 			purchase supplies and manage missions. Purchases are delivered near-instantly."
 	icon_screen = "supply_express"
-	circuit = /obj/item/circuitboard/computer/cargo/express
+	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
 	var/contraband = FALSE
@@ -18,8 +18,6 @@
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
 		cannot transport live organisms, human remains, classified nuclear weaponry, \
 		homing beacons or machinery housing any form of artificial intelligence."
-	/// radio used by the console to send messages on supply channel
-	var/obj/item/radio/headset/radio
 	/// var that tracks message cooldown
 	var/message_cooldown
 
@@ -43,7 +41,6 @@
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
-	radio = new /obj/item/radio/headset/headset_cargo(src)
 	var/obj/item/circuitboard/computer/cargo/board = circuit
 	contraband = board.contraband
 	if (board.obj_flags & EMAGGED)
@@ -55,7 +52,6 @@
 /obj/machinery/computer/cargo/Destroy()
 	if(beacon)
 		beacon.unlink_console()
-	QDEL_NULL(radio)
 	return ..()
 
 /obj/machinery/computer/cargo/proc/get_export_categories()
