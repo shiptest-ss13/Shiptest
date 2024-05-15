@@ -498,8 +498,10 @@
 	else if(!(flags & SHOCK_NOGLOVES)) //This gets the siemens_coeff for all non tesla shocks
 		if(gloves)
 			siemens_coeff *= gloves.siemens_coefficient
-	siemens_coeff *= physiology.siemens_coeff
-	siemens_coeff *= dna.species.siemens_coeff
+	if(physiology.siemens_coeff)
+		siemens_coeff *= physiology.siemens_coeff
+	if(dna.species.siemens_coeff)
+		siemens_coeff *= dna.species.siemens_coeff
 	. = ..()
 	//Don't go further if the shock was blocked/too weak.
 	if(!.)
