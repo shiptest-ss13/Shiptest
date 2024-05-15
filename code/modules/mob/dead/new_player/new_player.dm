@@ -331,7 +331,6 @@
 		//SSdatacore.manifest_inject(humanc)
 		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
-		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
 		if(GLOB.summon_guns_triggered)
@@ -350,13 +349,6 @@
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
-
-/mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
-	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
-	for(var/C in GLOB.employmentCabinets)
-		var/obj/structure/filingcabinet/employment/employmentCabinet = C
-		if(!employmentCabinet.virgin)
-			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
 	if(auth_check)

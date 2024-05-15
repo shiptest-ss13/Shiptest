@@ -308,21 +308,15 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 
 			if("medicalrecord") // Accessing medical records
 				if(subscreen == 1)
-					medicalActive1 = SSdatacore.find_record(DATACORE_ID, href_list["med_rec"], DATACORE_RECORDS_OUTPOST)
-					if(medicalActive1)
-						medicalActive2 = SSdatacore.find_record(DATACORE_ID, href_list["med_rec"], DATACORE_RECORDS_MEDICAL)
-					if(!medicalActive2)
-						medicalActive1 = null
-						temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."
+					active_record = SSdatacore.find_record(DATACORE_ID, href_list["med_rec"], DATACORE_RECORDS_OUTPOST)
+					if(!active_record)
+						temp = "Unable to locate requested record. Record may have been deleted, or never have existed."
 
 			if("securityrecord")
 				if(subscreen == 1)
-					securityActive1 = SSdatacore.find_record(DATACORE_ID, href_list["sec_rec"], DATACORE_RECORDS_OUTPOST)
-					if(securityActive1)
-						securityActive2 = SSdatacore.find_record(DATACORE_ID, href_list["sec_rec"], DATACORE_RECORDS_SECURITY)
-					if(!securityActive2)
-						securityActive1 = null
-						temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."
+					active_record = SSdatacore.find_record(DATACORE_ID, href_list["sec_rec"], DATACORE_RECORDS_OUTPOST)
+					if(!active_record)
+						temp = "Unable to locate requested record. Record may have been deleted, or never have existed."
 
 			if("securityhud")
 				if(href_list["toggle"])
@@ -546,12 +540,9 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 					. += "<A href='?src=[REF(src)];med_rec=[R.fields[DATACORE_ID]];software=medicalrecord;sub=1'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]<BR>"
 		if(1)
 			. += "<CENTER><B>Medical Record</B></CENTER><BR>"
-			if(medicalActive1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				. += "Name: [medicalActive1.fields[DATACORE_NAME]] ID: [medicalActive1.fields[DATACORE_ID]]<BR>\nGender: [medicalActive1.fields[DATACORE_GENDER]]<BR>\nAge: [medicalActive1.fields[DATACORE_AGE]]<BR>\nFingerprint: [medicalActive1.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [medicalActive1.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [medicalActive1.fields[DATACORE_MENTAL_HEALTH]]<BR>"
-			else
-				. += "<pre>Requested medical record not found.</pre><BR>"
-			if(medicalActive2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-				. += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: <A href='?src=[REF(src)];field=blood_type'>[medicalActive2.fields[DATACORE_BLOOD_TYPE]]</A><BR>\nDNA (UE): <A href='?src=[REF(src)];field=b_dna'>[medicalActive2.fields[DATACORE_BLOOD_DNA]]</A><BR>\n<BR>\nMinor Disabilities: <A href='?src=[REF(src)];field=mi_dis'>[medicalActive2.fields["mi_dis"]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=mi_dis_d'>[medicalActive2.fields["mi_dis_d"]]</A><BR>\n<BR>\nMajor Disabilities: <A href='?src=[REF(src)];field=ma_dis'>[medicalActive2.fields[DATACORE_DISABILITIES]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=ma_dis_d'>[medicalActive2.fields[DATACORE_DISABILITIES_DETAILS]]</A><BR>\n<BR>\nAllergies: <A href='?src=[REF(src)];field=alg'>[medicalActive2.fields["alg"]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=alg_d'>[medicalActive2.fields["alg_d"]]</A><BR>\n<BR>\nCurrent Diseases: <A href='?src=[REF(src)];field=cdi'>[medicalActive2.fields[DATACORE_DISEASES]]</A> (per disease info placed in log/comment section)<BR>\nDetails: <A href='?src=[REF(src)];field=cdi_d'>[medicalActive2.fields[DATACORE_DISEASES_DETAILS]]</A><BR>\n<BR>\nImportant Notes:<BR>\n\t<A href='?src=[REF(src)];field=notes'>[medicalActive2.fields[DATACORE_NOTES]]</A><BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+			if(active_record in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+				. += "Name: [active_record.fields[DATACORE_NAME]] ID: [active_record.fields[DATACORE_ID]]<BR>\nGender: [active_record.fields[DATACORE_GENDER]]<BR>\nAge: [active_record.fields[DATACORE_AGE]]<BR>\nFingerprint: [active_record.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [active_record.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [active_record.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+				. += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: <A href='?src=[REF(src)];field=blood_type'>[active_record.fields[DATACORE_BLOOD_TYPE]]</A><BR>\nDNA (UE): <A href='?src=[REF(src)];field=b_dna'>[active_record.fields[DATACORE_BLOOD_DNA]]</A><BR>\n<BR>\nMinor Disabilities: <A href='?src=[REF(src)];field=mi_dis'>[active_record.fields["mi_dis"]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=mi_dis_d'>[active_record.fields["mi_dis_d"]]</A><BR>\n<BR>\nMajor Disabilities: <A href='?src=[REF(src)];field=ma_dis'>[active_record.fields[DATACORE_DISABILITIES]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=ma_dis_d'>[active_record.fields[DATACORE_DISABILITIES_DETAILS]]</A><BR>\n<BR>\nAllergies: <A href='?src=[REF(src)];field=alg'>[active_record.fields["alg"]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=alg_d'>[active_record.fields["alg_d"]]</A><BR>\n<BR>\nCurrent Diseases: <A href='?src=[REF(src)];field=cdi'>[active_record.fields[DATACORE_DISEASES]]</A> (per disease info placed in log/comment section)<BR>\nDetails: <A href='?src=[REF(src)];field=cdi_d'>[active_record.fields[DATACORE_DISEASES_DETAILS]]</A><BR>\n<BR>\nImportant Notes:<BR>\n\t<A href='?src=[REF(src)];field=notes'>[active_record.fields[DATACORE_NOTES]]</A><BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
 			else
 				. += "<pre>Requested medical record not found.</pre><BR>"
 			. += "<BR>\n<A href='?src=[REF(src)];software=medicalrecord;sub=0'>Back</A><BR>"
@@ -568,12 +559,9 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 					. += "<A href='?src=[REF(src)];sec_rec=[R.fields[DATACORE_ID]];software=securityrecord;sub=1'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]<BR>"
 		if(1)
 			. += "<h3>Security Record</h3>"
-			if(securityActive1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				. += "Name: <A href='?src=[REF(src)];field=name'>[securityActive1.fields[DATACORE_NAME]]</A> ID: <A href='?src=[REF(src)];field=id'>[securityActive1.fields[DATACORE_ID]]</A><BR>\nGender: <A href='?src=[REF(src)];field=gender'>[securityActive1.fields[DATACORE_GENDER]]</A><BR>\nAge: <A href='?src=[REF(src)];field=age'>[securityActive1.fields[DATACORE_AGE]]</A><BR>\nRank: <A href='?src=[REF(src)];field=rank'>[securityActive1.fields[DATACORE_RANK]]</A><BR>\nFingerprint: <A href='?src=[REF(src)];field=fingerprint'>[securityActive1.fields[DATACORE_FINGERPRINT]]</A><BR>\nPhysical Status: [securityActive1.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [securityActive1.fields[DATACORE_MENTAL_HEALTH]]<BR>"
-			else
-				. += "<pre>Requested security record not found,</pre><BR>"
-			if(securityActive2 in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-				. += "<BR>\nSecurity Data<BR>\nCriminal Status: [securityActive2.fields[DATACORE_CRIMINAL_STATUS]]<BR>\n<BR>\nCrimes: <A href='?src=[REF(src)];field=mcrim'>[securityActive2.fields[DATACORE_CRIMES]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=crim_d'>[securityActive2.fields["crim_d"]]</A><BR>\n<BR>\nImportant Notes:<BR>\n\t<A href='?src=[REF(src)];field=notes'>[securityActive2.fields[DATACORE_NOTES]]</A><BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+			if(active_record in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+				. += "Name: <A href='?src=[REF(src)];field=name'>[active_record.fields[DATACORE_NAME]]</A> ID: <A href='?src=[REF(src)];field=id'>[active_record.fields[DATACORE_ID]]</A><BR>\nGender: <A href='?src=[REF(src)];field=gender'>[active_record.fields[DATACORE_GENDER]]</A><BR>\nAge: <A href='?src=[REF(src)];field=age'>[active_record.fields[DATACORE_AGE]]</A><BR>\nRank: <A href='?src=[REF(src)];field=rank'>[active_record.fields[DATACORE_RANK]]</A><BR>\nFingerprint: <A href='?src=[REF(src)];field=fingerprint'>[active_record.fields[DATACORE_FINGERPRINT]]</A><BR>\nPhysical Status: [active_record.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [active_record.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+				. += "<BR>\nSecurity Data<BR>\nCriminal Status: [active_record.fields[DATACORE_CRIMINAL_STATUS]]<BR>\n<BR>\nCrimes: <A href='?src=[REF(src)];field=mcrim'>[active_record.fields[DATACORE_CRIMES]]</A><BR>\nDetails: <A href='?src=[REF(src)];field=crim_d'>[active_record.fields["crim_d"]]</A><BR>\n<BR>\nImportant Notes:<BR>\n\t<A href='?src=[REF(src)];field=notes'>[active_record.fields[DATACORE_NOTES]]</A><BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
 			else
 				. += "<pre>Requested security record not found,</pre><BR>"
 			. += "<BR>\n<A href='?src=[REF(src)];software=securityrecord;sub=0'>Back</A><BR>"

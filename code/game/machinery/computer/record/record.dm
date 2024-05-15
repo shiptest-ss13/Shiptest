@@ -14,6 +14,7 @@
 	//Sorting Variables
 	var/sortBy = "name"
 	var/order = 1 // -1 = Descending - 1 = Ascending
+/*
 	var/datum/overmap/ship/controlled/linked_libary
 
 /obj/machinery/computer/record/initialize()
@@ -23,6 +24,7 @@
 		if(linked_ship.linked_libary)
 			linked_libary = linked_ship.linked_libary
 			return
+*/
 
 /obj/machinery/computer/record/proc/can_use_record_console(mob/user, message = 1, record1, record2)
 	if(user)

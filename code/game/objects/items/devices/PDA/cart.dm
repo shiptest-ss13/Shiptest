@@ -231,10 +231,6 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=1'>+</a>
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br><br>
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
-		if (41) //crew manifest
-			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[SSovermap.get_manifest_html()]</center>"
-
 
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"

@@ -322,11 +322,6 @@
 
 //Security
 
-/obj/item/circuitboard/computer/gulag_teleporter_console
-	name = "Labor Camp teleporter console (Computer Board)"
-	icon_state = "security"
-	build_path = /obj/machinery/computer/prisoner/gulag_teleporter_computer
-
 /obj/item/circuitboard/computer/prisoner
 	name = "Prisoner Management Console (Computer Board)"
 	icon_state = "security"

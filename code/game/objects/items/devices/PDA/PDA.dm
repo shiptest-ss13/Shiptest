@@ -361,12 +361,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += tnote
 				dat += "<br>"
 
-			if(41) //crew manifest
-				dat += "<h4>Crew Manifest</h4>"
-				dat += "<center>"
-				dat += SSovermap.get_manifest_html()
-				dat += "</center>"
-
 			if(3)
 				dat += "<h4>[PDAIMG(atmos)]   Atmospheric Readings</h4>"
 

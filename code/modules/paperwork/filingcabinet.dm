@@ -125,115 +125,57 @@
 /*
  * Security Record Cabinets
  */
-/obj/structure/filingcabinet/security
+
+/obj/structure/filingcabinet/record
+	var/datum/overmap/ship/controlled/linked_ship
 	var/virgin = 1
 
-/obj/structure/filingcabinet/security/proc/populate()
+/obj/structure/filingcabinet/record/Initialize()
+	. = ..()
+	linked_ship = SSshuttle.get_ship(src)
+
+/obj/structure/filingcabinet/record/proc/populate()
+	return
+
+/obj/structure/filingcabinet/record/attack_hand()
+	populate()
+	. = ..()
+
+/obj/structure/filingcabinet/record/attack_tk()
+	populate()
+	..()
+
+/obj/structure/filingcabinet/record/populate()
 	if(virgin)
-		for(var/datum/data/record/G in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-			var/datum/data/record/S = SSdatacore.get_record_by_name(G.fields[DATACORE_NAME], DATACORE_RECORDS_SECURITY)
-			if(!S)
-				continue
-			var/obj/item/paper/sec_record_paper = new /obj/item/paper(src)
-			var/sec_record_text = "<CENTER><B>Security Record</B></CENTER><BR>"
-			sec_record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
-			sec_record_text += "<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: [S.fields[DATACORE_CRIMINAL_STATUS]]<BR>\n<BR>\nCrimes: [S.fields[DATACORE_CRIMES]]<BR>\nDetails: [S.fields["crim_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[S.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
-			var/counter = 1
-			while(S.fields["com_[counter]"])
-				sec_record_text += "[S.fields["com_[counter]"]]<BR>"
-				counter++
-			sec_record_text += "</TT>"
-			sec_record_paper.add_raw_text(sec_record_text)
-			sec_record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
-			sec_record_paper.update_appearance()
+		for(var/datum/data/record/G in SSdatacore.get_records(linked_ship))
+			var/obj/item/paper/record_paper = new /obj/item/paper(src)
+			var/record_text = get_record_text(G)
+			record_paper.add_raw_text(record_text)
+			record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
+			record_paper.update_appearance()
 			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
 						//before the records have been generated, so we do this inside the loop.
+			linked_ship = null
 
-/obj/structure/filingcabinet/security/attack_hand()
-	populate()
-	. = ..()
+/obj/structure/filingcabinet/record/proc/get_record_text(datum/data/record/G)
+	return
 
-/obj/structure/filingcabinet/security/attack_tk()
-	populate()
-	..()
+/obj/structure/filingcabinet/record/security/get_record_text(datum/data/record/G)
+	var/record_text = "<CENTER><B>Security Record</B></CENTER><BR>"
+	record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+	record_text += "<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: [G.fields[DATACORE_CRIMINAL_STATUS]]<BR>\n<BR>\nCrimes: [G.fields[DATACORE_CRIMES]]<BR>\nDetails: [G.fields["crim_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[G.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+	record_text += "</TT>"
+	return record_text
 
-/*
- * Medical Record Cabinets
- */
-/obj/structure/filingcabinet/medical
-	var/virgin = 1
+/obj/structure/filingcabinet/record/medical/get_record_text(datum/data/record/G)
+	var/record_text = "<CENTER><B>Medical Record</B></CENTER><BR>"
+	record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+	record_text += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: [G.fields[DATACORE_BLOOD_TYPE]]<BR>\nDNA: [G.fields[DATACORE_BLOOD_DNA]]<BR>\n<BR>\nMinor Disabilities: [G.fields["mi_dis"]]<BR>\nDetails: [G.fields["mi_dis_d"]]<BR>\n<BR>\nMajor Disabilities: [G.fields[DATACORE_DISABILITIES]]<BR>\nDetails: [G.fields[DATACORE_DISABILITIES_DETAILS]]<BR>\n<BR>\nAllergies: [G.fields["alg"]]<BR>\nDetails: [G.fields["alg_d"]]<BR>\n<BR>\nCurrent Diseases: [G.fields[DATACORE_DISEASES]] (per disease info placed in log/comment section)<BR>\nDetails: [G.fields[DATACORE_DISEASES_DETAILS]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[G.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+	record_text += "</TT>"
+	return record_text
 
-/obj/structure/filingcabinet/medical/proc/populate()
-	if(virgin)
-		for(var/datum/data/record/G in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-			var/datum/data/record/M = SSdatacore.get_record_by_name(G.fields[DATACORE_NAME], DATACORE_RECORDS_MEDICAL)
-			if(!M)
-				continue
-			var/obj/item/paper/med_record_paper = new /obj/item/paper(src)
-			var/med_record_text = "<CENTER><B>Medical Record</B></CENTER><BR>"
-			med_record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
-			med_record_text += "<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: [M.fields[DATACORE_BLOOD_TYPE]]<BR>\nDNA: [M.fields[DATACORE_BLOOD_DNA]]<BR>\n<BR>\nMinor Disabilities: [M.fields["mi_dis"]]<BR>\nDetails: [M.fields["mi_dis_d"]]<BR>\n<BR>\nMajor Disabilities: [M.fields[DATACORE_DISABILITIES]]<BR>\nDetails: [M.fields[DATACORE_DISABILITIES_DETAILS]]<BR>\n<BR>\nAllergies: [M.fields["alg"]]<BR>\nDetails: [M.fields["alg_d"]]<BR>\n<BR>\nCurrent Diseases: [M.fields[DATACORE_DISEASES]] (per disease info placed in log/comment section)<BR>\nDetails: [M.fields[DATACORE_DISEASES_DETAILS]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[M.fields[DATACORE_NOTES]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
-			var/counter = 1
-			while(M.fields["com_[counter]"])
-				med_record_text += "[M.fields["com_[counter]"]]<BR>"
-				counter++
-			med_record_text += "</TT>"
-			med_record_paper.add_raw_text(med_record_text)
-			med_record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
-			med_record_paper.update_appearance()
-			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
-						//before the records have been generated, so we do this inside the loop.
-
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/structure/filingcabinet/medical/attack_hand()
-	populate()
-	. = ..()
-
-/obj/structure/filingcabinet/medical/attack_tk()
-	populate()
-	..()
-
-/*
- * Employment contract Cabinets
- */
-
-GLOBAL_LIST_EMPTY(employmentCabinets)
-
-/obj/structure/filingcabinet/employment
-	var/cooldown = 0
-	icon_state = "employmentcabinet"
-	var/virgin = 1
-
-/obj/structure/filingcabinet/employment/Initialize()
-	. = ..()
-	GLOB.employmentCabinets += src
-
-/obj/structure/filingcabinet/employment/Destroy()
-	GLOB.employmentCabinets -= src
-	return ..()
-
-/obj/structure/filingcabinet/employment/proc/fillCurrent()
-	//This proc fills the cabinet with the current crew.
-	for(var/record in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-		var/datum/data/record/G = record
-		if(!G)
-			continue
-		var/datum/mind/M = G.fields[DATACORE_MINDREF]
-		if(M && ishuman(M.current))
-			addFile(M.current)
-
-
-/obj/structure/filingcabinet/employment/proc/addFile(mob/living/carbon/human/employee)
-	new /obj/item/paper/contract/employment(src, employee)
-
-/obj/structure/filingcabinet/employment/interact(mob/user)
-	if(!cooldown)
-		if(virgin)
-			fillCurrent()
-			virgin = 0
-		cooldown = TRUE
-		// prevents the devil from just instantly emptying the cabinet, ensuring an easy win.
-		addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10 SECONDS)
-	else
-		to_chat(user, "<span class='warning'>[src] is jammed, give it a few seconds.</span>")
-	..()
+/obj/structure/filingcabinet/record/gen/get_record_text(datum/data/record/G)
+	var/record_text = "<CENTER><B>General Record</B></CENTER><BR>"
+	record_text += "Name: [G.fields[DATACORE_NAME]] ID: [G.fields[DATACORE_ID]]<BR>\nGender: [G.fields[DATACORE_GENDER]]<BR>\nAge: [G.fields[DATACORE_AGE]]<BR>\nFingerprint: [G.fields[DATACORE_FINGERPRINT]]<BR>\nPhysical Status: [G.fields[DATACORE_PHYSICAL_HEALTH]]<BR>\nMental Status: [G.fields[DATACORE_MENTAL_HEALTH]]<BR>"
+	record_text += "</TT>"
+	return record_text

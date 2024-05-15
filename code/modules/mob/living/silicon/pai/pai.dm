@@ -45,7 +45,7 @@
 	var/secHUD = 0			// Toggles whether the Security HUD is active or not
 	var/medHUD = 0			// Toggles whether the Medical  HUD is active or not
 
-	var/datum/data/record/medicalActive1		// Datacore record declarations for record software
+	var/datum/data/record/active_record		// Datacore record declarations for record software
 	var/datum/data/record/medicalActive2
 
 	var/datum/data/record/securityActive1		// Could probably just combine all these into one
