@@ -16,7 +16,6 @@ SUBSYSTEM_DEF(datacore)
 	)
 
 	var/securityPrintCount = 0
-	var/securityCrimeCounter = 0
 	var/medicalPrintCount = 0
 
 	/// Set to TRUE when the initial roundstart manifest is complete
@@ -31,7 +30,6 @@ SUBSYSTEM_DEF(datacore)
 
 /datum/controller/subsystem/datacore/Recover()
 	library = SSdatacore.library
-	securityCrimeCounter = SSdatacore.securityCrimeCounter
 	medicalPrintCount = SSdatacore.medicalPrintCount
 	finished_setup = SSdatacore.finished_setup
 
@@ -384,7 +382,6 @@ SUBSYSTEM_DEF(datacore)
 	c.time = time
 	c.fine = fine
 	c.paid = 0
-	c.dataId = ++securityCrimeCounter
 	return c
 
 /datum/controller/subsystem/datacore/proc/get_id_photo(mob/living/carbon/human/H, client/C, show_directions = list(SOUTH), datum/job/J)

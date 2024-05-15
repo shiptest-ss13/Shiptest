@@ -388,6 +388,11 @@
 		return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]" //displays all overlays in chat
 	return ..()
 
+/obj/item/card/id/proc/get_libary()
+	for(var/datum/overmap/ship/controlled/ship in ship_access)
+		if(ship.get_records())
+			return ship.get_records()
+
 // Adds the referenced ship directly to the card
 /obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
