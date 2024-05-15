@@ -83,7 +83,7 @@ SUBSYSTEM_DEF(datacore)
 			log_manifest(N.ckey, N.new_character.mind, N.new_character)
 
 		if(ishuman(N.new_character))
-			manifest_inject(N.new_character, N.client)
+			library_inject(N.new_character, N.client, DATACORE_RECORDS_OUTPOST)
 
 		CHECK_TICK
 
@@ -151,108 +151,6 @@ SUBSYSTEM_DEF(datacore)
 			))
 
 	return manifest_out
-
-/datum/controller/subsystem/datacore/proc/manifest_inject(mob/living/carbon/human/H, client/C)
-	var/static/list/show_directions = list(SOUTH, WEST)
-	if(!(H.mind && (H.mind.assigned_role != H.mind.special_role)))
-		return
-
-	var/assignment
-	if(H.mind.assigned_role)
-		assignment = H.mind.assigned_role
-	else if(H.job)
-		assignment = H.job
-	else
-		assignment = "Unassigned"
-
-	var/static/record_id_num = 1001
-	var/id = num2hex(record_id_num++,6)
-	if(!C)
-		C = H.client
-
-	var/mutable_appearance/character_appearance = new(H.appearance)
-
-	//General Record
-	var/datum/data/record/general/G = new()
-	G.fields[DATACORE_ID] = id
-
-	G.fields[DATACORE_NAME] = H.real_name
-	G.fields[DATACORE_RANK] = assignment
-	G.fields[DATACORE_INITIAL_RANK] = assignment
-	G.fields[DATACORE_AGE] = H.age
-	G.fields[DATACORE_SPECIES] = H.dna.species.name
-	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
-	G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
-	G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
-	G.fields[DATACORE_GENDER] = H.gender
-	if(H.gender == "male")
-		G.fields[DATACORE_GENDER] = "Male"
-	else if(H.gender == "female")
-		G.fields[DATACORE_GENDER] = "Female"
-	else
-		G.fields[DATACORE_GENDER] = "Other"
-	G.fields[DATACORE_APPEARANCE] = character_appearance
-
-	library[DATACORE_RECORDS_OUTPOST].inject_record(G)
-
-/*
-	// Add to company-specific manifests
-	var/datum/job_department/department = SSjob.departments_by_type[job.departments_list?[1]]
-	if(department?.manifest_key)
-		library[department.manifest_key].inject_record(G)
-*/
-
-	//Medical Record
-	var/datum/data/record/medical/M = new()
-	M.fields[DATACORE_ID] = id
-	M.fields[DATACORE_NAME] = H.real_name
-	M.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type.name
-	M.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
-	M.fields[DATACORE_DISABILITIES] = "None"
-	M.fields[DATACORE_DISABILITIES_DETAILS] = "No minor disabilities have been declared."
-	M.fields[DATACORE_DISEASES] = "None"
-	M.fields[DATACORE_DISEASES_DETAILS] = "No diseases have been diagnosed at the moment."
-	M.fields[DATACORE_NOTES] = H.get_trait_string()
-	library[DATACORE_RECORDS_MEDICAL].inject_record(M)
-
-	//Security Record
-	var/datum/data/record/security/S = new()
-	S.fields[DATACORE_ID] = id
-	S.fields[DATACORE_NAME] = H.real_name
-	S.fields[DATACORE_CRIMINAL_STATUS] = "None"
-	//S.fields[DATACORE_CITATIONS] = list()
-	S.fields[DATACORE_CRIMES] = list()
-	S.fields[DATACORE_NOTES] = "No notes."
-	library[DATACORE_RECORDS_SECURITY].inject_record(S)
-
-	/*
-	//Locked Record
-	var/datum/data/record/locked/L = new()
-	L.fields[DATACORE_ID] = id
-	L.fields[DATACORE_NAME] = H.real_name
-	L.fields[DATACORE_RANK] = assignment
-	G.fields[DATACORE_INITIAL_RANK] = assignment
-	L.fields[DATACORE_AGE] = H.age
-	L.fields[DATACORE_GENDER] = H.gender
-	if(H.gender == "male")
-		G.fields[DATACORE_GENDER] = "Male"
-	else if(H.gender == "female")
-		G.fields[DATACORE_GENDER] = "Female"
-	else
-		G.fields[DATACORE_GENDER] = "Other"
-	L.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type
-	L.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
-	L.fields[DATACORE_DNA_IDENTITY] = H.dna.uni_identity
-	L.fields[DATACORE_SPECIES] = H.dna.species.type
-	L.fields[DATACORE_DNA_FEATURES] = H.dna.features
-	//L.fields[DATACORE_APPEARANCE] = character_appearance
-	L.fields[DATACORE_IMAGE] = image
-	L.fields[DATACORE_MINDREF] = H.mind
-	library[DATACORE_RECORDS_LOCKED].inject_record(L)
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MANIFEST_INJECT, G, M, S, L)
-	*/
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MANIFEST_INJECT, G, M, S)
-	return
 
 //For ship records
 /datum/controller/subsystem/datacore/proc/inject_library(mob/living/carbon/human/H, client/C, datum/data_library/custom_library)

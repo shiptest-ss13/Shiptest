@@ -328,7 +328,7 @@
 	if(ishuman(character))	//These procs all expect humans
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
-		//SSdatacore.manifest_inject(humanc)
+		SSdatacore.library_inject(humanc, client, DATACORE_RECORDS_OUTPOST)
 		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)

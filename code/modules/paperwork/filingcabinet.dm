@@ -151,7 +151,7 @@
 			var/obj/item/paper/record_paper = new /obj/item/paper(src)
 			var/record_text = get_record_text(G)
 			record_paper.add_raw_text(record_text)
-			record_paper.name = "paper - '[G.fields[DATACORE_NAME]]'"
+			record_paper.name = "paper - '[linked_ship.name] - [G.fields[DATACORE_NAME]]'"
 			record_paper.update_appearance()
 			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
 						//before the records have been generated, so we do this inside the loop.
