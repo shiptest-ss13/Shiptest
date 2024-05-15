@@ -403,11 +403,13 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set category = "Admin.Game"
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
 	if(holder && mob)
-		if(mob.invisibility == INVISIBILITY_OBSERVER)
+		if(mob.invisibility == INVISIBILITY_INVINISMIN)
 			mob.invisibility = initial(mob.invisibility)
+			mob.remove_from_all_data_huds()
 			to_chat(mob, "<span class='boldannounce'>Invisimin off. Invisibility reset.</span>", confidential = TRUE)
 		else
-			mob.invisibility = INVISIBILITY_OBSERVER
+			mob.invisibility = INVISIBILITY_INVINISMIN
+			mob.add_to_all_human_data_huds()
 			to_chat(mob, "<span class='adminnotice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>", confidential = TRUE)
 
 /client/proc/check_antagonists()
