@@ -212,7 +212,9 @@
 		merit = FALSE
 		playsound(src, 'sound/items/poster_being_created.ogg', 10, FALSE)
 		to_chat(user, "<span class='notice'>You retrieve the hydrogen merits.</span>")
-	return ..()
+	else
+		to_chat(user, "<span class='notice'>There were no merits left to retrieve.</span>")
+
 
 //Hydrogen exchange
 
@@ -291,7 +293,6 @@
 /obj/machinery/computer/hydrogen_exchange/AltClick(mob/user)
 	dispense_funds()
 	to_chat(user, "<span class='notice'>You force the credits and merits out of the machine.</span>")
-	return ..()
 
 /obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -349,14 +350,14 @@
 		value = amount
 	update_appearance()
 
-/obj/item/merit/attackby(obj/item/W, mob/user)
-	if(!istype(W, /obj/item/merit))
+/obj/item/merit/attackby(obj/item/I, mob/user)
+	if(!istype(I, /obj/item/merit))
 		return
 	var/obj/item/merit/bundle/bundle
-	if(istype(W, /obj/item/merit/bundle))
-		bundle = W
+	if(istype(I, /obj/item/merit/bundle))
+		bundle = I
 	else
-		var/obj/item/merit/cash = W
+		var/obj/item/merit/cash = I
 		bundle = new (loc)
 		bundle.value = cash.value
 		user.dropItemToGround(cash)
@@ -440,24 +441,13 @@
 			pickup_sound =  'sound/items/handling/dosh_pickup.ogg'
 	return ..()
 
-
-
-
-
-//FIX!!!
-
-
-
-
-
-
 /obj/item/merit/bundle/attack_self(mob/user)
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
 
-	else if(!Adjacent(user))
+	if(!Adjacent(user))
 		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
@@ -468,7 +458,7 @@
 
 	var/obj/item/merit/bundle/bundle = new (user.loc)
 	bundle.value = cashamount
-	bundle.update_appearance()
+	if(!Adjacent(user))
 	user.put_in_hands(bundle)
 	update_appearance()
 
