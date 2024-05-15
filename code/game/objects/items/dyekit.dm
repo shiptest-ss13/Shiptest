@@ -45,24 +45,23 @@
 	icon = 'icons/obj/dyespray.dmi'
 	icon_state = "colorsalve"
 
-/datum/species/elzuose/spec_attacked_by(obj/item/I, mob/living/user, mob/living/carbon/human/_human)
-	if(istype(I, /obj/item/colorsalve))
-		if(user != _human)
-			return
+/obj/item/colorsalve/attack_self(mob/living/user)
+	if(!iselzuose(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	var/datum/species/elzuose/species_datum = H.dna.species
+		// select new color
+	var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference", species_datum.default_color) as color|null
+	if(new_etherealcolor)
+		var/temp_hsv = RGBtoHSV(new_etherealcolor)
+		if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
+			if(!do_after(usr, 30 SECONDS, user))
+				return
+			playsound(src, 'sound/effects/ointment.ogg', 5, TRUE, 5)
+			species_datum.default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
+			species_datum.current_color = species_datum.health_adjusted_color(user, species_datum.default_color)
+			species_datum.spec_updatehealth(user)
+			user.visible_message(span_notice("[user] applies the salve, changing [user.p_their()] color to [new_etherealcolor]"))
 		else
-			// select new color
-			var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference",default_color) as color|null
-			if(new_etherealcolor)
-				var/temp_hsv = RGBtoHSV(new_etherealcolor)
-				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
-					if(!do_after(usr, 30 SECONDS, user))
-						return
-					playsound(src, 'sound/effects/ointment.ogg', 5, TRUE, 5)
-					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
-					current_color = health_adjusted_color(_human, default_color)
-					spec_updatehealth(_human)
-					_human.visible_message(span_notice("[_human] applies the salve, changing [_human.p_their()] color to [new_etherealcolor]"))
-				else
-					to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
-	else
-		. = ..()
+			to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
