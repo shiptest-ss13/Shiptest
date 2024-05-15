@@ -83,7 +83,7 @@ SUBSYSTEM_DEF(datacore)
 			log_manifest(N.ckey, N.new_character.mind, N.new_character)
 
 		if(ishuman(N.new_character))
-			library_inject(N.new_character, N.client, DATACORE_RECORDS_OUTPOST)
+			inject_library(N.new_character, N.client, DATACORE_RECORDS_OUTPOST)
 
 		CHECK_TICK
 
