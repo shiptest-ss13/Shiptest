@@ -1,6 +1,6 @@
 
 
-/obj/machinery/computer/med_data//TODO:SANITY
+/obj/machinery/computer/record/med//TODO:SANITY
 	name = "medical records console"
 	desc = "This can be used to check medical records."
 	icon_screen = "medcomp"
@@ -8,21 +8,11 @@
 	req_one_access = list(ACCESS_MEDICAL, ACCESS_FORENSICS_LOCKERS)
 	circuit = /obj/item/circuitboard/computer/med_data
 	light_color = LIGHT_COLOR_BLUE
-	var/rank = null
-	var/screen = null
-	var/datum/data/record/active1
-	var/datum/data/record/active2
-	var/temp = null
-	var/printing = null
-	//Sorting Variables
-	var/sortBy = "name"
-	var/order = 1 // -1 = Descending - 1 = Ascending
 
-
-/obj/machinery/computer/med_data/syndie
+/obj/machinery/computer/record/med/syndie
 	icon_keyboard = "syndie_key"
 
-/obj/machinery/computer/med_data/ui_interact(mob/user)
+/obj/machinery/computer/record/med/ui_interact(mob/user)
 	. = ..()
 	if(isliving(user))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -177,7 +167,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/machinery/computer/med_data/Topic(href, href_list)
+/obj/machinery/computer/record/med/Topic(href, href_list)
 	. = ..()
 	if(.)
 		return .
@@ -273,7 +263,7 @@
 					if("fingerprint")
 						if(active1)
 							var/t1 = stripped_input("Please input fingerprint hash:", "Med. records", active1.fields[DATACORE_FINGERPRINT], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							active1.fields[DATACORE_FINGERPRINT] = t1
 					if("gender")
@@ -287,67 +277,67 @@
 					if("age")
 						if(active1)
 							var/t1 = input("Please input age:", "Med. records", active1.fields[DATACORE_AGE], null)  as num
-							if(!canUseMedicalRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							active1.fields[DATACORE_AGE] = t1
 					if("species")
 						if(active1)
 							var/t1 = stripped_input("Please input species name", "Med. records", active1.fields[DATACORE_SPECIES], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							active1.fields[DATACORE_SPECIES] = t1
 					if("mi_dis")
 						if(active2)
 							var/t1 = stripped_input("Please input minor disabilities list:", "Med. records", active2.fields["mi_dis"], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields["mi_dis"] = t1
 					if("mi_dis_d")
 						if(active2)
 							var/t1 = stripped_input("Please summarize minor dis.:", "Med. records", active2.fields["mi_dis_d"], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields["mi_dis_d"] = t1
 					if("ma_dis")
 						if(active2)
 							var/t1 = stripped_input("Please input major disabilities list:", "Med. records", active2.fields[DATACORE_DISABILITIES], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_DISABILITIES] = t1
 					if("ma_dis_d")
 						if(active2)
 							var/t1 = stripped_input("Please summarize major dis.:", "Med. records", active2.fields[DATACORE_DISABILITIES_DETAILS], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_DISABILITIES_DETAILS] = t1
 					if("alg")
 						if(active2)
 							var/t1 = stripped_input("Please state allergies:", "Med. records", active2.fields["alg"], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields["alg"] = t1
 					if("alg_d")
 						if(active2)
 							var/t1 = stripped_input("Please summarize allergies:", "Med. records", active2.fields["alg_d"], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields["alg_d"] = t1
 					if("cdi")
 						if(active2)
 							var/t1 = stripped_input("Please state diseases:", "Med. records", active2.fields[DATACORE_DISEASES], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_DISEASES] = t1
 					if("cdi_d")
 						if(active2)
 							var/t1 = stripped_input("Please summarize diseases:", "Med. records", active2.fields[DATACORE_DISEASES_DETAILS], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_DISEASES_DETAILS] = t1
 					if("notes")
 						if(active2)
 							var/t1 = stripped_input("Please summarize notes:", "Med. records", active2.fields[DATACORE_NOTES], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_NOTES] = t1
 					if("p_stat")
@@ -362,7 +352,7 @@
 					if("b_dna")
 						if(active2)
 							var/t1 = stripped_input("Please input DNA hash:", "Med. records", active2.fields[DATACORE_BLOOD_DNA], null)
-							if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_BLOOD_DNA] = t1
 					if("show_photo_front")
@@ -469,7 +459,7 @@
 					return
 				var/a2 = active2
 				var/t1 = stripped_multiline_input("Add Comment:", "Med. records", null, null)
-				if(!canUseMedicalRecordsConsole(usr, t1, null, a2))
+				if(!can_use_record_console(usr, t1, null, a2))
 					return
 				var/counter = 1
 				while(active2.fields[text("com_[]", counter)])
@@ -482,7 +472,7 @@
 
 			else if(href_list["search"])
 				var/t1 = stripped_input(usr, "Search String: (Name, DNA, or ID)", "Med. records")
-				if(!canUseMedicalRecordsConsole(usr, t1))
+				if(!can_use_record_console(usr, t1))
 					return
 				active1 = null
 				active2 = null
@@ -535,7 +525,7 @@
 	updateUsrDialog()
 	return
 
-/obj/machinery/computer/med_data/emp_act(severity)
+/obj/machinery/computer/record/med/emp_act(severity)
 	. = ..()
 	if(!(machine_stat & (BROKEN|NOPOWER)) && !(. & EMP_PROTECT_SELF))
 		for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
@@ -563,17 +553,7 @@
 				qdel(R)
 				continue
 
-/obj/machinery/computer/med_data/proc/canUseMedicalRecordsConsole(mob/user, message = 1, record1, record2)
-	if(user)
-		if(message)
-			if(authenticated)
-				if(user.canUseTopic(src, !issilicon(user)))
-					if(!record1 || record1 == active1)
-						if(!record2 || record2 == active2)
-							return 1
-	return 0
-
-/obj/machinery/computer/med_data/laptop
+/obj/machinery/computer/record/med/laptop
 	name = "medical laptop"
 	desc = "A cheap Nanotrasen medical laptop, it functions as a medical records computer. It's bolted to the table."
 	icon_state = "laptop"

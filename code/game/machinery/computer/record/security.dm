@@ -1,4 +1,4 @@
-/obj/machinery/computer/secure_data//TODO:SANITY
+/obj/machinery/computer/record/sec//TODO:SANITY
 	name = "security records console"
 	desc = "Used to view and edit personnel's security records."
 	icon_screen = "security"
@@ -6,24 +6,14 @@
 	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 	circuit = /obj/item/circuitboard/computer/secure_data
 	light_color = COLOR_SOFT_RED
-	var/rank = null
-	var/screen = null
-	var/datum/data/record/active1 = null
-	var/datum/data/record/active2 = null
-	var/temp = null
-	var/printing = null
 	var/can_change_id = 0
 	var/list/Perp
 	var/tempname = null
-	//Sorting Variables
-	var/sortBy = "name"
-	var/order = 1 // -1 = Descending - 1 = Ascending
 
-
-/obj/machinery/computer/secure_data/syndie
+/obj/machinery/computer/record/sec/syndie
 	icon_keyboard = "syndie_key"
 
-/obj/machinery/computer/secure_data/laptop
+/obj/machinery/computer/record/sec/laptop
 	name = "security laptop"
 	desc = "A cheap Nanotrasen security laptop, it functions as a security records console. It's bolted to the table."
 	icon_state = "laptop"
@@ -33,7 +23,7 @@
 	unique_icon = TRUE
 
 //Someone needs to break down the dat += into chunks instead of long ass lines.
-/obj/machinery/computer/secure_data/ui_interact(mob/user)
+/obj/machinery/computer/record/sec/ui_interact(mob/user)
 	. = ..()
 	if(isliving(user))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -241,7 +231,7 @@
 /*Revised /N
 I can't be bothered to look more of the actual code outside of switch but that probably needs revising too.
 What a mess.*/
-/obj/machinery/computer/secure_data/Topic(href, href_list)
+/obj/machinery/computer/record/sec/Topic(href, href_list)
 	. = ..()
 	if(.)
 		return .
@@ -429,7 +419,7 @@ What a mess.*/
 					return
 				var/a2 = active2
 				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
-				if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+				if(!can_use_record_console(usr, t1, null, a2))
 					return
 				var/counter = 1
 				while(active2.fields[text("com_[]", counter)])
@@ -519,7 +509,7 @@ What a mess.*/
 					if("name")
 						if(istype(active1, /datum/data/record) || istype(active2, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please input name:", "Secure. records", active1.fields[DATACORE_NAME], MAX_MESSAGE_LEN)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							if(istype(active1, /datum/data/record))
 								active1.fields[DATACORE_NAME] = t1
@@ -528,7 +518,7 @@ What a mess.*/
 					if("id")
 						if(istype(active2, /datum/data/record) || istype(active1, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please input id:", "Secure. records", active1.fields[DATACORE_ID], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							if(istype(active1, /datum/data/record))
 								active1.fields[DATACORE_ID] = t1
@@ -537,7 +527,7 @@ What a mess.*/
 					if("fingerprint")
 						if(istype(active1, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please input fingerprint hash:", "Secure. records", active1.fields[DATACORE_FINGERPRINT], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							active1.fields[DATACORE_FINGERPRINT] = t1
 					if("gender")
@@ -555,13 +545,13 @@ What a mess.*/
 							if (!t1)
 								return
 
-							if(!canUseSecurityRecordsConsole(usr, "age", a1))
+							if(!can_use_record_console(usr, "age", a1))
 								return
 							active1.fields[DATACORE_AGE] = t1
 					if("species")
 						if(istype(active1, /datum/data/record))
 							var/t1 = input("Select a species", "Species Selection") as null|anything in GLOB.roundstart_races
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							if(!can_use_record_console(usr, t1, a1))
 								return
 							active1.fields[DATACORE_SPECIES] = t1
 					if("show_photo_front")
@@ -619,7 +609,7 @@ What a mess.*/
 							return
 						var/t1 = stripped_input(usr, "Please input crime names:", "Secure. records", "", null)
 						var/t2 = stripped_input(usr, "Please input crime details:", "Secure. records", "", null)
-						if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+						if(!can_use_record_console(usr, t1, null, a2))
 							return
 
 						var/datum/data/record/security/security_record = active1
@@ -630,7 +620,7 @@ What a mess.*/
 						if(!istype(active1, /datum/data/record/security) || !href_list["cdataid"])
 							return
 
-						if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
+						if(!can_use_record_console(usr, "delete", null, a2))
 							return
 
 						var/crime_name
@@ -652,7 +642,7 @@ What a mess.*/
 
 
 						var/t1 = stripped_input(usr, "Please input crime details:", "Secure. records", "", null)
-						if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+						if(!can_use_record_console(usr, t1, null, a2))
 							return
 
 						var/datum/data/record/security/security_record = active1
@@ -663,7 +653,7 @@ What a mess.*/
 					if("notes")
 						if(istype(active2, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please summarize notes:", "Secure. records", active2.fields[DATACORE_NOTES], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+							if(!can_use_record_console(usr, t1, null, a2))
 								return
 							active2.fields[DATACORE_NOTES] = t1
 					if("criminal")
@@ -743,7 +733,7 @@ What a mess.*/
 	updateUsrDialog()
 	return
 
-/obj/machinery/computer/secure_data/proc/get_photo(mob/user)
+/obj/machinery/computer/record/sec/proc/get_photo(mob/user)
 	var/obj/item/photo/P = null
 	if(issilicon(user))
 		var/mob/living/silicon/tempAI = user
@@ -754,7 +744,7 @@ What a mess.*/
 		P = user.get_active_held_item()
 	return P
 
-/obj/machinery/computer/secure_data/proc/print_photo(icon/temp, person_name)
+/obj/machinery/computer/record/sec/proc/print_photo(icon/temp, person_name)
 	if (printing)
 		return
 	printing = TRUE
@@ -766,7 +756,7 @@ What a mess.*/
 	P.pixel_y = rand(-10, 10)
 	printing = FALSE
 
-/obj/machinery/computer/secure_data/emp_act(severity)
+/obj/machinery/computer/record/sec/emp_act(severity)
 	. = ..()
 
 	if(machine_stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_SELF)
@@ -801,7 +791,7 @@ What a mess.*/
 			qdel(R)
 			continue
 
-/obj/machinery/computer/secure_data/proc/canUseSecurityRecordsConsole(mob/user, message1 = 0, record1, record2)
+/obj/machinery/computer/record/sec/can_use_record_console(mob/user, message1 = 0, record1, record2)
 	if(user)
 		if(authenticated)
 			if(user.canUseTopic(src, !issilicon(user)))
