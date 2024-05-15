@@ -314,7 +314,8 @@
 	return data
 
 /obj/machinery/computer/hydrogen_exchange/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	switch(action)

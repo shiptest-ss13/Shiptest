@@ -175,7 +175,7 @@
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		laz += L.rating
 	consumption_multiplier = laz
-	return
+
 /**
  * ### Ion Engines
  * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
