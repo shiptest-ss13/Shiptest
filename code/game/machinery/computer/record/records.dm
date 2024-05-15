@@ -66,6 +66,18 @@
 
 			return TRUE
 
+		if("edit_field")
+			target = locate(params["ref"]) in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)
+			var/field = params["field"]
+			if(!field || !(field in target?.vars))
+				return FALSE
+
+			var/value = trim(params["value"], MAX_BROADCAST_LEN)
+			investigate_log("[key_name(usr)] changed the field: \"[field]\" with value: \"[target.vars[field]]\" to new value: \"[value || "Unknown"]\"", INVESTIGATE_RECORDS)
+			target.vars[field] = value || "Unknown"
+
+			return TRUE
+
 		if("view_record")
 			if(!target)
 				return FALSE

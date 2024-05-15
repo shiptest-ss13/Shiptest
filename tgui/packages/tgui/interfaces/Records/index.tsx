@@ -4,7 +4,6 @@ import { Window } from 'tgui/layouts';
 
 import { MedicalRecordData } from './types';
 
-
 import { MedicalRecordTabs } from './RecordTabs';
 import { MedicalRecordView } from './RecordView';
 
