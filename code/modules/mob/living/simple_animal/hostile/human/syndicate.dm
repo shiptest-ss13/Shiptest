@@ -1,12 +1,3 @@
-/*
-	CONTENTS
-	LINE 10  - BASE MOB
-	LINE 52  - SWORD AND SHIELD
-	LINE 164 - GUNS
-	LINE 267 - MISC
-*/
-
-
 ///////////////Base mob////////////
 /obj/effect/light_emitter/red_energy_sword //used so there's a combination of both their head light and light coming off the energy sword
 	set_luminosity = 2
