@@ -71,16 +71,8 @@
 	fields[field_name] = photo
 	return photo
 
-/datum/data/record/general
-
-/datum/data/record/medical
-
-/datum/data/record/locked
-
-/datum/data/record/security
-
 /// Set the criminal status of a crew member in the security records.
-/datum/data/record/security/proc/set_criminal_status(new_status)
+/datum/data/record/proc/set_criminal_status(new_status)
 	var/old_status = DATACORE_CRIMINAL_STATUS
 	if(old_status == new_status)
 		return FALSE
@@ -88,10 +80,10 @@
 	fields[DATACORE_CRIMINAL_STATUS] = new_status
 	return TRUE
 
-/datum/data/record/security/proc/add_crime(datum/data/crime/crime)
+/datum/data/record/proc/add_crime(datum/data/crime/crime)
 	fields[DATACORE_CRIMES] |= crime
 
-/datum/data/record/security/proc/remove_crime(cDataId)
+/datum/data/record/proc/remove_crime(cDataId)
 	if(istext(cDataId))
 		cDataId = text2num(cDataId)
 
@@ -100,7 +92,7 @@
 			fields[DATACORE_CRIMES] -= crime
 			return
 
-/datum/data/record/security/proc/add_crime_details(cDataId, details)
+/datum/data/record/proc/add_crime_details(cDataId, details)
 	if(istext(cDataId))
 		cDataId = text2num(cDataId)
 

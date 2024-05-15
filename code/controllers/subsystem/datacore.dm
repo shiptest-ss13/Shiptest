@@ -174,7 +174,7 @@ SUBSYSTEM_DEF(datacore)
 	var/mutable_appearance/character_appearance = new(H.appearance)
 
 	//General Record
-	var/datum/data/record/general/G = new()
+	var/datum/data/record/G = new()
 	G.fields[DATACORE_ID] = id
 	G.fields[DATACORE_NAME] = H.real_name
 	G.fields[DATACORE_RANK] = assignment

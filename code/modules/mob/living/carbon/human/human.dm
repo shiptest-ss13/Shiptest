@@ -399,7 +399,7 @@
 				to_chat(H, "<span class='warning'>ERROR: Can not identify target.</span>")
 				return
 
-			var/datum/data/record/security/security_record = SSdatacore.get_records(DATACORE_RECORDS_SECURITY)[perpname]
+			var/datum/data/record/security_record = SSdatacore.get_records(DATACORE_RECORDS_SECURITY)[perpname]
 
 			if(!R)
 				to_chat(usr, "<span class='warning'>ERROR: Unable to locate data core entry for target.</span>")
