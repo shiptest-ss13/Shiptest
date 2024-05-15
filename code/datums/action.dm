@@ -36,7 +36,6 @@
 /datum/action/Destroy()
 	if(owner)
 		Remove(owner)
-	owner = null
 	target = null
 	QDEL_NULL(button)
 	return ..()
