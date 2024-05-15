@@ -86,21 +86,6 @@
 			but I just lost it! Could you please find me a replacement? I don't have long!"
 	. = ..()
 
-/datum/mission/acquire/true_love/puce
-	name = "Puce crystal needed (urgent!!)"
-	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/ash_flora/puce
-
-/datum/mission/acquire/true_love/fireblossom
-	name = "Fireblossom needed (urgent!!)"
-	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/ash_flora/fireblossom
-
-/datum/mission/acquire/true_love/icepepper
-	name = "Icepepper needed (urgent!!)"
-	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/icepepper
-
 /datum/mission/acquire/true_love/strange_crystal
 	name = "Strange crystal needed (urgent!!!)"
 	value = 1000
@@ -122,32 +107,18 @@ Acquire: Anomaly
 	num_wanted = 1
 
 /datum/mission/acquire/anomaly/New(...)
-	var/group = pick(list(
-		"Cybersun Industries",
-		"CMM-GOLD",
-		"Nanotrasen Anomalous Studies Division",
-		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
-		"The Central Solarian Anomaly Research Agency",
-		"DeForest Medical R&D",
-		"A strange lizard on the outpost"
-	))
-
-	desc = "[group] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
+	desc = "[researcher_name()] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
 	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
 	They've offered to pay well, so we're relaying this mission to you"
 	. = ..()
-
-
-
 
 /*
 		Acquire: The Creature
 */
 
 /datum/mission/acquire/creature
-	name = "Capture a goliath"
-	desc = "I require a live goliath for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	name = ""
+	desc = ""
 	value = 1500
 	duration = 60 MINUTES
 	weight = 6
@@ -155,6 +126,15 @@ Acquire: Anomaly
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath
 	num_wanted = 1
 	count_stacks = FALSE
+	var/creature_name = "goliath"
+
+/datum/mission/acquire/creature/New(...)
+	if(!name)
+		name = "Capture a [creature_name]"
+	if(!desc)
+		desc = "I require a live [creature_name] for research purposes. Trap one within the given \
+				Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	. = ..()
 
 /datum/mission/acquire/creature/atom_effective_count(atom/movable/target)
 	. = ..()
@@ -165,51 +145,27 @@ Acquire: Anomaly
 		return 0
 
 /datum/mission/acquire/creature/legion
-	name = "Capture a legion"
-	desc = "I require a live legion for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
+	creature_name = "legion"
 
 /datum/mission/acquire/creature/ice_whelp
-	name = "Capture an ice whelp"
-	desc = "I require a live ice whelp for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1700
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
+	creature_name = "ice whelp"
 
 /datum/mission/acquire/creature/ice_demon
-	name = "Capture an ice demon"
-	desc = "I require a live ice demon for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1500
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
+	creature_name = "ice demon"
 
 /datum/mission/acquire/creature/migo
-	name = "Capture a live mi-go"
-	desc = "I require a live mi-go for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
-
-/datum/mission/acquire/creature/floorbot
-	name = "Detain a malfunctioning floorbot"
-	desc = "I require a functional abandoned floorbot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/floorbot/rockplanet
-
-/datum/mission/acquire/creature/firebot
-	name = "Detain a malfunctioning firebot"
-	desc = "I require a functional abandoned firebot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
+	creature_name = "mi-go"
 
 /*
 		Acquire: Fishing
