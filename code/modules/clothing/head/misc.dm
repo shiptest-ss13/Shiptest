@@ -131,6 +131,8 @@
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "pirate"
 	item_state = "pirate"
 	dog_fashion = /datum/dog_fashion/head/pirate
