@@ -661,8 +661,8 @@
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
 
 /obj/item/clothing/suit/hawaiian
-	name = "hawaiian overshirt"
-	desc = "A cool shirt for chilling on the beach."
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_blue"
 	item_state = "hawaiian_blue"
 
