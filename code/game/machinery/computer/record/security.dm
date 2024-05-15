@@ -10,6 +10,8 @@
 	var/list/Perp
 	var/tempname = null
 
+	var/datum/data/record/active_record
+
 /obj/machinery/computer/record/sec/syndie
 	icon_keyboard = "syndie_key"
 
@@ -600,7 +602,7 @@ What a mess.*/
 						if(!can_use_record_console(usr, t1, null, a2))
 							return
 
-						var/datum/data/record_record = active_record
+						var/datum/data/record/security_record = active_record
 						var/crime = SSdatacore.new_crime_entry(t1, t2, authenticated, station_time_timestamp())
 						security_record.add_crime(crime)
 						investigate_log("New Crime: <strong>[t1]</strong>: [t2] | Added to [active_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
