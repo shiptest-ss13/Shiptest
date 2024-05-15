@@ -5,7 +5,7 @@
 	icon_living = "cat_butcher"
 	projectiletype = /obj/projectile/bullet/dart/tranq
 	projectilesound = 'sound/items/syringeproj.ogg'
-	ranged = 1
+	ranged = TRUE
 	ranged_message = "fires the syringe gun at"
 	ranged_cooldown_time = 30
 	speak_chance = 0
@@ -18,7 +18,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher, /obj/item/circular_saw, /obj/item/gun/syringe)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("hostile")
-	check_friendly_fire = 1
+	check_friendly_fire = TRUE
 	var/impatience = 0
 
 /mob/living/simple_animal/hostile/human/cat_butcherer/CanAttack(atom/the_target)
