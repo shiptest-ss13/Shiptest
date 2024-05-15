@@ -383,7 +383,7 @@
 
 /obj/item/circuitboard/computer/cargo/express
 	name = "Outpost Comms Console (Computer Board)"
-	build_path = /obj/machinery/computer/cargo/express
+	build_path = /obj/machinery/computer/cargo
 
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
 	return

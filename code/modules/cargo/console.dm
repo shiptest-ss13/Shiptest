@@ -5,7 +5,7 @@
 #define SP_UNLINK 4
 #define SP_UNREADY 5
 
-/obj/machinery/computer/cargo/express
+/obj/machinery/computer/cargo
 	name = "outpost communications console"
 	desc = "This console allows the user to communicate with a nearby outpost to \
 			purchase supplies and manage missions. Purchases are delivered near-instantly."
@@ -402,7 +402,7 @@
 		return TRUE
 	else if(istype(W, /obj/item/supplypod_beacon))
 		var/obj/item/supplypod_beacon/sb = W
-		if (sb.express_console != src)
+		if (sb.cargo_console != src)
 			sb.link_console(src, user)
 			return TRUE
 		else
