@@ -30,8 +30,7 @@
 	name = "Stechkin Pistol Crate"
 	desc = "Contains a concealable stechkin pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
-	contains = list(/obj/item/gun/ballistic/automatic/pistol,
-					/obj/item/gun/ballistic/automatic/pistol)
+	contains = list(/obj/item/gun/ballistic/automatic/pistol)
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
