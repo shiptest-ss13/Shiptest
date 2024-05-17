@@ -525,6 +525,8 @@
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
+/obj/item/gun/ballistic/revolver/detective/no_mag
+
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"

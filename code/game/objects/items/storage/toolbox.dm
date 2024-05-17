@@ -312,6 +312,61 @@
 	new /obj/item/clothing/mask/infiltrator(src)
 	new /obj/item/clothing/shoes/combat/sneakboots(src)
 
+/obj/item/storage/toolbox/guncase
+	name = "gun case"
+	desc = "A large box designed for holding firearms and magazines safely."
+	icon_state = "infiltrator_case"
+	item_state = "infiltrator_case"
+	force = 15
+	throwforce = 18
+	w_class = WEIGHT_CLASS_NORMAL
+	has_latches = FALSE
+
+/obj/item/storage/toolbox/guncase/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 12
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/gun
+		))
+
+/obj/item/storage/toolbox/pistolcase
+	name = "pistol case"
+	desc = "A large box designed for holding pistols and magazines safely."
+	icon_state = "infiltrator_case"
+	item_state = "infiltrator_case"
+	force = 15
+	throwforce = 18
+	w_class = WEIGHT_CLASS_NORMAL
+	has_latches = FALSE
+
+/obj/item/storage/toolbox/pistolcase/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.set_holdable(list(
+		/obj/item/gun
+		))
+/obj/item/storage/toolbox/pistolcase/stechkin
+/obj/item/storage/toolbox/pistolcase/stechkin/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/no_mag(src)
+	new/obj/item/ammo_box/magazine/m10mm(src)
+	new/obj/item/ammo_box/magazine/m10mm(src)
+/obj/item/storage/toolbox/pistolcase/candor
+
+/obj/item/storage/toolbox/pistolcase/det38
+
+/obj/item/storage/toolbox/pistolcase/shadow
+
+/obj/item/storage/toolbox/pistolcase/commander
+
+/obj/item/storage/toolbox/pistolcase/pepperbox
+
+/obj/item/storage/toolbox/pistolcase/derringer
+
+/obj/item/storage/toolbox/pistolcase/disposable
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots

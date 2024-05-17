@@ -104,7 +104,6 @@
 		magazine = new mag_type(src)
 	chamber_round()
 	update_appearance()
-
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
