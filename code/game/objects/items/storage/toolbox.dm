@@ -319,7 +319,7 @@
 	item_state = "infiltrator_case"
 	force = 15
 	throwforce = 18
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	has_latches = FALSE
 
 /obj/item/storage/toolbox/guncase/ComponentInitialize()
@@ -338,7 +338,7 @@
 	item_state = "infiltrator_case"
 	force = 15
 	throwforce = 18
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	has_latches = FALSE
 
 /obj/item/storage/toolbox/pistolcase/ComponentInitialize()
