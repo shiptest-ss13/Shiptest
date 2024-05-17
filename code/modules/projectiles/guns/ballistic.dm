@@ -96,7 +96,7 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if (!spawnwithmagazine && !istype(magazine, /obj/item/ammo_box/magazine/internal))
+	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
 		bolt_locked = TRUE
 		update_appearance()
 		return
