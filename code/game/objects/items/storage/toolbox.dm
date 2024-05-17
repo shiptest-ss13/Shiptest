@@ -329,6 +329,7 @@
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/gun
+		/obj/item/ammo_box
 		))
 
 /obj/item/storage/toolbox/pistolcase
@@ -348,6 +349,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
 		/obj/item/gun
+		/obj/item/ammo_box
 		))
 /obj/item/storage/toolbox/pistolcase/stechkin
 /obj/item/storage/toolbox/pistolcase/stechkin/PopulateContents()
