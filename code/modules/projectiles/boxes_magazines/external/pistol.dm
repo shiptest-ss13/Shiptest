@@ -9,7 +9,6 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm/empty
-	percent_fill = 0
 
 /obj/item/ammo_box/magazine/m10mm/inc
 	name = "pistol magazine (10mm incendiary)"

@@ -352,21 +352,61 @@
 /obj/item/storage/toolbox/pistolcase/stechkin
 /obj/item/storage/toolbox/pistolcase/stechkin/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/no_mag(src)
-	new/obj/item/ammo_box/magazine/m10mm(src)
-	new/obj/item/ammo_box/magazine/m10mm(src)
-/obj/item/storage/toolbox/pistolcase/candor
+	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)
 
-/obj/item/storage/toolbox/pistolcase/det38
+/obj/item/storage/toolbox/pistolcase/candor
+/obj/item/storage/toolbox/pistolcase/candor/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/storage/toolbox/pistolcase/detective
+/obj/item/storage/toolbox/pistolcase/detective/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/toolbox/pistolcase/shadow
+/obj/item/storage/toolbox/pistolcase/shadow/PopulateContents()
+	new /datum/supply_pack/gun/shadowrevolver(src)
+	new /obj/item/ammo_box/c45_speedloader(src)
+	new /obj/item/ammo_box/c45_speedloader(src)
 
 /obj/item/storage/toolbox/pistolcase/commander
+/obj/item/storage/toolbox/pistolcase/commander/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src)
+	new /obj/item/ammo_box/magazine/co9mm(src)
+	new /obj/item/ammo_box/magazine/co9mm(src)
 
-/obj/item/storage/toolbox/pistolcase/pepperbox
+/obj/item/storage/toolbox/pistolcase/firebrand
+/obj/item/storage/toolbox/pistolcase/firebrand/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/firebrand(src)
 
 /obj/item/storage/toolbox/pistolcase/derringer
+/obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
+	new /obj/item/gun/ballistic/derringer(src)
+	new /obj/item/gun/ballistic/derringer(src)
 
 /obj/item/storage/toolbox/pistolcase/disposable
+/obj/item/storage/toolbox/pistolcase/disposable/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
+	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
+
+/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
+	new /obj/item/gun/ballistic/derringer(src)
+	new /obj/item/gun/ballistic/derringer(src)
+
+/obj/item/storage/toolbox/pistolcase/laser
+
+/obj/item/storage/toolbox/pistolcase/laser
+
+/obj/item/storage/toolbox/pistolcase/laser
+
+/obj/item/storage/toolbox/pistolcase/laser
+
+/obj/item/storage/toolbox/pistolcase/laser
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots

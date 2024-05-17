@@ -526,7 +526,7 @@
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/detective/no_mag
-
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"

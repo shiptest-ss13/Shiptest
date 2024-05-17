@@ -36,23 +36,22 @@
 	///cost of the materials in the magazine/box itself
 	var/list/base_cost
 
-/obj/item/ammo_box/Initialize(mapload, percent_fill = 1)
-    . = ..()
-    if(!base_icon_state)
-        base_icon_state = icon_state
-    if (!bullet_cost)
-        for (var/material in custom_materials)
-            var/material_amount = custom_materials[material]
-            LAZYSET(base_cost, material, (material_amount * 0.10))
+/obj/item/ammo_box/Initialize()
+	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
+	if (!bullet_cost)
+		for (var/material in custom_materials)
+			var/material_amount = custom_materials[material]
+			LAZYSET(base_cost, material, (material_amount * 0.10))
 
-            material_amount *= 0.90 // 10% for the container
-            material_amount /= max_ammo
-            LAZYSET(bullet_cost, material, material_amount)
-    if(!start_empty && percent_fill)
-        var/bullets = round(max_ammo * percent_fill, 1)
-        for(var/i = 1, i <= bullets, i++)
-            stored_ammo += new ammo_type(src)
-    update_appearance()
+			material_amount *= 0.90 // 10% for the container
+			material_amount /= max_ammo
+			LAZYSET(bullet_cost, material, material_amount)
+	if(!start_empty)
+		for(var/i = 1, i <= max_ammo, i++)
+			stored_ammo += new ammo_type(src)
+	update_appearance()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)

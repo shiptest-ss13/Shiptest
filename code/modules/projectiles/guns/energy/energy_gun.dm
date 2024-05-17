@@ -12,6 +12,9 @@
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
+/obj/item/gun/energy/e_gun/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: disable and kill."
@@ -37,6 +40,9 @@
 /obj/item/gun/energy/e_gun/mini/Initialize()
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
+
+/obj/item/gun/energy/e_gun/mini/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
