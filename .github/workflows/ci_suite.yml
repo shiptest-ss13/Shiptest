@@ -9,11 +9,17 @@ on:
   merge_group:
     branches:
       - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   start_gate:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Start Gate
     runs-on: ubuntu-22.04
+
     steps:
       - name: Mandatory Empty Step
         run: exit 0
@@ -22,6 +28,7 @@ jobs:
     name: Run Linters
     needs: start_gate
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
         with:
@@ -107,6 +114,7 @@ jobs:
     name: Compile Maps
     needs: start_gate
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
 
@@ -160,6 +168,7 @@ jobs:
     name: Windows Build
     needs: start_gate
     runs-on: windows-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
 
