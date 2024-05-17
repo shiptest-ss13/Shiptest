@@ -328,8 +328,9 @@
 	STR.max_items = 12
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/gun
-		/obj/item/ammo_box
+		/obj/item/gun,
+		/obj/item/ammo_box,
+		/obj/item/stock_parts/cell/gun
 		))
 
 /obj/item/storage/toolbox/pistolcase
@@ -348,8 +349,9 @@
 	STR.max_items = 8
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/gun
-		/obj/item/ammo_box
+		/obj/item/gun,
+		/obj/item/ammo_box/
+		/obj/item/stock_parts/cell/gun
 		))
 /obj/item/storage/toolbox/pistolcase/stechkin
 /obj/item/storage/toolbox/pistolcase/stechkin/PopulateContents()
