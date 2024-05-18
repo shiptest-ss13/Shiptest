@@ -361,4 +361,4 @@
 	icon = 'icons/obj/structures/handrail.dmi'
 	icon_state = "handrail"
 	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
-	var/item_chair = NULL // this just makes it so it cant be picked up
+	item_chair = NULL 
