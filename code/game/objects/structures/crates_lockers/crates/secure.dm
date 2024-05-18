@@ -105,7 +105,7 @@
 	else ..()
 
 /obj/structure/closet/crate/secure/exo
-	desc = "A lock-enabled crate used to carry EXOCON merchandise destined for export to potential buyers."
-	name = "EXOCON storage crate"
+	desc = "A lock-enabled crate used to carry EXOCOM merchandise destined for export to potential buyers."
+	name = "EXOCOM storage crate"
 	icon = 'icons/obj/crates.dmi'
 	icon_state = "exocrate"

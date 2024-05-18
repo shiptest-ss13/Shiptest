@@ -514,7 +514,7 @@
 				/obj/item/organ/brain/alien = 17,
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
-				/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted = 16,
+				/obj/item/gun/ballistic/automatic/smg/c20r = 16,
 				/obj/item/gun/magic/wand/resurrection/inert = 15,
 				/obj/item/gun/magic/wand/resurrection = 10,
 				/obj/item/uplink/old = 2,

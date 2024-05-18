@@ -13,7 +13,7 @@
 #define BROKEN_SPARKS_MAX (9 MINUTES)
 
 #define LIGHT_DRAIN_TIME 25                                             //WS Edit -- Ethereal Charge Scaling
-#define LIGHT_POWER_GAIN (1.75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
+#define LIGHT_POWER_GAIN (1.75 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"
@@ -690,9 +690,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		var/mob/living/carbon/human/H = user
 
 		if(istype(H))
-			var/datum/species/ethereal/eth_species = H.dna?.species
+			var/datum/species/elzuose/eth_species = H.dna?.species
 			if(istype(eth_species))
-				var/datum/species/ethereal/E = H.dna.species
+				var/datum/species/elzuose/E = H.dna.species
 				if(E.drain_time > world.time)
 					return
 				to_chat(H, "<span class='notice'>You start channeling some power through the [fitting] into your body.</span>")

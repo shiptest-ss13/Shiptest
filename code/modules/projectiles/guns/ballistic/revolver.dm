@@ -475,6 +475,7 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
@@ -544,7 +545,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/montagne
@@ -673,18 +673,6 @@
 		return
 	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
 
-/obj/item/gun/ballistic/revolver/reverse //Fires directly at its user... unless the user is a clown, of course.
-	clumsy_check = 0
-
-/obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
-		return ..()
-	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
-		user.drop_all_held_items()
-		user.Paralyze(80)
-
 /obj/item/gun/ballistic/revolver/firebrand
 	name = "\improper HP Firebrand"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
@@ -695,6 +683,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
 	fire_delay = 0
+	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
 
