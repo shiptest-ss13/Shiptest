@@ -251,7 +251,7 @@
 /area/ruin/powered)
 "ga" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot{
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot{
 	pixel_x = 5;
 	pixel_y = 7
 	},
@@ -1956,18 +1956,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "SW" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered)
 "Tl" = (
 /obj/machinery/light/directional/south,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	pixel_x = -27
-	},
+/obj/structure/closet/secure_closet/wall/directional/west,
 /obj/item/storage/firstaid/ancient,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/grenade/chem_grenade/teargas{
@@ -1997,9 +1992,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "TM" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "TU" = (

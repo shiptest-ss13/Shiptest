@@ -37,7 +37,6 @@
 	icon_state = "saber"
 	actions_types = list()
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
@@ -45,9 +44,6 @@
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
@@ -67,9 +63,6 @@
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
 	. = ..()
@@ -160,7 +153,6 @@
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
@@ -173,14 +165,6 @@
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
 	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)

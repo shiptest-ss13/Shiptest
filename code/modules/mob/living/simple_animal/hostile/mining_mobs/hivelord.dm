@@ -405,7 +405,7 @@
 	mob_species = pickweight(list(
 		/datum/species/human = 31,
 		/datum/species/lizard = 26,
-		/datum/species/ethereal = 24,
+		/datum/species/elzuose = 24,
 		/datum/species/spider = 7,
 		/datum/species/ipc = 7,
 		/datum/species/jelly = 4,
@@ -747,7 +747,7 @@
 			else
 				back = pickweight(list(
 					/obj/item/energyhalberd = 5,
-					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
+					/obj/item/gun/ballistic/rocketlauncher = 5
 					)
 				)
 			if(prob(25))
@@ -756,7 +756,7 @@
 				r_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)
@@ -765,7 +765,7 @@
 				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)

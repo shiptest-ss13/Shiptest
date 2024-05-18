@@ -46,11 +46,7 @@
 "ap" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32;
-	pixel_y = -6
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "ar" = (
@@ -726,6 +722,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dd" = (
@@ -845,9 +844,7 @@
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dr" = (
@@ -917,6 +914,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dE" = (
@@ -927,10 +928,8 @@
 /obj/machinery/camera{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Emergency Defense Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Emergency Defense Storage"
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
@@ -1093,16 +1092,16 @@
 	req_access = list(20)
 	},
 /obj/item/clothing/suit/hooded/wintercoat/captain,
-/obj/item/clothing/under/rank/command/captain/nt,
-/obj/item/clothing/under/rank/command/captain/nt/skirt,
+/obj/item/clothing/under/nanotrasen/captain/skirt,
+/obj/item/clothing/under/nanotrasen/captain,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/head/caphat/nt,
+/obj/item/clothing/head/nanotrasen/captain/peaked,
+/obj/item/clothing/head/nanotrasen/captain,
 /obj/item/stock_parts/cell/gun,
 /obj/item/gun/energy/laser,
 /obj/item/megaphone/command,
 /obj/machinery/light/small/directional/east,
-/obj/item/clothing/head/caphat/parade,
-/obj/item/clothing/suit/armor/vest/capcarapace,
+/obj/item/clothing/suit/armor/nanotrasen/captain,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fy" = (
@@ -1444,10 +1443,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "oz" = (
@@ -2205,6 +2201,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ID" = (
@@ -2705,10 +2704,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/lime,
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Radio Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Radio Storage"
 	},
 /obj/item/radio,
 /obj/item/radio,
