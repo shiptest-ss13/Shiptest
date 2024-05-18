@@ -528,6 +528,9 @@
 /obj/item/gun/ballistic/revolver/detective/no_mag
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/revolver/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."

@@ -13,6 +13,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a357/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 match)"
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."

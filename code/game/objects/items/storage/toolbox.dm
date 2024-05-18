@@ -392,6 +392,19 @@
 	new /obj/item/gun/ballistic/derringer/no_mag(src)
 	new /obj/item/gun/ballistic/derringer/no_mag(src)
 
+/obj/item/storage/toolbox/pistolcase/a357
+/obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/no_mag(src)
+	new /obj/item/ammo_box/a357/empty(src)
+	new /obj/item/ammo_box/a357/empty(src)
+
+/obj/item/storage/toolbox/pistolcase/montagne
+/obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/montagne/no_mag(src)
+	new /obj/item/ammo_box/c45_speedloader/empty(src)
+	new /obj/item/ammo_box/c45_speedloader/empty(src)
+
+
 /obj/item/storage/toolbox/pistolcase/disposable
 /obj/item/storage/toolbox/pistolcase/disposable/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
