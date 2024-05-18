@@ -350,47 +350,47 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
 		/obj/item/gun,
-		/obj/item/ammo_box/
+		/obj/item/ammo_box/,
 		/obj/item/stock_parts/cell/gun
 		))
 /obj/item/storage/toolbox/pistolcase/stechkin
 /obj/item/storage/toolbox/pistolcase/stechkin/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/no_mag(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/empty(src)
+	new /obj/item/ammo_box/magazine/m10mm/empty(src)
 
 /obj/item/storage/toolbox/pistolcase/candor
 /obj/item/storage/toolbox/pistolcase/candor/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45/empty(src)
+	new /obj/item/ammo_box/magazine/m45/empty(src)
 
 /obj/item/storage/toolbox/pistolcase/detective
 /obj/item/storage/toolbox/pistolcase/detective/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/gun/ballistic/revolver/detective/no_mag(src)
+	new /obj/item/ammo_box/c38/empty(src)
+	new /obj/item/ammo_box/c38/empty(src)
 
 /obj/item/storage/toolbox/pistolcase/shadow
 /obj/item/storage/toolbox/pistolcase/shadow/PopulateContents()
-	new /datum/supply_pack/gun/shadowrevolver(src)
-	new /obj/item/ammo_box/c45_speedloader(src)
-	new /obj/item/ammo_box/c45_speedloader(src)
+	new /obj/item/gun/ballistic/revolver/shadow/no_mag(src)
+	new /obj/item/ammo_box/c45_speedloader/empty(src)
+	new /obj/item/ammo_box/c45_speedloader/empty(src)
 
 /obj/item/storage/toolbox/pistolcase/commander
 /obj/item/storage/toolbox/pistolcase/commander/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src)
-	new /obj/item/ammo_box/magazine/co9mm(src)
-	new /obj/item/ammo_box/magazine/co9mm(src)
+	new /obj/item/ammo_box/magazine/co9mm/empty(src)
+	new /obj/item/ammo_box/magazine/co9mm/empty(src)
 
 /obj/item/storage/toolbox/pistolcase/firebrand
 /obj/item/storage/toolbox/pistolcase/firebrand/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/firebrand(src)
+	new /obj/item/gun/ballistic/revolver/firebrand/no_mag(src)
 
 /obj/item/storage/toolbox/pistolcase/derringer
 /obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
-	new /obj/item/gun/ballistic/derringer(src)
-	new /obj/item/gun/ballistic/derringer(src)
+	new /obj/item/gun/ballistic/derringer/no_mag(src)
+	new /obj/item/gun/ballistic/derringer/no_mag(src)
 
 /obj/item/storage/toolbox/pistolcase/disposable
 /obj/item/storage/toolbox/pistolcase/disposable/PopulateContents()
@@ -398,19 +398,34 @@
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 
 /obj/item/storage/toolbox/pistolcase/laser
-/obj/item/storage/toolbox/pistolcase/derringer/PopulateContents()
-	new /obj/item/gun/ballistic/derringer(src)
-	new /obj/item/gun/ballistic/derringer(src)
+/obj/item/storage/toolbox/pistolcase/laser/PopulateContents()
+	new /obj/item/gun/energy/laser/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun(src)
 
-/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/egun
+/obj/item/storage/toolbox/pistolcase/egun/PopulateContents()
+	new /obj/item/gun/energy/laser/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun(src)
 
-/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/kalixpistol
+/obj/item/storage/toolbox/pistolcase/kalixpistol/PopulateContents()
+	new /obj/item/gun/energy/kalix/pistol/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
 
-/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/kalixrifle
+/obj/item/storage/toolbox/pistolcase/kalixrifle/PopulateContents()
+	new /obj/item/gun/energy/kalix/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
 
-/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/miniegun
+/obj/item/storage/toolbox/pistolcase/miniegun/PopulateContents()
+	new /obj/item/gun/energy/e_gun/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun/mini(src)
 
-/obj/item/storage/toolbox/pistolcase/laser
+/obj/item/storage/toolbox/pistolcase/iongun
+/obj/item/storage/toolbox/pistolcase/iongun/PopulateContents()
+	new /obj/item/gun/energy/ionrifle/empty_cell(src)
+	new /obj/item/stock_parts/cell/gun(src)
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots

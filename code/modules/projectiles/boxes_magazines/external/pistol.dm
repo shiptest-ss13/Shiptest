@@ -9,6 +9,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m10mm/inc
 	name = "pistol magazine (10mm incendiary)"
@@ -39,7 +40,8 @@
 	caliber = ".45"
 	max_ammo = 8
 
-/obj/item/ammo_box/magazine/m45
+/obj/item/ammo_box/magazine/m45/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m45/inc
 	name = "pistol magazine (.45 incendiary)"
@@ -76,6 +78,7 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/co9mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/pistol556mm
 	name = "Pistole C magazine (5.56mm HITP caseless)"
@@ -99,7 +102,6 @@
 	else
 		icon_state = "[base_icon_state]-0"
 
-/obj/item/ammo_box/magazine/pistol556mm/empty
 
 /obj/item/ammo_box/magazine/co9mm/inc
 	name = "pistol magazine (9mm incendiary)"

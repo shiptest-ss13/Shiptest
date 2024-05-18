@@ -561,6 +561,9 @@
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
+/obj/item/gun/ballistic/revolver/montagne/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
 	desc = "A massive, long-barreled revolver often used by the Saint-Roumain Militia as protection against big game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
@@ -686,6 +689,9 @@
 	semi_auto = TRUE
 	safety_wording = "safety"
 
+/obj/item/gun/ballistic/revolver/firebrand/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
 	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .45."
@@ -718,3 +724,5 @@
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
 		chambered.armour_penetration += 5
+/obj/item/gun/ballistic/revolver/shadow/no_mag
+	spawnwithmagazine = FALSE
