@@ -14,8 +14,6 @@ GLOBAL_LIST_INIT(lizard_names_female, world.file2list("strings/names/lizard_fema
 GLOBAL_LIST_INIT(clown_names, world.file2list("strings/names/clown.txt"))
 GLOBAL_LIST_INIT(mime_names, world.file2list("strings/names/mime.txt"))
 GLOBAL_LIST_INIT(carp_names, world.file2list("strings/names/carp.txt"))
-GLOBAL_LIST_INIT(moth_first, world.file2list("strings/names/moth_first.txt"))
-GLOBAL_LIST_INIT(moth_last, world.file2list("strings/names/moth_last.txt"))
 GLOBAL_LIST_INIT(plasmaman_names, world.file2list("strings/names/plasmaman.txt"))
 GLOBAL_LIST_INIT(squid_names, world.file2list("strings/names/squid.txt"))
 GLOBAL_LIST_INIT(posibrain_names, world.file2list("strings/names/posibrain.txt"))
@@ -27,6 +25,8 @@ GLOBAL_LIST_INIT(verbs, world.file2list("strings/names/verbs.txt"))
 GLOBAL_LIST_INIT(ing_verbs, world.file2list("strings/names/ing_verbs.txt"))
 GLOBAL_LIST_INIT(adverbs, world.file2list("strings/names/adverbs.txt"))
 GLOBAL_LIST_INIT(adjectives, world.file2list("strings/names/adjectives.txt"))
+GLOBAL_LIST_INIT(preference_adjectives, world.file2list("strings/preference_adjectives.txt"))
+GLOBAL_LIST_INIT(ipc_preference_adjectives, world.file2list("strings/ipc_preference_adjectives.txt"))
 GLOBAL_LIST_INIT(dream_strings, world.file2list("strings/dreamstrings.txt"))
 //loaded on startup because of "
 //would include in rsc if ' was used

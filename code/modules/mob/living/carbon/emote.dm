@@ -455,7 +455,7 @@
  * This fake hit only happens if we can deal damage and if we hit a living thing. Otherwise, we just do normal on hit effects.
  */
 /obj/projectile/kiss/proc/harmless_on_hit(mob/living/living_target)
-	playsound(get_turf(living_target), hitsound, 100, TRUE)
+	playsound(get_turf(living_target), hitsound, 50, TRUE, -12, ignore_walls = FALSE)
 	if(!suppressed)  // direct
 		living_target.visible_message(span_danger("[living_target] is hit by \a [src]."), span_userdanger("You're hit by \a [src]!"), vision_distance=COMBAT_MESSAGE_RANGE)
 
