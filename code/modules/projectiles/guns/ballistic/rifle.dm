@@ -86,6 +86,9 @@
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+/obj/item/gun/ballistic/rifle/illestren/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
@@ -151,6 +154,9 @@
 	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+/obj/item/gun/ballistic/rifle/scout
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/rifle/illestren/enchanted
 	name = "enchanted bolt-action rifle"

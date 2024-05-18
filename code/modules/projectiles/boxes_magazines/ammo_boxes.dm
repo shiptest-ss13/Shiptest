@@ -162,6 +162,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a300/empty
+	start_empty = TRUE
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)
 
 /obj/item/ammo_box/aac_300blk_stripper

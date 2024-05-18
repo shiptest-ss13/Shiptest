@@ -14,6 +14,7 @@
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
 
+
 /obj/item/storage/guncase/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -24,6 +25,63 @@
 		/obj/item/ammo_box,
 		/obj/item/stock_parts/cell/gun
 		))
+
+/obj/item/storage/guncase/winchester
+/obj/item/storage/guncase/winchester/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/flamingarrow/no_mag(src)
+
+/obj/item/storage/guncase/skm
+/obj/item/storage/guncase/skm/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault/skm/no_mag(src)
+	new /obj/item/ammo_box/magazine/skm_762_40/empty(src)
+	new /obj/item/ammo_box/magazine/skm_762_40/empty(src)
+
+/obj/item/storage/guncase/p16
+/obj/item/storage/guncase/p16/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault/p16/no_mag(src)
+	new /obj/item/ammo_box/magazine/p16/empty(src)
+	new /obj/item/ammo_box/magazine/p16/empty(src)
+
+/obj/item/storage/guncase/beacon
+/obj/item/storage/guncase/beacon/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon(src)
+
+/obj/item/storage/guncase/scout
+/obj/item/storage/guncase/scout/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/scout(src)
+	new /obj/item/ammo_box/a300/empty(src)
+	new /obj/item/ammo_box/a300/empty(src)
+
+/obj/item/storage/guncase/cobra
+/obj/item/storage/guncase/cobra/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag(src)
+	new /obj/item/ammo_box/magazine/smgm45/empty(src)
+	new /obj/item/ammo_box/magazine/smgm45/empty(src)
+
+
+/obj/item/storage/guncase/hellfire
+/obj/item/storage/guncase/hellfire/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/hellfire/no_mag(src)
+
+/obj/item/storage/guncase/doublebarrel
+/obj/item/storage/guncase/doublebarrel/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/doublebarrel/no_mag(src)
+
+/obj/item/storage/guncase/brimstone
+/obj/item/storage/guncase/brimstone/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/brimstone/no_mag(src)
+
+/obj/item/storage/guncase/illestren
+/obj/item/storage/guncase/illestren/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/illestren/no_mag
+	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
+	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
+
+/obj/item/storage/guncase/wt550
+/obj/item/storage/guncase/wt550/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
+	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
+	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
 
 /obj/item/storage/pistolcase
 	name = "pistol case"
@@ -44,12 +102,19 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
 		/obj/item/gun,
 		/obj/item/ammo_box/,
 		/obj/item/stock_parts/cell/gun
 		))
+
+/obj/item/storage/pistolcase/modelh
+/obj/item/storage/pistolcase/modelh/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag(src)
+	new /obj/item/ammo_box/magazine/modelh/empty(src)
+	new /obj/item/ammo_box/magazine/modelh/empty(src)
+
 /obj/item/storage/pistolcase/stechkin
 /obj/item/storage/pistolcase/stechkin/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/no_mag(src)
@@ -87,10 +152,9 @@
 /obj/item/storage/pistolcase/derringer
 /obj/item/storage/pistolcase/derringer/PopulateContents()
 	new /obj/item/gun/ballistic/derringer/no_mag(src)
-	new /obj/item/gun/ballistic/derringer/no_mag(src)
 
 /obj/item/storage/pistolcase/a357
-/obj/item/storage/pistolcase/derringer/PopulateContents()
+/obj/item/storage/pistolcase/a357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/no_mag(src)
 	new /obj/item/ammo_box/a357/empty(src)
 	new /obj/item/ammo_box/a357/empty(src)
@@ -122,8 +186,8 @@
 	new /obj/item/gun/energy/kalix/pistol/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun/kalix(src)
 
-/obj/item/storage/pistolcase/kalixrifle
-/obj/item/storage/pistolcase/kalixrifle/PopulateContents()
+/obj/item/storage/guncase/kalixrifle
+/obj/item/storage/guncase/kalixrifle/PopulateContents()
 	new /obj/item/gun/energy/kalix/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun/kalix(src)
 

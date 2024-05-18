@@ -75,6 +75,9 @@
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
+/obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/smg/c20r/suns
 	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
 	icon_state = "c20r_suns"
@@ -101,6 +104,9 @@
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
+
+/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
