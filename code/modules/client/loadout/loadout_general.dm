@@ -102,10 +102,6 @@
 	display_name = "cane"
 	path = /obj/item/cane
 
-/datum/gear/radio
-	display_name = "hand radio"
-	path = /obj/item/radio
-
 /datum/gear/lizard
 	display_name = "toy, lizard plushie"
 	path = /obj/item/toy/plush/lizardplushie

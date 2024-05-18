@@ -12,9 +12,6 @@
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-/obj/item/gun/energy/e_gun/mindshield
-	pin = /obj/item/firing_pin/implant/mindshield
-
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: disable and kill."
@@ -137,7 +134,6 @@
 	icon_state = "nucgun"
 	item_state = "nucgun"
 	charge_delay = 5
-	pin = null
 	can_charge = FALSE
 	internal_cell = TRUE
 	ammo_x_offset = 2
