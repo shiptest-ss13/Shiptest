@@ -417,7 +417,6 @@
 					/obj/item/storage/backpack/satchel/chem = 2,
 					/obj/item/clothing/accessory/armband/engine = 4,
 					/obj/item/storage/bag/chemistry = 2)
-	contraband = list(/obj/item/reagent_containers/spray/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/chem_wardrobe
 /obj/item/vending_refill/wardrobe/chem_wardrobe
 	machine_name = "ChemDrobe"

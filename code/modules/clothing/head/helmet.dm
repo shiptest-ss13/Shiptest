@@ -18,9 +18,14 @@
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
-	var/can_flashlight = FALSE //if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
+	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
+	var/can_flashlight = FALSE
 	var/obj/item/flashlight/seclite/attached_light
 	var/datum/action/item_action/toggle_helmet_flashlight/action_light
+
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	// should we overlay the items inside our helmet
+	var/content_overlays = FALSE
 
 /obj/item/clothing/head/helmet/Initialize()
 	. = ..()
@@ -173,16 +178,21 @@
 	var/mutable_appearance/flashlightlight_overlay
 	if(isinhands)
 		return
-	if(!attached_light)
-		return
-	if(attached_light.on)
-		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+	if(attached_light)
+		if(attached_light.on)
+			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+		else
+			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
+		. += flashlightlight_overlay
+	if(content_overlays)
+		for(var/obj/item/I in contents)
+			. += I.get_helmet_overlay()
 	else
-		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
-	. += flashlightlight_overlay
+		return
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
 	if(issignaler(I))
@@ -216,6 +226,7 @@
 		"Snow" = "helmetalt_snow",
 		"Urban" = "helmetalt_urban",
 		)
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
@@ -489,6 +500,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
 	name = "inteq helmet"
@@ -496,6 +508,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
@@ -537,6 +550,7 @@
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/medical
 	name = "\improper trauma team helmet"
