@@ -26,12 +26,9 @@
 		/obj/item/reagent_containers/medigel/synthflesh = 1,
 		/obj/item/reagent_containers/medigel/sterilizine = 1,
 		/obj/item/sensor_device = 1,
-		/obj/item/pinpointer/crew = 1)
-	contraband = list(
-		/obj/item/reagent_containers/pill/tox = 2,
+		/obj/item/pinpointer/crew = 1,
 		/obj/item/reagent_containers/pill/morphine = 2,
-		/obj/item/reagent_containers/pill/charcoal = 4,
-		/obj/item/storage/box/hug/medical = 1)
+		/obj/item/reagent_containers/pill/charcoal = 4)
 	premium = list(
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/clothing/glasses/hud/health/prescription = 1,
