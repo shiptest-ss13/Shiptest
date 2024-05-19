@@ -1290,3 +1290,28 @@
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
 	/obj/item/storage/ration/crayons = 2 // :)
 	)
+
+/obj/effect/spawner/lootdrop/plushie
+	loot = list (
+	/obj/item/toy/plush/beeplushie = 6,
+	/obj/item/toy/plush/blahaj = 6,
+	/obj/item/toy/plush/carpplushie = 6,
+	/obj/item/toy/plush/flushed = 6,
+	/obj/item/toy/plush/kari = 6,
+	/obj/item/toy/plush/lizardplushie = 6,
+	/obj/item/toy/plush/mora = 6,
+	/obj/item/toy/plush/realgoat = 6,
+	/obj/item/toy/plush/rilena = 6,
+	/obj/item/toy/plush/sharai = 6,
+	/obj/item/toy/plush/slimeplushie = 6,
+	/obj/item/toy/plush/snakeplushie = 6,
+	/obj/item/toy/plush/spider = 6,
+	/obj/item/toy/plush/tali = 6,
+	/obj/item/toy/plush/xader = 6,
+	/obj/item/toy/plush/moth = 1,
+	/obj/item/toy/plush/moth/deadhead = 1,
+	/obj/item/toy/plush/moth/moonfly = 1,
+	/obj/item/toy/plush/moth/poison = 1,
+	/obj/item/toy/plush/moth/punished = 1,
+	/obj/item/toy/plush/moth/whitefly = 1
+	)
