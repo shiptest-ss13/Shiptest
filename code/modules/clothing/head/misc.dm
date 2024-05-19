@@ -446,13 +446,6 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
-/obj/item/clothing/head/ngrcap
-	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
-	icon_state = "ngrcap"
-	item_state = "ngrcap"
-	flags_inv = 0
-
 /obj/item/clothing/head/maidheadband/syndicate
 	name = "tactical maid headband"
 	desc = "Tacticute."
