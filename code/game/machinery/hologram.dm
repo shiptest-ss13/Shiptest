@@ -424,7 +424,7 @@ Possible to do for anyone motivated enough:
 
 		return Hologram
 	else
-		to_chat(user, span_danger("ERROR:</span> Unable to project hologram."))
+		to_chat(user, span_danger("ERROR:Unable to project hologram."))
 
 /*This is the proc for special two-way communication between AI and holopad/people talking near holopad.
 For the other part of the code, check silicon say.dm. Particularly robot talk.*/
