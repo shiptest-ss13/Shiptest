@@ -16,19 +16,8 @@
 		ammo_type = /obj/item/ammo_casing
 
 /obj/item/ammo_box/generic/proc/update_max_ammo(obj/item/ammo_casing/ammo)
-	var/caliber = ammo.caliber
-	if(caliber in list("9mm","10mm",".45","22lr",".357",".38","5.56mm caseless","slug"))
-		// handgun calibers
-		max_ammo = 25
-	else if(caliber in list("4.6x30mm","5.56x45mm","5.45x39mm","7.62x40mm",".299 caseless","7.12x82mm","pellet","lance"))
-		// automatic rifle calibers
-		max_ammo = 30
-	else if (caliber in list("12ga"))
-		// shotgun ammo
-		max_ammo = 20
-	else if (caliber in list("8x50mmR","a858","a300",".300 BLK",".308",".50 BMG"))
-		// bolt actions, semi-auto rifles, snipers
-		max_ammo = 10
+	if(ammo.bullet_per_box)
+		max_ammo = round((ammo.bullet_per_box)*0.5)
 	else
 		max_ammo = 10
 

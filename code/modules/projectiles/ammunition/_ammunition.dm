@@ -38,6 +38,8 @@
 
 	var/list/bounce_sfx_override // if true, overrides the bouncing sfx from the turf to this one
 
+	var/bullet_per_box
+
 
 /obj/item/ammo_casing/spent
 	name = "spent bullet casing"
