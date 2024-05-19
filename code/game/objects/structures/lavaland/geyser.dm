@@ -51,6 +51,8 @@
 	name = "plunger"
 	desc = "It's a plunger for plunging."
 	icon = 'icons/obj/watercloset.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	icon_state = "plunger"
 
 	slot_flags = ITEM_SLOT_MASK

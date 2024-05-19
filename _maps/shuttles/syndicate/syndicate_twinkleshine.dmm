@@ -101,8 +101,8 @@
 	req_access = list(3,150)
 	},
 /obj/item/clothing/under/syndicate/ngr/officer,
-/obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain,
-/obj/item/clothing/head/ngrcap,
+/obj/item/clothing/suit/armor/ngr/captain,
+/obj/item/clothing/head/ngr/peaked,
 /obj/item/clothing/shoes/combat,
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
@@ -2367,7 +2367,7 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/syndicate{
-	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/sbg;
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/ngr;
 	name = "lieutenant's suit storage unit"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -6099,10 +6099,6 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 6
-	},
-/obj/item/reagent_containers/spray/syndicate{
-	pixel_y = 11;
-	pixel_x = -2
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/janitor)
