@@ -19,8 +19,8 @@
 		categories[chem.category] += list(chem)
 
 	for(var/category in sortList(categories))
-		output += generate_category(category, categories[category])
 		output += "\n"
+		output += generate_category(category, categories[category])
 
 	return output
 
