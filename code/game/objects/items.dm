@@ -22,7 +22,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
-	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	var/supports_variations = null
+
+	///If set, kepori wearing this use this instead of their clothing file
+	var/kepoi_override_icon
+
+	///If set, vox wearing this use this instead of their clothing file
+	var/vox_override_icon
 
 	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
 	var/list/greyscale_colors[3]
