@@ -53,7 +53,7 @@
 	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
 	var/bleed_threshold = 10
 	/// Threshold at which the limb will start bleeding if damaged by blunt items
-	var/bleed_threshold_blunt = 40
+	var/bleed_threshold_blunt = 25
 	/// Minimum damage of an incoming attack for it to cause bleeding
 	var/bleed_damage_min = 5
 	/// Minimum damage of an incoming blunt attack for it to cause bleeding
@@ -248,7 +248,7 @@
 
 	// Bleeding is applied here
 	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
-		adjust_bleeding(brute/max_damage, BLOOD_LOSS_DAMAGE_CAP)
+		adjust_bleeding(brute * BLOOD_LOSS_DAMAGE_COEFF, BLOOD_LOSS_DAMAGE_CAP)
 
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
@@ -289,7 +289,7 @@
 
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
-		adjust_bleeding(-brute/max_damage)
+		adjust_bleeding(-brute * BLOOD_LOSS_DAMAGE_COEFF)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
