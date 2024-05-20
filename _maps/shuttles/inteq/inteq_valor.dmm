@@ -141,9 +141,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bB" = (
@@ -526,10 +524,9 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "equipment locker";
-	pixel_y = 28;
 	req_access = list(1)
 	},
 /obj/item/storage/box/zipties,
@@ -572,10 +569,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "eV" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -901,13 +895,8 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 6
 	},
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "ix" = (
@@ -1094,9 +1083,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -1745,9 +1732,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "pA" = (
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -1803,9 +1788,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "pU" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4
 	},
@@ -1943,6 +1926,10 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rY" = (
@@ -2060,10 +2047,9 @@
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
 	pixel_x = 4
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "weapons lockup";
-	pixel_y = 28;
 	req_access = list(1)
 	},
 /obj/structure/table,
@@ -2369,10 +2355,7 @@
 "vx" = (
 /obj/effect/turf_decal/siding/thinplating/dark/end,
 /obj/machinery/airalarm/directional/south,
-/obj/structure/closet/wall/white{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/white/directional/east,
 /obj/item/clothing/under/rank/medical/gown,
 /obj/item/clothing/under/rank/medical/gown,
 /obj/item/clothing/under/rank/medical/gown,
@@ -2835,9 +2818,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
 	},
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -4311,7 +4292,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 8
 	},
 /area/ship/cargo)
@@ -4355,12 +4336,10 @@
 /obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/armor/hos/inteq,
 /obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "solgov_wall";
 	icon_state = "solgov_wall";
 	name = "vanguard's locker";
-	pixel_x = -28;
 	req_access = list(58)
 	},
 /obj/item/storage/lockbox/medal/sec,
@@ -4375,13 +4354,8 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
 	},
-/obj/structure/chair/sofa/right{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/chair/sofa/brown/right/directional/west,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Oh" = (
@@ -4398,9 +4372,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ok" = (
@@ -4703,9 +4675,7 @@
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
@@ -4720,10 +4690,8 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "RR" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	name = "honorable corpsman's locker";
-	pixel_x = -28;
 	req_access = list(19)
 	},
 /obj/item/clothing/shoes/combat,
@@ -5131,6 +5099,9 @@
 /obj/structure/cable{
 	icon_state = "2-10"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "WC" = (
@@ -5389,9 +5360,7 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "YZ" = (

@@ -195,10 +195,8 @@
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbycrash)
 "fk" = (
-/obj/structure/closet/wall/blue{
-	dir = 1;
-	name = "Captain's locker";
-	pixel_y = -28
+/obj/structure/closet/wall/blue/directional/south{
+	name = "Captain's locker"
 	},
 /obj/item/clothing/suit/space/hardsuit/mining/heavy,
 /obj/effect/decal/cleanable/dirt,
@@ -503,10 +501,7 @@
 /area/ruin/whitesands/pubbycrash)
 "ln" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/pubbycrash/engine_room)
@@ -660,10 +655,8 @@
 	},
 /area/ruin/whitesands/pubbycrash/split)
 "oo" = (
-/obj/structure/closet/wall/white{
-	dir = 1;
-	name = "Medicine storage";
-	pixel_y = -30
+/obj/structure/closet/wall/white/directional/south{
+	name = "Medicine storage"
 	},
 /obj/item/storage/firstaid/ancient{
 	pixel_x = 6;
@@ -686,7 +679,7 @@
 "oO" = (
 /obj/structure/table/reinforced,
 /obj/item/laser_pointer,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 14
 	},
@@ -857,10 +850,9 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_y = 28
+	name = "Mining equipment"
 	},
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
@@ -1818,10 +1810,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/red{
-	dir = 8;
+/obj/structure/closet/wall/red/directional/east{
 	name = "Firearm Locker";
-	pixel_x = 29;
 	welded = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -1988,10 +1978,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/pubbycrash/split)
 "Pr" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "Pilots locker";
-	pixel_x = -29;
 	welded = 1
 	},
 /obj/item/clothing/under/suit/black,
