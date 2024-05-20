@@ -619,7 +619,7 @@ There are several things that need to be remembered:
 			icon_file = VOX_BACK_PATH
 
 		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
-			icon_file = DEFAULT_BACK_PATH
+			icon_file = I.mob_overlay_icon ? I.mob_overlay_icon : DEFAULT_BACK_PATH
 			handled_by_bodytype = FALSE
 
 		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
