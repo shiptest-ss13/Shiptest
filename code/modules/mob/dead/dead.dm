@@ -37,12 +37,8 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 /mob/dead/get_status_tab_items()
 	. = ..()
-	. += ""
-	. += "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]"
-
 	if(SSticker.HasRoundStarted())
 		return
-
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
 		. += "Time To Start: [round(time_remaining/10)]s"
@@ -100,14 +96,18 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	return
 
 /mob/dead/Destroy()
-	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	for(var/level in SSmobs.dead_players_by_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, level, src)
+	// Forgive me for this one. This loop can be replaced by the line below by the one brave enough to fix
+	// observers not cleanly removing themselves from the dead_players_by_virtual_z /list when they should
+	//LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 	return ..()
 
 /mob/dead/Login()
 	. = ..()
 	if(!client)
 		return
-	LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 
 /mob/dead/Logout()
 	. = ..()

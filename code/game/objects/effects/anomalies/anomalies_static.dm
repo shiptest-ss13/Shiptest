@@ -39,19 +39,19 @@
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
 		if(stored_mob && looking.stat != DEAD && prob(25))
 			say_fucky_things()
-		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD || !HAS_TRAIT(looking, TRAIT_DEAF))
-			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
-			playsound(src, 'sound/effects/stall.ogg', 50)
-			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
-				if(prob(20))
-					var/mob/living/carbon/victim = looking
-					var/obj/effect/anomaly/tvstatic/planetary/expansion
-					expansion = new(get_turf(victim))
-					visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
-					victim.death()
-					expansion.stored_mob = victim
-					victim.forceMove(expansion)
-	return
+		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || HAS_TRAIT(looking, TRAIT_DEAF))
+			continue
+		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
+		playsound(src, 'sound/effects/stall.ogg', 50)
+		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
+			if(prob(20))
+				var/mob/living/carbon/victim = looking
+				var/obj/effect/anomaly/tvstatic/planetary/expansion
+				expansion = new(get_turf(victim))
+				visible_message(span_warning("The static overtakes [victim], [expansion] taking their place!"))
+				victim.death()
+				expansion.stored_mob = victim
+				victim.forceMove(expansion)
 
 
 /obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
@@ -89,13 +89,13 @@
 
 /obj/effect/anomaly/tvstatic/detonate()
 	for(var/mob/living/carbon/human/looking in range(effectrange, src))
-		visible_message("<span class='boldwarning'> The static lashes out, agony filling your mind as its tendrils scrape your thoughts!</span>")
+		visible_message(span_boldwarning(" The static lashes out, agony filling your mind as its tendrils scrape your thoughts!"))
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
 		if(stored_mob)
 			mangle_corpse()
-			visible_message("<span class='warning'>The static sputters out [stored_mob], their body coming out in a burst of blood and gore!</span>")
+			visible_message(span_warning("The static sputters out [stored_mob], their body coming out in a burst of blood and gore!"))
 			new /obj/effect/gibspawner/human(loc)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
@@ -111,7 +111,7 @@
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
-			visible_message("<span class='warning'>The static spits out [stored_mob], their body coming out in a burst!</span>")
+			visible_message(span_warning("The static spits out [stored_mob], their body coming out in a burst!"))
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
 	. = ..()
@@ -122,8 +122,11 @@
 	immobile = TRUE
 
 /obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
-	if(prob(25))
-		stored_mob = /obj/effect/mob_spawn/human/corpse/damaged
+	if(prob(25) & !stored_mob)
+		var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
+		var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
+		src.stored_mob = victim
+		victim.forceMove(src)
 	. = ..()
 
 /obj/effect/particle_effect/staticball

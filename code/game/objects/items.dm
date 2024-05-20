@@ -22,7 +22,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
-	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	var/supports_variations = null
+
+	///If set, kepori wearing this use this instead of their clothing file
+	var/kepoi_override_icon
+
+	///If set, vox wearing this use this instead of their clothing file
+	var/vox_override_icon
 
 	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
 	var/list/greyscale_colors[3]
@@ -699,6 +706,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
+/obj/item/proc/get_helmet_overlay() // returns the icon for overlaying on a helmet
+	return mutable_appearance('icons/mob/clothing/helmet_overlays.dmi', icon_state)
+
 /obj/item/proc/update_slot_icon()
 	if(!ismob(loc))
 		return
@@ -1025,7 +1035,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  * * forced- Do we want this to go through 100%?
  */
 /obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
-	if(!isbodypart(target) && !iscarbon(target) && !isclosedturf(target))
+	if(!isbodypart(target) && !iscarbon(target))
 		return
 	if(!forced && !LAZYLEN(embedding))
 		return

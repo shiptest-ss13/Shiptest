@@ -72,6 +72,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_screens, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
+	if(!GLOB.ipc_tail_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_tail_list)
 	if(!GLOB.ipc_chassis_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
 	if(!GLOB.spider_legs_list.len)
@@ -169,13 +171,6 @@
 		if(!findname(.))
 			break
 
-/proc/random_unique_moth_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
-
-		if(!findname(.))
-			break
-
 /proc/random_unique_squid_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(squid_name())
@@ -215,6 +210,12 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"african2"
 	)))
 
+/proc/pick_species_adjective(mob/living/carbon/human/H)
+	if(isipc(H))
+		return pick(GLOB.ipc_preference_adjectives)
+	else
+		return pick(GLOB.preference_adjectives)
+
 GLOBAL_LIST_EMPTY(species_list)
 
 /proc/age2agedescription(age)
@@ -241,7 +242,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			return "unknown"
 
 ///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
+/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE, hidden = FALSE)
 	if(!user || !target)
 		return FALSE
 
@@ -261,8 +262,11 @@ GLOBAL_LIST_EMPTY(species_list)
 	LAZYADD(target.targeted_by, user)
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
+	var/datum/cogbar/cog
 	if (progress)
 		progbar = new(user, time, target)
+		if(!hidden && time >= 1 SECONDS)
+			cog = new(user)
 
 	var/endtime = world.time+time
 	var/starttime = world.time
@@ -291,6 +295,8 @@ GLOBAL_LIST_EMPTY(species_list)
 			break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
+
+	cog?.remove()
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
 		LAZYREMOVE(target.targeted_by, user)
@@ -310,7 +316,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null, hidden = FALSE)
 	if(!user)
 		return FALSE
 
@@ -341,9 +347,11 @@ GLOBAL_LIST_EMPTY(species_list)
 	delay *= user.do_after_coefficent()
 
 	var/datum/progressbar/progbar
+	var/datum/cogbar/cog
 	if(progress)
 		progbar = new(user, delay, target || user)
-
+		if(!hidden && delay >= 1 SECONDS)
+			cog = new(user)
 	var/endtime = world.time + delay
 	var/starttime = world.time
 	. = TRUE
@@ -387,6 +395,8 @@ GLOBAL_LIST_EMPTY(species_list)
 				break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
+
+	cog?.remove()
 
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)

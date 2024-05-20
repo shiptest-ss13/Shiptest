@@ -25,7 +25,6 @@
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
-
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
@@ -124,7 +123,7 @@
 		return FALSE
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.adjust_money(officer ? 250 : 100) //just a little bit of money for you
+		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
@@ -172,7 +171,7 @@
 	return max(0, minimal_player_age - C.player_age)
 
 /datum/job/proc/radio_help_message(mob/M)
-	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
+	to_chat(M, "<b>Your ship most likely does not have telecomms. Prefix your message with :L or :R, depending on the hand you're holding the radio with, to speak with a handheld radio. Otherwise, you can speak with your headset by prefixing your message with :h.</b>")
 
 /datum/outfit/job
 	name = "Standard Gear"
@@ -194,6 +193,8 @@
 	var/job_icon
 	// the background of the job icon
 	var/faction_icon
+	// if there is an id, this will get automatically applied to an id's assignment variable
+	var/id_assignment
 
 	var/alt_uniform
 
@@ -280,6 +281,9 @@
 			C.registered_age = H.age
 		C.job_icon = job_icon
 		C.faction_icon = faction_icon
+		C.update_appearance()
+		if(id_assignment)
+			C.assignment = id_assignment
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A

@@ -175,6 +175,9 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
 
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril
+	fromtendril = TRUE
+
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
@@ -402,7 +405,7 @@
 	mob_species = pickweight(list(
 		/datum/species/human = 31,
 		/datum/species/lizard = 26,
-		/datum/species/ethereal = 24,
+		/datum/species/elzuose = 24,
 		/datum/species/spider = 7,
 		/datum/species/ipc = 7,
 		/datum/species/jelly = 4,
@@ -744,7 +747,7 @@
 			else
 				back = pickweight(list(
 					/obj/item/energyhalberd = 5,
-					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
+					/obj/item/gun/ballistic/rocketlauncher = 5
 					)
 				)
 			if(prob(25))
@@ -753,7 +756,7 @@
 				r_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)
@@ -762,7 +765,7 @@
 				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)
@@ -885,7 +888,6 @@
 				)
 		if("Shadow")
 			mob_species = /datum/species/shadow
-			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin
 			neck = /obj/item/clothing/accessory/medal/plasma/nobel_science
 			uniform = /obj/item/clothing/under/color/black
 			shoes = /obj/item/clothing/shoes/sneakers/black
@@ -903,7 +905,7 @@
 				suit = /obj/item/clothing/suit/armor/roumain
 				head = /obj/item/clothing/head/cowboy/sec/roumain
 			if(prob(25))
-				suit_store = /obj/item/gun/ballistic/shotgun/winchester
+				suit_store = /obj/item/gun/ballistic/shotgun/flamingarrow
 			r_pocket = /obj/item/book/manual/trickwines_4_brewers
 			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
 			back = /obj/item/storage/backpack/cultpack

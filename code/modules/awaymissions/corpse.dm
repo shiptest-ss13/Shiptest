@@ -32,6 +32,8 @@
 	var/show_flavour = TRUE
 	var/banType = ROLE_LAVALAND
 	var/ghost_usable = TRUE
+	/// Weakref to the mob this spawner created - just if you needed to do something with it.
+	var/datum/weakref/spawned_mob_ref
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -128,6 +130,7 @@
 		MM.name = M.real_name
 	if(uses > 0)
 		uses--
+	spawned_mob_ref = WEAKREF(M)
 	if(!permanent && !uses)
 		qdel(src)
 	return M
@@ -219,6 +222,7 @@
 			var/obj/item/clothing/under/C = H.w_uniform
 			if(istype(C))
 				C.sensor_mode = NO_SENSORS
+
 
 	var/obj/item/card/id/W = H.wear_id
 	if(W)
@@ -514,22 +518,10 @@
 
 
 /obj/effect/mob_spawn/human/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
+	name = "\improper Nanotrasen LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/nanotrasensoldiercorpse
-
-/datum/outfit/nanotrasensoldiercorpse
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
+	outfit = /datum/outfit/job/nanotrasen/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE

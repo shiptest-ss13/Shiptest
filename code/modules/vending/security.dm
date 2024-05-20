@@ -27,7 +27,6 @@
 	refill_canister = /obj/item/vending_refill/security
 	default_price = 650
 	extra_price = 700
-	payment_department = ACCOUNT_SEC
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
@@ -93,7 +92,7 @@
 	light_mask = "marine-mask"
 	req_access = list(ACCESS_SYNDICATE)
 	products = list(
-		/obj/item/screwdriver/nuke = 5,
+		/obj/item/screwdriver = 5,
 		/obj/item/restraints/handcuffs = 10,
 		/obj/item/assembly/flash/handheld = 10,
 		/obj/item/flashlight/seclite = 10,
@@ -104,7 +103,6 @@
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
-		/obj/item/melee/transforming/energy/sword/saber/green = 1,
 		)
 	contraband = list()
 	premium = list()
@@ -131,13 +129,12 @@
 		/obj/item/ammo_box/magazine/ebr = 5,
 		/obj/item/grenade/c4 = 1,
 		/obj/item/grenade/frag = 1,
-		/obj/item/melee/transforming/energy/sword/saber/red = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90/unrestricted,
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90,
 		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
-		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted)
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r,
+		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"
@@ -150,19 +147,21 @@
 		/obj/item/assembly/flash/handheld = 10,
 		/obj/item/flashlight/seclite = 10,
 
-		/obj/item/ammo_box/magazine/aknt = 10,
-		/obj/item/storage/box/lethalshot = 5,
+		/obj/item/screwdriver = 5,
+		/obj/item/stock_parts/cell/gun = 10,
+		/obj/item/stock_parts/cell/gun/upgraded = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
 		/obj/item/grenade/flashbang = 5,
 		/obj/item/grenade/barrier = 10,
-		/obj/item/melee/transforming/energy/sword/saber/blue = 1
 		)
 
 	voucher_items = list(
-		"NT-AK" = /obj/item/gun/ballistic/automatic/assault/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
-
+		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/e_gun/hades,
+		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
+		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
+		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 /obj/item/gun_voucher
 	name = "security weapon voucher"
 	desc = "A token used to redeem guns from the SecTech vendor."

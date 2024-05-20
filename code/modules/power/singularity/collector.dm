@@ -70,9 +70,6 @@
 			loaded_tank.air_contents.adjust_moles(GAS_O2, -gasdrained)
 			loaded_tank.air_contents.adjust_moles(GAS_CO2, gasdrained*2)
 			var/bitcoins_mined = RAD_COLLECTOR_OUTPUT
-			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
-			if(D)
-				D.adjust_money(bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE)
 			stored_research += bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PRIVATE_TECHWEB_GAIN
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
 			stored_energy-=bitcoins_mined

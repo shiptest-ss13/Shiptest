@@ -51,6 +51,9 @@
 	dir = 4
 	},
 /obj/machinery/meter/atmos/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "aB" = (
@@ -256,8 +259,8 @@
 /obj/item/clothing/head/solgov/captain,
 /obj/item/folder/solgov,
 /obj/item/folder/solgov,
-/obj/item/folder/solgov/red,
-/obj/item/folder/solgov/red,
+/obj/item/folder/documents/solgov,
+/obj/item/folder/documents/solgov,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/gloves/combat,
 /obj/item/storage/backpack/captain,
@@ -771,7 +774,7 @@
 /area/ship/crew)
 "hr" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/machinery/fax,
+/obj/machinery/fax/solgov,
 /obj/item/desk_flag/solgov{
 	pixel_x = 8;
 	pixel_y = 13
@@ -1425,9 +1428,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "nH" = (
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
@@ -2356,9 +2357,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "yj" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
@@ -2603,9 +2602,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "zv" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
@@ -2999,7 +2996,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "CU" = (
-/obj/machinery/fax,
+/obj/machinery/fax/solgov,
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
@@ -3127,8 +3124,7 @@
 /turf/open/floor/engine/n2,
 /area/ship/engineering/engine)
 "Ez" = (
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = 28;
+/obj/structure/closet/secure_closet/wall/directional/north{
 	name = "bridge supplies"
 	},
 /obj/item/binoculars,
@@ -3333,10 +3329,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
@@ -3562,7 +3555,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Ja" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
@@ -3577,7 +3570,7 @@
 /area/ship/security/armory)
 "Jh" = (
 /obj/structure/table/wood/fancy/blue,
-/obj/machinery/fax,
+/obj/machinery/fax/solgov,
 /obj/item/desk_flag/solgov{
 	pixel_x = -9;
 	pixel_y = 14
@@ -3866,6 +3859,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "LE" = (
@@ -3896,10 +3893,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Me" = (
@@ -3942,6 +3936,9 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering/engine)
 "MT" = (
@@ -3972,10 +3969,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering/engine)
 "Nm" = (
@@ -4023,7 +4017,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
 "Nz" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "NH" = (
@@ -4121,7 +4115,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/folder/solgov,
 /obj/item/folder/solgov,
-/obj/item/folder/solgov/red,
+/obj/item/folder/documents/solgov,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/head/solgov,
 /obj/item/storage/belt/sabre/solgov,

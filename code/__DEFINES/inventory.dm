@@ -52,13 +52,14 @@
 #define HIDESUITSTORAGE (1<<1)
 #define HIDEJUMPSUIT (1<<2)	//these first four are only used in exterior suits
 #define HIDESHOES (1<<3)
-#define HIDEMASK (1<<4)	//these last six are only used in masks and headgear.
-#define HIDEEARS (1<<5)	// (ears means headsets and such)
-#define HIDEEYES (1<<6)	// Whether eyes and glasses are hidden
-#define HIDEFACE (1<<7)	// Whether we appear as unknown.
+#define HIDEMASK (1<<4)		//these last six are only used in masks and headgear.
+#define HIDEEARS (1<<5)		// (ears means headsets and such)
+#define HIDEEYES (1<<6)		// Whether eyes and glasses are hidden
+#define HIDEFACE (1<<7)		// Whether we appear as unknown.
 #define HIDEHAIR (1<<8)
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
+#define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
@@ -92,8 +93,10 @@
 #define NO_VARIATION (1<<0)
 #define DIGITIGRADE_VARIATION (1<<1)
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
-#define VOX_VARIATION (1<<3)
-#define KEPORI_VARIATION (1<<4)
+#define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
+#define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
+#define VOX_VARIATION (1<<5)
+#define KEPORI_VARIATION (1<<6)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
@@ -159,6 +162,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
+	/obj/item/flamethrower,
 	/obj/item/kitchen/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,

@@ -294,10 +294,7 @@
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/handcuffs,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/red/directional/east,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -413,6 +410,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fD" = (
@@ -1021,8 +1024,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "qh" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 28;
+/obj/structure/closet/wall/red/directional/north{
 	name = "weapons locker"
 	},
 /obj/item/gun/energy/e_gun/smg,
@@ -1037,7 +1039,7 @@
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/e_gun/smg,
-/obj/item/gun/energy/lasercannon/unrestricted,
+/obj/item/gun/energy/lasercannon,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
 /turf/open/floor/plasteel/tech,
@@ -1188,10 +1190,8 @@
 /obj/structure/sign/poster/contraband/cybersun_borg{
 	pixel_y = 32
 	},
-/obj/structure/closet/wall/white{
-	dir = 4;
-	name = "First Aid";
-	pixel_x = -28
+/obj/structure/closet/wall/white/directional/west{
+	name = "First Aid"
 	},
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/storage/toolbox/mechanical,
@@ -1291,8 +1291,7 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ship/maintenance/central)
 "tF" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 28;
+/obj/structure/closet/wall/red/directional/north{
 	name = "armor locker"
 	},
 /obj/item/clothing/suit/armor/riot,
@@ -1477,9 +1476,7 @@
 /area/ship/external)
 "xl" = (
 /obj/structure/table,
-/obj/structure/closet/wall/red{
-	pixel_x = -28;
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "captain's locker"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2539,9 +2536,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/central)
 "MJ" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28;
+/obj/structure/closet/wall/directional/south{
 	name = "node uniforms"
 	},
 /obj/item/clothing/under/utility,
@@ -2964,15 +2959,16 @@
 /obj/structure/railing/corner{
 	layer = 3.1
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = null
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)

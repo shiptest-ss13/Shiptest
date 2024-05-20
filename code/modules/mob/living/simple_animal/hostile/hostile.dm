@@ -149,8 +149,10 @@
 		. = hearers(vision_range, target_from) - src //Remove self, so we don't suicide
 
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
+		var/static/mining_drills = typecacheof(list(/obj/machinery/drill))
 
 		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
+		. += typecache_filter_list(view(vision_range*2, targets_from), mining_drills)
 
 		for(var/HM in typecache_filter_list(range(vision_range, target_from), hostile_machines))
 			if(can_see(target_from, HM, vision_range))
@@ -245,6 +247,12 @@
 			if(P.machine_stat & BROKEN) //Or turrets that are already broken
 				return FALSE
 			return TRUE
+
+		if(istype(the_target, /obj/machinery/drill))
+			var/obj/machinery/drill/drill = the_target
+			if(drill.active)
+				return TRUE
+			return FALSE
 
 	if(isobj(the_target))
 		if(attack_all_objects || is_type_in_typecache(the_target, wanted_objects))
@@ -582,7 +590,7 @@
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(virtual_z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha)) //WS - add spacepod
+	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/machinery/drill)) //WS - add spacepod
 	. = list()
 	for (var/mob/M as anything in LAZYACCESS(SSmobs.players_by_virtual_z, "[virtual_z]"))
 		if (get_dist(M, src) < vision_range)

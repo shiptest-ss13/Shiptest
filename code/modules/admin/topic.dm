@@ -1239,7 +1239,7 @@
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
 		else if(isplasmaman(H))
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(isethereal(H))
+		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
@@ -2218,10 +2218,23 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-	else if(href_list["open_fax_manager"])
+	else if(href_list["show_paper"])
 		if(!check_rights(R_ADMIN))
 			return
-		usr.client.fax_manager()
+
+		var/obj/item/paper/paper_to_show = locate(href_list["show_paper"])
+		if(!istype(paper_to_show))
+			return
+		paper_to_show.ui_interact(usr)
+
+	else if(href_list["show_photo"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/obj/item/photo/photo_to_show = locate(href_list["show_photo"])
+		if(!istype(photo_to_show))
+			return
+		photo_to_show.show(usr)
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

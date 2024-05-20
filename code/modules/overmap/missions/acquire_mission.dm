@@ -72,7 +72,7 @@
 	name = "Diamond needed (urgent!!)"
 	weight = 3
 	value = 700
-	duration = 20 MINUTES
+	duration = 40 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/box/true_love
 	objective_type = /obj/item/stack/sheet/mineral/diamond
@@ -115,7 +115,7 @@ Acquire: Anomaly
 	name = "Anomaly core requested"
 	weight = 8
 	value = 3000
-	duration = 40 MINUTES
+	duration = 80 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/box/anomaly
 	objective_type = /obj/item/assembly/signaler/anomaly
@@ -149,7 +149,7 @@ Acquire: Anomaly
 	desc = "I require a live goliath for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1500
-	duration = 30 MINUTES
+	duration = 60 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath

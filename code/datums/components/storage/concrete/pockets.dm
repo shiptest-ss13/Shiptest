@@ -36,7 +36,7 @@
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
 		/obj/item/katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana,
-		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/thompson/drum
+		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 		))
 	exception_hold = exception_cache
 
@@ -83,10 +83,16 @@
 /datum/component/storage/concrete/pockets/helmet/Initialize()
 	. = ..()
 	set_holdable(list(
-		/obj/item/reagent_containers/food/drinks/bottle/vodka,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
-		/obj/item/reagent_containers/food/drinks/drinkingglass,
-		/obj/item/ammo_box/a762
+		/obj/item/clothing/glasses/cold,
+		/obj/item/clothing/glasses/heat,
+		/obj/item/clothing/glasses/welding,
+		/obj/item/clothing/glasses/thermal,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/glasses/hud/health/night,
+		/obj/item/clothing/glasses/hud/security/night,
+		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_box/magazine/illestren_a850r,
 	))
 
 /datum/component/storage/concrete/pockets/holster

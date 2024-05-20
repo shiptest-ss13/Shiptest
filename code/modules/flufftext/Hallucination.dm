@@ -764,7 +764,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					"stun baton","flash","syringe gun","circular saw","tank transfer valve",\
 					"ritual dagger","spellbook",\
 					"pulse rifle","hypospray","ship blueprints",\
-					"ship keys","M1911","Commander","credits","handcuffs","you",\
+					"ship keys","Candor","Commander","credits","handcuffs","you",\
 					)] into [equipped_backpack].</span>")
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
@@ -1133,7 +1133,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			return
 		to_chat(target, "<span class='userdanger'>You fall into the chasm!</span>")
 		target.Paralyze(40)
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), target, "<span class='notice'>It's surprisingly shallow.</span>"), 15)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), target, "<span class='notice'>It's surprisingly shallow.</span>"), 15)
 		QDEL_IN(src, 30)
 
 /obj/effect/hallucination/danger/anomaly

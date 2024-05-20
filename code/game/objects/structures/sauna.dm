@@ -66,7 +66,7 @@
 		to_chat(user, "<span class='notice'>You begin to deconstruct [src].</span>")
 		if(T.use_tool(src, user, 60, volume=50))
 			to_chat(user, "<span class='notice'>You successfully deconstructed [src].</span>")
-			new /obj/item/stack/sheet/mineral/wood(get_turf(src), 30)
+			new /obj/item/stack/sheet/mineral/wood(get_turf(src), 15)
 			qdel(src)
 
 	else if(istype(T, /obj/item/stack/sheet/mineral/wood))

@@ -475,16 +475,12 @@
 /obj/item/clothing/accessory/holster/nukie
 	name = "operative holster"
 	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
 
 /obj/item/clothing/accessory/holster/chameleon
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
@@ -512,7 +508,7 @@
 
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 

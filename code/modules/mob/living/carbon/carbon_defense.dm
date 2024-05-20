@@ -391,6 +391,14 @@
 	if(M == src && check_self_for_injuries())
 		return
 
+	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+		var/obj/item/clothing/mask/cigarette/theircig = wear_mask
+		var/obj/item/clothing/mask/cigarette/ourcig = M.wear_mask
+		if(istype(ourcig) && istype(theircig))
+			if(ourcig.lit && !theircig.lit)
+				theircig.light(span_notice("[M] leans towards [src], lighting [p_their()] [theircig.name] with [M.p_their()] own."))
+				return
+
 	if(body_position == LYING_DOWN)
 		if(buckled)
 			to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!</span>")

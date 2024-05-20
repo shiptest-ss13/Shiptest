@@ -45,9 +45,10 @@
 	if(!check_rights(R_SOUND))
 		return
 
+	var/vol = input("Select a volume for the sound", "Play Local Sound", 50) as num
 	log_admin("[key_name(src)] played a local sound [S]")
 	message_admins("[key_name_admin(src)] played a local sound [S]")
-	playsound(get_turf(src.mob), S, 50, FALSE, FALSE)
+	playsound(get_turf(src.mob), S, vol, FALSE, FALSE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Local Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_direct_mob_sound(S as sound, mob/M)
