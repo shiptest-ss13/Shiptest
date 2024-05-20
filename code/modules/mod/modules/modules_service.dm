@@ -54,29 +54,3 @@
 	spark_effect_two.set_up(2, 1, microwave_target)
 	spark_effect_two.start()
 	drain_power(use_power_cost)
-
-//Waddle - Makes you waddle and squeak.
-/obj/item/mod/module/waddle
-	name = "MOD waddle module"
-	desc = "Some of the most primitive technology in use by Honk Co. This module works off an automatic intention system, \
-		utilizing its' sensitivity to the pilot's often-limited brainwaves to directly read their next step, \
-		affecting the boots they're installed in. Employing a twin-linked gravitonic drive to create \
-		miniaturized etheric blasts of space-time beneath the user's feet, this enables them to... \
-		to waddle around, bouncing to and fro with a pep in their step."
-	icon_state = "waddle"
-	complexity = 1
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.2
-	incompatible_modules = list(/obj/item/mod/module/waddle)
-
-/obj/item/mod/module/waddle/on_suit_activation()
-	mod.boots.AddComponent(/datum/component/squeak, list('sound/effects/clownstep1.ogg'=1,'sound/effects/clownstep2.ogg'=1), 50, falloff_exponent = 20) //die off quick please
-	mod.wearer.AddElement(/datum/element/waddling)
-	//if(mod.wearer.mind?.assigned_role == JOB_CLOWN)
-	//	SEND_SIGNAL(mod.wearer, COMSIG_ADD_MOOD_EVENT, "clownshoes", /datum/mood_event/clownshoes)
-
-/obj/item/mod/module/waddle/on_suit_deactivation(deleting = FALSE)
-	if(!deleting)
-		qdel(mod.boots.GetComponent(/datum/component/squeak))
-	mod.wearer.RemoveElement(/datum/element/waddling)
-	//if(mod.wearer.mind?.assigned_role == JOB_CLOWN)
-	//	SEND_SIGNAL(mod.wearer, COMSIG_CLEAR_MOOD_EVENT, "clownshoes")

@@ -216,9 +216,6 @@
 /obj/item/mod/module/insignia/janitor
 	color = "#7925c7"
 
-/obj/item/mod/module/insignia/clown
-	color = "#ff1fc7"
-
 /obj/item/mod/module/insignia/chaplain
 	color = "#f0a00c"
 

@@ -137,14 +137,6 @@
 		//obj/item/mod/module/pathfinder,
 	)
 
-/obj/item/mod/control/pre_equipped/cosmohonk
-	theme = /datum/mod_theme/cosmohonk
-	initial_modules = list(
-		/obj/item/mod/module/storage,
-		/obj/item/mod/module/waddle,
-		/obj/item/mod/module/bikehorn,
-	)
-
 /obj/item/mod/control/pre_equipped/traitor
 	theme = /datum/mod_theme/syndicate
 	applied_cell = /obj/item/stock_parts/cell/super
@@ -279,10 +271,6 @@
 	insignia_type = /obj/item/mod/module/insignia/janitor
 	additional_module = /obj/item/mod/module/clamp
 
-/obj/item/mod/control/pre_equipped/responsory/clown
-	insignia_type = /obj/item/mod/module/insignia/clown
-	additional_module = /obj/item/mod/module/bikehorn
-
 /obj/item/mod/control/pre_equipped/responsory/chaplain
 	insignia_type = /obj/item/mod/module/insignia/chaplain
 	additional_module = /obj/item/mod/module/injector
@@ -353,11 +341,10 @@
 /obj/item/mod/control/pre_equipped/debug
 	theme = /datum/mod_theme/debug
 	applied_core = /obj/item/mod/core/infinite
-	initial_modules = list( //one of every type of module, for testing if they all work correctly
+	initial_modules = list(
 		/obj/item/mod/module/storage/bluespace,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/bikehorn,
 		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/tether,
 		/obj/item/mod/module/injector,

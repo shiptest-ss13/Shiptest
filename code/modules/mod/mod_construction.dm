@@ -76,9 +76,6 @@
 /obj/item/mod/construction/plating/security
 	theme = /datum/mod_theme/security
 
-/obj/item/mod/construction/plating/cosmohonk
-	theme = /datum/mod_theme/cosmohonk
-
 #define START_STEP "start"
 #define CORE_STEP "core"
 #define SCREWED_CORE_STEP "screwed_core"

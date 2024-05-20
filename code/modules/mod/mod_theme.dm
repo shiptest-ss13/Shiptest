@@ -761,57 +761,6 @@
 		),
 	)
 
-/datum/mod_theme/cosmohonk
-	name = "cosmohonk"
-	desc = "A suit by Honk Ltd. Protects against low humor environments. Most of the tech went to lower the power cost."
-	extended_desc = "The Cosmohonk MODsuit was originally designed for interstellar comedy in low-humor environments. \
-		It utilizes tungsten electro-ceramic casing and chromium bipolars, coated in zirconium-boron paint underneath \
-		a dermatiraelian subspace alloy. Despite the glaringly obvious optronic vacuum drive pedals, \
-		this particular model does not employ manganese bipolar capacitor cleaners, thank the Honkmother. \
-		All you know is that this suit is mysteriously power-efficient, and far too colorful for the Mime to steal."
-	default_skin = "cosmohonk"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "fire" = 60, "acid" = 30)
-	charge_drain = DEFAULT_CHARGE_DRAIN * 0.25
-	slowdown_inactive = 1.75
-	slowdown_active = 1.25
-	allowed_suit_storage = list(
-		/obj/item/flashlight,
-		/obj/item/tank/internals,
-		/obj/item/bikehorn,
-		/obj/item/reagent_containers/food/snacks/grown/banana,
-		/obj/item/reagent_containers/food/snacks/grown/banana/bluespace,
-		/obj/item/grown/bananapeel,
-		/obj/item/reagent_containers/spray/waterflower,
-		/obj/item/instrument,
-	)
-	skins = list(
-		"cosmohonk" = list(
-			HELMET_FLAGS = list(
-				UNSEALED_LAYER = NECK_LAYER,
-				UNSEALED_CLOTHING = SNUG_FIT|THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				UNSEALED_INVISIBILITY = HIDEEARS|HIDEHAIR,
-				SEALED_INVISIBILITY = HIDEFACIALHAIR|HIDEMASK|HIDEEYES|HIDEFACE|HIDESNOUT,
-				SEALED_COVER = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF,
-			),
-			CHESTPLATE_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				SEALED_INVISIBILITY = HIDEJUMPSUIT,
-			),
-			GAUNTLETS_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
-			),
-			BOOTS_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
-			),
-		),
-	)
-
 /datum/mod_theme/syndicate
 	name = "syndicate"
 	desc = "A suit designed by Gorlex Marauders, offering armor ruled illegal in most of Spinward Stellar."
