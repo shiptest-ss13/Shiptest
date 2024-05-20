@@ -135,6 +135,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed)
 
+/// Used to empty this gun's magazine/cell/etc post-spawn
 /obj/item/gun/proc/set_empty()
 
 /// triggered on wield of two handed item
