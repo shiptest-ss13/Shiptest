@@ -116,7 +116,6 @@
 	nodamage = TRUE
 	range = 10
 	hitsound = 'sound/weapons/batonextend.ogg'
-	hitsound_wall = 'sound/weapons/batonextend.ogg'
 	suppressed = SUPPRESSED_VERY
 	//hit_threshhold = LATTICE_LAYER
 	/// Reference to the beam following the projectile.

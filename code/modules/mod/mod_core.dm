@@ -250,10 +250,10 @@
 
 /obj/item/mod/core/ethereal/charge_amount()
 	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
-	return charge_source?.crystal_charge || ETHEREAL_CHARGE_NONE
+	return charge_source?.crystal_charge || ELZUOSE_CHARGE_NONE
 
 /obj/item/mod/core/ethereal/max_charge_amount()
-	return ETHEREAL_CHARGE_FULL
+	return ELZUOSE_CHARGE_FULL
 
 /obj/item/mod/core/ethereal/add_charge(amount)
 	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
