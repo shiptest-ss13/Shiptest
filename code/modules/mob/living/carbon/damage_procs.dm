@@ -286,6 +286,8 @@
 
 /// Apply bleeding to one random bodypart.
 /mob/living/carbon/proc/cause_bleeding(amt)
+	if(amt <= 0)
+		return
 	var/list/obj/item/bodypart/parts = bodyparts.Copy()
 	if(!length(parts))
 		return
@@ -293,7 +295,9 @@
 	part_in_question.adjust_bleeding(amt)
 
 /// Heal bleeding from one random bodypart
-/mob/living/carbon/proc/heal_bodypart_bleeding(amt)
+/mob/living/carbon/proc/heal_bleeding(amt)
+	if(amt <= 0)
+		return
 	var/list/obj/item/bodypart/parts = get_bleeding_parts()
 	if(!length(parts))
 		return
@@ -304,6 +308,8 @@
 
 /// Apply bleeding to all bodyparts
 /mob/living/carbon/proc/cause_overall_bleeding(amt)
+	if(amt <= 0)
+		return
 	var/list/obj/item/bodypart/parts = bodyparts.Copy()
 	while(length(parts))
 		var/obj/item/bodypart/part_in_question = pick(parts)
@@ -317,6 +323,8 @@
 
 /// Heal bleeding from all bodyparts
 /mob/living/carbon/proc/heal_overall_bleeding(amt)
+	if(amt <= 0)
+		return
 	var/list/obj/item/bodypart/parts = get_bleeding_parts()
 	while(length(parts))
 		var/obj/item/bodypart/part_in_question = pick(parts)
