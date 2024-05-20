@@ -79,7 +79,6 @@
 					"<span class='userdanger'>[user] slits your throat...</span>")
 		log_combat(user, H, "finishes slicing the throat of")
 		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD)
-		
 		throat_in_question.adjust_bleeding(20)
 		H.apply_status_effect(/datum/status_effect/neck_slice)
 

@@ -19,8 +19,6 @@
 		user.visible_message(span_nicegreen("[user] cauterizes the bleeding on [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)]!"), span_nicegreen("You cauterize the bleeding on [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)]!"))
 	else
 		to_chat(user, span_warning("You were interrupted!"))
-		
-
 
 /mob/living/carbon/get_eye_protection()
 	. = ..()
