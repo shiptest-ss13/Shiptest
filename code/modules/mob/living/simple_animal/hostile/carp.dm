@@ -175,8 +175,8 @@
 	icon_dead = "megacarp_dead"
 	icon_gib = "megacarp_gib"
 	health_doll_icon = "megacarp"
-	maxHealth = 20
-	health = 20
+	maxHealth = 75
+	health = 75
 	pixel_x = -16
 	base_pixel_x = -16
 	mob_size = MOB_SIZE_LARGE
@@ -186,8 +186,8 @@
 	bonus_tame_chance = 0
 
 	obj_damage = 80
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 25
 
 	var/regen_cooldown = 0
 	var/rideable = FALSE
