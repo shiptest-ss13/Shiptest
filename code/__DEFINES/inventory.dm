@@ -93,8 +93,10 @@
 #define NO_VARIATION (1<<0)
 #define DIGITIGRADE_VARIATION (1<<1)
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
-#define VOX_VARIATION (1<<3)
-#define KEPORI_VARIATION (1<<4)
+#define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
+#define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
+#define VOX_VARIATION (1<<5)
+#define KEPORI_VARIATION (1<<6)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
