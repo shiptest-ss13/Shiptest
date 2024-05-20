@@ -464,6 +464,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
+	spawnwithmagazine = FALSE
 	safety_wording = "safety"
 	unique_reskin = list("Default" = "detective",
 		"Stainless Steel" = "detective_stainless",

@@ -29,14 +29,14 @@
 	var/multiload = TRUE
 	///Whether or not an ammo box skips the do_after process (e.g. speedloaders)
 	var/instant_load = FALSE
-	///Whether the magazine should start with nothing in it
-	var/start_empty = FALSE
+	///Amount of our max ammo we should start with, as a multiplier. Can be overridden by Initialize.
+	var/percent_fill = 1
 	///cost of all the bullets in the magazine/box
 	var/list/bullet_cost
 	///cost of the materials in the magazine/box itself
 	var/list/base_cost
 
-/obj/item/ammo_box/Initialize()
+/obj/item/ammo_box/Initialize(mapload, ammo_mod = percent_fill)
 	. = ..()
 	if(!base_icon_state)
 		base_icon_state = icon_state
@@ -48,8 +48,9 @@
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
 			LAZYSET(bullet_cost, material, material_amount)
-	if(!start_empty)
-		for(var/i = 1, i <= max_ammo, i++)
+	if(ammo_mod)
+		var/bullets = round(max_ammo * clamp(ammo_mod, 0, 1), 1)
+		for(var/i = 1, i <= bullets, i++)
 			stored_ammo += new ammo_type(src)
 	update_appearance()
 

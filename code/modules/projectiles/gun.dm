@@ -62,6 +62,9 @@
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
 
+	///Amount of max ammo our magazine or cell spawns with, as a multiplier. Used by energy/ballistic guns
+	var/percent_fill = 1
+
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
 	var/flight_x_offset = 0
@@ -131,6 +134,8 @@
 /obj/item/gun/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed)
+
+/obj/item/gun/proc/set_empty()
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)

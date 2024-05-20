@@ -8,5 +8,5 @@
 	name = "bowstring"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
 	max_ammo = 1
-	start_empty = TRUE
+	percent_fill = 0
 	caliber = "arrow"

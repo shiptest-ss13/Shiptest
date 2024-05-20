@@ -1,6 +1,14 @@
 /datum/supply_pack/gun
 	group = "Guns"
 	crate_type = /obj/structure/closet/crate/secure/weapon
+	var/start_empty = FALSE
+
+/datum/supply_pack/gun/fill(obj/structure/closet/crate/C)
+	. = ..()
+	if(!start_empty)
+		return .
+	for(var/obj/item/gun/G in C.contents)
+		G.set_empty()
 
 /*
 		Pistols

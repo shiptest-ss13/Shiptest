@@ -52,18 +52,21 @@
 /obj/item/gun/energy/get_cell()
 	return cell
 
-/obj/item/gun/energy/Initialize()
+/obj/item/gun/energy/Initialize(mapload, ammo_mod = percent_fill)
 	. = ..()
 	if(cell_type)
 		cell = new cell_type(src)
-	else
-		cell = new(src)
-	if(!dead_cell)
-		cell.give(cell.maxcharge)
+	if(ammo_mod)
+		cell.give(cell.maxcharge * ammo_mod)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
+	update_appearance()
+
+/obj/item/gun/energy/set_empty()
+	if(cell)
+		cell.use(cell.maxcharge)
 	update_appearance()
 
 /obj/item/gun/energy/ComponentInitialize()
