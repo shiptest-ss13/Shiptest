@@ -267,6 +267,10 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"CMSV",
 		"CMGSV",
 	),
+	"CLIP Government" = list(
+		"LGSV",
+		"CGSV",
+	),
 	"Nanotrasen" = list(
 		"NTSV",
 	),

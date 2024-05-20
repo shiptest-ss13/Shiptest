@@ -149,8 +149,7 @@ SUBSYSTEM_DEF(traumas)
 		"birds" = typecacheof(list(
 			/obj/item/clothing/mask/gas/plaguedoctor, /obj/item/reagent_containers/food/snacks/cracker,
 			/obj/item/clothing/suit/chickensuit, /obj/item/clothing/head/chicken,
-			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask,
-			/obj/item/clothing/head/helmet/space/freedom, /obj/item/clothing/suit/space/freedom)),
+			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask)),
 
 		"anime" = typecacheof(list(
 			/obj/item/clothing/under/costume/schoolgirl, /obj/item/katana, /obj/item/reagent_containers/food/snacks/sashimi,
