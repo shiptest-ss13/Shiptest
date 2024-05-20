@@ -228,7 +228,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/carp = 20,
-		/mob/living/simple_animal/hostile/carp/megacarp = 10,
+		/mob/living/simple_animal/hostile/carp/megacarp = 15,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5
 		)
 

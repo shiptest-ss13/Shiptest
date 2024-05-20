@@ -160,11 +160,11 @@
 	)
 
 	feature_spawn_list = list(
-		/obj/structure/geyser/random = 10,
+		/obj/structure/geyser/random = 5,
 		/obj/structure/spawner/mining/carp = 5,
 		/obj/structure/vein/asteroid = 10,
-		/obj/structure/vein/classtwo/asteroid = 20,
-		/obj/structure/vein/classthree/asteroid = 15
+		/obj/structure/vein/classtwo/asteroid = 15,
+		/obj/structure/vein/classthree/asteroid = 12
 	)
 
 	mob_spawn_list = list(

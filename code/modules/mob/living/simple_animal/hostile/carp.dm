@@ -175,8 +175,8 @@
 	icon_dead = "megacarp_dead"
 	icon_gib = "megacarp_gib"
 	health_doll_icon = "megacarp"
-	maxHealth = 75
-	health = 75
+	maxHealth = 60
+	health = 60
 	pixel_x = -16
 	base_pixel_x = -16
 	mob_size = MOB_SIZE_LARGE
