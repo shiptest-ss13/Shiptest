@@ -81,8 +81,7 @@
 	usesound = 'sound/items/tape.ogg'
 
 	var/lifespan = 300
-	var/healing_rate = 0.1
-	var/bleed_reduction = 0.1
+	var/bleed_reduction = 0.01
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay
 	var/other_delay = 10
@@ -182,7 +181,7 @@
 				C.update_damage_overlays()
 			return TRUE
 	if(affecting.can_bandage(user))
-		affecting.AddComponent(/datum/component/bandage, healing_rate, bleed_reduction, lifespan, name)
+		affecting.apply_bandage(bleed_reduction, lifespan, name)
 		to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
 		return TRUE
 	to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
@@ -270,7 +269,7 @@
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
 
-	lifespan = 800
+	lifespan = 400
 	nonorganic_heal = 20
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
@@ -295,7 +294,6 @@
 	desc = "Specialty insulated strips of adhesive plastic. Made for securing cables."
 	icon_state = "tape_e"
 
-	lifespan = 400
 	nonorganic_heal = 10
 	prefix = "insulated sticky"
 	siemens_coefficient = 0
@@ -319,6 +317,6 @@
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
-	lifespan = 800
+	lifespan = 500
 	nonorganic_heal = 30
 	prefix = "industry-standard sticky"

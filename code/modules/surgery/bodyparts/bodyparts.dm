@@ -247,7 +247,7 @@
 		break_bone()
 
 	// Bleeding is applied here
-	if(brute_dam+brute > (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute > (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
+	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
 		adjust_bleeding(brute/max_damage, BLOOD_LOSS_DAMAGE_CAP)
 
 	var/can_inflict = max_damage - get_damage()
@@ -337,20 +337,23 @@
 		return
 	if(owner.dna && (NOBLOOD in owner.dna.species.species_traits))
 		return
-	bleeding = round(clamp(bleeding+value, 0, maximum), 0.01)
+	bleeding = round(clamp(bleeding+value, 0, maximum), 0.001)
 
 /obj/item/bodypart/proc/can_bandage(user)
 	. = TRUE
 	if(is_pseudopart)
 		return FALSE
-	if(!get_damage() && !bleeding)
+	if(!bleeding)
 		if(user)
-			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] is already fully healed!"))
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] isn't bleeding!"))
 		return FALSE
 	if(GetComponent(/datum/component/bandage))
 		if(user)
 			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
 		return FALSE
+
+/obj/item/bodypart/proc/apply_bandage(bleed_reduction, lifespan, name)
+	AddComponent(/datum/component/bandage, bleed_reduction, lifespan, name)
 
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)

@@ -142,10 +142,9 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	var/healing_rate = 0.2
-	var/bleed_reduction = 0.1
+	var/bleed_reduction = 0.05
 
-	var/lifespan = 180
+	var/lifespan = 150
 	self_delay = 20
 	max_amount = 12
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -162,7 +161,7 @@
 			to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
 			return
 		if(BP.can_bandage(user))
-			BP.AddComponent(/datum/component/bandage, healing_rate, bleed_reduction, lifespan, "gauze")
+			BP.apply_bandage(bleed_reduction, lifespan, name)
 			user.visible_message(span_notice("[user] wraps [C]'s [parse_zone(BP.body_zone)] with [src]."), span_notice("You wrap [C]'s [parse_zone(check_zone(user.zone_selected))] with [src]."), span_hear("You hear ruffling cloth."))
 			return TRUE
 
@@ -185,9 +184,7 @@
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
 	desc = "A roll of cloth roughly cut from something that can stop bleeding and slowly heal wounds."
-	healing_rate = 0.1
-	bleed_reduction = 0.05
-	lifespan = 90
+	bleed_reduction = 0.025
 
 /obj/item/stack/medical/gauze/cyborg
 	custom_materials = null
