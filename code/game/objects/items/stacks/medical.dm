@@ -142,7 +142,7 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	var/bleed_reduction = 0.05
+	var/bleed_reduction = 0.02
 
 	var/lifespan = 150
 	self_delay = 20
@@ -184,7 +184,7 @@
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
 	desc = "A roll of cloth roughly cut from something that can stop bleeding and slowly heal wounds."
-	bleed_reduction = 0.025
+	bleed_reduction = 0.005
 
 /obj/item/stack/medical/gauze/cyborg
 	custom_materials = null

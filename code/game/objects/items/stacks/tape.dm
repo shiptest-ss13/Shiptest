@@ -81,7 +81,7 @@
 	usesound = 'sound/items/tape.ogg'
 
 	var/lifespan = 300
-	var/bleed_reduction = 0.01
+	var/bleed_reduction = 0.002
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay
 	var/other_delay = 10

@@ -14,7 +14,7 @@
 	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
 	if(do_after(user, heal_time, target = src))
 		playsound(user, 'sound/surgery/cautery2.ogg', 20)
-		BP.apply_bandage(0.02, W.get_temperature()/BLOOD_CAUTERIZATION_RATIO, "cauterization")
+		BP.apply_bandage(0.005, W.get_temperature()/BLOOD_CAUTERIZATION_RATIO, "cauterization")
 		BP.receive_damage(burn = W.get_temperature()/BLOOD_CAUTERIZATION_DAMAGE_RATIO) //my body is a MACHINE that turns BLEEDING into BURN DAMAGE
 		user.visible_message(span_nicegreen("[user] cauterizes some of [user == src ? "their" : "[src]'s"] bleeding!"), span_nicegreen("You cauterize some of [user == src ? "your" : "[src]'s"] bleeding!"))
 	else

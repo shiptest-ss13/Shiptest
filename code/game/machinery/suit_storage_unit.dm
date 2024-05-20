@@ -438,7 +438,7 @@
 					for(var/obj/item/bodypart/grilling as anything in bacon.get_bleeding_parts(TRUE))
 						if(!grilling.can_bandage())
 							continue
-						grilling.apply_bandage(0.02, 600, "cauterization")
+						grilling.apply_bandage(0.005, 600, "cauterization")
 			playsound(src, 'sound/machines/airlocks/standard/close.ogg', 25, TRUE)
 			var/list/things_to_clear = list() //Done this way since using GetAllContents on the SSU itself would include circuitry and such.
 			if(suit)
