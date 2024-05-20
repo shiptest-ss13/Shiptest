@@ -73,7 +73,7 @@
 
 /obj/item/storage/guncase/illestren
 /obj/item/storage/guncase/illestren/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/illestren/empty
+	new /obj/item/gun/ballistic/rifle/illestren/empty(src)
 	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
 	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
 

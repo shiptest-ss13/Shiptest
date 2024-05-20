@@ -86,7 +86,7 @@
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-/obj/item/gun/ballistic/rifle/illestren/no_mag
+/obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
