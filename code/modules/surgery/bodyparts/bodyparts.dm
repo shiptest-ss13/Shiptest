@@ -339,6 +339,7 @@
 		return
 	bleeding = round(clamp(bleeding+value, 0, maximum), 0.001)
 
+/// Checks if the bodypart is viable for bandaging, if it isn't, tells the person trying (if present) what's stopping it
 /obj/item/bodypart/proc/can_bandage(user)
 	. = TRUE
 	if(is_pseudopart)

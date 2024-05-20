@@ -32,7 +32,6 @@
 	if(lifespan <= 0)
 		drop_bandage()
 
-
 /datum/component/bandage/proc/bandage_effects()
 	var/obj/item/bodypart/heal_target = parent
 	lifespan -= 1 + heal_target.bleeding // particularly nasty bleeding can burn through dressing faster
