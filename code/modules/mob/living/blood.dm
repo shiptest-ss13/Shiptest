@@ -4,18 +4,6 @@
 				BLOOD SYSTEM
 ****************************************************/
 
-/*mob/living/carbon/human/proc/suppress_bloodloss(amount) //KILLING these
-	if(bleedsuppress)
-		return
-	else
-		bleedsuppress = TRUE
-		addtimer(CALLBACK(src, PROC_REF(resume_bleeding)), amount)
-
-/mob/living/carbon/human/proc/resume_bleeding()
-	if(stat != DEAD && get_bleeding_parts(TRUE))
-		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")*/
-
-
 /mob/living/carbon/monkey/handle_blood()
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
 		//Blood regeneration if there is some space

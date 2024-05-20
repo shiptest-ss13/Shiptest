@@ -143,7 +143,6 @@
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	var/bleed_reduction = 0.02
-
 	var/lifespan = 150
 	self_delay = 20
 	max_amount = 12

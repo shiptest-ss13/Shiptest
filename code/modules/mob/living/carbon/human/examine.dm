@@ -259,7 +259,7 @@
 
 
 	if(LAZYLEN(get_bandaged_parts()))
-		msg += "[t_He] [t_is] bandaged with something.\n"
+		msg += "[t_He] [t_has] some dressed bleeding.\n"
 
 	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts(TRUE)
 	if(LAZYLEN(bleed_check))
@@ -267,7 +267,6 @@
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
 		else
 			msg += "<B>[t_He] [t_is] bleeding!</B>\n"
-
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
@@ -420,7 +419,7 @@
 	. = ..()
 	for(var/obj/item/bodypart/BP as anything in get_bandaged_parts())
 		var/datum/component/bandage/B = BP.GetComponent(/datum/component/bandage)
-		. += span_notice("Their [parse_zone(BP.body_zone)] is dressed with [B.bandage_name]")
+		. += span_notice("[p_their(TRUE)] [parse_zone(BP.body_zone)] is dressed with [B.bandage_name]")
 	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts(TRUE))
 		var/bleed_text
 		switch(BP.bleeding)
@@ -432,7 +431,7 @@
 				bleed_text = "heavily!"
 			else
 				bleed_text = "significantly!!"
-		. += span_warning("Their [parse_zone(BP.body_zone)] is bleeding [bleed_text]")
+		. += span_warning("[p_their(TRUE)] [parse_zone(BP.body_zone)] is bleeding [bleed_text]")
 
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
