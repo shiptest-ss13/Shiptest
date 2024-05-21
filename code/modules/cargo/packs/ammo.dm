@@ -82,8 +82,8 @@
 
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
-	desc = "Contains a 30 round ammo boxes for refilling .38 weapons."
-	cost = 500
+	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
+	cost = 250
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
@@ -149,6 +149,12 @@
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
 	cost = 1000
 
+/datum/supply_pack/ammo/a300
+	name = ".300 Magnum Stripper Clip Crate"
+	desc = "Contains a five round .300 Magnum stripper clip for sniper rifles such as the HP Scout."
+	contains = list(/obj/item/ammo_box/a300)
+	cost = 750
+
 /datum/supply_pack/ammo/ebr_ammo
 	name = "M514 EBR .308 Magazine Crate"
 	desc = "Contains a .308 magazine for the M514 EBR rifle, containing ten rounds."
@@ -178,6 +184,12 @@
 	desc = "Contains a eighty-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/ammo_box/a762_40)
 	cost = 500
+
+/datum/supply_pack/ammo/a357_ammo_box
+	name = ".357 Ammo Box Crate"
+	desc = "Contains a fifty-round .357 box for revolvers such as the Scarborough Revolver and the HP Firebrand."
+	contains = list(/obj/item/ammo_box/a357_box)
+	cost = 250
 
 /datum/supply_pack/ammo/c556mmHITP_ammo_box
 	name = "5.56 Caseless Ammo Box Crate"
@@ -215,6 +227,12 @@
 	contains = list(/obj/item/ammo_box/c9mm/ap)
 	cost = 500
 
+/datum/supply_pack/ammo/a357match_ammo_box
+	name = ".357 Match Ammo Box Crate"
+	desc = "Contains a fifty-round .357 match box for better performance against armor."
+	contains = list(/obj/item/ammo_box/a357_box/match)
+	cost = 500
+
 /datum/supply_pack/ammo/c556mmHITPap_ammo_box
 	name = "5.56 caseless AP Ammo Box Crate"
 	desc = "Contains a fifty-round 5.56mm caseless boxloaded with armor piercing ammo."
@@ -237,6 +255,12 @@
 	name = "9mm HP Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/c9mm/hp)
+	cost = 500
+
+/datum/supply_pack/ammo/a357hp_ammo_box
+	name = ".357 HP Ammo Box Crate"
+	desc = "Contains a fifty-round .357 box loaded with hollow point ammo, great against unarmored targets."
+	contains = list(/obj/item/ammo_box/a357_box/hp)
 	cost = 500
 
 /datum/supply_pack/ammo/c10mmhp_ammo_box
@@ -309,6 +333,18 @@
 	name = "8x50mm Hollow Point Crate"
 	desc = "Contains a twenty-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/c8x50mmhp_box)
+	cost = 500
+
+/datum/supply_pack/ammo/a300_box
+	name = ".300 Ammo Box Crate"
+	desc = "Contains a twenty-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
+	contains = list(/obj/item/ammo_box/a300_box)
+	cost = 500
+
+/datum/supply_pack/ammo/a4570_box
+	name = ".45-70 Ammo Box Crate"
+	desc = "Contains a twelve-round box containing devastatingly powerful .45-70 caliber ammunition."
+	contains = list(/obj/item/ammo_box/a4570)
 	cost = 500
 
 /datum/supply_pack/ammo/ferropelletboxcrate
