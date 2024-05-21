@@ -136,11 +136,3 @@ to accommodate additional materials.
 /obj/item/reagent_containers/glass/mortar/mushroom
 	icon_state = "mortar_shroom"
 	custom_materials = list(/datum/material/biomass = MINERAL_MATERIAL_AMOUNT)
-
-// Mushroom recipes are all over the place so I'm just putting it here
-/datum/crafting_recipe/mushroom_mortar
-	name = "Mushroom Mortar"
-	result = /obj/item/reagent_containers/glass/mortar/mushroom
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
-	time = 30
-	category = CAT_PRIMAL
