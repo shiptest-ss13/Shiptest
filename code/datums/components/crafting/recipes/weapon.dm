@@ -125,10 +125,8 @@
 	name = "Pulse Slug Shell"
 	result = /obj/item/ammo_casing/shotgun/pulseslug
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor = 3,
-				/obj/item/stock_parts/micro_laser = 1,
-				/obj/item/stock_parts/cell = 1,
-				/datum/reagent/lithium = 5)
+				/obj/item/stock_parts/capacitor/adv = 2,
+				/obj/item/stock_parts/micro_laser/ultra = 1)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 5
 	category = CAT_WEAPONRY
@@ -137,7 +135,7 @@
 /datum/crafting_recipe/dragonsbreath
 	name = "Dragonsbreath Shell"
 	result = /obj/item/ammo_casing/shotgun/dragonsbreath
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1, /datum/reagent/phosphorus = 10)
+	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1, /datum/reagent/phosphorus = 5)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 5
 	category = CAT_WEAPONRY
@@ -159,11 +157,8 @@
 	name = "Ion Scatter Shell"
 	result = /obj/item/ammo_casing/shotgun/ion
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/micro_laser = 2,
-				/obj/item/stock_parts/capacitor = 2,
-				/obj/item/stock_parts/scanning_module = 1,
-				/datum/reagent/iron = 5,
-				/datum/reagent/uranium = 5)
+				/obj/item/stock_parts/micro_laser/ultra = 1,
+				/obj/item/stock_parts/subspace/crystal = 1)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 5
 	category = CAT_WEAPONRY
@@ -184,10 +179,8 @@
 	name = "Scatter Laser Shell"
 	result = /obj/item/ammo_casing/shotgun/laserscatter
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor = 1,
-				/obj/item/stock_parts/micro_laser = 3,
-				/obj/item/stock_parts/cell = 1,
-				/datum/reagent/lithium = 5)
+				/obj/item/stock_parts/capacitor/adv = 1,
+				/obj/item/stock_parts/micro_laser/high = 1)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 5
 	category = CAT_WEAPONRY
