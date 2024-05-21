@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	custom_materials = list(/datum/material/iron=75)
 	subspace_transmission = TRUE
 	headset = TRUE
+	listening = TRUE
 	canhear_range = 0 // can't hear headsets from very far away
 
 	slot_flags = ITEM_SLOT_EARS
