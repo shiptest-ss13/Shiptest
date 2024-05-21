@@ -50,3 +50,4 @@
 	. = ..()
 	. += span_notice("[ammo_set ? "It's set to hold [ammo_name]\s. The box can hold up to [max_ammo] rounds." : "It doesn't have an ammo type set. Use a bullet on the box to set it."]")
 	. += span_notice("You can use a pen on it to rename the box.")
+
