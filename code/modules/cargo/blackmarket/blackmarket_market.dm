@@ -13,8 +13,8 @@
 	var/list/categories	= list()
 
 /// Adds item to the available items and add it's category if it is not in categories yet.
-/datum/blackmarket_market/proc/add_item(datum/blackmarket_item/item)
-	if(!prob(initial(item.availability_prob)))
+/datum/blackmarket_market/proc/add_item(datum/blackmarket_item/item, paired)
+	if(!prob(initial(item.availability_prob)) && !paired)
 		return FALSE
 
 	if(ispath(item))
@@ -25,6 +25,10 @@
 		available_items[item.category] = list()
 
 	available_items[item.category] += item
+
+	if(item.pair_item)
+		add_item(item.pair_item, TRUE)
+
 	return TRUE
 
 /// Handles buying the item, this is mainly for future use and moving the code away from the uplink.
@@ -49,5 +53,4 @@
 /datum/blackmarket_market/blackmarket
 	name = "Black Market"
 	shipping = list(SHIPPING_METHOD_LTSRBT	=50,
-					SHIPPING_METHOD_LAUNCH	=10,
-					SHIPPING_METHOD_TELEPORT=75)
+					SHIPPING_METHOD_LAUNCH	=10)
