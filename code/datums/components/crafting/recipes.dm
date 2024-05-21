@@ -16,7 +16,6 @@
 	if(!(result in reqs))
 		blacklist += result
 
-
 /**
  * Run custom pre-craft checks for this recipe
  *
