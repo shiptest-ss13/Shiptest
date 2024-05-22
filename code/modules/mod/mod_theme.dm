@@ -294,7 +294,7 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/storage/bag/ore,
 	)
-	inbuilt_modules = list(/obj/item/mod/module/ash_accretion, /obj/item/mod/module/sphere_transform)
+	inbuilt_modules = list()
 	skins = list(
 		"mining" = list(
 			HELMET_FLAGS = list(
@@ -373,7 +373,7 @@
 		/obj/item/tank/internals,
 		/obj/item/paper
 	)
-	inbuilt_modules = list(/obj/item/mod/module/hydraulic, /obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet)
+	inbuilt_modules = list(/obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet)
 	skins = list(
 		"loader" = list(
 			HELMET_FLAGS = list(
@@ -883,60 +883,6 @@
 				UNSEALED_INVISIBILITY = HIDEFACIALHAIR,
 				SEALED_INVISIBILITY = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT,
 				SEALED_COVER = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF,
-			),
-			CHESTPLATE_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				SEALED_INVISIBILITY = HIDEJUMPSUIT,
-			),
-			GAUNTLETS_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
-			),
-			BOOTS_FLAGS = list(
-				UNSEALED_CLOTHING = THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				CAN_OVERSLOT = TRUE,
-			),
-		),
-	)
-
-/datum/mod_theme/enchanted
-	name = "enchanted"
-	desc = "The Wizard Federation's relatively low-tech MODsuit. Is very protective, though."
-	extended_desc = "The Wizard Federation's relatively low-tech MODsuit. This armor employs not \
-		plasteel or carbon fibre, but space dragon scales for its protection. Recruits are expected to \
-		gather these themselves, but the effort is well worth it, the suit being well-armored against threats \
-		both mundane and mystic. Rather than wholly relying on a cell, which would surely perish \
-		under the load, several naturally-occurring bluespace gemstones have been utilized as \
-		default means of power. The hood and platform boots are of unknown usage, but it's speculated that \
-		wizards trend towards the dramatic."
-	default_skin = "enchanted"
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 35, "bio" = 100, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF|ACID_PROOF
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	siemens_coefficient = 0
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 5
-	slowdown_inactive = 0.75
-	slowdown_active = 0.25
-	ui_theme = "wizard"
-	inbuilt_modules = list(/obj/item/mod/module/anti_magic/wizard)
-	allowed_suit_storage = list(
-		/obj/item/flashlight,
-		/obj/item/tank/internals,
-		/obj/item/teleportation_scroll,
-		/obj/item/vibro_weapon,
-		/obj/item/gun/magic,
-	)
-	skins = list(
-		"enchanted" = list(
-			HELMET_FLAGS = list(
-				UNSEALED_LAYER = null,
-				UNSEALED_CLOTHING = SNUG_FIT|THICKMATERIAL,
-				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
-				UNSEALED_INVISIBILITY = HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT,
-				UNSEALED_COVER = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF,
 			),
 			CHESTPLATE_FLAGS = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,

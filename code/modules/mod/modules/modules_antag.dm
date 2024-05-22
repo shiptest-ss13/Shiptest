@@ -131,58 +131,6 @@
 		return SHIELD_BLOCK
 	return NONE
 
-/obj/item/mod/module/energy_shield/wizard
-	name = "MOD battlemage shield module"
-	desc = "The caster wielding this spell gains a visible barrier around them, channeling arcane power through \
-		specialized runes engraved onto the surface of the suit to generate a wall of force. \
-		This shield can perfectly nullify attacks ranging from high-caliber rifles to magic missiles, \
-		though can also be drained by more mundane attacks. It will not protect the caster from social ridicule."
-	icon_state = "battlemage_shield"
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0 //magic
-	use_power_cost = DEFAULT_CHARGE_DRAIN * 0 //magic too
-	max_charges = 15
-	recharge_start_delay = 0 SECONDS
-	charge_recovery = 8
-	shield_icon_file = 'icons/effects/magic.dmi'
-	shield_icon = "mageshield"
-	recharge_path = /obj/item/wizard_armour_charge
-
-///Magic Nullifier - Protects you from magic.
-/obj/item/mod/module/anti_magic
-	name = "MOD magic nullifier module"
-	desc = "A series of obsidian rods installed into critical points around the suit, \
-		vibrated at a certain low frequency to enable them to resonate. \
-		This creates a low-range, yet strong, magic nullification field around the user, \
-		aided by a full replacement of the suit's normal coolant with holy water. \
-		Spells will spall right off this field, though it'll do nothing to help others believe you about all this."
-	icon_state = "magic_nullifier"
-	removable = FALSE
-	incompatible_modules = list(/obj/item/mod/module/anti_magic)
-
-/obj/item/mod/module/anti_magic/on_suit_activation()
-	ADD_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
-	ADD_TRAIT(mod.wearer, TRAIT_HOLY, MOD_TRAIT)
-
-/obj/item/mod/module/anti_magic/on_suit_deactivation(deleting = FALSE)
-	REMOVE_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
-	REMOVE_TRAIT(mod.wearer, TRAIT_HOLY, MOD_TRAIT)
-
-/obj/item/mod/module/anti_magic/wizard
-	name = "MOD magic neutralizer module"
-	desc = "The caster wielding this spell gains an invisible barrier around them, channeling arcane power through \
-		specialized runes engraved onto the surface of the suit to generate anti-magic field. \
-		The field will neutralize all magic that comes into contact with the user. \
-		It will not protect the caster from social ridicule."
-	icon_state = "magic_neutralizer"
-
-/obj/item/mod/module/anti_magic/wizard/on_suit_activation()
-	ADD_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
-	ADD_TRAIT(mod.wearer, TRAIT_ANTIMAGIC_NO_SELFBLOCK, MOD_TRAIT)
-
-/obj/item/mod/module/anti_magic/wizard/on_suit_deactivation(deleting = FALSE)
-	REMOVE_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
-	REMOVE_TRAIT(mod.wearer, TRAIT_ANTIMAGIC_NO_SELFBLOCK, MOD_TRAIT)
-
 ///Insignia - Gives you a skin specific stripe.
 /obj/item/mod/module/insignia
 	name = "MOD insignia module"

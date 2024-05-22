@@ -48,7 +48,7 @@
 	module_type = MODULE_TOGGLE
 	complexity = 2
 	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.5
-	incompatible_modules = list(/obj/item/mod/module/magboot, /obj/item/mod/module/atrocinator)
+	incompatible_modules = list(/obj/item/mod/module/magboot)
 	cooldown_time = 0.5 SECONDS
 	/// Slowdown added onto the suit.
 	var/slowdown_active = 0.5
@@ -134,85 +134,6 @@
 /obj/projectile/tether/Destroy()
 	QDEL_NULL(line)
 	return ..()
-
-///Radiation Protection - Protects the user from radiation, gives them a geiger counter and rad info in the panel.
-/obj/item/mod/module/rad_protection
-	name = "MOD radiation protection module"
-	desc = "A module utilizing polymers and reflective shielding to protect the user against ionizing radiation; \
-		a common danger in space."
-		//This comes with software to notify the wearer that they're even in a radioactive area,
-		//giving a voice to an otherwise silent killer.
-	icon_state = "radshield"
-	complexity = 2
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
-	incompatible_modules = list(/obj/item/mod/module/rad_protection)
-	tgui_id = "rad_counter"
-	var/current_tick_amount = 0
-	var/radiation_count = 0
-	//var/grace = RAD_GEIGER_GRACE_PERIOD
-	var/datum/looping_sound/geiger/soundloop
-
-/obj/item/mod/module/rad_protection/on_suit_activation()
-	soundloop = new(src, FALSE, TRUE)
-	soundloop.volume = 5
-	START_PROCESSING(SSobj, src)
-	for(var/obj/item/part in mod.mod_parts)
-		part.armor = part.armor.modifyRating(arglist(list("rad" = 100)))
-
-/obj/item/mod/module/rad_protection/on_suit_deactivation(deleting = FALSE)
-	QDEL_NULL(soundloop)
-	STOP_PROCESSING(SSobj, src)
-	for(var/obj/item/part in mod.mod_parts)
-		part.armor = part.armor.modifyRating(arglist(list("rad" = -100)))
-
-/*obj/item/mod/module/rad_protection/process(delta_time)
-	radiation_count = LPFILTER(radiation_count, current_tick_amount, delta_time, RAD_GEIGER_RC)
-
-	if(current_tick_amount)
-		grace = RAD_GEIGER_GRACE_PERIOD
-	else
-		grace -= delta_time
-		if(grace <= 0)
-			radiation_count = 0
-
-	current_tick_amount = 0
-
-	soundloop.last_radiation = radiation_count*/
-
-/obj/item/mod/module/rad_protection/add_ui_data()
-	. = ..()
-	.["userradiated"] = mod.wearer?.radiation || FALSE
-	.["usertoxins"] = mod.wearer?.getToxLoss() || 0
-	.["usermaxtoxins"] = mod.wearer?.getMaxHealth() || 0
-	.["threatlevel"] = radiation_count
-
-///Constructor - Lets you build quicker and create RCD holograms.
-/obj/item/mod/module/constructor
-	name = "MOD constructor module"
-	desc = "This module entirely occupies the wearer's forearm, notably causing conflict with \
-		advanced arm servos meant to carry crewmembers. However, it functions as an \
-		extremely advanced construction hologram scanner, as well as containing the \
-		latest engineering schematics combined with inbuilt memory to help the user build walls."
-	icon_state = "constructor"
-	module_type = MODULE_USABLE
-	complexity = 2
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.2
-	use_power_cost = DEFAULT_CHARGE_DRAIN * 2
-	incompatible_modules = list(/obj/item/mod/module/constructor, /obj/item/mod/module/quick_carry)
-	cooldown_time = 11 SECONDS
-
-/obj/item/mod/module/constructor/on_suit_activation()
-	ADD_TRAIT(mod.wearer, TRAIT_QUICK_BUILD, MOD_TRAIT)
-
-/obj/item/mod/module/constructor/on_suit_deactivation(deleting = FALSE)
-	REMOVE_TRAIT(mod.wearer, TRAIT_QUICK_BUILD, MOD_TRAIT)
-
-/*obj/item/mod/module/constructor/on_use()
-	. = ..()
-	if(!.)
-		return
-	rcd_scan(src, fade_time = 10 SECONDS)
-	drain_power(use_power_cost)*/
 
 ///Mister - Sprays water over an area.
 /obj/item/mod/module/mister

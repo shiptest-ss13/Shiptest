@@ -273,7 +273,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SCOOPABLE "scoopable"
 //your smooches actually deal damage to their target
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
-#define TRAIT_CAN_SIGN_ON_COMMS "can_sign_on_comms"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits

@@ -26,7 +26,6 @@
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
-		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/magboot,
 	)
@@ -36,7 +35,6 @@
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
-		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/t_ray,
 	)
@@ -47,7 +45,6 @@
 	initial_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/welding,
-		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
 	)
@@ -108,9 +105,6 @@
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/pepper_shoulders,
-		/obj/item/mod/module/criminalcapture,
-		/obj/item/mod/module/dispenser/mirage,
 	)
 
 /obj/item/mod/control/pre_equipped/safeguard
@@ -122,8 +116,6 @@
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/megaphone,
-		/obj/item/mod/module/projectile_dampener,
-		/obj/item/mod/module/pepper_shoulders,
 	)
 
 /obj/item/mod/control/pre_equipped/magnate
@@ -134,7 +126,6 @@
 		/obj/item/mod/module/hat_stabilizer,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack/advanced,
-		//obj/item/mod/module/pathfinder,
 	)
 
 /obj/item/mod/control/pre_equipped/traitor
@@ -145,7 +136,6 @@
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack,
-		//obj/item/mod/module/pathfinder,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/dna_lock,
 	)
@@ -197,15 +187,6 @@
 		/obj/item/mod/module/flamethrower,
 	)
 
-/obj/item/mod/control/pre_equipped/enchanted
-	theme = /datum/mod_theme/enchanted
-	applied_core = /obj/item/mod/core/infinite
-	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
-		/obj/item/mod/module/energy_shield/wizard,
-		/obj/item/mod/module/emp_shield/advanced,
-	)
-
 /obj/item/mod/control/pre_equipped/ninja
 	theme = /datum/mod_theme/ninja
 	applied_cell = /obj/item/stock_parts/cell/super
@@ -225,7 +206,6 @@
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
-		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/tether,
 	)
@@ -257,11 +237,11 @@
 
 /obj/item/mod/control/pre_equipped/responsory/security
 	insignia_type = /obj/item/mod/module/insignia/security
-	additional_module = /obj/item/mod/module/pepper_shoulders
+	additional_module = /obj/item/mod/module/megaphone
 
 /obj/item/mod/control/pre_equipped/responsory/engineer
 	insignia_type = /obj/item/mod/module/insignia/engineer
-	additional_module = /obj/item/mod/module/rad_protection
+	additional_module = /obj/item/mod/module/magboot
 
 /obj/item/mod/control/pre_equipped/responsory/medic
 	insignia_type = /obj/item/mod/module/insignia/medic
@@ -272,33 +252,6 @@
 	additional_module = /obj/item/mod/module/clamp
 
 /obj/item/mod/control/pre_equipped/responsory/chaplain
-	insignia_type = /obj/item/mod/module/insignia/chaplain
-	additional_module = /obj/item/mod/module/injector
-
-/obj/item/mod/control/pre_equipped/responsory/inquisitory
-	applied_skin = "inquisitory"
-	initial_modules = list(
-		/obj/item/mod/module/anti_magic,
-		/obj/item/mod/module/storage/large_capacity,
-		/obj/item/mod/module/welding,
-		/obj/item/mod/module/emp_shield,
-		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/flashlight,
-	)
-
-/obj/item/mod/control/pre_equipped/responsory/inquisitory/commander
-	insignia_type = /obj/item/mod/module/insignia/commander
-	additional_module = /obj/item/mod/module/power_kick
-
-/obj/item/mod/control/pre_equipped/responsory/inquisitory/security
-	insignia_type = /obj/item/mod/module/insignia/security
-	additional_module = /obj/item/mod/module/pepper_shoulders
-
-/obj/item/mod/control/pre_equipped/responsory/inquisitory/medic
-	insignia_type = /obj/item/mod/module/insignia/medic
-	additional_module = /obj/item/mod/module/quick_carry
-
-/obj/item/mod/control/pre_equipped/responsory/inquisitory/chaplain
 	insignia_type = /obj/item/mod/module/insignia/chaplain
 	additional_module = /obj/item/mod/module/injector
 
@@ -345,7 +298,6 @@
 		/obj/item/mod/module/storage/bluespace,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/tether,
 		/obj/item/mod/module/injector,
 	)
@@ -369,9 +321,6 @@
 
 /obj/item/mod/control/pre_equipped/empty/syndicate
 	theme = /datum/mod_theme/syndicate
-
-/obj/item/mod/control/pre_equipped/empty/syndicate/honkerative
-	applied_skin = "honkerative"
 
 /obj/item/mod/control/pre_equipped/empty/elite
 	theme = /datum/mod_theme/elite

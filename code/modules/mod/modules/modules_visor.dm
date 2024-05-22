@@ -83,12 +83,3 @@
 		small as a rodent, it still produces irritating red overlay. They say these also let you see behind you."
 	icon_state = "thermal_visor"
 	visor_traits = list(SEE_MOBS)
-
-//Night Visor - Gives you night vision.
-/obj/item/mod/module/visor/night
-	name = "MOD night visor module"
-	desc = "A heads-up display installed into the visor of the suit. Typical for both civilian and military applications, \
-		this allows the user to perceive their surroundings while in complete darkness, enhancing the view by tenfold; \
-		yet brightening everything into a spooky green glow. They say these also let you see behind you."
-	icon_state = "night_visor"
-	//visor_traits = list(TRAIT_TRUE_NIGHT_VISION)

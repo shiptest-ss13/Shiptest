@@ -142,9 +142,7 @@
 ///Flashlight - Gives the suit a customizable flashlight.
 /obj/item/mod/module/flashlight
 	name = "MOD flashlight module"
-	desc = "A simple pair of flashlights installed on the left and right sides of the helmet, \
-		useful for providing light in a variety of ranges and colors. \
-		Some survivalists prefer the color green for their illumination, for reasons unknown."
+	desc = "A simple pair of flashlights installed on the left and right sides of the helmet."
 	icon_state = "flashlight"
 	module_type = MODULE_TOGGLE
 	complexity = 1
@@ -159,10 +157,6 @@
 	light_on = FALSE
 	/// Charge drain per range amount.
 	var/base_power = DEFAULT_CHARGE_DRAIN * 0.1
-	/// Minimum range we can set.
-	var/min_range = 2
-	/// Maximum range we can set.
-	var/max_range = 5
 
 /obj/item/mod/module/flashlight/on_activation()
 	. = ..()
@@ -191,25 +185,6 @@
 	light_icon.appearance_flags = RESET_COLOR
 	light_icon.color = light_color
 	. += light_icon
-
-/*obj/item/mod/module/flashlight/get_configuration()
-	. = ..()
-	.["light_color"] = add_ui_configuration("Light Color", "color", light_color)
-	.["light_range"] = add_ui_configuration("Light Range", "number", light_range)
-
-/obj/item/mod/module/flashlight/configure_edit(key, value)
-	switch(key)
-		if("light_color")
-			value = input(usr, "Pick new light color", "Flashlight Color") as color|null
-			if(!value)
-				return
-			if(is_color_dark(value, 50))
-				balloon_alert(mod.wearer, "too dark!")
-				return
-			set_light_color(value)
-			mod.wearer.update_clothing(mod.slot_flags)
-		if("light_range")
-			set_light_range(clamp(value, min_range, max_range))*/
 
 ///Dispenser - Dispenses an item after a time passes.
 /obj/item/mod/module/dispenser
@@ -242,32 +217,6 @@
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 	drain_power(use_power_cost)
 	return dispensed
-
-///Longfall - Nullifies fall damage, removing charge instead.
-/obj/item/mod/module/longfall
-	name = "MOD longfall module"
-	desc = "Useful for protecting both the suit and the wearer, \
-		utilizing commonplace systems to convert the possible damage from a fall into kinetic charge, \
-		as well as internal gyroscopes to ensure the user's safe falling. \
-		Useful for mining, monorail tracks, or even skydiving!"
-	icon_state = "longfall"
-	complexity = 1
-	use_power_cost = DEFAULT_CHARGE_DRAIN * 5
-	incompatible_modules = list(/obj/item/mod/module/longfall)
-
-/*obj/item/mod/module/longfall/on_suit_activation()
-	RegisterSignal(mod.wearer, COMSIG_LIVING_Z_IMPACT, PROC_REF(z_impact_react))
-
-/obj/item/mod/module/longfall/on_suit_deactivation(deleting = FALSE)
-	UnregisterSignal(mod.wearer, COMSIG_LIVING_Z_IMPACT)
-
-/obj/item/mod/module/longfall/proc/z_impact_react(datum/source, levels, turf/fell_on)
-	if(!drain_power(use_power_cost*levels))
-		return
-	new /obj/effect/temp_visual/mook_dust(fell_on)
-	mod.wearer.Stun(levels * 1 SECONDS)
-	to_chat(mod.wearer, span_notice("[src] protects you from the damage!"))
-	return NO_Z_IMPACT_DAMAGE*/
 
 ///Thermal Regulator - Regulates the wearer's core temperature.
 /obj/item/mod/module/thermal_regulator
@@ -424,7 +373,6 @@
 			/obj/item/clothing/head/caphat,
 			/obj/item/clothing/head/crown,
 			/obj/item/clothing/head/centhat,
-			//obj/item/clothing/head/centcom_cap,
 			/obj/item/clothing/head/pirate,
 			/obj/item/clothing/head/santa,
 			/obj/item/clothing/head/hardhat/reindeer,
@@ -433,12 +381,10 @@
 			/obj/item/clothing/head/rabbitears,
 			/obj/item/clothing/head/festive,
 			/obj/item/clothing/head/powdered_wig,
-			//obj/item/clothing/head/weddingveil,
 			/obj/item/clothing/head/that,
 			/obj/item/clothing/head/nursehat,
 			/obj/item/clothing/head/chefhat,
 			/obj/item/clothing/head/papersack,
-			//obj/item/clothing/head/caphat/beret,
 			))
 
 /obj/item/mod/module/hat_stabilizer/on_suit_activation()
@@ -497,20 +443,3 @@
 		balloon_alert_to_viewers("the hat falls to the floor!")
 	attached_hat = null
 	mod.wearer.update_inv_back(mod.slot_flags)
-
-///Sign Language Translator - allows people to sign over comms using the modsuit's gloves.
-/obj/item/mod/module/signlang_radio
-	name = "MOD glove translator module"
-	desc = "A module that adds motion sensors into the suit's gloves, \
-		which works in tandem with a short-range subspace transmitter, \
-		letting the audibly impaired use sign language over comms."
-	icon_state = "signlang_radio"
-	complexity = 1
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
-	incompatible_modules = list(/obj/item/mod/module/signlang_radio)
-
-/obj/item/mod/module/signlang_radio/on_suit_activation()
-	ADD_TRAIT(mod.wearer, TRAIT_CAN_SIGN_ON_COMMS, MOD_TRAIT)
-
-/obj/item/mod/module/signlang_radio/on_suit_deactivation(deleting = FALSE)
-	REMOVE_TRAIT(mod.wearer, TRAIT_CAN_SIGN_ON_COMMS, MOD_TRAIT)
