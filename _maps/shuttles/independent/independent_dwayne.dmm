@@ -2149,10 +2149,12 @@
 /area/ship/cargo)
 "Jq" = (
 /obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/mineral/titanium/twenty,
+/obj/effect/turf_decal/ntspaceworks_big/six,
+/obj/item/stack/sheet/mineral/titanium{
+	amount = 10
+	},
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/effect/turf_decal/ntspaceworks_big/six,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Jy" = (
