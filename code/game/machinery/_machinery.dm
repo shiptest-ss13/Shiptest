@@ -669,24 +669,3 @@ Class Procs:
 		else if(clicksound)
 			playsound(src, clicksound, clickvol)
 	return
-
-/obj/machinery/powertest
-	name = "powertest"
-	desc = "test."
-	icon = 'icons/obj/machines/autolathe.dmi'
-	icon_state = "autolathe"
-	use_power = IDLE_POWER_USE
-	idle_power_usage = IDLE_DRAW_LOW
-	active_power_usage = ACTIVE_DRAW_HIGH
-	power_channel = AREA_USAGE_EQUIP
-	var/on = FALSE
-
-/obj/machinery/powertest/CtrlClick(mob/user)
-	if(can_interact(user))
-		on = !on
-		to_chat(usr, "<span class=\"alert\">[src] has changed setting!</span>")
-		if(on)
-			set_active_power()
-		else
-			set_idle_power()
-	return ..()
