@@ -380,8 +380,7 @@
 	for(var/turf/affected_turf in tripwire_turfs)
 		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
-/obj/item/mine/directional/now_armed()
-	planted = TRUE
+/obj/item/mine/directional/claymore/now_armed()
 	draw_tripwires()
 	. = ..()
 
@@ -652,6 +651,10 @@
 	casingtype = /obj/item/ammo_casing/caseless/shrapnel
 
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+/obj/item/mine/directional/claymore/now_armed()
+	planted = TRUE
+	. = ..()
 
 //world icons would save like 20 lines here
 /obj/item/mine/directional/claymore/update_icon_state()
