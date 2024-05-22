@@ -306,8 +306,8 @@
 	mechsyringe.forceMove(get_turf(chassis))
 	reagents.trans_to(mechsyringe, min(mechsyringe.volume, reagents.total_volume), transfered_by = chassis.occupant)
 	syringes -= mechsyringe
-	mechsyringe.icon = 'icons/obj/chemical.dmi'
-	mechsyringe.icon_state = "syringeproj"
+	mechsyringe.icon = 'icons/obj/chemical/misc.dmi'
+	mechsyringe.icon_state = "potgreen"
 	playsound(chassis, 'sound/items/syringeproj.ogg', 50, TRUE)
 	log_message("Launched [mechsyringe] from [src], targeting [target].", LOG_MECHA)
 	var/mob/originaloccupant = chassis.occupant
