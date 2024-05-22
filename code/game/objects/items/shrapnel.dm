@@ -35,7 +35,7 @@
 	name = "flying shrapnel shard"
 	damage = 10
 	range = 10
-	armour_penetration = -20
+	armour_penetration = -5
 	dismemberment = 25
 	ricochets_max = 2
 	ricochet_chance = 40
@@ -49,7 +49,7 @@
 
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 8
-	armour_penetration = -35
+	armour_penetration = -10
 	dismemberment = 15
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
@@ -118,7 +118,7 @@
 
 
 //claymore shrapnel stuff//
-//2 small bursts- one that harasses people passing by a bit aways, one that absolutely brutalizes point-blank targets.
+//2 small bursts- one that harasses people passing by a bit aways, one that brutalizes point-blank targets.
 /obj/item/ammo_casing/caseless/shrapnel
 	name = "directional shrapnel burst :D"
 	desc = "I May Have Overreacted"
@@ -138,12 +138,19 @@
 /obj/projectile/bullet/shrapnel/claymore
 	name = "ceramic splinter"
 	range = 4
-	armour_penetration = -10
+	armour_penetration = 0
 
 /obj/projectile/bullet/shrapnel/claymore/pointbl
 	name = "large ceramic shard"
 	range = 2
 	damage = 18
 	dismemberment = 30
-	armour_penetration = 0
+	armour_penetration = 10
 
+/obj/item/ammo_casing/caseless/shrapnel/plasma
+	name = "directional plasma burst"
+	projectile_type = /obj/projectile/energy/plasmabolt
+
+/obj/item/ammo_casing/caseless/shrapnel/shred/plasma
+	name = "point blank directional plasma burst"
+	projectile_type = /obj/projectile/energy/plasmabolt/shred

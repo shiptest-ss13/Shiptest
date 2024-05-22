@@ -45,18 +45,18 @@
 	. = ..()
 	icon_state = "[base_icon_state][triggered ? "_exploding" : null][!armed && anchored ? "_arming" : null][armed && anchored && !triggered ? "_armed" : null]"
 
-//mines have a small chance to be triggered by damage, but they take longer to explode
+/// mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
 	if(prob(35) & obj_integrity > 0)
 		blast_delay = blast_delay * 2
 		trigger_mine()
 
-//insert your horrible fate here
+/// insert your horrible fate here
 /obj/item/mine/proc/mine_effect(mob/victim)
 	return
 
-//handles controlled deactivation
+/// handles controlled deactivation
 /obj/item/mine/proc/disarm()
 	if(triggered) //no turning back now
 		return
@@ -65,7 +65,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 	return
 
-//using an unarmed mine inhand deploys it.
+/// using an unarmed mine inhand deploys it.
 /obj/item/mine/attack_self(mob/user)
 	if(!armed)
 		if(!loccheck(user))
@@ -92,7 +92,7 @@
 			return FALSE
 	return TRUE
 
-//let them know the mine's done cooking
+/// let them know the mine's done cooking
 /obj/item/mine/proc/now_armed()
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
@@ -132,7 +132,7 @@
 	else
 		addtimer(CALLBACK(src, PROC_REF(blast_now), triggerer), blast_delay)
 
-//NOW we actually blow up
+///NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
 	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
 	sporks.set_up(3, 1, src)
@@ -146,7 +146,7 @@
 	if(triggered)//setting triggered to false in mine_effect() creates a reusable mine
 		qdel(src)
 
-//trying to pick up a live mine is probably up there when it comes to terrible ideas
+///trying to pick up a live mine is probably up there when it comes to terrible ideas
 /obj/item/mine/attack_hand(mob/user)
 	if(armed)
 		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
@@ -163,7 +163,7 @@
 			user.visible_message(span_notice("[user] withdraws their hand from \the [src]."), span_notice("You decide against picking up \the [src]."))
 	. =..()
 
-//just don't.
+///just don't.
 /obj/item/mine/attackby(obj/item/I, mob/user)
 	if(!armed)
 		to_chat(user, span_notice("You smack \the [src] with [I]. Thankfully, nothing happens."))
@@ -217,7 +217,7 @@
 		else if(!isnull(unlucky_sod))
 			. += span_danger("The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now.")
 
-//step 1: the mistake
+///step 1: the mistake
 /obj/item/mine/pressure/proc/on_entered(datum/source, atom/movable/arrived)
 	SIGNAL_HANDLER
 	if(!can_trigger(arrived))
@@ -248,7 +248,7 @@
 			trigger_mine(arrived)
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
-//step 2: the consequences
+///step 2: the consequences
 /obj/item/mine/pressure/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
 	if(hair_trigger)
@@ -267,7 +267,7 @@
 	clicked = FALSE
 	. = ..()
 
-//handles disarming(and failing to disarm)
+///handles disarming(and failing to disarm)
 /obj/item/mine/pressure/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(sealed)
@@ -284,11 +284,9 @@
 	else
 		. = ..()
 
-//
-//PROXIMITY MINES
-//Mines that explode when someone moves nearby. Simpler, because I don't have to worry about saving step info or disarming logic
-//
 
+///PROXIMITY MINES
+///Mines that explode when someone moves nearby. Simpler, because I don't have to worry about saving step info or disarming logic
 /obj/item/mine/proximity
 	name = "dummy proximity mine"
 	blast_delay = 15 DECISECONDS
@@ -338,10 +336,8 @@
 	QDEL_NULL(proximity_monitor)
 	return
 
-//
-//DIRECTIONAL MINES
-//Once deployed, keeps an eye on a line of turfs in the faced direction. If something moves in them, explode.
-//
+///DIRECTIONAL MINES
+///Once deployed, keeps an eye on a line of turfs in the faced direction. If something moves in them, explode.
 /obj/item/mine/directional
 	name = "directional mine"
 	desc = "An anti-personnel device that activates when an object moves in front of it. This one does nothing and is for testing purposes only."
@@ -349,20 +345,20 @@
 	blast_delay = 1 DECISECONDS
 	arm_delay = 5 SECONDS
 
-	//range of tripwire
+	///range of tripwire
 	var/trigger_range = 4
 
-	//projectile casing to fire in the selected direction when the mine is triggered.
-	//null prevents a projectile from being fired.
+	///projectile casing to fire in the selected direction when the mine is triggered.
+	///null prevents a projectile from being fired.
 	var/obj/item/ammo_casing/casingtype = null
 
-	//cache of turfs for detection area
+	///cache of turfs for detection area
 	var/list/tripwire_turfs
 
-	//for aiming the resulting projectiles
+	///for aiming the resulting projectiles
 	var/turf/target_turf
 
-//kills any existing tripwires
+///kills any existing tripwires
 /obj/item/mine/directional/proc/remove_tripwires()
 	if(tripwire_turfs)
 		for(var/turf/affected_turf in tripwire_turfs)
@@ -372,7 +368,7 @@
 		target_turf = null
 	return
 
-//sets up tripwires(or recreates them, if already present)
+///sets up tripwires(or recreates them, if already present)
 /obj/item/mine/directional/proc/draw_tripwires()
 	if(tripwire_turfs)
 		remove_tripwires()
@@ -385,6 +381,7 @@
 		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
 /obj/item/mine/directional/now_armed()
+	planted = TRUE
 	draw_tripwires()
 	. = ..()
 
@@ -404,7 +401,7 @@
 	INVOKE_ASYNC(src, PROC_REF(trigger_mine), arrived)
 
 
-//pew pew
+///pew pew
 /obj/item/mine/directional/mine_effect(mob/victim)
 	if(casingtype && target_turf && src.loc != victim.loc)
 		var/obj/item/ammo_casing/casing = new casingtype(src)
@@ -416,10 +413,12 @@
 	visible_message(span_danger("With a soft clunk, the [src]'s securing bolts retract."))
 	. = ..()
 
-//handles weird cases like ship movement or teleporting
+///handles weird cases like ship movement or teleporting
 /obj/item/mine/directional/Moved()
 	. = ..()
-	if(armed & !triggered & loc)
+	if(!loc)
+		return
+	if(armed & !triggered)
 		draw_tripwires()
 
 //
@@ -569,7 +568,7 @@
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
 
-//like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
+///like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
 /obj/item/mine/proximity/explosive/sting
 	name = "\improper'Stinger' Crowd Management Device"
 	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
@@ -623,12 +622,10 @@
 	spawn_type = /mob/living/simple_animal/hostile/viscerator
 
 
-//
-//Claymores
-//shrapnel based dir explosive, extreme short range
-//FRONT TOWARDS ENEMY
-//
 
+///Claymores
+///shrapnel based dir explosive, extreme short range
+///FRONT TOWARDS ENEMY
 /obj/item/mine/directional/claymore
 	name = "C-10 Claymore"
 	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
@@ -704,6 +701,13 @@
 		if(shredtype)
 			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
 			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)
+
+/obj/item/mine/directional/claymore/plasma
+	name = "\improper Etherbor EC-1"
+	desc = "A proximity explosive designed by the PGF for ambushing advancing infantry & defending corridors. Cooks armored targets to well-done."
+	shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred/plasma
+	casingtype = /obj/item/ammo_casing/caseless/shrapnel/plasma
+	manufacturer = MANUFACTURER_PGF
 
 //
 //GIMMICK MINES//
@@ -851,6 +855,7 @@ LIVE_MINE_HELPER(proximity/spawner/manhack)
 LIVE_MINE_HELPER(proximity/explosive/plasma)
 
 LIVE_MINE_HELPER(directional/claymore)
+LIVE_MINE_HELPER(directional/claymore/plasma)
 
 LIVE_MINE_HELPER(pressure/gas)
 LIVE_MINE_HELPER(pressure/kickmine)
