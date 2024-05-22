@@ -203,7 +203,9 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "cabinet";
 	name = "Captain's wardobe";
-	req_access_txt = "20"
+	req_access_txt = "20";
+	close_sound = 'sound/machines/wooden_closet_close.ogg';
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
 	},
 /obj/item/storage/backpack/satchel/cap,
 /obj/item/storage/backpack/captain,
@@ -627,6 +629,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "kf" = (
@@ -893,6 +896,10 @@
 /area/ship/engineering)
 "nL" = (
 /obj/structure/closet/crate/large,
+/obj/item/flashlight/seclite{
+	pixel_y = -6;
+	pixel_x = 3
+	},
 /obj/item/gun/energy/kinetic_accelerator,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
@@ -1096,7 +1103,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "pt" = (
-/obj/item/radio/intercom/directional/south,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -1975,7 +1981,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Gx" = (
-/obj/structure/closet/emcloset/wall/directional/south,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "GH" = (
@@ -2813,9 +2819,9 @@
 /area/ship/hallway/central)
 "RU" = (
 /obj/structure/closet/crate/internals,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/tank/internals/emergency_oxygen/engi,
