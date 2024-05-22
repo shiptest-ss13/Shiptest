@@ -554,7 +554,7 @@
 		/obj/item/clothing/suit/armor/vest/bulletproof = 3,
 		/obj/item/clothing/suit/armor/riot/clip = 3,
 
-		/obj/item/clothing/suit/space/hardsuit/security/independent/clip = 3,
+		/obj/item/clothing/suit/space/hardsuit/clip_patroller = 3,
 		/obj/item/clothing/suit/space/hardsuit/clip_spotter = 3,
 
 		/obj/item/clothing/head/helmet/bulletproof/x11/clip = 3,
