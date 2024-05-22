@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tegu-class Communications Freighter",
+	"prefix": "NTSV",
+	"namelists": [
+		"NANOTRASEN",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"WEAPONS"
+	],
+	"map_short_name": "Tegu-class",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_tegu.dmm",
+	"description": "The Tegu-class is a ship dedicated to distributing and installing telecommunications equipment.",
+	"tags": ["Cargo", "Engineer", "Telecomms", "Subshuttle"],
+	"limit": 1,
+	"starting_funds": 4000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/nanotrasen/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineering Director": {
+			"outfit": "/datum/outfit/job/nanotrasen/ce",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 2
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

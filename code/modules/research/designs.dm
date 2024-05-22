@@ -167,3 +167,19 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk/ammo_c9mm/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/c9mmautolathe()
+
+/obj/item/disk/design_disk/telecomms
+	name = "design disk - Telecomms parts"
+	desc = "A design disk containing blueprints for specialized telecommunications parts."
+	color = "#64A8D9"
+	max_blueprints = 7
+
+/obj/item/disk/design_disk/telecomms/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/subspace_ansible()
+	blueprints[2] = new /datum/design/hyperwave_filter()
+	blueprints[3] = new /datum/design/subspace_amplifier()
+	blueprints[4] = new /datum/design/subspace_treatment()
+	blueprints[5] = new /datum/design/subspace_analyzer()
+	blueprints[6] = new /datum/design/subspace_crystal()
+	blueprints[7] = new /datum/design/subspace_transmitter()

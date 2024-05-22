@@ -251,7 +251,7 @@
 	name = "Subspace Ansible"
 	desc = "A compact module capable of sensing extradimensional activity."
 	id = "s-ansible"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
 	build_path = /obj/item/stock_parts/subspace/ansible
 	category = list("Stock Parts")
@@ -261,7 +261,7 @@
 	name = "Hyperwave Filter"
 	desc = "A tiny device capable of filtering and converting super-intense radiowaves."
 	id = "s-filter"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
 	build_path = /obj/item/stock_parts/subspace/filter
 	category = list("Stock Parts")
@@ -271,7 +271,7 @@
 	name = "Subspace Amplifier"
 	desc = "A compact micro-machine capable of amplifying weak subspace transmissions."
 	id = "s-amplifier"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/gold = 100, /datum/material/uranium = 100)
 	build_path = /obj/item/stock_parts/subspace/amplifier
 	category = list("Stock Parts")
@@ -281,7 +281,7 @@
 	name = "Subspace Treatment Disk"
 	desc = "A compact micro-machine capable of stretching out hyper-compressed radio waves."
 	id = "s-treatment"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 200)
 	build_path = /obj/item/stock_parts/subspace/treatment
 	category = list("Stock Parts")
@@ -291,7 +291,7 @@
 	name = "Subspace Analyzer"
 	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
 	id = "s-analyzer"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/subspace/analyzer
 	category = list("Stock Parts")
@@ -301,7 +301,7 @@
 	name = "Ansible Crystal"
 	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
 	id = "s-crystal"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/glass = 800, /datum/material/silver = 100, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/subspace/crystal
 	category = list("Stock Parts")
@@ -311,7 +311,7 @@
 	name = "Subspace Transmitter"
 	desc = "A large piece of equipment used to open a window into the subspace dimension."
 	id = "s-transmitter"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/glass = 100, /datum/material/silver = 100, /datum/material/uranium = 100)
 	build_path = /obj/item/stock_parts/subspace/transmitter
 	category = list("Stock Parts")
