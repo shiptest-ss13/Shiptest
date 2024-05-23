@@ -444,26 +444,6 @@
 	combat_slowdown = 0.5
 	jetpack = null
 
-//2nd Battlegroup Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
-	name = "beige-red hardsuit helmet"
-	desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in combat mode. Manufactured by Second Battlegroup."
-	icon_state = "hardsuit1-sbg"
-	item_state = "hardsuit1-sbg"
-	hardsuit_type = "sbg"
-
-/obj/item/clothing/suit/space/hardsuit/syndi/sbg
-	name = "beige-red hardsuit"
-	desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in combat mode. Manufactured by the Second Battlegroup."
-	icon_state = "hardsuit1-sbg"
-	item_state = "hardsuit1-sbg"
-	hardsuit_type = "sbg"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
-	lightweight = 1
-	jetpack = null
-
 //Hardliner Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	name = "white-red hardsuit helmet"
@@ -1099,12 +1079,6 @@
 	icon_state = "hardsuit0-frontier"
 	hardsuit_type = "frontier"
 
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
-	name = "\improper CMM Patroller hardsuit helmet"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
-	icon_state = "hardsuit0-cmm-patrol"
-	hardsuit_type = "cmm-patrol"
-
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
 	name = "security hardsuit"
@@ -1122,13 +1096,6 @@
 	icon_state = "hardsuit_frontier"
 	hardsuit_type = "hardsuit_frontier"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-
-/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
-	name = "\improper CMM Patroller hardsuit"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
-	icon_state = "hardsuit-cmm-patrol"
-	hardsuit_type = "hardsuit-cmm-patrol"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent

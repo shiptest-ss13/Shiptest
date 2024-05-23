@@ -170,10 +170,10 @@
 	colour = "#ffff66"
 
 /datum/client_colour/glass_colour/red
-	colour = "#ffaaaa"
+	colour = "#ffbfcf"
 
 /datum/client_colour/glass_colour/darkred
-	colour = "#bb5555"
+	colour = "#e5a5b5"
 
 /datum/client_colour/glass_colour/orange
 	colour = "#ffbb99"
@@ -182,7 +182,10 @@
 	colour = "#ffddaa"
 
 /datum/client_colour/glass_colour/purple
-	colour = "#ff99ff"
+	colour = "#ffbbff"
+
+/datum/client_colour/glass_colour/darkpurple
+	colour = "#dd99dd"
 
 /datum/client_colour/glass_colour/gray
 	colour = "#cccccc"

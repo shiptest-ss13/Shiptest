@@ -25,10 +25,12 @@
 
 /datum/outfit/job/frontiersmen/assistant
 	name = "Frontiersmen - Rookie"
+	id_assignment = "Rookie"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 
 	head = /obj/item/clothing/head/beret/sec/frontier
+	shoes = /obj/item/clothing/shoes/sneakers/black // you do not get jackboots!!!! fuck you!!!!
 
 // Atmospheric Technician
 
@@ -63,14 +65,13 @@
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	head = /obj/item/clothing/head/caphat/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	gloves = /obj/item/clothing/gloves/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 /datum/outfit/job/frontiersmen/captain/admiral
 	name = "Frontiersmen - Admiral"
+	id_assignment = "Admiral"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
 	head = /obj/item/clothing/head/caphat/frontier/admiral
@@ -78,12 +79,11 @@
 	ears = /obj/item/radio/headset/pirate/captain
 	gloves = /obj/item/clothing/gloves/color/evening
 	suit = null
-	mask = null
-	glasses = null
 
 // Chief Engineer
 /datum/outfit/job/frontiersmen/ce
-	name = "Frontiersmen - Senior Sapper"
+	name = "Frontiersmen - Senior Mechanic"
+	id_assignment = "Senior Mechanic"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
@@ -97,24 +97,23 @@
 
 // Engineer
 /datum/outfit/job/frontiersmen/engineer
-	name = "Frontiersmen - Sapper"
+	name = "Frontiersmen - Mechanic"
+	id_assignment = "Mechanic"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	accessory = /obj/item/clothing/accessory/armband/engine
-	belt = /obj/item/storage/belt/utility/full/engi
-	suit = /obj/item/clothing/suit/toggle/industrial
+	suit = /obj/item/clothing/suit/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
-	glasses = /obj/item/clothing/glasses/welding
-	head = /obj/item/clothing/head/beret/sec/frontier
+	head = /obj/item/clothing/head/hardhat
 
-	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 
 // Cook
 
 /datum/outfit/job/frontiersmen/cook
 	name = "Frontiersmen - Steward"
+	id_assignment = "Steward"
 	job_icon = "cook"
 	jobtype = /datum/job/cook
 
@@ -126,6 +125,7 @@
 
 /datum/outfit/job/frontiersmen/hop
 	name = "Frontiersmen - Helmsman"
+	id_assignment = "Helmsman"
 	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
@@ -138,7 +138,8 @@
 
 // Head of Security
 /datum/outfit/job/frontiersmen/hos
-	name = "Frontiersmen - Shipswain"
+	name = "Frontiersmen - Deck Boss"
+	id_assignment = "Deck Boss"
 	job_icon = "headofsecurity"
 	jobtype = /datum/job/hos
 
@@ -155,12 +156,12 @@
 
 /datum/outfit/job/frontiersmen/security
 	name = "Frontiersmen - Boarder"
+	id_assignment = "Boarder"
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
 	accessory = /obj/item/clothing/accessory/armband
-	head = /obj/item/clothing/head/beret/sec/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = null
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/combat
@@ -173,12 +174,12 @@
 // Medical Doctor
 
 /datum/outfit/job/frontiersmen/doctor
-	name = "Frontiersmen - Aidman"
+	name = "Frontiersmen - Surgeon"
+	id_assignment = "Surgeon"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/kitchen/knife/combat/survival
-	backpack_contents = list(/obj/item/storage/firstaid/medical)

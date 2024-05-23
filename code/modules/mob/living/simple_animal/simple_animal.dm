@@ -374,8 +374,8 @@
 
 /mob/living/simple_animal/get_status_tab_items()
 	. = ..()
-	. += ""
 	. += "Health: [round((health / maxHealth) * 100)]%"
+	. += "Intent: [a_intent]"
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)
@@ -636,7 +636,7 @@
 
 	switch(togglestatus)
 		if(AI_Z_OFF)
-			LAZYADDASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
 
 		else
 			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)

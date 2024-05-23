@@ -13,7 +13,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/deagle/gold = 2,
 		/obj/item/gun/ballistic/automatic/pistol/deagle/camo = 2,
 		/obj/item/gun/ballistic/automatic/pistol/candor = 2,
-		/obj/item/gun/ballistic/automatic/smg/proto/unrestricted = 2,
+		/obj/item/gun/ballistic/automatic/smg/proto = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 2,
 		/obj/item/gun/ballistic/automatic/gyropistol = 1,
 		/obj/item/gun/ballistic/shotgun = 2)
@@ -32,5 +32,4 @@
 	resistance_flags = FIRE_PROOF
 	default_price = 150
 	extra_price = 500
-	payment_department = ACCOUNT_SEC
 	light_mask = "liberation-light-mask"

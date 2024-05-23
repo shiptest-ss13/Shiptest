@@ -118,7 +118,7 @@
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker. It can hold up to 50 units."
-	icon = 'icons/obj/chemical.dmi' //Should I modularize this? Yes. Will I do it?
+	icon = 'icons/obj/chemical/beakers.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
 	custom_materials = list(/datum/material/glass=500)
@@ -213,6 +213,9 @@
 	name = "epinephrine reserve tank"
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
 
+/obj/item/reagent_containers/glass/beaker/large/fuel
+	list_reagents = list(/datum/reagent/fuel = 100)
+
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 
@@ -293,7 +296,6 @@
 /obj/item/reagent_containers/glass/filter
 	name = "seperatory funnel"
 	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
-	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beakerfilter"
 	item_state = "beaker"
 	volume = 100

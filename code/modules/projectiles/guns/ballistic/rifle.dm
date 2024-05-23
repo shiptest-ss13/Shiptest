@@ -113,6 +113,14 @@
 		item_state = "illestren_factory_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/rifle/illestren/sawn
+	name = "sawn-off Illestren rifle"
+	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
+	item_state = "illestren_sawn"
+	sawn_off = TRUE
+	weapon_weight = WEAPON_MEDIUM
+
+
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"
 	desc = "A bolt-action sniper rifle used by Solarian troops. Beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
@@ -164,7 +172,6 @@
 	name = "arcane barrage"
 	desc = "Pew Pew Pew."
 	fire_sound = 'sound/weapons/emitter.ogg'
-	pin = /obj/item/firing_pin/magic
 	icon = 'icons/obj/guns/projectile.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'

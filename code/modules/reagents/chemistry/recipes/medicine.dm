@@ -315,12 +315,12 @@ WS End */
 	required_reagents = list(/datum/reagent/medicine/lavaland_extract = 1, /datum/reagent/medicine/bonefixingjuice = 1, /datum/reagent/titanium = 5)
 
 /datum/chemical_reaction/pure_soulus_dust_hollow
-	results = list(/datum/reagent/medicine/soulus/pure = 10,)
-	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/hollowwater = 10)
+	results = list(/datum/reagent/medicine/soulus/pure = 20,)
+	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/water/hollowwater = 10)
 
 /datum/chemical_reaction/pure_soulus_dust_holy
-	results = list(/datum/reagent/medicine/soulus/pure = 10,)
-	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/holywater = 10)
+	results = list(/datum/reagent/medicine/soulus/pure = 20,)
+	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/water/holywater = 10)
 
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)

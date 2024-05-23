@@ -123,20 +123,20 @@
 			//Security/Command
 			if("Captain")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/flask/gold
-			if("Head of Security")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Head of Security")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Head of Personnel")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/trophy/silver_cup
-			if("Warden")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Warden")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Security Officer")
-				heirloom_type = pick(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)
+				heirloom_type = pick(/obj/item/clothing/head/beret/sec)
 			if("Detective")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/bottle/whiskey
 			if("Lawyer")
-				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
+				heirloom_type = pick(/obj/item/gavelhammer)
 			if("Brig Physician") //WS edit - Brig Physicians
-				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) //WS edit - Brig Physicians
+				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller) //WS edit - Brig Physicians
 			if("Prisoner")
 				heirloom_type = /obj/item/pen/blue
 			//RnD
@@ -479,7 +479,7 @@
 	if(prob(85) || (istype(mind_check) && mind_check.mind))
 		return
 
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), quirk_holder, "<span class='smallnotice'>You make eye contact with [A].</span>"), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='smallnotice'>You make eye contact with [A].</span>"), 3)
 
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
@@ -504,7 +504,7 @@
 			msg += "causing you to freeze up!"
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), quirk_holder, "<span class='userdanger'>[msg]</span>"), 3) // so the examine signal has time to fire and this will print after
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='userdanger'>[msg]</span>"), 3) // so the examine signal has time to fire and this will print after
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/mood_event/anxiety_eyecontact

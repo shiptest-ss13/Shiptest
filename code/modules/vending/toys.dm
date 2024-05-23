@@ -8,9 +8,9 @@
 	light_mask = "donksoft-light-mask"
 	circuit = /obj/item/circuitboard/machine/vending/donksofttoyvendor
 	products = list(
-		/obj/item/gun/ballistic/automatic/toy/unrestricted = 10,
-		/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted = 10,
-		/obj/item/gun/ballistic/shotgun/toy/unrestricted = 10,
+		/obj/item/gun/ballistic/automatic/toy = 10,
+		/obj/item/gun/ballistic/automatic/toy/pistol = 10,
+		/obj/item/gun/ballistic/shotgun/toy = 10,
 		/obj/item/toy/sword = 10,
 		/obj/item/ammo_box/foambox = 20,
 		/obj/item/toy/foamblade = 10,
@@ -19,8 +19,8 @@
 		/obj/item/clothing/head/syndicatefake = 5)
 	contraband = list(
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted = 10,
-		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted = 10,
+		/obj/item/gun/ballistic/automatic/smg/c20r/toy = 10,
+		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy = 10,
 		/obj/item/toy/katana = 10,
 		/obj/item/dualsaber/toy = 5)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -28,7 +28,6 @@
 	refill_canister = /obj/item/vending_refill/donksoft
 	default_price = 150
 	extra_price = 300
-	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/donksoft
 	machine_name = "Donksoft Toy Vendor"

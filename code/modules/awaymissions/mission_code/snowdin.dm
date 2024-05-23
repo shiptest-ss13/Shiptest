@@ -225,7 +225,8 @@
 						if(plasma_parts.len)
 							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
 							PP.emote("scream")
-							NB.limb_id = "plasmaman"//change the species_id of the limb to that of a plasmaman
+							NB.limb_id = "plasmaman" //change the species_id of the limb to that of a plasmaman
+							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
 							PP.visible_message(
@@ -513,7 +514,7 @@
 				/obj/item/organ/brain/alien = 17,
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
-				/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted = 16,
+				/obj/item/gun/ballistic/automatic/smg/c20r = 16,
 				/obj/item/gun/magic/wand/resurrection/inert = 15,
 				/obj/item/gun/magic/wand/resurrection = 10,
 				/obj/item/uplink/old = 2,

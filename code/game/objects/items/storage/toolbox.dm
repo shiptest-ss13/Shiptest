@@ -10,7 +10,7 @@
 	throwforce = 12
 	throw_speed = 2
 	throw_range = 7
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 500)
 	attack_verb = list("robusted")
 	hitsound = 'sound/weapons/smash.ogg'
@@ -56,7 +56,7 @@
 			new /obj/item/flashlight/glowstick(src)
 		if(3)
 			new /obj/item/flashlight/flare(src)
-	new /obj/item/radio/off(src)
+	new /obj/item/radio(src)
 
 /obj/item/storage/toolbox/emergency/old
 	name = "rusty red toolbox"
@@ -238,14 +238,14 @@
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"
 	icon_state = "ammobox_850"
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/illestren_a850r(src)
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/c8x50mm_box(src)
 
-/obj/item/storage/toolbox/ammo/a762_39/PopulateContents()
-	name = "ammo can (7.62x39mm)"
+/obj/item/storage/toolbox/ammo/a762_40/PopulateContents()
+	name = "ammo can (7.62x40mm CLIP)"
 	icon_state = "ammobox_762"
 	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a762_39(src)
+		new /obj/item/ammo_box/a762_40(src)
 
 /obj/item/storage/toolbox/ammo/a308/PopulateContents()
 	name = "ammo can (.308)"

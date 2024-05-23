@@ -65,6 +65,7 @@
 	desc = "Suit for a cyborg costume."
 	icon_state = "death"
 	item_state = "death"
+	mob_overlay_state = "cardborg"
 	flags_1 = CONDUCT_1
 	fire_resist = T0C+5200
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
@@ -310,7 +311,6 @@
 	body_parts_covered = HEAD
 	clothing_flags = THICKMATERIAL
 	flags_inv = HIDEHAIR|HIDEEARS
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/suit/hooded/bloated_human	//OH MY GOD WHAT HAVE YOU DONE!?!?!?
 	name = "bloated human suit"
@@ -326,6 +326,8 @@
 /obj/item/clothing/head/hooded/human_head
 	name = "bloated human head"
 	desc = "A horribly bloated and mismatched human head."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "lingspacehelmet"
 	body_parts_covered = HEAD
 	flags_cover = HEADCOVERSEYES
@@ -400,7 +402,7 @@
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
-	desc = "Pompadour not included."
+	desc = "This makes you feel like the coolest guy in town!"
 	icon_state = "leatherjacket"
 	item_state = "hostrench"
 	resistance_flags = NONE
@@ -447,7 +449,7 @@
 
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"
-	desc = "A canvas jacket styled after classical American military garb. Feels sturdy, yet comfortable."
+	desc = "A canvas jacket styled after traditional military garb. Feels sturdy, yet comfortable."
 	icon_state = "militaryjacket"
 	item_state = "militaryjacket"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
@@ -512,8 +514,9 @@
 
 /obj/item/clothing/suit/caution
 	name = "wet floor sign"
-	desc = "Caution! Wet Floor!"
+	desc = "No running."
 	icon_state = "caution"
+	icon = 'icons/obj/janitor.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	force = 1
@@ -659,16 +662,9 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
 
-/obj/item/clothing/suit/coordinator
-	name = "coordinator jacket"
-	desc = "A jacket for a party ooordinator, stylish!."
-	icon_state = "capformal"
-	item_state = "capspacesuit"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/suit/hawaiian
-	name = "hawaiian overshirt"
-	desc = "A cool shirt for chilling on the beach."
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_blue"
 	item_state = "hawaiian_blue"
 
@@ -685,12 +681,3 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
-
-/obj/item/clothing/suit/gorlex
-	name = "\improper 2nd Battlegroup jacket"
-	desc = "An armored jacket worn by the 2nd Battlegroup."
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	icon_state = "gorlexjacket"
-	item_state = "gorlexjacket"
-	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

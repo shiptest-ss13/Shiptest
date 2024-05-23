@@ -86,10 +86,6 @@
 /mob/living/carbon/alien/IsAdvancedToolUser()
 	return has_fine_manipulation
 
-/mob/living/carbon/alien/get_status_tab_items()
-	. = ..()
-	. += "Intent: [a_intent]"
-
 /mob/living/carbon/alien/getTrail()
 	if(getBruteLoss() < 200)
 		return pick (list("xltrails_1", "xltrails2"))
@@ -184,3 +180,7 @@
 /mob/living/carbon/alien/on_standing_up()
 	. = ..()
 	update_icons()
+
+/mob/living/carbon/alien/examine(mob/user)
+	. = ..()
+	. += "It's a strange creature."

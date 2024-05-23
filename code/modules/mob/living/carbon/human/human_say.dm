@@ -7,9 +7,15 @@
 	else
 		. = ..()
 
-/mob/living/carbon/human/GetVoice()
+/mob/living/carbon/human/GetVoice(if_no_voice = get_generic_name())
 	if(istype(wear_mask, /obj/item/clothing/mask/chameleon))
-		var/obj/item/clothing/mask/chameleon/V = wear_mask
+		var/obj/item/clothing/mask/chameleon/chameleon_mask = wear_mask
+		if(chameleon_mask.voice_change && wear_id)
+			var/obj/item/card/id/idcard = wear_id.GetID()
+			if(istype(idcard))
+				return idcard.registered_name
+	else if(istype(wear_mask, /obj/item/clothing/mask/gas/syndicate/voicechanger))
+		var/obj/item/clothing/mask/gas/syndicate/voicechanger/V = wear_mask
 		if(V.voice_change && wear_id)
 			var/obj/item/card/id/idcard = wear_id.GetID()
 			if(istype(idcard))
@@ -18,18 +24,17 @@
 				return real_name
 		else
 			return real_name
-	if(istype(wear_mask, /obj/item/clothing/mask/infiltrator))
-		var/obj/item/clothing/mask/infiltrator/V = wear_mask
-		if(V.voice_unknown)
-			return ("Unknown")
-		else
-			return real_name
+	else if(istype(wear_mask, /obj/item/clothing/mask/infiltrator))
+		var/obj/item/clothing/mask/infiltrator/infiltrator_mask = wear_mask
+		if(infiltrator_mask.voice_unknown)
+			return if_no_voice
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling && changeling.mimicing)
 			return changeling.mimicing
-	if(GetSpecialVoice())
-		return GetSpecialVoice()
+	var/special_voice = GetSpecialVoice()
+	if(special_voice)
+		return special_voice
 	return real_name
 
 /mob/living/carbon/human/IsVocal()

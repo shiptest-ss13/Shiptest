@@ -12,9 +12,6 @@
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-/obj/item/gun/energy/e_gun/mindshield
-	pin = /obj/item/firing_pin/implant/mindshield
-
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: disable and kill."
@@ -30,6 +27,12 @@
 	gunlight_state = "mini-light"
 	flight_x_offset = 19
 	flight_y_offset = 13
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
 
 /obj/item/gun/energy/e_gun/mini/Initialize()
 	set_gun_light(new /obj/item/flashlight/seclite(src))
@@ -131,7 +134,6 @@
 	icon_state = "nucgun"
 	item_state = "nucgun"
 	charge_delay = 5
-	pin = null
 	can_charge = FALSE
 	internal_cell = TRUE
 	ammo_x_offset = 2
@@ -193,6 +195,13 @@
 	ammo_x_offset = 2
 	charge_sections = 6
 	small_gun = TRUE
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 
@@ -244,6 +253,7 @@
 	flight_x_offset = 20
 	flight_y_offset = 9
 	spread = 80
+	spread_unwielded = 140
 	dual_wield_spread = 140
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA

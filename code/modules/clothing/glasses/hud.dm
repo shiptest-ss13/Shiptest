@@ -92,6 +92,7 @@
 	item_state = "glasses"
 	flash_protect = FLASH_PROTECTION_FLASH
 	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"
@@ -211,7 +212,7 @@
 /obj/item/clothing/glasses/hud/toggle/thermal
 	name = "thermal HUD scanner"
 	desc = "Thermal imaging HUD in the shape of glasses."
-	icon_state = "thermal"
+	icon_state = "thermalgoggles"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	vision_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
@@ -221,13 +222,13 @@
 	..()
 	switch (hud_type)
 		if (DATA_HUD_MEDICAL_ADVANCED)
-			icon_state = "meson"
+			icon_state = "mesongoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/green)
 		if (DATA_HUD_SECURITY_ADVANCED)
-			icon_state = "thermal"
+			icon_state = "thermalgoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/red)
 		else
-			icon_state = "purple"
+			icon_state = "scigoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/purple)
 	user.update_inv_glasses()
 
@@ -260,6 +261,7 @@
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"
 	supports_variations = KEPORI_VARIATION
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"

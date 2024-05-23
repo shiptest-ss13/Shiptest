@@ -22,7 +22,6 @@
 	canload_access_list = list(ACCESS_KITCHEN)
 	default_price = 60
 	extra_price = 160
-	payment_department = ACCOUNT_SRV
 	input_display_header = "Chef's Food Selection"
 
 /obj/item/vending_refill/snack
