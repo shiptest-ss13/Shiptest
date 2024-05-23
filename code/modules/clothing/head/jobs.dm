@@ -177,6 +177,8 @@
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
 	desc = "It's a special hat issued to the Warden of a security force. A classic symbol of middling authority."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "policehelm"
 	dog_fashion = /datum/dog_fashion/head/warden
 
