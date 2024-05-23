@@ -8,16 +8,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	can_suppress = TRUE
 
-	var/burst_size = 3
-	var/burst_delay = 0.15 SECONDS
-	fire_delay = 0.2 SECONDS
-
-	/// after initializing, we set the firemode to this
-	var/default_firemode = FIREMODE_SEMIAUTO
-	var/firemode_index
-	var/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
-	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
-	var/fire_select_icon_state_prefix = ""
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
@@ -42,7 +32,7 @@
 /obj/item/gun/ballistic/automatic/proc/build_firemodes()
 
 	if(FIREMODE_FULLAUTO in gun_firemodes)
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+		AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))

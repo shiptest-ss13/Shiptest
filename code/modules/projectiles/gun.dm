@@ -28,26 +28,54 @@
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	var/dry_fire_text = "click"				//change this on non-gun things
-	var/suppressed = null					//whether or not a message is displayed when fired
+	///Text showed when attempting to fire with no round or empty round.
+	var/dry_fire_text = "click"
+	///whether or not a message is displayed when fired
+	var/suppressed = null
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
+	///All you need to know is this needs to be removed
 	var/clumsy_check = TRUE
+	/// Our chambered round, the one thats fired next
 	var/obj/item/ammo_casing/chambered = null
-	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
-	var/sawn_desc = null					//description change if weapon is sawn-off
+	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
+	trigger_guard = TRIGGER_GUARD_NORMAL
+	///Set the description of the gun to this when sawed off
+	var/sawn_desc = null
+	///This triggers some sprite behavior in shotguns and prevents further sawoff, note that can_be_sawn_off is on gun/ballistic and not here, wtf.
 	var/sawn_off = FALSE
-	var/burst_size = 1						//how large a burst is
-	var/fire_delay = 0						//rate of fire for burst firing and semi auto
-	var/firing_burst = 0					//Prevent the weapon from firing again while already firing
-	var/semicd = 0							//cooldown handler
-	var/weapon_weight = WEAPON_LIGHT
-	var/dual_wield_spread = 24			//additional spread when dual wielding
-	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
-	var/projectile_damage_multiplier = 1	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
+	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
+	var/burst_size = 3
+	///The rate of fire when firing in a burst. Not the delay between bursts
+	var/burst_delay = 0.15 SECONDS
+	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay+ burst_delay after every burst
+	var/fire_delay = 0.2 SECONDS
+
+	/// after initializing, we set the firemode to this
+	var/default_firemode = FIREMODE_SEMIAUTO
+	///Firemode index, due to code shit this is the currently selected firemode
+	var/firemode_index
+	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
+	var/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
+	var/fire_select_icon_state_prefix = ""
+
+	///Are we firing a burst? If so, dont fire again until burst is done
+	var/firing_burst = FALSE
+	///This prevents gun from firing until the coodown is done, affected by lag
+	var/semicd = 0
+	///affects if you can fire it unwielded or even dual wield it. LIGHT means dual wield allowed, HEAVY and higher means you have to wield to fire
+	var/weapon_weight = WEAPON_LIGHT
+	///If dual wielding, add this to the spread
+	var/dual_wield_spread = 24
+	/// ???, no clue what this is. Original desc: //Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	var/randomspread = 1
+
+	///Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
+	var/projectile_damage_multiplier = 1
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -321,9 +349,14 @@
 	if(check_botched(user))
 		return
 
+	if(weapon_weight == WEAPON_VERY_HEAVY && (!wielded_fully))
+		to_chat(user, "<span class='warning'>You need a fully secure grip to fire [src]!</span>")
+		return
+
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
+
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0

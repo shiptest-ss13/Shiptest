@@ -140,6 +140,8 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define WEAPON_MEDIUM 2
 /// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
+/// You must FULLY wield (wait the full wield delay) the gun to fire this gun
+#define WEAPON_VERY_HEAVY 4
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1
 #define TRIGGER_GUARD_NONE 0
