@@ -237,9 +237,10 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half{
 	dir = 1
 	},
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/structure/closet/crate/engineering/electrical,
 /obj/machinery/firealarm/directional/north,
+/obj/item/circuitboard/machine/space_heater,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "dx" = (
@@ -747,6 +748,9 @@
 /area/ship/engineering)
 "mf" = (
 /obj/effect/turf_decal/industrial/warning,
+/obj/item/c_tube{
+	pixel_y = 3
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "mr" = (
@@ -1502,11 +1506,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/closet/crate,
-/obj/item/poster/random_official,
-/obj/item/poster/random_official,
-/obj/item/poster/random_rilena,
-/obj/item/poster/random_minutemen,
-/obj/item/poster/random_contraband,
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "yu" = (
@@ -1777,6 +1777,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Ds" = (
@@ -2085,7 +2087,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Is" = (
-/obj/structure/closet/crate,
+/obj/structure/closet/crate/science,
 /obj/item/paicard,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -2814,7 +2816,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "RU" = (
@@ -3146,6 +3147,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Xw" = (
