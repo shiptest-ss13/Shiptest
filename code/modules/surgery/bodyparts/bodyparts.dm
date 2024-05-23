@@ -288,7 +288,7 @@
 
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
-		adjust_bleeding(-brute * BLOOD_LOSS_DAMAGE_COEFF)
+		adjust_bleeding(-BLOOD_LOSS_MAXIMUM * brute / max_damage)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
