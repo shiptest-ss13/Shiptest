@@ -161,7 +161,7 @@
 	availability_prob = 80
 	unlimited =  TRUE
 
-/datum/blackmarket_item/consumable/thirteenloko
+/datum/blackmarket_item/consumable/vimukti
 	name = "Can of Vimukti"
 	desc = "This product was quietly discontinued after multiple health related incidents. But you aren't a coward, are you?"
 	item = /obj/item/reagent_containers/food/drinks/soda_cans/vimukti
