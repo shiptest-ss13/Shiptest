@@ -78,7 +78,7 @@
 			listclearnulls(BP.embedded_objects)
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
-					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_CAP)
+					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
 			limb_bleed += BP.bleeding
 
 		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))

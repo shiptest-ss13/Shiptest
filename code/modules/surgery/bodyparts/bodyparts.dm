@@ -212,6 +212,8 @@
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
 		heal_damage(0, 0, INFINITY, null, FALSE)
 		. |= BODYPART_LIFE_UPDATE_HEALTH
+	if(brute_dam < DAMAGE_PRECISION && bleeding)
+		adjust_bleeding(-0.2) //slowly stop bleeding if there's no damage left
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
@@ -247,7 +249,7 @@
 
 	// Bleeding is applied here
 	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
-		adjust_bleeding(brute * BLOOD_LOSS_DAMAGE_COEFF, BLOOD_LOSS_DAMAGE_CAP)
+		adjust_bleeding(brute * BLOOD_LOSS_DAMAGE_BASE, BLOOD_LOSS_DAMAGE_MAXIMUM)
 
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
@@ -288,7 +290,7 @@
 
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
-		adjust_bleeding(-BLOOD_LOSS_MAXIMUM * brute / max_damage)
+		adjust_bleeding(-BLOOD_LOSS_DAMAGE_MAXIMUM * brute / max_damage)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
