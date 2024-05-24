@@ -83,6 +83,12 @@
 							"[SOUTH]" = list("x" = 0, "y" = -5),
 							"[WEST]" = list("x" =  -4, "y" = -5)
 							),
+		"[BELT_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 8, "y" = -1),
+							"[SOUTH]" = list("x" = 8, "y" = -1),
+							"[WEST]" = list("x" =  -8, "y" = -1)
+							),
 	)
 
 // First list is left hand, second list is right hand. This is used for inhand offsets.
