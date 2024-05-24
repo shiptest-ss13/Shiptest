@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/zombie
+/mob/living/simple_animal/hostile/human/zombie
 	name = "Shambling Corpse"
 	desc = "When there is no more room in hell, the dead will walk in outer space."
 	icon = 'icons/mob/simple_human.dmi'
@@ -24,11 +24,11 @@
 	var/infection_chance = 0
 	var/obj/effect/mob_spawn/human/corpse/delayed/corpse
 
-/mob/living/simple_animal/hostile/zombie/Initialize(mapload)
+/mob/living/simple_animal/hostile/human/zombie/Initialize(mapload)
 	. = ..()
 	INVOKE_ASYNC(src, PROC_REF(setup_visuals))
 
-/mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
+/mob/living/simple_animal/hostile/human/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
 	dummy_prefs.pref_species = new /datum/species/zombie
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
@@ -48,17 +48,17 @@
 		corpse.mob_species = /datum/species/zombie
 		corpse.mob_name = name
 
-/mob/living/simple_animal/hostile/zombie/AttackingTarget()
+/mob/living/simple_animal/hostile/human/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target) && prob(infection_chance))
 		try_to_zombie_infect(target)
 
-/mob/living/simple_animal/hostile/zombie/drop_loot()
+/mob/living/simple_animal/hostile/human/zombie/drop_loot()
 	. = ..()
 	corpse.forceMove(drop_location())
 	corpse.create()
 
-/mob/living/simple_animal/hostile/zombie/kudzu
+/mob/living/simple_animal/hostile/human/zombie/kudzu
 	name = "shambling bramble"
 	desc = "A shambling mass of vibrant vines and rotting flesh. "
 	melee_damage_lower = 15
