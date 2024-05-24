@@ -3,7 +3,7 @@
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	icon_state = "boozeomat"
 	icon_deny = "boozeomat-deny"
-	products = list(
+	products = list( // All of drink dispenser reagents should be available here.
 		/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
 		/obj/item/reagent_containers/food/drinks/modglass/small = 10,
