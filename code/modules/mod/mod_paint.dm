@@ -190,7 +190,3 @@
 	balloon_alert(user, "skin applied")
 	qdel(src)
 	return TRUE
-
-/obj/item/mod/skin_applier/honkerative
-	skin = "honkerative"
-	compatible_theme = /datum/mod_theme/syndicate
