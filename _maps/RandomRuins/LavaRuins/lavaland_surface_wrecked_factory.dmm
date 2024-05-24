@@ -364,12 +364,12 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "du" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 1
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plasteel/dark/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "dA" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1813,12 +1813,31 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "qH" = (
-/obj/item/ammo_casing/c45{
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
 	projectile_type = null
 	},
-/turf/open/floor/plating/rust/lava,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/concrete/pavement/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "qK" = (
 /obj/effect/turf_decal/trimline/opaque/beige/arrow_cw{
 	dir = 4
@@ -1895,31 +1914,12 @@
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "rI" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 8
-	},
-/obj/item/ammo_casing/c10mm{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
 	projectile_type = null
 	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
 "rO" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 4
@@ -2372,20 +2372,21 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
-"vM" = (
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "vN" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
 	projectile_type = null
 	},
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plating/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "vP" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -2961,13 +2962,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
-"Ct" = (
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/turf/open/floor/plasteel/dark/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "Cu" = (
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava/orange,
@@ -3633,17 +3627,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
-"Ja" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/turf/open/floor/plasteel/dark/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "Jc" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/space{
 	name = "Ramzi Operative";
@@ -4023,20 +4006,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "NE" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
 	projectile_type = null
 	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/turf/open/floor/plating/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/closed/mineral/volcanic,
+/area/overmap_encounter/planetoid/cave/explored)
 "NG" = (
 /obj/structure/flippedtable,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
@@ -4434,6 +4409,17 @@
 /obj/item/stack/sheet/metal,
 /obj/structure/railing,
 /turf/open/floor/plating,
+/area/overmap_encounter/planetoid/cave/explored)
+"RK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "RO" = (
 /obj/effect/decal/cleanable/glass,
@@ -5029,6 +5015,13 @@
 /obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
+"XU" = (
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "Yl" = (
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/effect/decal/cleanable/blood/old,
@@ -5127,10 +5120,12 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "YU" = (
-/obj/effect/turf_decal/siding/white,
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plating/rust/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "Za" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5817,7 +5812,7 @@ tV
 YI
 VO
 nD
-du
+nK
 iP
 yw
 TZ
@@ -5923,7 +5918,7 @@ Zc
 WQ
 tV
 tV
-YU
+VO
 Jt
 qm
 Uh
@@ -6364,7 +6359,7 @@ Ho
 ML
 jk
 yo
-vM
+rI
 uH
 sG
 iP
@@ -6685,7 +6680,7 @@ VV
 hT
 hT
 jC
-NE
+vN
 Nr
 Fw
 Tg
@@ -6726,10 +6721,10 @@ bs
 ti
 Il
 Il
-rI
+qH
 Il
 jb
-rI
+qH
 Il
 xZ
 pb
@@ -6949,7 +6944,7 @@ Sm
 Br
 XM
 sZ
-YU
+VO
 qM
 GC
 aW
@@ -7015,7 +7010,7 @@ QB
 RI
 tS
 Hs
-Ct
+du
 SL
 uE
 wU
@@ -7170,7 +7165,7 @@ Jt
 nK
 ZL
 zh
-Ja
+RK
 XB
 AM
 Dk
@@ -7282,7 +7277,7 @@ pP
 KI
 MJ
 NP
-qH
+YU
 sm
 Dk
 Oq
@@ -7583,7 +7578,7 @@ MH
 MH
 MH
 MH
-MH
+NE
 MH
 MH
 MH
@@ -7663,7 +7658,7 @@ jX
 ZD
 co
 ga
-vN
+XU
 yN
 MH
 MH
