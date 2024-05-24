@@ -212,7 +212,22 @@
 	name = "\improper Nanotrasen logo sign"
 	sign_change_name = "Corporate Logo - Nanotrasen"
 	desc = "A sign with the Nanotrasen logo on it. Glory to Nanotrasen!"
+	icon = 'icons/obj/nanotrasen_logos.dmi'
 	icon_state = "nanotrasen"
+	is_editable = TRUE
+
+/obj/structure/sign/nanotrasen/ns
+	name = "\improper N+S Logistics logo sign"
+	sign_change_name = "Corporate Logo - N+S Logistics"
+	desc = "A sign with the N+S Logistics compass rose on it."
+	icon_state = "ns"
+	is_editable = TRUE
+
+/obj/structure/sign/nanotrasen/vigilitas
+	name = "\improper Vigilitas Interstellar logo sign"
+	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
+	desc = "A sign with Vigilitas Interstellar's VI logo on it."
+	icon_state = "vigilitas"
 	is_editable = TRUE
 
 /obj/structure/sign/logo

@@ -400,3 +400,8 @@
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
 	prefix = "PGF"
+
+/datum/map_template/shuttle/subshuttles/brawler
+	file_name = "frontiersmen_brawler"
+	name = "Brawler-class Dropship"
+	prefix = "SV"
