@@ -150,6 +150,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/machinery/button/door{
+	id = "sec";
+	pixel_y = -22;
+	name = "Security Lockdown";
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/factory/adminstrative)
 "bz" = (
@@ -297,6 +303,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"cR" = (
+/obj/machinery/button/door{
+	id = "sec";
+	name = "Security Lockdown";
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/lavaland/factory/manager_office)
 "cU" = (
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
@@ -2052,6 +2067,11 @@
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/restraints/handcuffs,
 /obj/item/flashlight/seclite,
+/obj/machinery/button/door{
+	id = "sec";
+	pixel_y = 22;
+	name = "Security Lockdown"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
 "sT" = (
@@ -2546,6 +2566,12 @@
 	pixel_x = 10;
 	pixel_y = 11;
 	projectile_type = null
+	},
+/obj/machinery/button/door{
+	id = "sec";
+	pixel_y = -22;
+	name = "Security Lockdown";
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
@@ -6233,7 +6259,7 @@ Qc
 Qc
 LR
 sV
-Qc
+cR
 KX
 Lq
 aA
