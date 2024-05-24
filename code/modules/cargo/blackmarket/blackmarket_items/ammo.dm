@@ -122,3 +122,45 @@
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 0
+
+/datum/blackmarket_item/ammo/blackout
+	name = ".300 Blacout Stripper Clip"
+	desc = "A 5 round clip of .300 Blackout. It'll be lights out soon enough for anyone hit with these."
+	item = /obj/item/ammo_box/aac_300blk_stripper
+
+	price_min = 500
+	price_max = 750
+	stock_min = 4
+	stock_max = 6
+	availability_prob = 70
+
+/datum/blackmarket_item/ammo/24v_mag
+	name = "SKM-24v Magazine"
+	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
+	item = /obj/item/ammo_box/magazine/skm_545_39
+
+	price_min = 500
+	price_max = 1000
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/skm_extended
+	name = "Extended SKM Magazine"
+	desc = "An extended 40 round 7.62x40mm CLIP magazine for the SKM family of assault rifles. Extra curves mean extra ammo."
+	item = /obj/item/ammo_box/magazine/skm_762_40/extended
+
+	price_min = 1000
+	price_max = 1500
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/skm_drum
+	name ="SKM Drum Magazine"
+	desc = "Do you have too much ammo on your hands? Is there someone you really hate? Do you want them to be absolutely suppressed for the next 15 seconds? This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
+	item = /obj/item/ammo_box/magazine/skm_762_40/drum
+
+	price_min = 1500
+	price_max = 2500
+	stock = 2
+	availability_prob = 20

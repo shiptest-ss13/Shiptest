@@ -47,7 +47,7 @@
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/derringer
 	price_min = 100
-	price_max = 500
+	price_max = 600
 	stock_max = 6
 	availability_prob = 50
 
@@ -221,7 +221,7 @@
 
 	price_min = 1500
 	price_max = 2750
-	stock_max = 2
+	stock = 2
 	availability_prob = 35
 
 /datum/blackmarket_item/ammo/scout
@@ -235,5 +235,43 @@
 	stock = 1
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/syringe_gun
+	name = "Dart Pistol"
+	desc = "A compact dart pistol, for clandestine poisoining from a distance."
+	item = /obj/item/gun/syringe/syndicate
 
+	price_min = 750
+	price_max = 1500
+	stock = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/polymer
+	name = "Polymer Survivor Rifle"
+	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in .300 Blackout."
+	item = /obj/item/gun/ballistic/rifle/polymer
+
+	price_min = 600
+	price_max = 1250
+	stock_max = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/skm_carbine
+	name = "SKM-24v Carbine"
+	desc = "Technically this is a saw down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm"
+	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+
+	price_min = 3000
+	price_max = 4500
+	stock_max = 2
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/
+	name =
+	desc =
+	item =
+
+	price_min =
+	price_max =
+	stock_max = 3
+	availability_prob = 30
 
