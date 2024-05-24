@@ -29,7 +29,7 @@
 	loot = list(/obj/effect/decal/remains/human)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-/mob/living/simple_animal/hostile/human/templar
+/mob/living/simple_animal/hostile/human/skeleton/templar
 	name = "undead templar"
 	desc = "The reanimated remains of a holy templar knight."
 	icon_state = "templar"
