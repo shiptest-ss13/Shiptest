@@ -65,6 +65,17 @@
 	stock = 1
 	availability_prob = 10
 
+/datum/blackmarket_item/explosive/disco_grenade
+	name = "Neural Hijacker Grenade"
+	desc = "Become the life of the party with this groovy grenade!"
+	item = /obj/item/grenade/discogrenade
+
+	price_min = 500
+	price_max = 750
+	stock_min = 2
+	stock_max = 3
+	availability_prob = 10
+
 /datum/blackmarket_item/explosive/rusted_mine
 	name = "Landmine"
 	desc = "Recovered from a decades old ICW battlefield by our best EOD tech, Nicky Nine Fingers."
