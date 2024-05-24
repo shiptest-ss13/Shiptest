@@ -278,6 +278,7 @@
 /obj/item/reagent_containers/glass/bottle/necropolis_seed
 	name = "bowl of blood"
 	desc = "A clay bowl containing a fledgling spire, preserved in blood. When consumed, allows the user to transform into an avatar of the Necropolis. A robust virologist may be able to unlock its full potential..."
+	icon = 'icons/obj/chemical/mortar.dmi'
 	icon_state = "mortar_bone"
 	spawned_disease = /datum/disease/advance/necropolis
 

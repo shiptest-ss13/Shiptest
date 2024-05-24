@@ -55,6 +55,8 @@
 /obj/item/clothing/head/wizard/santa
 	name = "Santa's hat"
 	desc = "Ho ho ho. Merrry X-mas!"
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "santahat"
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR
 	dog_fashion = null
