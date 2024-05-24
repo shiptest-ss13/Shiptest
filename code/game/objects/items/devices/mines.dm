@@ -706,8 +706,8 @@ LIVE_MINE_HELPER(pressure/sound)
 
 /obj/effect/spawner/minefield/Initialize(mapload)
 	. = ..()
-	spawn_mines()
-	spawn_signs()
+	if(spawn_mines())
+		spawn_signs()
 
 /obj/effect/spawner/minefield/proc/spawn_mines()
 	var/mines_spawned = 0
