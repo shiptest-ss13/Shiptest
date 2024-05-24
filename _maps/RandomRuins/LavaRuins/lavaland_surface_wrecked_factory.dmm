@@ -63,6 +63,7 @@
 	},
 /obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/glass,
+/mob/living/simple_animal/hostile/viscerator,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "aL" = (
@@ -176,20 +177,21 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 9;
-	pixel_y = -3
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -8;
-	pixel_y = 5
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 1;
-	pixel_y = 10
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -311,19 +313,17 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -5;
-	pixel_y = 12
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = 9;
-	pixel_y = -7
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -3
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
@@ -605,6 +605,14 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "gg" = (
@@ -701,14 +709,13 @@
 /area/ruin/lavaland/factory/adminstrative)
 "gT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 9
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 1;
-	pixel_y = 10
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -838,14 +845,13 @@
 /obj/item/ammo_box/magazine/co9mm{
 	start_empty = 1
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_y = -9
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -3;
-	pixel_y = 5
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -900,21 +906,6 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = -5;
-	pixel_y = 12
-	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = 9;
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = 2;
-	pixel_y = 12
-	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "jf" = (
@@ -941,6 +932,10 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "jr" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner,
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "ju" = (
@@ -970,10 +965,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -3;
-	pixel_y = 5
+	projectile_type = null
 	},
 /turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1087,6 +1081,10 @@
 "kx" = (
 /obj/structure/railing{
 	dir = 1
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1417,28 +1415,29 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "nL" = (
 /obj/effect/turf_decal/siding/white,
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
-	pixel_x = 10;
-	pixel_y = 12
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty"
-	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -10;
-	pixel_y = 12
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -10;
-	pixel_y = 12
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -5;
-	pixel_y = -1
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1558,7 +1557,6 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/viscerator,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "oz" = (
@@ -1757,38 +1755,37 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_y = 15;
-	pixel_x = 6
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -5
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_y = -9
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -3;
-	pixel_y = 5
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 8;
-	pixel_y = -9
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 10;
-	pixel_y = 5
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 9;
-	pixel_y = -3
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -1816,13 +1813,12 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "qH" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/syndicate/melee/space{
-	desc = "A brutal member of the Ramzi Clique pirate group.";
-	name = "Ramzi Operative"
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
-/turf/open/floor/plasteel/white/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plating/rust/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "qK" = (
 /obj/effect/turf_decal/trimline/opaque/beige/arrow_cw{
 	dir = 4
@@ -1830,6 +1826,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/disposalpipe/segment{
 	dir = 1
+	},
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1898,9 +1898,25 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -3
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1940,14 +1956,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -8;
-	pixel_y = 5
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 10
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -2208,6 +2223,14 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "drip1"
 	},
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "uz" = (
@@ -2349,13 +2372,20 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
-"vN" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 6
+"vM" = (
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
+"vN" = (
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "vP" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -2513,7 +2543,8 @@
 /obj/item/ammo_casing/shotgun/buckshot{
 	icon_state = "buckshot-empty";
 	pixel_x = 10;
-	pixel_y = 11
+	pixel_y = 11;
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
@@ -2604,12 +2635,13 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "yX" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 9
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/viscerator,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plasteel/dark/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "yY" = (
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/structure/cable/yellow{
@@ -2706,10 +2738,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 9;
-	pixel_y = -3
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -2785,10 +2816,6 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space{
 	desc = "A brutal member of the Ramzi Clique pirate group.";
 	name = "Ramzi Operative"
-	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space{
-	name = "Ramzi Operative";
-	desc = "A brutal member of the Ramzi Clique pirate group.."
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2934,6 +2961,13 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
+"Ct" = (
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plasteel/dark/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "Cu" = (
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava/orange,
@@ -2968,10 +3002,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = 1;
-	pixel_y = -3
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -3255,6 +3288,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "Gc" = (
@@ -3557,12 +3594,14 @@
 /obj/item/ammo_casing/shotgun/buckshot{
 	icon_state = "buckshot-empty";
 	pixel_x = -3;
-	pixel_y = -10
+	pixel_y = -10;
+	projectile_type = null
 	},
 /obj/item/ammo_casing/shotgun/buckshot{
 	icon_state = "buckshot-empty";
 	pixel_x = 7;
-	pixel_y = 9
+	pixel_y = 9;
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
@@ -3594,6 +3633,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
+"Ja" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plasteel/dark/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jc" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/space{
 	name = "Ramzi Operative";
@@ -3973,13 +4023,20 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "NE" = (
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = -10;
-	pixel_y = 12
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/turf/open/floor/plating/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "NG" = (
 /obj/structure/flippedtable,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
@@ -4077,9 +4134,13 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibbl1"
 	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-brass-empty";
-	pixel_y = -9
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -4222,9 +4283,9 @@
 /area/ruin/lavaland/factory/dorms)
 "Qa" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space{
-	name = "Ramzi Operative";
-	desc = "A brutal member of the Ramzi Clique pirate group.."
+/obj/item/ammo_casing/c45{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -4333,26 +4394,28 @@
 /area/ruin/lavaland/factory/adminstrative)
 "RC" = (
 /obj/effect/turf_decal/siding/white,
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty"
-	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = 2;
-	pixel_y = 12
-	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = -5;
-	pixel_y = 12
-	},
-/obj/item/ammo_casing/spent{
-	icon_state = "pistol-steel-empty";
-	pixel_x = 10;
-	pixel_y = -7
-	},
 /obj/item/ammo_box/magazine/m10mm{
 	start_empty = 1
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
+	},
+/obj/item/ammo_casing/c10mm{
+	icon_state = "pistol-steel-empty";
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -4537,30 +4600,25 @@
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Tn" = (
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -10;
-	pixel_y = 12
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = 9;
-	pixel_y = -7
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = -10;
-	pixel_y = -2
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = 4;
-	pixel_y = 2
+	projectile_type = null
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
-	pixel_x = 10;
-	pixel_y = 12
+	projectile_type = null
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
@@ -4600,10 +4658,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "TP" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space{
-	name = "Ramzi Operative";
-	desc = "A brutal member of the Ramzi Clique pirate group.."
-	},
 /obj/structure/railing,
 /obj/effect/turf_decal/industrial/warning,
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space{
@@ -4993,10 +5047,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
-/obj/item/ammo_casing/spent{
+/obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
-	pixel_x = -3;
-	pixel_y = 5
+	projectile_type = null
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -6311,7 +6364,7 @@ Ho
 ML
 jk
 yo
-Ho
+vM
 uH
 sG
 iP
@@ -6570,8 +6623,8 @@ sU
 sU
 sU
 sU
-vN
-qH
+Lb
+pb
 pb
 Ci
 VL
@@ -6632,7 +6685,7 @@ VV
 hT
 hT
 jC
-Tg
+NE
 Nr
 Fw
 Tg
@@ -6673,10 +6726,10 @@ bs
 ti
 Il
 Il
-Il
 rI
-jb
 Il
+jb
+rI
 Il
 xZ
 pb
@@ -6790,7 +6843,7 @@ sZ
 mK
 xZ
 UC
-yX
+tu
 DY
 ZS
 ZS
@@ -6962,7 +7015,7 @@ QB
 RI
 tS
 Hs
-Ou
+Ct
 SL
 uE
 wU
@@ -7016,7 +7069,7 @@ Ga
 TP
 qe
 Rd
-Va
+yX
 Tx
 bm
 so
@@ -7117,7 +7170,7 @@ Jt
 nK
 ZL
 zh
-vw
+Ja
 XB
 AM
 Dk
@@ -7229,7 +7282,7 @@ pP
 KI
 MJ
 NP
-CG
+qH
 sm
 Dk
 Oq
@@ -7610,7 +7663,7 @@ jX
 ZD
 co
 ga
-yN
+vN
 yN
 MH
 MH
@@ -7718,7 +7771,7 @@ yN
 co
 co
 co
-NE
+yN
 yN
 MH
 fE
