@@ -6,8 +6,8 @@
 	desc = "The extra fast and handy wrench you always wanted!"
 	item = /obj/item/wrench/caravan
 
-	price_min = 100
-	price_max = 200
+	price_min = 50
+	price_max = 150
 	stock_max = 3
 	availability_prob = 40
 
@@ -16,8 +16,8 @@
 	desc = "The extra fast and handy wirecutters you always wanted!"
 	item = /obj/item/wirecutters/caravan
 
-	price_min = 100
-	price_max = 200
+	price_min = 50
+	price_max = 150
 	stock_max = 3
 	availability_prob = 40
 
@@ -26,8 +26,8 @@
 	desc = "The extra fast and handy screwdriver you always wanted!"
 	item = /obj/item/screwdriver/caravan
 
-	price_min = 100
-	price_max = 200
+	price_min = 50
+	price_max = 150
 	stock_max = 3
 	availability_prob = 40
 
@@ -36,8 +36,8 @@
 	desc = "The extra fast and handy crowbar you always wanted!"
 	item = /obj/item/crowbar/red/caravan
 
-	price_min = 100
-	price_max = 200
+	price_min = 50
+	price_max = 150
 	stock_max = 3
 	availability_prob = 40
 
@@ -59,7 +59,7 @@
 	price_min = 500
 	price_max = 2000
 	stock = 1
-	availability_prob = 30
+	availability_prob = 40
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
