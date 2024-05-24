@@ -61,7 +61,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning{
 	dir = 8
 	},
-/obj/machinery/light/dim/directional/south,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "aL" = (
@@ -846,10 +846,10 @@
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
 	},
-/obj/machinery/light/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/lavaland/factory/lobby)
 "kv" = (
@@ -999,6 +999,7 @@
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/miner,
+/obj/item/gun/energy/kinetic_accelerator,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "mi" = (
@@ -1488,6 +1489,12 @@
 /obj/structure/flora/ausbushes/fernybush/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"rD" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "rF" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -1662,7 +1669,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "ty" = (
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/factory/manager_office)
 "tH" = (
@@ -1974,10 +1981,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "xz" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "xB" = (
@@ -2019,6 +2024,15 @@
 	},
 /obj/structure/sign/warning/incident,
 /turf/closed/wall/r_wall,
+/area/ruin/lavaland/factory/warehouse)
+"yx" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/hardhat{
+	pixel_y = 5;
+	pixel_x = -2
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "yF" = (
 /obj/machinery/light/floor,
@@ -5009,7 +5023,7 @@ eW
 Jk
 Ho
 AB
-Za
+yx
 XT
 LF
 EW
@@ -5065,7 +5079,7 @@ Bs
 AB
 bl
 jV
-LF
+xz
 cz
 iP
 NM
@@ -5225,8 +5239,8 @@ HS
 uL
 Kc
 jk
-Za
-xz
+rD
+HS
 Ho
 vB
 iP
