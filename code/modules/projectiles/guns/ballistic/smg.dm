@@ -31,20 +31,6 @@
 		total_spread = clamp(total_spread,0,INFINITY)
 	return total_spread
 
-/obj/item/gun/ballistic/automatic/smg/proto
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon_state = "saber"
-	actions_types = list()
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-
-/obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
 	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
@@ -420,5 +406,19 @@
 
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+	name = "\improper Nanotrasen Saber SMG"
+	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "saber"
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	bolt_type = BOLT_TYPE_LOCKING
+	mag_display = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)

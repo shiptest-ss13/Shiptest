@@ -251,6 +251,10 @@
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+/obj/item/gun/ballistic/automatic/pistol/tec9/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
+
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy plastic gun that is extremely cheap to produce. You get what you pay for."

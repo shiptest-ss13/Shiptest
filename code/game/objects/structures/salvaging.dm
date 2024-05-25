@@ -578,7 +578,7 @@
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
-			/obj/item/gun/ballistic/automatic/smg/proto = 1,
+			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop

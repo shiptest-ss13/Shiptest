@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/energy/lasercannon,
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/large,
 	/obj/item/gun/energy/e_gun/nuclear,
-	/obj/item/gun/ballistic/automatic/smg/proto,
+	/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto,
 	/obj/item/gun/ballistic/automatic/smg/c20r,
 	/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 	/obj/item/gun/ballistic/automatic/smg/m90,
