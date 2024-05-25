@@ -174,7 +174,7 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	)
 
-/datum/supply_pack/mech/equipment/laser
+/datum/supply_pack/mech/equipment/biglaser
 	name = "Solaris kit"
 	desc = "A heavy laser cannon designed for combat usage."
 	cost = 2000
