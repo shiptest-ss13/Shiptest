@@ -408,8 +408,6 @@
 	id_assignment = "Corporate Representative"
 	job_icon = "nanotrasen"
 
-	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit
-	suit = null
 	ears = /obj/item/radio/headset/headset_cent
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
