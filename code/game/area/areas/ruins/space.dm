@@ -79,11 +79,6 @@
 	name = "Custodial Closet"
 	icon_state = "green"
 
-/area/ruin/space/has_grav/glade
-	name = "\improper Dark Glade"
-	icon_state = "away"
-	always_unpowered = FALSE
-
 //Singularity Lab
 
 /area/ruin/space/has_grav/singularitylab

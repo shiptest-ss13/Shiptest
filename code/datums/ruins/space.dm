@@ -38,12 +38,6 @@
 	name = "Astraeus Ruin"
 	description = "This vessel served a lengthy period in the Nanotrasen fleet, before an accident in the munitions bay caused to to be destroyed while in active combat."
 
-/datum/map_template/ruin/space/glade
-	id = "dark_glade"
-	suffix = "dark_glade.dmm"
-	name = "Dark Glade"
-	description = "It's always dark in the ancient glade."
-
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
