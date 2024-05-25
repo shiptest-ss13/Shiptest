@@ -343,7 +343,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(45))
-				new /obj/item/disk/design_disk/adv/cleric_mace(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(25))

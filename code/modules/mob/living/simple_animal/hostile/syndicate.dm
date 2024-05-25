@@ -212,10 +212,6 @@
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot //caravan ambush ruin
-	name = "Syndicate Salvage Pilot"
-	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
-
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
