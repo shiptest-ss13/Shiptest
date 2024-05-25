@@ -4,24 +4,11 @@
 	prefix = "_maps/RandomRuins/SandRuins/"
 	ruin_type = RUINTYPE_SAND
 
-/datum/map_template/ruin/whitesands/starfury_crash
-	name = "Starfury Crash"
-	id = "starfurycrash"
-	description = "The remains of an unidentified syndicate battleship has crashed here."
-	suffix = "whitesands_surface_starfurycrash.dmm"
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/whitesands/medipen_plant
 	name = "Abandoned Medipen Factory"
 	id = "medipenplant"
 	description = "A once prosperous autoinjector manufacturing plant."
 	suffix = "whitesands_surface_medipen_plant.dmm"
-
-/datum/map_template/ruin/whitesands/onlyaspoonful
-	name = "Abandoned Spoon Factory"
-	id = "ws-onlyaspoonful"
-	description = "Literally a fucking spoon factory"
-	suffix = "whitesands_surface_onlyaspoonful.dmm"
 
 /datum/map_template/ruin/whitesands/pubbyslopcrash
 	name = "Pubby Slop Crash"
