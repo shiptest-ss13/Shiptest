@@ -746,7 +746,7 @@
 
 /obj/item/bodypart/proc/on_mob_move()
 	// Dont trigger if it isn't broken or if it has no owner or is buckled to something
-	if(bone_status != BONE_FLAG_BROKEN || !owner || buckled)
+	if(bone_status != BONE_FLAG_BROKEN || !owner || owner?.buckled)
 		return
 
 	if(prob(5))
