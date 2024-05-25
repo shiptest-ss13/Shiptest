@@ -142,7 +142,7 @@
 
 // Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
 	if(casing_to_insert.caliber != magazine.caliber)
-		to_chat(user, "<span class='warning'>The [casing_to_insert] is not suitable for [src].</span>")
+		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
 		return FALSE
 
 	var/list/rounds = magazine.ammo_list()
