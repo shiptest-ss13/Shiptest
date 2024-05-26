@@ -354,7 +354,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(35))
-				new /obj/item/disk/design_disk/adv/knight_gear(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			new /obj/item/instrument/trombone(loc)
