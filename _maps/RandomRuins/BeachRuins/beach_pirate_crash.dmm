@@ -522,13 +522,10 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/mob/living/simple_animal/hostile/pirate/melee{
-	environment_smash = 0;
-	faction = list("pirate","mining")
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/hostile/frontier,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "nQ" = (
@@ -1350,6 +1347,7 @@
 /area/ruin/beach/piratecrash/storage)
 "OW" = (
 /obj/effect/decal/cleanable/vomit/old,
+/mob/living/simple_animal/hostile/frontier/ranged/neutered,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Pf" = (
@@ -1373,7 +1371,7 @@
 /obj/machinery/porta_turret/syndicate/pod{
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else.";
 	dir = 8;
-	faction = list("Syndicate","pirate");
+	faction = list("Frontiersmen");
 	lethal_projectile = /obj/projectile/beam/weak/penetrator;
 	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg';
 	name = "laser turret"
@@ -1508,10 +1506,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vc" = (
-/mob/living/simple_animal/hostile/pirate/melee{
-	environment_smash = 0;
-	faction = list("pirate","mining")
-	},
+/mob/living/simple_animal/hostile/frontier,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vh" = (
