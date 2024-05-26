@@ -414,6 +414,7 @@
 	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "saber"
+	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
