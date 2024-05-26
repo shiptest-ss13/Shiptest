@@ -41,7 +41,7 @@
 	*/
 	var/uv_super = FALSE
 	/// How many cycles remain for the decontamination sequence.
-	var/uv_cycles = 13
+	var/uv_cycles = 7
 	/// Cooldown for occupant breakout messages via relaymove()
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
@@ -199,7 +199,7 @@
 
 /obj/machinery/suit_storage_unit/RefreshParts()
 	for(var/obj/item/stock_parts/micro_laser/lasers in component_parts)
-		uv_cycles -= lasers.rating
+		uv_cycles -= (lasers.rating) * 0.25
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
