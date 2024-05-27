@@ -1,0 +1,11 @@
+author: SomeguyManperson
+changes:
+  - {bugfix: melee hermits now pull from the "survivor" loot variant rather than no
+      loot variant}
+  - {bugfix: hermits can no longer commit mitosis}
+  - {tweak: 'hermit loot has been compactified, defaults are now declared in the object
+      rather than initialize, and variant-specific loot now uses a switch statement'}
+  - {bugfix: all hermits now have pocket loot randomized as intended}
+  - {tweak: reduces the cash bundle melee hermits can drop from a medium random (500-3000)
+      to small random (100-500) bundle since they are quite common}
+delete-after: true

@@ -3,6 +3,7 @@
 /**********************Mineral processing unit console**************************/
 
 /obj/machinery/mineral
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	processing_flags = START_PROCESSING_MANUALLY
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	/// The current direction of `input_turf`, in relation to the machine.

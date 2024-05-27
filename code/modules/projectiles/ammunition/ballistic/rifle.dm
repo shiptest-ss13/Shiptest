@@ -6,6 +6,7 @@
 	icon_state = "rifle-brass"
 	caliber = "8x50mmR"
 	projectile_type = /obj/projectile/bullet/a8_50r
+	bullet_per_box = 20
 
 /obj/item/ammo_casing/a8_50rhp
 	name = "8x50mmR hollow point bullet casing"
@@ -23,6 +24,7 @@
 	icon_state = "caseless"
 	caliber = "a858"
 	projectile_type = /obj/projectile/bullet/a858
+	bullet_per_box = 20
 
 // .300 Magnum (Smile Rifle)
 
@@ -32,6 +34,7 @@
 	icon_state = "rifle-steel"
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
+	bullet_per_box = 20
 
 // 5.56x39mm (M-90gl Carbine & P-16)
 
@@ -41,6 +44,7 @@
 	icon_state = "rifle-brass"
 	caliber = "5.56x45mm"
 	projectile_type = /obj/projectile/bullet/a556_45
+	bullet_per_box = 80
 
 // 5.45x39mm (SKM-24v)
 
@@ -51,6 +55,7 @@
 	caliber = "5.45x39mm"
 	randomspread = TRUE
 	projectile_type = /obj/projectile/bullet/a545_39
+	bullet_per_box = 80
 
 /obj/item/ammo_casing/a545_39/recycled
 	name = "recycled 5.45x39mm bullet casing"
@@ -67,6 +72,7 @@
 	icon_state = "rifle-brass"
 	caliber = "7.62x40mm"
 	projectile_type = /obj/projectile/bullet/a762_40
+	bullet_per_box = 80
 
 // .300 Blackout (Polymer Survivor Rifle)
 
@@ -76,6 +82,7 @@
 	icon_state = "rifle-steel"
 	caliber = ".300 BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
+	bullet_per_box = 20
 
 /obj/item/ammo_casing/aac_300blk/recycled
 	name = "recycled .300 BLK bullet casing"
@@ -91,6 +98,7 @@
 	icon_state = "rifle-brass"
 	caliber = ".308"
 	projectile_type = /obj/projectile/bullet/a308
+	bullet_per_box = 20
 
 /obj/item/ammo_casing/caseless/c299
 	name = ".229 Eoehoma caseless bullet casing"
@@ -98,3 +106,4 @@
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
+	bullet_per_box = 80
