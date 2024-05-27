@@ -1,3 +1,5 @@
+#define BASE_UV_CYCLES 7
+
 // SUIT STORAGE UNIT /////////////////
 /obj/machinery/suit_storage_unit
 	name = "suit storage unit"
@@ -42,6 +44,8 @@
 	var/uv_super = FALSE
 	/// How many cycles remain for the decontamination sequence.
 	var/uv_cycles = 7
+	/// Time reduction from stock parts
+	var/lasers_bonus = 0
 	/// Cooldown for occupant breakout messages via relaymove()
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
@@ -194,12 +198,16 @@
 
 /obj/machinery/suit_storage_unit/examine(mob/user)
 	. = ..()
+	. += span_notice("Number of UV cycles reduced by <b>[lasers_bonus]<b>.")
 	if(locked)
 		. += span_notice("The locking bolts on \the [src] are engaged, preventing it from being pried open.")
 
 /obj/machinery/suit_storage_unit/RefreshParts()
+	lasers_bonus = 0
 	for(var/obj/item/stock_parts/micro_laser/lasers in component_parts)
-		uv_cycles -= (lasers.rating) * 0.25
+		lasers_bonus += ((lasers.rating) * 0.25)
+
+	uv_cycles = BASE_UV_CYCLES - lasers_bonus
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
@@ -416,7 +424,7 @@
 */
 /obj/machinery/suit_storage_unit/proc/cook()
 	var/mob/living/mob_occupant = occupant
-	if(uv_cycles)
+	if(uv_cycles > 0)
 		uv_cycles--
 		uv = TRUE
 		locked = TRUE
@@ -429,7 +437,7 @@
 			mob_occupant.emote("scream")
 		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
-		uv_cycles = initial(uv_cycles)
+		uv_cycles = (BASE_UV_CYCLES - lasers_bonus)
 		uv = FALSE
 		locked = FALSE
 		if(uv_super)
@@ -618,3 +626,6 @@
 			AM.forceMove(src)
 			storage = AM
 	update_appearance()
+
+
+#undef BASE_UV_CYCLES
