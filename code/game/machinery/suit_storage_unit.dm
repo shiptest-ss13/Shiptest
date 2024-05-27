@@ -6,6 +6,8 @@
 	icon_state = "ssu_classic"
 	base_icon_state = "ssu_classic"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	max_integrity = 250
 
 	var/obj/item/clothing/suit/space/suit = null
@@ -403,6 +405,7 @@
 		uv = TRUE
 		locked = TRUE
 		update_appearance()
+		use_power(ACTIVE_DRAW_HIGH)
 		if(occupant)
 			if(uv_super)
 				mob_occupant.adjustFireLoss(rand(20, 36))
