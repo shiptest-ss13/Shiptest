@@ -11,6 +11,7 @@
 	name = "Consumable"
 	taste_description = "generic food"
 	taste_mult = 4
+	category = "Food and Drink"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 

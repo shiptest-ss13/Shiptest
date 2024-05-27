@@ -12,7 +12,7 @@
 	var/initialized_button = 0
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 70)
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/machinery/button/indestructible
