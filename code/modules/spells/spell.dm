@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				smoke.start()
 
 
-/obj/effect/proc_holder/spell/proc/cast(list/targets,mob/user = usr)
+/obj/effect/proc_holder/spell/proc/cast(list/targets, mob/user = usr)
 	return
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")
