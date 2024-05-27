@@ -91,6 +91,11 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+/datum/outfit/job/independent/captain/cheap //for Miskilamo ships
+	name = "Independent - Captain (Low Budget)"
+	gloves = /obj/item/clothing/gloves/color/white //poverty gloves
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
 	head = /obj/item/clothing/head/caphat/cowboy
@@ -253,7 +258,6 @@
 
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
 /datum/outfit/job/independent/security/pirate
@@ -725,7 +729,6 @@
 /datum/outfit/job/independent/chemist/pharma
 	name = "Independent - Chemist (Pharmacology Student)"
 
-	uniform = /obj/item/clothing/under/rank/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/pda/medical

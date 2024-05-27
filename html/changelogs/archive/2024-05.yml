@@ -1,0 +1,128 @@
+2024-05-02:
+  thgvr:
+  - imageadd: Nanotrasen outfits have a new coat of paint
+2024-05-04:
+  Apogee-dev:
+  - bugfix: fixed missing object descriptions on nanotrasen uniforms
+2024-05-06:
+  Anticept:
+  - tweak: intercomms, widebands, and headsets default speaker on again. Handhelds
+      remain off by default.
+  - balance: pure soulus dust now makes 20u per reaction, and system cleaner is not
+      required.
+  Martinpachu:
+  - balance: The detective's revolver is now priced at 600 credits instead of 1000.
+  - balance: The detective's revolver size is now Small.
+  - rscadd: The Candor may now be bought from the outpost.
+  PositiveEntropy:
+  - rscdel: Removes the Arrhythmic Knife.
+  SomeguyManperson:
+  - tweak: match rounds will no longer consider the person firing them as a viable
+      target when ricocheting
+  SuhEugene:
+  - admin: made invisimin admins invisible for HUDs and ghosts
+  Sun-Soaked:
+  - bugfix: weird uncertainty around the name of EXOCOM. EXOCON is not real.
+2024-05-09:
+  PositiveEntropy:
+  - rscadd: The HP Firebrand, HP Scout, HP Contender, .38 Derringer and Double Barrel
+      Shotgun are now purchasable in the outpost store.
+  - bugfix: The Disposable Gun crate is now granularized.
+  - rscdel: The Scarborough Revolver is no longer purchasable in the outpost store.
+2024-05-10:
+  meemofcourse:
+  - rscadd: Helmets now have a small, two-item storage. You can put goggles in there,
+      and it might overlay them.
+2024-05-14:
+  Gristlebee:
+  - rscadd: Elzu rooting
+  - tweak: Max age for elzu characters can be 300.
+  Martinpachu:
+  - tweak: Riot shield crates now contain only one shield but are priced at 600 credits.
+  MassiveMen:
+  - rscadd: Hawaiian Shirt is now in loadout
+  - tweak: Hawaiian Shirt is now Floral Shirt
+  - tweak: New item description teehee
+  SomeguyManperson:
+  - bugfix: static anomalies can now be safely approached if mindshielded, wearing
+      a research scanner, or deaf, not all three at the same time
+2024-05-16:
+  FleetingExpertise:
+  - rscadd: Added new sprites for the plunger, rolling pin and push broom by FleetingExpertise
+  - rscadd: Most knifes in the game have  been resprited!
+2024-05-18:
+  spookypineapple:
+  - imageadd: Snowy grass, suit storage units, bookcases, and chem machines have been
+      resprited
+2024-05-20:
+  MarkSuckerberg:
+  - rscadd: Autowiki generated reagents list page
+2024-05-21:
+  Apogee-dev:
+  - tweak: Made the Delta more obviously affiliated with N+S Logistics
+  FalloutFalcon:
+  - balance: some xeno stuff needed nerfs
+  - bugfix: fixed a bunch of xeno issues
+  - rscdel: deleted some bad recipes like a golden horn, black carpet, aitater, and
+      legion staff
+  - code_imp: organized recipe files
+  Gristlebee:
+  - rscadd: A bunch of new items for the Black Market catalogue
+  - rscadd: Two new Black Market Tabs, Explosives and Emergency
+  - rscadd: Sawn off Illestren typepath
+  - rscdel: Black Market Teleportation
+  - rscdel: Space Ninja mask and Clown Tears from Black Market
+  - tweak: Black Market Uplink uses a micro laser instead of an ansible for crafting
+  - tweak: Black Market descriptions and examines
+  - tweak: Black Market Uplinks link directly to a specific LTSRBT
+  - balance: Black Market item price and stock adjusted
+  - balance: LTSRBT is faster
+  - code_imp: pair_item var for Black Market items
+  Martinpachu:
+  - rscdel: Removed the bible from loadout, as well as the religion and deity names
+      because god is dead. Clown and mime names too.
+  - balance: The civilian etherbor weapons have been made larger (the SG-8 being normal
+      sized and the BG-12 being bulky sized)
+  Sadhorizon:
+  - tweak: Sarathi max age is now 175.
+  SomeguyManperson:
+  - rscadd: you can now attach plungers to people by hand, rather than throwing
+  Sun-Soaked:
+  - rscadd: Volumetric storage on backpacks.
+  - rscadd: trash bags now have more storage space, but only make a small amount of
+      their contents accessible at any given time.
+  Zevotech:
+  - rscadd: Remaps lavaland_surface_biodome_winter.dmm
+  - rscdel: Removes the "Undead Eskimo" mob
+  generalthrax:
+  - rscadd: Add mood-boosting vivifier cybernetic implants to boost your mood to Cybernetic
+      Implants node. Preservation of the sense of taste not included
+  - rscadd: Adds a hacked variant of the above (not yet obtainable) to give terrible
+      mood to those installed with it!
+  meemofcourse:
+  - rscadd: Tortuga-class.
+  - rscadd: Brawler-class.
+  - rscdel: Ember-class.
+  - rscdel: Scar suit.
+  - tweak: Frontiersmen outfits start with less stuff.
+  retlaw34:
+  - rscdel: Vela-class, is this even player facing?
+  - rscadd: Variants of clip outfits
+  - rscdel: reinforced trapper hat
+  - rscadd: resprites the indie sec suit and it's clip variant
+  - tweak: Some extremely minor code tweaks
+  - rscadd: adds support to make adding species variants easier, jesus christ it was
+      bad before.
+  - rscadd: snouted variant support for sprites
+2024-05-22:
+  Zevotech:
+  - rscadd: rockplanet_shippingdock.dmm and associated code
+2024-05-25:
+  FalloutFalcon:
+  - rscdel: Removed comms consoles from ruins and ships
+  PositiveEntropy:
+  - imageadd: Computers now look sleeker!
+  SomeguyManperson:
+  - bugfix: mech laser cargo crate is no longer unbuyable
+  Zevotech:
+  - rscdel: Plastic flaps no longer block atmos

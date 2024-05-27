@@ -647,7 +647,7 @@
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
-	build_path = /obj/item/radio/off
+	build_path = /obj/item/radio
 	category = list("initial", "T-Comm")
 
 /datum/design/intercom_frame
@@ -868,6 +868,22 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c556mmHITP/surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/generic_ammo_box
+	name = "Generic Ammo Box"
+	id = "ammo-generic"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/ammo_box/generic
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/ammo_can
+	name = "Ammo Can"
+	id = "ammo-can"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 500)
+	build_path = /obj/item/storage/toolbox/ammo
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/cleaver

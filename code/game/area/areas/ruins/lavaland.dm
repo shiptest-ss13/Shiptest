@@ -5,10 +5,26 @@
 /area/ruin/powered/beach
 	icon_state = "dk_yellow"
 
-// Snow Biodome
+// Winter Biodome
 
-/area/ruin/powered/snow_biodome
-	icon_state = "dk_yellow"
+/area/ruin/unpowered/winter_biodome
+	icon_state = "bluenew"
+	name = "Biodome Main Area"
+
+/area/ruin/unpowered/winter_biodome/entrance
+	name = "Biodome Entrance"
+
+/area/ruin/unpowered/winter_biodome/living_quarters
+	name = "Biodome Living Quarters"
+
+/area/ruin/unpowered/winter_biodome/cabin
+	name = "Biodome Cabin"
+
+/area/ruin/unpowered/winter_biodome/engineering
+	name = "Biodome Engineering"
+
+/area/ruin/unpowered/winter_biodome/sauna
+	name = "Biodome Sauna"
 
 //Gluttony
 
@@ -44,12 +60,6 @@
 	name = "Syndicate Comm Outpost"
 	icon_state = "dk_yellow"
 
-
-//Cult Altar
-
-/area/ruin/unpowered/cultaltar
-	name = "Cult Altar"
-	ambientsounds = SPOOKY
 
 //Xeno Nest
 

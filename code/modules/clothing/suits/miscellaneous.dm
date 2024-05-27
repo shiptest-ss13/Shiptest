@@ -326,6 +326,8 @@
 /obj/item/clothing/head/hooded/human_head
 	name = "bloated human head"
 	desc = "A horribly bloated and mismatched human head."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "lingspacehelmet"
 	body_parts_covered = HEAD
 	flags_cover = HEADCOVERSEYES
@@ -512,8 +514,9 @@
 
 /obj/item/clothing/suit/caution
 	name = "wet floor sign"
-	desc = "Caution! Wet Floor!"
+	desc = "No running."
 	icon_state = "caution"
+	icon = 'icons/obj/janitor.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	force = 1
@@ -660,8 +663,8 @@
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
 
 /obj/item/clothing/suit/hawaiian
-	name = "hawaiian overshirt"
-	desc = "A cool shirt for chilling on the beach."
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_blue"
 	item_state = "hawaiian_blue"
 

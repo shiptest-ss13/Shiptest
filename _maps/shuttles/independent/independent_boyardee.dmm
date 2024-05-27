@@ -97,10 +97,8 @@
 	pixel_x = -5;
 	pixel_y = -4
 	},
-/obj/structure/closet/wall/white{
-	dir = 8;
-	name = "First Aid";
-	pixel_x = 28
+/obj/structure/closet/wall/white/directional/east{
+	name = "First Aid"
 	},
 /obj/machinery/light/small/directional/south,
 /obj/machinery/newscaster/directional/west,
@@ -439,6 +437,10 @@
 	icon_state = "2-8"
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stock_parts/cell/high/plus,
+/obj/machinery/cell_charger,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "iB" = (
@@ -665,12 +667,14 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "mH" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
 /obj/effect/turf_decal/box,
-/obj/item/stack/sheet/mineral/plasma/five,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "nc" = (
@@ -854,9 +858,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "qE" = (
@@ -902,9 +904,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "rm" = (
@@ -1573,11 +1573,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "CV" = (
-/obj/structure/reagent_dispensers/watertank/high,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
 /obj/effect/turf_decal/box,
+/obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Da" = (
@@ -2496,10 +2497,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "TN" = (
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high/plus,
-/obj/item/stock_parts/cell/high/plus,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Uf" = (
@@ -2627,6 +2628,9 @@
 	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/box,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "VR" = (
@@ -2666,9 +2670,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "WH" = (

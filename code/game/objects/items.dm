@@ -22,7 +22,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
-	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	var/supports_variations = null
+
+	///If set, kepori wearing this use this instead of their clothing file
+	var/kepoi_override_icon
+
+	///If set, vox wearing this use this instead of their clothing file
+	var/vox_override_icon
 
 	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
 	var/list/greyscale_colors[3]
@@ -69,8 +76,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 
-	///How large is the object, used for stuff like whether it can fit in backpacks or not
+	/// Weight class for how much storage capacity it uses and how big it physically is meaning storages can't hold it if their maximum weight class isn't as high as it.
 	var/w_class = WEIGHT_CLASS_NORMAL
+	/// Volume override for the item, otherwise automatically calculated from w_class.
+	var/w_volume
+
 	///This is used to determine on which slots an item can fit.
 	var/slot_flags = 0
 	pass_flags = PASSTABLE
@@ -684,7 +694,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if (callback) //call the original callback
 		. = callback.Invoke()
 	item_flags &= ~IN_INVENTORY
-	if(!pixel_y && !pixel_x)
+	if(!pixel_y && !pixel_x && !(item_flags & NO_PIXEL_RANDOM_DROP))
 		pixel_x = rand(-8,8)
 		pixel_y = rand(-8,8)
 
@@ -698,6 +708,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
+
+/obj/item/proc/get_helmet_overlay() // returns the icon for overlaying on a helmet
+	return mutable_appearance('icons/mob/clothing/helmet_overlays.dmi', icon_state)
 
 /obj/item/proc/update_slot_icon()
 	if(!ismob(loc))
@@ -842,6 +855,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/MouseEntered(location, control, params)
 	. = ..()
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_ENTER, location, control, params)
 	if((item_flags & IN_INVENTORY || item_flags & IN_STORAGE) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr
@@ -856,7 +870,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 	remove_outline()
 
-/obj/item/MouseExited()
+/obj/item/MouseExited(location,control,params)
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_EXIT, location, control, params)
 	deltimer(tip_timer)//delete any in-progress timer if the mouse is moved off the item before it finishes
 	closeToolTip(usr)
 	remove_outline()
@@ -979,6 +994,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			dropped(M, FALSE)
 	return ..()
 
+/// Get an item's volume that it uses when being stored.
+/obj/item/proc/get_w_volume()
+	// if w_volume is 0 you fucked up.
+	return w_volume || AUTO_SCALE_VOLUME(w_class)
+
 /obj/item/proc/embedded(mob/living/carbon/human/embedded_mob)
 	return
 
@@ -1025,7 +1045,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  * * forced- Do we want this to go through 100%?
  */
 /obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
-	if(!isbodypart(target) && !iscarbon(target) && !isclosedturf(target))
+	if(!isbodypart(target) && !iscarbon(target))
 		return
 	if(!forced && !LAZYLEN(embedding))
 		return

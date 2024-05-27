@@ -167,18 +167,6 @@
 	name = "Derelict Atmospherics"
 	icon_state = "red"
 
-//DJSTATION
-
-/area/ruin/space/djstation
-	name = "Ruskie DJ Station"
-	icon_state = "DJ"
-	has_gravity = STANDARD_GRAVITY
-
-/area/ruin/space/djstation/solars
-	name = "DJ Station Solars"
-	icon_state = "DJ"
-	has_gravity = STANDARD_GRAVITY
-
 //OLD AI SAT
 
 /area/tcommsat/oldaisat

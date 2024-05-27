@@ -227,7 +227,7 @@
 	pixel_x = -2;
 	pixel_y = -4
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
@@ -848,9 +848,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/sign/poster/contraband/random{
@@ -862,7 +860,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -871,7 +869,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -1024,9 +1022,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -1639,6 +1635,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "id" = (
@@ -1897,9 +1896,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/wood,
@@ -2237,8 +2234,8 @@
 /obj/item/storage/belt/utility{
 	pixel_y = 6
 	},
-/obj/item/radio/off,
-/obj/item/radio/off{
+/obj/item/radio,
+/obj/item/radio{
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -2800,7 +2797,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
@@ -3227,6 +3224,8 @@
 "NL" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "NN" = (

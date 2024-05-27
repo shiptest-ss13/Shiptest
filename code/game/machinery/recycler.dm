@@ -7,6 +7,8 @@
 	icon_state = "grinder-o0"
 	layer = ABOVE_ALL_MOB_LAYER // Overhead
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/recycler
 	var/safety_mode = FALSE // Temporarily stops machine if it detects a mob
 	var/icon_name = "grinder-o"

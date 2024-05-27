@@ -859,9 +859,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
 		var/uniform_compatible = FALSE
 		var/suit_compatible = FALSE
-		if(!(H.w_uniform) || (H.w_uniform.supports_variations & DIGITIGRADE_VARIATION) || (H.w_uniform.supports_variations & DIGITIGRADE_VARIATION_NO_NEW_ICON)) //Checks uniform compatibility
+		if(!(H.w_uniform) || (H.w_uniform.supports_variations & DIGITIGRADE_VARIATION) || (H.w_uniform.supports_variations & DIGITIGRADE_VARIATION_NO_NEW_ICON) || (H.w_uniform.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)) //Checks uniform compatibility
 			uniform_compatible = TRUE
-		if((!H.wear_suit) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION) || !(H.wear_suit.body_parts_covered & LEGS) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION_NO_NEW_ICON)) //Checks suit compatability
+		if((!H.wear_suit) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION) || !(H.wear_suit.body_parts_covered & LEGS) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION_NO_NEW_ICON) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)) //Checks suit compatability
 			suit_compatible = TRUE
 
 		var/show_digitigrade = suit_compatible && (uniform_compatible || H.wear_suit?.flags_inv & HIDEJUMPSUIT) //If the uniform is hidden, it doesnt matter if its compatible
@@ -1359,9 +1359,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/hungry = (500 - H.nutrition) / 5 //So overeat would be 100 and default level would be 80
 			if(hungry >= 70)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/hunger, multiplicative_slowdown = (hungry / 50))
-			else if(isethereal(H))
-				var/datum/species/ethereal/E = H.dna.species
-				if(E.get_charge(H) <= ETHEREAL_CHARGE_NORMAL)
+			else if(iselzuose(H))
+				var/datum/species/elzuose/E = H.dna.species
+				if(E.get_charge(H) <= ELZUOSE_CHARGE_NORMAL)
 					H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/hunger, multiplicative_slowdown = (1.5 * (1 - E.get_charge(H) / 100)))
 			else
 				H.remove_movespeed_modifier(/datum/movespeed_modifier/hunger)

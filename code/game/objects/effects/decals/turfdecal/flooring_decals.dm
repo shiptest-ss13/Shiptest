@@ -138,6 +138,8 @@ TURF_DECAL_COLOR_HELPER(opaque/grey, COLOR_FLOORTILE_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/lightgrey, "#a8b2b6", 255)
 TURF_DECAL_COLOR_HELPER(opaque/bottlegreen, "#57967f", 255)
 TURF_DECAL_COLOR_HELPER(opaque/ntblue, "#283674", 255)
+TURF_DECAL_COLOR_HELPER(opaque/nsorange, "#FF6600", 255)
+TURF_DECAL_COLOR_HELPER(opaque/vired, "#d40000", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovgold, "#eeac2e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/syndiered, "#730622", 255)
@@ -163,6 +165,8 @@ TURF_DECAL_COLOR_HELPER(transparent/grey, COLOR_FLOORTILE_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/lightgrey, "#a8b2b6", 140)
 TURF_DECAL_COLOR_HELPER(transparent/bottlegreen, "#57967f", 140)
 TURF_DECAL_COLOR_HELPER(transparent/ntblue, "#283674", 140)
+TURF_DECAL_COLOR_HELPER(transparent/nsorange, "#FF6600", 140)
+TURF_DECAL_COLOR_HELPER(opaque/vired, "#d40000", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovgold, "#eeac2e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/syndiered, "#730622", 140)
@@ -796,6 +800,40 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/solgov/all/bottom_right
 	icon_state = "bottom-right-all"
+
+/obj/effect/turf_decal/nanotrasen //placeholder for sorting these together, add 3x3 NT and Vigilitas logos later
+	icon = 'icons/obj/nanotrasen_floor.dmi'
+	icon_state = "NS-2x2" //also placeholder
+
+/obj/effect/turf_decal/nanotrasen/ns
+	icon_state = "NS-2x2"
+
+/obj/effect/turf_decal/nanotrasen/ns/top_left
+	icon_state = "NS-top-left"
+
+/obj/effect/turf_decal/nanotrasen/ns/top
+	icon_state = "NS-top-center"
+
+/obj/effect/turf_decal/nanotrasen/ns/top_right
+	icon_state = "NS-top-right"
+
+/obj/effect/turf_decal/nanotrasen/ns/center_left
+	icon_state = "NS-center-left"
+
+/obj/effect/turf_decal/nanotrasen/ns/center
+	icon_state = "NS-center"
+
+/obj/effect/turf_decal/nanotrasen/ns/center_right
+	icon_state = "NS-center-right"
+
+/obj/effect/turf_decal/nanotrasen/ns/bottom_left
+	icon_state = "NS-bottom-left"
+
+/obj/effect/turf_decal/nanotrasen/ns/bottom
+	icon_state = "NS-bottom-center"
+
+/obj/effect/turf_decal/nanotrasen/ns/bottom_right
+	icon_state = "NS-bottom-right"
 
 /obj/effect/turf_decal/road
 	name = "road decal"
