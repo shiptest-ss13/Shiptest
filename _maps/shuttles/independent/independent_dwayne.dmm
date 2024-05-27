@@ -951,7 +951,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1204,7 +1204,7 @@
 /area/ship/cargo)
 "CD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1625,16 +1625,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
-"Mk" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/item/stack/sheet/mineral/plasma/five,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Mn" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -2126,9 +2116,9 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/lights/mixed,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "WZ" = (
@@ -2210,7 +2200,7 @@
 "YE" = (
 /obj/structure/catwalk/over,
 /obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -2382,7 +2372,7 @@ tq
 CD
 vn
 WL
-Mk
+IF
 IF
 as
 kf

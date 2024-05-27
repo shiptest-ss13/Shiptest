@@ -72,12 +72,9 @@
 /turf/open/floor/plating/rust,
 /area/ship/crew/toilet)
 "aQ" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/atmospherics)
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "aR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -100,6 +97,15 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"bh" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ship/hallway/central)
 "bk" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
 	dir = 4
@@ -156,14 +162,14 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "bz" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "thruster fuel pump"
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ship/hallway/central)
 "bA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -190,10 +196,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "bI" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/machinery/atmospherics/pipe/simple/brown/visible,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "bO" = (
 /obj/structure/table/reinforced,
@@ -803,6 +808,16 @@
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/hallway/central)
+"fQ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 1;
+	name = "Fuel Pump"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "fT" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
@@ -2126,7 +2141,8 @@
 /area/ship/external)
 "qK" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "qR" = (
 /obj/machinery/door/airlock/mining{
@@ -2866,8 +2882,12 @@
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "wt" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "thruster fuel pump"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ww" = (
@@ -3093,8 +3113,10 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "yF" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "yG" = (
@@ -3462,15 +3484,6 @@
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
-"BP" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/carpet/nanoweave,
-/area/ship/hallway/central)
 "BS" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -4876,6 +4889,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"OQ" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "OT" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel,
@@ -4993,16 +5016,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
-"QA" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	dir = 1;
-	name = "Fuel Pump"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "QK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5082,9 +5095,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Rv" = (
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ship/cargo)
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/brown/visible,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Rw" = (
 /obj/structure/railing{
 	dir = 8
@@ -5666,16 +5681,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"WJ" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "WO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -6009,15 +6014,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"ZW" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/carpet/nanoweave,
-/area/ship/hallway/central)
 
 (1,1,1) = {"
 fW
@@ -6121,7 +6117,7 @@ fW
 kz
 kz
 JT
-bz
+wt
 gO
 dJ
 xO
@@ -6167,9 +6163,9 @@ Yn
 Uk
 ub
 Oo
-yF
+bI
 Xe
-aQ
+yF
 CR
 Hu
 mL
@@ -6185,7 +6181,7 @@ kz
 pT
 At
 RK
-wt
+qK
 dS
 Ra
 tF
@@ -6204,8 +6200,8 @@ lW
 sJ
 qK
 dO
-wt
-bI
+qK
+Rv
 DF
 kz
 fW
@@ -6237,7 +6233,7 @@ Mq
 zK
 Zr
 Ew
-bI
+Rv
 wC
 kz
 fW
@@ -6393,14 +6389,14 @@ WZ
 rW
 cS
 sU
-ZW
+bh
 Fu
 Yp
 TI
 PI
 Pq
-QA
-WJ
+fQ
+OQ
 fW
 "}
 (13,1,1) = {"
@@ -6425,10 +6421,10 @@ WZ
 tI
 xb
 hA
-BP
+bz
 Ls
-Rv
-Rv
+aQ
+aQ
 ZI
 ug
 jv
