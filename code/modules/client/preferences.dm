@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
-#define MAX_MUTANT_ROWS 4
+#define MAX_MUTANT_ROWS 5
 
 /datum/preferences/proc/ShowChoices(mob/user)
 	show_loadout = (current_tab != 1) ? show_loadout : FALSE
@@ -849,9 +849,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			//Adds a thing to select which phobia because I can't be assed to put that in the quirks window
 			if("Phobia" in all_quirks)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>Phobia</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
 
 			if("body_size" in pref_species.default_features)
 				if(!mutant_category)
@@ -861,6 +868,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]]</a><BR>"
 
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if(generic_adjective)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
 
 				dat += "<h3>Character Adjective</h3>"
 
