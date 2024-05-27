@@ -61,7 +61,6 @@
 
 /datum/species/kepori/New()
 	. = ..()
-	FACEMASK_LAYER
 	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
 	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
 	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
