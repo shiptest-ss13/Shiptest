@@ -3,7 +3,7 @@
 	var/has_painkillers = user.reagents.has_reagent(/datum/reagent/medicine/morphine, needs_metabolizing = TRUE)
 	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam > 5) //prioritize healing if we're synthetic
 		return ..()
-	if(!user.a_intent == INTENT_HELP || !W.get_temperature() || !BP.can_bandage()) //this will also catch low damage synthetic welding
+	if(user.a_intent != INTENT_HELP || !W.get_temperature() || !BP.can_bandage()) //this will also catch low damage synthetic welding
 		return ..()
 	. = TRUE
 	var/heal_time = 2 SECONDS
