@@ -161,7 +161,6 @@ There are several things that need to be remembered:
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = use_autogen)
 
 		if(!uniform_overlay)
@@ -190,7 +189,6 @@ There are several things that need to be remembered:
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', mob_species = use_autogen)
 
 		if(!id_overlay)
@@ -255,7 +253,6 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_GLOVES_PATH
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!gloves_overlay)
@@ -308,7 +305,6 @@ There are several things that need to be remembered:
 				icon_file = DEFAULT_GLASSES_PATH
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 			if(!glasses_overlay)
@@ -360,7 +356,6 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_EARS_PATH
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, mob_species = use_autogen)
 
 		if(!ears_overlay)
@@ -422,7 +417,6 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_SHOES_PATH
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!shoes_overlay)
@@ -498,7 +492,6 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_HEAD_PATH
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!head_overlay)
@@ -549,7 +542,6 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_BELT_PATH
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!belt_overlay)
@@ -608,7 +600,6 @@ There are several things that need to be remembered:
 			icon_file = I.mob_overlay_icon
 
 		var/use_autogen = handled_by_bodytype ? dna.species : null
-		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!suit_overlay)
@@ -692,7 +683,6 @@ There are several things that need to be remembered:
 				handled_by_bodytype = TRUE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!mask_overlay)
@@ -725,7 +715,6 @@ There are several things that need to be remembered:
 				handled_by_bodytype = FALSE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 
@@ -768,7 +757,6 @@ There are several things that need to be remembered:
 				handled_by_bodytype = TRUE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
 			back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
 
 			if(!back_overlay)
