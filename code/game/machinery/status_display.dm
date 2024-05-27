@@ -22,7 +22,7 @@
 	icon_state = "frame"
 	density = FALSE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
+	idle_power_usage = IDLE_DRAW_MINIMAL
 
 	maptext_height = 26
 	maptext_width = 32

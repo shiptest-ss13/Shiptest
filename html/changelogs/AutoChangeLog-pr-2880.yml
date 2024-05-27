@@ -1,0 +1,6 @@
+author: Spyroshark, Sun-Soaked
+changes:
+  - {rscadd: 'A movable physics subsystem, deployed using a component.'}
+  - {rscadd: Bullet casings now drop using movable physics}
+  - {code_imp: ports NO_PIXEL_RANDOM_DROP from TG.}
+delete-after: true
