@@ -603,7 +603,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/mob_species = pickweight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 25,
-			/datum/species/ethereal = 10,
+			/datum/species/elzuose = 10,
 			/datum/species/moth = 10,
 			/datum/species/spider = 3,
 			/datum/species/fly = 2
@@ -731,6 +731,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 	//as are bag contents
 
 	backpack_contents = list()
+	backpack_contents += pickweight(list( //fallback in case of no weapons
+		/obj/item/wrench = 10,
+		/obj/item/crowbar = 15,
+		/obj/item/screwdriver = 5,
+		/obj/item/wirecutters = 10,
+		/obj/item/scalpel = 5,
+		/obj/item/flashlight/seclite = 10,
+		))
 	if(prob(70))
 		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
@@ -798,14 +806,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 			l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	if(survivor_type == "hunter")
-		l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+		l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 		if (prob(20))
 			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 
 	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(50))
 			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
-		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+		r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
 	else
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
@@ -885,7 +893,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 				/obj/item/clothing/head/helmet/marine = 1,
 				/obj/item/clothing/head/helmet/marine/security = 1,
 			))
-			spare_ammo_count = rand(1,3)
+			spare_ammo_count = rand(2,3)
 			r_hand = /obj/item/gun/ballistic/automatic/assault/skm/pirate
 			for(var/i in 1 to spare_ammo_count)
 				if(prob(5))
@@ -895,9 +903,22 @@ GLOBAL_LIST_EMPTY(knpcs)
 				else
 					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40
 		else
-			r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+			picked = pickweight(list(
+				/obj/item/gun/ballistic/automatic/smg/skm_carbine = 70,
+				/obj/item/gun/ballistic/automatic/smg/mini_uzi = 20,
+				/obj/item/gun/ballistic/automatic/smg/firestorm = 4,
+				/obj/item/gun/ballistic/automatic/smg/vector = 4,
+				/obj/item/gun/ballistic/automatic/smg/cm5 = 4,
+				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq = 4,
+				/obj/item/gun/ballistic/automatic/smg/c20r/cobra = 4,
+				/obj/item/gun/ballistic/automatic/smg/proto = 4,
+				/obj/item/gun/ballistic/automatic/pistol/APS = 4,
+				/obj/item/gun/ballistic/automatic/pistol/mauler = 4,
+				))
+			r_hand = picked
+			var/obj/item/gun/ballistic/current_gun = picked
 			for(var/i in 1 to spare_ammo_count)
-				backpack_contents += /obj/item/ammo_box/magazine/skm_545_39
+				backpack_contents += current_gun.mag_type
 
 	internals_slot = ITEM_SLOT_RPOCKET
 
@@ -1451,13 +1472,21 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 
 	if(dist <= 1)
 		var/proc_fist = TRUE
-		if(!istype(A, /obj/item/gun) && H.a_intent == INTENT_HARM)
-			if(grab_melee(HA) )
-				A = H.get_active_held_item()
-				if(A)
-					target.attackby(A, H)
-					A.afterattack(target, H, TRUE)
-					proc_fist = FALSE
+		var/override_gun_instincts = FALSE
+		if(istype(target, /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands))
+			override_gun_instincts = TRUE
+		if((!istype(A, /obj/item/gun) || override_gun_instincts) && H.a_intent == INTENT_HARM)
+			if(!override_gun_instincts)
+				if(grab_melee(HA) )
+					A = H.get_active_held_item()
+					if(A)
+						target.attackby(A, H)
+						A.afterattack(target, H, TRUE)
+						proc_fist = FALSE
+			else
+				target.attackby(A, H)
+				A.afterattack(target, H, TRUE)
+				proc_fist = FALSE
 
 		if(proc_fist && !isanimal(target))
 			H.dna.species.spec_attack_hand(H, target)
