@@ -161,6 +161,10 @@
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 5
 
+/turf/closed/mineral/ship
+	baseturfs = /turf/open/floor/plating/asteroid/ship
+	turf_type = /turf/open/floor/plating/asteroid/ship
+
 
 /turf/closed/mineral/random/Initialize(mapload, inherited_virtual_z)
 
