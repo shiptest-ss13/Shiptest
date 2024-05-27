@@ -9,8 +9,8 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/smartfridge
 
 	var/max_n_of_items = 1500
@@ -245,8 +245,8 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 200
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	visible_contents = FALSE
 	var/drying = FALSE
 
@@ -326,10 +326,10 @@
 /obj/machinery/smartfridge/drying_rack/proc/toggle_drying(forceoff)
 	if(drying || forceoff)
 		drying = FALSE
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		drying = TRUE
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 	update_appearance()
 
 /obj/machinery/smartfridge/drying_rack/proc/rack_dry()
