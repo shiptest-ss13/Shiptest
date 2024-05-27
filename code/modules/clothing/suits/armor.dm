@@ -15,6 +15,8 @@
 	greyscale_colors = list(list(18, 19), list(13, 18), list(20, 15))
 	greyscale_icon_state = "armor"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)
@@ -156,21 +158,6 @@
 	name = "Cybersun captain's haori"
 	desc = "An extraordinarily fashionable haori, utilized by Cybersun captains. Weaved with armored fabric to protect the user from gunshots."
 	icon_state = "carapace_cybersun"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain
-	name = "\improper 2nd Battlegroup jacket"
-	desc = "An armored jacket worn by the New Gorlex Republic's 2nd Battlegroup."
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	icon_state = "carapace_ngr"
-	item_state = "carapace_ngr"
-	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
-/obj/item/clothing/suit/armor/vest/capcarapace/alt
-	name = "captain's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "carapace_ntformal"
-	item_state = "capspacesuit"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
