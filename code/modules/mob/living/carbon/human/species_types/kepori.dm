@@ -61,6 +61,7 @@
 
 /datum/species/kepori/New()
 	. = ..()
+	FACEMASK_LAYER
 	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
 	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
 	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
@@ -72,18 +73,30 @@
 							"[WEST]" = list("x" =  -3, "y" = -3)
 							),
 		"[GLASSES_LAYER]" = list(
-							"[NORTH]" = list("x" = 0, "y" = -4),
-							"[EAST]" = list("x" = 4, "y" = -4),
-							"[SOUTH]" = list("x" = 0, "y" = -4),
-							"[WEST]" = list("x" =  -4, "y" = -4)
+							"[NORTH]" = list("x" = 8, "y" = -3),
+							"[EAST]" = list("x" = 19, "y" = -3),
+							"[SOUTH]" = list("x" = 8, "y" = -3),
+							"[WEST]" = list("x" =  -3, "y" = -3)
 							),
 		"[FACEMASK_LAYER]" = list(
-							"[NORTH]" = list("x" = 0, "y" = -5),
-							"[EAST]" = list("x" = 4, "y" = -5),
-							"[SOUTH]" = list("x" = 0, "y" = -5),
-							"[WEST]" = list("x" =  -4, "y" = -5)
+							"[NORTH]" = list("x" = 8, "y" = -3),
+							"[EAST]" = list("x" = 19, "y" = -3),
+							"[SOUTH]" = list("x" = 8, "y" = -3),
+							"[WEST]" = list("x" =  -3, "y" = -3)
 							),
 		"[BELT_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = -1),
+							"[EAST]" = list("x" = 8, "y" = -1),
+							"[SOUTH]" = list("x" = 8, "y" = -1),
+							"[WEST]" = list("x" =  9, "y" = -1)
+							),
+		"[EARS_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = -3),
+							"[EAST]" = list("x" = 19, "y" = -3),
+							"[SOUTH]" = list("x" = 8, "y" = -3),
+							"[WEST]" = list("x" =  -3, "y" = -3)
+							),
+		"[SUIT_STORE_LAYER]" = list(
 							"[NORTH]" = list("x" = 8, "y" = -1),
 							"[EAST]" = list("x" = 8, "y" = -1),
 							"[SOUTH]" = list("x" = 8, "y" = -1),

@@ -1,5 +1,4 @@
 #define RESOLVE_ICON_STATE(I) (I.mob_overlay_state || I.icon_state)
-#define CHECK_USE_AUTOGEN (handled_by_bodytype ? null : dna.species) //Is this gross overuse of macros? Yes. Fuck you.
 
 	///////////////////////
 	//UPDATE_ICONS SYSTEM//
@@ -140,22 +139,30 @@ There are several things that need to be remembered:
 					icon_file = U.mob_overlay_icon
 					target_overlay = "[target_overlay]_digi"
 
-			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
-				icon_file = VOX_UNIFORM_PATH
-				if(U.vox_override_icon)
-					icon_file = U.vox_override_icon
+			else if(dna.species.bodytype & BODYTYPE_VOX)
+				if(U.supports_variations & VOX_VARIATION)
+					icon_file = VOX_UNIFORM_PATH
+					if(U.vox_override_icon)
+						icon_file = U.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
 
-			else if((dna.species.bodytype & BODYTYPE_KEPORI) && (U.supports_variations & KEPORI_VARIATION))
-				icon_file = KEPORI_UNIFORM_PATH
-				if(U.kepoi_override_icon)
-					icon_file = U.kepoi_override_icon
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(U.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_UNIFORM_PATH
+					if(U.kepoi_override_icon)
+						icon_file = U.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
+
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
 				handled_by_bodytype = TRUE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
-
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = use_autogen)
 
 		if(!uniform_overlay)
 			return
@@ -182,7 +189,9 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
-		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', mob_species = use_autogen)
 
 		if(!id_overlay)
 			return
@@ -225,21 +234,29 @@ There are several things that need to be remembered:
 		/// Does this clothing need to be generated via greyscale?
 		var/handled_by_bodytype = FALSE
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_GLOVES_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_GLOVES_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_GLOVES_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_GLOVES_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_GLOVES_PATH
 
-		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!gloves_overlay)
 			return
@@ -270,21 +287,29 @@ There are several things that need to be remembered:
 			/// Does this clothing need to be generated via greyscale?
 			var/handled_by_bodytype = FALSE
 
-			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-				icon_file = VOX_GLASSES_PATH
-				if(I.vox_override_icon)
-					icon_file = I.vox_override_icon
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_GLASSES_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
 
-			if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-				icon_file = KEPORI_GLASSES_PATH
-				if(I.kepoi_override_icon)
-					icon_file = I.kepoi_override_icon
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(I.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_GLASSES_PATH
+					if(I.kepoi_override_icon)
+						icon_file = I.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = TRUE
 				icon_file = DEFAULT_GLASSES_PATH
 
-			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 			if(!glasses_overlay)
 				return
@@ -314,21 +339,29 @@ There are several things that need to be remembered:
 		/// Does this clothing need to be generated via greyscale?
 		var/handled_by_bodytype = FALSE
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_EARS_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_EARS_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_EARS_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_EARS_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_EARS_PATH
 
-		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, mob_species = use_autogen)
 
 		if(!ears_overlay)
 			return
@@ -368,21 +401,29 @@ There are several things that need to be remembered:
 				icon_file = I.mob_overlay_icon
 				target_overlay = "[target_overlay]_digi"
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_SHOES_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_SHOES_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_SHOES_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_SHOES_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_SHOES_PATH
 
-		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN, override_state = target_overlay)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!shoes_overlay)
 			return
@@ -436,21 +477,29 @@ There are several things that need to be remembered:
 		if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 			target_overlay = "[target_overlay]_snouted"
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_HEAD_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_HEAD_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_HEAD_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_HEAD_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_HEAD_PATH
 
-		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN, override_state = target_overlay)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!head_overlay)
 			return
@@ -479,21 +528,29 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype = FALSE
 
 
-		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
-			icon_file = VOX_BELT_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_BELT_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((I.supports_variations & KEPORI_VARIATION) && (dna.species.bodytype & BODYTYPE_KEPORI))
-			icon_file = KEPORI_BELT_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_BELT_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_BELT_PATH
 
-		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!belt_overlay)
 			return
@@ -530,21 +587,29 @@ There are several things that need to be remembered:
 				icon_file = I.mob_overlay_icon
 				target_overlay = "[target_overlay]_digi"
 
-		else if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_SUIT_PATH
-			if(I.vox_override_icon)
-				icon_file = I.vox_override_icon
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_SUIT_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		else if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_SUIT_PATH
-			if(I.kepoi_override_icon)
-				icon_file = I.kepoi_override_icon
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_SUIT_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = TRUE
 			icon_file = I.mob_overlay_icon
 
-		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN, override_state = target_overlay)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!suit_overlay)
 			return
@@ -606,21 +671,29 @@ There are several things that need to be remembered:
 			if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 				target_overlay = "[target_overlay]_snouted"
 
-			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-				icon_file = VOX_MASK_PATH
-				if(I.vox_override_icon)
-					icon_file = I.vox_override_icon
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_MASK_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
 
-			if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-				icon_file = KEPORI_MASK_PATH
-				if(I.kepoi_override_icon)
-					icon_file = I.kepoi_override_icon
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(I.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_MASK_PATH
+					if(I.kepoi_override_icon)
+						icon_file = I.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				icon_file = DEFAULT_MASK_PATH
 				handled_by_bodytype = TRUE
 
-			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN, override_state = target_overlay)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!mask_overlay)
 			return
@@ -648,8 +721,12 @@ There are several things that need to be remembered:
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = TRUE
 				icon_file = DEFAULT_NECK_PATH
+			else
+				handled_by_bodytype = FALSE
 
-			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 
 	apply_overlay(NECK_LAYER)
@@ -673,19 +750,33 @@ There are several things that need to be remembered:
 		/// Does this clothing need to be generated via greyscale
 		var/handled_by_bodytype = FALSE
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_BACK_PATH
-
-		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
-			icon_file = DEFAULT_BACK_PATH
-			handled_by_bodytype = TRUE
-
-		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
-
 		if(!back_overlay)
-			return
-		overlays_standing[BACK_LAYER] = back_overlay
-	apply_overlay(BACK_LAYER)
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_BACK_PATH
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_BACK_PATH
+//				else
+				handled_by_bodytype = TRUE
+
+			if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
+				icon_file = DEFAULT_BACK_PATH
+				handled_by_bodytype = TRUE
+
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			message_admins("BODYTYPE [handled_by_bodytype] AUTOGEN [use_autogen]")
+			back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
+
+			if(!back_overlay)
+				return
+			overlays_standing[BACK_LAYER] = back_overlay
+
+			if(back_overlay) //This is faster fuck you
+				apply_overlay(BACK_LAYER)
 
 /mob/living/carbon/human/update_inv_legcuffed()
 	remove_overlay(LEGCUFF_LAYER)
@@ -826,7 +917,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 ^this female part sucks and will be fully ripped out ideally
 
 */
-// Note: if handled_by_bodytype is TRUE before calling this, the CHECK_USE_AUTOGEN macro makes species use greyscale
+// Note: if handled_by_bodytype is TRUE before calling this, it makes species use greyscale
 /obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
 
 	// WS Edit Start - Worn Icon State
