@@ -248,10 +248,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 							dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
 						if(cartridge.access & CART_ENGINE)
 							dat += "<li>[PDAIMG(power)]   <a href='byond://?src=[REF(src)];choice=43'>Power Monitor</a></li>"
-						if(cartridge.access & CART_MEDICAL)
-							dat += "<li>[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=44'>Medical Records</a></li>"
-						if(cartridge.access & CART_SECURITY)
-							dat += "<li>[PDAIMG(cuffs)]   <a href='byond://?src=[REF(src)];choice=45'>Security Records</A></li>"
 						if(cartridge.access & CART_QUARTERMASTER)
 							dat += "<li>[PDAIMG(crate)]   <a href='byond://?src=[REF(src)];choice=47'>Supply Records</A></li>"
 

@@ -309,99 +309,6 @@ Code:
 
 				menu += "</FONT></PRE>"
 
-		if (44) //medical records //This thing only displays a single screen so it's hard to really get the sub-menu stuff working.
-			menu = "<h4>[PDAIMG(medical)] Medical Record List</h4>"
-			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				for(var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
-					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields[DATACORE_ID]]'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]</a><br>"
-			menu += "<br>"
-		if(441)
-			menu = "<h4>[PDAIMG(medical)] Medical Record</h4>"
-
-			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				menu += "Name: [active1.fields[DATACORE_NAME]] ID: [active1.fields[DATACORE_ID]]<br>"
-				menu += "Gender: [active1.fields[DATACORE_GENDER]]<br>"
-				menu += "Age: [active1.fields[DATACORE_AGE]]<br>"
-				menu += "Rank: [active1.fields[DATACORE_RANK]]<br>"
-				menu += "Fingerprint: [active1.fields[DATACORE_FINGERPRINT]]<br>"
-				menu += "Physical Status: [active1.fields[DATACORE_PHYSICAL_HEALTH]]<br>"
-				menu += "Mental Status: [active1.fields[DATACORE_MENTAL_HEALTH]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
-			menu += "<h4>[PDAIMG(medical)] Medical Data</h4>"
-			if(active2 in SSdatacore.get_records(DATACORE_RECORDS_MEDICAL))
-				menu += "Blood Type: [active2.fields[DATACORE_BLOOD_TYPE]]<br><br>"
-
-				menu += "Minor Disabilities: [active2.fields["mi_dis"]]<br>"
-				menu += "Details: [active2.fields["mi_dis_d"]]<br><br>"
-
-				menu += "Major Disabilities: [active2.fields[DATACORE_DISABILITIES]]<br>"
-				menu += "Details: [active2.fields[DATACORE_DISABILITIES_DETAILS]]<br><br>"
-
-				menu += "Allergies: [active2.fields["alg"]]<br>"
-				menu += "Details: [active2.fields["alg_d"]]<br><br>"
-
-				menu += "Current Diseases: [active2.fields[DATACORE_DISEASES]]<br>"
-				menu += "Details: [active2.fields[DATACORE_DISEASES_DETAILS]]<br><br>"
-
-				menu += "Important Notes: [active2.fields[DATACORE_NOTES]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-		if (45) //security records
-			menu = "<h4>[PDAIMG(cuffs)] Security Record List</h4>"
-			if(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				for (var/datum/data/record/R in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
-					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields[DATACORE_ID]]'>[R.fields[DATACORE_ID]]: [R.fields[DATACORE_NAME]]</a><br>"
-
-			menu += "<br>"
-		if(451)
-			menu = "<h4>[PDAIMG(cuffs)] Security Record</h4>"
-
-			if(active1 in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
-				menu += "Name: [active1.fields[DATACORE_NAME]] ID: [active1.fields[DATACORE_ID]]<br>"
-				menu += "Gender: [active1.fields[DATACORE_GENDER]]<br>"
-				menu += "Age: [active1.fields[DATACORE_AGE]]<br>"
-				menu += "Rank: [active1.fields[DATACORE_RANK]]<br>"
-				menu += "Fingerprint: [active1.fields[DATACORE_FINGERPRINT]]<br>"
-				menu += "Physical Status: [active1.fields[DATACORE_PHYSICAL_HEALTH]]<br>"
-				menu += "Mental Status: [active1.fields[DATACORE_MENTAL_HEALTH]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
-			menu += "<h4>[PDAIMG(cuffs)] Security Data</h4>"
-			if(active3 in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
-				menu += "Criminal Status: [active3.fields[DATACORE_CRIMINAL_STATUS]]<br>"
-
-				menu += text("<BR>\nCrimes:")
-
-				menu +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
-<tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
-</tr>"}
-				for(var/datum/data/crime/c in active3.fields[DATACORE_CRIMES])
-					menu += "<tr><td>[c.crimeName]</td>"
-					menu += "<td>[c.crimeDetails]</td>"
-					menu += "<td>[c.author]</td>"
-					menu += "<td>[c.time]</td>"
-					menu += "</tr>"
-				menu += "</table>"
-				menu += "<BR>\nImportant Notes:<br>"
-				menu += "[active3.fields[DATACORE_NOTES]]"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
 		if (49) //janitorial locator
 			// hey there people, so there were two in world loops here that didnt have a timer assosciated with them.
 			// and instead of redoing this to not be actually god awful for perf and malcontent issues, I've removed it entirely.
@@ -465,22 +372,6 @@ Code:
 		return
 
 	switch(href_list["choice"])
-		if("Medical Records")
-			active1 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_OUTPOST)
-			if(active1)
-				active2 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_MEDICAL)
-			host_pda.mode = 441
-			if(!active2)
-				active1 = null
-
-		if("Security Records")
-			active1 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_OUTPOST)
-			if(active1)
-				active3 = SSdatacore.find_record(DATACORE_ID, href_list["target"], DATACORE_RECORDS_SECURITY)
-			host_pda.mode = 451
-			if(!active3)
-				active1 = null
-
 		if("Send Signal")
 			INVOKE_ASYNC(radio, TYPE_PROC_REF(/obj/item/integrated_signaler, send_activation))
 

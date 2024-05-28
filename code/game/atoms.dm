@@ -1338,7 +1338,7 @@
 	return
 
 ///Connect this atom to a shuttle
-/atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, handheld = FALSE)
 	return
 
 /atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
