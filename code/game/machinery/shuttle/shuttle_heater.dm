@@ -223,7 +223,14 @@
 	layer = OBJ_LAYER
 	showpipe = TRUE
 
-	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
+	pipe_flags = PIPING_ONE_PER_TURF
+
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/on_construction(obj_color, set_layer)
+	var/obj/item/circuitboard/machine/shuttle/fire_heater/board = circuit
+	if(board)
+		piping_layer = board.pipe_layer
+		set_layer = piping_layer
+	..()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/New()
 	. = ..()
