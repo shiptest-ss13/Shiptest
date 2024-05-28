@@ -458,8 +458,6 @@
 
 	var/obj/item/merit/bundle/bundle = new (user.loc)
 	bundle.value = cashamount
-	if(!Adjacent(user))
-	user.put_in_hands(bundle)
 	update_appearance()
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
