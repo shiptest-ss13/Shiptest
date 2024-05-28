@@ -57,7 +57,7 @@
 		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
 
-/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return ..()
 
@@ -84,7 +84,9 @@
 			if(!casing_to_eject)
 				continue
 			casing_to_eject.forceMove(drop_location())
-			casing_to_eject.bounce_away(FALSE, NONE)
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 		chamber_round(FALSE)
@@ -120,8 +122,9 @@
 			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
-	casing_to_eject.forceMove(drop_location())
-	casing_to_eject.bounce_away(FALSE, NONE)
+	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
@@ -139,6 +142,12 @@
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
 	if(!casing_to_insert)
 		return FALSE
+
+// Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
+	if(casing_to_insert.caliber != magazine.caliber)
+		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
+		return FALSE
+
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
