@@ -52,15 +52,20 @@ export const MedicalRecordView = (props, context) => {
       <Stack.Item grow>
         <Section
           buttons={
-            <Button.Confirm
-              content="Delete"
-              icon="trash"
-              onClick={() => act('expunge_record', { record_ref: record_ref })}
-              tooltip="Expunge record data."
-            />
+            <Stack>
+              <Stack.Item>
+                <Button.Confirm
+                  content="Delete"
+                  icon="trash"
+                  onClick={() =>
+                    act('delete_record', { record_ref: record_ref })
+                  }
+                  tooltip="Delete record data."
+                />
+              </Stack.Item>
+            </Stack>
           }
           fill
-          scrollable
           title={name}
         >
           <LabeledList>
@@ -119,7 +124,7 @@ export const MedicalRecordView = (props, context) => {
                 return (
                   <Button
                     color={isSelected ? PHYSICALSTATUS2COLOR[button] : 'grey'}
-                    height={'1.75rem'}
+
                     icon={PHYSICALSTATUS2ICON[button]}
                     key={index}
                     onClick={() =>
@@ -128,10 +133,11 @@ export const MedicalRecordView = (props, context) => {
                         physical_status: button,
                       })
                     }
+                    height={'1.75rem'}
+                    width={!isSelected ? '3.0rem' : 3.0}
                     textAlign="center"
                     tooltip={PHYSICALSTATUS2DESC[button] || ''}
                     tooltipPosition="bottom-start"
-                    width={!isSelected ? '3.0rem' : 3.0}
                   >
                     {button[0]}
                   </Button>
@@ -149,7 +155,6 @@ export const MedicalRecordView = (props, context) => {
                 return (
                   <Button
                     color={isSelected ? MENTALSTATUS2COLOR[button] : 'grey'}
-                    height={'1.75rem'}
                     icon={MENTALSTATUS2ICON[button]}
                     key={index}
                     onClick={() =>
@@ -158,10 +163,11 @@ export const MedicalRecordView = (props, context) => {
                         mental_status: button,
                       })
                     }
+                    height={'1.75rem'}
+                    width={!isSelected ? '3.0rem' : 3.0}
                     textAlign="center"
                     tooltip={MENTALSTATUS2DESC[button] || ''}
                     tooltipPosition="bottom-start"
-                    width={!isSelected ? '3.0rem' : 3.0}
                   >
                     {button[0]}
                   </Button>

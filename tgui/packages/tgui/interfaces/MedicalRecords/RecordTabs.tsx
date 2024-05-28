@@ -5,9 +5,6 @@ import { useBackend, useLocalState } from 'tgui/backend';
 import {
   Box,
   Button,
-  Icon,
-  Input,
-  NoticeBox,
   Section,
   Stack,
   Tabs,
@@ -18,13 +15,14 @@ import { MedicalRecord, MedicalRecordData } from './types';
 /** Displays all found records. */
 export const MedicalRecordTabs = (props, context) => {
   const { act, data } = useBackend<MedicalRecordData>(context);
+  const { records = [] } = data;
 
   return (
     <Stack fill vertical>
       <Stack.Item grow>
         <Section fill scrollable>
           <Tabs vertical>
-            {data.records.map((record, index) => (
+            {records.map((record, index) => (
               <CrewTab key={index} record={record} />
             ))}
           </Tabs>
@@ -38,8 +36,7 @@ export const MedicalRecordTabs = (props, context) => {
               onClick={() => act('new_record')}
               icon="plus"
               tooltip="New Record."
-            >
-            </Button>
+            ></Button>
           </Stack.Item>
           <Stack.Item>
             <Button.Confirm
@@ -57,11 +54,9 @@ export const MedicalRecordTabs = (props, context) => {
 
 /** Individual crew tab */
 const CrewTab = (props: { record: MedicalRecord }, context) => {
-  const [selectedRecord, setSelectedRecord] = useLocalState(
-    context,
-    'medicalRecord',
-    undefined
-  );
+const [selectedRecord, setSelectedRecord] = useLocalState<
+    MedicalRecord | undefined
+  >(context, 'medicalRecord', undefined);
 
   const { act, data } = useBackend(context);
   const { assigned_view } = data;
@@ -81,13 +76,17 @@ const CrewTab = (props: { record: MedicalRecord }, context) => {
     }
   };
 
+  const isSelected = selectedRecord?.record_ref === record_ref;
+
   return (
     <Tabs.Tab
       className="candystripe"
       onClick={() => selectRecord(record)}
-      selected={selectedRecord?.record_ref === record_ref}
+      selected={isSelected}
     >
-      {name}
+      <Box bold={isSelected}>
+        {name}
+      </Box>
     </Tabs.Tab>
   );
 };

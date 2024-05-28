@@ -20,6 +20,8 @@
 
 #define DATACORE_NOTES "notes"
 //#define DATACORE_NOTES_DETAILS "notes_d"
+#define DATACORE_NOTES_SECURITY "security_note"
+#define DATACORE_NOTES_MEDICAL "medical_note"
 
 #define DATACORE_RANK "rank"
 #define DATACORE_INITIAL_RANK "initial_rank"
@@ -74,7 +76,7 @@
 #define WANTED_SUSPECT "Suspected"
 
 /// List of available wanted statuses
-#define WANTED_STATUSES(...) list(\
+#define WANTED_STATUSES list(\
 	WANTED_NONE, \
 	WANTED_SUSPECT, \
 	WANTED_ARREST, \

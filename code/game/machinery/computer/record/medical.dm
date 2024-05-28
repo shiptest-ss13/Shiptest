@@ -42,6 +42,14 @@
 
 	return data
 
+/obj/machinery/computer/records/med/ui_static_data(mob/user)
+	var/list/data = list()
+	data["min_age"] = AGE_MIN
+	data["max_age"] = AGE_MAX
+	data["physical_statuses"] = PHYSICAL_STATUSES
+	data["mental_statuses"] = MENTAL_STATUSES
+	return data
+
 /obj/machinery/computer/records/med/syndie
 	icon_keyboard = "syndie_key"
 
