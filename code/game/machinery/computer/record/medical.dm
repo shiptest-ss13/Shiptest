@@ -9,39 +9,6 @@
 	circuit = /obj/item/circuitboard/computer/med_data
 	light_color = LIGHT_COLOR_BLUE
 
-/obj/machinery/computer/records/med/ui_interact(mob/user, datum/tgui/ui)
-	. = ..()
-	if(.)
-		return
-	ui = SStgui.try_update_ui(user, src, ui)
-	if (!ui)
-		ui = new(user, src, "MedicalRecords")
-		ui.set_autoupdate(FALSE)
-		ui.open()
-
-/obj/machinery/computer/records/med/ui_data(mob/user)
-	var/list/data = ..()
-
-	var/list/records = list()
-	for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
-		records += list(list(
-			age = target.fields[DATACORE_AGE],
-			blood_type = target.fields[DATACORE_BLOOD_TYPE],
-			record_ref = REF(target),
-			dna = target.fields[DATACORE_BLOOD_DNA],
-			gender = target.fields[DATACORE_GENDER],
-			disabilities = target.fields[DATACORE_DISABILITIES],
-			physical_status = target.fields[DATACORE_PHYSICAL_HEALTH],
-			mental_status = target.fields[DATACORE_MENTAL_HEALTH],
-			name = target.fields[DATACORE_NAME],
-			rank = target.fields[DATACORE_RANK],
-			species = target.fields[DATACORE_SPECIES],
-		))
-
-	data["records"] = records
-
-	return data
-
 /obj/machinery/computer/records/med/syndie
 	icon_keyboard = "syndie_key"
 
@@ -53,4 +20,3 @@
 	icon_keyboard = "laptop_key"
 	pass_flags = PASSTABLE
 	unique_icon = TRUE
-

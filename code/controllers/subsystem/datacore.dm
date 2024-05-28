@@ -182,9 +182,15 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_AGE] = H.age
 	G.fields[DATACORE_SPECIES] = H.dna.species.name
 	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
-	G.fields[DATACORE_PHYSICAL_HEALTH] = PHYSICAL_ACTIVE
-	G.fields[DATACORE_MENTAL_HEALTH] = MENTAL_STABLE
+	G.fields[DATACORE_PHYSICAL_HEALTH] = "Active"
+	G.fields[DATACORE_MENTAL_HEALTH] = "Stable"
 	G.fields[DATACORE_GENDER] = H.gender
+	if(H.gender == "male")
+		G.fields[DATACORE_GENDER] = "Male"
+	else if(H.gender == "female")
+		G.fields[DATACORE_GENDER] = "Female"
+	else
+		G.fields[DATACORE_GENDER] = "Other"
 	G.fields[DATACORE_APPEARANCE] = character_appearance
 
 	G.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type.name
@@ -204,12 +210,6 @@ SUBSYSTEM_DEF(datacore)
 		custom_library.inject_record(G)
 	else
 		library[custom_library].inject_record(G)
-
-/datum/controller/subsystem/datacore/proc/create_record(library_target, name)
-	var/datum/data/record/new_record = new /datum/data/record
-	new_record.fields[DATACORE_NAME] = name
-	library[library_target].inject_record(new_record)
-	return new_record
 
 /**
  * Supporing proc for getting general records
