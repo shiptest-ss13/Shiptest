@@ -186,10 +186,8 @@
 			id_info += "JOB: [assignment]"
 		if(registered_name)
 			id_info += "NAME: [registered_name]"
-		if(ship_access)
-			id_info += "SHIP: [ship_access]"
-		for(var/info in id_info)
-			id_message += " [info]"
+		if(id_info)
+			id_message += id_info.Join(", ")
 		var/self_message = span_notice("You show [id_message]")
 		var/other_message = span_notice("[user] shows you: [icon2html(src, viewers(user))] [id_message]")
 
