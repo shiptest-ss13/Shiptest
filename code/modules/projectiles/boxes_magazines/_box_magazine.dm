@@ -51,7 +51,7 @@
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
-	update_appearance()
+	update_ammo_count()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -107,8 +107,8 @@
 			if(!silent)
 				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
 			num_loaded++
-			attacking_obj.update_appearance()
-			update_appearance()
+			attacking_box.update_ammo_count()
+			update_ammo_count()
 
 	if(istype(attacking_obj, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/casing_to_insert = attacking_obj
@@ -117,7 +117,7 @@
 			if(!silent)
 				playsound(casing_to_insert, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
-			update_appearance()
+			update_ammo_count()
 
 
 	if(num_loaded)
