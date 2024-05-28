@@ -117,7 +117,7 @@
 		return
 	if(attacking_item.tool_behaviour == TOOL_MINING && (attacking_item.custom_materials[SSmaterials.GetMaterialRef(/datum/material/diamond)]))
 		to_chat(user, span_notice("You start parting away [src]..."))
-		if(attacking_item.use_tool(src, user, 50, volume=30))
+		if(attacking_item.use_tool(src, user, 100, volume=30))
 			to_chat(user, span_notice("You part away [src]."))
 			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
 			if (prob(10))
