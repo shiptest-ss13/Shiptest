@@ -34,11 +34,11 @@ export const MedicalRecordTabs = (props, context) => {
         <Stack fill>
           <Stack.Item>
             <Button
-              disabled
+              content="Create"
+              onClick={() => act('new_record')}
               icon="plus"
-              tooltip="Add new records by inserting a 1 by 1 meter photo into the terminal. You do not need this screen open."
+              tooltip="New Record."
             >
-              Create
             </Button>
           </Stack.Item>
           <Stack.Item>
