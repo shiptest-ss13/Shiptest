@@ -315,7 +315,7 @@
 	status_flags &= ~GODMODE
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/phase2_dramatic()
-	explosion(src, 0, 5, 10)
+	explosion(src, 0, 1, 5)
 	empulse(src, 5, 8)
 	new /obj/effect/gibspawner/human(get_turf(src))
 	qdel(src)
