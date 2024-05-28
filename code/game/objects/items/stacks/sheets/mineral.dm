@@ -333,32 +333,6 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	amount = 5
 
 /*
- * Clown
- */
-/obj/item/stack/sheet/mineral/bananium
-	name = "bananium"
-	icon_state = "sheet-bananium"
-	item_state = "sheet-bananium"
-	singular_name = "bananium sheet"
-	sheettype = "bananium"
-	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-
-	grind_results = list(/datum/reagent/consumable/banana = 20)
-	point_value = 50
-	merge_type = /obj/item/stack/sheet/mineral/bananium
-	material_type = /datum/material/bananium
-	walltype = /turf/closed/wall/mineral/bananium
-
-GLOBAL_LIST_INIT(bananium_recipes, list ( \
-	new/datum/stack_recipe("bananium tile", /obj/item/stack/tile/mineral/bananium, 1, 4, 20), \
-	new/datum/stack_recipe("Clown Statue", /obj/structure/statue/bananium/clown, 5, one_per_turf = 1, on_floor = 1), \
-	))
-
-/obj/item/stack/sheet/mineral/bananium/get_main_recipes()
-	. = ..()
-	. += GLOB.bananium_recipes
-
-/*
  * Titanium
  */
 /obj/item/stack/sheet/mineral/titanium
@@ -436,7 +410,6 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	. = ..()
 	. += GLOB.plastitanium_recipes
 
-
 /*
  * Snow
  */
@@ -464,56 +437,6 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 /obj/item/stack/sheet/mineral/snow/get_main_recipes()
 	. = ..()
 	. += GLOB.snow_recipes
-
-/****************************** Others ****************************/
-
-/*
- * Adamantine
-*/
-
-/obj/item/stack/sheet/mineral/adamantine
-	name = "adamantine"
-	icon_state = "sheet-adamantine"
-	item_state = "sheet-adamantine"
-	singular_name = "adamantine sheet"
-	custom_materials = list(/datum/material/adamantine=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/adamantine
-	grind_results = list(/datum/reagent/liquidadamantine = 10)
-
-/obj/item/stack/sheet/mineral/adamantine/ten
-	amount = 10
-
-/*
- * Runite
- */
-
-/obj/item/stack/sheet/mineral/runite
-	name = "runite"
-	desc = "Rare material found in distant lands."
-	singular_name = "runite bar"
-	icon_state = "sheet-runite"
-	item_state = "sheet-runite"
-	custom_materials = list(/datum/material/runite=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/runite
-	material_type = /datum/material/runite
-
-/obj/item/stack/sheet/mineral/runite/ten
-	amount = 10
-
-/*
- * Mythril
- */
-/obj/item/stack/sheet/mineral/mythril
-	name = "mythril"
-	icon_state = "sheet-mythril"
-	item_state = "sheet-mythril"
-	singular_name = "mythril sheet"
-	novariants = TRUE
-	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/mythril
-
-/obj/item/stack/sheet/mineral/mythril/ten
-	amount = 10
 
 /*
  * Alien Alloy
@@ -599,6 +522,9 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/hidden/hellstone/twenty
 	amount = 20
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/ten
+	amount = 10
 
 /obj/item/stack/sheet/mineral/hidden/hellstone/five
 	amount = 5
