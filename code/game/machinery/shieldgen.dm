@@ -508,6 +508,7 @@
 		to_chat(user, span_warning("It is fastened to the floor!"))
 		return FALSE
 	return TRUE
+
 /obj/machinery/power/shieldwallgen/atmos/attacked_by(obj/item/I, mob/living/user)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		var/obj/item/multitool/multi = I
