@@ -525,7 +525,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/delusion
 	var/list/image/delusions = list()
 
-/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300,skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
+/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300),skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
 	set waitfor = FALSE
 	. = ..()
 	var/image/A = null
@@ -557,7 +557,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A.name = "Frontiersman"
 			if("ramzi")//Ramzi
 				A = image('icons/mob/simple_human.dmi',H,"ramzi_base")
-				A.name = "Ramzi"
+				A.name = "Ramzi Commando"
 			if("custom")
 				A = image(custom_icon_file, H, custom_icon)
 				A.name = custom_name
@@ -565,7 +565,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(target.client)
 			delusions |= A
 			target.client.images |= A
-		QDEL_IN(src, duration)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/delusion/Destroy()
 	for(var/image/I in delusions)
@@ -576,7 +576,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/self_delusion
 	var/image/delusion
 
-/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300, custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
+/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300), custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
 	set waitfor = FALSE
 	..()
 	var/image/A = null
@@ -609,7 +609,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			to_chat(target, "<span class='hear'>...you look down and notice... you aren't the same as you used to be...</span>")
 		delusion = A
 		target.client.images |= A
-	QDEL_IN(src, duration)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/self_delusion/Destroy()
 	if(target.client)
