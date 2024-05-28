@@ -124,7 +124,6 @@ export const MedicalRecordView = (props, context) => {
                 return (
                   <Button
                     color={isSelected ? PHYSICALSTATUS2COLOR[button] : 'grey'}
-
                     icon={PHYSICALSTATUS2ICON[button]}
                     key={index}
                     onClick={() =>

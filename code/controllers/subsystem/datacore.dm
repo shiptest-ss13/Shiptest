@@ -171,6 +171,12 @@ SUBSYSTEM_DEF(datacore)
 	if(!C)
 		C = H.client
 
+	var/person_gender = "Other"
+	if(H.gender == "male")
+		person_gender = "Male"
+	if(H.gender == "female")
+		person_gender = "Female"
+
 	var/mutable_appearance/character_appearance = new(H.appearance)
 
 	//General Record
@@ -181,11 +187,12 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_INITIAL_RANK] = assignment
 	G.fields[DATACORE_AGE] = H.age
 	G.fields[DATACORE_SPECIES] = H.dna.species.name
-	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
 	G.fields[DATACORE_PHYSICAL_HEALTH] = PHYSICAL_ACTIVE
 	G.fields[DATACORE_MENTAL_HEALTH] = MENTAL_STABLE
-	G.fields[DATACORE_GENDER] = H.gender
+
+	G.fields[DATACORE_GENDER] = person_gender
 	G.fields[DATACORE_APPEARANCE] = character_appearance
+	G.fields[DATACORE_NOTES] = "No notes."
 
 	G.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type.name
 	G.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
@@ -193,12 +200,12 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_DISABILITIES_DETAILS] = "No minor disabilities have been declared."
 	G.fields[DATACORE_DISEASES] = "None"
 	G.fields[DATACORE_DISEASES_DETAILS] = "No diseases have been diagnosed at the moment."
+	G.fields[DATACORE_NOTES_MEDICAL] = "No medical notes."
 
-	G.fields[DATACORE_ID] = id
-	G.fields[DATACORE_NAME] = H.real_name
+	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
 	G.fields[DATACORE_CRIMINAL_STATUS] = "None"
 	G.fields[DATACORE_CRIMES] = list()
-	G.fields[DATACORE_NOTES] = "No notes."
+	G.fields[DATACORE_NOTES_SECURITY] = "No security notes."
 
 	if(istype(custom_library, /datum/data_library))
 		custom_library.inject_record(G)

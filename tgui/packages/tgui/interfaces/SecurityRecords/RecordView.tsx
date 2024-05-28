@@ -79,10 +79,7 @@ const RecordInfo = (props, context) => {
               {name}
             </Table.Cell>
           }
-        ></Section>
-      </Stack.Item>
-      <Stack.Item grow={2}>
-        <Section fill scrollable>
+        >
           <LabeledList>
             <LabeledList.Item label="Name">
               <EditableText field="name" target_ref={record_ref} text={name} />

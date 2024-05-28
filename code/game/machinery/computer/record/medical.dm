@@ -50,6 +50,41 @@
 	data["mental_statuses"] = MENTAL_STATUSES
 	return data
 
+/obj/machinery/computer/records/med/ui_act(action, list/params, datum/tgui/ui)
+	. = ..()
+	if(.)
+		return
+
+	var/mob/user = ui.user
+
+	var/datum/data/record/target
+	if(params["record_ref"])
+		target = locate(params["record_ref"]) in SSdatacore.get_records(linked_ship)
+
+	if(!target)
+		return FALSE
+
+	switch(action)
+		if("set_physical_status")
+			var/physical_status = params["physical_status"]
+			if(!physical_status || !(physical_status in PHYSICAL_STATUSES))
+				return FALSE
+
+			target.fields[DATACORE_PHYSICAL_HEALTH] = physical_status
+
+			return TRUE
+
+		if("set_mental_status")
+			var/mental_status = params["mental_status"]
+			if(!mental_status || !(mental_status in MENTAL_STATUSES))
+				return FALSE
+
+			target.fields[DATACORE_MENTAL_HEALTH] = mental_status
+
+			return TRUE
+
+	return FALSE
+
 /obj/machinery/computer/records/med/syndie
 	icon_keyboard = "syndie_key"
 

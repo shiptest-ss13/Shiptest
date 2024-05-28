@@ -100,24 +100,6 @@
 			balloon_alert(usr, "viewing record for [target.fields[DATACORE_NAME]]")
 			return TRUE
 
-		if("set_physical_status")
-			var/physical_status = params["physical_status"]
-			if(!physical_status || !(physical_status in PHYSICAL_STATUSES))
-				return FALSE
-
-			target.fields[DATACORE_PHYSICAL_HEALTH] = physical_status
-
-			return TRUE
-
-		if("set_mental_status")
-			var/mental_status = params["mental_status"]
-			if(!mental_status || !(mental_status in MENTAL_STATUSES))
-				return FALSE
-
-			target.fields[DATACORE_MENTAL_HEALTH] = mental_status
-
-			return TRUE
-
 	return FALSE
 
 /obj/machinery/computer/records/proc/secure_login(mob/user)

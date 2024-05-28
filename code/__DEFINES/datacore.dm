@@ -1,4 +1,6 @@
 #define DATACORE_ID "id"
+#define DATACORE_RANK "rank"
+#define DATACORE_INITIAL_RANK "initial_rank"
 #define DATACORE_NAME "name"
 #define DATACORE_AGE "age"
 #define DATACORE_GENDER "gender"
@@ -18,18 +20,16 @@
 #define DATACORE_DISABILITIES "ma_dis"
 #define DATACORE_DISABILITIES_DETAILS "ma_dis_d"
 
+#define DATACORE_CRIMES "crim"
+#define DATACORE_CRIMINAL_STATUS "criminal"
+//#define DATACORE_CITATIONS "citation"
+
+#define DATACORE_IMAGE "image"
+
 #define DATACORE_NOTES "notes"
 //#define DATACORE_NOTES_DETAILS "notes_d"
 #define DATACORE_NOTES_SECURITY "security_note"
 #define DATACORE_NOTES_MEDICAL "medical_note"
-
-#define DATACORE_RANK "rank"
-#define DATACORE_INITIAL_RANK "initial_rank"
-//#define DATACORE_PDA_ID "pda_id"
-
-#define DATACORE_CRIMES "crim"
-#define DATACORE_CRIMINAL_STATUS "criminal"
-//#define DATACORE_CITATIONS "citation"
 
 /// Keys for SSdatacore.library
 #define DATACORE_RECORDS_OUTPOST "outpost"
@@ -37,7 +37,6 @@
 #define DATACORE_RECORDS_MEDICAL "medical"
 #define DATACORE_RECORDS_LOCKED "locked"
 
-#define DATACORE_IMAGE "image"
 
 /// Physical statuses
 #define PHYSICAL_ACTIVE "Active"

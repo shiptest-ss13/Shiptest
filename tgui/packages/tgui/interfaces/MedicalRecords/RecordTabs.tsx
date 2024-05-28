@@ -40,6 +40,7 @@ export const MedicalRecordTabs = (props, context) => {
           </Stack.Item>
           <Stack.Item>
             <Button.Confirm
+              disabled
               content="Purge"
               icon="trash"
               onClick={() => act('purge_records')}
