@@ -39,6 +39,7 @@
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
 	faction = list(FACTION_ANTAG_SYNDICATE)
 	check_friendly_fire = 1
@@ -58,6 +59,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/syndicate/space/Initialize()
@@ -92,6 +94,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
 
@@ -144,6 +147,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
 
@@ -191,6 +195,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/Initialize()
@@ -224,6 +229,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space/Initialize()
@@ -254,6 +260,7 @@
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/Initialize()
@@ -302,6 +309,7 @@
 	faction = list(ROLE_SYNDICATE)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	mob_size = MOB_SIZE_TINY
 	movement_type = FLYING
 	limb_destroyer = 1
