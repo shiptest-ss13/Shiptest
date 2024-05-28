@@ -283,7 +283,11 @@
 		var/perpname = get_face_name(get_id_name(""))
 		if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 			return
-		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_OUTPOST)
+		var/obj/item/clothing/glasses/hud/glass_hud = human_or_ghost_user.get_item_by_slot(ITEM_SLOT_EYES)
+		var/linked_datacore = DATACORE_RECORDS_OUTPOST
+		if(glass_hud && glass_hud.linked_ship)
+			linked_datacore = glass_hud.linked_ship
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
 		if(href_list["photo_front"] || href_list["photo_side"])
 			if(!target_record)
 				return

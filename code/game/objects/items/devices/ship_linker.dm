@@ -21,6 +21,8 @@
 	. = ..()
 	if(!proximity || !check_allowed_items(target))
 		return
-	target.connect_to_shuttle(linked_ship.shuttle_port, linked_ship.shuttle_port.docked, TRUE)
-	to_chat(user, span_notice("You link the [target] to the [linked_ship]."))
 	playsound(src, 'sound/weapons/empty.ogg', 30, TRUE)
+	if(do_after(user, 3 SECONDS, TRUE, src))
+		target.connect_to_shuttle(linked_ship.shuttle_port, linked_ship.shuttle_port.docked, TRUE)
+		to_chat(user, span_notice("You link the [target] to the [linked_ship]."))
+		playsound(src, 'sound/weapons/empty.ogg', 30, TRUE)

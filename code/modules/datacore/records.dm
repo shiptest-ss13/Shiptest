@@ -51,16 +51,21 @@
  * returns the generated/cached photo otherwise.
  */
 /datum/data/record/proc/get_photo(field_name, orientation)
-	if(fields[field_name])
-		return fields[field_name]
+	if(!field_name)
+		return
 
 	if(!fields[DATACORE_APPEARANCE])
 		return new /icon()
 
 	var/mutable_appearance/character_appearance = fields[DATACORE_APPEARANCE]
-	character_appearance.setDir(orientation)
 
-	var/icon/picture_image = getFlatIcon(character_appearance)
+	var/icon/picture_image
+	if(!isicon(character_appearance))
+		var/mutable_appearance/appearance = character_appearance
+		appearance.setDir(orientation)
+		picture_image = getFlatIcon(appearance)
+	else
+		picture_image = character_appearance
 
 	var/datum/picture/picture = new
 	picture.picture_name = "[fields[DATACORE_NAME]]"
