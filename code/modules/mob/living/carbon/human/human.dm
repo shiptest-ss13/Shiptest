@@ -410,13 +410,11 @@
 				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Can not identify target.</span>")
 				return
 
-			var/datum/data/record/security_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
-
 			if(!target_record)
 				to_chat(usr, "<span class='warning'>ERROR: Unable to locate data core entry for target.</span>")
 				return
 			if(href_list["status"])
-				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", security_record.fields[DATACORE_CRIMINAL_STATUS]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
+				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", target_record.fields[DATACORE_CRIMINAL_STATUS]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
 				if(setcriminal != "Cancel")
 					if(!target_record)
 						return
@@ -424,8 +422,8 @@
 						return
 					if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 						return
-					investigate_log("[key_name(src)] has been set from [security_record.fields[DATACORE_CRIMINAL_STATUS]] to [setcriminal] by [key_name(usr)].", INVESTIGATE_RECORDS)
-					security_record.fields[DATACORE_CRIMINAL_STATUS] = setcriminal
+					investigate_log("[key_name(src)] has been set from [target_record.fields[DATACORE_CRIMINAL_STATUS]] to [setcriminal] by [key_name(usr)].", INVESTIGATE_RECORDS)
+					target_record.fields[DATACORE_CRIMINAL_STATUS] = setcriminal
 					sec_hud_set_security_status()
 				return
 
@@ -434,8 +432,8 @@
 					return
 				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
-				to_chat(usr, "<b>Name:</b> [security_record.fields[DATACORE_NAME]]	<b>Criminal Status:</b> [security_record.fields[DATACORE_CRIMINAL_STATUS]]")
-				for(var/datum/data/crime/c in security_record.fields[DATACORE_CRIMES])
+				to_chat(usr, "<b>Name:</b> [target_record.fields[DATACORE_NAME]]	<b>Criminal Status:</b> [target_record.fields[DATACORE_CRIMINAL_STATUS]]")
+				for(var/datum/data/crime/c in target_record.fields[DATACORE_CRIMES])
 					to_chat(usr, "<b>Crime:</b> [c.crimeName]")
 					if (c.crimeDetails)
 						to_chat(usr, "<b>Details:</b> [c.crimeDetails]")
@@ -443,12 +441,12 @@
 						to_chat(usr, "<b>Details:</b> <A href='?src=[REF(src)];hud=s;add_details=1;cdataid=[c.dataId]'>\[Add details]</A>")
 					to_chat(usr, "Added by [c.author] at [c.time]")
 					to_chat(usr, "----------")
-				to_chat(usr, "<b>Notes:</b> [security_record.fields[DATACORE_NOTES]]")
+				to_chat(usr, "<b>Notes:</b> [target_record.fields[DATACORE_NOTES]]")
 				return
 
 			if(href_list["add_crime"])
 				var/t1 = stripped_input("Please input crime name:", "Security HUD", "", null)
-				if(!security_record || !t1 || !allowed_access)
+				if(!target_record || !t1 || !allowed_access)
 					return
 				if(!human_or_ghost_user.canUseHUD())
 					return
@@ -456,14 +454,14 @@
 					return
 
 				var/crime = SSdatacore.new_crime_entry(t1, null, allowed_access, station_time_timestamp())
-				security_record.add_crime(crime)
-				investigate_log("New Crime: <strong>[t1]</strong> | Added to [security_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
+				target_record.add_crime(crime)
+				investigate_log("New Crime: <strong>[t1]</strong> | Added to [target_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 				to_chat(usr, span_notice("Successfully added a crime."))
 				return
 
 			if(href_list["add_details"])
 				var/t1 = stripped_input(usr, "Please input crime details:", "Secure. records", "", null)
-				if(!security_record || !t1 || !allowed_access)
+				if(!target_record || !t1 || !allowed_access)
 					return
 				if(!human_or_ghost_user.canUseHUD())
 					return
@@ -471,8 +469,8 @@
 					return
 
 				if(href_list["cdataid"])
-					security_record.add_crime_details(href_list["cdataid"], t1)
-					investigate_log("New Crime details: [t1] | Added to [security_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
+					target_record.add_crime_details(href_list["cdataid"], t1)
+					investigate_log("New Crime details: [t1] | Added to [target_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 					to_chat(usr, span_notice("Successfully added details."))
 				return
 
@@ -483,24 +481,24 @@
 					return
 				to_chat(usr, "<b>Comments/Log:</b>")
 				var/counter = 1
-				while(security_record.fields[text("com_[]", counter)])
-					to_chat(usr, security_record.fields[text("com_[]", counter)])
+				while(target_record.fields[text("com_[]", counter)])
+					to_chat(usr, target_record.fields[text("com_[]", counter)])
 					to_chat(usr, "----------")
 					counter++
 				return
 
 			if(href_list["add_comment"])
 				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
-				if (!security_record || !t1 || !allowed_access)
+				if (!target_record || !t1 || !allowed_access)
 					return
 				if(!human_or_ghost_user.canUseHUD())
 					return
 				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 				var/counter = 1
-				while(security_record.fields[text("com_[]", counter)])
+				while(target_record.fields[text("com_[]", counter)])
 					counter++
-				security_record.fields[text("com_[]", counter)] = text("Made by [] on [], []<BR>[]", allowed_access, station_time_timestamp(), sector_datestamp(shortened = TRUE), t1)
+				target_record.fields[text("com_[]", counter)] = text("Made by [] on [], []<BR>[]", allowed_access, station_time_timestamp(), sector_datestamp(shortened = TRUE), t1)
 				to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
 				return
 
