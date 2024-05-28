@@ -573,3 +573,31 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/coal/ten
 	amount = 10
+
+/*
+ * Hellstone
+ */
+/obj/item/stack/sheet/mineral/hidden
+	name = "????????"
+
+/obj/item/stack/sheet/mineral/hidden/hellstone
+	name = "hellstone"
+	icon_state = "sheet-hellstone"
+	item_state = "sheet-hellstone"
+	singular_name = "hellstone bar"
+	sheettype = "hellstone"
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	custom_materials = list(/datum/material/hellstone=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/clf3 = 5)
+	point_value = 20
+	merge_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+	material_type = /datum/material/hellstone
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/five
+	amount = 5

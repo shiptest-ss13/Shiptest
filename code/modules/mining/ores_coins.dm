@@ -240,6 +240,16 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	scan_state = "rock_Titanium"
 	spreadChance = 5
 
+/obj/item/stack/ore/hellstone
+	name = "hellstone ore"
+	icon_state = "hellstone-ore"
+	item_state = "hellstone-ore"
+	singular_name = "hellstone ore chunk"
+	resistance_flags = LAVA_PROOF
+	points = 50
+	custom_materials = list(/datum/material/hellstone=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+
 /obj/item/stack/ore/slag
 	name = "slag"
 	desc = "Completely useless."

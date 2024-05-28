@@ -260,6 +260,20 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	if(istype(source, /obj/item))
 		qdel(source.GetComponent(/datum/component/fantasy))
 
+//Remember when the theme used to be "Eerie" before 1.3? Good times.
+/datum/material/hellstone
+	name = "hellstone"
+	id = "hellstone"
+	desc = "A colloquialism given to millenia-old slag, heat-treated through the eons in deep magma."
+	color = "#ffaf5e"
+	strength_modifier = 1.5
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+	ore_type = /obj/item/stack/ore/hellstone
+	value_per_unit = 0.25
+	beauty_modifier = 0.4
+	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.3, "energy" = 1.3, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 2.5, "acid" = 1)
+
 //formed when freon react with o2, emits a lot of plasma when heated
 /datum/material/hot_ice
 	name = "hot ice"
