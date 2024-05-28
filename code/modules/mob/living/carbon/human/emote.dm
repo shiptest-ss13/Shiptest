@@ -346,6 +346,7 @@
 	key_third_person = "whistles"
 	message = "whistles!"
 	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
 
 /datum/emote/living/carbon/human/kepiwhistle/get_sound(mob/living/user)
 	if(!ishuman(user))
@@ -357,3 +358,4 @@
 	key = "woop"
 	key_third_person = "woops"
 	message = "woops!"
+	emote_type = EMOTE_AUDIBLE
