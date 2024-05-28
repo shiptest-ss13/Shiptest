@@ -1,10 +1,21 @@
 /obj/machinery/computer/records
 	name = "records console"
-	desc = "This can be used to check medical records."
+	desc = "This can be used to check records."
 	icon_screen = "medcomp"
 	icon_keyboard = "med_key"
 	req_one_access = list()
 	circuit = /obj/item/circuitboard/computer
+	var/datum/overmap/ship/controlled/linked_ship
+
+/obj/machinery/computer/records/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	linked_ship = port.current_ship
+	if(linked_ship)
+		name = "[name] - [linked_ship.name]"
+
+/obj/machinery/computer/records/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	. = ..()
+	linked_ship = null
 
 /obj/machinery/computer/records/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
@@ -25,7 +36,7 @@
 		return data
 
 	var/list/records = list()
-	for(var/datum/data/record/target in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+	for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
 		records += list(list(
 			age = target.fields[DATACORE_AGE],
 			blood_type = target.fields[DATACORE_BLOOD_TYPE],
@@ -51,7 +62,7 @@
 
 	var/datum/data/record/target
 	if(params["crew_ref"])
-		target = locate(params["crew_ref"]) in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)
+		target = locate(params["crew_ref"]) in SSdatacore.get_records(linked_ship)
 
 	switch(action)
 		if("login")
@@ -67,7 +78,7 @@
 			return TRUE
 
 		if("edit_field")
-			target = locate(params["ref"]) in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)
+			target = locate(params["ref"]) in SSdatacore.get_records(linked_ship)
 			var/field = params["field"]
 			if(!field || !(field in target?.vars))
 				return FALSE

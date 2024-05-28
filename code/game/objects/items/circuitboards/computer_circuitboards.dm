@@ -232,7 +232,7 @@
 /obj/item/circuitboard/computer/med_data
 	name = "Medical Records Console (Computer Board)"
 	icon_state = "medical"
-	build_path = /obj/machinery/computer/record/med
+	build_path = /obj/machinery/computer/records/med
 
 /obj/item/circuitboard/computer/operating
 	name = "Operating Computer (Computer Board)"
@@ -330,7 +330,7 @@
 /obj/item/circuitboard/computer/secure_data
 	name = "Security Records Console (Computer Board)"
 	icon_state = "security"
-	build_path = /obj/machinery/computer/record/sec
+	build_path = /obj/machinery/computer/records/sec
 
 /obj/item/circuitboard/computer/warrant
 	name = "Security Warrant Viewer (Computer Board)"

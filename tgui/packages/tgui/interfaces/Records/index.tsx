@@ -33,7 +33,7 @@ const UnauthorizedView = (props, context) => {
         </Stack.Item>
         <Stack.Item align="center" grow>
           <Box color="good" fontSize="18px" bold mt={5}>
-            Nanotrasen HealthPRO
+            NTNet Records System
           </Box>
         </Stack.Item>
         <Stack.Item>
