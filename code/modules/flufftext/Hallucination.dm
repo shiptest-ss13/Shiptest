@@ -565,8 +565,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(target.client)
 			delusions |= A
 			target.client.images |= A
-	sleep(300)
-	qdel(src)
+		QDEL_IN(src, duration)
 
 /datum/hallucination/delusion/Destroy()
 	for(var/image/I in delusions)
@@ -610,8 +609,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			to_chat(target, "<span class='hear'>...you look down and notice... you aren't the same as you used to be...</span>")
 		delusion = A
 		target.client.images |= A
-		sleep(300)
-	qdel(src)
+	QDEL_IN(src, duration)
 
 /datum/hallucination/self_delusion/Destroy()
 	if(target.client)
