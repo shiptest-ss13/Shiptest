@@ -403,11 +403,6 @@
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
-/turf/closed/mineral/bananium
-	mineralType = /obj/item/stack/ore/hellstone
-	mineralAmt = 3
-	scan_state = "rock_Bananium"
-
 /turf/closed/mineral/bscrystal
 	mineralType = /obj/item/stack/ore/bluespace_crystal
 	mineralAmt = 1
