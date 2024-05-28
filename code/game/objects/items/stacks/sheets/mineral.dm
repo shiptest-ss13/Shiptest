@@ -579,6 +579,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/hidden
 	name = "????????"
+	singular_name = "????????"
 
 /obj/item/stack/sheet/mineral/hidden/hellstone
 	name = "hellstone"
