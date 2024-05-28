@@ -7,7 +7,7 @@ import { MedicalRecordData } from './types';
 import { MedicalRecordTabs } from './RecordTabs';
 import { MedicalRecordView } from './RecordView';
 
-export const Records = (props, context) => {
+export const MedicalRecords = (props, context) => {
   const { data } = useBackend<MedicalRecordData>(context);
   const { authenticated } = data;
 

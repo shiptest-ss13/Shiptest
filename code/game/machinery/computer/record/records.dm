@@ -17,15 +17,13 @@
 	. = ..()
 	linked_ship = null
 
-/obj/machinery/computer/records/ui_interact(mob/user, datum/tgui/ui)
+/*
+/obj/machinery/computer/records/attacked_by(obj/item/attacking_item, mob/living/user)
 	. = ..()
-	if(.)
+	if(!istype(attacking_item, /obj/item/photo))
 		return
-	ui = SStgui.try_update_ui(user, src, ui)
-	if (!ui)
-		ui = new(user, src, "Records")
-		ui.set_autoupdate(FALSE)
-		ui.open()
+	insert_new_record(user, attacking_item)
+*/
 
 /obj/machinery/computer/records/ui_static_data(mob/user)
 	var/list/data = list()
@@ -42,24 +40,6 @@
 	data["authenticated"] = has_access
 	if(!has_access)
 		return data
-
-	var/list/records = list()
-	for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
-		records += list(list(
-			age = target.fields[DATACORE_AGE],
-			blood_type = target.fields[DATACORE_BLOOD_TYPE],
-			record_ref = REF(target),
-			dna = target.fields[DATACORE_BLOOD_DNA],
-			gender = target.fields[DATACORE_GENDER],
-			disabilities = target.fields[DATACORE_DISABILITIES],
-			physical_status = target.fields[DATACORE_PHYSICAL_HEALTH],
-			mental_status = target.fields[DATACORE_MENTAL_HEALTH],
-			name = target.fields[DATACORE_NAME],
-			rank = target.fields[DATACORE_RANK],
-			species = target.fields[DATACORE_SPECIES],
-		))
-
-	data["records"] = records
 
 	return data
 
@@ -81,7 +61,19 @@
 			expunge_record_info(target)
 			balloon_alert(user, "record expunged")
 			investigate_log("[key_name(user)] expunged the record of [target[DATACORE_NAME]].", INVESTIGATE_RECORDS)
+			return TRUE
 
+		if("purge_records")
+			SSdatacore.wipe_records(linked_ship)
+			return TRUE
+
+		if("new_record")
+			var/name = stripped_input(user, "Enter the name of the new record.", "New Record", "", MAX_NAME_LEN)
+			if(!name)
+				return FALSE
+
+			SSdatacore.create_record(linked_ship, name)
+			balloon_alert(user, "record created")
 			return TRUE
 
 		if("login")
@@ -136,10 +128,6 @@
 
 	return FALSE
 
-/// Expunges info from a record.
-/obj/machinery/computer/records/proc/expunge_record_info(datum/record/target)
-	return
-
 /obj/machinery/computer/records/proc/secure_login(mob/user)
 	if(!is_operational)
 		return FALSE
@@ -152,3 +140,52 @@
 	playsound(src, 'sound/machines/terminal_on.ogg', 70, TRUE)
 
 	return TRUE
+
+/// Deletes medical information from a record.
+/obj/machinery/computer/records/proc/expunge_record_info(datum/data/record/target)
+	if(!target)
+		return FALSE
+
+	target.fields[DATACORE_NAME] = "Unknown"
+	target.fields[DATACORE_AGE] = 18
+	target.fields[DATACORE_GENDER] = "Unknown"
+	target.fields[DATACORE_SPECIES] = "Unknown"
+	target.fields[DATACORE_BLOOD_TYPE] = pick(list("A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"))
+	target.fields[DATACORE_BLOOD_DNA] = "Unknown"
+	target.fields[DATACORE_DISABILITIES] = ""
+	target.fields[DATACORE_DISABILITIES_DETAILS] = ""
+	target.fields[DATACORE_PHYSICAL_HEALTH] = ""
+	target.fields[DATACORE_MENTAL_HEALTH] = ""
+	target.fields[DATACORE_RANK] = "Unknown"
+
+	return TRUE
+
+/*
+/obj/machinery/computer/records/proc/insert_new_record(mob/user, obj/item/photo/mugshot)
+	if(!mugshot || !is_operational)
+		return FALSE
+
+	if(!authenticated && !allowed(user))
+		balloon_alert(user, "access denied")
+		playsound(src, 'sound/machines/terminal_error.ogg', 70, TRUE)
+		return FALSE
+
+	if(mugshot.picture.psize_x > world.icon_size || mugshot.picture.psize_y > world.icon_size)
+		balloon_alert(user, "photo too large!")
+		playsound(src, 'sound/machines/terminal_error.ogg', 70, TRUE)
+		return FALSE
+
+	var/trimmed = copytext(mugshot.name, 9, MAX_NAME_LEN) // Remove "photo - "
+	var/name = stripped_input(user, "Enter the name of the new record.", "New Record", trimmed, MAX_NAME_LEN)
+	if(!name || !is_operational || !mugshot || QDELETED(mugshot) || QDELETED(src))
+		return FALSE
+
+	var/datum/data/record/new_record = SSdatacore.create_record(linked_ship, name)
+	new_record.fields[DATACORE_APPEARANCE] = mugshot.picture.picture_image
+	balloon_alert(user, "record created")
+	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 70, TRUE)
+
+	qdel(mugshot)
+
+	return TRUE
+*/
