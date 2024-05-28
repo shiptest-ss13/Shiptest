@@ -21,7 +21,14 @@ export type MedicalRecord = {
   physical_status: string;
   mental_status: string;
   name: string;
-  quirk_notes: string;
+  notes: MedicalNote[];
   rank: string;
   species: string;
+};
+
+export type MedicalNote = {
+  author: string;
+  content: string;
+  note_ref: string;
+  time: string;
 };

@@ -18,7 +18,7 @@ import {
   PHYSICALSTATUS2DESC,
   PHYSICALSTATUS2ICON,
 } from './constants';
-import { getMedicalRecord } from './helpers';
+import { getMedicalRecord, getQuirkStrings } from './helpers';
 import { MedicalRecordData } from './types';
 
 /** Views a selected record. */
@@ -26,7 +26,10 @@ export const MedicalRecordView = (props, context) => {
   const foundRecord = getMedicalRecord(props, context);
   if (!foundRecord) return <NoticeBox>No record selected.</NoticeBox>;
 
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<MedicalRecordData>(context);
+  const { physical_statuses, mental_statuses } = data;
+
+  const { min_age, max_age } = data;
 
   const {
     age,
@@ -34,12 +37,16 @@ export const MedicalRecordView = (props, context) => {
     crew_ref,
     dna,
     gender,
+    disabilities,
     physical_status,
     mental_status,
     name,
+    quirk_notes,
     rank,
     species,
   } = foundRecord;
+
+  const disabilities_array = getQuirkStrings(disabilities);
 
   return (
     <Stack fill vertical>
@@ -72,6 +79,8 @@ export const MedicalRecordView = (props, context) => {
             </LabeledList.Item>
             <LabeledList.Item label="Age">
               <RestrictedInput
+                minValue={min_age}
+                maxValue={max_age}
                 onEnter={(event, value) =>
                   act('edit_field', {
                     field: 'age',
@@ -110,6 +119,71 @@ export const MedicalRecordView = (props, context) => {
                 target_ref={crew_ref}
                 text={blood_type}
               />
+            </LabeledList.Item>
+            <LabeledList.Item
+              buttons={physical_statuses.map((button, index) => {
+                const isSelected = button === physical_status;
+                return (
+                  <Button
+                    color={isSelected ? PHYSICALSTATUS2COLOR[button] : 'grey'}
+                    height={'1.75rem'}
+                    icon={PHYSICALSTATUS2ICON[button]}
+                    key={index}
+                    onClick={() =>
+                      act('set_physical_status', {
+                        crew_ref: crew_ref,
+                        physical_status: button,
+                      })
+                    }
+                    textAlign="center"
+                    tooltip={PHYSICALSTATUS2DESC[button] || ''}
+                    tooltipPosition="bottom-start"
+                    width={!isSelected ? '3.0rem' : 3.0}
+                  >
+                    {button[0]}
+                  </Button>
+                );
+              })}
+              label="Physical Status"
+            >
+              <Box color={PHYSICALSTATUS2COLOR[physical_status]}>
+                {physical_status}
+              </Box>
+            </LabeledList.Item>
+            <LabeledList.Item
+              buttons={mental_statuses.map((button, index) => {
+                const isSelected = button === mental_status;
+                return (
+                  <Button
+                    color={isSelected ? MENTALSTATUS2COLOR[button] : 'grey'}
+                    height={'1.75rem'}
+                    icon={MENTALSTATUS2ICON[button]}
+                    key={index}
+                    onClick={() =>
+                      act('set_mental_status', {
+                        crew_ref: crew_ref,
+                        mental_status: button,
+                      })
+                    }
+                    textAlign="center"
+                    tooltip={MENTALSTATUS2DESC[button] || ''}
+                    tooltipPosition="bottom-start"
+                    width={!isSelected ? '3.0rem' : 3.0}
+                  >
+                    {button[0]}
+                  </Button>
+                );
+              })}
+              label="Mental Status"
+            >
+              <Box color={MENTALSTATUS2COLOR[mental_status]}>
+                {mental_status}
+              </Box>
+            </LabeledList.Item>
+            <LabeledList.Item label="Disabilities">
+              {disabilities_array.map((disability, index) => (
+                <Box key={index}>&#8226; {disability}</Box>
+              ))}
             </LabeledList.Item>
           </LabeledList>
         </Section>

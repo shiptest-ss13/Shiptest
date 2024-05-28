@@ -62,7 +62,7 @@
 
 	var/datum/data/record/target
 	if(params["crew_ref"])
-		target = locate(params["crew_ref"]) in SSdatacore.get_records(linked_ship)
+		target = SSdatacore.find_record("crew_ref", params["crew_ref"], linked_ship)
 
 	switch(action)
 		if("login")
@@ -78,14 +78,14 @@
 			return TRUE
 
 		if("edit_field")
-			target = locate(params["ref"]) in SSdatacore.get_records(linked_ship)
+			target = SSdatacore.find_record("ref", params["ref"], linked_ship)
 			var/field = params["field"]
-			if(!field || !(field in target?.vars))
+			if(!field || !(field in target.fields))
 				return FALSE
 
 			var/value = trim(params["value"], MAX_BROADCAST_LEN)
-			investigate_log("[key_name(usr)] changed the field: \"[field]\" with value: \"[target.vars[field]]\" to new value: \"[value || "Unknown"]\"", INVESTIGATE_RECORDS)
-			target.vars[field] = value || "Unknown"
+			investigate_log("[key_name(usr)] changed the field: \"[field]\" with value: \"[target.fields[field]]\" to new value: \"[value || "Unknown"]\"", INVESTIGATE_RECORDS)
+			target.fields[field] = value || "Unknown"
 
 			return TRUE
 
