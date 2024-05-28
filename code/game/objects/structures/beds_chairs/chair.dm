@@ -363,4 +363,4 @@
 	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
 	item_chair = null
 	buildstackamount = 4
-	buildstacktype = obj/item/stack/rods
+	buildstacktype = /obj/item/stack/rods
