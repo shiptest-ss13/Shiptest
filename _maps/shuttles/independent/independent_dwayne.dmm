@@ -214,6 +214,7 @@
 /obj/item/clothing/under/rank/command/captain/skirt,
 /obj/item/clothing/shoes/cowboy/fancy,
 /obj/item/clothing/suit/jacket/leather/duster/command,
+/obj/item/clothing/suit/armor/vest/capcarapace/duster,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/item/clothing/head/HoS/cowboy,
@@ -504,13 +505,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "hK" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 8;
-	name = "connector port (fuel)"
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
 	},
-/obj/structure/sign/warning/fire{
-	pixel_x = 23;
-	pixel_y = 4
+/obj/structure/frame/machine{
+	anchored = 1
+	},
+/obj/structure/sign/poster/contraband/tools{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -673,6 +675,9 @@
 "kQ" = (
 /obj/structure/table,
 /obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/item/areaeditor/shuttle{
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ld" = (
@@ -930,23 +935,23 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "om" = (
-/obj/structure/closet/wall/orange/directional/west{
-	name = "Mechanic's wardrobe"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "cargo_wall";
+	name = "Foreman's locker";
+	req_access_txt = "56"
+	},
 /obj/item/storage/backpack/industrial,
 /obj/item/storage/backpack/satchel/eng,
-/obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/under/rank/security/detective,
 /obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/toggle/industrial,
+/obj/item/clothing/suit/toggle/hazard,
 /obj/item/storage/belt/utility,
-/obj/item/clothing/head/hardhat,
-/obj/item/clothing/head/hardhat/dblue,
-/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/cowboy/sec,
 /obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/meson/engine/tray,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "or" = (
@@ -1638,7 +1643,7 @@
 /area/ship/engineering)
 "zY" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1668,12 +1673,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "AE" = (
-/obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
-	},
-/obj/item/areaeditor/shuttle{
-	pixel_y = 5
 	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech/grid,
@@ -1695,6 +1696,9 @@
 	},
 /obj/machinery/computer/monitor/retro{
 	dir = 8
+	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2967,16 +2971,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/closet/crate/medical,
+/obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/storage/firstaid/regular,
 /obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = -4
 	},
-/obj/item/storage/pill_bottle/mining{
-	pixel_x = -6
-	},
 /obj/item/storage/pill_bottle/charcoal/less{
 	pixel_x = 5
+	},
+/obj/item/storage/pill_bottle/mining{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -3024,14 +3029,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "VP" = (
-/obj/structure/table,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 5
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1;
+	name = "connector port (fuel)"
 	},
-/obj/structure/sign/poster/rilena/random{
-	pixel_y = -32
+/obj/structure/sign/warning/fire{
+	pixel_y = -20;
+	pixel_x = 9
 	},
-/obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "VZ" = (

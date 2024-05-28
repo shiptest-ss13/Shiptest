@@ -385,6 +385,19 @@
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
+/datum/outfit/job/independent/ce/western // Something between CE and QM
+	name = "Independent - Chief Engineer (Western)"
+
+	belt = /obj/item/storage/belt/utility/full/engi // Indies probably don't need adv. tools
+	uniform = /obj/item/clothing/under/rank/security/detective
+	suit = /obj/item/clothing/suit/hazardvest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/cowboy/sec
+	gloves = /obj/item/clothing/gloves/color/yellow
+	glasses = /obj/item/clothing/glasses/sunglasses
+	r_pocket = /obj/item/clipboard
+
 // Medical Doctor
 
 /datum/outfit/job/independent/doctor
