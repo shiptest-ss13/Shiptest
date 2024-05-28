@@ -68,7 +68,7 @@
 			default_deconstruction_screwdriver(user, "button-open", "[skin]",W)
 			update_appearance()
 		else
-			to_chat(user,span_alert("Maintenance Access Denied."))
+			to_chat(user, span_alert("Maintenance Access Denied."))
 			flick("[skin]-denied", src)
 		return
 
