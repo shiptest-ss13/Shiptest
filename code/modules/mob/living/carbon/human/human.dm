@@ -374,6 +374,12 @@
 				if(health_status && health_status != "Cancel")
 					target_record.fields[DATACORE_MENTAL_HEALTH] = health_status
 				return
+			if(href_list["quirk"])
+				var/quirkstring = get_trait_string()
+				if(quirkstring)
+					to_chat(human_or_ghost_user,  "<span class='notice ml-1'>Detected physiological traits:</span>\n<span class='notice ml-2'>[quirkstring]</span>")
+				else
+					to_chat(human_or_ghost_user,  "<span class='notice ml-1'>No physiological traits found.</span>")
 			return //Medical HUD ends here.
 
 		if(href_list["hud"] == "s")

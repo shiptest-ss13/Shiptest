@@ -30,7 +30,7 @@
 //#define DATACORE_CITATIONS "citation"
 
 /// Keys for SSdatacore.library
-#define DATACORE_RECORDS_OUTPOST "general"
+#define DATACORE_RECORDS_OUTPOST "outpost"
 #define DATACORE_RECORDS_SECURITY "security"
 #define DATACORE_RECORDS_MEDICAL "medical"
 #define DATACORE_RECORDS_LOCKED "locked"

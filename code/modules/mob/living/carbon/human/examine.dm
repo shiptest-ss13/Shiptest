@@ -343,14 +343,36 @@
 	if (!isnull(trait_exam))
 		. += trait_exam
 
-	var/traitstring = get_trait_string()
-
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
-		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_OUTPOST)
-		if(R)
-			. += "<span class='deptradio'>Rank:</span> [R.fields[DATACORE_RANK]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+		var/obj/item/clothing/glasses/hud/glass_hud = user.get_item_by_slot(ITEM_SLOT_EYES)
+		var/linked_datacore = DATACORE_RECORDS_OUTPOST
+		if(glass_hud && glass_hud.linked_ship)
+			linked_datacore = glass_hud.linked_ship
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
+		if(target_record)
+			. += "<br><span class='deptradio'>found record for datacore: [linked_datacore] </span>"
+			. += "<span class='deptradio'>Rank:</span> [target_record.fields[DATACORE_RANK]]<span class='deptradio'> Name:</span> [target_record.fields[DATACORE_NAME]]"
+			. += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+			if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
+				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[target_record.fields[DATACORE_PHYSICAL_HEALTH]]\]</a>"
+				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[target_record.fields[DATACORE_MENTAL_HEALTH]]\]</a>"
+
+			if(HAS_TRAIT(user, TRAIT_SECURITY_HUD))
+				var/criminal = "None"
+				criminal = target_record.fields[DATACORE_CRIMINAL_STATUS]
+
+				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
+				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
+					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+		else
+			. += "<br><span class='deptradio'>no linked record in datacore: [linked_datacore]</span>"
+
 		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
+			. += "<br><a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical Evaluation\]</a>"
+			. += "<a href='?src=[REF(src)];hud=m;quirk=1'>\[See traits\]</a>"
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
 				if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
@@ -358,34 +380,6 @@
 			if(cyberimp_detect)
 				. += "<span class='notice ml-1'>Detected cybernetic modifications:</span>"
 				. += "<span class='notice ml-2'>[cyberimp_detect]</span>"
-			if(R)
-				var/health_r = R.fields[DATACORE_PHYSICAL_HEALTH]
-				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
-				health_r = R.fields[DATACORE_MENTAL_HEALTH]
-				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
-			R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_MEDICAL)
-			if(R)
-				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
-			if(traitstring)
-				. += "<span class='notice ml-1'>Detected physiological traits:</span>"
-				. += "<span class='notice ml-2'>[traitstring]</span>"
-
-		if(HAS_TRAIT(user, TRAIT_SECURITY_HUD))
-			if(!user.stat && user != src)
-			//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-				var/criminal = "None"
-
-				R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
-				if(R)
-					criminal = R.fields[DATACORE_CRIMINAL_STATUS]
-
-				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
-				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
-					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
-	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
 
 	//No flavor text unless the face can be seen. Prevents certain metagaming with impersonation.
 	var/invisible_man = skipface || get_visible_name() == "Unknown"
