@@ -34,14 +34,13 @@ export const MedicalRecordView = (props, context) => {
   const {
     age,
     blood_type,
-    crew_ref,
+    record_ref,
     dna,
     gender,
     disabilities,
     physical_status,
     mental_status,
     name,
-    quirk_notes,
     rank,
     species,
   } = foundRecord;
@@ -51,18 +50,12 @@ export const MedicalRecordView = (props, context) => {
   return (
     <Stack fill vertical>
       <Stack.Item grow>
-        <Stack fill>
-          <Stack.Item>
-          </Stack.Item>
-        </Stack>
-      </Stack.Item>
-      <Stack.Item grow>
         <Section
           buttons={
             <Button.Confirm
               content="Delete"
               icon="trash"
-              onClick={() => act('expunge_record', { crew_ref: crew_ref })}
+              onClick={() => act('expunge_record', { record_ref: record_ref })}
               tooltip="Expunge record data."
             />
           }
@@ -72,10 +65,10 @@ export const MedicalRecordView = (props, context) => {
         >
           <LabeledList>
             <LabeledList.Item label="Name">
-              <EditableText field="name" target_ref={crew_ref} text={name} />
+              <EditableText field="name" target_ref={record_ref} text={name} />
             </LabeledList.Item>
-            <LabeledList.Item label="Job">
-              <EditableText field="job" target_ref={crew_ref} text={rank} />
+            <LabeledList.Item label="Rank">
+              <EditableText field="rank" target_ref={record_ref} text={rank} />
             </LabeledList.Item>
             <LabeledList.Item label="Age">
               <RestrictedInput
@@ -84,7 +77,7 @@ export const MedicalRecordView = (props, context) => {
                 onEnter={(event, value) =>
                   act('edit_field', {
                     field: 'age',
-                    ref: crew_ref,
+                    ref: record_ref,
                     value: value,
                   })
                 }
@@ -94,14 +87,14 @@ export const MedicalRecordView = (props, context) => {
             <LabeledList.Item label="Species">
               <EditableText
                 field="species"
-                target_ref={crew_ref}
+                target_ref={record_ref}
                 text={species}
               />
             </LabeledList.Item>
             <LabeledList.Item label="Gender">
               <EditableText
                 field="gender"
-                target_ref={crew_ref}
+                target_ref={record_ref}
                 text={gender}
               />
             </LabeledList.Item>
@@ -109,14 +102,14 @@ export const MedicalRecordView = (props, context) => {
               <EditableText
                 color="good"
                 field="dna"
-                target_ref={crew_ref}
+                target_ref={record_ref}
                 text={dna}
               />
             </LabeledList.Item>
             <LabeledList.Item color="bad" label="Blood Type">
               <EditableText
                 field="blood_type"
-                target_ref={crew_ref}
+                target_ref={record_ref}
                 text={blood_type}
               />
             </LabeledList.Item>
@@ -131,7 +124,7 @@ export const MedicalRecordView = (props, context) => {
                     key={index}
                     onClick={() =>
                       act('set_physical_status', {
-                        crew_ref: crew_ref,
+                        record_ref: record_ref,
                         physical_status: button,
                       })
                     }
@@ -161,7 +154,7 @@ export const MedicalRecordView = (props, context) => {
                     key={index}
                     onClick={() =>
                       act('set_mental_status', {
-                        crew_ref: crew_ref,
+                        record_ref: record_ref,
                         mental_status: button,
                       })
                     }

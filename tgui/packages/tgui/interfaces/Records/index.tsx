@@ -8,7 +8,7 @@ import { MedicalRecordTabs } from './RecordTabs';
 import { MedicalRecordView } from './RecordView';
 
 export const Records = (props, context) => {
-  const { data } = useBackend(context);
+  const { data } = useBackend<MedicalRecordData>(context);
   const { authenticated } = data;
 
   return (

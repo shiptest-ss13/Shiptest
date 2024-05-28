@@ -27,6 +27,14 @@
 		ui.set_autoupdate(FALSE)
 		ui.open()
 
+/obj/machinery/computer/records/ui_static_data(mob/user)
+	var/list/data = list()
+	data["min_age"] = AGE_MIN
+	data["max_age"] = AGE_MAX
+	data["physical_statuses"] = PHYSICAL_STATUSES
+	data["mental_statuses"] = MENTAL_STATUSES
+	return data
+
 /obj/machinery/computer/records/ui_data(mob/user)
 	var/list/data = ..()
 
@@ -40,7 +48,7 @@
 		records += list(list(
 			age = target.fields[DATACORE_AGE],
 			blood_type = target.fields[DATACORE_BLOOD_TYPE],
-			crew_ref = REF(target),
+			record_ref = REF(target),
 			dna = target.fields[DATACORE_BLOOD_DNA],
 			gender = target.fields[DATACORE_GENDER],
 			disabilities = target.fields[DATACORE_DISABILITIES],
@@ -59,12 +67,23 @@
 	. = ..()
 	if(.)
 		return
+	var/mob/user = ui.user
 
 	var/datum/data/record/target
-	if(params["crew_ref"])
-		target = SSdatacore.find_record("crew_ref", params["crew_ref"], linked_ship)
+	if(params["record_ref"])
+		target = locate(params["record_ref"]) in SSdatacore.get_records(linked_ship)
 
 	switch(action)
+		if("expunge_record")
+			if(!target)
+				return FALSE
+
+			expunge_record_info(target)
+			balloon_alert(user, "record expunged")
+			investigate_log("[key_name(user)] expunged the record of [target[DATACORE_NAME]].", INVESTIGATE_RECORDS)
+
+			return TRUE
+
 		if("login")
 			authenticated = secure_login(usr)
 			investigate_log("[key_name(usr)] [authenticated ? "successfully logged" : "failed to log"] into the [src].", INVESTIGATE_RECORDS)
@@ -78,7 +97,7 @@
 			return TRUE
 
 		if("edit_field")
-			target = SSdatacore.find_record("ref", params["ref"], linked_ship)
+			target = locate(params["ref"]) in SSdatacore.get_records(linked_ship)
 			var/field = params["field"]
 			if(!field || !(field in target.fields))
 				return FALSE
@@ -97,7 +116,29 @@
 			balloon_alert(usr, "viewing record for [target.fields[DATACORE_NAME]]")
 			return TRUE
 
+		if("set_physical_status")
+			var/physical_status = params["physical_status"]
+			if(!physical_status || !(physical_status in PHYSICAL_STATUSES))
+				return FALSE
+
+			target.fields[DATACORE_PHYSICAL_HEALTH] = physical_status
+
+			return TRUE
+
+		if("set_mental_status")
+			var/mental_status = params["mental_status"]
+			if(!mental_status || !(mental_status in MENTAL_STATUSES))
+				return FALSE
+
+			target.fields[DATACORE_MENTAL_HEALTH] = mental_status
+
+			return TRUE
+
 	return FALSE
+
+/// Expunges info from a record.
+/obj/machinery/computer/records/proc/expunge_record_info(datum/record/target)
+	return
 
 /obj/machinery/computer/records/proc/secure_login(mob/user)
 	if(!is_operational)

@@ -10,11 +10,10 @@ export type MedicalRecordData = {
   max_age: number;
 };
 
-
 export type MedicalRecord = {
   age: number;
   blood_type: string;
-  crew_ref: string;
+  record_ref: string;
   dna: string;
   gender: string;
   disabilities: string;

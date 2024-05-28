@@ -35,9 +35,50 @@
 #define DATACORE_RECORDS_MEDICAL "medical"
 #define DATACORE_RECORDS_LOCKED "locked"
 
-//#define DATACORE_RECORDS_AETHER "aether"
-//#define DATACORE_RECORDS_DAEDALUS "daedalus"
-//#define DATACORE_RECORDS_HERMES "hermes"
-//#define DATACORE_RECORDS_MARS "mars"
-
 #define DATACORE_IMAGE "image"
+
+/// Physical statuses
+#define PHYSICAL_ACTIVE "Active"
+#define PHYSICAL_DEBILITATED "Debilitated"
+#define PHYSICAL_UNCONSCIOUS "Unconscious"
+#define PHYSICAL_DECEASED "Deceased"
+
+/// List of available physical statuses
+#define PHYSICAL_STATUSES list(\
+	PHYSICAL_ACTIVE, \
+	PHYSICAL_DEBILITATED, \
+	PHYSICAL_UNCONSCIOUS, \
+	PHYSICAL_DECEASED, \
+)
+
+/// Mental statuses
+#define MENTAL_STABLE "Stable"
+#define MENTAL_WATCH "Watch"
+#define MENTAL_UNSTABLE "Unstable"
+#define MENTAL_INSANE "Insane"
+
+/// List of available mental statuses
+#define MENTAL_STATUSES list(\
+	MENTAL_STABLE, \
+	MENTAL_WATCH, \
+	MENTAL_UNSTABLE, \
+	MENTAL_INSANE, \
+)
+
+/// Wanted statuses
+#define WANTED_ARREST "Arrest"
+#define WANTED_DISCHARGED "Discharged"
+#define WANTED_NONE "None"
+#define WANTED_PAROLE "Parole"
+#define WANTED_PRISONER "Incarcerated"
+#define WANTED_SUSPECT "Suspected"
+
+/// List of available wanted statuses
+#define WANTED_STATUSES(...) list(\
+	WANTED_NONE, \
+	WANTED_SUSPECT, \
+	WANTED_ARREST, \
+	WANTED_PRISONER, \
+	WANTED_PAROLE, \
+	WANTED_DISCHARGED, \
+)

@@ -279,30 +279,31 @@
 	if(href_list["hud"])
 		if(!ishuman(usr))
 			return
-		var/mob/living/carbon/human/H = usr
+		var/mob/living/carbon/human/human_or_ghost_user = usr
 		var/perpname = get_face_name(get_id_name(""))
-		if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD) && !HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
+		if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 			return
-		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_OUTPOST)
-		/*
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_OUTPOST)
 		if(href_list["photo_front"] || href_list["photo_side"])
-			if(!R)
+			if(!target_record)
 				return
-			if(!H.canUseHUD())
+			if(ishuman(human_or_ghost_user))
+				var/mob/living/carbon/human/human_user = human_or_ghost_user
+				if(!human_user.canUseHUD())
+					return
+			if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 				return
-			if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD) && !HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
-				return
-			var/obj/item/photo/P = null
+			var/obj/item/photo/photo_from_record = null
 			if(href_list["photo_front"])
-				P = R.fields[DATACORE_PHOTO]
+				photo_from_record = target_record.get_front_photo()
 			else if(href_list["photo_side"])
-				P = R.fields[DATACORE_PHOTO_SIDE]
-			if(P)
-				P.show(H)
+				photo_from_record = target_record.get_side_photo()
+			if(photo_from_record)
+				photo_from_record.show(human_or_ghost_user)
 			return
-		*/
+
 		if(href_list["hud"] == "m")
-			if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
+			if(!HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 				return
 			if(href_list["evaluation"])
 				if(!getBruteLoss() && !getFireLoss() && !getOxyLoss() && getToxLoss() < 20)
@@ -344,74 +345,74 @@
 					to_chat(usr, "<span class='danger'>Patient has signs of suffocation, emergency treatment may be required!</span>")
 				if(getToxLoss() > 20)
 					to_chat(usr, "<span class='danger'>Gathered data is inconsistent with the analysis, possible cause: poisoning.</span>")
-			if(!H.wear_id) //You require access from here on out.
-				to_chat(H, "<span class='warning'>ERROR: Invalid access</span>")
+			if(!human_or_ghost_user.wear_id) //You require access from here on out.
+				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access</span>")
 				return
-			var/list/access = H.wear_id.GetAccess()
+			var/list/access = human_or_ghost_user.wear_id.GetAccess()
 			if(!(ACCESS_MEDICAL in access))
-				to_chat(H, "<span class='warning'>ERROR: Invalid access</span>")
+				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access</span>")
 				return
 			if(href_list["p_stat"])
-				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", R.fields[DATACORE_PHYSICAL_HEALTH]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
-				if(!R)
+				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", target_record.fields[DATACORE_PHYSICAL_HEALTH]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
+				if(!target_record)
 					return
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 					return
 				if(health_status && health_status != "Cancel")
-					R.fields[DATACORE_PHYSICAL_HEALTH] = health_status
+					target_record.fields[DATACORE_PHYSICAL_HEALTH] = health_status
 				return
 			if(href_list["m_stat"])
-				var/health_status = input(usr, "Specify a new mental status for this person.", "Medical HUD", R.fields[DATACORE_MENTAL_HEALTH]) in list("Stable", "*Watch*", "*Unstable*", "*Insane*", "Cancel")
-				if(!R)
+				var/health_status = input(usr, "Specify a new mental status for this person.", "Medical HUD", target_record.fields[DATACORE_MENTAL_HEALTH]) in list("Stable", "*Watch*", "*Unstable*", "*Insane*", "Cancel")
+				if(!target_record)
 					return
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_MEDICAL_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 					return
 				if(health_status && health_status != "Cancel")
-					R.fields[DATACORE_MENTAL_HEALTH] = health_status
+					target_record.fields[DATACORE_MENTAL_HEALTH] = health_status
 				return
 			return //Medical HUD ends here.
 
 		if(href_list["hud"] == "s")
-			if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+			if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 				return
 			if(usr.stat || usr == src) //|| !usr.canmove || usr.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
 				return													  //Non-fluff: This allows sec to set people to arrest as they get disarmed or beaten
 			// Checks the user has security clearence before allowing them to change arrest status via hud, comment out to enable all access
 			var/allowed_access = null
-			var/obj/item/clothing/glasses/hud/security/G = H.glasses
-			if(istype(G) && (G.obj_flags & EMAGGED))
+			var/obj/item/clothing/glasses/hud/security/sec_hud = human_or_ghost_user.glasses
+			if(istype(sec_hud) && (sec_hud.obj_flags & EMAGGED))
 				allowed_access = "@%&ERROR_%$*"
 			else //Implant and standard glasses check access
-				if(H.wear_id)
-					var/list/access = H.wear_id.GetAccess()
+				if(human_or_ghost_user.wear_id)
+					var/list/access = human_or_ghost_user.wear_id.GetAccess()
 					if(ACCESS_SEC_DOORS in access)
-						allowed_access = H.get_authentification_name()
+						allowed_access = human_or_ghost_user.get_authentification_name()
 
 			if(!allowed_access)
-				to_chat(H, "<span class='warning'>ERROR: Invalid access.</span>")
+				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access.</span>")
 				return
 
 			if(!perpname)
-				to_chat(H, "<span class='warning'>ERROR: Can not identify target.</span>")
+				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Can not identify target.</span>")
 				return
 
-			var/datum/data/record/security_record = SSdatacore.get_records(DATACORE_RECORDS_SECURITY)[perpname]
+			var/datum/data/record/security_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
 
-			if(!R)
+			if(!target_record)
 				to_chat(usr, "<span class='warning'>ERROR: Unable to locate data core entry for target.</span>")
 				return
 			if(href_list["status"])
 				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", security_record.fields[DATACORE_CRIMINAL_STATUS]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
 				if(setcriminal != "Cancel")
-					if(!R)
+					if(!target_record)
 						return
-					if(!H.canUseHUD())
+					if(!human_or_ghost_user.canUseHUD())
 						return
-					if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+					if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 						return
 					investigate_log("[key_name(src)] has been set from [security_record.fields[DATACORE_CRIMINAL_STATUS]] to [setcriminal] by [key_name(usr)].", INVESTIGATE_RECORDS)
 					security_record.fields[DATACORE_CRIMINAL_STATUS] = setcriminal
@@ -419,9 +420,9 @@
 				return
 
 			if(href_list["view"])
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 				to_chat(usr, "<b>Name:</b> [security_record.fields[DATACORE_NAME]]	<b>Criminal Status:</b> [security_record.fields[DATACORE_CRIMINAL_STATUS]]")
 				for(var/datum/data/crime/c in security_record.fields[DATACORE_CRIMES])
@@ -439,9 +440,9 @@
 				var/t1 = stripped_input("Please input crime name:", "Security HUD", "", null)
 				if(!security_record || !t1 || !allowed_access)
 					return
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 
 				var/crime = SSdatacore.new_crime_entry(t1, null, allowed_access, station_time_timestamp())
@@ -454,9 +455,9 @@
 				var/t1 = stripped_input(usr, "Please input crime details:", "Secure. records", "", null)
 				if(!security_record || !t1 || !allowed_access)
 					return
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 
 				if(href_list["cdataid"])
@@ -466,9 +467,9 @@
 				return
 
 			if(href_list["view_comment"])
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 				to_chat(usr, "<b>Comments/Log:</b>")
 				var/counter = 1
@@ -482,9 +483,9 @@
 				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
 				if (!security_record || !t1 || !allowed_access)
 					return
-				if(!H.canUseHUD())
+				if(!human_or_ghost_user.canUseHUD())
 					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
+				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 				var/counter = 1
 				while(security_record.fields[text("com_[]", counter)])
@@ -565,9 +566,9 @@
 	//Check for arrest warrant
 	if(judgement_criteria & JUDGE_RECORDCHECK)
 		var/perpname = get_face_name(get_id_name())
-		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
-		if(R && R.fields[DATACORE_CRIMINAL_STATUS])
-			switch(R.fields[DATACORE_CRIMINAL_STATUS])
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
+		if(target_record && target_record.fields[DATACORE_CRIMINAL_STATUS])
+			switch(target_record.fields[DATACORE_CRIMINAL_STATUS])
 				if("*Arrest*")
 					threatcount += 5
 				if("Incarcerated")
@@ -835,11 +836,11 @@
 /mob/living/carbon/human/replace_records_name(oldname,newname) // Only humans have records right now, move this up if changed.
 	for(var/id as anything in SSdatacore.library)
 		var/datum/data_library/library = SSdatacore.library[id]
-		var/datum/data/record/R = library.get_record_by_name(oldname)
-		if(R)
-			R.fields[DATACORE_NAME] = newname
+		var/datum/data/record/target_record = library.get_record_by_name(oldname)
+		if(target_record)
+			target_record.fields[DATACORE_NAME] = newname
 			library.records_by_name -= oldname
-			library.records_by_name[newname] = R
+			library.records_by_name[newname] = target_record
 
 /mob/living/carbon/human/get_total_tint()
 	. = ..()

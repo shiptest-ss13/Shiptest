@@ -17,7 +17,7 @@ import { MedicalRecord, MedicalRecordData } from './types';
 
 /** Displays all found records. */
 export const MedicalRecordTabs = (props, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<MedicalRecordData>(context);
 
   return (
     <Stack fill vertical>
@@ -25,7 +25,7 @@ export const MedicalRecordTabs = (props, context) => {
         <Section fill scrollable>
           <Tabs vertical>
             {data.records.map((record, index) => (
-                <CrewTab key={index} record={record} />
+              <CrewTab key={index} record={record} />
             ))}
           </Tabs>
         </Section>
@@ -57,20 +57,27 @@ export const MedicalRecordTabs = (props, context) => {
 
 /** Individual crew tab */
 const CrewTab = (props: { record: MedicalRecord }, context) => {
-  const [selectedRecord, setSelectedRecord] = useLocalState(context, 'medicalRecord', undefined);
+  const [selectedRecord, setSelectedRecord] = useLocalState(
+    context,
+    'medicalRecord',
+    undefined
+  );
 
   const { act, data } = useBackend(context);
   const { assigned_view } = data;
   const { record } = props;
-  const { crew_ref, name } = record;
+  const { record_ref, name } = record;
 
   /** Sets the record to preview */
   const selectRecord = (record: MedicalRecord) => {
-    if (selectedRecord?.crew_ref === crew_ref) {
+    if (selectedRecord?.record_ref === record_ref) {
       setSelectedRecord(undefined);
     } else {
       setSelectedRecord(record);
-      act('view_record', { assigned_view: assigned_view, crew_ref: crew_ref });
+      act('view_record', {
+        assigned_view: assigned_view,
+        record_ref: record_ref,
+      });
     }
   };
 
@@ -78,9 +85,9 @@ const CrewTab = (props: { record: MedicalRecord }, context) => {
     <Tabs.Tab
       className="candystripe"
       onClick={() => selectRecord(record)}
-      selected={selectedRecord?.crew_ref === crew_ref}
+      selected={selectedRecord?.record_ref === record_ref}
     >
-    {name}
+      {name}
     </Tabs.Tab>
   );
 };
