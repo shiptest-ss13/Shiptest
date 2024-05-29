@@ -1370,10 +1370,10 @@
 		/obj/item/stack/sheet/mineral/uranium=20,\
 		/obj/item/stack/sheet/mineral/diamond=50,\
 		/obj/item/stack/sheet/bluespace_crystal=50,\
-		/obj/item/stack/sheet/mineral/hidden/hellstone=50,\
+		/obj/item/stack/sheet/mineral/bananium=50,\
 		/obj/item/stack/sheet/mineral/wood=50,\
 		/obj/item/stack/sheet/plastic/fifty=1,\
-		/obj/item/stack/sheet/mineral/hidden/hellstone/fifty=1
+		/obj/item/stack/sheet/runed_metal/fifty=1
 		)
 	generate_items_inside(items_inside,src)
 

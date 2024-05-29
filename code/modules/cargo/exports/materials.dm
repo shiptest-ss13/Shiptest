@@ -26,6 +26,11 @@
 
 // Materials. Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
+/datum/export/material/bananium
+	cost = 250
+	material_id = /datum/material/bananium
+	message = "cm3 of bananium"
+
 /datum/export/material/diamond
 	cost = 125
 	material_id = /datum/material/diamond
@@ -57,10 +62,15 @@
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 
-/datum/export/material/hellstone
+/datum/export/material/adamantine
 	cost = 125
-	material_id = /datum/material/hellstone
-	message = "cm3 of hellstone"
+	material_id = /datum/material/adamantine
+	message = "cm3 of adamantine"
+
+/datum/export/material/mythril
+	cost = 375
+	material_id = /datum/material/mythril
+	message = "cm3 of mythril"
 
 /datum/export/material/bscrystal
 	cost = 75
@@ -71,6 +81,11 @@
 	cost = 5
 	message = "cm3 of plastic"
 	material_id = /datum/material/plastic
+
+/datum/export/material/runite
+	cost = 150
+	message = "cm3 of runite"
+	material_id = /datum/material/runite
 
 /datum/export/material/metal
 	cost = 2

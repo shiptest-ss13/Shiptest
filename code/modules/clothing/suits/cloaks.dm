@@ -67,11 +67,6 @@
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
 	icon_state = "trans"
 
-/obj/item/clothing/neck/cloak/bi
-	name = "solarian marine biologist cloak"
-	desc = "Commonly worn by members of the Solarian Marine Biologist."
-	icon_state = "bi"
-
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "goliath cloak"
 	icon_state = "goliath_cloak"
