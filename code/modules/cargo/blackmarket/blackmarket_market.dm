@@ -6,6 +6,7 @@
 	var/list/shipping
 
 
+
 	// Automatic vars, do not touch these.
 	/// Items available from this market, populated by SSblackmarket on initialization.
 	var/list/available_items = list()
@@ -28,6 +29,9 @@
 
 	if(item.pair_item)
 		add_item(item.pair_item, TRUE)
+
+	// for(var/datum/blackmarket_item/paired_item in item.pair_item)
+	// 	add_item(/datum/blackmarket_item/ammo/blackout, TRUE)
 
 	return TRUE
 

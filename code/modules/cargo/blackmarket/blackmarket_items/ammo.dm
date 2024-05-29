@@ -124,7 +124,7 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/blackout
-	name = ".300 Blacout Stripper Clip"
+	name = ".300 Blackout Stripper Clip"
 	desc = "A 5 round clip of .300 Blackout. It'll be lights out soon enough for anyone hit with these."
 	item = /obj/item/ammo_box/aac_300blk_stripper
 
@@ -132,7 +132,7 @@
 	price_max = 750
 	stock_min = 4
 	stock_max = 6
-	availability_prob = 70
+	availability_prob = 0
 
 /datum/blackmarket_item/ammo/carbine_mag
 	name = "SKM-24v Magazine"

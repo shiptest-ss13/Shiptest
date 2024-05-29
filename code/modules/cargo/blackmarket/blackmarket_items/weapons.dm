@@ -65,6 +65,7 @@
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
 	pair_item = /datum/blackmarket_item/ammo/himehabu_mag
+	// pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
 
 	price_min = 100
 	price_max = 600
@@ -259,17 +260,19 @@
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in .300 Blackout."
 	item = /obj/item/gun/ballistic/rifle/polymer
+	pair_item = /datum/blackmarket_item/ammo/blackout
 
 	price_min = 600
 	price_max = 1250
 	stock_min = 2
 	stock_max = 4
-	availability_prob = 30
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/skm_carbine
 	name = "SKM-24v Carbine"
 	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	pair_item = /datum/blackmarket_item/ammo/carbine_mag
 
 	price_min = 3000
 	price_max = 4500

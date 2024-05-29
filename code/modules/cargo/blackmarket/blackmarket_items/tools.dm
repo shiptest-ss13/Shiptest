@@ -142,16 +142,6 @@
 	stock_max = 3
 	availability_prob = 30
 
-/datum/blackmarket_item/tool/chem_master
-	name = "Chem Master Board"
-	desc = "A Chem Master board, capable of seperating and packaging reagents. Perfect for any aspiring at home chemist."
-	item = /obj/item/circuitboard/machine/chem_master
-
-	price_min = 1000
-	price_max = 3000
-	stock = 1
-	availability_prob = 30
-
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
