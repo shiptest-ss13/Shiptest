@@ -11,18 +11,18 @@ export type MedicalRecordData = {
 };
 
 export type MedicalRecord = {
-  age: number;
-  blood_type: string;
   record_ref: string;
-  dna: string;
+  rank: string;
+  name: string;
+  age: number;
   gender: string;
+  species: string;
+  blood_type: string;
+  dna: string;
   disabilities: string;
   physical_status: string;
   mental_status: string;
-  name: string;
   notes: MedicalNote[];
-  rank: string;
-  species: string;
 };
 
 export type MedicalNote = {

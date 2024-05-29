@@ -18,7 +18,8 @@ import {
   PHYSICALSTATUS2DESC,
   PHYSICALSTATUS2ICON,
 } from './constants';
-import { getMedicalRecord, getQuirkStrings } from './helpers';
+import { getMedicalRecord } from './helpers';
+import { NoteKeeper } from './NoteKeeper';
 import { MedicalRecordData } from './types';
 
 /** Views a selected record. */
@@ -32,20 +33,17 @@ export const MedicalRecordView = (props, context) => {
   const { min_age, max_age } = data;
 
   const {
-    age,
-    blood_type,
     record_ref,
-    dna,
+    rank,
+    name,
+    age,
+    species,
     gender,
-    disabilities,
     physical_status,
     mental_status,
-    name,
-    rank,
-    species,
+    blood_type,
+    dna,
   } = foundRecord;
-
-  const disabilities_array = getQuirkStrings(disabilities);
 
   return (
     <Stack fill vertical>
@@ -178,13 +176,11 @@ export const MedicalRecordView = (props, context) => {
                 {mental_status}
               </Box>
             </LabeledList.Item>
-            <LabeledList.Item label="Disabilities">
-              {disabilities_array.map((disability, index) => (
-                <Box key={index}>&#8226; {disability}</Box>
-              ))}
-            </LabeledList.Item>
           </LabeledList>
         </Section>
+      </Stack.Item>
+      <Stack.Item grow>
+        <NoteKeeper />
       </Stack.Item>
     </Stack>
   );

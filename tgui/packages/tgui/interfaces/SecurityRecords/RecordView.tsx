@@ -43,16 +43,16 @@ const RecordInfo = (props, context) => {
   const { min_age, max_age } = data;
 
   const {
-    age,
     record_ref,
+    rank,
+    name,
+    age,
+    gender,
+    species,
     crimes,
     fingerprint,
-    gender,
-    name,
-    security_note,
-    rank,
-    species,
     wanted_status,
+    security_note,
   } = foundRecord;
 
   return (

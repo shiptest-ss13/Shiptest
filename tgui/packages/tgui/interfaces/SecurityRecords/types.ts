@@ -11,16 +11,16 @@ export type SecurityRecordsData = {
 };
 
 export type SecurityRecord = {
-  age: number;
   record_ref: string;
+  rank: string;
+  name: string;
+  age: number;
+  species: string;
+  gender: string;
   crimes: Crime[];
   fingerprint: string;
-  gender: string;
-  name: string;
-  security_note: string;
-  rank: string;
-  species: string;
   wanted_status: string;
+  security_note: string;
 };
 
 export type Crime = {

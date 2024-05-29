@@ -182,17 +182,18 @@ SUBSYSTEM_DEF(datacore)
 	//General Record
 	var/datum/data/record/G = new()
 	G.fields[DATACORE_ID] = id
-	G.fields[DATACORE_NAME] = H.real_name
 	G.fields[DATACORE_RANK] = assignment
 	G.fields[DATACORE_INITIAL_RANK] = assignment
+	G.fields[DATACORE_NAME] = H.real_name
 	G.fields[DATACORE_AGE] = H.age
-	G.fields[DATACORE_SPECIES] = H.dna.species.name
-	G.fields[DATACORE_PHYSICAL_HEALTH] = PHYSICAL_ACTIVE
-	G.fields[DATACORE_MENTAL_HEALTH] = MENTAL_STABLE
-
 	G.fields[DATACORE_GENDER] = person_gender
+	G.fields[DATACORE_SPECIES] = H.dna.species.name
+
 	G.fields[DATACORE_APPEARANCE] = character_appearance
 	G.fields[DATACORE_NOTES] = "No notes."
+
+	G.fields[DATACORE_PHYSICAL_HEALTH] = PHYSICAL_ACTIVE
+	G.fields[DATACORE_MENTAL_HEALTH] = MENTAL_STABLE
 
 	G.fields[DATACORE_BLOOD_TYPE] = H.dna.blood_type.name
 	G.fields[DATACORE_BLOOD_DNA] = H.dna.unique_enzymes
@@ -200,7 +201,7 @@ SUBSYSTEM_DEF(datacore)
 	G.fields[DATACORE_DISABILITIES_DETAILS] = "No minor disabilities have been declared."
 	G.fields[DATACORE_DISEASES] = "None"
 	G.fields[DATACORE_DISEASES_DETAILS] = "No diseases have been diagnosed at the moment."
-	G.fields[DATACORE_NOTES_MEDICAL] = "No medical notes."
+	G.fields[DATACORE_NOTES_MEDICAL] = list()
 
 	G.fields[DATACORE_FINGERPRINT] = md5(H.dna.uni_identity)
 	G.fields[DATACORE_CRIMINAL_STATUS] = "None"

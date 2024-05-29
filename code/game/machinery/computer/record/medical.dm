@@ -24,18 +24,26 @@
 
 	var/list/records = list()
 	for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
+		var/list/notes = list()
+		for(var/datum/medical_note/note in target.fields[DATACORE_NOTES_MEDICAL])
+			notes += list(list(
+				author = note.author,
+				content = note.content,
+				note_ref = REF(note),
+				time = note.time,
+			))
 		records += list(list(
-			age = target.fields[DATACORE_AGE],
-			blood_type = target.fields[DATACORE_BLOOD_TYPE],
 			record_ref = REF(target),
-			dna = target.fields[DATACORE_BLOOD_DNA],
+			rank = target.fields[DATACORE_RANK],
+			age = target.fields[DATACORE_AGE],
+			name = target.fields[DATACORE_NAME],
 			gender = target.fields[DATACORE_GENDER],
-			disabilities = target.fields[DATACORE_DISABILITIES],
+			species = target.fields[DATACORE_SPECIES],
 			physical_status = target.fields[DATACORE_PHYSICAL_HEALTH],
 			mental_status = target.fields[DATACORE_MENTAL_HEALTH],
-			name = target.fields[DATACORE_NAME],
-			rank = target.fields[DATACORE_RANK],
-			species = target.fields[DATACORE_SPECIES],
+			blood_type = target.fields[DATACORE_BLOOD_TYPE],
+			dna = target.fields[DATACORE_BLOOD_DNA],
+			notes = notes,
 		))
 
 	data["records"] = records
@@ -65,6 +73,29 @@
 		return FALSE
 
 	switch(action)
+		if("add_note")
+			if(!params["content"])
+				return FALSE
+			var/content = trim(params["content"], MAX_MESSAGE_LEN)
+
+			var/datum/medical_note/new_note = new(usr.name, content)
+			while(length(target.fields[DATACORE_NOTES_MEDICAL]) > 5)
+				target.fields[DATACORE_NOTES_MEDICAL].Cut(1, 2)
+
+			target.fields[DATACORE_NOTES_MEDICAL] += new_note
+
+			return TRUE
+
+		if("delete_note")
+			var/datum/medical_note/old_note = locate(params["note_ref"]) in target.fields[DATACORE_NOTES_MEDICAL]
+			if(!old_note)
+				return FALSE
+
+			target.fields[DATACORE_NOTES_MEDICAL] -= old_note
+			qdel(old_note)
+
+			return TRUE
+
 		if("set_physical_status")
 			var/physical_status = params["physical_status"]
 			if(!physical_status || !(physical_status in PHYSICAL_STATUSES))
