@@ -30,7 +30,8 @@
 	var/unlimited = FALSE
 	/// Should another item spawn alongside this one in the catalogue?
 	var/datum/blackmarket_item/pair_item
-	//var/list/pair_item = null
+	/// here for testing
+	var/list/pair_item_test = null
 	//var/datum/blackmarket_item/pair_item
 
 /datum/blackmarket_item/New()

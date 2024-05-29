@@ -102,12 +102,12 @@
 	name = "Raksha-Plating vest"
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
 	item = /obj/item/clothing/suit/armor/gezena/marine
-	pair_item = /datum/blackmarket_item/clothing/gezena_helmet
+	pair_item_test = list(/datum/blackmarket_item/clothing/gezena_helmet)
 
 	price_min = 750
 	price_max = 1250
 	stock_max = 3
-	availability_prob = 20
+	availability_prob = 100
 
 /datum/blackmarket_item/clothing/gezena_helmet
 	name = "Raksha-Helm"
