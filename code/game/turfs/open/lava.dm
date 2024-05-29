@@ -18,6 +18,8 @@
 	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
+	/// Whether the lava has been dug with hellstone found successfully
+	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
@@ -116,12 +118,16 @@
 			to_chat(user, "<span class='warning'>You need one rod to build a heatproof lattice.</span>")
 		return
 	if(attacking_item.tool_behaviour == TOOL_MINING && (attacking_item.custom_materials[SSmaterials.GetMaterialRef(/datum/material/diamond)]))
+		if(is_mined)
+			to_chat(user, span_notice("This has already been cleared out of hellstone..."))
+			return FALSE
 		to_chat(user, span_notice("You start parting away [src]..."))
-		if(attacking_item.use_tool(src, user, 100, volume=30))
+		if(attacking_item.use_tool(src, user, 175, volume=30))
 			to_chat(user, span_notice("You part away [src]."))
 			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
 			if (prob(10))
 				new /obj/item/stack/ore/hellstone(src)
+				is_mined = TRUE
 			return TRUE
 	return FALSE
 
