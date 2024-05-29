@@ -66,10 +66,13 @@
 
 /obj/item/kitchen/knife
 	name = "kitchen knife"
-	icon_state = "knife"
-	item_state = "knife"
+	icon = 'icons/obj/item/knife.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
+	icon_state = "kitchenknife"
+	item_state = "kitchenknife"
 	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
-	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
+	pickup_sound = 'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	flags_1 = CONDUCT_1
 	force = 10
@@ -97,7 +100,6 @@
 /obj/item/kitchen/knife/plastic
 	name = "plastic knife"
 	icon_state = "plastic_knife"
-	item_state = "knife"
 	desc = "A very safe, barely sharp knife made of plastic. Good for cutting food and not much else."
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
@@ -155,8 +157,8 @@
 
 /obj/item/kitchen/knife/butcher
 	name = "butcher's cleaver"
-	icon_state = "butch"
-	item_state = "butch"
+	icon_state = "cleaver"
+	item_state = "cleaver"
 	desc = "A huge thing used for chopping and chopping up meat."
 	flags_1 = CONDUCT_1
 	force = 15
@@ -177,7 +179,8 @@
 
 /obj/item/kitchen/knife/combat
 	name = "combat knife"
-	icon_state = "buckknife"
+	icon_state = "combatknife"
+	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 20
@@ -188,6 +191,7 @@
 /obj/item/kitchen/knife/combat/survival
 	name = "survival knife"
 	icon_state = "survivalknife"
+	item_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	desc = "A hunting grade survival knife."
 	force = 15
