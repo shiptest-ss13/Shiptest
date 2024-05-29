@@ -31,7 +31,7 @@
 	// 	add_item(item.pair_item, TRUE)
 
 	for(var/datum/blackmarket_item/paired_item in item.pair_item_test)
-		add_item(/datum/blackmarket_item/ammo/blackout, TRUE)
+		add_item(paired_item, TRUE)
 
 	return TRUE
 
