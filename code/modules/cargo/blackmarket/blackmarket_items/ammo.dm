@@ -157,7 +157,9 @@
 
 /datum/blackmarket_item/ammo/skm_drum
 	name ="SKM Drum Magazine"
-	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? Do you want them to be absolutely suppressed for the next 15 seconds? This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
+	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? \
+	Do you want them to be absolutely suppressed for the next 15 seconds? \
+	 This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
 	item = /obj/item/ammo_box/magazine/skm_762_40/drum
 
 	price_min = 1500
