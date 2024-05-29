@@ -145,6 +145,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar, 3), \
 	new/datum/stack_recipe("firebrand", /obj/item/match/firebrand, 2, time = 100), \
+	new/datum/stack_recipe("torch", /obj/item/candle/tribal_torch, 4, time = 30), \
 	null, \
 	new/datum/stack_recipe_list("pews", list(
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),
@@ -248,6 +249,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("rag", /obj/item/reagent_containers/glass/rag, 1), \
 	new/datum/stack_recipe("towel", /obj/item/towel, 2), \
 	new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
+	new/datum/stack_recipe("double bedsheet", /obj/item/bedsheet/double, 4), \
 	new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4), \
 	null, \
 	new/datum/stack_recipe("fingerless gloves", /obj/item/clothing/gloves/fingerless, 1), \
