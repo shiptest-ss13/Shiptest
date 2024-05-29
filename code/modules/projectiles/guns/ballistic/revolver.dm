@@ -280,18 +280,15 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
 	chamber_round(TRUE)
-	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
-		//to_chat(user, "<span class='warning'>cylinder spin</span>")
 		chambered = magazine.get_round(TRUE, counter_clockwise)
 		playsound(src, 'sound/weapons/gun/revolver/spin_single.ogg', 100, FALSE)
 	else
 		chambered = magazine.stored_ammo[1]
-		//to_chat(user, "<span class='warning'>cylinder else</span>")
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
