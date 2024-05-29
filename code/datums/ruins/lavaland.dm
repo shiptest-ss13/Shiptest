@@ -25,12 +25,6 @@
 	description = "A destroyed ashwalker village. What even happened here?"
 	suffix = "lavaland_surface_ashwalker_shrine.dmm"
 
-/datum/map_template/ruin/lavaland/crashedpinnance
-	name = "Crashed Research Pinnance"
-	id = "crashed_pinnance"
-	description = "A crashed shuttlecraft, looks like the pilot didn't make it."
-	suffix = "lavaland_surface_crashed_pinnance.dmm"
-
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
 	id = "lava_canyon"
