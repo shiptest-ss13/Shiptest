@@ -206,7 +206,7 @@
 	name = "Prototype Gauss Rifle"
 	desc = "A prototype gauss rifle made by Nanotrasen. Perfect for making swiss cheese out of people. Chambered in ferromagnetic pellets."
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
-	pair_item = /datum/blackmarket_item/weapon/proto_gauss_mag
+	pair_item = /datum/blackmarket_item/ammo/proto_gauss_mag
 
 	price_min = 3500
 	price_max = 6000
@@ -228,7 +228,7 @@
 	name = "HP Scout"
 	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy."
 	item = /obj/item/gun/ballistic/rifle/scout
-	pair_item = /datum/blackmarket_item/weapon/scout_stripper
+	pair_item = /datum/blackmarket_item/ammo/scout_stripper
 
 	price_min = 4000
 	price_max = 6500
@@ -265,13 +265,13 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/
-	name =
-	desc =
-	item =
+// /datum/blackmarket_item/weapon/
+// 	name =
+// 	desc =
+// 	item =
 
-	price_min =
-	price_max =
-	stock_max = 3
-	availability_prob = 30
+// 	price_min =
+// 	price_max =
+// 	stock_max = 3
+// 	availability_prob = 30
 

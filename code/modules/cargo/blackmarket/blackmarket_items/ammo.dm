@@ -134,7 +134,7 @@
 	stock_max = 6
 	availability_prob = 70
 
-/datum/blackmarket_item/ammo/24v_mag
+/datum/blackmarket_item/ammo/carbine_mag
 	name = "SKM-24v Magazine"
 	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
 	item = /obj/item/ammo_box/magazine/skm_545_39
