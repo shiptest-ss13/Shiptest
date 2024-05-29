@@ -69,7 +69,7 @@
 
 /obj/item/clothing/neck/cloak/bi
 	name = "solarian marine biologist cloak"
-	desc = "Commonly worn by members of the Solarian Marine Biologist."
+	desc = "Commonly worn by members of the Solarian Marine Biologist Society, dedicated to the study and preservation of marine wildlife."
 	icon_state = "bi"
 
 /obj/item/clothing/suit/hooded/cloak/goliath
