@@ -92,7 +92,7 @@
 
 /datum/blackmarket_item/ammo/proto_gauss_mag
 	name = "Prototype Gauss Rifle Magazine"
-	desc = "A 25 round ferromagnetic pellet magazine for the prototype gauss rifle. Keep pellets away from children under the age of 5."
+	desc = "A 25 round ferromagnetic pellet magazine for the prototype gauss rifle. Choking hazard, keep pellets away from children under the age of 5."
 	item = /obj/item/ammo_box/magazine/gauss
 
 	price_min = 500
@@ -166,3 +166,5 @@
 	price_max = 2500
 	stock = 2
 	availability_prob = 20
+
+

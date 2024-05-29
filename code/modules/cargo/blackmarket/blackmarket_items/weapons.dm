@@ -112,6 +112,16 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/e60
+	name = "E-60 Disabler"
+	desc = "Looking for a live capture? This Eoehoma firearms E-60 disabler will get your man."
+	item = /obj/item/gun/energy/disabler/e60
+
+	price_min = 500
+	price_max = 750
+	stock_max = 3
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
@@ -208,8 +218,8 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
 	pair_item = /datum/blackmarket_item/ammo/proto_gauss_mag
 
-	price_min = 3500
-	price_max = 6000
+	price_min = 3000
+	price_max = 4500
 	stock = 2
 	availability_prob = 25
 
@@ -252,12 +262,13 @@
 
 	price_min = 600
 	price_max = 1250
-	stock_max = 3
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 30
 
 /datum/blackmarket_item/weapon/skm_carbine
 	name = "SKM-24v Carbine"
-	desc = "Technically this is a saw down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm"
+	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
 	price_min = 3000
@@ -265,13 +276,4 @@
 	stock_max = 2
 	availability_prob = 20
 
-// /datum/blackmarket_item/weapon/
-// 	name =
-// 	desc =
-// 	item =
-
-// 	price_min =
-// 	price_max =
-// 	stock_max = 3
-// 	availability_prob = 30
 
