@@ -6,7 +6,7 @@
 	base_icon_state = "cult_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
-	sheet_type = /obj/item/stack/sheet/runed_metal
+	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
 	sheet_amount = 1
 	girder_type = /obj/structure/girder/cult
 
