@@ -102,13 +102,10 @@
 				break
 			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
-				to_chat(user, "<span class='warning'>num unloaded no tick</span>")
 			else
 				num_unloaded++
-				to_chat(user, "<span class='warning'>num unloaded tick</span>")
 			if(!do_mob(user,user,doafter_time))
 				break
-			to_chat(user, "<span class='warning'>cylinder go brr</span>")
 			chamber_round(TRUE, TRUE)
 
 	if (num_unloaded)
@@ -124,27 +121,23 @@
 		if(user)
 			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
 		return FALSE
-	to_chat(user, "<span class='warning'>begin remove casing</span>")
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
-	//casing_to_eject.bounce_away(FALSE, NONE)
 	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
 	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
-	to_chat(user, "<span class='warning'>casing eject</span>")
+
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
 		chamber_round(FALSE)
 	else
 		magazine.stored_ammo[gate_offset+1] = null
-		to_chat(user, "<span class='warning'>gate load success</span>")
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
 
 	if(user)
 		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
-	to_chat(user, "<span class='warning'>return true</span>")
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
