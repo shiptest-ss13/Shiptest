@@ -52,8 +52,6 @@
 	sec_hud_set_ID()
 	sec_hud_set_implants()
 	sec_hud_set_security_status()
-	//...fan gear
-	fan_hud_set_fandom()
 	//...and display them.
 	add_to_all_human_data_huds()
 
@@ -247,7 +245,7 @@
 		else
 			return
 
-		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator)) //placing an item into the pocket is 4 times faster
+		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator, hidden = TRUE)) //placing an item into the pocket is 4 times faster
 			if(pocket_item)
 				if(pocket_item == (pocket_id == ITEM_SLOT_RPOCKET ? r_store : l_store)) //item still in the pocket we search
 					dropItemToGround(pocket_item)
@@ -1264,6 +1262,23 @@
 		return FALSE
 	return ..()
 
+/mob/living/carbon/human/CtrlShiftClick(mob/user)
+	. = ..()
+	if(isobserver(user) || !user.mind?.guestbook)
+		return
+	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
+
+/mob/living/carbon/human/get_screentip_name(client/hovering_client)
+	. = ..()
+	var/mob/hovering_mob = hovering_client?.mob
+	if(!hovering_mob?.mind?.guestbook)
+		return .
+	var/face_name = get_face_name("")
+	var/known_name = hovering_mob.mind.guestbook.get_known_name(hovering_mob, src, face_name)
+	if(known_name)
+		return known_name
+	return .
+
 /mob/living/carbon/human/species
 	var/race = null
 
@@ -1281,7 +1296,7 @@
 	race = /datum/species/dullahan
 
 /mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
+	race = /datum/species/elzuose
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly

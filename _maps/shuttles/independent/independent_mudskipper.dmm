@@ -162,6 +162,7 @@
 	name = "Engine Shutters"
 	},
 /obj/machinery/cell_charger,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "dN" = (
@@ -383,6 +384,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -615,10 +619,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "nV" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
+/obj/structure/closet/wall/blue/directional/west{
 	secure = 1;
-	pixel_x = -28;
 	locked = 1
 	},
 /obj/item/gun/energy/laser/scatter,
@@ -876,10 +878,10 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
-/obj/item/storage/toolbox/mechanical,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "sT" = (
@@ -1638,9 +1640,6 @@
 /area/ship/hallway/aft)
 "KA" = (
 /obj/structure/window/reinforced/spawner,
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
 /obj/item/paper_bin,
 /obj/item/analyzer{
 	pixel_y = 3;
@@ -1652,6 +1651,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)

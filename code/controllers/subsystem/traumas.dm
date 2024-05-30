@@ -92,7 +92,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/under/rank/command/head_of_personnel, /obj/item/clothing/under/rank/rnd/research_director,
 			/obj/item/clothing/under/rank/security/head_of_security/alt,//WS Edit - Better security jumpsuit sprites
 			/obj/item/clothing/under/rank/rnd/research_director/alt, /obj/item/clothing/under/rank/rnd/research_director/turtleneck,
-			/obj/item/clothing/under/rank/command/captain/parade, /obj/item/clothing/under/rank/security/head_of_security/parade,
+			/obj/item/clothing/under/rank/security/head_of_security/parade,
 			/obj/item/clothing/under/rank/security/head_of_security/parade/female, //WS Edit - Better Command Uniforms
 			/obj/item/clothing/head/helmet/abductor, /obj/item/clothing/suit/armor/abductor/vest, /obj/item/melee/baton/abductor,
 			/obj/item/storage/belt/military/abductor, /obj/item/gun/energy/alien, /obj/item/abductor/silencer,
@@ -128,7 +128,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/melee/cultblade, /obj/item/cult_bastard,
 			/obj/item/restraints/legcuffs/bola/cult, /obj/item/clothing/suit/space/hardsuit/cult,
 			/obj/item/clothing/suit/hooded/cultrobes, /obj/item/clothing/head/hooded/cult_hoodie, /obj/effect/rune,
-			/obj/item/stack/sheet/runed_metal, /obj/machinery/door/airlock/cult, /obj/singularity/narsie,
+			/obj/machinery/door/airlock/cult, /obj/singularity/narsie,
 			/obj/item/soulstone,
 			/obj/item/clothing/suit/wizrobe, /obj/item/clothing/head/wizard, /obj/item/spellbook, /obj/item/staff,
 			/obj/item/clothing/suit/space/hardsuit/shielded/wizard, /obj/item/clothing/suit/space/hardsuit/wizard,
@@ -149,8 +149,7 @@ SUBSYSTEM_DEF(traumas)
 		"birds" = typecacheof(list(
 			/obj/item/clothing/mask/gas/plaguedoctor, /obj/item/reagent_containers/food/snacks/cracker,
 			/obj/item/clothing/suit/chickensuit, /obj/item/clothing/head/chicken,
-			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask,
-			/obj/item/clothing/head/helmet/space/freedom, /obj/item/clothing/suit/space/freedom)),
+			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask)),
 
 		"anime" = typecacheof(list(
 			/obj/item/clothing/under/costume/schoolgirl, /obj/item/katana, /obj/item/reagent_containers/food/snacks/sashimi,

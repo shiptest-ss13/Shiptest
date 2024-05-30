@@ -84,8 +84,8 @@
 "cN" = (
 /obj/structure/safe/floor,
 /obj/item/hand_tele,
-/obj/item/stack/sheet/mineral/adamantine,
-/obj/item/stack/sheet/mineral/adamantine,
+/obj/item/stack/sheet/mineral/hidden/hellstone,
+/obj/item/stack/sheet/mineral/hidden/hellstone,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/corprejectrooms)
 "cP" = (
@@ -321,10 +321,7 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "io" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/item/keycard/office{
 	desc = "Only Elite level employees are authorized to handle this keycard. All other employees may face termination if found in possession.";
 	name = "Vault Card";
@@ -1327,7 +1324,6 @@
 "En" = (
 /obj/item/gun/ballistic/automatic/smg/proto,
 /obj/structure/rack,
-/obj/item/firing_pin,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Er" = (
@@ -1392,9 +1388,7 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "Fa" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_x = -27
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable/blue{
 	icon_state = "5-6"
 	},
@@ -1732,11 +1726,11 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stack/sheet/bluespace_crystal/five,
-/obj/item/stack/sheet/mineral/bananium{
+/obj/item/stack/sheet/mineral/hidden/hellstone{
 	amount = 15
 	},
 /obj/item/stack/sheet/mineral/gold/twenty,
-/obj/item/stack/sheet/mineral/runite/ten,
+/obj/item/stack/sheet/mineral/hidden/hellstone/ten,
 /obj/item/toy/figure/captain,
 /obj/item/organ/cyberimp/brain/anti_stun,
 /obj/item/disk/design_disk/adv/knight_gear,

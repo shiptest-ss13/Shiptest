@@ -136,6 +136,14 @@
 		Miscellaneous machines
 */
 
+/datum/supply_pack/machinery/gravgen
+	name = "Ship-Portable Gravity Generator Crate"
+	desc = "For those tired of their tools floating away from them. Contains a single gravity generator."
+	cost = 2000
+	contains = list(/obj/machinery/power/ship_gravity/unanchored)
+	crate_name = "gravity generator crate"
+	crate_type = /obj/structure/closet/crate/engineering/electrical
+
 /datum/supply_pack/machinery/breach_shield_gen
 	name = "Anti-breach Shield Projector Crate"
 	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
@@ -168,7 +176,7 @@
 /datum/supply_pack/machinery/blackmarket_telepad
 	name = "Black Market LTSRBT"
 	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
-	cost = 5000
+	cost = 1000
 	contains = list(
 		/obj/item/circuitboard/machine/ltsrbt,
 		/obj/item/stack/ore/bluespace_crystal/artificial,
