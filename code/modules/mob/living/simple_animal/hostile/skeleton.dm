@@ -54,8 +54,6 @@
 	melee_damage_upper = 30
 	deathmessage = "collapses into a pile of bones, its gear clanging as it hits the ground!"
 	loot = list(/obj/effect/decal/remains/human,
-				/obj/item/clothing/suit/armor/witchhunter,
-				/obj/item/clothing/head/witchhunter,
 				/obj/item/claymore/weak{name = "holy sword"})
 
 /mob/living/simple_animal/hostile/skeleton/ice

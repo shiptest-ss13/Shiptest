@@ -45,17 +45,6 @@
 	name = "Ashen Sachet"
 	desc = "A small sachet filled with ashes. These are most commonly ancient-growth tree or a slain predetor the owner hunted themselves, each having a diffrent meaning to the "
 
-/* Need a place for them to spawn..
-/datum/outfit/job/roumain/flamebearer
-	name = "Saint-Roumain Militia - Flamebearer"
-	id_assignment = "flamebearer"
-	jobtype = /datum/job/chaplain
-	job_icon = "chaplain"
-	uniform = /obj/item/clothing/under/suit/roumain
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/armor/witchhunter
-	head = /obj/item/clothing/head/witchhunter
-*/
 // STJARN COLLECTIVE
 
 /obj/item/book/bible/stars

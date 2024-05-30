@@ -94,3 +94,19 @@
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
+
+/datum/outfit/job/roumain/flamebearer
+	name = "Saint-Roumain Militia - Flamebearer"
+	id_assignment = "flamebearer"
+	jobtype = /datum/job/chaplain
+	job_icon = "chaplain"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain/flamebearer
+	head = /obj/item/clothing/head/cowboy/sec/roumain/flamebearer
+
+	duffelbag = /obj/item/storage/backpack/cultpack
+	courierbag = /obj/item/storage/backpack/cultpack
+	backpack = /obj/item/storage/backpack/cultpack
+	satchel = /obj/item/storage/backpack/cultpack
