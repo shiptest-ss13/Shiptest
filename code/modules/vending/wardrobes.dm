@@ -417,7 +417,6 @@
 					/obj/item/storage/backpack/satchel/chem = 2,
 					/obj/item/clothing/accessory/armband/engine = 4,
 					/obj/item/storage/bag/chemistry = 2)
-	contraband = list(/obj/item/reagent_containers/spray/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/chem_wardrobe
 /obj/item/vending_refill/wardrobe/chem_wardrobe
 	machine_name = "ChemDrobe"
@@ -555,7 +554,7 @@
 		/obj/item/clothing/suit/armor/vest/bulletproof = 3,
 		/obj/item/clothing/suit/armor/riot/clip = 3,
 
-		/obj/item/clothing/suit/space/hardsuit/security/independent/clip = 3,
+		/obj/item/clothing/suit/space/hardsuit/clip_patroller = 3,
 		/obj/item/clothing/suit/space/hardsuit/clip_spotter = 3,
 
 		/obj/item/clothing/head/helmet/bulletproof/x11/clip = 3,
