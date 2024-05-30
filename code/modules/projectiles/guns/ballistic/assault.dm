@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
 	burst_size = 1
-	actions_types = list()
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 
@@ -117,6 +117,7 @@
 	fire_delay = 1.5
 	spread = 8
 	weapon_weight = WEAPON_MEDIUM
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/swiss
@@ -128,30 +129,6 @@
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.65 SECONDS)
-
-/obj/item/gun/ballistic/automatic/assault/swiss_cheese/afterattack(atom/target, mob/living/user, flag, params)
-	if(select == 2)
-		to_chat(user, "<span class='danger'>You hear a strange sound from the DMA unit. It doesn't appear to be operational.</span>")
-		return
-	else
-		return ..()
-
-/obj/item/gun/ballistic/automatic/assault/swiss_cheese/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(1)
-			select = 2
-			to_chat(user, "<span class='notice'>You switch to Hybrid.</span>")
-		if(2)
-			select = 1
-			burst_size = initial(burst_size)
-			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
-
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
-	update_appearance()
-	for(var/datum/action/action as anything in actions)
-		action.UpdateButtonIcon()
 
 #define E40_BALLISTIC_MODE 1
 #define E40_LASER_MODE 2
@@ -180,10 +157,10 @@
 	. = ..()
 	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
-	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
+//	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
 	SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	update_appearance()
-
+/*
 /obj/item/gun/ballistic/automatic/assault/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	if(select == E40_LASER_MODE)
 		secondary.do_autofire(source, target, shooter, params)
@@ -229,7 +206,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40/proc/secondary_update_icon()
 	update_icon()
-
+*/
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
 	//handle laser gunn overlays
@@ -243,7 +220,7 @@
 	if(secondary.cell)
 		. += "[icon_state]_cell"
 
-
+/*
 /obj/item/gun/ballistic/automatic/assault/e40/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
@@ -263,8 +240,7 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 	return
-
-
+*/
 
 /obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
 	. = ..()

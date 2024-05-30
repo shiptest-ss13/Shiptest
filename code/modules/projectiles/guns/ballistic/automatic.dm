@@ -1,14 +1,9 @@
 
-#define FIREMODE_SEMIAUTO "single"
-#define FIREMODE_BURST "burst fire"
-#define FIREMODE_FULLAUTO "full auto"
-#define FIREMODE_OTHER "misc. fire"
-
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
 	can_suppress = TRUE
 
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 	fire_sound_volume = 90
@@ -24,54 +19,6 @@
 	recoil = 0
 	recoil_unwielded = 4
 	wield_slowdown = 0.35
-
-/obj/item/gun/ballistic/automatic/Initialize()
-	. = ..()
-	build_firemodes()
-
-/obj/item/gun/ballistic/automatic/proc/build_firemodes()
-
-	if(FIREMODE_FULLAUTO in gun_firemodes)
-		AddComponent(/datum/component/automatic_fire, fire_delay)
-
-/obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
-	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
-		fire_select(user)
-	else
-		..()
-//wewish
-/obj/item/gun/ballistic/automatic/proc/fire_select(mob/user)
-	var/mob/living/carbon/human/user = user
-
-	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
-
-	firemode_index++
-	if(firemode_index < gun_firemodes.len)
-		firemode_index = 1 //reset to the first index if it's over the limit. Byond arrays start at 1 instead of 0, hence why its set to 1.
-	var/current_firemode = gun_firemodes[firemode_index]
-//wawa
-	to_chat(user, "<span class='notice'>Switched to [current_firemode].</span>")
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
-	update_appearance()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
-/datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
-	var/item/obj/gun/ballistic/automatic/our_gun = target
-
-	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
-	switch(current_firemode)
-		if(FIREMODE_SEMIAUTO)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]single"
-		if(FIREMODE_BURST)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]burst"
-		if(FIREMODE_FULLAUTO)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]auto"
-		if(FIREMODE_OTHER)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]other"
-
-	return ..()
 
 
 // SNIPER //

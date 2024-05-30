@@ -406,7 +406,7 @@
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
-		user.changeNext_move(CLICK_CD_RAPID)
+		user.changeNext_move(1)
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()

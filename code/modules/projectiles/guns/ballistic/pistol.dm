@@ -6,7 +6,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
 	burst_size = 1
-	fire_delay = 0 //spam it as fast as you can
+	fire_delay = 2
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -24,11 +24,14 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
-	fire_delay = 1
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept.
+	recoil_unwielded = 3
+	recoil_backtime_multiplier = 1
+
 	wield_delay = 0.2 SECONDS
-	spread = 2
+	spread = 4
 	spread_unwielded = 5
 	wield_slowdown = 0.15
 
@@ -63,7 +66,6 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	recoil = -2
 
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag
 	spawnwithmagazine = FALSE
@@ -97,10 +99,12 @@
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	fire_delay = 0.7 SECONDS
-	recoil = 1
-	recoil_unwielded = 2
-	spread = 4
-	spread_unwielded = 7
+	recoil = 2
+	recoil_unwielded = 5
+	recoil_backtime_multiplier = 2
+
+	spread = 7
+	spread_unwielded = 14
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."

@@ -183,12 +183,6 @@
 	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
 	update_appearance()
 
-/obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
-	if(select == 2)
-		underbarrel.afterattack(target, user, flag, params)
-	else
-		return ..()
-
 /obj/item/gun/ballistic/automatic/smg/m90/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_casing))
 		if(istype(A, underbarrel.magazine.ammo_type))
@@ -196,36 +190,6 @@
 			underbarrel.attackby(A, user, params)
 	else
 		..()
-
-/obj/item/gun/ballistic/automatic/smg/m90/update_overlays()
-	. = ..()
-	switch(select)
-		if(0)
-			. += "[initial(icon_state)]_semi"
-		if(1)
-			. += "[initial(icon_state)]_burst"
-		if(2)
-			. += "[initial(icon_state)]_gren"
-
-/obj/item/gun/ballistic/automatic/smg/m90/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select = 1
-			burst_size = initial(burst_size)
-			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
-		if(2)
-			select = 0
-			burst_size = 1
-			fire_delay = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
-	update_appearance()
-	return
 
 /obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
 	name = "HP Firestorm"

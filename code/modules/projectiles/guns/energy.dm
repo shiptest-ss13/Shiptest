@@ -10,6 +10,9 @@
 	has_safety = TRUE
 	safety = TRUE
 
+
+	fire_select_icon_state_prefix = "laser_"
+
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/modifystate = 0

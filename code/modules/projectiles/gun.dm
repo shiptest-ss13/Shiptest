@@ -1,4 +1,9 @@
 
+#define FIREMODE_SEMIAUTO "single"
+#define FIREMODE_BURST "burst fire"
+#define FIREMODE_FULLAUTO "full auto"
+#define FIREMODE_OTHER "misc. fire"
+
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 #define FIRING_PIN_REMOVAL_DELAY 50
 
@@ -59,7 +64,7 @@
 	///Firemode index, due to code shit this is the currently selected firemode
 	var/firemode_index
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 
@@ -160,6 +165,7 @@
 		alight = new(src)
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
+	build_firemodes()
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -274,6 +280,9 @@
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
 	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
+
+	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
+
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
@@ -325,12 +334,14 @@
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
+/* gunpointing is very broken, port the old skyrat gunpointing?
 		if(ismob(target) && user.a_intent == INTENT_GRAB)
 			if(user.GetComponent(/datum/component/gunpoint))
 				to_chat(user, "<span class='warning'>You are already holding someone up!</span>")
 				return
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
+*/
 
 	if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
 		var/mob/living/L = user
@@ -1002,6 +1013,68 @@
 	if(zoomable)
 		azoom = new()
 		azoom.gun = src
+
+/obj/item/gun/proc/build_firemodes()
+	if(FIREMODE_FULLAUTO in gun_firemodes)
+		AddComponent(/datum/component/automatic_fire, fire_delay)
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	var/datum/action/item_action/our_action
+
+	if(gun_firemodes.len > 1)
+		our_action = new /datum/action/item_action/toggle_firemode(src)
+
+	for(var/i=0, i < gun_firemodes.len, i++)
+		if(default_firemode == gun_firemodes[i])
+			firemode_index = i
+			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
+				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+			our_action.UpdateButtonIcon()
+			return
+
+	firemode_index = 1
+	CRASH("default_firemode isn't in the gun_firemodes list of [src.type]!! Defaulting to 1!!")
+
+/obj/item/gun/ui_action_click(mob/user, actiontype)
+	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
+		fire_select(user)
+	else
+		..()
+//wewish
+/obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
+
+	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+
+	firemode_index++
+	if(firemode_index > gun_firemodes.len)
+		firemode_index = 1 //reset to the first index if it's over the limit. Byond arrays start at 1 instead of 0, hence why its set to 1.
+
+	var/current_firemode = gun_firemodes[firemode_index]
+	if(current_firemode == FIREMODE_FULLAUTO)
+		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+	else
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+//wawa
+	to_chat(user, "<span class='notice'>Switched to [current_firemode].</span>")
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+	update_appearance()
+	for(var/datum/action/current_action as anything in actions)
+		current_action.UpdateButtonIcon()
+
+/datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
+	var/obj/item/gun/our_gun = target
+
+	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
+	switch(current_firemode)
+		if(FIREMODE_SEMIAUTO)
+			button_icon_state = "[our_gun.fire_select_icon_state_prefix]single"
+		if(FIREMODE_BURST)
+			button_icon_state = "[our_gun.fire_select_icon_state_prefix]burst"
+		if(FIREMODE_FULLAUTO)
+			button_icon_state = "[our_gun.fire_select_icon_state_prefix]auto"
+		if(FIREMODE_OTHER)
+			button_icon_state = "[our_gun.fire_select_icon_state_prefix]other"
+
+	return ..()
 
 #undef FIRING_PIN_REMOVAL_DELAY
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER
