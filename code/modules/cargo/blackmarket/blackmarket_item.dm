@@ -29,9 +29,7 @@
 	// Should there be an unlimited stock of an item
 	var/unlimited = FALSE
 	/// Should another item spawn alongside this one in the catalogue?
-	var/datum/blackmarket_item/pair_item
-	/// here for testing
-	var/list/pair_item_test = null
+	var/list/pair_item = null
 	//var/datum/blackmarket_item/pair_item
 
 /datum/blackmarket_item/New()

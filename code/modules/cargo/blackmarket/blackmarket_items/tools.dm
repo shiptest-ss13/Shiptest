@@ -87,8 +87,8 @@
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
 
-	price_min = 100
-	price_max = 600
+	price_min = 75
+	price_max = 300
 	stock_max = 10
 	availability_prob = 50
 
@@ -98,7 +98,7 @@
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
 	price_min = 400
-	price_max = 1500
+	price_max = 1200
 	stock_max = 3
 	availability_prob = 20
 

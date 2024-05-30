@@ -78,7 +78,7 @@
 
 /datum/blackmarket_item/explosive/rusted_mine
 	name = "Landmine"
-	desc = "Recovered from a decades old ICW battlefield by our best EOD tech, Nicky Nine Fingers."
+	desc = "Recovered from a decade old ICW battlefield by our best EOD tech, Nicky Nine Fingers."
 	item = /obj/item/mine/pressure/explosive/rusty
 
 	price_min = 250
@@ -97,3 +97,18 @@
 	stock_max = 5
 	availability_prob = 20
 
+/datum/blackmarket_item/explosive/live_bomb
+	name = "Active ICW Era Ordinance"
+	desc = "Look, I won't mince words. This thing is counting down and I don't want to be the next causualty of ICW after it's already ended. I'll sell it to you real cheap."
+	item = /obj/machinery/syndicatebomb
+
+	price_min = 500
+	price_max = 1000
+	stock = 1
+	availability_prob = 100
+
+/datum/blackmarket_item/explosive/live_bomb/spawn_item(loc)
+	var/obj/machinery/syndicatebomb/bomb = ..()
+	bomb.active = TRUE
+	bomb.countdown = 90
+	return bomb

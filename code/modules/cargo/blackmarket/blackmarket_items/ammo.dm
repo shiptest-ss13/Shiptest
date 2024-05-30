@@ -18,7 +18,6 @@
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22lr magazines for use in the Himehabu pistol."
 	item = /obj/item/ammo_box/magazine/m22lr
-	pair_item = /datum/blackmarket_item/weapon/himehabu_box
 
 	price_min = 100
 	price_max = 200
@@ -80,14 +79,14 @@
 	stock_max = 6
 	availability_prob = 0
 
-/datum/blackmarket_item/weapon/pistole_c_mag
+/datum/blackmarket_item/ammo/pistole_c_mag
 	name = "5.56 Caseless Magazine"
 	desc = "A 12 round magazine for the Pistole Cheese."
 	item = /obj/item/ammo_box/magazine/pistol556mm
 
 	price_min = 250
 	price_max = 750
-	stock_max = 2
+	stock = 2
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/proto_gauss_mag

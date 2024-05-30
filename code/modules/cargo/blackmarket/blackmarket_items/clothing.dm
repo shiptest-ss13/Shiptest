@@ -18,7 +18,7 @@
 
 	price_min = 1000
 	price_max = 2000
-	stock_max = 1
+	stock = 1
 	availability_prob = 20
 
 /datum/blackmarket_item/clothing/galaxy_blue
@@ -102,7 +102,7 @@
 	name = "Raksha-Plating vest"
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
 	item = /obj/item/clothing/suit/armor/gezena/marine
-	pair_item_test = list(/datum/blackmarket_item/clothing/gezena_helmet)
+	pair_item = list(/datum/blackmarket_item/clothing/gezena_helmet)
 
 	price_min = 750
 	price_max = 1250

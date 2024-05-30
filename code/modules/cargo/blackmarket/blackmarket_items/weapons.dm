@@ -64,8 +64,7 @@
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	pair_item = /datum/blackmarket_item/ammo/himehabu_mag
-	// pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
+    pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
 
 	price_min = 100
 	price_max = 600
@@ -96,7 +95,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = /datum/blackmarket_item/ammo/e40_mag
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
 	price_max = 12000
@@ -127,7 +126,7 @@
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
 	item = /obj/item/gun/ballistic/automatic/smg/proto
-	pair_item = /datum/blackmarket_item/ammo/saber_mag
+	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
 	price_min = 2500
 	price_max = 4200
@@ -179,7 +178,7 @@
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
 	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
-	pair_item = /datum/blackmarket_item/ammo/model_h_mag
+	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag)
 
 	price_min = 2000
 	price_max = 3500
@@ -195,7 +194,7 @@
 	name = "SSG-669C Rotary Sniper Rifle"
 	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm."
 	item = /obj/item/gun/ballistic/rifle/solgov
-	pair_item = /datum/blackmarket_item/ammo/sgg_stripper
+	pair_item = list(/datum/blackmarket_item/ammo/sgg_stripper)
 
 	price_min = 3000
 	price_max = 6000
@@ -206,7 +205,7 @@
 	name = "Pistole C"
 	desc = "Pistole Compact? Pistole Caseless? Pistole Cheese? Fuck if I know. All I know is these little numbers pack a nasty sting. Chambered in 5.56 caseless."
 	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
-	pair_item = /datum/blackmarket_item/weapon/pistole_c_mag
+	pair_item = list(/datum/blackmarket_item/ammo/pistole_c_mag)
 
 	price_min = 900
 	price_max = 1250
@@ -217,7 +216,7 @@
 	name = "Prototype Gauss Rifle"
 	desc = "A prototype gauss rifle made by Nanotrasen. Perfect for making swiss cheese out of people. Chambered in ferromagnetic pellets."
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
-	pair_item = /datum/blackmarket_item/ammo/proto_gauss_mag
+	pair_item = list(/datum/blackmarket_item/ammo/proto_gauss_mag)
 
 	price_min = 3000
 	price_max = 4500
@@ -228,18 +227,18 @@
 	name = "TEC-9 Machine Pistol"
 	desc = "Hallelujah! It's raining lead! This 9mm machine pistol is capable of spitting out bullets at rapid pace."
 	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	pair_item = /datum/blackmarket_item/ammo/tec_mag
+	pair_item = list(/datum/blackmarket_item/ammo/tec_mag)
 
 	price_min = 1500
 	price_max = 2750
 	stock = 2
 	availability_prob = 35
 
-/datum/blackmarket_item/ammo/scout
+/datum/blackmarket_item/weapon/scout
 	name = "HP Scout"
 	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy."
 	item = /obj/item/gun/ballistic/rifle/scout
-	pair_item = /datum/blackmarket_item/ammo/scout_stripper
+	pair_item = list(/datum/blackmarket_item/ammo/scout_stripper)
 
 	price_min = 4000
 	price_max = 6500
@@ -260,7 +259,7 @@
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in .300 Blackout."
 	item = /obj/item/gun/ballistic/rifle/polymer
-	pair_item = /datum/blackmarket_item/ammo/blackout
+	pair_item = list(/datum/blackmarket_item/ammo/blackout)
 
 	price_min = 600
 	price_max = 1250
@@ -272,7 +271,7 @@
 	name = "SKM-24v Carbine"
 	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
-	pair_item = /datum/blackmarket_item/ammo/carbine_mag
+	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 
 	price_min = 3000
 	price_max = 4500

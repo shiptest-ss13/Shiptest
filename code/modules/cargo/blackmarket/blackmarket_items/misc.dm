@@ -97,3 +97,18 @@
 	price_max = 10000
 	stock = 1
 	availability_prob = 40
+
+/datum/blackmarket_item/misc/knockoff_plush
+	name = "Knockoff T4LI Plush"
+	desc = "You'll hardly be able to tell that it's an offbrand rip off!"
+	item = /obj/item/toy/plush/tali
+
+	price_min = 50
+	price_max = 150
+	stock_max = 5
+	availability_prob = 60
+
+/datum/blackmarket_item/misc/knockoff_plush/spawn_item(loc)
+	var/obj/item/toy/plush/tali/plush = ..()
+	plush.name = "T3MMI"
+	plush.desc = "A rather shoddy and unlicensed plushie 'paying homage' to a character from RILENA series. A tag on the side says 'Made In Weewish'."

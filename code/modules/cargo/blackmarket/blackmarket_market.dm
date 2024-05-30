@@ -27,10 +27,7 @@
 
 	available_items[item.category] += item
 
-	// if(item.pair_item)
-	// 	add_item(item.pair_item, TRUE)
-
-	for(var/datum/blackmarket_item/paired_item in item.pair_item_test)
+	for(var/paired_item in item.pair_item)
 		add_item(paired_item, TRUE)
 
 	return TRUE

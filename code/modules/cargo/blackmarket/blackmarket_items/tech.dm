@@ -25,7 +25,7 @@
 	name = "AI Core Board"
 	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
-// pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi,/datum/blackmarket_item/tech/borg)
+    pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi,/datum/blackmarket_item/tech/borg)
 
 	price_min = 3000
 	price_max = 4500
@@ -46,7 +46,7 @@
 	name = "Man Machine Interface"
 	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
 	item = /obj/item/mmi
-	pair_item = /datum/blackmarket_item/tech/borg
+	pair_item = list(/datum/blackmarket_item/tech/borg)
 
 	price_min = 500
 	price_max = 1000

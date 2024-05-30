@@ -215,3 +215,13 @@
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 30
+
+/datum/blackmarket_item/consumable/goliath
+	name = "A Live Goliath"
+	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, and we're selling what's left to buy some actual take out."
+	item = /mob/living/simple_animal/hostile/asteroid/goliath/beast
+
+	price_min = 750
+	price_max = 2000
+	stock_max = 4
+	availability_prob = 100
