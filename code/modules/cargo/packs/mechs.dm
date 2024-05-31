@@ -111,7 +111,7 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/scanner
 	name = "Mech scanner kit"
-	desc = "A trio of electronic mining scanners, graded to interface with a mech."
+	desc = "An electronic mining scanner, graded to interface with a mech."
 	cost = 350
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/mining_scanner
