@@ -12,9 +12,10 @@
 /area/hangar)
 "af" = (
 /obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
 	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "ai" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
@@ -51,20 +52,23 @@
 	},
 /area/hangar)
 "as" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
+"at" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access_txt = "101"
+	},
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "av" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
+/obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "aw" = (
 /obj/effect/turf_decal/arrows{
@@ -134,7 +138,11 @@
 	pixel_y = 25
 	},
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -150,11 +158,21 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"aX" = (
-/obj/effect/turf_decal/arrows{
+"aV" = (
+/obj/effect/turf_decal/industrial/shutoff,
+/obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"aX" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -164,6 +182,108 @@
 	},
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"cr" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fT" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"id" = (
+/obj/machinery/computer/hydrogen_exchange,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"kN" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"oo" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pb" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pf" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"qK" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"yq" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"AH" = (
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/shutoff,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ek" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ey" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"IY" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -178,9 +298,56 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Pk" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"SR" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"TQ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "TX" = (
-/obj/machinery/atmospherics/pipe/simple/general,
-/turf/closed/indestructible/reinforced,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"UV" = (
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Wp" = (
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"XP" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Yu" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 
 (1,1,1) = {"
@@ -255,7 +422,7 @@ aP
 aP
 ab
 aj
-aj
+IY
 aL
 aH
 aH
@@ -278,7 +445,7 @@ aw
 aH
 aH
 al
-aj
+IY
 aj
 ab
 "}
@@ -288,7 +455,7 @@ aP
 aP
 ab
 aj
-aj
+IY
 aL
 am
 am
@@ -311,7 +478,7 @@ am
 am
 am
 al
-aj
+IY
 aj
 ab
 "}
@@ -321,7 +488,7 @@ aP
 aP
 ab
 aj
-aj
+IY
 aL
 aD
 aD
@@ -344,7 +511,7 @@ aD
 aD
 ap
 al
-aj
+IY
 aj
 ab
 "}
@@ -354,7 +521,7 @@ aP
 aP
 ab
 aj
-aj
+IY
 aL
 aD
 aD
@@ -377,7 +544,7 @@ aD
 aD
 aD
 al
-aj
+IY
 aj
 ab
 "}
@@ -387,7 +554,7 @@ aP
 aP
 ab
 aj
-aX
+IY
 aL
 aG
 aD
@@ -410,7 +577,7 @@ aD
 aD
 aG
 al
-aX
+IY
 aj
 ab
 "}
@@ -420,8 +587,8 @@ aP
 aP
 ab
 aj
-aj
-aL
+oo
+fT
 aD
 aD
 aD
@@ -442,8 +609,8 @@ aD
 aD
 aD
 aD
-al
-aj
+Ek
+cr
 aj
 ab
 "}
@@ -453,7 +620,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 ai
 aD
 aD
@@ -476,7 +643,7 @@ aD
 aD
 aD
 aY
-aj
+kN
 aj
 ab
 "}
@@ -486,7 +653,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -509,7 +676,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -519,7 +686,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -542,7 +709,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -575,7 +742,7 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
@@ -585,7 +752,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -608,7 +775,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -618,7 +785,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -641,7 +808,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -651,7 +818,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -674,7 +841,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -684,7 +851,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -707,7 +874,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -740,7 +907,7 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
@@ -750,7 +917,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -773,7 +940,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -783,7 +950,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 ai
 aD
 aD
@@ -806,7 +973,7 @@ aD
 aD
 aD
 aY
-aj
+kN
 aj
 ab
 "}
@@ -816,7 +983,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -839,7 +1006,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -849,7 +1016,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -872,7 +1039,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -905,7 +1072,7 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
@@ -915,7 +1082,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -938,7 +1105,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -948,8 +1115,8 @@ aP
 aP
 ab
 aj
-aj
-aL
+pb
+fT
 aD
 aD
 aD
@@ -970,8 +1137,8 @@ aD
 aD
 aD
 aD
-al
-aj
+Ek
+SR
 aj
 ab
 "}
@@ -981,7 +1148,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1004,7 +1171,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1014,7 +1181,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1037,7 +1204,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1070,7 +1237,7 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
@@ -1080,7 +1247,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1103,7 +1270,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1113,7 +1280,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 ai
 aD
 aD
@@ -1136,7 +1303,7 @@ aD
 aD
 aD
 aY
-aj
+kN
 aj
 ab
 "}
@@ -1146,7 +1313,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1169,7 +1336,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1179,7 +1346,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1202,7 +1369,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1235,7 +1402,7 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
@@ -1245,7 +1412,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1268,7 +1435,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1278,7 +1445,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1301,7 +1468,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1311,7 +1478,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1334,7 +1501,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1344,7 +1511,7 @@ aP
 aP
 ab
 aj
-aj
+aX
 aL
 aD
 aD
@@ -1367,7 +1534,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1400,17 +1567,17 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
 (38,1,1) = {"
 aP
 aP
-aP
 ab
-aj
-aj
+ab
+Pk
+aX
 aL
 aD
 aD
@@ -1433,17 +1600,17 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
 (39,1,1) = {"
 aP
-aP
-aP
 ab
-aj
-aj
+ab
+UV
+av
+aX
 ai
 aD
 aD
@@ -1466,17 +1633,17 @@ aD
 aD
 aD
 aY
-aj
+kN
 aj
 ab
 "}
 (40,1,1) = {"
 aP
-aP
-aP
-ab
-aj
-aj
+at
+Wp
+AH
+pf
+aX
 aL
 aD
 aD
@@ -1499,18 +1666,18 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
 (41,1,1) = {"
 aP
-aP
-aP
 ab
-aj
-aj
-aL
+id
+pb
+as
+TQ
+fT
 aD
 aD
 aD
@@ -1531,17 +1698,17 @@ aD
 aD
 aD
 aD
-al
-aj
+Ek
+SR
 aj
 ab
 "}
 (42,1,1) = {"
 aP
-aP
-aP
 ab
-aj
+yq
+aV
+XP
 aX
 aL
 aG
@@ -1565,17 +1732,17 @@ aD
 aD
 aG
 al
-aX
+kN
 aj
 ab
 "}
 (43,1,1) = {"
 aP
-aP
-aP
+ab
+ab
 TX
 av
-aj
+qK
 aL
 aD
 aD
@@ -1598,7 +1765,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1631,7 +1798,7 @@ aD
 aD
 aD
 al
-aj
+kN
 aj
 ab
 "}
@@ -1641,7 +1808,7 @@ JT
 JT
 OP
 aF
-aj
+Yu
 aM
 aU
 aU
@@ -1664,7 +1831,7 @@ aU
 aU
 aU
 ae
-aj
+kN
 aj
 ab
 "}
@@ -1675,29 +1842,29 @@ JT
 JT
 aF
 af
-aj
-aj
-aj
 as
-aj
-aj
-aj
-aj
 as
-aj
-aj
-aj
-aj
 as
-aj
-aj
-aj
-aj
 as
-aj
-aj
-aj
-aj
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+Ey
 aj
 ab
 "}
@@ -1707,7 +1874,7 @@ JT
 JT
 JT
 aF
-aj
+Wp
 aj
 aj
 aA

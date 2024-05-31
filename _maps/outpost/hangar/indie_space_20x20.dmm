@@ -66,10 +66,11 @@
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "az" = (
-/obj/effect/turf_decal/arrows{
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -78,7 +79,11 @@
 	pixel_y = 25
 	},
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -133,12 +138,10 @@
 	},
 /area/hangar)
 "aO" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
+/obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "aP" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
@@ -149,20 +152,58 @@
 	},
 /area/hangar)
 "aT" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
 "aY" = (
 /obj/effect/landmark/outpost/hangar_numbers,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"aZ" = (
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"aZ" = (
+"dR" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fT" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"fU" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"gu" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"iT" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -178,9 +219,136 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"qO" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
 "rQ" = (
-/obj/machinery/atmospherics/pipe/simple/general,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"un" = (
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"zH" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold4w/orange/hidden,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Af" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access_txt = "101"
+	},
 /turf/closed/indestructible/reinforced,
+/area/hangar)
+"Aj" = (
+/obj/machinery/computer/hydrogen_exchange,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"An" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"DI" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ie" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"IW" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ks" = (
+/obj/effect/turf_decal/industrial/shutoff,
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Li" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Oa" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Sr" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"VO" = (
+/obj/structure/railing/corner{
+	dir = 1;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Wk" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Xu" = (
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Xy" = (
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/shutoff,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -255,7 +423,7 @@ aH
 aH
 am
 aZ
-aZ
+fU
 aM
 ac
 ac
@@ -278,7 +446,7 @@ aC
 ac
 ac
 ao
-aZ
+fU
 aZ
 am
 "}
@@ -288,7 +456,7 @@ aH
 aH
 am
 aZ
-aZ
+fU
 aM
 ad
 ad
@@ -311,7 +479,7 @@ ad
 ad
 ad
 ao
-aZ
+fU
 aZ
 am
 "}
@@ -321,7 +489,7 @@ aH
 aH
 am
 aZ
-aZ
+fU
 aM
 aJ
 aJ
@@ -344,7 +512,7 @@ aJ
 aJ
 aB
 ao
-aZ
+fU
 aZ
 am
 "}
@@ -354,7 +522,7 @@ aH
 aH
 am
 aZ
-aZ
+fU
 aM
 aJ
 aJ
@@ -377,7 +545,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+fU
 aZ
 am
 "}
@@ -387,7 +555,7 @@ aH
 aH
 am
 aZ
-az
+fU
 aM
 ap
 aJ
@@ -410,7 +578,7 @@ aJ
 aJ
 ap
 ao
-az
+fU
 aZ
 am
 "}
@@ -420,8 +588,8 @@ aH
 aH
 am
 aZ
-aZ
-aM
+Ie
+Oa
 aJ
 aJ
 aJ
@@ -442,8 +610,8 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
+Sr
+gu
 aZ
 am
 "}
@@ -453,7 +621,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 av
 aJ
 aJ
@@ -476,7 +644,7 @@ aJ
 aJ
 aJ
 aq
-aZ
+Wk
 aZ
 am
 "}
@@ -486,7 +654,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -509,7 +677,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -519,7 +687,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -542,7 +710,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -575,7 +743,7 @@ aJ
 aJ
 ap
 ao
-az
+Wk
 aZ
 am
 "}
@@ -585,7 +753,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -608,7 +776,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -618,7 +786,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -641,7 +809,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -651,7 +819,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -674,7 +842,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -684,7 +852,7 @@ aH
 aH
 am
 aZ
-aZ
+az
 aM
 aJ
 aJ
@@ -707,7 +875,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -740,17 +908,17 @@ aJ
 aJ
 ap
 ao
-az
+Wk
 aZ
 am
 "}
 (18,1,1) = {"
 aH
 aH
-aH
 am
-aZ
-aZ
+am
+iT
+az
 aM
 aJ
 aJ
@@ -773,17 +941,17 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
 (19,1,1) = {"
 aH
-aH
-aH
 am
-aZ
-aZ
+am
+Xu
+aO
+az
 av
 aJ
 aJ
@@ -806,17 +974,17 @@ aJ
 aJ
 aJ
 aq
-aZ
+Wk
 aZ
 am
 "}
 (20,1,1) = {"
 aH
-aH
-aH
-am
-aZ
-aZ
+Af
+un
+Xy
+VO
+az
 aM
 aJ
 aJ
@@ -839,18 +1007,18 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
 (21,1,1) = {"
 aH
-aH
-aH
 am
-aZ
-aZ
-aM
+Aj
+DI
+aT
+zH
+Oa
 aJ
 aJ
 aJ
@@ -871,17 +1039,17 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
+Sr
+IW
 aZ
 am
 "}
 (22,1,1) = {"
 aH
-aH
-aH
 am
-aZ
+qO
+Ks
+Li
 az
 aM
 ap
@@ -905,17 +1073,17 @@ aJ
 aJ
 ap
 ao
-az
+Wk
 aZ
 am
 "}
 (23,1,1) = {"
 aH
-aH
-aH
+am
+am
 rQ
 aO
-aZ
+dR
 aM
 aJ
 aJ
@@ -938,7 +1106,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -971,7 +1139,7 @@ aJ
 aJ
 aJ
 ao
-aZ
+Wk
 aZ
 am
 "}
@@ -981,7 +1149,7 @@ qz
 qz
 jk
 ax
-aZ
+fT
 al
 aN
 aN
@@ -1004,7 +1172,7 @@ aN
 aN
 aN
 aP
-aZ
+Wk
 aZ
 am
 "}
@@ -1015,29 +1183,29 @@ qz
 qz
 ax
 aY
-aZ
-aZ
-aZ
 aT
-aZ
-aZ
-aZ
-aZ
 aT
-aZ
-aZ
-aZ
-aZ
 aT
-aZ
-aZ
-aZ
-aZ
 aT
-aZ
-aZ
-aZ
-aZ
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+An
 aZ
 am
 "}
@@ -1047,7 +1215,7 @@ qz
 qz
 qz
 ax
-aZ
+un
 aZ
 aZ
 aE
