@@ -16,7 +16,7 @@
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddComponent(/datum/component/material_container, list(/datum/material/bananium), 200000, TRUE, /obj/item/stack)
+	AddComponent(/datum/component/material_container, list(/datum/material/hellstone), 200000, TRUE, /obj/item/stack)
 	AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 75, falloff_exponent = 20)
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/step_action()
@@ -24,7 +24,7 @@
 	var/mob/wearer = loc
 	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
 	if(on && istype(wearer))
-		if(bananium.get_material_amount(/datum/material/bananium) < 100)
+		if(bananium.get_material_amount(/datum/material/hellstone) < 100)
 			on = !on
 			if(!always_noslip)
 				clothing_flags &= ~NOSLIP
@@ -32,7 +32,7 @@
 			to_chat(loc, "<span class='warning'>You ran out of bananium!</span>")
 		else
 			new /obj/item/grown/bananapeel/specialpeel(get_step(src,turn(wearer.dir, 180))) //honk
-			bananium.use_amount_mat(100, /datum/material/bananium)
+			bananium.use_amount_mat(100, /datum/material/hellstone)
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/attack_self(mob/user)
 	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
@@ -48,7 +48,7 @@
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/ui_action_click(mob/user)
 	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
-	if(bananium.get_material_amount(/datum/material/bananium))
+	if(bananium.get_material_amount(/datum/material/hellstone))
 		on = !on
 		update_appearance()
 		to_chat(user, "<span class='notice'>You [on ? "activate" : "deactivate"] the prototype shoes.</span>")

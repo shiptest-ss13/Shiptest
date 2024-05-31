@@ -870,6 +870,22 @@
 	build_path = /obj/item/ammo_box/c556mmHITP/surplus
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/generic_ammo_box
+	name = "Generic Ammo Box"
+	id = "ammo-generic"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/ammo_box/generic
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/ammo_can
+	name = "Ammo Can"
+	id = "ammo-can"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 500)
+	build_path = /obj/item/storage/toolbox/ammo
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
 	id = "cleaver"
@@ -1173,6 +1189,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
 	build_path = /obj/item/assembly/control
+	category = list("initial","Misc")
+
+/datum/design/holofield_control
+	name = "Holofield Controller"
+	id = "holofield"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control/shieldwallgen
 	category = list("initial","Misc")
 
 /datum/design/trashbag

@@ -549,6 +549,10 @@
 ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 #define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
 
+// Item mouse siganls
+#define COMSIG_ITEM_MOUSE_EXIT "item_mouse_exit"				//from base of obj/item/MouseExited(): (location, control, params)
+#define COMSIG_ITEM_MOUSE_ENTER "item_mouse_enter"				//from base of obj/item/MouseEntered(): (location, control, params)
+
 ///Called when an item is being offered, from [/obj/item/proc/on_offered(mob/living/carbon/offerer)]
 #define COMSIG_ITEM_OFFERING "item_offering"
 	///Interrupts the offer proc
@@ -773,3 +777,6 @@
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+
+///called when an elzu should unroot
+#define COMSIG_DIGOUT "dig_out"
