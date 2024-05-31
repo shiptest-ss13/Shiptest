@@ -17,9 +17,7 @@
 	var/can_charge = TRUE
 	var/ammo_type
 	var/no_den_usage
-	clumsy_check = 0
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
-	pin = /obj/item/firing_pin/magic
 
 /obj/item/gun/magic/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(no_den_usage)
@@ -43,7 +41,7 @@
 	if (charges && chambered && !chambered.BB)
 		chambered.newshot()
 
-/obj/item/gun/magic/process_chamber()
+/obj/item/gun/magic/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
 		charges--//... drain a charge
 		recharge_newshot()

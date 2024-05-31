@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/pill
 	name = "pill"
 	desc = "A tablet or capsule."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "pill"
 	item_state = "pill"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -288,5 +288,5 @@ WS End */
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
-	icon_state = "sprayer_large"
+	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)

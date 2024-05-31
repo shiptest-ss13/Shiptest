@@ -321,7 +321,7 @@
 
 /datum/component/mood/proc/HandleNutrition()
 	var/mob/living/L = parent
-	if(isethereal(L))
+	if(iselzuose(L))
 		HandleCharge(L)
 	if(HAS_TRAIT(L, TRAIT_NOHUNGER))
 		return FALSE //no mood events for nutrition
@@ -338,19 +338,19 @@
 			add_event(null, "nutrition", /datum/mood_event/starving)
 
 /datum/component/mood/proc/HandleCharge(mob/living/carbon/human/H)
-	var/datum/species/ethereal/E = H.dna.species
+	var/datum/species/elzuose/E = H.dna.species
 	switch(E.get_charge(H))
-		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
+		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			add_event(null, "charge", /datum/mood_event/decharged)
-		if(ETHEREAL_CHARGE_LOWPOWER to ETHEREAL_CHARGE_NORMAL)
+		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
 			add_event(null, "charge", /datum/mood_event/lowpower)
-		if(ETHEREAL_CHARGE_NORMAL to ETHEREAL_CHARGE_ALMOSTFULL)
+		if(ELZUOSE_CHARGE_NORMAL to ELZUOSE_CHARGE_ALMOSTFULL)
 			clear_event(null, "charge")
-		if(ETHEREAL_CHARGE_ALMOSTFULL to ETHEREAL_CHARGE_FULL)
+		if(ELZUOSE_CHARGE_ALMOSTFULL to ELZUOSE_CHARGE_FULL)
 			add_event(null, "charge", /datum/mood_event/charged)
-		if(ETHEREAL_CHARGE_FULL to ETHEREAL_CHARGE_OVERLOAD)
+		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			add_event(null, "charge", /datum/mood_event/overcharged)
-		if(ETHEREAL_CHARGE_OVERLOAD to ETHEREAL_CHARGE_DANGEROUS)
+		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			add_event(null, "charge", /datum/mood_event/supercharged)
 
 /datum/component/mood/proc/check_area_mood(datum/source, area/A)

@@ -180,15 +180,13 @@
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
 	ADD_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 0.5
+	M.physiology.burn_mod *= 0.5
 	M.add_filter("prism-wine", 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
 	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
 	REMOVE_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 2
+	M.physiology.burn_mod *= 2
 	M.remove_filter("prism-wine")
 	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 	..()

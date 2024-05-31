@@ -57,7 +57,7 @@
 		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
 
-/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return ..()
 
@@ -84,7 +84,9 @@
 			if(!casing_to_eject)
 				continue
 			casing_to_eject.forceMove(drop_location())
-			casing_to_eject.bounce_away(FALSE, NONE)
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 		chamber_round(FALSE)
@@ -98,7 +100,7 @@
 			var/doafter_time = 0.4 SECONDS
 			if(!do_mob(user,user,doafter_time))
 				break
-			if(!eject_casing())
+			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
@@ -121,7 +123,9 @@
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
-	casing_to_eject.bounce_away(FALSE, NONE)
+	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
@@ -139,6 +143,12 @@
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
 	if(!casing_to_insert)
 		return FALSE
+
+// Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
+	if(casing_to_insert.caliber != magazine.caliber)
+		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
+		return FALSE
+
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
@@ -270,7 +280,6 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
 	chamber_round(TRUE)
-	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
@@ -472,6 +481,7 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
@@ -541,7 +551,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/montagne
@@ -670,18 +679,6 @@
 		return
 	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
 
-/obj/item/gun/ballistic/revolver/reverse //Fires directly at its user... unless the user is a clown, of course.
-	clumsy_check = 0
-
-/obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
-		return ..()
-	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
-		user.drop_all_held_items()
-		user.Paralyze(80)
-
 /obj/item/gun/ballistic/revolver/firebrand
 	name = "\improper HP Firebrand"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
@@ -692,6 +689,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
 	fire_delay = 0
+	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
 

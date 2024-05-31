@@ -398,13 +398,12 @@
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize() //in an ideal world, these would generate, the legion would overlay over the corpse, and we'd get cool sprites
 	mob_species = pickweight(list(
-		/datum/species/human = 31,
-		/datum/species/lizard = 26,
-		/datum/species/ethereal = 24,
-		/datum/species/spider = 7,
-		/datum/species/ipc = 7,
-		/datum/species/jelly = 4,
-		/datum/species/fly = 1
+			/datum/species/human = 50,
+			/datum/species/lizard = 20,
+			/datum/species/ipc = 10,
+			/datum/species/elzuose = 10,
+			/datum/species/moth = 5,
+			/datum/species/spider = 5
 		)
 	)
 	var/type = pickweight(list(

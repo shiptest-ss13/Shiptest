@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/medigel
 	name = "medical gel"
 	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "medigel"
 	item_state = "spraycan"
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'

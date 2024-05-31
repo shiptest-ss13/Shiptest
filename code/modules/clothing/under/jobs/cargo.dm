@@ -46,7 +46,7 @@
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland
-	desc = "A light uniform for operating in hazardous environments, manufactured en-masse by EXOCON for the profitable frontier prospector market. Adventurous khaki jeans included."
+	desc = "A light uniform for operating in hazardous environments, manufactured en-masse by EXOCOM for the profitable frontier prospector market. Adventurous khaki jeans included."
 	name = "prospector jumpsuit"
 	icon_state = "explorer"
 	item_state = "explorer"

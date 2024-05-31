@@ -35,7 +35,7 @@
 		to_chat(user, "<span class'warning'>The [name] is already active!</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You start vigorously plunging [src]!</span>")
+	to_chat(user, span_notice("You start vigorously plunging [src]!"))
 	if(do_after(user, 50 * P.plunge_mod, target = src) && !activated)
 		start_chemming()
 
@@ -51,6 +51,8 @@
 	name = "plunger"
 	desc = "It's a plunger for plunging."
 	icon = 'icons/obj/watercloset.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	icon_state = "plunger"
 
 	slot_flags = ITEM_SLOT_MASK
@@ -58,6 +60,15 @@
 	custom_materials = list(/datum/material/iron = 150) // WS Edit - Item Materials
 
 	var/plunge_mod = 1 //time*plunge_mod = total time we take to plunge an object
+
+
+/obj/item/plunger/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!. && user.zone_selected == BODY_ZONE_HEAD && iscarbon(target))
+		var/mob/living/carbon/H = target
+		if(!H.wear_mask)
+			H.equip_to_slot_if_possible(src, ITEM_SLOT_MASK)
+			H.visible_message(span_warning("[user] slaps [src] onto [H]'s face!"), span_warning("[user] slaps [src] onto your face!"), span_hear("You hear violent plumbing."))
 
 /obj/item/plunger/attack_obj(obj/O, mob/living/user)
 	if(!O.plunger_act(src, user))
@@ -71,5 +82,5 @@
 		var/mob/living/carbon/H = hit_atom
 		if(!H.wear_mask)
 			H.equip_to_slot_if_possible(src, ITEM_SLOT_MASK)
-			H.visible_message("<span class='warning'>The plunger slams into [H]'s face!</span>", "<span class='warning'>The plunger suctions to your face!</span>")
+			H.visible_message(span_warning("[src] slams into [H]'s face!"), span_warning("[src] suctions to your face!"), span_hear("You hear violent plumbing."))
 

@@ -333,6 +333,9 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "cR" = (
@@ -437,7 +440,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "ec" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "ee" = (
@@ -815,6 +818,9 @@
 /obj/effect/turf_decal/miskilamo_big/six{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "gZ" = (
@@ -917,7 +923,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "hP" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "hX" = (
@@ -1282,11 +1288,9 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	name = "mortuary locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
@@ -1662,6 +1666,9 @@
 /area/ship/security)
 "oH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "oK" = (
@@ -2111,11 +2118,9 @@
 /area/ship/hallway/fore)
 "rQ" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
-/obj/structure/closet/wall{
-	dir = 4;
+/obj/structure/closet/wall/directional/west{
 	icon_door = "white_wall";
-	name = "medical closet";
-	pixel_x = -28
+	name = "medical closet"
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/clothing/shoes/sneakers/white,
@@ -2136,6 +2141,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3194,10 +3202,7 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "AG" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3259,6 +3264,13 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"BR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "BY" = (
 /obj/machinery/door/airlock{
 	name = "Dormitory"
@@ -4169,6 +4181,10 @@
 "Km" = (
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Kn" = (
@@ -4601,6 +4617,9 @@
 /area/ship/engineering/engine)
 "NK" = (
 /obj/structure/closet/cardboard,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NR" = (
@@ -4924,6 +4943,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Qt" = (
@@ -5019,11 +5041,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rm" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	name = "medical locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/item/storage/box/syringes,
@@ -5759,6 +5779,9 @@
 /obj/effect/turf_decal/miskilamo_big/eight{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "XY" = (
@@ -6111,7 +6134,7 @@ PP
 PP
 QB
 Id
-pr
+BR
 Zn
 JF
 xf

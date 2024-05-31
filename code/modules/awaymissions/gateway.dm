@@ -157,8 +157,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	density = TRUE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 100
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_EXTREME
 
 	var/calibrated = TRUE
 	/// Type of instanced gateway destination, needs to be subtype of /datum/gateway_destination/gateway
@@ -198,7 +198,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	target = null
 	dest.deactivate(src)
 	QDEL_NULL(portal)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	update_appearance()
 	portal_visuals.reset_visuals()
 
@@ -221,7 +221,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	target.activate(destination)
 	portal_visuals.setup_visuals(target)
 	generate_bumper()
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	update_appearance()
 
 /obj/machinery/gateway/proc/Transfer(atom/movable/AM)

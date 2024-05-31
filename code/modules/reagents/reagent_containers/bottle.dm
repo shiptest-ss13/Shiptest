@@ -275,8 +275,6 @@
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
-//Oldstation.dmm chemical storage bottles
-
 /obj/item/reagent_containers/glass/bottle/hydrogen
 	name = "hydrogen bottle"
 	list_reagents = list(/datum/reagent/hydrogen = 30)

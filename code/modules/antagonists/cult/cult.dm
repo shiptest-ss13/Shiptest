@@ -61,7 +61,7 @@
 	var/mob/living/current = owner.current
 	add_objectives()
 	if(give_equipment)
-		equip_cultist(TRUE)
+		equip_cultist()
 	SSticker.mode.cult += owner // Only add after they've been given objectives
 	current.log_message("has been converted to the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 
@@ -69,13 +69,11 @@
 		current.client.images += cult_team.blood_target_image
 
 
-/datum/antagonist/cult/proc/equip_cultist(metal=TRUE)
+/datum/antagonist/cult/proc/equip_cultist()
 	var/mob/living/carbon/H = owner.current
 	if(!istype(H))
 		return
 	. += cult_give_item(/obj/item/melee/cultblade/dagger, H)
-	if(metal)
-		. += cult_give_item(/obj/item/stack/sheet/runed_metal/ten, H)
 	to_chat(owner, "These will help you jumpstart a cult of your own in this sector. Use them well, and remember - you are not the only one.</span>")
 
 
@@ -163,21 +161,16 @@
 /datum/antagonist/cult/get_admin_commands()
 	. = ..()
 	.["Dagger"] = CALLBACK(src, PROC_REF(admin_give_dagger))
-	.["Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_give_metal))
-	.["Remove Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_take_all))
+	.["Metal"] = CALLBACK(src, PROC_REF(admin_take_all))
 
 /datum/antagonist/cult/proc/admin_give_dagger(mob/admin)
-	if(!equip_cultist(metal=FALSE))
+	if(!equip_cultist())
 		to_chat(admin, "<span class='danger'>Spawning dagger failed!</span>")
-
-/datum/antagonist/cult/proc/admin_give_metal(mob/admin)
-	if (!equip_cultist(metal=TRUE))
-		to_chat(admin, "<span class='danger'>Spawning runed metal failed!</span>")
 
 /datum/antagonist/cult/proc/admin_take_all(mob/admin)
 	var/mob/living/current = owner.current
 	for(var/o in current.GetAllContents())
-		if(istype(o, /obj/item/melee/cultblade/dagger) || istype(o, /obj/item/stack/sheet/runed_metal))
+		if(istype(o, /obj/item/melee/cultblade/dagger))
 			qdel(o)
 
 /datum/antagonist/cult/master

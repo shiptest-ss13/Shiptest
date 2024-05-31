@@ -16,7 +16,7 @@
 	icon_state = "heater_pipe"
 	var/icon_state_closed = "heater_pipe"
 	var/icon_state_open = "heater_pipe_open"
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/shuttle/heater
 
 	density = TRUE
@@ -25,7 +25,7 @@
 	layer = OBJ_LAYER
 	showpipe = TRUE
 
-	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
+	pipe_flags = PIPING_ONE_PER_TURF
 
 	var/efficiency_multiplier = 1
 	var/gas_capacity = 0
@@ -33,6 +33,13 @@
 	var/use_tank = FALSE
 	///The internals tank to draw from
 	var/obj/item/tank/fuel_tank
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/on_construction(obj_color, set_layer)
+	var/obj/item/circuitboard/machine/shuttle/heater/board = circuit
+	if(board)
+		piping_layer = board.pipe_layer
+		set_layer = piping_layer
+	..()
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/New()
 	. = ..()
