@@ -42,6 +42,16 @@
 	stock = 1
 	availability_prob = 25
 
+/datum/blackmarket_item/weapon/mag_cleaver
+	name = "Magnetic Cleaver"
+	desc = "A prototype modification to the standard crusher, featuring an energy blade rather than the standard alloy cutting edge allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."
+	item = /obj/item/kinetic_crusher/syndie_crusher
+
+	price_min = 1750
+	price_max = 3000
+	stock = 2
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
