@@ -85,6 +85,8 @@
 	icon_state = "phenex"
 	item_state = "hp_phenex"
 
+
+
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
 	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
