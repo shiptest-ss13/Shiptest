@@ -211,3 +211,10 @@
 				/obj/item/organ/heart = 1,
 				/obj/item/stack/sheet/cotton/cloth = 3)
 	category = CAT_MISC
+
+/datum/crafting_recipe/candorupgrade
+	name = "Candor Upgrade"
+	result = /obj/item/gun/ballistic/automatic/pistol/candor/phenex
+	reqs = list(/obj/item/stack/sheet/mineral/hidden = 4,
+				/obj/item/gun/ballistic/automatic/pistol/candor = 1)
+	category = CAT_MISC

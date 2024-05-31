@@ -303,7 +303,9 @@
 		var/num_unloaded = 0
 		for(var/obj/item/ammo_casing/casing_bullet in get_ammo_list(FALSE, TRUE))
 			casing_bullet.forceMove(drop_location())
-			casing_bullet.bounce_away(FALSE, NONE)
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_bullet.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_bullet.name)
 		if (num_unloaded)
