@@ -22,8 +22,11 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	spread = -1
-	spread_unwielded = 12
+	spread_unwielded = 48
 	recoil = -3
 	recoil_unwielded = 4
 	wield_slowdown = 1
@@ -89,8 +92,8 @@
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
-		spread = 36
-		spread_unwielded = 108
+		spread = 24
+		spread_unwielded = 30
 		can_bayonet = FALSE
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state

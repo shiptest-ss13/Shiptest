@@ -1,14 +1,18 @@
 /obj/item/gun/ballistic/automatic/smg
-	burst_size = 1
+	burst_size = 2
 	actions_types = list()
 	fire_delay = 1
-	spread = 4
+
+	spread = 6
 	spread_unwielded = 10
 	wield_slowdown = 0.35
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
 
-	wield_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	wield_delay = 0.5 SECONDS
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -16,20 +20,22 @@
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 1
+	var/gunslinger_bonus = 2
 	var/total_recoil = recoil_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+	. = total_recoil
+	return ..()
 
 /obj/item/gun/ballistic/automatic/smg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 4
+	var/gunslinger_bonus = 8
 	var/total_spread = bonus_spread
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
 		total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+	. = total_spread
+	return ..()
 
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
@@ -38,7 +44,7 @@
 	actions_types = list()
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
@@ -55,8 +61,8 @@
 	can_suppress = FALSE
 	knife_x_offset = 26
 	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
@@ -92,8 +98,8 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
@@ -108,7 +114,7 @@
 	icon_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 
 	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
@@ -134,7 +140,7 @@
 	item_state = "vector"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
@@ -153,7 +159,7 @@
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
@@ -183,7 +189,7 @@
 	item_state = "firestorm"
 	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 	can_suppress = FALSE
-	special_mags = TRUE
+	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
 	fire_delay = 1

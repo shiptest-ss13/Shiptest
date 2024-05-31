@@ -53,9 +53,9 @@
 	///Compatible magazines with the gun
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
 	///Whether the sprite has a visible magazine or not
-	var/mag_display = FALSE
+	var/show_magazine_on_sprite = FALSE
 	///Whether the sprite has a visible ammo display or not
-	var/mag_display_ammo = FALSE
+	var/show_magazine_on_sprite_ammo = FALSE
 	///Whether the sprite has a visible indicator for being empty or not.
 	var/empty_indicator = FALSE
 	///Whether the gun alarms when empty or not.
@@ -63,7 +63,7 @@
 	///Do we eject the magazine upon runing out of ammo?
 	var/empty_autoeject = FALSE
 	///Whether the gun supports multiple special mag types
-	var/special_mags = FALSE
+	var/unique_mag_sprites_for_variants = FALSE
 	///The bolt type of the gun, affects quite a bit of functionality, see combat.dm defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
 	var/bolt_type = BOLT_TYPE_STANDARD
 	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
@@ -121,7 +121,7 @@
 	if (suppressed)
 		. += "[icon_state]_suppressor"
 	if (magazine)
-		if (special_mags)
+		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
 				. += "[icon_state]_mag_empty"

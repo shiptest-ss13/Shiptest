@@ -25,7 +25,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-	fire_delay = 2
+	fire_delay = 4
 	spread_unwielded = 15
 	recoil = 0.5
 	recoil_unwielded = 2
@@ -34,6 +34,9 @@
 	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
 	wield_slowdown = 0.3
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 	safety_wording = "hammer"
 
@@ -411,11 +414,14 @@
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
 		fan = TRUE
+		fire_delay = 0
 	. = ..()
+	fire_delay = src::fire_delay
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
-		user.changeNext_move(1)
+		balloon_alert_to_viewers("fans revolver!")
+		fire_delay = 0
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
@@ -699,6 +705,7 @@
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
+	fire_delay = 2
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME

@@ -161,7 +161,7 @@
 
 	if(isgun(parent))
 		var/obj/item/gun/shoota = parent
-		if(!shoota.on_autofire_start(shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
+		if(!shoota.on_autofire_start(shooter=shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
 			stop_autofiring()
 			return
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
@@ -242,12 +242,12 @@
 
 // Gun procs.
 
-/obj/item/gun/proc/on_autofire_start(mob/living/shooter)
-	if(semicd || shooter.stat || !can_trigger_gun(shooter))
+/obj/item/gun/proc/on_autofire_start(datum/source, atom/target, mob/living/shooter, params)
+	if(current_cooldown || shooter.stat || !can_trigger_gun(shooter))
 		return FALSE
-	if(!can_shoot())
-		shoot_with_empty_chamber(shooter)
-		return FALSE
+	if(!can_shoot()) //we call pre_fire so bolts/slides work correctly
+		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
+		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return FALSE
@@ -262,26 +262,20 @@
 
 /obj/item/gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(semicd || shooter.incapacitated())
+	if(current_cooldown || shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return NONE
-	if(!can_shoot())
-		shoot_with_empty_chamber(shooter)
+	if(!can_shoot()) //we stop if we cant shoot but also calling pre_fire so the bolt works correctly if it's a weird open bolt weapon.
+		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 		return NONE
 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting.
 
 
 /obj/item/gun/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	var/obj/item/gun/akimbo_gun = shooter.get_inactive_held_item()
-	var/bonus_spread = 0
-	if(istype(akimbo_gun) && weapon_weight < WEAPON_MEDIUM)
-		if(akimbo_gun.weapon_weight < WEAPON_MEDIUM && akimbo_gun.can_trigger_gun(shooter))
-			bonus_spread = dual_wield_spread
-			addtimer(CALLBACK(akimbo_gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, shooter, TRUE, params, null, bonus_spread), 1)
-	process_fire(target, shooter, TRUE, params, null, bonus_spread)
+	pre_fire(target, shooter, TRUE, params, null) //dual wielding is handled here
 
 /datum/component/automatic_fire/proc/disable_autofire()
 	enabled = FALSE

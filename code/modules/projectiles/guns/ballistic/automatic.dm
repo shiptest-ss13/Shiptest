@@ -4,6 +4,7 @@
 	can_suppress = TRUE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 	fire_sound_volume = 90
@@ -45,7 +46,7 @@
 	zoom_out_amt = 5
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	spread = -5
@@ -77,7 +78,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 
 // Laser rifle (rechargeable magazine) //
 
@@ -103,7 +104,7 @@
 	icon_state = "ebr"
 	item_state = "ebr"
 	zoomable = TRUE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ebr
@@ -123,7 +124,7 @@
 	icon_state = "gal"
 	item_state = "gal"
 	zoomable = TRUE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/gal
@@ -150,5 +151,5 @@
 	can_suppress = FALSE
 	actions_types = list()
 	can_bayonet = FALSE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT

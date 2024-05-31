@@ -11,7 +11,7 @@
 	burst_size = 1
 	fire_delay = 3
 	spread = 0
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -38,7 +38,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0 //pistol
-	mag_display = FALSE
+	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	recoil = 1
@@ -66,7 +66,7 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	internal_magazine = TRUE
 	casing_ejector = FALSE
-	mag_display = FALSE
+	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 

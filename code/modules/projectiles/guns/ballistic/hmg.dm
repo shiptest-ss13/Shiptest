@@ -9,6 +9,9 @@
 	drag_slowdown = 1.5
 	fire_delay = 1
 
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	spread = 4
 	spread_unwielded = 80
 	recoil = 1
@@ -114,24 +117,26 @@
 	retract_bipod(user=user)
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 1
+	var/gunslinger_bonus = 2
 	var/total_recoil = recoil_bonus
 	if(bipod_deployed)
 		total_recoil += deploy_recoil_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
 	total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+	. = total_recoil
+	return ..()
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 4
+	var/gunslinger_bonus = 20
 	var/total_spread = bonus_spread
 	if(bipod_deployed)
 		total_spread += deploy_spread_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
 	total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+	. = total_spread
+	return ..()
 
 
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()
@@ -156,8 +161,8 @@
 	can_suppress = FALSE
 	spread = 7
 	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
 	tac_reloads = FALSE
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
 	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
@@ -219,7 +224,7 @@
 	spread = 7
 	can_suppress = FALSE
 	can_bayonet = FALSE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
@@ -242,9 +247,11 @@
 	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
-	mag_display = TRUE
-	special_mags = TRUE
+	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK

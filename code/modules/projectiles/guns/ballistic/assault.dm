@@ -1,7 +1,7 @@
 /obj/item/gun/ballistic/automatic/assault
-	burst_size = 1
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	wield_delay = 0.7 SECONDS
+	default_firemode = FIREMODE_SEMIAUTO
+	wield_delay = 0.8 SECONDS
 	wield_slowdown = 0.6
 
 	fire_delay = 1
@@ -20,15 +20,17 @@
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+	. = total_recoil
+	return ..()
 
 /obj/item/gun/ballistic/automatic/assault/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 8
+	var/gunslinger_bonus = 16
 	var/total_spread = bonus_spread
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
 		total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+	. = total_spread
+	return ..()
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -44,8 +46,8 @@
 
 	icon_state = "skm"
 	item_state = "skm"
-	mag_display = TRUE
-	special_mags = TRUE
+	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -82,7 +84,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 	icon_state = "p16"
 	item_state = "p16"
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/p16
@@ -111,7 +113,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
 	icon_state = "swiss"
 	item_state = "swiss"
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	burst_size = 3
 	fire_delay = 1.5
@@ -148,7 +150,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA

@@ -23,6 +23,9 @@
 	pb_knockback = 2
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	wield_slowdown = 0.45
 	wield_delay = 0.8 SECONDS
 
@@ -60,6 +63,9 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "brimstone"
 	item_state = "brimstone"
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -213,10 +219,10 @@
 	fire_delay = 0
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	actions_types = list()
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	empty_alarm = TRUE
-	special_mags = TRUE
+	unique_mag_sprites_for_variants = TRUE
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	casing_ejector = TRUE
@@ -254,7 +260,7 @@
 	item_state = "cm15"
 	empty_alarm = FALSE
 	empty_indicator = FALSE
-	special_mags = FALSE
+	unique_mag_sprites_for_variants = FALSE
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 /////////////////////////////

@@ -31,8 +31,8 @@
 	recoil_backtime_multiplier = 1
 
 	wield_delay = 0.2 SECONDS
-	spread = 4
-	spread_unwielded = 5
+	spread = 5
+	spread_unwielded = 7
 	wield_slowdown = 0.15
 
 	muzzleflash_iconstate = "muzzle_flash_light"
@@ -94,7 +94,7 @@
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -255,7 +255,7 @@
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'

@@ -52,7 +52,7 @@
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
 	var/burst_delay = 0.15 SECONDS
-	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay+ burst_delay after every burst
+	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay + burst_delay after every burst
 	var/fire_delay = 0.2 SECONDS
 
 	/// after initializing, we set the firemode to this
@@ -65,9 +65,9 @@
 	var/fire_select_icon_state_prefix = ""
 
 	///Are we firing a burst? If so, dont fire again until burst is done
-	var/firing_burst = FALSE
+	var/currently_firing_burst = FALSE
 	///This prevents gun from firing until the coodown is done, affected by lag
-	var/semicd = 0
+	var/current_cooldown = 0
 	///affects if you can fire it unwielded or even dual wield it. LIGHT means dual wield allowed, HEAVY and higher means you have to wield to fire
 	var/weapon_weight = WEAPON_LIGHT
 	///If dual wielding, add this to the spread
@@ -260,7 +260,7 @@
 	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
 
 
-/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
+/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
 	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 
@@ -308,7 +308,7 @@
 	. = ..()
 	if(!target)
 		return
-	if(firing_burst)
+	if(currently_firing_burst)
 		return
 	if(flag) //It's adjacent, is the user, or is on the user's person
 		if(target in user.contents) //can't shoot stuff inside us.
@@ -317,7 +317,7 @@
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
-/* gunpointing is very broken, port the old skyrat gunpointing?
+/* TODO: gunpointing is very broken, port the old skyrat gunpointing? its much better, usablity wise and rp wise?
 		if(ismob(target) && user.a_intent == INTENT_GRAB)
 			if(user.GetComponent(/datum/component/gunpoint))
 				to_chat(user, "<span class='warning'>You are already holding someone up!</span>")
@@ -325,52 +325,19 @@
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
 */
+	return pre_fire(target, user, TRUE, flag, params, null)
 
-
-	return process_fire(target, user, TRUE, params, null, bonus_spread)
 
 /obj/item/gun/proc/recharge_newshot()
 	return
 
-/obj/item/gun/proc/process_burst(mob/living/user, atom/target, message = TRUE, params=null, zone_override = "", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0)
-	if(!user || !firing_burst)
-		firing_burst = FALSE
-		return FALSE
-	if(!issilicon(user))
-		if(iteration > 1 && !(user.is_holding(src))) //for burst firing
-			firing_burst = FALSE
-			return FALSE
-	if(chambered && chambered.BB)
-		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
-			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
-				return
-		if(randomspread)
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
-		else //Smart spread
-			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
-		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params, ,suppressed, zone_override, sprd, src))
-			shoot_with_empty_chamber(user)
-			firing_burst = FALSE
-			return FALSE
-		else
-			if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-				shoot_live_shot(user, 1, target, message)
-			else
-				shoot_live_shot(user, 0, target, message)
-			if (iteration >= burst_size)
-				firing_burst = FALSE
-	else
-		shoot_with_empty_chamber(user)
-		firing_burst = FALSE
-		return FALSE
-	process_chamber(shooter = user)
-	update_appearance()
-	return TRUE
+/obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
+	add_fingerprint(user)
+	if(current_cooldown)
+		return
 
-/obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0,)
-		if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
+
+	if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
 		var/mob/living/L = user
 		if(!can_trigger_gun(L))
 			return
@@ -391,11 +358,15 @@
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
+	if(chambered)
+		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
+			if(chambered.harmful) // Is the bullet chambered harmful?
+				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				return
 
 	//DUAL (or more!) WIELDING
-	var/bonus_spread = 0
 	var/loop_counter = 0
-	if(ishuman(user) && user.a_intent == INTENT_HARM)
+	if(ishuman(user) && user.a_intent == INTENT_HARM && !dual_wielded_gun)
 		var/mob/living/carbon/human/our_cowboy = user
 		for(var/obj/item/gun/found_gun in our_cowboy.held_items)
 			if(found_gun == src || found_gun.weapon_weight >= WEAPON_MEDIUM)
@@ -403,69 +374,104 @@
 			else if(found_gun.can_trigger_gun(user))
 				bonus_spread += dual_wield_spread
 				loop_counter++
-				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
+				addtimer(CALLBACK(found_gun, TYPE_PROC_REF(/obj/item/gun, pre_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
 
+	//get current firemode
+	var/current_firemode = gun_firemodes[firemode_index]
+	if(current_firemode == FIREMODE_OTHER)
+		return process_other(target, user, TRUE, params, null, bonus_spread)
+	return process_fire(target, user, TRUE, params, null, bonus_spread)
 
-/obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	if(user)
-		SEND_SIGNAL(user, COMSIG_MOB_FIRED_GUN, user, target, params, zone_override)
+/obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	return //use this for 'underbarrels!!
 
-	add_fingerprint(user)
-
-	if(semicd)
-		return
-
-	var/sprd = 0
-	var/randomized_gun_spread = 0
-	var/rand_spr = rand()
-
-	if(wielded_fully && spread)
-		randomized_gun_spread =	rand(0,spread)
-	else if(!wielded_fully && spread_unwielded)
-		randomized_gun_spread =	rand(0,spread_unwielded)
-
-	if(HAS_TRAIT(user, TRAIT_POOR_AIM)) //nice shootin' tex
-		bonus_spread += 25
-	var/randomized_bonus_spread = rand(0, bonus_spread)
-
-	if(burst_size > 1)
-		firing_burst = TRUE
-		for(var/i = 1 to burst_size)
-			addtimer(CALLBACK(src, PROC_REF(process_burst), user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i), fire_delay * (i - 1))
-	else
-		if(chambered)
-			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
-				if(chambered.harmful) // Is the bullet chambered harmful?
-					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
-					return
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
-			sprd = calculate_spread(user, sprd)
-
-			before_firing(target,user)
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
-				shoot_with_empty_chamber(user)
-				return
-			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, TRUE, target, message)
-				else
-					shoot_live_shot(user, FALSE, target, message)
-		else
-			shoot_with_empty_chamber(user)
+/obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
+	//OKAY, this prevents us from firing until our cooldown is done
+	if(!burst_firing) //if we're firing a burst, dont interfere to avoid issues
+		if(current_cooldown)
 			return
-		process_chamber(shooter = user)
-		update_appearance()
-		if(fire_delay)
-			semicd = TRUE
-			addtimer(CALLBACK(src, PROC_REF(reset_semicd)), fire_delay)
 
+	//Check one last time for safeties...
+	if(!can_shoot())
+		shoot_with_empty_chamber(user)
+		currently_firing_burst = FALSE
+		return FALSE
+
+	//special hahnding for burst firing
+	if(burst_firing)
+		if(!user || !currently_firing_burst)
+			currently_firing_burst = FALSE
+			return FALSE
+		if(!issilicon(user))
+			//If we aren't holding the gun, what are we doing, stop firing!
+			if(iteration > 1 && !(user.is_holding(src)))
+				currently_firing_burst = FALSE
+				return FALSE
+
+	//Do we have a round? If not, stop the whole chain, and if we do, check if the gun is chambered. Pacisim is pretty lame anyways.
+	if(chambered)
+		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
+			if(chambered.harmful) // Is the bullet chambered harmful?
+				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				currently_firing_burst = FALSE //no burst 4 u
+				return FALSE
+	else
+		shoot_with_empty_chamber(user)
+		currently_firing_burst = FALSE
+		return FALSE
+
+	// we hold the total spread in this var
+	var/sprd
+	// if we ARE burst firing and don't have "randomspread", we add the burst's penalty on top of it.
+	if(burst_firing && !randomspread)
+		bonus_spread += burst_size * iteration
+
+	//override spread? usually happens only in bursts
+	if(spread_override && !randomspread)
+		sprd = spread_override
+	else
+		//Calculate spread
+		sprd = calculate_spread(user, bonus_spread)
+
+	before_firing(target,user)
+	//If we cant fire the round, just end the proc here. Otherwise, continue
+	if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
+		shoot_with_empty_chamber(user)
+		currently_firing_burst = FALSE
+		return FALSE
+	//Are we PBing someone? If so, set pointblank to TRUE
+	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message) //Making sure whether the target is in vicinity for the pointblank shot
+
+	//process the chamber...
+	process_chamber(shooter = user)
+	update_appearance()
+	//get our current firemode...
+	var/current_firemode = gun_firemodes[firemode_index]
+
+	//If we are set to burst fire, then we burst fire!
+	if(burst_size > 1 && (current_firemode == FIREMODE_BURST))
+		currently_firing_burst = TRUE
+		for(var/i = 2 to burst_size) //we fire the first burst normally, hence why its 2
+			addtimer(CALLBACK(src, PROC_REF(process_fire), target, user, message, params, zone_override, 0, TRUE, sprd, i), burst_delay * (i - 1))
+
+	//if we have a fire delay, set up a cooldown
+	if(fire_delay && (!burst_firing && !currently_firing_burst))
+		current_cooldown = TRUE
+		addtimer(CALLBACK(src, PROC_REF(reset_current_cooldown)), fire_delay)
+	if(burst_firing && iteration >= burst_size)
+		current_cooldown = TRUE
+		addtimer(CALLBACK(src, PROC_REF(reset_current_cooldown)), fire_delay+burst_delay)
+		currently_firing_burst = FALSE
+
+	// update our inhands...
 	if(user)
 		user.update_inv_hands()
+
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
 	return TRUE
 
-/obj/item/gun/proc/reset_semicd()
-	semicd = FALSE
+/obj/item/gun/proc/reset_current_cooldown()
+	current_cooldown = FALSE
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
 	if(user.a_intent == INTENT_HARM) //Flogging
@@ -702,7 +708,7 @@
 	if(!ishuman(user) || !ishuman(target))
 		return
 
-	if(semicd)
+	if(current_cooldown)
 		return
 
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
@@ -716,7 +722,7 @@
 		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
 			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
-	semicd = TRUE
+	current_cooldown = TRUE
 
 	if(!bypass_timer && (!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
@@ -724,10 +730,10 @@
 				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
 				target.visible_message(span_notice("[user] has decided to spare [target]."), span_notice("[user] has decided to spare your life!"))
-		semicd = FALSE
+		current_cooldown = FALSE
 		return
 
-	semicd = FALSE
+	current_cooldown = FALSE
 
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
@@ -768,7 +774,42 @@
 
 // We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
-	return bonus_spread
+	///our final spread value
+	var/sprd = 0
+	///our randomized value after checking if we are wielded or not
+	var/randomized_gun_spread = 0
+	///bonus
+	var/randomized_bonus_spread
+	// do we have poor aim
+	var/poor_aim = FALSE
+
+	//do we have a return code? If so, set sprd to it because it means a subtype's proc messed with it
+	if(.)
+		sprd = .
+
+	// if we have poor aim, we fuck the shooter over
+	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
+		bonus_spread += 25
+		poor_aim = TRUE
+	// then we randomize the bonus spread
+	randomized_bonus_spread = rand(poor_aim ? 10 : 0, bonus_spread) //poor aim is no longer just a nusiance
+
+	//then, we mutiply previous bonus spread as it means dual wielding usually, it also means poor aim is also even more severe
+	randomized_bonus_spread *= DUALWIELD_PENALTY_EXTRA_MULTIPLIER
+
+	// we will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
+	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
+
+	//finally, we put it all together including if sprd has a value
+	sprd += randomized_gun_spread + randomized_bonus_spread
+
+	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this
+	sprd *= (rand() - 0.5)
+
+	// then we round it up and send it!
+	sprd = round(sprd)
+
+	return sprd
 
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
 	var/total_recoil = calculate_recoil(user, recoil_bonus)
@@ -940,7 +981,7 @@
 	if(gun_firemodes.len > 1)
 		our_action = new /datum/action/item_action/toggle_firemode(src)
 
-	for(var/i=0, i < gun_firemodes.len, i++)
+	for(var/i=1, i < gun_firemodes.len, i++)
 		if(default_firemode == gun_firemodes[i])
 			firemode_index = i
 			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
