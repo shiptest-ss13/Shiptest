@@ -281,14 +281,13 @@
 	light_range = 2
 	light_power = 1
 
-
 /turf/closed/mineral/random/snow/underground
 	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
 	// abundant ore
 	mineralChance = 10
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 10, /obj/item/stack/ore/diamond = 4, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/titanium = 22,
-		/obj/item/stack/ore/silver = 24, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 20, /obj/item/stack/ore/bananium = 1,
+		/obj/item/stack/ore/silver = 24, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 20,
 		/turf/closed/mineral/gibtonite/ice/icemoon = 8, /obj/item/stack/ore/bluespace_crystal = 2)
 
 /turf/closed/mineral/random/snow/high_chance
@@ -403,11 +402,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
-
-/turf/closed/mineral/bananium
-	mineralType = /obj/item/stack/ore/bananium
-	mineralAmt = 3
-	scan_state = "rock_Bananium"
 
 /turf/closed/mineral/bscrystal
 	mineralType = /obj/item/stack/ore/bluespace_crystal
@@ -650,10 +644,7 @@
 	H.mind.adjust_experience(/datum/skill/mining, 100) //yay!
 
 /turf/closed/mineral/strong/proc/drop_ores()
-	if(prob(10))
-		new /obj/item/stack/sheet/mineral/mythril(src, 5)
-	else
-		new /obj/item/stack/sheet/mineral/adamantine(src, 5)
+	new /obj/item/stack/sheet/mineral/hidden/hellstone(src, 5)
 
 /turf/closed/mineral/strong/acid_melt()
 	return

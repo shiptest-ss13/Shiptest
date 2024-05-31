@@ -6,14 +6,16 @@
 
 
 /mob/living/simple_animal/hostile/human/syndicate
-	name = "Syndicate Operative"
-	desc = "Death to Nanotrasen."
+	name = "Ramzi Clique Operative"
+	desc = "An ex-Syndicate pirate of the Ramzi Clique."
 	icon_state = "syndicate"
 	icon_living = "syndicate"
 	speak_chance = 0
 	stat_attack = HARD_CRIT
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	maxbodytemp = 400
+	unsuitable_atmos_damage = 15
 	faction = list(FACTION_ANTAG_SYNDICATE)
 	check_friendly_fire = TRUE
 	dodging = TRUE
@@ -24,11 +26,12 @@
 /mob/living/simple_animal/hostile/human/syndicate/space
 	icon_state = "syndicate_space"
 	icon_living = "syndicate_space"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
@@ -39,7 +42,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/space/stormtrooper
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Assault Trooper"
 	maxHealth = 250
 	health = 250
 
@@ -58,11 +61,12 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/space
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
 
@@ -74,7 +78,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 50
@@ -110,11 +114,12 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space
 	icon_state = "syndicate_space_sword"
 	icon_living = "syndicate_space_sword"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
 
@@ -131,7 +136,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 50
@@ -157,11 +162,12 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
@@ -172,7 +178,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -184,17 +190,18 @@
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/pilot //caravan ambush ruin
-	name = "Syndicate Salvage Pilot"
+	name = "Ramzi Clique Salvage Pilot"
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
@@ -205,7 +212,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -215,16 +222,17 @@
 	minimum_distance = 3
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
-	name = "Syndicate Commando"
+	name = "Ramzi Clique Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	speed = 1
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/Initialize()
@@ -235,7 +243,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
-	name = "Syndicate Stormtrooper"
+	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -273,6 +281,7 @@
 	faction = list(ROLE_SYNDICATE)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = 1000
 	mob_size = MOB_SIZE_TINY
 	movement_type = FLYING
 	limb_destroyer = 1
