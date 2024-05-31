@@ -103,7 +103,7 @@
 			var/doafter_time = 0.4 SECONDS
 			if(!do_mob(user,user,doafter_time))
 				break
-			if(!eject_casing())
+			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
@@ -125,6 +125,7 @@
 			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
+	casing_to_eject.forceMove(drop_location())
 	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
 	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
 
@@ -282,7 +283,6 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
 	chamber_round(TRUE)
-	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
