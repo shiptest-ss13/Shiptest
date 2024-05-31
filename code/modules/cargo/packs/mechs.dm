@@ -109,7 +109,7 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/drill
 	)
 
-/datum/supply_pack/mech/equipment/scanners
+/datum/supply_pack/mech/equipment/scanner
 	name = "Mech scanner kit"
 	desc = "A trio of electronic mining scanners, graded to interface with a mech."
 	cost = 350
