@@ -188,8 +188,8 @@
 	desc = "A bundle of sutures for stitching up your latest bullet wound."
 	item = /obj/item/stack/medical/suture
 
-	price_min = 200
-	price_max = 450
+	price_min = 150
+	price_max = 350
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 40
@@ -199,8 +199,8 @@
 	desc = "A smoothing pack of regenerative mesh for your burns."
 	item = /obj/item/stack/medical/mesh
 
-	price_min = 200
-	price_max = 450
+	price_min = 150
+	price_max = 350
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 40
@@ -210,8 +210,8 @@
 	desc = "A bundle of old bruise packs, for you guessed it, bruises. Any rumors of these containing hazardous chemicals are just that. Rumors."
 	item = /obj/item/stack/medical/bruise_pack
 
-	price_min = 300
-	price_max = 500
+	price_min = 200
+	price_max = 400
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 30
@@ -221,15 +221,15 @@
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
 
-	price_min = 300
-	price_max = 500
+	price_min = 200
+	price_max = 400
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/goliath
 	name = "A Live Goliath"
-	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, and we're selling what's left so we can buy some actual take out."
+	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, so we're selling what's left so we can buy some actual take out."
 	item = /mob/living/simple_animal/hostile/asteroid/goliath/beast
 
 	price_min = 750

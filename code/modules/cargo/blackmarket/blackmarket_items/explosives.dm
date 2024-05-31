@@ -11,6 +11,16 @@
 	stock_max = 5
 	availability_prob = 50
 
+/datum/blackmarket_item/explosive/smoke_grenade
+	name = "Smoke Grenade"
+	desc = "Too much heat on your back? This handy smoke grenade is perfect for a hasty getaway."
+	item = /obj/item/grenade/smokebomb
+
+	price_min = 100
+	price_max = 400
+	stock_max = 5
+	availability_prob = 50
+
 /datum/blackmarket_item/explosive/h_e
 	name = "HE Grenade"
 	desc = "These high explosive grenades are sure to get some bang for your buck."
@@ -57,7 +67,7 @@
 
 /datum/blackmarket_item/explosive/slipocalypse
 	name = "Slipocalyse Cluster Bomb"
-	desc = "Wash away the opposition with sudstastic grenade!"
+	desc = "Wash away the opposition with this sudstastic grenade!"
 	item = /obj/item/grenade/clusterbuster/soap
 
 	price_min = 500

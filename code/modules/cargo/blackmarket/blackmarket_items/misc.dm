@@ -139,7 +139,7 @@
 
 /datum/blackmarket_item/misc/wardrobe
 	name = "Antique Wardrobe"
-	desc = "A antique wooden wardrobe, supposedly made with imported wood that was illegaly cut from old growth on Sol. We're technically holding onto this for someone else, but if you can beat their offer..."
+	desc = "A antique wooden wardrobe, supposedly made with imported wood that was illegaly cut from old growth on Sol. We're technically holding onto this for someone else, and we got paid a pretty penny for us to do so. But if you can beat their offer..."
 	item = /obj/structure/closet/cabinet
 
 	price_min = 8000
@@ -149,5 +149,7 @@
 
 /datum/blackmarket_item/misc/wardrobe/spawn_item(loc)
 	var/obj/structure/closet/cabinet/container = ..()
-	var/major = pick(list())
+	var/major = pick(list(/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger,
+						/obj/effect/mob_spawn/human/corpse/damaged/legioninfested
+						/obj/item/spacecash/bundle/c10000))
 

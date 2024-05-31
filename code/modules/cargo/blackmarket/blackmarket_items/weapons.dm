@@ -63,7 +63,7 @@
 
 /datum/blackmarket_item/weapon/golden
 	name = "Golden Derringer"
-	desc = "A rare custom-made concealable weapon designed to fire illegal .357 rounds."
+	desc = "A rare custom-made concealable weapon designed to fire .357 rounds."
 	item = /obj/item/gun/ballistic/derringer/gold
 	price_min = 1000
 	price_max = 3000
