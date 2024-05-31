@@ -79,6 +79,12 @@
 /obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/automatic/pistol/candor/phenex
+	name = "\improper HP Phenex"
+	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
+	icon_state = "phenex"
+	item_state = "hp_phenex"
+
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
 	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
