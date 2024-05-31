@@ -150,7 +150,7 @@
 	item = /obj/item/ammo_box/magazine/skm_762_40/extended
 
 	price_min = 1000
-	price_max = 1500
+	price_max = 3000
 	stock_max = 4
 	availability_prob = 40
 
@@ -161,9 +161,28 @@
 	 This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
 	item = /obj/item/ammo_box/magazine/skm_762_40/drum
 
-	price_min = 1500
-	price_max = 2500
+	price_min = 1750
+	price_max = 3500
 	stock = 2
 	availability_prob = 20
+
+/datum/blackmarket_item/ammo/damaged_cell
+	name = "Discount Weapon Power Cells"
+	desc = "These cells got a little banged up during a raid by GOLD authorities, but they still should be good. Probably."
+	item = /obj/item/stock_parts/cell/gun
+
+	price_min = 100
+	price_max = 500
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 80
+
+/datum/blackmarket_item/ammo/damaged_cell/spawn_item(loc)
+	if(prob(35))
+		var/obj/item/stock_parts/cell/damaged_cell = ..()
+		damaged_cell.rigged = TRUE
+		return new damaged_cell(loc)
+
+	return ..()
 
 

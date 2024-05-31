@@ -109,6 +109,5 @@
 
 /datum/blackmarket_item/explosive/live_bomb/spawn_item(loc)
 	var/obj/machinery/syndicatebomb/bomb = ..()
-	bomb.active = TRUE
-	bomb.countdown = 90
-	return bomb
+	bomb.activate()
+	return new bomb(loc)

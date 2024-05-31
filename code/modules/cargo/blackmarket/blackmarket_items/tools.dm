@@ -61,6 +61,16 @@
 	stock = 1
 	availability_prob = 40
 
+/datum/blackmarket_item/tool/surgery_duffel
+	name = "Cybersun Surgical Kit"
+	desc = "A set of high tech operating tools taken straight from a Cybersun research lab."
+	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
+
+	price_min = 2500
+	price_max = 4500
+	stock = 1
+	availability_prob = 25
+
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
 	desc = "Increase your sight by 150% with this handy Tool!"

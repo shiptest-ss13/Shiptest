@@ -60,11 +60,21 @@
 	stock = 1
 	availability_prob = 10
 
+/datum/blackmarket_item/weapon/disposable_gun_disk
+	name = "Disposable Gun Design Disk"
+	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22lr. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
+	item = /obj/item/disk/design_disk/adv/disposable_gun
+
+	price_min = 1500
+	price_max = 2500
+	stock = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/himehabu
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-    pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
 
 	price_min = 100
 	price_max = 600

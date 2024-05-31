@@ -143,3 +143,4 @@
 /obj/item/reagent_containers/glass/chem_jug/thermite
 	name = "chemical jug (thermite)"
 	list_reagents = list(/datum/reagent/thermite = 150)
+

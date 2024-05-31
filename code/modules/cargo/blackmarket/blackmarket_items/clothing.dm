@@ -147,6 +147,16 @@
 	stock_max = 2
 	availability_prob = 70
 
+/datum/blackmarket_item/clothing/cham_kit
+	name = "Chameleon Kit"
+	desc = "Not sure what to wear? This adaptive set of clothing can change to suit whatever you desire! Quality tested."
+	item = /obj/item/storage/box/syndie_kit/chameleon
+
+	price_min = 1000
+	price_max = 2500
+	stock = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/clothing/combatmedic_suit
 	name = "Combat Medic Hardsuit"
 	desc = "A discarded combat medic hardsuit, found in the ruins of a carpet bombed xeno hive. Definitely used, but as sturdy as an anchor."

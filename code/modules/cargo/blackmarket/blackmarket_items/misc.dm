@@ -111,4 +111,42 @@
 /datum/blackmarket_item/misc/knockoff_plush/spawn_item(loc)
 	var/obj/item/toy/plush/tali/plush = ..()
 	plush.name = "T3MMI"
-	plush.desc = "A rather shoddy and unlicensed plushie 'paying homage' to a character from RILENA series. A tag on the side says 'Made In Weewish'."
+	plush.desc = "A rather shoddy and unlicensed plushie 'paying homage' to a character from the RILENA series. A tag on the side says 'Made In Weewish'."
+	return new plush(loc)
+
+/datum/blackmarket_item/misc/pens
+	name = "Pen"
+	desc = "We found an old Cybersun blacksite, and came across an unmarked crate full of pens. Want one?"
+	item = /obj/item/pen
+
+	price_min = 50
+	price_max = 150
+	stock_min = 3
+	stock_max = 10
+	availability_prob = 60
+
+/datum/blackmarket_item/misc/pens/spawn_item(loc)
+	var/pen = pick(list(/obj/item/pen,
+				/obj/item/pen/blue,
+				/obj/item/pen/red,
+				/obj/item/pen/fourcolor,
+				/obj/item/pen/fountain,
+				/obj/item/pen/fountain/captain,
+				/obj/item/pen/edagger,
+				/obj/item/pen/survival,
+				/obj/item/pen/sleepy))
+	return new pen(loc)
+
+/datum/blackmarket_item/misc/wardrobe
+	name = "Antique Wardrobe"
+	desc = "A antique wooden wardrobe, supposedly made with imported wood from illegaly cut from old growth on Sol."
+	item = /obj/structure/closet/cabinet
+
+	price_min = 8000
+	price_max = 9000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/misc/wardrobe/spawn_item(loc)
+	var/obj/structure/closet/cabinet/container = ..()
+

@@ -65,13 +65,24 @@
 
 /datum/blackmarket_item/consumable/pumpup
 	name = "Maintenance Pump-Up"
-	desc = "Resist any Baton stun with this handy instant tetanus free injector!."
+	desc = "Resist any Baton stun with this handy tetanus free instant injector!"
 	item = /obj/item/reagent_containers/hypospray/medipen/pumpup
 
 	stock_max = 3
 	price_min = 50
 	price_max = 150
 	availability_prob = 90
+
+/datum/blackmarket_item/consumable/stimpack
+	name = "Stimpack"
+	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor eye irritation."
+	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
+
+	stock_min = 2
+	stock_max = 3
+	price_min = 300
+	price_max = 500
+	availability_prob = 50
 
 /datum/blackmarket_item/consumable/morphine
 	name = "Morphine Bottle"
@@ -218,10 +229,10 @@
 
 /datum/blackmarket_item/consumable/goliath
 	name = "A Live Goliath"
-	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, and we're selling what's left to buy some actual take out."
+	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, and we're selling what's left so we can buy some actual take out."
 	item = /mob/living/simple_animal/hostile/asteroid/goliath/beast
 
 	price_min = 750
 	price_max = 2000
 	stock_max = 4
-	availability_prob = 100
+	availability_prob = 30
