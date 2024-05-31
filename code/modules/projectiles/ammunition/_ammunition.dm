@@ -38,6 +38,8 @@
 
 	var/list/bounce_sfx_override // if true, overrides the bouncing sfx from the turf to this one
 
+	var/bullet_per_box
+
 
 /obj/item/ammo_casing/spent
 	name = "spent bullet casing"
@@ -49,6 +51,7 @@
 		BB = new projectile_type(src)
 	pixel_x = base_pixel_x + rand(-10, 10)
 	pixel_y = base_pixel_y + rand(-10, 10)
+	item_flags |= NO_PIXEL_RANDOM_DROP
 	if(auto_rotate)
 		transform = transform.Turn(pick(0, 90, 180, 270))
 	update_appearance()
@@ -100,9 +103,14 @@
 	bounce_away(FALSE, NONE)
 	. = ..()
 
-/obj/item/ammo_casing/proc/on_eject()
+/obj/item/ammo_casing/proc/on_eject(atom/shooter)
 	forceMove(drop_location()) //Eject casing onto ground.
-	bounce_away(TRUE)
+	pixel_x = rand(-4, 4)
+	pixel_y = rand(-4, 4)
+	pixel_z = 8 //bounce time
+	var/angle_of_movement = !isnull(shooter) ? (rand(-3000, 3000) / 100) + dir2angle(turn(shooter.dir, 180)) : rand(-3000, 3000) / 100
+	AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(400, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+
 
 /obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3)
 	if(!heavy_metal)
