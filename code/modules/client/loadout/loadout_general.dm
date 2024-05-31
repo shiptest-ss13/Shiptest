@@ -36,7 +36,7 @@
 
 /datum/gear/mug
 	display_name = "coffee mug"
-	path = /obj/item/reagent_containers/food/drinks/britcup
+	path = /obj/item/reagent_containers/food/drinks/mug
 
 /datum/gear/rilena_mug
 	display_name = "coffee mug, rilena"
