@@ -253,7 +253,7 @@
 	pre_attack_icon = "ancient_goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
-	crusher_drop_mod = 75
+	trophy_drop_mod = 75
 	wander = FALSE
 	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
