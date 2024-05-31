@@ -47,14 +47,14 @@
 	id = /obj/item/card/id/syndicate
 
 /obj/effect/mob_spawn/human/corpse/syndicateramzi
-	name = "Ramzi's Clique Commando"
+	name = "Ramzi Clique Commando"
 	id_job = "Cutthroat"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 	outfit = /datum/outfit/syndicateramzicorpse
 
 /datum/outfit/syndicateramzicorpse
-	name = "Ramzi's Clique Commando Corpse"
+	name = "Ramzi Clique Commando Corpse"
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	shoes = /obj/item/clothing/shoes/combat

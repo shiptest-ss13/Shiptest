@@ -8,6 +8,7 @@
 	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/slug
+	bullet_per_box = 25
 
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 

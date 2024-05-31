@@ -4,6 +4,7 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
+	listening = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	canhear_range = 2
 	dog_fashion = null
