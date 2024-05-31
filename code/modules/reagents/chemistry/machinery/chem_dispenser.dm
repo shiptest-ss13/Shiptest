@@ -1,12 +1,12 @@
 /proc/translate_legacy_chem_id(id)
-	switch (id)
-		if ("sacid")
+	switch(id)
+		if("sacid")
 			return "sulphuricacid"
-		if ("facid")
+		if("facid")
 			return "fluorosulfuricacid"
-		if ("co2")
+		if("co2")
 			return "carbondioxide"
-		if ("mine_salve")
+		if("mine_salve")
 			return "minerssalve"
 		else
 			return ckey(id)
@@ -15,11 +15,11 @@
 	name = "chem dispenser"
 	desc = "Creates and dispenses chemicals."
 	density = TRUE
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "dispenser"
 	base_icon_state = "dispenser"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 40
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	interaction_flags_machine = INTERACT_MACHINE_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
@@ -451,7 +451,7 @@
 /obj/machinery/chem_dispenser/drinks
 	name = "soda dispenser"
 	desc = "Contains a large reservoir of soft drinks."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "soda_dispenser"
 	base_icon_state = "soda_dispenser"
 	has_panel_overlay = FALSE
@@ -509,7 +509,7 @@
 	name = "booze dispenser"
 	desc = "Contains a large reservoir of the good stuff."
 	base_icon_state = "booze_dispenser"
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "booze_dispenser"
 	circuit = /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	dispensable_reagents = list(

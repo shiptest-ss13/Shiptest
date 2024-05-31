@@ -5,7 +5,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/diamond = 25,
-	/obj/item/stack/ore/bananium = 5,
 	/obj/item/stack/ore/titanium = 75,
 	/obj/item/pickaxe/diamond = 15,
 	/obj/item/borg/upgrade/modkit/cooldown = 5,
@@ -258,8 +257,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 			if(prob(25))//you lost
 				new /obj/item/circlegame(loc)
-			new /obj/item/stack/sheet/mineral/bananium(loc)
-			new /turf/open/floor/mineral/bananium(loc)
+			new /obj/item/stack/sheet/mineral/hidden/hellstone(loc)
 		if(2)//basic demonic incursion
 			visible_message("<span class='userdanger'>You glimpse an indescribable abyss in the portal. Horrifying monsters appear in a gout of flame.</span>")
 			playsound(loc,'sound/hallucinations/wail.ogg', 200, FALSE, 50, TRUE, TRUE)
@@ -618,19 +616,19 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			visible_message("<span class='userdanger'>You catch a brief glimpse of a vast production complex. One of the assembly lines outputs through the portal!</span>")
 			playsound(loc,'sound/ambience/antag/clockcultalr.ogg', 100, FALSE, 50, TRUE, TRUE)
 			if(prob(45))
-				new /obj/item/stack/sheet/mineral/adamantine/ten(loc)
-				new /obj/item/stack/sheet/mineral/runite/ten(loc)
-				new /obj/item/stack/sheet/mineral/mythril/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
 				new /mob/living/simple_animal/hostile/hivebot(loc)
 			if(prob(35))
-				new /obj/item/stack/sheet/mineral/adamantine/ten(loc)
-				new /obj/item/stack/sheet/mineral/runite/ten(loc)
-				new /obj/item/stack/sheet/mineral/mythril/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
 				new /mob/living/simple_animal/hostile/hivebot(loc)
 			if(prob(25))
-				new /obj/item/stack/sheet/mineral/adamantine/ten(loc)
-				new /obj/item/stack/sheet/mineral/runite/ten(loc)
-				new /obj/item/stack/sheet/mineral/mythril/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
 				new /mob/living/simple_animal/hostile/hivebot/strong(loc)
 			if(prob(35))
 				new /obj/item/stack/sheet/mineral/silver/twenty(loc)
@@ -665,9 +663,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/circuitboard/machine/ore_silo(loc)
 				new /mob/living/simple_animal/hostile/hivebot/mechanic(loc)
 			if(prob(35))
-				new /obj/item/stack/sheet/mineral/adamantine/ten(loc)
-				new /obj/item/stack/sheet/mineral/runite/ten(loc)
-				new /obj/item/stack/sheet/mineral/mythril/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
 				new /mob/living/simple_animal/hostile/hivebot/strong(loc)
 			if(prob(35))
 				new /obj/item/circuitboard/machine/medipen_refiller(loc)
@@ -838,7 +836,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/bedsheet/cult(loc)
 				new /mob/living/simple_animal/hostile/construct/wraith/hostile(loc)
 			if(prob(50))
-				new /obj/item/stack/sheet/runed_metal/ten(loc)
+				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
 			if(prob(35))
 				new /obj/item/sharpener/cult(loc)
 				new /mob/living/simple_animal/hostile/construct/artificer/hostile(loc)

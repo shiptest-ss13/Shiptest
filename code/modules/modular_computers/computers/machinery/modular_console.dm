@@ -9,8 +9,8 @@
 	screen_icon_state_menu = "menu"
 	hardware_flag = PROGRAM_CONSOLE
 	density = TRUE
-	base_idle_power_usage = 100
-	base_active_power_usage = 500
+	base_idle_power_usage = IDLE_DRAW_MINIMAL
+	base_active_power_usage = ACTIVE_DRAW_LOW
 	max_hardware_size = 4
 	steel_sheet_cost = 10
 	light_strength = 2
