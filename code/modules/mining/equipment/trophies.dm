@@ -132,7 +132,7 @@
 /obj/item/mob_trophy/ice_block_talisman
 	name = "ice block talisman"
 	desc = "A glowing trinket that a demonic miner had on him, it seems he couldn't utilize it for whatever reason."
-	icon_state = "ice_trap_talisman"
+	icon_state = "freeze_cube"
 
 /datum/status_effect/ice_block_talisman
 	id = "ice_block_talisman"
