@@ -243,7 +243,7 @@
 	desc = "A crude machine pistol designed to vomit 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
 	weapon_weight = WEAPON_LIGHT
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/tec9
 	mag_display = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
