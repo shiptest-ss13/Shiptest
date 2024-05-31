@@ -15,6 +15,8 @@
 	greyscale_colors = list(list(18, 19), list(13, 18), list(20, 15))
 	greyscale_icon_state = "armor"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)

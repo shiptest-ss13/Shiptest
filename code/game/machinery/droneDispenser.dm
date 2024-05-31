@@ -9,6 +9,8 @@
 	icon = 'icons/obj/machines/droneDispenser.dmi'
 	icon_state = "on"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 
 	max_integrity = 250
 	integrity_failure = 0.33
