@@ -134,39 +134,6 @@
 	desc = "A glowing trinket that a demonic miner had on him, it seems he couldn't utilize it for whatever reason."
 	icon_state = "freeze_cube"
 
-/datum/status_effect/ice_block_talisman
-	id = "ice_block_talisman"
-	duration = 40
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
-	/// Stored icon overlay for the hit mob, removed when effect is removed
-	var/icon/cube
-
-/atom/movable/screen/alert/status_effect/ice_block_talisman
-	name = "Frozen Solid"
-	desc = "You're frozen inside an ice cube, and cannot move!"
-	icon_state = "frozen"
-
-/datum/status_effect/ice_block_talisman/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	if(!owner.stat)
-		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
-	cube = icon('icons/effects/freeze.dmi', "ice_cube")
-	var/icon/size_check = icon(owner.icon, owner.icon_state)
-	cube.Scale(size_check.Width(), size_check.Height())
-	owner.add_overlay(cube)
-	return ..()
-
-/// Blocks movement from the status effect owner
-/datum/status_effect/ice_block_talisman/proc/owner_moved()
-	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-
-/datum/status_effect/ice_block_talisman/on_remove()
-	if(!owner.stat)
-		to_chat(owner, "<span class='notice'>The cube melts!</span>")
-	owner.cut_overlay(cube)
-	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
-
 /obj/item/mob_trophy/brimdemon_fang
 	name = "brimdemon's fang"
 	icon_state = "brimdemon_fang"
@@ -177,39 +144,6 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	desc = "The glowing remnant of an ancient ice demon- so cold that it hurts to touch."
 	icon_state = "ice_crystal"
-
-/datum/status_effect/ice_crystal
-	id = "ice_crystal"
-	duration = 20
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ice_crystal
-	/// Stored icon overlay for the hit mob, removed when effect is removed
-	var/icon/cube
-
-/atom/movable/screen/alert/status_effect/ice_crystal
-	name = "Frozen Solid"
-	desc = "You're frozen inside an ice cube, and cannot move!"
-	icon_state = "frozen"
-
-/datum/status_effect/ice_crystal/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	if(!owner.stat)
-		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
-	cube = icon('icons/effects/freeze.dmi', "ice_cube")
-	var/icon/size_check = icon(owner.icon, owner.icon_state)
-	cube.Scale(size_check.Width(), size_check.Height())
-	owner.add_overlay(cube)
-	return ..()
-
-/// Blocks movement from the status effect owner
-/datum/status_effect/ice_crystal/proc/owner_moved()
-	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-
-/datum/status_effect/ice_crystal/on_remove()
-	if(!owner.stat)
-		to_chat(owner, "<span class='notice'>The cube melts!</span>")
-	owner.cut_overlay(cube)
-	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
 
 /obj/item/mob_trophy/lobster_claw
 	name = "lobster claw"
