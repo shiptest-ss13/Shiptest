@@ -33,11 +33,11 @@
 	. = ..()
 	. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 
-/obj/item/gun/ballistic/rifle/rack(mob/user = null)
+/obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
 		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		process_chamber(FALSE, FALSE, FALSE)
+		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
 		update_appearance()
 		if (magazine && !magazine?.ammo_count() && empty_autoeject && !internal_magazine)
@@ -112,6 +112,14 @@
 	if(.)
 		item_state = "illestren_factory_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/rifle/illestren/sawn
+	name = "sawn-off Illestren rifle"
+	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
+	item_state = "illestren_sawn"
+	sawn_off = TRUE
+	weapon_weight = WEAPON_MEDIUM
+
 
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"

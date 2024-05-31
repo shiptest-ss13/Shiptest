@@ -30,10 +30,6 @@
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
 
-/datum/gear/bible
-	display_name = "bible"
-	path = /obj/item/storage/book/bible
-
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
