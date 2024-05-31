@@ -66,7 +66,7 @@
 	update_status(SP_UNLINK)
 	update_status(SP_UNREADY)
 
-/obj/item/supplypod_beacon/proc/link_console(obj/machinery/computer/cargo/express/C, mob/living/user)
+/obj/item/supplypod_beacon/proc/link_console(obj/machinery/computer/cargo/C, mob/living/user)
 	if (C.beacon)//if new console has a beacon, then...
 		C.beacon.unlink_console()//unlink the old beacon from new console
 	if (cargo_console)//if this beacon has an express console

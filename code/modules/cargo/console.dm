@@ -85,7 +85,7 @@
 		if(!charge_account)
 			reconnect()
 
-/obj/machinery/computer/cargo/ui_data()
+/obj/machinery/computer/cargo/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
 
