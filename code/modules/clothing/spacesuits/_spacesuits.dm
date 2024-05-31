@@ -2,6 +2,8 @@
 //      Meaning the the suit is defined directly after the corrisponding helmet. Just like below!
 /obj/item/clothing/head/helmet/space
 	name = "space helmet"
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "spaceold"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays."
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
@@ -19,6 +21,8 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	resistance_flags = NONE
 	dog_fashion = null
+	content_overlays = FALSE
+	pocket_storage_component_path = null
 
 /obj/item/clothing/suit/space
 	name = "space suit"

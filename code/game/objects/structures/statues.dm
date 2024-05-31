@@ -224,7 +224,7 @@
 
 /obj/structure/statue/bananium
 	max_integrity = 300
-	material_drop_type = /obj/item/stack/sheet/mineral/bananium
+	material_drop_type = /obj/item/stack/sheet/mineral/hidden/hellstone
 	impressiveness = 50
 	desc = "A bananium statue with a small engraving:'HOOOOOOONK'."
 	var/spam_flag = 0

@@ -87,14 +87,6 @@
 /obj/item/banner/security/mundane
 	inspiration_available = FALSE
 
-/datum/crafting_recipe/security_banner
-	name = "Securistan Banner"
-	result = /obj/item/banner/security/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/security/officer = 1)
-	category = CAT_MISC
-
 /obj/item/banner/medical
 	name = "meditopia banner"
 	desc = "The banner of Meditopia, generous benefactors that cure wounds and shelter the weak."
@@ -110,14 +102,6 @@
 
 /obj/item/banner/medical/check_inspiration(mob/living/carbon/human/H)
 	return H.stat //Meditopia is moved to help those in need
-
-/datum/crafting_recipe/medical_banner
-	name = "Meditopia Banner"
-	result = /obj/item/banner/medical/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/medical = 1)
-	category = CAT_MISC
 
 /obj/item/banner/medical/special_inspiration(mob/living/carbon/human/H)
 	H.adjustToxLoss(-15)
@@ -140,14 +124,6 @@
 /obj/item/banner/science/check_inspiration(mob/living/carbon/human/H)
 	return H.on_fire //Sciencia is pleased by dedication to the art of Toxins
 
-/datum/crafting_recipe/science_banner
-	name = "Sciencia Banner"
-	result = /obj/item/banner/science/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/rnd/scientist = 1)
-	category = CAT_MISC
-
 /obj/item/banner/cargo
 	name = "cargonia banner"
 	desc = "The banner of the eternal Cargonia, with the mystical power of conjuring any object into existence."
@@ -160,14 +136,6 @@
 
 /obj/item/banner/cargo/mundane
 	inspiration_available = FALSE
-
-/datum/crafting_recipe/cargo_banner
-	name = "Cargonia Banner"
-	result = /obj/item/banner/cargo/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/cargo/tech = 1)
-	category = CAT_MISC
 
 /obj/item/banner/engineering
 	name = "engitopia banner"
@@ -184,14 +152,6 @@
 
 /obj/item/banner/engineering/special_inspiration(mob/living/carbon/human/H)
 	H.radiation = 0
-
-/datum/crafting_recipe/engineering_banner
-	name = "Engitopia Banner"
-	result = /obj/item/banner/engineering/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/engineering/engineer = 1)
-	category = CAT_MISC
 
 /obj/item/banner/command
 	name = "command banner"
