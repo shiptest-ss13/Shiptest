@@ -130,7 +130,7 @@
 	user.changeNext_move(CLICK_CD_MELEE * 0.7)
 
 /obj/item/pickaxe/improvised
-	name = "makeshift pickaxe"
+	name = "emergency pickaxe"
 	desc = "A cheap pickaxe made from sheet metal. Don’t expect it to last very long."
 	icon_state = "ipickaxe"
 	item_state = "ipickaxe"
