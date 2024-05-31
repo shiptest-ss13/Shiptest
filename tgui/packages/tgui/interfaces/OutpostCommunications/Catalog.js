@@ -39,9 +39,7 @@ export const CargoCatalog = (props, context) => {
       : supplies.find((supply) => supply.name === activeSupplyName);
 
   return (
-    <Section
-      title="Catalog"
-    >
+    <Section title="Catalog">
       <Flex>
         <Flex.Item ml={-1} mr={1}>
           <Tabs vertical>
