@@ -209,6 +209,38 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/mecha_syringe_gun
+	name = "Mounted Syringe Gun"
+	desc = "We ripped this off an old Nanotrasen exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
+
+	price_min = 5000
+	price_max = 7000
+	stock = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/weapon/mecha_hades
+	name = "Mounted FNX-99 Carbine"
+	desc = "This so called \"Hades\" carbine is sure to burn brightly above the competition! Not to be confused with the \"Hades\" energy rifle. Exosuit not included."
+	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
+	pair_item = /datum/blackmarket_item/weapon/mecha_hades_ammo
+
+	price_min = 2000
+	price_max = 3000
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/mecha_hades_ammo
+	name = "FNX-99 Incediary Ammo"
+	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine"
+	item = /obj/item/mecha_ammo/incendiary
+
+	price_min = 250
+	price_max = 350
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 0
+
 /datum/blackmarket_item/weapon/model_h
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
