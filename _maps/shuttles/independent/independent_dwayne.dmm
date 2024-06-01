@@ -217,7 +217,6 @@
 /obj/item/clothing/suit/armor/vest/capcarapace/duster,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/head/caphat/cowboy,
-/obj/item/clothing/head/HoS/cowboy,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
@@ -357,9 +356,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-6"
 	},
-/obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
 /obj/item/clothing/under/utility,
 /obj/item/clothing/under/utility,
 /obj/item/clothing/under/utility,
@@ -505,14 +504,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "hK" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
-/obj/structure/frame/machine{
-	anchored = 1
-	},
 /obj/structure/sign/poster/contraband/tools{
 	pixel_x = 32
+	},
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -766,9 +762,6 @@
 /area/ship/cargo)
 "ms" = (
 /obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "6-9"
 	},
@@ -776,6 +769,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "mv" = (
@@ -1127,6 +1123,10 @@
 	pixel_y = 20
 	},
 /obj/machinery/vending/coffee,
+/obj/item/trash/candle{
+	pixel_y = 18;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "pS" = (
@@ -1639,11 +1639,17 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-5"
 	},
+/obj/item/storage/toolbox/emergency,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "zY" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 1
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8;
+	name = "connector port (fuel)"
+	},
+/obj/structure/sign/warning/fire{
+	pixel_y = -20;
+	pixel_x = -10
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1893,13 +1899,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/toy/cards/deck{
-	pixel_y = 6;
-	pixel_x = -11
-	},
 /obj/item/reagent_containers/food/snacks/chips{
 	pixel_x = 5;
 	pixel_y = 4
+	},
+/obj/item/toy/cards/deck/kotahi{
+	pixel_x = -11;
+	pixel_y = 6
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -2005,6 +2011,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/closet/crate/engineering,
 /obj/item/pickaxe/drill{
 	pixel_y = -2
 	},
@@ -2014,7 +2021,6 @@
 /obj/item/pinpointer/mineral{
 	pixel_y = 4
 	},
-/obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "GU" = (
@@ -2108,7 +2114,8 @@
 /obj/machinery/vending/cigarette,
 /obj/item/toy/figure/miner{
 	pixel_y = 17;
-	toysay = "Careful out there! Frontier is deadly this time of the year!"
+	toysay = "Careful out there! Frontier is deadly this time of the year!";
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2698,7 +2705,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-6"
 	},
-/obj/item/tape/random,
 /obj/item/pen,
 /obj/item/pen,
 /turf/open/floor/plasteel/patterned/grid,
@@ -2744,6 +2750,7 @@
 /obj/structure/closet/crate/miningcar{
 	name = "mining cart"
 	},
+/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "QI" = (
@@ -2973,15 +2980,16 @@
 /obj/structure/closet/crate/medical,
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/storage/firstaid/regular,
+/obj/item/roller,
 /obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = -4
 	},
-/obj/item/storage/pill_bottle/charcoal/less{
-	pixel_x = 5
-	},
 /obj/item/storage/pill_bottle/mining{
 	pixel_x = -6
+	},
+/obj/item/storage/pill_bottle/charcoal/less{
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -3029,13 +3037,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "VP" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 1;
-	name = "connector port (fuel)"
-	},
-/obj/structure/sign/warning/fire{
-	pixel_y = -20;
-	pixel_x = 9
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -3175,9 +3179,6 @@
 /area/ship/crew/canteen)
 "XC" = (
 /obj/structure/chair/sofa/brown/old/right/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
