@@ -64,6 +64,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	fire_delay = 1
+	rack_delay = 2
 
 	can_be_sawn_off  = TRUE
 
