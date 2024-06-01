@@ -128,7 +128,10 @@
 	if(prob(10))
 		var/obj/item/organ/cyberimp/brain/mindscrew/implant = ..()
 		implant.name = "\improper Midi-Sed pleasure vivifier"
-		implant.desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled. It's wires seem a little loose."
+		implant.desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that \
+		stimulates the brain's pleasure centers. \
+		Dramatically increases mood, but interferes with taste reception even if uninstalled. \
+		It's wires seem a little loose."
 		return new implant(loc)
 	return ..()
 
