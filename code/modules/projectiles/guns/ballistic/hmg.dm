@@ -7,7 +7,7 @@
 	burst_size = 1
 	actions_types = list(/datum/action/item_action/deploy_bipod) //this is on hmg, as I need the same mechanics for a future gun. ideally, this would be an attachment, but that's still pending
 	drag_slowdown = 1.5
-	fire_delay = 1
+	fire_delay = 0.1 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
@@ -118,23 +118,25 @@
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
+	var/total_recoil
+	if(.)
+		total_recoil += .
 	if(bipod_deployed)
 		total_recoil += deploy_recoil_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
-	total_recoil = clamp(total_recoil,0,INFINITY)
 	. = total_recoil
 	return ..()
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
 	var/gunslinger_bonus = 20
-	var/total_spread = bonus_spread
+	var/total_spread
+	if(.)
+		total_spread += .
 	if(bipod_deployed)
 		total_spread += deploy_spread_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
-	total_spread = clamp(total_spread,0,INFINITY)
 	. = total_spread
 	return ..()
 
@@ -160,6 +162,9 @@
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
 	can_suppress = FALSE
 	spread = 7
+
+	fire_delay = 0.1 SECONDS
+
 	bolt_type = BOLT_TYPE_OPEN
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
@@ -169,10 +174,6 @@
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	var/cover_open = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/examine(mob/user)
 	. = ..()
@@ -222,15 +223,16 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7
+
+	fire_delay = 0.1 SECONDS
+
+	fire_select_icon_state_prefix = "caseless_"
+
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
-
-/obj/item/gun/ballistic/automatic/hmg/solar/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 	name = "\improper SKM-24u"
@@ -258,6 +260,7 @@
 	manufacturer = MANUFACTURER_IMPORT
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
 
+	fire_delay = 0.13 SECONDS
 
 	spread = 7 //you can hipfire, but why?
 	spread_unwielded = 25
@@ -272,7 +275,6 @@
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS) //slower than other lmgs but faster than skm and most smgs
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts

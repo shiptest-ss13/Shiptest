@@ -25,7 +25,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-	fire_delay = 4
+	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5
 	recoil_unwielded = 2
@@ -282,7 +282,8 @@
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
-	chamber_round(TRUE)
+	if((!safety && !semi_auto) || (!safety && !semi_auto))
+		chamber_round(TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
@@ -414,14 +415,14 @@
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
 		fan = TRUE
-		fire_delay = 0
+		fire_delay = 0 SECONDS
 	. = ..()
 	fire_delay = src::fire_delay
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
 		balloon_alert_to_viewers("fans revolver!")
-		fire_delay = 0
+		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
@@ -439,19 +440,25 @@
 
 /obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
+	var/total_recoil
+	if(.)
+		total_recoil += .
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+	. = total_recoil
+	return ..()
 
 /obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
 	var/gunslinger_bonus = -4
-	var/total_spread = bonus_spread
+	var/total_spread
+	if(.)
+		total_spread += .
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
 		total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+	. = total_spread
+	return ..()
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -491,6 +498,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
@@ -583,6 +591,7 @@
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
+	fire_delay = 0.6 SECONDS
 	wield_slowdown = 0.5
 	spread_unwielded = 5
 	spread = 2
@@ -694,7 +703,7 @@
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
-	fire_delay = 0
+	fire_delay = 0 SECONDS
 	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
@@ -705,7 +714,6 @@
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
-	fire_delay = 2
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME

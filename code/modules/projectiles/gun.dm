@@ -1,8 +1,10 @@
 
 #define FIREMODE_SEMIAUTO "single"
-#define FIREMODE_BURST "burst fire"
-#define FIREMODE_FULLAUTO "full auto"
-#define FIREMODE_OTHER "misc. fire"
+#define FIREMODE_BURST "burst"
+#define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_OTHER "other"
+#define FIREMODE_OTHER_TWO "other2"
+
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
@@ -60,9 +62,13 @@
 	///Firemode index, due to code shit this is the currently selected firemode
 	var/firemode_index
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
+	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
+	var/adjust_fire_select_icon_state_on_safety = FALSE
 
 	///Are we firing a burst? If so, dont fire again until burst is done
 	var/currently_firing_burst = FALSE
@@ -175,8 +181,10 @@
 	if(wield_time > 0)
 		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded)), ignore_loc_change = TRUE))
 			wielded_fully = TRUE
+			return TRUE
 	else
 		wielded_fully = TRUE
+		return TRUE
 
 /obj/item/gun/proc/is_wielded()
 	return wielded
@@ -379,11 +387,17 @@
 	//get current firemode
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode == FIREMODE_OTHER)
-		return process_other(target, user, TRUE, params, null, bonus_spread)
+		return process_other(target, user, message, flag, params, zone_override, bonus_spread)
+	if(current_firemode == FIREMODE_OTHER_TWO)
+		return process_other_two(target, user, message, flag, params, zone_override, bonus_spread)
+
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
 
-/obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+/obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
 	return //use this for 'underbarrels!!
+
+/obj/item/gun/proc/process_other_two(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
+	return //reserved in case anoher fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
 
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	//OKAY, this prevents us from firing until our cooldown is done
@@ -449,7 +463,7 @@
 	var/current_firemode = gun_firemodes[firemode_index]
 
 	//If we are set to burst fire, then we burst fire!
-	if(burst_size > 1 && (current_firemode == FIREMODE_BURST))
+	if(burst_size > 1 && (current_firemode == FIREMODE_BURST) && !burst_firing)
 		currently_firing_burst = TRUE
 		for(var/i = 2 to burst_size) //we fire the first burst normally, hence why its 2
 			addtimer(CALLBACK(src, PROC_REF(process_fire), target, user, message, params, zone_override, 0, TRUE, sprd, i), burst_delay * (i - 1))
@@ -770,6 +784,8 @@
 
 // We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+	if(.)
+		recoil_bonus += .
 	return recoil_bonus
 
 // We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
@@ -803,6 +819,9 @@
 	//finally, we put it all together including if sprd has a value
 	sprd += randomized_gun_spread + randomized_bonus_spread
 
+	//clamp it down to avoid guns with negative spread to have worse recoil...
+	sprd = clamp(sprd, 0, INFINITY)
+
 	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this
 	sprd *= (rand() - 0.5)
 
@@ -813,6 +832,7 @@
 
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
 	var/total_recoil = calculate_recoil(user, recoil_bonus)
+	total_recoil = clamp(total_recoil, 0 , INFINITY)
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)
@@ -981,12 +1001,13 @@
 	if(gun_firemodes.len > 1)
 		our_action = new /datum/action/item_action/toggle_firemode(src)
 
-	for(var/i=1, i < gun_firemodes.len, i++)
+	for(var/i=1, i <= gun_firemodes.len+1, i++)
 		if(default_firemode == gun_firemodes[i])
 			firemode_index = i
 			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
 				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
-			our_action.UpdateButtonIcon()
+			if(our_action)
+				our_action.UpdateButtonIcon()
 			return
 
 	firemode_index = 1
@@ -997,7 +1018,7 @@
 		fire_select(user)
 	else
 		..()
-//wewish
+
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
@@ -1012,7 +1033,7 @@
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 //wawa
-	to_chat(user, "<span class='notice'>Switched to [current_firemode].</span>")
+	to_chat(user, "<span class='notice'>Switched to [gun_firenames[current_firemode]].</span>")
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
@@ -1022,16 +1043,9 @@
 	var/obj/item/gun/our_gun = target
 
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
-	switch(current_firemode)
-		if(FIREMODE_SEMIAUTO)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]single"
-		if(FIREMODE_BURST)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]burst"
-		if(FIREMODE_FULLAUTO)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]auto"
-		if(FIREMODE_OTHER)
-			button_icon_state = "[our_gun.fire_select_icon_state_prefix]other"
-
+	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
+	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
+	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER

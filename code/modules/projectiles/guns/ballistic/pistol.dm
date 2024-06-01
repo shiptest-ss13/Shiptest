@@ -5,8 +5,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
-	burst_size = 1
-	fire_delay = 2
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -31,6 +29,7 @@
 	recoil_backtime_multiplier = 1
 
 	wield_delay = 0.2 SECONDS
+	fire_delay = 0.2 SECONDS
 	spread = 5
 	spread_unwielded = 7
 	wield_slowdown = 0.15
@@ -104,7 +103,7 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	fire_delay = 0.7 SECONDS
+	fire_delay = 0.6 SECONDS
 	recoil = 2
 	recoil_unwielded = 5
 	recoil_backtime_multiplier = 2
@@ -130,8 +129,11 @@
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
 	name = "flat gun"
@@ -244,6 +246,8 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+
+	fire_select_icon_state_prefix = "caseless_"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"

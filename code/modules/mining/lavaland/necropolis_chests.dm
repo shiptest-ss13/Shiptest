@@ -924,6 +924,7 @@
 	return COMPONENT_NO_ATTACK_OBJ
 
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
+//TODO: replace with a proper polar star and spur, not to mention a  proper sprite
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
@@ -932,11 +933,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "spur"
 	item_state = "spur"
-	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
 	selfcharge = 1
 	charge_delay = 1
 	slot_flags = ITEM_SLOT_BELT
-	fire_delay = 1
+	fire_delay = 0.1 SECONDS
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
