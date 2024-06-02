@@ -196,9 +196,11 @@
 	. = ..()
 	. += "<br>CARD INFO:"
 	if(registered_name)
-		. += "This access card is assigned to <B>[registered_name]</B>."
+		. += "<B>NAME:</B>"
+		. += "[registered_name]"
 	if(registered_age)
-		. += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
+		. += "<B>AGE:</B>"
+		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
 		. += "<B>SHIP ACCESS:</B>"
 
@@ -212,7 +214,7 @@
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		. += "The card has access to the following ships: [ship_names.Join(", ")]"
+		. += "[ship_names.Join(", ")]"
 
 /obj/item/card/id/GetAccess()
 	return access
