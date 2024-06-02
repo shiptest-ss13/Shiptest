@@ -60,6 +60,8 @@
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+EMPTY_GUN_HELPER(automatic/smg/c20r)
+
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
@@ -251,12 +253,11 @@
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
 
+EMPTY_GUN_HELPER(automatic/smg/cm5)
+
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag
-	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"

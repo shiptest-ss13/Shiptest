@@ -92,6 +92,8 @@
 	can_suppress = TRUE
 	can_unsuppress = TRUE
 
+EMPTY_GUN_HELPER(automatic/sniper_rifle/syndicate)
+
 // Old Semi-Auto Rifle //
 
 /obj/item/gun/ballistic/automatic/surplus
@@ -145,6 +147,8 @@
 
 	wield_slowdown = 2
 	spread = -4
+
+EMPTY_GUN_HELPER(automatic/ebr)
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
