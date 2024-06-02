@@ -200,14 +200,14 @@
 	if(registered_age)
 		. += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
-		msg += "<B>SHIP ACCESS:</B>"
+		. += "<B>SHIP ACCESS:</B>"
 
 		var/list/ship_factions = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			var/faction = ship.get_faction()
 			if(!(faction in ship_factions))
 				ship_factions += faction
-		msg += "<B>[ship_factions.Join(", ")]</B>"
+		. += "<B>[ship_factions.Join(", ")]</B>"
 
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
