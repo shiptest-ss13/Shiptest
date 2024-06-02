@@ -307,7 +307,7 @@
 
 			<h2> Forcewine </h2>
 			Two intresting effects from the consumption of Forcewine.<br>
-			First it seems to give you an "anti magic" effect, I only have one exprience with this but it fizzled out ancient rune that we could best trace back to a blood cult.<br>
+			First it seems to give you an "anti magic" effect, I have read about of tales of how it fizzled out some sort of great curse that we could best trace back to a ancient cult.<br>
 			Second is it protects the mind from cohersion and mind control.<br>
 			From my research this seems to act like nanotrasen mindshield implants.<br>
 			Would recomend for any esoteric senarios. We wont see these alot but its always smart to prepare for the worst.<br>
