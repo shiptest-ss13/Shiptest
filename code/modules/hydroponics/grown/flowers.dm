@@ -214,6 +214,12 @@
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
 
+/obj/item/grown/novaflower/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/novaflower_attack, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/novaflower_heat, PLANT_GENE_REMOVABLE)
+
 /obj/item/grown/novaflower
 	seed = /obj/item/seeds/sunflower/novaflower
 	name = "novaflower"

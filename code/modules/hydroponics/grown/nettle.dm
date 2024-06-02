@@ -13,6 +13,12 @@
 	mutatelist = list(/obj/item/seeds/nettle/death)
 	reagents_add = list(/datum/reagent/toxin/acid = 0.5)
 
+/obj/item/seeds/nettle/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/nettle_attack, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/nettle_burn, PLANT_GENE_REMOVABLE)
+
 /obj/item/seeds/nettle/death
 	name = "pack of death-nettle seeds"
 	desc = "These seeds grow into death-nettles."
@@ -28,6 +34,12 @@
 	reagents_add = list(/datum/reagent/toxin/acid/fluacid = 0.5, /datum/reagent/toxin/acid = 0.5)
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
+
+/obj/item/seeds/nettle/death/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/nettle_attack/death, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/nettle_burn/death, PLANT_GENE_REMOVABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
 	seed = /obj/item/seeds/nettle
