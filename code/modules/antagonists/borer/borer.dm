@@ -422,7 +422,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 							"<span class='userdanger'>[src] tears [H.ears] off of your ear!</span>") //coz, you know, they go in the ear holes
 
 	to_chat(src, "<span class='warning'>You slither up [H] and begin probing at their ear canal...</span>")
-	if(!do_mob(src, H, 30))
+	if(!do_after(src, 3 SECONDS, H))
 		to_chat(src, "<span class='warning'>As [H] moves away, you are dislodged and fall to the ground.</span>")
 		return
 
