@@ -85,7 +85,7 @@
 				continue
 			casing_to_eject.forceMove(drop_location())
 			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
 
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
@@ -124,7 +124,7 @@
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
 	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
