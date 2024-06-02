@@ -23,13 +23,10 @@
 	flags_inv = 0
 	dog_fashion = /datum/dog_fashion/head/captain
 
-//Captain: This is no longer space-worthy
 /obj/item/clothing/head/caphat/parade
 	name = "captain's parade cap"
 	desc = "Worn only by Captains with an abundance of class."
 	icon_state = "capcap"
-
-	dog_fashion = null
 
 /obj/item/clothing/head/caphat/cowboy
 	name = "general's hat"
@@ -180,6 +177,8 @@
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
 	desc = "It's a special hat issued to the Warden of a security force. A classic symbol of middling authority."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "policehelm"
 	dog_fashion = /datum/dog_fashion/head/warden
 

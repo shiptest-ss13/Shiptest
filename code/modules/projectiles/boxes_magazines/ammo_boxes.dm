@@ -23,6 +23,28 @@
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
+/obj/item/ammo_box/a357_box
+	name = "ammo box (.357)"
+	desc = "A box of standard .357 ammo."
+	icon_state = "357box"
+	ammo_type = /obj/item/ammo_casing/a357
+	max_ammo = 50
+
+/obj/item/ammo_box/a357_box/match
+	name = "ammo box (.357)"
+	desc = "A box of match .357 ammo."
+	icon_state = "357box-match"
+	ammo_type = /obj/item/ammo_casing/a357/match
+	max_ammo = 50
+
+/obj/item/ammo_box/a357_box/hp
+	name = "ammo box (.357)"
+	desc = "A box of hollow point .357 ammo."
+	icon_state = "357box-hp"
+	ammo_type = /obj/item/ammo_casing/a357/hp
+	max_ammo = 50
+
+
 // .45-70 Ammo Holders (Hunting Revolver)
 
 /obj/item/ammo_box/a4570
@@ -442,4 +464,11 @@
 	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
+	max_ammo = 20
+
+/obj/item/ammo_box/a300_box
+	name = "ammo box (.300 Magnum)"
+	desc = "A box of standard .300 Magnum ammo."
+	icon_state = "300box"
+	ammo_type = /obj/item/ammo_casing/a300
 	max_ammo = 20

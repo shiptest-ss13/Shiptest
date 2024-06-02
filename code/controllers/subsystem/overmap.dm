@@ -506,7 +506,8 @@ SUBSYSTEM_DEF(overmap)
 	new found_type(location, src)
 	return
 
-/datum/overmap_star_system/proc/spawn_initial_ships()
+/*
+/datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
@@ -518,6 +519,7 @@ SUBSYSTEM_DEF(overmap)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 #endif
+*/
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
