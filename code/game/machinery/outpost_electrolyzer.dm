@@ -155,6 +155,7 @@
 	layer = OBJ_LAYER
 	showpipe = TRUE
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
+	var/not_processing_bug = TRUE//remove when fixed
 	var/merit
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/examine(mob/user)
@@ -165,10 +166,13 @@
 		. += "<span class='notice'>[src] has no merits, get some from the electrolyzer or buy them to get hydrogen!</span>"
 	. += "<span class='notice'>[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE] kPa.</span>"
 	. += "<span class='notice'>[src] can be Alt-Clicked to eject merits.</span>"
+	if(not_processing_bug == TRUE)
+		. += "<span class='warning'>[src] is temporarily disabled. Check back later!</span>"
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos()
-	update_parents()
+	..()
 	var/datum/gas_mixture/air = airs[1] //hydrogen out
+	not_processing_bug = FALSE
 	if(!on)
 		return
 	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE)
@@ -201,6 +205,8 @@
 	if(..())
 		return
 	on = !on
+	if(on)
+		SSair.start_processing_machine(src)
 	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
 	to_chat(user, "<span class='notice'>You toggle the pump [on ? "on" : "off"].</span>")
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
