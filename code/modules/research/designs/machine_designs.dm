@@ -9,6 +9,13 @@
 	build_path = /obj/item/circuitboard/machine/smes
 	category = list ("Engineering Machinery")
 
+/datum/design/board/ssu
+	name = "Machine Design (Suit Storage Unit Board)"
+	desc = "The circuit board for a suit storage unit."
+	id = "ssu"
+	build_path = /obj/item/circuitboard/machine/suit_storage_unit
+	category = list ("Engineering Machinery")
+
 /datum/design/board/circulator
 	name = "Machine Design (Circulator Board)"
 	desc = "The circuit board for a circulator."
@@ -183,23 +190,6 @@
 	build_path = /obj/item/circuitboard/machine/reagentgrinder
 	category = list ("Medical Machinery")
 
-
-/datum/design/board/dnascanner
-	name = "Machine Design (DNA Scanner)"
-	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
-	id = "dnascanner"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/dnascanner
-	category = list("Medical Machinery")
-
-/datum/design/board/clonepod
-	name = "Machine Design (Cloning Pod)"
-	desc = "An electronically-lockable pod for growing organic tissue."
-	id = "clonepod"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/clonepod
-	category = list("Medical Machinery")
-
 /datum/design/board/hypnochair
 	name = "Machine Design (Enhanced Interrogation Chamber)"
 	desc = "Allows for the construction of circuit boards used to build an Enhanced Interrogation Chamber."
@@ -263,7 +253,6 @@
 	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
-
 
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
@@ -487,6 +476,14 @@
 	build_path = /obj/item/circuitboard/machine/grounding_rod
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE | IMPRINTER
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("Misc. Machinery", "initial", "Equipment")
 
 /datum/design/board/ntnet_relay
 	name = "Machine Design (NTNet Relay Board)"

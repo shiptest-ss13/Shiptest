@@ -68,7 +68,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	has_gravity = STANDARD_GRAVITY
 	always_unpowered = FALSE
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
@@ -281,6 +280,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/engineering/engines
+	name = "Engines"
+
+/area/ship/engineering/engines/port
+	name = "Port Engines"
+
+/area/ship/engineering/engines/starboard
+	name = "Starboard Engines"
 
 /area/ship/engineering/atmospherics
 	name = "Atmospherics"

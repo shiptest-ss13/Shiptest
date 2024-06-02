@@ -827,7 +827,7 @@
 /obj/structure/spacevine/dense{
 	pixel_x = -32
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -885,7 +885,7 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "dx" = (
 /obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{
@@ -2576,7 +2576,7 @@
 	},
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/item/soap/nanotrasen,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2642,7 +2642,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "kR" = (
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Cargo Technician"
 	},
 /obj/effect/turf_decal/siding/yellow{
@@ -2942,7 +2942,7 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "lL" = (
 /obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /obj/structure/flora/ausbushes/fullgrass,
@@ -3049,7 +3049,7 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "mj" = (
 /obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /obj/structure/flora/ausbushes/fullgrass,
@@ -3290,7 +3290,7 @@
 /area/ruin/space/has_grav/singularitylab/reactor)
 "nd" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -3610,7 +3610,7 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "ol" = (
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Shaft Miner"
 	},
 /turf/open/floor/plasteel/dark,
@@ -4271,7 +4271,7 @@
 	dir = 10
 	},
 /obj/structure/railing/corner,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Station Engineer"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -4522,7 +4522,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "rQ" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
@@ -4615,10 +4615,7 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "sr" = (
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/food/drinks/flask,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5560,7 +5557,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "wV" = (
 /obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{
@@ -6228,9 +6225,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "zo" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "zq" = (
@@ -6320,7 +6315,7 @@
 "zC" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
 /obj/effect/turf_decal/siding/thinplating/light,
@@ -6496,9 +6491,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
 "Ao" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -6906,7 +6899,7 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
 /turf/open/floor/plasteel,
@@ -7011,7 +7004,7 @@
 "Cb" = (
 /obj/structure/table,
 /obj/structure/spacevine,
-/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/wiki/engineering,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
@@ -7229,7 +7222,7 @@
 "CX" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -7551,9 +7544,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Ed" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Ef" = (
@@ -8959,10 +8950,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Jk" = (
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/directional/west,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Jl" = (
@@ -9036,7 +9024,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Security Officer"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -9132,7 +9120,7 @@
 /obj/item/clothing/under/rank/rnd/scientist,
 /obj/item/clothing/shoes/sneakers/white,
 /obj/effect/gibspawner,
-/obj/item/gun/energy/lasercannon/unrestricted{
+/obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
 	name = "NT-LS-1013"
@@ -9464,7 +9452,7 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
 /obj/effect/turf_decal/siding/thinplating/light/corner,
@@ -9810,7 +9798,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Cargo Technician"
 	},
 /obj/machinery/light/small/directional/south,
@@ -9871,9 +9859,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Mo" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Mq" = (
@@ -10342,7 +10328,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Cargo Technician"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -10940,7 +10926,7 @@
 "PZ" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north,
-/obj/item/gun/energy/lasercannon/unrestricted{
+/obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
 	name = "NT-LS-1013"
@@ -11252,7 +11238,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/item/book/manual/wiki/engineering_singulo_tesla,
+/obj/item/book/manual/wiki/engineering,
 /turf/open/space/basic,
 /area/space/nearstation)
 "Rp" = (
@@ -11708,7 +11694,7 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Quartermaster"
 	},
 /obj/effect/decal/cleanable/blood{
@@ -12908,7 +12894,7 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "WE" = (
 /obj/structure/spacevine,
-/mob/living/simple_animal/hostile/zombie/kudzu{
+/mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{

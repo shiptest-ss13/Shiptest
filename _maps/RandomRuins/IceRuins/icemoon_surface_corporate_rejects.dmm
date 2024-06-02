@@ -84,8 +84,8 @@
 "cN" = (
 /obj/structure/safe/floor,
 /obj/item/hand_tele,
-/obj/item/stack/sheet/mineral/adamantine,
-/obj/item/stack/sheet/mineral/adamantine,
+/obj/item/stack/sheet/mineral/hidden/hellstone,
+/obj/item/stack/sheet/mineral/hidden/hellstone,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/corprejectrooms)
 "cP" = (
@@ -321,10 +321,7 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "io" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/item/keycard/office{
 	desc = "Only Elite level employees are authorized to handle this keycard. All other employees may face termination if found in possession.";
 	name = "Vault Card";
@@ -521,7 +518,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault{
 	desc = "No longer a member of Nanotrasen's more militaristic forces. Seems grumpy.";
 	faction = list("DeserterNT");
 	name = "Benny Bleighch"
@@ -569,7 +566,7 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "or" = (
-/mob/living/simple_animal/hostile/nanotrasen/elite{
+/mob/living/simple_animal/hostile/human/nanotrasen/elite{
 	desc = "A former major player for Nanotrasen militaristic needs. He doesn't seem like someone who'd want to talk over tea.";
 	faction = list("DeserterNT");
 	name = "Sam the Sharp"
@@ -783,7 +780,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "tb" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Rebecca Slouch"
@@ -894,7 +891,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "vP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/cult,
+/obj/item/bedsheet/dorms,
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/corprejectrooms)
 "wl" = (
@@ -1067,7 +1064,7 @@
 /obj/structure/cable/blue{
 	icon_state = "4-9"
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Gloria the Glorious"
@@ -1109,7 +1106,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/nanotrasen/screaming{
+/mob/living/simple_animal/hostile/human/nanotrasen/screaming{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Jimmy Firecracker"
@@ -1327,7 +1324,6 @@
 "En" = (
 /obj/item/gun/ballistic/automatic/smg/proto,
 /obj/structure/rack,
-/obj/item/firing_pin,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Er" = (
@@ -1392,9 +1388,7 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "Fa" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_x = -27
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable/blue{
 	icon_state = "5-6"
 	},
@@ -1732,11 +1726,11 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stack/sheet/bluespace_crystal/five,
-/obj/item/stack/sheet/mineral/bananium{
+/obj/item/stack/sheet/mineral/hidden/hellstone{
 	amount = 15
 	},
 /obj/item/stack/sheet/mineral/gold/twenty,
-/obj/item/stack/sheet/mineral/runite/ten,
+/obj/item/stack/sheet/mineral/hidden/hellstone/ten,
 /obj/item/toy/figure/captain,
 /obj/item/organ/cyberimp/brain/anti_stun,
 /obj/item/disk/design_disk/adv/knight_gear,
@@ -1885,7 +1879,7 @@
 /obj/structure/cable/blue{
 	icon_state = "4-9"
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Todd Clorox"
@@ -1908,7 +1902,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/nanotrasen/elite{
+/mob/living/simple_animal/hostile/human/nanotrasen/elite{
 	desc = "A former major player for Nanotrasen militaristic needs. He doesn't seem like someone who'd want to talk over tea.";
 	faction = list("DeserterNT");
 	name = "Max the Maniac"
@@ -1933,7 +1927,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "Rp" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault{
 	desc = "No longer a member of Nanotrasen's more militaristic forces. Seems grumpy.";
 	faction = list("DeserterNT");
 	name = "Gordon Lary"
@@ -2009,7 +2003,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault{
 	desc = "No longer a member of Nanotrasen's more militaristic forces. Seems grumpy.";
 	faction = list("DeserterNT");
 	name = "Gary Larson"
@@ -2092,7 +2086,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault{
 	desc = "No longer a member of Nanotrasen's more militaristic forces. Seems grumpy.";
 	faction = list("DeserterNT");
 	name = "Nancy Drew"
@@ -2100,7 +2094,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "Us" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Larry Liessahl"
@@ -2237,7 +2231,7 @@
 /obj/structure/cable/blue{
 	icon_state = "0-4"
 	},
-/mob/living/simple_animal/hostile/nanotrasen/screaming{
+/mob/living/simple_animal/hostile/human/nanotrasen/screaming{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Wendy Wallaby"
@@ -2292,7 +2286,7 @@
 /obj/structure/cable/blue{
 	icon_state = "4-5"
 	},
-/mob/living/simple_animal/hostile/nanotrasen/screaming{
+/mob/living/simple_animal/hostile/human/nanotrasen/screaming{
 	desc = "An officer no longer part of Nanotrasen's private security force, he seems rather unpleased to meet you.";
 	faction = list("DeserterNT");
 	name = "Wetzel the Pretzel"

@@ -19,7 +19,7 @@
 /client/proc/centcom_podlauncher() //Creates a verb for admins to open up the ui
 	set name = "Config/Launch Supplypod"
 	set desc = "Configure and launch a CentCom supplypod full of whatever your heart desires!"
-	set category = "Admin.Events"
+	set category = "Event"
 	new /datum/centcom_podlauncher(usr)//create the datum
 
 //Variables declared to change how items in the launch bay are picked and launched. (Almost) all of these are changed in the ui_act proc
@@ -684,8 +684,8 @@
 		return
 	var/obj/structure/closet/supplypod/centcompod/toLaunch = DuplicateObject(temp_pod) //Duplicate the temp_pod (which we have been varediting or configuring with the UI) and store the result
 	toLaunch.update_appearance()//we update_appearance() here so that the door doesnt "flicker on" right after it lands
-	var/shippingLane = GLOB.areas_by_type[/area/centcom/supplypod/supplypod_temp_holding]
-	toLaunch.forceMove(shippingLane)
+	var/area/shipping_lane = GLOB.areas_by_type[/area/centcom/supplypod/supplypod_temp_holding]
+	toLaunch.forceMove(pick(shipping_lane.contents))
 	if (launchClone) //We arent launching the actual items from the bay, rather we are creating clones and launching those
 		if(launchRandomItem)
 			var/launch_candidate = pick_n_take(launchList)

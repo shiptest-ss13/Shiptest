@@ -647,7 +647,7 @@
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
-	build_path = /obj/item/radio/off
+	build_path = /obj/item/radio
 	category = list("initial", "T-Comm")
 
 /datum/design/intercom_frame
@@ -798,12 +798,12 @@
 	build_path = /obj/item/weaponcrafting/receiver
 	category = list("hacked", "Security")
 
-/datum/design/c38
-	name = "Ammo Box (.38)"
-	id = "c38"
+/datum/design/c38_surplus
+	name = "Ammo Box (.38 surplus)"
+	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c38_box
+	build_path = /obj/item/ammo_box/c38_box/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -868,6 +868,22 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c556mmHITP/surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/generic_ammo_box
+	name = "Generic Ammo Box"
+	id = "ammo-generic"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/ammo_box/generic
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/ammo_can
+	name = "Ammo Can"
+	id = "ammo-can"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 500)
+	build_path = /obj/item/storage/toolbox/ammo
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/cleaver
@@ -1175,6 +1191,14 @@
 	build_path = /obj/item/assembly/control
 	category = list("initial","Misc")
 
+/datum/design/holofield_control
+	name = "Holofield Controller"
+	id = "holofield"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control/shieldwallgen
+	category = list("initial","Misc")
+
 /datum/design/trashbag
 	name="Trash Bag"
 	id="trashbag"
@@ -1198,3 +1222,20 @@
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
 	build_path = /obj/item/fishing_rod
 	category = list("initial","Misc","Equipment")
+
+
+/datum/design/paper_biscuit
+	name = "Paper Biscuit"
+	id = "biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 20)
+	build_path = /obj/item/folder/biscuit/unsealed
+	category = list("initial", "Tools", "Misc")
+
+/datum/design/paper_biscuit_confidental
+	name = "Confidental Paper Biscuit"
+	id = "confidental_biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 30)
+	build_path = /obj/item/folder/biscuit/unsealed/confidental
+	category = list("initial", "Tools", "Misc")

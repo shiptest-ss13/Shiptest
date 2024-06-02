@@ -62,7 +62,7 @@
 	if(target != user)
 		target.visible_message("<span class='danger'>[user] is trying to inject [target] with [src]!</span>", \
 			"<span class='userdanger'>[user] is trying to inject you with [src]!</span>")
-		if(!do_mob(user, target) || used)
+		if(!do_after(user, target = target) || used)
 			return
 		target.visible_message("<span class='danger'>[user] injects [target] with the syringe with [src]!</span>", \
 						"<span class='userdanger'>[user] injects you with the syringe with [src]!</span>")
@@ -175,16 +175,6 @@
 	name = "\improper DNA injector (Anti-Stutt.)"
 	desc = "Fixes that speaking impairment."
 	remove_mutations = list(NERVOUS)
-
-/obj/item/dnainjector/antifire
-	name = "\improper DNA injector (Anti-Fire)"
-	desc = "Cures fire."
-	remove_mutations = list(SPACEMUT)
-
-/obj/item/dnainjector/firemut
-	name = "\improper DNA injector (Fire)"
-	desc = "Gives you fire."
-	add_mutations = list(SPACEMUT)
 
 /obj/item/dnainjector/blindmut
 	name = "\improper DNA injector (Blind)"

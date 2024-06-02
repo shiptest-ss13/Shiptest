@@ -62,8 +62,13 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
+
 #ifdef BASIC_TESTS
 
+//#include "icons/inhands.dm"
+#include "icons/missing_icons.dm"
+#include "icons/spritesheets.dm"
+#include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -76,6 +81,7 @@
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"
+#include "outfit_names.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"

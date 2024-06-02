@@ -391,6 +391,14 @@
 	if(M == src && check_self_for_injuries())
 		return
 
+	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+		var/obj/item/clothing/mask/cigarette/theircig = wear_mask
+		var/obj/item/clothing/mask/cigarette/ourcig = M.wear_mask
+		if(istype(ourcig) && istype(theircig))
+			if(ourcig.lit && !theircig.lit)
+				theircig.light(span_notice("[M] leans towards [src], lighting [p_their()] [theircig.name] with [M.p_their()] own."))
+				return
+
 	if(body_position == LYING_DOWN)
 		if(buckled)
 			to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!</span>")
@@ -546,14 +554,10 @@
 
 			else
 				to_chat(src, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(-500)
 		return 1
 	else if(damage == 0) // just enough protection
 		if(prob(20))
 			to_chat(src, "<span class='notice'>Something bright flashes in the corner of your vision!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(0)
 
 
 /mob/living/carbon/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)

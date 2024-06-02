@@ -8,7 +8,7 @@
 	icon = 'icons/obj/plumbing/plumbers.dmi'
 	icon_state = "pump"
 	density = TRUE
-	active_power_usage = 30
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	use_power = ACTIVE_POWER_USE
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	///Plumbing machinery is always gonna need reagents, so we might aswell put it here
@@ -40,7 +40,7 @@
 	default_unfasten_wrench(user, I)
 	return TRUE
 
-/obj/machinery/plumbing/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/machinery/plumbing/plunger_act(obj/item/plunger/P, mob/living/user)
 	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
 	if(do_after(user, 30, target = src))
 		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")

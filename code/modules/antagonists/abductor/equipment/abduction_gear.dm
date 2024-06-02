@@ -369,21 +369,10 @@
 		to_chat(user, "<span class='notice'>You send the message to your target.</span>")
 		log_directed_talk(user, L, message, LOG_SAY, "abductor whisper")
 
-
-/obj/item/firing_pin/abductor
-	name = "alien firing pin"
-	icon_state = "firing_pin_ayy"
-	desc = "This firing pin is slimy and warm; you can swear you feel it constantly trying to mentally probe you."
-	fail_message = "<span class='abductor'>Firing error, please contact Command.</span>"
-
-/obj/item/firing_pin/abductor/pin_auth(mob/living/user)
-	. = isabductor(user)
-
 /obj/item/gun/energy/alien
 	name = "alien pistol"
 	desc = "A complicated gun that fires bursts of high-intensity radiation."
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
-	pin = /obj/item/firing_pin/abductor
 	icon_state = "alienpistol"
 	item_state = "alienpistol"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -588,9 +577,11 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!C.handcuffed)
 		if(C.canBeHandcuffed())
 			playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-			C.visible_message("<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
-									"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>")
-			if(do_mob(user, C, time_to_cuff) && C.canBeHandcuffed())
+			C.visible_message(
+				"<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
+				"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>"
+				)
+			if(do_after(user, time_to_cuff, C) && C.canBeHandcuffed())
 				if(!C.handcuffed)
 					C.set_handcuffed(new /obj/item/restraints/handcuffs/energy/used(C))
 					C.update_handcuffed()

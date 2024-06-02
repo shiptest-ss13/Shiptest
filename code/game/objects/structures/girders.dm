@@ -44,11 +44,15 @@
 			M.add_fingerprint(user)
 			qdel(src)
 
+			return
+
 	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
 		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
 		new /obj/item/stack/sheet/metal(get_turf(src))
 		W.play_tool_sound(src)
 		qdel(src)
+
+		return
 
 
 	else if(istype(W, /obj/item/stack))
@@ -77,6 +81,8 @@
 					var/obj/structure/falsewall/iron/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 5)
 					to_chat(user, "<span class='warning'>You need at least five rods to add plating!</span>")
@@ -111,6 +117,8 @@
 					var/obj/structure/falsewall/F = new (loc)
 					transfer_fingerprints_to(F)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of metal to finish a wall!</span>")
@@ -141,6 +149,8 @@
 					var/obj/structure/falsewall/reinforced/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(state == GIRDER_REINF)
 					if(S.get_amount() < 1)
@@ -185,6 +195,8 @@
 					var/obj/structure/FW = new F (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need at least two sheets to add plating!</span>")
@@ -209,8 +221,6 @@
 					transfer_fingerprints_to(T)
 					qdel(src)
 				return
-
-		add_hiddenprint(user)
 
 	else if(istype(W, /obj/item/pipe))
 		var/obj/item/pipe/P = W
@@ -354,7 +364,7 @@
 	add_fingerprint(user)
 	if(istype(W, /obj/item/melee/cultblade/dagger) && iscultist(user)) //Cultists can demolish cult girders instantly with their tomes
 		user.visible_message("<span class='warning'>[user] strikes [src] with [W]!</span>", "<span class='notice'>You demolish [src].</span>")
-		new /obj/item/stack/sheet/runed_metal(drop_location(), 1)
+		new /obj/item/stack/sheet/mineral/hidden/hellstone(drop_location(), 1)
 		qdel(src)
 
 	else if(W.tool_behaviour == TOOL_WELDER)
@@ -364,19 +374,19 @@
 		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
 		if(W.use_tool(src, user, 40, volume=50))
 			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
-			var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 1)
+			var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 1)
 			transfer_fingerprints_to(R)
 			qdel(src)
 
 	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
 		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 2)
+		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 2)
 		transfer_fingerprints_to(R)
 		W.play_tool_sound(src)
 		qdel(src)
 
-	else if(istype(W, /obj/item/stack/sheet/runed_metal))
-		var/obj/item/stack/sheet/runed_metal/R = W
+	else if(istype(W, /obj/item/stack/sheet/mineral/hidden/hellstone))
+		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = W
 		if(R.get_amount() < 1)
 			to_chat(user, "<span class='warning'>You need at least one sheet of runed metal to construct a runed wall!</span>")
 			return 0
@@ -398,7 +408,7 @@
 
 /obj/structure/girder/cult/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/runed_metal(drop_location(), 1)
+		new /obj/item/stack/sheet/mineral/hidden/hellstone(drop_location(), 1)
 	qdel(src)
 
 /obj/structure/girder/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)

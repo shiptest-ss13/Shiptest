@@ -174,9 +174,11 @@
 #define FIRE_PRIORITY_PARALLAX 65
 #define FIRE_PRIORITY_INSTRUMENTS 80
 #define FIRE_PRIORITY_MOBS 100
+#define FIRE_PRIORITY_MOVABLE_PHYSICS 105
 #define FIRE_PRIORITY_TGUI 110
 #define FIRE_PRIORITY_TICKER 200
 #define FIRE_PRIORITY_ATMOS_ADJACENCY 300
+#define FIRE_PRIORITY_STATPANEL 390
 #define FIRE_PRIORITY_CHAT 400
 #define FIRE_PRIORITY_RUNECHAT 410
 #define FIRE_PRIORITY_MOUSE_ENTERED 450
@@ -257,3 +259,16 @@
 		} \
 		A.flags_1 &= ~OVERLAY_QUEUED_1; \
 	}while(FALSE)
+
+// Vote subsystem counting methods
+/// First past the post. One selection per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_SINGLE 1
+/// Approval voting. Any number of selections per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_MULTI 2
+
+/// The choice with the most votes wins. Ties are broken by the first choice to reach that number of votes.
+#define VOTE_WINNER_METHOD_SIMPLE "Simple"
+/// The winning choice is selected randomly based on the number of votes each choice has.
+#define VOTE_WINNER_METHOD_WEIGHTED_RANDOM "Weighted Random"
+/// There is no winner for this vote.
+#define VOTE_WINNER_METHOD_NONE "None"

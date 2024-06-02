@@ -4,7 +4,7 @@
 /obj/item/reagent_containers/food/drinks
 	name = "drink"
 	desc = "yummy"
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = null
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -39,7 +39,7 @@
 	else
 		M.visible_message("<span class='danger'>[user] attempts to feed [M] the contents of [src].</span>", \
 			"<span class='userdanger'>[user] attempts to feed you the contents of [src].</span>")
-		if(!do_mob(user, M))
+		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
@@ -120,27 +120,36 @@
 	if(!.) //if the bottle wasn't caught
 		smash(hit_atom, throwingdatum?.thrower, TRUE)
 
-/obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
+/obj/item/reagent_containers/food/drinks/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	smash()
+	..()
+
+/obj/item/reagent_containers/food/drinks/proc/smash(atom/target = FALSE, mob/thrower = FALSE, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
+	if(QDELING(src) || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
-	if(bartender_check(target) && ranged)
-		return
-	var/obj/item/broken_bottle/B = new (loc)
-	B.icon_state = icon_state
-	var/icon/I = new(icon, icon_state)
-	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
-	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
-	B.icon = I
-	B.name = "broken [name]"
+	if(target)
+		if(bartender_check(target) && ranged)
+			return
+	var/obj/item/broken_bottle/smashed_bottle = new (loc)
+	if(!ranged && thrower)
+		thrower.put_in_hands(smashed_bottle)
+	smashed_bottle.icon_state = icon_state
+	var/icon/new_icon = new(icon, icon_state)
+	new_icon.Blend(smashed_bottle.broken_outline, ICON_OVERLAY, rand(5), 1)
+	new_icon.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+	smashed_bottle.icon = new_icon
+	smashed_bottle.name = "broken [name]"
 	if(prob(33))
-		var/obj/item/shard/S = new(drop_location())
-		target.Bumped(S)
+		var/obj/item/shard/new_shard = new(drop_location())
+		if(target)
+			target.Bumped(new_shard)
 	playsound(src, "shatter", 70, TRUE)
-	transfer_fingerprints_to(B)
+	transfer_fingerprints_to(smashed_bottle)
 	qdel(src)
-	target.Bumped(B)
+	if(target)
+		target.Bumped(smashed_bottle)
 
 /obj/item/reagent_containers/food/drinks/bullet_act(obj/projectile/P)
 	. = ..()
@@ -254,13 +263,26 @@
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Dutch hot coco"
-	desc = "Made in Space South America."
+	name = "Pearl Hot Chocolate"
+	desc = "A rich delicacy from the humid regions of Terra."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
 	custom_price = 120
 
+/obj/item/reagent_containers/food/drinks/cafelatte
+	name = "cafe latte"
+	desc = "A nice, strong and refreshing beverage while you're reading."
+	icon_state = "cafe_latte"
+	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
+	custom_price = 200
+
+/obj/item/reagent_containers/food/drinks/soylatte
+	name = "soy latte"
+	desc = "A nice and refreshing beverage while you're reading."
+	icon_state = "soy_latte"
+	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
+	custom_price = 200
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
@@ -274,7 +296,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
@@ -394,7 +416,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks/drinks.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -453,7 +475,7 @@
 /obj/item/reagent_containers/food/drinks/colocup
 	name = "colo cup"
 	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "colocup"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'

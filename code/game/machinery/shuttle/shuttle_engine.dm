@@ -12,7 +12,7 @@
 	var/enabled = TRUE
 	///How much thrust this engine generates when burned fully.
 	var/thrust = 0
-	///I don't really know what this is but it's used a lot
+	///Whether this engine is actively providing thrust to the ship
 	var/thruster_active = FALSE
 
 /**

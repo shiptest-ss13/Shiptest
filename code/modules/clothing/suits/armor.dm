@@ -15,6 +15,8 @@
 	greyscale_colors = list(list(18, 19), list(13, 18), list(20, 15))
 	greyscale_icon_state = "armor"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)
@@ -112,6 +114,11 @@
 	resistance_flags = FLAMMABLE
 	dog_fashion = null
 
+/obj/item/clothing/suit/armor/vest/security/warden/inteq
+	name = "master at arms' armored coat"
+	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
+	icon_state = "maacoat"
+
 /obj/item/clothing/suit/armor/vest/security/warden/alt
 	name = "warden's armored jacket"
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
@@ -150,25 +157,13 @@
 /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
 	name = "Cybersun captain's haori"
 	desc = "An extraordinarily fashionable haori, utilized by Cybersun captains. Weaved with armored fabric to protect the user from gunshots."
-	icon_state = "cybersunhaori"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/alt
-	name = "captain's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "carapace_ntformal"
-	item_state = "capspacesuit"
+	icon_state = "carapace_cybersun"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
 	desc = "Worn by a captain to show their class."
 	icon_state = "carapace_formal"
 	item_state = "bio_suit"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/minutemen
-	name = "Colonial Minutemen general coat"
-	desc = "A very fancy coat used by generals of the Colonial Minutemen."
-	icon_state = "carapace_minutemen"
-	item_state = "carapace_minutemen"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/duster
 	name = "captain's duster"
@@ -189,12 +184,6 @@
 	clothing_flags = BLOCKS_SHOVE_KNOCKDOWN
 	strip_delay = 80
 	equip_delay_other = 60
-
-/obj/item/clothing/suit/armor/riot/minutemen
-	name = "black riot suit"
-	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
-	icon_state = "riot_minutemen"
-
 
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"

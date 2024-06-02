@@ -249,8 +249,8 @@
 		observer.client.init_verbs()
 	observer.update_appearance()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	QDEL_NULL(mind)
+	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	qdel(src)
 	return TRUE
 
@@ -319,7 +319,6 @@
 		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
-		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
@@ -329,6 +328,7 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
+		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
@@ -493,8 +493,13 @@
 /mob/dead/new_player/proc/register_for_interview()
 	// First we detain them by removing all the verbs they have on client
 	for (var/procpath/client_verb as anything in client.verbs)
-		if(!(client_verb in GLOB.client_verbs_required))
-			remove_verb(client, client_verb)
+		if(client_verb in GLOB.client_verbs_required)
+			continue
+		remove_verb(client, client_verb)
+
+	// Then remove those on their mob as well
+	for (var/procpath/verb_path as anything in verbs)
+		remove_verb(src, verb_path)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)

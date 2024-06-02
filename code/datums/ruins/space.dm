@@ -39,13 +39,6 @@
 	description = "In the darkest times, we will find our way home."
 */
 
-/datum/map_template/ruin/space/djstation
-	id = "djstation"
-	suffix = "djstation.dmm"
-	name = "DJ Station"
-	description = "Until very recently this pirate radio station was used to harangue local space stations over a variety of perceived \"ethics violations\". \
-	It seems like someone finally got sick of it, but the equipment still works."
-
 /datum/map_template/ruin/space/crashedship
 	id = "crashedship"
 	suffix = "crashedship.dmm"
@@ -59,12 +52,6 @@
 	name = "Aesthetic Outpost"
 	description = "Pause and remember-- You are unique.You are special. Every mistake, trial, and hardship has helped to sculpt your real beauty. \
 	Stop hating yourself and start appreciating and loving yourself!"
-
-/datum/map_template/ruin/space/clericden
-	id = "clericden"
-	suffix = "clericden.dmm"
-	name = "Cleric's Den"
-	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
 
 /datum/map_template/ruin/space/hellfactory
 	id = "hellfactory"
@@ -103,12 +90,6 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 
-/datum/map_template/ruin/space/oldshuttle
-	id = "oldcode-nukeops"
-	suffix = "oldcodeops.dmm"
-	name = "Strange Infiltrator"
-	description = "A nuclear operative's ship, drifing along the stars. This thing looks like it belongs in ancient times."
-
 /datum/map_template/ruin/space/transport18
 	id = "transport18"
 	suffix = "transport18.dmm"
@@ -144,12 +125,6 @@
 	suffix = "provinggrounds.dmm"
 	name = "Syndicate Battle Sphere"
 	description = "The Syndicate Battle Sphere, complete with guns!"
-
-/datum/map_template/ruin/space/lab4071
-	id = "lab4071"
-	suffix = "lab4071.dmm"
-	name = "Syndicate Laboratory 4071"
-	description = "A Syndicate laboratory run by syndicate scientists."
 
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"

@@ -6,7 +6,9 @@
 	pixel_z = 1
 	obj_flags = CAN_BE_HIT | UNIQUE_RENAME
 	circuit = /obj/item/circuitboard/machine/hydroponics
-	idle_power_usage = 0
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
 	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
@@ -35,7 +37,6 @@
 	// Here lies irrigation. You won't be missed, because you were never used.
 
 /obj/machinery/hydroponics/Initialize()
-	RegisterSignal(src, COMSIG_ATOM_EXITED, PROC_REF(on_exited))
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
 	create_reagents(20)
 	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
@@ -74,14 +75,8 @@
 
 /obj/machinery/hydroponics/Destroy()
 	if(myseed)
-		qdel(myseed)
-		myseed = null
+		QDEL_NULL(myseed)
 	return ..()
-
-/obj/machinery/hydroponics/proc/on_exited()
-	SIGNAL_HANDLER
-	if(myseed && (myseed.loc != src))
-		myseed.forceMove(src)
 
 /obj/machinery/hydroponics/constructable/attackby(obj/item/I, mob/user, params)
 	if (user.a_intent != INTENT_HARM)
@@ -121,7 +116,7 @@
 
 	if(!powered() && self_sustaining)
 		visible_message("<span class='warning'>[name]'s auto-grow functionality shuts off!</span>")
-		idle_power_usage = 0
+		set_idle_power()
 		self_sustaining = FALSE
 		update_appearance()
 
@@ -357,8 +352,7 @@
 	var/oldPlantName
 	if(myseed) // In case there's nothing in the tray beforehand
 		oldPlantName = myseed.plantname
-		qdel(myseed)
-		myseed = null
+		QDEL_NULL(myseed)
 	else
 		oldPlantName = "empty tray"
 	switch(rand(0,20))		// randomly pick predominative weed
@@ -429,8 +423,7 @@
 /obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the mutagent instead. Mind you, this pretty much destroys the old plant
 	if(weedlevel > 5)
 		if(myseed)
-			qdel(myseed)
-			myseed = null
+			QDEL_NULL(myseed)
 		var/newWeed = pick(/obj/item/seeds/liberty, /obj/item/seeds/angel, /obj/item/seeds/nettle/death, /obj/item/seeds/kudzu)
 		myseed = new newWeed
 		dead = 0
@@ -608,8 +601,7 @@
 				plant_health = 0
 				if(harvest)
 					harvest = FALSE //To make sure they can't just put in another seed and insta-harvest it
-				qdel(myseed)
-				myseed = null
+				QDEL_NULL(myseed)
 				name = initial(name)
 				desc = initial(desc)
 			weedlevel = 0 //Has a side effect of cleaning up those nasty weeds
@@ -664,8 +656,7 @@
 	else if(dead)
 		dead = FALSE
 		to_chat(user, "<span class='notice'>You remove the dead plant from [src].</span>")
-		qdel(myseed)
-		myseed = null
+		QDEL_NULL(myseed)
 		update_appearance()
 		TRAY_NAME_UPDATE
 	else
@@ -682,7 +673,10 @@
 	if(!anchored)
 		return
 	self_sustaining = !self_sustaining
-	idle_power_usage = self_sustaining ? 1250 : 0
+	if(self_sustaining)
+		set_active_power()
+	else
+		set_idle_power()
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_appearance()
 
@@ -713,7 +707,7 @@
 		desc = initial(desc)
 		TRAY_NAME_UPDATE
 		if(self_sustaining) //No reason to pay for an empty tray.
-			idle_power_usage = 0
+			set_idle_power()
 			self_sustaining = FALSE
 	update_appearance()
 

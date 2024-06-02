@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/pill
 	name = "pill"
 	desc = "A tablet or capsule."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "pill"
 	item_state = "pill"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -34,20 +34,20 @@
 	if(M == user)
 		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src].</span>")
 		if(self_delay)
-			if(!do_mob(user, M, self_delay))
+			if(!do_after(user, self_delay, M))
 				return FALSE
 		to_chat(M, "<span class='notice'>You [apply_method] [src].</span>")
 
 	else
 		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
 							"<span class='userdanger'>[user] attempts to force you to [apply_method] [src].</span>")
-		if(!do_mob(user, M))
+		if(!do_after(user, target = M))
 			return FALSE
 		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
 							"<span class='userdanger'>[user] forces you to [apply_method] [src].</span>")
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
@@ -182,14 +182,6 @@
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
-///////////////////////////////////////// this pill is used only in a legion mob drop
-/obj/item/reagent_containers/pill/shadowtoxin
-	name = "black pill"
-	desc = "I wouldn't eat this if I were you."
-	icon_state = "pill9"
-	color = "#454545"
-	list_reagents = list(/datum/reagent/mutationtoxin/shadow = 5)
-
 ///////////////////////////////////////// Psychologist inventory pills
 /obj/item/reagent_containers/pill/happinesspsych
 	name = "mood stabilizer pill"
@@ -296,5 +288,5 @@ WS End */
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
-	icon_state = "sprayer_large"
+	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)

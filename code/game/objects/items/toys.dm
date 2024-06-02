@@ -562,7 +562,6 @@
 	var/datum/fakeDevil/devil = new
 	var/list/messages = list()
 	messages += "Some fun facts about: [devil.truename]"
-	messages += "[GLOB.lawlorify[LORE][devil.bane]]"
 	messages += "[GLOB.lawlorify[LORE][devil.obligation]]"
 	messages += "[GLOB.lawlorify[LORE][devil.ban]]"
 	messages += "[GLOB.lawlorify[LORE][devil.banish]]"
@@ -731,7 +730,7 @@
 	name = "hand of cards"
 	desc = "A number of cards not in a deck, customarily held in ones hand."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "none"
+	icon_state = "nothing"
 	w_class = WEIGHT_CLASS_TINY
 	var/list/currenthand = list()
 	var/choice = null
@@ -1028,7 +1027,7 @@
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				// Short delay to match up with the explosion sound
 				// Shakes player camera 2 squares for 1 second.
-				addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
 
 	else
 		to_chat(user, "<span class='alert'>Nothing happens.</span>")
@@ -1404,7 +1403,7 @@
 	say(message, language)
 	return NOPASS
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/GetVoice(if_no_voice = "Unknown")
 	return doll_name
 
 /obj/item/toy/seashell

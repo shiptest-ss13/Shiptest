@@ -1,8 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/beach)
@@ -297,7 +295,7 @@
 "mD" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/north,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
 /turf/open/floor/wood,
 /area/ruin/beach)
 "mE" = (
@@ -483,7 +481,7 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sN" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/machinery/light/small/directional/north{
 	light_color = "#694c12"
 	},
@@ -669,7 +667,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Bg" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/plastic,
@@ -829,7 +827,7 @@
 /area/ruin/beach)
 "Gt" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
-/mob/living/simple_animal/hostile/cat_butcherer{
+/mob/living/simple_animal/hostile/human/cat_butcherer{
 	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A profession carp butcher, gone mad due to carptoxin exposure. There seems to be something in their pocket...";
 	faction = list("beach","pirate");
@@ -853,9 +851,9 @@
 /turf/open/floor/plastic,
 /area/ruin/beach)
 "GP" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/carpet,
@@ -1047,7 +1045,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
+/mob/living/simple_animal/hostile/human/pirate/ranged{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood/ebony,
@@ -1136,8 +1134,8 @@
 /turf/open/floor/wood,
 /area/ruin/beach)
 "Rh" = (
-/obj/structure/chair/sofa/corner,
-/mob/living/simple_animal/hostile/pirate/melee{
+/obj/structure/chair/sofa/brown/corner/directional/south,
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/carpet,
@@ -1252,7 +1250,7 @@
 	pixel_x = 4;
 	layer = 2.9
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
+/mob/living/simple_animal/hostile/human/pirate/ranged{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood/ebony,
@@ -1335,7 +1333,7 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZJ" = (
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood,
