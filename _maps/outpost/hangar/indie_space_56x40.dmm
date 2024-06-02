@@ -362,7 +362,9 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "101"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -3228,7 +3230,7 @@ aN
 aH
 "}
 (55,1,1) = {"
-aV
+aH
 aH
 aH
 SV
@@ -3281,7 +3283,7 @@ aN
 aH
 "}
 (56,1,1) = {"
-aV
+aH
 WQ
 vq
 ik
@@ -3334,7 +3336,7 @@ aN
 aH
 "}
 (57,1,1) = {"
-aV
+aH
 aH
 il
 Sw

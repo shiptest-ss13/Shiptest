@@ -62,7 +62,9 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "101"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "av" = (
 /obj/structure/railing{
@@ -1605,7 +1607,7 @@ aj
 ab
 "}
 (39,1,1) = {"
-aP
+ab
 ab
 ab
 UV
@@ -1638,7 +1640,7 @@ aj
 ab
 "}
 (40,1,1) = {"
-aP
+ab
 at
 Wp
 AH
@@ -1671,7 +1673,7 @@ aj
 ab
 "}
 (41,1,1) = {"
-aP
+ab
 ab
 id
 pb

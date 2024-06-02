@@ -319,7 +319,9 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "101"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Pk" = (
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2386,7 +2388,7 @@ aT
 aa
 "}
 (39,1,1) = {"
-au
+aa
 aa
 aa
 xH
@@ -2439,7 +2441,7 @@ aT
 aa
 "}
 (40,1,1) = {"
-au
+aa
 Ol
 Pk
 Fj
@@ -2492,7 +2494,7 @@ aT
 aa
 "}
 (41,1,1) = {"
-au
+aa
 aa
 wm
 HB

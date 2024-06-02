@@ -247,7 +247,9 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "101"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Aj" = (
 /obj/machinery/computer/hydrogen_exchange,
@@ -946,7 +948,7 @@ aZ
 am
 "}
 (19,1,1) = {"
-aH
+am
 am
 am
 Xu
@@ -979,7 +981,7 @@ aZ
 am
 "}
 (20,1,1) = {"
-aH
+am
 Af
 un
 Xy
@@ -1012,7 +1014,7 @@ aZ
 am
 "}
 (21,1,1) = {"
-aH
+am
 am
 Aj
 DI

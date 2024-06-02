@@ -267,7 +267,9 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "101"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Jt" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -2126,7 +2128,7 @@ an
 ag
 "}
 (55,1,1) = {"
-aZ
+ag
 ag
 ag
 MY
@@ -2159,7 +2161,7 @@ an
 ag
 "}
 (56,1,1) = {"
-aZ
+ag
 GM
 mV
 Td
@@ -2192,7 +2194,7 @@ an
 ag
 "}
 (57,1,1) = {"
-aZ
+ag
 ag
 xG
 aG
