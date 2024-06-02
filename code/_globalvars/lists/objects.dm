@@ -34,6 +34,8 @@ GLOBAL_LIST(chemical_reagents_list)
 GLOBAL_LIST_EMPTY(materials_list)
 /// List of all /datum/tech datums indexed by id.
 GLOBAL_LIST_EMPTY(tech_list)
+//List of all Omni-Surgery steps, associated with their path.
+GLOBAL_LIST_EMPTY(omnisurgerysteps_list)
 /// List of all surgeries by name, associated with their path.
 GLOBAL_LIST_EMPTY(surgeries_list)
 /// List of all table craft recipes

@@ -136,29 +136,19 @@
 	data["patient"]["toxLoss"] = patient.getToxLoss()
 	data["patient"]["oxyLoss"] = patient.getOxyLoss()
 	data["procedures"] = list()
+
+
 	if(patient.surgeries.len)
-		for(var/datum/surgery/procedure in patient.surgeries)
-			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
-			var/chems_needed = surgery_step.get_chem_list()
-			var/alternative_step
-			var/alt_chems_needed = ""
-			if(surgery_step.repeatable)
-				var/datum/surgery_step/next_step = procedure.get_surgery_next_step()
-				if(next_step)
-					alternative_step = capitalize(next_step.name)
-					alt_chems_needed = next_step.get_chem_list()
-				else
-					alternative_step = "Finish operation"
+		for(var/datum/surgery/omni/procedure in patient.surgeries)
+			var/list/atlayer_surgeries = procedure.get_valid_surgeries(user, patient)
+			var/list/listed_surgery_steps = list()
+			for(var/datum/surgery_step/surgery_step in atlayer_surgeries)
+				listed_surgery_steps += surgery_step.name
 			data["procedures"] += list(list(
-				"name" = capitalize("[parse_zone(procedure.location)] [procedure.name]"),
-				"next_step" = capitalize(surgery_step.name),
-				"chems_needed" = chems_needed,
-				"alternative_step" = alternative_step,
-				"alt_chems_needed" = alt_chems_needed
+				"name" = capitalize("[procedure.name] ([parse_zone(procedure.location)])"),
+				"steps" = listed_surgery_steps,
 			))
 	return data
-
-
 
 /obj/machinery/computer/operating/ui_act(action, params)
 	. = ..()

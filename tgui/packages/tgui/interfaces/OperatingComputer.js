@@ -96,30 +96,9 @@ const PatientStateView = (props, context) => {
       {procedures.length === 0 && <Section>No Active Procedures</Section>}
       {procedures.map((procedure) => (
         <Section key={procedure.name} title={procedure.name}>
-          <LabeledList>
-            <LabeledList.Item label="Next Step">
-              {procedure.next_step}
-              {procedure.chems_needed && (
-                <>
-                  <b>Required Chemicals:</b>
-                  <br />
-                  {procedure.chems_needed}
-                </>
-              )}
-            </LabeledList.Item>
-            {!!data.alternative_step && (
-              <LabeledList.Item label="Alternative Step">
-                {procedure.alternative_step}
-                {procedure.alt_chems_needed && (
-                  <>
-                    <b>Required Chemicals:</b>
-                    <br />
-                    {procedure.alt_chems_needed}
-                  </>
-                )}
-              </LabeledList.Item>
-            )}
-          </LabeledList>
+          {procedure.steps.map((step) => (
+            <Section key={step}>{step}</Section>
+          ))}
         </Section>
       ))}
     </>
