@@ -430,11 +430,6 @@
 /datum/quirk/insanity/proc/madness()
 	quirk_holder.hallucination += rand(10, 25)
 
-/datum/quirk/insanity/post_add() //I don't /think/ we'll need this but for newbies who think "roleplay as insane" = "license to kill" it's probably a good thing to have
-	if(!quirk_holder.mind || quirk_holder.mind.special_role)
-		return
-	to_chat(quirk_holder, "<span class='big bold info'>Please note that your dissociation syndrome does NOT give you the right to attack people or otherwise cause any interference to \
-	the round. You are not an antagonist, and the rules will treat you the same as other crewmembers.</span>")
 
 /datum/quirk/social_anxiety
 	name = "Social Anxiety"
@@ -589,24 +584,57 @@
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
 
+//I fucking hate prefscode
+
 /datum/quirk/junkie/smoker/on_spawn()
-	drug_container_type = pick(/obj/item/storage/fancy/cigarettes,
-		/obj/item/storage/fancy/cigarettes/cigpack_midori,
-		/obj/item/storage/fancy/cigarettes/cigpack_uplift,
-		/obj/item/storage/fancy/cigarettes/cigpack_robust,
-		/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
-		/obj/item/storage/fancy/cigarettes/cigpack_carp)
+	var/mob/living/carbon/human/H = quirk_holder
+	switch (H.client?.prefs.preferred_smoke_brand)
+		if (PREF_CIG_SPACE)
+			drug_container_type = /obj/item/storage/fancy/cigarettes
+		if (PREF_CIG_DROMEDARY)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/dromedaryco
+		if (PREF_CIG_UPLIFT)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+		if (PREF_CIG_ROBUST)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robust
+		if (PREF_CIG_ROBUSTGOLD)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+		if (PREF_CIG_CARP)
+			drug_container_type= /obj/item/storage/fancy/cigarettes/cigpack_carp
+		if (PREF_CIG_MIDORI)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
+		if (PREF_CIGAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_CIGAR_SOLAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/havana
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_CIGAR_COHIBA)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/cohiba
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_VAPE)
+			drug_container_type = /obj/item/clothing/mask/vape
+			accessory_type = null
+		if (PREF_PIPE)
+			drug_container_type = /obj/item/clothing/mask/cigarette/pipe
+			accessory_type = /obj/item/storage/box/matches
+		else
+			CRASH("Someone had an improper cigarette pref on loading")
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
-	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a lighter [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
-
+	if(accessory_type == null)
+		to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon.</span>")
+		return
+	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
 
 /datum/quirk/junkie/smoker/on_process()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/I = H.get_item_by_slot(ITEM_SLOT_MASK)
 	if (istype(I, /obj/item/clothing/mask/cigarette))
+		if(I == drug_container_type)
+			return
 		var/obj/item/storage/fancy/cigarettes/C = drug_container_type
 		if(istype(I, initial(C.spawn_type)))
 			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")

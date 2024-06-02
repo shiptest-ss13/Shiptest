@@ -15,8 +15,7 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
 		/obj/item/reagent_containers/food/drinks/waterbottle = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 5)
-	contraband = list(
+		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 5,
 		/obj/item/reagent_containers/food/drinks/soda_cans/vimukti = 6,
 		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 6)
 	premium = list(

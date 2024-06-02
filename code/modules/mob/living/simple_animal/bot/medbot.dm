@@ -488,6 +488,9 @@
 		return TRUE
 
 /mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
+	if(DOING_INTERACTION_WITH_TARGET(H, src))
+		to_chat(H, "<span class='warning'>You're already interacting with [src].</span>")
+		return
 
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
 		H.visible_message("<span class='danger'>[H] begins tipping over [src].</span>", "<span class='warning'>You begin tipping over [src]...</span>")
@@ -574,7 +577,7 @@
 			C.visible_message("<span class='danger'>[src] is trying to tend the wounds of [patient]!</span>", \
 				"<span class='userdanger'>[src] is trying to tend your wounds!</span>")
 
-			if(do_mob(src, patient, 20)) //Slightly faster than default tend wounds, but does less HPS
+			if(do_after(src, 2 SECONDS, patient)) //Slightly faster than default tend wounds, but does less HPS
 				if((get_dist(src, patient) <= 1) && (on) && assess_patient(patient))
 					var/healies = heal_amount
 					var/obj/item/storage/firstaid/FA = firstaid

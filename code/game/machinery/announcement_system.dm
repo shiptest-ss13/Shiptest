@@ -12,8 +12,8 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	verb_ask = "queries"
 	verb_exclaim = "alarms"
 
-	idle_power_usage = 20
-	active_power_usage = 50
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = IDLE_DRAW_LOW
 
 	circuit = /obj/item/circuitboard/machine/announcement_system
 

@@ -34,39 +34,7 @@
 	volume = 50
 	custom_price = 55
 
-/obj/item/reagent_containers/food/drinks/bottle/smash(mob/living/target, mob/thrower, ranged = FALSE)
-	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
-		return
-	//Creates a shattering noise and replaces the bottle with a broken_bottle
-	if(bartender_check(target) && ranged)
-		return
-	var/obj/item/broken_bottle/B = new (loc)
-	if(!ranged && thrower)
-		thrower.put_in_hands(B)
-	B.icon_state = icon_state
-
-	var/icon/I = new('icons/obj/drinks/drinks.dmi', src.icon_state)
-	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
-	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
-	B.icon = I
-
-	if(isGlass)
-		if(prob(33))
-			var/obj/item/shard/S = new(drop_location())
-			target.Bumped(S)
-		playsound(src, "shatter", 70, TRUE)
-	else
-		B.force = 0
-		B.throwforce = 0
-		B.desc = "A carton with the bottom half burst open. Might give you a papercut."
-	B.name = "broken [name]"
-	transfer_fingerprints_to(B)
-
-	qdel(src)
-	target.Bumped(B)
-
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
-
 	if(!target)
 		return
 
