@@ -1,11 +1,3 @@
-
-#define FIREMODE_SEMIAUTO "single"
-#define FIREMODE_BURST "burst"
-#define FIREMODE_FULLAUTO "auto"
-#define FIREMODE_OTHER "other"
-#define FIREMODE_OTHER_TWO "other2"
-
-
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
 /obj/item/gun
@@ -248,6 +240,51 @@
 	if(zoomed && user.get_active_held_item() != src)
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
+/obj/item/gun/attack(mob/M as mob, mob/user)
+	if(user.a_intent == INTENT_HARM) //Flogging
+		if(bayonet)
+			M.attackby(bayonet, user)
+			return
+		else
+			return ..()
+	return
+
+/obj/item/gun/attack_obj(obj/O, mob/user)
+	if(user.a_intent == INTENT_HARM)
+		if(bayonet)
+			O.attackby(bayonet, user)
+			return
+	return ..()
+
+/obj/item/gun/attackby(obj/item/I, mob/user, params)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+	else if(istype(I, /obj/item/flashlight/seclite))
+		if(!can_flashlight)
+			return ..()
+		var/obj/item/flashlight/seclite/S = I
+		if(!gun_light)
+			if(!user.transferItemToLoc(I, src))
+				return
+			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
+			set_gun_light(S)
+			update_gunlight()
+			alight = new(src)
+			if(loc == user)
+				alight.Grant(user)
+	else if(istype(I, /obj/item/kitchen/knife))
+		var/obj/item/kitchen/knife/K = I
+		if(!can_bayonet || !K.bayonet || bayonet) //ensure the gun has an attachment point available, and that the knife is compatible with it.
+			return ..()
+		if(!user.transferItemToLoc(I, src))
+			return
+		to_chat(user, "<span class='notice'>You attach [K] to [src]'s bayonet lug.</span>")
+		bayonet = K
+		update_appearance()
+
+	else
+		return ..()
+
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(atom/shooter)
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
@@ -260,65 +297,26 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	if(!safety)
-		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
-		playsound(src, dry_fire_sound, 30, TRUE)
-		return
-	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
-
-
-/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
-	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
-	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
-
-	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
-
-	if(muzzle_flash && !muzzle_flash.applied)
-		handle_muzzle_flash(user, muzzle_angle)
-
-	if(wielded_fully)
-		simulate_recoil(user, recoil, actual_angle)
-	else if(!wielded_fully)
-		simulate_recoil(user, recoil_unwielded, actual_angle)
-
-	if(suppressed)
-		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
-	else
-		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-		if(message)
-			if(pointblank)
-				user.visible_message(
-						span_danger("[user] fires [src] point blank at [pbtarget]!"),
-						span_danger("You fire [src] point blank at [pbtarget]!"),
-						span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
-				)
-				to_chat(pbtarget, "<span class='userdanger'>[user] fires [src] point blank at you!</span>")
-				if(pb_knockback > 0 && ismob(pbtarget))
-					var/mob/PBT = pbtarget
-					var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
-					PBT.throw_at(throw_target, pb_knockback, 2)
-			else
-				user.visible_message(
-						span_danger("[user] fires [src]!"),
-						blind_message = span_hear("You hear a gunshot!"),
-						vision_distance = COMBAT_MESSAGE_RANGE,
-						ignored_mobs = user
-				)
-
 /obj/item/gun/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 
+
+/obj/item/gun/proc/recharge_newshot()
+	return
+
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
+	//No target? Why are we even firing anyways...
 	if(!target)
 		return
+	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
-	if(flag) //It's adjacent, is the user, or is on the user's person
+	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
+	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
 		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
@@ -333,32 +331,34 @@
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
 */
+	// Good job, but we have exta checks to do...
 	return pre_fire(target, user, TRUE, flag, params, null)
-
-
-/obj/item/gun/proc/recharge_newshot()
-	return
 
 /obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
 	add_fingerprint(user)
+
+	// If we have a cooldown, don't do anything, obviously
 	if(current_cooldown)
 		return
 
-
-	if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
-		var/mob/living/L = user
-		if(!can_trigger_gun(L))
+	//We check if the user can even use the gun, if not, we assume the user isn't alive(turrets) so we go ahead.
+	if(istype(user))
+		var/mob/living/living_user = user
+		if(!can_trigger_gun(living_user))
 			return
 
+	//If targetting the mouth, we do suicide instead.
 	if(flag)
 		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 			handle_suicide(user, target, params)
 			return
 
-	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
+	//Just because we can pull the trigger doesn't mean it can fire. Mostly for safties.
+	if(!can_shoot())
 		shoot_with_empty_chamber(user)
 		return
 
+	//we then check our weapon weight vs if we are being wielded...
 	if(weapon_weight == WEAPON_VERY_HEAVY && (!wielded_fully))
 		to_chat(user, "<span class='warning'>You need a fully secure grip to fire [src]!</span>")
 		return
@@ -366,13 +366,14 @@
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
+	//If we have the pacifist trait and a chambered round, don't fire. Honestly, pacifism quirk is pretty stupid, and as such we check again in process_fire() anyways
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
 				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 
-	//DUAL (or more!) WIELDING
+	//Dual wielding handling. Not the biggest fan of this, but it's here. Dual berettas not included
 	var/loop_counter = 0
 	if(ishuman(user) && user.a_intent == INTENT_HARM && !dual_wielded_gun)
 		var/mob/living/carbon/human/our_cowboy = user
@@ -386,24 +387,42 @@
 
 	//get current firemode
 	var/current_firemode = gun_firemodes[firemode_index]
+	//FIREMODE_OTHER and its sister directs you to another proc for special handling
 	if(current_firemode == FIREMODE_OTHER)
 		return process_other(target, user, message, flag, params, zone_override, bonus_spread)
 	if(current_firemode == FIREMODE_OTHER_TWO)
 		return process_other_two(target, user, message, flag, params, zone_override, bonus_spread)
 
+	//if all of that succeded, we finally get to process firing
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
 
 /obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
 	return //use this for 'underbarrels!!
 
 /obj/item/gun/proc/process_other_two(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return //reserved in case anoher fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
+	return //reserved in case another fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
 
+/**
+ * Handles everything involving firing.
+ * * gun.dm is still a fucking mess, and I will document everything next time i get to it... for now this will suffice.
+ *
+ * Returns TRUE or FALSE depending on if it actually fired a shot.
+ * Arguments:
+ * * target - The atom we are trying to hit.
+ * * user - The living mob firing the gun, if any.
+ * * message - Do we show the usual messages? eg. "x fires the y!"
+ * * params - Is the params string from byond [/atom/proc/Click] code, see that documentation.
+ * * zone_override - The bodypart we attempt to hit, sometimes hits another.
+ * * bonus_spread - Adds this value to spread, in this case used by dual wielding.
+ * * burst_firing - Not to be confused with currently_firing_burst. This var is TRUE when we are doing a burst except for the first shot in a burst, as to override the spam burst checks.
+ * * spread_override - Bullet spread is forcibly set to this. This is usually because of bursts attempting to share the same burst trajectory.
+ * * iteration - Which shot in a burst are we in.
+ */
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	//OKAY, this prevents us from firing until our cooldown is done
 	if(!burst_firing) //if we're firing a burst, dont interfere to avoid issues
 		if(current_cooldown)
-			return
+			return FALSE
 
 	//Check one last time for safeties...
 	if(!can_shoot())
@@ -486,51 +505,69 @@
 
 /obj/item/gun/proc/reset_current_cooldown()
 	current_cooldown = FALSE
+/obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
+	if(!safety)
+		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		playsound(src, dry_fire_sound, 30, TRUE)
+		return
+	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
 
-/obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM) //Flogging
-		if(bayonet)
-			M.attackby(bayonet, user)
-			return
-		else
-			return ..()
-	return
 
-/obj/item/gun/attack_obj(obj/O, mob/user)
-	if(user.a_intent == INTENT_HARM)
-		if(bayonet)
-			O.attackby(bayonet, user)
-			return
-	return ..()
+/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
+	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
+	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 
-/obj/item/gun/attackby(obj/item/I, mob/user, params)
-	if(user.a_intent == INTENT_HARM)
-		return ..()
-	else if(istype(I, /obj/item/flashlight/seclite))
-		if(!can_flashlight)
-			return ..()
-		var/obj/item/flashlight/seclite/S = I
-		if(!gun_light)
-			if(!user.transferItemToLoc(I, src))
-				return
-			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
-			set_gun_light(S)
-			update_gunlight()
-			alight = new(src)
-			if(loc == user)
-				alight.Grant(user)
-	else if(istype(I, /obj/item/kitchen/knife))
-		var/obj/item/kitchen/knife/K = I
-		if(!can_bayonet || !K.bayonet || bayonet) //ensure the gun has an attachment point available, and that the knife is compatible with it.
-			return ..()
-		if(!user.transferItemToLoc(I, src))
-			return
-		to_chat(user, "<span class='notice'>You attach [K] to [src]'s bayonet lug.</span>")
-		bayonet = K
-		update_appearance()
+	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 
+	if(muzzle_flash && !muzzle_flash.applied)
+		handle_muzzle_flash(user, muzzle_angle)
+
+	if(wielded_fully)
+		simulate_recoil(user, recoil, actual_angle)
+	else if(!wielded_fully)
+		simulate_recoil(user, recoil_unwielded, actual_angle)
+
+	if(suppressed)
+		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
 	else
-		return ..()
+		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
+		if(message)
+			if(pointblank)
+				user.visible_message(
+						span_danger("[user] fires [src] point blank at [pbtarget]!"),
+						span_danger("You fire [src] point blank at [pbtarget]!"),
+						span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
+				)
+				to_chat(pbtarget, "<span class='userdanger'>[user] fires [src] point blank at you!</span>")
+				if(pb_knockback > 0 && ismob(pbtarget))
+					var/mob/PBT = pbtarget
+					var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
+					PBT.throw_at(throw_target, pb_knockback, 2)
+			else
+				user.visible_message(
+						span_danger("[user] fires [src]!"),
+						blind_message = span_hear("You hear a gunshot!"),
+						vision_distance = COMBAT_MESSAGE_RANGE,
+						ignored_mobs = user
+				)
+
+	//cloud sent a meme in the discord. i dont know if its true, but i made this piece of code in honor of it
+	var/mob/living/carbon/human/living_human = user
+	if(istype(living_human))
+		if(!living_human.wear_neck)
+			return //if nothing on the neck, don't do anything
+		var/current_month = text2num(time2text(world.timeofday, "MM"))
+		var/static/regex/bian = regex("(?:^\\W*lesbian)", "i")
+
+		if(current_month == JUNE)
+			return //if it isn't june, don't do this easter egg
+
+		if(!findtext(bian, living_human.generic_adjective))
+			return //dont bother if we already are affected by it
+
+		if(istype(living_human.wear_neck, /obj/item/clothing/neck/tie/lesbian) || living_human.wear_neck.icon_state == "lesbian")
+			var/use_space = "[living_human.generic_adjective ? " " : null]"
+			living_human.generic_adjective = "lesbian[use_space][living_human.generic_adjective]" //i actually don't remember the meme. it was something like lesbians will stop working if they see another with a gun. or something.
 
 /obj/item/gun/CtrlClick(mob/user)
 	. = ..()
@@ -754,7 +791,8 @@
 	if(chambered && chambered.BB && can_trigger_gun(user))
 		chambered.BB.damage *= 3
 		//Check is here for safeties and such, brain will be removed after
-		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+		if(!pre_fire(target, user, TRUE, params, BODY_ZONE_HEAD))
+			return
 
 		var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
 		if(brain_to_blast)
@@ -784,8 +822,6 @@
 
 // We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
-	if(.)
-		recoil_bonus += .
 	return recoil_bonus
 
 // We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
@@ -799,9 +835,11 @@
 	// do we have poor aim
 	var/poor_aim = FALSE
 
-	//do we have a return code? If so, set sprd to it because it means a subtype's proc messed with it
-	if(.)
-		sprd = .
+	//do we have bonus_spread ? If so, set sprd to it because it means a subtype's proc messed with it
+	sprd += bonus_spread
+
+	//reset bonus_spread for poor aim...
+	bonus_spread = 0
 
 	// if we have poor aim, we fuck the shooter over
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
@@ -822,8 +860,12 @@
 	//clamp it down to avoid guns with negative spread to have worse recoil...
 	sprd = clamp(sprd, 0, INFINITY)
 
-	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this
-	sprd *= (rand() - 0.5)
+	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this - update,i have commented it out, however it appears be dapening spread. weird.
+	//sprd *= (rand() - 0.5)
+
+ 	//coin flip if we mutiply output by -1 so spread isn't JUST to the right
+	if(prob(50))
+		sprd *= -1
 
 	// then we round it up and send it!
 	sprd = round(sprd)
@@ -844,6 +886,7 @@
 /obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
 	var/atom/movable/flash_loc = user
 	var/prev_light = light_range
+
 	if(!light_on && (light_range <= muzzle_flash_lum))
 		set_light_range(muzzle_flash_lum)
 		set_light_color(muzzle_flash_color)

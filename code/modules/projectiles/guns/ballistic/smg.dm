@@ -189,13 +189,13 @@
 	return secondary.can_shoot()
 
 /obj/item/gun/ballistic/automatic/smg/m90/on_wield(obj/item/source, mob/user)
-	. = ..()
+	wielded = TRUE
 	secondary.wielded = TRUE
+	INVOKE_ASYNC(src, .proc.do_wield, user)
 
 /obj/item/gun/ballistic/automatic/smg/m90/do_wield(mob/user)
 	. = ..()
-	if(.)
-		secondary.wielded_fully = TRUE
+	secondary.wielded_fully = wielded_fully
 
 /// triggered on unwield of two handed item
 /obj/item/gun/ballistic/automatic/smg/m90/on_unwield(obj/item/source, mob/user)
@@ -224,7 +224,7 @@
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
-	
+
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
@@ -348,24 +348,19 @@
 
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/total_recoil
-	if(.)
-		total_recoil += .
+	var/total_recoil = recoil_bonus
 	if(!stock_folded)
 		total_recoil += stock_recoil_bonus
 
-	. = total_recoil
-	return ..()
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_spread(mob/user, bonus_spread)
-	var/total_spread
-	if(.)
-		total_spread += .
+	var/total_spread = bonus_spread
+
 	if(!stock_folded)
 		total_spread += stock_spread_bonus
 
-	. = total_spread
-	return ..()
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/update_icon_state()
 	. = ..()

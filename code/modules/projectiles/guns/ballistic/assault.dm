@@ -16,23 +16,21 @@
 
 /obj/item/gun/ballistic/automatic/assault/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = 2
-	var/total_recoil
-	if(.)
-		total_recoil += .
+	var/total_recoil = recoil_bonus
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
-	. = total_recoil
-	return ..()
+
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/automatic/assault/calculate_spread(mob/user, bonus_spread)
 	var/gunslinger_bonus = 16
-	var/total_spread
-	if(.)
-		total_spread += .
+	var/total_spread = bonus_spread
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
-	. = total_spread
-	return ..()
+
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -121,7 +119,7 @@
 	weapon_weight = WEAPON_MEDIUM
 	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto", FIREMODE_OTHER = "hybrid")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
-	
+
 	fire_select_icon_state_prefix = "swisschesse_"
 
 	w_class = WEIGHT_CLASS_BULKY
@@ -136,7 +134,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic and laser system, along with (at the time) a very advanced ammo counter on the side. Before Eoehoma's demise, it was very iconic as the bounty hunter's rifle of choice for a century. Nowdays they are often broken down, so these end up in collector's hands, or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. However, if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
+	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "e40"
 	item_state = "e40"
@@ -178,7 +176,6 @@
 		return ..()
 	return secondary.do_autofire(source, target, shooter, params)
 
-
 /obj/item/gun/ballistic/automatic/assault/e40/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
@@ -218,13 +215,13 @@
 	return secondary.can_shoot()
 
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
-	. = ..()
+	wielded = TRUE
 	secondary.wielded = TRUE
+	INVOKE_ASYNC(src, .proc.do_wield, user)
 
 /obj/item/gun/ballistic/automatic/assault/e40/do_wield(mob/user)
 	. = ..()
-	if(.)
-		secondary.wielded_fully = TRUE
+	secondary.wielded_fully = wielded_fully
 
 /// triggered on unwield of two handed item
 /obj/item/gun/ballistic/automatic/assault/e40/on_unwield(obj/item/source, mob/user)

@@ -100,10 +100,10 @@
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
 
 /obj/item/gun/ballistic/rifle/illestren/blow_up(mob/user)
-	. = 0
+	. = FALSE
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		. = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/factory
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, this example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in 8x50mmR."

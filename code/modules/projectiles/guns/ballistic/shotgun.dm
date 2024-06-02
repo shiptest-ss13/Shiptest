@@ -48,13 +48,12 @@
 
 /obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = -1
-	var/total_recoil
-	if(.)
-		total_recoil += .
+	var/total_recoil = recoil_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+
+	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -751,10 +750,10 @@
 		wield_slowdown = 0.5
 		wield_delay = 0.5 SECONDS
 
-		spread_unwielded = 5 //mostly the hunting revolver stats
-		spread = 2
+		spread_unwielded = 20 //mostly the hunting revolver stats
+		spread = 6
 		recoil = 2
-		recoil_unwielded = 3
+		recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."

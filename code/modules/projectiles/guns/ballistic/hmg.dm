@@ -118,27 +118,25 @@
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = 2
-	var/total_recoil
-	if(.)
-		total_recoil += .
+	var/total_recoil = recoil_bonus
+
 	if(bipod_deployed)
 		total_recoil += deploy_recoil_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_recoil += gunslinger_bonus
-	. = total_recoil
-	return ..()
+
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
 	var/gunslinger_bonus = 20
-	var/total_spread
-	if(.)
-		total_spread += .
+	var/total_spread = bonus_spread
+
 	if(bipod_deployed)
 		total_spread += deploy_spread_bonus
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
 		total_spread += gunslinger_bonus
-	. = total_spread
-	return ..()
+
+	return ..(user, total_spread)
 
 
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()

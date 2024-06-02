@@ -440,25 +440,23 @@
 
 /obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = -1
-	var/total_recoil
-	if(.)
-		total_recoil += .
+	var/total_recoil = recoil_bonus
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	. = total_recoil
-	return ..()
+
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -4
-	var/total_spread
-	if(.)
-		total_spread += .
+	var/gunslinger_bonus = -8
+	var/total_spread = bonus_spread
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
 		total_spread = clamp(total_spread,0,INFINITY)
-	. = total_spread
-	return ..()
+
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -467,12 +465,6 @@
 /obj/item/gun/ballistic/revolver/proc/tryflip(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		if(COOLDOWN_FINISHED(src, flip_cooldown))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>While trying to flip the [src] you pull the trigger and accidently shoot yourself!</span>")
-				var/flip_mistake = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST)
-				process_fire(user, user, FALSE, flip_mistake)
-				user.dropItemToGround(src, TRUE)
-				return
 			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
 			SpinAnimation(5,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
@@ -503,8 +495,8 @@
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
-
-/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+//...why...?
+/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
@@ -593,17 +585,19 @@
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
 	wield_slowdown = 0.5
-	spread_unwielded = 5
-	spread = 2
+	spread_unwielded = 20
+	spread = 6
 	recoil = 2
 	recoil_unwielded = 4
-
-// A gun to play Russian Roulette!
-// You can spin the chamber to randomize the position of the bullet.
 
 /obj/item/gun/ballistic/revolver/ashhand/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+// A gun to play Russian Roulette!
+// You can spin the chamber to randomize the position of the bullet.
+
+//TODO: this is stupid, but used in ONE fucking ruin. Remember to remove when you aren't afraid to do a ton of path changes.
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
@@ -729,6 +723,7 @@
 		)
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
