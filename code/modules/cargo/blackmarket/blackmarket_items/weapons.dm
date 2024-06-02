@@ -232,7 +232,7 @@
 
 /datum/blackmarket_item/weapon/mecha_hades_ammo
 	name = "FNX-99 Incediary Ammo"
-	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine"
+	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."
 	item = /obj/item/mecha_ammo/incendiary
 
 	price_min = 250

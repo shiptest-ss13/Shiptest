@@ -262,6 +262,9 @@ weapons
 	name = "MK4 ion cannon kit"
 	desc = "Contains a heavy ion cannon for disabling technology in large blasts."
 	cost = 3000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	)
 
 /datum/supply_pack/mech/weapon/scattershot
 	name = "LBX AC 10 kit"
