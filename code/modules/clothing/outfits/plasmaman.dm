@@ -17,7 +17,7 @@
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman/botany
 	uniform = /obj/item/clothing/under/plasmaman/botany
-	gloves = /obj/item/clothing/gloves/color/botanic_leather/plasmaman
+	gloves = /obj/item/clothing/gloves/botanic_leather/plasmaman
 
 /datum/outfit/plasmaman/curator
 	name = "Curator Plasmaman"

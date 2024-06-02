@@ -1,6 +1,8 @@
 /datum/plant_gene
 	var/name
 	var/mutability_flags = PLANT_GENE_EXTRACTABLE | PLANT_GENE_REMOVABLE ///These flags tells the genemodder if we want the gene to be extractable, only removable or neither.
+	/// The font awesome icon name representing the gene in the seed extractor UI (Once i port that -Fallcon)
+	var/icon = "dna"
 
 /datum/plant_gene/proc/get_name() // Used for manipulator display and gene disk name.
 	var/formatted_name
@@ -171,9 +173,15 @@
 
 // Various traits affecting the product.
 /datum/plant_gene/trait
+	/// The rate at which this trait affects something. This can be anything really - why? I dunno.
 	var/rate = 0.05
 	var/examine_line = ""
-	var/trait_id // must be set and equal for any two traits of the same type
+	/// Bonus lines displayed on examine.
+	var/description = ""
+	/// Flag - Traits that share an ID cannot be placed on the same plant.
+	var/trait_ids
+	/// Flag - Modifications made to the final product.
+	var/trait_flags
 
 /datum/plant_gene/trait/Copy()
 	var/datum/plant_gene/trait/G = ..()
@@ -184,15 +192,36 @@
 	if(!..())
 		return FALSE
 
-	for(var/datum/plant_gene/trait/R in S.genes)
-		if(trait_id && R.trait_id == trait_id)
+	for(var/datum/plant_gene/trait/trait in S.genes)
+		if(trait_ids & trait.trait_ids)
 			return FALSE
-		if(type == R.type)
+		if(type == trait.type)
 			return FALSE
 	return TRUE
 
-/datum/plant_gene/trait/proc/on_new(obj/item/reagent_containers/food/snacks/grown/G, newloc)
-	return
+/// Add on any unique examine text to the plant's examine text.
+/datum/plant_gene/trait/proc/examine(obj/item/our_plant, mob/examiner, list/examine_list)
+	SIGNAL_HANDLER
+
+	examine_list += span_info("[description]")
+
+/*
+ * on_new_plant is called for every plant trait on an /obj/item/grown or /obj/item/food/grown when initialized.
+ *
+ * our_plant - the source plant being created
+ * newloc - the loc of the plant
+ */
+/datum/plant_gene/trait/proc/on_new_plant(obj/item/our_plant, newloc)
+	// Plants should always have seeds, but if a plant gene is somehow being instantiated on a plant with no seed, stop initializing genes
+	// (Plants hold their genes on their seeds, so we can't really add them to something that doesn't exist)
+	if(isnull(our_plant.get_plant_seed()))
+		stack_trace("[our_plant] ([our_plant.type]) has a nulled seed value while trying to initialize [src]!")
+		return FALSE
+
+	// Add on any bonus lines on examine
+	if(description)
+		RegisterSignal(our_plant, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
+	return TRUE
 
 /datum/plant_gene/trait/proc/on_consume(obj/item/reagent_containers/food/snacks/grown/G, mob/living/carbon/target)
 	return
@@ -231,7 +260,7 @@
 	rate = 1.6
 	examine_line = "<span class='info'>It has a very slippery skin.</span>"
 
-/datum/plant_gene/trait/slip/on_new(obj/item/reagent_containers/food/snacks/grown/G, newloc)
+/datum/plant_gene/trait/slip/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
 	..()
 	if(istype(G) && ispath(G.trash, /obj/item/grown))
 		return
@@ -290,7 +319,7 @@
 	name = "Bioluminescence"
 	rate = 0.03
 	examine_line = "<span class='info'>It emits a soft glow.</span>"
-	trait_id = "glow"
+	trait_ids = GLOW_ID
 	var/glow_color = "#C3E381"
 
 /datum/plant_gene/trait/glow/proc/glow_range(obj/item/seeds/S)
@@ -299,7 +328,7 @@
 /datum/plant_gene/trait/glow/proc/glow_power(obj/item/seeds/S)
 	return max(S.potency*(rate + 0.01), 0.1)
 
-/datum/plant_gene/trait/glow/on_new(obj/item/reagent_containers/food/snacks/grown/G, newloc)
+/datum/plant_gene/trait/glow/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
 	. = ..()
 	G.light_system = MOVABLE_LIGHT
 	G.AddComponent(/datum/component/overlay_lighting, glow_range(G.seed), glow_power(G.seed), glow_color)
@@ -380,7 +409,7 @@
 	name = "Densified Chemicals"
 	rate = 2
 
-/datum/plant_gene/trait/maxchem/on_new(obj/item/reagent_containers/food/snacks/grown/G, newloc)
+/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
 	..()
 	G.reagents.maximum_volume *= rate
 
@@ -456,7 +485,7 @@
 	if(!(S.resistance_flags & FIRE_PROOF))
 		S.resistance_flags |= FIRE_PROOF
 
-/datum/plant_gene/trait/fire_resistance/on_new(obj/item/reagent_containers/food/snacks/grown/G, newloc)
+/datum/plant_gene/trait/fire_resistance/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
 	if(!(G.resistance_flags & FIRE_PROOF))
 		G.resistance_flags |= FIRE_PROOF
 
@@ -484,9 +513,29 @@
 			HY.update_appearance()
 			HY.visible_message("<span class='warning'>The [H.myseed.plantname] spreads!</span>")
 
+/// Makes the plant embed on thrown impact.
+/datum/plant_gene/trait/sticky
+	name = "Prickly Adhesion"
+	description = "It sticks to people when thrown, also passing reagents if stingy."
+	icon = "bandage"
+	trait_ids = THROW_IMPACT_ID
+
+/datum/plant_gene/trait/sticky/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
+
+	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
+	if(our_seed.get_gene(/datum/plant_gene/trait/stinging))
+		our_plant.embedding = EMBED_POINTY
+	else
+		our_plant.embedding = EMBED_HARMLESS
+	our_plant.updateEmbedding()
+	our_plant.throwforce = (our_seed.potency/20)
+
 /datum/plant_gene/trait/plant_type // Parent type
 	name = "you shouldn't see this"
-	trait_id = "plant_type"
+	trait_ids = PLANT_TYPE_ID
 
 /datum/plant_gene/trait/plant_type/weed_hardy
 	name = "Weed Adaptation"

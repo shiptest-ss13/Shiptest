@@ -44,8 +44,8 @@
 		dried_type = src.type
 
 	if(seed)
-		for(var/datum/plant_gene/trait/T in seed.genes)
-			T.on_new(src, loc)
+		for(var/datum/plant_gene/trait/trait in seed.genes)
+			trait.on_new_plant(src, loc)
 		seed.prepare_result(src)
 		transform *= TRANSFORM_USING_VARIABLE(seed.potency, 100) + 0.5 //Makes the resulting produce's sprite larger or smaller based on potency!
 		add_juice()
