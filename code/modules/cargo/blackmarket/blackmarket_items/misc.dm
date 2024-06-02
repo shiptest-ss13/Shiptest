@@ -61,7 +61,7 @@
 	availability_prob = 100
 	unlimited =  TRUE
 
-/datum/blackmarket_item/misc/spygass
+/datum/blackmarket_item/misc/spyglass
 	name = "Spy Glass Kit"
 	desc = "A set of trick glasses and a linked camera. Suit and dashing shades not included."
 	item = /obj/item/storage/box/rxglasses/spyglasskit

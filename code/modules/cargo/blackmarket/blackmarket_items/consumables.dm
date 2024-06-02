@@ -217,7 +217,7 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/ointment
-	name = "Burn ointment"
+	name = "Burn Ointment"
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
 
@@ -236,3 +236,13 @@
 	price_max = 2000
 	stock_max = 4
 	availability_prob = 30
+
+/datum/blackmarket_item/consumable/secret_sauce
+	name = "Family Sauce Recipe"
+	desc = "This used to belong to a good friend of mine before the authorities did em in. Best goddamn sauce I've ever tasted, but I could never get it right myself. Maybe you can do it justice."
+	item = /obj/item/paper/secretrecipe
+
+	price_min = 1000
+	price_max = 2000
+	stock = 1
+	availability_prob = 20

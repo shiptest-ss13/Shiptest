@@ -63,11 +63,11 @@
 
 /datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Surgical Kit"
-	desc = "A set of high tech operating tools taken straight from a Cybersun research lab."
+	desc = "Somebody just left these high tech surgical tools unattended inside an operating room. Finders Keepers."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 
 	price_min = 2500
-	price_max = 4500
+	price_max = 6000
 	stock = 1
 	availability_prob = 25
 
