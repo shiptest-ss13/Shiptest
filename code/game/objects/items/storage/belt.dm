@@ -270,7 +270,15 @@
 		/obj/item/assembly/flash/handheld,
 		/obj/item/clothing/glasses,
 		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_box,
+		/obj/item/ammo_box/magazine,
+		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
+		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
+		/obj/item/ammo_box/a4570, //but not today
+		/obj/item/ammo_box/a858, //oh boy stripper clips too
+		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/a300,
+		/obj/item/ammo_box/aac_300blk_stripper,
+		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/reagent_containers/food/snacks/donut,
 		/obj/item/kitchen/knife/combat,
 		/obj/item/flashlight/seclite,
