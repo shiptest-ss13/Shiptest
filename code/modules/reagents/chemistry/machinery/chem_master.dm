@@ -7,7 +7,7 @@
 	icon_state = "mixer0"
 	base_icon_state = "mixer"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 20
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_master
 

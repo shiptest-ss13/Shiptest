@@ -272,6 +272,11 @@
 	update_appearance()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 
+/obj/item/restraints/legcuffs/beartrap/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	if(armed)
+		close_trap()
+	..()
+
 /obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
 	SIGNAL_HANDLER
 	if(armed && isturf(loc))
