@@ -109,8 +109,7 @@
 		/obj/item/clothing/suit/changshan_blue = 1,
 		/obj/item/clothing/suit/cheongsam_red = 1,
 		/obj/item/clothing/suit/cheongsam_blue = 1,
-		/obj/item/gohei = 1)
-	contraband = list(
+		/obj/item/gohei = 1,
 		/obj/item/clothing/suit/judgerobe = 1,
 		/obj/item/clothing/head/powdered_wig = 1,
 		/obj/item/clothing/glasses/sunglasses/garb = 2,
