@@ -129,6 +129,8 @@
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
 	desc = "A foppish dress jacket."

@@ -273,7 +273,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -497,7 +496,6 @@
 /obj/machinery/button/door{
 	id = "elderengineshuts";
 	name = "Engine Shutters";
-	dir = 2;
 	pixel_x = 7;
 	pixel_y = 21
 	},
@@ -955,7 +953,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -1170,7 +1167,6 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -1242,7 +1238,6 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -1259,14 +1254,12 @@
 /obj/machinery/door/window/eastright{
 	dir = 8
 	},
-/obj/item/gun/ballistic/shotgun/flamingarrow{
-	pixel_y = -5
-	},
-/obj/item/gun/ballistic/shotgun/flamingarrow{
-	pixel_y = 0
-	},
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory,
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt{
 	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory{
+	pixel_y = -5
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -1275,7 +1268,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -1774,7 +1766,6 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "elderatriumshuts"
 	},
 /turf/open/floor/plating,
@@ -2187,17 +2178,17 @@
 /obj/machinery/door/window{
 	dir = 8
 	},
-/obj/item/gun/ballistic/rifle/illestren{
+/obj/item/gun/ballistic/rifle/illestren/factory{
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/obj/item/gun/ballistic/rifle/illestren/factory{
 	pixel_x = -4;
 	pixel_y = -5
 	},
-/obj/item/gun/ballistic/rifle/illestren{
+/obj/item/gun/ballistic/rifle/illestren/factory{
 	pixel_x = -4;
 	pixel_y = -1
-	},
-/obj/item/gun/ballistic/rifle/illestren{
-	pixel_x = -4;
-	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -2278,7 +2269,6 @@
 	pixel_x = 4
 	},
 /obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = 0;
 	pixel_x = -9
 	},
 /obj/item/reagent_containers/food/snacks/meat/steak{
@@ -2542,9 +2532,7 @@
 	pixel_x = 3;
 	pixel_y = -6
 	},
-/obj/item/storage/toolbox/fishing{
-	pixel_y = 0
-	},
+/obj/item/storage/toolbox/fishing,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "Fu" = (
@@ -2926,7 +2914,6 @@
 	pixel_x = -2
 	},
 /obj/item/weldingtool{
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /turf/open/floor/wood/ebony,
@@ -3015,8 +3002,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/medical/glass{
-	name = "Medical Bay";
-	dir = 2
+	name = "Medical Bay"
 	},
 /obj/effect/turf_decal/siding/blue/end{
 	dir = 1
@@ -3073,7 +3059,6 @@
 	pixel_x = 21
 	},
 /obj/item/binoculars{
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/megaphone{
@@ -3497,8 +3482,7 @@
 	pixel_x = 5
 	},
 /obj/item/cultivator/rake{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
@@ -3763,8 +3747,7 @@
 	pixel_y = -4
 	},
 /obj/item/pickaxe{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /obj/item/pickaxe{
 	pixel_x = 1;
