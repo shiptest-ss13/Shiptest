@@ -214,7 +214,7 @@
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
 
-/obj/item/grown/novaflower/Initialize(mapload,nogenes)
+/obj/item/seeds/sunflower/novaflower/Initialize(mapload,nogenes)
 	. = ..()
 	if(!nogenes)
 		unset_mutability(/datum/plant_gene/trait/attack/novaflower_attack, PLANT_GENE_REMOVABLE)
