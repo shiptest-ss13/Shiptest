@@ -1053,7 +1053,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 /datum/action/innate/borer/make_chems
 	name = "Secrete Chemicals"
 	desc = "Push some chemicals into your host's bloodstream."
-	icon_icon = 'icons/obj/chemical.dmi'
+	icon_icon = 'icons/obj/chemical/chem_machines.dmi'
 	button_icon_state = "minidispenser"
 
 /datum/action/innate/borer/make_chems/Activate()

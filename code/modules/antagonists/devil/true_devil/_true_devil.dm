@@ -113,11 +113,6 @@
 /mob/living/carbon/true_devil/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null)
 	return 666
 
-/mob/living/carbon/true_devil/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0)
-	if(mind && has_bane(BANE_LIGHT))
-		mind.disrupt_spells(-500)
-		return ..() //flashes don't stop devils UNLESS it's their bane.
-
 /mob/living/carbon/true_devil/soundbang_act()
 	return 0
 
@@ -126,8 +121,7 @@
 
 
 /mob/living/carbon/true_devil/attacked_by(obj/item/I, mob/living/user, def_zone)
-	var/weakness = check_weakness(I, user)
-	apply_damage(I.force * weakness, I.damtype, def_zone)
+	apply_damage(I.force, I.damtype, def_zone)
 	var/message_verb = ""
 	if(I.attack_verb && I.attack_verb.len)
 		message_verb = "[pick(I.attack_verb)]"
@@ -213,8 +207,6 @@
 				b_loss = 150
 			if (EXPLODE_LIGHT)
 				b_loss = 30
-		if(has_bane(BANE_LIGHT))
-			b_loss *=2
 		adjustBruteLoss(b_loss)
 	return ..()
 

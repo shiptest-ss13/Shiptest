@@ -120,27 +120,36 @@
 	if(!.) //if the bottle wasn't caught
 		smash(hit_atom, throwingdatum?.thrower, TRUE)
 
-/obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
+/obj/item/reagent_containers/food/drinks/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	smash()
+	..()
+
+/obj/item/reagent_containers/food/drinks/proc/smash(atom/target = FALSE, mob/thrower = FALSE, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
+	if(QDELING(src) || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
-	if(bartender_check(target) && ranged)
-		return
-	var/obj/item/broken_bottle/B = new (loc)
-	B.icon_state = icon_state
-	var/icon/I = new(icon, icon_state)
-	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
-	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
-	B.icon = I
-	B.name = "broken [name]"
+	if(target)
+		if(bartender_check(target) && ranged)
+			return
+	var/obj/item/broken_bottle/smashed_bottle = new (loc)
+	if(!ranged && thrower)
+		thrower.put_in_hands(smashed_bottle)
+	smashed_bottle.icon_state = icon_state
+	var/icon/new_icon = new(icon, icon_state)
+	new_icon.Blend(smashed_bottle.broken_outline, ICON_OVERLAY, rand(5), 1)
+	new_icon.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+	smashed_bottle.icon = new_icon
+	smashed_bottle.name = "broken [name]"
 	if(prob(33))
-		var/obj/item/shard/S = new(drop_location())
-		target.Bumped(S)
+		var/obj/item/shard/new_shard = new(drop_location())
+		if(target)
+			target.Bumped(new_shard)
 	playsound(src, "shatter", 70, TRUE)
-	transfer_fingerprints_to(B)
+	transfer_fingerprints_to(smashed_bottle)
 	qdel(src)
-	target.Bumped(B)
+	if(target)
+		target.Bumped(smashed_bottle)
 
 /obj/item/reagent_containers/food/drinks/bullet_act(obj/projectile/P)
 	. = ..()

@@ -281,13 +281,15 @@
 
 //Signs
 /obj/structure/sign/mining
-	name = "\improper Nanotrasen mining corps sign"
-	desc = "A sign of relief for weary miners, and a warning for would-be competitors to Nanotrasen's mining claims."
-	icon_state = "nanotrasen"
+	name = "\improper N+S mining corps sign"
+	desc = "A sign of relief for weary miners, and a warning for would-be competitors to N+S's mining claims."
+	icon = 'icons/obj/nanotrasen_logos.dmi'
+	icon_state = "ns"
 
 /obj/structure/sign/mining/survival
 	name = "shelter sign"
 	desc = "A high visibility sign designating a safe shelter."
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "secureareaold"
 
 //Fluff

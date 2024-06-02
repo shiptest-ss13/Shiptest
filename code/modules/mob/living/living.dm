@@ -1144,15 +1144,6 @@
 			devilInfo.remove_soul(mind)
 		mind.soulOwner = mind
 
-/mob/living/proc/has_bane(banetype)
-	var/datum/antagonist/devil/devilInfo = is_devil(src)
-	return devilInfo && banetype == devilInfo.bane
-
-/mob/living/proc/check_weakness(obj/item/weapon, mob/living/attacker)
-	if(mind && mind.has_antag_datum(/datum/antagonist/devil))
-		return check_devil_bane_multiplier(weapon, attacker)
-	return 1 //This is not a boolean, it's the multiplier for the damage the weapon does.
-
 /mob/living/proc/check_acedia()
 	if(mind && mind.has_objective(/datum/objective/sintouched/acedia))
 		return TRUE

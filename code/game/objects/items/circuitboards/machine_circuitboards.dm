@@ -201,7 +201,18 @@
 	name = "Circulator/Heat Exchanger (Machine Board)"
 	icon_state = "engineering"
 	build_path = /obj/machinery/atmospherics/components/binary/circulator
+	var/pipe_layer = PIPING_LAYER_DEFAULT
 	req_components = list()
+
+/obj/item/circuitboard/machine/circulator/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/circulator/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/emitter
 	name = "Emitter (Machine Board)"
@@ -1470,9 +1481,21 @@
 
 /obj/item/circuitboard/machine/shuttle/heater
 	name = "Fueled Engine Heater (Machine Board)"
+	desc = "You can use mulitool to switch pipe layers"
 	build_path = /obj/machinery/atmospherics/components/unary/shuttle/heater
+	var/pipe_layer = PIPING_LAYER_DEFAULT
 	req_components = list(/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 1)
+
+/obj/item/circuitboard/machine/shuttle/heater/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/shuttle/heater/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"
@@ -1520,3 +1543,9 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/micro_laser = 2,
 	)
+
+/obj/item/circuitboard/machine/suit_storage_unit
+	name = "Suit Storage Unit"
+	icon_state = "engineering"
+	build_path = /obj/machinery/suit_storage_unit
+	req_components = list(/obj/item/stock_parts/micro_laser = 4)

@@ -7,6 +7,7 @@
 	color = "#CF3600" // rgb: 207, 54, 0
 	taste_description = "bitterness"
 	taste_mult = 1.2
+	category = "Toxin"
 	var/toxpwr = 1.5
 	var/silent_toxin = FALSE //won't produce a pain message when processed by liver/life() if there isn't another non-silent toxin present.
 
@@ -254,11 +255,13 @@
 	name = "Mindbreaker Toxin"
 	description = "A powerful hallucinogen. Not a thing to be messed with. For some mental patients. it counteracts their symptoms and anchors them to reality."
 	color = "#B31008" // rgb: 139, 166, 233
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	toxpwr = 0
 	taste_description = "sourness"
 
 /datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
-	M.hallucination += 5
+	if(!M.has_quirk(/datum/quirk/insanity))
+		M.hallucination += 5
 	return ..()
 
 /datum/reagent/toxin/plantbgone

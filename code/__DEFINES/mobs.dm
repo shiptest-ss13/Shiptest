@@ -128,10 +128,11 @@
 #define BODYTYPE_ORGANIC (1<<0)
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
-#define BODYTYPE_BOXHEAD (1<<3) //TV Head
-#define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
-#define BODYTYPE_KEPORI (1<<5) //Just Kepori
-#define BODYTYPE_VOX (1<<6) //Big Vox
+#define BODYTYPE_SNOUT (1<<3) //Snouts
+#define BODYTYPE_BOXHEAD (1<<4) //TV Head
+#define BODYTYPE_DIGITIGRADE (1<<5) //Lizard legs
+#define BODYTYPE_KEPORI (1<<6) //Just Kepori
+#define BODYTYPE_VOX (1<<7) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100

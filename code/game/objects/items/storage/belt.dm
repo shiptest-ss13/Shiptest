@@ -10,7 +10,7 @@
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
 	supports_variations = VOX_VARIATION
 	greyscale_icon_state = "belt"
@@ -698,6 +698,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 40
+	STR.max_combined_w_class = 40
 	STR.display_numerical_stacking = TRUE
 	STR.set_holdable(list(
 		/obj/item/ammo_casing
