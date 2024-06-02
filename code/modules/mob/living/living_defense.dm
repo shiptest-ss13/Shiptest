@@ -101,6 +101,9 @@
 			return 1
 	else
 		playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1) //Item sounds are handled in the item itself
+
+	if(body_position == LYING_DOWN) // physics says it's significantly harder to push someone by constantly chucking random furniture at them if they are down on the floor.
+		hitpush = FALSE
 	..()
 
 
