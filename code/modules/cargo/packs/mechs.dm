@@ -103,11 +103,9 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/drill
 	name = "Mech drill kit"
-	desc = "A trio of mechanized drills"
-	cost = 1500
+	desc = "Contains one mechanized drill for heavy duty digging."
+	cost = 500
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/drill,
-		/obj/item/mecha_parts/mecha_equipment/drill,
 		/obj/item/mecha_parts/mecha_equipment/drill
 	)
 
@@ -119,13 +117,11 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
 	)
 
-/datum/supply_pack/mech/equipment/scanners
+/datum/supply_pack/mech/equipment/scanner
 	name = "Mech scanner kit"
-	desc = "A trio of electronic mining scanners, graded to interface with a mech"
-	cost = 1000
+	desc = "An electronic mining scanner, graded to interface with a mech."
+	cost = 350
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/mining_scanner,
-		/obj/item/mecha_parts/mecha_equipment/mining_scanner,
 		/obj/item/mecha_parts/mecha_equipment/mining_scanner
 	)
 
@@ -155,10 +151,9 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/clamp
 	name = "Mech clamp kit"
-	desc = "Two clamps designed for mechanized freight hauling."
-	cost = 700
+	desc = "Contains a clamp designed for mechanized freight hauling."
+	cost = 350
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
 		/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp
 	)
 
@@ -203,7 +198,7 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
-	desc = "The components needed to upgrade an APLU MK-I to be spaceworthy"
+	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."
 	cost = 1500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
@@ -235,7 +230,7 @@ weapons
 	crate_name = "mech weapon crate"
 
 /datum/supply_pack/mech/weapon/pka
-	name = "Proto-Kinetic Accelerator kit"
+	name = "Mech Mounted Proto-Kinetic Accelerator kit"
 	desc = "A ranged mining attachment for any mech."
 	cost = 750
 	contains = list(
