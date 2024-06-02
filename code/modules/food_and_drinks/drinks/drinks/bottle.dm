@@ -481,14 +481,14 @@
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/cacao
-	name = "Tali's Pure Cacao Delight"
+	name = "Sharai's Pure Cacao Delight"
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "cacaobottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 100)
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/menthe
-	name = "Tali's Pure Mint Delight"
+	name = "Mora's Pure Mint Delight"
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "mintbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
