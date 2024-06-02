@@ -222,11 +222,8 @@
 	SIGNAL_HANDLER
 	if(!can_trigger(arrived))
 		return
-	// Flying = can't step on a mine
-	if(arrived.movement_type & FLYING)
-		return
-	//no cheap disarming
-	if(arrived.throwing && isitem(arrived))
+	// All other movment types rn can easily avoid it
+	if(!(arrived.movement_type == GROUND))
 		return
 	// Someone already on it
 	if(foot_on_mine?.resolve())
