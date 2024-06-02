@@ -157,7 +157,7 @@
 		if(hasPower())
 			time_to_open = 15 SECONDS
 
-		if(do_after(user, time_to_open, TRUE, src))
+		if(do_after(user, time_to_open, src))
 			if(density && !open(TRUE)) //The airlock is still closed, but something prevented it opening. (Another player noticed and bolted/welded the airlock in time!)
 				to_chat(user, span_warning("Despite your efforts, [src] managed to resist your attempts to open it!"))
 
