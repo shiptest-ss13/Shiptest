@@ -530,10 +530,10 @@
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
-/obj/item/reagent_containers/food/drinks/solgovcup
+/obj/item/reagent_containers/food/drinks/mug
 	name = "cup"
-	desc = "A cup with the Solarian Confederation's flag emblazoned on it."
-	icon_state = "solgovcup"
+	desc = "A mug. Stylishly plain."
+	icon_state = "tea_empty"
 	volume = 30
 	spillable = TRUE
 
