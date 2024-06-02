@@ -863,7 +863,7 @@
 	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this - update,i have commented it out, however it appears be dapening spread. weird.
 	//sprd *= (rand() - 0.5)
 
- 	//coin flip if we mutiply output by -1 so spread isn't JUST to the right
+	//coin flip if we mutiply output by -1 so spread isn't JUST to the right
 	if(prob(50))
 		sprd *= -1
 
