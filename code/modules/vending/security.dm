@@ -14,8 +14,7 @@
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/ammo_box/c9mm/rubbershot = 3,
 		/obj/item/ammo_box/c9mm = 1,
-		/obj/item/stock_parts/cell/gun = 3)
-	contraband = list(
+		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
 		/obj/item/storage/belt/security/webbing = 5,

@@ -64,8 +64,3 @@
 		qdel(I) // this sucks
 	else
 		return ..()
-
-/mob/living/simple_animal/pet/mothroach/check_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 9 // flyswatters deal 10x damage to mothroaches
-	return 0
