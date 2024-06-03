@@ -115,7 +115,7 @@
 	price_min = 500
 	price_max = 1000
 	stock = 1
-	availability_prob = 100
+	availability_prob = 20
 
 /datum/blackmarket_item/explosive/live_bomb/spawn_item(loc)
 	var/obj/machinery/syndicatebomb/bomb = ..()
@@ -123,11 +123,12 @@
 	return new bomb(loc)
 
 /datum/blackmarket_item/explosive/firecrackers
-	name = "Box of Firecrackers"
-	desc = "Nuclear Bomb brand extra strength firecrackers, painted in the signature blood red of Gorlex Marauder hardsuits. Enjoyed a successful, albiet short run in PGF space due to a certain event in 492 FS made selling them somewhat in poor taste."
-	item = /obj/item/storage/box/firecrackers
+	name = "Firecracker"
+	desc = "Nuclear Bomb brand extra strength firecrackers, painted in the signature blood red of Gorlex Marauder hardsuits. Enjoyed a successful, albeit short run in PGF space due to a certain event in 492 FS made selling them somewhat in poor taste."
+	item = /obj/item/grenade/firecracker
 
-	price_min = 500
-	price_max = 1000
-	stock = 1
-	availability_prob = 100
+	price_min = 50
+	price_max = 250
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 50
