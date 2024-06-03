@@ -128,9 +128,11 @@
 #define PLANT_GENE_REMOVABLE (1<<0)
 /// Plant genes that can be mutated randomly in strange seeds / due to high instability.
 #define PLANT_GENE_MUTATABLE (1<<1)
-/// Plant genes that can be graftable. Used in formatting text, as they need to be set to be graftable anyways.
-#define PLANT_GENE_GRAFTABLE (1<<2)
-#define PLANT_GENE_EXTRACTABLE (1<<3)
+#define PLANT_GENE_EXTRACTABLE (1<<2)
+
+/// -- Flags for traits. --
+/// Caps the plant's yield at 5 instead of 10.
+#define TRAIT_HALVES_YIELD (1<<0)
 
 //used to determine what rotation mode the ore redemption machine is in
 #define ORM_BOTH 0

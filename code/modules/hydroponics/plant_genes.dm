@@ -286,7 +286,7 @@
 	icon = "droplet"
 	description = "It may burst open from the internal pressure on impact."
 	trait_ids = THROW_IMPACT_ID | REAGENT_TRANSFER_ID | ATTACK_SELF_ID
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_GRAFTABLE
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 // Register a signal that our plant can be squashed on add.
 /datum/plant_gene/trait/squash/on_new_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, newloc)
@@ -341,7 +341,7 @@
 	description = "Watch your step around this."
 	icon = "person-falling"
 	rate = 1.6
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_GRAFTABLE
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 /datum/plant_gene/trait/slip/on_new_plant(obj/item/our_plant, newloc)
 	. = ..()
@@ -376,7 +376,7 @@
 	description = "It can electrocute on interaction or recharge batteries when eaten."
 	icon = "bolt"
 	rate = 0.2
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_GRAFTABLE
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 /datum/plant_gene/trait/cell_charge/on_new_plant(obj/item/our_plant, newloc)
 	. = ..()
@@ -446,7 +446,7 @@
 	rate = 0.03
 	description = "It emits a soft glow."
 	trait_ids = GLOW_ID
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_GRAFTABLE
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 	var/glow_color = "#C3E381"
 
 /datum/plant_gene/trait/glow/proc/glow_range(obj/item/seeds/S)
@@ -460,10 +460,13 @@
 	G.light_system = MOVABLE_LIGHT
 	G.AddComponent(/datum/component/overlay_lighting, glow_range(G.seed), glow_power(G.seed), glow_color)
 
+/*
+ * Makes plant emit darkness. (Purple-ish shadows)
+ * Adds - (potency * (rate * 0.2)) light power to products.
+ */
 /datum/plant_gene/trait/glow/shadow
-	//makes plant emit slightly purple shadows
-	//adds -potency*(rate*0.2) light power to products
 	name = "Shadow Emission"
+	icon = "lightbulb-o"
 	rate = 0.04
 	glow_color = "#AAD84B"
 
@@ -513,7 +516,7 @@
 	description = "It causes people to teleport on interaction."
 	icon = "right-left"
 	rate = 0.1
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_GRAFTABLE
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 /datum/plant_gene/trait/teleport/on_new_plant(obj/item/our_plant, newloc)
 	. = ..()
@@ -567,80 +570,180 @@
 		new /obj/effect/decal/cleanable/molten_object(T) //Leave a pile of goo behind for dramatic effect...
 		qdel(our_plant)
 
-
+/**
+ * A plant trait that causes the plant's capacity to double.
+ *
+ * When harvested, the plant's individual capacity is set to double it's default.
+ */
 /datum/plant_gene/trait/maxchem
-	// 2x to max reagents volume.
 	name = "Densified Chemicals"
+	description = "The reagent volume is doubled."
+	icon = "flask-vial"
 	rate = 2
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
-	..()
-	G.reagents.maximum_volume *= rate
+/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
 
+	var/obj/item/reagent_containers/food/snacks/grown/grown_plant = our_plant
+	if(istype(grown_plant, /obj/item/reagent_containers/food/snacks/grown))
+		//Grown foods use the edible component so we need to change their max_volume var
+		grown_plant.max_volume *= rate
+	else
+		//Grown inedibles however just use a reagents holder, so.
+		our_plant.reagents?.maximum_volume *= rate
+
+/// Allows a plant to be harvested multiple times.
 /datum/plant_gene/trait/repeated_harvest
 	name = "Perennial Growth"
+	description = "It may be harvested multiple times from the same plant."
+	icon = "cubes-stacked"
+	/// Don't allow replica pods to be multi harvested, please.
+	seed_blacklist = list(
+		/obj/item/seeds/replicapod,
+	)
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/repeated_harvest/can_add(obj/item/seeds/S)
-	if(!..())
-		return FALSE
-	if(istype(S, /obj/item/seeds/replicapod))
-		return FALSE
-	return TRUE
-
+/*
+ * Allows a plant to be turned into a battery when cabling is applied.
+ * 100 potency plants are made into 2 mj batteries.
+ * Plants with electrical activity has their capacities massively increased (up to 40 mj at 100 potency)
+ */
 /datum/plant_gene/trait/battery
 	name = "Capacitive Cell Production"
+	description = "It can work like a power cell when wired properly."
+	icon = "car-battery"
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
+	/// The number of cables needed to make a battery.
+	var/cables_needed_per_battery = 5
 
-/datum/plant_gene/trait/battery/on_attackby(obj/item/reagent_containers/food/snacks/grown/G, obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/cable_coil))
-		var/obj/item/stack/cable_coil/C = I
-		if(C.use(5))
-			to_chat(user, "<span class='notice'>You add some cable to [G] and slide it inside the battery encasing.</span>")
-			var/obj/item/stock_parts/cell/potato/pocell = new /obj/item/stock_parts/cell/potato(user.loc)
-			pocell.icon_state = G.icon_state
-			pocell.maxcharge = G.seed.potency * 20
+/datum/plant_gene/trait/battery/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
 
-			// The secret of potato supercells!
-			var/datum/plant_gene/trait/cell_charge/CG = G.seed.get_gene(/datum/plant_gene/trait/cell_charge)
-			if(CG) // Cell charge max is now 40MJ or otherwise known as 400KJ (Same as bluespace powercells)
-				pocell.maxcharge *= CG.rate*100
-			pocell.charge = pocell.maxcharge
-			pocell.name = "[G.name] battery"
-			pocell.desc = "A rechargeable plant-based power cell. This one has a rating of [DisplayEnergy(pocell.maxcharge)], and you should not swallow it."
+	RegisterSignal(our_plant, COMSIG_PARENT_ATTACKBY, PROC_REF(make_battery))
 
-			if(G.reagents.has_reagent(/datum/reagent/toxin/plasma, 2))
-				pocell.rigged = TRUE
+/*
+ * When a plant with this gene is hit (attackby) with cables, we turn it into a battery.
+ *
+ * our_plant - our plant being hit
+ * hit_item - the item we're hitting the plant with
+ * user - the person hitting the plant with an item
+ */
+/datum/plant_gene/trait/battery/proc/make_battery(obj/item/our_plant, obj/item/hit_item, mob/user)
+	SIGNAL_HANDLER
 
-			qdel(G)
-		else
-			to_chat(user, "<span class='warning'>You need five lengths of cable to make a [G] battery!</span>")
+	if(!istype(hit_item, /obj/item/stack/cable_coil))
+		return
 
+	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
+	var/obj/item/stack/cable_coil/cabling = hit_item
+	if(!cabling.use(cables_needed_per_battery))
+		to_chat(user, span_warning("You need five lengths of cable to make a [our_plant] battery!"))
+		return
 
+	to_chat(user, span_notice("You add some cable to [our_plant] and slide it inside the battery encasing."))
+	var/obj/item/stock_parts/cell/potato/pocell = new /obj/item/stock_parts/cell/potato(user.loc)
+	pocell.icon = our_plant.icon // Just in case the plant icons get spread out in different files eventually, this trait won't cause error sprites (also yay downstreams)
+	pocell.icon_state = our_plant.icon_state
+	pocell.maxcharge = our_seed.potency
+
+	// The secret of potato supercells!
+	var/datum/plant_gene/trait/cell_charge/electrical_gene = our_seed.get_gene(/datum/plant_gene/trait/cell_charge)
+	if(electrical_gene) // Cell charge max is now 40MJ or otherwise known as 400KJ (Same as bluespace power cells)
+		pocell.maxcharge *= (electrical_gene.rate * 100)
+
+	pocell.charge = pocell.maxcharge
+	pocell.name = "[our_plant.name] battery"
+	pocell.desc = "A rechargeable plant-based power cell. This one has a rating of [display_energy(pocell.maxcharge)], and you should not swallow it."
+
+	if(our_plant.reagents.has_reagent(/datum/reagent/toxin/plasma, 2))
+		pocell.rigged = TRUE
+
+	qdel(our_plant)
+
+/*
+ * Injects a number of chemicals from the plant when you throw it at someone or they slip on it.
+ * At 0 potency it can inject 1 unit of its chemicals, while at 100 potency it can inject 20 units.
+ */
 /datum/plant_gene/trait/stinging
 	name = "Hypodermic Prickles"
+	description = "It stings, passing some reagents in the process."
+	icon = "syringe"
+	trait_ids = REAGENT_TRANSFER_ID
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/stinging/on_slip(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
-	on_throw_impact(G, target)
+/datum/plant_gene/trait/stinging/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
 
-/datum/plant_gene/trait/stinging/on_throw_impact(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
-	if(isliving(target) && G.reagents && G.reagents.total_volume)
-		var/mob/living/L = target
-		if(L.reagents && L.can_inject(null, 0))
-			var/injecting_amount = max(1, G.seed.potency*0.2) // Minimum of 1, max of 20
-			G.reagents.trans_to(L, injecting_amount, method = INJECT)
-			to_chat(target, "<span class='danger'>You are pricked by [G]!</span>")
-			log_combat(G, L, "pricked and attempted to inject reagents from [G] to [L]. Last touched by: [G.fingerprintslast].")
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SLIP, PROC_REF(prickles_inject))
+	RegisterSignal(our_plant, COMSIG_MOVABLE_IMPACT, PROC_REF(prickles_inject))
 
+/*
+ * Injects a target with a number of reagents from our plant.
+ *
+ * our_plant - our plant that's injecting someone
+ * target - the atom being hit on thrown or slipping on our plant
+ */
+/datum/plant_gene/trait/stinging/proc/prickles_inject(obj/item/our_plant, atom/target)
+	SIGNAL_HANDLER
+
+	if(!isliving(target) || !our_plant.reagents?.total_volume)
+		return
+
+	var/mob/living/living_target = target
+	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
+	if(living_target.reagents && living_target.can_inject())
+		var/injecting_amount = max(1, our_seed.potency * 0.2) // Minimum of 1, max of 20
+		our_plant.reagents.trans_to(living_target, injecting_amount, methods = INJECT)
+		to_chat(target, span_danger("You are pricked by [our_plant]!"))
+		log_combat(our_plant, living_target, "pricked and attempted to inject reagents from [our_plant] to [living_target]. Last touched by: [our_plant.fingerprintslast].")
+		our_plant.investigate_log("pricked and injected [key_name(living_target)] and injected [injecting_amount] reagents at [AREACOORD(living_target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
+
+/// Explodes into reagent-filled smoke when squashed.
 /datum/plant_gene/trait/smoke
 	name = "Gaseous Decomposition"
+	description = "It can be smashed to turn its Liquid Contents into smoke."
+	icon = "cloud"
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/smoke/on_squash(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
-	var/datum/effect_system/smoke_spread/chem/S = new
+/datum/plant_gene/trait/smoke/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
+
+	RegisterSignal(our_plant, COMSIG_PLANT_ON_SQUASH, PROC_REF(make_smoke))
+
+/*
+ * Makes a cloud of reagent smoke.
+ *
+ * our_plant - our plant being squashed and smoked
+ * target - the atom the plant was squashed on
+ */
+/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/our_plant, atom/target)
+	SIGNAL_HANDLER
+
+	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
+	var/datum/effect_system/fluid_spread/smoke/chem/smoke = new ()
+	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	var/splat_location = get_turf(target)
-	var/smoke_amount = round(sqrt(G.seed.potency * 0.1), 1)
-	S.attach(splat_location)
-	S.set_up(G.reagents, smoke_amount, splat_location, 0)
-	S.start()
-	G.reagents.clear_reagents()
+	var/range = sqrt(our_seed.potency * 0.1)
+	smoke.attach(splat_location)
+	smoke.set_up(round(range), holder = our_plant, location = splat_location, carry = our_plant.reagents, silent = FALSE)
+	smoke.start(log = TRUE)
+	our_plant.reagents.clear_reagents()
+
+/// Makes the plant and its seeds fireproof. From lavaland plants.
+/datum/plant_gene/trait/fire_resistance
+	name = "Fire Resistance"
+	description = "Makes the seeds, plant and produce fireproof."
+	icon = "fire"
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 /datum/plant_gene/trait/fire_resistance // Lavaland
 	name = "Fire Resistance"
@@ -661,29 +764,106 @@
 	if(!(our_plant.resistance_flags & FIRE_PROOF))
 		our_plant.resistance_flags |= FIRE_PROOF
 
-///Invasive spreading lets the plant jump to other trays, the spreadinhg plant won't replace plants of the same type.
+/*
+ * Makes a cloud of reagent smoke.
+ *
+ * our_plant - our plant being squashed and smoked
+ * target - the atom the plant was squashed on
+ */
+/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/our_plant, atom/target)
+	SIGNAL_HANDLER
+
+	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
+	var/datum/effect_system/fluid_spread/smoke/chem/smoke = new ()
+	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
+	var/splat_location = get_turf(target)
+	var/range = sqrt(our_seed.potency * 0.1)
+	smoke.attach(splat_location)
+	smoke.set_up(round(range), holder = our_plant, location = splat_location, carry = our_plant.reagents, silent = FALSE)
+	smoke.start(log = TRUE)
+	our_plant.reagents.clear_reagents()
+
+/// Makes the plant and its seeds fireproof. From lavaland plants.
+/datum/plant_gene/trait/fire_resistance
+	name = "Fire Resistance"
+	description = "Makes the seeds, plant and produce fireproof."
+	icon = "fire"
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
+
+/datum/plant_gene/trait/fire_resistance/on_new_seed(obj/item/seeds/new_seed)
+	if(!(new_seed.resistance_flags & FIRE_PROOF))
+		new_seed.resistance_flags |= FIRE_PROOF
+
+/datum/plant_gene/trait/fire_resistance/on_removed(obj/item/seeds/old_seed)
+	if(old_seed.resistance_flags & FIRE_PROOF)
+		old_seed.resistance_flags &= ~FIRE_PROOF
+
+/datum/plant_gene/trait/fire_resistance/on_new_plant(obj/item/our_plant, newloc)
+	. = ..()
+	if(!.)
+		return
+
+	if(!(our_plant.resistance_flags & FIRE_PROOF))
+		our_plant.resistance_flags |= FIRE_PROOF
+
+/// Invasive spreading lets the plant jump to other trays, and the spreading plant won't replace plants of the same type.
 /datum/plant_gene/trait/invasive
 	name = "Invasive Spreading"
+	description = "It attempts to spread around if not contained."
+	icon = "virus"
+	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/invasive/on_grow(obj/machinery/hydroponics/H)
+/datum/plant_gene/trait/invasive/on_new_seed(obj/item/seeds/new_seed)
+	RegisterSignal(new_seed, COMSIG_SEED_ON_GROW, PROC_REF(try_spread))
+
+/datum/plant_gene/trait/invasive/on_removed(obj/item/seeds/old_seed)
+	UnregisterSignal(old_seed, COMSIG_SEED_ON_GROW)
+
+/*
+ * Attempt to find an adjacent tray we can spread to.
+ *
+ * our_seed - our plant's seed, what spreads to other trays
+ * our_tray - the hydroponics tray we're currently in
+ */
+/datum/plant_gene/trait/invasive/proc/try_spread(obj/item/seeds/our_seed, obj/machinery/hydroponics/our_tray)
+	SIGNAL_HANDLER
+
+	if(prob(100 - (5 * (11 - our_seed.production))))
+		return
+
 	for(var/step_dir in GLOB.alldirs)
-		var/obj/machinery/hydroponics/HY = locate() in get_step(H, step_dir)
-		if(HY && prob(15))
-			if(HY.myseed) // check if there is something in the tray.
-				if(HY.myseed.type == H.myseed.type && HY.dead != 0)
-					continue //It should not destroy its owm kind.
-				qdel(HY.myseed)
-				HY.myseed = null
-			HY.myseed = H.myseed.Copy()
-			HY.age = 0
-			HY.dead = 0
-			HY.plant_health = HY.myseed.endurance
-			HY.lastcycle = world.time
-			HY.harvest = 0
-			HY.weedlevel = 0 // Reset
-			HY.pestlevel = 0 // Reset
-			HY.update_appearance()
-			HY.visible_message("<span class='warning'>The [H.myseed.plantname] spreads!</span>")
+		var/obj/machinery/hydroponics/spread_tray = locate() in get_step(our_tray, step_dir)
+		if(spread_tray && prob(15))
+			if(!our_tray.Adjacent(spread_tray))
+				continue //Don't spread through things we can't go through.
+
+			spread_seed(spread_tray, our_tray)
+
+/*
+ * Actually spread the plant to the tray we found in try_spread.
+ *
+ * target_tray - the tray we're spreading to
+ * origin_tray - the tray we're currently in
+ */
+/datum/plant_gene/trait/invasive/proc/spread_seed(obj/machinery/hydroponics/target_tray, obj/machinery/hydroponics/origin_tray)
+	if(target_tray.myseed) // Check if there's another seed in the next tray.
+		if(target_tray.myseed.type == origin_tray.myseed.type && target_tray.plant_status != HYDROTRAY_PLANT_DEAD)
+			return FALSE // It should not destroy its own kind.
+		target_tray.visible_message(span_warning("The [target_tray.myseed.plantname] is overtaken by [origin_tray.myseed.plantname]!"))
+		QDEL_NULL(target_tray.myseed)
+	target_tray.set_seed(origin_tray.myseed.Copy())
+	target_tray.age = 0
+	target_tray.set_plant_health(target_tray.myseed.endurance)
+	target_tray.lastcycle = world.time
+	target_tray.set_weedlevel(0, update_icon = FALSE) // Reset
+	target_tray.set_pestlevel(0) // Reset
+	target_tray.visible_message(span_warning("The [origin_tray.myseed.plantname] spreads!"))
+	if(target_tray.myseed)
+		target_tray.name = "[initial(target_tray.name)] ([target_tray.myseed.plantname])"
+	else
+		target_tray.name = initial(target_tray.name)
+
+	return TRUE
 
 /// Makes the plant embed on thrown impact.
 /datum/plant_gene/trait/sticky
@@ -705,21 +885,33 @@
 	our_plant.updateEmbedding()
 	our_plant.throwforce = (our_seed.potency/20)
 
-/datum/plant_gene/trait/plant_type // Parent type
+/datum/plant_gene/trait/carnivory
+	name = "Obligate Carnivory"
+	description = "Pests have positive effect on the plant health."
+	icon = "spider"
+
+/// Plant type traits. Incompatible with one another.
+/datum/plant_gene/trait/plant_type
 	name = "you shouldn't see this"
 	trait_ids = PLANT_TYPE_ID
+	mutability_flags = PLANT_GENE_EXTRACTABLE
 
+/// Weeds don't get annoyed by weeds in their tray.
 /datum/plant_gene/trait/plant_type/weed_hardy
 	name = "Weed Adaptation"
+	description = "It is a weed that needs no nutrients and doesn't suffer from other weeds."
+	icon = "seedling"
 
+/// Mushrooms need less light and have a minimum yield.
 /datum/plant_gene/trait/plant_type/fungal_metabolism
 	name = "Fungal Vitality"
+	description = "It is a mushroom that needs no water, less light and can't be overtaken by weeds."
+	icon = "droplet-slash"
 
-/datum/plant_gene/trait/plant_type/crystal		// WS edit - Crystals
-	name = "Crystalline Growing Patterns"
-
+/// Currently unused and does nothing. Appears in strange seeds.
 /datum/plant_gene/trait/plant_type/alien_properties
 	name ="?????"
+	icon = "reddit-alien"
 
-/datum/plant_gene/trait/plant_type/carnivory
-	name = "Obligate Carnivory"
+/datum/plant_gene/trait/plant_type/crystal
+	name = "Crystalline Growing Patterns"

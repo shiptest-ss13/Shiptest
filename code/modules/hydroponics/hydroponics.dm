@@ -199,7 +199,7 @@
 					adjustPests(-1 / rating)
 
 			else if(pestlevel >= 4)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-1 / rating)
 
 				else
