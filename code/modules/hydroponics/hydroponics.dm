@@ -266,10 +266,7 @@
 			update_appearance()
 
 		if(myseed && prob(5 * (11-myseed.production)))
-			for(var/g in myseed.genes)
-				if(istype(g, /datum/plant_gene/trait))
-					var/datum/plant_gene/trait/selectedtrait = g
-					selectedtrait.on_grow(src)
+			SEND_SIGNAL(myseed, COMSIG_SEED_ON_GROW, src)
 	return
 
 /obj/machinery/hydroponics/update_appearance(updates)

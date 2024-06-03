@@ -40,7 +40,7 @@
 	var/research = 0				// Defines "discovery value", which will give a one-time point payout if a seed is given to an R&D console. Seed discovery is determined on a ship-by-ship basis.
 	var/seed_flags = MUTATE_EARLY	// Determines if a plant is allowed to mutate early at 30+ instability
 
-/obj/item/seeds/Initialize(mapload, nogenes = 0)
+/obj/item/seeds/Initialize(mapload, nogenes = FALSE)
 	. = ..()
 	pixel_x = base_pixel_y + rand(-8, 8)
 	pixel_y = base_pixel_x + rand(-8, 8)
@@ -66,10 +66,14 @@
 			genes += new /datum/plant_gene/core/potency(potency)
 			genes += new /datum/plant_gene/core/instability(instability)
 
-		for(var/p in genes)
-			if(ispath(p))
-				genes -= p
-				genes += new p
+		for(var/plant_gene in genes)
+			if(ispath(plant_gene))
+				genes -= plant_gene
+				genes += new plant_gene
+
+		// Go through all traits in their genes and call on_new_seed from them.
+		for(var/datum/plant_gene/trait/traits in genes)
+			traits.on_new_seed(src)
 
 		for(var/reag_id in reagents_add)
 			genes += new /datum/plant_gene/reagent(reag_id, reagents_add[reag_id])
