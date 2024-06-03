@@ -121,3 +121,13 @@
 	var/obj/machinery/syndicatebomb/bomb = ..()
 	bomb.activate()
 	return new bomb(loc)
+
+/datum/blackmarket_item/explosive/firecrackers
+	name = "Box of Firecrackers"
+	desc = "Nuclear Bomb brand extra strength firecrackers, painted in the signature blood red of Gorlex Marauder hardsuits. Enjoyed a successful, albiet short run in PGF space due to a certain event in 492 FS made selling them somewhat in poor taste."
+	item = /obj/item/storage/box/firecrackers
+
+	price_min = 500
+	price_max = 1000
+	stock = 1
+	availability_prob = 100
