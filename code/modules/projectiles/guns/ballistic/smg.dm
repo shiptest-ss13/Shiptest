@@ -65,6 +65,8 @@
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+EMPTY_GUN_HELPER(automatic/smg/c20r)
+
 /obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
 	. = ..()
 	update_appearance()
@@ -250,9 +252,7 @@
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
