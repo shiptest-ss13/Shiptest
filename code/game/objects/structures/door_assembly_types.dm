@@ -214,14 +214,6 @@
 	mineral = "plasma"
 	glass_type = /obj/machinery/door/airlock/plasma/glass
 
-/obj/structure/door_assembly/door_assembly_bananium
-	name = "bananium airlock assembly"
-	desc = "Honk."
-	icon = 'icons/obj/doors/airlocks/station/bananium.dmi'
-	base_name = "bananium airlock"
-	airlock_type = /obj/machinery/door/airlock/bananium
-	mineral = "bananium"
-	glass_type = /obj/machinery/door/airlock/bananium/glass
 
 /obj/structure/door_assembly/door_assembly_sandstone
 	name = "sandstone airlock assembly"

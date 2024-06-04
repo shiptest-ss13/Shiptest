@@ -160,6 +160,9 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium/twenty
 	amount = 20
 
+/obj/item/stack/sheet/mineral/uranium/ten
+	amount = 10
+
 /obj/item/stack/sheet/mineral/uranium/five
 	amount = 5
 
@@ -209,6 +212,9 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/plasma/twenty
 	amount = 20
+
+/obj/item/stack/sheet/mineral/plasma/ten
+	amount = 10
 
 /obj/item/stack/sheet/mineral/plasma/five
 	amount = 5
@@ -327,32 +333,6 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	amount = 5
 
 /*
- * Clown
- */
-/obj/item/stack/sheet/mineral/bananium
-	name = "bananium"
-	icon_state = "sheet-bananium"
-	item_state = "sheet-bananium"
-	singular_name = "bananium sheet"
-	sheettype = "bananium"
-	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-
-	grind_results = list(/datum/reagent/consumable/banana = 20)
-	point_value = 50
-	merge_type = /obj/item/stack/sheet/mineral/bananium
-	material_type = /datum/material/bananium
-	walltype = /turf/closed/wall/mineral/bananium
-
-GLOBAL_LIST_INIT(bananium_recipes, list ( \
-	new/datum/stack_recipe("bananium tile", /obj/item/stack/tile/mineral/bananium, 1, 4, 20), \
-	new/datum/stack_recipe("Clown Statue", /obj/structure/statue/bananium/clown, 5, one_per_turf = 1, on_floor = 1), \
-	))
-
-/obj/item/stack/sheet/mineral/bananium/get_main_recipes()
-	. = ..()
-	. += GLOB.bananium_recipes
-
-/*
  * Titanium
  */
 /obj/item/stack/sheet/mineral/titanium
@@ -430,7 +410,6 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	. = ..()
 	. += GLOB.plastitanium_recipes
 
-
 /*
  * Snow
  */
@@ -458,56 +437,6 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 /obj/item/stack/sheet/mineral/snow/get_main_recipes()
 	. = ..()
 	. += GLOB.snow_recipes
-
-/****************************** Others ****************************/
-
-/*
- * Adamantine
-*/
-
-/obj/item/stack/sheet/mineral/adamantine
-	name = "adamantine"
-	icon_state = "sheet-adamantine"
-	item_state = "sheet-adamantine"
-	singular_name = "adamantine sheet"
-	custom_materials = list(/datum/material/adamantine=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/adamantine
-	grind_results = list(/datum/reagent/liquidadamantine = 10)
-
-/obj/item/stack/sheet/mineral/adamantine/ten
-	amount = 10
-
-/*
- * Runite
- */
-
-/obj/item/stack/sheet/mineral/runite
-	name = "runite"
-	desc = "Rare material found in distant lands."
-	singular_name = "runite bar"
-	icon_state = "sheet-runite"
-	item_state = "sheet-runite"
-	custom_materials = list(/datum/material/runite=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/runite
-	material_type = /datum/material/runite
-
-/obj/item/stack/sheet/mineral/runite/ten
-	amount = 10
-
-/*
- * Mythril
- */
-/obj/item/stack/sheet/mineral/mythril
-	name = "mythril"
-	icon_state = "sheet-mythril"
-	item_state = "sheet-mythril"
-	singular_name = "mythril sheet"
-	novariants = TRUE
-	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/mythril
-
-/obj/item/stack/sheet/mineral/mythril/ten
-	amount = 10
 
 /*
  * Alien Alloy
@@ -567,3 +496,35 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/coal/ten
 	amount = 10
+
+/*
+ * Hellstone
+ */
+/obj/item/stack/sheet/mineral/hidden
+	name = "????????"
+	singular_name = "????????"
+
+/obj/item/stack/sheet/mineral/hidden/hellstone
+	name = "hellstone"
+	icon_state = "sheet-hellstone"
+	item_state = "sheet-hellstone"
+	singular_name = "hellstone bar"
+	sheettype = "hellstone"
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	custom_materials = list(/datum/material/hellstone=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/clf3 = 5)
+	point_value = 20
+	merge_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+	material_type = /datum/material/hellstone
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/ten
+	amount = 10
+
+/obj/item/stack/sheet/mineral/hidden/hellstone/five
+	amount = 5

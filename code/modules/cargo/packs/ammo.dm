@@ -350,6 +350,12 @@
 	contains = list(/obj/item/ammo_box/a4570)
 	cost = 500
 
+/datum/supply_pack/ammo/a4570_box/match
+	name = ".45-70 Match Crate"
+	desc = "Contains a twelve-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
+	contains = list(/obj/item/ammo_box/a4570/match)
+	cost = 750
+
 /datum/supply_pack/ammo/ferropelletboxcrate
 	name = "Ferromagnetic Pellet Box Crate"
 	desc = "Contains a fifty-round ferromagnetic pellet ammo box for gauss guns such as the Claris."

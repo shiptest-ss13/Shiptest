@@ -180,3 +180,7 @@
 /mob/living/carbon/alien/on_standing_up()
 	. = ..()
 	update_icons()
+
+/mob/living/carbon/alien/examine(mob/user)
+	. = ..()
+	. += "It's a strange creature."
