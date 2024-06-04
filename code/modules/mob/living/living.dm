@@ -1418,7 +1418,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	var/ssd_indicator = FALSE
 	var/lastclienttime = 0
 
-/mob/living/proc/set_ssd_indicator(var/state)
+/mob/living/proc/set_ssd_indicator(state)
 	if(state == ssd_indicator)
 		return
 	ssd_indicator = state
