@@ -191,7 +191,7 @@
 //Pests & Weeds//////////////////////////////////////////////////////////
 
 			if(pestlevel >= 8)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-2 / rating)
 
 				else
@@ -207,7 +207,7 @@
 					if(prob(50))
 						adjustPests(-1 / rating)
 
-			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/carnivory))
 				adjustHealth(-2 / rating)
 				if(prob(5))
 					adjustPests(-1 / rating)

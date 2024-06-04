@@ -31,3 +31,8 @@
 #define REAGENT_TRANSFER_ID (1<<5)
 /// Plants that have a unique effect on attack_self.
 #define ATTACK_SELF_ID (1<<6)
+
+#define HYDROTRAY_NO_PLANT "missing"
+#define HYDROTRAY_PLANT_DEAD "dead"
+#define HYDROTRAY_PLANT_GROWING "growing"
+#define HYDROTRAY_PLANT_HARVESTABLE "harvestable"

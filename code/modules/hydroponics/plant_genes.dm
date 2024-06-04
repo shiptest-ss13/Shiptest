@@ -729,59 +729,13 @@
 	SIGNAL_HANDLER
 
 	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
-	var/datum/effect_system/fluid_spread/smoke/chem/smoke = new ()
-	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
+	var/datum/effect_system/smoke_spread/chem/smoke = new
 	var/splat_location = get_turf(target)
-	var/range = sqrt(our_seed.potency * 0.1)
+	var/smoke_amount = round(sqrt(our_plant.seed.potency * 0.1), 1)
 	smoke.attach(splat_location)
-	smoke.set_up(round(range), holder = our_plant, location = splat_location, carry = our_plant.reagents, silent = FALSE)
-	smoke.start(log = TRUE)
-	our_plant.reagents.clear_reagents()
-
-/// Makes the plant and its seeds fireproof. From lavaland plants.
-/datum/plant_gene/trait/fire_resistance
-	name = "Fire Resistance"
-	description = "Makes the seeds, plant and produce fireproof."
-	icon = "fire"
-	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
-
-/datum/plant_gene/trait/fire_resistance // Lavaland
-	name = "Fire Resistance"
-
-/datum/plant_gene/trait/fire_resistance/on_new_seed(obj/item/seeds/new_seed)
-	if(!(new_seed.resistance_flags & FIRE_PROOF))
-		new_seed.resistance_flags |= FIRE_PROOF
-
-/datum/plant_gene/trait/fire_resistance/on_removed(obj/item/seeds/old_seed)
-	if(old_seed.resistance_flags & FIRE_PROOF)
-		old_seed.resistance_flags &= ~FIRE_PROOF
-
-/datum/plant_gene/trait/fire_resistance/on_new_plant(obj/item/our_plant, newloc)
-	. = ..()
-	if(!.)
-		return
-
-	if(!(our_plant.resistance_flags & FIRE_PROOF))
-		our_plant.resistance_flags |= FIRE_PROOF
-
-/*
- * Makes a cloud of reagent smoke.
- *
- * our_plant - our plant being squashed and smoked
- * target - the atom the plant was squashed on
- */
-/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/our_plant, atom/target)
-	SIGNAL_HANDLER
-
-	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
-	var/datum/effect_system/fluid_spread/smoke/chem/smoke = new ()
-	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
-	var/splat_location = get_turf(target)
-	var/range = sqrt(our_seed.potency * 0.1)
-	smoke.attach(splat_location)
-	smoke.set_up(round(range), holder = our_plant, location = splat_location, carry = our_plant.reagents, silent = FALSE)
-	smoke.start(log = TRUE)
-	our_plant.reagents.clear_reagents()
+	smoke.set_up(our_plant.reagents, smoke_amount, splat_location, 0)
+	smoke.start()
+	smoke.reagents.clear_reagents()
 
 /// Makes the plant and its seeds fireproof. From lavaland plants.
 /datum/plant_gene/trait/fire_resistance
