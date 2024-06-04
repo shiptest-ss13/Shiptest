@@ -582,18 +582,12 @@
 	rate = 2
 	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/our_plant, newloc)
+/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, newloc)
 	. = ..()
 	if(!.)
 		return
 
-	var/obj/item/reagent_containers/food/snacks/grown/grown_plant = our_plant
-	if(istype(grown_plant, /obj/item/reagent_containers/food/snacks/grown))
-		//Grown foods use the edible component so we need to change their max_volume var
-		grown_plant.max_volume *= rate
-	else
-		//Grown inedibles however just use a reagents holder, so.
-		our_plant.reagents?.maximum_volume *= rate
+	our_plant.reagents?.maximum_volume *= rate
 
 /// Allows a plant to be harvested multiple times.
 /datum/plant_gene/trait/repeated_harvest
@@ -658,7 +652,7 @@
 
 	pocell.charge = pocell.maxcharge
 	pocell.name = "[our_plant.name] battery"
-	pocell.desc = "A rechargeable plant-based power cell. This one has a rating of [display_energy(pocell.maxcharge)], and you should not swallow it."
+	pocell.desc = "A rechargeable plant-based power cell. This one has a rating of [DisplayEnergy(pocell.maxcharge)], and you should not swallow it."
 
 	if(our_plant.reagents.has_reagent(/datum/reagent/toxin/plasma, 2))
 		pocell.rigged = TRUE
@@ -725,7 +719,7 @@
  * our_plant - our plant being squashed and smoked
  * target - the atom the plant was squashed on
  */
-/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/our_plant, atom/target)
+/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/reagent_containers/food/snacks/grown/our_plant, atom/target)
 	SIGNAL_HANDLER
 
 	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
@@ -735,7 +729,7 @@
 	smoke.attach(splat_location)
 	smoke.set_up(our_plant.reagents, smoke_amount, splat_location, 0)
 	smoke.start()
-	smoke.reagents.clear_reagents()
+	our_plant.reagents.clear_reagents()
 
 /// Makes the plant and its seeds fireproof. From lavaland plants.
 /datum/plant_gene/trait/fire_resistance
@@ -801,16 +795,16 @@
  */
 /datum/plant_gene/trait/invasive/proc/spread_seed(obj/machinery/hydroponics/target_tray, obj/machinery/hydroponics/origin_tray)
 	if(target_tray.myseed) // Check if there's another seed in the next tray.
-		if(target_tray.myseed.type == origin_tray.myseed.type && target_tray.plant_status != HYDROTRAY_PLANT_DEAD)
+		if(target_tray.myseed.type == origin_tray.myseed.type && target_tray.dead != FALSE)
 			return FALSE // It should not destroy its own kind.
 		target_tray.visible_message(span_warning("The [target_tray.myseed.plantname] is overtaken by [origin_tray.myseed.plantname]!"))
 		QDEL_NULL(target_tray.myseed)
-	target_tray.set_seed(origin_tray.myseed.Copy())
+	target_tray.myseed = origin_tray.myseed.Copy()
 	target_tray.age = 0
-	target_tray.set_plant_health(target_tray.myseed.endurance)
+	target_tray.plant_health = target_tray.myseed.endurance
 	target_tray.lastcycle = world.time
-	target_tray.set_weedlevel(0, update_icon = FALSE) // Reset
-	target_tray.set_pestlevel(0) // Reset
+	target_tray.weedlevel = 0
+	target_tray.pestlevel = 0
 	target_tray.visible_message(span_warning("The [origin_tray.myseed.plantname] spreads!"))
 	if(target_tray.myseed)
 		target_tray.name = "[initial(target_tray.name)] ([target_tray.myseed.plantname])"
