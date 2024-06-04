@@ -5,13 +5,32 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
 
+//legion
+/obj/item/mob_trophy/legion_skull
+	name = "legion skull"
+	desc = "A dead and lifeless legion skull. Could be used in crafting."
+	icon_state = "legion_skull"
+
+/obj/item/mob_trophy/wolf_ear
+	name = "wolf ear"
+	desc = "The battered remains of a wolf's ear. You could attach it to a crusher, or use the fur to craft a trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "torn_ear"
+
+/obj/item/mob_trophy/fang
+	name = "battle-stained fang"
+	desc = "A wolf fang, displaying the wear and tear associated with a long and colorful life. Could be attached to a kinetic crusher or used to make a trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "fang"
+
+/*
 //goliath
 /obj/item/mob_trophy/goliath_tentacle
 	name = "goliath tentacle"
 	desc = "A sliced-off goliath tentacle."
 	icon_state = "goliath_tentacle"
 
-//ancient goliath
+//ancient goliath0
 /obj/item/mob_trophy/elder_tentacle
 	name = "elder tentacle"
 	desc = "The barbed tip of a tentacle sliced from an incredibly ancient goliath."
@@ -49,12 +68,6 @@
 	desc = "A wing with a terminal infection of the strange crystals."
 	icon_state = "watcher_wing_crystal"
 	gender = NEUTER
-
-//legion
-/obj/item/mob_trophy/legion_skull
-	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Could be used in crafting."
-	icon_state = "legion_skull"
 
 //dwarf legion
 /obj/item/mob_trophy/dwarf_skull
@@ -117,6 +130,13 @@
 	desc = "A glowing trinket that was originally the Hierophant's beacon."
 	icon_state = "vortex_talisman"
 
+// Broodmother's loot: Broodmother Tongue
+/obj/item/mob_trophy/broodmother_tongue
+	name = "broodmother tongue"
+	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "broodmother_tongue"
+
 /obj/item/mob_trophy/shiny
 	name = "shiny nugget"
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
@@ -161,15 +181,4 @@
 	desc = "It's a paw from a true warrior. Still remembers the basics of CQB."
 	icon_state = "armor_paw"
 	icon ='icons/obj/lavaland/elite_trophies.dmi'
-
-/obj/item/mob_trophy/wolf_ear
-	name = "wolf ear"
-	desc = "The battered remains of a wolf's ear. You could attach it to a crusher, or use the fur to craft a trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "torn_ear"
-
-/obj/item/mob_trophy/fang
-	name = "battle-stained fang"
-	desc = "A wolf fang, displaying the wear and tear associated with a long and colorful life. Could be attached to a kinetic crusher or used to make a trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "fang"
+*/

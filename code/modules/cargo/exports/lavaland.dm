@@ -58,7 +58,7 @@
 						/obj/item/guardiancreator/miner/choose,//this is basically the most valulable mining loot so good luck getting a miner to part ways
 						/obj/item/gun/magic/staff/spellblade,
 						)
-
+/*
 /datum/export/lavaland/trophycommon
 	cost = 1500
 	unit_name = "common hunting trophy"
@@ -91,6 +91,7 @@
 						/obj/item/mob_trophy/miner_eye,
 						/obj/item/mob_trophy/vortex_talisman,
 						/obj/item/mob_trophy/blaster_tubes)
+*/
 
 /datum/export/lavaland/megafauna/total_printout(datum/export_report/ex, notes = TRUE) //in the unlikely case a miner feels like selling megafauna loot
 	. = ..()

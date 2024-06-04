@@ -230,7 +230,7 @@
 	movement_type = FLYING
 	robust_searching = 1
 	attack_same = TRUE		// So we'll fight basilisks
-	mob_trophy = /obj/item/mob_trophy/watcher_wing
+	//mob_trophy = /obj/item/mob_trophy/watcher_wing
 	gold_core_spawnable = NO_SPAWN
 	loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
@@ -294,7 +294,7 @@
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
 	projectiletype = /obj/projectile/temp/basilisk/magmawing
-	mob_trophy = /obj/item/mob_trophy/magma_wing
+	//mob_trophy = /obj/item/mob_trophy/magma_wing
 	trophy_drop_mod = 75
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
@@ -309,7 +309,7 @@
 	ranged_cooldown_time = 20
 	projectiletype = /obj/projectile/temp/basilisk/icewing
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
-	mob_trophy = /obj/item/mob_trophy/ice_wing
+	//mob_trophy = /obj/item/mob_trophy/ice_wing
 	trophy_drop_mod = 75
 
 /obj/projectile/temp/basilisk/magmawing
