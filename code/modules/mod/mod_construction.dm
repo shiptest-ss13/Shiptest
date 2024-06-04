@@ -193,7 +193,7 @@
 					balloon_alert(user, "boots added")
 					return
 				playsound(src, 'sound/machines/click.ogg', 30, TRUE)
-				balloon_alert(user, "You fit [part] onto [src].")
+				balloon_alert(user, "you fit [part] onto [src].")
 				boots = part
 				step = BOOTS_STEP
 			else if(part.tool_behaviour == TOOL_CROWBAR) //Deconstruct
