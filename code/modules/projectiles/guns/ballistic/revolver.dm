@@ -98,13 +98,13 @@
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -170,7 +170,7 @@
 	else
 		if(slot)
 			if(!slot.BB && allow_ejection)
-				if(do_mob(user,user,doafter_time))
+				if(!do_after(user, doafter_time, user))
 					eject_casing(user)
 
 		rounds = magazine.ammo_list()
@@ -214,7 +214,7 @@
 					var/doafter_time = 0.8 SECONDS
 					if(magazine.instant_load && attacking_box.instant_load)
 						doafter_time = 0 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(user, casing_to_insert, FALSE))
 						break
@@ -231,7 +231,7 @@
 					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
 						break
 					var/doafter_time = 0.4 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(null, casing_to_insert, FALSE))
 						doafter_time = 0 SECONDS
@@ -239,7 +239,7 @@
 						num_loaded++
 						attacking_box.update_appearance()
 						attacking_box.stored_ammo -= casing_to_insert
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					switch(gate_load_direction)
 						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
@@ -465,6 +465,7 @@
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
@@ -485,6 +486,8 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+
+EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
@@ -724,4 +727,4 @@
 	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
-		chambered.armour_penetration += 5
+		chambered.BB.armour_penetration += 5
