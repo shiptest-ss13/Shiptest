@@ -163,7 +163,7 @@
 ////////////
 /obj/item/storage/fancy/cigarettes
 	name = "\improper Space Cigarettes packet"
-	desc = "The most popular brand of cigarettes, sponsors of the Space Olympics."
+	desc = "The most popular brand of cigarettes on the Frontier."
 	icon = 'icons/obj/cigarettes.dmi'
 	base_icon_state = "cig"
 	icon_state = "cig"
@@ -273,14 +273,14 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_carp
 	name = "\improper Carp Classic packet"
-	desc = "Since 2313."
+	desc = "Since 207 FS."
 	icon_state = "carp"
 	base_icon_state = "carp"
 	spawn_type = /obj/item/clothing/mask/cigarette/carp
 
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 	name = "cigarette packet"
-	desc = "An obscure brand of cigarettes."
+	desc = "A semi-obscure brand of cigarettes, favored by interstellar miners."
 	icon_state = "syndie"
 	base_icon_state = "syndie"
 	spawn_type = /obj/item/clothing/mask/cigarette/syndicate
@@ -322,7 +322,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_mindbreaker
 	name = "\improper Leary's Delight packet"
-	desc = "Banned in over 36 galaxies."
+	desc = "Banned in over 36 Sectors."
 	icon_state = "shadyjim"
 	base_icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
@@ -435,7 +435,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigars/havana
 	name = "\improper premium Havanian cigar case"
-	desc = "A case of classy Havanian cigars."
+	desc = "Even after centuries of Solarian export, Havana smooth is only found in proper terran cigars."
 	icon_state = "cohibacase"
 	base_icon_state = "cohibacase"
 	spawn_type = /obj/item/clothing/mask/cigarette/cigar/havana

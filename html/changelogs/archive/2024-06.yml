@@ -1,0 +1,110 @@
+2024-06-01:
+  FalloutFalcon:
+  - rscadd: Added  new more varied legion corpses
+  - rscdel: Removed lot of the crappy legion corpses
+  - balance: rebalanced most of the old legion corpses
+  - refactor: moved most legion corpse loot behavior to outfits
+  - tweak: tweaked the new ore
+  Gristlebee:
+  - rscadd: Suit Storage Unit construction
+  - rscadd: Added suit storage unit circuit boards to industrial engineering tech
+  - tweak: Suit storage unit examines
+  - tweak: span class to span macros in suit_storage.dm
+  INFRARED_BARON:
+  - imageadd: All mechs have been successfully resprited, including the Mauler, Marauder
+      and Seraph now!
+  Skies-Of-Blue:
+  - tweak: mugs referencing an ancient terran empire have been confiscated by the
+      confederation. Please enjoy your complementary, generic mug in compensation
+  - bugfix: rds based delusions now pass without the player having to relog, thank
+      god
+  - bugfix: rds can once again be treated with mindbreaker toxin (hopefully)
+  - tweak: the pool of possible delusions has been changed to better reflect shiptest's
+      narrative
+  - rscadd: a base ramzi sprite to simple_human.dmi to be used in the changed delusion
+      pool
+  - rscdel: chat warning message for rds users not to grief. Just be cool about it,
+      okay?
+  SomeguyManperson:
+  - bugfix: fueled thruster throttling now works right
+  Sun-Soaked:
+  - rscadd: World icon element.
+  - rscadd: World icons for combat knives.
+  thgvr:
+  - rscadd: Roundstart ships no longer spawn
+2024-06-02:
+  Skies-Of-Blue:
+  - rscdel: removes the roundjoin "welcome to /tg/ station" audio clip
+  SomeguyManperson:
+  - bugfix: black market secret documents are no longer default documents
+  - balance: the shoddy survivor suits found on hermits are now actually worse than
+      the EXOCOM explorer suits
+2024-06-03:
+  Apogee-dev:
+  - balance: security belts and webbings can no longer store bulk ammo boxes, only
+      magazines
+  - tweak: Ship-specific access restrictions have been enabled.
+  - tweak: Pirate ships no longer spawn docked to the outpost.
+  FalloutFalcon:
+  - bugfix: Fixed plant analyzer examine block styling
+  - tweak: rewrites trickwine for brewers
+  - rscadd: You can trip landmines with a well placed throw
+  - rscadd: New interaction with throwing things at bottles, lights, and bear traps
+  - bugfix: The end of finalize no longer gets called twice and targeting items seems
+      like an intended behavior that was lost
+  - rscdel: Removed goofball legion disease
+  - refactor: spawning guns without mags are handled with a define
+  - refactor: refactored hostile humans
+  - bugfix: fixed free smart fridge circuit board from drying rack
+  - rscadd: Smokers rejoice! You can now pick your favorite type of nicotine delivery
+      system.
+  - rscadd: Smokers have a choice between most brands of cigarette, cigars, a vape,
+      or a pipe!
+  - code_imp: sorted code owner stuff and added me to some files
+  - bugfix: fixed create and destroy test fail
+  - tweak: tweaked id card examine information and formating
+  - bugfix: human examine bug when middle aged
+  - rscdel: Removed moths getting one shot by a flyswatter
+  - code_imp: camera/autoname/LateInitialize() optimization
+  - tweak: granularizes a handful of tool and machine supply packs!
+  - admin: Improved the silly little menu, HA HA I have messed up your muscle memory!!
+      u
+  Gristlebee:
+  - tweak: Defib crate now contains a single defib, priced 750
+  - tweak: Granularizes mech equipment
+  - tweak: mech cargo pack descs
+  - rscadd: Asteroid ore veins
+  Hardly:
+  - rscadd: Added some style to the flavor text popup
+  - bugfix: Fixed flavor text not accepting certain characters or new lines
+  - tweak: Changed up Flavor Text editing text a bit
+  - tweak: Flavor text's max length has been chopped from 4096 to 1024
+  Sadhorizon:
+  - tweak: Moved most of contraband items out of vendor contraband.
+  - rscadd: Added DromaderyCo packets to the cigarette vendors.
+  - tweak: Increased nicotine amount to three in the cigarette vendors.
+  Skies-Of-Blue:
+  - balance: chemical mindbreaker is now ten times as potent! Be gay, do crime, and
+      hallucinate in the process
+  SomeguyManperson:
+  - bugfix: hallucination anomalies now trigger if you aren't wearing proper protection
+      (as opposed to only triggering if you are)
+  - bugfix: gun sawing can now only be done with proper equipment (usually a saw))
+  - bugfix: bandoliers now hold the correct amount of bullets (several more)
+  - balance: the brimstone can now be pumped faster. Enjoy your rilena.
+  Sun-Soaked:
+  - bugfix: shoutgun casing bounce sfx now plays as intended. oopsies.
+  - rscdel: Removes sexy clown costumes from spawners
+  - config: tweak option removed from changelog template
+  Zevotech:
+  - rscdel: Removed nonfunctioning coffee machines and their cargo packs
+  - rscadd: Adds the Elzuose color salve, a product that allows Elzuose to change
+      their glow color upon application.
+  '[Watermelon914](https://github.com/Watermelon914)':
+  - code_imp: ports little itty bitty sendsignal optimization from tg
+  meemofcourse:
+  - balance: The Elder's Illesterns and Arrows are now factory-variant.
+  - bugfix: The Runner should be able to dock now.
+  rkz, Benjamin(benbot16), Rohesie, Qustinnus, jlsnow301:
+  - refactor: refactored do_afters to use timed_action_flags for unique args
+  - code_imp: centralized do_mob and do_atom into do_after
