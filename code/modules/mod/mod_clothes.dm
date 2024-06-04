@@ -2,7 +2,8 @@
 	name = "MOD helmet"
 	desc = "A helmet for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	icon_state = "helmet"
+	icon_state = "standard-helmet"
+	base_icon_state = "helmet"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD
@@ -15,7 +16,8 @@
 	name = "MOD chestplate"
 	desc = "A chestplate for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	icon_state = "chestplate"
+	icon_state = "standard-chestplate"
+	base_icon_state = "chestplate"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	blood_overlay_type = "armor"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -28,7 +30,8 @@
 	name = "MOD gauntlets"
 	desc = "A pair of gauntlets for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	icon_state = "gauntlets"
+	icon_state = "standard-gauntlets"
+	base_icon_state = "gauntlets"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HANDS|ARMS
@@ -40,7 +43,8 @@
 	name = "MOD boots"
 	desc = "A pair of boots for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	icon_state = "boots"
+	icon_state = "standard-boots"
+	base_icon_state = "boots"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = FEET|LEGS
