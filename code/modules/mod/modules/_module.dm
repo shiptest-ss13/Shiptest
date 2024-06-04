@@ -290,7 +290,7 @@
 			mod.selected_module.used_signal = COMSIG_MOB_MIDDLECLICKON
 		if(ALT_CLICK)
 			mod.selected_module.used_signal = COMSIG_MOB_ALTCLICKON
-	RegisterSignal(mod.wearer, mod.selected_module.used_signal, /obj/item/mod/module.proc/on_special_click)
+	RegisterSignal(mod.wearer, mod.selected_module.used_signal,  TYPE_PROC_REF(/obj/item/mod/module, on_special_click))
 
 /// Pins the module to the user's action buttons
 /obj/item/mod/module/proc/pin(mob/user)

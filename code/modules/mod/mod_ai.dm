@@ -7,7 +7,7 @@
 
 /obj/item/mod/control/proc/insert_pai(mob/user, obj/item/paicard/card)
 	if(ai)
-		balloon_alert(user, "AI already installed!")
+		balloon_alert(user, UNLINT("AI already installed!"))
 		return
 	if(!card.pai || !card.pai.mind)
 		balloon_alert(user, "pAI unresponsive!")
