@@ -2,7 +2,7 @@
 /obj/item/mine
 	name = "mine"
 	desc = "An anti-personnel mine. This one explodes into nothing and does nothing. Why can you see this? You should't be able to see this. Stop looking at this."
-	icon = 'icons/obj/landmine.dmi'
+	icon = 'icons/obj/world/landmine.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 5
@@ -26,9 +26,9 @@
 
 /obj/item/mine/Initialize(mapload)
 	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
 	if(armed)
 		now_armed()
-
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -625,7 +625,6 @@
 	name = "C-10 Claymore"
 	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
 
-	icon = 'icons/obj/world/landmine.dmi'
 	icon_state = "mine_claymore"
 	base_icon_state = "mine_claymore"
 
@@ -648,10 +647,6 @@
 	casingtype = /obj/item/ammo_casing/caseless/shrapnel
 
 	manufacturer = MANUFACTURER_SCARBOROUGH
-
-/obj/item/mine/directional/claymore/Initialize()
-	. = ..()
-	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
 
 // /obj/item/mine/update_icon_state()
 // 	. = ..()
