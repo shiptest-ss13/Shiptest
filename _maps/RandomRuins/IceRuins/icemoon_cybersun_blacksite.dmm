@@ -120,7 +120,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/overmap_encounter/planetoid/ice)
 "bQ" = (
 /obj/machinery/door/airlock/grunge{
@@ -207,9 +207,7 @@
 /turf/open/floor/carpet/lone,
 /area/ruin/powered/crew_facilities)
 "cV" = (
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/icemoon,
 /area/ruin/powered/hangar)
 "da" = (
 /obj/machinery/door/airlock/security/brig,
@@ -744,7 +742,7 @@
 	},
 /area/ruin/powered/hangar)
 "kF" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/overmap_encounter/planetoid/ice)
 "kH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -843,7 +841,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/overmap_encounter/planetoid/ice)
 "nq" = (
 /obj/structure/window/spawner{
@@ -1542,9 +1540,7 @@
 /area/ruin/powered/crew_facilities)
 "Ac" = (
 /obj/structure/marker_beacon,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/icemoon,
 /area/ruin/powered/hangar)
 "Ap" = (
 /obj/machinery/airalarm/directional/north,
@@ -5712,9 +5708,9 @@ qs
 NN
 qs
 qs
-Vh
-Vh
-Vh
+cV
+cV
+cV
 Ac
 NM
 xf
@@ -5774,9 +5770,9 @@ lY
 Fu
 qs
 qs
+cV
 Vh
-Vh
-Vh
+cV
 xf
 PG
 xf
@@ -5836,8 +5832,8 @@ NM
 NM
 NM
 NM
-Vh
-Vh
+cV
+cV
 Gm
 xf
 xf
