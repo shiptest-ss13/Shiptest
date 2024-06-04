@@ -250,7 +250,7 @@
 	clean_up()
 
 /obj/item/mod/control/item_action_slot_check(slot)
-	if(slot == slot_flags)
+	if(slot & slot_flags)
 		return TRUE
 
 /obj/item/mod/control/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
@@ -566,6 +566,10 @@
 	old_module.on_uninstall(deleting = deleting)
 	QDEL_LIST_ASSOC_VAL(old_module.pinned_to)
 	old_module.mod = null
+
+/// Intended for callbacks, don't use normally, just get wearer by itself.
+/obj/item/mod/control/proc/get_wearer()
+	return wearer
 
 /obj/item/mod/control/proc/update_access(mob/user, obj/item/card/id/card)
 	if(!allowed(user))

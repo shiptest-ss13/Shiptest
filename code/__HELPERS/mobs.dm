@@ -329,9 +329,6 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(!QDELETED(progbar))
 			progbar.update(world.time - starttime)
 
-		if(uninterruptible)
-			continue
-
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
 			user_loc = user.loc
