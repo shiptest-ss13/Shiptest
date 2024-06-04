@@ -41,10 +41,7 @@
 
 	var/turf/targetturf = find_safe_turf()
 	if(!targetturf)
-		if(GLOB.blobstart.len > 0)
-			targetturf = get_turf(pick(GLOB.blobstart))
-		else
-			CRASH("Unable to find a blobstart landmark")
+		CRASH("Unable to find a blobstart landmark")
 	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, targetturf)
 	log_game("[user] Has jaunted to [loc_name(targetturf)].")
 	message_admins("[user] Has jaunted to [ADMIN_VERBOSEJMP(targetturf)].")

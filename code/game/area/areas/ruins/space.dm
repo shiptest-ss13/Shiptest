@@ -200,7 +200,7 @@
 /area/ruin/space/has_grav/hellfactoryoffice
 	name = "Hell Factory Office"
 	icon_state = "red"
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT
+	area_flags = VALID_TERRITORY | NOTELEPORT
 
 //Ruin of Transport 18
 

@@ -117,13 +117,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create a death squad. Unfortunately, there were not enough candidates available.")
 					log_admin("[key_name(usr)] failed to create a death squad.")
-			if("blob")
-				var/strength = input("Set Blob Resource Gain Rate","Set Resource Rate",1) as num|null
-				if(!strength)
-					return
-				message_admins("[key_name(usr)] spawned a blob with base resource gain [strength].")
-				log_admin("[key_name(usr)] spawned a blob with base resource gain [strength].")
-				new/datum/round_event/ghost_role/blob(TRUE, strength)
 			if("centcom")
 				message_admins("[key_name(usr)] is creating a response team...")
 				if(src.makeEmergencyresponseteam())
@@ -1076,18 +1069,6 @@
 			return
 
 		usr.client.cmd_admin_slimeize(H)
-
-	else if(href_list["makeblob"])
-		if(!check_rights(R_SPAWN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["makeblob"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
-			return
-
-		usr.client.cmd_admin_blobize(H)
-
 
 	else if(href_list["makerobot"])
 		if(!check_rights(R_SPAWN))

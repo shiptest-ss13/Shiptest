@@ -309,16 +309,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
-/obj/effect/landmark/blobstart
-	name = "blobstart"
-	icon_state = "blob_start"
-
-/obj/effect/landmark/blobstart/Initialize(mapload)
-	..()
-	GLOB.blobstart += loc
-	return INITIALIZE_HINT_QDEL
-
 //spawns sec equipment lockers depending on the number of sec officers
 /obj/effect/landmark/secequipment
 	name = "secequipment"

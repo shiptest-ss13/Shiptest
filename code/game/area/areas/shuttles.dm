@@ -112,7 +112,6 @@
 
 /area/shuttle/custom
 	name = "Custom player shuttle"
-	area_flags = BLOBS_ALLOWED
 	flags_1 = CAN_BE_DIRTY_1
 
 /area/shuttle/custom/powered
@@ -125,19 +124,15 @@
 
 /area/shuttle/pod_1
 	name = "Escape Pod One"
-	area_flags = BLOBS_ALLOWED
 
 /area/shuttle/pod_2
 	name = "Escape Pod Two"
-	area_flags = BLOBS_ALLOWED
 
 /area/shuttle/pod_3
 	name = "Escape Pod Three"
-	area_flags = BLOBS_ALLOWED
 
 /area/shuttle/pod_4
 	name = "Escape Pod Four"
-	area_flags = BLOBS_ALLOWED
 
 /area/shuttle/mining
 	name = "Mining Shuttle"
@@ -155,7 +150,6 @@
 
 /area/shuttle/escape
 	name = "Emergency Shuttle"
-	area_flags = BLOBS_ALLOWED
 	flags_1 = CAN_BE_DIRTY_1
 
 /area/shuttle/escape/backup

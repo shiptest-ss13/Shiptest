@@ -117,13 +117,6 @@
 	if(!density)
 		..()
 
-
-/turf/closed/wall/blob_act(obj/structure/blob/B)
-	if(prob(50))
-		dismantle_wall()
-	else
-		add_dent(WALL_DENT_HIT)
-
 /turf/closed/wall/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
