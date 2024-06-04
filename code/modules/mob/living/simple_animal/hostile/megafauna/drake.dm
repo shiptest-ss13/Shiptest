@@ -54,10 +54,10 @@ Difficulty: Medium
 	ranged = TRUE
 	pixel_x = -32
 	base_pixel_x = -32
-	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
+	//mob_trophy = /obj/item/mob_trophy/ash_spike
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
 	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/crusher_trophy/ash_spike = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/player_cooldown = 0
 	var/dungeon = FALSE //if true, on death will spawn a ghost role at a lank mark and open blast doors with a certain id
@@ -583,7 +583,7 @@ Difficulty: Medium
 	mouse_opacity = MOUSE_OPACITY_ICON
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	loot = list()
-	crusher_loot = list()
+	mob_trophy = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	attack_action_types = list()
 
