@@ -25,7 +25,7 @@ RUN git init \
     && /bin/bash -c "source dependencies.sh \
     && git fetch --depth 1 origin \$RUST_G_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo build --release --all-features --target i686-unknown-linux-gnu
+    && cargo build --release --target i686-unknown-linux-gnu
 
 # Build auxmos
 FROM rust-build as auxmos
