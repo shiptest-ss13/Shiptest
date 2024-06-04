@@ -24,7 +24,6 @@
 
 	var/manufacturer = MANUFACTURER_NONE
 
-
 /obj/item/mine/Initialize(mapload)
 	. = ..()
 	if(armed)
@@ -626,6 +625,7 @@
 	name = "C-10 Claymore"
 	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
 
+	icon = 'icons/obj/world/landmine.dmi'
 	icon_state = "mine_claymore"
 	base_icon_state = "mine_claymore"
 
@@ -640,8 +640,8 @@
 	//using this to indicate pb
 	var/range_flash = 1
 
-	//shim for ground icons till world icons get in
-	var/planted = FALSE
+	// //shim for ground icons till world icons get in
+	// var/planted = FALSE
 
 	//a second run of shrapnel, intended for maiming especially pb targets
 	var/obj/item/ammo_casing/shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred
@@ -649,29 +649,36 @@
 
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-/obj/item/mine/directional/claymore/now_armed()
-	planted = TRUE
+/obj/item/mine/directional/claymore/Initialize()
 	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
 
-//world icons would save like 20 lines here
-/obj/item/mine/directional/claymore/update_icon_state()
-	if(planted)
-		base_icon_state = "mine_claymore_planted"
-		icon_state = "mine_claymore_planted"
-	else
-		icon_state = "mine_claymore"
-		base_icon_state = "mine_claymore"
-	. = ..()
+// /obj/item/mine/update_icon_state()
+// 	. = ..()
 
-/obj/item/mine/directional/claymore/disarm()
-	. = ..()
-	planted = FALSE
-	update_appearance(UPDATE_ICON_STATE)
+// /obj/item/mine/directional/claymore/now_armed()
+// 	planted = TRUE
+// 	. = ..()
 
-/obj/item/mine/directional/claymore/attack_self(mob/user)
-	if(!armed && loccheck(user))
-		planted = TRUE
-	. = ..()
+// //world icons would save like 20 lines here
+// /obj/item/mine/directional/claymore/update_icon_state()
+// 	if(planted)
+// 		base_icon_state = "mine_claymore_planted"
+// 		icon_state = "mine_claymore_planted"
+// 	else
+// 		icon_state = "mine_claymore"
+// 		base_icon_state = "mine_claymore"
+// 	. = ..()
+
+// /obj/item/mine/directional/claymore/disarm()
+// 	. = ..()
+// 	planted = FALSE
+// 	update_appearance(UPDATE_ICON_STATE)
+
+// /obj/item/mine/directional/claymore/attack_self(mob/user)
+// 	if(!armed && loccheck(user))
+// 		planted = TRUE
+// 	. = ..()
 
 /obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
