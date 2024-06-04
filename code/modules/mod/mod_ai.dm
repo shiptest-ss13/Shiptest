@@ -105,8 +105,7 @@
 	if(ismovable(wearer?.loc))
 		return wearer.loc.relaymove(wearer, direction)
 	else if(wearer)
-		ADD_TRAIT(wearer, TRAIT_MOBILITY_NOREST, MOD_TRAIT)
-		addtimer(CALLBACK(src, .proc/ai_fall), AI_FALL_TIME, TIMER_UNIQUE | TIMER_OVERRIDE)
+
 	var/atom/movable/mover = wearer || src
 	return step(mover, direction)
 
@@ -116,8 +115,6 @@
 #undef CELL_PER_STEP
 #undef AI_FALL_TIME
 
-/obj/item/mod/control/proc/ai_fall()
-	if(!wearer)
 		return
 	REMOVE_TRAIT(wearer, TRAIT_MOBILITY_NOREST, MOD_TRAIT)
 
