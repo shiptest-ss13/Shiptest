@@ -4,8 +4,8 @@
 	typepath = /datum/round_event/ship/stray_cargo
 	weight = 5
 	max_occurrences = 2
-	min_players = 1 //10
-	earliest_start = 0 //10 MINUTES
+	min_players = 10
+	earliest_start = 10 MINUTES
 
 /datum/round_event_control/stray_cargo/canSpawnEvent(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
@@ -43,9 +43,6 @@
 	if(!turf_test.len)
 		CRASH("Stray Cargo Pod : No valid turfs found for [impact_area] - [impact_area.type]")
 
-	if(!stray_spawnable_supply_packs.len)
-		stray_spawnable_supply_packs = SSshuttle.supply_packs.Copy()
-
 ///Spawns a random supply pack, puts it in a pod, and spawns it on a random tile of the selected area
 /datum/round_event/ship/stray_cargo/start()
 	if(!target_ship)
@@ -61,7 +58,7 @@
 	if(possible_pack_types.len)
 		pack_type = pick(possible_pack_types)
 	else
-		pack_type = pick(stray_spawnable_supply_packs)
+		pack_type = pick(SSshuttle.supply_packs)
 	var/datum/supply_pack/SP = new pack_type
 	var/obj/structure/closet/crate/crate = SP.generate(null)
 	crate.locked = FALSE //Unlock secure crates

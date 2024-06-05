@@ -435,7 +435,7 @@
 /datum/config_entry/flag/should_events
 
 /datum/config_entry/number/events_frequency_lower
-	config_entry_value = 2.5 MINUTES
+	config_entry_value = 3 MINUTES
 
 /datum/config_entry/number/events_frequency_upper
 

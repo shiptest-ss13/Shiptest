@@ -2,8 +2,8 @@
 	name = "lottery"
 	typepath = /datum/round_event/ship/lottery
 	weight = 2
-	earliest_start = 0 //20 MINUTES
-	min_players = 1 //10
+	earliest_start = 20 MINUTES
+	min_players = 10
 	max_occurrences = 1
 
 /datum/round_event_control/ship_lottery/canSpawnEvent(players, allow_magic = FALSE)

@@ -1,10 +1,10 @@
 /datum/round_event_control/random_pet
-	name = "Small Rodent Infestation"
+	name = "Random Pet"
 	typepath = /datum/round_event/ship/random_pet
 	weight = 10
 	max_occurrences = 3
 	min_players = 1
-	earliest_start = 0 //5 MINUTES
+	earliest_start = 5 MINUTES
 
 /datum/round_event_control/random_pet/canSpawnEvent(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
@@ -17,7 +17,12 @@
 /datum/round_event/ship/random_pet/setup()
 	if(!..())
 		return FALSE
-	random_pet = pick(/mob/living/simple_animal/pet/dog/corgi, /mob/living/simple_animal/pet/dog/corgi/capybara)
+	random_pet = pick(/mob/living/simple_animal/pet/dog/corgi,
+		/mob/living/simple_animal/pet/dog/corgi/capybara,
+		/mob/living/simple_animal/pet/dog/pug,
+		/mob/living/simple_animal/pet/cat,
+		/mob/living/simple_animal/pet/mothroach,
+		/mob/living/simple_animal/pet/fox)
 
 /datum/round_event/ship/random_pet/start()
 	var/list/crates = list()

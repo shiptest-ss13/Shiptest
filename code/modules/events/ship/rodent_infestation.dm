@@ -2,9 +2,9 @@
 	name = "Small Rodent Infestation"
 	typepath = /datum/round_event/ship/rodent_infestation
 	weight = 10
-	max_occurrences = 3
-	min_players = 0
-	earliest_start = 0 //5 MINUTES
+	max_occurrences = 5
+	min_players = 1
+	earliest_start = 5 MINUTES
 
 /datum/round_event_control/rodent_infestation/canSpawnEvent(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
@@ -12,14 +12,14 @@
 	return ..()
 
 /datum/round_event/ship/rodent_infestation
-	var/mob/living/simple_animal/rodent_type
+	var/mob/living/simple_animal/rodent_type = /mob/living/simple_animal/mouse
 	var/spawncount = 1
 
 /datum/round_event/ship/rodent_infestation/setup()
 	if(!..())
 		return FALSE
 	spawncount = rand(2, 4)
-	rodent_type = pick(/mob/living/simple_animal/mouse, /mob/living/simple_animal/hostile/rat)
+	//rodent_type = pick(/mob/living/simple_animal/mouse, /mob/living/simple_animal/hostile/rat)
 
 /datum/round_event/ship/rodent_infestation/start()
 	var/list/vents = list()
