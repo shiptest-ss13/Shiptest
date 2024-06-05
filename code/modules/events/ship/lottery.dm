@@ -29,7 +29,7 @@
 		priority_announce("congracts to [target_ship] who has won a sweep stakes for [creds_won] creds!",
 			null,
 			null,
-			"Swee stakes!",
+			"Sweep stakes!",
 			sender_override = "Outpost Communications",
 		)
 

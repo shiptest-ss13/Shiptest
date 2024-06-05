@@ -6,24 +6,31 @@
 	min_players = 0
 	earliest_start = 0 //5 MINUTES
 
-/datum/round_event/rodent_infestation
-	announceWhen	= 400
+/datum/round_event_control/rodent_infestation/canSpawnEvent(players, allow_magic = FALSE)
+	if(!(length(SSovermap.controlled_ships)))
+		return FALSE
+	return ..()
+
+/datum/round_event/ship/rodent_infestation
 	var/mob/living/simple_animal/rodent_type
 	var/spawncount = 1
 
-
-/datum/round_event/rodent_infestation/setup()
-	spawncount = rand(5, 8)
+/datum/round_event/ship/rodent_infestation/setup()
+	if(!..())
+		return FALSE
+	spawncount = rand(2, 4)
 	rodent_type = pick(/mob/living/simple_animal/mouse, /mob/living/simple_animal/hostile/rat)
 
-/datum/round_event/rodent_infestation/start()
+/datum/round_event/ship/rodent_infestation/start()
 	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
-		if(QDELETED(temp_vent))
-			continue
-		if(!temp_vent.welded)
-			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
-			if(temp_vent_parent.other_atmosmch.len > 20)
+	if(!length(target_ship.shuttle_port.shuttle_areas))
+		return FALSE
+
+	for(var/area/ship_area in target_ship.shuttle_port.shuttle_areas)
+		for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in ship_area)
+			if(QDELETED(temp_vent))
+				continue
+			if(!temp_vent.welded)
 				vents += temp_vent
 
 	while((spawncount >= 1) && vents.len)
