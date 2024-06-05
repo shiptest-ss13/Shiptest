@@ -48,7 +48,7 @@
 			correctness = 100
 		correctness -= U.getOrganLoss(ORGAN_SLOT_BRAIN) * 0.5 //Brain damage makes researching hard.
 		speed += U.getOrganLoss(ORGAN_SLOT_BRAIN) * 3
-	if(do_after(user, speed, user, timed_action_flags = IGNORE_HELD_ITEM))
+	if(do_after(user, speed, 0, user))
 		var/usedName = devilName
 		if(!prob(correctness))
 			usedName += "x"

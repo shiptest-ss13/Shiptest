@@ -1445,7 +1445,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			user.visible_message("<span class='warning'>[user] starts stealing [target]'s [I.name]!</span>",
 							"<span class='danger'>You start stealing [target]'s [I.name]...</span>", null, null, target)
 			to_chat(target, "<span class='userdanger'>[user] starts stealing your [I.name]!</span>")
-			if(do_after(user, I.strip_delay, target))
+			if(do_after(user, I.strip_delay, TRUE, target, TRUE))
 				target.dropItemToGround(I, TRUE)
 				user.put_in_hands(I)
 				user.visible_message("<span class='warning'>[user] stole [target]'s [I.name]!</span>",

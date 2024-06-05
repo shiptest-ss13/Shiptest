@@ -406,7 +406,7 @@
 	else
 		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
-	if(do_after(user, 30, target))
+	if(do_mob(user, target, 30))
 		if(occupant || helmet || suit || storage)
 			return
 		if(target == user)

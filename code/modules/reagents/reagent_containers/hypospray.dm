@@ -490,7 +490,7 @@
 					if(L != user)
 						L.visible_message("<span class='danger'>[user] is trying to inject [L] with [src]!</span>", \
 										"<span class='userdanger'>[user] is trying to inject [L] with [src]!</span>")
-						if(!do_after(user, inject_wait, L))
+						if(!do_mob(user, L, inject_wait))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
 							return
@@ -501,7 +501,7 @@
 						L.visible_message("<span class='danger'>[user] uses the [src] on [L]!</span>", \
 										"<span class='userdanger'>[user] uses the [src] on [L]!</span>")
 					else
-						if(!do_after(user, inject_self, L))
+						if(!do_mob(user, L, inject_self))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
 							return
@@ -526,7 +526,7 @@
 					if(L != user)
 						L.visible_message("<span class='danger'>[user] is trying to spray [L] with [src]!</span>", \
 										"<span class='userdanger'>[user] is trying to spray [L] with [src]!</span>")
-						if(!do_after(user, spray_wait, L))
+						if(!do_mob(user, L, spray_wait))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
 							return
@@ -537,7 +537,7 @@
 						L.visible_message("<span class='danger'>[user] uses the [src] on [L]!</span>", \
 										"<span class='userdanger'>[user] uses the [src] on [L]!</span>")
 					else
-						if(!do_after(user, spray_self, L))
+						if(!do_mob(user, L, spray_self))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
 							return

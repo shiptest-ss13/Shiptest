@@ -141,16 +141,7 @@
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
 	if(wield_time > 0)
-		if(do_after(
-			user,
-			wield_delay,
-			user,
-			FALSE,
-			TRUE,
-			CALLBACK(src, PROC_REF(is_wielded)),
-			timed_action_flags = IGNORE_USER_LOC_CHANGE
-			)
-			)
+		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded)), ignore_loc_change = TRUE))
 			wielded_fully = TRUE
 	else
 		wielded_fully = TRUE
@@ -682,7 +673,7 @@
 
 	semicd = TRUE
 
-	if(!bypass_timer && (!do_after(user, 100, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
 				user.visible_message(span_notice("[user] decided not to shoot."))

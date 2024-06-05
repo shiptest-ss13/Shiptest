@@ -746,7 +746,7 @@
 		return
 	building = TRUE
 	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
-	if(do_after(user, 50, target = user))
+	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
 		var/obj/structure/R = new construction_type(user.loc)
