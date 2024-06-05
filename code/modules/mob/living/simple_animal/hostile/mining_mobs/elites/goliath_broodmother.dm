@@ -245,10 +245,6 @@
 		T = get_step(T, i)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 194b597aa438193923e1e2191276f295aa33a19f
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"
 	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."

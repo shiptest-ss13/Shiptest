@@ -142,13 +142,6 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-<<<<<<< HEAD
-	if(prob(75))
-		new /obj/item/mob_trophy/fang(loc)
-		visible_message("<span class='warning'>You find an intact fang that looks salvagable.</span>")
-	..()
-=======
->>>>>>> 194b597aa438193923e1e2191276f295aa33a19f
 
 /mob/living/simple_animal/hostile/asteroid/wolf/random/Initialize()
 	. = ..()

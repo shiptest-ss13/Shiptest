@@ -70,11 +70,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/death(gibbed)
 	SSblackbox.record_feedback("tally", "mobs_killed_mining", 1, type)
-<<<<<<< HEAD
 	if(prob(trophy_drop_mod)) //on average, you'll need to kill 5 creatures before getting the item
-=======
-	if(prob(trophy_drop_mod)) //on average, you'll need to kill 4 creatures before getting the item
->>>>>>> 194b597aa438193923e1e2191276f295aa33a19f
 		spawn_mob_trophy()
 	..(gibbed)
 

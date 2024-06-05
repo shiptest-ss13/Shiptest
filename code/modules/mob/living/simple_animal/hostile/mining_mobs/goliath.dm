@@ -249,9 +249,6 @@
 	maxHealth = 180
 	health = 180
 	speed = 4
-<<<<<<< HEAD
-	mob_trophy = /obj/item/mob_trophy/elder_tentacle
-=======
 	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
 	guaranteed_butcher_results = list()
 	wander = FALSE
