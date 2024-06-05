@@ -13,13 +13,20 @@
 
 /datum/round_event/ship/lottery
 	var/creds_won = 0
+	var/datum/overmap/outpost/target_outpost
 	announceWhen = 5
+
+/datum/round_event/ship/lottery/setup()
+	if(!..())
+		return FALSE
+	target_outpost = pick(SSovermap.outposts)
+	creds_won = rand(1, 100) * 250
 
 /datum/round_event/ship/lottery/start()
 	if(!target_ship)
 		return
 	if(target_ship.ship_account)
-		creds_won = rand(1, 100) * 250
+
 		target_ship.ship_account.adjust_money(creds_won, "deposit")
 
 /datum/round_event/ship/lottery/announce(fake)
@@ -30,7 +37,7 @@
 			null,
 			null,
 			"Sweep stakes!",
-			sender_override = "Outpost Communications",
+			sender_override = "[target_outpost] Communications",
 		)
 
 
