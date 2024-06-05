@@ -213,16 +213,6 @@
 /obj/item/reagent_containers/spray/waterflower/attack_self(mob/user) //Don't allow changing how much the flower sprays
 	return
 
-///Subtype used for the lavaland clown ruin.
-/obj/item/reagent_containers/spray/waterflower/superlube
-	name = "clown flower"
-	desc = "A delightly devilish flower... you got a feeling where this is going."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "clownflower"
-	amount_per_transfer_from_this = 3  // WS edit - superlube fix
-	volume = 30
-	list_reagents = list(/datum/reagent/lube/superlube = 30)
-
 /obj/item/reagent_containers/spray/waterflower/cyborg
 	reagent_flags = NONE
 	volume = 100
@@ -345,26 +335,9 @@
 	volume = 100
 	list_reagents = list(/datum/reagent/toxin/plantbgone = 100)
 
-/obj/item/reagent_containers/spray/syndicate
-	name = "suspicious spray bottle"
-	desc = "A spray bottle, with a high performance plastic nozzle. The color scheme makes you feel slightly uneasy."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "sprayer_sus_8"
-	item_state = "sprayer_sus"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	spray_range = 4
-	stream_range = 2
-	volume = 100
-	custom_premium_price = 900
-
-/obj/item/reagent_containers/spray/syndicate/Initialize()
-	. = ..()
-	icon_state = pick("sprayer_sus_1", "sprayer_sus_2", "sprayer_sus_3", "sprayer_sus_4", "sprayer_sus_5","sprayer_sus_6", "sprayer_sus_7", "sprayer_sus_8")
-
 /obj/item/reagent_containers/spray/medical
 	name = "medical spray bottle"
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "sprayer_med_red"
 	item_state = "sprayer_med_red"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'

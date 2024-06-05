@@ -264,17 +264,7 @@
 	opacity = FALSE
 	glass = TRUE
 
-/obj/machinery/door/airlock/bananium
-	name = "bananium airlock"
-	desc = "Honkhonkhonk"
-	icon = 'icons/obj/doors/airlocks/station/bananium.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_bananium
-	doorOpen = 'sound/items/bikehorn.ogg'
-	has_hatch = FALSE
 
-/obj/machinery/door/airlock/bananium/glass
-	opacity = FALSE
-	glass = TRUE
 
 /obj/machinery/door/airlock/sandstone
 	name = "sandstone airlock"

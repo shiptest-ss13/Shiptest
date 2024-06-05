@@ -111,7 +111,7 @@
 	density = FALSE
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	idle_power_usage = 400
+	idle_power_usage = IDLE_DRAW_MEDIUM
 	processing_flags = START_PROCESSING_MANUALLY
 
 /obj/machinery/mission_scanner/wrench_act(mob/living/user, obj/item/I)
@@ -127,7 +127,7 @@
 	if(anchorvalue)
 		set_is_operational(TRUE)
 		START_PROCESSING(SSmachines, src)
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
