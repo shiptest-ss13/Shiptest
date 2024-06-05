@@ -1,17 +1,12 @@
 #define PRINTER_TIMEOUT 10
 
 /obj/machinery/computer/bounty
-	name = "\improper Nanotrasen bounty console"
-	desc = "Used to check and claim bounties offered by Nanotrasen"
+	name = "\improper Outpost bounty console"
+	desc = "Used to check and claim bounties offered by the outpost"
 	icon_screen = "bounty"
 	circuit = /obj/item/circuitboard/computer/bounty
 	light_color = COLOR_BRIGHT_ORANGE
 	COOLDOWN_DECLARE(printer_ready)
-	var/datum/bank_account/cargocash
-
-/obj/machinery/computer/bounty/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	cargocash = port.current_ship.ship_account
 
 /obj/machinery/computer/bounty/Initialize()
 	. = ..()
@@ -25,7 +20,7 @@
 
 /obj/item/paper/bounty_printout/Initialize()
 	. = ..()
-	default_raw_text = "<h2>Nanotrasen Cargo Bounties</h2></br>"
+	default_raw_text = "<h2>Outpost Cargo Bounties</h2></br>"
 	update_appearance()
 
 	for(var/datum/bounty/bounty as anything in GLOB.bounties_list)

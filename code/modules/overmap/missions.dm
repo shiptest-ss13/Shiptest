@@ -15,7 +15,7 @@
 	/// The outpost that issued this mission. Passed in New().
 	var/datum/overmap/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().
-	var/datum/overmap/ship/controlled/servant
+	var/list/datum/overmap/ship/controlled/servants
 
 	var/accepted = FALSE
 	var/failed = FALSE
@@ -53,7 +53,7 @@
 	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
-	if(servant)
+	for(var/datum/overmap/ship/controlled/servent in servents)
 		UnregisterSignal(servant, COMSIG_PARENT_QDELETING)
 		LAZYREMOVE(servant.missions, src)
 		servant = null
@@ -62,7 +62,7 @@
 	deltimer(dur_timer)
 	return ..()
 
-/datum/mission/proc/turn_in()
+/datum/mission/proc/turn_in(datum/overmap/ship/controlled/servent)
 	servant.ship_account.adjust_money(value, "mission")
 	qdel(src)
 

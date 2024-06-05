@@ -11,8 +11,10 @@
 	var/obj/machinery/mission_scanner/scanner
 	var/num_current = 0
 	var/num_wanted = 5
+	var/researcher_name
 
 /datum/mission/research/New(...)
+	researcher_name = get_researcher_name()
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
 	value += num_wanted * 150
 	desc = researcher_name + desc

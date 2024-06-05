@@ -1,4 +1,4 @@
-/datum/mission/proc/researcher_name()
+/datum/mission/proc/get_researcher_name()
 	var/group = pick(list(
 		"Cybersun Industries",
 		"CMM-GOLD",

@@ -38,7 +38,7 @@
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 15
+	var/max_missions = 5
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
