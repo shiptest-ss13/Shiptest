@@ -153,7 +153,7 @@
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_appearance()
 	if(tac_load && tac_reloads)
-		if(do_after(user, tactical_reload_delay, TRUE, src))
+		if(do_after(user, tactical_reload_delay, src, TRUE))
 			if(insert_cell(user, tac_load))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else

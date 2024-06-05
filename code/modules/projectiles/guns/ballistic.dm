@@ -238,7 +238,7 @@
 		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
 	update_appearance()
 	if (tac_load)
-		if(do_after(user, tactical_reload_delay, TRUE, src))
+		if(do_after(user, tactical_reload_delay, src, TRUE))
 			if (insert_magazine(user, tac_load, FALSE))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else
