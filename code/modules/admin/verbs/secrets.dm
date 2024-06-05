@@ -192,22 +192,6 @@
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the sector's name.</span>")
 			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		//!fun! buttons.
-		if("virus")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Virus Outbreak"))
-			switch(alert("Do you want this to be a random disease or do you have something in mind?",,"Make Your Own","Random","Choose"))
-				if("Make Your Own")
-					AdminCreateVirus(holder)
-				if("Random")
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					E = DC.runEvent()
-				if("Choose")
-					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sortList(typesof(/datum/disease), /proc/cmp_typepaths_asc)
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
-					DO.virus_type = virus
-					E = DO
 		if("allspecies")
 			if(!is_funmin)
 				return

@@ -83,7 +83,7 @@
 /datum/round_event_control/vent_clog/threatening
 	name = "Clogged Vents: Threatening"
 	typepath = /datum/round_event/vent_clog/threatening
-	weight = 4
+	weight = 0
 	min_players = 25
 	max_occurrences = 1
 	earliest_start = 35 MINUTES
@@ -95,7 +95,6 @@
 /datum/round_event_control/vent_clog/catastrophic
 	name = "Clogged Vents: Catastrophic"
 	typepath = /datum/round_event/vent_clog/catastrophic
-	weight = 2
 	min_players = 35
 	max_occurrences = 1
 	earliest_start = 45 MINUTES
@@ -107,11 +106,6 @@
 /datum/round_event_control/vent_clog/beer
 	name = "Foamy beer stationwide"
 	typepath = /datum/round_event/vent_clog/beer
-	max_occurrences = 0
-
-/datum/round_event_control/vent_clog/plasma_decon
-	name = "Plasma decontamination"
-	typepath = /datum/round_event/vent_clog/plasma_decon
 	max_occurrences = 0
 
 /datum/round_event/vent_clog/beer

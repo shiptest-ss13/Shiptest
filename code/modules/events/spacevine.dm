@@ -1,7 +1,7 @@
 /datum/round_event_control/spacevine
 	name = "Spacevine"
 	typepath = /datum/round_event/spacevine
-	weight = 15
+	weight = 0
 	max_occurrences = 3
 	min_players = 10
 
@@ -27,7 +27,6 @@
 	if(turfs.len) //Pick a turf to spawn at if we can
 		var/turf/T = pick(turfs)
 		new /datum/spacevine_controller(T, list(pick(subtypesof(/datum/spacevine_mutation))), rand(10,100), rand(5,10), src) //spawn a controller at turf with randomized stats and a single random mutation
-
 
 /datum/spacevine_mutation
 	var/name = ""
