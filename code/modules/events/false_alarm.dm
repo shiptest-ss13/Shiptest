@@ -1,10 +1,11 @@
 /datum/round_event_control/falsealarm
-	name 			= "False Alarm"
-	typepath 		= /datum/round_event/falsealarm
-	weight			= 20
-	max_occurrences = 5
+	name = "False Alarm"
+	typepath = /datum/round_event/falsealarm
+	weight	= 10
+	earliest_start = 0
+	max_occurrences = 1
+	min_players = 500
 	var/forced_type //Admin abuse
-
 
 /datum/round_event_control/falsealarm/admin_setup()
 	if(!check_rights(R_FUN))

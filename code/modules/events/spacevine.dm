@@ -3,7 +3,7 @@
 	typepath = /datum/round_event/spacevine
 	weight = 0
 	max_occurrences = 3
-	min_players = 10
+	min_players = 500
 
 /datum/round_event/spacevine
 	fakeable = TRUE

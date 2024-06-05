@@ -1,8 +1,8 @@
 /datum/round_event_control/brain_trauma
 	name = "Spontaneous Brain Trauma"
 	typepath = /datum/round_event/brain_trauma
-	weight = 25
-	min_players = 10 //WS Edit - Min pop Braintrauma event (because braintrauma event on lowpop when theres no one to fix it is terible)
+	weight = 10
+	min_players = 1 //because braintrauma event on lowpop when theres no one to fix it is terible
 
 /datum/round_event/brain_trauma
 	fakeable = FALSE

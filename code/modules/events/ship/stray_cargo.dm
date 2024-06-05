@@ -1,26 +1,33 @@
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
 /datum/round_event_control/stray_cargo
 	name = "Stray Cargo Pod"
-	typepath = /datum/round_event/stray_cargo
+	typepath = /datum/round_event/ship/stray_cargo
 	weight = 20
 	max_occurrences = 4
-	earliest_start = 10 MINUTES
+	earliest_start = 0
+
+/datum/round_event_control/stray_cargo/canSpawnEvent(players, allow_magic = FALSE)
+	if(!(length(SSovermap.controlled_ships)))
+		return FALSE
+	return ..()
 
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
-/datum/round_event/stray_cargo
+/datum/round_event/ship/stray_cargo
 	var/area/impact_area ///Randomly picked area
 	announceChance = 75
 	var/list/possible_pack_types = list() ///List of possible supply packs dropped in the pod, if empty picks from the cargo list
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
-/datum/round_event/stray_cargo/announce(fake)
-	priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert", zlevel = impact_area.virtual_z())
+///datum/round_event/ship/stray_cargo/announce(fake)
+	//priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert", zlevel = impact_area.virtual_z())
 
 /**
 * Tries to find a valid area, throws an error if none are found
 * Also randomizes the start timer
 */
-/datum/round_event/stray_cargo/setup()
+/datum/round_event/ship/stray_cargo/setup()
+	if(!..())
+		return
 	startWhen = rand(20, 40)
 	impact_area = find_event_area()
 	if(!impact_area)
@@ -33,7 +40,9 @@
 		stray_spawnable_supply_packs = SSshuttle.supply_packs.Copy()
 
 ///Spawns a random supply pack, puts it in a pod, and spawns it on a random tile of the selected area
-/datum/round_event/stray_cargo/start()
+/datum/round_event/ship/stray_cargo/start()
+	if(!target_ship)
+		return
 	var/list/turf/valid_turfs = get_area_turfs(impact_area)
 	//Only target non-dense turfs to prevent wall-embedded pods
 	for(var/i in valid_turfs)
@@ -54,23 +63,11 @@
 	new /obj/effect/pod_landingzone(LZ, pod, crate)
 
 ///Handles the creation of the pod, in case it needs to be modified beforehand
-/datum/round_event/stray_cargo/proc/make_pod()
+/datum/round_event/ship/stray_cargo/proc/make_pod()
 	var/obj/structure/closet/supplypod/S = new
 	return S
 
 ///Picks an area that wouldn't risk critical damage if hit by a pod explosion
-/datum/round_event/stray_cargo/proc/find_event_area()
-	var/static/list/allowed_areas
-	if(!allowed_areas)
-		///Places that shouldn't explode
-		var/list/safe_area_types = typecacheof(list(
-			/area/ship/science/ai_chamber,
-			/area/ship/engineering
-		))
-
-		///Subtypes from the above that actually should explode.
-		var/list/unsafe_area_subtypes = typecacheof(list())
-		allowed_areas = make_associative(typesof(/area/ship)) - safe_area_types + unsafe_area_subtypes
-	var/list/possible_areas = typecache_filter_list(GLOB.sortedAreas,allowed_areas)
-	if (length(possible_areas))
-		return pick(possible_areas)
+/datum/round_event/ship/stray_cargo/proc/find_event_area()
+	if (length(target_ship.shuttle_port.shuttle_areas))
+		return pick(target_ship.shuttle_port.shuttle_areas)

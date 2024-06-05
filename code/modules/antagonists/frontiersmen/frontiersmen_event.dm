@@ -1,10 +1,10 @@
 /datum/round_event_control/team/frontiersmen
 	name = "Spawn Frontiersmen"
 	typepath = /datum/round_event/ghost_role/frontiersmen
-	weight = 10
+	weight = 0
 	earliest_start = 0
 	max_occurrences = 2
-	min_players = 1
+	min_players = 500
 
 /datum/round_event/ghost_role/frontiersmen
 	role_name = ROLE_FRONTIERSMEN
@@ -14,7 +14,6 @@
 
 /datum/round_event/ghost_role/frontiersmen/spawn_role()
 	makeERT(/datum/ert/frontier)
-
 
 /datum/round_event_control/team/frontiersmen
 /// If we spawn an ERT with the "choose experienced leader" option, select the leader from the top X playtimes
