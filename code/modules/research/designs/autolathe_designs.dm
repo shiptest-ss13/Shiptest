@@ -492,12 +492,12 @@
 	category = list("initial","Misc", "Tool Designs")
 
 /datum/design/pickaxe
-	name = "Emergency Pickaxe"
+	name = "Pickaxe"
 	id = "pickaxe"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 100)
-	build_path = /obj/item/pickaxe/improvised
-	category = list("initial","Misc", "Tool Designs")
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/pickaxe
+	category = list("initial","Tools", "Tool Designs")
 
 /datum/design/spade
 	name = "Spade"
