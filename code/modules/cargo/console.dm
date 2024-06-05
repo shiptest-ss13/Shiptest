@@ -127,17 +127,6 @@
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--
 
-	data["shipMissions"] = list()
-	data["outpostMissions"] = list()
-
-	if(ship)
-		for(var/datum/mission/M as anything in ship.missions)
-			data["shipMissions"] += list(M.get_tgui_info())
-		if(outpost_docked)
-			var/datum/overmap/outpost/out = ship.docked_to
-			for(var/datum/mission/M as anything in out.missions)
-				data["outpostMissions"] += list(M.get_tgui_info())
-
 	return data
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
