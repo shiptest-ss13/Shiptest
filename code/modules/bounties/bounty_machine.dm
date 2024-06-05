@@ -7,6 +7,11 @@
 	circuit = /obj/item/circuitboard/computer/bounty
 	light_color = COLOR_BRIGHT_ORANGE
 	COOLDOWN_DECLARE(printer_ready)
+	var/datum/bank_account/cargocash
+
+/obj/machinery/computer/bounty/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	cargocash = port.current_ship.ship_account
 
 /obj/machinery/computer/bounty/Initialize()
 	. = ..()
