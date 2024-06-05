@@ -5,6 +5,25 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
 
+//legion
+/obj/item/mob_trophy/legion_skull
+	name = "legion skull"
+	desc = "A dead and lifeless legion skull. Could be used in crafting."
+	icon_state = "legion_skull"
+
+/obj/item/mob_trophy/wolf_ear
+	name = "wolf ear"
+	desc = "The battered remains of a wolf's ear. You could attach it to a crusher, or use the fur to craft a trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "torn_ear"
+
+/obj/item/mob_trophy/fang
+	name = "battle-stained fang"
+	desc = "A wolf fang, displaying the wear and tear associated with a long and colorful life. Could be attached to a kinetic crusher or used to make a trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "fang"
+
+/*
 //goliath
 /obj/item/mob_trophy/goliath_tentacle
 	name = "goliath tentacle"
@@ -49,12 +68,6 @@
 	desc = "A wing with a terminal infection of the strange crystals."
 	icon_state = "watcher_wing_crystal"
 	gender = NEUTER
-
-//legion
-/obj/item/mob_trophy/legion_skull
-	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Could be used in crafting."
-	icon_state = "legion_skull"
 
 //dwarf legion
 /obj/item/mob_trophy/dwarf_skull
@@ -117,6 +130,13 @@
 	desc = "A glowing trinket that was originally the Hierophant's beacon."
 	icon_state = "vortex_talisman"
 
+// Broodmother's loot: Broodmother Tongue
+/obj/item/mob_trophy/broodmother_tongue
+	name = "broodmother tongue"
+	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "broodmother_tongue"
+
 /obj/item/mob_trophy/shiny
 	name = "shiny nugget"
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
@@ -132,40 +152,7 @@
 /obj/item/mob_trophy/ice_block_talisman
 	name = "ice block talisman"
 	desc = "A glowing trinket that a demonic miner had on him, it seems he couldn't utilize it for whatever reason."
-	icon_state = "ice_trap_talisman"
-
-/datum/status_effect/ice_block_talisman
-	id = "ice_block_talisman"
-	duration = 40
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
-	/// Stored icon overlay for the hit mob, removed when effect is removed
-	var/icon/cube
-
-/atom/movable/screen/alert/status_effect/ice_block_talisman
-	name = "Frozen Solid"
-	desc = "You're frozen inside an ice cube, and cannot move!"
-	icon_state = "frozen"
-
-/datum/status_effect/ice_block_talisman/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	if(!owner.stat)
-		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
-	cube = icon('icons/effects/freeze.dmi', "ice_cube")
-	var/icon/size_check = icon(owner.icon, owner.icon_state)
-	cube.Scale(size_check.Width(), size_check.Height())
-	owner.add_overlay(cube)
-	return ..()
-
-/// Blocks movement from the status effect owner
-/datum/status_effect/ice_block_talisman/proc/owner_moved()
-	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-
-/datum/status_effect/ice_block_talisman/on_remove()
-	if(!owner.stat)
-		to_chat(owner, "<span class='notice'>The cube melts!</span>")
-	owner.cut_overlay(cube)
-	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
+	icon_state = "freeze_cube"
 
 /obj/item/mob_trophy/brimdemon_fang
 	name = "brimdemon's fang"
@@ -177,39 +164,6 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	desc = "The glowing remnant of an ancient ice demon- so cold that it hurts to touch."
 	icon_state = "ice_crystal"
-
-/datum/status_effect/ice_crystal
-	id = "ice_crystal"
-	duration = 20
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ice_crystal
-	/// Stored icon overlay for the hit mob, removed when effect is removed
-	var/icon/cube
-
-/atom/movable/screen/alert/status_effect/ice_crystal
-	name = "Frozen Solid"
-	desc = "You're frozen inside an ice cube, and cannot move!"
-	icon_state = "frozen"
-
-/datum/status_effect/ice_crystal/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	if(!owner.stat)
-		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
-	cube = icon('icons/effects/freeze.dmi', "ice_cube")
-	var/icon/size_check = icon(owner.icon, owner.icon_state)
-	cube.Scale(size_check.Width(), size_check.Height())
-	owner.add_overlay(cube)
-	return ..()
-
-/// Blocks movement from the status effect owner
-/datum/status_effect/ice_crystal/proc/owner_moved()
-	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-
-/datum/status_effect/ice_crystal/on_remove()
-	if(!owner.stat)
-		to_chat(owner, "<span class='notice'>The cube melts!</span>")
-	owner.cut_overlay(cube)
-	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
 
 /obj/item/mob_trophy/lobster_claw
 	name = "lobster claw"
@@ -227,22 +181,4 @@
 	desc = "It's a paw from a true warrior. Still remembers the basics of CQB."
 	icon_state = "armor_paw"
 	icon ='icons/obj/lavaland/elite_trophies.dmi'
-
-/obj/item/mob_trophy/wolf_ear
-	name = "wolf ear"
-	desc = "The battered remains of a wolf's ear. You could attach it to a crusher, or use the fur to craft a trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "torn_ear"
-
-/obj/item/mob_trophy/fang
-	name = "battle-stained fang"
-	desc = "A wolf fang, displaying the wear and tear associated with a long and colorful life. Could be attached to a kinetic crusher or used to make a trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "fang"
-
-// Broodmother's loot: Broodmother Tongue
-/obj/item/mob_trophy/broodmother_tongue
-	name = "broodmother tongue"
-	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "broodmother_tongue"
+*/

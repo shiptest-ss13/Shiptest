@@ -24,13 +24,6 @@ GLOBAL_LIST_INIT(lawlorify, list (
 			OBLIGATION_SAYNAME = "He will always chant his name upon killing someone.",
 			OBLIGATION_ANNOUNCEKILL = "This devil always loudly announces his kills for the world to hear.",
 			OBLIGATION_ANSWERTONAME = "This devil always responds to his truename.",
-			BANE_SILVER = "Silver seems to gravely injure this devil.",
-			BANE_SALT = "Throwing salt at this devil will hinder his ability to use infernal powers temporarily.",
-			BANE_LIGHT = "Bright flashes will disorient the devil, likely causing him to flee.",
-			BANE_IRON = "Cold iron will slowly injure him, until he can purge it from his system.",
-			BANE_WHITECLOTHES = "Wearing clean white clothing will help ward off this devil.",
-			BANE_HARVEST = "Presenting the labors of a harvest will disrupt the devil.",
-			BANE_TOOLBOX = "That which holds the means of creation also holds the means of the devil's undoing.",
 			BAN_HURTWOMAN = "This devil seems to prefer hunting men.",
 			BAN_CHAPEL = "This devil avoids holy ground.",
 			BAN_HURTPRIEST = "The annointed clergy appear to be immune to his powers.",
@@ -62,13 +55,6 @@ GLOBAL_LIST_INIT(lawlorify, list (
 			BAN_STRIKEUNCONSCIOUS = "You must never strike an unconscious person.",
 			BAN_HURTlizard = "You must never harm a lizardman outside of self defense.",
 			BAN_HURTANIMAL = "You must never harm a non-sentient creature or robot outside of self defense.",
-			BANE_SILVER = "Silver, in all of its forms shall be your downfall.",
-			BANE_SALT = "Salt will disrupt your magical abilities.",
-			BANE_LIGHT = "Blinding lights will prevent you from using offensive powers for a time.",
-			BANE_IRON = "Cold wrought iron shall act as poison to you.",
-			BANE_WHITECLOTHES = "Those clad in pristine white garments will strike you true.",
-			BANE_HARVEST = "The fruits of the harvest shall be your downfall.",
-			BANE_TOOLBOX = "Toolboxes are bad news for you, for some reason.",
 			BANISH_WATER = "If your corpse is filled with holy water, you will be unable to resurrect.",
 			BANISH_COFFIN = "If your corpse is in a coffin, you will be unable to resurrect.",
 			BANISH_FORMALDYHIDE = "If your corpse is embalmed, you will be unable to resurrect.",
@@ -94,7 +80,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	show_to_ghosts = TRUE
 	var/obligation
 	var/ban
-	var/bane
 	var/banish
 	var/truename
 	var/list/datum/mind/soulsOwned = new
@@ -170,9 +155,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /proc/randomdevilban()
 	return pick(BAN_HURTWOMAN, BAN_CHAPEL, BAN_HURTPRIEST, BAN_AVOIDWATER, BAN_STRIKEUNCONSCIOUS, BAN_HURTLIZARD, BAN_HURTANIMAL)
-
-/proc/randomdevilbane()
-	return pick(BANE_SALT, BANE_LIGHT, BANE_IRON, BANE_WHITECLOTHES, BANE_SILVER, BANE_HARVEST, BANE_TOOLBOX)
 
 /proc/randomdevilbanish()
 	return pick(BANISH_WATER, BANISH_COFFIN, BANISH_FORMALDYHIDE, BANISH_RUNES, BANISH_CANDLES, BANISH_DESTRUCTION, BANISH_FUNERAL_GARB)
@@ -489,7 +471,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	to_chat(owner.current, "<span class='warning'><b>However, your infernal form is not without weaknesses.</b></span>")
 	to_chat(owner.current, "You may not use violence to coerce someone into selling their soul.")
 	to_chat(owner.current, "You may not directly and knowingly physically harm a devil, other than yourself.")
-	to_chat(owner.current, GLOB.lawlorify[LAW][bane])
 	to_chat(owner.current, GLOB.lawlorify[LAW][ban])
 	to_chat(owner.current, GLOB.lawlorify[LAW][obligation])
 	to_chat(owner.current, GLOB.lawlorify[LAW][banish])
@@ -499,12 +480,11 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 /datum/antagonist/devil/on_gain()
 	truename = randomDevilName()
 	ban = randomdevilban()
-	bane = randomdevilbane()
 	obligation = randomdevilobligation()
 	banish = randomdevilbanish()
 	GLOB.allDevils[lowertext(truename)] = src
 
-	antag_memory += "Your devilic true name is [truename]<br>[GLOB.lawlorify[LAW][ban]]<br>You may not use violence to coerce someone into selling their soul.<br>You may not directly and knowingly physically harm a devil, other than yourself.<br>[GLOB.lawlorify[LAW][bane]]<br>[GLOB.lawlorify[LAW][obligation]]<br>[GLOB.lawlorify[LAW][banish]]<br>"
+	antag_memory += "Your devilic true name is [truename]<br>[GLOB.lawlorify[LAW][ban]]<br>You may not use violence to coerce someone into selling their soul.<br>You may not directly and knowingly physically harm a devil, other than yourself.<br>[GLOB.lawlorify[LAW][obligation]]<br>[GLOB.lawlorify[LAW][banish]]<br>"
 	if(issilicon(owner.current))
 		var/mob/living/silicon/robot_devil = owner.current
 		var/laws = list("You may not use violence to coerce someone into selling their soul.", "You may not directly and knowingly physically harm a devil, other than yourself.", GLOB.lawlorify[LAW][ban], GLOB.lawlorify[LAW][obligation], "Accomplish your objectives at all costs.")
@@ -541,7 +521,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	parts += "The devil's true name is: [truename]"
 	parts += "The devil's bans were:"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][ban]]"
-	parts += "[FOURSPACES][GLOB.lawlorify[LORE][bane]]"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][obligation]]"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][banish]]"
 	return parts.Join("<br>")
@@ -556,7 +535,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 //A simple super light weight datum for the codex gigas.
 /datum/fakeDevil
 	var/truename
-	var/bane
 	var/obligation
 	var/ban
 	var/banish
@@ -564,7 +542,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/fakeDevil/New(name = randomDevilName())
 	truename = name
-	bane = randomdevilbane()
 	obligation = randomdevilobligation()
 	ban = randomdevilban()
 	banish = randomdevilbanish()

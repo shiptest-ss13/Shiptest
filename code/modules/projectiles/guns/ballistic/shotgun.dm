@@ -64,6 +64,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	fire_delay = 1
+	rack_delay = 2
 
 	can_be_sawn_off  = TRUE
 
@@ -231,6 +232,8 @@
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
+EMPTY_GUN_HELPER(shotgun/bulldog)
+
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
@@ -238,6 +241,8 @@
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	manufacturer = MANUFACTURER_INTEQ
+
+EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 
 /obj/item/gun/ballistic/shotgun/bulldog/suns
 	name = "\improper Bulldog-C Shotgun"
@@ -304,7 +309,7 @@
 		for(var/obj/item/ammo_casing/casing_bullet in get_ammo_list(FALSE, TRUE))
 			casing_bullet.forceMove(drop_location())
 			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			casing_bullet.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+			casing_bullet.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_bullet.bounce_sfx_override)
 
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_bullet.name)

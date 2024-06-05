@@ -111,7 +111,11 @@
 	)
 
 	feature_spawn_list = list(
-		/obj/structure/spawner/burrow/asteroid = 1
+		/obj/structure/spawner/burrow/asteroid = 3
+		/obj/structure/geyser/random = 1,
+		/obj/structure/vein/asteroid = 5,
+		/obj/structure/vein/classtwo/asteroid = 10,
+		/obj/structure/vein/classthree/asteroid = 5
 	)
 
 	mob_spawn_list = list(
@@ -154,8 +158,11 @@
 	)
 
 	feature_spawn_list = list(
-		/obj/structure/geyser/random = 1,
-		/obj/structure/spawner/carp = 1
+		/obj/structure/geyser/random = 5,
+		/obj/structure/spawner/carp = 5
+		/obj/structure/vein/asteroid = 10,
+		/obj/structure/vein/classtwo/asteroid = 15,
+		/obj/structure/vein/classthree/asteroid = 12
 	)
 
 	mob_spawn_list = list(

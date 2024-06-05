@@ -150,7 +150,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	mob_trophy = /obj/item/mob_trophy/dwarf_skull
+	//mob_trophy = /obj/item/mob_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
@@ -182,9 +182,6 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	if(prob(75))
-		new /obj/item/mob_trophy/dwarf_skull(loc)
-		visible_message("<span class='warning'>One of the [src]'s skulls looks like it survived.</span>")
 	..()
 
 //Legion skull

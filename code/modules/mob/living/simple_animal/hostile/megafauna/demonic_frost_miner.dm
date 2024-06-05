@@ -28,7 +28,7 @@ Difficulty: Extremely Hard
 	speed = 20
 	move_to_delay = 20
 	ranged = TRUE
-	mob_trophy = /obj/item/mob_trophy/ice_block_talisman
+	//mob_trophy = /obj/item/mob_trophy/ice_block_talisman
 	loot = list(/obj/effect/decal/remains/plasma)
 	wander = FALSE
 	del_on_death = TRUE
@@ -322,3 +322,7 @@ Difficulty: Extremely Hard
 	var/turf/T = get_turf(target)
 	mineral_scan_pulse(T, world.view + 1)
 	. = ..()
+<<<<<<< HEAD
+=======
+
+>>>>>>> 194b597aa438193923e1e2191276f295aa33a19f

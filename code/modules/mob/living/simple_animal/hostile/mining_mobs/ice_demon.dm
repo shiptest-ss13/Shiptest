@@ -74,8 +74,6 @@
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(5))
 		new /obj/item/gem/fdiamond(loc)
-	if(prob(10))
-		new /obj/item/mob_trophy/ice_wing(loc)
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/old_demon
@@ -157,8 +155,6 @@
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(20))
 		new /obj/item/gem/fdiamond(loc)
-	if(prob(50))
-		new /obj/item/mob_trophy/ice_crystal(loc)
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/ice_demon/random/Initialize()

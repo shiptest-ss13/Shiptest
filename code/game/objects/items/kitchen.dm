@@ -179,6 +179,7 @@
 
 /obj/item/kitchen/knife/combat
 	name = "combat knife"
+	icon = 'icons/obj/world/melee.dmi'
 	icon_state = "combatknife"
 	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
@@ -187,6 +188,10 @@
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
+
+/obj/item/kitchen/knife/combat/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/kitchen.dmi')
 
 /obj/item/kitchen/knife/combat/survival
 	name = "survival knife"

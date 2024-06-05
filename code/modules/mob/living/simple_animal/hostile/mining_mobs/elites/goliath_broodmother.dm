@@ -43,7 +43,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathmessage = "explodes into gore!"
-	loot_drop = /obj/item/mob_trophy/broodmother_tongue
+	//loot_drop = /obj/item/mob_trophy/broodmother_tongue
 
 	attack_action_types = list(/datum/action/innate/elite_attack/tentacle_patch,
 								/datum/action/innate/elite_attack/spawn_children,
@@ -245,7 +245,10 @@
 		T = get_step(T, i)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 194b597aa438193923e1e2191276f295aa33a19f
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"
 	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."

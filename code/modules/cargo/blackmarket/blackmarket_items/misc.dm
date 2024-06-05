@@ -91,7 +91,7 @@
 	stock = 1
 	availability_prob = 40
 
-/datum/blackmarket_item/consumable/secret_docs/spawn_item(loc)
+/datum/blackmarket_item/misc/secret_docs/spawn_item(loc)
 	var/docs = pick(list(/obj/item/documents/nanotrasen,
 				/obj/item/documents/solgov,
 				/obj/item/documents/terragov,
