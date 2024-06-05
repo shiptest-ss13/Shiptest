@@ -261,7 +261,7 @@
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
-/obj/structure/closet/crate/secure/plasma,
+/obj/structure/closet/crate/secure/weapon,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "dy" = (
@@ -682,9 +682,6 @@
 "kQ" = (
 /obj/structure/table,
 /obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/item/areaeditor/shuttle{
-	pixel_y = 3
-	},
 /obj/machinery/power/terminal{
 	dir = 4;
 	layer = 2.30
@@ -863,7 +860,7 @@
 	icon_state = "0-10"
 	},
 /obj/item/modular_computer/laptop/preset/civilian{
-	pixel_x = 9;
+	pixel_x = 8;
 	pixel_y = 4
 	},
 /obj/item/computer_hardware/card_slot{
@@ -972,6 +969,7 @@
 /obj/item/clothing/head/cowboy/sec,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/meson/engine/tray,
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "or" = (
@@ -1059,6 +1057,12 @@
 /obj/item/radio{
 	pixel_y = 5
 	},
+/obj/item/radio{
+	pixel_y = 5
+	},
+/obj/item/radio{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "oJ" = (
@@ -1066,17 +1070,14 @@
 	dir = 8
 	},
 /obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/pen/fourcolor,
 /obj/item/toy/crayon/spraycan{
-	pixel_x = 9;
+	pixel_x = -9;
 	pixel_y = 17
-	},
-/obj/item/decal_painter{
-	pixel_x = -20;
-	pixel_y = 3
-	},
-/obj/item/hand_labeler{
-	pixel_x = 1;
-	pixel_y = -1
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -1546,16 +1547,20 @@
 /area/ship/hallway/central)
 "yx" = (
 /obj/structure/closet/wall/directional/west,
-/obj/item/soap{
-	pixel_x = -1;
-	pixel_y = -2
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/item/towel{
+	pixel_y = 4;
+	pixel_x = 4
 	},
 /obj/item/towel{
 	pixel_y = 4;
 	pixel_x = -3
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
+/obj/item/soap{
+	pixel_x = -1;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -1888,7 +1893,6 @@
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "Ez" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
@@ -2231,11 +2235,14 @@
 	},
 /obj/structure/table,
 /obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/item/paper_bin{
-	pixel_x = -7;
+/obj/item/decal_painter{
+	pixel_x = -2;
 	pixel_y = 3
 	},
-/obj/item/pen/fourcolor,
+/obj/item/hand_labeler{
+	pixel_x = 13;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Ka" = (
@@ -2721,7 +2728,7 @@
 /area/ship/engineering)
 "PU" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled{
-	dir = 2
+	dir = 4
 	},
 /obj/item/folder/yellow,
 /obj/item/folder/yellow,
@@ -2753,6 +2760,9 @@
 	pixel_y = 3
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
+/obj/machinery/door/window/northleft{
+	name = "shower door"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "Qg" = (
@@ -2939,6 +2949,7 @@
 	pixel_y = 12;
 	pixel_x = -6
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Tz" = (
@@ -3072,6 +3083,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "VZ" = (
