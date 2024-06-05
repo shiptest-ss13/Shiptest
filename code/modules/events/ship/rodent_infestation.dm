@@ -1,7 +1,7 @@
 /datum/round_event_control/rodent_infestation
 	name = "Small Rodent Infestation"
 	typepath = /datum/round_event/ship/rodent_infestation
-	weight = 10
+	weight = 15
 	max_occurrences = 5
 	min_players = 1
 	earliest_start = 5 MINUTES

@@ -3,8 +3,8 @@
 	typepath = /datum/round_event/ghost_role/frontiersmen
 	weight = 0
 	earliest_start = 0
-	max_occurrences = 2
-	min_players = 500
+	max_occurrences = 0
+	min_players = 0 //30
 
 /datum/round_event/ghost_role/frontiersmen
 	role_name = ROLE_FRONTIERSMEN
@@ -13,9 +13,8 @@
 	priority_announce("A Frontiersmen vessel has invaded the outpost, please help", station_name())
 
 /datum/round_event/ghost_role/frontiersmen/spawn_role()
-	makeERT(/datum/ert/frontier)
+	return makeERT(/datum/ert/frontier)
 
-/datum/round_event_control/team/frontiersmen
 /// If we spawn an ERT with the "choose experienced leader" option, select the leader from the top X playtimes
 #define ERT_EXPERIENCED_LEADER_CHOOSE_TOP 3
 
@@ -37,21 +36,20 @@
 	var/turf/brief_spawn
 
 	if(!length(candidates))
-		to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
-		return FALSE
+		return NOT_ENOUGH_PLAYERS
 
 	if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
-		to_chat(usr, span_boldnotice("Attempting to spawn ERT custom shuttle, this may take a few seconds..."))
+		message_admins("Attempting to spawn ERT custom shuttle, this may take a few seconds...")
 
 		var/datum/map_template/shuttle/template = new ertemplate.ert_template
 		var/spawn_location
 
 		if(ertemplate.spawn_at_outpost)
 			if(length(SSovermap.outposts) > 1)
-				var/temp_loc = input(usr, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+				var/temp_loc = pick(SSovermap.outposts)
 				if(!temp_loc)
 					message_admins("ERT found no outpost to spawn at!")
-					return
+					return MAP_ERROR
 				spawn_location = temp_loc
 			else
 				spawn_location = SSovermap.outposts[1]
@@ -63,6 +61,7 @@
 
 		if(!ship)
 			CRASH("Loading ERT shuttle failed!")
+			return MAP_ERROR
 
 		var/list/shuttle_turfs = ship.shuttle_port.return_turfs()
 
@@ -85,6 +84,7 @@
 			message_admins("No outpost spawns found!")
 		spawn_turfs = GLOB.emergencyresponseteam_outpostspawn
 
+	/*
 	if(ertemplate.spawn_admin)
 		if(isobserver(usr))
 			var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawnpoints[1])
@@ -94,6 +94,7 @@
 			admin_officer.key = usr.key
 		else
 			to_chat(usr, span_warning("Could not spawn you in as briefing officer as you are not a ghost!"))
+	*/
 
 	//Pick the (un)lucky players
 	var/numagents = min(ertemplate.teamsize, length(candidates))
@@ -200,5 +201,6 @@
 				member.guestbook.add_guest(member_mob, other_member_mob, other_member_mob.real_name, other_member_mob.real_name, TRUE)
 
 		message_admins("[ertemplate.rename_team] has spawned with the mission: [ertemplate.mission]")
+		return SUCCESSFUL_SPAWN
 
 #undef ERT_EXPERIENCED_LEADER_CHOOSE_TOP

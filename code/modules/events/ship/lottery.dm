@@ -1,5 +1,5 @@
 /datum/round_event_control/ship_lottery
-	name = "lottery"
+	name = "Lottery"
 	typepath = /datum/round_event/ship/lottery
 	weight = 2
 	earliest_start = 20 MINUTES
