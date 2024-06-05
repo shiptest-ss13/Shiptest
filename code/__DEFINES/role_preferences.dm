@@ -42,30 +42,16 @@
 #define ROLE_SYNDICATE_CYBERSUN "Cybersun Space Syndicate" //Ghost role syndi from Forgottenship ruin
 #define ROLE_SYNDICATE_CYBERSUN_CAPTAIN "Cybersun Space Syndicate Captain" //Forgottenship captain syndie
 #define ROLE_BORER "borer"
+#define ROLE_FRONTIERSMEN "Frontiersmen"
 
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
 //(in game days played) to play that role
 GLOBAL_LIST_INIT(special_roles, list(
-	ROLE_TRAITOR = /datum/game_mode/traitor,
-	ROLE_BROTHER = /datum/game_mode/traitor/bros,
-	ROLE_OPERATIVE = /datum/game_mode/nuclear,
-	ROLE_CHANGELING = /datum/game_mode/changeling,
-	ROLE_WIZARD = /datum/game_mode/wizard,
-	ROLE_MALF,
-	ROLE_ALIEN,
 	ROLE_PAI,
-	ROLE_CULTIST = /datum/game_mode/cult,
-	ROLE_BLOB,
-	ROLE_NINJA,
-	ROLE_OBSESSED,
-	ROLE_SPACE_DRAGON,
-	ROLE_REVENANT,
-	ROLE_ABDUCTOR,
-	ROLE_DEVIL = /datum/game_mode/devil,
-	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
+	ROLE_FRONTIERSMEN = /datum/antagonist/frontiersmen,
+	ROLE_ALIEN,
 	ROLE_SENTIENCE,
-	ROLE_BORER
 ))
 
 //Job defines for what happens when you fail to qualify for any job during job selection

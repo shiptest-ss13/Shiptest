@@ -22,7 +22,7 @@
 	outfit = /datum/outfit/abductor/agent
 	landmark_type = /obj/effect/landmark/abductor/agent
 	greet_text = "Use your stealth technology and equipment to incapacitate humans for your scientist to retrieve."
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 
 /datum/antagonist/abductor/scientist
 	name = "Abductor Scientist"
@@ -30,7 +30,7 @@
 	outfit = /datum/outfit/abductor/scientist
 	landmark_type = /obj/effect/landmark/abductor/scientist
 	greet_text = "Use your experimental console and surgical equipment to monitor your agent and experiment upon abducted humans."
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 
 /datum/antagonist/abductor/scientist/onemanteam
 	name = "Abductor Solo"
