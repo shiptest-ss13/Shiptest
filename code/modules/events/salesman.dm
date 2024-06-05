@@ -27,9 +27,7 @@
 
 	var/spawn_location = pick(spawn_locs)
 	var/mob/living/carbon/human/salesman = new(spawn_location)
-	var/datum/preferences/A = new
-	A.copy_to(salesman)
-	salesman.dna.update_dna_identity()
+	selected.client.prefs.copy_to(salesman)
 	var/datum/mind/salesman_mind = new /datum/mind(selected.key)
 	salesman_mind.assigned_role = role_name
 	salesman_mind.special_role = role_name
