@@ -1,9 +1,9 @@
 /datum/round_event_control/ship_lottery
 	name = "lottery"
 	typepath = /datum/round_event/ship/lottery
-	weight = 10
-	earliest_start = 0
-	min_players = 1
+	weight = 2
+	earliest_start = 0 //20 MINUTES
+	min_players = 1 //10
 	max_occurrences = 1
 
 /datum/round_event_control/ship_lottery/canSpawnEvent(players, allow_magic = FALSE)
@@ -26,6 +26,11 @@
 	if(prob(announceChance) || fake)
 		if(fake)
 			creds_won = 1000000000
-		priority_announce("[target_ship] has won a sweep stakes for [creds_won] creds!", null, null, "Priority")
+		priority_announce("congracts to [target_ship] who has won a sweep stakes for [creds_won] creds!",
+			null,
+			null,
+			"Swee stakes!",
+			sender_override = "Outpost Communications",
+		)
 
 

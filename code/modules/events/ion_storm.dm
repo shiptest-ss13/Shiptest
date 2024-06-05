@@ -1,9 +1,3 @@
-/datum/round_event_control/ion_storm
-	name = "Ion Storm"
-	typepath = /datum/round_event/ion_storm
-	weight = 0
-	min_players = 500
-
 /datum/round_event/ion_storm
 	var/replaceLawsetChance = 25 //chance the AI's lawset is completely replaced with something else per config weights
 	var/removeRandomLawChance = 10 //chance the AI has one random supplied or inherent law removed

@@ -1,7 +1,7 @@
 /datum/round_event_control/aurora_caelus
 	name = "Aurora Caelus"
 	typepath = /datum/round_event/aurora_caelus
-	weight = 10
+	weight = 5
 	earliest_start = 0
 	min_players = 1
 	max_occurrences = 1
@@ -20,8 +20,9 @@
 
 /datum/round_event/aurora_caelus/announce()
 	priority_announce("A harmless cloud of ions is approaching your sector, and will exhaust their energy battering the hull. During this time, starlight will be bright but gentle, shifting between quiet green and blue colors.",
-	sound = 'sound/misc/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+		sound = 'sound/misc/notice2.ogg',
+		sender_override = "Nanotrasen Meteorology Division"
+	)
 	for(var/V in GLOB.player_list)
 		var/mob/M = V
 		if(M.client.prefs.toggles & SOUND_MIDI)

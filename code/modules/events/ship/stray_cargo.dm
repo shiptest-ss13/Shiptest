@@ -2,9 +2,10 @@
 /datum/round_event_control/stray_cargo
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/ship/stray_cargo
-	weight = 20
-	max_occurrences = 4
-	earliest_start = 0
+	weight = 5
+	max_occurrences = 2
+	min_players = 1 //10
+	earliest_start = 0 //10 MINUTES
 
 /datum/round_event_control/stray_cargo/canSpawnEvent(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
@@ -18,8 +19,14 @@
 	var/list/possible_pack_types = list() ///List of possible supply packs dropped in the pod, if empty picks from the cargo list
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
-///datum/round_event/ship/stray_cargo/announce(fake)
-	//priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert", zlevel = impact_area.virtual_z())
+/datum/round_event/ship/stray_cargo/announce(fake)
+	if(prob(announceChance) || fake)
+		priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].",
+			"Collision Alert",
+			null,
+			sender_override = "[target_ship] Radar",
+			zlevel = impact_area.virtual_z()
+		)
 
 /**
 * Tries to find a valid area, throws an error if none are found
@@ -28,7 +35,7 @@
 /datum/round_event/ship/stray_cargo/setup()
 	if(!..())
 		return
-	startWhen = rand(20, 40)
+	startWhen = rand(10, 20)
 	impact_area = find_event_area()
 	if(!impact_area)
 		CRASH("No valid areas for cargo pod found.")
@@ -60,14 +67,10 @@
 	crate.locked = FALSE //Unlock secure crates
 	crate.update_appearance()
 	var/obj/structure/closet/supplypod/pod = make_pod()
+	pod.explosionSize = list(0,0,1,2)
 	new /obj/effect/pod_landingzone(LZ, pod, crate)
 
 ///Handles the creation of the pod, in case it needs to be modified beforehand
 /datum/round_event/ship/stray_cargo/proc/make_pod()
 	var/obj/structure/closet/supplypod/S = new
 	return S
-
-///Picks an area that wouldn't risk critical damage if hit by a pod explosion
-/datum/round_event/ship/stray_cargo/proc/find_event_area()
-	if (length(target_ship.shuttle_port.shuttle_areas))
-		return pick(target_ship.shuttle_port.shuttle_areas)

@@ -7,3 +7,12 @@
 	else
 		return FALSE
 	return TRUE
+
+/datum/round_event/ship/proc/find_event_area()
+	if(length(target_ship.shuttle_port.shuttle_areas))
+		return pick(target_ship.shuttle_port.shuttle_areas)
+
+/datum/round_event/ship/proc/find_event_turf()
+	var/area/ship_area = find_event_area()
+	return pick(get_area_turfs(ship_area))
+
