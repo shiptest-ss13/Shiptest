@@ -44,7 +44,13 @@
 	name = "Scorched Hut"
 	icon_state = "red"
 
+//Buried Shrine
+
+/area/ruin/unpowered/buried_shrine
+	name = "Buried Shrine"
+	icon_state = "red"
+
 //Crashed Starwalker
+
 /area/ruin/unpowered/crashed_starwalker
 	name = "Crashed Pirate Ship"
-
