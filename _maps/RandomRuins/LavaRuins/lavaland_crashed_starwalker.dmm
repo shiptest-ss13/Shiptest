@@ -2,12 +2,15 @@
 "ao" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ar" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"as" = (
+/turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "av" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -21,7 +24,7 @@
 /obj/item/wallframe/apc,
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "aL" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -42,14 +45,18 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "aN" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"bd" = (
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
 "bg" = (
 /turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -67,7 +74,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "bz" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
@@ -75,7 +82,7 @@
 	name = "Blast Shutters"
 	},
 /turf/open/floor/engine/hull/interior,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "bI" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
@@ -87,7 +94,7 @@
 	},
 /obj/item/ammo_box/a12g,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "bL" = (
 /obj/effect/turf_decal/number/zero{
 	dir = 8
@@ -109,7 +116,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "bV" = (
 /obj/structure/catwalk/over,
 /obj/structure/sign/departments/medbay/alt{
@@ -130,7 +137,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/cable_coil/cut/pink{
@@ -153,7 +160,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cq" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass{
@@ -161,7 +168,7 @@
 	pixel_x = 16
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cA" = (
 /obj/machinery/light/directional/east,
 /obj/structure/closet/crate/trashcart,
@@ -185,14 +192,14 @@
 	icon_state = "1-9"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cC" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mopbucket,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -207,7 +214,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -227,12 +234,12 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "cT" = (
 /obj/effect/turf_decal/industrial/loading,
 /obj/item/reagent_containers/food/snacks/monkeycube,
 /turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "dh" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -251,16 +258,15 @@
 	},
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "di" = (
-/obj/structure/flora/ash/fern,
+/obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "dm" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-74"
 	},
-/obj/structure/foamedmetal,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "dC" = (
@@ -269,12 +275,9 @@
 	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "dP" = (
-/obj/item/stack/rods{
-	pixel_x = -9;
-	pixel_y = 1
-	},
+/obj/item/grown/log/tree,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "dX" = (
@@ -313,7 +316,7 @@
 	icon = 'icons/obj/stairs.dmi';
 	dir = 8
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ek" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -333,7 +336,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "er" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -343,7 +346,7 @@
 	icon_state = "1-6"
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "eN" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/airlock/glass,
@@ -360,7 +363,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "eT" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip{
@@ -386,13 +389,13 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "fk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "fu" = (
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/northright{
@@ -405,7 +408,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "fM" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/firedoor/border_only{
@@ -425,7 +428,7 @@
 	icon_state = "1-10"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "gd" = (
 /obj/structure/railing{
 	dir = 4
@@ -435,7 +438,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "gi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/toilet{
@@ -450,7 +453,7 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/structure/curtain/bounty,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "gr" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/railing/corner{
@@ -465,7 +468,7 @@
 	},
 /obj/structure/grille,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "gu" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -476,14 +479,14 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "gU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kirbyplants{
 	icon_state = "plant-10"
 	},
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "hd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -495,7 +498,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/grille,
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "hg" = (
 /obj/item/soap/deluxe,
 /obj/item/bikehorn/rubberducky,
@@ -507,16 +510,11 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plating/catwalk_floor,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "hi" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"hx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
 "hN" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/blood/old{
@@ -533,7 +531,7 @@
 	pixel_y = -9
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ia" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
@@ -546,9 +544,10 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "id" = (
-/turf/open/lava/smooth/lava_land_surface,
+/obj/structure/flora/ausbushes/fernybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "it" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -559,7 +558,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "iw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
@@ -575,7 +574,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "iB" = (
 /obj/machinery/button/door{
 	pixel_x = -23;
@@ -588,20 +587,23 @@
 	},
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "iC" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "iE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/firealarm,
 /obj/machinery/light/broken/directional/south,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "iN" = (
-/obj/structure/flora/tree/tall/whitesands,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = 13;
+	pixel_y = 17
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "ju" = (
 /obj/effect/decal/fakelattice{
@@ -614,8 +616,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "jC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/rock/pile/lava,
+/obj/item/stack/rods{
+	pixel_x = -9;
+	pixel_y = 1
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "jH" = (
@@ -628,7 +632,7 @@
 /obj/structure/disposalpipe/broken,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "kg" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -638,7 +642,11 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"kh" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "kv" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow{
@@ -650,7 +658,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ky" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/moss,
@@ -683,7 +691,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "kR" = (
 /obj/structure/railing{
 	dir = 1
@@ -697,7 +705,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "kX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -717,7 +725,7 @@
 	pixel_x = 5
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "lq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/engineering,
@@ -731,7 +739,7 @@
 /obj/item/stack/circuit_stack,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "lM" = (
 /obj/item/pushbroom{
 	pixel_x = 6;
@@ -745,7 +753,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ma" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -785,18 +793,31 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "mm" = (
-/obj/item/stack/ore/salvage/scrapmetal/five,
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = 7
+	},
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-3"
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "mU" = (
-/obj/structure/flora/tree/dead/hell,
-/turf/open/floor/plating/grass/lava,
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "nw" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
+"nz" = (
+/obj/item/stack/rods{
+	pixel_x = 9;
+	pixel_y = -11
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "nB" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -812,12 +833,12 @@
 	pixel_x = -8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "nH" = (
 /obj/machinery/smartfridge/organ,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "of" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -826,7 +847,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ou" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -849,9 +870,13 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "oy" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/medical/bruise_pack/herb{
+	pixel_x = -10;
+	pixel_y = 12
+	},
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "oz" = (
@@ -868,7 +893,7 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "oG" = (
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -880,9 +905,9 @@
 	pixel_y = -9
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "oH" = (
-/obj/structure/flora/rock/beach,
+/obj/structure/girder/displaced,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "oQ" = (
@@ -912,7 +937,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "pj" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -928,7 +953,7 @@
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "pk" = (
 /obj/item/reagent_containers/food/snacks/monkeycube{
 	pixel_y = -1;
@@ -936,7 +961,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "pm" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt,
@@ -953,7 +978,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "pP" = (
 /obj/machinery/computer/card/minor/cmo{
 	dir = 8
@@ -966,10 +991,11 @@
 	name = "pepper"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "pV" = (
-/obj/structure/flora/ausbushes/fernybush/hell,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "qs" = (
 /obj/effect/decal/fakelattice{
@@ -998,7 +1024,7 @@
 /obj/machinery/cell_charger,
 /obj/structure/grille/broken,
 /turf/open/floor/plating/rust,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "rl" = (
 /obj/item/grown/log/tree,
 /turf/open/floor/plating/grass/lava/orange,
@@ -1014,7 +1040,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ry" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1028,7 +1054,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "rH" = (
 /obj/structure/closet/crate/silvercrate,
 /obj/item/clothing/neck/cloak/qm,
@@ -1042,7 +1068,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "rK" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = -21;
@@ -1050,8 +1076,12 @@
 	},
 /obj/structure/poddoor_assembly/shutters,
 /turf/open/floor/engine/hull/interior,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "rN" = (
+/obj/item/stack/rods{
+	pixel_x = 9;
+	pixel_y = -11
+	},
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
 "rT" = (
@@ -1066,7 +1096,7 @@
 	icon_state = "0-5"
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "rX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
@@ -1089,7 +1119,7 @@
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "sw" = (
 /obj/effect/turf_decal/siding/wood/end,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1107,7 +1137,7 @@
 	icon_state = "8-10"
 	},
 /turf/open/floor/wood,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "sy" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -1117,7 +1147,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"sA" = (
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "sH" = (
 /obj/structure/window/reinforced,
 /obj/structure/cable{
@@ -1130,7 +1163,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "sJ" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
@@ -1151,15 +1184,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "tm" = (
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "tG" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "tT" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
@@ -1180,7 +1213,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "tW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -1214,12 +1247,12 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "tY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plasteel/grimy,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "uf" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = -21;
@@ -1261,13 +1294,13 @@
 	start_charge = 0
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "uU" = (
-/obj/structure/foamedmetal,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "ve" = (
-/obj/structure/flora/rock/pile/lava,
+/obj/structure/flora/rock/lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "vf" = (
@@ -1285,7 +1318,7 @@
 	pixel_y = -3
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "vg" = (
 /obj/structure/railing{
 	dir = 4
@@ -1301,10 +1334,10 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "vw" = (
-/obj/structure/foamedmetal,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/obj/structure/flora/tree/tall/whitesands,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "vy" = (
 /obj/effect/decal/fakelattice{
@@ -1350,19 +1383,17 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "wl" = (
 /obj/structure/cable/green{
 	icon_state = "4-9"
 	},
 /obj/item/clothing/shoes/jackboots,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "wp" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-74"
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/obj/structure/flora/ash/fireblossom,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "ws" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1371,7 +1402,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "wx" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt,
@@ -1386,13 +1417,9 @@
 	},
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "wI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/ore/salvage/scraptitanium{
-	pixel_x = -12;
-	pixel_y = 11
-	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "wJ" = (
@@ -1408,14 +1435,7 @@
 	icon_state = "2-10"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
-"xl" = (
-/obj/item/stack/rods{
-	pixel_x = 9;
-	pixel_y = -11
-	},
-/turf/open/floor/plating/rust,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/crashed_starwalker)
 "xt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1423,8 +1443,8 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "xu" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/structure/flora/rock/beach,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "xy" = (
 /obj/effect/decal/cleanable/blood{
@@ -1440,14 +1460,6 @@
 	},
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/engine/hull/interior,
-/area/overmap_encounter/planetoid/lava/explored)
-"xL" = (
-/obj/item/stack/rods{
-	pixel_x = 9;
-	pixel_y = -11
-	},
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "ye" = (
 /obj/item/stack/ore/salvage/scrapmetal/five{
@@ -1465,7 +1477,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "yn" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
@@ -1490,16 +1502,15 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ys" = (
 /obj/machinery/door/airlock/external/glass{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "yJ" = (
-/obj/item/clothing/under/rank/security/officer/frontier,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
 "yQ" = (
 /obj/effect/turf_decal/techfloor{
@@ -1516,7 +1527,7 @@
 /obj/structure/frame/machine,
 /obj/structure/railing,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ze" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1525,7 +1536,7 @@
 	pixel_y = 15
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "zq" = (
 /obj/structure/grille/broken,
 /obj/item/stack/ore/salvage/scrapmetal/five,
@@ -1549,14 +1560,14 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "zT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "zW" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-141"
@@ -1586,20 +1597,10 @@
 	start_charge = 0
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Aa" = (
-/obj/structure/cable,
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered)
-"Aq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/medical/bruise_pack/herb{
-	pixel_x = -10;
-	pixel_y = 12
-	},
+/obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "Av" = (
@@ -1631,7 +1632,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "AG" = (
 /obj/item/clothing/head/beret/sec/frontier,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1660,7 +1661,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "AS" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
@@ -1679,7 +1680,15 @@
 	dir = 1
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"Ba" = (
+/obj/structure/flora/tree/dead/hell,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/cave/explored)
+"BB" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "BC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1703,7 +1712,7 @@
 	dir = 6
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "BP" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-46"
@@ -1715,13 +1724,19 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "BY" = (
 /obj/item/stack/cable_coil/cut/red{
 	pixel_y = -9;
 	pixel_x = 9
 	},
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/lava/explored)
+"Ch" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/overmap_encounter/planetoid/lava/explored)
 "Cu" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1730,9 +1745,8 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Cz" = (
-/obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -1748,8 +1762,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Db" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore/glass/basalt{
@@ -1767,7 +1784,7 @@
 	pixel_y = 15
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Di" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1788,7 +1805,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "DA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain/bounty,
@@ -1798,11 +1815,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"DG" = (
-/obj/structure/flora/rock/lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/crashed_starwalker)
 "DK" = (
 /obj/structure/closet/crate/secure/loot,
 /turf/open/floor/plating/moss,
@@ -1821,7 +1834,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ec" = (
 /obj/machinery/power/apc/auto_name/directional/west{
 	start_charge = 0
@@ -1833,7 +1846,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/stairs/wood,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Eh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore/salvage/scrapgold/five{
@@ -1858,7 +1871,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ey" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -1878,7 +1891,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ez" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow{
@@ -1902,14 +1915,14 @@
 	pixel_x = 9
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "EV" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_bridge"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "EW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
@@ -1925,14 +1938,22 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "EZ" = (
-/obj/structure/flora/ash/fireblossom,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scraptitanium{
+	pixel_x = -12;
+	pixel_y = 11
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Ff" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/item/stack/ore/salvage/scraptitanium{
+	pixel_x = -12;
+	pixel_y = 11
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "Fu" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plating/grass/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "Fv" = (
@@ -1948,23 +1969,20 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"FC" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
 "FM" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/west,
 /obj/structure/grille,
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "FZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered)
-"GF" = (
-/obj/item/stack/ore/salvage/scrapmetal/five{
-	pixel_x = 13;
-	pixel_y = 17
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/crashed_starwalker)
 "GR" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -1974,7 +1992,7 @@
 	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "GV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -1990,7 +2008,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "GY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/cable_coil/cut/green,
@@ -2012,7 +2030,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Hm" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
@@ -2024,14 +2042,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/processor,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ht" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "HE" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -2042,14 +2060,14 @@
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "HI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "HK" = (
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/northright{
@@ -2065,7 +2083,7 @@
 	dir = 9
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ib" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-25"
@@ -2073,7 +2091,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ig" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -2081,9 +2099,13 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "In" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scrapsilver/five{
+	pixel_x = -7;
+	pixel_y = 8
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2093,16 +2115,12 @@
 	piping_layer = 2
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ip" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
-"Ir" = (
-/obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
 "IC" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = -10;
@@ -2129,7 +2147,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "IY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/foamedmetal,
@@ -2143,7 +2161,7 @@
 	pixel_y = 15
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Jk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -2159,7 +2177,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/foam,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ju" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip{
@@ -2174,10 +2192,10 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Jw" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/obj/structure/flora/firebush,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "Jx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2196,17 +2214,11 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "JJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/ore/salvage/scrapsilver/five{
-	pixel_x = -7;
-	pixel_y = 8
-	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/structure/foamedmetal,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/crashed_starwalker)
 "JR" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4
@@ -2221,7 +2233,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Kk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -2235,9 +2247,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Kq" = (
-/obj/item/clothing/under/costume/sailor,
+/obj/item/clothing/under/rank/security/officer/frontier,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Ks" = (
@@ -2246,8 +2258,9 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Ky" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "KC" = (
 /obj/structure/catwalk/over,
 /obj/structure/closet/firecloset/wall/directional/west,
@@ -2265,13 +2278,13 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "KD" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "KL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -2286,7 +2299,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "KO" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -2298,7 +2311,7 @@
 	dir = 8
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "La" = (
 /obj/machinery/power/terminal,
 /obj/machinery/power/apc/auto_name/directional/east{
@@ -2314,7 +2327,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Lg" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -2330,7 +2343,7 @@
 	},
 /obj/item/light/tube/broken,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "LA" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -2355,7 +2368,7 @@
 	},
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Mj" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/borderfloorblack,
@@ -2365,13 +2378,13 @@
 /obj/machinery/airalarm/directional/south,
 /obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Mk" = (
 /obj/structure/statue/sandstone/assistant,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Mm" = (
 /obj/structure/railing,
 /obj/structure/cable/yellow{
@@ -2389,7 +2402,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Mz" = (
 /obj/structure/grille,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -2406,7 +2419,7 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/glowstick,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "MO" = (
 /obj/structure/bed/roller,
 /obj/effect/decal/cleanable/blood/old{
@@ -2426,7 +2439,7 @@
 	pixel_x = -4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "MV" = (
 /obj/item/radio/intercom/directional/east,
 /obj/effect/decal/cleanable/glass{
@@ -2434,7 +2447,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "MX" = (
 /obj/machinery/vending/snack/random,
 /obj/structure/railing{
@@ -2450,19 +2463,15 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Nv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
-"NA" = (
-/obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
 "NC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "NP" = (
 /obj/item/cigbutt/cigarbutt{
 	pixel_y = 15;
@@ -2497,7 +2506,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/animalhide/monkey,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Ou" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/airlock/glass,
@@ -2515,7 +2524,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Pe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2523,10 +2532,10 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "Pk" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "Pv" = (
+/obj/structure/foamedmetal,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Pz" = (
@@ -2535,7 +2544,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "PH" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/moss,
@@ -2549,7 +2558,7 @@
 	},
 /obj/structure/curtain/bounty,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Qa" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/old{
@@ -2578,7 +2587,7 @@
 	icon_state = "6-8"
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Qq" = (
 /obj/structure/railing{
 	dir = 8
@@ -2589,10 +2598,10 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Qx" = (
-/obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/structure/flora/rock/pile/lava,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "QC" = (
 /obj/structure/flora/rock,
@@ -2604,8 +2613,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "QT" = (
-/obj/structure/flora/firebush,
-/turf/open/floor/plating/grass/lava/orange,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-74"
+	},
+/obj/structure/foamedmetal,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "QW" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -2621,7 +2633,7 @@
 	pixel_x = 12
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Rf" = (
 /obj/structure/railing/corner{
 	dir = 4;
@@ -2636,7 +2648,7 @@
 	},
 /obj/item/clothing/under/rank/security/officer/frontier,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Rg" = (
 /turf/open/floor/engine/hull/interior,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2654,7 +2666,7 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "RN" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -2662,12 +2674,7 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
-"RO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered/crashed_starwalker)
 "RQ" = (
 /obj/structure/closet/crate/goldcrate,
 /turf/open/floor/plating/moss,
@@ -2708,7 +2715,7 @@
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Sz" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -2727,20 +2734,27 @@
 	},
 /obj/item/dice/d2,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "SS" = (
 /obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/stack/sticky_tape,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
-/area/ruin/unpowered)
-"Tj" = (
-/obj/item/grown/log/tree,
+/area/ruin/unpowered/crashed_starwalker)
+"Tg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/rock/pile/lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"Tw" = (
+"Tj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
+"Tw" = (
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "TF" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -2753,12 +2767,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "TI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "TK" = (
 /obj/structure/cable/orange{
 	icon_state = "4-10"
@@ -2769,16 +2781,7 @@
 /obj/structure/fluff/broken_flooring,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"TZ" = (
-/obj/item/stack/ore/salvage/scrapmetal/five{
-	pixel_x = 7
-	},
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-3"
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/crashed_starwalker)
 "Uc" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/rust,
@@ -2795,7 +2798,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Uy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2819,7 +2822,7 @@
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/pod/light,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "UL" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = -21;
@@ -2827,7 +2830,7 @@
 	},
 /obj/structure/foamedmetal,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "UQ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -2844,7 +2847,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "UZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -2865,7 +2868,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Vb" = (
 /obj/item/stack/rods{
 	pixel_x = 2;
@@ -2900,7 +2903,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "VO" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2916,7 +2919,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "VR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass{
@@ -2939,7 +2942,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Wa" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/moss,
@@ -2947,10 +2950,6 @@
 "Wi" = (
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/lava/explored)
-"Wm" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "Wp" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2993,7 +2992,7 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "WY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -3004,7 +3003,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Xa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -3025,19 +3024,24 @@
 	pixel_x = -14
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
+"Xe" = (
+/obj/structure/cable,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/crashed_starwalker)
 "Xh" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_bridge"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Xj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/girder/displaced,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "Xs" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -3050,11 +3054,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XK" = (
 /obj/structure/grille,
 /turf/template_noop,
@@ -3088,14 +3092,14 @@
 	pixel_x = 11
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XN" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XP" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6;
@@ -3112,8 +3116,9 @@
 	},
 /obj/item/gun/ballistic/shotgun/doublebarrel,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XR" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "XT" = (
@@ -3121,7 +3126,7 @@
 /obj/item/broken_missile,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "XZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
@@ -3131,7 +3136,7 @@
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Yb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -3149,7 +3154,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/pod,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Yg" = (
 /obj/machinery/cryopod,
 /obj/effect/turf_decal/siding/wood{
@@ -3159,7 +3164,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "YF" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -3192,20 +3197,13 @@
 	pixel_y = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "Zo" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine/hull/interior,
-/area/overmap_encounter/planetoid/lava/explored)
-"Zp" = (
-/obj/item/stack/ore/salvage/scraptitanium{
-	pixel_x = -12;
-	pixel_y = 11
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "ZW" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -3220,7 +3218,7 @@
 	},
 /obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 "ZX" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -3229,7 +3227,7 @@
 /obj/machinery/iv_drip,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/unpowered)
+/area/ruin/unpowered/crashed_starwalker)
 
 (1,1,1) = {"
 Qi
@@ -3244,13 +3242,13 @@ Qi
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-XR
+TI
+TI
+TI
+TI
+TI
+TI
+Pk
 Qi
 Qi
 Qi
@@ -3259,9 +3257,9 @@ Qi
 Qi
 Qi
 Qi
-XR
-Qx
-XR
+Pk
+FC
+Pk
 Qi
 Qi
 Qi
@@ -3274,12 +3272,12 @@ Qi
 Qi
 Qi
 Qi
-XR
-XR
-XR
-XR
-XR
-XR
+Pk
+Pk
+Pk
+Pk
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3304,41 +3302,41 @@ bg
 bg
 bg
 Wp
-Pv
-Pv
-Pv
-Pv
-XR
-XR
-XR
-Qi
-Qi
-Qi
-Qi
-XR
-XR
-XR
-pV
-XR
-XR
-XR
-Qi
-Qi
-Qi
-Qi
-Qi
-Qi
-Qi
-Qi
-Qi
-XR
-XR
-QT
-XR
-pV
-XR
-XR
+TI
+TI
+TI
+TI
 Pk
+Pk
+Pk
+Qi
+Qi
+Qi
+Qi
+Pk
+Pk
+Pk
+id
+Pk
+Pk
+Pk
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Pk
+Pk
+Jw
+Pk
+id
+Pk
+Pk
+bd
 Qi
 Qi
 Qi
@@ -3362,42 +3360,42 @@ bg
 bg
 bg
 Sc
-Pv
-Pv
+TI
+TI
 bL
 bL
 RS
 VO
-XR
-XR
-XR
-XR
-XR
-Qx
-QT
-XR
-XR
-XR
-Qx
-XR
-XR
-XR
-Qi
-XR
-XR
-XR
-XR
-XR
-XR
 Pk
-XR
-Qx
-XR
-XR
-XR
-Qx
-XR
-XR
+Pk
+Pk
+Pk
+Pk
+FC
+Jw
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
+Pk
+Qi
+Pk
+Pk
+Pk
+Pk
+Pk
+Pk
+bd
+Pk
+FC
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3420,43 +3418,43 @@ EW
 bg
 hi
 Hi
-Ky
-Ky
+wI
+wI
 vO
-Pv
-Pv
+TI
+TI
 xG
-Pv
-Pv
-XR
-XR
-EZ
-XR
-XR
-YG
-XR
+TI
+TI
 Pk
-XR
-EZ
-XR
-Qx
-Qx
-XR
-XR
-XR
-iN
-XR
-Qx
-XR
-Qx
-XR
-XR
-Qx
-XR
-QT
-XR
-XR
-XR
+Pk
+wp
+Pk
+Pk
+YG
+Pk
+bd
+Pk
+wp
+Pk
+FC
+FC
+Pk
+Pk
+Pk
+vw
+Pk
+FC
+Pk
+FC
+Pk
+Pk
+FC
+Pk
+Jw
+Pk
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3472,49 +3470,49 @@ bg
 bg
 bg
 nw
-Ir
+di
 Vi
+Aa
 TI
-Pv
-Pv
+TI
 Hi
-Pv
-Pv
+TI
+TI
 RU
-Ky
-Pv
+wI
+TI
 Rg
-Pv
-Pv
+TI
+TI
 IH
-Pv
+TI
+bd
 Pk
-XR
-XR
-XR
-XR
-Qx
-XR
-XR
-XR
-XR
-XR
-QT
-XR
-XR
-XR
-Qx
-XR
-XR
-XR
-iN
-XR
-XR
 Pk
-XR
-XR
-XR
-XR
+Pk
+Pk
+FC
+Pk
+Pk
+Pk
+Pk
+Pk
+Jw
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
+Pk
+vw
+Pk
+Pk
+bd
+Pk
+Pk
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3530,49 +3528,49 @@ bg
 bg
 bg
 bg
-oy
+mU
 hd
-NA
-NA
-NA
-NA
-NA
+BB
+BB
+BB
+BB
+BB
 xy
-Pv
-Pv
-Ky
-Ky
-Ky
-Pv
-Pv
-Pv
-Pv
-Qx
-XR
-XR
-QT
-XR
-XR
-Qx
-XR
-XR
-XR
-XR
-Qx
-XR
-XR
-pV
-XR
-XR
-XR
-XR
-XR
-Qx
-XR
-XR
-Qx
-XR
-pV
+TI
+TI
+wI
+wI
+wI
+TI
+TI
+TI
+TI
+FC
+Pk
+Pk
+Jw
+Pk
+Pk
+FC
+Pk
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
+id
+Pk
+Pk
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
+FC
+Pk
+id
 Qi
 Qi
 Qi
@@ -3593,44 +3591,44 @@ bg
 bg
 bg
 bg
-Pv
+TI
 IH
-Pv
-Ky
-Pv
-Pv
-Pv
-Pv
-Ky
-Pv
-Pv
-Pv
-Pv
-oH
-XR
-XR
-XR
-XR
-XR
-iN
-Qx
-XR
+TI
+wI
+TI
+TI
+TI
+TI
+wI
+TI
+TI
+TI
+TI
+xu
 Pk
-XR
-Qx
-XR
-XR
-XR
-XR
-Qx
-XR
-XR
-EZ
-Qx
-XR
-XR
-XR
-XR
+Pk
+Pk
+Pk
+Pk
+vw
+FC
+Pk
+bd
+Pk
+FC
+Pk
+Pk
+Pk
+Pk
+FC
+Pk
+Pk
+wp
+FC
+Pk
+Pk
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3650,46 +3648,46 @@ bg
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
 BC
 ry
-Pv
-Pv
-Pv
+TI
+TI
+TI
 ye
-Ky
+wI
 bM
 Eh
-Pv
-Pv
-Pv
-Pv
-XR
+TI
+TI
+TI
+TI
 Pk
-XR
-Qx
-Qx
-XR
-XR
-pV
-XR
-XR
-XR
-QT
-XR
-XR
-pV
-XR
-XR
-Qx
-XR
+bd
+Pk
+FC
+FC
+Pk
+Pk
+id
+Pk
+Pk
+Pk
+Jw
+Pk
+Pk
+id
+Pk
+Pk
+FC
+Pk
 YG
-XR
-XR
-XR
+Pk
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3708,10 +3706,10 @@ bg
 bg
 bg
 bg
-Pv
-Pv
-oH
-Pv
+TI
+TI
+xu
+TI
 QW
 QW
 Mz
@@ -3723,31 +3721,31 @@ iw
 ma
 VR
 Uc
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-XR
-XR
-XR
-XR
-XR
-Qx
-XR
-Qx
-XR
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+Pk
+Pk
+Pk
+Pk
+Pk
+FC
+Pk
+FC
+Pk
 Qi
 Qi
 Qi
@@ -3763,29 +3761,29 @@ bg
 bg
 bg
 PH
-Ir
+di
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Zo
 LA
-Ky
-Ky
-Xj
-wp
+wI
+wI
+pV
+dm
 Wi
 XK
-GF
+iN
+TI
+rN
+TI
 Pv
-xl
-Pv
-vw
 iC
 tG
 iC
@@ -3794,19 +3792,19 @@ FZ
 ws
 FZ
 iC
-Pv
-Pv
-Pv
-Pv
-Ky
-Ky
-Ky
-Ky
-XR
-XR
-QT
-XR
-XR
+TI
+TI
+TI
+TI
+wI
+wI
+wI
+wI
+Pk
+Pk
+Jw
+Pk
+Pk
 Qi
 Qi
 Qi
@@ -3819,31 +3817,31 @@ bg
 bg
 bg
 DK
-Tw
-hx
+sA
+Ky
 DK
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Ky
-Ky
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 wI
-Pv
+wI
+EZ
+TI
 Vb
-Pv
+TI
 FZ
 FZ
 FZ
@@ -3853,18 +3851,18 @@ nH
 VX
 FZ
 iC
-Ky
-Ky
-Ky
-Ky
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+wI
+wI
+wI
+wI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Qi
 Qi
 Qi
@@ -3879,29 +3877,29 @@ RQ
 uC
 DK
 Dk
-TI
+Aa
 hi
-Pv
-Pv
-Pv
+TI
+TI
+TI
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
 IH
-Pv
-Pv
+TI
+TI
 QC
-Pv
-Pv
-Ky
-JJ
+TI
+TI
+wI
+In
 Uy
 YN
-vw
+Pv
 FZ
 gi
 MN
@@ -3916,13 +3914,13 @@ FZ
 FZ
 FZ
 iC
-Ky
-id
-id
-id
-id
-Ky
-Ky
+wI
+as
+as
+as
+as
+wI
+wI
 Qi
 Qi
 Qi
@@ -3938,25 +3936,25 @@ VS
 ky
 Pe
 ky
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
 bg
 bg
 bg
-Pv
-Pv
+TI
+TI
 IH
+TI
+TI
+TI
+TI
+TI
 Pv
 Pv
-Pv
-Pv
-Pv
-vw
-vw
 IY
-dm
+QT
 Oi
 zW
 Vt
@@ -3973,15 +3971,15 @@ rT
 BK
 Ez
 fj
-Aa
-id
-id
-ve
-Ky
-Ky
-Ky
-Ky
-Pv
+Xe
+as
+as
+Qx
+wI
+wI
+wI
+wI
+TI
 Qi
 Qi
 "}
@@ -3998,14 +3996,14 @@ ky
 WJ
 IC
 Lg
-Pv
-Pv
-Pv
+TI
+TI
+TI
 bg
 bg
-Pv
-Jw
-Pv
+TI
+oH
+TI
 zq
 FZ
 FZ
@@ -4017,7 +4015,7 @@ NC
 IY
 yn
 yn
-vw
+Pv
 ph
 eN
 pm
@@ -4032,14 +4030,14 @@ Yb
 lc
 ia
 KD
-Pv
-Pv
-Pv
-Pv
-id
-id
-id
-Pv
+TI
+TI
+TI
+TI
+as
+as
+as
+TI
 Qi
 Qi
 "}
@@ -4048,21 +4046,21 @@ Qi
 bg
 bg
 bg
-Aq
+oy
 xt
-RO
-RO
+Tj
+Tj
 eT
 uf
 Ju
 kK
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
 bg
-Pv
-Pv
+TI
+TI
 oC
 of
 of
@@ -4081,7 +4079,7 @@ FZ
 En
 av
 it
-uU
+JJ
 cC
 Jv
 FZ
@@ -4089,16 +4087,16 @@ AS
 vf
 La
 HK
-Aa
-id
-id
-id
-id
-id
-Pv
-Pv
-Pv
-Pv
+Xe
+as
+as
+as
+as
+as
+TI
+TI
+TI
+TI
 Qi
 "}
 (16,1,1) = {"
@@ -4108,19 +4106,19 @@ bg
 bg
 uM
 pc
-Ir
+di
 ky
-Ir
+di
 Lg
-Pv
+TI
 bg
-Pv
-Pv
-Jw
-Pv
+TI
+TI
+oH
+TI
 IH
+TI
 Pv
-vw
 iC
 FZ
 FZ
@@ -4139,8 +4137,8 @@ FZ
 FZ
 FZ
 ws
-uU
-uU
+JJ
+JJ
 FZ
 FZ
 FZ
@@ -4148,15 +4146,15 @@ BR
 FZ
 FZ
 iC
-Ky
-Ky
-id
-id
-Pv
-Ky
-Ky
-Ky
-Ky
+wI
+wI
+as
+as
+TI
+wI
+wI
+wI
+wI
 Qi
 "}
 (17,1,1) = {"
@@ -4172,13 +4170,13 @@ wc
 bg
 bg
 bg
-Pv
-Pv
-Pv
+TI
+TI
+TI
 Hm
 qs
-TZ
-vw
+mm
+Pv
 hf
 FM
 iC
@@ -4194,27 +4192,27 @@ yp
 Hl
 FZ
 iC
-Pv
-dP
+TI
+jC
 QQ
 lM
-xL
+nz
 Di
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-oH
-Pv
-Pv
-id
-id
-id
-id
-Ky
-Ky
+TI
+TI
+TI
+TI
+TI
+TI
+xu
+TI
+TI
+as
+as
+as
+as
+wI
+wI
 Qi
 "}
 (18,1,1) = {"
@@ -4229,14 +4227,14 @@ bg
 bg
 bg
 bg
-id
+as
+TI
+oH
+TI
+TI
+Tw
 Pv
-Jw
 Pv
-Pv
-mm
-vw
-vw
 QZ
 rA
 tm
@@ -4251,28 +4249,28 @@ GR
 AN
 Ib
 dC
-Pv
-Pv
+TI
+TI
 Di
-Pv
-xL
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-XR
-XR
+TI
+nz
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+Pk
+Pk
 Qi
 "}
 (19,1,1) = {"
@@ -4287,14 +4285,14 @@ bg
 bg
 bg
 bg
-id
+as
+TI
+TI
+TI
+xu
+TI
 Pv
 Pv
-Pv
-oH
-Pv
-vw
-vw
 Db
 Ja
 ze
@@ -4309,28 +4307,28 @@ wJ
 aL
 gU
 dC
-Pv
-Pv
-Pv
+TI
+TI
+TI
 Di
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
 rl
-xu
 XR
-xu
-Pv
-Pv
-Pv
-Pv
-xu
+Pk
+XR
+TI
+TI
+TI
+TI
+XR
 rl
 Ks
-XR
+Pk
 Qi
 "}
 (20,1,1) = {"
@@ -4345,14 +4343,14 @@ bg
 bg
 bg
 bg
-id
-ve
+as
+Qx
+TI
+TI
+TI
+TI
+iN
 Pv
-Pv
-Pv
-Pv
-GF
-vw
 UL
 hN
 iC
@@ -4368,27 +4366,27 @@ Mm
 Mk
 FZ
 iC
-Pv
-Pv
-Pv
-vw
-vw
-vw
-vw
+TI
+TI
+TI
 Pv
 Pv
 Pv
 Pv
+TI
+TI
+TI
+TI
 Ks
+Pk
+Pk
+Pk
+Pk
+Pk
+Pk
+Pk
 XR
-XR
-XR
-XR
-XR
-XR
-XR
-xu
-XR
+Pk
 Qi
 "}
 (21,1,1) = {"
@@ -4403,11 +4401,11 @@ bg
 bg
 bg
 bg
-id
-id
-Pv
-Pv
-Pv
+as
+as
+TI
+TI
+TI
 Hm
 qs
 qs
@@ -4431,22 +4429,22 @@ FZ
 ws
 XN
 ws
-vw
-vw
 Pv
 Pv
-Pv
-Tj
-Pv
-Pv
-Pv
-Pv
-xu
+TI
+TI
+TI
+dP
+TI
+TI
+TI
+TI
+XR
 rl
-XR
-XR
-XR
-XR
+Pk
+Pk
+Pk
+Pk
 Qi
 "}
 (22,1,1) = {"
@@ -4462,13 +4460,13 @@ bg
 bg
 bg
 bg
-id
-Pv
-Jw
-Pv
-Jw
-Pv
-Pv
+as
+TI
+oH
+TI
+oH
+TI
+TI
 zy
 Ig
 sy
@@ -4488,24 +4486,24 @@ Fv
 wx
 VL
 Jx
-vw
-vw
 Pv
 Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Ks
-XR
-XR
-XR
+Pk
+Pk
+Pk
 "}
 (23,1,1) = {"
 bg
@@ -4520,13 +4518,13 @@ bg
 bg
 bg
 bg
-id
-Pv
-Pv
-Pv
-Pv
+as
+TI
+TI
+TI
+TI
 IH
-Pv
+TI
 zy
 zy
 zy
@@ -4548,22 +4546,22 @@ FZ
 sJ
 FZ
 Av
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Tj
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+dP
+TI
+TI
+TI
+TI
+Pk
 XR
-xu
 "}
 (24,1,1) = {"
 bg
@@ -4572,25 +4570,25 @@ bg
 bg
 bg
 bg
-Wm
+Fu
 bg
 bg
 bg
 bg
 bg
-id
-id
-DG
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+as
+as
+ve
+TI
+TI
+TI
+TI
+TI
+TI
 zy
 zy
-Pv
-Pv
+TI
+TI
 iC
 FZ
 FZ
@@ -4607,21 +4605,21 @@ Qo
 Ds
 ju
 tT
-rN
-Pv
-Pv
-oH
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-XR
+yJ
+TI
+TI
+xu
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+Pk
 "}
 (25,1,1) = {"
 bg
@@ -4629,28 +4627,28 @@ bg
 bg
 bg
 bg
+Xj
+Xj
 Fu
-Fu
-Wm
 bg
 bg
 bg
 bg
 bg
-id
-id
-Pv
-Pv
-Pv
-Pv
-Pv
+as
+as
+TI
+TI
+TI
+TI
+TI
 IH
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
 FZ
 tW
 ef
@@ -4662,24 +4660,24 @@ sw
 Ux
 wl
 tY
-Zp
+Ff
 Em
 oQ
 BP
 qv
-GF
-Pv
-Pv
-Pv
-Pv
-Pv
-Ky
-Ky
-Ky
-Pv
-Pv
-Pv
-Pv
+iN
+TI
+TI
+TI
+TI
+TI
+wI
+wI
+wI
+TI
+TI
+TI
+TI
 "}
 (26,1,1) = {"
 bg
@@ -4687,28 +4685,28 @@ bg
 bg
 bg
 bg
-Fu
-mU
-Fu
-Fu
-Ir
+Xj
+Ba
+Xj
+Xj
+di
 bg
 bg
 bg
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 IH
-Pv
-Pv
-Pv
+TI
+TI
+TI
 EV
 Xs
 ou
@@ -4718,26 +4716,26 @@ FZ
 Cu
 FZ
 oz
-yJ
-Pv
+Kq
+TI
 IJ
 Vb
 GY
 cn
 ar
 BY
-Pv
+TI
 ys
 FZ
 FZ
 iC
-Ky
-id
-id
-id
-Pv
-Pv
-Pv
+wI
+as
+as
+as
+TI
+TI
+TI
 "}
 (27,1,1) = {"
 bg
@@ -4746,55 +4744,55 @@ bg
 bg
 bg
 bg
-Fu
-Fu
-Tw
+Xj
+Xj
+sA
+uU
+mU
 di
-oy
-Ir
-Tw
-oy
+sA
+mU
 hi
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Xh
 tV
 oG
 WM
 FZ
 iC
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
 AG
-Pv
-dP
-Pv
-In
-In
+TI
+jC
+TI
+Ch
+Ch
 Ul
 YF
 KO
 zX
 sH
-Aa
-id
-id
-Ky
-Ky
-Ky
-Pv
+Xe
+as
+as
+wI
+wI
+wI
+TI
 Qi
 "}
 (28,1,1) = {"
@@ -4804,42 +4802,42 @@ bg
 bg
 bg
 bg
-Fu
-Ir
-Ff
-oy
-Tw
-oy
-Tw
-Ir
-Tw
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+Xj
+di
+kh
+mU
+sA
+mU
+sA
+di
+sA
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 EV
 pP
 Sz
 FZ
 iC
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Kq
-Zp
+Ff
 BP
 mb
 ao
@@ -4847,11 +4845,11 @@ KL
 cH
 aN
 KD
-jC
-Ky
-Ky
-Pv
-Pv
+Tg
+wI
+wI
+TI
+TI
 Qi
 Qi
 "}
@@ -4862,54 +4860,54 @@ bg
 bg
 bg
 bg
-oy
+mU
 Wa
-Tw
-Tw
-Tw
-oy
-Tw
-Tw
-Tw
-oy
+sA
+sA
+sA
+mU
+sA
+sA
+sA
+mU
 bg
 bg
 bg
 bg
 bg
 bg
-id
-id
-DG
-Pv
-Pv
+as
+as
+ve
+TI
+TI
 iC
 FZ
 FZ
 iC
-Pv
-Pv
-Pv
+TI
+TI
+TI
 IH
-Pv
-Pv
-Pv
+TI
+TI
+TI
 Nv
 qx
-Pv
-Pv
-dP
+TI
+TI
+jC
 FZ
 Io
 SS
 kv
 fu
-Aa
-id
-id
-id
-Pv
-Pv
+Xe
+as
+as
+as
+TI
+TI
 Qi
 Qi
 "}
@@ -4923,12 +4921,12 @@ bg
 bg
 bg
 bg
-oy
-Ir
-oy
+mU
+di
+mU
 Wa
-Tw
-Ir
+sA
+di
 bg
 bg
 bg
@@ -4937,35 +4935,35 @@ bg
 bg
 bg
 bg
-id
-id
-id
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+as
+as
+as
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 FZ
 FZ
 FZ
 FZ
 FZ
 iC
-Ky
-Ky
-Pv
+wI
+wI
+TI
 Qi
 Qi
 Qi
@@ -5004,25 +5002,25 @@ bg
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 IH
-Pv
-Pv
+TI
+TI
 FZ
 iC
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Ky
+TI
+TI
+TI
+TI
+TI
+TI
+wI
 Qi
 Qi
 Qi
@@ -5066,20 +5064,20 @@ bg
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
 iC
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Qi
 Qi
 Qi
@@ -5129,14 +5127,14 @@ bg
 bg
 bg
 bg
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
-Pv
+TI
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 Qi
 Qi
 Qi
