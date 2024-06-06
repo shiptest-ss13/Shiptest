@@ -1392,6 +1392,11 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
+/obj/item/circuitboard/machine/bountypad
+	name = "\improper Outpost Bounty Pad (Computer Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/bounty_pad
+
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Machine Board)"
