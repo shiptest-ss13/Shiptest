@@ -239,7 +239,7 @@
 	return TRUE
 
 /turf/closed/indestructible/riveted/boss
-	name = "necropolis wall"
+	name = "thick stone wall"
 	desc = "A thick, seemingly indestructible stone wall."
 	icon = 'icons/turf/walls/boss_wall.dmi'
 	icon_state = "boss_wall-0"
