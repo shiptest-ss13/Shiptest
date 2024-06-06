@@ -145,3 +145,8 @@
 /area/ruin/jungle/cavecrew/dormitories
 	name = "Cave Base dormitories"
 	icon_state = "crew_quarters"
+
+//Crash Mechs
+/area/ruin/jungle/MechCrash
+	name = "Crashed mechs"
+	icon_state = "blue"

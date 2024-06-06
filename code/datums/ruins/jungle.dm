@@ -125,3 +125,9 @@
 	id = "abandoned-library"
 	description = "A forgotten library, with a few angry monkeys."
 	suffix = "jungle_abandoned_library.dmm"
+
+/datum/map_template/ruin/jungle/MechCrash
+	name = "Crashed mech Droppods"
+	id = "Crashed-mech"
+	description = "A few crashed mech droppods, dropped for orbit and forgotten"
+	suffix = "jungle_crash_mech.dmm"
