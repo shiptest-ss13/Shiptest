@@ -30,3 +30,9 @@
 	id = "lava_canyon"
 	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
 	suffix = "lavaland_surface_lava_canyon.dmm"
+
+/datum/map_template/ruin/lavaland/fallenstar
+	name = "Crashed Starwalker"
+	id = "crashed_star"
+	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
+	suffix = "lavaland_crashed_starwalker.dmm"
