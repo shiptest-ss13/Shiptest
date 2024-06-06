@@ -19,9 +19,13 @@
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
-	fire_delay = 7
+	fire_delay = 0.7 SECONDS
 	pb_knockback = 2
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+	fire_select_icon_state_prefix = "sg_"
 
 	wield_slowdown = 0.45
 	wield_delay = 0.8 SECONDS
@@ -48,7 +52,8 @@
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+
+	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -61,17 +66,16 @@
 	icon_state = "brimstone"
 	item_state = "brimstone"
 
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	fire_delay = 1
-	rack_delay = 2
+	fire_delay = 0.05 SECONDS //slamfire
+	rack_delay = 0.2 SECONDS
 
 	can_be_sawn_off  = TRUE
 
-
-/obj/item/gun/ballistic/shotgun/brimstone/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
 	. = ..()
@@ -99,7 +103,7 @@
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
-	fire_delay = 1
+	fire_delay = 0.1 SECONDS
 
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(mob/user)
 	. = ..()
@@ -140,7 +144,7 @@
 	desc = "A semi-automatic shotgun with tactical furniture and six-shell capacity underneath."
 	icon_state = "cshotgun"
 	item_state = "shotgun_combat"
-	fire_delay = 5
+	fire_delay = 0.5 SECONDS
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = WEIGHT_CLASS_HUGE
 
@@ -197,7 +201,7 @@
 
 // Bulldog shotgun //
 
-/obj/item/gun/ballistic/shotgun/bulldog
+/obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	name = "\improper Bulldog Shotgun"
 	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -211,19 +215,25 @@
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	can_suppress = FALSE
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	actions_types = list()
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	empty_indicator = TRUE
 	empty_alarm = TRUE
-	special_mags = TRUE
+	unique_mag_sprites_for_variants = TRUE
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	casing_ejector = TRUE
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
 	spread = 4
 	spread_unwielded = 16
@@ -259,8 +269,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	item_state = "cm15"
 	empty_alarm = FALSE
 	empty_indicator = FALSE
-	special_mags = FALSE
+	unique_mag_sprites_for_variants = FALSE
 	manufacturer = MANUFACTURER_MINUTEMAN
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -548,7 +560,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
-	fire_delay = 0.8
+	fire_delay = 0.08 SECONDS //?? very weird number
 	pb_knockback = 12
 	unique_reskin = null
 	recoil = 10
@@ -581,7 +593,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	base_icon_state = "shotgun_e"
 	icon_state = "shotgun_e"
 	burst_size = 100
-	fire_delay = 0.1
+	fire_delay = 0.01 SECONDS
 	pb_knockback = 40
 	recoil = 100
 	recoil_unwielded = 200
@@ -743,10 +755,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		wield_slowdown = 0.5
 		wield_delay = 0.5 SECONDS
 
-		spread_unwielded = 5 //mostly the hunting revolver stats
-		spread = 2
+		spread_unwielded = 20 //mostly the hunting revolver stats
+		spread = 6
 		recoil = 2
-		recoil_unwielded = 3
+		recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."

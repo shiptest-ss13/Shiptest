@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM beestation/byond:515.1616 as base
+FROM beestation/byond:515.1633 as base
 
 # Install the tools needed to compile our rust dependencies
 FROM base as rust-build
@@ -11,9 +11,9 @@ COPY dependencies.sh .
 RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-    curl ca-certificates gcc-multilib clang \
-    g++-multilib libc6-i386 zlib1g-dev:i386 \
-    libssl-dev:i386 pkg-config:i386 git \
+    curl ca-certificates gcc-multilib \
+    clang g++-multilib libc6-i386 \
+    zlib1g-dev:i386 pkg-config:i386 git \
     && /bin/bash -c "source dependencies.sh \
     && curl https://sh.rustup.rs | sh -s -- -y -t i686-unknown-linux-gnu --no-modify-path --profile minimal --default-toolchain \$RUST_VERSION" \
     && rm -rf /var/lib/apt/lists/*
@@ -25,7 +25,7 @@ RUN git init \
     && /bin/bash -c "source dependencies.sh \
     && git fetch --depth 1 origin \$RUST_G_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo build --release --all-features --target i686-unknown-linux-gnu
+    && cargo build --release --target i686-unknown-linux-gnu
 
 # Build auxmos
 FROM rust-build as auxmos
