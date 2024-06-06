@@ -14,3 +14,9 @@
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
+
+#define FIREMODE_SEMIAUTO "single"
+#define FIREMODE_BURST "burst"
+#define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_OTHER "other"
+#define FIREMODE_OTHER_TWO "other2"

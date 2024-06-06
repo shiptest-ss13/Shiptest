@@ -41,12 +41,12 @@ Regenerative extracts:
 		to_chat(user, "<span class='warning'>[src] will not work on the dead!</span>")
 		return
 	if(H != user)
-		if(!do_mob(user, H, slime_delay)) // 1 second delay
+		if(!do_after(user, slime_delay, H)) // 1 second delay
 			return FALSE
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [H], the milky goo quickly regenerating some of [H.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts over [H], the milky goo regenerating some of [H.p_their()] injuries.</span>")
 	else
-		if(!do_mob(user, H, (slime_delay * 1.5))) // 1.5 second delay
+		if(!do_after(user, (slime_delay * 1.5), H)) // 1.5 second delay
 			return FALSE
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating some of [user.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates some of your injuries!</span>")

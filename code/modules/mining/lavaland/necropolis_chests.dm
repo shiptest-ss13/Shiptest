@@ -882,6 +882,39 @@
 		walk(hit_mob, 0) //stops them mid pathing even if they're stunimmune
 		hit_mob.apply_status_effect(/datum/status_effect/ice_block_talisman, 5 SECONDS)
 
+/datum/status_effect/ice_block_talisman
+	id = "ice_block_talisman"
+	duration = 40
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
+	/// Stored icon overlay for the hit mob, removed when effect is removed
+	var/icon/cube
+
+/atom/movable/screen/alert/status_effect/ice_block_talisman
+	name = "Frozen Solid"
+	desc = "You're frozen inside an ice cube, and cannot move!"
+	icon_state = "frozen"
+
+/datum/status_effect/ice_block_talisman/on_apply()
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
+	if(!owner.stat)
+		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
+	cube = icon('icons/effects/freeze.dmi', "ice_cube")
+	var/icon/size_check = icon(owner.icon, owner.icon_state)
+	cube.Scale(size_check.Width(), size_check.Height())
+	owner.add_overlay(cube)
+	return ..()
+
+/// Blocks movement from the status effect owner
+/datum/status_effect/ice_block_talisman/proc/owner_moved()
+	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+
+/datum/status_effect/ice_block_talisman/on_remove()
+	if(!owner.stat)
+		to_chat(owner, "<span class='notice'>The cube melts!</span>")
+	owner.cut_overlay(cube)
+	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
+
 //earthquake gauntlets
 /obj/item/clothing/gloves/gauntlets
 	name = "concussive gauntlets"
@@ -924,6 +957,7 @@
 	return COMPONENT_NO_ATTACK_OBJ
 
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
+//TODO: replace with a proper polar star and spur, not to mention a  proper sprite
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
@@ -932,11 +966,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "spur"
 	item_state = "spur"
-	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
 	selfcharge = 1
 	charge_delay = 1
 	slot_flags = ITEM_SLOT_BELT
-	fire_delay = 1
+	fire_delay = 0.1 SECONDS
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
@@ -1274,13 +1307,6 @@
 		if(4)
 			new /obj/item/dragons_blood(src)
 
-/obj/structure/closet/crate/necropolis/dragon/crusher
-	name = "firey dragon chest"
-
-/obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/ash_spike(src)
-
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"
 	desc = "A rusted and dulled blade. It doesn't look like it'd do much damage. It glows weakly."
@@ -1502,13 +1528,6 @@
 		if(3)
 			new /obj/item/gun/magic/staff/spellblade(src)
 
-/obj/structure/closet/crate/necropolis/bubblegum/crusher
-	name = "bloody bubblegum chest"
-
-/obj/structure/closet/crate/necropolis/bubblegum/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/demon_claws(src)
-
 /obj/item/mayhem
 	name = "mayhem in a bottle"
 	desc = "A magically infused bottle of blood, the scent of which will drive anyone nearby into a murderous frenzy."
@@ -1583,13 +1602,6 @@
 	var/random_crystal = pick(choices)
 	new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
-
-/obj/structure/closet/crate/necropolis/colossus/crusher
-	name = "angelic colossus chest"
-
-/obj/structure/closet/crate/necropolis/colossus/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/blaster_tubes(src)
 
 //Hierophant
 /obj/item/hierophant_club
