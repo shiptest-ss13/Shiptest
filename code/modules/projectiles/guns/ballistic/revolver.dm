@@ -454,7 +454,6 @@
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
 
 	return ..(user, total_spread)
 
