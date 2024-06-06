@@ -177,8 +177,9 @@
 /turf/open/floor/engine/airless,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hq" = (
-/obj/item/ammo_casing/a762_40,
-/mob/living/simple_animal/hostile/venus_human_trap,
+/mob/living/simple_animal/hostile/jungle/mega_arachnid{
+	faction = s
+	},
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland9"
 	},
@@ -273,13 +274,10 @@
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "le" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/mob/living/simple_animal/hostile/venus_human_trap{
+	faction = list("jungle")
 	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt/jungle/wasteland{
-	icon_state = "wasteland9"
-	},
+/turf/closed/wall/r_wall,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lB" = (
 /obj/machinery/light/directional/east,
@@ -458,7 +456,9 @@
 /turf/open/floor/engine/airless,
 /area/overmap_encounter/planetoid/jungle/explored)
 "tB" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
+/mob/living/simple_animal/hostile/venus_human_trap{
+	faction = list("jungle")
+	},
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland9"
 	},
@@ -544,10 +544,8 @@
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "yd" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/door/poddoor/shutters/preopen,
 /turf/open/floor/engine/airless,
 /area/overmap_encounter/planetoid/jungle/explored)
 "yy" = (
@@ -578,21 +576,12 @@
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"AI" = (
-/obj/effect/decal/cleanable/blood/drip,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt/jungle/wasteland{
-	icon_state = "wasteland9"
-	},
-/area/overmap_encounter/planetoid/jungle/explored)
 "AJ" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/engine/airless,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Bx" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 6
-	},
+/obj/machinery/door/poddoor/shutters/preopen,
 /turf/open/floor/engine/airless,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CH" = (
@@ -609,13 +598,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland9"
-	},
-/area/overmap_encounter/planetoid/jungle/explored)
-"Dp" = (
-/obj/item/ammo_casing/spent,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt/jungle/wasteland{
-	icon_state = "wasteland0"
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "Dq" = (
@@ -1019,13 +1001,13 @@ Da
 fH
 Nt
 Db
-ug
+tB
 gU
 yy
 ug
 ug
 ug
-FY
+hq
 ug
 Da
 bd
@@ -1045,8 +1027,8 @@ fe
 xq
 qd
 ug
-Dp
-ug
+Ky
+tB
 cU
 vU
 Da
@@ -1133,11 +1115,11 @@ ug
 FY
 dn
 ug
-ug
+tB
 Wl
 yP
 kH
-le
+kH
 fr
 JD
 Oz
@@ -1174,15 +1156,15 @@ CH
 ug
 Fh
 CL
-ug
-AI
+tB
+Oz
 ug
 rk
 qU
 ug
 Oz
 ug
-CL
+le
 CL
 CL
 CL
@@ -1267,7 +1249,7 @@ JT
 JT
 Re
 CL
-hq
+tB
 Oa
 ug
 Bx
