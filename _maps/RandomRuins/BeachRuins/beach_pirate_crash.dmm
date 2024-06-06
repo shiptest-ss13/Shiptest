@@ -385,7 +385,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "jE" = (
-/mob/living/simple_animal/hostile/pirate/ranged{
+/mob/living/simple_animal/hostile/human/pirate/ranged{
 	environment_smash = 0;
 	faction = list("pirate","mining")
 	},
@@ -522,7 +522,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	environment_smash = 0;
 	faction = list("pirate","mining")
 	},
@@ -1508,7 +1508,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vc" = (
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	environment_smash = 0;
 	faction = list("pirate","mining")
 	},

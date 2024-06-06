@@ -79,13 +79,11 @@
 
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
-	//WS Begin
 	new /obj/item/storage/belt/medical(src) //Gives the CMO a belt
 	new /obj/item/storage/bag/medical(src) //Medibags
 	new /obj/item/clothing/head/beret/cmo(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
 	new /obj/item/storage/box/hypospray/CMO(src) //Hypo mk. 2s
-	//WS End
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)

@@ -114,7 +114,7 @@
 /obj/effect/mob_spawn/human/corpse/assistant{
 	outfit = /datum/outfit/job/cmo
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/powered)
 "dh" = (
@@ -136,7 +136,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "dm" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
@@ -269,7 +269,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gb" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -389,8 +389,8 @@
 /turf/open/floor/vault,
 /area/ruin/powered)
 "hI" = (
-/mob/living/simple_animal/hostile/zombie,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -478,7 +478,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "jP" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/black{
@@ -568,7 +568,7 @@
 	pixel_x = -12
 	},
 /obj/effect/gibspawner/human,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -879,7 +879,7 @@
 /obj/effect/turf_decal/number/four{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -1113,13 +1113,13 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "BG" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -1619,9 +1619,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "KJ" = (
-/obj/item/gun/ballistic/revolver/detective{
-	spawnwithmagazine = 0
-	},
+/obj/item/gun/ballistic/revolver/detective/no_mag,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1633,7 +1631,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -1671,7 +1669,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "LD" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/royalblue,
@@ -1959,7 +1957,7 @@
 /area/ruin/powered)
 "TD" = (
 /obj/effect/gibspawner/human,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -2037,7 +2035,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "VE" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2140,7 +2138,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "XB" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -2221,7 +2219,7 @@
 /area/ruin/powered)
 "Zu" = (
 /obj/machinery/door/poddoor/preopen,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)

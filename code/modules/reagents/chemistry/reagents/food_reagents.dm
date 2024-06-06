@@ -11,6 +11,7 @@
 	name = "Consumable"
 	taste_description = "generic food"
 	taste_mult = 4
+	category = "Food and Drink"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 
@@ -325,12 +326,6 @@
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
-
-/datum/reagent/consumable/sodiumchloride/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(!istype(M))
-		return
-	if(M.has_bane(BANE_SALT))
-		M.mind.disrupt_spells(-200)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))

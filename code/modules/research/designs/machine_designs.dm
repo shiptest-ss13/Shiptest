@@ -9,6 +9,13 @@
 	build_path = /obj/item/circuitboard/machine/smes
 	category = list ("Engineering Machinery")
 
+/datum/design/board/ssu
+	name = "Machine Design (Suit Storage Unit Board)"
+	desc = "The circuit board for a suit storage unit."
+	id = "ssu"
+	build_path = /obj/item/circuitboard/machine/suit_storage_unit
+	category = list ("Engineering Machinery")
+
 /datum/design/board/circulator
 	name = "Machine Design (Circulator Board)"
 	desc = "The circuit board for a circulator."
