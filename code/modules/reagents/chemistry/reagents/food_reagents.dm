@@ -327,12 +327,6 @@
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
 
-/datum/reagent/consumable/sodiumchloride/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(!istype(M))
-		return
-	if(M.has_bane(BANE_SALT))
-		M.mind.disrupt_spells(-200)
-
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))
 		return

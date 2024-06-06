@@ -101,6 +101,9 @@
 			return 1
 	else
 		playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1) //Item sounds are handled in the item itself
+
+	if(body_position == LYING_DOWN) // physics says it's significantly harder to push someone by constantly chucking random furniture at them if they are down on the floor.
+		hitpush = FALSE
 	..()
 
 
@@ -179,7 +182,7 @@
 					log_combat(user, src, "attempted to neck grab", addition="neck grab")
 				if(GRAB_NECK)
 					log_combat(user, src, "attempted to strangle", addition="kill grab")
-			if(!do_mob(user, src, grab_upgrade_time))
+			if(!do_after(user, grab_upgrade_time, src))
 				return 0
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state)
 				return 0

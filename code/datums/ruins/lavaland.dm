@@ -19,11 +19,11 @@
 	allow_duplicates = FALSE
 	cost = 10
 
-/datum/map_template/ruin/lavaland/ashwalker_shrine
-	name = "Ashwalker shrine"
-	id = "ashwalker_shrine"
-	description = "A destroyed ashwalker village. What even happened here?"
-	suffix = "lavaland_surface_ashwalker_shrine.dmm"
+/datum/map_template/ruin/lavaland/buried_shrine
+	name = "Buried Shrine"
+	id = "buried_shrine"
+	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
+	suffix = "lavaland_surface_buried_shrine.dmm"
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
