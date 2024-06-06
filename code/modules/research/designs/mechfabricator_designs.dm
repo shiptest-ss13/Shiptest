@@ -445,7 +445,7 @@
 	id = "honk_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_torso
-	materials = list(/datum/material/iron=20000,/datum/material/glass = 10000,/datum/material/bananium=10000)
+	materials = list(/datum/material/iron=20000,/datum/material/glass = 10000,/datum/material/hellstone=10000)
 	construction_time = 300
 	category = list("H.O.N.K")
 
@@ -454,7 +454,7 @@
 	id = "honk_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_head
-	materials = list(/datum/material/iron=10000,/datum/material/glass = 5000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=10000,/datum/material/glass = 5000,/datum/material/hellstone=5000)
 	construction_time = 200
 	category = list("H.O.N.K")
 
@@ -463,7 +463,7 @@
 	id = "honk_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_left_arm
-	materials = list(/datum/material/iron=15000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=15000,/datum/material/hellstone=5000)
 	construction_time = 200
 	category = list("H.O.N.K")
 
@@ -472,7 +472,7 @@
 	id = "honk_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_right_arm
-	materials = list(/datum/material/iron=15000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=15000,/datum/material/hellstone=5000)
 	construction_time = 200
 	category = list("H.O.N.K")
 
@@ -481,7 +481,7 @@
 	id = "honk_left_leg"
 	build_type = MECHFAB
 	build_path =/obj/item/mecha_parts/part/honker_left_leg
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=5000)
 	construction_time = 200
 	category = list("H.O.N.K")
 
@@ -490,7 +490,7 @@
 	id = "honk_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_right_leg
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=5000)
 	construction_time = 200
 	category = list("H.O.N.K")
 
@@ -657,7 +657,7 @@
 	id = "mech_mousetrap_mortar"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/mousetrap_mortar
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=5000)
 	construction_time = 300
 	category = list("Exosuit Equipment")
 
@@ -666,7 +666,7 @@
 	id = "mech_banana_mortar"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=5000)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=5000)
 	construction_time = 300
 	category = list("Exosuit Equipment")
 
@@ -675,7 +675,7 @@
 	id = "mech_honker"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/honker
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=10000)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=10000)
 	construction_time = 500
 	category = list("Exosuit Equipment")
 
@@ -684,7 +684,7 @@
 	id = "mech_punching_face"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/punching_glove
-	materials = list(/datum/material/iron=20000,/datum/material/bananium=7500)
+	materials = list(/datum/material/iron=20000,/datum/material/hellstone=7500)
 	construction_time = 400
 	category = list("Exosuit Equipment")
 
@@ -769,7 +769,7 @@
 	id = "borg_transform_clown"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/transform/clown
-	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/bananium = 1000)
+	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/hellstone = 1000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 

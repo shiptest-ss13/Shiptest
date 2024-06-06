@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kinetic_accelerator
 	name = "kinetic accelerator"
-	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCON does not condone use of this weapon against other sentient life."
+	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCOM does not condone use of this weapon against other sentient life."
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)

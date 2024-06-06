@@ -10,7 +10,7 @@
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
 	supports_variations = VOX_VARIATION
 	greyscale_icon_state = "belt"
@@ -270,7 +270,15 @@
 		/obj/item/assembly/flash/handheld,
 		/obj/item/clothing/glasses,
 		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_box,
+		/obj/item/ammo_box/magazine,
+		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
+		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
+		/obj/item/ammo_box/a4570, //but not today
+		/obj/item/ammo_box/a858, //oh boy stripper clips too
+		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/a300,
+		/obj/item/ammo_box/aac_300blk_stripper,
+		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/reagent_containers/food/snacks/donut,
 		/obj/item/kitchen/knife/combat,
 		/obj/item/flashlight/seclite,
@@ -698,6 +706,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 40
+	STR.max_combined_w_class = 40
 	STR.display_numerical_stacking = TRUE
 	STR.set_holdable(list(
 		/obj/item/ammo_casing

@@ -1087,7 +1087,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 	var/list/verblist = list()
 	var/list/verbstoprocess = verbs.Copy()
-	if(mob?.client?.prefs.broadcast_login_logout)
+	if(mob)
 		verbstoprocess += mob.verbs
 		for(var/atom/movable/thing as anything in mob.contents)
 			verbstoprocess += thing.verbs

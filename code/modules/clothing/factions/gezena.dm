@@ -1,5 +1,4 @@
 //Jumpsuits
-//thgvr TODO: Make more stuff (backpacks, headsets, doodads, part 2?)
 /obj/item/clothing/under/gezena
 	name = "gezenan navywear"
 	desc = "Made of a slick synthetic material that is both breathable, and resistant to scale and thorn alike."
