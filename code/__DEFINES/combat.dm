@@ -140,13 +140,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define WEAPON_MEDIUM 2
 /// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
+/// You must FULLY wield (wait the full wield delay) the gun to fire this gun
+#define WEAPON_VERY_HEAVY 4
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1
 #define TRIGGER_GUARD_NONE 0
 #define TRIGGER_GUARD_NORMAL 1
 //Gun bolt types
-///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
-/// Example: c20, shotguns, m90
+///The gun has a closed bolt, when resting it's closed, and must be racked to get a bullet from a magazine. see: Every Fucking Videogame Gun Ever
 #define BOLT_TYPE_STANDARD 1
 ///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
 /// Example: Some SMGs, the L6

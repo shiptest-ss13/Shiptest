@@ -5,8 +5,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
-	burst_size = 1
-	fire_delay = 0 //spam it as fast as you can
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -24,12 +22,16 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
-	fire_delay = 1
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept.
+	recoil_unwielded = 3
+	recoil_backtime_multiplier = 1
+
 	wield_delay = 0.2 SECONDS
-	spread = 2
-	spread_unwielded = 5
+	fire_delay = 0.2 SECONDS
+	spread = 5
+	spread_unwielded = 7
 	wield_slowdown = 0.15
 
 	muzzleflash_iconstate = "muzzle_flash_light"
@@ -62,7 +64,6 @@ EMPTY_GUN_HELPER(automatic/pistol)
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	recoil = -2
 
 EMPTY_GUN_HELPER(automatic/pistol/candor)
 
@@ -89,7 +90,7 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -99,11 +100,13 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	fire_delay = 0.7 SECONDS
-	recoil = 1
-	recoil_unwielded = 2
-	spread = 4
-	spread_unwielded = 7
+	fire_delay = 0.6 SECONDS
+	recoil = 2
+	recoil_unwielded = 5
+	recoil_backtime_multiplier = 2
+
+	spread = 7
+	spread_unwielded = 14
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
@@ -123,8 +126,11 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
 	name = "flat gun"
@@ -236,6 +242,8 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+	fire_select_icon_state_prefix = "caseless_"
+
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
@@ -246,7 +254,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
