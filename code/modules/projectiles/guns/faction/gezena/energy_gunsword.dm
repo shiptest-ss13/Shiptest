@@ -11,6 +11,8 @@
 
 	modifystate = TRUE
 
+	fire_delay = 0.16 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
 
@@ -49,10 +51,6 @@
 
 	cell_type = /obj/item/stock_parts/cell/gun/pgf
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
-
-/obj/item/gun/energy/kalix/pgf/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy"
@@ -105,6 +103,11 @@
 
 	modifystate = FALSE
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 
@@ -112,10 +115,6 @@
 	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
-
-/obj/item/gun/energy/kalix/pgf/heavy/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"

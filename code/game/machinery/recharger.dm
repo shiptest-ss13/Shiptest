@@ -21,6 +21,7 @@
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
+		/obj/item/gun/ballistic/automatic/assault/e40,
 		))
 
 /obj/machinery/recharger/RefreshParts()

@@ -145,4 +145,7 @@
 	icon_state = "crew_quarters"
 	requires_power = FALSE
 
+/area/ruin/unpowered/buried_shrine
+	name = "Buried Shrine"
+	icon_state = "red"
 
