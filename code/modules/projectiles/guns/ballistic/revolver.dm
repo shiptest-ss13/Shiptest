@@ -25,7 +25,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-	fire_delay = 2
+	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5
 	recoil_unwielded = 2
@@ -34,6 +34,9 @@
 	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
 	wield_slowdown = 0.3
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 	safety_wording = "hammer"
 
@@ -279,7 +282,8 @@
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
-	chamber_round(TRUE)
+	if((!safety && !semi_auto) || (!safety && !semi_auto))
+		chamber_round(TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
@@ -411,11 +415,14 @@
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
 		fan = TRUE
+		fire_delay = 0 SECONDS
 	. = ..()
+	fire_delay = src::fire_delay
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
-		user.changeNext_move(CLICK_CD_RAPID)
+		balloon_alert_to_viewers("fans revolver!")
+		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
@@ -434,18 +441,22 @@
 /obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = -1
 	var/total_recoil = recoil_bonus
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -4
+	var/gunslinger_bonus = -8
 	var/total_spread = bonus_spread
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
 		total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -454,12 +465,6 @@
 /obj/item/gun/ballistic/revolver/proc/tryflip(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		if(COOLDOWN_FINISHED(src, flip_cooldown))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>While trying to flip the [src] you pull the trigger and accidently shoot yourself!</span>")
-				var/flip_mistake = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST)
-				process_fire(user, user, FALSE, flip_mistake)
-				user.dropItemToGround(src, TRUE)
-				return
 			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
 			SpinAnimation(5,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
@@ -486,14 +491,15 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	fire_delay = 0.2 SECONDS
 
 EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
-
-/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+//...why...?
+/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
@@ -580,18 +586,21 @@ EMPTY_GUN_HELPER(revolver/detective)
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
+	fire_delay = 0.6 SECONDS
 	wield_slowdown = 0.5
-	spread_unwielded = 5
-	spread = 2
+	spread_unwielded = 20
+	spread = 6
 	recoil = 2
 	recoil_unwielded = 4
-
-// A gun to play Russian Roulette!
-// You can spin the chamber to randomize the position of the bullet.
 
 /obj/item/gun/ballistic/revolver/ashhand/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+// A gun to play Russian Roulette!
+// You can spin the chamber to randomize the position of the bullet.
+
+//TODO: this is stupid, but used in ONE fucking ruin. Remember to remove when you aren't afraid to do a ton of path changes.
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
@@ -679,7 +688,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
-	fire_delay = 0
+	fire_delay = 0 SECONDS
 	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
@@ -705,6 +714,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 		)
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
@@ -715,4 +725,4 @@ EMPTY_GUN_HELPER(revolver/detective)
 	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
-		chambered.armour_penetration += 5
+		chambered.BB.armour_penetration += 5

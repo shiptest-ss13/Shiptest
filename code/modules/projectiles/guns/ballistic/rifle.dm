@@ -22,8 +22,11 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	spread = -1
-	spread_unwielded = 12
+	spread_unwielded = 48
 	recoil = -3
 	recoil_unwielded = 4
 	wield_slowdown = 1
@@ -85,18 +88,18 @@
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
-		spread = 36
-		spread_unwielded = 108
+		spread = 24
+		spread_unwielded = 30
 		can_bayonet = FALSE
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
 
 /obj/item/gun/ballistic/rifle/illestren/blow_up(mob/user)
-	. = 0
+	. = FALSE
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		. = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/factory
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, this example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in 8x50mmR."

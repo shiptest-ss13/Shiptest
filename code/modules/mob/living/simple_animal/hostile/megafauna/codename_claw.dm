@@ -21,7 +21,6 @@
 	ranged = TRUE
 	speed = 4
 	move_to_delay = 4
-	crusher_loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	wander = FALSE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -59,8 +58,8 @@
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
-	crusher_loot = list(/obj/effect/spawner/clawloot)
-	loot = list(/obj/effect/spawner/clawloot/crusher)
+	mob_trophy = /obj/item/nullrod/armblade/tentacle
+	loot = list(/obj/effect/spawner/clawloot)
 	health = 2250
 	maxHealth = 2250
 	shouldnt_move = TRUE //we want to show the transforming animation
@@ -76,9 +75,6 @@
 	new /obj/item/gun/energy/pulse/pistol(get_turf(src))
 	qdel(src)
 
-/obj/effect/spawner/clawloot/crusher/spawn_loot()
-	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
-	return ..()
 ///LOOT END
 
 //PHASE ONE
