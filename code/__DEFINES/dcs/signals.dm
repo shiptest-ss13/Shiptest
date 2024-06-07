@@ -779,6 +779,10 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+#define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+///sent when guns need to notify the gun hud to update. mostly for revolvers.
+#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"

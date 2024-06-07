@@ -191,7 +191,7 @@
 
 /obj/item/kitchen/knife/combat/Initialize()
 	. = ..()
-	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/kitchen.dmi')
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/item/knife.dmi')
 
 /obj/item/kitchen/knife/combat/survival
 	name = "survival knife"
