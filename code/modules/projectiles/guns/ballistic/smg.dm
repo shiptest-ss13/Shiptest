@@ -406,7 +406,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto/ComponentInitialize()
