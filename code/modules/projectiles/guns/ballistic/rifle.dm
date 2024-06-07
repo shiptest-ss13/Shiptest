@@ -22,8 +22,11 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	spread = -1
-	spread_unwielded = 12
+	spread_unwielded = 48
 	recoil = -3
 	recoil_unwielded = 4
 	wield_slowdown = 1
@@ -33,11 +36,11 @@
 	. = ..()
 	. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 
-/obj/item/gun/ballistic/rifle/rack(mob/user = null)
+/obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
 		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		process_chamber(FALSE, FALSE, FALSE)
+		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
 		update_appearance()
 		if (magazine && !magazine?.ammo_count() && empty_autoeject && !internal_magazine)
@@ -85,17 +88,17 @@
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
-		spread = 36
-		spread_unwielded = 108
+		spread = 24
+		spread_unwielded = 30
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
 
 /obj/item/gun/ballistic/rifle/illestren/blow_up(mob/user)
-	. = 0
+	. = FALSE
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		. = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/factory
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, this example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in 8x50mmR."
@@ -107,6 +110,14 @@
 	if(.)
 		item_state = "illestren_factory_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/rifle/illestren/sawn
+	name = "sawn-off Illestren rifle"
+	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
+	item_state = "illestren_sawn"
+	sawn_off = TRUE
+	weapon_weight = WEAPON_MEDIUM
+
 
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"

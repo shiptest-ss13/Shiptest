@@ -15,11 +15,18 @@
 	var/active = FALSE
 
 	var/last_pressure_delta = 0
-	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
+	pipe_flags = PIPING_ONE_PER_TURF
 
 	var/flipped = 0
 	var/mode = CIRCULATOR_HOT
 	var/obj/machinery/power/generator/generator
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/on_construction(obj_color, set_layer)
+	var/obj/item/circuitboard/machine/circulator/board = circuit
+	if(board)
+		piping_layer = board.pipe_layer
+		set_layer = piping_layer
+	..()
 
 //for mappers
 /obj/machinery/atmospherics/components/binary/circulator/cold

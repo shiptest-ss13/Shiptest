@@ -7,9 +7,11 @@
 	lefthand_file = 'icons/obj/guns/faction/gezena/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/faction/gezena/righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 
 	modifystate = TRUE
+
+	fire_delay = 0.16 SECONDS
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
@@ -45,13 +47,10 @@
 	desc = "An advanced variant of the BG-12, the BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
+	w_class = WEIGHT_CLASS_NORMAL
 
 	cell_type = /obj/item/stock_parts/cell/gun/pgf
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
-
-/obj/item/gun/energy/kalix/pgf/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy"
@@ -72,8 +71,7 @@
 	desc = "Etherbor's current and sidearm offering. While intended for marines, it's also available for civillians"
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
-	w_class = WEIGHT_CLASS_SMALL
-
+	w_class = WEIGHT_CLASS_NORMAL
 	modifystate = FALSE
 
 	wield_delay = 0.2 SECONDS
@@ -105,6 +103,11 @@
 
 	modifystate = FALSE
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 
@@ -112,10 +115,6 @@
 	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
-
-/obj/item/gun/energy/kalix/pgf/heavy/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"

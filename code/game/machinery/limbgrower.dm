@@ -7,8 +7,8 @@
 	icon_state = "limbgrower_idleoff"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/limbgrower
 
 	/// The category of limbs we're browing in our UI.

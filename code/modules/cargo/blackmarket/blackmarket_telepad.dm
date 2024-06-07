@@ -16,7 +16,7 @@
 	circuit = /obj/item/circuitboard/machine/ltsrbt
 	density = TRUE
 
-	idle_power_usage = 200
+	idle_power_usage = IDLE_DRAW_LOW
 
 	/// Divider for power_usage_per_teleport.
 	var/power_efficiency = 1
@@ -27,7 +27,7 @@
 	/// Current recharge progress.
 	var/recharge_cooldown = 0
 	/// Base recharge time which is used to get recharge_time.
-	var/base_recharge_time = 100
+	var/base_recharge_time = 10
 	/// Current /datum/blackmarket_purchase being recieved.
 	var/recieving
 	/// Current /datum/blackmarket_purchase being sent to the target uplink.
@@ -37,10 +37,8 @@
 
 /obj/machinery/ltsrbt/Initialize()
 	. = ..()
-	SSblackmarket.telepads += src
 
 /obj/machinery/ltsrbt/Destroy()
-	SSblackmarket.telepads -= src
 	// Bye bye orders.
 	if(SSblackmarket.telepads.len)
 		for(var/datum/blackmarket_purchase/P in queue)
@@ -49,9 +47,9 @@
 
 /obj/machinery/ltsrbt/RefreshParts()
 	recharge_time = base_recharge_time
-	// On tier 4 recharge_time should be 20 and by default it is 80 as scanning modules should be tier 1.
+	// On tier 4 recharge_time should be 2 and by default it is 8 as scanning modules should be tier 1.
 	for(var/obj/item/stock_parts/scanning_module/scan in component_parts)
-		recharge_time -= scan.rating * 10
+		recharge_time -= scan.rating
 	recharge_cooldown = recharge_time
 
 	power_efficiency = 0
@@ -60,6 +58,16 @@
 	// Shouldn't happen but you never know.
 	if(!power_efficiency)
 		power_efficiency = 1
+
+/// Stores the LTSRBT Data in the uplink for linking
+/obj/machinery/ltsrbt/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/blackmarket_uplink))
+		var/obj/item/blackmarket_uplink/uplink = O
+		uplink.target = src
+		to_chat(user, "<span class='notice'>[src] linked to [O].</span>")
+		return TRUE
+
+	return ..()
 
 /// Adds /datum/blackmarket_purchase to queue unless the machine is free, then it sets the purchase to be instantly recieved
 /obj/machinery/ltsrbt/proc/add_to_queue(datum/blackmarket_purchase/purchase)

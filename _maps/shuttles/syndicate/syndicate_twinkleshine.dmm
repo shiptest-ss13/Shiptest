@@ -2560,11 +2560,8 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
 	},
-/obj/machinery/computer/communications{
-	dir = 8;
-	req_access = list(151);
-	set_obj_flags = "EMAGGED";
-	icon_state = "computer-right"
+/obj/structure/frame/computer{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -4262,7 +4259,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/helm{
 	dir = 8;
-	icon_state = "computer-middle"
+	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
@@ -4675,8 +4672,7 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate{
-	spawnwithmagazine = 0;
+/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate/no_mag{
 	pixel_x = -3;
 	pixel_y = 6
 	},
@@ -5612,15 +5608,13 @@
 /area/ship/security)
 "Gm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/ebr{
+/obj/item/gun/ballistic/automatic/ebr/no_mag{
 	pixel_x = -16;
 	pixel_y = 7;
-	spawnwithmagazine = 0
 	},
-/obj/item/gun/ballistic/automatic/ebr{
+/obj/item/gun/ballistic/automatic/ebr/no_mag{
 	pixel_x = -9;
 	pixel_y = 2;
-	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/ebr{
 	pixel_x = 10;
@@ -6099,10 +6093,6 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 6
-	},
-/obj/item/reagent_containers/spray/syndicate{
-	pixel_y = 11;
-	pixel_x = -2
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/janitor)
@@ -7509,15 +7499,13 @@
 /area/ship/hallway/aft)
 "Rv" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog{
+/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
 	pixel_x = -7;
 	pixel_y = 7;
-	spawnwithmagazine = 0
 	},
-/obj/item/gun/ballistic/shotgun/bulldog{
+/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
 	pixel_y = -3;
 	pixel_x = 2;
-	spawnwithmagazine = 0
 	},
 /obj/machinery/light/directional/north,
 /obj/item/ammo_box/magazine/m12g{
@@ -8848,19 +8836,16 @@
 /area/ship/engineering/engine)
 "YO" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
 	pixel_x = 2;
 	pixel_y = 8;
-	spawnwithmagazine = 0
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
 	pixel_y = 3;
-	spawnwithmagazine = 0
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
 	pixel_y = -2;
 	pixel_x = 3;
-	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/smgm45,
 /obj/item/ammo_box/magazine/smgm45,
