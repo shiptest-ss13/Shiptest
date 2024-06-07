@@ -30,13 +30,6 @@
 ///added recoil of sawn off guns
 #define SAWN_OFF_RECOIL 1
 
-//ammo box sprite defines
-///ammo box will always use provided icon state
-#define AMMO_BOX_ONE_SPRITE 0
-///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
-#define AMMO_BOX_PER_BULLET 1
-///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
-#define AMMO_BOX_FULL_EMPTY 2
 /* Stolen from tgmc.. Will use soon
 //Gun defines for gun related thing. More in the projectile folder.
 //gun_features_flags
@@ -173,10 +166,6 @@ DEFINE_BITFIELD(attach_slots, list(
 #define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
 
 #define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
-
-//Projectile Reflect
-#define REFLECT_NORMAL (1<<0)
-#define REFLECT_FAKEPROJECTILE (1<<1)
 
 //ammo box sprite defines
 ///ammo box will always use provided icon state
