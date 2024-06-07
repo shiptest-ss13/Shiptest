@@ -701,22 +701,48 @@ There are several things that need to be remembered:
 
 	if(wear_neck)
 		var/obj/item/I = wear_neck
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/neck_overlay
+
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
+
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+
 		update_hud_neck(I)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
-			///icon file of the clothing
-			var/icon_file = I.mob_overlay_icon
-			/// Does this clothing need to be generated via greyscale?
-			var/handled_by_bodytype = FALSE
+
+			if(dna.species.bodytype & BODYTYPE_VOX) // there is neither a vox or kepori neck path, we just tell it to greyscale no matter what
+//				if(I.supports_variations & VOX_VARIATION)
+//					icon_file = VOX_NECK_PATH
+//					if(I.vox_override_icon)
+//						icon_file = I.vox_override_icon
+//				else
+				handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_NECK_PATH
+//					if(I.kepoi_override_icon)
+//						icon_file = I.kepoi_override_icon
+//				else
+				handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = TRUE
 				icon_file = DEFAULT_NECK_PATH
-			else
-				handled_by_bodytype = FALSE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null
-			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
+			neck_overlay = I.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
+			if(!neck_overlay)
+				return
+
+		overlays_standing[NECK_LAYER] = neck_overlay
 
 	apply_overlay(NECK_LAYER)
 
