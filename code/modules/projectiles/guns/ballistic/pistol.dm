@@ -138,10 +138,6 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5474eac08b7d035bbd28a1bf8ceb8abf780d0c1a
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
 	desc = "A classic handgun in a tasteful black and stainless steel color scheme. An enamel Nanotrasen logo is set into the grips. Chambered in 9mm."
