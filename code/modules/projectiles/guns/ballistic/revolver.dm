@@ -57,7 +57,7 @@
 		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
 
-/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return ..()
 
@@ -84,7 +84,9 @@
 			if(!casing_to_eject)
 				continue
 			casing_to_eject.forceMove(drop_location())
-			casing_to_eject.bounce_away(FALSE, NONE)
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
+
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 		chamber_round(FALSE)
@@ -96,13 +98,13 @@
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
-			if(!eject_casing())
+			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -121,7 +123,9 @@
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
-	casing_to_eject.bounce_away(FALSE, NONE)
+	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
+
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
@@ -139,6 +143,12 @@
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
 	if(!casing_to_insert)
 		return FALSE
+
+// Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
+	if(casing_to_insert.caliber != magazine.caliber)
+		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
+		return FALSE
+
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
@@ -160,7 +170,7 @@
 	else
 		if(slot)
 			if(!slot.BB && allow_ejection)
-				if(do_mob(user,user,doafter_time))
+				if(!do_after(user, doafter_time, user))
 					eject_casing(user)
 
 		rounds = magazine.ammo_list()
@@ -204,7 +214,7 @@
 					var/doafter_time = 0.8 SECONDS
 					if(magazine.instant_load && attacking_box.instant_load)
 						doafter_time = 0 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(user, casing_to_insert, FALSE))
 						break
@@ -221,7 +231,7 @@
 					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
 						break
 					var/doafter_time = 0.4 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(null, casing_to_insert, FALSE))
 						doafter_time = 0 SECONDS
@@ -229,7 +239,7 @@
 						num_loaded++
 						attacking_box.update_appearance()
 						attacking_box.stored_ammo -= casing_to_insert
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					switch(gate_load_direction)
 						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
@@ -270,7 +280,6 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
 	chamber_round(TRUE)
-	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
@@ -456,6 +465,7 @@
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
@@ -476,6 +486,8 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+
+EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()

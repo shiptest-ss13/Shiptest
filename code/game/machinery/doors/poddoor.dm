@@ -23,26 +23,32 @@
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if((resistance_flags & INDESTRUCTIBLE) && W.tool_behaviour == TOOL_SCREWDRIVER) // This makes it so ERT members cannot cheese by opening their blast doors.
-		to_chat(user, "<span class='warning'>You can't find the panel!</span>")
+		to_chat(user, span_warning("You can't find the panel!"))
 		return
 
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(density)
-			to_chat(user, "<span class='warning'>You need to open [src] to access the maintenance panel!</span>")
+			to_chat(user, span_warning("You need to open [src] to access the maintenance panel"))
 			return
 		else if(default_deconstruction_screwdriver(user, icon_state, icon_state, W))
-			to_chat(user, "<span class='notice'>You [panel_open ? "open" : "close"] the maintenance hatch of [src].</span>")
+			to_chat(user, span_notice("You [panel_open ? "open" : "close"] the maintenance hatch of [src]."))
 			return TRUE
 
 	if(panel_open && !density)
 		if(W.tool_behaviour == TOOL_MULTITOOL)
-			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
-			if(change_id)
-				id = clamp(round(change_id, 1), 1, 100)
-				to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+			var/obj/item/multitool/multi = W
+			if (istype(multi.buffer,/obj/item/assembly/control))
+				var/obj/item/assembly/control/controller = multi.buffer
+				id = controller.id
+				to_chat(user, span_notice("You copy the ID in your multitool's buffer into the [src]."))
+			else
+				var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
+				if(change_id)
+					id = clamp(round(change_id, 1), 1, 100)
+					to_chat(user, span_notice("You change the ID to [id]."))
 
 		if(W.tool_behaviour == TOOL_CROWBAR)
-			to_chat(user, "<span class='notice'>You start to remove the airlock electronics.</span>")
+			to_chat(user, span_notice("You start to remove the airlock electronics."))
 			if(!(machine_stat & NOPOWER))
 				do_sparks(5, TRUE, src)
 				electrocute_mob(user, get_area(src), src, 1, TRUE) //fuck this fella
@@ -52,9 +58,9 @@
 
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
+	. += span_notice("The maintenance panel is [panel_open ? "opened" : "closed"].")
 	if(panel_open)
-		. += "<span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
+		. += span_notice("The <b>airlock electronics</b> are exposed and could be <i>pried out</i>.")
 
 /obj/machinery/door/poddoor/deconstruct(disassembled = TRUE, mob/user)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -142,18 +148,18 @@
 /obj/machinery/door/poddoor/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(density & !(resistance_flags & INDESTRUCTIBLE))
 		add_fingerprint(user)
-		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
-					"<span class='noticealien'>You begin digging your claws into [src] with all your might!</span>",\
-					"<span class='warning'>You hear groaning metal...</span>")
+		user.visible_message(span_warning("[user] begins prying open [src]."),\
+					span_noticealien("You begin digging your claws into [src] with all your might"),\
+					span_warning("You hear groaning metal..."))
 		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 
 		var/time_to_open = 5 SECONDS
 		if(hasPower())
 			time_to_open = 15 SECONDS
 
-		if(do_after(user, time_to_open, TRUE, src))
+		if(do_after(user, time_to_open, src))
 			if(density && !open(TRUE)) //The airlock is still closed, but something prevented it opening. (Another player noticed and bolted/welded the airlock in time!)
-				to_chat(user, "<span class='warning'>Despite your efforts, [src] managed to resist your attempts to open it!</span>")
+				to_chat(user, span_warning("Despite your efforts, [src] managed to resist your attempts to open it!"))
 
 	else
 		return ..()

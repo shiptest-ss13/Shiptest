@@ -5,7 +5,7 @@
 	light_power = 2
 	var/cooldowntime = 0
 	break_sound = 'sound/hallucinations/veryfar_noise.ogg'
-	debris = list(/obj/item/stack/sheet/runed_metal = 1)
+	debris = list(/obj/item/stack/sheet/mineral/hidden/hellstone = 1)
 
 /obj/structure/destructible/cult/proc/conceal() //for spells that hide cult presence
 	density = FALSE

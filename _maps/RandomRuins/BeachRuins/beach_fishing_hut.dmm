@@ -667,7 +667,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Bg" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/plastic,
@@ -827,7 +827,7 @@
 /area/ruin/beach)
 "Gt" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
-/mob/living/simple_animal/hostile/cat_butcherer{
+/mob/living/simple_animal/hostile/human/cat_butcherer{
 	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A profession carp butcher, gone mad due to carptoxin exposure. There seems to be something in their pocket...";
 	faction = list("beach","pirate");
@@ -853,7 +853,7 @@
 "GP" = (
 /obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/carpet,
@@ -1045,7 +1045,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
+/mob/living/simple_animal/hostile/human/pirate/ranged{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood/ebony,
@@ -1135,7 +1135,7 @@
 /area/ruin/beach)
 "Rh" = (
 /obj/structure/chair/sofa/brown/corner/directional/south,
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/carpet,
@@ -1250,7 +1250,7 @@
 	pixel_x = 4;
 	layer = 2.9
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
+/mob/living/simple_animal/hostile/human/pirate/ranged{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood/ebony,
@@ -1333,7 +1333,7 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZJ" = (
-/mob/living/simple_animal/hostile/pirate/melee{
+/mob/living/simple_animal/hostile/human/pirate/melee{
 	faction = list("beach","pirate")
 	},
 /turf/open/floor/wood,

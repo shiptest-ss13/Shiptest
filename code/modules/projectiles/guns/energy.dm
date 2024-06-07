@@ -204,7 +204,7 @@
 			if(!chambered.BB)
 				chambered.newshot()
 
-/obj/item/gun/energy/process_chamber()
+/obj/item/gun/energy/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
 		var/obj/item/ammo_casing/energy/shot = chambered
 		cell.use(shot.e_cost)//... drain the cell cell
