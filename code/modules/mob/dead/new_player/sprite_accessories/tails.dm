@@ -32,6 +32,18 @@
 	color_src = HAIR
 	image_alpha = 150
 
+/datum/sprite_accessory/tails/human/dog
+	icon = 'icons/mob/species/misc/dog.dmi'
+	name = "Dog"
+	icon_state = "dog"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/dog
+	icon = 'icons/mob/species/misc/dog.dmi'
+	name = "Dog"
+	icon_state = "dog"
+	color_src = HAIR
+
 /datum/sprite_accessory/tails/human/fox
 	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox"
@@ -54,4 +66,10 @@
 	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox 2"
 	icon_state = "fox2"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails/human/rabbit
+	icon = 'icons/mob/species/misc/rabbit.dmi'
+	name = "Rabbit"
+	icon_state = "bunny"
 	color_src = HAIR
