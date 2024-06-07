@@ -2,10 +2,9 @@
 	name = "ERT - Frontiersman Basic"
 
 	head = /obj/item/clothing/head/beret/sec/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/rifle/illestren
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/pirate/alt
@@ -74,6 +73,8 @@
 		if("Doctor")
 			backpack_contents += list(/obj/item/storage/firstaid/regular = 1)
 			gloves = /obj/item/clothing/gloves/color/latex
+			suit = /obj/item/clothing/suit/frontiersmen
+			head = /obj/item/clothing/head/frontier
 			if(prob(50))
 				belt = /obj/item/storage/belt/medical/surgery
 			if(prob(30))
@@ -119,7 +120,7 @@
 /datum/outfit/job/frontiersmen/ert/leader
 	name = "ERT - Frontiersman Officer"
 
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
@@ -132,11 +133,11 @@
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"
 
+	head = /obj/item/clothing/head/frontier
 	back = /obj/item/storage/backpack/medic
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	belt = /obj/item/storage/belt/medical/surgery
-	suit = null
 	suit_store = null
 
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack=3)
@@ -147,7 +148,8 @@
 
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/full
-	head = /obj/item/clothing/head/hardhat/weldhat
+	head = /obj/item/clothing/head/hardhat/frontier
+	eyes = /obj/item/clothing/glasses/welding
 	suit_store = null
 
 	backpack_contents = list(/obj/item/grenade/c4=3, /obj/item/crowbar/large=1)
