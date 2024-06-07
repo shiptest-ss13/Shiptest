@@ -54,10 +54,6 @@
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
 
-#define SUPPRESSED_NONE 0
-#define SUPPRESSED_QUIET 1 ///standard suppressed
-#define SUPPRESSED_VERY 2 /// no message
-
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
 #define MANUFACTURER_NONE null
@@ -87,18 +83,6 @@
 #define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
 
 #define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
-
-//Projectile Reflect
-#define REFLECT_NORMAL (1<<0)
-#define REFLECT_FAKEPROJECTILE (1<<1)
-
-//ammo box sprite defines
-///ammo box will always use provided icon state
-#define AMMO_BOX_ONE_SPRITE 0
-///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
-#define AMMO_BOX_PER_BULLET 1
-///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
-#define AMMO_BOX_FULL_EMPTY 2
 
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)
