@@ -5,13 +5,14 @@
 #define WEAPON_MEDIUM 2
 /// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
+/// You must FULLY wield (wait the full wield delay) the gun to fire this gun
+#define WEAPON_VERY_HEAVY 4
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1
 #define TRIGGER_GUARD_NONE 0
 #define TRIGGER_GUARD_NORMAL 1
 //Gun bolt types
-///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
-/// Example: c20, shotguns, m90
+///The gun has a closed bolt, when resting it's closed, and must be racked to get a bullet from a magazine. see: Every Fucking Videogame Gun Ever
 #define BOLT_TYPE_STANDARD 1
 ///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
 /// Example: Some SMGs, the L6
@@ -27,6 +28,18 @@
 #define SAWN_OFF_ACC_PENALTY 25
 ///added recoil of sawn off guns
 #define SAWN_OFF_RECOIL 1
+
+//ammo box sprite defines
+///ammo box will always use provided icon state
+#define AMMO_BOX_ONE_SPRITE 0
+///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
+#define AMMO_BOX_PER_BULLET 1
+///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
+#define AMMO_BOX_FULL_EMPTY 2
+
+#define SUPPRESSED_NONE 0
+#define SUPPRESSED_QUIET 1 ///standard suppressed
+#define SUPPRESSED_VERY 2 /// no message
 
 //Autofire component
 /// Compatible firemode is in the gun. Wait until it's held in the user hands.
@@ -93,3 +106,9 @@
 
 #define MOVES_HITSCAN -1		//Not actually hitscan but close as we get without actual hitscan.
 #define MUZZLE_EFFECT_PIXEL_INCREMENT 17	//How many pixels to move the muzzle flash up so your character doesn't look like they're shitting out lasers.
+
+#define FIREMODE_SEMIAUTO "single"
+#define FIREMODE_BURST "burst"
+#define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_OTHER "other"
+#define FIREMODE_OTHER_TWO "other2"
