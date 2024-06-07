@@ -1191,6 +1191,14 @@
 	build_path = /obj/item/assembly/control
 	category = list("initial","Misc")
 
+/datum/design/holofield_control
+	name = "Holofield Controller"
+	id = "holofield"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control/shieldwallgen
+	category = list("initial","Misc")
+
 /datum/design/trashbag
 	name="Trash Bag"
 	id="trashbag"

@@ -126,3 +126,61 @@
   - bugfix: mech laser cargo crate is no longer unbuyable
   Zevotech:
   - rscdel: Plastic flaps no longer block atmos
+2024-05-28:
+  Anticept:
+  - tweak: All pacman and its variants now have the same sheet burn times. Superpacmans
+      are no longer the vastly inferior generator.
+  Gristlebee:
+  - rscadd: Generic Ammo Boxes, printable in the autolathe
+  - rscadd: Ammo cans are printable in the autolathe
+  - bugfix: Ammo boxes sometimes not properly updating their materials
+  - rscdel: Elzu can no longer change their color with the multitool or emag.
+  Martinpachu:
+  - rscadd: Double bedsheets, fit for double beds, are now craftable via cloth.
+  Mirag19:
+  - bugfix: Fix revolver ammo check
+  Skies-Of-Blue:
+  - bugfix: fbp and rilena hoodies now work as intended
+  SomeguyManperson:
+  - bugfix: melee hermits now pull from the "survivor" loot variant rather than no
+      loot variant
+  - bugfix: hermits can no longer commit mitosis
+  - tweak: hermit loot has been compactified, defaults are now declared in the object
+      rather than initialize, and variant-specific loot now uses a switch statement
+  - bugfix: all hermits now have pocket loot randomized as intended
+  - tweak: reduces the cash bundle melee hermits can drop from a medium random (500-3000)
+      to small random (100-500) bundle since they are quite common
+  - bugfix: prismwine's burn resistance can no longer end up stacking
+  Spyroshark, Sun-Soaked:
+  - rscadd: A movable physics subsystem, deployed using a component.
+  - rscadd: Bullet casings now drop using movable physics
+  - code_imp: ports NO_PIXEL_RANDOM_DROP from TG.
+  Thera-Pissed:
+  - tweak: SSUs draw power to decontaminate
+  - balance: lights no longer take 60% of a ships power, machines use more to account
+      for this.
+  - code_imp: added standardized defines for power usage
+  Zevotech:
+  - rscdel: Clown and mime fan quirks have been removed
+  - rscdel: Removes the clown and mime fan pins
+2024-05-29:
+  Apogee-dev:
+  - tweak: Syndicate mobs have been renamed to Ramzi Clique mobs. New sprites will
+      come later.
+  Gristlebee:
+  - rscadd: Holopads now display the location of the last holopad that called them
+      on examine.
+  - code_imp: Span macros for hologram.dm
+  - rscadd: Autolathe can print holofield controllers.
+  - rscadd: You can sync blastdoors and holofields to a controller in a button with
+      a multitool
+  - code_imp: span macros for blast doors, buttons and holofields
+2024-05-30:
+  PositiveEntropy:
+  - rscadd: Solarian Marine Bi-ologists now have proper representation in the form
+      of a cute cloak!
+2024-05-31:
+  Gristlebee:
+  - bugfix: Auto unloading for gate loaded revolvers
+  INFRARED_BARON, PositiveEntropy:
+  - imageadd: Resprites nearly every mech!

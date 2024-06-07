@@ -650,14 +650,6 @@
 	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
 	category = list("Imported")
 
-/datum/design/pizza_disposable_gun
-	name = "Pizza Disposable Gun"
-	id = "disposable_pizza"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/pizza = 4000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
-	category = list("Imported")
-
 //SRM Ballistics
 /datum/design/doublebarrel
 	name = "Double Barrel Shotgun"
