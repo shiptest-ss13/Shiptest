@@ -52,13 +52,14 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 	spread_unwielded = 20
-
-/obj/item/gun/energy/e_gun/hades/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
@@ -224,9 +225,10 @@
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
-/obj/item/gun/energy/e_gun/smg/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
+	fire_delay = 0.13 SECONDS
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
