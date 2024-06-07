@@ -150,9 +150,9 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
-	/obj/item/organ/ears/fox
-		name = "fox ears"
-		damage_multiplier = 2
+/obj/item/organ/ears/fox
+	name = "fox ears"
+	damage_multiplier = 2
 
 /obj/item/organ/ears/fox/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -172,7 +172,7 @@
 
 /obj/item/organ/ears/rabbit
 	name = "rabbit ears"
-	damage_multiplier = 3
+	damage_multiplier = 2
 
 /obj/item/organ/ears/rabbit/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
