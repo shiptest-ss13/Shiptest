@@ -277,10 +277,14 @@
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 
+	fire_delay = 0.3 SECONDS
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 /obj/item/gun/energy/printer/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/energy/printer/emp_act()
 	return
@@ -391,9 +395,9 @@
 	shaded_charge = TRUE
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/energy/tesla_cannon/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/buster
 	name = "replica buster cannon"
