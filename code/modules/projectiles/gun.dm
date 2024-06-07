@@ -186,83 +186,6 @@
 	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
 	var/projectile_damage_multiplier = 1
 	//Speed someone can be flung if its point blank
-	///Text showed when attempting to fire with no round or empty round.
-	var/dry_fire_text = "click"
-	///whether or not a message is displayed when fired
-	var/suppressed = null
-	var/can_suppress = FALSE
-	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	var/suppressed_volume = 60
-	var/can_unsuppress = TRUE
-	var/obj/item/ammo_casing/chambered = null
-	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
-	trigger_guard = TRIGGER_GUARD_NORMAL
-	///Set the description of the gun to this when sawed off
-	var/sawn_desc = null
-	///This triggers some sprite behavior in shotguns and prevents further sawoff, note that can_be_sawn_off is on gun/ballistic and not here, wtf.
-	var/sawn_off = FALSE
-
-	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
-	var/burst_size = 3
-	///The rate of fire when firing in a burst. Not the delay between bursts
-	var/burst_delay = 0.15 SECONDS
-	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay + burst_delay after every burst
-	var/fire_delay = 0.2 SECONDS
-
-	/// after initializing, we set the firemode to this
-	var/default_firemode = FIREMODE_SEMIAUTO
-	///Firemode index, due to code shit this is the currently selected firemode
-	var/firemode_index
-	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
-	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
-	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
-	var/fire_select_icon_state_prefix = ""
-	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
-	var/adjust_fire_select_icon_state_on_safety = FALSE
-
-	///Are we firing a burst? If so, dont fire again until burst is done
-	var/currently_firing_burst = FALSE
-	///This prevents gun from firing until the coodown is done, affected by lag
-	var/current_cooldown = 0
-	///affects if you can fire it unwielded or even dual wield it. LIGHT means dual wield allowed, HEAVY and higher means you have to wield to fire
-	var/weapon_weight = WEAPON_LIGHT
-	///If dual wielding, add this to the spread
-	var/dual_wield_spread = 24
-	/// ???, no clue what this is. Original desc: //Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
-	var/randomspread = 1
-
-	///Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
-	var/projectile_damage_multiplier = 1
-
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-
-	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
-
-	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
-	var/obj/item/flashlight/seclite/gun_light
-	var/datum/action/item_action/toggle_gunlight/alight
-	var/gunlight_state = "flight"
-
-	var/can_bayonet = FALSE //if a bayonet can be added or removed if it already has one.
-	var/obj/item/kitchen/knife/bayonet
-	var/knife_x_offset = 0
-	var/knife_y_offset = 0
-
-	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
-	var/ammo_y_offset = 0
-	var/flight_x_offset = 0
-	var/flight_y_offset = 0
-
-	//Zooming
-	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
-	var/zoomed = FALSE //Zoom toggle
-	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
-	var/zoom_out_amt = 0
-	var/datum/action/toggle_scope_zoom/azoom
-
 	var/pb_knockback = 0
 
 	//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
@@ -284,10 +207,12 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
-	//how large a burst is
-	var/burst_size = 1
-	//rate of fire for burst firing and semi auto
-	var/fire_delay = 0
+	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
+	var/burst_size = 3
+	///The rate of fire when firing in a burst. Not the delay between bursts
+	var/burst_delay = 0.15 SECONDS
+	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay + burst_delay after every burst
+	var/fire_delay = 0.2 SECONDS
 	//Prevent the weapon from firing again while already firing
 	var/firing_burst = 0
 	//cooldown handler
@@ -307,6 +232,12 @@
 	var/mag_display_ammo = FALSE
 	///Whether the sprite has a visible indicator for being empty or not.
 	var/empty_indicator = FALSE
+	///Whether the sprite has a visible magazine or not
+	var/show_magazine_on_sprite = FALSE
+	///Whether the sprite has a visible ammo display or not
+	var/show_magazine_on_sprite_ammo = FALSE
+	///Whether the gun supports multiple special mag types
+	var/unique_mag_sprites_for_variants = FALSE
 
 //ENERGY
 	//Do we handle overlays with base update_appearance()?
@@ -364,6 +295,27 @@
 //ENERGY
 	//set to true so the gun is given an empty cell
 	var/dead_cell = FALSE
+
+	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
+	trigger_guard = TRIGGER_GUARD_NORMAL
+
+	/// after initializing, we set the firemode to this
+	var/default_firemode = FIREMODE_SEMIAUTO
+	///Firemode index, due to code shit this is the currently selected firemode
+	var/firemode_index
+	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
+	var/fire_select_icon_state_prefix = ""
+	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
+	var/adjust_fire_select_icon_state_on_safety = FALSE
+
+	///Are we firing a burst? If so, dont fire again until burst is done
+	var/currently_firing_burst = FALSE
+	///This prevents gun from firing until the coodown is done, affected by lag
+	var/current_cooldown = 0
 
 /obj/item/gun/Initialize()
 	. = ..()

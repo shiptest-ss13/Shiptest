@@ -5,6 +5,8 @@
 #define WEAPON_MEDIUM 2
 /// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
+/// You must FULLY wield (wait the full wield delay) the gun to fire this gun
+#define WEAPON_VERY_HEAVY 4
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1
 #define TRIGGER_GUARD_NONE 0
@@ -28,6 +30,13 @@
 ///added recoil of sawn off guns
 #define SAWN_OFF_RECOIL 1
 
+//ammo box sprite defines
+///ammo box will always use provided icon state
+#define AMMO_BOX_ONE_SPRITE 0
+///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
+#define AMMO_BOX_PER_BULLET 1
+///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
+#define AMMO_BOX_FULL_EMPTY 2
 /* Stolen from tgmc.. Will use soon
 //Gun defines for gun related thing. More in the projectile folder.
 //gun_features_flags
@@ -49,10 +58,6 @@
 #define GUN_SHOWS_LOADED (1<<15) //Whether the mob sprite as loaded or unloaded, a binary version of the above
 #define GUN_SMOKE_PARTICLES (1<<16) //Whether the gun has smoke particles
 
-#define GUN_FIREMODE_SEMIAUTO "semi-auto fire mode"
-#define GUN_FIREMODE_BURSTFIRE "burst-fire mode"
-#define GUN_FIREMODE_AUTOMATIC "automatic fire mode"
-#define GUN_FIREMODE_AUTOBURST "auto-burst-fire mode"
 */
 
 //Autofire component
@@ -214,3 +219,9 @@ DEFINE_BITFIELD(attach_slots, list(
 
 #define MOVES_HITSCAN -1		//Not actually hitscan but close as we get without actual hitscan.
 #define MUZZLE_EFFECT_PIXEL_INCREMENT 17	//How many pixels to move the muzzle flash up so your character doesn't look like they're shitting out lasers.
+
+#define FIREMODE_SEMIAUTO "single"
+#define FIREMODE_BURST "burst"
+#define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_OTHER "other"
+#define FIREMODE_OTHER_TWO "other2"
