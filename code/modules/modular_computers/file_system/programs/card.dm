@@ -11,7 +11,6 @@
 	filedesc = "Plexagon Access Management"
 	program_icon_state = "id"
 	extended_desc = "Program for programming standarized ID cards to access doors across the sector."
-	transfer_access = ACCESS_HEADS
 	requires_ntnet = 0
 	size = 8
 	tgui_id = "NtosCard"

@@ -6,6 +6,7 @@
 	size = 12
 	requires_ntnet = TRUE
 	required_access = ACCESS_NETWORK	//NETWORK CONTROL IS A MORE SECURE PROGRAM.
+	transfer_access = ACCESS_NETWORK
 	available_on_ntnet = TRUE
 	tgui_id = "NtosNetMonitor"
 	program_icon = "network-wired"
