@@ -1712,13 +1712,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/flashlight/lantern/syndicate
 	restricted_species = list("moth") //End WS edit
 
-/datum/uplink_item/race_restricted/syndigenetics
-	name = "Fire Breath"
-	desc = "One of our subsidiaries, 23AndMe, have recently found the formula of backtracking lizard's genetic trail and giving them the ability to breathe fire, much like their dragon ancestors."
-	cost = 5
-	item = /obj/item/dnainjector/firebreath
-	restricted_species = list("lizard")
-
 /datum/uplink_item/race_restricted/razorwing
 	name = "Razorwing Implant"
 	desc = "Put those wings to good use! This implant makes your wingtips razor sharp and gives you the ability to flourish them, slicing anyone in range."

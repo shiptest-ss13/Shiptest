@@ -34,7 +34,7 @@
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
 	icon_state = "armor_alt"
 	item_state = "armoralt"
-	supports_variations = KEPORI_VARIATION
+	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/vest/trauma
 	name = "cybersun trauma team armor vest"
@@ -322,7 +322,7 @@
 	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/hos/inteq/honorable //Basically CC higherup clothing for inteq
 	name = "honorable vanguard battlecoat"
@@ -330,7 +330,7 @@
 	icon_state = "armor_inteq_honorable_battlecoat"
 	item_state = "inteq_honorable_battlecoat"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
