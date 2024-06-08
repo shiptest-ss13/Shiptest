@@ -215,8 +215,6 @@
 	var/fire_delay = 0.2 SECONDS
 	//Prevent the weapon from firing again while already firing
 	var/firing_burst = 0
-	//cooldown handler
-	var/semicd = 0
 
 /*
  *  Overlay
