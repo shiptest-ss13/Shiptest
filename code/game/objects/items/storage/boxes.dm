@@ -124,8 +124,12 @@
 	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
-	new mask_type(src)
-	new radio_type(src)
+	if(!isnull(mask_type))
+		new mask_type(src)
+
+	if(!isnull(radio_type))
+		new radio_type(src)
+
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -165,9 +169,11 @@
 
 /obj/item/storage/box/survival/clip/balaclava
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
-
-/obj/item/storage/box/survival/clip/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/frontier
+	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
+	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"

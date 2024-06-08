@@ -230,10 +230,11 @@
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
 	icon_state = "marine_command"
 	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
+	slowdown = 0.3
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
