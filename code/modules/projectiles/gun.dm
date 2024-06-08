@@ -1,5 +1,3 @@
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
-
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -1099,5 +1097,3 @@
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
-
-#undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER
