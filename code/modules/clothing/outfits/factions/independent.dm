@@ -56,6 +56,14 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	accessory = /obj/item/clothing/neck/scarf/darkblue
 
+/datum/outfit/job/independent/assistant/tenant
+	name = "Independent - Assistant (Tenant)"
+
+	uniform = /obj/item/clothing/under/misc/pj/red
+	alt_uniform = /obj/item/clothing/under/misc/pj/blue
+	dcoat = /obj/item/clothing/suit/nerdshirt
+
+
 /datum/outfit/job/independent/assistant/pharma
 	name = "Independent - Assistant (Pharmacology Student)"
 
