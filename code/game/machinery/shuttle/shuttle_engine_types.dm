@@ -82,8 +82,15 @@
 			if(!found.anchored)
 				continue
 			attached_heater = WEAKREF(found)
+			var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
+			RegisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT, PROC_REF(remove_heater))
 			update_icon_state()
 			return TRUE
+
+/obj/machinery/power/shuttle/engine/fueled/proc/remove_heater(datum/source, disassembled)
+	SIGNAL_HANDLER
+
+	attached_heater = null
 
 /obj/machinery/power/shuttle/engine/fueled/plasma
 	name = "plasma thruster"
@@ -167,8 +174,15 @@
 			if(!found.anchored)
 				continue
 			attached_heater = WEAKREF(found)
+			var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+			RegisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT, PROC_REF(remove_heater))
 			update_icon_state()
 			return TRUE
+
+/obj/machinery/power/shuttle/engine/fire/proc/remove_heater(datum/source, disassembled)
+	SIGNAL_HANDLER
+
+	attached_heater = null
 
 /obj/machinery/power/shuttle/engine/fire/RefreshParts()
 	var/laz = 0
@@ -208,6 +222,7 @@
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
 	icon = 'icons/obj/shuttle.dmi'
+	dir = EAST
 	input_level = 5000
 	input_level_max = 50000
 	output_level = 50000

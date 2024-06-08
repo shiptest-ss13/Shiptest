@@ -29,6 +29,7 @@
 	desc = "This does something to do with shuttle atmospherics"
 	icon_state = "heater"
 	icon = 'icons/obj/shuttle.dmi'
+	dir = EAST
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater
 	name = "engine heater"
