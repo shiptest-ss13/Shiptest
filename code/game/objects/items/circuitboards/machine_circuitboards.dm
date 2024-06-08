@@ -1444,7 +1444,7 @@
 
 /obj/item/circuitboard/machine/shuttle/engine/fire
 	name = "Combustion Thruster (Machine Board)"
-	build_path = /obj/machinery/power/shuttle/engine/fueled/plasma
+	build_path = /obj/machinery/power/shuttle/engine/fire
 	req_components = list(
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/assembly/igniter = 1,
