@@ -118,3 +118,28 @@
 2024-06-06:
   SomeguyManperson:
   - bugfix: melee hermits have had their immortal snail deals revoked
+2024-06-07:
+  Sun-Soaked:
+  - bugfix: combat knives and their subtypes now once again have sprites.
+  Zevotech:
+  - rscadd: remapped and renamed ashwalker_shrine into lavaland_surface_buried_shrine
+  - rscadd: Necropolis walls have been renamed to thick stone walls.
+  rye-rice:
+  - rscadd: Changing firemodes on guns now have new sprites
+  - bugfix: The E-40 now works as intended!
+  - rscadd: The E-40 now has an ammo counter
+  - balance: The P16 shoots slightly faster.
+  - balance: Two E-40s max are obtainable from the black market should it spawn. Blank
+      market price cap of the E-40 has also increased
+2024-06-08:
+  Apogee-dev:
+  - bugfix: fixed an incorrect sprite state on corpo sofas
+  FalloutFalcon:
+  - rscdel: Removed alot of magic cruft
+  - code_imp: Sorts gun defines into there own file
+  SomeguyManperson:
+  - bugfix: gunslinger applies its spread reduction effect to revolvers
+  Sun-Soaked:
+  - bugfix: removes a comment from apc.dm that was causing strange errors.
+  thgvr:
+  - imageadd: Kepori have been given a full visual overhaul.
