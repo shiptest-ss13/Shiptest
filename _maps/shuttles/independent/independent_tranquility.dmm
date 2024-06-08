@@ -4780,7 +4780,8 @@
 /area/ship/crew/crewfive)
 "LE" = (
 /obj/docking_port/mobile{
-	dir = 8
+	dir = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
