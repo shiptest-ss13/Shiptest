@@ -97,11 +97,6 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	return ..()
 
-/datum/species/spider/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 9 //flyswatters deal 10x damage to spiders
-	return 0
-
 /mob/living/carbon/human/species/spider
 	race = /datum/species/spider
 

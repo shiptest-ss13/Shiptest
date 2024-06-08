@@ -5,10 +5,26 @@
 /area/ruin/powered/beach
 	icon_state = "dk_yellow"
 
-// Snow Biodome
+// Winter Biodome
 
-/area/ruin/powered/snow_biodome
-	icon_state = "dk_yellow"
+/area/ruin/unpowered/winter_biodome
+	icon_state = "bluenew"
+	name = "Biodome Main Area"
+
+/area/ruin/unpowered/winter_biodome/entrance
+	name = "Biodome Entrance"
+
+/area/ruin/unpowered/winter_biodome/living_quarters
+	name = "Biodome Living Quarters"
+
+/area/ruin/unpowered/winter_biodome/cabin
+	name = "Biodome Cabin"
+
+/area/ruin/unpowered/winter_biodome/engineering
+	name = "Biodome Engineering"
+
+/area/ruin/unpowered/winter_biodome/sauna
+	name = "Biodome Sauna"
 
 //Gluttony
 
@@ -96,3 +112,8 @@
 /area/ruin/unpowered/scorched_hut
 	name = "Scorched Hut"
 	icon_state = "red"
+
+/area/ruin/unpowered/buried_shrine
+	name = "Buried Shrine"
+	icon_state = "red"
+

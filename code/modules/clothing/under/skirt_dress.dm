@@ -93,4 +93,4 @@
 	desc = "A pretty red dress with big pink ribbons attached. Intended to be worn by Kepori cosplayers, but also fits other species."
 	icon_state = "rilena_dress"
 	item_state = "rilena_dress"
-	supports_variations = KEPORI_VARIATION
+	//supports_variations = KEPORI_VARIATION

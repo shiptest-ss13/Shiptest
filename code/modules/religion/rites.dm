@@ -18,7 +18,7 @@
 		return FALSE
 	to_chat(user, "<span class='notice'>You begin to perform the rite of [name]...</span>")
 	if(!ritual_invocations)
-		if(do_after(user, target = user, delay = ritual_length))
+		if(do_after(user, ritual_length))
 			return TRUE
 		return FALSE
 	var/first_invoke = TRUE

@@ -126,3 +126,5 @@
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	turf_type = /turf/open/floor/plating/asteroid/airless
 
+/turf/open/floor/plating/asteroid/ship
+	baseturfs = /turf/open/floor/plating
