@@ -23,6 +23,7 @@
 	icon_state = "frontier_fireproof"
 	item_state = "frontier_fireproof"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/under/frontiersmen/officer
 	name = "\improper Frontiersmen officer's uniform"
@@ -85,6 +86,17 @@
 	desc = "A stiff olive-green coat, used particularly by Frontiersmen flame troopers. It seems to be lined with asbestos, to provide maximum heat and fire deterrence... At the cost of comfort. And mesothelioma."
 	icon_state = "frontier_fireproof_suit"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	w_class = WEIGHT_CLASS_BULKY
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.5
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 0.5
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/tank/internals/plasmaman, /obj/item/extinguisher, /obj/item/crowbar)
 
 ///////////////
 //Spacesuits//
@@ -187,10 +199,11 @@
 
 /obj/item/clothing/mask/gas/frontiersmen
 	name = "sack gas mask"
-	desc = "A gas mask that can be connected to an air supply. It's made out of cheap sack, but still works just as good for protecting you."
+	desc = "A gas mask that can be connected to an air supply. It's made out of sack, but still works just as good for protecting you."
 	icon_state = "gasmask_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/mask.dmi'
+	resistance_flags = FIRE_PROOF
 
 //////////
 //Neck//
@@ -200,10 +213,46 @@
 //Belts//
 /////////
 
-/obj/item/storage/belt/security/webbing/frontiersmen
+/obj/item/storage/belt/security/military/frontiersmen
 	name = "leather bandolier"
 	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. Usually slung diagonally, from the shoulder to the waist."
 	icon_state = "frontierwebbing"
 	item_state = "frontierwebbing"
 	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+
+	unique_reskin = null
+
+/obj/item/storage/belt/medical/webbing/frontiersmen
+	name = "leather medical bandolier"
+	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
+	icon_state = "frontiermedicalwebbing"
+	item_state = "frontiermedicalwebbing"
+	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
+	update_appearance()
+
+
+/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/skm_762_40(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/aps_mp_ammo/PopulateContents() //replace with spitter. remind me.
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
+	new /obj/item/grenade/frag(src)
