@@ -182,6 +182,8 @@
 /obj/machinery/power/shuttle/engine/fire/proc/remove_heater(datum/source, disassembled)
 	SIGNAL_HANDLER
 
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	UnregisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT)
 	attached_heater = null
 
 /obj/machinery/power/shuttle/engine/fire/RefreshParts()
