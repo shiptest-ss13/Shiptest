@@ -31,7 +31,6 @@
 #define GLOWY /datum/mutation/human/glow
 #define ANTIGLOWY /datum/mutation/human/glow/anti
 #define TELEPATHY /datum/mutation/human/telepathy
-#define FIREBREATH /datum/mutation/human/firebreath
 #define VOID /datum/mutation/human/void
 #define TONGUESPIKE /datum/mutation/human/tonguespike
 #define TONGUESPIKECHEM /datum/mutation/human/tongue_spike/chem
