@@ -388,7 +388,7 @@
 			to_chat(user, "<span class='warning'>You need at least 2 metal sheets to repair [src].</span>")
 			return
 		to_chat(user, "<span class='notice'>You start adding new plating.</span>")
-		if(do_after(user, 40, TRUE, src))
+		if(do_after(user, 40, src, TRUE))
 			if(!I.use(2))
 				return
 			to_chat(user, "<span class='notice'>You add new plating.</span>")
