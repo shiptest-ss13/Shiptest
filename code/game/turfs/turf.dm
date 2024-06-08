@@ -461,7 +461,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return
 	if(length(src_object.contents()))
 		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
-		if(!do_after(usr,20,target=src_object.parent))
+		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 
 	var/list/things = src_object.contents()
