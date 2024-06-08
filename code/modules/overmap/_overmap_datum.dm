@@ -349,9 +349,12 @@
 	var/datum/overmap/container = docked_to
 	while(container && !container.x || !container.y)
 		container = container.docked_to
+	current_overmap = container.current_overmap // so we dont accidentally slingshot hundreds of au undocking
 	current_overmap.overmap_container[container.x][container.y] += src
 	x = container.x
 	y = container.y
+
+
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null

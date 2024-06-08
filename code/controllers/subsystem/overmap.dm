@@ -161,12 +161,21 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
  * Inteded for ship purchases, etc.
  */
-/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, datum/overmap_star_system/system_to_spawn_in)
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template, position, datum/overmap_star_system/system_to_spawn_in)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
 	UNTIL(!ship_spawning)
 
-	var/ship_loc
-	if(template.space_spawn)
+	if(!istype(position, /datum/overmap))
+		if(!system_to_spawn_in)
+			ship_spawning = FALSE
+			CRASH("Ship attemped to be spawned at coords but no star system specificed!")
+
+	var/ship_loc = position
+	var/datum/overmap/our_spawn_location = position
+	if(our_spawn_location)
+		system_to_spawn_in = our_spawn_location.current_overmap
+
+	if(!ship_loc && template.space_spawn)
 		ship_loc = null
 	else
 		ship_loc = SSovermap.outposts[1]

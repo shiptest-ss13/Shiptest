@@ -481,6 +481,7 @@ SUBSYSTEM_DEF(shuttle)
 							ship_loc = temp_loc
 						else
 							ship_loc = SSovermap.outposts[1]
+							selected_system = SSovermap.tracked_star_systems[1]
 					if("Specific Overmap Square")
 						var/loc_x = input(user, "X overmap coordinate:") as num
 						var/loc_y = input(user, "Y overmap coordinate:") as num
