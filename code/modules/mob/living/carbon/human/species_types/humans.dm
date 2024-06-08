@@ -28,16 +28,17 @@
 			mutantears = /obj/item/organ/ears/rabbit/bent
 		if("Floppy Rabbit")
 			mutantears = /obj/item/organ/ears/rabbit/floppy
-	if(C.dna.features["tail_human"] == "Cat")
-		mutant_organs |= /obj/item/organ/tail/cat
-	if(C.dna.features["tail_human"] == "Dog")
-		mutant_organs |= /obj/item/organ/tail/dog
-	if(C.dna.features["tail_human"] == "Fox")
-		mutant_organs |= /obj/item/organ/tail/fox
-	if(C.dna.features["tail_human"] == "Fox 2")
-		mutant_organs |= /obj/item/organ/tail/fox/alt
-	if(C.dna.features["tail_human"] == "Rabbit")
-		mutant_organs |= /obj/item/organ/tail/rabbit
+	switch(C.dna.features["tail_human"])
+		if("Cat")
+			mutant_organs |= /obj/item/organ/tail/cat
+		if("Dog")
+			mutant_organs |= /obj/item/organ/tail/dog
+		if("Fox")
+			mutant_organs |= /obj/item/organ/tail/fox
+		if("Fox 2")
+			mutant_organs |= /obj/item/organ/tail/fox/alt
+		if("Rabbit")
+			mutant_organs |= /obj/item/organ/tail/rabbit
 
 	return ..()
 
