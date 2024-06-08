@@ -4,7 +4,7 @@
 /client/proc/one_click_antag()
 	set name = "Create Antagonist"
 	set desc = "Auto-create an antagonist of your choice"
-	set category = "Admin.Events"
+	set category = "Event"
 
 	if(holder)
 		holder.one_click_antag()

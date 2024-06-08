@@ -416,4 +416,5 @@
 	. = ..()
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
-	. += list(span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()]."))
+	if(get_age())
+		. += list(span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()]."))

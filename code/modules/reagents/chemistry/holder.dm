@@ -389,7 +389,7 @@
 						for(var/addiction in cached_addictions)
 							var/datum/reagent/A = addiction
 							if(istype(R, A))
-								A.addiction_stage = -15 // you're satisfied for a good while.
+								A.addiction_stage = -30 // you're satisfied for a good while.
 				need_mob_update += R.on_mob_life(C)
 
 	if(can_overdose)

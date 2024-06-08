@@ -112,3 +112,8 @@
 /area/ruin/unpowered/scorched_hut
 	name = "Scorched Hut"
 	icon_state = "red"
+
+/area/ruin/unpowered/buried_shrine
+	name = "Buried Shrine"
+	icon_state = "red"
+
