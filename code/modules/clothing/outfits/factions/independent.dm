@@ -385,8 +385,8 @@
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
-/datum/outfit/job/independent/ce/western // Something between CE and QM
-	name = "Independent - Chief Engineer (Western)"
+/datum/outfit/job/independent/ce/western
+	name = "Independent - Foreman (Western)" // Something between CE and QM
 
 	belt = /obj/item/storage/belt/utility/full/engi // Indies probably don't need adv. tools
 	uniform = /obj/item/clothing/under/rank/security/detective
@@ -536,15 +536,6 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
-
-/datum/outfit/job/independent/quartermaster/western
-	name = "Independent - Quartermaster (Western)"
-
-	uniform = /obj/item/clothing/under/rank/cargo/qm
-	suit = /obj/item/clothing/suit/toggle/hazard
-	shoes = /obj/item/clothing/shoes/workboots
-	glasses = /obj/item/clothing/glasses/sunglasses
-	head = /obj/item/clothing/head/cowboy/sec
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
