@@ -84,7 +84,7 @@
 	invocation_type = INVOCATION_SHOUT
 	range = 2
 
-	projectile_type = /obj/projectile/magic/aoe/fireball/infernal
+	projectile_type = /obj/projectile/magic
 
 	action_background_icon_state = "bg_demon"
 

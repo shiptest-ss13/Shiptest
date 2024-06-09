@@ -248,7 +248,6 @@
 	tint = 1
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 
-
 /obj/item/clothing/glasses/hud/spacecop/hidden // for the undercover cop
 	name = "sunglasses"
 	desc = "These sunglasses are special, and let you view potential criminals."
@@ -274,4 +273,3 @@
 	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. This pair also corrects nearsightedness."
 	icon_state = "prescriptionsecurityhud"
 	vision_correction = 1
-
