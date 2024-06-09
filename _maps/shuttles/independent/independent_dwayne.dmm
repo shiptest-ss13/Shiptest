@@ -53,16 +53,11 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/button/door{
-	id = "dwayne_windows";
-	name = "Fore Window Control";
-	pixel_x = -10;
-	pixel_y = -20;
-	dir = 1
-	},
-/obj/machinery/computer/crew/retro{
-	pixel_y = 0;
+/obj/machinery/computer/cargo/express/retro{
 	dir = 8
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -640,6 +635,12 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/wall/directional/north,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "kf" = (
@@ -860,7 +861,7 @@
 	icon_state = "0-10"
 	},
 /obj/item/modular_computer/laptop/preset/civilian{
-	pixel_x = 8;
+	pixel_x = 13;
 	pixel_y = 4
 	},
 /obj/item/computer_hardware/card_slot{
@@ -869,7 +870,7 @@
 	},
 /obj/item/computer_hardware/printer/mini{
 	pixel_x = -6;
-	pixel_y = 10
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -888,9 +889,10 @@
 "nf" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/mineral/processing_unit_console{
-	pixel_y = -32;
+	pixel_y = -18;
 	machinedir = 8;
-	output_dir = 1
+	output_dir = 1;
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
@@ -962,7 +964,8 @@
 /obj/item/clothing/under/rank/security/detective,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/jacket/leather/duster{
-	name = "foreman's duster"
+	name = "foreman's duster";
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, dust and paperwork."
 	},
 /obj/item/storage/belt/utility,
 /obj/item/clothing/head/hardhat/white,
@@ -1140,6 +1143,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "pv" = (
@@ -1259,9 +1268,10 @@
 	dir = 4
 	},
 /obj/structure/noticeboard{
-	pixel_x = -32
+	dir = 1;
+	pixel_y = -26
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "sD" = (
@@ -1966,6 +1976,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "FN" = (
@@ -2208,7 +2224,7 @@
 /obj/effect/turf_decal/ntspaceworks_big/six,
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/glass/twenty,
-/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/twenty,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Jy" = (
@@ -2281,14 +2297,19 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Kz" = (
-/obj/machinery/computer/cargo/express/retro{
+/obj/machinery/computer/crew/retro{
+	pixel_y = 0;
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = -6
+/obj/machinery/button/door{
+	id = "dwayne_windows";
+	name = "Fore Window Control";
+	pixel_x = -10;
+	pixel_y = 20;
+	dir = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2728,7 +2749,7 @@
 /area/ship/engineering)
 "PU" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled{
-	dir = 4
+	dir = 8
 	},
 /obj/item/folder/yellow,
 /obj/item/folder/yellow,
