@@ -202,6 +202,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
+	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if((cooldown < world.time - 200) && funnysounds)

@@ -4,8 +4,8 @@
 	icon = 'icons/obj/guns/attachments.dmi'
 
 	var/slot = ATTACHMENT_SLOT_RAIL
-	///various yes no flags associated with attachments. See defines for these: [ATTACH_REMOVABLE]
-	var/attach_features_flags = ATTACH_REMOVABLE
+	///various yes no flags associated with attachments. See defines for these: [ATTACH_REMOVABLE_HAND]
+	var/attach_features_flags = ATTACH_REMOVABLE_HAND
 	var/list/valid_parents = list()
 	var/list/signals = list()
 	var/datum/component/attachment/attachment_comp
@@ -18,6 +18,8 @@
 	var/pixel_shift_x = 16
 	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
 	var/pixel_shift_y = 16
+
+	var/spread_mod = 0
 
 /obj/item/attachment/Initialize()
 	. = ..()
@@ -52,6 +54,7 @@
 		to_chat(user, "<span class='warning'>You cannot attach [src] while it is active!</span>")
 		return FALSE
 
+	apply_modifiers(gun, user, TRUE)
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
 	return TRUE
 
@@ -61,8 +64,19 @@
 	if(toggled)
 		Toggle(gun, user)
 
+	apply_modifiers(gun, user, FALSE)
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_release_alt.ogg', 75, 1)
 	return TRUE
 
 /obj/item/attachment/proc/PreAttack(obj/item/gun/gun, atom/target, mob/user, list/params)
 	return FALSE
+
+///Handles the modifiers to the parent gun
+/obj/item/attachment/proc/apply_modifiers(obj/item/gun/gun, mob/user, attaching)
+	if(attaching)
+		gun.spread += spread_mod
+		gun.spread_unwielded += spread_mod
+	else
+		gun.spread -= spread_mod
+		gun.spread_unwielded -= spread_mod
+

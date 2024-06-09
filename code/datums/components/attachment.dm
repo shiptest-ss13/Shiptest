@@ -11,7 +11,7 @@
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
-		attach_features_flags = ATTACH_REMOVABLE,
+		attach_features_flags = ATTACH_REMOVABLE_HAND,
 		valid_parent_types = list(/obj/item/gun),
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,

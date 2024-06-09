@@ -104,10 +104,10 @@
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
-#define ATTACHMENT_SLOT_MUZZLE "attach-slot-muzzle"
-#define ATTACHMENT_SLOT_SCOPE "attach-slot-scope"
-#define ATTACHMENT_SLOT_GRIP "attach-slot-grip"
-#define ATTACHMENT_SLOT_RAIL "attach-slot-rail"
+#define ATTACHMENT_SLOT_MUZZLE "muzzle"
+#define ATTACHMENT_SLOT_SCOPE "scope"
+#define ATTACHMENT_SLOT_GRIP "grip"
+#define ATTACHMENT_SLOT_RAIL "rail"
 
 /*
 #define BIT_ATTACHMENT_SLOT_MUZZLE (1<<0)
@@ -153,8 +153,9 @@ DEFINE_BITFIELD(attach_slots, list(
 )
 
 //attach_features_flags
-#define ATTACH_REMOVABLE (1<<0)
-#define ATTACH_TOGGLE (1<<1)
+#define ATTACH_REMOVABLE_HAND (1<<0)
+#define ATTACH_REMOVABLE_TOOL (1<<1)
+#define ATTACH_TOGGLE (1<<2)
 
 /////////////////
 // PROJECTILES //

@@ -616,6 +616,7 @@
 
 /obj/item/gun/proc/reset_current_cooldown()
 	current_cooldown = FALSE
+
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	if(!safety)
 		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")

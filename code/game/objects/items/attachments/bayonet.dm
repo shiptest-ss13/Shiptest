@@ -12,6 +12,8 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP_ACCURATE
 
+	spread_mod = 1
+
 /obj/item/attachment/bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(user.a_intent == INTENT_HARM && user.CanReach(target, src, TRUE))
 		melee_attack_chain(user, target, params)

@@ -26,6 +26,7 @@
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
+	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
@@ -72,6 +73,11 @@
 
 	INVOKE_ASYNC(src, PROC_REF(do_attachment_radial), parent, user)
 
+/datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/user)
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list(TRUE)
 	var/selection = show_radial_menu(user, parent, attachments_as_list)
@@ -93,7 +99,6 @@
 		examine_list += span_notice("It has the following attachments:")
 		for(var/obj/item/attach as anything in attachments)
 			examine_list += span_notice("\t- [attach.name]")
-		examine_list += span_notice("\tThey can be removed with a <i>crowbar</i>")
 	for(var/obj/attach_type as anything in valid_types)
 		examine_list += span_notice("It can accept [initial(attach_type.name)]")
 	for(var/obj/item/attach as anything in attachments)
@@ -126,15 +131,28 @@
 		var/atom/parent = src.parent
 		parent.update_icon()
 
-/datum/component/attachment_holder/proc/handle_detach(obj/item/parent, obj/item/tool, mob/user)
-	var/list/list = list()
+/datum/component/attachment_holder/proc/handle_detach(obj/item/parent,  mob/user, obj/item/tool)
+	var/list/tool_list = list()
+	var/list/hand_list = list()
 	for(var/obj/item/attachment/attach as anything in attachments)
-		if(attach.attach_features_flags & ATTACH_REMOVABLE)
-			list[attach.name] = attach
-	var/selected = tgui_input_list(user, "Select Attachment", "Detach", list)
-	if(!parent.Adjacent(user) || !selected || !tool || !tool.use_tool(parent, user, 2 SECONDS * tool.toolspeed))
-		return
-	do_detach(list[selected], user)
+		if(attach.attach_features_flags & ATTACH_REMOVABLE_TOOL)
+			tool_list[attach.name] = attach
+		if(attach.attach_features_flags & ATTACH_REMOVABLE_HAND)
+			hand_list[attach.name] = attach
+	if(tool)
+		if(!length(tool_list))
+			return
+		var/selected = tgui_input_list(user, "Select Attachment", "Detach", tool_list)
+		if(!parent.Adjacent(user) || !selected || !tool || !tool.use_tool(parent, user, 2 SECONDS * tool.toolspeed))
+			return
+		do_detach(tool_list[selected], user)
+	else
+		if(!length(hand_list))
+			return
+		var/selected = tgui_input_list(user, "Select Attachment", "Detach", hand_list)
+		if(do_after(user, 2 SECONDS, parent))
+			do_detach(hand_list[selected], user)
+
 
 /datum/component/attachment_holder/proc/handle_attack(obj/item/parent, obj/item/item, mob/user)
 	SIGNAL_HANDLER
@@ -143,7 +161,7 @@
 		return
 
 	if(item.tool_behaviour == TOOL_CROWBAR && length(attachments))
-		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, item, user)
+		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user, item)
 		return TRUE
 
 	if(HAS_TRAIT(item, TRAIT_ATTACHABLE))
