@@ -7,8 +7,8 @@
 	. = ..()
 	if(!start_empty)
 		return .
-	for(var/obj/item/gun/G in C.contents)
-		G.set_empty()
+	for(var/obj/item/gun/thegun in C.contents)
+		thegun.set_empty()
 
 /*
 		Pistols
