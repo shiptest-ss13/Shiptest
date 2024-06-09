@@ -398,6 +398,13 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/clipboard
 
+/datum/outfit/job/independent/ce/western/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	var/obj/item/card/id/W = H.wear_id // All of QM's access.
+	W.access += list(ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_VAULT)
+
 // Medical Doctor
 
 /datum/outfit/job/independent/doctor
