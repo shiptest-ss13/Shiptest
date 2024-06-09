@@ -34,7 +34,7 @@
 /mob/living/carbon/human/get_visible_name()
 	if(name_override)
 		return name_override
-	return get_generic_name(lowercase = TRUE)
+	return get_generic_name(TRUE, lowercase = TRUE)
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable
 /mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
@@ -177,7 +177,7 @@
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src))
-		return ""
+		return FALSE
 	switch(age)
 		if(70 to INFINITY)
 			return "Geriatric"
@@ -188,27 +188,35 @@
 		if(40 to 50)
 			return "Middle-Aged"
 		if(24 to 40)
-			return "" //not necessary because this is basically the most common age range
+			return FALSE //not necessary because this is basically the most common age range
 		if(18 to 24)
 			return "Young"
 		else
 			return "Puzzling"
 
 /mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
+	var/final_string = ""
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	var/hide_features = (obscured & ITEM_SLOT_ICLOTHING) && skipface
-	var/visible_adjective
+
 	if(generic_adjective && !hide_features)
-		visible_adjective = "[generic_adjective] "
+		final_string += "[generic_adjective] "
+
 	var/visible_age = get_age()
 	if(visible_age)
-		visible_age = "[visible_age] "
-	var/visible_gender = get_gender()
-	var/final_string = "[visible_adjective][visible_age][dna.species.name] [visible_gender]"
+		final_string += "[visible_age] "
+
+	final_string += "[dna.species.name] "
+
+	final_string += get_gender()
+
 	if(prefixed)
 		final_string = "\A [final_string]"
-	return lowercase ? lowertext(final_string) : final_string
+
+	if(lowercase)
+		final_string = lowertext(final_string)
+	return final_string
 
 /mob/living/carbon/human/proc/get_gender()
 	var/visible_gender = p_they()
@@ -218,10 +226,7 @@
 		if("she")
 			visible_gender = "Woman"
 		if("they")
-			if(ishuman(src))
-				visible_gender = "Person"
-			else
-				visible_gender = "Creature"
+			visible_gender = "Person"
 		else
 			visible_gender = "Thing"
 	return visible_gender

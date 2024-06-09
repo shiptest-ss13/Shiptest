@@ -5,8 +5,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
-	burst_size = 1
-	fire_delay = 0 //spam it as fast as you can
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -24,18 +22,21 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
-	fire_delay = 1
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept.
+	recoil_unwielded = 3
+	recoil_backtime_multiplier = 1
+
 	wield_delay = 0.2 SECONDS
-	spread = 2
-	spread_unwielded = 5
+	fire_delay = 0.2 SECONDS
+	spread = 5
+	spread_unwielded = 7
 	wield_slowdown = 0.15
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
-/obj/item/gun/ballistic/automatic/pistol/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol)
 
 /obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
 	. = ..()
@@ -63,21 +64,18 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	recoil = -2
 
-/obj/item/gun/ballistic/automatic/pistol/candor/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
 
+EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
+
 /obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
 	. = ..()
 	. += "[initial(icon_state)]_factory"
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag
-	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/candor/phenex
 	name = "\improper HP Phenex"
@@ -92,7 +90,7 @@
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -102,11 +100,13 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	fire_delay = 0.7 SECONDS
-	recoil = 1
-	recoil_unwielded = 2
-	spread = 4
-	spread_unwielded = 7
+	fire_delay = 0.6 SECONDS
+	recoil = 2
+	recoil_unwielded = 5
+	recoil_backtime_multiplier = 2
+
+	spread = 7
+	spread_unwielded = 14
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
@@ -126,25 +126,11 @@
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
 
-/obj/item/gun/ballistic/automatic/pistol/stickman
-	name = "flat gun"
-	desc = "A 2 dimensional gun.. what?"
-	icon_state = "flatgun"
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
-	SHOULD_CALL_PARENT(0)
-	to_chat(user, "<span class='notice'>As you try to pick up [src], it slips out of your grip..</span>")
-	if(prob(50))
-		to_chat(user, "<span class='notice'>..and vanishes from your vision! Where the hell did it go?</span>")
-		qdel(src)
-		user.update_icons()
-	else
-		to_chat(user, "<span class='notice'>..and falls into view. Whew, that was a close one.</span>")
-		user.dropItemToGround(src)
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
@@ -160,8 +146,7 @@
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "\improper Commissioner"
@@ -170,8 +155,7 @@
 	item_state = "commander-inteq"
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
@@ -241,6 +225,8 @@
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+	fire_select_icon_state_prefix = "caseless_"
+
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
@@ -251,7 +237,7 @@
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
@@ -277,12 +263,6 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
 	to_chat(user, "<span class='warning'>Theres no magazine to replace!</span>")
 	return
-
-/obj/item/gun/ballistic/automatic/pistol/disposable/pizza
-	name = "pizza disposable gun"
-	desc = "How horrible. Whoever you point at with this won't be very cheesed to meet you." //this is a warcrime against italians // IF YOU'RE GOING TO DO US DIRTY SPELL IT RIGHT
-	icon_state = "disposable_pizza"
-	custom_materials = list(/datum/material/pizza=2000)
 
 //not technically a pistol but whatever
 /obj/item/gun/ballistic/derringer

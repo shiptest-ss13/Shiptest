@@ -535,7 +535,7 @@
 		playsound(loc, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 		C.visible_message("<span class='danger'>[user] begins restraining [C] with dark magic!</span>", \
 								"<span class='userdanger'>[user] begins shaping dark magic shackles around your wrists!</span>")
-		if(do_mob(user, C, 30))
+		if(do_after(user, 3 SECONDS, C))
 			if(!C.handcuffed)
 				C.set_handcuffed(new /obj/item/restraints/handcuffs/energy/cult/used(C))
 				C.update_handcuffed()
@@ -812,7 +812,7 @@
 
 /obj/item/melee/blood_magic/manipulator/attack_self(mob/living/user)
 	if(iscultist(user))
-		var/list/options = list("Blood Spear (150)", "Blood Bolt Barrage (300)", "Blood Beam (500)")
+		var/list/options = list("Blood Spear (150)", "Blood Beam (500)")
 		var/choice = input(user, "Choose a greater blood rite...", "Greater Blood Rites") as null|anything in options
 		if(!choice)
 			to_chat(user, "<span class='cultitalic'>You decide against conducting a greater blood rite.</span>")
@@ -835,18 +835,6 @@
 						user.visible_message(
 							"<span class='warning'>A [rite.name] appears at [user]'s feet!</span>", \
 							"<span class='cultitalic'>A [rite.name] materializes at your feet.</span>")
-			if("Blood Bolt Barrage (300)")
-				if(uses < BLOOD_BARRAGE_COST)
-					to_chat(user, "<span class='cultitalic'>You need [BLOOD_BARRAGE_COST] charges to perform this rite.</span>")
-				else
-					var/obj/rite = new /obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/blood()
-					uses -= BLOOD_BARRAGE_COST
-					qdel(src)
-					if(user.put_in_hands(rite))
-						to_chat(user, "<span class='cult'><b>Your hands glow with power!</b></span>")
-					else
-						to_chat(user, "<span class='cultitalic'>You need a free hand for this rite!</span>")
-						qdel(rite)
 			if("Blood Beam (500)")
 				if(uses < BLOOD_BEAM_COST)
 					to_chat(user, "<span class='cultitalic'>You need [BLOOD_BEAM_COST] charges to perform this rite.</span>")

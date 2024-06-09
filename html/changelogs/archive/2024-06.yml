@@ -39,3 +39,138 @@
   - bugfix: black market secret documents are no longer default documents
   - balance: the shoddy survivor suits found on hermits are now actually worse than
       the EXOCOM explorer suits
+2024-06-03:
+  Apogee-dev:
+  - balance: security belts and webbings can no longer store bulk ammo boxes, only
+      magazines
+  - tweak: Ship-specific access restrictions have been enabled.
+  - tweak: Pirate ships no longer spawn docked to the outpost.
+  FalloutFalcon:
+  - bugfix: Fixed plant analyzer examine block styling
+  - tweak: rewrites trickwine for brewers
+  - rscadd: You can trip landmines with a well placed throw
+  - rscadd: New interaction with throwing things at bottles, lights, and bear traps
+  - bugfix: The end of finalize no longer gets called twice and targeting items seems
+      like an intended behavior that was lost
+  - rscdel: Removed goofball legion disease
+  - refactor: spawning guns without mags are handled with a define
+  - refactor: refactored hostile humans
+  - bugfix: fixed free smart fridge circuit board from drying rack
+  - rscadd: Smokers rejoice! You can now pick your favorite type of nicotine delivery
+      system.
+  - rscadd: Smokers have a choice between most brands of cigarette, cigars, a vape,
+      or a pipe!
+  - code_imp: sorted code owner stuff and added me to some files
+  - bugfix: fixed create and destroy test fail
+  - tweak: tweaked id card examine information and formating
+  - bugfix: human examine bug when middle aged
+  - rscdel: Removed moths getting one shot by a flyswatter
+  - code_imp: camera/autoname/LateInitialize() optimization
+  - tweak: granularizes a handful of tool and machine supply packs!
+  - admin: Improved the silly little menu, HA HA I have messed up your muscle memory!!
+      u
+  Gristlebee:
+  - tweak: Defib crate now contains a single defib, priced 750
+  - tweak: Granularizes mech equipment
+  - tweak: mech cargo pack descs
+  - rscadd: Asteroid ore veins
+  Hardly:
+  - rscadd: Added some style to the flavor text popup
+  - bugfix: Fixed flavor text not accepting certain characters or new lines
+  - tweak: Changed up Flavor Text editing text a bit
+  - tweak: Flavor text's max length has been chopped from 4096 to 1024
+  Sadhorizon:
+  - tweak: Moved most of contraband items out of vendor contraband.
+  - rscadd: Added DromaderyCo packets to the cigarette vendors.
+  - tweak: Increased nicotine amount to three in the cigarette vendors.
+  Skies-Of-Blue:
+  - balance: chemical mindbreaker is now ten times as potent! Be gay, do crime, and
+      hallucinate in the process
+  SomeguyManperson:
+  - bugfix: hallucination anomalies now trigger if you aren't wearing proper protection
+      (as opposed to only triggering if you are)
+  - bugfix: gun sawing can now only be done with proper equipment (usually a saw))
+  - bugfix: bandoliers now hold the correct amount of bullets (several more)
+  - balance: the brimstone can now be pumped faster. Enjoy your rilena.
+  Sun-Soaked:
+  - bugfix: shoutgun casing bounce sfx now plays as intended. oopsies.
+  - rscdel: Removes sexy clown costumes from spawners
+  - config: tweak option removed from changelog template
+  Zevotech:
+  - rscdel: Removed nonfunctioning coffee machines and their cargo packs
+  - rscadd: Adds the Elzuose color salve, a product that allows Elzuose to change
+      their glow color upon application.
+  '[Watermelon914](https://github.com/Watermelon914)':
+  - code_imp: ports little itty bitty sendsignal optimization from tg
+  meemofcourse:
+  - balance: The Elder's Illesterns and Arrows are now factory-variant.
+  - bugfix: The Runner should be able to dock now.
+  rkz, Benjamin(benbot16), Rohesie, Qustinnus, jlsnow301:
+  - refactor: refactored do_afters to use timed_action_flags for unique args
+  - code_imp: centralized do_mob and do_atom into do_after
+2024-06-05:
+  FalloutFalcon:
+  - rscdel: Trophies can no longer be used in crushers
+  - bugfix: fixed CODEOWNERS, i hope
+  SomeguyManperson:
+  - bugfix: The shadow's gunslinger buff now properly provides an AP bonus
+  - balance: Rollerbeds stop broken bone damage ticks from occurring while buckled
+2024-06-06:
+  SomeguyManperson:
+  - bugfix: melee hermits have had their immortal snail deals revoked
+2024-06-07:
+  Sun-Soaked:
+  - bugfix: combat knives and their subtypes now once again have sprites.
+  Zevotech:
+  - rscadd: remapped and renamed ashwalker_shrine into lavaland_surface_buried_shrine
+  - rscadd: Necropolis walls have been renamed to thick stone walls.
+  rye-rice:
+  - rscadd: Changing firemodes on guns now have new sprites
+  - bugfix: The E-40 now works as intended!
+  - rscadd: The E-40 now has an ammo counter
+  - balance: The P16 shoots slightly faster.
+  - balance: Two E-40s max are obtainable from the black market should it spawn. Blank
+      market price cap of the E-40 has also increased
+2024-06-08:
+  Apogee-dev:
+  - bugfix: fixed an incorrect sprite state on corpo sofas
+  FalloutFalcon:
+  - rscdel: Removed alot of magic cruft
+  - code_imp: Sorts gun defines into there own file
+  SomeguyManperson:
+  - bugfix: gunslinger applies its spread reduction effect to revolvers
+  Sun-Soaked:
+  - bugfix: removes a comment from apc.dm that was causing strange errors.
+  thgvr:
+  - imageadd: Kepori have been given a full visual overhaul.
+2024-06-09:
+  SomeguyManperson:
+  - tweak: bleeding is now stored in the limbs, functioning similarly to bone breaking.
+      Taking damage over a certain threshold and amount (lower for sharp weapons)
+      will cause part of it to be turned into bleeding.
+  - tweak: gauze, tape, and bleeding suppression are similarly no longer abstracted
+      into a "bleed suppression" value
+  - rscadd: you can now cauterize bleeding with a lighter. Which is cool.
+  - rscadd: you can now also cauterize bleeding with suit storage decontamination.
+      Which is hot.
+  - rscadd: examine and examine closely will show whether or not someone is visibly
+      bleeding or bandaged. This means people who are both will show both. Examine
+      closely additionally shows which limbs are currently bleeding.
+  - tweak: heparin now causes existing bleeding to worsen, instead of causing bleeding
+      on its own
+  - tweak: you can no longer cut the throat of someone who's head has been lopped
+      off
+  Zevotech:
+  - bugfix: Planets should no longer spawn without ruins when generating due to bad
+      map datums
+  - rscdel: Removed 3 Beach ruins
+  - rscdel: Removed 4 Iceplanet ruins
+  - rscdel: Removed 11 Jungle ruins
+  - rscdel: Removed 10 Lavaland ruins
+  - rscdel: Removed 8 Rockplanet ruins
+  - rscdel: Removed 7 Sandplanet ruins
+  - rscdel: Removed 7 Rockplanet ruins
+  - rscdel: Removed 15 Space ruins
+  - rscdel: Removed 16 unused/removed ruin code files
+  - rscdel: Removed a whole lot of old/unused ruin code from misc files
+  - tweak: Tweaked various ruins and one ship to fix issues and remove unused items
