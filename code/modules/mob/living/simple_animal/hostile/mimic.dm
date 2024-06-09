@@ -205,7 +205,6 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 
 /mob/living/simple_animal/hostile/mimic/copy/ranged
 	var/obj/item/gun/TrueGun = null
-	var/obj/item/gun/magic/Zapstick
 	var/obj/item/gun/ballistic/Pewgun
 	var/obj/item/gun/energy/Zapgun
 
@@ -223,10 +222,6 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		move_to_delay = 2 * G.w_class + 1
 		projectilesound = G.fire_sound
 		TrueGun = G
-		if(istype(G, /obj/item/gun/magic))
-			Zapstick = G
-			var/obj/item/ammo_casing/magic/M = Zapstick.ammo_type
-			projectiletype = initial(M.projectile_type)
 		if(istype(G, /obj/item/gun/ballistic))
 			Pewgun = G
 			var/obj/item/ammo_box/magazine/M = Pewgun.mag_type
@@ -245,11 +240,6 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 				Zapgun.cell.use(shot.e_cost)
 				Zapgun.update_appearance()
 				..()
-	else if(Zapstick)
-		if(Zapstick.charges)
-			Zapstick.charges--
-			Zapstick.update_appearance()
-			..()
 	else if(Pewgun)
 		if(Pewgun.chambered)
 			if(Pewgun.chambered.BB)
