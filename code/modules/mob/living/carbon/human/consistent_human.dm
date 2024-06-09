@@ -31,6 +31,7 @@
 	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[hex2num(copytext(seed, 11, 12)) % length(GLOB.spider_spinneret_list) + 1]
 	dna.features["kepori_feathers"] = GLOB.kepori_feathers_list[hex2num(copytext(seed, 12, 13)) % length(GLOB.kepori_feathers_list) + 1]
 	dna.features["kepori_body_feathers"] = GLOB.kepori_body_feathers_list[hex2num(copytext(seed, 13, 14)) % length(GLOB.kepori_body_feathers_list) + 1]
+	dna.features["kepori_head_feathers"] = GLOB.kepori_head_feathers_list[hex2num(copytext(seed, 13, 14)) % length(GLOB.kepori_head_feathers_list) + 1]
 	dna.features["vox_head_quills"] = GLOB.vox_head_quills_list[hex2num(copytext(seed, 14, 15)) % length(GLOB.vox_head_quills_list) + 1]
 	dna.features["vox_neck_quills"] = GLOB.vox_neck_quills_list[hex2num(copytext(seed, 15, 16)) % length(GLOB.vox_neck_quills_list) + 1]
 	dna.features["elzu_horns"] = GLOB.elzu_horns_list[hex2num(copytext(seed, 16, 17)) % length(GLOB.elzu_horns_list) + 1]
