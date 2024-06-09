@@ -388,6 +388,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = IS_BLUNT
 
+/obj/item/switchblade/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 60, 100, 0)
+
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
