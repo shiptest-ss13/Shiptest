@@ -37,15 +37,6 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/necropolis/icecropolis
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	planetary_atmos = FALSE
-	baseturfs = /turf/open/indestructible/necropolis/air
-
 /turf/open/floor/plating/asteroid/basalt/purple
 	icon = 'icons/turf/lavaland_purple.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/purple

@@ -115,7 +115,9 @@
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max((H.bleed_rate - 3), 0)
+			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(S.location))
+			if(BP)
+				BP.adjust_bleeding(-3)
 		M.surgeries -= S
 		user.visible_message("<span class='notice'>[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery.</span>", \
 			"<span class='notice'>You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery.</span>")

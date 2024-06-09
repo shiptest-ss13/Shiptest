@@ -235,29 +235,6 @@ Chilling extracts:
 		user.visible_message("<span class='notice'>[src] lets out a peaceful ring as it shatters, but nothing happens...</span>")
 	..()
 
-/obj/item/slimecross/chilling/green
-	colour = "green"
-	effect_desc = "Creates a bone gun in the hand it is used in, which uses blood as ammo."
-
-/obj/item/slimecross/chilling/green/do_effect(mob/user)
-	var/which_hand = "l_hand"
-	if(!(user.active_hand_index % 2))
-		which_hand = "r_hand"
-	var/mob/living/L = user
-	if(!istype(user))
-		return
-	var/obj/item/held = L.get_active_held_item() //This should be itself, but just in case...
-	L.dropItemToGround(held)
-	var/obj/item/gun/magic/bloodchill/gun = new(user)
-	if(!L.put_in_hands(gun))
-		qdel(gun)
-		user.visible_message("<span class='warning'>[src] flash-freezes [user]'s arm, cracking the flesh horribly!</span>")
-	else
-		user.visible_message("<span class='danger'>[src] chills and snaps off the front of the bone on [user]'s arm, leaving behind a strange, gun-like structure!</span>")
-	user.emote("scream")
-	L.apply_damage(30,BURN,which_hand)
-	..()
-
 /obj/item/slimecross/chilling/pink
 	colour = "pink"
 	effect_desc = "Creates a slime corgi puppy."

@@ -454,7 +454,6 @@
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
 
 	return ..(user, total_spread)
 
@@ -678,18 +677,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
 	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='hear'>You hear a gunshot!</span>")
-
-/obj/item/gun/ballistic/revolver/russian/soul
-	name = "cursed Russian revolver"
-	desc = "To play with this revolver requires wagering your very soul."
-
-/obj/item/gun/ballistic/revolver/russian/soul/shoot_self(mob/living/user)
-	..()
-	var/obj/item/soulstone/anybody/revolver/SS = new /obj/item/soulstone/anybody/revolver(get_turf(src))
-	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
-		qdel(SS)
-		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
 
 /obj/item/gun/ballistic/revolver/firebrand
 	name = "\improper HP Firebrand"
