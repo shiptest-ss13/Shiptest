@@ -38,7 +38,7 @@
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
-	item = /obj/item/switchblade
+	item = /obj/item/kitchen/knife/switchblade
 
 	price_min = 500
 	price_max = 700
