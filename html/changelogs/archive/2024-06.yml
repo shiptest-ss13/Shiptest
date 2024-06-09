@@ -143,3 +143,34 @@
   - bugfix: removes a comment from apc.dm that was causing strange errors.
   thgvr:
   - imageadd: Kepori have been given a full visual overhaul.
+2024-06-09:
+  SomeguyManperson:
+  - tweak: bleeding is now stored in the limbs, functioning similarly to bone breaking.
+      Taking damage over a certain threshold and amount (lower for sharp weapons)
+      will cause part of it to be turned into bleeding.
+  - tweak: gauze, tape, and bleeding suppression are similarly no longer abstracted
+      into a "bleed suppression" value
+  - rscadd: you can now cauterize bleeding with a lighter. Which is cool.
+  - rscadd: you can now also cauterize bleeding with suit storage decontamination.
+      Which is hot.
+  - rscadd: examine and examine closely will show whether or not someone is visibly
+      bleeding or bandaged. This means people who are both will show both. Examine
+      closely additionally shows which limbs are currently bleeding.
+  - tweak: heparin now causes existing bleeding to worsen, instead of causing bleeding
+      on its own
+  - tweak: you can no longer cut the throat of someone who's head has been lopped
+      off
+  Zevotech:
+  - bugfix: Planets should no longer spawn without ruins when generating due to bad
+      map datums
+  - rscdel: Removed 3 Beach ruins
+  - rscdel: Removed 4 Iceplanet ruins
+  - rscdel: Removed 11 Jungle ruins
+  - rscdel: Removed 10 Lavaland ruins
+  - rscdel: Removed 8 Rockplanet ruins
+  - rscdel: Removed 7 Sandplanet ruins
+  - rscdel: Removed 7 Rockplanet ruins
+  - rscdel: Removed 15 Space ruins
+  - rscdel: Removed 16 unused/removed ruin code files
+  - rscdel: Removed a whole lot of old/unused ruin code from misc files
+  - tweak: Tweaked various ruins and one ship to fix issues and remove unused items
