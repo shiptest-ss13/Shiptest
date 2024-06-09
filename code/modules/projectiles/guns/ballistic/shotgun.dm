@@ -379,6 +379,24 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		item_state = "dshotgun_sawn"
 		mob_overlay_state = item_state
 
+// sawn off beforehand
+/obj/item/gun/ballistic/shotgun/doublebarrel/presawn
+	name = "sawn-off double-barreled shotgun"
+	desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
+	sawn_off = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+
+	wield_slowdown = 0.25
+	wield_delay = 0.3 SECONDS //OP? maybe
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 3 //or not
+	recoil_unwielded = 5
+	item_state = "dshotgun_sawn"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
 	name = "HP antique double-barreled shotgun"
 	desc = "A special-edition shotgun hand-made by Hunter's Pride with a high-quality walnut stock inlaid with brass scrollwork. Shotguns like this are very rare outside of the Saint-Roumain Militia's ranks. Otherwise functionally identical to a common double-barreled shotgun. Chambered in 12g."
@@ -451,52 +469,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	w_class = WEIGHT_CLASS_NORMAL
 	sawn_off = TRUE
 	slot_flags = ITEM_SLOT_BELT
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook
-	name = "hook modified sawn-off shotgun"
-	desc = "Range isn't an issue when you can bring your victim to you."
-	icon_state = "hookshotgun"
-	icon = 'icons/obj/guns/projectile.dmi'
-	item_state = "shotgun"
-	load_sound = 'sound/weapons/gun/shotgun/insert_shell.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
-	can_be_sawn_off = FALSE
-	force = 16 //it has a hook on it
-	attack_verb = list("slashed", "hooked", "stabbed")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	//our hook gun!
-	var/obj/item/gun/magic/hook/bounty/hook
-	var/toggled = FALSE
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/Initialize()
-	. = ..()
-	hook = new /obj/item/gun/magic/hook/bounty(src)
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/AltClick(mob/user)
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(toggled)
-		to_chat(user,"<span class='notice'>You switch to the shotgun.</span>")
-		fire_sound = initial(fire_sound)
-	else
-		to_chat(user,"<span class='notice'>You switch to the hook.</span>")
-		fire_sound = 'sound/weapons/batonextend.ogg'
-	toggled = !toggled
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/examine(mob/user)
-	. = ..()
-	if(toggled)
-		. += "<span class='notice'>Alt-click to switch to the shotgun.</span>"
-	else
-		. += "<span class='notice'>Alt-click to switch to the hook.</span>"
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/afterattack(atom/target, mob/living/user, flag, params)
-	if(toggled)
-		hook.afterattack(target, user, flag, params)
-	else
-		return ..()
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
@@ -772,3 +744,23 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(.)
 		item_state = "beacon_factory_sawn"
 		mob_overlay_state = item_state
+
+//pre sawn off beacon
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
+	name = "sawn-off HP Beacon"
+	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	sawn_off = TRUE
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+
+	weapon_weight = WEAPON_MEDIUM
+
+	item_state = "beacon_sawn"
+	mob_overlay_state = "beacon_sawn"
+	wield_slowdown = 0.5
+	wield_delay = 0.5 SECONDS
+
+	spread_unwielded = 20 //mostly the hunting revolver stats
+	spread = 6
+	recoil = 2
+	recoil_unwielded = 4

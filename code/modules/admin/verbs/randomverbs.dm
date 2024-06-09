@@ -735,8 +735,6 @@
 		M.audible_message("<span class='hear'>...wabbajack...wabbajack...</span>")
 		playsound(M.loc, 'sound/magic/staff_change.ogg', 50, TRUE, -1)
 
-		wabbajack(M)
-
 	message_admins("Mass polymorph started by [who_did_it] is complete.")
 
 
