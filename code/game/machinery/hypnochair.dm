@@ -6,6 +6,8 @@
 	base_icon_state = "hypnochair"
 	circuit = /obj/item/circuitboard/machine/hypnochair
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	opacity = FALSE
 
 	var/mob/living/carbon/victim = null ///Keeps track of the victim to apply effects if it teleports away

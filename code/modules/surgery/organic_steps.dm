@@ -30,7 +30,9 @@
 			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s [parse_zone(target_zone)].</span>",
 				"<span class='notice'>Blood pools around the incision in [H]'s [parse_zone(target_zone)].</span>",
 				"")
-			H.bleed_rate += 3
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		if(BP)
+			BP.adjust_bleeding(3)
 	return ..()
 
 /datum/surgery_step/incise/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -74,7 +76,9 @@
 		target.heal_bodypart_damage(20,0)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.bleed_rate = max((H.bleed_rate - 3), 0)
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		if(BP)
+			BP.adjust_bleeding(-3)
 	return ..()
 
 /datum/surgery_step/clamp_bleeders/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -137,7 +141,9 @@
 		target.heal_bodypart_damage(15,0)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.bleed_rate = max((H.bleed_rate - 3), 0)
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		if(BP)
+			BP.adjust_bleeding(-3)
 	return ..()
 
 //saw bone
