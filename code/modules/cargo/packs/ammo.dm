@@ -7,9 +7,9 @@
 	. = ..()
 	if(!start_empty)
 		return .
-	for(var/obj/item/ammo_box/magazine/A in C.contents)
-		var/list/L = A.ammo_list(TRUE)
-		QDEL_LIST(L)
+	for(var/obj/item/ammo_box/magazine/clippy in C.contents)
+		var/list/boolets = clippy.ammo_list(TRUE)
+		QDEL_LIST(boolets)
 
 /*
 		Pistol ammo
