@@ -108,7 +108,11 @@
 
 		data["seed"]["mutatelist"] = list()
 		for(var/obj/item/seeds/mutant as anything in my_seed.mutatelist)
-			data["seed"]["mutatelist"] += initial(mutant.plantname)
+			data["seed"]["mutatelist"] += list(list(
+				"name" = initial(mutant.plantname)
+				"desc" = initial(mutant.desc)
+
+			))
 
 
 	if(product)
@@ -118,15 +122,19 @@
 			var/datum/reagent/product_distill_reagent = product.distill_reagent
 			data["product"]["distill_reagent"] = initial(product_distill_reagent.name)
 
-			data["product"]["juice_results"] = list()
+			data["product"]["juice_result"] = list()
 			for(var/datum/reagent/reagent as anything in product.juice_results)
-				data["product"]["juice_results"] += initial(reagent.name)
+				data["product"]["juice_result"] += initial(reagent.name)
 
 		data["product"]["grind_results"] = list()
 		for(var/reagent_id in my_seed.reagents_add)
 			var/datum/reagent/seed_reagent  = GLOB.chemical_reagents_list[reagent_id]
 			var/amt = product.reagents.get_reagent_amount(reagent_id)
-			data["product"]["grind_results"] += "[seed_reagent.name]: [amt]"
+			data["product"]["grind_results"] += list(list(
+				"name" = seed_reagent.name,
+				"desc" = seed_reagent.description,
+				"amount" = amt
+			))
 
 	if(delete_product)
 		qdel(product)
