@@ -4,17 +4,14 @@
 	ready_proj(target, user, quiet, zone_override, fired_from)
 	if(pellets == 1)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
-			if(randomspread)
-				spread = round((rand() - 0.5) * distro)
-			else //Smart spread
-				spread = round(1 - 0.5) * distro
+			spread = round(1 - 0.5) * distro
 		if(!throw_proj(target, targloc, user, params, spread))
 			return FALSE
 	else
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
-		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, spread, zone_override, params, distro)
+		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, spread, zone_override, params, distro)
 
 	if(click_cooldown_override)
 		user.changeNext_move(click_cooldown_override)

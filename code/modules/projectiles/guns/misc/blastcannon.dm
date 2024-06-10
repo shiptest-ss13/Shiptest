@@ -8,7 +8,6 @@
 	force = 10
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 	item_flags = NONE
-	randomspread = FALSE
 
 	var/hugbox = TRUE
 	var/max_power = INFINITY

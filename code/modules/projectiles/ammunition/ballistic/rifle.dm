@@ -53,7 +53,6 @@
 	desc = "A 5.45x39mm bullet casing."
 	icon_state = "rifle-brass"
 	caliber = "5.45x39mm"
-	randomspread = TRUE
 	projectile_type = /obj/projectile/bullet/a545_39
 	bullet_per_box = 80
 

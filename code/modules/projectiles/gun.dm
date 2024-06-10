@@ -69,7 +69,6 @@
 	///If dual wielding, add this to the spread
 	var/dual_wield_spread = 24
 	/// ???, no clue what this is. Original desc: //Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
-	var/randomspread = 1
 
 	///Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
 	var/projectile_damage_multiplier = 1
@@ -460,18 +459,7 @@
 		currently_firing_burst = FALSE
 		return FALSE
 
-	// we hold the total spread in this var
-	var/sprd
-	// if we ARE burst firing and don't have "randomspread", we add the burst's penalty on top of it.
-	if(burst_firing && !randomspread)
-		bonus_spread += burst_size * iteration
-
-	//override spread? usually happens only in bursts
-	if(spread_override && !randomspread)
-		sprd = spread_override
-	else
-		//Calculate spread
-		sprd = calculate_spread(user, bonus_spread)
+	var/sprd = calculate_spread(user, bonus_spread)
 
 	before_firing(target,user)
 	//If we cant fire the round, just end the proc here. Otherwise, continue
