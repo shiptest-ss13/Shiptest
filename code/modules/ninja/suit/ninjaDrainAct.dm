@@ -235,7 +235,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 			if(S.cell.charge+drain > S.cell.maxcharge)
 				drain = S.cell.maxcharge - S.cell.charge
 				maxcapacity = 1
-			if (do_after(H,10, hidden = TRUE))
+			if (do_after(H, 10, hidden = TRUE))
 				spark_system.start()
 				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 				cell.use(drain)
