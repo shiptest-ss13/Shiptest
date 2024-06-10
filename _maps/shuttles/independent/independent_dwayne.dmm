@@ -1052,12 +1052,6 @@
 /obj/item/radio{
 	pixel_y = 5
 	},
-/obj/item/radio{
-	pixel_y = 5
-	},
-/obj/item/radio{
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "oJ" = (
@@ -1882,10 +1876,10 @@
 	pixel_y = 28;
 	layer = 2.89
 	},
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ex" = (
@@ -2125,8 +2119,14 @@
 /area/ship/engineering)
 "HP" = (
 /obj/machinery/light/dim/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/structure/toilet{
+	dir = 8;
+	pixel_y = 7;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/vomit/old{
+	pixel_y = 13;
+	pixel_x = -10
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -2955,15 +2955,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Tl" = (
-/obj/structure/toilet{
-	dir = 1;
-	pixel_y = 0
-	},
-/obj/effect/decal/cleanable/vomit/old{
-	pixel_y = 12;
-	pixel_x = -6
-	},
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/washing_machine,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Tz" = (
@@ -3041,12 +3034,7 @@
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = -4
 	},
-/obj/item/storage/pill_bottle/mining{
-	pixel_x = -6
-	},
-/obj/item/storage/pill_bottle/charcoal/less{
-	pixel_x = 5
-	},
+/obj/item/storage/pill_bottle/charcoal/less,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "UP" = (
