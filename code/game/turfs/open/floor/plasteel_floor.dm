@@ -332,6 +332,3 @@
 	icon_state = "tiled_light"
 	base_icon_state = "tiled_light"
 	color = "#938170"
-
-/turf/open/floor/plasteel/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air

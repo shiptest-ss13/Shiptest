@@ -2,8 +2,6 @@
 
 /datum/map_template/ruin/beachplanet
 	prefix = "_maps/RandomRuins/BeachRuins/"
-	allow_duplicates = FALSE
-	cost = 5
 	ruin_type = RUINTYPE_BEACH
 
 /datum/map_template/ruin/beachplanet/fishinghut
@@ -18,12 +16,6 @@
 	description = "As you draw near the ancient wall, a sense of foreboding overcomes you. You aren't sure why, but you feel this dusty structure may contain great dangers."
 	suffix = "beach_ancient_ruin.dmm"
 
-/datum/map_template/ruin/beachplanet/colony
-	name = "Abandoned Beachside Colony"
-	id = "beach_colony"
-	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
-	suffix = "beach_colony.dmm"
-
 /datum/map_template/ruin/beachplanet/town
 	name = "Beachside Town"
 	id = "beach_town"
@@ -35,18 +27,6 @@
 	id = "beach_pirate"
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
-
-/datum/map_template/ruin/beachplanet/fallenstar
-	name = "Crashed Starwalker"
-	id = "crashed_star"
-	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
-	suffix = "beach_crashed_starwalker.dmm"
-
-/datum/map_template/ruin/beachplanet/knight
-	name = "Knight's Rest"
-	id = "knights_rest"
-	description = "An small castle holding the grave of a renowned warrior"
-	suffix = "beach_knights_rest.dmm"
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"

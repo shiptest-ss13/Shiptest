@@ -1091,7 +1091,7 @@
 	M.adjustBruteLoss(-2*REM, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
+		H.heal_bleeding(0.25)
 	..()
 	. = 1
 
@@ -1638,7 +1638,7 @@
 	if(prob(50))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max(H.bleed_rate - 2, 0)
+			H.heal_bleeding(2)
 	..()
 	. = 1
 
