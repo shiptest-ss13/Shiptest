@@ -108,6 +108,7 @@
 #define ATTACHMENT_SLOT_SCOPE "scope"
 #define ATTACHMENT_SLOT_GRIP "grip"
 #define ATTACHMENT_SLOT_RAIL "rail"
+#define ATTACHMENT_SLOT_STOCK "stock"
 
 /*
 #define BIT_ATTACHMENT_SLOT_MUZZLE (1<<0)
@@ -133,6 +134,8 @@ DEFINE_BITFIELD(attach_slots, list(
 			return (1<<2)
 		if(ATTACHMENT_SLOT_RAIL)
 			return (1<<3)
+		if(ATTACHMENT_SLOT_STOCK)
+			return (1<<4)
 
 /proc/attachment_slot_from_bflag(slot)
 	switch(slot)
@@ -144,12 +147,15 @@ DEFINE_BITFIELD(attach_slots, list(
 			return ATTACHMENT_SLOT_GRIP
 		if(1<<3)
 			return ATTACHMENT_SLOT_RAIL
+		if(1<<4)
+			return ATTACHMENT_SLOT_STOCK
 
 #define ATTACHMENT_DEFAULT_SLOT_AVAILABLE list( \
 	ATTACHMENT_SLOT_MUZZLE = 1, \
 	ATTACHMENT_SLOT_SCOPE = 1, \
 	ATTACHMENT_SLOT_GRIP = 1, \
 	ATTACHMENT_SLOT_RAIL = 1, \
+	ATTACHMENT_SLOT_STOCK = 1, \
 )
 
 //attach_features_flags

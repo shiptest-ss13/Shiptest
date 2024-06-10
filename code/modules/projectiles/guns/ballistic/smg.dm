@@ -275,10 +275,8 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/skm_545_39
-
-	actions_types = list(/datum/action/item_action/fold_stock) //once again, ideally an attatchment in the future
 
 	recoil = 2
 	recoil_unwielded = 6
@@ -289,76 +287,35 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = 0.35
 
-	///is the bipod deployed?
-	var/stock_folded = FALSE
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/foldable_stock
+	)
 
-	///we add these two values to recoi/spread when we have the bipod deployed
-	var/stock_recoil_bonus = -2
-	var/stock_spread_bonus = -5
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 11,
+			"y" = 20,
+		)
+	)
 
-	var/folded_slowdown = 0.6
-	var/folded_wield_delay = 0.6 SECONDS
-
-	var/unfolded_slowdown = 0.35
-	var/unfolded_wield_delay = 0.2 SECONDS
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
-/datum/action/item_action/fold_stock
-	name = "Fold/Unfold stock"
-	desc = "Fold or unfold the stock for easier storage."
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/ui_action_click(mob/user, action)
-	if(!istype(action, /datum/action/item_action/fold_stock))
-		return ..()
-	fold(user)
-
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/proc/fold(mob/user)
-	if(stock_folded)
-		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
-		w_class = WEIGHT_CLASS_BULKY
-		wield_delay = folded_wield_delay
-		wield_slowdown = folded_slowdown
-	else
-		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
-		w_class = WEIGHT_CLASS_NORMAL
-		wield_delay = unfolded_wield_delay
-		wield_slowdown = unfolded_slowdown
-
-	if(wielded)
-		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
-
-	stock_folded = !stock_folded
-	playsound(src, 'sound/weapons/empty.ogg', 100, 1)
-	update_appearance()
-
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/total_recoil = recoil_bonus
-	if(!stock_folded)
-		total_recoil += stock_recoil_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_spread(mob/user, bonus_spread)
-	var/total_spread = bonus_spread
-
-	if(!stock_folded)
-		total_spread += stock_spread_bonus
-
-	return ..(user, total_spread)
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/update_icon_state()
-	. = ..()
-	item_state = "[initial(item_state)][stock_folded ? "_nostock" : ""]"
-	mob_overlay_state = "[initial(item_state)][stock_folded ? "_nostock" : ""]"
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/update_overlays()
-	. = ..()
-	. += "[base_icon_state || initial(icon_state)][stock_folded ? "_nostock" : "_stock"]"
+	default_attachments = list(/obj/item/attachment/foldable_stock)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	name = "\improper SKM-44v Mongrel"
@@ -382,13 +339,14 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	recoil = 0
 	recoil_unwielded = 4
 
-	stock_spread_bonus = -4
-	stock_recoil_bonus = -1
-
 	wield_delay = 0.4 SECONDS
 
-	folded_slowdown = 0.15
-	folded_wield_delay = 0.2 SECONDS
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/foldable_stock/inteq
+	)
 
-	unfolded_slowdown = 0.35
-	unfolded_wield_delay = 0.4 SECONDS
+	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)

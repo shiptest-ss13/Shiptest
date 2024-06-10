@@ -101,7 +101,7 @@
 		examine_list += span_notice("It has the following attachments:")
 		for(var/obj/item/attach as anything in attachments)
 			examine_list += span_notice("\t- [attach.name]")
-	if(length(attachments))
+	if(length(valid_types))
 		examine_list += span_notice("It can accept:")
 		for(var/obj/attach_type as anything in valid_types)
 			examine_list += span_notice("\t- [initial(attach_type.name)]")
