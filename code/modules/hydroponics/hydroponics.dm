@@ -738,6 +738,15 @@
 	var/mob/living/simple_animal/hostile/C = new chosen
 	C.faction = list("plants")
 
+/obj/machinery/hydroponics/proc/get_plant_status()
+	if(!myseed)
+		return HYDROTRAY_NO_PLANT
+	else if(dead)
+		return HYDROTRAY_PLANT_DEAD
+	else if(harvest)
+		return HYDROTRAY_PLANT_HARVESTABLE
+	else
+		return HYDROTRAY_PLANT_GROWING
 ///////////////////////////////////////////////////////////////////////////////
 /obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
 	name = "soil"

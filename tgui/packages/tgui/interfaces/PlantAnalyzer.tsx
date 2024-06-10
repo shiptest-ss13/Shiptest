@@ -24,6 +24,11 @@ type TraitData = {
   description: string;
 };
 
+type MutationData = {
+  name: string;
+  desc: string;
+};
+
 type TrayData = {
   name: string;
   weeds: number;
@@ -34,8 +39,7 @@ type TrayData = {
   nutrients: number;
   maxnutri: number;
   age: number;
-  dead: boolean;
-  harvest: boolean;
+  status: string;
   self_sustaining: boolean;
 };
 
@@ -52,7 +56,7 @@ type SeedData = {
   weed_chance: number;
   rarity: number;
   genes: string[];
-  mutatelist: string[];
+  mutatelist: MutationData[];
 };
 
 type ProductData = {
@@ -108,7 +112,7 @@ export const PlantAnalyzer = (props, context) => {
 
 const TrayContent = (props, context) => {
   const { act, data } = useBackend<Data>(context);
-  const { tray, seed, product } = data;
+  const { tray } = data;
   return (
     <Section title="Tray">
       <Stack vertical fill>
@@ -139,8 +143,7 @@ const TrayContent = (props, context) => {
         <Stack.Item>
           Plant Age: <AnimatedNumber value={tray.age}></AnimatedNumber>
         </Stack.Item>
-        <Stack.Item>Status: {tray.dead ? 'Yes' : 'No'}</Stack.Item>
-        <Stack.Item>Harvest: {tray.harvest ? 'Yes' : 'No'}</Stack.Item>
+        <Stack.Item>Status: {tray.status}</Stack.Item>
         <Stack.Item>
           Self-Sustaining: {tray.self_sustaining ? 'Yes' : 'No'}
         </Stack.Item>
@@ -241,7 +244,9 @@ const SeedContent = (props, context) => {
           {seed.mutatelist && seed.mutatelist.length > 0 && (
             <Section title="Mutations">
               {seed.mutatelist?.map((mutation, index) => (
-                <Box index={index}> {mutation} </Box>
+                <Tooltip content={mutation.desc}>
+                  <Box index={index}> {mutation.name} </Box>
+                </Tooltip>
               ))}
             </Section>
           )}

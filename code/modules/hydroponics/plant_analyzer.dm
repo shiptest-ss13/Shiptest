@@ -64,8 +64,7 @@
 		data["tray"]["nutrients"] = tray.reagents.total_volume
 		data["tray"]["maxnutri"] = tray.maxnutri
 		data["tray"]["age"] = tray.age
-		data["tray"]["dead"] = tray.dead
-		data["tray"]["harvest"] = tray.harvest
+		data["tray"]["status"] = tray.get_plant_status()
 		data["tray"]["self_sustaining"] = tray.self_sustaining
 
 		if(tray.myseed)
@@ -109,9 +108,8 @@
 		data["seed"]["mutatelist"] = list()
 		for(var/obj/item/seeds/mutant as anything in my_seed.mutatelist)
 			data["seed"]["mutatelist"] += list(list(
-				"name" = initial(mutant.plantname)
+				"name" = initial(mutant.plantname),
 				"desc" = initial(mutant.desc)
-
 			))
 
 
