@@ -156,6 +156,7 @@ DEFINE_BITFIELD(attach_slots, list(
 #define ATTACH_REMOVABLE_HAND (1<<0)
 #define ATTACH_REMOVABLE_TOOL (1<<1)
 #define ATTACH_TOGGLE (1<<2)
+#define ATTACH_NO_SPRITE (1<<3)
 
 /////////////////
 // PROJECTILES //

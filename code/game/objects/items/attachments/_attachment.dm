@@ -20,6 +20,9 @@
 	var/pixel_shift_y = 16
 
 	var/spread_mod = 0
+	var/spread_unwielded_mod = 0
+	var/wield_delay = 0
+	var/size_mod = 0
 
 /obj/item/attachment/Initialize()
 	. = ..()
@@ -75,8 +78,11 @@
 /obj/item/attachment/proc/apply_modifiers(obj/item/gun/gun, mob/user, attaching)
 	if(attaching)
 		gun.spread += spread_mod
-		gun.spread_unwielded += spread_mod
+		gun.spread_unwielded += spread_unwielded_mod
+		gun.wield_delay += wield_delay
+		gun.w_class += size_mod
 	else
 		gun.spread -= spread_mod
-		gun.spread_unwielded -= spread_mod
-
+		gun.spread_unwielded -= spread_unwielded_mod
+		gun.wield_delay -= wield_delay
+		gun.w_class -= size_mod

@@ -72,13 +72,15 @@
 	return TRUE
 
 /datum/component/attachment/proc/update_overlays(obj/item/parent, list/overlays, list/offset)
-	overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached")
+	if(!(attach_features_flags & ATTACH_NO_SPRITE))
+		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached")
 
-/datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user)
+/datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user, bypass_checks)
 	SIGNAL_HANDLER
 
-	if(!parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
-		return FALSE
+	if(!bypass_checks)
+		if(!parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
+			return FALSE
 
 	if(on_attach && !on_attach.Invoke(holder, user))
 		return FALSE

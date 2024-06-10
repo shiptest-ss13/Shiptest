@@ -15,6 +15,7 @@
 
 	if(!isgun(parent))
 		return COMPONENT_INCOMPATIBLE
+	var/obj/item/gun/parent_gun = parent
 
 	src.slot_room = slot_room
 	src.valid_types = valid_types
@@ -30,9 +31,9 @@
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
-		for(var/obj/item/attachment/attachment in default_attachments)
-			var/obj/item/attachment/new_attachment = new(attachment)
-			INVOKE_ASYNC(src, PROC_REF(do_attach), new_attachment, null)
+		for(var/attachment in default_attachments)
+			var/obj/item/attachment/new_attachment = new attachment(parent_gun.loc)
+			INVOKE_ASYNC(src, PROC_REF(do_attach), new_attachment, null, TRUE)
 
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
@@ -104,7 +105,7 @@
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE_MORE, user, examine_list)
 
-/datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user)
+/datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user, bypass_checks)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
 	if(!(attachment.type in valid_types))
@@ -114,7 +115,7 @@
 		to_chat(user, span_notice("[parent] does not contain room for [attachment]!"))
 		return
 	slot_room[slot]--
-	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user)
+	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user, bypass_checks)
 	if(.)
 		attachments += attachment
 		var/atom/parent = src.parent
