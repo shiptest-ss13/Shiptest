@@ -65,7 +65,7 @@
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle)
-		on_toggle.Invoke( holder, user)
+		on_toggle.Invoke(holder, user)
 		return TRUE
 
 	parent.attack_self(user)

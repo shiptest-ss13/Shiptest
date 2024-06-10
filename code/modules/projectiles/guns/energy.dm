@@ -15,7 +15,7 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_select_icon_state_prefix = "laser_"
-	
+
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
 
