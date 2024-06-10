@@ -49,10 +49,16 @@
 	var/list/data = list()
 	var/obj/item/seeds/my_seed
 	var/obj/item/reagent_containers/food/snacks/grown/product
+	var/delete_seed = FALSE
 	var/delete_product = FALSE
 	data["tray"] = list()
 	data["seed"] = list()
 	data["product"] = list()
+
+	if(ispath(scan_target, /obj/item/seeds))
+		my_seed = new scan_target
+		delete_seed = TRUE
+
 	if(istype(scan_target, /obj/machinery/hydroponics))
 		var/obj/machinery/hydroponics/tray = scan_target
 		data["tray"]["name"] = tray.name
@@ -82,7 +88,6 @@
 		var/obj/item/grown/plant = scan_target
 		my_seed = plant.seed
 
-
 	if(my_seed)
 		product = new my_seed.product
 		delete_product = TRUE
@@ -99,15 +104,12 @@
 		data["seed"]["rarity"] = my_seed.rarity
 		data["seed"]["genes"] = list()
 		for(var/datum/plant_gene/trait/traits in my_seed.genes)
-			/*
-			if(istype(traits, /datum/plant_gene/trait/plant_type))
-				continue
-			*/
 			data["seed"]["genes"] += traits.type
 
 		data["seed"]["mutatelist"] = list()
 		for(var/obj/item/seeds/mutant as anything in my_seed.mutatelist)
 			data["seed"]["mutatelist"] += list(list(
+				"type" = REF(mutant),
 				"name" = initial(mutant.plantname),
 				"desc" = initial(mutant.desc)
 			))
@@ -134,6 +136,8 @@
 				"amount" = amt
 			))
 
+	if(delete_seed)
+		qdel(my_seed)
 	if(delete_product)
 		qdel(product)
 	return data
@@ -151,3 +155,12 @@
 		))
 		data["trait_db"] += trait_data
 	return data
+
+/obj/item/plant_analyzer/ui_act(action, list/params)
+	. = ..()
+	switch(action)
+		if("investigate_plant")
+			var/obj/item/seeds/seed = params["mutation_type"]
+			if(seed)
+				scan_target = seed
+

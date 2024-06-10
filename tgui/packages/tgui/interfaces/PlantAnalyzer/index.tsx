@@ -1,79 +1,21 @@
-import { useBackend } from '../backend';
+import { useBackend } from '../../backend';
 import {
   ProgressBar,
+  Button,
   Section,
   Stack,
   AnimatedNumber,
   Tooltip,
   Box,
-} from '../components';
-import { Window } from '../layouts';
+} from '../../components';
+import { Window } from '../../layouts';
 
-type Data = {
-  scan_target: string;
-  tray: TrayData;
-  seed: SeedData;
-  product: ProductData;
-  cycle_seconds: number;
-  trait_db: TraitData[];
-};
+import { PLANTSTATUS2COLOR } from './constants';
 
-type TraitData = {
-  path: string;
-  name: string;
-  description: string;
-};
-
-type MutationData = {
-  name: string;
-  desc: string;
-};
-
-type TrayData = {
-  name: string;
-  weeds: number;
-  pests: number;
-  toxic: number;
-  water: number;
-  maxwater: number;
-  nutrients: number;
-  maxnutri: number;
-  age: number;
-  status: string;
-  self_sustaining: boolean;
-};
-
-type SeedData = {
-  name: number;
-  lifespan: number;
-  endurance: number;
-  maturation: number;
-  production: number;
-  yield: number;
-  potency: number;
-  instability: number;
-  weed_rate: number;
-  weed_chance: number;
-  rarity: number;
-  genes: string[];
-  mutatelist: MutationData[];
-};
-
-type ProductData = {
-  name: string;
-  distill_reagent: string;
-  juice_result: [];
-  grind_results: ReagentData[];
-};
-
-type ReagentData = {
-  name: string;
-  desc: string;
-  amount: number;
-};
+import { PlantAnalyzerData } from './types';
 
 export const PlantAnalyzer = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+  const { act, data } = useBackend<PlantAnalyzerData>(context);
   const { tray, seed, product } = data;
   return (
     <Window width={500} height={600} resizable>
@@ -111,11 +53,17 @@ export const PlantAnalyzer = (props, context) => {
 };
 
 const TrayContent = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+  const { act, data } = useBackend<PlantAnalyzerData>(context);
   const { tray } = data;
   return (
     <Section title="Tray">
       <Stack vertical fill>
+        <Stack.Item>
+          Status:
+          <Button backgroundColor={PLANTSTATUS2COLOR[tray.status]}>
+            {tray.status}
+          </Button>
+        </Stack.Item>
         <Stack fill>
           <Stack.Item style="width 50%">
             Water:
@@ -143,7 +91,6 @@ const TrayContent = (props, context) => {
         <Stack.Item>
           Plant Age: <AnimatedNumber value={tray.age}></AnimatedNumber>
         </Stack.Item>
-        <Stack.Item>Status: {tray.status}</Stack.Item>
         <Stack.Item>
           Self-Sustaining: {tray.self_sustaining ? 'Yes' : 'No'}
         </Stack.Item>
@@ -153,7 +100,7 @@ const TrayContent = (props, context) => {
 };
 
 const SeedContent = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+  const { act, data } = useBackend<PlantAnalyzerData>(context);
   const { seed } = data;
   return (
     <Section title={seed.name}>
@@ -245,7 +192,20 @@ const SeedContent = (props, context) => {
             <Section title="Mutations">
               {seed.mutatelist?.map((mutation, index) => (
                 <Tooltip content={mutation.desc}>
-                  <Box index={index}> {mutation.name} </Box>
+                  <Box index={index}>
+                    {mutation.name}
+                    <Button
+                      icon="magnifying-glass"
+                      onClick={() =>
+                        act('investigate_plant', {
+                          mutation_type: mutation.type,
+                        })
+                      }
+                      tooltip="Investigate"
+                    >
+                      ?
+                    </Button>
+                  </Box>
                 </Tooltip>
               ))}
             </Section>
@@ -257,7 +217,7 @@ const SeedContent = (props, context) => {
 };
 
 const ProductContent = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+  const { act, data } = useBackend<PlantAnalyzerData>(context);
   const { product } = data;
   return (
     <Section title={product.name}>
