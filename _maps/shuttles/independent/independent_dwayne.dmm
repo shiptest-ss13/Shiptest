@@ -25,7 +25,10 @@
 "as" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
-	icon_state = "5-8"
+	icon_state = "6-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -62,6 +65,9 @@
 	},
 /obj/machinery/computer/cargo/express/retro{
 	dir = 8
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -107,9 +113,6 @@
 /area/ship/cargo)
 "bf" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable/cyan{
-	icon_state = "6-9"
-	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bj" = (
@@ -124,13 +127,8 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "bo" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
-	icon_state = "5-10"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "5-9"
+	icon_state = "2-9"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -172,9 +170,6 @@
 /area/ship/crew/toilet)
 "bO" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/structure/cable/cyan{
-	icon_state = "5-10"
-	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "bP" = (
@@ -431,18 +426,6 @@
 "gu" = (
 /turf/closed/wall/r_wall/yesdiag,
 /area/ship/cargo)
-"gz" = (
-/obj/effect/turf_decal/corner/opaque/yellow/half{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "5-10"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/storage/eva)
 "gF" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -519,6 +502,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "5-10"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "hZ" = (
@@ -551,7 +537,7 @@
 	id = "dwayne_mining"
 	},
 /obj/structure/cable/cyan{
-	icon_state = "0-6"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -668,6 +654,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "5-10"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "kO" = (
@@ -765,14 +754,20 @@
 /obj/item/c_tube{
 	pixel_y = 3
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "mr" = (
 /obj/structure/cable/cyan{
-	icon_state = "6-9"
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/storage/eva)
 "ms" = (
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/structure/cable/yellow{
@@ -850,10 +845,6 @@
 /area/ship/engineering)
 "mJ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable/cyan{
-	icon_state = "0-10"
-	},
 /obj/item/modular_computer/laptop/preset/civilian{
 	pixel_x = 13;
 	pixel_y = 4
@@ -1084,7 +1075,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/cyan{
-	icon_state = "1-2"
+	icon_state = "1-10"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -1338,12 +1332,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "tX" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-5"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-9"
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "uc" = (
@@ -1357,13 +1345,13 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/ntspaceworks_big/two,
+/obj/structure/cable/cyan{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "ul" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/cable/cyan{
-	icon_state = "5-10"
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "uP" = (
@@ -1376,7 +1364,7 @@
 	locked = 1
 	},
 /obj/structure/cable/cyan{
-	icon_state = "0-5"
+	icon_state = "0-1"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1663,6 +1651,9 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "zI" = (
@@ -1676,10 +1667,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "zK" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "zQ" = (
@@ -1951,12 +1945,6 @@
 	dir = 1
 	},
 /obj/structure/ore_box,
-/obj/structure/cable/cyan{
-	icon_state = "6-9"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "6-10"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2050,10 +2038,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -19
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
 	color = "#555555"
@@ -2068,9 +2053,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/ntspaceworks_big/one,
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "GN" = (
@@ -2108,7 +2090,10 @@
 	id = "dwayne_mining"
 	},
 /obj/structure/cable/cyan{
-	icon_state = "0-10"
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -2254,6 +2239,9 @@
 /area/ship/bridge)
 "JE" = (
 /obj/effect/decal/cleanable/ash,
+/obj/structure/cable/cyan{
+	icon_state = "1-10"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "JH" = (
@@ -2338,6 +2326,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/ntspaceworks_big/seven,
+/obj/structure/cable/cyan{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "LH" = (
@@ -2449,6 +2440,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/cyan{
+	icon_state = "5-10"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "Mz" = (
@@ -2556,6 +2550,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/cyan{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "NT" = (
@@ -2617,7 +2614,6 @@
 /area/ship/cargo)
 "Oz" = (
 /obj/structure/table/reinforced,
-/obj/machinery/airalarm/directional/west,
 /obj/item/spacecash/bundle/c1000{
 	pixel_x = -2;
 	pixel_y = 0
@@ -2631,6 +2627,7 @@
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OJ" = (
@@ -2692,6 +2689,9 @@
 /obj/effect/spawner/lootdrop/plushie,
 /obj/effect/spawner/lootdrop/plushie,
 /obj/effect/spawner/lootdrop/plushie,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Pd" = (
@@ -2700,9 +2700,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
@@ -2778,12 +2775,6 @@
 /obj/item/folder,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/ntspaceworks_big/five,
-/obj/structure/cable/cyan{
-	icon_state = "1-10"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-6"
-	},
 /obj/item/pen,
 /obj/item/pen,
 /turf/open/floor/plasteel/patterned/grid,
@@ -2837,9 +2828,6 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/structure/cable/cyan{
-	icon_state = "6-9"
-	},
 /obj/structure/closet/crate/miningcar{
 	name = "mining cart"
 	},
@@ -3076,6 +3064,9 @@
 	pixel_y = -4
 	},
 /obj/item/storage/pill_bottle/charcoal/less,
+/obj/structure/cable/cyan{
+	icon_state = "5-10"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "UP" = (
@@ -3157,7 +3148,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /obj/structure/cable/cyan{
-	icon_state = "1-2"
+	icon_state = "2-5"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-9"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
@@ -3211,10 +3205,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/cyan{
-	icon_state = "5-8"
+	icon_state = "0-8"
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/light_switch{
+	dir = 2;
+	pixel_x = -12;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
 	color = "#555555"
@@ -3297,7 +3296,7 @@
 	locked = 1
 	},
 /obj/structure/cable/cyan{
-	icon_state = "0-9"
+	icon_state = "0-1"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3308,7 +3307,10 @@
 /obj/item/trash/can/food/beans,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/cable/cyan{
-	icon_state = "6-8"
+	icon_state = "2-5"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -3569,7 +3571,7 @@ YJ
 "}
 (11,1,1) = {"
 in
-Ph
+mr
 as
 Un
 oB
@@ -3602,7 +3604,7 @@ cL
 zI
 UD
 FR
-bo
+Nf
 Ip
 "}
 (13,1,1) = {"
@@ -3658,13 +3660,13 @@ Hh
 zc
 uk
 Jq
-mr
+FP
 Nf
 Ip
 "}
 (16,1,1) = {"
 ZK
-gz
+eu
 ww
 Mo
 dx
@@ -3696,7 +3698,7 @@ eM
 JZ
 bl
 Jn
-FP
+bo
 OW
 YN
 "}
