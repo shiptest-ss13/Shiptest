@@ -35,8 +35,6 @@
 				return TRUE
 			if(!locatedcrate.opened) //otherwise, if the located crate is closed, allow entering
 				return TRUE
-	if(mover.movement_type & FLOATING)
-		return TRUE
 
 /obj/structure/closet/crate/update_icon_state()
 	icon_state = "[initial(icon_state)][opened ? "open" : ""]"
