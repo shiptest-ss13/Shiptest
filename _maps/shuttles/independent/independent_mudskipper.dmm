@@ -636,6 +636,8 @@
 /obj/item/gun/energy/laser/e10,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
+/obj/item/bodycam,
+/obj/item/bodycam,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -750,16 +752,16 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/machinery/computer/crew{
-	dir = 8;
-	icon_state = "computer-right"
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_x = -6;
 	pixel_y = -21;
 	name = "Bridge Lockdown";
 	id = "mudskipper_bridge"
+	},
+/obj/machinery/computer/security{
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
