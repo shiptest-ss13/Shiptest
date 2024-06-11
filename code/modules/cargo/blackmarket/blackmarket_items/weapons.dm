@@ -38,7 +38,7 @@
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
-	item = /obj/item/switchblade
+	item = /obj/item/kitchen/knife/switchblade
 
 	price_min = 500
 	price_max = 700
@@ -122,8 +122,8 @@
 	pair_item = /datum/blackmarket_item/weapon/e40_mag
 
 	price_min = 7000
-	price_max = 13000
-	stock = 1
+	price_max = 15000
+	stock_max = 2
 	availability_prob = 20
 
 /datum/blackmarket_item/weapon/e40_mag
@@ -134,7 +134,7 @@
 	price_min = 750
 	price_max = 1250
 	stock_min = 2
-	stock_max = 4
+	stock_max = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/weapon/e50

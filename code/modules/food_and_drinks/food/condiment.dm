@@ -79,7 +79,7 @@
 	else
 		M.visible_message("<span class='warning'>[user] attempts to feed [M] from [src].</span>", \
 			"<span class='warning'>[user] attempts to feed you from [src].</span>")
-		if(!do_mob(user, M))
+		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
@@ -322,14 +322,3 @@
 	desc = "A delicious oil used in cooking"
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
-
-/obj/item/reagent_containers/food/condiment/pack/sugar
-	name = "sugar pack"
-	originalname = "sugar"
-	list_reagents = list(/datum/reagent/consumable/sugar = 5)
-
-/obj/item/reagent_containers/food/condiment/pack/creamer
-	name = "creamer" /// dont laugh you child
-	originalname = "cream"
-	list_reagents = list(/datum/reagent/consumable/cream = 5)
-

@@ -1377,7 +1377,7 @@
 /obj/item/clothing/under/syndicate/medic/skirt,
 /obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/head/helmet/medical,
-/obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/clothing/suit/armor/vest/trauma,
 /obj/item/storage/belt/medical,
 /obj/item/storage/belt/medical/webbing,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
@@ -4672,8 +4672,7 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate{
-	spawnwithmagazine = 0;
+/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate/no_mag{
 	pixel_x = -3;
 	pixel_y = 6
 	},
@@ -5021,7 +5020,7 @@
 /obj/item/clothing/under/syndicate/medic/skirt,
 /obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/head/helmet/medical,
-/obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/clothing/suit/armor/vest/trauma,
 /obj/item/antag_spawner/nuke_ops/borg_tele/medical/unlocked,
 /obj/item/storage/belt/medical,
 /obj/item/storage/belt/medical/webbing,
@@ -5609,16 +5608,6 @@
 /area/ship/security)
 "Gm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/ebr{
-	pixel_x = -16;
-	pixel_y = 7;
-	spawnwithmagazine = 0
-	},
-/obj/item/gun/ballistic/automatic/ebr{
-	pixel_x = -9;
-	pixel_y = 2;
-	spawnwithmagazine = 0
-	},
 /obj/item/ammo_box/magazine/ebr{
 	pixel_x = 10;
 	pixel_y = -1
@@ -5633,6 +5622,11 @@
 /obj/item/ammo_box/magazine/ebr{
 	pixel_y = -2
 	},
+/obj/item/gun/ballistic/automatic/ebr/no_mag{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/gun/ballistic/automatic/ebr/no_mag,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Gn" = (
@@ -7502,15 +7496,13 @@
 /area/ship/hallway/aft)
 "Rv" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog{
+/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
 	pixel_x = -7;
-	pixel_y = 7;
-	spawnwithmagazine = 0
+	pixel_y = 7
 	},
-/obj/item/gun/ballistic/shotgun/bulldog{
+/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
 	pixel_y = -3;
-	pixel_x = 2;
-	spawnwithmagazine = 0
+	pixel_x = 2
 	},
 /obj/machinery/light/directional/north,
 /obj/item/ammo_box/magazine/m12g{
@@ -8841,19 +8833,16 @@
 /area/ship/engineering/engine)
 "YO" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
 	pixel_x = 2;
-	pixel_y = 8;
-	spawnwithmagazine = 0
+	pixel_y = 8
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r{
-	pixel_y = 3;
-	spawnwithmagazine = 0
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
+	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
 	pixel_y = -2;
-	pixel_x = 3;
-	spawnwithmagazine = 0
+	pixel_x = 3
 	},
 /obj/item/ammo_box/magazine/smgm45,
 /obj/item/ammo_box/magazine/smgm45,

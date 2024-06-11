@@ -106,4 +106,4 @@
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
-	bullet_per_box = 80
+	bullet_per_box = 100
