@@ -6,6 +6,13 @@
 		Standard supplies
 */
 
+/datum/supply_pack/sec_supply/bodycams
+	name = "Body Cameras Crate"
+	desc = "Contains four jumpsuit-mounted body cameras. Does not include the security camera console needed to use them."
+	cost = 2000
+	contains = list(/obj/item/storage/box/bodycams)
+	crate_name = "body cameras crate"
+
 /datum/supply_pack/sec_supply/chemimp
 	name = "Chemical Implants Crate"
 	desc = "Contains five remote chemical implants."

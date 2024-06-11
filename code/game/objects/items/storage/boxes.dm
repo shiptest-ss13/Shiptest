@@ -1526,3 +1526,12 @@
 		)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/bodycams
+	name = "box of body cameras"
+	desc = "Contains four jumpsuit-mounted body cameras."
+	icon_state = "secbox"
+
+/obj/item/storage/box/bodycams/PopulateContents()
+	for(var/i in 1 to 4)
+		new/obj/item/bodycam(src)
+
