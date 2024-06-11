@@ -1313,6 +1313,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/outline,
+/obj/item/storage/box/bodycams{
+	pixel_y = 17
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "wO" = (
@@ -3032,11 +3035,12 @@
 "Xj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/crew{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
+	},
+/obj/machinery/computer/security{
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
@@ -3259,7 +3263,8 @@
 /obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/rdconsole/core{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
