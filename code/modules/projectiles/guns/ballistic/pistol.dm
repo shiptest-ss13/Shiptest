@@ -234,7 +234,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper TEC-9 machine pistol"
 	desc = "A crude machine pistol designed to vomit 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
-	fire_delay = 0.3 SECONDS
+	fire_delay = 0.15 SECONDS
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/tec9
