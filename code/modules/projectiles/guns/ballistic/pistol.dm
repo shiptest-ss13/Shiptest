@@ -234,6 +234,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper TEC-9 machine pistol"
 	desc = "A crude machine pistol designed to vomit 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
+	fire_delay = 0.3 SECONDS
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/tec9
@@ -243,9 +244,8 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/tec9/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
