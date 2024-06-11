@@ -409,6 +409,3 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
