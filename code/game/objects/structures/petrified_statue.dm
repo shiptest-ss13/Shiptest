@@ -58,6 +58,9 @@
 
 	if(petrified_mob)
 		petrified_mob.status_flags &= ~GODMODE
+		if(ishuman(petrified_mob))
+			var/mob/living/carbon/human/H = petrified_mob
+			H.bleedsuppress = FALSE
 		petrified_mob.forceMove(loc)
 		REMOVE_TRAIT(petrified_mob, TRAIT_MUTE, STATUE_MUTE)
 		petrified_mob.take_overall_damage((petrified_mob.health - obj_integrity + 100)) //any new damage the statue incurred is transfered to the mob
@@ -80,7 +83,7 @@
 		return 0
 	var/obj/structure/statue/petrified/S = new(loc, src, statue_timer)
 	S.name = "statue of [name]"
-	bleedsuppress = 1
+	bleedsuppress = TRUE
 	S.copy_overlays(src)
 	var/newcolor = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
 	S.add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)

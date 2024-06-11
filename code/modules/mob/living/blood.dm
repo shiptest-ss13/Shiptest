@@ -4,19 +4,6 @@
 				BLOOD SYSTEM
 ****************************************************/
 
-/mob/living/carbon/human/proc/suppress_bloodloss(amount)
-	if(bleedsuppress)
-		return
-	else
-		bleedsuppress = TRUE
-		addtimer(CALLBACK(src, PROC_REF(resume_bleeding)), amount)
-
-/mob/living/carbon/human/proc/resume_bleeding()
-	bleedsuppress = 0
-	if(stat != DEAD && bleed_rate)
-		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")
-
-
 /mob/living/carbon/monkey/handle_blood()
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
 		//Blood regeneration if there is some space
@@ -29,7 +16,6 @@
 /mob/living/carbon/human/handle_blood()
 
 	if(NOBLOOD in dna.species.species_traits)
-		bleed_rate = 0
 		return
 
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
@@ -65,83 +51,97 @@
 			if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
 				if(prob(10))
 					to_chat(src, "<span class='warning'>You feel terribly bloated.</span>")
+
 			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-				if(prob(5))
+
+				if(prob(1))
 					to_chat(src, "<span class='warning'>You feel [word].</span>")
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+				if(oxyloss < 20)
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+
 			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-				if(prob(5))
-					blur_eyes(6)
-					to_chat(src, "<span class='warning'>You feel very [word].</span>")
-			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-				adjustOxyLoss(5)
+				if(eye_blurry < 50)
+					adjust_blurriness(5)
+				if(oxyloss < 40)
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.03, 1))
+				else
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+
 				if(prob(15))
-					Unconscious(rand(20,60))
+					Unconscious(rand(2 SECONDS,6 SECONDS))
+					to_chat(src, "<span class='warning'>You feel very [word].</span>")
+
+			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.03, 1))
+				adjustToxLoss(2)
+				if(prob(15))
+					Unconscious(rand(2 SECONDS,6 SECONDS))
 					to_chat(src, "<span class='warning'>You feel extremely [word].</span>")
 			if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 				if(!HAS_TRAIT(src, TRAIT_NODEATH))
 					death()
 
-		var/temp_bleed = 0
 		//Bleeding out
+		var/limb_bleed = 0
+		var/total_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			var/brutedamage = BP.brute_dam
-
+			if(BP.GetComponent(/datum/component/bandage))
+				continue
 			//We want an accurate reading of .len
 			listclearnulls(BP.embedded_objects)
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
-					temp_bleed += 0.5
+					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
+				limb_bleed += BP.bleeding
 
-			if(brutedamage >= 20)
-				temp_bleed += (brutedamage * 0.020)
 		var/message_cooldown = 5 SECONDS
 		var/bleeeding_wording
-		var/bleed_change_wording
-		switch(bleed_rate)
+//		var/bleed_change_wording
+		switch(limb_bleed)
 			if(0.2 to 0.4)
-				bleeeding_wording = "You feel droplets of your blood drip down to the floor"
+				bleeeding_wording = "You feel droplets of blood drip down ."
 				message_cooldown *= 2.5
 			if(0.4 to 1)
-				bleeeding_wording = "Your blood flows to the floor"
+				bleeeding_wording = "You feel your blood flow quietly to the floor."
 				message_cooldown *= 2
 			if(1 to 2)
-				bleeeding_wording = "The amount of streaming blood leaving your body is worrying you"
+				bleeeding_wording = "The amount of streaming blood leaving your body onto the ground is worrying you..."
 				message_cooldown *= 1.7
 			if(2 to 4)
-				bleeeding_wording = "You're losing blood <i>very fast</i>, which is freaking you out"
+				bleeeding_wording = "You're losing blood <b><i>very fast</i></b>, which is freaking you out!"
 				message_cooldown *= 1.5
 			if(4 to INFINITY)
-				bleeeding_wording = "<b>Your heartbeat beats extremely unstably as you lose a massive amount of blood coupled with your fear</b>"
+				bleeeding_wording = "<b>Your heartbeat beats extremely and unstably fast as you lose a massive amount of blood!!</b>"
 
-		var/old_bleed = bleed_rate
-		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
+/* how bleeding works has changed, this is now useless
+		var/old_bleed = limb_bleed
+		limb_bleed = max(limb_bleed - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
 
 		if(bleeeding_wording)
-			if(old_bleed > bleed_rate+0.2)
+			if(old_bleed > limb_bleed+0.2)
 				bleed_change_wording = ", however your bleeding's clotting up."
 
-			else if(old_bleed+0.1 < bleed_rate)
+			else if(old_bleed+0.1 < limb_bleed)
 				bleed_change_wording = "<b>, as your bleeding gets worse.</b>"
 			else
 				bleed_change_wording = "."
+*/
 
-		if(bleed_rate && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
-			bleed(bleed_rate)
+
+		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
+			bleed(limb_bleed)
+
 			if(!blood_particle)
 				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
-
-			blood_particle.particles.color = dna.blood_type.color //mouthful
-			blood_particle.particles.spawning = bleed_rate
+		blood_particle.particles.color = dna.blood_type.color //mouthful
+			blood_particle.particles.spawning = (limb_bleed/2)
 
 			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
-				to_chat(src, span_warning("[bleeeding_wording][bleed_change_wording]"))
+				to_chat(src, span_warning("[bleeeding_wording]"))
 				COOLDOWN_START(src, bloodloss_message, message_cooldown)
 		else
 			if(blood_particle)
 				QDEL_NULL(blood_particle)
-
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
@@ -185,7 +185,8 @@
 
 /mob/living/carbon/human/restore_blood()
 	blood_volume = BLOOD_VOLUME_NORMAL
-	bleed_rate = 0
+	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts())
+		BP.bleeding = 0
 
 /****************************************************
 				BLOOD TRANSFERS

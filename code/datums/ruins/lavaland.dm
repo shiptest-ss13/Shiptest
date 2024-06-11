@@ -4,15 +4,11 @@
 	prefix = "_maps/RandomRuins/LavaRuins/"
 	ruin_type = RUINTYPE_LAVA
 
-/datum/map_template/ruin/lavaland/biodome
-	cost = 5
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/lavaland/biodome/winter
-	name = "Biodome Winter"
+	name = "Solarian Winter Biodome"
 	id = "biodome-winter"
-	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days. \
-	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
+	description = "A Solarian frontier research facility created by the Pionierskompanien \
+	This one seems to simulate the wintery climate of the northern provinces, including a sauna!"
 	suffix = "lavaland_surface_biodome_winter.dmm"
 
 /datum/map_template/ruin/lavaland/sin
@@ -96,11 +92,11 @@
 	suffix = "lavaland_surface_dwarffortress.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/lavaland/ashwalker_shrine
-	name = "Ashwalker shrine"
-	id = "ashwalker_shrine"
-	description = "A destroyed ashwalker village. What even happened here?"
-	suffix = "lavaland_surface_ashwalker_shrine.dmm"
+/datum/map_template/ruin/lavaland/buried_shrine
+	name = "Buried Shrine"
+	id = "buried_shrine"
+	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
+	suffix = "lavaland_surface_buried_shrine.dmm"
 
 /datum/map_template/ruin/lavaland/spookycrash
 	name = "Spooky Crash"

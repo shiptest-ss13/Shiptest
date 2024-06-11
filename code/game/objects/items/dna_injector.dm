@@ -62,7 +62,7 @@
 	if(target != user)
 		target.visible_message("<span class='danger'>[user] is trying to inject [target] with [src]!</span>", \
 			"<span class='userdanger'>[user] is trying to inject you with [src]!</span>")
-		if(!do_mob(user, target) || used)
+		if(!do_after(user, target = target) || used)
 			return
 		target.visible_message("<span class='danger'>[user] injects [target] with the syringe with [src]!</span>", \
 						"<span class='userdanger'>[user] injects you with the syringe with [src]!</span>")
@@ -89,11 +89,6 @@
 	name = "\improper DNA injector (Hulk)"
 	desc = "This will make you big and strong, but give you a bad skin condition."
 	add_mutations = list(HULK)
-
-/obj/item/dnainjector/firebreath
-	name = "\improper DNA injector (Fire Breath)"
-	desc = "Restores the dragon ancestry."
-	add_mutations = list(FIREBREATH)
 
 /obj/item/dnainjector/xraymut
 	name = "\improper DNA injector (X-ray)"

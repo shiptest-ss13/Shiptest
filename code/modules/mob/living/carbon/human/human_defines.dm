@@ -63,9 +63,7 @@
 
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
-
-	var/bleed_rate = 0 //how much are we bleeding
-	var/bleedsuppress = 0 //for stopping bloodloss, eventually this will be limb-based like bleeding
+	var/bleedsuppress = 0 //for stopping bloodloss body-wide
 
 	var/name_override //For temporary visible name changes
 
