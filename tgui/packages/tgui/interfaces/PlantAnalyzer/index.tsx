@@ -20,33 +20,8 @@ export const PlantAnalyzer = (props, context) => {
   return (
     <Window width={500} height={600} resizable>
       <Window.Content scrollable>
-        {tray.name ? (
-          <TrayContent />
-        ) : (
-          <Section title="No Tray">
-            <Stack vertical fill>
-              <Stack.Item>No tray data available.</Stack.Item>
-            </Stack>
-          </Section>
-        )}
-        {seed.name ? (
-          <SeedContent />
-        ) : (
-          <Section title="No Seed">
-            <Stack vertical fill>
-              <Stack.Item>No seed data available.</Stack.Item>
-            </Stack>
-          </Section>
-        )}
-        {product.name ? (
-          <ProductContent />
-        ) : (
-          <Section title="No Product">
-            <Stack vertical fill>
-              <Stack.Item>No product data available.</Stack.Item>
-            </Stack>
-          </Section>
-        )}
+        {tray.name && <TrayContent />}
+        {seed.name && <SeedContent />}
       </Window.Content>
     </Window>
   );
@@ -59,7 +34,7 @@ const TrayContent = (props, context) => {
     <Section title="Tray">
       <Stack vertical fill>
         <Stack.Item>
-          Status:
+          Plant Status:{' '}
           <Button backgroundColor={PLANTSTATUS2COLOR[tray.status]}>
             {tray.status}
           </Button>
@@ -212,43 +187,37 @@ const SeedContent = (props, context) => {
           )}
         </Stack.Item>
       </Stack>
+      <Section title="Reagents">
+        <Stack vertical fill>
+          {seed.grind_results && seed.grind_results.length > 0 && (
+            <Section>
+              {seed.grind_results.map((result, index) => (
+                <Tooltip content={result.desc}>
+                  <Stack.Item key={index}>
+                    {result.name}: {result.amount}
+                  </Stack.Item>
+                </Tooltip>
+              ))}
+            </Section>
+          )}
+          {seed.distill_reagent && (
+            <Section title="Distillation Reagent">
+              <Stack.Item>{seed.distill_reagent}</Stack.Item>
+            </Section>
+          )}
+          {seed.juice_result && seed.juice_result.length > 0 && (
+            <Section title="Juice Results">
+              {seed.juice_result.map((result, index) => (
+                <Stack.Item key={index}>{result}</Stack.Item>
+              ))}
+            </Section>
+          )}
+        </Stack>
+      </Section>
     </Section>
   );
 };
 
-const ProductContent = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
-  const { product } = data;
-  return (
-    <Section title={product.name}>
-      <Stack vertical fill>
-        {product.distill_reagent && (
-          <Stack.Item>
-            Distillation Reagent: {product.distill_reagent}
-          </Stack.Item>
-        )}
-        {product.juice_result && product.juice_result.length > 0 && (
-          <Section title="Juice Results">
-            {product.juice_result.map((result, index) => (
-              <Stack.Item key={index}>{result}</Stack.Item>
-            ))}
-          </Section>
-        )}
-        {product.grind_results && product.grind_results.length > 0 && (
-          <Section title="Grind Results">
-            {product.grind_results.map((result, index) => (
-              <Tooltip content={result.desc}>
-                <Stack.Item key={index}>
-                  {result.name}: {result.amount}
-                </Stack.Item>
-              </Tooltip>
-            ))}
-          </Section>
-        )}
-      </Stack>
-    </Section>
-  );
-};
 const Level = (props) => {
   return (
     <ProgressBar

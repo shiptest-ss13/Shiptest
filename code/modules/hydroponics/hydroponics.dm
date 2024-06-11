@@ -738,6 +738,21 @@
 	var/mob/living/simple_animal/hostile/C = new chosen
 	C.faction = list("plants")
 
+/obj/machinery/hydroponics/proc/get_tgui_info()
+	var/list/data = list()
+	data["name"] = name
+	data["weeds"] = weedlevel
+	data["pests"] = pestlevel
+	data["toxic"] = toxic
+	data["water"] = waterlevel
+	data["maxwater"] = maxwater
+	data["nutrients"] = reagents.total_volume
+	data["maxnutri"] = maxnutri
+	data["age"] = age
+	data["status"] = get_plant_status()
+	data["self_sustaining"] = self_sustaining
+	return data
+
 /obj/machinery/hydroponics/proc/get_plant_status()
 	if(!myseed)
 		return HYDROTRAY_NO_PLANT

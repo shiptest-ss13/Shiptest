@@ -47,10 +47,6 @@ export type SeedData = {
   rarity: number;
   genes: string[];
   mutatelist: MutationData[];
-};
-
-export type ProductData = {
-  name: string;
   distill_reagent: string;
   juice_result: [];
   grind_results: ReagentData[];
