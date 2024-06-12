@@ -44,6 +44,37 @@
 	name = "Scorched Hut"
 	icon_state = "red"
 
+// Wrecked Factory
+
+/area/ruin/lavaland/factory/warehouse
+	name = "Factory Warehouse"
+	icon_state = "cargo_warehouse"
+	requires_power = FALSE
+
+/area/ruin/lavaland/factory/foreman_office
+	name = "Foreman's Office"
+	icon_state = "purple"
+	requires_power = FALSE
+
+/area/ruin/lavaland/factory/adminstrative
+	name = "Adminstrative Wing"
+	icon_state = "bridge_hallway"
+	requires_power = FALSE
+
+/area/ruin/lavaland/factory/manager_office
+	name ="Manager's Office"
+	icon_state = "bridge"
+	requires_power = FALSE
+
+/area/ruin/lavaland/factory/lobby
+	name ="Lobby"
+	icon_state = "hallC"
+	requires_power = FALSE
+
+/area/ruin/lavaland/factory/dorms
+	name ="Dormitory"
+	icon_state = "crew_quarters"
+	requires_power = FALSE
 //Buried Shrine
 
 /area/ruin/unpowered/buried_shrine
