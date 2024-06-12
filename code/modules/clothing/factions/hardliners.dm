@@ -3,7 +3,7 @@
 /////////////
 
 /obj/item/clothing/under/syndicate/hardliners
-	name = "\improper hardliners uniform"
+	name = "hardliners uniform"
 	desc = "A crimson combat uniform, reminiscent of the Gorlex Marauders at the height of the Inter-Corporate Wars. It's oddly comfortable, and warm."
 	icon_state = "hardliners"
 	item_state = "hardliners"
@@ -13,13 +13,13 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
 
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit
-	name = "\improper hardliners jumpsuit"
+	name = "hardliners jumpsuit"
 	desc = "A black jumpsuit with white overalls, a scant reminder of the old miners of Gorlex VII."
 	icon_state = "hl_jumpsuit"
 	item_state = "hl_jumpsuit"
 
 /obj/item/clothing/under/syndicate/hardliners/officer
-	name = "\improper hardliners officer uniform"
+	name = "hardliners officer uniform"
 	desc = "A button-up uniform with cargo pants, certainly more tactical than most officer uniforms."
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
@@ -67,7 +67,7 @@
 	blood_overlay_type = "armor"
 
 /obj/item/clothing/suit/armor/hardliners/sergeant
-	name = "\improper hardliners sergeant jacket"
+	name = "hardliners sergeant jacket"
 	desc = "An armored jacket typically worn by sergeant of the Hardliners. They're reminiscent of the garb worn by old Gorlex navymen, prior to its destruction."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "hl_sergeant"
@@ -76,7 +76,7 @@
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners
-	name = "\improper hardliners captain coat"
+	name = "hardliners captain coat"
 	desc = "An imposing armored coat worn by captains of Hardliner fleets, hand-designed by Cybersun tailors to provide maximum protection to its wearer."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "hl_captain"
@@ -140,7 +140,7 @@
 	item_state = "hl_officer"
 
 /obj/item/clothing/head/helmet/hardliners
-	name = "\improper hardliners X-11 helmet"
+	name = "hardliners X-11 helmet"
 	desc = "A well-armored helmet utilized by the Hardliners, though painted in their iconic white. Either it makes them stick out like a sore thumb, or it provides excellent camouflage in snow-covered planets."
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
@@ -149,7 +149,7 @@
 	item_state = "hl_x11"
 
 /obj/item/clothing/head/helmet/hardliners/swat
-	name = "\improper hardliners pilot helmet"
+	name = "hardliners pilot helmet"
 	desc = "A modified X-11 helmet utilized by regular pilots, as well as the feared mech pilots of the Hardliner movement. The attached visor helps protect against sudden flashes from explosions."
 	flash_protect = FLASH_PROTECTION_WELDER
 	icon_state = "hl_pilot"
