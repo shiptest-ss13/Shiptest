@@ -103,6 +103,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "cM" = (
@@ -345,6 +346,7 @@
 	},
 /obj/item/spacecash/bundle/loadsamoney,
 /obj/item/documents/syndicate,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "iR" = (
@@ -469,6 +471,7 @@
 /obj/item/pen{
 	pixel_y = 9
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "mh" = (
@@ -622,6 +625,7 @@
 "oX" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/chem,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/canteen)
 "pa" = (
@@ -635,6 +639,10 @@
 "pl" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plating,
+/area/ruin/unpowered/listening_post/canteen)
+"pt" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "pw" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
@@ -768,7 +776,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "sd" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave/loot,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "sr" = (
@@ -935,6 +943,7 @@
 	pixel_x = -4
 	},
 /obj/item/scalpel,
+/obj/machinery/light/directional/north,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "wO" = (
@@ -1314,6 +1323,7 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 6
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "FQ" = (
@@ -1372,6 +1382,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "Jq" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Js" = (
@@ -1540,10 +1551,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MX" = (
-/obj/structure/table/reinforced,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/listening_post)
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/ruin/unpowered/listening_post/engineering)
 "MZ" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel/white,
@@ -1781,6 +1791,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Wc" = (
@@ -1803,6 +1814,7 @@
 /obj/item/book/random{
 	pixel_y = 3
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Wq" = (
@@ -1842,6 +1854,7 @@
 /obj/item/trash/chips{
 	pixel_y = 5
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "XY" = (
@@ -2404,7 +2417,7 @@ Zb
 hE
 np
 OW
-MX
+mG
 mG
 EM
 RV
@@ -2601,7 +2614,7 @@ iR
 pw
 pl
 dM
-dM
+pt
 tG
 dM
 LE
@@ -3020,7 +3033,7 @@ OS
 qC
 GB
 Jn
-bm
+MX
 to
 GB
 GB
