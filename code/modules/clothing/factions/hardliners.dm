@@ -13,7 +13,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
 
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit
-	name = "\improper hardliners jumpsuit"
+	name = "hardliners jumpsuit"
 	desc = "A black jumpsuit with white overalls, a scant reminder of the old miners of Gorlex VII."
 	icon_state = "hl_jumpsuit"
 	item_state = "hl_jumpsuit"
