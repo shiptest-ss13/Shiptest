@@ -67,7 +67,7 @@
 	blood_overlay_type = "armor"
 
 /obj/item/clothing/suit/armor/hardliners/sergeant
-	name = "\improper hardliners sergeant jacket"
+	name = "hardliners sergeant jacket"
 	desc = "An armored jacket typically worn by sergeant of the Hardliners. They're reminiscent of the garb worn by old Gorlex navymen, prior to its destruction."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "hl_sergeant"
