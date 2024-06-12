@@ -418,7 +418,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/plaque
 	name = "plaque"
 	icon_state = "plaque"
-	icon = 'icons/turf/decals.dmi'
 
 /obj/effect/turf_decal/chapel
 	name = "chapel"
@@ -802,8 +801,20 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 	icon_state = "bottom-right-all"
 
 /obj/effect/turf_decal/suns
-	icon = 'icons/obj/suns_floor.dmi'
+	icon = 'icons/turf/decals/suns_floor.dmi'
 	icon_state = "suns-columm1-bottom"
+
+/obj/effect/turf_decal/suns/capital_s
+	icon_state = "capital_s"
+
+/obj/effect/turf_decal/suns/capital_u
+	icon_state = "capital_u"
+
+/obj/effect/turf_decal/suns/capital_n
+	icon_state = "capital_n"
+
+/obj/effect/turf_decal/suns/line
+	icon_state = "suns_border"
 
 // suns 3x6 decal
 
