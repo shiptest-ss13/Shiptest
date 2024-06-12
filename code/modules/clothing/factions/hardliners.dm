@@ -93,8 +93,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	name = "white-red hardsuit helmet"
-	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Cybersun."
-	alt_desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in combat mode. Manufactured by Cybersun."
+	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Cybersun Biodynamics."
+	alt_desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in combat mode. Manufactured by Cybersun Biodynamics."
 	icon_state = "hardsuit1-hl"
 	item_state = "hardsuit1-hl"
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
@@ -103,8 +103,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/hl
 	name = "white-red hardsuit"
-	desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in EVA mode. Manufactured by Cybersun."
-	alt_desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in combat mode. Manufactured by the Cybersun."
+	desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in EVA mode. Manufactured by Cybersun Biodynamics."
+	alt_desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in combat mode. Manufactured by Cybersun Biodynamics."
 	icon_state = "hardsuit1-hl"
 	item_state = "hardsuit1-hl"
 	hardsuit_type = "hl"
@@ -134,7 +134,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 
 /obj/item/clothing/head/hardliners/peaked
-	name = "2nd Battlegroup peaked cap"
+	name = "Hardliner peaked cap"
 	desc = "A stylish peaked cap utilized by high-ranking officers of the Hardliner movement. Most who wear it are likely to have been a veteran of the ICW, still vying for revenge against Nanotrasen..."
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
