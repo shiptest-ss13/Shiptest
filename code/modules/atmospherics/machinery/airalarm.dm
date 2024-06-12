@@ -122,7 +122,8 @@
 		GAS_NITRYL					= new/datum/tlv/dangerous,
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON 					= new/datum/tlv/dangerous,
-		GAS_HYDROGEN				= new/datum/tlv/dangerous
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -142,7 +143,9 @@
 		GAS_NITRYL					= new/datum/tlv/no_checks,
 		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
 		GAS_FREON					= new/datum/tlv/no_checks,
-		GAS_HYDROGEN				= new/datum/tlv/no_checks
+		GAS_HYDROGEN				= new/datum/tlv/no_checks,
+		GAS_CHLORINE				= new/datum/tlv/no_checks,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/no_checks
 	)
 	heating_manage = FALSE
 
@@ -163,7 +166,9 @@
 		GAS_NITRYL					= new/datum/tlv/dangerous,
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON					= new/datum/tlv/dangerous,
-		GAS_HYDROGEN				= new/datum/tlv/dangerous
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
 	)
 	heating_manage = FALSE
 
@@ -568,7 +573,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 						GAS_STIMULUM,
 						GAS_PLUOXIUM,
 						GAS_FREON,
-						GAS_HYDROGEN
+						GAS_HYDROGEN,
+						GAS_CHLORINE,
+						GAS_HYDROGEN_CHLORIDE
 					),
 					"scrubbing" = 1,
 					"widenet" = 1

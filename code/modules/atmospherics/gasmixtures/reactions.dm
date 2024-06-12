@@ -825,3 +825,32 @@
 		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
 			air.set_temperature(clamp((air.return_temperature()*old_heat_capacity + energy_released)/new_heat_capacity,TCMB,INFINITY))
 		return REACTING
+
+/datum/gas_reaction/hydrogen_chloride_formation
+	priority = 11
+	name = "Hydrogen Chloride formation"
+	id = "hydrogenchlorideformation"
+
+/datum/gas_reaction/hydrogen_chloride_formation/init_reqs()
+	min_requirements = list(
+		GAS_CHLORINE = 5,
+		GAS_HYDROGEN = 5,
+		"TEMP" = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	)
+
+/datum/gas_reaction/hydrogen_chloride_formation/react(datum/gas_mixture/air)
+	var/temperature = air.return_temperature()
+	var/old_heat_capacity = air.heat_capacity()
+	var/reaction_efficency = min((temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST*10)),air.get_moles(GAS_CHLORINE),air.get_moles(GAS_HYDROGEN))
+	var/energy_released = reaction_efficency*185000
+	if ((air.get_moles(GAS_CHLORINE) - reaction_efficency < 0)|| (air.get_moles(GAS_HYDROGEN) - (reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
+		return NO_REACTION
+	air.adjust_moles(GAS_HYDROGEN_CHLORIDE, reaction_efficency)
+	air.adjust_moles(GAS_HYDROGEN, -reaction_efficency)
+	air.adjust_moles(GAS_CHLORINE, -reaction_efficency)
+
+	if(energy_released > 0)
+		var/new_heat_capacity = air.heat_capacity()
+		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
+			air.set_temperature(max(((temperature*old_heat_capacity + energy_released)/new_heat_capacity),TCMB))
+		return REACTING

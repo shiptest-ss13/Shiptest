@@ -61,6 +61,21 @@
 			return ONE_ATMOSPHERE
 	return pressure
 
+/mob/living/carbon/human/proc/check_for_seal()
+	if (wear_suit && head && istype(wear_suit, /obj/item/clothing) && istype(head, /obj/item/clothing))
+		var/obj/item/clothing/CS = wear_suit
+		var/obj/item/clothing/CH = head
+		if (CS.clothing_flags & CH.clothing_flags & STOPSPRESSUREDAMAGE)
+			return TRUE
+	return FALSE
+
+/mob/living/carbon/human/proc/check_for_goggles()
+	if(head?.flags_cover & SEALS_EYES)
+		return head
+	if(wear_mask?.flags_cover & SEALS_EYES)
+		return wear_mask
+	if(glasses?.flags_cover & SEALS_EYES)
+		return glasses
 
 /mob/living/carbon/human/handle_traits()
 	if (getOrganLoss(ORGAN_SLOT_BRAIN) >= 60)
