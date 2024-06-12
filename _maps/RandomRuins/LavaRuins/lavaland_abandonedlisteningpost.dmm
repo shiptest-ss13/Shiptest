@@ -28,9 +28,9 @@
 /area/ruin/unpowered/listening_post/canteen)
 "bg" = (
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "2-4"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/structure/railing,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "bm" = (
@@ -134,9 +134,17 @@
 "dM" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
+"dT" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/listening_post/engineering)
 "dY" = (
 /obj/item/ammo_casing/spent,
-/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "bubblegumfoot"
+	},
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "eN" = (
@@ -208,15 +216,16 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/commons)
 "fl" = (
-/obj/machinery/power/terminal{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "1-8"
 	},
+/obj/structure/railing,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "fo" = (
@@ -236,10 +245,15 @@
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
-"fQ" = (
-/obj/structure/sign/number/random{
-	color = "#730622"
+"fG" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
 	},
+/obj/structure/chair/bench/red/directional/east,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/listening_post)
+"fQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -305,12 +319,20 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "hh" = (
 /obj/structure/sign/poster/contraband/cybersun,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post)
+"hA" = (
+/obj/machinery/power/rtg/geothermal,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/listening_post/engineering)
 "hC" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 1
@@ -326,9 +348,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 4;
-	name = "distribution output pump"
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
@@ -454,9 +475,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "lK" = (
-/obj/machinery/power/smes/engineering,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
 /obj/structure/cable{
-	icon_state = "0-1"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
@@ -777,6 +800,7 @@
 /area/ruin/unpowered/listening_post/operations)
 "sd" = (
 /obj/structure/closet/crate/grave/loot,
+/obj/effect/mob_spawn/human/skeleton,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "sr" = (
@@ -787,6 +811,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "sM" = (
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
 "sP" = (
@@ -802,9 +827,6 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "sX" = (
-/obj/structure/sign/number/random{
-	color = "#730622"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -832,6 +854,13 @@
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel/white,
+/area/ruin/unpowered/listening_post)
+"th" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
 "tk" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -872,9 +901,9 @@
 /area/ruin/unpowered/listening_post/operations)
 "un" = (
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "2-8"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/structure/railing,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "uv" = (
@@ -901,6 +930,12 @@
 /obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
+"vR" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor7"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/ruin/unpowered)
 "vU" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -1335,8 +1370,9 @@
 /area/ruin/unpowered/listening_post/operations)
 "FW" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-1"
 	},
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Gy" = (
@@ -1401,9 +1437,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/canteen)
 "KJ" = (
-/obj/structure/sign/number/random{
-	color = "#730622"
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -1635,6 +1668,10 @@
 /obj/structure/sign/poster/official/high_class_martini,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/canteen)
+"PC" = (
+/obj/structure/plaque/listeningpost,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/unpowered/listening_post)
 "PQ" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1734,8 +1771,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 4;
+	name = "distribution output pump"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
@@ -1789,7 +1827,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
-/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Wc" = (
@@ -2112,7 +2149,7 @@ Ap
 Ap
 lj
 GH
-nD
+vR
 Ap
 Ap
 Ap
@@ -2186,7 +2223,7 @@ Ta
 Ta
 op
 fz
-zF
+th
 op
 Ta
 Ta
@@ -2303,7 +2340,7 @@ DE
 fZ
 zd
 vU
-Pe
+fG
 Pe
 cb
 zI
@@ -2492,7 +2529,7 @@ op
 op
 hh
 op
-op
+PC
 op
 Js
 TK
@@ -2614,8 +2651,8 @@ pl
 dM
 pt
 tG
-dM
 LE
+dM
 zI
 Ta
 Ta
@@ -2651,9 +2688,9 @@ cB
 zI
 zI
 zI
-zI
 KB
 kk
+zI
 zI
 Ta
 Ta
@@ -2691,8 +2728,8 @@ Ta
 zI
 wO
 sM
-sM
 zI
+Ta
 Ta
 Ta
 Ap
@@ -2728,9 +2765,9 @@ Ln
 Ta
 zI
 jN
-sM
 nc
 zI
+Ta
 Ta
 Ta
 Pj
@@ -2768,7 +2805,7 @@ zI
 zI
 zI
 zI
-zI
+Ta
 Ta
 Ta
 Ap
@@ -2846,7 +2883,7 @@ GB
 GB
 Ta
 Ta
-Ap
+Ta
 Ap
 qV
 qV
@@ -2883,8 +2920,8 @@ Jq
 uv
 GB
 GB
+GB
 Ta
-Ap
 Ap
 qV
 qV
@@ -2917,12 +2954,12 @@ yZ
 Ef
 GB
 hX
-bm
+dT
 bm
 bg
+hA
 GB
 Ta
-Ap
 TS
 Ap
 qV
@@ -2958,9 +2995,9 @@ Ty
 FW
 lK
 fl
+hA
 GB
 Ta
-Ap
 TS
 TS
 qV
@@ -2996,9 +3033,9 @@ BF
 cM
 aw
 un
+hA
 GB
 Ta
-Ap
 Tp
 TS
 qV
@@ -3035,8 +3072,8 @@ MX
 to
 GB
 GB
+GB
 Ta
-TS
 BO
 TS
 qV
