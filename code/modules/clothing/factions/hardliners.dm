@@ -140,7 +140,7 @@
 	item_state = "hl_officer"
 
 /obj/item/clothing/head/helmet/hardliners
-	name = "\improper hardliners X-11 helmet"
+	name = "hardliners X-11 helmet"
 	desc = "A well-armored helmet utilized by the Hardliners, though painted in their iconic white. Either it makes them stick out like a sore thumb, or it provides excellent camouflage in snow-covered planets."
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
