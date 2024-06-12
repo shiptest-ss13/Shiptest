@@ -12,11 +12,11 @@
 		. = fold_in(force)
 		return
 
-	if(emittersemicd)
+	if(emittercurrent_cooldown)
 		to_chat(src, "<span class='warning'>Error: Holochassis emitters recycling. Please try again later.</span>")
 		return FALSE
 
-	emittersemicd = TRUE
+	emittercurrent_cooldown = TRUE
 	addtimer(CALLBACK(src, PROC_REF(emittercool)), emittercd)
 	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, PAI_FOLDED)
 	REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, PAI_FOLDED)
@@ -42,10 +42,10 @@
 	holoform = TRUE
 
 /mob/living/silicon/pai/proc/emittercool()
-	emittersemicd = FALSE
+	emittercurrent_cooldown = FALSE
 
 /mob/living/silicon/pai/proc/fold_in(force = FALSE)
-	emittersemicd = TRUE
+	emittercurrent_cooldown = TRUE
 	if(!force)
 		addtimer(CALLBACK(src, PROC_REF(emittercool)), emittercd)
 	else

@@ -54,10 +54,10 @@
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/assistant/gorlex
-	name = "Syndicate - Junior Agent (Gorlex Marauders)"
+	name = "Syndicate - Junior Agent (Hardliner)"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	alt_uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/hardliners
+	alt_uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 
 /datum/outfit/job/syndicate/assistant/ngr
 	name = "Syndicate - Initiate (New Gorlex Republic)"
@@ -306,11 +306,12 @@
 
 
 /datum/outfit/job/syndicate/captain/gorlex
-	name = "Syndicate - Captain (Gorlex Marauders)"
-	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	name = "Syndicate - Captain (Hardliner)"
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
 
-	head = /obj/item/clothing/head/ngr/peaked
-	suit = /obj/item/clothing/suit/armor/ngr/captain
+	head = /obj/item/clothing/head/hardliners/peaked
+	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/captain/ngr
 	name = "Syndicate - Captain (New Gorlex Republic)"
@@ -426,17 +427,6 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/combat
-
-/datum/outfit/job/syndicate/ce/gorlex
-	name = "Syndicate - Foreman (Gorlex Marauders)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/hazard
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
 
 /datum/outfit/job/syndicate/ce/ngr
@@ -566,24 +556,27 @@
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
 /datum/outfit/job/syndicate/hos/gorlex
-	name = "Syndicate - Sergeant (Gorlex)"
+	name = "Syndicate - Sergeant (Hardliner)"
 	id_assignment = "Sergeant"
+
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	head = /obj/item/clothing/head/hardliners/peaked
+	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+	suit_store = /obj/item/gun/ballistic/automatic/pistol
 
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
 	id_assignment = "Lieutenant"
 
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
-	suit =/obj/item/clothing/suit/armor/ngr/lieutenant
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Syndicate - Lieutenant (Twinkleshine, NGR)"
@@ -691,13 +684,15 @@
 
 	uniform = /obj/item/clothing/under/syndicate/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/doctor/gorlex
-	name = "Syndicate - Medical Doctor (Gorlex)"
+	name = "Syndicate - Medical Doctor (Hardliner)"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	uniform = /obj/item/clothing/under/syndicate/hardliners
+	head = /obj/item/clothing/head/hardliners
+	suit = /obj/item/clothing/suit/hardliners
+	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -904,7 +899,25 @@
 
 
 /datum/outfit/job/syndicate/security/gorlex
-	name = "Syndicate - Assault Operative (Gorlex)"
+	name = "Syndicate - Trooper (Hardliner)"
+	id_assignment = "Trooper"
+	job_icon = "securityofficer"
+
+	uniform = /obj/item/clothing/under/syndicate/hardliners
+	belt = /obj/item/storage/belt/security/webbing/hardliners
+	suit = /obj/item/clothing/suit/armor/hardliners
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/hardliners
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/assembly/flash/handheld
+
+/datum/outfit/job/syndicate/security/gorlex
+	name = "Syndicate - Pilot (Hardliner)"
+	id_assignment = "Pilot"
+	job_icon = "securityofficer"
+
+	head = /obj/item/clothing/head/helmet/hardliners/swat
 
 /datum/outfit/job/syndicate/security/ngr
 	name = "Syndicate - Operative (New Gorlex Republic)"
@@ -919,6 +932,14 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
+
+/datum/outfit/job/syndicate/security/ngr/pilot
+	name = "Syndicate - Pilot (New Gorlex Republic)"
+	id_assignment = "Pilot"
+	job_icon = "securityofficer"
+
+	uniform = /obj/item/clothing/under/syndicate/ngr/fatigues
+	head = /obj/item/clothing/head/helmet/ngr/swat
 
 /datum/outfit/job/syndicate/security/twink
 	name = "Syndicate - Operative (Twinkleshine)"
@@ -987,10 +1008,12 @@
 		/obj/item/stack/marker_beacon/ten=1)
 
 /datum/outfit/job/syndicate/miner/gorlex
-	name = "Syndicate - Wrecker (Gorlex Marauders)"
+	name = "Syndicate - Wrecker (Hardliner)"
 	id_assignment = "Wrecker"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	head = /obj/item/clothing/head/hardhat/hardliners
+	suit = /obj/item/clothing/suit/hazardvest/hardliners
+	uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
@@ -1090,10 +1113,12 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 
 /datum/outfit/job/syndicate/engineer/gorlex
-	name = "Syndicate - Mechanic (Gorlex Marauders)"
+	name = "Syndicate - Mechanic (Hardliner)"
 	id_assignment = "Mechanic"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	head = /obj/item/clothing/head/hardhat/hardliners
+	suit = /obj/item/clothing/suit/hazardvest/hardliners
+	uniform = /obj/item/clothing/under/syndicate/hardliners
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null
 
