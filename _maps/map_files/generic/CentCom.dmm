@@ -3045,11 +3045,6 @@
 /area/wizard_station)
 "aEX" = (
 /obj/structure/table/wood,
-/obj/item/gun/magic/wand{
-	desc = "Used in emergencies to reignite magma engines.";
-	max_charges = 0;
-	name = "wand of emergency engine ignition"
-	},
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "aEY" = (
@@ -5319,7 +5314,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aUp" = (
-/obj/item/gun/energy/pulse/carbine/loyalpin,
+/obj/item/gun/energy/pulse/carbine,
 /obj/item/flashlight/seclite,
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,

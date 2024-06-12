@@ -25,7 +25,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-	fire_delay = 2
+	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5
 	recoil_unwielded = 2
@@ -34,6 +34,9 @@
 	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
 	wield_slowdown = 0.3
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 	safety_wording = "hammer"
 
@@ -57,7 +60,7 @@
 		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
 
-/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return ..()
 
@@ -84,7 +87,9 @@
 			if(!casing_to_eject)
 				continue
 			casing_to_eject.forceMove(drop_location())
-			casing_to_eject.bounce_away(FALSE, NONE)
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
+
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 		chamber_round(FALSE)
@@ -96,13 +101,13 @@
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
-			if(!eject_casing())
+			if(!eject_casing(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -121,7 +126,9 @@
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
-	casing_to_eject.bounce_away(FALSE, NONE)
+	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
+
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
@@ -139,6 +146,12 @@
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
 	if(!casing_to_insert)
 		return FALSE
+
+// Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
+	if(casing_to_insert.caliber != magazine.caliber)
+		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
+		return FALSE
+
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
@@ -160,7 +173,7 @@
 	else
 		if(slot)
 			if(!slot.BB && allow_ejection)
-				if(do_mob(user,user,doafter_time))
+				if(!do_after(user, doafter_time, user))
 					eject_casing(user)
 
 		rounds = magazine.ammo_list()
@@ -204,7 +217,7 @@
 					var/doafter_time = 0.8 SECONDS
 					if(magazine.instant_load && attacking_box.instant_load)
 						doafter_time = 0 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(user, casing_to_insert, FALSE))
 						break
@@ -221,7 +234,7 @@
 					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
 						break
 					var/doafter_time = 0.4 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(null, casing_to_insert, FALSE))
 						doafter_time = 0 SECONDS
@@ -229,7 +242,7 @@
 						num_loaded++
 						attacking_box.update_appearance()
 						attacking_box.stored_ammo -= casing_to_insert
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					switch(gate_load_direction)
 						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
@@ -269,8 +282,8 @@
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
-	chamber_round(TRUE)
-	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+	if((!safety && !semi_auto) || (!safety && !semi_auto))
+		chamber_round(TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
@@ -402,11 +415,14 @@
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
 		fan = TRUE
+		fire_delay = 0 SECONDS
 	. = ..()
+	fire_delay = src::fire_delay
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
-		user.changeNext_move(CLICK_CD_RAPID)
+		balloon_alert_to_viewers("fans revolver!")
+		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
@@ -425,18 +441,21 @@
 /obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
 	var/gunslinger_bonus = -1
 	var/total_recoil = recoil_bonus
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_recoil += gunslinger_bonus
 		total_recoil = clamp(total_recoil,0,INFINITY)
-	return total_recoil
+
+	return ..(user, total_recoil)
 
 /obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -4
+	var/gunslinger_bonus = -8
 	var/total_spread = bonus_spread
+
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
 		total_spread += gunslinger_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
-	return total_spread
+
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -445,17 +464,12 @@
 /obj/item/gun/ballistic/revolver/proc/tryflip(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		if(COOLDOWN_FINISHED(src, flip_cooldown))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>While trying to flip the [src] you pull the trigger and accidently shoot yourself!</span>")
-				var/flip_mistake = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST)
-				process_fire(user, user, FALSE, flip_mistake)
-				user.dropItemToGround(src, TRUE)
-				return
 			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
 			SpinAnimation(5,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
@@ -472,15 +486,19 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	fire_delay = 0.2 SECONDS
+
+EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
-
-/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+//...why...?
+/obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
@@ -541,7 +559,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/montagne
@@ -568,18 +585,21 @@
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
+	fire_delay = 0.6 SECONDS
 	wield_slowdown = 0.5
-	spread_unwielded = 5
-	spread = 2
+	spread_unwielded = 20
+	spread = 6
 	recoil = 2
 	recoil_unwielded = 4
-
-// A gun to play Russian Roulette!
-// You can spin the chamber to randomize the position of the bullet.
 
 /obj/item/gun/ballistic/revolver/ashhand/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+// A gun to play Russian Roulette!
+// You can spin the chamber to randomize the position of the bullet.
+
+//TODO: this is stupid, but used in ONE fucking ruin. Remember to remove when you aren't afraid to do a ton of path changes.
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
@@ -658,30 +678,6 @@
 	user.apply_damage(300, BRUTE, affecting)
 	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='hear'>You hear a gunshot!</span>")
 
-/obj/item/gun/ballistic/revolver/russian/soul
-	name = "cursed Russian revolver"
-	desc = "To play with this revolver requires wagering your very soul."
-
-/obj/item/gun/ballistic/revolver/russian/soul/shoot_self(mob/living/user)
-	..()
-	var/obj/item/soulstone/anybody/revolver/SS = new /obj/item/soulstone/anybody/revolver(get_turf(src))
-	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
-		qdel(SS)
-		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
-
-/obj/item/gun/ballistic/revolver/reverse //Fires directly at its user... unless the user is a clown, of course.
-	clumsy_check = 0
-
-/obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
-		return ..()
-	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
-		user.drop_all_held_items()
-		user.Paralyze(80)
-
 /obj/item/gun/ballistic/revolver/firebrand
 	name = "\improper HP Firebrand"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
@@ -691,7 +687,8 @@
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
-	fire_delay = 0
+	fire_delay = 0 SECONDS
+	gate_offset = 4
 	semi_auto = TRUE
 	safety_wording = "safety"
 
@@ -716,6 +713,7 @@
 		)
 
 	recoil = 0 //weaker than normal revolver, no recoil
+	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
@@ -726,4 +724,4 @@
 	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
-		chambered.armour_penetration += 5
+		chambered.BB.armour_penetration += 5

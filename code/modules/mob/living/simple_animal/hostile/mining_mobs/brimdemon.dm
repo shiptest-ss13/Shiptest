@@ -37,7 +37,7 @@
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 	light_power = 5
 	light_range = 1.4
-	crusher_loot = /obj/item/crusher_trophy/brimdemon_fang
+	//mob_trophy = /obj/item/mob_trophy/brimdemon_fang
 	/// Are we charging/firing? If yes stops our movement.
 	var/firing = FALSE
 	/// A list of all the beam parts.
@@ -183,22 +183,6 @@
 /obj/effect/brimbeam/proc/damage(mob/living/hit_mob)
 	hit_mob.adjustFireLoss(5)
 	to_chat(hit_mob, span_danger("You're damaged by [src]!"))
-
-/obj/item/crusher_trophy/brimdemon_fang
-	name = "brimdemon's fang"
-	icon_state = "brimdemon_fang"
-	desc = "A fang from a brimdemon's corpse."
-	denied_type = /obj/item/crusher_trophy/brimdemon_fang
-	var/static/list/comic_phrases = list("BOOM", "BANG", "KABLOW", "KAPOW", "OUCH", "BAM", "KAPOW", "WHAM", "POW", "KABOOM")
-	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
-
-/obj/item/crusher_trophy/brimdemon_fang/effect_desc()
-	return "mark detonation creates audiosensory effects on the target and slightly heals the wielder"
-
-/obj/item/crusher_trophy/brimdemon_fang/on_mark_detonation(mob/living/target, mob/living/user)
-	target.balloon_alert_to_viewers("[pick(comic_phrases)]!")
-	playsound(target, 'sound/creatures/brimdemon_crush.ogg', 100)
-	user.heal_ordered_damage(bonus_value * 0.4, damage_heal_order)
 
 /obj/effect/decal/cleanable/brimdust
 	name = "brimdust"

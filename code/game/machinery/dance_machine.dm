@@ -5,6 +5,8 @@
 	icon_state = "jukebox-"
 	verb_say = "states"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	var/active = FALSE
 	var/list/rangers = list()
 	var/stop = 0

@@ -10,12 +10,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	pin = /obj/item/firing_pin/implant/pindicate
 	bolt_type = BOLT_TYPE_NO_BOLT
-	fire_delay = 10
-
-/obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted
-	pin = /obj/item/firing_pin
+	fire_delay = 1 SECONDS
+	semi_auto = TRUE
+	has_safety = FALSE
+	safety = FALSE
+	gate_offset = 0
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
@@ -28,7 +28,6 @@
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
 	return
@@ -40,7 +39,7 @@
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.4 SECONDS
 	actions_types = list()
 	casing_ejector = FALSE
 
@@ -54,9 +53,8 @@
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
-	pin = /obj/item/firing_pin
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.4 SECONDS
 	casing_ejector = FALSE
 	weapon_weight = WEAPON_HEAVY
 	bolt_type = BOLT_TYPE_NO_BOLT
@@ -65,9 +63,6 @@
 	empty_indicator = TRUE
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
-
-/obj/item/gun/ballistic/rocketlauncher/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/rocketlauncher/afterattack()
 	. = ..()

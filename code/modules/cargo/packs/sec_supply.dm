@@ -56,11 +56,9 @@
 
 /datum/supply_pack/sec_supply/riotshields
 	name = "Riot Shields Crate"
-	desc = "For when the greytide gets really uppity. Contains three riot shields."
-	cost = 2000
-	contains = list(/obj/item/shield/riot,
-					/obj/item/shield/riot,
-					/obj/item/shield/riot)
+	desc = "Contains a riot shield, effective at holding back hostile fauna, xenofauna, or large crowds."
+	cost = 600
+	contains = list(/obj/item/shield/riot)
 	crate_name = "riot shields crate"
 
 /datum/supply_pack/sec_supply/survknives

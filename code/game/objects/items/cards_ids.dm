@@ -180,7 +180,18 @@
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
-		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] \the [initial(name)] [(!registered_name) ? "(" : "([registered_name]"][(!assignment) ? ")" : ", [assignment])"].</span>", "<span class='notice'>You show \the [initial(name)] [(!registered_name) ? "(" : "([registered_name],"] [(!assignment) ? ")" : "[assignment])"].</span>")
+		var/id_message = "\the [initial(name)] "
+		var/list/id_info = list()
+		if(assignment)
+			id_info += "JOB: [assignment]"
+		if(registered_name)
+			id_info += "NAME: [registered_name]"
+		if(id_info)
+			id_message += id_info.Join(", ")
+		var/self_message = span_notice("You show [id_message]")
+		var/other_message = span_notice("[user] shows you: [icon2html(src, viewers(user))] [id_message]")
+
+		user.visible_message(other_message, self_message)
 	add_fingerprint(user)
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
@@ -320,33 +331,42 @@
 
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	if(registered_account)
-		. += "The account linked to the card belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
 	. += "<span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
 
 /obj/item/card/id/examine_more(mob/user)
 	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
 
 	if(registered_name)
-		msg += "This access card is assigned to <B>[registered_name]</B>."
+		msg += "<B>NAME:</B>"
+		msg += "[registered_name]"
 	if(registered_age)
-		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
-	if(mining_points)
-		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+		msg += "<B>AGE:</B>"
+		msg += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
+		msg += "<B>SHIP ACCESS:</B>"
+
+		var/list/ship_factions = list()
+		for(var/datum/overmap/ship/controlled/ship in ship_access)
+			var/faction = ship.get_faction()
+			if(!(faction in ship_factions))
+				ship_factions += faction
+		msg += "<B>[ship_factions.Join(", ")]</B>"
+
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
-	if(registered_account)
-		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		msg += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
-		msg += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
-		if(registered_account.account_holder == user.real_name)
-			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
-	else
-		msg += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
+		msg += "[ship_names.Join(", ")]"
 
+	if(registered_account)
+		msg += "<B>ACCOUNT:</B>"
+		msg += "LINKED ACCOUNT HOLDER: '[registered_account.account_holder]'"
+		msg += "BALANCE: [registered_account.account_balance] cr."
+		msg += "<span class='info'><b>Alt-click</b> the ID to pull money from the account in the form of holochips.</span>"
+		msg += "<span class='info'>You can insert credits into the account by pressing holochips, cash, or coins against the ID.</span>"
+		if(registered_account.account_holder == user.real_name)
+			msg += "<span class='info'>If you lose this ID card, you can reclaim your account by <b>Alt-click</b> a blank ID card and entering your account ID number.</span>"
+	else
+		msg += "<span class='info'>There is no registered account. <b>Alt-click</b> to add one.</span>"
 	return msg
 
 /obj/item/card/id/GetAccess()
@@ -746,13 +766,26 @@ update_label()
 	name = "bunker access ID"
 
 /obj/item/card/id/solgov
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of."
+	name = "\improper SolGov keycard"
+	desc = "A SolGov keycard with no proper access to speak of."
 	assignment = "Officer"
 	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+	name = "\improper SolGov commander keycard"
+	desc = "A SolGov keycard with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
+
+/obj/item/card/id/suns
+	name = "\improper SUNS keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences."
+	assignment = "Student"
+	icon_state = "suns"
+	uses_overlays = FALSE
+
+/obj/item/card/id/suns/command
+	name = "\improper SUNS command keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences. This one has a gold stripe, indicating a command member."
+	assignment = "Academic Staff"
+	icon_state = "sunscommand"

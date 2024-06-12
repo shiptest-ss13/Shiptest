@@ -126,10 +126,7 @@
 	if(weapon.chambered && weapon.chambered.BB)
 		weapon.chambered.BB.damage *= damage_mult
 
-	if(weapon.check_botched(shooter))
-		return
-
-	weapon.process_fire(target, shooter)
+	weapon.pre_fire(target, shooter)
 	qdel(src)
 
 /datum/component/gunpoint/proc/cancel()
