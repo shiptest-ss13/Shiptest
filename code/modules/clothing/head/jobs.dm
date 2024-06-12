@@ -272,3 +272,12 @@
 #undef DRILL_SHOUTING
 #undef DRILL_YELLING
 #undef DRILL_CANADIAN
+
+/obj/item/clothing/head/witchunter
+	name = "witchunter hat"
+	desc = "This hat saw much use back in the day."
+	icon_state = "witchhunterhat"
+	item_state = "witchhunterhat"
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEEYES|HIDEHAIR
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)

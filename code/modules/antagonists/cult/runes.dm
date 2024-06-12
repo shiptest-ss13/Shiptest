@@ -61,10 +61,6 @@ Runes can either be invoked by one's self or with many different cultists. Each 
 		if(do_after(user, 15, target = src))
 			to_chat(user, "<span class='notice'>You carefully erase the [lowertext(cultist_name)] rune.</span>")
 			qdel(src)
-	else if(istype(I, /obj/item/nullrod))
-		user.say("BEGONE FOUL MAGIKS!!", forced = "nullrod")
-		to_chat(user, "<span class='danger'>You disrupt the magic of [src] with [I].</span>")
-		qdel(src)
 
 /obj/effect/rune/attack_hand(mob/living/user)
 	. = ..()
@@ -502,9 +498,6 @@ structure_check() searches for nearby cultist structures required for the invoca
 		if(do_after(user, 50, target = src))	//Prevents accidental erasures.
 			log_game("Summon Narsie rune erased by [key_name(user)] with [I.name]")
 			message_admins("[ADMIN_LOOKUPFLW(user)] erased a Narsie rune with [I.name]")
-	else if(istype(I, /obj/item/nullrod))	//Begone foul magiks. You cannot hinder me.
-		log_game("Summon Narsie rune erased by [key_name(user)] using a null rod")
-		message_admins("[ADMIN_LOOKUPFLW(user)] erased a Narsie rune with a null rod")
 	else
 		..()
 

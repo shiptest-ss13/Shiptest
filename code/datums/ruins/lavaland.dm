@@ -31,6 +31,12 @@
 	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
 	suffix = "lavaland_surface_lava_canyon.dmm"
 
+/datum/map_template/ruin/lavaland/wrecked_factory
+	name = "Wrecked Factory"
+	id = "wreck_factory"
+	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
+	suffix = "lavaland_surface_wrecked_factory.dmm"
+
 /datum/map_template/ruin/lavaland/fallenstar
 	name = "Crashed Starwalker"
 	id = "crashed_star"
