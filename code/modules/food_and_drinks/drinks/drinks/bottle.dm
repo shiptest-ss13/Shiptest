@@ -286,6 +286,12 @@
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/triplesec
+	name = "Teeka-Gih's triple sec liqueur"
+	desc = "A bottle of triple sec originating from Bezuts."
+	icon_state = "triplesecbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
@@ -299,6 +305,18 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 	foodtype = FRUIT | BREAKFAST
+
+/obj/item/reagent_containers/food/drinks/bottle/lemonjuice
+	name = "lemon juice"
+	desc = "Lemonade for everyone!"
+	custom_price = 100
+	icon_state = "lemonjuice"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	isGlass = FALSE
+	list_reagents = list(/datum/reagent/consumable/lemonjuice = 100)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
@@ -418,6 +436,20 @@
 	desc = "A fanmade, promotional bottle of coconut cream liquor. There's a stylized picture of a synthetic kepori on the side, along with a blurb about whoever she is. You're pretty certain this stuff is synthetic, despite Teceti growing actual coconut trees..." //if i have to recognize rilena here, I'm going to have fun with it
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/cacao
+	name = "Sharai's Pure Cacao Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "cacaobottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/menthe
+	name = "Mora's Pure Mint Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "mintbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////
