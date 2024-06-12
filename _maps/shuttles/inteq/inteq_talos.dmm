@@ -305,6 +305,7 @@
 	},
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ce" = (
@@ -3879,6 +3880,15 @@
 "xj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/cryo)
+"xk" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 5;
+	height = 15;
+	width = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "xl" = (
 /obj/machinery/mech_bay_recharge_port,
 /obj/machinery/status_display/shuttle{
@@ -3976,15 +3986,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
-"xP" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 5;
-	height = 15;
-	width = 15
-	},
-/turf/template_noop,
-/area/template_noop)
 "xT" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -4643,7 +4644,7 @@
 	dir = 4;
 	pixel_x = -19
 	},
-/obj/structure/ore_box,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "BY" = (
@@ -8452,7 +8453,7 @@ hT
 Zo
 Fe
 zw
-xP
+xk
 sw
 sw
 sw
