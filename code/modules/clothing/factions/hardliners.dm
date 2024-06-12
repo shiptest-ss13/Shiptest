@@ -19,7 +19,7 @@
 	item_state = "hl_jumpsuit"
 
 /obj/item/clothing/under/syndicate/hardliners/officer
-	name = "\improper hardliners officer uniform"
+	name = "hardliners officer uniform"
 	desc = "A button-up uniform with cargo pants, certainly more tactical than most officer uniforms."
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
