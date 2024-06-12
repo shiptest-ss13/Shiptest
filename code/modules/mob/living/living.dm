@@ -1432,6 +1432,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	set_ssd_indicator(FALSE)
 
 /mob/living/Logout()
+	. = ..()
 	lastclienttime = world.time
 	set_ssd_indicator(TRUE)
 
