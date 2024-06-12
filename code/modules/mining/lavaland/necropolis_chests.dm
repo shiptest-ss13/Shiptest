@@ -501,10 +501,6 @@
 			if(input)
 				src.warcry = input
 
-/obj/item/immortality_talisman/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
-
 /datum/action/item_action/hands_free/immortality
 	name = "Immortality"
 
