@@ -76,7 +76,7 @@
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners
-	name = "\improper hardliners captain coat"
+	name = "hardliners captain coat"
 	desc = "An imposing armored coat worn by captains of Hardliner fleets, hand-designed by Cybersun tailors to provide maximum protection to its wearer."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "hl_captain"
