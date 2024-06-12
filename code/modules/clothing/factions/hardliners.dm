@@ -3,7 +3,7 @@
 /////////////
 
 /obj/item/clothing/under/syndicate/hardliners
-	name = "\improper hardliners uniform"
+	name = "hardliners uniform"
 	desc = "A crimson combat uniform, reminiscent of the Gorlex Marauders at the height of the Inter-Corporate Wars. It's oddly comfortable, and warm."
 	icon_state = "hardliners"
 	item_state = "hardliners"
