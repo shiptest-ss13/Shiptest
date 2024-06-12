@@ -766,13 +766,26 @@ update_label()
 	name = "bunker access ID"
 
 /obj/item/card/id/solgov
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of."
+	name = "\improper SolGov keycard"
+	desc = "A SolGov keycard with no proper access to speak of."
 	assignment = "Officer"
 	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+	name = "\improper SolGov commander keycard"
+	desc = "A SolGov keycard with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
+
+/obj/item/card/id/suns
+	name = "\improper SUNS keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences."
+	assignment = "Student"
+	icon_state = "suns"
+	uses_overlays = FALSE
+
+/obj/item/card/id/suns/command
+	name = "\improper SUNS command keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences. This one has a gold stripe, indicating a command member."
+	assignment = "Academic Staff"
+	icon_state = "sunscommand"
