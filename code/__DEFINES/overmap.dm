@@ -35,6 +35,8 @@
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
+#define DYNAMIC_WORLD_TEST "test"
+
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
 	DYNAMIC_WORLD_LAVA,\

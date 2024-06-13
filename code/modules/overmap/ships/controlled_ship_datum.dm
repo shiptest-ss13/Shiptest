@@ -207,7 +207,7 @@
 /datum/overmap/ship/controlled/proc/dock_in_empty_space()
 	var/datum/overmap/dynamic/empty/empty_space = locate() in current_overmap.overmap_container[x][y]
 	if(!empty_space)
-		empty_space = new(list("x" = x, "y" = y))
+		empty_space = new(list("x" = x, "y" = y), current_overmap)
 	if(empty_space) //Don't make this an else
 		Dock(empty_space)
 

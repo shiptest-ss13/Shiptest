@@ -607,6 +607,7 @@ SUBSYSTEM_DEF(overmap)
 	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
 	primary_dock.dwidth = 0
+	primary_dock.adjust_dock_for_landing = TRUE
 	docking_ports += primary_dock
 
 	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
@@ -616,6 +617,7 @@ SUBSYSTEM_DEF(overmap)
 	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
+	secondary_dock.adjust_dock_for_landing = TRUE
 	docking_ports += secondary_dock
 
 	if(!used_ruin)
@@ -639,6 +641,7 @@ SUBSYSTEM_DEF(overmap)
 		tertiary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		tertiary_dock.dheight = 0
 		tertiary_dock.dwidth = 0
+		tertiary_dock.adjust_dock_for_landing = TRUE
 		docking_ports += tertiary_dock
 
 		var/obj/docking_port/stationary/quaternary_dock = new(quaternary_docking_turf)
@@ -648,6 +651,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		quaternary_dock.dheight = 0
 		quaternary_dock.dwidth = 0
+		quaternary_dock.adjust_dock_for_landing = TRUE
 		docking_ports += quaternary_dock
 
 	return list(mapzone, docking_ports, ruin_turfs)

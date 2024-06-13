@@ -252,9 +252,6 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["space_spawn"]) && data["space_spawn"])
 			S.space_spawn = TRUE
 
-		if(istext(data["icon_state"]))
-			S.stationary_icon_state = data["icon_state"]
-
 		shuttle_templates[S.file_name] = S
 		map_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS

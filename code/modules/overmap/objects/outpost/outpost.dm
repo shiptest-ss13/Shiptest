@@ -342,6 +342,7 @@
 		CRASH("[src] ([src.type]) could not find a hangar docking port landmark for its spawned hangar [h_template]!")
 
 	var/obj/docking_port/stationary/h_dock = new(dock_turf)
+	h_dock.adjust_dock_for_landing = TRUE
 	h_dock.dir = NORTH
 	h_dock.width = h_template.dock_width
 	h_dock.height = h_template.dock_height

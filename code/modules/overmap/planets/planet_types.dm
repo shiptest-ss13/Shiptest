@@ -171,3 +171,26 @@
 	icon_state = "giant"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/turf/open/floor/white/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_VERY_LIGHT_GRAY
+	baseturfs = /turf/open/floor/white/lit
+
+/datum/map_generator/single_turf/test
+	turf_type = /turf/open/floor/white/lit
+	area_type = /area/overmap_encounter/planetoid
+
+/datum/planet_type/debug
+	name = "TEST PLANET"
+	desc = "Pure white world for testing purposes, report if you see this"
+	planet = DYNAMIC_WORLD_TEST
+	icon_state = "hazard"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/test
+	default_baseturf = /turf/open/floor/white/lit
+	weather_controller_type = null
+	ruin_type = null
+	weight = 543233
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'

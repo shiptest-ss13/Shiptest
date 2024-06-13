@@ -86,7 +86,6 @@
 
 		if(!dock_to_use)
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
-		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)

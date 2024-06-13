@@ -40,9 +40,9 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
-	name = "Engine Shutters";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -267,9 +267,9 @@
 "bP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_bridge";
-	name = "Garage DoorCockpit Emergency Blast Door";
-	dir = 4
+	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -459,8 +459,8 @@
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/machinery/light_switch{
-	pixel_y = -20;
-	dir = 1
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -609,9 +609,9 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
-	name = "Engine Shutters";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -625,11 +625,11 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	name = "Shutter Control";
 	dir = 4;
-	pixel_y = -7;
+	id = "kiloengine";
+	name = "Shutter Control";
 	pixel_x = -23;
-	id = "kiloengine"
+	pixel_y = -7
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -659,8 +659,8 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/status_display{
-	pixel_y = 32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet,
@@ -716,11 +716,11 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "kilocargo";
 	name = "Cargo Bay Control";
 	pixel_x = 25;
-	pixel_y = 7;
-	dir = 8
+	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -732,9 +732,9 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	pixel_y = -6;
+	id = "kiloshield";
 	pixel_x = 24;
-	id = "kiloshield"
+	pixel_y = -6
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -767,9 +767,9 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 8;
 	id = "kiloengine";
-	name = "Engine Shutters";
-	dir = 8
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -955,8 +955,8 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad";
 	name = "Off Ramp";
-	pixel_y = 9;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad2";
@@ -1146,8 +1146,8 @@
 	dir = 1
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "kiloshield";
-	dir = 4
+	dir = 4;
+	id = "kiloshield"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1158,8 +1158,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	name = "Mining Airlock";
-	dir = 4
+	dir = 4;
+	name = "Mining Airlock"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -1271,9 +1271,9 @@
 /area/ship/bridge)
 "vU" = (
 /obj/docking_port/stationary{
-	width = 30;
+	dwidth = 15;
 	height = 15;
-	dwidth = 15
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1322,8 +1322,8 @@
 "xe" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
-	name = "Mining Airlock";
-	dir = 4
+	dir = 4;
+	name = "Mining Airlock"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -1444,8 +1444,8 @@
 "AB" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
-	name = "Mining Airlock";
-	dir = 4
+	dir = 4;
+	name = "Mining Airlock"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1540,9 +1540,9 @@
 "BS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_bridge";
-	name = "Garage DoorCockpit Emergency Blast Door";
-	dir = 4
+	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1626,8 +1626,8 @@
 "EU" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/command{
-	name = "Ship Control";
-	dir = 4
+	dir = 4;
+	name = "Ship Control"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1796,9 +1796,9 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
-	name = "Engine Shutters";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1958,8 +1958,8 @@
 "PS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
-	pixel_y = -23;
-	dir = 1
+	dir = 1;
+	pixel_y = -23
 	},
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/closet/crate/internals,
@@ -1990,15 +1990,14 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	name = "Mining Airlock";
-	dir = 8
+	dir = 8;
+	name = "Mining Airlock"
 	},
 /obj/docking_port/mobile{
-	dir = 4;
+	dir = 8;
 	launch_status = 0;
 	name = "Mining Shuttle";
-	preferred_direction = 4;
-	port_direction = 2
+	preferred_direction = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -2075,9 +2074,9 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 8;
 	id = "kiloengine";
-	name = "Engine Shutters";
-	dir = 8
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2104,18 +2103,18 @@
 "TD" = (
 /obj/structure/table,
 /obj/machinery/button/door{
+	dir = 1;
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -6;
-	pixel_y = -2;
-	dir = 1
+	pixel_y = -2
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -6;
-	pixel_y = 8;
-	dir = 1
+	pixel_y = 8
 	},
 /obj/item/radio{
 	pixel_x = 6;

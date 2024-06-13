@@ -54,9 +54,10 @@
 	current_overmap = system_spawned_in
 	if(!position)
 		position = current_overmap.get_unused_overmap_square(force = TRUE)
-
+	if(!current_overmap)
+		current_overmap = SSovermap.default_system
+		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
-	SSovermap.overmap_objects |= src
 
 	contents = list()
 
@@ -371,9 +372,7 @@
 /datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	return
 
-/**
- * Helper proc for docking. Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
- */
+
 /datum/overmap/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
 	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft

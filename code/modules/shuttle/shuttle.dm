@@ -5,7 +5,7 @@
 
 //NORTH default dir
 /obj/docking_port
-	invisibility = INVISIBILITY_ABSTRACT
+	//invisibility = INVISIBILITY_ABSTRACT
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinonfar"
 
@@ -213,6 +213,8 @@
 	var/load_template_on_initialize = TRUE
 	/// The docking ticket of the ship docking to this port.
 	var/datum/docking_ticket/current_docking_ticket
+	/// moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
+	var/adjust_dock_for_landing = FALSE
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
@@ -244,6 +246,71 @@
 
 		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
 		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
+
+/**
+ * Helper proc for docking. Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
+ */
+
+/obj/docking_port/stationary/proc/adjust_dock_to_shuttle(obj/docking_port/mobile/shuttle)
+	if(!adjust_dock_for_landing)
+		return
+	if(!istype(shuttle))
+		CRASH("Invalid docking port ([shuttle]) passed to adjust_dock_to_shuttle().")
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [src] [REF(src)] TO [shuttle][REF(shuttle)]")
+	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
+	var/shuttle_true_height = shuttle.height
+	var/shuttle_true_width = shuttle.width
+	// if the port's location is perpendicular to the shuttle's fore, the "true height" is the port's "width" and vice-versa
+	if(EWCOMPONENT(shuttle.port_direction))
+		shuttle_true_height = shuttle.width
+		shuttle_true_width = shuttle.height
+
+	// the dir the stationary port should be facing (note that it points inwards)
+	var/final_facing_dir = angle2dir(dir2angle(shuttle_true_height > shuttle_true_width ? EAST : NORTH)+dir2angle(shuttle.port_direction)+180)
+
+	var/list/old_corners = return_coords() // coords for "bottom left" / "top right" of dock's covered area, rotated by dock's current dir
+	var/list/new_dock_location // TBD coords of the new location
+	if(final_facing_dir == dir)
+		new_dock_location = list(old_corners[1], old_corners[2]) // don't move the corner
+	else if(final_facing_dir == angle2dir(dir2angle(dir)+180))
+		new_dock_location = list(old_corners[3], old_corners[4]) // flip corner to the opposite
+	else
+		var/combined_dirs = final_facing_dir | dir
+		if(combined_dirs == (NORTH|EAST) || combined_dirs == (SOUTH|WEST))
+			new_dock_location = list(old_corners[1], old_corners[4]) // move the corner vertically
+		else
+			new_dock_location = list(old_corners[3], old_corners[2]) // move the corner horizontally
+		// we need to flip the height and width
+		var/dock_height_store = height
+		height = width
+		width = dock_height_store
+
+	dir = final_facing_dir
+	if(shuttle.height > height || shuttle.width > width)
+		CRASH("Shuttle cannot fit in dock!")
+
+	// offset for the dock within its area
+	var/new_dheight = round((height-shuttle.height)/2) + shuttle.dheight
+	var/new_dwidth = round((width-shuttle.width)/2) + shuttle.dwidth
+
+	// use the relative-to-dir offset above to find the absolute position offset for the dock
+	switch(final_facing_dir)
+		if(NORTH)
+			new_dock_location[1] += new_dwidth
+			new_dock_location[2] += new_dheight
+		if(SOUTH)
+			new_dock_location[1] -= new_dwidth
+			new_dock_location[2] -= new_dheight
+		if(EAST)
+			new_dock_location[1] += new_dheight
+			new_dock_location[2] -= new_dwidth
+		if(WEST)
+			new_dock_location[1] -= new_dheight
+			new_dock_location[2] += new_dwidth
+
+	forceMove(locate(new_dock_location[1], new_dock_location[2], z))
+	dheight = new_dheight
+	dwidth = new_dwidth
 
 /obj/docking_port/stationary/transit
 	name = "transit dock"
@@ -507,6 +574,7 @@
 		// This isn't an error, per se, but we can't let the shuttle code
 		// attempt to move us where we currently are, it will get weird.
 			return SHUTTLE_ALREADY_DOCKED
+
 
 	return SHUTTLE_CAN_DOCK
 

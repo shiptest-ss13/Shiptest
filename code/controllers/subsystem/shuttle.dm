@@ -112,14 +112,29 @@ SUBSYSTEM_DEF(shuttle)
 	var/dock_angle = dir2angle(M.preferred_direction) + dir2angle(M.port_direction) + 180
 	var/dock_dir = angle2dir(dock_angle)
 
-	var/transit_width = SHUTTLE_TRANSIT_BORDER * 2
-	var/transit_height = SHUTTLE_TRANSIT_BORDER * 2
+	var/transit_width = SHUTTLE_TRANSIT_BORDER
+	var/transit_height = SHUTTLE_TRANSIT_BORDER
 
 	// Shuttles travelling on their side have their dimensions swapped
 	// from our perspective
 	var/list/union_coords = M.return_union_coords(M.get_all_towed_shuttles(), 0, 0, dock_dir)
 	transit_width += union_coords[3] - union_coords[1] + 1
 	transit_height += union_coords[4] - union_coords[2] + 1
+
+	///attempt at making transit levels bigger to allow for better ship to ship docking
+	if(transit_width <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
+		transit_width *= 3
+	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+		transit_width *= 2
+	else
+		transit_width = 127 // fuckhuge ships should prbobaly max out here
+
+	if(transit_height <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
+		transit_height *= 3
+	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+		transit_height *= 2
+	else
+		transit_height = 127 // fuckhuge ships should prbobaly max out here
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)
@@ -163,8 +178,8 @@ SUBSYSTEM_DEF(shuttle)
 	// Then create a transit docking port in the middle
 	// union coords (1,2) points from the docking port to the bottom left corner of the bounding box
 	// So if we negate those coordinates, we get the vector pointing from the bottom left of the bounding box to the docking port
-	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(union_coords[1])
-	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(union_coords[2])
+	var/transit_x = bottomleft.x + (transit_width/2) + union_coords[1]
+	var/transit_y = bottomleft.y + (transit_height/2) + union_coords[2]
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
