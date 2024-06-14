@@ -2831,7 +2831,6 @@
 /obj/structure/closet/crate/miningcar{
 	name = "mining cart"
 	},
-/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "QI" = (
@@ -3258,6 +3257,10 @@
 "XC" = (
 /obj/structure/chair/sofa/brown/old/right/directional/south,
 /obj/item/radio/intercom/directional/north,
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = 8;
+	pixel_y = -1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "YA" = (
