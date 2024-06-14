@@ -163,7 +163,7 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "eW" = (
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/external/glass{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/tracks{
@@ -342,6 +342,7 @@
 "hE" = (
 /obj/structure/curtain,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "hX" = (
@@ -952,6 +953,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "commsshutters"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/operations)
 "wr" = (
@@ -963,6 +965,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "wL" = (
@@ -1218,6 +1221,7 @@
 	id = "commsshutters";
 	dir = 8
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/operations)
 "BM" = (
@@ -1506,6 +1510,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "cafeteriashutters"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/canteen)
 "LD" = (
@@ -3111,8 +3116,8 @@ wz
 GB
 Ta
 Ta
+Ta
 TS
-bL
 BO
 qV
 qV
@@ -3148,7 +3153,7 @@ qq
 Rb
 qq
 Ta
-Ap
+Ta
 Tp
 TS
 BO
@@ -3185,10 +3190,10 @@ Ta
 Ta
 gO
 Ta
+Ta
 Ap
 Ap
-Ap
-TS
+bL
 BO
 qV
 qV
