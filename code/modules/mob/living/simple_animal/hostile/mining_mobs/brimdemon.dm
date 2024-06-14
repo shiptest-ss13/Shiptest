@@ -150,7 +150,6 @@
 	balloon_alert(src, "brimbeam fired")
 	cut_overlay("brimdemon_telegraph_dir")
 	for(var/obj/effect/brimbeam/beam in beamparts)
-		beam.alpha = 255
 		var/turf/affected_turf = get_turf(beam)
 		START_PROCESSING(SSfastprocess, beam)
 		for(var/mob/living/hit_mob in affected_turf.contents)
