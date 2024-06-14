@@ -219,23 +219,12 @@
 	name = "Mounted FNX-99 Carbine"
 	desc = "This so called \"Hades\" carbine is sure to burn brightly above the competition! Not to be confused with the \"Hades\" energy rifle. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
-	pair_item = /datum/blackmarket_item/weapon/mecha_hades_ammo
+	pair_item = list(/datum/blackmarket_item/weapon/mecha_hades_ammo)
 
 	price_min = 2000
 	price_max = 3000
 	stock_max = 2
 	availability_prob = 25
-
-/datum/blackmarket_item/weapon/mecha_hades_ammo
-	name = "FNX-99 Incediary Ammo"
-	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."
-	item = /obj/item/mecha_ammo/incendiary
-
-	price_min = 250
-	price_max = 350
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
 
 /datum/blackmarket_item/weapon/model_h
 	name = "Model H"
