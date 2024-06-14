@@ -73,7 +73,7 @@
 /datum/blackmarket_item/weapon/disposable_gun_disk
 	name = "Disposable Gun Design Disk"
 	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22lr. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
-	item = /obj/item/disk/design_disk/adv/disposable_gun
+	item = /obj/item/disk/design_disk/disposable_gun
 
 	price_min = 1500
 	price_max = 2500
@@ -219,7 +219,7 @@
 	name = "Mounted FNX-99 Carbine"
 	desc = "This so called \"Hades\" carbine is sure to burn brightly above the competition! Not to be confused with the \"Hades\" energy rifle. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
-	pair_item = list(/datum/blackmarket_item/weapon/mecha_hades_ammo)
+	pair_item = list(/datum/blackmarket_item/ammo/mecha_hades_ammo)
 
 	price_min = 2000
 	price_max = 3000
