@@ -53,5 +53,5 @@
 	engraved = TRUE
 
 /obj/structure/plaque/listeningpost/Initialize()
-	..()
+	. = ..()
 	desc = "Cybersun Virtual Solutions - Field Listening Post #[rand(107,356)]. Proudly built in [rand(478, 497)]."
