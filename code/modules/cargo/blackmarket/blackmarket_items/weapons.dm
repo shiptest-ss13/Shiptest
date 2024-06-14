@@ -159,8 +159,8 @@
 	item = /obj/item/gun/ballistic/automatic/smg/proto
 	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
-	price_min = 2500
-	price_max = 4200
+	price_min = 2250
+	price_max = 3750
 	stock_max = 2
 	availability_prob = 25
 
@@ -270,8 +270,8 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
 	pair_item = list(/datum/blackmarket_item/ammo/proto_gauss_mag)
 
-	price_min = 3000
-	price_max = 4500
+	price_min = 2500
+	price_max = 4000
 	stock = 2
 	availability_prob = 25
 
