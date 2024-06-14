@@ -252,17 +252,23 @@
 
 // some solgov stuff
 /obj/structure/sign/solgov_seal
-	name = "Seal of the solarian government"
-	desc = "A seal emblazened with a gold trim depicting the star, sol."
+	name = "seal of the solarian government"
+	desc = "A seal emblazened with a gold trim depicting Sol."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovseal"
 	pixel_y = 27
 
 /obj/structure/sign/solgov_flag
 	name = "solgov banner"
-	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
+	desc = "A large flag displaying the logo of solgov, the government of the Sol system."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
+
+// suns seal
+/obj/structure/sign/suns
+	name = "emblem of the Student-Union Association of Naturalistic Sciences"
+	desc = "A large emblem showcasing the icon of SUNS."
+	icon_state = "suns"
 
 // clip seal
 /obj/structure/sign/clip
