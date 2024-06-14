@@ -61,14 +61,14 @@
 	stock_max = 6
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/golden
-	name = "Golden Derringer"
-	desc = "A rare custom-made concealable weapon designed to fire .357 rounds."
+/datum/blackmarket_item/weapon/syndi_357
+	name = "Scarborough Arms .357 Revolver"
+	desc = "Scarborough Arms' (in)famous single action .357 revolver. Known for \"somehow\" finding their way into the hands of Syndicate operatives, it's your chance to get your own grubby mitts on one."
 	item = /obj/item/gun/ballistic/derringer/gold
-	price_min = 1000
-	price_max = 3000
-	stock = 1
-	availability_prob = 10
+	price_min = 750
+	price_max = 2000
+	stock = 2
+	availability_prob = 30
 
 /datum/blackmarket_item/weapon/disposable_gun_disk
 	name = "Disposable Gun Design Disk"

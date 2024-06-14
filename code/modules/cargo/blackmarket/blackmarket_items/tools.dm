@@ -18,7 +18,8 @@
 
 	price_min = 500
 	price_max = 2000
-	stock = 1
+	stock_min = 1
+	stock_max = 3
 	availability_prob = 40
 
 /datum/blackmarket_item/tool/surgery_duffel
@@ -33,7 +34,7 @@
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
-	desc = "Increase your sight by 150% with this handy Tool!"
+	desc = "Twice as effective as a monocular for seeing across long distances."
 	item = /obj/item/binoculars
 
 	price_min = 50
