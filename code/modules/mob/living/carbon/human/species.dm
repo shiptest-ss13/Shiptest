@@ -688,16 +688,27 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			var/mutable_appearance/sclera_overlay
+
 			if(eyes)
 				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
-					eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
-					sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
+
+					if(iskepori(H)) // Kepori need sclera but don't fit the normal silhouette, so this needs changing. Make better later.
+						eye_overlay = mutable_appearance('icons/mob/species/kepori/kepori_eyes.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
+						sclera_overlay = mutable_appearance('icons/mob/species/kepori/kepori_eyes.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
+
+					else
+						eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
+						sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
+
 					if((EYECOLOR in species_traits) && eyes)
 						eye_overlay.color = "#" + H.eye_color
+
 					if((SCLERA in species_traits) && eyes)
 						sclera_overlay.color = "#" + H.sclera_color
 						standing += sclera_overlay
+
 					standing += eye_overlay
+
 		if(EMOTE_OVERLAY in species_traits)
 			// blush
 			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
@@ -939,6 +950,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spider_spinneret_list[H.dna.features["spider_spinneret"]]
 				if("kepori_body_feathers")
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
+				if("kepori_head_feathers")
+					S = GLOB.kepori_head_feathers_list[H.dna.features["kepori_head_feathers"]]
 				if("kepori_tail_feathers")
 					S = GLOB.kepori_tail_feathers_list[H.dna.features["kepori_tail_feathers"]]
 				if("kepori_feathers")
@@ -1289,9 +1302,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/get_spans()
 	return list()
 
-/datum/species/proc/check_species_weakness(obj/item, mob/living/attacker)
-	return 0 //This is not a boolean, it's the multiplier for the damage that the user takes from the item.It is added onto the check_weakness value of the mob, and then the force of the item is multiplied by this value
-
 /**
  * Equip the outfit required for life. Replaces items currently worn.
  */
@@ -1448,7 +1458,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			user.visible_message("<span class='warning'>[user] starts stealing [target]'s [I.name]!</span>",
 							"<span class='danger'>You start stealing [target]'s [I.name]...</span>", null, null, target)
 			to_chat(target, "<span class='userdanger'>[user] starts stealing your [I.name]!</span>")
-			if(do_after(user, I.strip_delay, TRUE, target, TRUE))
+			if(do_after(user, I.strip_delay, target))
 				target.dropItemToGround(I, TRUE)
 				user.put_in_hands(I)
 				user.visible_message("<span class='warning'>[user] stole [target]'s [I.name]!</span>",
@@ -1608,8 +1618,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/armor_block = H.run_armor_check(affecting, "melee", I.armour_penetration, FALSE, "<span class='notice'>Your armor has protected your [hit_area]!</span>", "<span class='warning'>Your armor has softened a hit to your [hit_area]!</span>")
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
 
-	var/weakness = H.check_weakness(I, user)
-	apply_damage(I.force * weakness, I.damtype, def_zone, armor_block, H)
+	apply_damage(I.force, I.damtype, def_zone, armor_block, H, sharpness = I.get_sharpness())
 
 	H.send_item_attack_message(I, user, hit_area)
 
@@ -1678,7 +1687,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	return TRUE
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, break_modifier = 1)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
@@ -1701,7 +1710,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, break_modifier = break_modifier))
+				if(BP.receive_damage(damage_amount, 0, break_modifier = break_modifier, sharpness = sharpness))
 					H.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
@@ -1711,7 +1720,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, break_modifier = break_modifier))
+				if(BP.receive_damage(0, damage_amount, break_modifier = break_modifier, sharpness = sharpness))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)

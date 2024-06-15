@@ -8,6 +8,7 @@
 	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/slug
+	bullet_per_box = 25
 
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 
@@ -110,8 +111,8 @@
 	desc = "A shotgun shell which fires a spread of incendiary pellets."
 	icon_state = "dragonsbreath"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
-	pellets = 4
-	variance = 35
+	pellets = 8
+	variance = 45
 
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
@@ -127,20 +128,20 @@
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
-	desc = "An advanced shotgun shell which uses a subspace ansible crystal to produce an effect similar to a standard ion rifle. \
-	The unique properties of the crystal split the pulse into a spread of individually weaker bolts."
+	desc = "An advanced shotgun shell which uses a micro laser to focus the effects of an EMP reaction to produce an effect similar to a standard ion rifle. \
+	The more uncontrolled nature of the reaction causes the pulse to spread into multiple individually weaker bolts."
 	icon_state = "ion"
 	projectile_type = /obj/projectile/ion/weak
-	pellets = 4
-	variance = 35
+	pellets = 8
+	variance = 25
 
 /obj/item/ammo_casing/shotgun/laserscatter
 	name = "scatter laser shell"
 	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a scatter laser weapon in a ballistic package."
 	icon_state = "laser"
 	projectile_type = /obj/projectile/beam/weak
-	pellets = 4 //WS edit: makes scatter lasers based again
-	variance = 35
+	pellets = 8
+	variance = 25
 
 /obj/item/ammo_casing/shotgun/pulseslug
 	name = "pulse slug"
