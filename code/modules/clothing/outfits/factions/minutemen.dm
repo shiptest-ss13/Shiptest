@@ -246,6 +246,21 @@
 
 	r_pocket = /obj/item/radio
 
+/datum/outfit/job/clip/correspondant
+	name = "CLIP - War correspondant"
+	job_icon = "curator"
+	jobtype = /datum/job/curator
+
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondant
+	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/armor/vest/clip_correspondant
+	shoes = /obj/item/clothing/shoes/laceup
+
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+
+	r_pocket = /obj/item/radio
+
 // Colonial League Minutemen
 
 /datum/outfit/job/clip/minutemen
