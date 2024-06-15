@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(astroloot, list(
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/diamond = 25,
-	/obj/item/stack/ore/bananium = 5,
+	/obj/item/stack/ore/hellstone = 5,
 	/obj/item/stack/ore/titanium = 75,
 	/obj/item/pickaxe/diamond = 15,
 	/obj/item/borg/upgrade/modkit/cooldown = 5,
@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(astroloot, list(
 	icon = 'icons/obj/device.dmi'
 	icon_state = "syndbeacon"
 	spawn_text = "warps in from"
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
+	mob_types = list(/mob/living/simple_animal/hostile/human/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
 /obj/structure/spawner/skeleton
@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(astroloot, list(
 	max_integrity = 150
 	max_mobs = 15
 	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
+	mob_types = list(/mob/living/simple_animal/hostile/human/skeleton)
 	spawn_text = "climbs out of"
 	faction = list("skeleton")
 

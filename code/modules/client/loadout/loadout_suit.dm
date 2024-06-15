@@ -111,3 +111,7 @@
 	display_name = "worn shirt"
 	path = /obj/item/clothing/suit/ianshirt
 
+/datum/gear/suit/hawaiian
+	display_name = "floral shirt"
+	description = "From grills to guns, this shirt's seen it all."
+	path = /obj/item/clothing/suit/hawaiian

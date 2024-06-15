@@ -115,7 +115,7 @@ Behavior that's still missing from this component that original food items had t
 	. = COMPONENT_ITEM_NO_ATTACK //Point of no return I suppose
 
 	if(eater == feeder)//If you're eating it yourself.
-		if(!do_mob(feeder, eater, eat_time)) //Gotta pass the minimal eat time
+		if(!do_after(feeder, eat_time, eater)) //Gotta pass the minimal eat time
 			return
 		var/eatverb = pick(eatverbs)
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
@@ -143,7 +143,7 @@ Behavior that's still missing from this component that original food items had t
 			eater.visible_message("<span class='warning'>[feeder] cannot force any more of [parent] down [eater]'s throat!</span>", \
 									"<span class='warning'>[feeder] cannot force any more of [parent] down your throat!</span>")
 			return
-		if(!do_mob(feeder, eater)) //Wait 3 seconds before you can feed
+		if(!do_after(feeder, target = eater)) //Wait 3 seconds before you can feed
 			return
 
 		log_combat(feeder, eater, "fed", owner.reagents.log_list())
