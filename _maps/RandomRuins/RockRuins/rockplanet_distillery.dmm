@@ -1989,13 +1989,14 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "wH" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	id = "engi_window"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2{
 	dir = 1
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/distillery/engineering)
 "wT" = (
@@ -2217,7 +2218,8 @@
 	},
 /area/ruin/rockplanet/distillery)
 "zk" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/distillery/crew)
 "zn" = (
@@ -2944,8 +2946,9 @@
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "Hg" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters,
+/obj/structure/grille,
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
 "Hi" = (
@@ -3385,11 +3388,12 @@
 /turf/open/floor/plating/rust/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "MA" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "mudskipper_engine"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery/saloon)
 "MD" = (
@@ -3439,7 +3443,8 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Nk" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
 "Nr" = (
