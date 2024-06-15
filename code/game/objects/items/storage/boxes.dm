@@ -856,6 +856,16 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
 
+/obj/item/storage/box/techshot
+	name = "box of unloaded shotgun tech shells"
+	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
+	icon_state = "techshot_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/techshell(src)
+
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."

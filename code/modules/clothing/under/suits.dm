@@ -29,7 +29,6 @@
 	item_state = "waiter"
 
 /obj/item/clothing/under/suit/waiter/syndicate
-	name = "syndicate waiter's outfit"
 	icon_state = "waiter_s"
 	item_state = "waiter_s"
 
