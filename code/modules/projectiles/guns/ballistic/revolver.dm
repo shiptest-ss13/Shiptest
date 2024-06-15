@@ -570,7 +570,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
@@ -698,7 +698,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
