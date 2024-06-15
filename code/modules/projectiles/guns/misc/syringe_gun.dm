@@ -29,7 +29,7 @@
 /obj/item/gun/syringe/can_shoot()
 	return syringes.len
 
-/obj/item/gun/syringe/process_chamber()
+/obj/item/gun/syringe/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB) //we just fired
 		recharge_newshot()
 

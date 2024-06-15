@@ -6,6 +6,7 @@
 	desc = "Heats or cools gas in connected pipes."
 
 	density = TRUE
+	idle_power_usage = IDLE_DRAW_LOW
 	max_integrity = 300
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 30)
 	layer = OBJ_LAYER
@@ -83,7 +84,7 @@
 
 	var/temperature_delta= abs(old_temperature - air_contents.return_temperature())
 	if(temperature_delta > 1)
-		active_power_usage = (heat_capacity * temperature_delta) / 10 + idle_power_usage
+		active_power_usage = (heat_capacity * temperature_delta) / 5 + idle_power_usage
 		update_parents()
 	else
 		active_power_usage = idle_power_usage
@@ -152,7 +153,10 @@
 	switch(action)
 		if("power")
 			on = !on
-			use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("target")
@@ -182,6 +186,10 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	on = !on
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)

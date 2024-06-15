@@ -436,6 +436,9 @@
 		SStgui.close_uis(helm)
 		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
+/datum/overmap/ship/controlled/proc/get_faction()
+	return source_template.faction_name
+
 /obj/item/key/ship
 	name = "ship key"
 	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."

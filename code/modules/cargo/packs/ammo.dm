@@ -70,14 +70,20 @@
 	cost = 500
 	contains = list(/obj/item/ammo_box/a12g/slug)
 
+/datum/supply_pack/ammo/techshells
+	name = "Unloaded Shotgun Technological Shells Crate"
+	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
+	cost = 210
+	contains = list(/obj/item/storage/box/techshot)
+
 /*
 		.38 ammo
 */
 
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
-	desc = "Contains a 30 round ammo boxes for refilling .38 weapons."
-	cost = 500
+	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
+	cost = 250
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
@@ -340,6 +346,12 @@
 	desc = "Contains a twelve-round box containing devastatingly powerful .45-70 caliber ammunition."
 	contains = list(/obj/item/ammo_box/a4570)
 	cost = 500
+
+/datum/supply_pack/ammo/a4570_box/match
+	name = ".45-70 Match Crate"
+	desc = "Contains a twelve-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
+	contains = list(/obj/item/ammo_box/a4570/match)
+	cost = 750
 
 /datum/supply_pack/ammo/ferropelletboxcrate
 	name = "Ferromagnetic Pellet Box Crate"

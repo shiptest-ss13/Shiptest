@@ -61,3 +61,10 @@
 	document = /obj/item/documents/terragov
 	desc = "A green folder with a Terran Regency seal."
 	icon_state = "folder_terragovred"
+
+/obj/item/folder/suns
+	desc = "A purple folder with a SUNS seal."
+	icon_state = "folder_suns"
+
+/obj/item/folder/suns/red
+	icon_state = "folder_sunsred" // i'm not sure why SUNS would need secret documents
