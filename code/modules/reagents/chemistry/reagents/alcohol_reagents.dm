@@ -2093,13 +2093,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Trapper's Beer"
 	glass_desc = "The Ashen Huntsman's blessings, in a glass. Despite proclaiming an ascetic lifestyle, it's okay to have a little fun once in a while."
 
-/datum/reagent/consumable/ethanol/trappist/on_mob_life(mob/living/carbon/M)
-	if(M.mind.holy_role)
-		M.adjustFireLoss(-2.5, 0)
-		M.jitteriness = max(0, M.jitteriness-1)
-		M.stuttering = max(0, M.stuttering-1)
-	return ..()
-
 /datum/reagent/consumable/ethanol/blazaam
 	name = "Hyperspace Highball"
 	description = "A strange drink mixed with bluespace crystal flakes, which is already extremely expensive on its own merit."
