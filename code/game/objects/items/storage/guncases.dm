@@ -48,7 +48,7 @@
 
 /obj/item/storage/guncase/scout
 /obj/item/storage/guncase/scout/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/scout(src)
+	new /obj/item/gun/ballistic/rifle/scout/no_mag(src)
 	new /obj/item/ammo_box/a300/empty(src)
 	new /obj/item/ammo_box/a300/empty(src)
 
