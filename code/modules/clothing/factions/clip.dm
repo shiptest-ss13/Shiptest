@@ -163,7 +163,7 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
-/obj/item/clothing/suit/armor/vest/clip_correspondant
+/obj/item/clothing/suit/armor/vest/clip_correspondent
 	name = "press armor vest"
 	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
 
