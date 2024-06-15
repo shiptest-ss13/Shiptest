@@ -198,7 +198,7 @@
 	return D
 
 /obj/machinery/computer/security/attackby(obj/item/I, mob/user, params)
-	if(istype(I, obj/item/bodycam))
+	if(istype(I, /obj/item/bodycam))
 		var/obj/item/bodycam/bodycam = I
 		bodycam.cameranetwork = network
 		user.balloon_alert(user, "body camera linked to network.")
