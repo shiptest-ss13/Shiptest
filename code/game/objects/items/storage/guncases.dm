@@ -3,7 +3,7 @@
 	desc = "A large box designed for holding firearms and magazines safely."
 	icon = 'icons/obj/guncase_48x32.dmi'
 	icon_state = "riflecase"
-	item_state = "riflecase"
+	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
 	throw_speed = 2
@@ -88,7 +88,7 @@
 	desc = "A large box designed for holding pistols and magazines safely."
 	icon = 'icons/obj/guncase.dmi'
 	icon_state = "pistolcase"
-	item_state = "pistolcase"
+	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
 	throw_speed = 2
