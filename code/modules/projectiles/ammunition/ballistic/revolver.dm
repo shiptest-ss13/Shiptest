@@ -101,20 +101,21 @@
 
 //44 Roumain (Montagne & Shadow)
 
-/obj/item/ammo_casing/44roum
+/obj/item/ammo_casing/a44roum
 	name = ".44 roumain bullet casing"
-	desc = "A 44 roumain bullet casing."
-	bullet_skin = "pistol-steel"
-	projectile_type = /obj/projectile/bullet/44roum
+	desc = "A .44 roumain bullet casing."
+	caliber = ".44 Roumain"
+	icon_state = "pistol-steel"
+	projectile_type = /obj/projectile/bullet/a44roum
 
-/obj/item/ammo_casing/44roum/rubber
+/obj/item/ammo_casing/a44roum/rubber
 	name = ".44 roumain rubber bullet casing"
-	desc = "A 44 roumain rubber bullet casing."
+	desc = "A .44 roumain rubber bullet casing."
 	bullet_skin = "rubber"
-	projectile_type = /obj/projectile/bullet/44roum/rubber
+	projectile_type = /obj/projectile/bullet/a44roum/rubber
 
-/obj/item/ammo_casing/44roum/hp
+/obj/item/ammo_casing/a44roum/hp
 	name = ".44 roumain hollow point bullet casing"
-	desc = "A 44 roumain holow point bullet casing."
+	desc = "A .44 roumain holow point bullet casing."
 	bullet_skin = "hollow"
-	projectile_type = /obj/projectile/bullet/44roum/hp
+	projectile_type = /obj/projectile/bullet/a44roum/hp

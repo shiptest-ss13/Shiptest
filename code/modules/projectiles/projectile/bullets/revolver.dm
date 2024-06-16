@@ -155,17 +155,17 @@
 
 // 44 Short (Roumain & Shadow)
 
-/obj/projectile/bullet/44roum
+/obj/projectile/bullet/a44roum
 	name = ".44 roumain bullet"
 	damage =  25
 
-/obj/projectile/bullet/44roum/rubber
+/obj/projectile/bullet/a44roum/rubber
 	name = ".44 roumain bullet"
 	damage =  7
 	stamina = 38
 	armour_penetration = -20
 
-/obj/projectile/bullet/44roum/hp
+/obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain bullet"
 	damage =  45
 	armour_penetration = -20
