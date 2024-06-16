@@ -50,12 +50,35 @@
 /turf/open/floor/wood/maple,
 /area/space)
 "bu" = (
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
+/obj/structure/closet/wall/directional/west{
+	icon_state = "emergency_wall";
+	name = "Spare Internals Closet"
 	},
-/turf/open/floor/plasteel/white,
+/obj/item/clothing/mask/breath/suns{
+	pixel_y = 6;
+	pixel_x = -9
+	},
+/obj/item/clothing/mask/breath/suns{
+	pixel_y = 1;
+	pixel_x = -9
+	},
+/obj/item/clothing/mask/breath/suns{
+	pixel_y = -4;
+	pixel_x = -9
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "bD" = (
 /obj/structure/closet/crate/hydroponics,
@@ -119,6 +142,14 @@
 /obj/item/clothing/head/safety_helmet/suns{
 	pixel_y = 4;
 	pixel_x = -11
+	},
+/obj/item/clothing/head/hardhat{
+	pixel_y = 15;
+	pixel_x = 10
+	},
+/obj/item/clothing/head/hardhat{
+	pixel_y = 19;
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -400,12 +431,6 @@
 /obj/item/storage/belt/sabre/suns,
 /turf/open/floor/wood/walnut,
 /area/space)
-"gr" = (
-/obj/effect/turf_decal/syndicateemblem/middle/middle{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "gv" = (
 /obj/structure/table/greyscale,
 /obj/effect/turf_decal/trimline/opaque/purple/filled/corner{
@@ -432,19 +457,42 @@
 /obj/structure/closet,
 /turf/open/floor/wood/walnut,
 /area/space)
-"hi" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/space)
 "hl" = (
 /obj/structure/railing{
-	dir = 10;
-	layer = 5
+	dir = 10
 	},
-/obj/structure/table,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	pixel_x = 2;
+	pixel_y = 4;
+	name = "mining gear crate"
+	},
+/obj/item/storage/bag/ore{
+	pixel_y = 5
+	},
+/obj/item/storage/bag/ore{
+	pixel_y = -4
+	},
+/obj/item/pickaxe{
+	pixel_x = 5
+	},
+/obj/item/pickaxe,
+/obj/item/gps/mining{
+	pixel_x = -2;
+	pixel_y = -8
+	},
+/obj/item/gps/mining{
+	pixel_x = 5;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/hardhat/mining{
+	pixel_y = 2;
+	pixel_x = -6
+	},
+/obj/item/clothing/head/hardhat/mining{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "hC" = (
@@ -533,12 +581,6 @@
 /obj/structure/table/greyscale,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"jx" = (
-/obj/effect/turf_decal/syndicateemblem/middle/left{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "jy" = (
 /obj/structure/chair/comfy/purple/directional,
 /turf/open/floor/carpet/red,
@@ -553,15 +595,18 @@
 /obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
-"ka" = (
-/obj/item/clothing/suit/space/syndicate/suns,
-/turf/open/floor/plasteel/white,
-/area/space)
 "kr" = (
 /obj/structure/railing{
-	dir = 6
+	dir = 6;
+	layer = 5
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/rack,
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "ks" = (
@@ -983,6 +1028,93 @@
 	pixel_y = 29;
 	dir = 1
 	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = 5;
+	pixel_y = -8
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 1;
+	pixel_x = -6
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/geiger_counter{
+	pixel_y = 13;
+	pixel_x = 7
+	},
+/obj/item/geiger_counter{
+	pixel_y = 9;
+	pixel_x = 7
+	},
+/obj/item/holosign_creator/engineering{
+	pixel_y = 16;
+	pixel_x = -8
+	},
+/obj/item/holosign_creator/engineering{
+	pixel_y = 13;
+	pixel_x = -8
+	},
+/obj/item/holosign_creator/atmos{
+	pixel_y = 9;
+	pixel_x = -8
+	},
+/obj/item/holosign_creator/atmos{
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/obj/item/multitool{
+	pixel_y = 4;
+	pixel_x = 13
+	},
+/obj/item/multitool{
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = -6
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/weldingtool/largetank{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/weldingtool/largetank{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/obj/item/storage/belt/utility/full{
+	pixel_y = -10;
+	pixel_x = 7
+	},
+/obj/item/storage/belt/utility/full{
+	pixel_y = -10;
+	pixel_x = -7
+	},
+/obj/item/clothing/glasses/meson{
+	pixel_x = -5;
+	pixel_y = -8
+	},
+/obj/item/clothing/glasses/meson{
+	pixel_x = 4;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "qM" = (
@@ -990,12 +1122,6 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
-"qQ" = (
-/obj/effect/turf_decal/syndicateemblem/top/right{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/space)
 "qT" = (
 /obj/machinery/fax{
@@ -1086,13 +1212,18 @@
 /turf/open/floor/engine/hull,
 /area/space)
 "sp" = (
-/obj/effect/turf_decal/trimline/opaque/purple/filled/line{
-	dir = 5
+/obj/structure/rack,
+/obj/item/wheelchair{
+	pixel_y = -2
 	},
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
+/obj/item/wheelchair{
+	pixel_y = 2
+	},
+/obj/item/wheelchair{
+	pixel_y = 6
+	},
+/obj/item/wheelchair{
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -1151,18 +1282,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"tX" = (
-/obj/effect/turf_decal/syndicateemblem/bottom/right{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
-"um" = (
-/obj/effect/turf_decal/syndicateemblem/bottom/left{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "up" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
@@ -1189,11 +1308,8 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "vd" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/plasteel/white,
+/obj/vehicle/ridden/wheelchair,
+/turf/open/space/basic,
 /area/space)
 "vi" = (
 /obj/structure/fireplace,
@@ -1209,12 +1325,37 @@
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "vq" = (
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
+/obj/effect/turf_decal/trimline/opaque/purple/filled/line{
+	dir = 1
 	},
-/turf/open/floor/plastic,
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Spare EVA Closet"
+	},
+/obj/item/clothing/suit/space/syndicate/suns{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/space/syndicate/suns{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/helmet/space/syndicate/suns{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/helmet/space/syndicate/suns{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/item/clothing/suit/space/syndicate/suns{
+	pixel_x = -7;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/space/syndicate/suns{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "vw" = (
 /obj/effect/turf_decal/trimline/opaque/purple/filled/line,
@@ -1240,7 +1381,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "vS" = (
-/turf/open/floor/plating,
+/obj/structure/curtain/cloth/grey,
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "wc" = (
 /obj/effect/turf_decal/trimline/opaque/purple/filled/line{
@@ -1393,17 +1536,6 @@
 "zD" = (
 /turf/open/floor/carpet/red,
 /area/space)
-"zN" = (
-/obj/effect/turf_decal/trimline/opaque/purple/filled/line{
-	dir = 6
-	},
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
-	},
-/turf/open/floor/plasteel/dark,
-/area/space)
 "zZ" = (
 /obj/structure/railing,
 /obj/structure/table/wood/reinforced,
@@ -1440,6 +1572,14 @@
 /area/space)
 "AR" = (
 /obj/structure/table,
+/obj/item/storage/box/metalfoam{
+	pixel_y = 14;
+	pixel_x = -9
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -2;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Bk" = (
@@ -1560,19 +1700,8 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "CY" = (
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
-	},
-/turf/open/floor/wood/walnut,
-/area/space)
-"Dg" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/plasteel/dark,
+/obj/item/wheelchair,
+/turf/open/space/basic,
 /area/space)
 "Do" = (
 /obj/structure/railing/corner/wood{
@@ -1583,16 +1712,6 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/maple,
-/area/space)
-"Dy" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/wood/walnut,
 /area/space)
 "DN" = (
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1658,6 +1777,8 @@
 "Er" = (
 /obj/structure/railing,
 /obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Eu" = (
@@ -1684,12 +1805,6 @@
 	pixel_y = 32
 	},
 /turf/open/floor/wood/walnut,
-/area/space)
-"Fe" = (
-/obj/effect/turf_decal/syndicateemblem/bottom/middle{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/space)
 "Fk" = (
 /obj/structure/railing{
@@ -1747,12 +1862,11 @@
 /turf/open/floor/wood/walnut,
 /area/space)
 "Ge" = (
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Go" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled{
@@ -1820,7 +1934,22 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/obj/structure/closet/crate,
+/obj/structure/closet/crate{
+	name = "materials crate"
+	},
+/obj/item/stack/sheet/plastic/twenty{
+	pixel_x = -8
+	},
+/obj/item/stack/sheet/plasteel/twenty{
+	pixel_x = -5
+	},
+/obj/item/stack/sheet/glass/twenty,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 3
+	},
+/obj/item/stack/sheet/sandblock/twenty{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Hp" = (
@@ -1834,10 +1963,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut,
-/area/space)
-"Hx" = (
-/obj/machinery/door/airlock/hatch,
 /turf/open/floor/wood/walnut,
 /area/space)
 "Hy" = (
@@ -1913,12 +2038,6 @@
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
-/area/space)
-"Jf" = (
-/obj/effect/turf_decal/syndicateemblem/top/left{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/space)
 "Jh" = (
 /obj/structure/sink/kitchen{
@@ -2122,9 +2241,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Nn" = (
-/obj/structure/table{
-	layer = 2.9
-	},
 /obj/structure/railing{
 	dir = 1;
 	layer = 2.8
@@ -2132,6 +2248,10 @@
 /obj/structure/railing{
 	dir = 8;
 	layer = 4.1
+	},
+/obj/machinery/power/port_gen/pacman/super,
+/obj/item/stack/sheet/mineral/uranium/twenty{
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
@@ -2219,12 +2339,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/walnut,
 /area/space)
-"Pk" = (
-/obj/effect/turf_decal/syndicateemblem/middle/right{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "Ps" = (
 /obj/structure/filingcabinet/double{
 	dir = 1
@@ -2246,12 +2360,9 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "PQ" = (
-/obj/machinery/door/airlock/hatch{
-	id_tag = "aegis_bridge";
-	name = "Bridge";
-	req_access_txt = "19"
-	},
-/turf/open/floor/plating,
+/obj/structure/curtain/cloth/grey,
+/obj/machinery/recharge_station,
+/turf/open/floor/wood/walnut,
 /area/space)
 "Qc" = (
 /obj/structure/chair/comfy/purple/directional/west,
@@ -2464,6 +2575,10 @@
 	layer = 2.9
 	},
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/twenty{
+	pixel_y = 2;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Tb" = (
@@ -2507,12 +2622,6 @@
 	pixel_x = 6
 	},
 /turf/open/floor/plastic,
-/area/space)
-"Vb" = (
-/obj/effect/turf_decal/syndicateemblem/top/middle{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/space)
 "Vf" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -2586,13 +2695,6 @@
 "Wr" = (
 /obj/machinery/vending/snack,
 /turf/open/floor/plasteel/dark,
-/area/space)
-"Wz" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/wood/walnut,
 /area/space)
 "WB" = (
 /obj/structure/urinal{
@@ -2869,7 +2971,7 @@ JQ
 JQ
 Sl
 Sl
-xO
+Nd
 Yn
 qM
 hl
@@ -2885,7 +2987,7 @@ DN
 Nn
 Hp
 Cs
-Nd
+xO
 Sl
 Sl
 JQ
@@ -3055,7 +3157,7 @@ Hl
 hP
 Sl
 Sl
-hi
+DN
 Sl
 Sl
 Sl
@@ -3069,7 +3171,7 @@ na
 Sl
 Sl
 Sl
-hi
+DN
 Sl
 Sl
 iw
@@ -3089,7 +3191,7 @@ TV
 TV
 TV
 XK
-wZ
+vS
 Sl
 QZ
 gw
@@ -3113,7 +3215,7 @@ FZ
 kx
 oq
 iw
-oq
+PQ
 kx
 RB
 Sl
@@ -3125,13 +3227,13 @@ Ob
 CQ
 Sl
 Sl
-Dy
+xY
 Sl
 Sl
 QZ
 gw
 gw
-PQ
+gw
 gw
 gw
 wc
@@ -3182,7 +3284,7 @@ Sl
 gw
 gw
 Eu
-CY
+kx
 kx
 kx
 kx
@@ -3201,7 +3303,7 @@ Sl
 Wr
 pj
 kx
-CY
+kx
 QZ
 gw
 gw
@@ -3215,7 +3317,7 @@ Sl
 Sl
 gw
 gw
-bu
+gw
 gw
 gw
 Eu
@@ -3256,7 +3358,7 @@ Sl
 gw
 gw
 Eu
-CY
+kx
 kx
 kx
 iw
@@ -3358,7 +3460,7 @@ Sl
 Sl
 Sl
 Sl
-Wz
+kx
 Sl
 Sl
 Sl
@@ -3390,7 +3492,7 @@ hP
 QZ
 gw
 gw
-sp
+sY
 nG
 nG
 nG
@@ -3400,7 +3502,7 @@ nG
 nG
 nG
 nG
-zN
+Ip
 gw
 gw
 Eu
@@ -3418,7 +3520,7 @@ Sl
 Sl
 xV
 WU
-vq
+WU
 kx
 al
 Sl
@@ -3552,7 +3654,7 @@ gw
 Mo
 SN
 Or
-Ge
+YH
 YH
 YH
 YH
@@ -3624,7 +3726,7 @@ gw
 gw
 gw
 Eu
-Ge
+YH
 me
 Jh
 Sl
@@ -3832,7 +3934,7 @@ Sl
 IF
 HC
 Hl
-Ge
+YH
 QZ
 gw
 gw
@@ -3907,7 +4009,7 @@ iz
 lR
 Ia
 Sl
-Dg
+YH
 Sl
 FH
 FH
@@ -3917,7 +4019,7 @@ gw
 gw
 Eu
 Sl
-vS
+FH
 Sl
 TS
 Sl
@@ -3949,9 +4051,9 @@ ez
 NJ
 FH
 QZ
-qQ
-Vb
-Jf
+gw
+gw
+gw
 Eu
 FH
 RK
@@ -3980,15 +4082,15 @@ Sl
 vi
 kx
 kx
-Hx
+kx
 Hw
 wt
 dz
 FH
 QZ
-Pk
-gr
-jx
+gw
+gw
+gw
 Eu
 FH
 uM
@@ -4023,9 +4125,9 @@ fj
 Tb
 FH
 QZ
-tX
-Fe
-um
+gw
+gw
+gw
 Eu
 FH
 uM
@@ -4097,9 +4199,9 @@ Sl
 Sl
 Sl
 Sl
-vd
+gw
 Sl
-vd
+gw
 Sl
 Sl
 Sl
@@ -4137,8 +4239,8 @@ gw
 gw
 gw
 gw
-Eu
-YH
+vq
+bu
 iM
 Sl
 rE
@@ -4244,7 +4346,7 @@ FH
 Sl
 Sl
 Ip
-ka
+gw
 gw
 gw
 CL
@@ -4286,7 +4388,7 @@ gw
 gw
 CL
 YH
-QQ
+sp
 Sl
 JQ
 JQ
@@ -4312,8 +4414,8 @@ JQ
 JQ
 JQ
 JQ
-JQ
-JQ
+CY
+vd
 JQ
 JQ
 Sl
