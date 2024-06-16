@@ -3148,8 +3148,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "JN" = (
 /obj/structure/flora/driftlog{
-	pixel_y = -18;
-	pixel_x = 12
+	pixel_y = -15;
+	pixel_x = 9;
+	layer = 2.8
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -3199,7 +3200,8 @@
 	reagent_id = /datum/reagent/consumable/ethanol/moonshine;
 	name = "moonshine keg";
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
-	pixel_x = -8
+	pixel_x = -8;
+	layer = 2.8
 	},
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
@@ -3215,7 +3217,8 @@
 	name = "moonshine keg";
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
 	pixel_x = -4;
-	pixel_y = 14
+	pixel_y = 14;
+	layer = 3
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
