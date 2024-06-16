@@ -551,19 +551,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/under/syndicate/inteq/artificer,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/head/hardhat,
-/obj/item/clothing/under/syndicate/inteq/skirt/artificer,
-/obj/item/clothing/under/syndicate/inteq/artificer,
-/obj/item/storage/belt/utility,
-/obj/item/storage/backpack/industrial,
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "cargo_wall";
-	req_one_access = list(10)
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "eZ" = (
@@ -655,7 +643,7 @@
 	icon_state = "prisoner";
 	name = "shuttle pilot locker";
 	req_access = list(3);
-	icon_door = prisoner
+	icon_door = "prisoner"
 	},
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/head/soft/inteq,
