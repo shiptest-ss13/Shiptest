@@ -172,7 +172,7 @@
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 8000
+	cost = 6000
 	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550)
 	crate_name = "auto rifle crate"
 
