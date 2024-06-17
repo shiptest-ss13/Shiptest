@@ -83,7 +83,6 @@
 
 		//Bleeding out
 		var/limb_bleed = 0
-		var/total_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
 			if(BP.GetComponent(/datum/component/bandage))
 				continue
@@ -133,7 +132,7 @@
 
 			if(!blood_particle)
 				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
-		blood_particle.particles.color = dna.blood_type.color //mouthful
+			blood_particle.particles.color = dna.blood_type.color //mouthful
 			blood_particle.particles.spawning = (limb_bleed/2)
 
 			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
@@ -150,9 +149,9 @@
 		if (prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
 			if(isturf(src.loc) && !isgroundlessturf(src.loc)) //Blood loss still happens in locker, floor stays clean
 				if(amt >= 2)
-					add_splatter_floor(src.loc)
+					add_splatter_floor(src.loc, amt = amt)
 				else
-					add_splatter_floor(src.loc, TRUE)
+					add_splatter_floor(src.loc, TRUE, amt)
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod
@@ -307,13 +306,12 @@
 	return blood_type.color
 
 //to add a splatter of blood or other mob liquid.
-/mob/living/proc/add_splatter_floor(turf/T, small_drip)
+/mob/living/proc/add_splatter_floor(turf/T, small_drip, amt)
 	if(get_blood_id() != /datum/reagent/blood)
 		return
 	if(!T)
 		T = get_turf(src)
 
-	var/mob/living/carbon/human/current_user = src //i hate
 	var/list/temp_blood_DNA
 
 	if(small_drip)
@@ -328,7 +326,7 @@
 			else
 				temp_blood_DNA = drop.return_blood_DNA() //we transfer the dna from the drip to the splatter
 				qdel(drop)//the drip is replaced by a bigger splatter
-		else if (current_user?.bleed_rate < 2)
+		else if (amt < 2)
 			drop = new(T, get_static_viruses())
 			drop.transfer_mob_blood_dna(src)
 			return
@@ -341,7 +339,7 @@
 		B = candidate
 		break
 	if(!B)
-		if(current_user?.bleed_rate > 4)
+		if(amt > 4)
 			B = new /obj/effect/decal/cleanable/blood(T, get_static_viruses())
 		else
 			B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
@@ -353,11 +351,11 @@
 	if(temp_blood_DNA)
 		B.add_blood_DNA(temp_blood_DNA)
 
-/mob/living/carbon/human/add_splatter_floor(turf/T, small_drip)
+/mob/living/carbon/human/add_splatter_floor(turf/T, small_drip, amt)
 	if(!(NOBLOOD in dna.species.species_traits))
 		..()
 
-/mob/living/carbon/alien/add_splatter_floor(turf/T, small_drip)
+/mob/living/carbon/alien/add_splatter_floor(turf/T, small_drip, amt)
 	if(!T)
 		T = get_turf(src)
 	var/obj/effect/decal/cleanable/xenoblood/B = locate() in T.contents
@@ -365,7 +363,7 @@
 		B = new(T)
 	B.add_blood_DNA(list("UNKNOWN DNA" = "X*"))
 
-/mob/living/silicon/robot/add_splatter_floor(turf/T, small_drip)
+/mob/living/silicon/robot/add_splatter_floor(turf/T, small_drip, amt)
 	if(!T)
 		T = get_turf(src)
 	var/obj/effect/decal/cleanable/oil/B = locate() in T.contents
