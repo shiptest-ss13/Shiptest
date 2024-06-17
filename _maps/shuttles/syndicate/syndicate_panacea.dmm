@@ -1128,7 +1128,8 @@
 /area/ship/crew/canteen/kitchen)
 "gN" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
