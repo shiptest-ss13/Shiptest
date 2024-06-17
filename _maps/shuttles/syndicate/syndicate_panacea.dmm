@@ -37,7 +37,8 @@
 /obj/structure/cable/blue{
 	icon_state = "0-6"
 	},
-/turf/open/floor/suns/grid,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "aw" = (
 /obj/structure/janitorialcart,
@@ -113,20 +114,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "bs" = (
-/obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "Panacea_garden_space_shuts";
-	name = "Outer Window Shutters";
-	pixel_y = 20;
-	pixel_x = -18
-	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
-/area/ship/crew/hydroponics)
+/obj/effect/turf_decal/suns/line/marble/fill,
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "bu" = (
 /obj/structure/closet/wall/directional/west{
 	icon_state = "emergency_wall";
@@ -270,6 +261,11 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 10;
+	pixel_y = 12
+	},
+/obj/item/clothing/glasses/regular/circle,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "bV" = (
@@ -289,7 +285,8 @@
 /obj/structure/cable/blue{
 	icon_state = "0-5"
 	},
-/turf/open/floor/suns/grid,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "bZ" = (
 /obj/structure/railing{
@@ -344,15 +341,15 @@
 	pixel_y = 4;
 	pixel_x = -11
 	},
-/obj/item/clothing/head/hardhat{
-	pixel_y = 15;
-	pixel_x = 10
-	},
-/obj/item/clothing/head/hardhat{
-	pixel_y = 19;
-	pixel_x = 10
-	},
 /obj/effect/turf_decal/box,
+/obj/item/clothing/head/welding{
+	pixel_x = 7;
+	pixel_y = 18
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = 7;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "cg" = (
@@ -704,6 +701,18 @@
 "em" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/airalarm/directional/east,
+/obj/item/clothing/glasses/regular{
+	pixel_y = 11;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/obj/item/book/manual/random{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -1331,6 +1340,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/item/paicard{
+	pixel_x = -3;
+	pixel_y = 3
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "hS" = (
@@ -1464,6 +1477,14 @@
 "iw" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/firealarm/directional/west,
+/obj/item/reagent_containers/food/drinks/rilenacup{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/toy/plush/goatplushie{
+	pixel_x = 6;
+	pixel_y = 16
+	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -1771,6 +1792,7 @@
 "kJ" = (
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "kU" = (
@@ -1826,6 +1848,21 @@
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
+"lo" = (
+/obj/structure/table,
+/obj/effect/turf_decal/suns/line/marble/fill,
+/obj/effect/turf_decal/suns/line/marble/fill{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/item/storage/box/donkpockets/donkpocketpizza{
+	pixel_y = 6
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/canteen/kitchen)
 "ls" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -1953,9 +1990,6 @@
 	pixel_y = 1;
 	pixel_x = 7
 	},
-/obj/item/paicard{
-	pixel_x = -11
-	},
 /obj/item/desk_flag/suns{
 	pixel_y = 13;
 	pixel_x = 11
@@ -1963,6 +1997,14 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/item/paper_bin/bundlenatural{
+	pixel_y = 5;
+	pixel_x = -7
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = 6;
+	pixel_x = -8
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
@@ -2202,6 +2244,10 @@
 /obj/item/folder/suns{
 	pixel_y = -6;
 	pixel_x = 6
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000{
+	pixel_y = -7
 	},
 /turf/open/floor/suns/dark/pattern,
 /area/ship/bridge)
@@ -2710,6 +2756,14 @@
 "pM" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/suns/line/marble/fill,
+/obj/item/book/manual/random{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/regular/thin{
+	pixel_x = -2;
+	pixel_y = -3
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "pO" = (
@@ -3319,9 +3373,9 @@
 	pixel_y = 9;
 	pixel_x = -7
 	},
-/obj/item/toy/plush/mora{
-	pixel_y = 4;
-	pixel_x = 7
+/obj/item/toy/plush/rilena{
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /turf/open/floor/suns/dark,
 /area/ship/crew/cryo)
@@ -3348,7 +3402,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/suns/grid,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "ub" = (
 /obj/effect/turf_decal/suns/line/marble{
@@ -3898,6 +3953,10 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = -8;
 	pixel_y = -7
+	},
+/obj/item/spacecash/bundle/c10{
+	pixel_x = 9;
+	pixel_y = 9
 	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
@@ -4594,9 +4653,18 @@
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew/cryo)
 "BV" = (
-/obj/structure/closet/emcloset/wall/directional/south,
-/turf/open/floor/suns/plain,
-/area/ship/crew/ccommons)
+/obj/structure/table,
+/obj/effect/turf_decal/suns/line/marble/fill,
+/obj/effect/turf_decal/suns/line/marble/fill{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/canteen/kitchen)
 "BY" = (
 /obj/structure/railing{
 	dir = 9
@@ -4897,8 +4965,17 @@
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 4;
-	pixel_x = 16
+	pixel_y = 14;
+	pixel_x = 16;
+	layer = 4
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/wig{
+	pixel_x = 4;
+	pixel_y = -7
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
@@ -5618,7 +5695,9 @@
 /turf/open/floor/suns/pattern,
 /area/ship/bridge)
 "HW" = (
-/obj/machinery/vending/coffee,
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Ia" = (
@@ -5832,8 +5911,11 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/medical/psych)
 "Jm" = (
-/obj/structure/closet/firecloset/wall/directional/south,
-/turf/open/floor/suns/plain,
+/obj/effect/turf_decal/suns/line/marble/fill,
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
+	},
+/turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Jo" = (
 /obj/machinery/light_switch{
@@ -6122,6 +6204,12 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/button/door{
+	id = "Panacea_garden_space_shuts";
+	name = "Outer Window Shutters";
+	pixel_y = 20;
+	pixel_x = 21
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/crew/hydroponics)
 "Lf" = (
@@ -6430,6 +6518,10 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = 6;
 	pixel_y = 13
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
@@ -7468,14 +7560,30 @@
 /area/ship/crew/ccommons)
 "Tb" = (
 /obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = 4;
+	pixel_x = -9
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = 7;
+	pixel_x = -1
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = 5;
+	pixel_x = 7
+	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormtwo)
 "Td" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 4
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
+	},
+/obj/structure/disposaloutlet,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -7621,6 +7729,10 @@
 	pixel_x = 6
 	},
 /obj/machinery/light/directional/south,
+/obj/item/toy/plush/lizardplushie{
+	pixel_y = 3;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "Ux" = (
@@ -7828,7 +7940,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/firealarm/directional/south,
-/turf/open/floor/suns/grid,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "VF" = (
 /obj/structure/railing/corner/wood{
@@ -7931,8 +8044,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Wr" = (
-/obj/machinery/vending/snack,
 /obj/machinery/light/directional/north,
+/obj/machinery/vending/cola/random,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Wu" = (
@@ -8045,6 +8158,10 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = -8;
 	pixel_y = -7
+	},
+/obj/item/reagent_containers/food/drinks/rilenacup{
+	pixel_x = 8;
+	pixel_y = 9
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
@@ -8818,7 +8935,7 @@ Fq
 ZX
 vS
 In
-QZ
+bs
 sD
 lR
 dy
@@ -8894,7 +9011,7 @@ OI
 lV
 QZ
 sD
-AM
+lR
 dy
 qT
 Zz
@@ -8931,7 +9048,7 @@ qb
 LQ
 KX
 WS
-vG
+AM
 dy
 dy
 dy
@@ -8980,7 +9097,7 @@ DJ
 fK
 QO
 DJ
-lR
+dL
 lk
 Eu
 Lw
@@ -9017,7 +9134,7 @@ DJ
 zC
 RG
 DJ
-sI
+DH
 lk
 Eu
 HL
@@ -9040,7 +9157,7 @@ LW
 lV
 lV
 lV
-QZ
+Jm
 sD
 lR
 Bl
@@ -9054,7 +9171,7 @@ DJ
 Gx
 Ql
 DJ
-dL
+qC
 lk
 Eu
 HL
@@ -9079,7 +9196,7 @@ Uk
 ae
 KR
 eW
-lR
+vG
 Bc
 Bc
 Bc
@@ -9153,7 +9270,7 @@ rL
 iN
 QZ
 sD
-Jm
+lR
 Bc
 op
 wH
@@ -9165,7 +9282,7 @@ vd
 QD
 iY
 Bc
-qC
+lR
 mN
 Eu
 vl
@@ -9190,7 +9307,7 @@ Mq
 QU
 QZ
 sD
-BV
+lR
 Bc
 Bc
 pX
@@ -9202,7 +9319,7 @@ mZ
 va
 Bc
 Bc
-DH
+sI
 mN
 Eu
 xQ
@@ -9425,7 +9542,7 @@ bx
 ZT
 Pz
 Rh
-iZ
+BV
 iH
 Ja
 ow
@@ -9462,7 +9579,7 @@ Av
 GJ
 Pz
 Rh
-iZ
+lo
 tT
 LY
 Bb
@@ -9942,7 +10059,7 @@ Hi
 LR
 Ps
 Zh
-bs
+ws
 ws
 ws
 ZE
