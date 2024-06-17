@@ -14,20 +14,6 @@
 	sheet_type = null
 	girder_type = /obj/structure/grille
 
-	// The wall will ignore damage from weak items, depending on their
-	// force, damage type, tool behavior, and sharpness. This is the minimum
-	// amount of force that a blunt, brute item must have to damage the wall.
-	var/min_dam = 8
-	// This should all be handled by integrity should that ever be expanded to walls.
-	var/max_health = 650
-	var/health
-	// used to give mining projectiles a bit of an edge against conc walls
-	var/static/list/extra_dam_proj = typecacheof(list(
-		/obj/projectile/kinetic,
-		/obj/projectile/destabilizer,
-		/obj/projectile/plasma
-	))
-
 	var/time_to_harden = 30 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
@@ -120,7 +106,7 @@
 	explosion_block = (health / max_health) * harden_lvl * initial(explosion_block)
 	update_appearance()
 
-/turf/closed/wall/concrete/proc/alter_health(delta)
+/turf/closed/wall/concrete/alter_health(delta)
 	// 8x as vulnerable when unhardened
 	if(delta < 0)
 		delta *= 1 + 7*(1-harden_lvl)
@@ -132,17 +118,6 @@
 	health = min(health, max_health)
 	update_stats()
 	return health
-
-/turf/closed/wall/concrete/ex_act(severity, target)
-	if(target == src || !density)
-		return ..()
-	switch(severity)
-		if(EXPLODE_DEVASTATE)
-			alter_health(-2000)
-		if(EXPLODE_HEAVY)
-			alter_health(rand(-500, -800))
-		if(EXPLODE_LIGHT)
-			alter_health(rand(-200, -700))
 
 /turf/closed/wall/concrete/bullet_act(obj/projectile/P)
 	. = ..()
@@ -217,7 +192,7 @@
 	alter_health(-dam)
 	return TRUE
 
-/turf/closed/wall/concrete/proc/get_item_damage(obj/item/I)
+/turf/closed/wall/concrete/get_item_damage(obj/item/I)
 	var/dam = I.force
 	if(istype(I, /obj/item/clothing/gloves/gauntlets))
 		dam = 20
@@ -236,7 +211,7 @@
 	// if dam is below t_min, then the hit has no effect
 	return (dam < t_min ? 0 : dam)
 
-/turf/closed/wall/concrete/proc/get_proj_damage(obj/projectile/P)
+/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P)
 	var/dam = P.damage
 	// mining projectiles have an edge
 	if(is_type_in_typecache(P, extra_dam_proj))

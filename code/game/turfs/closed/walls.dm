@@ -29,6 +29,20 @@
 
 	var/list/dent_decals
 
+	// The wall will ignore damage from weak items, depending on their
+	// force, damage type, tool behavior, and sharpness. This is the minimum
+	// amount of force that a blunt, brute item must have to damage the wall.
+	var/min_dam = 8
+	// This should all be handled by integrity should that ever be expanded to walls.
+	var/max_health = 650
+	var/health = 300
+	// used to give mining projectiles a bit of an edge against conc walls
+	var/static/list/extra_dam_proj = typecacheof(list(
+		/obj/projectile/kinetic,
+		/obj/projectile/destabilizer,
+		/obj/projectile/plasma
+	))
+
 /turf/closed/wall/yesdiag
 	icon_state = "wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
@@ -64,10 +78,89 @@
 	. += deconstruction_hints(user)
 
 /turf/closed/wall/proc/deconstruction_hints(mob/user)
+	switch(health / max_health)
+		if(0.5 to 0.99)
+			. += "[p_they(TRUE)] look[p_s()] slightly damaged."
+		if(0.25 to 0.5)
+			. += "[p_they(TRUE)] appear[p_s()] heavily damaged."
+		if(0 to 0.25)
+			. += "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
 	return "<span class='notice'>The outer plating is <b>welded</b> firmly in place.</span>"
 
 /turf/closed/wall/attack_tk()
 	return
+
+/turf/closed/wall/proc/alter_health(delta)
+	health += delta
+	if(health <= 0)
+		// if damage put us 50 points or more below 0, we got proper demolished
+		dismantle_wall(health <= -50 ? TRUE : FALSE)
+		return FALSE
+	health = min(health, max_health)
+	return health
+
+/turf/closed/wall/bullet_act(obj/projectile/P)
+	. = ..()
+	var/dam = get_proj_damage(P)
+	if(!dam)
+		return
+	if(P.suppressed != SUPPRESSED_VERY)
+		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+	if(!QDELETED(src))
+		alter_health(-dam)
+
+// catch-all for using most items on the wall -- attempt to smash
+/turf/closed/wall/try_destroy(obj/item/W, mob/user, turf/T)
+	var/dam = get_item_damage(W)
+	user.do_attack_animation(src)
+	if(!dam)
+		to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
+		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		return TRUE
+	log_combat(user, src, "attacked", W)
+	user.visible_message("<span class='danger'>[user] hits [src] with [W]!</span>", \
+				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
+	switch(W.damtype)
+		if(BRUTE)
+			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+	alter_health(-dam)
+	return TRUE
+
+/turf/closed/wall/proc/get_item_damage(obj/item/I)
+	var/dam = I.force
+	if(istype(I, /obj/item/clothing/gloves/gauntlets))
+		dam = 20
+	else if(I.tool_behaviour == TOOL_MINING)
+		dam *= (4/3)
+	else
+		switch(I.damtype)
+			if(BRUTE)
+				if(I.get_sharpness())
+					dam *= 2/3
+			if(BURN)
+				dam *= 2/3
+			else
+				return 0
+	// if dam is below t_min, then the hit has no effect
+	return (dam < min_dam ? 0 : dam)
+
+/turf/closed/wall/proc/get_proj_damage(obj/projectile/P)
+	var/dam = P.damage
+	// mining projectiles have an edge
+	if(is_type_in_typecache(P, extra_dam_proj))
+		dam = max(dam, 30)
+	else
+		switch(P.damage_type)
+			if(BRUTE)
+				dam *= 1
+			if(BURN)
+				dam *= 2/3
+			else
+				return 0
+	// if dam is below t_min, then the hit has no effect
+	return (dam < min_dam ? 0 : dam)
 
 /turf/closed/wall/proc/dismantle_wall(devastated = FALSE)
 	create_sheets()
@@ -97,25 +190,36 @@
 	return null
 
 /turf/closed/wall/ex_act(severity, target)
-	if(target == src)
-		dismantle_wall(devastated = TRUE)
-		return
+	if(target == src || !density)
+		return ..()
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
-			//SN src = null
-			var/turf/NT = ScrapeAway()
-			NT.contents_explosion(severity, target)
-			return
+			alter_health(-2000)
 		if(EXPLODE_HEAVY)
-			if (prob(50))
-				dismantle_wall(devastated = TRUE)
-			else
-				dismantle_wall(devastated = FALSE)
+			alter_health(rand(-500, -800))
 		if(EXPLODE_LIGHT)
-			if (prob(hardness))
-				dismantle_wall(devastated = FALSE)
-	if(!density)
-		..()
+			alter_health(rand(-200, -700))
+
+// /turf/closed/wall/ex_act(severity, target)
+// 	if(target == src)
+// 		dismantle_wall(devastated = TRUE)
+// 		return
+// 	switch(severity)
+// 		if(EXPLODE_DEVASTATE)
+// 			//SN src = null
+// 			var/turf/NT = ScrapeAway()
+// 			NT.contents_explosion(severity, target)
+// 			return
+// 		if(EXPLODE_HEAVY)
+// 			if (prob(50))
+// 				dismantle_wall(devastated = TRUE)
+// 			else
+// 				dismantle_wall(devastated = FALSE)
+// 		if(EXPLODE_LIGHT)
+// 			if (prob(hardness))
+// 				dismantle_wall(devastated = FALSE)
+// 	if(!density)
+// 		..()
 
 
 /turf/closed/wall/blob_act(obj/structure/blob/B)
