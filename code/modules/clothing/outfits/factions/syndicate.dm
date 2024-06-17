@@ -204,6 +204,28 @@
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
 
+/datum/outfit/job/syndicate/bartender/suns
+	name = "Syndicate - Student Mixologist (SUNS)"
+	id_assignment = "Student Mixologist"
+
+	uniform = /obj/item/clothing/under/syndicate/suns/uniform2
+	alt_uniform = /obj/item/clothing/under/syndicate/suns/alt
+	mask = /obj/item/clothing/mask/breath/suns
+	suit = null
+	belt = null
+	head = null
+	shoes = /obj/item/clothing/shoes/laceup/suns
+	gloves = null
+	ears = null
+	accessory = /obj/item/clothing/accessory/waistcoat/suns/poof
+
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+
+	backpack_contents = null
+
 /datum/outfit/job/syndicate/bartender/twink
 	name = "Syndicate - Bartender (Twinkleshine, Donk)"
 
