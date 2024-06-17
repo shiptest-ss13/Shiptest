@@ -246,6 +246,10 @@
 			short_name = params["new_template_short_name"]
 			update_static_data(usr, ui)
 			return TRUE
+		if("setTemplateIconState")
+			token_icon_state = params["new_template_icon_state"]
+			update_static_data(usr, ui)
+			return TRUE
 		if("setTemplateDescription")
 			description = params["new_template_description"]
 			update_static_data(usr, ui)
@@ -335,76 +339,90 @@
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
 	name = "Blackpill-Class Manned Torpedo"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
 	name = "Superpill-Class Experimental Engineering Platform"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
 	name = "Kunai Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
 //your subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CMSV"
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
 	name = "Nanotrasen Ancon-Class Command Ship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
 	file_name = "frontiersmen_gut"
 	name = "Gut Combat Freighter"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
 	name = "Anvil-Class Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-Class Ambulance"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/haste
 	file_name = "inteq_haste"
 	name = "Haste-class Ambulance"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "PGF"
 
 /datum/map_template/shuttle/subshuttles/brawler
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"

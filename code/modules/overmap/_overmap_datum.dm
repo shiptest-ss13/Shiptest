@@ -1,3 +1,8 @@
+#define INTERACTION_OVERMAP_DOCK "Dock"
+#define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
+#define INTERACTION_OVERMAP_HAIL "Hail"
+#define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
+
 /**
  * # Overmap objects
  *
@@ -26,6 +31,9 @@
 	VAR_FINAL/x
 	/// The y position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
 	VAR_FINAL/y
+
+	/// The total lists of interactions vessels can do with this object. If nothing, then vessels are unable to interact with this object.
+	var/list/interaction_options
 
 	/// The time, in deciseconds, needed for this object to call
 	var/dock_time
@@ -223,6 +231,99 @@
 	RETURN_TYPE(/turf)
 	return
 
+/**
+ * Interacts with another overmap datum.
+ * Sets X and Y equal to null. Does not check for distance or nulls.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ */
+/datum/overmap/proc/do_interaction_with(mob/living/user, datum/overmap/interact_target)
+	if(!user)
+		return
+	if(!istype(interact_target))
+		CRASH("Overmap datum [src] tried to interact with an invalid overmap datum. What?")
+
+	var/list/possible_interactions = interact_target.get_interactions(user, src)
+
+	if(!possible_interactions)
+		return "There is nothing of intrest at [interact_target]."
+
+	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions)
+
+	switch(choice)
+		if(INTERACTION_OVERMAP_DOCK)
+			var/list/dockables = interact_target.get_dockable_locations(src)
+			if(!dockables.len)
+				return "No open ports on [interact_target]."
+			choice = tgui_input_list(usr, "Select docking location at [interact_target]?", "Dock at", dockables)
+			if(!choice)
+				return "Interaction aborted."
+			return Dock(interact_target, choice)
+		if(INTERACTION_OVERMAP_QUICKDOCK)
+			return Dock(interact_target)
+		if(INTERACTION_OVERMAP_HAIL)
+			return do_hail(user, interact_target)
+		if(INTERACTION_OVERMAP_INTERDICTION)
+			return "Not implmented. Aborting"
+
+/**
+ * Gets all the available interaction options.
+ *
+ * * user - The user requesting the options.
+ * * requesting_interactor - The overmap datum requesting the options.
+ */
+/datum/overmap/proc/do_hail(mob/living/user, datum/overmap/interact_target)
+	to_chat(user, span_danger("How are you doing this with no equipment...?"))
+	return FALSE
+
+/datum/overmap/ship/controlled/do_hail(mob/living/user, datum/overmap/interact_target)
+	if(!interact_target)
+		return "Invalid Target."
+	var/input = stripped_input(user, "Please choose a message to hail the target with.", "Hailing Vessel")
+	if(!input)
+		return
+	priority_announce("[input]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
+	interact_target.relay_message(user,interact_target, input)
+	deadchat_broadcast(" hailed the <span class='name'>[interact_target.name]</span>: [input]", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
+	return
+
+/**
+ * Gets all the available interaction options.
+ *
+ * * user - The user requesting the options.
+ * * requesting_interactor - The overmap datum requesting the options.
+ */
+/datum/overmap/proc/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
+	return FALSE
+
+/**
+ * Gets all the available interaction options.
+ *
+ * * user - The user requesting the options.
+ * * requesting_interactor - The overmap datum requesting the options.
+ */
+/datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
+	priority_announce("[message]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
+	return
+
+/**
+ * Gets all the available interaction options.
+ *
+ * * user - The user requesting the options.
+ * * requesting_interactor - The overmap datum requesting the options.
+ */
+/datum/overmap/proc/get_interactions(mob/living/user, datum/overmap/requesting_interactor)
+	return interaction_options
+
+/**
+ * Gets all the available interaction options.
+ *
+ * * user - The user requesting the options.
+ * * requesting_interactor - The overmap datum requesting the options.
+ */
+/datum/overmap/proc/get_dockable_locations(datum/overmap/requesting_interactor)
+	return FALSE
+
 ///////////////////////////////////////////////////////////// HERE BE DRAGONS - DOCKING CODE /////////////////////////////////////////////////////////////
 
 /**
@@ -242,7 +343,10 @@
 		return "Already docking!"
 	docking = TRUE
 
-	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
+	var/obj/docking_port/stationary/override_dock
+	if(istype(force,/obj/docking_port/stationary))
+		override_dock = force
+	var/datum/docking_ticket/ticket = dock_target.pre_docked(src, override_dock)
 	var/ticket_error = ticket?.docking_error
 	if(!ticket || ticket_error)
 		qdel(ticket)
@@ -268,7 +372,7 @@
  *
  * Returns - A docking ticket that will be passed to [datum/overmap/proc/pre_dock] on the dock requester.
  */
-/datum/overmap/proc/pre_docked(datum/overmap/dock_requester)
+/datum/overmap/proc/pre_docked(datum/overmap/dock_requester, override_dock)
 	RETURN_TYPE(/datum/docking_ticket)
 	return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 

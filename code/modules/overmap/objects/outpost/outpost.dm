@@ -211,9 +211,16 @@
 		// give the elevator a first floor
 		plat.master_datum.add_floor_landmarks(anchor_landmark, shaft_li - anchor_landmark)
 
-/datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	var/obj/docking_port/stationary/h_dock
 	var/datum/map_template/outpost/h_template = get_hangar_template(dock_requester.shuttle_port)
+
+	if(src in dock_requester.blacklisted)
+		return new /datum/docking_ticket(_docking_error = "Docking request denied: [dock_requester.blacklisted[src]]")
+
+	if(override_dock)
+		return new /datum/docking_ticket(override_dock, src, dock_requester)
+
 	if(!h_template || !length(shaft_datums))
 		return FALSE
 
@@ -226,11 +233,15 @@
 		)
 		return FALSE
 
-	if(src in dock_requester.blacklisted)
-		return new /datum/docking_ticket(_docking_error = "Docking request denied: [dock_requester.blacklisted[src]]")
-
-	adjust_dock_to_shuttle(h_dock, dock_requester.shuttle_port)
 	return new /datum/docking_ticket(h_dock, src, dock_requester)
+
+/datum/overmap/outpost/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
+		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
+			if(!h_dock.docked && !h_dock.current_docking_ticket)
+				LAZYADD(docks, h_dock)
+	return docks
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
 	for(var/mob/M as anything in GLOB.player_list)

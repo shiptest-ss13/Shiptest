@@ -8,6 +8,7 @@
 /datum/overmap/ship/controlled
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_HAIL, INTERACTION_OVERMAP_INTERDICTION)
 
 	///Vessel estimated thrust per full burn
 	var/est_thrust
@@ -99,6 +100,8 @@
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
+		stationary_icon_state = creation_template.token_icon_state
+		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
@@ -195,11 +198,22 @@
 	log_shuttle("[src] [REF(src)] COMPLETE UNDOCK: FINISHED UNDOCK FROM [docked_to]")
 	return ..()
 
-/datum/overmap/ship/controlled/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/ship/controlled/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
+	if(override_dock)
+		return new /datum/docking_ticket(override_dock, src, dock_requester)
+
 	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
 		if(dock_requester.shuttle_port.check_dock(docking_port))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
 	return ..()
+
+/datum/overmap/ship/controlled/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/obj/docking_port/stationary/docking_port as anything in shuttle_port.docking_points)
+		if(!docking_port.docked && !docking_port.current_docking_ticket)
+			LAZYADD(docks, docking_port)
+	return docks
+
 
 /**
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such

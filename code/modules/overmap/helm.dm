@@ -309,6 +309,13 @@
 		switch(action)
 			if("act_overmap")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+					to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
+					return
+				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
+				say(current_ship.do_interaction_with(usr, to_act))
+				return
+			if("quick_dock")
+				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)

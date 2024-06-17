@@ -184,6 +184,7 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istext(data["token_icon_state"]))
 			S.token_icon_state = data["token_icon_state"]
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
 			if(istext(data["faction_name"]))

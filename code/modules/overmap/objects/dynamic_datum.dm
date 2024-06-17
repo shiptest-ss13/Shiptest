@@ -7,6 +7,9 @@
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
+
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
+
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
 	///The preset ruin template to load, if/when it is loaded.
@@ -72,21 +75,29 @@
 	if(reserve_docks)
 		return get_turf(pick(reserve_docks))
 
-/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	if(loading)
 		return new /datum/docking_ticket(_docking_error = "[src] is currently being scanned for suitable docking locations by another ship. Please wait.")
 	if(!load_level())
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
-		var/dock_to_use = null
-		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-			if(!dock.docked)
-				dock_to_use = dock
-				break
+		var/dock_to_use = override_dock
+		if(!override_dock)
+			for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+				if(!dock.docked)
+					dock_to_use = dock
+					break
 
 		if(!dock_to_use)
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
+
+/datum/overmap/dynamic/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+		if(!dock.docked && !dock.current_docking_ticket)
+			LAZYADD(docks, dock)
+	return docks
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)

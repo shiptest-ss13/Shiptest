@@ -192,5 +192,5 @@
 	default_baseturf = /turf/open/floor/white/lit
 	weather_controller_type = null
 	ruin_type = null
-	weight = 543233
+	weight = 0
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
