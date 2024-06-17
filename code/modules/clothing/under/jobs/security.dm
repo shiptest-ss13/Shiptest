@@ -290,18 +290,18 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/clothing/under/rank/security/officer/frontier
+/obj/item/clothing/under/frontiersmen
 	name = "\improper Frontiersmen uniform"
 	desc = "Worn by members of the Frontiersmen pirate fleet. It's very uncomfortable to move around in."
 	icon_state = "frontier"
 	item_state = "gy_suit"
 
-/obj/item/clothing/under/rank/security/officer/frontier/officer
+/obj/item/clothing/under/frontiersmen/officer
 	name = "\improper Frontiersmen officer's uniform"
 	desc = "Worn by officers of the Frontiersmen pirate fleet. It's less comfortable than it looks."
 	icon_state = "frontier_officer"
 
-/obj/item/clothing/under/rank/security/officer/frontier/admiral
+/obj/item/clothing/under/frontiersmen/admiral
 	name = "\improper Frontiersmen admiral's uniform"
 	desc = "Worn by admirals of the Frontiersmen pirate fleet. It's the only Frontiersman uniform that isn't mass produced."
 	icon_state = "frontier_admiral"
