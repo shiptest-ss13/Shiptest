@@ -72,10 +72,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Panacea_bar_shut";
-	dir = 4
-	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "aG" = (
@@ -163,7 +159,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/office/lobby)
 "bx" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 8
 	},
@@ -307,7 +303,8 @@
 /obj/structure/closet/wall/orange{
 	name = "Engineering locker";
 	pixel_y = 29;
-	dir = 1
+	dir = 1;
+	req_one_access = list(10, 20)
 	},
 /obj/item/clothing/suit/toggle/suns/workervest{
 	pixel_y = 8;
@@ -482,7 +479,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "df" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormthree)
 "dh" = (
 /obj/structure/sink{
@@ -550,7 +547,7 @@
 	},
 /area/ship/crew/dorm/dormfour)
 "dy" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "dz" = (
 /obj/structure/filingcabinet/double{
@@ -726,6 +723,9 @@
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
+"er" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/maintenance)
 "eu" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
@@ -903,7 +903,9 @@
 	},
 /obj/structure/closet/wall/white/chem{
 	pixel_y = 28;
-	dir = 1
+	dir = 1;
+	req_one_access = list(5, 20);
+	name = "Pharmaceutical Supply"
 	},
 /obj/item/reagent_containers/glass/bottle/ammonia{
 	pixel_x = 11;
@@ -1033,9 +1035,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Panacea_bar_shut"
-	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "gi" = (
@@ -1076,22 +1075,20 @@
 /area/ship/engineering)
 "gq" = (
 /obj/structure/chair/comfy/purple/corpo/directional/south,
-/obj/item/storage/secure/safe/sc_ssafe{
-	dir = 8;
-	pixel_y = 0;
-	pixel_x = -31
-	},
-/obj/item/storage/belt/sabre/suns,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/item/storage/secure/safe/suns{
+	dir = 8;
+	pixel_x = -30
 	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
 "gv" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 1
 	},
@@ -1113,7 +1110,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/office/lobby)
 "gE" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 1
@@ -1170,7 +1167,7 @@
 	},
 /area/ship/crew/office)
 "hd" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/hydroponics)
 "hf" = (
 /obj/effect/turf_decal/suns/line/marble{
@@ -1277,7 +1274,9 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/item/toy/plush/moth/firewatch,
+/obj/item/toy/plush/moth/firewatch{
+	layer = 4
+	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/ship/dirt,
 /area/ship/crew/hydroponics)
@@ -1311,7 +1310,7 @@
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
 "hI" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/toy/plush/moth/rainbow{
 	pixel_y = 6
 	},
@@ -1329,10 +1328,6 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Panacea_bar_shut";
 	dir = 4
 	},
 /turf/open/floor/suns/dark/plain,
@@ -1354,6 +1349,9 @@
 	},
 /obj/structure/cable/blue{
 	icon_state = "2-9"
+	},
+/obj/structure/cable/blue{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1441,7 +1439,7 @@
 	},
 /area/ship/crew/dorm/dormfour)
 "io" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner,
 /obj/item/toy/windupToolbox{
 	pixel_y = 4
@@ -1459,10 +1457,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Panacea_bar_shut";
-	dir = 4
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
@@ -1543,7 +1537,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "iL" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 1
 	},
@@ -1595,7 +1589,7 @@
 /turf/open/floor/suns,
 /area/ship/bridge)
 "iZ" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 1
@@ -1622,7 +1616,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 2;
-	name = "Psych's Room"
+	name = "Psych's Room";
+	req_one_access = list(19, 20, 57, 58, 70)
 	},
 /turf/open/floor/suns/hatch{
 	color = "#56342A"
@@ -1926,7 +1921,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
 "lT" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/machinery/reagentgrinder/constructed{
 	pixel_y = 4;
 	pixel_x = -7
@@ -1945,7 +1940,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "lV" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
 "lX" = (
 /obj/structure/table/wood/reinforced,
@@ -1968,13 +1963,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Panacea_bar_shut"
-	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "mb" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/psych)
 "md" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -2226,7 +2218,8 @@
 	},
 /obj/item/pinpointer/crew{
 	pixel_y = 0;
-	pixel_x = 5
+	pixel_x = 5;
+	req_one_access = list(5, 20)
 	},
 /obj/item/storage/box/rxglasses{
 	pixel_x = -8;
@@ -2287,14 +2280,16 @@
 	name = "Engine Blast Doors";
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = -8
+	pixel_y = -8;
+	req_one_access = list(10, 19, 20, 57, 58)
 	},
 /obj/machinery/button/door{
 	name = "Window Blast Doors";
 	id = "Panacea_engine_window_blasts";
 	pixel_x = 20;
 	pixel_y = 3;
-	dir = 8
+	dir = 8;
+	req_one_access = list(10, 19, 20, 57, 58)
 	},
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
@@ -2475,7 +2470,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/medical{
-	name = "Medbay"
+	name = "Medbay";
+	req_one_access = list(5, 19, 57, 45)
 	},
 /turf/open/floor/suns,
 /area/ship/medical)
@@ -2515,7 +2511,8 @@
 /obj/structure/closet/wall/white/med{
 	name = "medical locker";
 	pixel_y = 29;
-	dir = 1
+	dir = 1;
+	req_one_access = list(5, 20)
 	},
 /obj/item/clothing/gloves/color/latex/nitrile/suns{
 	pixel_y = -7;
@@ -2679,7 +2676,7 @@
 /turf/open/floor/suns/dark,
 /area/ship/bridge)
 "pG" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 1
 	},
@@ -2747,7 +2744,8 @@
 	dir = 8
 	},
 /obj/structure/closet/wall/blue/directional/north{
-	name = "XO's Locker"
+	name = "XO's Locker";
+	req_one_access = list(20, 57)
 	},
 /obj/item/clothing/gloves/suns/xo{
 	pixel_y = -7
@@ -2768,10 +2766,6 @@
 	pixel_x = 10;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/sabre/suns{
-	pixel_y = 2;
-	pixel_x = -5
-	},
 /obj/item/clothing/mask/breath/suns{
 	pixel_x = 13;
 	pixel_y = 2
@@ -2787,6 +2781,9 @@
 /obj/machinery/atmospherics/components/binary/valve/layer4{
 	dir = 4;
 	name = "Disposals Outlet Valve"
+	},
+/obj/structure/cable/blue{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2841,7 +2838,7 @@
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
 "qA" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
 "qC" = (
 /obj/structure/closet/firecloset/wall/directional/north,
@@ -2851,7 +2848,8 @@
 /obj/structure/closet/wall/orange{
 	name = "Engineering locker";
 	pixel_y = 29;
-	dir = 1
+	dir = 1;
+	req_one_access = list(10, 20)
 	},
 /obj/item/clothing/gloves/color/yellow{
 	pixel_x = 5;
@@ -2986,7 +2984,8 @@
 /area/ship/crew/office/lobby)
 "rc" = (
 /obj/structure/closet/wall/red/directional/north{
-	name = "Captain's Locker"
+	name = "Captain's Locker";
+	req_access = list(20)
 	},
 /obj/item/clothing/gloves/suns/captain{
 	pixel_x = -7;
@@ -3010,10 +3009,6 @@
 /obj/item/clothing/head/suns/captain{
 	pixel_x = -5;
 	pixel_y = -11
-	},
-/obj/item/storage/belt/sabre/suns/captain{
-	pixel_y = 0;
-	pixel_x = -11
 	},
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns{
 	pixel_y = 7;
@@ -3241,7 +3236,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen/kitchen)
 "th" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/structure/bedsheetbin{
 	pixel_x = -1;
 	pixel_y = 1
@@ -3330,7 +3325,7 @@
 /turf/open/floor/suns/dark,
 /area/ship/crew/cryo)
 "tS" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 8
 	},
@@ -3408,8 +3403,6 @@
 /obj/item/seeds/potato,
 /obj/item/seeds/nettle,
 /obj/item/seeds/nettle,
-/obj/item/seeds/lemon,
-/obj/item/seeds/lemon,
 /obj/item/seeds/eggplant,
 /obj/item/seeds/eggplant,
 /obj/item/seeds/cotton,
@@ -3468,7 +3461,7 @@
 /turf/open/floor/suns,
 /area/ship/medical)
 "uL" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 4
 	},
@@ -3531,7 +3524,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/security{
-	name = "Peacekeeper's Office"
+	name = "Peacekeeper's Office";
+	req_one_access = list(1, 19, 20, 57, 58)
 	},
 /turf/open/floor/suns,
 /area/ship/security)
@@ -3586,6 +3580,9 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/dormfour)
+"vn" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/engineering)
 "vq" = (
 /obj/structure/closet/wall/blue/directional/west{
 	name = "Spare EVA Closet"
@@ -4020,6 +4017,9 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormtwo)
+"yh" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/office)
 "ym" = (
 /obj/machinery/holopad/emergency,
 /turf/open/floor/suns/pattern,
@@ -4176,7 +4176,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 2;
-	name = "Bar"
+	name = "Bar";
+	req_access = list(19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
@@ -4318,7 +4319,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
 "Av" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/toy/plush/hornet/gay{
 	pixel_x = 8;
 	pixel_y = 7
@@ -4386,7 +4387,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/canteen/kitchen)
 "Bc" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "Bd" = (
 /obj/effect/turf_decal/suns/line/marble/fill{
@@ -4416,7 +4417,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/office/lobby)
 "Bk" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/machinery/microwave,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 5
@@ -4424,7 +4425,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen/kitchen)
 "Bl" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "Bo" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
@@ -4569,7 +4570,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "Command Deck"
+	name = "Command Deck";
+	req_one_access = list(19, 20, 57, 58)
 	},
 /turf/open/floor/suns/dark,
 /area/ship/bridge)
@@ -4587,6 +4589,9 @@
 	},
 /turf/open/floor/suns/grid,
 /area/ship/crew/office/lobby)
+"BU" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/cryo)
 "BV" = (
 /obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/suns/plain,
@@ -4615,7 +4620,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Ce" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/storage/pill_bottle/dice{
 	pixel_y = 6;
 	pixel_x = -7
@@ -4673,6 +4678,9 @@
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
+"CA" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/toilet/two)
 "CD" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/blue{
@@ -4716,7 +4724,6 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "CV" = (
-/obj/structure/closet,
 /obj/item/clothing/gloves/tackler/dolphin/suns{
 	pixel_x = -8;
 	pixel_y = -6
@@ -4747,6 +4754,10 @@
 	},
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 4
+	},
+/obj/structure/closet/secure_closet/suns{
+	req_one_access = list(1, 20);
+	name = "Peacekeeper's locker"
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/security)
@@ -4891,7 +4902,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "DJ" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "DN" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -4914,6 +4925,9 @@
 	},
 /obj/machinery/power/ship_gravity,
 /obj/machinery/light/directional/west,
+/obj/structure/cable/blue{
+	icon_state = "0-2"
+	},
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
 "Ei" = (
@@ -5110,6 +5124,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/blue{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Fn" = (
@@ -5220,7 +5237,6 @@
 /turf/open/floor/suns/grid,
 /area/ship/maintenance)
 "FM" = (
-/obj/structure/closet/cabinet,
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/item/clothing/under/syndicate/suns/alt{
 	pixel_x = -3;
@@ -5249,6 +5265,11 @@
 /obj/item/melee/classic_baton{
 	name = "wooden baton";
 	pixel_y = -4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "cabinet";
+	req_one_access = list(20, 25);
+	name = "Mixologist's Closet"
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
@@ -5319,7 +5340,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/cryo)
 "Gi" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/office)
 "Gl" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5380,7 +5401,7 @@
 /turf/open/floor/suns/pattern,
 /area/ship/crew/office/lobby)
 "GI" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 1
@@ -5416,7 +5437,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	name = "Staff Dorms"
+	name = "Staff Dorms";
+	req_one_access = list(1, 5, 10, 19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/hatch{
 	color = "#56342A"
@@ -5457,7 +5479,8 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/toy/plush/beeplushie{
-	pixel_x = 5
+	pixel_x = 5;
+	layer = 4
 	},
 /obj/machinery/light_switch{
 	dir = 4;
@@ -5482,7 +5505,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "Hi" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 1
 	},
@@ -5569,7 +5592,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/cryo)
 "HL" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormfour)
 "HO" = (
 /obj/effect/turf_decal/suns/line/marble{
@@ -5602,10 +5625,10 @@
 /turf/open/floor/suns,
 /area/ship/crew/canteen)
 "Ig" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
 "In" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
 "Ip" = (
 /obj/effect/turf_decal/suns/line/fancy/fill{
@@ -5620,7 +5643,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "Command Deck"
+	name = "Command Deck";
+	req_one_access = list(19, 20, 57, 58)
 	},
 /turf/open/floor/suns/dark,
 /area/ship/bridge)
@@ -5685,7 +5709,7 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/office/lobby)
 "IP" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner{
 	dir = 4
 	},
@@ -5801,7 +5825,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Psych's Office"
+	name = "Psych's Office";
+	req_one_access = list(19, 20, 57, 58, 70)
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/medical/psych)
@@ -5814,13 +5839,6 @@
 	dir = 1;
 	pixel_x = -7;
 	pixel_y = -19
-	},
-/obj/machinery/button/door{
-	id = "Panacea_bar_shut";
-	name = "Bar Shutters";
-	pixel_x = 1;
-	dir = 1;
-	pixel_y = -20
 	},
 /turf/open/floor/suns/pattern,
 /area/ship/crew/canteen)
@@ -5882,6 +5900,9 @@
 "JQ" = (
 /turf/template_noop,
 /area/template_noop)
+"JS" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/canteen)
 "JT" = (
 /obj/structure/urinal{
 	pixel_y = 28
@@ -5951,7 +5972,7 @@
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
 "Kj" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
 "Kp" = (
 /obj/effect/turf_decal/suns/alt/fancy/top_center{
@@ -6038,6 +6059,9 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
+"KP" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/dorm/dormthree)
 "KQ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -6151,8 +6175,8 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	req_access = list(11);
-	name = "Engineering"
+	name = "Engineering";
+	req_one_access = list(10, 19, 20, 57, 58)
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -6197,7 +6221,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock{
-	name = "Staff Dorms"
+	name = "Staff Dorms";
+	req_one_access = list(1, 5, 10, 19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/hatch{
 	color = "#56342A"
@@ -6252,7 +6277,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "LU" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill/corner,
 /obj/item/instrument/accordion{
 	pixel_y = 5;
@@ -6273,7 +6298,7 @@
 	},
 /area/ship/crew/dorm/dormtwo)
 "LY" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/reagent_containers/food/condiment/saltshaker{
 	pixel_x = -2;
 	pixel_y = 11
@@ -6296,7 +6321,8 @@
 /area/ship/crew/canteen/kitchen)
 "LZ" = (
 /obj/structure/closet/wall/red/directional/west{
-	name = "equipment locker"
+	name = "equipment locker";
+	req_one_access = list(1, 20)
 	},
 /obj/item/storage/box/zipties{
 	pixel_y = 8;
@@ -6500,7 +6526,7 @@
 /turf/open/floor/suns/dark/pattern,
 /area/ship/medical/psych)
 "Ng" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/instrument/banjo,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
@@ -6570,7 +6596,7 @@
 	},
 /area/ship/crew/office)
 "Nz" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/reagent_containers/food/condiment/mayonnaise{
 	pixel_x = 2;
 	pixel_y = 15
@@ -6722,6 +6748,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/blue{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "OI" = (
@@ -6795,6 +6824,9 @@
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/ccommons)
+"Pf" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/office/lobby)
 "Ps" = (
 /obj/structure/filingcabinet/double{
 	dir = 1
@@ -6855,6 +6887,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1;
 	icon = 'icons/obj/stairs.dmi'
@@ -7103,7 +7138,7 @@
 	},
 /area/ship/crew/dorm/dormfour)
 "Ro" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/cutting_board{
 	pixel_y = 3
 	},
@@ -7294,7 +7329,7 @@
 /turf/open/floor/suns,
 /area/ship/crew/toilet)
 "Sl" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet/three)
 "Sp" = (
 /obj/machinery/modular_computer/console/preset/command{
@@ -7472,10 +7507,10 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/office/lobby)
 "Ts" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet/two)
 "Tv" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "Tw" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -7484,7 +7519,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/crew/hydroponics)
 "TB" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/toy/plush/mora{
 	pixel_y = 5;
 	pixel_x = -3
@@ -7510,13 +7545,13 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	req_access = list(11);
-	name = "Engineering"
+	name = "Engineering";
+	req_one_access = list(10, 19, 20, 57, 58)
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "TL" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "TR" = (
 /obj/structure/table/wood/reinforced,
@@ -7588,7 +7623,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "Ux" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance)
 "UC" = (
 /obj/effect/turf_decal/suns/alt/fancy/bottom_right{
@@ -7935,12 +7970,13 @@
 	name = "Privacy Shutters";
 	pixel_y = 1;
 	pixel_x = -20;
-	dir = 4
+	dir = 4;
+	req_one_access = list(19, 20, 57, 58)
 	},
 /turf/open/floor/suns/dark,
 /area/ship/bridge)
 "WI" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
@@ -8108,12 +8144,13 @@
 	dir = 1
 	},
 /obj/machinery/door/window/eastright{
-	dir = 8
+	dir = 8;
+	req_one_access = list(1, 5, 10, 19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/grid,
 /area/ship/maintenance)
 "XU" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "Yd" = (
 /obj/structure/railing{
@@ -8140,7 +8177,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "Yf" = (
-/obj/structure/table/greyscale,
+/obj/structure/table,
 /obj/item/newspaper{
 	pixel_y = 2
 	},
@@ -8199,8 +8236,14 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/blue{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"YG" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/canteen/kitchen)
 "YH" = (
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/turf_decal/borderfloorwhite{
@@ -8213,7 +8256,9 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/item/toy/plush/xader,
+/obj/item/toy/plush/xader{
+	layer = 4
+	},
 /turf/open/floor/ship/dirt,
 /area/ship/crew/hydroponics)
 "YL" = (
@@ -8258,7 +8303,7 @@
 /turf/open/floor/suns,
 /area/ship/crew/toilet/three)
 "Zh" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/office/lobby)
 "Zj" = (
 /obj/structure/chair/comfy/purple/directional/east,
@@ -8294,7 +8339,8 @@
 	name = "Privacy Shutters";
 	pixel_x = 30;
 	pixel_y = -20;
-	dir = 1
+	dir = 1;
+	req_one_access = list(5, 19, 20, 57, 45)
 	},
 /turf/open/floor/suns,
 /area/ship/medical)
@@ -8511,7 +8557,7 @@ JQ
 JQ
 JQ
 JQ
-Tv
+vn
 Tv
 ua
 bY
@@ -8529,7 +8575,7 @@ gw
 ar
 Vr
 Tv
-Tv
+vn
 JQ
 JQ
 JQ
@@ -8547,7 +8593,7 @@ JQ
 JQ
 JQ
 JQ
-Tv
+vn
 Tv
 Nd
 Yn
@@ -8567,7 +8613,7 @@ Hp
 Cs
 xO
 Tv
-Tv
+vn
 JQ
 JQ
 JQ
@@ -8646,7 +8692,7 @@ df
 df
 df
 df
-df
+KP
 JQ
 JQ
 "}
@@ -8684,7 +8730,7 @@ xp
 iw
 FZ
 df
-df
+KP
 JQ
 "}
 (8,1,1) = {"
@@ -8722,7 +8768,7 @@ sp
 Op
 eZ
 df
-df
+KP
 "}
 (9,1,1) = {"
 Fr
@@ -9243,7 +9289,7 @@ FL
 Ux
 "}
 (23,1,1) = {"
-Ts
+CA
 Ts
 oG
 qA
@@ -9277,11 +9323,11 @@ bK
 vX
 XT
 Ux
-Ux
+er
 "}
 (24,1,1) = {"
 JQ
-Ts
+CA
 qA
 qA
 bZ
@@ -9393,7 +9439,7 @@ JQ
 (27,1,1) = {"
 JQ
 JQ
-qA
+BU
 qA
 qA
 qA
@@ -9507,7 +9553,7 @@ JQ
 JQ
 JQ
 JQ
-TL
+JS
 TL
 IF
 Ra
@@ -9531,7 +9577,7 @@ OS
 Vm
 VW
 Ig
-Ig
+YG
 JQ
 JQ
 JQ
@@ -9841,7 +9887,7 @@ JQ
 JQ
 JQ
 JQ
-Gi
+yh
 Gi
 tt
 ez
@@ -9879,7 +9925,7 @@ JQ
 JQ
 JQ
 JQ
-Gi
+yh
 cj
 lB
 Lr
@@ -9959,7 +10005,7 @@ JQ
 JQ
 JQ
 JQ
-Zh
+Pf
 Zh
 Zh
 qZ
@@ -9967,7 +10013,7 @@ ys
 BT
 Zh
 Zh
-Zh
+Pf
 JQ
 JQ
 JQ
