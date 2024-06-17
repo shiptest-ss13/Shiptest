@@ -663,15 +663,11 @@
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime
-	name = "orange soda"
-	desc = "You wanted ORANGE. It gave you Lemon Lime."
+	name = "lemon-lime soda"
+	desc = "Is it lemon? Is it lime? The expert opinions vary."
 	icon_state = "lemon-lime"
 	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
 	foodtype = FRUIT
-
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime/Initialize()
-	. = ..()
-	name = "lemon-lime soda"
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
 	name = "Sol Dry"

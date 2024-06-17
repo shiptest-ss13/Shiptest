@@ -152,6 +152,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/remains/human,
+/obj/item/clothing/neck/tie/red,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "dU" = (
@@ -223,14 +224,14 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "fq" = (
-/obj/machinery/door/keycard/stockroom,
+/obj/machinery/door/keycard/harmfactory/office,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "fF" = (
-/obj/machinery/door/keycard/stockroom,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory/office,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "fJ" = (
@@ -287,7 +288,7 @@
 "gx" = (
 /obj/structure/filingcabinet/employment,
 /obj/structure/safe/floor,
-/obj/item/keycard/office,
+/obj/item/keycard/harmfactory/office,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "gz" = (
@@ -303,14 +304,14 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gP" = (
-/obj/machinery/door/keycard/office,
+/obj/machinery/door/keycard/harmfactory/stockroom,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "hf" = (
-/obj/machinery/door/keycard/office,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory/stockroom,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "hg" = (
@@ -370,15 +371,15 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "je" = (
-/obj/machinery/door/keycard/entry,
+/obj/machinery/door/keycard/harmfactory,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "jq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/keycard/entry,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "jB" = (
@@ -430,18 +431,14 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "kC" = (
-/obj/machinery/door/keycard{
-	puzzle_id = "factory4"
-	},
+/obj/machinery/door/keycard/harmfactory/entry,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "kI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/keycard{
-	puzzle_id = "factory4"
-	},
+/obj/machinery/door/keycard/harmfactory/entry,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "kM" = (
@@ -1216,9 +1213,7 @@
 /area/ruin/powered)
 "BQ" = (
 /obj/structure/table/greyscale,
-/obj/item/keycard{
-	puzzle_id = "factory4"
-	},
+/obj/item/keycard/harmfactory,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "BW" = (
@@ -1453,7 +1448,7 @@
 /area/ruin/powered)
 "GO" = (
 /obj/structure/table/greyscale,
-/obj/item/keycard/stockroom,
+/obj/item/keycard/harmfactory/stockroom,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "GR" = (
@@ -1866,11 +1861,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "QK" = (
-/obj/structure/cable,
-/obj/item/keycard/entry,
-/obj/machinery/light/dim/directional/north,
-/obj/structure/grille,
-/turf/open/floor/plating,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/obj/item/keycard/harmfactory/entry,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "Rd" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3066,7 +3061,7 @@ mc
 px
 st
 vi
-QK
+sN
 te
 te
 te
@@ -3110,7 +3105,7 @@ pC
 sx
 vi
 sN
-te
+QK
 te
 te
 Hs
