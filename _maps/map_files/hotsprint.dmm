@@ -8,6 +8,28 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"d" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"e" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/turf/open/floor/wood/ebony,
+/area/space)
+"f" = (
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood/maple,
+/area/space)
 "g" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -38,6 +60,29 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"m" = (
+/obj/structure/rack,
+/obj/item/clothing/head/cowboy/sec/roumain{
+	pixel_y = -1;
+	pixel_x = -7
+	},
+/obj/item/clothing/head/cowboy/sec/roumain{
+	pixel_x = 10
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"n" = (
+/obj/structure/rack,
+/obj/item/ammo_box/c38_box{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/c38_box{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "o" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
@@ -58,7 +103,7 @@
 /turf/open/floor/wood/mahogany,
 /area/space)
 "r" = (
-/obj/structure/closet/secure_closet/shadow,
+/obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/space)
 "s" = (
@@ -68,9 +113,27 @@
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/mahogany,
 /area/space)
+"v" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/railing/wood,
+/turf/open/floor/wood,
+/area/space)
+"w" = (
+/obj/structure/table/wood,
+/obj/item/clothing/under/suit/roumain,
+/turf/open/floor/wood/ebony,
+/area/space)
 "x" = (
 /obj/structure/railing/wood,
 /turf/open/floor/wood,
+/area/space)
+"y" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/armor/roumain,
+/obj/item/clothing/suit/armor/roumain,
+/turf/open/floor/wood/ebony,
 /area/space)
 "z" = (
 /turf/open/water/jungle,
@@ -91,16 +154,47 @@
 /turf/open/floor/wood,
 /area/space)
 "D" = (
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/table/wood,
+/obj/item/stack/sheet/hairlesshide,
+/obj/item/stack/sheet/hairlesshide,
+/obj/item/stack/sheet/hairlesshide,
+/obj/item/stack/sheet/hairlesshide,
+/obj/item/stack/sheet/cotton/durathread,
+/obj/item/stack/sheet/cotton/durathread,
+/obj/item/stack/sheet/cotton/durathread,
+/obj/item/stack/sheet/cotton/durathread,
+/obj/item/stack/sheet/cotton/durathread,
+/turf/open/floor/wood/ebony,
+/area/space)
+"E" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/filter{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/sillycup{
+	pixel_x = -5;
+	pixel_y = -3
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"F" = (
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
+	},
 /area/space)
 "H" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 6
 	},
 /turf/open/floor/wood/mahogany,
+/area/space)
+"I" = (
+/obj/structure/rack,
+/turf/open/floor/wood/ebony,
+/area/space)
+"J" = (
+/obj/structure/loom,
+/turf/open/floor/wood/ebony,
 /area/space)
 "K" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -115,8 +209,11 @@
 /turf/open/floor/wood,
 /area/space)
 "M" = (
-/obj/structure/closet/secure_closet/hunter,
-/turf/open/floor/wood/ebony,
+/obj/machinery/smartfridge/drying_rack{
+	name = "tanning rack";
+	desc = "A wooden contraption, used to dry skinned hides"
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "N" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -124,17 +221,33 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"O" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood/maple,
+/area/space)
 "P" = (
-/obj/structure/windoor_assembly{
-	dir = 8
+/obj/item/stack/sheet/durathread{
+	pixel_x = -10;
+	pixel_y = 10
 	},
+/obj/structure/rack,
+/obj/item/stack/sheet/durathread,
+/obj/item/stack/sheet/durathread{
+	pixel_y = 10
+	},
+/obj/item/stack/sheet/durathread{
+	pixel_x = -10
+	},
+/obj/item/stack/sheet/leather,
+/obj/item/stack/sheet/leather,
+/obj/item/stack/sheet/leather,
+/obj/item/stack/sheet/leather,
+/obj/item/stack/sheet/leather,
 /turf/open/floor/wood/ebony,
 /area/space)
 "R" = (
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/obj/structure/rack,
+/turf/open/floor/wood/maple,
 /area/space)
 "S" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
@@ -152,8 +265,31 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"V" = (
+/obj/structure/railing/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/space)
+"W" = (
+/obj/structure/table/wood,
+/obj/item/clothing/head/bearpelt{
+	pixel_y = 10
+	},
+/obj/item/kitchen/knife/hunting,
+/turf/open/floor/wood/ebony,
+/area/space)
 "X" = (
 /turf/open/floor/wood/maple,
+/area/space)
+"Z" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/cotton/cloth/ten,
+/obj/item/scalpel{
+	name = "leather knife";
+	desc = "A sharpened leather knife, used for leatherwork."
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 
 (1,1,1) = {"
@@ -384,20 +520,20 @@ a
 a
 a
 a
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 a
 a
 a
@@ -435,8 +571,6 @@ a
 a
 a
 a
-k
-k
 a
 a
 a
@@ -449,8 +583,10 @@ a
 a
 a
 a
-k
-k
+a
+a
+a
+a
 a
 a
 a
@@ -487,7 +623,6 @@ a
 a
 a
 a
-k
 a
 a
 a
@@ -502,7 +637,8 @@ a
 a
 a
 a
-k
+a
+a
 a
 a
 a
@@ -539,7 +675,6 @@ a
 a
 a
 a
-k
 a
 a
 a
@@ -554,7 +689,8 @@ a
 a
 a
 a
-k
+a
+a
 a
 a
 a
@@ -591,7 +727,6 @@ a
 a
 a
 a
-k
 a
 a
 a
@@ -606,7 +741,8 @@ a
 a
 a
 a
-k
+a
+a
 a
 a
 a
@@ -643,7 +779,6 @@ a
 a
 a
 a
-k
 a
 a
 a
@@ -658,7 +793,8 @@ a
 a
 a
 a
-k
+a
+a
 a
 a
 a
@@ -695,8 +831,6 @@ a
 a
 a
 a
-k
-k
 a
 a
 a
@@ -709,8 +843,10 @@ a
 a
 a
 a
-k
-k
+a
+a
+a
+a
 a
 a
 a
@@ -748,20 +884,20 @@ a
 a
 a
 a
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 a
 a
 a
@@ -943,19 +1079,19 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -995,19 +1131,19 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+k
 a
 a
 a
@@ -1047,19 +1183,19 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+k
 a
 a
 a
@@ -1098,20 +1234,20 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+k
+X
+X
+X
+X
+X
+X
+X
+X
+k
+k
+k
+k
 a
 a
 a
@@ -1150,20 +1286,20 @@ a
 a
 a
 a
-a
-a
 k
+X
+X
+X
 k
-k
-k
-k
-k
-k
+X
+X
+X
+X
 k
 k
 j
+j
 g
-a
 a
 a
 s
@@ -1202,20 +1338,20 @@ a
 a
 a
 a
-a
+k
+X
+X
+X
 k
 k
 k
 k
-N
-B
-o
-K
-T
+k
+k
+h
 h
 h
 A
-a
 a
 s
 s
@@ -1255,19 +1391,19 @@ a
 a
 a
 k
-k
+X
 X
 k
+k
 N
-S
-i
-i
-t
+B
+o
+K
 T
 h
 h
+h
 C
-a
 a
 s
 s
@@ -1309,17 +1445,17 @@ a
 k
 X
 X
-B
+k
+N
 S
 i
-q
 i
 t
 T
 h
 h
+h
 x
-a
 a
 s
 s
@@ -1361,17 +1497,17 @@ a
 k
 X
 X
-i
+k
 i
 i
 q
-p
+i
 t
 T
 h
 h
+h
 x
-a
 a
 s
 z
@@ -1413,17 +1549,17 @@ a
 k
 X
 X
-c
-U
+X
+i
 i
 q
-i
+p
 t
 T
 h
 h
+h
 x
-a
 a
 s
 s
@@ -1466,16 +1602,16 @@ k
 X
 X
 k
-l
-U
 i
+i
+q
 i
 t
 T
 h
 h
-L
-a
+h
+x
 a
 s
 s
@@ -1518,16 +1654,16 @@ k
 X
 X
 k
-k
 l
-c
-c
-H
+U
+i
+i
+t
 T
 h
 h
-A
-a
+h
+x
 a
 a
 s
@@ -1569,17 +1705,17 @@ a
 k
 X
 X
-X
 k
 k
-k
-k
-k
-k
-k
-R
-g
-a
+l
+c
+c
+H
+T
+h
+h
+h
+x
 a
 a
 s
@@ -1622,16 +1758,16 @@ k
 X
 X
 X
-X
-X
-X
-X
-X
-X
-X
-X
-X
-a
+k
+k
+k
+k
+k
+k
+L
+F
+V
+v
 a
 a
 a
@@ -1724,17 +1860,17 @@ a
 a
 a
 k
-M
 X
 X
 X
-r
-k
-k
-k
-k
-k
-k
+X
+X
+X
+X
+X
+X
+X
+X
 a
 a
 a
@@ -1776,17 +1912,17 @@ a
 a
 a
 k
-M
-X
-X
-X
-r
 k
-a
-a
-a
-a
-a
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
 a
 a
 a
@@ -1827,13 +1963,13 @@ a
 a
 a
 a
-k
-k
-D
-P
-D
-k
-k
+a
+a
+a
+a
+a
+a
+a
 a
 a
 a
@@ -1880,11 +2016,11 @@ a
 a
 a
 a
-k
-k
-k
-k
-k
+a
+a
+a
+a
+a
 a
 a
 a
@@ -1947,15 +2083,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+k
+X
+X
+k
+k
+k
+k
+k
 a
 a
 a
@@ -1998,16 +2134,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+k
+X
+X
+X
+X
+M
+e
+J
+k
 a
 a
 a
@@ -2050,16 +2186,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+X
+X
+X
+f
+D
+k
 a
 a
 a
@@ -2102,16 +2238,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+R
+R
+X
+X
+W
+k
 a
 a
 a
@@ -2154,16 +2290,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+R
+R
+X
+X
+P
+k
 a
 a
 a
@@ -2206,16 +2342,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+R
+R
+X
+X
+Z
+k
 a
 a
 a
@@ -2258,16 +2394,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+X
+X
+X
+f
+w
+k
 a
 a
 a
@@ -2310,16 +2446,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+X
+X
+X
+m
+y
+k
 a
 a
 a
@@ -2362,16 +2498,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+X
+X
+X
+d
+X
+O
+k
+k
+k
 a
 a
 a
@@ -2414,14 +2550,14 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
+k
+k
+I
+n
+r
+E
+k
+k
 a
 a
 a
@@ -2467,12 +2603,12 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
+k
+k
+k
+k
+k
+k
 a
 a
 a
