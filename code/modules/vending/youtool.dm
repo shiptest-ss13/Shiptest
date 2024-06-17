@@ -15,8 +15,9 @@
 					/obj/item/flashlight/glowstick = 3,
 					/obj/item/flashlight/glowstick/red = 3,
 					/obj/item/flashlight = 3,
-					/obj/item/clothing/ears/earmuffs = 1)
-	contraband = list(/obj/item/clothing/gloves/color/fyellow = 2)
+					/obj/item/clothing/ears/earmuffs = 1,
+					/obj/item/clothing/gloves/color/fyellow = 2
+					)
 	premium = list(/obj/item/storage/belt/utility = 2,
 					/obj/item/multitool = 2,
 					/obj/item/weldingtool/hugetank = 1,
@@ -26,4 +27,3 @@
 	resistance_flags = FIRE_PROOF
 	default_price = 125
 	extra_price = 350
-	payment_department = ACCOUNT_ENG

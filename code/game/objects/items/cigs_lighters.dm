@@ -45,7 +45,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "fire"
 		force = 3
 		hitsound = 'sound/items/welder.ogg'
-		item_state = "cigon"
 		name = "lit [initial(name)]"
 		desc = "A [initial(name)]. This one is lit."
 		attack_verb = list("burnt","singed")
@@ -59,7 +58,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "brute"
 		force = initial(force)
 		icon_state = "match_burnt"
-		item_state = "cigoff"
 		name = "burnt [initial(name)]"
 		desc = "A [initial(name)]. This one has seen better days."
 		attack_verb = list("flicked")
@@ -116,7 +114,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A roll of tobacco and nicotine."
 	icon_state = "cigoff"
 	throw_speed = 0.5
-	item_state = "cigoff"
 	w_class = WEIGHT_CLASS_TINY
 	body_parts_covered = null
 	grind_results = list()
@@ -418,7 +415,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigaroff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
 	type_butt = /obj/item/cigbutt/cigarbutt
 	throw_speed = 0.5
-	item_state = "cigaroff"
 	smoketime = 300 // 11 minutes
 	chem_volume = 40
 	list_reagents = list(/datum/reagent/drug/nicotine = 25)
@@ -787,7 +783,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/liz/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
 		. = "<span class='rose'>[user] spits fire at [A], igniting it.</span>"
-		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
+		playsound(src, 'sound/voice/lizard/firespit.ogg', 20, TRUE)
 
 /obj/item/lighter/enigma
 	name = "\improper Enigma Shipworks Lighter"

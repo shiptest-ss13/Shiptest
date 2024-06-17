@@ -9,6 +9,8 @@
 	icon = 'icons/obj/machines/droneDispenser.dmi'
 	icon_state = "on"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 
 	max_integrity = 250
 	integrity_failure = 0.33
@@ -109,12 +111,12 @@
 /obj/machinery/droneDispenser/swarmer
 	name = "swarmer fabricator"
 	desc = "An alien machine of unknown origin. It whirs and hums with green-blue light, the air above it shimmering."
-	icon = 'icons/obj/machines/gateway.dmi'
-	icon_state = "toffcenter"
-	icon_off = "toffcenter"
-	icon_on = "toffcenter"
-	icon_recharging = "toffcenter"
-	icon_creating = "offcenter"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "hivebot_fab"
+	icon_off = "hivebot_fab"
+	icon_on = "hivebot_fab"
+	icon_recharging = "hivebot_fab"
+	icon_creating = "hivebot_fab_on"
 	metal_cost = 0
 	glass_cost = 0
 	cooldownTime = 300 //30 seconds

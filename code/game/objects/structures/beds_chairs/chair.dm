@@ -134,67 +134,6 @@
 	icon_state = "wooden_chair_wings"
 	item_chair = /obj/item/chair/wood/wings
 
-/obj/structure/chair/comfy
-	name = "comfy chair"
-	desc = "It looks comfy."
-	icon_state = "comfychair"
-	color = rgb(255,255,255)
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	buildstackamount = 2
-	item_chair = null
-	var/mutable_appearance/armrest
-
-/obj/structure/chair/comfy/Initialize()
-	armrest = GetArmrest()
-	armrest.layer = ABOVE_MOB_LAYER
-	return ..()
-
-/obj/structure/chair/comfy/proc/GetArmrest()
-	return mutable_appearance(icon, "[icon_state]_armrest")
-
-/obj/structure/chair/comfy/Destroy()
-	QDEL_NULL(armrest)
-	return ..()
-
-/obj/structure/chair/comfy/post_buckle_mob(mob/living/M)
-	. = ..()
-	update_armrest()
-
-/obj/structure/chair/comfy/proc/update_armrest()
-	if(has_buckled_mobs())
-		add_overlay(armrest)
-	else
-		cut_overlay(armrest)
-
-/obj/structure/chair/comfy/post_unbuckle_mob()
-	. = ..()
-	update_armrest()
-
-/obj/structure/chair/comfy/brown
-	color = rgb(255,113,0)
-
-/obj/structure/chair/comfy/beige
-	color = rgb(255,253,195)
-
-/obj/structure/chair/comfy/teal
-	color = rgb(0,255,255)
-
-/obj/structure/chair/comfy/black
-	color = rgb(167,164,153)
-
-/obj/structure/chair/comfy/lime
-	color = rgb(255,251,0)
-
-/obj/structure/chair/comfy/shuttle
-	name = "shuttle seat"
-	desc = "A comfortable, secure seat. It has a more sturdy looking buckling system, for smoother flights."
-	icon_state = "shuttle_chair"
-	buildstacktype = /obj/item/stack/sheet/mineral/titanium
-
-/obj/structure/chair/comfy/shuttle/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "shuttle_chair_armrest")
-
 /obj/structure/chair/office
 	anchored = FALSE
 	buildstackamount = 5
@@ -367,48 +306,6 @@
 	icon_state = "wooden_chair_wings_toppled"
 	origin_type = /obj/structure/chair/wood/wings
 
-/obj/structure/chair/comfy/shuttle/bronze
-	name = "brass chair"
-	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
-	anchored = FALSE
-	icon_state = "brass_chair"
-	buildstacktype = /obj/item/stack/tile/bronze
-	buildstackamount = 1
-	item_chair = null
-	var/turns = 0
-
-/obj/structure/chair/comfy/shuttle/bronze/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "brass_chair_armrest")
-
-/obj/structure/chair/comfy/shuttle/bronze/Destroy()
-	STOP_PROCESSING(SSfastprocess, src)
-	. = ..()
-
-/obj/structure/chair/comfy/shuttle/bronze/process()
-	setDir(turn(dir,-90))
-	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
-	turns++
-	if(turns >= 8)
-		STOP_PROCESSING(SSfastprocess, src)
-
-/obj/structure/chair/comfy/shuttle/bronze/Moved()
-	. = ..()
-	if(has_gravity())
-		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
-
-/obj/structure/chair/comfy/shuttle/bronze/AltClick(mob/living/user)
-	turns = 0
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(!(datum_flags & DF_ISPROCESSING))
-		user.visible_message("<span class='notice'>[user] spins [src] around, and the last vestiges of Ratvarian technology keeps it spinning FOREVER.</span>", \
-		"<span class='notice'>Automated spinny chairs. The pinnacle of ancient Ratvarian technology.</span>")
-		START_PROCESSING(SSfastprocess, src)
-	else
-		user.visible_message("<span class='notice'>[user] stops [src]'s uncontrollable spinning.</span>", \
-		"<span class='notice'>You grab [src] and stop its wild spinning.</span>")
-		STOP_PROCESSING(SSfastprocess, src)
-
 /obj/structure/chair/mime
 	name = "invisible chair"
 	desc = "The mime needs to sit down and shut up."
@@ -458,3 +355,12 @@
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/handrail
+	name = "handrail"
+	icon = 'icons/obj/structures/handrail.dmi'
+	icon_state = "handrail"
+	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	item_chair = null
+	buildstackamount = 4
+	buildstacktype = /obj/item/stack/rods

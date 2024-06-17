@@ -1,7 +1,7 @@
 /****************Explorer's Suit and Mask****************/
 /obj/item/clothing/suit/hooded/explorer
 	name = "explorer suit"
-	desc = "A light, armor-plated softsuit, designed for exploration of dangerous planetary enviroments. An NT design by origin, later reappropriated by EXOCON for mass retail production."
+	desc = "A light, armor-plated softsuit, designed for exploration of dangerous planetary enviroments. An NT design by origin, later reappropriated by EXOCOM for mass retail production."
 	icon_state = "explorer"
 	item_state = "explorer"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -10,7 +10,7 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/explorer
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe)
 	resistance_flags = FIRE_PROOF
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -23,7 +23,7 @@
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/hooded/explorer/Initialize()
@@ -36,7 +36,7 @@
 
 /obj/item/clothing/mask/gas/explorer
 	name = "explorer gas mask"
-	desc = "An advanced atmospheric scrubbing mask with a built-in pressure seal, manufactured by EXOCON. Can be connected to an air supply."
+	desc = "An advanced atmospheric scrubbing mask with a built-in pressure seal, manufactured by EXOCOM. Can be connected to an air supply."
 	icon_state = "gas_mining"
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	visor_flags_inv = HIDEFACIALHAIR
@@ -166,7 +166,7 @@
 	max_heat_protection_temperature = (FIRE_SUIT_MAX_TEMP_PROTECT / 2)
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe)
 	resistance_flags = FIRE_PROOF
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -174,13 +174,13 @@
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"
 	desc = "A loose-fitting hood, patched up with sealant and adhesive. Somewhat protects the head from the environment, but gets the job done."
-	icon_state = "survivor_hood"
+	icon_state = "explorerold"
 	suit = /obj/item/clothing/suit/hooded/survivor
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/hooded/survivor/Initialize()

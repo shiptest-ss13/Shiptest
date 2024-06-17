@@ -2162,13 +2162,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Trappist Beer"
 	glass_desc = "boozy Catholicism in a glass."
 
-/datum/reagent/consumable/ethanol/trappist/on_mob_life(mob/living/carbon/M)
-	if(M.mind.holy_role)
-		M.adjustFireLoss(-2.5, 0)
-		M.jitteriness = max(0, M.jitteriness-1)
-		M.stuttering = max(0, M.stuttering-1)
-	return ..()
-
 /datum/reagent/consumable/ethanol/blazaam
 	name = "Blazaam"
 	description = "A strange drink that few people seem to remember existing. Doubles as a Berenstain remover."

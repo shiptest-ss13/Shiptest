@@ -34,39 +34,7 @@
 	volume = 50
 	custom_price = 55
 
-/obj/item/reagent_containers/food/drinks/bottle/smash(mob/living/target, mob/thrower, ranged = FALSE)
-	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
-		return
-	//Creates a shattering noise and replaces the bottle with a broken_bottle
-	if(bartender_check(target) && ranged)
-		return
-	var/obj/item/broken_bottle/B = new (loc)
-	if(!ranged && thrower)
-		thrower.put_in_hands(B)
-	B.icon_state = icon_state
-
-	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
-	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
-	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
-	B.icon = I
-
-	if(isGlass)
-		if(prob(33))
-			var/obj/item/shard/S = new(drop_location())
-			target.Bumped(S)
-		playsound(src, "shatter", 70, TRUE)
-	else
-		B.force = 0
-		B.throwforce = 0
-		B.desc = "A carton with the bottom half burst open. Might give you a papercut."
-	B.name = "broken [name]"
-	transfer_fingerprints_to(B)
-
-	qdel(src)
-	target.Bumped(B)
-
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
-
 	if(!target)
 		return
 
@@ -138,7 +106,7 @@
 /obj/item/broken_bottle
 	name = "broken bottle"
 	desc = "A bottle with a sharp broken bottom."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "broken_bottle"
 	force = 9
 	throwforce = 5
@@ -149,7 +117,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
 	sharpness = IS_SHARP
-	var/static/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
+	var/static/icon/broken_outline = icon('icons/obj/drinks/drinks.dmi', "broken")
 
 /obj/item/broken_bottle/Initialize()
 	. = ..()
@@ -360,6 +328,12 @@
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/triplesec
+	name = "Teeka-Gih's triple sec liqueur"
+	desc = "A bottle of triple sec originating from Bezuts."
+	icon_state = "triplesecbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
@@ -373,6 +347,18 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 	foodtype = FRUIT | BREAKFAST
+
+/obj/item/reagent_containers/food/drinks/bottle/lemonjuice
+	name = "lemon juice"
+	desc = "Lemonade for everyone!"
+	custom_price = 100
+	icon_state = "lemonjuice"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	isGlass = FALSE
+	list_reagents = list(/datum/reagent/consumable/lemonjuice = 100)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
@@ -492,6 +478,20 @@
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/cacao
+	name = "Sharai's Pure Cacao Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "cacaobottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/menthe
+	name = "Mora's Pure Mint Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "mintbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////

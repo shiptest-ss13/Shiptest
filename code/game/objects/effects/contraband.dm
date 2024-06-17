@@ -72,6 +72,7 @@
 	var/original_name
 	desc = "A large piece of space-resistant printed paper."
 	icon = 'icons/obj/contraband.dmi'
+	icon_state = "poster_ripped"
 	anchored = TRUE
 	var/ruined = FALSE
 	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
@@ -1058,6 +1059,83 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//PGF Mission Accomplished
+/obj/structure/sign/poster/pgf/mission_accomplished_1
+	name = "MISSION ACCOMPLISHED! 1"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-1"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_1
+	name = "Mission Accomplished Poster 1"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_1
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_2
+	name = "MISSION ACCOMPLISHED! 2"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-2"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_2
+	name = "Mission Accomplished Poster 2"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_2
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_3
+	name = "MISSION ACCOMPLISHED! 3"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-3"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_3
+	name = "Mission Accomplished Poster 3"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_3
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_4
+	name = "MISSION ACCOMPLISHED! 4"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-4"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_4
+	name = "Mission Accomplished Poster 4"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_4
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_5
+	name = "MISSION ACCOMPLISHED! 5"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-5"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_5
+	name = "Mission Accomplished Poster 5"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_5
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_6
+	name = "MISSION ACCOMPLISHED! 6"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-6"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_6
+	name = "Mission Accomplished Poster 6"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_6
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_7
+	name = "MISSION ACCOMPLISHED! 7"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-7"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_7
+	name = "Mission Accomplished Poster 7"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
+	icon_state = "rolled_poster"
 
 
 #undef PLACE_SPEED

@@ -22,7 +22,7 @@
 			new /obj/item/multitool/ai_detect(src) // 1 tc
 			new /obj/item/encryptionkey/syndicate(src) // 2 tc
 			new /obj/item/reagent_containers/syringe/mulligan(src) // 4 tc
-			new /obj/item/switchblade(src) //I'll count this as 2 tc
+			new /obj/item/kitchen/knife/switchblade(src) //I'll count this as 2 tc
 			new /obj/item/storage/fancy/cigarettes/cigpack_syndicate (src) // 2 tc this shit heals
 			new /obj/item/flashlight/emp(src) // 2 tc
 			new /obj/item/chameleon(src) // 7 tc
@@ -108,7 +108,7 @@
 
 		if("metaops")
 			new /obj/item/clothing/suit/space/hardsuit/syndi(src) // 8 tc
-			new /obj/item/gun/ballistic/shotgun/bulldog/unrestricted(src) // 8 tc
+			new /obj/item/gun/ballistic/shotgun/bulldog(src) // 8 tc
 			new /obj/item/implanter/explosive(src) // 2 tc
 			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
 			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
@@ -165,7 +165,7 @@
 			new /obj/item/assembly/signaler(src) // 0 tc
 			new /obj/item/storage/toolbox/syndicate(src) // 1 tc
 			new /obj/item/pen/edagger(src)
-			new /obj/item/gun/energy/decloner/unrestricted(src)
+			new /obj/item/gun/energy/decloner(src)
 
 		if("bee")
 			new /obj/item/paper/fluff/bee_objectives(src) // 0 tc (motivation)
@@ -195,7 +195,7 @@
 		if("made_man")
 			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
 			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
-			new /obj/item/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
+			new /obj/item/kitchen/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
@@ -306,7 +306,7 @@
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot,
+		/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/toy/eightball/haunted
@@ -369,13 +369,6 @@
 /obj/item/storage/box/syndie_kit/bioterror/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe/bioterror(src)
-
-/obj/item/storage/box/syndie_kit/clownpins
-	name = "ultra hilarious firing pin box"
-
-/obj/item/storage/box/syndie_kit/clownpins/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/firing_pin/clown/ultra(src)
 
 /obj/item/storage/box/syndie_kit/imp_adrenal
 	name = "adrenal implant box"
@@ -525,9 +518,6 @@
 /obj/item/storage/box/syndie_kit/ez_clean/PopulateContents()
 	for(var/i in 1 to 3)
 		new/obj/item/grenade/chem_grenade/ez_clean(src)
-
-/obj/item/storage/box/hug/reverse_revolver/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/reverse(src)
 
 /obj/item/storage/box/syndie_kit/mimery/PopulateContents()
 	new /obj/item/book/granter/spell/mimery_blockade(src)

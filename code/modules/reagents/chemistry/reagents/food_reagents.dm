@@ -11,6 +11,7 @@
 	name = "Consumable"
 	taste_description = "generic food"
 	taste_mult = 4
+	category = "Food and Drink"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 
@@ -325,12 +326,6 @@
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
-
-/datum/reagent/consumable/sodiumchloride/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(!istype(M))
-		return
-	if(M.has_bane(BANE_SALT))
-		M.mind.disrupt_spells(-200)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))
@@ -712,7 +707,7 @@
 	taste_description = "pure electricity"
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
-	if(prob(25) && !isethereal(M))
+	if(prob(25) && !iselzuose(M))
 		M.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return ..()
@@ -728,7 +723,7 @@
 		var/mob/living/carbon/C = M
 		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(reac_volume * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"

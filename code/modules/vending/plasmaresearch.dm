@@ -10,8 +10,7 @@
 		/obj/item/assembly/timer = 6,
 		/obj/item/assembly/signaler = 6,
 		/obj/item/assembly/prox_sensor = 6,
-		/obj/item/assembly/igniter = 6)
-	contraband = list(/obj/item/assembly/health = 3)
+		/obj/item/assembly/igniter = 6,
+		/obj/item/assembly/health = 3)
 	default_price = 400
 	extra_price = 600
-	payment_department = ACCOUNT_SCI

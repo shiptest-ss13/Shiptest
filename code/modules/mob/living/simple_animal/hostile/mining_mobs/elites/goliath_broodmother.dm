@@ -43,7 +43,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathmessage = "explodes into gore!"
-	loot_drop = /obj/item/crusher_trophy/broodmother_tongue
+	//loot_drop = /obj/item/mob_trophy/broodmother_tongue
 
 	attack_action_types = list(/datum/action/innate/elite_attack/tentacle_patch,
 								/datum/action/innate/elite_attack/spawn_children,
@@ -245,22 +245,6 @@
 		var/turf/T = get_step(get_turf(src), i)
 		T = get_step(T, i)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
-
-// Broodmother's loot: Broodmother Tongue
-/obj/item/crusher_trophy/broodmother_tongue
-	name = "broodmother tongue"
-	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "broodmother_tongue"
-	denied_type = /obj/item/crusher_trophy/broodmother_tongue
-	bonus_value = 35
-
-/obj/item/crusher_trophy/broodmother_tongue/effect_desc()
-	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a patch of goliath tentacles at the target's location"
-
-/obj/item/crusher_trophy/broodmother_tongue/on_mark_detonation(mob/living/target, mob/living/user)
-	if(rand(1, 100) <= bonus_value && target.stat != DEAD)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(get_turf(target), user)
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"

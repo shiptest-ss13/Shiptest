@@ -113,15 +113,6 @@
 	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
 	cuttable = FALSE
 
-/obj/item/clothing/under/misc/coordinator
-	name = "coordinator jumpsuit"
-	desc = "A jumpsuit made by party people, from party people, for party people."
-	icon = 'icons/obj/clothing/under/command.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
-	icon_state = "captain_parade"
-	item_state = "by_suit"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/utility
 	icon = 'icons/obj/clothing/under/misc.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/misc.dmi'

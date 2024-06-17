@@ -183,7 +183,7 @@
 	prereq_ids = list("base")
 	design_ids = list("solarcontrol", "solarassembly", "recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin", "scanner_gate",
 	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "nano_mani", "mesons", "welding_goggles", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
-	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "aac_electronics", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine",
+	"apc_control", "cell_charger", "ssu", "power control", "airlock_board", "firelock_board", "aac_electronics", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine",
 	"oxygen_tank", "plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "pneumatic_seal", "shieldwallgen", "shieldwallgen_atmos") //WS edit, solar assemblies from lathe
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
@@ -521,7 +521,7 @@
 	display_name = "Cybernetic Implants"
 	description = "Electronic implants that improve humans."
 	prereq_ids = list("adv_biotech", "datatheory")
-	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-diaghud")
+	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-diaghud", "ci-joywire")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -632,7 +632,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new ways to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "tele_shield","gun_cell")
+	design_ids = list("tele_shield","gun_cell")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -641,17 +641,8 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty", "gun_cell_upgraded", "gun_cell_large")
+	design_ids = list("gun_cell_upgraded", "gun_cell_large")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
-	export_price = 5000
-
-/datum/techweb_node/firingpin
-	id = "firingpin"
-	display_name = "Pin Security Decompilation"
-	description = "A resource-intensive hacking operation, allowing for the creation of pins without a mindshield brake."
-	prereq_ids = list("adv_weaponry")
-	design_ids = list("pin_standard")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 5000
 
 /datum/techweb_node/electric_weapons

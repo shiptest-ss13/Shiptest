@@ -30,8 +30,10 @@
 	var/mob_color //Change the mob's color
 	var/assignedrole
 	var/show_flavour = TRUE
-	var/banType = ROLE_LAVALAND
+	var/ban_type = ROLE_LAVALAND
 	var/ghost_usable = TRUE
+	/// Weakref to the mob this spawner created - just if you needed to do something with it.
+	var/datum/weakref/spawned_mob_ref
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -40,7 +42,7 @@
 	if(!uses)
 		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
 		return
-	if(is_banned_from(user.key, banType))
+	if(is_banned_from(user.key, ban_type))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
 	if(!allow_spawn(user))
@@ -128,6 +130,7 @@
 		MM.name = M.real_name
 	if(uses > 0)
 		uses--
+	spawned_mob_ref = WEAKREF(M)
 	if(!permanent && !uses)
 		qdel(src)
 	return M
@@ -219,6 +222,7 @@
 			var/obj/item/clothing/under/C = H.w_uniform
 			if(istype(C))
 				C.sensor_mode = NO_SENSORS
+
 
 	var/obj/item/card/id/W = H.wear_id
 	if(W)

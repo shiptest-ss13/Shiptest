@@ -14,7 +14,7 @@
 	name = "holographic energy sword"
 	desc = "May the force be with you. Sorta."
 	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "sword0"
+	icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 3.0
@@ -152,8 +152,8 @@
 	var/eventstarted = FALSE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 6
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	power_channel = AREA_USAGE_ENVIRON
 
 /obj/machinery/readybutton/attack_ai(mob/user as mob)
