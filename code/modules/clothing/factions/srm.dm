@@ -50,7 +50,7 @@
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 
 /obj/item/clothing/suit/armor/roumain/flamebearer
-	name = "saint-roumain flambearer robes"
+	name = "saint-roumain flamebearer robes"
 	desc = "A set of ashy-grey robes made from hard leather, adorned with gold trims. Its rough finish after a near-char and application of aromatics is heavily favored for the ecclesiastical sect of the Church of Saint Roumain, a living reminder of the Ashen Huntsman himself."
 	icon_state = "armor_rouma_flamebearer"
 
