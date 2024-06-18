@@ -2113,30 +2113,3 @@
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
 	..()
-
-/datum/reagent/medicine/molten_bubbles
-	name = "Molten Bubbles"
-	description = "Refreshing softdrink made for the desert."
-	color = "#3d1916"
-	metabolization_rate = REAGENTS_METABOLISM
-	taste_description = "boiling sugar"
-
-/datum/reagent/medicine/molten_bubbles/on_mob_life(mob/living/carbon/M)
-	M.heal_bodypart_damage(1,1,0)
-	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
-	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
-	..()
-
-/datum/reagent/medicine/molten_bubbles/plasma
-	name = "Plasma Bubbles"
-	description = "Molten Bubbles with the refreshing taste of plasma."
-	color = "#852e63"
-	taste_description = "grape flavored cleaning solution"
-
-/datum/reagent/medicine/molten_bubbles/sand
-	name = "Sandblast Sarsaparilla"
-	description = "Extra refreshing for those long desert days."
-	color = "#af9938"
-	taste_description = "root-beer and asbestos"
