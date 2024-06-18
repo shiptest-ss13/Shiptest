@@ -10,6 +10,8 @@
 	sheet_amount = 1
 	girder_type = /obj/structure/girder/cult
 
+	max_integrity = 1300
+
 /turf/closed/wall/mineral/cult/Initialize(mapload, inherited_virtual_z)
 	new /obj/effect/temp_visual/cult/turf(src)
 	. = ..()
@@ -58,6 +60,7 @@
 	base_icon_state = "rusty_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
+	max_integrity = 300
 
 /turf/closed/wall/rust/yesdiag
 	icon_state = "rusty_wall-255"

@@ -23,8 +23,6 @@
 
 /turf/closed/wall/concrete/Initialize(mapload, ...)
 	. = ..()
-	if(health == null)
-		health = max_health
 	check_harden()
 	update_stats()
 

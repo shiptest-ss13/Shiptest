@@ -35,7 +35,7 @@
 	var/min_dam = 8
 	// This should all be handled by integrity should that ever be expanded to walls.
 	var/max_health = 400
-	var/health = 400
+	var/health
 	var/brute_mod = 1
 	var/burn_mod = 1
 	// used to give mining projectiles a bit of an edge against conc walls
@@ -62,6 +62,8 @@
 			underlay_appearance.icon_state = fixed_underlay["icon_state"]
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
+	if(health == null)
+		health = max_health
 
 
 /turf/closed/wall/copyTurf(turf/T, copy_air, flags)

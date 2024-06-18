@@ -21,6 +21,8 @@
 	///Dismantled state, related to deconstruction.
 	var/d_state = INTACT
 
+	max_integrity = 1300
+
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS

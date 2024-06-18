@@ -23,6 +23,7 @@
 	connector_icon = 'icons/turf/connectors/gold_wall_connector.dmi'
 	connector_icon_state = "gold_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
+	max_integrity = 150
 
 /turf/closed/wall/mineral/gold/yesdiag
 	icon_state = "gold_wall-255"
@@ -41,6 +42,7 @@
 	connector_icon = 'icons/turf/connectors/silver_wall_connector.dmi'
 	connector_icon_state = "silver_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
+	max_integrity = 150
 
 /turf/closed/wall/mineral/silver/yesdiag
 	icon_state = "silver_wall-255"
@@ -63,6 +65,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
+	max_integrity = 800
 
 /turf/closed/wall/mineral/diamond/yesdiag
 	icon_state = "diamond_wall-255"
@@ -84,6 +87,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/sandstone, /obj/structure/falsewall/sandstone)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	max_integrity = 150
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -103,6 +107,7 @@
 	connector_icon = 'icons/turf/connectors/uranium_wall_connector.dmi'
 	connector_icon_state = "uranium_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
+	max_integrity = 600
 
 /turf/closed/wall/mineral/uranium/yesdiag
 	icon_state = "uranium_wall-255"
@@ -170,6 +175,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/plasma, /obj/structure/falsewall/plasma)
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
+	max_integrity = 300
 
 /turf/closed/wall/mineral/plasma/yesdiag
 	icon_state = "plasma_wall-255"
@@ -222,6 +228,8 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
+	max_integrity = 75
+
 /turf/closed/wall/mineral/wood/yesdiag
 	icon_state = "wood_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS | SMOOTH_CONNECTORS
@@ -260,6 +268,8 @@
 	connector_icon_state = "iron_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
 
+	max_integrity = 300
+
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
@@ -287,6 +297,8 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_SNOW
 
+	max_integrity = 50
+
 /turf/closed/wall/mineral/snow/yesdiag
 	icon_state = "snow_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
@@ -303,6 +315,8 @@
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS,SMOOTH_GROUP_AIRLOCK)
+
+	max_integrity = 1000
 
 /////////////////////Titanium walls/////////////////////
 
@@ -321,6 +335,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	max_integrity = 800
 
 /turf/closed/wall/mineral/titanium/exterior
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
@@ -399,6 +415,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	max_integrity = 1300
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
