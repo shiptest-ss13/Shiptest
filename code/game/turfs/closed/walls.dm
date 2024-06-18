@@ -197,7 +197,6 @@
 		return new girder_type(src)
 	return null
 
-// todo: explosion should devastate
 /turf/closed/wall/ex_act(severity, target)
 	if(target == src || !density)
 		return ..()
@@ -349,7 +348,6 @@
 	return FALSE
 
 /turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)
-
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
@@ -358,7 +356,7 @@
 		while(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating.</span>")
-				alter_health(-50)
+				alter_health(I.wall_decon_damage)
 			//return TRUE
 
 	return FALSE

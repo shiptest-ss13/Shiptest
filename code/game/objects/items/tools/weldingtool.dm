@@ -39,8 +39,7 @@
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
 	var/start_full = TRUE
-	/// how much damage this does when slicing walls
-	var/wall_damage = 50
+	wall_decon_damage = 50
 
 /obj/item/weldingtool/empty
 	start_full = FALSE
