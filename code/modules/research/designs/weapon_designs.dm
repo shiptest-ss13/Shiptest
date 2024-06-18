@@ -582,15 +582,6 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/cleric_mace
-	name = "Cleric Mace"
-	desc = "A mace fit for a cleric. Useful for bypassing plate armor, but too bulky for much else."
-	id = "cleric_mace"
-	build_type = AUTOLATHE
-	materials = list(MAT_CATEGORY_RIGID = 12000)
-	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported")
-
 /datum/design/stun_boomerang
 	name = "OZtek Boomerang"
 	desc = "Uses reverse flow gravitodynamics to flip its personal gravity back to the thrower mid-flight. Also functions similar to a stun baton."
@@ -648,14 +639,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 4000)
 	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
-	category = list("Imported")
-
-/datum/design/pizza_disposable_gun
-	name = "Pizza Disposable Gun"
-	id = "disposable_pizza"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/pizza = 4000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
 	category = list("Imported")
 
 //SRM Ballistics

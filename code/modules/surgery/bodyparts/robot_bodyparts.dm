@@ -137,7 +137,6 @@
 	var/wired = FALSE
 	var/obj/item/stock_parts/cell/cell = null
 
-
 /obj/item/bodypart/chest/robot/handle_atom_del(atom/A)
 	if(A == cell)
 		cell = null
@@ -191,7 +190,6 @@
 	cell.forceMove(drop_location())
 	cell = null
 
-
 /obj/item/bodypart/chest/robot/examine(mob/user)
 	. = ..()
 	if(cell)
@@ -213,7 +211,6 @@
 		cell.forceMove(drop_location())
 		cell = null
 	..()
-
 
 /obj/item/bodypart/head/robot
 	name = "cyborg head"
@@ -304,7 +301,6 @@
 		to_chat(user, "<span class='warning'>There is no flash to remove from [src].</span>")
 	return TRUE
 
-
 /obj/item/bodypart/head/robot/drop_organs(mob/user, violent_removal)
 	if(flash1)
 		flash1.forceMove(user.loc)
@@ -313,9 +309,6 @@
 		flash2.forceMove(user.loc)
 		flash2 = null
 	..()
-
-
-
 
 /obj/item/bodypart/l_arm/robot/surplus
 	name = "surplus prosthetic left arm"
