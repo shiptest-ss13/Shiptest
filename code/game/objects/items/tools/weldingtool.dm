@@ -39,6 +39,8 @@
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
 	var/start_full = TRUE
+	/// how much damage this does when slicing walls
+	var/wall_damage = 50
 
 /obj/item/weldingtool/empty
 	start_full = FALSE
@@ -348,6 +350,7 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = 0
+	wall_damage = 500
 
 /obj/item/weldingtool/abductor/process()
 	if(get_fuel() <= max_fuel)
@@ -378,6 +381,7 @@
 	can_off_process = 1
 	light_range = 1
 	toolspeed = 0.5
+	wall_damage = 100
 	var/last_gen = 0
 	var/nextrefueltick = 0
 

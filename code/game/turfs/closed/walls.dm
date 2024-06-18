@@ -78,6 +78,7 @@
 	. += ..()
 	. += deconstruction_hints(user)
 
+// todo: make this work
 /turf/closed/wall/proc/deconstruction_hints(mob/user)
 	switch(health / max_health)
 		if(0.5 to 0.99)
@@ -215,9 +216,9 @@
 // 	switch(severity)
 // 		if(EXPLODE_DEVASTATE)
 			//SN src = null
-			var/turf/NT = ScrapeAway()
-			NT.contents_explosion(severity, target)
-			return
+			// var/turf/NT = ScrapeAway()
+			// NT.contents_explosion(severity, target)
+			// // return
 // 		if(EXPLODE_HEAVY)
 // 			if (prob(50))
 // 				dismantle_wall(devastated = TRUE)
