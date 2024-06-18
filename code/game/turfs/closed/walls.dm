@@ -34,8 +34,8 @@
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 8
 	// This should all be handled by integrity should that ever be expanded to walls.
-	var/max_health = 650
-	var/health = 300
+	var/max_health = 400
+	var/health = 400
 	// used to give mining projectiles a bit of an edge against conc walls
 	var/static/list/extra_dam_proj = typecacheof(list(
 		/obj/projectile/kinetic,
@@ -60,6 +60,7 @@
 			underlay_appearance.icon_state = fixed_underlay["icon_state"]
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
+
 
 /turf/closed/wall/copyTurf(turf/T, copy_air, flags)
 	. = ..()
@@ -90,8 +91,11 @@
 /turf/closed/wall/attack_tk()
 	return
 
-/turf/closed/wall/proc/alter_health(delta)
-	health += delta
+// negative values reduce health, positive values increase health
+/turf/closed/wall/proc/alter_health(damage)
+	health += damage
+	if(health >= max_health)
+		health = max_health
 	if(health <= 0)
 		// if damage put us 50 points or more below 0, we got proper demolished
 		dismantle_wall(health <= -50 ? TRUE : FALSE)
@@ -110,7 +114,7 @@
 		alter_health(-dam)
 
 // catch-all for using most items on the wall -- attempt to smash
-/turf/closed/wall/try_destroy(obj/item/W, mob/user, turf/T)
+/turf/closed/wall/proc/try_destroy(obj/item/W, mob/user, turf/T)
 	var/dam = get_item_damage(W)
 	user.do_attack_animation(src)
 	if(!dam)
@@ -189,6 +193,7 @@
 		return new girder_type(src)
 	return null
 
+// todo: explosion should devastate
 /turf/closed/wall/ex_act(severity, target)
 	if(target == src || !density)
 		return ..()
@@ -223,27 +228,30 @@
 
 
 /turf/closed/wall/blob_act(obj/structure/blob/B)
-	if(prob(50))
-		dismantle_wall()
-	else
-		add_dent(WALL_DENT_HIT)
+	alter_health(max_health *0.5)
+	add_dent(WALL_DENT_HIT)
 
 /turf/closed/wall/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
 		if(BRUTE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
-			if(prob(hardness + M.force) && M.force > 20)
-				dismantle_wall(devastated = TRUE)
-				playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-			else
-				add_dent(WALL_DENT_HIT)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
+
+
+	if(prob(hardness + M.force) && M.force > 20)
+		M.visible_message("<span class='danger'>[M.name] hits [src] with great force!</span>", \
+					"<span class='danger'>You hit [src] with incredible force!</span>", null, COMBAT_MESSAGE_RANGE)
+		dismantle_wall(devastated = TRUE)
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	else
+		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
+					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+		add_dent(WALL_DENT_HIT)
+		alter_health(M.force)
 
 /turf/closed/wall/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -255,7 +263,7 @@
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		dismantle_wall(devastated = TRUE)
+		alter_health(-100)
 		return
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
@@ -263,16 +271,11 @@
 	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
 	if(!arm || arm.bodypart_disabled)
 		return
-	if(prob(hardness))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-		dismantle_wall(devastated = TRUE)
-	else
-		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>You smash \the [src]!</span>", \
-					"<span class='hear'>You hear a booming smash!</span>")
+	alter_health(-100)
+	add_dent(WALL_DENT_HIT)
+	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
+				"<span class='danger'>You smash \the [src]!</span>", \
+				"<span class='hear'>You hear a booming smash!</span>")
 	return TRUE
 
 /turf/closed/wall/attack_hand(mob/user)
@@ -305,19 +308,20 @@
 	return ..()
 
 /turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP) || !LAZYLEN(dent_decals))
+	if((user.a_intent != INTENT_HELP))
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, amount=0) || (health >= max_health))
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
-		if(W.use_tool(src, user, 0, volume=100))
+		if(W.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
 				update_appearance()
+			alter_health(40)
 			return TRUE
 
 	return FALSE
@@ -342,26 +346,26 @@
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
-		if(I.use_tool(src, user, slicing_duration, volume=100))
+		while(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You remove the outer plating.</span>")
-				dismantle_wall()
-			return TRUE
+				to_chat(user, "<span class='notice'>You slice through some of the outer plating.</span>")
+				alter_health(-50)
+			//return TRUE
 
 	return FALSE
 
 
-/turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
-	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
-		if(do_after(user, 50, target = src))
-			if(!iswallturf(src))
-				return TRUE
-			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			dismantle_wall()
-			return TRUE
-	return FALSE
+// /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
+// 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
+// 		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
+// 		if(do_after(user, 50, target = src))
+// 			if(!iswallturf(src))
+// 				return TRUE
+// 			I.play_tool_sound(src)
+// 			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+// 			dismantle_wall()
+// 			return TRUE
+// 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)
 	..()
