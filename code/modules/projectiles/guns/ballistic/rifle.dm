@@ -22,8 +22,11 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	spread = -1
-	spread_unwielded = 12
+	spread_unwielded = 48
 	recoil = -3
 	recoil_unwielded = 4
 	wield_slowdown = 1
@@ -67,10 +70,6 @@
 	. = ..()
 	. += "The bolt is [bolt_locked ? "open" : "closed"]."
 
-///////////////////////
-// BOLT ACTION RIFLE //
-///////////////////////
-
 /obj/item/gun/ballistic/rifle/illestren
 	name = "\improper HP Illestren"
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
@@ -89,18 +88,18 @@
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
-		spread = 36
-		spread_unwielded = 108
+		spread = 24
+		spread_unwielded = 30
 		can_bayonet = FALSE
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
 
 /obj/item/gun/ballistic/rifle/illestren/blow_up(mob/user)
-	. = 0
+	. = FALSE
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		. = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/factory
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, this example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in 8x50mmR."
@@ -159,57 +158,6 @@
 	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted
-	name = "enchanted bolt-action rifle"
-	desc = "Careful not to lose your head."
-	var/guns_left = 30
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
-	can_be_sawn_off = FALSE
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage
-	name = "arcane barrage"
-	desc = "Pew Pew Pew."
-	fire_sound = 'sound/weapons/emitter.ogg'
-	icon = 'icons/obj/guns/projectile.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-	icon_state = "arcane_barrage"
-	item_state = "arcane_barrage"
-	slot_flags = null
-	can_bayonet = FALSE
-	item_flags = NEEDS_PERMIT | DROPDEL | ABSTRACT | NOBLUDGEON
-	flags_1 = NONE
-	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
-
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/dropped()
-	. = ..()
-	guns_left = 0
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/proc/discard_gun(mob/living/user)
-	user.throw_item(pick(oview(7,get_turf(user))))
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/discard_gun(mob/living/user)
-	qdel(src)
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/attack_self()
-	return
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	. = ..()
-	if(!.)
-		return
-	if(guns_left)
-		var/obj/item/gun/ballistic/rifle/illestren/enchanted/gun = new type
-		gun.guns_left = guns_left - 1
-		discard_gun(user)
-		user.swap_hand()
-		user.put_in_hands(gun)
-	else
-		user.dropItemToGround(src, TRUE)
 
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"

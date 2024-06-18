@@ -1,8 +1,8 @@
 /obj/machinery/vending/snack
 	name = "\improper Getmore Chocolate Corp"
-	desc = "A snack machine courtesy of the Getmore Chocolate Corporation, based out of Mars."
+	desc = "A snack machine courtesy of the RobustMore DrinkFoods LLC."
 	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
-	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
+	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have something better! Get RobustMore!;Best quality snacks!;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
 	light_mask = "snack-light-mask"
 	products = list(
@@ -24,7 +24,7 @@
 	input_display_header = "Chef's Food Selection"
 
 /obj/item/vending_refill/snack
-	machine_name = "Getmore Chocolate Corp"
+	machine_name = "RobustMore DrinkFoods LLC"
 
 /obj/machinery/vending/snack/random
 	name = "\improper Random Snackies"

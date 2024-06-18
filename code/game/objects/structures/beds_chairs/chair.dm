@@ -355,3 +355,12 @@
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/handrail
+	name = "handrail"
+	icon = 'icons/obj/structures/handrail.dmi'
+	icon_state = "handrail"
+	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	item_chair = null
+	buildstackamount = 4
+	buildstacktype = /obj/item/stack/rods
