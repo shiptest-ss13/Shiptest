@@ -393,11 +393,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	unfolded_slowdown = 0.35
 	unfolded_wield_delay = 0.4 SECONDS
 
-
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
