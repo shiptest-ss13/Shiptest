@@ -1399,7 +1399,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/number/zero,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -2092,9 +2091,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "GW" = (
@@ -2592,7 +2588,7 @@
 	dir = 1
 	},
 /obj/structure/chair/comfy/shuttle{
-	dir = 8
+	dir = 2
 	},
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -2760,7 +2756,7 @@
 	dir = 8
 	},
 /obj/structure/chair/comfy/shuttle{
-	dir = 8
+	dir = 1
 	},
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
