@@ -65,13 +65,13 @@
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	while(drill.do_after_mecha(src, 60 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
-		alter_health(drill.wall_decon_damage)
+		alter_health(-drill.wall_decon_damage)
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
 		if(drill.do_after_mecha(src, 120 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
-			alter_health(drill.wall_decon_damage)
+			alter_health(-drill.wall_decon_damage)
 	else
 		drill.occupant_message("<span class='danger'>[src] is too durable to drill through.</span>")
 

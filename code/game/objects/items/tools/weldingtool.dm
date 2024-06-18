@@ -349,7 +349,7 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = 0
-	wall_damage = 500
+	wall_decon_damage = 500
 
 /obj/item/weldingtool/abductor/process()
 	if(get_fuel() <= max_fuel)
@@ -380,7 +380,7 @@
 	can_off_process = 1
 	light_range = 1
 	toolspeed = 0.5
-	wall_damage = 100
+	wall_decon_damage = 100
 	var/last_gen = 0
 	var/nextrefueltick = 0
 

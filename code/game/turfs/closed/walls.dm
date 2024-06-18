@@ -356,7 +356,7 @@
 		while(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating.</span>")
-				alter_health(I.wall_decon_damage)
+				alter_health(-(I.wall_decon_damage))
 			//return TRUE
 
 	return FALSE
