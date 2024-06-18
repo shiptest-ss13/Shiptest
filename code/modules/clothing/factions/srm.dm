@@ -50,13 +50,13 @@
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 
 /obj/item/clothing/suit/armor/roumain/flamebearer
-	name = "saint-roumain flambearer robes"
-	desc = "A set of ashy-grey robes made from hard leather, adorned with gold trims. Its rough finish after a near-char and application of aromatics is heavily favored for the ecclesiastical sect of the Church of Saint Roumain, a living reminder of the Ashen Huntsman himself."
+	name = "saint-roumain flamebearer robes"
+	desc = "A set of ash-grey robes made from hard leather and adorned with gold trim and impregnated with aromatic oils. The rough, nearly-charred finish is a favorite of the ecclesiastical sect of the Church of Saint Roumain, a constant reminder of the Ashen Huntsman himself."
 	icon_state = "armor_rouma_flamebearer"
 
 /obj/item/clothing/suit/armor/roumain/colligne
 	name = "saint-roumain colligne coat"
-	desc = "A well-maintained hard leather coat typically worn to denote the rank of Colligne, a trainee Hunter Montagne. It is treated with bullet-resistant materials, and lined with the dark fur of Illestrenin dire wolves."
+	desc = "A well-maintained hard leather coat typically worn to denote the rank of Colligne, a trainee Hunter Montagne. It is treated with bullet-resistant materials, and lined with the dark fur of Illestrian dire wolves."
 	icon_state = "armor_rouma_colligne"
 	item_state = "rouma_coat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit helmet"
-	desc = "An armor-plated knight's helmet, the pointed design of it reminiscent of iconography depicting the great Ashen Huntsman."
+	desc = "An armored helmet with an unusual design that recalls both pre-industrial Solarian armor and iconography depicting the Ashen Huntsman. Though hand-made, it is surprisingly quite spaceworthy."
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
 	icon_state = "hardsuit0-roumain"
@@ -89,7 +89,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit"
-	desc = "A modified knight's plate armor turned into a space-worthy hardsuit. A powered exoskeleton hidden behind the plates help grant it slight maneuverability."
+	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "hardsuit-roumain"
