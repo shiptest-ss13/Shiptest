@@ -36,6 +36,8 @@
 	// This should all be handled by integrity should that ever be expanded to walls.
 	var/max_health = 400
 	var/health = 400
+	var/brute_mod = 1
+	var/burn_mod = 1
 	// used to give mining projectiles a bit of an edge against conc walls
 	var/static/list/extra_dam_proj = typecacheof(list(
 		/obj/projectile/kinetic,
@@ -76,17 +78,20 @@
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()
+	. += damage_hints(user)
 	. += deconstruction_hints(user)
 
-// todo: make this work
-/turf/closed/wall/proc/deconstruction_hints(mob/user)
+/turf/closed/wall/proc/damage_hints(mob/user)
 	switch(health / max_health)
 		if(0.5 to 0.99)
-			. += "[p_they(TRUE)] look[p_s()] slightly damaged."
+			return "[p_they(TRUE)] look[p_s()] slightly damaged."
 		if(0.25 to 0.5)
-			. += "[p_they(TRUE)] appear[p_s()] heavily damaged."
+			return "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			. += "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+			return "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+	return
+
+/turf/closed/wall/proc/deconstruction_hints(mob/user)
 	return "<span class='notice'>The outer plating is <b>welded</b> firmly in place.</span>"
 
 /turf/closed/wall/attack_tk()
@@ -146,9 +151,9 @@
 		switch(I.damtype)
 			if(BRUTE)
 				if(I.get_sharpness())
-					dam *= 2/3
+					dam *= brute_mod
 			if(BURN)
-				dam *= 2/3
+				dam *= burn_mod
 			else
 				return 0
 	// if dam is below t_min, then the hit has no effect
@@ -162,9 +167,9 @@
 	else
 		switch(P.damage_type)
 			if(BRUTE)
-				dam *= 1
+				dam *= brute_mod
 			if(BURN)
-				dam *= 2/3
+				dam *= burn_mod
 			else
 				return 0
 	// if dam is below t_min, then the hit has no effect
@@ -234,7 +239,7 @@
 
 
 /turf/closed/wall/blob_act(obj/structure/blob/B)
-	alter_health(max_health *0.5)
+	alter_health(-400)
 	add_dent(WALL_DENT_HIT)
 
 // todo: maybe make this cooler
@@ -264,13 +269,12 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	return attack_hand(user)
 
-
 /turf/closed/wall/attack_animal(mob/living/simple_animal/M)
 	M.changeNext_move(CLICK_CD_MELEE)
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_health(-100)
+		alter_health(-400)
 		return
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
@@ -278,7 +282,7 @@
 	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
 	if(!arm || arm.bodypart_disabled)
 		return
-	alter_health(-100)
+	alter_health(-250)
 	add_dent(WALL_DENT_HIT)
 	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
 				"<span class='danger'>You smash \the [src]!</span>", \

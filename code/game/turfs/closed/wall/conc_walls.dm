@@ -75,13 +75,6 @@
 			. += "[p_they(TRUE)] look[p_s()] a little wet."
 		if(0 to 0.4)
 			. += "[p_they(TRUE)] look[p_s()] freshly poured."
-	switch(health / max_health)
-		if(0.5 to 0.99)
-			. += "[p_they(TRUE)] look[p_s()] slightly damaged."
-		if(0.25 to 0.5)
-			. += "[p_they(TRUE)] appear[p_s()] heavily damaged."
-		if(0 to 0.25)
-			. += "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
 	return
 
 /turf/closed/wall/concrete/create_girder()
@@ -147,7 +140,6 @@
 	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
 				"<span class='danger'>You smash \the [src]!</span>", \
 				"<span class='hear'>You hear a booming smash!</span>")
-	user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 	alter_health(-250)
 	return TRUE
 
