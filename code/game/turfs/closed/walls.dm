@@ -199,7 +199,10 @@
 		return ..()
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
-			alter_health(-2000)
+			// SN src = null
+			var/turf/NT = ScrapeAway()
+			NT.contents_explosion(severity, target)
+			return
 		if(EXPLODE_HEAVY)
 			alter_health(rand(-500, -800))
 		if(EXPLODE_LIGHT)
@@ -211,10 +214,10 @@
 // 		return
 // 	switch(severity)
 // 		if(EXPLODE_DEVASTATE)
-// 			//SN src = null
-// 			var/turf/NT = ScrapeAway()
-// 			NT.contents_explosion(severity, target)
-// 			return
+			//SN src = null
+			var/turf/NT = ScrapeAway()
+			NT.contents_explosion(severity, target)
+			return
 // 		if(EXPLODE_HEAVY)
 // 			if (prob(50))
 // 				dismantle_wall(devastated = TRUE)
@@ -231,6 +234,7 @@
 	alter_health(max_health *0.5)
 	add_dent(WALL_DENT_HIT)
 
+// todo: maybe make this cooler
 /turf/closed/wall/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
