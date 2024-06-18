@@ -30,9 +30,9 @@
 	. = ..()
 	// by this point it's guaranteed to be a concrete wall
 	var/turf/closed/wall/concrete/conc_wall = T
-	if(conc_wall.health != health || conc_wall.harden_lvl != harden_lvl)
+	if(conc_wall.integrity != integrity || conc_wall.harden_lvl != harden_lvl)
 		conc_wall.harden_lvl = harden_lvl
-		conc_wall.health = health
+		conc_wall.integrity = integrity
 		// very much not a fan of all the repetition here,
 		// but there's unfortunately no easy way around it
 		conc_wall.check_harden()
@@ -54,7 +54,7 @@
 
 /turf/closed/wall/concrete/update_overlays()
 	. = ..()
-	var/adj_dam_pct = 1 - (health/(max_health*0.7))
+	var/adj_dam_pct = 1 - (integrity/(max_integrity*0.7))
 	if(adj_dam_pct <= 0)
 		return
 	if(!crack_overlay)
@@ -62,7 +62,7 @@
 	crack_overlay.alpha = adj_dam_pct*255
 	. += crack_overlay
 
-// we use this to show health + drying percentage
+// we use this to show integrity + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
 	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
@@ -77,8 +77,8 @@
 
 /turf/closed/wall/concrete/create_girder()
 	var/obj/girder = ..()
-	if(health < 0)
-		girder.take_damage(min(abs(health), 50))
+	if(integrity < 0)
+		girder.take_damage(min(abs(integrity), 50))
 	return girder
 
 /turf/closed/wall/concrete/proc/check_harden()
@@ -94,21 +94,21 @@
 
 /turf/closed/wall/concrete/proc/update_stats()
 	// explosion block is diminished on a damaged / soft wall
-	explosion_block = (health / max_health) * harden_lvl * initial(explosion_block)
+	explosion_block = (integrity / max_integrity) * harden_lvl * initial(explosion_block)
 	update_appearance()
 
-/turf/closed/wall/concrete/alter_health(delta)
+/turf/closed/wall/concrete/alter_integrity(delta)
 	// 8x as vulnerable when unhardened
 	if(delta < 0)
 		delta *= 1 + 7*(1-harden_lvl)
-	health += delta
-	if(health <= 0)
+	integrity += delta
+	if(integrity <= 0)
 		// if damage put us 50 points or more below 0, we got proper demolished
-		dismantle_wall(health <= -50 ? TRUE : FALSE)
+		dismantle_wall(integrity <= -50 ? TRUE : FALSE)
 		return FALSE
-	health = min(health, max_health)
+	integrity = min(integrity, max_integrity)
 	update_stats()
-	return health
+	return integrity
 
 /turf/closed/wall/concrete/bullet_act(obj/projectile/P)
 	. = ..()
@@ -118,14 +118,14 @@
 	if(P.suppressed != SUPPRESSED_VERY)
 		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
-		alter_health(-dam)
+		alter_integrity(-dam)
 
 /turf/closed/wall/concrete/attack_animal(mob/living/simple_animal/M)
 	M.changeNext_move(CLICK_CD_MELEE)
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_health(-400)
+		alter_integrity(-400)
 		return
 
 /turf/closed/wall/concrete/attack_hulk(mob/living/carbon/user)
@@ -138,7 +138,7 @@
 	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
 				"<span class='danger'>You smash \the [src]!</span>", \
 				"<span class='hear'>You hear a booming smash!</span>")
-	alter_health(-250)
+	alter_integrity(-250)
 	return TRUE
 
 /turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)
@@ -149,7 +149,7 @@
 							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-			alter_health(M.force * -20)
+			alter_integrity(M.force * -20)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
@@ -179,7 +179,7 @@
 			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-	alter_health(-dam)
+	alter_integrity(-dam)
 	return TRUE
 
 /turf/closed/wall/concrete/get_item_damage(obj/item/I)
@@ -231,7 +231,7 @@
 	girder_type = /obj/structure/girder
 
 	min_dam = 13
-	max_health = 1300
+	max_integrity = 1300
 	time_to_harden = 60 SECONDS
 
 // requires ENVIRONMENT_SMASH_RWALLS for simplemobs to break
@@ -241,7 +241,7 @@
 	if(!M.environment_smash)
 		return
 	if(M.environment_smash & ENVIRONMENT_SMASH_RWALLS)
-		alter_health(-600) // 3 hits to kill
+		alter_integrity(-600) // 3 hits to kill
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)

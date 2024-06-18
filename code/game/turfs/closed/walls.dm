@@ -34,8 +34,8 @@
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 8
 	// This should all be handled by integrity should that ever be expanded to walls.
-	var/max_health = 400
-	var/health
+	var/max_integrity = 400
+	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
 	// used to give mining projectiles a bit of an edge against conc walls
@@ -62,8 +62,8 @@
 			underlay_appearance.icon_state = fixed_underlay["icon_state"]
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
-	if(health == null)
-		health = max_health
+	if(integrity == null)
+		integrity = max_integrity
 
 
 /turf/closed/wall/copyTurf(turf/T, copy_air, flags)
@@ -84,7 +84,7 @@
 	. += deconstruction_hints(user)
 
 /turf/closed/wall/proc/damage_hints(mob/user)
-	switch(health / max_health)
+	switch(integrity / max_integrity)
 		if(0.5 to 0.99)
 			return "[p_they(TRUE)] look[p_s()] slightly damaged."
 		if(0.25 to 0.5)
@@ -99,20 +99,20 @@
 /turf/closed/wall/attack_tk()
 	return
 
-// negative values reduce health, positive values increase health
-/turf/closed/wall/proc/alter_health(damage, devastate = FALSE)
-	health += damage
-	if(health >= max_health)
-		health = max_health
-	if(health <= 0)
+// negative values reduce integrity, positive values increase integrity
+/turf/closed/wall/proc/alter_integrity(damage, devastate = FALSE)
+	integrity += damage
+	if(integrity >= max_integrity)
+		integrity = max_integrity
+	if(integrity <= 0)
 		if(devastate)
 			dismantle_wall(devastate)
 			return FALSE
 		// if damage put us 50 points or more below 0, we got proper demolished
-		dismantle_wall(health <= -50 ? TRUE : FALSE)
+		dismantle_wall(integrity <= -50 ? TRUE : FALSE)
 		return FALSE
-	health = min(health, max_health)
-	return health
+	integrity = min(integrity, max_integrity)
+	return integrity
 
 /turf/closed/wall/bullet_act(obj/projectile/P)
 	. = ..()
@@ -122,7 +122,7 @@
 	if(P.suppressed != SUPPRESSED_VERY)
 		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
-		alter_health(-dam)
+		alter_integrity(-dam)
 
 // catch-all for using most items on the wall -- attempt to smash
 /turf/closed/wall/proc/try_destroy(obj/item/W, mob/user, turf/T)
@@ -140,7 +140,7 @@
 			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-	alter_health(-dam)
+	alter_integrity(-dam)
 	return TRUE
 
 /turf/closed/wall/proc/get_item_damage(obj/item/I)
@@ -214,9 +214,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_health(rand(-500, -800))
+			alter_integrity(rand(-500, -800))
 		if(EXPLODE_LIGHT)
-			alter_health(rand(-200, -700))
+			alter_integrity(rand(-200, -700))
 
 // /turf/closed/wall/ex_act(severity, target)
 // 	if(target == src)
@@ -241,7 +241,7 @@
 
 
 /turf/closed/wall/blob_act(obj/structure/blob/B)
-	alter_health(-400)
+	alter_integrity(-400)
 	add_dent(WALL_DENT_HIT)
 
 // todo: maybe make this cooler
@@ -265,7 +265,7 @@
 		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
 					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 		add_dent(WALL_DENT_HIT)
-		alter_health(M.force)
+		alter_integrity(M.force)
 
 /turf/closed/wall/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -276,7 +276,7 @@
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_health(-400)
+		alter_integrity(-400)
 		return
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
@@ -284,7 +284,7 @@
 	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
 	if(!arm || arm.bodypart_disabled)
 		return
-	alter_health(-250)
+	alter_integrity(-250)
 	add_dent(WALL_DENT_HIT)
 	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
 				"<span class='danger'>You smash \the [src]!</span>", \
@@ -325,7 +325,7 @@
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0) || (health >= max_health))
+		if(!W.tool_start_check(user, amount=0) || (integrity >= max_integrity))
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
@@ -334,7 +334,7 @@
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
 				update_appearance()
-			alter_health(40)
+			alter_integrity(40)
 			return TRUE
 
 	return FALSE
@@ -362,7 +362,7 @@
 		while(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating.</span>")
-				alter_health(-(I.wall_decon_damage))
+				alter_integrity(-(I.wall_decon_damage))
 			//return TRUE
 
 	return FALSE
