@@ -108,3 +108,146 @@
   rkz, Benjamin(benbot16), Rohesie, Qustinnus, jlsnow301:
   - refactor: refactored do_afters to use timed_action_flags for unique args
   - code_imp: centralized do_mob and do_atom into do_after
+2024-06-05:
+  FalloutFalcon:
+  - rscdel: Trophies can no longer be used in crushers
+  - bugfix: fixed CODEOWNERS, i hope
+  SomeguyManperson:
+  - bugfix: The shadow's gunslinger buff now properly provides an AP bonus
+  - balance: Rollerbeds stop broken bone damage ticks from occurring while buckled
+2024-06-06:
+  SomeguyManperson:
+  - bugfix: melee hermits have had their immortal snail deals revoked
+2024-06-07:
+  Sun-Soaked:
+  - bugfix: combat knives and their subtypes now once again have sprites.
+  Zevotech:
+  - rscadd: remapped and renamed ashwalker_shrine into lavaland_surface_buried_shrine
+  - rscadd: Necropolis walls have been renamed to thick stone walls.
+  rye-rice:
+  - rscadd: Changing firemodes on guns now have new sprites
+  - bugfix: The E-40 now works as intended!
+  - rscadd: The E-40 now has an ammo counter
+  - balance: The P16 shoots slightly faster.
+  - balance: Two E-40s max are obtainable from the black market should it spawn. Blank
+      market price cap of the E-40 has also increased
+2024-06-08:
+  Apogee-dev:
+  - bugfix: fixed an incorrect sprite state on corpo sofas
+  FalloutFalcon:
+  - rscdel: Removed alot of magic cruft
+  - code_imp: Sorts gun defines into there own file
+  SomeguyManperson:
+  - bugfix: gunslinger applies its spread reduction effect to revolvers
+  Sun-Soaked:
+  - bugfix: removes a comment from apc.dm that was causing strange errors.
+  thgvr:
+  - imageadd: Kepori have been given a full visual overhaul.
+2024-06-09:
+  SomeguyManperson:
+  - tweak: bleeding is now stored in the limbs, functioning similarly to bone breaking.
+      Taking damage over a certain threshold and amount (lower for sharp weapons)
+      will cause part of it to be turned into bleeding.
+  - tweak: gauze, tape, and bleeding suppression are similarly no longer abstracted
+      into a "bleed suppression" value
+  - rscadd: you can now cauterize bleeding with a lighter. Which is cool.
+  - rscadd: you can now also cauterize bleeding with suit storage decontamination.
+      Which is hot.
+  - rscadd: examine and examine closely will show whether or not someone is visibly
+      bleeding or bandaged. This means people who are both will show both. Examine
+      closely additionally shows which limbs are currently bleeding.
+  - tweak: heparin now causes existing bleeding to worsen, instead of causing bleeding
+      on its own
+  - tweak: you can no longer cut the throat of someone who's head has been lopped
+      off
+  Zevotech:
+  - bugfix: Planets should no longer spawn without ruins when generating due to bad
+      map datums
+  - rscdel: Removed 3 Beach ruins
+  - rscdel: Removed 4 Iceplanet ruins
+  - rscdel: Removed 11 Jungle ruins
+  - rscdel: Removed 10 Lavaland ruins
+  - rscdel: Removed 8 Rockplanet ruins
+  - rscdel: Removed 7 Sandplanet ruins
+  - rscdel: Removed 7 Rockplanet ruins
+  - rscdel: Removed 15 Space ruins
+  - rscdel: Removed 16 unused/removed ruin code files
+  - rscdel: Removed a whole lot of old/unused ruin code from misc files
+  - tweak: Tweaked various ruins and one ship to fix issues and remove unused items
+2024-06-10:
+  PositiveEntropy:
+  - rscadd: CLIP now reports the presence of so-called "Flame Troopers" of the Frontiersmen
+      terrorizing their territories...
+  - balance: Marine armor has improved armor stats at the cost of the bulk slowing
+      down the wearer.
+  - balance: Flamethrowers have a slightly improved effective range, as well as higher
+      damage.
+  - imageadd: The Frontiersmen have gotten better tailors and now look sharp and deadly!
+  Skies-Of-Blue:
+  - rscadd: several new SUNS-produced genemods have hit the public market! Head to
+      your local gene-clinic and ask about their new dog and rabbit options for more
+      details
+  - balance: fox ears have been tweaked to be just as susceptible to sound as cat
+      ears
+2024-06-11:
+  'CoiledLamb ':
+  - rscadd: Resprites the eggbox
+  Gristlebee:
+  - code_imp: Switchblades are now pathed under obj/kitchen/knife
+  - imageadd: Switchblade sprites moved from items and weapons.dmi to knife.dmi
+  Sadhorizon:
+  - rscadd: Pickaxe was added to the autolathe.
+  meemofcourse:
+  - rscadd: PGF jobs now grant you the Kalixcian Common language
+2024-06-13:
+  FalloutFalcon:
+  - rscdel: Removed alot of chaplain stuff we will never use
+  - rscdel: The chaplain is now just as magic as the average person
+  Gristlebee:
+  - rscadd: Wrecked Factory ruin
+  - rscadd: Indestructible titanium walls
+  - rscadd: Lavaland atmos subtypes for plating, rusted plating, concrete, white and
+      dark turfs
+  - balance: Syndicate Space Simple Mobs have their max temp increased
+  - tweak: Wall_lockers updatepaths on the Aegis
+  - code_imp: Adds ruin to map_catalogue,txt, lavaland.dm and adds it to lavaland.dm
+      areas
+  - rscadd: Techshell box
+  - rscadd: Techshells to the outpost market for 175 credits
+  - tweak: Scatter ion description
+  - balance: Techshell recipes no longer require higher tier stock parts, adjusts
+      scatter laser, scatter ion, dragonsbreath and pulse slug recipes
+  - balance: Buffs scatter lasers, scatter ion and dragonsbreath
+  PositiveEntropy:
+  - rscadd: The Hardliners have now made a proper appearance in the Frontier!
+  Sadhorizon:
+  - rscadd: Added the Sunskipper-class Culinary Vessel.
+  - rscadd: Every drink and booze dispenser drink is in the booze-o-mat now.
+  - rscadd: Added bottles for triple sec, lemon juice, creme de cacao and creme de
+      menthe.
+  - rscdel: Removed the Boyardee-class Entertainment Vessel.
+  - rscdel: Independent chefs no longer get kitchen cqc.
+  - tweak: The "syndicate waiter's outfit" renamed to just "waiter's outfit".
+  - tweak: Indpenedent bartenders now start with a waistcoat.
+  - tweak: Edited waiter's outfit. Also, the role now gets kitchen access.
+  - tweak: Independent cooks now start with laceup shoes.
+  meemofcourse:
+  - rscadd: SUNS 3x6 logo decal, SUNS tiles, SUNS emblem floor decal, Desk and Wall
+      flag, folders, PDA, cards, locker, bedsheets, and headsets.
+2024-06-14:
+  Gristlebee:
+  - bugfix: Posibrains/MMI pilots being permaslept on mech destruction
+2024-06-15:
+  Rye-Rice:
+  - imageadd: Rylie Was Forced To Resprite Concrete when she was 6!
+2024-06-16:
+  DIB-DOG:
+  - rscadd: Added 1 Raksha Helmet to the sergeant's locker on the PGFN Crying Sun
+2024-06-17:
+  meemofcourse:
+  - code_imp: A lot of SUNS decals.
+2024-06-18:
+  '@thestripes, @meemofcourse , @GenericDM ':
+  - tweak: reflavors nearly every drink ingame
+  SomeguyManperson:
+  - rscadd: you can now put organs inside burgers or on pizzas
