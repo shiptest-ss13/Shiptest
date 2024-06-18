@@ -51,7 +51,7 @@
 
 /obj/item/clothing/suit/armor/roumain/flamebearer
 	name = "saint-roumain flamebearer robes"
-	desc = "A set of ash-grey robes made from hard leather and adorned with gold trim and impregnated with aromatic oils. The rough, nearly-charred finish is a favorite of the ecclesiastical sect of the Church of Saint Roumain, a constant reminder of the Ashen Huntsman himself."
+	desc = "A set of ashy-grey robes made from hard leather, adorned with gold trims. Its rough finish after a near-char and application of aromatics is heavily favored for the ecclesiastical sect of the Church of Saint Roumain, a living reminder of the Ashen Huntsman himself."
 	icon_state = "armor_rouma_flamebearer"
 
 /obj/item/clothing/suit/armor/roumain/colligne
