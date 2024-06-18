@@ -93,11 +93,14 @@
 	return
 
 // negative values reduce health, positive values increase health
-/turf/closed/wall/proc/alter_health(damage)
+/turf/closed/wall/proc/alter_health(damage, devastate = FALSE)
 	health += damage
 	if(health >= max_health)
 		health = max_health
 	if(health <= 0)
+		if(devastate)
+			dismantle_wall(devastate)
+			return FALSE
 		// if damage put us 50 points or more below 0, we got proper demolished
 		dismantle_wall(health <= -50 ? TRUE : FALSE)
 		return FALSE
@@ -346,6 +349,7 @@
 	return FALSE
 
 /turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)
+
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
