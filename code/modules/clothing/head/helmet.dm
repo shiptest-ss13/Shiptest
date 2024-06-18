@@ -1,6 +1,8 @@
 /obj/item/clothing/head/helmet
 	name = "helmet"
 	desc = "Standard Security gear. Protects the head from impacts."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
@@ -228,10 +230,11 @@
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
 	icon_state = "marine_command"
 	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
+	slowdown = 0.3
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -480,16 +483,6 @@
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
 
-/obj/item/clothing/head/helmet/r_trapper
-	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
-	icon_state = "rus_ushanka"
-	item_state = "rus_ushanka"
-	body_parts_covered = HEAD
-	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 20, "bio" = 50, "rad" = 20, "fire" = -10, "acid" = 50)
-
 /obj/item/clothing/head/helmet/infiltrator
 	name = "infiltrator helmet"
 	desc = "The galaxy isn't big enough for the two of us."
@@ -508,6 +501,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	supports_variations = KEPORI_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
@@ -516,6 +510,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	supports_variations = KEPORI_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
@@ -594,9 +589,3 @@
 		"Snow" = "x11helm_snow",
 		"Urban" = "x11helm_urban",
 		)
-
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
-	icon_state = "x11helm_frontier"
-	unique_reskin = null

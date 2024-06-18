@@ -7,8 +7,8 @@
 	base_icon_state = "pump"
 	anchored = FALSE
 	density = TRUE
-	idle_power_usage = 10
-	active_power_usage = 1000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 
 	rcd_cost = 30
 	rcd_delay = 40

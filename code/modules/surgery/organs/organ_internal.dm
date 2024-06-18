@@ -38,7 +38,7 @@
 /obj/item/organ/Initialize()
 	. = ..()
 	if(organ_flags & ORGAN_EDIBLE)
-		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GORE, null, 10, null, null, null, CALLBACK(src, PROC_REF(OnEatFrom)))
+		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GORE, null, 10, null, null, null, COLOR_PINK, CALLBACK(src, PROC_REF(OnEatFrom)))
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
