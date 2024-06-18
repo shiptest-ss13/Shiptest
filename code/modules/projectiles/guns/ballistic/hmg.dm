@@ -88,7 +88,7 @@
 	if(!can_deploy)
 		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
 		return
-	if(!do_after(user, deploy_time, src, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
+	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
 		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
