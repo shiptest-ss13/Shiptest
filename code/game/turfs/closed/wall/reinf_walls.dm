@@ -69,27 +69,13 @@
 	return FALSE
 
 /turf/closed/wall/r_wall/update_stats()
-	switch(integrity)
-		if(get_state_integrity(SUPPORT_LINES) to get_state_integrity(INTACT))
-			d_state = INTACT
-		if(get_state_integrity(COVER) to get_state_integrity(SUPPORT_LINES))
-			d_state = SUPPORT_LINES
-		if(get_state_integrity(CUT_COVER) to get_state_integrity(COVER))
-			d_state = COVER
-		if(get_state_integrity(ANCHOR_BOLTS) to get_state_integrity(CUT_COVER))
-			d_state = CUT_COVER
-		if(get_state_integrity(SUPPORT_RODS) to get_state_integrity(ANCHOR_BOLTS))
-			d_state = ANCHOR_BOLTS
-		if(get_state_integrity(SHEATH) to get_state_integrity(SUPPORT_RODS))
-			d_state = SUPPORT_RODS
-		if(0 to get_state_integrity(SHEATH))
-			d_state = SHEATH
-
+	var/integrity_per_state = max_integrity/7
+	d_state = (7 - round(integrity/integrity_per_state))
 	.= ..()
 
 /// Calculate how much integrity the r-wall should have a a given state.
-/turf/closed/wall/r_wall/get_state_integrity(state)
-	return max_integrity - ((max_integrity * 0.7) * state)
+/turf/closed/wall/r_wall/proc/get_state_integrity(state)
+	return max_integrity - ((max_integrity/7) * state)
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
 	//DECONSTRUCTION
