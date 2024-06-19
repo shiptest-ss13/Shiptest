@@ -491,6 +491,14 @@
 	build_path = /obj/item/shovel
 	category = list("initial","Misc", "Tool Designs")
 
+/datum/design/pickaxe
+	name = "Pickaxe"
+	id = "pickaxe"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/pickaxe
+	category = list("initial","Tools", "Tool Designs")
+
 /datum/design/spade
 	name = "Spade"
 	id = "spade"
@@ -1189,6 +1197,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
 	build_path = /obj/item/assembly/control
+	category = list("initial","Misc")
+
+/datum/design/holofield_control
+	name = "Holofield Controller"
+	id = "holofield"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control/shieldwallgen
 	category = list("initial","Misc")
 
 /datum/design/trashbag

@@ -85,11 +85,13 @@
 /obj/item/clothing/head/hooded/hood/fbp
 	name = "\improper FBP kepori hood"
 	desc = "A hood for your FBP hoodie."
+	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
 
 /obj/item/clothing/suit/hooded/hoodie/rilena
 	name = "K4L1 hoodie"
 	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
 
@@ -110,5 +112,6 @@
 /obj/item/clothing/head/hooded/hood/rilena
 	name = "RILENA: LMR K4L1 hood"
 	desc = "A hood for your RILENA themed hoodie."
+	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 

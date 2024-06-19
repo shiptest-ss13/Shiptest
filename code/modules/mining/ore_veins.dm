@@ -209,3 +209,36 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6
 	spawn_time = 80
+
+// Asteroid veins are the same as the base planetary ones yield wise, but with the asteroid mobs.
+
+/obj/structure/vein/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		)
+
+/obj/structure/vein/classtwo/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 15,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5
+		)
+
+/obj/structure/vein/classthree/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10
+		)
+

@@ -29,7 +29,7 @@
 	mag_type = /obj/item/ammo_box/magazine/toy/pistol
 	fire_sound = 'sound/items/syringeproj.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.2 SECONDS
 	actions_types = list()
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
