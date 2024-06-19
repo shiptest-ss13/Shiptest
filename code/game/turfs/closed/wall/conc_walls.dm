@@ -97,49 +97,11 @@
 	// explosion block is diminished on a damaged / soft wall
 	explosion_block = (integrity / max_integrity) * harden_lvl * initial(explosion_block)
 
-/turf/closed/wall/concrete/alter_integrity(delta)
+/turf/closed/wall/concrete/alter_integrity(damage)
 	// 8x as vulnerable when unhardened
-	if(delta < 0)
-		delta *= 1 + 7*(1-harden_lvl)
-	integrity += delta
-	if(integrity <= 0)
-		// if damage put us 50 points or more below 0, we got proper demolished
-		dismantle_wall(integrity <= -50 ? TRUE : FALSE)
-		return FALSE
-	integrity = min(integrity, max_integrity)
-	update_stats()
-	return integrity
-
-/turf/closed/wall/concrete/bullet_act(obj/projectile/P)
-	. = ..()
-	var/dam = get_proj_damage(P)
-	if(!dam)
-		return
-	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
-	if(!QDELETED(src))
-		alter_integrity(-dam)
-
-/turf/closed/wall/concrete/attack_animal(mob/living/simple_animal/M)
-	M.changeNext_move(CLICK_CD_MELEE)
-	M.do_attack_animation(src)
-	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_integrity(-400)
-		return
-
-/turf/closed/wall/concrete/attack_hulk(mob/living/carbon/user)
-	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
-	log_combat(user, src, "attacked")
-	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
-	if(!arm || arm.bodypart_disabled)
-		return FALSE
-	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
-				"<span class='hear'>You hear a booming smash!</span>")
-	alter_integrity(-250)
-	return TRUE
+	if(damage < 0)
+		damage *= 1 + 7*(1-harden_lvl)
+	.= ..()
 
 /turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
@@ -162,25 +124,6 @@
 // only way to deconstruct is to smash through
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
-
-// catch-all for using most items on the wall -- attempt to smash
-/turf/closed/wall/concrete/try_destroy(obj/item/W, mob/user, turf/T)
-	var/dam = get_item_damage(W)
-	user.do_attack_animation(src)
-	if(!dam)
-		to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
-		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
-		return TRUE
-	log_combat(user, src, "attacked", W)
-	user.visible_message("<span class='danger'>[user] hits [src] with [W]!</span>", \
-				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
-	switch(W.damtype)
-		if(BRUTE)
-			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
-		if(BURN)
-			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-	alter_integrity(-dam)
-	return TRUE
 
 /turf/closed/wall/concrete/get_item_damage(obj/item/I)
 	var/dam = I.force
