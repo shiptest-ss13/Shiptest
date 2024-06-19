@@ -6,6 +6,8 @@
 //NORTH default dir
 /obj/docking_port
 	//invisibility = INVISIBILITY_ABSTRACT
+
+	desc = "This is only visible for debugging purposes. You don't see this in character, of course."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinonfar"
 
@@ -202,6 +204,9 @@
 /obj/docking_port/stationary
 	name = "dock"
 
+	/// can we even dock?
+	var/enabled = TRUE
+
 	var/last_dock_time
 
 	//The ship that has this port as a docking_point, ships docked to this port will be towed by the owner_ship
@@ -215,6 +220,10 @@
 	var/datum/docking_ticket/current_docking_ticket
 	/// moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
 	var/adjust_dock_for_landing = FALSE
+
+
+	/// disables the port from being docked to when the mobile port the ship is attatched to is docked. Useless on non-ships.
+	var/disable_on_owner_ship_dock = FALSE
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
@@ -546,8 +555,26 @@
 	var/tow_dheight = bounds[2]
 	var/tow_rwidth = bounds[3] - tow_dwidth
 	var/tow_rheight = bounds[4] - tow_dheight
+
 	if(!istype(S))
 		return SHUTTLE_NOT_A_DOCKING_PORT
+
+	if(!S.enabled)
+		return SHUTTLE_PORT_DISABLED
+
+	//check the dock isn't occupied
+	var/currently_docked = S.docked
+	if(currently_docked)
+		// by someone other than us
+		if(currently_docked != src)
+			return SHUTTLE_SOMEONE_ELSE_DOCKED
+		else
+		// This isn't an error, per se, but we can't let the shuttle code
+		// attempt to move us where we currently are, it will get weird.
+			return SHUTTLE_ALREADY_DOCKED
+
+	if(S.adjust_dock_for_landing)
+		S.adjust_dock_to_shuttle(src)
 
 	if(istype(S, /obj/docking_port/stationary/transit))
 		return SHUTTLE_CAN_DOCK
@@ -564,16 +591,7 @@
 	if(tow_rheight > S.height-S.dheight)
 		return SHUTTLE_HEIGHT_TOO_LARGE
 
-	//check the dock isn't occupied
-	var/currently_docked = S.docked
-	if(currently_docked)
-		// by someone other than us
-		if(currently_docked != src)
-			return SHUTTLE_SOMEONE_ELSE_DOCKED
-		else
-		// This isn't an error, per se, but we can't let the shuttle code
-		// attempt to move us where we currently are, it will get weird.
-			return SHUTTLE_ALREADY_DOCKED
+
 
 
 	return SHUTTLE_CAN_DOCK

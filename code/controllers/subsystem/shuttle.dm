@@ -102,7 +102,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!(M in transit_requesters))
 		transit_requesters += M
 
-/datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M)
+/datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M, offset_x, offset_y)
 	// First, determine the size of the needed zone
 	// Because of shuttle rotation, the "width" of the shuttle is not
 	// always x.
@@ -178,8 +178,8 @@ SUBSYSTEM_DEF(shuttle)
 	// Then create a transit docking port in the middle
 	// union coords (1,2) points from the docking port to the bottom left corner of the bounding box
 	// So if we negate those coordinates, we get the vector pointing from the bottom left of the bounding box to the docking port
-	var/transit_x = bottomleft.x + (transit_width/2) + union_coords[1]
-	var/transit_y = bottomleft.y + (transit_height/2) + union_coords[2]
+	var/transit_x = bottomleft.x + (transit_width/2) + abs(union_coords[1]) + offset_x
+	var/transit_y = bottomleft.y + (transit_height/2) + abs(union_coords[2]) + offset_y
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
@@ -364,7 +364,7 @@ SUBSYSTEM_DEF(shuttle)
 		S.owner_ship = new_shuttle
 		S.load_roundstart()
 
-	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
+	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle, template.tranist_x_offset, template.tranist_y_offset)
 
 	if(!transit_dock)
 		qdel(src, TRUE)

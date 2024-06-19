@@ -1271,9 +1271,11 @@
 /area/ship/bridge)
 "vU" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Kilo Port Beam Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2324,6 +2326,18 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
+"Yb" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Kilo Forward Bow Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "Yu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
@@ -2762,6 +2776,22 @@ Qw
 qw
 ac
 rW
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+Yb
+aa
+aa
+aa
 aa
 aa
 aa

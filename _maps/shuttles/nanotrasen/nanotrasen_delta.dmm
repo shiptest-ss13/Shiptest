@@ -1215,9 +1215,12 @@
 /area/ship/medical)
 "gv" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Delta Port Beam Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1716,6 +1719,13 @@
 "rC" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	name = "NT Frigate";
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "rW" = (
@@ -2503,6 +2513,17 @@
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
+"KZ" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 21;
+	height = 31;
+	name = "Delta Starboard Bow Dock";
+	width = 41
+	},
+/turf/template_noop,
+/area/template_noop)
 "Lb" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -2956,12 +2977,6 @@
 	},
 /obj/effect/turf_decal/number/nine{
 	dir = 4
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	name = "NT Frigate";
-	preferred_direction = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -3618,5 +3633,25 @@ tU
 XR
 Vt
 Gw
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+KZ
+aa
+aa
 aa
 "}

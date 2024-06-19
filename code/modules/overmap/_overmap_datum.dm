@@ -57,7 +57,7 @@
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
-/datum/overmap/New(position, system_spawned_in, ...)
+/datum/overmap/New(position, datum/overmap_star_system/system_spawned_in, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
 	current_overmap = system_spawned_in
 	if(!position)
@@ -75,6 +75,8 @@
 		y = position["y"]
 	else if(istype(position, /datum/overmap))
 		var/datum/overmap/docked_object = position
+		x = docked_object.x
+		y = docked_object.y
 		docked_object.contents += src
 		docked_to = docked_object
 
@@ -246,7 +248,7 @@
 	var/list/possible_interactions = interact_target.get_interactions(user, src)
 
 	if(!possible_interactions)
-		return "There is nothing of intrest at [interact_target]."
+		return "There is nothing of interest at [interact_target]."
 
 	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions)
 
@@ -332,7 +334,7 @@
  *
  * * dock_target - The overmap datum to dock to. Cannot be null.
  */
-/datum/overmap/proc/Dock(datum/overmap/dock_target, force = FALSE)
+/datum/overmap/proc/Dock(datum/overmap/dock_target, obj/docking_port/stationary/override_dock, force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
@@ -343,9 +345,6 @@
 		return "Already docking!"
 	docking = TRUE
 
-	var/obj/docking_port/stationary/override_dock
-	if(istype(force,/obj/docking_port/stationary))
-		override_dock = force
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src, override_dock)
 	var/ticket_error = ticket?.docking_error
 	if(!ticket || ticket_error)

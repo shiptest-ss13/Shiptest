@@ -7,8 +7,6 @@
 
 /// This is the main proc. It instantly moves our mobile port to stationary port `new_dock`.
 /obj/docking_port/mobile/proc/initiate_docking(obj/docking_port/stationary/new_dock, movement_direction, force=FALSE)
-	if(new_dock.adjust_dock_for_landing)
-		new_dock.adjust_dock_to_shuttle(src)
 	// Crashing this ship with NO SURVIVORS
 	if(new_dock.docked == src)
 		remove_ripples()
@@ -21,6 +19,16 @@
 		if(!can_move())
 			remove_ripples()
 			return DOCKING_IMMOBILIZED
+
+
+	for(var/obj/docking_port/stationary/current_port as anything in docking_points)
+		if(current_port.disable_on_owner_ship_dock)
+			if(current_port.docked && !force)
+				return DOCKING_BLOCKED //lets not crush the ship/station we are about to land on
+			if(new_dock != assigned_transit)
+				current_port.enabled = FALSE
+			else
+				current_port.enabled = TRUE
 
 	var/obj/docking_port/stationary/old_dock = docked
 

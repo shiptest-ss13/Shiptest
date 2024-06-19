@@ -108,7 +108,8 @@
 				if(null)
 					return
 				if("Random Overmap Square")
-					ship_loc = null // null location causes overmap to just get a random square
+					ship_loc = null
+					selected_system = SSovermap.default_system
 				if("Outpost")
 					if(length(SSovermap.outposts) > 1)
 						var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in SSovermap.outposts
@@ -132,6 +133,7 @@
 
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system)
+
 			if(!target?.shuttle_port)
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()

@@ -23,7 +23,7 @@
 			// all ships which start undocked will end the loop undocked, so this shouldn't cause any ships to be wrongfully skipped.
 			if(cur_ship.docked_to)
 				continue
-			cur_ship.Dock(test_outpost, TRUE)
+			cur_ship.Dock(test_outpost, force = TRUE)
 
 			var/obj/docking_port/stationary/ship_dock = cur_ship.shuttle_port.docked
 			var/found_dock = FALSE

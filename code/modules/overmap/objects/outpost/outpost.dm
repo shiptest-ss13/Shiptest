@@ -3,6 +3,9 @@
 	char_rep = "T"
 	token_icon_state = "station_0"
 
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
+
+
 	// The map template used for the outpost. If null, there will be no central area loaded.
 	// Set to an instance of the singleton for its type in New.
 	var/datum/map_template/outpost/main_template = null

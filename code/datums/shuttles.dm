@@ -8,6 +8,11 @@
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
+	/// This offsets where the ship is in the transit level.
+	var/tranist_x_offset
+	/// This offsets where the ship is in the transit level.
+	var/tranist_y_offset
+
 	var/port_x_offset
 	var/port_y_offset
 	var/port_dir

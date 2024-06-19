@@ -109,7 +109,7 @@
 				return
 			if(istype(position, /datum/overmap))
 				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
-				Dock(position, TRUE)
+				Dock(position, force = TRUE)
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)

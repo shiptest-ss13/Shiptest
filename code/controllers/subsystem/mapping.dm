@@ -243,6 +243,12 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["starting_funds"]))
 			S.starting_funds = data["starting_funds"]
 
+		if(isnum(data["tranist_x_offset"]))
+			S.tranist_x_offset = data["tranist_x_offset"]
+
+		if(isnum(data["tranist_y_offset"]))
+			S.tranist_y_offset = data["tranist_y_offset"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
