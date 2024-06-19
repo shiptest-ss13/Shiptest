@@ -795,8 +795,6 @@ GLOBAL_LIST_EMPTY(knpcs)
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 	if(prob(5))
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
-	if(prob(10)) //carried over from previous
-		backpack_contents += /obj/item/crusher_trophy/shiny
 
 	//pockets
 	if(survivor_type == "survivor") //could also use fleshing out
