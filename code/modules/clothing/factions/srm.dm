@@ -135,7 +135,7 @@
 
 /obj/item/clothing/head/cowboy/sec/roumain/montagne
 	name = "montagne's hat"
-	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
+	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft."
 	icon_state = "rouma_montagne_hat"
 
 ///////////////
