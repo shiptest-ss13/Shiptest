@@ -69,23 +69,27 @@
 	return FALSE
 
 /turf/closed/wall/r_wall/update_stats()
-	switch(integrity / max_integrity)
-		if(0.857 to 0.99)
+	switch(integrity)
+		if(get_state_integrity(SUPPORT_LINES) to get_state_integrity(INTACT))
 			d_state = INTACT
-		if(0.714 to 0.857)
+		if(get_state_integrity(COVER) to get_state_integrity(SUPPORT_LINES))
 			d_state = SUPPORT_LINES
-		if(0.571 to 0.714)
+		if(get_state_integrity(CUT_COVER) to get_state_integrity(COVER))
 			d_state = COVER
-		if(0.428 to 0.571)
+		if(get_state_integrity(ANCHOR_BOLTS) to get_state_integrity(CUT_COVER))
 			d_state = CUT_COVER
-		if(0.285 to 0.428)
+		if(get_state_integrity(SUPPORT_RODS) to get_state_integrity(ANCHOR_BOLTS))
 			d_state = ANCHOR_BOLTS
-		if(0.142 to 0.285)
+		if(get_state_integrity(SHEATH) to get_state_integrity(SUPPORT_RODS))
 			d_state = SUPPORT_RODS
-		if(0 to 0.142)
+		if(0 to get_state_integrity(SHEATH))
 			d_state = SHEATH
 
 	.= ..()
+
+/// Calculate how much integrity the r-wall should have a a given state.
+/turf/closed/wall/r_wall/get_state_integrity(state)
+	return max_integrity - ((max_integrity * 0.7) * state)
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
 	//DECONSTRUCTION
@@ -94,8 +98,7 @@
 			if(W.tool_behaviour == TOOL_WIRECUTTER)
 				W.play_tool_sound(src, 100)
 				d_state = SUPPORT_LINES
-				set_integrity(1200)
-				update_appearance()
+				set_integrity(get_state_integrity(SUPPORT_LINES))
 				to_chat(user, "<span class='notice'>You cut the outer grille.</span>")
 				return 1
 
@@ -106,7 +109,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_LINES)
 						return 1
 					d_state = COVER
-					set_integrity(1000)
+					set_integrity(get_state_integrity(COVER))
 					update_appearance()
 					to_chat(user, "<span class='notice'>You unsecure the support lines.</span>")
 				return 1
@@ -114,8 +117,7 @@
 			else if(W.tool_behaviour == TOOL_WIRECUTTER)
 				W.play_tool_sound(src, 100)
 				d_state = INTACT
-				set_integrity(1200)
-				update_appearance()
+				set_integrity(get_state_integrity(INTACT))
 				to_chat(user, "<span class='notice'>You repair the outer grille.</span>")
 				return 1
 
@@ -128,8 +130,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return 1
 					d_state = CUT_COVER
-					set_integrity(800)
-					update_appearance()
+					set_integrity(get_state_integrity(CUT_COVER))
 					to_chat(user, "<span class='notice'>You press firmly on the cover, dislodging it.</span>")
 				return 1
 
@@ -139,8 +140,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return 1
 					d_state = SUPPORT_LINES
-					set_integrity(1000)
-					update_appearance()
+					set_integrity(get_state_integrity(SUPPORT_LINES))
 					to_chat(user, "<span class='notice'>The support lines have been secured.</span>")
 				return 1
 
@@ -151,8 +151,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return 1
 					d_state = ANCHOR_BOLTS
-					set_integrity(600)
-					update_appearance()
+					set_integrity(get_state_integrity(ANCHOR_BOLTS))
 					to_chat(user, "<span class='notice'>You pry off the cover.</span>")
 				return 1
 
@@ -164,8 +163,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return TRUE
 					d_state = COVER
-					set_integrity(800)
-					update_appearance()
+					set_integrity(get_state_integrity(COVER))
 					to_chat(user, "<span class='notice'>The metal cover has been welded securely to the frame.</span>")
 				return 1
 
@@ -176,8 +174,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return 1
 					d_state = SUPPORT_RODS
-					set_integrity(400)
-					update_appearance()
+					set_integrity(get_state_integrity(SUPPORT_RODS))
 					to_chat(user, "<span class='notice'>You remove the bolts anchoring the support rods.</span>")
 				return 1
 
@@ -187,8 +184,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return 1
 					d_state = CUT_COVER
-					set_integrity(600)
-					update_appearance()
+					set_integrity(get_state_integrity(CUT_COVER))
 					to_chat(user, "<span class='notice'>The metal cover has been pried back into place.</span>")
 				return 1
 
@@ -201,8 +197,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return 1
 					d_state = SHEATH
-					set_integrity(200)
-					update_appearance()
+					set_integrity(get_state_integrity(SHEATH))
 					to_chat(user, "<span class='notice'>You slice through the support rods.</span>")
 				return 1
 
@@ -213,8 +208,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return 1
 					d_state = ANCHOR_BOLTS
-					set_integrity(400)
-					update_appearance()
+					set_integrity(get_state_integrity(ANCHOR_BOLTS))
 					to_chat(user, "<span class='notice'>You tighten the bolts anchoring the support rods.</span>")
 				return 1
 
@@ -236,8 +230,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SHEATH)
 						return TRUE
 					d_state = SUPPORT_RODS
-					set_integrity(400)
-					update_appearance()
+					set_integrity(get_state_integrity(SUPPORT_RODS))
 					to_chat(user, "<span class='notice'>You weld the support rods back together.</span>")
 				return 1
 	return 0
