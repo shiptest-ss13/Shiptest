@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			) = 1,
 		list(//drinks
 			/obj/item/reagent_containers/food/drinks/bottle/vodka = 1,
-			/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1,
+			/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 1,
 			) = 1,
 		list(//sprayers
 			/obj/item/reagent_containers/spray = 1,

@@ -386,6 +386,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 
 	wield_slowdown = 0.25
 	wield_delay = 0.3 SECONDS //OP? maybe
