@@ -346,6 +346,7 @@
 	key_third_person = "whistles"
 	message = "whistles!"
 	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
 
 /datum/emote/living/carbon/human/kepiwhistle/get_sound(mob/living/user)
 	if(!ishuman(user))
@@ -357,3 +358,17 @@
 	key = "woop"
 	key_third_person = "woops"
 	message = "woops!"
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/carbon/human/chitter
+	key = "chitter"
+	key_third_person = "chitters"
+	message = "chitters."
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/chitter/get_sound(mob/living/user)
+	if(ismoth(user))
+		return 'sound/voice/moth/mothchitter.ogg'
+	if(iskepori(user))
+		return 'sound/voice/kepori/keporichitter.ogg' // provided by robustedsebster

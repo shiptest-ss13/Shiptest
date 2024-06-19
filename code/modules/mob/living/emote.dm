@@ -60,18 +60,6 @@
 	message = "crosses their arms."
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/mothchitter
-	key = "chitter"
-	key_third_person = "chitters"
-	message = "chitters."
-	emote_type = EMOTE_AUDIBLE
-	vary = TRUE
-
-/datum/emote/living/carbon/mothchitter/get_sound(mob/living/user)
-	var/mob/living/carbon/human/H = user
-	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
-		return 'sound/voice/moth/mothchitter.ogg'
-
 /datum/emote/living/chuckle
 	key = "chuckle"
 	key_third_person = "chuckles"
