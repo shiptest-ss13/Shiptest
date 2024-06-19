@@ -80,8 +80,8 @@
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()
-	. += damage_hints(user)
 	. += deconstruction_hints(user)
+	. += damage_hints(user)
 
 /turf/closed/wall/proc/damage_hints(mob/user)
 	switch(integrity / max_integrity)
