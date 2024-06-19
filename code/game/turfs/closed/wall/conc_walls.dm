@@ -92,10 +92,10 @@
 		STOP_PROCESSING(SSobj, src)
 	update_stats()
 
-/turf/closed/wall/concrete/proc/update_stats()
+/turf/closed/wall/concrete/update_stats()
+	.= .. ()
 	// explosion block is diminished on a damaged / soft wall
 	explosion_block = (integrity / max_integrity) * harden_lvl * initial(explosion_block)
-	update_appearance()
 
 /turf/closed/wall/concrete/alter_integrity(delta)
 	// 8x as vulnerable when unhardened

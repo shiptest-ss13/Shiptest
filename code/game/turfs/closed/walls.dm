@@ -112,7 +112,17 @@
 		dismantle_wall(integrity <= -50 ? TRUE : FALSE)
 		return FALSE
 	integrity = min(integrity, max_integrity)
+	update_stats()
 	return integrity
+
+/turf/closed/wall/proc/set_integrity(amount,devastate = FALSE)
+	integrity = amount
+	update_stats()
+	if(integrity <= 0)
+		dismantle_wall(devastate)
+
+/turf/closed/wall/proc/update_stats()
+	update_appearance()
 
 /turf/closed/wall/bullet_act(obj/projectile/P)
 	. = ..()
