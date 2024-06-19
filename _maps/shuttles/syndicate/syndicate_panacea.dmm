@@ -15,9 +15,8 @@
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
-	name = "Restroom";
-	dir = 2
+/obj/machinery/door/airlock/public{
+	name = "Public Restroom"
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/toilet)
@@ -44,6 +43,7 @@
 /obj/structure/janitorialcart,
 /obj/item/mop,
 /obj/item/storage/bag/trash,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "az" = (
@@ -129,18 +129,6 @@
 	icon_state = "emergency_wall";
 	name = "Internals Closet"
 	},
-/obj/item/clothing/mask/breath/suns{
-	pixel_y = 6;
-	pixel_x = -9
-	},
-/obj/item/clothing/mask/breath/suns{
-	pixel_y = 1;
-	pixel_x = -9
-	},
-/obj/item/clothing/mask/breath/suns{
-	pixel_y = -4;
-	pixel_x = -9
-	},
 /obj/item/tank/internals/emergency_oxygen{
 	pixel_x = 5;
 	pixel_y = 6
@@ -152,6 +140,18 @@
 /obj/item/tank/internals/emergency_oxygen{
 	pixel_x = 5;
 	pixel_y = -2
+	},
+/obj/item/clothing/mask/breath{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/clothing/mask/breath{
+	pixel_y = 1;
+	pixel_x = -8
+	},
+/obj/item/clothing/mask/breath{
+	pixel_y = -5;
+	pixel_x = -8
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/office/lobby)
@@ -517,8 +517,9 @@
 /turf/open/floor/suns,
 /area/ship/bridge)
 "dj" = (
-/obj/structure/closet/crate/trashcart,
-/obj/machinery/light/directional/west,
+/obj/structure/sink/kitchen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "dn" = (
@@ -1367,10 +1368,6 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "hS" = (
-/obj/structure/fireaxecabinet{
-	dir = 8;
-	pixel_x = 25
-	},
 /obj/effect/turf_decal/borderfloorwhite,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
@@ -2196,7 +2193,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/public{
 	dir = 4;
 	name = "Front Desk"
 	},
@@ -2363,9 +2360,8 @@
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
-	name = "Restroom";
-	dir = 2
+/obj/machinery/door/airlock/public{
+	name = "Patient Restroom"
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/toilet/two)
@@ -3004,22 +3000,6 @@
 	pixel_y = 9;
 	pixel_x = 7
 	},
-/obj/item/holosign_creator/engineering{
-	pixel_y = 16;
-	pixel_x = -8
-	},
-/obj/item/holosign_creator/engineering{
-	pixel_y = 13;
-	pixel_x = -8
-	},
-/obj/item/holosign_creator/atmos{
-	pixel_y = 9;
-	pixel_x = -8
-	},
-/obj/item/holosign_creator/atmos{
-	pixel_y = 6;
-	pixel_x = -8
-	},
 /obj/item/multitool{
 	pixel_y = 4;
 	pixel_x = 13
@@ -3028,20 +3008,21 @@
 	pixel_y = 4;
 	pixel_x = 8
 	},
+/obj/effect/turf_decal/box,
+/obj/item/t_scanner{
+	pixel_y = 4;
+	pixel_x = -3
+	},
+/obj/item/t_scanner{
+	pixel_y = 4;
+	pixel_x = -11
+	},
 /obj/item/stack/cable_coil/cyan{
 	pixel_x = -6
 	},
 /obj/item/stack/cable_coil/cyan{
 	pixel_x = -6;
 	pixel_y = -4
-	},
-/obj/item/weldingtool/largetank{
-	pixel_x = 6;
-	pixel_y = 2
-	},
-/obj/item/weldingtool/largetank{
-	pixel_x = 3;
-	pixel_y = 0
 	},
 /obj/item/storage/belt/utility/full{
 	pixel_y = -10;
@@ -3051,15 +3032,10 @@
 	pixel_y = -10;
 	pixel_x = -7
 	},
-/obj/item/clothing/glasses/meson{
-	pixel_x = -5;
-	pixel_y = -8
+/obj/item/holosign_creator/atmos{
+	pixel_y = 14;
+	pixel_x = -9
 	},
-/obj/item/clothing/glasses/meson{
-	pixel_x = 4;
-	pixel_y = -8
-	},
-/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qM" = (
@@ -3080,14 +3056,12 @@
 /turf/open/floor/suns/plain,
 /area/ship/crew/cryo)
 "qT" = (
-/obj/machinery/fax{
-	pixel_y = 6
-	},
 /obj/structure/table,
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 10
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/fax/syndicate,
 /turf/open/floor/suns/dark/plain,
 /area/ship/security)
 "qZ" = (
@@ -4161,9 +4135,9 @@
 /obj/structure/cable/blue{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/public{
 	dir = 4;
-	name = "Patient Beds"
+	name = "Patient Dorms"
 	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
@@ -4520,8 +4494,8 @@
 	pixel_x = -9
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = -2;
-	pixel_x = -6
+	pixel_y = -6;
+	pixel_x = -5
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/structure/cable/blue{
@@ -5521,9 +5495,8 @@
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
-	dir = 2;
-	name = "Cryopods"
+/obj/machinery/door/airlock/public{
+	name = "Cryo"
 	},
 /turf/open/floor/suns/plain,
 /area/ship/crew/cryo)
@@ -5582,7 +5555,7 @@
 /obj/structure/cable/blue{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/public{
 	dir = 4;
 	name = "Front Desk"
 	},
@@ -6024,13 +5997,6 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/medical/psych)
-"Jm" = (
-/obj/effect/turf_decal/suns/line/marble/fill,
-/obj/structure/closet/crate/bin{
-	pixel_y = 4
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/crew/ccommons)
 "Jo" = (
 /obj/machinery/light_switch{
 	dir = 1;
@@ -6464,8 +6430,8 @@
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/glass{
-	name = "Patient Dorms"
+/obj/machinery/door/airlock/public/glass{
+	name = "Patient Rooms"
 	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
@@ -8219,7 +8185,7 @@
 "WI" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "WP" = (
@@ -8252,6 +8218,10 @@
 /obj/item/clothing/head/helmet/space/eva{
 	pixel_x = -6;
 	pixel_y = -7
+	},
+/obj/item/clothing/mask/breath{
+	pixel_y = 3;
+	pixel_x = -6
 	},
 /turf/open/floor/suns/grid,
 /area/ship/maintenance)
@@ -8414,13 +8384,13 @@
 	},
 /area/ship/engineering)
 "Ye" = (
-/obj/structure/closet/crate/trashcart/laundry,
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 1
 	},
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/structure/closet/crate/trashcart,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "Yf" = (
@@ -8469,7 +8439,6 @@
 /area/ship/engineering)
 "Yr" = (
 /obj/machinery/washing_machine,
-/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "Yu" = (
@@ -9287,7 +9256,7 @@ LW
 lV
 lV
 lV
-Jm
+QZ
 sD
 lR
 Bl
