@@ -851,7 +851,9 @@
 	pixel_y = -6;
 	pixel_x = -8
 	},
-/obj/structure/closet/secure_closet/suns,
+/obj/structure/closet/secure_closet/suns{
+	name = "Outer Wear"
+	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -2963,7 +2965,7 @@
 /area/ship/crew/ccommons)
 "qD" = (
 /obj/structure/closet/wall/orange{
-	name = "Engineering locker";
+	name = "Engineering Equipment";
 	pixel_y = 29;
 	dir = 1;
 	req_one_access = list(10, 20)
@@ -5139,7 +5141,9 @@
 	pixel_x = 6;
 	pixel_y = -9
 	},
-/obj/structure/closet/secure_closet/suns,
+/obj/structure/closet/secure_closet/suns{
+	name = "Uniforms"
+	},
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -7418,7 +7422,9 @@
 	pixel_x = 11;
 	pixel_y = -9
 	},
-/obj/structure/closet/secure_closet/suns,
+/obj/structure/closet/secure_closet/suns{
+	name = "Accessories"
+	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/blue,
 /obj/machinery/light/directional/south,
@@ -8064,7 +8070,7 @@
 /turf/open/floor/suns/grid,
 /area/ship/crew/cryo)
 "VQ" = (
-/obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "VW" = (
