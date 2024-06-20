@@ -388,8 +388,8 @@
 
 /obj/item/sales_tagger/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	if(istype(I, /obj/item/card/id))
-		var/obj/item/card/id/potential_acc = I
+	if(isbankcard(I))
+		var/obj/item/card/bank/potential_acc = I
 		if(potential_acc.registered_account)
 			payments_acc = potential_acc.registered_account
 			playsound(src, 'sound/machines/ping.ogg', 40, TRUE)
