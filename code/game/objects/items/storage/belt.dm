@@ -248,6 +248,16 @@
 	new /obj/item/hypospray/mkii(src)
 	update_appearance()
 
+/obj/item/storage/belt/medical/webbing/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
+	update_appearance()
+
 /obj/item/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
@@ -514,13 +524,12 @@
 		/obj/item/reagent_containers/food/snacks/rofflewaffles,
 		/obj/item/reagent_containers/food/snacks/donkpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist,
+		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola
+		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda
 		))
 		new rig_snacks(src)
 

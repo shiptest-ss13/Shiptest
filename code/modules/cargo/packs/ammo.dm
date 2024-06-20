@@ -70,6 +70,12 @@
 	cost = 500
 	contains = list(/obj/item/ammo_box/a12g/slug)
 
+/datum/supply_pack/ammo/techshells
+	name = "Unloaded Shotgun Technological Shells Crate"
+	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
+	cost = 210
+	contains = list(/obj/item/storage/box/techshot)
+
 /*
 		.38 ammo
 */
@@ -207,7 +213,7 @@
 	name = "9mm Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/ammo_box/c9mm)
-	cost = 250
+	cost = 200
 
 /datum/supply_pack/ammo/a308_ammo_box
 	name = "308 Ammo Box Crate"
@@ -219,7 +225,7 @@
 	name = "9mm AP Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/ammo_box/c9mm/ap)
-	cost = 500
+	cost = 400
 
 /datum/supply_pack/ammo/a357match_ammo_box
 	name = ".357 Match Ammo Box Crate"
@@ -249,7 +255,7 @@
 	name = "9mm HP Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/c9mm/hp)
-	cost = 500
+	cost = 400
 
 /datum/supply_pack/ammo/a357hp_ammo_box
 	name = ".357 HP Ammo Box Crate"
@@ -278,7 +284,7 @@
 	name = "9mm Rubber Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/ammo_box/c9mm/rubbershot)
-	cost = 250
+	cost = 200
 
 /datum/supply_pack/ammo/c10mmrubber_ammo_box
 	name = "10mm Rubber Ammo Box Crate"

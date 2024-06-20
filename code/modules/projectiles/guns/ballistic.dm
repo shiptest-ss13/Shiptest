@@ -241,7 +241,7 @@
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	if (tac_load)
-		if(do_after(user, tactical_reload_delay, TRUE, src))
+		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
 			if (insert_magazine(user, tac_load, FALSE))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else

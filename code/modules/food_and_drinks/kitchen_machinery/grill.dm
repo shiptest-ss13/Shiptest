@@ -61,10 +61,10 @@
 				grill_loop.start()
 				return
 		else
-			if(I.reagents.has_reagent(/datum/reagent/consumable/monkey_energy))
-				grill_fuel += (20 * (I.reagents.get_reagent_amount(/datum/reagent/consumable/monkey_energy)))
+			if(I.reagents.has_reagent(/datum/reagent/consumable/xeno_energy))
+				grill_fuel += (20 * (I.reagents.get_reagent_amount(/datum/reagent/consumable/xeno_energy)))
 				to_chat(user, "<span class='notice'>You pour the Monkey Energy in [src].</span>")
-				I.reagents.remove_reagent(/datum/reagent/consumable/monkey_energy, I.reagents.get_reagent_amount(/datum/reagent/consumable/monkey_energy))
+				I.reagents.remove_reagent(/datum/reagent/consumable/xeno_energy, I.reagents.get_reagent_amount(/datum/reagent/consumable/xeno_energy))
 				update_appearance()
 				return
 	..()

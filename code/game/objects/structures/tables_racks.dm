@@ -106,6 +106,8 @@
 		return TRUE
 	if(locate(/obj/structure/table) in get_turf(mover))
 		return TRUE
+	if(mover.movement_type & FLOATING)
+		return TRUE
 
 /obj/structure/table/CanAStarPass(ID, dir, caller)
 	. = !density
@@ -372,7 +374,7 @@
 		check_break(M)
 
 /obj/structure/table/glass/proc/check_break(mob/living/M)
-	if(M.has_gravity() && M.mob_size > MOB_SIZE_SMALL && !(M.movement_type & FLYING))
+	if(M.has_gravity() && M.mob_size > MOB_SIZE_SMALL && !(M.movement_type & (FLYING || FLOATING)))
 		table_shatter(M)
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
