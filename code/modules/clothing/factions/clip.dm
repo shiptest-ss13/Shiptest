@@ -319,7 +319,7 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondant
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
 	name = "CLIP War Correspondant M10 Helmet"
 	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
 

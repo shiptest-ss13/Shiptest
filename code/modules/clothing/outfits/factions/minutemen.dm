@@ -251,9 +251,9 @@
 	job_icon = "curator"
 	jobtype = /datum/job/curator
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondant
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	suit = /obj/item/clothing/suit/armor/vest/clip_correspondant
+	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack/satchel/leather
