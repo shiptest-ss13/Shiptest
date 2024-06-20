@@ -120,6 +120,7 @@
 
 	return ..()
 
+/obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
 		return FALSE
