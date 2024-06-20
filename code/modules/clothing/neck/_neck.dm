@@ -436,6 +436,6 @@
 
 /obj/item/clothing/neck/fangnecklace
 	name = "wolf fang necklace"
-	desc = "A necklace made out of a wolf's fang and some sinew. According to a common Frontier superstition, it brings good luck to it's wearer."
+	desc = "A necklace made out of a wolf's fang and some sinew. According to a common Frontier superstition, it brings good luck to its wearer."
 	icon_state = "fang_necklace"
 	cuttable = FALSE

@@ -383,7 +383,7 @@
 
 /obj/item/clothing/accessory/bonearmlet
 	name = "bone armlet"
-	desc = "An armlet made out of animal bone and sinew. According to a common Frontier superstition, it brings good luck to it's wearer."
+	desc = "An armlet made out of animal bone and sinew. According to a common Frontier superstition, it brings good luck to its wearer."
 	icon_state = "bone_armlet"
 	attachment_slot = ARMS
 	above_suit = TRUE
