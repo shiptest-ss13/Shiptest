@@ -1065,7 +1065,8 @@
 	height = 15;
 	width = 15;
 	name = "panacea exterior dock";
-	dheight = 7
+	dir = 4;
+	dwidth = 7
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -4320,7 +4321,7 @@
 /obj/machinery/door/airlock{
 	dir = 2;
 	name = "Bar";
-	req_access = list(19, 20, 25, 57, 58)
+	req_one_access = list(19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
