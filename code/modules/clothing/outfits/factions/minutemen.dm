@@ -247,7 +247,7 @@
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/clip/correspondant
-	name = "CLIP - War correspondant"
+	name = "CLIP - War Correspondent"
 	job_icon = "curator"
 	jobtype = /datum/job/curator
 
