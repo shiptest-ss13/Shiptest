@@ -375,22 +375,3 @@
 		tray.pestlevel = rand(8, 10)
 		tray.weedlevel = rand(8, 10)
 		tray.toxic = rand(45, 55)
-
-/obj/effect/proc_holder/spell/targeted/revenant/recall
-	charge_max = 100
-	name = "Return"
-	desc = "Return to your cursed object."
-	action_icon = 'icons/mob/actions/actions_revenant.dmi'
-	action_icon_state = "r_nightvision"
-	action_background_icon_state = "bg_revenant"
-
-/obj/effect/proc_holder/spell/targeted/revenant/recall/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
-	var/object = user.marked_object
-	if(!object)
-		for(var/obj/item/thing in loc.contents)
-			user.marked_object = thing
-			to_chat(src, "<span class='revenminor'>You bind your soul to the [thing], You may return to it at will.</span>")
-			return
-	else
-		src.forceMove(object)
-
