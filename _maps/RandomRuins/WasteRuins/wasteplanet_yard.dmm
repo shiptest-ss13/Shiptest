@@ -384,10 +384,6 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "ga" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
-/obj/structure/closet/crate{
-	icon_state = "engi_e_crate";
-	name = "cable crate"
-	},
 /obj/item/stack/cable_coil/red{
 	pixel_y = 4
 	},
@@ -396,6 +392,7 @@
 	pixel_y = -4
 	},
 /obj/item/stack/cable_coil/cut/pink,
+/obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "gb" = (
