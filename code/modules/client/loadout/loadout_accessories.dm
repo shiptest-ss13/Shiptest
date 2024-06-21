@@ -50,6 +50,16 @@
 	display_name = "tie, recolorable"
 	path =  /obj/item/clothing/neck/tie
 
+//Bone
+/datum/gear/accessory/fangnecklace
+	display_name = "wolf fang necklace"
+	path = /obj/item/clothing/neck/fangnecklace
+
+/datum/gear/accessory/bonearmlet
+	display_name = "bone armlet"
+	path = /obj/item/clothing/accessory/bonearmlet
+	slot = null
+
 //Misc
 
 /datum/gear/accessory/waistcoat
