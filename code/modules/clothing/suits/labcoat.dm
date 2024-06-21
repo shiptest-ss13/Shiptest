@@ -68,12 +68,6 @@ You're pretty sure this is just a raincoat.
 	icon_state = "raincoat"
 	item_state = "raincoat"
 
-/obj/item/clothing/suit/toggle/labcoat/roumain_med
-	name = "saint-roumain medical duster"
-	desc = "A coat made from hard leather and further treated with exotic sterilizing oils and wax. The treatment and its more closed design offers much better protection against biological hazards."
-	icon_state = "rouma_med_coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/suit/longcoat
 	name = "longcoat"
 	desc = "A long, victorian styled labcoat."
