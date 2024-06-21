@@ -210,6 +210,15 @@
 	crate_name = "plasma thruster crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/machinery/combustion_thruster
+	name = "Combustion Thruster Crate"
+	desc = "A crate containing a combustion thruster and its heater's electronics. For when you need complicated thrust."
+	cost = 2000
+	contains = list(/obj/item/circuitboard/machine/shuttle/fire_heater,
+					/obj/item/circuitboard/machine/shuttle/engine/fire)
+	crate_name = "combustion thruster crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
 	desc = "An experimental laser-based mining drill that Nanotrasen is kindly allowing YOU, the customer, to opt into testing of."

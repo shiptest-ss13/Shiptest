@@ -27,6 +27,7 @@
 	var/obj/item/tank/internal = null
 	var/obj/item/clothing/head = null
 
+	var/obj/item/wear_id = null //only used by humans
 	var/obj/item/clothing/gloves = null ///only used by humans
 	var/obj/item/clothing/shoes/shoes = null ///only used by humans.
 	var/obj/item/clothing/glasses/glasses = null ///only used by humans.

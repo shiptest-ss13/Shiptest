@@ -163,6 +163,16 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent
+	name = "press armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
+
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+
+	icon_state = "armor_correspondant"
+	item_state = "armor_correspondant"
+
 //spacesuits
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
@@ -308,6 +318,17 @@
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
+
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	name = "CLIP War Correspondant M10 Helmet"
+	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
+
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+
+	icon_state = "clip_m10_correspondant"
+	item_state = "clip_m10_correspondant"
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"

@@ -27,6 +27,9 @@
 	max_ammo = 2
 	instant_load = TRUE
 
+/obj/item/ammo_box/magazine/internal/shot/dual/lethal
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised

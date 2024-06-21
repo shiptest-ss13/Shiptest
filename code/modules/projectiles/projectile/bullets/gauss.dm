@@ -5,7 +5,8 @@
 	icon_state = "gauss-pellet"
 	damage = 25
 	range = 35
-	light_color = COLOR_SOFT_RED
+	light_system = 2
+	light_color = MOVABLE_LIGHT
 	light_range = 3
 
 // Ferromagnetic Lance (GAR AR)

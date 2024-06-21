@@ -171,13 +171,10 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/cmd_display_del_log,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
-	/client/proc/cmd_admin_grantfullaccess,
-	/client/proc/cmd_assume_direct_control,	//-errorage
-	/client/proc/cmd_give_direct_control,
 	/client/proc/getserverlogs,		/*for accessing server logs*/
 	/client/proc/getcurrentlogs,		/*for accessing server logs for the current round*/
 	/client/proc/restart_controller,
-	/client/proc/disable_debug_verbs,
+	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
 	/client/proc/SDQL2_query,
@@ -214,12 +211,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
-	/client/proc/check_timer_sources,
-	/client/proc/air_status, //Air things
-	/client/proc/air_status_loc, //More air things
-	/client/proc/manipulate_organs,
-	/client/proc/set_server_fps,	//allows you to set the ticklag.
-	/client/proc/start_singlo,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -280,7 +271,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
-	/client/proc/disable_debug_verbs,
+	/client/proc/enable_debug_verbs,
 	/proc/possess,
 	/proc/release,
 	/client/proc/reload_admins,
@@ -313,7 +304,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if(rights & R_SERVER)
 			add_verb(src, GLOB.admin_verbs_server)
 		if(rights & R_DEBUG)
-			add_verb(src, list(GLOB.admin_verbs_debug, GLOB.admin_verbs_debug_extra))
+			add_verb(src, GLOB.admin_verbs_debug)
 		if(rights & R_POSSESS)
 			add_verb(src, GLOB.admin_verbs_possess)
 		if(rights & R_PERMISSIONS)
@@ -347,7 +338,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		GLOB.admin_verbs_spawn,
 		/*Debug verbs added by "show debug verbs"*/
 		GLOB.admin_verbs_debug_extra,
-		/client/proc/disable_debug_verbs,
+		/client/proc/enable_debug_verbs,
 		/client/proc/readmin
 		))
 
