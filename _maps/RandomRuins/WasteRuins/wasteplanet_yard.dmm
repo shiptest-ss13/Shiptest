@@ -333,7 +333,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "eO" = (
@@ -808,7 +810,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "lq" = (
@@ -981,7 +985,9 @@
 "nJ" = (
 /obj/structure/cable/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/power/apc/auto_name/directional/west{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "nL" = (
@@ -1122,7 +1128,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "pG" = (
@@ -1704,7 +1712,7 @@
 "zp" = (
 /obj/machinery/conveyor/inverted{
 	dir = 4;
-	id = s
+	id = "wasteyard"
 	},
 /obj/machinery/mineral/unloading_machine,
 /obj/effect/turf_decal/industrial/warning{
@@ -2351,7 +2359,7 @@
 "KW" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id = "wasteyard"
+	id = s
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -4471,7 +4479,7 @@ OM
 OM
 OM
 OM
-QS
+OM
 OM
 OM
 OM
@@ -4525,7 +4533,7 @@ OM
 OM
 OM
 jt
-OM
+QS
 OM
 OM
 OM
