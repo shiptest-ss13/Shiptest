@@ -136,8 +136,6 @@
 /obj/item/storage/pistolcase/shadow
 /obj/item/storage/pistolcase/shadow/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/shadow/no_mag(src)
-	new /obj/item/ammo_box/c45_speedloader/empty(src)
-	new /obj/item/ammo_box/c45_speedloader/empty(src)
 
 /obj/item/storage/pistolcase/commander
 /obj/item/storage/pistolcase/commander/PopulateContents()
