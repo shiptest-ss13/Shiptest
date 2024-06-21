@@ -744,11 +744,6 @@
 /obj/structure/chair/plastic,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
-"ky" = (
-/obj/effect/turf_decal/industrial/hatch/orange,
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plating/wasteplanet/lit,
-/area/ruin/wasteplanet)
 "kD" = (
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/structure/closet/crate/secure/loot,
@@ -938,20 +933,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
-"nh" = (
-/obj/machinery/recycler,
-/obj/machinery/conveyor/inverted{
-	dir = 10;
-	id = "wasteyard"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "ni" = (
 /obj/structure/bed{
 	dir = 4
@@ -1196,7 +1177,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/dark/wasteplanet,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "qw" = (
 /obj/machinery/vending/cola/pwr_game,
@@ -1529,18 +1510,8 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "vC" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4;
-	id = "wasteyard"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/mineral/stacking_machine,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark/wasteplanet,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "vN" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1710,15 +1681,8 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "zp" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4;
-	id = "wasteyard"
-	},
-/obj/machinery/mineral/unloading_machine,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/structure/window/reinforced,
+/obj/effect/turf_decal/industrial/hatch/orange,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "zt" = (
@@ -2357,18 +2321,7 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "KW" = (
-/obj/machinery/conveyor{
-	dir = 9;
-	id = "wasteyard"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark/wasteplanet,
+/turf/open/floor/plating/wasteplanet/rust,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Lc" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
@@ -2544,22 +2497,6 @@
 	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
-"Nr" = (
-/obj/machinery/conveyor/inverted{
-	dir = 6;
-	id = "wasteyard"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Nu" = (
 /obj/structure/reagent_dispensers/foamtank,
 /obj/item/extinguisher/advanced,
@@ -2685,12 +2622,6 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
-"PV" = (
-/obj/effect/turf_decal/industrial/hatch/orange,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/structure/closet/crate/engineering,
-/turf/open/floor/plasteel/dark/wasteplanet,
-/area/ruin/wasteplanet)
 "PX" = (
 /obj/structure/janitorialcart,
 /obj/item/storage/bag/trash,
@@ -2711,16 +2642,9 @@
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Ql" = (
-/obj/machinery/conveyor{
-	dir = 5;
-	id = "wasteyard"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
+/obj/effect/turf_decal/industrial/hatch/orange,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "QS" = (
@@ -3011,7 +2935,7 @@
 /obj/machinery/mineral/stacking_unit_console{
 	pixel_y = 28
 	},
-/turf/open/floor/plasteel/dark/wasteplanet,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "VS" = (
 /obj/machinery/computer/mech_bay_power_console{
@@ -4295,7 +4219,7 @@ yR
 ZO
 Uj
 dw
-re
+vC
 Mi
 Mi
 bU
@@ -4305,7 +4229,7 @@ Mi
 Zy
 OM
 jt
-PV
+jy
 Ps
 sO
 Nf
@@ -4452,7 +4376,7 @@ qr
 tL
 hJ
 Ny
-vC
+mS
 Ql
 KW
 oA
@@ -4505,8 +4429,8 @@ IY
 gs
 ph
 JK
-Nr
-nh
+Ny
+mS
 zp
 dv
 Nd
@@ -4517,7 +4441,7 @@ Nd
 ey
 lG
 jt
-ky
+jy
 OM
 ry
 yD
