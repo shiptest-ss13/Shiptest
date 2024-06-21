@@ -27,3 +27,9 @@
 	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
+
+/datum/map_template/ruin/wasteplanet/yard
+	name = "Abandoned Miskilamo salvage yard"
+	description = "An abandonded shipbreaking yard."
+	id = "wasteplanet_yard"
+	suffix = "wasteplanet_yard.dmm"

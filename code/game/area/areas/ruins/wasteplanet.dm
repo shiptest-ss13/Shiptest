@@ -43,3 +43,25 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment
 	name = "Abandoned Waste Containment Vault"
 	icon_state = "disposal"
+
+//Abandonded shipbreaking yard
+
+/area/ruin/wasteplanet/wasteplanet_shipbreaking
+	name = "Abandoned Shipbreaking Yard"
+	icon_state = "green"
+
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/bay
+	name = "Miskilamo Shipbreaking Yard Bay"
+	icon_state = "engine"
+
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen
+	name = "Miskilamo Shipbreaking Yard Canteen"
+	icon_state = "hallC"
+
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms
+	name = "Miskilamo Shipbreaking Yard Dormatory"
+	icon_state = "bridge"
+
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/ship
+	name = "Abandoned Shipbreaking Yard"
+	icon_state = "red"
