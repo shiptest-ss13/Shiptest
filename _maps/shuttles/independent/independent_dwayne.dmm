@@ -120,7 +120,6 @@
 /area/ship/crew/toilet)
 "bl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/ntspaceworks_big/four,
 /obj/structure/chair/office{
 	dir = 1
 	},
@@ -257,6 +256,9 @@
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
 /obj/structure/closet/crate/secure/weapon,
+/obj/effect/turf_decal/ntspaceworks_big/two{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "dy" = (
@@ -507,6 +509,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "5-10"
 	},
+/obj/effect/turf_decal/ntspaceworks_big/three,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "hZ" = (
@@ -657,6 +660,9 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/three{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
@@ -924,6 +930,9 @@
 	pixel_x = 3
 	},
 /obj/item/gun/energy/kinetic_accelerator,
+/obj/effect/turf_decal/ntspaceworks_big/seven{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "nY" = (
@@ -1343,6 +1352,9 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "tX" = (
+/obj/effect/turf_decal/ntspaceworks_big/eight{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "uc" = (
@@ -1355,7 +1367,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/ntspaceworks_big/two,
 /obj/structure/cable/cyan{
 	icon_state = "6-9"
 	},
@@ -1674,6 +1685,7 @@
 	dir = 6
 	},
 /obj/item/cigbutt,
+/obj/effect/turf_decal/ntspaceworks_big/two,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "zK" = (
@@ -2064,7 +2076,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/ntspaceworks_big/one,
+/obj/effect/turf_decal/ntspaceworks_big/four,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "GN" = (
@@ -2190,6 +2202,9 @@
 "IK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
+/obj/effect/turf_decal/ntspaceworks_big/five{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "IT" = (
@@ -2229,12 +2244,10 @@
 /area/ship/crew/canteen)
 "Jn" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/ntspaceworks_big/eight,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Jq" = (
 /obj/structure/closet/crate/engineering,
-/obj/effect/turf_decal/ntspaceworks_big/six,
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/metal/twenty,
@@ -2334,7 +2347,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/ntspaceworks_big/seven,
 /obj/structure/cable/cyan{
 	icon_state = "6-9"
 	},
@@ -2580,6 +2592,7 @@
 /area/ship/storage/eva)
 "NW" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/ntspaceworks_big/five,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Op" = (
@@ -2619,6 +2632,7 @@
 /obj/item/chair/plastic{
 	pixel_y = 11
 	},
+/obj/effect/turf_decal/ntspaceworks_big/one,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Oz" = (
@@ -2710,6 +2724,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/ntspaceworks_big/four{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "Pe" = (
@@ -2783,9 +2800,9 @@
 /obj/item/folder/blue,
 /obj/item/folder,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/ntspaceworks_big/five,
 /obj/item/pen,
 /obj/item/pen,
+/obj/effect/turf_decal/ntspaceworks_big/eight,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Qe" = (
@@ -3076,6 +3093,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "5-10"
 	},
+/obj/effect/turf_decal/ntspaceworks_big/six,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "UP" = (
