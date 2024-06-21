@@ -846,7 +846,7 @@
 	dir = 4
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	start_empty = 1
+	percent_fill = 0
 	},
 /obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
@@ -2714,7 +2714,7 @@
 	dir = 1
 	},
 /obj/item/ammo_box/magazine/smgm9mm{
-	start_empty = 1
+	percent_fill = 0
 	},
 /obj/item/gun/ballistic/automatic/smg/proto,
 /turf/open/floor/plasteel/dark,
@@ -4361,7 +4361,7 @@
 "RC" = (
 /obj/effect/turf_decal/siding/white,
 /obj/item/ammo_box/magazine/m10mm{
-	start_empty = 1
+	percent_fill = 0
 	},
 /obj/item/ammo_casing/c10mm{
 	icon_state = "pistol-steel-empty";
@@ -5014,7 +5014,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/siding/white,
 /obj/item/ammo_box/magazine/m10mm{
-	start_empty = 1
+	percent_fill = 0
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
