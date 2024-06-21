@@ -109,13 +109,9 @@
 		/obj/item/clothing/suit/changshan_blue = 1,
 		/obj/item/clothing/suit/cheongsam_red = 1,
 		/obj/item/clothing/suit/cheongsam_blue = 1,
-		/obj/item/gohei = 1)
-	contraband = list(
+		/obj/item/gohei = 1,
 		/obj/item/clothing/suit/judgerobe = 1,
 		/obj/item/clothing/head/powdered_wig = 1,
-		/obj/item/clothing/accessory/fan_mime_pin = 1,
-		/obj/item/clothing/accessory/fan_clown_pin = 1,
-		/obj/item/gun/magic/wand/nothing = 2,
 		/obj/item/clothing/glasses/sunglasses/garb = 2,
 		/obj/item/clothing/glasses/blindfold = 1,
 		/obj/item/clothing/mask/muzzle = 2)
@@ -132,7 +128,6 @@
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 180
 	extra_price = 360
-	payment_department = ACCOUNT_SRV
 	light_mask="theater-light-mask"
 
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)

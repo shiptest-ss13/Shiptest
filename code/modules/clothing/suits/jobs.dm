@@ -129,6 +129,8 @@
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
 	desc = "A foppish dress jacket."
@@ -204,24 +206,6 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
-
-//Robotocist
-
-/obj/item/clothing/suit/hooded/techpriest
-	name = "techpriest robes"
-	desc = "For those who REALLY love their toasters."
-	icon_state = "techpriest"
-	item_state = "techpriest"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/techpriest
-
-/obj/item/clothing/head/hooded/techpriest
-	name = "techpriest's hood"
-	desc = "A hood for those who REALLY love their toasters."
-	icon_state = "techpriesthood"
-	item_state = "techpriesthood"
-	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS
 
 //SolGov suits
 
@@ -302,3 +286,10 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
+/obj/item/clothing/suit/armor/witchhunter
+	name = "witchunter garb"
+	desc = "This worn outfit saw much use back in the day."
+	icon_state = "chaplain_witchhunter"
+	item_state = "witchhunter"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	allowed = list(/obj/item/storage/book/bible, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

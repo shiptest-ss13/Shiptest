@@ -18,52 +18,22 @@
 	base_icon_state = "kiosk"
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/medical_kiosk
 	var/obj/item/scanner_wand
-	var/default_price = 15          //I'm defaulting to a low price on this, but in the future I wouldn't have an issue making it more or less expensive.
-	var/active_price = 15           //Change by using a multitool on the board.
-	var/pandemonium = FALSE			//AKA: Emag mode.
+	/// Emag mode
+	var/pandemonium = FALSE
 
 	/// Shows whether the kiosk is being used to scan someone and what it's being used for.
 	var/scan_active = NONE
 
-	/// Do we have someone paying to use this?
-	var/paying_customer = FALSE		//Ticked yes if passing inuse()
-
-	var/datum/bank_account/account  //payer's account.
-	var/mob/living/carbon/human/H   //The person using the console in each instance. Used for paying for the kiosk.
-	var/mob/living/carbon/human/altPatient   //If scanning someone else, this will be the target.
-	var/obj/item/card/id/C          //the account of the person using the console.
+	/// The patient that the kiosk is currently scanning.
+	var/mob/living/carbon/human/altPatient
 
 /obj/machinery/medical_kiosk/Initialize() //loaded subtype for mapping use
 	. = ..()
 	scanner_wand = new/obj/item/scanner_wand(src)
-
-/obj/machinery/medical_kiosk/proc/inuse()  //Verifies that the user can use the interface, followed by showing medical information.
-	if (pandemonium == TRUE)
-		active_price += (rand(10,30)) //The wheel of capitalism says health care ain't cheap.
-	if(!istype(C))
-		say("No ID card detected.") // No unidentified crew.
-		return
-	if(C.registered_account)
-		account = C.registered_account
-	else
-		say("No account detected.")  //No homeless crew.
-		return
-	if(!account.has_money(active_price))
-		say("You do not possess the funds to purchase this.")  //No jobless crew, either.
-		return
-	else
-		account.adjust_money(-active_price)
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_MED)
-		if(D)
-			D.adjust_money(active_price)
-		use_power(20)
-		paying_customer = TRUE
-	icon_state = "[base_icon_state]_active"
-	say("Thank you for your patronage!")
-	RefreshParts()
-	return
 
 /obj/machinery/medical_kiosk/proc/clearScans() //Called it enough times to be it's own proc
 	scan_active = NONE
@@ -84,12 +54,6 @@
 	..()
 	default_unfasten_wrench(user, I, time = 10)
 	return TRUE
-
-/obj/machinery/medical_kiosk/RefreshParts()
-	var/obj/item/circuitboard/machine/medical_kiosk/board = circuit
-	if(board)
-		active_price = board.custom_cost
-	return
 
 /obj/machinery/medical_kiosk/attackby(obj/item/O, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "[base_icon_state]_open", "[base_icon_state]_off", O))
@@ -135,7 +99,7 @@
 	scanner_wand = null
 
 /obj/machinery/medical_kiosk/Destroy()
-	qdel(scanner_wand)
+	QDEL_NULL(scanner_wand)
 	return ..()
 
 /obj/machinery/medical_kiosk/emag_act(mob/user)
@@ -179,8 +143,6 @@
 		ui.open()
 		icon_state = "[base_icon_state]_active"
 		RefreshParts()
-		H = user
-		C = H.get_idcard(TRUE)
 
 /obj/machinery/medical_kiosk/ui_data(mob/living/carbon/human/user)
 	var/list/data = list()
@@ -210,7 +172,7 @@
 			sickness_data = "\nName: [D.name].\nType: [D.spread_text].\nStage: [D.stage]/[D.max_stages].\nPossible Cure: [D.cure_text]"
 
 	if(altPatient.has_dna()) //Blood levels Information
-		if(altPatient.bleed_rate)
+		if(LAZYLEN(altPatient.get_bleeding_parts()))
 			bleed_status = "Patient is currently bleeding!"
 		if(blood_percent <= 80)
 			blood_warning = " Patient has low blood levels. Seek a large meal, or iron supplements."
@@ -299,7 +261,6 @@
 	else if (user.hallucinating())
 		chaos_modifier = 0.3
 
-	data["kiosk_cost"] = active_price + (chaos_modifier * (rand(1,25)))
 	data["patient_name"] = patient_name
 	data["patient_health"] = round(((total_health - (chaos_modifier * (rand(1,50)))) / max_health) * 100, 0.001)
 	data["brute_health"] = round(brute_loss+(chaos_modifier * (rand(1,30))),0.001)		//To break this down for easy reading, all health values are rounded to the .001 place
@@ -338,29 +299,13 @@
 
 	switch(action)
 		if("beginScan_1")
-			if(!(scan_active & KIOSK_SCANNING_GENERAL))
-				inuse()
-			if(paying_customer == TRUE)
-				scan_active |= KIOSK_SCANNING_GENERAL
-				paying_customer = FALSE
+			scan_active |= KIOSK_SCANNING_GENERAL
 		if("beginScan_2")
-			if(!(scan_active & KIOSK_SCANNING_SYMPTOMS))
-				inuse()
-			if(paying_customer == TRUE)
-				scan_active |= KIOSK_SCANNING_SYMPTOMS
-				paying_customer = FALSE
+			scan_active |= KIOSK_SCANNING_SYMPTOMS
 		if("beginScan_3")
-			if(!(scan_active & KIOSK_SCANNING_NEURORAD))
-				inuse()
-			if(paying_customer == TRUE)
-				scan_active |= KIOSK_SCANNING_NEURORAD
-				paying_customer = FALSE
+			scan_active |= KIOSK_SCANNING_NEURORAD
 		if("beginScan_4")
-			if(!(scan_active & KIOSK_SCANNING_REAGENTS))
-				inuse()
-			if(paying_customer == TRUE)
-				scan_active |= KIOSK_SCANNING_REAGENTS
-				paying_customer = FALSE
+			scan_active |= KIOSK_SCANNING_REAGENTS
 		if("clearTarget")
 			altPatient = null
 			clearScans()

@@ -1,6 +1,6 @@
 #define CELL_DRAIN_TIME 35
-#define CELL_POWER_GAIN (3    * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define CELL_POWER_DRAIN (37.5 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_GAIN (3    * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_DRAIN (37.5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /obj/item/stock_parts/cell
 	name = "power cell"
@@ -150,10 +150,10 @@
 
 //WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
-	if(isethereal(user))
+	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
+		var/datum/species/elzuose/E = H.dna.species
+		var/charge_limit = ELZUOSE_CHARGE_DANGEROUS - CELL_POWER_GAIN
 		if(E.drain_time > world.time)
 			return
 		if(charge < CELL_POWER_DRAIN)

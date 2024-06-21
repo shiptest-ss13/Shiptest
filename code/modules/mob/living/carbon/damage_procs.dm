@@ -1,6 +1,6 @@
 
 
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1)
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -21,7 +21,7 @@
 	switch(damagetype)
 		if(BRUTE)
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, break_modifier))
+				if(BP.receive_damage(damage_amount, 0, break_modifier, sharpness = sharpness))
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				adjustBruteLoss(damage_amount, forced = forced)
@@ -29,7 +29,7 @@
 				shake_animation(damage_amount)
 		if(BURN)
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, break_modifier))
+				if(BP.receive_damage(0, damage_amount, break_modifier, sharpness = sharpness))
 					update_damage_overlays()
 			else
 				adjustFireLoss(damage_amount, forced = forced)
@@ -267,3 +267,68 @@
 	if(update)
 		update_damage_overlays()
 	update_stamina()
+
+/// Gets a list of bleeding bodyparts, argument ignore_staunched = are we actively bleeding (no treatment)
+/mob/living/carbon/proc/get_bleeding_parts(ignore_staunched = FALSE)
+	var/list/obj/item/bodypart/parts = list()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.bleeding && (!ignore_staunched || !BP.GetComponent(/datum/component/bandage)))
+			parts += BP
+	return parts
+
+/// Gets a list of bandaged parts
+/mob/living/carbon/proc/get_bandaged_parts()
+	var/list/obj/item/bodypart/parts = list()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.GetComponent(/datum/component/bandage))
+			parts += BP
+	return parts
+
+/// Apply bleeding to one random bodypart.
+/mob/living/carbon/proc/cause_bleeding(amt)
+	if(amt <= 0)
+		return
+	var/list/obj/item/bodypart/parts = bodyparts.Copy()
+	if(!length(parts))
+		return
+	var/obj/item/bodypart/part_in_question = pick(parts)
+	part_in_question.adjust_bleeding(amt)
+
+/// Heal bleeding from one random bodypart
+/mob/living/carbon/proc/heal_bleeding(amt)
+	if(amt <= 0)
+		return
+	var/list/obj/item/bodypart/parts = get_bleeding_parts()
+	if(!length(parts))
+		return
+	var/obj/item/bodypart/part_in_question = pick(parts)
+	part_in_question.adjust_bleeding(-amt)
+	var/bleed_calc = part_in_question.bleeding
+	return min(bleed_calc - part_in_question.bleeding, 0)
+
+/// Apply bleeding to all bodyparts
+/mob/living/carbon/proc/cause_overall_bleeding(amt)
+	if(amt <= 0)
+		return
+	var/list/obj/item/bodypart/parts = bodyparts.Copy()
+	while(length(parts))
+		var/obj/item/bodypart/part_in_question = pick(parts)
+		if(part_in_question.is_pseudopart)
+			parts -= part_in_question
+			continue
+		var/amount_to_take = min(part_in_question.bleeding, amt / length(parts))
+		part_in_question.adjust_bleeding(amount_to_take)
+		amt -= amount_to_take
+		parts -= part_in_question
+
+/// Heal bleeding from all bodyparts
+/mob/living/carbon/proc/heal_overall_bleeding(amt)
+	if(amt <= 0)
+		return
+	var/list/obj/item/bodypart/parts = get_bleeding_parts()
+	while(length(parts))
+		var/obj/item/bodypart/part_in_question = pick(parts)
+		var/amount_to_take = min(part_in_question.bleeding, amt / length(parts))
+		part_in_question.adjust_bleeding(-amount_to_take)
+		amt -= amount_to_take
+		parts -= part_in_question

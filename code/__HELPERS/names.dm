@@ -7,9 +7,6 @@
 /proc/plasmaman_name()
 	return "[pick(GLOB.plasmaman_names)] \Roman[rand(1,99)]"
 
-/proc/moth_name()
-	return "[pick(GLOB.moth_first)] [pick(GLOB.moth_last)]"
-
 /proc/squid_name()
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
@@ -236,49 +233,52 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 			else
 				. += ", "
 
+#define FACTION_SYNDICATE "Syndicate"
+	#define FACTION_NGR "New Gorlex Republic"
+	#define FACTION_CYBERSUN "CyberSun"
+	#define FACTION_SUNS "Student-Union of Naturalistic Sciences"
+#define FACTION_SOLGOV "SolGov"
+#define FACTION_SRM "Saint-Roumain Militia"
+#define FACTION_INTEQ "Inteq Risk Management Group"
+#define FACTION_CLIP "CLIP Minutemen"
+#define FACTION_NT "Nanotrasen"
+	#define FACTION_NS_LOGI "N+S Logistics"
+	#define FACTION_VIGILITAS "Vigilitas Interstellar"
+#define FACTION_FRONTIER "Frontiersmen Fleet"
+#define FACTION_PGF "Pan-Gezenan Federation"
+#define FACTION_INDEPENDENT "Independent"
+
+#define PREFIX_SYNDICATE list("SEV", "SSV")
+	#define PREFIX_NGR list("NGRV")
+	#define PREFIX_CYBERSUN list("CSSV")
+	#define PREFIX_SUNS list("SUNS")
+#define PREFIX_SOLGOV list("SCSV")
+#define PREFIX_SRM list("SRSV")
+#define PREFIX_INTEQ list("IRMV")
+#define PREFIX_CLIP list("CMSV", "CMGSV")
+#define PREFIX_NT list("NTSV")
+	#define PREFIX_NS_LOGI list("NSSV")
+	#define PREFIX_VIGILITAS list("VISV")
+#define PREFIX_FRONTIER list("FFV")
+#define PREFIX_PGF list("PGF", "PGFMC", "PGFN")
+#define PREFIX_INDEPENDENT list("SV", "IMV", "ISV")
+
 /// List of all ship factions to their prefixes.
 GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
-	"Syndicate" = list(
-		"SEV",
-		"SSV",
-	),
-	"New Gorlex Republic" = list(
-		"NGRV",
-	),
-	"CyberSun" = list(
-		"CSSV",
-	),
-	"Student-Union of Naturalistic Sciences" = list(
-		"SUNS",
-	),
-	"SolGov" = list(
-		"SGSV",
-	),
-	"Saint-Roumain Militia" = list(
-		"SRSV",
-	),
-	"Independent" = list(
-		"SV",
-		"IMV",
-		"ISV",
-		"XSV",
-	),
-	"Inteq Risk Management Group" = list(
-		"IRMV",
-	),
-	"CLIP Minutemen" = list(
-		"CMSV",
-		"CMGSV",
-	),
-	"Nanotrasen" = list(
-		"NTSV",
-	),
-	"Frontiersmen Fleet" = list(
-		"FFV",
-	),
-	"Saint-Roumaine Militia" = list(
-		"SRSV",
-	),
+	FACTION_SYNDICATE = PREFIX_SYNDICATE,
+	FACTION_NGR = PREFIX_NGR,
+	FACTION_CYBERSUN = PREFIX_CYBERSUN,
+	FACTION_SUNS = PREFIX_SUNS,
+	FACTION_SOLGOV = PREFIX_SOLGOV,
+	FACTION_SRM = PREFIX_SRM,
+	FACTION_INTEQ = PREFIX_INTEQ,
+	FACTION_CLIP = PREFIX_CLIP,
+	FACTION_NT = PREFIX_NT,
+	FACTION_NS_LOGI = PREFIX_NS_LOGI,
+	FACTION_VIGILITAS = PREFIX_VIGILITAS,
+	FACTION_FRONTIER = PREFIX_FRONTIER,
+	FACTION_PGF = PREFIX_PGF,
+	FACTION_INDEPENDENT = PREFIX_INDEPENDENT
 ))
 
 /proc/ship_prefix_to_faction(prefix)

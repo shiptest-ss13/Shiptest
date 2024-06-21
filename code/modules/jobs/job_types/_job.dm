@@ -25,7 +25,6 @@
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
-
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
@@ -123,8 +122,8 @@
 	if(!H)
 		return FALSE
 	if(!visualsOnly)
-		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.adjust_money(officer ? 250 : 100) //just a little bit of money for you
+		var/datum/bank_account/bank_account = new(H.real_name, H.age)
+		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
@@ -180,7 +179,9 @@
 	var/jobtype = null
 
 	uniform = /obj/item/clothing/under/color/grey
+	wallet = /obj/item/storage/wallet
 	id = /obj/item/card/id
+	bank_card = /obj/item/card/bank
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	box = /obj/item/storage/box/survival
@@ -194,6 +195,8 @@
 	var/job_icon
 	// the background of the job icon
 	var/faction_icon
+	// if there is an id, this will get automatically applied to an id's assignment variable
+	var/id_assignment
 
 	var/alt_uniform
 
@@ -267,7 +270,7 @@
 	if(!J)
 		J = GLOB.name_occupations[H.job]
 
-	var/obj/item/card/id/C = H.wear_id
+	var/obj/item/card/id/C = H.get_idcard(TRUE)
 	if(istype(C))
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
@@ -280,14 +283,20 @@
 			C.registered_age = H.age
 		C.job_icon = job_icon
 		C.faction_icon = faction_icon
+		C.update_appearance()
+		if(id_assignment)
+			C.assignment = id_assignment
 		C.update_label()
-		for(var/A in SSeconomy.bank_accounts)
-			var/datum/bank_account/B = A
-			if(B.account_id == H.account_id)
-				C.registered_account = B
-				B.bank_cards += C
-				break
 		H.sec_hud_set_ID()
+
+	var/obj/item/card/bank/bank_card = H.get_bankcard()
+	if(istype(bank_card))
+		for(var/account in SSeconomy.bank_accounts)
+			var/datum/bank_account/bank_account = account
+			if(bank_account.account_id == H.account_id)
+				bank_card.registered_account = bank_account
+				bank_account.bank_cards += bank_card
+				break
 
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))

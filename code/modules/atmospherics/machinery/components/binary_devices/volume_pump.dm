@@ -18,6 +18,10 @@
 	can_unwrench = TRUE
 	shift_underlay_only = FALSE
 
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = ACTIVE_DRAW_MINIMAL
+
 	var/transfer_rate = MAX_TRANSFER_RATE
 	var/overclocked = FALSE
 
@@ -31,6 +35,10 @@
 /obj/machinery/atmospherics/components/binary/volume_pump/CtrlClick(mob/user)
 	if(can_interact(user))
 		on = !on
+		if(on)
+			set_active_power()
+		else
+			set_idle_power()
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 		update_appearance()
 	return ..()
@@ -130,6 +138,10 @@
 	switch(action)
 		if("power")
 			on = !on
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("rate")
@@ -192,18 +204,18 @@
 	piping_layer = 2
 	icon_state = "volpump_map-2"
 
-/obj/machinery/atmospherics/components/binary/volume_pump/layer2
-	piping_layer = 2
-	icon_state = "volpump_map-2"
+/obj/machinery/atmospherics/components/binary/volume_pump/layer4
+	piping_layer = 4
+	icon_state = "volpump_map-4"
 
 /obj/machinery/atmospherics/components/binary/volume_pump/on
 	on = TRUE
-	icon_state = "volpump_on_map"
+	icon_state = "volpump_on_map-3"
 
 /obj/machinery/atmospherics/components/binary/volume_pump/on/layer2
 	piping_layer = 2
-	icon_state = "volpump_map-2"
+	icon_state = "volpump_on_map-2"
 
 /obj/machinery/atmospherics/components/binary/volume_pump/on/layer4
 	piping_layer = 4
-	icon_state = "volpump_map-4"
+	icon_state = "volpump_on_map-4"

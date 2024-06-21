@@ -17,7 +17,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "c" = (
@@ -46,10 +46,7 @@
 	},
 /obj/effect/landmark/ert_shuttle_spawn,
 /obj/machinery/light/directional/east,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/dark,

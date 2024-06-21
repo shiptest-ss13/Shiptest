@@ -41,7 +41,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 				drain = S.cell.maxcharge - S.cell.charge
 				maxcapacity = 1//Reached maximum battery capacity.
 
-			if (do_after(H,10, target = src))
+			if (do_after(H,10, target = src, hidden = TRUE))
 				spark_system.start()
 				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 				cell.use(drain)
@@ -85,7 +85,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 				drain = S.cell.maxcharge - S.cell.charge
 				maxcapacity = 1
 
-			if (do_after(H,10, target = src))
+			if (do_after(H, 10, target = src, hidden = TRUE))
 				spark_system.start()
 				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 				charge -= drain
@@ -104,7 +104,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 	. = 0
 
 	if(charge)
-		if(G.candrain && do_after(H,30, target = src))
+		if(G.candrain && do_after(H,30, target = src, hidden = TRUE))
 			. = charge
 			if(S.cell.charge + charge > S.cell.maxcharge)
 				S.cell.charge = S.cell.maxcharge
@@ -131,7 +131,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	if(stored_research)
 		to_chat(H, "<span class='notice'>Copying files...</span>")
-		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
+		if(do_after(H, S.s_delay, target = src, hidden = TRUE) && G.candrain && src)
 			stored_research.copy_research_to(S.stored_research)
 	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
 
@@ -148,7 +148,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	if(stored_research)
 		to_chat(H, "<span class='notice'>Copying files...</span>")
-		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
+		if(do_after(H, S.s_delay, target = src, hidden = TRUE) && G.candrain && src)
 			stored_research.copy_research_to(S.stored_research)
 	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
 
@@ -167,7 +167,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 	while(G.candrain && !maxcapacity && src)
 		drain = (round((rand(G.mindrain, G.maxdrain))/2))
 		var/drained = 0
-		if(PN && do_after(H,10, target = src))
+		if(PN && do_after(H,10, target = src, hidden = TRUE))
 			drained = min(drain, delayed_surplus())
 			add_delayedload(drained)
 			if(drained < drain)//if no power on net, drain apcs
@@ -207,7 +207,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 			if(S.cell.charge + drain > S.cell.maxcharge)
 				drain = S.cell.maxcharge - S.cell.charge
 				maxcapacity = 1
-			if (do_after(H,10, target = src))
+			if (do_after(H,10, target = src, hidden = TRUE))
 				spark_system.start()
 				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 				cell.use(drain)
@@ -235,7 +235,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 			if(S.cell.charge+drain > S.cell.maxcharge)
 				drain = S.cell.maxcharge - S.cell.charge
 				maxcapacity = 1
-			if (do_after(H,10))
+			if (do_after(H, 10, hidden = TRUE))
 				spark_system.start()
 				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 				cell.use(drain)

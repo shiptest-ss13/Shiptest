@@ -5,8 +5,8 @@
 	base_icon_state = "recharger"
 	desc = "A charging dock for energy based weaponry."
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 4
-	active_power_usage = 250
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/recharger
 	pass_flags = PASSTABLE
 	var/obj/item/charging = null
@@ -21,6 +21,7 @@
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
+		/obj/item/gun/ballistic/automatic/assault/e40,
 		))
 
 /obj/machinery/recharger/RefreshParts()
@@ -50,11 +51,11 @@
 	if (new_charging)
 		START_PROCESSING(SSmachines, src)
 		finished_recharging = FALSE
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 		using_power = TRUE
 		update_appearance()
 	else
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		using_power = FALSE
 		update_appearance()
 

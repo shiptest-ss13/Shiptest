@@ -224,19 +224,29 @@
 #define COMSIG_LIVING_GET_PULLED "living_start_pulled"
 
 /////////////////
-
-#define COMSIG_ENTER_AREA "enter_area" //from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
-#define COMSIG_EXIT_AREA "exit_area" //from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
-
-#define COMSIG_CLICK "atom_click" //from base of atom/Click(): (location, control, params, mob/user)
-#define COMSIG_CLICK_SHIFT "shift_click" //from base of atom/ShiftClick(): (/mob)
-	#define COMPONENT_ALLOW_EXAMINATE 1 //Allows the user to examinate regardless of client.eye.
-#define COMSIG_CLICK_CTRL "ctrl_click" //from base of atom/CtrlClickOn(): (/mob)
-#define COMSIG_CLICK_ALT "alt_click" //from base of atom/AltClick(): (/mob)
-#define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click" //from base of atom/CtrlShiftClick(/mob)
-#define COMSIG_MOUSEDROP_ONTO "mousedrop_onto" //from base of atom/MouseDrop(): (/atom/over, /mob/user)
+//from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
+#define COMSIG_ENTER_AREA "enter_area"
+//from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
+#define COMSIG_EXIT_AREA "exit_area"
+//from base of atom/Click(): (location, control, params, mob/user)
+#define COMSIG_CLICK "atom_click"
+//from base of atom/ShiftClick(): (/mob)
+#define COMSIG_CLICK_SHIFT "shift_click"
+//Allows the user to examinate regardless of client.eye.
+	#define COMPONENT_ALLOW_EXAMINATE 1
+//from base of atom/CtrlClickOn(): (/mob)
+#define COMSIG_CLICK_CTRL "ctrl_click"
+//from base of atom/AltClick(): (/mob)
+#define COMSIG_CLICK_ALT "alt_click"
+//from base of atom/CtrlShiftClick(/mob)
+#define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
+///from base of atom/CtrlShiftRightClick(/mob)
+#define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
+//from base of atom/MouseDrop(): (/atom/over, /mob/user)
+#define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1
-#define COMSIG_MOUSEDROPPED_ONTO "mousedropped_onto" //from base of atom/MouseDrop_T: (/atom/from, /mob/user)
+//from base of atom/MouseDrop_T: (/atom/from, /mob/user)
+#define COMSIG_MOUSEDROPPED_ONTO "mousedropped_onto"
 
 ///from base of area/proc/power_change(): ()
 #define COMSIG_AREA_POWER_CHANGE "area_power_change"
@@ -377,6 +387,9 @@
 	/* #define SPEECH_IGNORE_SPAM 6
 	#define SPEECH_FORCED 7 */
 
+///from /mob/living/life()
+#define COMSIG_MOB_LIFE "mob_life"
+
 ///from /mob/say_dead(): (mob/speaker, message)
 #define COMSIG_MOB_DEADSAY "mob_deadsay"
 	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
@@ -410,6 +423,8 @@
 ///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
 #define COMSIG_LIVING_ATTACH_LIMB "living_attach_limb"
 	#define COMPONENT_NO_ATTACH 1
+///from base of /obj/item/bodypart/proc/drop_limb(): (special)
+#define COMSIG_LIVING_DROP_LIMB "living_drop_limb"
 ///from base of mob/living/set_buckled(): (new_buckled)
 #define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
 
@@ -449,8 +464,6 @@
 
 ///From /datum/component/creamed/Initialize()
 #define COMSIG_MOB_CREAMED "mob_creamed"
-///From /obj/item/gun/proc/check_botched()
-#define COMSIG_MOB_CLUMSY_SHOOT_FOOT "mob_clumsy_shoot_foot"
 
 ///When a carbon mob hugs someone, this is called on the carbon that is hugging. (mob/living/hugger, mob/living/hugged)
 #define COMSIG_CARBON_HUG "carbon_hug"
@@ -537,9 +550,13 @@
 #define COMSIG_TOOL_IN_USE "tool_in_use" ///from base of [/obj/item/proc/tool_check_callback]: (mob/living/user)
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
-#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/effect/mine/proc/triggermine]:
+#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/trigger_mine]:
 ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 #define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
+
+// Item mouse siganls
+#define COMSIG_ITEM_MOUSE_EXIT "item_mouse_exit"				//from base of obj/item/MouseExited(): (location, control, params)
+#define COMSIG_ITEM_MOUSE_ENTER "item_mouse_enter"				//from base of obj/item/MouseEntered(): (location, control, params)
 
 ///Called when an item is being offered, from [/obj/item/proc/on_offered(mob/living/carbon/offerer)]
 #define COMSIG_ITEM_OFFERING "item_offering"
@@ -610,7 +627,7 @@
 #define COMSIG_PROJECTILE_PREHIT "com_proj_prehit" // sent to targets during the process_hit proc of projectiles
 #define COMSIG_PROJECTILE_RANGE_OUT "projectile_range_out" // sent to targets during the process_hit proc of projectiles
 #define COMSIG_EMBED_TRY_FORCE "item_try_embed" // sent when trying to force an embed (mainly for projectiles, only used in the embed element)
-
+	#define COMPONENT_EMBED_SUCCESS (1<<1)
 #define COMSIG_PELLET_CLOUD_INIT "pellet_cloud_init" // sent to targets during the process_hit proc of projectiles
 
 // /obj/mecha signals
@@ -762,6 +779,13 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+#define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+///sent when guns need to notify the gun hud to update. mostly for revolvers.
+#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+
+///called when an elzu should unroot
+#define COMSIG_DIGOUT "dig_out"

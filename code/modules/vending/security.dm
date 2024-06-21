@@ -14,8 +14,7 @@
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/ammo_box/c9mm/rubbershot = 3,
 		/obj/item/ammo_box/c9mm = 1,
-		/obj/item/stock_parts/cell/gun = 3)
-	contraband = list(
+		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
 		/obj/item/storage/belt/security/webbing = 5,
@@ -27,7 +26,6 @@
 	refill_canister = /obj/item/vending_refill/security
 	default_price = 650
 	extra_price = 700
-	payment_department = ACCOUNT_SEC
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
@@ -132,10 +130,10 @@
 		/obj/item/grenade/frag = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90/unrestricted,
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90,
 		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
-		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted)
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r,
+		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"

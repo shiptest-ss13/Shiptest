@@ -1,7 +1,7 @@
 /* Mining Points Equipment Vendor */
 /obj/machinery/vending/mining_equipment
 	name = "frontier equipment vendor"
-	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCON."
+	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCOM."
 	icon_state = "mining"
 	icon_deny = "mining-deny"
 	max_integrity = 500 // A bit more durable than your average snack vendor
@@ -11,7 +11,6 @@
 	shoot_inventory_chance = 0
 	circuit = /obj/item/circuitboard/machine/vending/mining_equipment
 	refill_canister = /obj/item/vending_refill/mining_equipment
-	payment_department = ACCOUNT_CAR
 	vend_ready = "Good luck, you're going to need it."
 	mining_point_vendor = TRUE
 	default_price = 100

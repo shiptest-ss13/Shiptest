@@ -24,9 +24,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "au" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "aN" = (
@@ -56,8 +54,7 @@
 	},
 /area/ruin/space/has_grav/astraeus/hallway)
 "ch" = (
-/obj/structure/chair/comfy/black{
-	dir = 4;
+/obj/structure/chair/comfy/grey/directional/east{
 	name = "Captain"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1237,9 +1234,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
-"GV" = (
-/turf/closed/mineral/random/high_chance,
-/area/ruin/unpowered)
 "Ha" = (
 /obj/structure/disposalpipe/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -1499,7 +1493,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Ni" = (
-/obj/structure/closet/wall,
+/obj/structure/closet/wall/directional/north,
 /obj/item/circuitboard/computer/rdconsole,
 /obj/item/clothing/suit/toggle/labcoat,
 /obj/item/research_notes/loot/big,
@@ -1727,7 +1721,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "TV" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
@@ -2039,8 +2033,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "ZT" = (
-/obj/structure/chair/comfy/black{
-	dir = 4;
+/obj/structure/chair/comfy/grey/directional/east{
 	name = "Helm"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2309,7 +2302,7 @@ Wy
 ac
 ac
 ac
-GV
+zq
 zq
 zq
 FB
@@ -2346,9 +2339,9 @@ ac
 ac
 ac
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 ac
 "}
@@ -2383,9 +2376,9 @@ FL
 Wy
 ac
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 ac
 "}
@@ -2420,8 +2413,8 @@ ac
 ac
 ac
 zq
-GV
-GV
+zq
+zq
 zq
 FB
 ac
@@ -2456,9 +2449,9 @@ Fb
 WQ
 ac
 ac
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 FB
 ac
@@ -2494,8 +2487,8 @@ ac
 ac
 ac
 FB
-GV
-GV
+zq
+zq
 zq
 ac
 ac
@@ -2531,8 +2524,8 @@ ac
 ac
 ac
 FB
-GV
-GV
+zq
+zq
 zq
 ac
 ac
@@ -2569,7 +2562,7 @@ ac
 ac
 lF
 ph
-GV
+zq
 FB
 ac
 ac
@@ -2606,7 +2599,7 @@ ac
 ac
 wX
 Nj
-GV
+zq
 FB
 ac
 ac
@@ -2643,7 +2636,7 @@ WQ
 ac
 ac
 Nj
-GV
+zq
 zq
 ac
 ac
@@ -3049,8 +3042,8 @@ ac
 FB
 zq
 zq
-GV
-GV
+zq
+zq
 zq
 zq
 ac
@@ -3085,9 +3078,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 ac
@@ -3122,9 +3115,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 FB
 ac
@@ -3160,7 +3153,7 @@ ac
 ac
 zq
 zq
-GV
+zq
 zq
 zq
 FB
@@ -3197,7 +3190,7 @@ ac
 ac
 zq
 zq
-GV
+zq
 zq
 FB
 ac
@@ -3260,7 +3253,7 @@ FB
 FB
 zq
 zq
-GV
+zq
 zq
 zq
 ac
@@ -3296,9 +3289,9 @@ FB
 zq
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3369,9 +3362,9 @@ VG
 FB
 zq
 zq
-GV
+zq
 FB
-GV
+zq
 FB
 FB
 FB
@@ -3404,13 +3397,13 @@ zq
 Ub
 FB
 FB
-GV
-GV
-GV
+zq
+zq
+zq
 FB
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3445,10 +3438,10 @@ zq
 zq
 FB
 FB
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3476,7 +3469,7 @@ zq
 zq
 zq
 zq
-GV
+zq
 FB
 FB
 FB
@@ -3485,8 +3478,8 @@ FB
 FB
 FB
 FB
-GV
-GV
+zq
+zq
 zq
 zq
 ac
@@ -3512,17 +3505,17 @@ ac
 zq
 zq
 zq
-GV
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
+zq
 zq
 FB
 ra
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 ac
@@ -3550,14 +3543,14 @@ ac
 zq
 zq
 zq
-GV
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
+zq
 FB
 FB
-GV
+zq
 zq
 zq
 ac
@@ -3700,9 +3693,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 FB
 zq
 zq

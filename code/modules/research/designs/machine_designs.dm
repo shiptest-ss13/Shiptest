@@ -9,6 +9,13 @@
 	build_path = /obj/item/circuitboard/machine/smes
 	category = list ("Engineering Machinery")
 
+/datum/design/board/ssu
+	name = "Machine Design (Suit Storage Unit Board)"
+	desc = "The circuit board for a suit storage unit."
+	id = "ssu"
+	build_path = /obj/item/circuitboard/machine/suit_storage_unit
+	category = list ("Engineering Machinery")
+
 /datum/design/board/circulator
 	name = "Machine Design (Circulator Board)"
 	desc = "The circuit board for a circulator."
@@ -247,7 +254,6 @@
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
 
-
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
 	desc = "The circuit board for an Exosuit Fabricator."
@@ -471,6 +477,14 @@
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE | IMPRINTER
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("Misc. Machinery", "initial", "Equipment")
+
 /datum/design/board/ntnet_relay
 	name = "Machine Design (NTNet Relay Board)"
 	desc = "The circuit board for a wireless network relay."
@@ -630,6 +644,14 @@
 	category = list ("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/shuttle/engine/fire
+	name = "Machine Design (Combustion Thruster Board)"
+	desc = "The circuit board for a combustion thruster."
+	id = "engine_fire"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/fire
+	category = list("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/shuttle/engine/electric
 	name = "Machine Design (Ion Thruster Board)"
 	desc = "The circuit board for an ion thruster."
@@ -660,6 +682,14 @@
 	id = "engine_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/heater
 	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/fire_heater
+	name = "Machine Design (Combustion Engine Heater Board)"
+	desc = "The circuit board for a combustion engine heater."
+	id = "engine_fire_heater"
+	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/smes

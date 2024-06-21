@@ -248,13 +248,13 @@
 		visible_message("<span class='info'>[user] inserts a [HC.credits] cr holocredit chip into [src].</span>")
 		qdel(HC)
 		return
-	else if(istype(I, /obj/item/card/id))
+	else if(istype(I, /obj/item/card/bank))
 		if(state != 2)
 			return
-		var/obj/item/card/id/ID = I
+		var/obj/item/card/bank/ID = I
 		var/datum/bank_account/account = ID.registered_account
 		var/target_credits = total_price - credits
-		if(!account.adjust_money(-target_credits))
+		if(!account.adjust_money(-target_credits, "laptop_vendor"))
 			say("Insufficient credits on card to purchase!")
 			return
 		credits += target_credits

@@ -185,6 +185,10 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
+// Adjacency flags
+#define ATMOS_ADJACENT_ANY (1<<0)
+#define ATMOS_ADJACENT_FIRELOCK (1<<1)
+
 #define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
 #define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
@@ -210,8 +214,10 @@
 #define ATMOS_TANK_PLASMA "plasma=70000;TEMP=293.15"
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN "h2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -324,9 +330,17 @@
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
+#define GAS_HYDROGEN "h2"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// Flag for update_air_ref()
+#define AIR_REF_CLOSED_TURF -1
+#define AIR_REF_SPACE_TURF 0
+
+#define AIR_REF_PLANETARY_TURF (1<<0) //SIMULATION_DIFFUSE 0b1
+#define AIR_REF_OPEN_TURF (1<<1) //SIMULATION_ALL 0b10
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \

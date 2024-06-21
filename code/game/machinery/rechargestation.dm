@@ -1,12 +1,12 @@
 /obj/machinery/recharge_station
 	name = "cyborg recharging station"
 	desc = "This device recharges cyborgs and resupplies them with materials."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/obj/machines/borgcharger.dmi'
 	icon_state = "borgcharger0"
 	density = FALSE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 1000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	req_access = list(ACCESS_ROBOTICS)
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/cyborgrecharger
@@ -90,12 +90,12 @@
 
 /obj/machinery/recharge_station/open_machine()
 	. = ..()
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 
 /obj/machinery/recharge_station/close_machine()
 	. = ..()
 	if(occupant)
-		use_power = ACTIVE_POWER_USE //It always tries to charge, even if it can't.
+		set_active_power() //It always tries to charge, even if it can't.
 		add_fingerprint(occupant)
 
 /obj/machinery/recharge_station/update_icon_state()

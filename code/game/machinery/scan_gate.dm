@@ -6,6 +6,7 @@
 #define SCANGATE_WANTED "Wanted"
 #define SCANGATE_SPECIES "Species"
 
+//god why cant this use the normal species defines
 #define SCANGATE_HUMAN "human"
 #define SCANGATE_LIZARD "lizard"
 #define SCANGATE_FLY "fly"
@@ -17,7 +18,7 @@
 #define SCANGATE_SPIDER "rachnid"
 #define SCANGATE_IPC "ipc"
 #define SCANGATE_SQUID "squid"
-#define SCANGATE_ETHEREAL "ethereal"
+#define SCANGATE_ELZUOSE "elzuose"
 #define SCANGATE_KEPORI "kepori"
 
 /obj/machinery/scanner_gate
@@ -26,7 +27,7 @@
 	icon = 'icons/obj/machines/scangate.dmi'
 	icon_state = "scangate"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/scanner_gate
 
 	var/scanline_timer
@@ -146,8 +147,8 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
-					if(SCANGATE_ETHEREAL)
-						scan_species = /datum/species/ethereal
+					if(SCANGATE_ELZUOSE)
+						scan_species = /datum/species/elzuose
 					if(SCANGATE_KEPORI)
 						scan_species = /datum/species/kepori
 				if(is_species(H, scan_species))
@@ -247,5 +248,5 @@
 #undef SCANGATE_SPIDER
 #undef SCANGATE_IPC
 #undef SCANGATE_SQUID
-#undef SCANGATE_ETHEREAL
+#undef SCANGATE_ELZUOSE
 #undef SCANGATE_KEPORI

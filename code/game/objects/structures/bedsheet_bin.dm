@@ -235,6 +235,13 @@ LINEN BINS
 	item_state = "sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
 
+/obj/item/bedsheet/suns
+	name = "\improper SUNS bedsheet"
+	desc = "A gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "sheetsuns"
+	item_state = "sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
+
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"
 	item_state = "sheetian"
@@ -355,6 +362,13 @@ LINEN BINS
 	item_state = "double_sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
 	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+
+/obj/item/bedsheet/double/suns
+	name = "double SUNS bedsheet"
+	desc = "A large gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "double_sheetsuns"
+	item_state = "double_sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
 
 /obj/item/bedsheet/random/Initialize()
 	..()
