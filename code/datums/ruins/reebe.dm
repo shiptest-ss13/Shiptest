@@ -27,3 +27,10 @@
 	id = "smdecay"
 	description = "It seems whoever left here was so nice they left very vauluable items behind. How thoughtful."
 	suffix = "reebe_decayed_sm.dmm"
+
+/datum/map_template/ruin/reebe/refinery_colony
+	name = "Refinery Colony"
+	description = "A refinery colony that has had something very unfortunate happen to it."
+	suffix = "refinerycolony.dmm"
+	id = "refinerycolony"
+	
