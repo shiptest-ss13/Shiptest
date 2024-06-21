@@ -1,11 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"af" = (
-/obj/structure/barricade/wooden,
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
 "am" = (
 /obj/structure/poddoor_assembly/shutters,
 /obj/item/ammo_casing/spent,
@@ -37,17 +30,10 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/refinerycolonyoverseer)
 "aB" = (
-/obj/item/gun/ballistic/shotgun/brimstone,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/turf_decal/corner/opaque/black/full,
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/refinerycolonydorm)
+/obj/effect/decal/cleanable/oil/streak,
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "aJ" = (
 /obj/effect/turf_decal/borderfloor/full{
 	color = "#997C4F"
@@ -213,6 +199,13 @@
 /obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonybridge)
+"bW" = (
+/obj/structure/girder/reinforced,
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "cb" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
@@ -239,16 +232,6 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/refinerycolonycentralhall)
-"cq" = (
-/obj/structure/railing/wood{
-	dir = 9
-	},
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
-	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/refinerycolonyforge)
 "cx" = (
 /obj/effect/turf_decal/corner/opaque/beige/half,
 /turf/open/floor/plasteel{
@@ -353,12 +336,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/refinerycolonycafe)
 "dy" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
+/obj/item/stack/rods,
+/obj/effect/turf_decal/road{
+	dir = 8
 	},
-/obj/structure/window/reinforced,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
 "dz" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half{
@@ -475,6 +457,12 @@
 "et" = (
 /turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet)
+"ew" = (
+/obj/structure/flippedtable{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "ex" = (
 /obj/structure/bed,
 /obj/structure/bed{
@@ -768,6 +756,12 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
+"hi" = (
+/turf/open/floor/plasteel/stairs/mid{
+	dir = 8;
+	color = "#997C4F"
+	},
+/area/ruin/rockplanet/refinerycolonyforge)
 "hj" = (
 /obj/structure/girder/displaced,
 /obj/item/stack/sheet/metal,
@@ -816,6 +810,13 @@
 "hC" = (
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/refinerycolonycafe)
+"hD" = (
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "hG" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/ruin/rockplanet/refinerycolonymedical)
@@ -875,6 +876,13 @@
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonyforge)
+"id" = (
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
+	},
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plasteel/mono,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "im" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown/mono,
 /obj/machinery/door/airlock/command{
@@ -891,15 +899,9 @@
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonybridge)
 "ix" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
-	},
-/obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/structure/flora/rock/pile/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/overmap_encounter/planetoid/rockplanet)
 "iy" = (
 /obj/machinery/door/airlock/command,
 /turf/open/floor/plasteel/dark,
@@ -1021,6 +1023,13 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonycentralhall)
+"jz" = (
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/mono,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "jA" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half{
 	dir = 1
@@ -1057,10 +1066,13 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kb" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	name = "evacuation tunnel"
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
 	},
-/turf/open/floor/concrete/pavement,
+/obj/machinery/door/poddoor/shutters/indestructible{
+	name = "Evacuation tunnel"
+	},
+/turf/open/floor/plasteel/mono,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ke" = (
 /obj/structure/rack,
@@ -1213,10 +1225,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonybridge)
-"lL" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet)
 "lN" = (
 /obj/effect/turf_decal/borderfloor/full{
 	color = "#997C4F"
@@ -1236,20 +1244,10 @@
 /turf/open/floor/plating/grass,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lV" = (
-/obj/structure/railing/wood{
-	dir = 6
+/turf/open/floor/plasteel/stairs/right{
+	color = "#997C4F"
 	},
-/obj/structure/railing/wood{
-	dir = 10
-	},
-/obj/structure/closet/crate/large,
-/obj/structure/closet/crate/large{
-	pixel_y = 21;
-	pixel_x = 1;
-	anchored = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/refinerycolonyoffice)
+/area/ruin/rockplanet/refinerycolonyforge)
 "lX" = (
 /obj/structure/table,
 /turf/open/floor/plating,
@@ -1276,8 +1274,9 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "mk" = (
-/obj/effect/turf_decal/road{
-	dir = 8
+/obj/item/stock_parts/cell/gun/empty,
+/obj/effect/turf_decal/road/edge{
+	dir = 4
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
@@ -1285,10 +1284,6 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/mono,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/refinerycolonyforge)
-"mn" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "mq" = (
 /obj/machinery/door/airlock/medical,
 /turf/open/floor/plasteel,
@@ -1420,13 +1415,6 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/refinerycolonycloset)
-"nG" = (
-/obj/structure/extinguisher_cabinet/directional/south,
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
 "nM" = (
 /obj/item/storage/toolbox/fishing{
 	pixel_x = 10
@@ -1527,17 +1515,9 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oM" = (
-/obj/structure/railing/wood{
-	dir = 6
-	},
-/obj/structure/closet/crate/large,
-/obj/structure/closet/crate/large{
-	pixel_y = 18;
-	pixel_x = -4;
-	anchored = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/refinerycolonyoffice)
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "oO" = (
 /obj/structure/frame,
 /obj/item/stack/sheet/metal,
@@ -1585,11 +1565,17 @@
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonybridge)
 "pg" = (
-/turf/open/floor/plasteel/stairs/left{
-	dir = 8;
-	color = "#997C4F"
-	},
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/item/gun/ballistic/shotgun/brimstone,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/effect/turf_decal/corner/opaque/black/full,
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/refinerycolonydorm)
 "ph" = (
 /turf/open/floor/concrete/reinforced,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -1776,9 +1762,10 @@
 /turf/closed/wall/mineral/titanium/survival,
 /area/ruin/rockplanet/refinerycolonybridge)
 "ri" = (
-/turf/open/floor/plasteel/stairs/right{
-	color = "#997C4F"
+/obj/effect/turf_decal/road{
+	dir = 4
 	},
+/turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
 "rn" = (
 /obj/structure/catwalk/over,
@@ -1789,13 +1776,8 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rp" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
-	},
-/obj/machinery/door/poddoor/shutters/indestructible{
-	name = "evacuation tunnel"
-	},
-/turf/open/floor/plasteel/mono,
+/obj/effect/abstract/turf_fire/inferno/magical,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rt" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown{
@@ -1994,6 +1976,11 @@
 /obj/structure/grille,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"tx" = (
+/turf/open/floor/plasteel/stairs/mid{
+	color = "#997C4F"
+	},
+/area/ruin/rockplanet/refinerycolonyforge)
 "tA" = (
 /obj/effect/turf_decal/corner/opaque/brown/half,
 /obj/effect/turf_decal/corner/opaque/brown/half{
@@ -2066,11 +2053,6 @@
 	},
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonydorm)
-"ud" = (
-/obj/structure/catwalk/over,
-/obj/item/kirbyplants/random,
-/turf/open/water/beach,
-/area/ruin/rockplanet/refinerycolonyforge)
 "ue" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
@@ -2080,6 +2062,14 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/refinerycolonycloset)
+"ug" = (
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
+	},
+/obj/structure/window/reinforced,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/refinerycolonyforge)
 "uk" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown{
 	dir = 4
@@ -2089,10 +2079,7 @@
 	},
 /area/ruin/rockplanet/refinerycolonyforge)
 "uq" = (
-/obj/structure/girder/reinforced,
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
+/obj/effect/turf_decal/road/edge,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
 "ut" = (
@@ -2139,10 +2126,6 @@
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"uG" = (
-/obj/effect/turf_decal/road/edge,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
 "uJ" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/mono,
 /turf/open/floor/plasteel{
@@ -2245,12 +2228,6 @@
 /obj/effect/spawner/lootdrop/waste/trash,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"wg" = (
-/obj/structure/flippedtable{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
 "wh" = (
 /obj/effect/turf_decal/corner/opaque/black/full,
 /obj/structure/table,
@@ -2389,11 +2366,6 @@
 	color = "#997C4F"
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"xD" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
 "xE" = (
 /obj/structure/bed,
 /obj/structure/bed{
@@ -2474,8 +2446,21 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ym" = (
-/obj/effect/turf_decal/road{
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown/half{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown/half{
 	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/refinerycolonyforge)
+"yp" = (
+/obj/structure/grille,
+/obj/effect/turf_decal/road{
+	dir = 8
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
@@ -2510,12 +2495,9 @@
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/refinerycolonybridge)
 "yP" = (
-/obj/item/stack/rods,
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/structure/flora/rock/pile/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet)
 "yQ" = (
 /obj/effect/turf_decal/corner/opaque/black/full,
 /turf/open/floor/plasteel/rockplanet,
@@ -2552,8 +2534,8 @@
 /turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zh" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/obj/structure/flora/rock/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet)
 "zl" = (
 /obj/effect/turf_decal/corner/opaque/black/full,
@@ -2722,6 +2704,13 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"AC" = (
+/obj/structure/barricade/wooden,
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "AE" = (
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep,
@@ -2775,12 +2764,11 @@
 /turf/closed/mineral/random/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet)
 "BI" = (
-/obj/item/stock_parts/cell/gun/empty,
-/obj/effect/turf_decal/road/edge{
-	dir = 4
+/obj/machinery/door/poddoor/shutters/indestructible{
+	name = "Evacuation tunnel"
 	},
 /turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "BP" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2868,13 +2856,6 @@
 /obj/item/clothing/head/welding,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonyforge)
-"CC" = (
-/obj/effect/turf_decal/corner/opaque/inteqbrown/mono,
-/obj/structure/flippedtable{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "CH" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/turf_decal/corner/opaque/inteqbrown/mono,
@@ -3006,12 +2987,11 @@
 /turf/open/floor/plating/grass,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "DT" = (
-/obj/structure/bedsheetbin,
-/obj/structure/table/wood,
-/obj/item/computer_hardware/battery,
-/obj/effect/turf_decal/corner/opaque/black/full,
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/refinerycolonydorm)
+/obj/structure/fence/corner{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "DU" = (
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/orange,
@@ -3073,9 +3053,17 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/refinerycolonycentralhall)
 "Ey" = (
-/obj/structure/fence/door,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/refinerycolonydorm)
+/turf/open/floor/plasteel/stairs/left{
+	color = "#997C4F"
+	},
+/area/ruin/rockplanet/refinerycolonyforge)
+"EA" = (
+/obj/structure/railing/wood{
+	dir = 6
+	},
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/refinerycolonyoffice)
 "EK" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/backpack/duffelbag/med/surgery,
@@ -3147,11 +3135,6 @@
 	color = "#997C4F"
 	},
 /area/ruin/rockplanet/refinerycolonybridge)
-"Fp" = (
-/turf/open/floor/plasteel/stairs/left{
-	color = "#997C4F"
-	},
-/area/ruin/rockplanet/refinerycolonyforge)
 "Fq" = (
 /obj/structure/poddoor_assembly/shutters{
 	dir = 4
@@ -3183,10 +3166,14 @@
 	},
 /area/ruin/rockplanet/refinerycolonyforge)
 "FD" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	name = "evacuation tunnel"
+/obj/structure/railing/wood{
+	dir = 9
 	},
-/turf/open/floor/concrete/pavement,
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/refinerycolonyforge)
 "FF" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half,
@@ -3286,6 +3273,16 @@
 	color = "#997C4F"
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Gq" = (
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/refinerycolonyforge)
 "Gs" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -3436,10 +3433,11 @@
 /turf/open/lava,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "HZ" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	name = "evacuation tunnel"
+/obj/effect/turf_decal/corner/opaque/inteqbrown/mono,
+/obj/structure/flippedtable{
+	dir = 8
 	},
-/turf/closed/mineral/random/rockplanet,
+/turf/open/floor/plasteel/mono,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ih" = (
 /obj/structure/chair/plastic,
@@ -3455,11 +3453,11 @@
 	},
 /area/ruin/rockplanet/refinerycolonyoffice)
 "Il" = (
-/turf/open/floor/plasteel/stairs/mid{
-	dir = 8;
-	color = "#997C4F"
+/obj/machinery/door/poddoor/shutters/indestructible{
+	name = "Evacuation tunnel"
 	},
-/area/ruin/rockplanet/refinerycolonyforge)
+/turf/closed/mineral/random/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Iq" = (
 /obj/effect/turf_decal/corner/opaque/beige/full,
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half{
@@ -3468,14 +3466,11 @@
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/refinerycolonyforge)
 "Iu" = (
-/obj/effect/abstract/turf_fire/inferno/magical,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"Iv" = (
-/turf/open/floor/plasteel/stairs/mid{
-	color = "#997C4F"
+/obj/machinery/door/poddoor/shutters/indestructible{
+	name = "Evacuation tunnel"
 	},
-/area/ruin/rockplanet/refinerycolonyforge)
+/turf/open/floor/concrete/reinforced,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Iw" = (
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -3485,11 +3480,12 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/refinerycolonycentralhall)
 "IB" = (
-/obj/structure/fence/corner{
-	dir = 10
+/obj/structure/closet/crate/large{
+	pixel_x = -11;
+	anchored = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/concrete/slab_2,
+/area/ruin/rockplanet/refinerycolonyforge)
 "IC" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/corner/opaque/beige{
@@ -3545,12 +3541,9 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "JA" = (
-/obj/structure/grille,
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "JB" = (
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half,
 /obj/effect/turf_decal/corner/opaque/inteqbrown/half,
@@ -3634,15 +3627,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Kc" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/item/pickaxe/rusted,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Kd" = (
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -3717,9 +3704,15 @@
 /turf/closed/mineral/random/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "KJ" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/fence{
+	dir = 1
+	},
 /turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"KK" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "KO" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/dark,
@@ -3843,6 +3836,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/refinerycolonycentralhall)
+"LV" = (
+/obj/structure/bedsheetbin,
+/obj/structure/table/wood,
+/obj/item/computer_hardware/battery,
+/obj/effect/turf_decal/corner/opaque/black/full,
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/refinerycolonydorm)
 "LW" = (
 /turf/closed/mineral/random/rockplanet,
 /area/ruin/rockplanet/refinerycolonydorm)
@@ -4042,10 +4042,6 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"NA" = (
-/obj/item/pickaxe/rusted,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "NB" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -4100,9 +4096,11 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Od" = (
-/obj/structure/flora/rock/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet)
+/obj/machinery/door/poddoor/shutters/indestructible{
+	name = "Evacuation tunnel"
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "Oh" = (
 /obj/effect/turf_decal/corner/opaque/beige/full,
 /turf/open/floor/plasteel{
@@ -4168,13 +4166,16 @@
 /obj/item/paper_bin,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonyoverseer)
-"OK" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
+"OI" = (
+/obj/structure/railing/wood{
+	dir = 6
 	},
-/obj/item/stack/sheet/metal,
-/turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/railing/wood{
+	dir = 10
+	},
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/refinerycolonyoffice)
 "OL" = (
 /obj/item/ammo_box/magazine/m10mm,
 /turf/open/water/rockplanet,
@@ -4201,12 +4202,6 @@
 /obj/item/pickaxe,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Pg" = (
-/turf/open/floor/plasteel/stairs/right{
-	color = "#997C4F";
-	dir = 8
-	},
-/area/ruin/rockplanet/refinerycolonyforge)
 "Pk" = (
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/dark,
@@ -4231,6 +4226,12 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Pz" = (
+/turf/open/floor/plasteel/stairs/left{
+	dir = 8;
+	color = "#997C4F"
+	},
+/area/ruin/rockplanet/refinerycolonyforge)
 "PA" = (
 /obj/item/tank/internals/emergency_oxygen{
 	pixel_x = 18;
@@ -4379,12 +4380,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Rs" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ru" = (
 /obj/machinery/computer/security{
 	dir = 1
@@ -4392,11 +4387,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonyforge)
 "Rw" = (
-/obj/structure/fence{
-	dir = 1
-	},
+/obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/rockplanet)
 "Rx" = (
 /obj/structure/fence/cut/large,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -4541,6 +4534,10 @@
 /obj/item/pickaxe,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"SJ" = (
+/obj/structure/fence/door,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/refinerycolonydorm)
 "SK" = (
 /obj/structure/lattice,
 /obj/structure/reagent_dispensers/watertank,
@@ -4836,10 +4833,6 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Vn" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Vo" = (
 /obj/structure/chair/sofa/brown,
 /turf/open/floor/carpet/orange,
@@ -4851,21 +4844,10 @@
 	},
 /area/ruin/rockplanet/refinerycolonycentralhall)
 "Vx" = (
-/obj/structure/closet/crate/large{
-	pixel_x = 7;
-	pixel_y = 3;
-	anchored = 1
+/turf/open/floor/plasteel/stairs/right{
+	color = "#997C4F";
+	dir = 8
 	},
-/obj/structure/closet/crate/large{
-	pixel_x = -11;
-	anchored = 1
-	},
-/obj/structure/closet/crate/large{
-	pixel_y = 21;
-	pixel_x = 1;
-	anchored = 1
-	},
-/turf/open/floor/concrete/slab_2,
 /area/ruin/rockplanet/refinerycolonyforge)
 "VC" = (
 /turf/closed/wall/mineral/titanium/survival,
@@ -4955,12 +4937,11 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Wo" = (
-/obj/effect/turf_decal/borderfloor/full{
-	color = "#997C4F"
+"Wn" = (
+/obj/structure/fence{
+	dir = 4
 	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Wu" = (
 /turf/open/floor/plasteel{
@@ -5058,16 +5039,9 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Xn" = (
-/obj/structure/railing/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown/half{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown/half{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono,
+/obj/structure/catwalk/over,
+/obj/item/kirbyplants/random,
+/turf/open/water/beach,
 /area/ruin/rockplanet/refinerycolonyforge)
 "Xo" = (
 /turf/closed/indestructible/rock,
@@ -5227,11 +5201,15 @@
 /turf/closed/wall/mineral/titanium/survival,
 /area/ruin/rockplanet/refinerycolonycloset)
 "YY" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	name = "evacuation tunnel"
+/obj/effect/turf_decal/borderfloor/full{
+	color = "#997C4F"
 	},
-/turf/open/floor/concrete/reinforced,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/rack,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/refinerycolonyforge)
 "Ze" = (
 /obj/structure/catwalk/over,
 /turf/open/water/rockplanet{
@@ -5239,9 +5217,9 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Zf" = (
-/obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/refinerycolonyforge)
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet)
 "Zg" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/refinerycolonyforge)
@@ -5266,9 +5244,11 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ZA" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet)
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/refinerycolonyforge)
 "ZC" = (
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/concrete/reinforced,
@@ -5414,7 +5394,7 @@ Wd
 Wd
 ld
 ld
-Od
+zh
 BG
 ld
 ld
@@ -5715,12 +5695,12 @@ ld
 ld
 ld
 ld
-KJ
+Zf
 ld
 ld
 Wd
 Wd
-KJ
+Zf
 ld
 BG
 Wd
@@ -5731,7 +5711,7 @@ BG
 BG
 ld
 ld
-Od
+zh
 Wd
 Wd
 ld
@@ -5752,7 +5732,7 @@ ld
 BG
 BG
 BG
-lL
+yP
 ld
 ld
 ld
@@ -5818,7 +5798,7 @@ ld
 ld
 Wd
 Wd
-Od
+zh
 ld
 Wd
 ld
@@ -5866,7 +5846,7 @@ BG
 ld
 ld
 ld
-Od
+zh
 BG
 ld
 ld
@@ -5968,7 +5948,7 @@ ld
 ld
 ld
 ld
-KJ
+Zf
 ld
 ld
 ld
@@ -5989,7 +5969,7 @@ Wd
 Wd
 ld
 ld
-ZA
+Rw
 ld
 ld
 "}
@@ -6137,7 +6117,7 @@ BG
 ld
 ld
 ld
-ZA
+Rw
 BG
 BG
 Wd
@@ -6221,7 +6201,7 @@ Wd
 Wd
 ld
 ld
-lL
+yP
 BG
 "}
 (13,1,1) = {"
@@ -6232,7 +6212,7 @@ uZ
 uZ
 uZ
 uZ
-rp
+kb
 ph
 ph
 dD
@@ -6309,7 +6289,7 @@ uZ
 uZ
 uZ
 uZ
-rp
+kb
 ph
 dD
 dD
@@ -6370,7 +6350,7 @@ BG
 ld
 ld
 Wd
-zh
+ix
 BG
 BG
 ld
@@ -6446,7 +6426,7 @@ BG
 BG
 ld
 ld
-zh
+ix
 BG
 BG
 BG
@@ -6681,7 +6661,7 @@ ld
 ld
 ld
 ld
-ZA
+Rw
 ld
 BG
 BG
@@ -7850,7 +7830,7 @@ uZ
 uZ
 uZ
 uZ
-YY
+Iu
 ph
 qG
 ph
@@ -7927,7 +7907,7 @@ uZ
 uZ
 uZ
 uZ
-YY
+Iu
 ph
 dD
 qG
@@ -9024,8 +9004,8 @@ zz
 zU
 Am
 Am
-CC
-Wo
+HZ
+jz
 Ax
 KI
 KI
@@ -9102,7 +9082,7 @@ zU
 FJ
 Hi
 FJ
-OK
+id
 Ax
 KI
 qG
@@ -9599,8 +9579,8 @@ Xo
 KI
 KI
 KI
-Rw
-IB
+KJ
+DT
 qG
 qG
 qG
@@ -9754,7 +9734,7 @@ KI
 qG
 qG
 qG
-Rs
+Wn
 KI
 KI
 KI
@@ -9852,7 +9832,7 @@ Xo
 KI
 KI
 KI
-mn
+KK
 qG
 qG
 qG
@@ -10599,7 +10579,7 @@ hX
 Xo
 KI
 KI
-HZ
+Il
 KI
 KI
 KI
@@ -10661,7 +10641,7 @@ Pv
 hX
 th
 cR
-Vx
+IB
 hX
 ib
 fs
@@ -10728,7 +10708,7 @@ SC
 pj
 rN
 Sx
-wg
+ew
 Sx
 Sx
 Sx
@@ -10750,12 +10730,12 @@ Sx
 Sx
 Sx
 Sx
-FD
+Od
 uZ
 uZ
 uZ
 uZ
-kb
+BI
 uZ
 uZ
 uZ
@@ -10778,7 +10758,7 @@ KI
 KI
 KI
 cE
-oM
+EA
 Sb
 Sb
 Gd
@@ -10827,12 +10807,12 @@ qC
 qC
 qC
 DC
-FD
+Od
 uZ
 uZ
 uZ
 uZ
-kb
+BI
 uZ
 uZ
 uZ
@@ -10904,12 +10884,12 @@ iR
 iR
 lP
 hh
-FD
+Od
 uZ
 uZ
 uZ
 uZ
-kb
+BI
 uZ
 uZ
 uZ
@@ -10932,7 +10912,7 @@ KI
 SD
 RW
 cE
-lV
+OI
 Sb
 Kx
 Gd
@@ -10981,12 +10961,12 @@ Iq
 Iq
 Iq
 Ec
-FD
+Od
 uZ
 uZ
 uZ
 uZ
-kb
+BI
 uZ
 uZ
 qG
@@ -11058,12 +11038,12 @@ Sx
 Sx
 Sx
 Sx
-FD
+Od
 uZ
 uZ
 uZ
 uZ
-kb
+BI
 qG
 qG
 qG
@@ -11112,9 +11092,9 @@ hX
 hX
 pA
 Mn
-pg
-Il
-Pg
+Pz
+hi
+Vx
 kP
 XB
 MN
@@ -11125,11 +11105,11 @@ MN
 nn
 fz
 Mg
-mk
+ZA
 cZ
 Sx
 Sx
-ym
+ri
 ib
 ib
 ib
@@ -11202,11 +11182,11 @@ ay
 mQ
 ar
 SV
-mk
+ZA
 Sx
 Sx
 Sx
-ym
+ri
 ib
 ZV
 vL
@@ -11279,11 +11259,11 @@ MN
 Fx
 QW
 MN
-mk
+ZA
 Sx
 Sx
 Sx
-uq
+bW
 hX
 hX
 hX
@@ -11356,11 +11336,11 @@ iy
 hR
 hR
 Fx
-JA
+yp
 At
 au
 au
-af
+AC
 hX
 KI
 KI
@@ -11433,11 +11413,11 @@ zc
 Vo
 hR
 Fx
-mk
+ZA
 nR
 aQ
 jK
-ym
+ri
 hX
 KI
 KI
@@ -11510,11 +11490,11 @@ zc
 ht
 hR
 Fx
-yP
+dy
 Sx
 PN
 Sx
-ym
+ri
 hX
 KI
 KI
@@ -11587,11 +11567,11 @@ MN
 Fx
 kX
 MN
-mk
+ZA
 Sx
 oo
 Xl
-nG
+hD
 hX
 hX
 hX
@@ -11664,11 +11644,11 @@ ay
 sy
 gt
 ib
-BI
-Zf
-xD
-Zf
-uG
+mk
+oM
+aB
+oM
+uq
 ib
 Be
 CP
@@ -11781,7 +11761,7 @@ TL
 Ax
 se
 ji
-Vn
+JA
 KI
 KI
 qG
@@ -11803,14 +11783,14 @@ DF
 hX
 uV
 hX
-ud
+Xn
 ml
 qO
 dT
 qO
 qO
-Fp
-Fp
+Ey
+Ey
 qO
 qO
 qO
@@ -11887,7 +11867,7 @@ dT
 dT
 dT
 dT
-Iv
+tx
 qO
 qO
 qO
@@ -11963,20 +11943,20 @@ qO
 dT
 qO
 iC
-ri
-ri
+lV
+lV
 qO
 qO
 qO
 qO
 qO
 gt
-ix
+YY
 To
 qO
 qO
-Kc
-dy
+Gq
+ug
 gt
 Zg
 Zg
@@ -12041,7 +12021,7 @@ iC
 iC
 Ef
 eR
-cq
+FD
 qO
 qO
 qO
@@ -12272,7 +12252,7 @@ tW
 Zo
 pj
 Zo
-Xn
+ym
 Ml
 Ml
 Ml
@@ -12708,9 +12688,9 @@ Qa
 KI
 Ax
 yH
-DT
+LV
 yQ
-aB
+pg
 kB
 HL
 qG
@@ -12736,7 +12716,7 @@ Ax
 Ax
 HL
 Iw
-Iu
+rp
 HX
 ku
 Ax
@@ -12788,7 +12768,7 @@ fp
 yQ
 yQ
 GQ
-Ey
+SJ
 HL
 qG
 qG
@@ -12944,7 +12924,7 @@ yV
 yH
 LW
 qG
-NA
+Kc
 HL
 KI
 KI
