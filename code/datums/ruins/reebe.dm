@@ -33,4 +33,3 @@
 	description = "A refinery colony that has had something very unfortunate happen to it."
 	suffix = "refinerycolony.dmm"
 	id = "refinerycolony"
-	
