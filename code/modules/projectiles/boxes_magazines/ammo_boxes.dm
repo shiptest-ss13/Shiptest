@@ -432,7 +432,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
-/obj/item/ammo_box/c45_speedloader/empty
+/obj/item/ammo_box/a44roum_speedloader/empty
 	start_empty = TRUE
 
 /obj/item/ammo_box/c46x30mm_box

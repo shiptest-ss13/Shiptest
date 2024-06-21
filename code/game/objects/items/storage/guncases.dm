@@ -162,8 +162,8 @@
 /obj/item/storage/pistolcase/montagne
 /obj/item/storage/pistolcase/montagne/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/montagne/no_mag(src)
-	new /obj/item/ammo_box/c45_speedloader/empty(src)
-	new /obj/item/ammo_box/c45_speedloader/empty(src)
+	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
+	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
 
 
 /obj/item/storage/pistolcase/disposable
