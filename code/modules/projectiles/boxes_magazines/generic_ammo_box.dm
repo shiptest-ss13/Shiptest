@@ -2,7 +2,7 @@
 	name = "generic ammo box"
 	desc = "A generic, unbranded box of ammo. It doesn't have great capacity, but it can hold a variety of different calibers."
 	max_ammo = 20
-	start_empty = TRUE
+	percent_fill = 0
 	icon_state = "generic-ammo"
 	/// Does the box currently have an ammo type set?
 	var/ammo_set = FALSE
