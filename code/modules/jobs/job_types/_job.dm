@@ -122,7 +122,7 @@
 	if(!H)
 		return FALSE
 	if(!visualsOnly)
-		var/datum/bank_account/bank_account = new(H.real_name, H.age)
+		var/datum/bank_account/bank_account = new(H.real_name, src)
 		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
@@ -179,9 +179,7 @@
 	var/jobtype = null
 
 	uniform = /obj/item/clothing/under/color/grey
-	wallet = /obj/item/storage/wallet
 	id = /obj/item/card/id
-	bank_card = /obj/item/card/bank
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	box = /obj/item/storage/box/survival
@@ -270,7 +268,7 @@
 	if(!J)
 		J = GLOB.name_occupations[H.job]
 
-	var/obj/item/card/id/C = H.get_idcard(TRUE)
+	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
@@ -287,16 +285,13 @@
 		if(id_assignment)
 			C.assignment = id_assignment
 		C.update_label()
-		H.sec_hud_set_ID()
-
-	var/obj/item/card/bank/bank_card = H.get_bankcard()
-	if(istype(bank_card))
-		for(var/account in SSeconomy.bank_accounts)
-			var/datum/bank_account/bank_account = account
-			if(bank_account.account_id == H.account_id)
-				bank_card.registered_account = bank_account
-				bank_account.bank_cards += bank_card
+		for(var/A in SSeconomy.bank_accounts)
+			var/datum/bank_account/B = A
+			if(B.account_id == H.account_id)
+				C.registered_account = B
+				B.bank_cards += C
 				break
+		H.sec_hud_set_ID()
 
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))

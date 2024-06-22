@@ -3689,7 +3689,10 @@
 	pixel_y = -5;
 	pixel_x = -9
 	},
-/obj/item/reagent_containers/food/drinks/mug,
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = -7;
+	pixel_y = 10
+	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
@@ -9790,7 +9793,7 @@
 	pixel_y = -3
 	},
 /obj/item/reagent_containers/food/snacks/meatbun,
-/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda{
+/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime{
 	pixel_y = 12;
 	pixel_x = -8
 	},
@@ -12830,7 +12833,7 @@
 /obj/item/reagent_containers/food/snacks/nachos{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel{
+/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game{
 	pixel_x = 8;
 	pixel_y = 3
 	},

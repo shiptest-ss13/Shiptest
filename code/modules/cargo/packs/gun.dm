@@ -52,7 +52,7 @@
 
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver Crate"
-	desc = "Contains a concealable Shadow revolver, chambered in .44 Roumain."
+	desc = "Contains a concealable Shadow revolver, chambered in .45 ACP."
 	cost = 1000
 	contains = list(/obj/item/gun/ballistic/revolver/shadow)
 

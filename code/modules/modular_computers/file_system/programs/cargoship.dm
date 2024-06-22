@@ -35,21 +35,21 @@
 	// Get components
 	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
 	var/obj/item/computer_hardware/printer/printer = computer.all_components[MC_PRINT]
-	var/obj/item/card/bank/bank_card = card_slot ? card_slot.stored_card : null
+	var/obj/item/card/id/id_card = card_slot ? card_slot.stored_card : null
 	if(!card_slot || !printer) //We need both to successfully use this app.
 		return
 
 	switch(action)
 		if("ejectid")
-			if(bank_card)
+			if(id_card)
 				card_slot.try_eject(TRUE, usr)
 		if("selectid")
-			if(!bank_card)
+			if(!id_card)
 				return
-			if(!bank_card.registered_account)
+			if(!id_card.registered_account)
 				playsound(get_turf(ui_host()), 'sound/machines/buzz-sigh.ogg', 50, TRUE, -1)
 				return
-			payments_acc = bank_card.registered_account
+			payments_acc = id_card.registered_account
 			playsound(get_turf(ui_host()), 'sound/machines/ping.ogg', 50, TRUE, -1)
 		if("resetid")
 			payments_acc = null

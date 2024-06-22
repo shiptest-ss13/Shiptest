@@ -879,19 +879,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			// begin generic adjective
-			if(!mutant_category)
-				dat += APPEARANCE_CATEGORY_COLUMN
+			if(generic_adjective)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
 
-			dat += "<h3>Character Adjective</h3>"
+				dat += "<h3>Character Adjective</h3>"
 
-			dat += "<a href='?_src_=prefs;preference=generic_adjective;task=input'>[generic_adjective]</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=generic_adjective;task=input'>[generic_adjective]</a><BR>"
 
-			mutant_category++
-			if(mutant_category >= MAX_MUTANT_ROWS)
-				dat += "</td>"
-				mutant_category = 0
-			// end generic adjective
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
 
 			if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
 				if(!mutant_category)

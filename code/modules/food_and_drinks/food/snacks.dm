@@ -167,27 +167,26 @@ All foods are distributed among various categories. Use common sense.
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/storage))
 		..() // -> item/attackby()
-		return FALSE
-	var/datum/component/edible/E = W.GetComponent(/datum/component/edible)
-	if(istype(W, /obj/item/reagent_containers/food/snacks) || E)
+		return 0
+	if(istype(W, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(custom_food_type && ispath(custom_food_type))
-			if(W.w_class > WEIGHT_CLASS_SMALL)
-				to_chat(user, span_warning("[S] is too big for [src]!"))
-				return FALSE
-			if(istype(S) && (!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(W, /obj/item/reagent_containers/food/snacks/cakeslice/custom)))
-				to_chat(user, span_warning("[src] can't be filled with [S]!"))
-				return FALSE
+			if(S.w_class > WEIGHT_CLASS_SMALL)
+				to_chat(user, "<span class='warning'>[S] is too big for [src]!</span>")
+				return 0
+			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(W, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
+				to_chat(user, "<span class='warning'>[src] can't be filled with [S]!</span>")
+				return 0
 			if(contents.len >= 20)
-				to_chat(user, span_warning("You can't add more ingredients to [src]!"))
-				return FALSE
+				to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+				return 0
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
-			C.initialize_custom_food(src, W, user)
-			return FALSE
+			C.initialize_custom_food(src, S, user)
+			return 0
 	var/sharp = W.get_sharpness()
 	if(sharp)
 		if(slice(sharp, W, user))
-			return TRUE
+			return 1
 	else
 		..()
 

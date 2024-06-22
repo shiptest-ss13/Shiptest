@@ -1,5 +1,5 @@
 /client/proc/air_status(turf/target)
-	set category = "Debug.Debug"
+	set category = "Debug"
 	set name = "Display Air Status"
 
 	if(!isturf(target))

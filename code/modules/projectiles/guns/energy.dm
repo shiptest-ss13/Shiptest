@@ -134,19 +134,19 @@
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
-		to_chat(user, span_notice("You load the [C] into \the [src]."))
+		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
 /obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -155,16 +155,16 @@
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	old_cell.update_appearance()
 	cell = null
-	to_chat(user, span_notice("You pull the cell out of \the [src]."))
+	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_appearance()
 	if(tac_load && tac_reloads)
-		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+		if(do_after(user, tactical_reload_delay, TRUE, src))
 			if(insert_cell(user, tac_load))
-				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else
-				to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
+				to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")
 		else
-			to_chat(user, span_warning("Your reload was interupted!"))
+			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
 			return
 
 	user.put_in_hands(old_cell)
@@ -230,7 +230,7 @@
 	fire_sound = shot.fire_sound
 	fire_delay = shot.delay
 	if (shot.select_name)
-		to_chat(user, span_notice("[src] is now set to [shot.select_name]."))
+		to_chat(user, "<span class='notice'>[src] is now set to [shot.select_name].</span>")
 	chambered = null
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	recharge_newshot(TRUE)
@@ -308,13 +308,13 @@
 		if(!BB)
 			. = ""
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
-			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
+			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = ""
 		else if(BB.damage_type != BURN)
-			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
+			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
@@ -324,16 +324,10 @@
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
-			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
+			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
 
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
 		. += "You can switch firemodes by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
-	if(cell)
-		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
-		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
-	else
-		. += span_notice("\The [name] doesn't seem to have a cell!")

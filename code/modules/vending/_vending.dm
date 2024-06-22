@@ -714,13 +714,15 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()
 	var/mob/living/carbon/human/H
-	var/obj/item/card/bank/card
+	var/obj/item/card/id/card
 	if(ishuman(user))
 		H = user
-		card = H.get_bankcard()
+		card = H.get_idcard(TRUE)
 		if(card)
 			.["user"] = list()
 			.["user"]["points"] = card.mining_points
+			.["user"]["name"] = card.registered_name
+			.["user"]["job"] = card.assignment || "No Job"
 			if(card.registered_account)
 				.["user"]["name"] = card.registered_account.account_holder
 				.["user"]["cash"] = card.registered_account.account_balance
@@ -767,7 +769,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				return
 			if(!all_items_free && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/bank/C = H.get_bankcard()
+				var/obj/item/card/id/C = H.get_idcard(TRUE)
 
 				if(!C)
 					say("No card found.")
@@ -944,10 +946,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
 	var/mob/living/carbon/human/H
-	var/obj/item/card/bank/C
+	var/obj/item/card/id/C
 	if(ishuman(user))
 		H = user
-		C = H.get_bankcard(FALSE)
+		C = H.get_idcard(FALSE)
 		if(C?.registered_account && C.registered_account == private_a)
 			return TRUE
 
@@ -1001,7 +1003,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			vend_ready = FALSE
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/bank/C = H.get_bankcard()
+				var/obj/item/card/id/C = H.get_idcard(TRUE)
 
 				if(!C)
 					say("No card found.")
@@ -1053,10 +1055,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
 	if(!private_a)
 		var/mob/living/carbon/human/H
-		var/obj/item/card/bank/C
+		var/obj/item/card/id/C
 		if(ishuman(user))
 			H = user
-			C = H.get_bankcard(TRUE)
+			C = H.get_idcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
 				say("\The [src] has been linked to [C].")

@@ -1341,7 +1341,10 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/mug,
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = -6;
+	pixel_y = -1
+	},
 /obj/item/phone{
 	pixel_x = 9;
 	pixel_y = -2
@@ -3152,7 +3155,10 @@
 	pixel_x = 4;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/mug,
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = -5;
+	pixel_y = 7
+	},
 /obj/effect/turf_decal/siding/wood,
 /obj/item/lipstick{
 	pixel_x = -5;
@@ -4825,7 +4831,9 @@
 	dir = 4
 	},
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/drinks/mug,
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "VK" = (

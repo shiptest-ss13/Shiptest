@@ -176,7 +176,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 2,
 		/obj/item/stack/ore/gold = 1,
 		/obj/item/stack/ore/diamond = 1,
-		/obj/item/stack/ore/ice = 7,
 		)
 
 /obj/structure/vein/ice/classtwo
@@ -191,7 +190,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 2,
 		/obj/item/stack/ore/gold = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
-		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 100
@@ -208,7 +206,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/bluespace_crystal = 4,
-		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 80

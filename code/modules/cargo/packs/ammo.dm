@@ -18,10 +18,10 @@
 	contains = list(/obj/item/ammo_box/magazine/m45)
 	cost = 500
 
-/datum/supply_pack/ammo/a44roum_speedloader
-	name = ".44 Roumain Speedloader Crate"
-	desc = "Contains a .44 Roumain speedloader for the HP Montagne, containing six rounds."
-	contains = list(/obj/item/ammo_box/a44roum_speedloader)
+/datum/supply_pack/ammo/m45_speedloader
+	name = ".45 ACP Speedloader Crate"
+	desc = "Contains a .45 ACP speedloader for the HP Montagne, containing six rounds."
+	contains = list(/obj/item/ammo_box/c45_speedloader)
 	cost = 400
 
 /datum/supply_pack/ammo/c38_mag
@@ -213,7 +213,7 @@
 	name = "9mm Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/ammo_box/c9mm)
-	cost = 200
+	cost = 250
 
 /datum/supply_pack/ammo/a308_ammo_box
 	name = "308 Ammo Box Crate"
@@ -225,7 +225,7 @@
 	name = "9mm AP Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/ammo_box/c9mm/ap)
-	cost = 400
+	cost = 500
 
 /datum/supply_pack/ammo/a357match_ammo_box
 	name = ".357 Match Ammo Box Crate"
@@ -255,7 +255,7 @@
 	name = "9mm HP Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/c9mm/hp)
-	cost = 400
+	cost = 500
 
 /datum/supply_pack/ammo/a357hp_ammo_box
 	name = ".357 HP Ammo Box Crate"
@@ -284,7 +284,7 @@
 	name = "9mm Rubber Ammo Box Crate"
 	desc = "Contains a fifty-round 9mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/ammo_box/c9mm/rubbershot)
-	cost = 200
+	cost = 250
 
 /datum/supply_pack/ammo/c10mmrubber_ammo_box
 	name = "10mm Rubber Ammo Box Crate"
@@ -370,21 +370,3 @@
 	desc = "Contains a fifty-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/ammo_box/ferrolancebox)
 	cost = 250
-
-/datum/supply_pack/ammo/a44roum
-	name = ".44 Roumain Ammo Box Crate"
-	desc = "Contains a fifty-round box of .44 roumain ammo for revolvers such as the Shadow and Montagne."
-	contains = list(/obj/item/ammo_box/a44roum)
-	cost = 250
-
-/datum/supply_pack/ammo/a44roum_rubber
-	name = ".44 Roumain Rubber Ammo Box Crate"
-	desc = "Contains a fifty-round box of .44 roumain ammo loaded with less-than-lethal rubber rounds."
-	contains = list(/obj/item/ammo_box/a44roum/rubber)
-	cost = 250
-
-/datum/supply_pack/ammo/a44roum_hp
-	name = ".44 Roumain Hollow Point Ammo Box Crate"
-	desc = "Contains a fifty-round box of .44 roumain hollow point ammo, great against unarmored targets."
-	contains = list(/obj/item/ammo_box/a44roum/hp)
-	cost = 500
