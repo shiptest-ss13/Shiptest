@@ -282,7 +282,7 @@
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
-	if((!safety && !semi_auto) || (!safety && !semi_auto))
+	if(!safety && !semi_auto)
 		chamber_round(TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
@@ -570,7 +570,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
@@ -698,7 +698,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
