@@ -242,7 +242,7 @@
 					return //This will qdelete the legion.
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message("<span class='warning'>[name] burrows into the flesh of [H]!</span>")
+	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
 	
 	if(H.stat != DEAD)
 		var/obj/item/organ/legion_skull/throwyouabone = new()
@@ -253,7 +253,7 @@
 			L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
 		else
 			L = new(H.loc)
-		visible_message("<span class='warning'>[L] staggers to [L.p_their()] feet!</span>")
+		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 		H.adjustBruteLoss(1000)
 		L.stored_mob = H
 		H.forceMove(L)
