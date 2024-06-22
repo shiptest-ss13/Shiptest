@@ -8,6 +8,7 @@
 	desc = "A thruster for shuttles."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine
 	CanAtmosPass = FALSE //so people can actually tend to their engines
+	dir = EAST //most ships face east
 	///Whether or not the engine is enabled and can be used. Controlled from helm consoles and by hitting with a multitool.
 	var/enabled = TRUE
 	///How much thrust this engine generates when burned fully.
