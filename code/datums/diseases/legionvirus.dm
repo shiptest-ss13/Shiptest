@@ -1,5 +1,5 @@
 /datum/disease/transformation/legionvirus
-	name = "Legion Parasite"
+	name = "Legion Infection"
 	max_stages = 5
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
 	cure_text = "Surgery; applications of spaceacillin or synaptizine can delay effects."
@@ -7,16 +7,17 @@
 	viable_mobtypes = list(/mob/living/carbon/human)
 	visibility_flags = 0
 	stage_prob = 0 // WOOOOOO SNOWFLAKE!!!!!!! WOOOOOO!!!!
-	desc = "If left untreated, the skull will slowly ."
+	desc = "If left untreated, the skull will slowly overtake its host's body, eventually growing into a legion."
 	severity = DISEASE_SEVERITY_HARMFUL
 	disease_flags = NONE
+	visibility_flags = HIDDEN_PANDEMIC
 	bypasses_immunity = TRUE
 
-	stage1 = list("Your joints itch.")
+	stage1 = list("You feel a dull pain in your chest.")
 	stage2 = list("Your head begins to ache.")
-	stage3 = list("Ash begins to flake off your skin.")
-	stage4 = list("<span class='warning'>You feel like your head is splitting in two!</span>")
-	stage5 = list("<span class='warning'>You feel something growing inside your chest!</span>")
+	stage3 = list("Something moves underneath your skin.")
+	stage4 = list("<span class='warning'>You feel something pressing against your skin!</span>")
+	stage5 = list("<span class='warning'>Your skin begins to tear apart-!</span>")
 	new_form = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 
 /datum/disease/transformation/legionvirus/do_disease_transformation(mob/living/H)
