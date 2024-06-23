@@ -19,6 +19,7 @@
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
+
 	burn_mod = 0.66
 	//mining projectiles do extra damage
 	extra_dam_proj = list(
