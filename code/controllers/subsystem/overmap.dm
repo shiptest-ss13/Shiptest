@@ -405,6 +405,18 @@ SUBSYSTEM_DEF(overmap)
 
 	return ..()
 
+/datum/overmap_star_system/Destroy(force, ...)
+	if(!force)
+		stack_trace("Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. PANIC.")
+		message_admins("<span class='danger'>Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. CHECK RUNTIMES NOW.</span>")
+		return QDEL_HINT_LETMELIVE
+	stack_trace("Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.")
+	message_admins(<span class='danger'>"Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.</span>")
+	SSovermap.tracked_star_systems -= src
+	for(var/datum/thing_to_del as anything in overmap_objects)
+		qdel(thing_to_del)
+	return ..()
+
 
 /datum/overmap_star_system/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"

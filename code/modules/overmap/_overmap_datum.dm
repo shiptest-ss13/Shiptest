@@ -1,4 +1,4 @@
-#define INTERACTION_OVERMAP_DOCK "Dock"
+#define INTERACTION_OVERMAP_DOCK "Dock to Specific Location"
 #define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
 #define INTERACTION_OVERMAP_HAIL "Hail"
 #define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
