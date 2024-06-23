@@ -11,6 +11,7 @@
 	hardness = 30 // doesn't matter much; everything that uses it gets overridden
 	explosion_block = 3
 	break_sound = 'sound/effects/break_stone.ogg'
+	attack_hitsound =  'sound/effects/hit_stone.ogg'
 	sheet_type = null
 	girder_type = /obj/structure/grille
 
@@ -19,6 +20,11 @@
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
 	burn_mod = 0.66
+	//mining projectiles do extra damage
+	extra_dam_proj = list(
+		/obj/projectile/kinetic,
+		/obj/projectile/destabilizer,
+		/obj/projectile/plasma)
 
 
 	var/mutable_appearance/crack_overlay
@@ -127,41 +133,14 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I)
-	var/dam = I.force
-	if(istype(I, /obj/item/clothing/gloves/gauntlets))
-		dam = 20
-	else if(I.tool_behaviour == TOOL_MINING)
-		dam *= (4/3)
-	else
-		switch(I.damtype)
-			if(BRUTE)
-				if(I.get_sharpness())
-					dam *= 2/3
-			if(BURN)
-				dam *= 2/3
-			else
-				return 0
-	var/t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
-	// if dam is below t_min, then the hit has no effect
-	return (dam < t_min ? 0 : dam)
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, t_min = min_dam)
+	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+	. = .. ()
 
-/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P)
-	var/dam = P.damage
-	// mining projectiles have an edge
-	if(is_type_in_typecache(P, extra_dam_proj))
-		dam = max(dam, 30)
-	else
-		switch(P.damage_type)
-			if(BRUTE)
-				dam *= 1
-			if(BURN)
-				dam *= 2/3
-			else
-				return 0
-	var/t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
-	// if dam is below t_min, then the hit has no effect
-	return (dam < t_min ? 0 : dam)
+
+/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P, t_min = min_dam)
+	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+	. = ..()
 
 /turf/closed/wall/concrete/reinforced
 	name = "hexacrete wall"

@@ -25,6 +25,8 @@
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
+	/// sound when something hits the wall and deals damage
+	var/attack_hitsound = PROJECTILE_HITSOUND_METAL
 	var/break_sound = 'sound/items/welder.ogg'
 
 	var/list/dent_decals
@@ -33,17 +35,12 @@
 	// force, damage type, tool behavior, and sharpness. This is the minimum
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 8
-	// This should all be handled by integrity should that ever be expanded to walls.
 	var/max_integrity = 400
 	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
-	// used to give mining projectiles a bit of an edge against conc walls
-	var/static/list/extra_dam_proj = typecacheof(list(
-		/obj/projectile/kinetic,
-		/obj/projectile/destabilizer,
-		/obj/projectile/plasma
-	))
+	// Projectiles that do extra damage to the wall
+	var/list/extra_dam_proj
 
 /turf/closed/wall/yesdiag
 	icon_state = "wall-255"
@@ -147,13 +144,13 @@
 				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
 	switch(W.damtype)
 		if(BRUTE)
-			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
+			playsound(src,attack_hitsound 50, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	alter_integrity(-dam)
 	return TRUE
 
-/turf/closed/wall/proc/get_item_damage(obj/item/I)
+/turf/closed/wall/proc/get_item_damage(obj/item/I, t_min = min_dam)
 	var/dam = I.force
 	if(istype(I, /obj/item/clothing/gloves/gauntlets))
 		dam = 20
@@ -163,18 +160,17 @@
 		switch(I.damtype)
 			if(BRUTE)
 				if(I.get_sharpness())
-					dam *= brute_mod
+					dam *= 2/3
 			if(BURN)
 				dam *= burn_mod
 			else
 				return 0
 	// if dam is below t_min, then the hit has no effect
-	return (dam < min_dam ? 0 : dam)
+	return (dam < t_min ? 0 : dam)
 
-/turf/closed/wall/proc/get_proj_damage(obj/projectile/P)
+/turf/closed/wall/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
 	var/dam = P.damage
-	// mining projectiles have an edge
-	if(is_type_in_typecache(P, extra_dam_proj))
+	if(is_type_in_list(P, extra_dam_proj))
 		dam = max(dam, 30)
 	else
 		switch(P.damage_type)
@@ -185,7 +181,7 @@
 			else
 				return 0
 	// if dam is below t_min, then the hit has no effect
-	return (dam < min_dam ? 0 : dam)
+	return (dam < t_min ? 0 : dam)
 
 /turf/closed/wall/proc/dismantle_wall(devastated = FALSE)
 	create_sheets()
