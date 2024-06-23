@@ -35,8 +35,8 @@
 
 /obj/item/anglegrinder/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROCREF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROCREF(on_unwield))
 
 /obj/item/anglegrinder/ComponentInitialize()
 	. = ..()
