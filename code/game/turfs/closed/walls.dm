@@ -233,7 +233,7 @@
 	return FALSE
 
 /turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)
-	if(I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT)
+	if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
@@ -246,6 +246,12 @@
 
 	return FALSE
 
+/turf/closed/wall/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if (I.use_tool(src, user, 2 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
+		dismantle_wall()
+		return TRUE
 
 /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))

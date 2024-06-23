@@ -78,12 +78,15 @@
 				qdel(src)
 				return
 	return ..()
-#ifdef ANGLEGRINDER_WOODEN_BARICADE
-/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
-	if(I.use_tool(src, user, ANGLEGRINDER_WOODEN_BARICADE/I.toolspeed, volume=0))
-		deconstruct()
-#endif
 
+/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
+	if(I.use_tool(src, user, 3 SECONDS, volume=0))
+		deconstruct()
+	. = ..()
+	if (I.use_tool(src, user, 1 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		deconstruct()
+		return TRUE
 
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"

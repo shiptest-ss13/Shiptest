@@ -4,7 +4,7 @@
 
 /obj/item/anglegrinder
 	name = "angle grinder"
-	desc = "A powerfull tool to salvage about anything, you should wear earmuffs and welding protection to avoid damage to your ears and eyes."
+	desc = "A powerful salvage tool used to cut apart walls and airlocks. A peeling hazard sticker recommends ear and eye protection."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "anglegrinder_off"
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
@@ -23,11 +23,14 @@
 	usesound = 'sound/weapons/anglegrinder.ogg'
 	sharpness = IS_SHARP
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once weildedk
-	toolspeed = 0.25
+	toolspeed = 1
 	var/wielded = FALSE // track wielded status on item
 
 // Trick to make the deconstruction that need a lit welder work. (bypassing fuel test)
 /obj/item/anglegrinder/tool_use_check(mob/living/user, amount)
+	return TRUE
+
+/obj/item/anglegrinder/use(used)
 	return TRUE
 
 /obj/item/anglegrinder/Initialize()
@@ -57,14 +60,11 @@
 	tool_behaviour = null
 	wielded = FALSE
 
-/obj/item/anglegrinder/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/weapons/chainsawhit.ogg', 100, TRUE)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(myhead)
-		myhead.dismember()
-	return(BRUTELOSS)
-
 /obj/item/anglegrinder/get_dismemberment_chance()
 	if(wielded)
 		. = ..()
+
+/obj/item/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
+	target.add_overlay(GLOB.cutting_effect)
+	. = ..()
+	target.cut_overlay(GLOB.cutting_effect)

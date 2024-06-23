@@ -209,6 +209,12 @@
 				return 1
 	return 0
 
+/turf/closed/wall/r_wall/deconstruct_act(mob/living/user, obj/item/I)
+	if (I.use_tool(src, user, 10 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
+		dismantle_wall()
+		return TRUE
+
 /turf/closed/wall/r_wall/update_icon()
 	. = ..()
 	QUEUE_SMOOTH_NEIGHBORS(src)

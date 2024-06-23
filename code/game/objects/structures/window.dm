@@ -405,7 +405,7 @@
 
 	switch(state)
 		if(RWINDOW_SECURE)
-			if((I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT) && user.a_intent == INTENT_HARM)
+			if((I.tool_behaviour == TOOL_WELDER) && user.a_intent == INTENT_HARM)
 				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
 										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
 				if(I.use_tool(src, user, 150, volume = 100))
@@ -414,7 +414,7 @@
 					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
-			if(I.tool_behaviour == TOOL_SCREWDRIVER || I.tool_behaviour == TOOL_DECONSTRUCT)
+			if(I.tool_behaviour == TOOL_SCREWDRIVER)
 				user.visible_message("<span class='notice'>[user] digs into the heated security screws and starts removing them...</span>",
 										"<span class='notice'>You dig into the heated screws hard and they start turning...</span>")
 				if(I.use_tool(src, user, 50, volume = 50))
@@ -422,7 +422,7 @@
 					to_chat(user, "<span class='notice'>The screws come out, and a gap forms around the edge of the pane.</span>")
 				return
 		if(RWINDOW_BOLTS_OUT)
-			if(I.tool_behaviour == TOOL_CROWBAR || I.tool_behaviour == TOOL_DECONSTRUCT)
+			if(I.tool_behaviour == TOOL_CROWBAR)
 				user.visible_message("<span class='notice'>[user] wedges \the [I] into the gap in the frame and starts prying...</span>",
 										"<span class='notice'>You wedge \the [I] into the gap in the frame and start prying...</span>")
 				if(I.use_tool(src, user, 40, volume = 50))
@@ -430,7 +430,7 @@
 					to_chat(user, "<span class='notice'>The panel pops out of the frame, exposing some thin metal bars that looks like they can be cut.</span>")
 				return
 		if(RWINDOW_POPPED)
-			if(I.tool_behaviour == TOOL_WIRECUTTER || I.tool_behaviour == TOOL_DECONSTRUCT)
+			if(I.tool_behaviour == TOOL_WIRECUTTER)
 				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on \the [src]...</span>",
 										"<span class='notice'>You start cutting the exposed bars on \the [src]</span>")
 				if(I.use_tool(src, user, 20, volume = 50))
@@ -438,7 +438,7 @@
 					to_chat(user, "<span class='notice'>The panels falls out of the way exposing the frame bolts.</span>")
 				return
 		if(RWINDOW_BARS_CUT)
-			if(I.tool_behaviour == TOOL_WRENCH || I.tool_behaviour == TOOL_DECONSTRUCT)
+			if(I.tool_behaviour == TOOL_WRENCH)
 				user.visible_message("<span class='notice'>[user] starts unfastening \the [src] from the frame...</span>",
 					"<span class='notice'>You start unfastening the bolts from the frame...</span>")
 				if(I.use_tool(src, user, 40, volume = 50))

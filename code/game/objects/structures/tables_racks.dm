@@ -162,7 +162,7 @@
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	var/list/modifiers = params2list(params)
 	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
-		if((I.tool_behaviour == TOOL_SCREWDRIVER || I.tool_behaviour == TOOL_DECONSTRUCT) && deconstruction_ready)
+		if((I.tool_behaviour == TOOL_SCREWDRIVER) && deconstruction_ready)
 			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
@@ -226,6 +226,13 @@
 			return TRUE
 	else
 		return ..()
+
+/obj/structure/table/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if (I.use_tool(src, user, 1 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut [src] into sheets.</span>")
+		deconstruct(wrench_disassembly = TRUE)
+		return TRUE
 
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	return
@@ -539,7 +546,7 @@
 		return "<span class='notice'>The top cover is firmly <b>welded</b> on.</span>"
 
 /obj/structure/table/reinforced/attackby(obj/item/W, mob/user, params)
-	if((W.tool_behaviour == TOOL_WELDER || W.tool_behaviour == TOOL_DECONSTRUCT) && user.a_intent != INTENT_HELP)
+	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HELP)
 		if(!W.tool_start_check(user, amount=0))
 			return
 
