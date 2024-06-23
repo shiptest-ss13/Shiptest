@@ -93,8 +93,8 @@
 	//oops, you ruined the ore
 	if (mineralType && (mineralAmt > 0))
 		if(prob(slag_chance))
-		new /obj/item/stack/ore/slag(src,mineralAmt)
-		visible_message(span_warning("The ore was completely ruined!"))
+			new /obj/item/stack/ore/slag(src,mineralAmt)
+			visible_message(span_warning("The ore was completely ruined!"))
 	else
 		new mineralType(src, mineralAmt)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
