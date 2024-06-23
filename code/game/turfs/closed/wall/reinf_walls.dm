@@ -22,8 +22,6 @@
 	var/d_state = INTACT
 
 	max_integrity = 1400
-	///tracks how much unrepaired damage the wall has.Too much persistant damage will prevent the wall going up a d_state
-	var/persistant_damage = 0
 
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"
@@ -78,12 +76,6 @@
 /// Calculate how much integrity the r-wall should have a a given state.
 /turf/closed/wall/r_wall/proc/get_state_integrity(state)
 	return max_integrity - ((max_integrity/7) * state)
-
-/turf/closed/wall/r_wall/alter_integrity(damage, devastate)
-	persistant_damage += damage
-	if(persistant_damage <= 0)
-		persistant_damage = 0
-	. = ..()
 
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
