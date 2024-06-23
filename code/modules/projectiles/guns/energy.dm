@@ -130,7 +130,7 @@
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, sound_volume, load_sound_vary)
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
