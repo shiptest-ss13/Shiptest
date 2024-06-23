@@ -144,7 +144,7 @@
 				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
 	switch(W.damtype)
 		if(BRUTE)
-			playsound(src,attack_hitsound 50, TRUE)
+			playsound(src,attack_hitsound, 50, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	alter_integrity(-dam)

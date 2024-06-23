@@ -6,7 +6,7 @@
 	range = 4
 	dismemberment = 20
 	/// chance that the plasmablast ruins the ore
-	slag_chance = 33
+	var/slag_chance = 33
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
 	tracer_type = /obj/effect/projectile/tracer/plasma_cutter
 	muzzle_type = /obj/effect/projectile/muzzle/plasma_cutter
