@@ -315,7 +315,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 		)
 	)
 
-	default_attachments = list(/obj/item/attachment/foldable_stock)
+	//default_attachments = list(/obj/item/attachment/foldable_stock)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	name = "\improper SKM-44v Mongrel"
@@ -349,4 +349,4 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 		/obj/item/attachment/foldable_stock/inteq
 	)
 
-	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
+	//default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
