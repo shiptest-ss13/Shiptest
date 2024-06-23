@@ -144,6 +144,10 @@
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
 
+/datum/action/attachment/Destroy()
+	. = ..()
+	gun = null
+
 /datum/action/attachment/Trigger()
 	..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
