@@ -3,9 +3,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/space)
 "b" = (
-/obj/structure/chair/wood/wings{
-	dir = 1
-	},
+/obj/structure/table/wood,
 /turf/open/floor/wood/maple,
 /area/space)
 "c" = (
@@ -119,16 +117,6 @@
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/mahogany,
 /area/space)
-"u" = (
-/obj/structure/table/wood,
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = 10
-	},
-/obj/item/chisel{
-	pixel_x = 5
-	},
-/turf/open/floor/wood/maple,
-/area/space)
 "v" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -201,6 +189,8 @@
 "G" = (
 /obj/structure/table/wood,
 /obj/item/weaponcrafting/stock,
+/obj/item/weaponcrafting/receiver,
+/obj/item/pipe,
 /turf/open/floor/wood/maple,
 /area/space)
 "H" = (
@@ -266,6 +256,12 @@
 /obj/item/stack/sheet/leather,
 /turf/open/floor/wood/ebony,
 /area/space)
+"Q" = (
+/obj/structure/chair/wood/wings{
+	dir = 1
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "R" = (
 /obj/structure/rack,
 /turf/open/floor/wood/maple,
@@ -305,6 +301,12 @@
 /area/space)
 "Y" = (
 /obj/structure/table/wood,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 10
+	},
+/obj/item/chisel{
+	pixel_x = 5
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "Z" = (
@@ -2212,7 +2214,7 @@ a
 a
 a
 k
-Y
+b
 X
 X
 X
@@ -2264,8 +2266,8 @@ a
 a
 a
 k
-Y
 b
+Q
 X
 R
 R
@@ -2368,7 +2370,7 @@ a
 a
 a
 k
-u
+Y
 X
 X
 R
@@ -2421,7 +2423,7 @@ a
 a
 k
 G
-b
+Q
 X
 X
 X
