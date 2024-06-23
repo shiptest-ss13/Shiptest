@@ -50,6 +50,16 @@
 	display_name = "tie, recolorable"
 	path =  /obj/item/clothing/neck/tie
 
+//Bone
+/datum/gear/accessory/fangnecklace
+	display_name = "wolf fang necklace"
+	path = /obj/item/clothing/neck/fangnecklace
+
+/datum/gear/accessory/bonearmlet
+	display_name = "bone armlet"
+	path = /obj/item/clothing/accessory/bonearmlet
+	slot = null
+
 //Misc
 
 /datum/gear/accessory/waistcoat
@@ -76,6 +86,11 @@
 	display_name = "white gloves"
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/white
+
+/datum/gear/accessory/gloves/fingerless
+	display_name = "fingerless gloves"
+	description = "Radical hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/fingerless
 
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"

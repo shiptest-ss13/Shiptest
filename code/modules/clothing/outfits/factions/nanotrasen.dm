@@ -48,6 +48,18 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+/datum/outfit/job/nanotrasen/captain/ns
+	name = "Nanotrasen - Captain (N+S Logistics)"
+
+	head = /obj/item/clothing/head/nanotrasen/cap/supply
+	uniform = /obj/item/clothing/under/nanotrasen/supply/qm
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/clipboard
+
+	chameleon_extras = /obj/item/stamp/qm
+
 /datum/outfit/job/nanotrasen/captain/centcom
 	name = "Nanotrasen - Captain (Central Command)"
 
@@ -208,7 +220,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/storage/wallet
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/nanotrasen/engineering/director
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering

@@ -46,4 +46,4 @@
 /obj/item/ammo_casing/energy/disabler/smg
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
 	e_cost = 330
-	delay = 0.1 SECONDS
+	delay = 0.13 SECONDS

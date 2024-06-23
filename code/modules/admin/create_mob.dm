@@ -42,6 +42,7 @@
 	H.dna.features["squid_face"] = pick(GLOB.squid_face_list)
 	H.dna.features["kepori_feathers"] = pick(GLOB.kepori_feathers_list)
 	H.dna.features["kepori_body_feathers"] = pick(GLOB.kepori_body_feathers_list)
+	H.dna.features["kepori_head_feathers"] = pick(GLOB.kepori_head_feathers_list)
 	H.dna.features["vox_head_quills"] = pick(GLOB.vox_head_quills_list)
 	H.dna.features["vox_neck_quills"] = pick(GLOB.vox_neck_quills_list)
 	H.dna.features["elzu_horns"] = pick(GLOB.elzu_horns_list)

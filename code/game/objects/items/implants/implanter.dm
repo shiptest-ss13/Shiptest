@@ -27,7 +27,7 @@
 			M.visible_message("<span class='warning'>[user] is attempting to implant [M].</span>")
 
 		var/turf/T = get_turf(M)
-		if(T && (M == user || do_mob(user, M, 50)))
+		if(T && (M == user || do_after(user, 5 SECONDS, M)))
 			if(src && imp)
 				if(imp.implant(M, user))
 					if (M == user)

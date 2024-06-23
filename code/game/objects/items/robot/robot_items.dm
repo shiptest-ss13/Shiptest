@@ -176,7 +176,7 @@
 				return
 
 			to_chat(user, "<span class='notice'>You connect to [M]'s power line...</span>")
-			while(do_after(user, 15, target = M, progress = 0))
+			while(do_after(user, 15, target = M, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -210,7 +210,7 @@
 
 			to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-			while(do_after(user, 15, target = target, progress = 0))
+			while(do_after(user, 15, target = target, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -248,7 +248,7 @@
 
 		to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-		while(do_after(user, 15, target = target, progress = 0))
+		while(do_after(user, 15, target = target, progress = TRUE))
 			if(!user || !user.cell || mode != "charge")
 				return
 

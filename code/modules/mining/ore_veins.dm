@@ -176,6 +176,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 2,
 		/obj/item/stack/ore/gold = 1,
 		/obj/item/stack/ore/diamond = 1,
+		/obj/item/stack/ore/ice = 7,
 		)
 
 /obj/structure/vein/ice/classtwo
@@ -190,6 +191,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 2,
 		/obj/item/stack/ore/gold = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 100
@@ -206,6 +208,40 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/bluespace_crystal = 4,
+		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 80
+
+// Asteroid veins are the same as the base planetary ones yield wise, but with the asteroid mobs.
+
+/obj/structure/vein/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		)
+
+/obj/structure/vein/classtwo/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 15,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5
+		)
+
+/obj/structure/vein/classthree/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10
+		)
+
