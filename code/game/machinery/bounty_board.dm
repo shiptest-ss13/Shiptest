@@ -33,8 +33,8 @@ GLOBAL_LIST_EMPTY(request_list)
 
 /obj/machinery/bounty_board/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	if(istype(I,/obj/item/card/id))
-		var/obj/item/card/id/current_card = I
+	if(istype(I,/obj/item/card/bank))
+		var/obj/item/card/bank/current_card = I
 		if(current_card.registered_account)
 			current_user = current_card.registered_account
 			return TRUE
@@ -72,9 +72,9 @@ GLOBAL_LIST_EMPTY(request_list)
 		if(request.applicants)
 			for(var/datum/bank_account/j in request.applicants)
 				formatted_applicants += list(list("name" = j.account_holder, "request_id" = request.owner_account.account_id, "requestee_id" = j.account_id))
-	var/obj/item/card/id/id_card = user.get_idcard()
-	if(id_card?.registered_account)
-		current_user = id_card.registered_account
+	var/obj/item/card/bank/bank_card = user.get_bankcard()
+	if(bank_card?.registered_account)
+		current_user = bank_card.registered_account
 	if(current_user)
 		data["accountName"] = current_user.account_holder
 	data["requests"] = formatted_requests

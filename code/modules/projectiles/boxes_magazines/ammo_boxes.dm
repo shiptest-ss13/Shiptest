@@ -411,13 +411,13 @@
 	ammo_type = /obj/item/ammo_casing/c22lr
 	max_ammo = 75
 
-/obj/item/ammo_box/c45_speedloader
-	name = "speed loader (.45)"
+/obj/item/ammo_box/a44roum_speedloader
+	name = "speed loader (.44)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "speedloader_38-6"
 	base_icon_state = "speedloader_38"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/a44roum
+	caliber = ".44 Roumain"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
@@ -472,3 +472,24 @@
 	icon_state = "300box"
 	ammo_type = /obj/item/ammo_casing/a300
 	max_ammo = 20
+
+/obj/item/ammo_box/a44roum
+	name = "ammo box (.44 roumain)"
+	desc = "A box of standard .44 roumain ammo."
+	icon_state = "a44roum"
+	ammo_type = /obj/item/ammo_casing/a44roum
+	max_ammo = 50
+
+/obj/item/ammo_box/a44roum/rubber
+	name = "ammo box (.44 roumain rubber)"
+	desc = "A box of .44 roumain rubbershot ammo, designed to disable targets without causing serious damage."
+	icon_state = "a44roum-rubber"
+	ammo_type = /obj/item/ammo_casing/a44roum/rubber
+	max_ammo = 50
+
+/obj/item/ammo_box/a44roum/hp
+	name = "ammo box (.44 roumain hollow point)"
+	desc = "A box of .44 roumain hollow point ammo, designed to cause massive damage at the cost of armor penetration."
+	icon_state = "a44roum-hp"
+	ammo_type = /obj/item/ammo_casing/a44roum/hp
+	max_ammo = 50
