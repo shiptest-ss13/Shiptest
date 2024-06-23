@@ -243,7 +243,6 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
 	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
-	
 	if(H.stat != DEAD)
 		var/obj/item/organ/legion_skull/throwyouabone = new()
 		throwyouabone.Insert(H)
