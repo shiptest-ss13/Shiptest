@@ -271,7 +271,7 @@
 		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
 					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 		add_dent(WALL_DENT_HIT)
-		alter_integrity(M.force)
+		alter_integrity(M.force * 20)
 
 /turf/closed/wall/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
