@@ -63,16 +63,16 @@
 				if(eye_blurry < 50)
 					adjust_blurriness(5)
 				if(oxyloss < 40)
-					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.03, 1))
-				else
 					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+				else
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
 
 				if(prob(15))
 					Unconscious(rand(2 SECONDS,6 SECONDS))
 					to_chat(src, "<span class='warning'>You feel very [word].</span>")
 
 			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.03, 1))
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 				adjustToxLoss(2)
 				if(prob(15))
 					Unconscious(rand(2 SECONDS,6 SECONDS))
@@ -91,16 +91,16 @@
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
 					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
-				limb_bleed += BP.bleeding
+			limb_bleed += BP.bleeding
 
 		var/message_cooldown = 5 SECONDS
 		var/bleeeding_wording
 //		var/bleed_change_wording
 		switch(limb_bleed)
-			if(0.2 to 0.4)
-				bleeeding_wording = "You feel droplets of blood drip down ."
+			if(0 to 0.5)
+				bleeeding_wording = "You feel droplets of blood drip down."
 				message_cooldown *= 2.5
-			if(0.4 to 1)
+			if(0.5 to 1)
 				bleeeding_wording = "You feel your blood flow quietly to the floor."
 				message_cooldown *= 2
 			if(1 to 2)
@@ -134,6 +134,7 @@
 				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
 			blood_particle.particles.color = dna.blood_type.color //mouthful
 			blood_particle.particles.spawning = (limb_bleed/2)
+			blood_particle.particles.count = (round(clamp((limb_bleed * 2), 1, INFINITY)))
 
 			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
 				to_chat(src, span_warning("[bleeeding_wording]"))
