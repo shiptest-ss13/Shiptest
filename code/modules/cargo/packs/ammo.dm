@@ -9,7 +9,7 @@
 /datum/supply_pack/ammo/co9mm_mag
 	name = "9mm Commander Magazine Crate"
 	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/co9mm,)
+	contains = list(/obj/item/ammo_box/magazine/co9mm)
 	cost = 500
 
 /datum/supply_pack/ammo/m45_mag
@@ -18,10 +18,10 @@
 	contains = list(/obj/item/ammo_box/magazine/m45)
 	cost = 500
 
-/datum/supply_pack/ammo/m45_speedloader
-	name = ".45 ACP Speedloader Crate"
-	desc = "Contains a .45 ACP speedloader for the HP Montagne, containing six rounds."
-	contains = list(/obj/item/ammo_box/c45_speedloader)
+/datum/supply_pack/ammo/a44roum_speedloader
+	name = ".44 Roumain Speedloader Crate"
+	desc = "Contains a .44 Roumain speedloader for the HP Montagne, containing six rounds."
+	contains = list(/obj/item/ammo_box/a44roum_speedloader)
 	cost = 400
 
 /datum/supply_pack/ammo/c38_mag
@@ -370,3 +370,21 @@
 	desc = "Contains a fifty-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/ammo_box/ferrolancebox)
 	cost = 250
+
+/datum/supply_pack/ammo/a44roum
+	name = ".44 Roumain Ammo Box Crate"
+	desc = "Contains a fifty-round box of .44 roumain ammo for revolvers such as the Shadow and Montagne."
+	contains = list(/obj/item/ammo_box/a44roum)
+	cost = 250
+
+/datum/supply_pack/ammo/a44roum_rubber
+	name = ".44 Roumain Rubber Ammo Box Crate"
+	desc = "Contains a fifty-round box of .44 roumain ammo loaded with less-than-lethal rubber rounds."
+	contains = list(/obj/item/ammo_box/a44roum/rubber)
+	cost = 250
+
+/datum/supply_pack/ammo/a44roum_hp
+	name = ".44 Roumain Hollow Point Ammo Box Crate"
+	desc = "Contains a fifty-round box of .44 roumain hollow point ammo, great against unarmored targets."
+	contains = list(/obj/item/ammo_box/a44roum/hp)
+	cost = 500
