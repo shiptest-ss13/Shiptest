@@ -2,7 +2,7 @@
 	name = "Legion Infection"
 	max_stages = 5
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
-	cure_text = "Surgery; applications of spaceacillin or synaptizine can delay effects."
+	cure_text = "Surgically removing the skull from the patient's chest; applications of spaceacillin or synaptizine can delay onset of the infection."
 	agent = "Legion skull"
 	viable_mobtypes = list(/mob/living/carbon/human)
 	visibility_flags = 0
