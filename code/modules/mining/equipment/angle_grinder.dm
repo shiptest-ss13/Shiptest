@@ -105,6 +105,9 @@
 	remove_grinder()
 
 /obj/item/anglegrinderpack/proc/consume_charge(cost = power_cost)
+	if(!cell)
+		remove_grinder()
+		return
 	if(cell.charge >= cost)
 		cell.charge -= cost
 		return TRUE
@@ -141,6 +144,7 @@
 		. += "<spawn class='notice'>The cell is missing!</span>"
 	else
 		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += "<span class='notice'>You could remove the cell with a screwdriver.</span>"
 
 /obj/item/anglegrinder
 	name = "angle grinder"
@@ -164,6 +168,8 @@
 
 // Trick to make the deconstruction that need a lit welder work. (bypassing fuel test)
 /obj/item/anglegrinder/tool_use_check(mob/living/user, amount)
+	if(!pack.cell)
+		return FALSE
 	if(pack.consume_charge())
 		return TRUE
 	else

@@ -15,7 +15,7 @@
 	name = "earmuffs"
 	desc = "Protects your hearing from loud noises, and quiet ones as well."
 	icon_state = "earmuffs"
-	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_EARS
 	item_state = "earmuffs"
 	strip_delay = 15
 	equip_delay_other = 25
