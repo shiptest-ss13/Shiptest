@@ -91,6 +91,8 @@
 		item_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/brimstone/no_mag
+	spawnwithmagazine = FALSE
 // HELLFIRE SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/hellfire
@@ -122,6 +124,8 @@
 		item_state = "dshotgun_sawn" // ditto
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/hellfire/no_mag
+	spawnwithmagazine = FALSE
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
 	spread = 4
@@ -379,6 +383,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		item_state = "dshotgun_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag
+	spawnwithmagazine = FALSE
+
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
 	name = "sawn-off double-barreled shotgun"
@@ -603,6 +610,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	recoil = 0
 	recoil_unwielded = 2
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
 	if(current_skin)
@@ -744,6 +754,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		spread = 6
 		recoil = 2
 		recoil_unwielded = 4
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
