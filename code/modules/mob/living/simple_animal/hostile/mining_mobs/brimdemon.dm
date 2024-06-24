@@ -14,7 +14,7 @@
 	emote_hear = list("cackles","screeches")
 	stat_attack = CONSCIOUS
 	ranged_cooldown_time = 5 SECONDS
-	vision_range = 9
+	vision_range = 6
 	retreat_distance = 2
 	speed = 3
 	move_to_delay = 5
@@ -98,7 +98,7 @@
 	visible_message(span_danger("[src] starts charging!"))
 	balloon_alert(src, "charging...")
 	to_chat(src, "<span class='warning'>You begin to charge up...</span>")
-	addtimer(CALLBACK(src, PROC_REF(fire_laser)), 1 SECONDS)
+	fire_laser()
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
 
 /mob/living/simple_animal/hostile/asteroid/brimdemon/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
@@ -115,10 +115,6 @@
 /mob/living/simple_animal/hostile/asteroid/brimdemon/proc/fire_laser()
 	if(stat == DEAD)
 		return
-	visible_message(span_danger("[src] fires a brimbeam!"))
-	balloon_alert(src, "brimbeam fired")
-	playsound(src, 'sound/creatures/brimdemon.ogg', 150, FALSE, 0, 3)
-	cut_overlay("brimdemon_telegraph_dir")
 	var/turf/target_turf = get_ranged_target_turf(src, dir, BRIMBEAM_RANGE)
 	var/turf/origin_turf = get_turf(src)
 	var/list/affected_turfs = get_line(origin_turf, target_turf) - origin_turf
@@ -135,15 +131,30 @@
 		var/atom/new_brimbeam = new /obj/effect/brimbeam(affected_turf)
 		new_brimbeam.dir = dir
 		beamparts += new_brimbeam
-		for(var/mob/living/hit_mob in affected_turf.contents)
-			hit_mob.adjustFireLoss(35)
-			to_chat(hit_mob, span_userdanger("You're hit by [src]'s brimbeam!"))
+		animate(new_brimbeam, 1 SECONDS, alpha = 255)
 	if(length(beamparts))
 		var/atom/last_brimbeam = beamparts[length(beamparts)]
 		last_brimbeam.icon_state = "brimbeam_end"
 		var/atom/first_brimbeam = beamparts[1]
 		first_brimbeam.icon_state = "brimbeam_start"
-	addtimer(CALLBACK(src, PROC_REF(end_laser)), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(kill_people)), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(end_laser)), 3 SECONDS)
+
+/// Tells the lasers to start murdering people
+/mob/living/simple_animal/hostile/asteroid/brimdemon/proc/kill_people()
+	if(stat == DEAD)
+		end_laser()
+		return
+	playsound(src, 'sound/creatures/brimdemon.ogg', 150, FALSE, 0, 3)
+	visible_message(span_danger("[src] fires a brimbeam!"))
+	balloon_alert(src, "brimbeam fired")
+	cut_overlay("brimdemon_telegraph_dir")
+	for(var/obj/effect/brimbeam/beam in beamparts)
+		var/turf/affected_turf = get_turf(beam)
+		START_PROCESSING(SSfastprocess, beam)
+		for(var/mob/living/hit_mob in affected_turf.contents)
+			hit_mob.adjustFireLoss(35)
+			to_chat(hit_mob, span_userdanger("You're hit by [src]'s brimbeam!"))
 
 /// Deletes all the brimbeam parts and sets variables back to their initial ones.
 /mob/living/simple_animal/hostile/asteroid/brimdemon/proc/end_laser()
@@ -163,14 +174,11 @@
 	icon_state = "brimbeam_mid"
 	layer = ABOVE_MOB_LAYER
 	plane = -2
+	alpha = 150
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 	light_power = 3
 	light_range = 2
-
-/obj/effect/brimbeam/Initialize()
-	. = ..()
-	START_PROCESSING(SSfastprocess, src)
 
 /obj/effect/brimbeam/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)

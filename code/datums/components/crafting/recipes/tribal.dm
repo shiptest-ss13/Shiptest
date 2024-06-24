@@ -1,18 +1,16 @@
-/datum/crafting_recipe/bonetalisman
-	name = "Bone Talisman"
-	result = /obj/item/clothing/accessory/talisman
+/datum/crafting_recipe/bonearmlet
+	name = "Bone Armlet"
+	result = /obj/item/clothing/accessory/bonearmlet
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/bonenecklace
-	name = "Hunter's Necklace"
-	result = /obj/item/clothing/accessory/wolftalisman
-	time = 35
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/sinew = 3,
-				/obj/item/mob_trophy/wolf_ear = 2,
+/datum/crafting_recipe/fangnecklace
+	name = "Wolf Fang Necklace"
+	result = /obj/item/clothing/neck/fangnecklace
+	time = 20
+	reqs = list(/obj/item/stack/sheet/sinew = 2,
 				/obj/item/mob_trophy/fang = 1)
 	category = CAT_PRIMAL
 
