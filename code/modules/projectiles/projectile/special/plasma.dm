@@ -16,7 +16,7 @@
 	. = ..()
 	if(ismineralturf(target))
 		var/turf/closed/mineral/M = target
-		M.gets_drilled(firer, FALSE)
+		M.gets_drilled(firer, FALSE, slag_chance)
 		if(range > 0)
 			return BULLET_ACT_FORCE_PIERCE
 

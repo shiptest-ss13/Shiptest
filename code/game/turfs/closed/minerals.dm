@@ -90,14 +90,14 @@
 		return attack_hand(user)
 
 /turf/closed/mineral/proc/gets_drilled(user, give_exp = FALSE, slag_chance = 0)
-	//oops, you ruined the ore
 	if (mineralType && (mineralAmt > 0))
+		//oops, you ruined the ore
 		if(prob(slag_chance))
 			new /obj/item/stack/ore/slag(src,mineralAmt)
 			visible_message(span_warning("The ore was completely ruined!"))
-	else
-		new mineralType(src, mineralAmt)
-		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
+		else
+			new mineralType(src, mineralAmt)
+			SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(give_exp)

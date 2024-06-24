@@ -21,7 +21,7 @@
 
 	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
 	var/hardness = 40
-	var/slicing_duration = 100  //default time taken to slice the wall
+	var/slicing_duration = 50  //default time taken to slice the wall
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
@@ -367,7 +367,7 @@
 		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
 		while(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You slice through some of the outer plating.</span>")
+				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
 				alter_integrity(-(I.wall_decon_damage))
 			//return TRUE
 
