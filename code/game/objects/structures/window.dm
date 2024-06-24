@@ -766,6 +766,12 @@
 	anchored = FALSE
 	state = WINDOW_OUT_OF_FRAME
 
+/obj/structure/window/plasma/reinforced/plastitanium/deconstruct_act(mob/living/user, obj/item/I)
+	if (I.use_tool(src, user, 50 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
+		deconstruct(FALSE)
+		return TRUE
+
 /obj/structure/window/paperframe
 	name = "paper frame"
 	desc = "A fragile separator made of thin wood and paper."
