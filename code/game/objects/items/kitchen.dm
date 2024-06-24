@@ -88,6 +88,7 @@
 	item_flags = EYE_STAB
 	var/bayonet = FALSE	//Can this be attached to a gun?
 	custom_price = 250
+	tool_behaviour = TOOL_KNIFE
 
 /obj/item/kitchen/knife/ComponentInitialize()
 	. = ..()

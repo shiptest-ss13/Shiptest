@@ -56,6 +56,16 @@ All foods are distributed among various categories. Use common sense.
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
+/obj/item/reagent_containers/food/snacks/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_FRIED, PROC_REF(on_fried))
+
+
+/obj/item/reagent_containers/food/snacks/proc/on_fried(fry_object)
+	reagents.trans_to(fry_object, reagents.total_volume)
+	qdel()
+	return COMSIG_FRYING_HANDLED
+
 /obj/item/reagent_containers/food/snacks/add_initial_reagents()
 	if(tastes && tastes.len)
 		if(list_reagents)
@@ -175,7 +185,7 @@ All foods are distributed among various categories. Use common sense.
 			if(W.w_class > WEIGHT_CLASS_SMALL)
 				to_chat(user, span_warning("[S] is too big for [src]!"))
 				return FALSE
-			if(istype(S) && (!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(W, /obj/item/reagent_containers/food/snacks/cakeslice/custom)))
+			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
 				to_chat(user, span_warning("[src] can't be filled with [S]!"))
 				return FALSE
 			if(contents.len >= 20)
@@ -337,26 +347,10 @@ All foods are distributed among various categories. Use common sense.
 /// All the food items that can store an item inside itself, like bread or cake.
 /obj/item/reagent_containers/food/snacks/store
 	w_class = WEIGHT_CLASS_NORMAL
-	var/stored_item = 0
 
-/obj/item/reagent_containers/food/snacks/store/attackby(obj/item/W, mob/user, params)
-	..()
-	if(W.w_class <= WEIGHT_CLASS_SMALL & !istype(W, /obj/item/reagent_containers/food/snacks)) //can't slip snacks inside, they're used for custom foods.
-		if(W.get_sharpness())
-			return 0
-		if(stored_item)
-			return 0
-		if(!iscarbon(user))
-			return 0
-		if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
-			return 0
-		to_chat(user, "<span class='notice'>You slip [W] inside [src].</span>")
-		user.transferItemToLoc(W, src)
-		add_fingerprint(user)
-		contents += W
-		stored_item = 1
-		return 1 // no afterattack here
+/obj/item/reagent_containers/food/snacks/store/Initialize()
+	. = ..()
+	AddComponent(/datum/component/food_storage)
 
 /obj/item/reagent_containers/food/snacks/MouseDrop(atom/over)
 	var/turf/T = get_turf(src)
