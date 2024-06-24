@@ -253,6 +253,9 @@
 /datum/action/item_action/toggle_mister
 	name = "Toggle Mister"
 
+/datum/action/item_action/toggle_grinder
+	name = "Toggle Grinder"
+
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
 

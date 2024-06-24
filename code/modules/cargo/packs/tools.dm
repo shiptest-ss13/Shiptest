@@ -107,9 +107,9 @@
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
-	desc = "Contain one angle grinder, a tool used for quick structure deconstruction and salvaging"
-	cost = 1000
-	contains = list(/obj/item/anglegrinder)
+	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
+	cost = 2000
+	contains = list(/obj/item/anglegrinderpack)
 	crate_name = "Angle Grinder"
 
 /*
