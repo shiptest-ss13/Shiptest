@@ -313,6 +313,11 @@
 /// Updates the stage of our tied disease
 /obj/item/organ/legion_skull/proc/update_stage()
 	malignance.update_stage(min(malignance.stage + 1, malignance.max_stages))
+	if(malignance.stage == 5)
+		malignance.stage_act() //force the transformation here, then delete everything
+		qdel(malignance)
+		qdel(src)
+		return
 	malignance_countdown = initial(malignance_countdown)
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 

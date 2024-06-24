@@ -1,4 +1,4 @@
-/datum/disease/transformation/legionvirus
+/datum/disease/transformation/legionvirus //Diseases are a quick way to exposit a bunch of information onto players, most of the effects here are handled by the legion skull organ from /mob/living/simple_animal/hostile/mining_mobs/hivelord.dm
 	name = "Legion Infection"
 	max_stages = 5
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
@@ -21,6 +21,8 @@
 	new_form = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 
 /datum/disease/transformation/legionvirus/do_disease_transformation(mob/living/H)
+	if(stage5)
+		to_chat(affected_mob, pick(stage5))
 	H.visible_message(span_warning("[H] suddenly collapses, a pallid grey mass bursting from their body!"))
 	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
 	if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
@@ -31,4 +33,3 @@
 	H.adjustBruteLoss(1000)
 	L.stored_mob = H
 	H.forceMove(L)
-	qdel(src)
