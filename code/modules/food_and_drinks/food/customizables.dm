@@ -179,15 +179,6 @@
 	ingMax = 6
 	icon_state = "rod"
 
-/obj/item/reagent_containers/food/snacks/customizable/pasta
-	name = "spaghetti"
-	desc = "Noodles. With stuff. Delicious."
-	ingredients_placement = INGREDIENTS_SCATTER
-	ingMax = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
-	icon_state = "spaghettiboiled"
-	foodtype = GRAIN
-
 
 /obj/item/reagent_containers/food/snacks/customizable/pie
 	name = "pie"
