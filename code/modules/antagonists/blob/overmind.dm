@@ -251,9 +251,6 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			var/link = FOLLOW_LINK(M, src)
 			to_chat(M, "[link] [rendered]")
 
-/mob/camera/blob/blob_act(obj/structure/blob/B)
-	return
-
 /mob/camera/blob/get_status_tab_items()
 	. = ..()
 	if(blob_core)

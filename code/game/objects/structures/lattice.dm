@@ -30,9 +30,6 @@
 		if(LAT != src)
 			QDEL_IN(LAT, 0)
 
-/obj/structure/lattice/blob_act(obj/structure/blob/B)
-	return
-
 /obj/structure/lattice/attackby(obj/item/C, mob/user, params)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return

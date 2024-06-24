@@ -86,10 +86,6 @@
 	if(machine_stat & BROKEN)
 		. += "waitlight"
 
-/obj/machinery/chem_master/blob_act(obj/structure/blob/B)
-	if (prob(50))
-		qdel(src)
-
 /obj/machinery/chem_master/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "mixer0_nopower", "mixer0", I))
 		return

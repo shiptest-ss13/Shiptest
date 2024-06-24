@@ -261,10 +261,6 @@
 
 	return ..()
 
-/obj/machinery/particle_accelerator/control_box/blob_act(obj/structure/blob/B)
-	if(prob(50))
-		qdel(src)
-
 /obj/machinery/particle_accelerator/control_box/interact(mob/user)
 	if(construction_state == PA_CONSTRUCTION_PANEL_OPEN)
 		wires.interact(user)

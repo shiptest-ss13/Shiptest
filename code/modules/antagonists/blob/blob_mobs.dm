@@ -45,16 +45,6 @@
 	if(overmind)
 		. += "Blobs to Win: [overmind.blobs_legit.len]/[overmind.blobwincount]"
 
-/mob/living/simple_animal/hostile/blob/blob_act(obj/structure/blob/B)
-	if(stat != DEAD && health < maxHealth)
-		for(var/i in 1 to 2)
-			var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(src)) //hello yes you are being healed
-			if(overmind)
-				H.color = overmind.blobstrain.complementary_color
-			else
-				H.color = "#000000"
-		adjustHealth(-maxHealth*0.0125)
-
 /mob/living/simple_animal/hostile/blob/fire_act(exposed_temperature, exposed_volume)
 	..()
 	if(exposed_temperature)

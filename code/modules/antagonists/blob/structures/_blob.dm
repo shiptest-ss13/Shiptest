@@ -48,9 +48,6 @@
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE) //Expand() is no longer broken, no check necessary.
 	return ..()
 
-/obj/structure/blob/blob_act()
-	return
-
 /obj/structure/blob/Adjacent(atom/neighbour)
 	. = ..()
 	if(.)
@@ -123,10 +120,7 @@
 	return 0 //oh no we failed
 
 /obj/structure/blob/proc/ConsumeTile()
-	for(var/atom/A in loc)
-		A.blob_act(src)
-	if(iswallturf(loc))
-		loc.blob_act(src) //don't ask how a wall got on top of the core, just eat it
+	update_appearance()
 
 /obj/structure/blob/proc/blob_attack_animation(atom/A = null, controller) //visually attacks an atom
 	var/obj/effect/temp_visual/blob/O = new /obj/effect/temp_visual/blob(src.loc)
@@ -163,11 +157,11 @@
 	ConsumeTile() //hit the tile we're in, making sure there are no border objects blocking us
 	if(!T.CanPass(src, get_dir(T, src))) //is the target turf impassable
 		make_blob = FALSE
-		T.blob_act(src) //hit the turf if it is
+		update_appearance()
 	for(var/atom/A in T)
 		if(!A.CanPass(src, get_dir(T, src))) //is anything in the turf impassable
 			make_blob = FALSE
-		A.blob_act(src) //also hit everything in the turf
+		update_appearance()
 
 	if(make_blob) //well, can we?
 		var/obj/structure/blob/B = new /obj/structure/blob/normal(src.loc, (controller || overmind))
@@ -181,7 +175,7 @@
 			return B
 		else
 			blob_attack_animation(T, controller)
-			T.blob_act(src) //if we can't move in hit the turf again
+			update_appearance()
 			qdel(B) //we should never get to this point, since we checked before moving in. destroy the blob so we don't have two blobs on one tile
 			return null
 	else

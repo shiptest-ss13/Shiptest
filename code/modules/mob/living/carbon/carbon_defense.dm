@@ -352,13 +352,6 @@
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
 		visible_message("<span class='warning'>[name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
 
-/mob/living/carbon/blob_act(obj/structure/blob/B)
-	if (stat == DEAD)
-		return
-	else
-		show_message("<span class='userdanger'>The blob attacks!</span>")
-		adjustBruteLoss(10)
-
 /mob/living/carbon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_CONTENTS)
