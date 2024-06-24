@@ -2048,13 +2048,6 @@
 		to_chat(M, "You should sit down and take a rest...")
 	..()
 
-/datum/reagent/tranquility
-	name = "Tranquility"
-	description = "An unknown liquid that tastes serene."
-	color = "#9A6750" //RGB: 154, 103, 80
-	taste_description = "inner peace"
-	can_synth = FALSE
-
 /datum/reagent/spider_extract
 	name = "Spider Extract"
 	description = "A highly specialized extract coming from the Australicus sector, used to create broodmother spiders."
