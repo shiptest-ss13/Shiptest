@@ -542,6 +542,11 @@ EMPTY_GUN_HELPER(revolver/detective)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
+/obj/item/gun/ballistic/revolver/detective/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/revolver/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -575,6 +580,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+/obj/item/gun/ballistic/revolver/montagne/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
@@ -692,6 +700,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	semi_auto = TRUE
 	safety_wording = "safety"
 
+/obj/item/gun/ballistic/revolver/firebrand/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
 	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .45."
@@ -725,3 +736,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
 		chambered.BB.armour_penetration += 5
+
+/obj/item/gun/ballistic/revolver/shadow/no_mag
+	spawnwithmagazine = FALSE
