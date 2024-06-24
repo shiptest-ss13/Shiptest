@@ -238,7 +238,7 @@
 		/datum/reagent/consumable/nutriment = 10,
 		/datum/reagent/consumable/sprinkles = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/pwr_game = 10,
+		/datum/reagent/consumable/pacfuel = 10,
 		/datum/reagent/consumable/liquidelectricity = 10
 	)
 	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
@@ -269,7 +269,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/sprinkles = 2,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
-		/datum/reagent/consumable/pwr_game = 2,
+		/datum/reagent/consumable/pacfuel = 2,
 		/datum/reagent/consumable/liquidelectricity = 2
 	)
 	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
@@ -356,7 +356,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/cocoa = 5
+		/datum/reagent/consumable/coco = 5
 	)
 	tastes = list("blackberry" = 2, "strawberries" = 2, "chocolate" = 4, "sweetness" = 2,"cake" = 3)
 	foodtypes = GRAIN | DAIRY | FRUIT | SUGAR
@@ -421,7 +421,7 @@
 		/datum/reagent/consumable/nutriment = 20,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 		/datum/reagent/toxin/acid = 15,
-		/datum/reagent/oil = 15
+		/datum/reagent/fuel/oil = 15
 		)
 	tastes = list("acid" = 3, "metal" = 4, "glass" = 5)
 	foodtypes = GRAIN | GROSS
@@ -435,7 +435,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/toxin/acid = 3,
-		/datum/reagent/oil = 3
+		/datum/reagent/fuel/oil = 3
 	)
 	tastes = list("acid" = 3, "metal" = 4, "glass" = 5)
 	foodtypes = GRAIN | GROSS

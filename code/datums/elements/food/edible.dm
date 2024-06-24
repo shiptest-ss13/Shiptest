@@ -50,8 +50,9 @@ Behavior that's still missing from this component that original food items had t
 	///The type of atom this creates when the object is microwaved.
 	var/microwaved_type
 
-	//TEMP VAR, filling is nonfunctional because newfood isnt customizable yet
-	var/filling_color
+	//TEMP VAR. To be phased out
+	var/filling_color = null
+
 
 /datum/component/edible/Initialize(list/initial_reagents,
 	food_flags = NONE,
@@ -417,29 +418,6 @@ Behavior that's still missing from this component that original food items had t
 	if(!ishuman(eater))
 		return FALSE
 	var/mob/living/carbon/human/human_eater = eater
-	if((foodtypes & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
-		SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
-	if(HAS_TRAIT(human_eater, TRAIT_AGEUSIA))
-		if(foodtypes & human_eater.dna.species.toxic_food)
-			to_chat(human_eater, "<span class='warning'>You don't feel so good...</span>")
-			human_eater.adjust_disgust(25 + 30 * fraction)
-	else
-		if(foodtypes & human_eater.dna.species.toxic_food)
-			to_chat(human_eater,"<span class='warning'>What the hell was that thing?!</span>")
-			human_eater.adjust_disgust(25 + 30 * fraction)
-			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "toxic_food", /datum/mood_event/disgusting_food)
-		else if(foodtypes & human_eater.dna.species.disliked_food)
-			to_chat(human_eater,"<span class='notice'>That didn't taste very good...</span>")
-			human_eater.adjust_disgust(11 + 15 * fraction)
-			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "gross_food", /datum/mood_event/gross_food)
-		else if(foodtypes & human_eater.dna.species.liked_food)
-			to_chat(human_eater,"<span class='notice'>I love this taste!</span>")
-			human_eater.adjust_disgust(-5 + -2.5 * fraction)
-			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
-	last_check_time = world.time
-
-	/* Should shiptest ever want to move taste to tongues as Beestation & later TGstation did, rather than on species
-	 *
 	var/obj/item/organ/tongue/tongue = human_eater.getorganslot(ORGAN_SLOT_TONGUE)
 	if((foodtypes & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
 		SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
@@ -461,7 +439,6 @@ Behavior that's still missing from this component that original food items had t
 			human_eater.adjust_disgust(-5 + -2.5 * fraction)
 			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 	last_check_time = world.time
-	*/
 
 ///Delete the item when it is fully eaten
 /datum/component/edible/proc/on_consume(mob/living/eater, mob/living/feeder)

@@ -1,6 +1,13 @@
 // Eating stuff
 /// From datum/component/edible/proc/TakeBite: (mob/living/eater, mob/feeder, bitecount, bitesize)
 #define COMSIG_FOOD_EATEN "food_eaten"
+/// From base of Component/edible/On_Consume: (mob/living/eater, mob/living/feeder)
+#define COMSIG_FOOD_CONSUMED "food_consumed"
+
+// Deep frying foods
+/// An item becomes fried - From /datum/element/fried_item/Attach: (fry_time)
+#define COMSIG_ITEM_FRIED "item_fried"
+	#define COMSIG_FRYING_HANDLED (1<<0)
 
 // Microwaving foods
 ///called on item when microwaved (): (obj/machinery/microwave/M)

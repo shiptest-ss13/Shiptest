@@ -7,7 +7,7 @@
 	icon_state = "sustenance"
 	products = list(
 		/obj/item/reagent_containers/food/snacks/tofu/prison = 24,
-		/obj/item/reagent_containers/food/snacks/breadslice/moldy = 15,
+		/obj/item/food/breadslice/moldy = 15,
 		/obj/item/reagent_containers/food/drinks/ice/prison = 12,
 		/obj/item/reagent_containers/food/snacks/candy_corn/prison = 6)
 	contraband = list(
