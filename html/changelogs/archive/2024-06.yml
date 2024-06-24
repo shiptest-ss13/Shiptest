@@ -266,3 +266,72 @@
   - bugfix: mobs will no longer stick around after being butchered sometimes
   Yata9ar4su:
   - bugfix: Atmos mask sprite
+2024-06-20:
+  FalloutFalcon:
+  - admin: reverted filling admin context menus with alot of not useful stuff by rehiding
+      it behind a toggle.
+  Gristlebee:
+  - rscadd: Energy guns show how much charge and shots they have remaining, or if
+      it doesnt have a cell installed on examine.
+  - code_imp: span classes to span macros for energy.dm
+  Sadhorizon:
+  - tweak: SRM cabinets - namely, Hunter's, Shadow's and Flamebearer's - now use cabinet
+      sounds.
+  Skies-Of-Blue:
+  - balance: you can now float over tables when in 0g
+  - balance: you no longer shatter glass tables when floating
+  SomeguyManperson:
+  - balance: 9mm boxes are now cheaper than other pistol calibers to account for the
+      lower damage per bullet
+  generalthrax:
+  - bugfix: The black market sawed off Illestren is now actually sawed off, and can
+      fit on your belt
+  - bugfix: The presawn double barrel shotgun can now fit on the belt like normal
+      sawn off double barrels
+  - rscdel: Removed invisible limb armour from Gezenan marine + navywear
+  - rscadd: Allowed Gezenan armour to hold all guns like normal armour
+  - bugfix: Fixed Montagne hat description to reflect the fact it is no longer armoured
+2024-06-21:
+  FalloutFalcon:
+  - rscadd: Bank accounts are now handled through cash cards! You now spawn with a
+      wallet to store your extra card!
+  Gristlebee:
+  - balance: Motorized wheelchairs consume less power on move
+  Thera-Pissed:
+  - rscadd: Added Hydrogen, and Combustion Thrusters to go with!
+  rye-rice:
+  - rscadd: Adds a war correspondent for CLIP.
+2024-06-22:
+  Anticept:
+  - bugfix: Dialed down the loudness of a couple Kepori sounds
+  - bugfix: Kepori wooping now has the audible flag.
+  - bugfix: Whistling now varies in pitch
+  PositiveEntropy:
+  - imageadd: SUNS trimline decals are now properly aligned.
+  Sadhorizon:
+  - rscadd: Bone Talisman and Hunter's Necklace were added to loadout.
+  - tweak: Bone Talisman and Hunter's Necklace were reflavored into good lack charms.
+      They are no longer armored.
+  - tweak: Wolf talisman crafting recipe now requires less stuff.
+  - bugfix: Blue wall locker sprites are no longer flipped.
+  SomeguyManperson:
+  - balance: crystal legion spawn 1 less skull per spawn wave, now 1 (like normal
+      legion)
+  - balance: brimdemon beams now have a fade-in effect before dealing damage, making
+      it harder to get instantly chunked for a quarter of your health
+  - balance: brimdemons can no longer aggro on you before you can see them
+  - balance: radiation collectors are now significantly more stingy about the potency
+      of the radiation they will process. Don't expect old nuclear waste or openly
+      stored uranium to do much.
+  - balance: radiation collectors also produce significantly more power from the remaining
+      viable sources
+  Thera-Pissed:
+  - bugfix: infinite negative power draw while calling your grandmother no longer
+      happens.
+  - bugfix: fixed volume pumps for mapping.
+  blinkdog:
+  - bugfix: Cleaned up some logic in revolver safety
+  generalthrax:
+  - bugfix: Tadrixx Float has a sprite again
+  - rscadd: You can now tail thump if you have a tail instead of it being tied to
+      species
