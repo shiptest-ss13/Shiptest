@@ -286,6 +286,12 @@
 	qdel(src)
 	update_nearby_icons()
 
+/obj/structure/window/deconstruct_act(mob/living/user, obj/item/I)
+	if (I.use_tool(src, user, 5 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
+		deconstruct(FALSE)
+		return TRUE
+
 /obj/structure/window/proc/spawnDebris(location)
 	. = list()
 	. += new /obj/item/shard(location)
@@ -471,6 +477,12 @@
 		if(RWINDOW_BARS_CUT)
 			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
 
+/obj/structure/window/reinforced/deconstruct_act(mob/living/user, obj/item/I)
+	if (I.use_tool(src, user, 20 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
+		deconstruct(FALSE)
+		return TRUE
+
 /obj/structure/window/reinforced/spawner/east
 	dir = EAST
 
@@ -590,6 +602,12 @@
 			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
 		if(RWINDOW_BARS_CUT)
 			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
+
+/obj/structure/window/plasma/reinforced/deconstruct_act(mob/living/user, obj/item/I)
+	if (I.use_tool(src, user, 40 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
+		deconstruct(FALSE)
+		return TRUE
 
 /obj/structure/window/plasma/reinforced/spawner/east
 	dir = EAST
