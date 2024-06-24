@@ -35,8 +35,8 @@
 
 /obj/item/anglegrinder/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROCREF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROCREF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/anglegrinder/ComponentInitialize()
 	. = ..()
@@ -48,6 +48,7 @@
 /// triggered on wield of two handed item
 /obj/item/anglegrinder/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
+
 	playsound(src, 'sound/weapons/chainsawhit.ogg', 100, TRUE)
 	force = 24
 	tool_behaviour = TOOL_DECONSTRUCT
@@ -56,6 +57,7 @@
 /// triggered on unwield of two handed item
 /obj/item/anglegrinder/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
+
 	force = 13
 	tool_behaviour = null
 	wielded = FALSE
