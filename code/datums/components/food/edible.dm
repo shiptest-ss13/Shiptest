@@ -63,6 +63,7 @@ Behavior that's still missing from this component that original food items had t
 	bite_consumption = 2,
 	microwaved_type,
 	junkiness,
+	filling_color = null, //Temp var
 	datum/callback/pre_eat,
 	datum/callback/on_compost,
 	datum/callback/after_eat,
@@ -122,6 +123,7 @@ Behavior that's still missing from this component that original food items had t
 	list/tastes,
 	list/eatverbs = list("bite","chew","nibble","gnaw","gobble","chomp"),
 	bite_consumption = 2,
+	filling_color = null, //Temp var
 	datum/callback/pre_eat,
 	datum/callback/on_compost,
 	datum/callback/after_eat,
