@@ -222,6 +222,9 @@
 		return ..()
 
 /obj/structure/girder/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
 		to_chat(user, "<span class='warning'>You cut apart \the [src].</span>", "<span class='notice'>You cut apart \the [src].</span>")
 		deconstruct()

@@ -18,6 +18,7 @@
 	girder_type = /obj/structure/girder/reinforced
 	explosion_block = 2
 	rad_insulation = RAD_HEAVY_INSULATION
+	decon_time = 10 SECONDS
 	///Dismantled state, related to deconstruction.
 	var/d_state = INTACT
 
@@ -208,12 +209,6 @@
 					to_chat(user, "<span class='notice'>You weld the support rods back together.</span>")
 				return 1
 	return 0
-
-/turf/closed/wall/r_wall/deconstruct_act(mob/living/user, obj/item/I)
-	if (I.use_tool(src, user, 10 SECONDS, volume=100))
-		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
-		dismantle_wall()
-		return TRUE
 
 /turf/closed/wall/r_wall/update_icon()
 	. = ..()

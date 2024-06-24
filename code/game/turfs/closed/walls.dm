@@ -26,6 +26,7 @@
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
 	var/break_sound = 'sound/items/welder.ogg'
+	var/decon_time = 2 SECONDS
 
 	var/list/dent_decals
 
@@ -248,7 +249,9 @@
 
 /turf/closed/wall/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
-	if (I.use_tool(src, user, 2 SECONDS, volume=100))
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, decon_time, volume=100))
 		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
 		dismantle_wall()
 		return TRUE

@@ -334,6 +334,9 @@
 	qdel(src)
 
 /obj/structure/door_assembly/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
 	if (I.use_tool(src, user, 3 SECONDS, volume=100))
 		to_chat(user, "<span class='warning'>You slice [src] apart.</span>")
 		deconstruct(FALSE)

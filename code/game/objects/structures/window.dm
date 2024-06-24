@@ -27,6 +27,7 @@
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
+	var/decon_time = 5 SECONDS
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.4
 
@@ -287,7 +288,10 @@
 	update_nearby_icons()
 
 /obj/structure/window/deconstruct_act(mob/living/user, obj/item/I)
-	if (I.use_tool(src, user, 5 SECONDS, volume=100))
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, decon_time, volume=100))
 		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
 		deconstruct(FALSE)
 		return TRUE
@@ -402,6 +406,7 @@
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
 	ricochet_chance_mod = 0.8
+	decon_time = 20 SECONDS
 
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
 //If you find this like 4 years later and construction still hasn't been refactored, I'm so sorry for this
@@ -477,12 +482,6 @@
 		if(RWINDOW_BARS_CUT)
 			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
 
-/obj/structure/window/reinforced/deconstruct_act(mob/living/user, obj/item/I)
-	if (I.use_tool(src, user, 20 SECONDS, volume=100))
-		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
-		deconstruct(FALSE)
-		return TRUE
-
 /obj/structure/window/reinforced/spawner/east
 	dir = EAST
 
@@ -540,6 +539,7 @@
 	damage_deflection = 11		//WS Edit - Weakens R-Windows
 	explosion_block = 2
 	glass_type = /obj/item/stack/sheet/plasmarglass
+	decon_time = 25 SECONDS
 
 //entirely copypasted code
 //take this out when construction is made a component or otherwise modularized in some way
@@ -602,12 +602,6 @@
 			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
 		if(RWINDOW_BARS_CUT)
 			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
-
-/obj/structure/window/plasma/reinforced/deconstruct_act(mob/living/user, obj/item/I)
-	if (I.use_tool(src, user, 40 SECONDS, volume=100))
-		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
-		deconstruct(FALSE)
-		return TRUE
 
 /obj/structure/window/plasma/reinforced/spawner/east
 	dir = EAST
@@ -761,16 +755,11 @@
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
 	glass_amount = 2
 	rad_insulation = RAD_HEAVY_INSULATION
+	decon_time = 30 SECONDS
 
 /obj/structure/window/plasma/reinforced/plastitanium/unanchored
 	anchored = FALSE
 	state = WINDOW_OUT_OF_FRAME
-
-/obj/structure/window/plasma/reinforced/plastitanium/deconstruct_act(mob/living/user, obj/item/I)
-	if (I.use_tool(src, user, 50 SECONDS, volume=100))
-		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
-		deconstruct(FALSE)
-		return TRUE
 
 /obj/structure/window/paperframe
 	name = "paper frame"

@@ -229,6 +229,8 @@
 
 /obj/structure/table/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
 	if (I.use_tool(src, user, 1 SECONDS, volume=0))
 		to_chat(user, "<span class='warning'>You cut [src] into sheets.</span>")
 		deconstruct(wrench_disassembly = TRUE)

@@ -1244,6 +1244,9 @@
 		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close)), 2)
 
 /obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
 	var/decon_time = 5 SECONDS
 	if(welded)
 		decon_time += 5 SECONDS
