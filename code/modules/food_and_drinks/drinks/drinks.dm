@@ -294,7 +294,7 @@
 	custom_price = 95
 
 /obj/item/reagent_containers/food/drinks/waterbottle
-	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
+	name = "Ryuunosuke Reserve"  //We'll be using Ryuunosuke as a backup, since it IS technically local...
 	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
 	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "smallbottle"
@@ -341,6 +341,34 @@
 	list_reagents = list()
 	cap_on = FALSE
 
+/obj/item/reagent_containers/food/drinks/waterbottle/rehmil
+	name = "PG-Certified Mineral Water" //rehmil variant
+	desc = "Originating from the Reh'mihl Potables Guild, the label is strikingly wordy in touting this triple-distilled bottle of spring water being sufficiently mineral-infused enough to be attracted by a magnet."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/antechannel
+	name = "Channeler Freshwater" //Antechannel variant
+	desc = "Purified water, originating from the springs from the Antechannel League's territories. Notably cheaper as an imported water."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/shoal
+	name = "Crystaltrail Stellar-Glacial" //Shoal variant
+	desc = "A bottle of water originating from the Shoal. The label stretches very, very long in listing all of its benefits due to being harvested from the ice of comets and within the bodies of asteroids, which is beginning to make you wonder if this is even potable..."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/robustmore
+	name = "Robustmore Refresher" //Robustmore variant
+	desc = "A distinctly plastic-y scented bottle of water from Robustmore Drinkfoods. Reportedly harvested from Water-Vapor Adsorption Reactors (WAVAR)s, which makes it 'technically naturally sourced'."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/sol
+	name = "Asterslau Reserve" //Sol variant
+	desc = "A 'refreshing bottle' of Solarian mineral water. Harvested from the reserves in Terra, the label makes sure to remind you that Asterlaus is a medicinal company first, with a seal wearing a surgical cap recommending to always exercise and stay hydrated."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/nt
+	name = "Ceti Plus" //NT variant
+	desc = "Nanotrasen's entry on the bottling water market. The plastic shell feels cheap to the touch and smells off. This one is known for being made out of purified tap water with minerals added afterwards."
+
+/obj/item/reagent_containers/food/drinks/waterbottle/nt
+	name = "Little Misaka North" //Teceti variant
+	desc = "A fairly decorated water bottle. The contents inside were collected from the river basins in Solasika Tecei territory, which the label boasts openly about. A kepori named 'Little Sister Misaka' is shown hugging a river on the logo."
+
 /obj/item/reagent_containers/food/drinks/waterbottle/large
 	desc = "A fresh commercial-sized bottle of water."
 	icon_state = "largebottle"
@@ -369,12 +397,33 @@
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+	name = "Bizircan Brewery GDM" //base variant/fallback
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = 60
+
+/obj/item/reagent_containers/food/drinks/beer/clip
+	name = "Darkstar Finery Craft Beer" //CLIP variant
+	desc = "An amber lager made in a microbrewery on Clover in CLIP territory. Mild with a strong malt aroma, and perfect with a good burger."
+
+/obj/item/reagent_containers/food/drinks/beer/rehmil
+	name = "Crimson's Touch Dark Ale" // Reh'mil variant
+	desc = "Ale brewed from the rich greenhouses of Reh'himl, best taken with a cigarette in the other hand after a day's work. Rough on the edges, but known for being cheap in spacer's many galleys."
+
+/obj/item/reagent_containers/food/drinks/beer/syebanltch
+	name = "Lai'nuth Light" //Syebanltch variant
+	desc = "A fairly sweet-scented drink, with far less potency than the original it's known for. Spread around on frontier-facing establishments due to it's easier taste and mass-production."
+
+/obj/item/reagent_containers/food/drinks/beer/spacer
+	name = "Montzon Pale" //spacer variant
+	desc = "A savory and uniquely synthesized beer, designed from cereal rations to withstand atmosphere changes, giving its known for syrup-like consistency. The liquid sloshes notably slow when moved around in the bottle."
+
+/obj/item/reagent_containers/food/drinks/beer/shoal
+	name = "Hard Alko" //Shoal variant
+	desc = "A noticeably thicker glass bottle full of alcohol distilled from the Shoal. The little mascot moth on the label eagerly tells you about how the 'cereal grains' are chemically transformed from their origin; scrapyard ship fuselage. It should be safe enough to drink if its being sold... right?"
+
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
