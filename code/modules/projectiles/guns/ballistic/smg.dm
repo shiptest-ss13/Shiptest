@@ -67,6 +67,9 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
+/obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/smg/c20r/suns
 	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
 	icon_state = "c20r_suns"
@@ -88,6 +91,9 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
+
+/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"

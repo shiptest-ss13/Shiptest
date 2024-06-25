@@ -282,7 +282,7 @@
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
-	if((!safety && !semi_auto) || (!safety && !semi_auto))
+	if(!safety && !semi_auto)
 		chamber_round(TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
@@ -542,6 +542,11 @@ EMPTY_GUN_HELPER(revolver/detective)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
+/obj/item/gun/ballistic/revolver/detective/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/revolver/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -570,11 +575,14 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+/obj/item/gun/ballistic/revolver/montagne/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
@@ -692,13 +700,16 @@ EMPTY_GUN_HELPER(revolver/detective)
 	semi_auto = TRUE
 	safety_wording = "safety"
 
+/obj/item/gun/ballistic/revolver/firebrand/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
 	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .45."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
@@ -725,3 +736,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
 		chambered.BB.damage += 5
 		chambered.BB.armour_penetration += 5
+
+/obj/item/gun/ballistic/revolver/shadow/no_mag
+	spawnwithmagazine = FALSE
