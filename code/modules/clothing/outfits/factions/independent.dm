@@ -406,26 +406,6 @@
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
-/datum/outfit/job/independent/ce/western
-	name = "Independent - Foreman (Western)" // Something between CE and QM
-
-	belt = /obj/item/storage/belt/utility/full/engi // Indies probably don't need adv. tools
-	uniform = /obj/item/clothing/under/rank/security/detective
-	suit = /obj/item/clothing/suit/hazardvest
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
-	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/cowboy/sec
-	gloves = /obj/item/clothing/gloves/color/yellow
-	glasses = /obj/item/clothing/glasses/sunglasses
-	r_pocket = /obj/item/clipboard
-
-/datum/outfit/job/independent/ce/western/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/card/id/W = H.wear_id // All of QM's access.
-	W.access += list(ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_VAULT)
-
 // Medical Doctor
 
 /datum/outfit/job/independent/doctor
@@ -564,6 +544,30 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
+
+
+/datum/outfit/job/independent/quartermaster/western
+	name = "Independent - Quartermaster (Western)"
+
+	belt = /obj/item/storage/belt/utility/full
+	uniform = /obj/item/clothing/under/rank/security/detective
+	suit = /obj/item/clothing/suit/hazardvest
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = /obj/item/clothing/head/cowboy/sec
+	l_hand = null
+	r_pocket = /obj/item/clipboard
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+
+/datum/outfit/job/independent/quartermaster/western/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_HEADS)
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"

@@ -208,7 +208,6 @@
 	open_sound = 'sound/machines/wooden_closet_open.ogg'
 	},
 /obj/item/storage/backpack/satchel/cap,
-/obj/item/storage/backpack/captain,
 /obj/item/storage/backpack/messenger/com,
 /obj/item/clothing/under/rank/command/captain,
 /obj/item/clothing/under/rank/command/captain/skirt,
@@ -365,6 +364,7 @@
 	},
 /obj/item/storage/backpack/satchel/explorer,
 /obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
 /obj/item/clothing/under/utility,
 /obj/item/clothing/under/utility,
 /obj/item/clothing/under/utility/skirt,
@@ -379,6 +379,8 @@
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/head/cowboy,
 /obj/item/clothing/head/cowboy,
+/obj/item/clothing/glasses/heat,
+/obj/item/clothing/glasses/heat,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "fY" = (
@@ -683,13 +685,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
-/obj/item/reagent_containers/glass/maunamug{
-	pixel_x = 10;
-	pixel_y = 2
-	},
 /obj/item/newspaper{
 	pixel_x = -9;
 	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = 10;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -959,27 +961,17 @@
 /area/ship/storage/eva)
 "om" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "cargo_wall";
-	name = "Foreman's locker";
-	req_access_txt = "56"
+/obj/structure/closet/wall/orange/directional/west{
+	name = "Mechanic's locker"
 	},
-/obj/item/storage/backpack/industrial,
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/rank/security/detective,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/jacket/leather/duster{
-	name = "foreman's duster";
-	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, dust and paperwork."
-	},
-/obj/item/storage/belt/utility,
-/obj/item/clothing/head/hardhat/white,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/cowboy/sec,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/glasses/meson/engine/tray,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/storage/backpack/messenger/engi,
+/obj/item/clothing/under/rank/engineering/engineer,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/head/hardhat/dblue,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "or" = (
@@ -1016,6 +1008,23 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet{
+	req_access_txt = "19";
+	icon_state = "qm";
+	name = "Foreman's locker"
+	},
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/rank/security/detective,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/jacket/leather/duster{
+	name = "foreman's duster";
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, dust and paperwork."
+	},
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/head/cowboy/sec,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/white,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "oB" = (
@@ -1051,6 +1060,9 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/cyan{
 	icon_state = "0-6"
+	},
+/obj/item/radio{
+	pixel_y = 5
 	},
 /obj/item/radio{
 	pixel_y = 5
@@ -2091,6 +2103,7 @@
 /obj/item/pickaxe/drill{
 	pixel_y = -2
 	},
+/obj/item/radio/weather_monitor,
 /obj/item/pinpointer/mineral{
 	pixel_y = 4
 	},
