@@ -926,15 +926,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "nL" = (
-/obj/structure/closet/crate/large,
-/obj/item/flashlight/seclite{
-	pixel_y = -6;
-	pixel_x = 3
-	},
-/obj/item/gun/energy/kinetic_accelerator,
 /obj/effect/turf_decal/ntspaceworks_big/seven{
 	dir = 1
 	},
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "nY" = (
@@ -2096,13 +2091,15 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/structure/closet/crate/engineering,
-/obj/item/pickaxe/drill{
-	pixel_y = -2
+/obj/item/t_scanner/adv_mining_scanner/lesser{
+	pixel_y = -3
 	},
 /obj/item/pickaxe/drill{
 	pixel_y = -2
 	},
-/obj/item/radio/weather_monitor,
+/obj/item/pickaxe/drill{
+	pixel_y = -2
+	},
 /obj/item/pinpointer/mineral{
 	pixel_y = 4
 	},
@@ -2679,9 +2676,12 @@
 	dir = 8
 	},
 /obj/item/flashlight/flare,
-/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/mask/breath,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/gun/ballistic/revolver/detective,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OP" = (
@@ -3065,7 +3065,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half{
 	dir = 4
 	},
-/obj/structure/ore_box,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
