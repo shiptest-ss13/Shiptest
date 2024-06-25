@@ -365,7 +365,7 @@
 	name = "Ceti Plus" //NT variant
 	desc = "Nanotrasen's entry on the bottling water market. The plastic shell feels cheap to the touch and smells off. This one is known for being made out of purified tap water with minerals added afterwards."
 
-/obj/item/reagent_containers/food/drinks/waterbottle/nt
+/obj/item/reagent_containers/food/drinks/waterbottle/teceti
 	name = "Little Misaka North" //Teceti variant
 	desc = "A fairly decorated water bottle. The contents inside were collected from the river basins in Solasika Tecei territory, which the label boasts openly about. A kepori named 'Little Sister Misaka' is shown hugging a river on the logo."
 
@@ -414,7 +414,7 @@
 
 /obj/item/reagent_containers/food/drinks/beer/syebanltch
 	name = "Lai'nuth Light" //Syebanltch variant
-	desc = "A fairly sweet-scented drink, with far less potency than the original it's known for. Spread around on frontier-facing establishments due to it's easier taste and mass-production."
+	desc = "A fairly sweet-scented beer, with far less potency than the original it's known for. Spread around on frontier-facing establishments due to it's easier taste and mass-production."
 
 /obj/item/reagent_containers/food/drinks/beer/spacer
 	name = "Montzon Pale" //spacer variant
