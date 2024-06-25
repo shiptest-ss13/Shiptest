@@ -424,6 +424,11 @@
 	name = "Hard Alko" //Shoal variant
 	desc = "A noticeably thicker glass bottle full of alcohol distilled from the Shoal. The little mascot moth on the label eagerly tells you about how the 'cereal grains' are chemically transformed from their origin; scrapyard ship fuselage. It should be safe enough to drink if its being sold... right?"
 
+/obj/item/reagent_containers/food/drinks/beer/gezena
+
+	name = "Ken-Rai Spiced"  //gezena variant (2, technically)
+	desc = "Marketed as 'Antechannel's traditional-style beer'. Given the distance from Kalixcis, the 'traditional' style is only in scent - the fresh herbal aroma caused by artificial sweeteners. Nostalgia-inducing all the same."
+
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
