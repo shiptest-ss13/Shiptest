@@ -562,13 +562,6 @@
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 
-/datum/outfit/job/independent/quartermaster/western/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/card/id/W = H.wear_id
-	W.access += list(ACCESS_HEADS)
-
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
 	jobtype = /datum/job/mining

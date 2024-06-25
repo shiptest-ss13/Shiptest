@@ -1008,10 +1008,9 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet{
-	req_access_txt = "19";
-	icon_state = "qm";
-	name = "Foreman's locker"
+/obj/structure/closet/secure_closet/quartermaster{
+	populate = 0;
+	name = "\proper Foreman's locker"
 	},
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/clothing/shoes/workboots,
@@ -1321,7 +1320,7 @@
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19"
+	req_one_access = list(20,41)
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 8
@@ -2973,7 +2972,7 @@
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19"
+	req_one_access = list(20,41)
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 8
