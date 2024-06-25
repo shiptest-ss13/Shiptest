@@ -976,7 +976,14 @@
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(7.5, 0)
-	
+	if(prob(20))
+		switch(rand(1, 2))
+			if(1)
+				M.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
+			if(2)
+				to_chat(M, "<span class='warning'>Your bones hurt!</span>")
+	return ..()
+
 /datum/reagent/toxin/bonehurtingjuice/overdose_process(mob/living/carbon/M)
 	if(prob(4) && iscarbon(M)) //big oof
 		var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG) //God help you if the same limb gets picked twice quickly.
