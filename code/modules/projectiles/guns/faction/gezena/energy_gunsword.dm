@@ -42,6 +42,9 @@
 	damage = 25
 	armour_penetration = -10
 
+/obj/item/gun/energy/kalix/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
 	desc = "An advanced variant of the BG-12, the BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
@@ -90,6 +93,9 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1250 //10 shots per cell
 	delay = 0
+
+/obj/item/gun/energy/kalix/pistol/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
