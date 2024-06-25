@@ -218,7 +218,7 @@
 /obj/machinery/drill/AltClick(mob/user)
 	if(active)
 		to_chat(user, "<span class='notice'>You begin the manual shutoff process.</span>")
-		if(do_after(user,10))
+		if(do_after(user, 10, src))
 			active = FALSE
 			soundloop.stop()
 			deltimer(current_timerid)

@@ -36,7 +36,7 @@
 
 /datum/gear/mug
 	display_name = "coffee mug"
-	path = /obj/item/reagent_containers/food/drinks/britcup
+	path = /obj/item/reagent_containers/food/drinks/mug
 
 /datum/gear/rilena_mug
 	display_name = "coffee mug, rilena"
@@ -61,10 +61,6 @@
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
 	path = /obj/item/toy/eightball
-
-/datum/gear/wallet
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
 
 /datum/gear/pai
 	display_name = "personal AI device"
@@ -145,6 +141,10 @@
 /datum/gear/hairspray
 	display_name = "hair dye"
 	path = /obj/item/dyespray
+
+/datum/gear/colorsalve
+	display_name = "Elzuose color salve"
+	path = /obj/item/colorsalve
 
 /datum/gear/tablebell
 	display_name = "table bell, brass"

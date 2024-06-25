@@ -11,6 +11,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(), 6)]"
 
+/obj/item/ammo_box/magazine/wt550m9/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/wt550m9/ap
 	name = "wt550 magazine (4.6x30mm AP)"
 	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These armor-piercing rounds are great at piercing protective equipment, but lose some stopping power."
@@ -96,6 +99,9 @@
 /obj/item/ammo_box/magazine/smgm45/update_icon_state() //This is stupid (whenever ammo is spent, it updates the icon path)
 	. = ..()
 	icon_state = "c20r45-[round(ammo_count(),2)]"
+
+/obj/item/ammo_box/magazine/smgm45/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/c45_firestorm_mag
 	name = "stick magazine (.45)"

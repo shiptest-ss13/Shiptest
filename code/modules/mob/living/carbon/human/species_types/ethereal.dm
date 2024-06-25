@@ -271,7 +271,7 @@
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	_human.add_overlay(overcharge)
-	if(do_mob(_human, _human, 50, 1))
+	if(do_after(_human, 50, _human, TRUE))
 		_human.flash_lighting_fx(5, 7, current_color)
 		var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(_human, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
