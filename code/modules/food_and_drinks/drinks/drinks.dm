@@ -432,7 +432,7 @@
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
-	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
+	desc = "Brewed with 'Pure Ice Asteroid Spring Water' - a claim debated in courts a dozen times over. Sold under a shell company owned by Donk! Corporation."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
