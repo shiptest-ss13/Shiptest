@@ -545,7 +545,6 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
-
 /datum/outfit/job/independent/quartermaster/western
 	name = "Independent - Quartermaster (Western)"
 
