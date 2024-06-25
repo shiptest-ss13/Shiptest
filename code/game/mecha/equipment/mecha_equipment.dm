@@ -101,13 +101,13 @@
 	chassis.use_power(energy_drain)
 	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
-/obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target, mob/user, interaction_key)
+/obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)
 		return
 	var/C = chassis.loc
 	set_ready_state(0)
 	chassis.use_power(energy_drain)
-	. = do_after(user, equip_cooldown, target=target, interaction_key = interaction_key)
+	. = do_after(chassis.occupant, equip_cooldown, target=target)
 	set_ready_state(1)
 	if(!chassis || 	chassis.loc != C || src != chassis.selected || !(get_dir(chassis, target)&chassis.dir))
 		return 0

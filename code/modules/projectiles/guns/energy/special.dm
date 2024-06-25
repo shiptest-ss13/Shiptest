@@ -17,6 +17,9 @@
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
 
+/obj/item/gun/energy/ionrifle/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"
 	desc = "The MK.II Prototype Ion Projector is a lightweight carbine version of the larger ion rifle, built to be ergonomic and efficient."
