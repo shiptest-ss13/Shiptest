@@ -80,9 +80,9 @@
 	new /obj/item/clothing/suit/armor/vest/old(B)
 	return B
 
-/datum/blackmarket_item/clothing/frontiersmen_armor_set
-	name = "X-11 Bulletproof Armor Set"
-	desc = "We got a good deal on some extra bulletproof armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
+/datum/blackmarket_item/clothing/frontiersmen_armor_fireproof
+	name = "Fireproof Armor Set"
+	desc = "A fireproofed armor and uniform set made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
 	item = /obj/item/storage/box
 
 	price_min = 1000
@@ -90,12 +90,14 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
+/datum/blackmarket_item/clothing/frontiersmen_armor_fireproof/spawn_item(loc)
 	var/obj/item/storage/box/B = ..()
-	B.name = "Bulletproof Armor Set Box"
-	B.desc = "A beat up looking box with some armor inside."
-	new /obj/item/clothing/suit/armor/vest/bulletproof/frontier(B)
-	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
+	B.name = "Fireproof Armor Set Box"
+	B.desc = "A singed box with some folded clothes and a helmet inside."
+	new /obj/item/clothing/suit/armor/frontier/fireproof(B)
+	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof(B)
+	new /obj/item/clothing/under/frontiersmen/fireproof(B)
+	new /obj/item/clothing/mask/gas/frontiersmen(B)
 	return B
 
 /datum/blackmarket_item/clothing/gezena_armor
@@ -135,6 +137,52 @@
 	B.desc = "It has a NT logo on it."
 	new /obj/item/clothing/suit/space(B)
 	new /obj/item/clothing/head/helmet/space(B)
+	return B
+
+/datum/blackmarket_item/clothing/syndie_spacesuit_set
+	name = "\improper Syndicate Branded Spacesuit Box"
+	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
+	item = /obj/item/storage/box
+
+	price_min = 750
+	price_max = 2000
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/syndi_spacesuit_set/spawn_item(loc)
+	var/obj/item/storage/box/syndie_kit/B = ..()
+	var/suit_color = pick(list("red","green","dark green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
+	switch(suit_color)
+		if("red")
+			new /obj/item/clothing/head/helmet/space/syndicate(B)
+			new /obj/item/clothing/suit/space/syndicate(B)
+		if("green")
+			new /obj/item/clothing/head/helmet/space/syndicate/green(B)
+			new /obj/item/clothing/suit/space/syndicate/green(B)
+		if("dark-green")
+			new /obj/item/clothing/head/helmet/space/syndicate/green/dark(B)
+			new /obj/item/clothing/suit/space/syndicate/green/dark(B)
+		if("orange")
+			new /obj/item/clothing/head/helmet/space/syndicate/orange(B)
+			new /obj/item/clothing/suit/space/syndicate/orange(B)
+		if("blue")
+			new /obj/item/clothing/head/helmet/space/syndicate/blue(B)
+			new /obj/item/clothing/suit/space/syndicate/blue(B)
+		if("black")
+			new /obj/item/clothing/head/helmet/space/syndicate/black(B)
+			new /obj/item/clothing/suit/space/syndicate/black(B)
+		if("black-green")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/green(B)
+			new /obj/item/clothing/suit/space/syndicate/black/green(B)
+		if("black-blue")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/blue(B)
+			new /obj/item/clothing/suit/space/syndicate/black/blue(B)
+		if("black-orange")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/orange(B)
+			new /obj/item/clothing/suit/space/syndicate/black/orange(B)
+		if("black-red")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/red(B)
+			new /obj/item/clothing/suit/space/syndicate/black/red(B)
 	return B
 
 /datum/blackmarket_item/clothing/chameleon_hat
