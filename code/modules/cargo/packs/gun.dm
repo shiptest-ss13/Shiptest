@@ -189,3 +189,4 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
+
