@@ -59,6 +59,9 @@
 
 	fire_delay = 0.2 SECONDS
 
+/obj/item/gun/ballistic/automatic/assault/skm/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
 	name = "\improper Chopper"
 	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
@@ -96,6 +99,9 @@
 	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
 	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
+
+/obj/item/gun/ballistic/automatic/assault/p16/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	name = "\improper CM-16"

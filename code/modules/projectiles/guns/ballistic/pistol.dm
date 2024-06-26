@@ -310,6 +310,9 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	icon_state = "derringer_gold"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 
+/obj/item/gun/ballistic/derringer/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "\improper Himehabu"
 	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
@@ -322,3 +325,4 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	recoil_unwielded = -2
 	spread_unwielded = 0
 	wield_slowdown = 0
+
