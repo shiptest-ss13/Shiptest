@@ -151,18 +151,6 @@
 		return 1
 	return 0
 
-/turf/closed/wall/proc/mechcutter_wall_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
-	add_overlay(GLOB.welding_sparks)
-	if(cutter.do_after_mecha(src, slicing_duration * 0.25))
-		cutter.log_message("Cut through [src]", LOG_MECHA)
-		cut_overlay(GLOB.welding_sparks)
-		dismantle_wall()
-
-/obj/structure/girder/proc/mechcutter_girder_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
-	if(cutter.do_after_mecha(src, 2.5))
-		new /obj/item/stack/sheet/metal(loc, 2)
-		qdel(src)
-
 //Exosuit-mounted kinetic accelerator
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	equip_cooldown = 10
