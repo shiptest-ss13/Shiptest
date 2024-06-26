@@ -151,14 +151,21 @@
 		return 1
 	return 0
 
-/turf/closed/wall/proc/mechcutter_wall_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
+/turf/proc/mechcutter_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
+	return
+
+/turf/closed/wall/mechcutter_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
 	add_overlay(GLOB.welding_sparks)
+	playsound(src,'sound/items/welder.ogg',40,TRUE)
 	if(cutter.do_after_mecha(src, slicing_duration * 0.25))
 		cutter.log_message("Cut through [src]", LOG_MECHA)
 		cut_overlay(GLOB.welding_sparks)
 		dismantle_wall()
 
-/obj/structure/girder/proc/mechcutter_girder_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
+/obj/structure/proc/mechcutter_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
+	return
+
+/obj/structure/girder/mechcutter_act(obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/cutter)
 	if(cutter.do_after_mecha(src, 2.5))
 		new /obj/item/stack/sheet/metal(loc, 2)
 		qdel(src)
