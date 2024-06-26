@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(factions)
 	name = "Faction"
-	init_order = INIT_ORDER_EVENTS
+	init_order = INIT_ORDER_FACTION
 	flags = SS_NO_FIRE
 	var/list/datum/faction/factions = list()
 
