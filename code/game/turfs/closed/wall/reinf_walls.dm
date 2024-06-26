@@ -273,7 +273,7 @@
 		return ..()
 
 // you cant fix r-wall integrity with a welder
-/turf/closed/wall/try_clean/r_wall(obj/item/W, mob/user, turf/T)
+/turf/closed/wall/r_wall/try_clean(obj/item/W, mob/user, turf/T)
 	if((user.a_intent != INTENT_HELP))
 		return FALSE
 
