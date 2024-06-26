@@ -409,3 +409,4 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+
