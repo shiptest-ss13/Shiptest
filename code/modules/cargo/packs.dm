@@ -11,6 +11,10 @@
 	var/admin_spawned = FALSE
 	var/small_item = FALSE //Small items can be grouped into a single crate.
 
+	var/faction
+	var/faction_discount = 15
+	var/faction_locked = FALSE
+
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C
 	if(paying_account)
