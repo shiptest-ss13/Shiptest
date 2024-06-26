@@ -63,13 +63,13 @@
 	return
 
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
-	while(drill.do_after_mecha(src, 60 / drill.drill_level))
+	while(drill.do_after_mecha(src, 30 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
 		alter_integrity(-drill.wall_decon_damage)
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
-		if(drill.do_after_mecha(src, 120 / drill.drill_level))
+		if(drill.do_after_mecha(src, 45 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
 			alter_integrity(-drill.wall_decon_damage)
 	else
