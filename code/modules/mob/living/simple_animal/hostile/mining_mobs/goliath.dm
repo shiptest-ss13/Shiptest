@@ -213,7 +213,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/saddle) && !saddled)
-		if(tame && do_after(user,55,target=src))
+		if(tame && do_after(user, 55, target=src))
 			user.visible_message("<span class='notice'>You manage to put [O] on [src], you can now ride [p_them()].</span>")
 			qdel(O)
 			saddled = TRUE
