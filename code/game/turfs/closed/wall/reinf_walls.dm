@@ -83,11 +83,12 @@
 	switch(d_state)
 		if(INTACT)
 			if(W.tool_behaviour == TOOL_WIRECUTTER)
-				W.play_tool_sound(src, 100)
-				d_state = SUPPORT_LINES
-				set_integrity(get_state_integrity(SUPPORT_LINES))
-				to_chat(user, "<span class='notice'>You cut the outer grille.</span>")
-				return 1
+				if(W.use_tool(src, user, 40, volume=100))
+					W.play_tool_sound(src, 100)
+					d_state = SUPPORT_LINES
+					set_integrity(get_state_integrity(SUPPORT_LINES))
+					to_chat(user, "<span class='notice'>You cut the outer grille.</span>")
+					return 1
 
 		if(SUPPORT_LINES)
 			if(W.tool_behaviour == TOOL_SCREWDRIVER)
@@ -102,11 +103,12 @@
 				return 1
 
 			else if(W.tool_behaviour == TOOL_WIRECUTTER)
-				W.play_tool_sound(src, 100)
-				d_state = INTACT
-				set_integrity(get_state_integrity(INTACT))
-				to_chat(user, "<span class='notice'>You repair the outer grille.</span>")
-				return 1
+				if(W.use_tool(src, user, 40, volume=100))
+					W.play_tool_sound(src, 100)
+					d_state = INTACT
+					set_integrity(get_state_integrity(INTACT))
+					to_chat(user, "<span class='notice'>You repair the outer grille.</span>")
+					return 1
 
 		if(COVER)
 			if(W.tool_behaviour == TOOL_WELDER)
