@@ -234,14 +234,18 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper TEC-9 machine pistol"
 	desc = "A crude machine pistol designed to vomit 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
+	fire_delay = 0.15 SECONDS
 	weapon_weight = WEAPON_LIGHT
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/tec9
 	show_magazine_on_sprite = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
@@ -307,6 +311,9 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	icon_state = "derringer_gold"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 
+/obj/item/gun/ballistic/derringer/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "\improper Himehabu"
 	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
@@ -320,3 +327,4 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	recoil_unwielded = -2
 	spread_unwielded = 0
 	wield_slowdown = 0
+
