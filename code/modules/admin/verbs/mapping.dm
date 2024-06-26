@@ -43,6 +43,15 @@ GLOBAL_LIST_INIT(admin_verbs_debug_extra, list(
 	/client/proc/show_line_profiling,
 	/client/proc/start_line_profiling,
 	/client/proc/stop_line_profiling,
+	/client/proc/check_timer_sources,
+	/client/proc/air_status, //Air things
+	/client/proc/air_status_loc, //More air things
+	/client/proc/manipulate_organs,
+	/client/proc/set_server_fps,	//allows you to set the ticklag.
+	/client/proc/start_singlo,
+	/client/proc/cmd_admin_grantfullaccess,
+	/client/proc/cmd_assume_direct_control,	//-errorage
+	/client/proc/cmd_give_direct_control,
 ))
 GLOBAL_PROTECT(admin_verbs_debug_extra)
 

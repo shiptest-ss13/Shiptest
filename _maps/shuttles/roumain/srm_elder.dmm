@@ -1056,12 +1056,12 @@
 /area/ship/roumain)
 "lA" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/breath,
-/obj/item/tank/internals/emergency_oxygen/double,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 6
 	},
+/obj/item/clothing/suit/space/hardsuit/solgov/roumain,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "lM" = (
@@ -1250,7 +1250,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "ox" = (
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/machinery/door/window/eastright{
 	dir = 8
 	},
@@ -1523,6 +1523,24 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"rN" = (
+/obj/item/clothing/under/suit/roumain,
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/obj/item/flashlight/lantern,
+/obj/structure/closet/secure_closet/shadow,
+/obj/item/lighter,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/shoes/combat,
+/obj/item/kitchen/knife/hunting,
+/obj/item/gps{
+	pixel_x = -7
+	},
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/clothing/accessory/waistcoat/roumain,
+/turf/open/floor/wood/ebony,
+/area/ship/storage)
 "rW" = (
 /obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/ship/dirt/dark,
@@ -1669,6 +1687,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/chair/wood/wings,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "up" = (
@@ -1987,8 +2006,8 @@
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/under/suit/roumain,
-/obj/item/clothing/suit/armor/hos/roumain/montagne,
-/obj/item/clothing/head/HoS/cowboy/montagne,
+/obj/item/clothing/suit/armor/roumain/montagne,
+/obj/item/clothing/head/cowboy/sec/roumain/montagne,
 /obj/item/flashlight/lantern,
 /obj/item/storage/fancy/candle_box{
 	pixel_y = 3;
@@ -2005,11 +2024,10 @@
 /obj/item/gps{
 	pixel_x = -7
 	},
-/obj/item/gun/ballistic/revolver/montagne,
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/ammo_box/c45_speedloader,
-/obj/item/ammo_box/c45_speedloader,
-/obj/item/ammo_box/c45,
+/obj/item/ammo_box/a44roum,
+/obj/item/storage/pistolcase/montagne,
+/obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2435,6 +2453,7 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "DV" = (
@@ -2617,7 +2636,7 @@
 /obj/item/clothing/under/suit/roumain,
 /obj/item/clothing/suit/armor/roumain,
 /obj/item/clothing/head/cowboy/sec/roumain,
-/obj/item/clothing/suit/armor/riot/chaplain/witchhunter,
+/obj/item/clothing/suit/armor/witchhunter,
 /obj/item/flashlight/lantern,
 /obj/structure/closet/secure_closet/hunter,
 /obj/item/lighter,
@@ -2629,6 +2648,7 @@
 	pixel_x = -7
 	},
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "HB" = (
@@ -2656,10 +2676,33 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/starboard)
 "HO" = (
-/obj/structure/chair/wood/wings,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/suit/roumain,
+/obj/item/flashlight/lantern,
+/obj/item/storage/fancy/candle_box{
+	pixel_y = 3;
+	pixel_x = 8
+	},
+/obj/item/lighter{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/kitchen/knife/combat,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
+/obj/item/gps{
+	pixel_x = -7
+	},
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/gun/ballistic/revolver/detective,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38_box,
+/obj/item/clothing/head/cowboy/sec/roumain/colligne,
+/obj/item/clothing/suit/armor/roumain/colligne,
+/obj/structure/closet/secure_closet/collignes,
+/obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "Ii" = (
@@ -3254,17 +3297,26 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "Od" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/destructible/tribal_torch,
+/obj/item/clothing/head/hardhat/solgov,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/head/welding,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/clothing/suit/hazardvest/roumain,
+/obj/item/clothing/head/cowboy/sec/roumain/machinist,
+/obj/item/clothing/under/suit/roumain,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/storage/belt,
+/obj/structure/closet/secure_closet/machinist,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Oo" = (
@@ -3595,11 +3647,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "SR" = (
+/obj/structure/closet/secure_closet/flamebearer,
 /obj/item/clothing/under/suit/roumain,
-/obj/item/clothing/suit/armor/roumain/shadow,
-/obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/obj/item/clothing/suit/armor/roumain/flamebearer,
+/obj/item/clothing/head/cowboy/sec/roumain/flamebearer,
 /obj/item/flashlight/lantern,
-/obj/structure/closet/secure_closet/shadow,
 /obj/item/lighter,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
@@ -3609,6 +3661,7 @@
 	pixel_x = -7
 	},
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "Tc" = (
@@ -5069,7 +5122,7 @@ sH
 sH
 sH
 LN
-SR
+rN
 sT
 ds
 LX
@@ -5106,7 +5159,7 @@ sH
 sH
 sH
 LN
-SR
+rN
 AN
 al
 cY

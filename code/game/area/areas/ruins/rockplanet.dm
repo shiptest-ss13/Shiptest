@@ -2,11 +2,6 @@
 /area/ruin/rockplanet
 	icon_state = "red"
 
-//syndicate
-/area/ruin/rockplanet/syndicate
-	name = "Abandoned Syndicate Mining Facility"
-	icon_state = "green"
-
 //budgetcuts
 /area/ruin/rockplanet/nanotrasen
 	name = "Abandoned Research Facility"

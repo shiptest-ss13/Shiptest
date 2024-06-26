@@ -44,6 +44,9 @@
 /obj/item/proc/InsertID()
 	return FALSE
 
+/obj/item/proc/GetBankCard()
+	return null
+
 /obj/proc/text2access(access_text)
 	. = list()
 	if(!access_text)

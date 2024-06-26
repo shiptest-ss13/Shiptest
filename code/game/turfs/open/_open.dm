@@ -99,9 +99,6 @@
 	heavyfootstep = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/necropolis/icecropolis
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-
 /turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(12))

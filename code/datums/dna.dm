@@ -659,8 +659,6 @@
 					O.Remove(src)
 					visible_message("<span class='danger'>[src] vomits up their [O.name]!</span>", "<span class='danger'>You vomit up your [O.name]</span>") //no "vomit up your the heart"
 					O.forceMove(drop_location())
-					if(prob(20))
-						O.animate_atom_living()
 			if(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
 				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
