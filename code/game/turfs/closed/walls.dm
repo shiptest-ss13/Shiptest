@@ -224,33 +224,12 @@
 		if(EXPLODE_LIGHT)
 			alter_integrity(rand(-200, -700))
 
-// /turf/closed/wall/ex_act(severity, target)
-// 	if(target == src)
-// 		dismantle_wall(devastated = TRUE)
-// 		return
-// 	switch(severity)
-// 		if(EXPLODE_DEVASTATE)
-			//SN src = null
-			// var/turf/NT = ScrapeAway()
-			// NT.contents_explosion(severity, target)
-			// // return
-// 		if(EXPLODE_HEAVY)
-// 			if (prob(50))
-// 				dismantle_wall(devastated = TRUE)
-// 			else
-// 				dismantle_wall(devastated = FALSE)
-// 		if(EXPLODE_LIGHT)
-// 			if (prob(hardness))
-// 				dismantle_wall(devastated = FALSE)
-// 	if(!density)
-// 		..()
-
 
 /turf/closed/wall/blob_act(obj/structure/blob/B)
-	alter_integrity(-400)
 	add_dent(WALL_DENT_HIT)
+	alter_integrity(-400)
 
-// todo: maybe make this cooler
+
 /turf/closed/wall/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
@@ -369,22 +348,8 @@
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
 				alter_integrity(-(I.wall_decon_damage))
-			//return TRUE
 
 	return FALSE
-
-
-// /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
-// 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-// 		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
-// 		if(do_after(user, 50, target = src))
-// 			if(!iswallturf(src))
-// 				return TRUE
-// 			I.play_tool_sound(src)
-// 			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-// 			dismantle_wall()
-// 			return TRUE
-// 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)
 	..()
