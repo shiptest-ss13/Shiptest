@@ -730,12 +730,5 @@ EMPTY_GUN_HELPER(revolver/detective)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-/obj/item/gun/ballistic/revolver/shadow/before_firing(atom/target, mob/user)
-	. = ..()
-	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
-	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
-		chambered.BB.damage += 5
-		chambered.BB.armour_penetration += 5
-
 /obj/item/gun/ballistic/revolver/shadow/no_mag
 	spawnwithmagazine = FALSE
