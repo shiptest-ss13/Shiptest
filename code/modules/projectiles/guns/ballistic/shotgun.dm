@@ -74,7 +74,7 @@
 	fire_delay = 0.05 SECONDS //slamfire
 	rack_delay = 0.2 SECONDS
 
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
@@ -103,7 +103,7 @@
 	item_state = "hellfire"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
 
@@ -133,8 +133,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
-
-/obj/item/gun/ballistic/shotgun/automatic
 	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
@@ -217,7 +215,6 @@
 	inhand_y_dimension = 32
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -310,7 +307,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 						"Stained Green" = "dshotgun_green"
 						)
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	pb_knockback = 3 // it's a super shotgun!
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -485,7 +482,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
 	sawn_desc = "You know, this isn't funny anymore."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 20)))	//minimum probability of 20, maximum of 60
@@ -508,7 +505,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY
 	sawn_desc = "<i>Sigh.</i> This is a trigger attached to a bullet."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(50))	//It's going to blow up.
@@ -599,7 +596,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 	wield_slowdown = 0.5
 	wield_delay = 0.65 SECONDS
@@ -726,15 +723,12 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	can_be_sawn_off=TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	pb_knockback = 3
 	wield_slowdown = 0.7
 	spread_unwielded = 15

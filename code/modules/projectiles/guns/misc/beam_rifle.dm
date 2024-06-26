@@ -29,7 +29,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/beam_rifle/hitscan)
 	internal_cell = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
-	big_gun = TRUE
+	mag_size = MAG_SIZE_LARGE
 	cell_type = "/obj/item/stock_parts/cell/gun/large"
 	canMouseDown = TRUE
 	var/aiming = FALSE

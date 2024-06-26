@@ -4,11 +4,8 @@
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
-	modifystate = 1
-	can_flashlight = TRUE
+	modifystate = TRUE
 	ammo_x_offset = 2
-	flight_x_offset = 15
-	flight_y_offset = 10
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
@@ -22,24 +19,15 @@
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
-	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
-	gunlight_state = "mini-light"
-	flight_x_offset = 19
-	flight_y_offset = 13
-
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
 	spread = 2
 	spread_unwielded = 5
-
-/obj/item/gun/energy/e_gun/mini/Initialize()
-	set_gun_light(new /obj/item/flashlight/seclite(src))
-	return ..()
 
 /obj/item/gun/energy/e_gun/mini/empty_cell
 	dead_cell = TRUE
@@ -114,7 +102,6 @@
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/net, /obj/item/ammo_casing/energy/trap)
-	can_flashlight = FALSE
 	ammo_x_offset = 1
 
 /obj/item/gun/energy/e_gun/dragnet/snare
@@ -131,7 +118,6 @@
 	w_class = WEIGHT_CLASS_HUGE
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 	weapon_weight = WEAPON_HEAVY
-	can_flashlight = FALSE
 	trigger_guard = TRIGGER_GUARD_NONE
 	ammo_x_offset = 2
 
@@ -201,7 +187,7 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
@@ -245,7 +231,7 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	shaded_charge = 1
+	shaded_charge = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
@@ -256,10 +242,7 @@
 	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
 	icon_state = "e11"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	can_flashlight = TRUE
 	ammo_x_offset = 0
-	flight_x_offset = 20
-	flight_y_offset = 9
 	spread = 80
 	spread_unwielded = 140
 	dual_wield_spread = 140

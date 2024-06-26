@@ -4,7 +4,6 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
-	can_suppress = TRUE
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -36,12 +35,21 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		)
+	)
+
 EMPTY_GUN_HELPER(automatic/pistol)
 
-/obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
-	. = ..()
-	var/obj/item/suppressor/S = new(src)
-	install_suppressor(S)
+/obj/item/gun/ballistic/automatic/pistol/suppressed
+	default_attachments = list(/obj/item/attachment/silencer)
 
 /obj/item/gun/ballistic/automatic/pistol/suns
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
@@ -54,7 +62,6 @@ EMPTY_GUN_HELPER(automatic/pistol)
 	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
-	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -89,7 +96,7 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	icon_state = "deagle"
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
-	can_suppress = FALSE
+	mag_display = TRUE
 	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
@@ -124,13 +131,11 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	icon_state = "aps"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
-	can_suppress = FALSE
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
-
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
@@ -138,7 +143,6 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
-	can_suppress = FALSE
 	manufacturer = MANUFACTURER_NANOTRASEN
 	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -163,7 +167,6 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
-	can_suppress = FALSE
 	var/funnysounds = TRUE
 	var/cooldown = 0
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -199,6 +202,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
+	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if((cooldown < world.time - 200) && funnysounds)
@@ -251,7 +255,6 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable
 	custom_materials = list(/datum/material/plastic=2000)
-	can_suppress = FALSE
 	manufacturer = MANUFACTURER_NONE
 	has_safety = FALSE //thing barely costs anything, why would it have a safety?
 	safety = FALSE
@@ -316,7 +319,6 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	icon_state = "himehabu"
 	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/m22lr
-	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
 
 	recoil = -2

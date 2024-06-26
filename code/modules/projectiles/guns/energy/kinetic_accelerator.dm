@@ -8,14 +8,8 @@
 	item_flags = NONE
 	obj_flags = UNIQUE_RENAME
 	weapon_weight = WEAPON_LIGHT
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 9
 	automatic_charge_overlays = FALSE
-	can_bayonet = TRUE
-	knife_x_offset = 20
-	knife_y_offset = 12
-	internal_cell = TRUE
+	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -28,11 +22,17 @@
 	var/overheat = FALSE
 	var/mob/holder
 
-
 	var/max_mod_capacity = 100
 	var/list/modkits = list()
 
 	var/recharge_timerid
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
 	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam

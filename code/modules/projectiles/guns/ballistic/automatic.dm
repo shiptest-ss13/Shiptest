@@ -1,7 +1,6 @@
 
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
-	can_suppress = TRUE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -59,8 +58,6 @@
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
 	desc = "A heavily-modified .50 BMG anti-material rifle utilized by Syndicate agents. Requires both hands to fire."
-	can_suppress = TRUE
-	can_unsuppress = TRUE
 
 EMPTY_GUN_HELPER(automatic/sniper_rifle/syndicate)
 
@@ -75,8 +72,6 @@ EMPTY_GUN_HELPER(automatic/sniper_rifle/syndicate)
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
 	fire_delay = 0.5 SECONDS
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	show_magazine_on_sprite = TRUE
@@ -90,7 +85,6 @@ EMPTY_GUN_HELPER(automatic/sniper_rifle/syndicate)
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
 	fire_delay = 0.2 SECONDS
-	can_suppress = FALSE
 	burst_size = 0
 	fire_sound = 'sound/weapons/laser.ogg'
 	casing_ejector = FALSE
@@ -151,8 +145,6 @@ EMPTY_GUN_HELPER(automatic/ebr)
 	icon_state = "ZipPistol"
 	item_state = "ZipPistol"
 	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
-	can_suppress = FALSE
 	actions_types = list()
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT

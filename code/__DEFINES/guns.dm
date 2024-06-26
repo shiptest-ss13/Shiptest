@@ -12,7 +12,8 @@
 #define TRIGGER_GUARD_NONE 0
 #define TRIGGER_GUARD_NORMAL 1
 //Gun bolt types
-///The gun has a closed bolt, when resting it's closed, and must be racked to get a bullet from a magazine. see: Every Fucking Videogame Gun Ever
+///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
+/// Example: c20, shotguns, m90
 #define BOLT_TYPE_STANDARD 1
 ///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
 /// Example: Some SMGs, the L6
@@ -29,17 +30,28 @@
 ///added recoil of sawn off guns
 #define SAWN_OFF_RECOIL 1
 
-//ammo box sprite defines
-///ammo box will always use provided icon state
-#define AMMO_BOX_ONE_SPRITE 0
-///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
-#define AMMO_BOX_PER_BULLET 1
-///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
-#define AMMO_BOX_FULL_EMPTY 2
+/* Stolen from tgmc.. Will use soon
+//Gun defines for gun related thing. More in the projectile folder.
+//gun_features_flags
+#define GUN_CAN_POINTBLANK (1<<0)
+#define GUN_UNUSUAL_DESIGN (1<<1)
+#define GUN_AMMO_COUNTER (1<<2)
+#define GUN_WIELDED_FIRING_ONLY (1<<3)
+#define GUN_ALLOW_SYNTHETIC (1<<4)
+#define GUN_WIELDED_STABLE_FIRING_ONLY (1<<5)
+#define GUN_IFF (1<<6)
+#define GUN_DEPLOYED_FIRE_ONLY (1<<7)
+#define GUN_IS_ATTACHMENT (1<<8)
+#define GUN_ATTACHMENT_FIRE_ONLY (1<<9)
+#define GUN_ENERGY (1<<10)
+#define GUN_AMMO_COUNT_BY_PERCENTAGE (1<<11)
+#define GUN_AMMO_COUNT_BY_SHOTS_REMAINING (1<<12)
+#define GUN_NO_PITCH_SHIFT_NEAR_EMPTY (1<<13)
+#define GUN_SHOWS_AMMO_REMAINING (1<<14) //Whether the mob sprite reflects the ammo level
+#define GUN_SHOWS_LOADED (1<<15) //Whether the mob sprite as loaded or unloaded, a binary version of the above
+#define GUN_SMOKE_PARTICLES (1<<16) //Whether the gun has smoke particles
 
-#define SUPPRESSED_NONE 0
-#define SUPPRESSED_QUIET 1 ///standard suppressed
-#define SUPPRESSED_VERY 2 /// no message
+*/
 
 //Autofire component
 /// Compatible firemode is in the gun. Wait until it's held in the user hands.
@@ -53,6 +65,10 @@
 	#define COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS (1<<0)
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
+
+#define SUPPRESSED_NONE 0
+#define SUPPRESSED_QUIET 1 ///standard suppressed
+#define SUPPRESSED_VERY 2 /// no message
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
@@ -72,6 +88,81 @@
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 
+/////////////////
+// ATTACHMENTS //
+/////////////////
+#define TRAIT_ATTACHABLE "attachable"
+
+#define COMSIG_ATTACHMENT_ATTACH "attach-attach"
+#define COMSIG_ATTACHMENT_DETACH "attach-detach"
+#define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
+#define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
+#define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
+#define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
+#define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
+
+#define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
+
+#define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
+#define ATTACHMENT_SLOT_MUZZLE "muzzle"
+#define ATTACHMENT_SLOT_SCOPE "scope"
+#define ATTACHMENT_SLOT_GRIP "grip"
+#define ATTACHMENT_SLOT_RAIL "rail"
+#define ATTACHMENT_SLOT_STOCK "stock"
+
+/*
+#define BIT_ATTACHMENT_SLOT_MUZZLE (1<<0)
+#define BIT_ATTACHMENT_SLOT_SCOPE (1<<1)
+#define BIT_ATTACHMENT_SLOT_GRIP (1<<2)
+#define BIT_ATTACHMENT_SLOT_RAIL (1<<3)
+
+DEFINE_BITFIELD(attach_slots, list(
+	ATTACHMENT_SLOT_MUZZLE = BIT_ATTACHMENT_SLOT_MUZZLE,
+	ATTACHMENT_SLOT_SCOPE = BIT_ATTACHMENT_SLOT_SCOPE,
+	ATTACHMENT_SLOT_GRIP = BIT_ATTACHMENT_SLOT_GRIP,
+	ATTACHMENT_SLOT_RAIL = BIT_ATTACHMENT_SLOT_RAIL
+))
+*/
+
+/proc/attachment_slot_to_bflag(slot)
+	switch(slot)
+		if(ATTACHMENT_SLOT_MUZZLE)
+			return (1<<0)
+		if(ATTACHMENT_SLOT_SCOPE)
+			return (1<<1)
+		if(ATTACHMENT_SLOT_GRIP)
+			return (1<<2)
+		if(ATTACHMENT_SLOT_RAIL)
+			return (1<<3)
+		if(ATTACHMENT_SLOT_STOCK)
+			return (1<<4)
+
+/proc/attachment_slot_from_bflag(slot)
+	switch(slot)
+		if(1<<0)
+			return ATTACHMENT_SLOT_MUZZLE
+		if(1<<1)
+			return ATTACHMENT_SLOT_SCOPE
+		if(1<<2)
+			return ATTACHMENT_SLOT_GRIP
+		if(1<<3)
+			return ATTACHMENT_SLOT_RAIL
+		if(1<<4)
+			return ATTACHMENT_SLOT_STOCK
+
+#define ATTACHMENT_DEFAULT_SLOT_AVAILABLE list( \
+	ATTACHMENT_SLOT_MUZZLE = 1, \
+	ATTACHMENT_SLOT_SCOPE = 1, \
+	ATTACHMENT_SLOT_GRIP = 1, \
+	ATTACHMENT_SLOT_RAIL = 1, \
+	ATTACHMENT_SLOT_STOCK = 1, \
+)
+
+//attach_features_flags
+#define ATTACH_REMOVABLE_HAND (1<<0)
+#define ATTACH_REMOVABLE_TOOL (1<<1)
+#define ATTACH_TOGGLE (1<<2)
+#define ATTACH_NO_SPRITE (1<<3)
 
 /////////////////
 // PROJECTILES //
@@ -83,6 +174,41 @@
 #define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
 
 #define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
+
+//ammo box sprite defines
+///ammo box will always use provided icon state
+#define AMMO_BOX_ONE_SPRITE 0
+///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
+#define AMMO_BOX_PER_BULLET 1
+///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
+#define AMMO_BOX_FULL_EMPTY 2
+
+/* Stolen from tgmc.. Will use soon
+//Ammo magazine defines, for magazine_flags
+#define MAGAZINE_REFILLABLE (1<<0)
+#define MAGAZINE_HANDFUL (1<<1)
+#define MAGAZINE_WORN (1<<2)
+#define MAGAZINE_REFUND_IN_CHAMBER (1<<3)
+
+//reciever_flags. Used to determin how the gun cycles, what kind of ammo it uses, etc.
+#define AMMO_RECIEVER_REQUIRES_UNIQUE_ACTION (1<<0)
+	#define AMMO_RECIEVER_UNIQUE_ACTION_LOCKS (1<<1)
+#define AMMO_RECIEVER_MAGAZINES (1<<2)
+	#define AMMO_RECIEVER_AUTO_EJECT (1<<3)
+#define AMMO_RECIEVER_HANDFULS (1<<4)
+#define AMMO_RECIEVER_TOGGLES_OPEN (1<<5)
+	#define AMMO_RECIEVER_TOGGLES_OPEN_EJECTS (1<<6)
+#define AMMO_RECIEVER_CLOSED (1<<7)
+#define AMMO_RECIEVER_ROTATES_CHAMBER (1<<8)
+#define AMMO_RECIEVER_DO_NOT_EJECT_HANDFULS (1<<9)
+#define AMMO_RECIEVER_DO_NOT_EMPTY_ROUNDS_AFTER_FIRE (1<<10)
+#define AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE (1<<11) //The ammo stay in the magazine until the last moment
+#define AMMO_RECIEVER_AUTO_EJECT_LOCKED (1<<12) //Not allowed to turn automatic unloading off
+*/
+
+#define MAG_SIZE_SMALL 1
+#define MAG_SIZE_MEDIUM 2
+#define MAG_SIZE_LARGE 3
 
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)
