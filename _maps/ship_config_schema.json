@@ -28,6 +28,11 @@
 			"type": "array",
 			"description": "A list of tags describing the ship's niche, converted into searchable strings."
 		},
+		"faction": {
+			"title": "Ship Faction Datum",
+			"type": [ "null", "string" ],
+			"description": "Default faction datum"
+		},
 		"prefix": {
 			"title": "Ship Default Prefix",
 			"type": [ "null", "string" ],

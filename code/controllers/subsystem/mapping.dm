@@ -187,7 +187,7 @@ SUBSYSTEM_DEF(mapping)
 			if(istext(data["faction_name"]))
 				S.faction_name = data["faction_name"]
 			else
-				S.faction_name = ship_prefix_to_faction(S.prefix)
+				S.faction_name = SSfactions.ship_prefix_to_name(S.prefix)
 
 		S.category = S.faction_name
 

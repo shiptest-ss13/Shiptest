@@ -262,31 +262,3 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 #define PREFIX_FRONTIER list("FFV")
 #define PREFIX_PGF list("PGF", "PGFMC", "PGFN")
 #define PREFIX_INDEPENDENT list("SV", "IMV", "ISV")
-
-/// List of all ship factions to their prefixes.
-GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
-	FACTION_SYNDICATE = PREFIX_SYNDICATE,
-	FACTION_NGR = PREFIX_NGR,
-	FACTION_CYBERSUN = PREFIX_CYBERSUN,
-	FACTION_SUNS = PREFIX_SUNS,
-	FACTION_SOLGOV = PREFIX_SOLGOV,
-	FACTION_SRM = PREFIX_SRM,
-	FACTION_INTEQ = PREFIX_INTEQ,
-	FACTION_CLIP = PREFIX_CLIP,
-	FACTION_NT = PREFIX_NT,
-	FACTION_NS_LOGI = PREFIX_NS_LOGI,
-	FACTION_VIGILITAS = PREFIX_VIGILITAS,
-	FACTION_FRONTIER = PREFIX_FRONTIER,
-	FACTION_PGF = PREFIX_PGF,
-	FACTION_INDEPENDENT = PREFIX_INDEPENDENT
-))
-
-/proc/ship_prefix_to_faction(prefix)
-	for(var/faction in GLOB.ship_faction_to_prefixes)
-		if(prefix in GLOB.ship_faction_to_prefixes[faction])
-			return faction
-	var/static/list/screamed = list()
-	if(!(prefix in screamed))
-		screamed += prefix
-		stack_trace("attempted to get faction for unknown prefix [prefix]")
-	return "?!ERR!?"
