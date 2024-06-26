@@ -39,6 +39,7 @@
 	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
+	var/repair_amount = 40
 	// Projectiles that do extra damage to the wall
 	var/list/extra_dam_proj
 
@@ -319,7 +320,7 @@
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
 				update_appearance()
-			alter_integrity(40)
+			alter_integrity(repair_amount)
 			return TRUE
 
 	return FALSE

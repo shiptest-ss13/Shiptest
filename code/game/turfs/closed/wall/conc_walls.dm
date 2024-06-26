@@ -21,6 +21,7 @@
 	var/harden_lvl = 1
 
 	burn_mod = 0.66
+	repair_amount = 0
 	//mining projectiles do extra damage
 	extra_dam_proj = list(
 		/obj/projectile/kinetic,

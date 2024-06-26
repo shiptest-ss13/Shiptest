@@ -272,25 +272,6 @@
 	if(the_rcd.canRturf)
 		return ..()
 
-// you cant fix r-wall integrity with a welder
-/turf/closed/wall/r_wall/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP))
-		return FALSE
-
-	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0) || (integrity >= max_integrity))
-			return FALSE
-
-		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
-		if(W.use_tool(src, user, slicing_duration, volume=100))
-			if(iswallturf(src) && LAZYLEN(dent_decals))
-				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
-				dent_decals = null
-				update_appearance()
-			return TRUE
-
-	return FALSE
-
 /turf/closed/wall/r_wall/syndicate
 	name = "hull"
 	desc = "The armored hull of an ominous looking ship."
