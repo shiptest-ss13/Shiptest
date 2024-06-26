@@ -11,6 +11,8 @@
 
 	modifystate = TRUE
 
+	fire_delay = 0.16 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
 
@@ -40,6 +42,9 @@
 	damage = 25
 	armour_penetration = -10
 
+/obj/item/gun/energy/kalix/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
 	desc = "An advanced variant of the BG-12, the BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
@@ -49,10 +54,6 @@
 
 	cell_type = /obj/item/stock_parts/cell/gun/pgf
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
-
-/obj/item/gun/energy/kalix/pgf/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy"
@@ -93,6 +94,9 @@
 	e_cost = 1250 //10 shots per cell
 	delay = 0
 
+/obj/item/gun/energy/kalix/pistol/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. If the stopping power and fire rate isn't enough, it comes with a DMR mode that has greater armor piercing for dealing with armored targets."
@@ -105,6 +109,11 @@
 
 	modifystate = FALSE
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 
@@ -112,10 +121,6 @@
 	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
-
-/obj/item/gun/energy/kalix/pgf/heavy/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"

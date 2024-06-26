@@ -2,8 +2,6 @@
 
 /datum/map_template/ruin/beachplanet
 	prefix = "_maps/RandomRuins/BeachRuins/"
-	allow_duplicates = FALSE
-	cost = 5
 	ruin_type = RUINTYPE_BEACH
 
 /datum/map_template/ruin/beachplanet/fishinghut
@@ -20,13 +18,6 @@
 	suffix = "beach_ancient_ruin.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
-/datum/map_template/ruin/beachplanet/colony
-	name = "Abandoned Beachside Colony"
-	id = "beach_colony"
-	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
-	suffix = "beach_colony.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT)
-
 /datum/map_template/ruin/beachplanet/town
 	name = "Beachside Town"
 	id = "beach_town"
@@ -40,20 +31,6 @@
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-
-/datum/map_template/ruin/beachplanet/fallenstar
-	name = "Crashed Starwalker"
-	id = "crashed_star"
-	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
-	suffix = "beach_crashed_starwalker.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT)
-
-/datum/map_template/ruin/beachplanet/knight
-	name = "Knight's Rest"
-	id = "knights_rest"
-	description = "An small castle holding the grave of a renowned warrior"
-	suffix = "beach_knights_rest.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
