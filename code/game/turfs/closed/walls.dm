@@ -411,3 +411,4 @@
 	update_appearance()
 
 #undef MAX_DENT_DECALS
+
