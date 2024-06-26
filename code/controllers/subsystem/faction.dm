@@ -23,3 +23,8 @@ SUBSYSTEM_DEF(factions)
 	if(faction)
 		return faction.name
 	return "?!ERR!?"
+
+/datum/controller/subsystem/factions/proc/faction_path_to_datum(path)
+	for(var/datum/faction/faction in factions)
+		if(ispath(faction, path))
+			return faction
