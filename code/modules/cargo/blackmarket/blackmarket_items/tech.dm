@@ -47,8 +47,8 @@
 	item = /obj/item/circuitboard/aicore
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
-	price_min = 3000
-	price_max = 4500
+	price_min = 5000
+	price_max = 8000
 	stock = 1
 	availability_prob = 20
 
@@ -151,6 +151,6 @@
 	item = /obj/item/organ/cyberimp/arm/gun/laser
 
 	price_min = 2500
-	price_max = 3500
+	price_max = 5000
 	stock = 1
 	availability_prob = 20

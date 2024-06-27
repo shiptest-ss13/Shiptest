@@ -237,6 +237,17 @@
 	stock_max = 4
 	availability_prob = 30
 
+/datum/blackmarket_item/consumable/color_salve
+	name = "Color Salve"
+	desc = "A cosmetic salve used for changing the hue of Elzouse. Now with 20% less harmful chemical dyes!"
+	item = /obj/item/colorsalve
+
+	price_min = 100
+	price_max = 500
+	stock_min = 4
+	stock_max = 10
+	availability_prob = 80
+
 /datum/blackmarket_item/consumable/secret_sauce
 	name = "Family Sauce Recipe"
 	desc = "This used to belong to a good friend of mine before the authorities did em in. Best goddamn sauce I've ever tasted, but I could never get it right myself. Maybe you can do it justice."

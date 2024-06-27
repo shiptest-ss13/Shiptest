@@ -82,7 +82,7 @@
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_fireproof
 	name = "Fireproof Armor Set"
-	desc = "A fireproofed armor and uniform set made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
+	desc = "Get it while it's hot! This fireproofed armor and uniform set is made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
 	item = /obj/item/storage/box
 
 	price_min = 1000
