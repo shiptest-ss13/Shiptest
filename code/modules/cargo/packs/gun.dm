@@ -120,14 +120,14 @@
 	name = "Hellfire Shotgun Crate"
 	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
 	cost = 2000
-	contains = list(/obj/item/gun/ballistic/shotgun/hellfire)
+	contains = list(/obj/item/storage/guncase/hellfire)
 	crate_name = "shotgun crate"
 
 /datum/supply_pack/gun/brimstone_shotgun
 	name = "Brimstone Shotgun Crate"
 	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains a slamfire shotgun, with a 5-round capacity. Warranty voided if sawed off."
 	cost = 2000
-	contains = list(/obj/item/gun/ballistic/shotgun/brimstone)
+	contains = list(/obj/item/storage/guncase/brimstone)
 	crate_name = "shotgun crate"
 
 /*
@@ -159,7 +159,7 @@
 	name = "Scout Sniper Rifle Crate"
 	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
 	cost = 5500
-	contains = list(/obj/item/gun/ballistic/rifle/scout)
+	contains = list(/obj/item/storage/guncase/scout)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/cobra20

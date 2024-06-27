@@ -44,7 +44,7 @@
 
 /obj/item/storage/guncase/beacon
 /obj/item/storage/guncase/beacon/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon(src)
+	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag(src)
 
 /obj/item/storage/guncase/scout
 /obj/item/storage/guncase/scout/PopulateContents()
@@ -79,7 +79,7 @@
 
 /obj/item/storage/guncase/wt550
 /obj/item/storage/guncase/wt550/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
+	new /obj/item/gun/ballistic/automatic/smg/wt550/no_mag(src)
 	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
 	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
 

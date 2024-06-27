@@ -63,8 +63,8 @@
 		cell = new cell_type(src)
 	else
 		cell = new(src)
-	if(!dead_cell)
-		cell.give(cell.maxcharge)
+	if(dead_cell)
+		cell.use(cell.maxcharge)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
