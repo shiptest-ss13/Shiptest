@@ -150,14 +150,14 @@
 	item_state = "shotgun_combat"
 	fire_delay = 0.5 SECONDS
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	name = "compact combat shotgun"
 	desc = "A compact version of the semi-automatic combat shotgun. For close encounters."
 	icon_state = "cshotgunc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 
 //Dual Feed Shotgun
@@ -626,6 +626,18 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(!wielded)
 		SpinAnimation(7,1)
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	var/fan = FALSE
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && wielded_fully && loc == user && !safety)
+		fan = TRUE
+		fire_delay = 0.35 SECONDS
+	. = ..()
+	fire_delay = src::fire_delay
+	if(fan)
+		rack()
+		to_chat(user, "<span class='notice'>You quickly rack the [bolt_wording] of \the [src]!</span>")
+		balloon_alert_to_viewers("quickly racks!")
+		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
 	. = ..()
