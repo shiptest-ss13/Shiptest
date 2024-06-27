@@ -21,8 +21,8 @@
 
 	price_min = 100
 	price_max = 200
-	stock_min = 3
-	stock_max = 6
+	stock_min = 6
+	stock_max = 10
 	availability_prob = 0
 
 /datum/blackmarket_item/weapon/himehabu_box
@@ -169,7 +169,7 @@
 /datum/blackmarket_item/ammo/damaged_cell
 	name = "Discount Weapon Power Cells"
 	desc = "These cells got a little banged up during a raid by GOLD authorities,\
-	 but they still should be good. Probably."
+	 but they still should be safe to use. Probably."
 	item = /obj/item/stock_parts/cell/gun
 
 	price_min = 100

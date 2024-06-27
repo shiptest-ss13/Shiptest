@@ -63,7 +63,7 @@
 
 /datum/blackmarket_item/weapon/syndi_357
 	name = "Scarborough Arms .357 Revolver"
-	desc = "Scarborough Arms' (in)famous single action .357 revolver. Known for \"somehow\" finding their way into the hands of Syndicate operatives, it's your chance to get your own grubby mitts on one."
+	desc = "Scarborough Arms' (in)famous single action .357 revolver. Known for \"somehow\" finding their way into the hands of Syndicate operatives, it's now your chance to get your own grubby mitts on one."
 	item = /obj/item/gun/ballistic/derringer/gold
 	price_min = 750
 	price_max = 2000
@@ -122,17 +122,6 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/e40_mag
-	name = "Eoehoma .299 Caseless Magazine"
-	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
-	item = /obj/item/ammo_box/magazine/e40
-
-	price_min = 750
-	price_max = 1250
-	stock_min = 2
-	stock_max = 6
-	availability_prob = 0
-
 /datum/blackmarket_item/weapon/e50
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
@@ -145,7 +134,7 @@
 
 /datum/blackmarket_item/weapon/e60
 	name = "E-60 Disabler"
-	desc = "Looking for a live capture? This Eoehoma firearms E-60 disabler will get your man."
+	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
 	item = /obj/item/gun/energy/disabler/e60
 
 	price_min = 500
@@ -244,7 +233,7 @@
 
 /datum/blackmarket_item/weapon/sgg
 	name = "SSG-669C Rotary Sniper Rifle"
-	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm."
+	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
 	item = /obj/item/gun/ballistic/rifle/solgov
 	pair_item = list(/datum/blackmarket_item/ammo/sgg_stripper)
 

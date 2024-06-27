@@ -23,8 +23,8 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/tool/surgery_duffel
-	name = "Cybersun Surgical Kit"
-	desc = "Somebody just left these high tech surgical tools unattended inside an operating room. Finders Keepers."
+	name = "Cybersun Advanced Surgical Kit"
+	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 
 	price_min = 2500

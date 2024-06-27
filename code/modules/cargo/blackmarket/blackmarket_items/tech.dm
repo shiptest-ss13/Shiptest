@@ -121,6 +121,7 @@
 
 	price_min = 500
 	price_max = 1000
+	stock_min = 3
 	stock_max = 5
 	availability_prob = 50
 
@@ -137,7 +138,7 @@
 
 /datum/blackmarket_item/tech/mindscrew
 	name = "MNDFCK Neural Implant"
-	desc = "Death is too good for your enemies. This modification of Midi-Sim's pleasure vivifier instead triggers every single pain neuron in the poor sucker's head. Each MNDFCK has been extensively tested by our lovely volunteers to ensure the maximum quantity of suffering."
+	desc = "Death is too good for your enemies. This aftermarket modification of Midi-Sim's pleasure vivifier instead triggers every single pain neuron in the poor sucker's head. Each MNDFCK has been extensively tested by our lovely volunteers to ensure the maximum quantity of suffering."
 	item = /obj/item/organ/cyberimp/brain/mindscrew
 
 	price_min = 500

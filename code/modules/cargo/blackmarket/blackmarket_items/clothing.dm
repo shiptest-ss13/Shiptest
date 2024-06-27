@@ -11,6 +11,16 @@
 	stock_max = 5
 	availability_prob = 80
 
+/datum/blackmarket_item/clothing/surplus_uniform
+	name = "Surplus Combat Uniforms"
+	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
+	item = /obj/item/clothing/under/rank/security/officer/military
+
+	price_min = 200
+	price_max = 400
+	stock_max = 5
+	availability_prob = 80
+
 /datum/blackmarket_item/clothing/crown
 	name = "Crown"
 	desc = "A beautiful golden crown, rich with history and pedigree. Better worn than left to collect dust in a museum, right?"
@@ -142,10 +152,10 @@
 /datum/blackmarket_item/clothing/syndie_spacesuit_set
 	name = "\improper Syndicate Branded Spacesuit Box"
 	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
-	item = /obj/item/storage/box
+	item = /obj/item/storage/box/syndie_kit
 
 	price_min = 750
-	price_max = 2000
+	price_max = 2500
 	stock_max = 3
 	availability_prob = 50
 
