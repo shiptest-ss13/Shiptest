@@ -158,7 +158,7 @@
 	return cell
 
 /obj/mecha/Destroy()
-	if(occupant)
+	if(occupant && iscarbon(occupant))
 		occupant.SetSleeping(destruction_sleep_duration)
 	go_out()
 	var/mob/living/silicon/ai/AI

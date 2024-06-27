@@ -153,7 +153,7 @@
 	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(I, user)
 	if(I.force)
-		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
+		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value, sharpness = I.get_sharpness()) //Bone break modifier = item force
 		if(I.damtype == BRUTE)
 			if(prob(33))
 				I.add_mob_blood(src)
