@@ -297,15 +297,16 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/structure/rack,
 /obj/machinery/light/directional/south,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/pickaxe/mini,
-/obj/item/pickaxe/mini,
-/obj/item/storage/bag/ore,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ce" = (
@@ -978,13 +979,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
-"gF" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/effect/landmark/start/medical_doctor,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "gG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1802,22 +1796,16 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lB" = (
-/obj/structure/closet/crate/medical,
-/obj/item/storage/backpack/satchel/med,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/clothing/suit/armor/inteq/corpsman,
-/obj/item/clothing/head/soft/inteq/corpsman,
-/obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
-/obj/item/clothing/under/syndicate/inteq/corpsman,
 /obj/structure/railing,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/west,
-/obj/item/storage/box/bodybags,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/storage/bag/ore,
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "lC" = (
@@ -2117,10 +2105,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
-"nh" = (
-/obj/structure/bed/roller,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "nl" = (
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2297,17 +2281,11 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/communications)
 "oi" = (
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 5
-	},
 /obj/machinery/camera/autoname,
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
 	},
-/obj/structure/table,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "om" = (
@@ -3488,10 +3466,10 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer/blood,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "uC" = (
@@ -3527,7 +3505,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/machinery/iv_drip,
+/obj/structure/table,
+/obj/item/storage/box/cups,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "vi" = (
@@ -4644,7 +4623,15 @@
 	dir = 4;
 	pixel_x = -19
 	},
-/obj/machinery/autolathe,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5
+	},
+/obj/item/storage/box/bodybags,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "BY" = (
@@ -4753,7 +4740,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/structure/bed/roller,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -6256,8 +6242,7 @@
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "ce";
-	name = "artificer class II's locker";
-	req_access = null;
+	name = "honorable artificer's locker";
 	req_access_txt = "56"
 	},
 /obj/item/clothing/under/syndicate/inteq/artificer,
@@ -6273,13 +6258,13 @@
 	name = "engineering megaphone"
 	},
 /obj/item/stamp/ce{
-	name = "artificer class II's rubber stamp"
+	name = "honorable artificer's rubber stamp"
 	},
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/welding,
 /obj/item/pipe_dispenser,
 /obj/item/storage/belt/utility/chief{
-	name = "\improper Artificer Class II's toolbelt"
+	name = "honorable artificer's toolbelt"
 	},
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
@@ -6959,7 +6944,6 @@
 /area/ship/bridge)
 "Tq" = (
 /obj/effect/turf_decal/box/corners,
-/obj/effect/landmark/start/medical_doctor,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "TA" = (
@@ -8645,7 +8629,7 @@ zh
 jc
 Lc
 uO
-gF
+Ic
 nY
 ua
 MW
@@ -8679,7 +8663,7 @@ WR
 Tj
 mX
 oi
-nh
+Oc
 iy
 qB
 Oc
