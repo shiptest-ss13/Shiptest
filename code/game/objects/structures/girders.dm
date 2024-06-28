@@ -36,16 +36,7 @@
 			playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 	add_fingerprint(user)
 
-	if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
-		new /obj/item/stack/sheet/metal(get_turf(src))
-		W.play_tool_sound(src)
-		qdel(src)
-
-		return
-
-
-	else if(istype(W, /obj/item/stack))
+	if(istype(W, /obj/item/stack))
 		if(iswallturf(loc))
 			to_chat(user, "<span class='warning'>There is already a wall present!</span>")
 			return
@@ -377,13 +368,6 @@
 			transfer_fingerprints_to(R)
 			qdel(src)
 
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 2)
-		transfer_fingerprints_to(R)
-		W.play_tool_sound(src)
-		qdel(src)
-
 	else if(istype(W, /obj/item/stack/sheet/mineral/hidden/hellstone))
 		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = W
 		if(R.get_amount() < 1)
@@ -450,13 +434,6 @@
 			var/obj/item/stack/tile/bronze/B = new(drop_location(), 2)
 			transfer_fingerprints_to(B)
 			qdel(src)
-
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/tile/bronze/B = new(drop_location(), 2)
-		transfer_fingerprints_to(B)
-		W.play_tool_sound(src)
-		qdel(src)
 
 	else if(istype(W, /obj/item/stack/tile/bronze))
 		var/obj/item/stack/tile/bronze/B = W
