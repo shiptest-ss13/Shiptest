@@ -14,20 +14,16 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "aj" = (
-/obj/item/trash/can{
-	pixel_x = 15;
-	pixel_y = -24
-	},
-/obj/item/trash/can{
-	pixel_x = -8;
-	pixel_y = -19
-	},
 /obj/item/trash/sosjerky{
 	pixel_x = 2;
 	pixel_y = -15
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/item/trash/raisins{
+	pixel_x = 11;
+	pixel_y = -13
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -40,7 +36,11 @@
 "ar" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/firstaid/radiation,
+/obj/item/storage/cans/sixbeer,
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
+/obj/effect/turf_decal/corner/transparent/blue/border{
+	dir = 10
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "aw" = (
@@ -59,7 +59,8 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "aL" = (
 /obj/structure/table,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "aM" = (
@@ -77,6 +78,13 @@
 /obj/item/weldingtool/hugetank/empty,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"aV" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
+/obj/structure/chair,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "ba" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -84,7 +92,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "bc" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
@@ -93,6 +102,16 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"bf" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp,
+/obj/machinery/light/small/directional/east,
+/obj/item/reagent_containers/food/snacks/chewable/bubblegum/nicotine{
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "bi" = (
 /obj/item/clothing/shoes/galoshes,
 /turf/open/floor/plasteel/dark/wasteplanet,
@@ -158,8 +177,18 @@
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/shoes/workboots,
+/obj/item/spacecash/bundle/smallrand,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"bO" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "bS" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/item/storage/belt/utility,
@@ -232,12 +261,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "cA" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
 /obj/structure/curtain/cloth/grey,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "cF" = (
@@ -253,6 +284,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "cP" = (
@@ -262,15 +296,20 @@
 /obj/item/wrench/combat,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
-"de" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+"dd" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"de" = (
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "df" = (
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plating/wasteplanet/lit,
@@ -349,6 +388,7 @@
 /obj/structure/sign/poster/contraband/space_cube{
 	pixel_x = 32
 	},
+/obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "eL" = (
@@ -415,6 +455,10 @@
 /obj/effect/turf_decal/miskilamo_small/left,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"fP" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/ruin/wasteplanet)
 "ga" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/item/stack/cable_coil/red{
@@ -454,6 +498,15 @@
 "gs" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"gx" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 9
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "gF" = (
 /obj/structure/closet,
 /obj/item/clothing/shoes/workboots,
@@ -465,6 +518,11 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"gH" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/robot_debris/up,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "gO" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -524,6 +582,11 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"ht" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "hA" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/traffic/fulltile,
@@ -545,6 +608,7 @@
 	pixel_x = -5
 	},
 /obj/item/weldingtool/experimental,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "hH" = (
@@ -568,7 +632,8 @@
 	pixel_y = 19
 	},
 /obj/structure/curtain,
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk/white,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "hO" = (
 /obj/machinery/vending/coffee,
@@ -582,6 +647,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/dust/corner,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "hW" = (
@@ -593,6 +662,7 @@
 "hY" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "il" = (
@@ -650,7 +720,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "iJ" = (
 /obj/structure/cable/yellow{
@@ -709,6 +780,9 @@
 "jo" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
+/obj/effect/turf_decal/corner/transparent/blue/border{
+	dir = 5
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "jq" = (
@@ -806,6 +880,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "ks" = (
@@ -816,6 +891,7 @@
 	dir = 4;
 	pixel_x = -13
 	},
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "kw" = (
@@ -828,6 +904,19 @@
 /obj/item/grenade/clusterbuster/emp,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"kH" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/item/screwdriver{
+	pixel_x = -7
+	},
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "kJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -900,6 +989,12 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"lf" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/item/stack/ore/salvage/scrapuranium,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "lq" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -913,6 +1008,12 @@
 "lx" = (
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"lB" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "lG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -952,6 +1053,12 @@
 	},
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"mc" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/template_noop,
+/area/template_noop)
 "mi" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -970,6 +1077,16 @@
 /obj/structure/fence/door,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"mA" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "mG" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal/industrial/hatch/orange,
@@ -995,6 +1112,13 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"mZ" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "nd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -1101,6 +1225,13 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/ruin/wasteplanet)
+"nZ" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "oe" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1137,6 +1268,16 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"ov" = (
+/obj/structure/fence,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "oz" = (
 /obj/item/kirbyplants/dead,
 /obj/effect/turf_decal/corner/transparent/lime/border{
@@ -1170,6 +1311,13 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"oS" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "oT" = (
 /obj/structure/fence{
@@ -1217,15 +1365,23 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "pt" = (
 /mob/living/simple_animal/hostile/hivebot/wasteplanet/strong,
+/obj/structure/sign/warning/docking{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "pu" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/turf_decal/corner/transparent/orange{
-	dir = 9
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "px" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
@@ -1331,6 +1487,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"qs" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 9
+	},
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "qt" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -1422,7 +1590,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/structure/spawner/wasteplanet/hivebot/high_threat,
-/turf/open/floor/plating/wasteplanet/rust,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "ry" = (
 /obj/structure/fence{
@@ -1489,14 +1658,31 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "sT" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/structure/sign/poster/contraband/space_cola{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"ta" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "td" = (
 /obj/structure/fence,
 /turf/open/floor/plating/wasteplanet/lit,
@@ -1519,6 +1705,21 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"tu" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/transparent/neutral/diagonal,
+/obj/structure/sink/kitchen{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/food/flour,
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"tv" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "ty" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -1603,6 +1804,10 @@
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 5
 	},
+/obj/item/trash/raisins{
+	pixel_x = -12;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "un" = (
@@ -1613,6 +1818,13 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"up" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/obj/item/stack/ore/salvage/scrapplasma,
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "ut" = (
 /obj/structure/rack,
 /obj/item/clothing/glasses/welding,
@@ -1629,6 +1841,7 @@
 	pixel_y = 12
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/effect/turf_decal/corner/transparent/blue,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "uD" = (
@@ -1642,6 +1855,11 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"uU" = (
+/obj/structure/chair/comfy/orange/old/alt/directional/south,
+/obj/item/toy/plush/snakeplushie,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "uZ" = (
@@ -1721,6 +1939,9 @@
 /area/ruin/wasteplanet)
 "vV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "vX" = (
@@ -1749,9 +1970,11 @@
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
+/obj/effect/turf_decal/corner/transparent/blue/border{
+	dir = 9
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "wf" = (
@@ -1766,6 +1989,12 @@
 	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"wr" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "wv" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -1802,6 +2031,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
+"xf" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "xh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1810,18 +2046,33 @@
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "xl" = (
-/obj/item/trash/can{
-	pixel_x = 15
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 9
+	},
+/obj/item/trash/raisins{
+	pixel_x = 15;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"xs" = (
+/obj/structure/chair/office{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "xO" = (
 /obj/effect/turf_decal/corner/transparent/orange,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"yb" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "yi" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -1834,6 +2085,9 @@
 "yn" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -1887,6 +2141,15 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"yU" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 5
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "zp" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/structure/reagent_dispensers/watertank,
@@ -1895,6 +2158,9 @@
 "zt" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
+	},
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
 	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
@@ -1913,14 +2179,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+/obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/open/floor/plating/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "zB" = (
 /obj/structure/closet,
 /obj/item/clothing/shoes/workboots,
@@ -1982,6 +2245,11 @@
 /obj/item/bedsheet/hos,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+"AS" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "AZ" = (
 /obj/machinery/ltsrbt,
 /turf/open/floor/plasteel/dark/wasteplanet,
@@ -2004,6 +2272,26 @@
 "Bs" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 6;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/food/snacks/canned/peaches{
+	pixel_x = -6;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/trash/can/food/peaches{
+	pixel_x = -6;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "BJ" = (
@@ -2053,6 +2341,22 @@
 	},
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"Cf" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = -32
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 6
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"Ci" = (
+/obj/item/chair{
+	pixel_x = -13;
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Cs" = (
 /obj/structure/fence/cut/large,
 /turf/open/floor/plating/wasteplanet/lit,
@@ -2067,6 +2371,12 @@
 /obj/effect/turf_decal/corner/transparent/lime/border,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"CC" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/item/stack/ore/salvage/scrapuranium,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "CK" = (
 /obj/machinery/door/airlock,
 /obj/structure/cable{
@@ -2092,6 +2402,10 @@
 /mob/living/simple_animal/hostile/hivebot/wasteplanet,
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"CV" = (
+/obj/structure/fence/cut/medium,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "Dc" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/caution{
@@ -2115,6 +2429,12 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"Dp" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "Dz" = (
 /obj/structure/chair/stool/bar{
 	dir = 8;
@@ -2122,14 +2442,29 @@
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"DA" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "DE" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"DJ" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
+/obj/structure/chair,
+/obj/item/instrument/banjo,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "DN" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/traffic/corner{
@@ -2148,6 +2483,8 @@
 /obj/item/trash/sosjerky,
 /obj/item/toy/beach_ball/holoball,
 /obj/machinery/light/directional/south,
+/obj/item/trash/can,
+/obj/item/trash/can,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Ei" = (
@@ -2217,6 +2554,7 @@
 "EM" = (
 /obj/structure/mecha_wreckage/ripley/firefighter,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "EU" = (
@@ -2242,7 +2580,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Ff" = (
 /obj/structure/table/wood,
@@ -2252,6 +2591,10 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"Fh" = (
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "Fm" = (
 /obj/structure/closet/wall/directional/north,
 /obj/item/toy/figure/bartender,
@@ -2276,12 +2619,13 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "FC" = (
 /obj/machinery/door/airlock,
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
-/turf/open/floor/plasteel/dark/wasteplanet,
+/turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "FG" = (
 /obj/machinery/suit_storage_unit/open,
@@ -2302,9 +2646,9 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "FP" = (
-/obj/structure/table,
-/obj/item/flashlight/lamp,
 /obj/machinery/light/small/directional/east,
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "FW" = (
@@ -2314,7 +2658,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Gf" = (
 /obj/machinery/door/airlock{
@@ -2329,6 +2674,7 @@
 /obj/structure/grille/broken,
 /obj/item/stack/rods,
 /obj/item/shard,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Gk" = (
@@ -2504,6 +2850,22 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"Ic" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 6
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"If" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "Il" = (
 /obj/structure/table/wood/fancy/orange,
 /obj/item/toy/plush/moth/firewatch,
@@ -2516,6 +2878,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -2599,6 +2962,11 @@
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"KG" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "KI" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/wasteplanet,
@@ -2609,6 +2977,12 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
@@ -2657,16 +3031,9 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "LB" = (
-/obj/item/trash/can{
-	pixel_y = 21;
-	pixel_x = -16
-	},
-/obj/item/trash/can{
-	pixel_y = 17;
-	pixel_x = -8
-	},
-/turf/open/floor/plasteel/dark/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "LX" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2766,6 +3133,12 @@
 "MF" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"MJ" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/ruin/wasteplanet)
 "MO" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable{
@@ -2814,6 +3187,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/effect/turf_decal/industrial/warning/dust,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "Nu" = (
@@ -2848,6 +3222,9 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/floodlight,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
 "Of" = (
@@ -2862,6 +3239,10 @@
 /obj/structure/closet/crate/radiation,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"Og" = (
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "Oi" = (
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -28
@@ -2876,6 +3257,7 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Ok" = (
 /obj/structure/table,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Oq" = (
@@ -2899,6 +3281,15 @@
 /obj/effect/turf_decal/corner/transparent/lime/border,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"OB" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "OK" = (
 /turf/open/floor/plating/wasteplanet/rust,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -2947,7 +3338,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/wasteplanet,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "PX" = (
 /obj/structure/janitorialcart,
@@ -3003,6 +3395,7 @@
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Rv" = (
@@ -3069,10 +3462,22 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating/wasteplanet/rust,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
+"Sm" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
+/obj/item/chair{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Sq" = (
 /obj/machinery/washing_machine,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Sw" = (
@@ -3093,14 +3498,15 @@
 "SP" = (
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/item/clothing/gloves/color/yellow,
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "SZ" = (
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/corner/transparent/orange{
 	dir = 9
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Te" = (
@@ -3161,6 +3567,13 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"TE" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "TK" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -3195,7 +3608,13 @@
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Ub" = (
+/obj/structure/sign/warning/coldtemp{
+	pixel_x = 32
+	},
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
+/obj/effect/turf_decal/corner/transparent/blue/border{
+	dir = 6
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Uc" = (
@@ -3226,6 +3645,10 @@
 /obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"Us" = (
+/obj/effect/turf_decal/corner/transparent/neutral/mono,
+/turf/open/floor/plasteel/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Uz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3236,7 +3659,20 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"UF" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 10
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "UP" = (
+/obj/structure/table_frame,
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/item/paper/crumpled{
+	pixel_x = -3;
+	pixel_y = 3
+	},
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "UR" = (
@@ -3321,6 +3757,15 @@
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
+"VQ" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "VS" = (
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 8
@@ -3344,6 +3789,12 @@
 /obj/effect/turf_decal/corner/transparent/orange{
 	dir = 5
 	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola{
+	pixel_y = 13;
+	pixel_x = -6
+	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Wn" = (
@@ -3388,6 +3839,10 @@
 "WI" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -3438,6 +3893,25 @@
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
+"XG" = (
+/obj/structure/sign/warning/docking{
+	pixel_y = -32
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 10
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"XI" = (
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 5
+	},
+/obj/item/kirbyplants/dead{
+	pixel_x = 10;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "XY" = (
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
@@ -3448,6 +3922,12 @@
 	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+"Yb" = (
+/obj/effect/turf_decal/corner/transparent/blue{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Yh" = (
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -3499,6 +3979,12 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
 	},
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet)
@@ -3686,23 +4172,23 @@ tn
 tn
 tn
 pj
+gx
+VQ
+OM
+wr
+wr
+wr
 OM
 OM
+wr
+wr
+wr
+wr
+wr
+wr
 OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
+OB
+XG
 pj
 "}
 (3,1,1) = {"
@@ -3732,7 +4218,7 @@ tn
 tn
 tn
 tn
-tn
+mc
 tn
 tn
 tn
@@ -3755,7 +4241,7 @@ OM
 OM
 OM
 OM
-OM
+de
 ry
 "}
 (4,1,1) = {"
@@ -3776,7 +4262,7 @@ gg
 gg
 gg
 gg
-gg
+pj
 gg
 gg
 gg
@@ -3792,23 +4278,23 @@ gg
 gg
 Lw
 ry
+DA
+LB
+LB
+OM
+LB
+LB
+LB
+LB
+LB
 OM
 OM
 OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
+LB
+LB
+LB
 jt
-OM
+de
 ry
 "}
 (5,1,1) = {"
@@ -3840,12 +4326,12 @@ gg
 gg
 gg
 gg
-gg
+pj
 gg
 Lw
 Lw
 ry
-OM
+DA
 jt
 OM
 OM
@@ -3861,7 +4347,7 @@ OM
 OM
 OM
 OM
-OM
+de
 ry
 "}
 (6,1,1) = {"
@@ -3898,15 +4384,8 @@ gg
 Lw
 Lw
 mK
-OM
-jt
-OM
-px
-Qe
-Qe
-px
-OM
-OM
+DA
+MJ
 OM
 px
 Qe
@@ -3914,6 +4393,13 @@ Qe
 px
 OM
 OM
+OM
+px
+Qe
+Qe
+px
+OM
+lB
 OM
 mK
 "}
@@ -3943,7 +4429,7 @@ BW
 Mi
 Mi
 gg
-gg
+pj
 gg
 gg
 Lw
@@ -3951,7 +4437,7 @@ Lw
 Lw
 Lw
 ry
-OM
+DA
 OM
 OM
 px
@@ -4019,8 +4505,8 @@ nr
 oe
 px
 px
-OM
-OM
+LB
+de
 ry
 "}
 (9,1,1) = {"
@@ -4037,7 +4523,7 @@ MF
 MF
 MF
 kY
-de
+Sl
 ok
 gs
 fz
@@ -4057,7 +4543,7 @@ Lw
 Lw
 Lw
 ry
-OM
+DA
 OM
 sK
 VZ
@@ -4073,7 +4559,7 @@ tY
 RR
 px
 OM
-OM
+de
 ry
 "}
 (10,1,1) = {"
@@ -4104,14 +4590,14 @@ Mi
 Mi
 Mi
 Mi
-td
+mZ
 Wn
-td
-td
-td
+mZ
+mZ
+UF
 mK
 NO
-OM
+Dp
 sK
 fA
 Bn
@@ -4125,8 +4611,8 @@ Ud
 Mh
 lV
 Uc
-OM
-OM
+lB
+de
 mK
 "}
 (11,1,1) = {"
@@ -4143,11 +4629,11 @@ JL
 Yh
 MF
 kY
-de
+Sl
 ok
 gs
 qt
-Oi
+qs
 lq
 Zr
 Oi
@@ -4163,7 +4649,7 @@ df
 df
 OM
 ry
-yD
+zw
 OM
 sK
 sz
@@ -4179,7 +4665,7 @@ oW
 TX
 px
 OM
-OM
+de
 vZ
 "}
 (12,1,1) = {"
@@ -4196,7 +4682,7 @@ nx
 Wu
 MF
 kY
-de
+Sl
 ok
 gs
 Gk
@@ -4214,9 +4700,9 @@ ey
 lG
 lT
 df
-OM
+de
 ry
-yD
+zw
 OM
 sK
 px
@@ -4231,8 +4717,8 @@ px
 px
 px
 px
-OM
-OM
+LB
+de
 ry
 "}
 (13,1,1) = {"
@@ -4269,7 +4755,7 @@ df
 jt
 OM
 vZ
-yD
+zw
 OM
 px
 Yu
@@ -4285,7 +4771,7 @@ ah
 ni
 px
 OM
-OM
+de
 ry
 "}
 (14,1,1) = {"
@@ -4302,7 +4788,7 @@ cF
 Km
 MF
 kY
-de
+Sl
 Lv
 gs
 MX
@@ -4322,7 +4808,7 @@ qd
 qd
 Nf
 mK
-yD
+zw
 zt
 Mx
 hr
@@ -4337,7 +4823,7 @@ CK
 oh
 Tj
 wf
-OM
+lB
 jt
 mK
 "}
@@ -4373,9 +4859,9 @@ Vp
 OM
 Ab
 Ab
-yD
+xf
 ry
-yD
+zw
 hW
 XY
 il
@@ -4408,7 +4894,7 @@ WI
 cI
 gO
 Lv
-de
+rQ
 ok
 Rv
 yR
@@ -4443,8 +4929,8 @@ dn
 kc
 WQ
 wf
-OM
-OM
+LB
+de
 ry
 "}
 (17,1,1) = {"
@@ -4456,7 +4942,7 @@ GM
 pF
 gb
 Dz
-Yh
+oS
 fH
 Iq
 MF
@@ -4497,7 +4983,7 @@ qy
 px
 px
 OM
-OM
+de
 ry
 "}
 (18,1,1) = {"
@@ -4509,7 +4995,7 @@ GM
 sT
 OX
 OX
-OX
+bO
 Er
 kn
 qo
@@ -4535,7 +5021,7 @@ OM
 OM
 mK
 jt
-OM
+Dp
 OM
 Sw
 IB
@@ -4549,8 +5035,8 @@ px
 et
 px
 OM
-OM
-OM
+Fh
+de
 mK
 "}
 (19,1,1) = {"
@@ -4560,14 +5046,14 @@ gg
 gg
 GM
 lW
+Ci
 vX
-vX
-Yh
+Yb
 jd
 EH
 MF
 Lv
-Sl
+rQ
 OK
 Rv
 TK
@@ -4587,7 +5073,7 @@ NI
 jy
 OM
 ry
-jt
+DA
 OM
 vB
 Kc
@@ -4638,12 +5124,12 @@ Zy
 OM
 jt
 jy
-Ps
+mA
 sO
-Nf
-OM
-OM
-OM
+pu
+LB
+LB
+LB
 Dk
 Sw
 Uc
@@ -4653,10 +5139,10 @@ LA
 Uc
 px
 px
-OM
-OM
+LB
+LB
 jt
-OM
+de
 ry
 "}
 (21,1,1) = {"
@@ -4693,7 +5179,7 @@ YW
 jy
 yD
 ry
-yD
+zw
 OM
 OM
 OM
@@ -4709,7 +5195,7 @@ OM
 OM
 OM
 OM
-OM
+de
 ry
 "}
 (22,1,1) = {"
@@ -4726,7 +5212,7 @@ nx
 TN
 MF
 Yi
-de
+Sl
 ok
 gs
 vv
@@ -4746,8 +5232,8 @@ qd
 pB
 Yy
 mK
-yD
-jt
+zw
+MJ
 OM
 jt
 OM
@@ -4761,8 +5247,8 @@ OM
 OM
 OM
 OM
-OM
-OM
+lB
+de
 mK
 "}
 (23,1,1) = {"
@@ -4779,7 +5265,7 @@ Gf
 MF
 MF
 Wc
-zw
+Fb
 qr
 tL
 hJ
@@ -4797,9 +5283,9 @@ xe
 rp
 jy
 jy
-OM
+de
 ry
-yD
+zw
 OM
 jt
 jt
@@ -4829,10 +5315,10 @@ wc
 ar
 MF
 oJ
-Bs
+tu
 MF
-kY
-de
+DJ
+rQ
 ok
 gs
 ph
@@ -4850,24 +5336,24 @@ ey
 lG
 jt
 jy
-OM
+de
 ry
-yD
-OM
+zw
+LB
 jt
+AS
+LB
+LB
+LB
 OM
+LB
 OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-jt
-QS
-OM
-OM
+LB
+LB
+fP
+KG
+LB
+LB
 OM
 ry
 "}
@@ -4884,8 +5370,8 @@ FC
 Kx
 IQ
 MF
-kY
-de
+Sm
+Sl
 OK
 gs
 VO
@@ -4905,13 +5391,13 @@ jy
 jt
 OM
 ry
-yD
+zw
 OM
 OM
 OM
 OM
 OM
-OM
+yb
 jt
 OM
 OM
@@ -4921,7 +5407,7 @@ OM
 OM
 OM
 OM
-OM
+de
 ry
 "}
 (26,1,1) = {"
@@ -4937,8 +5423,8 @@ MF
 jC
 Bs
 MF
-kY
-de
+aV
+Sl
 JX
 gs
 gs
@@ -4952,15 +5438,15 @@ Mi
 Mi
 Mi
 Mi
-td
-Wn
+TE
+ov
 Cs
-td
-td
+TE
+Ic
 mK
 GK
-OM
-OM
+Dp
+CC
 OM
 OM
 jt
@@ -4973,8 +5459,8 @@ OM
 OM
 OM
 jt
-OM
-OM
+lB
+de
 mK
 "}
 (27,1,1) = {"
@@ -5011,12 +5497,12 @@ qL
 qL
 qL
 ry
-OM
+DA
 OM
 OM
 EM
 OM
-OM
+Og
 jt
 jt
 OM
@@ -5027,7 +5513,7 @@ OM
 OM
 jt
 OM
-OM
+de
 ry
 "}
 (28,1,1) = {"
@@ -5064,22 +5550,22 @@ gg
 gg
 qL
 ry
-OM
-OM
+DA
+LB
 jt
 OM
-OM
-OM
-OM
-OM
-OM
+lf
+LB
+LB
+LB
+LB
 jt
-OM
-OM
-OM
-OM
-OM
-OM
+LB
+LB
+LB
+LB
+LB
+LB
 OM
 ry
 "}
@@ -5092,8 +5578,8 @@ gg
 gg
 gg
 yK
-lx
-lx
+Us
+Us
 SP
 UW
 vH
@@ -5117,10 +5603,10 @@ gg
 gg
 qL
 ry
+DA
 OM
 OM
-OM
-OM
+up
 OM
 OM
 OM
@@ -5146,7 +5632,7 @@ gg
 gg
 yK
 UW
-yC
+nZ
 UW
 UW
 vH
@@ -5171,8 +5657,8 @@ gg
 gg
 mK
 OM
-OM
-OM
+Fh
+gH
 OM
 QS
 OM
@@ -5185,8 +5671,8 @@ OM
 OM
 OM
 OM
-OM
-OM
+lB
+de
 mK
 "}
 (31,1,1) = {"
@@ -5198,8 +5684,8 @@ gg
 gg
 gg
 yK
+dd
 bD
-pu
 SZ
 pb
 uD
@@ -5223,7 +5709,7 @@ gg
 gg
 gg
 ry
-OM
+DA
 jt
 OM
 OM
@@ -5276,23 +5762,23 @@ qL
 qL
 gg
 ry
-OM
+DA
 jt
+LB
+LB
+LB
 OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
+LB
+LB
+LB
+LB
+LB
+LB
+LB
+LB
+LB
 jt
-OM
+de
 ry
 "}
 (33,1,1) = {"
@@ -5305,7 +5791,7 @@ gg
 gg
 yK
 UW
-mU
+ta
 UW
 UW
 qu
@@ -5329,23 +5815,23 @@ qL
 qL
 qL
 ry
+DA
+OM
+OM
+OM
+jt
+OM
+OM
+OM
+OM
 OM
 OM
 OM
 OM
 jt
-OM
-OM
-OM
-OM
-OM
-OM
-OM
-OM
 jt
 jt
-jt
-OM
+de
 ry
 "}
 (34,1,1) = {"
@@ -5358,10 +5844,10 @@ pj
 gg
 yK
 aL
-lx
+Us
 ks
 UW
-qu
+XI
 Cw
 Rt
 UW
@@ -5382,23 +5868,23 @@ qL
 qL
 qL
 pj
+yU
+If
+tv
 OM
 OM
 OM
-OM
-OM
-OM
-OM
+tv
 OM
 jt
+tv
+tv
 OM
+tv
+tv
 OM
-OM
-OM
-OM
-OM
-OM
-OM
+lB
+Cf
 pj
 "}
 (35,1,1) = {"
@@ -5411,20 +5897,20 @@ gg
 gg
 yK
 hK
-lx
+Us
 hG
 UW
 BO
 Cw
 HR
 UW
-BP
+xs
 lx
 UW
 BP
 lx
 UW
-BP
+uU
 lx
 yK
 gg
@@ -5446,7 +5932,7 @@ td
 cg
 td
 td
-td
+CV
 cg
 td
 td
@@ -5468,17 +5954,17 @@ yK
 yK
 yK
 um
-LB
+Cw
 JR
 UW
-FP
+kH
 Av
 UW
-FP
+bf
 yA
 UW
 FP
-yA
+ht
 yK
 gg
 gg
@@ -5569,7 +6055,7 @@ tn
 gg
 gg
 gg
-gg
+pj
 gg
 gg
 yK
@@ -5635,10 +6121,10 @@ gg
 gg
 gg
 gg
+pj
 gg
 gg
-gg
-gg
+pj
 gg
 gg
 tn
@@ -5684,7 +6170,7 @@ Lw
 Lw
 Lw
 gg
-gg
+pj
 gg
 gg
 gg
@@ -5730,7 +6216,7 @@ tn
 tn
 gg
 gg
-gg
+pj
 gg
 gg
 Lw
