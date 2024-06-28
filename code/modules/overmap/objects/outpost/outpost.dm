@@ -41,6 +41,7 @@
 	var/max_missions = 15
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
+	var/datum/cargo_market/market
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
@@ -63,6 +64,8 @@
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
 	Rename(gen_outpost_name())
 
+	if(!market)
+		market = new()
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 

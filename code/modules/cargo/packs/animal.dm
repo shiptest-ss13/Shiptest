@@ -142,7 +142,6 @@
 	cost = 10000
 	contains = list(/mob/living/simple_animal/crab)
 	crate_name = "look sir free crabs"
-	// DropPodOnly = TRUE
 
 /datum/supply_pack/animal/crab/generate()
 	. = ..()
