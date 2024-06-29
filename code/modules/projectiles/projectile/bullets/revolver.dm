@@ -157,15 +157,15 @@
 
 /obj/projectile/bullet/a44roum
 	name = ".44 roumain bullet"
-	damage =  25
+	damage =  30
 
 /obj/projectile/bullet/a44roum/rubber
 	name = ".44 roumain bullet"
-	damage =  7
+	damage =  10
 	stamina = 38
 	armour_penetration = -20
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain bullet"
-	damage =  45
+	damage =  50
 	armour_penetration = -20
