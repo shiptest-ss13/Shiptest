@@ -179,13 +179,13 @@
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 5.56mm."
-	cost = 10000
+	cost = 9000
 	contains = list(/obj/item/storage/guncase/p16)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 7.62x40mm CLIP."
-	cost = 10000
+	cost = 9000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
