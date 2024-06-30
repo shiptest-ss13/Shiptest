@@ -665,12 +665,15 @@
 			var/obj/item/bodypart/targeted_bodypart = null
 			bleed((P.damage-armor)/2)
 			if(current_user && def_zone)
-				if(isbodypart(def_zone)) //we specified a bodypart object
-					targeted_bodypart = def_zone
+				if(def_zone) //we specified a bodypart object
+					targeted_bodypart = get_bodypart(check_zone(def_zone))
 					targeted_bodypart.adjust_bleeding((P.damage-armor)/10)
+//			if(targeted_bodypart && prob(25))
+//				var/obj/item/organ/unlucky_organ = pick(targeted_bodypart.contents)
+//				unlucky_organ.applyOrganDamage(rand(1, P.damage-armor))
 
 		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
-	return ..()
+	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
