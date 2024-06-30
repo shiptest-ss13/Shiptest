@@ -11,10 +11,7 @@
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
 /proc/kepori_name()
-	var/first_syllables = list("Fa", "Fe", "Fi", "Ma", "Me", "Mi", "Na", "Ne", "Ni", "Sa", "Se", "Si", "Ta", "Te", "Ti")
-	var/second_syllables = list("fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	var/third_syllables = list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	return "[pick(first_syllables)][pick(second_syllables)][pick(third_syllables)]"
+	return "[pick(GLOB.kepori_names)] [pick(GLOB.kepori_names)]-[pick(GLOB.kepori_names)]"
 
 /proc/vox_name()
 	. = ""

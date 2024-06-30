@@ -101,15 +101,16 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if (!spawnwithmagazine)
+	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
 		bolt_locked = TRUE
 		update_appearance()
 		return
 	if (!magazine)
 		magazine = new mag_type(src)
+	if (!spawnwithmagazine)
+		get_ammo_list (drop_all = TRUE)
 	chamber_round()
 	update_appearance()
-
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
@@ -241,7 +242,7 @@
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	if (tac_load)
-		if(do_after(user, tactical_reload_delay, TRUE, src))
+		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
 			if (insert_magazine(user, tac_load, FALSE))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else
