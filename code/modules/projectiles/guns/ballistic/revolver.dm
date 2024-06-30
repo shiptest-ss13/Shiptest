@@ -568,7 +568,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/montagne
 	name = "\improper HP Montagne"
-	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .45."
+	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .44."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "montagne"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -705,7 +705,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
-	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .45."
+	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .44."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
@@ -729,13 +729,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
-
-/obj/item/gun/ballistic/revolver/shadow/before_firing(atom/target, mob/user)
-	. = ..()
-	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
-	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
-		chambered.BB.damage += 5
-		chambered.BB.armour_penetration += 5
 
 /obj/item/gun/ballistic/revolver/shadow/no_mag
 	spawnwithmagazine = FALSE
