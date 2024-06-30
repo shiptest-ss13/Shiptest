@@ -253,7 +253,7 @@
 		if(!roundstart_template)
 			CRASH("Invalid path ([template]) passed to docking port.")
 
-		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), , template, FALSE) //Don't instantiate, we handle that ourselves
 		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
 
 /**

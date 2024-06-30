@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NGRV",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS",
+		"ACLF"
+	],
+	"map_name": "Salamander-class Wrecking Tug",
+	"description": "ICW Era Cruiser.",
+	"tags": [
+		"Syndicate",
+		"Combat"
+	],
+	"map_short_name": "Salamander-class",
+	"map_path": "_maps/shuttles/syndicate/syndicate_gorlex_salamander.dmm",
+	"token_icon_state": "ship_big_generic",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/ngr",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
+			"slots": 2
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 3
+		},
+		"Initiate": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

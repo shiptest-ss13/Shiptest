@@ -1,3 +1,5 @@
+#define SHIPMODULE_BSDRIVE "bluespace_drive"
+
 /**
  * # Simulated overmap ship
  *
@@ -60,6 +62,9 @@
 	var/join_mode = SHIP_JOIN_MODE_OPEN
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
+
+	/// an assoc list
+	var/ship_modules = list()
 
 	/// Short memo of the ship shown to new joins
 	var/memo = null

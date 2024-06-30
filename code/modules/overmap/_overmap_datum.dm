@@ -62,6 +62,15 @@
 	current_overmap = system_spawned_in
 	if(!position)
 		position = current_overmap.get_unused_overmap_square(force = TRUE)
+
+	if(istype(position, /datum/overmap))
+		var/datum/overmap/docked_object = position
+		x = docked_object.x
+		y = docked_object.y
+		docked_object.contents += src
+		docked_to = docked_object
+		current_overmap = docked_object.current_overmap
+
 	if(!current_overmap)
 		current_overmap = SSovermap.default_system
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
@@ -73,12 +82,6 @@
 		current_overmap.overmap_container[position["x"]][position["y"]] += src
 		x = position["x"]
 		y = position["y"]
-	else if(istype(position, /datum/overmap))
-		var/datum/overmap/docked_object = position
-		x = docked_object.x
-		y = docked_object.y
-		docked_object.contents += src
-		docked_to = docked_object
 
 	set_or_create_token()
 	if(!char_rep && name)

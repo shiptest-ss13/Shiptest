@@ -55,7 +55,7 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/outposted)
+	default_system = create_new_star_system(new /datum/overmap_star_system/ngr)
 
 	return ..()
 
@@ -747,3 +747,23 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
 	return
+
+/datum/overmap_star_system/ngr
+	name = "Gorlex Controlled - Ecbatana"
+
+	has_outpost = FALSE
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#d9ad82"
+	secondary_color = "#c48c60"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#c13623"
+	hazard_secondary_color = "#943a43"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#83db2b"
+	secondary_structure_color = "#21a52e"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
