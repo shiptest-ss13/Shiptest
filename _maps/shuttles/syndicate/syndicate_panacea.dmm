@@ -879,11 +879,11 @@
 /area/ship/medical/psych)
 "fn" = (
 /obj/effect/turf_decal/suns/line/marble/fill,
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/machinery/firealarm/directional/west,
 /obj/structure/railing,
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/office/lobby)
 "fG" = (
@@ -1666,7 +1666,7 @@
 /obj/machinery/door/airlock{
 	dir = 2;
 	name = "Psych's Room";
-	req_one_access = list(19, 20, 57, 58, 70)
+	req_one_access = list(1, 19, 20, 57, 58, 70)
 	},
 /turf/open/floor/suns/hatch{
 	color = "#56342A"
@@ -1765,6 +1765,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "kr" = (
@@ -2583,7 +2586,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Medbay";
-	req_one_access = list(5, 19, 57, 45)
+	req_one_access = list(1, 5, 19, 57, 45)
 	},
 /turf/open/floor/suns,
 /area/ship/medical)
@@ -3776,7 +3779,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3869,15 +3871,11 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen/kitchen)
 "ww" = (
-/obj/structure/cable/blue{
-	icon_state = "1-2"
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
 	},
-/obj/machinery/recharger{
-	pixel_y = 12;
-	pixel_x = 9
-	},
-/turf/open/floor/suns/pattern,
-/area/ship/bridge)
+/turf/open/floor/suns/plain,
+/area/ship/crew/ccommons)
 "wC" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/box,
@@ -4321,7 +4319,7 @@
 /obj/machinery/door/airlock{
 	dir = 2;
 	name = "Bar";
-	req_one_access = list(19, 20, 25, 57, 58)
+	req_one_access = list(1, 19, 20, 25, 57, 58)
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
@@ -5720,18 +5718,34 @@
 /obj/structure/closet/crate{
 	name = "materials crate"
 	},
-/obj/item/stack/sheet/plastic/twenty{
-	pixel_x = -8
-	},
-/obj/item/stack/sheet/plasteel/twenty{
-	pixel_x = -5
-	},
-/obj/item/stack/sheet/glass/twenty,
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = 3
-	},
 /obj/item/stack/sheet/sandblock/twenty{
 	pixel_x = 7
+	},
+/obj/item/stack/sheet/plastic/twenty{
+	pixel_x = 3
+	},
+/obj/item/stack/sheet/plasteel/twenty{
+	pixel_x = -1
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = -6
+	},
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = -9
+	},
+/obj/item/stack/sheet/paperframes/twenty{
+	pixel_x = -12
+	},
+/obj/item/stack/sheet/cotton/cloth/ten{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/stack/sheet/cotton/cloth/ten{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/stack/sheet/mineral/wood/twentyfive{
+	pixel_x = -14
 	},
 /turf/open/floor/suns/grid,
 /area/ship/engineering)
@@ -6002,7 +6016,7 @@
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Psych's Office";
-	req_one_access = list(19, 20, 57, 58, 70)
+	req_one_access = list(1, 19, 20, 57, 58, 70)
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/medical/psych)
@@ -6359,7 +6373,7 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Engineering";
-	req_one_access = list(10, 19, 20, 57, 58)
+	req_one_access = list(1, 10, 19, 20, 57, 58)
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -7752,7 +7766,7 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Engineering";
-	req_one_access = list(10, 19, 20, 57, 58)
+	req_one_access = list(1, 10, 19, 20, 57, 58)
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -8367,13 +8381,18 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "XT" = (
-/obj/machinery/disposal/bin,
+/obj/machinery/disposal/bin{
+	layer = 3.3
+	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
 /obj/machinery/door/window/eastright{
 	dir = 8;
 	req_one_access = list(1, 5, 10, 19, 20, 25, 57, 58)
+	},
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/open/floor/suns/grid,
 /area/ship/maintenance)
@@ -8675,6 +8694,12 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/airalarm/directional/south,
+/obj/item/desk_flag/trans{
+	pixel_x = 10
+	},
+/obj/item/desk_flag/suns{
+	pixel_x = 3
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/security)
 "ZT" = (
@@ -9047,7 +9072,7 @@ vS
 In
 bs
 sD
-lR
+ww
 dy
 JA
 AZ
@@ -9385,7 +9410,7 @@ Bc
 op
 wH
 di
-ww
+aG
 HT
 aG
 vd
