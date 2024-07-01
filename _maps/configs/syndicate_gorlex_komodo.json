@@ -1,5 +1,5 @@
 {
-	"prefix": "SSV",
+	"prefix": "ISV",
 	"namelists": [
 		"GORLEX",
 		"NATURAL_AGGRESSIVE",
@@ -20,33 +20,33 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/syndicate/captain",
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
 			"officer": true,
 			"slots": 1
 		},
 		"Sergeant": {
-			"outfit": "/datum/outfit/job/syndicate/hos",
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
 			"officer": true,
 			"slots": 1
 		},
 		"Medic": {
-			"outfit": "/datum/outfit/job/syndicate/doctor",
+			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
 			"slots": 1
 		},
 		"Trooper": {
-			"outfit": "/datum/outfit/job/syndicate/security",
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
 			"slots": 3
 		},
 		"Deck Assistant": {
-			"outfit": "/datum/outfit/job/syndicate/assistant",
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
 			"slots": 2
 		},
 		"Bridge Officer": {
-			"outfit": "/datum/outfit/job/syndicate/head_of_personnel",
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
 			"slots": 1
 		}
 	},

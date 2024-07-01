@@ -843,6 +843,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
+"gX" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "gY" = (
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 1
@@ -1041,15 +1050,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"je" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "ju" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1935,6 +1935,12 @@
 /obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
+"rI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "rJ" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -2276,11 +2282,11 @@
 	name = "Sergeant's Locker";
 	req_access_txt = "3"
 	},
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/head/ngr/peaked,
+/obj/item/clothing/suit/armor/ngr/lieutenant,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/combat,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/head/HoS/syndicate,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "ua" = (
@@ -3222,17 +3228,17 @@
 /obj/item/clothing/head/hardliners,
 /obj/item/storage/belt/medical/webbing,
 /obj/item/storage/box/masks,
+/obj/item/clothing/suit/ngr/smock,
+/obj/item/clothing/head/ngr/surgical,
+/obj/item/clothing/gloves/color/latex/nitrile/evil{
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/item/clothing/under/syndicate/ngr,
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/suit/apron/surgical,
-/obj/item/clothing/glasses/hud/health,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Bv" = (
@@ -4227,6 +4233,23 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "JP" = (
+/obj/item/tank/jetpack/suit,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
 /obj/structure/closet/wall/directional/west{
 	dir = 2;
 	name = "Utility Closet";
@@ -4245,25 +4268,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/item/clothing/under/syndicate/intern,
-/obj/item/clothing/under/syndicate/intern,
-/obj/item/clothing/under/syndicate/intern,
-/obj/item/clothing/under/syndicate/intern,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "JS" = (
@@ -4291,12 +4295,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"JV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "Kb" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
@@ -4364,9 +4362,8 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/syndicate/ngr/officer,
 /obj/item/storage/backpack/security,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
-/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/clothing/suit/armor/ngr/captain,
+/obj/item/clothing/head/ngr/peaked,
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
@@ -4827,6 +4824,15 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"NZ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "Og" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5937,15 +5943,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"XR" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "Yc" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
@@ -6489,10 +6486,10 @@ bA
 wy
 Zo
 FD
-je
+NZ
 Mz
 TE
-JV
+rI
 bk
 HW
 KR
@@ -7175,10 +7172,10 @@ Pk
 Dp
 RE
 EP
-XR
+gX
 JL
 fE
-JV
+rI
 MG
 DP
 iO

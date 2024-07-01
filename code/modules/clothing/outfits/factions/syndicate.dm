@@ -42,7 +42,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset
-	back = /obj/item/
+	back = /obj/item/storage/backpack
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/radio
@@ -925,7 +925,7 @@
 	id_assignment = "Operative"
 	job_icon = "securityofficer"
 
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/ngr
 	belt = /obj/item/storage/belt/security/webbing/ngr
 	suit = /obj/item/clothing/suit/armor/ngr
 	gloves = /obj/item/clothing/gloves/color/black

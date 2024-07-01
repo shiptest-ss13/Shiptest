@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"prefix": "SSV",
+	"prefix": "NGRV",
 	"namelists": [
 		"GORLEX",
 		"NATURAL_AGGRESSIVE",
@@ -8,8 +8,8 @@
 		"WEAPONS",
 		"ACLF"
 	],
-	"map_name": "Salamander-class Battle Cruiser",
-	"description": "ICW Era Cruiser. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero volutpat sed cras ornare arcu dui vivamus. Cursus metus aliquam eleifend mi. Pharetra magna ac placerat vestibulum lectus. Leo vel orci porta non pulvinar neque laoreet. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Laoreet non curabitur gravida arcu ac. Lorem dolor sed viverra ipsum nunc aliquet. In hac habitasse platea dictumst vestibulum. Ornare quam viverra orci sagittis eu volutpat. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Amet est placerat in egestas erat imperdiet sed. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Congue eu consequat ac felis donec et odio. Viverra nam libero justo laoreet sit amet cursus. Viverra accumsan in nisl nisi scelerisque eu.",
+	"map_name": "Salamander-class Wrecking Tug",
+	"description": "ICW Era Cruiser.",
 	"tags": [
 		"Syndicate",
 		"Combat"
@@ -20,21 +20,17 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/syndicate/captain",
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
 			"officer": true,
 			"slots": 1
 		},
 		"Lieutenant": {
-			"outfit": "/datum/outfit/job/syndicate/hos",
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr",
 			"officer": true,
 			"slots": 1
 		},
-		"Bridge Officer": {
-			"outfit": "/datum/outfit/job/syndicate/head_of_personnel",
-			"slots": 1
-		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/syndicate/doctor",
+			"outfit": "/datum/outfit/job/syndicate/doctor/ngr",
 			"slots": 1
 		},
 		"Mechanic": {
@@ -42,12 +38,12 @@
 			"slots": 2
 		},
 		"Operative": {
-			"outfit": "/datum/outfit/job/syndicate/security",
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
 			"slots": 3
 		},
-		"Junior Agent": {
-			"outfit": "/datum/outfit/job/syndicate/assistant",
-			"slots": 2
+		"Initiate": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 3
 		}
 	},
 	"enabled": true

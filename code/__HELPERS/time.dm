@@ -21,7 +21,7 @@
 /proc/sector_datestamp(realtime = world.realtime, shortened = FALSE)
 	//International Fixed Calendar format (https://en.wikipedia.org/wiki/International_Fixed_Calendar)
 	var/days_since = round(realtime / (24 HOURS))
-	var/year = round(days_since / 365) + 468
+	var/year = round(days_since / 365) + 481
 	var/day_of_year = days_since % 365
 	var/month = round(day_of_year / 28)
 	var/day_of_month = day_of_year % 28 + 1
