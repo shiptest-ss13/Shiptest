@@ -90,10 +90,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "aQ" = (
@@ -1518,10 +1515,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "mO" = (
@@ -2526,9 +2520,7 @@
 /area/outpost/vacant_rooms)
 "uX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -3798,9 +3790,7 @@
 /area/outpost/vacant_rooms)
 "EY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
