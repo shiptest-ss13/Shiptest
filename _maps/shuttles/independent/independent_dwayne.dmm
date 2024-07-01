@@ -189,6 +189,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/item/cigbutt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "bW" = (
@@ -516,7 +517,6 @@
 	dir = 8;
 	name = "connector port (Fuel)"
 	},
-/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "hO" = (
@@ -1728,7 +1728,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-5"
 	},
-/obj/item/storage/toolbox/emergency,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -2537,7 +2536,6 @@
 /area/ship/crew/dorm)
 "MQ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/item/cigbutt,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/button/door{
@@ -2686,20 +2684,17 @@
 /area/ship/cargo)
 "Oz" = (
 /obj/structure/table/reinforced,
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = -2;
-	pixel_y = 0
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = -3;
-	pixel_y = 4
-	},
 /obj/item/megaphone/cargo{
-	pixel_x = 17;
+	pixel_x = 14;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
 /obj/machinery/newscaster/directional/west,
+/obj/item/paper_bin{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/pen/fourcolor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OJ" = (
@@ -2942,6 +2937,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/item/cigbutt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "RJ" = (
