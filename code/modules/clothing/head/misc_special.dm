@@ -372,6 +372,7 @@
 	desc = "A realistic imitation of a flower. Not edible though."
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "poppy"
+	body_parts_covered = null
 	unique_reskin = list(
 		"Poppy" = "poppy",
 		"Sunflower" = "sunflower",
