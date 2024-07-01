@@ -146,10 +146,6 @@
 	display_name = "Elzuose color salve"
 	path = /obj/item/colorsalve
 
-/datum/gear/tablebell
-	display_name = "table bell, brass"
-	path = /obj/item/table_bell/brass
-
 // End Shiptest
 
 /datum/gear/flashlight
@@ -159,14 +155,6 @@
 /datum/gear/crowbar
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
-
-/datum/gear/balloon
-	display_name = "toy, balloon"
-	path = /obj/item/toy/balloon
-
-/datum/gear/balloon/ian
-	display_name = "toy, ian balloon"
-	path = /obj/item/toy/balloon/corgi
 
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
