@@ -121,3 +121,7 @@
 /datum/gear/hat/trapper
 	display_name = "trapper hat"
 	path = /obj/item/clothing/head/trapper
+
+/datum/gear/hat/flowers
+	display_name = "plastic flower, pickable"
+	path = /obj/item/clothing/head/plastic_flower
