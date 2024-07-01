@@ -95,8 +95,16 @@
 	path = /obj/item/cane
 
 /datum/gear/plushie
-	display_name = "box of plushes"
+	display_name = "box of plushes, standard"
 	path = /obj/item/choice_beacon/plushie
+
+/datum/gear/plushie/rilena
+	display_name = "box of plushes, RILENA"
+	path = /obj/item/choice_beacon/plushie/rilena
+
+/datum/gear/plushie/moth
+	display_name = "box of plushes, moths"
+	path = /obj/item/choice_beacon/plushie/moth
 
 /datum/gear/hairspray
 	display_name = "hair dye"

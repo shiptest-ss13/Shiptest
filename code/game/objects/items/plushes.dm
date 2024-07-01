@@ -866,8 +866,7 @@
 
 /obj/item/choice_beacon/plushie
 	name = "box of plushes"
-	desc = "Contains two plushies!"
-	uses = 2
+	desc = "Contains a little friend!"
 
 /obj/item/choice_beacon/plushie/generate_display_names()
 	var/static/list/plushies
@@ -879,7 +878,45 @@
 			/obj/item/toy/plush/snakeplushie,
 			/obj/item/toy/plush/slimeplushie,
 			/obj/item/toy/plush/beeplushie,
+			/obj/item/toy/plush/goatplushie,
 			/obj/item/toy/plush/realgoat,
+			/obj/item/toy/plush/spider,
+			/obj/item/toy/plush/flushed,
+			/obj/item/toy/plush/blahaj)
+		for(var/V in templist)
+			var/atom/A = V
+			plushies[initial(A.name)] = A
+	return plushies
+
+/obj/item/choice_beacon/plushie/rilena
+	name = "box of RILENA plushes"
+	desc = "Contains merch from the hit webcomic!"
+
+/obj/item/choice_beacon/plushie/rilena/generate_display_names()
+	var/static/list/plushies
+	if(!plushies)
+		plushies = list()
+		var/list/templist = list(
+			/obj/item/toy/plush/rilena,
+			/obj/item/toy/plush/tali,
+			/obj/item/toy/plush/sharai,
+			/obj/item/toy/plush/xader,
+			/obj/item/toy/plush/mora,
+			/obj/item/toy/plush/kari)
+		for(var/V in templist)
+			var/atom/A = V
+			plushies[initial(A.name)] = A
+	return plushies
+
+/obj/item/choice_beacon/plushie/moth
+	name = "box of moth plushes"
+	desc = "Contains an exceptionally fuzzy plushie."
+
+/obj/item/choice_beacon/plushie/moth/generate_display_names()
+	var/static/list/plushies
+	if(!plushies)
+		plushies = list()
+		var/list/templist = list(
 			/obj/item/toy/plush/moth,
 			/obj/item/toy/plush/moth/luna,
 			/obj/item/toy/plush/moth/atlas,
@@ -894,16 +931,7 @@
 			/obj/item/toy/plush/moth/poison,
 			/obj/item/toy/plush/moth/ragged,
 			/obj/item/toy/plush/moth/snow,
-			/obj/item/toy/plush/moth/moonfly,
-			/obj/item/toy/plush/spider,
-			/obj/item/toy/plush/flushed,
-			/obj/item/toy/plush/blahaj,
-			/obj/item/toy/plush/rilena,
-			/obj/item/toy/plush/tali,
-			/obj/item/toy/plush/sharai,
-			/obj/item/toy/plush/xader,
-			/obj/item/toy/plush/mora,
-			/obj/item/toy/plush/kari)
+			/obj/item/toy/plush/moth/moonfly)
 		for(var/V in templist)
 			var/atom/A = V
 			plushies[initial(A.name)] = A
