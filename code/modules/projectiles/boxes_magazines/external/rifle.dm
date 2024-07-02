@@ -56,7 +56,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/skm_762_40/empty
-	start_empty = FALSE
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/extended
 	name = "extended assault rifle magazine (7.62x40mm CLIP)"
