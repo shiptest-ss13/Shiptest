@@ -367,3 +367,20 @@
 	if(!warped)
 		warp_up()
 
+/obj/item/clothing/head/plastic_flower
+	name = "plastic flower"
+	desc = "A realistic imitation of a flower. Not edible though."
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon_state = "poppy"
+	body_parts_covered = null
+	unique_reskin = list(
+		"Poppy" = "poppy",
+		"Sunflower" = "sunflower",
+		"Moonflower" = "moonflower",
+		"Novaflower" = "novaflower",
+		"Harebell" = "harebell",
+		"Geranium" = "geranium",
+		"Lily" = "lily"
+		)
+	custom_materials = (list(/datum/material/plastic = 1000))
+
