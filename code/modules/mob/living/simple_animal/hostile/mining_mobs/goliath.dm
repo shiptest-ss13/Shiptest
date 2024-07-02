@@ -250,10 +250,7 @@
 	health = 180
 	speed = 4
 	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
-	pre_attack_icon = "ancient_goliath_preattack"
-	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
-	trophy_drop_mod = 75
 	wander = FALSE
 	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
@@ -280,9 +277,9 @@
 			else
 				cached_tentacle_turfs -= t
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
-	fromtendril = TRUE
+	from_nest = TRUE
 
 //tentacles
 /obj/effect/temp_visual/goliath_tentacle

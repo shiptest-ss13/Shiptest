@@ -2,10 +2,10 @@
 	category = "Bosses"
 	icon = "baseboss"
 
-/datum/award/achievement/boss/tendril_exterminator
-	name = "Tendril Exterminator"
+/datum/award/achievement/boss/nest_exterminator
+	name = "Nest Exterminator"
 	desc = "Watch your step"
-	database_id = BOSS_MEDAL_TENDRIL
+	database_id = BOSS_MEDAL_NEST
 	icon = "tendril"
 
 /datum/award/achievement/boss/boss_killer
@@ -55,22 +55,10 @@
 	database_id = BOSS_MEDAL_LEGION
 	icon = "legion"
 
-/datum/award/achievement/boss/swarmer_beacon_kill
-	name = "Swarm Beacon Killer"
-	desc = "GET THEM OFF OF ME!"
-	database_id = BOSS_MEDAL_SWARMERS
-	icon = "swarmer"
-
 /datum/award/achievement/boss/wendigo_kill
 	name = "Wendigo Killer"
 	desc = "You've now ruined years of mythical storytelling."
 	database_id = BOSS_MEDAL_WENDIGO
-
-/datum/award/achievement/boss/king_goat_kill
-	name = "King Goat Killer"
-	desc = "The king is dead, long live the king!"
-	database_id = BOSS_MEDAL_KINGGOAT
-	icon = "goatboss"
 
 /datum/award/achievement/boss/blood_miner_crusher
 	name = "Blood-drunk Miner Crusher"
@@ -112,18 +100,7 @@
 	desc = "We were many... now we are none."
 	database_id = BOSS_MEDAL_LEGION_CRUSHER
 
-/datum/award/achievement/boss/swarmer_beacon_crusher
-	name = "Swarm Beacon Crusher"
-	desc = "GET THEM OFF OF ME!"
-	database_id = BOSS_MEDAL_SWARMERS_CRUSHER
-
 /datum/award/achievement/boss/wendigo_crusher
 	name = "Wendigo Crusher"
 	desc = "You've now ruined years of mythical storytelling."
 	database_id = BOSS_MEDAL_WENDIGO_CRUSHER
-
-/datum/award/achievement/boss/king_goat_crusher
-	name = "King Goat Crusher"
-	desc = "The king is dead, long live the king!"
-	database_id = BOSS_MEDAL_KINGGOAT_CRUSHER
-	icon = "goatboss"
