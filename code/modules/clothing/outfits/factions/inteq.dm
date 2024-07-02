@@ -29,31 +29,40 @@
 ///captains
 
 /datum/outfit/job/inteq/captain
-	name = "IRMG - Vanguard (Naked)"
+	name = "IRMG - Vanguard"
 	id_assignment = "Vanguard"
 	jobtype = /datum/job/captain
 	job_icon = "captain"
 
-	ears = /obj/item/radio/headset/inteq/alt/captain
-	shoes = /obj/item/clothing/shoes/combat
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	jobtype = /datum/job/captain
 	id = /obj/item/card/id/gold
-
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-
-/datum/outfit/job/inteq/captain/geared
-	name = "IRMG - Vanguard"
-
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq
 	gloves = /obj/item/clothing/gloves/combat
-	accessory = null
+	ears = /obj/item/radio/headset/inteq/alt/captain
+	shoes = /obj/item/clothing/shoes/combat
+
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+/datum/outfit/job/inteq/captain/empty
+	name = "IRMG - Vanguard (Naked)"
+
+	head = null
+	glasses = null
+	mask = null
+	belt = null
+	suit = null
+	dcoat = null
+	gloves = null
+
+	r_pocket = null
+	l_pocket = null
 
 /datum/outfit/job/inteq/captain/honorable
 	name = "IRMG - Honorable Vanguard"
@@ -140,6 +149,14 @@
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
+/datum/outfit/job/inteq/security/empty
+	name = "IRMG - Enforcer (Naked)"
+	head = null
+	suit = null
+	belt = null
+	mask = null
+	gloves = null
+
 /datum/outfit/job/inteq/security/beluga
 	name = "IRMG - Enforcer (Beluga)"
 
@@ -155,14 +172,6 @@
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-
-/datum/outfit/job/inteq/security/empty
-	name = "IRMG - Enforcer (Naked)"
-	head = null
-	suit = null
-	belt = null
-	mask = null
-	gloves = null
 
 ///engineers
 
@@ -200,6 +209,17 @@
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+/datum/outfit/job/inteq/warden/pilot
+	name = "IRMG - Shuttle Pilot"
+	job_icon = "securityofficer"
+	id_assignment = "Shuttle Pilot"
+
+	head = /obj/item/clothing/head/soft/inteq
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	belt = null
+	mask = /obj/item/clothing/mask/breath
+	gloves = /obj/item/clothing/gloves/fingerless
 
 // cmo
 

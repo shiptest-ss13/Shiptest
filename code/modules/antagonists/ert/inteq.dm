@@ -20,5 +20,5 @@
 
 /datum/antagonist/ert/inteq/leader
 	name = "Inteq Mercenary Leader"
-	outfit = /datum/outfit/job/inteq/captain
+	outfit = /datum/outfit/job/inteq/captain/empty
 	role = "Vanguard"
