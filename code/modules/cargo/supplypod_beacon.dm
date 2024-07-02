@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	var/obj/machinery/computer/cargo/express/express_console
+	var/obj/machinery/computer/cargo/cargo_console
 	var/linked = FALSE
 	var/ready = FALSE
 	var/launched = FALSE
@@ -49,39 +49,39 @@
 
 /obj/item/supplypod_beacon/examine(user)
 	. = ..()
-	if(!express_console)
+	if(!cargo_console)
 		. += "<span class='notice'>[src] is not currently linked to an Express Supply console.</span>"
 	else
 		. += "<span class='notice'>Alt-click to unlink it from the Express Supply console.</span>"
 
 /obj/item/supplypod_beacon/Destroy()
-	if(express_console)
-		express_console.beacon = null
+	if(cargo_console)
+		cargo_console.beacon = null
 	return ..()
 
 /obj/item/supplypod_beacon/proc/unlink_console()
-	if(express_console)
-		express_console.beacon = null
-		express_console = null
+	if(cargo_console)
+		cargo_console.beacon = null
+		cargo_console = null
 	update_status(SP_UNLINK)
 	update_status(SP_UNREADY)
 
-/obj/item/supplypod_beacon/proc/link_console(obj/machinery/computer/cargo/express/C, mob/living/user)
+/obj/item/supplypod_beacon/proc/link_console(obj/machinery/computer/cargo/C, mob/living/user)
 	if (C.beacon)//if new console has a beacon, then...
 		C.beacon.unlink_console()//unlink the old beacon from new console
-	if (express_console)//if this beacon has an express console
-		express_console.beacon = null//remove the connection the expressconsole has from beacons
-	express_console = C//set the linked console var to the console
-	express_console.beacon = src//out with the old in with the news
+	if (cargo_console)//if this beacon has an express console
+		cargo_console.beacon = null//remove the connection the expressconsole has from beacons
+	cargo_console = C//set the linked console var to the console
+	cargo_console.beacon = src//out with the old in with the news
 	update_status(SP_LINKED)
-	if (express_console.use_beacon)
+	if (cargo_console.use_beacon)
 		update_status(SP_READY)
 	to_chat(user, "<span class='notice'>[src] linked to [C].</span>")
 
 /obj/item/supplypod_beacon/AltClick(mob/user)
 	if (!user.canUseTopic(src, !issilicon(user)))
 		return
-	if (express_console)
+	if (cargo_console)
 		unlink_console()
 	else
 		to_chat(user, "<span class='alert'>There is no linked console.</span>")
