@@ -26,6 +26,7 @@
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
 	var/break_sound = 'sound/items/welder.ogg'
+	var/decon_time = 2 SECONDS
 
 	var/list/dent_decals
 
@@ -246,17 +247,16 @@
 
 	return FALSE
 
+/turf/closed/wall/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, decon_time, volume=100))
+		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
+		dismantle_wall()
+		return TRUE
 
 /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
-	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
-		if(do_after(user, 50, target = src))
-			if(!iswallturf(src))
-				return TRUE
-			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			dismantle_wall()
-			return TRUE
 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)

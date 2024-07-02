@@ -18,6 +18,7 @@
 	girder_type = /obj/structure/girder/reinforced
 	explosion_block = 2
 	rad_insulation = RAD_HEAVY_INSULATION
+	decon_time = 10 SECONDS
 	///Dismantled state, related to deconstruction.
 	var/d_state = INTACT
 
@@ -53,18 +54,6 @@
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		to_chat(M, "<span class='warning'>This wall is far too strong for you to destroy.</span>")
-
-/turf/closed/wall/r_wall/try_destroy(obj/item/I, mob/user, turf/T)
-	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
-		if(do_after(user, 75, target = src))
-			if(!istype(src, /turf/closed/wall/r_wall))
-				return TRUE
-			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			dismantle_wall()
-			return TRUE
-	return FALSE
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
 	//DECONSTRUCTION
