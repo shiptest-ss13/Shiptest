@@ -63,7 +63,7 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	wield_slowdown = 2
 	spread = -4
 
-EMPTY_GUN_HELPER(automatic/marksman)
+EMPTY_GUN_HELPER(automatic/marksman/ebr)
 
 /obj/item/gun/ballistic/automatic/marksman/gal
 	name = "\improper CM-GAL-S"
