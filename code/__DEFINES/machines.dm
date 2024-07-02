@@ -123,9 +123,16 @@
 #define MACHINE_ELECTRIFIED_PERMANENT -1
 #define MACHINE_DEFAULT_ELECTRIFY_TIME 30
 
-//these flags are used to tell the DNA modifier if a plant gene cannot be extracted or modified.
+/// -- Flags for genes --
+/// Plant genes that can be removed via gene shears.
 #define PLANT_GENE_REMOVABLE (1<<0)
-#define PLANT_GENE_EXTRACTABLE (1<<1)
+/// Plant genes that can be mutated randomly in strange seeds / due to high instability.
+#define PLANT_GENE_MUTATABLE (1<<1)
+#define PLANT_GENE_EXTRACTABLE (1<<2)
+
+/// -- Flags for traits. --
+/// Caps the plant's yield at 5 instead of 10.
+#define TRAIT_HALVES_YIELD (1<<0)
 
 //used to determine what rotation mode the ore redemption machine is in
 #define ORM_BOTH 0
