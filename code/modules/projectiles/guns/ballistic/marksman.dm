@@ -10,6 +10,10 @@
 /obj/item/gun/ballistic/automatic/marksman/sniper_rifle
 	name = "sniper rifle"
 	desc = "An anti-material rifle chambered in .50 BMG with a scope mounted on it. Its prodigious bulk requires both hands to use."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "sniper"
 	item_state = "sniper"
 	fire_sound = 'sound/weapons/gun/sniper/shot.ogg'

@@ -226,6 +226,8 @@
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 
+	icon_state = "solar"
+
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7

@@ -379,6 +379,12 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 /obj/item/gun/ballistic/derringer/traitor
 	name = "\improper .357 Syndicate Derringer"
 	desc = "An easily concealable derriger, if not for the bright red-and-black. Uses .357 ammo."
+
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	icon_state = "derringer_syndie"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 	fire_sound_volume = 50 //Tactical stealth firing
