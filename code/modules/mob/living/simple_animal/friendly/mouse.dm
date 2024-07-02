@@ -145,9 +145,6 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	else
 		return ..()
 
-/mob/living/simple_animal/mouse/attack_ghost(mob/dead/observer/user)
-	user.possess_mouse(src)
-
 /mob/living/simple_animal/mouse/start_pulling(atom/movable/AM, state, force, supress_message)
 	return FALSE
 
