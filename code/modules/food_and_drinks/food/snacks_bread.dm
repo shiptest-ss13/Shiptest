@@ -44,7 +44,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/moldy
 	name = "moldy bread slice"
-	desc = "Entire stations have been ripped apart over arguing whether this is still good to eat."
+	desc = "Mold colonies have taken root on this humble piece of bread. Its a gamble to try and shave off the mold to make edible again..."
 	icon_state = "moldybreadslice"
 	customfoodfilling = 0
 	bonus_reagents = list(/datum/reagent/consumable/mold = 10)
@@ -53,7 +53,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/meat
 	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	desc = "The culinary oddity, originating from an obscure spacer tradition. "
 	icon_state = "meatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/meat
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -69,7 +69,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/xenomeat
 	name = "xenomeatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman. Extra Heretical."
+	desc = "The culinary oddity, originating from an obscure spacer tradition. The meat in the roll is green and acrid..."
 	icon_state = "xenomeatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/xenomeat
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -79,7 +79,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/xenomeat
 	name = "xenomeatbread slice"
-	desc = "A slice of delicious meatbread. Extra Heretical."
+	desc = "A slice of meatbread. Now sliced, the prepared meat oozes slightly..."
 	icon_state = "xenobreadslice"
 	filling_color = "#32CD32"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -87,7 +87,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/spidermeat
 	name = "spider meat loaf"
-	desc = "Reassuringly green meatloaf made from spider meat."
+	desc = "A meatloaf made from giant arachnid. Sometimes prepared when culling the invasive species, the texture is questionable, and the health detriments are undeniable."
 	icon_state = "spidermeatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/spidermeat
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -97,7 +97,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/spidermeat
 	name = "spider meat bread slice"
-	desc = "A slice of meatloaf made from an animal that most likely still wants you dead."
+	desc = "A slice of meatloaf made from giant arachnid. The green meat threatens to fall apart from its already gelatinous state when cut."
 	icon_state = "spiderbreadslice"
 	filling_color = "#7CFC00"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/toxin = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -105,7 +105,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/banana
 	name = "banana-nut bread"
-	desc = "A heavenly and filling treat."
+	desc = "Banana bread - a terran classic. The beloved savior of overripe bananas."
 	icon_state = "bananabread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/banana
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/banana = 20)
@@ -124,7 +124,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/tofu
 	name = "Tofubread"
-	desc = "Like meatbread but for vegetarians. Not guaranteed to give superpowers."
+	desc = "A tofu-based variant of the spacer delicacy that is meatbread."
 	icon_state = "tofubread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/tofu
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -134,7 +134,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/tofu
 	name = "tofubread slice"
-	desc = "A slice of delicious tofubread."
+	desc = "A slice of tofubread."
 	icon_state = "tofubreadslice"
 	filling_color = "#FF8C00"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -142,7 +142,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/creamcheese
 	name = "cream cheese bread"
-	desc = "Yum yum yum!"
+	desc = "A cream cheese-filled loaf. Pleasantly filling."
 	icon_state = "creamcheesebread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/creamcheese
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -152,7 +152,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/creamcheese
 	name = "cream cheese bread slice"
-	desc = "A slice of yum!"
+	desc = "A slice of cream cheese bread."
 	icon_state = "creamcheesebreadslice"
 	filling_color = "#FF8C00"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -160,7 +160,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/mimana
 	name = "mimana bread"
-	desc = "Best eaten in silence."
+	desc = "Banana bread, made with a mutant line of bananas. The flavor isn't muted, but you might be."
 	icon_state = "mimanabread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/mimana
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -170,7 +170,7 @@
 
 /obj/item/reagent_containers/food/snacks/breadslice/mimana
 	name = "mimana bread slice"
-	desc = "A slice of silence!"
+	desc = "A slice of mutant-banana bread. The grey of the mimana is a little off-putting when viewed like this..."
 	icon_state = "mimanabreadslice"
 	filling_color = "#C0C0C0"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -184,7 +184,7 @@
 
 /obj/item/reagent_containers/food/snacks/baguette
 	name = "baguette"
-	desc = "Bon appetit!"
+	desc = "A long, thin loaf of crusty bread. A preserved terran classic. You can't help but wield it like a stick when you hold it."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "baguette"
 	item_state = "baguette"
@@ -199,7 +199,7 @@
 
 /obj/item/reagent_containers/food/snacks/garlicbread
 	name = "garlic bread"
-	desc = "Alas, it is limited."
+	desc = "Garlic and butter-topped bread. Widely enjoyed by every species that can eat grains."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "garlicbread"
 	item_state = "garlicbread"
@@ -276,7 +276,7 @@
 
 /obj/item/reagent_containers/food/snacks/butterbiscuit
 	name = "butter biscuit"
-	desc = "Well butter my biscuit!"
+	desc = "A type of \"quick bread\", topped with butter. Not to be confused with the pastry also referred to as a biscuit."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "butterbiscuit"
 	filling_color = "#F0E68C"
@@ -287,7 +287,7 @@
 
 /obj/item/reagent_containers/food/snacks/butterdog
 	name = "butterdog"
-	desc = "Made from exotic butters."
+	desc = "A shaped stick of butter, placed in a long bun. Is this... going to be pleasant?"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "butterdog"
 	bitesize = 1
