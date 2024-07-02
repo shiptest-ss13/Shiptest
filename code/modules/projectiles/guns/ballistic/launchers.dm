@@ -4,8 +4,6 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
