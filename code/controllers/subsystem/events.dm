@@ -3,31 +3,39 @@ SUBSYSTEM_DEF(events)
 	init_order = INIT_ORDER_EVENTS
 	runlevels = RUNLEVEL_GAME
 
-	can_fire = FALSE
-
-	var/list/control = list()	//list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
-	var/list/running = list()	//list of all existing /datum/round_event
+	///list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
+	var/list/control = list()
+	///list of all existing /datum/round_event currently being run.
+	var/list/running = list()
+	///cache of currently running events, for lag checking.
 	var/list/currentrun = list()
-
-	var/scheduled = 0			//The next world.time that a naturally occuring random event can be selected.
-	var/frequency_lower = 1800	//3 minutes lower bound.
-	var/frequency_upper = 6000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
-
-	var/list/holidays			//List of all holidays occuring today or null if no holidays
+	///The next world.time that a naturally occuring random event can be selected.
+	var/scheduled = 0
+	///The lower bound for how soon another random event can be scheduled.
+	var/frequency_lower = 2.5 MINUTES
+	///The upper bound for how soon another random event can be scheduled.
+	var/frequency_upper = 7 MINUTES
+	///Will wizard events be included in the event pool?
 	var/wizardmode = FALSE
+	var/list/holidays
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)
+	can_fire = CONFIG_GET(flag/should_events)
 	for(var/type in typesof(/datum/round_event_control))
-		var/datum/round_event_control/E = new type()
-		if(!E.typepath)
-			continue				//don't want this one! leave it for the garbage collector
-		control += E				//add it to the list of all events (controls)
+		var/datum/round_event_control/event = new type()
+		if(!event.typepath)
+			continue //don't want this one! leave it for the garbage collector
+		control += event //add it to the list of all events (controls)
+
+	frequency_lower = CONFIG_GET(number/events_frequency_lower)
+	frequency_upper = CONFIG_GET(number/events_frequency_upper)
+
 	reschedule()
 	getHoliday()
 	return ..()
 
 
-/datum/controller/subsystem/events/fire(resumed = 0)
+/datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
 		checkEvent() //only check these if we aren't resuming a paused fire
 		src.currentrun = running.Copy()
@@ -62,7 +70,7 @@ SUBSYSTEM_DEF(events)
 		return
 
 	var/gamemode = SSticker.mode.config_tag
-	var/players_amt = get_active_player_count(alive_check = 1, afk_check = 1, human_check = 1)
+	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 	// Only alive, non-AFK human players count towards this.
 
 	var/sum_of_weights = 0

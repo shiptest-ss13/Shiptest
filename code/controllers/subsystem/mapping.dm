@@ -152,6 +152,7 @@ SUBSYSTEM_DEF(mapping)
 
 #define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
 #define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { log_world("[##X] missing from json!"); continue; }
+
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
 	maplist = list()
 	ship_purchase_list = list()
@@ -194,8 +195,8 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
-			S.unique_ship_access = data[ "unique_ship_access" ]
+		if(isnum(data["unique_ship_access"]))
+			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))
 			S.description = data["description"]

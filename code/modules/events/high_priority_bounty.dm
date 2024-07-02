@@ -1,20 +1,29 @@
-/datum/round_event_control/high_priority_bounty
-	name = "High Priority Bounty"
-	typepath = /datum/round_event/high_priority_bounty
+/*
+/datum/round_event_control/high_priority_mission
+	name = "High Priority Mission"
+	typepath = /datum/round_event/high_priority_mission
 	max_occurrences = 3
 	weight = 20
-	earliest_start = 10
+	earliest_start = 0 //10 MINUTES
 
-/datum/round_event/high_priority_bounty/announce(fake)
-	priority_announce("Central Command has issued a high-priority cargo bounty. Details have been sent to all bounty consoles.", "Nanotrasen Bounty Program")
+/datum/round_event_control/high_priority_missiony/canSpawnEvent(players, allow_magic = FALSE)
+	if(!(length(SSovermap.outposts)))
+		return FALSE
+	return ..()
 
-/datum/round_event/high_priority_bounty/start()
-	var/datum/bounty/B
-	for(var/attempts = 0; attempts < 50; ++attempts)
-		B = random_bounty()
-		if(!B)
-			continue
-		B.mark_high_priority(3)
-		if(try_add_bounty(B))
-			break
+/datum/round_event/high_priority_mission
+	var/datum/mission/priority_mission
+	var/datum/overmap/outpost/target_outpost
 
+/datum/round_event/high_priority_mission/announce()
+	priority_announce("We have issued a high-priority mission. Details have been sent to all consoles.", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
+
+/datum/round_event/high_priority_mission/setup()
+	target_outpost = pick(SSovermap.outposts)
+	priority_mission = pick(target_outpost.missions)
+
+/datum/round_event/high_priority_mission/start()
+	if(priority_mission)
+		priority_mission.name = "HIGH PRIORITY - [priority_mission.name]"
+		priority_mission.value = priority_mission.value * 3
+*/
