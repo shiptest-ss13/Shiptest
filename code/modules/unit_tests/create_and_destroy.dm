@@ -72,7 +72,7 @@
 	ignore += typesof(/obj/effect/pod_landingzone_effect)
 	ignore += typesof(/obj/effect/pod_landingzone)
 	//These want fried food to take on the shape of, we can't pass that in
-	ignore += typesof(/obj/item/reagent_containers/food/snacks/deepfryholder)
+	ignore += typesof(/obj/item/food/deepfryholder)
 	//Can't pass in a thing to glow
 	ignore += typesof(/obj/effect/abstract/eye_lighting)
 	//It wants a lot more context then we have

@@ -6,7 +6,7 @@
 	var/obj/structure/table/the_table = allocate(/obj/structure/table)
 	var/obj/item/storage/bag/tray/test_tray = allocate(/obj/item/storage/bag/tray)
 	var/obj/item/reagent_containers/food/banana = allocate(/obj/item/reagent_containers/food/snacks/grown/banana)
-	var/obj/item/reagent_containers/food/the_bread = allocate(/obj/item/reagent_containers/food/snacks/breadslice)
+	var/obj/item/reagent_containers/food/the_bread = allocate(/obj/item/food/breadslice)
 	var/obj/item/reagent_containers/food/sugarcookie = allocate(/obj/item/reagent_containers/food/snacks/sugarcookie)
 	var/obj/item/clothing/under/jumpsuit = allocate(/obj/item/clothing/under/color/black)
 
