@@ -35,6 +35,8 @@
 	recoil = 1
 	recoil_unwielded = 4
 
+	gunslinger_recoil_bonus = -1
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -45,15 +47,6 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
-
-/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
