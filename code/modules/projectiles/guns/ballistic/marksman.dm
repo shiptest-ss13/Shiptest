@@ -39,6 +39,8 @@
 
 	wield_delay = 1.3 SECONDS
 
+EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
+
 /obj/item/gun/ballistic/automatic/marksman/ebr //fuck this gun, its getting wiped soon enough
 	name = "\improper M514 EBR"
 	desc = "A reliable, high-powered battle rifle often found in the hands of Syndicate personnel and remnants, chambered in .308. Effective against personnel and armor alike."
