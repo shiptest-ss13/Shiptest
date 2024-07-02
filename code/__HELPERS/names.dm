@@ -176,8 +176,8 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	var/locations = strings(LOCATIONS_FILE, "locations")
 
 	var/list/names = list()
-	for(var/datum/data/record/t in GLOB.data_core.general)//Picks from crew manifest.
-		names += t.fields["name"]
+	for(var/datum/data/record/t in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))//Picks from crew manifest.
+		names += t.fields[DATACORE_NAME]
 
 	var/maxwords = words//Extra var to check for duplicates.
 

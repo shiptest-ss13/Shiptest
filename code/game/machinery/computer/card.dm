@@ -180,8 +180,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/list/dat = list()
 	if (mode == 1) // accessing crew manifest
 		dat += "<tt><b>Crew Manifest:</b><br>Please use security record computer to modify entries.<br><br>"
-		for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
-			dat += {"[t.fields["name"]] - [t.fields["rank"]]<br>"}
+		for(var/datum/data/record/t in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
+			dat += {"[t.fields[DATACORE_NAME]] - [t.fields[DATACORE_RANK]]<br>"}
 		dat += "<a href='?src=[REF(src)];choice=print'>Print</a><br><br><a href='?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
 
 	else
@@ -464,8 +464,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				sleep(50)
 				var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
 				var/t1 = "<B>Crew Manifest:</B><BR>"
-				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
-					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"
+				for(var/datum/data/record/t in sortRecord(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
+					t1 += t.fields[DATACORE_NAME] + " - " + t.fields[DATACORE_RANK] + "<br>"
 				printed_paper.add_raw_text(t1)
 				printed_paper.name = "paper- 'Crew Manifest'"
 				printing = null

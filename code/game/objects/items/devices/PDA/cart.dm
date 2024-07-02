@@ -231,10 +231,6 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=1'>+</a>
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br><br>
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
-		if (41) //crew manifest
-			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[SSovermap.get_manifest_html()]</center>"
-
 
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
@@ -313,99 +309,6 @@ Code:
 
 				menu += "</FONT></PRE>"
 
-		if (44) //medical records //This thing only displays a single screen so it's hard to really get the sub-menu stuff working.
-			menu = "<h4>[PDAIMG(medical)] Medical Record List</h4>"
-			if(GLOB.data_core.general)
-				for(var/datum/data/record/R in sortRecord(GLOB.data_core.general))
-					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
-			menu += "<br>"
-		if(441)
-			menu = "<h4>[PDAIMG(medical)] Medical Record</h4>"
-
-			if(active1 in GLOB.data_core.general)
-				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
-				menu += "Gender: [active1.fields["gender"]]<br>"
-				menu += "Age: [active1.fields["age"]]<br>"
-				menu += "Rank: [active1.fields["rank"]]<br>"
-				menu += "Fingerprint: [active1.fields["fingerprint"]]<br>"
-				menu += "Physical Status: [active1.fields["p_stat"]]<br>"
-				menu += "Mental Status: [active1.fields["m_stat"]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
-			menu += "<h4>[PDAIMG(medical)] Medical Data</h4>"
-			if(active2 in GLOB.data_core.medical)
-				menu += "Blood Type: [active2.fields["blood_type"]]<br><br>"
-
-				menu += "Minor Disabilities: [active2.fields["mi_dis"]]<br>"
-				menu += "Details: [active2.fields["mi_dis_d"]]<br><br>"
-
-				menu += "Major Disabilities: [active2.fields["ma_dis"]]<br>"
-				menu += "Details: [active2.fields["ma_dis_d"]]<br><br>"
-
-				menu += "Allergies: [active2.fields["alg"]]<br>"
-				menu += "Details: [active2.fields["alg_d"]]<br><br>"
-
-				menu += "Current Diseases: [active2.fields["cdi"]]<br>"
-				menu += "Details: [active2.fields["cdi_d"]]<br><br>"
-
-				menu += "Important Notes: [active2.fields["notes"]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-		if (45) //security records
-			menu = "<h4>[PDAIMG(cuffs)] Security Record List</h4>"
-			if(GLOB.data_core.general)
-				for (var/datum/data/record/R in sortRecord(GLOB.data_core.general))
-					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
-
-			menu += "<br>"
-		if(451)
-			menu = "<h4>[PDAIMG(cuffs)] Security Record</h4>"
-
-			if(active1 in GLOB.data_core.general)
-				menu += "Name: [active1.fields["name"]] ID: [active1.fields["id"]]<br>"
-				menu += "Gender: [active1.fields["gender"]]<br>"
-				menu += "Age: [active1.fields["age"]]<br>"
-				menu += "Rank: [active1.fields["rank"]]<br>"
-				menu += "Fingerprint: [active1.fields["fingerprint"]]<br>"
-				menu += "Physical Status: [active1.fields["p_stat"]]<br>"
-				menu += "Mental Status: [active1.fields["m_stat"]]<br>"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
-			menu += "<h4>[PDAIMG(cuffs)] Security Data</h4>"
-			if(active3 in GLOB.data_core.security)
-				menu += "Criminal Status: [active3.fields["criminal"]]<br>"
-
-				menu += text("<BR>\nCrimes:")
-
-				menu +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
-<tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
-</tr>"}
-				for(var/datum/data/crime/c in active3.fields["crim"])
-					menu += "<tr><td>[c.crimeName]</td>"
-					menu += "<td>[c.crimeDetails]</td>"
-					menu += "<td>[c.author]</td>"
-					menu += "<td>[c.time]</td>"
-					menu += "</tr>"
-				menu += "</table>"
-				menu += "<BR>\nImportant Notes:<br>"
-				menu += "[active3.fields["notes"]]"
-			else
-				menu += "<b>Record Lost!</b><br>"
-
-			menu += "<br>"
-
 		if (49) //janitorial locator
 			// hey there people, so there were two in world loops here that didnt have a timer assosciated with them.
 			// and instead of redoing this to not be actually god awful for perf and malcontent issues, I've removed it entirely.
@@ -469,22 +372,6 @@ Code:
 		return
 
 	switch(href_list["choice"])
-		if("Medical Records")
-			active1 = find_record("id", href_list["target"], GLOB.data_core.general)
-			if(active1)
-				active2 = find_record("id", href_list["target"], GLOB.data_core.medical)
-			host_pda.mode = 441
-			if(!active2)
-				active1 = null
-
-		if("Security Records")
-			active1 = find_record("id", href_list["target"], GLOB.data_core.general)
-			if(active1)
-				active3 = find_record("id", href_list["target"], GLOB.data_core.security)
-			host_pda.mode = 451
-			if(!active3)
-				active1 = null
-
 		if("Send Signal")
 			INVOKE_ASYNC(radio, TYPE_PROC_REF(/obj/item/integrated_signaler, send_activation))
 

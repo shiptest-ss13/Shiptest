@@ -57,10 +57,6 @@
 		CONTRACT_PAYOUT_SMALL
 	)
 
-	//What the fuck
-	if(length(to_generate) > length(GLOB.data_core.locked))
-		to_generate.Cut(1, length(GLOB.data_core.locked))
-
 	// We don't want the sum of all the payouts to be under this amount
 	var/lowest_TC_threshold = 30
 

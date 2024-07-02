@@ -542,10 +542,10 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		gamer.client.give_award(/datum/award/achievement/misc/gamer, gamer) // PSYCH REPORT NOTE: patient kept rambling about how they did it for an "achievement", recommend continued holding for observation
 		gamer.mind?.adjust_experience(/datum/skill/gaming, 50) // cheevos make u better
 
-		if(!isnull(GLOB.data_core.general))
-			for(var/datum/data/record/R in GLOB.data_core.general)
-				if(R.fields["name"] == gamer.name)
-					R.fields["m_stat"] = "*Unstable*"
+		if(!isnull(SSdatacore.get_records(DATACORE_RECORDS_OUTPOST)))
+			for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
+				if(R.fields[DATACORE_NAME] == gamer.name)
+					R.fields[DATACORE_MENTAL_HEALTH] = "*Unstable*"
 					return
 
 /obj/machinery/computer/arcade/orion_trail/ui_interact(mob/user)

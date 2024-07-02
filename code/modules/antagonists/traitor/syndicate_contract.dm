@@ -20,10 +20,10 @@
 
 	var/datum/data/record/record
 	if (contract.target)
-		record = find_record("name", contract.target.name, GLOB.data_core.general)
+		record = SSdatacore.get_record_by_name(contract.target.name, DATACORE_RECORDS_OUTPOST)
 
 	if (record)
-		target_rank = record.fields["rank"]
+		target_rank = record.fields[DATACORE_RANK]
 	else
 		target_rank = "Unknown"
 
