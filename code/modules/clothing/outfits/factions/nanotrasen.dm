@@ -53,9 +53,13 @@
 
 	head = /obj/item/clothing/head/nanotrasen/cap/supply
 	uniform = /obj/item/clothing/under/nanotrasen/supply/qm
+	suit = null
+	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = null
+	neck = null
 	l_hand = /obj/item/clipboard
 
 	chameleon_extras = /obj/item/stamp/qm
