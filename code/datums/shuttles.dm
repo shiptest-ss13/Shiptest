@@ -358,7 +358,7 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-//your subshuttle here
+//your subshuttle here //why is my subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
@@ -401,6 +401,11 @@
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
 	prefix = "PGF"
+
+/datum/map_template/shuttle/subshuttles/tanto
+	file_name = "independent_tanto"
+	name = "Tanto-class Drop Pod"
+	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/brawler
 	file_name = "frontiersmen_brawler"
