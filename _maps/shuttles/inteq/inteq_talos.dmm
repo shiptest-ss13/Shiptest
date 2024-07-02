@@ -2961,6 +2961,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -30;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "sa" = (
@@ -3419,10 +3424,10 @@
 	},
 /obj/item/gun/ballistic/shotgun/bulldog/inteq/no_mag{
 	pixel_x = -8;
-	pixel_y = 8;
+	pixel_y = 8
 	},
 /obj/item/gun/ballistic/shotgun/bulldog/inteq/no_mag{
-	pixel_x = -12;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -6310,6 +6315,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
+/obj/machinery/igniter/incinerator_atmos,
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "Ps" = (
@@ -7253,7 +7259,6 @@
 	},
 /obj/machinery/button/door{
 	id = "talos_tank_burn";
-	name = "Access Door Control";
 	pixel_x = 4;
 	pixel_y = 21;
 	req_access = null;

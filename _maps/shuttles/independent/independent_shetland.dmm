@@ -1895,7 +1895,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2215,12 +2214,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
-"sV" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "sX" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -2299,9 +2292,6 @@
 "tU" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "tX" = (
@@ -2934,9 +2924,6 @@
 	dir = 4;
 	pixel_x = -23;
 	pixel_y = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -4405,9 +4392,6 @@
 /obj/item/clothing/mask/cigarette{
 	pixel_x = -4;
 	pixel_y = 10
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
 	},
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
@@ -5912,11 +5896,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Zn" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/machinery/disposal/bin,
-/obj/item/weldingtool/mini,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zr" = (
@@ -6109,7 +6088,7 @@ pr
 NK
 yP
 qk
-sV
+Zn
 CZ
 vz
 on
