@@ -469,6 +469,11 @@
 	duration = 12
 	shrink = FALSE
 
+/obj/effect/temp_visual/light_ash
+	icon_state = "light_ash"
+	icon = 'icons/effects/weather_effects.dmi'
+	duration = 3.2 SECONDS
+
 /obj/effect/temp_visual/warp_cube
 	duration = 5
 	var/outgoing = TRUE

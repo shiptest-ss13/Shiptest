@@ -122,7 +122,7 @@
 	return
 
 /mob/living/proc/handle_gravity()
-	var/gravity = mob_has_gravity()
+	var/gravity = has_gravity()
 	update_gravity(gravity)
 
 	if(gravity > STANDARD_GRAVITY)
