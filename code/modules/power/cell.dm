@@ -148,7 +148,6 @@
 				if(prob(25))
 					corrupt()
 
-//WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
 	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
@@ -175,10 +174,6 @@
 			else
 				to_chat(H, "<span class='warning'>You can't receive charge from [src]!</span>")
 		return
-//WS End
-
-/obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
-	SSexplosions.highobj += src
 
 /obj/item/stock_parts/cell/proc/get_electrocute_damage()
 	if(charge >= 1000)

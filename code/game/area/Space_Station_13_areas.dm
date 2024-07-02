@@ -70,7 +70,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = RUINS
 	always_unpowered = FALSE
 	requires_power = TRUE
-	area_flags = UNIQUE_AREA | BLOBS_ALLOWED
+	area_flags = UNIQUE_AREA
 
 /area/asteroid/nearstation/bomb_site
 	name = "Bomb Testing Asteroid"
@@ -83,7 +83,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MAINTENANCE
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
-	area_flags = BLOBS_ALLOWED | UNIQUE_AREA
+	area_flags = UNIQUE_AREA
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 //Departments

@@ -507,13 +507,6 @@
 	. = new_slime
 	qdel(src)
 
-/mob/proc/become_overmind(starting_points = 60)
-	var/mob/camera/blob/B = new /mob/camera/blob(get_turf(src), starting_points)
-	B.key = key
-	. = B
-	qdel(src)
-
-
 /mob/living/carbon/human/proc/corgize()
 	if (notransform)
 		return

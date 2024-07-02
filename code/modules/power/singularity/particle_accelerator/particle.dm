@@ -41,10 +41,6 @@
 		else if(istype(A, /obj/singularity))
 			var/obj/singularity/S = A
 			S.energy += energy
-		else if(istype(A, /obj/structure/blob))
-			var/obj/structure/blob/B = A
-			B.take_damage(energy*0.6)
-			movement_range = 0
 
 /obj/effect/accelerated_particle/proc/on_entered(datum/source, atom/A)
 	SIGNAL_HANDLER

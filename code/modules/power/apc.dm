@@ -1492,9 +1492,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	update()
 	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), 600)
 
-/obj/machinery/power/apc/blob_act(obj/structure/blob/B)
-	set_broken()
-
 /obj/machinery/power/apc/disconnect_terminal()
 	if(terminal)
 		terminal.master = null

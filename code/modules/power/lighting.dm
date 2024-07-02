@@ -190,11 +190,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				return
 	return ..()
 
-/obj/structure/light_construct/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
-
 /obj/structure/light_construct/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/metal(loc, sheets_refunded)

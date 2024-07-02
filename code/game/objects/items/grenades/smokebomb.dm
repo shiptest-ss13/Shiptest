@@ -22,7 +22,4 @@
 	smoke.set_up(4, src)
 	smoke.start()
 	qdel(smoke) //And deleted again. Sad really.
-	for(var/obj/structure/blob/B in view(8,src))
-		var/damage = round(30/(get_dist(B,src)+1))
-		B.take_damage(damage, BURN, "melee", 0)
 	resolve()

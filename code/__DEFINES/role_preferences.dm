@@ -18,7 +18,6 @@
 #define ROLE_ALIEN "Xenomorph"
 #define ROLE_PAI "pAI"
 #define ROLE_CULTIST "Cultist"
-#define ROLE_BLOB "Blob"
 #define ROLE_NINJA "Space Ninja"
 #define ROLE_MONKEY "Monkey"
 #define ROLE_ABDUCTOR "Abductor"
@@ -54,7 +53,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_ALIEN,
 	ROLE_PAI,
 	ROLE_CULTIST = /datum/game_mode/cult,
-	ROLE_BLOB,
 	ROLE_NINJA,
 	ROLE_OBSESSED,
 	ROLE_SPACE_DRAGON,

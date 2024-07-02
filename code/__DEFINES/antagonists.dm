@@ -22,16 +22,6 @@
 #define APPRENTICE_ROBELESS "robeless"
 #define APPRENTICE_HEALING "healing"
 
-
-//Blob
-/// blob gets a free reroll every X time
-#define BLOB_REROLL_TIME 2400
-#define BLOB_SPREAD_COST 4
-/// blob refunds this much if it attacks and doesn't spread
-#define BLOB_ATTACK_REFUND 2
-#define BLOB_REFLECTOR_COST 15
-
-
 //ERT Types
 #define ERT_BLUE "Blue"
 #define ERT_RED "Red"
