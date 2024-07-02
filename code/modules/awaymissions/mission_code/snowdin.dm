@@ -579,7 +579,7 @@
 	uniform = /obj/item/clothing/under/syndicate/coldres
 	shoes = /obj/item/clothing/shoes/combat/coldres
 	ears = /obj/item/radio/headset/syndicate/alt
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol/syndicate
 	id = /obj/item/card/id/syndicate
 	implants = list(/obj/item/implant/exile)
 

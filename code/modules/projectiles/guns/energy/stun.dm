@@ -1,7 +1,7 @@
 /obj/item/gun/energy/taser
 	name = "taser gun"
 	desc = "A low-capacity, energy-based stun gun used by security teams to subdue targets at range."
-	icon_state = "taser"
+	icon_state = "advtaser"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
@@ -29,6 +29,10 @@
 /obj/item/gun/energy/disabler
 	name = "disabler"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "disabler"
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
@@ -50,5 +54,9 @@
 /obj/item/gun/energy/disabler/e60
 	name = "E-60"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e60"
 	manufacturer = MANUFACTURER_EOEHOMA

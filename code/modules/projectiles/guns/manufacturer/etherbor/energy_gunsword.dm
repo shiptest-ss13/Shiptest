@@ -1,12 +1,12 @@
-/obj/item/gun/energy/kalix //blue //todo: fix up belt_mirror.dmi, it's incomprehensible
+/obj/item/gun/energy/kalix
 	name = "Etherbor BG-12"
-	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the BG-12 energy beam gun! The BG-12 is Etherbor's current newest civilian energy weapon model."
+	desc = "Etherbor Industries's current civilian energy weapon model. The BG-12 energy beam gun is identical to the military model, minus the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
-	icon = 'icons/obj/guns/faction/gezena/energy.dmi'
-	lefthand_file = 'icons/obj/guns/faction/gezena/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/faction/gezena/righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
+	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/etherbor/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/etherbor/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/etherbor/onmob.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 
 	modifystate = TRUE
@@ -47,7 +47,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
-	desc = "An advanced variant of the BG-12, the BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
+	desc = "The BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -69,9 +69,9 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	delay = 1
 
-/obj/item/gun/energy/kalix/pistol //blue //todo: fix up belt_mirror.dmi, it's incomprehensible
+/obj/item/gun/energy/kalix/pistol //blue
 	name = "Etherbor SG-8"
-	desc = "Etherbor's current and sidearm offering. While intended for marines, it's also available for civillians"
+	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -99,11 +99,9 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
-	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. If the stopping power and fire rate isn't enough, it comes with a DMR mode that has greater armor piercing for dealing with armored targets."
+	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
-	icon = 'icons/obj/guns/faction/gezena/48x32.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/back.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
@@ -157,7 +155,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "Etherbor HBG-7L"
-	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers if used normally from longer wield times and slowdown"
+	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and slowdown, but it's longer barrel makes it ideal for accuracy."
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
 

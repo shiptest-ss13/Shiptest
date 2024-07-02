@@ -117,7 +117,7 @@
 
 /obj/item/storage/pistolcase/stechkin
 /obj/item/storage/pistolcase/stechkin/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/no_mag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag(src)
 	new /obj/item/ammo_box/magazine/m10mm/empty(src)
 	new /obj/item/ammo_box/magazine/m10mm/empty(src)
 

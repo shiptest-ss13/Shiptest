@@ -560,7 +560,7 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4 //f4 is rename of GAL, don't wanna repath upon adding the clip guns though, if i forget to remove this during then, fucking yell at me
 	name = "CLIP Minutemen - Minuteman (Armed - CM-GAL)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/gal
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/gal
 	belt = /obj/item/storage/belt/military/clip/gal
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/cm5
