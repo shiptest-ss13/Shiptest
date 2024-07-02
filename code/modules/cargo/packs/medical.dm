@@ -123,6 +123,7 @@
 					/obj/item/reagent_containers/pill/neurine,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical surplus crate"
+	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/surplus/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 7)
@@ -150,6 +151,7 @@
 					/obj/item/reagent_containers/glass/bottle/mutagen)
 	crate_name = "virus crate"
 	crate_type = /obj/structure/closet/crate/medical
+	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"
