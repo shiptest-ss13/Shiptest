@@ -10,6 +10,12 @@
 	description = "An abandoned hydroponics research facility containing hostile plant fauna."
 	suffix = "icemoon_hydroponics_lab.dmm"
 
+/datum/map_template/ruin/icemoon/cybersun_blacksite
+	name = "Cybersun's blacksite"
+	id = "cybersun-blacksite"
+	description = "A remote place where Cybersun enjoy their newfound test subjects"
+	suffix = "icemoon_cybersun_blacksite.dmm"
+
 /datum/map_template/ruin/icemoon/abandonedvillage
 	name = "Abandoned Village"
 	id = "abandonedvillage"
