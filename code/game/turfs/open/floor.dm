@@ -62,7 +62,7 @@
 		if(1)
 			ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
 		if(2)
-			if(prob(60))
+			if(prob(50) && broken)
 				ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 			else
 				break_tile()

@@ -27,18 +27,33 @@
 /obj/projectile/energy/plasmabolt
 	name = "ionized plasma"
 	damage = 25
-	armour_penetration = -10
+	armour_penetration = -15
 	range = 8
 	damage_type = BURN
 	icon_state = "blastwave"
 	color = "#00ff00"
 	hitsound = 'sound/weapons/sear.ogg'
+	var/heatpwr = 350
 
 /obj/projectile/energy/plasmabolt/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.adjust_bodytemperature(350)
+		var/mob/living/carbon/cooked = target
+		cooked.adjust_bodytemperature(heatpwr)
 		if(prob(35))
-			M.adjust_fire_stacks(15)
-			M.IgniteMob()
+			cooked.adjust_fire_stacks(15)
+			cooked.IgniteMob()
+		else
+			if(cooked.on_fire)
+				cooked.adjust_fire_stacks(10)
+
+/obj/projectile/energy/plasmabolt/shred
+	name = "high-energy ionized plasma"
+	damage = 35
+	armour_penetration = -5
+	range = 2
+	damage_type = BURN
+	icon_state = "blastwave"
+	color = "#00ff00"
+	hitsound = 'sound/weapons/sear.ogg'
+	heatpwr = 700
