@@ -26,14 +26,14 @@
 	turf_type = /turf/open/floor/suns/pattern
 
 /obj/item/stack/tile/suns/hatch
-	name = "hatched white marble tile"
-	singular_name = "hatched white marble floor tile"
+	name = "hatched wood tile"
+	singular_name = "hatched wood floor tile"
 	icon_state = "tile_suns_lighthatched"
 	turf_type = /turf/open/floor/suns/hatch
 
 /obj/item/stack/tile/suns/diagonal
-	name = "diagonal white marble tile"
-	singular_name = "diagonal white marble floor tile"
+	name = "diagonal wooden tile"
+	singular_name = "diagonal wooden floor tile"
 	icon_state = "tile_suns_lightdiag"
 	turf_type = /turf/open/floor/suns/diagonal
 
