@@ -295,7 +295,7 @@
 	display_name = "Basic Plasma Research"
 	description = "Research into the mysterious and dangerous substance, plasma."
 	prereq_ids = list("engineering")
-	design_ids = list("mech_generator")
+	design_ids = list("mech_generator", "plasmacutter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -304,7 +304,7 @@
 	display_name = "Advanced Plasma Research"
 	description = "Research on how to fully exploit the power of plasma."
 	prereq_ids = list("basic_plasma")
-	design_ids = list("mech_plasma_cutter")
+	design_ids = list("mech_plasma_cutter","plasmacutter_adv")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -550,7 +550,7 @@
 	display_name = "Mining Technology"
 	description = "Better than Efficiency V."
 	prereq_ids = list("engineering", "basic_plasma")
-	design_ids = list("drill", "superresonator", "triggermod", "damagemod", "cooldownmod", "rangemod", "ore_redemption", "mining_equipment_vendor", "cargoexpress", "plasmacutter", "mecha_kineticgun", "weatherradio")//e a r l y    g a  m e)
+	design_ids = list("drill", "superresonator", "triggermod", "damagemod", "cooldownmod", "rangemod", "ore_redemption", "mining_equipment_vendor", "cargoexpress", "mecha_kineticgun", "weatherradio")//e a r l y    g a  m e)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -559,7 +559,7 @@
 	display_name = "Advanced Mining Technology"
 	description = "Efficiency Level 127"	//dumb mc references
 	prereq_ids = list("basic_mining", "adv_engi", "adv_power", "adv_plasma")
-	design_ids = list("drill_diamond", "jackhammer", "hypermod", "plasmacutter_adv")
+	design_ids = list("drill_diamond", "jackhammer", "hypermod")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 // WS Edit Start - Yeet The BSM
