@@ -5,7 +5,6 @@
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	icon_state = "dshotgun_sawn"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
