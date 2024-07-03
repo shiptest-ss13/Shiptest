@@ -102,7 +102,7 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 10)
-	product_slogans = "very fruit you could want, at your beak! Shoal Punch!"
+	product_slogans = "Every fruit you could want, at your beak! Shoal Punch!"
 	product_ads = "Every fruit you could want, at your beak!;Don't go flying dry!;Over two trillion served!;Thirsty? Get punched!;Skrikira trikxti skrmikr rakti!;Don't go dry, get Shoal Punch."
 	light_mask = "shamblers-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
