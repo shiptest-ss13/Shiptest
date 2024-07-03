@@ -488,7 +488,7 @@
 	color = "#af9938"
 	taste_description = "root-beer and asbestos"
 	glass_name = "glass of Sandblast Sarsaparilla"
-	glass_desc = "A glass of Sandblast Sarsaparilla. Perfect for those long desert days.
+	glass_desc = "A glass of Sandblast Sarsaparilla. Perfect for those long desert days."
 
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"
