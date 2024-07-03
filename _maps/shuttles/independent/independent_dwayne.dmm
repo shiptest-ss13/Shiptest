@@ -226,7 +226,6 @@
 /obj/item/clothing/suit/jacket/leather/duster/command,
 /obj/item/clothing/suit/armor/vest/capcarapace/duster,
 /obj/item/clothing/gloves/color/white,
-/obj/item/clothing/head/HoS/cowboy,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -267,7 +266,9 @@
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
-/obj/structure/closet/crate/secure/weapon,
+/obj/structure/closet/crate/secure/plasma{
+	name = "secure crate"
+	},
 /obj/effect/turf_decal/ntspaceworks_big/two{
 	dir = 1
 	},
@@ -1828,10 +1829,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
-"Cn" = (
-/obj/structure/catwalk,
-/turf/closed/wall,
-/area/ship/engineering)
 "Cp" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/mineral/unloading_machine{
@@ -1958,7 +1955,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ex" = (
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2162,7 +2159,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Hh" = (
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2704,8 +2701,7 @@
 /obj/machinery/light/directional/west,
 /obj/structure/filingcabinet/filingcabinet{
 	dir = 4;
-	pixel_x = -10;
-	density = 0
+	pixel_x = -10
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
 	dir = 8
@@ -2717,6 +2713,7 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
+/obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OP" = (
@@ -3555,7 +3552,7 @@ OJ
 mF
 gF
 aD
-Cn
+mF
 fy
 WL
 Ou
@@ -3563,7 +3560,7 @@ Qp
 PH
 WL
 Pe
-Cn
+mF
 aD
 gF
 mF
