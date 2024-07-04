@@ -659,6 +659,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	icon_state = "shadow"
+	item_state = "hp_generic"
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE

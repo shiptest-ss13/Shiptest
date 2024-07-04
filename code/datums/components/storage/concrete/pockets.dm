@@ -104,7 +104,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol/syndicate,
+		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box))
 
