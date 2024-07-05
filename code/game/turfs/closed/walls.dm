@@ -21,7 +21,7 @@
 
 	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
 	var/hardness = 40
-	var/slicing_duration = 50  //default time taken to slice the wall
+	var/slicing_duration = 25  //default time taken to slice the wall
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
@@ -39,7 +39,7 @@
 	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
-	var/repair_amount = 40
+	var/repair_amount = 50
 	// Projectiles that do extra damage to the wall
 	var/list/extra_dam_proj
 

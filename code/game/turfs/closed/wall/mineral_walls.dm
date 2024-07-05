@@ -55,7 +55,7 @@
 	icon_state = "diamond_wall-0"
 	base_icon_state = "diamond_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
-	slicing_duration = 100
+	slicing_duration = 50
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
