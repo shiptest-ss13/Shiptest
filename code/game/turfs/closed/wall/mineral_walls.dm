@@ -336,7 +336,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 
-	max_integrity = 800
+	max_integrity = 450
 
 /turf/closed/wall/mineral/titanium/exterior
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
@@ -416,7 +416,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 
-	max_integrity = 1300
+	max_integrity = 500
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
