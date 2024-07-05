@@ -39,22 +39,16 @@
 	. = total_spread
 	return ..()
 
-/obj/item/gun/ballistic/automatic/smg/proto
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon_state = "saber"
-	actions_types = list()
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-
-	bolt_type = BOLT_TYPE_LOCKING
-	show_magazine_on_sprite = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
 	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"
+
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	can_bayonet = TRUE
 	can_suppress = FALSE
@@ -89,6 +83,10 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
 	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
@@ -109,7 +107,13 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 	icon_state = "uzi"
+
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	bolt_type = BOLT_TYPE_OPEN
 	show_magazine_on_sprite = TRUE
@@ -131,6 +135,10 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
 	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "vector"
 	item_state = "vector"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
@@ -142,8 +150,13 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "m90"
 	item_state = "m90"
+
 	mag_type = /obj/item/ammo_box/magazine/m556
 	can_suppress = FALSE
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
@@ -220,7 +233,11 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
 	name = "HP Firestorm"
 	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	icon_state = "firestorm"
 	item_state = "firestorm"
 	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
@@ -248,8 +265,14 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
 	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
+	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+
 	icon_state = "cm5"
 	item_state = "cm5"
+
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
@@ -380,6 +403,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	name = "\improper SKM-44v Mongrel"
 	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "skm_inteqsmg"
 	item_state = "skm_inteqsmg"
 
@@ -409,3 +436,15 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 	unfolded_slowdown = 0.35
 	unfolded_wield_delay = 0.4 SECONDS
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+	name = "\improper Nanotrasen Saber SMG"
+	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "saber"
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	bolt_type = BOLT_TYPE_LOCKING
+	show_magazine_on_sprite = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+

@@ -578,7 +578,7 @@
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
-			/obj/item/gun/ballistic/automatic/smg/proto = 1,
+			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
@@ -683,7 +683,7 @@
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
-			/obj/item/gun/ballistic/automatic/pistol = 500,
+			/obj/item/gun/ballistic/automatic/pistol/syndicate = 500,
 			/obj/item/camera_bug = 500,
 			/obj/item/clothing/gloves/combat = 200,
 			/obj/item/clothing/head/chameleon = 200,
