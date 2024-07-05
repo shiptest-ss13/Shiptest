@@ -77,13 +77,10 @@
 
 /mob/living/simple_animal/hostile/statue/Move(turf/NewLoc)
 	if(can_be_seen(NewLoc))
-		for(var/mob/living/M in view(src))
-			if(is_A_facing_B(M, src))
-				if(client)
-					to_chat(src, "<span class='warning'>You cannot move, there are eyes on you!</span>")
-				return 0
+		if(client)
+			to_chat(src, "<span class='warning'>You cannot move, there are eyes on you!</span>")
+		return 0
 	return ..()
-
 
 /mob/living/simple_animal/hostile/statue/Life()
 	..()
@@ -98,13 +95,11 @@
 
 /mob/living/simple_animal/hostile/statue/AttackingTarget()
 	if(can_be_seen(get_turf(loc)))
-		for(var/mob/living/M in view(src))
-			if(is_A_facing_B(M, src))
-				if(client)
-					to_chat(src, "<span class='warning'>You cannot attack, there are eyes on you!</span>")
-				return FALSE
-	return ..()
-
+		if(client)
+			to_chat(src, "<span class='warning'>You cannot attack, there are eyes on you!</span>")
+		return FALSE
+	else
+		return ..()
 
 /mob/living/simple_animal/hostile/statue/DestroyPathToTarget()
 	if(!can_be_seen(get_turf(loc)))
