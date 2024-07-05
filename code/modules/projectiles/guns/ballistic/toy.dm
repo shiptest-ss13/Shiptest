@@ -22,7 +22,10 @@
 /obj/item/gun/ballistic/automatic/toy/pistol
 	name = "foam force pistol"
 	desc = "A small, easily concealable toy handgun. Ages 8 and up."
-	icon = 'icons/obj/guns/projectile.dmi'
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "pistol" // WS edit - Fix various startup runtimes
 	bolt_type = BOLT_TYPE_LOCKING
 	w_class = WEIGHT_CLASS_SMALL
@@ -44,6 +47,7 @@
 /obj/item/gun/ballistic/shotgun/toy
 	name = "foam force shotgun"
 	desc = "A toy shotgun with wood furniture and a four-shell capacity underneath. Ages 8 and up."
+	icon_state = "shotgun"
 	force = 0
 	throwforce = 0
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy

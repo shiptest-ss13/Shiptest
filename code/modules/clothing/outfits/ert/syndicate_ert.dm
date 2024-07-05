@@ -27,7 +27,7 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/captain
 
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/syndicate=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio=1)
 
 // gorlex loyalist/2nd battlegroup
 
@@ -58,7 +58,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	suit_store = /obj/item/gun/ballistic/automatic/pistol
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
 
 	l_pocket = /obj/item/radio
 
@@ -73,7 +73,7 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	suit = /obj/item/clothing/suit/armor/vest
 	belt = /obj/item/storage/belt/security
-	suit_store = /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper_rifle
 
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	l_pocket = /obj/item/binoculars
