@@ -313,7 +313,7 @@
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustFireLoss(round(hydrogen_chloride_pp/4))
-		if (gas_breathed > breath.gas_stimulation_min)
+		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
 
 	// Stimulum
