@@ -115,3 +115,9 @@
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 
+/obj/item/clothing/suit/hooded/hoodie/blackwa
+	name = "black and white hoodie"
+	desc = "A hoodie that is black, with a white hood. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodie_bwa"
+	item_state = "hoodie_bwa"
+	hoodtype = /obj/item/clothing/head/hooded/hood/gray
