@@ -1,8 +1,8 @@
 /obj/item/gun/energy
-	icon_state = "energy"
 	name = "energy gun"
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
+	icon_state = "laser"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	muzzle_flash_color = COLOR_SOFT_RED
