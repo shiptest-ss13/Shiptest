@@ -547,7 +547,8 @@
 /area/ship/engineering)
 "ig" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
@@ -700,8 +701,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
-/obj/item/newspaper{
-	pixel_x = -9;
+/obj/item/paper/guides/jobs/engi/combustion_thruster{
+	pixel_x = -5;
 	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/drinks/mug{
@@ -955,6 +956,11 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/independent/mining/eva,
+/obj/item/toy/figure/miner{
+	pixel_y = 17;
+	toysay = "Careful out there! Frontier is deadly this time of the year!... Or any time of the year, actually...";
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "om" = (
@@ -2220,7 +2226,7 @@
 /obj/machinery/vending/cigarette,
 /obj/item/toy/figure/miner{
 	pixel_y = 17;
-	toysay = "Careful out there! Frontier is deadly this time of the year!";
+	toysay = "Careful out there! Frontier is deadly this time of the year!... Or any time of the year, actually...";
 	pixel_x = -4
 	},
 /turf/open/floor/plasteel/tech,
@@ -3332,7 +3338,8 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/salad/oatmeal{
 	pixel_y = 14;
-	pixel_x = 10
+	pixel_x = 10;
+	desc = "A nice bowl of oatmeal. You aren't quite sure how long it's been sitting here."
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
