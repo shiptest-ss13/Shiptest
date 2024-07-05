@@ -31,7 +31,7 @@
 	. = ..()
 	drag_slowdown = slowdown
 	attachment = new attachment_type(src)
-	cell = new(src)
+	cell = new preload_cell_type(src)
 	update_power()
 	return
 
