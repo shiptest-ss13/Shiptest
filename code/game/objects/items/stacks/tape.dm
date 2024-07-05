@@ -47,7 +47,7 @@
 /obj/item/stack/sticky_tape/super
 	name = "super sticky tape"
 	singular_name = "super sticky tape"
-	desc = "Quite possibly the most mischevious substance in the galaxy. Use with extreme lack of caution."
+	desc = "Quite possibly the most mischievous substance in the galaxy. Use with extreme lack of caution."
 	icon_state = "tape_y"
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
@@ -80,7 +80,8 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	usesound = 'sound/items/tape.ogg'
 
-	var/stop_bleed = 600
+	var/lifespan = 300
+	var/bleed_reduction = 0.002
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay
 	var/other_delay = 10
@@ -114,7 +115,7 @@
 				return
 			if(use(1))
 				playsound(loc, usesound, 30, TRUE, -2)
-				if(do_mob(user, C, other_delay) && (!C.is_mouth_covered() || !C.is_muzzled()))
+				if(do_after(user, other_delay, C) && (!C.is_mouth_covered() || !C.is_muzzled()))
 					apply_gag(C, user)
 					C.visible_message("<span class='notice'>[user] tapes [C]s mouth shut.</span>", \
 										"<span class='userdanger'>[user] taped your mouth shut!</span>")
@@ -134,7 +135,7 @@
 										"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 					playsound(loc, usesound, 30, TRUE, -2)
-					if(do_mob(user, C, self_delay) && (C.canBeHandcuffed()))
+					if(do_after(user, self_delay, C) && (C.canBeHandcuffed()))
 						apply_tapecuffs(C, user)
 						C.visible_message("<span class='notice'>[user] tapecuffs [C].</span>", \
 											"<span class='userdanger'>[user] tapecuffs you.</span>")
@@ -152,11 +153,11 @@
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
 		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
-		if(!do_mob(user, C, self_delay, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 	else if(other_delay)
 		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [C].</span>", "<span class='notice'>You begin applying \the [src] on [C]...</span>")
-		if(!do_mob(user, C, other_delay, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
 	if(heal(C, user))
@@ -173,21 +174,17 @@
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return
-	if(!IS_ORGANIC_LIMB(affecting))
-		if(ishuman(C))
-			var/mob/living/carbon/human/H = C
-			if(!H.bleedsuppress && H.bleed_rate)
-				H.suppress_bloodloss(stop_bleed)
-				to_chat(user, "<span class='notice'>You tape up the bleeding of [C]!</span>")
-				return TRUE
-		to_chat(user, "<span class='warning'>[C] has a problem \the [src] won't fix!</span>")
-	else //Robotic patch-up
+	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
 		if(affecting.brute_dam)
 			user.visible_message("<span class='notice'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE
-		to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
+	if(affecting.can_bandage(user))
+		affecting.apply_bandage(bleed_reduction, lifespan, name)
+		to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
+		return TRUE
+	to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
 	if(target.is_muzzled() || target.is_mouth_covered())
@@ -272,7 +269,7 @@
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
 
-	stop_bleed = 800
+	lifespan = 400
 	nonorganic_heal = 20
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
@@ -297,7 +294,6 @@
 	desc = "Specialty insulated strips of adhesive plastic. Made for securing cables."
 	icon_state = "tape_e"
 
-	stop_bleed = 400
 	nonorganic_heal = 10
 	prefix = "insulated sticky"
 	siemens_coefficient = 0
@@ -321,6 +317,6 @@
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
-	stop_bleed = 1000
+	lifespan = 500
 	nonorganic_heal = 30
 	prefix = "industry-standard sticky"

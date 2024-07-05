@@ -35,13 +35,6 @@
 
 	var/pocket_storage_component_path
 
-	//These allow head/mask items to dynamically alter the user's hair
-	// and facial hair, checking hair_extensions.dmi and facialhair_extensions.dmi
-	// for a state matching hair_state+dynamic_hair_suffix
-	// THESE OVERRIDE THE HIDEHAIR FLAGS
-	var/dynamic_hair_suffix = ""//head > mask for head hair
-	var/dynamic_fhair_suffix = ""//mask > head for facial hair
-
 	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/armor_list = list()
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
@@ -293,7 +286,7 @@
 
 	if("[layer]" in mob_species.offset_clothing)
 		// This code taken from Baystation 12
-		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
+		var/icon/final_I = icon('icons/blanks/64x64.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
 
 		// Apply all pixel shifts for each direction.
@@ -301,9 +294,10 @@
 			var/list/facing_list = shifts[shift_facing]
 			var/use_dir = text2num(shift_facing)
 			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
-			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
+			var/icon/canvas = icon('icons/blanks/64x64.dmi', "nothing")
 			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
 			final_I.Insert(canvas, dir = use_dir)
+
 		final_I = fcopy_rsc(final_I)
 		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
 		return TRUE

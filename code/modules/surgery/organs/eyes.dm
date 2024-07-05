@@ -141,12 +141,16 @@
 /obj/item/organ/eyes/robotic
 	name = "robotic eyes"
 	icon_state = "robotic_eyes"
+	eye_icon_state = "eyes_synth" // i feel like this should be here
 	desc = "A very basic set of optical sensors with no extra vision modes or functions."
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/eyes/robotic/lizard
 	eye_icon_state = "eyes_synth"
+
+/obj/item/organ/eyes/robotic/kepori
+	eye_icon_state = "eyes_kepori_synth"
 
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()

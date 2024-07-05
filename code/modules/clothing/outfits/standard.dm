@@ -1,3 +1,6 @@
+/datum/outfit/centcom
+	name = "CentCom Base"
+
 /datum/outfit/centcom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -37,6 +40,8 @@
 	glasses = /obj/item/clothing/glasses/eyepatch
 
 /datum/outfit/pirate/space
+	name = "Space Pirate (EVA)"
+
 	suit = /obj/item/clothing/suit/space/pirate
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
 	mask = /obj/item/clothing/mask/breath
@@ -45,6 +50,8 @@
 	id = /obj/item/card/id
 
 /datum/outfit/pirate/space/captain
+	name = "Space Pirate Captain"
+
 	head = /obj/item/clothing/head/helmet/space/pirate
 
 /datum/outfit/pirate/post_equip(mob/living/carbon/human/H)
@@ -162,7 +169,7 @@
 	r_pocket = /obj/item/shield/energy
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
 	belt = /obj/item/gun/ballistic/revolver/mateba
-	r_hand = /obj/item/gun/energy/pulse/loyalpin
+	r_hand = /obj/item/gun/energy/pulse
 	id = /obj/item/card/id/ert/deathsquad
 	ears = /obj/item/radio/headset/headset_cent/alt
 
@@ -219,8 +226,6 @@
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
 		/obj/item/storage/part_replacer/bluespace/tier4=1,\
-		/obj/item/gun/magic/wand/resurrection/debug=1,\
-		/obj/item/gun/magic/wand/death/debug=1,\
 		/obj/item/debug/human_spawner=1,\
 		/obj/item/debug/omnitool=1
 		)

@@ -67,13 +67,28 @@
 
 /datum/species/vox/New()
 	. = ..()
+	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
+	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
+	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
+	offset_clothing = list(
+		"[SUIT_STORE_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 8, "y" = 0),
+							"[SOUTH]" = list("x" = 8, "y" = 0),
+							"[WEST]" = list("x" =  -8, "y" = 0)
+							),
+		"[EARS_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 8, "y" = 0),
+							"[SOUTH]" = list("x" = 8, "y" = 0),
+							"[WEST]" = list("x" =  -8, "y" = 0)
+							),
+	)
 
 /datum/species/vox/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_vox_name()
 	return vox_name()
-
-
 
 /datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
@@ -104,16 +119,15 @@
 	return ..()
 
 /datum/species/vox/get_item_offsets_for_dir(dir, hand)
-	////LEFT/RIGHT
-	switch(dir)
-		if(SOUTH)
-			return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
-		if(NORTH)
-			return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
-		if(EAST)
-			return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
-		if(WEST)
-			return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
+	//LEFT/RIGHT
+	if(dir & NORTH)
+		return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
+	if(dir & SOUTH)
+		return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
+	if(dir & EAST)
+		return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
+	if(dir & WEST)
+		return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
 
 /datum/action/innate/tail_hold
 	name = "Tail Hold"
@@ -174,10 +188,13 @@
 			owner.cut_overlay(held_item_overlay)
 			held_item_overlay = null
 		return
+
 	if(olddir == newdir && !force)
 		return
 
 	newdir ||= owner.dir
+
+	newdir = normalize_dir_to_cardinals(newdir)
 
 	owner.cut_overlay(held_item_overlay)
 	var/dirtext = dir2text(newdir)

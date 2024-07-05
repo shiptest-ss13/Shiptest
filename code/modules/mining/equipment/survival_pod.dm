@@ -271,7 +271,7 @@
 
 /obj/structure/fans/Initialize(mapload)
 	. = ..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 //Inivisible, indestructible fans
 /obj/structure/fans/tiny/invisible
@@ -281,16 +281,16 @@
 
 //Signs
 /obj/structure/sign/mining
-	name = "\improper Nanotrasen mining corps sign"
-	desc = "A sign of relief for weary miners, and a warning for would-be competitors to Nanotrasen's mining claims."
-	icon = 'icons/turf/walls/survival_pod_walls.dmi'
-	icon_state = "ntpod"
+	name = "\improper N+S mining corps sign"
+	desc = "A sign of relief for weary miners, and a warning for would-be competitors to N+S's mining claims."
+	icon = 'icons/obj/nanotrasen_logos.dmi'
+	icon_state = "ns"
 
 /obj/structure/sign/mining/survival
 	name = "shelter sign"
 	desc = "A high visibility sign designating a safe shelter."
-	icon = 'icons/turf/walls/survival_pod_walls.dmi'
-	icon_state = "survival"
+	icon = 'icons/obj/structures/signs/sign.dmi'
+	icon_state = "secureareaold"
 
 //Fluff
 /obj/structure/tubes
@@ -315,10 +315,6 @@
 						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
 						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
-						/obj/item/gun/magic/staff/chaos,
-						/obj/item/gun/magic/staff/spellblade,
-						/obj/item/gun/magic/wand/death,
-						/obj/item/gun/magic/wand/fireball,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery,

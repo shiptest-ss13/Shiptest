@@ -50,6 +50,16 @@
 	display_name = "tie, recolorable"
 	path =  /obj/item/clothing/neck/tie
 
+//Bone
+/datum/gear/accessory/fangnecklace
+	display_name = "wolf fang necklace"
+	path = /obj/item/clothing/neck/fangnecklace
+
+/datum/gear/accessory/bonearmlet
+	display_name = "bone armlet"
+	path = /obj/item/clothing/accessory/bonearmlet
+	slot = null
+
 //Misc
 
 /datum/gear/accessory/waistcoat
@@ -67,10 +77,6 @@
 	description = "Only the truly insane would wear this around their neck."
 	path = /obj/item/clothing/neck/petcollar
 
-/datum/gear/accessory/maidneckpiece
-	display_name = "maid neckpiece"
-	path = /obj/item/clothing/neck/maid
-
 /datum/gear/accessory/gloves/black
 	display_name = "black gloves"
 	description = "Standard hand coverings for everyday use."
@@ -81,15 +87,15 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/white
 
+/datum/gear/accessory/gloves/fingerless
+	display_name = "fingerless gloves"
+	description = "Radical hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/fingerless
+
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
-	slot = ITEM_SLOT_GLOVES
-
-/datum/gear/accessory/gloves/maid
-	display_name = "maid arm covers"
-	path = /obj/item/clothing/gloves/maid
 	slot = ITEM_SLOT_GLOVES
 
 /datum/gear/accessory/tiki

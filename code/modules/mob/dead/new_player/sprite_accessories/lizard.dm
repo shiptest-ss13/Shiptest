@@ -105,6 +105,10 @@
 	name = "Dome"
 	icon_state = "dome"
 
+/datum/sprite_accessory/face_markings/nose
+	name = "Nose"
+	icon_state = "nose"
+
 //Start Horns
 
 /datum/sprite_accessory/horns

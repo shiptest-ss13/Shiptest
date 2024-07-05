@@ -30,7 +30,11 @@
 	if(pai)
 		if(!pai.master_dna || !pai.master)
 			dat += "<a href='byond://?src=[REF(src)];setdna=1'>Imprint Master DNA</a><br>"
-		dat += "Installed Personality: [pai.name]<br>"
+		dat += "Prime directive: <br>"
+		if(pai.laws.zeroth)
+			dat +="[pai.laws.zeroth]<br>"
+		else
+			dat +="None<br>"
 		dat += "Prime directive: <br>[pai.laws.zeroth]<br>"
 		for(var/slaws in pai.laws.supplied)
 			dat += "Additional directives: <br>[slaws]<br>"
@@ -48,6 +52,7 @@
 			var/mob/living/carbon/human/H = user
 			if(H.real_name == pai.master || H.dna.unique_enzymes == pai.master_dna)
 				dat += "<A href='byond://?src=[REF(src)];toggle_holo=1'>\[[pai.canholo? "Disable" : "Enable"] holomatrix projectors\]</a><br>"
+				dat += "<A href='byond://?src=[REF(src)];clear_zero=1'>\[Remove Prime directive\]</a><br>"
 		dat += "<A href='byond://?src=[REF(src)];fix_speech=1'>\[Reset speech synthesis module\]</a><br>"
 		dat += "<A href='byond://?src=[REF(src)];wipe=1'>\[Wipe current pAI personality\]</a><br>"
 	else
@@ -79,7 +84,8 @@
 				pai.master = M.real_name
 				pai.master_dna = M.dna.unique_enzymes
 				to_chat(pai, "<span class='notice'>You have been bound to a new master.</span>")
-				pai.emittersemicd = FALSE
+				pai.laws.set_zeroth_law("Serve your master.")
+				pai.emittercurrent_cooldown = FALSE
 		if(href_list["wipe"])
 			var/confirm = input("Are you CERTAIN you wish to delete the current personality? This action cannot be undone.", "Personality Wipe") in list("Yes", "No")
 			if(confirm == "Yes")
@@ -89,6 +95,10 @@
 					to_chat(pai, "<span class='userdanger'>Your mental faculties leave you.</span>")
 					to_chat(pai, "<span class='rose'>oblivion... </span>")
 					qdel(pai)
+		if(href_list["clear_zero"])
+			if((input("Are you CERTAIN you wish to remove this pAI's Prime directive? This action cannot be undone.", "Clear Directive") in list("Yes", "No")) == "Yes")
+				if(pai)
+					pai.laws.clear_zeroth_law()
 		if(href_list["fix_speech"])
 			pai.stuttering = 0
 			pai.slurring = 0
@@ -149,4 +159,3 @@
 		return
 	if(pai && !pai.holoform)
 		pai.emp_act(severity)
-

@@ -26,8 +26,8 @@
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	anchored = FALSE
-	idle_power_usage = 10
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	max_integrity = 500
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 	var/static/list/numbers = list("0" = "green", "1" = "red", "3" = "red", "5" = "red", "7" = "red", "9" = "red", "12" = "red", "14" = "red", "16" = "red",\
@@ -39,7 +39,7 @@
 	var/chosen_bet_type = "0"
 	var/last_anti_spam = 0
 	var/anti_spam_cooldown = 20
-	var/obj/item/card/id/my_card
+	var/obj/item/card/bank/my_card
 	var/playing = FALSE
 	var/locked = FALSE
 	var/drop_dir = SOUTH
@@ -81,7 +81,7 @@
 	data["Spinning"] = playing
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/card/id/C = H.get_idcard(TRUE)
+		var/obj/item/card/bank/C = H.get_bankcard()
 		if(C)
 			data["AccountBalance"] = C.registered_account.account_balance
 		else
@@ -114,7 +114,7 @@
 		return
 	if(playing)
 		return ..()
-	if(istype(W, /obj/item/card/id))
+	if(istype(W, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
 		if(machine_stat & MAINT || !on || locked)
@@ -122,7 +122,7 @@
 			return FALSE
 
 		if(my_card)
-			var/obj/item/card/id/player_card = W
+			var/obj/item/card/bank/player_card = W
 			if(player_card.registered_account.account_balance < chosen_bet_amount) //Does the player have enough funds
 				audible_message("<span class='warning'>You do not have the funds to play! Lower your bet or get more money.</span>")
 				playsound(src, 'sound/machines/buzz-two.ogg', 30, TRUE)
@@ -167,7 +167,7 @@
 			addtimer(CALLBACK(src, PROC_REF(play), user, player_card, chosen_bet_type, chosen_bet_amount, potential_payout), 4) //Animation first
 			return TRUE
 		else
-			var/obj/item/card/id/new_card = W
+			var/obj/item/card/bank/new_card = W
 			if(new_card.registered_account)
 				var/msg = stripped_input(user, "Name of your roulette wheel:", "Roulette Naming", "Roulette Machine")
 				if(!msg)
@@ -181,7 +181,7 @@
 	return ..()
 
 ///Proc called when player is going to try and play
-/obj/machinery/roulette/proc/play(mob/user, obj/item/card/id/player_id, bet_type, bet_amount, potential_payout)
+/obj/machinery/roulette/proc/play(mob/user, obj/item/card/bank/player_id, bet_type, bet_amount, potential_payout)
 
 	var/payout = potential_payout
 
@@ -203,7 +203,7 @@
 	playsound(src, 'sound/machines/piston_lower.ogg', 70)
 
 ///Ran after a while to check if the player won or not.
-/obj/machinery/roulette/proc/finish_play(obj/item/card/id/player_id, bet_type, bet_amount, potential_payout, rolled_number)
+/obj/machinery/roulette/proc/finish_play(obj/item/card/bank/player_id, bet_type, bet_amount, potential_payout, rolled_number)
 	last_spin = rolled_number
 
 	var/is_winner = check_win(bet_type, bet_amount, rolled_number) //Predetermine if we won

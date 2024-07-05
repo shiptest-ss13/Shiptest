@@ -1,6 +1,6 @@
 //**************
-//*****Keys*******************
-//**************		**  **
+//*****Keys*****
+//**************
 /obj/item/keycard
 	name = "security keycard"
 	desc = "This feels like it belongs to a door."
@@ -21,50 +21,39 @@
 	color = "#f0da12"
 	puzzle_id = "cheese"
 
-/obj/item/keycard/swordfish
-	name = "titanic keycard"
-	desc = "Smells like it was at the bottom of a harbor."
-	color = "#3bbbdb"
-	puzzle_id = "swordfish"
+/obj/item/keycard/harmfactory
+	name = "factory keycard"
+	desc = "A keycard opening a door within the world's worst factory"
+	color = "#727a7c"
+	puzzle_id = "factory"
+
+/obj/item/keycard/harmfactory/stockroom
+	name = "stockroom keycard"
+	desc = "A keycard opening a door within the world's worst factory"
+	color = "#cf2323"
+	puzzle_id = "stockroom"
+
+/obj/item/keycard/harmfactory/office
+	name = "office keycard"
+	desc = "A keycard opening a door within the world's worst factory"
+	color = "#1dac22"
+	puzzle_id = "office"
+
+/obj/item/keycard/harmfactory/entry
+	name = "entry keycard"
+	desc = "A keycard opening a door within the world's worst factory"
+	color = "#1a27e7"
+	puzzle_id = "entry"
+
+
 
 /obj/item/keycard/gatedrop
 	icon_state = "golden_key"
 
-/obj/item/keycard/gatedrop/drakelair
-	name = "Drake's Key"
-	desc = "A dull, golden key originally kept by a menacing ash drake."
-	puzzle_id = "drakelairkey"
-
-/obj/item/keycard/gatedrop/disciple
-	name = "Altar Key"
-	desc = "A key held dear by the late Disciple of The Priest. Only by shutting themselves in with their stone idol were they able to spare those they love most from their madness and obsession."
-	puzzle_id = "disciplekey"
-
-/obj/item/keycard/gatedrop/guard
-	name = "Armory Key"
-	desc = "A golden key entrusted to the Captain of the Holy Guard of The Priest. Entrusted by His Holiness to guard the greatest weapon in His arsenal"
-	puzzle_id = "guardcap"
-
-/obj/item/keycard/gatedrop/heathen
-	name = "Heathen's Key"
-	desc = "And thus the Heathen stole away with the key to the forbidden gates. Hiding with his sect of followers until death cometh."
-	puzzle_id = "heathen"
-
-/obj/item/keycard/gatedrop/gatekeeper
-	name = "GateKeeper's Key"
-	desc = "Only by slaying the keeper of the gates may one path through into the depths of The Priest's holiest sanctums."
-	puzzle_id = "gatekeeper"
-
-/obj/item/keycard/gatedrop/bishop
-	name = "Key of the lost"
-	desc = "A key held only by the warring Bishop, forever lost to the Golden City of old."
-	puzzle_id = "bishopkey"
-
-/obj/item/keycard/gatedrop/priest
-	name = "The Priest's Key"
-	desc = "A key belonging to a once peaceful scholar, brought to death and ruin through means of violence by savage outsider."
-	puzzle_id = "priestkey"
-
+/obj/item/keycard/gatedrop/lavacanyon
+	name = "Vault Key"
+	desc = "A dusty key, smudged with dried blood."
+	puzzle_id = "lavacanyonkey"
 
 //***************
 //*****Doors*****
@@ -124,6 +113,26 @@
 	desc = "If nautical nonsense be something you wish."
 	puzzle_id = "swordfish"
 
+/obj/machinery/door/keycard/harmfactory
+	name = "keycard locked door"
+	desc = "Seems to have a scanner for the factory keycard"
+	puzzle_id = "factory"
+
+/obj/machinery/door/keycard/harmfactory/stockroom
+	name = "keycard locked door"
+	desc = "Seems to have a scanner for the stockroom keycard"
+	puzzle_id = "stockroom"
+
+/obj/machinery/door/keycard/harmfactory/office
+	name = "keycard locked door"
+	desc = "Seems to have a scanner for the office keycard"
+	puzzle_id = "office"
+
+/obj/machinery/door/keycard/harmfactory/entry
+	name = "keycard locked door"
+	desc = "Seems to have a scanner for the entry keycard"
+	puzzle_id = "entry"
+
 /obj/machinery/door/keycard/gates
 	gender = PLURAL
 	name = "locked gates"
@@ -148,45 +157,11 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/keycard/gates/update_icon_state()
-	if(density)
-		icon_state = "closed"
-		return ..()
-	else
-		icon_state = "open"
-		return ..()
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
-/obj/machinery/door/keycard/gates/drakelair
-	puzzle_id = "drakelairkey"
-
-/obj/machinery/door/keycard/gates/disciple
-	name = "Tithe Gates"
-	desc = "Gates protecting the ritual tithe collected by The Priest and his Disciples."
-	puzzle_id = "disciplekey"
-
-/obj/machinery/door/keycard/gates/guard
-	name = "Armory Gates"
-	desc = "Gates protecting the most versatile and dangerous of The Priest's armory."
-	puzzle_id = "guardcap"
-
-/obj/machinery/door/keycard/gates/heathen
-	name = "Sect Gates"
-	desc = "Gates guarding the forbidden treasures stolen away by the Heathen. Bloody in nature, and hidden from sight."
-	puzzle_id = "heathen"
-
-/obj/machinery/door/keycard/gates/gatekeeper
-	name = "Sanctum Gates"
-	desc = "The Gatekeeper holds the key, only through bloodshed can they be opened."
-	puzzle_id = "gatekeeper"
-
-/obj/machinery/door/keycard/gates/bishop
-	name = "Lost Golden City Gates"
-	desc = "He took their lives and locked their culture and heritage behind indestructible gates of virtue. The Bishop spread conversion through death and swallowed the key."
-	puzzle_id = "bishopkey"
-
-/obj/machinery/door/keycard/gates/priest
-	name = "The Priest's Treasury"
-	desc = "Gates holding The Priest's eternal hoarde. Drakeborn, incapable of avoiding the grand desire to collect and learn."
-	puzzle_id = "priestkey"
+/obj/machinery/door/keycard/gates/lavacanyon
+	puzzle_id = "lavacanyonkey"
 
 //*************************
 //***Box Pushing Puzzles***

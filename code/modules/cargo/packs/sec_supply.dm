@@ -56,20 +56,18 @@
 
 /datum/supply_pack/sec_supply/riotshields
 	name = "Riot Shields Crate"
-	desc = "For when the greytide gets really uppity. Contains three riot shields."
-	cost = 2000
-	contains = list(/obj/item/shield/riot,
-					/obj/item/shield/riot,
-					/obj/item/shield/riot)
+	desc = "Contains a riot shield, effective at holding back hostile fauna, xenofauna, or large crowds."
+	cost = 600
+	contains = list(/obj/item/shield/riot)
 	crate_name = "riot shields crate"
 
-/datum/supply_pack/sec_supply/combatknives
-	name = "Combat Knives Crate"
-	desc = "Contains three sharpened combat knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
-	cost = 2500
-	contains = list(/obj/item/kitchen/knife/combat,
-					/obj/item/kitchen/knife/combat,
-					/obj/item/kitchen/knife/combat)
+/datum/supply_pack/sec_supply/survknives
+	name = "Survival Knives Crate"
+	desc = "Contains three sharpened survival knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
+	cost = 500
+	contains = list(/obj/item/kitchen/knife/combat/survival,
+					/obj/item/kitchen/knife/combat/survival,
+					/obj/item/kitchen/knife/combat/survival)
 	crate_name = "combat knife crate"
 
 /datum/supply_pack/sec_supply/fire

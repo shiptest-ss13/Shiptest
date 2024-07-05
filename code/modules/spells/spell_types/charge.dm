@@ -51,20 +51,6 @@
 					I.used = FALSE
 					charged_item = I
 					break
-			else if(istype(item, /obj/item/gun/magic))
-				var/obj/item/gun/magic/I = item
-				if(prob(80) && !I.can_charge)
-					I.max_charges--
-				if(I.max_charges <= 0)
-					I.max_charges = 0
-					burnt_out = TRUE
-				I.charges = I.max_charges
-				if(istype(item, /obj/item/gun/magic/wand) && I.max_charges != 0)
-					var/obj/item/gun/magic/W = item
-					W.icon_state = initial(W.icon_state)
-				I.recharge_newshot()
-				charged_item = I
-				break
 			else if(istype(item, /obj/item/stock_parts/cell))
 				var/obj/item/stock_parts/cell/C = item
 				if(!C.self_recharge)

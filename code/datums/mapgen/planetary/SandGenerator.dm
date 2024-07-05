@@ -92,7 +92,10 @@
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 8,
+		/obj/structure/vein = 8,
+		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
+		/obj/structure/vein/classthree = 2,
 		/obj/effect/spawner/lootdrop/anomaly/sand = 1,
 	)
 	mob_spawn_chance = 4
@@ -100,7 +103,7 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random = 25,
+		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 25,
 	)
 
 /datum/biome/sand/wasteland
@@ -132,7 +135,7 @@
 	)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random = 1,
+		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 1,
 	)
 
 /datum/biome/sand/grass/dead
@@ -166,7 +169,7 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
-		/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random = 40,
+		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 40,
 	)
 
 /datum/biome/sand/acid //plains
@@ -192,7 +195,9 @@
 		/obj/structure/flora/ash/puce = 1,
 	)
 	feature_spawn_list = list(
+		/obj/structure/vein = 8,
 		/obj/structure/geyser/random = 4,
+		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
 		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 1
 	)

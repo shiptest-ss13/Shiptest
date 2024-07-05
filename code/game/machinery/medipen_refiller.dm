@@ -5,7 +5,7 @@
 	icon_state = "medipen_refiller"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/medipen_refiller
-	idle_power_usage = 100
+	idle_power_usage = IDLE_DRAW_LOW
 	/// list of medipen subtypes it can refill
 	var/list/allowed = list(
 		/obj/item/reagent_containers/hypospray/medipen = /datum/reagent/medicine/epinephrine,
@@ -67,7 +67,7 @@
 		return
 	..()
 
-/obj/machinery/medipen_refiller/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/machinery/medipen_refiller/plunger_act(obj/item/plunger/P, mob/living/user)
 	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
 	if(do_after(user, 30, target = src))
 		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")

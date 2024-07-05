@@ -6,8 +6,6 @@
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
-	r_pocket = /obj/item/storage/wallet
-
 // Assistant
 
 /datum/outfit/job/independent/assistant
@@ -19,8 +17,21 @@
 
 /datum/outfit/job/independent/assistant/waiter
 	name = "Independent - Assistant (Waiter)"
+
 	uniform = /obj/item/clothing/under/suit/waiter
+	alt_uniform = /obj/item/clothing/under/suit/waiter/syndicate
+	gloves = /obj/item/clothing/gloves/color/evening
+	ears = /obj/item/radio/headset/headset_srv
 	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/lighter
+	r_pocket = /obj/item/reagent_containers/glass/rag
+
+/datum/outfit/job/independent/assistant/waiter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_KITCHEN)
 
 /datum/outfit/job/independent/assistant/fancy
 	name = "Independent - Assistant (Formal Uniform)"
@@ -91,6 +102,11 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+/datum/outfit/job/independent/captain/cheap //for Miskilamo ships
+	name = "Independent - Captain (Low Budget)"
+	gloves = /obj/item/clothing/gloves/color/white //poverty gloves
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
 	head = /obj/item/clothing/head/caphat/cowboy
@@ -131,6 +147,18 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/kitchen/knife/combat
 	implants = list(/obj/item/implant/radio)
+	accessory = null
+
+/datum/outfit/job/independent/captain/manager
+	name = "Independent - Captain (Manager)"
+
+	id = /obj/item/card/id
+	gloves = /obj/item/clothing/gloves/color/white
+	uniform = /obj/item/clothing/under/suit/black_really
+	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
+	dcoat = null
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = null
 	accessory = null
 
 // Head of Personnel
@@ -253,12 +281,12 @@
 
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
 
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/syndicate/camo
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/bandana
@@ -284,7 +312,6 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/storage/wallet
 	gloves = /obj/item/clothing/gloves/color/yellow
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
@@ -311,6 +338,7 @@
 /datum/outfit/job/independent/engineer/pirate
 	name = "Independent - Engineer (Pirate)"
 
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -362,7 +390,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/storage/wallet
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
@@ -402,6 +429,10 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/independent/doctor/pirate
+	name = "Independent - Medical Doctor (Pirate)"
+
+	ears = /obj/item/radio/headset/pirate
+	uniform = /obj/item/clothing/under/costume/sailor
 
 // Cargo Tech
 
@@ -576,7 +607,8 @@
 	job_icon = "cook"
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/civilian/chef //WS Edit - Alt Uniforms
+	shoes = /obj/item/clothing/shoes/laceup
+	uniform = /obj/item/clothing/under/rank/civilian/chef
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
@@ -591,8 +623,6 @@
 	var/chosen_box = pick(possible_boxes)
 	var/obj/item/storage/box/I = new chosen_box(src)
 	H.equip_to_slot_or_del(I,ITEM_SLOT_BACKPACK)
-	var/datum/martial_art/cqc/under_siege/justacook = new
-	justacook.teach(H)
 
 // Bartender
 
@@ -607,6 +637,14 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
+	accessory = /obj/item/clothing/accessory/waistcoat
+
+/datum/outfit/job/independent/bartender/disarmed //No armor, no shotgun ammo.
+	name = "Independent - Bartender (Disarmed)"
+
+	suit = null
+	alt_suit = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/bartender/pharma
 	name = "Independent - Bartender (Mixologist)"
@@ -618,6 +656,7 @@
 	belt = /obj/item/storage/belt
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	uniform = /obj/item/clothing/under/suit/black
+	accessory = null
 
 // Lawyer
 
@@ -662,7 +701,17 @@
 	H.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_CURATOR)
 
 /datum/outfit/job/independent/curator/dungeonmaster
-
+	name = "Independent - Curator (Dungeon Master)"
+	uniform = /obj/item/clothing/under/misc/pj/red
+	suit = /obj/item/clothing/suit/nerdshirt
+	backpack_contents = list(
+		/obj/item/choice_beacon/hero = 1,
+		/obj/item/tape = 1,
+		/obj/item/storage/pill_bottle/dice = 1,
+		/obj/item/toy/cards/deck/cas = 1,
+		/obj/item/toy/cards/deck/cas/black = 1,
+		/obj/item/hourglass = 1
+	)
 
 // Chaplain
 
@@ -707,6 +756,14 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/independent/chemist/pharma
+	name = "Independent - Chemist (Pharmacology Student)"
+
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	accessory = /obj/item/clothing/neck/scarf/orange
+	l_pocket = /obj/item/pda/medical
+	r_pocket = /obj/item/reagent_containers/pill/floorpill
+	belt = /obj/item/reagent_scanner
+	backpack_contents = list(/obj/item/book/manual/wiki/chemistry = 1)
 
 // Janitor
 
@@ -769,6 +826,21 @@
 	chameleon_extras = list(/obj/item/gun/syringe, /obj/item/stamp/cmo)
 
 /datum/outfit/job/independent/cmo/pharma
+	name = "Independent - Chief Pharmacist"
+
+	glasses = /obj/item/clothing/glasses/science/prescription/fake //chief pharma is this kind of person
+	neck = /obj/item/clothing/neck/tie/orange //the Horrible Tie was genuinely too hard to look at
+	l_pocket = /obj/item/reagent_containers/glass/filter
+	uniform = /obj/item/clothing/under/suit/tan
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = /obj/item/clothing/suit/toggle/suspenders/gray
+
+	l_hand = /obj/item/reagent_containers/glass/maunamug
+	backpack = /obj/item/storage/backpack/chemistry
+	satchel = /obj/item/storage/backpack/satchel/chem
+	courierbag = /obj/item/storage/backpack/messenger/chem
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/bag/chemistry=1)
 
 // Detective
 

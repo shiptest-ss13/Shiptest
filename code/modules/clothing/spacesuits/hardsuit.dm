@@ -166,7 +166,7 @@
 		if(L.status)
 			to_chat(user, "<span class='warning'>This bulb is too damaged to use as a replacement!</span>")
 			return
-		if(do_after(user, 50, 1, src))
+		if(do_after(user, 50, src))
 			qdel(I)
 			helmet = new helmettype(src)
 			to_chat(user, "<span class='notice'>You have successfully repaired [src]'s helmet.</span>")
@@ -444,47 +444,6 @@
 	combat_slowdown = 0.5
 	jetpack = null
 
-//2nd Battlegroup Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
-	name = "beige-red hardsuit helmet"
-	desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in combat mode. Manufactured by Second Battlegroup."
-	icon_state = "hardsuit1-sbg"
-	item_state = "hardsuit1-sbg"
-	hardsuit_type = "sbg"
-
-/obj/item/clothing/suit/space/hardsuit/syndi/sbg
-	name = "beige-red hardsuit"
-	desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in combat mode. Manufactured by the Second Battlegroup."
-	icon_state = "hardsuit1-sbg"
-	item_state = "hardsuit1-sbg"
-	hardsuit_type = "sbg"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
-	lightweight = 1
-	jetpack = null
-
-//Hardliner Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	name = "white-red hardsuit helmet"
-	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in combat mode. Manufactured by Second Battlegroup."
-	icon_state = "hardsuit1-hl"
-	item_state = "hardsuit1-hl"
-	hardsuit_type = "hl"
-
-/obj/item/clothing/suit/space/hardsuit/syndi/hl
-	name = "white-red hardsuit"
-	desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in combat mode. Manufactured by the Second Battlegroup."
-	icon_state = "hardsuit1-hl"
-	item_state = "hardsuit1-hl"
-	hardsuit_type = "hl"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	lightweight = 1
-	jetpack = null
-
-
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
 	name = "elite syndicate hardsuit helmet"
@@ -604,11 +563,6 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS					//Uncomment to enable firesuit protection
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
-
-/obj/item/clothing/suit/space/hardsuit/wizard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, FALSE, FALSE, ITEM_SLOT_OCLOTHING, INFINITY, FALSE)
-
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -1093,18 +1047,6 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit helmet"
-	desc = "An old hardsuit helmet based on a even older hardsuit helmet. Used prolifically by the Frontiersmen pirate fleet."
-	icon_state = "hardsuit0-frontier"
-	hardsuit_type = "frontier"
-
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
-	name = "\improper CMM Patroller hardsuit helmet"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
-	icon_state = "hardsuit0-cmm-patrol"
-	hardsuit_type = "cmm-patrol"
-
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
 	name = "security hardsuit"
@@ -1115,20 +1057,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/suit/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit"
-	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
-	icon_state = "hardsuit_frontier"
-	hardsuit_type = "hardsuit_frontier"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-
-/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
-	name = "\improper CMM Patroller hardsuit"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
-	icon_state = "hardsuit-cmm-patrol"
-	hardsuit_type = "hardsuit-cmm-patrol"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent

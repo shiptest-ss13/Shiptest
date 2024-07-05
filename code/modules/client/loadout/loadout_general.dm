@@ -30,17 +30,13 @@
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
 
-/datum/gear/bible
-	display_name = "bible"
-	path = /obj/item/storage/book/bible
-
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
 
 /datum/gear/mug
 	display_name = "coffee mug"
-	path = /obj/item/reagent_containers/food/drinks/britcup
+	path = /obj/item/reagent_containers/food/drinks/mug
 
 /datum/gear/rilena_mug
 	display_name = "coffee mug, rilena"
@@ -65,10 +61,6 @@
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
 	path = /obj/item/toy/eightball
-
-/datum/gear/wallet
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
 
 /datum/gear/pai
 	display_name = "personal AI device"
@@ -101,10 +93,6 @@
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/cane
-
-/datum/gear/radio
-	display_name = "hand radio"
-	path = /obj/item/radio
 
 /datum/gear/lizard
 	display_name = "toy, lizard plushie"
@@ -153,6 +141,10 @@
 /datum/gear/hairspray
 	display_name = "hair dye"
 	path = /obj/item/dyespray
+
+/datum/gear/colorsalve
+	display_name = "Elzuose color salve"
+	path = /obj/item/colorsalve
 
 /datum/gear/tablebell
 	display_name = "table bell, brass"

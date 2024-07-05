@@ -3,7 +3,6 @@
 	name = "necropolis tendril"
 	desc = "A vile tendril of corruption, originating deep underground. Terrible monsters are pouring out of it."
 
-	icon = 'icons/mob/nest.dmi'
 	icon_state = "tendril"
 
 	faction = list("mining")

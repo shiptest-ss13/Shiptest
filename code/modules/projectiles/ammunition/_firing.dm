@@ -18,8 +18,6 @@
 
 	if(click_cooldown_override)
 		user.changeNext_move(click_cooldown_override)
-	else
-		user.changeNext_move(CLICK_CD_RANGE)
 
 	user.newtonian_move(get_dir(target, user))
 	update_appearance()
@@ -34,7 +32,8 @@
 	if (zone_override)
 		BB.def_zone = zone_override
 	else
-		BB.def_zone = user.zone_selected
+		if(user)
+			BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
 
 	if(isgun(fired_from))
@@ -64,6 +63,23 @@
 		BB.preparePixelProjectile(target, user, params, spread)
 	BB.fire(null, direct_target)
 	BB = null
+	return TRUE
+
+#define BULLET_POP_CHANCE 30
+
+/obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	if(!prob(BULLET_POP_CHANCE) || !BB)
+		return
+	ready_proj()
+	BB.trajectory_ignore_forcemove = TRUE
+	BB.forceMove(get_turf(src))
+	BB.trajectory_ignore_forcemove = FALSE
+	BB.starting = get_turf(src)
+	BB.fire(rand(0,360))
+	BB = null
+	playsound(src, 'sound/weapons/gun/pistol/shot.ogg', 100, TRUE)
+	update_appearance()
 	return TRUE
 
 /obj/item/ammo_casing/proc/spread(turf/target, turf/current, distro)

@@ -87,7 +87,7 @@
 				/obj/item/assembly/flash/handheld = 1,
 				/obj/item/restraints/handcuffs/cable/zipties = 1,
 				/obj/item/restraints/handcuffs = 1,
-				/obj/item/radio/off = 1,
+				/obj/item/radio = 1,
 				/obj/item/lighter = 3,
 				/obj/item/storage/box/matches = 3,
 				/obj/item/reagent_containers/syringe/contraband/space_drugs = 1,
@@ -468,12 +468,18 @@
 				/obj/structure/salvageable/destructive_analyzer
 				)
 
+/obj/effect/spawner/lootdrop/ripley
+	name = "25% mech 75% wreckage ripley spawner"
+	loot = list(/obj/mecha/working/ripley/mining = 1,
+				/obj/structure/mecha_wreckage/ripley = 5)
+	lootdoubles = FALSE
+
 /obj/effect/spawner/lootdrop/salvage_50
 	name = "50% salvage spawner"
 	loot = list(
 				/obj/effect/spawner/lootdrop/maintenance = 13,
 				/obj/effect/spawner/lootdrop/salvage_machine = 12,
-				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/effect/spawner/lootdrop/ripley = 12,
 				/obj/structure/closet/crate/secure/loot = 13,
 				"" = 50
 				)
@@ -1031,13 +1037,13 @@
 		/obj/structure/mecha_wreckage/ripley = 15,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
 		/obj/structure/mecha_wreckage/ripley/mkii = 9,
-		/obj/structure/mecha_wreckage/ripley/cmm = 9
+		/obj/structure/mecha_wreckage/ripley/clip = 9
 		)
 
 /obj/effect/spawner/lootdrop/waste/mechwreck/rare
 	loot = list(
 		/obj/structure/mecha_wreckage/durand = 12.5,
-		/obj/structure/mecha_wreckage/durand/cmm = 12.5,
+		/obj/structure/mecha_wreckage/durand/clip = 12.5,
 		/obj/structure/mecha_wreckage/odysseus = 25,
 		/obj/structure/mecha_wreckage/gygax = 25
 		)

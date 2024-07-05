@@ -12,8 +12,8 @@
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-/obj/item/gun/energy/e_gun/mindshield
-	pin = /obj/item/firing_pin/implant/mindshield
+/obj/item/gun/energy/e_gun/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
@@ -31,9 +31,18 @@
 	flight_x_offset = 19
 	flight_y_offset = 13
 
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 /obj/item/gun/energy/e_gun/mini/Initialize()
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
+
+/obj/item/gun/energy/e_gun/mini/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
@@ -49,13 +58,14 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.6
 	spread_unwielded = 20
-
-/obj/item/gun/energy/e_gun/hades/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
@@ -131,7 +141,6 @@
 	icon_state = "nucgun"
 	item_state = "nucgun"
 	charge_delay = 5
-	pin = null
 	can_charge = FALSE
 	internal_cell = TRUE
 	ammo_x_offset = 2
@@ -193,6 +202,13 @@
 	ammo_x_offset = 2
 	charge_sections = 6
 	small_gun = TRUE
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 
@@ -215,9 +231,10 @@
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
-/obj/item/gun/energy/e_gun/smg/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	fire_delay = 0.13 SECONDS
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
@@ -244,6 +261,7 @@
 	flight_x_offset = 20
 	flight_y_offset = 9
 	spread = 80
+	spread_unwielded = 140
 	dual_wield_spread = 140
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA

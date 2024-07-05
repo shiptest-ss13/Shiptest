@@ -83,10 +83,10 @@
 /obj/structure/closet/crate/secure/owned/togglelock(mob/living/user, silent)
 	if(privacy_lock)
 		if(!broken)
-			var/obj/item/card/id/id_card = user.get_idcard(TRUE)
-			if(id_card)
-				if(id_card.registered_account)
-					if(id_card.registered_account == buyer_account)
+			var/obj/item/card/bank/bank_card = user.get_bankcard()
+			if(bank_card)
+				if(bank_card.registered_account)
+					if(bank_card.registered_account == buyer_account)
 						if(iscarbon(user))
 							add_fingerprint(user)
 						locked = !locked
@@ -105,7 +105,7 @@
 	else ..()
 
 /obj/structure/closet/crate/secure/exo
-	desc = "A lock-enabled crate used to carry EXOCON merchandise destined for export to potential buyers."
-	name = "EXOCON storage crate"
+	desc = "A lock-enabled crate used to carry EXOCOM merchandise destined for export to potential buyers."
+	name = "EXOCOM storage crate"
 	icon = 'icons/obj/crates.dmi'
 	icon_state = "exocrate"

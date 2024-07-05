@@ -47,6 +47,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "generic"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -54,7 +56,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	integrity_failure = 0.33
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	circuit = /obj/item/circuitboard/machine/vendor
-	var/payment_department = ACCOUNT_SRV
+	var/datum/weakref/payment_account_ref
 	light_power = 0.5
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	clicksound = 'sound/machines/pda_button1.ogg'
@@ -676,7 +678,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = list()
 	.["all_items_free"] = all_items_free
 	.["miningvendor"] = mining_point_vendor
-	.["department"] = payment_department
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
 		var/list/data = list(
@@ -713,21 +714,16 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/C
+	var/obj/item/card/bank/card
 	if(ishuman(user))
 		H = user
-		C = H.get_idcard(TRUE)
-		if(C)
+		card = H.get_bankcard()
+		if(card)
 			.["user"] = list()
-			.["user"]["points"] = C.mining_points
-			.["user"]["name"] = C.registered_name
-			if(C.registered_account)
-				.["user"]["name"] = C.registered_account.account_holder
-				.["user"]["cash"] = C.registered_account.account_balance
-				if(C.registered_account.account_job)
-					.["user"]["job"] = C.registered_account.account_job.name
-				else
-					.["user"]["job"] = "No Job"
+			.["user"]["points"] = card.mining_points
+			if(card.registered_account)
+				.["user"]["name"] = card.registered_account.account_holder
+				.["user"]["cash"] = card.registered_account.account_balance
 	.["stock"] = list()
 	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
 		.["stock"][R.name] = R.amount
@@ -771,7 +767,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				return
 			if(!all_items_free && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -794,16 +790,19 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					var/datum/bank_account/account = C.registered_account
 					if(coin_records.Find(R) || hidden_records.Find(R))
 						price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
-					if(price_to_use && !account.adjust_money(-price_to_use))
+					if(price_to_use && !account.has_money(price_to_use))
 						say("You do not possess the funds to purchase [R.name].")
 						flick(icon_deny,src)
 						vend_ready = TRUE
 						return
-					var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
-					if(D)
-						D.adjust_money(price_to_use)
-						SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
-						log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
+
+					var/datum/bank_account/payment_account = payment_account_ref.resolve()
+					if(payment_account)
+						payment_account.transfer_money(account, price_to_use)
+					else
+						account.adjust_money(-price_to_use, "vendor_purchase")
+					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
+					log_econ("[price_to_use] credits were inserted into [src] by [H] to buy [R].")
 			if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
@@ -933,7 +932,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	max_integrity = 400
-	payment_department = NO_FREEBIES
 	refill_canister = /obj/item/vending_refill/custom
 	all_items_free = FALSE
 	/// where the money is sent
@@ -946,10 +944,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/C
+	var/obj/item/card/bank/C
 	if(ishuman(user))
 		H = user
-		C = H.get_idcard(FALSE)
+		C = H.get_bankcard(FALSE)
 		if(C?.registered_account && C.registered_account == private_a)
 			return TRUE
 
@@ -1003,7 +1001,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			vend_ready = FALSE
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -1030,12 +1028,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						updateUsrDialog()
 						return
 					if(account.has_money(S.custom_price))
-						account.adjust_money(-S.custom_price)
 						var/datum/bank_account/owner = private_a
 						if(owner)
-							owner.adjust_money(S.custom_price)
-							SSblackbox.record_feedback("amount", "vending_spent", S.custom_price)
-							log_econ("[S.custom_price] credits were spent on [src] buying a [S] by [owner.account_holder], owned by [private_a.account_holder].")
+							owner.transfer_money(account, S.custom_price)
+						else
+							account.adjust_money(-S.custom_price, "vendor_purchase")
+						SSblackbox.record_feedback("amount", "vending_spent", S.custom_price)
+						log_econ("[S.custom_price] credits were spent on [src] buying a [S] by [owner.account_holder], owned by [private_a.account_holder].")
 						vending_machine_input[N] = max(vending_machine_input[N] - 1, 0)
 						S.forceMove(drop_location())
 						loaded_items--
@@ -1054,10 +1053,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
 	if(!private_a)
 		var/mob/living/carbon/human/H
-		var/obj/item/card/id/C
+		var/obj/item/card/bank/C
 		if(ishuman(user))
 			H = user
-			C = H.get_idcard(TRUE)
+			C = H.get_bankcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
 				say("\The [src] has been linked to [C].")

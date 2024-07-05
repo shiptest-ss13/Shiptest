@@ -422,7 +422,7 @@
 	. = ..()
 	if(.)
 		return
-	var/obj/item/card/id/potential_acc = usr.get_idcard(hand_first = TRUE)
+	var/obj/item/card/bank/potential_acc = usr.get_bankcard()
 	switch(action)
 		if("Buy")
 			if(!showpiece)
@@ -447,9 +447,7 @@
 				to_chat(usr, "<span class='notice'>You do not possess the funds to purchase this.</span>")
 				return TRUE
 			else
-				account.adjust_money(-sale_price)
-				if(payments_acc)
-					payments_acc.adjust_money(sale_price)
+				payments_acc.transfer_money(account, sale_price)
 				usr.put_in_hands(showpiece)
 				to_chat(usr, "<span class='notice'>You purchase [showpiece] for [sale_price] credits.</span>")
 				playsound(src, 'sound/effects/cashregister.ogg', 40, TRUE)
@@ -499,9 +497,9 @@
 			return TRUE
 	. = TRUE
 /obj/structure/displaycase/forsale/attackby(obj/item/I, mob/living/user, params)
-	if(isidcard(I))
+	if(isbankcard(I))
 		//Card Registration
-		var/obj/item/card/id/potential_acc = I
+		var/obj/item/card/bank/potential_acc = I
 		if(!potential_acc.registered_account)
 			to_chat(user, "<span class='warning'>This ID card has no account registered!</span>")
 			return

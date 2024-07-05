@@ -5,7 +5,6 @@
 //Defines copying names of mutations in all cases, make sure to change this if you change mutation's type
 #define HULK /datum/mutation/human/hulk
 #define XRAY /datum/mutation/human/thermal/x_ray
-#define SPACEMUT /datum/mutation/human/space_adaptation
 #define TK /datum/mutation/human/telekinesis
 #define NERVOUS /datum/mutation/human/nervousness
 #define EPILEPSY /datum/mutation/human/epilepsy
@@ -32,7 +31,6 @@
 #define GLOWY /datum/mutation/human/glow
 #define ANTIGLOWY /datum/mutation/human/glow/anti
 #define TELEPATHY /datum/mutation/human/telepathy
-#define FIREBREATH /datum/mutation/human/firebreath
 #define VOID /datum/mutation/human/void
 #define TONGUESPIKE /datum/mutation/human/tonguespike
 #define TONGUESPIKECHEM /datum/mutation/human/tongue_spike/chem
@@ -157,6 +155,7 @@
 #define ORGAN_SLOT_HEART_AID "heartdrive"
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
+#define ORGAN_SLOT_BRAIN_JOYWIRE "brain_joywire"
 #define ORGAN_SLOT_TAIL "tail"
 #define ORGAN_SLOT_WINGS "wings"
 #define ORGAN_SLOT_PARASITE_EGG "parasite_egg"

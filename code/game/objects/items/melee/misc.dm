@@ -85,6 +85,85 @@
 	icon_state = "sabresolgov"
 	item_state = "sabresolgov"
 
+/obj/item/melee/sabre/suns
+	name = "SUNS sabre"
+	desc = "A blade of Solarian origin given to SUNS followers."
+	icon_state = "suns-sabre"
+	item_state = "suns-sabre"
+
+/obj/item/melee/sabre/suns/captain
+	name = "SUNS captain sabre"
+	desc = "An elegant blade awarded to SUNS captains. Despite its higher craftmanship, it appears to be just as effective as a normal sabre."
+	icon_state = "suns-capsabre"
+	item_state = "suns-capsabre"
+
+/obj/item/melee/sabre/suns/cmo
+	name = "SUNS stick sabre"
+	desc = "A thin blade used by SUNS medical instructors."
+	icon_state = "suns-swordstick"
+	item_state = "suns-swordstick"
+
+/obj/item/melee/sabre/suns/telescopic
+	name = "telescopic sabre"
+	desc = "A telescopic and retractable blade given to SUNS peacekeepers for easy concealment and carry. It's design makes it slightly less effective than normal sabres sadly, however it is still excelent at piercing armor."
+	icon_state = "suns-tsword"
+	item_state = "suns-tsword"
+	force = 0
+	throwforce = 0
+	block_chance = 0
+
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("smacked", "prodded")
+
+
+	var/extended = FALSE
+	var/extend_sound = 'sound/weapons/batonextend.ogg'
+
+
+
+	var/on_icon_state = "suns-tsword_ext"
+	var/on_item_state = "suns-tsword_ext"
+	var/off_icon_state = "suns-tsword"
+	var/off_item_state = "suns-tsword"
+
+	var/force_on = 10
+	var/on_throwforce = 10
+	var/on_blockchance = 40
+
+	var/force_off = 0
+	var/off_throwforce = 0
+	var/off_blockchance = 0
+
+	var/weight_class_on = WEIGHT_CLASS_BULKY
+
+/obj/item/melee/sabre/suns/telescopic/attack_self(mob/user)
+	extended = !extended
+
+	if(extended)
+		to_chat(user, "<span class ='warning'>You extend the [src].</span>")
+		icon_state = on_icon_state
+		item_state = on_item_state
+		slot_flags = 0
+		w_class = weight_class_on
+		force = force_on
+		throwforce = on_throwforce
+		block_chance = on_blockchance
+		attack_verb = list("slashed", "cut")
+	else
+		to_chat(user, "<span class ='notice'>You collapse the [src].</span>")
+		icon_state = off_icon_state
+		item_state = off_item_state
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		throwforce = off_throwforce
+		block_chance = off_blockchance
+		attack_verb = list("smacked", "prodded")
+
+	playsound(get_turf(src), extend_sound, 50, TRUE)
+	add_fingerprint(user)
+
 /obj/item/melee/beesword
 	name = "The Stinger"
 	desc = "Taken from a giant bee and folded over one thousand times in pure honey. Can sting through anything."
@@ -566,31 +645,6 @@
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"
 	held_sausage.desc = "[held_sausage.desc] It has been cooked to perfection on \a [target]."
 	update_appearance()
-
-/obj/item/melee/cleric_mace
-	name = "cleric mace"
-	desc = "The grandson of the club, yet the grandfather of the baseball bat. Most notably used by holy orders in days past."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "mace_greyscale"
-	item_state = "mace_greyscale"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.
-	custom_materials = list(/datum/material/iron = 12000)  //Defaults to an Iron Mace.
-	slot_flags = ITEM_SLOT_BELT
-	force = 14
-	w_class = WEIGHT_CLASS_BULKY
-	throwforce = 8
-	armour_penetration = 50
-	attack_verb = list("smacked", "struck", "cracked", "beaten")
-	var/overlay_state = "mace_handle"
-	var/mutable_appearance/overlay
-
-/obj/item/melee/cleric_mace/Initialize()
-	. = ..()
-	overlay = mutable_appearance(icon, overlay_state)
-	overlay.appearance_flags = RESET_COLOR
-	add_overlay(overlay)
 
 /obj/item/melee/greykingsword
 	name = "blade of the grey-king"

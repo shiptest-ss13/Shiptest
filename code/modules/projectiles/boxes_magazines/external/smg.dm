@@ -11,6 +11,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(), 6)]"
 
+/obj/item/ammo_box/magazine/wt550m9/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/wt550m9/ap
 	name = "wt550 magazine (4.6x30mm AP)"
 	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These armor-piercing rounds are great at piercing protective equipment, but lose some stopping power."
@@ -67,10 +70,10 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/ammo_box/magazine/smgm10mm
-	name = "SMG magazine (10mm)"
-	desc = "A 24-round magazine for the SkM-44(k). These rounds do moderate damage, but struggle against armor."
-	icon_state = "smg10mm-24"
-	base_icon_state = "smg10mm"
+	name = "Mongrel magazine (10mm)"
+	desc = "A 24-round magazine for the SKM-44v. These rounds do moderate damage, but struggle against armor."
+	icon_state = "mongrel_mag-24"
+	base_icon_state = "mongrel_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 24
@@ -97,29 +100,32 @@
 	. = ..()
 	icon_state = "c20r45-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/smgm45/drum
-	name = "drum magazine (.45)"
-	desc = "A bulky, 50-round drum magazine for .45 submachine guns. These rounds do moderate damage, but struggle against armor."
-	icon_state = "drum45"
+/obj/item/ammo_box/magazine/smgm45/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag
+	name = "stick magazine (.45)"
+	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
+	icon_state = "firestorm_mag"
+	base_icon_state = "firestorm_mag"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 28
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/update_icon_state()
+	. = ..()
+	icon_state = "firestorm_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+	name = "pan magazine (.45)"
+	desc = "A bulky, 50-round pan magazine for the toploading Firestorm submachine gun. These rounds struggle against armor, but with this many you could cut anyone down regardless."
+	icon_state = "firestorm_pan"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/smgm45/drum/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
-	icon_state = "drum45"
-
-/obj/item/ammo_box/magazine/pistol556mm
-	name = "handgun magazine (5.56mm HITP caseless)"
-	desc = "A 12-round, double-stack magazine for the Pistole C pistol. These rounds do okay damage with average performance against armor."
-	icon_state = "5.56mmHITP-12" //ok i did it
-	base_icon_state = "5.56mmHITP"
-	ammo_type = /obj/item/ammo_casing/caseless/c556mm
-	caliber = "5.56mm caseless"
-	max_ammo = 12
-
-/obj/item/ammo_box/magazine/pistol556mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
+	icon_state = "firestorm_pan"
 
 /obj/item/ammo_box/magazine/tec9
 	name = "machine pistol magazine (9mm AP)"

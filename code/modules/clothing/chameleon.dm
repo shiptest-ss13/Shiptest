@@ -148,8 +148,9 @@
 		card.job_icon = outfit.job_icon
 		card.faction_icon = outfit.faction_icon
 		card.assignment = J.name
-		card.update_label()
-		card.name = "[!card.registered_name ? initial(card.name) : "[card.registered_name]'s ID Card"][" ([old_assignment])"]" // this is terrible, but whatever
+		card.update_appearance()
+		card.assignment = old_assignment
+		card.name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!old_assignment) ? "" : " ([old_assignment])"]"
 		H.sec_hud_set_ID()
 
 	qdel(outfit)

@@ -22,7 +22,6 @@
 /obj/item/clothing/neck/tie
 	name = "tie"
 	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("red tie" = "redtie",
 						"orange tie" = "orangetie",
 						"green tie" = "greentie",
@@ -312,7 +311,6 @@
 /obj/item/clothing/neck/necklace/dope
 	name = "gold necklace"
 	desc = "Damn, it feels good to be a gangster."
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	cuttable = FALSE
 
@@ -383,7 +381,6 @@
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
 	desc = "A cheap, plastic bead necklace. Show team spirit! Collect them! Throw them away! The posibilites are endless!"
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "beads"
 	color = "#ffffff"
 	custom_price = 10
@@ -436,3 +433,9 @@
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()
+
+/obj/item/clothing/neck/fangnecklace
+	name = "wolf fang necklace"
+	desc = "A necklace made out of a wolf's fang and some sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "fang_necklace"
+	cuttable = FALSE

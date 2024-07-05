@@ -138,11 +138,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump"
-	},
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/components/trinary/mixer{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bW" = (
@@ -254,6 +253,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gm" = (
@@ -283,7 +286,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "gF" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/fire{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -292,9 +295,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
@@ -344,9 +345,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "hK" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -354,16 +352,20 @@
 	dir = 4;
 	name = "Engine Access"
 	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hZ" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/item/radio/intercom/directional/east,
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ig" = (
@@ -422,9 +424,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/white{
 	dir = 1
 	},
@@ -477,9 +477,10 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "kQ" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
+/obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ls" = (
@@ -563,7 +564,7 @@
 	pixel_x = -9;
 	pixel_y = 7
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
@@ -742,9 +743,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/east,
 /obj/effect/landmark/start/assistant,
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew)
 "pS" = (
@@ -1205,21 +1204,21 @@
 /area/ship/cargo)
 "CD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "CO" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/door/window/northright{
 	dir = 4;
 	name = "Engine Access"
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1499,9 +1498,8 @@
 /obj/item/pickaxe/silver,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/structure/closet/wall{
-	name = "equipment closet";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "equipment closet"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1627,16 +1625,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
-"Mk" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/item/stack/sheet/mineral/plasma/five,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Mn" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1896,6 +1884,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "QI" = (
@@ -2005,9 +1995,7 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "Tl" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "TP" = (
@@ -2101,10 +2089,10 @@
 /obj/effect/turf_decal/corner/opaque/yellow/three_quarters{
 	dir = 4
 	},
-/obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/structure/guncloset/shotgun,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "WE" = (
@@ -2125,14 +2113,13 @@
 "WL" = (
 /obj/structure/table,
 /obj/item/storage/belt/utility,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/lights/mixed,
-/obj/item/paper/fluff/ruins/oldstation/generator_manual,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "WZ" = (
@@ -2212,12 +2199,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "YE" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump"
-	},
 /obj/structure/catwalk/over,
 /obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "YJ" = (
@@ -2387,7 +2373,7 @@ tq
 CD
 vn
 WL
-Mk
+IF
 IF
 as
 kf

@@ -137,35 +137,27 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	blueprints[1] = new /datum/design/c10mm()
 
-/obj/item/disk/design_disk/ammo_n762
-	name = "Design Disk - 7.62x38mmR Ammo"
-	desc = "A design disk containing the pattern for an ammo holder of 7.62x38mmR ammo, used in Nagant revolvers. It's a wonder anybody still makes these."
 
-/obj/item/disk/design_disk/ammo_n762/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/n762()
-
-/obj/item/disk/design_disk/adv/disposable_gun
+/obj/item/disk/design_disk/disposable_gun
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
 	max_blueprints = 2
 
-/obj/item/disk/design_disk/adv/disposable_gun/Initialize()
+/obj/item/disk/design_disk/disposable_gun/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/disposable_gun()
-	blueprints[2] = new /datum/design/pizza_disposable_gun()
 
-/obj/item/disk/design_disk/cmm_mechs
-	name = "design disk - CMM mecha modifications"
-	desc = "A design disk containing specifications for CMM-custom mecha conversions."
+/obj/item/disk/design_disk/clip_mechs
+	name = "design disk - CLIP mecha modifications"
+	desc = "A design disk containing specifications for CLIP-custom mecha conversions."
 	color = "#57b8f0"
 	max_blueprints = 2
 
-/obj/item/disk/design_disk/cmm_mechs/Initialize()
+/obj/item/disk/design_disk/clip_mechs/Initialize()
 	. = ..()
-	blueprints[1] = new /datum/design/cmm_ripley_upgrade()
-	blueprints[2] = new /datum/design/cmm_durand_upgrade()
+	blueprints[1] = new /datum/design/clip_ripley_upgrade()
+	blueprints[2] = new /datum/design/clip_durand_upgrade()
 
 /obj/item/disk/design_disk/ammo_c9mm
 	name = "Design Disk - 9mm Ammo"

@@ -2,7 +2,7 @@
 	create_dna()
 	return //No randomisation
 
-/mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0)
+/mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0, species_list = null)
 	seed = md5(seed)
 
 	gender = list(MALE, FEMALE)[hex2num(copytext(seed, 1, 2)) % 2 + 1]
@@ -31,6 +31,7 @@
 	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[hex2num(copytext(seed, 11, 12)) % length(GLOB.spider_spinneret_list) + 1]
 	dna.features["kepori_feathers"] = GLOB.kepori_feathers_list[hex2num(copytext(seed, 12, 13)) % length(GLOB.kepori_feathers_list) + 1]
 	dna.features["kepori_body_feathers"] = GLOB.kepori_body_feathers_list[hex2num(copytext(seed, 13, 14)) % length(GLOB.kepori_body_feathers_list) + 1]
+	dna.features["kepori_head_feathers"] = GLOB.kepori_head_feathers_list[hex2num(copytext(seed, 13, 14)) % length(GLOB.kepori_head_feathers_list) + 1]
 	dna.features["vox_head_quills"] = GLOB.vox_head_quills_list[hex2num(copytext(seed, 14, 15)) % length(GLOB.vox_head_quills_list) + 1]
 	dna.features["vox_neck_quills"] = GLOB.vox_neck_quills_list[hex2num(copytext(seed, 15, 16)) % length(GLOB.vox_neck_quills_list) + 1]
 	dna.features["elzu_horns"] = GLOB.elzu_horns_list[hex2num(copytext(seed, 16, 17)) % length(GLOB.elzu_horns_list) + 1]
@@ -38,5 +39,8 @@
 	dna.features["ipc_chassis"] = GLOB.ipc_chassis_list[hex2num(copytext(seed, 18, 19)) % length(GLOB.ipc_chassis_list) + 1]
 	dna.features["ipc_screen"] = GLOB.ipc_screens_list[hex2num(copytext(seed, 19, 20)) % length(GLOB.ipc_screens_list) + 1]
 
-	var/species_id = GLOB.roundstart_races[hex2num(copytext(seed, 3, 4)) % length(GLOB.roundstart_races) + 1]
-	set_species(GLOB.species_list[species_id])
+	if(!species_list)
+		species_list = GLOB.species_list
+
+	var/species = species_list[hex2num(copytext(seed, 3, 4)) % length(species_list) + 1]
+	set_species(species)
