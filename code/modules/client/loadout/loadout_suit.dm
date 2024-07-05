@@ -83,7 +83,7 @@
 
 /datum/gear/suit/jacket/hoodie_baw
 	display_name = "hoodie, black w grey hood"
-	path = /obj/item/clothing/suit/hooded/hoodie/baw
+	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
 
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
