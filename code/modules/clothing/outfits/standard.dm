@@ -158,7 +158,7 @@
 /datum/outfit/centcom/death_commando
 	name = "Death Commando"
 
-	uniform = /obj/item/clothing/under/rank/centcom/commander
+	uniform = /obj/item/clothing/under/color/black
 	suit = /obj/item/clothing/suit/space/hardsuit/deathsquad
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
@@ -195,9 +195,10 @@
 	W.update_label()
 	..()
 
-/datum/outfit/centcom/death_commando/officer
-	name = "Death Commando Officer"
-	head = /obj/item/clothing/head/helmet/space/beret
+/datum/outfit/centcom/death_commando/shielded
+	name = "Death Commando Solo"
+	suit = "/obj/item/clothing/suit/space/hardsuit/shielded/deathsquad"
+
 
 /datum/outfit/chrono_agent
 	name = "Timeline Eradication Agent"

@@ -968,7 +968,7 @@
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 
-///SWAT version
+///DEATHSQUAD! version
 /obj/item/clothing/suit/space/hardsuit/shielded/deathsquad
 	name = "Deathsquad shieldsuit"
 	desc = "Special equipment given to Deathcommandos, this Deathsquad hardsuit comes with a built in forcefield projector. Only ever seen in one off issues of 'DEATHSQUAD!', the Deathsquad shieldsuit is issued to single commandos when failure is not an option."
