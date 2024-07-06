@@ -1,6 +1,10 @@
 /obj/item/gun/ballistic/automatic/powered/gauss
 	name = "prototype gauss rifle"
 	desc = "An experimental Nanotrasen rifle with a high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "gauss"
 	item_state = "arg"
 	slot_flags = 0
@@ -30,6 +34,10 @@
 	name = "Model H"
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor."
 	mag_type = /obj/item/ammo_box/magazine/modelh
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "model-h"
 	item_state = "model-h"
 	fire_sound = 'sound/weapons/gun/gauss/modelh.ogg'
@@ -60,7 +68,10 @@
 	name = "Claris"
 	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended."
 	mag_type = /obj/item/ammo_box/magazine/internal/claris
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "claris"
 	item_state = "claris"
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
@@ -83,7 +94,10 @@
 	name = "Solar 'GAR' Carbine"
 	desc = "A Solarian carbine, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
 	mag_type = /obj/item/ammo_box/magazine/gar
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	icon_state = "gar"
 	item_state = "gar"
 	fire_sound = 'sound/weapons/gun/gauss/gar.ogg'

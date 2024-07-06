@@ -2,7 +2,7 @@
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
 	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "detective"
+	icon_state = "flatgun"
 	item_state = "gun"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -361,6 +361,7 @@
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
+	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/Destroy()
@@ -992,7 +993,11 @@
 		return
 
 	if(isnull(forced_zoom))
-		zoomed = !zoomed
+		if((!zoomed && wielded_fully) || zoomed)
+			zoomed = !zoomed
+		else
+			to_chat(user, "<span class='danger'>You can't look down the scope without wielding [src]!</span>")
+			zoomed = FALSE
 	else
 		zoomed = forced_zoom
 

@@ -38,7 +38,7 @@
 			new /obj/item/jammer(src)
 
 		if("guns")
-			new /obj/item/gun/ballistic/revolver(src)
+			new /obj/item/gun/ballistic/revolver/syndicate(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/card/emag(src)
@@ -99,7 +99,7 @@
 			new /obj/item/storage/box/syndie_kit/emp(src)
 
 		if("sniper") //This shit is unique so can't really balance it around tc, also no silencer because getting killed without ANY indicator on what killed you sucks
-			new /obj/item/gun/ballistic/automatic/sniper_rifle(src) // 12 tc
+			new /obj/item/gun/ballistic/automatic/marksman/sniper_rifle(src) // 12 tc
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
@@ -119,7 +119,7 @@
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
 	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
-			new /obj/item/gun/ballistic/automatic/pistol(src)
+			new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
 			new /obj/item/attachment/silencer(src)
 			new /obj/item/ammo_box/magazine/m10mm(src)
 			new /obj/item/ammo_box/magazine/m10mm(src)

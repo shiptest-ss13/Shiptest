@@ -435,17 +435,42 @@ There are several things that need to be remembered:
 
 	if(s_store)
 		var/obj/item/I = s_store
-		var/mutable_appearance/s_store_overlay
 		update_hud_s_store(I)
-		var/t_state = I.item_state
-		if(!t_state)
-			t_state = I.icon_state
-		s_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi', override_state = t_state)
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/suit_store_overlay
 
-		if(!s_store_overlay)
-			return
-		overlays_standing[SUIT_STORE_LAYER] = s_store_overlay
-	apply_overlay(SUIT_STORE_LAYER)
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+
+		/// Does this clothing need to be generated via greyscale
+		var/handled_by_bodytype = FALSE
+
+		if(!suit_store_overlay)
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_BACK_PATH
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_BACK_PATH
+//				else
+				handled_by_bodytype = TRUE
+
+			if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
+				icon_file = DEFAULT_BACK_PATH
+				handled_by_bodytype = TRUE
+
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			suit_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
+
+			if(!suit_store_overlay)
+				return
+			overlays_standing[SUIT_STORE_LAYER] = suit_store_overlay
+
+			if(suit_store_overlay)
+				apply_overlay(SUIT_STORE_LAYER)
 
 
 /mob/living/carbon/human/update_inv_head()
