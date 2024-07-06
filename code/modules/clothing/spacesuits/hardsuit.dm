@@ -981,7 +981,7 @@
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/deathsquad
 	dog_fashion = /datum/dog_fashion/back/deathsquad
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/deathsquad
