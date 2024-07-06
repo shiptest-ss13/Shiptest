@@ -48,7 +48,7 @@
 	weather_message = "<span class='warning'>The clouds blacken and the sky starts to flash as thunder strikes down!</span>"
 	thunder_chance = 10
 
-/datum/weather/rain/heavy/storm
+/datum/weather/rain/heavy/storm_intense
 	name = "storm"
 	desc = "Storm with rain and lightning."
 	weather_overlay = "storm_very"
