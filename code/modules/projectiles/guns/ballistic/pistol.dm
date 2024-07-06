@@ -1,5 +1,4 @@
 /obj/item/gun/ballistic/automatic/pistol
-	can_suppress = TRUE
 	bolt_type = BOLT_TYPE_LOCKING
 
 	vary_fire_sound = FALSE
