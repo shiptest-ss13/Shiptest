@@ -381,20 +381,11 @@
 //OONGA BOONGA//
 ////////////////
 
-/obj/item/clothing/accessory/talisman
-	name = "bone talisman"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
-	icon_state = "talisman"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
+/obj/item/clothing/accessory/bonearmlet
+	name = "bone armlet"
+	desc = "An armlet made out of animal bone and sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "bone_armlet"
 	attachment_slot = ARMS
-	above_suit = TRUE
-
-/obj/item/clothing/accessory/wolftalisman
-	name = "hunter's necklace"
-	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
-	icon_state = "wolf_talisman"
-	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
-	attachment_slot = CHEST
 	above_suit = TRUE
 
 /obj/item/clothing/accessory/skullcodpiece

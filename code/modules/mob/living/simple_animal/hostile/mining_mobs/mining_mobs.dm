@@ -75,7 +75,8 @@
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/asteroid/proc/spawn_mob_trophy()
-	butcher_results[mob_trophy] = 1
+	if(mob_trophy)
+		butcher_results[mob_trophy] = 1
 
 /mob/living/simple_animal/hostile/asteroid/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)

@@ -8,6 +8,7 @@
 
 	var/obj/item/card/id/stored_card
 	var/obj/item/card/id/stored_card2
+	var/obj/item/card/bank/bank_card
 
 /obj/item/computer_hardware/card_slot/Exited(atom/ejected, atom/newloc)
 	if(!(ejected == stored_card || ejected == stored_card2))

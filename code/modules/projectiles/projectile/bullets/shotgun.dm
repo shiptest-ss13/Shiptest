@@ -18,7 +18,7 @@
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
-	damage = 5
+	damage = 8
 	armour_penetration = -35
 
 /obj/projectile/bullet/slug/stun

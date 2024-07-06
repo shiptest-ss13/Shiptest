@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
  */
 /obj/effect/collapsing_demonic_portal/proc/drop_loot()
 	visible_message("<span class='warning'>Something slips out of [src]!</span>")
-	var/loot = rand(1, 23)
+	var/loot = rand(1, 21)
 	switch(loot)
 		if(1)//Clown hell. God help you if you roll this.
 			visible_message("<span class='userdanger'>You can hear screaming and joyful honking.</span>")//now THIS is what we call a critical failure
@@ -340,20 +340,12 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/staff/bostaff(loc)
 				new /mob/living/simple_animal/hostile/human/skeleton(loc)
 				new /mob/living/simple_animal/hostile/human/skeleton(loc)
-			if(prob(45))
-				new /obj/item/disk/design_disk/adv/cleric_mace(loc)
-				new /mob/living/simple_animal/hostile/human/skeleton(loc)
-				new /mob/living/simple_animal/hostile/human/skeleton(loc)
 			if(prob(25))
 				new /obj/item/shield/riot/roman(loc)
 				new /mob/living/simple_animal/hostile/human/skeleton(loc)
 			if(prob(55))
 				new /obj/item/clothing/suit/armor/riot/knight/blue(loc)
 				new /obj/item/clothing/head/helmet/knight/blue(loc)
-				new /mob/living/simple_animal/hostile/human/skeleton(loc)
-				new /mob/living/simple_animal/hostile/human/skeleton(loc)
-			if(prob(35))
-				new /obj/item/disk/design_disk/adv/knight_gear(loc)
 				new /mob/living/simple_animal/hostile/human/skeleton(loc)
 				new /mob/living/simple_animal/hostile/human/skeleton(loc)
 			new /obj/item/instrument/trombone(loc)
@@ -387,7 +379,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/clothing/shoes/magboots/syndie(loc)
 				new /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space(loc)
 			if(prob(25))
-				new /obj/item/gun/ballistic/automatic/pistol/suppressed(loc)
+				new /obj/item/gun/ballistic/automatic/pistol/syndicate(loc)
 				new /obj/item/ammo_box/magazine/
 				new /mob/living/simple_animal/hostile/human/syndicate/melee/sword(loc)
 			if(prob(25))
@@ -805,9 +797,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			visible_message("<span class='userdanger'>You hear a geiger counter click and smell ash.</span>")
 			playsound(loc,'sound/items/radiostatic.ogg', 100, FALSE, 50, TRUE, TRUE)
 			if(prob(50))
-				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola(loc)
-				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola(loc)
-				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola(loc)
+				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola(loc)
+				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola(loc)
+				new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola(loc)
 				new /mob/living/simple_animal/hostile/cockroach/glockroach(loc)
 			if(prob(50))
 				new /obj/structure/radioactive/stack(loc)
@@ -824,41 +816,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/item/geiger_counter(loc)
 			new /mob/living/simple_animal/hostile/cockroach/glockroach(loc)
 			new /turf/open/floor/plating/dirt(loc)
-
-		if(15)//the cultists amoung us
-			visible_message("<span class='userdanger'>Chanting and a hateful red glow spill through the portal.</span>")
-			playsound(loc,'sound/spookoween/ghost_whisper.ogg', 100, FALSE, 50, TRUE, TRUE)
-			if(prob(50))
-				new /mob/living/simple_animal/hostile/construct/proteon/hostile(loc)
-			if(prob(45))
-				new /obj/item/borg/upgrade/modkit/lifesteal(loc)
-				new /obj/item/bedsheet/cult(loc)
-				new /mob/living/simple_animal/hostile/construct/wraith/hostile(loc)
-			if(prob(50))
-				new /obj/item/stack/sheet/mineral/hidden/hellstone/ten(loc)
-			if(prob(35))
-				new /obj/item/sharpener/cult(loc)
-				new /mob/living/simple_animal/hostile/construct/artificer/hostile(loc)
-			if(prob(15))
-				new /obj/item/cult_bastard(loc)
-				new /mob/living/simple_animal/hostile/construct/juggernaut/hostile(loc)
-			if(prob(35))
-				new /obj/item/cult_shift(loc)
-				new /mob/living/simple_animal/hostile/construct/proteon/hostile(loc)
-			if(prob(45))
-				new /obj/item/gem/bloodstone(loc)
-				new /mob/living/simple_animal/hostile/construct/proteon/hostile(loc)
-			if(prob(35))
-				new /obj/item/nullrod/scythe/talking/necro(loc)
-				new /mob/living/simple_animal/hostile/construct/proteon/hostile(loc)
-			if(prob(35))
-				new /obj/item/clothing/suit/space/hardsuit/cult/(loc)
-				new /mob/living/simple_animal/hostile/construct/artificer/hostile(loc)
-			new /mob/living/simple_animal/hostile/construct/juggernaut/hostile(loc)
-			new /mob/living/simple_animal/hostile/construct/wraith/hostile(loc)
-			new /obj/structure/destructible/cult/pylon(loc)
-			new /turf/open/floor/plasteel/cult(loc)
-		if(16)//the backroom freezer
+		if(15)//the backroom freezer
 			visible_message("<span class='userdanger'>The faint hallogen glow of a faraway kitchen greets you.</span>")
 			if(prob(45))
 				new /obj/item/kitchen/knife/bloodletter(loc)
@@ -902,14 +860,14 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/killertomato(loc)
 			new /mob/living/simple_animal/hostile/alien/maid(loc)
 			new /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor(loc)
-		if(17)//legion miniboss
+		if(16)//legion miniboss
 			visible_message("<span class='userdanger'>The ground quakes. An immense figure reaches through the portal, crouching to squeeze through.</span>")
 			playsound(loc,'sound/magic/knock.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/big_legion(loc)
 			if(prob(75))
 				new /obj/structure/closet/crate/necropolis/tendril/greater(loc)
 			new /turf/open/indestructible/necropolis(loc)
-		if(18)//xenobiologist's hubris
+		if(17)//xenobiologist's hubris
 			visible_message("<span class='userdanger'>You catch a glimpse of a wobbling sea of slimy friends. An abused-looking keeper slips through the portal.</span>")
 			playsound(loc,'sound/effects/footstep/slime1.ogg', 100, FALSE, 50, TRUE, TRUE)
 			if(prob(25))
@@ -959,19 +917,19 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/effect/mob_spawn/human/scientist(loc)
 			new /turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/slime/random(loc)
-		if(19)//hey, free elite tumor!
+		if(18)//hey, free elite tumor!
 			visible_message("<span class='userdanger'>A large, pulsating structure falls through the portal and crashes to the floor.</span>")
 			playsound(loc,'sound/effects/break_stone.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /obj/structure/elite_tumor(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
-		if(20)//*you flush the toilet.*
+		if(19)//*you flush the toilet.*
 			visible_message("<span class='userdanger'>You hear the faint noise of a long flush.</span>")
 			new /obj/structure/toilet(loc)
 			new /obj/effect/decal/remains(loc)
 			new /obj/item/newspaper(loc)
 			new /turf/open/floor/plastic(loc)
 			new /obj/item/clothing/head/papersack/smiley(loc) //welcome to the bathroom
-		if(21)//Research & Zombies
+		if(20)//Research & Zombies
 			visible_message("<span class='userdanger'>Flashing lights and quarantine alarms echo through the portal. You smell rotting flesh and plasma.</span>")
 			playsound(loc,'sound/misc/bloblarm.ogg', 120, FALSE, 50, TRUE, TRUE)
 			if(prob(35))
@@ -1016,7 +974,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/research_notes/loot/small(loc)
 			new/turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/hostile/human/zombie(loc)
-		if(22)//Silverback's locker room
+		if(21)//Silverback's locker room
 			visible_message("<span class='userdanger'>You catch a glimpse of verdant green. Smells like a locker room.</span>")
 			playsound(loc,'sound/creatures/gorilla.ogg', 75, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/gorilla(loc)

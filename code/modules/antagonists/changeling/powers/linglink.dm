@@ -67,7 +67,7 @@
 	to_chat(user, "<span class='notice'>We must keep holding on to [target] to sustain the link. </span>")
 	while(user.pulling && user.grab_state >= GRAB_NECK)
 		target.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 0.5) // So they don't choke to death while you interrogate them
-		do_after(user, 10 SECONDS, target, TRUE)
+		do_after(user, 10 SECONDS, target, hidden = TRUE)
 
 	changeling.islinking = 0
 	target.mind.linglink = 0

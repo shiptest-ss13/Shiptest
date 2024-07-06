@@ -1,150 +1,12 @@
 // CHAPLAIN CUSTOM ARMORS //
 
-/obj/item/clothing/head/helmet/chaplain
-	name = "crusader helmet"
-	desc = "Deus Vult."
-	icon_state = "knight_templar"
-	item_state = "knight_templar"
-	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	strip_delay = 80
-	dog_fashion = null
-
-/obj/item/clothing/suit/armor/riot/chaplain
-	name = "crusader armour"
-	desc = "God wills it!"
-	icon_state = "chaplain_templar"
-	item_state = "knight_templar"
-	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
-	slowdown = 0
-	clothing_flags = NONE
-
-/obj/item/choice_beacon/holy
-	name = "armaments beacon"
-	desc = "Contains a set of armaments for the chaplain."
-
-/obj/item/choice_beacon/holy/canUseBeacon(mob/living/user)
-	if(user.mind && user.mind.holy_role)
-		return ..()
-	else
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, TRUE)
-		return FALSE
-
-/obj/item/choice_beacon/holy/generate_display_names()
-	var/static/list/holy_item_list
-	if(!holy_item_list)
-		holy_item_list = list()
-		var/list/templist = typesof(/obj/item/storage/box/holy)
-		for(var/V in templist)
-			var/atom/A = V
-			holy_item_list[initial(A.name)] = A
-	return holy_item_list
-
-/obj/item/choice_beacon/holy/spawn_option(obj/choice,mob/living/M)
-	if(!GLOB.holy_armor_type)
-		..()
-		playsound(src, 'sound/effects/pray_chaplain.ogg', 40, TRUE)
-		SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
-		GLOB.holy_armor_type = choice
-	else
-		to_chat(M, "<span class='warning'>A selection has already been made. Self-Destructing...</span>")
-		return
-
-
 /obj/item/storage/box/holy
-	name = "Templar Kit"
-
-/obj/item/storage/box/holy/PopulateContents()
-	new /obj/item/clothing/head/helmet/chaplain(src)
-	new /obj/item/clothing/suit/armor/riot/chaplain(src)
-
-/obj/item/storage/box/holy/student
-	name = "Profane Scholar Kit"
-
-/obj/item/storage/box/holy/student/PopulateContents()
-	new /obj/item/clothing/suit/armor/riot/chaplain/studentuni(src)
-	new /obj/item/clothing/head/helmet/chaplain/cage(src)
-
-/obj/item/clothing/suit/armor/riot/chaplain/studentuni
-	name = "student robe"
-	desc = "The uniform of a bygone institute of learning."
-	icon_state = "chaplain_studentuni"
-	item_state = "studentuni"
-	body_parts_covered = ARMS|CHEST
-	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
-
-/obj/item/clothing/head/helmet/chaplain/cage
-	name = "cage"
-	desc = "A cage that restrains the will of the self, allowing one to see the profane world for what it is."
-	flags_inv = HIDEHAIR //bald
-	mob_overlay_icon = 'icons/mob/large-worn-icons/64x64/head.dmi'
-	icon_state = "cage"
-	item_state = "cage"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-
-/obj/item/storage/box/holy/sentinel
-	name = "Stone Sentinel Kit"
-
-/obj/item/storage/box/holy/sentinel/PopulateContents()
-	new /obj/item/clothing/suit/armor/riot/chaplain/ancient(src)
-	new /obj/item/clothing/head/helmet/chaplain/ancient(src)
-
-/obj/item/clothing/head/helmet/chaplain/ancient
-	name = "ancient helmet"
-	desc = "None may pass!"
-	icon_state = "knight_ancient"
-	item_state = "knight_ancient"
-
-/obj/item/clothing/suit/armor/riot/chaplain/ancient
-	name = "ancient armour"
-	desc = "Defend the treasure..."
-	icon_state = "chaplain_ancient"
-	item_state = "knight_ancient"
-
-/obj/item/storage/box/holy/witchhunter
 	name = "Witchhunter Kit"
 
-/obj/item/storage/box/holy/witchhunter/PopulateContents()
-	new /obj/item/clothing/suit/armor/riot/chaplain/witchhunter(src)
-	new /obj/item/clothing/head/helmet/chaplain/witchunter_hat(src)
+/obj/item/storage/box/holy/PopulateContents()
+	new /obj/item/clothing/head/witchunter(src)
+	new /obj/item/clothing/suit/armor/witchhunter(src)
 
-/obj/item/clothing/suit/armor/riot/chaplain/witchhunter
-	name = "witchunter garb"
-	desc = "This worn outfit saw much use back in the day."
-	icon_state = "chaplain_witchhunter"
-	item_state = "witchhunter"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/head/helmet/chaplain/witchunter_hat
-	name = "witchunter hat"
-	desc = "This hat saw much use back in the day."
-	icon_state = "witchhunterhat"
-	item_state = "witchhunterhat"
-	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEEYES|HIDEHAIR
-
-/obj/item/storage/box/holy/adept
-	name = "Divine Adept Kit"
-
-/obj/item/storage/box/holy/adept/PopulateContents()
-	new /obj/item/clothing/suit/armor/riot/chaplain/adept(src)
-	new /obj/item/clothing/head/helmet/chaplain/adept(src)
-
-/obj/item/clothing/head/helmet/chaplain/adept
-	name = "adept hood"
-	desc = "Its only heretical when others do it."
-	icon_state = "crusader"
-	item_state = "crusader"
-	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
-
-/obj/item/clothing/suit/armor/riot/chaplain/adept
-	name = "adept robes"
-	desc = "The ideal outfit for burning the unfaithful."
-	icon_state = "chaplain_crusader"
-	item_state = "crusader"
 
 /obj/item/storage/box/holy/follower
 	name = "Followers of the Chaplain Kit"
@@ -202,62 +64,6 @@
 	obj_flags = UNIQUE_RENAME
 	var/reskinned = FALSE
 	var/chaplain_spawnable = TRUE
-
-/obj/item/nullrod/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
-
-/obj/item/nullrod/attack_self(mob/user)
-	if(user.mind && (user.mind.holy_role) && !reskinned)
-		reskin_holy_weapon(user)
-
-/**
- * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
- *
- * Arguments:
- * * M The mob choosing a nullrod reskin
- */
-/obj/item/nullrod/proc/reskin_holy_weapon(mob/M)
-	if(GLOB.holy_weapon_type)
-		return
-	var/list/display_names = list()
-	var/list/nullrod_icons = list()
-	for(var/V in typesof(/obj/item/nullrod))
-		var/obj/item/nullrod/rodtype = V
-		if(initial(rodtype.chaplain_spawnable))
-			display_names[initial(rodtype.name)] = rodtype
-			nullrod_icons += list(initial(rodtype.name) = image(icon = initial(rodtype.icon), icon_state = initial(rodtype.icon_state)))
-
-	nullrod_icons = sortList(nullrod_icons)
-	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), M), radius = 42, require_near = TRUE)
-	if(!choice || !check_menu(M))
-		return
-
-	var/A = display_names[choice] // This needs to be on a separate var as list member access is not allowed for new
-	var/obj/item/nullrod/holy_weapon = new A
-	GLOB.holy_weapon_type = holy_weapon.type
-
-	SSblackbox.record_feedback("tally", "chaplain_weapon", 1, "[choice]")
-
-	if(holy_weapon)
-		holy_weapon.reskinned = TRUE
-		qdel(src)
-		M.put_in_active_hand(holy_weapon)
-
-/**
- * check_menu: Checks if we are allowed to interact with a radial menu
- *
- * Arguments:
- * * user The mob interacting with a menu
- */
-/obj/item/nullrod/proc/check_menu(mob/user)
-	if(!istype(user))
-		return FALSE
-	if(QDELETED(src) || reskinned)
-		return FALSE
-	if(user.incapacitated() || !user.is_holding(src))
-		return FALSE
-	return TRUE
 
 /obj/item/nullrod/godhand
 	icon_state = "disintegrate"
@@ -647,13 +453,6 @@
 	attack_verb = list("bitten", "eaten", "fin slapped")
 	hitsound = 'sound/weapons/bite.ogg'
 	var/used_blessing = FALSE
-
-/obj/item/nullrod/carp/attack_self(mob/living/user)
-	if(used_blessing)
-	else if(user.mind && (user.mind.holy_role))
-		to_chat(user, "<span class='boldnotice'>You are blessed by Carp-Sie. Wild space carp will no longer attack you.</span>")
-		user.faction |= "carp"
-		used_blessing = TRUE
 
 /obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
 	name = "monk's staff"

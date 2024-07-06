@@ -171,9 +171,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/dormfive
 	name = "Dormitory 5"
 
+/area/ship/crew/dorm/captain
+	name = "Captain's Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"
+
+/area/ship/crew/toilet/two
+	name = "Restroom 2"
+
+/area/ship/crew/toilet/three
+	name = "Restroom 3"
 
 /area/ship/crew/canteen
 	name = "Canteen"
@@ -198,6 +207,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Chapel Office"
 	icon_state = "chapeloffice"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
@@ -219,6 +229,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Office"
 	icon_state = "vacant_office"
 	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ship/crew/office/lobby
+	name = "Lobby"
+
+/area/ship/crew/ccommons
+	name = "Commons"
+	icon_state = "vacant_office"
 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
@@ -243,6 +260,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Morgue"
 	icon_state = "morgue"
 	ambientsounds = SPOOKY
+
+/area/ship/medical/psych
+	name = "Psych's Office"
 
 /// Science Lab ///
 /area/ship/science

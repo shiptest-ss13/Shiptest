@@ -355,7 +355,6 @@
 	icon_living = "disfigured_legion"
 	icon_aggro = "disfigured_legion"
 	icon_dead = "disfigured_legion"
-	difficulty = 2
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
 	loot = list(/obj/item/organ/regenerative_core/legion/crystal)
 

@@ -779,10 +779,10 @@
 				combined_msg += "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
 
 	for(var/t in missing)
-		combined_msg += "<span class='boldannounce'>Your [parse_zone(t)] is missing!</span>"
+		combined_msg += span_boldannounce("Your [parse_zone(t)] is missing!</span>")
 
-	if(bleed_rate)
-		combined_msg += "<span class='danger'>You are bleeding!</span>"
+	for(var/obj/item/bodypart/BP in get_bleeding_parts(TRUE))
+		combined_msg += span_danger("Your [parse_zone(BP.body_zone)] is bleeding!</span>")
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)
 			combined_msg += "<span class='info'>You're completely exhausted.</span>"

@@ -220,7 +220,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/storage/wallet
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/nanotrasen/engineering/director
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering

@@ -43,6 +43,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "as" = (
@@ -184,21 +185,21 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/starboard)
 "dD" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/under/syndicate,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "dG" = (
@@ -372,21 +373,21 @@
 	pixel_x = -12;
 	pixel_y = 7
 	},
-/obj/item/clothing/under/syndicate/sniper,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/suit/armor/vest/duster,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "Bridge Officer's Locker";
 	req_access_txt = "57"
 	},
 /obj/item/melee/classic_baton/telescopic,
-/obj/item/clothing/neck/chameleon,
 /obj/item/radio/headset/syndicate,
 /obj/item/megaphone{
 	pixel_x = -2
 	},
+/obj/item/clothing/under/syndicate/cybersun/officer,
+/obj/item/clothing/suit/cybersun_suit,
+/obj/item/clothing/head/HoS/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eN" = (
@@ -653,12 +654,10 @@
 	dir = 1;
 	layer = 2.8
 	},
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/item/clothing/under/syndicate,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
@@ -668,6 +667,8 @@
 	pixel_x = -23;
 	pixel_y = 4
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "hk" = (
@@ -1156,8 +1157,6 @@
 /obj/structure/closet/wall/orange/directional/south{
 	name = "Engineering locker"
 	},
-/obj/item/clothing/under/syndicate/coldres,
-/obj/item/clothing/suit/toggle/industrial,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/head/welding,
 /obj/item/clothing/head/hardhat/red,
@@ -1174,6 +1173,8 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/suit/hazardvest/hardliners,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ls" = (
@@ -1271,14 +1272,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer2{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1969,6 +1970,7 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "sV" = (
@@ -2467,11 +2469,11 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	name = "Input to Fuel"
-	},
 /obj/effect/turf_decal/industrial/shutoff{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/trinary/mixer/flipped{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2723,14 +2725,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "yH" = (
-/obj/item/gun/ballistic/automatic/pistol,
-/obj/item/gun/ballistic/automatic/pistol{
+/obj/item/gun/ballistic/automatic/pistol/syndicate,
+/obj/item/gun/ballistic/automatic/pistol/syndicate{
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
 	},
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/structure/railing,
 /obj/item/gun/ballistic/automatic/smg/c20r,
 /obj/machinery/light/directional/east,
@@ -2873,18 +2875,13 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol{
+/obj/item/gun/ballistic/automatic/pistol/syndicate{
 	pixel_y = 3
 	},
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/c10mm,
 /obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/suit/armor/vest/leather{
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of the Gorlex Marauders."
-	},
-/obj/item/clothing/mask/gas/sechailer/swat,
-/obj/item/clothing/head/HoS/beret/syndicate,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "Sergeant's Locker";
@@ -2892,11 +2889,12 @@
 	},
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/suit/armor/vest/blueshirt,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate,
 /obj/item/clothing/accessory/holster,
 /obj/item/clothing/shoes/combat,
 /obj/item/radio/headset/syndicate,
+/obj/item/clothing/under/syndicate/hardliners/officer,
+/obj/item/clothing/suit/armor/hardliners/sergeant,
+/obj/item/clothing/head/hardliners/peaked,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AS" = (
@@ -3124,18 +3122,17 @@
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/glasses/thermal/eyepatch,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
-/obj/item/gun/ballistic/revolver,
+/obj/item/gun/ballistic/revolver/syndicate,
 /obj/item/clothing/under/syndicate/sniper,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners/officer,
+/obj/item/clothing/suit/toggle/armor/vest/hardliners,
+/obj/item/clothing/head/hardliners/peaked,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "El" = (
@@ -3347,7 +3344,6 @@
 	},
 /area/ship/maintenance/starboard)
 "GD" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -3356,11 +3352,12 @@
 	dir = 9
 	},
 /obj/item/clothing/mask/balaclava,
-/obj/item/clothing/under/syndicate/gorlex,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "GJ" = (
@@ -3845,7 +3842,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
 "Lb" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/neck/scarf/red,
 /obj/item/clothing/mask/bandana/skull,
 /obj/item/clothing/mask/gas/syndicate,
@@ -3855,11 +3851,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/item/clothing/under/utility,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "Lj" = (
@@ -4012,9 +4009,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "MO" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 8
 	},
@@ -4025,6 +4019,9 @@
 	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4064,21 +4061,16 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/item/clothing/under/syndicate/skirt,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "Ni" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/clothing/head/helmet/operator,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -4090,9 +4082,21 @@
 	name = "Armor Locker";
 	req_access_txt = "1"
 	},
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
+/obj/item/clothing/suit/armor/hardliners/jacket,
+/obj/item/clothing/suit/armor/hardliners/jacket,
+/obj/item/clothing/suit/armor/hardliners/jacket,
+/obj/item/clothing/suit/armor/hardliners,
+/obj/item/clothing/suit/armor/hardliners,
+/obj/item/clothing/suit/armor/hardliners,
+/obj/item/clothing/head/helmet/hardliners,
+/obj/item/clothing/head/helmet/hardliners,
+/obj/item/clothing/head/helmet/hardliners,
+/obj/item/storage/belt/security/webbing/hardliners,
+/obj/item/storage/belt/security/webbing/hardliners,
+/obj/item/storage/belt/security/webbing/hardliners,
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "Nj" = (
@@ -4247,9 +4251,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Pt" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 8
 	},
@@ -4261,6 +4262,9 @@
 	id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PA" = (
@@ -4271,7 +4275,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
 "PE" = (
-/obj/structure/chair/comfy,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 8
@@ -4281,6 +4284,7 @@
 	pixel_y = -1
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/structure/chair/comfy/red,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "PG" = (
@@ -4471,10 +4475,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 6
-	},
 /obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Rf" = (
@@ -4858,13 +4862,14 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 8
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Vq" = (
@@ -5096,17 +5101,17 @@
 /area/ship/hallway/central)
 "WQ" = (
 /obj/structure/railing,
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
 /obj/item/clothing/mask/balaclava,
-/obj/item/clothing/under/syndicate/gorlex,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "WR" = (
@@ -5232,7 +5237,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Yn" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/fire{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -5426,12 +5431,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/item/clothing/under/utility,
 /obj/item/clothing/suit/longcoat/roboblack,
-/obj/item/clothing/suit/apron/surgical,
-/obj/item/clothing/neck/stethoscope,
 /obj/item/clothing/mask/surgical,
-/obj/item/clothing/head/beret/black,
 /obj/item/clothing/gloves/color/latex/nitrile/evil{
 	pixel_x = 1;
 	pixel_y = -3
@@ -5442,6 +5443,9 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/item/clothing/suit/hardliners,
+/obj/item/clothing/head/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
 "Zy" = (
