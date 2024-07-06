@@ -101,7 +101,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacesuit"
 	item_state = "spacesuit"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -114,7 +114,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacehelmet"
 	item_state = "spacehelm"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
 	w_class = WEIGHT_CLASS_NORMAL
 
 //Hats
