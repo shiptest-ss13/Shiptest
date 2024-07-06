@@ -1,6 +1,6 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
-	desc = "A top-of-the-line, heavy-duty, multifaceted energy rifle with three firing modes. The gold standard for Nanotrasen's heavier security specialists."
+	desc = "A top-of-the-line, heavy-duty, multifaceted energy rifle with three firing modes. Straight out of issue #1 of 'DEATHSQUAD!', this gun is a truly terrifying weapon."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -29,7 +29,7 @@
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
-	desc = "A next-generation pulse weapon for Nanotrasen's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
+	desc = "A next-generation pulse carbine capable of decimating overwhelming opposition. This weapon has accrued a kill count of 2564 dead since it was first seen in issue #10 'DEATHSQUAD CLASSICS'."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -63,7 +63,7 @@
 
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
-	desc = "A pulse rifle in an easily concealed handgun package with low capacity."
+	desc = "A pulse rifle in an easily concealed handgun package with low capacity. While standard issue for Death Commandos in the comics, this gun saw less and less printing as the Unica-6 revolver became a fan favorite."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -78,7 +78,7 @@
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
-	desc = "A heavy-duty energy rifle built for pure destruction."
+	desc = "A truly terrifying tool of sheer destruction, overtuned heavy laserfire makes this the end all be all of Deathsquad weaponry. First seen in issue #50 'DEATHSQUAD KILLS THE GALAXY, a Four Year Anniversery', this gun is the number one fan favorite of the series."
 	cell_type = /obj/item/stock_parts/cell/infinite
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 

@@ -506,7 +506,7 @@ update_label()
 
 /obj/item/card/id/ert/deathsquad
 	desc = "An access card colored in black and red."
-	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL
+	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARE JUST A COMIC SERIES!
 	uses_overlays = FALSE
 	job_icon = "deathsquad"
 

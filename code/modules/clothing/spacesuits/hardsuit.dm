@@ -969,28 +969,28 @@
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 
 ///SWAT version
-/obj/item/clothing/suit/space/hardsuit/shielded/swat
-	name = "death commando spacesuit"
-	desc = "An advanced hardsuit favored by commandos for use in special operations."
+/obj/item/clothing/suit/space/hardsuit/shielded/deathsquad
+	name = "Deathsquad shieldsuit"
+	desc = "Special equipment given to Deathcommandos, this Deathsquad hardsuit comes with a built in forcefield projector. Only ever seen in one off issues of 'DEATHSQUAD!', the Deathsquad shieldsuit is issued to single commandos when failure is not an option."
 	icon_state = "deathsquad"
 	item_state = "swat_suit"
 	hardsuit_type = "syndi"
 	max_charges = 4
 	current_charges = 4
 	recharge_delay = 15
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
 	dog_fashion = /datum/dog_fashion/back/deathsquad
 
-/obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
-	name = "death commando helmet"
-	desc = "A tactical helmet with built in energy shielding."
+/obj/item/clothing/head/helmet/space/hardsuit/shielded/deathsquad
+	name = "Deathsquad shieldhelm"
+	desc = "The built in helmet for the Deathsquad shieldsuit. The one off issue 'DEATHCOMMANDO' featured this helmet on the cover, broken and separated from its hardsuit."
 	icon_state = "deathsquad"
 	item_state = "deathsquad"
 	hardsuit_type = "syndi"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()

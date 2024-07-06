@@ -698,7 +698,7 @@
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
 	// desc = "Enlist in the Nanotrasen Deathsquadron reserves today!" // I refuse to acknowledge this bullshit - Zeta
-	desc = "A poster urging all across the NT umbrella to join the Nanotrasen Private Security forces. This was made specifically for the ICW, so someone probably forgot to take this down."
+	desc = "A poster of from the 'DEATHSQUAD!' comic book series, seen as a joke amongst fans as the Deathsquad chooses you, not the other way around."
 	icon_state = "poster_enlist"
 
 /obj/structure/sign/poster/official/high_class_martini
