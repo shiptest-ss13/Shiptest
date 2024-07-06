@@ -79,7 +79,7 @@
 	item_state = "marinevest"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 
-/obj/item/clothing/suit/armor/gezena/marinecoat
+/obj/item/clothing/suit/armor/gezena/marine/coat
 	name = "coated Raksha-plating"
 	desc = "Less practical with the coat than without."
 	icon_state = "marinecoat"
