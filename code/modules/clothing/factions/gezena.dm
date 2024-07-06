@@ -36,10 +36,11 @@
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
 	togglename = "zipper"
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT //Gezena doesn't get winter coats frownie face
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 //Armored suit
 
@@ -53,9 +54,7 @@
 	icon_state = "coat"
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -78,17 +77,13 @@
 	desc = "Raksha - a Kalixcian word for 'protection of the heart'. Sturdy and reliable."
 	icon_state = "marinevest"
 	item_state = "marinevest"
-	body_parts_covered = CHEST|GROIN
-	cold_protection = CHEST|GROIN
-	heat_protection = CHEST|GROIN
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 
 /obj/item/clothing/suit/armor/gezena/marinecoat
 	name = "coated Raksha-plating"
 	desc = "Less practical with the coat than without."
 	icon_state = "marinecoat"
 	item_state = "bluecloth"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50) //covers more body parts - shouldn't be an upgrade
 
 //Spacesuits
 
@@ -101,7 +96,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacesuit"
 	item_state = "spacesuit"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -114,7 +109,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacehelmet"
 	item_state = "spacehelm"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75) //softsuit
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
 
 //Hats
