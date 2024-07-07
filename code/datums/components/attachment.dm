@@ -1,16 +1,16 @@
 /datum/component/attachment
-	//Slot the attachment goes on, also used in descriptions so should be player readable
+	///Slot the attachment goes on, also used in descriptions so should be player readable
 	var/slot
 	///various yes no flags associated with attachments. See defines for these: [_DEFINES/guns.dm]
 	var/attach_features_flags
-	//Unused so far, should probally handle it in the parent unless you have a specific reason
+	///Unused so far, should probally handle it in the parent unless you have a specific reason
 	var/list/valid_parent_types
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
-	//Called on the parents preattack
+	///Called on the parents preattack
 	var/datum/callback/on_preattack
-	//Unused... Also a little broken..
+	///Unused...Also a little broken..
 	var/list/datum/action/actions
 	///Generated if the attachment can toggle, sends COMSIG_ATTACHMENT_TOGGLE
 	var/datum/action/attachment/attachment_toggle_action
