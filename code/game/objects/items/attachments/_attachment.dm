@@ -31,10 +31,10 @@
 		slot, \
 		attach_features_flags, \
 		valid_parents, \
-		CALLBACK(src, PROC_REF(Attach)), \
-		CALLBACK(src, PROC_REF(Detach)), \
-		CALLBACK(src, PROC_REF(Toggle)), \
-		CALLBACK(src, PROC_REF(PreAttack)), \
+		CALLBACK(src, PROC_REF(apply_attachment)), \
+		CALLBACK(src, PROC_REF(remove_attachment)), \
+		CALLBACK(src, PROC_REF(toggle_attachment)), \
+		CALLBACK(src, PROC_REF(on_preattack)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -42,7 +42,7 @@
 	attachment_comp = null
 	. = ..()
 
-/obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/toggle_attachment(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	playsound(user, toggled ? toggle_on_sound : toggle_off_sound, 40, TRUE)
@@ -50,28 +50,28 @@
 	icon_state = "[initial(icon_state)][toggled ? "-on" : ""]"
 
 /// Checks if a user should be allowed to attach this attachment to the given parent
-/obj/item/attachment/proc/Attach(obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/apply_attachment(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(toggled)
-		to_chat(user, "<span class='warning'>You cannot attach [src] while it is active!</span>")
+		to_chat(user, span_warning("You cannot attach [src] while it is active!"))
 		return FALSE
 
 	apply_modifiers(gun, user, TRUE)
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
 	return TRUE
 
-/obj/item/attachment/proc/Detach(obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/remove_attachment(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(toggled)
-		Toggle(gun, user)
+		toggle_attachment(gun, user)
 
 	apply_modifiers(gun, user, FALSE)
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_release_alt.ogg', 75, 1)
 	return TRUE
 
-/obj/item/attachment/proc/PreAttack(obj/item/gun/gun, atom/target, mob/user, list/params)
+/obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
 	return FALSE
 
 ///Handles the modifiers to the parent gun

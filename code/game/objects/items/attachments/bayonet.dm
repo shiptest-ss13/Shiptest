@@ -15,7 +15,7 @@
 	spread_mod = 1
 	wield_delay = 0.1 SECONDS
 
-/obj/item/attachment/bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
+/obj/item/attachment/bayonet/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(user.a_intent == INTENT_HARM && user.CanReach(target, src, TRUE))
 		melee_attack_chain(user, target, params)
 		return COMPONENT_NO_ATTACK

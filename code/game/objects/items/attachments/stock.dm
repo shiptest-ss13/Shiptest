@@ -13,7 +13,7 @@
 	var/toggled_recoil_bonus = -2
 	var/toggled_spread_bonus = -5
 
-/obj/item/attachment/foldable_stock/Toggle(obj/item/gun/gun, mob/user)
+/obj/item/attachment/foldable_stock/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 
 	if(toggled)

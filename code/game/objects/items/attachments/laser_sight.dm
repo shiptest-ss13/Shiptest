@@ -8,7 +8,7 @@
 	pixel_shift_y = 4
 	wield_delay = 0.1 SECONDS
 
-/obj/item/attachment/laser_sight/Toggle(obj/item/gun/gun, mob/user)
+/obj/item/attachment/laser_sight/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 
 	if(toggled)

@@ -9,11 +9,11 @@
 	spread_mod = -1
 	size_mod = 1
 
-/obj/item/attachment/silencer/Attach(obj/item/gun/gun, mob/user)
+/obj/item/attachment/silencer/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	gun.suppressed = TRUE
 
-/obj/item/attachment/silencer/Detach(obj/item/gun/gun, mob/user)
+/obj/item/attachment/silencer/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	gun.suppressed = FALSE
 	return TRUE

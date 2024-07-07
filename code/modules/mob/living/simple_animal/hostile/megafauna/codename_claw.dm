@@ -142,7 +142,7 @@
 			if(3) //only should fire duing phase 2
 				emp_pulse()
 			if(4)
-				sting_attack(target)
+				tentacle(target)
 			if(5)
 				summon_creatures()
 			if(6)
@@ -157,7 +157,10 @@
 			swift_dash(target, dash_num_long, 15)
 	else
 		if((get_dist(src, target) >= 4) && ((get_dist(src, target)) <= 8) && !shouldnt_move)
-			if(prob(40))
+			if(prob(60))
+				tentacle(target)
+				return
+			else if(prob(40))
 				sting_attack(target)
 				return
 			else
@@ -222,6 +225,14 @@
 	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
 	empulse(src, 2, 4)
 	shouldnt_move = FALSE
+
+/////TENTACLE
+/mob/living/simple_animal/hostile/megafauna/claw/proc/tentacle(target)
+	shake_animation(2)
+	projectiletype = /obj/projectile/tentacle
+	projectilesound = 'sound/effects/splat.ogg'
+	Shoot(target)
+/////TENTACLE END
 
 /////STING ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)

@@ -62,7 +62,6 @@
 		holder.update_icon()
 		attachment_toggle_action.UpdateButtonIcon()
 
-
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle)
 		on_toggle.Invoke(holder, user)
