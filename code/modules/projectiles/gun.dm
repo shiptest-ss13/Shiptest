@@ -271,7 +271,7 @@
 	var/datum/action/toggle_scope_zoom/azoom
 
 /*
- * Saftey
+ * Safety
 */
 	///Does this gun have a saftey and thus can toggle it?
 	var/has_safety = FALSE
