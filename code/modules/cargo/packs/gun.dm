@@ -206,7 +206,7 @@
 
 /datum/supply_pack/gun/attachment/bayonet
 	name = "Bayonet Crate"
-	desc = "Bayonet for close quarters combat."
+	desc = "Contains a single bayonet to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/bayonet)
 	crate_name = "bayonet crate"
