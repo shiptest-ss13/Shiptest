@@ -24,6 +24,7 @@
 	connector_icon_state = "gold_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
 	max_integrity = 150
+	brute_mod = 1.5
 
 /turf/closed/wall/mineral/gold/yesdiag
 	icon_state = "gold_wall-255"
@@ -43,6 +44,7 @@
 	connector_icon_state = "silver_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
 	max_integrity = 150
+	brute_mod = 1.5
 
 /turf/closed/wall/mineral/silver/yesdiag
 	icon_state = "silver_wall-255"
@@ -88,6 +90,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	max_integrity = 150
+	min_dam = 5
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -176,6 +179,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 	max_integrity = 300
+	burn_mod = 3
 
 /turf/closed/wall/mineral/plasma/yesdiag
 	icon_state = "plasma_wall-255"
@@ -227,8 +231,9 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
-
 	max_integrity = 75
+	burn_mod = 3
+	min_dam = 3
 
 /turf/closed/wall/mineral/wood/yesdiag
 	icon_state = "wood_wall-255"
@@ -298,6 +303,9 @@
 	hitsound_type = PROJECTILE_HITSOUND_SNOW
 
 	max_integrity = 50
+	burn_mod = 3
+	brute_mod = 1.5
+	min_dam = 1
 
 /turf/closed/wall/mineral/snow/yesdiag
 	icon_state = "snow_wall-255"
