@@ -8,6 +8,7 @@
 	name = "MOD control unit"
 	desc = "The control unit of a Modular Outerwear Device, a powered, back-mounted suit that protects against various environments."
 	icon_state = "control"
+	base_icon_state = "control"
 	item_state = "mod_control"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -636,7 +637,7 @@
 	for(var/obj/item/part as anything in skin_updating)
 		part.icon = used_skin[MOD_ICON_OVERRIDE] || 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 		//part.mob_overlay_icon = used_skin[MOD_WORN_ICON_OVERRIDE] || 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-		part.icon_state = "[skin]-[initial(part.icon_state)]"
+		part.icon_state = "[skin]-[part.base_icon_state]"
 	for(var/obj/item/clothing/part as anything in mod_parts)
 		var/used_category
 		if(part == helmet)
