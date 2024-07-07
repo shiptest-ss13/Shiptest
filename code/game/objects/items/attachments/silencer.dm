@@ -1,5 +1,5 @@
 /obj/item/attachment/silencer
-	name = "silencer"
+	name = "suppressor"
 	desc = "An attachment for the barrel of a firearm. Muffles the gunshot and muzzle flash."
 	icon_state = "silencer"
 
