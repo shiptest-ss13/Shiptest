@@ -197,7 +197,7 @@
 
 /datum/outfit/centcom/death_commando/shielded
 	name = "Death Commando Solo"
-	suit = "/obj/item/clothing/suit/space/hardsuit/shielded/deathsquad"
+	suit = /obj/item/clothing/suit/space/hardsuit/shielded/deathsquad
 
 
 /datum/outfit/chrono_agent
