@@ -10,7 +10,7 @@
 	var/datum/callback/on_toggle
 	//Called on the parents preattack
 	var/datum/callback/on_preattack
-	//Unused... Also a little broken.. 
+	//Unused... Also a little broken..
 	var/list/datum/action/actions
 	///Generated if the attachment can toggle, sends COMSIG_ATTACHMENT_TOGGLE
 	var/datum/action/attachment/attachment_toggle_action
@@ -140,6 +140,7 @@
 	name = "Toggle Attachment"
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
 	button_icon_state = null
+	///Decides where we send our toggle signal for when pressed
 	var/obj/item/gun/gun = null
 
 /datum/action/attachment/New(Target)
@@ -162,6 +163,7 @@
 	button_icon_state = target.icon_state
 	..()
 
+//Copied from item action..
 /datum/action/attachment/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
 	if(button_icon && button_icon_state)
 		// If set, use the custom icon that we set instead
