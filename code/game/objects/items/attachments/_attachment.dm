@@ -1,15 +1,21 @@
+///Most of the logic of attachments is held within the component which allows you to add other items as attachments in theory
 /obj/item/attachment
 	name = "broken attachment"
 	desc = "alert coders"
 	icon = 'icons/obj/guns/attachments.dmi'
 
+	//Slot the attachment goes on, also used in descriptions so should be player readable
 	var/slot = ATTACHMENT_SLOT_RAIL
-	///various yes no flags associated with attachments. See defines for these: [ATTACH_REMOVABLE_HAND]
+	///various yes no flags associated with attachments. See defines for these: [_DEFINES/guns.dm]
 	var/attach_features_flags = ATTACH_REMOVABLE_HAND
+	///See attachment component
 	var/list/valid_parents = list()
+	///Unused.. but could hold extra callbacks I assume?
 	var/list/signals = list()
+	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
 
+	///If the attachment is on or off
 	var/toggled = FALSE
 	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
 	var/toggle_off_sound = 'sound/items/flashlight_off.ogg'
@@ -19,9 +25,14 @@
 	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
 	var/pixel_shift_y = 16
 
+	//Toggle modifers are handled seperatly
+	///Modifier applied to the parent
 	var/spread_mod = 0
+	///Modifier applied to the parent
 	var/spread_unwielded_mod = 0
+	///Modifier applied to the parent, deciseconds
 	var/wield_delay = 0
+	///Modifier applied to the parent
 	var/size_mod = 0
 
 /obj/item/attachment/Initialize()

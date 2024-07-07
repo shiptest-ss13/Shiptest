@@ -1,8 +1,11 @@
 /datum/component/attachment_holder
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
+	///List of things you can attach to the parent
 	var/list/valid_types = null
+	///How many slots a parent can hold of any one slot
 	var/list/slot_room = null
+	///Icon offsets, should match the sprite itself so just find the position where it should attach
 	var/list/slot_offsets = null
 	var/list/obj/item/attachments = list()
 

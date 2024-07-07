@@ -122,7 +122,9 @@
 )
 
 //attach_features_flags
+/// Removable by hand
 #define ATTACH_REMOVABLE_HAND (1<<0)
+/// Removable via crowbar
 #define ATTACH_REMOVABLE_TOOL (1<<1)
 #define ATTACH_TOGGLE (1<<2)
 #define ATTACH_NO_SPRITE (1<<3)
