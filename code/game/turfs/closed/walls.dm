@@ -98,7 +98,7 @@
 	return
 
 // negative values reduce integrity, positive values increase integrity
-/turf/closed/wall/proc/alter_integrity(damage, devastate = FALSE)
+/turf/closed/wall/proc/alter_integrity(damage, devastate = FALSE, safe_decon = FALSE)
 	integrity += damage
 	if(integrity >= max_integrity)
 		integrity = max_integrity
@@ -106,8 +106,9 @@
 		if(devastate)
 			dismantle_wall(devastate)
 			return FALSE
-		// if damage put us 50 points or more below 0, we got proper demolished
-		dismantle_wall(integrity <= -50 ? TRUE : FALSE)
+		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
+		if(integrity <= -50)
+			dismantle_wall(safe_decon)
 		return FALSE
 	integrity = min(integrity, max_integrity)
 	update_stats()
@@ -345,10 +346,10 @@
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
-		while(I.use_tool(src, user, slicing_duration, volume=100))
+		while(I.use_tool(src, user, slicing_duration, volume=50))
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
-				alter_integrity(-(I.wall_decon_damage))
+				alter_integrity(-(I.wall_decon_damage),FALSE,TRUE)
 
 	return FALSE
 
