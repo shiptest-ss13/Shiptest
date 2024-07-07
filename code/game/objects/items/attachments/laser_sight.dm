@@ -1,6 +1,6 @@
 /obj/item/attachment/laser_sight
 	name = "laser sight"
-	desc = "This laser sight is designed to be rail-mounted on a compatible firearm to provide increased accuracy."
+	desc = "Designed to be rail-mounted on a compatible firearm to provide increased accuracy and decreased spread."
 	icon_state = "laserpointer"
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE
