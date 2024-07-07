@@ -199,7 +199,7 @@
 
 /datum/supply_pack/gun/attachment/laser_sight
 	name = "Laser Sight Crate"
-	desc = "Laser sight for better accuracy down range."
+	desc = "Contains a single rail light to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/laser_sight)
 	crate_name = "laser sight crate"
