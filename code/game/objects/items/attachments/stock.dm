@@ -1,5 +1,5 @@
 /obj/item/attachment/foldable_stock
-	name = "foldable stock"
+	name = "folding stock"
 	desc = "A foldable stock that can be attached to a weapon to improve stability."
 	icon_state = "skm-carbine-stock"
 	slot = ATTACHMENT_SLOT_STOCK
