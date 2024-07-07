@@ -1,6 +1,6 @@
 /obj/item/attachment/rail_light
 	name = "rail light"
-	desc = "Rail mounted gun light for better visibility down range."
+	desc = "A flashlight made to be mounted on a firearm."
 	icon_state = "raillight"
 	light_color = "#FFCC66"
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
