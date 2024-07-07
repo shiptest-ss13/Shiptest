@@ -192,7 +192,7 @@
 
 /datum/supply_pack/gun/attachment/rail_light
 	name = "Tactical Rail Light Crate"
-	desc = "Rail mounted gun light for better visibility down range."
+	desc = "Contains a single rail light to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/rail_light)
 	crate_name = "rail light crate"
