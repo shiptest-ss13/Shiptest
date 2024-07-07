@@ -391,7 +391,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/porta_turret/ship/weak{
-	dir = 8
+	dir = 8;
+	mode = TURRET_LETHAL
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)

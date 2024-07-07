@@ -1,8 +1,8 @@
 /obj/item/book/manual/mount
 	name = "The UCWLWM"
 	desc = "It's looks old and worn out."
-	icon_state = "book3"
-	author = "Welds-the-Steel"
+	icon_state = "book1"
+	author = "Senior Engineer Wihlz-Saai"
 	title = "The Universal Colossal Warship Linear Weapon Mount"
 	dat = {"<html>
 			<head>
@@ -41,3 +41,7 @@
 			The largest gun ever produced by the Lihmona Shipyards, the QUASAR SMITER is a truly terrifying tool of destruction. A gun requiring 3 Universal Linear Mounts to hold, this gun finds its place only on the largest ships in the PGFN and PGFMC. This gun fires 18/5ths meter gigantic "DEMON SLUG"s at a rate of approximately 1 shot every 5 minutes. The power draw of such a massive weapon sings to the tun of 50MW of power per round.
 			</body>
 			</html>"}
+
+/obj/item/paper/fluff/shuttles/cryingsun
+	name = "Electro-proofing Your Crying Sun"
+	default_raw_text = "Quartermaster said we have to drag these grounding rods and tesla coils on for you, and you might be wondering how you can use them. Supposedly, if you're not needing external defenses or asteroid turrets, you can replace each of the external turrets with a tesla coil and generate some power running through any storms. The two empty platings in the back fit grounding rods - fit all the spots and you should be fully covered."
