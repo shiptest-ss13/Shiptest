@@ -1,6 +1,6 @@
 /obj/item/attachment/silencer
 	name = "silencer"
-	desc = "For when you need to kill someone but not be seen killing someone!"
+	desc = "An attachment for the barrel of a firearm. Muffles the gunshot and muzzle flash."
 	icon_state = "silencer"
 
 	slot = ATTACHMENT_SLOT_MUZZLE
