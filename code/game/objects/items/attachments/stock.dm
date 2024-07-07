@@ -1,6 +1,6 @@
 /obj/item/attachment/foldable_stock
 	name = "folding stock"
-	desc = "A foldable stock that can be attached to a weapon to improve stability."
+	desc = "A folding stock that can be attached to certain weapons to improve stability and decreases recoil."
 	icon_state = "skm-carbine-stock"
 	slot = ATTACHMENT_SLOT_STOCK
 	attach_features_flags = ATTACH_TOGGLE
