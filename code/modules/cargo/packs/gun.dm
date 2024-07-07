@@ -212,7 +212,7 @@
 	crate_name = "bayonet crate"
 
 /datum/supply_pack/gun/attachment/silencer
-	name = "Silencer Crate"
+	name = "Suppressor Crate"
 	desc = "Contains a single suppressor to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/silencer)
