@@ -406,3 +406,8 @@
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/watchman
+	file_name = "deathsquad_watchman"
+	name = "Watchman-class Final Solution"
+	prefix = "SV"
