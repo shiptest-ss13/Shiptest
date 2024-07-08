@@ -70,11 +70,11 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/computer/cargo/express/retro{
-	dir = 8
-	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -10
+	},
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -226,6 +226,7 @@
 /obj/item/clothing/suit/jacket/leather/duster/command,
 /obj/item/clothing/suit/armor/vest/capcarapace/duster,
 /obj/item/clothing/gloves/color/white,
+/obj/item/clothing/head/caphat,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -872,20 +873,16 @@
 /area/ship/engineering)
 "mJ" = (
 /obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/civilian{
-	pixel_x = 13;
-	pixel_y = 4
-	},
-/obj/item/computer_hardware/card_slot{
-	pixel_x = -7;
-	pixel_y = 1
-	},
-/obj/item/computer_hardware/printer/mini{
-	pixel_x = -6;
-	pixel_y = 11
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/empty{
+	pixel_x = -8;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1136,15 +1133,10 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "pl" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/table{
-	pixel_x = 5;
-	pixel_y = 3;
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
 	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "pn" = (
@@ -1410,11 +1402,14 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "uT" = (
-/obj/machinery/computer/helm/retro{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1794,9 +1789,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "AY" = (
-/obj/machinery/computer/monitor/retro{
-	dir = 8
-	},
 /obj/structure/sign/poster/rilena/random{
 	pixel_x = 32
 	},
@@ -1808,6 +1800,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "9-10"
+	},
+/obj/machinery/computer/monitor{
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1821,9 +1817,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "Bx" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "BX" = (
@@ -2213,13 +2206,10 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "IF" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 2;
-	pixel_x = 5;
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
+/obj/machinery/computer/cargo/express{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "IJ" = (
@@ -2358,10 +2348,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Kz" = (
-/obj/machinery/computer/crew/retro{
-	pixel_y = 0;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
@@ -2371,6 +2357,9 @@
 	pixel_x = -10;
 	pixel_y = 20;
 	dir = 2
+	},
+/obj/machinery/computer/helm{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2592,7 +2581,8 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/power/solar_control{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2687,17 +2677,11 @@
 /area/ship/cargo)
 "Oz" = (
 /obj/structure/table/reinforced,
-/obj/item/megaphone/cargo{
-	pixel_x = 14;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
 /obj/machinery/newscaster/directional/west,
-/obj/item/paper_bin{
-	pixel_x = -6;
-	pixel_y = 4
+/obj/item/megaphone/cargo{
+	pixel_y = 5
 	},
-/obj/item/pen/fourcolor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OJ" = (
@@ -2719,7 +2703,6 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
-/obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OP" = (
