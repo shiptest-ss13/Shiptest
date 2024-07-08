@@ -263,9 +263,6 @@
 	},
 /area/ship/maintenance/starboard)
 "cv" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
 /obj/machinery/igniter/incinerator_atmos,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -427,7 +424,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "dZ" = (
-/obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/ntspaceworks_big/one{
 	dir = 4
 	},
@@ -2844,9 +2840,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "CF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -4362,9 +4355,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Sv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/machinery/power/generator{
 	dir = 4
 	},
@@ -4908,7 +4898,6 @@
 /area/ship/hallway/fore)
 "WN" = (
 /obj/machinery/atmospherics/components/binary/circulator,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "WR" = (
@@ -5259,9 +5248,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "ZS" = (
-/obj/structure/disposalpipe/trunk,
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = -3
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZX" = (
