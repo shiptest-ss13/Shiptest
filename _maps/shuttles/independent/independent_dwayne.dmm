@@ -59,11 +59,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/north,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "aR" = (
@@ -216,7 +219,8 @@
 	name = "Captain's wardobe";
 	req_access_txt = "20";
 	close_sound = 'sound/machines/wooden_closet_close.ogg';
-	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	open_sound = 'sound/machines/wooden_closet_open.ogg';
+	desc = "It's a card-locked cabinet."
 	},
 /obj/item/storage/backpack/satchel/cap,
 /obj/item/storage/backpack/messenger/com,
@@ -268,7 +272,8 @@
 /obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/c38_box,
 /obj/structure/closet/crate/secure/plasma{
-	name = "secure crate"
+	name = "ammo crate";
+	desc = "A secure ammo crate."
 	},
 /obj/effect/turf_decal/ntspaceworks_big/two{
 	dir = 1
@@ -1759,10 +1764,13 @@
 /obj/item/kirbyplants/fullysynthetic{
 	pixel_x = -10
 	},
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "AE" = (
@@ -2623,9 +2631,9 @@
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_y = -6;
-	pixel_x = -6
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_x = -4;
+	pixel_y = -4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -3118,7 +3126,8 @@
 /obj/item/gun/ballistic/shotgun/flamingarrow,
 /obj/item/gun/ballistic/shotgun/flamingarrow,
 /obj/structure/guncloset/shotgun{
-	name = "rifle locker"
+	name = "rifle locker";
+	desc = "A locker that holds rifles."
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
@@ -3470,11 +3479,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/safety_internals{
 	pixel_y = -32
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
