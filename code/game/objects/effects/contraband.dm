@@ -878,7 +878,7 @@
 /obj/structure/sign/poster/solgov/mars
 	name = "Mars"
 	desc = "Mars, fourth planet in the Sol system. While evidence suggests that Venus and Mars may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Mars, listing attractions like skiing resorts and ancient robot exhibits."
-	icon_state = "poster-solgov-ares"
+	icon_state = "poster-solgov-mars"
 
 /obj/structure/sign/poster/solgov/luna
 	name = "Luna"
@@ -892,7 +892,7 @@
 
 /obj/structure/sign/poster/solgov/skiing
 	name = "Lo-Fly Skiing Advert"
-	desc = "An advertisement for some low-gravity skiing resort on Ares. \"Popular with SUNS groups!\""
+	desc = "An advertisement for some low-gravity skiing resort on Mars. \"Popular with SUNS groups!\""
 	icon_state = "poster-solgov-loskiing"
 
 /obj/structure/sign/poster/solgov/recyle
