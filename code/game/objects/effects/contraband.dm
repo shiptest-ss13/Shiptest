@@ -875,9 +875,9 @@
 	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the Grand Orrery and Neue Waldstätte."
 	icon_state = "poster-solgov-terra"
 
-/obj/structure/sign/poster/solgov/ares
-	name = "Ares"
-	desc = "Ares, fourth planet in the Sol system. While evidence suggests that Aphrodite and Ares may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Ares, listing attractions like skiing resorts and ancient robot exhibits."
+/obj/structure/sign/poster/solgov/mars
+	name = "Mars"
+	desc = "Mars, fourth planet in the Sol system. While evidence suggests that Venus and Mars may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Mars, listing attractions like skiing resorts and ancient robot exhibits."
 	icon_state = "poster-solgov-ares"
 
 /obj/structure/sign/poster/solgov/luna
