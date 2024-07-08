@@ -115,15 +115,15 @@
 "fA" = (
 /obj/machinery/power/port_gen/pacman/mrs,
 /obj/item/stack/sheet/mineral/diamond/twenty,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/item/wrench,
 /obj/structure/railing{
 	color = "#818181"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "fS" = (
@@ -172,10 +172,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ie" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor/corner,
 /obj/effect/turf_decal/spline/plain/opaque/black{
 	dir = 1
 	},
@@ -192,6 +188,9 @@
 	id = "death_watchman_shield_inner";
 	name = "INNER HOLO";
 	req_access = list(101)
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -297,13 +296,17 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
-"qA" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/corner{
+"pR" = (
+/obj/machinery/power/terminal{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"qA" = (
 /obj/effect/turf_decal/spline/plain/opaque/black,
 /obj/machinery/button/door{
 	pixel_y = -21;
@@ -320,6 +323,9 @@
 	name = "INNER HOLO";
 	req_access = list(101);
 	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -938,13 +944,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "XP" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "YG" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
@@ -1013,7 +1017,7 @@ Rs
 Rs
 lO
 ie
-XP
+pR
 XP
 qA
 lO
