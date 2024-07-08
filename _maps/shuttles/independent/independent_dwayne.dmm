@@ -878,11 +878,10 @@
 	},
 /obj/item/radio/weather_monitor{
 	pixel_x = 5;
-	pixel_y = 3
+	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle/empty{
-	pixel_x = -8;
-	pixel_y = 6
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2700,9 +2699,9 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/mask/breath,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
 /obj/item/gun/ballistic/revolver/detective,
-/obj/item/ammo_box/c38,
-/obj/item/ammo_box/c38,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OP" = (
@@ -2805,7 +2804,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/cryopod/retro/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -12;
