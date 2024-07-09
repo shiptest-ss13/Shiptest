@@ -275,17 +275,6 @@
 	stock = 2
 	availability_prob = 35
 
-/datum/blackmarket_item/weapon/scout
-	name = "HP Scout"
-	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy."
-	item = /obj/item/gun/ballistic/rifle/scout
-	pair_item = list(/datum/blackmarket_item/ammo/scout_stripper)
-
-	price_min = 4000
-	price_max = 6500
-	stock = 1
-	availability_prob = 20
-
 /datum/blackmarket_item/weapon/syringe_gun
 	name = "Dart Pistol"
 	desc = "A compact dart pistol, for clandestine poisoining from a distance."

@@ -111,17 +111,6 @@
 	stock_max = 4
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/scout_stripper
-	name = ".300 Magnum Stripper Clip"
-	desc = "A 5 round .300 Magnum stripper clips for use with the HP Scout. Suited for hunting the most dangerous game."
-	item = /obj/item/ammo_box/a300
-
-	price_min = 500
-	price_max = 1000
-	stock_min = 4
-	stock_max = 6
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/blackout
 	name = ".300 Blackout Stripper Clip"
 	desc = "A 5 round clip of .300 Blackout. It'll be lights out soon enough for anyone hit with these."
@@ -168,8 +157,7 @@
 
 /datum/blackmarket_item/ammo/damaged_cell
 	name = "Discount Weapon Power Cells"
-	desc = "These cells got a little banged up during a raid by GOLD authorities,\
-	 but they still should be safe to use. Probably."
+	desc = "These cells got a little banged up during a raid by GOLD authorities, but they still should be safe to use. Probably."
 	item = /obj/item/stock_parts/cell/gun
 
 	price_min = 100
