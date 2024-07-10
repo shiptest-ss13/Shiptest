@@ -126,6 +126,8 @@
 			visible_message("<span class='notice'>The [name] looks at [target.name] with hungry eyes.</span>")
 		else if(isliving(target))
 			Aggro()
+			if(client)
+				return
 			visible_message("<span class='danger'>The [name] tries to flee from [target.name]!</span>")
 			retreat_distance = 10
 			minimum_distance = 10
@@ -155,6 +157,8 @@
 		AM.forceMove(loc)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time
+	if(client)
+		return
 	if(!stat)
 		visible_message("<span class='danger'>The [name] buries into the ground, vanishing from sight!</span>")
 		qdel(src)
@@ -166,3 +170,34 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9
 	. = ..()
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub
+	name = "lavagrub"
+	desc = "A worm that grows fat from eating everything in its sight. This unique mutation seen on lava planetoids sets shit on fucking fire. Probably to ward off predators."
+	icon_state = "lavagrub"
+	icon_living = "lavagrub"
+	icon_aggro = "lavagrub_alert"
+	icon_dead = "lavagrub_dead"
+	deathmessage = "stops moving as the carcass explodes into flames!"
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/Moved(atom/OldLoc, Dir, Forced = FALSE)
+	. = ..()
+	if(isnull(OldLoc))
+		return
+	if(!isturf(OldLoc))
+		return
+	var/turf/flame_to_turf = get_turf(OldLoc)
+	flame_to_turf.IgniteTurf(10)
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/death(gibbed)
+	. = ..()
+	flame_radius(get_turf(src), 2)
+
+
+/proc/flame_radius(turf/epicenter, radius = 1, power = 5, fire_color = "red")
+	if(!isturf(epicenter))
+		CRASH("flame_radius used without a valid turf parameter")
+	radius = clamp(radius, 1, 50) //Sanitize inputs
+
+	for(var/turf/turf_to_flame as anything in filled_turfs(epicenter, radius, "circle"))
+		turf_to_flame.IgniteTurf(power, fire_color)

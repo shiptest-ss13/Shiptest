@@ -75,6 +75,9 @@
 	light_power = 0.80
 	light_color = LIGHT_COLOR_BLUE
 
+/turf/open/water/beach/underground
+	light_range = 0
+
 /turf/open/water/beach/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)

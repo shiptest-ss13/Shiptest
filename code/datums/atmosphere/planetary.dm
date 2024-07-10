@@ -53,6 +53,47 @@
 	minimum_temp = 180
 	maximum_temp = 180
 
+/datum/atmosphere/desert
+	id = DESERT_DEFAULT_ATMOS
+	base_gases = list(
+		GAS_O2=20,
+		GAS_N2=80,
+	)
+	normal_gases = list(
+		GAS_O2=5,
+		GAS_N2=5,
+	)
+	restricted_gases = list(
+		GAS_H2O=1,
+	)
+	restricted_chance = 1
+
+	minimum_pressure = ONE_ATMOSPHERE
+	maximum_pressure = ONE_ATMOSPHERE + 50
+
+	minimum_temp = T20C + 20
+	maximum_temp = T20C + 80
+
+/datum/atmosphere/shrouded
+	id = SHROUDED_DEFAULT_ATMOS
+	base_gases = list(
+		GAS_N2=80,
+		GAS_O2=20,
+	)
+	normal_gases = list(
+		GAS_BZ=2,
+		GAS_CO2=2,
+	)
+	restricted_gases = list(
+		GAS_H2O=1,
+	)
+	restricted_chance = 0
+
+	minimum_pressure = ONE_ATMOSPHERE - 10
+	maximum_pressure = ONE_ATMOSPHERE + 20
+
+	minimum_temp = T20C - 30
+	maximum_temp = T20C - 10
 /datum/atmosphere/gas_giant
 	id = GAS_GIANT_ATMOS
 

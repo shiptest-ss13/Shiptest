@@ -24,3 +24,10 @@
 	mappath = prefix + suffix
 	..(path = mappath)
 
+
+/datum/map_template/ruin/none
+	name = "Nothing"
+	prefix = ""
+	allow_duplicates = FALSE
+	cost = 5
+	ruin_type = RUINTYPE_NA

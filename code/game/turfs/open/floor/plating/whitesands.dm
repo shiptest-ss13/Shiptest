@@ -7,6 +7,9 @@
 	planetary_atmos = TRUE
 	base_icon_state = WHITESANDS_SAND_ENV
 	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
 	digResult = /obj/item/stack/ore/glass/whitesands
 
 /turf/open/floor/plating/asteroid/whitesands/lit

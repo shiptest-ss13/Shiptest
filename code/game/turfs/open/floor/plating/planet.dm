@@ -2,13 +2,13 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_MUD
+	barefootstep = FOOTSTEP_MUD
+	clawfootstep = FOOTSTEP_MUD
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating/dirt
@@ -21,9 +21,14 @@
 	return
 
 /turf/open/floor/plating/dirt/jungle
+	name = "mud"
+	desc = "Upon closer examination, it's still dirt, just more wet than usual."
 	slowdown = 0.5
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	footstep = FOOTSTEP_MUD
+	barefootstep = FOOTSTEP_MUD
+	clawfootstep = FOOTSTEP_MUD
 
 /turf/open/floor/plating/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
@@ -42,7 +47,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland //Like a more fun version of living in Arizona.
 	name = "cracked earth"
 	desc = "Looks a bit dry."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
 	slowdown = 1
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland

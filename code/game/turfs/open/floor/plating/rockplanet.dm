@@ -1,5 +1,6 @@
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
+	icon = 'icons/turf/planetary/rockplanet.dmi'
 	icon_state = "dry_soft"
 	base_icon_state = "dry_soft"
 	floor_variance = 100

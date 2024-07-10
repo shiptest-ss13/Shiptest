@@ -821,7 +821,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
-	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", subtypesof(/datum/planet_type/), 60 SECONDS)
 	if(!planet_type)
 		return
 

@@ -2,7 +2,7 @@
 #define FOOTSTEP_FLOOR "floor"
 #define FOOTSTEP_PLATING "plating"
 #define FOOTSTEP_CARPET "carpet"
-#define FOOTSTEP_SAND "sand"
+#define FOOTSTEP_ASTEROID "asteroid"
 #define FOOTSTEP_GRASS "grass"
 #define FOOTSTEP_WATER "water"
 #define FOOTSTEP_LAVA "lava"
@@ -11,6 +11,8 @@
 #define FOOTSTEP_ICE "ice"
 #define FOOTSTEP_SNOW "snow"
 #define FOOTSTEP_CONCRETE "conc"
+#define FOOTSTEP_SAND "sand"
+#define FOOTSTEP_MUD "mud"
 //barefoot sounds
 #define FOOTSTEP_WOOD_BAREFOOT "woodbarefoot"
 #define FOOTSTEP_WOOD_CLAW "woodclaw"
@@ -64,7 +66,7 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/effects/footstep/carpet3.ogg',
 		'sound/effects/footstep/carpet4.ogg',
 		'sound/effects/footstep/carpet5.ogg'), 75, -1),
-	FOOTSTEP_SAND = list(list(
+	FOOTSTEP_ASTEROID = list(list(
 		'sound/effects/footstep/asteroid1.ogg',
 		'sound/effects/footstep/asteroid2.ogg',
 		'sound/effects/footstep/asteroid3.ogg',
@@ -110,6 +112,16 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/effects/footstep/concrete3.ogg',
 		'sound/effects/footstep/concrete4.ogg',
 		'sound/effects/footstep/concrete5.ogg'), 100, 1),
+	FOOTSTEP_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 75, 0),
+	FOOTSTEP_MUD = list(list(
+		'sound/effects/footstep/mud1.ogg',
+		'sound/effects/footstep/mud2.ogg',
+		'sound/effects/footstep/mud3.ogg',
+		'sound/effects/footstep/mud4.ogg'), 100, 1),
 ))
 //bare footsteps lists
 GLOBAL_LIST_INIT(barefootstep, list(
@@ -131,7 +143,7 @@ GLOBAL_LIST_INIT(barefootstep, list(
 		'sound/effects/footstep/carpetbarefoot3.ogg',
 		'sound/effects/footstep/carpetbarefoot4.ogg',
 		'sound/effects/footstep/carpetbarefoot5.ogg'), 75, -2),
-	FOOTSTEP_SAND = list(list(
+	FOOTSTEP_ASTEROID = list(list(
 		'sound/effects/footstep/asteroid1.ogg',
 		'sound/effects/footstep/asteroid2.ogg',
 		'sound/effects/footstep/asteroid3.ogg',
@@ -171,6 +183,16 @@ GLOBAL_LIST_INIT(barefootstep, list(
 		'sound/effects/footstep/concrete3.ogg',
 		'sound/effects/footstep/concrete4.ogg',
 		'sound/effects/footstep/concrete5.ogg'), 100, 1),
+	FOOTSTEP_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 75, 0),
+	FOOTSTEP_MUD = list(list(
+		'sound/effects/footstep/mud1.ogg',
+		'sound/effects/footstep/mud2.ogg',
+		'sound/effects/footstep/mud3.ogg',
+		'sound/effects/footstep/mud4.ogg'), 100, 1),
 ))
 
 //claw footsteps lists
@@ -193,7 +215,7 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 		'sound/effects/footstep/carpetbarefoot3.ogg',
 		'sound/effects/footstep/carpetbarefoot4.ogg',
 		'sound/effects/footstep/carpetbarefoot5.ogg'), 75, -2),
-	FOOTSTEP_SAND = list(list(
+	FOOTSTEP_ASTEROID = list(list(
 		'sound/effects/footstep/asteroid1.ogg',
 		'sound/effects/footstep/asteroid2.ogg',
 		'sound/effects/footstep/asteroid3.ogg',
@@ -233,6 +255,16 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 		'sound/effects/footstep/concrete3.ogg',
 		'sound/effects/footstep/concrete4.ogg',
 		'sound/effects/footstep/concrete5.ogg'), 100, 1),
+	FOOTSTEP_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 75, 0),
+	FOOTSTEP_MUD = list(list(
+		'sound/effects/footstep/mud1.ogg',
+		'sound/effects/footstep/mud2.ogg',
+		'sound/effects/footstep/mud3.ogg',
+		'sound/effects/footstep/mud4.ogg'), 100, 1),
 ))
 
 //heavy footsteps list

@@ -63,7 +63,7 @@
 #define OPEN_HEAT_TRANSFER_COEFFICIENT 0.4
 /// a hack for now
 #define WINDOW_HEAT_TRANSFER_COEFFICIENT 0.1
-/// a hack to help make vacuums "cold", sacrificing realism for gameplay
+/// a hack to help make vacuums BIOME_COLD, sacrificing realism for gameplay
 #define HEAT_CAPACITY_VACUUM 7000
 
 //FIRE
@@ -230,9 +230,8 @@
 
 
 //ATMOS MIX IDS
-
-
-
+#define DESERT_DEFAULT_ATMOS "DESERT_ATMOS"
+#define SHROUDED_DEFAULT_ATMOS "SHROUDED_ATMOS"
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"

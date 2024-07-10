@@ -235,7 +235,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	integrity_modifier = 0.1
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 1.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = 0.25
-	turf_sound_override = FOOTSTEP_SAND
+	turf_sound_override = FOOTSTEP_ASTEROID
 	texture_layer_icon_state = "sand"
 
 //And now for our lavaland dwelling friends, sand, but in stone form! Truly revolutionary.
@@ -262,7 +262,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 0.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 0.25, "acid" = 1.5)
 	beauty_modifier = 0.3
-	turf_sound_override = FOOTSTEP_SAND
+	turf_sound_override = FOOTSTEP_ASTEROID
 	texture_layer_icon_state = "sand"
 
 /datum/material/bronze
@@ -286,7 +286,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.0025
 	armor_modifiers = list("melee" = 0.1, "bullet" = 0.1, "laser" = 0.1, "energy" = 0.1, "bomb" = 0.1, "bio" = 0.1, "rad" = 1.5, "fire" = 0, "acid" = 1.5)
 	beauty_modifier = 0.3
-	turf_sound_override = FOOTSTEP_SAND
+	turf_sound_override = FOOTSTEP_ASTEROID
 	texture_layer_icon_state = "paper"
 
 /datum/material/paper/on_applied_obj(obj/source, amount, material_flags)

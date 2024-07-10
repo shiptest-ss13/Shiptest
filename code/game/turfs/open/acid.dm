@@ -1,5 +1,6 @@
 /turf/open/acid
 	name = "acid lake"
+	icon = 'icons/turf/floors/ws_floors.dmi'
 	icon_state = "acid"
 	gender = PLURAL
 	baseturfs = /turf/open/acid

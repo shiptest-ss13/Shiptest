@@ -1,7 +1,7 @@
 /turf/open/floor/plating/asteroid/basalt
 	name = "volcanic floor"
 	baseturfs = /turf/open/floor/plating/asteroid/basalt
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/lava.dmi'
 	icon_state = "basalt"
 	icon_plating = "basalt"
 	base_icon_state = "basalt"

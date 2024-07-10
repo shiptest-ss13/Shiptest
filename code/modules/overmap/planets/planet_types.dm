@@ -194,3 +194,66 @@
 	ruin_type = null
 	weight = 0
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+/datum/planet_type/water
+	name = "aqua planet"
+	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
+	planet = DYNAMIC_WORLD_WATERPLANET
+	icon_state = "water"
+	color = LIGHT_COLOR_DARK_BLUE
+	weight = 5
+
+	ruin_type = RUINTYPE_WATER // minor planets have no ruins
+	mapgen = /datum/map_generator/planet_generator/waterplanet
+	default_baseturf = /turf/open/water/beach/deep
+	weather_controller_type = /datum/weather_controller/waterplanet
+
+/datum/planet_type/desert
+	name = "desert planet"
+	desc = "A very weak energy signal originating from a very hot and harsh planet."
+	planet = DYNAMIC_WORLD_DESERT
+	icon_state = "desert"
+	color = "#f3c282"
+
+	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
+	mapgen = /datum/map_generator/planet_generator/desert
+	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	weather_controller_type = /datum/weather_controller/desert_yellow
+
+/datum/planet_type/shrouded
+	name = "shrouded planet"
+	desc = "A very weak energy signal originating from a planet shrouded in a perpetual storm of bizzare, light absorbing particles."
+	planet = DYNAMIC_WORLD_SHROUDED
+	icon_state = "shrouded"
+	color = "#783ca4"
+	weight = 5
+
+	ruin_type = RUINTYPE_SHROUDED
+	mapgen = /datum/map_generator/planet_generator/shrouded
+	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
+	weather_controller_type = /datum/weather_controller/shrouded
+
+/datum/planet_type/moon
+	name = "planetoid moon"
+	desc = "A terrestrial satellite orbiting a nearby planet."
+	planet = DYNAMIC_WORLD_MOON
+	icon_state = "moon"
+	color = "#d1c3c3"
+
+	ruin_type = null // minor 'planets' have no ruins
+	mapgen = /datum/map_generator/planet_generator/moon
+	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
+	weather_controller_type = null
+
+/datum/planet_type/battlefield
+	name = "battlefield planet"
+	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask!"
+	planet = DYNAMIC_WORLD_BATTLEFIELD
+	icon_state = "battlefield"
+	color = "#b32048"
+	weight = 5
+
+	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
+	mapgen = /datum/map_generator/planet_generator/battlefield
+	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
+	weather_controller_type = /datum/weather_controller/toxic
+

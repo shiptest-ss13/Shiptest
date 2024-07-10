@@ -182,7 +182,8 @@
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
 
-
+///??? I dont think i ever finished this, and if i do, move to planet_types.dm
+/datum/overmap/dynamic/proc/choose_random_asteroid()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -311,6 +312,15 @@
 /area/overmap_encounter/planetoid/jungle/explored
 	area_flags = VALID_TERRITORY
 
+/area/overmap_encounter/planetoid/battlefield
+	name = "\improper Battlefield Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_CITY
+	ambientsounds = SPOOKY
+
+/area/overmap_encounter/planetoid/battlefield/explored
+	area_flags = VALID_TERRITORY
+
+
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
@@ -323,6 +333,15 @@
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
+
+/area/overmap_encounter/planetoid/waterplanet
+	name = "\improper Water Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = MINING
+
+/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+	area_flags = UNIQUE_AREA
+	area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 /area/overmap_encounter/planetoid/beachplanet/explored
 	area_flags = VALID_TERRITORY
@@ -341,6 +360,26 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
+/area/overmap_encounter/planetoid/desert
+	name = "\improper Desert Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = DESERT
+
+/area/overmap_encounter/planetoid/shrouded
+	name = "\improper Shrouded Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = DESERT
+
+/area/overmap_encounter/planetoid/moon
+	name = "\improper Planetoid Moon"
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE
+
+/datum/overmap/dynamic/empty
+	name = "Empty Space"
+
+/datum/overmap/dynamic/empty/choose_level_type()
+	return
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY

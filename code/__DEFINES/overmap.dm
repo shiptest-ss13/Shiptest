@@ -29,8 +29,17 @@
 #define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
 
+#define DYNAMIC_WORLD_WATERPLANET "waterplanet" //minor planets
+#define DYNAMIC_WORLD_DESERT "desertplanet"
+#define DYNAMIC_WORLD_SHROUDED "shroudedplanet"
+#define DYNAMIC_WORLD_BATTLEFIELD "battlefieldplanet"
+#define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
+#define DYNAMIC_WORLD_DUSTBALL "dustball"
+#define DYNAMIC_WORLD_MOON "moon"
+
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
+#define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"

@@ -9,9 +9,9 @@
 	icon_state = "asteroid"
 	icon_plating = "asteroid"
 	postdig_icon_change = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	attachment_holes = FALSE
 	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
@@ -36,7 +36,14 @@
 		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
 
 /// Drops itemstack when dug and changes icon
-/turf/open/floor/plating/asteroid/proc/getDug()
+/turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
+	if(no_dirt)
+		if(!postdig_icon)
+			icon_plating = "[base_icon_state]_dug"
+			icon_state = "[base_icon_state]_dug"
+		dug = TRUE
+		return
+
 	new digResult(src, 5)
 	if(postdig_icon_change)
 		if(!postdig_icon)
