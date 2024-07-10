@@ -65,6 +65,7 @@ SUBSYSTEM_DEF(blackmarket)
 				var/pickedloc = vlevel.get_side_turf(startSide)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
+				item.inertia_moving = TRUE
 				item.safe_throw_at(purchase.uplink, 3, 3, spin = FALSE)
 
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)].</span>")
