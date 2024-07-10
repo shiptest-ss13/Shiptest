@@ -3,11 +3,8 @@
 	icon_state = "bluespacearray"
 	build_path = /obj/machinery/ltsrbt
 	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stock_parts/subspace/ansible = 1,
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/scanning_module = 2)
-	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
 /obj/machinery/ltsrbt
 	name = "Long-To-Short-Range-Bluespace-Transciever"
@@ -121,3 +118,17 @@
 
 	if(queue.len)
 		recieving = pick_n_take(queue)
+
+/datum/crafting_recipe/blackmarket_telepad
+	name = "Black Market LTRSBT Board"
+	result = /obj/item/circuitboard/machine/ltsrbt
+	time = 30
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
+	reqs = list(
+		/obj/item/stack/ore/bluespace_crystal = 2,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/card/bank = 1,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/circuitboard
+	)
+	category = CAT_MISC
