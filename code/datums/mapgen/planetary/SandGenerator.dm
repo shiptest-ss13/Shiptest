@@ -100,7 +100,7 @@
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 25,
@@ -166,7 +166,7 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried/lit = 1)
 	flora_spawn_chance = 0
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 40,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
 		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 40,
@@ -203,7 +203,7 @@
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
@@ -213,7 +213,7 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,

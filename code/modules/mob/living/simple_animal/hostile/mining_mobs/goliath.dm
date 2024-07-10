@@ -456,3 +456,55 @@
 	icon_state = "gruboid_tentacle_wiggle"
 	wiggle = "gruboid_tentacle_spawn"
 	retract = "gruboid_tentacle_retract"
+
+//Whitesands Goliath
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands
+	name = "goliath"
+	desc = "A species of goliath native to sand planets. While its shell can take more punishment, its also has much weaker skin to compensate"
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
+	icon_state = "ws_goliath"
+	icon_living = "ws_goliath"
+	icon_aggro = "ws_goliath"
+	icon_dead = "ws_goliath_dead"
+	throw_message = "does nothing to the tough hide of the"
+	pre_attack_icon = "ws_goliath_preattack"
+
+	move_to_delay = 2.5 SECONDS
+	speed = 2
+
+	maxHealth = 30
+	health = 30
+	armor = list("melee" = 65, "bullet" = 75, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
+	loot = list()
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random/Initialize()
+	. = ..()
+	if(prob(10))
+		new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/whitesands(loc)
+		return INITIALIZE_HINT_QDEL
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/whitesands
+	name = "ancient goliath"
+	desc = "Goliaths are biologically immortal, and rare specimens have survived for centuries. This one is clearly ancient, and its shell is dangerously durable."
+	icon_state = "ws_ancient_goliath"
+	icon_living = "ws_ancient_goliath"
+	icon_aggro = "ws_ancient_goliath_alert"
+	icon_dead = "ws_ancient_goliath_dead"
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 60, "bullet" = 95, "laser" = 55, "energy" = 30, "bomb" = 60, "bio" = 30, "rad" = 50, "fire" = 30, "acid" = 50)
+	move_to_delay = 3 SECONDS
+	speed = 3
+	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
+	pre_attack_icon = "ws_ancient_goliath_preattack"
+	throw_message = "does nothing to the rocky hide of the"
+	guaranteed_butcher_results = list()
+	trophy_drop_mod = 75
+	wander = FALSE
+	bonus_tame_chance = 10
+

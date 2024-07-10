@@ -55,7 +55,7 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/ngr)
+	default_system = create_new_star_system(new /datum/overmap_star_system/outposted)
 
 	return ..()
 
