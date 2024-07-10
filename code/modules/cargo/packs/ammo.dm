@@ -9,7 +9,7 @@
 /datum/supply_pack/ammo/co9mm_mag
 	name = "9mm Commander Magazine Crate"
 	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/co9mm,)
+	contains = list(/obj/item/ammo_box/magazine/co9mm)
 	cost = 500
 
 /datum/supply_pack/ammo/m45_mag
@@ -28,7 +28,7 @@
 	name = ".38 Speedloader Crate"
 	desc = "Contains a .38 speedloader for revolvers, containing six rounds."
 	contains = list(/obj/item/ammo_box/c38)
-	cost = 350
+	cost = 250
 
 /datum/supply_pack/ammo/m10mm_mag
 	name = "10mm Stechkin Magazine Crate"

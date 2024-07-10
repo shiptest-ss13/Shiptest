@@ -8,7 +8,6 @@
 /obj/item/gun/ballistic
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
-	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 
 	has_safety = TRUE
@@ -101,15 +100,16 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if (!spawnwithmagazine)
+	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
 		bolt_locked = TRUE
 		update_appearance()
 		return
 	if (!magazine)
 		magazine = new mag_type(src)
+	if (!spawnwithmagazine)
+		get_ammo_list (drop_all = TRUE)
 	chamber_round()
 	update_appearance()
-
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
@@ -404,7 +404,7 @@
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	if (suppressed)
 		. += "It has a suppressor attached that can be removed with <b>alt+click</b>."
-	. += "You can [bolt_wording] [src] by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
+	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)

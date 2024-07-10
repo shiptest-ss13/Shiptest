@@ -17,6 +17,9 @@
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
 
+/obj/item/gun/energy/ionrifle/empty_cell
+	dead_cell = TRUE
+
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"
 	desc = "The MK.II Prototype Ion Projector is a lightweight carbine version of the larger ion rifle, built to be ergonomic and efficient."
@@ -98,13 +101,6 @@
 	can_flashlight = FALSE
 	max_mod_capacity = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-
-/obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
-	name = "candy corn crossbow"
-	desc = "A weapon favored by Syndicate trick-or-treaters."
-	icon_state = "crossbow_halloween"
-	item_state = "crossbow"
-	ammo_type = list(/obj/item/ammo_casing/energy/bolt/halloween)
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	name = "energy crossbow"

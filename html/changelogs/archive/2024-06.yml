@@ -301,3 +301,66 @@
   - rscadd: Added Hydrogen, and Combustion Thrusters to go with!
   rye-rice:
   - rscadd: Adds a war correspondent for CLIP.
+2024-06-22:
+  Anticept:
+  - bugfix: Dialed down the loudness of a couple Kepori sounds
+  - bugfix: Kepori wooping now has the audible flag.
+  - bugfix: Whistling now varies in pitch
+  PositiveEntropy:
+  - imageadd: SUNS trimline decals are now properly aligned.
+  Sadhorizon:
+  - rscadd: Bone Talisman and Hunter's Necklace were added to loadout.
+  - tweak: Bone Talisman and Hunter's Necklace were reflavored into good lack charms.
+      They are no longer armored.
+  - tweak: Wolf talisman crafting recipe now requires less stuff.
+  - bugfix: Blue wall locker sprites are no longer flipped.
+  SomeguyManperson:
+  - balance: crystal legion spawn 1 less skull per spawn wave, now 1 (like normal
+      legion)
+  - balance: brimdemon beams now have a fade-in effect before dealing damage, making
+      it harder to get instantly chunked for a quarter of your health
+  - balance: brimdemons can no longer aggro on you before you can see them
+  - balance: radiation collectors are now significantly more stingy about the potency
+      of the radiation they will process. Don't expect old nuclear waste or openly
+      stored uranium to do much.
+  - balance: radiation collectors also produce significantly more power from the remaining
+      viable sources
+  Thera-Pissed:
+  - bugfix: infinite negative power draw while calling your grandmother no longer
+      happens.
+  - bugfix: fixed volume pumps for mapping.
+  blinkdog:
+  - bugfix: Cleaned up some logic in revolver safety
+  generalthrax:
+  - bugfix: Tadrixx Float has a sprite again
+  - rscadd: You can now tail thump if you have a tail instead of it being tied to
+      species
+2024-06-25:
+  Martinpachu:
+  - rscadd: Cargo guns and certain guns in ships now come inside cases alongside some
+      magazines, the ammo now comes separately for safety reasons.
+2024-06-27:
+  Gristlebee:
+  - tweak: Saber SMG stock folds
+  - tweak: TEC-9 Pistol is now automatic and normal sized
+  - balance: Combat shotgun is now bulky, and the compact combat shotgun is normal.
+  Martinpachu:
+  - rscadd: A technique for gunslinger with the lever-action flaming arrow! Firing
+      it while wielded will quickly and automatically rack the lever, less quickly
+      than a .38 revolver or fanned shadow though.
+  - rscdel: The +5 damage and AP bonus on the shadow while using it as a gunslinger.
+  Sadhorizon:
+  - rscdel: Miners and Cargo Technicians no longer get QM access.
+  SomeguyManperson:
+  - bugfix: cyborgs can touch people again
+  - code_imp: robotic limbs will always have healing prioritized over being cauterized
+      if treated with a welder
+  generalthrax:
+  - rscdel: Tranquility reagent no longer turns you into a gondola
+  - bugfix: Fixed typos in the Shadow and Montagne revolvers
+  - bugfix: Black market rusted reds no longer flash into dust when you purchase them
+  thestripes:
+  - rscadd: Added Kepori names, surnames, and a list for the char gen to draw from.
+      Remember to update your character names!
+  - rscdel: Removed old Kepori name gen system and a bit of lore from the species
+      blurb
