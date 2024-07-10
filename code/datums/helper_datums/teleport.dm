@@ -153,8 +153,10 @@
 			// DING! You have passed the gauntlet, and are "probably" safe.
 			return potential_floor
 
-// finds a "safe" turf outdoors eg. not lava or acid
+// finds a "safe" turf outdoors on a given zlevel eg. not lava or acid
 /proc/find_outdoors_turf(list/zlevels)
+	if(!zlevels)
+		CRASH("No zlevel given!")
 	var/list/potential_targets = list()
 	for(var/datum/overmap/ship/controlled/possible_ship as anything in SSovermap.controlled_ships)
 		if(!zlevels)
@@ -162,6 +164,7 @@
 			continue
 		if((possible_ship.shuttle_port.z in zlevels) || (possible_ship.shuttle_port.virtual_z() in zlevels))
 			potential_targets += possible_ship.shuttle_port.shuttle_areas
+
 
 	if(!length(potential_targets))
 		CRASH("No safe ship turfs found!")
