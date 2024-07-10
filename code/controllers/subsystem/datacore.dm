@@ -39,13 +39,13 @@ SUBSYSTEM_DEF(datacore)
 	return new_library
 
 /// Returns a data record or null.
-/datum/controller/subsystem/datacore/proc/get_record_by_name(name, record_type = DATACORE_RECORDS_OUTPOST)
+/datum/controller/subsystem/datacore/proc/get_record_by_name(name, record_type)
 	RETURN_TYPE(/datum/data/record)
 
 	return library[record_type].get_record_by_name(name)
 
 /// Returns a data library's records list
-/datum/controller/subsystem/datacore/proc/get_records(record_type = DATACORE_RECORDS_OUTPOST)
+/datum/controller/subsystem/datacore/proc/get_records(record_type)
 	RETURN_TYPE(/list)
 	return library[record_type].records
 

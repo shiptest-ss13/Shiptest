@@ -23,28 +23,29 @@
 	var/list/data = ..()
 
 	var/list/records = list()
-	for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
-		var/list/notes = list()
-		for(var/datum/medical_note/note in target.fields[DATACORE_NOTES_MEDICAL])
-			notes += list(list(
-				author = note.author,
-				content = note.content,
-				note_ref = REF(note),
-				time = note.time,
+	if(linked_ship)
+		for(var/datum/data/record/target in SSdatacore.get_records(linked_ship))
+			var/list/notes = list()
+			for(var/datum/medical_note/note in target.fields[DATACORE_NOTES_MEDICAL])
+				notes += list(list(
+					author = note.author,
+					content = note.content,
+					note_ref = REF(note),
+					time = note.time,
+				))
+			records += list(list(
+				record_ref = REF(target),
+				rank = target.fields[DATACORE_RANK],
+				age = target.fields[DATACORE_AGE],
+				name = target.fields[DATACORE_NAME],
+				gender = target.fields[DATACORE_GENDER],
+				species = target.fields[DATACORE_SPECIES],
+				physical_status = target.fields[DATACORE_PHYSICAL_HEALTH],
+				mental_status = target.fields[DATACORE_MENTAL_HEALTH],
+				blood_type = target.fields[DATACORE_BLOOD_TYPE],
+				dna = target.fields[DATACORE_BLOOD_DNA],
+				notes = notes,
 			))
-		records += list(list(
-			record_ref = REF(target),
-			rank = target.fields[DATACORE_RANK],
-			age = target.fields[DATACORE_AGE],
-			name = target.fields[DATACORE_NAME],
-			gender = target.fields[DATACORE_GENDER],
-			species = target.fields[DATACORE_SPECIES],
-			physical_status = target.fields[DATACORE_PHYSICAL_HEALTH],
-			mental_status = target.fields[DATACORE_MENTAL_HEALTH],
-			blood_type = target.fields[DATACORE_BLOOD_TYPE],
-			dna = target.fields[DATACORE_BLOOD_DNA],
-			notes = notes,
-		))
 
 	data["records"] = records
 
