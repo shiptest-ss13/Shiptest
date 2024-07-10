@@ -63,7 +63,7 @@
 	if(.)
 		return
 
-	var/mob/user = ui.user
+	//var/mob/user = ui.user
 
 	var/datum/data/record/target
 	if(params["record_ref"])
