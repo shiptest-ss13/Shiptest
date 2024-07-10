@@ -84,6 +84,9 @@
 		if(ITEM_SLOT_BACKPACK)
 			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
 				not_handled = TRUE
+		if(ITEM_SLOT_ID)
+			if(!wear_id || !SEND_SIGNAL(wear_id, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
+				not_handled = TRUE
 		else
 			not_handled = TRUE
 

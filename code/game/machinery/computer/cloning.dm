@@ -534,9 +534,7 @@
 
 	if(ishuman(mob_occupant))
 		dna = C.has_dna()
-		var/obj/item/card/id/I = C.get_idcard(TRUE)
-		if(I)
-			has_bank_account = I.registered_account
+		has_bank_account = C.get_bank_account()
 	if(isbrain(mob_occupant))
 		dna = B.stored_dna
 
