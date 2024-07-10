@@ -74,7 +74,8 @@ SUBSYSTEM_DEF(blackmarket)
 				qdel(purchase)
 			// Drop the order somewhere on the planet
 			if(SHIPPING_METHOD_DEAD_DROP)
-				var/list/uplink_level = list(purchase.uplink.get_virtual_level())
+				var/datum/virtual_level/target_map = purchase.uplink.get_virtual_level()
+				target_map.get_areas()
 
 				// var/turf/target = find_obstruction_free_location()
 				// get_random_ship_turf()
