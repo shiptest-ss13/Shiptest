@@ -1,18 +1,12 @@
 import { useBackend, useLocalState } from 'tgui/backend';
-import {
-  Box,
-  Button,
-  Section,
-  Stack,
-  Tabs,
-} from 'tgui/components';
+import { Box, Button, Section, Stack, Tabs } from 'tgui/components';
 
 import { CRIMESTATUS2COLOR } from './constants';
 import { SecurityRecord, SecurityRecordsData } from './types';
 
 export const SecurityRecordTabs = (props, context) => {
   const { act, data } = useBackend<SecurityRecordsData>(context);
-  const { records = []} = data;
+  const { records = [] } = data;
 
   return (
     <Stack fill vertical>

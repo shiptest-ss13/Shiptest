@@ -2,13 +2,7 @@ import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { useState } from 'react';
 import { useBackend, useLocalState } from 'tgui/backend';
-import {
-  Box,
-  Button,
-  Section,
-  Stack,
-  Tabs,
-} from 'tgui/components';
+import { Box, Button, Section, Stack, Tabs } from 'tgui/components';
 
 import { MedicalRecord, MedicalRecordData } from './types';
 
@@ -55,7 +49,7 @@ export const MedicalRecordTabs = (props, context) => {
 
 /** Individual crew tab */
 const CrewTab = (props: { record: MedicalRecord }, context) => {
-const [selectedRecord, setSelectedRecord] = useLocalState<
+  const [selectedRecord, setSelectedRecord] = useLocalState<
     MedicalRecord | undefined
   >(context, 'medicalRecord', undefined);
 
@@ -85,9 +79,7 @@ const [selectedRecord, setSelectedRecord] = useLocalState<
       onClick={() => selectRecord(record)}
       selected={isSelected}
     >
-      <Box bold={isSelected}>
-        {name}
-      </Box>
+      <Box bold={isSelected}>{name}</Box>
     </Tabs.Tab>
   );
 };
