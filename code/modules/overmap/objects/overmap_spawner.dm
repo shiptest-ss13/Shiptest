@@ -24,13 +24,16 @@
 	. = ..()
 	. += span_notice("You could probably scan this with a helm console to locate a hidden overmap object.")
 
-/obj/item/overmap_encounter_spawner/proc/create_encounter()
+/obj/item/overmap_encounter_spawner/proc/create_encounter(datum/overmap_star_system/current_overmap)
+	//if no or an invalid overmap is passed onto the proc, nope the hell out
+	if(!istype(current_overmap))
+		CRASH("Invalid Overmap passed to punchcard generation! Aborting!")
 	// if position is none we get a random square
 	if(!position)
-		position = SSovermap.get_unused_overmap_square()
+		position = current_overmap.get_unused_overmap_square()
 
 	// we then create the actual overmap datum
-	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	var/datum/overmap/dynamic/encounter = new(position, current_overmap, FALSE)
 
 	//... which we  then set the force encounter var to the planet type we want
 	encounter.force_encounter = planet_type
@@ -48,7 +51,7 @@
 
 	// we then handle ruins. If spawn ruins is set to false then we clear the ruin list, preventing any ruins from spawning
 	if(!spawn_ruins)
-		encounter.ruin_list = null
+		encounter.ruin_type = null
 
 	//... But if we DO want ruins to spawn, AND if there is a forced ruin, we set the template to spawn to that
 	else if(ruin_force)
@@ -59,6 +62,9 @@
 
 	//... We DON'T load level until the player docks there as theres no gurantee they will land there, and that would cause unessary lag.
 	//encounter.load_level()
+
+	//we then update the sprite so our custom stuff shows up
+	encounter.alter_token_appearance()
 
 	// If all went well we return the encounter
 	return encounter
@@ -74,12 +80,12 @@
 		say("Scanning punchcard, please wait...")
 		if(do_after(user, 10 SECONDS))
 			//We then run the create encounter on the punchcard, and copy that over to the helm console
-			var/datum/overmap/dynamic/spawned_encounter = punchcard.create_encounter()
+			var/datum/overmap/dynamic/spawned_encounter = punchcard.create_encounter(current_ship.current_overmap)
 			// if we for some reason failed to, we tell the player so.
 			if(!spawned_encounter)
 				say("Failed to scan punchcard. Please try again later.")
 				return
-			// if we did, we tell the player the coordinate, hope they remember, and then ddelete the punchcard to prevent spam
+			// if we did, we tell the player the coordinate, hope they remember, and then delete the punchcard to prevent spam
 			say("Located hidden location. Location is X[spawned_encounter.x], Y[spawned_encounter.y].")
 			qdel(punchcard)
 		// They moved after the do_after...
