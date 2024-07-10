@@ -260,6 +260,10 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
+"dh" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/r_wall,
+/area/ship/crew/canteen)
 "dx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -957,11 +961,6 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/independent/mining/eva,
-/obj/item/toy/figure/miner{
-	pixel_y = 17;
-	toysay = "Careful out there! Frontier is deadly this time of the year!... Or any time of the year, actually...";
-	pixel_x = -4
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage/eva)
 "om" = (
@@ -1449,6 +1448,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "vm" = (
+/obj/structure/sign/number/random,
 /turf/closed/wall/r_wall,
 /area/ship/crew/toilet)
 "vn" = (
@@ -3906,7 +3906,7 @@ Um
 Um
 Um
 Um
-nY
+dh
 OJ
 "}
 (23,1,1) = {"
