@@ -75,7 +75,6 @@ SUBSYSTEM_DEF(blackmarket)
 			// Drop the order somewhere on the planet
 			if(SHIPPING_METHOD_DEAD_DROP)
 				var/datum/virtual_level/target_map = purchase.uplink.get_virtual_level()
-				target_map.get_areas()
 
 				// var/turf/target = find_obstruction_free_location()
 				// get_random_ship_turf()
