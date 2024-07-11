@@ -223,7 +223,7 @@ Acquire: Anomaly
 	duration = 80 MINUTES
 	dur_mod_range = 0.4
 	container_type = /obj/item/storage/toolbox/bounty
-	objective_type = /obj/item/mine/pressure/explosive/rusty
+	objective_type = /obj/item/mine/pressure/explosive
 	num_wanted = 4
 
 /*
