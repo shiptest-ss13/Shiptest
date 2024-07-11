@@ -21,6 +21,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "av" = (
@@ -43,7 +46,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "aC" = (
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
@@ -251,10 +254,6 @@
 	icon_state = "4-9"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/medical,
-/obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/storage/firstaid/regular,
-/obj/item/roller,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "bU" = (
@@ -704,8 +703,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gp" = (
-/obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "solgov_wall"
+/obj/structure/closet/wall/blue/directional/north{
+	name = "Captain's locker"
 	},
 /obj/item/clothing/under/rank/command/captain/suit,
 /obj/item/clothing/under/rank/command/captain/skirt,
@@ -865,6 +864,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/food/flour,
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "jl" = (
@@ -913,7 +913,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "jU" = (
-/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -1274,7 +1274,11 @@
 	dir = 1
 	},
 /obj/item/soap{
-	pixel_y = 1
+	pixel_y = 4
+	},
+/obj/item/bikehorn/rubberducky/plasticducky{
+	pixel_x = -9;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
@@ -1405,17 +1409,15 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/medical,
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/storage/firstaid/regular,
+/obj/item/roller,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Da" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
-/mob/living/simple_animal/hostile/mining_drone{
-	name = "Temiti";
-	dir = 8;
-	health = 60;
-	desc = "The instructions printed on the side are completely covered by a sticky note that reads: Temiti the Drilling Specialist."
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Ds" = (
@@ -1426,7 +1428,7 @@
 /obj/item/folder/yellow,
 /obj/item/folder,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/computer_hardware/printer/mini,
+/obj/item/computer_hardware/card_slot,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/pink{
 	icon_state = "0-8"
@@ -1506,6 +1508,9 @@
 /obj/structure/cable/pink{
 	icon_state = "4-6"
 	},
+/obj/structure/sign/poster/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "HP" = (
@@ -1548,6 +1553,9 @@
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/metal/twenty,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "KB" = (
@@ -1561,6 +1569,11 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/cigbutt,
+/mob/living/simple_animal/hostile/mining_drone{
+	name = "Temiti";
+	dir = 8;
+	desc = "The instructions printed on the side are completely covered by a sticky note that reads: Temiti the Drilling Specialist."
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "KR" = (
@@ -1686,7 +1699,7 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/storage/pill_bottle/happy{
 	pixel_x = 12;
-	pixel_y = 11
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew)
@@ -1707,7 +1720,7 @@
 	dir = 4
 	},
 /obj/item/flashlight/lamp/green{
-	pixel_y = 8
+	pixel_y = 3
 	},
 /obj/structure/sign/poster/random{
 	pixel_y = 0;
@@ -1871,8 +1884,6 @@
 /area/ship/crew)
 "Va" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/ammo_box/a12g,
-/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag,
 /obj/structure/cable/pink{
 	icon_state = "6-10"
 	},
@@ -1883,6 +1894,8 @@
 	icon_state = "9-10"
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/item/ammo_box/a12g,
+/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Vd" = (
