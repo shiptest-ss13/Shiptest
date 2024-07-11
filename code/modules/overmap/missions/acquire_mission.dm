@@ -212,6 +212,21 @@ Acquire: Anomaly
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
 /*
+		Acquire: Landmines
+*/
+
+/datum/mission/acquire/landmine/rusted
+	name = "Defuse rusted landmines"
+	desc = "We've been issued a bounty to make the Frontier a safer place by disarming dated landmines. Mind your fingers."
+	weight = 6
+	value = 2000
+	duration = 80 MINUTES
+	dur_mod_range = 0.4
+	container_type = /obj/item/storage/toolbox/bounty
+	objective_type = /obj/item/mine/pressure/explosive
+	num_wanted = 4
+
+/*
 		Acquire: Fishing
 */
 
