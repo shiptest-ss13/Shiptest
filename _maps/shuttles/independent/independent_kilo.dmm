@@ -1563,10 +1563,12 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/cigbutt,
-/mob/living/simple_animal/hostile/mining_drone{
-	name = "Temiti";
-	dir = 8;
-	desc = "The instructions printed on the side are completely covered by a sticky note that reads: Temiti the Drilling Specialist."
+/mob/living/simple_animal/hostile/netherworld/migo{
+	environment_smash = 0;
+	faction = list("neutral");
+	melee_damage_lower = 5;
+	melee_damage_upper = 10;
+	name = "maurice"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
