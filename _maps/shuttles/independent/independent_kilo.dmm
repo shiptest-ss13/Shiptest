@@ -522,10 +522,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "cK" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/external/dark)
 "cM" = (
@@ -544,10 +544,10 @@
 "cP" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
 	id = "kilowindows"
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/ship/hallway/port)
 "cV" = (
@@ -641,7 +641,7 @@
 /obj/effect/turf_decal/miskilamo_small/right{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -679,6 +679,10 @@
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"fu" = (
+/obj/effect/turf_decal/corner/opaque/black/mono,
+/turf/closed/wall/r_wall/yesdiag,
+/area/ship/cargo)
 "fv" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-10"
@@ -1318,7 +1322,8 @@
 "AP" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
-	name = "engine fuel pump"
+	name = "engine fuel pump";
+	target_pressure = 500
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plating,
@@ -2232,7 +2237,7 @@ Vq
 "}
 (14,1,1) = {"
 aa
-Nq
+fu
 ac
 Ud
 bX
