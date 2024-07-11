@@ -1260,7 +1260,7 @@
 	},
 /obj/machinery/button/door{
 	id = "lib_armory_1";
-	name = "Sergeant Access";
+	name = "Lieutenant Access";
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -5;
@@ -1718,7 +1718,7 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "hop";
 	req_access = list(57);
-	name = "bridge steward's locker"
+	name = "helmsman's locker"
 	},
 /obj/item/gun/energy/kalix/pistol{
 	pixel_y = -16
@@ -3060,7 +3060,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	req_access = list(3);
-	name = "Sergeant's Quarters"
+	name = "Lieutenant's Quarters"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -4795,7 +4795,7 @@
 "Mw" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos{
-	name = "Sergeant's Bedsheet";
+	name = "Lieutenant's Bedsheet";
 	desc = "It is decorated with a shield emblem."
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -6194,7 +6194,7 @@
 	anchored = 1;
 	can_be_unanchored = 1;
 	icon_state = "warden";
-	name = "sergeant's locker";
+	name = "lieutenant's locker";
 	req_access_txt = "3";
 	req_access = list(3)
 	},

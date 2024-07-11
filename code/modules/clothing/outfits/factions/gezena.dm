@@ -72,8 +72,8 @@
 	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/gezena/hos
-	name = "PGF - Marine Sergeant"
-	id_assignment = "Sergeant"
+	name = "PGF - Marine Lieutenant"
+	id_assignment = "Lieutenant"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
@@ -187,7 +187,7 @@
 	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/gezena/hos/geared
-	name = "PGF - Marine Sergeant - Equipped"
+	name = "PGF - Marine Lieutenant - Equipped"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
