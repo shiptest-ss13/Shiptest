@@ -19,17 +19,17 @@
 		/obj/item/reagent_containers/food/drinks/bottle/pineapplejuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/cream = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola = 8,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 8,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 8,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 4,
-		/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/vimukti = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/grenadine = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/menthol = 4,
 		/obj/item/reagent_containers/food/drinks/mug/tea = 8,
@@ -70,8 +70,8 @@
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)
 
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty 'round this sector?"
-	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
+	product_slogans = "I hope nobody asks me for a cup of tea...;Alcohol is everyone's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty 'round this sector?"
+	product_ads = "Drink up!;Booze is good for you!;Alcohol is everyone's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 53 FSC!;Award-winning wine!;Maximum alcohol!;Everyone loves beer.;A toast for progress!"
 	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat
 	default_price = 120

@@ -139,12 +139,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|HEAD
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEEARS|HIDEEYES|HIDEHAIR
 
-/obj/item/clothing/under/suit/roumain
-	name = "saint-roumain's worksuit"
-	desc = "A simple, hard-wearing suit designed for the hardworking hunters of the Saint-Roumain Militia."
-	icon_state = "rouma_work"
-	item_state = "rouma_work"
-
 /obj/item/clothing/under/suit/dresssuit
 	name = "navy dress-suit"
 	desc = "A very strange piece of clothing. Mostly navy, but with a pink undershirt. Who would even wear this?"

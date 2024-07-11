@@ -281,7 +281,7 @@
 /obj/structure/sign/number
 	name = "zero"
 	desc = "A numeral sign."
-	icon = 'icons/turf/decals.dmi'
+	icon = 'icons/turf/decals/decals.dmi'
 	icon_state = "0"
 
 /obj/structure/sign/number/one

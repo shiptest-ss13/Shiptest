@@ -221,8 +221,8 @@
 //	Formatting is the same as food.
 
 /obj/item/reagent_containers/food/drinks/coffee
-	name = "robust coffee"
-	desc = "Careful, the beverage you're about to enjoy is extremely hot."
+	name = "Solar's Best black coffee"
+	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
@@ -258,13 +258,13 @@
 		icon_state = "tea_empty"
 
 /obj/item/reagent_containers/food/drinks/mug/tea
-	name = "Duke Purple tea"
-	desc = "An insult to Duke Purple is an insult to the Space Queen! Any proper gentleman will fight you, if you sully this tea."
+	name = "Guildmaiden's tea"
+	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Pearl Hot Chocolate"
-	desc = "A rich delicacy from the humid regions of Terra."
+	name = "Solar's Best Hot Cocoa"
+	desc = "A cup of hot water mixed with chocolate and malted milk powder. A classic hot drink from the Solarian Confederation."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
@@ -286,7 +286,7 @@
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years. Now new with salty flavour!"
+	desc = "A cup full of dried noodles, premixed with a flavor powder. Adding 5 units of water will cause the cup to self-heat, cooking it rapidly. Commonly eaten under dozens of brands, from students to eating on a budget. Always umami!"
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
@@ -294,12 +294,12 @@
 	custom_price = 95
 
 /obj/item/reagent_containers/food/drinks/waterbottle
-	name = "bottle of water"
-	desc = "A bottle of water filled at an old Earth bottling facility."
+	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
+	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
 	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
-	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
+	list_reagents = list(/datum/reagent/water = 50)
 	custom_materials = list(/datum/material/plastic=1000)
 	volume = 50
 	amount_per_transfer_from_this = 10
@@ -369,8 +369,8 @@
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
@@ -382,8 +382,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
-	name = "Magm-Ale"
-	desc = "A true dorf's drink of choice."
+	name = "RHIMBASA TAP"
+	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
 	icon_state = "alebottle"
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
@@ -454,17 +454,17 @@
 			if(/datum/reagent/consumable/pineapplejuice)
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
-				desc = "Why would you even want this?"
+				desc = "Sweet, tart pineapple juice."
 				foodtype = FRUIT | PINEAPPLE
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
-				desc = "Milk for cool kids!"
+				desc = "Milk mixed with chocolate, a common childhood favorite!"
 				foodtype = SUGAR
 			if(/datum/reagent/consumable/ethanol/eggnog)
 				icon_state = "nog2"
 				name = "carton of eggnog"
-				desc = "For enjoying the most wonderful time of the year."
+				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
 				foodtype = MEAT
 	else
 		icon_state = "juicebox"
@@ -511,7 +511,7 @@
 
 /obj/item/reagent_containers/food/drinks/flask
 	name = "flask"
-	desc = "Every good spaceman knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
+	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
 	custom_price = 200
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
@@ -530,10 +530,10 @@
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
-/obj/item/reagent_containers/food/drinks/britcup
+/obj/item/reagent_containers/food/drinks/mug
 	name = "cup"
-	desc = "A cup with the british flag emblazoned on it."
-	icon_state = "britcup"
+	desc = "A mug. Stylishly plain."
+	icon_state = "tea_empty"
 	volume = 30
 	spillable = TRUE
 
@@ -643,35 +643,35 @@
 	. = ..()
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cola
-	name = "Space Cola"
-	desc = "Cola. in space."
+	name = "Master Cola"
+	desc = "Originally a commission to the Rachnid culinary guilds from Solarian historical reenactors on creating an authentic cola that, at some point, dominated the globe in popularity, this soft drink comes as close to anyone might be able to taste the sodas of yore... But it's still a pretty alright drink."
 	icon_state = "cola"
 	list_reagents = list(/datum/reagent/consumable/space_cola = 30)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/drinks/soda_cans/tonic
-	name = "T-Borg's tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	name = "Sixikirtchia's Tonic"
+	desc = "A can of water mixed with quinine, which the label purportedly states that it has more health benefits for the Vox than fending off malaria. Most people use it for mixing drinks, Vox or otherwise."
 	icon_state = "tonic"
 	list_reagents = list(/datum/reagent/consumable/tonic = 50)
 	foodtype = ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater
-	name = "soda water"
-	desc = "A can of soda water. Why not make a scotch and soda?"
+	name = "Stitiamix Club"
+	desc = "Mineral-flavored carbonated water, infused on some part of The Shoal. Touts being made out of minerals from embedded asteroids, apparently!"
 	icon_state = "sodawater"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime
-	name = "lemon-lime soda"
-	desc = "Is it lemon? Is it lime? The expert opinions vary."
-	icon_state = "lemon-lime"
-	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda
+	name = "Sol Sparkler: Orange Remembrance"
+	desc = "A line of flavored seltzer water from the Solarian Confederation. Its infamy stems from being flavored sparingly enough to warrant it being referred to as being vague memories of the fruit in question."
+	icon_state = "orange_soda"
+	list_reagents = list(/datum/reagent/consumable/orangejuice = 5, /datum/reagent/consumable/sodawater = 25)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
 	name = "Sol Dry"
-	desc = "Maybe this will help your tummy feel better. Maybe not."
+	desc = "A can of ginger ale, known for helping those with upset stomachs. Popularized due to a widespread belief from Solarians that drinking it will alleviate the nausea from bluespace travel."
 	icon_state = "sol_dry"
 	list_reagents = list(/datum/reagent/consumable/sol_dry = 30)
 	foodtype = SUGAR
@@ -683,86 +683,79 @@
 	list_reagents = list(/datum/reagent/consumable/space_up = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/starkist
-	name = "Star-kist"
-	desc = "The taste of a star in liquid form. And, a bit of tuna...?"
-	icon_state = "starkist"
-	list_reagents = list(/datum/reagent/consumable/space_cola = 15, /datum/reagent/consumable/orangejuice = 15)
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch
+	name = "Lunapunch"
+	desc = "A soda with a distinctly herbal sweetness and a bitter aftertaste, popular across the C.L.I.P. colonies. Originally marketed as a health soft-drink for members of the CMM, the herbs used in its recipe claim to have health benefits... to dubious results."
+	icon_state = "lunapunch"
+	list_reagents = list(/datum/reagent/consumable/lunapunch = 30)
 	foodtype = SUGAR | FRUIT | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind
-	name = "Space Mountain Wind"
-	desc = "Blows right through you like a space wind."
-	icon_state = "space_mountain_wind"
-	list_reagents = list(/datum/reagent/consumable/spacemountainwind = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail
+	name = "Comet Trail"
+	desc = "A citrusy drink from the Kepori space installation known as The Ring. Known for its sharp flavor and refreshing carbonation -- best served cold."
+	icon_state = "comet_trail"
+	list_reagents = list(/datum/reagent/consumable/comet_trail = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
-	name = "Thirteen Loko"
-	desc = "The CMO has advised crew members that consumption of Thirteen Loko may result in seizures, blindness, drunkenness, or even death. Please Drink Responsibly."
+/obj/item/reagent_containers/food/drinks/soda_cans/vimukti
+	name = "Vimukti"
+	desc = "A liquor brewed from sweet lichen scraped off the walls of Shoal water condensers. Stamped with the thirteen-spoked wheel of enlightenment. Spiritual Vox consider it to open the mind's boundaries."
 	icon_state = "thirteen_loko"
-	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
+	list_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb
-	name = "Dr. Gibb"
-	desc = "A delicious mixture of 42 different flavors."
-	icon_state = "dr_gibb"
-	list_reagents = list(/datum/reagent/consumable/dr_gibb = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx
+	name = "Tadrixx"
+	desc = "A Kalixcian drink made from a plant that tastes similar to sassafrass, which is used in root beer. A stumpy drake holding a mug of it is on the front."
+	icon_state = "tadrixx"
+	list_reagents = list(/datum/reagent/consumable/tadrixx = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game
-	name = "Pwr Game"
-	desc = "The only drink with the PWR that true gamers crave. When a gamer talks about gamerfuel, this is what they're literally referring to."
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel
+	name = "PAC-Fuel"
+	desc = "A carbonated energy drink themed after the purple coloration, similar to plasma. It seems to have gotten a sponsorship with the the G.E.C., with a special offer for some sort of deal on... gaming gear and industrial equipment?"
 	icon_state = "purple_can"
-	list_reagents = list(/datum/reagent/consumable/pwr_game = 30)
+	list_reagents = list(/datum/reagent/consumable/pacfuel = 30)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/shamblers
-	name = "Shambler's juice"
-	desc = "~Shake me up some of that Shambler's Juice!~"
-	icon_state = "shamblers"
-	list_reagents = list(/datum/reagent/consumable/shamblers = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch
+	name = "Shoal Punch"
+	desc = "Carbonated fruit soda, made from a mix of dozens of fruits collected and grown on The Shoal. There's an extensive list of potential allergens on the back."
+	icon_state = "shoal_punch"
+	list_reagents = list(/datum/reagent/consumable/shoal_punch = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull
-	name = "Grey Bull"
-	desc = "Grey Bull, it gives you gloves!"
+/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk
+	name = "Crosstalk"
+	desc = "Crosstalk! Share the energy with everyone! The can is a little thin to be passing it around to actually share the energy drink around, though."
 	icon_state = "energy_drink"
-	list_reagents = list(/datum/reagent/consumable/grey_bull = 20)
+	list_reagents = list(/datum/reagent/consumable/crosstalk = 20)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
-	name = "Monkey Energy"
-	desc = "Unleash the ape!"
-	icon_state = "monkey_energy"
-	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/monkey_energy = 40, /datum/reagent/consumable/electrolytes = 10)
+/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy
+	name = "Xeno-Energy"
+	desc = "A sickly green energy drink that poses itself as made from the real blood of xenomorphs. Deeply controversial among the BARD ranks."
+	icon_state = "xeno_energy"
+	item_state = "xeno_energy"
+	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
-
-/obj/item/reagent_containers/food/drinks/soda_cans/efuel
-	name = "E-Fuel"
-	desc = "Shocking for the Elzu!"
-	icon_state = "monkey_energy"
-	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
-	name = "canned air"
-	desc = "There is no air shortage. Do not drink."
+	name = "Tradewind Canned"
+	desc = "Intended to be filled with air from home planets for the sake of nostalgia after it's initial failure as an emergency method of 'canning air'. Tradewind Canned - a breath from home."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/molten
 	name = "Molten Bubbles"
-	desc = "A spicy cola to cool the nerves and burn the soul."
+	desc = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	icon_state = "molten"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles = 50)
+	list_reagents = list(/datum/reagent/consumable/molten = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/plasma
 	name = "Plasma Fizz"
-	desc = "A dangerous fusion of flavors!"
+	desc = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	icon_state = "plasma"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
 /obj/item/reagent_containers/food/drinks/ration
 	name = "empty ration pouch"

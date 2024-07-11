@@ -165,7 +165,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	visible_message(
 		"<span class='danger'>[src] starts eating away [A]...</span>",
 		"<span class='notice'>You start eating the [A]...</span>")
-	if(do_after(src, 30, FALSE, A))
+	if(do_after(src, 30, A, hidden = TRUE))
 		if(QDELETED(A))
 			return
 		visible_message(

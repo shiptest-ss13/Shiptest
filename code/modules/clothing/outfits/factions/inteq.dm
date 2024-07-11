@@ -71,8 +71,8 @@
 ///Chief Engineer
 
 /datum/outfit/job/inteq/ce
-	name = "IRMG - Artificer Class II"
-	id_assignment = "Artificer Class II"
+	name = "IRMG - Honorable Artificer"
+	id_assignment = "Honorable Artificer"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 

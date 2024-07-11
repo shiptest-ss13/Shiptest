@@ -88,7 +88,7 @@
 	if(!can_deploy)
 		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
 		return
-	if(!do_after(user, deploy_time, src, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
+	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
 		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
@@ -154,9 +154,14 @@
 /obj/item/gun/ballistic/automatic/hmg/l6_saw
 	name = "\improper L6 SAW"
 	desc = "A heavy machine gun, designated 'L6 SAW'. Chambered in 7.12x82mm."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "l6"
 	item_state = "l6closedmag"
 	base_icon_state = "l6"
+
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
 	can_suppress = FALSE
 	spread = 7
@@ -216,9 +221,14 @@
 /obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
 	name = "\improper Solar"
 	desc = "A TerraGov LMG-169 designed in 169 FS, nicknamed 'Solar.' A inscription reads: 'PROPERTY OF TERRAGOV', with 'TERRAGOV' poorly scribbled out, and replaced by 'SOLAR ARMORIES'. Chambered in 4.73×33mm caseless ammunition."
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	icon_state = "solar"
+
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7
 
@@ -236,7 +246,11 @@
 	name = "\improper SKM-24u"
 	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
 
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
 	icon_state = "skm_lmg"
 	item_state = "skm_lmg"
 

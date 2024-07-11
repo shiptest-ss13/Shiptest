@@ -51,7 +51,7 @@
 			src_turf.visible_message("<span class='warning'>Warning: unable to locate valuable information in current sector.</span>")
 			break
 
-		if(!do_after(user, list(src), survey_delay / penalty))
+		if(!do_after(user, survey_delay / penalty, src))
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
 			src_turf.visible_message("<span class='warning'>Warning: results corrupted. Please try again.</span>")

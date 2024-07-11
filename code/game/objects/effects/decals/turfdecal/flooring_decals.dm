@@ -418,7 +418,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/plaque
 	name = "plaque"
 	icon_state = "plaque"
-	icon = 'icons/turf/decals.dmi'
 
 /obj/effect/turf_decal/chapel
 	name = "chapel"
@@ -801,9 +800,94 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/solgov/all/bottom_right
 	icon_state = "bottom-right-all"
 
+// suns
+
 /obj/effect/turf_decal/suns
-	icon = 'icons/obj/suns_floor.dmi'
+	icon = 'icons/turf/decals/suns_floor.dmi'
 	icon_state = "suns-columm1-bottom"
+
+/obj/effect/turf_decal/suns/capital_s
+	icon_state = "capital-s"
+
+/obj/effect/turf_decal/suns/capital_u
+	icon_state = "capital-u"
+
+/obj/effect/turf_decal/suns/capital_n
+	icon_state = "capital-n"
+
+/obj/effect/turf_decal/suns/capital_s/fancy
+	icon_state = "capitalfancy-s"
+
+/obj/effect/turf_decal/suns/capital_u/fancy
+	icon_state = "capitalfancy-u"
+
+/obj/effect/turf_decal/suns/capital_n/fancy
+	icon_state = "capitalfancy-n"
+
+/obj/effect/turf_decal/suns/capital_s/marble
+	icon_state = "capitalmarble-s"
+
+/obj/effect/turf_decal/suns/capital_u/marble
+	icon_state = "capitalmarble-u"
+
+/obj/effect/turf_decal/suns/capital_n/marble
+	icon_state = "capitalmarble-n"
+
+// borders
+
+/obj/effect/turf_decal/suns/line
+	icon_state = "suns-border"
+
+/obj/effect/turf_decal/suns/line/corner
+	icon_state = "suns-bordercorner"
+
+/obj/effect/turf_decal/suns/line/end
+	icon_state = "suns-borderend"
+
+/obj/effect/turf_decal/suns/line/fill
+	icon_state = "suns-fill"
+
+/obj/effect/turf_decal/suns/line/fill/corner
+	icon_state = "suns-fillcorner"
+
+/obj/effect/turf_decal/suns/line/fill/end
+	icon_state = "suns-fillend"
+
+/obj/effect/turf_decal/suns/line/fancy
+	icon_state = "sunsfancy-border"
+
+/obj/effect/turf_decal/suns/line/fancy/corner
+	icon_state = "sunsfancy-bordercorner"
+
+/obj/effect/turf_decal/suns/line/fancy/end
+	icon_state = "sunsfancy-borderend"
+
+/obj/effect/turf_decal/suns/line/fancy/fill
+	icon_state = "sunsfancy-fill"
+
+/obj/effect/turf_decal/suns/line/fancy/fill/corner
+	icon_state = "sunsfancy-fillcorner"
+
+/obj/effect/turf_decal/suns/line/fancy/fill/end
+	icon_state = "sunsfancy-fillend"
+
+/obj/effect/turf_decal/suns/line/marble
+	icon_state = "sunsmarble-border"
+
+/obj/effect/turf_decal/suns/line/marble/corner
+	icon_state = "sunsmarble-bordercorner"
+
+/obj/effect/turf_decal/suns/line/marble/end
+	icon_state = "sunsmarble-borderend"
+
+/obj/effect/turf_decal/suns/line/marble/fill
+	icon_state = "sunsmarble-fill"
+
+/obj/effect/turf_decal/suns/line/marble/fill/corner
+	icon_state = "sunsmarble-fillcorner"
+
+/obj/effect/turf_decal/suns/line/marble/fill/end
+	icon_state = "sunsmarble-fillend"
 
 // suns 3x6 decal
 
@@ -852,6 +936,97 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/suns/columm6/top
 	icon_state = "suns-columm6-top"
 
+/obj/effect/turf_decal/suns/marble/columm1
+	icon_state = "sunsmarble-columm1-bottom"
+
+/obj/effect/turf_decal/suns/marble/columm1/middle
+	icon_state = "sunsmarble-columm1-middle"
+
+/obj/effect/turf_decal/suns/marble/columm1/top
+	icon_state = "sunsmarble-columm1-top"
+
+/obj/effect/turf_decal/suns/marble/columm2
+	icon_state = "sunsmarble-columm2-bottom"
+
+/obj/effect/turf_decal/suns/marble/columm2/middle
+	icon_state = "sunsmarble-columm2-middle"
+
+/obj/effect/turf_decal/suns/marble/columm2/top
+	icon_state = "sunsmarble-columm2-top"
+
+/obj/effect/turf_decal/suns/marble/columm3
+	icon_state = "sunsmarble-columm3-bottom"
+
+/obj/effect/turf_decal/suns/marble/columm3/middle
+	icon_state = "sunsmarble-columm3-middle"
+
+/obj/effect/turf_decal/suns/marble/columm3/top
+	icon_state = "sunsmarble-columm3-top"
+
+/obj/effect/turf_decal/suns/marble/columm4
+	icon_state = "sunsmarble-columm4-middle"
+
+/obj/effect/turf_decal/suns/marble/columm4/top
+	icon_state = "sunsmarble-columm4-top"
+
+/obj/effect/turf_decal/suns/marble/columm5
+	icon_state = "sunsmarble-columm5-middle"
+
+/obj/effect/turf_decal/suns/marble/columm5/top
+	icon_state = "sunsmarble-columm5-top"
+
+/obj/effect/turf_decal/suns/marble/columm6
+	icon_state = "sunsmarble-columm6-middle"
+
+/obj/effect/turf_decal/suns/marble/columm6/top
+	icon_state = "sunsmarble-columm6-top"
+
+/obj/effect/turf_decal/suns/fancy/columm1
+	icon_state = "sunsfancy-columm1-bottom"
+
+/obj/effect/turf_decal/suns/fancy/columm1/middle
+	icon_state = "sunsfancy-columm1-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm1/top
+	icon_state = "sunsfancy-columm1-top"
+
+/obj/effect/turf_decal/suns/fancy/columm2
+	icon_state = "sunsfancy-columm2-bottom"
+
+/obj/effect/turf_decal/suns/fancy/columm2/middle
+	icon_state = "sunsfancy-columm2-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm2/top
+	icon_state = "sunsfancy-columm2-top"
+
+/obj/effect/turf_decal/suns/fancy/columm3
+	icon_state = "sunsfancy-columm3-bottom"
+
+/obj/effect/turf_decal/suns/fancy/columm3/middle
+	icon_state = "sunsfancy-columm3-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm3/top
+	icon_state = "sunsfancy-columm3-top"
+
+/obj/effect/turf_decal/suns/fancy/columm4
+	icon_state = "sunsfancy-columm4-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm4/top
+	icon_state = "sunsfancy-columm4-top"
+
+/obj/effect/turf_decal/suns/fancy/columm5
+	icon_state = "sunsfancy-columm5-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm5/top
+	icon_state = "sunsfancy-columm5-top"
+
+/obj/effect/turf_decal/suns/fancy/columm6
+	icon_state = "sunsfancy-columm6-middle"
+
+/obj/effect/turf_decal/suns/fancy/columm6/top
+	icon_state = "sunsfancy-columm6-top"
+
+
 // suns alt decal
 
 /obj/effect/turf_decal/suns/alt
@@ -883,6 +1058,96 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/suns/alt/bottom_right
 	icon_state = "sunsalt-bottom-right"
+
+/obj/effect/turf_decal/suns/alt/fancy
+	icon_state = "sunsaltfancy-top-left"
+
+/obj/effect/turf_decal/suns/alt/fancy/top_left
+	icon_state = "sunsaltfancy-top-left"
+
+/obj/effect/turf_decal/suns/alt/fancy/top_center
+	icon_state = "sunsaltfancy-top-center"
+
+/obj/effect/turf_decal/suns/alt/fancy/top_right
+	icon_state = "sunsaltfancy-top-right"
+
+/obj/effect/turf_decal/suns/alt/fancy/middle_left
+	icon_state = "sunsaltfancy-middle-left"
+
+/obj/effect/turf_decal/suns/alt/fancy/middle_center
+	icon_state = "sunsaltfancy-middle-center"
+
+/obj/effect/turf_decal/suns/alt/fancy/middle_right
+	icon_state = "sunsaltfancy-middle-right"
+
+/obj/effect/turf_decal/suns/alt/fancy/bottom_left
+	icon_state = "sunsaltfancy-bottom-left"
+
+/obj/effect/turf_decal/suns/alt/fancy/bottom_center
+	icon_state = "sunsaltfancy-bottom-center"
+
+/obj/effect/turf_decal/suns/alt/fancy/bottom_right
+	icon_state = "sunsaltfancy-bottom-right"
+
+/obj/effect/turf_decal/suns/alt/marble
+	icon_state = "sunsaltmarble-top-left"
+
+/obj/effect/turf_decal/suns/alt/marble/top_left
+	icon_state = "sunsaltmarble-top-left"
+
+/obj/effect/turf_decal/suns/alt/marble/top_center
+	icon_state = "sunsaltmarble-top-center"
+
+/obj/effect/turf_decal/suns/alt/marble/top_right
+	icon_state = "sunsaltmarble-top-right"
+
+/obj/effect/turf_decal/suns/alt/marble/middle_left
+	icon_state = "sunsaltmarble-middle-left"
+
+/obj/effect/turf_decal/suns/alt/marble/middle_center
+	icon_state = "sunsaltmarble-middle-center"
+
+/obj/effect/turf_decal/suns/alt/marble/middle_right
+	icon_state = "sunsaltmarble-middle-right"
+
+/obj/effect/turf_decal/suns/alt/marble/bottom_left
+	icon_state = "sunsaltmarble-bottom-left"
+
+/obj/effect/turf_decal/suns/alt/marble/bottom_center
+	icon_state = "sunsaltmarble-bottom-center"
+
+/obj/effect/turf_decal/suns/alt/marble/bottom_right
+	icon_state = "sunsaltmarble-bottom-right"
+
+/obj/effect/turf_decal/suns/alt/transparent
+	icon_state = "sunsalttrans-top-left"
+
+/obj/effect/turf_decal/suns/alt/transparent/top_left
+	icon_state = "sunsalttrans-top-left"
+
+/obj/effect/turf_decal/suns/alt/transparent/top_center
+	icon_state = "sunsalttrans-top-center"
+
+/obj/effect/turf_decal/suns/alt/transparent/top_right
+	icon_state = "sunsalttrans-top-right"
+
+/obj/effect/turf_decal/suns/alt/transparent/middle_left
+	icon_state = "sunsalttrans-middle-left"
+
+/obj/effect/turf_decal/suns/alt/transparent/middle_center
+	icon_state = "sunsalttrans-middle-center"
+
+/obj/effect/turf_decal/suns/alt/transparent/middle_right
+	icon_state = "sunsalttrans-middle-right"
+
+/obj/effect/turf_decal/suns/alt/transparent/bottom_left
+	icon_state = "sunsalttrans-bottom-left"
+
+/obj/effect/turf_decal/suns/alt/transparent/bottom_center
+	icon_state = "sunsalttrans-bottom-center"
+
+/obj/effect/turf_decal/suns/alt/transparent/bottom_right
+	icon_state = "sunsalttrans-bottom-right"
 
 // suns 3x6 decal transparent
 
@@ -930,38 +1195,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/suns/transparent/columm6/top
 	icon_state = "sunstrans-columm6-top"
-
-// suns alt decal
-
-/obj/effect/turf_decal/suns/transparent/alt
-	icon_state = "sunsalttrans-top-left"
-
-/obj/effect/turf_decal/suns/transparent/alt/top_left
-	icon_state = "sunsalttrans-top-left"
-
-/obj/effect/turf_decal/suns/transparent/alt/top_center
-	icon_state = "sunsalttrans-top-center"
-
-/obj/effect/turf_decal/suns/transparent/alt/top_right
-	icon_state = "sunsalttrans-top-right"
-
-/obj/effect/turf_decal/suns/transparent/alt/middle_left
-	icon_state = "sunsalttrans-middle-left"
-
-/obj/effect/turf_decal/suns/transparent/alt/middle_center
-	icon_state = "sunsalttrans-middle-center"
-
-/obj/effect/turf_decal/suns/transparent/alt/middle_right
-	icon_state = "sunsalttrans-middle-right"
-
-/obj/effect/turf_decal/suns/transparent/alt/bottom_left
-	icon_state = "sunsalttrans-bottom-left"
-
-/obj/effect/turf_decal/suns/transparent/alt/bottom_center
-	icon_state = "sunsalttrans-bottom-center"
-
-/obj/effect/turf_decal/suns/transparent/alt/bottom_right
-	icon_state = "sunsalttrans-bottom-right"
 
 // nanotrasen
 
