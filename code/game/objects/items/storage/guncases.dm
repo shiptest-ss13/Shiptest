@@ -153,7 +153,7 @@
 
 /obj/item/storage/pistolcase/a357
 /obj/item/storage/pistolcase/a357/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/no_mag(src)
+	new /obj/item/gun/ballistic/revolver/syndicate/no_mag(src)
 	new /obj/item/ammo_box/a357/empty(src)
 	new /obj/item/ammo_box/a357/empty(src)
 
