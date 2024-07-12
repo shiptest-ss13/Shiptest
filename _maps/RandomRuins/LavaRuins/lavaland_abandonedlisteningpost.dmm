@@ -18,6 +18,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
+"aD" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
 "aU" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/trash/sosjerky,
@@ -25,6 +29,7 @@
 	pixel_y = 9;
 	pixel_x = -5
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "bm" = (
@@ -41,6 +46,15 @@
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/operations)
+"bw" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/listening_post)
 "bA" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw,
 /obj/structure/cable{
@@ -53,6 +67,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "bL" = (
@@ -70,6 +85,9 @@
 	dir = 10
 	},
 /obj/machinery/vending/cigarette/syndicate,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "cm" = (
@@ -84,6 +102,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "cr" = (
@@ -94,6 +113,10 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "cv" = (
@@ -101,6 +124,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -119,6 +145,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "cM" = (
@@ -129,11 +156,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "cX" = (
-/obj/structure/filingcabinet/double/grey{
-	dir = 8;
-	pixel_x = 11
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/blackbox_recorder,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "db" = (
@@ -143,6 +170,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "dm" = (
@@ -155,9 +185,26 @@
 	pixel_y = 25;
 	layer = 2.89
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
+"dJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 2
+	},
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/listening_post/commons)
 "dM" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "dT" = (
@@ -186,6 +233,9 @@
 	desc = "It doesn't look very healthy...";
 	name = "potted plant";
 	pixel_y = 10
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
@@ -220,9 +270,6 @@
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "fa" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -230,6 +277,9 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "fd" = (
@@ -242,6 +292,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
@@ -260,9 +313,6 @@
 /turf/open/floor/plasteel/stairs,
 /area/ruin/unpowered/listening_post/engineering)
 "fo" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -270,6 +320,9 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "fz" = (
@@ -282,6 +335,9 @@
 	},
 /obj/structure/chair/bench/red/directional/east,
 /obj/machinery/light/directional/west,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "fQ" = (
@@ -292,7 +348,8 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "fZ" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
@@ -303,7 +360,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "gr" = (
@@ -312,6 +371,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "gN" = (
@@ -324,6 +386,12 @@
 /obj/item/toy/prize/ripley{
 	pixel_y = 13;
 	pixel_x = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -341,6 +409,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "gY" = (
@@ -355,6 +424,7 @@
 	},
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "hh" = (
@@ -378,6 +448,9 @@
 /area/ruin/unpowered/listening_post/engineering)
 "hC" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -414,11 +487,20 @@
 /obj/item/documents/syndicate,
 /obj/machinery/light/small/directional/north,
 /obj/item/folder/documents/syndicate/red,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "iR" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline";
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -445,10 +527,16 @@
 	pixel_y = 19
 	},
 /obj/item/soap/syndie,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
 "jY" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "kb" = (
@@ -505,6 +593,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "lK" = (
@@ -533,6 +624,9 @@
 	pixel_y = 9
 	},
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "mf" = (
@@ -548,6 +642,13 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
+"mj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/listening_post/commons)
 "mp" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
@@ -573,12 +674,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/operations)
 "na" = (
 /obj/structure/table/reinforced,
 /obj/machinery/fax{
 	pixel_y = 7
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -593,12 +698,16 @@
 	pixel_x = 13
 	},
 /obj/effect/decal/cleanable/vomit/old,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
 "np" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "nD" = (
@@ -616,6 +725,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "oi" = (
@@ -625,6 +735,9 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "op" = (
@@ -636,6 +749,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -678,7 +794,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "oT" = (
 /obj/effect/turf_decal/siding/wood,
@@ -709,6 +826,9 @@
 	pixel_x = -16;
 	pixel_y = -2
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "pl" = (
@@ -718,6 +838,9 @@
 "pt" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "pw" = (
@@ -740,6 +863,10 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "pS" = (
@@ -751,6 +878,9 @@
 /area/ruin/unpowered/listening_post/engineering)
 "pW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -768,6 +898,12 @@
 /area/ruin/unpowered/listening_post)
 "qo" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -793,6 +929,9 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "qG" = (
@@ -803,6 +942,9 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "qV" = (
@@ -829,11 +971,17 @@
 	pixel_y = 5;
 	pixel_x = -7
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "rb" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/secure_data/laptop,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "rG" = (
@@ -875,10 +1023,21 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "sM" = (
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
 "sP" = (
@@ -903,15 +1062,19 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plasteel/white,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "te" = (
-/obj/structure/guncase,
 /obj/item/gun/ballistic/automatic/smg/c20r{
 	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/smgm45{
 	start_empty = 1
+	},
+/obj/structure/guncloset,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -951,6 +1114,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "tJ" = (
@@ -974,7 +1140,8 @@
 "tY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/operations)
 "uv" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
@@ -982,6 +1149,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
+"uX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/listening_post/canteen)
 "vu" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline";
@@ -990,6 +1166,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "vC" = (
@@ -998,6 +1177,10 @@
 /area/ruin/unpowered)
 "vG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "vJ" = (
@@ -1019,8 +1202,16 @@
 	name = "potted plant";
 	pixel_y = 10
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
+"vY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/listening_post/operations)
 "wn" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -1065,6 +1256,9 @@
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = 15
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
 "xv" = (
@@ -1092,6 +1286,7 @@
 	pixel_y = 13;
 	pixel_x = -7
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "ya" = (
@@ -1109,6 +1304,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "yp" = (
@@ -1133,6 +1329,9 @@
 /obj/structure/bed,
 /obj/structure/curtain,
 /obj/item/bedsheet/syndie,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "yN" = (
@@ -1166,7 +1365,14 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "zj" = (
@@ -1237,6 +1443,9 @@
 /obj/item/trash/chips{
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "AB" = (
@@ -1249,6 +1458,10 @@
 	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "Bb" = (
@@ -1261,6 +1474,11 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 11
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Bg" = (
@@ -1285,6 +1503,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "BF" = (
@@ -1322,6 +1541,9 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/operations)
 "Di" = (
@@ -1350,6 +1572,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "DI" = (
@@ -1366,18 +1589,22 @@
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "DS" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "Ef" = (
 /obj/structure/closet/crate/bin,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "Eh" = (
 /obj/structure/bookcase/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "El" = (
@@ -1392,6 +1619,9 @@
 /obj/item/book/random{
 	pixel_y = 3
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Ey" = (
@@ -1401,6 +1631,9 @@
 /obj/structure/curtain,
 /obj/item/bedsheet/syndie{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
@@ -1437,6 +1670,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "EM" = (
@@ -1459,12 +1695,18 @@
 	pixel_y = 6
 	},
 /obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "FQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1478,6 +1720,9 @@
 "Gy" = (
 /obj/machinery/computer/telecomms/monitor{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1493,6 +1738,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "IA" = (
@@ -1504,6 +1755,9 @@
 /obj/structure/dresser,
 /obj/item/radio/old{
 	pixel_y = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
@@ -1518,6 +1772,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "Jn" = (
@@ -1533,6 +1790,9 @@
 "Js" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
@@ -1555,7 +1815,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "KS" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
@@ -1607,6 +1868,12 @@
 	icon_state = "trimline";
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "Ln" = (
@@ -1642,6 +1909,9 @@
 	pixel_x = 18
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "LI" = (
@@ -1664,6 +1934,10 @@
 	layer = 2.89
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MF" = (
@@ -1680,6 +1954,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MN" = (
@@ -1693,6 +1970,9 @@
 /obj/item/trash/pistachios{
 	pixel_y = 4;
 	pixel_x = -8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1709,13 +1989,23 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "NI" = (
 /obj/structure/filingcabinet/double/grey{
 	pixel_y = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
+"NK" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/operations)
 "NP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1725,6 +2015,9 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "NZ" = (
@@ -1732,6 +2025,9 @@
 /area/ruin/unpowered/listening_post/canteen)
 "Oe" = (
 /obj/structure/dresser,
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "On" = (
@@ -1743,29 +2039,53 @@
 /obj/item/storage/box/masks,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
+"Oo" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
+	icon_state = "trimline";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/commons)
+"Op" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
 "OI" = (
 /obj/structure/noticeboard,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/commons)
 "OP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "OS" = (
 /obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "OW" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Pc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -1775,6 +2095,9 @@
 	dir = 8
 	},
 /obj/structure/chair/bench/red/directional/east,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Pj" = (
@@ -1798,6 +2121,9 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/canteen)
 "Qq" = (
@@ -1805,6 +2131,7 @@
 /obj/item/trash/chips{
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "QC" = (
@@ -1819,6 +2146,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "QP" = (
@@ -1830,14 +2160,17 @@
 	dir = 8
 	},
 /obj/machinery/vending/snack/random,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "QY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/operations)
 "Rb" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
@@ -1848,6 +2181,9 @@
 "Ri" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/backpack/duffelbag/syndie,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "RV" = (
@@ -1868,6 +2204,9 @@
 	name = "Window Shutters";
 	pixel_x = -23;
 	pixel_y = -6
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1898,6 +2237,10 @@
 /area/ruin/unpowered/listening_post/engineering)
 "TI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "TK" = (
@@ -1918,9 +2261,9 @@
 "TM" = (
 /obj/structure/closet/cabinet,
 /obj/item/ammo_box/magazine/m10mm,
-/obj/item/gun/ballistic/automatic/pistol{
-	pixel_y = 10;
-	pixel_x = -7
+/obj/item/gun/ballistic/automatic/pistol/syndicate,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
@@ -1932,7 +2275,14 @@
 	icon_state = "trimline";
 	dir = 9
 	},
-/obj/machinery/blackbox_recorder,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "UB" = (
@@ -1944,10 +2294,16 @@
 /obj/structure/chair/office/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "UW" = (
 /obj/machinery/jukebox,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "Wa" = (
@@ -1955,6 +2311,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Wc" = (
@@ -1969,6 +2328,9 @@
 	},
 /obj/item/trash/cheesie{
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1986,6 +2348,9 @@
 	pixel_y = 9;
 	pixel_x = 5
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Wq" = (
@@ -1997,6 +2362,9 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "WL" = (
@@ -2006,6 +2374,9 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/reagent_containers/food/drinks/bottle/gin,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "WU" = (
@@ -2015,6 +2386,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Xi" = (
@@ -2022,9 +2396,6 @@
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered)
 "Xk" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2033,10 +2404,20 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "Xm" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 23
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "XE" = (
@@ -2044,13 +2425,18 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "XY" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Yh" = (
@@ -2070,6 +2456,9 @@
 /area/ruin/unpowered/listening_post/canteen)
 "YL" = (
 /obj/item/paper/crumpled/ruins,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "YP" = (
@@ -2083,6 +2472,7 @@
 	pixel_x = -10;
 	list_reagents = null
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "Zb" = (
@@ -2092,6 +2482,9 @@
 "ZY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -2569,7 +2962,7 @@ wL
 tk
 eN
 hE
-np
+bw
 TI
 cv
 WU
@@ -2731,7 +3124,7 @@ pw
 zI
 Eh
 jY
-QC
+uX
 Pc
 eU
 KT
@@ -2834,10 +3227,10 @@ Ta
 Ta
 Ln
 vG
-NP
+mj
 NP
 hy
-hy
+dJ
 cr
 EA
 Jj
@@ -2954,7 +3347,7 @@ Ta
 Ta
 Ta
 Ln
-iR
+Oo
 gT
 Ln
 Ta
@@ -3138,9 +3531,9 @@ Ap
 wn
 Wc
 Nt
-kz
-EH
-kz
+aD
+vY
+NK
 QY
 tY
 tY
@@ -3177,7 +3570,7 @@ BL
 wn
 MU
 gN
-EH
+Op
 Mr
 pW
 UV
