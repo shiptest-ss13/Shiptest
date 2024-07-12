@@ -321,8 +321,8 @@
 /obj/item/storage/toolbox/bounty/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 8
-	STR.max_items = 4
+	STR.max_combined_w_class = 4
+	STR.max_items = 2
 
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
