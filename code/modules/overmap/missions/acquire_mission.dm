@@ -215,9 +215,9 @@ Acquire: Anomaly
 		Acquire: Landmines
 */
 
-/datum/mission/acquire/landmine/rusted
-	name = "Defuse rusted landmines"
-	desc = "We've been issued a bounty to make the Frontier a safer place by disarming dated landmines. Mind your fingers."
+/datum/mission/acquire/landmine
+	name = "Defuse landmines"
+	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
 	weight = 6
 	value = 2000
 	duration = 80 MINUTES
