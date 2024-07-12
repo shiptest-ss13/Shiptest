@@ -355,16 +355,6 @@
 			C.name = "Cup of Suspicious Liquid"
 			C.desc = "It has a large hazard symbol printed on the side in fading ink."
 			investigate_log("Experimentor has made a cup of [chosenchem] coffee.", INVESTIGATE_EXPERIMENTOR)
-		else if(prob(EFFECT_PROB_VERYLOW-badThingCoeff))
-			var/turf/start = get_turf(src)
-			var/mob/M = locate(/mob/living) in view(src, 3)
-			var/turf/MT = get_turf(M)
-			if(MT)
-				visible_message("<span class='danger'>[src] dangerously overheats, launching a flaming fuel orb!</span>")
-				investigate_log("Experimentor has launched a <font color='red'>fireball</font> at [M]!", INVESTIGATE_EXPERIMENTOR)
-				var/obj/projectile/magic/aoe/fireball/FB = new /obj/projectile/magic/aoe/fireball(start)
-				FB.preparePixelProjectile(MT, start)
-				FB.fire()
 		else if(prob(EFFECT_PROB_LOW-badThingCoeff))
 			visible_message("<span class='danger'>[src] malfunctions, melting [exp_on] and releasing a burst of flame!</span>")
 			explosion(loc, -1, 0, 0, 0, 0, flame_range = 2)

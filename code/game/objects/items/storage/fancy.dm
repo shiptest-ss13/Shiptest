@@ -133,6 +133,29 @@
 	STR.max_items = 12
 	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/egg))
 
+/obj/item/storage/fancy/egg_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state][is_open ? "_open" : null]"
+
+/obj/item/storage/fancy/egg_box/update_overlays()
+	. = ..()
+	cut_overlays()
+	if(!is_open)
+		return
+	var/egg_count = 0
+	for(var/obj/item/reagent_containers/food/snacks/egg as anything in contents)
+		egg_count++
+		if(!egg)
+			return
+		var/image/current_huevo = image(icon = icon, icon_state = "eggbox_eggoverlay")
+		if(egg_count <= 6) //less than 6 eggs
+			current_huevo.pixel_x = (3*(egg_count-1))
+		else //if more than 6, make an extra row
+			current_huevo.pixel_x = (3*(egg_count-7)) //-7 to 'reset' it
+			current_huevo.pixel_y = -3
+		add_overlay(current_huevo)
+
+
 /*
  * Candle Box
  */

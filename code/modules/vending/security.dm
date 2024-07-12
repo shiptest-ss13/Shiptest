@@ -131,7 +131,7 @@
 		)
 	voucher_items = list(
 		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90,
-		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
+		"sniper rifle" = /obj/item/gun/ballistic/automatic/marksman/sniper_rifle,
 		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r,
 		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog)
 

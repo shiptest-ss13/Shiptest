@@ -27,7 +27,7 @@
 	name ="Space freezy"
 	reqs = list(
 		/datum/reagent/consumable/bluecherryjelly = 5,
-		/datum/reagent/consumable/spacemountainwind = 15,
+		/datum/reagent/consumable/comet_trail = 15,
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/spacefreezy
@@ -217,7 +217,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/spacemountainwind = 5
+		/datum/reagent/consumable/comet_trail = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/spacemountainwind
 	subcategory = CAT_ICE
@@ -227,7 +227,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/pwr_game = 15
+		/datum/reagent/consumable/pacfuel = 15
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
 	subcategory = CAT_ICE

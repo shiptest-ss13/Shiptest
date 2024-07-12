@@ -177,6 +177,42 @@
 /obj/item/kitchen/knife/hunting/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force + 10)
 
+/obj/item/kitchen/knife/switchblade
+	name = "switchblade"
+	icon_state = "switchblade"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	desc = "A sharp, concealable, spring-loaded knife."
+	flags_1 = CONDUCT_1
+	force = 3
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 5
+	custom_materials = list(/datum/material/iron=12000)
+	hitsound = 'sound/weapons/genhit.ogg'
+	attack_verb = list("stubbed", "poked")
+	resistance_flags = FIRE_PROOF
+	var/extended = 0
+
+/obj/item/kitchen/knife/switchblade/attack_self(mob/user)
+	extended = !extended
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	if(extended)
+		force = 20
+		w_class = WEIGHT_CLASS_NORMAL
+		throwforce = 23
+		icon_state = "switchblade_ext"
+		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+		hitsound = 'sound/weapons/bladeslice.ogg'
+		sharpness = IS_SHARP
+	else
+		force = 3
+		w_class = WEIGHT_CLASS_SMALL
+		throwforce = 5
+		icon_state = "switchblade"
+		attack_verb = list("stubbed", "poked")
+		hitsound = 'sound/weapons/genhit.ogg'
+		sharpness = IS_BLUNT
+
 /obj/item/kitchen/knife/combat
 	name = "combat knife"
 	icon = 'icons/obj/world/melee.dmi'

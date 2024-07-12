@@ -286,7 +286,7 @@
 	else if((findtext(message, bleed_words)))
 		cooldown = COOLDOWN_DAMAGE
 		for(var/mob/living/carbon/human/H in listeners)
-			H.bleed_rate += (5 * power_multiplier)
+			H.cause_overall_bleeding(5*power_multiplier)
 
 	//FIRE
 	else if((findtext(message, burn_words)))
@@ -438,14 +438,6 @@
 		for(var/V in listeners)
 			var/mob/living/L = V
 			L.emote("flip")
-
-	//SPEAK
-	else if((findtext(message, speak_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/L = V
-			addtimer(CALLBACK(L, TYPE_PROC_REF(/atom/movable, say), pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")), 5 * i)
-			i++
 
 	//GET UP
 	else if((findtext(message, getup_words)))

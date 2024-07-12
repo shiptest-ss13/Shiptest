@@ -132,7 +132,6 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/soulstone,
 			/obj/item/clothing/suit/wizrobe, /obj/item/clothing/head/wizard, /obj/item/spellbook, /obj/item/staff,
 			/obj/item/clothing/suit/space/hardsuit/shielded/wizard, /obj/item/clothing/suit/space/hardsuit/wizard,
-			/obj/item/gun/magic/staff, /obj/item/gun/magic/wand,
 			/obj/item/nullrod, /obj/item/clothing/under/rank/civilian/chaplain)),
 
 		"aliens"   = typecacheof(list(

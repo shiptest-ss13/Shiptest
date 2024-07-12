@@ -66,8 +66,6 @@
 			new /obj/item/wisp_lantern(src)
 		if(20)
 			new /obj/item/immortality_talisman(src)
-		if(21)
-			new /obj/item/gun/magic/hook(src)
 		if(22)
 			new /obj/item/voodoo(src)
 		if(23)
@@ -143,8 +141,6 @@
 				new /obj/item/wisp_lantern(src)
 			if(20)
 				new /obj/item/immortality_talisman(src)
-			if(21)
-				new /obj/item/gun/magic/hook(src)
 			if(22)
 				new /obj/item/voodoo(src)
 			if(23)
@@ -481,91 +477,6 @@
 /obj/effect/warp_cube/ex_act(severity, target)
 	return
 
-//Meat Hook
-/obj/item/gun/magic/hook
-	name = "meat hook"
-	desc = "A light hooked blade, attached by the handle to a long chain. Can be used to make quick strikes in hand, or thrown at enemies, magically dragging them to the user. <b>Get over here!</b>"
-	ammo_type = /obj/item/ammo_casing/magic/hook
-	icon_state = "hook"
-	item_state = "hook"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	fire_sound = 'sound/weapons/batonextend.ogg'
-	max_charges = 1
-	item_flags = NEEDS_PERMIT
-	force = 15
-	sharpness = IS_SHARP
-	block_chance = 5//A pittance, but might be worth something in a scuffle
-	hitsound = 'sound/weapons/chainhit.ogg'
-
-/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE * 0.5)//quick to swing. 15 force can be quite something with this attack frequency.
-
-/obj/item/gun/magic/hook/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
-
-/obj/item/ammo_casing/magic/hook
-	name = "hook"
-	desc = "A hook."
-	projectile_type = /obj/projectile/hook
-	caliber = "hook"
-	icon_state = "arrow"
-
-/obj/projectile/hook
-	name = "hook"
-	icon_state = "hook"
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	pass_flags = PASSTABLE
-	damage = 20
-	stamina = 20
-	armour_penetration = 60
-	damage_type = BRUTE
-	hitsound = 'sound/effects/splat.ogg'
-	var/chain
-	var/knockdown_time = (0.5 SECONDS)
-
-/obj/projectile/hook/fire(setAngle)
-	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
-	..()
-	//TODO: root the firer until the chain returns
-
-/obj/projectile/hook/on_hit(atom/target)
-	. = ..()
-	if(ismovable(target))
-		var/atom/movable/A = target
-		if(A.anchored)
-			return
-		A.visible_message("<span class='danger'>[A] is snagged by [firer]'s hook!</span>")
-		new /datum/forced_movement(A, get_turf(firer), 5, TRUE)
-		if (isliving(target))
-			var/mob/living/fresh_meat = target
-			fresh_meat.Knockdown(knockdown_time)
-			return
-		//TODO: keep the chain beamed to A
-		//TODO: needs a callback to delete the chain
-
-/obj/projectile/hook/Destroy()
-	qdel(chain)
-	return ..()
-
-//just a nerfed version of the real thing for the bounty hunters.
-/obj/item/gun/magic/hook/bounty
-	name = "hook"
-	ammo_type = /obj/item/ammo_casing/magic/hook/bounty
-
-/obj/item/gun/magic/hook/bounty/shoot_with_empty_chamber(mob/living/user)
-	to_chat(user, "<span class='warning'>The [src] isn't ready to fire yet!</span>")
-
-/obj/item/ammo_casing/magic/hook/bounty
-	projectile_type = /obj/projectile/hook/bounty
-
-/obj/projectile/hook/bounty
-	damage = 0
-	stamina = 40
-
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
@@ -589,10 +500,6 @@
 			var/input = stripped_input(user,"What do you wish to bellow when dragged into the abyss? (Capitalization provides best impact)", ,"", 50)
 			if(input)
 				src.warcry = input
-
-/obj/item/immortality_talisman/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
 
 /datum/action/item_action/hands_free/immortality
 	name = "Immortality"
@@ -1303,7 +1210,6 @@
 			new /obj/item/lava_staff(src)
 		if(3)
 			new /obj/item/book/granter/spell/sacredflame(src)
-			new /obj/item/gun/magic/wand/fireball(src)
 		if(4)
 			new /obj/item/dragons_blood(src)
 
@@ -1519,14 +1425,12 @@
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
 	new /obj/item/clothing/suit/space/hostile_environment(src)
 	new /obj/item/clothing/head/helmet/space/hostile_environment(src)
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
 			new /obj/item/mayhem(src)
 		if(2)
 			new /obj/item/blood_contract(src)
-		if(3)
-			new /obj/item/gun/magic/staff/spellblade(src)
 
 /obj/item/mayhem
 	name = "mayhem in a bottle"

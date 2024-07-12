@@ -1084,11 +1084,11 @@
 /area/centcom/control)
 "apm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
 	pixel_x = -4;
 	pixel_y = -2
 	},
@@ -3045,11 +3045,6 @@
 /area/wizard_station)
 "aEX" = (
 /obj/structure/table/wood,
-/obj/item/gun/magic/wand{
-	desc = "Used in emergencies to reignite magma engines.";
-	max_charges = 0;
-	name = "wand of emergency engine ignition"
-	},
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "aEY" = (
@@ -4184,7 +4179,7 @@
 "aNr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/food/drinks/britcup,
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -4532,7 +4527,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/drinks/britcup,
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)

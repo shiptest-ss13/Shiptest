@@ -25,7 +25,7 @@
 /datum/supply_pack/food/pizza
 	name = "Pizza Crate"
 	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99.5% anomaly-free!"
-	cost = 6000 // Best prices this side of the galaxy.
+	cost = 3000// Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,
@@ -184,7 +184,7 @@
 	cost = 5000
 	contains = list(/obj/item/stack/sheet/mineral/coal/five,
 					/obj/machinery/grill/unwrenched,
-					/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy)
+					/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
 

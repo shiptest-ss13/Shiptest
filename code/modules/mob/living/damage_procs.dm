@@ -11,10 +11,12 @@
  * * blocked - armor value applied
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
+ * * break_modifier - increases bone breaking chance
+ * * sharpness - used for bleeding
  *
  * Returns TRUE if damage applied
  */
-/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1)//WS Edit - Breakable Bones
+/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)//WS Edit - Breakable Bones
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0) || !(flags_1 & INITIALIZED_1))

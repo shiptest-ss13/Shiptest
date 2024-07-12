@@ -145,9 +145,6 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	else
 		return ..()
 
-/mob/living/simple_animal/mouse/attack_ghost(mob/dead/observer/user)
-	user.possess_mouse(src)
-
 /mob/living/simple_animal/mouse/start_pulling(atom/movable/AM, state, force, supress_message)
 	return FALSE
 
@@ -165,7 +162,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	visible_message(
 		"<span class='danger'>[src] starts eating away [A]...</span>",
 		"<span class='notice'>You start eating the [A]...</span>")
-	if(do_after(src, 30, FALSE, A))
+	if(do_after(src, 30, A, hidden = TRUE))
 		if(QDELETED(A))
 			return
 		visible_message(

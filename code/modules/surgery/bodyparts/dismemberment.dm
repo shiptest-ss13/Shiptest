@@ -90,6 +90,7 @@
 		return
 	var/atom/Tsec = owner.drop_location()
 	var/mob/living/carbon/C = owner
+	SEND_SIGNAL(src, COMSIG_LIVING_DROP_LIMB)
 	update_limb(TRUE)
 	C.remove_bodypart(src)
 

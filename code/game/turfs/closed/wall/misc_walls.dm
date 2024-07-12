@@ -63,10 +63,6 @@
 	icon_state = "rusty_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
-/turf/closed/wall/rust/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-
 /turf/closed/wall/r_wall/rust
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."

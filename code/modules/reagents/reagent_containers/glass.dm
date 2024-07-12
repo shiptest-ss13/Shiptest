@@ -216,6 +216,10 @@
 /obj/item/reagent_containers/glass/beaker/large/fuel
 	list_reagents = list(/datum/reagent/fuel = 100)
 
+/obj/item/reagent_containers/glass/beaker/large/napalm
+	list_reagents = list(/datum/reagent/napalm = 100)
+	cap_on = FALSE
+
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 

@@ -1091,7 +1091,7 @@
 	M.adjustBruteLoss(-2*REM, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
+		H.heal_bleeding(0.25)
 	..()
 	. = 1
 
@@ -1310,8 +1310,6 @@
 		M.adjustStaminaLoss(-3 * REM, 0)
 		M.jitteriness = min(max(0, M.jitteriness + 3), 30)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM, 150)
-		if(prob(10))
-			M.say(pick("Yeah, well, you know, that's just, like, uh, your opinion, man.", "Am I glad he's frozen in there and that we're out here, and that he's the sheriff and that we're frozen out here, and that we're in there, and I just remembered, we're out here. What I wanna know is: Where's the caveman?", "It ain't me, it ain't me...", "Make love, not war!", "Stop, hey, what's that sound? Everybody look what's going down...", "Do you believe in magic in a young girl's heart?"), forced = /datum/reagent/medicine/earthsblood)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()
 	. = 1
@@ -1638,7 +1636,7 @@
 	if(prob(50))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max(H.bleed_rate - 2, 0)
+			H.heal_bleeding(2)
 	..()
 	. = 1
 
@@ -2073,7 +2071,6 @@
 			bp.receive_damage(0, 0, 200)
 		else	//SUCH A LUST FOR REVENGE!!!
 			to_chat(M, "<span class='warning'>A phantom limb hurts!</span>")
-			M.say("Why are we still here, just to suffer?", forced = /datum/reagent/medicine/lavaland_extract)
 	return ..()
 
 /datum/reagent/medicine/skeletons_boon
@@ -2113,30 +2110,3 @@
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
 	..()
-
-/datum/reagent/medicine/molten_bubbles
-	name = "Molten Bubbles"
-	description = "Refreshing softdrink made for the desert."
-	color = "#3d1916"
-	metabolization_rate = REAGENTS_METABOLISM
-	taste_description = "boiling sugar"
-
-/datum/reagent/medicine/molten_bubbles/on_mob_life(mob/living/carbon/M)
-	M.heal_bodypart_damage(1,1,0)
-	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
-	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
-	..()
-
-/datum/reagent/medicine/molten_bubbles/plasma
-	name = "Plasma Bubbles"
-	description = "Molten Bubbles with the refreshing taste of plasma."
-	color = "#852e63"
-	taste_description = "grape flavored cleaning solution"
-
-/datum/reagent/medicine/molten_bubbles/sand
-	name = "Sandblast Sarsaparilla"
-	description = "Extra refreshing for those long desert days."
-	color = "#af9938"
-	taste_description = "root-beer and asbestos"
