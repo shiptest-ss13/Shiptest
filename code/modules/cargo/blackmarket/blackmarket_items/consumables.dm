@@ -135,15 +135,20 @@
 	stock_max = 20
 	availability_prob = 80
 
-/datum/blackmarket_item/consumable/xeno_meat
-	name = "Xenomorph steak"
+/datum/blackmarket_item/consumable/xeno_corpse
+	name = "Xenomorph Corpse"
 	desc = "The Frontier's most dangerous game, delivered right to your plate! May constitute a violation of your local BARD laws and regulations."
-	item = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
+	item = /mob/living/simple_animal/hostile/alien
 
-	price_min = 300
-	price_max = 500
-	stock_max = 5
+	price_min = 5000
+	price_max = 10000
+	stock = 1
 	availability_prob = 20
+
+/datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
+	var/mob/living/simple_animal/hostile/alien = ..()
+	alien.stat = DEAD
+	return new alien(loc)
 
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"

@@ -23,7 +23,7 @@
 
 /datum/blackmarket_item/tech/operating_computer
 	name = "Operating Computer Board"
-	desc = "An operating computer computer board, with a digital manual of Surgery For Idiots pre-installed."
+	desc = "An operating computer computer board, with a digital manual of Surgery For Idiots pre-installed for even the most dense back alley doctor.."
 	item = /obj/item/circuitboard/computer/operating
 
 	price_min = 1000
