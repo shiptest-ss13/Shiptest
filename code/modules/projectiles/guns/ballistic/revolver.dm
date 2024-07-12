@@ -557,6 +557,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 /obj/item/gun/ballistic/revolver/detective/no_mag
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/revolver/syndicate/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/revolver/no_mag
 	spawnwithmagazine = FALSE
 
