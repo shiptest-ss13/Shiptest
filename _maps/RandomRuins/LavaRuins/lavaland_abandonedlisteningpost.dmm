@@ -11,7 +11,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/railing,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "aU" = (
 /obj/structure/table/wood/reinforced,
@@ -22,14 +27,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
-"bg" = (
+"bm" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/structure/railing,
-/turf/open/floor/plating,
-/area/ruin/unpowered/listening_post/engineering)
-"bm" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "bv" = (
@@ -38,6 +41,20 @@
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/operations)
+"bA" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/commons)
 "bL" = (
 /obj/structure/flora/tree/dead/tall,
 /turf/open/floor/plating/grass/lava,
@@ -66,6 +83,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "cr" = (
@@ -100,21 +118,33 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "cM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "cX" = (
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 11
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
+"db" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
+	icon_state = "trimline";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/commons)
 "dm" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline";
@@ -134,7 +164,8 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "dY" = (
 /obj/item/ammo_casing/spent,
@@ -168,6 +199,12 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "eX" = (
@@ -179,6 +216,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "fa" = (
@@ -212,17 +250,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/commons)
 "fl" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/structure/railing{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/railing,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/stairs,
 /area/ruin/unpowered/listening_post/engineering)
 "fo" = (
 /obj/effect/turf_decal/siding/wood{
@@ -256,6 +291,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "fZ" = (
@@ -265,14 +301,19 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
+"gr" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
+	icon_state = "trimline";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
 "gN" = (
 /obj/structure/table/reinforced,
 /obj/item/paper/crumpled/ruins{
@@ -286,9 +327,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
-"gO" = (
-/turf/open/floor/plating/ashplanet,
-/area/ruin/unpowered)
 "gT" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline"
@@ -302,6 +340,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "gY" = (
@@ -322,11 +361,19 @@
 /obj/structure/sign/poster/contraband/cybersun,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post)
+"hy" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/listening_post/commons)
 "hA" = (
-/obj/machinery/power/rtg/geothermal,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/power/port_gen/pacman/super/not_very,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "hC" = (
@@ -348,6 +395,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "ih" = (
@@ -399,10 +447,15 @@
 /obj/item/soap/syndie,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/canteen)
+"jY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/listening_post/canteen)
 "kb" = (
 /obj/structure/sink{
 	pixel_y = 24
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/canteen)
 "kk" = (
@@ -434,24 +487,6 @@
 /obj/structure/flora/tree/dead/tall,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered)
-"kH" = (
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/item/gun/ballistic/automatic/pistol{
-	pixel_y = 10;
-	pixel_x = -7
-	},
-/obj/effect/decal/cleanable/blood{
-	icon_state = "floor3-old";
-	pixel_x = -9;
-	pixel_y = -11
-	},
-/obj/item/ammo_casing/spent{
-	pixel_y = 12;
-	pixel_x = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/listening_post/commons)
 "lj" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -473,13 +508,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "lK" = (
-/obj/machinery/power/terminal{
-	dir = 1
+/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-8"
 	},
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "lZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -495,6 +535,15 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
+"mf" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/listening_post/engineering)
 "mh" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/asteroid/basalt/lava,
@@ -574,6 +623,8 @@
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "op" = (
@@ -584,6 +635,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -606,12 +658,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "oG" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "oS" = (
@@ -663,6 +717,7 @@
 /area/ruin/unpowered/listening_post/canteen)
 "pt" = (
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "pw" = (
@@ -678,6 +733,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "px" = (
@@ -686,6 +742,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
+"pS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/listening_post/engineering)
 "pW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -729,6 +792,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "qG" = (
@@ -748,20 +812,22 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post/canteen)
 "qX" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/trash/can/food/beans{
-	pixel_y = 9;
-	pixel_x = 5
+/obj/item/toy/figure/secofficer{
+	pixel_y = 10;
+	pixel_x = 7
 	},
-/obj/item/trash/can/food/beans{
-	pixel_y = 16
+/obj/item/toy/figure/head_of_personnel{
+	pixel_y = 13;
+	pixel_x = -9
 	},
-/obj/item/trash/can/food/beans{
-	pixel_y = 12;
-	pixel_x = -8
+/obj/item/toy/figure/engineer{
+	pixel_y = 5;
+	pixel_x = -7
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
@@ -771,6 +837,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "rG" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -794,6 +861,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "sd" = (
@@ -806,6 +874,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "sM" = (
@@ -858,17 +927,25 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
 "tk" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "to" = (
 /obj/machinery/atmospherics/components/binary/volume_pump/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "tG" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -889,24 +966,21 @@
 /area/ruin/unpowered/listening_post)
 "tV" = (
 /obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
 /area/ruin/unpowered/listening_post/canteen)
 "tY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
-"un" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/railing,
-/turf/open/floor/plating,
-/area/ruin/unpowered/listening_post/engineering)
 "uv" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
-/turf/open/floor/plating,
+/obj/structure/railing/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "vu" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
@@ -914,6 +988,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "vC" = (
@@ -955,6 +1031,7 @@
 /area/ruin/unpowered/listening_post/operations)
 "wr" = (
 /obj/structure/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "wz" = (
@@ -1031,6 +1108,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "yp" = (
@@ -1047,6 +1125,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "ys" = (
@@ -1072,6 +1152,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "zd" = (
@@ -1085,6 +1166,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "zj" = (
@@ -1095,6 +1177,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/unpowered/listening_post/canteen)
 "zA" = (
@@ -1122,13 +1205,14 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
-"zG" = (
-/obj/structure/closet/cabinet,
-/obj/item/ammo_box/magazine/m10mm,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/listening_post/commons)
 "zI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post/canteen)
@@ -1164,6 +1248,7 @@
 	pixel_y = 11;
 	pixel_x = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "Bb" = (
@@ -1175,6 +1260,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Bg" = (
@@ -1198,6 +1284,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "BF" = (
@@ -1210,6 +1297,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "BL" = (
@@ -1236,6 +1324,20 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/operations)
+"Di" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/listening_post)
+"Du" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/listening_post/canteen)
 "DE" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
 	dir = 8
@@ -1267,6 +1369,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "Ef" = (
@@ -1281,21 +1384,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Eq" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/toy/figure/head_of_personnel{
-	pixel_y = 13;
-	pixel_x = -9
-	},
-/obj/item/toy/figure/engineer{
-	pixel_y = 5;
-	pixel_x = -7
-	},
-/obj/item/toy/figure/secofficer{
-	pixel_y = 10;
-	pixel_x = 7
+/obj/item/book/random{
+	pixel_y = 3
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
@@ -1324,6 +1419,10 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
+"EH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
 "EJ" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 4
@@ -1389,6 +1488,13 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
+"Ip" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/operations)
 "IA" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
@@ -1411,16 +1517,18 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "Jn" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "Jq" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "Js" = (
 /obj/machinery/door/airlock/hatch{
@@ -1462,6 +1570,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "KT" = (
@@ -1490,6 +1599,7 @@
 	pixel_x = -9;
 	pixel_y = 14
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Li" = (
@@ -1531,6 +1641,7 @@
 	pixel_y = 8;
 	pixel_x = 18
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "LI" = (
@@ -1552,6 +1663,7 @@
 	pixel_y = 25;
 	layer = 2.89
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MF" = (
@@ -1567,6 +1679,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "MN" = (
@@ -1585,7 +1698,8 @@
 /area/ruin/unpowered/listening_post/operations)
 "MX" = (
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/listening_post/engineering)
 "MZ" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -1640,6 +1754,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "OS" = (
@@ -1703,6 +1818,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "QP" = (
@@ -1724,11 +1840,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "Rb" = (
-/obj/effect/turf_decal/industrial/warning/full,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	dir = 8
 	},
-/turf/open/floor/plating/ashplanet,
+/turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
 "Ri" = (
 /obj/structure/closet/cabinet,
@@ -1739,6 +1854,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post)
 "SC" = (
@@ -1777,6 +1893,7 @@
 	dir = 4;
 	name = "distribution output pump"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "TI" = (
@@ -1798,6 +1915,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
+"TM" = (
+/obj/structure/closet/cabinet,
+/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol{
+	pixel_y = 10;
+	pixel_x = -7
+	},
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/listening_post/commons)
 "TS" = (
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered)
@@ -1848,10 +1974,18 @@
 /area/ruin/unpowered/listening_post/operations)
 "Wo" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/book/random{
-	pixel_y = 3
-	},
 /obj/machinery/light/small/directional/east,
+/obj/item/trash/can/food/beans{
+	pixel_y = 16
+	},
+/obj/item/trash/can/food/beans{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/trash/can/food/beans{
+	pixel_y = 9;
+	pixel_x = 5
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Wq" = (
@@ -1887,6 +2021,24 @@
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered)
+"Xk" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/canteen)
+"Xm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post/canteen)
 "XE" = (
 /obj/item/trash/chips{
 	pixel_y = 5
@@ -1898,6 +2050,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "Yh" = (
@@ -1905,10 +2058,12 @@
 	dir = 5
 	},
 /obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "YK" = (
 /obj/structure/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -2386,7 +2541,7 @@ fd
 Pl
 qG
 oT
-QC
+Du
 rG
 UW
 zI
@@ -2452,7 +2607,7 @@ On
 tS
 Zb
 hE
-np
+Di
 OW
 mG
 mG
@@ -2575,7 +2730,7 @@ iR
 pw
 zI
 Eh
-NZ
+jY
 QC
 Pc
 eU
@@ -2613,7 +2768,7 @@ QD
 yp
 PQ
 fa
-fa
+Xk
 fo
 OP
 DS
@@ -2644,13 +2799,13 @@ ID
 Ey
 FN
 qX
-zG
+Ri
 sr
 Ln
-iR
+db
 pw
 pl
-dM
+Xm
 pt
 tG
 LE
@@ -2681,8 +2836,8 @@ Ln
 vG
 NP
 NP
-kH
-NP
+hy
+hy
 cr
 EA
 Jj
@@ -2720,11 +2875,11 @@ Oe
 ys
 Wo
 Eq
-Ri
+TM
 lu
 Ln
 oi
-nY
+bA
 fg
 Ta
 zI
@@ -2906,7 +3061,7 @@ Ap
 Ta
 lZ
 ih
-Li
+gr
 SC
 bv
 BM
@@ -2944,13 +3099,13 @@ Ap
 Ap
 lZ
 na
-kz
+EH
 AB
 Li
 Li
 qo
 dm
-hC
+Ip
 pa
 yZ
 Ef
@@ -2958,7 +3113,7 @@ GB
 hX
 dT
 bm
-bg
+FW
 hA
 GB
 Ta
@@ -2984,7 +3139,7 @@ wn
 Wc
 Nt
 kz
-kz
+EH
 kz
 QY
 tY
@@ -2994,10 +3149,10 @@ rQ
 ya
 tJ
 Ty
-FW
+pS
 lK
 fl
-hA
+mf
 GB
 Ta
 TS
@@ -3022,7 +3177,7 @@ BL
 wn
 MU
 gN
-kz
+EH
 Mr
 pW
 UV
@@ -3034,7 +3189,7 @@ kA
 BF
 cM
 aw
-un
+FW
 hA
 GB
 Ta
@@ -3183,11 +3338,11 @@ Ta
 Ta
 Ta
 Ta
-Ta
-Ta
-gO
-Ta
-Ta
+Ap
+Ap
+Ap
+Ap
+Ap
 Ap
 Ap
 bL
@@ -3219,10 +3374,10 @@ Ap
 Ap
 Ap
 Ap
-Ta
-Ta
-Ta
-Ta
+Ap
+Ap
+Ap
+Ap
 Ap
 Ap
 Ap
