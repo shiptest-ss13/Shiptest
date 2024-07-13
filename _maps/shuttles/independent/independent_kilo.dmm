@@ -194,14 +194,15 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "bH" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "bL" = (
@@ -1386,6 +1387,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "BS" = (
@@ -1446,9 +1450,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
-"DL" = (
-/turf/closed/wall/r_wall,
-/area/ship/maintenance/fore)
 "Ew" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1746,6 +1747,9 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
+"Of" = (
+/turf/closed/wall/r_wall,
+/area/ship/maintenance/fore)
 "OH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2388,11 +2392,11 @@ Bu
 "}
 (22,1,1) = {"
 aa
-DL
-DL
-DL
+Of
+Of
+Of
 xe
-DL
+Of
 bP
 Ds
 sW
