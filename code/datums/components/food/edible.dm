@@ -440,7 +440,6 @@ Behavior that's still missing from this component that original food items had t
 	last_check_time = world.time
 
 	/* Should shiptest ever want to move taste to tongues as Beestation & later TGstation did, rather than on species
-	 *
 	var/obj/item/organ/tongue/tongue = human_eater.getorganslot(ORGAN_SLOT_TONGUE)
 	if((foodtypes & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
 		SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
