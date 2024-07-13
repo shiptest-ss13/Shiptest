@@ -59,6 +59,6 @@
 ///Amount of reagents you start with on crafted food excluding the used parts
 #define CRAFTED_FOOD_BASE_REAGENT_MODIFIER 0.7
 ///Modifier of reagents you get when crafting food from the parts used
-#define CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER  0.5
+#define CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER 0.5
 
 #define IS_EDIBLE(O) (O.GetComponent(/datum/component/edible))
