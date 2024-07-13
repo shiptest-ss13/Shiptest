@@ -118,21 +118,6 @@
 	. = ..()
 	AddElement(/datum/element/dunkable, 10)
 
-/obj/item/reagent_containers/food/snacks/tatortot
-	name = "tator tot"
-	desc = "A large fried potato nugget that may or may not try to valid you."
-	icon_state = "tatortot"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	filling_color = "FFD700"
-	tastes = list("potato" = 3, "valids" = 1)
-	foodtype = FRIED | VEGETABLES
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/tatortot/Initialize()
-	. = ..()
-	AddElement(/datum/element/dunkable, 10)
-
 /obj/item/reagent_containers/food/snacks/soydope
 	name = "soy dope"
 	desc = "Dope from a soy."
