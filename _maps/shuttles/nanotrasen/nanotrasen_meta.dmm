@@ -2242,7 +2242,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "nP" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/nsorange/three_quarters{
 	dir = 4
 	},
@@ -2258,6 +2257,7 @@
 	pixel_x = 9;
 	pixel_y = 7
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "nR" = (
@@ -3303,12 +3303,6 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zz" = (
@@ -3345,10 +3339,10 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/crew)
 "Ac" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/nsorange/half{
 	dir = 1
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "Ag" = (
@@ -3594,10 +3588,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ex" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/nsorange/three_quarters{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "EH" = (
@@ -3783,7 +3777,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Gr" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/nsorange/half{
 	dir = 4
 	},
@@ -3791,6 +3784,7 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "GH" = (
@@ -4747,12 +4741,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /turf/open/floor/plating,
