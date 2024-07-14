@@ -34,7 +34,7 @@
 	if(gun.wielded)
 		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = gun.wield_slowdown)
 
-	playsound(src, 'sound/weapons/empty.ogg', 100, 1)
+	playsound(src, SOUND_EMPTY_MAG, 100, 1)
 
 /obj/item/attachment/foldable_stock/inteq
 	icon_state = "skm-inteqsmg-stock"

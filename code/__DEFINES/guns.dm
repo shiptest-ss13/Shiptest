@@ -164,3 +164,6 @@
 #define FIREMODE_FULLAUTO "auto"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
+
+#define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+#define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'
