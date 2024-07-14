@@ -6,7 +6,7 @@
 	icon_state = "anglegrinderpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	attachment_type = /obj/item/gear_handle/anglegrinder
+	gear_handle_type = /obj/item/gear_handle/anglegrinder
 
 /obj/item/gear_handle/anglegrinder
 	name = "angle grinder"
