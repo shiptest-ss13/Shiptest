@@ -13,6 +13,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a357/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 match)"
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
@@ -119,6 +122,9 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
+/obj/item/ammo_box/c38/empty
+	start_empty = TRUE
+
 // 8x58mm Stripper Clip (SSG-669C)
 
 /obj/item/ammo_box/a858
@@ -156,6 +162,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a300/empty
+	start_empty = TRUE
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)
 
 /obj/item/ammo_box/aac_300blk_stripper
@@ -423,6 +431,9 @@
 	custom_materials = list(/datum/material/iron = 15000)
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+
+/obj/item/ammo_box/a44roum_speedloader/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c46x30mm_box
 	name = "ammo box (4.6x30mm)"

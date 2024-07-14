@@ -379,7 +379,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/clothing/shoes/magboots/syndie(loc)
 				new /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space(loc)
 			if(prob(25))
-				new /obj/item/gun/ballistic/automatic/pistol/suppressed(loc)
+				new /obj/item/gun/ballistic/automatic/pistol/syndicate(loc)
 				new /obj/item/ammo_box/magazine/
 				new /mob/living/simple_animal/hostile/human/syndicate/melee/sword(loc)
 			if(prob(25))
