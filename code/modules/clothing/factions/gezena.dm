@@ -36,10 +36,12 @@
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
 	togglename = "zipper"
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 //Armored suit
 
@@ -130,6 +132,9 @@
 	desc = "The standard cap of the PGF military, in Navy colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "navalflap"
 	item_state = "bluecloth"
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/marine
 	name = "\improper PGFMC Cap"
@@ -137,7 +142,7 @@
 	icon_state = "marinehat"
 	item_state = "marinecloth"
 
-/obj/item/clothing/head/gezena/marine/flap
+/obj/item/clothing/head/gezena/flap/marine
 	name = "\improper PGFMC Betzu-il cap"
 	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "marineflap"
@@ -149,7 +154,7 @@
 	icon_state = "squadhat"
 	item_state = "marinecloth"
 
-/obj/item/clothing/head/gezena/marine/lead/flap
+/obj/item/clothing/head/gezena/flap/marine/lead
 	name = "\improper PGFMC Commander's' Betzu-il cap"
 	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The silver markings denote it as a commander's cap."
 	icon_state = "squadflap"
@@ -161,7 +166,7 @@
 	icon_state = "medichat"
 	item_state = "whitecloth"
 
-/obj/item/clothing/head/gezena/medic/flap
+/obj/item/clothing/head/gezena/flap/medic
 	name = "\improper PGF medic Betzu-il cap"
 	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical officer."
 	icon_state = "medicflap"
