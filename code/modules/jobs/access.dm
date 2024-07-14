@@ -44,6 +44,9 @@
 /obj/item/proc/InsertID()
 	return FALSE
 
+/obj/item/proc/GetBankCard()
+	return null
+
 /obj/proc/text2access(access_text)
 	. = list()
 	if(!access_text)
@@ -114,6 +117,8 @@
 	if (gen_ship_access(ship))
 		return TRUE
 
+	if(!item)
+		return FALSE
 	var/obj/item/card/id/id = item?.GetID()
 	if (id?.has_ship_access(ship))
 		return TRUE

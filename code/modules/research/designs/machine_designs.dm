@@ -644,6 +644,14 @@
 	category = list ("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/shuttle/engine/fire
+	name = "Machine Design (Combustion Thruster Board)"
+	desc = "The circuit board for a combustion thruster."
+	id = "engine_fire"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/fire
+	category = list("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/shuttle/engine/electric
 	name = "Machine Design (Ion Thruster Board)"
 	desc = "The circuit board for an ion thruster."
@@ -674,6 +682,14 @@
 	id = "engine_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/heater
 	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/fire_heater
+	name = "Machine Design (Combustion Engine Heater Board)"
+	desc = "The circuit board for a combustion engine heater."
+	id = "engine_fire_heater"
+	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/smes

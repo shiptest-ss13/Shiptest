@@ -410,7 +410,6 @@
 	description = "A substance applied to the skin to darken the skin."
 	color = "#FFC080" // rgb: 255, 196, 128  Bright orange
 	metabolization_rate = 10 * REAGENTS_METABOLISM // very fast, so it can be applied rapidly.  But this changes on an overdose
-	overdose_threshold = 11 //Slightly more than one un-nozzled spraybottle.
 	taste_description = "sour oranges"
 
 /datum/reagent/spraytan/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -470,40 +469,10 @@
 					N.dna.features["mcolor"] = newcolor
 			N.regenerate_icons()
 
-
-
 		if(method == INGEST)
 			if(show_message)
 				to_chat(M, "<span class='notice'>That tasted horrible.</span>")
 	..()
-
-
-/datum/reagent/spraytan/overdose_process(mob/living/M)
-	metabolization_rate = 1 * REAGENTS_METABOLISM
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/N = M
-		if(!HAS_TRAIT(N, TRAIT_BALD))
-			N.hairstyle = "Spiky"
-		N.facial_hairstyle = "Shaved"
-		N.facial_hair_color = "000"
-		N.hair_color = "000"
-		if(!(HAIR in N.dna.species.species_traits)) //No hair? No problem!
-			N.dna.species.species_traits += HAIR
-		if(N.dna.species.use_skintones)
-			N.skin_tone = "orange"
-		else if(MUTCOLORS in N.dna.species.species_traits) //Aliens with custom colors simply get turned orange
-			N.dna.features["mcolor"] = "f80"
-		N.regenerate_icons()
-		if(prob(7))
-			if(N.w_uniform)
-				M.visible_message(pick("<b>[M]</b>'s collar pops up without warning.</span>", "<b>[M]</b> flexes [M.p_their()] arms."))
-			else
-				M.visible_message("<b>[M]</b> flexes [M.p_their()] arms.")
-	if(prob(10))
-		M.say(pick("Shit was SO cash.", "You are everything bad in the world.", "What sports do you play, other than 'jack off to naked drawn Japanese people?'", "Don???t be a stranger. Just hit me with your best shot.", "My name is John and I hate every single one of you."), forced = /datum/reagent/spraytan)
-	..()
-	return
 
 /datum/reagent/mulligan
 	name = "Mulligan Toxin"
@@ -1538,20 +1507,6 @@
 	name = "Royal Carpet?"
 	description = "For those that break the game and need to make an issue report."
 
-/datum/reagent/carpet/royal/on_mob_life(mob/living/carbon/M)
-	. = ..()
-	if(!M.mind?.assigned_role)
-		return
-	switch(M.mind.assigned_role)
-		if("Chief Medical Officer", "Captain", "Chief Engineer", "Research Director", "Head of Personnel")
-			if(prob(10))
-				to_chat(M, "You feel like royalty.")
-			if(prob(5))
-				M.say(pick("Peasants..","This carpet is worth more than your contracts!","I could fire you at any time..."), forced = "royal carpet")
-		if("Quartermaster")
-			if(prob(15))
-				to_chat(M, "You feel like an impostor...")
-
 /datum/reagent/carpet/royal/black
 	name = "Royal Black Carpet"
 	description = "For those that feel the need to show off their timewasting skills."
@@ -1865,11 +1820,6 @@
 	color = "#00ff80"
 	taste_description = "strange honey"
 
-/datum/reagent/royal_bee_jelly/on_mob_life(mob/living/carbon/M)
-	if(prob(2))
-		M.say(pick("Bzzz...","BZZ BZZ","Bzzzzzzzzzzz..."), forced = "royal bee jelly")
-	..()
-
 //Misc reagents
 
 /datum/reagent/romerol
@@ -2047,18 +1997,6 @@
 	if(prob(30))
 		to_chat(M, "You should sit down and take a rest...")
 	..()
-
-/datum/reagent/tranquility
-	name = "Tranquility"
-	description = "A highly mutative liquid of unknown origin."
-	color = "#9A6750" //RGB: 154, 103, 80
-	taste_description = "inner peace"
-	can_synth = FALSE
-
-/datum/reagent/tranquility/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/gondola(), FALSE, TRUE)
-
 
 /datum/reagent/spider_extract
 	name = "Spider Extract"
