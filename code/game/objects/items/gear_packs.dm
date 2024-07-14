@@ -12,7 +12,7 @@
 	max_integrity = 300
 	slowdown = 1
 	drag_slowdown = 1
-	actions_types = list(/datum/action/item_action/toggle_attachment)
+	actions_types = list(/datum/action/item_action/toggle_gear_handle)
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
@@ -21,8 +21,8 @@
 	var/preload_cell_type = /obj/item/stock_parts/cell/high
 	var/powered = FALSE
 	var/activate_sound = "sparks"
-	var/obj/item/attachment/attachment_type = /obj/item/attachment
-	var/obj/item/attachment/attachment
+	var/obj/item/gear_handle/gear_handle_type = /obj/item/gear_handle
+	var/obj/item/gear_handle/gear_handle
 
 /obj/item/gear_pack/get_cell()
 	return cell
@@ -30,7 +30,7 @@
 /obj/item/gear_pack/Initialize()
 	. = ..()
 	drag_slowdown = slowdown
-	attachment = new attachment_type(src)
+	gear_handle = new gear_handle_type(src)
 	cell = new preload_cell_type(src)
 	update_power()
 	return
@@ -43,17 +43,17 @@
 
 /obj/item/gear_pack/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(attachment?.loc == src)
-		attachment.fire_act(exposed_temperature, exposed_volume)
+	if(gear_handle?.loc == src)
+		gear_handle.fire_act(exposed_temperature, exposed_volume)
 
 /obj/item/gear_pack/extinguish()
 	. = ..()
-	if(attachment?.loc == src)
-		attachment.extinguish()
+	if(gear_handle?.loc == src)
+		gear_handle.extinguish()
 
 /obj/item/gear_pack/proc/update_power()
 	if(!QDELETED(cell))
-		if(QDELETED(attachment) || cell.charge < attachment.usecost)
+		if(QDELETED(gear_handle) || cell.charge < gear_handle.usecost)
 			powered = FALSE
 		else
 			powered = TRUE
@@ -81,7 +81,7 @@
 	update_power()
 
 /obj/item/gear_pack/ui_action_click()
-	toggle_attachment()
+	toggle_gear_handle()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gear_pack/attack_hand(mob/user)
@@ -109,14 +109,14 @@
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 
 /obj/item/gear_pack/attackby(obj/item/W, mob/user, params)
-	if(W == attachment)
-		toggle_attachment()
+	if(W == gear_handle)
+		toggle_gear_handle()
 	else if(istype(W, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/C = W
 		if(cell)
 			to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
 		else
-			if(C.maxcharge < attachment.usecost)
+			if(C.maxcharge < gear_handle.usecost)
 				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
 				return
 			if(!user.transferItemToLoc(W, src))
@@ -143,23 +143,23 @@
 		return
 	update_power()
 
-/obj/item/gear_pack/proc/toggle_attachment()
-	set name = "Toggle Attachment"
+/obj/item/gear_pack/proc/toggle_gear_handle()
+	set name = "Toggle gear_handle"
 	set category = "Object"
 	on = !on
 
 	var/mob/living/carbon/user = usr
 	if(on)
-		//Detach the attachment into the user's hands
+		//Detach the gear_handle into the user's hands
 		playsound(src, 'sound/items/handling/multitool_pickup.ogg', 100)
-		if(!usr.put_in_hands(attachment))
+		if(!usr.put_in_hands(gear_handle))
 			on = FALSE
-			to_chat(user, "<span class='warning'>You need a free hand to hold the [attachment]!</span>")
+			to_chat(user, "<span class='warning'>You need a free hand to hold the [gear_handle]!</span>")
 			update_power()
 			return
 	else
 		//Remove from their hands and back onto the gear pack
-		remove_attachment(user)
+		remove_gear_handle(user)
 
 	update_power()
 	for(var/X in actions)
@@ -170,30 +170,30 @@
 /obj/item/gear_pack/equipped(mob/user, slot)
 	..()
 	if((slot_flags == ITEM_SLOT_BACK && slot != ITEM_SLOT_BACK) || (slot_flags == ITEM_SLOT_BELT && slot != ITEM_SLOT_BELT))
-		remove_attachment(user)
+		remove_gear_handle(user)
 		update_power()
 
 /obj/item/gear_pack/item_action_slot_check(slot, mob/user)
 	if(slot == user.getBackSlot())
 		return 1
 
-/obj/item/gear_pack/proc/remove_attachment(mob/user)
-	if(ismob(attachment.loc))
-		var/mob/M = attachment.loc
-		M.dropItemToGround(attachment, TRUE)
+/obj/item/gear_pack/proc/remove_gear_handle(mob/user)
+	if(ismob(gear_handle.loc))
+		var/mob/M = gear_handle.loc
+		M.dropItemToGround(gear_handle, TRUE)
 	return
 
 /obj/item/gear_pack/Destroy()
 	if(on)
-		var/M = get(attachment, /mob)
-		remove_attachment(M)
-	QDEL_NULL(attachment)
+		var/M = get(gear_handle, /mob)
+		remove_gear_handle(M)
+	QDEL_NULL(gear_handle)
 	QDEL_NULL(cell)
 	return ..()
 
 /obj/item/gear_pack/proc/deductcharge(chrgdeductamt)
 	if(cell)
-		if(cell.charge < (attachment.usecost+chrgdeductamt))
+		if(cell.charge < (gear_handle.usecost+chrgdeductamt))
 			powered = FALSE
 			update_power()
 		if(cell.use(chrgdeductamt))
@@ -202,10 +202,10 @@
 		else
 			return FALSE
 
-/obj/item/attachment
+/obj/item/gear_handle
 
-	name = "attachment"
-	desc = "The Attachment."
+	name = "gear handle"
+	desc = "handles the gear."
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "mister"
 	item_state = "mister"
@@ -222,7 +222,7 @@
 	var/usecost = 1000
 	var/obj/item/gear_pack/pack
 
-/obj/item/attachment/Initialize()
+/obj/item/gear_handle/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, GENERIC_ITEM_TRAIT)
 	if (!loc || !istype(loc, /obj/item/gear_pack))
@@ -232,27 +232,27 @@
 	pack = loc
 	update_icon()
 
-/obj/item/attachment/Destroy()
+/obj/item/gear_handle/Destroy()
 	pack = null
 	return ..()
 
-/obj/item/attachment/equipped(mob/user, slot)
+/obj/item/gear_handle/equipped(mob/user, slot)
 	. = ..()
 	if(!req_pack)
 		return
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(check_range))
 
-/obj/item/attachment/Moved()
+/obj/item/gear_handle/Moved()
 	. = ..()
 	check_range()
 
 
-/obj/item/attachment/fire_act(exposed_temperature, exposed_volume)
+/obj/item/gear_handle/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	if((req_pack && pack) && loc != pack)
 		pack.fire_act(exposed_temperature, exposed_volume)
 
-/obj/item/attachment/proc/check_range()
+/obj/item/gear_handle/proc/check_range()
 	SIGNAL_HANDLER
 
 	if(!req_pack ||!pack)
@@ -265,7 +265,7 @@
 			visible_message("<span class='notice'>[src] snaps back into [pack].</span>")
 		snap_back()
 
-/obj/item/attachment/dropped(mob/user)
+/obj/item/gear_handle/dropped(mob/user)
 	. = ..()
 	if(!req_pack)
 		return ..()
@@ -276,7 +276,7 @@
 			snap_back()
 	return
 
-/obj/item/attachment/proc/snap_back()
+/obj/item/gear_handle/proc/snap_back()
 	if(!pack)
 		return
 	playsound()

@@ -6,9 +6,9 @@
 	icon_state = "anglegrinderpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	attachment_type = /obj/item/attachment/anglegrinder
+	attachment_type = /obj/item/gear_handle/anglegrinder
 
-/obj/item/attachment/anglegrinder
+/obj/item/gear_handle/anglegrinder
 	name = "angle grinder"
 	desc = "A powerful salvage tool used to cut apart walls and airlocks. A hazard sticker recommends ear and eye protection."
 	icon = 'icons/obj/item/gear_packs.dmi'
@@ -29,7 +29,7 @@
 	pack = /obj/item/gear_pack/anglegrinder
 	var/wielded = FALSE // track wielded status on item
 
-/obj/item/attachment/anglegrinder/tool_start_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_start_check(mob/living/user, amount)
 	if(!pack)
 		to_chat(user, "<span class='warning'>how do you not have a pack for this. what.</span>")
 		return FALSE
@@ -42,7 +42,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/attachment/anglegrinder/tool_use_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, amount)
 	if(!pack.cell)
 		return FALSE
 	if(pack.deductcharge(usecost))
@@ -51,15 +51,15 @@
 		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
 		return FALSE
 
-/obj/item/attachment/anglegrinder/use(used)
+/obj/item/gear_handle/anglegrinder/use(used)
 	return TRUE
 
-/obj/item/attachment/anglegrinder/Initialize()
+/obj/item/gear_handle/anglegrinder/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/attachment/anglegrinder/ComponentInitialize()
+/obj/item/gear_handle/anglegrinder/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/anglegrinder.ogg', TRUE)
 	AddComponent(/datum/component/two_handed)
@@ -67,7 +67,7 @@
 	AddElement(/datum/element/tool_bang, 2)
 
 /// triggered on wield of two handed item
-/obj/item/attachment/anglegrinder/proc/on_wield(obj/item/source, mob/user)
+/obj/item/gear_handle/anglegrinder/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	playsound(src, 'sound/weapons/chainsawhit.ogg', 100, TRUE)
@@ -76,18 +76,18 @@
 	wielded = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/attachment/anglegrinder/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/gear_handle/anglegrinder/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	force = 13
 	tool_behaviour = null
 	wielded = FALSE
 
-/obj/item/attachment/anglegrinder/get_dismemberment_chance()
+/obj/item/gear_handle/anglegrinder/get_dismemberment_chance()
 	if(wielded)
 		. = ..()
 
-/obj/item/attachment/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
+/obj/item/gear_handle/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	target.add_overlay(GLOB.cutting_effect)
 	. = ..()
 	target.cut_overlay(GLOB.cutting_effect)
