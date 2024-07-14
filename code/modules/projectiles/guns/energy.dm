@@ -307,7 +307,7 @@
 	. = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
-		. += "You can switch firemodes by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
+		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 	if(cell)
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
