@@ -416,7 +416,7 @@
 	description = "A citrusy drink from the Kepori space installation known as The Ring."
 	color = "#c4ff2d" // rgb: 16, 32, 0
 	taste_description = "sweet citrus soda"
-	glass_icon_state = "Comet_trail_glass"
+	glass_icon_state = "comet_trail_glass"
 	glass_name = "glass of Comet Trail"
 	glass_desc = "A glass of Comet Trail. Taste the stars!"
 
@@ -461,7 +461,7 @@
 	description = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	color = "#5f2010"
 	taste_description = "spiced cola"
-	glass_icon_state = "molten_glass"
+	glass_icon_state = "glass_brown"
 	glass_name = "glass of Molten Bubbles"
 	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
 
@@ -487,6 +487,8 @@
 	description = "Extra refreshing for those long desert days."
 	color = "#af9938"
 	taste_description = "root-beer and asbestos"
+	glass_name = "glass of Sandblast Sarsaparilla"
+	glass_desc = "A glass of Sandblast Sarsaparilla. Perfect for those long desert days."
 
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"

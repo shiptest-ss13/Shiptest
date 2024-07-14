@@ -70,10 +70,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 			new_dpdir = new_dpdir | angle2dir(rotation+dir2angle(D))
 	dpdir = new_dpdir
 
-/obj/structure/table/wood/bar/shuttleRotate(rotation, params)
-	. = ..()
-	boot_dir = angle2dir(rotation + dir2angle(boot_dir))
-
 /obj/structure/alien/weeds/shuttleRotate(rotation, params)
 	params &= ~ROTATE_OFFSET
 	return ..()

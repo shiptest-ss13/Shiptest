@@ -27,7 +27,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 */
 
 /client/proc/air_status_loc()
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Air Status in Location"
 	if(!mob)
 		return
@@ -170,7 +170,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Powernets") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_grantfullaccess(mob/M in GLOB.mob_list)
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Grant Full Access"
 
 	if(!SSticker.HasRoundStarted())
@@ -213,7 +213,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
 
 /client/proc/cmd_assume_direct_control(mob/M in GLOB.mob_list)
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -234,7 +234,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Assume Direct Control") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_give_direct_control(mob/M in GLOB.mob_list)
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Give direct control"
 
 	if(!M)
@@ -515,7 +515,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	return dresscode
 
 /client/proc/start_singlo()
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Start Singularity"
 	set desc = "Sets up the singularity and all machines to get power flowing through the station"
 
@@ -782,7 +782,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 /// A debug verb to check the sources of currently running timers
 /client/proc/check_timer_sources()
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Check Timer Sources"
 	set desc = "Checks the sources of the running timers"
 	if (!check_rights(R_DEBUG))

@@ -730,7 +730,7 @@
 /datum/admins/proc/podspawn_atom(object as text)
 	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn an atom via supply drop"
-	set name = "Supply drop spawn"
+	set name = "Podspawn"
 
 	if(!check_rights(R_SPAWN))
 		return

@@ -246,6 +246,21 @@
 
 	r_pocket = /obj/item/radio
 
+/datum/outfit/job/clip/correspondant
+	name = "CLIP - War Correspondent"
+	job_icon = "curator"
+	jobtype = /datum/job/curator
+
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
+	shoes = /obj/item/clothing/shoes/laceup
+
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+
+	r_pocket = /obj/item/radio
+
 // Colonial League Minutemen
 
 /datum/outfit/job/clip/minutemen
@@ -545,7 +560,7 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4 //f4 is rename of GAL, don't wanna repath upon adding the clip guns though, if i forget to remove this during then, fucking yell at me
 	name = "CLIP Minutemen - Minuteman (Armed - CM-GAL)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/gal
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/gal
 	belt = /obj/item/storage/belt/military/clip/gal
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/cm5

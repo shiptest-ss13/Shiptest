@@ -174,6 +174,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isidcard(I) (istype(I, /obj/item/card/id))
 
+#define isbankcard(I) (istype(I, /obj/item/card/bank))
+
 #define isstructure(A) (istype(A, /obj/structure))
 
 #define ismachinery(A) (istype(A, /obj/machinery))

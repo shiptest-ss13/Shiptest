@@ -239,7 +239,7 @@
 			burn *= 2
 
 	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if((brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
 		break_bone()
 
 	// Bleeding is applied here

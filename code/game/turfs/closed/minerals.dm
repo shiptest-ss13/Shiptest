@@ -268,6 +268,7 @@
 	opacity = FALSE
 	light_range = 2
 	light_power = 1
+	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
 	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon

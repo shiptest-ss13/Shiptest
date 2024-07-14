@@ -9,52 +9,52 @@
 /datum/supply_pack/gun/disposable
 	name = "Disposable Gun Crate"
 	desc = "In some sectors, these disposable pistols are the only firearms that can be legally sold for less than 200cr. That price is still far too high."
-	cost = 150
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/disposable)
+	cost = 300
+	contains = list(/obj/item/storage/pistolcase/disposable)
 	crate_name = "disposable gun crate"
 
 /datum/supply_pack/gun/derringer
 	name = ".38 Derringer Crate"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
 	cost = 350
-	contains = list(/obj/item/gun/ballistic/derringer)
+	contains = list(/obj/item/storage/pistolcase/derringer)
 	crate_name = "derringer crate"
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
 	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
 	cost = 750
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/commander)
+	contains = list(/obj/item/storage/pistolcase/commander)
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin Pistol Crate"
 	desc = "Contains a concealable stechkin pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
-	contains = list(/obj/item/gun/ballistic/automatic/pistol)
+	contains = list(/obj/item/storage/pistolcase/stechkin)
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
 	cost = 1000
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/candor)
+	contains = list(/obj/item/storage/pistolcase/candor)
 
 /datum/supply_pack/gun/pepperbox
 	name = "HP Firebrand Pepperbox Revolver Crate"
 	desc = "Contains a concealable pepperbox revolver manufactured by the Saint Roumain Militia, chambered in .357."
 	cost = 1250
-	contains = list(/obj/item/gun/ballistic/revolver/firebrand)
+	contains = list(/obj/item/storage/pistolcase/firebrand)
 
 /datum/supply_pack/gun/detrevolver
 	name = "Hunter's Pride Detective Revolver Crate"
 	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
 	cost = 600
-	contains = list(/obj/item/gun/ballistic/revolver/detective)
+	contains = list(/obj/item/storage/pistolcase/detective)
 
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver Crate"
-	desc = "Contains a concealable Shadow revolver, chambered in .45 ACP."
+	desc = "Contains a concealable Shadow revolver, chambered in .44 Roumain."
 	cost = 1000
-	contains = list(/obj/item/gun/ballistic/revolver/shadow)
+	contains = list(/obj/item/storage/pistolcase/shadow)
 
 
 /*
@@ -65,21 +65,21 @@
 	name = "Laser Gun Crate"
 	desc = "Contains a lethal, high-energy laser gun."
 	cost = 1000
-	contains = list(/obj/item/gun/energy/laser)
+	contains = list(/obj/item/storage/pistolcase/laser)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/mini_energy
 	name = "Mini Energy Gun Crate"
 	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
 	cost = 500
-	contains = list(/obj/item/gun/energy/e_gun/mini)
+	contains = list(/obj/item/storage/pistolcase/miniegun)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/energy
 	name = "Energy Gun Crate"
 	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
 	cost = 1250
-	contains = list(/obj/item/gun/energy/e_gun)
+	contains = list(/obj/item/storage/pistolcase/egun)
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -87,7 +87,7 @@
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range."
 	cost = 10000
-	contains = list(/obj/item/gun/energy/ionrifle)
+	contains = list(/obj/item/storage/pistolcase/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -95,14 +95,14 @@
 	name = "Etherbor SG-8 Beam Pistol Crate"
 	desc = "Contains a single SG-8 Beam Pistol, a civilian-grade sidearm developed in the PGF, manufactured by Etherbor Industries."
 	cost = 1000
-	contains = list(/obj/item/gun/energy/kalix/pistol)
+	contains = list(/obj/item/storage/pistolcase/kalixpistol)
 	crate_name = "beam pistol crate"
 
 /datum/supply_pack/gun/laser/kalix
 	name = "Etherbor BG-12 Beam Rifle Crate"
 	desc = "Contains a single BG-12 Beam Rifle, a civilian-grade semi-automatic developed in the PGF, manufactured by Etherbor Industries."
 	cost = 3000
-	contains = list(/obj/item/gun/energy/kalix)
+	contains = list(/obj/item/storage/guncase/kalixrifle)
 	crate_name = "beam rifle crate"
 
 /*
@@ -113,7 +113,7 @@
 	name = "Double Barrel Shotgun Crate"
 	desc = "For when you need to deal with 2 drunkards the old-fashioned way. Contains a double-barreled shotgun, favored by Bartenders. Warranty voided if sawed off."
 	cost = 1000
-	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel)
+	contains = list(/obj/item/storage/guncase/doublebarrel)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/hellfire_shotgun
@@ -138,21 +138,21 @@
 	name = "Flaming Arrow Lever Action Rifle Crate"
 	desc = "Contains an antiquated lever action rifle intended for hunting wildlife. Chambered in .38 rounds."
 	cost = 750
-	contains = list(/obj/item/gun/ballistic/shotgun/flamingarrow)
+	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
 	desc = "Contains an expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."
 	cost = 1250
-	contains = list(/obj/item/gun/ballistic/rifle/illestren)
+	contains = list(/obj/item/storage/guncase/illestren)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/beacon
 	name = "Contender Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 2250
-	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel/beacon)
+	contains = list(/obj/item/storage/guncase/beacon)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/scout
@@ -166,26 +166,26 @@
 	name = "Cobra-20 SMG Crate"
 	desc = "Contains a .45 submachine gun, manufactured by Scaraborough Arms and chambered in .45"
 	cost = 3000
-	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
+	contains = list(/obj/item/storage/guncase/cobra)
 	crate_name = "SMG crate"
 
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
 	cost = 4000
-	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550)
+	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 5.56mm."
 	cost = 5000
-	contains = list(/obj/item/gun/ballistic/automatic/assault/p16)
+	contains = list(/obj/item/storage/guncase/p16)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 7.62x40mm CLIP."
 	cost = 5000
-	contains = list(/obj/item/gun/ballistic/automatic/assault/skm)
+	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
