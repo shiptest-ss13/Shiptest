@@ -148,6 +148,9 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ay" = (
@@ -243,22 +246,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
-"aM" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	id = "meta_windows";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "aN" = (
 /obj/effect/turf_decal/nanotrasen/ns/center_left,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1486,7 +1473,10 @@
 	id = "meta_windows";
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
 /area/ship/engineering)
 "fd" = (
 /obj/structure/table/wood,
@@ -5548,9 +5538,9 @@ aa
 aa
 aa
 ac
-aM
-aM
-aM
+fb
+fb
+fb
 ac
 aa
 aa
