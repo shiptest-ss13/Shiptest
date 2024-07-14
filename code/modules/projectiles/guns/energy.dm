@@ -9,6 +9,8 @@
 
 	has_safety = TRUE
 	safety = TRUE
+
+	modifystate = FALSE
 	ammo_x_offset = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
@@ -157,6 +159,14 @@
 
 	user.put_in_hands(old_cell)
 	update_appearance()
+
+/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
+	if(cell && !internal_cell)
+		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
+		if(I.use_tool(src, user, unscrewing_time, volume = 100))
+			to_chat(user, span_notice("You remove the power cell."))
+			eject_cell(user)
+	return ..()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
