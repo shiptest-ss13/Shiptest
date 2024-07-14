@@ -1,4 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "lib_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "ai" = (
 /obj/structure/railing,
 /obj/structure/cable/yellow{
@@ -419,6 +433,20 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
+"dv" = (
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "lib_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines/starboard)
 "dz" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4805,8 +4833,8 @@
 	},
 /obj/item/clothing/neck/stethoscope,
 /obj/item/clothing/head/gezena/flap/medic{
-	pixel_x = 12;
-	pixel_y = 1
+	pixel_y = 1;
+	pixel_x = 12
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -6202,8 +6230,8 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/head/gezena/flap/marine/lead{
-	pixel_x = -10;
-	pixel_y = 10
+	pixel_y = 10;
+	pixel_x = -10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
@@ -6775,14 +6803,14 @@ xz
 xz
 lc
 hJ
-hJ
+ae
 is
 lc
 xz
 xz
 TV
 FN
-fN
+dv
 fN
 TV
 xz
