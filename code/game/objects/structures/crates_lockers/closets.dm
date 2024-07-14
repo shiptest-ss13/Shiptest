@@ -27,7 +27,7 @@
 	var/max_mob_size = MOB_SIZE_HUMAN //Biggest mob_size accepted by the container
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
 	var/storage_capacity = 30 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
-	var/cutting_tool = /obj/item/weldingtool
+	var/cutting_tool = TOOL_WELDER
 	var/open_sound = 'sound/machines/closet_open.ogg'
 	var/close_sound = 'sound/machines/closet_close.ogg'
 	var/open_sound_volume = 35
@@ -254,32 +254,29 @@
 	if(user in src)
 		return
 	if(src.tool_interact(W,user))
-		return 1 // No afterattack
+		return TRUE // No afterattack
 	else
 		return ..()
+
+/obj/structure/closet/proc/try_deconstruct(obj/item/W, mob/user)
+	if(W.tool_behaviour == cutting_tool || W.tool_behaviour == TOOL_DECONSTRUCT)
+		if(!W.tool_start_check(user, amount = 0))
+			return
+		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
+		if(W.use_tool(src, user, 40, volume = 50))
+			if(!opened)
+				return
+			user.visible_message(span_notice("[user] slices apart \the [src]."),
+								span_notice("You cut \the [src] apart with \the [W]."),
+								span_hear("You hear welding."))
+			deconstruct(TRUE)
+		return TRUE
 
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
 	if(opened)
-		if(istype(W, cutting_tool) || W.tool_behaviour == TOOL_DECONSTRUCT)
-			if(W.tool_behaviour == TOOL_WELDER || W.tool_behaviour == TOOL_DECONSTRUCT)
-				if(!W.tool_start_check(user, amount=0))
-					return
-
-				to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
-				if(W.use_tool(src, user, 40, volume=50))
-					if(!opened)
-						return
-					user.visible_message("<span class='notice'>[user] slices apart \the [src].</span>",
-									"<span class='notice'>You cut \the [src] apart with \the [W].</span>",
-									"<span class='hear'>You hear welding.</span>")
-					deconstruct(TRUE)
-				return
-			else // for example cardboard box is cut with wirecutters
-				user.visible_message("<span class='notice'>[user] cut apart \the [src].</span>", \
-									"<span class='notice'>You cut \the [src] apart with \the [W].</span>")
-				deconstruct(TRUE)
-				return
+		if(try_deconstruct(W, user))
+			return
 		if(user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
 			return
 	else if(W.tool_behaviour == TOOL_WELDER && can_weld_shut)
