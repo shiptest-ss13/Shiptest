@@ -1406,10 +1406,11 @@
 	id = "kilocargo"
 	},
 /obj/docking_port/mobile{
-	dir = 1;
+	dir = 2;
 	launch_status = 0;
 	name = "Mining Shuttle";
-	port_direction = 2
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
