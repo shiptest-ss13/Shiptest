@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(blackmarket)
 	/// Descriptions for each shipping methods.
 	var/shipping_method_descriptions = list(
 		SHIPPING_METHOD_LAUNCH="Launches the item at your coordinates from across deep space. Cheap, but you might not recieve your item at all. We recommend being stationary in space, away from any large structures, for best results.",
+		SHIPPING_METHOD_DEAD_DROP="Our couriers will fire your item via orbital drop pod at the nearest safe planetary structure for discreet pick up. Reliable, but you'll have to find your package yourself. We accept no responsibility for lost packages if you try to do this in space or the outpost.",
 		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that prepares items at a remote storage location and then teleports them to the location of the LTRSBT."
 	)
 
@@ -72,14 +73,31 @@ SUBSYSTEM_DEF(blackmarket)
 
 				queued_purchases -= purchase
 				qdel(purchase)
-			// Drop the order somewhere on the planet
+			// Drop the order somewhere on the planet's ruin the uplink is on
 			if(SHIPPING_METHOD_DEAD_DROP)
-				var/datum/virtual_level/target_map = purchase.uplink.get_virtual_level()
+				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink)
+				if(overmap_loc.ruin_turfs)
+					for(var/turf/potential_turf in pick(overmap_loc.ruin_turfs))
+						if(!isfloorturf(potential_turf))
+							continue
+						var/turf/open/floor/potential_floor = potential_turf
+						if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
+							var/turf/open/lava/potential_lava_floor = potential_floor
+							if(!potential_lava_floor.is_safe())
+								continue
+						//yippee, there's a viable turf for the package to land on
+						var/obj/structure/closet/supplypod/pod = new()
+						pod.setStyle(STYLE_BOX)
+						var/atom/movable/item = purchase.entry.spawn_item(pod)
+						pod.explosionSize = list(0,0,0,0)
+						item.forceMove(pod)
+						new /obj/effect/pod_landingzone(get_turf(potential_floor), pod)
 
-				// var/turf/target = find_obstruction_free_location()
-				// get_random_ship_turf()
-				// var/turf/other = find_safe_turf()
+						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being delivered.</span>")
 
+						queued_purchases -= purchase
+						qdel(purchase)
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Welp something got fucked.</span>")
 		if(MC_TICK_CHECK)
 			break
 
