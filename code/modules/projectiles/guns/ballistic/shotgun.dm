@@ -797,7 +797,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		recoil = 2
 		recoil_unwielded = 4
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
