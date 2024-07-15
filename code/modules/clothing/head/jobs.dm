@@ -138,26 +138,6 @@
 	desc = "A robust stetson adorned with a deputy's badge. Its imitation leather is thick and worn."
 	icon_state = "cowboysec"
 
-/obj/item/clothing/head/cowboy/sec/roumain
-	name = "hunter's hat"
-	desc = "A fancy hat with a nice feather. The way it covers your eyes makes you feel like a badass."
-	icon_state = "rouma_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/shadow
-	name = "shadow's hat"
-	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
-	icon_state = "rouma_shadow_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/med
-	name = "medical hunter's hat"
-	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
-	icon_state = "rouma_med_hat"
-
-/obj/item/clothing/head/HoS/cowboy/montagne
-	name = "montagne's hat"
-	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
-	icon_state = "rouma_montagne_hat"
-
 /obj/item/clothing/head/HoS/syndicate
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
@@ -272,3 +252,12 @@
 #undef DRILL_SHOUTING
 #undef DRILL_YELLING
 #undef DRILL_CANADIAN
+
+/obj/item/clothing/head/witchunter
+	name = "witchunter hat"
+	desc = "This hat saw much use back in the day."
+	icon_state = "witchhunterhat"
+	item_state = "witchhunterhat"
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEEYES|HIDEHAIR
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)

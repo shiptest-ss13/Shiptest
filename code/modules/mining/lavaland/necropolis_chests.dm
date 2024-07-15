@@ -501,10 +501,6 @@
 			if(input)
 				src.warcry = input
 
-/obj/item/immortality_talisman/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
-
 /datum/action/item_action/hands_free/immortality
 	name = "Immortality"
 
@@ -873,8 +869,8 @@
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "spur"
 	item_state = "spur"
 	selfcharge = 1

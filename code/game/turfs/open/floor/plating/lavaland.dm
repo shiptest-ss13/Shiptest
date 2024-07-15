@@ -93,3 +93,39 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/concrete/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/concrete/slab_1/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plating/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plating/rust/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plasteel/white/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plasteel/dark/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE

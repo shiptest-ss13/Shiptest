@@ -524,13 +524,12 @@
 		/obj/item/reagent_containers/food/snacks/rofflewaffles,
 		/obj/item/reagent_containers/food/snacks/donkpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist,
+		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola
+		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda
 		))
 		new rig_snacks(src)
 

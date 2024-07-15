@@ -20,7 +20,11 @@
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
 	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
 
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
@@ -44,6 +48,9 @@
 
 	fire_delay = 0.2 SECONDS
 
+/obj/item/gun/ballistic/automatic/assault/skm/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
 	name = "\improper Chopper"
 	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
@@ -55,6 +62,11 @@
 /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	name = "\improper SKM-44"
 	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from Frontiersmen armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 
 	icon_state = "skm_inteq"
 	item_state = "skm_inteq"
@@ -82,16 +94,26 @@
 	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
+/obj/item/gun/ballistic/automatic/assault/p16/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	name = "\improper CM-16"
 	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
+	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 	icon_state = "cm16"
 	item_state = "cm16"
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
 	desc = "An ancient longarm famous for its boxy, modular design. Mass produced by the Terran Confederation in ages past, these often mutiple century old designs have survied due to their sheer ruggedness. The DMA on this unit is sadly broken, but these rifles are known for their excellent burst fire. Uses 5.56mm ammunition for Matter mode."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
 	icon_state = "swiss"
 	item_state = "swiss"
@@ -120,11 +142,13 @@
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
 	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e40"
 	item_state = "e40"
 	mag_type = /obj/item/ammo_box/magazine/e40
-	can_suppress = FALSE
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
@@ -270,10 +294,14 @@
 
 //techinically a battle rifle, i'm putting it here for organisation sake
 
-/obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
+/obj/item/gun/ballistic/automatic/marksman/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
 	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 	icon_state = "vickland"
 	item_state = "vickland"
@@ -282,8 +310,9 @@
 	internal_magazine = TRUE
 	mag_type = /obj/item/ammo_box/magazine/internal/vickland
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-	actions_types = list()
+
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	zoomable = FALSE //no scope on it
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
