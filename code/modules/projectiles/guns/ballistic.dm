@@ -1,6 +1,6 @@
 #define EMPTY_GUN_HELPER(gun_type)				\
 	/obj/item/gun/ballistic/##gun_type/no_mag {	\
-		spawnwithmagazine = FALSE;				\
+		default_ammo_type = null;				\
 	}
 
 ///Subtype for any kind of ballistic gun
@@ -36,18 +36,17 @@
 		)
 	)
 
-/obj/item/gun/ballistic/Initialize()
-	. = ..()
-	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
+/obj/item/gun/ballistic/fill_gun()
+	if (!default_ammo_type && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
 		bolt_locked = TRUE
 		update_appearance()
 		return
 	if (!magazine)
 		magazine = new mag_type(src)
-	if (!spawnwithmagazine)
-		get_ammo_list (drop_all = TRUE)
+	if (!default_ammo_type)
+		get_ammo_list(drop_all = TRUE)
 	chamber_round()
-	update_appearance()
+
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"

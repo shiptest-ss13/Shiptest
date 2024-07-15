@@ -611,9 +611,9 @@
 	..()
 	var/obj/item/gun/energy/e_gun/advtaser/cyborg/T = locate(/obj/item/gun/energy/e_gun/advtaser/cyborg) in basic_modules
 	if(T)
-		if(T.cell.charge < T.cell.maxcharge)
+		if(T.installed_cell.charge < T.installed_cell.maxcharge)
 			var/obj/item/ammo_casing/energy/S = T.ammo_type[T.select]
-			T.cell.give(S.rounds_per_shot * coeff)
+			T.installed_cell.give(S.rounds_per_shot * coeff)
 			T.update_appearance()
 		else
 			T.charge_tick = 0

@@ -16,7 +16,7 @@
 	spread_unwielded = 10
 
 /obj/item/gun/energy/laser/empty_cell
-	dead_cell = TRUE
+	spawn_empty_mag = TRUE
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"

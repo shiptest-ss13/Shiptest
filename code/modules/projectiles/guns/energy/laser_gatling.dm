@@ -22,7 +22,7 @@
 	. = ..()
 	gun = new(src)
 	battery = new(src)
-	gun.cell = battery
+	gun.installed_cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
@@ -153,7 +153,7 @@
 	ammo_pack.overheat += burst_size
 	if(ammo_pack.battery)
 		var/totransfer = min(100, ammo_pack.battery.charge)
-		var/transferred = cell.give(totransfer)
+		var/transferred = installed_cell.give(totransfer)
 		ammo_pack.battery.use(transferred)
 
 /obj/item/gun/energy/minigun/afterattack(atom/target, mob/living/user, flag, params)

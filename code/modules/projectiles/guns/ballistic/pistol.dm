@@ -391,7 +391,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 
 /obj/item/gun/ballistic/derringer/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "\improper Himehabu"

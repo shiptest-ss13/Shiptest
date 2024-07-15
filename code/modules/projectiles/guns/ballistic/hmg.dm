@@ -267,7 +267,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended/Initialize()
 	. = ..()
@@ -275,7 +275,7 @@
 	chamber_round()
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag/Initialize()
 	. = ..()

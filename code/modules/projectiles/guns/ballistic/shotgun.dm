@@ -89,7 +89,7 @@
 		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/brimstone/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 // HELLFIRE SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/hellfire
@@ -126,7 +126,7 @@
 		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/hellfire/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
 	spread = 4
@@ -401,7 +401,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
@@ -638,7 +638,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	recoil_unwielded = 2
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
@@ -785,7 +785,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."

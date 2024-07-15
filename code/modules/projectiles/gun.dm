@@ -59,6 +59,13 @@
 	///Compatible magazines with the gun
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
 
+	///Default magazine to spawn with.
+	var/default_ammo_type = null
+	///List of allowed specific types. If trying to reload with something in this list it will succeed. This is mainly for use in internal magazine weapons or scenarios where you do not want to inclue a whole subtype.
+	var/list/allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine,
+	)
+
 //BALLISTIC
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
@@ -96,7 +103,7 @@
 
 //ENERGY
 	//What type of power cell this uses
-	var/obj/item/stock_parts/cell/gun/cell
+	var/obj/item/stock_parts/cell/gun/installed_cell
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
@@ -268,6 +275,7 @@
 	//if this gun uses a stateful charge bar for more detail
 	var/shaded_charge = FALSE
 	//Modifies WHOS state //im SOMEWHAT this is wether or not the overlay changes based on the ammo type selected
+	///If the type of ammo is added when making an overlay for ammo
 	var/modifystate = TRUE
 
 /*
@@ -309,18 +317,24 @@
 */
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()
-	///Whether the gun will spawn loaded with a magazine, for ballastic
-	var/spawnwithmagazine = TRUE
-	//set to true so the gun is given an empty cell, for energy
-	var/dead_cell = FALSE
+	///Spawns the mag emtpy
+	var/spawn_empty_mag = FALSE
 
-/obj/item/gun/Initialize()
+/obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 	build_firemodes()
+
+	if(spawn_empty || !default_ammo_type)
+		update_icon()
+		return
+	INVOKE_ASYNC(src, PROC_REF(fill_gun))
+
+/obj/item/gun/proc/fill_gun()
+	return
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()

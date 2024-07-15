@@ -438,7 +438,7 @@
 
 	else if(istype(dropped_item, /obj/item/gun/energy))
 		var/obj/item/gun/energy/dropped_gun = dropped_item
-		dropped_gun.cell.charge = 0
+		dropped_gun.installed_cell.charge = 0
 		dropped_gun.update_appearance()
 
 //Generalized behavior code, override where needed!

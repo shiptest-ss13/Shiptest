@@ -612,7 +612,7 @@
 			update_appearance()
 	else if(istype(O, /obj/item/gun/energy/floragun))
 		var/obj/item/gun/energy/floragun/flowergun = O
-		if(flowergun.cell.charge < REVOLUTION_CHARGE) // In case an admin var edits the gun or guns gain the ability to have their cell upgraded
+		if(flowergun.installed_cell.charge < REVOLUTION_CHARGE) // In case an admin var edits the gun or guns gain the ability to have their cell upgraded
 			to_chat(user, "<span class='notice'>[flowergun] must be charged to lock in a mutation!</span>")
 			return
 		if(!myseed)
@@ -634,7 +634,7 @@
 				return
 			myseed.mutatelist = list(fresh_mut_list[locked_mutation])
 			myseed.endurance = (myseed.endurance/2)
-			flowergun.cell.use(REVOLUTION_CHARGE)
+			flowergun.installed_cell.use(REVOLUTION_CHARGE)
 			flowergun.update_appearance()
 			to_chat(user, "<span class='notice'>[myseed.plantname]'s mutation was set to [locked_mutation], depleting [flowergun]'s cell!</span>")
 			return

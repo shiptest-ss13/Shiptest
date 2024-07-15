@@ -14,7 +14,7 @@
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/empty_cell
-	dead_cell = TRUE
+	spawn_empty_mag = TRUE
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
@@ -34,7 +34,7 @@
 	spread_unwielded = 5
 
 /obj/item/gun/energy/e_gun/mini/empty_cell
-	dead_cell = TRUE
+	spawn_empty_mag = TRUE
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"

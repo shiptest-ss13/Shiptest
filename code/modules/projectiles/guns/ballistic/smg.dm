@@ -50,8 +50,7 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/suns
 	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
@@ -76,7 +75,7 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/wt550/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -227,7 +226,7 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan/Initialize()
 	. = ..()

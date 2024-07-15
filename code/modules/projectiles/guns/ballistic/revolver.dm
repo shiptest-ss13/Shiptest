@@ -539,13 +539,13 @@ EMPTY_GUN_HELPER(revolver/detective)
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/detective/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/syndicate/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -589,7 +589,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	AddComponent(/datum/component/ammo_hud/revolver)
 
 /obj/item/gun/ballistic/revolver/montagne/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
@@ -635,7 +635,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	safety_wording = "safety"
 
 /obj/item/gun/ballistic/revolver/firebrand/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
@@ -670,4 +670,4 @@ EMPTY_GUN_HELPER(revolver/detective)
 	AddComponent(/datum/component/ammo_hud/revolver)
 
 /obj/item/gun/ballistic/revolver/shadow/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null

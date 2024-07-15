@@ -49,7 +49,7 @@
 	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/assault/skm/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
 	name = "\improper Chopper"
@@ -95,7 +95,7 @@
 	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/assault/p16/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
 /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	name = "\improper CM-16"
@@ -248,7 +248,7 @@
 
 
 /obj/item/gun/ballistic/automatic/powered/get_cell()
-	return cell
+	return installed_cell
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
@@ -260,7 +260,7 @@
 		. += "[icon_state]_chargeempty"
 	else
 		. += "[icon_state]_charge[ratio]"
-	if(secondary.cell)
+	if(secondary.installed_cell)
 		. += "[icon_state]_cell"
 
 

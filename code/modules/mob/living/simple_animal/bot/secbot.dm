@@ -443,7 +443,7 @@ Auto Patrol: []"},
 		Sa.created_name = name
 		new /obj/item/assembly/prox_sensor(Tsec)
 		var/obj/item/gun/energy/disabler/G = new (Tsec)
-		G.cell.charge = 0
+		G.installed_cell.charge = 0
 		G.update_appearance()
 		if(prob(50))
 			new /obj/item/bodypart/leg/left/robot(Tsec)

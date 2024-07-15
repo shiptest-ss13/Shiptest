@@ -234,10 +234,10 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 
 /mob/living/simple_animal/hostile/mimic/copy/ranged/OpenFire(the_target)
 	if(Zapgun)
-		if(Zapgun.cell)
+		if(Zapgun.installed_cell)
 			var/obj/item/ammo_casing/energy/shot = Zapgun.ammo_type[Zapgun.select]
-			if(Zapgun.cell.charge >= shot.rounds_per_shot)
-				Zapgun.cell.use(shot.rounds_per_shot)
+			if(Zapgun.installed_cell.charge >= shot.rounds_per_shot)
+				Zapgun.installed_cell.use(shot.rounds_per_shot)
 				Zapgun.update_appearance()
 				..()
 	else if(Pewgun)

@@ -130,12 +130,12 @@
 		empty()
 
 /obj/item/gun/energy/kinetic_accelerator/proc/empty()
-	if(cell)
-		cell.use(cell.charge)
+	if(installed_cell)
+		installed_cell.use(installed_cell.charge)
 	update_appearance()
 
 /obj/item/gun/energy/kinetic_accelerator/proc/attempt_reload(recharge_time)
-	if(!cell)
+	if(!installed_cell)
 		return
 	if(overheat)
 		return
@@ -160,7 +160,7 @@
 	return
 
 /obj/item/gun/energy/kinetic_accelerator/proc/reload()
-	cell.give(cell.maxcharge)
+	installed_cell.give(installed_cell.maxcharge)
 	if(!suppressed)
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
 	else

@@ -161,8 +161,8 @@
 	if(!(machine_stat & (NOPOWER|BROKEN)) && anchored)
 		if(istype(charging,  /obj/item/gun/energy))
 			var/obj/item/gun/energy/E = charging
-			if(E.cell)
-				E.cell.emp_act(severity)
+			if(E.installed_cell)
+				E.installed_cell.emp_act(severity)
 
 		else if(istype(charging, /obj/item/melee/baton))
 			var/obj/item/melee/baton/B = charging

@@ -888,14 +888,14 @@
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
 /obj/item/gun/energy/spur/update_appearance()
-	if(!cell)
+	if(!installed_cell)
 		chargesound = null
 		recoil = 1
 		fire_sound = 'sound/weapons/spur_high.ogg'
 		return
 
-	var/maxcharge = cell.maxcharge
-	var/charge = cell.charge
+	var/maxcharge = installed_cell.maxcharge
+	var/charge = installed_cell.charge
 
 	var/oldsound = chargesound
 	var/obj/item/ammo_casing/energy/AC = ammo_type[select]
@@ -942,8 +942,8 @@
 		return ..()
 
 	var/obj/item/gun/energy/spur/fired_gun = fired_from
-	var/maxcharge = fired_gun.cell.maxcharge
-	var/charge = fired_gun.cell.charge
+	var/maxcharge = fired_gun.installed_cell.maxcharge
+	var/charge = fired_gun.installed_cell.charge
 
 	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
 		icon_state = "spur_low"
@@ -1018,8 +1018,8 @@
 		return ..()
 
 	var/obj/item/gun/energy/spur/fired_gun = fired_from
-	var/maxcharge = fired_gun.cell.maxcharge
-	var/charge = fired_gun.cell.charge
+	var/maxcharge = fired_gun.installed_cell.maxcharge
+	var/charge = fired_gun.installed_cell.charge
 
 	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
 		icon_state = "spur_high"
