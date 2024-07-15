@@ -246,6 +246,7 @@
 	///Used for positioning ammo count overlay on sprite
 	var/ammo_x_offset = 0
 	var/ammo_y_offset = 0
+	var/ammo_overlay_sections = 5
 
 //BALLISTIC
 	///Whether the sprite has a visible magazine or not
@@ -264,7 +265,6 @@
 //ENERGY
 	//Do we handle overlays with base update_appearance()?
 	var/automatic_charge_overlays = TRUE
-	var/charge_sections = 4
 	//if this gun uses a stateful charge bar for more detail
 	var/shaded_charge = FALSE
 	//Modifies WHOS state //im SOMEWHAT this is wether or not the overlay changes based on the ammo type selected

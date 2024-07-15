@@ -202,7 +202,7 @@
 	icon_state = "hitscangun"
 	item_state = "gun"
 	ammo_x_offset = 2
-	charge_sections = 4
+	ammo_overlay_sections = 4
 	mag_size = MAG_SIZE_SMALL
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/stock_parts/cell/gun/mini
@@ -257,7 +257,7 @@
 
 	shaded_charge = FALSE
 	ammo_x_offset = 4
-	charge_sections = 2
+	ammo_overlay_sections = 2
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 

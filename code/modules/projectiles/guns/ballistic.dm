@@ -69,17 +69,7 @@
 		else
 			. += "[icon_state]_mag"
 			var/capacity_number = 0
-			switch(get_ammo() / magazine.max_ammo)
-				if(0.2 to 0.39)
-					capacity_number = 20
-				if(0.4 to 0.59)
-					capacity_number = 40
-				if(0.6 to 0.79)
-					capacity_number = 60
-				if(0.8 to 0.99)
-					capacity_number = 80
-				if(1.0)
-					capacity_number = 100
+			capacity_number = CEILING((get_ammo() /(magazine.max_ammo)) * 100, 100 / ammo_overlay_sections)
 			if (capacity_number)
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)

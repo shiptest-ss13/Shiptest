@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/powered
 	mag_type = /obj/item/ammo_box/magazine/gauss
-	charge_sections = 3
+	ammo_overlay_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
@@ -103,4 +103,4 @@
 /obj/item/gun/ballistic/automatic/powered/proc/get_charge_ratio()
 	if(!cell)
 		return FALSE
-	return CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
+	return CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * ammo_overlay_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.

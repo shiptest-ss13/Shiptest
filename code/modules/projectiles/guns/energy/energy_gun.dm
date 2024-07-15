@@ -26,7 +26,7 @@
 	mag_size = MAG_SIZE_SMALL
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
-	charge_sections = 3
+	ammo_overlay_sections = 3
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
@@ -41,7 +41,7 @@
 	desc = "The standard issue rifle of Nanotrasen's Security Forces. Most have been put in long term storage following the ICW, and usually aren't issued to low ranking security divisions."
 	icon_state = "energytac"
 	ammo_x_offset = 2
-	charge_sections = 5
+	ammo_overlay_sections = 5
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
 	mag_type = /obj/item/stock_parts/cell/gun/upgraded
 
@@ -183,7 +183,7 @@
 	icon_state = "rdpdw"
 	item_state = "gun"
 	ammo_x_offset = 2
-	charge_sections = 6
+	ammo_overlay_sections = 6
 	mag_size = MAG_SIZE_SMALL
 
 	wield_delay = 0.2 SECONDS
@@ -211,7 +211,7 @@
 	icon_state = "esmg"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg, /obj/item/ammo_casing/energy/laser/smg)
 	ammo_x_offset = 2
-	charge_sections = 3
+	ammo_overlay_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
 	fire_delay = 0.13 SECONDS

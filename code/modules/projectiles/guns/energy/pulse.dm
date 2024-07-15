@@ -17,7 +17,7 @@
 	mag_type = /obj/item/stock_parts/cell/pulse //somone make this backpack mounted, or connected to the deathsquad suit at some point
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	ammo_x_offset = 2
-	charge_sections = 6
+	ammo_overlay_sections = 6
 
 	spread_unwielded = 25
 
@@ -42,7 +42,7 @@
 	mag_size = MAG_SIZE_LARGE //haha gun go brr
 	mag_type = /obj/item/stock_parts/cell/gun/large
 	ammo_x_offset = 2
-	charge_sections = 4
+	ammo_overlay_sections = 4
 
 /obj/item/gun/energy/pulse/prize/Initialize()
 	. = ..()
@@ -71,7 +71,7 @@
 	item_state = "gun"
 	mag_type = /obj/item/stock_parts/cell/pulse/pistol
 	ammo_x_offset = 2
-	charge_sections = 4
+	ammo_overlay_sections = 4
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
