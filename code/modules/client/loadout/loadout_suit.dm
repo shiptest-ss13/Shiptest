@@ -102,6 +102,11 @@
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
 
+/datum/gear/suit/raincoat
+	display_name = "translucent labcoat"
+	description = "Designer lab safety equipment. You're pretty sure this is just a raincoat."
+	path = /obj/item/clothing/suit/toggle/labcoat/raincoat
+
 /datum/gear/suit/ianshirt
 	display_name = "worn shirt"
 	path = /obj/item/clothing/suit/ianshirt
