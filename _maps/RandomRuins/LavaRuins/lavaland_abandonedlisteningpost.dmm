@@ -701,12 +701,6 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered)
-"mq" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/listening_post/canteen)
 "mF" = (
 /obj/structure/flora/tree/dead/tall/grey,
 /turf/open/floor/plating/grass/lava,
@@ -1327,7 +1321,9 @@
 /area/ruin/unpowered)
 "xR" = (
 /obj/structure/table/reinforced,
-/obj/item/cutting_board,
+/obj/item/cutting_board{
+	anchored = 1
+	},
 /obj/item/kitchen/knife,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1737,9 +1733,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post)
 "Fs" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/structure/chair/bench/beige/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -1957,7 +1950,7 @@
 /area/ruin/unpowered/listening_post/canteen)
 "LD" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -2227,6 +2220,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "QD" = (
@@ -2450,6 +2446,7 @@
 "WL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/falsewall/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/canteen)
 "WU" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -3099,7 +3096,7 @@ KS
 zI
 qW
 Fs
-mq
+Ao
 Mg
 xR
 LB
