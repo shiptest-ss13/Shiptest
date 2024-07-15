@@ -14,7 +14,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
-	mag_type = /obj/item/stock_parts/cell/pulse //somone make this backpack mounted, or connected to the deathsquad suit at some point
+	default_ammo_type = /obj/item/stock_parts/cell/pulse //somone make this backpack mounted, or connected to the deathsquad suit at some point
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	ammo_x_offset = 2
 	ammo_overlay_sections = 6
@@ -40,7 +40,7 @@
 	item_state = null
 	internal_magazine = FALSE
 	mag_size = MAG_SIZE_LARGE //haha gun go brr
-	mag_type = /obj/item/stock_parts/cell/gun/large
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
 	ammo_x_offset = 2
 	ammo_overlay_sections = 4
 
@@ -69,14 +69,14 @@
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_pistol"
 	item_state = "gun"
-	mag_type = /obj/item/stock_parts/cell/pulse/pistol
+	default_ammo_type = /obj/item/stock_parts/cell/pulse/pistol
 	ammo_x_offset = 2
 	ammo_overlay_sections = 4
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
-	mag_type = /obj/item/stock_parts/cell/infinite
+	default_ammo_type = /obj/item/stock_parts/cell/infinite
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)

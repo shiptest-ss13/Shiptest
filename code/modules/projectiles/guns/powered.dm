@@ -1,11 +1,11 @@
 /obj/item/gun/ballistic/automatic/powered
-	mag_type = /obj/item/ammo_box/magazine/gauss
+	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	ammo_overlay_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
-	if(mag_type)
-		installed_cell = new mag_type(src)
+	if(default_ammo_type)
+		installed_cell = new default_ammo_type(src)
 	else
 		installed_cell = new(src)
 	update_appearance()

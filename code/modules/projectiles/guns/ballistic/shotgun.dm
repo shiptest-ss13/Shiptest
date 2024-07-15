@@ -11,7 +11,7 @@
 	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/internal/shot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot
 	semi_auto = FALSE
 	internal_magazine = TRUE
 	casing_ejector = FALSE
@@ -66,7 +66,7 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	fire_delay = 0.05 SECONDS //slamfire
 	rack_delay = 0.2 SECONDS
@@ -102,7 +102,7 @@
 	icon_state = "hellfire"
 	item_state = "hellfire"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
@@ -148,14 +148,14 @@
 	icon_state = "cshotgun"
 	item_state = "shotgun_combat"
 	fire_delay = 0.5 SECONDS
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	name = "compact combat shotgun"
 	desc = "A compact version of the semi-automatic combat shotgun. For close encounters."
 	icon_state = "cshotgunc"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 
@@ -172,7 +172,7 @@
 
 	icon_state = "cycler"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	w_class = WEIGHT_CLASS_HUGE
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
@@ -185,7 +185,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
 	if (!alternate_magazine)
-		alternate_magazine = new mag_type(src)
+		alternate_magazine = new default_ammo_type(src)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/attack_self(mob/living/user)
 	if(!chambered && magazine.contents.len)
@@ -222,7 +222,7 @@
 	item_state = "bulldog"
 
 	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12g
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g
 	burst_size = 1
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -258,7 +258,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog)
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
-	mag_type = /obj/item/ammo_box/magazine/m12g
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g
 	manufacturer = MANUFACTURER_INTEQ
 
 EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
@@ -277,7 +277,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
+	default_ammo_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"
 	item_state = "cm15"
 	empty_alarm = FALSE
@@ -314,7 +314,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	force = 10
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual
 
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "dshotgun",
@@ -420,7 +420,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	recoil = 3 //or not
 	recoil_unwielded = 5
 	item_state = "dshotgun_sawn"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
 	name = "HP antique double-barreled shotgun"
@@ -452,7 +452,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	slot_flags = null
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
 	var/slung = FALSE
@@ -506,7 +506,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	name = "compact compact combat shotgun"
 	desc = "A compact version of the compact version of the semi automatic combat shotgun. For when you want a gun the same size as your brain."
 	icon_state = "cshotguncc"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
 	sawn_desc = "You know, this isn't funny anymore."
 	can_be_sawn_off = TRUE
@@ -529,7 +529,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	name = "compact compact compact combat shotgun"
 	desc = "A compact version of the compact version of the compact version of the semi automatic combat shotgun. <i>It's a miracle it works...</i>"
 	icon_state = "cshotgunccc"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY
 	sawn_desc = "<i>Sigh.</i> This is a trigger attached to a bullet."
 	can_be_sawn_off = TRUE
@@ -562,7 +562,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15 //blunt edge and really heavy
 	attack_verb = list("bludgeoned", "smashed")
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
 	burst_delay = 0.04 SECONDS //?? very weird number
 	pb_knockback = 12
@@ -605,7 +605,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	recoil_unwielded = 200
 	recoil_backtime_multiplier = 1
 	fire_sound_volume = 100
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
 //Lever-Action Rifles
 /obj/item/gun/ballistic/shotgun/flamingarrow
@@ -621,7 +621,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/flamingarrow.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
 	bolt_wording = "lever"
@@ -725,7 +725,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	item_state = "huntsman"
 	unique_reskin = null
 	attack_verb = list("bludgeoned", "smashed")
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/twobore
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20 //heavy ass elephant gun, why wouldnt it be
 	recoil = 4
@@ -753,7 +753,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	unique_reskin = null
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM

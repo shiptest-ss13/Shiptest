@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "hunting"
 	item_state = "hunting"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction
 	bolt_wording = "bolt"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -85,7 +85,7 @@
 	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
 
 	internal_magazine = FALSE
-	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
+	default_ammo_type = /obj/item/ammo_box/magazine/illestren_a850r
 	empty_autoeject = TRUE
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
@@ -132,7 +132,7 @@
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"
 	desc = "A bolt-action sniper rifle used by Solarian troops. Beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
 	icon_state = "ssg669c"
 	item_state = "ssg669c"
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
@@ -165,7 +165,7 @@
 	icon_state = "scout"
 	item_state = "scout"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	fire_sound = 'sound/weapons/gun/rifle/scout.ogg'
 
 	rack_sound = 'sound/weapons/gun/rifle/scout_bolt_out.ogg'
@@ -190,6 +190,6 @@
 	item_state = "crackhead_rifle"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE

@@ -59,7 +59,7 @@
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/meteor)
-	mag_type = /obj/item/stock_parts/cell/potato
+	default_ammo_type = /obj/item/stock_parts/cell/potato
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
@@ -263,7 +263,7 @@
 	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
-	mag_type = /obj/item/stock_parts/cell/secborg
+	default_ammo_type = /obj/item/stock_parts/cell/secborg
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
@@ -321,7 +321,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/temperature/security

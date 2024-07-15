@@ -142,7 +142,7 @@
 	item_state = "l6closedmag"
 	base_icon_state = "l6"
 
-	mag_type = /obj/item/ammo_box/magazine/mm712x82
+	default_ammo_type = /obj/item/ammo_box/magazine/mm712x82
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -192,7 +192,7 @@
 	..()
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/attackby(obj/item/A, mob/user, params)
-	if(!cover_open && istype(A, mag_type))
+	if(!cover_open && istype(A, default_ammo_type))
 		to_chat(user, "<span class='warning'>[src]'s dust cover prevents a magazine from being fit.</span>")
 		return
 	..()
@@ -208,7 +208,7 @@
 	icon_state = "solar"
 
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
+	default_ammo_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -247,7 +247,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 
 	fire_delay = 0.13 SECONDS
 

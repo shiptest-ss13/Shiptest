@@ -19,7 +19,11 @@
 
 	fire_select_icon_state_prefix = "laser_"
 
-	mag_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun,
+	)
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
@@ -50,23 +54,23 @@
 /obj/item/gun/energy/get_cell()
 	return installed_cell
 
-/obj/item/gun/energy/Initialize()
+/obj/item/gun/energy/Initialize(mapload, spawn_empty)
 	. = ..()
-	if(mag_type)
-		installed_cell = new mag_type(src)
-	else
-		installed_cell = new(src)
-	if(spawn_empty_mag)
-		installed_cell.use(installed_cell.maxcharge)
-	update_ammo_types()
-	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
-	update_appearance()
 
 /obj/item/gun/energy/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/energy/fill_gun()
+	if(default_ammo_type)
+		installed_cell = new default_ammo_type(src)
+	if(spawn_empty_mag)
+		installed_cell.use(installed_cell.maxcharge)
+	update_ammo_types()
+	recharge_newshot(TRUE)
+	update_appearance()
 
 /obj/item/gun/energy/proc/update_ammo_types()
 	var/obj/item/ammo_casing/energy/shot

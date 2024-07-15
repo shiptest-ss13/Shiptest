@@ -878,7 +878,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 0.1 SECONDS
 	recoil = 1
-	mag_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
 	supports_variations = VOX_VARIATION
 	var/chargesound

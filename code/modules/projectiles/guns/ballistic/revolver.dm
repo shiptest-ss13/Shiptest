@@ -10,7 +10,7 @@
 	name = "i demand"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	icon_state = "revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	rack_sound = 'sound/weapons/gun/revolver/revolver_prime.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
@@ -471,7 +471,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -582,7 +582,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
@@ -600,7 +600,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "ashhand"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
@@ -625,7 +625,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
@@ -648,7 +648,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	icon_state = "shadow"
 	item_state = "hp_generic"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE

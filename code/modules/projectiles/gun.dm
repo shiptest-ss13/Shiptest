@@ -56,8 +56,6 @@
 
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
-	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
 
 	///Default magazine to spawn with.
 	var/default_ammo_type = null
@@ -71,8 +69,6 @@
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
 	var/empty_autoeject = FALSE
-	///Whether the gun supports multiple special mag types
-	var/special_mags = FALSE
 
 	///Actual magazine currently contained within the gun
 	var/obj/item/ammo_box/magazine/magazine

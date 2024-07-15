@@ -41,7 +41,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 
 	spread = 1
 	wield_delay = 0.7 SECONDS
@@ -82,7 +82,7 @@
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/p16
+	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	spread = 2
 	wield_delay = 0.5 SECONDS
 
@@ -131,7 +131,7 @@
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/swiss
+	default_ammo_type = /obj/item/ammo_box/magazine/swiss
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = 8
 	spread_unwielded = 15
@@ -148,7 +148,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e40"
 	item_state = "e40"
-	mag_type = /obj/item/ammo_box/magazine/e40
+	default_ammo_type = /obj/item/ammo_box/magazine/e40
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
@@ -308,7 +308,7 @@
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
-	mag_type = /obj/item/ammo_box/magazine/internal/vickland
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/vickland
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE

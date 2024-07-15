@@ -37,12 +37,12 @@
 	)
 
 /obj/item/gun/ballistic/fill_gun()
-	if (!default_ammo_type && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
+	if (!default_ammo_type && !ispath(default_ammo_type, /obj/item/ammo_box/magazine/internal))
 		bolt_locked = TRUE
 		update_appearance()
 		return
 	if (!magazine)
-		magazine = new mag_type(src)
+		magazine = new default_ammo_type(src)
 	if (!default_ammo_type)
 		get_ammo_list(drop_all = TRUE)
 	chamber_round()
@@ -129,7 +129,7 @@
 
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
-	if(!istype(inserted_mag, mag_type))
+	if(!istype(inserted_mag, default_ammo_type))
 		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(inserted_mag, src))

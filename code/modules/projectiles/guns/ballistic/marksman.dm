@@ -23,7 +23,7 @@
 	rack_sound = 'sound/weapons/gun/sniper/rack.ogg'
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	weapon_weight = WEAPON_HEAVY
-	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
+	default_ammo_type = /obj/item/ammo_box/magazine/sniper_rounds
 	w_class = WEIGHT_CLASS_BULKY
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
@@ -56,7 +56,7 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/ebr
+	default_ammo_type = /obj/item/ammo_box/magazine/ebr
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
@@ -80,7 +80,7 @@ EMPTY_GUN_HELPER(automatic/marksman/ebr)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/gal
+	default_ammo_type = /obj/item/ammo_box/magazine/gal
 	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
 	burst_size = 0
 	actions_types = list()

@@ -116,7 +116,7 @@
 	custom_materials = null
 	weapon_weight = WEAPON_MEDIUM
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/minigun)
-	mag_type = /obj/item/stock_parts/cell/crap
+	default_ammo_type = /obj/item/stock_parts/cell/crap
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	can_charge = FALSE
 	var/obj/item/minigunpack/ammo_pack

@@ -16,7 +16,7 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
 
-	mag_type = /obj/item/stock_parts/cell/gun/kalix
+	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
@@ -52,7 +52,7 @@
 	item_state = "pgfgun"
 	w_class = WEIGHT_CLASS_NORMAL
 
-	mag_type = /obj/item/stock_parts/cell/gun/pgf
+	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/projectile/beam/hitscan/kalix/pgf
@@ -83,7 +83,7 @@
 	spread = 2
 	spread_unwielded = 5
 
-	mag_type = /obj/item/stock_parts/cell/gun/kalix
+	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
 
 
