@@ -131,6 +131,7 @@
 	toolspeed = 0.9 //plasmacutters can be used like angle grinders, and are a bit faster
 	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
+	var/adv = FALSE
 
 /obj/item/gun/energy/plasmacutter/ComponentInitialize()
 	. = ..()
@@ -179,9 +180,15 @@
 
 /obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(amount)
-		target.add_overlay(GLOB.cutting_effect)
+		if(adv)
+			target.add_overlay(GLOB.advanced_cutting_effect)
+		else
+			target.add_overlay(GLOB.cutting_effect)
 		. = ..()
-		target.cut_overlay(GLOB.cutting_effect)
+		if(adv)
+			target.cut_overlay(GLOB.advanced_cutting_effect)
+		else
+			target.cut_overlay(GLOB.cutting_effect)
 	else
 		. = ..(amount=1)
 
@@ -192,7 +199,9 @@
 	force = 15
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 	toolspeed = 0.8
+	adv = TRUE
 
+advanced_cutting_effect
 /obj/item/gun/energy/wormhole_projector
 	name = "bluespace wormhole projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons

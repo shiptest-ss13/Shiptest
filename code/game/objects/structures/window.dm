@@ -292,7 +292,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, decon_time, volume=100))
-		to_chat(user, "<span class='warning'>You shatter [src] with the [I].</span>")
+		to_chat(user, span_warning("You shatter [src] with the [I]."))
 		deconstruct(FALSE)
 		return TRUE
 
