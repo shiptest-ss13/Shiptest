@@ -146,6 +146,10 @@
 	display_name = "Elzuose color salve"
 	path = /obj/item/colorsalve
 
+/datum/gear/tablebell
+	display_name = "table bell, brass"
+	path = /obj/item/table_bell/brass
+
 // End Shiptest
 
 /datum/gear/flashlight
