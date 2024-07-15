@@ -236,8 +236,8 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 	if(Zapgun)
 		if(Zapgun.cell)
 			var/obj/item/ammo_casing/energy/shot = Zapgun.ammo_type[Zapgun.select]
-			if(Zapgun.cell.charge >= shot.e_cost)
-				Zapgun.cell.use(shot.e_cost)
+			if(Zapgun.cell.charge >= shot.rounds_per_shot)
+				Zapgun.cell.use(shot.rounds_per_shot)
 				Zapgun.update_appearance()
 				..()
 	else if(Pewgun)

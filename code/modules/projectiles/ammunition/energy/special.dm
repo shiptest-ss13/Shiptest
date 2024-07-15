@@ -4,16 +4,16 @@
 	fire_sound = 'sound/weapons/ionrifle.ogg'
 
 /obj/item/ammo_casing/energy/ion/cheap
-	e_cost = 833
+	rounds_per_shot = 833
 
 /obj/item/ammo_casing/energy/flora/revolution
 	projectile_type = /obj/projectile/energy/florarevolution
 	select_name = "revolution"
-	e_cost = 250
+	rounds_per_shot = 250
 
 /obj/item/ammo_casing/energy/ion/hos
 	projectile_type = /obj/projectile/ion/weak
-	e_cost = 2000
+	rounds_per_shot = 2000
 
 /obj/item/ammo_casing/energy/declone
 	projectile_type = /obj/projectile/energy/declone
@@ -38,7 +38,7 @@
 /obj/item/ammo_casing/energy/temp
 	projectile_type = /obj/projectile/temp
 	select_name = "freeze"
-	e_cost = 2500
+	rounds_per_shot = 2500
 	fire_sound = 'sound/weapons/pulse3.ogg'
 
 /obj/item/ammo_casing/energy/temp/hot
@@ -48,7 +48,7 @@
 /obj/item/ammo_casing/energy/meteor
 	projectile_type = /obj/projectile/meteor
 	select_name = "goddamn meteor"
-	e_cost = 100
+	rounds_per_shot = 100
 
 /obj/item/ammo_casing/energy/net
 	projectile_type = /obj/projectile/energy/net
@@ -64,7 +64,7 @@
 
 /obj/item/ammo_casing/energy/instakill
 	projectile_type = /obj/projectile/beam/instakill
-	e_cost = 0
+	rounds_per_shot = 0
 	select_name = "DESTROY"
 
 /obj/item/ammo_casing/energy/instakill/blue
@@ -75,7 +75,7 @@
 
 /obj/item/ammo_casing/energy/tesla_cannon
 	fire_sound = 'sound/magic/lightningshock.ogg'
-	e_cost = 300
+	rounds_per_shot = 300
 	select_name = "shock"
 	projectile_type = /obj/projectile/energy/tesla_cannon
 	delay = 1
@@ -83,11 +83,11 @@
 /obj/item/ammo_casing/energy/shrink
 	projectile_type = /obj/projectile/beam/shrink
 	select_name = "shrink ray"
-	e_cost = 2000
+	rounds_per_shot = 2000
 
 /obj/item/ammo_casing/energy/buster
 	projectile_type = /obj/projectile/energy/buster
 	select_name = "T4L1 buster replica"
-	e_cost = 100 //should have a lot of energy
+	rounds_per_shot = 100 //should have a lot of energy
 	fire_sound = 'sound/effects/empulse.ogg'
 	delay = 3 SECONDS

@@ -174,7 +174,7 @@
 	if(safety && !visuals)
 		return FALSE
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
+	return !QDELETED(cell) ? (cell.charge >= shot.rounds_per_shot) : FALSE
 
 /obj/item/gun/energy/recharge_newshot(no_cyborg_drain)
 	if (!ammo_type || !cell)
@@ -186,13 +186,13 @@
 		if(!R.cell)
 			return
 		var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
-		if(!R.cell.use(shot.e_cost)) 		//Take power from the borg...
+		if(!R.cell.use(shot.rounds_per_shot)) 		//Take power from the borg...
 			shoot_with_empty_chamber(R)
 			return
-		cell.give(shot.e_cost)	//... to recharge the shot
+		cell.give(shot.rounds_per_shot)	//... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[select]
-		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...
+		if(cell.charge >= AC.rounds_per_shot) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
@@ -200,7 +200,7 @@
 /obj/item/gun/energy/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
 		var/obj/item/ammo_casing/energy/shot = chambered
-		cell.use(shot.e_cost)//... drain the cell cell
+		cell.use(shot.rounds_per_shot)//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	recharge_newshot() //try to charge a new shot
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
@@ -273,8 +273,18 @@
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()
-	return can_shoot(visuals = TRUE) ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * ammo_overlay_sections, 1) : 0
+	return can_shoot(visuals = TRUE) ? CEILING(clamp(get_ammo_count() / get_max_ammo(), 0, 1) * ammo_overlay_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
+
+/obj/item/gun/energy/adjust_current_rounds(obj/item/mag, new_rounds)
+	var/obj/item/stock_parts/cell/gun/cell = mag
+	cell?.charge += new_rounds
+
+/obj/item/gun/energy/get_ammo_count(countchambered = TRUE)
+	return cell.charge
+
+/obj/item/gun/energy/get_max_ammo(countchambered = TRUE)
+	return cell.maxcharge
 
 /obj/item/gun/energy/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -299,19 +309,19 @@
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			cell.use(E.e_cost)
+			cell.use(E.rounds_per_shot)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			cell.use(E.e_cost)
+			cell.use(E.rounds_per_shot)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			cell.use(E.e_cost)
+			cell.use(E.rounds_per_shot)
 			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
 
 
@@ -322,6 +332,6 @@
 		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 	if(cell)
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
-		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
+		. += "\The [name] has [round(cell.charge/shot.rounds_per_shot)] shots remaining on <b>[shot.select_name]</b> mode."
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")

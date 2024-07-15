@@ -38,7 +38,7 @@
 /obj/item/gun/energy/decloner/update_overlays()
 	. = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	if(!QDELETED(cell) && (cell.charge > shot.e_cost))
+	if(!QDELETED(cell) && (cell.charge > shot.rounds_per_shot))
 		. += "decloner_spin"
 
 /obj/item/gun/energy/floragun

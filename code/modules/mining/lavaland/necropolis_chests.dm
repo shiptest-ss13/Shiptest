@@ -907,7 +907,7 @@
 		chargesound = 'sound/weapons/spur_chargemed.ogg'
 		recoil = 0
 		fire_sound = 'sound/weapons/spur_medium.ogg'
-	else if(charge >= AC.e_cost) // less than that
+	else if(charge >= AC.rounds_per_shot) // less than that
 		chargesound = 'sound/weapons/spur_chargehigh.ogg'
 		recoil = 0
 		fire_sound = 'sound/weapons/spur_high.ogg'
@@ -924,7 +924,7 @@
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
 	select_name = "polar star lens"
-	e_cost = 1300
+	rounds_per_shot = 1300
 	fire_sound = null
 	harmful = TRUE
 

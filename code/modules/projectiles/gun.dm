@@ -1052,3 +1052,12 @@
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
+
+/obj/item/gun/proc/adjust_current_rounds(obj/item/mag, new_rounds)
+	return
+
+/obj/item/gun/proc/get_ammo_count(countchambered = TRUE)
+	return
+
+/obj/item/gun/proc/get_max_ammo(countchamber = TRUE)
+	return

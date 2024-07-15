@@ -358,7 +358,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	tac_reloads = FALSE
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/gun/ballistic/derringer/get_ammo(countchambered = FALSE, countempties = TRUE)
+/obj/item/gun/ballistic/derringer/get_ammo_count(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //legacy var name maturity
 	if (chambered && countchambered)
 		boolets++
@@ -368,7 +368,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 
 /obj/item/gun/ballistic/derringer/examine(mob/user)
 	. = ..()
-	var/live_ammo = get_ammo(FALSE, FALSE)
+	var/live_ammo = get_ammo_count(FALSE, FALSE)
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 
 /obj/item/gun/ballistic/derringer/traitor

@@ -109,7 +109,7 @@
 	projectile_type = /obj/projectile/beam/laser/accelerator
 	select_name = "accelerator"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	e_cost = 5000
+	rounds_per_shot = 5000
 
 /obj/projectile/beam/laser/accelerator
 	name = "accelerator laser"

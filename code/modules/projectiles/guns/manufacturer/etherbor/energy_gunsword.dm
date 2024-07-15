@@ -26,7 +26,7 @@
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
+	rounds_per_shot = 666 //30 shots per cell
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix
@@ -91,7 +91,7 @@
 
 /obj/item/ammo_casing/energy/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
-	e_cost = 1250 //10 shots per cell
+	rounds_per_shot = 1250 //10 shots per cell
 	delay = 0
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
@@ -124,7 +124,7 @@
 	select_name  = "AR"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/assault
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 1000 //20 shots per cell
+	rounds_per_shot = 1000 //20 shots per cell
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix/pgf/assault
@@ -140,7 +140,7 @@
 	select_name  = "DMR"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 2000 //20 shots per cell
+	rounds_per_shot = 2000 //20 shots per cell
 	delay = 6
 
 /obj/projectile/beam/hitscan/kalix/pgf/sniper

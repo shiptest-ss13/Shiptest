@@ -243,7 +243,7 @@
 //Casing
 
 /obj/item/ammo_casing/energy/duel
-	e_cost = 0
+	rounds_per_shot = 0
 	projectile_type = /obj/projectile/energy/duel
 	var/setting
 

@@ -141,24 +141,24 @@
 		hud.turn_off()
 		hud = null
 
-/// Returns get_ammo() with the appropriate args passed to it - some guns like the revolver and bow are special cases
+/// Returns get_ammo_count() with the appropriate args passed to it - some guns like the revolver and bow are special cases
 /datum/component/ammo_hud/proc/get_accurate_ammo_count(obj/item/gun/ballistic/the_gun)
 	// fucking revolvers indeed - do not count empty or chambered rounds for the display HUD
 	if(istype(the_gun, /obj/item/gun/ballistic/revolver))
 		var/obj/item/gun/ballistic/revolver/the_revolver = the_gun
-		return the_revolver.get_ammo(countchambered = FALSE, countempties = FALSE)
+		return the_revolver.get_ammo_count(countchambered = FALSE, countempties = FALSE)
 
 	// bows are also weird and shouldn't count the chambered
 	if(istype(the_gun, /obj/item/gun/ballistic/bow))
-		return the_gun.get_ammo(countchambered = FALSE)
+		return the_gun.get_ammo_count(countchambered = FALSE)
 
-	return the_gun.get_ammo(countchambered = TRUE)
+	return the_gun.get_ammo_count(countchambered = TRUE)
 
 /datum/component/ammo_hud/proc/get_accurate_laser_count(obj/item/gun/energy/the_gun)
 	var/obj/item/ammo_casing/energy/current_mode = the_gun.chambered
 	if(!current_mode)
 		return FALSE
-	return round(the_gun.cell.charge/current_mode.e_cost)
+	return round(the_gun.cell.charge/current_mode.rounds_per_shot)
 
 /datum/component/ammo_hud/proc/update_hud()
 	SIGNAL_HANDLER
@@ -168,7 +168,7 @@
 	if(!pew.magazine)
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]no_mag")
 		return
-	if(!pew.get_ammo())
+	if(!pew.get_ammo_count())
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 		return
 
@@ -234,7 +234,7 @@
 /datum/component/ammo_hud/revolver
 	prefix = "revolver_"
 
-/// Returns get_ammo() with the appropriate args passed to it - some guns like the revolver and bow are special cases
+/// Returns get_ammo_count() with the appropriate args passed to it - some guns like the revolver and bow are special cases
 /datum/component/ammo_hud/revolver/get_accurate_ammo_count(obj/item/gun/ballistic/revolver/the_gun)
 	if(istype(the_gun, /obj/item/gun/ballistic/revolver))
 		var/obj/item/gun/ballistic/revolver/the_revolver = the_gun
@@ -304,7 +304,7 @@
 		if(!pew.magazine)
 			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]no_mag")
 			return
-		if(!pew.get_ammo())
+		if(!pew.get_ammo_count())
 			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 			return
 		rounds = num2text(get_accurate_ammo_count(pew))

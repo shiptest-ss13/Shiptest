@@ -379,7 +379,7 @@
 		C.spin()
 		chamber_round(FALSE)
 
-/obj/item/gun/ballistic/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
+/obj/item/gun/ballistic/revolver/get_ammo_count(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //mature var names for mature people
 	if (chambered && countchambered)
 		boolets++
@@ -407,7 +407,7 @@
 
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
-	var/live_ammo = get_ammo(FALSE, FALSE)
+	var/live_ammo = get_ammo_count(FALSE, FALSE)
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
