@@ -75,15 +75,19 @@ SUBSYSTEM_DEF(blackmarket)
 				qdel(purchase)
 			// Drop the order somewhere on the planet's ruin the uplink is on
 			if(SHIPPING_METHOD_DEAD_DROP)
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Deaddrop start</span>")
 				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink)
 				if(overmap_loc.ruin_turfs)
 					for(var/turf/potential_turf in pick(overmap_loc.ruin_turfs))
+						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
 						if(!isfloorturf(potential_turf))
+							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a floor</span>")
 							continue
 						var/turf/open/floor/potential_floor = potential_turf
 						if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
 							var/turf/open/lava/potential_lava_floor = potential_floor
 							if(!potential_lava_floor.is_safe())
+								to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a not lava floor</span>")
 								continue
 						//yippee, there's a viable turf for the package to land on
 						var/obj/structure/closet/supplypod/pod = new()
@@ -97,6 +101,7 @@ SUBSYSTEM_DEF(blackmarket)
 
 						queued_purchases -= purchase
 						qdel(purchase)
+						break
 					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Welp something got fucked.</span>")
 		if(MC_TICK_CHECK)
 			break
