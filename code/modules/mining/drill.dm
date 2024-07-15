@@ -28,7 +28,7 @@
 	var/obj/structure/vein/mining
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell
-	var/preload_mag_type = /obj/item/stock_parts/cell
+	var/preload_cell_type = /obj/item/stock_parts/cell
 	var/power_cost = 100
 	var/metal_attached = METAL_ABSENT
 	var/missing_part //I hate this but it's better than most the ideas I've had
@@ -65,11 +65,11 @@
 	component_parts += new /obj/item/stock_parts/capacitor(null)
 	component_parts += new /obj/item/stock_parts/micro_laser(null)
 	component_parts += new /obj/item/stock_parts/scanning_module(null)
-	if(preload_mag_type)
-		if(!ispath(preload_mag_type,/obj/item/stock_parts/cell))
-			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_mag_type: [preload_mag_type].")
+	if(preload_cell_type)
+		if(!ispath(preload_cell_type,/obj/item/stock_parts/cell))
+			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_cell_type: [preload_cell_type].")
 		else
-			cell = new preload_mag_type(src)
+			cell = new preload_cell_type(src)
 	soundloop = new(list(src), active)
 
 /obj/machinery/drill/process()
