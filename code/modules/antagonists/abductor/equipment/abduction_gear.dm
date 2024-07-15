@@ -443,7 +443,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	apply_stun_delay = 0 SECONDS
 	stun_time = 14 SECONDS
 
-	preload_cell_type = /obj/item/stock_parts/cell/infinite //Any sufficiently advanced technology is indistinguishable from magic
+	preload_mag_type = /obj/item/stock_parts/cell/infinite //Any sufficiently advanced technology is indistinguishable from magic
 	activate_sound = null
 	can_remove_cell = FALSE
 

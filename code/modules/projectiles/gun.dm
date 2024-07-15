@@ -54,9 +54,12 @@
 	///If we have the 'snowflake mechanic,' how long should it take to reload?
 	var/tactical_reload_delay = 1 SECONDS
 
-//BALLISTIC
+	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
+	var/internal_magazine = FALSE
 	///Compatible magazines with the gun
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+
+//BALLISTIC
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -68,8 +71,6 @@
 	var/obj/item/ammo_box/magazine/magazine
 	///whether the gun ejects the chambered casing
 	var/casing_ejector = TRUE
-	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
-	var/internal_magazine = FALSE
 
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
@@ -96,7 +97,6 @@
 //ENERGY
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
@@ -108,9 +108,6 @@
 	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
-
-	///if the gun's cell cannot be replaced
-	var/internal_cell = FALSE
 
 	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
 	//The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
@@ -135,7 +132,15 @@
 	///Storing value for above
 	var/wield_time = 0
 
-// BALLISTIC
+	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
+	trigger_guard = TRIGGER_GUARD_NORMAL
+
+	///Are we firing a burst? If so, dont fire again until burst is done
+	var/currently_firing_burst = FALSE
+	///This prevents gun from firing until the coodown is done, affected by lag
+	var/current_cooldown = 0
+
+	// BALLISTIC
 	///Whether the gun has to be racked each shot or not.
 	var/semi_auto = TRUE
 	///The bolt type of the gun, affects quite a bit of functionality, see gun.dm in defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
@@ -196,7 +201,7 @@
 	var/spread_unwielded = 12
 	//additional spread when dual wielding
 	var/dual_wield_spread = 24
-
+	var/gunslinger_spread_bonus = 0
 
 	///Screen shake when the weapon is fired while wielded.
 	var/recoil = 0
@@ -206,6 +211,8 @@
 	var/recoil_backtime_multiplier = 2
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
+	var/min_recoil = 0
+	var/gunslinger_recoil_bonus = 0
 
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
@@ -215,6 +222,23 @@
 	var/fire_delay = 0.2 SECONDS
 	//Prevent the weapon from firing again while already firing
 	var/firing_burst = 0
+
+/*
+ *  Firemode
+*/
+	/// after initializing, we set the firemode to this
+	var/default_firemode = FIREMODE_SEMIAUTO
+	///Firemode index, due to code shit this is the currently selected firemode
+	var/firemode_index
+	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+
+	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
+	var/fire_select_icon_state_prefix = ""
+	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
+	var/adjust_fire_select_icon_state_on_safety = FALSE
 
 /*
  *  Overlay
@@ -285,41 +309,10 @@
 */
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()
-
-//BALLISTIC
-	///Whether the gun will spawn loaded with a magazine
+	///Whether the gun will spawn loaded with a magazine, for ballastic
 	var/spawnwithmagazine = TRUE
-
-//ENERGY
-	//set to true so the gun is given an empty cell
+	//set to true so the gun is given an empty cell, for energy
 	var/dead_cell = FALSE
-
-// Need to sort
-	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
-	trigger_guard = TRIGGER_GUARD_NORMAL
-
-	/// after initializing, we set the firemode to this
-	var/default_firemode = FIREMODE_SEMIAUTO
-	///Firemode index, due to code shit this is the currently selected firemode
-	var/firemode_index
-	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
-	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
-	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
-	var/fire_select_icon_state_prefix = ""
-	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
-	var/adjust_fire_select_icon_state_on_safety = FALSE
-
-	///Are we firing a burst? If so, dont fire again until burst is done
-	var/currently_firing_burst = FALSE
-	///This prevents gun from firing until the coodown is done, affected by lag
-	var/current_cooldown = 0
-
-	var/min_recoil = 0
-
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
 
 /obj/item/gun/Initialize()
 	. = ..()

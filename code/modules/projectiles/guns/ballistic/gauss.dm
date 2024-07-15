@@ -42,7 +42,7 @@
 	item_state = "model-h"
 	fire_sound = 'sound/weapons/gun/gauss/modelh.ogg'
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
-	cell_type = /obj/item/stock_parts/cell/gun/solgov
+	mag_type = /obj/item/stock_parts/cell/gun/solgov
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0.6 SECONDS //pistol, but heavy caliber.
@@ -76,7 +76,7 @@
 	item_state = "claris"
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
 	load_sound = 'sound/weapons/gun/gauss/sniper_reload.ogg'
-	cell_type = /obj/item/stock_parts/cell/gun/solgov
+	mag_type = /obj/item/stock_parts/cell/gun/solgov
 	fire_delay = 0.4 SECONDS
 	bolt_type = BOLT_TYPE_NO_BOLT
 	internal_magazine = TRUE
@@ -102,7 +102,7 @@
 	item_state = "gar"
 	fire_sound = 'sound/weapons/gun/gauss/gar.ogg'
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
-	cell_type = /obj/item/stock_parts/cell/gun/solgov
+	mag_type = /obj/item/stock_parts/cell/gun/solgov
 	burst_size = 1
 
 	fire_delay = 0.2 SECONDS

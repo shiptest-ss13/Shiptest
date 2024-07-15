@@ -59,7 +59,7 @@
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/meteor)
-	cell_type = /obj/item/stock_parts/cell/potato
+	mag_type = /obj/item/stock_parts/cell/potato
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
@@ -124,7 +124,7 @@
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 0.7 //plasmacutters can be used as welders, and are faster than standard welders
-	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
+	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_weld = 25 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of welding
 
 /obj/item/gun/energy/plasmacutter/ComponentInitialize()
@@ -263,7 +263,7 @@
 	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
-	cell_type = /obj/item/stock_parts/cell/secborg
+	mag_type = /obj/item/stock_parts/cell/secborg
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
@@ -321,7 +321,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/temperature/security

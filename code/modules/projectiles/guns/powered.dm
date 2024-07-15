@@ -4,8 +4,8 @@
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
-	if(cell_type)
-		cell = new cell_type(src)
+	if(mag_type)
+		cell = new mag_type(src)
 	else
 		cell = new(src)
 	update_appearance()
@@ -39,7 +39,7 @@
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
-	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
+	if (!internal_magazine && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
@@ -73,7 +73,7 @@
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell)
+	if(cell && !internal_magazine)
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
 			to_chat(user, "<span class='notice'>You remove the power cell.</span>")

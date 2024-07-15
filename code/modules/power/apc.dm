@@ -130,7 +130,7 @@
 	var/areastring = null
 	var/obj/item/stock_parts/cell/cell
 	var/start_charge = 90				// initial cell charge %
-	var/cell_type = /obj/item/stock_parts/cell/upgraded		//Base cell has 2500 capacity. Enter the path of a different cell you want to use. cell determines charge rates, max capacity, ect. These can also be changed with other APC vars, but isn't recommended to minimize the risk of accidental usage of dirty editted APCs
+	var/mag_type = /obj/item/stock_parts/cell/upgraded		//Base cell has 2500 capacity. Enter the path of a different cell you want to use. cell determines charge rates, max capacity, ect. These can also be changed with other APC vars, but isn't recommended to minimize the risk of accidental usage of dirty editted APCs
 	var/opened = APC_COVER_CLOSED
 	var/shorted = 0
 	var/lighting = APC_CHANNEL_AUTO_ON
@@ -182,13 +182,13 @@
 	req_access = list(ACCESS_AWAY_GENERAL)
 
 /obj/machinery/power/apc/highcap/five_k
-	cell_type = /obj/item/stock_parts/cell/upgraded/plus
+	mag_type = /obj/item/stock_parts/cell/upgraded/plus
 
 /obj/machinery/power/apc/highcap/ten_k
-	cell_type = /obj/item/stock_parts/cell/high
+	mag_type = /obj/item/stock_parts/cell/high
 
 /obj/machinery/power/apc/highcap/fifteen_k
-	cell_type = /obj/item/stock_parts/cell/high/plus
+	mag_type = /obj/item/stock_parts/cell/high/plus
 
 /obj/machinery/power/apc/auto_name
 	auto_name = TRUE
@@ -285,8 +285,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 	has_electronics = APC_ELECTRONICS_SECURED
 	// is starting with a power cell installed, create it and set its charge level
-	if(cell_type)
-		cell = new cell_type
+	if(mag_type)
+		cell = new mag_type
 		cell.charge = start_charge * cell.maxcharge / 100 		// (convert percentage to actual value)
 
 	var/area/A = loc.loc
@@ -1562,11 +1562,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		defaults -= "name"
 		defaults -= "pixel_x"
 		defaults -= "pixel_y"
-	cell_type = cell.type
+	mag_type = cell.type
 	start_charge = cell.charge / cell.maxcharge * 100
 	return defaults + list(
 		"auto_name",
-		"cell_type",
+		"mag_type",
 		"start_charge",
 		"lighting",
 		"equipment",
