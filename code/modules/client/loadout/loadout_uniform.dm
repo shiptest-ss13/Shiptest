@@ -232,8 +232,3 @@
 /datum/gear/uniform/dress/rilena
 	display_name = "red dress, Ri cosplay"
 	path = /obj/item/clothing/under/dress/rilena
-
-//Premium
-/datum/gear/uniform/tacticool
-	display_name = "tacticool turtleneck"
-	path = /obj/item/clothing/under/syndicate/tacticool
