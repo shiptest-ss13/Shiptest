@@ -873,12 +873,11 @@
 	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "spur"
 	item_state = "spur"
-	selfcharge = 1
+	selfcharge = TRUE
 	charge_delay = 1
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 0.1 SECONDS
 	recoil = 1
-	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
 	supports_variations = VOX_VARIATION
 	var/chargesound

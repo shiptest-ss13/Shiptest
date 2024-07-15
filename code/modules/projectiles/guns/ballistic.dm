@@ -46,6 +46,7 @@
 	if (!default_ammo_type)
 		get_ammo_list(drop_all = TRUE)
 	chamber_round()
+	update_appearance()
 
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)

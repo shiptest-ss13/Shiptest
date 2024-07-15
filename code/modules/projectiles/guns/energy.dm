@@ -20,9 +20,9 @@
 	fire_select_icon_state_prefix = "laser_"
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun
-	default_ammo_type = /obj/item/stock_parts/cell/gun
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
 	)
 
 	tac_reloads = FALSE

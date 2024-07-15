@@ -404,6 +404,10 @@
 	desc = "This looks like it could really hurt in melee."
 	force = 75
 	default_ammo_type = /obj/item/ammo_box/magazine/m50/ctf
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m50/ctf,
+	)
+
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped()
 	. = ..()
@@ -430,6 +434,9 @@
 
 /obj/item/gun/ballistic/automatic/laser/ctf
 	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf,
+	)
 	desc = "This looks like it could really hurt in melee."
 	force = 50
 
@@ -478,6 +485,9 @@
 
 /obj/item/gun/ballistic/automatic/laser/ctf/red
 	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/red
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf/red,
+	)
 
 /obj/item/ammo_box/magazine/recharge/ctf/red
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/red
@@ -493,6 +503,9 @@
 
 /obj/item/gun/ballistic/automatic/laser/ctf/blue
 	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/blue
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf/blue,
+	)
 
 /obj/item/ammo_box/magazine/recharge/ctf/blue
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/blue
