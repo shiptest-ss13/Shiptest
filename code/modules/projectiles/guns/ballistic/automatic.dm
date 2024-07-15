@@ -1,7 +1,6 @@
 
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
-	can_suppress = TRUE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -33,8 +32,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
 	fire_delay = 0.5 SECONDS
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	show_magazine_on_sprite = TRUE
@@ -48,7 +45,6 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
 	fire_delay = 0.2 SECONDS
-	can_suppress = FALSE
 	burst_size = 0
 	fire_sound = 'sound/weapons/laser.ogg'
 	casing_ejector = FALSE
@@ -59,8 +55,6 @@
 	icon_state = "ZipPistol"
 	item_state = "ZipPistol"
 	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
-	can_suppress = FALSE
 	actions_types = list()
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
