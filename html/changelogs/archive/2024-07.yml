@@ -92,3 +92,19 @@
   - balance: Decreased the amount of landmines required for its mission and increased
       the value per mine slightly
   - rscdel: Capsaicin no longer Boils you
+2024-07-15:
+  FalloutFalcon:
+  - refactor: refactored attachments to be modular
+  Sadhorizon:
+  - tweak: Changed sunskipper's prefix to SV.
+  - bugfix: Added a missing pipe to the sunskipper.
+  Skies-Of-Blue:
+  - rscadd: typing indicators now trigger off of the command bar
+  - rscadd: an SSD Indicator for when you have been disconnected for less than three
+      minutes
+  - balance: players will now remain awake for three minutes after disconnecting,
+      with a new SSD icon to boot!
+  - balance: players SSD longer than three minutes will lose their icon and fall asleep,
+      much like the previous behavior
+  SomeguyManperson:
+  - bugfix: gun cargo packs now act more as they would be expected to

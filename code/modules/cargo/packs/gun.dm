@@ -189,3 +189,31 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/attachment/rail_light
+	name = "Tactical Rail Light Crate"
+	desc = "Contains a single rail light to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/rail_light)
+	crate_name = "rail light crate"
+
+/datum/supply_pack/gun/attachment/laser_sight
+	name = "Laser Sight Crate"
+	desc = "Contains a single rail light to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/laser_sight)
+	crate_name = "laser sight crate"
+
+/datum/supply_pack/gun/attachment/bayonet
+	name = "Bayonet Crate"
+	desc = "Contains a single bayonet to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/bayonet)
+	crate_name = "bayonet crate"
+
+/datum/supply_pack/gun/attachment/silencer
+	name = "Suppressor Crate"
+	desc = "Contains a single suppressor to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/silencer)
+	crate_name = "silencer crate"
