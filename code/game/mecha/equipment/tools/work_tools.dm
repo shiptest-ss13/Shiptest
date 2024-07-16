@@ -495,7 +495,7 @@
 	name = "109-C Salvage Saw"
 	desc = "Equipment for cutting open walls and airlocks."
 	icon_state = "mecha_saw"
-	equip_cooldown = 15
+	equip_cooldown = 5
 	energy_drain = 10
 	force = 15
 	var/dam_force = 30
