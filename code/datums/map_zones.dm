@@ -533,6 +533,9 @@
 /datum/virtual_level/proc/get_block()
 	return block(locate(low_x,low_y,z_value), locate(high_x,high_y,z_value))
 
+/datum/virtual_level/proc/get_block_portion(lower_x, lower_y, higher_x, higher_y)
+	return block(locate(lower_x,lower_y,z_value), locate(higher_x,higher_y,z_value))
+
 /datum/virtual_level/proc/get_unreserved_block()
 	return block(locate(low_x + reserved_margin, low_y + reserved_margin, z_value), locate(high_x - reserved_margin,high_y - reserved_margin,z_value))
 
@@ -542,8 +545,8 @@
 /datum/virtual_level/proc/get_random_position()
 	return locate(rand(low_x, high_x), rand(low_y, high_y), z_value)
 
-/datum/virtual_level/proc/get_random_position_in_margin()
-	return locate(rand(low_x + reserve_margin, high_x - reserve_margin), rand(low_y + reserve_margin, high_y - reserve_margin), z_value)
+// /datum/virtual_level/proc/get_random_position_in_margin()
+// 	return locate(rand(low_x + reserve_margin, high_x - reserve_margin), rand(low_y + reserve_margin, high_y - reserve_margin), z_value)
 
 /datum/virtual_level/proc/get_below_turf(turf/Turf)
 	if(!down_linkage)
