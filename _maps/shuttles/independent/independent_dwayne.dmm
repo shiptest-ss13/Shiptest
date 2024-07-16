@@ -2214,7 +2214,7 @@
 /area/ship/cargo)
 "IF" = (
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -2997,9 +2997,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/computer/cargo/express/retro{
-	dir = 8
-	},
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
 	name = "Bridge";
@@ -3010,6 +3007,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
