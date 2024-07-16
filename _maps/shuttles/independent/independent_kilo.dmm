@@ -1159,12 +1159,11 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "sW" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/computer/cargo/express{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
+	},
+/obj/machinery/computer/cargo/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
