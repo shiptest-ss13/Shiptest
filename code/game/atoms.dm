@@ -1587,6 +1587,15 @@
 		if(istype(ship))
 			var/obj/docking_port/mobile/shuttle = ship.mobile_port
 			if(shuttle)
+				if(istype(shuttle.docked, /obj/docking_port/stationary))
+					var/obj/docking_port/stationary/shipfinder = shuttle.docked
+					if(shipfinder.owner_ship)
+						for(var/datum/weakref/weakref as anything in shipfinder.owner_ship.gravgen_list)
+							var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
+							if(!SG)
+								shipfinder.owner_ship.gravgen_list -= weakref
+								continue
+							max_grav = max(SG.active,max_grav)
 				for(var/datum/weakref/weakref as anything in shuttle.gravgen_list)
 					var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
 					if(!SG)
