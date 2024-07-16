@@ -54,6 +54,7 @@ const BasicSection = (props, context) => {
         {things.map((thing) => (
           <Button
             key={thing.name}
+            tooltip={thing.fake_name}
             content={thing.name}
             onClick={() =>
               act('orbit', {
@@ -74,6 +75,7 @@ const OrbitedButton = (props, context) => {
   return (
     <Button
       color={color}
+      tooltip={thing.fake_name}
       onClick={() =>
         act('orbit', {
           ref: thing.ref,

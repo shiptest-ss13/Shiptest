@@ -55,7 +55,6 @@
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0.4 SECONDS
 	casing_ejector = FALSE

@@ -326,7 +326,7 @@
 			if(!key)
 				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'>[t_He] appears to be suffering from SSD - Space Sleep Disorder. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
+				msg += "<span class='warning'>[t_He] [t_has] been suffering from SSD - Space Sleep Disorder - for [trunc(((world.time - lastclienttime) / (1 MINUTES)))] minutes. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
 	if (length(msg))
 		. += "<span class='warning'>[msg.Join("")]</span>"
 
