@@ -673,7 +673,7 @@
 
 /obj/effect/spawner/lootdrop/random_computer_circuit_rare
 	loot = list(
-			/obj/item/circuitboard/computer/cargo/express = 5,
+			/obj/item/circuitboard/computer/cargo = 5,
 			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
 			/obj/item/circuitboard/computer/med_data = 5,
