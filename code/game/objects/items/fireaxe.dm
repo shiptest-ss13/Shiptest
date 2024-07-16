@@ -18,7 +18,6 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
-	species_exception = list(/datum/species/kepori)
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/fireaxe/Initialize()
@@ -70,3 +69,29 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=23, icon_wielded="[base_icon_state]1")
 
+/*
+ * Dumb Cute Comment Title - Gorlex Hammers
+ */
+/obj/item/fireaxe/sledgehammer //add wall + structure damage later once Gristlebee's pr is merged
+	icon_state = "fire_axe0"
+	base icon_state = "fireaxe"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	name = "breaching sledgehammer"
+	desc = "A large, slow hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
+	force = 5
+	armour_penetration = 40
+	attack_verb = list("bashed", "smashed", "crushed", "smacked")
+	hitsound = 'sound/weapons/smash.ogg'
+	sharpness = IS_BLUNT
+	tool_behaviour = TOOL_MINING
+	toolspeed = 0.5
+	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
+
+/obj/item/fireaxe/sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30, icon_wielded="[base_icon_state]1")
+
+/obj/item/fireaxe/sledgehammer/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 1.7)
