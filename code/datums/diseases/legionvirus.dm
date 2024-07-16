@@ -13,11 +13,11 @@
 	visibility_flags = HIDDEN_PANDEMIC
 	bypasses_immunity = TRUE
 
-	stage1 = list("You feel a dull pain in your chest.")
-	stage2 = list("Your head begins to ache.")
-	stage3 = list("Something moves underneath your skin.")
-	stage4 = list("<span class='warning'>You feel something pressing against your skin!</span>")
-	stage5 = list("<span class='warning'>Your skin begins to tear apart-!</span>")
+	stage1 = list(span_notice("You feel a dull pain in your chest."))
+	stage2 = list(span_notice("Your head begins to ache."))
+	stage3 = list(span_notice("Something moves underneath your skin."))
+	stage4 = list(span_warning("You feel something pressing against your skin!"))
+	stage5 = list(span_warning("Your skin begins to tear apart-!"))
 	new_form = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 
 /datum/disease/transformation/legionvirus/do_disease_transformation(mob/living/H)
