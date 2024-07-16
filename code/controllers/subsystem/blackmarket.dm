@@ -74,35 +74,54 @@ SUBSYSTEM_DEF(blackmarket)
 				queued_purchases -= purchase
 				qdel(purchase)
 			// Drop the order somewhere on the planet's ruin the uplink is on
+			// mapzones are the planet Zs
 			if(SHIPPING_METHOD_DEAD_DROP)
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Deaddrop start</span>")
-				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink)
-				if(overmap_loc.ruin_turfs)
-					for(var/turf/potential_turf in pick(overmap_loc.ruin_turfs))
-						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
-						if(!isfloorturf(potential_turf))
-							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a floor</span>")
+				//var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink)
+				//var/datum/map_zone/target_zone = purchase.uplink.get_map_zone()
+				var/datum/virtual_level/zlevel = purchase.uplink.get_virtual_level()
+				//var/list/zlevel = list(purchase.uplink.get_virtual_level())
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>zlevel get</span>")
+				var/turf/target_turf = zlevel.get_random_position_in_margin()
+				// to DO: grab the margins of the ruin template and go off the ruin turf co-ords so it lands in the ruin
+				var/turf/landing_turf
+				// TO DO: have it grab the area of the turf and try to find a viable landing spot - stupid forget this
+				var/area/potential_area = target_turf.loc
+				for(var/turf/potential_turf in pick(potential_area))
+					if(isfloorturf(potential_turf))
+						continue
+					var/turf/open/floor/potential_floor = potential_turf
+					if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
+						var/turf/open/lava/potential_lava_floor = potential_floor
+						if(potential_lava_floor.is_safe())
 							continue
-						var/turf/open/floor/potential_floor = potential_turf
-						if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
-							var/turf/open/lava/potential_lava_floor = potential_floor
-							if(!potential_lava_floor.is_safe())
-								to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a not lava floor</span>")
-								continue
-						//yippee, there's a viable turf for the package to land on
-						var/obj/structure/closet/supplypod/pod = new()
-						pod.setStyle(STYLE_BOX)
-						var/atom/movable/item = purchase.entry.spawn_item(pod)
-						pod.explosionSize = list(0,0,0,0)
-						item.forceMove(pod)
-						new /obj/effect/pod_landingzone(get_turf(potential_floor), pod)
+					landing_turf = potential_turf
 
-						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being delivered.</span>")
+				var/obj/structure/closet/supplypod/pod = new()
+				pod.setStyle(STYLE_BOX)
+				purchase.entry.spawn_item(pod)
+				pod.explosionSize = list(0,0,0,1)
+				//item.forceMove(pod)
+				new /obj/effect/pod_landingzone(get_turf(landing_turf), pod)
 
-						queued_purchases -= purchase
-						qdel(purchase)
-						break
-					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Welp something got fucked.</span>")
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being delivered at [target_turf.name]</span>")
+
+				queued_purchases -= purchase
+				qdel(purchase)
+				// for(var/potential_turf in pick(overmap_loc.ruin_turfs))
+				// 	to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
+				// 	if(!isfloorturf(potential_turf))
+				// 		to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a floor</span>")
+				// 		continue
+				// 	var/turf/open/floor/potential_floor = potential_turf
+				// 	if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
+				// 		var/turf/open/lava/potential_lava_floor = potential_floor
+				// 		if(!potential_lava_floor.is_safe())
+				// 			to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a not lava floor</span>")
+				// 			continue
+					//yippee, there's a viable turf for the package to land on
+
+			//to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Welp something got fucked.</span>")
 		if(MC_TICK_CHECK)
 			break
 

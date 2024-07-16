@@ -161,6 +161,8 @@
 
 /datum/blackmarket_item/clothing/syndi_spacesuit_set/spawn_item(loc)
 	var/obj/item/storage/box/syndie_kit/B = ..()
+	B.name = "Spacesuit Box"
+	B.desc = "It has a Syndicate logo on it."
 	var/suit_color = pick(list("red","green","dark green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
 	switch(suit_color)
 		if("red")
