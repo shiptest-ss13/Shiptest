@@ -1643,7 +1643,12 @@
 /area/ship/hallway/port)
 "no" = (
 /obj/structure/curtain/cloth/grey,
-/turf/open/floor/ship/dirt,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "nv" = (
 /obj/effect/turf_decal/industrial/traffic,
@@ -1824,22 +1829,22 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/toy/plush/knight{
-	pixel_y = 10;
+	pixel_y = 11;
 	pixel_x = -10
 	},
 /obj/item/toy/plush/hornet{
-	pixel_y = 8;
-	pixel_x = -3
+	pixel_y = 10;
+	pixel_x = -2
 	},
 /obj/item/toy/plush/mora{
-	pixel_y = 4;
-	pixel_x = 5
+	pixel_y = 6;
+	pixel_x = 6
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
+/obj/structure/dresser,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "oX" = (
