@@ -73,51 +73,51 @@ SUBSYSTEM_DEF(blackmarket)
 
 				queued_purchases -= purchase
 				qdel(purchase)
-			// Drop the order somewhere on the planet's ruin the uplink is on
-			// mapzones are the planet Zs
+			// Drop the order somewhere with the bounds of overmap encounter's ruin
 			if(SHIPPING_METHOD_DEAD_DROP)
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Deaddrop start</span>")
-				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink)
+				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink, TRUE)
 				var/datum/virtual_level/zlevel = purchase.uplink.get_virtual_level()
 				var/turf/landing_turf
-				var/datum/map_template/ruin = overmap_loc.template
-
-				for(var/possible_ruin in overmap_loc.ruin_turfs)
-					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
-					var/turf/lowerbound = overmap_loc.ruin_turfs[possible_ruin]
-					for(var/potential_turf in pick(zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))))
-						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Checking block</span>")
-						if(isfloorturf(potential_turf))
-							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a floorturf</span>")
-							continue
-						var/turf/open/floor/potential_floor = potential_turf
-						if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
-							var/turf/open/lava/potential_lava_floor = potential_floor
-							if(potential_lava_floor.is_safe())
+				var/datum/map_template/ruin
+				// only works if there's a pre-loaded ruin, also new check to exlude possible breaks admin ID
+				if(!isnull(overmap_loc))
+					ruin = overmap_loc.template
+					for(var/possible_ruin in overmap_loc.ruin_turfs)
+						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
+						var/turf/lowerbound = overmap_loc.ruin_turfs[possible_ruin]
+						for(var/potential_turf in pick(zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))))
+							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Checking block</span>")
+							if(isfloorturf(potential_turf))
+								to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a floorturf</span>")
 								continue
-						if(istype(potential_floor,/turf/open/acid))
-							var/turf/open/acid/potential_acid_floor = potential_floor
-							if(potential_acid_floor.is_safe_to_cross())
-								continue
+							var/turf/open/floor/potential_floor = potential_turf
+							if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
+								var/turf/open/lava/potential_lava_floor = potential_floor
+								if(potential_lava_floor.is_safe())
+									continue
+							if(istype(potential_floor,/turf/open/acid))
+								var/turf/open/acid/potential_acid_floor = potential_floor
+								if(potential_acid_floor.is_safe_to_cross())
+									continue
 
-						//yippee, there's a viable turf for the package to land on
-						landing_turf = potential_floor
-						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a landing spot</span>")
-						break
+							//yippee, there's a viable turf for the package to land on
+							landing_turf = potential_floor
+							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a landing spot</span>")
+							break
 
+				if(!landing_turf)
+					landing_turf = zlevel.get_random_position()
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>No spot found going random</span>")
 
-					if(!landing_turf)
-						landing_turf = zlevel.get_random_position()
-						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>No spot found going random</span>")
+				var/obj/structure/closet/supplypod/pod = new()
+				pod.setStyle(STYLE_BOX)
+				purchase.entry.spawn_item(pod)
+				pod.explosionSize = list(0,0,0,1)
+				new /obj/effect/pod_landingzone(get_turf(landing_turf), pod)
 
-					var/obj/structure/closet/supplypod/pod = new()
-					pod.setStyle(STYLE_BOX)
-					purchase.entry.spawn_item(pod)
-					pod.explosionSize = list(0,0,0,1)
-					new /obj/effect/pod_landingzone(get_turf(landing_turf), pod)
-
-					queued_purchases -= purchase
-					qdel(purchase)
+				queued_purchases -= purchase
+				qdel(purchase)
 		if(MC_TICK_CHECK)
 			break
 
