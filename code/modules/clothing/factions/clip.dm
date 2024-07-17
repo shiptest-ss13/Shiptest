@@ -140,10 +140,10 @@
 
 	icon_state = "clip_trenchcoat"
 	item_state = "trenchcoat_solgov"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
@@ -156,7 +156,7 @@
 
 	icon_state = "clip_captaincoat"
 	item_state = "clip_captaincoat"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
