@@ -299,7 +299,7 @@
 		/obj/item/clothing/gloves/color/latex/nitrile/infiltrator,
 		/obj/item/clothing/mask/infiltrator,
 		/obj/item/clothing/shoes/combat/sneakboots,
-		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/automatic/pistol/syndicate,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
 		))
@@ -311,6 +311,18 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile/infiltrator(src)
 	new /obj/item/clothing/mask/infiltrator(src)
 	new /obj/item/clothing/shoes/combat/sneakboots(src)
+
+/obj/item/storage/toolbox/bounty
+	name = "defused explosives case"
+	desc = "Store defused landmines in here."
+	icon_state = "infiltrator_case"
+	item_state = "infiltrator_case"
+
+/obj/item/storage/toolbox/bounty/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 4
+	STR.max_items = 2
 
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)

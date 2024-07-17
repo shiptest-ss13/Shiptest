@@ -28,7 +28,7 @@
 	name = ".38 Speedloader Crate"
 	desc = "Contains a .38 speedloader for revolvers, containing six rounds."
 	contains = list(/obj/item/ammo_box/c38)
-	cost = 350
+	cost = 250
 
 /datum/supply_pack/ammo/m10mm_mag
 	name = "10mm Stechkin Magazine Crate"

@@ -26,7 +26,7 @@
 /datum/supply_pack/food/pizza
 	name = "Pizza Crate"
 	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99.5% anomaly-free!"
-	cost = 6000 // Best prices this side of the galaxy.
+	cost = 3000// Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,

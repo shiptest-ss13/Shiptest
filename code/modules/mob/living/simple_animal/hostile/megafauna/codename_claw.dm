@@ -232,7 +232,6 @@
 	projectiletype = /obj/projectile/tentacle
 	projectilesound = 'sound/effects/splat.ogg'
 	Shoot(target)
-
 /////TENTACLE END
 
 /////STING ATTACK
