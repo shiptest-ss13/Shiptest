@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(factions)
 /datum/controller/subsystem/factions/Initialize(timeofday)
 	for(var/path in subtypesof(/datum/faction))
 		factions += new path()
+	return ..()
 
 /datum/controller/subsystem/factions/proc/ship_prefix_to_faction(prefix)
 	for(var/datum/faction/faction in factions)
