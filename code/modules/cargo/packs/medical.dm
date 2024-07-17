@@ -10,42 +10,36 @@
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
 	cost = 750
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/regular)
 
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing bruises and broken bones."
 	cost = 1250
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing severe burns."
 	cost = 1250
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/fire)
 
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "Contains one first aid kit focused on helping oxygen deprivation victims."
 	cost = 1250
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/o2)
 
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing damage dealt by heavy toxins."
 	cost = 1250
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
 /datum/supply_pack/medical/firstaid_rad_single
 	name = "Radiation Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on reducing the damage done by radiation."
 	cost = 1000
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/radiation)
 
 /*

@@ -14,7 +14,7 @@ SUBSYSTEM_DEF(cargo)
 /datum/controller/subsystem/cargo/proc/randomize_cargo()
 	for(var/datum/cargo_market/market in markets)
 		var/datum/supply_pack/pack = pick(market.supply_packs)
-			pack.cost = round(pack.cost * rand(.90, 1.10))
+		pack.cost = round(pack.cost * rand(0.90, 1.10))
 
 /datum/controller/subsystem/cargo/proc/queue_item(datum/cargo_order/purchase)
 	queued_purchases += purchase

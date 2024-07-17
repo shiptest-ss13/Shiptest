@@ -92,7 +92,6 @@
 	name = ".38 Match Grade Speedloader"
 	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots."
 	cost = 200
-	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/match)
 	crate_name = ".38 match crate"
 
@@ -100,7 +99,6 @@
 	name = ".38 DumDum Speedloader"
 	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets."
 	cost = 200
-	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/dumdum)
 	crate_name = ".38 match crate"
 
