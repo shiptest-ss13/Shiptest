@@ -20,17 +20,23 @@
 	name = "shadow's locker"
 	desc = "The closet of equipment and attire for the aspiring shadow."
 	icon_state = "cabinet"
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
 
 /obj/structure/closet/secure_closet/flamebearer
 	name = "flamebearer's locker"
 	desc = "The closet of equipment an ascetic Flamebearer would require."
 	icon_state = "cabinet"
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
 
 /obj/structure/closet/secure_closet/hunter
 	name = "hunter's locker"
 	desc = "Everything a hunter will need, held in one secure closet."
 	icon_state = "cabinet"
 	req_access = list(ACCESS_SECURITY)
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
 
 /obj/structure/closet/secure_closet/machinist
 	name = "machinist's Locker"

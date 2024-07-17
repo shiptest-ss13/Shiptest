@@ -155,3 +155,15 @@
 	gas_overlay = "freon"
 	moles_visible = MOLES_GAS_VISIBLE *30
 	fusion_power = -5
+
+/datum/gas/hydrogen
+	id = GAS_HYDROGEN
+	specific_heat = 10
+	name = "Hydrogen"
+	flags = GAS_FLAG_DANGEROUS
+	moles_visible = MOLES_GAS_VISIBLE
+	color = "#ffe"
+	fusion_power = 0
+	fire_products = list(GAS_H2O = 1)
+	fire_burn_rate = 2
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50

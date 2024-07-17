@@ -62,10 +62,6 @@
 	display_name = "toy, magic eight ball"
 	path = /obj/item/toy/eightball
 
-/datum/gear/wallet
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
-
 /datum/gear/pai
 	display_name = "personal AI device"
 	path = /obj/item/paicard
@@ -163,14 +159,6 @@
 /datum/gear/crowbar
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
-
-/datum/gear/balloon
-	display_name = "toy, balloon"
-	path = /obj/item/toy/balloon
-
-/datum/gear/balloon/ian
-	display_name = "toy, ian balloon"
-	path = /obj/item/toy/balloon/corgi
 
 /datum/gear/surgical_mask
 	display_name = "surgical mask"

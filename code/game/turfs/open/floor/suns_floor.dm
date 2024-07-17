@@ -15,12 +15,12 @@
 	floor_tile = /obj/item/stack/tile/suns/pattern
 
 /turf/open/floor/suns/hatch
-	name = "hatched white marble floor"
+	name = "hatched wooden floor"
 	icon_state = "lighthatched"
 	floor_tile = /obj/item/stack/tile/suns/hatch
 
 /turf/open/floor/suns/diagonal
-	name = "diagonal white marble floor"
+	name = "diagonal wooden floor"
 	icon_state = "lightdiag"
 	floor_tile = /obj/item/stack/tile/suns/diagonal
 

@@ -62,7 +62,11 @@
 	desc = "A simple and sturdy pump-action shotgun sporting a 5-round capacity, manufactured by Hunter's Pride. Found widely throughout the Frontier in the hands of hunters, pirates, police, and countless others. Chambered in 12g."
 	sawn_desc = "A stockless and shortened pump-action shotgun. The worsened recoil and accuracy make it a poor sidearm anywhere beyond punching distance."
 	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	icon_state = "brimstone"
 	item_state = "brimstone"
 
@@ -74,7 +78,7 @@
 	fire_delay = 0.05 SECONDS //slamfire
 	rack_delay = 0.2 SECONDS
 
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
@@ -91,17 +95,23 @@
 		item_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/brimstone/no_mag
+	spawnwithmagazine = FALSE
 // HELLFIRE SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
 	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	icon_state = "hellfire"
 	item_state = "hellfire"
+
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
 
@@ -122,6 +132,8 @@
 		item_state = "dshotgun_sawn" // ditto
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/hellfire/no_mag
+	spawnwithmagazine = FALSE
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
 	spread = 4
@@ -129,8 +141,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
-
-/obj/item/gun/ballistic/shotgun/automatic
 	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
@@ -146,14 +156,14 @@
 	item_state = "shotgun_combat"
 	fire_delay = 0.5 SECONDS
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	name = "compact combat shotgun"
 	desc = "A compact version of the semi-automatic combat shotgun. For close encounters."
 	icon_state = "cshotgunc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 
 //Dual Feed Shotgun
@@ -161,7 +171,14 @@
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube
 	name = "cycler shotgun"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
+
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
 	icon_state = "cycler"
+
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	w_class = WEIGHT_CLASS_HUGE
 	var/toggled = FALSE
@@ -204,16 +221,15 @@
 /obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	name = "\improper Bulldog Shotgun"
 	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-	inhand_x_dimension = 32
-	inhand_y_dimension = 32
+
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -263,7 +279,11 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
 	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"
 	item_state = "cm15"
@@ -283,8 +303,11 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	desc = "A classic break action shotgun, hand-made in a Hunter's Pride workshop. Both barrels can be fired in quick succession or even simultaneously. Guns like this have been popular with hunters, sporters, and criminals for millennia. Chambered in 12g."
 	sawn_desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	icon = 'icons/obj/guns/48x32guns.dmi'
 	base_icon_state = "dshotgun"
 
 	icon_state = "dshotgun"
@@ -306,11 +329,16 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 						"Stained Green" = "dshotgun_green"
 						)
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	pb_knockback = 3 // it's a super shotgun!
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	bolt_wording = "barrel"
+
+	burst_delay = 0.05 SECONDS
+	burst_size = 2
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
 	if (bolt_locked == FALSE)
@@ -379,6 +407,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		item_state = "dshotgun_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag
+	spawnwithmagazine = FALSE
+
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
 	name = "sawn-off double-barreled shotgun"
@@ -386,6 +417,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 
 	wield_slowdown = 0.25
 	wield_delay = 0.3 SECONDS //OP? maybe
@@ -417,6 +449,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon = 'icons/obj/guns/projectile.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
+	mob_overlay_icon = null
+
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
@@ -427,6 +463,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
 	var/slung = FALSE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
 	..()
@@ -477,7 +516,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
 	sawn_desc = "You know, this isn't funny anymore."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 20)))	//minimum probability of 20, maximum of 60
@@ -500,7 +539,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY
 	sawn_desc = "<i>Sigh.</i> This is a trigger attached to a bullet."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(50))	//It's going to blow up.
@@ -532,7 +571,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
-	fire_delay = 0.08 SECONDS //?? very weird number
+	burst_delay = 0.04 SECONDS //?? very weird number
 	pb_knockback = 12
 	unique_reskin = null
 	recoil = 10
@@ -545,6 +584,8 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_BRAZIL
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 10)))
@@ -569,6 +610,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	pb_knockback = 40
 	recoil = 100
 	recoil_unwielded = 200
+	recoil_backtime_multiplier = 1
 	fire_sound_volume = 100
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
@@ -580,10 +622,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	base_icon_state = "flamingarrow"
 	icon_state = "flamingarrow"
 	item_state = "flamingarrow"
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
@@ -591,7 +633,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 	wield_slowdown = 0.5
 	wield_delay = 0.65 SECONDS
@@ -601,6 +643,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 
 	recoil = 0
 	recoil_unwielded = 2
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
@@ -615,6 +660,18 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(!wielded)
 		SpinAnimation(7,1)
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	var/fan = FALSE
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && wielded_fully && loc == user && !safety)
+		fan = TRUE
+		fire_delay = 0.35 SECONDS
+	. = ..()
+	fire_delay = src::fire_delay
+	if(fan)
+		rack()
+		to_chat(user, "<span class='notice'>You quickly rack the [bolt_wording] of \the [src]!</span>")
+		balloon_alert_to_viewers("quickly racks!")
+		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
 	. = ..()
@@ -664,9 +721,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "HP Huntsman"
 	desc = "A comically huge double-barreled rifle replete with brass inlays depicting flames and naturalistic scenes, clearly meant for the nastiest monsters the Frontier has to offer. If you want an intact trophy, don't aim for the head. Chambered in two-bore."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	base_icon_state = "huntsman"
@@ -688,6 +746,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	rack_sound_volume = 50
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
+	default_firemode = FIREMODE_SEMIAUTO
+
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
@@ -697,27 +758,25 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "beacon"
 	item_state = "beacon"
 	unique_reskin = null
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	can_be_sawn_off=TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	pb_knockback = 3
 	wield_slowdown = 0.7
 	spread_unwielded = 15
 	spread = 0
 	recoil = 0
 	recoil_unwielded = 5
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(mob/user)
 	. = ..()
@@ -731,6 +790,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		spread = 6
 		recoil = 2
 		recoil_unwielded = 4
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
