@@ -112,7 +112,7 @@
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
-		faction_datum = SSfactions.faction_path_to_datum(source_template.faction_path)
+		faction_datum = source_template.faction_datum
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)

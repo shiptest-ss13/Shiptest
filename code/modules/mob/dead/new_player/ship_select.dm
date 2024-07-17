@@ -166,7 +166,7 @@
 			continue
 		var/list/ship_data = list(
 			"name" = T.name,
-			"faction" = SSfactions.ship_prefix_to_name(T.prefix),
+			"faction" = T.faction_name,
 			"desc" = T.description,
 			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),

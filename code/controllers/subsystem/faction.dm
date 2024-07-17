@@ -26,5 +26,6 @@ SUBSYSTEM_DEF(factions)
 
 /datum/controller/subsystem/factions/proc/faction_path_to_datum(path)
 	for(var/datum/faction/faction in factions)
-		if(ispath(faction, path))
+		if(faction.type == path)
 			return faction
+	stack_trace("we did not return any faction with path [path]")
