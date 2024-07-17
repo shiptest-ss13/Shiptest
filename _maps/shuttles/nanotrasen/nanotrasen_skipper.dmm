@@ -2940,7 +2940,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input{
 	dir = 1
 	},
-/turf/open/floor/engine/airless,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "wG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3366,9 +3366,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/paper/crumpled{
-	default_raw_text = "66% Oxy (Node 1) to 34% Plasma (Node 2) works great at 500 kPa."
-	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
 	name = "engine fuel pump"
@@ -3722,7 +3719,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 1
 	},
-/turf/open/floor/engine/hydrogen,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "DL" = (
 /obj/effect/decal/cleanable/food/flour,
@@ -4092,7 +4089,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 5
 	},
-/obj/effect/turf_decal/atmos/mix,
+/obj/effect/turf_decal/atmos/plasma,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "HA" = (
