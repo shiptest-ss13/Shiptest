@@ -322,7 +322,7 @@
 	glass_name = "iced coffee"
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
 
-/datum/reagent/consumable/coffee/overdose_process(mob/living/M)
+/datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
 	M.Jitter(5)
 	..()
 
@@ -346,7 +346,7 @@
 	glass_name = "hot ice coffee"
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
-/datum/reagent/consumable/coffee/overdose_process(mob/living/M)
+/datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/M)
 	M.Jitter(5)
 	..()
 
@@ -631,7 +631,7 @@
 	glass_name = "soy latte"
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
-/datum/reagent/consumable/coffee/overdose_process(mob/living/M)
+/datum/reagent/consumable/soy_latte/overdose_process(mob/living/M)
 	M.Jitter(5)
 	..()
 
@@ -656,7 +656,7 @@
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
 
-/datum/reagent/consumable/coffee/overdose_process(mob/living/M)
+/datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
 	M.Jitter(5)
 	..()
 
