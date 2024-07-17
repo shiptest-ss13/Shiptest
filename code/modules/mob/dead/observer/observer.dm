@@ -495,7 +495,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(isobserver(usr)) //Make sure they're an observer!
 
-
 		var/list/dest = list() //List of possible destinations (mobs)
 		var/target = null	   //Chosen target.
 

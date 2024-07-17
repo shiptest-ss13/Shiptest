@@ -92,10 +92,6 @@
 	display_name = "beanie"
 	path = /obj/item/clothing/head/beanie
 
-/datum/gear/hat/tinfoil
-	display_name = "tinfoil hat"
-	path = /obj/item/clothing/head/foilhat
-
 /datum/gear/hat/wig
 	display_name = "wig"
 	path = /obj/item/clothing/head/wig
@@ -103,20 +99,6 @@
 /datum/gear/hat/cowboy
 	display_name = "cowboy hat"
 	path = /obj/item/clothing/head/cowboy
-
-/datum/gear/hat/catears
-	display_name = "cat ears"
-	path = /obj/item/clothing/head/kitty
-
-/datum/gear/hat/horse
-	display_name = "horse mask"
-	path = /obj/item/clothing/mask/horsehead
-	slot = ITEM_SLOT_MASK
-
-/datum/gear/hat/piratehat
-	display_name = "pirate hat"
-	description = "Yarr. Comes with one free pirate speak manual."
-	path = /obj/item/clothing/head/pirate
 
 /datum/gear/hat/trapper
 	display_name = "trapper hat"
