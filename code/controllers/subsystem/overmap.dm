@@ -291,6 +291,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -302,6 +303,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -376,7 +378,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /**
  * Returns a random, usually empty turf in the overmap

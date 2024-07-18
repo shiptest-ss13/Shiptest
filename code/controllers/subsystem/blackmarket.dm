@@ -66,8 +66,8 @@ SUBSYSTEM_DEF(blackmarket)
 				var/pickedloc = vlevel.get_side_turf(startSide)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				item.inertia_moving = TRUE
-				item.safe_throw_at(purchase.uplink, 3, 3, spin = FALSE)
+				//use move() instead
+				item.Move(get_step(T,get_dir(T,pickedloc)))
 
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)].</span>")
 
@@ -80,12 +80,12 @@ SUBSYSTEM_DEF(blackmarket)
 				var/datum/virtual_level/zlevel = purchase.uplink.get_virtual_level()
 				var/turf/landing_turf
 				var/datum/map_template/ruin
-				// only works if there's a pre-loaded ruin, also new check to exlude possible breaks admin ID
+				// only works if there's a pre-loaded ruin - use spawned ruin now instead
 				if(!isnull(overmap_loc))
-					ruin = overmap_loc.template
 					for(var/possible_ruin in overmap_loc.ruin_turfs)
 						to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Found a ruinturf</span>")
 						var/turf/lowerbound = overmap_loc.ruin_turfs[possible_ruin]
+						ruin = overmap_loc.spawned_ruins[possible_ruin]
 						for(var/potential_turf in pick(zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))))
 							to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>Checking block</span>")
 							if(isfloorturf(potential_turf))
