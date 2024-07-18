@@ -6,9 +6,8 @@
 	shaded_charge = FALSE
 	ammo_x_offset = 2
 	ammo_y_offset = 2
-	can_flashlight = FALSE
 	w_class = WEIGHT_CLASS_HUGE
-	big_gun = TRUE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
+	mag_size = MAG_SIZE_LARGE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
@@ -28,9 +27,6 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
-	can_flashlight = TRUE
-	flight_x_offset = 18
-	flight_y_offset = 11
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -51,10 +47,10 @@
 	icon_state = "flora"
 	item_state = "gun"
 	ammo_type = list(/obj/item/ammo_casing/energy/flora/yield, /obj/item/ammo_casing/energy/flora/mut, /obj/item/ammo_casing/energy/flora/revolution)
-	modifystate = 1
+	modifystate = TRUE
 	ammo_x_offset = 1
 	selfcharge = 1
-	shaded_charge = 1
+	shaded_charge = TRUE
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
@@ -98,7 +94,6 @@
 	overheat_time = 20
 	holds_charge = TRUE
 	unique_frequency = TRUE
-	can_flashlight = FALSE
 	max_mod_capacity = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
@@ -108,7 +103,7 @@
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=4000)
-	suppressed = null
+	suppressed = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 

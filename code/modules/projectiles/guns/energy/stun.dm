@@ -5,7 +5,6 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
-
 	spread = 2
 	spread_unwielded = 4
 
@@ -22,7 +21,6 @@
 /obj/item/gun/energy/e_gun/advtaser/cyborg
 	name = "cyborg taser"
 	desc = "An integrated hybrid taser that draws directly from a cyborg's power cell. The weapon contains a limiter to prevent the cyborg's power cell from overheating."
-	can_flashlight = FALSE
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 
@@ -37,11 +35,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 10
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
-
 	spread = 2
 	spread_unwielded = 4
 

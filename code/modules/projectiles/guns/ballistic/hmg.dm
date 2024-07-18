@@ -163,7 +163,6 @@
 	base_icon_state = "l6"
 
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	can_suppress = FALSE
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -236,8 +235,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	can_suppress = FALSE
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
