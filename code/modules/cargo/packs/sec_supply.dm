@@ -34,7 +34,7 @@
 	name = "Empty Sandbags"
 	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
 	contains = list(/obj/item/storage/box/emptysandbags)
-	cost = 200
+	cost = 150
 	crate_name = "sandbag crate"
 
 /datum/supply_pack/sec_supply/wall_flash
