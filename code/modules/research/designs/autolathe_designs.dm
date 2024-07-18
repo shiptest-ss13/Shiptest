@@ -1255,3 +1255,4 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
 	build_path = /obj/item/stack/marker_beacon
 	category = list("initial","Misc")
+
