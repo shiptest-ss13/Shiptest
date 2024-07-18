@@ -1250,7 +1250,7 @@
 
 /datum/design/marker_beacon
 	name = "Marker Beacon"
-	id = "beacon"
+	id = "marker_beacon"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
 	build_path = /obj/item/stack/marker_beacon
