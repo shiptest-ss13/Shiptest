@@ -81,6 +81,10 @@
 	display_name = "hoodie, T4L1"
 	path = /obj/item/clothing/suit/hooded/hoodie/rilena
 
+/datum/gear/suit/jacket/hoodie_baw
+	display_name = "hoodie, black w grey hood"
+	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
@@ -103,7 +107,7 @@
 	path = /obj/item/clothing/suit/toggle/labcoat
 
 /datum/gear/suit/raincoat
-	display_name = "Cybersun labcoat"
+	display_name = "translucent labcoat"
 	description = "Designer lab safety equipment. You're pretty sure this is just a raincoat."
 	path = /obj/item/clothing/suit/toggle/labcoat/raincoat
 

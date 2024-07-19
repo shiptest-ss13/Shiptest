@@ -82,7 +82,6 @@
 			smoke.start()
 	if(grilled_item)
 		grill_time += 1
-		grilled_item.reagents.add_reagent(/datum/reagent/consumable/char, 1)
 		grill_fuel -= 10
 		grilled_item.AddComponent(/datum/component/sizzle)
 
