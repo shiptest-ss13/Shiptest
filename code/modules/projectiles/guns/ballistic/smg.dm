@@ -262,41 +262,6 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
 	chamber_round()
 
-/obj/item/gun/ballistic/automatic/smg/cm5
-	name = "\improper CM-5"
-	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	icon_state = "cm5"
-	item_state = "cm5"
-
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
-	manufacturer = MANUFACTURER_MINUTEMAN
-
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
-
-EMPTY_GUN_HELPER(automatic/smg/cm5)
-
-/obj/item/gun/ballistic/automatic/smg/cm5/compact
-	name = "\improper CM-5c"
-	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excels at close range and is very lightweight. You feel like this gun is mildly unfinished. Chambered in 9mm."
-	w_class = WEIGHT_CLASS_NORMAL
-	spread = 25
-	spread_unwielded = 40
-
-	fire_delay = 0.08 SECONDS
-
-	recoil = 1
-	recoil_unwielded = 2
-	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
-
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
 	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."

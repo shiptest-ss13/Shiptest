@@ -279,24 +279,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "bulldog_suns"
 	item_state = "bulldog_suns"
 
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
-	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
-	icon_state = "cm15"
-	item_state = "cm15"
-	empty_alarm = FALSE
-	empty_indicator = FALSE
-	unique_mag_sprites_for_variants = FALSE
-	manufacturer = MANUFACTURER_MINUTEMAN
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
-
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////

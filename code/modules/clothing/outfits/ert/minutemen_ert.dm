@@ -4,7 +4,7 @@
 	job_icon = "clip_cmm2"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
-	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/minutemen
+	suit_store = /obj/item/gun/ballistic/shotgun/cm15
 	mask = /obj/item/clothing/mask/gas/clip
 	head = /obj/item/clothing/head/helmet/riot/clip
 	belt = /obj/item/storage/belt/military/clip/cm15

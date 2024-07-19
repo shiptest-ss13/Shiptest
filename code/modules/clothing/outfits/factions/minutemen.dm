@@ -554,7 +554,7 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-16)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/p16
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4 //f4 is rename of GAL, don't wanna repath upon adding the clip guns though, if i forget to remove this during then, fucking yell at me
@@ -582,7 +582,7 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/engi/armed
 	name = "CLIP Minutemen - Field Engineer (Armed - CM-16)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
@@ -639,7 +639,7 @@
 /datum/outfit/job/clip/minutemen/grunt/lead/armed
 	name = "CLIP Minutemen - Field Sergeant (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/p16
 	//replace commander with the cm23 when its impemented, see the cm-f4 above
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
