@@ -159,7 +159,7 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/blackmarket_item/clothing/syndi_spacesuit_set/spawn_item(loc)
+/datum/blackmarket_item/clothing/syndie_spacesuit_set/spawn_item(loc)
 	var/obj/item/storage/box/syndie_kit/B = ..()
 	B.name = "Spacesuit Box"
 	B.desc = "It has a Syndicate logo on it."
@@ -229,7 +229,7 @@
 
 /datum/blackmarket_item/clothing/ramzi_suit
 	name = "Rusted Red Hardsuit"
-	desc = "A vintage ICW Era Gorlex Maruader hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
+	desc = "A vintage ICW Era Gorlex Marauder hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
 	item = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 
 	price_min = 1500
