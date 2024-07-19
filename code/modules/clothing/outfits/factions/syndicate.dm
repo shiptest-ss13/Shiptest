@@ -750,7 +750,7 @@
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
 	pda_slot = ITEM_SLOT_LPOCKET
-	bpx = /obj/item/storage/box/survival/medical
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/syndicate/paramedic/gorlex
 	name = "Syndicate - Paramedic (Gorlex)"
