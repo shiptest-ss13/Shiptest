@@ -164,7 +164,6 @@
 	icon_state = "e40"
 	item_state = "e40"
 	mag_type = /obj/item/ammo_box/magazine/e40
-	can_suppress = FALSE
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
