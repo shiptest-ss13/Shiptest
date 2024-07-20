@@ -2725,14 +2725,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "yH" = (
-/obj/item/gun/ballistic/automatic/pistol,
-/obj/item/gun/ballistic/automatic/pistol{
+/obj/item/gun/ballistic/automatic/pistol/syndicate,
+/obj/item/gun/ballistic/automatic/pistol/syndicate{
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
 	},
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/structure/railing,
 /obj/item/gun/ballistic/automatic/smg/c20r,
 /obj/machinery/light/directional/east,
@@ -2875,7 +2875,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol{
+/obj/item/gun/ballistic/automatic/pistol/syndicate{
 	pixel_y = 3
 	},
 /obj/item/ammo_box/magazine/m10mm,
@@ -3124,7 +3124,7 @@
 	},
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
 /obj/item/clothing/glasses/thermal/eyepatch,
-/obj/item/gun/ballistic/revolver,
+/obj/item/gun/ballistic/revolver/syndicate,
 /obj/item/clothing/under/syndicate/sniper,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
@@ -3507,7 +3507,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "HI" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	layer = 3
 	},
 /obj/effect/turf_decal/techfloor{

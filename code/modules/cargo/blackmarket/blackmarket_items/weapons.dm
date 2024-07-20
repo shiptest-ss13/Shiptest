@@ -150,7 +150,7 @@
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
-	item = /obj/item/gun/ballistic/automatic/smg/proto
+	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
 	pair_item = /datum/blackmarket_item/weapon/saber_mag
 
 	price_min = 2500

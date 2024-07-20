@@ -1,16 +1,20 @@
 /obj/item/gun/energy/e_gun
 	name = "energy rifle"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
-	modifystate = 1
-	can_flashlight = TRUE
+	modifystate = TRUE
 	ammo_x_offset = 2
-	flight_x_offset = 15
-	flight_y_offset = 10
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+
+/obj/item/gun/energy/e_gun/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
@@ -19,29 +23,22 @@
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
-	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
-	gunlight_state = "mini-light"
-	flight_x_offset = 19
-	flight_y_offset = 13
-
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
 	spread = 2
 	spread_unwielded = 5
 
-/obj/item/gun/energy/e_gun/mini/Initialize()
-	set_gun_light(new /obj/item/flashlight/seclite(src))
-	return ..()
+/obj/item/gun/energy/e_gun/mini/empty_cell
+	dead_cell = TRUE
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
 	desc = "The standard issue rifle of Nanotrasen's Security Forces. Most have been put in long term storage following the ICW, and usually aren't issued to low ranking security divisions."
-	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "energytac"
 	ammo_x_offset = 2
 	charge_sections = 5
@@ -68,12 +65,6 @@
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-
-/obj/item/gun/energy/e_gun/mini/practice_phaser
-	name = "practice phaser"
-	desc = "A modified version of the basic phaser gun, this one fires less concentrated energy bolts designed for target practice."
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/practice)
-	icon_state = "decloner"
 
 /obj/item/gun/energy/e_gun/hos
 	name = "\improper X-01 MultiPhase Energy Gun"
@@ -105,10 +96,9 @@
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
 	icon_state = "dragnet"
 	item_state = "dragnet"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	ammo_type = list(/obj/item/ammo_casing/energy/net, /obj/item/ammo_casing/energy/trap)
-	can_flashlight = FALSE
 	ammo_x_offset = 1
 
 /obj/item/gun/energy/e_gun/dragnet/snare
@@ -125,7 +115,6 @@
 	w_class = WEIGHT_CLASS_HUGE
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 	weapon_weight = WEAPON_HEAVY
-	can_flashlight = FALSE
 	trigger_guard = TRIGGER_GUARD_NONE
 	ammo_x_offset = 2
 
@@ -195,7 +184,7 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
@@ -239,7 +228,7 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	shaded_charge = 1
+	shaded_charge = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
@@ -248,12 +237,13 @@
 /obj/item/gun/energy/e_gun/e11
 	name = "E-11 hybrid energy rifle"
 	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e11"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	can_flashlight = TRUE
 	ammo_x_offset = 0
-	flight_x_offset = 20
-	flight_y_offset = 9
 	spread = 80
 	spread_unwielded = 140
 	dual_wield_spread = 140

@@ -28,7 +28,7 @@
 	icon_state = "frontiersmanranged"
 	icon_living = "frontiersmanranged"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver)
+				/obj/item/gun/ballistic/revolver/syndicate)
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5

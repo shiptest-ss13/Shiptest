@@ -11,6 +11,7 @@
 					/obj/item/storage/fancy/cigarettes,
 					/obj/item/lighter,
 					/obj/item/radio,
+					/obj/item/storage/pill_bottle
 					)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
 	supports_variations = KEPORI_VARIATION
@@ -115,3 +116,9 @@
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 
+/obj/item/clothing/suit/hooded/hoodie/blackwa
+	name = "black and white hoodie"
+	desc = "A hoodie that is black, with a white hood. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodie_bwa"
+	item_state = "hoodie_bwa"
+	hoodtype = /obj/item/clothing/head/hooded/hood/gray

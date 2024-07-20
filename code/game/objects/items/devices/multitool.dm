@@ -28,7 +28,7 @@
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	custom_premium_price = 450
 	toolspeed = 1
-	usesound = 'sound/weapons/empty.ogg'
+	usesound = SOUND_EMPTY_MAG
 	var/obj/machinery/buffer // simple machine buffer for device linkage
 	var/mode = 0
 

@@ -200,6 +200,14 @@
 
 /obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
 		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/suppressed(src)
+		new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
 		new /obj/item/ammo_box/magazine/m10mm(src)
 		new /obj/item/ammo_box/magazine/m10mm(src)
+
+/obj/item/storage/secure/safe/suns
+	name = "Captain's Secure Safe"
+	desc = "The most important part of a SUNS vessel is the spare dueling sword."
+
+/obj/item/storage/secure/safe/suns/PopulateContents()
+	. = ..()
+	new /obj/item/storage/belt/sabre/suns(src)

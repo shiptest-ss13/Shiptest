@@ -112,19 +112,6 @@
 	. = ..()
 	AddElement(/datum/element/dunkable, 10)
 
-/obj/item/reagent_containers/food/snacks/tatortot
-	name = "tator tot"
-	desc = "A large fried potato nugget that may or may not try to valid you."
-	icon_state = "tatortot"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	filling_color = "FFD700"
-	tastes = list("potato" = 3, "valids" = 1)
-	foodtype = FRIED | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/tatortot/Initialize()
-	. = ..()
-	AddElement(/datum/element/dunkable, 10)
-
 /obj/item/reagent_containers/food/snacks/soydope
 	name = "soy dope"
 	desc = "Dope from a soy."
@@ -520,6 +507,7 @@
 	name = "bubblegum"
 	desc = "A rubbery strip of gum. Not exactly filling, but it keeps you busy."
 	icon_state = "bubblegum"
+	supports_variations = VOX_VARIATION
 	item_state = "bubblegum"
 	color = "#E48AB5" // craftable custom gums someday?
 	list_reagents = list(/datum/reagent/consumable/sugar = 5)
