@@ -13,7 +13,7 @@
 /obj/structure/blob/core/Initialize(mapload, client/new_overmind = null, placed = 0)
 	GLOB.blob_cores += src
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	update_appearance() //so it atleast appears
 	if(!placed && !overmind)
 		return INITIALIZE_HINT_QDEL
@@ -23,7 +23,7 @@
 
 /obj/structure/blob/core/Destroy()
 	GLOB.blob_cores -= src
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	if(overmind)
 		overmind.blob_core = null
 		overmind = null

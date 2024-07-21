@@ -319,7 +319,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 		pois[name] = M
 
 	if(!mobs_only)
-		for(var/atom/A in GLOB.poi_list)
+		for(var/atom/A in SSpoints_of_interest.other_points_of_interest)
 			if(!A || !A.loc)
 				continue
 			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
