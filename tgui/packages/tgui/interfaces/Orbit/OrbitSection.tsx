@@ -12,6 +12,7 @@ type Props = {
   section: Observable[];
   title: string;
   searchQuery: string;
+  autoObserve: boolean;
 };
 
 /**
@@ -19,7 +20,7 @@ type Props = {
  * Filters the results if there is a provided search query.
  */
 export function OrbitSection(props: Props) {
-  const { color, section = [], title, searchQuery } = props;
+  const { color, section = [], title, searchQuery, autoObserve } = props;
 
   const filteredSection = section.filter((observable) =>
     isJobOrNameMatch(observable, searchQuery),
@@ -40,6 +41,7 @@ export function OrbitSection(props: Props) {
         {filteredSection.map((item) => {
           const content = (
             <OrbitItem
+              autoObserve={autoObserve}
               color={color}
               item={item}
               key={item.ref}

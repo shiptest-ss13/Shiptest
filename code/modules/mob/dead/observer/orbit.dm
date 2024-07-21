@@ -4,7 +4,6 @@
 	///a typecache.
 	var/static/list/mob_allowed_typecache
 	var/mob/dead/observer/owner
-	var/auto_observe = FALSE
 
 /datum/orbit_menu/New(mob/dead/observer/new_owner)
 	if(!istype(new_owner))
@@ -27,31 +26,35 @@
 	switch(action)
 		if ("orbit")
 			var/ref = params["ref"]
+			var/auto_observe = params["auto_observe"]
 			var/atom/movable/poi = SSpoints_of_interest.get_poi_atom_by_ref(ref)
-			if (poi == null)
-				. = TRUE
-				return
+
+			if((ismob(poi) && !SSpoints_of_interest.is_valid_poi(poi, CALLBACK(src, PROC_REF(validate_mob_poi)))) \
+				|| !SSpoints_of_interest.is_valid_poi(poi)
+			)
+				to_chat(usr, span_notice("That point of interest is no longer valid."))
+				return TRUE
+
+			var/mob/dead/observer/user = usr
 			owner.ManualFollow(poi)
 			owner.reset_perspective(null)
+			user.orbiting_ref = ref
 			if (auto_observe)
 				owner.do_observe(poi)
 			. = TRUE
 		if ("refresh")
 			update_static_data(owner, ui)
 			. = TRUE
-		if ("toggle_observe")
-			auto_observe = !auto_observe
-			if (auto_observe && owner.orbit_target)
-				owner.do_observe(owner.orbit_target)
-			else
-				owner.reset_perspective(null)
+
 
 /datum/orbit_menu/ui_data(mob/user)
 	var/list/data = list()
-	data["auto_observe"] = auto_observe
+
+	if(isobserver(user))
+		data["orbiting"] = get_currently_orbiting(user)
+
 	return data
 
-/datum/orbit_menu/ui_static_data(mob/user)
 /datum/orbit_menu/ui_static_data(mob/user)
 	var/list/new_mob_pois = SSpoints_of_interest.get_mob_pois(CALLBACK(src, PROC_REF(validate_mob_poi)), append_dead_role = FALSE)
 	var/list/new_other_pois = SSpoints_of_interest.get_other_pois()
