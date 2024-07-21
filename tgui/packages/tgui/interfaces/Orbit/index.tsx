@@ -18,17 +18,9 @@ import { OrbitContent } from './OrbitContent';
 
 export const Orbit = (props, context) => {
   const { act, data } = useBackend<OrbitData>(context);
-  const { antagonists, autoObserve } = data;
 
   const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
-
-  const collatedAntagonists = {};
-  for (const antagonist of antagonists) {
-    if (collatedAntagonists[antagonist.antag] === undefined) {
-      collatedAntagonists[antagonist.antag] = [];
-    }
-    collatedAntagonists[antagonist.antag].push(antagonist);
-  }
+  const [autoObserve, setAutoObserve] = useLocalState(context, 'autoObserve', false);
 
   function orbitMostRelevant() {
     const mostRelevant = [
@@ -80,7 +72,7 @@ export const Orbit = (props, context) => {
                 tooltipPosition="bottom-start"
                 selected={autoObserve}
                 icon={autoObserve ? 'toggle-on' : 'toggle-off'}
-                onClick={() => act('toggle_observe')}
+                onClick={() => setAutoObserve(!autoObserve)}
               />
               <Button
                 inline
@@ -94,7 +86,6 @@ export const Orbit = (props, context) => {
           </Flex>
         </Section>
         <OrbitContent
-          sortedAntagonists={data.antagonists}
           searchText={searchText}
         />
       </Window.Content>

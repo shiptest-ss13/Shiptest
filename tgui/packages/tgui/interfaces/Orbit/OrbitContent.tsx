@@ -23,7 +23,8 @@ type ContentSection = {
 
 export function OrbitContent(props, context) {
   const { act, data } = useBackend<OrbitData>(context);
-  const { antagonists = [], critical = [], searchText } = props;
+  const { antagonists = [], critical = [] } = data;
+  const { searchText, autoObserve } = props;
 
 
   let antagGroups: AntagGroup[] = [];
@@ -60,7 +61,7 @@ export function OrbitContent(props, context) {
   ];
 
   return (
-    <Section fill scrollable>
+    <Section>
       <Stack vertical>
         {critical.map((crit) => (
           <Tooltip content="Click to orbit" key={crit.ref}>
@@ -86,6 +87,7 @@ export function OrbitContent(props, context) {
             section={members}
             title={title}
             searchQuery={searchText}
+            autoObserve={autoObserve}
           />
         ))}
 
@@ -96,6 +98,7 @@ export function OrbitContent(props, context) {
             section={section.content}
             title={section.title}
             searchQuery={searchText}
+            autoObserve={autoObserve}
           />
         ))}
       </Stack>

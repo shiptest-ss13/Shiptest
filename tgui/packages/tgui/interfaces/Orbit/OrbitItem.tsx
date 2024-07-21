@@ -19,11 +19,12 @@ import { Antagonist, Observable, OrbitData } from './types';
 
 type Props = {
   item: Observable | Antagonist;
+  autoObserve: boolean;
   color: string | undefined;
 };
 
 export const OrbitItem = (props: Props, context) => {
-  const { item, color } = props;
+  const { item, autoObserve, color } = props;
   const { full_name, icon, job, name, orbiters, ref } = item;
 
   const { act, data } = useBackend<OrbitData>(context);
@@ -37,7 +38,7 @@ export const OrbitItem = (props: Props, context) => {
     <Flex.Item
       mb={0.5}
       mr={0.5}
-      onClick={() => act('orbit', { ref })}
+      onClick={() => act('orbit', { auto_observe: autoObserve, ref })}
       style={{
         display: 'flex',
       }}
