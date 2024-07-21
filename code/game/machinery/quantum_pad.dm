@@ -14,6 +14,7 @@
 	var/teleporting = FALSE //if it's in the process of teleporting
 	var/power_efficiency = 1
 	var/obj/machinery/quantumpad/linked_pad
+	var/restrain_vlevel = FALSE
 
 	//mapping
 	var/static/list/mapped_quantum_pads = list()
@@ -177,7 +178,7 @@
 					else if(!isobserver(ROI))
 						continue
 
-				do_teleport(ROI, get_turf(target_pad),null,null,null,null,null,TRUE, channel = TELEPORT_CHANNEL_QUANTUM)
+				do_teleport(ROI, get_turf(target_pad),null,null,null,null,null,TRUE, channel = TELEPORT_CHANNEL_QUANTUM, restrain_vlevel = restrain_vlevel)
 				CHECK_TICK
 
 /obj/machinery/quantumpad/proc/initMappedLink()
