@@ -62,6 +62,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/orbit_menu/orbit_menu
 	var/datum/spawners_menu/spawners_menu
 
+	// The POI we're orbiting (orbit menu)
+	var/orbiting_ref
+
 /mob/dead/observer/Initialize()
 	set_invisibility(GLOB.observer_default_invisibility)
 
@@ -141,6 +144,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		AA.onNewMob(src)
 
 	. = ..()
+
+	SSpoints_of_interest.make_point_of_interest(src)
 
 	grant_all_languages()
 	show_data_huds()
