@@ -1,13 +1,7 @@
 import { toTitleCase } from 'common/string';
 
 import { useBackend } from '../../backend';
-import {
-  NoticeBox,
-  Section,
-  Stack,
-  Table,
-  Tooltip,
-} from '../../components';
+import { NoticeBox, Section, Stack, Table, Tooltip } from '../../components';
 
 import { getAntagCategories } from './helpers';
 import { AntagGroup, Observable, OrbitData } from './types';
@@ -23,7 +17,6 @@ export function OrbitContent(props, context) {
   const { act, data } = useBackend<OrbitData>(context);
   const { antagonists = [], critical = [] } = data;
   const { searchText, autoObserve } = props;
-
 
   let antagGroups: AntagGroup[] = [];
   if (antagonists.length) {

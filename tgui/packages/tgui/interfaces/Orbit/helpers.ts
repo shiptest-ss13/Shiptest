@@ -40,10 +40,7 @@ export function getDisplayName(full_name: string, nickname?: string): string {
 }
 
 /** Displays color for buttons based on the health or orbiter count. */
-export function getDisplayColor(
-  item: Observable,
-  override?: string,
-): string {
+export function getDisplayColor(item: Observable, override?: string): string {
   const { job, health, orbiters } = item;
 
   // Things like blob camera, etc
@@ -56,7 +53,7 @@ export function getDisplayColor(
     return 'grey';
   }
 
-    return getHealthColor(health);
+  return getHealthColor(health);
 }
 
 /** Returns the display color for certain health percentages */
@@ -74,7 +71,7 @@ function getHealthColor(health: number): string {
 /** Checks if a full name or job title matches the search. */
 export function isJobOrNameMatch(
   observable: Observable,
-  searchQuery: string,
+  searchQuery: string
 ): boolean {
   if (!searchQuery) return true;
 
