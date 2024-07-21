@@ -14,7 +14,7 @@
 	var/teleporting = FALSE //if it's in the process of teleporting
 	var/power_efficiency = 1
 	var/obj/machinery/quantumpad/linked_pad
-	var/restrain_vlevel = FALSE
+	var/restrain_vlevel = TRUE
 
 	//mapping
 	var/static/list/mapped_quantum_pads = list()
