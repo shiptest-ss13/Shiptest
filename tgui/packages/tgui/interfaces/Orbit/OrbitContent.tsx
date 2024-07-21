@@ -1,14 +1,12 @@
 import { toTitleCase } from 'common/string';
 
-import { useBackend, useLocalState } from '../../backend';
+import { useBackend } from '../../backend';
 import {
   NoticeBox,
   Section,
   Stack,
   Table,
   Tooltip,
-  Button,
-  Box,
 } from '../../components';
 
 import { getAntagCategories } from './helpers';

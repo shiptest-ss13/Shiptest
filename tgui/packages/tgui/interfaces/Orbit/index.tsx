@@ -2,7 +2,6 @@
 import { multiline } from '../../../common/string';
 import { useBackend, useLocalState } from '../../backend';
 import {
-  Box,
   Button,
   Divider,
   Flex,
@@ -12,7 +11,7 @@ import {
 } from '../../components';
 import { Window } from '../../layouts';
 
-import { searchFor, compareString, compareNumberedText } from './helpers'
+import { searchFor } from './helpers'
 import { OrbitData } from './types';
 import { OrbitContent } from './OrbitContent';
 
