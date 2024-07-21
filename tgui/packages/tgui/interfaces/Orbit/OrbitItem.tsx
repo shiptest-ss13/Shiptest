@@ -1,10 +1,5 @@
 import { useBackend } from '../../backend';
-import {
-  Stack,
-  Button,
-  Flex,
-  Icon
-} from '../../components';
+import { Stack, Button, Flex, Icon } from '../../components';
 
 import { capitalizeFirst } from 'common/string';
 
@@ -27,7 +22,6 @@ export const OrbitItem = (props: Props, context) => {
   const selected = ref === orbiting?.ref;
   const validIcon = !!job && !!icon && icon !== 'hudunknown';
 
-
   return (
     <Flex.Item
       mb={0.5}
@@ -37,10 +31,7 @@ export const OrbitItem = (props: Props, context) => {
         display: 'flex',
       }}
     >
-      <Button
-        color={getDisplayColor(item, color)}
-        pl={validIcon && 0.5}
-      >
+      <Button color={getDisplayColor(item, color)} pl={validIcon && 0.5}>
         <Stack>
           <Stack.Item>
             {capitalizeFirst(getDisplayName(full_name, name))}
@@ -56,4 +47,4 @@ export const OrbitItem = (props: Props, context) => {
       </Button>
     </Flex.Item>
   );
-}
+};

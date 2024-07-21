@@ -1,17 +1,9 @@
-
 import { multiline } from '../../../common/string';
 import { useBackend, useLocalState } from '../../backend';
-import {
-  Button,
-  Divider,
-  Flex,
-  Icon,
-  Input,
-  Section,
-} from '../../components';
+import { Button, Divider, Flex, Icon, Input, Section } from '../../components';
 import { Window } from '../../layouts';
 
-import { searchFor } from './helpers'
+import { searchFor } from './helpers';
 import { OrbitData } from './types';
 import { OrbitContent } from './OrbitContent';
 
@@ -19,7 +11,11 @@ export const Orbit = (props, context) => {
   const { act, data } = useBackend<OrbitData>(context);
 
   const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
-  const [autoObserve, setAutoObserve] = useLocalState(context, 'autoObserve', false);
+  const [autoObserve, setAutoObserve] = useLocalState(
+    context,
+    'autoObserve',
+    false
+  );
 
   function orbitMostRelevant() {
     const mostRelevant = [
@@ -29,15 +25,14 @@ export const Orbit = (props, context) => {
       data.dead,
       data.npcs,
       data.misc,
-      data.ships
+      data.ships,
     ]
       .flat()
       .filter(searchFor(searchText))
       .sort()[0];
 
-      if (mostRelevant !== undefined) {
-        act('orbit', { ref: mostRelevant.ref
-        });
+    if (mostRelevant !== undefined) {
+      act('orbit', { ref: mostRelevant.ref });
     }
   }
 
@@ -84,9 +79,7 @@ export const Orbit = (props, context) => {
             </Flex.Item>
           </Flex>
         </Section>
-        <OrbitContent
-          searchText={searchText}
-        />
+        <OrbitContent searchText={searchText} />
       </Window.Content>
     </Window>
   );
