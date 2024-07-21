@@ -13,10 +13,14 @@ types
 	name = "steam hazard"
 	desc = "tell a maptainer if you see this. FWSSSH!"
 	icon_state = "hazardg"
+	//how far the smoke spreads, effectively the radius.
 	var/range = 2
+	//type of smoke emited, check effects_smoke.dm for all of them, or the short list at the top of this file.
 	var/smoke_type = /obj/effect/particle_effect/smoke/transparent
 
+	//randomly emits smoke between random_min and random_max time
 	var/random_steam = FALSE
+	//emits smoke when bumped or walked over, can have cooldown_time set.
 	var/contact_steam = FALSE
 
 /obj/structure/hazard/steam/Initialize()
@@ -30,7 +34,7 @@ types
 	do_smoke(range, src, smoke_type)
 
 /obj/structure/hazard/steam/do_random_effect()
-		steam()
+	steam()
 
 /obj/structure/hazard/steam/contact(target)
 	if(contact_steam)

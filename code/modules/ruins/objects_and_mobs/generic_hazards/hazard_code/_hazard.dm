@@ -5,24 +5,35 @@
 	icon_state = "hazard"
 	anchored = TRUE
 	density = TRUE
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //add clever ways to disable these hazards! even just tools is better than smashing it to bits
+	//add clever ways to disable these hazards! even just tools is better than smashing it to bits. Make sure to overwrite if you want people to be able to destroy this.
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	COOLDOWN_DECLARE(cooldown)
-	var/cooldown_time = 2 SECONDS //stops people from spamming effects
+	//cooldown on contact effects
+	var/cooldown_time = 2 SECONDS
+	//needs to be enabled for contact effects to work, please automatically set this on subtype inits (see electrical for example)
 	var/enter_activated = FALSE
 
-	var/random_effect = FALSE //repeats an effect after a random amount of time
+	//calls do_random_effect() with a delay between the random_min and random_max. if min and max are equal, the delay will be constant.
+	var/random_effect = FALSE
 	var/random_min = 10 SECONDS
 	var/random_max = 30 SECONDS
 
-	var/can_be_disabled = FALSE //can we disable this? Used by most subtypes.
-	var/time_to_disable = 5 SECONDS //how long does the toolcheck take?
-	var/disabled = FALSE //if disabled, stops doing effects. Used by subtypes
-
-	var/id = null //used to turn off hazards with mapped in cutoffs (fuseboxes, valves, etc)
-	var/on = TRUE //used when turned off.
-
-	var/slowdown = 0 //all hazards can use slowdown! but if you make a generic slowdown hazard, its good practice to make it hazard/slowdown
+	//Whether this hazard can be disabled. Does nothing without implementing a way to disable the hazard.
+	var/can_be_disabled = FALSE
+	//Can be used for do_afters on disable checks, also toolchecks.
+	var/time_to_disable = 5 SECONDS
+	//whether this hazard has been disabled, which no longer functions and doesn't listen to hazard shutoffs.
+	var/disabled = FALSE
+	//examine text shown if can_be_disabled is true. Make sure to set this if you add a way to disable your hazard.
 	var/disable_text = "a way you don't know! (this needs to be set)"
+
+	//ID for use with hazard shutoffs, should be set per map and not in code.
+	var/id = null
+	//whether this hazard is on or off. Offline hazards don't get contact() or do_random_effect() procs sent.
+	var/on = TRUE
+
+	//slowdown, which increases the slowdown of the turf the hazard is on. All hazards can use this.
+	var/slowdown = 0
 
 	FASTDMM_PROP(\
 		pinned_vars = list("name", "dir", "id")\
@@ -45,6 +56,8 @@ procs used to set off effects
 evil 'code' that sets off the above procs. mappers beware!
 */
 
+//on off procs
+
 /obj/structure/hazard/proc/turn_on()
 	if(QDELETED(src) || disabled)
 		return
@@ -66,6 +79,8 @@ evil 'code' that sets off the above procs. mappers beware!
 /obj/structure/hazard/proc/disable()
 	disabled = TRUE
 	update_appearance()
+
+//real code
 
 /obj/structure/hazard/Initialize()
 	. = ..()
@@ -104,6 +119,7 @@ evil 'code' that sets off the above procs. mappers beware!
 	var/delay = rand(random_min, random_max)
 	addtimer(CALLBACK(src, PROC_REF(random_effect)), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT)
 
+//contact checks, based on density.
 
 /obj/structure/hazard/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -116,6 +132,8 @@ evil 'code' that sets off the above procs. mappers beware!
 	if(!iseffect(AM) && on && !disabled)
 		var/target = AM
 		contact(target)
+
+//attacked checks
 
 /obj/structure/hazard/bullet_act(obj/projectile/P)
 	if(on && !disabled)
@@ -144,6 +162,8 @@ evil 'code' that sets off the above procs. mappers beware!
 		return
 	if(on && !disabled)
 		attacked()
+
+//slowdown code, sets the loc turf slowness. Make sure your hazard can't be moved if you do this, or it will cause issues.
 
 /obj/structure/hazard/proc/update_turf_slowdown(reset = FALSE)
 	var/turf/open/OT = get_turf(src)

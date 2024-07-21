@@ -12,21 +12,30 @@ also, caltrops and slippery can't mix, sadly. either it does one or the other.
 	name = "floor hazard"
 	desc = "tell a maptainer if you see this. YOWCH!"
 	icon_state = "spikepit"
+	//these all need to be not dense
 	density = FALSE
+	//does damage to legs when walked over
 	var/caltrop = FALSE
 	var/low_damage = 10
 	var/high_damage = 20
 	var/probability = 100
-	var/caltrop_flags = CALTROP_BYPASS_SHOES | CALTROP_IGNORE_WALKERS //feel free to change these on subtypes!
+	//bypass shoes ignores shoes, ignore walkers lets players ignore damage by walking through
+	var/caltrop_flags = CALTROP_BYPASS_SHOES | CALTROP_IGNORE_WALKERS
 
+	//slips!
 	var/slippery = FALSE
 	var/knockdown_time = 3 SECONDS
+	//no slip when walking makes walking not slip, slide makes players fly in the direction they were going.
 	var/slip_flags = NO_SLIP_WHEN_WALKING | SLIDE
 	var/paralyze_time = 0
+	//player drops their items
 	var/forcedrop = FALSE
 
+	//launches upwards using do_random_effect between random_min and random_max. also flattens players a little. Needs a icon_state-launch state to look right.
 	var/launcher = FALSE
+	//damage done by launcher, these are very crunchy and have a windup
 	var/launcher_damage = 90
+	//warning sent 1 second before the launcher does animation & damage
 	var/launch_warning = "The floor glows and begins to float!"
 
 /obj/structure/hazard/floor/Initialize()
@@ -69,7 +78,7 @@ also, caltrops and slippery can't mix, sadly. either it does one or the other.
 		target.visible_message("<span class='danger'>[target] falls to the floor with a sickening crunch!</span>", \
 								"<span class='userdanger'>You fall to the floor with a sickening crunch!</span>")
 		playsound(target, 'sound/effects/blobattack.ogg', 40, TRUE)
-	if(rand(1, 10000) == 10000)
+	if(rand(1, 10000) == 10000) // 0.01% chance.
 		playsound(src, 'sound/effects/gong.ogg', 50, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)

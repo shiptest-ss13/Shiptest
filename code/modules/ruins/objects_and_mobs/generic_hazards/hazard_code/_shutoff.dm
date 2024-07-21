@@ -6,9 +6,13 @@
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	COOLDOWN_DECLARE(cooldown)
+	//cooldown on activating the shutoff
 	var/cooldown_time = 1 SECONDS
-	var/resets = null //if set to a time, will turn back on after that time.
+	//if set to a time, resets will turn the hazards back on after that time.
+	var/resets = null
+	//ID used to toggle hazards, should only be set in maps.
 	var/id = 0
+	//to_chat message when using the shutoff
 	var/shutoff_message = "you toggle the shutoff"
 
 	FASTDMM_PROP(\
@@ -20,7 +24,7 @@
 		return FALSE
 	COOLDOWN_START(src, cooldown, cooldown_time)
 	if(!id) //makes null shutoffs not turn off all null hazards. would be bad!
-		say("no id set! fix that")
+		say("no id set! fix that") //shutoffs without IDs shouldn't exist, so this lets mappers know, hopefully.
 		return FALSE
 	to_chat(user, span_notice("[shutoff_message]"))
 	for(var/obj/structure/hazard/hazard in GLOB.ruin_hazards)

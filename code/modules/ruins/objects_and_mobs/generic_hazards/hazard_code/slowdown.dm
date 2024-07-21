@@ -6,21 +6,22 @@ slowing hazards! either requires laying down, has a chance to stick, or requires
 	name = "slowing hazard"
 	desc = "if you see this, tell a maptainer! Waaaait fooorrr meeee guyyyys.."
 	icon_state = "hazard"
-	var/overhead = FALSE //requires laying down to get through
-
+	//requires laying down to get through, like plastic flaps.
+	var/overhead = FALSE
+	//requires climbing over like tables
 	climbable = FALSE
+	//time to climb
 	climb_time = 2 SECONDS
 
+	//sticky like spiderwebs, very annoying.
 	var/sticky = FALSE
+	//chance you get stuck instead of walking into
 	var/stick_chance = 50
+	//chance it eats a projectile
 	var/projectile_stick_chance = 30
 
-	slowdown = 0 //all hazards can use slowdown! but if you make a generic slowdown hazard, its good practice to make it hazard/slowdown
-
-/obj/structure/hazard/slowdown/Initialize()
-	. = ..()
-	if(slowdown)
-		update_turf_slowdown()
+	//all hazards can use slowdown! but if you make a generic slowdown hazard, its good practice to make it hazard/slowdown
+	slowdown = 0
 
 /obj/structure/hazard/slowdown/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
