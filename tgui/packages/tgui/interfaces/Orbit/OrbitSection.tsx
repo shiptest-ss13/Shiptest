@@ -2,10 +2,9 @@ import { Collapsible, Flex, Tooltip } from '../../components';
 import {
   isJobOrNameMatch,
 } from './helpers';
-import { useBackend, useLocalState } from '../../backend';
 import { OrbitItem } from './OrbitItem';
 import { OrbitTooltip } from './OrbitTooltip';
-import { Observable, OrbitData } from './types';
+import { Observable } from './types';
 
 type Props = {
   color?: string;

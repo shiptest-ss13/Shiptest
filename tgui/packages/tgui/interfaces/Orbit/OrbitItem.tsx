@@ -1,20 +1,14 @@
-import { resolveAsset } from '../../assets';
-import { useBackend, useLocalState } from '../../backend';
+import { useBackend } from '../../backend';
 import {
-  NoticeBox,
-  Section,
   Stack,
-  Table,
-  Tooltip,
   Button,
-  Box,
   Flex,
   Icon
 } from '../../components';
 
 import { capitalizeFirst } from 'common/string';
 
-import { getDisplayColor, getDisplayName, searchFor, compareNumberedText} from './helpers';
+import { getDisplayColor, getDisplayName } from './helpers';
 import { Antagonist, Observable, OrbitData } from './types';
 
 type Props = {
