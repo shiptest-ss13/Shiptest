@@ -65,7 +65,7 @@ also, caltrops and slippery can't mix, sadly. either it does one or the other.
 	sleep(10)
 	visible_message(span_danger("[src] flies upwards!"))
 	animate(src, pixel_z = 32, time = 1)
-	for(var/mob/living/target in src.loc)
+	for(var/mob/living/carbon/target in src.loc)
 		target.Paralyze(20)
 		animate(target, pixel_z = 32, time = 1)
 		target.apply_damage(launcher_damage, BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), spread_damage = TRUE)
@@ -73,7 +73,7 @@ also, caltrops and slippery can't mix, sadly. either it does one or the other.
 		target.AddElement(/datum/element/squish, 5 SECONDS)
 	sleep(1)
 	animate(src, pixel_z = 0, time = 4)
-	for(var/mob/living/target in src.loc)
+	for(var/mob/living/carbon/target in src.loc)
 		animate(target, pixel_z = 0, time = 4)
 		target.visible_message("<span class='danger'>[target] falls to the floor with a sickening crunch!</span>", \
 								"<span class='userdanger'>You fall to the floor with a sickening crunch!</span>")
