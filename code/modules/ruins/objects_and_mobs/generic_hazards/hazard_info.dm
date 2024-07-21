@@ -63,7 +63,7 @@ maybe something roughly like the medipen ruin vault
 where if you supply (or fail to supply) something with power, for enough time, it toggles the state
 "
 
- IDEAS - GOING TO NEED A SPRITER OR MAKE BAD SPRITES MYSELF
+IDEAS - GOING TO NEED A SPRITER OR MAKE BAD SPRITES MYSELF
 sparking wallmount (fusebox, old APC, conduit)
 power conduits, broken/frayed/decorative (stun version, spark on step, random spark)
 wire tangle w/ stun
