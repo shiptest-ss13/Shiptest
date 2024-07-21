@@ -24,23 +24,52 @@
 	var/stock_min	= 1
 	/// Maximum amount that there should be of this item in the market if generated randomly.
 	var/stock_max	= 0
+	/// Whether the item is visible and purchasable on the market
+	var/available = TRUE
 	/// Probability for this item to be available. Used by SSblackmarket on init.
 	var/availability_prob = 0
+	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
+	var/weight = 0
+	/// If this item is affected by avalibility weight. Mainly for items that shouldnt be able to spawn on their own normally (Eg. Certain ammo)
+	var/consider_weight = FALSE
+	/// if this item has already been cycled. Mainly for paired items so they dont get cycled twice.
+	var/set = FALSE
 	// Should there be an unlimited stock of an item
 	var/unlimited = FALSE
 	/// Should another item spawn alongside this one in the catalogue?
 	var/list/pair_item = null
-	//var/datum/blackmarket_item/pair_item
+
 
 /datum/blackmarket_item/New()
 	if(isnull(price))
-		price = rand(price_min, price_max)
+		randomize_price()
 	if(isnull(stock))
-		stock = rand(stock_min, stock_max)
+		randomize_stock()
 
 /// Used for spawning the wanted item, override if you need to do something special with the item.
 /datum/blackmarket_item/proc/spawn_item(loc)
 	return new item(loc)
+
+/datum/blackmarket_item/proc/randomize_price()
+	price = rand(price_min, price_max)
+
+/datum/blackmarket_item/proc/randomize_stock()
+	stock = rand(stock_min, stock_max)
+
+/datum/blackmarket_item/proc/cycle(price = TRUE, availibility = TRUE, force_appear = FALSE, stock = TRUE)
+	if(price)
+		randomize_price()
+	if(stock)
+		randomize_stock()
+	if(availibility)
+		if(prob(max(availability_prob + (weight * 10))))
+			available = TRUE
+		else
+			available = FALSE
+	if(force_appear)
+		available = TRUE
+
+
 
 /// Buys the item and makes SSblackmarket handle it.
 /datum/blackmarket_item/proc/buy(obj/item/blackmarket_uplink/uplink, mob/buyer, shipping_method)
