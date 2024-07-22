@@ -49,14 +49,36 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	var/datum/overmap/outpost/target_outpost = find_outpost()
 	market = target_outpost.market
 
+/obj/machinery/computer/outpost_cargo/proc/get_cargo_packs()
+	if(!market)
+		return
+	return market.supply_packs
+
+
 /obj/machinery/computer/outpost_cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "OutpostCargo", name)
 		ui.open()
 
+/obj/machinery/computer/outpost_cargo/ui_static_data(mob/user)
+	var/list/data = list()
+	data["supply_packs"] = list()
+	for(var/datum/supply_pack/cargo_pack in get_cargo_packs())
+		data["supply_packs"] += list(list(
+			"ref" = REF(cargo_pack),
+			"name" = cargo_pack.name,
+			"group" = cargo_pack.group,
+			"cost" = cargo_pack.cost,
+			"id" = cargo_pack,
+			"desc" = cargo_pack.desc || cargo_pack.name, // If there is a description, use it. Otherwise use the pack's name.
+		))
+	return data
+
 /obj/effect/landmark/cargo
 	name = "cargo_lz"
+	icon_state = "cargo_landmark"
+	invisibility = INVISIBILITY_OBSERVER
 
 /obj/effect/landmark/cargo/Initialize()
 	. = ..()
