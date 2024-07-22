@@ -14,6 +14,7 @@ import {
   Table,
 } from '../../components';
 import { Window } from '../../layouts';
+import { formatMoney } from '../../format';
 
 import { CargoData, SupplyPack, Category } from './types';
 
@@ -26,12 +27,12 @@ export const CargoCatalog = (props, context) => {
   const CategoryTabs = () => {
     return (
       <Tabs vertical>
-        {Object.keys(data.categories).map((categoryName) => (
+        {Object.keys(supply_packs).map((categoryName) => (
           <Tabs.Tab
             key={categoryName}
             selected={catagory === categoryName}
             onClick={() => setCatagory(categoryName)}
-          >{`${categoryName} ${data.categories[categoryName].length}`}</Tabs.Tab>
+          >{`${categoryName} ${supply_packs.length}`}</Tabs.Tab>
         ))}
       </Tabs>
     );
@@ -52,16 +53,29 @@ export const CargoCatalog = (props, context) => {
           <Table>
             <Table.Row header>
               <Table.Cell>Name</Table.Cell>
-              <Table.Cell>Cost</Table.Cell>
               <Table.Cell>Stock</Table.Cell>
+              <Table.Cell>Cost</Table.Cell>
             </Table.Row>
-            {Object.keys(supply_packs).map((ref) => {
-              const supply = supply_packs[ref]; // Lookup once
+            {supply_packs.map((pack) => {
               return (
-                <Table.Row key={supply.ref} className="candystripe">
-                  <Table.Cell width="70%">{supply.name}</Table.Cell>
-                  <Table.Cell width="15%">{supply.cost}</Table.Cell>
+                <Table.Row key={pack.ref} className="candystripe">
+                  <Table.Cell width="70%">{pack.name}</Table.Cell>
                   <Table.Cell width="15%">1</Table.Cell>
+                  <Table.Cell width="15%" collapsing textAlign="right">
+                    <Button
+                      fluid
+                      tooltip={pack.desc}
+                      tooltipPosition="left"
+                      onClick={() =>
+                        act('add', {
+                          ref: pack.ref,
+                        })
+                      }
+                    >
+                      {formatMoney(pack.cost)}
+                      {' cr'}
+                    </Button>
+                  </Table.Cell>
                 </Table.Row>
               );
             })}

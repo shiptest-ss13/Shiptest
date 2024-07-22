@@ -1,7 +1,11 @@
 export type CargoData = {
-  supply_packs: { [ref: string]: SupplyPack };
-  categories: Category;
+  supply_packs: Record<string, SupplyCategory>;
   shopping_cart: [];
+};
+
+export type SupplyCategory = {
+  name: string;
+  packs: SupplyPack[];
 };
 
 export type SupplyPack = {
@@ -12,7 +16,3 @@ export type SupplyPack = {
   id: string;
   desc: string;
 };
-
-export interface Category {
-  [name: string]: string[];
-}

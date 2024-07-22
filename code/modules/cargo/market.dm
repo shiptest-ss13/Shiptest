@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	var/atom/cargo_lz
 	var/datum/cargo_market/market
 
-	var/list/shopping_cart
+	var/list/shopping_cart = list()
 
 /obj/machinery/computer/outpost_cargo/LateInitialize()
 	. = ..()
@@ -71,22 +71,30 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 /obj/machinery/computer/outpost_cargo/ui_static_data(mob/user)
 	var/list/data = list()
+	data["max_order"] = CARGO_MAX_ORDER
 	data["supply_packs"] = list()
-	//data["factions"] = list()
-	data["categories"] = list()
 	for(var/datum/supply_pack/cargo_pack in get_cargo_packs())
-		data["categories"][cargo_pack.group] += list(REF(cargo_pack))
-		data["supply_packs"][REF(cargo_pack)] = list(
+		if(!data["supply_packs"][cargo_pack.group])
+			data["supply_packs"][cargo_pack.group] = list(
+				"name" = cargo_pack.group,
+				"packs" = list()
+			)
+		data["supply_packs"][cargo_pack.group] += list(list(
 			"ref" = REF(cargo_pack),
 			"name" = cargo_pack.name,
 			"group" = cargo_pack.group,
 			"cost" = cargo_pack.cost,
 			"desc" = cargo_pack.desc || cargo_pack.name, // If there is a description, use it. Otherwise use the pack's name.
-		)
+		))
 	return data
 
-/obj/machinery/computer/outpost_cargo/ui_act(action, list/params)
+/obj/machinery/computer/outpost_cargo/ui_act(action, params, datum/tgui/ui)
 	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("add")
+			shopping_cart += params["ref"]
 
 /obj/effect/landmark/cargo
 	name = "cargo_lz"
