@@ -35,10 +35,6 @@
 	//slowdown, which increases the slowdown of the turf the hazard is on. All hazards can use this.
 	var/slowdown = 0
 
-	FASTDMM_PROP(\
-		pinned_vars = list("name", "dir", "id")\
-	)
-
 /*
 procs used to set off effects
 */
@@ -112,7 +108,9 @@ evil 'code' that sets off the above procs. mappers beware!
 		. += span_notice("[src] could be disabled by [disable_text].</span>")
 
 /obj/structure/hazard/proc/random_effect(start = FALSE)
-	if(QDELETED(src) || disabled)
+	if(QDELETED(src))
+		return
+	if(disabled)
 		return
 	if(!start && on)
 		do_random_effect()
@@ -175,6 +173,6 @@ evil 'code' that sets off the above procs. mappers beware!
 		OT.slowdown = initial(OT.slowdown) + slowdown
 
 /obj/structure/hazard/slowdown/Destroy()
-	update_turf_slowdown(TRUE)
 	GLOB.ruin_hazards -= src
+	//update_turf_slowdown(TRUE)
 	return ..()
