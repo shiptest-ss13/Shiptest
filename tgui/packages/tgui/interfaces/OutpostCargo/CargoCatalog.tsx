@@ -21,7 +21,7 @@ export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
   const { supply_packs = [] } = data;
   return (
-    <Section title="Catalog" width={'65%'} fill scrollable>
+    <Section title="Catalog" fill scrollable>
       <Flex>
         <Section>
           <Input></Input>

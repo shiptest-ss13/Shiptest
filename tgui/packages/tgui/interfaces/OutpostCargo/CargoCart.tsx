@@ -20,9 +20,9 @@ import { CargoData, SupplyPack } from './types';
 
 export const CargoCart = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
-  const { supply_packs = [], cart = [] } = data;
+  const { supply_packs = [], shopping_cart = [] } = data;
   return (
-    <Section title="Cart" width={'35%'} fill scrollable>
+    <Section title="Cart" fill scrollable>
       <Table>
         <TableRow header color="gray">
           <Table.Cell>Item</Table.Cell>
@@ -38,11 +38,6 @@ export const CargoCart = (props, context) => {
             </Table.Cell>
           </Table.Row>
         ))}
-          <Table.Row>
-            <Table.Cell>BUY</Table.Cell>
-            <Table.Cell>COST:1000000</Table.Cell>
-            <Table.Cell>COUNT:1000000</Table.Cell>
-          </Table.Row>
       </Table>
     </Section>
   );

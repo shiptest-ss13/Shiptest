@@ -1,6 +1,6 @@
 export type CargoData = {
   supply_packs: SupplyPack[];
-  cart: [];
+  shopping_cart: [];
 };
 
 export type SupplyPack = {

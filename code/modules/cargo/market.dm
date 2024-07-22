@@ -21,8 +21,12 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		supply_packs += P
 
 /obj/machinery/computer/outpost_cargo
+	name = "Market Console"
+	icon_screen = "supply_express"
 	var/atom/cargo_lz
 	var/datum/cargo_market/market
+
+	var/list/shopping_cart
 
 /obj/machinery/computer/outpost_cargo/LateInitialize()
 	. = ..()
@@ -64,6 +68,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 /obj/machinery/computer/outpost_cargo/ui_static_data(mob/user)
 	var/list/data = list()
 	data["supply_packs"] = list()
+	data["shopping_cart"] = list()
 	for(var/datum/supply_pack/cargo_pack in get_cargo_packs())
 		data["supply_packs"] += list(list(
 			"ref" = REF(cargo_pack),
