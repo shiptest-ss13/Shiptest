@@ -176,4 +176,5 @@ evil 'code' that sets off the above procs. mappers beware!
 
 /obj/structure/hazard/slowdown/Destroy()
 	update_turf_slowdown(TRUE)
+	GLOB.ruin_hazards -= src
 	return ..()
