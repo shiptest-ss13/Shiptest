@@ -172,7 +172,7 @@ evil 'code' that sets off the above procs. mappers beware!
 	else
 		OT.slowdown = initial(OT.slowdown) + slowdown
 
-/obj/structure/hazard/slowdown/Destroy()
+/obj/structure/hazard/Destroy()
 	GLOB.ruin_hazards -= src
-	//update_turf_slowdown(TRUE)
+	update_turf_slowdown(TRUE)
 	return ..()
