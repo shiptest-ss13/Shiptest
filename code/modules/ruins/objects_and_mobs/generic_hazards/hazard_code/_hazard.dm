@@ -124,8 +124,8 @@ evil 'code' that sets off the above procs. mappers beware!
 /obj/structure/hazard/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 
-	var/target = AM
-	if(on && !disabled)
+	if(!iseffect(AM) && on && !disabled)
+		var/target = AM
 		contact(target)
 
 /obj/structure/hazard/Bumped(atom/movable/AM)
@@ -176,4 +176,4 @@ evil 'code' that sets off the above procs. mappers beware!
 
 /obj/structure/hazard/slowdown/Destroy()
 	update_turf_slowdown(TRUE)
-	. = ..()
+	return ..()

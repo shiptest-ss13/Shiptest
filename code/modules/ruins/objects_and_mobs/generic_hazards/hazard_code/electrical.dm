@@ -20,7 +20,7 @@
 
 	//sparks on contact, mostly for show or to light fires.
 	var/contact_sparks = FALSE
-	//stops people from spamming sparks, also sparks can set off sparks.
+	//stops people from spamming sparks
 	cooldown_time = 3 SECONDS
 
 	//stun on contact. dangerous and potentially deadly

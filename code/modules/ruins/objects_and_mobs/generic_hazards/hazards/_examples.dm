@@ -1,4 +1,4 @@
-//EXAMPLE HAZARDS. DON'T USE THESE!
+//EXAMPLE HAZARDS. DON'T USE THESE ON FINSIHED MAPS!!
 
 /*
 SLOWDOWN HAZARDS
@@ -93,7 +93,7 @@ STEAM HAZARDS
 */
 
 //emits steam every 10-20 seconds
-/obj/structure/hazard/steam/example/random_steam
+/obj/structure/hazard/spray/example/random_steam
 	name = "random steam"
 	icon_state = "hazardg"
 	random_steam = TRUE //needed
@@ -102,51 +102,94 @@ STEAM HAZARDS
 	range = 2
 
 //emits steam when walked over. if density = TRUE, emits steam when bumped
-/obj/structure/hazard/steam/example/contact_steam
+/obj/structure/hazard/spray/example/contact_steam
 	name = "contact steam"
 	icon_state = "hazardg"
 	contact_steam = TRUE //needed
 	range = 2
-// different smoke examples
 
 //transparent smoke that players can see through (otherwise blocks view)
-/obj/structure/hazard/steam/example/contact_steam/steam
+/obj/structure/hazard/spray/example/contact_steam/steam
 	name = "steam"
 	smoke_type = /obj/effect/particle_effect/smoke/transparent
 
 //opaque smoke that does no damage
-/obj/structure/hazard/steam/example/contact_steam/safe
+/obj/structure/hazard/spray/example/contact_steam/safe
 	name = "safe"
 	smoke_type = /obj/effect/particle_effect/smoke
 
 //smoke that makes you drop items and cough
-/obj/structure/hazard/steam/example/contact_steam/bad
+/obj/structure/hazard/spray/example/contact_steam/bad
 	name = "bad"
 	smoke_type = /obj/effect/particle_effect/smoke/bad
 
 //smoke that makes you take oxyloss and cough
-/obj/structure/hazard/steam/example/contact_steam/hazard
+/obj/structure/hazard/spray/example/contact_steam/hazard
 	name = "hazard"
 	smoke_type = /obj/effect/particle_effect/smoke/hazard
+
+//chem smoke, takes on the color of the chem
+/obj/structure/hazard/spray/example/contact_steam/chem
+	name = "chem smoke"
+	chem_smoke = TRUE
+	reagent_type = /datum/reagent/toxin/acid
+
+//foam hazard
+/obj/structure/hazard/spray/example/foam
+	name = "contact foam"
+	icon_state = "hazardg"
+	contact_foam = TRUE
+	chem_foam = FALSE
+	range = 2
+
+//chem foam
+/obj/structure/hazard/spray/example/foam/reagent
+	chem_foam = TRUE
+	reagent_type = /datum/reagent/consumable/ethanol/beer
+	reagent_amount = 50
+
+//water spray hazard, mostly for show. looks like a fire extinguisher blast
+/obj/structure/hazard/spray/example/water_spray
+	name = "contact spray"
+	contact_water = TRUE
+	water_amount = 10
 
 /*
 FLOOR EXAMPLES
 */
 
-//classic spike pit, can be avoided by laying down.
+//classic spike pit
 /obj/structure/hazard/floor/example/sharp
 	name = "example sharp"
 	icon_state = "spikepit"
-	caltrop = TRUE //needed
-	low_damage = 20
-	high_damage = 30
-	probability = 80
-	caltrop_flags = CALTROP_BYPASS_SHOES | CALTROP_IGNORE_WALKERS
+	density = FALSE //recommended. otherwise deals arm damage if bumped.
+	contact_damage = TRUE //needed
+	dealt_damage = 30 //split across legs or arms.
+	damage_type = BRUTE
+
+/obj/structure/hazard/floor/example/burn
+	name = "example burn"
+	icon_state = "hazard"
+	density = TRUE //deals arms damage
+	contact_damage = TRUE //needed
+	dealt_damage = 40 //split across legs or arms.
+	damage_type = BURN
+
+/obj/structure/hazard/floor/example/toxicpit
+	name = "example toxic pit"
+	icon_state = "hazardg"
+	density = FALSE //needed
+	random_damage = TRUE //needed
+	dealt_damage = 20 //split across legs
+	damage_type = BURN
+	random_min = 2 SECONDS
+	random_max = 3 SECONDS
 
 //simple slipping hazard, similar to oil spills.
 /obj/structure/hazard/floor/example/slip
 	name = "example slip"
 	icon_state = "hazardb"
+	density = FALSE //needed
 	slippery = TRUE //needed
 	knockdown_time = 3 SECONDS
 	slip_flags = NO_SLIP_WHEN_WALKING | SLIDE
@@ -156,10 +199,35 @@ FLOOR EXAMPLES
 /obj/structure/hazard/floor/example/launch
 	name = "example launch"
 	icon_state = "gravplate" //needs state-launch version
-	layer = ABOVE_OPEN_TURF_LAYER //needed
+	density = FALSE //needed
+	layer = ABOVE_NORMAL_TURF_LAYER //needed to render it on the floor
 	launcher = TRUE //needed
-	random_min = 5 SECONDS
+	random_min = 5 SECONDS //grav plates maploaded at similar times leads to them being in sync.
 	random_max = 5 SECONDS
+
+/*
+atmos examples
+*/
+
+/obj/structure/hazard/atmospheric/example
+	name = "example atmos"
+
+/obj/structure/hazard/atmospheric/example/random_gas
+	name = "random gas"
+	random_gas = TRUE
+	created_gas = GAS_HYDROGEN
+	mols_created_gas = 100
+	max_pressure = 202
+	temperature = T0C
+
+/obj/structure/hazard/atmospheric/example/contact_gas
+	name = "contact gas"
+	contact_gas = TRUE
+	created_gas = GAS_NITROUS
+	mols_created_gas = 50
+	max_pressure = 121
+	temperature = T20C
+
 
 /*
 shutoff example
