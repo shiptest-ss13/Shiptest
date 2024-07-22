@@ -103,14 +103,14 @@ evil 'code' that sets off the above procs. mappers beware!
 		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/hazard/process()
-	if(!needs_processing)
-		. = ..()
-		return
 	if(check_client_nearby)
 		for(var/mob/living/target in range(client_range, src))
 			if(target.client)
 				client_nearby()
 			break
+	else
+		STOP_PROCESSING(SSobj, src) //if we're not doing any of the above checks, why are we processing? stop that
+		return
 	..()
 
 /obj/structure/hazard/update_icon_state()
