@@ -14,15 +14,8 @@ SUBSYSTEM_DEF(cargo)
 /datum/controller/subsystem/cargo/proc/randomize_cargo()
 	for(var/datum/cargo_market/market in markets)
 		var/datum/supply_pack/pack = pick(market.supply_packs)
-		//pack.cost = round(pack.cost * rand(0.90, 1.10))
+		pack.cost = round(pack.cost * rand(90, 110) * 0.01)
 
 /datum/controller/subsystem/cargo/proc/queue_item(datum/cargo_order/purchase)
 	queued_purchases += purchase
 	return TRUE
-
-/datum/cargo_order
-/*
-/datum/controller/subsystem/blackmarket/proc/get_market(atom/object)
-	var/datum/cargo_market/market = get_containing_shuttle(object)
-	return market
-*/

@@ -2,12 +2,17 @@
 	var/name = "Crate"
 	var/group = "Unsorted"
 	var/hidden = FALSE
+	var/base_cost
 	var/cost = 700
 	var/list/contains = null
 	var/crate_name = "crate"
 	var/desc = ""
 	var/crate_type = /obj/structure/closet/crate
 	var/admin_spawned = FALSE
+
+/datum/supply_pack/New()
+	. = ..()
+	base_cost = cost
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C

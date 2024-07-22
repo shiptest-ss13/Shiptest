@@ -124,23 +124,24 @@ function CatalogTabs(props: CatalogTabsProps) {
         </Stack>
       </Tabs.Tab>
 
-      {categories.map((supply) => (
-        <Tabs.Tab
-          className="candystripe"
-          color={supply.name === activeSupplyName ? 'green' : undefined}
-          key={supply.name}
-          selected={supply.name === activeSupplyName}
-          onClick={() => {
-            setActiveSupplyName(supply.name);
-            setSearchText('');
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Table.Cell>{supply.name}</Table.Cell>
-            <Table.Cell> {supply.packs.length}</Table.Cell>
-          </div>
-        </Tabs.Tab>
-      ))}
+        {categories.map((supply) => (
+          <Tabs.Tab
+            className="candystripe"
+            color={supply.name === activeSupplyName ? 'green' : undefined}
+            key={supply.name}
+            selected={supply.name === activeSupplyName}
+            onClick={() => {
+              setActiveSupplyName(supply.name);
+              setSearchText('');
+            }}
+          >
+            <Table.Row style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Table.Cell>{supply.name}</Table.Cell>
+              <Table.Cell> {supply.packs.length}</Table.Cell>
+             </Table.Row>
+          </Tabs.Tab>
+        ))}
+
     </Tabs>
   );
 }
@@ -162,6 +163,8 @@ function CatalogList(props: CatalogListProps, context) {
         <Table.Cell>Cost</Table.Cell>
       </Table.Row>
       {packs.map((pack) => {
+        const discount: number =
+          ((pack.base_cost - pack.cost) / pack.base_cost) * 100;
         return (
           <Table.Row key={pack.ref} className="candystripe">
             <Table.Cell width="70%">{pack.name}</Table.Cell>
@@ -169,7 +172,10 @@ function CatalogList(props: CatalogListProps, context) {
             <Table.Cell width="15%" collapsing textAlign="right">
               <Button
                 fluid
-                tooltip={pack.desc}
+                icon={discount > 0 ? 'shopping-cart' : undefined}
+                tooltip={`${
+                  discount > 0 ? `${discount.toFixed(2)}% off\n` : ''
+                }${pack.desc}`}
                 tooltipPosition="left"
                 onClick={() =>
                   act('add', {

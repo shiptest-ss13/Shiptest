@@ -21,11 +21,11 @@ export function searchForSupplies(
     // Flat categories
     (initialSupplies: SupplyCategory[]) =>
       initialSupplies.flatMap((category) => category.packs),
-      filter(
-        (pack: SupplyPack) =>
-          pack.name?.toLowerCase().includes(lowerSearch) ||
-          pack.desc?.toLowerCase().includes(lowerSearch)
-      ),
+    filter(
+      (pack: SupplyPack) =>
+        pack.name?.toLowerCase().includes(lowerSearch) ||
+        pack.desc?.toLowerCase().includes(lowerSearch)
+    ),
     // Just the first page
     (filtered: SupplyPack[]) => filtered.slice(0, 25),
   ])(supplies);

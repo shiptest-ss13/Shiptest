@@ -13,6 +13,7 @@ export type SupplyPack = {
   name: string;
   group: string;
   cost: number;
+  base_cost: number;
   desc: string;
 };
 
@@ -20,5 +21,6 @@ export type CartOrder = {
   ref: string;
   name: string;
   cost: number;
+  base_cost: number;
   count: number;
 };

@@ -22,6 +22,14 @@ import { CargoData, SupplyPack } from './types';
 export const CargoCart = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
   const { supply_packs = [], shopping_cart = [] } = data;
+
+  let total = 0;
+  let count = 0;
+  for (let i = 0; i < shopping_cart.length; i++) {
+    count += shopping_cart[i].count;
+    total += shopping_cart[i].cost;
+  }
+
   return (
     <Section title="Cart" fill scrollable>
       <Table>
@@ -39,15 +47,49 @@ export const CargoCart = (props, context) => {
                 width={3}
                 minValue={0}
                 value={request.count}
+                onEnter={(e, value) =>
+                  act('modify', {
+                    ref: request.ref,
+                    amount: value,
+                  })
+                }
               ></RestrictedInput>
+              <Button
+                icon="minus"
+                onClick={() => act('remove', { ref: request.ref })}
+              />
             </Table.Cell>
           </Table.Row>
         ))}
       </Table>
       <Flex>
-        <Button>Withdraw Cash</Button>
-        <Box>Cash: 111111</Box>
-        <Button>Buy</Button>
+        <Button
+          color="yellow"
+          content="Withdraw Cash"
+          onClick={() => act('withdraw')}
+        />
+        <Button
+          icon="shopping-cart"
+          color="good"
+          content="Buy"
+          onClick={() => act('buy')}
+        >
+          {' '}
+          {count}
+        </Button>
+        <Button
+          icon="times"
+          color="transparent"
+          content="Clear"
+          onClick={() => act('clear')}
+        >
+          {' '}
+          {count}
+        </Button>
+      </Flex>
+      <Flex>
+        <Button>Cash: 111111</Button>
+        <Button>Total cost: {total}</Button>
       </Flex>
     </Section>
   );

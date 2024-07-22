@@ -30,12 +30,17 @@ export const OutpostCargo = (props, context) => {
         <Stack vertical fill>
           <Tabs>
             <Tabs.Tab
+              icon="envelope"
               selected={tab === 'catalog'}
               onClick={() => setTab('catalog')}
             >
               Catalog
             </Tabs.Tab>
-            <Tabs.Tab selected={tab === 'cart'} onClick={() => setTab('cart')}>
+            <Tabs.Tab
+              icon="shopping-cart"
+              selected={tab === 'cart'}
+              onClick={() => setTab('cart')}
+            >
               Cart
             </Tabs.Tab>
           </Tabs>

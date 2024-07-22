@@ -87,3 +87,7 @@
 		new I(miscbox)
 	generateManifest(miscbox, misc_own, "")
 	return
+
+/datum/cargo_order
+	var/atom/landing_zone
+	var/list/datum/supply_pack/pack/supply_packs
