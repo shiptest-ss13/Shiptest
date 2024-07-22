@@ -55,6 +55,7 @@ X-acid pits
 -electrical makes light (probably pretty easy. I dont feel like it.)
 X-remove caltrop component and write something based on it. caltrop is janky for this use. done
 -let floor hazards have seperate warnings and damage texts
+-better guide on how to make these hazards, maybe on the wiki?
 
 " HC
 maybe something roughly like the medipen ruin vault

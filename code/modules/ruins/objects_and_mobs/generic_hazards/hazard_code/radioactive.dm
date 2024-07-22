@@ -9,24 +9,18 @@ Was grandfathered and reworked into /hazard types, so they're a little different
 	anchored = FALSE
 	cooldown = 2 SECONDS
 	resistance_flags = null
+	needs_processing = TRUE
+	check_client_nearby = TRUE
 	var/rad_power = 100
 	var/rad_range = 1 // !Range mod = rad dropoff speed
-
-/obj/structure/hazard/radioactive/Initialize()
-	START_PROCESSING(SSobj, src)
-	. = ..()
-
-/obj/structure/hazard/radioactive/process()
-	for(var/mob/living/L in range(5, src))
-		if(L.client)
-			Nuke()
-			break
-	..()
 
 /obj/structure/hazard/radioactive/attacked()
 	Nuke()
 
 /obj/structure/hazard/radioactive/contact()
+	Nuke()
+
+/obj/structure/hazard/radioactive/client_nearby()
 	Nuke()
 
 /obj/structure/hazard/radioactive/proc/Nuke(atom/movable/AM)

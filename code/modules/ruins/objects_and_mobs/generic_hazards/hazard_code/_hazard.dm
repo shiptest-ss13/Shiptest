@@ -18,6 +18,10 @@
 	var/random_min = 10 SECONDS
 	var/random_max = 30 SECONDS
 
+	//starts processing the hazard, currently only used by waste barrels.
+	var/needs_processing = FALSE
+	var/check_client_nearby = FALSE
+
 	//Whether this hazard can be disabled. Does nothing without implementing a way to disable the hazard.
 	var/can_be_disabled = FALSE
 	//Can be used for do_afters on disable checks, also toolchecks.
@@ -46,6 +50,9 @@ procs used to set off effects
 	return
 
 /obj/structure/hazard/proc/attacked() //goes off if attacked or shot by most things.
+	return
+
+/obj/structure/hazard/proc/client_nearby() //goes off if a living creature with a client (player) is within 5 tiles.
 	return
 
 /*
@@ -79,6 +86,8 @@ evil 'code' that sets off the above procs. mappers beware!
 //real code
 
 /obj/structure/hazard/Initialize()
+	if(needs_processing)
+		START_PROCESSING(SSobj, src)
 	. = ..()
 	GLOB.ruin_hazards += src
 	if(random_effect)
@@ -90,6 +99,17 @@ evil 'code' that sets off the above procs. mappers beware!
 			COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/hazard/process()
+	if(!needs_processing)
+		. = ..()
+		return
+	if(check_client_nearby)
+		for(var/mob/living/target in range(5, src))
+			if(target.client)
+				client_nearby()
+			break
+	..()
 
 /obj/structure/hazard/update_icon_state()
 	if(disabled)
@@ -176,3 +196,4 @@ evil 'code' that sets off the above procs. mappers beware!
 	GLOB.ruin_hazards -= src
 	update_turf_slowdown(TRUE)
 	return ..()
+
