@@ -1,5 +1,5 @@
 export type CargoData = {
-  supply_packs: SupplyPack[];
+  supply_packs: { [ref: string]: SupplyPack };
   categories: Category;
   shopping_cart: [];
 };

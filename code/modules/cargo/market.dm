@@ -81,7 +81,6 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 			"name" = cargo_pack.name,
 			"group" = cargo_pack.group,
 			"cost" = cargo_pack.cost,
-			"id" = cargo_pack,
 			"desc" = cargo_pack.desc || cargo_pack.name, // If there is a description, use it. Otherwise use the pack's name.
 		)
 	return data

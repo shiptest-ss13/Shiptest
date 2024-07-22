@@ -1,4 +1,4 @@
-import { useBackend } from '../../backend';
+import { useBackend, useSharedState } from '../../backend';
 import {
   Blink,
   Box,
@@ -15,16 +15,27 @@ import {
 } from '../../components';
 import { Window } from '../../layouts';
 
-import { CargoData, SupplyPack } from './types';
+import { CargoData, SupplyPack, Category } from './types';
 
 export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
-  const { supply_packs = [], categories = [] } = data;
+  const { supply_packs = [] } = data;
 
-  const categoriesWithCount = Object.keys(categories).map((categoryName) => {
-    const items = categories[categoryName];
-    return { categoryName, items };
-  });
+  const [catagory, setCatagory] = useSharedState(context, 'catagory', '');
+
+  const CategoryTabs = () => {
+    return (
+      <Tabs vertical>
+        {Object.keys(data.categories).map((categoryName) => (
+          <Tabs.Tab
+            key={categoryName}
+            selected={catagory === categoryName}
+            onClick={() => setCatagory(categoryName)}
+          >{`${categoryName} ${data.categories[categoryName].length}`}</Tabs.Tab>
+        ))}
+      </Tabs>
+    );
+  };
 
   return (
     <Section title="Catalog" fill scrollable>
@@ -35,15 +46,7 @@ export const CargoCatalog = (props, context) => {
             <Tabs.Tab>Catagory</Tabs.Tab>
             <Tabs.Tab>Faction</Tabs.Tab>
           </Tabs>
-          <Tabs vertical>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-            <Tabs.Tab>GUNS 111</Tabs.Tab>
-          </Tabs>
+          <CategoryTabs />
         </Section>
         <Box width="70%">
           <Table>
@@ -52,13 +55,16 @@ export const CargoCatalog = (props, context) => {
               <Table.Cell>Cost</Table.Cell>
               <Table.Cell>Stock</Table.Cell>
             </Table.Row>
-            {supply_packs.map((supply) => (
-              <Table.Row key={supply.name} className="candystripe">
-                <Table.Cell width="70%">{supply.name}</Table.Cell>
-                <Table.Cell width="15%">{supply.cost}</Table.Cell>
-                <Table.Cell width="15%">1</Table.Cell>
-              </Table.Row>
-            ))}
+            {Object.keys(supply_packs).map((ref) => {
+              const supply = supply_packs[ref]; // Lookup once
+              return (
+                <Table.Row key={supply.ref} className="candystripe">
+                  <Table.Cell width="70%">{supply.name}</Table.Cell>
+                  <Table.Cell width="15%">{supply.cost}</Table.Cell>
+                  <Table.Cell width="15%">1</Table.Cell>
+                </Table.Row>
+              );
+            })}
           </Table>
         </Box>
       </Flex>

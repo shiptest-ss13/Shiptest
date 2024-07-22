@@ -25,7 +25,7 @@ export const OutpostCargo = (props, context) => {
   const [tab, setTab] = useSharedState(context, 'outpostTab', 'catalog');
 
   return (
-    <Window width={800} height={700} resizable>
+    <Window width={900} height={700} resizable>
       <Window.Content>
         <Stack fill>
           <Stack vertical width={'60%'} pr="3px">

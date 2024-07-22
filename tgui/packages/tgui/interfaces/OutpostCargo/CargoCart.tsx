@@ -29,16 +29,24 @@ export const CargoCart = (props, context) => {
           <Table.Cell>Cost</Table.Cell>
           <Table.Cell>Count</Table.Cell>
         </TableRow>
-        {supply_packs.map((request) => (
-          <Table.Row key={request.id} className="candystripe" color="label">
-            <Table.Cell wrap>{request.name}</Table.Cell>
-            <Table.Cell>{request.cost}</Table.Cell>
-            <Table.Cell>
-              <RestrictedInput width={3} minValue={0}></RestrictedInput>
-            </Table.Cell>
-          </Table.Row>
-        ))}
+        {Object.keys(supply_packs).map((ref) => {
+          const request = supply_packs[ref]; // Lookup once
+          return (
+            <Table.Row key={request.id} className="candystripe" color="label">
+              <Table.Cell wrap>{request.name}</Table.Cell>
+              <Table.Cell>{request.cost}</Table.Cell>
+              <Table.Cell>
+                <RestrictedInput width={3} minValue={0}></RestrictedInput>
+              </Table.Cell>
+            </Table.Row>
+          );
+        })}
       </Table>
+      <Flex>
+        <Button>Withdraw Cash</Button>
+        <Box>Cash: 111111</Box>
+        <Button>Buy</Button>
+      </Flex>
     </Section>
   );
 };
