@@ -2130,7 +2130,8 @@
 /area/ship/hallway/central)
 "qy" = (
 /obj/machinery/light/directional/west,
-/obj/machinery/mineral/ore_redemption,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qF" = (
@@ -2482,13 +2483,11 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 1
-	},
 /obj/structure/ore_box,
 /obj/structure/sign/warning/fire{
 	pixel_x = -23
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tB" = (
@@ -3911,7 +3910,6 @@
 /area/ship/crew/dorm)
 "Fq" = (
 /obj/machinery/airalarm/directional/west,
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
