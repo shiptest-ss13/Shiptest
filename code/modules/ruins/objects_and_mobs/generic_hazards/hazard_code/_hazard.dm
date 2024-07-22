@@ -18,9 +18,11 @@
 	var/random_min = 10 SECONDS
 	var/random_max = 30 SECONDS
 
-	//starts processing the hazard, currently only used by waste barrels.
+	//starts processing the hazard, currently only used by radiation.
 	var/needs_processing = FALSE
+	//checks if a living mob with a client is within client_range, sets off client_nearby(). only used by radiation
 	var/check_client_nearby = FALSE
+	var/client_range = 5
 
 	//Whether this hazard can be disabled. Does nothing without implementing a way to disable the hazard.
 	var/can_be_disabled = FALSE
@@ -52,7 +54,7 @@ procs used to set off effects
 /obj/structure/hazard/proc/attacked() //goes off if attacked or shot by most things.
 	return
 
-/obj/structure/hazard/proc/client_nearby() //goes off if a living creature with a client (player) is within 5 tiles.
+/obj/structure/hazard/proc/client_nearby() //goes off if a living creature with a client (effectively a player check) is within 5 tiles.
 	return
 
 /*
@@ -105,7 +107,7 @@ evil 'code' that sets off the above procs. mappers beware!
 		. = ..()
 		return
 	if(check_client_nearby)
-		for(var/mob/living/target in range(5, src))
+		for(var/mob/living/target in range(client_range, src))
 			if(target.client)
 				client_nearby()
 			break
