@@ -89,7 +89,7 @@ ids don't work for slipping
 	if(contact_damage)
 		contact_damage(target)
 
-/obj/structure/hazard/floor/proc/floor_checks(var/mob/living/carbon/target)
+/obj/structure/hazard/floor/proc/floor_checks(mob/living/carbon/target)
 	if(!ishuman(target))
 		return TRUE
 	if(target.is_flying() || target.is_floating())
