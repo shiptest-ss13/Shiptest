@@ -1,6 +1,6 @@
 export type CargoData = {
   supply_packs: Record<string, SupplyCategory>;
-  shopping_cart: [];
+  shopping_cart: CartOrder[];
 };
 
 export type SupplyCategory = {
@@ -12,7 +12,13 @@ export type SupplyPack = {
   ref: string;
   name: string;
   group: string;
-  cost: string;
-  id: string;
+  cost: number;
   desc: string;
+};
+
+export type CartOrder = {
+  ref: string;
+  name: string;
+  cost: number;
+  count: number;
 };

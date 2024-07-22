@@ -15,6 +15,7 @@ import {
 } from '../../components';
 import { TableCell, TableRow } from '../../components/Table';
 import { Window } from '../../layouts';
+import { formatMoney } from '../../format';
 
 import { CargoData, SupplyPack } from './types';
 
@@ -29,18 +30,19 @@ export const CargoCart = (props, context) => {
           <Table.Cell>Cost</Table.Cell>
           <Table.Cell>Count</Table.Cell>
         </TableRow>
-        {Object.keys(supply_packs).map((ref) => {
-          const request = supply_packs[ref]; // Lookup once
-          return (
-            <Table.Row key={request.id} className="candystripe" color="label">
-              <Table.Cell wrap>{request.name}</Table.Cell>
-              <Table.Cell>{request.cost}</Table.Cell>
-              <Table.Cell>
-                <RestrictedInput width={3} minValue={0}></RestrictedInput>
-              </Table.Cell>
-            </Table.Row>
-          );
-        })}
+        {shopping_cart.map((request) => (
+          <Table.Row key={request.ref} className="candystripe" color="label">
+            <Table.Cell wrap>{request.name}</Table.Cell>
+            <Table.Cell>{formatMoney(request.cost)}</Table.Cell>
+            <Table.Cell>
+              <RestrictedInput
+                width={3}
+                minValue={0}
+                value={request.count}
+              ></RestrictedInput>
+            </Table.Cell>
+          </Table.Row>
+        ))}
       </Table>
       <Flex>
         <Button>Withdraw Cash</Button>

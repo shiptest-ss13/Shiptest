@@ -25,8 +25,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	icon_screen = "supply_express"
 	var/atom/cargo_lz
 	var/datum/cargo_market/market
-
-	var/list/shopping_cart = list()
+	var/shopping_cart = list()
 
 /obj/machinery/computer/outpost_cargo/LateInitialize()
 	. = ..()
@@ -67,6 +66,18 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 /obj/machinery/computer/outpost_cargo/ui_data(mob/user)
 	var/list/data = list()
 	data["shopping_cart"] = list()
+	if(!length(shopping_cart))
+		return
+	for(var/item in shopping_cart)
+		if(!istype(shopping_cart[item]["pack"], /datum/supply_pack))
+			continue
+		var/datum/supply_pack/pack = shopping_cart[item]["pack"]
+		data["shopping_cart"] += list(list(
+			"ref" = REF(pack),
+			"name" = pack.name,
+			"count" = shopping_cart[item]["count"],
+			"cost" = pack.cost
+		))
 	return data
 
 /obj/machinery/computer/outpost_cargo/ui_static_data(mob/user)
@@ -79,7 +90,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 				"name" = cargo_pack.group,
 				"packs" = list()
 			)
-		data["supply_packs"][cargo_pack.group] += list(list(
+		data["supply_packs"][cargo_pack.group]["packs"] += list(list(
 			"ref" = REF(cargo_pack),
 			"name" = cargo_pack.name,
 			"group" = cargo_pack.group,
@@ -94,7 +105,15 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		return
 	switch(action)
 		if("add")
-			shopping_cart += params["ref"]
+			return add_item(ui.user, params["ref"])
+
+/obj/machinery/computer/outpost_cargo/proc/add_item(mob/user, ref, amount = 1)
+	for(var/datum/supply_pack/pack in get_cargo_packs())
+		if(REF(pack) == ref)
+			shopping_cart[ref] = list(
+				"pack" = pack,
+				"count" = amount,
+			)
 
 /obj/effect/landmark/cargo
 	name = "cargo_lz"

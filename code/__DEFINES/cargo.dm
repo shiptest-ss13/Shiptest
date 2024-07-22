@@ -55,3 +55,6 @@ GLOBAL_LIST_INIT(podstyles, list(\
 	list(POD_SHAPE_OTHER, "gondola",	FALSE,	FALSE,			FALSE,		RUBBLE_NONE,	"gondola",	"The silent walker. This one seems to be part of a delivery agency."),\
 	list(POD_SHAPE_OTHER, FALSE,		FALSE,	FALSE,			FALSE,		RUBBLE_NONE,	FALSE,	FALSE,	"rl_click", "give_po")\
 ))
+
+/// The highest amount of orders you can have of one thing at any one time
+#define CARGO_MAX_ORDER 50
