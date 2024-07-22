@@ -58,27 +58,36 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		return
 	return market.supply_packs
 
-
 /obj/machinery/computer/outpost_cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "OutpostCargo", name)
 		ui.open()
 
+/obj/machinery/computer/outpost_cargo/ui_data(mob/user)
+	var/list/data = list()
+	data["shopping_cart"] = list()
+	return data
+
 /obj/machinery/computer/outpost_cargo/ui_static_data(mob/user)
 	var/list/data = list()
 	data["supply_packs"] = list()
-	data["shopping_cart"] = list()
+	//data["factions"] = list()
+	data["categories"] = list()
 	for(var/datum/supply_pack/cargo_pack in get_cargo_packs())
-		data["supply_packs"] += list(list(
+		data["categories"][cargo_pack.group] += list(REF(cargo_pack))
+		data["supply_packs"][REF(cargo_pack)] = list(
 			"ref" = REF(cargo_pack),
 			"name" = cargo_pack.name,
 			"group" = cargo_pack.group,
 			"cost" = cargo_pack.cost,
 			"id" = cargo_pack,
 			"desc" = cargo_pack.desc || cargo_pack.name, // If there is a description, use it. Otherwise use the pack's name.
-		))
+		)
 	return data
+
+/obj/machinery/computer/outpost_cargo/ui_act(action, list/params)
+	. = ..()
 
 /obj/effect/landmark/cargo
 	name = "cargo_lz"

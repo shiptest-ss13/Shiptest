@@ -1,5 +1,6 @@
 export type CargoData = {
   supply_packs: SupplyPack[];
+  categories: Category;
   shopping_cart: [];
 };
 
@@ -11,3 +12,7 @@ export type SupplyPack = {
   id: string;
   desc: string;
 };
+
+export interface Category {
+  [name: string]: string[];
+}

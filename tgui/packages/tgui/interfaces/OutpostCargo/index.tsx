@@ -27,7 +27,7 @@ export const OutpostCargo = (props, context) => {
   return (
     <Window width={800} height={700} resizable>
       <Window.Content>
-        <Flex>
+        <Stack fill>
           <Stack vertical width={'60%'} pr="3px">
             <Tabs>
               <Tabs.Tab
@@ -46,7 +46,7 @@ export const OutpostCargo = (props, context) => {
             {tab === 'catalog' && <CargoCatalog />}
             {tab === 'cart' && <CargoCart />}
           </Stack>
-          <Section title="Pack: .38 Match Grade Speedloader">
+          <Section fill title="Pack: .38 Match Grade Speedloader" width={'40%'}>
             <p>Cost: 1 billion credits</p>
             <p>Stock</p>
             <p>Seller: SRM</p>
