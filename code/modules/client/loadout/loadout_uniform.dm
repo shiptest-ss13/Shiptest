@@ -160,10 +160,6 @@
 	display_name = "suit, charcoal"
 	path = /obj/item/clothing/under/suit/charcoal
 
-/datum/gear/uniform/suit/galaxy
-	display_name = "suit, galaxy"
-	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
-
 /datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
@@ -236,8 +232,3 @@
 /datum/gear/uniform/dress/rilena
 	display_name = "red dress, Ri cosplay"
 	path = /obj/item/clothing/under/dress/rilena
-
-//Premium
-/datum/gear/uniform/tacticool
-	display_name = "tacticool turtleneck"
-	path = /obj/item/clothing/under/syndicate/tacticool

@@ -200,7 +200,7 @@
 
 /obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
 		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/suppressed(src)
+		new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
 		new /obj/item/ammo_box/magazine/m10mm(src)
 		new /obj/item/ammo_box/magazine/m10mm(src)
 

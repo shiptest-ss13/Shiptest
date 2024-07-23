@@ -587,7 +587,7 @@
 	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
 
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
@@ -598,7 +598,7 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
 
 
 /datum/outfit/job/syndicate/hos/twink
