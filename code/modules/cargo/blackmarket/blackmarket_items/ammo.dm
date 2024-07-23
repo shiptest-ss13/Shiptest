@@ -25,7 +25,7 @@
 	stock_max = 10
 	availability_prob = 0
 
-/datum/blackmarket_item/weapon/himehabu_box
+/datum/blackmarket_item/ammo/himehabu_box
 	name = ".22lr Ammo Box"
 	desc = "A 75 round ammo box of .22lr. Trust me, you'll need every shot."
 	item = /obj/item/ammo_box/c22lr_box

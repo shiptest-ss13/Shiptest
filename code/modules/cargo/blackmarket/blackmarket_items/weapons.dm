@@ -84,7 +84,7 @@
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/weapon/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/ammo/himehabu_box)
 
 	price_min = 100
 	price_max = 600

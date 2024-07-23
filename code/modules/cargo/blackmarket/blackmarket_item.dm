@@ -32,8 +32,6 @@
 	var/weight = 0
 	/// If this item is affected by avalibility weight. Mainly for items that shouldnt be able to spawn on their own normally (Eg. Certain ammo)
 	var/consider_weight = FALSE
-	/// if this item has already been cycled. Mainly for paired items so they dont get cycled twice.
-	var/set = FALSE
 	// Should there be an unlimited stock of an item
 	var/unlimited = FALSE
 	/// Should another item spawn alongside this one in the catalogue?
@@ -56,13 +54,13 @@
 /datum/blackmarket_item/proc/randomize_stock()
 	stock = rand(stock_min, stock_max)
 
-/datum/blackmarket_item/proc/cycle(price = TRUE, availibility = TRUE, force_appear = FALSE, stock = TRUE)
+/datum/blackmarket_item/proc/cycle(price = TRUE, availibility = TRUE, stock = FALSE, force_appear = FALSE)
 	if(price)
 		randomize_price()
 	if(stock)
 		randomize_stock()
 	if(availibility)
-		if(prob(max(availability_prob + (weight * 10))))
+		if(prob(availability_prob))
 			available = TRUE
 		else
 			available = FALSE

@@ -4,7 +4,8 @@
 
 	/// Available shipping methods and prices, just leave the shipping method out that you don't want to have.
 	var/list/shipping
-
+	var/items_found = 0
+	var/pair_items_cycled = 0
 
 
 	// Automatic vars, do not touch these.
@@ -18,6 +19,8 @@
 
 // sort of works - todo: have it collect all the paired items that need to be cycled in a list to be done at the end to avoid unninteded behavior
 /datum/blackmarket_market/proc/cycle_stock()
+	var/list/pair_items_to_handle = list()
+
 	for(var/category in available_items)
 		for(var/item in available_items[category])
 			if(istype(item, /datum/blackmarket_item))
@@ -25,14 +28,22 @@
 				b_item.cycle()
 				for(var/paired_item in b_item.pair_item)
 					var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)
-					item_to_set.available = TRUE
+					if(!(item_to_set in pair_items_to_handle) && !isnull(item_to_set))
+						pair_items_to_handle += item_to_set
 
+	for(var/item in pair_items_to_handle)
+		var/datum/blackmarket_item/b_item = item
+		pair_items_cycled++
+		b_item.cycle(TRUE,FALSE,TRUE)
 
 // *** this is returning Null for some reason
 // returns the blackmarket_item datum currently in the availible items list. Null if not in the list
 /datum/blackmarket_market/proc/get_item_in_market(datum/blackmarket_item/item)
-	var/search_item = _list_find(available_items[item.category],item)
-	return search_item
+	for(var/item_to_find in available_items[item.category])
+		if(istype(item_to_find,item))
+			items_found++
+			return item_to_find
+	return null
 
 /// Adds item to the available items and add it's category if it is not in categories yet.
 /datum/blackmarket_market/proc/add_item(datum/blackmarket_item/item, paired)
@@ -45,15 +56,15 @@
 
 	available_items[item.category] += item
 
-	for(var/paired_item in item.pair_item)
-		add_item(paired_item, TRUE)
+	// for(var/paired_item in item.pair_item)
+	// 	add_item(paired_item, TRUE)
 
-	if(!prob(initial(item.availability_prob)) && !paired)
-		item.available = FALSE
-		item.weight--
-	else
+	if(prob(initial(item.availability_prob)) || paired)
 		item.available = TRUE
 		item.weight++
+	else
+		item.available = FALSE
+		item.weight--
 
 	return TRUE
 
