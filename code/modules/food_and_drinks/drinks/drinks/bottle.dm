@@ -202,10 +202,10 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Keh'Lu'Tex Liqueur"
-	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces it's original ingredient with coffee from Terra."
+	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces its original ingredient with coffee from Terra."
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
-	foodtype = VEGETABLES
+	foodtype = SUGAR | ALCOHOL //it's coffee and rum .
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
 	name = "Student-Union's Gold Standard"
