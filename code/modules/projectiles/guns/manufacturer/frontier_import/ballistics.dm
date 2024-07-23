@@ -48,7 +48,6 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
-///obj/item/gun/ballistic/automatic/smg/uzi
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
 	desc = "A Old Frontiersmen machine pistol. While never officialy released, it's widely copied in the frontier as it is quite a good weapon despite the origin. While closely accociated with crime, the gun is used by pretty much anyone. Chambered in 9mm."
