@@ -14,6 +14,7 @@
 /datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/acquire/Destroy()
 	container = null
