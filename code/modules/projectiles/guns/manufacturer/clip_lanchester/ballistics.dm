@@ -161,7 +161,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = 0.15
 
 //########### MARKSMAN ###########//
-/obj/item/gun/ballistic/automatic/marksman/gal
+/obj/item/gun/ballistic/automatic/marksman/f4
 	name = "CM-F4"
 	desc = "CLIP's marksman rifle, used by both military and law enforcement units. Designed not long after the CM-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 
@@ -209,7 +209,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	name = "\improper SsG-04"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
@@ -260,25 +260,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_casing/a65clip
-	name = "6.5 CLIP bullet casing"
-	desc = "A 6.5 CLIP bullet casing."
-	icon_state = "big-brass"
-	caliber = "6.5CLIP"
-	projectile_type = /obj/projectile/bullet/a65clip
-
-/obj/projectile/bullet/a65clip
-	name = "6.5 CLIP bullet"
-	speed = 0.3
-	stamina = 10
-	damage = 40
-	armour_penetration = 50
-
-	icon_state = "redtrac"
-	light_system = MOVABLE_LIGHT
-	light_color = COLOR_SOFT_RED
-	light_range = 2
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82

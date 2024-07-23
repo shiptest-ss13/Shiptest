@@ -107,3 +107,10 @@
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
 	bullet_per_box = 100
+
+/obj/item/ammo_casing/a65clip
+	name = "6.5 CLIP bullet casing"
+	desc = "A 6.5 CLIP bullet casing."
+	icon_state = "big-brass"
+	caliber = "6.5CLIP"
+	projectile_type = /obj/projectile/bullet/a65clip

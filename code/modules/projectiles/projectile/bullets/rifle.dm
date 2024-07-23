@@ -79,3 +79,17 @@
 	name = ".229 Eoehoma caseless bullet"
 	damage = 20
 	armour_penetration = 10
+
+// 6.5 CLIP (F90)
+
+/obj/projectile/bullet/a65clip
+	name = "6.5 CLIP bullet"
+	speed = 0.3
+	stamina = 10
+	damage = 40
+	armour_penetration = 50
+
+	icon_state = "redtrac"
+	light_system = MOVABLE_LIGHT
+	light_color = COLOR_SOFT_RED
+	light_range = 2
