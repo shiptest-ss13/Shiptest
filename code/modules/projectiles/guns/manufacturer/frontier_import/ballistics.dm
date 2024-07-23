@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "A shoal-based full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
+	desc = "A full auto machine pistol originating from the Shoal. Insane stopping power, but mostly useless outside of CQC with unarmored targets. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -50,7 +50,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
-	desc = "A Old Frontiersmen machine pistol. While never officialy released, it's widely copied in the frontier as it is quite a good weapon despite the origin. While closely accociated with crime, the gun is used by pretty much anyone. Chambered in 9mm."
+	desc = "An Old Frontiersmen machine pistol. While its origin is controversial, and it is primarily associated with criminals, it is widely cloned and used in the frontier. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -172,7 +172,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/shredder
 	name = "\improper Shredder"
-	desc = "A strange Frontiersman heavy machine gun, it's a standard heavy machine gun but with the tripod removed, a handle placed at the front to be hipfired, and also rechambered for shotgun shells. Chambered in 12g."
+	desc = "A peculiar Frontiersman heavy machine gun. The tripod has been removed, a chainsaw grip for hip fire at the front has been added, and it has been rechambered to fire shotgun shells. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
