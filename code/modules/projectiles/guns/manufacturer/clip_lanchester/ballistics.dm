@@ -1,7 +1,7 @@
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/cm23
 	name = "\improper CM-23"
-	desc = "The 10 round service pistol of CLIP. It has become less common in service as time has passed on, but still sees action in specialized units or the frontier patrols. Chambered in 10mm."
+	desc = "CLIP's standard service pistol. 10 rounds of 10mm ammunition make the CM-23 deadlier than many other service pistols, but its weight and bulk have made it unpopular as a sidearm. It has largely been phased out outside of specialized units and patrols on the fringes of CLIP space. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -11,7 +11,7 @@
 	item_state = "clip_generic"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/cm23
-	can_suppress = FALSE
+//	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/cm23.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -38,7 +38,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
-	desc = "A burst-fire machine pistol. Chambered in 9mm."
+	desc = "A compact machine pistol designed to rapidly fire 3-round bursts. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -47,13 +47,16 @@
 	icon_state = "cm70"
 	item_state = "clip_generic"
 	mag_type = /obj/item/ammo_box/magazine/m9mm_cm70
-	can_suppress = FALSE
+//	can_suppress = FALSE
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 	manufacturer = MANUFACTURER_MINUTEMAN
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
@@ -69,6 +72,7 @@
 	caliber = "9mm"
 	max_ammo = 18
 
+
 /obj/item/ammo_box/magazine/m9mm_cm70/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
@@ -76,7 +80,7 @@
 //########### SMGS ###########//
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
-	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
+	desc = "CLIP's standard-issue submachine gun. Well-liked for its accuracy, stability, and ease of use compared to other submachineguns. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -85,9 +89,10 @@
 	icon_state = "cm5"
 	item_state = "cm5"
 
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
+	bolt_type = BOLT_TYPE_CLIP
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
+	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	fire_select_icon_state_prefix = "clip_"
@@ -95,14 +100,26 @@
 
 EMPTY_GUN_HELPER(automatic/smg/cm5)
 
+/obj/item/ammo_box/magazine/cm5_9mm
+	name = "CM-5 magazine (9mm)"
+	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
+	icon_state = "cm5_mag-1"
+	base_icon_state = "cm5_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 30
+
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
-	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excels at close range and is very lightweight. You feel like this gun is mildly unfinished. Chambered in 9mm."
-	w_class = WEIGHT_CLASS_NORMAL
-	spread = 25
-	spread_unwielded = 40
+	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal at best. Chambered in 9mm."
+	icon_state = "cm5c"
+	item_state = "cm5c"
 
-	fire_delay = 0.08 SECONDS
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 10
+	spread_unwielded = 20
+
+	fire_delay = 0.1 SECONDS
 
 	recoil = 1
 	recoil_unwielded = 2
@@ -112,7 +129,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/gal
 	name = "CM-F4"
-	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War, this particular model is in a carbine configuration, and, as such, is shorter than the standard model. Chambered in .308."
+	desc = "CLIP's marksman rifle, used by both military and law enforcement units. Designed not long after the CM-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
@@ -120,13 +137,14 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "gal"
-	item_state = "gal"
+	icon_state = "f4"
+	item_state = "f4"
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
+	bolt_type = BOLT_TYPE_CLIP
 	mag_type = /obj/item/ammo_box/magazine/gal
-	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	burst_size = 0
 	actions_types = list()
 	manufacturer = MANUFACTURER_MINUTEMAN
@@ -138,7 +156,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/marksman/gal/inteq
 	name = "\improper SsG-04"
-	desc = "A marksman rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
+	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
@@ -148,7 +166,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
-	desc = "CLIP's standard issue sniper rifle. It is semi auto and uses a very high caliber bullet which generates enough force to pierce a lot of armor, but the force is an issue when firing rapidly semi auto. The magzine is only 5 rounds as well, so don't use all of them too eagerly. Chambered in 6.5 CLIP."
+	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 6.5mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -160,6 +178,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	fire_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 
 	mag_type = /obj/item/ammo_box/magazine/f90
+	bolt_type = BOLT_TYPE_CLIP
 
 	fire_delay = 1 SECONDS
 
@@ -170,6 +189,9 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	recoil_unwielded = 10
 	wield_slowdown = 1
 	wield_delay = 1.3 SECONDS
+
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5 CLIP)"
@@ -206,33 +228,52 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-82"
-	desc = "An assault rifle pattern from Sol, existing before the Night of Fire. A favorite of professional mercenaries and well-heeled pirates. Chambered in 5.56mm."
+	desc = "CLIP's standard assault rifle, still relatively new in service. Accurate, reliable, and easy to use, the CM-82 replaced the CM-24 as CLIP's assault rifle almost overnight, and has proven immensely popular since. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/cm82.ogg'
 	icon_state = "cm82"
 	item_state = "cm82"
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+	bolt_type = BOLT_TYPE_CLIP
 	mag_type = /obj/item/ammo_box/magazine/p16
 	spread = 2
 	wield_delay = 0.5 SECONDS
 
 	fire_delay = 0.18 SECONDS
 
-	rack_sound = 'sound/weapons/gun/rifle/m16_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
+	load_sound = 'sound/weapons/gun/rifle/cm82_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/cm82_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/cm82_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/cm82_unload.ogg'
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/skm/cm24
+	name = "\improper CM-24"
+	desc = "An obsolete and very rugged assault rifle with a heavy projectile and slow action for its class. Once CLIP's standard assault rifle produced in phenomenal numbers for the First Frontiersman War, it now serves as an acceptable, if rare, battle rifle. Chambered in 7.62mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+
+	icon_state = "cm24"
+	item_state = "cm24"
+	manufacturer = MANUFACTURER_NONE
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
-	desc = "CLIP's standard issue LMG, for heavy duty cover fire. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+	desc = "A light machine gun used by CLIP heavy weapons teams, capable of withering suppressive fire. The weight and recoil make it nearly impossible to use without deploying the bipod against appropriate cover, such as a table, or bracing against solid cover. Chambered in 7.62x40mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -301,11 +342,13 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/shotgun/cm15
 	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	desc = "A large automatic shotgun used by CLIP. Generally employed by law enforcement and breaching specialists, and rarely by CLIP-BARD (typically with incendiary ammunition). Chambered in 12 gauge."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+
+
 
 	icon_state = "cm15"
 	item_state = "cm15"
@@ -316,7 +359,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	weapon_weight = WEAPON_MEDIUM
-	can_suppress = FALSE
+//	can_suppress = FALSE
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 
 	empty_indicator = FALSE
@@ -327,6 +370,8 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	casing_ejector = TRUE
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
+
+	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 
 	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'

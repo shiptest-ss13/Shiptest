@@ -181,9 +181,15 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains a eighty-round 7.62x40mm CLIP box for the SKM rifles."
+	desc = "Contains a hundred and twenty-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/ammo_box/a762_40)
 	cost = 500
+
+/datum/supply_pack/ammo/a556_ammo_box
+	name = "5.56x39mm CLIP Ammo Box Crate"
+	desc = "Contains a hundred and twenty-round 5.56x39mm CLIP box for most newer rifles."
+	contains = list(/obj/item/ammo_box/a556_39)
+	cost = 450
 
 /datum/supply_pack/ammo/a357_ammo_box
 	name = ".357 Ammo Box Crate"
