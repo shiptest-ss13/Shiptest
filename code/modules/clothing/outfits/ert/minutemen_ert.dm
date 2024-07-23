@@ -58,7 +58,7 @@
 	belt = /obj/item/storage/belt/military/clip/e50
 	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/armor/vest/marine
-	suit_store = /obj/item/gun/energy/laser/e50
+	suit_store = /obj/item/gun/energy/laser/e50/clip
 	r_pocket = /obj/item/grenade/c4
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/stimpack
 
