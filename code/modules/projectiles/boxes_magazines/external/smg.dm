@@ -93,7 +93,7 @@
 /obj/item/ammo_box/magazine/c45_firestorm_mag
 	name = "stick magazine (.45)"
 	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
-	icon_state = "firestorm_mag"
+	icon_state = "firestorm_mag-1"
 	base_icon_state = "firestorm_mag"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
