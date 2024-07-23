@@ -160,6 +160,59 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
+	var/obj/item/storage/briefcase/current_case
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
+	. = ..()
+	if(current_case)
+		return
+	if(!istype(attacking_item, /obj/item/storage/briefcase))
+		return
+	if(attacking_item.contents.len != 0)
+		return
+	to_chat(user, span_notice("...? You rig [src] to fire from within [attacking_item]."))
+	current_case = attacking_item
+	attacking_item.forceMove(src)
+	icon = attacking_item.icon
+	base_icon_state = attacking_item.icon_state
+	item_state = attacking_item.item_state
+	name = attacking_item.name
+	lefthand_file = attacking_item.lefthand_file
+	righthand_file = attacking_item.righthand_file
+	pickup_sound = attacking_item.pickup_sound
+	drop_sound = attacking_item.drop_sound
+	w_class = WEIGHT_CLASS_BULKY
+
+//how are you even supposed to hold it like this...?
+	spread += 10
+	spread_unwielded +=10
+
+	cut_overlays()
+	update_appearance()
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/AltClick(mob/user)
+	if(!current_case)
+		return ..()
+	current_case.forceMove(get_turf(src))
+	icon = src::icon
+	base_icon_state = src::icon_state
+	item_state = src::item_state
+	name = src::name
+	lefthand_file = src::lefthand_file
+	righthand_file = src::righthand_file
+	pickup_sound = src::pickup_sound
+	drop_sound = src::drop_sound
+	w_class = WEIGHT_CLASS_NORMAL
+
+	spread = src::spread
+	spread_unwielded = src::spread_unwielded
+	to_chat(user, span_notice("You remove the [current_case] from [src]"))
+	current_case = null
+
+	cut_overlays()
+	update_appearance()
+
+
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/f4
 	name = "CM-F4"
@@ -177,7 +230,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	bolt_type = BOLT_TYPE_CLIP
-	mag_type = /obj/item/ammo_box/magazine/gal
+	mag_type = /obj/item/ammo_box/magazine/f4_308
 	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	burst_size = 0
 	actions_types = list()
@@ -250,7 +303,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5 CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage, knocking targets on their feet, very rarely delimbing them, and bypass half protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
 	ammo_type = /obj/item/ammo_casing/a65clip
@@ -396,7 +449,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 	weapon_weight = WEAPON_MEDIUM
 //	can_suppress = FALSE
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
+	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
 	empty_indicator = FALSE
 	unique_mag_sprites_for_variants = FALSE

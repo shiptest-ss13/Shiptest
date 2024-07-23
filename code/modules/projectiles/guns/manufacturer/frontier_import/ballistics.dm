@@ -23,6 +23,9 @@
 
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 
+	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+
 	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
@@ -34,7 +37,7 @@
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler machine pistol magazine (9mm)"
-	desc = "A long, 12-round magazine designed for the Mauler 'Stop' pistol. These rounds do okay damage, but struggle against armor."
+	desc = "A long, 12-round magazine designed for the Mauler machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -56,19 +59,11 @@
 
 	icon_state = "spitter"
 	item_state = "spitter"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	mag_type = /obj/item/ammo_box/magazine/spitter_9mm
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_IMPORT
-
-//	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
-//	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-
-//	load_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-//	load_empty_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-//	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-//	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
 
 	spread = 20
 	spread_unwielded = 35
@@ -115,7 +110,7 @@
 
 
 
-/obj/item/ammo_box/magazine/uzim9mm
+/obj/item/ammo_box/magazine/spitter_9mm
 	name = "spitter pistol magazine (9mm)"
 	desc = "A thin, 30-round magazine for the spitter machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "spitter_mag-1"
@@ -124,7 +119,7 @@
 	caliber = "9mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/uzim9mm/update_icon_state()
+/obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 

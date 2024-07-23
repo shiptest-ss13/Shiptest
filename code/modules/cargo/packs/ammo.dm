@@ -134,7 +134,7 @@
 /datum/supply_pack/ammo/gal308_ammo
 	name = "CM-GAL .308 Magazine Crate"
 	desc = "Contains a .308 CM-GAL magazine for the CM-GAL rifle, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/gal)
+	contains = list(/obj/item/ammo_box/magazine/f4_308)
 	cost = 1000
 
 /datum/supply_pack/ammo/gar_ammo

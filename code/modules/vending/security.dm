@@ -98,7 +98,7 @@
 
 		/obj/item/storage/box/lethalshot = 6,
 		/obj/item/stock_parts/cell/gun = 5,
-		/obj/item/ammo_box/magazine/uzim9mm = 5,
+		/obj/item/ammo_box/magazine/spitter_9mm = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,

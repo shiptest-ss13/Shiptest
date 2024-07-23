@@ -105,7 +105,7 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 	icon_state = "uzi"
 
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	mag_type = /obj/item/ammo_box/magazine/spitter_9mm
 	bolt_type = BOLT_TYPE_OPEN
 	show_magazine_on_sprite = TRUE
 

@@ -85,7 +85,7 @@
 	. = ..()
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
-/obj/item/ammo_box/magazine/gal
+/obj/item/ammo_box/magazine/f4_308
 	name = "\improper GAL Magazine (.308)"
 	desc = "A standard 10-round magazine for GAL platform DMRs. These rounds do good damage with significant armor penetration."
 	icon_state = "gal_mag-1"
@@ -95,7 +95,7 @@
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/p16
+/obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
 	name = "generic assault rifle magazine (5.56x45mm)"
 	desc = "A simple, 30-round magazine for 5.56x45mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "p16_mag-1"
