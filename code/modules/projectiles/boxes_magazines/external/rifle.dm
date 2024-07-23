@@ -86,8 +86,8 @@
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/f4_308
-	name = "\improper GAL Magazine (.308)"
-	desc = "A standard 10-round magazine for GAL platform DMRs. These rounds do good damage with significant armor penetration."
+	name = "\improper F4 Magazine (.308)"
+	desc = "A standard 10-round magazine for F4 platform DMRs. These rounds do good damage with significant armor penetration."
 	icon_state = "gal_mag-1"
 	base_icon_state = "gal_mag"
 	ammo_type = /obj/item/ammo_casing/a308
