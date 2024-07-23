@@ -92,3 +92,38 @@
   - balance: Decreased the amount of landmines required for its mission and increased
       the value per mine slightly
   - rscdel: Capsaicin no longer Boils you
+2024-07-15:
+  FalloutFalcon:
+  - refactor: refactored attachments to be modular
+  Sadhorizon:
+  - tweak: Changed sunskipper's prefix to SV.
+  - bugfix: Added a missing pipe to the sunskipper.
+  Skies-Of-Blue:
+  - rscadd: typing indicators now trigger off of the command bar
+  - rscadd: an SSD Indicator for when you have been disconnected for less than three
+      minutes
+  - balance: players will now remain awake for three minutes after disconnecting,
+      with a new SSD icon to boot!
+  - balance: players SSD longer than three minutes will lose their icon and fall asleep,
+      much like the previous behavior
+  SomeguyManperson:
+  - bugfix: gun cargo packs now act more as they would be expected to
+2024-07-17:
+  FalloutFalcon:
+  - rscadd: Orbit menu is less cluttered and just shows the real name, hovering over
+      it shows their standard name.
+  - refactor: refactored express console to not be a subtype of the cargo console
+      and replacing it.
+  Martinpachu:
+  - balance: Doubled the price on every automatic gun and added 250 credits to the
+      price of every semi-auto pistol.
+  Sadhorizon:
+  - tweak: Choice beacons were reflavored into choice boxes.
+  - rscdel: Removed a bunch of meme, weird and unused items from the loadout.
+  - tweak: Reflavored the Cybersun labcoat into a generic "translucent labcoat"
+  SomeguyManperson:
+  - bugfix: ships docked to eachother now share gravity
+2024-07-18:
+  Fest1v3:
+  - rscadd: adds a few vox sprites
+  - bugfix: fixes a few vox sprites

@@ -113,7 +113,7 @@
 
 /obj/item/kinetic_crusher/ui_action_click(mob/user, actiontype)
 	set_light_on(!light_on)
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, SOUND_EMPTY_MAG, 100, TRUE)
 	update_appearance()
 
 
