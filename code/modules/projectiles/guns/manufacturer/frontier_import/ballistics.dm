@@ -104,7 +104,10 @@
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"
 	desc = "A strange frontiersmen weapon. With a high ammo count and a low caliber, this gun makes up for its lack of power with it's extremely high rate of fire, hence the name. Chambered in .22 LR."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
 	icon_state = "pounder"
 	item_state = "pounder"
