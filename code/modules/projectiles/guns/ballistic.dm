@@ -82,6 +82,8 @@
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)
 		. += "[icon_state]_empty"
+	if(chambered && mag_display_ammo)
+		. += "[icon_state]_chambered"
 
 /obj/item/gun/ballistic/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	if(!semi_auto && from_firing)
