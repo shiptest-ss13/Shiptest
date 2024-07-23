@@ -142,8 +142,8 @@
 	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	burst_size = 1
 	fire_delay = 0.05 SECONDS
-	spread = 30
-	spread_unwielded = 60
+	spread = 25
+	spread_unwielded = 50
 
 	fire_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	rack_sound = 'sound/weapons/gun/smg/pounder_cocked.ogg'

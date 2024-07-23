@@ -95,6 +95,27 @@
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 37,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 27,
+			"y" = 17,
+		)
+	)
+
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
@@ -108,6 +129,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
@@ -120,6 +142,18 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	spread_unwielded = 20
 
 	fire_delay = 0.1 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 30,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 22,
+			"y" = 17,
+		)
+	)
+
 
 	recoil = 1
 	recoil_unwielded = 2
@@ -149,6 +183,27 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	actions_types = list()
 	manufacturer = MANUFACTURER_MINUTEMAN
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 16,
+		)
+	)
+
 	wield_slowdown = 2
 	spread = -4
 	fire_select_icon_state_prefix = "clip_"
@@ -161,8 +216,8 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	icon_state = "gal-inteq"
-	item_state = "gal-inteq"
+	icon_state = "f4_inteq"
+	item_state = "f4_inteq"
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
