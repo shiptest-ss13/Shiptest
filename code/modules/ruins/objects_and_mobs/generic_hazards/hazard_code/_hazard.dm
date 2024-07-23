@@ -18,10 +18,9 @@
 	var/random_min = 10 SECONDS
 	var/random_max = 30 SECONDS
 
-	//starts processing the hazard, currently only used by radiation.
-	var/needs_processing = FALSE
-	//checks if a living mob with a client is within client_range, sets off client_nearby(). only used by radiation
-	var/check_client_nearby = FALSE
+	//checks if a living mob with a client is within client_range, and doesn't send do_random_effect if nobody's nearby
+	var/requires_client_nearby = FALSE
+	//range checked if requires_client_nearby is TRUE
 	var/client_range = 5
 
 	//Whether this hazard can be disabled. Does nothing without implementing a way to disable the hazard.
@@ -88,8 +87,6 @@ evil 'code' that sets off the above procs. mappers beware!
 //real code
 
 /obj/structure/hazard/Initialize()
-	if(needs_processing)
-		START_PROCESSING(SSobj, src)
 	. = ..()
 	GLOB.ruin_hazards += src
 	if(random_effect)
@@ -101,17 +98,6 @@ evil 'code' that sets off the above procs. mappers beware!
 			COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/structure/hazard/process()
-	if(check_client_nearby)
-		for(var/mob/living/target in range(client_range, src))
-			if(target.client)
-				client_nearby()
-			break
-	else
-		STOP_PROCESSING(SSobj, src) //if we're not doing any of the above checks, why are we processing? stop that
-		return
-	..()
 
 /obj/structure/hazard/update_icon_state()
 	if(disabled)
@@ -132,9 +118,17 @@ evil 'code' that sets off the above procs. mappers beware!
 /obj/structure/hazard/proc/random_effect(start = FALSE)
 	if(QDELETED(src))
 		return
+	var/no_effect = FALSE
 	if(disabled)
-		return
-	if(!start && on)
+		no_effect = TRUE
+	if(requires_client_nearby)
+		var/nearby_client = FALSE
+		for(var/mob/living/target in range(client_range, src))
+			if(target.client)
+				nearby_client = TRUE
+		if(!nearby_client)
+			no_effect = TRUE
+	if(!start && on && !no_effect)
 		do_random_effect()
 	var/delay = rand(random_min, random_max)
 	addtimer(CALLBACK(src, PROC_REF(random_effect)), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT)

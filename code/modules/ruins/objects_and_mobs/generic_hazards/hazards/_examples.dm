@@ -74,6 +74,18 @@ ELECTRICAL HAZARDS
 	contact_damage = 30
 	shock_flags = SHOCK_NOGLOVES | SHOCK_NOSTUN
 
+//emits a tesla arc once every cooldown, if a player (living mob with client) is within client_range.
+/obj/structure/hazard/electrical/example/nearby_tesla
+	name = "nearby tesla"
+	icon_state = "hazardb"
+	requires_client_nearby = TRUE //needed
+	random_min = 3 SECONDS
+	random_max = 6 SECONDS
+	zap_range = 3
+	client_range = 7
+	zap_power = 3000 //this can afford to be more powerful, since someone has to be nearby to abuse power generation.
+	zap_flags = ZAP_MOB_DAMAGE
+
 /obj/structure/hazard/electrical/example/stun_and_spark
 	name = "random sparks and contact stun"
 	icon_state = "hazardb"

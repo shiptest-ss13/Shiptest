@@ -7,10 +7,13 @@ Was grandfathered and reworked into /hazard types, so they're a little different
 	desc = "An old container of radioactive biproducts."
 	icon_state = "barrel"
 	anchored = FALSE
-	cooldown = 2 SECONDS
 	resistance_flags = null
-	needs_processing = TRUE
-	check_client_nearby = TRUE
+	max_integrity = 600
+	requires_client_nearby = TRUE
+	client_range = 5
+	random_min = 2 SECONDS
+	random_max = 2 SECONDS
+
 	var/rad_power = 100
 	var/rad_range = 1 // !Range mod = rad dropoff speed
 
@@ -20,7 +23,7 @@ Was grandfathered and reworked into /hazard types, so they're a little different
 /obj/structure/hazard/radioactive/contact()
 	Nuke()
 
-/obj/structure/hazard/radioactive/client_nearby()
+/obj/structure/hazard/radioactive/do_random_effect()
 	Nuke()
 
 /obj/structure/hazard/radioactive/proc/Nuke(atom/movable/AM)
