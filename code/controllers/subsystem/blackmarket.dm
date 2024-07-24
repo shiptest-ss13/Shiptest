@@ -36,6 +36,9 @@ SUBSYSTEM_DEF(blackmarket)
 			markets[M].add_item(item, FALSE)
 
 		qdel(I)
+	for(var/market in markets)
+		var/datum/blackmarket_market/market_to_cycle = markets[market]
+		market_to_cycle.cycle_stock()
 	. = ..()
 
 /datum/controller/subsystem/blackmarket/fire(resumed)

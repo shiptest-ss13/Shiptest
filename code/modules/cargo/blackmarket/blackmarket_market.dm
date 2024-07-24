@@ -26,17 +26,17 @@
 			if(istype(item, /datum/blackmarket_item))
 				var/datum/blackmarket_item/b_item = item
 				b_item.cycle()
-				for(var/paired_item in b_item.pair_item)
-					var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)
-					if(!(item_to_set in pair_items_to_handle) && !isnull(item_to_set))
-						pair_items_to_handle += item_to_set
+				if(b_item.available == TRUE)
+					for(var/paired_item in b_item.pair_item)
+						var/datum/blackmarket_item/item_to_set = get_item_in_market(paired_item)
+						if(!(item_to_set in pair_items_to_handle) && !isnull(item_to_set))
+							pair_items_to_handle += item_to_set
 
 	for(var/item in pair_items_to_handle)
 		var/datum/blackmarket_item/b_item = item
 		pair_items_cycled++
-		b_item.cycle(TRUE,FALSE,TRUE)
+		b_item.cycle(TRUE,FALSE,FALSE,TRUE)
 
-// *** this is returning Null for some reason
 // returns the blackmarket_item datum currently in the availible items list. Null if not in the list
 /datum/blackmarket_market/proc/get_item_in_market(datum/blackmarket_item/item)
 	for(var/item_to_find in available_items[item.category])
