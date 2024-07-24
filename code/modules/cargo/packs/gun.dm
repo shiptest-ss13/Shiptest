@@ -116,6 +116,13 @@
 	contains = list(/obj/item/storage/guncase/doublebarrel)
 	crate_name = "shotguns crate"
 
+/datum/supply_pack/gun/leveractionshotgun
+	name = "Lever-Action Shotgun Crate"
+	desc = "yarp"
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/leveractionshotgun)
+	crate_name = "shotguns crate"
+
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
 	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
@@ -140,6 +147,13 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/a357leveraction
+	name = "357 Lever Action Crate"
+	desc = "yarp"
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/a357lever)
+	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
