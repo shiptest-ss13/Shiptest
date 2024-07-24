@@ -69,11 +69,23 @@ SUBSYSTEM_DEF(blackmarket)
 				var/startSide = pick(GLOB.cardinals)
 				var/turf/T = get_turf(purchase.uplink)
 				var/datum/virtual_level/vlevel = T.get_virtual_level()
-				var/pickedloc = vlevel.get_side_turf(startSide)
+				//var/pickedloc = vlevel.get_side_turf(startSide)
+				var/turf/pickedloc
+
+				switch(startSide)
+					if(NORTH)
+						pickedloc = locate(T.x, (vlevel.high_x + vlevel.reserved_margin),T.z)
+					if(EAST)
+						pickedloc = locate((vlevel.high_y + vlevel.reserved_margin), T.y ,T.z)
+					if(SOUTH)
+						pickedloc = locate(T.x, (vlevel.low_x + vlevel.reserved_margin),T.z)
+					if(WEST)
+						pickedloc = locate((vlevel.low_y + vlevel.reserved_margin), T.y ,T.z)
+					else
+						pickedloc = vlevel.get_side_turf(startSide)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				//use move() instead
-				item.Move(get_step_towards(T,pickedloc))
+				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)].</span>")
 
 				queued_purchases -= purchase
