@@ -273,6 +273,7 @@
 	var/obj/item/card/id/C = H.get_idcard(TRUE)
 	if(istype(C))
 		C.access = J.get_access()
+		SEND_SIGNAL(C, COSMIG_ACCESS_UPDATED)
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
 		if(H.job)

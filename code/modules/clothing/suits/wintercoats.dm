@@ -12,14 +12,16 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	allowed = list(
-				/obj/item/flashlight,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
-				/obj/item/toy,
-				/obj/item/storage/fancy/cigarettes,
-				/obj/item/lighter,
-				)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	allowed = list(	/obj/item/flashlight,
+					/obj/item/tank/internals/emergency_oxygen,
+					/obj/item/tank/internals/plasmaman,
+					/obj/item/toy,
+					/obj/item/storage/fancy/cigarettes,
+					/obj/item/lighter,
+					/obj/item/radio,
+					/obj/item/storage/pill_bottle
+					)
 
 /obj/item/clothing/head/hooded/winterhood
 	name = "winter hood"

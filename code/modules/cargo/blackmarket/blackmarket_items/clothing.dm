@@ -229,6 +229,8 @@
 
 /datum/blackmarket_item/clothing/ramzi_suit
 	name = "Rusted Red Hardsuit"
+	desc = "A vintage ICW Era Gorlex Maruader hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	desc = "A vintage ICW Era Gorlex Marauder hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
 	item = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 

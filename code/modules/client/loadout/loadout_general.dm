@@ -160,14 +160,6 @@
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
 
-/datum/gear/balloon
-	display_name = "toy, balloon"
-	path = /obj/item/toy/balloon
-
-/datum/gear/balloon/ian
-	display_name = "toy, ian balloon"
-	path = /obj/item/toy/balloon/corgi
-
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
