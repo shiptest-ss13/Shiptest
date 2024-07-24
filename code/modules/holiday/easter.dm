@@ -143,7 +143,7 @@
 	/obj/item/toy/prize/durand,
 	/obj/item/toy/prize/marauder,
 	/obj/item/toy/prize/seraph,
-	/obj/item/toy/prize/mauler,
+	/obj/item/toy/prize/touro,
 	/obj/item/toy/prize/odysseus,
 	/obj/item/toy/prize/phazon,
 	/obj/item/toy/prize/reticence,

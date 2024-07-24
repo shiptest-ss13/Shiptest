@@ -840,7 +840,7 @@
 
 /datum/techweb_node/mech_scattershot
 	id = "mecha_tools"
-	display_name = "Exosuit Weapon (LBX AC 10 \"Scattershot\")"
+	display_name = "Exosuit Weapon (LBX-10 \"Scattershot\")"
 	description = "An advanced piece of mech weaponry"
 	prereq_ids = list("ballistic_weapons")
 	design_ids = list("mech_scattershot", "mech_scattershot_ammo")
@@ -849,7 +849,7 @@
 
 /datum/techweb_node/mech_carbine
 	id = "mech_carbine"
-	display_name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
+	display_name = "Exosuit Weapon (FNX-99 \"Phoenix\" Carbine)"
 	description = "An advanced piece of mech weaponry"
 	prereq_ids = list("ballistic_weapons")
 	design_ids = list("mech_carbine", "mech_carbine_ammo")
@@ -948,7 +948,7 @@
 
 /datum/techweb_node/mech_lmg
 	id = "mech_lmg"
-	display_name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
+	display_name = "Exosuit Weapon (\"UMG-2\" LMG)"
 	description = "An advanced piece of mech weaponry"
 	prereq_ids = list("ballistic_weapons")
 	design_ids = list("mech_lmg", "mech_lmg_ammo")

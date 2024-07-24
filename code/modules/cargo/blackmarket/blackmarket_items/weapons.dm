@@ -221,7 +221,7 @@
 
 /datum/blackmarket_item/weapon/mecha_hades
 	name = "Mounted FNX-99 Carbine"
-	desc = "This so called \"Hades\" carbine is sure to burn brightly above the competition! Not to be confused with the \"Hades\" energy rifle. Exosuit not included."
+	desc = "This so called \"Phoenix\" carbine is sure to burn brightly above the competition! Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
 	pair_item = /datum/blackmarket_item/weapon/mecha_hades_ammo
 
