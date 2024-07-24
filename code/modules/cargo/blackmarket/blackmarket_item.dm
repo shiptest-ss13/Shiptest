@@ -30,8 +30,8 @@
 	var/availability_prob = 0
 	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
 	var/weight = 0
-	/// If this item is affected by avalibility weight. Mainly for items that shouldnt be able to spawn on their own normally (Eg. Certain ammo)
-	var/consider_weight = FALSE
+	/// If this item is affected by avalibility weight. Mainly for items that shouldnt be able to spawn on their own normally (Eg. Most paired items)
+	var/spawn_weighting
 	// Should there be an unlimited stock of an item
 	var/unlimited = FALSE
 	/// Should another item spawn alongside this one in the catalogue?
@@ -43,6 +43,11 @@
 		randomize_price()
 	if(isnull(stock))
 		randomize_stock()
+	if(isnull(spawn_weighting))
+		if(availability_prob == 0)
+			spawn_weighting = FALSE
+		else
+			spawn_weighting = TRUE
 
 /// Used for spawning the wanted item, override if you need to do something special with the item.
 /datum/blackmarket_item/proc/spawn_item(loc)
@@ -60,14 +65,14 @@
 	if(stock)
 		randomize_stock()
 	if(availibility)
-		if(prob(availability_prob))
+		if(spawn_weighting ? prob(max(0, (availability_prob + (weight * 20)))) : prob(availability_prob))
 			available = TRUE
+			weight--
 		else
 			available = FALSE
+			weight++
 	if(force_appear)
 		available = TRUE
-
-
 
 /// Buys the item and makes SSblackmarket handle it.
 /datum/blackmarket_item/proc/buy(obj/item/blackmarket_uplink/uplink, mob/buyer, shipping_method)
