@@ -188,8 +188,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE
