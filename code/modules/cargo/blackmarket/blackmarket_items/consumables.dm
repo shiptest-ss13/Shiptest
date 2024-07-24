@@ -62,24 +62,13 @@
 						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine))
 	return new trickwine(loc)
 
-
-/datum/blackmarket_item/consumable/pumpup
-	name = "Maintenance Pump-Up"
-	desc = "Resist any Baton stun with this handy tetanus free instant injector!"
-	item = /obj/item/reagent_containers/hypospray/medipen/pumpup
-
-	stock_max = 3
-	price_min = 50
-	price_max = 150
-	availability_prob = 90
-
 /datum/blackmarket_item/consumable/stimpack
 	name = "Stimpack"
-	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor eye irritation."
+	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 
 	stock_min = 2
-	stock_max = 3
+	stock_max = 5
 	price_min = 300
 	price_max = 500
 	availability_prob = 50

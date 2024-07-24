@@ -124,11 +124,11 @@
 
 /datum/blackmarket_item/explosive/firecrackers
 	name = "Firecracker"
-	desc = "Nuclear Bomb brand extra strength firecrackers, painted in the signature blood red of Gorlex Marauder hardsuits. Enjoyed a successful, albeit short run in PGF space due to a certain event in 492 FS made selling them somewhat in poor taste."
+	desc = "Nuclear Bomb brand extra strength firecrackers, painted in the signature blood red of the Gorlex Marauders. Enjoyed a successful, albeit short run in PGF space due to a certain event in 492 FS made selling them somewhat in poor taste."
 	item = /obj/item/grenade/firecracker
 
 	price_min = 50
 	price_max = 250
-	stock_min = 3
-	stock_max = 6
+	stock_min = 5
+	stock_max = 10
 	availability_prob = 50

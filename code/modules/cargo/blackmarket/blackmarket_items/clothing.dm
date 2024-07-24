@@ -119,7 +119,7 @@
 	price_min = 750
 	price_max = 1250
 	stock_max = 3
-	availability_prob = 100
+	availability_prob = 20
 
 /datum/blackmarket_item/clothing/gezena_helmet
 	name = "Raksha-Helm"

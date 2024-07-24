@@ -61,16 +61,6 @@
 	availability_prob = 100
 	unlimited =  TRUE
 
-/datum/blackmarket_item/misc/spyglass
-	name = "Spy Glass Kit"
-	desc = "A set of trick glasses and a linked camera. Suit and dashing shades not included."
-	item = /obj/item/storage/box/rxglasses/spyglasskit
-
-	price_min = 250
-	price_max = 1000
-	stock_max = 3
-	availability_prob = 30
-
 /datum/blackmarket_item/misc/secret_docs
 	name = "Classified Documents"
 	desc = "Good people died to get these. Luckily, we aren't good people."

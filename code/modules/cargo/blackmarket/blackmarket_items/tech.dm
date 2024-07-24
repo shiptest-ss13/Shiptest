@@ -21,16 +21,6 @@
 	stock = 1
 	availability_prob = 30
 
-/datum/blackmarket_item/tech/operating_computer
-	name = "Operating Computer Board"
-	desc = "An operating computer computer board, with a digital manual of Surgery For Idiots pre-installed for even the most dense back alley doctor.."
-	item = /obj/item/circuitboard/computer/operating
-
-	price_min = 1000
-	price_max = 3000
-	stock = 1
-	availability_prob = 30
-
 /datum/blackmarket_item/tech/mrs_pacman
 	name = "MRSPACMAN-type Generator Board"
 	desc = "A ridiciously overclocked PACMAN generator that somehow burns diamonds as fuel."
