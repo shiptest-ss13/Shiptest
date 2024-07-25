@@ -112,21 +112,6 @@
 			if(4 to INFINITY)
 				bleeeding_wording = "<b>Your heartbeat beats extremely and unstably fast as you lose a massive amount of blood!!</b>"
 
-/* how bleeding works has changed, this is now useless
-		var/old_bleed = limb_bleed
-		limb_bleed = max(limb_bleed - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
-
-		if(bleeeding_wording)
-			if(old_bleed > limb_bleed+0.2)
-				bleed_change_wording = ", however your bleeding's clotting up."
-
-			else if(old_bleed+0.1 < limb_bleed)
-				bleed_change_wording = "<b>, as your bleeding gets worse.</b>"
-			else
-				bleed_change_wording = "."
-*/
-
-
 		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
 			bleed(limb_bleed)
 
