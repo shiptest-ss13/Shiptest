@@ -38,7 +38,7 @@
 
 /datum/blackmarket_item/ammo/e40_mag
 	name = "Eoehoma .299 Caseless Magazine"
-	desc = "A 30 round magazine for the E-40 Hybrid Rifle. A magazine of BULLETS, not lasers if that wasn't clear."
+	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
 	price_min = 750
@@ -60,7 +60,7 @@
 
 /datum/blackmarket_item/ammo/model_h_mag
 	name = "Model H Magazine"
-	desc = "A 10 round magazine for Model H slug pistol. Ferromagnetic slugs, not animal slugs. We're not monsters."
+	desc = "A 10 round magazine for Model H slug pistol."
 	item = /obj/item/ammo_box/magazine/modelh
 
 	price_min = 500
@@ -102,7 +102,7 @@
 
 /datum/blackmarket_item/ammo/tec_mag
 	name = "TEC-9 AP Magazine"
-	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol. For those extra tough targets."
+	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
 	item = /obj/item/ammo_box/magazine/tec9
 
 	price_min = 500

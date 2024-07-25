@@ -11,6 +11,16 @@
 	stock_max = 5
 	availability_prob = 80
 
+/datum/blackmarket_item/clothing/straitjacket
+	name = "Straitjacket"
+	desc = "These straitjackets might be a tight fit, but you can certain the poor sod wont be getting away anytime soon."
+	item = /obj/item/clothing/suit/straight_jacket
+
+	price_min = 500
+	price_max = 1000
+	stock_max = 3
+	availability_prob = 40
+
 /datum/blackmarket_item/clothing/surplus_uniform
 	name = "Surplus Combat Uniforms"
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."

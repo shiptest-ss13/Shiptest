@@ -127,4 +127,15 @@
 				/obj/item/pen/sleepy))
 	return new pen(loc)
 
+/datum/blackmarket_item/misc/hexacrete
+	name = "Jug of Hexacrete"
+	desc = "Need to make a blacksite in a jiffy? Skip the fuss with this 150u jug of hexacrete!"
+	item = /obj/item/reagent_containers/glass/chem_jug/hexacrete
+
+	price_min = 750
+	price_max = 1500
+	stock_min = 3
+	stock_max = 10
+	availability_prob = 30
+
 

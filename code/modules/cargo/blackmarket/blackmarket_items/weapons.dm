@@ -32,6 +32,15 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/powerfist
+	name = "Powerfist"
+	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
+	item = /obj/item/melee/powerfist
+	price_min = 1500
+	price_max = 4000
+	stock_max = 2
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
 	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp, we had to spend hours stitching our fingers back on after getting it."

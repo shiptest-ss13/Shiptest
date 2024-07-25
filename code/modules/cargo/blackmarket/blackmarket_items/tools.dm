@@ -28,7 +28,7 @@
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 
 	price_min = 2500
-	price_max = 6000
+	price_max = 5000
 	stock = 1
 	availability_prob = 25
 
@@ -42,6 +42,17 @@
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 70
+
+/datum/blackmarket_item/tool/cham_stamp
+	name = "Chameleon Stamp"
+	desc = "Can't find a forger? Look no further than these handy chameleon stamps, capable of replicating all manner of offical or government seals."
+	item = /obj/item/stamp/chameleon
+
+	price_min = 50
+	price_max = 200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 80
 
 /datum/blackmarket_item/tool/riot_shield
 	name = "Riot Shield"
@@ -129,7 +140,7 @@
 	item = /obj/item/attachment/silencer
 
 	price_min = 100
-	price_max = 500
+	price_max = 300
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 60
