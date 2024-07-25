@@ -14,7 +14,7 @@
 					/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
-					/obj/item/tank/internals/emergency_oxygen,
+					/obj/item/tank/internals/emergency_oxygen/engi,
 					/obj/item/tank/internals/emergency_oxygen/engi,
 					/obj/item/tank/internals/emergency_oxygen/engi,
 					/obj/item/tank/internals/oxygen)
