@@ -104,7 +104,7 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/amanitin
-	name = "Amanitin bottle"
+	name = "Amanitin Bottle"
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 

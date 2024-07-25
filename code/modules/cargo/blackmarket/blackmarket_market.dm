@@ -14,8 +14,8 @@
 
 /datum/blackmarket_market/New()
 	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(cycle_stock)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
-// sort of works - todo: have it collect all the paired items that need to be cycled in a list to be done at the end to avoid unninteded behavior
 /datum/blackmarket_market/proc/cycle_stock()
 	var/list/pair_items_to_handle = list()
 
@@ -32,14 +32,12 @@
 
 	for(var/item in pair_items_to_handle)
 		var/datum/blackmarket_item/b_item = item
-		pair_items_cycled++
 		b_item.cycle(TRUE,FALSE,FALSE,TRUE)
 
 // returns the blackmarket_item datum currently in the availible items list. Null if not in the list
 /datum/blackmarket_market/proc/get_item_in_market(datum/blackmarket_item/item)
 	for(var/item_to_find in available_items[item.category])
 		if(istype(item_to_find,item))
-			items_found++
 			return item_to_find
 	return null
 

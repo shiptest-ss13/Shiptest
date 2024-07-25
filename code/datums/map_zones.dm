@@ -546,7 +546,7 @@
 	return locate(rand(low_x, high_x), rand(low_y, high_y), z_value)
 
 /datum/virtual_level/proc/get_random_position_in_margin()
-	return locate(rand(low_x + reserve_margin, high_x - reserved_margin), rand(low_y + reserved_margin, high_y - reserve_margin), z_value)
+	return locate(rand(low_x + reserved_margin, high_x - reserved_margin), rand(low_y + reserved_margin, high_y - reserved_margin), z_value)
 
 /datum/virtual_level/proc/get_below_turf(turf/Turf)
 	if(!down_linkage)
