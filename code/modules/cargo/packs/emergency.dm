@@ -8,7 +8,7 @@
 
 /datum/supply_pack/emergency/internals
 	name = "Internals Crate"
-	desc = "Contains four breathing masks and four oxygen tanks of varying size. Oxygen canister sold separately."
+	desc = "Contains four breathing masks, three advanced emergency oxygen tanks and one large oxygen tank. Oxygen canister sold separately."
 	cost = 100
 	contains = list(/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
