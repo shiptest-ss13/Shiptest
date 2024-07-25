@@ -512,7 +512,7 @@
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
 	box = /obj/item/storage/box/survival/clip/balaclava
-	shoes = null
+	shoes = /obj/item/clothing/shoes/combat // shoos
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
