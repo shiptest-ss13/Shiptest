@@ -98,19 +98,19 @@
 //		var/bleed_change_wording
 		switch(limb_bleed)
 			if(0 to 0.5)
-				bleeeding_wording = "You feel droplets of blood drip down."
+				bleeeding_wording = "You hear droplets of blood drip down."
 				message_cooldown *= 2.5
 			if(0.5 to 1)
 				bleeeding_wording = "You feel your blood flow quietly to the floor."
 				message_cooldown *= 2
 			if(1 to 2)
-				bleeeding_wording = "The amount of streaming blood leaving your body onto the ground is worrying you..."
+				bleeeding_wording = "The flow of blood leaving your body onto the ground is worrying..."
 				message_cooldown *= 1.7
 			if(2 to 4)
 				bleeeding_wording = "You're losing blood <b><i>very fast</i></b>, which is freaking you out!"
 				message_cooldown *= 1.5
 			if(4 to INFINITY)
-				bleeeding_wording = "<b>Your heartbeat beats extremely and unstably fast as you lose a massive amount of blood!!</b>"
+				bleeeding_wording = "<b>Your heartbeat beats unstably fast as you lose a massive amount of blood!!</b>"
 
 		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
 			bleed(limb_bleed)
