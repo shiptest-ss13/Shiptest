@@ -190,17 +190,6 @@
 		return BULLET_ACT_FORCE_PIERCE
 	return ..()
 
-//damage, gibbing, and dying
-/mob/living/simple_animal/revenant/attackby(obj/item/W, mob/living/user, params)
-	. = ..()
-	if(istype(W, /obj/item/nullrod))
-		visible_message("<span class='warning'>[src] violently flinches!</span>", \
-						"<span class='revendanger'>As \the [W] passes through you, you feel your essence draining away!</span>")
-		adjustBruteLoss(25) //hella effective
-		inhibited = TRUE
-		update_action_buttons_icon()
-		addtimer(CALLBACK(src, PROC_REF(reset_inhibit)), 30)
-
 /mob/living/simple_animal/revenant/proc/reset_inhibit()
 	inhibited = FALSE
 	update_action_buttons_icon()

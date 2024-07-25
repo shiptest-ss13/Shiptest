@@ -220,7 +220,7 @@
 	icon_state = "nitrile"
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
-	supports_variations = KEPORI_VARIATION
+	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/gloves/color/latex/nitrile/evil
 	name = "red nitrile gloves"
@@ -240,10 +240,8 @@
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
-	siemens_coefficient = 0				//WS Station eddit 	"Tinkers Gloves Insuls"
-	permeability_coefficient = 0.05		//WS Station eddit 	"Tinkers Gloves Insuls"
-	//siemens_coefficient = 0.8			WS Station eddit	"Tinkers Gloves Insuls"
-	//permeability_coefficient = 0.3	WS Station eddit 	"Tinkers Gloves Insuls"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
 	carrytrait = TRAIT_QUICK_BUILD
 	custom_materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
 
@@ -276,7 +274,8 @@
 		/obj/item/clothing/gloves/color/light_brown = 1,
 		/obj/item/clothing/gloves/color/brown = 1,
 		/obj/item/clothing/gloves/color/white = 1,
-		/obj/item/clothing/gloves/color/rainbow = 1)
+		/obj/item/clothing/gloves/color/rainbow = 1,
+		)
 
 /obj/item/clothing/gloves/maid
 	name = "maid arm covers"

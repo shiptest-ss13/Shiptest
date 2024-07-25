@@ -257,9 +257,12 @@
 	if(blood_volume < BLOOD_VOLUME_SAFE || skin_tone == "albino")
 		msg += "[t_He] [t_has] pale skin.\n"
 
-	if(bleedsuppress)
-		msg += "[t_He] [t_is] bandaged with something.\n"
-	else if(bleed_rate)
+
+	if(LAZYLEN(get_bandaged_parts()))
+		msg += "[t_He] [t_has] some dressed bleeding.\n"
+
+	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts(TRUE)
+	if(LAZYLEN(bleed_check))
 		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
 		else
@@ -311,10 +314,6 @@
 
 			msg += "</span>"
 
-			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.holy_role)
-				msg += "[t_He] [t_has] a holy aura about [t_him].\n"
-				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "religious_comfort", /datum/mood_event/religiously_comforted)
-
 		switch(stat)
 			if(UNCONSCIOUS, HARD_CRIT)
 				msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
@@ -327,7 +326,7 @@
 			if(!key)
 				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'>[t_He] appears to be suffering from SSD - Space Sleep Disorder. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
+				msg += "<span class='warning'>[t_He] [t_has] been suffering from SSD - Space Sleep Disorder - for [trunc(((world.time - lastclienttime) / (1 MINUTES)))] minutes. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
 	if (length(msg))
 		. += "<span class='warning'>[msg.Join("")]</span>"
 
@@ -414,6 +413,22 @@
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()
+	for(var/obj/item/bodypart/BP as anything in get_bandaged_parts())
+		var/datum/component/bandage/B = BP.GetComponent(/datum/component/bandage)
+		. += span_notice("[p_their(TRUE)] [parse_zone(BP.body_zone)] is dressed with [B.bandage_name]")
+	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts(TRUE))
+		var/bleed_text
+		switch(BP.bleeding)
+			if(0 to 0.5)
+				bleed_text = "lightly."
+			if(0.5 to 1)
+				bleed_text = "moderately."
+			if(1 to 1.5)
+				bleed_text = "heavily!"
+			else
+				bleed_text = "significantly!!"
+		. += span_warning("[p_their(TRUE)] [parse_zone(BP.body_zone)] is bleeding [bleed_text]")
+
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
 	if(get_age())

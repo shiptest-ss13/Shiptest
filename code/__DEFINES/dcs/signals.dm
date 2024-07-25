@@ -387,6 +387,9 @@
 	/* #define SPEECH_IGNORE_SPAM 6
 	#define SPEECH_FORCED 7 */
 
+///from /mob/living/life()
+#define COMSIG_MOB_LIFE "mob_life"
+
 ///from /mob/say_dead(): (mob/speaker, message)
 #define COMSIG_MOB_DEADSAY "mob_deadsay"
 	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
@@ -420,6 +423,8 @@
 ///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
 #define COMSIG_LIVING_ATTACH_LIMB "living_attach_limb"
 	#define COMPONENT_NO_ATTACH 1
+///from base of /obj/item/bodypart/proc/drop_limb(): (special)
+#define COMSIG_LIVING_DROP_LIMB "living_drop_limb"
 ///from base of mob/living/set_buckled(): (new_buckled)
 #define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
 
@@ -774,9 +779,16 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+#define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+///sent when guns need to notify the gun hud to update. mostly for revolvers.
+#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
 
 ///called when an elzu should unroot
 #define COMSIG_DIGOUT "dig_out"
+
+///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
+#define COSMIG_ACCESS_UPDATED "acces_updated"

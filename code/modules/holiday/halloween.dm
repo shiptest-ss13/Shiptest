@@ -243,30 +243,12 @@
 	if(prob(5))
 		playsound(loc, 'sound/spookoween/insane_low_laugh.ogg', 300, TRUE)
 
-/mob/living/simple_animal/hostile/clown_insane/attackby(obj/item/O, mob/user)
-	if(istype(O, /obj/item/nullrod))
-		if(prob(5))
-			visible_message("<span class='notice'>[src] finally found the peace it deserves. <i>You hear honks echoing off into the distance.</i></span>")
-			playsound(loc, 'sound/spookoween/insane_low_laugh.ogg', 300, TRUE)
-			qdel(src)
-		else
-			visible_message("<span class='danger'>[src] seems to be resisting the effect!</span>")
-		return
-	return ..()
-
 /mob/living/simple_animal/hostile/clown_insane/handle_temperature_damage()
 	return
 
 /////////////////////////
 // Spooky Uplink Items //
 /////////////////////////
-
-/datum/uplink_item/dangerous/crossbow/candy
-	name = "Candy Corn Crossbow"
-	desc = "A standard miniature energy crossbow that uses a hard-light projector to transform bolts into candy corn. Happy Halloween!"
-	category = "Holiday"
-	item = /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
-	surplus = 0
 
 /datum/uplink_item/device_tools/emag/hack_o_lantern
 	name = "Hack-o'-Lantern"

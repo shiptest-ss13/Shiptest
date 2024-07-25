@@ -1,0 +1,36 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sunskipper-class Culinary Vessel",
+	"prefix": "SV",
+	"namelists": ["CRUISE", "NATURAL"],
+	"map_short_name": "Sunskipper-class",
+	"map_path": "_maps/shuttles/independent/independent_sunskipper.dmm",
+	"description": "The Sunskipper-class is a state-of-the-art culinary vessel found in the frontier. It's name is a wordplay between a Kalixcian species of butterfly and ship's unique solar-powered batteries. The Sunskipper is welcomed with open arms by weary spacers of greater paycheks, who are fatigued by the monotony of their everyday meals. The ship features a self-sustaining kitchen with hydroponics and a large, deluxe dining hall, designed to serve starved travelers. It also comes with a fully-stocked bar area that allows them to drink their troubles away, if even for a brief moment.",
+	"tags": [
+		"RP Focus",
+		"Service",
+		"Specialist"
+	],
+	"starting_funds": 3000,
+	"limit": 1,
+	"job_slots": {
+		"Manager": {
+			"outfit": "/datum/outfit/job/independent/captain/manager",
+			"slots": 1,
+			"officer": true
+		},
+		"Bartender": {
+			"outfit": "/datum/outfit/job/independent/bartender/disarmed",
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/independent/cook",
+			"slots": 2
+		},
+		"Waiter": {
+			"outfit": "/datum/outfit/job/independent/assistant/waiter",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

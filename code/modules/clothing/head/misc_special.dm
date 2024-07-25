@@ -315,13 +315,6 @@
 	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
 	var/warped = FALSE
 
-/obj/item/clothing/head/foilhat/Initialize(mapload)
-	. = ..()
-	if(!warped)
-		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD,  6, TRUE, null, CALLBACK(src, PROC_REF(warp_up)))
-	else
-		warp_up()
-
 /obj/item/clothing/head/foilhat/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot != ITEM_SLOT_HEAD || warped)
@@ -373,4 +366,21 @@
 	. = ..()
 	if(!warped)
 		warp_up()
+
+/obj/item/clothing/head/plastic_flower
+	name = "plastic flower"
+	desc = "A realistic imitation of a flower. Not edible though."
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon_state = "poppy"
+	body_parts_covered = null
+	unique_reskin = list(
+		"Poppy" = "poppy",
+		"Sunflower" = "sunflower",
+		"Moonflower" = "moonflower",
+		"Novaflower" = "novaflower",
+		"Harebell" = "harebell",
+		"Geranium" = "geranium",
+		"Lily" = "lily"
+		)
+	custom_materials = (list(/datum/material/plastic = 1000))
 

@@ -147,7 +147,7 @@
 	icon_dead = "goliath_dead"
 	throw_message = "does nothing to the tough hide of the"
 	pre_attack_icon = "goliath_preattack"
-	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
+	//mob_trophy = /obj/item/mob_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
@@ -213,7 +213,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/saddle) && !saddled)
-		if(tame && do_after(user,55,target=src))
+		if(tame && do_after(user, 55, target=src))
 			user.visible_message("<span class='notice'>You manage to put [O] on [src], you can now ride [p_them()].</span>")
 			qdel(O)
 			saddled = TRUE
@@ -249,11 +249,8 @@
 	maxHealth = 180
 	health = 180
 	speed = 4
-	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
-	pre_attack_icon = "ancient_goliath_preattack"
-	throw_message = "does nothing to the rocky hide of the"
+	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
 	guaranteed_butcher_results = list()
-	crusher_drop_mod = 75
 	wander = FALSE
 	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
@@ -280,9 +277,9 @@
 			else
 				cached_tentacle_turfs -= t
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
-	fromtendril = TRUE
+	from_nest = TRUE
 
 //tentacles
 /obj/effect/temp_visual/goliath_tentacle

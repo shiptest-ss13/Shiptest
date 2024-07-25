@@ -820,7 +820,7 @@
 						TH.transfer_mob_blood_dna(src)
 
 /mob/living/carbon/human/makeTrail(turf/T)
-	if((NOBLOOD in dna.species.species_traits) || !bleed_rate || bleedsuppress)
+	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || !LAZYLEN(get_bleeding_parts(TRUE)))
 		return
 	..()
 
@@ -1409,6 +1409,32 @@
 /mob/living/proc/isLivingSSD()
 	if(player_logged && stat != DEAD)
 		return TRUE
+
+// The above code is kept to prevent old SSD behavior from breaking, while the code below is dedicated to the SSD Indicator
+
+GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicator.dmi', "default0", RUNECHAT_PLANE))
+
+/mob/living
+	var/ssd_indicator = FALSE
+	var/lastclienttime = 0
+
+/mob/living/proc/set_ssd_indicator(state)
+	if(state == ssd_indicator)
+		return
+	ssd_indicator = state
+	if(ssd_indicator && stat != DEAD)
+		add_overlay(GLOB.ssd_indicator_overlay)
+	else
+		cut_overlay(GLOB.ssd_indicator_overlay)
+
+/mob/living/Login()
+	. = ..()
+	set_ssd_indicator(FALSE)
+
+/mob/living/Logout()
+	. = ..()
+	lastclienttime = world.time
+	set_ssd_indicator(TRUE)
 
 /mob/living/vv_get_header()
 	. = ..()

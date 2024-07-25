@@ -325,18 +325,3 @@ WS End */
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)
 	required_reagents = list(/datum/reagent/medicine/puce_essence = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/entpoly = 1)
-
-/datum/chemical_reaction/molten_bubbles
-	results = list(/datum/reagent/medicine/molten_bubbles = 30)
-	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/lavaland_extract = 1)
-
-/datum/chemical_reaction/plasma_bubbles
-	results = list(/datum/reagent/medicine/molten_bubbles/plasma = 3)
-	required_reagents = list(/datum/reagent/medicine/molten_bubbles = 3, /datum/reagent/toxin/plasma = 2)
-
-/datum/chemical_reaction/sand_bubbles
-	results = list(/datum/reagent/medicine/molten_bubbles/sand = 3)
-	required_reagents = list(/datum/reagent/medicine/molten_bubbles = 3, /datum/reagent/silicon = 2)
-
-/datum/chemical_reaction/sand_bubbles/plasma			// Subbing plasma bubbles for reg
-	required_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 3, /datum/reagent/silicon = 2)

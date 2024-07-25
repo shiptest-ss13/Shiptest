@@ -125,7 +125,7 @@
 
 /datum/outfit/frontier
 	name = "Frontiersman Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
@@ -151,11 +151,11 @@
 
 /datum/outfit/frontier/officer
 	name = "Frontiersman Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	uniform = /obj/item/clothing/under/frontiersmen/officer
 	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/caphat/frontier
+	head = /obj/item/clothing/head/frontier/peaked
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	outfit = /datum/outfit/frontier/trooper/heavy

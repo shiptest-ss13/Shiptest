@@ -3374,13 +3374,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -6112,7 +6112,7 @@
 /obj/item/storage/pill_bottle/aranesp,
 /obj/item/taperecorder,
 /obj/item/t_scanner,
-/obj/item/switchblade,
+/obj/item/kitchen/knife/switchblade,
 /obj/item/trash/candy,
 /obj/structure/filingcabinet/double,
 /obj/item/radio/intercom/directional/south,
@@ -10099,7 +10099,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "LS" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/structure/railing{
@@ -11028,10 +11028,7 @@
 	pixel_x = -5;
 	pixel_y = -12
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 8;
-	pixel_y = -4
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/newspaper{
 	pixel_x = -8;
 	pixel_y = 5
@@ -11536,7 +11533,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Rs" = (
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /turf/open/floor/plasteel/tech,
