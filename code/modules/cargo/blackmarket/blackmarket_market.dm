@@ -4,8 +4,6 @@
 
 	/// Available shipping methods and prices, just leave the shipping method out that you don't want to have.
 	var/list/shipping
-	var/items_found = 0
-	var/pair_items_cycled = 0
 
 
 	// Automatic vars, do not touch these.
@@ -56,15 +54,10 @@
 
 	available_items[item.category] += item
 
-	// for(var/paired_item in item.pair_item)
-	// 	add_item(paired_item, TRUE)
-
 	if(prob(initial(item.availability_prob)) || paired)
 		item.available = TRUE
-		item.weight++
 	else
 		item.available = FALSE
-		item.weight--
 
 	return TRUE
 

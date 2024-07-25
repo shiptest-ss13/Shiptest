@@ -17,9 +17,6 @@ SUBSYSTEM_DEF(blackmarket)
 	/// Currently queued purchases.
 	var/list/queued_purchases 						= list()
 
-	var/cleared_markets = 0
-	var/found_items = 0
-
 /datum/controller/subsystem/blackmarket/Initialize(timeofday)
 	for(var/market in subtypesof(/datum/blackmarket_market))
 		markets[market] += new market
@@ -117,7 +114,7 @@ SUBSYSTEM_DEF(blackmarket)
 							to_chat(recursive_loc_check(purchase.uplink.loc, /mob),"<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at a structure in your local area.</span>")
 
 				if(!landing_turf)
-					landing_turf = zlevel.get_random_position()
+					landing_turf = zlevel.get_random_position_in_margin()
 					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the area instead.</span>")
 
 				var/obj/structure/closet/supplypod/pod = new()

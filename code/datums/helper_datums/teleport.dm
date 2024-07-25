@@ -153,33 +153,6 @@
 			// DING! You have passed the gauntlet, and are "probably" safe.
 			return potential_floor
 
-// Safe location finder
-/proc/find_random_turf(list/zlevels, check_open_turf = FALSE, check_lava = FALSE)
-	var/list/potential_targets = list()
-	for(var/area/possible_area as anything in SSmapping.areas_in_z)
-		if(!zlevels)
-			potential_targets += possible_area
-			continue
-		if((possible_area.z in zlevels) || (possible_area.get_virtual_level() in zlevels))
-			potential_targets += possible_area
-
-	if(!length(potential_targets))
-		CRASH("No viable areas found!")
-
-	for(var/cycle in 1 to length(potential_targets))
-		var/area/potential_area = pick_n_take(potential_targets)
-		for(var/turf/potential_turf in pick(potential_area))
-			if(isfloorturf(potential_turf))
-				continue
-			var/turf/open/floor/potential_floor = potential_turf
-			if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
-				var/turf/open/lava/potential_lava_floor = potential_floor
-				if(!potential_lava_floor.is_safe())
-					continue
-			return potential_floor
-
-
-
 /proc/get_teleport_turfs(turf/current, turf/center, precision = 0, restrain_vlevel = TRUE)
 	if(!center)
 		CRASH("Teleport proc passed without a destination")
