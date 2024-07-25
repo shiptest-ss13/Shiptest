@@ -56,8 +56,8 @@
 	desc = "Why, it could be anything. Are you feeling lucky?"
 	item = /obj/structure/closet/crate/secure/loot
 
-	price_min = 250
-	price_max = 400
+	price_min = 100
+	price_max = 300
 	availability_prob = 100
 	unlimited =  TRUE
 

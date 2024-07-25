@@ -60,6 +60,7 @@
 	price_max = 3000
 	stock = 2
 	availability_prob = 30
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/derringer
 	name = "Derringer"
@@ -129,7 +130,8 @@
 	price_min = 7000
 	price_max = 15000
 	stock_max = 2
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/e50
 	name = "E-50 Energy Emitter"
@@ -140,6 +142,7 @@
 	price_max = 7000
 	stock_max = 2
 	availability_prob = 20
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/e60
 	name = "E-60 Disabler"
@@ -201,7 +204,8 @@
 	price_min = 1000
 	price_max = 2000
 	stock_max = 3
-	availability_prob = 30
+	availability_prob = 20
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
@@ -211,7 +215,8 @@
 	price_min = 5000
 	price_max = 7000
 	stock = 1
-	availability_prob = 15
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/mecha_hades
 	name = "Mounted FNX-99 Carbine"

@@ -30,7 +30,7 @@
 	var/availability_prob = 0
 	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
 	var/weight = 0
-	/// If this item is affected by avalibility weight. Mainly for items that shouldnt be able to spawn on their own normally (Eg. Most paired items)
+	/// If this item is affected by avalibility weight. For items that shouldnt appear on their own (paired items), should always appear, or items paticularly rare or powerful that we dont want showing up too often
 	var/spawn_weighting
 	// Should there be an unlimited stock of an item
 	var/unlimited = FALSE
@@ -44,7 +44,7 @@
 	if(isnull(stock))
 		randomize_stock()
 	if(isnull(spawn_weighting))
-		if(availability_prob == 0)
+		if(availability_prob == 0 || availability_prob == 100)
 			spawn_weighting = FALSE
 		else
 			spawn_weighting = TRUE
@@ -65,7 +65,7 @@
 	if(stock)
 		randomize_stock()
 	if(availibility)
-		if(spawn_weighting ? prob(max(0, (availability_prob + (weight * 20)))) : prob(availability_prob))
+		if(spawn_weighting ? prob(max(0, (availability_prob + (weight * 10)))) : prob(availability_prob))
 			available = TRUE
 			weight--
 		else

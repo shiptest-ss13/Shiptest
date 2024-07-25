@@ -85,6 +85,7 @@
 	stock_min = 2
 	stock_max = 3
 	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/explosive/rusted_mine
 	name = "Landmine"
@@ -105,7 +106,8 @@
 	price_max = 6500
 	stock_min = 2
 	stock_max = 5
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/explosive/live_bomb
 	name = "Active ICW Era Ordinance"
@@ -115,7 +117,8 @@
 	price_min = 500
 	price_max = 1000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 5
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/explosive/live_bomb/spawn_item(loc)
 	var/obj/machinery/syndicatebomb/bomb = ..()

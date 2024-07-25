@@ -26,8 +26,8 @@
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
 	item = /obj/item/clothing/under/rank/security/officer/military
 
-	price_min = 200
-	price_max = 400
+	price_min = 50
+	price_max = 200
 	stock_max = 5
 	availability_prob = 80
 
@@ -98,6 +98,24 @@
 	B.desc = "It smells distinctly of iron."
 	new /obj/item/clothing/head/helmet/old(B)
 	new /obj/item/clothing/suit/armor/vest/old(B)
+	return B
+
+/datum/blackmarket_item/clothing/frontiersmen_armor_set
+	name = "X-11 Bulletproof Armor Set"
+	desc = "We got a good deal on some extra bulletproof armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
+	item = /obj/item/storage/box
+
+	price_min = 1000
+	price_max = 1750
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
+	var/obj/item/storage/box/B = ..()
+	B.name = "Bulletproof Armor Set Box"
+	B.desc = "A beat up looking box with some armor inside."
+	new /obj/item/clothing/suit/armor/vest/bulletproof/frontier(B)
+	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
 	return B
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_fireproof
@@ -225,7 +243,8 @@
 	price_min = 1000
 	price_max = 2500
 	stock_max = 2
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/clothing/combatmedic_suit
 	name = "Combat Medic Hardsuit"

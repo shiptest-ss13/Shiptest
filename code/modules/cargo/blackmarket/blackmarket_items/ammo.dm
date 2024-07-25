@@ -16,7 +16,7 @@
 
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
-	desc = "Compact 10 round .22lr magazines for use in the Himehabu pistol."
+	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
 	item = /obj/item/ammo_box/magazine/m22lr
 
 	price_min = 100
@@ -26,7 +26,7 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/himehabu_box
-	name = ".22lr Ammo Box"
+	name = ".22 LR Ammo Box"
 	desc = "A 75 round ammo box of .22lr. Trust me, you'll need every shot."
 	item = /obj/item/ammo_box/c22lr_box
 
@@ -147,10 +147,10 @@
 	name = "SKM Drum Magazine"
 	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? \
 	Do you want them to be absolutely suppressed for the next 15 seconds? \
-	 This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
+	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
 	item = /obj/item/ammo_box/magazine/skm_762_40/drum
 
-	price_min = 1750
+	price_min = 1500
 	price_max = 3500
 	stock = 2
 	availability_prob = 20
@@ -161,18 +161,20 @@
 	item = /obj/item/stock_parts/cell/gun
 
 	price_min = 100
-	price_max = 500
+	price_max = 400
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
 
 /datum/blackmarket_item/ammo/damaged_cell/spawn_item(loc)
+	var/obj/item/stock_parts/cell/damaged_cell = ..()
+	damaged_cell.name = "dented weapon power cell"
+	damaged_cell.desc = "A rechargeable electrochemical power cell. This one doesn't appear to be in the greatest condition."
 	if(prob(35))
-		var/obj/item/stock_parts/cell/damaged_cell = ..()
 		damaged_cell.rigged = TRUE
-		return new damaged_cell(loc)
+		damaged_cell.show_rigged = FALSE
 
-	return ..()
+	return new damaged_cell(loc)
 
 /datum/blackmarket_item/ammo/mecha_hades_ammo
 	name = "FNX-99 Incediary Ammo"

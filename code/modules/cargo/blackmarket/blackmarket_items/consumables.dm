@@ -69,7 +69,7 @@
 
 	stock_min = 2
 	stock_max = 5
-	price_min = 300
+	price_min = 250
 	price_max = 500
 	availability_prob = 50
 
@@ -129,10 +129,11 @@
 	desc = "The Frontier's most dangerous game, delivered right to your plate! May constitute a violation of your local BARD laws and regulations."
 	item = /mob/living/simple_animal/hostile/alien
 
-	price_min = 5000
+	price_min = 6000
 	price_max = 10000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
 	var/mob/living/simple_animal/hostile/alien = ..()
@@ -162,7 +163,7 @@
 	item = /obj/effect/spawner/lootdrop/ration
 
 	price_min = 150
-	price_max = 400
+	price_max = 300
 	availability_prob = 80
 	unlimited =  TRUE
 
@@ -229,7 +230,8 @@
 	price_min = 750
 	price_max = 2000
 	stock_max = 4
-	availability_prob = 30
+	availability_prob = 15
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/color_salve
 	name = "Color Salve"
@@ -250,4 +252,5 @@
 	price_min = 1000
 	price_max = 2000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 5
+	spawn_weighting = FALSE

@@ -102,7 +102,8 @@
 	price_min = 1000
 	price_max = 3000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/jumpboots
 	name = "Jump Boots"
@@ -123,6 +124,7 @@
 	price_max = 2000
 	stock_max = 3
 	availability_prob = 30
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"

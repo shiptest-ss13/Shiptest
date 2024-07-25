@@ -40,7 +40,8 @@
 	price_min = 5000
 	price_max = 8000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 5
+	spawn_weighting =  = FALSE
 
 /datum/blackmarket_item/tech/boris
 	name = "B.O.R.I.S Module"
@@ -72,6 +73,61 @@
 	price_max = 2000
 	stock_max = 2
 	availability_prob = 0
+
+/datum/blackmarket_item/tech/t4_capacitor
+	name = "Quadratic Capacitor"
+	desc = "A top grade quadractic capacitor. These highly effiecent capacitors are capable of storing massive amounts of electricity. Keep away from open plugs."
+	item = /obj/item/stock_parts/capacitor/quadratic
+
+	price_min = 400
+	price_max = 700
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/t4_scanner
+	name = "Triphasic Scanning Module"
+	desc = "A top grade triphasic scanning module. These finely tuned scanning modules are usually reserved for vital systems like early warning defence radars against raiders and pirates. We decided to put it to better use."
+	item = /obj/item/stock_parts/scanning_module/triphasic
+
+	price_min = 400
+	price_max = 700
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/t4_manip
+	name = "Femto Manipulator"
+	desc = "A top grade femto manipulator. These insanely precise manipuators are capable of manipulating particles up to a quadtillionth of a meter. Still not precise enough to find a single braincell in an NT exec's head though."
+	item = /obj/item/stock_parts/manipulator/femto
+
+	price_min = 400
+	price_max = 700
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/t4_laser
+	name = "Quad-Ultra Microlaser"
+	desc = "A top grade quad-ultra microlaser. A bit too micro of a laser to actually kill anyone with, but more than enough to get the most out of your materials."
+	item = /obj/item/stock_parts/micro_laser/quadultra
+
+	price_min = 400
+	price_max = 700
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/t4_bin
+	name = "Bluespace Matter Bin"
+	desc = "A top grade bluespace matter bin. Uses the power of bluespace to contain tons of matter without all the hassle of actually needing to carry literal tons with only a miniscule chance of ripping a hole in reality."
+	item = /obj/item/stock_parts/matter_bin/bluespace
+
+	price_min = 400
+	price_max = 700
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 20
 
 /datum/blackmarket_item/tech/crew_monitor
 	name = "Crew Monitor Board"
@@ -141,7 +197,8 @@
 	desc = "A retractable laser cannon that fits inside your arm for concealment. You won't be passing any metal detector scans though."
 	item = /obj/item/organ/cyberimp/arm/gun/laser
 
-	price_min = 2500
-	price_max = 5000
+	price_min = 2000
+	price_max = 4000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 15
+	spawn_weight = FALSE
