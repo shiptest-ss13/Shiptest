@@ -2,7 +2,7 @@
 /obj/item/mine
 	name = "mine"
 	desc = "An anti-personnel mine. This one explodes into nothing and does nothing. Why can you see this? You should't be able to see this. Stop looking at this."
-	icon = 'icons/obj/world/landmine.dmi'
+	icon = 'icons/obj/landmine.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 5
@@ -26,7 +26,6 @@
 
 /obj/item/mine/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
 	if(armed)
 		now_armed()
 
@@ -624,7 +623,7 @@
 /obj/item/mine/directional/claymore
 	name = "C-10 Claymore"
 	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
-
+	icon = 'icons/obj/world/landmine.dmi'
 	icon_state = "mine_claymore"
 	base_icon_state = "mine_claymore"
 
@@ -639,41 +638,16 @@
 	//using this to indicate pb
 	var/range_flash = 1
 
-	// //shim for ground icons till world icons get in
-	// var/planted = FALSE
-
 	//a second run of shrapnel, intended for maiming especially pb targets
 	var/obj/item/ammo_casing/shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred
 	casingtype = /obj/item/ammo_casing/caseless/shrapnel
 
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-// /obj/item/mine/update_icon_state()
-// 	. = ..()
-
-// /obj/item/mine/directional/claymore/now_armed()
-// 	planted = TRUE
-// 	. = ..()
-
-// //world icons would save like 20 lines here
-// /obj/item/mine/directional/claymore/update_icon_state()
-// 	if(planted)
-// 		base_icon_state = "mine_claymore_planted"
-// 		icon_state = "mine_claymore_planted"
-// 	else
-// 		icon_state = "mine_claymore"
-// 		base_icon_state = "mine_claymore"
-// 	. = ..()
-
-// /obj/item/mine/directional/claymore/disarm()
-// 	. = ..()
-// 	planted = FALSE
-// 	update_appearance(UPDATE_ICON_STATE)
-
-// /obj/item/mine/directional/claymore/attack_self(mob/user)
-// 	if(!armed && loccheck(user))
-// 		planted = TRUE
-// 	. = ..()
+//this will return to basic mines when we relegate them to specifically being on certain ruins & battlefields. For now, it's way too dangerous
+/obj/item/mine/directional/claymore/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
 
 /obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
