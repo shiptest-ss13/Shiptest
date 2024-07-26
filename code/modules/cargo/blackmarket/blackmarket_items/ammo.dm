@@ -27,11 +27,22 @@
 
 /datum/blackmarket_item/ammo/himehabu_box
 	name = ".22 LR Ammo Box"
-	desc = "A 75 round ammo box of .22lr. Trust me, you'll need every shot."
+	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
 	item = /obj/item/ammo_box/c22lr_box
 
 	price_min = 100
 	price_max = 300
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/a357_box
+	name = ".357 Ammo Box"
+	desc = "A 50 round ammo box of .357."
+	item = /obj/item/ammo_box/a357_box
+
+	price_min = 150
+	price_max = 500
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 0

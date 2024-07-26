@@ -59,36 +59,40 @@
 	price_min = 1750
 	price_max = 3000
 	stock = 2
-	availability_prob = 30
+	availability_prob = 15
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/derringer
+
 	price_min = 100
-	price_max = 600
+	price_max = 300
 	stock_max = 6
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/syndi_357
-	name = "Scarborough Arms .357 Revolver"
-	desc = "Scarborough Arms' (in)famous single action .357 revolver. Known for \"somehow\" finding their way into the hands of Syndicate operatives, it's now your chance to get your own grubby mitts on one."
-	item = /obj/item/gun/ballistic/derringer/gold
-	price_min = 750
-	price_max = 2000
+/datum/blackmarket_item/weapon/syndi_derringer
+	name = ".357 Derringer"
+	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticable. Chambered in .357, so you actually have a chance at killing something."
+	item = /obj/item/gun/ballistic/derringer/traitor
+	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
+
+	price_min = 300
+	price_max = 800
 	stock = 2
 	availability_prob = 30
 
 /datum/blackmarket_item/weapon/disposable_gun_disk
 	name = "Disposable Gun Design Disk"
-	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22lr. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
+	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
 	item = /obj/item/disk/design_disk/disposable_gun
 
 	price_min = 1500
 	price_max = 2500
 	stock = 1
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/himehabu
 	name = "Himehabu Pistol"

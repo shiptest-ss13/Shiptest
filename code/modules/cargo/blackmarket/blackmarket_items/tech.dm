@@ -41,7 +41,7 @@
 	price_max = 8000
 	stock = 1
 	availability_prob = 5
-	spawn_weighting =  = FALSE
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
 	name = "B.O.R.I.S Module"
@@ -201,4 +201,4 @@
 	price_max = 4000
 	stock = 1
 	availability_prob = 15
-	spawn_weight = FALSE
+	spawn_weighting = FALSE
