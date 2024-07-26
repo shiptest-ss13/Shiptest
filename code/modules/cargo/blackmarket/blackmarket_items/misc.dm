@@ -101,7 +101,7 @@
 /datum/blackmarket_item/misc/knockoff_plush/spawn_item(loc)
 	var/obj/item/toy/plush/tali/plush = ..()
 	plush.name = "T3MMI"
-	plush.desc = "A rather shoddy and unlicensed plushie 'paying homage' to a character from the RILENA series. A tag on the side says 'Made In Weewish'."
+	plush.desc = "A rather shoddy and unlicensed plushie 'paying homage' to a character from the RILENA series."
 	return new plush(loc)
 
 /datum/blackmarket_item/misc/pens
