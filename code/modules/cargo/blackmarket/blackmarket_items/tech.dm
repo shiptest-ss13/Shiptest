@@ -21,6 +21,16 @@
 	stock = 1
 	availability_prob = 30
 
+/datum/blackmarket_item/tech/ltrsbt
+	name = "Black Market Long-To-Short-Range-Bluespace-Transciever"
+	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. This handy teleporter will teleport your purchases directly to you once built."
+	item = /obj/item/circuitboard/machine/ltsrbt
+
+	price_min = 500
+	price_max = 1000
+	stock_max = 3
+	availability_prob = 20
+
 /datum/blackmarket_item/tech/mrs_pacman
 	name = "MRSPACMAN-type Generator Board"
 	desc = "A ridiciously overclocked PACMAN generator that somehow burns diamonds as fuel."

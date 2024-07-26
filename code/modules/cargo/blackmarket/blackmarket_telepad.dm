@@ -126,9 +126,9 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
 	reqs = list(
 		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/tape/industrial = 5,
 		/obj/item/card/bank = 1,
-		/obj/item/healthanalyzer = 1,
-		/obj/item/circuitboard
+		/obj/item/computer_hardware/network_card = 1,
+		/obj/item/circuitboard = 1
 	)
 	category = CAT_MISC
