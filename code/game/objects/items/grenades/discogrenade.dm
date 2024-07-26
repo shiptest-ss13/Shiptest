@@ -5,8 +5,8 @@
 //////////////////////
 
 /obj/item/grenade/discogrenade
-	name = "Neural Hijacker Grenade"
-	desc = "A prototype grenade developed by Cybersun Industries. Through powerful audiovisual hypnotic cues, victims are afflicted with an unstoppable urge to boogie down. "
+	name = "Portable Disco Grenade"
+	desc = "An exotic prototype grenade. Through powerful audiovisual hypnotic cues, victims are afflicted with an unstoppable urge to boogie down. "
 	icon_state = "disco"
 	item_state = "flashbang"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'

@@ -76,7 +76,7 @@
 	availability_prob = 10
 
 /datum/blackmarket_item/explosive/disco_grenade
-	name = "Neural Hijacker Grenade"
+	name = "Portable Disco Grenade"
 	desc = "Become the life of the party with this groovy grenade!"
 	item = /obj/item/grenade/discogrenade
 
