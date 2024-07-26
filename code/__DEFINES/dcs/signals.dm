@@ -793,3 +793,6 @@
 
 ///called when an elzu should unroot
 #define COMSIG_DIGOUT "dig_out"
+
+///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
+#define COSMIG_ACCESS_UPDATED "acces_updated"

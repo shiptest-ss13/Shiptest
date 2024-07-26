@@ -374,7 +374,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here
+//your subshuttle here //why is my subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
@@ -425,6 +425,11 @@
 	name = "Nail-class Boarding Vessel"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "PGF"
+
+/datum/map_template/shuttle/subshuttles/tanto
+	file_name = "independent_tanto"
+	name = "Tanto-class Drop Pod"
+	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/brawler
 	file_name = "frontiersmen_brawler"

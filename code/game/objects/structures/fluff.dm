@@ -259,6 +259,16 @@
 /obj/structure/fluff/hedge/opaque //useful for mazes and such
 	opacity = TRUE
 
+/obj/structure/fluff/glowshroom
+	name = "glowshroom"
+	desc = "Mycena bregprox, a species of mushroom that glows in the dark."
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "glowshroom"
+	layer = ABOVE_NORMAL_TURF_LAYER
+	light_color = "#C3E381"
+	light_range = 2
+	light_power = 1
+
 /obj/structure/fluff/bsdrive
 	name = "bsdrive placeholder"
 	desc = "awawawaw"

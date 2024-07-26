@@ -1,6 +1,7 @@
 /obj/item/gun/energy/laser
 	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+
 	icon_state = "laser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -25,13 +26,22 @@
 
 /obj/item/gun/energy/laser/retro
 	name ="SL L-104 retro laser gun"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "retro"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
 
+
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "caplaser"
 	item_state = null
 	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."
@@ -49,8 +59,6 @@
 
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"
-	icon_state = "lasercannon"
-	item_state = "laser"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
 	shaded_charge = FALSE
@@ -76,7 +84,7 @@
 	icon_state = "cshotgun"
 	item_state = "shotgun"
 	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
-	shaded_charge = 0
+	shaded_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
 	manufacturer = MANUFACTURER_NONE
 
@@ -88,7 +96,7 @@
 	icon_state = "lasercannon"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_BULKY
-	big_gun = TRUE
+	mag_size = MAG_SIZE_LARGE
 	cell_type = "/obj/item/stock_parts/cell/gun/large"
 	force = 10
 	flags_1 =  CONDUCT_1
@@ -153,6 +161,9 @@
 /obj/item/gun/energy/laser/iot
 	name = "\improper SL E-255 Ultimate"
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	inhand_x_dimension = 64
@@ -184,11 +195,15 @@
 /obj/item/gun/energy/laser/hitscanpistol
 	name = "experimental laser gun"
 	desc = "A highly experimental laser gun, with unknown inner workings. It has no markings besides a \"GROUP A\" inscription on the barrel."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "hitscangun"
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 	w_class = WEIGHT_CLASS_NORMAL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
@@ -203,6 +218,10 @@
 /obj/item/gun/energy/laser/e10
 	name = "E-10 laser pistol"
 	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Nanotrasen laser weapons."
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e10"
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -219,10 +238,14 @@
 	name = "E-50 energy emitter"
 	desc = "A heavy and extremely powerful laser. Sets targets on fire and kicks ass, but it uses a massive amount of energy per shot and is generally awkward to handle."
 
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e50"
+	item_state = "e50"
 
-	big_gun = TRUE
+	mag_size = MAG_SIZE_LARGE
 	cell_type = /obj/item/stock_parts/cell/gun/large
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY

@@ -903,12 +903,20 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/decal/cleanable/dirt/dust,
+<<<<<<< HEAD
 /obj/machinery/button/door{
 	dir = 1;
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
 	pixel_y = -21
+=======
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"dg" = (
+/obj/machinery/computer/cargo/retro{
+	dir = 8
+>>>>>>> upstream/master
 	},
 /obj/machinery/button/door{
 	dir = 1;
@@ -2600,6 +2608,12 @@
 /area/ship/engineering)
 "Du" = (
 /obj/effect/turf_decal/corner/transparent/neutral/full,
+<<<<<<< HEAD
+=======
+/obj/machinery/computer/cargo/retro{
+	dir = 8
+	},
+>>>>>>> upstream/master
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)

@@ -66,11 +66,14 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior plating"
 
+/turf/open/floor/plating/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plasteel/stairs/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior stairs"
-
 
 /turf/open/floor/engine/hull/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
@@ -78,3 +81,48 @@
 /turf/open/floor/plasteel/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior floor"
+
+/turf/open/floor/plasteel/patterned/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	name = "exterior floor"
+
+/turf/open/floor/plasteel/patterned/brushed/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/brushed/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	name = "exterior floor"
+
+/turf/open/floor/plasteel/patterned/ridged/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/ridged/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	name = "exterior floor"
+
+/turf/open/floor/plating/rust/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/rust/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	name = "exterior plating"
+
+/turf/open/floor/wood/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/pod/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS

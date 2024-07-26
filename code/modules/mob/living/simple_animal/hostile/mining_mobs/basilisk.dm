@@ -1,5 +1,5 @@
 #define LEGIONVIRUS_TYPE /datum/disease/transformation/legionvirus
-#define MAX_BULLET_SHELL_DAMAGE 5
+#define MAX_BULLET_SHELL_DAMAGE 2
 
 //A beast that fire freezing blasts.
 /mob/living/simple_animal/hostile/asteroid/basilisk
@@ -340,8 +340,8 @@
 		if(istype(L))
 			L.apply_status_effect(/datum/status_effect/freon/watcher)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/nest
+	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"
