@@ -1,4 +1,4 @@
-import { useBackend, useSharedState } from '../backend';
+import { useBackend, useSharedState } from '../../backend';
 import {
   ProgressBar,
   Section,
@@ -7,38 +7,11 @@ import {
   LabeledList,
   Box,
   Stack,
-} from '../components';
-import { Window } from '../layouts';
-import { CargoCatalog } from './Cargo';
+} from '../../components';
+import { Window } from '../../layouts';
 
-type Data = {
-  points: number;
-  outpostDocked: boolean;
-  onShip: boolean;
-  numMissions: number;
-  maxMissions: number;
-  shipMissions: Array<Mission>;
-  outpostMissions: Array<Mission>;
-  beaconZone: string;
-  beaconName: string;
-  hasBeacon: boolean;
-  usingBeacon: boolean;
-  message: string;
-  printMsg: string;
-  canBuyBeacon: boolean;
-};
-
-type Mission = {
-  ref: string;
-  actStr: string;
-  name: string;
-  desc: string;
-  progressStr: string;
-  value: number;
-  remaining: number;
-  duration: number;
-  timeStr: string;
-};
+import { CargoCatalog } from './Catalog';
+import { Mission, Data } from './types';
 
 export const OutpostCommunications = (props, context) => {
   const { act, data } = useBackend<Data>(context);
@@ -141,7 +114,7 @@ const CargoExpressContent = (props, context) => {
           <LabeledList.Item label="Notice">{message}</LabeledList.Item>
         </LabeledList>
       </Section>
-      <CargoCatalog express />
+      <CargoCatalog />
     </>
   );
 };

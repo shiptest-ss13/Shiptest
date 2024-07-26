@@ -99,7 +99,6 @@
 	if(.)
 		spread = 24
 		spread_unwielded = 30
-		can_bayonet = FALSE
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
