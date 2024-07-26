@@ -1339,6 +1339,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"pi" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "pn" = (
 /obj/machinery/blackbox_recorder,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -1399,6 +1410,9 @@
 "qr" = (
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1901,7 +1915,8 @@
 	pixel_y = 2
 	},
 /obj/machinery/light/directional/west,
-/obj/structure/rack,
+/obj/machinery/cell_charger,
+/obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "vw" = (
@@ -2361,7 +2376,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen)
 "zq" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "atlas_cargo"
+	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "atlas_holo"
@@ -2587,7 +2604,8 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
@@ -2658,12 +2676,15 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "CX" = (
-/obj/structure/sign/poster/clip/serene{
-	pixel_y = -32
-	},
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/transparent/blue/full,
 /obj/structure/bed/roller,
+/obj/machinery/button/door{
+	pixel_y = -23;
+	id = "atlas_med";
+	dir = 1;
+	name = "medbay shutters"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "CZ" = (
@@ -2897,6 +2918,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 4
@@ -2972,7 +2996,9 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "Hu" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "atlas_cargo"
+	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3005,6 +3031,9 @@
 "Ir" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/minutemen/edge,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "IK" = (
@@ -3707,8 +3736,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Qx" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "atlas_med"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/crewtwo)
 "Qz" = (
 /obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3882,11 +3922,14 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "RU" = (
-/obj/machinery/computer/helm{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/computer/monitor{
 	dir = 8;
 	icon_state = "computer-left"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Sb" = (
@@ -4137,6 +4180,9 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
+/obj/structure/sign/poster/clip/serene{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "UK" = (
@@ -4223,6 +4269,9 @@
 "Vo" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "atlas_med"
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "Vq" = (
@@ -4633,11 +4682,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ZZ" = (
-/obj/machinery/computer/communications{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/computer/helm{
 	dir = 8;
 	icon_state = "computer-middle"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 
@@ -5296,7 +5345,7 @@ TE
 TE
 kG
 kL
-lY
+pi
 BW
 si
 CO
@@ -5375,7 +5424,7 @@ da
 da
 SW
 Av
-gR
+Qx
 "}
 (33,1,1) = {"
 Sp
