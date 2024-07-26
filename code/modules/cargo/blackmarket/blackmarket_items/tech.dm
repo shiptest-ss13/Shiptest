@@ -188,7 +188,7 @@
 		implant.desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that \
 		stimulates the brain's pleasure centers. \
 		Dramatically increases mood, but interferes with taste reception even if uninstalled. \
-		It's wires seem a little loose."
+		Its wires seem a little loose."
 		return new implant(loc)
 	return ..()
 
