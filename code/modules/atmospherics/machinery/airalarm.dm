@@ -106,6 +106,11 @@
 	var/alarm_frequency = FREQ_ATMOS_ALARMS
 	var/datum/radio_frequency/radio_connection
 
+	//anything outright hazardous (flammable, toxic, generally Weird)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE)
+	//anything that isn't o2 or n2.
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM)
+
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
 		"temperature"				= new/datum/tlv(T0C, T0C+10, T0C+40, T0C+66),
@@ -123,7 +128,8 @@
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON 					= new/datum/tlv/dangerous,
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
-		GAS_CHLORINE				= new/datum/tlv/dangerous
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -144,8 +150,8 @@
 		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
 		GAS_FREON					= new/datum/tlv/no_checks,
 		GAS_HYDROGEN				= new/datum/tlv/no_checks,
-		GAS_CHLORINE				= new/datum/tlv/no_checks,
-		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/no_checks
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
 	)
 	heating_manage = FALSE
 
@@ -547,7 +553,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
@@ -561,22 +567,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(
-						GAS_CO2,
-						GAS_PLASMA,
-						GAS_H2O,
-						GAS_HYPERNOB,
-						GAS_NITROUS,
-						GAS_NITRYL,
-						GAS_TRITIUM,
-						GAS_BZ,
-						GAS_STIMULUM,
-						GAS_PLUOXIUM,
-						GAS_FREON,
-						GAS_HYDROGEN,
-						GAS_CHLORINE,
-						GAS_HYDROGEN_CHLORIDE
-					),
+					"set_filters" = filter_extra
 					"scrubbing" = 1,
 					"widenet" = 1
 				), signal_source)
@@ -603,7 +594,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
