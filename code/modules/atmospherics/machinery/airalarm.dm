@@ -567,7 +567,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = filter_extra
+					"set_filters" = filter_extra,
 					"scrubbing" = 1,
 					"widenet" = 1
 				), signal_source)
