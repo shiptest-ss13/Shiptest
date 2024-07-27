@@ -108,6 +108,8 @@ SUBSYSTEM_DEF(blackmarket)
 								var/turf/open/acid/potential_acid_floor = potential_floor
 								if(potential_acid_floor.is_safe_to_cross())
 									continue
+							if(!potential_floor.is_blocked_turf())
+								continue
 
 							//yippee, there's a viable turf for the package to land on
 							landing_turf = potential_floor
