@@ -55,8 +55,8 @@
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
 		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
 		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel,
-		"chlorine" = /obj/machinery/portable_atmospherics/canister/chlorine,
-		"hydrogen chloride" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
+		"cl2" = /obj/machinery/portable_atmospherics/canister/chlorine,
+		"hcl" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
 	)
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)

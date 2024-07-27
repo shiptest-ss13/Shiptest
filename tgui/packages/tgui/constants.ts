@@ -294,6 +294,20 @@ const GASES = [
     label: 'Nitrium',
     color: 'brown',
   },
+  {
+    id: 'cl2',
+    path: '/datum/gas/cl2',
+    name: 'Chlorine',
+    label: 'Cl₂',
+    color: 'yellow',
+  },
+  {
+    id: 'hcl',
+    path: '/datum/gas/hcl',
+    name: 'Hydrogen Chloride',
+    label: 'HCl',
+    color: 'greenyellow',
+  },
 ] as const;
 
 // Returns gas label based on gasId
