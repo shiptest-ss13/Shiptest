@@ -194,7 +194,7 @@
 
 /datum/blackmarket_item/tech/mindscrew
 	name = "MNDFCK Neural Implant"
-	desc = "Death is too good for your enemies. This aftermarket modification of Midi-Sim's pleasure vivifier instead triggers every single pain neuron in the poor sucker's head. Each MNDFCK has been extensively tested by our lovely volunteers to ensure the maximum quantity of suffering."
+	desc = "Got a tough customer who refuses to crack? This aftermarket modification of the Midi-Sed pleasure vivifier will amplify their pain receptors and get them talking fast."
 	item = /obj/item/organ/cyberimp/brain/mindscrew
 
 	price_min = 500
