@@ -1591,13 +1591,6 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/cigbutt,
-/mob/living/simple_animal/hostile/netherworld/migo{
-	environment_smash = 0;
-	faction = list("neutral");
-	melee_damage_lower = 5;
-	melee_damage_upper = 10;
-	name = "maurice"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -1684,6 +1677,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/pink{
 	icon_state = "8-10"
+	},
+/mob/living/simple_animal/hostile/netherworld/migo{
+	environment_smash = 0;
+	faction = list("neutral");
+	melee_damage_lower = 5;
+	melee_damage_upper = 10;
+	name = "maurice"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
