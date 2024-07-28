@@ -611,7 +611,7 @@
 	new /obj/item/grenade/frag(src)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
-	name = "CLIP Minutemen - Field Gunner (Armed - CM-40)" //See above, replace with CLIP LMG when added
+	name = "CLIP Minutemen - Field Gunner (Armed - CM-40)"
 	id_assignment = "Machinegunner"
 
 	accessory = /obj/item/clothing/accessory/armband
