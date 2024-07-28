@@ -28,7 +28,8 @@
 
 	price_min = 50
 	price_max = 200
-	stock_max = 5
+	stock_min = 5
+	stock_max = 10
 	availability_prob = 80
 
 /datum/blackmarket_item/clothing/crown

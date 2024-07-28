@@ -17,10 +17,10 @@
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
 	item = /obj/item/storage/pill_bottle
 
-	stock_min = 2
-	stock_max = 3
-	price_min = 200
-	price_max = 500
+	stock_min = 4
+	stock_max = 6
+	price_min = 50
+	price_max = 300
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -67,8 +67,8 @@
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 
-	stock_min = 2
-	stock_max = 5
+	stock_min = 4
+	stock_max = 6
 	price_min = 250
 	price_max = 500
 	availability_prob = 50
@@ -80,6 +80,7 @@
 
 	price_min = 50
 	price_max = 150
+	stock_min = 2
 	stock_max = 4
 	availability_prob = 50
 
@@ -88,9 +89,10 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	price_min = 300
-	price_max = 600
-	stock_max = 3
+	price_min = 200
+	price_max = 400
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/sodium_thiopental
@@ -98,9 +100,10 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	price_min = 300
+	price_min = 250
 	price_max = 600
-	stock_max = 3
+	stock_min = 2
+	stock_max = 4
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/amanitin
@@ -110,7 +113,8 @@
 
 	price_min = 300
 	price_max =  600
-	stock_max = 3
+	stock_max = 2
+	stock_max = 4
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/gumballs
@@ -183,10 +187,10 @@
 	desc = "A bundle of sutures for stitching up your latest bullet wound."
 	item = /obj/item/stack/medical/suture
 
-	price_min = 150
-	price_max = 350
-	stock_min = 2
-	stock_max = 5
+	price_min = 75
+	price_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/regen_mesh
@@ -194,10 +198,10 @@
 	desc = "A smoothing pack of regenerative mesh for your burns."
 	item = /obj/item/stack/medical/mesh
 
-	price_min = 150
-	price_max = 350
-	stock_min = 2
-	stock_max = 5
+	price_min = 75
+	price_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/bruise_pack
@@ -205,10 +209,10 @@
 	desc = "A bundle of old bruise packs, for you guessed it, bruises. Any rumors of these containing hazardous chemicals are just that. Rumors."
 	item = /obj/item/stack/medical/bruise_pack
 
-	price_min = 200
-	price_max = 400
-	stock_min = 2
-	stock_max = 5
+	price_min = 100
+	price_max = 350
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/ointment
@@ -216,10 +220,10 @@
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
 
-	price_min = 200
-	price_max = 400
-	stock_min = 2
-	stock_max = 5
+	price_min = 100
+	price_max = 350
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 30
 
 /datum/blackmarket_item/consumable/goliath
@@ -239,7 +243,7 @@
 	item = /obj/item/colorsalve
 
 	price_min = 100
-	price_max = 500
+	price_max = 200
 	stock_min = 4
 	stock_max = 10
 	availability_prob = 80

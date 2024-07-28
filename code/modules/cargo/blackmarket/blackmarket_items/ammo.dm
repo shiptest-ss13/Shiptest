@@ -32,8 +32,8 @@
 
 	price_min = 100
 	price_max = 300
-	stock_min = 3
-	stock_max = 6
+	stock_min = 6
+	stock_max = 10
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/a357_box
@@ -54,8 +54,7 @@
 
 	price_min = 750
 	price_max = 1250
-	stock_min = 3
-	stock_max = 5
+	stock = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/saber_mag
@@ -65,8 +64,8 @@
 
 	price_min = 500
 	price_max = 1000
-	stock_min = 2
-	stock_max = 4
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/model_h_mag
@@ -86,8 +85,8 @@
 
 	price_min = 500
 	price_max = 1000
-	stock_min = 4
-	stock_max = 6
+	stock_min = 6
+	stock_max = 8
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/pistole_c_mag
@@ -107,8 +106,8 @@
 
 	price_min = 500
 	price_max = 800
-	stock_min = 2
-	stock_max = 4
+	stock_min = 3
+	stock_max = 5
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/tec_mag
@@ -118,8 +117,8 @@
 
 	price_min = 500
 	price_max = 1000
-	stock_min = 2
-	stock_max = 4
+	stock_min = 3
+	stock_max = 5
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/blackout
@@ -140,8 +139,8 @@
 
 	price_min = 500
 	price_max = 1000
-	stock_min = 2
-	stock_max = 4
+	stock_min = 3
+	stock_max = 5
 	availability_prob = 40
 
 /datum/blackmarket_item/ammo/skm_extended
