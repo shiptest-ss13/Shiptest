@@ -139,25 +139,25 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen)
 
 /datum/outfit/job/frontiersmen/ert/grunt/skm
-	name = "ERT - Frontiersman Grunt (SKM-24)"
+	name = "ERT - Frontiersman Grunt (SKM-24 AR)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/skm
 	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo
 
 /datum/outfit/job/frontiersmen/ert/grunt/mauler_mp
-	name = "ERT - Frontiersman Grunt (Mauler)"
+	name = "ERT - Frontiersman Grunt (Mauler MP)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
 	belt = /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo
 
 /datum/outfit/job/frontiersmen/ert/grunt/spitter_mp
-	name = "ERT - Frontiersman Grunt (Spitter)"
+	name = "ERT - Frontiersman Grunt (Spitter MP)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/spitter
 	belt = /obj/item/storage/belt/security/military/frontiersmen/spitter_ammo
 
 /datum/outfit/job/frontiersmen/ert/grunt/pounder_smg
-	name = "ERT - Frontiersman Grunt (Pounder)"
+	name = "ERT - Frontiersman Grunt (Pounder SMG)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/pounder
 	belt = null
@@ -224,7 +224,7 @@
 
 
 /datum/outfit/job/frontiersmen/ert/sentry_lmg
-	name = "ERT - Frontiersman Sentry (SKM-24v)"
+	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
 	head = /obj/item/clothing/head/helmet/marine/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
@@ -237,7 +237,7 @@
 	backpack_contents = list(/obj/item/ammo_box/magazine/skm_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
 
 /datum/outfit/job/frontiersmen/ert/sentry_shredder
-	name = "ERT - Frontiersman Sentry (Shredder)"
+	name = "ERT - Frontiersman Sentry (Shredder LMG)"
 
 	head = /obj/item/clothing/head/helmet/marine/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava

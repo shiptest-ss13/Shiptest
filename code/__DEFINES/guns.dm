@@ -24,7 +24,7 @@
 ///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
 /// Example: Pistols with a slide lock, some SMGs
 #define BOLT_TYPE_LOCKING 4
-///Gun has a bolt. For 'slapping' guns.
+///Gun has an HK-style locking charging handle, so you can slap it. Only use this for flavor, otherwise modern-style automatics should use BOLT_TYPE_LOCKING.
 /// Example: everything made by lanchester
 #define BOLT_TYPE_CLIP 5
 //Sawn off nerfs

@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "A shoal-based full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
+	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with abysmal accuracy, lackluster armor penetration, and limited magazine size render it mostly useless outside of very close quarters. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -37,7 +37,7 @@
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler machine pistol magazine (9mm)"
-	desc = "A long, 12-round magazine designed for the Mauler machine pistol. These rounds do okay damage, but struggle against armor."
+	desc = "A 12-round magazine designed for the Mauler machine pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -50,7 +50,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
-	desc = "A Old Frontiersmen machine pistol. While never officialy released, it's widely copied in the frontier as it is quite a good weapon despite the origin. While closely accociated with crime, the gun is used by pretty much anyone. Chambered in 9mm."
+	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -111,7 +111,7 @@
 
 /obj/item/ammo_box/magazine/spitter_9mm
 	name = "spitter pistol magazine (9mm)"
-	desc = "A thin, 30-round magazine for the spitter machine pistol. These rounds do okay damage, but struggle against armor."
+	desc = "A thin 30-round magazine for the Spitter submachine gun."
 	icon_state = "spitter_mag-1"
 	base_icon_state = "spitter_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -125,7 +125,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"
-	desc = "A strange frontiersmen weapon. With a high ammo count and a low caliber, this gun makes up for its lack of power with it's extremely high rate of fire, hence the name. Chambered in .22 LR."
+	desc = "An unusual submachine gun of Frontiersman make. A miniscule cartridge lacking both stopping power and armor penetration is compensated for with best-in-class ammunition capacity and cycle rate. Chambered in .22 LR."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -158,7 +158,7 @@
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
-	desc = "A 50-round pan magazine for the Pounder machine gun. It's rather tiny, all things considered; it looks like it wouldn't pierce a single piece of armor."
+	desc = "A 50-round pan magazine for the Pounder submachine gun."
 	icon_state = "firestorm_pan"
 	base_icon_state = "firestorm_pan"
 	ammo_type = /obj/item/ammo_casing/c22lr
@@ -172,7 +172,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/shredder
 	name = "\improper Shredder"
-	desc = "A strange Frontiersman heavy machine gun, it's a standard heavy machine gun but with the tripod removed, a handle placed at the front to be hipfired, and also rechambered for shotgun shells. Chambered in 12g."
+	desc = "A vastly atypical heavy machine gun, extensively modified by the Frontiersmen. Additional grips have been added to enable firing from the hip, and it has been modified to fire belts of shotgun shells. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -205,8 +205,8 @@
 	has_bipod = FALSE
 
 /obj/item/ammo_box/magazine/m12_shredder
-	name = "box magazine (12g)"
-	desc = "A 40-round box magazine for the Shredder heavy machine gun."
+	name = "belt box (12g)"
+	desc = "A 40-round belt box for the Shredder heavy machine gun."
 	icon_state = "shredder_mag-1"
 	base_icon_state = "shredder_mag"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -219,8 +219,8 @@
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/m12_shredder/slug
-	name = "box magazine (12g slug)"
-	desc = "A 40-round box magazine for the Shredder heavy machine gun."
+	name = "belt box (12g slug)"
+	desc = "A 40-round belt box for the Shredder heavy machine gun."
 	icon_state = "shredder_mag_slug-1"
 	base_icon_state = "shredder_mag_slug"
 	ammo_type = /obj/item/ammo_casing/shotgun

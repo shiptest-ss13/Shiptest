@@ -80,10 +80,10 @@
 	damage = 20
 	armour_penetration = 10
 
-// 6.5 CLIP (F90)
+//6.5x57mm CLIP (F90)
 
 /obj/projectile/bullet/a65clip
-	name = "6.5 CLIP bullet"
+	name = "6.5x57mm CLIP bullet"
 	speed = 0.3
 	stamina = 10
 	damage = 40
