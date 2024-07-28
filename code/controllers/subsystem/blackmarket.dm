@@ -70,13 +70,13 @@ SUBSYSTEM_DEF(blackmarket)
 
 				switch(startSide)
 					if(NORTH)
-						pickedloc = locate(T.x, (vlevel.high_x + vlevel.reserved_margin),T.z)
+						pickedloc = locate(T.x, (vlevel.high_y - vlevel.reserved_margin),T.z)
 					if(EAST)
-						pickedloc = locate((vlevel.high_y + vlevel.reserved_margin), T.y ,T.z)
+						pickedloc = locate((vlevel.high_x - vlevel.reserved_margin), T.y ,T.z)
 					if(SOUTH)
-						pickedloc = locate(T.x, (vlevel.low_x + vlevel.reserved_margin),T.z)
+						pickedloc = locate(T.x, (vlevel.low_y + vlevel.reserved_margin),T.z)
 					if(WEST)
-						pickedloc = locate((vlevel.low_y + vlevel.reserved_margin), T.y ,T.z)
+						pickedloc = locate((vlevel.low_x + vlevel.reserved_margin), T.y ,T.z)
 					else
 						pickedloc = vlevel.get_side_turf(startSide)
 
