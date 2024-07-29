@@ -30,7 +30,7 @@
 	desc = "A sliced-off goliath tentacle."
 	icon_state = "goliath_tentacle"
 
-//ancient goliath0
+//ancient goliath
 /obj/item/mob_trophy/elder_tentacle
 	name = "elder tentacle"
 	desc = "The barbed tip of a tentacle sliced from an incredibly ancient goliath."
