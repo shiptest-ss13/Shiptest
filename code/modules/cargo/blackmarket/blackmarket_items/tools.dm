@@ -43,6 +43,17 @@
 	stock_max = 4
 	availability_prob = 70
 
+/datum/blackmarket_item/tool/whetstone
+	name = "Whetstone"
+	desc = "Your blades not making the cut? This whetstone will give you the edge you need!"
+	item = /obj/item/sharpener
+
+	price_min = 100
+	price_max = 300
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 50
+
 /datum/blackmarket_item/tool/cham_stamp
 	name = "Chameleon Stamp"
 	desc = "Can't find a forger? Look no further than these handy chameleon stamps, capable of replicating all manner of offical or government seals."

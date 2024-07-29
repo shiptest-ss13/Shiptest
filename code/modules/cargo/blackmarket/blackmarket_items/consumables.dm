@@ -42,6 +42,28 @@
 	price_max = 60
 	availability_prob = 50
 
+/datum/blackmarket_item/consumable/cannabis
+	name = "Cannabis Leaves"
+	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
+	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
+
+	stock_min = 4
+	stock_max = 6
+	price_min = 50
+	price_max = 300
+	availability_prob = 50
+
+/datum/blackmarket_item/consumable/syndie_cigs
+	name = "Syndicate Cigarettes"
+	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
+	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
+
+	stock_min = 4
+	stock_max = 6
+	price_min = 50
+	price_max = 300
+	availability_prob = 50
+
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
 	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
