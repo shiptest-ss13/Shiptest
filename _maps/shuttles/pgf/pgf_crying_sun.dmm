@@ -426,13 +426,14 @@
 /area/ship/engineering/engines/starboard)
 "du" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 6
+	dir = 6;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull,
-/area/ship/bridge)
+/area/ship/external/dark)
 "dv" = (
 /obj/structure/cable/blue{
 	icon_state = "0-4"
@@ -1050,11 +1051,12 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/porta_turret/ship/weak{
-	dir = 4
+	dir = 4;
+	mode = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
-/area/ship/bridge)
+/area/ship/external/dark)
 "ih" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset,
@@ -1288,7 +1290,7 @@
 	},
 /obj/machinery/button/door{
 	id = "lib_armory_1";
-	name = "Sergeant Access";
+	name = "Lieutenant Access";
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -5;
@@ -1705,8 +1707,25 @@
 "om" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/structure/table/reinforced,
+/obj/item/clipboard{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/pen{
+	pixel_x = -8;
+	pixel_y = -1
+	},
 /obj/item/binoculars{
-	pixel_y = 3
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/gps{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/megaphone/command{
+	pixel_y = 1;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2324,7 +2343,8 @@
 /area/ship/bridge)
 "tU" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 5
+	dir = 5;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2882,7 +2902,7 @@
 	pixel_x = -6
 	},
 /obj/effect/turf_decal/floordetail/tiled,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/space/basic,
 /area/ship/bridge)
 "yF" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -3039,7 +3059,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	req_access = list(3);
-	name = "Sergeant's Quarters"
+	name = "Lieutenant's Quarters"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -3438,13 +3458,14 @@
 /area/ship/crew/canteen)
 "CF" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 10
+	dir = 10;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull,
-/area/ship/bridge)
+/area/ship/external/dark)
 "CO" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -3717,11 +3738,12 @@
 /area/ship/hallway/central)
 "Eu" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 5
+	dir = 5;
+	mode = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/engine/hull,
-/area/ship/bridge)
+/area/ship/external/dark)
 "EA" = (
 /obj/structure/sign/poster/contraband/pgf{
 	pixel_y = 32
@@ -3980,13 +4002,14 @@
 /area/ship/hallway/central)
 "FJ" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 5
+	dir = 5;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull,
-/area/ship/bridge)
+/area/ship/external/dark)
 "FN" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/poddoor{
@@ -4000,13 +4023,14 @@
 /area/ship/engineering/engines/starboard)
 "FO" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 8
+	dir = 8;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/bridge)
+/area/ship/external/dark)
 "FU" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4235,13 +4259,14 @@
 /area/ship/security/armory)
 "Hb" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 4
+	dir = 4;
+	mode = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/engine/hull,
-/area/ship/bridge)
+/area/ship/external/dark)
 "Hf" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -4773,7 +4798,7 @@
 "Mw" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos{
-	name = "Sergeant's Bedsheet";
+	name = "Lieutenant's Bedsheet";
 	desc = "It is decorated with a shield emblem."
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -6172,7 +6197,7 @@
 	anchored = 1;
 	can_be_unanchored = 1;
 	icon_state = "warden";
-	name = "Sergeant's locker";
+	name = "Lieutenant's locker";
 	req_access_txt = "3";
 	req_access = list(3)
 	},
