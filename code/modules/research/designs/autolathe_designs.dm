@@ -1247,3 +1247,12 @@
 	materials = list(/datum/material/plastic = 30)
 	build_path = /obj/item/folder/biscuit/unsealed/confidental
 	category = list("initial", "Tools", "Misc")
+
+/datum/design/marker_beacon
+	name = "Marker Beacon"
+	id = "marker_beacon"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
+	build_path = /obj/item/stack/marker_beacon
+	category = list("initial","Misc")
+
