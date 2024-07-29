@@ -265,8 +265,8 @@
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/lead
-	name = "sergeant's Azuilhauz"
-	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a squad commander."
+	name = "marine officer's Azuilhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a squad leader."
 	icon_state = "squadcape"
 	item_state = "blackcloth"
 
@@ -283,7 +283,7 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/neck/cloak/gezena/command
-	name = "officer's Azuilhauz"
+	name = "navy officer's Azuilhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer."
 	icon_state = "commandcape"
 	item_state = "whitecloth"
