@@ -76,6 +76,9 @@
 #define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
+#define COMSIG_ATTACHMENT_ON_WEILD "attach-weilding"
+#define COMSIG_ATTACHMENT_DO_WEILD "attach-weilded"
+#define COMSIG_ATTACHMENT_UNWEILD "attach-unwield"
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
