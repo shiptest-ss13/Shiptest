@@ -26,7 +26,7 @@
 	///String, used for checking if ammo of different types but still fits can fit inside it; generally used for magazines
 	var/caliber
 	///Allows multiple bullets to be loaded in from one click of another box/magazine
-	var/multiload = TRUE
+	var/multiload = FALSE
 	///Whether or not an ammo box skips the do_after process (e.g. speedloaders)
 	var/instant_load = FALSE
 	///Whether the magazine should start with nothing in it
@@ -93,9 +93,11 @@
 
 /obj/item/ammo_box/attackby(obj/item/attacking_obj, mob/user, params, silent = FALSE, replace_spent = FALSE)
 	var/num_loaded = 0
+
 	if(!can_load(user))
 		return
-	if(istype(attacking_obj, /obj/item/ammo_box))
+
+	if(istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
 			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box)))
@@ -198,6 +200,7 @@
 	var/list/L = stored_ammo.Copy()
 	if(drop_list)
 		stored_ammo.Cut()
+		update_ammo_count()
 	return L
 
 ///drops the entire contents of the magazine on the floor
@@ -206,6 +209,7 @@
 	for(var/obj/item/ammo in stored_ammo)
 		ammo.forceMove(turf_mag)
 		stored_ammo -= ammo
+	update_ammo_count()
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A

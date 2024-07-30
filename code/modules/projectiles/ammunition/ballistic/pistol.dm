@@ -87,6 +87,7 @@
 	caliber = ".45"
 	projectile_type = /obj/projectile/bullet/c45
 	bullet_per_box = 50
+	stack_size = 12
 
 /obj/item/ammo_casing/c45/surplus
 	name = ".45 surplus bullet casing"

@@ -15,7 +15,6 @@
 	caliber = "8x50mmR"
 	projectile_type = /obj/projectile/bullet/a8_50rhp
 
-
 // 8x58mm Caseless (SSG-669C)
 
 /obj/item/ammo_casing/caseless/a858
