@@ -1077,16 +1077,6 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "ny" = (
-/obj/item/gun/ballistic/automatic/assault/cm82{
-	spawnwithmagazine = 0;
-	pixel_y = 7;
-	pixel_x = -5
-	},
-/obj/item/gun/ballistic/automatic/assault/cm82{
-	spawnwithmagazine = 0;
-	pixel_y = 7;
-	pixel_x = -5
-	},
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
 	pixel_y = -4;
 	pixel_x = 6
@@ -1112,6 +1102,16 @@
 	},
 /obj/machinery/airalarm/directional/north,
 /obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/assault/cm82{
+	spawnwithmagazine = 0;
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/gun/ballistic/automatic/assault/cm82{
+	spawnwithmagazine = 0;
+	pixel_x = -4;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "nO" = (
@@ -3528,6 +3528,14 @@
 	pixel_x = 8;
 	pixel_y = -13
 	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = 17;
+	pixel_y = -12
+	},
+/obj/item/gun/ballistic/shotgun/doublebarrel{
+	pixel_y = -16;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "Pk" = (
@@ -3979,18 +3987,17 @@
 /area/ship/crew/canteen)
 "Sw" = (
 /obj/structure/rack,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/item/ammo_box/a556_39{
-	pixel_y = 6;
-	pixel_x = -1
+	pixel_y = 3
 	},
 /obj/item/ammo_box/c9mm{
 	pixel_x = 4;
 	pixel_y = -5
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Sz" = (
