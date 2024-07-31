@@ -52,14 +52,14 @@
 	caliber = ".38"
 	max_ammo = 12
 
-/obj/item/ammo_box/magazine/internal/shot/winchester/a357
-	name = "357 lever internal magazine"
+/obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+	name = "absolution internal magazine"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
 	max_ammo = 8
 
-/obj/item/ammo_box/magazine/internal/shot/winchester/shotgun
-	name = "shotgun lever internal magazine"
+/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+	name = "conflagration internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "12ga"
 	max_ammo = 4

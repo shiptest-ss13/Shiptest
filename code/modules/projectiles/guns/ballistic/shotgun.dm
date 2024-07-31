@@ -717,10 +717,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		item_state = "flamingbolt_sawn"
 		mob_overlay_state = item_state
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/a357
-	name = "357 lever"
-	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. A popular choice among Frontier homesteaders for hunting small game and rudimentary self-defense. Chambered in .38."
-	sawn_desc = "A lever-action rifle that has been sawed down and modified for extra portability. While surprisingly effective as a sidearm, the more important benefit is how much cooler it looks."
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+	name = "HP Absolution"
+	desc = "WIP."
+	sawn_desc = "WIP SAWED OFF."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/a357
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/a357/sawoff(mob/user)
@@ -745,17 +745,17 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 /obj/item/gun/ballistic/shotgun/flamingarrow/a357/no_mag
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/shotgun
-	name = "shotgun lever"
-	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. A popular choice among Frontier homesteaders for hunting small game and rudimentary self-defense. Chambered in .38."
-	sawn_desc = "A lever-action rifle that has been sawed down and modified for extra portability. While surprisingly effective as a sidearm, the more important benefit is how much cooler it looks."
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/shotgun
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
+	name = "HP Conflagration"
+	desc = "WIP."
+	sawn_desc = "WIP SAWED OFF."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/sawoff(mob/user)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 3
+		tube.max_ammo = 4
 
 		item_state = "flamingarrow_sawn"
 		mob_overlay_state = item_state
