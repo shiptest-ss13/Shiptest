@@ -1708,24 +1708,19 @@
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/structure/table/reinforced,
 /obj/item/clipboard{
-	pixel_x = -7;
-	pixel_y = 0
-	},
-/obj/item/pen{
-	pixel_x = -8;
+	pixel_x = -9;
 	pixel_y = -1
 	},
-/obj/item/binoculars{
-	pixel_x = -5;
-	pixel_y = 8
+/obj/item/pen{
+	pixel_x = -10;
+	pixel_y = 1
 	},
 /obj/item/gps{
-	pixel_x = 7;
-	pixel_y = 7
+	pixel_x = 8;
+	pixel_y = -2
 	},
-/obj/item/megaphone/command{
-	pixel_y = 1;
-	pixel_x = 3
+/obj/item/binoculars{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -3034,6 +3029,7 @@
 	dir = 5
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/structure/table/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zL" = (
