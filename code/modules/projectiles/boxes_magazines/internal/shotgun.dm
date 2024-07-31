@@ -62,7 +62,7 @@
 	name = "shotgun lever internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "12ga"
-	max_ammo = 5
+	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/shot/beacon
 	name = "beacon internal magazine"

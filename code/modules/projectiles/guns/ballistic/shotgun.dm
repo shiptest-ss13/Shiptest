@@ -723,6 +723,25 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	sawn_desc = "A lever-action rifle that has been sawed down and modified for extra portability. While surprisingly effective as a sidearm, the more important benefit is how much cooler it looks."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/a357
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/a357/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/a357/no_mag
 	spawnwithmagazine = FALSE
 
@@ -731,6 +750,25 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. A popular choice among Frontier homesteaders for hunting small game and rudimentary self-defense. Chambered in .38."
 	sawn_desc = "A lever-action rifle that has been sawed down and modified for extra portability. While surprisingly effective as a sidearm, the more important benefit is how much cooler it looks."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/shotgun
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 3
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/no_mag
 	spawnwithmagazine = FALSE
