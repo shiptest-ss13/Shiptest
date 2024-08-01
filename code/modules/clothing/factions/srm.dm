@@ -94,7 +94,7 @@
 	hardsuit_type = "roumain"
 	worn_y_offset = 4
 	supports_variations = KEPORI_VARIATION
-//hhj
+
 /obj/item/clothing/suit/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit"
 	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
