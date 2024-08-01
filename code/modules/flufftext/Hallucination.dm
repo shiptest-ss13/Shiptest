@@ -476,15 +476,15 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A = image(image_file,H,"dualsaberred1", layer=ABOVE_MOB_LAYER)
 			if("taser")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"advtaserstun4", layer=ABOVE_MOB_LAYER)
 			if("ebow")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"crossbow", layer=ABOVE_MOB_LAYER)
 			if("baton")
 				if(side == "right")
