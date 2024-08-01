@@ -15,7 +15,7 @@
 //////////////////
 //Armored suits//
 /////////////////
-//wawa
+
 /obj/item/clothing/suit/armor/roumain
 	name = "saint-roumain duster"
 	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
