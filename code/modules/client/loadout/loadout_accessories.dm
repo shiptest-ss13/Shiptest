@@ -60,20 +60,6 @@
 	path = /obj/item/clothing/accessory/bonearmlet
 	slot = null
 
-//Factional
-
-/datum/gear/accessory/scarf/striped/solcon
-	display_name = "striped scarf, solcon"
-	path = /obj/item/clothing/neck/stripedsolgovscarf
-
-/datum/gear/accessory/suns/ribbon
-	display_name = "SUNS ribbon"
-	path = /obj/item/clothing/accessory/waistcoat/suns/ribbon
-
-/datum/gear/accessory/suns/bow
-	display_name = "SUNS gem bow"
-	path = /obj/item/clothing/accessory/waistcoat/suns/gembow
-
 //Masks
 
 /datum/gear/accessory/mask
