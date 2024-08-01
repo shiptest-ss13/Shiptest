@@ -116,11 +116,11 @@
 	contains = list(/obj/item/storage/guncase/doublebarrel)
 	crate_name = "shotguns crate"
 
-/datum/supply_pack/gun/leveractionshotgun
-	name = "Lever-Action Shotgun Crate"
+/datum/supply_pack/gun/conflagration
+	name = "Conflagration Lever Action Shotgun Crate"
 	desc = "yarp"
 	cost = 1500
-	contains = list(/obj/item/storage/guncase/leveractionshotgun)
+	contains = list(/obj/item/storage/guncase/conflagration)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/hellfire_shotgun
@@ -148,11 +148,11 @@
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
 
-/datum/supply_pack/gun/a357leveraction
-	name = "357 Lever Action Crate"
+/datum/supply_pack/gun/absolution
+	name = "Absolution Lever Action Rifle Crate"
 	desc = "yarp"
 	cost = 2000
-	contains = list(/obj/item/storage/guncase/a357lever)
+	contains = list(/obj/item/storage/guncase/absolution)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/illestren
