@@ -149,7 +149,7 @@
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/beacon
-	name = "Contender Break Action Rifle Crate"
+	name = "Beacon Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 2250
 	contains = list(/obj/item/storage/guncase/beacon)
