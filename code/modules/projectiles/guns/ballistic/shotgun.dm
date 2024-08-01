@@ -721,9 +721,9 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	name = "HP Absolution"
 	desc = "WIP."
 	sawn_desc = "WIP SAWED OFF."
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/a357
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/a357/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(mob/user)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -742,7 +742,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		recoil = 0
 		recoil_unwielded = 3
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/a357/no_mag
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
@@ -751,7 +751,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	sawn_desc = "WIP SAWED OFF."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -770,7 +770,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		recoil = 0
 		recoil_unwielded = 3
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/no_mag
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
 	spawnwithmagazine = FALSE
 
 //Elephant Gun

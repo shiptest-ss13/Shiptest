@@ -32,11 +32,11 @@
 
 /obj/item/storage/guncase/leveractionshotgun
 /obj/item/storage/guncase/leveractionshotgun/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/flamingarrow/shotgun/no_mag(src)
+	new /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag(src)
 
-/obj/item/storage/guncase/a357lever
-/obj/item/storage/guncase/a357lever/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/flamingarrow/a357/no_mag(src)
+/obj/item/storage/guncase/absolution
+/obj/item/storage/guncase/absolution/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
 
 
 /obj/item/storage/guncase/skm
