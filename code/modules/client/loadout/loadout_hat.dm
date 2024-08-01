@@ -23,9 +23,13 @@
 
 //Berets, AKA how I lost my will to live again
 
-/datum/gear/hat/beret
+/datum/gear/hat/beret/red
 	display_name = "beret, red"
 	path = /obj/item/clothing/head/beret
+
+/datum/gear/hat/beret/black
+	display_name = "beret, black"
+	path = /obj/item/clothing/head/beret/black
 
 /datum/gear/hat/beret/departmental
 	display_name = "beret, departmental"
@@ -80,9 +84,17 @@
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
-/datum/gear/hat/fedora
-	display_name = "fedora"
+/datum/gear/hat/fedora/black
+	display_name = "fedora, black"
 	path = /obj/item/clothing/head/fedora
+
+/datum/gear/hat/fedora/white
+	display_name = "fedora, white"
+	path = /obj/item/clothing/head/fedora/white
+
+/datum/gear/hat/fedora/beige
+	display_name = "fedora, beige"
+	path = /obj/item/clothing/head/fedora/beige
 
 /datum/gear/hat/flatcap
 	display_name = "flatcap"

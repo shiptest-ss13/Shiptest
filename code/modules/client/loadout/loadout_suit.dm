@@ -55,8 +55,6 @@
 	display_name = "suit jacket, charcoal"
 	path = /obj/item/clothing/suit/toggle/lawyer/charcoal
 
-/datum/gear/suit/jacket/navy //why is this blank? i dont know
-
 /datum/gear/suit/jacket/hoodie_black
 	display_name = "hoodie, black"
 	path = /obj/item/clothing/suit/hooded/hoodie/black
@@ -93,6 +91,19 @@
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
 
+//Suspenders
+/datum/gear/suit/suspenders/red
+	display_name = "suspenders, red"
+	path = /obj/item/clothing/suit/togle/suspenders
+
+/datum/gear/suit/suspenders/blue
+	display_name = "suspenders, blue"
+	path = /obj/item/clothing/suit/toggle/suspenders/blue
+
+/datum/gear/suit/suspenders/gray
+	display_name = "suspenders, gray"
+	path = /obj/item/clothing/suit/toggle/suspenders/gray
+
 //Misc
 /datum/gear/suit/grponcho
 	display_name = "poncho, green"
@@ -119,3 +130,11 @@
 	display_name = "floral shirt"
 	description = "From grills to guns, this shirt's seen it all."
 	path = /obj/item/clothing/suit/hawaiian
+
+/datum/gear/suit/hazardvest
+	display_name = "hazard vest"
+	path = /obj/item/clothing/suit/hazardvest
+
+/datum/gear/suit/longcoat
+	display_name = "longcoat"
+	path = /obj/item/clothing/suit/longcoat

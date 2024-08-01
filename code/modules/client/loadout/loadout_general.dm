@@ -14,10 +14,6 @@
 	display_name = "lipstick, red"
 	path = /obj/item/lipstick
 
-/datum/gear/balaclava
-	display_name = "balaclava"
-	path = /obj/item/clothing/mask/balaclava
-
 /datum/gear/vape
 	display_name = "vape"
 	path = /obj/item/clothing/mask/vape
@@ -25,10 +21,6 @@
 /datum/gear/ecigar
 	display_name = "e-cigar"
 	path = /obj/item/clothing/mask/vape/cigar
-
-/datum/gear/bandana
-	display_name = "bandana, red"
-	path = /obj/item/clothing/mask/bandana/red
 
 /datum/gear/flask
 	display_name = "flask"
@@ -58,6 +50,10 @@
 	display_name = "toy, deck of cards"
 	path = /obj/item/toy/cards/deck
 
+/datum/gear/kotahi
+	display_name = "toy, deck of KOTAHI cards"
+	path = /obj/item/toy/cards/deck/kotahi
+
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
 	path = /obj/item/toy/eightball
@@ -85,6 +81,10 @@
 /datum/gear/colorpen
 	display_name = "pen, four-color"
 	path = /obj/item/pen/fourcolor
+
+/datum/gear/fountainpen
+	display_name = "pen, fountain"
+	path = /obj/item/pen/fountain
 
 /datum/gear/paperbin
 	display_name = "paper bin"
@@ -127,7 +127,6 @@
 	display_name = "toy, rilena tali plushie"
 	path = /obj/item/toy/plush/tali
 
-// Shiptest edit
 /datum/gear/amongus
 	display_name = "toy, suspicious pill plushie"
 	path = /obj/item/toy/plush/among
@@ -150,8 +149,6 @@
 	display_name = "table bell, brass"
 	path = /obj/item/table_bell/brass
 
-// End Shiptest
-
 /datum/gear/flashlight
 	display_name = "tool, flashlight"
 	path = /obj/item/flashlight
@@ -160,11 +157,11 @@
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
 
-/datum/gear/surgical_mask
-	display_name = "surgical mask"
-	path = /obj/item/clothing/mask/surgical
-
 /datum/gear/rilena_poster
 	display_name = "poster, rilena"
 	path = /obj/item/poster/random_rilena
 	description = "A random poster of the RILENA series."
+
+/datum/gear/camera
+	display_name = "polaroid camera"
+	path = /obj/item/camera
