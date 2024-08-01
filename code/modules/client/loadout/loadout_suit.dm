@@ -94,7 +94,7 @@
 //Suspenders
 /datum/gear/suit/suspenders/red
 	display_name = "suspenders, red"
-	path = /obj/item/clothing/suit/togle/suspenders
+	path = /obj/item/clothing/suit/toggle/suspenders
 
 /datum/gear/suit/suspenders/blue
 	display_name = "suspenders, blue"
