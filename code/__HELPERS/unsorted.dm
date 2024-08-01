@@ -295,7 +295,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	return "[pick("!","@","#","$","%","^","&")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")]"
 
 //Returns a list of all items of interest with their name
-/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE)
+/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE, only_realname = FALSE)
 	var/list/mobs = sortmobs()
 	var/list/namecounts = list()
 	var/list/pois = list()
@@ -305,7 +305,11 @@ Turf and target are separate in case you want to teleport some distance from a t
 				continue
 		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
-		var/name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
+		var/name = ""
+		if(only_realname)
+			name = avoid_assoc_duplicate_keys(M.real_name, namecounts)
+		else
+			name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
 
 		if(M.stat == DEAD && specify_dead_role)
 			if(isobserver(M))
@@ -321,6 +325,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
 
 	return pois
+
 //Orders mobs by type then by name
 /proc/sortmobs()
 	var/list/moblist = list()
@@ -1420,10 +1425,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		REMOVE_TRAIT(the_atom2,trait,source)
 
 /proc/get_random_food()
-	var/list/blocked = list(/obj/item/reagent_containers/food/snacks/store/bread,
-		/obj/item/reagent_containers/food/snacks/breadslice,
-		/obj/item/reagent_containers/food/snacks/store/cake,
-		/obj/item/reagent_containers/food/snacks/cakeslice,
+	var/static/list/allowed_food = list()
+
+	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
+		var/list/blocked = list(
+		/obj/item/food/spaghetti,
+		/obj/item/food/bread,
+		/obj/item/food/breadslice,
+		/obj/item/food/cake,
+		/obj/item/food/cakeslice,
 		/obj/item/reagent_containers/food/snacks/store,
 		/obj/item/reagent_containers/food/snacks/pie,
 		/obj/item/reagent_containers/food/snacks/kebab,
@@ -1435,15 +1445,21 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		/obj/item/reagent_containers/food/snacks/soup,
 		/obj/item/reagent_containers/food/snacks/grown,
 		/obj/item/reagent_containers/food/snacks/grown/mushroom,
-		/obj/item/reagent_containers/food/snacks/deepfryholder,
+		/obj/item/food/deepfryholder,
 		/obj/item/reagent_containers/food/snacks/clothing,
 		/obj/item/reagent_containers/food/snacks/grown/shell, //base types
-		/obj/item/reagent_containers/food/snacks/store/bread,
+		/obj/item/food/bread,
 		/obj/item/reagent_containers/food/snacks/grown/nettle
 		)
-	blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
+		blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
-	return pick(subtypesof(/obj/item/reagent_containers/food/snacks) - blocked)
+		var/list/unfiltered_allowed_food = subtypesof(/obj/item/food) - blocked
+		for(var/obj/item/food/food as anything in unfiltered_allowed_food)
+			if(!initial(food.icon_state)) //food with no icon_state should probably not be spawned
+				continue
+			allowed_food.Add(food)
+
+	return pick(allowed_food)
 
 /proc/get_random_drink()
 	var/list/blocked = list(/obj/item/reagent_containers/food/drinks/soda_cans,
