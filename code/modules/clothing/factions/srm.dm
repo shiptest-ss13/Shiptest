@@ -10,11 +10,12 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
+	supports_variations = KEPORI_VARIATION
 
 //////////////////
 //Armored suits//
 /////////////////
-
+//wawa
 /obj/item/clothing/suit/armor/roumain
 	name = "saint-roumain duster"
 	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
@@ -25,12 +26,14 @@
 	heat_protection = CHEST|GROIN|ARMS
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/roumain/shadow
 	name = "saint-roumain shadow duster"
 	desc = "A coat made from hard leather. Its rough, barely-treated finish is typical of one of the Saint-Roumain Militia's trainees."
 	icon_state = "armor_rouma_shadow"
 	item_state = "rouma_shadow_coat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/toggle/labcoat/roumain_med
 	name = "saint-roumain medical duster"
@@ -39,6 +42,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "rouma_med_coat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hazardvest/roumain
 	name = "saint-roumain machinist leather vest"
@@ -53,6 +57,7 @@
 	name = "saint-roumain flamebearer robes"
 	desc = "A set of ashy-grey robes made from hard leather, adorned with gold trims. Its rough finish after a near-char and application of aromatics is heavily favored for the ecclesiastical sect of the Church of Saint Roumain, a living reminder of the Ashen Huntsman himself."
 	icon_state = "armor_rouma_flamebearer"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/roumain/colligne
 	name = "saint-roumain colligne coat"
@@ -62,6 +67,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/roumain/montagne
 	name = "saint-roumain montagne coat"
@@ -72,6 +78,7 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	supports_variations = KEPORI_VARIATION
 
 ///////////////
 //Spacesuits//
@@ -86,7 +93,8 @@
 	item_state = "hardsuit0-roumain"
 	hardsuit_type = "roumain"
 	worn_y_offset = 4
-
+	supports_variations = KEPORI_VARIATION
+//hhj
 /obj/item/clothing/suit/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit"
 	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
@@ -96,6 +104,7 @@
 	item_state = "hardsuit-roumain"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	slowdown = 0.5
+	supports_variations = KEPORI_VARIATION
 
 /////////
 //Hats//
@@ -107,11 +116,13 @@
 	icon_state = "rouma_hat"
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/cowboy/sec/roumain/shadow
 	name = "shadow's hat"
 	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
 	icon_state = "rouma_shadow_hat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/cowboy/sec/roumain/machinist
 	name = "machinist's hat"
@@ -122,21 +133,25 @@
 	name = "medical hunter's hat"
 	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
 	icon_state = "rouma_med_hat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/cowboy/sec/roumain/flamebearer
 	name = "flamebearer's hat"
 	desc = "A wide-brimmed, pointed hat with charred leather, granting it an ash-grey appearance. The design honors the one the Ashen Huntsman himself wore, according to legend."
 	icon_state = "rouma_flamebearer_hat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/cowboy/sec/roumain/colligne
 	name = "colligne's hat"
 	desc = "A fancy, pointy leather hat with a large feather plume to signal that you are, in fact... A Hunter Colligne. You still have some ways to go before you gain the title of Montagne."
 	icon_state = "rouma_colligne_hat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/cowboy/sec/roumain/montagne
 	name = "montagne's hat"
 	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft."
 	icon_state = "rouma_montagne_hat"
+	supports_variations = KEPORI_VARIATION
 
 ///////////////
 //Accessories//
