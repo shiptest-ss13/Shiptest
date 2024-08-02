@@ -32,6 +32,12 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/mahogany,
 /area/space)
+"eq" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "eC" = (
 /obj/item/clothing/head/bearpelt{
 	pixel_y = 10
@@ -44,6 +50,12 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/wood/maple,
 /area/space)
+"fi" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 6
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "fw" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -55,6 +67,12 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
+/area/space)
+"ho" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "jk" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -124,8 +142,25 @@
 "nm" = (
 /turf/open/space/basic,
 /area/space)
+"nM" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 9
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"ow" = (
+/turf/open/floor/plasteel/stairs/wood/walnut{
+	dir = 1
+	},
+/area/space)
 "oC" = (
 /turf/open/floor/carpet,
+/area/space)
+"qA" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 5
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "qW" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -204,6 +239,11 @@
 	},
 /turf/open/floor/wood/maple,
 /area/space)
+"tW" = (
+/turf/open/floor/plasteel/stairs/wood/walnut{
+	dir = 8
+	},
+/area/space)
 "uA" = (
 /obj/item/stack/sheet/durathread{
 	pixel_x = -10;
@@ -223,6 +263,10 @@
 /obj/item/stack/sheet/leather,
 /obj/item/stack/sheet/leather,
 /turf/open/floor/wood/ebony,
+/area/space)
+"uK" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood/maple,
 /area/space)
 "uR" = (
 /turf/open/floor/wood/ebony,
@@ -245,6 +289,16 @@
 "yQ" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/maple,
+/area/space)
+"zl" = (
+/obj/effect/turf_decal/siding/brown,
+/turf/open/floor/wood/ebony,
+/area/space)
+"Ar" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 10
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "Ay" = (
 /obj/structure/fireplace,
@@ -285,6 +339,18 @@
 "Hl" = (
 /turf/closed/mineral/random/snow/underground,
 /area/space)
+"IF" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/obj/item/grown/cotton/durathread,
+/turf/open/floor/wood/ebony,
+/area/space)
 "Ja" = (
 /turf/open/floor/grass/ship/jungle,
 /area/space)
@@ -323,10 +389,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"Pz" = (
+/obj/structure/railing/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/space)
 "PV" = (
 /obj/structure/railing/wood{
-	dir = 9
+	dir = 4
 	},
+/obj/structure/railing/wood,
 /turf/open/floor/wood,
 /area/space)
 "Qz" = (
@@ -353,6 +426,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"Sx" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "Tr" = (
 /obj/structure/guncloset,
 /turf/open/floor/wood/maple,
@@ -361,9 +440,11 @@
 /turf/open/water/jungle,
 /area/space)
 "Uc" = (
-/turf/open/floor/plasteel/stairs/wood{
-	dir = 8
+/obj/item/toy/plush/moth/punished{
+	name = "Flufftunato";
+	desc = "For the love of God Mothtressor!"
 	},
+/turf/open/floor/plating/asteroid/icerock/temperate,
 /area/space)
 "Vz" = (
 /turf/open/floor/wood/mahogany,
@@ -802,8 +883,8 @@ ak
 lM
 jk
 Gm
-Qz
-Qz
+tL
+ko
 Qz
 Qz
 Qz
@@ -854,12 +935,12 @@ ON
 Wd
 Oa
 Gm
+Er
+Yd
 Qz
 Qz
 Qz
-Qz
-Qz
-Qz
+mF
 Gm
 Hl
 Hl
@@ -907,11 +988,11 @@ uX
 Gq
 Gm
 Gm
+tq
 Qz
 Qz
-Qz
-Qz
-Qz
+WZ
+tD
 Gm
 Hl
 Hl
@@ -959,11 +1040,11 @@ uX
 Gq
 st
 Gm
+Wk
+Yd
 Qz
 Qz
-Qz
-Qz
-Qz
+RH
 Gm
 Hl
 Hl
@@ -1011,11 +1092,11 @@ FL
 Ok
 st
 Gm
+Wk
 Qz
 Qz
 Qz
-Qz
-Qz
+uA
 Gm
 Hl
 Hl
@@ -1067,7 +1148,7 @@ Gm
 Qz
 Qz
 Qz
-Qz
+mI
 Gm
 Hl
 Hl
@@ -1118,8 +1199,8 @@ uR
 uR
 Qz
 Qz
-Qz
-Qz
+WZ
+eC
 Gm
 Hl
 Hl
@@ -1171,7 +1252,7 @@ Gm
 Qz
 Qz
 Qz
-Qz
+Yw
 Gm
 Hl
 Hl
@@ -1222,7 +1303,7 @@ uR
 Gm
 Qz
 Qz
-Qz
+IF
 Gm
 Gm
 Hl
@@ -1364,7 +1445,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+Uc
 Hl
 Hl
 Hl
@@ -1413,13 +1494,13 @@ Hl
 Hl
 Hl
 Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
 Hl
 Hl
 Hl
@@ -1457,7 +1538,6 @@ Gy
 Gy
 Hl
 Hl
-Hl
 Gm
 Gm
 Gm
@@ -1467,12 +1547,13 @@ Gm
 Gm
 Gm
 Gm
+Qz
+Qz
+Qz
+Qz
+Qz
 Gm
 Gm
-Gm
-Hl
-Hl
-Hl
 Hl
 Hl
 bb
@@ -1508,25 +1589,25 @@ Gy
 Gy
 Gy
 Hl
-Hl
 Gm
 Gm
 Qz
-tq
+Qz
+Qz
+Qz
+Gm
+Qz
+Qz
+ow
+Qz
+Qz
+Qz
+Qz
+Qz
 Wk
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
+Hl
+Hl
 bb
 bb
 Gy
@@ -1561,24 +1642,24 @@ Gy
 Gy
 Hl
 Gm
-Gm
-ko
 Qz
-WZ
+Qz
+Qz
+Qz
+Qz
+Gm
+Qz
+Qz
+ow
+Qz
+Qz
+Qz
+Qz
+Qz
 Wk
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-uR
-uR
-uR
-uR
-Gm
+Hl
+Hl
 bb
 bb
 Gy
@@ -1613,24 +1694,24 @@ Gy
 Gy
 Hl
 Gm
-tL
-Yd
 Qz
 Qz
-ko
+Qz
+Qz
+Qz
+Gm
+tW
+tW
 Gm
 Qz
 Qz
 Qz
 Qz
-Qz
-Qz
-Qz
-uR
-uR
-uR
-uR
+uK
 Gm
+Gm
+Hl
+Hl
 bb
 bb
 Gy
@@ -1665,24 +1746,24 @@ Gy
 Gy
 Hl
 Gm
-Er
-Qz
-Qz
-Qz
-Gm
-Gm
-Qz
-Qz
 Qz
 Qz
 Qz
 Qz
 Gm
-uR
-uR
-uR
-uR
 Gm
+eK
+eK
+Gm
+Qz
+Qz
+Qz
+Qz
+Gm
+Gm
+Kg
+Kg
+sD
 bb
 bb
 Gy
@@ -1731,10 +1812,10 @@ Gm
 Gm
 Gm
 Gm
-Gv
-aF
-PV
-Gv
+Kg
+Kg
+Kg
+Ez
 bb
 bb
 Gy
@@ -1786,7 +1867,7 @@ Ws
 Kg
 Kg
 Kg
-ZZ
+Gv
 bb
 bb
 Gy
@@ -2046,7 +2127,7 @@ Ws
 Kg
 Kg
 Kg
-sD
+ZZ
 bb
 bb
 Gy
@@ -2098,7 +2179,7 @@ Ws
 Kg
 Kg
 Kg
-Ez
+ZZ
 bb
 bb
 Gy
@@ -2147,10 +2228,10 @@ Gm
 Gm
 Gm
 Gm
-Gm
-Kg
-Kg
-Gv
+sD
+aF
+Pz
+PV
 bb
 bb
 bb
@@ -2185,24 +2266,24 @@ Gy
 Hl
 Hl
 Gm
-RH
-Qz
-Qz
-Qz
-Gm
-Gm
-eK
-eK
-Gm
-Qz
 Qz
 Qz
 Qz
 Qz
 Gm
 Gm
-Hl
-Hl
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+nM
+Sx
+Sx
+Ar
+Gm
 bb
 bb
 bb
@@ -2237,24 +2318,24 @@ Gy
 Hl
 Hl
 Gm
-tD
-Yd
-Qz
-Qz
-uA
-Gm
-Uc
-Uc
-Gm
-Qz
 Qz
 Qz
 Qz
 Qz
 Qz
 Gm
-Hl
-Hl
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+eq
+uR
+uR
+zl
+Gm
 bb
 bb
 bb
@@ -2290,23 +2371,23 @@ Hl
 Hl
 Gm
 Gm
-mF
-Qz
-WZ
-mI
-Gm
-Qz
-Qz
-Ez
-Qz
-Qz
 Qz
 Qz
 Qz
 Qz
 Gm
-Hl
-Hl
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+Qz
+qA
+ho
+ho
+fi
+Gm
 bb
 bb
 bb
@@ -2343,22 +2424,22 @@ Hl
 Hl
 Gm
 Gm
-Qz
-Yw
-eC
 Gm
-Qz
-Qz
-Ez
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
 Gm
-Hl
-Hl
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
 bb
 bb
 bb
@@ -2394,21 +2475,21 @@ Hl
 Hl
 Hl
 Hl
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Qz
-Qz
-Qz
-Qz
-Qz
-Gm
-Gm
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hl
 Hl
 Hl
@@ -2453,13 +2534,13 @@ Hl
 Hl
 Hl
 Hl
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hl
 Hl
 Hl
