@@ -57,8 +57,9 @@
 			var/mob/living/carbon/human/H = user
 			H.dropItemToGround(src)
 			H.dropItemToGround(bundle)
+			H.put_in_hands(src)
 			H.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value] credits.</span>")
+		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value + value] credits.</span>")
 		bundle.transfer_value(bundle.value, src)
 
 /obj/item/spacecash/Destroy()
