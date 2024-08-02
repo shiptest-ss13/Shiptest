@@ -373,7 +373,7 @@
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
-	foodtype = GRAIN | ALCOHOL
+	foodtype = SUGAR | ALCOHOL
 	custom_price = 60
 
 /obj/item/reagent_containers/food/drinks/beer/light
