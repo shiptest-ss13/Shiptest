@@ -101,7 +101,7 @@
 // If you're wondering what's with the backslashes, the backslashes cause BYOND to not automatically end the line.
 // As such this all gets counted as a single line.
 // The braces and semicolons are there to be able to do this on a single line.
-#define LUM_FALLOFF(C, T) (1 - CLAMP01(sqrt((C.x - T.x) ** 2 + (C.y - T.y) ** 2 + LIGHTING_HEIGHT) / max(1, light_range)))
+#define LUM_FALLOFF(C, T) (1 - CLAMP01((sqrt((C.x - T.x) ** 2 + (C.y - T.y) ** 2 + LIGHTING_HEIGHT) + LIGHTING_FREE_DIST) / max(1, light_range))) ** LIGHT_FALLOFF_EXPONENT
 
 #define APPLY_CORNER(C)                          \
 	. = LUM_FALLOFF(C, pixel_turf);              \
