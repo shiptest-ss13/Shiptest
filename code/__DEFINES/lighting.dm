@@ -22,7 +22,7 @@
 #define LIGHTING_LAMBERTIAN 0
 /// The (square of the) cardinal offset added to the distance of any light corner from a light source; you should probably leave this alone
 #define LIGHTING_HEIGHT 0.25
-/// The offset added to the post-sqrt distance of any light corner from a light source: can be negative! 
+/// The offset added to the post-sqrt distance of any light corner from a light source: can be negative!
 #define LIGHTING_FREE_DIST -0.125
 /// The exponent used to cut down the strength of a light as corners get further from the source
 #define LIGHT_FALLOFF_EXPONENT 2.5
