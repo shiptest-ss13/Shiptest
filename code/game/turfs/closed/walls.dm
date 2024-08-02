@@ -115,11 +115,14 @@
 	if(integrity <= 0)
 		if(safe_decon)
 			dismantle_wall()
+			return FALSE
 		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
 		if(integrity <= -50)
 			dismantle_wall(TRUE)
+			return FALSE
 		if(devastate)
 			dismantle_wall(TRUE)
+			return FALSE
 		dismantle_wall()
 		return FALSE
 	integrity = min(integrity, max_integrity)
