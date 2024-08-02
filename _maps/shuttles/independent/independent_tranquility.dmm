@@ -2896,7 +2896,10 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/snacks/garlicbread,
+/obj/item/food/garlicbread{
+	pixel_y = 5;
+	pixel_x = 5
+	},
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange{
 	pixel_x = -8;
 	pixel_y = 7
@@ -3685,7 +3688,6 @@
 /area/ship/hallway/starboard)
 "Ek" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/cakeslice/lime,
 /obj/item/kitchen/fork/plastic{
 	pixel_x = -11
 	},
@@ -3693,6 +3695,7 @@
 	color = "#792f27";
 	dir = 8
 	},
+/obj/item/food/cakeslice/lime,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Eo" = (
@@ -6057,11 +6060,11 @@
 	pixel_x = -7;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/store/bread/banana{
+/obj/item/food/bread/banana{
 	pixel_x = 14;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/snacks/breadslice/banana,
+/obj/item/food/breadslice/banana,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "Va" = (
@@ -6518,9 +6521,9 @@
 	name = "Minifridge"
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/molten,
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
+/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda,
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel,
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel,
 /obj/item/reagent_containers/food/drinks/soda_cans/random,
 /obj/item/reagent_containers/food/drinks/soda_cans/random,
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater,
