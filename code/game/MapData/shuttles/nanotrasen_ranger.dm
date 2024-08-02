@@ -101,7 +101,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp
 	resistance_flags = null
 	max_heat_protection_temperature = null
-	slowdown = 1.2
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
@@ -111,7 +111,7 @@
 	max_heat_protection_temperature = null
 
 /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 40, "acid" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/sec
 	name = "Loss Prevention Security Hardsuit"
 	desc = "The best of the best security staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
@@ -119,7 +119,7 @@
 	item_state = "ert_security"
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/sec
-	armor = list("melee" = 35, "bullet" = 20, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 20,"energy" = 20, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 40, "acid" = 40)
 	hardsuit_type = "ert_security"
 	name = "Loss Prevention Security Hardsuit Helmet"
 	desc = "The helmet that comes attached to the LP Team Security Hardsuit."
@@ -127,7 +127,7 @@
 	item_state = "hardsuit0-ert_security"
 
 /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 30, "bomb" = 25, "bio" = 100, "rad" = 75, "fire" = 90, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
 	name = "Loss Prevention Engineering Hardsuit"
 	desc = "The best of the best engineering staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
@@ -135,7 +135,7 @@
 	item_state = "ert_engineer"
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 38, "bullet" = 20, "laser" = 30, "energy" = 30, "bomb" = 25, "bio" = 100, "rad" = 75, "fire" = 90, "acid" = 75)
 	name = "Loss Prevention Engineering Hardsuit Helmet"
 	desc = "The helmet that comes attached to the LP Team Engineering Hardsuit."
 	icon_state = "hardsuit0-ert_engineer"
@@ -143,25 +143,27 @@
 	hardsuit_type = "ert_engineer"
 
 /obj/item/clothing/suit/space/hardsuit/ert/lp/med
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/med
 	name = "Loss Prevention Medical Hardsuit"
 	desc = "The best of the best medical staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
 	icon_state = "ert_medical"
 	item_state = "ert_medical"
+	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/med
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	name = "Loss Prevention Medical Hardsuit Helmet"
 	desc = "The helmet that comes attached to the LP Team Medical Hardsuit."
 	icon_state = "hardsuit0-ert_medical"
 	item_state = "hardsuit0-ert_medical"
 	hardsuit_type = "ert_medical"
+	clothing_flags = SCAN_REAGENTS
 
 /obj/item/clothing/head/helmet/space/hardsuit/lp
 	name = "RIG heatsuit helmet"
 	desc = "The helmet to the RIG heat suit. It's packed with heat diverting materials, coolant pipes, and a two inch thick face screen."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = ACID_PROOF | FIRE_PROOF
