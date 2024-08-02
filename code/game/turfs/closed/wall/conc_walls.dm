@@ -28,9 +28,6 @@
 		/obj/projectile/destabilizer,
 		/obj/projectile/plasma)
 
-
-	var/mutable_appearance/crack_overlay
-
 /turf/closed/wall/concrete/Initialize(mapload, ...)
 	. = ..()
 	check_harden()
@@ -61,16 +58,6 @@
 	var/col_filter = list(base,0,0, 0,base,0, 0,0,base, offset, offset, offset)
 	add_filter("harden", 1, color_matrix_filter(col_filter, FILTER_COLOR_RGB))
 	return
-
-/turf/closed/wall/concrete/update_overlays()
-	. = ..()
-	var/adj_dam_pct = 1 - (integrity/(max_integrity*0.7))
-	if(adj_dam_pct <= 0)
-		return
-	if(!crack_overlay)
-		crack_overlay = mutable_appearance('icons/effects/concrete_damage.dmi', "cracks", BULLET_HOLE_LAYER)
-	crack_overlay.alpha = adj_dam_pct*255
-	. += crack_overlay
 
 // we use this to show integrity + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)

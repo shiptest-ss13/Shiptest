@@ -43,6 +43,8 @@
 	// Projectiles that do extra damage to the wall
 	var/list/extra_dam_proj
 
+	var/mutable_appearance/crack_overlay
+
 /turf/closed/wall/yesdiag
 	icon_state = "wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
@@ -75,6 +77,14 @@
 	. = ..()
 	for(var/decal in dent_decals)
 		. += decal
+	var/adj_dam_pct = 1 - (integrity/(max_integrity))
+	if(adj_dam_pct < 0)
+		adj_dam_pct = 0
+	crack_overlay = null
+	if(!crack_overlay)
+		crack_overlay = mutable_appearance('icons/effects/wall_damage.dmi', "cracks", BULLET_HOLE_LAYER)
+	crack_overlay.alpha = adj_dam_pct*255
+	. += crack_overlay
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()
@@ -103,12 +113,14 @@
 	if(integrity >= max_integrity)
 		integrity = max_integrity
 	if(integrity <= 0)
-		if(devastate)
-			dismantle_wall(devastate)
-			return FALSE
+		if(safe_decon)
+			dismantle_wall()
 		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
 		if(integrity <= -50)
-			dismantle_wall(safe_decon)
+			dismantle_wall(TRUE)
+		if(devastate)
+			dismantle_wall(TRUE)
+		dismantle_wall()
 		return FALSE
 	integrity = min(integrity, max_integrity)
 	update_stats()
