@@ -447,7 +447,7 @@
 	desc = "A box of standard 8x50mm ammo."
 	icon_state = "8x50mmbox"
 	ammo_type = /obj/item/ammo_casing/a8_50r
-	max_ammo = 20
+	max_ammo = 25
 
 /obj/item/ammo_box/ferropelletbox
 	name = "ammo box (ferromagnetic pellets)"
