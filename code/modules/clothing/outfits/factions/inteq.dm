@@ -117,7 +117,11 @@
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
 	suit_store = /obj/item/flashlight/pen
-	backpack_contents = list(/obj/item/roller=1)
+	backpack_contents = list(
+	/obj/item/roller=1,
+	/obj/item/storage/firstaid/regular=1,
+	/obj/item/storage/box/syringes=1
+	)
 
 /datum/outfit/job/inteq/paramedic/empty
 	name = "IRMG - Corpsman (Naked)"
