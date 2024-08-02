@@ -75,6 +75,15 @@
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
 
+
+/datum/supply_pack/medical/anesthetic
+	name = "Anesthetics Crate"
+	desc = "Contains a standard anesthetics tank, for standard surgical procedures."
+	cost = 500
+	contains = list(/obj/item/clothing/mask/breath/medical,
+					/obj/item/tank/internals/anesthetic)
+	crate_name = "anesthetics crate"
+
 /*
 		Bundles and supplies
 */
