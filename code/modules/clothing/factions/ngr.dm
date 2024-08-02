@@ -64,6 +64,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "ngr_hazard"
 	item_state = "redcloth"
+	supports_variations = VOX_VARIATION
 
 //////////////////
 //Armored suits//

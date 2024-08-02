@@ -72,11 +72,6 @@
 	path = /obj/item/clothing/neck/stethoscope
 	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
 
-/datum/gear/accessory/collar
-	display_name = "pet collar"
-	description = "Only the truly insane would wear this around their neck."
-	path = /obj/item/clothing/neck/petcollar
-
 /datum/gear/accessory/gloves/black
 	display_name = "black gloves"
 	description = "Standard hand coverings for everyday use."
@@ -97,14 +92,3 @@
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
 	slot = ITEM_SLOT_GLOVES
-
-/datum/gear/accessory/tiki
-	display_name = "tiki mask"
-	description = "A wooden mask, simple, really."
-	path = /obj/item/clothing/mask/gas/tiki_mask
-	slot = ITEM_SLOT_MASK
-
-/datum/gear/accessory/joymask
-	display_name = "face with tears of joy mask"
-	path = /obj/item/clothing/mask/joy
-	slot = ITEM_SLOT_MASK
