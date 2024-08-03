@@ -113,10 +113,11 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "bi" = (
-/obj/structure/janitorialcart,
-/obj/item/storage/bag/trash,
-/obj/item/mop{
-	pixel_x = -15
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
@@ -1599,6 +1600,10 @@
 	dir = 8
 	},
 /turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"rC" = (
+/obj/item/weldingtool/experimental,
+/turf/closed/mineral/random/wasteplanet,
 /area/ruin/wasteplanet)
 "rQ" = (
 /obj/structure/cable/yellow{
@@ -3310,10 +3315,6 @@
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "OY" = (
-/obj/structure/fireaxecabinet{
-	dir = 8;
-	pixel_x = 28
-	},
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Pi" = (
@@ -3349,6 +3350,11 @@
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "PX" = (
+/obj/structure/janitorialcart,
+/obj/item/storage/bag/trash,
+/obj/item/mop{
+	pixel_x = -6
+	},
 /obj/item/clothing/shoes/galoshes{
 	pixel_x = 16;
 	pixel_y = -8
@@ -3405,7 +3411,6 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/plasma,
-/obj/item/weldingtool/experimental,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Rv" = (
@@ -4583,7 +4588,7 @@ GM
 GM
 GM
 tT
-Yh
+bi
 PX
 MF
 oK
@@ -4637,7 +4642,7 @@ Va
 bu
 Yh
 JL
-bi
+Yh
 MF
 kY
 Sl
@@ -6173,7 +6178,7 @@ tn
 gg
 gg
 gg
-gg
+rC
 gg
 gg
 sf
