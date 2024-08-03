@@ -113,7 +113,11 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "bi" = (
-/obj/item/clothing/shoes/galoshes,
+/obj/structure/janitorialcart,
+/obj/item/storage/bag/trash,
+/obj/item/mop{
+	pixel_x = -15
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "bp" = (
@@ -143,20 +147,14 @@
 /obj/structure/closet/crate{
 	name = "ration crate"
 	},
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "bB" = (
@@ -352,7 +350,18 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "dP" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/ration/side/white_sandwich_bread,
+/obj/item/reagent_containers/food/snacks/ration/snack/cherry_snackers{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/item/trash/plate{
+	pixel_x = -13
+	},
+/obj/item/reagent_containers/food/snacks/ration/snack/sour_gummy_worms{
+	pixel_x = 1;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "dY" = (
@@ -603,11 +612,6 @@
 	dir = 8;
 	pixel_x = 4
 	},
-/obj/structure/spawner/wasteplanet/hivebot/low_threat{
-	pixel_y = 8;
-	pixel_x = -5
-	},
-/obj/item/weldingtool/experimental,
 /obj/effect/turf_decal/corner/transparent/neutral/mono,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
@@ -901,7 +905,10 @@
 "kD" = (
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/structure/closet/crate/secure/loot,
-/obj/item/grenade/clusterbuster/emp,
+/obj/machinery/power/grounding_rod,
+/obj/machinery/power/grounding_rod,
+/obj/machinery/power/grounding_rod,
+/obj/machinery/power/grounding_rod,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "kH" = (
@@ -1535,20 +1542,14 @@
 /obj/structure/closet/crate{
 	name = "ration crate"
 	},
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/machinery/light/small/broken/directional/south,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "rd" = (
@@ -2223,10 +2224,16 @@
 /area/ruin/wasteplanet)
 "An" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/nasavoid,
-/obj/item/clothing/head/helmet/space/nasavoid,
 /obj/item/tank/jetpack/void,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/clothing/suit/space/nasavoid{
+	name = "Old Voidsuit";
+	desc = "An old space suit that hasn't seen use in several decades."
+	},
+/obj/item/clothing/head/helmet/space/nasavoid{
+	name = "Voidsuit Helmet";
+	desc = "An old space suit helmet with a scratched visor."
+	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Ap" = (
@@ -3342,8 +3349,10 @@
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "PX" = (
-/obj/structure/janitorialcart,
-/obj/item/storage/bag/trash,
+/obj/item/clothing/shoes/galoshes{
+	pixel_x = 16;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "Qc" = (
@@ -3396,6 +3405,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/plasma,
+/obj/item/weldingtool/experimental,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "Rv" = (
@@ -3528,8 +3538,8 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Th" = (
 /obj/effect/turf_decal/industrial/hatch/red,
-/obj/item/storage/backpack/duffelbag/syndie/c4,
 /obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/energy/lasercannon,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Tj" = (
@@ -3543,6 +3553,7 @@
 /obj/effect/turf_decal/corner/transparent/lime/border{
 	dir = 8
 	},
+/obj/item/reagent_containers/food/snacks/ration/entree/beef_strips,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Ts" = (
@@ -3685,6 +3696,9 @@
 	dir = 4
 	},
 /obj/machinery/light/small/broken/directional/east,
+/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage{
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "UW" = (
@@ -4009,6 +4023,7 @@
 "Za" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/broken/directional/west,
+/obj/item/ration_heater,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Ze" = (
@@ -4037,14 +4052,10 @@
 /obj/structure/closet/crate{
 	name = "ration crate"
 	},
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/broken/directional/west,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Zy" = (
@@ -4572,7 +4583,7 @@ GM
 GM
 GM
 tT
-bi
+Yh
 PX
 MF
 oK
@@ -4626,7 +4637,7 @@ Va
 bu
 Yh
 JL
-Yh
+bi
 MF
 kY
 Sl
