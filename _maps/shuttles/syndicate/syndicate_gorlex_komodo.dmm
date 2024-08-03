@@ -964,7 +964,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "syndie_mechbay";
-	name = "Mechbay"
+	name = "Exosuit Bay"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2040,7 +2040,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	id = "syndie_mechbay";
-	name = "mechbay door";
+	name = "Exosuit Bay Door";
 	pixel_x = -24
 	},
 /obj/item/radio/intercom/directional/south,
@@ -2095,7 +2095,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "syndie_mechbay";
-	name = "mechbay door";
+	name = "Exosuit Bay Door";
 	pixel_x = 24
 	},
 /obj/effect/turf_decal/techfloor{
@@ -2471,6 +2471,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 1
 	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wJ" = (

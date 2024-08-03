@@ -253,7 +253,7 @@
 				clearInternalDamage(MECHA_INT_SHORT_CIRCUIT)
 				to_chat(user, "<span class='notice'>You replace the fused wires.</span>")
 			else
-				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this mech!</span>")
+				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this exosuit!</span>")
 		return
 
 	if(istype(W, /obj/item/mecha_parts))

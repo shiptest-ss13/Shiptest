@@ -440,6 +440,7 @@
 /area/ship/hallway/central)
 "dO" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer4,
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "dS" = (
@@ -3364,9 +3365,6 @@
 "AG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/item/paper/crumpled{
-	default_raw_text = "66% Oxy (Node 1) to 34% Plasma (Node 2) works great at 500 kPa."
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;

@@ -3,7 +3,7 @@
 /////////////////////////
 
 /obj/item/mecha_parts
-	name = "mecha part"
+	name = "exosuit part"
 	icon = 'icons/mecha/mech_construct.dmi'
 	icon_state = "blank"
 	w_class = WEIGHT_CLASS_GIGANTIC
@@ -20,7 +20,7 @@
 	return
 
 /obj/item/mecha_parts/chassis
-	name = "Mecha Chassis"
+	name = "Exosuit Chassis"
 	icon_state = "backbone"
 	interaction_flags_item = NONE			//Don't pick us up!!
 	var/construct_type
