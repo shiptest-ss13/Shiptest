@@ -36,7 +36,7 @@
 	return ..()
 
 /datum/action/innate/mecha/mech_eject
-	name = "Eject From Mech"
+	name = "Eject From Exosuit"
 	button_icon_state = "mech_eject"
 
 /datum/action/innate/mecha/mech_eject/Activate()

@@ -165,5 +165,6 @@
 	color = "#ffe"
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 1)
+	enthalpy = FIRE_HYDROGEN_ENERGY_RELEASED
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50

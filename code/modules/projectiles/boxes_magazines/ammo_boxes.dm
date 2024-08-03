@@ -136,6 +136,9 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	instant_load = TRUE
 
+/obj/item/ammo_box/a858/empty
+	start_empty = TRUE
+
 // .308 Stripper Clip (Vickland)
 
 /obj/item/ammo_box/vickland_a308
@@ -149,6 +152,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/vickland_a308/empty
+	start_empty = TRUE
 
 // .300 Magnum Stripper Clip (Scout)
 
@@ -164,19 +169,22 @@
 
 /obj/item/ammo_box/a300/empty
 	start_empty = TRUE
-// .300 Blackout Stripper Clip (Polymer Survivor Rifle)
+// 7.62 Stripper Clip (Polymer Survivor Rifle)
 
-/obj/item/ammo_box/aac_300blk_stripper
-	name = "stripper clip (.300 BLK)"
+/obj/item/ammo_box/a762_stripper
+	name = "stripper clip (7.62)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "300m"
-	ammo_type = /obj/item/ammo_casing/aac_300blk
-	caliber = ".300 BLK"
+	icon_state = "stripper_308-5"
+	base_icon_state = "stripper_308"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a762_stripper/empty
+	start_empty = TRUE
 // Ferromagnetic Pellet Speed Loader (Claris)
 
 /obj/item/ammo_box/amagpellet_claris
