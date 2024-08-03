@@ -1106,7 +1106,7 @@
 	name = "pilot space suit"
 	icon_state = "space-pilot"
 	item_state = "space-pilot"
-	desc = "A lightweight, unarmored space suit designed for mech and fighter pilots. Special attachment points make mounting and dismounting from mechs much easier."
+	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier."
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
@@ -1114,7 +1114,7 @@
 	name = "pilot helmet"
 	icon_state = "space-pilot-plain0"
 	item_state = "space-pilot-plain"
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection."
+	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
 	var/skin = "plain"
 	var/blurb = " Its simple design is quite ancient."
 	up = FALSE
@@ -1147,7 +1147,7 @@
 		if("corvid")
 			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
 
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection.[blurb]"
+	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection.[blurb]"
 	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/pilot/random/New()
@@ -1217,6 +1217,7 @@
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	slowdown = 0
 	supports_variations = DIGITIGRADE_VARIATION
 

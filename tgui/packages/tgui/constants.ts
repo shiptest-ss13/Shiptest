@@ -239,7 +239,7 @@ const GASES = [
     color: 'paleturquoise',
   },
   {
-    id: 'hydrogen',
+    id: 'h2',
     path: '/datum/gas/hydrogen',
     name: 'Hydrogen',
     label: 'H₂',

@@ -501,7 +501,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
@@ -510,7 +510,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
