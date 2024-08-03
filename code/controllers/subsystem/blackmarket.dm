@@ -96,34 +96,39 @@ SUBSYSTEM_DEF(blackmarket)
 					for(var/possible_ruin in overmap_loc.ruin_turfs)
 						var/turf/lowerbound = overmap_loc.ruin_turfs[possible_ruin]
 						ruin = overmap_loc.spawned_ruins[possible_ruin]
-						for(var/potential_turf in pick(zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))))
-							if(isfloorturf(potential_turf))
+						var/list/possible_ruin_turfs = zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))
+						for(var/cycle in 1 to length(possible_ruin_turfs))
+							var/potential_turf = pick_n_take(possible_ruin_turfs)
+							if(!isopenturf(potential_turf))
 								continue
-							var/turf/open/floor/potential_floor = potential_turf
-							if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
-								var/turf/open/lava/potential_lava_floor = potential_floor
-								if(potential_lava_floor.is_safe())
+							var/turf/open/potential_open_turf = potential_turf
+							if(ischasm(potential_open_turf))
+								continue
+							if(islava(potential_open_turf))
+								var/turf/open/lava/potential_lava_floor = potential_open_turf
+								if(!potential_lava_floor.is_safe())
 									continue
-							if(istype(potential_floor,/turf/open/acid))
-								var/turf/open/acid/potential_acid_floor = potential_floor
-								if(potential_acid_floor.is_safe_to_cross())
+							if(istype(potential_open_turf,/turf/open/acid))
+								var/turf/open/acid/potential_acid_floor = potential_open_turf
+								if(!potential_acid_floor.is_safe_to_cross())
 									continue
-							if(!potential_floor.is_blocked_turf())
+							if(potential_open_turf.is_blocked_turf())
 								continue
 
 							//yippee, there's a viable turf for the package to land on
-							landing_turf = potential_floor
+							landing_turf = potential_open_turf
 							to_chat(recursive_loc_check(purchase.uplink.loc, /mob),"<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at a structure in your local area.</span>")
+							break
 
 				if(!landing_turf)
 					landing_turf = zlevel.get_random_position_in_margin()
-					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the area instead.</span>")
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the local area instead.</span>")
 
 				var/obj/structure/closet/supplypod/pod = new()
 				pod.setStyle(STYLE_BOX)
 				purchase.entry.spawn_item(pod)
-				pod.explosionSize = list(0,0,0,0)
-				new /obj/effect/pod_landingzone(get_turf(landing_turf), pod)
+				pod.explosionSize = list(0,0,0,1)
+				new /obj/effect/pod_landingzone(landing_turf, pod)
 
 				queued_purchases -= purchase
 				qdel(purchase)
