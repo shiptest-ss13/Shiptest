@@ -360,6 +360,21 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
+/client/proc/cmd_admin_distress_signal()
+	set category = "Event"
+	set name = "Create Distress Signal"
+
+	var/datum/overmap/ship/ship = SSshuttle.get_ship(usr)
+	if(!ship)
+		return
+	var/confirm = alert(src, "Do you want to create a distress signal for [ship.name]", "Distress Signal", "Yes", "Cancel")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(ship)
+		if("Cancel")
+			return
+
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
 	set category = "Debug"
 	set name = "Delete"
