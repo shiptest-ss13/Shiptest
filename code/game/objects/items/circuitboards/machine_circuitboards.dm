@@ -957,7 +957,7 @@
 		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/mech_recharger
-	name = "Mechbay Recharger (Machine Board)"
+	name = "Exosuit Bay Recharger (Machine Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/mech_bay_recharge_port
 	req_components = list(

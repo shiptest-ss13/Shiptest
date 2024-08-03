@@ -59,7 +59,7 @@
 		/obj/item/storage/backpack/satchel = 20,
 		/obj/item/storage/backpack/messenger = 20,
 		/obj/item/melee/baton/cattleprod/loaded = 5,
-		/obj/item/reagent_containers/food/snacks/baguette = 2, // yes you can put this on your back
+		/obj/item/food/baguette = 2, // yes you can put this on your back
 		/obj/item/deployable_turret_folded = 1,
 		/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended = 1,
 		))
