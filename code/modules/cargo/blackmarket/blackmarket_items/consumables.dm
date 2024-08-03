@@ -280,3 +280,4 @@
 	stock = 1
 	availability_prob = 5
 	spawn_weighting = FALSE
+
