@@ -245,7 +245,7 @@ atmos examples
 shutoff example
 */
 
-//Toggles the state of hazards with the same ID. SET ID ON MAP USING VAREDIT AND BE UNIQUE (ie id = crashed_starwalker_water_hazard)
+//Toggles the state of hazards with the same ID. SET ID ON MAP USING VAREDIT AND BE UNIQUE (ie: id = crashed_starwalker_water_hazard)
 /obj/structure/hazard_shutoff/example
 	name = "example shutoff"
 	desc = "id = 1"
@@ -264,14 +264,17 @@ shutoff example
 
 //turns off hazards with the same ID until the resets time has passed!
 /obj/structure/hazard_shutoff/example/timed
-	name = "timed example shutoff"
+	name = "example timed shutoff"
 	desc = "id = 1"
 	id = 1
 	resets = 3 SECONDS
 
 //only works once charged with a cable up to siphon_max
 /obj/structure/hazard_shutoff/powered/example
+	name = "example powered shutoff"
+	desc = "id = 1"
 	id = 1
-	siphon_max = 1e6
+	siphon_max = 1e6 //required power, in watts, needed to use this toggle.
+	toggle_power = 5e5 //can be 0
 
 //good luck with radioactive hazards for now. you'll likely need to write code (dear god)
