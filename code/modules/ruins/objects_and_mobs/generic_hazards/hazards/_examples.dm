@@ -269,4 +269,9 @@ shutoff example
 	id = 1
 	resets = 3 SECONDS
 
+//only works once charged with a cable up to siphon_max
+/obj/structure/hazard_shutoff/powered/example
+	id = 1
+	siphon_max = 1e6
+
 //good luck with radioactive hazards for now. you'll likely need to write code (dear god)
