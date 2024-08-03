@@ -906,10 +906,11 @@
 "kD" = (
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/structure/closet/crate/secure/loot,
-/obj/machinery/power/grounding_rod,
-/obj/machinery/power/grounding_rod,
-/obj/machinery/power/grounding_rod,
-/obj/machinery/power/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/stack/sheet/metal/twenty,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "kH" = (
@@ -1354,6 +1355,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/spawner/wasteplanet/hivebot/high_threat,
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
