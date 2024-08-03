@@ -121,10 +121,10 @@
 	stock_max = 5
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/blackout
-	name = ".300 Blackout Stripper Clip"
-	desc = "A 5 round clip of .300 Blackout. It'll be lights out soon enough for anyone hit with these."
-	item = /obj/item/ammo_box/aac_300blk_stripper
+/datum/blackmarket_item/ammo/polymer_clip
+	name = ".762 Stripper Clip"
+	desc = "A 5 round stripper clip of 7.62x40mm CLIP."
+	item = /obj/item/ammo_box/a762_stripper
 
 	price_min = 500
 	price_max = 750

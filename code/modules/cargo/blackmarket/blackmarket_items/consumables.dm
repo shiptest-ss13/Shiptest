@@ -209,8 +209,8 @@
 	desc = "A bundle of sutures for stitching up your latest bullet wound."
 	item = /obj/item/stack/medical/suture
 
-	price_min = 75
-	price_max = 300
+	price_min = 25
+	price_max = 150
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 40
@@ -220,8 +220,8 @@
 	desc = "A smoothing pack of regenerative mesh for your burns."
 	item = /obj/item/stack/medical/mesh
 
-	price_min = 75
-	price_max = 300
+	price_min = 25
+	price_max = 150
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 40
@@ -231,8 +231,8 @@
 	desc = "A bundle of old bruise packs, for you guessed it, bruises. Any rumors of these containing hazardous chemicals are just that. Rumors."
 	item = /obj/item/stack/medical/bruise_pack
 
-	price_min = 100
-	price_max = 350
+	price_min = 50
+	price_max = 175
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 30
@@ -242,8 +242,8 @@
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
 
-	price_min = 100
-	price_max = 350
+	price_min = 50
+	price_max = 175
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 30

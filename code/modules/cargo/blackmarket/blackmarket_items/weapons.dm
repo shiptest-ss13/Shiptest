@@ -305,9 +305,9 @@
 
 /datum/blackmarket_item/weapon/polymer
 	name = "Polymer Survivor Rifle"
-	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in .300 Blackout."
+	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
 	item = /obj/item/gun/ballistic/rifle/polymer
-	pair_item = list(/datum/blackmarket_item/ammo/blackout)
+	pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
 
 	price_min = 600
 	price_max = 1250
