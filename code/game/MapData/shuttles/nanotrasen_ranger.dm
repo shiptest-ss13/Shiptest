@@ -286,7 +286,7 @@
 	"}
 
 /obj/item/disk/holodisk/lp/retrieval/phazon
-	name = "Retrieval Mission Secret Mecha"
+	name = "Retrieval Mission Secret Exosuit"
 	desc = "A holodisk containing a retrieval mission for the LP."
 	preset_image_type = /datum/preset_holoimage/commissioner
 	preset_record_text = {"
