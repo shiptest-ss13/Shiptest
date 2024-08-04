@@ -418,7 +418,7 @@
 		active = FALSE
 		log_game("[src] was deactivated by [key_name(user)] at [AREACOORD(src)]")
 	else
-		user.visible_message(span_notice("[user] turned \the [src] on."), span_notice("ou turn on \the [src]."), span_hear("ou hear heavy droning."))
+		user.visible_message(span_notice("[user] turned \the [src] on."), span_notice("You turn on \the [src]."), span_hear("You hear heavy droning."))
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by [key_name(user)] at [AREACOORD(src)]")
 	add_fingerprint(user)
