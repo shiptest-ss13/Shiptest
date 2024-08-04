@@ -233,7 +233,7 @@
 		target = scan(/obj/effect/decal/remains)
 
 	if(!target && trash) //Then for trash.
-		target = scan(/obj/item/trash)
+		target = scan(/obj/item/trash) || (/obj/item/cigbutt)
 
 	if(!target && trash) //Search for dead mices.
 		target = scan(/obj/item/reagent_containers/food/snacks/deadmouse)
@@ -317,6 +317,7 @@
 		target_types += list(
 		/obj/item/trash,
 		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/cigbutt,
 		)
 
 	target_types = typecacheof(target_types)
