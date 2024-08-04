@@ -117,7 +117,7 @@
 
 /datum/gear/accessory/headphones
 	display_name = "headphones"
-	slot = ITEM_SLOT_HEAD //Fits in ears too, hence in accessory tab. Displays on head, though.
+	slot = ITEM_SLOT_EARS
 	path = /obj/item/instrument/piano_synth/headphones
 
 /datum/gear/accessory/pocketprotector

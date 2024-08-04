@@ -23,7 +23,7 @@
 
 //Berets, AKA how I lost my will to live again
 
-/datum/gear/hat/beret/red
+/datum/gear/hat/beret
 	display_name = "beret, red"
 	path = /obj/item/clothing/head/beret
 
@@ -84,7 +84,7 @@
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
-/datum/gear/hat/fedora/black
+/datum/gear/hat/fedora
 	display_name = "fedora, black"
 	path = /obj/item/clothing/head/fedora
 
