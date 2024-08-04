@@ -49,7 +49,7 @@
 /datum/gear/eyewear/doubleeyepatch
 	display_name = "double eyepatch"
 	description = "Two eyepatches at once! Effectively a blindfold, though."
-	path = /obj/item/clothing/glasses/trickblindfold
+	path = /obj/item/clothing/glasses/blindfold/eyepatch
 
 /datum/gear/eyewear/glasses/cold
 	display_name = "cold goggles"

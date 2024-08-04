@@ -60,6 +60,7 @@
 
 /datum/gear/pai
 	display_name = "personal AI device"
+	description = "A synthetic friend that fits in your pocket."
 	path = /obj/item/paicard
 
 /datum/gear/tablet

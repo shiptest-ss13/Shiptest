@@ -74,6 +74,14 @@
 	display_name = "bandana, skull"
 	path = /obj/item/clothing/mask/bandana/skull
 
+/datum/gear/accessory/mask/bandana/black
+	display_name = "bandana, black"
+	path = /obj/item/clothing/mask/bandana/black
+
+/datum/gear/accessory/mask/bandana/blue
+	display_name = "bandana, blue"
+	path = /obj/item/clothing/mask/bandana/blue
+
 /datum/gear/accessory/mask/surgical
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
