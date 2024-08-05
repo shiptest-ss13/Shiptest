@@ -405,7 +405,7 @@
 		charge = 0 //For naturally depowered areas, we start with no power
 
 // gun power cell //
-/obj/item/stock_parts/cell/gun
+/obj/item/stock_parts/cell/gun/medium
 	name = "weapon power cell"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "g-cell"
@@ -414,12 +414,12 @@
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
 
-/obj/item/stock_parts/cell/gun/empty/Initialize()
+/obj/item/stock_parts/cell/gun/medium/empty/Initialize()
 	. = ..()
 	charge = 0
 	update_appearance()
 
-/obj/item/stock_parts/cell/gun/update_appearance()
+/obj/item/stock_parts/cell/gun/medium/update_appearance()
 	cut_overlays()
 	if(grown_battery)
 		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
@@ -435,14 +435,14 @@
 		add_overlay("[initial(icon_state)]-o1")
 	return ..()
 
-/obj/item/stock_parts/cell/gun/upgraded
+/obj/item/stock_parts/cell/gun/medium/upgraded
 	name = "upgraded weapon power cell"
 	icon_state = "ug-cell"
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 2000
 
-/obj/item/stock_parts/cell/gun/upgraded/empty/Initialize()
+/obj/item/stock_parts/cell/gun/medium/upgraded/empty/Initialize()
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -459,7 +459,7 @@
 	charge = 0
 	update_appearance()
 
-/obj/item/stock_parts/cell/gun/solgov
+/obj/item/stock_parts/cell/gun/medium/solgov
 	name = "SolGov power cell"
 	icon_state = "g-sg-cell"
 
@@ -476,14 +476,14 @@
 	charge = 0
 	update_appearance()
 
-/obj/item/stock_parts/cell/gun/kalix
+/obj/item/stock_parts/cell/gun/medium/kalix
 	name = "Etherbor EWC-5"
 	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the EWC-5, an energy cell compatible with any Etherbor Industries energy weapons."
 	icon_state = "kalix-cell"
 	maxcharge = 12750 // 15 shots at 850 energy per
 	chargerate = 1750
 
-/obj/item/stock_parts/cell/gun/pgf
+/obj/item/stock_parts/cell/gun/medium/pgf
 	name = "Etherbor EWC-6m"
 	desc = "Exclusive only to the PGF military, the EWC-6m is an Etherbor energy weapon cell designed for military-grade use, including expanded capacity and output."
 	icon_state = "pgf-cell"

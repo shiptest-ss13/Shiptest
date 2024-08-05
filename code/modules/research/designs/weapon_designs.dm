@@ -599,7 +599,7 @@
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
 	construction_time=100
-	build_path = /obj/item/stock_parts/cell/gun/empty
+	build_path = /obj/item/stock_parts/cell/gun/medium/empty
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
@@ -610,7 +610,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
 	construction_time=100
-	build_path = /obj/item/stock_parts/cell/gun/upgraded/empty
+	build_path = /obj/item/stock_parts/cell/gun/medium/upgraded/empty
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 

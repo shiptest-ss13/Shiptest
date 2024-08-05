@@ -296,13 +296,13 @@
 /datum/supply_pack/ammo/guncell
 	name = "Weapon Cell Crate"
 	desc = "Contains a weapon cell, compatible with laser guns."
-	contains = list(/obj/item/stock_parts/cell/gun)
+	contains = list(/obj/item/stock_parts/cell/gun/medium)
 	cost = 500
 
 /datum/supply_pack/ammo/guncell/kalix
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
-	contains = list(/obj/item/stock_parts/cell/gun/kalix)
+	contains = list(/obj/item/stock_parts/cell/gun/medium/kalix)
 	cost = 600
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate

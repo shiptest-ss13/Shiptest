@@ -321,7 +321,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	cell_type = /obj/item/stock_parts/cell/gun/medium/upgraded
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/temperature/security

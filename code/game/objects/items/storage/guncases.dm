@@ -23,7 +23,7 @@
 	STR.set_holdable(list(
 		/obj/item/gun,
 		/obj/item/ammo_box,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun/medium
 		))
 
 /obj/item/storage/guncase/winchester
@@ -105,7 +105,7 @@
 	STR.set_holdable(list(
 		/obj/item/gun,
 		/obj/item/ammo_box/,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun/medium
 		))
 
 /obj/item/storage/pistolcase/modelh
@@ -170,22 +170,22 @@
 /obj/item/storage/pistolcase/laser
 /obj/item/storage/pistolcase/laser/PopulateContents()
 	new /obj/item/gun/energy/laser/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+	new /obj/item/stock_parts/cell/gun/medium(src)
 
 /obj/item/storage/pistolcase/egun
 /obj/item/storage/pistolcase/egun/PopulateContents()
 	new /obj/item/gun/energy/e_gun/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+	new /obj/item/stock_parts/cell/gun/medium(src)
 
 /obj/item/storage/pistolcase/kalixpistol
 /obj/item/storage/pistolcase/kalixpistol/PopulateContents()
 	new /obj/item/gun/energy/kalix/pistol/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun/kalix(src)
+	new /obj/item/stock_parts/cell/gun/medium/kalix(src)
 
 /obj/item/storage/guncase/kalixrifle
 /obj/item/storage/guncase/kalixrifle/PopulateContents()
 	new /obj/item/gun/energy/kalix/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun/kalix(src)
+	new /obj/item/stock_parts/cell/gun/medium/kalix(src)
 
 /obj/item/storage/pistolcase/miniegun
 /obj/item/storage/pistolcase/miniegun/PopulateContents()
@@ -195,4 +195,4 @@
 /obj/item/storage/pistolcase/iongun
 /obj/item/storage/pistolcase/iongun/PopulateContents()
 	new /obj/item/gun/energy/ionrifle/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+	new /obj/item/stock_parts/cell/gun/medium(src)

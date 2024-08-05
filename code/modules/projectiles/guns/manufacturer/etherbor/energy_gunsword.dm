@@ -16,7 +16,7 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
 
-	cell_type = /obj/item/stock_parts/cell/gun/kalix
+	cell_type = /obj/item/stock_parts/cell/gun/medium/kalix
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
@@ -55,7 +55,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	cell_type = /obj/item/stock_parts/cell/gun/pgf
+	cell_type = /obj/item/stock_parts/cell/gun/medium/pgf
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/projectile/beam/hitscan/kalix/pgf
@@ -86,7 +86,7 @@
 	spread = 2
 	spread_unwielded = 5
 
-	cell_type = /obj/item/stock_parts/cell/gun/kalix
+	cell_type = /obj/item/stock_parts/cell/gun/medium/kalix
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
 
 
