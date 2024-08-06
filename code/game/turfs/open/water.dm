@@ -20,7 +20,8 @@
 
 /turf/open/water/examine(mob/user)
 	. = ..()
-	. += span_notice("You could probably scoop some of the [extracted_reagent_visible_name] if you had a beaker...")
+	if(reagent_to_extract)
+		. += span_notice("You could probably scoop some of the [extracted_reagent_visible_name] if you had a beaker...")
 
 /turf/open/water/attackby(obj/item/_item, mob/user, params)
 	if(istype(_item, /obj/item/fish))
