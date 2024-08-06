@@ -10,12 +10,14 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/deckhand
 	name = "\improper deckhand jumpsuit"
 	desc = "A cheap olive-green jumpsuit used by the Frontiersmen on their vessels. It has an old smell permeating it."
 	icon_state = "frontier_deckhand"
 	item_state = "frontier_deckhand"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/fireproof
 	name = "\improper fireproof frontiersmen fatigues"
@@ -29,12 +31,14 @@
 	name = "\improper Frontiersmen officer's uniform"
 	desc = "Worn by officers of the Frontiersmen pirate fleet. It's less comfortable than it looks."
 	icon_state = "frontier_officer"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/admiral
 	name = "\improper frontiersmen admiral uniform"
 	desc = "Worn by admirals of the Frontiersmen pirate fleet, adorned with a tasteful amount of gold and completed with a very-stylish all-white aesthetic. Quite snobby for a bunch of pirates."
 	icon_state = "frontier_admiral"
 	item_state = "frontier_admiral"
+	supports_variations = VOX_VARIATION
 
 ////////////////////
 //Unarmored suits//
@@ -58,6 +62,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	blood_overlay_type = "armor"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
@@ -162,17 +167,20 @@
 	name = "\improper frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/frontier/admiral
 	name = "\improper frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	name = "\improper frontiersmen X-11 helmet"
 	desc = "A heavily modified X-11 pattern helmet used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
 	name = "\improper fireproof frontiersmen X-11 helmet"
