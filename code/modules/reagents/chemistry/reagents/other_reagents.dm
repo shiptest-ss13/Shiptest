@@ -653,7 +653,7 @@
 		mytray.adjustWeeds(-rand(1,3))
 
 /datum/reagent/chlorine/expose_obj(obj/exposed_object, reac_volume)
-	if((!O) || (!reac_volume))
+	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
 	exposed_object.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
