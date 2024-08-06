@@ -62,10 +62,10 @@
 	return pressure
 
 /mob/living/carbon/human/proc/check_for_seal()
-	var/obj/item/clothing/CS = wear_suit
-	var/obj/item/clothing/CH = head
-	if(istype(CS) && istype(CH))
-		if (CS.clothing_flags & CH.clothing_flags & STOPSPRESSUREDAMAGE)
+	var/obj/item/clothing/clothing_suit = wear_suit
+	var/obj/item/clothing/clothing_head = head
+	if(istype(clothing_suit) && istype(clothing_head))
+		if (clothing_suit.clothing_flags & clothing_head.clothing_flags & STOPSPRESSUREDAMAGE)
 			return TRUE
 	return FALSE
 
