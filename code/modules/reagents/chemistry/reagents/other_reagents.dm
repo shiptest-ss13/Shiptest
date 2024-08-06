@@ -652,16 +652,16 @@
 		mytray.adjustWater(-round(chems.get_reagent_amount(type) * 0.5))
 		mytray.adjustWeeds(-rand(1,3))
 
-/datum/reagent/chlorine/expose_obj(obj/O, reac_volume)
+/datum/reagent/chlorine/expose_obj(obj/exposed_object, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("chlorine=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
 
-/datum/reagent/chlorine/expose_turf(turf/open/T, reac_volume)
-	if(istype(T))
+/datum/reagent/chlorine/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("chlorine=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen_chloride
@@ -672,12 +672,24 @@
 	color = "#f4ffe0"
 	taste_description = "acid"
 
-/datum/reagent/chlorine/on_mob_life(mob/living/carbon/M)
-	M.take_bodypart_damage(0, 2*REM, 0, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
-	M.adjustOrganLoss(ORGAN_SLOT_STOMACH,1*REM)
+/datum/reagent/hydrogen_chloride/on_mob_life(mob/living/carbon/exposed_mob)
+	exposed_mob.take_bodypart_damage(0, 2*REM, 0, 0)
+	exposed_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	exposed_mob.adjustOrganLoss(ORGAN_SLOT_STOMACH,1*REM)
 	. = 1
 	..()
+
+/datum/reagent/hydrogen_chloride/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/hydrogen_chloride/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+	return
 
 /datum/reagent/fluorine
 	name = "Fluorine"
