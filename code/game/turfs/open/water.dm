@@ -18,27 +18,32 @@
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
-/*
-/turf/open/water/attackby(obj/item/tool, mob/user, params)
-	if(!reagent_to_extract)
-		return ..()
-	var/obj/item/reagent_containers/glass/container = tool
-	if(!istype(tool, /obj/item/reagent_containers))
-		return ..()
-	if(container.reagents.total_volume >= container.volume)
-		to_chat(user, "<span class='danger'>[container] is full.</span>")
-		return
-	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
-	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
-	return TRUE
-*/
-
-/turf/open/water/attackby(obj/item/fish, mob/user, params)
+/turf/open/water/examine(mob/user)
 	. = ..()
-	if(istype(fish, /obj/item/fish))
-		to_chat(user, "<span class='notice'>You toss the [fish.name] into the water.</span>")
-		playsound(fish, "sound/effects/bigsplash.ogg", 90)
-		qdel(fish)
+	. += span_notice("You could probably scoop some of the [extracted_reagent_visible_name] if you had a beaker...")
+
+/turf/open/water/attackby(obj/item/_item, mob/user, params)
+	if(istype(_item, /obj/item/fish))
+		to_chat(user, span_notice("You toss the [_item.name] into the [name]."))
+		playsound(_item, "sound/effects/bigsplash.ogg", 90)
+		qdel(_item)
+	if(istype(_item, /obj/item/reagent_containers/glass))
+		extract_reagents(_item,user,params)
+
+	. = ..()
+
+/turf/open/water/proc/extract_reagents(obj/item/reagent_containers/glass/container, mob/user, params)
+	if(!reagent_to_extract)
+		return FALSE
+	if(!container.is_refillable())
+		to_chat(user, span_danger("\The [container]'s cap is on! Take it off first."))
+		return FALSE
+	if(container.reagents.total_volume >= container.volume)
+		to_chat(user, span_danger("\The [container] is full."))
+		return FALSE
+	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
+	user.visible_message(span_notice("[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container]."), span_notice("You scoop out [extracted_reagent_visible_name] from the [src] using \the [container]."))
+	return TRUE
 
 /turf/open/water/can_have_cabling()
 	return FALSE
@@ -52,7 +57,7 @@
 /turf/open/water/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE
@@ -85,7 +90,7 @@
 
 /turf/open/water/tar
 	name = "tar pit"
-	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out..."
+	desc = "Shallow tar. Will slow you down significantly."
 	color = "#473a3a"
 	light_range = 0
 	slowdown = 2
