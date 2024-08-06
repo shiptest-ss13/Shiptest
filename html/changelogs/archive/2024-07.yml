@@ -141,3 +141,27 @@
   generalthrax:
   - balance: Undoubles the price on every automatic gun and removed 250 from the price
       of every semi-auto pistol.
+2024-07-26:
+  Cloudbreak:
+  - rscadd: A new ruin, the Abandoned Listening Post.
+  - rscadd: Areas associated with the listening post.
+  - bugfix: Single line in maps catalogue.
+2024-07-27:
+  Gristlebee:
+  - rscadd: Marker beacons can now be printed at the autolathe from the Misc tab
+2024-07-31:
+  rkz, benbot(benjamin), Time-Green, SteelSlayer, floyd, Qustinuus, ArcaneDefence, FlowerCuco:
+  - rscadd: Food storage! Hide some glass in the captains cake! Begone digestive tract!
+  - rscadd: Bread, Cake and Spaghetti to Newfood
+  - rscadd: some smaller foods can now be eaten whilst on the run! (This ONLY applies
+      to newfood items thus far!)
+  - rscadd: converted edible component to work with newfood
+  - rscdel: oldfood for Bread, Cake and Spaghetti
+  - rscdel: Temporarily removes customfood bread, cake, pasta, and sandwiches
+  - tweak: edited a few messed up values
+  - tweak: food trash is sensible now. Finishing stuff like cake will actually spawn
+      a plate rubbish. Instead of you eating the plate, biggun, perhaps properly dispose
+      of it!
+  - bugfix: Wildly STUPID item weights. Candycorn and cakes are no longer the SAME
+      size
+  - code_imp: provides some semblance of sorting for signal defines

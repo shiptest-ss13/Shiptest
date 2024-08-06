@@ -2852,8 +2852,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/computer/electrolyzer_console{
-	pixel_x = 32;
-	density = 0
+	pixel_x = 20;
+	density = 0;
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
@@ -6219,7 +6220,8 @@
 /obj/machinery/mineral/processing_unit_console{
 	machinedir = 8;
 	output_dir = 1;
-	pixel_x = 32
+	pixel_x = 20;
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
