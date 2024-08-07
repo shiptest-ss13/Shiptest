@@ -18,11 +18,11 @@ Contains:
 
 	//Death squad armored space suits, not hardsuits!
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad
-	name = "MK.III SWAT Helmet"
-	desc = "An advanced tactical space helmet."
+	name = "Deathsquad suit helmet"
+	desc = "The integrated helmet of the Deathsquad hardsuit. Originally looking much different in the first couple issues, the helmet was printed in its final design in issue #12 'DEATHSQUAD ABOVE'."
 	icon_state = "deathsquad"
 	item_state = "deathsquad"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -32,12 +32,12 @@ Contains:
 	return
 
 /obj/item/clothing/suit/space/hardsuit/deathsquad
-	name = "MK.III SWAT Suit"
-	desc = "A prototype designed to replace the ageing MK.II SWAT suit. Based on the streamlined MK.II model, the traditional ceramic and graphene plate construction was replaced with plasteel, allowing superior armor against most threats. There's room for some kind of energy projection device on the back."
+	name = "Deathsquad hardsuit"
+	desc = "A beyond cutting edge hardsuit iconically used by the covert Deathsquad. Since first appearing on the cover of issue #1 of 'DEATHSQUAD!' this hardsuit has been pictured surviving nuclear payloads, standing in engine burn mixes, walking into a hail of bullets, and enduring bites from giant alien super bugs. While greatly exaggerated in the comics, you will never find a better hardsuit."
 	icon_state = "deathsquad"
 	item_state = "swat_suit"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
