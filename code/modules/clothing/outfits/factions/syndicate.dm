@@ -931,7 +931,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 
-/datum/outfit/job/syndicate/security/gorlex
+/datum/outfit/job/syndicate/security/gorlex/pilot
 	name = "Syndicate - Pilot (Hardliner)"
 	id_assignment = "Pilot"
 	job_icon = "securityofficer"
