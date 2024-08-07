@@ -74,7 +74,8 @@
 		/obj/item/chisel,
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
-		/obj/item/clothing/head/welding //WS end
+		/obj/item/clothing/head/welding, //WS end
+		/obj/item/gun/energy/plasmacutter
 		))
 
 /obj/item/storage/belt/utility/chief

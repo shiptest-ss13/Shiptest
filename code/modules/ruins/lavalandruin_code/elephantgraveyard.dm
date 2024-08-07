@@ -114,7 +114,7 @@
 	anchored = TRUE
 	locked = TRUE
 	breakout_time = 900
-	cutting_tool = /obj/item/shovel
+	cutting_tool = TOOL_SHOVEL
 	var/lead_tomb = FALSE
 	var/first_open = FALSE
 
@@ -142,7 +142,7 @@
 /obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
 	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
 		if(!opened)
-			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+			if(S.tool_behaviour == cutting_tool)
 				to_chat(user, "<span class='notice'>You start start to dig open \the [src]  with \the [S]...</span>")
 				if (do_after(user,20, target = src))
 					opened = TRUE
@@ -164,7 +164,7 @@
 			return 1
 
 	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
-		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+		if(S.tool_behaviour == cutting_tool)
 			to_chat(user, "<span class='notice'>You start to remove \the [src]  with \the [S].</span>")
 			if (do_after(user,15, target = src))
 				to_chat(user, "<span class='notice'>You remove \the [src]  completely.</span>")
