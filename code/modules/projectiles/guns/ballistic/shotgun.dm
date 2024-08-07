@@ -717,6 +717,62 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		item_state = "flamingbolt_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+	name = "HP Absolution"
+	desc = "WIP."
+	sawn_desc = "WIP SAWED OFF."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
+	name = "HP Conflagration"
+	desc = "WIP."
+	sawn_desc = "WIP SAWED OFF."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 4
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
+	spawnwithmagazine = FALSE
+
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "HP Huntsman"

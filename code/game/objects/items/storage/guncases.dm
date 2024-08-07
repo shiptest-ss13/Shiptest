@@ -30,6 +30,15 @@
 /obj/item/storage/guncase/winchester/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/flamingarrow/no_mag(src)
 
+/obj/item/storage/guncase/conflagration
+/obj/item/storage/guncase/conflagration/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag(src)
+
+/obj/item/storage/guncase/absolution
+/obj/item/storage/guncase/absolution/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
+
+
 /obj/item/storage/guncase/skm
 /obj/item/storage/guncase/skm/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/assault/skm/no_mag(src)
