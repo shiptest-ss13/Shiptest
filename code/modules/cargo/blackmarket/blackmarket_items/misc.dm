@@ -112,8 +112,7 @@
 
 	price_min = 50
 	price_max = 150
-	stock_min = 3
-	stock_max = 10
+	unlimited = TRUE
 	availability_prob = 60
 
 /datum/blackmarket_item/misc/pens/spawn_item(loc)
@@ -123,6 +122,8 @@
 				/obj/item/pen/fourcolor,
 				/obj/item/pen/fountain,
 				/obj/item/pen/fountain/captain,
+				/obj/item/pen/solgov,
+				/obj/item/pen/fountain/solgov,
 				/obj/item/pen/edagger,
 				/obj/item/pen/survival,
 				/obj/item/pen/sleepy))
