@@ -1,0 +1,67 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Harrier-class Exploration Cruiser",
+	"prefix": "NTSV",
+	"namelists": [
+		"NANOTRASEN",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"WEAPONS"
+	],
+	"map_short_name": "Harrier-class",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_harrier.dmm",
+	"description": "Some of the most modern ships in Nanotrasen’s fleet and a prestigious assignment for their captains, the famed Harrier of the ICW’s most dramatic astronautical engagements lives on as a very well-appointed exploration ship. Extensively refurbished and demilitarized from their origins as Bluespace Artillery platforms, the contemporary Harrier repurposes military-grade sensor equipment and AI systems for exploration and survey work. Supermatter reactors and military-grade shielding and weapons have also been stripped out in favor of improved accomodations. While the Harrier rebuilds are very well-rounded, they tend to be only moderately-equipped in any one department.",
+	"tags": ["Generalist"],
+	"limit": 1,
+	"starting_funds": 4000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/nanotrasen/lawyer/corporaterepresentative",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/nanotrasen/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/nanotrasen/paramedic",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 1
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/atmos",
+			"slots": 1
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
+			"slots": 2
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook",
+			"slots": 1
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
