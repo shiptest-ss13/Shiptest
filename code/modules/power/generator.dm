@@ -13,6 +13,7 @@
 	var/lastgen = 0
 	var/lastgenlev = -1
 
+	var/max_efficiency = 0.45
 
 /obj/machinery/power/generator/Initialize(mapload)
 	. = ..()
@@ -75,12 +76,13 @@
 
 
 			if(delta_temperature > 0 && cold_air_heat_capacity > 0 && hot_air_heat_capacity > 0)
-				var/efficiency = 0.45 //WS Edit - Nerfed down to Cit's efficiency
+				var/efficiency = LOGISTIC_FUNCTION(max_efficiency,0.0009,delta_temperature,10000)
+				//2nd (0.0009) effects how 'steep' the curve is, and 4th (10000) effects where the 'middle' is.
 
 				var/energy_transfer = delta_temperature*hot_air_heat_capacity*cold_air_heat_capacity/(hot_air_heat_capacity+cold_air_heat_capacity)
 
+				lastgen += energy_transfer * efficiency
 				var/heat = energy_transfer*(1-efficiency)
-				lastgen += LOGISTIC_FUNCTION(500000,0.0009,delta_temperature,10000) //WS Edit - Buries the 3x3 freezer heater TEG into the ground
 
 				hot_air.set_temperature(hot_air.return_temperature() - energy_transfer/hot_air_heat_capacity)
 				cold_air.set_temperature(cold_air.return_temperature() + heat/cold_air_heat_capacity)
