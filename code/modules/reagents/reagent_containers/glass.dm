@@ -87,7 +87,7 @@
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
-			if(INTENT_HELP)
+			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
 				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
