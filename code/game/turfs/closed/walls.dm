@@ -26,8 +26,9 @@
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
 	/// sound when something hits the wall and deals damage
-	var/attack_hitsound = PROJECTILE_HITSOUND_METAL
+	var/attack_hitsound = 'sound/weapons/smash.ogg'
 	var/break_sound = 'sound/items/welder.ogg'
+	hitsound_type = PROJECTILE_HITSOUND_METAL
 
 	var/list/dent_decals
 
@@ -161,7 +162,7 @@
 				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
 	switch(W.damtype)
 		if(BRUTE)
-			playsound(src,attack_hitsound, 50, TRUE)
+			playsound(src,attack_hitsound, 100, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	alter_integrity(-dam)

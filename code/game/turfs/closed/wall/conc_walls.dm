@@ -12,6 +12,7 @@
 	explosion_block = 3
 	break_sound = 'sound/effects/break_stone.ogg'
 	attack_hitsound =  'sound/effects/hit_stone.ogg'
+	hitsound_type = PROJECTILE_HITSOUND_STONE
 	sheet_type = null
 	girder_type = /obj/structure/grille
 
