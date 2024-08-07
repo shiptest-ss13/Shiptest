@@ -24,13 +24,16 @@
 	M.Scale(1.8, 1.2)
 	animate(src, time = 40, transform = M, easing = SINE_EASING)
 
-/mob/living/carbon/gib(no_brain, no_organs, no_bodyparts, safe_gib = FALSE)
+/mob/living/carbon/gib(no_brain, no_organs, no_bodyparts, safe_gib = TRUE)
 	if(safe_gib) // If you want to keep all the mob's items and not have them deleted
 		for(var/obj/item/W in src)
 			dropItemToGround(W)
 			if(prob(50))
 				step(W, pick(GLOB.alldirs))
 	var/atom/Tsec = drop_location()
+	var/amount_of_streams_to_spawn = rand(2,4)
+	for(var/i in 1 to amount_of_streams_to_spawn)
+		spray_blood(pick(GLOB.alldirs), rand(1,6))
 	for(var/mob/M in src)
 		M.forceMove(Tsec)
 		visible_message("<span class='danger'>[M] bursts out of [src]!</span>")
