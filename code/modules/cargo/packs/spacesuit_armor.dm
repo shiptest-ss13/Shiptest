@@ -72,14 +72,6 @@
 	crate_name = "engineering space suit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
-/datum/supply_pack/spacesuit_armor/atmos_hardsuit
-	name = "Atmospherics Hardsuit Crate"
-	desc = "The iconic hardsuit of Nanotrasen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma."
-	cost = 2500
-	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
-	crate_name = "atmospherics hardsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/engineering
-
 /datum/supply_pack/spacesuit_armor/swat
 	name = "SWAT Crate"
 	desc = "Contains one fullbody set of tough, fireproof, pressurized suit designed in a joint effort by IS-ERI and Nanotrasen. The set contains a suit, helmet, and combat belt."
