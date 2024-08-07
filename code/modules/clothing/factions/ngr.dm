@@ -231,6 +231,7 @@
 	icon_state = "ngr_shemagh"
 	icon = 'icons/obj/clothing/faction/ngr/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
+	supports_variations = VOX_VARIATION
 
 //////////
 //Belts//

@@ -167,6 +167,7 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 	cuttable = FALSE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -267,6 +268,7 @@
 	name = "shemagh"
 	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
 	icon_state = "shemagh"
+	supports_variations = VOX_VARIATION
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
@@ -275,21 +277,25 @@
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedsolgovscarf
 	name = "striped solgov scarf"
 	icon_state = "stripedsolgovscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
