@@ -41,7 +41,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
 	. = ..()
-	for(var/datum/action/item_action/deploy_bipod/action as anything in actions_types)
+	for(var/datum/action/item_action/deploy_bipod/action as anything in actions)
 		if(!has_bipod)
 			qdel(action)
 

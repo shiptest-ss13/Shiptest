@@ -98,7 +98,7 @@
 
 		/obj/item/storage/box/lethalshot = 6,
 		/obj/item/stock_parts/cell/gun = 5,
-		/obj/item/ammo_box/magazine/uzim9mm = 5,
+		/obj/item/ammo_box/magazine/spitter_9mm = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
@@ -107,8 +107,7 @@
 	premium = list()
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
-		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
-		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/smg/mini_uzi)
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"

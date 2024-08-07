@@ -37,7 +37,7 @@
 	max_ammo = 6
 	w_class = WEIGHT_CLASS_SMALL //Smaller, holds less
 
-/obj/item/ammo_box/magazine/cm15_mag
+/obj/item/ammo_box/magazine/cm15_12g
 	name = "CM-15 magazine (12g buckshot)"
 	desc = "An almost straight, 8-round magazine designed for the CM-15 shotgun."
 	icon_state = "cm15_mag-1"
