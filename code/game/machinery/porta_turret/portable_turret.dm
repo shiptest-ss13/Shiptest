@@ -836,8 +836,11 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
+/obj/machinery/porta_turret/ship/ballistic/clip
+	faction = list(FACTION_PLAYER_MINUTEMAN, "turret")
+
 /obj/machinery/porta_turret/ship/solgov
-	faction = list("playerSolgov", "turret")
+	faction = list(FACTION_PLAYER_SOLGOV, "turret")
 
 /obj/machinery/porta_turret/ship/syndicate
 	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
