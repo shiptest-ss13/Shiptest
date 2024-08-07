@@ -57,7 +57,7 @@
 	var/list/misc = list()
 	var/list/npcs = list()
 
-	var/list/pois = getpois(skip_mindless = TRUE, specify_dead_role = FALSE, only_realname = TRUE)
+	var/list/pois = getpois(skip_mindless = TRUE, specify_dead_role = FALSE)
 	for (var/name in pois)
 		var/list/serialized = list()
 		serialized["name"] = name
@@ -67,8 +67,6 @@
 		serialized["ref"] = REF(poi)
 
 		var/mob/M = poi
-
-		serialized["fake_name"] = M.name
 		if (istype(M))
 			if (isobserver(M))
 				ghosts += list(serialized)
