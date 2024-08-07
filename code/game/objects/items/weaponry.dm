@@ -574,6 +574,24 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	else if(!target.anchored)
 		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
 
+/obj/item/melee/baseball_bat/gorlexhammer //subject to change
+	name = "Marauder warhammer"
+	desc = "A weapon popular with Gorlex Marauder's splinters after their ascent from their home. Outfitted with an integrated mass-multiplier for an unusually strong kick in a small package."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "baseball_bat"
+	item_state = "baseball_bat"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 18
+	throwforce = 18
+	block_chance = 15
+	armour_penetration = 20
+	attack_verb = list("beat","smacked", "crushed", "smashed")
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BELT
+
+	// stamina damage coming 2021
+
 /obj/item/melee/baseball_bat/ablative
 	name = "metal baseball bat"
 	desc = "This bat is made of highly reflective, highly armored material."
