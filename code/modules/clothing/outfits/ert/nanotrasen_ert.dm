@@ -401,7 +401,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/kitchen/knife/combat
 
-	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
+	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/medium/upgraded=2, /obj/item/screwdriver=1)
 
 
 /datum/outfit/job/nanotrasen/security/ert/lp/medic

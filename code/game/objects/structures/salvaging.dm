@@ -583,7 +583,7 @@
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
 	loot = list(
-			/obj/item/stock_parts/cell/gun/upgraded = 5,
+			/obj/item/stock_parts/cell/gun/medium/upgraded = 5,
 			/obj/item/ammo_box/magazine/smgm9mm = 7,
 		)
 

@@ -126,6 +126,9 @@
 	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
 		return FALSE
+	if(mag_size == MAG_SIZE_MEDIUM && !istype(C, /obj/item/stock_parts/cell/gun/medium))
+		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
+		return FALSE
 	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
 		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
 		return FALSE

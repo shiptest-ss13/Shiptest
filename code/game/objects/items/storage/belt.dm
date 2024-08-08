@@ -297,7 +297,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun/medium   //WS edit Gun cells fit where they should and not where they dont
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()

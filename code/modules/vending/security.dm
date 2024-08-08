@@ -14,7 +14,7 @@
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/ammo_box/c9mm/rubbershot = 3,
 		/obj/item/ammo_box/c9mm = 1,
-		/obj/item/stock_parts/cell/gun = 3,
+		/obj/item/stock_parts/cell/gun/medium = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
 		/obj/item/storage/belt/security/webbing = 5,
@@ -74,7 +74,7 @@
 	products = list(
 		/obj/item/restraints/handcuffs = 5,
 		/obj/item/restraints/handcuffs/cable/zipties = 10,
-		/obj/item/stock_parts/cell/gun = 3,
+		/obj/item/stock_parts/cell/gun/medium = 3,
 		)
 	contraband = list()
 	premium = list()
@@ -97,7 +97,7 @@
 		/obj/item/flashlight/seclite = 10,
 
 		/obj/item/storage/box/lethalshot = 6,
-		/obj/item/stock_parts/cell/gun = 5,
+		/obj/item/stock_parts/cell/gun/medium = 5,
 		/obj/item/ammo_box/magazine/uzim9mm = 5,
 
 		/obj/item/grenade/c4 = 5,
@@ -147,8 +147,8 @@
 		/obj/item/flashlight/seclite = 10,
 
 		/obj/item/screwdriver = 5,
-		/obj/item/stock_parts/cell/gun = 10,
-		/obj/item/stock_parts/cell/gun/upgraded = 5,
+		/obj/item/stock_parts/cell/gun/medium = 10,
+		/obj/item/stock_parts/cell/gun/medium/upgraded = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
