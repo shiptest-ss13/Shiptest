@@ -82,7 +82,7 @@
 
 /obj/structure/fermenting_barrel/gunpowder/Initialize()
 	. = ..()
-	reagents.add_reagent(datum/reagent/gunpowder,300)
+	//reagents.add_reagent(datum/reagent/gunpowder,300)
 
 /obj/structure/fermenting_barrel/distiller
 	name = "Distiller"
