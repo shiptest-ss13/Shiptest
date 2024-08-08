@@ -1,8 +1,3 @@
-#define AB_CHECK_HANDS_BLOCKED (1<<0)
-#define AB_CHECK_IMMOBILE (1<<1)
-#define AB_CHECK_LYING (1<<2)
-#define AB_CHECK_CONSCIOUS (1<<3)
-
 /datum/action
 	var/name = "Generic Action"
 	var/desc = null
@@ -91,7 +86,7 @@
 		button.locked = FALSE
 		button.id = null
 
-/datum/action/proc/Trigger()
+/datum/action/proc/Trigger(trigger_flags)
 	if(!IsAvailable())
 		return FALSE
 	if(SEND_SIGNAL(src, COMSIG_ACTION_TRIGGER, src) & COMPONENT_ACTION_BLOCK_TRIGGER)

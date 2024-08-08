@@ -65,3 +65,6 @@
 	#define COMSIG_ITEM_SPLIT_VALUE 1
 #define COMSIG_ITEM_SPLIT_PROFIT "item_split_profits" //Called when getting the item's exact ratio for cargo's profit.
 #define COMSIG_ITEM_SPLIT_PROFIT_DRY "item_split_profits_dry" //Called when getting the item's exact ratio for cargo's profit, without selling the item.
+
+#define COMSIG_ITEM_HIT_REACT "item_hit_react" //from base of obj/item/hit_reaction(): (list/args)
+	#define COMPONENT_HIT_REACTION_BLOCK (1<<0)
