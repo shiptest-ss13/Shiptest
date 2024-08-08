@@ -122,7 +122,7 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/polymer_clip
-	name = ".762 Stripper Clip"
+	name = "7.62 Stripper Clip"
 	desc = "A 5 round stripper clip of 7.62x40mm CLIP."
 	item = /obj/item/ammo_box/a762_stripper
 
