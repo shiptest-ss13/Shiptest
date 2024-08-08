@@ -139,7 +139,7 @@
 	time = 30
 	reqs = list(
 		/obj/item/storage/bag/trash = 1,
-		/obj/item/reagent_containers/food/snacks/breadslice/moldy = 1,
+		/obj/item/food/breadslice/moldy = 1,
 		/obj/item/reagent_containers/food/snacks/grown = 4,
 		/obj/item/reagent_containers/food/snacks/candy_corn = 2,
 		/datum/reagent/water = 15

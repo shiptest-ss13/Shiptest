@@ -81,7 +81,7 @@
 */
 
 /datum/supply_pack/ammo/winchester_ammo
-	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
+	name = ".38 Ammo Boxes Crate"
 	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
 	cost = 250
 	contains = list(/obj/item/ammo_box/c38_box,
@@ -149,12 +149,6 @@
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
 	cost = 1000
 
-/datum/supply_pack/ammo/a300
-	name = ".300 Magnum Stripper Clip Crate"
-	desc = "Contains a five round .300 Magnum stripper clip for sniper rifles such as the HP Scout."
-	contains = list(/obj/item/ammo_box/a300)
-	cost = 750
-
 /datum/supply_pack/ammo/ebr_ammo
 	name = "M514 EBR .308 Magazine Crate"
 	desc = "Contains a .308 magazine for the M514 EBR rifle, containing ten rounds."
@@ -172,12 +166,6 @@
 	desc = "Contains a 5.56mm magazine for the P-16 rifle, containing thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/p16)
 	cost = 1000
-
-/datum/supply_pack/ammo/a850r_ammo
-	name = "8x50mmR En Bloc Clip Crate"
-	desc = "Contains a 8x50mmR en bloc clip for rifles like the illestren rifle, containing five rounds."
-	contains = list(/obj/item/ammo_box/magazine/illestren_a850r)
-	cost = 250
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"

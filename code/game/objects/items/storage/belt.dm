@@ -287,7 +287,7 @@
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
-		/obj/item/ammo_box/aac_300blk_stripper,
+		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/reagent_containers/food/snacks/donut,
 		/obj/item/kitchen/knife/combat,
@@ -520,7 +520,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesynachos,
 		/obj/item/reagent_containers/food/snacks/cubannachos,
 		/obj/item/reagent_containers/food/snacks/nugget,
-		/obj/item/reagent_containers/food/snacks/spaghetti/pastatomato,
+		/obj/item/food/spaghetti/pastatomato,
 		/obj/item/reagent_containers/food/snacks/rofflewaffles,
 		/obj/item/reagent_containers/food/snacks/donkpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,

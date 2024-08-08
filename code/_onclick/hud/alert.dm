@@ -648,11 +648,11 @@ so as to remain in compliance with the most up-to-date laws."
 	if(T)
 		AI.eyeobj.setLoc(T)
 
-//MECHS
+//EXOSUITS
 
 /atom/movable/screen/alert/low_mech_integrity
-	name = "Mech Damaged"
-	desc = "Mech integrity is low."
+	name = "Exosuit Damaged"
+	desc = "Exosuit integrity is low."
 	icon_state = "low_mech_integrity"
 
 
