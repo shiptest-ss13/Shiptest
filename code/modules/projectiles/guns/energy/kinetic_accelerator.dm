@@ -9,7 +9,7 @@
 	obj_flags = UNIQUE_RENAME
 	weapon_weight = WEAPON_LIGHT
 	automatic_charge_overlays = FALSE
-	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
+	internal_magazine = TRUE
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
 

@@ -328,6 +328,7 @@
 		update_icon()
 		return
 	INVOKE_ASYNC(src, PROC_REF(fill_gun))
+	sawn_off(forced = TRUE)
 
 /obj/item/gun/proc/fill_gun()
 	return
@@ -671,7 +672,9 @@
 						vision_distance = COMBAT_MESSAGE_RANGE,
 						ignored_mobs = user
 				)
+	try_lesbian(user)
 
+/obj/item/gun/proc/try_lesbian(mob/living/user)
 	//cloudy sent a meme in the discord. i dont know if its true, but i made this piece of code in honor of it
 	var/mob/living/carbon/human/living_human = user
 	if(istype(living_human))
@@ -1047,8 +1050,8 @@
 		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
-//wawa
-	to_chat(user, "<span class='notice'>Switched to [gun_firenames[current_firemode]].</span>")
+
+	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
@@ -1071,3 +1074,42 @@
 
 /obj/item/gun/proc/get_max_ammo(countchamber = TRUE)
 	return
+
+GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
+	/obj/item/gun/energy/plasmacutter,
+	/obj/item/melee/transforming/energy,
+	)))
+
+///Handles all the logic of sawing off guns,
+/obj/item/gun/proc/try_sawoff(mob/user, obj/item/saw)
+	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
+		return
+	if(sawn_off)
+		to_chat(user, span_warning("\The [src] is already shortened!"))
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.visible_message(span_notice("[user] begins to shorten \the [src]."), span_notice("You begin to shorten \the [src]..."))
+
+	//if there's any live ammo inside the gun, makes it go off
+	if(blow_up(user))
+		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
+		return
+
+	if(do_after(user, 30, target = src))
+		sawoff(user, saw)
+
+
+/obj/item/gun/proc/sawoff(mob/user, obj/item/saw, forced = FALSE)
+	if(sawn_off)
+		return
+	user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
+	name = "sawn-off [src.name]"
+	desc = sawn_desc
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "gun"
+	slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
+	slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+	recoil = SAWN_OFF_RECOIL
+	sawn_off = TRUE
+	update_appearance()
+	return TRUE

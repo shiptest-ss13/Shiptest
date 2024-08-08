@@ -9,14 +9,14 @@
 	force = 7
 	var/powertransfer = 1000
 	var/opened = FALSE
-	var/mag_type = /obj/item/stock_parts/cell/high
+	var/cell_type = /obj/item/stock_parts/cell/high
 	var/obj/item/stock_parts/cell/cell
 	var/recharging = FALSE
 
 /obj/item/inducer/Initialize()
 	. = ..()
-	if(!cell && mag_type)
-		cell = new mag_type
+	if(!cell && cell_type)
+		cell = new cell_type
 
 /obj/item/inducer/proc/induce(obj/item/stock_parts/cell/target, coefficient)
 	var/totransfer = min(cell.charge,(powertransfer * coefficient))
@@ -172,7 +172,7 @@
 	icon_state = "inducer-sci"
 	item_state = "inducer-sci"
 	desc = "A tool for inductively charging internal power cells. This one has a science color scheme, and is less potent than its engineering counterpart."
-	mag_type = null
+	cell_type = null
 	powertransfer = 500
 	opened = TRUE
 
@@ -185,4 +185,4 @@
 	item_state = "inducer-syndi"
 	desc = "A tool for inductively charging internal power cells. This one has a suspicious colour scheme, and seems to be rigged to transfer charge at a much faster rate."
 	powertransfer = 2000
-	mag_type = /obj/item/stock_parts/cell/super
+	cell_type = /obj/item/stock_parts/cell/super

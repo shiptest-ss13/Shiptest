@@ -1,12 +1,11 @@
 /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
+	default_cell_type = /obj/item/stock_parts/cell/gun
 	ammo_overlay_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/fill_gun()
-	if(default_ammo_type)
-		installed_cell = new default_ammo_type(src)
-	else
-		installed_cell = new(src)
+	if(cell_type)
+		cell = new cell_type(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)

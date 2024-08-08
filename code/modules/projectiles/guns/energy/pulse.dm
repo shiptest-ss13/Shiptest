@@ -13,7 +13,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
-	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
+	internal_magazine = TRUE
 	default_ammo_type = /obj/item/stock_parts/cell/pulse //somone make this backpack mounted, or connected to the deathsquad suit at some point
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	ammo_x_offset = 2
