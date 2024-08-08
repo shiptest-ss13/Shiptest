@@ -1,9 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ak" = (
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/structure/table/wood,
-/turf/open/floor/plasteel/white,
-/area/space)
 "aF" = (
 /turf/open/floor/plasteel/stairs/wood{
 	dir = 4
@@ -17,6 +12,13 @@
 /obj/item/bedsheet/random,
 /turf/open/floor/wood/maple,
 /area/space)
+"bL" = (
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/table/optable,
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/turf/open/floor/plasteel/white,
+/area/space)
 "dA" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 1
@@ -24,13 +26,11 @@
 /turf/open/floor/wood/mahogany,
 /area/space)
 "dT" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 8
-	},
-/turf/open/floor/wood/mahogany,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/table/wood,
+/obj/item/melee/baton/cattleprod/loaded,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/white,
 /area/space)
 "eC" = (
 /obj/item/clothing/head/bearpelt{
@@ -57,10 +57,17 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "jk" = (
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/blue{
+	dir = 10
+	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
+/area/space)
+"jD" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "kl" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -73,9 +80,15 @@
 /turf/open/floor/wood/maple,
 /area/space)
 "lM" = (
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/structure/table/optable,
+/obj/effect/turf_decal/siding/blue{
+	dir = 5
+	},
+/obj/structure/closet/crate/bin,
+/obj/item/storage/firstaid/roumain,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/puce,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/disk/holodisk/roumain,
 /turf/open/floor/plasteel/white,
 /area/space)
 "mF" = (
@@ -111,10 +124,19 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "nm" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 10
-	},
-/turf/open/floor/wood/mahogany,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/closet/crate/freezer,
+/obj/item/organ/ears,
+/obj/item/organ/eyes,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/liver,
+/obj/item/organ/stomach,
+/obj/item/clothing/suit/toggle/labcoat/roumain_med,
+/obj/item/clothing/head/cowboy/sec/roumain/med,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/turf/open/floor/plasteel/white,
 /area/space)
 "oC" = (
 /turf/open/floor/carpet,
@@ -147,6 +169,12 @@
 /area/space)
 "st" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/closet/secure_closet/medicalsrm,
+/obj/item/sensor_device,
+/obj/item/clothing/suit/frontiersmen,
+/obj/item/clothing/head/frontier,
+/obj/item/clothing/gloves/color/latex,
+/obj/item/clothing/mask/surgical,
 /turf/open/floor/plasteel/white,
 /area/space)
 "sD" = (
@@ -216,12 +244,6 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
-"wZ" = (
-/obj/effect/turf_decal/siding/blue{
-	dir = 5
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "yQ" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/maple,
@@ -265,6 +287,14 @@
 "Hl" = (
 /turf/closed/mineral/random/snow/underground,
 /area/space)
+"Ja" = (
+/obj/effect/turf_decal/siding/blue{
+	dir = 1
+	},
+/obj/item/reagent_containers/syringe/contraband/morphine,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plasteel/white,
+/area/space)
 "Kg" = (
 /turf/open/floor/wood,
 /area/space)
@@ -279,9 +309,18 @@
 /turf/open/floor/wood/mahogany,
 /area/space)
 "Oa" = (
-/obj/effect/turf_decal/siding/blue{
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe{
+	pixel_y = 8;
+	pixel_x = -6
 	},
+/obj/item/stack/tape/industrial{
+	pixel_y = 6;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/glass/bottle/morphine,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Ok" = (
@@ -365,6 +404,15 @@
 "Yw" = (
 /obj/structure/loom,
 /turf/open/floor/wood/ebony,
+/area/space)
+"Zn" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "ZZ" = (
 /obj/structure/railing/wood,
@@ -540,9 +588,9 @@ Qz
 Qz
 bC
 Gm
-ak
-lM
-jk
+dT
+bL
+Oa
 Gm
 Qz
 Qz
@@ -579,7 +627,7 @@ bC
 Gm
 ON
 Wd
-Oa
+jk
 Gm
 Qz
 Qz
@@ -614,7 +662,7 @@ oC
 oC
 bC
 Gm
-fA
+Ja
 uX
 Gq
 Gm
@@ -654,7 +702,7 @@ Gm
 fA
 uX
 Gq
-st
+nm
 Gm
 Qz
 Qz
@@ -688,7 +736,7 @@ Qz
 Gm
 Gm
 Gm
-wZ
+lM
 FL
 Ok
 st
@@ -1237,8 +1285,8 @@ Gm
 Gm
 Rd
 kl
-dT
-nm
+Zn
+jD
 Ws
 Kg
 Kg
