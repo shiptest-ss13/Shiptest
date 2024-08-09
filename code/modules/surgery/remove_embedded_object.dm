@@ -8,6 +8,7 @@
 	time = 32
 	accept_hand = 1
 	experience_given = MEDICAL_SKILL_MEDIUM
+	fuckup_damage = 0 // unrealistic but the alternatives are yanking the thing out or waiting for it to fall out which are both less intensive
 	var/obj/item/bodypart/L = null
 
 /datum/surgery_step/remove_object/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

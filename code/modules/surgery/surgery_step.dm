@@ -1,3 +1,6 @@
+#define SURGERY_FUCKUP_CHANCE 50
+#define SURGERY_DRUNK_MOD 50
+
 /datum/surgery_step
 	var/name
 	/// What tools can be used in this surgery, format is path = probability of success.
@@ -16,6 +19,11 @@
 	var/list/chems_needed = list()
 	/// If *chems_needed* requires all chems in the list or one chem in the list.
 	var/require_all_chems = TRUE
+	/// Base damage dealt on a surgery being done without anesthetics on SURGERY_FUCKUP_CHANCE percent chance
+	var/fuckup_damage = 10
+	/// Damage type fuckup_damage is dealt as
+	var/fuckup_damage_type = BRUTE
+	/// If cyborgs autopass success chance
 	var/silicons_obey_prob = FALSE
 	/// Sound played when the step is started
 	var/preop_sound
@@ -116,8 +124,15 @@
 			if(failure(user, target, target_zone, tool, surgery, fail_prob))
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
-			if(chem_check_result)
-				return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
+		if(!HAS_TRAIT(target, TRAIT_SURGERY_PREPARED) && target.stat != DEAD && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller
+			if(!HAS_TRAIT(user, TRAIT_SURGEON)) // The patient needs more mouse bites
+				var/obj/item/bodypart/operated_bodypart = target.get_bodypart(target_zone) ? target.get_bodypart(target_zone) : target.get_bodypart(BODY_ZONE_CHEST)
+				if(operated_bodypart?.bodytype & BODYPART_ORGANIC) //robot limbs are built to be opened and stuff
+					commit_malpractice(user, target, target_zone, tool, surgery, advance)
+
+		if(chem_check_result && !advance)
+			return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
+
 		if(advance && !repeatable)
 			surgery.status++
 			if(surgery.status > surgery.steps.len)
@@ -225,10 +240,29 @@
 			chems += chemname
 	return english_list(chems, and_text = require_all_chems ? " and " : " or ")
 
-//Replaces visible_message during operations so only people looking over the surgeon can tell what they're doing, allowing for shenanigans.
+/// Replaces visible_message during operations so only people looking over the surgeon can tell what they're doing, allowing for shenanigans.
 /datum/surgery_step/proc/display_results(mob/user, mob/living/carbon/target, self_message, detailed_message, vague_message, target_detailed = FALSE)
 	var/list/detailed_mobs = get_hearers_in_view(1, user) //Only the surgeon and people looking over his shoulder can see the operation clearly
 	if(!target_detailed)
 		detailed_mobs -= target //The patient can't see well what's going on, unless it's something like getting cut
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	user.visible_message(vague_message, "", ignored_mobs = detailed_mobs)
+
+/// Lacking anesthetic, a surgery has a chance to cause Complications, which this handles
+/datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, success)
+	var/ouchie_mod = 1
+	ouchie_mod *= clamp(1-target.drunkenness/SURGERY_DRUNK_MOD, 0, 1) //Drunkenness up to 50% (points? idk) will improve chances of avoiding horrible pain and suffering
+	if(target.stat == UNCONSCIOUS) //Being "normally" asleep (or getting choked out) will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
+		ouchie_mod *= 0.8
+	if(!success) //Failing the surgery increases the chance of causing harm significantly
+		ouchie_mod *= 1.5
+	var/final_ouchie_chance = SURGERY_FUCKUP_CHANCE * ouchie_mod
+	if(!prob(final_ouchie_chance))
+		return
+	. = TRUE
+	user.visible_message("<span class='boldwarning'>[target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!</span>", "<span class='boldwarning'>[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!</span>")
+	target.apply_damage(fuckup_damage, fuckup_damage_type, target_zone)
+	if(istype(target) && fuckup_damage_type == BRUTE)
+		var/obj/item/bodypart/BP = target.get_bodypart(check_zone(surgery.location))
+		if(BP)
+			BP.adjust_bleeding(min(fuckup_damage * BLOOD_LOSS_DAMAGE_BASE, BLOOD_LOSS_DAMAGE_MAXIMUM)) //Increased bleeding because you are getting stabbed on the inside

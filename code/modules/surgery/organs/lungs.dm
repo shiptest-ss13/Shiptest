@@ -231,8 +231,10 @@
 			if(prob(20))
 				H.emote(pick("giggle", "laugh"))
 				SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "chemical_euphoria", /datum/mood_event/chemical_euphoria)
+				ADD_TRAIT(owner, TRAIT_SURGERY_PREPARED, GAS_NITROUS)
 		else
 			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "chemical_euphoria")
+			REMOVE_TRAIT(owner, TRAIT_SURGERY_PREPARED, GAS_NITROUS)
 
 
 	// BZ
