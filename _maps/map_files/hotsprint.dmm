@@ -128,6 +128,47 @@
 	},
 /turf/open/floor/wood/maple,
 /area/space)
+"gA" = (
+/obj/structure/table/wood,
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	pixel_x = -6;
+	pixel_y = 10;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	pixel_x = -6;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	pixel_y = 10;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	pixel_x = 6;
+	pixel_y = 10;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a4570{
+	projectile_type = null;
+	pixel_x = 6;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "ib" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -167,11 +208,23 @@
 /area/space)
 "ko" = (
 /obj/structure/rack,
+/obj/item/ammo_box/a4570,
 /turf/open/floor/wood/maple,
 /area/space)
 "lh" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/grass/ship/jungle,
+/area/space)
+"lj" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/rifle/illestren/factory{
+	pixel_x = -6
+	},
+/obj/item/gun/ballistic/rifle/illestren/factory{
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "lM" = (
 /obj/effect/turf_decal/siding/blue{
@@ -263,6 +316,10 @@
 	},
 /turf/open/floor/wood/maple,
 /area/space)
+"qi" = (
+/obj/structure/displaycase/broken,
+/turf/open/floor/wood/maple,
+/area/space)
 "qK" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -298,6 +355,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood/maple,
 /area/space)
 "sc" = (
@@ -307,6 +365,10 @@
 	desc = "A small metal rod used to stir up fireplaces. This one is adorned with ornate golden filigree"
 	},
 /turf/open/floor/wood/maple,
+/area/space)
+"sf" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood/ebony,
 /area/space)
 "st" = (
 /obj/structure/closet/secure_closet/medicalsrm,
@@ -362,6 +424,7 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 10
 	},
+/obj/item/gun/ballistic/automatic/zip_pistol,
 /obj/item/chisel{
 	pixel_x = 5
 	},
@@ -425,6 +488,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/structure/table/wood,
+/obj/item/hatchet/wooden,
 /turf/open/floor/wood/maple,
 /area/space)
 "wT" = (
@@ -465,6 +530,10 @@
 "yQ" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/maple,
+/area/space)
+"zN" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/ebony,
 /area/space)
 "Ay" = (
 /obj/structure/fireplace,
@@ -564,6 +633,13 @@
 "HV" = (
 /turf/open/space/basic,
 /area/space)
+"IR" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/wood/maple,
+/area/space)
 "Ja" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 1
@@ -585,6 +661,10 @@
 "KR" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/mahogany,
+/area/space)
+"ML" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/ship/dirt/dark,
 /area/space)
 "Nq" = (
 /obj/effect/turf_decal/spline/fancy/wood/cee,
@@ -652,6 +732,10 @@
 "Qz" = (
 /turf/open/floor/wood/maple,
 /area/space)
+"QF" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/wood/ebony,
+/area/space)
 "QU" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/ship/dirt/dark,
@@ -687,7 +771,9 @@
 /turf/open/floor/carpet,
 /area/space)
 "SE" = (
-/obj/structure/flora/stump,
+/obj/structure/flora/stump{
+	name = "Montagnue's Stump"
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/space)
 "To" = (
@@ -727,6 +813,20 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/wood,
+/area/space)
+"Wx" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/filter{
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/sillycup{
+	pixel_x = 4;
+	pixel_y = 6;
+	name = "paper sieve";
+	desc = "A paper seive for funneling gunpowder."
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "WW" = (
 /obj/structure/table/wood,
@@ -1041,7 +1141,7 @@ Gm
 ds
 lh
 ds
-rm
+ML
 Gm
 Hl
 Hl
@@ -1080,7 +1180,7 @@ Gm
 rm
 rm
 ds
-rm
+ML
 Gm
 Hl
 Hl
@@ -1181,7 +1281,7 @@ Qz
 Qz
 Qz
 Qz
-uR
+QF
 uR
 uR
 uR
@@ -1236,7 +1336,7 @@ uR
 Gm
 wT
 RV
-wF
+IR
 Gm
 Hl
 Hl
@@ -1488,7 +1588,7 @@ Gm
 Gm
 NL
 tq
-Wk
+Wx
 Gm
 Gm
 Gm
@@ -1524,10 +1624,10 @@ Gy
 Hl
 Gm
 Gm
-ko
+lj
 Qz
 WZ
-Wk
+gA
 Gm
 Qz
 Qz
@@ -1717,7 +1817,7 @@ Hl
 Gm
 Gm
 Gm
-Qz
+qi
 Qz
 Qz
 Qz
@@ -1873,7 +1973,7 @@ Hl
 Gm
 Gm
 Gm
-Qz
+qi
 Qz
 Qz
 Qz
@@ -2040,9 +2140,9 @@ Uc
 Uc
 Gm
 Qz
-Qz
-Qz
-Qz
+sf
+sf
+sf
 Qz
 Qz
 Gm
@@ -2083,7 +2183,7 @@ Qz
 Qz
 Qz
 Qz
-Qz
+NL
 Gm
 Hl
 Hl
@@ -2114,13 +2214,13 @@ NL
 Yw
 eC
 Gm
-Qz
+NL
 Qz
 Ez
 Qz
-Qz
-Qz
-Qz
+zN
+zN
+zN
 Qz
 Qz
 Gm
