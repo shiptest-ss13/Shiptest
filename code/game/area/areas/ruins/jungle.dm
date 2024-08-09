@@ -134,3 +134,26 @@
 /area/ruin/jungle/cavecrew/dormitories
 	name = "Cave Base dormitories"
 	icon_state = "crew_quarters"
+
+// Abandoned Garden
+
+/area/ruin/jungle/abandonedgarden/hydroponics
+	name = "Abandoned Garden Hydroponics"
+	icon_state = "hydro"
+	always_unpowered = TRUE
+	allow_weather = TRUE
+
+/area/ruin/jungle/abandonedgarden/kitchen
+	name = "Abandoned Garden Kitchen"
+	icon_state = "kitchen"
+	always_unpowered = TRUE
+
+/area/ruin/jungle/abandonedgarden/dormitories
+	name = "Abandoned Garden Dorms"
+	icon_state = "crew_quarters"
+	always_unpowered = TRUE
+
+/area/ruin/jungle/abandonedgarden/cockpit
+	name = "Abandoned Garden Cockpit"
+	icon_state = "bridge"
+	always_unpowered = TRUE
