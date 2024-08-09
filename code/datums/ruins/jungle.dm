@@ -45,3 +45,9 @@
 	id = "abandoned-library"
 	description = "A forgotten library, with a few angry monkeys."
 	suffix = "jungle_abandoned_library.dmm"
+
+/datum/map_template/ruin/jungle/garden
+	name = "Abandoned Garden"
+	id = "abandonedgarden"
+	description = "An abandoned makeshift garden home built out of a crashed shuttle."
+	suffix = "jungle_abandoned_garden.dmm"
