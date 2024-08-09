@@ -164,6 +164,13 @@
 /// Drinks. END
 ////////////////////////////////////////////////////////////////////////////////
 
+/obj/item/reagent_containers/food/drinks/broken
+	name = "broken glass"
+
+/obj/item/reagent_containers/food/drinks/broken/Initialize(mapload)
+	. = ..()
+	smash()
+
 
 /obj/item/reagent_containers/food/drinks/trophy
 	name = "pewter cup"
