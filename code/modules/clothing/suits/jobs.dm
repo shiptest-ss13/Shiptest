@@ -114,6 +114,7 @@
 	item_state = "highvis"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|GROIN|ARMS
 	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE

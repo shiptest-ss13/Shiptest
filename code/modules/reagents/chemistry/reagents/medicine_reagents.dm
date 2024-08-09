@@ -1961,7 +1961,10 @@
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)
-	M.ForceContractDisease(new /datum/disease/transformation/legionvirus(), FALSE, TRUE)
+	var/mob/living/carbon/C = M
+	if(!istype(C.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull))
+		var/obj/item/organ/legion_skull/spare_ribs = new()
+		spare_ribs.Insert(M)
 	..()
 
 /datum/reagent/medicine/soulus/on_mob_end_metabolize(mob/living/M)
