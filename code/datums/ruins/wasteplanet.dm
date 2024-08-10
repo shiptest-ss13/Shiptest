@@ -26,8 +26,8 @@
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
 /datum/map_template/ruin/wasteplanet/abandoned_mechbay
-	name = "Abandoned Mech Bay"
-	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
+	name = "Abandoned Exosuit Bay"
+	description = "A military base formerly used for staging 4 exosuits and crew. God knows what's in it now."
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)

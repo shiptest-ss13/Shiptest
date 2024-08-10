@@ -395,7 +395,7 @@
 		to_chat(user, "<span class='notice'>You remove [vial] from [src].</span>")
 		vial = null
 		update_appearance()
-		playsound(loc, 'sound/weapons/empty.ogg', 50, 1)
+		playsound(loc, SOUND_EMPTY_MAG, 50, 1)
 	else
 		to_chat(user, "<span class='notice'>This hypo isn't loaded!</span>")
 		return

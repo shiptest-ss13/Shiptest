@@ -2003,7 +2003,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -3374,13 +3374,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -3481,7 +3481,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -4557,7 +4557,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -7282,7 +7282,7 @@
 "AC" = (
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -10099,7 +10099,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "LS" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/structure/railing{
@@ -11850,7 +11850,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)

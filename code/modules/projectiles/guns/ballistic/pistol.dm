@@ -1,28 +1,11 @@
 /obj/item/gun/ballistic/automatic/pistol
-	name = "Stechkin"
-	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. Has a threaded barrel for suppressors."
-	icon_state = "pistol"
-	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm
-	can_suppress = TRUE
-	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
 	vary_fire_sound = FALSE
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 90
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept.
 	recoil_unwielded = 3
@@ -36,14 +19,39 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
-EMPTY_GUN_HELPER(automatic/pistol)
+/obj/item/gun/ballistic/automatic/pistol/syndicate
+	name = "Stechkin"
+	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. Has a threaded barrel for suppressors."
+	icon_state = "pistol"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
-/obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
-	. = ..()
-	var/obj/item/suppressor/S = new(src)
-	install_suppressor(S)
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
+	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/suns
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	spread = 6 //becuase its compact, spread is slightly worse
+	spread_unwielded = 9
+	recoil_unwielded = 2
+
+EMPTY_GUN_HELPER(automatic/pistol/syndicate)
+
+/obj/item/gun/ballistic/automatic/pistol/syndicate/suns
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
 	icon_state = "pistol_suns"
 
@@ -52,9 +60,12 @@ EMPTY_GUN_HELPER(automatic/pistol)
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
 	icon_state = "candor"
 	item_state = "hp_generic"
-	w_class = WEIGHT_CLASS_NORMAL
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	mag_type = /obj/item/ammo_box/magazine/m45
-	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -68,7 +79,7 @@ EMPTY_GUN_HELPER(automatic/pistol)
 EMPTY_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
 
 EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
@@ -86,10 +97,14 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
 	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 	icon_state = "deagle"
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
-	can_suppress = FALSE
+	mag_display = TRUE
 	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
@@ -122,23 +137,44 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	name = "stechkin APS pistol"
 	desc = "A burst-fire machine pistol based on the stechkin model. Utilizes specialized 9mm magazines."
 	icon_state = "aps"
-	w_class = WEIGHT_CLASS_SMALL
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
-	can_suppress = FALSE
+
+	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
+	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
-
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
 	desc = "A classic handgun in a tasteful black and stainless steel color scheme. An enamel Nanotrasen logo is set into the grips. Chambered in 9mm."
 	icon_state = "commander"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
-	can_suppress = FALSE
 	manufacturer = MANUFACTURER_NANOTRASEN
 	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -146,11 +182,19 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
 EMPTY_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "\improper Commissioner"
 	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards. A yellow IRMG shield is set into the grips. Chambered in 9mm."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "commander-inteq"
 	item_state = "commander-inteq"
 	manufacturer = MANUFACTURER_INTEQ
@@ -161,15 +205,23 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper Commissar"
 	desc = "A Nanotrasen-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
 	icon_state = "commander"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
-	can_suppress = FALSE
 	var/funnysounds = TRUE
 	var/cooldown = 0
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
@@ -199,6 +251,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
+	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if((cooldown < world.time - 200) && funnysounds)
@@ -215,6 +268,11 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper Pistole C"
 	desc = "A favorite of the Terran Regency that is despised by the Solarian bureaucracy. Shifted out of military service centuries ago, though still popular among civilians. Chambered in 5.56mm caseless."
 	icon_state = "pistole-c"
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
@@ -225,17 +283,27 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
 	fire_select_icon_state_prefix = "caseless_"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
-/obj/item/gun/ballistic/automatic/pistol/tec9
+/obj/item/gun/ballistic/automatic/pistol/tec9 //fucking kill this gun already my god
 	name = "\improper TEC-9 machine pistol"
 	desc = "A crude machine pistol designed to vomit 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+	fire_delay = 0.15 SECONDS
 	weapon_weight = WEAPON_LIGHT
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/tec9
 	show_magazine_on_sprite = TRUE
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -243,15 +311,18 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy plastic gun that is extremely cheap to produce. You get what you pay for."
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
-	icon_state = "disposable" //credit to discord user any% for the sprite
+
+	icon_state = "disposable" //credit to discord user 20nypercent for the sprite
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable
 	custom_materials = list(/datum/material/plastic=2000)
-	can_suppress = FALSE
 	manufacturer = MANUFACTURER_NONE
 	has_safety = FALSE //thing barely costs anything, why would it have a safety?
 	safety = FALSE
@@ -269,6 +340,12 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = ".38 Derringer"
 	desc = "An easily concealable derringer. Uses .38 special ammo."
 	icon_state = "derringer"
+
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	mag_type = /obj/item/ammo_box/magazine/internal/derr38
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
@@ -297,6 +374,12 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 /obj/item/gun/ballistic/derringer/traitor
 	name = "\improper .357 Syndicate Derringer"
 	desc = "An easily concealable derriger, if not for the bright red-and-black. Uses .357 ammo."
+
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
 	icon_state = "derringer_syndie"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 	fire_sound_volume = 50 //Tactical stealth firing
@@ -314,10 +397,24 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "\improper Himehabu"
 	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
 	icon_state = "himehabu"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+
 	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/m22lr
-	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
 	recoil = -2
 	recoil_unwielded = -2

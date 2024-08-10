@@ -44,3 +44,9 @@
 	id = "crashed_star"
 	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
 	suffix = "lavaland_crashed_starwalker.dmm"
+
+/datum/map_template/ruin/lavaland/abandonedlisteningpost
+	name = "Abandoned Listening Post"
+	id = "abandonedlistening"
+	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
+	suffix = "lavaland_abandonedlisteningpost.dmm"

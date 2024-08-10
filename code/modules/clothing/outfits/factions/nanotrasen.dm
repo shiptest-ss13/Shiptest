@@ -53,9 +53,13 @@
 
 	head = /obj/item/clothing/head/nanotrasen/cap/supply
 	uniform = /obj/item/clothing/under/nanotrasen/supply/qm
+	suit = null
+	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = null
+	neck = null
 	l_hand = /obj/item/clipboard
 
 	chameleon_extras = /obj/item/stamp/qm
@@ -468,10 +472,10 @@
 	accessory = /obj/item/clothing/accessory/holster
 	head = /obj/item/clothing/head/beret/command
 
-// Mech Pilot
+// Exosuit Pilot
 /datum/outfit/job/nanotrasen/security/mech_pilot
-	name = "Nanotrasen - Mech Pilot"
-	id_assignment = "Mech Pilot"
+	name = "Nanotrasen - Exosuit Pilot"
+	id_assignment = "Exosuit Pilot"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
 	head = /obj/item/clothing/head/beret/sec/officer
