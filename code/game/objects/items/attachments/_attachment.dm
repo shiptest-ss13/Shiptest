@@ -3,6 +3,7 @@
 	name = "broken attachment"
 	desc = "alert coders"
 	icon = 'icons/obj/guns/attachments.dmi'
+	w_class = WEIGHT_CLASS_SMALL
 
 	//Slot the attachment goes on, also used in descriptions so should be player readable
 	var/slot = ATTACHMENT_SLOT_RAIL
