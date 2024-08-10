@@ -16,7 +16,7 @@
 
 /datum/supply_pack/spacesuit_armor/pilot_spacesuit
 	name = "Pilot Space Suit Crate"
-	desc = "One pilot space suit, for improved mobility in mechs."
+	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/space/pilot,
 					/obj/item/clothing/head/helmet/space/pilot/random)

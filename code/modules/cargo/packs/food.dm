@@ -164,10 +164,10 @@
 	name = "Bread Crate"
 	desc = "A crate full of various breads. Bready to either be eaten or made into delicious meals."
 	cost = 1000
-	contains = list(/obj/item/reagent_containers/food/snacks/store/bread/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain, //Weighted to be more common
+	contains = list(/obj/item/food/bread/plain,
+					/obj/item/food/breadslice/plain,
+					/obj/item/food/breadslice/plain,
+					/obj/item/food/breadslice/plain, //Weighted to be more common
 					/obj/item/reagent_containers/food/snacks/bun,
 					/obj/item/reagent_containers/food/snacks/tortilla,
 					/obj/item/reagent_containers/food/snacks/pizzabread
