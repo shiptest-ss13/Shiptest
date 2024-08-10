@@ -54,4 +54,4 @@ export const OrbitTooltip = (props: Props) => {
       </LabeledList>
     </>
   );
-}
+};

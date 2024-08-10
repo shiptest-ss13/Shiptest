@@ -95,4 +95,4 @@ export const OrbitContent = (props, context) => {
       </Stack>
     </Section>
   );
-}
+};
