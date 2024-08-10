@@ -186,6 +186,28 @@
 
 	return new damaged_cell(loc)
 
+/datum/blackmarket_item/ammo/advanced_weapon_cell
+	name = "Upgraded Weapon Power Cells"
+	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
+	item = /obj/item/stock_parts/cell/gun/upgraded
+
+	price_min = 1000
+	price_max = 1750
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 25
+
+/datum/blackmarket_item/ammo/huge_weapon_cell
+	name = "Extra Large Weapon Power Cells"
+	desc = "We're way past double A now. These extra-large power cells (in both charge and size!) are purpose built for the most heavy duty energy weapons."
+	item = /obj/item/stock_parts/cell/gun/upgraded
+
+	price_min = 2500
+	price_max = 4000
+	stock = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/ammo/mecha_hades_ammo
 	name = "FNX-99 Incediary Ammo"
 	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."

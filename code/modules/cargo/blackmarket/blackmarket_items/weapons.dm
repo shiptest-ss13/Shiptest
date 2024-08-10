@@ -141,6 +141,7 @@
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	item = /obj/item/gun/energy/laser/e50
+	pair_item = (/datum/blackmarket_item/ammo/huge_weapon_cell)
 
 	price_min = 4000
 	price_max = 7000
