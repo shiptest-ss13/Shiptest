@@ -17,7 +17,7 @@ export const Orbit = (props, context) => {
     false
   );
 
-  function orbitMostRelevant() {
+  const orbitMostRelevant = () => {
     const mostRelevant = [
       data.antagonists,
       data.alive,
@@ -34,7 +34,7 @@ export const Orbit = (props, context) => {
     if (mostRelevant !== undefined) {
       act('orbit', { ref: mostRelevant.ref });
     }
-  }
+  };
 
   return (
     <Window title="Orbit" width={350} height={700}>
