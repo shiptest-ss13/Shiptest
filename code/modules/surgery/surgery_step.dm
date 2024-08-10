@@ -260,7 +260,7 @@
 	if(!prob(final_ouchie_chance))
 		return
 	. = TRUE
-	user.visible_message("<span class='boldwarning'>[target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!</span>", "<span class='boldwarning'>[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!</span>")
+	user.visible_message(span_boldwarning([target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!"), span_boldwarning("[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!"))
 	target.apply_damage(fuckup_damage, fuckup_damage_type, target_zone)
 	if(istype(target) && fuckup_damage_type == BRUTE)
 		var/obj/item/bodypart/BP = target.get_bodypart(check_zone(surgery.location))
