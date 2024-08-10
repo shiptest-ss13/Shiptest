@@ -13,7 +13,7 @@
 /datum/movespeed_modifier/reagent/badstims
 	multiplicative_slowdown = -0.45
 
-/datum/movespeed_modifier/reagent/monkey_energy
+/datum/movespeed_modifier/reagent/xeno_energy
 	multiplicative_slowdown = -0.35
 
 /datum/movespeed_modifier/reagent/changelinghaste

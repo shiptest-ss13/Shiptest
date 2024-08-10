@@ -98,7 +98,7 @@
 	if(istype(attacking_obj, /obj/item/ammo_box))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(attacking_box), 1 SECONDS)))
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box)))
 				break
 			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)

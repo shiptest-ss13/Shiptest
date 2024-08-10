@@ -42,9 +42,10 @@
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)
 	. = ..()
-	refreshID()
+	UnregisterSignal(AM, COSMIG_ACCESS_UPDATED)
+	refresh_id()
 
-/obj/item/storage/wallet/proc/refreshID()
+/obj/item/storage/wallet/proc/refresh_id()
 	LAZYCLEARLIST(combined_access)
 	if(!(front_id in src))
 		front_id = null
@@ -61,7 +62,8 @@
 
 /obj/item/storage/wallet/Entered(atom/movable/AM)
 	. = ..()
-	refreshID()
+	RegisterSignal(AM, COSMIG_ACCESS_UPDATED, PROC_REF(refresh_id))
+	refresh_id()
 
 /obj/item/storage/wallet/update_overlays()
 	. = ..()
@@ -116,6 +118,11 @@
 		return combined_access
 	else
 		return ..()
+
+/obj/item/storage/wallet/GetBankCard()
+	for(var/obj/item/card/I in contents)
+		if(istype(I, /obj/item/card/bank))
+			return I
 
 /obj/item/storage/wallet/random
 	icon_state = "random_wallet"

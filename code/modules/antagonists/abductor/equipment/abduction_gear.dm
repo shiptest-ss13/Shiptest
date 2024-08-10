@@ -384,7 +384,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/shrink)
 	item_state = "shrink_ray"
 	icon_state = "shrink_ray"
-	fire_delay = 30
+	fire_delay = 3 SECONDS
 	selfcharge = 1//shot costs 200 energy, has a max capacity of 1000 for 5 shots. self charge returns 25 energy every couple ticks, so about 1 shot charged every 12~ seconds
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL// variable-size trigger, get it? (abductors need this to be set so the gun is usable for them)
 
@@ -577,9 +577,11 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!C.handcuffed)
 		if(C.canBeHandcuffed())
 			playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-			C.visible_message("<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
-									"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>")
-			if(do_mob(user, C, time_to_cuff) && C.canBeHandcuffed())
+			C.visible_message(
+				"<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
+				"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>"
+				)
+			if(do_after(user, time_to_cuff, C) && C.canBeHandcuffed())
 				if(!C.handcuffed)
 					C.set_handcuffed(new /obj/item/restraints/handcuffs/energy/used(C))
 					C.update_handcuffed()

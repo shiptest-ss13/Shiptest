@@ -12,10 +12,12 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	if(prob(15))
-		new /obj/item/crusher_trophy/shiny(loc)
-		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
 	..()
+	/*
+	if(prob(15))
+		new /obj/item/mob_trophy/shiny(loc)
+		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
+	*/
 
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
@@ -37,7 +39,7 @@
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"
 	projectiletype = null
-	casingtype = /obj/item/ammo_casing/aac_300blk/recycled
+	casingtype = /obj/item/ammo_casing/a762_40
 	projectilesound = 'sound/weapons/gun/rifle/shot.ogg'
 	ranged = 1
 	rapid_fire_delay = 6
@@ -242,7 +244,7 @@
 			if(prob(20))
 				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 			else if(prob(60))
-				l_pocket = /obj/item/ammo_box/aac_300blk_stripper
+				l_pocket = /obj/item/ammo_box/a762_stripper
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else

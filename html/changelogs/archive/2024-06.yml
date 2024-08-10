@@ -39,3 +39,328 @@
   - bugfix: black market secret documents are no longer default documents
   - balance: the shoddy survivor suits found on hermits are now actually worse than
       the EXOCOM explorer suits
+2024-06-03:
+  Apogee-dev:
+  - balance: security belts and webbings can no longer store bulk ammo boxes, only
+      magazines
+  - tweak: Ship-specific access restrictions have been enabled.
+  - tweak: Pirate ships no longer spawn docked to the outpost.
+  FalloutFalcon:
+  - bugfix: Fixed plant analyzer examine block styling
+  - tweak: rewrites trickwine for brewers
+  - rscadd: You can trip landmines with a well placed throw
+  - rscadd: New interaction with throwing things at bottles, lights, and bear traps
+  - bugfix: The end of finalize no longer gets called twice and targeting items seems
+      like an intended behavior that was lost
+  - rscdel: Removed goofball legion disease
+  - refactor: spawning guns without mags are handled with a define
+  - refactor: refactored hostile humans
+  - bugfix: fixed free smart fridge circuit board from drying rack
+  - rscadd: Smokers rejoice! You can now pick your favorite type of nicotine delivery
+      system.
+  - rscadd: Smokers have a choice between most brands of cigarette, cigars, a vape,
+      or a pipe!
+  - code_imp: sorted code owner stuff and added me to some files
+  - bugfix: fixed create and destroy test fail
+  - tweak: tweaked id card examine information and formating
+  - bugfix: human examine bug when middle aged
+  - rscdel: Removed moths getting one shot by a flyswatter
+  - code_imp: camera/autoname/LateInitialize() optimization
+  - tweak: granularizes a handful of tool and machine supply packs!
+  - admin: Improved the silly little menu, HA HA I have messed up your muscle memory!!
+      u
+  Gristlebee:
+  - tweak: Defib crate now contains a single defib, priced 750
+  - tweak: Granularizes mech equipment
+  - tweak: mech cargo pack descs
+  - rscadd: Asteroid ore veins
+  Hardly:
+  - rscadd: Added some style to the flavor text popup
+  - bugfix: Fixed flavor text not accepting certain characters or new lines
+  - tweak: Changed up Flavor Text editing text a bit
+  - tweak: Flavor text's max length has been chopped from 4096 to 1024
+  Sadhorizon:
+  - tweak: Moved most of contraband items out of vendor contraband.
+  - rscadd: Added DromaderyCo packets to the cigarette vendors.
+  - tweak: Increased nicotine amount to three in the cigarette vendors.
+  Skies-Of-Blue:
+  - balance: chemical mindbreaker is now ten times as potent! Be gay, do crime, and
+      hallucinate in the process
+  SomeguyManperson:
+  - bugfix: hallucination anomalies now trigger if you aren't wearing proper protection
+      (as opposed to only triggering if you are)
+  - bugfix: gun sawing can now only be done with proper equipment (usually a saw))
+  - bugfix: bandoliers now hold the correct amount of bullets (several more)
+  - balance: the brimstone can now be pumped faster. Enjoy your rilena.
+  Sun-Soaked:
+  - bugfix: shoutgun casing bounce sfx now plays as intended. oopsies.
+  - rscdel: Removes sexy clown costumes from spawners
+  - config: tweak option removed from changelog template
+  Zevotech:
+  - rscdel: Removed nonfunctioning coffee machines and their cargo packs
+  - rscadd: Adds the Elzuose color salve, a product that allows Elzuose to change
+      their glow color upon application.
+  '[Watermelon914](https://github.com/Watermelon914)':
+  - code_imp: ports little itty bitty sendsignal optimization from tg
+  meemofcourse:
+  - balance: The Elder's Illesterns and Arrows are now factory-variant.
+  - bugfix: The Runner should be able to dock now.
+  rkz, Benjamin(benbot16), Rohesie, Qustinnus, jlsnow301:
+  - refactor: refactored do_afters to use timed_action_flags for unique args
+  - code_imp: centralized do_mob and do_atom into do_after
+2024-06-05:
+  FalloutFalcon:
+  - rscdel: Trophies can no longer be used in crushers
+  - bugfix: fixed CODEOWNERS, i hope
+  SomeguyManperson:
+  - bugfix: The shadow's gunslinger buff now properly provides an AP bonus
+  - balance: Rollerbeds stop broken bone damage ticks from occurring while buckled
+2024-06-06:
+  SomeguyManperson:
+  - bugfix: melee hermits have had their immortal snail deals revoked
+2024-06-07:
+  Sun-Soaked:
+  - bugfix: combat knives and their subtypes now once again have sprites.
+  Zevotech:
+  - rscadd: remapped and renamed ashwalker_shrine into lavaland_surface_buried_shrine
+  - rscadd: Necropolis walls have been renamed to thick stone walls.
+  rye-rice:
+  - rscadd: Changing firemodes on guns now have new sprites
+  - bugfix: The E-40 now works as intended!
+  - rscadd: The E-40 now has an ammo counter
+  - balance: The P16 shoots slightly faster.
+  - balance: Two E-40s max are obtainable from the black market should it spawn. Blank
+      market price cap of the E-40 has also increased
+2024-06-08:
+  Apogee-dev:
+  - bugfix: fixed an incorrect sprite state on corpo sofas
+  FalloutFalcon:
+  - rscdel: Removed alot of magic cruft
+  - code_imp: Sorts gun defines into there own file
+  SomeguyManperson:
+  - bugfix: gunslinger applies its spread reduction effect to revolvers
+  Sun-Soaked:
+  - bugfix: removes a comment from apc.dm that was causing strange errors.
+  thgvr:
+  - imageadd: Kepori have been given a full visual overhaul.
+2024-06-09:
+  SomeguyManperson:
+  - tweak: bleeding is now stored in the limbs, functioning similarly to bone breaking.
+      Taking damage over a certain threshold and amount (lower for sharp weapons)
+      will cause part of it to be turned into bleeding.
+  - tweak: gauze, tape, and bleeding suppression are similarly no longer abstracted
+      into a "bleed suppression" value
+  - rscadd: you can now cauterize bleeding with a lighter. Which is cool.
+  - rscadd: you can now also cauterize bleeding with suit storage decontamination.
+      Which is hot.
+  - rscadd: examine and examine closely will show whether or not someone is visibly
+      bleeding or bandaged. This means people who are both will show both. Examine
+      closely additionally shows which limbs are currently bleeding.
+  - tweak: heparin now causes existing bleeding to worsen, instead of causing bleeding
+      on its own
+  - tweak: you can no longer cut the throat of someone who's head has been lopped
+      off
+  Zevotech:
+  - bugfix: Planets should no longer spawn without ruins when generating due to bad
+      map datums
+  - rscdel: Removed 3 Beach ruins
+  - rscdel: Removed 4 Iceplanet ruins
+  - rscdel: Removed 11 Jungle ruins
+  - rscdel: Removed 10 Lavaland ruins
+  - rscdel: Removed 8 Rockplanet ruins
+  - rscdel: Removed 7 Sandplanet ruins
+  - rscdel: Removed 7 Rockplanet ruins
+  - rscdel: Removed 15 Space ruins
+  - rscdel: Removed 16 unused/removed ruin code files
+  - rscdel: Removed a whole lot of old/unused ruin code from misc files
+  - tweak: Tweaked various ruins and one ship to fix issues and remove unused items
+2024-06-10:
+  PositiveEntropy:
+  - rscadd: CLIP now reports the presence of so-called "Flame Troopers" of the Frontiersmen
+      terrorizing their territories...
+  - balance: Marine armor has improved armor stats at the cost of the bulk slowing
+      down the wearer.
+  - balance: Flamethrowers have a slightly improved effective range, as well as higher
+      damage.
+  - imageadd: The Frontiersmen have gotten better tailors and now look sharp and deadly!
+  Skies-Of-Blue:
+  - rscadd: several new SUNS-produced genemods have hit the public market! Head to
+      your local gene-clinic and ask about their new dog and rabbit options for more
+      details
+  - balance: fox ears have been tweaked to be just as susceptible to sound as cat
+      ears
+2024-06-11:
+  'CoiledLamb ':
+  - rscadd: Resprites the eggbox
+  Gristlebee:
+  - code_imp: Switchblades are now pathed under obj/kitchen/knife
+  - imageadd: Switchblade sprites moved from items and weapons.dmi to knife.dmi
+  Sadhorizon:
+  - rscadd: Pickaxe was added to the autolathe.
+  meemofcourse:
+  - rscadd: PGF jobs now grant you the Kalixcian Common language
+2024-06-13:
+  FalloutFalcon:
+  - rscdel: Removed alot of chaplain stuff we will never use
+  - rscdel: The chaplain is now just as magic as the average person
+  Gristlebee:
+  - rscadd: Wrecked Factory ruin
+  - rscadd: Indestructible titanium walls
+  - rscadd: Lavaland atmos subtypes for plating, rusted plating, concrete, white and
+      dark turfs
+  - balance: Syndicate Space Simple Mobs have their max temp increased
+  - tweak: Wall_lockers updatepaths on the Aegis
+  - code_imp: Adds ruin to map_catalogue,txt, lavaland.dm and adds it to lavaland.dm
+      areas
+  - rscadd: Techshell box
+  - rscadd: Techshells to the outpost market for 175 credits
+  - tweak: Scatter ion description
+  - balance: Techshell recipes no longer require higher tier stock parts, adjusts
+      scatter laser, scatter ion, dragonsbreath and pulse slug recipes
+  - balance: Buffs scatter lasers, scatter ion and dragonsbreath
+  PositiveEntropy:
+  - rscadd: The Hardliners have now made a proper appearance in the Frontier!
+  Sadhorizon:
+  - rscadd: Added the Sunskipper-class Culinary Vessel.
+  - rscadd: Every drink and booze dispenser drink is in the booze-o-mat now.
+  - rscadd: Added bottles for triple sec, lemon juice, creme de cacao and creme de
+      menthe.
+  - rscdel: Removed the Boyardee-class Entertainment Vessel.
+  - rscdel: Independent chefs no longer get kitchen cqc.
+  - tweak: The "syndicate waiter's outfit" renamed to just "waiter's outfit".
+  - tweak: Indpenedent bartenders now start with a waistcoat.
+  - tweak: Edited waiter's outfit. Also, the role now gets kitchen access.
+  - tweak: Independent cooks now start with laceup shoes.
+  meemofcourse:
+  - rscadd: SUNS 3x6 logo decal, SUNS tiles, SUNS emblem floor decal, Desk and Wall
+      flag, folders, PDA, cards, locker, bedsheets, and headsets.
+2024-06-14:
+  Gristlebee:
+  - bugfix: Posibrains/MMI pilots being permaslept on mech destruction
+2024-06-15:
+  Rye-Rice:
+  - imageadd: Rylie Was Forced To Resprite Concrete when she was 6!
+2024-06-16:
+  DIB-DOG:
+  - rscadd: Added 1 Raksha Helmet to the sergeant's locker on the PGFN Crying Sun
+2024-06-17:
+  meemofcourse:
+  - code_imp: A lot of SUNS decals.
+2024-06-18:
+  '@thestripes, @meemofcourse , @GenericDM ':
+  - tweak: reflavors nearly every drink ingame
+  SomeguyManperson:
+  - rscadd: you can now put organs inside burgers or on pizzas
+2024-06-19:
+  Anticept:
+  - bugfix: Generic adjective selection will show for everyone.
+  FalloutFalcon:
+  - bugfix: fixed multiple of the do_afters not working due to misplaced args
+  PositiveEntropy:
+  - rscadd: The Hunters of Illestren have now allowed for Hunter Collignes, Machinists
+      and Flamebearers to now roam the Frontier aboard their humble fleet!
+  - imageadd: The Saint Roumain's Militia has been fully resprited!
+  - imageadd: All SRM jobs now have unique HUD icons!
+  - imageadd: The Unknown Job HUD icon has been resprited!
+  SomeguyManperson:
+  - bugfix: mobs will no longer stick around after being butchered sometimes
+  Yata9ar4su:
+  - bugfix: Atmos mask sprite
+2024-06-20:
+  FalloutFalcon:
+  - admin: reverted filling admin context menus with alot of not useful stuff by rehiding
+      it behind a toggle.
+  Gristlebee:
+  - rscadd: Energy guns show how much charge and shots they have remaining, or if
+      it doesnt have a cell installed on examine.
+  - code_imp: span classes to span macros for energy.dm
+  Sadhorizon:
+  - tweak: SRM cabinets - namely, Hunter's, Shadow's and Flamebearer's - now use cabinet
+      sounds.
+  Skies-Of-Blue:
+  - balance: you can now float over tables when in 0g
+  - balance: you no longer shatter glass tables when floating
+  SomeguyManperson:
+  - balance: 9mm boxes are now cheaper than other pistol calibers to account for the
+      lower damage per bullet
+  generalthrax:
+  - bugfix: The black market sawed off Illestren is now actually sawed off, and can
+      fit on your belt
+  - bugfix: The presawn double barrel shotgun can now fit on the belt like normal
+      sawn off double barrels
+  - rscdel: Removed invisible limb armour from Gezenan marine + navywear
+  - rscadd: Allowed Gezenan armour to hold all guns like normal armour
+  - bugfix: Fixed Montagne hat description to reflect the fact it is no longer armoured
+2024-06-21:
+  FalloutFalcon:
+  - rscadd: Bank accounts are now handled through cash cards! You now spawn with a
+      wallet to store your extra card!
+  Gristlebee:
+  - balance: Motorized wheelchairs consume less power on move
+  Thera-Pissed:
+  - rscadd: Added Hydrogen, and Combustion Thrusters to go with!
+  rye-rice:
+  - rscadd: Adds a war correspondent for CLIP.
+2024-06-22:
+  Anticept:
+  - bugfix: Dialed down the loudness of a couple Kepori sounds
+  - bugfix: Kepori wooping now has the audible flag.
+  - bugfix: Whistling now varies in pitch
+  PositiveEntropy:
+  - imageadd: SUNS trimline decals are now properly aligned.
+  Sadhorizon:
+  - rscadd: Bone Talisman and Hunter's Necklace were added to loadout.
+  - tweak: Bone Talisman and Hunter's Necklace were reflavored into good lack charms.
+      They are no longer armored.
+  - tweak: Wolf talisman crafting recipe now requires less stuff.
+  - bugfix: Blue wall locker sprites are no longer flipped.
+  SomeguyManperson:
+  - balance: crystal legion spawn 1 less skull per spawn wave, now 1 (like normal
+      legion)
+  - balance: brimdemon beams now have a fade-in effect before dealing damage, making
+      it harder to get instantly chunked for a quarter of your health
+  - balance: brimdemons can no longer aggro on you before you can see them
+  - balance: radiation collectors are now significantly more stingy about the potency
+      of the radiation they will process. Don't expect old nuclear waste or openly
+      stored uranium to do much.
+  - balance: radiation collectors also produce significantly more power from the remaining
+      viable sources
+  Thera-Pissed:
+  - bugfix: infinite negative power draw while calling your grandmother no longer
+      happens.
+  - bugfix: fixed volume pumps for mapping.
+  blinkdog:
+  - bugfix: Cleaned up some logic in revolver safety
+  generalthrax:
+  - bugfix: Tadrixx Float has a sprite again
+  - rscadd: You can now tail thump if you have a tail instead of it being tied to
+      species
+2024-06-25:
+  Martinpachu:
+  - rscadd: Cargo guns and certain guns in ships now come inside cases alongside some
+      magazines, the ammo now comes separately for safety reasons.
+2024-06-27:
+  Gristlebee:
+  - tweak: Saber SMG stock folds
+  - tweak: TEC-9 Pistol is now automatic and normal sized
+  - balance: Combat shotgun is now bulky, and the compact combat shotgun is normal.
+  Martinpachu:
+  - rscadd: A technique for gunslinger with the lever-action flaming arrow! Firing
+      it while wielded will quickly and automatically rack the lever, less quickly
+      than a .38 revolver or fanned shadow though.
+  - rscdel: The +5 damage and AP bonus on the shadow while using it as a gunslinger.
+  Sadhorizon:
+  - rscdel: Miners and Cargo Technicians no longer get QM access.
+  SomeguyManperson:
+  - bugfix: cyborgs can touch people again
+  - code_imp: robotic limbs will always have healing prioritized over being cauterized
+      if treated with a welder
+  generalthrax:
+  - rscdel: Tranquility reagent no longer turns you into a gondola
+  - bugfix: Fixed typos in the Shadow and Montagne revolvers
+  - bugfix: Black market rusted reds no longer flash into dust when you purchase them
+  thestripes:
+  - rscadd: Added Kepori names, surnames, and a list for the char gen to draw from.
+      Remember to update your character names!
+  - rscdel: Removed old Kepori name gen system and a bit of lore from the species
+      blurb

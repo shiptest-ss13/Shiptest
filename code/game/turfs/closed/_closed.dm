@@ -77,6 +77,16 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
+/turf/closed/indestructible/titanium
+	name = "wall"
+	desc = "A light-weight titanium wall used in shuttles. Effectively impervious to conventional methods of destruction."
+	icon = 'icons/turf/walls/shuttle_wall.dmi'
+	icon_state = "shuttle_wall-0"
+	base_icon_state = "shuttle_wall"
+	flags_ricochet = RICOCHET_SHINY | RICOCHET_HARD
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'
@@ -239,7 +249,7 @@
 	return TRUE
 
 /turf/closed/indestructible/riveted/boss
-	name = "necropolis wall"
+	name = "thick stone wall"
 	desc = "A thick, seemingly indestructible stone wall."
 	icon = 'icons/turf/walls/boss_wall.dmi'
 	icon_state = "boss_wall-0"

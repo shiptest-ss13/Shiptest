@@ -328,7 +328,7 @@
 
 	if("[layer]" in mob_species.offset_clothing)
 		// This code taken from Baystation 12
-		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
+		var/icon/final_I = icon('icons/blanks/64x64.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
 
 		// Apply all pixel shifts for each direction.
@@ -336,9 +336,10 @@
 			var/list/facing_list = shifts[shift_facing]
 			var/use_dir = text2num(shift_facing)
 			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
-			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
+			var/icon/canvas = icon('icons/blanks/64x64.dmi', "nothing")
 			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
 			final_I.Insert(canvas, dir = use_dir)
+
 		final_I = fcopy_rsc(final_I)
 		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
 		return TRUE

@@ -40,7 +40,7 @@
 		if(M != user)
 			M.visible_message("<span class='danger'>[user] attempts to feed [M] something from [src].</span>", \
 						"<span class='userdanger'>[user] attempts to feed you something from [src].</span>")
-			if(!do_mob(user, M))
+			if(!do_after(user, target = M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
@@ -215,6 +215,10 @@
 
 /obj/item/reagent_containers/glass/beaker/large/fuel
 	list_reagents = list(/datum/reagent/fuel = 100)
+
+/obj/item/reagent_containers/glass/beaker/large/napalm
+	list_reagents = list(/datum/reagent/napalm = 100)
+	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)

@@ -487,7 +487,6 @@
 				/obj/item/shield/energy = 6,
 				/obj/item/shield/riot/tele = 12,
 				/obj/item/dnainjector/lasereyesmut = 7,
-				/obj/item/gun/magic/wand/fireball/inert = 3,
 				/obj/item/pneumatic_cannon = 15,
 				/obj/item/melee/transforming/energy/sword = 7,
 				/obj/item/book/granter/spell/knock = 15,
@@ -515,8 +514,6 @@
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
 				/obj/item/gun/ballistic/automatic/smg/c20r = 16,
-				/obj/item/gun/magic/wand/resurrection/inert = 15,
-				/obj/item/gun/magic/wand/resurrection = 10,
 				/obj/item/uplink/old = 2,
 				/obj/item/book/granter/spell/charge = 12,
 				/obj/item/grenade/clusterbuster/spawner_manhacks = 15,
@@ -556,16 +553,6 @@
 	desc = "High speed, low drag combat boots, now with an added layer of insulation."
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
-/obj/item/gun/magic/wand/fireball/inert
-	name = "weakened wand of fireball"
-	desc = "This wand shoots scorching balls of fire that explode into destructive flames. The years of the cold have weakened the magic inside the wand."
-	max_charges = 4
-
-/obj/item/gun/magic/wand/resurrection/inert
-	name = "weakened wand of healing"
-	desc = "This wand uses healing magics to heal and revive. The years of the cold have weakened the magic inside the wand."
-	max_charges = 5
-
 /obj/effect/mob_spawn/human/syndicatesoldier/coldres
 	name = "Syndicate Snow Operative"
 	outfit = /datum/outfit/snowsyndie/corpse
@@ -592,7 +579,7 @@
 	uniform = /obj/item/clothing/under/syndicate/coldres
 	shoes = /obj/item/clothing/shoes/combat/coldres
 	ears = /obj/item/radio/headset/syndicate/alt
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol/syndicate
 	id = /obj/item/card/id/syndicate
 	implants = list(/obj/item/implant/exile)
 

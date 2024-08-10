@@ -214,19 +214,6 @@
 	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
 	icon_state = "inteq_honorable_beret"
 
-// Frontier
-
-/obj/item/clothing/head/beret/sec/frontier
-	name = "\improper Frontiersmen beret"
-	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
-	icon_state = "frontier_beret"
-
-/obj/item/clothing/head/beret/sec/frontier/officer
-	name = "\improper Frontiersmen officer beret"
-	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
-	icon_state = "frontier_officer_beret"
-
-
 // CentCom
 
 /obj/item/clothing/head/beret/centcom_formal

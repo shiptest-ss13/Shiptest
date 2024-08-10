@@ -406,7 +406,7 @@
 	else
 		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
-	if(do_mob(user, target, 30))
+	if(do_after(user, 30, target))
 		if(occupant || helmet || suit || storage)
 			return
 		if(target == user)
@@ -462,6 +462,12 @@
 			else
 				visible_message(span_warning("[src]'s door slides open, barraging you with the nauseating smell of charred flesh."))
 				mob_occupant.radiation = 0
+				if(iscarbon(mob_occupant))
+					var/mob/living/carbon/bacon = mob_occupant
+					for(var/obj/item/bodypart/grilling as anything in bacon.get_bleeding_parts(TRUE))
+						if(!grilling.can_bandage())
+							continue
+						grilling.apply_bandage(0.005, 600, "cauterization")
 			playsound(src, 'sound/machines/airlocks/standard/close.ogg', 25, TRUE)
 			var/list/things_to_clear = list() //Done this way since using GetAllContents on the SSU itself would include circuitry and such.
 			if(suit)

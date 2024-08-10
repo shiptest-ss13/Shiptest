@@ -507,7 +507,7 @@
 
 /mob/living/proc/get_up(instant = FALSE)
 	set waitfor = FALSE
-	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback))))
+	if(!instant && !do_after(src, 1 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP))
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
@@ -820,7 +820,7 @@
 						TH.transfer_mob_blood_dna(src)
 
 /mob/living/carbon/human/makeTrail(turf/T)
-	if((NOBLOOD in dna.species.species_traits) || !bleed_rate || bleedsuppress)
+	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || !LAZYLEN(get_bleeding_parts(TRUE)))
 		return
 	..()
 
@@ -977,7 +977,7 @@
 					"<span class='userdanger'>[src] tries to remove your [what.name].</span>", null, null, src)
 	to_chat(src, "<span class='danger'>You try to remove [who]'s [what.name]...</span>")
 	what.add_fingerprint(src)
-	if(do_mob(src, who, what.strip_delay))
+	if(do_after(src, what.strip_delay, who, interaction_key = what))
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
@@ -1024,7 +1024,7 @@
 				who.visible_message("<span class='notice'>[src] tries to put [what] on [who].</span>", \
 							"<span class='notice'>[src] tries to put [what] on you.</span>", null, null, src)
 		to_chat(src, "<span class='notice'>You try to put [what] on [who]...</span>")
-		if(do_mob(src, who, what.equip_delay_other))
+		if(do_after(src, what.equip_delay_other, who))
 			if(what && Adjacent(who) && what.mob_can_equip(who, src, final_where, TRUE, TRUE))
 				if(temporarilyRemoveItemFromInventory(what))
 					if(where_list)
@@ -1409,6 +1409,32 @@
 /mob/living/proc/isLivingSSD()
 	if(player_logged && stat != DEAD)
 		return TRUE
+
+// The above code is kept to prevent old SSD behavior from breaking, while the code below is dedicated to the SSD Indicator
+
+GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicator.dmi', "default0", RUNECHAT_PLANE))
+
+/mob/living
+	var/ssd_indicator = FALSE
+	var/lastclienttime = 0
+
+/mob/living/proc/set_ssd_indicator(state)
+	if(state == ssd_indicator)
+		return
+	ssd_indicator = state
+	if(ssd_indicator && stat != DEAD)
+		add_overlay(GLOB.ssd_indicator_overlay)
+	else
+		cut_overlay(GLOB.ssd_indicator_overlay)
+
+/mob/living/Login()
+	. = ..()
+	set_ssd_indicator(FALSE)
+
+/mob/living/Logout()
+	. = ..()
+	lastclienttime = world.time
+	set_ssd_indicator(TRUE)
 
 /mob/living/vv_get_header()
 	. = ..()

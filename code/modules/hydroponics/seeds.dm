@@ -394,29 +394,29 @@
 /obj/item/seeds/proc/get_analyzer_text()  //in case seeds have something special to tell to the analyzer
 	var/text = ""
 	if(!get_gene(/datum/plant_gene/trait/plant_type/weed_hardy) && !get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism) && !get_gene(/datum/plant_gene/trait/plant_type/alien_properties))
-		text += "- Plant type: Normal plant\n"
+		text += "- Plant type: [span_notice("Normal plant\n")]"
 	if(get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
-		text += "- Plant type: Weed. Can grow in nutrient-poor soil.\n"
+		text += "- Plant type: [span_notice("Weed. Can grow in nutrient-poor soil.\n")]"
 	if(get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
-		text += "- Plant type: Mushroom. Can grow in dry soil.\n"
+		text += "- Plant type: [span_notice("Mushroom. Can grow in dry soil.\n")]"
 	if(get_gene(/datum/plant_gene/trait/plant_type/crystal))
-		text += "- Plant type: Crystal. Revitalizes soil.\n"
+		text += "- Plant type: [span_notice("Crystal. Revitalizes soil.\n")]"
 	if(get_gene(/datum/plant_gene/trait/plant_type/alien_properties))
-		text += "- Plant type: <span class='warning'>UNKNOWN</span> \n"
+		text += "- Plant type: [span_warning("UNKNOWN\n")]"
 	if(potency != UNHARVESTABLE)
-		text += "- Potency: [potency]\n"
+		text += "- Potency: [span_notice("[potency]\n")]"
 	if(yield != UNHARVESTABLE)
-		text += "- Yield: [yield]\n"
-	text += "- Maturation speed: [maturation]\n"
+		text += "- Yield: [span_notice("[yield]\n")]"
+	text += "- Maturation speed: [span_notice("[maturation]\n")]"
 	if(yield != UNHARVESTABLE)
-		text += "- Production speed: [production]\n"
-	text += "- Endurance: [endurance]\n"
-	text += "- Lifespan: [lifespan]\n"
-	text += "- Instability: [instability]\n"
-	text += "- Weed Growth Rate: [weed_rate]\n"
-	text += "- Weed Vulnerability: [weed_chance]\n"
+		text += "- Production speed: [span_notice("[production]\n")]"
+	text += "- Endurance: [span_notice("[endurance]\n")]"
+	text += "- Lifespan: [span_notice("[lifespan]\n")]"
+	text += "- Instability: [span_notice("[instability]\n")]"
+	text += "- Weed Growth Rate: [span_notice("[weed_rate]\n")]"
+	text += "- Weed Vulnerability: [span_notice("[weed_chance]\n")]"
 	if(rarity)
-		text += "- Species Discovery Value: [rarity]\n"
+		text += "- Species Discovery Value: [span_notice("[rarity]\n")]"
 	var/all_traits = ""
 	for(var/datum/plant_gene/trait/traits in genes)
 		if(istype(traits, /datum/plant_gene/trait/plant_type))
@@ -431,20 +431,20 @@
 
 /obj/item/seeds/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/plant_analyzer))
-		to_chat(user, "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>.</span>")
+		var/msg = "This is \a <span class='name'>[src]</span>."
 		var/text
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
 			text = get_analyzer_text()
 			if(text)
-				to_chat(user, "<span class='notice'>[text]</span>")
+				msg += "\n[text]"
 		if(reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
-			to_chat(user, "<span class='notice'>- Plant Reagents -</span>")
-			to_chat(user, "<span class='notice'>*---------*</span>")
+			msg += "\n- Plant Reagents -"
+			msg += "\n*---------*"
 			for(var/datum/plant_gene/reagent/Gene in genes)
-				to_chat(user, "<span class='notice'>- [Gene.get_name()] -</span>")
-			to_chat(user, "<span class='notice'>*---------*</span>")
-
+				msg += "\n<span class='notice'>- [Gene.get_name()] -</span>"
+			msg += "\n*---------*"
+		to_chat(user, examine_block(msg))
 
 		return
 

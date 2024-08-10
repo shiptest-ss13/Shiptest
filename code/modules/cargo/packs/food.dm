@@ -25,7 +25,7 @@
 /datum/supply_pack/food/pizza
 	name = "Pizza Crate"
 	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99.5% anomaly-free!"
-	cost = 6000 // Best prices this side of the galaxy.
+	cost = 3000// Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,
@@ -163,10 +163,10 @@
 	name = "Bread Crate"
 	desc = "A crate full of various breads. Bready to either be eaten or made into delicious meals."
 	cost = 1000
-	contains = list(/obj/item/reagent_containers/food/snacks/store/bread/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain,
-					/obj/item/reagent_containers/food/snacks/breadslice/plain, //Weighted to be more common
+	contains = list(/obj/item/food/bread/plain,
+					/obj/item/food/breadslice/plain,
+					/obj/item/food/breadslice/plain,
+					/obj/item/food/breadslice/plain, //Weighted to be more common
 					/obj/item/reagent_containers/food/snacks/bun,
 					/obj/item/reagent_containers/food/snacks/tortilla,
 					/obj/item/reagent_containers/food/snacks/pizzabread
@@ -184,7 +184,7 @@
 	cost = 5000
 	contains = list(/obj/item/stack/sheet/mineral/coal/five,
 					/obj/machinery/grill/unwrenched,
-					/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy)
+					/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
 
@@ -317,40 +317,3 @@
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 
-/datum/supply_pack/food/syrup
-	name = "Coffee Syrups Box"
-	desc = "A packaged box of various syrups, perfect for making your delicious coffee even more diabetic."
-	cost = 200
-	contains = list(
-		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/caramel,
-		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/liqueur,
-	)
-	crate_name = "coffee syrups box"
-	crate_type = /obj/structure/closet/crate
-
-/datum/supply_pack/food/coffeekit
-	name = "Coffee Equipment Crate"
-	desc = "A complete kit to setup your own cozy coffee shop, the coffeemaker is for some reason not included."
-	cost = 1000
-	contains = list(
-		/obj/item/storage/box/coffeepack/robusta,
-		/obj/item/storage/box/coffeepack,
-		/obj/item/reagent_containers/food/drinks/bottle/coffeepot,
-		/obj/item/storage/box/coffee_condi_display,
-		/obj/item/reagent_containers/food/condiment/milk,
-		/obj/item/reagent_containers/food/condiment/soymilk,
-		/obj/item/reagent_containers/food/condiment/sugar,
-		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/caramel, //one extra syrup as a treat
-	)
-	crate_name = "coffee equipment crate"
-
-/datum/supply_pack/food/coffeemaker
-	name = "Impressa Coffeemaker Crate"
-	desc = "An assembled Impressa model coffeemaker."
-	cost = 500
-	contains = list(
-		/obj/machinery/coffeemaker/impressa,
-		/obj/item/reagent_containers/food/drinks/bottle/coffeepot,
-	)
-	crate_name = "coffeemaker crate"
-	crate_type = /obj/structure/closet/crate

@@ -86,9 +86,10 @@
 	if(owner)
 		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
 		owner = null
-	button.moved = FALSE //so the button appears in its normal position when given to another owner.
-	button.locked = FALSE
-	button.id = null
+	if(button)
+		button.moved = FALSE //so the button appears in its normal position when given to another owner.
+		button.locked = FALSE
+		button.id = null
 
 /datum/action/proc/Trigger()
 	if(!IsAvailable())
@@ -207,6 +208,7 @@
 
 /datum/action/item_action/toggle_firemode
 	name = "Toggle Firemode"
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
 
 /datum/action/item_action/rcl_col
 	name = "Change Cable Color"

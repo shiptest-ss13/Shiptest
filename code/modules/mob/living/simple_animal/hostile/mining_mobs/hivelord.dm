@@ -50,8 +50,8 @@
 	OpenFire()
 	return TRUE
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/spawn_crusher_loot()
-	loot += crusher_loot //we don't butcher
+/mob/living/simple_animal/hostile/asteroid/hivelord/spawn_mob_trophy()
+	loot += mob_trophy //we don't butcher
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/death(gibbed)
 	mouse_opacity = MOUSE_OPACITY_ICON
@@ -119,7 +119,7 @@
 	throw_message = "bounces harmlessly off of"
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/mob_trophy/legion_skull
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
@@ -131,7 +131,7 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
-		new /obj/item/crusher_trophy/legion_skull(loc)
+		new /obj/item/mob_trophy/legion_skull(loc)
 		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
 	..()
 
@@ -150,7 +150,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
+	//mob_trophy = /obj/item/mob_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
@@ -164,7 +164,7 @@
 		if(stored_mob)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
-		else if(fromtendril)
+		else if(from_nest)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
 		else if(dwarf_mob)
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)
@@ -172,19 +172,16 @@
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest
+	from_nest = TRUE
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest
+	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	if(prob(75))
-		new /obj/item/crusher_trophy/dwarf_skull(loc)
-		visible_message("<span class='warning'>One of the [src]'s skulls looks like it survived.</span>")
 	..()
 
 //Legion skull
@@ -211,7 +208,7 @@
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "is shrugged off by"
 	del_on_death = TRUE
-	stat_attack = HARD_CRIT
+	stat_attack = SOFT_CRIT
 	robust_searching = 1
 	var/can_infest_dead = FALSE
 
@@ -225,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(death)), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 5 SECONDS)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
@@ -233,6 +230,8 @@
 	if(stat == DEAD || !isturf(loc))
 		return
 	for(var/mob/living/carbon/human/victim in range(src, 1)) //Only for corpse right next to/on same tile
+		if(istype(victim.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull)) // no double dipping
+			continue
 		switch(victim.stat)
 			if(UNCONSCIOUS, HARD_CRIT)
 				infest(victim)
@@ -242,20 +241,86 @@
 					infest(victim)
 					return //This will qdelete the legion.
 
-
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message("<span class='warning'>[name] burrows into the flesh of [H]!</span>")
-	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-	if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
-		L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
+	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
+	if(H.stat != DEAD)
+		var/obj/item/organ/legion_skull/throwyouabone = new()
+		throwyouabone.Insert(H)
 	else
-		L = new(H.loc)
-	visible_message("<span class='warning'>[L] staggers to [L.p_their()] feet!</span>")
-	H.death()
-	H.adjustBruteLoss(1000)
-	L.stored_mob = H
-	H.forceMove(L)
+		var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
+		if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
+			L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
+		else
+			L = new(H.loc)
+		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
+		H.adjustBruteLoss(1000)
+		L.stored_mob = H
+		H.forceMove(L)
 	qdel(src)
+
+/obj/item/organ/legion_skull
+	name = "legion skull"
+	desc = "The skull of a legion, likely torn from a soon-to-be host."
+	icon_state = "legion_skull"
+	zone = BODY_ZONE_CHEST
+	slot = ORGAN_SLOT_REGENERATIVE_CORE
+	grind_results = list(/datum/reagent/medicine/soulus = 2, /datum/reagent/blood = 5)
+	var/datum/disease/transformation/legionvirus/malignance
+	var/malignance_countdown = 5 MINUTES
+	var/malignance_tracker
+
+/obj/item/organ/legion_skull/on_find(mob/living/finder)
+	..()
+	to_chat(finder, span_warning("You found a skull-shaped growth in [owner]'s [zone]!"))
+
+/obj/item/organ/legion_skull/Insert(mob/living/carbon/M, special = 0)
+	..()
+	malignance = new()
+	malignance.infect(M, FALSE) //we handle all the fancy virus stuff in the organ, so we need a reference for it
+	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
+	M.heal_overall_bleeding(12) //stop dying so fast
+
+/obj/item/organ/legion_skull/Remove(mob/living/carbon/M, special = 0)
+	malignance_countdown = initial(malignance_countdown)
+	deltimer(malignance_tracker)
+	malignance_tracker = null
+	malignance.cure()
+	..()
+
+/obj/item/organ/legion_skull/on_life()
+	. = ..()
+	skull_check()
+
+/obj/item/organ/legion_skull/on_death()
+	. = ..()
+	skull_check()
+
+/// track our timers and reagents
+/obj/item/organ/legion_skull/proc/skull_check()
+	if(!malignance)
+		malignance = new()
+		malignance.infect(owner, FALSE)
+	if(owner.reagents.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
+		if(isnull(timeleft(malignance_tracker))) //ruhehehehehe
+			malignance_countdown = min(malignance_countdown + 1 SECONDS, initial(malignance_countdown)) //slightly improve our resistance to dying so we don't turn the second a treatment runs out
+			return
+		malignance_countdown = timeleft(malignance_tracker) //pause our timer if we have the reagents
+		deltimer(malignance_tracker)
+		malignance_tracker = null //you would think deltimer would do this but it actually doesn't track a direct reference!
+		return
+	if(!malignance_tracker)
+		malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME) //and resume if we run out
+
+/// Updates the stage of our tied disease
+/obj/item/organ/legion_skull/proc/update_stage()
+	malignance.update_stage(min(malignance.stage + 1, malignance.max_stages))
+	if(malignance.stage == 5)
+		malignance.stage_act() //force the transformation here, then delete everything
+		qdel(malignance)
+		qdel(src)
+		return
+	malignance_countdown = initial(malignance_countdown)
+	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
 //Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced
@@ -316,19 +381,14 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
-	new /obj/item/crusher_trophy/legion_skull(loc)
-	new /obj/item/crusher_trophy/legion_skull(loc)
-	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
-	if(prob(45))
-		new /obj/item/reagent_containers/glass/bottle/necropolis_seed(loc)
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
-	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril), 200, faction, "peels itself off from", 3)
+	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest), 200, faction, "peels itself off from", 3)
 
 // Snow Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow
@@ -339,7 +399,7 @@
 	icon_living = "snowlegion"
 	icon_aggro = "snowlegion_alive"
 	icon_dead = "snowlegion"
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/mob_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
 
@@ -353,8 +413,8 @@
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest
+	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
 	name = "disfigured legion"
@@ -363,7 +423,6 @@
 	icon_living = "disfigured_legion"
 	icon_aggro = "disfigured_legion"
 	icon_dead = "disfigured_legion"
-	difficulty = 2
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
 	loot = list(/obj/item/organ/regenerative_core/legion/crystal)
 
@@ -385,7 +444,7 @@
 		P.fire(i*(360/5))
 	return ..()
 
-//Tendril-spawned Legion remains, the charred skeletons of those whose bodies sank into lava or fell into chasms.
+//nest-spawned Legion remains, the charred skeletons of those whose bodies sank into lava or fell into chasms.
 /obj/effect/mob_spawn/human/corpse/charredskeleton
 	name = "charred skeletal remains"
 	burn_damage = 1000
@@ -422,19 +481,16 @@
 		)
 	)
 
-	switch(type)
-		if("Miner")
-			outfit = /datum/outfit/generic/miner
-		if("Assistant")
-			outfit = /datum/outfit/generic
-		if("Engineer")
-			outfit = /datum/outfit/generic/engineer
-		if("Doctor")
-			outfit = /datum/outfit/generic/doctor
-		if("Scientist")
-			outfit = /datum/outfit/generic/science
-		if("Cargo")
-			outfit = /datum/outfit/generic/cargo
-		if("Security")
-			outfit = /datum/outfit/generic/security
+	var/outfit_map = list(
+			"Miner" = /datum/outfit/generic/miner,
+			"Assistant" = /datum/outfit/generic,
+			"Engineer" = /datum/outfit/generic/engineer,
+			"Doctor" = /datum/outfit/generic/doctor,
+			"Scientist" = /datum/outfit/generic/science,
+			"Cargo" = /datum/outfit/generic/cargo,
+			"Security" = /datum/outfit/generic/security
+		)
+
+	outfit = outfit_map[type]  // Access outfit directly
+
 	. = ..()

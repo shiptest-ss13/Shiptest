@@ -115,7 +115,7 @@
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
+		H.heal_bleeding(0.25)
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)

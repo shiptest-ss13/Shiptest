@@ -74,22 +74,6 @@
 	projectile_type = /obj/projectile/bullet/a762_40
 	bullet_per_box = 80
 
-// .300 Blackout (Polymer Survivor Rifle)
-
-/obj/item/ammo_casing/aac_300blk
-	name = ".300 BLK bullet casing"
-	desc = "A .300 Blackout bullet casing."
-	icon_state = "rifle-steel"
-	caliber = ".300 BLK"
-	projectile_type = /obj/projectile/bullet/aac_300blk
-	bullet_per_box = 20
-
-/obj/item/ammo_casing/aac_300blk/recycled
-	name = "recycled .300 BLK bullet casing"
-	desc = "A recycled .300 Blackout bullet casing."
-	caliber = ".300 BLK"
-	projectile_type = /obj/projectile/bullet/aac_300blk
-
 //.308 (M514 EBR & CM-GAL-S)
 
 /obj/item/ammo_casing/a308
@@ -106,4 +90,4 @@
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
-	bullet_per_box = 80
+	bullet_per_box = 100

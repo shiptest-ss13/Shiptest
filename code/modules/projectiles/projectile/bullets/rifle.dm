@@ -42,13 +42,6 @@
 	damage = 25
 	armour_penetration = 20
 
-//.300 BLK (Polymer Survivor Rifle)
-
-/obj/projectile/bullet/aac_300blk
-	name = ".300 Blackout bullet"
-	damage = 30
-	armour_penetration = 20
-
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40
@@ -77,5 +70,5 @@
 
 /obj/projectile/bullet/c299
 	name = ".229 Eoehoma caseless bullet"
-	damage = 25
-	armour_penetration = 20
+	damage = 20
+	armour_penetration = 10
