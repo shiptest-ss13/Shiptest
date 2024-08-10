@@ -52,8 +52,11 @@
 	item_state = "pgfgun"
 	w_class = WEIGHT_CLASS_NORMAL
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
-	ammo_type = list(/obj/item/ammo_casing/energy/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy"
@@ -64,7 +67,7 @@
 	muzzle_flash_color_override = LIGHT_COLOR_ELECTRIC_GREEN
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_GREEN
 
-/obj/item/ammo_casing/energy/pgf
+/obj/item/ammo_casing/energy/kalix/pgf
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	delay = 1

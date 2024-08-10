@@ -291,7 +291,7 @@
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	. += "You can [bolt_wording] [src] by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
+	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 
 /*
 /obj/item/gun/ballistic/adjust_current_rounds(obj/item/mag, new_rounds)

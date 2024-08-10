@@ -125,6 +125,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	description = "A widely known coffee-flavoured liqueur. Still labeled under an old name from Earth, despite the loss of history."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
+	taste_description = "a bitter combination"
 	glass_icon_state = "kahluaglass"
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"

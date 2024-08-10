@@ -184,12 +184,12 @@
 
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
-	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in .300 Blackout."
+	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE
