@@ -20,6 +20,13 @@
 	if(linked_ship)
 		. += "It is currently connected to [linked_ship] records."
 
+/obj/item/clothing/glasses/hud/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(istype(target, /obj/machinery/computer/helm))
+		var/obj/machinery/computer/helm/target_helm = target
+		linked_ship = target_helm.current_ship
+		to_chat(user, span_notice("HUDS linked with ship."))
+
 /obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if(slot != ITEM_SLOT_EYES)

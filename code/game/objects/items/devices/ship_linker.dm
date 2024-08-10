@@ -1,5 +1,6 @@
 /obj/item/ship_linker
 	name = "Ship Linker"
+	desc = "A dev tool for now"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "multitool"
 	var/datum/overmap/ship/controlled/linked_ship
