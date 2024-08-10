@@ -13,7 +13,7 @@ type ContentSection = {
   color?: string;
 };
 
-export function OrbitContent(props, context) {
+export const OrbitContent(props, context) => {
   const { act, data } = useBackend<OrbitData>(context);
   const { antagonists = [], critical = [] } = data;
   const { searchText, autoObserve } = props;
