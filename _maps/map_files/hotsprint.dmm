@@ -18,7 +18,7 @@
 	pixel_y = 4
 	},
 /obj/item/melee/roastingstick,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/ebony,
 /area/space)
 "bb" = (
 /turf/open/floor/plating/asteroid/icerock/temperate,
@@ -33,6 +33,7 @@
 "bC" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/maple,
 /area/space)
 "bL" = (
@@ -47,12 +48,54 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/maple,
 /area/space)
+"cE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "cS" = (
 /obj/structure/rack,
+/obj/item/flashlight/lantern{
+	pixel_x = 6
+	},
+/obj/item/flashlight/lantern{
+	pixel_x = -6
+	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"dg" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "ds" = (
 /turf/open/floor/grass/ship/jungle,
+/area/space)
+"dv" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"dz" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "equipment locker";
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier,
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier,
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier,
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/wood/ebony,
 /area/space)
 "dA" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
@@ -67,11 +110,38 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/white,
 /area/space)
+"dU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"dX" = (
+/obj/structure/windoor_assembly{
+	dir = 4;
+	name = "broken windoor"
+	},
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/wood/ebony,
+/area/space)
 "eg" = (
 /obj/structure/chair/wood/wings{
 	dir = 8
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
+/area/space)
+"ey" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan{
+	start_empty = 1
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "eC" = (
 /obj/item/clothing/head/bearpelt{
@@ -103,7 +173,11 @@
 /area/space)
 "fg" = (
 /obj/structure/chair/wood/wings,
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
+/area/space)
+"fq" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/ship/dirt/dark,
 /area/space)
 "fw" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -119,6 +193,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/space)
+"fR" = (
+/obj/structure/chair/wood/wings,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "gr" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -128,7 +209,13 @@
 	},
 /turf/open/floor/wood/maple,
 /area/space)
-"gA" = (
+"ib" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/space)
+"if" = (
 /obj/structure/table/wood,
 /obj/item/ammo_casing/a4570{
 	projectile_type = null;
@@ -167,19 +254,39 @@
 	auto_rotate = 0;
 	auto_scatter = 0
 	},
-/turf/open/floor/wood/maple,
-/area/space)
-"ib" = (
-/obj/structure/chair/stool{
-	dir = 4
-	},
-/turf/open/floor/carpet,
+/turf/open/floor/wood/ebony,
 /area/space)
 "iw" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
+/area/space)
+"iz" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"iU" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 8
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"iX" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"jd" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 9
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "jk" = (
 /obj/effect/turf_decal/siding/blue{
@@ -190,6 +297,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/space)
+"jB" = (
+/obj/item/mob_trophy/fang{
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon."
+	},
+/turf/closed/indestructible/wood,
+/area/space)
 "jD" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
@@ -198,7 +316,7 @@
 /area/space)
 "jP" = (
 /obj/item/chair/wood,
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
 /area/space)
 "kl" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -206,25 +324,29 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"km" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "ko" = (
 /obj/structure/rack,
-/obj/item/ammo_box/a4570,
+/obj/item/gun/ballistic/rifle/illestren/factory{
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"kr" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/maple,
 /area/space)
 "lh" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/grass/ship/jungle,
-/area/space)
-"lj" = (
-/obj/structure/rack,
-/obj/item/gun/ballistic/rifle/illestren/factory{
-	pixel_x = -6
-	},
-/obj/item/gun/ballistic/rifle/illestren/factory{
-	pixel_y = 6;
-	pixel_x = -6
-	},
-/turf/open/floor/wood/maple,
 /area/space)
 "lM" = (
 /obj/effect/turf_decal/siding/blue{
@@ -239,6 +361,15 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
+/area/space)
+"mp" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "mF" = (
 /obj/structure/rack,
@@ -276,7 +407,7 @@
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
 /area/space)
 "nm" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -294,6 +425,18 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/white,
 /area/space)
+"nA" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine{
+	pixel_x = -6;
+	pixel_y = 12
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "nD" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
@@ -307,24 +450,39 @@
 /obj/structure/bookcase,
 /turf/open/space/basic,
 /area/space)
+"oj" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "oC" = (
 /turf/open/floor/carpet,
 /area/space)
 "oT" = (
-/obj/machinery/door/airlock/wood{
+/obj/effect/turf_decal/siding/wood/end{
 	dir = 8
 	},
 /turf/open/floor/wood/maple,
 /area/space)
-"qi" = (
-/obj/structure/displaycase/broken,
+"pR" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/apple,
+/obj/item/seeds/sunflower/moonflower,
+/obj/item/seeds/potato,
+/obj/item/seeds/tomato,
+/obj/item/seeds/berry,
+/obj/item/seeds/aloe,
+/obj/item/seeds/wheat,
+/obj/item/seeds/cotton/durathread,
 /turf/open/floor/wood/maple,
 /area/space)
 "qK" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
 /area/space)
 "rm" = (
 /turf/open/floor/ship/dirt/dark,
@@ -345,17 +503,28 @@
 /obj/item/storage/box/matches{
 	pixel_y = 2
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "rF" = (
 /obj/structure/flora/junglebush,
 /turf/open/floor/ship/dirt/dark,
 /area/space)
+"rJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "rW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/structure/table/wood,
 /turf/open/floor/wood/maple,
 /area/space)
 "sc" = (
@@ -364,10 +533,23 @@
 	name = "fire poker";
 	desc = "A small metal rod used to stir up fireplaces. This one is adorned with ornate golden filigree"
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood/maple,
 /area/space)
-"sf" = (
-/obj/structure/fermenting_barrel,
+"sk" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood/maple,
+/area/space)
+"sp" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/brown{
+	dir = 5
+	},
 /turf/open/floor/wood/ebony,
 /area/space)
 "st" = (
@@ -399,6 +581,20 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"sT" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"tf" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood/maple,
+/area/space)
 "tl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/neutral{
@@ -408,7 +604,7 @@
 /area/space)
 "tq" = (
 /obj/structure/fermenting_barrel/gunpowder,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/ebony,
 /area/space)
 "tD" = (
 /obj/structure/table/wood,
@@ -428,7 +624,7 @@
 /obj/item/chisel{
 	pixel_x = 5
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/ebony,
 /area/space)
 "tT" = (
 /obj/effect/turf_decal/siding/wood{
@@ -456,6 +652,21 @@
 /obj/item/stack/sheet/leather,
 /turf/open/floor/wood/ebony,
 /area/space)
+"uP" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/obj/machinery/fax/ruin,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"uQ" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "uR" = (
 /turf/open/floor/wood/ebony,
 /area/space)
@@ -467,11 +678,82 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/space)
+"vw" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 10
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"vB" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/nutrient/rh{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/glass/bottle/nutrient/ez{
+	pixel_x = -6;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/nutrient/rh{
+	pixel_x = -6
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"vF" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 6
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"vP" = (
+/obj/structure/table/wood,
+/obj/item/modular_computer/laptop,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"vY" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/turf/open/floor/wood/maple,
+/area/space)
 "wi" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood/mahogany,
+/area/space)
+"wm" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen/fountain/captain,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"wr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan,
+/turf/open/floor/wood/maple,
 /area/space)
 "wD" = (
 /obj/effect/turf_decal/stoneborder,
@@ -488,13 +770,36 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/table/wood,
-/obj/item/hatchet/wooden,
 /turf/open/floor/wood/maple,
 /area/space)
 "wT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"wW" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/brown{
+	dir = 9
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"xn" = (
+/obj/structure/closet/cabinet{
+	name = "broken shadow's locker";
+	desc = "The closet of equipment and attire for the aspiring shadow. Or whichever guy broke this closet's lock."
+	},
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/obj/item/clothing/under/suit/roumain,
+/obj/item/kitchen/knife/hunting,
+/obj/item/flashlight/lantern,
+/turf/open/floor/wood/ebony,
+/area/space)
+"xR" = (
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
 	},
 /turf/open/floor/wood/maple,
 /area/space)
@@ -527,13 +832,48 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood/mahogany,
 /area/space)
+"yx" = (
+/obj/structure/closet/cabinet{
+	name = "broken hunter's locker";
+	desc = "Everything a hunter will need, held in one secure closet. Or it would, if the lock wasn't smashed open."
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/obj/item/clothing/mask/gas/frontiersmen,
+/obj/item/clothing/under/frontiersmen/fireproof,
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof,
+/obj/item/clothing/suit/armor/frontier/fireproof,
+/obj/item/flamethrower,
+/obj/item/lighter/greyscale,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/turf/open/floor/wood/ebony,
+/area/space)
+"yC" = (
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"yF" = (
+/obj/effect/turf_decal/siding/brown,
+/turf/open/floor/wood/ebony,
+/area/space)
 "yQ" = (
 /obj/structure/bookcase/random/religion,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/wood/maple,
 /area/space)
-"zN" = (
-/obj/structure/table/wood,
+"Al" = (
+/obj/effect/turf_decal/siding/brown,
+/obj/item/rack_parts,
 /turf/open/floor/wood/ebony,
+/area/space)
+"Ap" = (
+/obj/item/cultivator/rake,
+/turf/open/floor/grass/ship/jungle,
 /area/space)
 "Ay" = (
 /obj/structure/fireplace,
@@ -553,6 +893,39 @@
 /obj/effect/decal/cleanable/ash/large{
 	pixel_y = -10
 	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"AC" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"AX" = (
+/obj/effect/turf_decal/siding/wood/end,
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/wood/maple,
+/area/space)
+"Bw" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"BK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/meat/slab/bear,
+/obj/item/reagent_containers/food/snacks/meat/slab/bear,
+/obj/item/reagent_containers/food/snacks/meat/slab/bear,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /turf/open/floor/wood/maple,
 /area/space)
 "CG" = (
@@ -561,14 +934,55 @@
 	},
 /turf/open/floor/wood/maple,
 /area/space)
+"Dt" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood/ebony,
+/area/space)
+"Eg" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/brown{
+	dir = 6
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "Er" = (
 /obj/structure/table/wood,
 /obj/item/weaponcrafting/stock,
 /obj/item/weaponcrafting/receiver,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/ebony,
 /area/space)
 "Ez" = (
 /turf/open/floor/plasteel/stairs/wood,
+/area/space)
+"EH" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 5
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"EO" = (
+/turf/open/floor/carpet/black,
+/area/space)
+"Fg" = (
+/obj/structure/closet/cabinet{
+	name = "broken shadow's locker";
+	desc = "The closet of equipment and attire for the aspiring shadow. Or whichever guy broke this closet's lock."
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/obj/item/clothing/head/soft/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/kitchen/knife/switchblade,
+/obj/item/clothing/accessory/holster,
+/turf/open/floor/wood/ebony,
+/area/space)
+"Fh" = (
+/obj/structure/displaycase/broken,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "Fj" = (
 /obj/structure/table/wood,
@@ -578,7 +992,26 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie{
 	pixel_x = -6
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
+/area/space)
+"Fl" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine{
+	pixel_y = 12;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"FF" = (
+/obj/effect/turf_decal/spline/fancy/wood/corner,
+/obj/effect/turf_decal/spline/fancy/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "FL" = (
 /obj/effect/turf_decal/siding/blue/corner{
@@ -594,9 +1027,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/space)
+"FX" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "Ge" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood/mahogany,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "Gm" = (
 /turf/closed/indestructible/wood,
@@ -625,20 +1076,53 @@
 	layer = 2.79
 	},
 /obj/item/shovel,
+/turf/open/floor/wood/ebony,
+/area/space)
+"GV" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "Hl" = (
 /turf/closed/mineral/random/snow/underground,
 /area/space)
+"HB" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/item/ammo_box/magazine/skm_545_39{
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/obj/item/ammo_box/c46x30mm_box{
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/obj/item/ammo_box/magazine/skm_545_39{
+	pixel_x = 12
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"HM" = (
+/obj/structure/table/wood,
+/obj/item/lighter,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"HQ" = (
+/obj/item/stack/sheet/mineral/wood/twentyfive,
+/turf/open/floor/grass/ship/jungle,
+/area/space)
 "HV" = (
 /turf/open/space/basic,
 /area/space)
-"IR" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
+"IQ" = (
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 8
 	},
-/obj/item/reagent_containers/glass/bucket/wooden,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/ebony,
 /area/space)
 "Ja" = (
 /obj/effect/turf_decal/siding/blue{
@@ -653,18 +1137,105 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"Kd" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "Kg" = (
 /turf/open/floor/wood,
 /area/space)
+"Ky" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "KR" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/mahogany,
 /area/space)
-"ML" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/floor/ship/dirt/dark,
+"Lb" = (
+/obj/structure/guncloset,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine,
+/turf/open/floor/wood/ebony,
+/area/space)
+"LA" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"LI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan{
+	start_empty = 1
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"LO" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/filter{
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/sillycup{
+	pixel_x = 4;
+	pixel_y = 6;
+	name = "paper sieve";
+	desc = "A paper seive for funneling gunpowder."
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"MJ" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/kitchen/knife/combat/survival{
+	pixel_y = 8;
+	pixel_x = -9
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_y = -2
+	},
+/obj/item/kitchen/knife/combat/survival{
+	pixel_y = 7;
+	pixel_x = 3
+	},
+/obj/item/kitchen/knife/combat/survival{
+	pixel_y = 7;
+	pixel_x = -5
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"Nl" = (
+/obj/structure/chair/wood/wings{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "Nq" = (
 /obj/effect/turf_decal/spline/fancy/wood/cee,
@@ -686,6 +1257,11 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"NV" = (
+/obj/structure/rack,
+/obj/item/ammo_box/a4570,
+/turf/open/floor/wood/ebony,
+/area/space)
 "Oa" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -705,6 +1281,13 @@
 /obj/item/reagent_containers/glass/bottle/morphine,
 /turf/open/floor/plating/rust,
 /area/space)
+"Oi" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood/maple,
+/area/space)
 "Ok" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 6
@@ -721,7 +1304,19 @@
 /obj/item/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
+/area/space)
+"PS" = (
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon."
+	},
+/obj/item/clothing/mask/rat/bear{
+	pixel_y = -2;
+	name = "bear head";
+	desc = "A taxidermied bear head for mounting on a headboard. You swear it's still staring at you."
+	},
+/turf/closed/indestructible/wood,
 /area/space)
 "PV" = (
 /obj/structure/railing/wood{
@@ -729,12 +1324,17 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"Qw" = (
+/obj/effect/turf_decal/spline/fancy/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "Qz" = (
 /turf/open/floor/wood/maple,
-/area/space)
-"QF" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/wood/ebony,
 /area/space)
 "QU" = (
 /obj/structure/flora/grass/jungle,
@@ -762,13 +1362,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"RT" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/maple,
+/area/space)
 "RV" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/maple,
 /area/space)
 "Sf" = (
 /obj/structure/table/wood,
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
 /area/space)
 "SE" = (
 /obj/structure/flora/stump{
@@ -776,17 +1383,80 @@
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/space)
+"SU" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine{
+	pixel_x = -6;
+	pixel_y = 12
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"Th" = (
+/obj/effect/turf_decal/spline/fancy/wood,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/turf/open/floor/wood/mahogany,
+/area/space)
 "To" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood/ebony,
+/area/space)
+"TQ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"TR" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/obj/item/storage/fancy/cigarettes/cigars/cohiba{
+	pixel_y = 5
+	},
+/obj/item/clothing/head/frontier/peaked{
+	pixel_y = 9
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "Uc" = (
 /turf/open/floor/plasteel/stairs/wood{
 	dir = 8
 	},
 /area/space)
+"Uk" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/brown,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5;
+	pixel_x = -2
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/wood/ebony,
+/area/space)
+"UC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/maple,
+/area/space)
 "Vz" = (
 /turf/open/floor/wood/mahogany,
+/area/space)
+"VZ" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/maple,
 /area/space)
 "Wc" = (
 /obj/effect/turf_decal/spline/fancy/wood/cee{
@@ -806,7 +1476,10 @@
 /area/space)
 "Wk" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood/maple,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "Ws" = (
 /obj/structure/grille,
@@ -814,19 +1487,23 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/wood,
 /area/space)
-"Wx" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/filter{
-	pixel_y = 14;
-	pixel_x = -6
+"Wy" = (
+/obj/structure/rack,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/item/reagent_containers/food/drinks/sillycup{
-	pixel_x = 4;
-	pixel_y = 6;
-	name = "paper sieve";
-	desc = "A paper seive for funneling gunpowder."
+/obj/item/ammo_box/a44roum{
+	pixel_x = 5
 	},
-/turf/open/floor/wood/maple,
+/obj/item/ammo_box/c38_box{
+	pixel_x = -10;
+	pixel_y = -3
+	},
+/obj/item/ammo_box/c38_box{
+	pixel_x = -10;
+	pixel_y = 6
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "WW" = (
 /obj/structure/table/wood,
@@ -836,14 +1513,42 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton{
 	pixel_y = 12
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/black,
 /area/space)
 "WZ" = (
 /obj/structure/chair/wood/wings,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "Xd" = (
-/obj/machinery/door/airlock/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"Xu" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/table/wood,
+/obj/item/shovel/spade,
+/obj/item/reagent_containers/glass/bucket/wooden{
+	pixel_x = 6
+	},
+/turf/open/floor/wood/maple,
+/area/space)
+"Xw" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "XK" = (
@@ -852,9 +1557,25 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
+"XL" = (
+/obj/item/hatchet/wooden{
+	pixel_x = -6
+	},
+/turf/open/floor/grass/ship/jungle,
+/area/space)
+"XX" = (
+/obj/structure/displaycase/broken,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "Yd" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
 /turf/open/floor/wood/maple,
 /area/space)
@@ -869,7 +1590,17 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
 /turf/open/floor/wood/mahogany,
+/area/space)
+"ZD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/floor/wood/maple,
 /area/space)
 "ZZ" = (
 /obj/structure/railing/wood,
@@ -1044,16 +1775,16 @@ Hl
 Hl
 Gm
 Gm
-Qz
-Qz
-Qz
+Lb
+dX
+Wy
 Gm
 wD
 Gm
 rx
-Qz
-Qz
-bC
+tT
+tT
+TQ
 Gm
 dT
 bL
@@ -1082,10 +1813,10 @@ Hl
 Hl
 Hl
 Gm
-Qz
-Qz
-Qz
-Qz
+HB
+tT
+RT
+CG
 Wc
 Nq
 Gm
@@ -1101,7 +1832,7 @@ Gm
 lh
 yo
 SE
-ds
+XL
 QU
 Gm
 Hl
@@ -1121,14 +1852,14 @@ Hl
 Hl
 Hl
 Gm
+MJ
 Qz
 Qz
-Qz
-Qz
+cy
 Gm
 fe
 Gm
-NL
+iX
 oC
 oC
 bC
@@ -1140,8 +1871,8 @@ Gm
 Gm
 ds
 lh
-ds
-ML
+HQ
+fq
 Gm
 Hl
 Hl
@@ -1160,17 +1891,17 @@ Hl
 Hl
 Hl
 Gm
+vY
 Qz
 Qz
-Qz
-Qz
+cy
 Gm
 yi
 Gm
 yQ
-Qz
-Qz
-bC
+dg
+Kd
+Ky
 Gm
 fA
 uX
@@ -1179,8 +1910,8 @@ nm
 Gm
 rm
 rm
-ds
-ML
+Ap
+fq
 Gm
 Hl
 Hl
@@ -1199,10 +1930,10 @@ Hl
 Hl
 Hl
 Gm
-Qz
-Qz
-Qz
-Qz
+yx
+dv
+vw
+cy
 Gm
 Gm
 Gm
@@ -1238,17 +1969,17 @@ Hl
 Hl
 Hl
 Gm
-Qz
-Qz
-Qz
-Qz
+dz
+uR
+Uk
+cy
 Gm
-To
-uR
-uR
-uR
-uR
-uR
+wW
+dv
+dv
+dv
+dv
+vw
 Gm
 Gm
 RM
@@ -1258,7 +1989,7 @@ Gm
 Gm
 yc
 tT
-CG
+ZD
 Gm
 Hl
 Hl
@@ -1277,27 +2008,27 @@ Hl
 Hl
 Hl
 Gm
-Qz
-Qz
-Qz
-Qz
-QF
+xn
+uR
+Al
+tf
+AX
+iz
 uR
 uR
 uR
 uR
-uR
-uR
-uR
-uR
-uR
-uR
-uR
-uR
+IQ
+dv
+dv
+dv
+dv
+dv
+vw
 nD
 gr
 Qz
-cy
+pR
 Gm
 Hl
 Hl
@@ -1316,27 +2047,27 @@ Hl
 Hl
 Hl
 Gm
-Qz
-Qz
-Qz
-Qz
+Fg
+oj
+vF
+cy
 Gm
+EH
+oj
+oj
+oj
+oj
+yC
 uR
 uR
 uR
 uR
 uR
-uR
-uR
-uR
-uR
-uR
-uR
-uR
+yF
 Gm
 wT
 RV
-IR
+BK
 Gm
 Hl
 Hl
@@ -1365,16 +2096,16 @@ Gm
 Gm
 Gm
 Gm
-To
-uR
-uR
-uR
-uR
-uR
-To
+sp
+oj
+oj
+oj
+oj
+oj
+Eg
 Gm
-rW
-wF
+vB
+Xu
 Gm
 Gm
 Hl
@@ -1586,9 +2317,9 @@ Hl
 Hl
 Gm
 Gm
-NL
+iU
 tq
-Wx
+LO
 Gm
 Gm
 Gm
@@ -1624,22 +2355,22 @@ Gy
 Hl
 Gm
 Gm
-lj
-Qz
+ko
+cE
 WZ
-gA
+if
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Xd
-uR
-uR
-uR
-uR
+yc
+tT
+tT
+tT
+tT
+tT
+CG
+jd
+dv
+dv
+vw
 Gm
 bb
 bb
@@ -1664,21 +2395,21 @@ Hl
 Gm
 tL
 Yd
-Qz
-Qz
-ko
+GV
+wF
+NV
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Xd
+rW
+Kd
+Kd
+Kd
+Kd
+Kd
+wF
+iz
 uR
 uR
-uR
-uR
+yF
 Gm
 bb
 bb
@@ -1702,22 +2433,22 @@ Gy
 Hl
 Gm
 Er
-Qz
-Qz
+sk
+wF
 Gm
 Gm
 Gm
-oT
-oT
+Rd
+jD
 Gm
+To
 cS
-cS
-cS
+FX
 Gm
-uR
-uR
-uR
-uR
+EH
+oj
+oj
+vF
 Gm
 bb
 bb
@@ -1741,13 +2472,13 @@ Hl
 Hl
 Gm
 Gm
-oT
+xR
 Gm
 Gm
-Wk
-Wk
-Qz
-Qz
+sT
+AC
+FF
+sO
 Gm
 Gm
 Gm
@@ -1779,19 +2510,19 @@ Hl
 Hl
 Gm
 Gm
-NL
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
+LA
+kl
+kl
+kl
+dA
+Vz
+KR
 Gm
-Gm
+jB
 Rd
 kl
 Zn
-jD
+wm
 Ws
 Kg
 Kg
@@ -1817,20 +2548,20 @@ Hl
 Gm
 Gm
 Gm
-qi
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Gm
-bv
+Fh
 dA
 Vz
 Vz
+Vz
+Vz
+Vz
 KR
+Gm
+bv
+dA
+HM
+vP
+Th
 Ws
 Kg
 Kg
@@ -1856,19 +2587,19 @@ Hl
 Gm
 nS
 GN
-Qz
-oC
+fw
+EO
 ne
 qK
 jP
 ib
-oC
-Qz
+EO
+KR
 Gm
 fw
 Vz
-Ge
-Ge
+Vz
+Vz
 KR
 Ws
 Kg
@@ -1895,18 +2626,18 @@ Hl
 Gm
 Gm
 Ay
-Qz
+fw
 fg
 WW
 Fj
 Sf
 Sf
-oC
-Qz
+EO
+KR
 eK
 fw
 Vz
-Ge
+Vz
 Vz
 KR
 Ws
@@ -1934,19 +2665,19 @@ Hl
 Gm
 nS
 aJ
-Qz
-oC
+fw
+EO
 OR
 eg
 eg
 iw
-oC
-Qz
+EO
+KR
 Gm
 fw
 Vz
-Ge
-Ge
+Vz
+Vz
 KR
 Ws
 Kg
@@ -1973,14 +2704,14 @@ Hl
 Gm
 Gm
 Gm
-qi
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
+XX
+wi
+Vz
+Vz
+Vz
+Vz
+Vz
+KR
 Gm
 yp
 wi
@@ -2013,18 +2744,18 @@ Hl
 Hl
 Gm
 Gm
-NL
-Qz
-Qz
-Qz
-Qz
-Qz
-Qz
+km
+XK
+XK
+XK
+wi
+Vz
+KR
 Gm
-Gm
+PS
 NO
-XK
-XK
+uP
+TR
 sO
 Ws
 Kg
@@ -2056,10 +2787,10 @@ Gm
 oT
 Gm
 Gm
+uQ
 Wk
-Wk
-Qz
-Qz
+Qw
+jD
 Gm
 Gm
 Gm
@@ -2092,19 +2823,19 @@ Hl
 Hl
 Gm
 RH
-Qz
-Qz
+cE
+CG
 Gm
 Gm
 Gm
-oT
-oT
+NO
+sO
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
+Oi
+dU
+dU
+dU
+rJ
 Gm
 Gm
 Hl
@@ -2131,20 +2862,20 @@ Hl
 Hl
 Gm
 tD
-Yd
-Qz
-Qz
+Nl
+mp
+CG
 uA
 Gm
 Uc
 Uc
 Gm
-Qz
-sf
-sf
-sf
-Qz
-Qz
+UC
+Dt
+Dt
+Dt
+cE
+CG
 Gm
 Hl
 Hl
@@ -2171,19 +2902,19 @@ Hl
 Gm
 Gm
 mF
-Qz
-WZ
+VZ
+fR
 mI
 Gm
 Qz
 Qz
 Ez
-Qz
-Qz
-Qz
-Qz
-Qz
-NL
+Ge
+dU
+dU
+dU
+gr
+kr
 Gm
 Hl
 Hl
@@ -2210,19 +2941,19 @@ Hl
 Hl
 Gm
 Gm
-NL
+Bw
 Yw
 eC
 Gm
 NL
 Qz
 Ez
-Qz
-zN
-zN
-zN
-Qz
-Qz
+UC
+Fl
+SU
+nA
+wr
+ey
 Gm
 Hl
 Hl
@@ -2256,11 +2987,11 @@ Gm
 Gm
 Gm
 Gm
-Qz
-Qz
-Qz
-Qz
-Qz
+Xw
+Xd
+Xd
+Xd
+LI
 Gm
 Gm
 Hl
