@@ -6,7 +6,7 @@ import { AntagGroup, Antagonist, Observable } from './types';
 const PATTERN_NUMBER = / \(([0-9]+)\)$/;
 
 /** Return a map of strings with each antag in its antag_category */
-export function getAntagCategories(antagonists: Antagonist[]): AntagGroup[] {
+export const getAntagCategories(antagonists: Antagonist[]): AntagGroup[] => {
   const categories = new Map<string, Antagonist[]>();
 
   for (const player of antagonists) {
@@ -31,7 +31,7 @@ export function getAntagCategories(antagonists: Antagonist[]): AntagGroup[] {
 }
 
 /** Returns a disguised name in case the person is wearing someone else's ID */
-export function getDisplayName(full_name: string, nickname?: string): string {
+export const getDisplayName(full_name: string, nickname?: string): string => {
   if (!nickname) {
     return full_name;
   }
@@ -40,7 +40,7 @@ export function getDisplayName(full_name: string, nickname?: string): string {
 }
 
 /** Displays color for buttons based on the health or orbiter count. */
-export function getDisplayColor(item: Observable, override?: string): string {
+export const getDisplayColor(item: Observable, override?: string): string => {
   const { job, health, orbiters } = item;
 
   // Things like blob camera, etc
@@ -57,7 +57,7 @@ export function getDisplayColor(item: Observable, override?: string): string {
 }
 
 /** Returns the display color for certain health percentages */
-function getHealthColor(health: number): string {
+const getHealthColor(health: number): string  => {
   switch (true) {
     case health > HEALTH.Good:
       return 'good';
@@ -69,10 +69,10 @@ function getHealthColor(health: number): string {
 }
 
 /** Checks if a full name or job title matches the search. */
-export function isJobOrNameMatch(
+export const isJobOrNameMatch(
   observable: Observable,
   searchQuery: string
-): boolean {
+): boolean  => {
   if (!searchQuery) return true;
 
   const { full_name, job } = observable;
