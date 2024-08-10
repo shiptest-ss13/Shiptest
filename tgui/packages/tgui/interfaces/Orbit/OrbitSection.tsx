@@ -62,4 +62,4 @@ export const OrbitSection = (props: Props) => {
       </Flex>
     </Collapsible>
   );
-}
+};
