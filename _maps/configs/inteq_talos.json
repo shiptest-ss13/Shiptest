@@ -18,7 +18,7 @@
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/inteq/captain",
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
 			"officer": true,
 			"slots": 1
 		},
@@ -40,9 +40,13 @@
 			"outfit": "/datum/outfit/job/inteq/security",
 			"slots": 1
 		},
+		"Corpsman": {
+			"outfit": "/datum/outfit/job/inteq/paramedic",
+			"slots": 1
+		},
 		"Recruit": {
 			"outfit": "/datum/outfit/job/inteq/assistant",
-			"slots": 4
+			"slots": 4 
 		}
 	},
 	"enabled": true

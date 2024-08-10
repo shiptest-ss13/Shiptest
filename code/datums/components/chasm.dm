@@ -18,8 +18,6 @@
 		/obj/effect/hotspot,
 		/obj/effect/landmark,
 		/obj/effect/temp_visual,
-		/obj/effect/light_emitter/tendril,
-		/obj/effect/collapse,
 		/obj/effect/particle_effect/ion_trails,
 		/obj/effect/dummy/phased_mob,
 		/obj/effect/mapping_helpers,

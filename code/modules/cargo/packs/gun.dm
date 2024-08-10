@@ -120,14 +120,14 @@
 	name = "Hellfire Shotgun Crate"
 	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
 	cost = 2000
-	contains = list(/obj/item/gun/ballistic/shotgun/hellfire)
+	contains = list(/obj/item/storage/guncase/hellfire)
 	crate_name = "shotgun crate"
 
 /datum/supply_pack/gun/brimstone_shotgun
 	name = "Brimstone Shotgun Crate"
 	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains a slamfire shotgun, with a 5-round capacity. Warranty voided if sawed off."
 	cost = 2000
-	contains = list(/obj/item/gun/ballistic/shotgun/brimstone)
+	contains = list(/obj/item/storage/guncase/brimstone)
 	crate_name = "shotgun crate"
 
 /*
@@ -149,7 +149,7 @@
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/beacon
-	name = "Contender Break Action Rifle Crate"
+	name = "Beacon Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 2250
 	contains = list(/obj/item/storage/guncase/beacon)
@@ -159,7 +159,7 @@
 	name = "Scout Sniper Rifle Crate"
 	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
 	cost = 5500
-	contains = list(/obj/item/gun/ballistic/rifle/scout)
+	contains = list(/obj/item/storage/guncase/scout)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/cobra20
@@ -189,3 +189,31 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/attachment/rail_light
+	name = "Tactical Rail Light Crate"
+	desc = "Contains a single rail light to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/rail_light)
+	crate_name = "rail light crate"
+
+/datum/supply_pack/gun/attachment/laser_sight
+	name = "Laser Sight Crate"
+	desc = "Contains a single rail light to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/laser_sight)
+	crate_name = "laser sight crate"
+
+/datum/supply_pack/gun/attachment/bayonet
+	name = "Bayonet Crate"
+	desc = "Contains a single bayonet to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/bayonet)
+	crate_name = "bayonet crate"
+
+/datum/supply_pack/gun/attachment/silencer
+	name = "Suppressor Crate"
+	desc = "Contains a single suppressor to be mounted on a firearm."
+	cost = 250
+	contains = list(/obj/item/attachment/silencer)
+	crate_name = "silencer crate"
