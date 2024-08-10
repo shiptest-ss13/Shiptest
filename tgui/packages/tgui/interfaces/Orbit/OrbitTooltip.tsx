@@ -6,7 +6,7 @@ type Props = {
 };
 
 /** Displays some info on the mob as a tooltip. */
-export const OrbitTooltip(props: Props) => {
+export const OrbitTooltip = (props: Props) => {
   const { item } = props;
   const { extra, name, full_name, health, job } = item;
 
