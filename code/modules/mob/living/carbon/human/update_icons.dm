@@ -741,13 +741,13 @@ There are several things that need to be remembered:
 		update_hud_neck(I)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
 
-			if(dna.species.bodytype & BODYTYPE_VOX) // there is neither a vox or kepori neck path, we just tell it to greyscale no matter what
-//				if(I.supports_variations & VOX_VARIATION)
-//					icon_file = VOX_NECK_PATH
-//					if(I.vox_override_icon)
-//						icon_file = I.vox_override_icon
-//				else
-				handled_by_bodytype = TRUE
+			if(dna.species.bodytype & BODYTYPE_VOX) // there is no kepori neck path, we just tell it to greyscale no matter what
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_NECK_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			else if(dna.species.bodytype & BODYTYPE_KEPORI)
 //				if(I.supports_variations & KEPORI_VARIATION)

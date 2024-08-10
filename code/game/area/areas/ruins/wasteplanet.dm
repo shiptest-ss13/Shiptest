@@ -3,31 +3,31 @@
 //Abandoned Mechbay Ruin
 
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall
-	name = "Abandoned Mechbay Main Corridor"
+	name = "Abandoned Exosuit Bay Main Corridor"
 	icon_state = "hallC"
 
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol
-	name = "Abandoned Mechbay Command and Control"
+	name = "Abandoned Exosuit Bay Command and Control"
 	icon_state = "bridge"
 
 /area/ruin/wasteplanet/abandoned_mechbay/bay1
-	name = "Abandoned Mechbay Upper Hangar"
+	name = "Abandoned Exosuit Bay Upper Hangar"
 	icon_state = "mechbay"
 
 /area/ruin/wasteplanet/abandoned_mechbay/bay2
-	name = "Abandoned Mechbay Lower Hangar"
+	name = "Abandoned Exosuit Bay Lower Hangar"
 	icon_state = "mechbay"
 
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters
-	name = "Abandoned Mechbay Crew Quarters"
+	name = "Abandoned Exosuit Bay Crew Quarters"
 	icon_state = "green"
 
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab
-	name = "Abandoned Mech Lab"
+	name = "Abandoned Exosuit Lab"
 	icon_state = "mechbay"
 
 /area/ruin/wasteplanet/abandoned_mechbay/engineering
-	name = "Abandoned Mechbay Engineering"
+	name = "Abandoned Exosuit Bay Engineering"
 	icon_state = "engine"
 
 //Abandoned Waste Site

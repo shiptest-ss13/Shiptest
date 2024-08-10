@@ -39,11 +39,8 @@
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_cell = FALSE
-	big_gun = TRUE //haha gun go brr
+	mag_size = MAG_SIZE_LARGE //haha gun go brr
 	cell_type = /obj/item/stock_parts/cell/gun/large
-	can_flashlight = TRUE
-	flight_x_offset = 18
-	flight_y_offset = 12
 	ammo_x_offset = 2
 	charge_sections = 4
 
