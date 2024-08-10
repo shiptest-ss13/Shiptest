@@ -16,7 +16,7 @@ type Props = {
  * Displays a collapsible with a map of observable items.
  * Filters the results if there is a provided search query.
  */
-export const OrbitSection(props: Props) => {
+export const OrbitSection = (props: Props) => {
   const { color, section = [], title, searchQuery, autoObserve } = props;
 
   const filteredSection = section.filter((observable) =>
