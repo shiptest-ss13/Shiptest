@@ -218,7 +218,8 @@
 
 	var/list/mobs = SSpoints_of_interest.get_mob_pois()
 	var/i = 1
-	for(var/mob/M in mobs)
+	for(var/mob_name in mobs)
+		var/mob/M = mobs[mob_name]
 		if(M.ckey)
 
 			var/color = "#e6e6e6"
