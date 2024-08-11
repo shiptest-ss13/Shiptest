@@ -30,11 +30,6 @@
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("A drone shell has been created in \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_DRONE)
-	SSpoints_of_interest.make_point_of_interest(src)
-
-/obj/effect/mob_spawn/drone/Destroy()
-	SSpoints_of_interest.remove_point_of_interest(src)
-	. = ..()
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/drone/attack_ghost(mob/user)
