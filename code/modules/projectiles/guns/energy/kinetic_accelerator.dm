@@ -154,12 +154,12 @@
 		carried = 1
 
 	deltimer(recharge_timerid)
-	recharge_timerid = addtimer(CALLBACK(src, PROC_REF(reload)), recharge_time * carried, TIMER_STOPPABLE)
+	recharge_timerid = addtimer(CALLBACK(src, PROC_REF(recharge)), recharge_time * carried, TIMER_STOPPABLE)
 
 /obj/item/gun/energy/kinetic_accelerator/emp_act(severity)
 	return
 
-/obj/item/gun/energy/kinetic_accelerator/proc/reload()
+/obj/item/gun/energy/kinetic_accelerator/proc/recharge()
 	installed_cell.give(installed_cell.maxcharge)
 	if(!suppressed)
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)

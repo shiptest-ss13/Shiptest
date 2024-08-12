@@ -119,21 +119,24 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	if (!internal_magazine && istype(A, /obj/item/stock_parts/cell/gun))
-		var/obj/item/stock_parts/cell/gun/C = A
-		if (!installed_cell)
-			insert_cell(user, C)
-		else
-			if (tac_reloads)
-				eject_cell(user, C)
+	if(reload(A, user, params))
+		return
 	return ..()
 
+/obj/item/gun/energy/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
+	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
+		var/obj/item/stock_parts/cell/new_cell = new_mag
+		if (!installed_cell)
+			insert_cell(user, new_cell)
+		else
+			if (tac_reloads)
+				eject_cell(user, new_cell)
+			else
+				to_chat(user, span_notice("\The [src] already has a cell."))
+
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
-		return FALSE
-	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
+	if(!(C.type in allowed_ammo_types))
+		to_chat(user, span_warning("[C] cannot fit into [src]!"))
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		installed_cell = C

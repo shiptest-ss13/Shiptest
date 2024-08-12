@@ -185,38 +185,33 @@
 		return FALSE
 	return chambered
 
-/obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if (.)
-		return
-	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = A
+/obj/item/gun/ballistic/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
+	if(!..())
+		return FALSE
+	if (!internal_magazine && istype(new_mag, /obj/item/ammo_box/magazine))
+		var/obj/item/ammo_box/magazine/AM = new_mag
 		if (!magazine)
 			insert_magazine(user, AM)
 		else
 			if (tac_reloads)
 				eject_magazine(user, FALSE, AM)
 			else
-				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
-		return
-	if (istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
+				to_chat(user, span_notice("There's already a [magazine_wording] in \the [src]."))
+		return TRUE
+	if (istype(new_mag, /obj/item/ammo_casing) || istype(new_mag, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
 			if (chambered && !chambered.BB)
 				chambered.on_eject(shooter = user)
 				chambered = null
-			var/num_loaded = magazine.attackby(A, user, params)
+			var/num_loaded = magazine.attackby(new_mag, user, params)
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
-				A.update_appearance()
+				new_mag.update_appearance()
 				update_appearance()
-			return
-	if (can_be_sawn_off)
-		if (try_sawoff(user, A))
-			return
-	return FALSE
+			return TRUE
 
 ///Prefire empty checks for the bolt drop
 /obj/item/gun/ballistic/proc/prefire_empty_checks()
@@ -326,7 +321,7 @@
 	return rounds
 
 ///used for sawing guns, causes the gun to fire without the input of the user
-/obj/item/gun/ballistic/proc/blow_up(mob/user)
+/obj/item/gun/ballistic/blow_up(mob/user)
 	. = FALSE
 	for(var/obj/item/ammo_casing/AC in magazine.stored_ammo)
 		if(AC.BB)

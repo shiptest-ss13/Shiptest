@@ -63,6 +63,7 @@
 	var/list/allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine,
 	)
+	var/default_cell_type = null
 
 //BALLISTIC
 	///Whether the gun alarms when empty or not.
@@ -328,7 +329,8 @@
 		update_icon()
 		return
 	INVOKE_ASYNC(src, PROC_REF(fill_gun))
-	sawn_off(forced = TRUE)
+	if(sawn_off)
+		sawoff(forced = TRUE)
 
 /obj/item/gun/proc/fill_gun()
 	return
@@ -394,7 +396,18 @@
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
 
 	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
+
+/obj/item/gun/attackby(obj/item/A, mob/user, params)
+	. = ..()
+	if (.)
+		return
+	if(reload(A, user, params))
+		return
+	if (can_be_sawn_off)
+		if (try_sawoff(user, A))
+			return
+	return FALSE
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -1066,6 +1079,11 @@
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
+/obj/item/gun/proc/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
+	if(currently_firing_burst)
+		return FALSE
+	return TRUE
+
 /obj/item/gun/proc/adjust_current_rounds(obj/item/mag, new_rounds)
 	return
 
@@ -1096,13 +1114,13 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		return
 
 	if(do_after(user, 30, target = src))
+		user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
 		sawoff(user, saw)
 
 
-/obj/item/gun/proc/sawoff(mob/user, obj/item/saw, forced = FALSE)
-	if(sawn_off)
+/obj/item/gun/proc/sawoff(forced = FALSE)
+	if(sawn_off && !forced)
 		return
-	user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
 	name = "sawn-off [src.name]"
 	desc = sawn_desc
 	w_class = WEIGHT_CLASS_NORMAL
@@ -1113,3 +1131,7 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	sawn_off = TRUE
 	update_appearance()
 	return TRUE
+
+///used for sawing guns, causes the gun to fire without the input of the user
+/obj/item/gun/proc/blow_up(mob/user)
+	return

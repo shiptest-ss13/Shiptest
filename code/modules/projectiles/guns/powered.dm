@@ -4,8 +4,8 @@
 	ammo_overlay_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/fill_gun()
-	if(cell_type)
-		cell = new cell_type(src)
+	if(default_cell_type)
+		installed_cell = new default_cell_type(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
@@ -35,13 +35,14 @@
 /obj/item/gun/ballistic/automatic/powered/get_cell()
 	return installed_cell
 
-//the things below were taken from energy gun code. blame whoever coded this, not me
-/obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
-	if (!internal_magazine && istype(A, /obj/item/stock_parts/cell/gun))
-		var/obj/item/stock_parts/cell/gun/C = A
-		if (!installed_cell)
-			insert_cell(user, C)
-	return ..()
+/obj/item/gun/ballistic/automatic/powered/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
+	if(!..())
+		return
+	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
+		var/obj/item/stock_parts/cell/gun/new_cell = new_mag
+		if(installed_cell)
+			to_chat(user, "<span class='warning'>\The [new_mag] already has a cell</span>")
+		insert_cell(user, new_cell)
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
