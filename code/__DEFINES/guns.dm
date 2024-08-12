@@ -65,6 +65,18 @@
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 
+//Gun defines for gun related thing. More in the projectile folder.
+//gun_features_flags
+#define GUN_AMMO_COUNTER (1<<0)
+#define GUN_WIELDED_FIRING_ONLY (1<<1)
+#define GUN_WIELDED_STABLE_FIRING_ONLY (1<<2)
+#define GUN_ENERGY (1<<3)
+#define GUN_AMMO_COUNT_BY_PERCENTAGE (1<<4)
+#define GUN_AMMO_COUNT_BY_SHOTS_REMAINING (1<<5)
+
+#define AMMO_RECIEVER_MAGAZINES (1<<2)
+	#define AMMO_RECIEVER_AUTO_EJECT (1<<3)
+
 /////////////////
 // ATTACHMENTS //
 /////////////////

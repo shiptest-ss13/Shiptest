@@ -366,10 +366,11 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
-/obj/item/gun/ballistic/derringer/examine(mob/user)
-	. = ..()
+/obj/item/gun/ballistic/derringer/examine_ammo_count(mob/user)
+	var/list/dat = list()
 	var/live_ammo = get_ammo_count(FALSE, FALSE)
-	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
+	dat += "[live_ammo ? live_ammo : "None"] of those are live rounds."
+	return dat
 
 /obj/item/gun/ballistic/derringer/traitor
 	name = "\improper .357 Syndicate Derringer"

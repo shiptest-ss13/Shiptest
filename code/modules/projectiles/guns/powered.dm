@@ -1,19 +1,22 @@
 /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	default_cell_type = /obj/item/stock_parts/cell/gun
-	ammo_overlay_sections = 3
+	var/charge_sections = 3
+	var/bullet_energy_cost = 0
 
 /obj/item/gun/ballistic/automatic/powered/fill_gun()
+	. = ..()
 	if(default_cell_type)
 		installed_cell = new default_cell_type(src)
 	update_appearance()
 
-/obj/item/gun/ballistic/automatic/powered/examine(mob/user)
-	. = ..()
+/obj/item/gun/ballistic/automatic/powered/examine_ammo_count(mob/user)
+	var/list/dat = list()
 	if(installed_cell)
-		. += "<span class='notice'>[src]'s cell is [round(installed_cell.charge / installed_cell.maxcharge, 0.1) * 100]% full.</span>"
+		dat += span_notice("[src]'s cell is [round(installed_cell.charge / installed_cell.maxcharge, 0.1) * 100]% full.")
 	else
-		. += "<span class='notice'>[src] doesn't seem to have a cell!</span>"
+		dat += span_notice("[src] doesn't seem to have a cell!")
+	return dat
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(installed_cell))
@@ -26,25 +29,28 @@
 		return FALSE
 	return ..()
 
-/obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/ballistic/automatic/powered/before_firing(atom/target,mob/user)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
 	if(shot?.energy_cost)
-		installed_cell.use(shot.energy_cost)
+		bullet_energy_cost = shot.energy_cost
+
+/obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	installed_cell.use(bullet_energy_cost)
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/get_cell()
 	return installed_cell
 
 /obj/item/gun/ballistic/automatic/powered/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
-	if(!..())
-		return
+	if(..())
+		return TRUE
 	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/new_cell = new_mag
 		if(installed_cell)
 			to_chat(user, "<span class='warning'>\The [new_mag] already has a cell</span>")
 		insert_cell(user, new_cell)
 
-/obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+/obj/item/gun/ballistic/automatic/powered/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
@@ -61,7 +67,7 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+/obj/item/gun/ballistic/automatic/powered/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	installed_cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
@@ -102,4 +108,4 @@
 /obj/item/gun/ballistic/automatic/powered/proc/get_charge_ratio()
 	if(!installed_cell)
 		return FALSE
-	return CEILING(clamp(installed_cell.charge / installed_cell.maxcharge, 0, 1) * ammo_overlay_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
+	return CEILING(clamp(installed_cell.charge / installed_cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.

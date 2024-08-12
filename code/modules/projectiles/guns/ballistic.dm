@@ -186,8 +186,6 @@
 	return chambered
 
 /obj/item/gun/ballistic/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
-	if(!..())
-		return FALSE
 	if (!internal_magazine && istype(new_mag, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = new_mag
 		if (!magazine)
@@ -227,7 +225,7 @@
 		if (empty_alarm && last_shot_succeeded)
 			playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
 			update_appearance()
-		if (empty_autoeject && last_shot_succeeded && !internal_magazine)
+		if (reciever_flags & AMMO_RECIEVER_AUTO_EJECT && last_shot_succeeded && !internal_magazine)
 			eject_magazine(display_message = FALSE)
 			update_appearance()
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_LOCKING)
@@ -280,10 +278,6 @@
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
-	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
-	. += "It has [get_ammo_count(count_chambered)] round\s remaining."
-	if (!chambered)
-		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"

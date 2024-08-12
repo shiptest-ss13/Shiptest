@@ -18,7 +18,7 @@
 	empty_indicator = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	ammo_overlay_sections = 4
+	charge_sections = 4
 	ammo_x_offset = 2
 	manufacturer = MANUFACTURER_NANOTRASEN
 

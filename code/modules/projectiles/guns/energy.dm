@@ -43,21 +43,15 @@
 		)
 	)
 
+	gun_features_flags = GUN_AMMO_COUNTER|GUN_AMMO_COUNT_BY_SHOTS_REMAINING
+
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
-		installed_cell.use(round(installed_cell.charge / severity))
+		adjust_current_rounds(installed_cell, round(get_ammo_count() / severity))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
 		update_appearance()
-
-/obj/item/gun/energy/get_cell()
-	return installed_cell
-
-/obj/item/gun/energy/Initialize(mapload, spawn_empty)
-	. = ..()
-	if(selfcharge)
-		START_PROCESSING(SSobj, src)
 
 /obj/item/gun/energy/ComponentInitialize()
 	. = ..()
@@ -67,7 +61,7 @@
 	if(default_ammo_type)
 		installed_cell = new default_ammo_type(src)
 	if(spawn_empty_mag)
-		installed_cell.use(installed_cell.maxcharge)
+		adjust_current_rounds(installed_cell, get_max_ammo(TRUE))
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	update_appearance()
@@ -118,11 +112,6 @@
 		select_fire(user)
 		update_appearance()
 
-/obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	if(reload(A, user, params))
-		return
-	return ..()
-
 /obj/item/gun/energy/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
 	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/new_cell = new_mag
@@ -134,7 +123,7 @@
 			else
 				to_chat(user, span_notice("\The [src] already has a cell."))
 
-/obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+/obj/item/gun/energy/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(!(C.type in allowed_ammo_types))
 		to_chat(user, span_warning("[C] cannot fit into [src]!"))
 		return FALSE
@@ -148,7 +137,7 @@
 		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 		return FALSE
 
-/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+/obj/item/gun/energy/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	installed_cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
@@ -181,7 +170,7 @@
 	if(safety && !visuals)
 		return FALSE
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	return !QDELETED(installed_cell) ? (installed_cell.charge >= shot.rounds_per_shot) : FALSE
+	return !QDELETED(installed_cell) ? (get_ammo_count(TRUE) >= shot.rounds_per_shot) : FALSE
 
 /obj/item/gun/energy/recharge_newshot(no_cyborg_drain)
 	if (!ammo_type || !installed_cell)
@@ -199,7 +188,7 @@
 		installed_cell.give(shot.rounds_per_shot)	//... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[select]
-		if(installed_cell.charge >= AC.rounds_per_shot) //if there's enough power in the cell cell...
+		if(get_ammo_count(TRUE) >= AC.rounds_per_shot) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
@@ -285,10 +274,14 @@
 
 /obj/item/gun/energy/adjust_current_rounds(obj/item/mag, new_rounds)
 	var/obj/item/stock_parts/cell/gun/cell = mag
-	cell?.charge += new_rounds
+	return cell?.use(new_rounds)
 
 /obj/item/gun/energy/get_ammo_count(countchambered = TRUE)
 	return installed_cell.charge
+
+/obj/item/gun/energy/get_rounds_per_shot()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+	return shot.rounds_per_shot
 
 /obj/item/gun/energy/get_max_ammo(countchambered = TRUE)
 	return installed_cell.maxcharge
@@ -301,7 +294,6 @@
 			else
 				STOP_PROCESSING(SSobj, src)
 	. = ..()
-
 
 /obj/item/gun/energy/ignition_effect(atom/A, mob/living/user)
 	if(!can_shoot() || !ammo_type[select])
@@ -316,29 +308,28 @@
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			installed_cell.use(E.rounds_per_shot)
+			adjust_current_rounds(installed_cell, E.rounds_per_shot)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			installed_cell.use(E.rounds_per_shot)
+			adjust_current_rounds(installed_cell, E.rounds_per_shot)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
-			installed_cell.use(E.rounds_per_shot)
+			adjust_current_rounds(installed_cell, E.rounds_per_shot)
 			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
-
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	if(ammo_type.len > 1)
-		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 	if(installed_cell)
-		. += "\The [name]'s cell has [installed_cell.percent()]% charge remaining."
-		. += "\The [name] has [round(installed_cell.charge/shot.rounds_per_shot)] shots remaining on <b>[shot.select_name]</b> mode."
+		. += "\The [name] is on <b>[shot.select_name]</b> mode."
+		if(ammo_type.len > 1)
+			. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
+

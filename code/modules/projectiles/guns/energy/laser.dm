@@ -1,5 +1,5 @@
 /obj/item/gun/energy/laser
-	name = "SL L-204 laser gun"
+	name = "\improper SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 
 	icon_state = "laser"
@@ -25,7 +25,7 @@
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro
-	name ="SL L-104 retro laser gun"
+	name ="\improper SL L-104 retro laser gun"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'

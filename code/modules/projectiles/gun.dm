@@ -68,8 +68,6 @@
 //BALLISTIC
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
-	///Do we eject the magazine upon runing out of ammo?
-	var/empty_autoeject = FALSE
 
 	///Actual magazine currently contained within the gun
 	var/obj/item/ammo_box/magazine/magazine
@@ -317,6 +315,9 @@
 	///Spawns the mag emtpy
 	var/spawn_empty_mag = FALSE
 
+	var/gun_features_flags = GUN_AMMO_COUNTER
+	var/reciever_flags = NONE
+
 /obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
@@ -331,6 +332,8 @@
 	INVOKE_ASYNC(src, PROC_REF(fill_gun))
 	if(sawn_off)
 		sawoff(forced = TRUE)
+	if(selfcharge)
+		START_PROCESSING(SSobj, src)
 
 /obj/item/gun/proc/fill_gun()
 	return
@@ -392,11 +395,27 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(has_safety)
-		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
-
 	if(manufacturer)
-		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
+		. += "It has <b>[manufacturer]</b> engraved on it."
+	if(has_safety)
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. <b>Ctrl-Click</b> to toggle the safety."
+	. += examine_ammo_count(user)
+
+/obj/item/gun/proc/examine_ammo_count(mob/user)
+	var/list/dat = list()
+	if(get_max_ammo(TRUE) > 0)
+		if(gun_features_flags & GUN_AMMO_COUNTER)
+			if(get_max_ammo(TRUE) && gun_features_flags & GUN_AMMO_COUNT_BY_PERCENTAGE)
+				dat += "It has [round((get_ammo_count(TRUE) / get_max_ammo(TRUE)) * 100)] percent remaining."
+			else if(get_max_ammo(TRUE) && gun_features_flags & GUN_AMMO_COUNT_BY_SHOTS_REMAINING)
+				dat += "It has [round(get_ammo_count(TRUE) / get_rounds_per_shot())] shots remaining."
+			else
+				dat += "It has [get_ammo_count(TRUE)] round\s remaining."
+		else
+			dat += "It's loaded[chambered?" and has a round chambered":""]."
+	else
+		dat += "It's unloaded[chambered?" but has a round chambered":""]."
+	return dat
 
 /obj/item/gun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -436,7 +455,6 @@
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
-
 
 /obj/item/gun/proc/recharge_newshot()
 	return
@@ -1082,7 +1100,6 @@
 /obj/item/gun/proc/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
 	if(currently_firing_burst)
 		return FALSE
-	return TRUE
 
 /obj/item/gun/proc/adjust_current_rounds(obj/item/mag, new_rounds)
 	return
@@ -1092,6 +1109,9 @@
 
 /obj/item/gun/proc/get_max_ammo(countchamber = TRUE)
 	return
+
+/obj/item/gun/proc/get_rounds_per_shot()
+	return 1
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
@@ -1134,4 +1154,16 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 
 ///used for sawing guns, causes the gun to fire without the input of the user
 /obj/item/gun/proc/blow_up(mob/user)
+	return
+
+/obj/item/gun/get_cell()
+	return installed_cell
+
+/obj/item/gun/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+	return
+
+/obj/item/gun/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+	return
+
+/obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	return

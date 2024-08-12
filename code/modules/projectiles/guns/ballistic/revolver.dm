@@ -384,7 +384,7 @@
 	if (chambered && countchambered)
 		boolets++
 	if (magazine)
-		boolets += magazine.ammo_count(countempties)
+		boolets += magazine.ammo_count(countempties) - 1
 	return boolets
 
 /obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
@@ -407,10 +407,14 @@
 
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
-	var/live_ammo = get_ammo_count(FALSE, FALSE)
-	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
+
+/obj/item/gun/ballistic/revolver/examine_ammo_count(mob/user)
+	var/list/dat = ..()
+	var/live_ammo = get_ammo_count(FALSE, FALSE)
+	dat += "[live_ammo ? live_ammo : "None"] of those are live rounds."
+	return dat
 
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	var/fan = FALSE
@@ -592,7 +596,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	default_ammo_type = null
 
 /obj/item/gun/ballistic/revolver/ashhand
-	name = "HP Ashhand"
+	name = "\improper HP Ashhand"
 	desc = "A massive, long-barreled revolver often used by the Saint-Roumain Militia as protection against big game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'

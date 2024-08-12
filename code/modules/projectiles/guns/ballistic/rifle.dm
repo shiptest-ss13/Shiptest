@@ -43,14 +43,14 @@
 		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
 		update_appearance()
-		if (magazine && !magazine?.ammo_count() && empty_autoeject && !internal_magazine)
+		if (magazine && !magazine?.ammo_count() && reciever_flags & AMMO_RECIEVER_AUTO_EJECT && !internal_magazine)
 			eject_magazine(display_message = FALSE)
 			update_appearance()
 		return
 	drop_bolt(user)
 
 /obj/item/gun/ballistic/rifle/eject_magazine(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
-	if (!bolt_locked && empty_autoeject)
+	if (!bolt_locked && reciever_flags & AMMO_RECIEVER_AUTO_EJECT)
 		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
 		return
 	return ..()
@@ -86,7 +86,7 @@
 
 	internal_magazine = FALSE
 	default_ammo_type = /obj/item/ammo_box/magazine/illestren_a850r
-	empty_autoeject = TRUE
+	reciever_flags = AMMO_RECIEVER_AUTO_EJECT
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
