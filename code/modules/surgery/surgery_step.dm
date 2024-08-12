@@ -1,5 +1,5 @@
 #define SURGERY_FUCKUP_CHANCE 50
-#define SURGERY_DRUNK_MOD 50
+#define SURGERY_DRUNK_MOD 40
 
 /datum/surgery_step
 	var/name
