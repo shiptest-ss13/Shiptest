@@ -35,6 +35,7 @@
 	dry_fire_text = "snap"
 	wield_slowdown = 0.3
 
+	reciever_flags = AMMO_RECIEVER_HANDFULS|AMMO_RECIEVER_ROTATES_CHAMBER|AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_TOGGLES_OPEN_EJECTS
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
@@ -51,7 +52,7 @@
 
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
+	. += span_info("You can use the it with your <b>other empty hand</b> to empty the cylinder.")
 
 /obj/item/gun/ballistic/revolver/update_overlays()
 	. = ..()
@@ -379,13 +380,11 @@
 		C.spin()
 		chamber_round(FALSE)
 
-/obj/item/gun/ballistic/revolver/get_ammo_count(countchambered = FALSE, countempties = TRUE)
-	var/boolets = 0 //mature var names for mature people
-	if (chambered && countchambered)
-		boolets++
+/obj/item/gun/ballistic/revolver/get_ammo_count(countchambered = TRUE, countempties = TRUE)
+	var/rounds = 0 //mature var names for mature people
 	if (magazine)
-		boolets += magazine.ammo_count(countempties) - 1
-	return boolets
+		rounds += magazine.ammo_count(countempties)
+	return rounds
 
 /obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
 	if(semi_auto)//apogee said double actions should have normal safeties, so...
@@ -408,11 +407,11 @@
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	if (current_skin)
-		. += "It can be spun with <b>alt+click</b>"
+		. += span_info("It can be spun with <b>Alt-Click</b>")
 
 /obj/item/gun/ballistic/revolver/examine_ammo_count(mob/user)
 	var/list/dat = ..()
-	var/live_ammo = get_ammo_count(FALSE, FALSE)
+	var/live_ammo = get_ammo_count(TRUE, FALSE)
 	dat += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 	return dat
 

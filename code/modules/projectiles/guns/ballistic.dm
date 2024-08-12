@@ -129,7 +129,7 @@
 	update_appearance()
 
 ///Handles all the logic needed for magazine insertion
-/obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
+/obj/item/gun/ballistic/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
 	if(!istype(inserted_mag, default_ammo_type))
 		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
@@ -151,7 +151,7 @@
 		return FALSE
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
-/obj/item/gun/ballistic/proc/eject_magazine(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
+/obj/item/gun/ballistic/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
 	if(bolt_type == BOLT_TYPE_OPEN)
 		chambered = null
 	if (magazine.ammo_count())
@@ -168,7 +168,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	if (tac_load)
 		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-			if (insert_magazine(user, tac_load, FALSE))
+			if (insert_mag(user, tac_load, FALSE))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else
 				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
@@ -189,10 +189,10 @@
 	if (!internal_magazine && istype(new_mag, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = new_mag
 		if (!magazine)
-			insert_magazine(user, AM)
+			insert_mag(user, AM)
 		else
 			if (tac_reloads)
-				eject_magazine(user, FALSE, AM)
+				eject_mag(user, FALSE, AM)
 			else
 				to_chat(user, span_notice("There's already a [magazine_wording] in \the [src]."))
 		return TRUE
@@ -205,7 +205,7 @@
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
-				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
+				if (!chambered && !(reciever_flags & AMMO_RECIEVER_REQUIRES_UNIQUE_ACTION) && !(reciever_flags & AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE))
 					chamber_round()
 				new_mag.update_appearance()
 				update_appearance()
@@ -226,7 +226,7 @@
 			playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
 			update_appearance()
 		if (reciever_flags & AMMO_RECIEVER_AUTO_EJECT && last_shot_succeeded && !internal_magazine)
-			eject_magazine(display_message = FALSE)
+			eject_mag(display_message = FALSE)
 			update_appearance()
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_LOCKING)
 			bolt_locked = TRUE
@@ -243,7 +243,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
 	if(!internal_magazine && loc == user && user.is_holding(src) && magazine)
-		eject_magazine(user)
+		eject_mag(user)
 		return
 	return ..()
 
@@ -279,8 +279,8 @@
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
 	if (bolt_locked)
-		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+		. += span_notice("The [bolt_wording] is locked back and needs to be released before firing.")
+	. += span_info("You can [bolt_wording] it by pressing the <b>unique action</b> key. By default, this is <b>Space</b>")
 
 /*
 /obj/item/gun/ballistic/adjust_current_rounds(obj/item/mag, new_rounds)

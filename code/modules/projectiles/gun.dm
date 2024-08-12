@@ -316,7 +316,7 @@
 	var/spawn_empty_mag = FALSE
 
 	var/gun_features_flags = GUN_AMMO_COUNTER
-	var/reciever_flags = NONE
+	var/reciever_flags = AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_AUTO_EJECT
 
 /obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
@@ -398,7 +398,7 @@
 	if(manufacturer)
 		. += "It has <b>[manufacturer]</b> engraved on it."
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. <b>Ctrl-Click</b> to toggle the safety."
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. [span_info("<b>Ctrl-Click</b> to toggle the safety.")]"
 	. += examine_ammo_count(user)
 
 /obj/item/gun/proc/examine_ammo_count(mob/user)
@@ -1101,6 +1101,14 @@
 	if(currently_firing_burst)
 		return FALSE
 
+///Handles all the logic needed for magazine insertion
+/obj/item/gun/proc/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
+	return
+
+///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
+/obj/item/gun/proc/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
+	return
+
 /obj/item/gun/proc/adjust_current_rounds(obj/item/mag, new_rounds)
 	return
 
@@ -1158,12 +1166,6 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 
 /obj/item/gun/get_cell()
 	return installed_cell
-
-/obj/item/gun/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	return
-
-/obj/item/gun/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	return
 
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	return

@@ -38,18 +38,18 @@
 
 /obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
-		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
+		to_chat(user, span_notice("You open the bolt of \the [src]."))
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
 		update_appearance()
 		if (magazine && !magazine?.ammo_count() && reciever_flags & AMMO_RECIEVER_AUTO_EJECT && !internal_magazine)
-			eject_magazine(display_message = FALSE)
+			eject_mag(display_message = FALSE)
 			update_appearance()
 		return
 	drop_bolt(user)
 
-/obj/item/gun/ballistic/rifle/eject_magazine(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
+/obj/item/gun/ballistic/rifle/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
 	if (!bolt_locked && reciever_flags & AMMO_RECIEVER_AUTO_EJECT)
 		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
 		return
@@ -86,7 +86,7 @@
 
 	internal_magazine = FALSE
 	default_ammo_type = /obj/item/ammo_box/magazine/illestren_a850r
-	reciever_flags = AMMO_RECIEVER_AUTO_EJECT
+	reciever_flags = AMMO_RECIEVER_REQUIRES_UNIQUE_ACTION|AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_UNIQUE_ACTION_LOCKS|AMMO_RECIEVER_AUTO_EJECT
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE

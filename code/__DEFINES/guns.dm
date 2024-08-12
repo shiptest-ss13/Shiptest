@@ -74,8 +74,20 @@
 #define GUN_AMMO_COUNT_BY_PERCENTAGE (1<<4)
 #define GUN_AMMO_COUNT_BY_SHOTS_REMAINING (1<<5)
 
+//reciever_flags. Used to determin how the gun cycles, what kind of ammo it uses, etc.
+#define AMMO_RECIEVER_REQUIRES_UNIQUE_ACTION (1<<0)
+	#define AMMO_RECIEVER_UNIQUE_ACTION_LOCKS (1<<1)
 #define AMMO_RECIEVER_MAGAZINES (1<<2)
 	#define AMMO_RECIEVER_AUTO_EJECT (1<<3)
+#define AMMO_RECIEVER_HANDFULS (1<<4)
+#define AMMO_RECIEVER_TOGGLES_OPEN (1<<5)
+	#define AMMO_RECIEVER_TOGGLES_OPEN_EJECTS (1<<6)
+#define AMMO_RECIEVER_CLOSED (1<<7)
+#define AMMO_RECIEVER_ROTATES_CHAMBER (1<<8)
+#define AMMO_RECIEVER_DO_NOT_EJECT_HANDFULS (1<<9)
+#define AMMO_RECIEVER_DO_NOT_EMPTY_ROUNDS_AFTER_FIRE (1<<10)
+#define AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE (1<<11) //The ammo stay in the magazine until the last moment
+#define AMMO_RECIEVER_AUTO_EJECT_LOCKED (1<<12) //Not allowed to turn automatic unloading off
 
 /////////////////
 // ATTACHMENTS //

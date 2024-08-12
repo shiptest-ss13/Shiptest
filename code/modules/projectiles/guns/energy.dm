@@ -103,7 +103,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
 	if(!internal_magazine && loc == user && user.is_holding(src) && installed_cell && tac_reloads)
-		eject_cell(user)
+		eject_mag(user)
 		return
 	return ..()
 
@@ -116,14 +116,14 @@
 	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/new_cell = new_mag
 		if (!installed_cell)
-			insert_cell(user, new_cell)
+			insert_mag(user, new_cell)
 		else
 			if (tac_reloads)
-				eject_cell(user, new_cell)
+				eject_mag(user, new_cell)
 			else
 				to_chat(user, span_notice("\The [src] already has a cell."))
 
-/obj/item/gun/energy/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+/obj/item/gun/energy/insert_mag(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(!(C.type in allowed_ammo_types))
 		to_chat(user, span_warning("[C] cannot fit into [src]!"))
 		return FALSE
@@ -137,7 +137,7 @@
 		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 		return FALSE
 
-/obj/item/gun/energy/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+/obj/item/gun/energy/eject_mag(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	installed_cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
@@ -147,7 +147,7 @@
 	update_appearance()
 	if(tac_load && tac_reloads)
 		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-			if(insert_cell(user, tac_load))
+			if(insert_mag(user, tac_load))
 				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
 			else
 				to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
@@ -163,7 +163,7 @@
 		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
 		if(I.use_tool(src, user, unscrewing_time, volume = 100))
 			to_chat(user, span_notice("You remove the power cell."))
-			eject_cell(user)
+			eject_mag(user)
 	return ..()
 
 /obj/item/gun/energy/can_shoot(visuals)

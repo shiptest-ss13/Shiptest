@@ -238,7 +238,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	if(prob(50) && funnysounds)
 		playsound(src, 'sound/weapons/gun/commissar/dry.ogg', 30, 0)
 
-/obj/item/gun/ballistic/automatic/pistol/commissar/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message)
+/obj/item/gun/ballistic/automatic/pistol/commissar/insert_mag(mob/user, obj/item/ammo_box/magazine/AM, display_message)
 	. = ..()
 	if(bolt_locked)
 		drop_bolt(user)
@@ -327,11 +327,11 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	has_safety = FALSE //thing barely costs anything, why would it have a safety?
 	safety = FALSE
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
+/obj/item/gun/ballistic/automatic/pistol/disposable/eject_mag(mob/user, display_message = TRUE)
 	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
 	return
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
+/obj/item/gun/ballistic/automatic/pistol/disposable/insert_mag(mob/user)
 	to_chat(user, "<span class='warning'>Theres no magazine to replace!</span>")
 	return
 
@@ -358,13 +358,13 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	tac_reloads = FALSE
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/gun/ballistic/derringer/get_ammo_count(countchambered = FALSE, countempties = TRUE)
-	var/boolets = 0 //legacy var name maturity
+/obj/item/gun/ballistic/derringer/get_ammo_count(countchambered = TRUE, countempties = TRUE)
+	var/rounds = 0
 	if (chambered && countchambered)
-		boolets++
+		rounds++
 	if (magazine)
-		boolets += magazine.ammo_count(countempties)
-	return boolets
+		rounds += magazine.ammo_count(countempties)
+	return rounds
 
 /obj/item/gun/ballistic/derringer/examine_ammo_count(mob/user)
 	var/list/dat = list()

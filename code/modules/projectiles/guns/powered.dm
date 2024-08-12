@@ -38,9 +38,6 @@
 	installed_cell.use(bullet_energy_cost)
 	return ..()
 
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return installed_cell
-
 /obj/item/gun/ballistic/automatic/powered/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
 	if(..())
 		return TRUE
@@ -50,7 +47,7 @@
 			to_chat(user, "<span class='warning'>\The [new_mag] already has a cell</span>")
 		insert_cell(user, new_cell)
 
-/obj/item/gun/ballistic/automatic/powered/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+/obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
@@ -67,7 +64,7 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/ballistic/automatic/powered/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+/obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	installed_cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
