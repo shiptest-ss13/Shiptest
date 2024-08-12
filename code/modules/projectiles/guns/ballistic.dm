@@ -248,32 +248,52 @@
 	return ..()
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
-	if(bolt_type == BOLT_TYPE_NO_BOLT)
-		chambered = null
-		var/num_unloaded = 0
-		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
-			CB.forceMove(drop_location())
-
-			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
-
-			num_unloaded++
-			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
-		if (num_unloaded)
-			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
-			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+	if(reciever_flags & AMMO_RECIEVER_TOGGLES_OPEN)
+		if (bolt_locked == FALSE && reciever_flags & AMMO_RECIEVER_TOGGLES_OPEN_EJECTS)
+			to_chat(user, "<span class='notice'>You snap open the [bolt_wording] of \the [src].</span>")
+			playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+			chambered = null
+			var/num_unloaded = 0
+			for(var/obj/item/ammo_casing/casing_bullet in get_ammo_list(FALSE, TRUE))
+				casing_bullet.forceMove(drop_location())
+				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+				casing_bullet.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_bullet.bounce_sfx_override)
+				num_unloaded++
+				SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_bullet.name)
+			if (num_unloaded)
+				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+				update_appearance()
+			bolt_locked = TRUE
 			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		return
-	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
+			return
 		drop_bolt(user)
+	else
+		if(bolt_type == BOLT_TYPE_NO_BOLT)
+			chambered = null
+			var/num_unloaded = 0
+			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+				CB.forceMove(drop_location())
+
+				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+				CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
+
+				num_unloaded++
+				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+			if (num_unloaded)
+				to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+				update_appearance()
+			else
+				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			return
+		if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
+			drop_bolt(user)
+			return
+		if (recent_rack > world.time)
+			return
+		recent_rack = world.time + rack_delay
+		rack(user)
 		return
-	if (recent_rack > world.time)
-		return
-	recent_rack = world.time + rack_delay
-	rack(user)
-	return
 
 
 /obj/item/gun/ballistic/examine(mob/user)
