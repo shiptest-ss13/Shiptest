@@ -223,3 +223,15 @@
 /turf/open/floor/plating/asteroid/snow/ice/burn_tile()
 	return FALSE
 
+/turf/open/floor/wood/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/wood/ebony/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+

@@ -131,7 +131,7 @@
 /area/space)
 "ca" = (
 /obj/effect/turf_decal/siding/brown,
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "cd" = (
 /obj/structure/table/greyscale,
@@ -160,7 +160,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 6
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "cW" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
@@ -197,8 +197,8 @@
 /turf/open/floor/grass/ship/jungle,
 /area/space)
 "dA" = (
-/obj/effect/turf_decal/spline/fancy/wood/corner{
-	dir = 1
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
@@ -284,19 +284,12 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/wood/maple,
 /area/space)
 "fu" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 8
-	},
-/obj/structure/chair/wood/wings{
-	dir = 4
-	},
-/turf/open/floor/wood/mahogany,
+/mob/living/simple_animal/hostile/bear/frontier,
+/turf/open/floor/ship/dirt/dark,
 /area/space)
 "fw" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -321,9 +314,10 @@
 /turf/open/floor/carpet/black,
 /area/space)
 "fI" = (
-/obj/structure/table/wood,
-/obj/item/modular_computer/laptop,
-/turf/open/floor/wood/mahogany,
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "gp" = (
 /obj/structure/table/wood,
@@ -353,20 +347,10 @@
 /turf/open/floor/wood/maple,
 /area/space)
 "gz" = (
-/obj/effect/turf_decal/spline/fancy/wood,
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/turf/open/floor/wood/mahogany,
+/obj/item/paper_bin,
+/obj/item/pen/fountain/captain,
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "gR" = (
 /obj/effect/turf_decal/siding/wood{
@@ -433,6 +417,11 @@
 	icon_state = "wood-broken3"
 	},
 /area/space)
+"je" = (
+/obj/structure/table/wood,
+/obj/item/modular_computer/laptop,
+/turf/open/floor/carpet/red_gold,
+/area/space)
 "jk" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 10
@@ -479,7 +468,7 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken7"
 	},
 /area/space)
@@ -520,6 +509,17 @@
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/wood/mahogany,
 /area/space)
+"ka" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-25";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "kl" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
@@ -538,6 +538,7 @@
 "kq" = (
 /obj/structure/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
 /turf/open/floor/carpet/black,
 /area/space)
 "kX" = (
@@ -631,10 +632,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "mP" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 6
-	},
-/obj/structure/safe,
+/obj/structure/closet/cabinet,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "nc" = (
@@ -689,13 +687,9 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "no" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 10
-	},
 /obj/structure/table/wood,
-/obj/item/paper_bin,
-/obj/item/pen/fountain/captain,
-/turf/open/floor/wood/mahogany,
+/obj/machinery/fax/ruin,
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "nr" = (
 /obj/item/target/syndicate,
@@ -721,7 +715,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
 	},
-/turf/open/floor/wood/ebony{
+/turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken2"
 	},
 /area/space)
@@ -738,7 +732,7 @@
 	},
 /area/space)
 "pK" = (
-/turf/open/floor/wood/ebony{
+/turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken5"
 	},
 /area/space)
@@ -886,7 +880,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
-/turf/open/floor/wood/ebony{
+/turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken2"
 	},
 /area/space)
@@ -894,7 +888,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 10
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "sk" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -918,21 +912,20 @@
 /obj/effect/turf_decal/corner/opaque/neutral{
 	dir = 4
 	},
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plating/rust,
 /area/space)
 "sx" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/structure/table/wood,
-/obj/machinery/fax/ruin,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "sD" = (
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/space)
 "sO" = (
 /obj/effect/turf_decal/siding/wood{
@@ -999,6 +992,11 @@
 /turf/open/floor/wood/mahogany{
 	icon_state = "wood-broken2"
 	},
+/area/space)
+"tr" = (
+/obj/effect/turf_decal/spline/fancy/wood,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "tD" = (
 /obj/structure/table/wood,
@@ -1113,15 +1111,14 @@
 	},
 /area/space)
 "vf" = (
-/obj/item/mob_trophy/fang{
-	pixel_y = -3;
-	pixel_x = 3
+/obj/structure/table/wood,
+/obj/item/seeds/cannabis,
+/obj/item/clothing/mask/cigarette/pipe,
+/obj/item/lighter{
+	pixel_x = 11;
+	pixel_y = 7
 	},
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon."
-	},
-/turf/closed/indestructible/wood,
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "vq" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -1167,7 +1164,7 @@
 /turf/open/floor/wood/mahogany,
 /area/space)
 "wm" = (
-/turf/open/floor/wood/ebony{
+/turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken6"
 	},
 /area/space)
@@ -1258,6 +1255,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	minimum_distance = 2;
+	retreat_distance = 2
+	},
 /turf/open/floor/wood/maple,
 /area/space)
 "yi" = (
@@ -1291,14 +1292,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "zz" = (
-/obj/structure/table/wood,
-/obj/item/seeds/cannabis,
-/obj/item/clothing/mask/cigarette/pipe,
-/obj/item/lighter{
-	pixel_x = 11;
-	pixel_y = 7
-	},
-/turf/open/floor/wood/mahogany,
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "zN" = (
 /obj/structure/destructible/tribal_torch/lit,
@@ -1417,6 +1411,7 @@
 /obj/item/ammo_casing/a8_50r{
 	projectile_type = null
 	},
+/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/space)
 "Bx" = (
@@ -1427,16 +1422,7 @@
 	},
 /area/space)
 "BL" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 4
-	},
-/obj/structure/table/wood,
-/obj/item/storage/fancy/cigarettes/cigars/cohiba{
-	pixel_y = 5
-	},
-/obj/item/clothing/head/frontier/peaked{
-	pixel_y = 9
-	},
+/obj/structure/table/wood/fancy,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "BQ" = (
@@ -1458,7 +1444,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "Cq" = (
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken5"
 	},
 /area/space)
@@ -1499,9 +1485,15 @@
 /obj/structure/railing/wood{
 	dir = 9
 	},
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken2"
 	},
+/area/space)
+"CW" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "Dj" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1554,10 +1546,12 @@
 /obj/structure/flora/stump{
 	icon_state = "anchored_rod";
 	pixel_y = -3;
-	name = "rod"
+	name = "rod";
+	desc = "A metal rod struck into the ground."
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_y = 24
+	pixel_y = 24;
+	name = "\improper Dented Minutemen X11 Helmet"
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/space)
@@ -1635,14 +1629,14 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/space)
 "Gy" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/space)
 "GD" = (
 /obj/structure/railing/wood,
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken5"
 	},
 /area/space)
@@ -1733,6 +1727,10 @@
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Jq" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/space)
 "Js" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/brown,
@@ -1752,7 +1750,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/space)
 "Kg" = (
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/space)
 "Kn" = (
 /obj/item/stack/sheet/mineral/wood/twentyfive,
@@ -1807,7 +1805,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "LC" = (
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken"
 	},
 /area/space)
@@ -1824,6 +1822,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
 /area/space)
+"LP" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/turf/open/floor/wood/ebony/icemoon,
+/area/space)
 "LT" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -1838,7 +1842,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "Mt" = (
-/turf/open/floor/wood{
+/turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken4"
 	},
 /area/space)
@@ -1854,6 +1858,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/space)
+"Ni" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+	retreat_distance = null;
+	minimum_distance = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"No" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged,
+/turf/open/floor/grass/ship/jungle,
+/area/space)
 "Nq" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -1868,6 +1886,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged,
 /turf/open/floor/wood/maple,
 /area/space)
 "NL" = (
@@ -1884,9 +1903,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "NO" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 5
-	},
+/obj/structure/safe,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "Oa" = (
@@ -1988,6 +2005,14 @@
 	icon_state = "wood-broken7"
 	},
 /area/space)
+"PE" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured,
+/turf/open/floor/carpet/black,
+/area/space)
 "PQ" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/wood/ebony,
@@ -2009,6 +2034,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
 	},
@@ -2018,10 +2044,26 @@
 /turf/open/floor/ship/dirt/dark,
 /area/space)
 "Rd" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 9
+/obj/structure/bed/pod,
+/obj/item/bedsheet/blue,
+/obj/structure/curtain/cloth/fancy,
+/obj/item/toy/plush/kari,
+/turf/open/floor/carpet/red_gold,
+/area/space)
+"Rt" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = -4;
+	pixel_y = 6
 	},
-/turf/open/floor/wood/mahogany,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/turf/open/floor/carpet/red_gold,
 /area/space)
 "RH" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -2122,13 +2164,13 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "UJ" = (
 /obj/effect/turf_decal/siding/brown{
 	dir = 9
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/icemoon,
 /area/space)
 "UK" = (
 /obj/effect/turf_decal/siding/brown{
@@ -2206,6 +2248,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Wk" = (
@@ -2455,7 +2498,7 @@
 /area/space)
 "ZZ" = (
 /obj/structure/railing/wood,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/space)
 
 (1,1,1) = {"
@@ -2771,7 +2814,7 @@ tl
 eW
 Gm
 Gm
-ds
+No
 lh
 Kn
 cl
@@ -2819,7 +2862,7 @@ Gq
 nm
 Gm
 rm
-rm
+fu
 ti
 cl
 Gm
@@ -2901,7 +2944,7 @@ Js
 cy
 Gm
 zN
-qd
+Ni
 qd
 eU
 qO
@@ -2969,9 +3012,9 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
 Hl
+bb
+bb
 Hl
 Hl
 "}
@@ -3015,10 +3058,10 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
-bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3062,10 +3105,10 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
-bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3109,10 +3152,10 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
-bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3155,11 +3198,11 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
-bb
-bb
 Hl
+Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3201,12 +3244,12 @@ bb
 Hl
 Hl
 Hl
-bb
-bb
-bb
-bb
 Hl
 Hl
+Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3248,12 +3291,12 @@ bb
 bb
 Hl
 Hl
-bb
-bb
-bb
-bb
 Hl
 Hl
+Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3295,12 +3338,12 @@ bb
 bb
 Hl
 Hl
-bb
-bb
-bb
-bb
 Hl
 Hl
+Hl
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3333,7 +3376,7 @@ bb
 bb
 Gy
 Gy
-Gy
+Jq
 Bj
 Gy
 Gy
@@ -3341,13 +3384,13 @@ Gy
 Gy
 bb
 bb
-Hl
-bb
-bb
-bb
 bb
 Hl
 Hl
+bb
+bb
+bb
+bb
 Hl
 Hl
 "}
@@ -3372,8 +3415,8 @@ II
 Wk
 qN
 UJ
-qd
-qd
+LP
+LP
 sd
 Gm
 bb
@@ -3391,8 +3434,8 @@ bb
 bb
 bb
 bb
-Hl
-Hl
+bb
+bb
 Hl
 Hl
 Hl
@@ -3437,9 +3480,9 @@ bb
 bb
 bb
 bb
-Hl
-Hl
-Hl
+bb
+bb
+bb
 Hl
 Hl
 Hl
@@ -3467,7 +3510,7 @@ OR
 Gm
 oT
 sc
-UK
+CW
 cS
 Gm
 bb
@@ -3485,8 +3528,8 @@ bb
 bb
 bb
 bb
-Hl
-Hl
+bb
+bb
 Hl
 Hl
 Hl
@@ -3529,11 +3572,11 @@ Gy
 Gy
 bb
 bb
-Hl
-bb
-bb
 bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 Hl
@@ -3554,10 +3597,10 @@ cW
 Do
 xM
 Gm
-vf
+pS
 Rd
-kl
-fu
+zz
+zz
 no
 Ws
 Kg
@@ -3577,11 +3620,11 @@ Gy
 bb
 bb
 Hl
-bb
-bb
-bb
-bb
 Hl
+Hl
+bb
+bb
+bb
 Hl
 Hl
 Hl
@@ -3602,7 +3645,7 @@ tn
 xM
 Gm
 bv
-dA
+zz
 zz
 fI
 gz
@@ -3625,10 +3668,10 @@ bb
 bb
 Hl
 Hl
-bb
-bb
-bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 Hl
@@ -3648,11 +3691,11 @@ wy
 GN
 KR
 Gm
-fw
-Vz
-Vz
-Vz
-KR
+ka
+zz
+vf
+je
+Rt
 Ws
 Kg
 Kg
@@ -3672,10 +3715,10 @@ bb
 bb
 Hl
 Hl
-bb
-bb
-bb
 Hl
+bb
+bb
+bb
 Hl
 Hl
 Hl
@@ -3736,7 +3779,7 @@ KH
 jS
 aJ
 tN
-yO
+PE
 yO
 Fy
 aJ
@@ -3746,7 +3789,7 @@ fw
 Vz
 Vz
 Vz
-KR
+tr
 Ws
 LC
 Cq
@@ -3790,10 +3833,10 @@ rO
 xM
 Gm
 yp
-wi
-Vz
-Vz
-KR
+sx
+sx
+sx
+dA
 Ws
 Kg
 Mt
@@ -3836,9 +3879,9 @@ sY
 Vo
 xM
 Gm
-pS
+Gm
 NO
-sx
+BL
 BL
 mP
 Ws

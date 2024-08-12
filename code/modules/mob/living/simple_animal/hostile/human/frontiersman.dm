@@ -53,6 +53,18 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
+	icon_state = "frontiersmansurgeon"
+	icon_living = "frontiersmansurgeon"
+
+	minimum_distance = 1
+	retreat_distance = null
+	projectiletype = /obj/projectile/bullet/dart/tranq
+	projectilesound = 'sound/items/syringeproj.ogg'
+	casingtype = null
+	ranged_message = "fires the syringe gun at"
+	ranged_cooldown_time = 30
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin
 	icon_state = "frontiersmanrangedrifle"
 	icon_living = "frontiersmanrangedrifle"
@@ -107,6 +119,31 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame
+	icon_state = "frontiersmanflametrooper"
+	icon_living = "frontiersmanflametrooper"
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
+				/obj/item/tank/internals/emergency_oxygen/engi)
+	maxbodytemp = 1000
+
+	minimum_distance = 2
+	retreat_distance = 1
+	casingtype = null
+	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
+	projectiletype = /obj/projectile/bullet/incendiary/simulated_flamethrower
+
+/obj/projectile/bullet/incendiary/simulated_flamethrower
+	name = "\improper flames"
+	damage = 0
+	speed = 1
+	range = 5
+
+	icon_state = null
+	icon = null
+
+	ignite_turfs = TRUE
+	power = 10
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
 	icon_state = "frontiersmanrangedak47"
 	icon_living = "frontiersmanrangedak47"
@@ -117,7 +154,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/automatic/assault/skm)
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
 	icon_living = "frontiersmanrangedak47_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
@@ -127,7 +164,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)

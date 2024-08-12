@@ -33,7 +33,7 @@
 	var/check_friendly_fire = FALSE // Should the ranged mob check for friendlies when shooting
 	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
-
+	var/shoot_point_blank = FALSE // If this mob will still shoot even in melee range.
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -315,7 +315,10 @@
 			Goto(target,move_to_delay,minimum_distance)
 		if(target)
 			if(isturf(target_from.loc) && target.Adjacent(target_from)) //If they're next to us, attack
-				MeleeAction()
+				if(shoot_point_blank && ranged_cooldown <= world.time)
+					OpenFire(target)
+				else
+					MeleeAction()
 			else
 				if(rapid_melee > 1 && target_distance <= melee_queue_distance)
 					MeleeAction(FALSE)
