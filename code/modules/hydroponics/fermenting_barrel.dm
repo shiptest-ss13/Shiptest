@@ -78,11 +78,11 @@
 
 /obj/structure/fermenting_barrel/gunpowder
 	name = "Gunpowder Barrel"
-	desc = "A wooden barrel packed with gunpowder. You should probably keep this away sparks or open fires."
+	desc = "A wooden barrel packed with gunpowder. You should probably keep this away from sparks or open fires."
 
 /obj/structure/fermenting_barrel/gunpowder/Initialize()
 	. = ..()
-	//reagents.add_reagent(datum/reagent/gunpowder,300)
+	reagents.add_reagent(/datum/reagent/gunpowder, 200)
 
 /obj/structure/fermenting_barrel/distiller
 	name = "Distiller"

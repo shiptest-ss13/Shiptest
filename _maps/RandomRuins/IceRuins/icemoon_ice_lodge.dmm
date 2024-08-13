@@ -25,6 +25,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/powered/icemoon/lodge/residential)
 "am" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -483,12 +486,12 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "iE" = (
 /obj/item/toy/plush/moth/punished{
-	name = "Flufftunado";
-	desc = "For the love of god Mothtressor!";
+	name = "Flufftunato";
+	desc = "For the love of god Mothtresor!";
 	pixel_y = 9
 	},
 /obj/structure/fermenting_barrel,
-/turf/open/floor/plating/asteroid/icerock,
+/turf/open/floor/plating/asteroid/icerock/temperate,
 /area/overmap_encounter/planetoid/cave/explored)
 "iG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3474,7 +3477,7 @@ cy
 VL
 zN
 Yo
-Yo
+am
 eU
 qO
 aa
@@ -3521,7 +3524,7 @@ dn
 OS
 Xx
 yj
-am
+uR
 uR
 uR
 LZ
@@ -4528,8 +4531,8 @@ Hl
 Hl
 bb
 bb
-Hl
 Ox
+Hl
 Hl
 Hl
 Hl
