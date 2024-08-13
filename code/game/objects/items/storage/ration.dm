@@ -18,11 +18,11 @@
 	update_overlays()
 
 /obj/item/storage/ration/update_overlays()
-    . = ..()
-    var/mutable_appearance/ration_overlay
-    if(emblem_icon_state)
-        ration_overlay = mutable_appearance(icon, emblem_icon_state)
-    add_overlay(ration_overlay)
+	. = ..()
+	var/mutable_appearance/ration_overlay
+	if(emblem_icon_state)
+		ration_overlay = mutable_appearance(icon, emblem_icon_state)
+	add_overlay(ration_overlay)
 
 /obj/item/storage/ration/ComponentInitialize()
 	. = ..()
