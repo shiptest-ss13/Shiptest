@@ -112,3 +112,8 @@
 	name = "URGENT!"
 	default_raw_text = "A hastily written note has been scribbled here... <br><br> Please use the ore redemption machine in the cargo office for smelting. PLEASE! <br><br>--The Research Staff"
 
+//////////// Ruins
+
+/obj/item/paper/crumpled/bloody/fluff/ruin/icemoon/cellar_warning
+	name = "Scrawled Note"
+	default_raw_text = "<center> <br><h1>HEY! YOU. </h1><br><h2>Yeah. You. <br>One of the Hunters got away and holed up in the cellar and set up a whole bunch of traps. Crazy asshole has already killed like four of our guys in the murder basement. So boss says keep the door sealed and let the prick starve.<br><br> SO DONT OPEN IT.</h2>"

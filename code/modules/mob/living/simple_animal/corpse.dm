@@ -270,8 +270,14 @@
 	outfit = /datum/outfit/job/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
 
+/obj/effect/mob_spawn/human/corpse/srm/hunter
+	name = "SRM Hunter"
+	id_job = "Hunter"
+	outfit = /datum/outfit/job/roumain/security
+	id_access_list = null
+
 /obj/effect/mob_spawn/human/corpse/srm/montagne
 	name = "SRM Montagne"
 	id_job = "Hunter Montagne"
-	/datum/outfit/job/roumain/captain
+	outfit = /datum/outfit/job/roumain/captain
 	id_access_list = null
