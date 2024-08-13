@@ -182,6 +182,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"dd" = (
+/obj/effect/mob_spawn/human/corpse/srm/hunter,
+/turf/open/floor/grass/ship/jungle,
+/area/ruin/powered/icemoon/lodge/residential)
 "dl" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 8
@@ -194,6 +198,9 @@
 	icon_state = "skull";
 	pixel_x = 4;
 	pixel_y = -1
+	},
+/obj/item/paper/crumpled/bloody/fluff/ruin/icemoon/cellar_warning{
+	pixel_x = -12
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -266,7 +273,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "eC" = (
@@ -624,6 +631,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
+"kZ" = (
+/obj/structure/fluff/fokoff_sign{
+	desc = "A crudsely-made sign with the words 'fok of' written in some sort of red paint."
+	},
+/turf/open/floor/plating/asteroid/icerock/temperate,
+/area/overmap_encounter/planetoid/cave/explored)
 "lh" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/grass/ship/jungle,
@@ -865,7 +878,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/candle/tribal_torch,
-/obj/item/gun/ballistic/automatic/smg/firestorm/pan,
 /obj/item/ammo_casing/c45{
 	projectile_type = null
 	},
@@ -901,6 +913,9 @@
 	},
 /obj/item/ammo_casing/c45{
 	projectile_type = null
+	},
+/obj/item/gun/ballistic/automatic/smg/firestorm{
+	spawnwithmagazine = 0
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -1180,7 +1195,7 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "tr" = (
 /obj/effect/turf_decal/spline/fancy/wood,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "tx" = (
@@ -1533,6 +1548,19 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "yo" = (
 /obj/structure/flora/grass/jungle,
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow{
+	pixel_y = 15;
+	pixel_x = -5
+	},
+/obj/item/storage/wallet{
+	pixel_x = 7;
+	pixel_y = -7
+	},
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 11;
+	pixel_x = -6
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "yp" = (
@@ -1662,9 +1690,9 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "AX" = (
 /obj/structure/punji_sticks,
-/obj/effect/mob_spawn/human/corpse/frontier,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/gibspawner/human/bodypartless,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Bf" = (
@@ -1712,6 +1740,34 @@
 /area/ruin/powered/icemoon/lodge/gear_room)
 "BL" = (
 /obj/structure/table/wood/fancy,
+/obj/item/gem/amber{
+	pixel_y = 20;
+	pixel_x = -2
+	},
+/obj/item/candle/infinite{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/candle/infinite{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/candle/infinite{
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/item/candle/infinite{
+	pixel_y = 12;
+	pixel_x = 10
+	},
+/obj/item/candle/infinite{
+	pixel_y = 2;
+	pixel_x = 10
+	},
+/obj/item/candle/infinite{
+	pixel_y = 22;
+	pixel_x = 10
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "BQ" = (
@@ -1993,7 +2049,26 @@
 /area/ruin/powered/icemoon/lodge/gear_room)
 "HQ" = (
 /obj/structure/table/wood/fancy,
-/obj/item/gem/amber,
+/obj/item/candle/infinite{
+	pixel_y = 11;
+	pixel_x = -2
+	},
+/obj/item/candle/infinite{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/candle/infinite{
+	pixel_y = 11;
+	pixel_x = 4
+	},
+/obj/item/candle/infinite{
+	pixel_y = 0;
+	pixel_x = 10
+	},
+/obj/item/candle/infinite{
+	pixel_y = 11;
+	pixel_x = 10
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "HV" = (
@@ -2213,7 +2288,7 @@
 "Ni" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "No" = (
@@ -2255,7 +2330,7 @@
 	retreat_distance = 2;
 	check_friendly_fire = 1
 	},
-/turf/open/floor/plating/asteroid/icerock/temperate,
+/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "NO" = (
 /obj/structure/safe,
@@ -2394,6 +2469,7 @@
 /area/ruin/powered/icemoon/lodge/cellar)
 "PM" = (
 /obj/structure/bonfire/prelit,
+/obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
 "PQ" = (
@@ -2437,6 +2513,13 @@
 /obj/item/toy/plush/kari,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
+"Rl" = (
+/obj/effect/mob_spawn/human/corpse,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 8
+	},
+/turf/open/floor/ship/dirt/dark,
+/area/ruin/powered/icemoon/lodge/residential)
 "Rt" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
@@ -2479,6 +2562,12 @@
 "RX" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/closet/crate/trashcart,
+/obj/item/clothing/suit/armor/roumain,
+/obj/item/clothing/head/cowboy/sec/roumain,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 3;
+	pixel_x = -10
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "Sf" = (
@@ -2970,7 +3059,7 @@ Gy
 Gy
 Gy
 Gy
-Hm
+Gy
 Hl
 Hl
 Hl
@@ -3133,8 +3222,8 @@ bL
 Oa
 No
 PM
-rm
-ds
+Rl
+dd
 rF
 Gm
 Gm
@@ -3378,7 +3467,7 @@ Hl
 Hl
 Hl
 bb
-bb
+kZ
 bb
 bb
 Hl
@@ -3650,7 +3739,7 @@ bb
 bb
 bb
 bb
-NN
+bb
 bb
 bb
 bb
@@ -3789,9 +3878,9 @@ bb
 bb
 Za
 Za
-Jq
+NN
 Bj
-Za
+Jq
 Za
 Za
 Za
@@ -4648,7 +4737,7 @@ Hl
 Hl
 Hl
 Hl
-bb
+kZ
 bb
 Gy
 Gy

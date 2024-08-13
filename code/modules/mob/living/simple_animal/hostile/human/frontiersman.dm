@@ -156,7 +156,7 @@
 	casingtype = null
 	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame/OpenFire()
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
 	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [target.name]!</span>")
@@ -244,7 +244,7 @@
 	minbodytemp = 0
 
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
