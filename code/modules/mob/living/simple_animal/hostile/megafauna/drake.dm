@@ -273,19 +273,21 @@ Difficulty: Medium
 	dragon_fire_line(src, turfs)
 
 //fire line keeps going even if dragon is deleted
-/proc/dragon_fire_line(source, list/turfs)
+/proc/dragon_fire_line(source, list/turfs, fire_source = "fire breath", ignite_turfs = FALSE, power = 4, flame_color = "red")
 	var/list/hit_list = list()
 	for(var/turf/T in turfs)
 		if(istype(T, /turf/closed))
 			break
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
+		if(ignite_turfs)
+			T.IgniteTurf(power,flame_color)
 		for(var/mob/living/L in T.contents)
 			if(L in hit_list || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s fire breath!</span>")
+			to_chat(L, "<span class='userdanger'>You're hit by [source]'s [fire_source]!</span>")
 
 		// deals damage to mechs
 		for(var/obj/mecha/M in T.contents)

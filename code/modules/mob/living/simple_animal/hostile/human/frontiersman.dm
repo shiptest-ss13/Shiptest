@@ -56,6 +56,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
 	icon_state = "frontiersmansurgeon"
 	icon_living = "frontiersmansurgeon"
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon)
 
 	minimum_distance = 1
 	retreat_distance = null
@@ -64,6 +65,7 @@
 	casingtype = null
 	ranged_message = "fires the syringe gun at"
 	ranged_cooldown_time = 30
+
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin
 	icon_state = "frontiersmanrangedrifle"
@@ -122,27 +124,23 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame
 	icon_state = "frontiersmanflametrooper"
 	icon_living = "frontiersmanflametrooper"
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	maxbodytemp = 1000
 
-	minimum_distance = 2
-	retreat_distance = 1
+	minimum_distance = 1
+	retreat_distance = null
+	shoot_point_blank = TRUE
 	casingtype = null
 	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
-	projectiletype = /obj/projectile/bullet/incendiary/simulated_flamethrower
 
-/obj/projectile/bullet/incendiary/simulated_flamethrower
-	name = "\improper flames"
-	damage = 0
-	speed = 1
-	range = 5
-
-	icon_state = null
-	icon = null
-
-	ignite_turfs = TRUE
-	power = 10
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/flame/OpenFire()
+	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
+	var/list/burn_turfs = getline(src, T) - get_turf(src)
+	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [target.name]!</span>")
+	playsound(src, projectilesound, 100, TRUE)
+	dragon_fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
+	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
 	icon_state = "frontiersmanrangedak47"
