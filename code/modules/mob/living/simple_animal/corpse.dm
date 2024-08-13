@@ -137,8 +137,8 @@
 	outfit = /datum/outfit/job/frontiersmen/doctor/corpse
 
 /datum/outfit/job/frontiersmen/doctor/corpse
+	name = "Frontiersmen Surgeon Corpse"
 	r_pocket = null
-
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	outfit = /datum/outfit/frontier/trooper
