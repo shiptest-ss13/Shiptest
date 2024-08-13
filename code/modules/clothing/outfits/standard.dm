@@ -158,7 +158,7 @@
 /datum/outfit/centcom/death_commando
 	name = "Death Commando"
 
-	uniform = /obj/item/clothing/under/color/black
+	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/space/hardsuit/deathsquad
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated

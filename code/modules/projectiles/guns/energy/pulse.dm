@@ -29,7 +29,7 @@
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
-	desc = "A next-generation pulse carbine capable of decimating overwhelming opposition. This weapon has accrued a kill count of 2564 dead since it was first seen in issue #10 'DEATHSQUAD CLASSICS'."
+	desc = "A next-generation pulse carbine capable of decimating overwhelming opposition. This weapon has accrued a ridiculous kill count since it was first seen in issue #10 'DEATHSQUAD CLASSICS'."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
