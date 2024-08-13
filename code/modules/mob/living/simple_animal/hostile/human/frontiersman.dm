@@ -153,8 +153,9 @@
 	minimum_distance = 1
 	retreat_distance = null
 	shoot_point_blank = TRUE
-	casingtype = null
+	projectiletype = null
 	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
+	casingtype = null
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
