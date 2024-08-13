@@ -315,7 +315,7 @@
 			Goto(target,move_to_delay,minimum_distance)
 		if(target)
 			if(isturf(target_from.loc) && target.Adjacent(target_from)) //If they're next to us, attack
-				if(shoot_point_blank && ranged_cooldown <= world.time)
+				if(ranged && shoot_point_blank && ranged_cooldown <= world.time)
 					OpenFire(target)
 				else
 					MeleeAction()
