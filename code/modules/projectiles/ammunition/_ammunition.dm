@@ -29,7 +29,7 @@
 	/// If true, the casing's sprite will automatically be transformed in Initialize().
 	/// Disable for things like rockets or other heavy ammunition that should only appear right-side up.
 	var/auto_rotate = TRUE
-	/// If you dont want to bullets to randomly change position to move on spawn. For mapping.
+	/// If you dont want to bullets to randomly change position on spawn. For mapping.
 	var/auto_scatter = TRUE
 
 	var/pellets = 1								//Pellets for spreadshot
