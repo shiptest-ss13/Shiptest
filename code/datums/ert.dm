@@ -49,7 +49,7 @@
 	rename_team = "Deathsquad"
 	code = "Delta"
 	mission = "Leave no witnesses."
-	polldesc = "an overwhelmingly powerful and mysterious Strike Team"
+	polldesc = "a Death Commando Team"
 
 /datum/ert/marine
 	leader_role = /datum/antagonist/ert/marine
