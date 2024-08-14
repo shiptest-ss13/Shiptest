@@ -520,9 +520,9 @@
 				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
 	//WS - Bootleg IPC revival
 		if(stat == DEAD && !(flags & SHOCK_ILLUSION) && ((isipc(src) && can_be_revived()) || can_defib()))
-			if (health > HEALTH_THRESHOLD_CRIT)
+			if(health > HEALTH_THRESHOLD_CRIT)
 				adjustOxyLoss(health - HEALTH_THRESHOLD_CRIT, 0) //FUCK you. 100 oxygen damage.
-			else if (health < HEALTH_THRESHOLD_FULLCRIT) //oh. they might actually die. that would suck.
+			else if(health < HEALTH_THRESHOLD_FULLCRIT) //oh. they might actually die. that would suck.
 				adjustOxyLoss(-20) //let's try to make that not happen
 				adjustToxLoss(-10)
 			set_heartattack(FALSE)
