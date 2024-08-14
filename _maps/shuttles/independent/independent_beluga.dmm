@@ -1211,9 +1211,13 @@
 	name = "firearm storage"
 	},
 /obj/machinery/light/directional/north,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag,
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
+	pixel_x = 5
+	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "lE" = (
