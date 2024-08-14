@@ -519,9 +519,16 @@
 			if(heart.Restart() && stat == CONSCIOUS)
 				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
 	//WS - Bootleg IPC revival
-	if(stat == DEAD && isipc(src) && can_be_revived())
+	if(stat == DEAD && !(flags & SHOCK_ILLUSION) && ((isipc(src) && can_be_revived()) || can_defib()))
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
-			revive(FALSE, FALSE)
+			adjustOxyLoss(-30)
+			adjustToxLoss(-10) //just enough so they might possibly not instantly die
+			set_heartattack(FALSE)
+			grab_ghost() //get IN get IN
+			emote("gasp")
+			Jitter(100)
+			SEND_SIGNAL(H, COMSIG_LIVING_MINOR_SHOCK)
+			log_combat(user, H, "revived", source)
 	//WS - END
 	electrocution_animation(40)
 
