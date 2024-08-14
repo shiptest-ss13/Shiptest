@@ -200,7 +200,7 @@
 /datum/blackmarket_item/ammo/huge_weapon_cell
 	name = "Extra Large Weapon Power Cells"
 	desc = "We're way past double A now. These extra-large power cells (in both charge and size!) are purpose built for the most heavy duty energy weapons."
-	item = /obj/item/stock_parts/cell/gun/upgraded
+	item = /obj/item/stock_parts/cell/gun/large
 
 	price_min = 2500
 	price_max = 4000
