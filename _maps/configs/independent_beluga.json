@@ -5,10 +5,9 @@
 	"namelists": ["CRUISE", "NATURAL"],
 	"map_short_name": "Beluga-class",
 	"map_path": "_maps/shuttles/independent/independent_beluga.dmm",
-	"description": "The Beluga-Class is a transport vessel for those with especially rich blood. Featuring a modest kitchen, hired Inteq security, and luxurious decoration, the Beluga is a first choice pick for many wealthy spacers trying to get from point A to B. The independent ship features several rooms for its guests and a well furnished meeting room for any corporate occassion.",
+	"description": "The Beluga-Class is a transport vessel for those with especially rich blood. Featuring a modest kitchen, hired Inteq security, and luxurious decoration, the Beluga is a first choice pick for many wealthy spacers trying to get from point A to B. The ISF-produced ship features several rooms for its guests and a well furnished meeting room for any corporate occassion.",
 	"tags": [
 		"RP Focus",
-		"Riot",
 		"Service"
 	],
 	"starting_funds": 4000,
@@ -24,30 +23,27 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+		"Culinary Technician": {
+			"outfit": "/datum/outfit/job/independent/bartender/disarmed",
 			"slots": 1
 		},
 		"Private Security Officer": {
 			"outfit": "/datum/outfit/job/inteq/security/beluga",
 			"slots": 2
 		},
-		"High-Class Passenger": {
-			"outfit": "/datum/outfit/job/independent/lawyer",
-			"slots": 4
-		},
-		"Bartender": {
-			"outfit": "/datum/outfit/job/independent/bartender",
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 1
 		},
-		"Janitor": {
-			"outfit": "/datum/outfit/job/independent/janitor",
-			"slots": 1
-		},
-		"Assistant": {
-			"outfit": "/datum/outfit/job/independent/assistant",
+		"Service Staff": {
+			"outfit": "/datum/outfit/job/independent/assistant/waiter",
 			"slots": 2
+		},
+		"High-Class Passenger": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 4
 		}
+
 	},
 	"enabled": true
 }

@@ -38,7 +38,6 @@
 
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/misc/assistantformal
-	head = /obj/item/clothing/head/beret/grey
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"

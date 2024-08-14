@@ -164,7 +164,6 @@
 	accessory = /obj/item/clothing/accessory/waistcoat
 	suit = null
 	belt = null
-	mask = null
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
