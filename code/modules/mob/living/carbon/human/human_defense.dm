@@ -513,22 +513,24 @@
 		return
 	//Note we both check that the user is in cardiac arrest and can actually heartattack
 	//If they can't, they're missing their heart and this would runtime
-	if(undergoing_cardiac_arrest() && can_heartattack() && !(flags & SHOCK_ILLUSION))
-		if(shock_damage * siemens_coeff >= 1 && prob(25))
+	if(shock_damage * siemens_coeff >= 1 && prob(25)) //you aint from weewish if you never done this before
+		if(undergoing_cardiac_arrest() && can_heartattack() && !(flags & SHOCK_ILLUSION))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
 				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
 	//WS - Bootleg IPC revival
-	if(stat == DEAD && !(flags & SHOCK_ILLUSION) && ((isipc(src) && can_be_revived()) || can_defib()))
-		if(shock_damage * siemens_coeff >= 1 && prob(25))
-			adjustOxyLoss(-30)
-			adjustToxLoss(-10) //just enough so they might possibly not instantly die
+		if(stat == DEAD && !(flags & SHOCK_ILLUSION) && ((isipc(src) && can_be_revived()) || can_defib()))
+			if (health > HEALTH_THRESHOLD_CRIT)
+				adjustOxyLoss(health - HEALTH_THRESHOLD_CRIT, 0) //FUCK you. 100 oxygen damage.
+			else if (health < HEALTH_THRESHOLD_FULLCRIT) //oh. they might actually die. that would suck.
+				adjustOxyLoss(-20) //let's try to make that not happen
+				adjustToxLoss(-10)
 			set_heartattack(FALSE)
 			grab_ghost() //get IN get IN
-			emote("gasp")
+			revive(FALSE, FALSE)
 			Jitter(100)
-			SEND_SIGNAL(H, COMSIG_LIVING_MINOR_SHOCK)
-			log_combat(user, H, "revived", source)
+			SEND_SIGNAL(src, COMSIG_LIVING_MINOR_SHOCK)
+			log_combat(source, src, "revived")
 	//WS - END
 	electrocution_animation(40)
 
