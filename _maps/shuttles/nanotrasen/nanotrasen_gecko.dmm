@@ -217,11 +217,6 @@
 	pixel_x = -8;
 	pixel_y = 5
 	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c100,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "bQ" = (
@@ -1089,10 +1084,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"kJ" = (
-/obj/structure/sign/nanotrasen/ns,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/port)
 "kL" = (
 /obj/structure/chair/stool,
 /obj/structure/cable{
@@ -1826,6 +1817,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"rY" = (
+/obj/structure/sign/nanotrasen/ns,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/port)
 "sg" = (
 /obj/machinery/door/airlock/mining{
 	frequency = 1331;
@@ -1968,6 +1963,10 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
+"tO" = (
+/obj/structure/sign/nanotrasen/ns,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "tQ" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/industrial/warning,
@@ -2113,10 +2112,6 @@
 /obj/item/storage/box/bodybags,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
-"vg" = (
-/obj/structure/sign/nanotrasen/ns,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engine)
 "vi" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -5115,7 +5110,7 @@
 "YH" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/starboard)
+/area/ship/engineering/engine)
 "YJ" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
@@ -5347,7 +5342,7 @@ hu
 hu
 hu
 hu
-vg
+YH
 Ug
 Iv
 Ug
@@ -5359,7 +5354,7 @@ Ug
 Ug
 VZ
 Ug
-vg
+YH
 hu
 hu
 hu
@@ -5601,7 +5596,7 @@ uP
 wB
 "}
 (12,1,1) = {"
-kJ
+rY
 Wo
 VC
 tB
@@ -5627,7 +5622,7 @@ wB
 wB
 mM
 dk
-YH
+tO
 "}
 (13,1,1) = {"
 tB
