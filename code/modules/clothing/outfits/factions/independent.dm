@@ -37,7 +37,8 @@
 	name = "Independent - Assistant (Formal Uniform)"
 
 	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/misc/assistantformal
+	uniform = /obj/item/clothing/under/suit/navy
+	alt_uniform = /obj/item/clothing/under/suit/burgundy
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"

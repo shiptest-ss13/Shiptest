@@ -1770,8 +1770,7 @@
 	name = "Privacy Shutters";
 	pixel_x = 21;
 	pixel_y = -9;
-	dir = 8;
-	req_access_txt = "38"
+	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/library)
@@ -3185,8 +3184,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "DH" = (
-/obj/machinery/door/airlock{
-	name = "bathroom"
+/obj/machinery/door/airlock/public{
+	req_ship_access = 1;
+	name = "Bathroom"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
