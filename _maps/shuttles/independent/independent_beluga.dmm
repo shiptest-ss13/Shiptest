@@ -495,11 +495,17 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/item/modular_computer/laptop/preset/civilian{
-	pixel_y = 6
-	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -8;
+	pixel_y = -1
+	},
+/obj/item/radio/intercom/table{
+	pixel_y = 7;
+	dir = 1;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -694,6 +700,7 @@
 	},
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/glasses/sunglasses/big,
+/obj/item/clothing/glasses/hud/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ge" = (
@@ -988,7 +995,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "iX" = (
-/obj/structure/chair/comfy/grey/directional/west,
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
 /obj/effect/landmark/start/depsec,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1028,6 +1037,7 @@
 	pixel_x = -5;
 	pixel_y = -3
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "jj" = (
@@ -1208,7 +1218,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/door/window/brigdoor/southright{
 	req_access_txt = "1";
-	name = "firearm storage"
+	name = "Firearm Storage"
 	},
 /obj/machinery/light/directional/north,
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
@@ -1498,34 +1508,31 @@
 /obj/item/storage/bag/tray{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/condiment/soysauce{
-	pixel_x = 6;
-	pixel_y = 11
+/obj/item/reagent_containers/food/condiment/mayonnaise{
+	pixel_y = 17;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/condiment/hotsauce{
+	pixel_y = 16;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/food/condiment/bbqsauce{
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/condiment/saltshaker{
-	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
-	pixel_x = -5;
-	pixel_y = 12
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/condiment/soysauce{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/condiment/peppermill{
-	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
-	pixel_x = -3;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/condiment/pack/ketchup{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/condiment/pack/ketchup{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/condiment/pack/ketchup{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/structure/sign/poster/official/fruit_bowl{
-	pixel_y = 32
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
@@ -1591,7 +1598,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	icon_state = "armory";
-	name = "ammunition storage";
+	name = "Ammunition Storage";
 	req_access_txt = "1"
 	},
 /obj/item/ammo_box/magazine/co9mm/rubber{
@@ -1887,9 +1894,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "qR" = (
@@ -1971,14 +1975,12 @@
 /obj/item/radio/intercom/table{
 	pixel_y = -2
 	},
-/turf/open/floor/plasteel/sepia,
-/area/ship/crew/canteen)
-"rI" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/fluff/hedge/opaque,
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 4
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 7;
+	pixel_x = -14
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -14
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
@@ -2443,7 +2445,8 @@
 "wO" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/door/airlock/wood{
-	id_tag = "premier_dorm2"
+	id_tag = "premier_dorm2";
+	name = "Passenger Room #2"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2889,6 +2892,9 @@
 	pixel_y = 20;
 	pixel_x = 6
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "BF" = (
@@ -3158,25 +3164,15 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
 "DA" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/sign/poster/contraband/twelve_gauge{
 	pixel_y = -32
 	},
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 12;
-	pixel_y = 17
-	},
-/obj/item/radio/intercom/table{
-	pixel_y = 0;
-	dir = 8;
-	pixel_x = -6
-	},
-/obj/item/megaphone/sec{
-	pixel_y = 6;
-	pixel_x = 7
+/obj/machinery/computer/security{
+	dir = 4;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3640,7 +3636,8 @@
 /area/ship/bridge)
 "HS" = (
 /obj/machinery/door/airlock/wood{
-	id_tag = "premier_dorm1"
+	id_tag = "premier_dorm1";
+	name = "Passenger Room #1"
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/door/firedoor/border_only{
@@ -3736,7 +3733,7 @@
 /area/ship/crew/cryo)
 "IB" = (
 /obj/machinery/door/airlock/wood{
-	name = "Dormitory";
+	name = "Cryogenics";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4182,8 +4179,6 @@
 	pixel_x = -7
 	},
 /obj/item/spacecash/bundle/pocketchange,
-/obj/item/clothing/glasses/hud/security,
-/obj/item/clothing/glasses/hud/security,
 /obj/item/gun/energy/kalix/pistol,
 /obj/item/gun/energy/e_gun/mini,
 /obj/item/spacecash/bundle/c1000{
@@ -4301,6 +4296,9 @@
 	pixel_x = 23;
 	pixel_y = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Nm" = (
@@ -4308,7 +4306,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/closet/secure_closet{
 	icon_state = "sec";
-	name = "armor storage";
+	name = "Armor Storage";
 	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/armor/vest/alt{
@@ -4413,6 +4411,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/library)
 "Ok" = (
@@ -4803,7 +4804,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access_txt = "1";
-	name = "equipment storage"
+	name = "Equipment Storage"
 	},
 /obj/item/reagent_containers/spray/pepper/empty{
 	pixel_y = -3;
@@ -4821,6 +4822,7 @@
 	pixel_x = -6;
 	pixel_y = -4
 	},
+/obj/item/megaphone/sec,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "SK" = (
@@ -4836,14 +4838,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "SW" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/secure_data/laptop{
-	dir = 4;
-	pixel_x = -7;
-	pixel_y = 5
-	},
 /obj/machinery/camera/autoname{
 	dir = 5
+	},
+/obj/machinery/computer/secure_data{
+	dir = 4;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5102,7 +5102,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "VV" = (
-/obj/machinery/computer/atmos_alert{
+/obj/machinery/computer/security{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5186,7 +5186,7 @@
 "WG" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/closet/wall/red/directional/south{
-	name = "Officer's Locker"
+	name = "Enforcer's Locker"
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/item/storage/backpack/messenger/inteq,
@@ -6035,7 +6035,7 @@ uL
 TQ
 Pa
 jd
-rI
+aP
 Ld
 RG
 Qb
