@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Gecko-class Salvage Runner",
-	"prefix": "NTSV",
+	"prefix": "NSSV",
 	"namelists": [
 		"NANOTRASEN",
 		"MERCANTILE",
@@ -18,7 +18,7 @@
 	"starting_funds": 5000,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"outfit": "/datum/outfit/job/nanotrasen/captain/ns",
 			"officer": true,
 			"slots": 1
 		},
@@ -27,16 +27,16 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Engine Technician": {
-			"outfit": "/datum/outfit/job/nanotrasen/engineer",
-			"slots": 2
-		},
 		"Salvage Technician": {
 			"outfit": "/datum/outfit/job/nanotrasen/miner",
 			"slots": 2
 		},
+		"Engine Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/atmos",
+			"slots": 1
+		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
 			"slots": 4
 		}
 	},
