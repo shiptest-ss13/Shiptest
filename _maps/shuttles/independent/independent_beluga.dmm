@@ -438,7 +438,8 @@
 "ej" = (
 /obj/machinery/computer/security/telescreen{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	network = list("ss13")
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -561,6 +562,9 @@
 	},
 /obj/machinery/door/window/southright,
 /obj/item/bikehorn/rubberducky,
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 1
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/hallway/fore)
 "fe" = (
