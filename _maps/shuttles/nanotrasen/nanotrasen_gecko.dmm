@@ -241,7 +241,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/external)
+/area/ship/maintenance/starboard)
 "ch" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -703,10 +703,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
-"go" = (
-/obj/structure/sign/nanotrasen/ns,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/port)
 "gr" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1093,6 +1089,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"kJ" = (
+/obj/structure/sign/nanotrasen/ns,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/port)
 "kL" = (
 /obj/structure/chair/stool,
 /obj/structure/cable{
@@ -2113,6 +2113,10 @@
 /obj/item/storage/box/bodybags,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
+"vg" = (
+/obj/structure/sign/nanotrasen/ns,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engine)
 "vi" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -2932,10 +2936,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"Dk" = (
-/obj/structure/sign/nanotrasen/ns,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/starboard)
 "Du" = (
 /obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -5115,7 +5115,7 @@
 "YH" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engine)
+/area/ship/maintenance/starboard)
 "YJ" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
@@ -5347,7 +5347,7 @@ hu
 hu
 hu
 hu
-YH
+vg
 Ug
 Iv
 Ug
@@ -5359,7 +5359,7 @@ Ug
 Ug
 VZ
 Ug
-YH
+vg
 hu
 hu
 hu
@@ -5601,7 +5601,7 @@ uP
 wB
 "}
 (12,1,1) = {"
-go
+kJ
 Wo
 VC
 tB
@@ -5627,7 +5627,7 @@ wB
 wB
 mM
 dk
-Dk
+YH
 "}
 (13,1,1) = {"
 tB
