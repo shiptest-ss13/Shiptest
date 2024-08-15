@@ -45,6 +45,7 @@
 
 /datum/surgery_step/incise/nobleed //silly friendly!
 	experience_given = 1 //safer so not as much XP
+	fuckup_damage = 0
 
 /datum/surgery_step/incise/nobleed/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]...</span>",
