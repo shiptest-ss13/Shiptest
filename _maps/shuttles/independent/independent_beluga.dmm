@@ -4799,25 +4799,17 @@
 	dir = 6
 	},
 /obj/structure/rack,
-/obj/item/storage/box/flashbangs{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/storage/box/handcuffs{
-	pixel_y = 7;
-	pixel_x = -8
-	},
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access_txt = "1";
 	name = "Equipment Storage"
 	},
-/obj/item/reagent_containers/spray/pepper/empty{
-	pixel_y = -3;
-	pixel_x = 10
+/obj/item/megaphone/sec{
+	pixel_x = 8;
+	pixel_y = 6
 	},
-/obj/item/reagent_containers/spray/pepper/empty{
-	pixel_y = -3;
-	pixel_x = 3
+/obj/item/storage/box/handcuffs{
+	pixel_y = 7;
+	pixel_x = -8
 	},
 /obj/item/kitchen/knife/combat/survival{
 	pixel_x = -12;
@@ -4827,7 +4819,14 @@
 	pixel_x = -6;
 	pixel_y = -4
 	},
-/obj/item/megaphone/sec,
+/obj/item/reagent_containers/spray/pepper/empty{
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/spray/pepper/empty{
+	pixel_y = -3;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "SK" = (
