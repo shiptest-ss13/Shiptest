@@ -39,6 +39,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/suit/navy
 	alt_uniform = /obj/item/clothing/under/suit/burgundy
+	l_pocket = /obj/item/spacecash/bundle/smallrand
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"
