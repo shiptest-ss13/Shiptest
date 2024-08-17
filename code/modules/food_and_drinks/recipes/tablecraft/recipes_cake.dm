@@ -124,7 +124,7 @@
 	subcategory = CAT_CAKE
 
 /datum/crafting_recipe/food/bscccake
-	name = "blackberry and strawberry chocolate cake"
+	name = "Blackberry and Strawberry Chocolate cake"
 	reqs = list(
 		/obj/item/food/cake/plain = 1,
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 2,
@@ -134,7 +134,7 @@
 	subcategory = CAT_CAKE
 
 /datum/crafting_recipe/food/bscvcake
-	name = "blackberry and strawberry vanilla cake"
+	name = "Blackberry and Strawberry Vanilla cake"
 	reqs = list(
 		/obj/item/food/cake/plain = 1,
 		/obj/item/reagent_containers/food/snacks/grown/berries = 5
@@ -143,7 +143,7 @@
 	subcategory = CAT_CAKE
 
 /datum/crafting_recipe/food/vanillacake
-	name = "vanilla cake"
+	name = "Vanilla cake"
 	always_availible = FALSE
 	reqs = list(
 		/obj/item/food/cake/plain = 1,

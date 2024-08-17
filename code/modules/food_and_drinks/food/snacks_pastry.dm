@@ -502,16 +502,6 @@
 	tastes = list("meat" = 2, "dough" = 2, "melty cheese"= 2)
 	foodtype = GRAIN
 
-/obj/item/reagent_containers/food/snacks/donkpocket/honk
-	name = "\improper Honk-pocket"
-	desc = "The award-winning donk-pocket that won the hearts of clowns and humans alike."
-	icon_state = "donkpocketbanana"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/banana = 4)
-	cooked_type = /obj/item/reagent_containers/food/snacks/donkpocket/warm/honk
-	filling_color = "#XXXXXX"
-	tastes = list("banana" = 2, "dough" = 2, "children's antibiotics" = 1)
-	foodtype = GRAIN
-
 /obj/item/reagent_containers/food/snacks/donkpocket/warm/honk
 	name = "warm Honk-pocket"
 	desc = "The award-winning donk-pocket, now warm and toasty."
