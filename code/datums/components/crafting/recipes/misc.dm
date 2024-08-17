@@ -1,19 +1,3 @@
-/datum/crafting_recipe/skateboard
-	name = "Skateboard"
-	result = /obj/vehicle/ridden/scooter/skateboard
-	time = 60
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/rods = 10)
-	category = CAT_MISC
-
-/datum/crafting_recipe/scooter
-	name = "Scooter"
-	result = /obj/vehicle/ridden/scooter
-	time = 65
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/rods = 12)
-	category = CAT_MISC
-
 /datum/crafting_recipe/wheelchair
 	name = "Wheelchair"
 	result = /obj/vehicle/ridden/wheelchair
@@ -50,16 +34,6 @@
 	reqs = list(/obj/item/paper = 5)
 	category = CAT_MISC
 
-/datum/crafting_recipe/flashlight_eyes
-	name = "Flashlight Eyes"
-	result = /obj/item/organ/eyes/robotic/flashlight
-	time = 10
-	reqs = list(
-		/obj/item/flashlight = 2,
-		/obj/item/restraints/handcuffs/cable = 1
-	)
-	category = CAT_MISC
-
 /datum/crafting_recipe/paperframes
 	name = "Paper Frames"
 	result = /obj/item/stack/sheet/paperframes/five
@@ -87,12 +61,6 @@
 	result = /obj/structure/curtain
 	category = CAT_MISC
 
-/datum/crafting_recipe/extendohand
-	name = "Extendo-Hand"
-	reqs = list(/obj/item/bodypart/r_arm/robot = 1, /obj/item/clothing/gloves/boxing = 1)
-	result = /obj/item/extendohand
-	category = CAT_MISC
-
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate
@@ -104,21 +72,11 @@
 	category = CAT_MISC
 
 /datum/crafting_recipe/rcl
-	name = "Makeshift Rapid Pipe Cleaner Layer"
+	name = "Makeshift Rapid Cable Layer"
 	result = /obj/item/rcl/ghetto
 	time = 40
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
 	reqs = list(/obj/item/stack/sheet/metal = 15)
-	category = CAT_MISC
-
-/datum/crafting_recipe/guillotine
-	name = "Guillotine"
-	result = /obj/structure/guillotine
-	time = 150 // Building a functioning guillotine takes time
-	reqs = list(/obj/item/stack/sheet/plasteel = 3,
-				/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/cable_coil = 10)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
 
 /datum/crafting_recipe/ghettojetpack
@@ -204,17 +162,42 @@
 				/obj/item/aquarium_kit = 1)
 	category = CAT_MISC
 
-/datum/crafting_recipe/mothplush
-	name = "Moth Plushie"
-	result = /obj/item/toy/plush/moth
-	reqs = list(/obj/item/stack/sheet/animalhide/mothroach = 1,
-				/obj/item/organ/heart = 1,
-				/obj/item/stack/sheet/cotton/cloth = 3)
-	category = CAT_MISC
-
 /datum/crafting_recipe/candorupgrade
 	name = "Candor Upgrade"
 	result = /obj/item/gun/ballistic/automatic/pistol/candor/phenex
 	reqs = list(/obj/item/stack/sheet/mineral/hidden = 4,
 				/obj/item/gun/ballistic/automatic/pistol/candor = 1)
+	category = CAT_MISC
+
+/datum/crafting_recipe/bonfire
+	name = "Bonfire"
+	time = 60
+	reqs = list(/obj/item/grown/log = 5)
+	parts = list(/obj/item/grown/log = 5)
+	blacklist = list(/obj/item/grown/log/steel)
+	result = /obj/structure/bonfire
+	category = CAT_MISC
+
+/datum/crafting_recipe/distiller
+	name = "Distiller"
+	result = /obj/structure/fermenting_barrel/distiller
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /obj/item/stack/sheet/metal = 5, /datum/reagent/srm_bacteria = 30)
+	time = 50
+	category = CAT_MISC
+
+/datum/crafting_recipe/charcoal_stylus
+	name = "Charcoal Stylus"
+	result = /obj/item/pen/charcoal
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1, /datum/reagent/ash = 30)
+	time = 30
+	category = CAT_MISC
+
+/datum/crafting_recipe/chainsaw
+	name = "Chainsaw"
+	result = /obj/item/chainsaw
+	reqs = list(/obj/item/circular_saw = 1,
+				/obj/item/stack/cable_coil = 3,
+				/obj/item/stack/sheet/plasteel = 5)
+	tools = list(TOOL_WELDER)
+	time = 50
 	category = CAT_MISC

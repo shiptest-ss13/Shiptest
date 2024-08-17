@@ -96,15 +96,6 @@
 	result = /obj/item/food/cake/brain
 	subcategory = CAT_CAKE
 
-/datum/crafting_recipe/food/slimecake
-	name = "Slime cake"
-	reqs = list(
-		/obj/item/slime_extract = 1,
-		/obj/item/food/cake/plain = 1
-	)
-	result = /obj/item/food/cake/slimecake
-	subcategory = CAT_CAKE
-
 /datum/crafting_recipe/food/pumpkinspicecake
 	name = "Pumpkin spice cake"
 	reqs = list(
@@ -112,15 +103,6 @@
 		/obj/item/reagent_containers/food/snacks/grown/pumpkin = 2
 	)
 	result = /obj/item/food/cake/pumpkinspice
-	subcategory = CAT_CAKE
-
-/datum/crafting_recipe/food/holycake
-	name = "Angel food cake"
-	reqs = list(
-		/datum/reagent/water/holywater = 15,
-		/obj/item/food/cake/plain = 1
-	)
-	result = /obj/item/food/cake/holy_cake
 	subcategory = CAT_CAKE
 
 /datum/crafting_recipe/food/poundcake
@@ -158,17 +140,6 @@
 		/obj/item/reagent_containers/food/snacks/grown/berries = 5
 	)
 	result = /obj/item/food/cake/bsvc
-	subcategory = CAT_CAKE
-
-/datum/crafting_recipe/food/clowncake
-	name = "clown cake"
-	always_availible = FALSE
-	reqs = list(
-		/obj/item/food/cake/plain = 1,
-		/obj/item/reagent_containers/food/snacks/sundae = 2,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 5
-	)
-	result = /obj/item/food/cake/clown_cake
 	subcategory = CAT_CAKE
 
 /datum/crafting_recipe/food/vanillacake
