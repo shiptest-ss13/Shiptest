@@ -105,6 +105,15 @@
 	result = /obj/item/food/cake/pumpkinspice
 	subcategory = CAT_CAKE
 
+/datum/crafting_recipe/food/angelcake
+	name = "Angel food cake"
+	reqs = list(
+		/datum/reagent/consumable/cream = 25,
+		/obj/item/food/cake/plain = 1
+	)
+	result = /obj/item/food/cake/holy_cake
+	subcategory = CAT_CAKE
+
 /datum/crafting_recipe/food/poundcake
 	name = "Pound cake"
 	reqs = list(
