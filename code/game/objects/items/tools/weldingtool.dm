@@ -96,8 +96,6 @@
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		flamethrower_screwdriver(I, user)
-	else if(istype(I, /obj/item/stack/rods))
-		flamethrower_rods(I, user)
 	else
 		. = ..()
 	update_appearance()
@@ -281,23 +279,9 @@
 		to_chat(user, "<span class='notice'>You resecure [src] and close the fuel tank.</span>")
 		reagents.flags &= ~(OPENCONTAINER)
 	else
-		to_chat(user, "<span class='notice'>[src] can now be attached, modified, and refuelled.</span>")
+		to_chat(user, "<span class='notice'>[src] can now be refuelled.</span>")
 		reagents.flags |= OPENCONTAINER
 	add_fingerprint(user)
-
-/obj/item/weldingtool/proc/flamethrower_rods(obj/item/I, mob/user)
-	if(!status)
-		var/obj/item/stack/rods/R = I
-		if (R.use(1))
-			var/obj/item/flamethrower/F = new /obj/item/flamethrower(user.loc)
-			if(!remove_item_from_storage(F))
-				user.transferItemToLoc(src, F, TRUE)
-			F.weldtool = src
-			add_fingerprint(user)
-			to_chat(user, "<span class='notice'>You add a rod to a welder, starting to build a flamethrower.</span>")
-			user.put_in_hands(F)
-		else
-			to_chat(user, "<span class='warning'>You need one rod to start building a flamethrower!</span>")
 
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
