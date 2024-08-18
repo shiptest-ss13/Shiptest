@@ -1632,13 +1632,12 @@
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
 	pixel_y = 7
 	},
-/obj/machinery/firealarm/directional/east,
 /obj/structure/railing,
 /obj/machinery/button/door{
 	dir = 8;
 	id = "gecko_engine_vent";
 	name = "Combustion Chamber Blast Door Control";
-	pixel_x = 24;
+	pixel_x = 21;
 	pixel_y = 6;
 	sync_doors = 0
 	},
@@ -2283,6 +2282,14 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "gecko_thrusters";
+	name = "Thruster Blast Door Control";
+	pixel_x = -9;
+	pixel_y = -20;
+	sync_doors = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3476,13 +3483,6 @@
 /area/ship/hallway/aft)
 "Iz" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/button/door{
-	id = "gecko_thrusters";
-	name = "Thruster Blast Door Control";
-	pixel_x = -6;
-	pixel_y = 20;
-	sync_doors = 0
-	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -4651,6 +4651,13 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/button/door{
+	id = "gecko_thrusters";
+	name = "Thruster Blast Door Control";
+	pixel_x = -9;
+	pixel_y = 20;
+	sync_doors = 0
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Vm" = (
@@ -5247,7 +5254,10 @@
 /obj/machinery/button/ignition/incinerator/atmos{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -3
+	pixel_y = -7
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -5948,8 +5958,8 @@ hu
 hu
 hu
 hu
-Ts
 UB
+Ts
 vo
 Mf
 gN
