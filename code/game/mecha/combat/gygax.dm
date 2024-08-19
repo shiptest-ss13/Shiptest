@@ -15,6 +15,7 @@
 	internal_damage_threshold = 35
 	max_equip = 3
 	step_energy_drain = 3
+	normal_step_energy_drain = 10
 
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()
