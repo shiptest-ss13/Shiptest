@@ -149,7 +149,7 @@
 			grilled_item.name = "Powerfully Grilled [grilled_item.name]"
 			grilled_item.desc = "A [grilled_item.name]. Reminds you of your wife, wait, no, it's prettier!"
 			grilled_item.foodtype |= FRIED
-	grilled_item.AddComponent(/datum/component/sizzle, (grill_time * 5))
+	grilled_item.AddComponent(/datum/component/sizzle, (grill_time * 7.5))
 	grilled_item.foodtype |= GRILLED
 	grill_time = 0
 	grill_loop.stop()
