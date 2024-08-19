@@ -192,12 +192,12 @@
 		if(object in current_ship.current_overmap.overmap_container[current_ship.x][current_ship.y])
 			available_dock = TRUE
 
-//		//Detect any ships in this location we can dock to
-//		if(istype(object))
-//			for(var/obj/docking_port/stationary/docking_port as anything in object.shuttle_port.docking_points)
-//				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
-//					available_dock = TRUE
-//					break
+		//Detect any ships in this location we can dock to
+		if(istype(object))
+			for(var/obj/docking_port/stationary/docking_port as anything in object.shuttle_port.docking_points)
+				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
+					available_dock = TRUE
+					break
 
 		objects |= object.contents
 
