@@ -14,8 +14,7 @@
 	wreckage = /obj/structure/mecha_wreckage/gygax
 	internal_damage_threshold = 35
 	max_equip = 3
-	step_energy_drain = 3
-	normal_step_energy_drain = 10
+	base_step_energy_drain = 8
 
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()

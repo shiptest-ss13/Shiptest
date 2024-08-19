@@ -226,7 +226,7 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	. = ..()
 	flick("shield_impact", src)
-	if(!chassis.use_power((max_integrity - obj_integrity) * 100))
+	if(!chassis.use_power((max_integrity - obj_integrity) * (10 - chassis.capacitor.rating)))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
 	obj_integrity = 10000

@@ -18,9 +18,8 @@
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
-	var/normal_step_energy_drain = 10//The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
-	var/base_step_energy_drain = 10
-	var/step_energy_drain = 20 // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
+	var/base_step_energy_drain = 15 //The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
+	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15
 	var/overload_step_energy_drain_min = 100
 	max_integrity = 300 //max_integrity is base health
@@ -148,6 +147,7 @@
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
+	update_part_values()
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -226,11 +226,9 @@
 
 /obj/mecha/proc/update_part_values() ///Updates the values given by scanning module and capacitor tier, called when a part is removed or inserted.
 	if(scanmod)
-		normal_step_energy_drain = min(0, base_step_energy_drain - (5 * scanmod.rating)) //10 is normal, so on lowest part its worse, on second its ok and on higher its real good up to 0 on best
-		step_energy_drain = normal_step_energy_drain
+		step_energy_drain = max(1, base_step_energy_drain - (5 * scanmod.rating)) //10 is normal, so on lowest part its worse, on second its ok and on higher its real good up to 0 on best
 	else
-		normal_step_energy_drain = 500
-		step_energy_drain = normal_step_energy_drain
+		step_energy_drain = 500
 	if(capacitor)
 		armor = armor.modifyRating(energy = (capacitor.rating * 5)) //Each level of capacitor protects the mech against emp by 5%
 	else //because we can still be hit without a cap, even if we can't move
