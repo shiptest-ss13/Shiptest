@@ -88,3 +88,16 @@
   - imageadd: Suit Storage Units now have a visible red light when Locked - when hacked,
       Decontamination now has a red-yellow flashing light to distinguish from the
       Locked light.
+2024-08-18:
+  Cloudbreak:
+  - rscadd: Frontiersman sprites for the Vox!
+  Gristlebee:
+  - bugfix: water turfs reagent scooping
+  - code_imp: span classes to span macros
+  - refactor: acid turfs repathed under water
+  - refactor: Pouring out a reagent container is now bound to disarm intent instead
+      of help intent.
+  - rscadd: Examine hints for flipped tables
+  - bugfix: You can no longer phase through a flipped table.
+  meemofcourse:
+  - bugfix: Hardliner troopers should no longer spawn as Hardliner pilots
