@@ -27,6 +27,7 @@
 		/obj/item/disk,
 		/obj/item/lighter,
 		/obj/item/key/ship,
+		/obj/item/gun/ballistic/derringer,
 		/obj/item/lipstick,
 		/obj/item/match,
 		/obj/item/paper,
