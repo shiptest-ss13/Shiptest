@@ -12,7 +12,7 @@
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
-	var/shield_passive_drain = 150
+	var/shield_passive_drain = 300
 
 
 /obj/mecha/combat/durand/clip
@@ -227,7 +227,7 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	. = ..()
 	flick("shield_impact", src)
-	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 10) * (10 - chassis.capacitor.rating))))
+	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * (10 - chassis.capacitor.rating))))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
 	obj_integrity = 10000
