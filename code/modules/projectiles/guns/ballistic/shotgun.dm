@@ -323,7 +323,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 
-	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "dshotgun",
 						"Stainless Steel" = "dshotgun_white",
 						"Stained Green" = "dshotgun_green"
@@ -765,7 +764,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
-	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE
 	can_be_sawn_off = TRUE
 	pb_knockback = 3
