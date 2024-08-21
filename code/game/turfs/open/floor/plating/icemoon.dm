@@ -241,3 +241,9 @@
 	planetary_atmos = TRUE
 	slowdown = 0
 
+/turf/open/floor/concrete/slab_3/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
