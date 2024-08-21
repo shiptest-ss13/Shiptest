@@ -665,7 +665,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
 	unique_reskin = list("Shadow" = "shadow",
 		"Army" = "shadow_army",
