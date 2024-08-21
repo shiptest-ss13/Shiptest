@@ -488,7 +488,6 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
-	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
 	unique_reskin = list("Default" = "detective",
