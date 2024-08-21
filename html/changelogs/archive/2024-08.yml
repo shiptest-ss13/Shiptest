@@ -32,3 +32,82 @@
   - bugfix: Contender is now called the Beacon in cargo
   zimon9:
   - rscadd: an anesthetics crate
+2024-08-04:
+  Apogee-dev:
+  - bugfix: Changed almost every player facing instance of the word "mech" to "exosuit"
+  - balance: Replaced syndie survival boxes in outfit datums with normal job-equivalent
+      boxes
+  FalloutFalcon:
+  - balance: nerfed legion money drops.
+  Gristlebee:
+  - rscadd: Sandbags can be deconed by click dragging them onto your mob.
+  - rscadd: Sandbags to the outpost for 150 credits.
+  Martinpachu:
+  - rscadd: Clips of all kinds (not magazines!) can now be produced on the autolathe.
+  - rscdel: Clip cargo packs, as they are now redundant.
+  PositiveEntropy:
+  - imageadd: Resprites muzzle flashes!
+  Sadhorizon:
+  - imageadd: Added directionals for mining processing consoles.
+  Thera-Pissed:
+  - bugfix: hydrogen and combustion bugs
+  Zevotech:
+  - balance: the Quirk Social Anxiety no longer silences you randomly
+  - bugfix: Stuttering is now far less extreme and will not delete characters
+  - bugfix: Psicodine now actually suppresses the effects of social anxiety
+  firebudgy:
+  - bugfix: Fixed three typos in the code.
+  phoaly:
+  - balance: Buffed LP hardsuits
+2024-08-07:
+  Sadhorizon:
+  - tweak: Remapped the Dwayne-class Long Range Mining Transport.
+  - rscadd: Added a random plushie spawner and a random moth plushie spawner.
+  Thera-Pissed:
+  - rscadd: Chlorine and Hydrogen Chloride gases! Wear your goggles!
+2024-08-10:
+  generalthrax:
+  - rscadd: Cleanbots now destroy cigarette butts, and dispense enough acid to do
+      so.
+  rye-rice:
+  - bugfix: indie sec hardsuit now shows up
+2024-08-11:
+  firebudgy:
+  - rscadd: Sprites for several different kinds of scarves for Vox!
+  - rscadd: Additional sprites for several other items for Vox, such as chest-high
+      towels and hazard jackets.
+  - rscadd: Created onmob_neck_vox.dmi file, plus enabled support for it.
+  generalthrax:
+  - bugfix: Fixes the Industrial Jacket to be warm (For Real)
+  phoaly:
+  - balance: Talos Corpsman has been readded with a different medkit loadout.
+2024-08-16:
+  OrionTheFox:
+  - rscadd: Suit Storage Units now provide feedback when Decontamination fails to
+      activate
+  - imageadd: Suit Storage Units now have a visible red light when Locked - when hacked,
+      Decontamination now has a red-yellow flashing light to distinguish from the
+      Locked light.
+2024-08-18:
+  Cloudbreak:
+  - rscadd: Frontiersman sprites for the Vox!
+  Gristlebee:
+  - bugfix: water turfs reagent scooping
+  - code_imp: span classes to span macros
+  - refactor: acid turfs repathed under water
+  - refactor: Pouring out a reagent container is now bound to disarm intent instead
+      of help intent.
+  - rscadd: Examine hints for flipped tables
+  - bugfix: You can no longer phase through a flipped table.
+  meemofcourse:
+  - bugfix: Hardliner troopers should no longer spawn as Hardliner pilots
+2024-08-20:
+  Aquidu:
+  - bugfix: Fixed a bug relating to literal spaghetti code.
+  zimon9:
+  - bugfix: fixed a short on the Shetland
+2024-08-21:
+  FalloutFalcon:
+  - rscadd: Added var to let admins bypass do_teleport vlevel restriction
+  Sadhorizon:
+  - bugfix: Ranged frontersman with internals now drops the correct revolver type.
