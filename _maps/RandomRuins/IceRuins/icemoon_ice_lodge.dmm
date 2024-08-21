@@ -312,8 +312,12 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "eK" = (
-/turf/open/space/basic,
-/area/space)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/snow{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "eU" = (
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
@@ -397,7 +401,7 @@
 	icon_state = "shotgun";
 	pixel_x = 4;
 	pixel_y = -9;
-	paint_colour = #FF0000
+	paint_colour = "#FF0000"
 	},
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/gear_room)
@@ -504,8 +508,10 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
 "ii" = (
-/turf/open/floor/plating/asteroid/icerock,
-/area/space)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "ik" = (
 /obj/structure/fireplace,
 /obj/structure/fluff/paper/stack{
@@ -910,7 +916,7 @@
 	icon_state = "nay";
 	pixel_y = -8;
 	pixel_x = 8;
-	paint_colour = #FF0000
+	paint_colour = "#FF0000"
 	},
 /obj/effect/turf_decal/weather/snow{
 	dir = 8
@@ -1222,7 +1228,7 @@
 	},
 /obj/item/trash/popcorn,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "xgibbl4"
+	icon_state = "floor7-old"
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1325,7 +1331,12 @@
 /area/ruin/powered/icemoon/lodge/cellar)
 "sR" = (
 /obj/structure/table/wood,
-/obj/item/clipboard,
+/obj/item/paper/crumpled/bloody/fluff/ruin/icemoon/tally_sheet{
+	pixel_x = -4
+	},
+/obj/item/pen{
+	pixel_x = 8
+	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "sW" = (
@@ -1633,8 +1644,9 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wj" = (
-/turf/open/floor/plating/asteroid/icerock/cracked,
-/area/space)
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "wm" = (
 /turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken6"
@@ -1761,9 +1773,6 @@
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
-"xY" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/space)
 "yc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -2121,14 +2130,17 @@
 "DB" = (
 /obj/item/grown/log/tree{
 	pixel_x = -6;
-	pixel_y = 12
+	pixel_y = 12;
+	auto_scatter = 0
 	},
 /obj/item/grown/log/tree{
 	pixel_x = 6;
-	pixel_y = 12
+	pixel_y = 12;
+	auto_scatter = 0
 	},
 /obj/item/grown/log/tree{
-	pixel_y = 18
+	pixel_y = 18;
+	auto_scatter = 0
 	},
 /obj/structure/table/wood,
 /obj/item/storage/box/matches{
@@ -2658,7 +2670,7 @@
 	icon_state = "danger";
 	pixel_x = 4;
 	pixel_y = -1;
-	paint_colour = #FF0000
+	paint_colour = "#FF0000"
 	},
 /obj/effect/turf_decal/weather/snow{
 	dir = 8
@@ -3334,25 +3346,31 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez{
 	pixel_x = 6;
-	pixel_y = 12
+	pixel_y = 12;
+	auto_scatter = 0
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/l4z{
 	pixel_x = 6;
-	pixel_y = 6
+	pixel_y = 6;
+	auto_scatter = 0
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/rh{
-	pixel_x = 6
+	pixel_x = 6;
+	auto_scatter = 0
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/ez{
 	pixel_x = -6;
-	pixel_y = 12
+	pixel_y = 12;
+	auto_scatter = 0
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/l4z{
 	pixel_x = -6;
-	pixel_y = 6
+	pixel_y = 6;
+	auto_scatter = 0
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/rh{
-	pixel_x = -6
+	pixel_x = -6;
+	auto_scatter = 0
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -3596,19 +3614,6 @@
 /area/overmap_encounter/planetoid/cave/explored)
 
 (1,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3658,19 +3663,6 @@ Gy
 Gy
 "}
 (2,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3720,19 +3712,6 @@ Gy
 Gy
 "}
 (3,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3782,19 +3761,6 @@ Gy
 Gy
 "}
 (4,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3844,19 +3810,6 @@ Gy
 Gy
 "}
 (5,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3906,19 +3859,6 @@ Gy
 Gy
 "}
 (6,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -3968,19 +3908,6 @@ Gy
 Gy
 "}
 (7,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4030,19 +3957,6 @@ Gy
 Gy
 "}
 (8,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4092,19 +4006,6 @@ Gy
 Gy
 "}
 (9,1,1) = {"
-eK
-eK
-wj
-xY
-xY
-xY
-xY
-xY
-xY
-ii
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4154,19 +4055,6 @@ Ec
 Gy
 "}
 (10,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4216,19 +4104,6 @@ Ec
 Hl
 "}
 (11,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4278,19 +4153,6 @@ Hl
 Hl
 "}
 (12,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4340,19 +4202,6 @@ Hl
 Hl
 "}
 (13,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4402,19 +4251,6 @@ Hl
 Hl
 "}
 (14,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4464,19 +4300,6 @@ Hl
 Hl
 "}
 (15,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4500,8 +4323,8 @@ Hl
 Hl
 Hl
 Hl
-bb
-ca
+Za
+Dj
 sX
 WF
 Za
@@ -4526,19 +4349,6 @@ Hl
 Hl
 "}
 (16,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4561,9 +4371,9 @@ Hl
 Hl
 Hl
 Hl
-bb
-bb
-ca
+Za
+Za
+Dj
 Kc
 Za
 RA
@@ -4588,19 +4398,6 @@ Hl
 Hl
 "}
 (17,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4623,9 +4420,9 @@ Hl
 Hl
 Hl
 Hl
-Hl
-Ec
-NN
+Za
+Za
+eK
 Kc
 gs
 ot
@@ -4650,19 +4447,6 @@ Hl
 Hl
 "}
 (18,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4686,8 +4470,8 @@ Hl
 Hl
 Hl
 Hl
-Ec
-NN
+Za
+eK
 ca
 OD
 NN
@@ -4712,19 +4496,6 @@ Hl
 Hl
 "}
 (19,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -4774,19 +4545,6 @@ Hl
 Hl
 "}
 (20,1,1) = {"
-eK
-eK
-xY
-eK
-eK
-eK
-eK
-eK
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -4836,19 +4594,6 @@ Hl
 Hl
 "}
 (21,1,1) = {"
-eK
-eK
-xY
-xY
-xY
-xY
-xY
-xY
-xY
-xY
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -4885,7 +4630,7 @@ Za
 Za
 Za
 Dj
-ca
+wj
 Hl
 Hl
 Hl
@@ -4898,19 +4643,6 @@ Hl
 Hl
 "}
 (22,1,1) = {"
-eK
-eK
-ii
-xY
-xY
-xY
-xY
-xY
-xY
-ii
-eK
-eK
-eK
 Hl
 Hl
 Hl
@@ -4960,19 +4692,6 @@ Hl
 Hl
 "}
 (23,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 Hl
@@ -5000,13 +4719,13 @@ jP
 NN
 sX
 Za
-Za
+gs
 sG
 ZZ
 QO
 qg
 PA
-Za
+gs
 oT
 Dj
 ca
@@ -5022,19 +4741,6 @@ Hl
 Hl
 "}
 (24,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 Hl
@@ -5084,19 +4790,6 @@ Hl
 Hl
 "}
 (25,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 qE
@@ -5133,7 +4826,7 @@ PA
 Za
 Za
 Dj
-NN
+ii
 Hl
 Hl
 Hl
@@ -5146,19 +4839,6 @@ Hl
 Hl
 "}
 (26,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 qE
@@ -5208,19 +4888,6 @@ Hl
 Hl
 "}
 (27,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 qE
@@ -5270,19 +4937,6 @@ Hl
 Hl
 "}
 (28,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 qE
@@ -5332,19 +4986,6 @@ Hl
 Hl
 "}
 (29,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 qE
@@ -5394,19 +5035,6 @@ Hl
 Hl
 "}
 (30,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 Hl
@@ -5456,19 +5084,6 @@ Hl
 Hl
 "}
 (31,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Hl
 Hl
 Hl
@@ -5494,7 +5109,7 @@ DA
 DA
 Zn
 ca
-sX
+YU
 Za
 oT
 da
@@ -5518,19 +5133,6 @@ Hl
 Hl
 "}
 (32,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Hl
 Hl
@@ -5556,16 +5158,16 @@ op
 Hl
 Hl
 Hl
-Hl
-Hl
-Hl
-Hl
+Za
+Za
+Za
+Za
 dO
 dO
 dO
 Hl
-Hl
-Hl
+Za
+Za
 Hl
 Hl
 Hl
@@ -5580,19 +5182,6 @@ Hl
 Hl
 "}
 (33,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5619,9 +5208,9 @@ Hl
 Hl
 Hl
 Hl
+Za
 Hl
-Hl
-Hl
+Za
 Hl
 Hl
 Hl
@@ -5642,19 +5231,6 @@ Hl
 Gy
 "}
 (34,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5704,19 +5280,6 @@ Hl
 Gy
 "}
 (35,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5766,19 +5329,6 @@ bb
 Gy
 "}
 (36,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5828,19 +5378,6 @@ bb
 Gy
 "}
 (37,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5890,19 +5427,6 @@ kZ
 Gy
 "}
 (38,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Hl
@@ -5952,19 +5476,6 @@ Gy
 Gy
 "}
 (39,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -6014,19 +5525,6 @@ Gy
 Gy
 "}
 (40,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -6076,19 +5574,6 @@ Gy
 Gy
 "}
 (41,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
@@ -6138,19 +5623,6 @@ Gy
 Gy
 "}
 (42,1,1) = {"
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
-eK
 Gy
 Gy
 Gy
