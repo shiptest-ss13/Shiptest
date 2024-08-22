@@ -17,7 +17,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH	| PEPPERPROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	var/rad_count = 0
 	var/rad_record = 0
 	var/grace_count = 0
@@ -1045,7 +1045,7 @@
 	item_state = "independent_sec_helm"
 	hardsuit_type = "independent-sec"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
@@ -1056,7 +1056,7 @@
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
@@ -1106,7 +1106,7 @@
 	name = "pilot space suit"
 	icon_state = "space-pilot"
 	item_state = "space-pilot"
-	desc = "A lightweight, unarmored space suit designed for mech and fighter pilots. Special attachment points make mounting and dismounting from mechs much easier."
+	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier."
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
@@ -1114,7 +1114,7 @@
 	name = "pilot helmet"
 	icon_state = "space-pilot-plain0"
 	item_state = "space-pilot-plain"
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection."
+	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
 	var/skin = "plain"
 	var/blurb = " Its simple design is quite ancient."
 	up = FALSE
@@ -1147,7 +1147,7 @@
 		if("corvid")
 			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
 
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection.[blurb]"
+	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection.[blurb]"
 	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/pilot/random/New()

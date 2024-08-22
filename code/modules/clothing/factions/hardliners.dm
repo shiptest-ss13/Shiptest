@@ -150,7 +150,7 @@
 
 /obj/item/clothing/head/helmet/hardliners/swat
 	name = "hardliners pilot helmet"
-	desc = "A modified X-11 helmet utilized by regular pilots, as well as the feared mech pilots of the Hardliner movement. The attached visor helps protect against sudden flashes from explosions."
+	desc = "A modified X-11 helmet utilized by regular pilots, as well as the feared exosuit pilots of the Hardliner movement. The attached visor helps protect against sudden flashes from explosions."
 	flash_protect = FLASH_PROTECTION_WELDER
 	icon_state = "hl_pilot"
 	item_state = "hl_pilot"

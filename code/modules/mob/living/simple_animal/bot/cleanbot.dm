@@ -235,6 +235,9 @@
 	if(!target && trash) //Then for trash.
 		target = scan(/obj/item/trash)
 
+	if(!target && trash) //Then for Chainsmokers.
+		target = scan(/obj/item/cigbutt)
+
 	if(!target && trash) //Search for dead mices.
 		target = scan(/obj/item/reagent_containers/food/snacks/deadmouse)
 
@@ -317,6 +320,7 @@
 		target_types += list(
 		/obj/item/trash,
 		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/cigbutt,
 		)
 
 	target_types = typecacheof(target_types)
@@ -340,7 +344,7 @@
 	else if(istype(A, /obj/item) || istype(A, /obj/effect/decal/remains))
 		visible_message("<span class='danger'>[src] sprays hydrofluoric acid at [A]!</span>")
 		playsound(src, 'sound/effects/spray2.ogg', 50, TRUE, -6)
-		A.acid_act(75, 10)
+		A.acid_act(100, 10)
 		target = null
 	else if(istype(A, /mob/living/simple_animal/hostile/cockroach) || istype(A, /mob/living/simple_animal/mouse))
 		var/mob/living/simple_animal/M = target

@@ -32,7 +32,7 @@
 	item_flags = NOBLUDGEON
 	resistance_flags = FLAMMABLE
 	flags_inv = HIDEHAIR // Only relevant when in head shape, but useful to keep around regardless.
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	/// The shape we're currently in.
 	var/shape = TOWEL_FOLDED
 
