@@ -231,13 +231,13 @@
 			. += "[base_icon_state]_helm"
 		if(storage)
 			. += "[base_icon_state]_storage"
-		if(uv && uv_super)
-			. += "[base_icon_state]_super"
 	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
 		else
 			if(uv)
+				if(uv_super)
+					. += "[base_icon_state]_super"
 				. += "[base_icon_state]_lights_red"
 			else
 				. += "[base_icon_state]_lights_closed"
@@ -247,6 +247,8 @@
 				. += "[base_icon_state]_uvstrong"
 			else
 				. += "[base_icon_state]_uv"
+		else if(locked)
+			. += "[base_icon_state]_locked"
 		else
 			. += "[base_icon_state]_ready"
 
@@ -340,8 +342,10 @@
 				close_machine()
 		if ("disinfect")
 			if (occupant && safeties)
+				say("Alert: safeties triggered, occupant detected!")
 				return
 			else if (!helmet && !mask && !suit && !storage && !occupant)
+				to_chat(user, span_notice("There's nothing inside [src] to disinfect!"))
 				return
 			else
 				if (occupant)
@@ -351,6 +355,7 @@
 		if ("lock", "unlock")
 			if (!state_open)
 				locked = !locked
+				update_icon()
 		else
 			var/obj/item/item_to_dispense = vars[choice]
 			if (item_to_dispense)

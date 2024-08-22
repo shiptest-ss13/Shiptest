@@ -10,6 +10,7 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/deckhand
 	name = "\improper deckhand jumpsuit"
@@ -58,6 +59,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	blood_overlay_type = "armor"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
@@ -162,17 +164,20 @@
 	name = "\improper frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/frontier/admiral
 	name = "\improper frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	name = "\improper frontiersmen X-11 helmet"
 	desc = "A heavily modified X-11 pattern helmet used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
 	name = "\improper fireproof frontiersmen X-11 helmet"
