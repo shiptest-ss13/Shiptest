@@ -30,3 +30,8 @@
 	suffix = "whitesands_surface_camp_combination.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/e11_manufactory
+	name = "E-11 Manufacturing Plant"
+	id = "ws-e11manufactory"
+	description = "TODO"
+	suffix = "whitesands_surface_e11_manufactory.dmm"
