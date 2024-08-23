@@ -113,7 +113,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
 "ba" = (
 /obj/structure/chair/comfy/purple/old/directional/west,
@@ -1200,8 +1200,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/tile/carpet/nanoweave/blue,
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
 "kd" = (
 /obj/structure/table/reinforced,
@@ -1314,7 +1313,7 @@
 /obj/item/radio/old{
 	pixel_y = 5
 	},
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
 "kV" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4,
@@ -1351,10 +1350,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/neck/stethoscope{
-	pixel_y = -5;
-	pixel_x = -23
-	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
 "lp" = (
@@ -1957,6 +1952,9 @@
 	icon_state = "docs_blue"
 	},
 /obj/item/pen/fourcolor,
+/obj/item/clothing/neck/stethoscope{
+	w_class = 2
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
 "qn" = (
@@ -3321,11 +3319,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Cx" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/crowbar{
-	pixel_y = -13;
-	pixel_x = -11
-	},
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
 "CA" = (
 /obj/structure/fence/cut/large{
@@ -5628,7 +5622,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
 "Wx" = (
 /obj/effect/decal/cleanable/dirt,
