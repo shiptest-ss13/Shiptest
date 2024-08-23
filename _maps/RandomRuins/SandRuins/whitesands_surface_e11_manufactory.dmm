@@ -218,12 +218,6 @@
 /obj/structure/chair,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
-"bG" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
 "bJ" = (
 /obj/item/stack/packageWrap{
 	pixel_x = 1;
@@ -299,9 +293,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/e11manufactory/barracks)
-"ci" = (
-/turf/template_noop,
-/area/overmap_encounter/planetoid/sand/explored)
 "cm" = (
 /mob/living/simple_animal/pet/mothroach{
 	dir = 8;
@@ -512,9 +503,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
-"dV" = (
-/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "dX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -722,12 +710,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"go" = (
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
 "gt" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -756,16 +738,6 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"gy" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
-"gG" = (
-/obj/structure/flora/ash/cap_shroom,
-/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "gK" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
@@ -802,6 +774,10 @@
 "gV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"ha" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "hb" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11,
@@ -1012,10 +988,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/mats)
-"iv" = (
-/obj/structure/flora/stump,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "iz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1082,6 +1054,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"iQ" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "iW" = (
 /obj/effect/turf_decal/industrial/caution,
 /obj/effect/turf_decal/industrial/warning{
@@ -1110,13 +1086,14 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
-"je" = (
-/turf/closed/wall/mineral/titanium/survival/pod,
-/area/overmap_encounter/planetoid/sand/explored)
 "jg" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/security)
+"ji" = (
+/obj/structure/statue/snow/snowlegion,
+/turf/open/floor/plating/asteroid/snow/lit/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "jm" = (
 /obj/item/mecha_parts/mecha_equipment/extinguisher{
 	pixel_y = -9;
@@ -1132,11 +1109,6 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"jy" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "jD" = (
@@ -1237,6 +1209,7 @@
 	pixel_x = -7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
 "kl" = (
@@ -1423,6 +1396,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"lG" = (
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/overmap_encounter/planetoid/sand/explored)
 "lJ" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/effect/decal/cleanable/garbage{
@@ -1430,13 +1406,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"lU" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1;
-	pixel_y = 10
-	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "lV" = (
@@ -1464,14 +1433,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/office)
-"me" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1;
-	pixel_y = 5;
-	pixel_x = 11
-	},
-/turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
 "mh" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/decal/cleanable/insectguts,
@@ -1533,6 +1494,10 @@
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plastic,
 /area/ruin/whitesands/e11manufactory/barracks)
+"mz" = (
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "mA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1545,7 +1510,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/office)
 "mH" = (
-/turf/open/floor/plating/asteroid/snow/lit/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
 /area/overmap_encounter/planetoid/sand/explored)
 "mI" = (
 /turf/closed/wall/rust/yesdiag,
@@ -2042,16 +2009,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"qD" = (
+/turf/open/floor/plating/asteroid/snow/lit/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "qE" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"qF" = (
-/obj/structure/flora/ash/fern,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "qH" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2119,10 +2085,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory)
-"rn" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "rx" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/pavement/whitesands,
@@ -2218,6 +2180,12 @@
 /obj/item/folder/yellow,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
+"se" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "sh" = (
 /obj/effect/turf_decal/road{
 	dir = 4
@@ -2309,12 +2277,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"sS" = (
-/obj/structure/flora/ash/garden/arid,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
 "sT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2431,6 +2393,13 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory)
+"uf" = (
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1;
+	pixel_y = 10
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "ul" = (
 /obj/structure/girder,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -2509,6 +2478,14 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
+"uH" = (
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1;
+	pixel_y = 5;
+	pixel_x = 11
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "uR" = (
 /obj/effect/turf_decal/road{
 	dir = 6
@@ -2645,9 +2622,6 @@
 /obj/item/shard,
 /turf/open/floor/concrete/reinforced/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"vY" = (
-/turf/closed/wall/rust,
-/area/overmap_encounter/planetoid/sand/explored)
 "wt" = (
 /obj/structure/girder,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -2727,10 +2701,6 @@
 	},
 /turf/open/floor/concrete/whitesands,
 /area/ruin/whitesands/e11manufactory/office)
-"wO" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "wQ" = (
 /obj/structure/closet/crate/secure/weapon{
 	anchored = 1
@@ -3029,6 +2999,10 @@
 	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"zF" = (
+/obj/structure/flora/ash/garden/arid,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "zK" = (
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/mats)
@@ -3077,6 +3051,10 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/barracks)
+"Ap" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Ar" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3140,6 +3118,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory)
+"AJ" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "AK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3338,10 +3320,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
-"Cu" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Cw" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -3421,6 +3399,9 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"CV" = (
+/turf/closed/wall/rust,
+/area/overmap_encounter/planetoid/sand/explored)
 "Da" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3616,9 +3597,6 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"EJ" = (
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
 "ER" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -3686,8 +3664,8 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"FI" = (
-/obj/structure/flora/ash/puce,
+"FE" = (
+/obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
@@ -3760,6 +3738,9 @@
 	pixel_x = 7
 	},
 /turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"Gi" = (
+/turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Gm" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -3881,10 +3862,6 @@
 	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"Hb" = (
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Hf" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -3961,10 +3938,6 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Ib" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/random,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Ii" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
@@ -4144,6 +4117,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"JN" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "JP" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/mecha/working/ripley/cargo{
@@ -4177,6 +4154,12 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/whitesands/e11manufactory/barracks)
+"Ke" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "Kf" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -4213,6 +4196,10 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
+"Ks" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Kw" = (
 /obj/effect/turf_decal/road{
 	dir = 4
@@ -4239,10 +4226,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
-"KF" = (
-/obj/structure/flora/ash/garden/arid,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "KH" = (
 /obj/structure/table/wood,
 /obj/item/radio/old{
@@ -4389,6 +4372,11 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"LL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "LN" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -4416,6 +4404,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"LW" = (
+/obj/structure/flora/ash/garden/arid,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "LZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
@@ -4564,6 +4558,9 @@
 	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"Nc" = (
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Ni" = (
 /obj/effect/turf_decal/road{
 	dir = 8
@@ -4637,11 +4634,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"NI" = (
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
 /area/overmap_encounter/planetoid/sand/explored)
 "NO" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -4839,6 +4831,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
+"Pt" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "Pv" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
@@ -5026,6 +5024,9 @@
 /obj/structure/railing/corner,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"QQ" = (
+/turf/template_noop,
+/area/overmap_encounter/planetoid/sand/explored)
 "QU" = (
 /obj/structure/closet,
 /obj/effect/turf_decal/borderfloor{
@@ -5069,6 +5070,9 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"Re" = (
+/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ri" = (
 /obj/machinery/power/smes/engineering,
@@ -5388,9 +5392,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/office)
-"Tr" = (
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "TG" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -5468,6 +5469,10 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
+"Uy" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/random,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "UB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5513,10 +5518,6 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"UZ" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Vc" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
@@ -5532,6 +5533,10 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"Vg" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Vi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/orange,
@@ -5902,11 +5907,9 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
-"Yj" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
+"Yq" = (
+/obj/structure/flora/stump,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Yv" = (
 /obj/machinery/power/tracker,
@@ -5965,6 +5968,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/e11manufactory/office)
+"YU" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "Zd" = (
 /obj/machinery/conveyor{
 	dir = 6
@@ -5993,10 +6002,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
-"Zw" = (
-/obj/structure/flora/ash/stem_shroom,
-/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "ZB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6039,10 +6044,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
-"ZU" = (
-/obj/structure/statue/snow/snowlegion,
-/turf/open/floor/plating/asteroid/snow/lit/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
 "ZV" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
@@ -6085,22 +6086,22 @@ mM
 mM
 mM
 mM
-gG
+mz
 vU
 vU
-EJ
-NI
-NI
-NI
-vU
-vU
-vU
+Gi
+mH
+mH
+mH
 vU
 vU
 vU
 vU
 vU
-Cu
+vU
+vU
+vU
+AJ
 vU
 vU
 mM
@@ -6141,7 +6142,7 @@ mM
 mM
 mM
 mM
-Zw
+iQ
 vU
 vU
 vU
@@ -6151,19 +6152,19 @@ vU
 vU
 vU
 vU
-NI
-NI
-NI
+mH
+mH
+mH
 vU
 vU
 vU
-NI
-NI
+mH
+mH
 vU
-NI
-NI
-go
-NI
+mH
+mH
+se
+mH
 vU
 vU
 vU
@@ -6210,7 +6211,7 @@ vU
 vU
 vU
 vU
-NI
+mH
 vU
 vU
 vU
@@ -6220,12 +6221,12 @@ vU
 vU
 vU
 vU
-Hb
+Ap
 vU
 vU
-NI
-NI
-NI
+mH
+mH
+mH
 vU
 vU
 vU
@@ -6266,40 +6267,40 @@ mM
 (4,1,1) = {"
 mM
 mM
-Cu
-gG
+AJ
+mz
 vU
 vU
 vU
-KF
+zF
 vU
-gy
-NI
-vU
-Zw
-vU
-vU
-vU
-vU
-vU
+FE
 mH
 vU
-vU
-vU
-vU
-Cu
-vU
-NI
-gG
+iQ
 vU
 vU
 vU
 vU
 vU
+qD
 vU
 vU
 vU
-gG
+vU
+AJ
+vU
+mH
+mz
+vU
+vU
+vU
+vU
+vU
+vU
+vU
+vU
+mz
 vU
 vU
 mM
@@ -6526,7 +6527,7 @@ mM
 (8,1,1) = {"
 mM
 mM
-Hb
+Ap
 KQ
 Pg
 ZR
@@ -6561,7 +6562,7 @@ KQ
 vU
 vU
 vU
-Cu
+AJ
 mM
 mM
 mM
@@ -6624,8 +6625,8 @@ Pg
 Pg
 KQ
 vU
-Ib
-NI
+Uy
+mH
 vU
 vU
 mM
@@ -6690,9 +6691,9 @@ Pg
 KQ
 vU
 vU
-bG
-EJ
-vY
+Pt
+Gi
+CV
 mM
 mM
 mM
@@ -6721,7 +6722,7 @@ mM
 (11,1,1) = {"
 mM
 vU
-mH
+qD
 KQ
 Pg
 SR
@@ -6754,11 +6755,11 @@ gV
 gV
 KQ
 vU
-EJ
-EJ
+Gi
+Gi
 vU
 vU
-wO
+ha
 mM
 mM
 mM
@@ -6786,7 +6787,7 @@ mM
 (12,1,1) = {"
 mM
 vU
-mH
+qD
 KQ
 Pg
 Pg
@@ -6820,10 +6821,10 @@ gV
 KQ
 vU
 vU
-FI
+Ke
 vU
-EJ
-EJ
+Gi
+Gi
 mM
 mM
 mM
@@ -6850,7 +6851,7 @@ mM
 "}
 (13,1,1) = {"
 vU
-gG
+mz
 vU
 KQ
 Pg
@@ -6884,11 +6885,11 @@ gV
 Pg
 KQ
 vU
-NI
-NI
+mH
+mH
 vU
-vY
-EJ
+CV
+Gi
 mM
 mM
 mM
@@ -6915,7 +6916,7 @@ mM
 "}
 (14,1,1) = {"
 vU
-NI
+mH
 vU
 KQ
 Pg
@@ -6949,12 +6950,12 @@ gV
 Pg
 KQ
 vU
-NI
-Yj
-bG
-NI
-NI
-EJ
+mH
+YU
+Pt
+mH
+mH
+Gi
 vU
 vU
 vU
@@ -6980,8 +6981,8 @@ mM
 "}
 (15,1,1) = {"
 vU
-NI
-NI
+mH
+mH
 KQ
 Pg
 gV
@@ -7015,26 +7016,26 @@ Pg
 CA
 vU
 vU
-wO
-EJ
+ha
+Gi
 vU
-vU
-NI
 vU
 mH
 vU
+qD
 vU
 vU
 vU
 vU
 vU
 vU
-NI
-NI
-gG
-NI
-NI
-NI
+vU
+mH
+mH
+mz
+mH
+mH
+mH
 vU
 vU
 vU
@@ -7080,28 +7081,28 @@ Pg
 KQ
 vU
 vU
-EJ
+Gi
 vU
 vU
-je
+lG
 vU
-NI
-vU
-vU
-vU
-vU
-vU
-Zw
+mH
 vU
 vU
 vU
+vU
+vU
+iQ
 vU
 vU
 vU
 vU
 vU
 vU
-NI
+vU
+vU
+vU
+mH
 vU
 vU
 vU
@@ -7109,7 +7110,7 @@ vU
 mM
 "}
 (17,1,1) = {"
-Cu
+AJ
 vU
 vU
 KQ
@@ -7143,21 +7144,16 @@ Pg
 gV
 Pg
 KQ
-Hb
+Ap
 vU
 vU
 vU
 vU
-gG
+mz
 vU
 vU
-gy
-NI
-vU
-vU
-vU
-vU
-vU
+FE
+mH
 vU
 vU
 vU
@@ -7165,9 +7161,14 @@ vU
 vU
 vU
 vU
-Hb
 vU
-NI
+vU
+vU
+vU
+vU
+Ap
+vU
+mH
 vU
 vU
 vU
@@ -7176,7 +7177,7 @@ vU
 (18,1,1) = {"
 mM
 vU
-Zw
+iQ
 gM
 Pg
 Pg
@@ -7233,7 +7234,7 @@ BY
 BY
 gM
 gM
-NI
+mH
 vU
 vU
 vU
@@ -7299,9 +7300,9 @@ Pg
 Pg
 gM
 vU
-EJ
+Gi
 vU
-wO
+ha
 "}
 (20,1,1) = {"
 mM
@@ -7364,8 +7365,8 @@ Pg
 Pg
 KQ
 vU
-EJ
-je
+Gi
+lG
 vU
 "}
 (21,1,1) = {"
@@ -7430,14 +7431,14 @@ Pg
 KQ
 vU
 vU
-wO
-EJ
+ha
+Gi
 "}
 (22,1,1) = {"
 mM
 mM
 vU
-gG
+mz
 vU
 vU
 yN
@@ -7518,7 +7519,7 @@ NV
 SK
 Pg
 Pg
-jy
+LL
 gV
 Pg
 Pg
@@ -7625,7 +7626,7 @@ gV
 KQ
 vU
 vU
-mH
+qD
 vU
 "}
 (25,1,1) = {"
@@ -7633,13 +7634,13 @@ mM
 mM
 mM
 mM
-NI
+mH
 vU
-rn
+Vg
 Pg
 gV
 xF
-lU
+uf
 JM
 gV
 Pg
@@ -7690,7 +7691,7 @@ Pg
 KQ
 vU
 vU
-gG
+mz
 vU
 "}
 (26,1,1) = {"
@@ -7699,7 +7700,7 @@ mM
 mM
 vU
 vU
-NI
+mH
 vU
 vU
 vU
@@ -7754,19 +7755,19 @@ kr
 Pg
 KQ
 vU
-NI
-NI
+mH
+mH
 vU
 "}
 (27,1,1) = {"
 mM
 mM
+qD
+vU
+vU
 mH
-vU
-vU
-NI
-NI
-NI
+mH
+mH
 vU
 KQ
 Pg
@@ -7819,7 +7820,7 @@ oz
 Pg
 KQ
 vU
-gy
+FE
 vU
 vU
 "}
@@ -7828,8 +7829,8 @@ mM
 mM
 vU
 vU
-Hb
-Cu
+Ap
+AJ
 vU
 vU
 Vj
@@ -7883,7 +7884,7 @@ my
 oz
 Pg
 KQ
-NI
+mH
 vU
 vU
 vU
@@ -7897,7 +7898,7 @@ vU
 vU
 vU
 vU
-Zw
+iQ
 KQ
 Pg
 oB
@@ -7948,7 +7949,7 @@ Kb
 oz
 Pg
 KQ
-NI
+mH
 vU
 vU
 vU
@@ -8016,7 +8017,7 @@ KQ
 vU
 vU
 vU
-NI
+mH
 "}
 (31,1,1) = {"
 mM
@@ -8078,10 +8079,10 @@ Pg
 Pg
 gV
 KQ
-NI
+mH
 vU
 vU
-go
+se
 "}
 (32,1,1) = {"
 mM
@@ -8144,9 +8145,9 @@ gV
 gV
 KQ
 vU
-NI
+mH
 vU
-NI
+mH
 "}
 (33,1,1) = {"
 mM
@@ -8208,10 +8209,10 @@ Pg
 gV
 Pg
 KQ
-Zw
-NI
+iQ
+mH
 vU
-NI
+mH
 "}
 (34,1,1) = {"
 mM
@@ -8273,10 +8274,10 @@ gV
 Pg
 Pg
 KQ
-Tr
-NI
-NI
-NI
+Nc
+mH
+mH
+mH
 "}
 (35,1,1) = {"
 mM
@@ -8338,10 +8339,10 @@ Pg
 Pg
 Pg
 KQ
-Tr
+Nc
 vU
-NI
-Cu
+mH
+AJ
 "}
 (36,1,1) = {"
 mM
@@ -8403,14 +8404,14 @@ Pg
 Pg
 Pg
 KQ
-qF
-Tr
-Tr
-Tr
+Ks
+Nc
+Nc
+Nc
 "}
 (37,1,1) = {"
 mM
-gG
+mz
 vU
 KQ
 Pg
@@ -8468,10 +8469,10 @@ Pg
 Pg
 Pg
 KQ
-Tr
-Tr
+Nc
+Nc
 vU
-Tr
+Nc
 "}
 (38,1,1) = {"
 mM
@@ -8530,12 +8531,12 @@ XF
 gV
 Pg
 Pg
-me
+uH
 Pg
 gM
-Tr
-iv
-qF
+Nc
+Yq
+Ks
 vU
 "}
 (39,1,1) = {"
@@ -8598,8 +8599,8 @@ gM
 Nr
 gM
 gM
-Tr
-Tr
+Nc
+Nc
 vU
 vU
 "}
@@ -8660,18 +8661,18 @@ tK
 zC
 Pg
 KQ
-Tr
-Tr
-Tr
-Tr
-gG
+Nc
+Nc
+Nc
+Nc
+mz
 vU
 vU
 "}
 (41,1,1) = {"
 mM
-NI
-Cu
+mH
+AJ
 KQ
 Pg
 Pg
@@ -8725,10 +8726,10 @@ Pg
 FK
 Pg
 KQ
-Tr
-Tr
-UZ
-Tr
+Nc
+Nc
+JN
+Nc
 vU
 vU
 vU
@@ -8790,17 +8791,17 @@ Pg
 FK
 Pg
 KQ
-qF
-Tr
-iv
-Tr
+Ks
+Nc
+Yq
+Nc
 vU
 vU
 vU
 "}
 (43,1,1) = {"
 mM
-Hb
+Ap
 vU
 KQ
 Pg
@@ -8855,13 +8856,13 @@ mI
 ZY
 gV
 KQ
-Tr
-Tr
-Tr
+Nc
+Nc
+Nc
 vU
-Tr
+Nc
 vU
-ci
+QQ
 "}
 (44,1,1) = {"
 mM
@@ -8920,9 +8921,9 @@ km
 ZY
 gV
 KQ
-Tr
-Tr
-Tr
+Nc
+Nc
+Nc
 vU
 vU
 mM
@@ -8930,7 +8931,7 @@ mM
 "}
 (45,1,1) = {"
 mM
-EJ
+Gi
 vU
 KQ
 Pg
@@ -8985,8 +8986,8 @@ km
 ZY
 gV
 KQ
-Tr
-qF
+Nc
+Ks
 vU
 vU
 mM
@@ -9050,7 +9051,7 @@ km
 ZY
 gV
 KQ
-Tr
+Nc
 vU
 vU
 vU
@@ -9059,8 +9060,8 @@ mM
 mM
 "}
 (47,1,1) = {"
-wO
-vY
+ha
+CV
 vU
 KQ
 gV
@@ -9115,16 +9116,16 @@ mI
 FK
 gV
 KQ
-NI
-gy
-go
+mH
+FE
+se
 vU
 mM
 mM
 mM
 "}
 (48,1,1) = {"
-EJ
+Gi
 vU
 vU
 KQ
@@ -9156,9 +9157,9 @@ af
 af
 Qq
 gN
-mH
+qD
 Uj
-mH
+qD
 zz
 hY
 oN
@@ -9181,16 +9182,16 @@ le
 Ea
 KQ
 vU
-NI
-NI
+mH
+mH
 vU
 mM
 mM
 mM
 "}
 (49,1,1) = {"
-EJ
-EJ
+Gi
+Gi
 vU
 KQ
 gV
@@ -9220,10 +9221,10 @@ gV
 gV
 gV
 gV
-mH
-mH
-mH
-mH
+qD
+qD
+qD
+qD
 Pg
 Pg
 cw
@@ -9246,7 +9247,7 @@ Pg
 gV
 KQ
 vU
-NI
+mH
 vU
 vU
 mM
@@ -9285,9 +9286,9 @@ KY
 aE
 Ra
 Pg
-mH
-ZU
-mH
+qD
+ji
+qD
 Pg
 Pg
 Pg
@@ -9313,7 +9314,7 @@ KQ
 vU
 vU
 vU
-NI
+mH
 mM
 mM
 mM
@@ -9351,8 +9352,8 @@ Yd
 sH
 gV
 gV
-mH
-mH
+qD
+qD
 Pg
 Pg
 gV
@@ -9378,7 +9379,7 @@ KQ
 vU
 vU
 vU
-NI
+mH
 mM
 mM
 mM
@@ -9417,7 +9418,7 @@ id
 Pg
 Pg
 Pg
-mH
+qD
 Pg
 gV
 gV
@@ -9443,7 +9444,7 @@ KQ
 vU
 vU
 vU
-sS
+LW
 mM
 mM
 mM
@@ -9451,7 +9452,7 @@ mM
 (53,1,1) = {"
 mM
 vU
-gG
+mz
 KQ
 Pg
 Pg
@@ -9505,7 +9506,7 @@ hH
 Pg
 Pg
 KQ
-gG
+mz
 vU
 vU
 vU
@@ -9515,7 +9516,7 @@ mM
 "}
 (54,1,1) = {"
 mM
-Cu
+AJ
 vU
 gM
 Pg
@@ -9573,7 +9574,7 @@ KQ
 vU
 vU
 vU
-NI
+mH
 mM
 mM
 mM
@@ -9647,8 +9648,8 @@ mM
 mM
 vU
 vU
-mH
-mH
+qD
+qD
 vU
 vU
 vU
@@ -9711,11 +9712,11 @@ mM
 (57,1,1) = {"
 mM
 vU
-mH
-mH
-mH
-mH
-mH
+qD
+qD
+qD
+qD
+qD
 vU
 KQ
 Pg
@@ -9766,7 +9767,7 @@ BY
 gM
 gM
 vU
-Hb
+Ap
 vU
 vU
 mM
@@ -9776,11 +9777,11 @@ mM
 (58,1,1) = {"
 mM
 mM
-mH
-mH
-mH
-mH
-mH
+qD
+qD
+qD
+qD
+qD
 vU
 KQ
 Pg
@@ -9814,17 +9815,17 @@ Pg
 Pg
 Pg
 KQ
-Hb
+Ap
 vU
 vU
 vU
 vU
 vU
 vU
-mH
+qD
 vU
 vU
-Zw
+iQ
 vU
 vU
 vU
@@ -9842,9 +9843,9 @@ mM
 mM
 mM
 mM
-mH
-mH
-mH
+qD
+qD
+qD
 vU
 vU
 KQ
@@ -9882,7 +9883,7 @@ KQ
 vU
 vU
 vU
-EJ
+Gi
 vU
 vU
 vU
@@ -9909,7 +9910,7 @@ mM
 mM
 mM
 mM
-NI
+mH
 vU
 vU
 KQ
@@ -9945,25 +9946,25 @@ gV
 Pg
 KQ
 vU
-EJ
-NI
-NI
-bG
-je
+Gi
+mH
+mH
+Pt
+lG
 vU
 vU
-gG
-NI
-NI
+mz
+mH
+mH
 mM
 vU
 vU
 vU
 vU
-NI
-NI
+mH
+mH
 vU
-Zw
+iQ
 mM
 mM
 mM
@@ -9974,8 +9975,8 @@ mM
 mM
 mM
 mM
-NI
-KF
+mH
+zF
 vU
 KQ
 Pg
@@ -10010,25 +10011,25 @@ gV
 Pg
 KQ
 vU
-EJ
+Gi
 vU
 vU
-vY
-Cu
+CV
+AJ
 mM
 mM
 mM
 mM
 mM
 mM
-NI
-NI
-NI
-gy
+mH
+mH
+mH
+FE
 vU
 vU
 vU
-ci
+QQ
 mM
 mM
 mM
@@ -10040,7 +10041,7 @@ mM
 mM
 mM
 vU
-Cu
+AJ
 vU
 KQ
 Pg
@@ -10074,9 +10075,9 @@ Pg
 gV
 Pg
 KQ
-wO
-NI
-NI
+ha
+mH
+mH
 vU
 mM
 mM
@@ -10105,7 +10106,7 @@ mM
 mM
 mM
 vU
-NI
+mH
 vU
 CA
 Pg
@@ -10141,7 +10142,7 @@ Pg
 KQ
 vU
 vU
-NI
+mH
 vU
 mM
 mM
@@ -10170,7 +10171,7 @@ mM
 mM
 mM
 vU
-NI
+mH
 vU
 KQ
 Pg
@@ -10206,7 +10207,7 @@ Pg
 KQ
 vU
 vU
-NI
+mH
 vU
 mM
 mM
@@ -10272,7 +10273,7 @@ gM
 vU
 vU
 vU
-NI
+mH
 mM
 mM
 mM
@@ -10300,7 +10301,7 @@ mM
 mM
 mM
 mM
-Zw
+iQ
 vU
 gM
 gM
@@ -10336,8 +10337,8 @@ gM
 gM
 vU
 vU
-NI
-NI
+mH
+mH
 mM
 mM
 mM
@@ -10369,7 +10370,7 @@ vU
 vU
 vU
 vU
-NI
+mH
 vU
 vU
 vU
@@ -10394,16 +10395,16 @@ vU
 vU
 vU
 vU
-Zw
+iQ
 vU
 vU
 vU
 vU
-Cu
-NI
+AJ
+mH
 vU
 vU
-Hb
+Ap
 mM
 mM
 mM
@@ -10435,28 +10436,28 @@ vU
 vU
 vU
 vU
-bG
-FI
+Pt
+Ke
 vU
-Hb
-vU
-vU
+Ap
 vU
 vU
-gG
-dV
-dV
-dV
 vU
-NI
-NI
-dV
-NI
-NI
-NI
-NI
 vU
-NI
+mz
+Re
+Re
+Re
+vU
+mH
+mH
+Re
+mH
+mH
+mH
+mH
+vU
+mH
 vU
 vU
 vU
@@ -10501,31 +10502,31 @@ vU
 vU
 vU
 vU
-NI
-EJ
-EJ
+mH
+Gi
+Gi
 vU
-NI
-vU
-vU
-dV
-dV
-vU
-dV
-dV
-dV
-dV
+mH
 vU
 vU
+Re
+Re
+vU
+Re
+Re
+Re
+Re
 vU
 vU
 vU
 vU
 vU
-NI
-NI
 vU
-gG
+vU
+mH
+mH
+vU
+mz
 vU
 vU
 vU
@@ -10564,22 +10565,22 @@ mM
 mM
 mM
 vU
-gG
-EJ
-EJ
+mz
+Gi
+Gi
 vU
-NI
-bG
-vU
-vU
+mH
+Pt
 vU
 vU
-dV
-dV
 vU
-Cu
 vU
-Zw
+Re
+Re
+vU
+AJ
+vU
+iQ
 vU
 vU
 vU
