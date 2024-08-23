@@ -20,11 +20,11 @@
 
 /area/ruin/whitesands/e11manufactory
 	name = "Eoehoma Firearms Assembly Line"
-	icon_state = "ass_line"
+	icon_state = "mining_production"
 
 /area/ruin/whitesands/e11manufactory/warehouse
 	name = "Eoehoma Firearms Warehouse"
-	icon_state = "primarystorage"
+	icon_state = "storage"
 
 /area/ruin/whitesands/e11manufactory/mats
 	name = "Eoehoma Firearms Material Storage"
