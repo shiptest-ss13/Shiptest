@@ -338,10 +338,10 @@
 /area/ship/crew/canteen)
 "eW" = (
 /obj/effect/decal/cleanable/confetti,
-/obj/machinery/power/ship_gravity,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "fd" = (
@@ -820,6 +820,10 @@
 "jZ" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"kb" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "kd" = (
 /obj/structure/table,
 /obj/item/storage/box/evidence{
@@ -880,7 +884,12 @@
 /area/ship/crew/canteen)
 "kG" = (
 /obj/structure/table,
-/obj/item/storage/cans/sixsoda,
+/obj/structure/showcase/machinery/microwave{
+	name = "\improper broken microwave";
+	desc = "Nobody exactly knows why every microwave in Atlas-class vessels are broken, but there have certainly been rumors.";
+	pixel_x = -1;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "kL" = (
@@ -1082,8 +1091,8 @@
 	pixel_x = 6
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
-	pixel_y = -4;
-	pixel_x = 6
+	pixel_y = -7;
+	pixel_x = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
@@ -1109,8 +1118,8 @@
 	},
 /obj/item/gun/ballistic/automatic/assault/cm82{
 	spawnwithmagazine = 0;
-	pixel_x = -4;
-	pixel_y = 8
+	pixel_x = -6;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -1378,6 +1387,14 @@
 "ps" = (
 /turf/template_noop,
 /area/template_noop)
+"pE" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "qb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1987,6 +2004,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wd" = (
@@ -2070,9 +2088,6 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/turretid{
-	pixel_x = -28
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wy" = (
@@ -2274,9 +2289,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "yZ" = (
-/obj/structure/sign/poster/clip/bard{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
@@ -2286,41 +2298,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/closet/crate,
-/obj/item/clothing/suit/space/hardsuit/clip_patroller{
-	pixel_x = -1;
-	pixel_y = 5
+/obj/effect/turf_decal/techfloor/hole{
+	dir = 1
 	},
-/obj/item/clothing/suit/space/hardsuit/clip_patroller{
-	pixel_x = -13;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/space/hardsuit/clip_patroller{
-	pixel_x = -11;
-	pixel_y = -2
-	},
-/obj/item/clothing/suit/space/hardsuit/clip_patroller{
-	pixel_x = 9
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = -1;
-	pixel_y = -10
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = -1;
-	pixel_y = -10
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = -1;
-	pixel_y = -10
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = -1;
-	pixel_y = -10
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = -1;
-	pixel_y = -10
+/obj/effect/turf_decal/techfloor/hole/right{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -2534,12 +2516,47 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Bx" = (
-/obj/machinery/photocopier,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4;
 	pixel_y = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/item/tank/internals/oxygen{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller{
+	pixel_x = -13;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller{
+	pixel_x = -11;
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller{
+	pixel_x = 9
+	},
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "BH" = (
@@ -2826,6 +2843,7 @@
 	pixel_y = -20;
 	dir = 1
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ES" = (
@@ -2938,6 +2956,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Gi" = (
+/obj/structure/bed/pod{
+	dir = 1
+	},
+/obj/item/bedsheet/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "Gj" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -3008,6 +3035,10 @@
 "HX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
+"Ic" = (
+/obj/machinery/turretid,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "Ig" = (
 /obj/structure/bed/dogbed{
 	name = "Mushroom's bed";
@@ -4052,7 +4083,6 @@
 /area/ship/crew/crewtwo)
 "Ti" = (
 /obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "Tx" = (
@@ -4111,6 +4141,7 @@
 	pixel_x = -18;
 	pixel_y = -3
 	},
+/obj/structure/table,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "TE" = (
@@ -4215,6 +4246,11 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
+"UR" = (
+/obj/structure/bed/pod,
+/obj/item/bedsheet/red,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "US" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -4328,16 +4364,8 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "VK" = (
-/obj/structure/table,
-/obj/item/chair/plastic{
-	pixel_y = 13;
-	pixel_x = -3
-	},
-/obj/item/chair/plastic{
-	pixel_y = 9;
-	pixel_x = 3
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "VQ" = (
@@ -4576,6 +4604,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"YG" = (
+/obj/machinery/door/window/brigdoor/southright{
+	req_access = list(3)
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "YK" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/firealarm/directional/south,
@@ -4601,6 +4636,9 @@
 "Zd" = (
 /obj/machinery/door/window/westright{
 	req_access = list(3)
+	},
+/obj/structure/sign/poster/clip/bard{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -4700,6 +4738,8 @@
 (1,1,1) = {"
 ps
 ps
+ps
+ps
 ms
 ps
 ps
@@ -4721,6 +4761,8 @@ ps
 ps
 "}
 (2,1,1) = {"
+ps
+ps
 ps
 ps
 PU
@@ -4746,6 +4788,8 @@ ps
 (3,1,1) = {"
 ps
 ps
+ps
+ps
 PU
 Ti
 yL
@@ -4767,6 +4811,8 @@ ps
 ps
 "}
 (4,1,1) = {"
+ps
+ps
 ps
 ps
 pp
@@ -4792,6 +4838,8 @@ ps
 (5,1,1) = {"
 ps
 ps
+ps
+ps
 pp
 Py
 Yu
@@ -4813,6 +4861,8 @@ ps
 ps
 "}
 (6,1,1) = {"
+ps
+ps
 ps
 bF
 vZ
@@ -4838,6 +4888,8 @@ ps
 (7,1,1) = {"
 ps
 ps
+ps
+ps
 mN
 PU
 Cc
@@ -4859,6 +4911,8 @@ ps
 ps
 "}
 (8,1,1) = {"
+ps
+ps
 ps
 ps
 ps
@@ -4886,6 +4940,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 LE
 LE
 LE
@@ -4905,6 +4961,8 @@ ps
 ps
 "}
 (10,1,1) = {"
+ps
+ps
 ps
 ps
 gT
@@ -4929,6 +4987,8 @@ ps
 "}
 (11,1,1) = {"
 ps
+ps
+ps
 gT
 gT
 kd
@@ -4951,6 +5011,8 @@ HW
 ps
 "}
 (12,1,1) = {"
+ps
+ps
 ps
 gT
 Vq
@@ -4975,6 +5037,8 @@ ps
 "}
 (13,1,1) = {"
 ps
+ps
+ps
 gT
 ny
 VR
@@ -4998,6 +5062,8 @@ ps
 "}
 (14,1,1) = {"
 ps
+ps
+ps
 gT
 Rz
 Uh
@@ -5020,7 +5086,9 @@ di
 ps
 "}
 (15,1,1) = {"
-ps
+gT
+gT
+gT
 gT
 yo
 fs
@@ -5043,7 +5111,9 @@ HW
 ps
 "}
 (16,1,1) = {"
-ps
+gT
+UR
+pE
 gT
 bQ
 QS
@@ -5066,8 +5136,10 @@ HW
 ps
 "}
 (17,1,1) = {"
-ps
 gT
+Gi
+kb
+YG
 yZ
 Oj
 zQ
@@ -5089,8 +5161,10 @@ HW
 ps
 "}
 (18,1,1) = {"
-ps
-lA
+gT
+gT
+gT
+gT
 gT
 gT
 Zd
@@ -5112,6 +5186,8 @@ lA
 ps
 "}
 (19,1,1) = {"
+ps
+ps
 ps
 ps
 ps
@@ -5138,7 +5214,9 @@ ps
 ps
 ps
 ps
-gT
+ps
+ps
+lA
 TE
 TE
 TE
@@ -5158,6 +5236,8 @@ ps
 ps
 "}
 (21,1,1) = {"
+ps
+ps
 ps
 ps
 ps
@@ -5184,6 +5264,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 Qz
 TE
 Ld
@@ -5207,6 +5289,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 zq
 Lw
 le
@@ -5227,6 +5311,8 @@ ps
 ps
 "}
 (24,1,1) = {"
+ps
+ps
 ps
 ps
 Yt
@@ -5253,6 +5339,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 Hu
 nX
 sA
@@ -5276,6 +5364,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 kS
 Ml
 le
@@ -5296,6 +5386,8 @@ ps
 ps
 "}
 (27,1,1) = {"
+ps
+ps
 ps
 ps
 ps
@@ -5323,6 +5415,8 @@ ps
 ps
 ps
 ps
+ps
+ps
 TE
 IK
 xz
@@ -5342,6 +5436,8 @@ ps
 ps
 "}
 (29,1,1) = {"
+ps
+ps
 da
 VW
 Ey
@@ -5365,6 +5461,8 @@ Fu
 da
 "}
 (30,1,1) = {"
+ps
+ps
 FN
 FN
 xi
@@ -5388,6 +5486,8 @@ da
 da
 "}
 (31,1,1) = {"
+ps
+ps
 FN
 FN
 FN
@@ -5411,6 +5511,8 @@ da
 da
 "}
 (32,1,1) = {"
+ps
+ps
 Sp
 jQ
 hR
@@ -5434,6 +5536,8 @@ Av
 Qx
 "}
 (33,1,1) = {"
+ps
+ps
 Sp
 rz
 NY
@@ -5457,6 +5561,8 @@ CM
 gR
 "}
 (34,1,1) = {"
+ps
+ps
 Sp
 RL
 cc
@@ -5480,13 +5586,15 @@ IP
 gR
 "}
 (35,1,1) = {"
+ps
+ps
 lA
 FN
 LH
 uG
 ry
 LM
-LM
+Ic
 Mq
 qn
 Qw
@@ -5503,6 +5611,8 @@ da
 lA
 "}
 (36,1,1) = {"
+ps
+ps
 ps
 FN
 FN
@@ -5527,6 +5637,8 @@ ps
 "}
 (37,1,1) = {"
 ps
+ps
+ps
 Je
 FN
 yO
@@ -5550,6 +5662,8 @@ ps
 "}
 (38,1,1) = {"
 ps
+ps
+ps
 Je
 FN
 Gt
@@ -5572,6 +5686,8 @@ Je
 ps
 "}
 (39,1,1) = {"
+ps
+ps
 ps
 ps
 Cm
