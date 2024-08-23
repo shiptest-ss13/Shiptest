@@ -33,5 +33,5 @@
 /datum/map_template/ruin/whitesands/e11_manufactory
 	name = "E-11 Manufacturing Plant"
 	id = "ws-e11manufactory"
-	description = "TODO"
+	description = "An old Eoehoma Firearms manufacturing plant dedicated to assembly of the beloved-by-many E-11 rifle."
 	suffix = "whitesands_surface_e11_manufactory.dmm"
