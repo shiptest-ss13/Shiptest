@@ -74,6 +74,7 @@
 	icon_living = "survivor_base"
 	projectilesound = 'sound/weapons/gun/laser/e-fire.ogg'
 	speed = 10
+	faction = list("eoehoma")
 	rapid_fire_delay = 1
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/eoehoma/hermit
