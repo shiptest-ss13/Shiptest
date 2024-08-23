@@ -69,9 +69,9 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11 // Intended for the e11_manufactory ruin.
 	name = "Hermit Trooper"
-	desc = "TODO"
-	icon_state = "survivor_base"
-	icon_living = "survivor_base"
+	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save his life."
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/e-fire.ogg'
 	speed = 10
 	faction = list("eoehoma")
