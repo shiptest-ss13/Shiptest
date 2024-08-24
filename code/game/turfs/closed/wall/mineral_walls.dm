@@ -68,24 +68,6 @@
 	icon_state = "diamond_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
-/turf/closed/wall/mineral/bananium
-	name = "bananium wall"
-	desc = "A wall with bananium plating. Honk!"
-	icon = 'icons/turf/walls/bananium_wall.dmi'
-	icon_state = "bananium_wall-0"
-	base_icon_state = "bananium_wall"
-	sheet_type = /obj/item/stack/sheet/mineral/bananium
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_BANANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS, SMOOTH_GROUP_WALLS,SMOOTH_GROUP_AIRLOCK)
-	connector_icon = 'icons/turf/connectors/bananium_wall_connector.dmi'
-	connector_icon_state = "bananium_wall_connector"
-	no_connector_typecache = list(/turf/closed/wall/mineral/bananium, /obj/structure/falsewall/bananium)
-
-/turf/closed/wall/mineral_bananium/yesdiag
-	icon_state = "bananium_wall-255"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-
 /turf/closed/wall/mineral/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
@@ -244,8 +226,6 @@
 	icon_state = "wood_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS | SMOOTH_CONNECTORS
 
-/turf/closed/wall/mineral/wood/nonmetal/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.get_sharpness() && W.force)
@@ -283,9 +263,6 @@
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-
-/turf/closed/wall/mineral/iron/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"

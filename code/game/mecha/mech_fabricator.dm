@@ -5,8 +5,8 @@
 	desc = "Nothing is being built."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 20
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 	req_access = list(ACCESS_ROBOTICS)
 	circuit = /obj/item/circuitboard/machine/mechfab
 	var/time_coeff = 1
@@ -196,10 +196,10 @@
 	rmat.silo_log(src, "built", -1, "[D.name]", res_coef)
 
 	add_overlay("fab-active")
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	updateUsrDialog()
 	sleep(get_construction_time_w_coeff(D))
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	cut_overlay("fab-active")
 	desc = initial(desc)
 

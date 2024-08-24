@@ -33,8 +33,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	density = TRUE
 	desc = "A covered turret that shoots at its enemies."
 	use_power = IDLE_POWER_USE				//this turret uses and requires power
-	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
-	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
+	idle_power_usage = IDLE_DRAW_MINIMAL		//when inactive, this turret takes up constant 50 Equipment power
+	active_power_usage = ACTIVE_DRAW_LOW	//when active, this turret takes up constant 300 Equipment power
 	req_access = list(ACCESS_SECURITY) /// Only people with Security access
 	power_channel = AREA_USAGE_EQUIP	//drains power from the EQUIPMENT channel
 	max_integrity = 160		//the turret's health
@@ -795,7 +795,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	max_integrity = 300
 	always_up = 1
 	use_power = ACTIVE_POWER_USE
-	active_power_usage = 300
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	has_cover = 0
 	scan_range = 9
 	stun_projectile = /obj/projectile/beam/disabler

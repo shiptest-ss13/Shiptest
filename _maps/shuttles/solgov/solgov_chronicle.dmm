@@ -271,10 +271,9 @@
 /obj/item/stamp/solgov,
 /obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/item/spacecash/bundle/loadsamoney,
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh,
-/obj/item/ammo_box/magazine/modelh,
-/obj/item/ammo_box/magazine/modelh,
 /obj/item/clothing/neck/cloak/solgovcap,
+/obj/item/storage/pistolcase/modelh,
+/obj/item/ammo_box/ferroslugbox,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "cg" = (
@@ -351,7 +350,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "da" = (
-/obj/machinery/computer/cargo/express/solgov{
+/obj/machinery/computer/cargo/solgov{
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -3730,7 +3729,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/crewtwo)
 "Ks" = (
-/obj/structure/guncase{
+/obj/structure/guncloset{
 	desc = "A locker that holds weapons.";
 	name = "weapon locker"
 	},

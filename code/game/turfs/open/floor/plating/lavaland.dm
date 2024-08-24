@@ -37,15 +37,6 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/necropolis/icecropolis
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	planetary_atmos = FALSE
-	baseturfs = /turf/open/indestructible/necropolis/air
-
 /turf/open/floor/plating/asteroid/basalt/purple
 	icon = 'icons/turf/lavaland_purple.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/purple
@@ -98,6 +89,42 @@
 	smooth_icon = 'icons/turf/floors/lava_grass_purple.dmi'
 
 /turf/open/floor/concrete/pavement/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/concrete/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/concrete/slab_1/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plating/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plating/rust/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plasteel/white/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+
+/turf/open/floor/plasteel/dark/lava
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6

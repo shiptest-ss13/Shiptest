@@ -17,7 +17,7 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	use_power = IDLE_POWER_USE
-	active_power_usage = 1500
+	active_power_usage = ACTIVE_DRAW_HIGH
 	circuit = /obj/item/circuitboard/machine/bepis
 
 	var/banking_amount = 100
@@ -58,11 +58,11 @@
 		say("Deposited [deposit_value] credits into storage.")
 		update_icon_state()
 		return
-	if(istype(O, /obj/item/card/id))
-		var/obj/item/card/id/Card = O
-		if(Card.registered_account)
-			account = Card.registered_account
-			account_name = Card.registered_name
+	if(istype(O, /obj/item/card/bank))
+		var/obj/item/card/bank/bank_card = O
+		if(bank_card.registered_account)
+			account = bank_card.registered_account
+			account_name = bank_card.registered_name
 			say("New account detected. Console Updated.")
 		else
 			say("No account detected on card. Aborting.")
@@ -254,7 +254,7 @@
 				return
 			calcsuccess()
 			use_power(MACHINE_OPERATION * power_saver) //This thing should eat your APC battery if you're not careful.
-			use_power = IDLE_POWER_USE //Machine shuts off after use to prevent spam and look better visually.
+			set_idle_power() //Machine shuts off after use to prevent spam and look better visually.
 			update_icon_state()
 		if("amount")
 			var/input = text2num(params["amount"])
@@ -262,9 +262,9 @@
 				banking_amount = input
 		if("toggle_power")
 			if(use_power == ACTIVE_POWER_USE)
-				use_power = IDLE_POWER_USE
+				set_idle_power()
 			else
-				use_power = ACTIVE_POWER_USE
+				set_active_power()
 			update_icon_state()
 		if("account_reset")
 			if(use_power == IDLE_POWER_USE)

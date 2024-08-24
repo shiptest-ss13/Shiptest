@@ -38,6 +38,8 @@
 		if (QDELETED(src)) // diseases can qdel the mob via transformations
 			return
 
+		SEND_SIGNAL(src, COMSIG_MOB_LIFE)
+
 		if(stat != DEAD)
 			//Random events (vomiting etc)
 			handle_random_events()

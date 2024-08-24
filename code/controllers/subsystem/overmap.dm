@@ -133,7 +133,7 @@ SUBSYSTEM_DEF(overmap)
 		spawn_ruin_levels()
 
 	spawn_outpost()
-	spawn_initial_ships()
+	//spawn_initial_ships()
 
 /**
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
@@ -212,6 +212,7 @@ SUBSYSTEM_DEF(overmap)
 	new found_type(location)
 	return
 
+/*
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
@@ -224,10 +225,11 @@ SUBSYSTEM_DEF(overmap)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 #endif
+*/
 
 /**
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
- * Inteded for ship purchases, etc.
+ * Intended for ship purchases, etc.
  */
 /datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.

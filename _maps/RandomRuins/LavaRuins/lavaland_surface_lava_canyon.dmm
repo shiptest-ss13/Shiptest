@@ -150,10 +150,7 @@
 	pixel_x = -5;
 	pixel_y = 12
 	},
-/obj/item/melee/cleric_mace{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/helmet/chaplain/ancient{
+/obj/item/clothing/head/witchunter{
 	pixel_y = 13;
 	pixel_x = -5
 	},
@@ -891,7 +888,6 @@
 "zb" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
 	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon);
-	crusher_loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/crusher_trophy/miner_eye,/obj/item/keycard/gatedrop/lavacanyon)
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)

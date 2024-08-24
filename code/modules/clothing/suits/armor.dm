@@ -34,21 +34,27 @@
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
 	icon_state = "armor_alt"
 	item_state = "armoralt"
-	supports_variations = KEPORI_VARIATION
+	//supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/vest/trauma
+	name = "cybersun trauma team armor vest"
+	icon_state = "traumavest"
+	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
 
 /obj/item/clothing/suit/armor/vest/marine
-	name = "light tactical armor vest"
-	desc = "A set of the finest mass-produced stamped plasteel armor plates money can buy."
+	name = "tactical armor vest"
+	desc = "A heavy set of the finest mass-produced stamped plasteel armor plates money can buy."
 	icon_state = "marine_light"
 	item_state = "armor"
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
 	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
+	slowdown = 0.5
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -57,11 +63,6 @@
 /obj/item/clothing/suit/armor/vest/marine/heavy
 	name = "large tactical armor vest"
 	icon_state = "marine_heavy"
-
-/obj/item/clothing/suit/armor/vest/marine/trauma
-	name = "cybersun trauma team armor vest"
-	icon_state = "traumavest"
-	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
@@ -202,11 +203,6 @@
 	strip_delay = 70
 	equip_delay_other = 50
 
-/obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	name = "\improper Frontiersmen bulletproof armor"
-	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
-	icon_state = "frontier_armor"
-
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflector vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."
@@ -326,7 +322,7 @@
 	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/hos/inteq/honorable //Basically CC higherup clothing for inteq
 	name = "honorable vanguard battlecoat"
@@ -334,7 +330,7 @@
 	icon_state = "armor_inteq_honorable_battlecoat"
 	item_state = "inteq_honorable_battlecoat"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -363,27 +359,6 @@
 		/obj/item/gun/energy,
 		/obj/item/melee/baton,
 	)
-
-/obj/item/clothing/suit/armor/roumain
-	name = "saint-roumain duster"
-	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
-	icon_state = "armor_rouma"
-	item_state = "rouma_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
-	cold_protection = CHEST|GROIN|ARMS
-	heat_protection = CHEST|GROIN|ARMS
-
-/obj/item/clothing/suit/armor/roumain/shadow
-	name = "saint-roumain shadow duster"
-	desc = "A coat made from hard leather. Its rough, barely-treated finish is typical of one of the Saint-Roumain Militia's trainees."
-	icon_state = "armor_rouma_shadow"
-	item_state = "rouma_shadow_coat"
-
-/obj/item/clothing/suit/armor/hos/roumain/montagne
-	name = "saint-roumain montagne coat"
-	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
-	icon_state = "armor_rouma_montagne"
-	item_state = "rouma_montagne_coat"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper Sonnensoldner gambison"
@@ -485,14 +460,6 @@
 	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
 	icon_state = "armor_brigphysjacket"
 	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/frontier
-	name = "reinforced fur coat"
-	desc = "A stiff coat, meant for frigid conditions."
-	icon_state = "frontier_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
-	cold_protection = CHEST|GROIN|ARMS
-	heat_protection = CHEST|GROIN|ARMS
 
 /obj/item/clothing/suit/toggle/armor/vest/centcom_formal
 	name = "\improper CentCom formal coat"

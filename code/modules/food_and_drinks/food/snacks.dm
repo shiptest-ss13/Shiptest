@@ -56,6 +56,16 @@ All foods are distributed among various categories. Use common sense.
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
+/obj/item/reagent_containers/food/snacks/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_FRIED, PROC_REF(on_fried))
+
+
+/obj/item/reagent_containers/food/snacks/proc/on_fried(fry_object)
+	reagents.trans_to(fry_object, reagents.total_volume)
+	qdel()
+	return COMSIG_FRYING_HANDLED
+
 /obj/item/reagent_containers/food/snacks/add_initial_reagents()
 	if(tastes && tastes.len)
 		if(list_reagents)
@@ -126,7 +136,7 @@ All foods are distributed among various categories. Use common sense.
 										"<span class='warning'>[user] cannot force any more of [src] down your throat!</span>")
 					return FALSE
 
-				if(!do_mob(user, M))
+				if(!do_after(user, target = M))
 					return
 				log_combat(user, M, "fed", reagents.log_list())
 				M.visible_message("<span class='danger'>[user] forces [M] to eat [src]!</span>", \
@@ -167,26 +177,27 @@ All foods are distributed among various categories. Use common sense.
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/storage))
 		..() // -> item/attackby()
-		return 0
-	if(istype(W, /obj/item/reagent_containers/food/snacks))
+		return FALSE
+	var/datum/component/edible/E = W.GetComponent(/datum/component/edible)
+	if(istype(W, /obj/item/reagent_containers/food/snacks) || E)
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(custom_food_type && ispath(custom_food_type))
-			if(S.w_class > WEIGHT_CLASS_SMALL)
-				to_chat(user, "<span class='warning'>[S] is too big for [src]!</span>")
-				return 0
-			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(W, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
-				to_chat(user, "<span class='warning'>[src] can't be filled with [S]!</span>")
-				return 0
+			if(W.w_class > WEIGHT_CLASS_SMALL)
+				to_chat(user, span_warning("[S] is too big for [src]!"))
+				return FALSE
+			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
+				to_chat(user, span_warning("[src] can't be filled with [S]!"))
+				return FALSE
 			if(contents.len >= 20)
-				to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
-				return 0
+				to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+				return FALSE
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
-			C.initialize_custom_food(src, S, user)
-			return 0
+			C.initialize_custom_food(src, W, user)
+			return FALSE
 	var/sharp = W.get_sharpness()
 	if(sharp)
 		if(slice(sharp, W, user))
-			return 1
+			return TRUE
 	else
 		..()
 
@@ -336,26 +347,10 @@ All foods are distributed among various categories. Use common sense.
 /// All the food items that can store an item inside itself, like bread or cake.
 /obj/item/reagent_containers/food/snacks/store
 	w_class = WEIGHT_CLASS_NORMAL
-	var/stored_item = 0
 
-/obj/item/reagent_containers/food/snacks/store/attackby(obj/item/W, mob/user, params)
-	..()
-	if(W.w_class <= WEIGHT_CLASS_SMALL & !istype(W, /obj/item/reagent_containers/food/snacks)) //can't slip snacks inside, they're used for custom foods.
-		if(W.get_sharpness())
-			return 0
-		if(stored_item)
-			return 0
-		if(!iscarbon(user))
-			return 0
-		if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
-			return 0
-		to_chat(user, "<span class='notice'>You slip [W] inside [src].</span>")
-		user.transferItemToLoc(W, src)
-		add_fingerprint(user)
-		contents += W
-		stored_item = 1
-		return 1 // no afterattack here
+/obj/item/reagent_containers/food/snacks/store/Initialize()
+	. = ..()
+	AddComponent(/datum/component/food_storage)
 
 /obj/item/reagent_containers/food/snacks/MouseDrop(atom/over)
 	var/turf/T = get_turf(src)

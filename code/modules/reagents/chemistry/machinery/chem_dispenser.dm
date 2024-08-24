@@ -19,7 +19,7 @@
 	icon_state = "dispenser"
 	base_icon_state = "dispenser"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 40
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	interaction_flags_machine = INTERACT_MACHINE_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
@@ -470,14 +470,14 @@
 		/datum/reagent/consumable/tea,
 		/datum/reagent/consumable/icetea,
 		/datum/reagent/consumable/space_cola,
-		/datum/reagent/consumable/spacemountainwind,
-		/datum/reagent/consumable/dr_gibb,
+		/datum/reagent/consumable/comet_trail,
+		/datum/reagent/consumable/tadrixx,
 		/datum/reagent/consumable/space_up,
 		/datum/reagent/consumable/tonic,
 		/datum/reagent/consumable/sodawater,
 		/datum/reagent/consumable/lemon_lime,
-		/datum/reagent/consumable/pwr_game,
-		/datum/reagent/consumable/shamblers,
+		/datum/reagent/consumable/pacfuel,
+		/datum/reagent/consumable/shoal_punch,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/consumable/pineapplejuice,
 		/datum/reagent/consumable/orangejuice,
@@ -489,7 +489,7 @@
 	)
 	upgrade_reagents = null
 	emagged_reagents = list(
-		/datum/reagent/consumable/ethanol/thirteenloko,
+		/datum/reagent/consumable/ethanol/vimukti,
 		/datum/reagent/consumable/ethanol/whiskey_cola,
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/staminatoxin

@@ -7,6 +7,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_GEZENA)
+	H.grant_language(/datum/language/draconic)
 
 //Playable Roles (put in ships):
 /datum/outfit/job/gezena/assistant

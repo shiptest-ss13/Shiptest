@@ -115,7 +115,7 @@
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
+		H.heal_bleeding(0.25)
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -180,15 +180,13 @@
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
 	ADD_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 0.5
+	M.physiology.burn_mod *= 0.5
 	M.add_filter("prism-wine", 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
 	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
 	REMOVE_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
-	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
-		M.physiology.burn_mod *= 2
+	M.physiology.burn_mod *= 2
 	M.remove_filter("prism-wine")
 	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 	..()

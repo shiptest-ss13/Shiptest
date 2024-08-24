@@ -163,6 +163,16 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent
+	name = "press armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
+
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+
+	icon_state = "armor_correspondant"
+	item_state = "armor_correspondant"
+
 //spacesuits
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
@@ -309,6 +319,17 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	name = "CLIP War Correspondant M10 Helmet"
+	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
+
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+
+	icon_state = "clip_m10_correspondant"
+	item_state = "clip_m10_correspondant"
+
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"
 	desc = "Designed to protect against close range attacks. Mainly used by the CMM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
@@ -394,25 +415,30 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/military/clip/p16/PopulateContents()
+/obj/item/storage/belt/military/clip/cm82/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/gal/PopulateContents()
+/obj/item/storage/belt/military/clip/f4/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/gal(src)
+		new /obj/item/ammo_box/magazine/f4_308(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm9mm(src)
+		new /obj/item/ammo_box/magazine/cm5_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm15/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/cm15_mag(src)
+		new /obj/item/ammo_box/magazine/cm15_12g(src)
 	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/e50/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/belt/military/clip/e50/PopulateContents()
 	for(var/i in 1 to 5)

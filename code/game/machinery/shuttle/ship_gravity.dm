@@ -9,8 +9,8 @@
 	icon_state = "shipgrav"
 	base_icon_state = "shipgrav"
 	density = TRUE
-	idle_power_usage = 10
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	circuit = /obj/item/circuitboard/machine/ship_gravity
 	var/charging = FALSE
 	var/active = FALSE

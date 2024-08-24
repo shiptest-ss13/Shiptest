@@ -26,6 +26,9 @@
 	outfit = /datum/outfit/job/frontiersmen/ert/leader
 	role = "Officer"
 
+/datum/antagonist/ert/frontier/leader/unnarmed
+	outfit = /datum/outfit/job/frontiersmen/ert/leader/unnarmed
+
 /datum/antagonist/ert/frontier/medic
 	name = "Frontiersmen Medic"
 	outfit = /datum/outfit/job/frontiersmen/ert/medic
@@ -35,3 +38,11 @@
 	name = "Frontiersmen Engineer"
 	outfit = /datum/outfit/job/frontiersmen/ert/engineer
 	role = "Sapper"
+
+/datum/antagonist/ert/frontier/better
+	name = "Frontiersmen Grunt"
+	outfit = /datum/outfit/job/frontiersmen/ert/grunt/skm
+
+/datum/antagonist/ert/frontier/unnarmed
+	name = "Frontiersmen Grunt"
+	outfit = /datum/outfit/job/frontiersmen/ert/grunt

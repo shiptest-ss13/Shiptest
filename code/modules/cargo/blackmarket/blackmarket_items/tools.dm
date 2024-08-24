@@ -1,46 +1,6 @@
 /datum/blackmarket_item/tool
 	category = "Tools"
 
-/datum/blackmarket_item/tool/caravan_wrench
-	name = "Experimental Wrench"
-	desc = "The extra fast and handy wrench you always wanted!"
-	item = /obj/item/wrench/caravan
-
-	price_min = 100
-	price_max = 200
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/caravan_wirecutters
-	name = "Experimental Wirecutters"
-	desc = "The extra fast and handy wirecutters you always wanted!"
-	item = /obj/item/wirecutters/caravan
-
-	price_min = 100
-	price_max = 200
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/caravan_screwdriver
-	name = "Experimental Screwdriver"
-	desc = "The extra fast and handy screwdriver you always wanted!"
-	item = /obj/item/screwdriver/caravan
-
-	price_min = 100
-	price_max = 200
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/caravan_crowbar
-	name = "Experimental Crowbar"
-	desc = "The extra fast and handy crowbar you always wanted!"
-	item = /obj/item/crowbar/red/caravan
-
-	price_min = 100
-	price_max = 200
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/tool/combat_wrench
 	name = "Combat Wrench"
 	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
@@ -165,7 +125,7 @@
 /datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
 	desc = "A suppressor, for when you to keep your murder on the down low."
-	item = /obj/item/suppressor
+	item = /obj/item/attachment/silencer
 
 	price_min = 100
 	price_max = 700

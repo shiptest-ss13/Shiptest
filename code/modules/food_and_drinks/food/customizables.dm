@@ -24,7 +24,7 @@
 /obj/item/reagent_containers/food/snacks/customizable/examine(mob/user)
 	. = ..()
 	var/ingredients_listed = ""
-	for(var/obj/item/reagent_containers/food/snacks/ING in ingredients)
+	for(var/obj/item/ING in ingredients)
 		ingredients_listed += "[ING.name], "
 	var/size = "standard"
 	if(ingredients.len<2)
@@ -36,31 +36,39 @@
 	. += "It contains [ingredients.len?"[ingredients_listed]":"no ingredient, "]making a [size]-sized [initial(name)]."
 
 /obj/item/reagent_containers/food/snacks/customizable/attackby(obj/item/I, mob/user, params)
-	if(!istype(I, /obj/item/reagent_containers/food/snacks/customizable) && istype(I, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/S = I
+	if(istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+		return
+	var/datum/component/edible/E = I.GetComponent(/datum/component/edible)
+	var/obj/item/reagent_containers/food/snacks/S = I
+	if(istype(S) || E)
 		if(I.w_class > WEIGHT_CLASS_SMALL)
 			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
 			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
-		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(I, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
+		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
 			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
-			if(S.trash)
-				S.generate_trash(get_turf(user))
-			ingredients += S
-			mix_filling_color(S)
-			S.reagents.trans_to(src,min(S.reagents.total_volume, 15), transfered_by = user) //limit of 15, we don't want our custom food to be completely filled by just one ingredient with large reagent volume.
-			foodtype |= S.foodtype
-			update_customizable_overlays(S)
+			ingredients += I
+			I.reagents.trans_to(src,min(S.reagents.total_volume, 15), transfered_by = user) //limit of 15, we don't want our custom food to be completely filled by just one ingredient with large reagent volume.
+			if(istype(S))
+				if(S.trash)
+					S.generate_trash(get_turf(user))
+				mix_filling_color(S.filling_color)
+				foodtype |= S.foodtype
+				update_customizable_overlays(S.filling_color)
+			else
+				mix_filling_color(E.filling_color)
+				foodtype |= E.foodtypes
+				update_customizable_overlays(E.filling_color)
 			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
-			update_food_name(S)
+			update_food_name(I)
 	else
 		. = ..()
 
 
-/obj/item/reagent_containers/food/snacks/customizable/proc/update_food_name(obj/item/reagent_containers/food/snacks/S)
+/obj/item/reagent_containers/food/snacks/customizable/proc/update_food_name(obj/item/S)
 	for(var/obj/item/I in ingredients)
 		if(!istype(S, I.type))
 			customname = "custom"
@@ -88,25 +96,25 @@
 		attackby(I, user)
 	qdel(BASE)
 
-/obj/item/reagent_containers/food/snacks/customizable/proc/mix_filling_color(obj/item/reagent_containers/food/snacks/S)
+/obj/item/reagent_containers/food/snacks/customizable/proc/mix_filling_color(newcolor)
 	if(ingredients.len == 1)
-		filling_color = S.filling_color
+		filling_color = newcolor
 	else
 		var/list/rgbcolor = list(0,0,0,0)
 		var/customcolor = GetColors(filling_color)
-		var/ingcolor =  GetColors(S.filling_color)
+		var/ingcolor =  GetColors(newcolor)
 		rgbcolor[1] = (customcolor[1]+ingcolor[1])/2
 		rgbcolor[2] = (customcolor[2]+ingcolor[2])/2
 		rgbcolor[3] = (customcolor[3]+ingcolor[3])/2
 		rgbcolor[4] = (customcolor[4]+ingcolor[4])/2
 		filling_color = rgb(rgbcolor[1], rgbcolor[2], rgbcolor[3], rgbcolor[4])
 
-/obj/item/reagent_containers/food/snacks/customizable/update_customizable_overlays(obj/item/reagent_containers/food/snacks/S)
+/obj/item/reagent_containers/food/snacks/customizable/update_customizable_overlays(filling_color = "#FFFFFF")
 	var/mutable_appearance/filling = mutable_appearance(icon, "[initial(icon_state)]_filling")
-	if(S.filling_color == "#FFFFFF")
+	if(filling_color == "#FFFFFF")
 		filling.color = pick("#FF0000","#0000FF","#008000","#FFFF00")
 	else
-		filling.color = S.filling_color
+		filling.color = filling_color
 
 	switch(ingredients_placement)
 		if(INGREDIENTS_SCATTER)
@@ -162,26 +170,6 @@
 	foodtype = GRAIN
 
 
-/obj/item/reagent_containers/food/snacks/customizable/bread
-	name = "bread"
-	ingMax = 6
-	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/custom
-	slices_num = 5
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "tofubread"
-	foodtype = GRAIN
-
-
-/obj/item/reagent_containers/food/snacks/customizable/cake
-	name = "cake"
-	ingMax = 6
-	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/custom
-	slices_num = 5
-	icon = 'icons/obj/food/piecake.dmi'
-	icon_state = "plaincake"
-	foodtype = GRAIN | DAIRY
-
-
 /obj/item/reagent_containers/food/snacks/customizable/kebab
 	name = "kebab"
 	desc = "Delicious food on a stick."
@@ -190,15 +178,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	ingMax = 6
 	icon_state = "rod"
-
-/obj/item/reagent_containers/food/snacks/customizable/pasta
-	name = "spaghetti"
-	desc = "Noodles. With stuff. Delicious."
-	ingredients_placement = INGREDIENTS_SCATTER
-	ingMax = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
-	icon_state = "spaghettiboiled"
-	foodtype = GRAIN
 
 
 /obj/item/reagent_containers/food/snacks/customizable/pie
@@ -228,43 +207,6 @@
 	ingMax = 6
 	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "bowl"
-
-
-/obj/item/reagent_containers/food/snacks/customizable/sandwich
-	name = "toast"
-	desc = "A timeless classic."
-	ingredients_placement = INGREDIENTS_STACK
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "breadslice"
-	var/finished = 0
-	foodtype = GRAIN
-
-/obj/item/reagent_containers/food/snacks/customizable/sandwich/initialize_custom_food(obj/item/reagent_containers/BASE, obj/item/I, mob/user)
-	icon_state = BASE.icon_state
-	..()
-
-/obj/item/reagent_containers/food/snacks/customizable/sandwich/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/breadslice)) //we're finishing the custom food.
-		var/obj/item/reagent_containers/food/snacks/breadslice/BS = I
-		if(finished)
-			return
-		to_chat(user, "<span class='notice'>You finish the [src.name].</span>")
-		finished = 1
-		name = "[customname] sandwich"
-		BS.reagents.trans_to(src, BS.reagents.total_volume, transfered_by = user)
-		ingMax = ingredients.len //can't add more ingredients after that
-		var/mutable_appearance/TOP = mutable_appearance(icon, "[BS.icon_state]")
-		TOP.pixel_y = 2 * ingredients.len + 3
-		add_overlay(TOP)
-		if(istype(BS, /obj/item/reagent_containers/food/snacks/breadslice/custom))
-			var/mutable_appearance/filling = new(icon, "[initial(BS.icon_state)]_filling")
-			filling.color = BS.filling_color
-			filling.pixel_y = 2 * ingredients.len + 3
-			add_overlay(filling)
-		qdel(BS)
-		return
-	else
-		..()
 
 
 /obj/item/reagent_containers/food/snacks/customizable/soup

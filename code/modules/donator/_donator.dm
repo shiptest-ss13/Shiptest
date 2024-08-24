@@ -23,7 +23,7 @@ GLOBAL_PROTECT(donators)
 
 /client/proc/do_donator_redemption()
 	set name = "Redeem Donator Reward"
-	set category = "Donator"
+	set category = "OOC.Donator"
 	set desc = "Redeem a reward"
 
 	var/mob/client_mob = mob
@@ -38,7 +38,7 @@ GLOBAL_PROTECT(donators)
 
 /client/proc/do_donator_wcir()
 	set name = "What Can I Redeem"
-	set category = "Donator"
+	set category = "OOC.Donator"
 	set desc = "Currently available redemptions"
 
 	donator?.what_can_i_redeem(src.mob)

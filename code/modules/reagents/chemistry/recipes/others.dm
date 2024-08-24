@@ -56,7 +56,7 @@
 /datum/chemical_reaction/adamantinesolidification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/sheet/mineral/adamantine(location)
+		new /obj/item/stack/sheet/mineral/hidden/hellstone(location)
 
 /datum/chemical_reaction/silversolidification
 	required_reagents = list(/datum/reagent/silver = 20, /datum/reagent/consumable/frostoil = 5, /datum/reagent/carbon = 10)
