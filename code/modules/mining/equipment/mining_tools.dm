@@ -53,6 +53,7 @@
 	force = 19
 	custom_price = 1500
 	custom_premium_price = 2000
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill
 	name = "mining drill"
@@ -81,6 +82,7 @@
 	toolspeed = 0.2
 	desc = "EXOCOM's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
 	force = 20
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
 	name = "diamond-tipped integrated mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.

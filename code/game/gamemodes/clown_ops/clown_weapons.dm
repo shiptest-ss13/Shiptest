@@ -40,14 +40,14 @@
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/Initialize()
 	. = ..()
 	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
-	bananium.insert_amount_mat(max_recharge, /datum/material/bananium)
+	bananium.insert_amount_mat(max_recharge, /datum/material/hellstone)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/process()
 	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
-	var/bananium_amount = bananium.get_material_amount(/datum/material/bananium)
+	var/bananium_amount = bananium.get_material_amount(/datum/material/hellstone)
 	if(bananium_amount < max_recharge)
-		bananium.insert_amount_mat(min(recharge_rate, max_recharge - bananium_amount), /datum/material/bananium)
+		bananium.insert_amount_mat(min(recharge_rate, max_recharge - bananium_amount), /datum/material/hellstone)
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/attack_self(mob/user)
 	ui_action_click(user)

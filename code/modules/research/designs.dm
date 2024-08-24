@@ -138,20 +138,19 @@ other types of metals and chemistry for reagents).
 	blueprints[1] = new /datum/design/c10mm()
 
 
-/obj/item/disk/design_disk/adv/disposable_gun
+/obj/item/disk/design_disk/disposable_gun
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
 	max_blueprints = 2
 
-/obj/item/disk/design_disk/adv/disposable_gun/Initialize()
+/obj/item/disk/design_disk/disposable_gun/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/disposable_gun()
-	blueprints[2] = new /datum/design/pizza_disposable_gun()
 
 /obj/item/disk/design_disk/clip_mechs
-	name = "design disk - CLIP mecha modifications"
-	desc = "A design disk containing specifications for CLIP-custom mecha conversions."
+	name = "design disk - CLIP exosuit modifications"
+	desc = "A design disk containing specifications for CLIP-custom exosuit conversions."
 	color = "#57b8f0"
 	max_blueprints = 2
 

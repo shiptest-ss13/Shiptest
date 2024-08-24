@@ -1,5 +1,5 @@
 /obj/mecha
-	name = "mecha"
+	name = "exosuit"
 	desc = "Exosuit"
 	icon = 'icons/mecha/mecha.dmi'
 	density = TRUE //Dense. To raise the heat.
@@ -158,7 +158,7 @@
 	return cell
 
 /obj/mecha/Destroy()
-	if(occupant)
+	if(occupant && iscarbon(occupant))
 		occupant.SetSleeping(destruction_sleep_duration)
 	go_out()
 	var/mob/living/silicon/ai/AI
@@ -404,13 +404,13 @@
 		var/integrity = obj_integrity/max_integrity*100
 		switch(integrity)
 			if(30 to 45)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 1)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 1)
 			if(15 to 35)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 2)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 2)
 			if(-INFINITY to 15)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 3)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 3)
 			else
-				occupant.clear_alert("mech damage")
+				occupant.clear_alert("exosuit damage")
 		var/atom/checking = occupant.loc
 		// recursive check to handle all cases regarding very nested occupants,
 		// such as brainmob inside brainitem inside MMI inside mecha
@@ -419,7 +419,7 @@
 				// hit a turf before hitting the mecha, seems like they have
 				// been moved out
 				occupant.clear_alert("charge")
-				occupant.clear_alert("mech damage")
+				occupant.clear_alert("exosuit damage")
 				RemoveActions(occupant, human_occupant=1)
 				occupant = null
 				break
@@ -831,7 +831,7 @@
 
 
 //An actual AI (simple_animal mecha pilot) entering the mech
-/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
 	if(pilot_mob && pilot_mob.Adjacent(src))
 		if(occupant)
 			return
@@ -841,7 +841,7 @@
 		pilot_mob.forceMove(src)
 		GrantActions(pilot_mob)//needed for checks, and incase a badmin puts somebody in the mob
 
-/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
 	if(occupant == pilot_mob)
 		occupant = null
 	if(pilot_mob.mecha == src)
@@ -1024,10 +1024,10 @@
 				final_exit_delay = exit_delay/2
 
 	if(do_after(occupant, has_gravity() ? final_exit_delay : 0 , target = src))
-		to_chat(occupant, "<span class='notice'>You exit the mech.</span>")
+		to_chat(occupant, "<span class='notice'>You exit the exosuit.</span>")
 		go_out()
 	else
-		to_chat(occupant, "<span class='notice'>You stop exiting the mech. Weapons are enabled again.</span>")
+		to_chat(occupant, "<span class='notice'>You stop exiting the exosuit. Weapons are enabled again.</span>")
 	is_currently_ejecting = FALSE
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)
@@ -1052,7 +1052,7 @@
 		return
 	var/atom/movable/mob_container
 	occupant.clear_alert("charge")
-	occupant.clear_alert("mech damage")
+	occupant.clear_alert("exosuit damage")
 	if(ishuman(occupant))
 		mob_container = occupant
 		RemoveActions(occupant, human_occupant=1)

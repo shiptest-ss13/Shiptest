@@ -6,8 +6,6 @@
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
-	r_pocket = /obj/item/storage/wallet
-
 // Assistant
 
 /datum/outfit/job/independent/assistant
@@ -19,8 +17,21 @@
 
 /datum/outfit/job/independent/assistant/waiter
 	name = "Independent - Assistant (Waiter)"
+
 	uniform = /obj/item/clothing/under/suit/waiter
+	alt_uniform = /obj/item/clothing/under/suit/waiter/syndicate
+	gloves = /obj/item/clothing/gloves/color/evening
+	ears = /obj/item/radio/headset/headset_srv
 	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/lighter
+	r_pocket = /obj/item/reagent_containers/glass/rag
+
+/datum/outfit/job/independent/assistant/waiter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_KITCHEN)
 
 /datum/outfit/job/independent/assistant/fancy
 	name = "Independent - Assistant (Formal Uniform)"
@@ -136,6 +147,18 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/kitchen/knife/combat
 	implants = list(/obj/item/implant/radio)
+	accessory = null
+
+/datum/outfit/job/independent/captain/manager
+	name = "Independent - Captain (Manager)"
+
+	id = /obj/item/card/id
+	gloves = /obj/item/clothing/gloves/color/white
+	uniform = /obj/item/clothing/under/suit/black_really
+	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
+	dcoat = null
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = null
 	accessory = null
 
 // Head of Personnel
@@ -289,7 +312,6 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/storage/wallet
 	gloves = /obj/item/clothing/gloves/color/yellow
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
@@ -368,7 +390,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/storage/wallet
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
@@ -519,7 +540,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_hand = /obj/item/clipboard
+	r_pocket = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
@@ -527,11 +548,15 @@
 /datum/outfit/job/independent/quartermaster/western
 	name = "Independent - Quartermaster (Western)"
 
-	uniform = /obj/item/clothing/under/rank/cargo/qm
-	suit = /obj/item/clothing/suit/toggle/hazard
+	uniform = /obj/item/clothing/under/rank/security/detective
+	suit = /obj/item/clothing/suit/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
@@ -586,7 +611,8 @@
 	job_icon = "cook"
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/civilian/chef //WS Edit - Alt Uniforms
+	shoes = /obj/item/clothing/shoes/laceup
+	uniform = /obj/item/clothing/under/rank/civilian/chef
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
@@ -601,8 +627,6 @@
 	var/chosen_box = pick(possible_boxes)
 	var/obj/item/storage/box/I = new chosen_box(src)
 	H.equip_to_slot_or_del(I,ITEM_SLOT_BACKPACK)
-	var/datum/martial_art/cqc/under_siege/justacook = new
-	justacook.teach(H)
 
 // Bartender
 
@@ -617,6 +641,14 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
+	accessory = /obj/item/clothing/accessory/waistcoat
+
+/datum/outfit/job/independent/bartender/disarmed //No armor, no shotgun ammo.
+	name = "Independent - Bartender (Disarmed)"
+
+	suit = null
+	alt_suit = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/bartender/pharma
 	name = "Independent - Bartender (Mixologist)"
@@ -628,6 +660,7 @@
 	belt = /obj/item/storage/belt
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	uniform = /obj/item/clothing/under/suit/black
+	accessory = null
 
 // Lawyer
 

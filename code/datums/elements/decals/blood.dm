@@ -6,9 +6,11 @@
 
 	. = ..()
 	RegisterSignal(target, COMSIG_ATOM_GET_EXAMINE_NAME, PROC_REF(get_examine_name), TRUE)
+	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED), PROC_REF(redraw), TRUE)
 
 /datum/element/decal/blood/Detach(atom/source, force)
 	UnregisterSignal(source, COMSIG_ATOM_GET_EXAMINE_NAME)
+	UnregisterSignal(source, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED))
 	return ..()
 
 /datum/element/decal/blood/generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, source)
@@ -30,3 +32,11 @@
 	override[EXAMINE_POSITION_ARTICLE] = A.gender == PLURAL? "some" : "a"
 	override[EXAMINE_POSITION_BEFORE] = " blood-stained "
 	return COMPONENT_EXNAME_CHANGED
+
+///this is probably quite bad, let me know if you have a better solution for this -S
+/datum/element/decal/blood/proc/redraw(datum/source, mob/user)
+	SIGNAL_HANDLER
+
+	var/atom/bloodsource = source
+	Detach(source)
+	bloodsource.AddElement(/datum/element/decal/blood, bloodsource.icon, bloodsource.icon_state, _color = get_blood_dna_color(bloodsource.return_blood_DNA()))

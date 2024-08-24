@@ -169,13 +169,9 @@
 	var/static/regex/nostutter = regex(@@[aeiouAEIOU "'()[\]{}.!?,:;_`~-]@)
 	for(var/i = 1, i <= leng, i += length(rawchar))
 		rawchar = newletter = phrase[i]
-		if(prob(80) && !nostutter.Find(rawchar))
-			if(prob(10))
-				newletter = "[newletter]-[newletter]-[newletter]-[newletter]"
-			else if(prob(20))
+		if(prob(70) && !nostutter.Find(rawchar))
+			if(prob(25))
 				newletter = "[newletter]-[newletter]-[newletter]"
-			else if (prob(5))
-				newletter = ""
 			else
 				newletter = "[newletter]-[newletter]"
 		. += newletter

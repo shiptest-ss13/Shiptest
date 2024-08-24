@@ -44,6 +44,9 @@
 /obj/item/proc/InsertID()
 	return FALSE
 
+/obj/item/proc/GetBankCard()
+	return null
+
 /obj/proc/text2access(access_text)
 	. = list()
 	if(!access_text)
@@ -114,6 +117,8 @@
 	if (gen_ship_access(ship))
 		return TRUE
 
+	if(!item)
+		return FALSE
 	var/obj/item/card/id/id = item?.GetID()
 	if (id?.has_ship_access(ship))
 		return TRUE
@@ -363,15 +368,15 @@
 		if(ACCESS_NETWORK)
 			return "Network Access"
 		if(ACCESS_MECH_MINING)
-			return "Mining Mech Access"
+			return "Mining Exosuit Access"
 		if(ACCESS_MECH_MEDICAL)
-			return "Medical Mech Access"
+			return "Medical Exosuit Access"
 		if(ACCESS_MECH_SECURITY)
-			return "Security Mech Access"
+			return "Security Exosuit Access"
 		if(ACCESS_MECH_SCIENCE)
-			return "Science Mech Access"
+			return "Science Exosuit Access"
 		if(ACCESS_MECH_ENGINE)
-			return "Engineering Mech Access"
+			return "Engineering Exosuit Access"
 
 //WS Begin
 		if(ACCESS_CLONING)

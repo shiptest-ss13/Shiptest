@@ -182,16 +182,16 @@
 /turf/open/floor/plasteel,
 /area/outpost/maintenance/fore)
 "bi" = (
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = -31;
-	machinedir = 1;
-	output_dir = 1
-	},
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
+	},
+/obj/machinery/computer/electrolyzer_console{
+	pixel_y = -18;
+	density = 0;
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -728,11 +728,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
 "fd" = (
-/obj/machinery/mineral/processing_unit{
-	input_dir = 8;
-	output_dir = 1
+/obj/machinery/conveyor/inverted{
+	id = "outpost1";
+	dir = 10
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/cargo)
 "fh" = (
@@ -2541,6 +2540,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
+"rk" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/mineral/electrolyzer{
+	output_dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/outpost/cargo)
 "rm" = (
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/effect/turf_decal/corner/opaque/neutral{
@@ -5032,10 +5038,8 @@
 	},
 /area/outpost/crew/bar)
 "FE" = (
-/obj/machinery/mineral/unloading_machine{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/mineral/electrolyzer_unloader,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/cargo)
 "FF" = (
@@ -7064,13 +7068,13 @@
 /obj/structure/railing{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/conveyor_switch{
 	id = "outpost1";
 	layer = 3.11;
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "RU" = (
@@ -17438,8 +17442,8 @@ Dp
 tI
 tI
 RO
-gO
-BZ
+rk
+bi
 Uw
 HD
 HD
@@ -17562,7 +17566,7 @@ ca
 ca
 ca
 fd
-bi
+BZ
 Uw
 HD
 HD

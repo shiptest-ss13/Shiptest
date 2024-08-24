@@ -27,8 +27,8 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/light/directional/east,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "aw" = (
@@ -141,15 +141,15 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
 "bB" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -464,7 +464,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/port)
 "dK" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1052,13 +1052,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "is" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "lib_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -1318,7 +1318,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "kw" = (
@@ -1347,6 +1347,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
+"kO" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engines/starboard)
 "kR" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2,
 /obj/structure/window/plasma/reinforced,
@@ -1898,15 +1905,16 @@
 /area/ship/crew/canteen)
 "qp" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
+	dir = 1
+	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "qy" = (
@@ -1922,6 +1930,13 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar/starboard)
+"qA" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/hydrogen,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engines/port)
 "qB" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "lib_armory_1";
@@ -3412,8 +3427,8 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/light/directional/east,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Dq" = (
@@ -3891,13 +3906,13 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "FN" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "lib_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -5131,14 +5146,14 @@
 /area/ship/engineering)
 "Ph" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/atmospherics/components/trinary/mixer/layer2{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/trinary/mixer/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -5795,7 +5810,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "UB" = (
@@ -5863,15 +5878,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "UM" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -6123,6 +6138,9 @@
 /obj/item/gun/energy/kalix/pistol{
 	pixel_y = -9;
 	pixel_x = -3
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
@@ -6802,14 +6820,14 @@ hK
 ys
 Uw
 au
-Uw
+qA
 lc
 qZ
 QI
 TV
 kq
 Dm
-kq
+kO
 OS
 ps
 TV

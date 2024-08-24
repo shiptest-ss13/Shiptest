@@ -8,7 +8,6 @@
 	force = 0
 	throwforce = 0
 	burst_size = 3
-	can_suppress = TRUE
 	item_flags = NONE
 	casing_ejector = FALSE
 	manufacturer = MANUFACTURER_NANOTRASEN
@@ -22,14 +21,17 @@
 /obj/item/gun/ballistic/automatic/toy/pistol
 	name = "foam force pistol"
 	desc = "A small, easily concealable toy handgun. Ages 8 and up."
-	icon = 'icons/obj/guns/projectile.dmi'
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "pistol" // WS edit - Fix various startup runtimes
 	bolt_type = BOLT_TYPE_LOCKING
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/toy/pistol
 	fire_sound = 'sound/items/syringeproj.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.2 SECONDS
 	actions_types = list()
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -44,13 +46,13 @@
 /obj/item/gun/ballistic/shotgun/toy
 	name = "foam force shotgun"
 	desc = "A toy shotgun with wood furniture and a four-shell capacity underneath. Ages 8 and up."
+	icon_state = "shotgun"
 	force = 0
 	throwforce = 0
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
-	can_suppress = FALSE
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -59,8 +61,8 @@
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0)
-	..()
+/obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
+	. = ..()
 	if(chambered && !chambered.BB)
 		qdel(chambered)
 
@@ -81,7 +83,6 @@
 /obj/item/gun/ballistic/automatic/smg/c20r/toy
 	name = "donksoft SMG"
 	desc = "A bullpup two-round burst toy SMG, designated 'C-20r'. Ages 8 and up."
-	can_suppress = FALSE
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 	fire_sound = 'sound/items/syringeproj.ogg'
@@ -101,7 +102,6 @@
 	name = "donksoft LMG"
 	desc = "A heavily modified toy light machine gun, designated 'L6 SAW'. Ages 8 and up."
 	fire_sound = 'sound/items/syringeproj.ogg'
-	can_suppress = FALSE
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/m762
 	casing_ejector = FALSE

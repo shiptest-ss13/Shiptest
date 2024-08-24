@@ -226,7 +226,7 @@
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -624,7 +624,7 @@
 	new /obj/item/ammo_box/magazine/smgm45(src)
 	new /obj/item/ammo_box/magazine/smgm45(src)
 	new /obj/item/gun/ballistic/automatic/smg/c20r(src)
-	new /obj/item/suppressor/specialoffer(src)
+	new /obj/item/attachment/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	desc = "A large duffel bag containing a Bulldog, some drums, and a pair of thermal imaging glasses."

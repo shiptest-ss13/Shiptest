@@ -558,7 +558,7 @@
 	id = "suppressor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
-	build_path = /obj/item/suppressor
+	build_path = /obj/item/attachment/silencer
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -581,15 +581,6 @@
 	build_path = /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/cleric_mace
-	name = "Cleric Mace"
-	desc = "A mace fit for a cleric. Useful for bypassing plate armor, but too bulky for much else."
-	id = "cleric_mace"
-	build_type = AUTOLATHE
-	materials = list(MAT_CATEGORY_RIGID = 12000)
-	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported")
 
 /datum/design/stun_boomerang
 	name = "OZtek Boomerang"
@@ -648,14 +639,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 4000)
 	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
-	category = list("Imported")
-
-/datum/design/pizza_disposable_gun
-	name = "Pizza Disposable Gun"
-	id = "disposable_pizza"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/pizza = 4000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
 	category = list("Imported")
 
 //SRM Ballistics

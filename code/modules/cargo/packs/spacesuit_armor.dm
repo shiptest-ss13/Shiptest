@@ -16,7 +16,7 @@
 
 /datum/supply_pack/spacesuit_armor/pilot_spacesuit
 	name = "Pilot Space Suit Crate"
-	desc = "One pilot space suit, for improved mobility in mechs."
+	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/space/pilot,
 					/obj/item/clothing/head/helmet/space/pilot/random)
@@ -34,8 +34,7 @@
 	name = "Medical Hardsuit Crate"
 	desc = "One medical hardsuit, resistant to diseases and useful for retrieving patients in space."
 	cost = 1500
-	contains = list(/obj/item/clothing/suit/space/hardsuit/medical,
-					/obj/item/clothing/suit/space/hardsuit/medical)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
 

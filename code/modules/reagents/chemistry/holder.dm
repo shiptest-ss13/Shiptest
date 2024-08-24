@@ -389,7 +389,7 @@
 						for(var/addiction in cached_addictions)
 							var/datum/reagent/A = addiction
 							if(istype(R, A))
-								A.addiction_stage = -15 // you're satisfied for a good while.
+								A.addiction_stage = -30 // you're satisfied for a good while.
 				need_mob_update += R.on_mob_life(C)
 
 	if(can_overdose)
@@ -512,7 +512,7 @@
 						matching_container = 1
 
 					else
-						if(cached_my_atom.type == C.required_container)
+						if(cached_my_atom.type in typesof(C.required_container))
 							matching_container = 1
 					if (isliving(cached_my_atom) && !C.mob_react) //Makes it so certain chemical reactions don't occur in mobs
 						return

@@ -115,16 +115,16 @@
 		if(prob(30)) //Not all mafioso have mustaches, some people also find this item annoying.
 			new /obj/item/clothing/mask/fakemoustache/italian(C)
 	if(prob(10)) //A little extra sugar every now and then to shake things up.
-		new	/obj/item/switchblade(C)
+		new	/obj/item/kitchen/knife/switchblade(C)
 
 /datum/supply_pack/costumes_toys/mech_suits
-	name = "Mech Pilot's Suit Crate"
+	name = "Exosuit Pilot's Suit Crate"
 	desc = "Suits for piloting big robots. Contains all three colors!"
 	cost = 1500 //state-of-the-art technology doesn't come cheap
 	contains = list(/obj/item/clothing/under/costume/mech_suit,
 					/obj/item/clothing/under/costume/mech_suit/white,
 					/obj/item/clothing/under/costume/mech_suit/blue)
-	crate_name = "mech pilot's suit crate"
+	crate_name = "exosuit pilot's suit crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/costumes_toys/wizard

@@ -105,6 +105,12 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	slowdown = 1
+
+	fire_delay = 0.1 SECONDS
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
@@ -121,7 +127,6 @@
 
 	ammo_pack = loc
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 	return ..()
 
 /obj/item/gun/energy/minigun/Destroy()

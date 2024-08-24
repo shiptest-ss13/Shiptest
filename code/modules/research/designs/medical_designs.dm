@@ -476,7 +476,7 @@
 	desc = "Makes death amusing."
 	id = "implant_trombone"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 500, /datum/material/bananium = 500)
+	materials = list(/datum/material/glass = 500, /datum/material/hellstone = 500)
 	build_path = /obj/item/implantcase/sad_trombone
 	category = list("Medical Designs")
 

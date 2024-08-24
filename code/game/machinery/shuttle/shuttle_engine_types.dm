@@ -29,7 +29,7 @@
 	if(heat_creation)
 		heat_engine()
 	var/to_use = fuel_use * (percentage / 100) * deltatime
-	return resolved_heater.consume_fuel(to_use, fuel_type) / to_use * thrust //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
+	return resolved_heater.consume_fuel(to_use, fuel_type) / to_use * percentage / 100 * thrust //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel()
 	. = ..()
@@ -82,8 +82,15 @@
 			if(!found.anchored)
 				continue
 			attached_heater = WEAKREF(found)
+			var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
+			RegisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT, PROC_REF(remove_heater))
 			update_icon_state()
 			return TRUE
+
+/obj/machinery/power/shuttle/engine/fueled/proc/remove_heater(datum/source, disassembled)
+	SIGNAL_HANDLER
+
+	attached_heater = null
 
 /obj/machinery/power/shuttle/engine/fueled/plasma
 	name = "plasma thruster"
@@ -100,6 +107,90 @@
 	fuel_use = 80
 	thrust = 15
 	//All fuel code already handled
+
+/**
+ * ### Combustion/Fire engines
+ * Engines that use oxidizer and fuel to output thrust. Theoretically works with any mix of fuels and oxiders. Wish me luck.
+*/
+
+/obj/machinery/power/shuttle/engine/fire
+	name = "combustion thruster"
+	desc = "A thruster that burns fuel with oxider that is stored in an adjacent heater."
+	icon_state = "burst_plasma"
+	icon_state_off = "burst_plasma_off"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/fire
+
+	idle_power_usage = 0
+	///what portion of the mols in the attached heater to "burn"
+	var/fuel_consumption = 0.0125
+	//multiplier for thrust
+	thrust = 3
+	//used by stockparts, efficiency_multiplier
+	var/consumption_multiplier = 1
+	//If this engine should create heat when burned.
+	var/heat_creation = FALSE
+	//A weakref of the connected engine heater with fuel.
+	var/datum/weakref/attached_heater
+
+
+/obj/machinery/power/shuttle/engine/fire/burn_engine(percentage = 100, deltatime)
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	if(!resolved_heater)
+		return
+	if(heat_creation)
+		heat_engine()
+	var/actual_consumption = fuel_consumption * (percentage / 100) * deltatime * consumption_multiplier
+	return resolved_heater.consume_fuel(actual_consumption) * thrust //this proc returns the min of the fuel/oxy possible burns, multiply by our thrust value
+
+/obj/machinery/power/shuttle/engine/fire/return_fuel()
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	return resolved_heater?.return_gas()
+
+/obj/machinery/power/shuttle/engine/fire/return_fuel_cap()
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	return resolved_heater?.return_gas_capacity()
+
+/obj/machinery/power/shuttle/engine/fire/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	update_icon_state()
+
+/obj/machinery/power/shuttle/engine/fire/update_engine()
+	if(!..())
+		return
+	if(!attached_heater && !set_heater())
+		thruster_active = FALSE
+		return FALSE
+
+/obj/machinery/power/shuttle/engine/fire/proc/set_heater()
+	for(var/direction in GLOB.cardinals)
+		for(var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/found in get_step(get_turf(src), direction))
+			if(found.dir != dir)
+				continue
+			if(found.panel_open)
+				continue
+			if(!found.anchored)
+				continue
+			attached_heater = WEAKREF(found)
+			var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+			RegisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT, PROC_REF(remove_heater))
+			update_icon_state()
+			return TRUE
+
+/obj/machinery/power/shuttle/engine/fire/proc/remove_heater(datum/source, disassembled)
+	SIGNAL_HANDLER
+
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	UnregisterSignal(resolved_heater, COMSIG_OBJ_DECONSTRUCT)
+	attached_heater = null
+
+/obj/machinery/power/shuttle/engine/fire/RefreshParts()
+	var/laz = 0
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		laz += L.rating
+	consumption_multiplier = laz
 
 /**
  * ### Ion Engines
@@ -133,6 +224,7 @@
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
 	icon = 'icons/obj/shuttle.dmi'
+	dir = EAST
 	input_level = 5000
 	input_level_max = 50000
 	output_level = 50000

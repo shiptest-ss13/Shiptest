@@ -139,7 +139,7 @@
 		var/chosen = getbork()
 		var/obj/B = new chosen(T)
 		if(prob(5))//Fry it!
-			var/obj/item/reagent_containers/food/snacks/deepfryholder/fried
+			var/obj/item/food/deepfryholder/fried
 			fried = new(T, B)
 			fried.fry() // actually set the name and colour it
 			B = fried
@@ -425,7 +425,7 @@
 	required_other = TRUE
 
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
-	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
+	new /obj/item/stack/sheet/mineral/hidden/hellstone(get_turf(holder.my_atom))
 	..()
 
 //Bluespace

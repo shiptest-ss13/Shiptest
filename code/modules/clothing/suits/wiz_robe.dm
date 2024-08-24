@@ -148,39 +148,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 
-/obj/item/clothing/suit/wizrobe/paper
-	name = "papier-mache robe" // no non-latin characters!
-	desc = "A robe held together by various bits of clear-tape and paste."
-	icon_state = "wizard-paper"
-	item_state = "wizard-paper"
-	var/robe_charge = TRUE
-	actions_types = list(/datum/action/item_action/stickmen)
-
-
-/obj/item/clothing/suit/wizrobe/paper/ui_action_click(mob/user, action)
-	stickmen()
-
-
-/obj/item/clothing/suit/wizrobe/paper/verb/stickmen()
-	set category = "Object"
-	set name = "Summon Stick Minions"
-	set src in usr
-	if(!isliving(usr))
-		return
-	if(!robe_charge)
-		to_chat(usr, "<span class='warning'>The robe's internal magic supply is still recharging!</span>")
-		return
-
-	usr.say("Rise, my creation! Off your page into this realm!", forced = "stickman summoning")
-	playsound(src.loc, 'sound/magic/summon_magic.ogg', 50, TRUE, TRUE)
-	var/mob/living/M = new /mob/living/simple_animal/hostile/stickman(get_turf(usr))
-	var/list/factions = usr.faction
-	M.faction = factions
-	src.robe_charge = FALSE
-	sleep(30)
-	src.robe_charge = TRUE
-	to_chat(usr, "<span class='notice'>The robe hums, its internal magic supply restored.</span>")
-
 /obj/item/clothing/suit/space/hardsuit/shielded/wizard
 	name = "battlemage armour"
 	desc = "Not all wizards are afraid of getting up close and personal."

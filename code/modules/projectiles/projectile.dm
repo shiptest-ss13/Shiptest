@@ -1,7 +1,3 @@
-
-#define MOVES_HITSCAN -1		//Not actually hitscan but close as we get without actual hitscan.
-#define MUZZLE_EFFECT_PIXEL_INCREMENT 17	//How many pixels to move the muzzle flash up so your character doesn't look like they're shitting out lasers.
-
 /obj/projectile
 	name = "projectile"
 	icon = 'icons/obj/projectiles.dmi'
@@ -494,7 +490,7 @@
 		if(direct_target)
 			return TRUE
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
-		if(L.stat == DEAD || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
+		if(L.stat || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
 			return FALSE
 	return TRUE
 

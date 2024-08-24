@@ -21,7 +21,8 @@
 	var/prefix = "ISV"
 	/// The full name of the ship's faction.
 	var/faction_name = "Independent"
-	var/unique_ship_access = FALSE
+	/// Whether or not players from other ships can open airlocks.
+	var/unique_ship_access = TRUE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
 	/// will be in the middle of space, instead of at an outpost.
 	var/space_spawn = FALSE
@@ -357,7 +358,7 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-//your subshuttle here
+//your subshuttle here //why is my subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
@@ -400,6 +401,11 @@
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
 	prefix = "PGF"
+
+/datum/map_template/shuttle/subshuttles/tanto
+	file_name = "independent_tanto"
+	name = "Tanto-class Drop Pod"
+	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/brawler
 	file_name = "frontiersmen_brawler"

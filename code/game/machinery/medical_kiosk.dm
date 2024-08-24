@@ -18,6 +18,8 @@
 	base_icon_state = "kiosk"
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/medical_kiosk
 	var/obj/item/scanner_wand
 	/// Emag mode
@@ -170,7 +172,7 @@
 			sickness_data = "\nName: [D.name].\nType: [D.spread_text].\nStage: [D.stage]/[D.max_stages].\nPossible Cure: [D.cure_text]"
 
 	if(altPatient.has_dna()) //Blood levels Information
-		if(altPatient.bleed_rate)
+		if(LAZYLEN(altPatient.get_bleeding_parts()))
 			bleed_status = "Patient is currently bleeding!"
 		if(blood_percent <= 80)
 			blood_warning = " Patient has low blood levels. Seek a large meal, or iron supplements."

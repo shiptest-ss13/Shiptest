@@ -8,8 +8,8 @@
 	icon = 'icons/obj/chemical/misc.dmi'
 	icon_state = "pandemic0"
 	base_icon_state = "pandemic"
-	use_power = TRUE
-	idle_power_usage = 20
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	resistance_flags = ACID_PROOF
 	circuit = /obj/item/circuitboard/computer/pandemic
 	unique_icon = TRUE

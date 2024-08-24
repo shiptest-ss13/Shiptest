@@ -558,7 +558,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "gF" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/under/rank/security/officer/frontier/officer,
+/obj/item/clothing/under/frontiersmen/officer,
 /obj/item/clothing/suit/armor/frontier,
 /obj/item/clothing/head/beret/sec/frontier/officer,
 /turf/open/floor/carpet/red_gold,
@@ -658,7 +658,7 @@
 	dir = 4;
 	name = "tactical swivel chair"
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/officer/neutured,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "iE" = (
@@ -1342,7 +1342,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/jungle/cavecrew/security)
 "pB" = (
@@ -1364,7 +1364,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
 "qz" = (
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -1432,7 +1432,7 @@
 /area/ruin/jungle/cavecrew/hallway)
 "rN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/neutered,
 /turf/open/floor/plating/dirt/old,
 /area/ruin/powered)
 "rQ" = (
@@ -1671,7 +1671,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/clothing/under/rank/security/officer/frontier,
+/obj/item/clothing/under/frontiersmen,
 /obj/item/clothing/head/beret/sec/frontier,
 /obj/machinery/light_switch{
 	pixel_y = 21;
@@ -1762,7 +1762,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
-/obj/machinery/computer/cargo/express,
+/obj/machinery/computer/cargo,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/cavecrew/cargo)
 "vH" = (
@@ -1832,7 +1832,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm/neutured,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -2354,7 +2354,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
 "CN" = (
@@ -2365,7 +2365,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/frontier,
+/mob/living/simple_animal/hostile/human/frontier,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2570,7 +2570,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Fw" = (
-/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
 "Fy" = (
@@ -2797,7 +2797,7 @@
 	dir = 4;
 	layer = 3.1
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew/cargo)
 "II" = (
@@ -3208,7 +3208,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
 "MW" = (
@@ -3244,7 +3244,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/clothing/under/rank/security/officer/frontier,
+/obj/item/clothing/under/frontiersmen,
 /obj/item/clothing/head/beret/sec/frontier,
 /obj/item/clothing/under/misc/pj/blue,
 /obj/machinery/light/small/broken/directional/north,
@@ -3391,7 +3391,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Pg" = (
@@ -3931,9 +3931,9 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/clothing/under/rank/security/officer/frontier,
-/obj/item/clothing/under/rank/security/officer/frontier,
-/obj/item/clothing/under/rank/security/officer/frontier,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier,
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier,
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier,
@@ -4092,7 +4092,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
 "Xx" = (
-/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
