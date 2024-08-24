@@ -108,8 +108,8 @@ SUBSYSTEM_DEF(blackmarket)
 								var/turf/open/lava/potential_lava_floor = potential_open_turf
 								if(!potential_lava_floor.is_safe())
 									continue
-							if(istype(potential_open_turf,/turf/open/acid))
-								var/turf/open/acid/potential_acid_floor = potential_open_turf
+							if(istype(potential_open_turf, /turf/open/water/acid))
+								var/turf/open/water/acid/potential_acid_floor = potential_open_turf
 								if(!potential_acid_floor.is_safe_to_cross())
 									continue
 							if(potential_open_turf.is_blocked_turf())
