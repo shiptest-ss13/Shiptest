@@ -1733,7 +1733,20 @@
 
 /// Returns the atom name that should be used on screentip
 /atom/proc/get_screentip_name(client/hovering_client)
-	return name
+	if(ishuman(src))
+		var/mob/living/carbon/human/guy = src
+		var/mob/client_mob = hovering_client.mob
+		var/datum/guestbook/guestbook = client_mob.mind?.guestbook
+		if(guestbook)
+			var/known_name = guestbook.get_known_name(client_mob, guy)
+			if(known_name)
+				return known_name
+			else
+				return guy.get_visible_name()
+		else
+			return guy.real_name
+	else
+		return name
 
 ///Called whenever a player is spawned on the same turf as this atom.
 /atom/proc/join_player_here(mob/M)

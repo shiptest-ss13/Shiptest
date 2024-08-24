@@ -52,7 +52,9 @@
 	var/random_species_type = GLOB.species_list[pick(GLOB.roundstart_races)]
 	pref_species = new random_species_type
 	if(randomise[RANDOM_NAME])
-		real_name = pref_species.random_name(gender,1)
+		real_name = pref_species.random_name(gender, TRUE)
+	if(randomise[RANDOM_AGE])
+		age = rand(pref_species.species_age_min, pref_species.species_age_max)
 
 /datum/preferences/proc/update_preview_icon(show_gear = TRUE, show_loadout = FALSE)
 	// Set up the dummy for its photoshoot

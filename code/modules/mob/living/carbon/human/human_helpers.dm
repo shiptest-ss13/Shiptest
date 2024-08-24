@@ -192,23 +192,51 @@
 /mob/living/carbon/human/proc/get_age()
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src)) // sorry ladies no middle aged robots
 		return FALSE
-	switch(age)
-		if(70 to INFINITY)
-			return "Geriatric"
-		if(60 to 70)
-			return "Elderly"
-		if(50 to 60)
-			return "Old"
-		if(40 to 50)
-			return "Middle-Aged"
-		if(24 to 40)
-			return FALSE //not necessary because this is basically the most common age range
-		if(18 to 24)
-			return "Young"
-		else
-			return "Puzzling"
+	if(islizard(src))
+		switch(age)
+			if(175 to INFINITY)
+				return "Ancient"
+			if(150 to 175)
+				return "Elderly"
+			if(125 to 150)
+				return "Old"
+			if(100 to 125)
+				return "Middle-Aged"
+			if(60 to 100)
+				return FALSE // widest age range
+			if(18 to 60)
+				return "Young"
+	else if(isvox(src))
+		switch(age)
+			if(280 to INFINITY)
+				return "Ancient"
+			if(240 to 280)
+				return "Elderly"
+			if(200 to 240)
+				return "Old"
+			if(160 to 200)
+				return "Middle-Aged"
+			if(96 to 160)
+				return FALSE // widest age range
+			if(18 to 96)
+				return "Young"
+	else
+		switch(age)
+			if(70 to INFINITY)
+				return "Ancient"
+			if(60 to 70)
+				return "Elderly"
+			if(50 to 60)
+				return "Old"
+			if(40 to 50)
+				return "Middle-Aged"
+			if(24 to 40)
+				return FALSE // most common age range
+			if(18 to 24)
+				return "Young"
+		return "Puzzling"
 
 /mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
 	var/final_string = ""
