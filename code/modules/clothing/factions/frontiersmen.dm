@@ -254,9 +254,14 @@
 		new /obj/item/ammo_box/magazine/skm_762_40(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/aps_mp_ammo/PopulateContents() //replace with spitter. remind me.
+/obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/pistolm9mm(src)
+		new /obj/item/ammo_box/magazine/m9mm_mauler(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/spitter_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/spitter_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()
