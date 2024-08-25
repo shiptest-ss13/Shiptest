@@ -216,6 +216,7 @@
 /area/ruin/whitesands/e11manufactory/barracks)
 "bB" = (
 /obj/structure/chair,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
 "bI" = (
@@ -304,12 +305,13 @@
 "cm" = (
 /obj/effect/decal/remains/xeno/larva{
 	name = "Croquette";
-	desc = "They look like the remains of an animal. They have a strange aura about them."
+	desc = "They look like the remains of a mothroach. They have a strange aura about them."
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
 "cq" = (
@@ -486,11 +488,15 @@
 /obj/structure/railing,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"dA" = (
+/obj/structure/flora/tree/dead/barren,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "dC" = (
 /obj/structure/safe/floor,
 /obj/item/spacecash/bundle/mediumrand,
 /obj/item/spacecash/bundle/smallrand,
-/obj/item/spacecash/bundle/pocketchange,
+/obj/item/spacecash/bundle/smallrand,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
@@ -1027,7 +1033,8 @@
 "iM" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
-	desc = "A secure ore crate."
+	desc = "A secure ore crate.";
+	anchored = 1
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -1231,6 +1238,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
+"kn" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "ko" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
 	dir = 4
@@ -1715,7 +1728,6 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "on" = (
 /obj/effect/decal/cleanable/molten_object,
-/mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -2534,7 +2546,8 @@
 "vm" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
-	desc = "A secure ore crate."
+	desc = "A secure ore crate.";
+	anchored = 1
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -2620,10 +2633,7 @@
 /area/ruin/whitesands/e11manufactory/office)
 "wv" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/chair/stool{
-	pixel_y = -7;
-	pixel_x = 4
-	},
+/obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -4764,7 +4774,8 @@
 "Pv" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
-	desc = "A secure ore crate."
+	desc = "A secure ore crate.";
+	anchored = 1
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -5028,8 +5039,10 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Rv" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/structure/chair/stool{
-	dir = 1
+/obj/item/chair/stool{
+	pixel_y = -7;
+	pixel_x = -8;
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -5205,7 +5218,8 @@
 "SF" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
-	desc = "A secure ore crate."
+	desc = "A secure ore crate.";
+	anchored = 1
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -5662,8 +5676,8 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
 "Xd" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/valve/on/layer2{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/whitesands,
@@ -6219,7 +6233,7 @@ vU
 vU
 vU
 vU
-Cw
+Zj
 vU
 vU
 vU
@@ -6658,7 +6672,7 @@ mM
 (11,1,1) = {"
 mM
 vU
-Cw
+Zj
 KQ
 Pg
 SR
@@ -6723,7 +6737,7 @@ mM
 (12,1,1) = {"
 mM
 vU
-Cw
+Zj
 KQ
 Pg
 Pg
@@ -6958,7 +6972,7 @@ vU
 vU
 Zj
 vU
-Cw
+Zj
 vU
 vU
 vU
@@ -7562,7 +7576,7 @@ gV
 KQ
 vU
 vU
-Cw
+Zj
 vU
 "}
 (25,1,1) = {"
@@ -9758,7 +9772,7 @@ vU
 vU
 vU
 vU
-Cw
+Zj
 vU
 vU
 Pa
@@ -10447,14 +10461,14 @@ vU
 vU
 NH
 NH
-vU
+Zj
 NH
 NH
 NH
 NH
-vU
-vU
-vU
+Zj
+Zj
+Zj
 vU
 vU
 vU
@@ -10512,14 +10526,14 @@ vU
 vU
 vU
 NH
-NH
+dA
+Zj
+RV
+Zj
+kn
+Zj
 vU
-Gy
-vU
-Pa
-vU
-vU
-vU
+Zj
 vU
 mM
 mM
