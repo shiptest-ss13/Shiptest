@@ -1,0 +1,6 @@
+author: Gristlebee
+changes:
+  - {balance: 'Durand shield consumes less charge on being hit, passive drain increased.'}
+  - {bugfix: Mechs consume the correct amount of power on movement.}
+  - {refactor: normal_step_energy_drain is now base_step_energy_drain}
+delete-after: true
