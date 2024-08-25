@@ -50,7 +50,39 @@
 	display_name = "tie, recolorable"
 	path =  /obj/item/clothing/neck/tie
 
+//Gloves
+
+/datum/gear/accessory/gloves
+	subtype_path = /datum/gear/accessory/gloves
+	slot = ITEM_SLOT_GLOVES
+
+/datum/gear/accessory/gloves/black
+	display_name = "gloves, black"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/black
+
+/datum/gear/accessory/gloves/white
+	display_name = "gloves, white"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/white
+
+/datum/gear/accessory/gloves/brown
+	display_name = "gloves, brown"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/brown
+
+/datum/gear/accessory/gloves/fingerless
+	display_name = "gloves, fingerless"
+	description = "Radical hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/fingerless
+
+/datum/gear/accessory/gloves/evening
+	display_name = "gloves, evening"
+	description = "Excessively fancy elbow-length gloves."
+	path = /obj/item/clothing/gloves/color/evening
+
 //Bone
+
 /datum/gear/accessory/fangnecklace
 	display_name = "wolf fang necklace"
 	path = /obj/item/clothing/neck/fangnecklace
@@ -101,27 +133,6 @@
 	display_name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
-
-/datum/gear/accessory/gloves/black
-	display_name = "black gloves"
-	description = "Standard hand coverings for everyday use."
-	path = /obj/item/clothing/gloves/color/black
-
-/datum/gear/accessory/gloves/white
-	display_name = "white gloves"
-	description = "Standard hand coverings for everyday use."
-	path = /obj/item/clothing/gloves/color/white
-
-/datum/gear/accessory/gloves/fingerless
-	display_name = "fingerless gloves"
-	description = "Radical hand coverings for everyday use."
-	path = /obj/item/clothing/gloves/fingerless
-
-/datum/gear/accessory/gloves/evening
-	display_name = "evening gloves"
-	description = "Excessively fancy elbow-length gloves."
-	path = /obj/item/clothing/gloves/color/evening
-	slot = ITEM_SLOT_GLOVES
 
 /datum/gear/accessory/headphones
 	display_name = "headphones"

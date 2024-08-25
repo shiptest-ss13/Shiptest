@@ -1,5 +1,7 @@
 GLOBAL_LIST_EMPTY(roundstart_races)
 
+#define MINIMUM_MOLS_TO_HARM 1
+
 /**
  * # species datum
  *
@@ -1793,6 +1795,61 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!H.on_fire || areatemp > H.bodytemperature) // If we are not on fire or the area is hotter
 		H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
 
+	if(H.check_for_seal())
+		return
+
+	var/plasma = environment.get_moles(GAS_PLASMA)
+	var/tritium = environment.get_moles(GAS_TRITIUM)
+	var/chlorine = environment.get_moles(GAS_CHLORINE)
+	var/hydrogen_chloride = environment.get_moles(GAS_HYDROGEN_CHLORIDE)
+	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM)
+		return
+
+	var/eyedamage = FALSE
+	var/irritant = FALSE
+	var/burndamage = 0
+	var/lowerthreshold = 0
+	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
+		lowerthreshold = 1
+
+	if(plasma > (MINIMUM_MOLS_TO_HARM * 10))
+		eyedamage = TRUE
+		irritant = TRUE
+	if(tritium)
+		burndamage += max(sqrt(tritium) - 2 + lowerthreshold, 0)
+		if(tritium > MINIMUM_MOLS_TO_HARM)
+			eyedamage = TRUE
+			irritant = TRUE
+	if(chlorine)
+		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		irritant = TRUE
+		if(chlorine > (MINIMUM_MOLS_TO_HARM * 10))
+			eyedamage = TRUE
+	if(hydrogen_chloride)
+		burndamage += max(sqrt(hydrogen_chloride) - 1 + lowerthreshold, 0)
+		eyedamage = TRUE
+		irritant = TRUE
+
+	if(!eyedamage && !burndamage && !irritant)
+		return
+	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
+	if(prob(50) && burndamage)
+		if(lowerthreshold)
+			to_chat(H, "<span class='userdanger'>You're corroding!</span>")
+		else
+			to_chat(H, "<span class='userdanger'>You're melting!</span>")
+		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
+	if(!H.check_for_goggles() && eyedamage)
+		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+		if(prob(50))
+			to_chat(H, "<span class='danger'>Your eyes burn!</span>")
+	if(irritant && prob(50))
+		if(lowerthreshold)
+			to_chat(H, "<span class='danger'>Your outer shell smolders!</span>")
+		else
+			to_chat(H, "<span class='danger'>Your skin itches.</span>")
+
+
 /// Handle the body temperature status effects for the species
 /// Traits for resitance to heat or cold are handled here.
 /datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
@@ -2264,3 +2321,5 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/get_harm_descriptors()
 	return
+
+#undef MINIMUM_MOLS_TO_HARM

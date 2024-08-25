@@ -24,6 +24,9 @@
 ///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
 /// Example: Pistols with a slide lock, some SMGs
 #define BOLT_TYPE_LOCKING 4
+///Gun has an HK-style locking charging handle, so you can slap it. Only use this for flavor, otherwise modern-style automatics should use BOLT_TYPE_LOCKING.
+/// Example: everything made by lanchester
+#define BOLT_TYPE_CLIP 5
 //Sawn off nerfs
 ///accuracy penalty of sawn off guns
 #define SAWN_OFF_ACC_PENALTY 25
@@ -61,6 +64,7 @@
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
+#define MANUFACTURER_MINUTEMAN_LASER "the Clover Photonics logo"
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."

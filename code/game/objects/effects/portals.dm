@@ -31,6 +31,7 @@
 	var/innate_accuracy_penalty = 0
 	var/last_effect = 0
 	var/force_teleport = FALSE
+	var/restrain_vlevel = TRUE
 
 /obj/effect/portal/anom
 	name = "wormhole"
@@ -156,7 +157,7 @@
 		no_effect = TRUE
 	else
 		last_effect = world.time
-	if(do_teleport(M, real_target, innate_accuracy_penalty, no_effects = no_effect, channel = teleport_channel, forced = force_teleport))
+	if(do_teleport(M, real_target, innate_accuracy_penalty, no_effects = no_effect, channel = teleport_channel, forced = force_teleport, restrain_vlevel = restrain_vlevel))
 		if(istype(M, /obj/projectile))
 			var/obj/projectile/P = M
 			P.ignore_source_check = TRUE
@@ -183,6 +184,7 @@
 	desc = "An unwavering portal that will never fade."
 	hardlinked = FALSE // dont qdel my portal nerd
 	force_teleport = TRUE // force teleports because they're a mapmaker tool
+	restrain_vlevel = FALSE
 	var/id // var edit or set id in map editor
 
 /obj/effect/portal/permanent/proc/set_linked()
