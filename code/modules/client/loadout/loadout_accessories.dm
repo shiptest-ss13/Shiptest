@@ -92,6 +92,36 @@
 	path = /obj/item/clothing/accessory/bonearmlet
 	slot = null
 
+//Masks
+
+/datum/gear/accessory/mask
+	subtype_path = /datum/gear/accessory/mask
+	slot = ITEM_SLOT_MASK
+
+/datum/gear/accessory/mask/bandana/red
+	display_name = "bandana, red"
+	path = /obj/item/clothing/mask/bandana/red
+
+/datum/gear/accessory/mask/bandana/skull
+	display_name = "bandana, skull"
+	path = /obj/item/clothing/mask/bandana/skull
+
+/datum/gear/accessory/mask/bandana/black
+	display_name = "bandana, black"
+	path = /obj/item/clothing/mask/bandana/black
+
+/datum/gear/accessory/mask/bandana/blue
+	display_name = "bandana, blue"
+	path = /obj/item/clothing/mask/bandana/blue
+
+/datum/gear/accessory/mask/surgical
+	display_name = "surgical mask"
+	path = /obj/item/clothing/mask/surgical
+
+/datum/gear/accessory/mask/balaclava
+	display_name = "balaclava"
+	path = /obj/item/clothing/mask/balaclava
+
 //Misc
 
 /datum/gear/accessory/waistcoat
@@ -103,3 +133,12 @@
 	display_name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
+
+/datum/gear/accessory/headphones
+	display_name = "headphones"
+	slot = ITEM_SLOT_EARS
+	path = /obj/item/instrument/piano_synth/headphones
+
+/datum/gear/accessory/pocketprotector
+	display_name = "pocket protector"
+	path = /obj/item/clothing/accessory/pocketprotector
