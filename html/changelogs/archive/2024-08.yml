@@ -9,3 +9,166 @@
   SomeguyManperson:
   - rscadd: legion attacks will now inject an organ which eventually causes a transformation,
       rather than instantly killing and transforming people.
+2024-08-03:
+  Anticept:
+  - bugfix: Executing someone with a gun is back, you psychos. Paint the floor red!
+  Martinpachu:
+  - balance: 8x50 boxes now come with 25 ammo as opposed to 20.
+  Sadhorizon:
+  - tweak: Internals Crate now costs 100 credits and contains full oxygen tanks.
+  - tweak: Plasmaman Tank Kit renamed to Plasmaman Internals Crate. It now costs 100
+      credits and contains full plasma tanks.
+  SomeguyManperson:
+  - bugfix: mini/energy gun cases no longer spawn with the wrong weapon in them
+  - balance: gun attachments are now small instead of normal sized
+  Yata9ar4su:
+  - bugfix: Cash bundle value will now be correct in chat, cash will not drop upon
+      stacking
+  firebudgy:
+  - rscadd: New sprites for Vox! Vanguard and Honorable Vanguard Battlecoat sprite
+      changes, NGR hard hats, and hazard vests!
+  generalthrax:
+  - rscadd: Industrial jacket now keeps you warm
+  - bugfix: Contender is now called the Beacon in cargo
+  zimon9:
+  - rscadd: an anesthetics crate
+2024-08-04:
+  Apogee-dev:
+  - bugfix: Changed almost every player facing instance of the word "mech" to "exosuit"
+  - balance: Replaced syndie survival boxes in outfit datums with normal job-equivalent
+      boxes
+  FalloutFalcon:
+  - balance: nerfed legion money drops.
+  Gristlebee:
+  - rscadd: Sandbags can be deconed by click dragging them onto your mob.
+  - rscadd: Sandbags to the outpost for 150 credits.
+  Martinpachu:
+  - rscadd: Clips of all kinds (not magazines!) can now be produced on the autolathe.
+  - rscdel: Clip cargo packs, as they are now redundant.
+  PositiveEntropy:
+  - imageadd: Resprites muzzle flashes!
+  Sadhorizon:
+  - imageadd: Added directionals for mining processing consoles.
+  Thera-Pissed:
+  - bugfix: hydrogen and combustion bugs
+  Zevotech:
+  - balance: the Quirk Social Anxiety no longer silences you randomly
+  - bugfix: Stuttering is now far less extreme and will not delete characters
+  - bugfix: Psicodine now actually suppresses the effects of social anxiety
+  firebudgy:
+  - bugfix: Fixed three typos in the code.
+  phoaly:
+  - balance: Buffed LP hardsuits
+2024-08-07:
+  Sadhorizon:
+  - tweak: Remapped the Dwayne-class Long Range Mining Transport.
+  - rscadd: Added a random plushie spawner and a random moth plushie spawner.
+  Thera-Pissed:
+  - rscadd: Chlorine and Hydrogen Chloride gases! Wear your goggles!
+2024-08-10:
+  generalthrax:
+  - rscadd: Cleanbots now destroy cigarette butts, and dispense enough acid to do
+      so.
+  rye-rice:
+  - bugfix: indie sec hardsuit now shows up
+2024-08-11:
+  firebudgy:
+  - rscadd: Sprites for several different kinds of scarves for Vox!
+  - rscadd: Additional sprites for several other items for Vox, such as chest-high
+      towels and hazard jackets.
+  - rscadd: Created onmob_neck_vox.dmi file, plus enabled support for it.
+  generalthrax:
+  - bugfix: Fixes the Industrial Jacket to be warm (For Real)
+  phoaly:
+  - balance: Talos Corpsman has been readded with a different medkit loadout.
+2024-08-16:
+  OrionTheFox:
+  - rscadd: Suit Storage Units now provide feedback when Decontamination fails to
+      activate
+  - imageadd: Suit Storage Units now have a visible red light when Locked - when hacked,
+      Decontamination now has a red-yellow flashing light to distinguish from the
+      Locked light.
+2024-08-18:
+  Cloudbreak:
+  - rscadd: Frontiersman sprites for the Vox!
+  Gristlebee:
+  - bugfix: water turfs reagent scooping
+  - code_imp: span classes to span macros
+  - refactor: acid turfs repathed under water
+  - refactor: Pouring out a reagent container is now bound to disarm intent instead
+      of help intent.
+  - rscadd: Examine hints for flipped tables
+  - bugfix: You can no longer phase through a flipped table.
+  meemofcourse:
+  - bugfix: Hardliner troopers should no longer spawn as Hardliner pilots
+2024-08-20:
+  Aquidu:
+  - bugfix: Fixed a bug relating to literal spaghetti code.
+  zimon9:
+  - bugfix: fixed a short on the Shetland
+2024-08-21:
+  FalloutFalcon:
+  - rscadd: Added var to let admins bypass do_teleport vlevel restriction
+  Sadhorizon:
+  - bugfix: Ranged frontersman with internals now drops the correct revolver type.
+2024-08-22:
+  rye-rice, Imaginos16:
+  - rscadd: Adds new belt sprites
+2024-08-23:
+  retlaw34, rye-rice, Apogee-dev:
+  - rscadd: Adds CLIPs weapons
+  - rscadd: Adds the New Frontiersmen weapons
+  - rscadd: 556 ammo box to cargo
+  - rscadd: inteq sprites should look better
+2024-08-24:
+  generalthrax:
+  - rscdel: Removed a bunch of random items from fitting in wallets (notably screwdrivers,
+      cigarettes, suture / mesh / gauze)
+  - rscadd: Ship keys and derringers can now fit in wallets
+2024-08-26:
+  Aquidu:
+  - rscadd: Rations now have icons that help show the contents.
+  - rscadd: Condiments and drink mixes now have colors when full to help show the
+      contents.
+  - rscadd: Unique sprites for the ration heater, drink packs ration drinks, and "side"
+      category rations.
+  - code_imp: Changes the sound effect for opening the drink ration to the bottle
+      cap sound to line up with the icon.
+  DIB-DOG:
+  - rscadd: Added a standard vest to the armory office locker
+  - rscadd: Added a Security camera console to the bridge
+  - balance: Silkenweave jackets and Betzu hats now provide cold protection but no
+      armor
+  - balance: Crying Sun now has 4 combustion/2 ion engines instead of 2/4
+  - bugfix: Fixes turrets on the Crying Sun and its subshuttle, the Nail.
+  FalloutFalcon, MrSamu99, Fikou:
+  - rscadd: a few shipments of MOD control units have found there way to the frontier,
+      premium versions of existing hard suits with the latest tech!
+  - rscadd: Ported modsuits from tg, no mapped stuff yet
+  Gristlebee:
+  - balance: Durand shield consumes less charge on being hit, passive drain increased.
+  - bugfix: Mechs consume the correct amount of power on movement.
+  - refactor: normal_step_energy_drain is now base_step_energy_drain
+  - rscadd: Grills can now cook food.
+  - rscdel: Xeno-energy working as grill fuel.
+  - balance: Outpost food costs
+  - bugfix: Grills
+  Ms-Mee:
+  - bugfix: fixed handle_quirk_conflict behavior
+  Sadhorizon:
+  - bugfix: Gloves now show up in the loadout preview.
+  - rscadd: Brown gloves were added to the loadout.
+  - tweak: Moved everything out of autolathe contraband - you no longer have to hack
+      it, ever.
+  - rscdel: Removed foilhat, flamethrower, electropack, .357 casing and slime scanner
+      from the autolathe.
+  - rscadd: Added a bunch of new items to the loadout.
+  - tweak: Changed the description of red suspenders.
+  - rscadd: Ihejirka space outpost now has player-accessible cryogenics.
+  SomeguyManperson:
+  - balance: wormholes on the overmap no longer decay when used
+  Thera-Pissed:
+  - code_imp: TEG efficiency now depends on temperature delta.
+  Vekter:
+  - bugfix: Removed an extra fire extinguisher from the crew quarters on the IRMV
+      Talos.

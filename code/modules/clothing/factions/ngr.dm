@@ -14,7 +14,7 @@
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
-	desc = "Beige fatigues used primarily by the ship and mech pilots of the New Gorlex Republic."
+	desc = "Beige fatigues used primarily by the shuttle and exosuit pilots of the New Gorlex Republic."
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
@@ -231,6 +231,7 @@
 	icon_state = "ngr_shemagh"
 	icon = 'icons/obj/clothing/faction/ngr/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
+	supports_variations = VOX_VARIATION
 
 //////////
 //Belts//
