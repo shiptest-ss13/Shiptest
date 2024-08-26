@@ -19,7 +19,7 @@
 	disliked_food = FRUIT
 	liked_food = VEGETABLES | DAIRY
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
-	outfit_important_for_life = /datum/outfit/plasmaman
+//	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
 	loreblurb = "Technically a disability rather than a species, Phorids (known far more commonly as plasmamen) are a loose grouping of people fallen victim to anomalous plasma-related effects that convert tough biological matter into inorganic, biology-mimicking plasma structures. Phorids often live their lives dependent on larger organizations due to their oxygen-incompatible physiology."
 
@@ -71,121 +71,6 @@
 	if(internal_fire)
 		no_protection = TRUE
 	. = ..()
-
-/datum/species/plasmaman/before_equip_job(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
-	var/current_job = J.name
-	var/datum/outfit/plasmaman/O = new /datum/outfit/plasmaman
-	switch(current_job)
-		if("Chaplain")
-			O = new /datum/outfit/plasmaman/chaplain
-
-		if("Curator")
-			O = new /datum/outfit/plasmaman/curator
-
-		if("Janitor")
-			O = new /datum/outfit/plasmaman/janitor
-
-		if("Botanist")
-			O = new /datum/outfit/plasmaman/botany
-
-		if("Bartender", "Lawyer")
-			O = new /datum/outfit/plasmaman/bar
-
-		if("Cook")
-			O = new /datum/outfit/plasmaman/chef
-
-		if("Prisoner")
-			O = new /datum/outfit/plasmaman/prisoner
-
-		if("Security Officer")
-			O = new /datum/outfit/plasmaman/security
-
-		if("Brig Physician")
-			O = new /datum/outfit/plasmaman/secmed
-
-		if("Detective")
-			O = new /datum/outfit/plasmaman/detective
-
-		if("Warden")
-			O = new /datum/outfit/plasmaman/warden
-
-		if("Cargo Technician", "Quartermaster")
-			O = new /datum/outfit/plasmaman/cargo
-
-		if("Shaft Miner")
-			O = new /datum/outfit/plasmaman/mining
-
-		if("Medical Doctor")
-			O = new /datum/outfit/plasmaman/medical
-
-		if("Paramedic")
-			O = new /datum/outfit/plasmaman/paramedic
-
-		if("Chemist")
-			O = new /datum/outfit/plasmaman/chemist
-
-		if("Geneticist")
-			O = new /datum/outfit/plasmaman/genetics
-
-		if("Roboticist")
-			O = new /datum/outfit/plasmaman/robotics
-
-		if("Virologist")
-			O = new /datum/outfit/plasmaman/viro
-
-		if("Scientist")
-			O = new /datum/outfit/plasmaman/science
-
-		if("Station Engineer")
-			O = new /datum/outfit/plasmaman/engineering
-
-		if("Atmospheric Technician")
-			O = new /datum/outfit/plasmaman/atmospherics
-
-		if("Captain")
-			O = new /datum/outfit/plasmaman/command
-
-		if("Chief Engineer")
-			O = new /datum/outfit/plasmaman/ce
-
-		if("Chief Medical Officer")
-			O = new /datum/outfit/plasmaman/cmo
-
-		if("Head of Security")
-			O = new /datum/outfit/plasmaman/hos
-
-		if("Research Director")
-			O = new /datum/outfit/plasmaman/rd
-
-		if("Head of Personnel")
-			O = new /datum/outfit/plasmaman/hop
-
-		if("Mime")
-			O = new /datum/outfit/plasmaman/mime
-
-		if("Clown")
-			O = new /datum/outfit/plasmaman/clown
-
-		if("SolGov Representative") //WS edit sgr
-			O = new /datum/outfit/plasmaman/solgov
-
-	var/holder		//WS Edit Begin - Plasma skirtsuit prefs
-	switch(H.jumpsuit_style)
-		if(PREF_SKIRT)
-			holder = "[O.uniform]/skirt"
-		if(PREF_GREYSUIT)
-			O.head = /obj/item/clothing/head/helmet/space/plasmaman
-			holder = "/obj/item/clothing/under/plasmaman"
-		else
-			holder = "[O.uniform]"
-
-	if(text2path(holder))
-		O.uniform = text2path(holder)		//WS Edit End
-
-	H.equipOutfit(O, visualsOnly)
-	H.internal = H.get_item_for_held_index(2)
-	H.update_internals_hud_icon(1)
-	return 0
 
 /datum/species/plasmaman/random_name(gender,unique,lastname)
 	if(unique)

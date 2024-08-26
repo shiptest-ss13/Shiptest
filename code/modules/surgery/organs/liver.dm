@@ -72,6 +72,42 @@
 	icon_state = "liver-p"
 	desc = "A large crystal that is somehow capable of metabolizing chemicals, these are found in plasmamen."
 
+/* /obj/item/organ/liver/plasmaman/on_life()
+	. = ..()
+	var/mob/living/carbon/human/H = owner
+
+	if(H.reagents.has_reagent(/datum/reagent/consumable/milk))
+		if(chem.volume > 10)
+			H.reagents.remove_reagent(/datum/reagent/consumable/milk, 10)
+			to_chat(H, "<span class='warning'>The excess milk is dripping off your bones!</span>") // assuming we have a phorid body
+		H.heal_bodypart_damage(1.5,0, 0)
+		H.reagents.remove_reagent(/datum/reagent/consumable/milk, 0.4)
+
+	if(H.reagents.has_reagent(/datum/reagent/toxin/bonehurtingjuice))
+		H.adjustStaminaLoss(7.5, 0)
+		H.adjustBruteLoss(0.5, 0)
+		if(prob(20))
+			switch(rand(1, 3))
+				if(1)
+					H.say(pick("oof.", "ouch.", "my bones.", "oof ouch.", "oof ouch my bones."), forced = /datum/reagent/toxin/bonehurtingjuice)
+				if(2)
+					H.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
+				if(3)
+					to_chat(H, "<span class='warning'>Your bones hurt!</span>")
+ 		if(chem.overdosed)
+			if(prob(4)) //big oof
+				var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG) //God help you if the same limb gets picked twice quickly.
+				var/obj/item/bodypart/bp = H.get_bodypart(selected_part) //We're so sorry skeletons, you're so misunderstood
+				if(bp)
+					playsound(H, get_sfx("desceration"), 50, TRUE, -1) //You just want to socialize
+					H.visible_message("<span class='warning'>[H] rattles loudly and flails around!!</span>", "<span class='danger'>Your bones hurt so much that your missing muscles spasm!!</span>")
+					H.say("OOF!!", forced=/datum/reagent/toxin/bonehurtingjuice)
+					bp.receive_damage(200, 0, 0) //But I don't think we should
+				else
+					to_chat(H, "<span class='warning'>Your missing limb aches from wherever you left it.</span>")
+					H.emote("sigh")
+*/
+
 /obj/item/organ/liver/alien
 	name = "alien liver" // doesnt matter for actual aliens because they dont take toxin damage
 	icon_state = "liver-x" // Same sprite as fly-person liver.

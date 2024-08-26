@@ -135,5 +135,9 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
+#define PREF_VARIANT_NONE "None"
+#define PREF_VARIANT_FBP "FBP"
+#define PREF_VARIANT_PHORID "Phorid"
+
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE

@@ -47,8 +47,8 @@
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/exowear = PREF_EXOWEAR			//exowear
 
-	///Whether this human started with a full-body prosthesis
-	var/fbp = FALSE
+	///Whether this human started as a special variant
+	var/is_variant
 
 	//Equipment slots
 	var/obj/item/clothing/wear_suit = null

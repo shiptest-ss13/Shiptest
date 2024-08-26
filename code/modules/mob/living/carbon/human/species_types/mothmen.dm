@@ -5,6 +5,7 @@
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
+	special_variants = list(PREF_VARIANT_NONE, PREF_VARIANT_FBP, PREF_VARIANT_PHORID)
 	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "body_size" = "Normal")
 	mutant_organs = list(/obj/item/organ/moth_wings)
 	attack_verb = "slash"
@@ -30,7 +31,7 @@
 	species_l_leg = /obj/item/bodypart/leg/left/moth
 	species_r_leg = /obj/item/bodypart/leg/right/moth
 
-/datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
+/datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, variant)
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C

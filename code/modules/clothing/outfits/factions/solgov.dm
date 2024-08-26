@@ -3,6 +3,8 @@
 
 	faction_icon = "bg_solgov"
 
+	phorid_outfit = /datum/outfit/plasmaman/solgov
+
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)

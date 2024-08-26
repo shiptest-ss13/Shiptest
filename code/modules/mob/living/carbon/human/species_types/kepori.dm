@@ -5,6 +5,7 @@
 	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
+	special_variants = list(PREF_VARIANT_NONE, PREF_VARIANT_FBP, PREF_VARIANT_PHORID)
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
@@ -58,6 +59,13 @@
 	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
+
+	species_phorid_chest = /obj/item/bodypart/chest/plasmaman/kepori
+	species_phorid_head = /obj/item/bodypart/head/plasmaman/kepori
+	species_phorid_l_arm = /obj/item/bodypart/l_arm/plasmaman/kepori
+	species_phorid_r_arm = /obj/item/bodypart/r_arm/plasmaman/kepori
+	species_phorid_l_leg = /obj/item/bodypart/leg/left/plasmaman/kepori
+	species_phorid_r_leg = /obj/item/bodypart/leg/right/plasmaman/kepori
 
 /datum/species/kepori/New()
 	. = ..()

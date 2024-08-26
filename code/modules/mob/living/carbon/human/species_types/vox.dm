@@ -7,6 +7,7 @@
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
+	special_variants = list(PREF_VARIANT_NONE, PREF_VARIANT_FBP, PREF_VARIANT_PHORID)
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
@@ -42,6 +43,13 @@
 	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/vox
 	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/vox
 	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/vox
+
+	species_phorid_chest = /obj/item/bodypart/chest/plasmaman/vox
+	species_phorid_head = /obj/item/bodypart/head/plasmaman/vox
+	species_phorid_l_arm = /obj/item/bodypart/l_arm/plasmaman/vox
+	species_phorid_r_arm = /obj/item/bodypart/r_arm/plasmaman/vox
+	species_phorid_l_leg = /obj/item/bodypart/leg/left/plasmaman/vox
+	species_phorid_r_leg = /obj/item/bodypart/leg/right/plasmaman/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 

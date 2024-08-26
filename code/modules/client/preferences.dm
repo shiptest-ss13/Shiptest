@@ -153,7 +153,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							BODY_ZONE_L_LEG = PROSTHETIC_NORMAL,
 							BODY_ZONE_R_LEG = PROSTHETIC_NORMAL
 						)
-	var/fbp = FALSE
+	var/species_variant = PREF_VARIANT_NONE
 	var/phobia = "spiders"
 	var/preferred_smoke_brand = PREF_CIG_SPACE
 	var/list/alt_titles_preferences = list()
@@ -912,9 +912,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=species_variant'>Species Variant: [species_variant]</a><br>"
 
-			if(!fbp)
+			if(species_variant == PREF_VARIANT_NONE)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
 				dat += "<table>"
@@ -2156,8 +2156,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
 
-				if("fbp")
-					fbp = !fbp
+				if("species_variant")
+					var/selectAdj = input(user, "To what variant of your species?", "Character Preference", species_variant) as null|anything in pref_species.special_variants
+					if(selectAdj)
+						species_variant = selectAdj
 
 				if("limbs")
 					if(href_list["customize_limb"])
@@ -2486,7 +2488,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
-	character.fbp = fbp
+	character.is_variant = species_variant
 
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
@@ -2506,9 +2508,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//prosthetics work for vox and kepori and update just fine for everyone
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, variant = species_variant)
 
-	if(!fbp)
+	if(species_variant == PREF_VARIANT_NONE)
 		for(var/pros_limb in prosthetic_limbs)
 			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
 			if(old_part)
@@ -2527,7 +2529,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(old_part)
 						old_part.drop_limb(TRUE)
 						qdel(old_part)
-					character.regenerate_limb(pros_limb, robotic = TRUE)
+					character.regenerate_limb(pros_limb, variant = PREF_VARIANT_FBP)
+	if(species_variant == PREF_VARIANT_PHORID) // oh shit this is a phorid
+		character.dna.species.inherent_biotypes |= MOB_MINERAL
+		character.dna.species.species_traits += list(NOBLOOD,NOTRANSSTING,NOHUSK)
+		character.dna.species.inherent_traits += list(TRAIT_RESISTCOLD, TRAIT_RADIMMUNE, TRAIT_GENELESS, TRAIT_NOHUNGER, TRAIT_ALWAYS_CLEAN)
+		character.dna.species.breathid = "tox"
+		character.dna.species.damage_overlay_type = ""
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)

@@ -68,6 +68,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/disliked_food = GROSS
 	///Bitfield for food types that the species absolutely hates, giving them even more disgust than disliked food. Meat is "toxic" to moths, for example.
 	var/toxic_food = TOXIC
+	/// the list of variants the species can have, such as phorid and fbp. please don't leave this empty or i will explode
+	var/list/special_variants = list(PREF_VARIANT_NONE)
 	///Inventory slots the race can't equip stuff to.
 	var/list/no_equip = list()
 	/// Allows the species to equip items that normally require a jumpsuit without having one equipped.
@@ -244,6 +246,24 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/stomach/robotic_stomach = /obj/item/organ/stomach/cybernetic
 	var/obj/item/organ/appendix/robotic_appendix = null
 
+	var/obj/item/bodypart/species_phorid_chest = /obj/item/bodypart/chest/plasmaman
+	var/obj/item/bodypart/species_phorid_head = /obj/item/bodypart/head/plasmaman
+	var/obj/item/bodypart/species_phorid_l_arm = /obj/item/bodypart/l_arm/plasmaman
+	var/obj/item/bodypart/species_phorid_r_arm = /obj/item/bodypart/r_arm/plasmaman
+	var/obj/item/bodypart/species_phorid_l_leg = /obj/item/bodypart/leg/left/plasmaman
+	var/obj/item/bodypart/species_phorid_r_leg = /obj/item/bodypart/leg/right/plasmaman
+	var/obj/item/bodypart/species_phorid_digi_l_leg = /obj/item/bodypart/leg/left/plasmaman
+	var/obj/item/bodypart/species_phorid_digi_r_leg = /obj/item/bodypart/leg/right/plasmaman
+
+	var/obj/item/organ/heart/phorid_heart = /obj/item/organ/heart/cybernetic
+	var/obj/item/organ/lungs/phorid_lungs = /obj/item/organ/lungs/plasmaman
+	var/obj/item/organ/eyes/phorid_eyes = /obj/item/organ/eyes/robotic
+	var/obj/item/organ/ears/phorid_ears = /obj/item/organ/ears
+	var/obj/item/organ/tongue/phorid_tongue = /obj/item/organ/tongue/bone/plasmaman
+	var/obj/item/organ/liver/phorid_liver = /obj/item/organ/liver/plasmaman
+	var/obj/item/organ/stomach/phorid_stomach = /obj/item/organ/stomach/plasmaman
+	var/obj/item/organ/appendix/phorid_appendix = null
+
 	///For custom overrides for species ass images
 	var/icon/ass_image
 
@@ -329,19 +349,43 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * old_species - datum, used when regenerate organs is called in a switching species to remove old mutant organs.
  * * replace_current - boolean, forces all old organs to get deleted whether or not they pass the species' ability to keep that organ
  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
+ * * variant - string, determines what organs to use for a variant of a species
  */
-/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
+/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, variant = PREF_VARIANT_NONE)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
-	var/list/slot_mutantorgans = list( \
-		ORGAN_SLOT_BRAIN = mutantbrain, \
-		ORGAN_SLOT_HEART = robotic ? robotic_heart : mutantheart, \
-		ORGAN_SLOT_LUNGS = robotic ? robotic_lungs : mutantlungs, \
-		ORGAN_SLOT_APPENDIX = robotic ? robotic_appendix : mutantappendix, \
-		ORGAN_SLOT_EYES = robotic ? robotic_eyes : mutanteyes, \
-		ORGAN_SLOT_EARS = robotic ? robotic_ears : mutantears, \
-		ORGAN_SLOT_TONGUE = robotic ? robotic_tongue : mutanttongue, \
-		ORGAN_SLOT_LIVER = robotic ? robotic_liver : mutantliver, \
-		ORGAN_SLOT_STOMACH = robotic ? robotic_stomach : mutantstomach)
+	var/list/slot_mutantorgans = list(
+		ORGAN_SLOT_BRAIN = mutantbrain)
+	switch(variant)
+		if(PREF_VARIANT_FBP)
+			slot_mutantorgans += list(
+				ORGAN_SLOT_HEART = robotic_heart,
+				ORGAN_SLOT_LUNGS = robotic_lungs,
+				ORGAN_SLOT_APPENDIX = robotic_appendix,
+				ORGAN_SLOT_EYES = robotic_eyes,
+				ORGAN_SLOT_EARS = robotic_ears,
+				ORGAN_SLOT_TONGUE = robotic_tongue,
+				ORGAN_SLOT_LIVER = robotic_liver,
+				ORGAN_SLOT_STOMACH = robotic_stomach)
+		if(PREF_VARIANT_PHORID)
+			slot_mutantorgans += list(
+				ORGAN_SLOT_HEART = phorid_heart,
+				ORGAN_SLOT_LUNGS = phorid_lungs,
+				ORGAN_SLOT_APPENDIX = phorid_appendix,
+				ORGAN_SLOT_EYES = phorid_eyes,
+				ORGAN_SLOT_EARS = phorid_ears,
+				ORGAN_SLOT_TONGUE = phorid_tongue,
+				ORGAN_SLOT_LIVER = phorid_liver,
+				ORGAN_SLOT_STOMACH = phorid_stomach)
+		else
+			slot_mutantorgans += list(
+				ORGAN_SLOT_HEART = mutantheart,
+				ORGAN_SLOT_LUNGS = mutantlungs,
+				ORGAN_SLOT_APPENDIX = mutantappendix,
+				ORGAN_SLOT_EYES = mutanteyes,
+				ORGAN_SLOT_EARS = mutantears,
+				ORGAN_SLOT_TONGUE = mutanttongue,
+				ORGAN_SLOT_LIVER = mutantliver,
+				ORGAN_SLOT_STOMACH = mutantstomach)
 
 	for(var/slot in list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_APPENDIX, \
 	ORGAN_SLOT_EYES, ORGAN_SLOT_EARS, ORGAN_SLOT_TONGUE, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH))
@@ -391,12 +435,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/is_digitigrade(mob/living/carbon/leg_haver)
 	return (digitigrade_customization == DIGITIGRADE_OPTIONAL && leg_haver.dna.features["legs"] == "Digitigrade Legs") || digitigrade_customization == DIGITIGRADE_FORCED
 
-/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
+/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, variant)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
-		var/obj/item/bodypart/new_part = C.new_body_part(old_part.body_zone, robotic, FALSE, new_species)
+		var/obj/item/bodypart/new_part = C.new_body_part(old_part.body_zone, variant, FALSE, new_species)
 		new_part.brute_dam = old_part.brute_dam
 		new_part.burn_dam = old_part.burn_dam
 		new_part.replace_limb(C, TRUE)
@@ -412,8 +456,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	* * C - Carbon, this is whoever became the new species.
 	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
 	* * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
+	* * variant - a specific modification of the species like a fbp or a phorid
 */
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, variant = PREF_VARIANT_NONE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -431,11 +476,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
 
-	replace_body(C, robotic = robotic)
+	replace_body(C, variant = variant)
 
 	C.mob_biotypes = inherent_biotypes
 
-	regenerate_organs(C, old_species, robotic = robotic)
+	regenerate_organs(C, old_species, variant = variant)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
 		C.dna.blood_type = get_blood_type(exotic_bloodtype)
@@ -2026,6 +2071,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!CanIgniteMob(H))
 		return TRUE
 	if(H.on_fire)
+		// plasmaman snowflake code
+		var/obj/item/bodypart/chest/plasmaman/plasma_torso = (H.get_bodypart(BODY_ZONE_CHEST) == /obj/item/bodypart/chest/plasmaman)
+		if(plasma_torso && plasma_torso.internal_fire)
+			no_protection = TRUE
+
 		//the fire tries to damage the exposed clothes and items
 		var/list/burning_items = list()
 		var/list/obscured = H.check_obscured_slots(TRUE)
