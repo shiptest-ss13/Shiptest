@@ -730,7 +730,7 @@
 /obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
-		go_off("hits the ground hard")
+		go_off("hits the ground hard", 80)
 
 /obj/item/gun/update_overlays()
 	. = ..()
