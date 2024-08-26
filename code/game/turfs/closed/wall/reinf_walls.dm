@@ -63,6 +63,10 @@
 
 /// Calculate how much integrity the r-wall should have a a given state.
 /turf/closed/wall/r_wall/proc/get_state_integrity(state)
+	if(state > INTACT)
+		state = INTACT
+	if(state < SHEATH)
+		state = SHEATH
 	return max_integrity - ((max_integrity/7) * state)
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
