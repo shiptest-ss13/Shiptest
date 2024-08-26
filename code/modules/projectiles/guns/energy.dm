@@ -40,7 +40,7 @@
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
 		if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
-			go_off()
+			go_off("malfuctions from the EMP")
 		cell.use(round(cell.charge / severity))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
