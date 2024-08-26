@@ -1,3 +1,7 @@
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 40
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 80
+
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -722,6 +726,13 @@
 		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
+	if(!safety && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW))
+		go_off()
+
+/obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		go_off()
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -962,11 +973,11 @@
 	muzzle_flash.applied = FALSE
 
 
-/obj/item/gun/proc/go_off()
+/obj/item/gun/proc/go_off(seek_chance = 100)
 	var/target
 	if(!safety)
 		// someone is very unlucky and about to be shot
-		if(prob(50))
+		if(prob(seek_chance))
 			for(var/mob/living/target_mob in range(6, src.loc))
 				if(!isInSight(src, target_mob))
 					continue
@@ -985,17 +996,6 @@
 	if(chambered)
 		chambered.fire_casing(target, , null, , suppressed, ran_zone(BODY_ZONE_CHEST), 0, src)
 		playsound(src, fire_sound, 100, TRUE)
-	//if(chambered.BB)
-		// var/obj/projectile/shot = chambered.BB
-		// chambered.ready_proj()
-		// shot.trajectory_ignore_forcemove = TRUE
-		// shot.forceMove(get_turf(src))
-		// shot.trajectory_ignore_forcemove = FALSE
-		// shot.starting = get_turf(src)
-		// shot.fire(direct_target = target)
-		// chambered.BB = null
-		// playsound(src, fire_sound, 100, TRUE)
-		// chambered.update_appearance()
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
