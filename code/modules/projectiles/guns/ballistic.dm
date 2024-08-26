@@ -13,8 +13,6 @@
 	has_safety = TRUE
 	safety = TRUE
 
-	min_recoil = 0.25
-
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
