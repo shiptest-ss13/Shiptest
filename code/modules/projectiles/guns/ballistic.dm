@@ -84,6 +84,8 @@
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)
 		. += "[icon_state]_empty"
+	if(chambered && mag_display_ammo)
+		. += "[icon_state]_chambered"
 
 /obj/item/gun/ballistic/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	if(!semi_auto && from_firing)
@@ -109,7 +111,7 @@
 			chambered.forceMove(src)
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
-/obj/item/gun/ballistic/proc/rack(mob/user = null)
+/obj/item/gun/ballistic/proc/rack(mob/user = null, chamber_new_round = TRUE)
 	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
 		return
 	if (bolt_type == BOLT_TYPE_OPEN)
@@ -120,21 +122,22 @@
 		bolt_locked = FALSE
 	if (user)
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
-	process_chamber(!chambered, FALSE, shooter = user)
-	if (bolt_type == BOLT_TYPE_LOCKING && !chambered)
+	process_chamber(!chambered, FALSE, chamber_new_round, user)
+	if ((bolt_type == BOLT_TYPE_LOCKING && !chambered) || bolt_type == BOLT_TYPE_CLIP)
 		bolt_locked = TRUE
 		playsound(src, lock_back_sound, lock_back_sound_volume, lock_back_sound_vary)
 	else
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-	update_appearance()
+
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 ///Drops the bolt from a locked position
-/obj/item/gun/ballistic/proc/drop_bolt(mob/user = null)
+/obj/item/gun/ballistic/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
 		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
-	chamber_round()
+	if(chamber_new_round)
+		chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
 
@@ -248,6 +251,8 @@
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_LOCKING)
 			bolt_locked = TRUE
 			update_appearance()
+		if (last_shot_succeeded && bolt_type == BOLT_TYPE_CLIP)
+			update_appearance()
 
 /obj/item/gun/ballistic/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
 	prefire_empty_checks()
@@ -283,13 +288,19 @@
 		else
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
-	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
+	if((bolt_type == BOLT_TYPE_LOCKING || bolt_type == BOLT_TYPE_CLIP) && bolt_locked)
 		drop_bolt(user)
 		return
+
 	if (recent_rack > world.time)
 		return
 	recent_rack = world.time + rack_delay
+	if(bolt_type == BOLT_TYPE_CLIP)
+		rack(user, FALSE)
+		update_appearance()
+		return
 	rack(user)
+	update_appearance()
 	return
 
 
@@ -301,7 +312,7 @@
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	. += "You can [bolt_wording] [src] by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
+	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)

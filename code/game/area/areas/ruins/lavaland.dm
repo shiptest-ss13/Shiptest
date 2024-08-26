@@ -85,3 +85,24 @@
 
 /area/ruin/unpowered/crashed_starwalker
 	name = "Crashed Pirate Ship"
+// Abandoned Listening Post
+
+/area/ruin/unpowered/listening_post
+	name = "Listening Post Lobby"
+	icon_state = "yellow"
+
+/area/ruin/unpowered/listening_post/commons
+	name = "Listening Post Commons"
+	icon_state = "green"
+
+/area/ruin/unpowered/listening_post/canteen
+	name = "Listening Post Canteen"
+	icon_state = "purple"
+
+/area/ruin/unpowered/listening_post/operations
+	name = "Listening Post Operations"
+	icon_state = "hallC"
+
+/area/ruin/unpowered/listening_post/engineering
+	name = "Listening Post Engineering"
+	icon_state = "dk_yellow"

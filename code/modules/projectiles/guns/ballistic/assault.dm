@@ -97,7 +97,7 @@
 /obj/item/gun/ballistic/automatic/assault/p16/no_mag
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/automatic/assault/p16/minutemen
+/obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"
 	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
