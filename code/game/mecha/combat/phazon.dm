@@ -4,7 +4,7 @@
 	icon_state = "phazon"
 	step_in = 2
 	dir_in = 2 //Facing South.
-	step_energy_drain = 3
+	base_step_energy_drain = 8
 	max_integrity = 200
 	deflect_chance = 30
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)

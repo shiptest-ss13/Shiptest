@@ -1435,7 +1435,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		balance -= initial(quirk_type.value)
 		switch(change_type)
 			if("species")
-				if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+				if((quirk_name in SSquirks.species_blacklist) && (target_species.id in SSquirks.species_blacklist[quirk_name]))
 					all_quirks_new -= quirk_name
 					balance += initial(quirk_type.value)
 			if("mood")
