@@ -961,6 +961,42 @@
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
 
+
+/obj/item/gun/proc/go_off()
+	var/target
+	if(!safety)
+		// someone is very unlucky and about to be shot
+		if(prob(50))
+			for(var/mob/living/target_mob in range(6, src.loc))
+				if(!isInSight(src, target_mob))
+					continue
+				target = target_mob
+				break
+		if(!target)
+			var/fire_dir = pick(GLOB.alldirs)
+			target = get_ranged_target_turf(src,fire_dir,6)
+		if(!chambered)
+			visible_message(span_danger("The [src] suddenly goes off without it's safties on! Luckily it wasn't loaded."))
+		else
+			visible_message(span_danger("\The [src] suddenly goes off without it's safties on!"))
+			unsafe_shot(target)
+
+/obj/item/gun/proc/unsafe_shot(target)
+	if(chambered)
+		chambered.fire_casing(target, , null, , suppressed, ran_zone(BODY_ZONE_CHEST), 0, src)
+		playsound(src, fire_sound, 100, TRUE)
+	//if(chambered.BB)
+		// var/obj/projectile/shot = chambered.BB
+		// chambered.ready_proj()
+		// shot.trajectory_ignore_forcemove = TRUE
+		// shot.forceMove(get_turf(src))
+		// shot.trajectory_ignore_forcemove = FALSE
+		// shot.starting = get_turf(src)
+		// shot.fire(direct_target = target)
+		// chambered.BB = null
+		// playsound(src, fire_sound, 100, TRUE)
+		// chambered.update_appearance()
+
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
 	name = "Toggle Scope"

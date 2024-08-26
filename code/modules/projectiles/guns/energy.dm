@@ -323,3 +323,7 @@
 		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
+
+/obj/item/gun/energy/unsafe_shot(target)
+	. = ..()
+	process_chamber()
