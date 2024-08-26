@@ -985,10 +985,10 @@
 			var/fire_dir = pick(GLOB.alldirs)
 			target = get_ranged_target_turf(src,fire_dir,6)
 		if(!chambered || !chambered.BB)
-			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safties on! Luckily it wasn't live."))
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
 			playsound(src, dry_fire_sound, 30, TRUE)
 		else
-			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"]  without its safties on!"))
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"]  without its safeties on!"))
 			unsafe_shot(target)
 
 /obj/item/gun/proc/unsafe_shot(target)
@@ -999,7 +999,7 @@
 /mob/living/proc/trip_with_gun()
 	for(var/obj/item/gun/at_risk in get_all_contents())
 		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
-			visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safties on!"))
+			visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safeties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
 			at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG))
 
 //I need to refactor this into an attachment
