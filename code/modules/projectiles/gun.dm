@@ -730,7 +730,7 @@
 /obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
-		go_off("hits the ground hard", 80)
+		discharge("hits the ground hard", 80)
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -971,7 +971,7 @@
 	muzzle_flash.applied = FALSE
 
 // for guns firing on their own without a user
-/obj/item/gun/proc/go_off(cause, seek_chance = 50)
+/obj/item/gun/proc/discharge(cause, seek_chance = 50)
 	var/target
 	if(!safety)
 		// someone is very unlucky and about to be shot
@@ -998,7 +998,7 @@
 
 /mob/living/proc/trip_with_gun()
 	for(var/obj/item/gun/at_risk in get_all_contents())
-		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
+		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
 			visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safeties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
 			at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG))
 

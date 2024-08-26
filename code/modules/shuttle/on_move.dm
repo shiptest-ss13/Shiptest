@@ -302,7 +302,7 @@ All ShuttleMove procs go here
 /obj/item/gun/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	. = ..()
 	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
-		go_off("is thrown around by the force of the take off")
+		discharge("is thrown around by the force of the take off")
 
 /************************************Mob move procs************************************/
 
