@@ -85,8 +85,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 ////////////////Area flags\\\\\\\\\\\\\\
 /// If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
 #define VALID_TERRITORY (1<<0)
-/// If blobs can spawn there and if it counts towards their score.
-#define BLOBS_ALLOWED (1<<1)
 /// If mining tunnel generation is allowed in this area
 #define CAVES_ALLOWED (1<<2)
 /// If flora are allowed to spawn in this area randomly through tunnel generation
@@ -110,7 +108,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASSTABLE (1<<0)
 #define PASSGLASS (1<<1)
 #define PASSGRILLE (1<<2)
-#define PASSBLOB (1<<3)
 #define PASSMOB (1<<4)
 #define PASSCLOSEDTURF (1<<5)
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**

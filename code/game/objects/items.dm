@@ -291,10 +291,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	else
 		return 1
 
-/obj/item/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
 /obj/item/ComponentInitialize()
 	. = ..()
 	// this proc says it's for initializing components, but we're initializing elements too because it's you and me against the world >:)
