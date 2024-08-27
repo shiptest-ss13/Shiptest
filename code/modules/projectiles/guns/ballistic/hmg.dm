@@ -18,6 +18,9 @@
 	recoil_unwielded = 4
 	wield_slowdown = 3
 
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 20
+
 	///does this have a bipod?
 	var/has_bipod = FALSE
 	///is the bipod deployed?
@@ -41,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
 	. = ..()
-	for(var/datum/action/item_action/deploy_bipod/action as anything in actions_types)
+	for(var/datum/action/item_action/deploy_bipod/action as anything in actions)
 		if(!has_bipod)
 			qdel(action)
 
@@ -116,29 +119,6 @@
 	. = ..()
 	retract_bipod(user=user)
 
-/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(bipod_deployed)
-		total_recoil += deploy_recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 20
-	var/total_spread = bonus_spread
-
-	if(bipod_deployed)
-		total_spread += deploy_spread_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
-
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()
 	. = ..()
 	item_state = "[initial(item_state)][bipod_deployed ? "_deployed" : ""]"
@@ -163,7 +143,6 @@
 	base_icon_state = "l6"
 
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	can_suppress = FALSE
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -236,8 +215,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	can_suppress = FALSE
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES

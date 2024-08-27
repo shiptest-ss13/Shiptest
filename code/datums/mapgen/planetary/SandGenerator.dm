@@ -173,10 +173,10 @@
 	)
 
 /datum/biome/sand/acid //plains
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/water/acid/whitesands = 1)
 
 /datum/biome/sand/acid/total
-	open_turf_types = list(/turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/water/acid/whitesands = 1)
 	flora_spawn_chance = 0
 	feature_spawn_chance = 0
 	mob_spawn_chance = 0
@@ -217,9 +217,7 @@
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,
-		/obj/structure/spawner/lavaland/sand_world/low_threat = 14,
-		/obj/structure/spawner/lavaland/sand_world/medium_threat = 8,
-		/obj/structure/spawner/lavaland/sand_world/high_threat = 2,
+		/obj/structure/spawner/burrow/sand_planet = 25
 	)
 
 /datum/biome/cave/sand/volcanic
@@ -230,4 +228,4 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 7, /turf/open/lava = 1)
 
 /datum/biome/cave/sand/volcanic/acidic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/water/acid/whitesands = 1)

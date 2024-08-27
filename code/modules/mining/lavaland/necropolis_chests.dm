@@ -869,8 +869,8 @@
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "spur"
 	item_state = "spur"
 	selfcharge = 1
@@ -1103,7 +1103,7 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 

@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EXPLODE_DEVASTATE 1
 #define EXPLODE_HEAVY 2
 #define EXPLODE_LIGHT 3
-#define EXPLODE_GIB_THRESHOLD 50	//ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
+#define EXPLODE_GIB_THRESHOLD 50 //ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
 
 #define EMP_HEAVY 1
 #define EMP_LIGHT 2
@@ -168,3 +168,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
+
+/// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
+/// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.
+/// Will continue the chain depending on the return value of the non-alternate proc, like with normal attacks.
+#define SECONDARY_ATTACK_CALL_NORMAL 1
+
+/// Cancels the attack chain entirely.
+#define SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN 2
+
+/// Proceed with the attack chain, but don't call the normal methods.
+#define SECONDARY_ATTACK_CONTINUE_CHAIN 3

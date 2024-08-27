@@ -44,6 +44,14 @@
 	*/
 	var/list/atom_colours
 
+	/// Lazylist of all images (hopefully attached to us) to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	var/list/image/update_on_z
+
+	/// Lazylist of all overlays attached to us to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	/// Oh and note, if order of addition is important this WILL break that. so mind yourself
+	var/list/image/update_overlays_on_z
 
 	/// a very temporary list of overlays to remove
 	var/list/remove_overlays
@@ -779,15 +787,6 @@
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
 
-/**
- * React to a hit by a blob objecd
- *
- * default behaviour is to send the [COMSIG_ATOM_BLOB_ACT] signal
- */
-/atom/proc/blob_act(obj/structure/blob/B)
-	SEND_SIGNAL(src, COMSIG_ATOM_BLOB_ACT, B)
-	return
-
 /atom/proc/fire_act(exposed_temperature, exposed_volume)
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, exposed_temperature, exposed_volume)
 	return
@@ -977,7 +976,7 @@
 	return TRUE
 
 ///Get the best place to dump the items contained in the source storage item?
-/atom/proc/get_dumping_location(obj/item/storage/source,mob/user)
+/atom/proc/get_dumping_location()
 	return null
 
 /**
@@ -1265,25 +1264,71 @@
  * Must return  parent proc ..() in the end if overridden
  */
 /atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+	var/signal_result
+
+	var/list/processing_recipes = list() //List of recipes that can be mutated by sending the signal
+	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, I, processing_recipes)
+	if(processing_recipes.len)
+		process_recipes(user, I, processing_recipes)
+	if(QDELETED(I))
+		return TRUE
 	switch(tool_type)
 		if(TOOL_CROWBAR)
-			. |= crowbar_act(user, I)
+			. = crowbar_act(user, I)
 		if(TOOL_MULTITOOL)
-			. |= multitool_act(user, I)
+			. = multitool_act(user, I)
 		if(TOOL_SCREWDRIVER)
-			. |= screwdriver_act(user, I)
+			. = screwdriver_act(user, I)
 		if(TOOL_WRENCH)
-			. |= wrench_act(user, I)
+			. = wrench_act(user, I)
 		if(TOOL_WIRECUTTER)
-			. |= wirecutter_act(user, I)
+			. = wirecutter_act(user, I)
 		if(TOOL_WELDER)
-			. |= welder_act(user, I)
+			. = welder_act(user, I)
 		if(TOOL_ANALYZER)
-			. |= analyzer_act(user, I)
-	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
+			. = analyzer_act(user, I)
+	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
-//! Tool-specific behavior procs. They send signals, so try to call ..()
+/atom/proc/process_recipes(mob/living/user, obj/item/I, list/processing_recipes)
+	//Only one recipe? use the first
+	if(processing_recipes.len == 1)
+		StartProcessingAtom(user, I, processing_recipes[1])
+		return
+	//Otherwise, select one with a radial
+	ShowProcessingGui(user, I, processing_recipes)
+
+///Creates the radial and processes the selected option
+/atom/proc/ShowProcessingGui(mob/living/user, obj/item/I, list/possible_options)
+	var/list/choices_to_options = list() //Dict of object name | dict of object processing settings
+	var/list/choices = list()
+
+	for(var/i in possible_options)
+		var/list/current_option = i
+		var/atom/current_option_type = current_option[TOOL_PROCESSING_RESULT]
+		choices_to_options[initial(current_option_type.name)] = current_option
+		var/image/option_image = image(icon = initial(current_option_type.icon), icon_state = initial(current_option_type.icon_state))
+		choices += list("[initial(current_option_type.name)]" = option_image)
+
+	var/pick = show_radial_menu(user, src, choices, radius = 36, require_near = TRUE)
+
+	StartProcessingAtom(user, I, choices_to_options[pick])
+
+
+/atom/proc/StartProcessingAtom(mob/living/user, obj/item/I, list/chosen_option)
+	to_chat(user, "<span class='notice'>You start working on [src]</span>")
+	if(I.use_tool(src, user, chosen_option[TOOL_PROCESSING_TIME], volume=50))
+		var/atom/atom_to_create = chosen_option[TOOL_PROCESSING_RESULT]
+		for(var/i = 1 to chosen_option[TOOL_PROCESSING_AMOUNT])
+			new atom_to_create(loc)
+		to_chat(user, "<span class='notice'>You manage to create [chosen_option[TOOL_PROCESSING_AMOUNT]] [initial(atom_to_create.name)] from [src]</span>")
+		qdel(src)
+		return
+
+/atom/proc/OnCreatedFromProcessing(mob/living/user, obj/item/I, list/chosen_option, atom/original_atom)
+	return
+
+//! Tool-specific behavior procs.
 ///
 
 ///Crowbar act
@@ -1587,6 +1632,15 @@
 		if(istype(ship))
 			var/obj/docking_port/mobile/shuttle = ship.mobile_port
 			if(shuttle)
+				if(istype(shuttle.docked, /obj/docking_port/stationary))
+					var/obj/docking_port/stationary/shipfinder = shuttle.docked
+					if(shipfinder.owner_ship)
+						for(var/datum/weakref/weakref as anything in shipfinder.owner_ship.gravgen_list)
+							var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
+							if(!SG)
+								shipfinder.owner_ship.gravgen_list -= weakref
+								continue
+							max_grav = max(SG.active,max_grav)
 				for(var/datum/weakref/weakref as anything in shuttle.gravgen_list)
 					var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
 					if(!SG)

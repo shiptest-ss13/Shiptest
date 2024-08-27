@@ -54,7 +54,9 @@
 		"caution" = /obj/machinery/portable_atmospherics/canister,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
 		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
-		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel
+		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel,
+		"cl2" = /obj/machinery/portable_atmospherics/canister/chlorine,
+		"hcl" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
 	)
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
@@ -169,6 +171,20 @@
 	air_contents.set_moles(GAS_O2, 500)
 	air_contents.set_moles(GAS_HYDROGEN, 1000)
 	air_contents.set_temperature(T20C)
+
+/obj/machinery/portable_atmospherics/canister/chlorine
+	name = "chlorine canister"
+	desc = "chlorine"
+	icon_state = "greenys"
+	gas_type = GAS_CHLORINE
+	filled = 1
+
+/obj/machinery/portable_atmospherics/canister/hydrogen_chloride
+	name = "hydrogen chloride canister"
+	desc = "awful"
+	icon_state = "greenyshaz"
+	gas_type = GAS_HYDROGEN_CHLORIDE
+	filled = 1
 
 /obj/machinery/portable_atmospherics/canister/fusion_test
 	name = "fusion test canister"

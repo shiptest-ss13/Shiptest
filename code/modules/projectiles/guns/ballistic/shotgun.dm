@@ -35,6 +35,8 @@
 	recoil = 1
 	recoil_unwielded = 4
 
+	gunslinger_recoil_bonus = -1
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -45,15 +47,6 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
-
-/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -78,7 +71,7 @@
 	fire_delay = 0.05 SECONDS //slamfire
 	rack_delay = 0.2 SECONDS
 
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
@@ -111,7 +104,7 @@
 
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
 
@@ -141,8 +134,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
-
-/obj/item/gun/ballistic/shotgun/automatic
 	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
@@ -232,7 +223,6 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -279,24 +269,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "bulldog_suns"
 	item_state = "bulldog_suns"
 
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
-	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
-	icon_state = "cm15"
-	item_state = "cm15"
-	empty_alarm = FALSE
-	empty_indicator = FALSE
-	unique_mag_sprites_for_variants = FALSE
-	manufacturer = MANUFACTURER_MINUTEMAN
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
-
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
@@ -332,7 +304,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 						"Stained Green" = "dshotgun_green"
 						)
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	pb_knockback = 3 // it's a super shotgun!
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -452,8 +424,8 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon = 'icons/obj/guns/projectile.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	mob_overlay_icon = null
 
 	base_icon_state = "ishotgun"
@@ -519,7 +491,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
 	sawn_desc = "You know, this isn't funny anymore."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 20)))	//minimum probability of 20, maximum of 60
@@ -542,7 +514,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY
 	sawn_desc = "<i>Sigh.</i> This is a trigger attached to a bullet."
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/compact/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(50))	//It's going to blow up.
@@ -636,7 +608,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 
 	wield_slowdown = 0.5
 	wield_delay = 0.65 SECONDS
@@ -765,15 +737,12 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	can_be_sawn_off=TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE
-	can_be_sawn_off  = TRUE
+	can_be_sawn_off = TRUE
 	pb_knockback = 3
 	wield_slowdown = 0.7
 	spread_unwielded = 15
@@ -797,7 +766,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		recoil = 2
 		recoil_unwielded = 4
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
