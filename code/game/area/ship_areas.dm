@@ -474,6 +474,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "EVA Storage"
 	icon_state = "eva"
 
+/area/ship/storage/equip
+	name = "Equipment Room"
+
 /// External Areas ///
 /area/ship/external
 	name = "External"
