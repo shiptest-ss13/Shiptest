@@ -291,6 +291,7 @@ All ShuttleMove procs go here
 
 /************************************Item move procs************************************/
 
+
 /obj/item/storage/pod/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
 	// If the pod was launched, the storage will always open. The reserved_level check
@@ -301,8 +302,14 @@ All ShuttleMove procs go here
 
 /obj/item/gun/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	. = ..()
-	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
 		discharge("is thrown around by the force of the take off")
+
+/obj/item/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
+	. = ..()
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+			at_risk.discharge("is thrown around by the force of the take off")
 
 /************************************Mob move procs************************************/
 

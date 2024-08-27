@@ -1,7 +1,3 @@
-#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
-#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 40
-#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 80
-
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -960,19 +956,19 @@
 	if(!safety)
 		// someone is very unlucky and about to be shot
 		if(prob(seek_chance))
-			for(var/mob/living/target_mob in range(6, src.loc))
+			for(var/mob/living/target_mob in range(6, get_turf(src)))
 				if(!isInSight(src, target_mob))
 					continue
 				target = target_mob
 				break
 		if(!target)
 			var/fire_dir = pick(GLOB.alldirs)
-			target = get_ranged_target_turf(src,fire_dir,6)
+			target = get_ranged_target_turf(get_turf(src),fire_dir,6)
 		if(!chambered || !chambered.BB)
 			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
 			playsound(src, dry_fire_sound, 30, TRUE)
 		else
-			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"]  without its safeties on!"))
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safeties on!"))
 			unsafe_shot(target)
 
 /obj/item/gun/proc/unsafe_shot(target)
@@ -982,7 +978,13 @@
 
 /mob/living/proc/trip_with_gun()
 	for(var/obj/item/gun/at_risk in get_all_contents())
-		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH
+		if(ishuman(src))
+			var/mob/living/carbon/human/holder = src
+			// the gun is slightly more secure in a holster
+			if(at_risk == holder.s_store)
+				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		if(at_risk.safety == FALSE && prob(chance_to_fire))
 			visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safeties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
 			at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG))
 
