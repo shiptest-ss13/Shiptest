@@ -1290,6 +1290,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "ks" = (
@@ -1366,6 +1369,7 @@
 	railing_color = "#0C119E"
 	},
 /obj/machinery/computer/cryopod/directional/south,
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "lj" = (
@@ -4534,8 +4538,12 @@
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/item/clothing/under/nanotrasen,
 /obj/item/clothing/under/nanotrasen,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black{
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/sneakers/black{
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "MR" = (
@@ -5562,10 +5570,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/tank/internals/plasmaman/belt,
+/obj/item/tank/internals/plasmaman/belt,
+/obj/structure/closet/wall/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "XL" = (
