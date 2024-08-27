@@ -19,25 +19,8 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil
-	if(.)
-		total_recoil += .
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-	. = total_recoil
-	return ..()
-
-/obj/item/gun/ballistic/automatic/smg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 16
-	var/total_spread = bonus_spread
-	if(.)
-		total_spread += .
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-	. = total_spread
-	return ..()
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 16
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"

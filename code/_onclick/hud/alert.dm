@@ -420,14 +420,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	icon_state = "alien_noqueen"
 	alerttooltipstyle = "alien"
 
-//BLOBS
-
-/atom/movable/screen/alert/nofactory
-	name = "No Factory"
-	desc = "You have no factory, and are slowly dying!"
-	icon_state = "blobbernaut_nofactory"
-	alerttooltipstyle = "blob"
-
 // BLOODCULT
 
 /atom/movable/screen/alert/bloodsense

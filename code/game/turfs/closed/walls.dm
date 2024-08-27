@@ -242,12 +242,6 @@
 		if(EXPLODE_LIGHT)
 			alter_integrity(rand(-200, -700))
 
-
-/turf/closed/wall/blob_act(obj/structure/blob/B)
-	add_dent(WALL_DENT_HIT)
-	alter_integrity(-400)
-
-
 /turf/closed/wall/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
