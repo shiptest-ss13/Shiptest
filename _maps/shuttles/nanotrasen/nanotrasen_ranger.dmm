@@ -344,8 +344,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "cI" = (
-/obj/structure/sign/nanotrasen/vigilitas,
-/turf/closed/indestructible/titanium,
+/obj/structure/chair/handrail{
+	dir = 8;
+	pixel_x = 2
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "cN" = (
 /obj/structure/cable{
@@ -448,9 +452,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dx" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 8
+/obj/structure/chair/handrail{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "dC" = (
@@ -559,9 +565,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/filingcabinet{
-	pixel_x = 22
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eN" = (
@@ -622,6 +625,10 @@
 	color = "#c1b6a5"
 	},
 /obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "eY" = (
@@ -653,10 +660,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/blue/corner{
 	dir = 8
 	},
-/obj/machinery/photocopier,
-/obj/structure/filingcabinet{
-	pixel_x = 22
-	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fo" = (
@@ -699,14 +703,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "fV" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "gd" = (
 /obj/structure/sign/nanotrasen/vigilitas,
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/port)
 "gg" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "gh" = (
 /obj/structure/chair/comfy/blue/directional/east,
@@ -1082,20 +1086,20 @@
 /obj/item/stamp/captain{
 	pixel_x = 7
 	},
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 2
-	},
 /obj/item/folder/blue{
 	pixel_x = 8;
 	pixel_y = 10
 	},
-/obj/item/pen/fourcolor{
-	pixel_x = -6;
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 10
+	},
+/obj/item/clipboard{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/pen{
+	pixel_x = -7;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1225,11 +1229,11 @@
 /turf/open/floor/wood,
 /area/ship/security)
 "jA" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/port)
 "jC" = (
 /obj/machinery/light/floor,
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
 "jF" = (
 /obj/structure/cable{
@@ -1266,7 +1270,7 @@
 /area/ship/hallway/port)
 "jQ" = (
 /obj/structure/sign/nanotrasen/vigilitas,
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/starboard)
 "jZ" = (
 /obj/structure/cable{
@@ -1307,11 +1311,29 @@
 /area/ship/maintenance/port)
 "kt" = (
 /obj/machinery/light/dim/directional/south,
-/obj/structure/chair/office{
-	dir = 8;
-	name = "tactical swivel chair"
-	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/filingcabinet/double{
+	dir = 1
+	},
+/obj/item/folder/blue{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/folder/red{
+	pixel_x = -4;
+	layer = 3.01;
+	pixel_y = -8
+	},
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/pen{
+	pixel_x = -4;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "kw" = (
@@ -1432,6 +1454,10 @@
 	color = "#474747";
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "lw" = (
@@ -1444,6 +1470,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -1458,7 +1488,8 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 1
+	dir = 1;
+	color = "#a8b2b6"
 	},
 /area/ship/bridge)
 "lL" = (
@@ -1724,7 +1755,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "oq" = (
 /obj/structure/cable/cyan{
@@ -1872,10 +1903,12 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 1
+	dir = 1;
+	color = "#a8b2b6"
 	},
 /area/ship/bridge)
 "pD" = (
+/obj/structure/closet/crate/secure/loot,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pL" = (
@@ -1923,6 +1956,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"qP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "qQ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
 	dir = 8
@@ -2095,6 +2137,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/machinery/button/door{
+	pixel_y = 21;
+	id = "BridgeAtrium";
+	name = "Atrium Shutters";
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "sl" = (
@@ -2157,7 +2205,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "sJ" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
 "sR" = (
 /obj/machinery/light/dim/directional/south,
@@ -2387,7 +2435,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "ux" = (
 /obj/machinery/light/dim/directional/south,
@@ -2502,7 +2550,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "vm" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "vo" = (
 /obj/structure/crate_shelf,
@@ -2636,13 +2684,13 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/machinery/iv_drip,
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 4
 	},
+/obj/machinery/computer/operating,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wc" = (
@@ -2663,23 +2711,14 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "wf" = (
-/obj/structure/chair/office{
-	dir = 4;
-	name = "tactical swivel chair"
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_y = -24;
-	id = "BridgeAtrium";
-	name = "Atrium Shutters"
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -12
+	pixel_y = 12
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "wh" = (
@@ -2769,7 +2808,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "wU" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "xj" = (
 /obj/structure/cable{
@@ -2787,19 +2826,19 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/clipboard{
-	pixel_y = -2;
-	pixel_x = 3
-	},
-/obj/item/pen{
-	pixel_x = 2;
-	pixel_y = -1
-	},
 /obj/item/lighter/greyscale{
-	pixel_x = -3;
-	pixel_y = -10
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = -6;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "xq" = (
@@ -3014,6 +3053,10 @@
 	},
 /obj/structure/chair/office{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -3411,13 +3454,27 @@
 /turf/open/floor/engine/air,
 /area/ship/hallway/central)
 "CP" = (
-/obj/machinery/camera/autoname{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "Ranger_Cycler_Shutters";
+	name = "Air Cycler Lockdown"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
+	dir = 4
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
 "Dd" = (
 /obj/effect/turf_decal/industrial/outline/orange,
@@ -3555,8 +3612,8 @@
 	pixel_y = 1;
 	req_ship_access = 1
 	},
-/obj/structure/closet/crate/secure/loot,
 /obj/machinery/airalarm/directional/north,
+/obj/structure/filingcabinet/double,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ek" = (
@@ -3585,6 +3642,10 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning,
 /obj/effect/turf_decal/siding{
 	color = "#474747"
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -3689,30 +3750,17 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Fh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "Ranger_Cycler_Shutters";
-	name = "Air Cycler Lockdown"
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Fw" = (
 /obj/structure/cable{
@@ -3889,7 +3937,7 @@
 	name = "Emergency Coolant Sprayer"
 	},
 /obj/effect/turf_decal/borderfloorwhite/full,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/noslip,
 /area/ship/medical)
 "GG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4206,7 +4254,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "JR" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
 "Kf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4219,7 +4267,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "Kg" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
 "Kj" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
@@ -4305,7 +4353,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Lk" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "Lt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4335,6 +4383,10 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
+"Lz" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "LM" = (
 /obj/machinery/telecomms/processor/preset_four{
 	autolinkers = list("processor4","bus");
@@ -4368,7 +4420,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "LV" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
 "Ma" = (
 /obj/effect/turf_decal/siding/red{
@@ -4399,7 +4451,7 @@
 	},
 /area/ship/engineering/communications)
 "Mf" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "Mg" = (
 /obj/structure/cable{
@@ -4704,7 +4756,8 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 4
+	dir = 4;
+	color = "#a8b2b6"
 	},
 /area/ship/bridge)
 "NR" = (
@@ -4726,6 +4779,7 @@
 /obj/effect/turf_decal/siding/blue{
 	dir = 10
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "NZ" = (
@@ -4743,6 +4797,10 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1;
 	color = "#474747"
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -4771,6 +4829,10 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -4983,7 +5045,7 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "QT" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/starboard)
 "QV" = (
 /obj/machinery/light/dim/directional/west,
@@ -5098,6 +5160,10 @@
 	color = "#474747";
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Sv" = (
@@ -5141,7 +5207,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "Tb" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/equip)
 "Te" = (
 /obj/machinery/light/floor,
@@ -5157,19 +5223,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Tl" = (
-/obj/machinery/light/dim/directional/north,
-/obj/machinery/light/floor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/structure/chair/handrail{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
+/obj/structure/sign/nanotrasen/vigilitas,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/external)
 "Tz" = (
 /obj/effect/turf_decal/corner/opaque/vired/three_quarters,
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/port)
 "TG" = (
 /obj/item/toy/plush/spider,
@@ -5190,6 +5249,10 @@
 /obj/item/bedsheet/qm,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "TR" = (
@@ -5353,7 +5416,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Vp" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/starboard)
 "Vq" = (
 /obj/effect/turf_decal/industrial/outline/orange,
@@ -5701,7 +5764,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "XT" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "XV" = (
 /obj/machinery/camera/autoname{
@@ -5719,6 +5782,10 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning,
 /obj/effect/turf_decal/siding{
 	color = "#474747"
+	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/full{
+	layer = 2.029;
+	name = "layered down"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -5852,8 +5919,10 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 24
 	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/dark,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Zl" = (
 /obj/effect/turf_decal/industrial/outline/orange,
@@ -6993,9 +7062,9 @@ hF
 ec
 wf
 Lk
-wq
+Lz
 dx
-wq
+qP
 XT
 lw
 Om

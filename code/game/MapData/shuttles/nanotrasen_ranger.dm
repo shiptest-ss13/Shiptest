@@ -322,7 +322,6 @@
 	lootdoubles = FALSE
 
 	loot = list(
-		/obj/item/disk/holodisk/lp/retrieval/supersuit = 1,
 		/obj/item/disk/holodisk/lp/retrieval/phazon = 1,
 		/obj/item/disk/holodisk/lp/retrieval/durand = 1,
 		/obj/item/disk/holodisk/lp/retrieval/gunstock = 1,
