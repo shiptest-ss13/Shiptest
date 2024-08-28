@@ -301,12 +301,7 @@
 	antag_hud_name = "Tojo"
 
 /datum/antagonist/gang/yakuza/check_gang_objective()
-	var/datum/station_state/current_state = new /datum/station_state()
-	current_state.count()
-	var/station_integrity = min(PERCENT(GLOB.start_state.score(current_state)), 100)
-	if(station_integrity < 85)
-		return FALSE
-	return TRUE
+	CRASH("Sorry this was cruft")
 
 /datum/antagonist/gang/jackbros
 	name = "Jack Bros"

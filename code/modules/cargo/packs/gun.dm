@@ -23,19 +23,19 @@
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
 	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
-	cost = 1000
+	cost = 750
 	contains = list(/obj/item/storage/pistolcase/commander)
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin Pistol Crate"
 	desc = "Contains a concealable stechkin pistol, produced by Scarborough Arms and chambered in 10mm."
-	cost = 1250
+	cost = 1000
 	contains = list(/obj/item/storage/pistolcase/stechkin)
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
-	cost = 1250
+	cost = 1000
 	contains = list(/obj/item/storage/pistolcase/candor)
 
 /datum/supply_pack/gun/pepperbox
@@ -149,7 +149,7 @@
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/beacon
-	name = "Contender Break Action Rifle Crate"
+	name = "Beacon Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 2250
 	contains = list(/obj/item/storage/guncase/beacon)
@@ -165,28 +165,28 @@
 /datum/supply_pack/gun/cobra20
 	name = "Cobra-20 SMG Crate"
 	desc = "Contains a .45 submachine gun, manufactured by Scaraborough Arms and chambered in .45"
-	cost = 6000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/cobra)
 	crate_name = "SMG crate"
 
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 6000
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 5.56mm."
-	cost = 9000
+	cost = 5000
 	contains = list(/obj/item/storage/guncase/p16)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
 	desc = "Contains a high-powered, automatic rifle chambered in 7.62x40mm CLIP."
-	cost = 9000
+	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
 

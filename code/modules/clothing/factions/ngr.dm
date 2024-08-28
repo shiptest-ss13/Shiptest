@@ -14,7 +14,7 @@
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
-	desc = "Beige fatigues used primarily by the ship and mech pilots of the New Gorlex Republic."
+	desc = "Beige fatigues used primarily by the shuttle and exosuit pilots of the New Gorlex Republic."
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
@@ -64,6 +64,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "ngr_hazard"
 	item_state = "redcloth"
+	supports_variations = VOX_VARIATION
 
 //////////////////
 //Armored suits//
@@ -122,6 +123,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	lightweight = 1
 	jetpack = null
+	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
@@ -229,6 +231,7 @@
 	icon_state = "ngr_shemagh"
 	icon = 'icons/obj/clothing/faction/ngr/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
+	supports_variations = VOX_VARIATION
 
 //////////
 //Belts//
