@@ -68,3 +68,100 @@
   meemofcourse:
   - balance: Remapped the Valor, with two extra jobs (Shuttle Corpsman, Shuttle Pilot).
   - code_imp: The Vanguard base outfit starts with gear.
+2024-07-13:
+  FalloutFalcon:
+  - bugfix: pets no longer cause run times trying to open ship doors
+  - bugfix: no longer have to reinsert your id into your wallet for access
+  - rscadd: A new generic nest used across all planets
+  - rscdel: Old portal and tendrils and other cruft
+  - refactor: refactorted mob spawners to have one for each planet
+  Gristlebee:
+  - bugfix: 357 guncase spawns with the correct revolver
+  Skies-Of-Blue:
+  - balance: you can now fit radios and pill bottles in both hoodies and winter coats
+  - bugfix: the innate storage on winter coats has been restored, alt click to access!
+  SomeguyManperson:
+  - bugfix: brute damage is now required to break bones
+  TiberianEuan:
+  - rscadd: Black hoodie with grey hood.
+  - imageadd: New hoodie icons.
+  cuddleandtea:
+  - admin: new light maker subtype for build mode
+  generalthrax:
+  - bugfix: Fixed the Landmine mission description and flavoured it a little
+  - balance: Decreased the amount of landmines required for its mission and increased
+      the value per mine slightly
+  - rscdel: Capsaicin no longer Boils you
+2024-07-15:
+  FalloutFalcon:
+  - refactor: refactored attachments to be modular
+  Sadhorizon:
+  - tweak: Changed sunskipper's prefix to SV.
+  - bugfix: Added a missing pipe to the sunskipper.
+  Skies-Of-Blue:
+  - rscadd: typing indicators now trigger off of the command bar
+  - rscadd: an SSD Indicator for when you have been disconnected for less than three
+      minutes
+  - balance: players will now remain awake for three minutes after disconnecting,
+      with a new SSD icon to boot!
+  - balance: players SSD longer than three minutes will lose their icon and fall asleep,
+      much like the previous behavior
+  SomeguyManperson:
+  - bugfix: gun cargo packs now act more as they would be expected to
+2024-07-17:
+  FalloutFalcon:
+  - rscadd: Orbit menu is less cluttered and just shows the real name, hovering over
+      it shows their standard name.
+  - refactor: refactored express console to not be a subtype of the cargo console
+      and replacing it.
+  Martinpachu:
+  - balance: Doubled the price on every automatic gun and added 250 credits to the
+      price of every semi-auto pistol.
+  Sadhorizon:
+  - tweak: Choice beacons were reflavored into choice boxes.
+  - rscdel: Removed a bunch of meme, weird and unused items from the loadout.
+  - tweak: Reflavored the Cybersun labcoat into a generic "translucent labcoat"
+  SomeguyManperson:
+  - bugfix: ships docked to eachother now share gravity
+2024-07-18:
+  Fest1v3:
+  - rscadd: adds a few vox sprites
+  - bugfix: fixes a few vox sprites
+2024-07-24:
+  DIB-DOG:
+  - bugfix: fixed the foodtype of two Gezenan drinks to match their descriptions
+  - rscadd: added a taste description to Keh'Lu'Tex Liqueur
+  Gristlebee:
+  - rscadd: Acquire Mission containers and Mission drills display their objective
+      type.
+  - rscadd: Changed name of base fish type to generic fish
+  SomeguyManperson:
+  - bugfix: the  BG-16 is now as ammo efficient as the BG-12
+  - bugfix: the BG-16 has automatic fire again
+  generalthrax:
+  - balance: Undoubles the price on every automatic gun and removed 250 from the price
+      of every semi-auto pistol.
+2024-07-26:
+  Cloudbreak:
+  - rscadd: A new ruin, the Abandoned Listening Post.
+  - rscadd: Areas associated with the listening post.
+  - bugfix: Single line in maps catalogue.
+2024-07-27:
+  Gristlebee:
+  - rscadd: Marker beacons can now be printed at the autolathe from the Misc tab
+2024-07-31:
+  rkz, benbot(benjamin), Time-Green, SteelSlayer, floyd, Qustinuus, ArcaneDefence, FlowerCuco:
+  - rscadd: Food storage! Hide some glass in the captains cake! Begone digestive tract!
+  - rscadd: Bread, Cake and Spaghetti to Newfood
+  - rscadd: some smaller foods can now be eaten whilst on the run! (This ONLY applies
+      to newfood items thus far!)
+  - rscadd: converted edible component to work with newfood
+  - rscdel: oldfood for Bread, Cake and Spaghetti
+  - rscdel: Temporarily removes customfood bread, cake, pasta, and sandwiches
+  - tweak: edited a few messed up values
+  - tweak: food trash is sensible now. Finishing stuff like cake will actually spawn
+      a plate rubbish. Instead of you eating the plate, biggun, perhaps properly dispose
+      of it!
+  - bugfix: Wildly STUPID item weights. Candycorn and cakes are no longer the SAME
+      size
+  - code_imp: provides some semblance of sorting for signal defines

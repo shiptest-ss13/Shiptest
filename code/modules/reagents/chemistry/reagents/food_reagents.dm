@@ -113,9 +113,9 @@
 
 /datum/reagent/consumable/cooking_oil/expose_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
-		if(isitem(O) && !istype(O, /obj/item/reagent_containers/food/snacks/deepfryholder))
+		if(isitem(O) && !istype(O, /obj/item/food/deepfryholder))
 			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
-			var/obj/item/reagent_containers/food/snacks/deepfryholder/F = new(O.drop_location(), O)
+			var/obj/item/food/deepfryholder/F = new(O.drop_location(), O)
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
@@ -208,30 +208,6 @@
 	color = "#B31008" // rgb: 179, 16, 8
 	taste_description = "hot peppers"
 	taste_mult = 1.5
-
-/datum/reagent/consumable/capsaicin/on_mob_life(mob/living/carbon/M)
-	var/heating = 0
-	switch(current_cycle)
-		if(1 to 15)
-			heating = 5 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(holder.has_reagent(/datum/reagent/cryostylane))
-				holder.remove_reagent(/datum/reagent/cryostylane, 5)
-			if(isslime(M))
-				heating = rand(5,20)
-		if(15 to 25)
-			heating = 10 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(10,20)
-		if(25 to 35)
-			heating = 15 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(15,20)
-		if(35 to INFINITY)
-			heating = 20 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(20,25)
-	M.adjust_bodytemperature(heating)
-	..()
 
 /datum/reagent/consumable/frostoil
 	name = "Frost Oil"

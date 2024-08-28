@@ -260,8 +260,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "chemsprayer"
 	item_state = "chemsprayer"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
 	stream_mode = 1
@@ -298,8 +298,8 @@
 	desc = "A utility used to spray large amounts of cleaning reagents in a given area. It regenerates space cleaner by itself but it's unable to be fueled by normal means."
 	icon_state = "chemsprayer_janitor"
 	item_state = "chemsprayer_janitor"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	reagent_flags = NONE
 	list_reagents = list(/datum/reagent/space_cleaner = 1000)
 	volume = 1000

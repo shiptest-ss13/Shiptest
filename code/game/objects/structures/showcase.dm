@@ -69,14 +69,14 @@
 	icon_state = "showcase_7"
 
 /obj/structure/showcase/mecha/marauder
-	name = "combat mech exhibit"
-	desc = "A stand with an empty old Nanotrasen Corporation combat mech bolted to it. It is described as the premier unit used to defend corporate interests and employees."
+	name = "combat exosuit exhibit"
+	desc = "A stand with an empty old Nanotrasen Corporation combat exosuit bolted to it. It is described as the premier unit used to defend corporate interests and employees."
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "marauder"
 
 /obj/structure/showcase/mecha/ripley
-	name = "construction mech exhibit"
-	desc = "A stand with a retired construction mech bolted to it. The clamps are rated at 9300PSI. It seems to be falling apart."
+	name = "construction exosuit exhibit"
+	desc = "A stand with a retired construction exosuit bolted to it. The clamps are rated at 9300PSI. It seems to be falling apart."
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "firefighter"
 
