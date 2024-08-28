@@ -366,7 +366,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/cane
 	name = "cane"
-	desc = "A cane used by a true gentleman. Or a clown."
+	desc = "A cane used by a true gentleman."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "cane"
 	item_state = "stick"

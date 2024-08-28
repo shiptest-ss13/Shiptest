@@ -203,14 +203,14 @@
 	if(prob(50))
 		r_pocket = pickweight(list(
 			/obj/item/stack/marker_beacon = 20,
-			/obj/item/spacecash/bundle/mediumrand = 7,
+			/obj/item/spacecash/bundle/smallrand = 7,
 			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
 			/obj/item/borg/upgrade/modkit/damage = 1
 			)
 		)
 	if(prob(25))
 		l_pocket = pickweight(list(
-			/obj/item/spacecash/bundle/mediumrand = 5,
+			/obj/item/spacecash/bundle/smallrand = 5,
 			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
 			/obj/item/borg/upgrade/modkit/cooldown = 1
 			)
@@ -411,7 +411,7 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pickweight(list(
-				/obj/item/spacecash/bundle/mediumrand = 5,
+				/obj/item/spacecash/bundle/smallrand = 5,
 				/obj/item/ammo_box/magazine/illestren_a850r = 5,
 				/obj/item/ammo_box/magazine/zip_ammo_9mm = 5,
 				/obj/item/modular_computer/tablet/preset/cargo = 3,

@@ -19,7 +19,7 @@ Featuring:
 */
 
 /mob/living/simple_animal/hostile/human/syndicate/mecha_pilot
-	name = "Syndicate Mecha Pilot"
+	name = "Syndicate Exosuit Pilot"
 	desc = "Death to Nanotrasen. This variant comes in MECHA DEATH flavour."
 	wanted_objects = list()
 	search_objects = 0

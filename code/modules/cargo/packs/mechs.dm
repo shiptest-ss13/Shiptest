@@ -1,5 +1,5 @@
 /datum/supply_pack/mech
-	group = "Mech and Exosuit Construction"
+	group = "Exosuit Construction"
 	crate_type = /obj/structure/closet/crate/large
 
 
@@ -97,12 +97,12 @@ Mech Equipment
 */
 
 /datum/supply_pack/mech/equipment
-	name = "Mech equipment crate"
+	name = "Exosuit equipment crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	crate_name = "mech equipment"
+	crate_name = "exosuit equipment"
 
 /datum/supply_pack/mech/equipment/drill
-	name = "Mech drill kit"
+	name = "Exosuit drill kit"
 	desc = "Contains one mechanized drill for heavy duty digging."
 	cost = 500
 	contains = list(
@@ -110,7 +110,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/diamond_drill
-	name = "Mech diamond drill kit"
+	name = "Exosuit diamond drill kit"
 	desc = "Contains mechanized diamond drill, for the enterprising prospector!"
 	cost = 750
 	contains = list(
@@ -118,31 +118,31 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/scanner
-	name = "Mech scanner kit"
-	desc = "An electronic mining scanner, graded to interface with a mech."
+	name = "Exosuit scanner kit"
+	desc = "An electronic mining scanner, graded to interface with an exosuit."
 	cost = 350
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/mining_scanner
 	)
 
 /datum/supply_pack/mech/equipment/plasma_gen
-	name = "Mech generator kit"
-	desc = "A plasma-fueled generator for a mech, ideal for long operations."
+	name = "Exosuit generator kit"
+	desc = "A plasma-fueled generator for an exosuit, ideal for long operations."
 	cost = 1000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/generator
 	)
 
 /datum/supply_pack/mech/equipment/nuclear_gen
-	name = "Mech nuclear generator kit"
-	desc = "Contains a uranium-fueled generator for a mech, ideal for polluting the environment."
+	name = "Exosuit nuclear generator kit"
+	desc = "Contains a uranium-fueled generator for an exosuit, ideal for polluting the environment."
 	cost = 1250
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/generator/nuclear
 	)
 
 /datum/supply_pack/mech/equipment/tesla_energy_relay
-	name = "Mech tesla relay kit"
+	name = "Exosuit tesla relay kit"
 	desc = "Contains an advanced exosuit module which draws power from nearby APCs."
 	cost = 1750
 	contains = list(
@@ -150,7 +150,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/clamp
-	name = "Mech clamp kit"
+	name = "Exosuit clamp kit"
 	desc = "Contains a clamp designed for mechanized freight hauling."
 	cost = 350
 	contains = list(
@@ -158,7 +158,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/extinguisher
-	name = "Mech extinguisher kit"
+	name = "Exosuit extinguisher kit"
 	desc = "Contains a heavy duty fire extinguisher, for heavy duty firefighting."
 	cost = 250
 	contains = list(
@@ -166,7 +166,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/cable_layer
-	name = "Mech RCL Kit"
+	name = "Exosuit RCL Kit"
 	desc = "Contains a \"rapid cable layer\" for laying down long lengths of wire."
 	cost = 250
 	contains = list(
@@ -174,7 +174,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/mech_sleeper
-	name = "Mech Mounted Sleeper Kit"
+	name = "Exosuit Mounted Sleeper Kit"
 	desc = "Contains a mounted sleeper device, used for retrieving and stabilizing patients."
 	cost = 1000
 	contains = list(
@@ -182,14 +182,14 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/beam_gun
-	name = "Mech Beam Gun Kit"
+	name = "Exosuit Beam Gun Kit"
 	desc = "Contains an advanced mounted medical beamgun, capable of alleviating wounds to targets."
 	cost = 7000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	)
 /datum/supply_pack/mech/equipment/rcs
-	name = "Mech RCS kit"
+	name = "Exosuit RCS kit"
 	desc = "A gas fueled RCS pack, ideal for mechanized space operation."
 	cost = 800
 	contains = list(
@@ -205,7 +205,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
-	name = "Mech CCW armor kit"
+	name = "Exosuit CCW armor kit"
 	desc = "A \"close combat weaponry\" module designed to deflect melee attacks."
 	cost = 750
 	contains = list(
@@ -213,7 +213,7 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/projectile_armor_booster
-	name = "Mech projectile armor kit"
+	name = "Exosuit projectile armor kit"
 	desc = "A protective exosuit module designed to deflect ranged attacks."
 	cost = 1000
 	contains = list(
@@ -225,13 +225,13 @@ weapons
 */
 
 /datum/supply_pack/mech/weapon
-	name = "Mech weapons crate"
+	name = "Exosuit weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	crate_name = "mech weapon crate"
+	crate_name = "exosuit weapon crate"
 
 /datum/supply_pack/mech/weapon/pka
-	name = "Mech Mounted Proto-Kinetic Accelerator kit"
-	desc = "A ranged mining attachment for any mech."
+	name = "Exosuit-Mounted Proto-Kinetic Accelerator kit"
+	desc = "A ranged mining attachment for any exosuit."
 	cost = 750
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
@@ -290,9 +290,9 @@ ammo
 */
 
 /datum/supply_pack/mech/ammo
-	name = "Mech ammo crate"
+	name = "Exosuit ammo crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	crate_name = "mech ammo crate"
+	crate_name = "exosuit ammo crate"
 
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"

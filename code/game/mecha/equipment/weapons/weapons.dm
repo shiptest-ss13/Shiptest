@@ -1,5 +1,5 @@
 /obj/item/mecha_parts/mecha_equipment/weapon
-	name = "mecha weapon"
+	name = "exosuit weapon"
 	range = MECHA_RANGED
 	destroy_sound = 'sound/mecha/weapdestr.ogg'
 	var/projectile
