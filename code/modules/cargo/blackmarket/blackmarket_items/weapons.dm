@@ -132,7 +132,7 @@
 	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
-	price_max = 15000
+	price_max = 10000
 	stock_max = 2
 	availability_prob = 10
 	spawn_weighting = FALSE
