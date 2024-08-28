@@ -519,3 +519,10 @@
 	icon_state = "a44roum-hp"
 	ammo_type = /obj/item/ammo_casing/a44roum/hp
 	max_ammo = 50
+
+/obj/item/ammo_box/c299
+	name = "ammo box (.299 Eoehoma caseless)
+	desc = "A box of .299 Eoehoma caseless, for use with the E-40 hybrid assault rifle."
+	icon_state = "229box"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	max_ammo = 120

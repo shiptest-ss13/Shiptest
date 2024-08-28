@@ -51,10 +51,22 @@
 	name = "Eoehoma .299 Caseless Magazine"
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
+	pair_item = /datum/blackmarket_item/ammo/c299
 
 	price_min = 750
 	price_max = 1250
 	stock = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/c299
+	name = "Eoehoma .299 Caseless ammo box"
+	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
+	item = /obj/item/ammo_box/c299
+
+	price_min = 250
+	price_max = 500
+	stock_min = 4
+	stock_max = 8
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/saber_mag
