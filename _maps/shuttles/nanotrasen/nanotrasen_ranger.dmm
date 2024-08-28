@@ -1680,6 +1680,26 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"nm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "RangerCryoShutters";
+	name = "Cryogenic Storage"
+	},
+/obj/machinery/button/door{
+	pixel_x = -21;
+	dir = 4;
+	pixel_y = 3;
+	name = "Cryogenics Access";
+	id = "RangerCryoShutters"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#8A9397"
+	},
+/area/ship/crew/cryo)
 "no" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -2260,11 +2280,6 @@
 "sJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
-"sP" = (
-/obj/structure/crate_shelf,
-/obj/machinery/light/dim/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "sR" = (
 /obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/siding/red/end,
@@ -4160,13 +4175,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
-"HP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/poddoor/shutters/preopen,
-/turf/open/floor/plasteel/stairs{
-	color = "#8A9397"
-	},
-/area/ship/crew/cryo)
+"HN" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "HZ" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
@@ -4534,16 +4547,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"LT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/poddoor/shutters/preopen,
-/turf/open/floor/plasteel/stairs{
-	color = "#8A9397"
-	},
-/area/ship/crew/cryo)
 "LU" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -5237,6 +5240,23 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"RH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/button/door{
+	pixel_x = 21;
+	dir = 8;
+	pixel_y = 3;
+	name = "Cryogenics Access";
+	id = "RangerCryoShutters"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "RangerCryoShutters";
+	name = "Cryogenic Storage"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#8A9397"
+	},
+/area/ship/crew/cryo)
 "RM" = (
 /obj/structure/chair/sofa/brown/left/directional/west,
 /obj/machinery/light/dim/directional/east,
@@ -6752,7 +6772,7 @@ JR
 Iy
 ym
 VC
-HP
+RH
 EL
 ml
 Tz
@@ -6826,7 +6846,7 @@ JR
 tb
 mQ
 rq
-LT
+nm
 Zs
 pf
 jA
@@ -7110,7 +7130,7 @@ DZ
 So
 Eq
 lU
-sP
+HN
 XT
 zW
 zW
