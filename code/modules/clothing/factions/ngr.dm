@@ -123,6 +123,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	lightweight = 1
 	jetpack = null
+	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"

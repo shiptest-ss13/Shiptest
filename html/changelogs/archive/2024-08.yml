@@ -184,3 +184,21 @@
   FalloutFalcon:
   - balance: Ballistic weapons now have a minimum camera shake.
   - bugfix: Gunslinger now functions as intended.
+2024-08-28:
+  Anticept:
+  - bugfix: Adjusted the Box Hospital Ship's engineering layout so that it's less
+      jank, and the power system doesn't loop on itself anymore.
+  FalloutFalcon:
+  - rscdel: Removed blob and alot of stuff close to blob
+  Gristlebee:
+  - rscadd: Weapon cells can be inserted directly into weapon chargers to charge them.
+  - bugfix: e40s not charging in weapons rechargers.
+  firebudgy:
+  - bugfix: Medical Examinations via Flashlight is now an option again. Check eye
+      health or see what's in someone's mouth!
+  meemofcourse:
+  - rscadd: Vox lore blurb
+  - bugfix: Inconsistent capitalization when speaking due to guestbook
+  - code_imp: Changed how the game recognizes Vox and Sarathi age
+  thgvr:
+  - imageadd: Kepori hardsuits now have a fallback icon

@@ -247,8 +247,8 @@
 	secondary.pre_fire(target, user, message, flag, params, zone_override, bonus_spread)
 
 
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return cell
+/obj/item/gun/ballistic/automatic/assault/e40/get_cell()
+	return secondary.get_cell()
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
