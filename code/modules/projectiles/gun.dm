@@ -985,8 +985,9 @@
 			if(at_risk == holder.s_store)
 				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safeties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
-			at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG))
+			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg! Should have had the safeties on."), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
+				emote("scream")
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
