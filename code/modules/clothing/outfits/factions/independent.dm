@@ -77,6 +77,14 @@
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
+/datum/outfit/job/independent/assistant/naked
+
+	name = "Independent - Assistant (Naked)"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = null
+
+
 // Captain
 
 /datum/outfit/job/independent/captain
