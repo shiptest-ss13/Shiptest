@@ -22,42 +22,6 @@
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
 
-/obj/item/gun/ballistic/automatic/smg/c20r
-	name = "\improper C-20r SMG"
-	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "c20r"
-	item_state = "c20r"
-
-	mag_type = /obj/item/ammo_box/magazine/smgm45
-	show_magazine_on_sprite = TRUE
-	show_magazine_on_sprite_ammo = TRUE
-	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-EMPTY_GUN_HELPER(automatic/smg/c20r)
-
-/obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
-	. = ..()
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra
-	name = "\improper Cobra 20"
-	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
-	icon_state = "cobra20"
-	item_state = "cobra20"
-
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/smg/c20r/suns
-	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
-	icon_state = "c20r_suns"
-	item_state = "c20r_suns"
-
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
 	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
@@ -92,87 +56,6 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
-
-/obj/item/gun/ballistic/automatic/smg/m90
-	name = "\improper M-90gl Carbine"
-	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "m90"
-	item_state = "m90"
-
-	mag_type = /obj/item/ammo_box/magazine/m556
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
-	default_firemode = FIREMODE_SEMIAUTO
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/secondary
-	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-	burst_size = 3
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.2 SECONDS
-	spread = 1
-	spread_unwielded = 8
-	wield_slowdown = 0.4
-
-/obj/item/gun/ballistic/automatic/smg/m90/Initialize()
-	. = ..()
-	secondary = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/m90/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return secondary.pre_fire(target, user, message, params, zone_override, bonus_spread)
-
-/obj/item/gun/ballistic/automatic/smg/m90/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.afterattack(target, user, flag, params)
-
-/obj/item/gun/ballistic/automatic/smg/m90/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, secondary.magazine.ammo_type))
-		secondary.unique_action()
-		return secondary.attackby(attack_obj, user, params)
-	return ..()
-
-
-/obj/item/gun/ballistic/automatic/smg/m90/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/smg/m90/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
-	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
-
-/obj/item/gun/ballistic/automatic/smg/m90/do_wield(mob/user)
-	. = ..()
-	secondary.wielded_fully = wielded_fully
-
-/// triggered on unwield of two handed item
-/obj/item/gun/ballistic/automatic/smg/m90/on_unwield(obj/item/source, mob/user)
-	. = ..()
-	secondary.wielded_fully = FALSE
-	secondary.wielded = FALSE
-
-
-/obj/item/gun/ballistic/automatic/smg/m90/proc/secondary_update_icon()
-	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 
 /obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev

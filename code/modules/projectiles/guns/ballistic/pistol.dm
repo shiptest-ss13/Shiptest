@@ -19,42 +19,6 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
-/obj/item/gun/ballistic/automatic/pistol/syndicate
-	name = "Stechkin"
-	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. Has a threaded barrel for suppressors."
-	icon_state = "pistol"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-
-	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-
-	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
-
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-	spread = 6 //becuase its compact, spread is slightly worse
-	spread_unwielded = 9
-	recoil_unwielded = 2
-
-EMPTY_GUN_HELPER(automatic/pistol/syndicate)
-
-/obj/item/gun/ballistic/automatic/pistol/syndicate/suns
-	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
-	icon_state = "pistol_suns"
-
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
@@ -132,37 +96,6 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	desc = "A Deagle-brand Deagle for operators operating operationally. Uses .50 AE ammo." //I hate this joke with a passion
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
-
-/obj/item/gun/ballistic/automatic/pistol/APS
-	name = "stechkin APS pistol"
-	desc = "A burst-fire machine pistol based on the stechkin model. Utilizes specialized 9mm magazines."
-	icon_state = "aps"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-
-
-	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
-
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-
-	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
-
-	burst_size = 3
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
@@ -392,32 +325,4 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 
 /obj/item/gun/ballistic/derringer/no_mag
 	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/pistol/himehabu
-	name = "\improper Himehabu"
-	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
-	icon_state = "himehabu"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-
-
-	w_class = WEIGHT_CLASS_TINY
-	mag_type = /obj/item/ammo_box/magazine/m22lr
-	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
-
-	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
-
-	recoil = -2
-	recoil_unwielded = -2
-	spread_unwielded = 0
-	wield_slowdown = 0
 

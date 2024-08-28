@@ -1,16 +1,3 @@
-/obj/item/ammo_box/magazine/m10mm
-	name = "pistol magazine (10mm)"
-	desc = "An 8-round single-stack magazine for the stechkin pistol. These rounds do moderate damage, but struggle against armor."
-	icon_state = "stechkin_mag-1"
-	base_icon_state = "stechkin_mag"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
-	max_ammo = 8
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
-/obj/item/ammo_box/magazine/m10mm/empty
-	start_empty = TRUE
-
 /obj/item/ammo_box/magazine/m10mm/inc
 	name = "pistol magazine (10mm incendiary)"
 	desc = "An 8-round single-stack magazine for the stechkin pistol. These incendiary rounds deal mediocre damage, but leave flaming trails which set targets ablaze."
