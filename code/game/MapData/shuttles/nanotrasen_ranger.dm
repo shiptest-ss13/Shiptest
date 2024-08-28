@@ -264,7 +264,7 @@
 	"}
 
 /obj/item/disk/holodisk/lp/aid/rescue
-	name = "Aid Mission Rescure"
+	name = "Aid Mission Rescue"
 	desc = "A holodisk containing an aid mission for the LP."
 	preset_image_type = /datum/preset_holoimage/commissioner
 	preset_record_text = {"
