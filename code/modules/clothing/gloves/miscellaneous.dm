@@ -27,9 +27,9 @@
 
 /obj/item/clothing/gloves/combat
 	name = "combat gloves"
-	desc = "These tactical gloves are fireproof and electrically insulated."
+	desc = "These tactical gloves are extra-durable, offering some fire and acid protection."
 	icon_state = "combat"
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	strip_delay = 80
 	cold_protection = HANDS
