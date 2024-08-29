@@ -202,3 +202,30 @@
   - code_imp: Changed how the game recognizes Vox and Sarathi age
   thgvr:
   - imageadd: Kepori hardsuits now have a fallback icon
+2024-08-29:
+  Apogee-dev:
+  - balance: SUNS and SolCon armor now uses standard armor rather than bulletproof
+  - balance: Normalized armor values between various faction helmets, coats, and vests
+  - balance: Armored coats now provide armor protection for the chest and groin only;
+      environmental protection unchanged
+  - bugfix: removed armor from some overlooked berets and soft hats
+  - refactor: Renamed the Mauler exosuit and several exosuit weapons to avoid confusion
+  Gristlebee:
+  - rscadd: Black Market Stock Cycling and item weighting
+  - rscadd: New black market stock
+  - rscadd: Tech and Ammo tab
+  - rscadd: Dead Drops
+  - rscadd: LTRSBT moved to the Black Market Catalogue
+  - rscadd: LTSRBT Crafting Recipe,  2 BS crystals, a bank card, 5 duct tape, a circuit
+      board and a network card
+  - rscadd: Reflavours the disco grenade
+  - rscadd: variable for powercells to show if they're rigged
+  - rscdel: Some old blackmarket stock
+  - balance: LTRSBT shipping cost up to 100 credits
+  - balance: Launch delivery more reliable
+  - bugfix: Powerfist works again
+  - spellcheck: fixed a few typos in the black market
+  - code_imp: Dynamic Overmap encounters store what ruins were spawned
+  - code_imp: get_block_portion and get_position_in_margin methods in mapzones.dm
+  - code_imp: Pair items now handled by a list
+  - refactor: Black Market item stocking
