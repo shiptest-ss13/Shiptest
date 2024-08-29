@@ -42,12 +42,12 @@
 
 /obj/item/clothing/gloves/combat/maid
 	name = "combat maid sleeves"
-	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
+	desc = "These 'tactical' gloves and sleeves are fireproof and acid-resistant. Warm to boot."
 	icon_state = "syndimaid_arms"
 
 /obj/item/clothing/gloves/combat/maid/inteq
 	name = "inteq combat maid sleeves"
-	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
+	desc = "Tacticute and comfy, along with being both fireproof and acid-resistant."
 	icon_state = "inteqmaid_arms"
 
 /obj/item/clothing/gloves/bracer
@@ -142,5 +142,5 @@
 
 /obj/item/clothing/gloves/combat/wizard
 	name = "enchanted gloves"
-	desc = "These gloves have been enchanted with a spell that makes them electrically insulated and fireproof."
+	desc = "These gloves have been enchanted with a spell that makes them fireproof and acid-resistant."
 	icon_state = "wizard"

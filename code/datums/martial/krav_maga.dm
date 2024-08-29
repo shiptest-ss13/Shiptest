@@ -211,7 +211,7 @@
 
 /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	name = "combat gloves plus"
-	desc = "These tactical gloves are fireproof and electrically insulated, and through the use of nanochip technology will teach you the martial art of krav maga."
+	desc = "These tactical gloves are fireproof, and through the use of nanochip technology will teach you the martial art of krav maga."
 	icon_state = "black"
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
