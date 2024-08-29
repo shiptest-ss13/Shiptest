@@ -11,6 +11,27 @@
 	stock_max = 5
 	availability_prob = 80
 
+/datum/blackmarket_item/clothing/straitjacket
+	name = "Straitjacket"
+	desc = "These straitjackets might be a tight fit, but you can certain the poor sod wont be getting away anytime soon."
+	item = /obj/item/clothing/suit/straight_jacket
+
+	price_min = 500
+	price_max = 1000
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/clothing/surplus_uniform
+	name = "Surplus Combat Uniforms"
+	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
+	item = /obj/item/clothing/under/rank/security/officer/military
+
+	price_min = 50
+	price_max = 200
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 80
+
 /datum/blackmarket_item/clothing/crown
 	name = "Crown"
 	desc = "A beautiful golden crown, rich with history and pedigree. Better worn than left to collect dust in a museum, right?"
@@ -18,7 +39,7 @@
 
 	price_min = 1000
 	price_max = 2000
-	stock_max = 1
+	stock = 1
 	availability_prob = 20
 
 /datum/blackmarket_item/clothing/galaxy_blue
@@ -98,11 +119,31 @@
 	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
 	return B
 
+/datum/blackmarket_item/clothing/frontiersmen_armor_fireproof
+	name = "Fireproof Armor Set"
+	desc = "Get it while it's hot! This fireproofed armor and uniform set is made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
+	item = /obj/item/storage/box
+
+	price_min = 1000
+	price_max = 1750
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/frontiersmen_armor_fireproof/spawn_item(loc)
+	var/obj/item/storage/box/B = ..()
+	B.name = "Fireproof Armor Set Box"
+	B.desc = "A singed box with some folded clothes and a helmet inside."
+	new /obj/item/clothing/suit/armor/frontier/fireproof(B)
+	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof(B)
+	new /obj/item/clothing/under/frontiersmen/fireproof(B)
+	new /obj/item/clothing/mask/gas/frontiersmen(B)
+	return B
+
 /datum/blackmarket_item/clothing/gezena_armor
 	name = "Raksha-Plating vest"
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
 	item = /obj/item/clothing/suit/armor/gezena/marine
-	pair_item = /datum/blackmarket_item/clothing/gezena_helmet
+	pair_item = list(/datum/blackmarket_item/clothing/gezena_helmet)
 
 	price_min = 750
 	price_max = 1250
@@ -137,6 +178,54 @@
 	new /obj/item/clothing/head/helmet/space(B)
 	return B
 
+/datum/blackmarket_item/clothing/syndie_spacesuit_set
+	name = "\improper Syndicate Branded Spacesuit Box"
+	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
+	item = /obj/item/storage/box/syndie_kit
+
+	price_min = 750
+	price_max = 2500
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/syndie_spacesuit_set/spawn_item(loc)
+	var/obj/item/storage/box/syndie_kit/B = ..()
+	B.name = "Spacesuit Box"
+	B.desc = "It has a Syndicate logo on it."
+	var/suit_color = pick(list("red","green","dark green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
+	switch(suit_color)
+		if("red")
+			new /obj/item/clothing/head/helmet/space/syndicate(B)
+			new /obj/item/clothing/suit/space/syndicate(B)
+		if("green")
+			new /obj/item/clothing/head/helmet/space/syndicate/green(B)
+			new /obj/item/clothing/suit/space/syndicate/green(B)
+		if("dark-green")
+			new /obj/item/clothing/head/helmet/space/syndicate/green/dark(B)
+			new /obj/item/clothing/suit/space/syndicate/green/dark(B)
+		if("orange")
+			new /obj/item/clothing/head/helmet/space/syndicate/orange(B)
+			new /obj/item/clothing/suit/space/syndicate/orange(B)
+		if("blue")
+			new /obj/item/clothing/head/helmet/space/syndicate/blue(B)
+			new /obj/item/clothing/suit/space/syndicate/blue(B)
+		if("black")
+			new /obj/item/clothing/head/helmet/space/syndicate/black(B)
+			new /obj/item/clothing/suit/space/syndicate/black(B)
+		if("black-green")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/green(B)
+			new /obj/item/clothing/suit/space/syndicate/black/green(B)
+		if("black-blue")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/blue(B)
+			new /obj/item/clothing/suit/space/syndicate/black/blue(B)
+		if("black-orange")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/orange(B)
+			new /obj/item/clothing/suit/space/syndicate/black/orange(B)
+		if("black-red")
+			new /obj/item/clothing/head/helmet/space/syndicate/black/red(B)
+			new /obj/item/clothing/suit/space/syndicate/black/red(B)
+	return B
+
 /datum/blackmarket_item/clothing/chameleon_hat
 	name = "Chameleon Hat"
 	desc = "Pick any hat you want with this Handy device. Not Quality Tested."
@@ -146,6 +235,17 @@
 	price_max = 200
 	stock_max = 2
 	availability_prob = 70
+
+/datum/blackmarket_item/clothing/cham_kit
+	name = "Chameleon Kit"
+	desc = "Not sure what to wear? This adaptive set of clothing can change to suit whatever you desire! Quality tested."
+	item = /obj/item/storage/box/syndie_kit/chameleon
+
+	price_min = 1000
+	price_max = 2500
+	stock_max = 2
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/clothing/combatmedic_suit
 	name = "Combat Medic Hardsuit"
