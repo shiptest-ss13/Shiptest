@@ -71,22 +71,22 @@
 	ME.attach(src)
 	max_ammo()
 
-/obj/mecha/combat/marauder/mauler
-	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
-	name = "\improper Mauler"
-	icon_state = "mauler"
+/obj/mecha/combat/marauder/touro
+	desc = "A powerful ICW-era combat exosuit, developed off of Nanotrasen's Marauder model by Cybersun Biodynamics."
+	name = "\improper Touro"
+	icon_state = "touro"
 	operation_req_access = list(ACCESS_SYNDICATE)
 	internals_req_access = list(ACCESS_SYNDICATE)
-	wreckage = /obj/structure/mecha_wreckage/mauler
+	wreckage = /obj/structure/mecha_wreckage/touro
 	max_equip = 6
 	destruction_sleep_duration = 20
 
-/obj/mecha/combat/marauder/mauler/Initialize()
+/obj/mecha/combat/marauder/touro/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
 	ME.attach(src)
 
-/obj/mecha/combat/marauder/mauler/loaded/Initialize()
+/obj/mecha/combat/marauder/touro/loaded/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
 	ME.attach(src)

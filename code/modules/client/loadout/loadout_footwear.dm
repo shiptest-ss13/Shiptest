@@ -64,3 +64,17 @@
 /datum/gear/footwear/color/white
 	display_name = "white shoes"
 	path = /obj/item/clothing/shoes/sneakers/white
+
+//Cowboy boots
+
+/datum/gear/footwear/cowboy
+	display_name = "cowboy boots, brown"
+	path = /obj/item/clothing/shoes/cowboy
+
+/datum/gear/footwear/cowboy/black
+	display_name = "cowboy boots, black"
+	path = /obj/item/clothing/shoes/cowboy/black
+
+/datum/gear/footwear/cowboy/white
+	display_name = "cowboy boots, white"
+	path = /obj/item/clothing/shoes/cowboy/white
