@@ -526,3 +526,4 @@
 	icon_state = "229box"
 	ammo_type = /obj/item/ammo_casing/caseless/c299
 	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL // This is a lot of ammo

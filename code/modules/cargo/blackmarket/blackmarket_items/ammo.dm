@@ -58,12 +58,12 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/c299
-	name = "Eoehoma .299 Caseless ammo box"
+	name = "Eoehoma .299 Caseless Ammo Box"
 	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
 	item = /obj/item/ammo_box/c299
 
-	price_min = 250
-	price_max = 500
+	price_min = 300
+	price_max = 700
 	stock_min = 4
 	stock_max = 8
 	availability_prob = 0
