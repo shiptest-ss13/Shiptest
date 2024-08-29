@@ -977,18 +977,18 @@
 		playsound(src, fire_sound, 100, TRUE)
 
 /mob/living/proc/trip_with_gun()
-	var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
 	var/mob/living/carbon/human/human_holder
 	if(ishuman(src))
-		holder = src
+		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
+		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
 				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
 			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
-				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without it's safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without it's safeties on!"))
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
 				emote("scream")
 
 //I need to refactor this into an attachment
