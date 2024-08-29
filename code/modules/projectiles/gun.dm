@@ -729,7 +729,7 @@
 /obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
-		discharge("hits the ground hard", 80)
+		discharge("hits the ground hard", 50)
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -951,7 +951,7 @@
 	muzzle_flash.applied = FALSE
 
 // for guns firing on their own without a user
-/obj/item/gun/proc/discharge(cause, seek_chance = 50)
+/obj/item/gun/proc/discharge(cause, seek_chance = 10)
 	var/target
 	if(!safety)
 		// someone is very unlucky and about to be shot
