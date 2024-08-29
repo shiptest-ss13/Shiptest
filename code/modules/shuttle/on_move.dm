@@ -302,14 +302,8 @@ All ShuttleMove procs go here
 
 /obj/item/gun/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	. = ..()
-	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
 		discharge("is thrown around by the force of the take off")
-
-/obj/item/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
-	. = ..()
-	for(var/obj/item/gun/at_risk in get_all_contents())
-		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
-			at_risk.discharge("is thrown around by the force of the take off")
 
 /************************************Mob move procs************************************/
 
@@ -337,7 +331,6 @@ All ShuttleMove procs go here
 	var/knockdown = movement_force["KNOCKDOWN"]
 	if(knockdown)
 		Paralyze(knockdown)
-		trip_with_gun()
 
 
 /mob/living/simple_animal/hostile/megafauna/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
