@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/toy/prize/honk = 1,
 		/obj/item/toy/prize/marauder = 1,
 		/obj/item/toy/prize/seraph = 1,
-		/obj/item/toy/prize/mauler = 1,
+		/obj/item/toy/prize/touro = 1,
 		/obj/item/toy/prize/odysseus = 1,
 		/obj/item/toy/prize/phazon = 1,
 		/obj/item/toy/prize/reticence = 1,

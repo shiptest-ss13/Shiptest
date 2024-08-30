@@ -3,7 +3,6 @@
 	name = "\improper Vox"
 	id = SPECIES_VOX
 	default_color = "6060FF"
-	species_age_min = 17
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
@@ -12,7 +11,7 @@
 	disliked_food = GRAIN
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	loreblurb = "Vox test"
+	loreblurb = "Vox are a big bird-like species with quills, much larger and much more long-lasting than other species. Sadly, not much else is known."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

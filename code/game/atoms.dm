@@ -44,6 +44,14 @@
 	*/
 	var/list/atom_colours
 
+	/// Lazylist of all images (hopefully attached to us) to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	var/list/image/update_on_z
+
+	/// Lazylist of all overlays attached to us to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	/// Oh and note, if order of addition is important this WILL break that. so mind yourself
+	var/list/image/update_overlays_on_z
 
 	/// a very temporary list of overlays to remove
 	var/list/remove_overlays
@@ -779,15 +787,6 @@
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
 
-/**
- * React to a hit by a blob objecd
- *
- * default behaviour is to send the [COMSIG_ATOM_BLOB_ACT] signal
- */
-/atom/proc/blob_act(obj/structure/blob/B)
-	SEND_SIGNAL(src, COMSIG_ATOM_BLOB_ACT, B)
-	return
-
 /atom/proc/fire_act(exposed_temperature, exposed_volume)
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, exposed_temperature, exposed_volume)
 	return
@@ -977,7 +976,7 @@
 	return TRUE
 
 ///Get the best place to dump the items contained in the source storage item?
-/atom/proc/get_dumping_location(obj/item/storage/source,mob/user)
+/atom/proc/get_dumping_location()
 	return null
 
 /**
@@ -1733,7 +1732,20 @@
 
 /// Returns the atom name that should be used on screentip
 /atom/proc/get_screentip_name(client/hovering_client)
-	return name
+	if(ishuman(src))
+		var/mob/living/carbon/human/guy = src
+		var/mob/client_mob = hovering_client.mob
+		var/datum/guestbook/guestbook = client_mob.mind?.guestbook
+		if(guestbook)
+			var/known_name = guestbook.get_known_name(client_mob, guy)
+			if(known_name)
+				return known_name
+			else
+				return guy.get_visible_name()
+		else
+			return guy.real_name
+	else
+		return name
 
 ///Called whenever a player is spawned on the same turf as this atom.
 /atom/proc/join_player_here(mob/M)

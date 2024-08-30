@@ -50,7 +50,6 @@
 	desc = "The BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
-	w_class = WEIGHT_CLASS_NORMAL
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -70,6 +69,7 @@
 /obj/item/ammo_casing/energy/kalix/pgf
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	e_cost = 666 //30 shots per cell
 	delay = 1
 
 /obj/item/gun/energy/kalix/pistol //blue
