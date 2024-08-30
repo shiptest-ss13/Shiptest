@@ -844,14 +844,18 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/reset_perspective(atom/A)
 	if(client)
 		if(ismob(client.eye) && (client.eye != src))
-			var/mob/target = client.eye
-			observetarget = null
-			if(target.observers)
-				LAZYREMOVE(target.observers, src)
+			cleanup_observe()
 	if(..())
 		if(hud_used)
 			client.screen = list()
 			hud_used.show_hud(hud_used.hud_version)
+
+/mob/dead/observer/proc/cleanup_observe()
+	var/mob/target = client.eye
+	observetarget = null
+	client?.perspective = initial(client.perspective)
+	if(target.observers)
+		LAZYREMOVE(target.observers, src)
 
 /mob/dead/observer/verb/observe()
 	set name = "Observe"
@@ -873,7 +877,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/proc/do_observe(mob/mob_eye)
 	//Istype so we filter out points of interest that are not mobs
 	if(client && mob_eye && istype(mob_eye))
-		client.eye = mob_eye
+		client.set_eye(mob_eye)
 		if(mob_eye.hud_used)
 			client.screen = list()
 			LAZYOR(mob_eye.observers, src)
