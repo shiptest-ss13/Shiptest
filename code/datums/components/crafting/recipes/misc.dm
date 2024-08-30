@@ -200,6 +200,13 @@
 	time = 30
 	category = CAT_MISC
 
+/datum/crafting_recipe/mushroom_bowl
+	name = "Mushroom Bowl"
+	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
+	time = 30
+	category = CAT_MISC
+
 /datum/crafting_recipe/chainsaw
 	name = "Chainsaw"
 	result = /obj/item/chainsaw
