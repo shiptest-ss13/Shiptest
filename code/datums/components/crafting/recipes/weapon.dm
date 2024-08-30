@@ -259,7 +259,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/bonespear
+/datum/crafting_recipe/bonespear // Remove the bone stuff whenever there is some melee option in cargo.
 	name = "Bone Spear"
 	result = /obj/item/spear/bonespear
 	time = 30
@@ -283,13 +283,5 @@
 	time = 40
 	reqs = list(/obj/item/stack/sheet/bone = 3,
 				/obj/item/stack/sheet/sinew = 2)
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/crystalspear
-	name = "Crystal Spear"
-	result = /obj/item/spear/crystal
-	time = 4 SECONDS
-	reqs = list(/obj/item/strange_crystal = 2)
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
