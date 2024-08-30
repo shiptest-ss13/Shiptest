@@ -51,19 +51,31 @@
 			if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
 				if(prob(10))
 					to_chat(src, "<span class='warning'>You feel terribly bloated.</span>")
+
 			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-				if(prob(5))
+
+				if(prob(1))
 					to_chat(src, "<span class='warning'>You feel [word].</span>")
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+				if(oxyloss < 20)
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+
 			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-				if(prob(5))
-					blur_eyes(6)
-					to_chat(src, "<span class='warning'>You feel very [word].</span>")
-			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-				adjustOxyLoss(5)
+				if(eye_blurry < 50)
+					adjust_blurriness(5)
+				if(oxyloss < 40)
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+				else
+					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+
 				if(prob(15))
-					Unconscious(rand(20,60))
+					Unconscious(rand(2 SECONDS,6 SECONDS))
+					to_chat(src, "<span class='warning'>You feel very [word].</span>")
+
+			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+				adjustToxLoss(2)
+				if(prob(15))
+					Unconscious(rand(2 SECONDS,6 SECONDS))
 					to_chat(src, "<span class='warning'>You feel extremely [word].</span>")
 			if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 				if(!HAS_TRAIT(src, TRAIT_NODEATH))
@@ -81,8 +93,40 @@
 					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
 			limb_bleed += BP.bleeding
 
+		var/message_cooldown = 5 SECONDS
+		var/bleeeding_wording
+//		var/bleed_change_wording
+		switch(limb_bleed)
+			if(0 to 0.5)
+				bleeeding_wording = "You hear droplets of blood drip down."
+				message_cooldown *= 2.5
+			if(0.5 to 1)
+				bleeeding_wording = "You feel your blood flow quietly to the floor."
+				message_cooldown *= 2
+			if(1 to 2)
+				bleeeding_wording = "The flow of blood leaving your body onto the ground is worrying..."
+				message_cooldown *= 1.7
+			if(2 to 4)
+				bleeeding_wording = "You're losing blood <b><i>very fast</i></b>, which is freaking you out!"
+				message_cooldown *= 1.5
+			if(4 to INFINITY)
+				bleeeding_wording = "<b>Your heartbeat beats unstably fast as you lose a massive amount of blood!!</b>"
+
 		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
 			bleed(limb_bleed)
+
+			if(!blood_particle)
+				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
+			blood_particle.particles.color = dna.blood_type.color //mouthful
+			blood_particle.particles.spawning = (limb_bleed/2)
+			blood_particle.particles.count = (round(clamp((limb_bleed * 2), 1, INFINITY)))
+
+			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
+				to_chat(src, span_warning("[bleeeding_wording]"))
+				COOLDOWN_START(src, bloodloss_message, message_cooldown)
+		else
+			if(blood_particle)
+				QDEL_NULL(blood_particle)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
@@ -90,16 +134,35 @@
 		blood_volume = max(blood_volume - amt, 0)
 		if (prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
 			if(isturf(src.loc) && !isgroundlessturf(src.loc)) //Blood loss still happens in locker, floor stays clean
-				if(amt >= 10)
-					add_splatter_floor(src.loc)
+				if(amt >= 2)
+					add_splatter_floor(src.loc, amt = amt)
 				else
-					add_splatter_floor(src.loc, 1)
+					add_splatter_floor(src.loc, TRUE, amt)
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod
 	if(!(NOBLOOD in dna.species.species_traits))
 		..()
 
+/**
+ * This proc is a helper for spraying blood for things like slashing/piercing wounds and dismemberment.
+ *
+ * The strength of the splatter in the second argument determines how much it can dirty and how far it can go
+ *
+ * Arguments:
+ * * splatter_direction: Which direction the blood is flying
+ * * splatter_strength: How many tiles it can go, and how many items it can pass over and dirty
+ */
+/mob/living/carbon/proc/spray_blood(splatter_direction, splatter_strength = 3)
+	if(!isturf(loc))
+		return
+	var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(loc)
+
+//	our_splatter.transfer_mob_blood_dna(return_blood_DNA(src))
+	our_splatter.blood_dna_info = get_blood_dna_list()
+	our_splatter.transfer_mob_blood_dna(src)
+	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
+	INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, splatter_strength)
 
 
 /mob/living/proc/restore_blood()
@@ -229,13 +292,14 @@
 	return blood_type.color
 
 //to add a splatter of blood or other mob liquid.
-/mob/living/proc/add_splatter_floor(turf/T, small_drip)
+/mob/living/proc/add_splatter_floor(turf/T, small_drip, amt)
 	if(get_blood_id() != /datum/reagent/blood)
 		return
 	if(!T)
 		T = get_turf(src)
 
 	var/list/temp_blood_DNA
+
 	if(small_drip)
 		// Only a certain number of drips (or one large splatter) can be on a given turf.
 		var/obj/effect/decal/cleanable/blood/drip/drop = locate() in T
@@ -248,7 +312,7 @@
 			else
 				temp_blood_DNA = drop.return_blood_DNA() //we transfer the dna from the drip to the splatter
 				qdel(drop)//the drip is replaced by a bigger splatter
-		else
+		else if (amt < 2)
 			drop = new(T, get_static_viruses())
 			drop.transfer_mob_blood_dna(src)
 			return
@@ -261,7 +325,11 @@
 		B = candidate
 		break
 	if(!B)
-		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+		if(amt > 4)
+			B = new /obj/effect/decal/cleanable/blood(T, get_static_viruses())
+		else
+			B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+
 	if(QDELETED(B)) //Give it up
 		return
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL), BLOOD_POOL_MAX)
@@ -269,11 +337,11 @@
 	if(temp_blood_DNA)
 		B.add_blood_DNA(temp_blood_DNA)
 
-/mob/living/carbon/human/add_splatter_floor(turf/T, small_drip)
+/mob/living/carbon/human/add_splatter_floor(turf/T, small_drip, amt)
 	if(!(NOBLOOD in dna.species.species_traits))
 		..()
 
-/mob/living/carbon/alien/add_splatter_floor(turf/T, small_drip)
+/mob/living/carbon/alien/add_splatter_floor(turf/T, small_drip, amt)
 	if(!T)
 		T = get_turf(src)
 	var/obj/effect/decal/cleanable/xenoblood/B = locate() in T.contents
@@ -281,7 +349,7 @@
 		B = new(T)
 	B.add_blood_DNA(list("UNKNOWN DNA" = "X*"))
 
-/mob/living/silicon/robot/add_splatter_floor(turf/T, small_drip)
+/mob/living/silicon/robot/add_splatter_floor(turf/T, small_drip, amt)
 	if(!T)
 		T = get_turf(src)
 	var/obj/effect/decal/cleanable/oil/B = locate() in T.contents

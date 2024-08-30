@@ -27,6 +27,10 @@
 	display_name = "beret, red"
 	path = /obj/item/clothing/head/beret
 
+/datum/gear/hat/beret/black
+	display_name = "beret, black"
+	path = /obj/item/clothing/head/beret/black
+
 /datum/gear/hat/beret/departmental
 	display_name = "beret, departmental"
 	path = /obj/item/clothing/head/beret/grey
@@ -74,23 +78,82 @@
 	path = /obj/item/clothing/head/beret/eng/hazard
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
+//Soft caps
+
+/datum/gear/hat/softcap/red
+	display_name = "cap, red"
+	path = /obj/item/clothing/head/soft/red
+
+/datum/gear/hat/softcap/blue
+	display_name = "cap, blue"
+	path = /obj/item/clothing/head/soft/blue
+
+/datum/gear/hat/softcap/grey
+	display_name = "cap, grey"
+	path = /obj/item/clothing/head/soft/grey
+
+/datum/gear/hat/softcap/white
+	display_name = "cap, white"
+	path = /obj/item/clothing/head/soft/mime
+
+/datum/gear/hat/softcap/black
+	display_name = "cap, black"
+	path = /obj/item/clothing/head/soft/black
+
+//Beanies
+
+/datum/gear/hat/beanie
+	display_name = "beanie, white"
+	path = /obj/item/clothing/head/beanie
+
+/datum/gear/hat/beanie/black
+	display_name = "beanie, black"
+	path = /obj/item/clothing/head/beanie/black
+
+/datum/gear/hat/beanie/red
+	display_name = "beanie, red"
+	path = /obj/item/clothing/head/beanie/red
+
+/datum/gear/hat/beanie/green
+	display_name = "beanie, green"
+	path = /obj/item/clothing/head/beanie/green
+
+/datum/gear/hat/beanie/purple
+	display_name = "beanie, purple"
+	path = /obj/item/clothing/head/beanie/purple
+
+/datum/gear/hat/beanie/blue
+	display_name = "beanie, blue"
+	path = /obj/item/clothing/head/beanie/darkblue
+
+/datum/gear/hat/beanie/orange
+	display_name = "beanie, orange"
+	path = /obj/item/clothing/head/beanie/orange
 //Misc
+
+/datum/gear/hat/bowler
+	display_name = "bowler hat"
+	path = /obj/item/clothing/head/bowler
 
 /datum/gear/hat/that
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
 /datum/gear/hat/fedora
-	display_name = "fedora"
+	display_name = "fedora, black"
 	path = /obj/item/clothing/head/fedora
+
+/datum/gear/hat/fedora/white
+	display_name = "fedora, white"
+	path = /obj/item/clothing/head/fedora/white
+
+/datum/gear/hat/fedora/beige
+	display_name = "fedora, beige"
+	path = /obj/item/clothing/head/fedora/beige
 
 /datum/gear/hat/flatcap
 	display_name = "flatcap"
 	path = /obj/item/clothing/head/flatcap
-
-/datum/gear/hat/beanie
-	display_name = "beanie"
-	path = /obj/item/clothing/head/beanie
 
 /datum/gear/hat/wig
 	display_name = "wig"
