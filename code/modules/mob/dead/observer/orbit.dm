@@ -73,6 +73,9 @@
 		var/mob/mob_poi = new_mob_pois[name]
 		var/number_of_orbiters = length(mob_poi.get_all_orbiters())
 
+		if(isnewplayer(mob_poi))
+			continue
+
 		serialized["ref"] = REF(mob_poi)
 		serialized["full_name"] = mob_poi.name
 		serialized["job"] = mob_poi.job

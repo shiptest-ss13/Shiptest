@@ -79,7 +79,7 @@ export const Orbit = (props, context) => {
             </Flex.Item>
           </Flex>
         </Section>
-        <OrbitContent searchText={searchText} />
+        <OrbitContent searchText={searchText} autoObserve={autoObserve}/>
       </Window.Content>
     </Window>
   );

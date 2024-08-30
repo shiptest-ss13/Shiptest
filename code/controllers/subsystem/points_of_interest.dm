@@ -181,9 +181,11 @@ SUBSYSTEM_DEF(points_of_interest)
 	if(poi_mob.client?.holder?.fakekey)
 		return FALSE
 
+	/*
 	// POI is a /mob/dead/new_player, players in the lobby are invalid as POIs.
 	if(isnewplayer(poi_mob))
 		return FALSE
+	*/
 
 	return TRUE
 
