@@ -194,10 +194,10 @@
 
 /obj/machinery/capture_the_flag/Initialize()
 	. = ..()
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /obj/machinery/capture_the_flag/Destroy()
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	return ..()
 
 /obj/machinery/capture_the_flag/process()
