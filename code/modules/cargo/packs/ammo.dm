@@ -28,7 +28,7 @@
 	name = ".38 Speedloader Crate"
 	desc = "Contains a .38 speedloader for revolvers, containing six rounds."
 	contains = list(/obj/item/ammo_box/c38)
-	cost = 350
+	cost = 250
 
 /datum/supply_pack/ammo/m10mm_mag
 	name = "10mm Stechkin Magazine Crate"
@@ -81,7 +81,7 @@
 */
 
 /datum/supply_pack/ammo/winchester_ammo
-	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
+	name = ".38 Ammo Boxes Crate"
 	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
 	cost = 250
 	contains = list(/obj/item/ammo_box/c38_box,
@@ -134,7 +134,7 @@
 /datum/supply_pack/ammo/gal308_ammo
 	name = "CM-GAL .308 Magazine Crate"
 	desc = "Contains a .308 CM-GAL magazine for the CM-GAL rifle, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/gal)
+	contains = list(/obj/item/ammo_box/magazine/f4_308)
 	cost = 1000
 
 /datum/supply_pack/ammo/gar_ammo
@@ -148,12 +148,6 @@
 	desc = "Contains a ferromagnetic pellet speedloader for the Claris rifle, containing twenty two rounds."
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
 	cost = 1000
-
-/datum/supply_pack/ammo/a300
-	name = ".300 Magnum Stripper Clip Crate"
-	desc = "Contains a five round .300 Magnum stripper clip for sniper rifles such as the HP Scout."
-	contains = list(/obj/item/ammo_box/a300)
-	cost = 750
 
 /datum/supply_pack/ammo/ebr_ammo
 	name = "M514 EBR .308 Magazine Crate"
@@ -173,17 +167,17 @@
 	contains = list(/obj/item/ammo_box/magazine/p16)
 	cost = 1000
 
-/datum/supply_pack/ammo/a850r_ammo
-	name = "8x50mmR En Bloc Clip Crate"
-	desc = "Contains a 8x50mmR en bloc clip for rifles like the illestren rifle, containing five rounds."
-	contains = list(/obj/item/ammo_box/magazine/illestren_a850r)
-	cost = 250
-
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains a eighty-round 7.62x40mm CLIP box for the SKM rifles."
+	desc = "Contains a one hundred and twenty-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/ammo_box/a762_40)
 	cost = 500
+
+/datum/supply_pack/ammo/a556_ammo_box
+	name = "5.56x39mm CLIP Ammo Box Crate"
+	desc = "Contains a one hundred and twenty-round 5.56x39mm CLIP box for most newer rifles."
+	contains = list(/obj/item/ammo_box/a556_39)
+	cost = 450
 
 /datum/supply_pack/ammo/a357_ammo_box
 	name = ".357 Ammo Box Crate"

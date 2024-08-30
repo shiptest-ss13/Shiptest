@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 20
+	var/max_save_slots = 30
 
 	//non-preference stuff
 	var/muted = 0
@@ -227,7 +227,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 30
+				max_save_slots = 50
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -1435,7 +1435,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		balance -= initial(quirk_type.value)
 		switch(change_type)
 			if("species")
-				if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+				if((quirk_name in SSquirks.species_blacklist) && (target_species.id in SSquirks.species_blacklist[quirk_name]))
 					all_quirks_new -= quirk_name
 					balance += initial(quirk_type.value)
 			if("mood")

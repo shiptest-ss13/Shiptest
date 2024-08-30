@@ -40,6 +40,9 @@
 
 	safety_wording = "hammer"
 
+	gunslinger_recoil_bonus = -1
+	gunslinger_spread_bonus = -8
+
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
 	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
@@ -418,7 +421,7 @@
 	fire_delay = src::fire_delay
 	if(fan)
 		rack()
-		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
+		to_chat(user, span_notice("You fan the [bolt_wording] of \the [src]!"))
 		balloon_alert_to_viewers("fans revolver!")
 		fire_delay = 0 SECONDS
 
@@ -435,25 +438,6 @@
 			toggle_safety(silent = TRUE, rack_gun = FALSE)
 		return
 	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
-
-/obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -8
-	var/total_spread = bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -555,6 +539,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/detective/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/revolver/syndicate/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/no_mag

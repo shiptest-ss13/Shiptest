@@ -18,12 +18,23 @@
 
 	price_min = 500
 	price_max = 2000
+	stock_min = 1
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/tool/surgery_duffel
+	name = "Cybersun Advanced Surgical Kit"
+	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
+	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
+
+	price_min = 2500
+	price_max = 5000
 	stock = 1
-	availability_prob = 30
+	availability_prob = 25
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
-	desc = "Increase your sight by 150% with this handy Tool!"
+	desc = "Twice as effective as a monocular for seeing across long distances."
 	item = /obj/item/binoculars
 
 	price_min = 50
@@ -31,6 +42,28 @@
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 70
+
+/datum/blackmarket_item/tool/whetstone
+	name = "Whetstone"
+	desc = "Your blades not making the cut? This whetstone will give you the edge you need!"
+	item = /obj/item/sharpener
+
+	price_min = 100
+	price_max = 300
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 50
+
+/datum/blackmarket_item/tool/cham_stamp
+	name = "Chameleon Stamp"
+	desc = "Can't find a forger? Look no further than these handy chameleon stamps, capable of replicating all manner of offical or government seals."
+	item = /obj/item/stamp/chameleon
+
+	price_min = 50
+	price_max = 200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 80
 
 /datum/blackmarket_item/tool/riot_shield
 	name = "Riot Shield"
@@ -47,8 +80,8 @@
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
 
-	price_min = 100
-	price_max = 600
+	price_min = 75
+	price_max = 300
 	stock_max = 10
 	availability_prob = 50
 
@@ -58,7 +91,7 @@
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
 	price_min = 400
-	price_max = 1500
+	price_max = 1200
 	stock_max = 3
 	availability_prob = 20
 
@@ -80,7 +113,8 @@
 	price_min = 1000
 	price_max = 3000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/jumpboots
 	name = "Jump Boots"
@@ -101,16 +135,7 @@
 	price_max = 2000
 	stock_max = 3
 	availability_prob = 30
-
-/datum/blackmarket_item/tool/chem_master
-	name = "Chem Master Board"
-	desc = "A Chem Master board, capable of seperating and packaging reagents. Perfect for any aspiring at home chemist."
-	item = /obj/item/circuitboard/machine/chem_master
-
-	price_min = 1000
-	price_max = 3000
-	stock = 1
-	availability_prob = 30
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
@@ -125,10 +150,10 @@
 /datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
 	desc = "A suppressor, for when you to keep your murder on the down low."
-	item = /obj/item/suppressor
+	item = /obj/item/attachment/silencer
 
 	price_min = 100
-	price_max = 700
+	price_max = 300
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 60

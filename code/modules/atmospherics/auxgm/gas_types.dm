@@ -165,5 +165,30 @@
 	color = "#ffe"
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 1)
+	enthalpy = FIRE_HYDROGEN_ENERGY_RELEASED
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
+
+/datum/gas/chlorine
+	id = GAS_CHLORINE
+	specific_heat = 20
+	name = "Chlorine"
+	flags = GAS_FLAG_DANGEROUS
+	moles_visible = MOLES_GAS_VISIBLE * 5
+	gas_overlay = "nitrous_oxide"
+	color = "#FFFB89"
+	fusion_power = 0
+
+/datum/gas/hydrogen_chloride
+	id = GAS_HYDROGEN_CHLORIDE
+	specific_heat = 40
+	name = "Hydrogen Chloride"
+	flags = GAS_FLAG_DANGEROUS
+	moles_visible = MOLES_GAS_VISIBLE * 2
+	gas_overlay = "nitrous_oxide"
+	color = "#5bfd45"
+	fusion_power = 0
+	fire_products = list(GAS_CHLORINE = 1, GAS_H2O = 0.5)
+	enthalpy = 63000
+	fire_burn_rate = 1
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST

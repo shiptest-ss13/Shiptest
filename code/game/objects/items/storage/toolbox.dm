@@ -312,6 +312,18 @@
 	new /obj/item/clothing/mask/infiltrator(src)
 	new /obj/item/clothing/shoes/combat/sneakboots(src)
 
+/obj/item/storage/toolbox/bounty
+	name = "defused explosives case"
+	desc = "Store defused landmines in here."
+	icon_state = "infiltrator_case"
+	item_state = "infiltrator_case"
+
+/obj/item/storage/toolbox/bounty/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 4
+	STR.max_items = 2
+
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots

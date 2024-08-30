@@ -177,7 +177,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/radio/headset/solgov/alt,
 /obj/item/storage/backpack,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/window/reinforced{
@@ -308,7 +308,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/radio/headset/solgov/alt,
 /obj/item/storage/backpack,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/window/reinforced{
@@ -1526,9 +1526,9 @@
 /obj/structure/closet/cabinet{
 	name = "armor cabinet"
 	},
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
 /obj/item/clothing/head/solgov/sonnensoldner,
 /obj/item/clothing/head/solgov/sonnensoldner,
 /obj/item/clothing/head/solgov/sonnensoldner,
@@ -1848,10 +1848,10 @@
 /area/ship/crew/canteen/kitchen)
 "mz" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/food/snacks/store/bread/plain,
-/obj/item/reagent_containers/food/snacks/store/bread/plain,
-/obj/item/reagent_containers/food/snacks/store/bread/plain,
-/obj/item/reagent_containers/food/snacks/store/bread/plain,
+/obj/item/food/bread/plain,
+/obj/item/food/bread/plain,
+/obj/item/food/bread/plain,
+/obj/item/food/bread/plain,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -2139,7 +2139,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "nO" = (
-/obj/machinery/computer/cargo/express/solgov,
+/obj/machinery/computer/cargo/solgov,
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
 "nR" = (
@@ -2282,6 +2282,7 @@
 	dir = 4;
 	name = "Fuel Mixer"
 	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "oH" = (
@@ -3646,7 +3647,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/radio/headset/solgov/alt,
 /obj/item/storage/backpack,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/white,
@@ -5838,7 +5839,7 @@
 /area/ship/cargo)
 "LB" = (
 /obj/item/clothing/head/solgov/captain,
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain,
+/obj/item/clothing/suit/armor/vest/solgov/captain,
 /obj/item/clothing/under/solgov/formal/captain,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/gloves/combat,

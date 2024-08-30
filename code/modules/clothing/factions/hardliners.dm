@@ -69,22 +69,22 @@
 /obj/item/clothing/suit/armor/hardliners/sergeant
 	name = "hardliners sergeant jacket"
 	desc = "An armored jacket typically worn by sergeant of the Hardliners. They're reminiscent of the garb worn by old Gorlex navymen, prior to its destruction."
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	icon_state = "hl_sergeant"
 	item_state = "hl_sergeant"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners
 	name = "hardliners captain coat"
 	desc = "An imposing armored coat worn by captains of Hardliner fleets, hand-designed by Cybersun tailors to provide maximum protection to its wearer."
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	icon_state = "hl_captain"
 	item_state = "hl_captain"
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
 
 ///////////////
@@ -150,7 +150,7 @@
 
 /obj/item/clothing/head/helmet/hardliners/swat
 	name = "hardliners pilot helmet"
-	desc = "A modified X-11 helmet utilized by regular pilots, as well as the feared mech pilots of the Hardliner movement. The attached visor helps protect against sudden flashes from explosions."
+	desc = "A modified X-11 helmet utilized by regular pilots, as well as the feared exosuit pilots of the Hardliner movement. The attached visor helps protect against sudden flashes from explosions."
 	flash_protect = FLASH_PROTECTION_WELDER
 	icon_state = "hl_pilot"
 	item_state = "hl_pilot"

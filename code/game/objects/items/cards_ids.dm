@@ -165,6 +165,7 @@
 	. = ..()
 	if(mapload && access_txt)
 		access = text2access(access_txt)
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 	update_label()
 	update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
@@ -259,11 +260,13 @@
 /obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		ship_access += ship
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 
 // Removes the referenced ship from the card
 /obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		ship_access -= ship
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 
 // Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)

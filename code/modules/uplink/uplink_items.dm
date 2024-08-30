@@ -683,7 +683,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/stealthy_weapons/suppressor
 	name = "Suppressor"
 	desc = "This suppressor will silence the shots of the weapon it is attached to for increased stealth and superior ambushing capability. It is compatible with many small ballistic guns including the Stechkin and C-20r, but not revolvers or energy guns."
-	item = /obj/item/suppressor
+	item = /obj/item/attachment/silencer
 	cost = 3
 	surplus = 10
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
@@ -937,16 +937,16 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/ammo/mech/bag
-	name = "Mech Support Kit Bag"
-	desc = "A duffel bag containing ammo for four full reloads of the scattershotm which is equipped on standard Dark Gygax and Mauler exosuits. Also comes with some support equipment for maintaining the mech, including tools and an inducer."
+	name = "Exosuit Support Kit Bag"
+	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard Dark Gygax and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mech
 	cost = 4
 	include_modes = list(/datum/game_mode/nuclear)
 
-/datum/uplink_item/ammo/mauler/bag
-	name = "Mauler Ammo Bag"
-	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Mauler exosuit."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
+/datum/uplink_item/ammo/touro/bag
+	name = "Touro Ammo Bag"
+	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Touro exosuit."
+	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/touro
 	cost = 6
 	include_modes = list(/datum/game_mode/nuclear)
 
@@ -1195,11 +1195,11 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 80
 	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
-/datum/uplink_item/support/mauler
-	name = "Mauler Exosuit"
-	desc = "A massive and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
+/datum/uplink_item/support/touro
+	name = "Touro Exosuit"
+	desc = "A well-armored and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
 			and deployable smoke. Comes equipped with an LMG, scattershot carbine, missile rack, an antiprojectile armor booster and a Tesla energy array."
-	item = /obj/mecha/combat/marauder/mauler/loaded
+	item = /obj/mecha/combat/marauder/touro/loaded
 	cost = 140
 
 // Stealth Items
@@ -1832,9 +1832,9 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/concealed_weapon_bay
 	name = "Concealed Weapon Bay"
-	desc = "A modification for non-combat mechas that allows them to equip one piece of equipment designed for combat mechs. \
+	desc = "A modification for civilian exosuits that allows them to equip one piece of equipment designed for combat exosuits. \
 			It also hides the equipped weapon from plain sight. \
-			Only one can fit on a mecha."
+			Only one can fit on an exosuit."
 	item = /obj/item/mecha_parts/concealed_weapon_bay
 	cost = 3
 	restricted_roles = list("Roboticist", "Research Director")

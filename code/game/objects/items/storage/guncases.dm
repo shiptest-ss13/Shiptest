@@ -44,7 +44,7 @@
 
 /obj/item/storage/guncase/beacon
 /obj/item/storage/guncase/beacon/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon(src)
+	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag(src)
 
 /obj/item/storage/guncase/scout
 /obj/item/storage/guncase/scout/PopulateContents()
@@ -57,7 +57,6 @@
 	new /obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag(src)
 	new /obj/item/ammo_box/magazine/smgm45/empty(src)
 	new /obj/item/ammo_box/magazine/smgm45/empty(src)
-
 
 /obj/item/storage/guncase/hellfire
 /obj/item/storage/guncase/hellfire/PopulateContents()
@@ -79,7 +78,7 @@
 
 /obj/item/storage/guncase/wt550
 /obj/item/storage/guncase/wt550/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
+	new /obj/item/gun/ballistic/automatic/smg/wt550/no_mag(src)
 	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
 	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
 
@@ -153,7 +152,7 @@
 
 /obj/item/storage/pistolcase/a357
 /obj/item/storage/pistolcase/a357/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/no_mag(src)
+	new /obj/item/gun/ballistic/revolver/syndicate/no_mag(src)
 	new /obj/item/ammo_box/a357/empty(src)
 	new /obj/item/ammo_box/a357/empty(src)
 
@@ -162,7 +161,6 @@
 	new /obj/item/gun/ballistic/revolver/montagne/no_mag(src)
 	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
 	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
-
 
 /obj/item/storage/pistolcase/disposable
 /obj/item/storage/pistolcase/disposable/PopulateContents()
@@ -176,7 +174,7 @@
 
 /obj/item/storage/pistolcase/egun
 /obj/item/storage/pistolcase/egun/PopulateContents()
-	new /obj/item/gun/energy/laser/empty_cell(src)
+	new /obj/item/gun/energy/e_gun/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun(src)
 
 /obj/item/storage/pistolcase/kalixpistol
@@ -191,7 +189,7 @@
 
 /obj/item/storage/pistolcase/miniegun
 /obj/item/storage/pistolcase/miniegun/PopulateContents()
-	new /obj/item/gun/energy/e_gun/empty_cell(src)
+	new /obj/item/gun/energy/e_gun/mini/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun/mini(src)
 
 /obj/item/storage/pistolcase/iongun
