@@ -11,7 +11,7 @@
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)

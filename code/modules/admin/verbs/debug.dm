@@ -52,21 +52,6 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	else
 		alert("Invalid mob")
 
-/client/proc/cmd_admin_blobize(mob/M in GLOB.mob_list)
-	set category = "Event.Fun"
-	set name = "Make Blob"
-
-	if(!SSticker.HasRoundStarted())
-		alert("Wait until the game starts")
-		return
-	if(ishuman(M))
-		log_admin("[key_name(src)] has blobized [M.key].")
-		var/mob/living/carbon/human/H = M
-		H.become_overmind()
-	else
-		alert("Invalid mob")
-
-
 /client/proc/cmd_admin_animalize(mob/M in GLOB.mob_list)
 	set category = "Event.Fun"
 	set name = "Make Simple Animal"

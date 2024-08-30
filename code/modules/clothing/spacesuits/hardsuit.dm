@@ -734,23 +734,6 @@
 	item_state = "capspacesuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/captain
 
-	//Clown
-/obj/item/clothing/head/helmet/space/hardsuit/clown
-	name = "cosmohonk hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-humor environment. Has radiation shielding."
-	icon_state = "hardsuit0-clown"
-	item_state = "hardsuit0-clown"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
-	hardsuit_type = "clown"
-
-/obj/item/clothing/suit/space/hardsuit/clown
-	name = "cosmohonk hardsuit"
-	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding. Only a true clown can wear it."
-	icon_state = "hardsuit-clown"
-	item_state = "clown_hardsuit"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
-
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	name = "prototype RIG hardsuit helmet"
@@ -863,7 +846,7 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/space/hardsuit/shielded/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 

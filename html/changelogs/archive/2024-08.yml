@@ -71,3 +71,164 @@
       so.
   rye-rice:
   - bugfix: indie sec hardsuit now shows up
+2024-08-11:
+  firebudgy:
+  - rscadd: Sprites for several different kinds of scarves for Vox!
+  - rscadd: Additional sprites for several other items for Vox, such as chest-high
+      towels and hazard jackets.
+  - rscadd: Created onmob_neck_vox.dmi file, plus enabled support for it.
+  generalthrax:
+  - bugfix: Fixes the Industrial Jacket to be warm (For Real)
+  phoaly:
+  - balance: Talos Corpsman has been readded with a different medkit loadout.
+2024-08-16:
+  OrionTheFox:
+  - rscadd: Suit Storage Units now provide feedback when Decontamination fails to
+      activate
+  - imageadd: Suit Storage Units now have a visible red light when Locked - when hacked,
+      Decontamination now has a red-yellow flashing light to distinguish from the
+      Locked light.
+2024-08-18:
+  Cloudbreak:
+  - rscadd: Frontiersman sprites for the Vox!
+  Gristlebee:
+  - bugfix: water turfs reagent scooping
+  - code_imp: span classes to span macros
+  - refactor: acid turfs repathed under water
+  - refactor: Pouring out a reagent container is now bound to disarm intent instead
+      of help intent.
+  - rscadd: Examine hints for flipped tables
+  - bugfix: You can no longer phase through a flipped table.
+  meemofcourse:
+  - bugfix: Hardliner troopers should no longer spawn as Hardliner pilots
+2024-08-20:
+  Aquidu:
+  - bugfix: Fixed a bug relating to literal spaghetti code.
+  zimon9:
+  - bugfix: fixed a short on the Shetland
+2024-08-21:
+  FalloutFalcon:
+  - rscadd: Added var to let admins bypass do_teleport vlevel restriction
+  Sadhorizon:
+  - bugfix: Ranged frontersman with internals now drops the correct revolver type.
+2024-08-22:
+  rye-rice, Imaginos16:
+  - rscadd: Adds new belt sprites
+2024-08-23:
+  retlaw34, rye-rice, Apogee-dev:
+  - rscadd: Adds CLIPs weapons
+  - rscadd: Adds the New Frontiersmen weapons
+  - rscadd: 556 ammo box to cargo
+  - rscadd: inteq sprites should look better
+2024-08-24:
+  generalthrax:
+  - rscdel: Removed a bunch of random items from fitting in wallets (notably screwdrivers,
+      cigarettes, suture / mesh / gauze)
+  - rscadd: Ship keys and derringers can now fit in wallets
+2024-08-26:
+  Aquidu:
+  - rscadd: Rations now have icons that help show the contents.
+  - rscadd: Condiments and drink mixes now have colors when full to help show the
+      contents.
+  - rscadd: Unique sprites for the ration heater, drink packs ration drinks, and "side"
+      category rations.
+  - code_imp: Changes the sound effect for opening the drink ration to the bottle
+      cap sound to line up with the icon.
+  DIB-DOG:
+  - rscadd: Added a standard vest to the armory office locker
+  - rscadd: Added a Security camera console to the bridge
+  - balance: Silkenweave jackets and Betzu hats now provide cold protection but no
+      armor
+  - balance: Crying Sun now has 4 combustion/2 ion engines instead of 2/4
+  - bugfix: Fixes turrets on the Crying Sun and its subshuttle, the Nail.
+  FalloutFalcon, MrSamu99, Fikou:
+  - rscadd: a few shipments of MOD control units have found there way to the frontier,
+      premium versions of existing hard suits with the latest tech!
+  - rscadd: Ported modsuits from tg, no mapped stuff yet
+  Gristlebee:
+  - balance: Durand shield consumes less charge on being hit, passive drain increased.
+  - bugfix: Mechs consume the correct amount of power on movement.
+  - refactor: normal_step_energy_drain is now base_step_energy_drain
+  - rscadd: Grills can now cook food.
+  - rscdel: Xeno-energy working as grill fuel.
+  - balance: Outpost food costs
+  - bugfix: Grills
+  Ms-Mee:
+  - bugfix: fixed handle_quirk_conflict behavior
+  Sadhorizon:
+  - bugfix: Gloves now show up in the loadout preview.
+  - rscadd: Brown gloves were added to the loadout.
+  - tweak: Moved everything out of autolathe contraband - you no longer have to hack
+      it, ever.
+  - rscdel: Removed foilhat, flamethrower, electropack, .357 casing and slime scanner
+      from the autolathe.
+  - rscadd: Added a bunch of new items to the loadout.
+  - tweak: Changed the description of red suspenders.
+  - rscadd: Ihejirka space outpost now has player-accessible cryogenics.
+  SomeguyManperson:
+  - balance: wormholes on the overmap no longer decay when used
+  Thera-Pissed:
+  - code_imp: TEG efficiency now depends on temperature delta.
+  Vekter:
+  - bugfix: Removed an extra fire extinguisher from the crew quarters on the IRMV
+      Talos.
+2024-08-27:
+  Baystation12, Kapu1178, rye-rice:
+  - rscadd: Particles!
+  - rscadd: Bleeding has better feedback
+  - rscadd: Bone breaking now has sound effects
+  - rscadd: Getting shot now throws blood squirts! Live through the somme for REAL
+      this time!
+  - balance: gibbing no longer destroys your chest, no more legion transfers!
+  - bugfix: Lava particles should no longer destroy your FPS
+  FalloutFalcon:
+  - balance: Ballistic weapons now have a minimum camera shake.
+  - bugfix: Gunslinger now functions as intended.
+2024-08-28:
+  Anticept:
+  - bugfix: Adjusted the Box Hospital Ship's engineering layout so that it's less
+      jank, and the power system doesn't loop on itself anymore.
+  FalloutFalcon:
+  - rscdel: Removed blob and alot of stuff close to blob
+  Gristlebee:
+  - rscadd: Weapon cells can be inserted directly into weapon chargers to charge them.
+  - bugfix: e40s not charging in weapons rechargers.
+  firebudgy:
+  - bugfix: Medical Examinations via Flashlight is now an option again. Check eye
+      health or see what's in someone's mouth!
+  meemofcourse:
+  - rscadd: Vox lore blurb
+  - bugfix: Inconsistent capitalization when speaking due to guestbook
+  - code_imp: Changed how the game recognizes Vox and Sarathi age
+  thgvr:
+  - imageadd: Kepori hardsuits now have a fallback icon
+2024-08-29:
+  Apogee-dev:
+  - balance: SUNS and SolCon armor now uses standard armor rather than bulletproof
+  - balance: Normalized armor values between various faction helmets, coats, and vests
+  - balance: Armored coats now provide armor protection for the chest and groin only;
+      environmental protection unchanged
+  - bugfix: removed armor from some overlooked berets and soft hats
+  - refactor: Renamed the Mauler exosuit and several exosuit weapons to avoid confusion
+  Gristlebee:
+  - rscadd: Black Market Stock Cycling and item weighting
+  - rscadd: New black market stock
+  - rscadd: Tech and Ammo tab
+  - rscadd: Dead Drops
+  - rscadd: LTRSBT moved to the Black Market Catalogue
+  - rscadd: LTSRBT Crafting Recipe,  2 BS crystals, a bank card, 5 duct tape, a circuit
+      board and a network card
+  - rscadd: Reflavours the disco grenade
+  - rscadd: variable for powercells to show if they're rigged
+  - rscdel: Some old blackmarket stock
+  - balance: LTRSBT shipping cost up to 100 credits
+  - balance: Launch delivery more reliable
+  - bugfix: Powerfist works again
+  - spellcheck: fixed a few typos in the black market
+  - code_imp: Dynamic Overmap encounters store what ruins were spawned
+  - code_imp: get_block_portion and get_position_in_margin methods in mapzones.dm
+  - code_imp: Pair items now handled by a list
+  - refactor: Black Market item stocking
+2024-08-30:
+  meemofcourse:
+  - rscadd: Character slots have been raised to 40. BYOND members get 50.

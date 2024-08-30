@@ -18,6 +18,9 @@
 	recoil_unwielded = 4
 	wield_slowdown = 3
 
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 20
+
 	///does this have a bipod?
 	var/has_bipod = FALSE
 	///is the bipod deployed?
@@ -41,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
 	. = ..()
-	for(var/datum/action/item_action/deploy_bipod/action as anything in actions_types)
+	for(var/datum/action/item_action/deploy_bipod/action as anything in actions)
 		if(!has_bipod)
 			qdel(action)
 
@@ -115,29 +118,6 @@
 /obj/item/gun/ballistic/automatic/hmg/on_unwield(obj/item/source, mob/user)
 	. = ..()
 	retract_bipod(user=user)
-
-/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(bipod_deployed)
-		total_recoil += deploy_recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 20
-	var/total_spread = bonus_spread
-
-	if(bipod_deployed)
-		total_spread += deploy_spread_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
 
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()
 	. = ..()

@@ -346,13 +346,6 @@
 	icon_state = "explosionfast"
 	duration = 4
 
-/obj/effect/temp_visual/blob
-	name = "blob"
-	icon_state = "blob_attack"
-	alpha = 140
-	randomdir = 0
-	duration = 6
-
 /obj/effect/temp_visual/desynchronizer
 	name = "desynchronizer field"
 	icon_state = "chronofield"
@@ -468,6 +461,11 @@
 	icon_state = "bleed10"
 	duration = 12
 	shrink = FALSE
+
+/obj/effect/temp_visual/light_ash
+	icon_state = "light_ash"
+	icon = 'icons/effects/weather_effects.dmi'
+	duration = 3.2 SECONDS
 
 /obj/effect/temp_visual/warp_cube
 	duration = 5
