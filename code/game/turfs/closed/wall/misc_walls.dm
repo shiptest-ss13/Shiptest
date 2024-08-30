@@ -49,7 +49,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
 	hardness = 35
-	slicing_duration = 40
+	breakdown_duration = 40
 	bullet_sizzle = TRUE
 	burn_mod = 2
 
