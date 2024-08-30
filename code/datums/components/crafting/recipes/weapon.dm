@@ -259,7 +259,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/bonespear // Remove the bone stuff whenever there is some melee option in cargo.
+/datum/crafting_recipe/bonespear
 	name = "Bone Spear"
 	result = /obj/item/spear/bonespear
 	time = 30
