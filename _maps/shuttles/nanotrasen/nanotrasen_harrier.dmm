@@ -213,6 +213,9 @@
 /obj/machinery/firealarm/directional/south,
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bu" = (
@@ -746,6 +749,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/corner{
 	dir = 4
 	},
+/obj/machinery/camera,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ej" = (
@@ -1981,6 +1985,19 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/ship/engineering)
+"kU" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "kV" = (
 /obj/structure/cable{
@@ -3647,6 +3664,9 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/arrow_ccw{
 	dir = 4
 	},
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "vd" = (
@@ -4461,7 +4481,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall/directional/north,
+/obj/machinery/camera,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "zr" = (
@@ -4553,6 +4573,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"zM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "zO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
@@ -4714,6 +4747,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/camera,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "AE" = (
@@ -5031,6 +5065,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/camera{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -5564,12 +5601,18 @@
 /area/ship/engineering)
 "FK" = (
 /obj/machinery/computer/aifixer,
+/obj/machinery/camera/motion{
+	dir = 8
+	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "FN" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-1"
+	},
+/obj/machinery/camera{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
@@ -6362,10 +6405,6 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
-"Ku" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "Kx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6376,10 +6415,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "Ky" = (
@@ -6657,6 +6696,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/camera{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Lz" = (
@@ -6781,6 +6823,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/camera,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Mu" = (
@@ -6935,6 +6978,7 @@
 "Nk" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/directional/north,
+/obj/machinery/camera,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Nl" = (
@@ -7006,6 +7050,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/camera{
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "Nt" = (
@@ -7387,6 +7434,9 @@
 	dir = 1;
 	id = "harrier_packagesort"
 	},
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "Pw" = (
@@ -7509,19 +7559,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"Qd" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "Qf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7882,6 +7919,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "RX" = (
@@ -8217,6 +8255,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/camera,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "TZ" = (
@@ -8627,6 +8666,9 @@
 	pixel_x = -5;
 	pixel_y = -20
 	},
+/obj/machinery/camera{
+	dir = 10
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "VZ" = (
@@ -8661,6 +8703,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
+/obj/machinery/camera,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Wj" = (
@@ -8781,19 +8824,6 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"Xa" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "Xf" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -8840,6 +8870,10 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/office)
+"Xs" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Xw" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
@@ -9039,6 +9073,9 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 4
 	},
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Yy" = (
@@ -9183,6 +9220,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Zi" = (
@@ -9244,6 +9284,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZJ" = (
@@ -9414,7 +9457,7 @@ JK
 UZ
 US
 cg
-Ku
+Xs
 cg
 US
 MZ
@@ -9451,7 +9494,7 @@ US
 US
 Nr
 Rv
-Xa
+kU
 kR
 PA
 kR
@@ -9916,7 +9959,7 @@ Gz
 Gz
 Gz
 Gz
-Qd
+zM
 Xj
 Cv
 Zf
