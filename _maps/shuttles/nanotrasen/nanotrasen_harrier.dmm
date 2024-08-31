@@ -238,19 +238,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"by" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "bH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -413,6 +400,18 @@
 "cp" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
+"cr" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "ct" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -786,19 +785,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
-"eq" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "er" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -887,6 +873,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
+"eI" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "eJ" = (
 /obj/structure/cable{
@@ -1187,6 +1177,22 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"gs" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "gA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1249,22 +1255,6 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
-"gI" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "gM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1554,19 +1544,6 @@
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
-"iw" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "iy" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/closet/wall/directional/south,
@@ -1914,6 +1891,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kn" = (
@@ -2649,6 +2627,19 @@
 /obj/machinery/atmospherics/pipe/manifold4w/purple/visible,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
+"pD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "pF" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -3213,6 +3204,19 @@
 	dir = 8
 	},
 /area/ship/bridge)
+"tb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "td" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
@@ -3404,18 +3408,6 @@
 /obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
-"ub" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "uc" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -5429,10 +5421,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
-"El" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "Em" = (
 /obj/machinery/door/window/southright{
 	name = "Kitchen";
@@ -9236,6 +9224,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"YG" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "YM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9580,7 +9581,7 @@ JK
 UZ
 US
 cg
-El
+eI
 cg
 US
 MZ
@@ -9617,7 +9618,7 @@ US
 US
 Nr
 Rv
-iw
+YG
 kR
 PA
 kR
@@ -10082,7 +10083,7 @@ Gz
 Gz
 Gz
 Gz
-by
+pD
 Xj
 Cv
 Zf
@@ -10774,7 +10775,7 @@ PH
 Kd
 mB
 ZS
-eq
+tb
 zF
 xo
 CO
@@ -10969,7 +10970,7 @@ Pw
 se
 bu
 ZS
-gI
+gs
 yL
 Ei
 GK
@@ -11077,7 +11078,7 @@ MZ
 qI
 LP
 ri
-ub
+cr
 bX
 qI
 Ny
