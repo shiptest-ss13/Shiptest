@@ -2201,10 +2201,14 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/structure/disposalpipe/segment{
 	dir = 6
+	},
+/obj/machinery/button/ignition{
+	dir = 4;
+	id = "harrier_igniter";
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engine)
@@ -2383,6 +2387,10 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
+"nW" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "nZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2862,6 +2870,19 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen)
+"rt" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "ru" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3140,19 +3161,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
-"tf" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "tk" = (
 /obj/structure/railing,
 /obj/machinery/disposal/bin,
@@ -3284,6 +3292,9 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen)
 "tQ" = (
+/obj/machinery/igniter{
+	id = "harrier_igniter"
+	},
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "tS" = (
@@ -4463,6 +4474,19 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
+"zk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "zm" = (
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
@@ -5135,13 +5159,13 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engine)
 "Dk" = (
@@ -6694,19 +6718,6 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
-"LM" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "LP" = (
 /obj/machinery/vending/dinnerware,
 /obj/effect/turf_decal/corner/opaque/white{
@@ -6718,10 +6729,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"LU" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "LW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8933,11 +8940,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/pipe/simple/orange/visible/layer5{
 	dir = 9
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "XQ" = (
@@ -9235,7 +9242,6 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/directional/east,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -9407,7 +9413,7 @@ JK
 UZ
 US
 cg
-LU
+nW
 cg
 US
 MZ
@@ -9444,7 +9450,7 @@ US
 US
 Nr
 Rv
-tf
+rt
 kR
 PA
 kR
@@ -9909,7 +9915,7 @@ Gz
 Gz
 Gz
 Gz
-LM
+zk
 Xj
 Cv
 Zf
