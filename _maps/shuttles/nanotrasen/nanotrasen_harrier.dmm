@@ -557,10 +557,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
-"dp" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "dr" = (
 /obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel,
@@ -3144,6 +3140,19 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
+"tf" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "tk" = (
 /obj/structure/railing,
 /obj/machinery/disposal/bin,
@@ -4413,19 +4422,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"yW" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "yY" = (
 /obj/structure/toilet{
 	dir = 1
@@ -5104,7 +5100,7 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "harrier_thrusters_port";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -5744,7 +5740,7 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "harrier_thrusters_starboard";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -6403,7 +6399,7 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "harrier_thrusters_port";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -6698,6 +6694,19 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
+"LM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "LP" = (
 /obj/machinery/vending/dinnerware,
 /obj/effect/turf_decal/corner/opaque/white{
@@ -6709,6 +6718,10 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"LU" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "LW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6848,7 +6861,7 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "harrier_thrusters_starboard";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -8454,19 +8467,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
-"UR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "US" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -9407,7 +9407,7 @@ JK
 UZ
 US
 cg
-dp
+LU
 cg
 US
 MZ
@@ -9444,7 +9444,7 @@ US
 US
 Nr
 Rv
-yW
+tf
 kR
 PA
 kR
@@ -9909,7 +9909,7 @@ Gz
 Gz
 Gz
 Gz
-UR
+LM
 Xj
 Cv
 Zf
