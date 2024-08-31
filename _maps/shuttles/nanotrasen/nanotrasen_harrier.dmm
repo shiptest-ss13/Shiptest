@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "ad" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
@@ -400,18 +404,6 @@
 "cp" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
-"cr" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "ct" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -874,10 +866,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
-"eI" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "eJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1177,22 +1165,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"gs" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "gA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1662,6 +1634,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "harrier_garbage"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "iV" = (
@@ -1879,6 +1855,22 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"kh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "km" = (
 /obj/structure/closet/secure_closet/armory1{
 	populate = 0
@@ -2627,19 +2619,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/purple/visible,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
-"pD" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "pF" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -3204,19 +3183,6 @@
 	dir = 8
 	},
 /area/ship/bridge)
-"tb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "td" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
@@ -3240,6 +3206,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"tl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "tm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -3805,6 +3784,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "harrier_packagesort"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "vs" = (
@@ -4059,6 +4042,19 @@
 "wH" = (
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"wI" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "wL" = (
 /obj/structure/chair/comfy/blue/corpo/directional/south,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -4234,6 +4230,19 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"xp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "xv" = (
 /obj/structure/chair{
 	dir = 4
@@ -9023,6 +9032,18 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"XC" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "XF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/firedoor/window,
@@ -9224,19 +9245,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"YG" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "YM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9581,7 +9589,7 @@ JK
 UZ
 US
 cg
-eI
+ab
 cg
 US
 MZ
@@ -9618,7 +9626,7 @@ US
 US
 Nr
 Rv
-YG
+wI
 kR
 PA
 kR
@@ -10083,7 +10091,7 @@ Gz
 Gz
 Gz
 Gz
-pD
+xp
 Xj
 Cv
 Zf
@@ -10775,7 +10783,7 @@ PH
 Kd
 mB
 ZS
-tb
+tl
 zF
 xo
 CO
@@ -10970,7 +10978,7 @@ Pw
 se
 bu
 ZS
-gs
+kh
 yL
 Ei
 GK
@@ -11078,7 +11086,7 @@ MZ
 qI
 LP
 ri
-cr
+XC
 bX
 qI
 Ny
