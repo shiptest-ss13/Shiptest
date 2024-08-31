@@ -74,10 +74,10 @@ SUBSYSTEM_DEF(overmap)
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
  * * source - The object you want to get the corresponding parent overmap object for.
  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source, exclude_ship = FALSE)
 	var/turf/T = get_turf(source)
 	var/area/ship/A = get_area(source)
-	while(istype(A) && A.mobile_port)
+	while(istype(A) && A.mobile_port && !exclude_ship)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]
@@ -577,6 +577,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -588,6 +589,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -666,7 +668,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.adjust_dock_for_landing = TRUE
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /datum/overmap_star_system/proc/overmap_container_view(user = usr) //this is broken rn, idfk know html viewers works
 	if(!overmap_container)
@@ -745,8 +747,11 @@ SUBSYSTEM_DEF(overmap)
  * Edits a token after it's updated by alter_token_appearance(). Meant for visual effects
  * * token_to_edit - The overmap object we're editing [/datum/overmap/event].
  */
-/datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
-	return
+/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
+/datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
+	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
+		return FALSE
+	return TRUE
 
 /datum/overmap_star_system/ngr
 	name = "Gorlex Controlled - Ecbatana"

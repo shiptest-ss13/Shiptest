@@ -30,6 +30,8 @@
 	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
+	/// list of ruin templates currently spawned on the planet.
+	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
 
@@ -220,6 +222,7 @@
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
+	spawned_ruins = dynamic_encounter_values[4]
 
 	loading = FALSE
 	return TRUE

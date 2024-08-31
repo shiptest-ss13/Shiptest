@@ -13,11 +13,6 @@
 	if(istype(blocker, /obj/machinery))
 		return TRUE
 
-
-
-/obj/effect/decal/chempuff/blob_act(obj/structure/blob/B)
-	return
-
 /obj/effect/decal/fakelattice
 	name = "lattice"
 	desc = "A lightweight support lattice."

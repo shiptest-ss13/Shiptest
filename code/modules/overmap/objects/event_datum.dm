@@ -214,12 +214,9 @@
 	chance_to_affect = 100
 	///The currently linked wormhole
 	var/datum/overmap/event/wormhole/other_wormhole
-	///Amount of times a ship can pass through before it collapses
-	var/stability
 
 /datum/overmap/event/wormhole/Initialize(position, _other_wormhole, ...)
 	. = ..()
-	stability = rand(1, 5)
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
@@ -227,7 +224,8 @@
 	alter_token_appearance()
 
 /datum/overmap/event/wormhole/alter_token_appearance()
-	default_color = adjust_colors()
+	token.color = "#6d80c7"
+	token.light_color = "#6d80c7"
 	..()
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.hazard_primary_color
@@ -236,37 +234,10 @@
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)
 		qdel(src)
-	if(--stability <= 0)
-		var/list/results = current_overmap.get_unused_overmap_square()
-		S.overmap_move(results["x"], results["y"])
-		QDEL_NULL(other_wormhole)
-		for(var/MN in GLOB.player_list)
-			var/mob/M = MN
-			if(S.shuttle_port.is_in_shuttle_bounds(M))
-				M.playsound_local(S.shuttle_port, 'sound/effects/explosionfar.ogg', 100)
-				shake_camera(M, 10, 10)
-
-		return qdel(src)
-	other_wormhole.stability = stability
+		return
 
 	S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
-
-	token.color = adjust_colors()
-	token.light_color = adjust_colors()
-
-/datum/overmap/event/wormhole/proc/adjust_colors()
-	switch(stability)
-		if(1)
-			return "#753214"
-		if(2)
-			return "#642f19"
-		if(3)
-			return"#654650"
-		if(4)
-			return"#5c5d8b"
-		if(5)
-			return"#6d80c7"
 
 //Carp "meteors" - throws carp at the ship
 

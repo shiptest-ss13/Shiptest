@@ -295,7 +295,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	return "[pick("!","@","#","$","%","^","&")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")]"
 
 //Returns a list of all items of interest with their name
-/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE, only_realname = FALSE)
+/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE)
 	var/list/mobs = sortmobs()
 	var/list/namecounts = list()
 	var/list/pois = list()
@@ -305,11 +305,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 				continue
 		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
-		var/name = ""
-		if(only_realname)
-			name = avoid_assoc_duplicate_keys(M.real_name, namecounts)
-		else
-			name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
+		var/name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
 
 		if(M.stat == DEAD && specify_dead_role)
 			if(isobserver(M))
@@ -325,7 +321,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
 
 	return pois
-
 //Orders mobs by type then by name
 /proc/sortmobs()
 	var/list/moblist = list()

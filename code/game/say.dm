@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 					namepart = "[known_name]"
 				else
 					var/mob/living/carbon/human/human_narrator = reliable_narrator
-					namepart = "[human_narrator.get_generic_name(prefixed = TRUE, lowercase = FALSE)]"
+					namepart = "[human_narrator.get_generic_name(prefixed = TRUE, lowercase = TRUE)]"
 
 	//End name span.
 	var/endspanpart = "</span>"

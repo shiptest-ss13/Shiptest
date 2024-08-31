@@ -188,3 +188,16 @@
 	end_overlay = "smoke"
 
 	toxic_power = 20
+/datum/weather/rain/heavy/storm_intense
+	name = "storm"
+	desc = "Storm with rain and lightning."
+	weather_overlay = "storm_very"
+	thunder_chance = 20
+	weather_color = "#a3daf7"
+	weather_duration_lower = 420690
+	weather_duration_upper = 420690
+
+	sound_active_outside = /datum/looping_sound/weather/rain/storm/indoors
+	sound_active_inside = /datum/looping_sound/weather/rain/storm
+	sound_weak_outside = /datum/looping_sound/weather/rain/storm/indoors
+	sound_weak_inside = /datum/looping_sound/weather/rain/storm
