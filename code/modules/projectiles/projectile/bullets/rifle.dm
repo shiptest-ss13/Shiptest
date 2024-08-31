@@ -1,7 +1,7 @@
-// 5.56mm (M-90gl Carbine & P-16)
+// 5.56x39mm CLIP (CM82, Hydra variants)
 
-/obj/projectile/bullet/a556_45
-	name = "5.56x45mm bullet"
+/obj/projectile/bullet/a556_39
+	name = "5.56x39mm CLIP bullet"
 	damage = 25
 	armour_penetration = 20
 

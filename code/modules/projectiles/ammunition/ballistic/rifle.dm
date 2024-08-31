@@ -36,14 +36,14 @@
 	projectile_type = /obj/projectile/bullet/a300
 	bullet_per_box = 20
 
-// 5.56x39mm (M-90gl Carbine & P-16)
+// 5.56x39mm CLIP (CM82, Hydra variants)
 
 /obj/item/ammo_casing/a556_39
 	name = "5.56x39mm CLIP bullet casing"
 	desc = "A 5.56x39mm CLIP bullet casing."
 	icon_state = "rifle-brass"
-	caliber = "5.56x45mm"
-	projectile_type = /obj/projectile/bullet/a556_45
+	caliber = "5.56x39mm"
+	projectile_type = /obj/projectile/bullet/a556_39
 	bullet_per_box = 80
 
 // 5.45x39mm (SKM-24v)

@@ -10,7 +10,7 @@
 	item_state = "sa_generic"
 
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm
+	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
@@ -47,6 +47,35 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/asp
+	name = "BC-81 \"Asp\""
+	desc = "An armor-piercing combat handgun once used by Syndicate strike teams, now primarily used by descendants of the Gorlex Marauders. Chambered in 5.7mm."
+
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "asp"
+	item_state = "sa_generic"
+
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+
+	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
+	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/revolver/syndicate
 	name = "R-23 \"Viper\""
@@ -250,10 +279,12 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 
 
 //########### RIFLES ###########//
-
 /obj/item/gun/ballistic/automatic/smg/m90
-	name = "\improper M-90gl Carbine"
-	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
+
+/obj/item/gun/ballistic/automatic/assault/hydra
+	name = "SMR-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. Chambered in 5.56mm CLIP."
+
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -277,6 +308,16 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	spread = 1
 	spread_unwielded = 8
 	wield_slowdown = 0.4
+
+/obj/item/ammo_box/magazine/m556_hydra
+	name = "Hydra assault rifle magazine (5.56x39mm CLIP)"
+	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x39mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "hydra_mag-30"
+	base_icon_state = "hydra_mag"
+	ammo_type = /obj/item/ammo_casing/a556_39
+	caliber = "5.56x39mm"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
@@ -333,5 +374,96 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 //########### MISC ###########//
+// Bulldog shotgun //
+
+/obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
+
+/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	name = "SG-60r \"Bulldog\""
+	desc = "A bullpup combat shotgun usually seen with a characteristic drum magazine. Wildly popular among Syndicate strike teams during the ICW, although it proved less useful against military-grade equipment. Still popular among former Syndicate factions, especially the Ramzi Clique pirates. Chambered in 12g."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "bulldog"
+	item_state = "bulldog"
+
+	weapon_weight = WEAPON_MEDIUM
+	mag_type = /obj/item/ammo_box/magazine/m12g
+	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
+	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
+	show_magazine_on_sprite = TRUE
+	empty_indicator = TRUE
+	empty_alarm = TRUE
+	unique_mag_sprites_for_variants = TRUE
+	semi_auto = TRUE
+	internal_magazine = FALSE
+	casing_ejector = TRUE
+	tac_reloads = TRUE
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+
+	spread = 4
+	spread_unwielded = 16
+	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = 0.6
+	wield_delay = 0.65 SECONDS
+
+EMPTY_GUN_HELPER(shotgun/bulldog)
+
 
 /obj/item/gun/ballistic/rocketlauncher/mako
+	name = "RR-86 \"Mako\""
+	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."
+
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+	icon_state = "rocketlauncher"
+	item_state = "rocketlauncher"
+	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	burst_size = 1
+	fire_delay = 0.4 SECONDS
+	casing_ejector = FALSE
+	weapon_weight = WEAPON_HEAVY
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	cartridge_wording = "rocket"
+	empty_indicator = TRUE
+	tac_reloads = FALSE
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+
+/obj/item/ammo_box/magazine/internal/mako
+	name = "mako internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/70mm
+	caliber = "70mm"
+	max_ammo = 1
+
+/obj/item/ammo_casing/caseless/rocket
+	name = "\improper PM-9HE"
+	desc = "An 84mm High Explosive rocket. Fire at people and pray."
+	icon_state = "srm-8"
+	caliber = "84mm"
+	projectile_type = /obj/projectile/bullet/a84mm_he
+	auto_rotate = FALSE
+
+/obj/item/ammo_casing/caseless/rocket/hedp
+	name = "\improper PM-9HEDP"
+	desc = "An 84mm High Explosive Dual Purpose rocket. Pointy end toward armor."
+	caliber = "84mm"
+	icon_state = "84mm-hedp"
+	projectile_type = /obj/projectile/bullet/a84mm

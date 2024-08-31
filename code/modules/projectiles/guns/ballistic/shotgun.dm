@@ -135,6 +135,7 @@
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
 	manufacturer = MANUFACTURER_NANOTRASEN
+	semi_auto = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
 	..()
@@ -208,50 +209,6 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	rack()
-
-// Bulldog shotgun //
-
-/obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
-	name = "\improper Bulldog Shotgun"
-	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "bulldog"
-	item_state = "bulldog"
-
-	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12g
-	burst_size = 1
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
-	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
-	empty_alarm = TRUE
-	unique_mag_sprites_for_variants = TRUE
-	semi_auto = TRUE
-	internal_magazine = FALSE
-	casing_ejector = TRUE
-	tac_reloads = TRUE
-	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
-
-	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-
-	spread = 4
-	spread_unwielded = 16
-	recoil = 1
-	recoil_unwielded = 4
-	wield_slowdown = 0.6
-	wield_delay = 0.65 SECONDS
-
-EMPTY_GUN_HELPER(shotgun/bulldog)
 
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
