@@ -195,7 +195,7 @@
 "bk" = (
 /obj/effect/turf_decal/atmos/air,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "bn" = (
 /obj/structure/cable{
@@ -1986,19 +1986,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"kU" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "kV" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2801,6 +2788,19 @@
 "qQ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew)
+"qV" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "qX" = (
 /obj/structure/railing{
 	dir = 8
@@ -2825,6 +2825,19 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"rd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "rf" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 10
@@ -3183,7 +3196,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 8
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "ty" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3295,6 +3308,7 @@
 /obj/machinery/igniter{
 	id = "harrier_igniter"
 	},
+/obj/machinery/air_sensor/atmos/incinerator_tank,
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "tS" = (
@@ -4033,7 +4047,7 @@
 /area/ship/crew)
 "wY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output,
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "xa" = (
 /obj/effect/turf_decal/siding/yellow,
@@ -4573,19 +4587,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
-"zM" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "zO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
@@ -5359,7 +5360,7 @@
 	dir = 8;
 	piping_layer = 1
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "Er" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
@@ -5701,6 +5702,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
+"Gf" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Gg" = (
 /obj/structure/railing,
 /obj/structure/cable{
@@ -7664,7 +7669,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
 	piping_layer = 1
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "QN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -8546,7 +8551,7 @@
 /area/ship/cargo)
 "Vi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2,
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "Vp" = (
 /obj/structure/table/wood,
@@ -8858,7 +8863,7 @@
 	dir = 8;
 	piping_layer = 1
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "Xo" = (
 /obj/structure/cable{
@@ -8870,10 +8875,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/office)
-"Xs" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "Xw" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
@@ -9208,7 +9209,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
 	dir = 8
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "Zf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -9457,7 +9458,7 @@ JK
 UZ
 US
 cg
-Xs
+Gf
 cg
 US
 MZ
@@ -9494,7 +9495,7 @@ US
 US
 Nr
 Rv
-kU
+qV
 kR
 PA
 kR
@@ -9959,7 +9960,7 @@ Gz
 Gz
 Gz
 Gz
-zM
+rd
 Xj
 Cv
 Zf
