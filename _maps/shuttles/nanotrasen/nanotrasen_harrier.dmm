@@ -213,7 +213,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
-/obj/machinery/camera{
+/obj/structure/chair/handrail{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -295,6 +295,9 @@
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = 0
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
@@ -477,6 +480,19 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
+"cU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "cW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -509,6 +525,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "dd" = (
@@ -670,6 +689,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "dN" = (
@@ -680,6 +702,9 @@
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -990,6 +1015,9 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "fu" = (
@@ -1832,6 +1860,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"kd" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "km" = (
 /obj/structure/closet/secure_closet/armory1{
 	populate = 0
@@ -2256,6 +2296,7 @@
 /area/ship/crew/janitor)
 "mK" = (
 /obj/machinery/light/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "mN" = (
@@ -2408,6 +2449,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "oi" = (
@@ -2536,6 +2578,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "pd" = (
@@ -2788,19 +2831,6 @@
 "qQ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew)
-"qV" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "qX" = (
 /obj/structure/railing{
 	dir = 8
@@ -2825,19 +2855,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
-"rd" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "rf" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 10
@@ -2972,6 +2989,9 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "rT" = (
@@ -3390,6 +3410,9 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "uh" = (
@@ -3437,6 +3460,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "up" = (
@@ -3508,6 +3534,7 @@
 	pixel_x = -25;
 	pixel_y = 1
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "uw" = (
@@ -3516,6 +3543,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 9
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
@@ -3679,6 +3709,9 @@
 	dir = 4
 	},
 /obj/machinery/camera{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -4162,6 +4195,9 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/wall/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "xv" = (
@@ -4527,6 +4563,9 @@
 "zv" = (
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/structure/closet/emcloset/wall/directional/south,
+/obj/machinery/camera{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "zx" = (
@@ -4622,6 +4661,9 @@
 "zV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
@@ -4784,6 +4826,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"Bi" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "Bj" = (
 /obj/machinery/holopad/emergency/kitchen,
 /obj/effect/turf_decal/box,
@@ -5115,6 +5173,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible/layer5{
 	dir = 10
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "CR" = (
@@ -5335,6 +5396,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
@@ -5702,10 +5766,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
-"Gf" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "Gg" = (
 /obj/structure/railing,
 /obj/structure/cable{
@@ -5734,6 +5794,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -6332,6 +6395,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"Kf" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "Kg" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/siding/wood{
@@ -6513,6 +6589,9 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "KQ" = (
@@ -6906,6 +6985,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -7527,6 +7609,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "PU" = (
@@ -7570,6 +7655,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
 	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
@@ -7651,6 +7739,9 @@
 "QC" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/arrow_ccw{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -7942,6 +8033,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "Sj" = (
@@ -8421,6 +8513,9 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "Ux" = (
@@ -8628,6 +8723,10 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"VL" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "VO" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "med";
@@ -8829,6 +8928,19 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"WW" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "Xf" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -8981,6 +9093,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "XQ" = (
@@ -9288,6 +9403,9 @@
 /obj/machinery/camera{
 	dir = 8
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZJ" = (
@@ -9458,7 +9576,7 @@ JK
 UZ
 US
 cg
-Gf
+VL
 cg
 US
 MZ
@@ -9495,7 +9613,7 @@ US
 US
 Nr
 Rv
-qV
+Kf
 kR
 PA
 kR
@@ -9960,7 +10078,7 @@ Gz
 Gz
 Gz
 Gz
-rd
+cU
 Xj
 Cv
 Zf
@@ -10652,7 +10770,7 @@ PH
 Kd
 mB
 ZS
-eQ
+WW
 zF
 xo
 CO
@@ -10847,7 +10965,7 @@ Pw
 se
 bu
 ZS
-ch
+Bi
 yL
 Ei
 GK
@@ -10955,7 +11073,7 @@ MZ
 qI
 LP
 ri
-xK
+kd
 bX
 qI
 Ny
