@@ -819,10 +819,13 @@
 /area/ship/engineering/atmospherics)
 "ez" = (
 /obj/structure/table,
-/obj/item/instrument/guitar,
+/obj/item/lighter{
+	pixel_x = 6;
+	pixel_y = 1
+	},
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
 	pixel_x = -3;
-	pixel_y = 13
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -949,14 +952,24 @@
 /area/ship/crew/law_office)
 "fd" = (
 /obj/structure/table,
-/obj/item/storage/box/cups{
-	pixel_y = 6
-	},
-/obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -10
+/obj/machinery/cell_charger,
+/obj/item/instrument/guitar{
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel,
+/area/ship/engineering)
+"fg" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "fh" = (
 /obj/structure/cable/yellow{
@@ -1048,19 +1061,6 @@
 "fI" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/starboard)
-"fN" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "fO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1988,6 +1988,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
+"kL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "kM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2008,10 +2021,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
-"kP" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "kR" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2661,19 +2670,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"pS" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "pW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2875,6 +2871,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"rg" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "rh" = (
 /obj/structure/sign/warning/nosmoking,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -4193,6 +4201,10 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
+"xm" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "xn" = (
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
@@ -4324,6 +4336,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"xU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "yc" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -4842,22 +4870,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
-"Be" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "Bj" = (
 /obj/machinery/holopad/emergency/kitchen,
 /obj/effect/turf_decal/box,
@@ -6206,18 +6218,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
-"Jb" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "Jd" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -6811,19 +6811,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"LB" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "LD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -8008,6 +7995,19 @@
 "RJ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew/toilet)
+"RL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "RR" = (
 /obj/effect/landmark/start/atmospheric_technician,
 /obj/structure/chair{
@@ -9594,7 +9594,7 @@ JK
 UZ
 US
 cg
-kP
+xm
 cg
 US
 MZ
@@ -9631,7 +9631,7 @@ US
 US
 Nr
 Rv
-pS
+fg
 kR
 PA
 kR
@@ -10096,7 +10096,7 @@ Gz
 Gz
 Gz
 Gz
-LB
+kL
 Xj
 Cv
 Zf
@@ -10788,7 +10788,7 @@ PH
 Kd
 mB
 ZS
-fN
+RL
 zF
 xo
 CO
@@ -10983,7 +10983,7 @@ Pw
 se
 bu
 ZS
-Be
+xU
 yL
 Ei
 GK
@@ -11091,7 +11091,7 @@ MZ
 qI
 LP
 ri
-Jb
+rg
 bX
 qI
 Ny
