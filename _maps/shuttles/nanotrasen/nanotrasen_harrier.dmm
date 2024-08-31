@@ -800,7 +800,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/flasher{
+	id = "Cell 1";
+	pixel_x = -21
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ex" = (
@@ -933,19 +936,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
-"fa" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "fb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1101,6 +1091,19 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
+"ge" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "gf" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2178,6 +2181,22 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
+"ma" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "mc" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2452,6 +2471,7 @@
 	pixel_y = 10
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "oj" = (
@@ -2576,18 +2596,6 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
-"oY" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "pd" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
@@ -2841,22 +2849,6 @@
 "qQ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew)
-"qU" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "qX" = (
 /obj/structure/railing{
 	dir = 8
@@ -3668,6 +3660,31 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
+/area/ship/crew/canteen)
+"uN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
+"uQ" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "uS" = (
 /obj/machinery/door/airlock{
@@ -5172,6 +5189,19 @@
 /obj/item/storage/belt/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"CL" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "CN" = (
 /obj/machinery/conveyor{
 	dir = 1;
@@ -6168,19 +6198,6 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"IO" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "IS" = (
 /obj/structure/sign/warning/docking{
 	pixel_y = -8
@@ -6403,6 +6420,10 @@
 /obj/structure/chair/sofa/blue/corpo/left,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"Kb" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Kc" = (
 /obj/structure/closet/secure_closet/atmospherics{
 	populate = 0
@@ -6982,10 +7003,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
-"ML" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "MM" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -7151,7 +7168,8 @@
 /area/ship/bridge)
 "Nq" = (
 /obj/machinery/door_timer{
-	id = "Cell 1"
+	id = "Cell 1";
+	pixel_y = 4
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
@@ -8768,19 +8786,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"VP" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "VS" = (
 /obj/machinery/shower{
 	dir = 4;
@@ -9601,7 +9606,7 @@ JK
 UZ
 US
 cg
-ML
+Kb
 cg
 US
 MZ
@@ -9638,7 +9643,7 @@ US
 US
 Nr
 Rv
-VP
+CL
 kR
 PA
 kR
@@ -10103,7 +10108,7 @@ Gz
 Gz
 Gz
 Gz
-IO
+ge
 Xj
 Cv
 Zf
@@ -10795,7 +10800,7 @@ PH
 Kd
 mB
 ZS
-fa
+uN
 zF
 xo
 CO
@@ -10990,7 +10995,7 @@ Pw
 se
 bu
 ZS
-qU
+ma
 yL
 Ei
 GK
@@ -11098,7 +11103,7 @@ MZ
 qI
 LP
 ri
-oY
+uQ
 bX
 qI
 Ny
