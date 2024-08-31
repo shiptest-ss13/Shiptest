@@ -563,6 +563,15 @@
 	light_power = 0.6
 	},
 /area/ruin/whitesands/e11manufactory/security)
+"es" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/ruin/whitesands/e11manufactory/warehouse)
 "et" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -1921,12 +1930,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/e11manufactory/barracks)
-"pX" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands,
-/area/ruin/whitesands/e11manufactory/warehouse)
 "qg" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/structure/chair/stool{
@@ -1951,7 +1954,7 @@
 	dir = 4
 	},
 /obj/item/documents{
-	desc = "Top Secret Eoehoma documents, filled with weapon blueprints and eviction notices.";
+	desc = "Top Secret Eoehoma Firearms documents. Filled with weapon blueprints and eviction notices.";
 	icon_state = "docs_blue"
 	},
 /obj/item/pen/fourcolor,
@@ -2535,12 +2538,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
-"vh" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "vm" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
@@ -2635,6 +2632,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
+"ww" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "wy" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
@@ -5557,13 +5560,10 @@
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Wi" = (
-/obj/effect/turf_decal/industrial/warning{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/turf/open/floor/concrete/slab_1{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/concrete/whitesands,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Wn" = (
 /obj/structure/table/reinforced,
@@ -6088,7 +6088,7 @@ vU
 vU
 vU
 vU
-vh
+ww
 vU
 vU
 vU
@@ -7852,8 +7852,8 @@ DC
 cL
 Lq
 wG
+es
 Wi
-pX
 gx
 Pg
 Pg
