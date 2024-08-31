@@ -59,7 +59,7 @@
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
 		. += "[icon_state]_bolt"
-	if (magazine)
+	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())

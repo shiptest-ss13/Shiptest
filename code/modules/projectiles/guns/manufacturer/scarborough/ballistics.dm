@@ -60,16 +60,14 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 	item_state = "sa_generic"
 
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
 
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
-	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
@@ -77,17 +75,48 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+/obj/item/ammo_box/magazine/m57_39_asp
+	name = "Asp magazine (5.56mm HITP caseless)"
+	desc = "A 12-round, double-stack magazine for the Asp pistol. These rounds do okay damage with average performance against armor."
+	icon_state = "asp_mag-12" //ok i did it
+	base_icon_state = "asp_mag"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	caliber = "5.7x39mm"
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/m57_39_asp/update_icon_state()
+	. = ..()
+	if(ammo_count() == 12)
+		icon_state = "[base_icon_state]-12"
+	else if(ammo_count() >= 10)
+		icon_state = "[base_icon_state]-10"
+	else if(ammo_count() >= 5)
+		icon_state = "[base_icon_state]-5"
+	else if(ammo_count() >= 1)
+		icon_state = "[base_icon_state]-1"
+	else
+		icon_state = "[base_icon_state]-0"
+
+
 /obj/item/gun/ballistic/revolver/syndicate
+/obj/item/gun/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
 	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions during the ICW, still favored by captains and high-ranking officers of the former Syndicate. Chambered in .357 Magnum."
-
-	icon_state = "viper"
-	item_state = "sa_generic"
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+	icon_state = "viper"
+	item_state = "sa_generic"
+
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	rack_sound = 'sound/weapons/gun/revolver/revolver_prime.ogg'
+	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
+	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
+
+	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -289,16 +318,16 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "m90"
-	item_state = "m90"
+	icon_state = "hydra"
+	item_state = "hydra"
 
-	mag_type = /obj/item/ammo_box/magazine/m556
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
 	default_firemode = FIREMODE_SEMIAUTO
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/secondary
-	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
+	show_magazine_on_sprite = FALSE //we do this to avoid making the same  of every sprite, see below
+
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
@@ -309,67 +338,86 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	spread_unwielded = 8
 	wield_slowdown = 0.4
 
-/obj/item/ammo_box/magazine/m556_hydra
-	name = "Hydra assault rifle magazine (5.56x39mm CLIP)"
-	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x39mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	//we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
+/obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
+	. = ..()
+	if (magazine)
+		. += "hydra_mag_[magazine.base_icon_state]"
+		if (!magazine.ammo_count())
+			. += "hydra_mag_empty"
+
+/obj/item/ammo_box/magazine/m556
+
+/obj/item/ammo_box/magazine/m556_42_hydra
+	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
+	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_mag-30"
 	base_icon_state = "hydra_mag"
-	ammo_type = /obj/item/ammo_casing/a556_39
-	caliber = "5.56x39mm"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/gun/ballistic/automatic/smg/m90/Initialize()
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
+	name = "SMR-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
+
+	icon_state = "hydra_gl"
+	item_state = "hydra_gl"
+
+	var/obj/item/gun/ballistic/revolver/grenadelauncher/secondary
+
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/Initialize()
 	. = ..()
 	secondary = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
 	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
 	update_appearance()
 
-/obj/item/gun/ballistic/automatic/smg/m90/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
 	return secondary.pre_fire(target, user, message, params, zone_override, bonus_spread)
 
-/obj/item/gun/ballistic/automatic/smg/m90/can_shoot()
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
 		return ..()
 	return secondary.can_shoot()
 
-/obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/afterattack(atom/target, mob/living/user, flag, params)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
 		return ..()
 	return secondary.afterattack(target, user, flag, params)
 
-/obj/item/gun/ballistic/automatic/smg/m90/attackby(obj/item/attack_obj, mob/user, params)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/attackby(obj/item/attack_obj, mob/user, params)
 	if(istype(attack_obj, secondary.magazine.ammo_type))
 		secondary.unique_action()
 		return secondary.attackby(attack_obj, user, params)
 	return ..()
 
 
-/obj/item/gun/ballistic/automatic/smg/m90/can_shoot()
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
 		return ..()
 	return secondary.can_shoot()
 
-/obj/item/gun/ballistic/automatic/smg/m90/on_wield(obj/item/source, mob/user)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 	secondary.wielded = TRUE
 	INVOKE_ASYNC(src, .proc.do_wield, user)
 
-/obj/item/gun/ballistic/automatic/smg/m90/do_wield(mob/user)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/do_wield(mob/user)
 	. = ..()
 	secondary.wielded_fully = wielded_fully
 
 /// triggered on unwield of two handed item
-/obj/item/gun/ballistic/automatic/smg/m90/on_unwield(obj/item/source, mob/user)
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_unwield(obj/item/source, mob/user)
 	. = ..()
 	secondary.wielded_fully = FALSE
 	secondary.wielded = FALSE
 
 
-/obj/item/gun/ballistic/automatic/smg/m90/proc/secondary_update_icon()
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/proc/secondary_update_icon()
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 

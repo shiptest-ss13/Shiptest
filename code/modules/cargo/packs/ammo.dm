@@ -174,9 +174,9 @@
 	cost = 500
 
 /datum/supply_pack/ammo/a556_ammo_box
-	name = "5.56x39mm CLIP Ammo Box Crate"
-	desc = "Contains a one hundred and twenty-round 5.56x39mm CLIP box for most newer rifles."
-	contains = list(/obj/item/ammo_box/a556_39)
+	name = "5.56x42mm CLIP Ammo Box Crate"
+	desc = "Contains a one hundred and twenty-round 5.56x42mm CLIP box for most newer rifles."
+	contains = list(/obj/item/ammo_box/a556_42)
 	cost = 450
 
 /datum/supply_pack/ammo/a357_ammo_box
