@@ -520,6 +520,12 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"ec" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "ed" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
@@ -563,15 +569,6 @@
 	light_power = 0.6
 	},
 /area/ruin/whitesands/e11manufactory/security)
-"es" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/ruin/whitesands/e11manufactory/warehouse)
 "et" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -663,6 +660,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/concrete/reinforced/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "fu" = (
@@ -1349,6 +1349,9 @@
 /obj/item/shard,
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
 	},
 /turf/open/floor/concrete/reinforced/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -2178,6 +2181,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/concrete/reinforced/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "sc" = (
@@ -2351,6 +2357,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
+/area/ruin/whitesands/e11manufactory/warehouse)
+"tE" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/whitesands,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "tF" = (
 /obj/structure/railing{
@@ -2632,12 +2644,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"ww" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "wy" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
@@ -5560,10 +5566,13 @@
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Wi" = (
-/obj/effect/turf_decal/industrial/warning/corner{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/turf/open/floor/concrete/whitesands,
+/turf/open/floor/concrete/slab_1{
+	light_power = 0.6;
+	light_range = 2
+	},
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Wn" = (
 /obj/structure/table/reinforced,
@@ -6088,7 +6097,7 @@ vU
 vU
 vU
 vU
-ww
+ec
 vU
 vU
 vU
@@ -7852,8 +7861,8 @@ DC
 cL
 Lq
 wG
-es
 Wi
+tE
 gx
 Pg
 Pg
