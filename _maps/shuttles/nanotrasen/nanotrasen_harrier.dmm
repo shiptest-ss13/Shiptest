@@ -2387,10 +2387,6 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
-"nW" = (
-/obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "nZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2870,19 +2866,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen)
-"rt" = (
-/obj/effect/turf_decal/number/nine{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/engineering)
 "ru" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4474,19 +4457,6 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
-"zk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/starboard)
 "zm" = (
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
@@ -5085,6 +5055,7 @@
 /obj/item/ammo_box/c9mm,
 /obj/item/ammo_box/c9mm/rubbershot,
 /obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/item/storage/belt/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "CN" = (
@@ -6391,6 +6362,10 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
+"Ku" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Kx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7534,6 +7509,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Qd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/starboard)
 "Qf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8793,6 +8781,19 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Xa" = (
+/obj/effect/turf_decal/number/nine{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/engineering)
 "Xf" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -9413,7 +9414,7 @@ JK
 UZ
 US
 cg
-nW
+Ku
 cg
 US
 MZ
@@ -9450,7 +9451,7 @@ US
 US
 Nr
 Rv
-rt
+Xa
 kR
 PA
 kR
@@ -9915,7 +9916,7 @@ Gz
 Gz
 Gz
 Gz
-zk
+Qd
 Xj
 Cv
 Zf
