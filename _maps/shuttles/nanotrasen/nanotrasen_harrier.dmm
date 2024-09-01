@@ -32,6 +32,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"au" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "av" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -104,6 +111,8 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/mob/living/simple_animal/pet/dog/corgi/puppy,
+/obj/structure/bed/dogbed,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aR" = (
@@ -661,7 +670,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "dK" = (
@@ -1823,7 +1834,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/siding,
-/obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "jM" = (
@@ -1860,13 +1873,6 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel,
 /area/ship/crew/law_office)
-"jO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "jT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono,
@@ -10574,7 +10580,7 @@ Mv
 MZ
 wa
 wO
-jO
+au
 wr
 MQ
 vm
