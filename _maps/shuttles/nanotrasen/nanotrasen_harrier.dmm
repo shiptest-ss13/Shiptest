@@ -712,6 +712,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"dQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "dV" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/hallway/starboard)
@@ -6656,7 +6663,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/airmix{
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
@@ -7334,13 +7341,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
-"Oj" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "Om" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -10549,7 +10549,7 @@ Mv
 MZ
 wa
 wO
-Oj
+dQ
 wr
 MQ
 vm
