@@ -50,13 +50,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
-"aw" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "aA" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
@@ -1413,7 +1406,8 @@
 	},
 /obj/machinery/door/airlock/medical/glass{
 	dir = 4;
-	name = "Infirmary"
+	name = "Infirmary";
+	req_ship_access = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1430,7 +1424,6 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "hD" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only,
@@ -1439,6 +1432,10 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/airlock/public/glass{
+	dir = 1;
+	name = "Canteen"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "hH" = (
@@ -2630,6 +2627,13 @@
 /obj/machinery/atmospherics/pipe/manifold4w/purple/visible,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
+"py" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "pF" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -3808,7 +3812,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom"
+	name = "Restroom";
+	req_ship_access = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3889,9 +3894,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "vT" = (
-/obj/machinery/door/airlock/public/glass{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3903,6 +3905,10 @@
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
+	},
+/obj/machinery/door/airlock/public/glass{
+	dir = 4;
+	name = "Canteen"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -7197,7 +7203,8 @@
 	},
 /obj/machinery/door/airlock/glass{
 	dir = 4;
-	name = "Crew Quarters"
+	name = "Crew Quarters";
+	req_ship_access = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -8474,7 +8481,8 @@
 	},
 /obj/machinery/door/airlock/glass{
 	dir = 4;
-	name = "Crew Quarters"
+	name = "Crew Quarters";
+	req_ship_access = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -8767,7 +8775,6 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/storage/eva)
 "VJ" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -8777,6 +8784,10 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/airlock/public/glass{
+	dir = 1;
+	name = "Canteen"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "VO" = (
@@ -10549,7 +10560,7 @@ Mv
 MZ
 wa
 wO
-aw
+py
 wr
 MQ
 vm
