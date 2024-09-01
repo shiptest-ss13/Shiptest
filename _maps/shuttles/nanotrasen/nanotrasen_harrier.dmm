@@ -194,7 +194,9 @@
 /area/ship/engineering/atmospherics)
 "bk" = (
 /obj/effect/turf_decal/atmos/air,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	external_pressure_bound = 4500
+	},
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "bn" = (
@@ -696,10 +698,6 @@
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
 "dO" = (
-/obj/machinery/computer/atmos_control/incinerator{
-	dir = 8;
-	sensors = list("nemo_incinerator_sensor"="Incinerator  Chamber")
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
@@ -709,6 +707,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/computer/atmos_control/incinerator{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dV" = (
@@ -2837,13 +2838,6 @@
 "qQ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew)
-"qT" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "qX" = (
 /obj/structure/railing{
 	dir = 8
@@ -7340,6 +7334,13 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
+"Oj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "Om" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -10548,7 +10549,7 @@ Mv
 MZ
 wa
 wO
-qT
+Oj
 wr
 MQ
 vm
