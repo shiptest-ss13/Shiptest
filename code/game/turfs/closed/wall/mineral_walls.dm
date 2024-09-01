@@ -57,7 +57,7 @@
 	icon_state = "diamond_wall-0"
 	base_icon_state = "diamond_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
-	slicing_duration = 50
+	breakdown_duration = 50
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
@@ -293,7 +293,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/snow)
 	hardness = 80
 	explosion_block = 0
-	slicing_duration = 30
+	breakdown_duration = 30
 	sheet_type = /obj/item/stack/sheet/mineral/snow
 	canSmoothWith = null
 	girder_type = null
@@ -318,7 +318,7 @@
 	icon_state = "abductor_wall-0"
 	base_icon_state = "abductor_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/abductor
-	slicing_duration = 100   //alien wall takes twice as much time to slice
+	breakdown_duration = 100   //alien wall takes twice as much time to slice
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
