@@ -12,3 +12,5 @@
 #define CHANGETURF_DEFER_BATCH (1 << 5)
 
 #define IS_OPAQUE_TURF(turf) (turf.directional_opacity == ALL_CARDINALS)
+
+#define MINERAL_WALL_INTEGRITY 100

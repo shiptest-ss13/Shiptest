@@ -23,6 +23,9 @@
 
 	max_integrity = 1400
 
+	mob_smash_flags = ENVIRONMENT_SMASH_RWALLS
+	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_RWALLS
+
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS

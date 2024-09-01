@@ -23,23 +23,17 @@
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
-	/// sound when something hits the wall and deals damage
-
 
 	var/list/dent_decals
 
-	// // The wall will ignore damage from weak items, depending on their
-	// // force, damage type, tool behavior, and sharpness. This is the minimum
-	// // amount of force that a blunt, brute item must have to damage the wall.
-	// var/min_dam = 8
-	// var/max_integrity = 400
-	// var/integrity
-	// var/brute_mod = 1
-	// var/burn_mod = 1
-	// var/repair_amount = 50
-	// // Projectiles that do extra damage to the wall
-	// var/list/extra_dam_proj
+	min_dam = 8
+	max_integrity = 400
+	brute_mod = 1
+	burn_mod = 1
+	var/repair_amount = 50
 
+	mob_smash_flags = ENVIRONMENT_SMASH_WALLS
+	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS
 
 
 /turf/closed/wall/yesdiag
@@ -72,7 +66,6 @@
 	. = ..()
 	for(var/decal in dent_decals)
 		. += decal
-
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()
@@ -108,32 +101,10 @@
 		return new girder_type(src)
 	return null
 
-/turf/closed/wall/attack_paw(mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	return attack_hand(user)
-
-// to do - bit flags
-/turf/closed/wall/attack_animal(mob/living/simple_animal/M)
-	M.changeNext_move(CLICK_CD_MELEE)
-	M.do_attack_animation(src)
-	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_integrity(-400)
-		return
-
-/turf/closed/wall/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>You push the wall but nothing happens!</span>")
-	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
-	add_fingerprint(user)
-
 /turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
-	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
+	if(try_clean(W, user, loc) || try_wallmount(W, user, loc))
 		return
-
+	..()
 
 /turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
 	if((user.a_intent != INTENT_HELP))

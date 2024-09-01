@@ -3,12 +3,54 @@
 	desc = "Effectively impervious to conventional methods of destruction."
 	icon = 'icons/turf/walls.dmi'
 	explosion_block = 50
+	max_integrity = 10000000
 
 /turf/closed/indestructible/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
 	return
 
 /turf/closed/indestructible/acid_act(acidpwr, acid_volume, acid_id)
 	return 0
+
+/turf/closed/indestructible/ex_act(severity, target)
+	return
+
+/turf/closed/indestructible/alter_integrity(damage, mob/user, devastate, safe_decon)
+	return FALSE
+
+/turf/closed/indestructible/set_integrity(amount, devastate, mob/user)
+	return
+
+/turf/closed/indestructible/dismantle_wall(devastate, mob/user)
+	return
+
+/turf/closed/indestructible/try_decon(obj/item/I, mob/user, turf/T)
+	return FALSE
+
+/turf/closed/indestructible/try_destroy(obj/item/W, mob/user, turf/T)
+	user.do_attack_animation(src)
+	to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
+	playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+	return TRUE
+
+/turf/closed/indestructible/mech_melee_attack(obj/mecha/M)
+	M.do_attack_animation(src)
+	switch(M.damtype)
+		if(BRUTE)
+			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+		if(TOX)
+			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
+	M.visible_message("<span class='danger'>[M.name] hits [src] and doesn't even leave a mark!</span>", \
+					"<span class='danger'>You hit [src] and fail to damage it.</span>", null, COMBAT_MESSAGE_RANGE)
+
+/turf/closed/indestructible/attack_hulk(mob/living/carbon/user)
+	return FALSE
+
+/turf/closed/indestructible/attack_animal(mob/living/simple_animal/M)
+	M.changeNext_move(CLICK_CD_MELEE)
+	M.do_attack_animation(src)
+	return
 
 /turf/closed/indestructible/Melt()
 	to_be_destroyed = FALSE
