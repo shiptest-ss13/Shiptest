@@ -2837,6 +2837,13 @@
 "qQ" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew)
+"qT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "qX" = (
 /obj/structure/railing{
 	dir = 8
@@ -7286,6 +7293,7 @@
 /obj/item/borg/upgrade/ai,
 /obj/item/aicard,
 /obj/item/mmi/posibrain,
+/obj/item/aiModule/reset/purge,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "NS" = (
@@ -8737,13 +8745,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
-"Vu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "Vv" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ship/hallway/port)
@@ -10547,7 +10548,7 @@ Mv
 MZ
 wa
 wO
-Vu
+qT
 wr
 MQ
 vm
