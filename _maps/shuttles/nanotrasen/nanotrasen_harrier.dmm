@@ -3998,6 +3998,7 @@
 "wr" = (
 /obj/effect/turf_decal/corner/opaque/ntblue/full,
 /obj/effect/turf_decal/corner/opaque/white,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "wz" = (
@@ -4066,6 +4067,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "wS" = (
@@ -7016,8 +7018,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
+/obj/structure/disposalpipe/junction/flip{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -8735,6 +8737,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
+"Vu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "Vv" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ship/hallway/port)
@@ -10538,7 +10547,7 @@ Mv
 MZ
 wa
 wO
-CI
+Vu
 wr
 MQ
 vm
