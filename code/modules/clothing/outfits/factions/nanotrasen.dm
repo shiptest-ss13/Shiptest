@@ -401,6 +401,15 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
 
+// Janitor
+/datum/outfit/job/nanotrasen/janitor
+	name = "Nanotrasen - Janitor"
+	jobtype = /datum/job/janitor
+	job_icon = "janitor"
+
+	uniform = /obj/item/clothing/under/nanotrasen/janitor
+	head = /obj/item/clothing/head/nanotrasen/cap/janitor
+
 // Lawyer
 /datum/outfit/job/nanotrasen/lawyer
 	name = "Nanotrasen - Lawyer"
