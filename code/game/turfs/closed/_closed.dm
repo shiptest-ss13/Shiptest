@@ -33,10 +33,19 @@
 	var/damage_visual = 'icons/effects/wall_damage.dmi'
 	var/overlay_layer = BULLET_HOLE_LAYER
 
+	var/list/dent_decals
+
 /turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(integrity == null)
 		integrity = max_integrity
+
+/turf/closed/copyTurf(turf/T, copy_air, flags)
+	. = ..()
+	var/turf/closed/wall_copy = T
+	if(LAZYLEN(dent_decals))
+		wall_copy.dent_decals = dent_decals.Copy()
+		wall_copy.update_appearance()
 
 /turf/closed/update_overlays()
 	. = ..()
@@ -48,6 +57,24 @@
 		damage_overlay = mutable_appearance(damage_visual, "cracks", overlay_layer)
 	damage_overlay.alpha = adj_dam_pct*255
 	. += damage_overlay
+	for(var/decal in dent_decals)
+		. += decal
+
+/turf/closed/proc/add_dent(denttype, x=rand(-8, 8), y=rand(-8, 8))
+	if(LAZYLEN(dent_decals) >= MAX_DENT_DECALS)
+		return
+
+	var/mutable_appearance/decal = mutable_appearance('icons/effects/effects.dmi', "", BULLET_HOLE_LAYER)
+	switch(denttype)
+		if(WALL_DENT_SHOT)
+			decal.icon_state = "bullet_hole"
+		if(WALL_DENT_HIT)
+			decal.icon_state = "impact[rand(1, 3)]"
+
+	decal.pixel_x = x
+	decal.pixel_y = y
+	LAZYADD(dent_decals, decal)
+	update_appearance()
 
 /turf/closed/examine(mob/user)
 	. = ..()
@@ -119,6 +146,7 @@
 	if(P.suppressed != SUPPRESSED_VERY)
 		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
+		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
 /turf/closed/proc/get_item_damage(obj/item/I, t_min = min_dam)
@@ -177,7 +205,7 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>You push the wall but nothing happens!</span>")
+	to_chat(user, "<span class='notice'>You push \the [src] but nothing happens!</span>")
 	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
 	add_fingerprint(user)
 
@@ -219,6 +247,7 @@
 			playsound(src,attack_hitsound, 100, TRUE)
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+	add_dent(WALL_DENT_HIT)
 	alter_integrity(-dam, user)
 	return TRUE
 

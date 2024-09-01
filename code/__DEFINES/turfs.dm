@@ -13,4 +13,8 @@
 
 #define IS_OPAQUE_TURF(turf) (turf.directional_opacity == ALL_CARDINALS)
 
+// Integrity of mineral walls.
 #define MINERAL_WALL_INTEGRITY 100
+
+// how many bullet holes a wall can have at a given time
+#define MAX_DENT_DECALS 15

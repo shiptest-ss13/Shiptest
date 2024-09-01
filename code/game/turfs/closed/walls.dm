@@ -1,5 +1,3 @@
-#define MAX_DENT_DECALS 15
-// KILL MINING CODE
 /turf/closed/wall
 	name = "wall"
 	desc = "A huge chunk of metal used to separate rooms."
@@ -23,8 +21,6 @@
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
-
-	var/list/dent_decals
 
 	min_dam = 8
 	max_integrity = 400
@@ -53,19 +49,6 @@
 			underlay_appearance.icon_state = fixed_underlay["icon_state"]
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
-
-// to be changed - move up
-/turf/closed/wall/copyTurf(turf/T, copy_air, flags)
-	. = ..()
-	var/turf/closed/wall/wall_copy = T
-	if(LAZYLEN(dent_decals))
-		wall_copy.dent_decals = dent_decals.Copy()
-		wall_copy.update_appearance()
-
-/turf/closed/wall/update_overlays()
-	. = ..()
-	for(var/decal in dent_decals)
-		. += decal
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()
@@ -195,20 +178,5 @@
 			return TRUE
 	return FALSE
 
-/turf/closed/wall/proc/add_dent(denttype, x=rand(-8, 8), y=rand(-8, 8))
-	if(LAZYLEN(dent_decals) >= MAX_DENT_DECALS)
-		return
 
-	var/mutable_appearance/decal = mutable_appearance('icons/effects/effects.dmi', "", BULLET_HOLE_LAYER)
-	switch(denttype)
-		if(WALL_DENT_SHOT)
-			decal.icon_state = "bullet_hole"
-		if(WALL_DENT_HIT)
-			decal.icon_state = "impact[rand(1, 3)]"
 
-	decal.pixel_x = x
-	decal.pixel_y = y
-	LAZYADD(dent_decals, decal)
-	update_appearance()
-
-#undef MAX_DENT_DECALS
