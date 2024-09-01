@@ -233,7 +233,8 @@
 
 /datum/species/elzuose/spec_life(mob/living/carbon/human/_human)
 	.=..()
-	handle_charge(_human)
+	if(_human.is_variant == PREF_VARIANT_NONE) // you probably aren't going to worry about blood charge if you're a skeleton or a robot
+		handle_charge(_human)
 
 /datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/_human)
 	EMPeffect = FALSE

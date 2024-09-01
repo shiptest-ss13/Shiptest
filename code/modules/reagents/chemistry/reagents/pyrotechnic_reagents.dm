@@ -110,11 +110,11 @@
 /datum/reagent/gunpowder/on_mob_life(mob/living/carbon/M)
 	. = TRUE
 	..()
-	if(!isplasmaman(M))
-		return
-	M.set_drugginess(15)
-	if(M.hallucination < volume)
-		M.hallucination += 5
+	// if(!(M.is_variant == PREF_VARIANT_PHORID))
+	// 	return // FIX ME LATER!!!!!!
+	// M.set_drugginess(15)
+	// if(M.hallucination < volume)
+	// 	M.hallucination += 5
 
 /datum/reagent/gunpowder/on_ex_act()
 	var/location = get_turf(holder.my_atom)

@@ -380,9 +380,9 @@
 	outfit = /datum/outfit/job/miner
 	icon_state = "corpseminer"
 
-/obj/effect/mob_spawn/human/plasmaman
-	mob_species = /datum/species/plasmaman
-	outfit = /datum/outfit/plasmaman
+// /obj/effect/mob_spawn/human/plasmaman
+// 	mob_species = /datum/species/plasmaman
+// 	outfit = /datum/outfit/plasmaman // FIX ME LATER!!!!!!
 
 /obj/effect/mob_spawn/human/botanist
 	outfit = /datum/outfit/job/botanist

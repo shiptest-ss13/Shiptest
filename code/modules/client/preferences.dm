@@ -2530,12 +2530,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						old_part.drop_limb(TRUE)
 						qdel(old_part)
 					character.regenerate_limb(pros_limb, variant = PREF_VARIANT_FBP)
-	if(species_variant == PREF_VARIANT_PHORID) // oh shit this is a phorid
-		character.dna.species.inherent_biotypes |= MOB_MINERAL
-		character.dna.species.species_traits += list(NOBLOOD,NOTRANSSTING,NOHUSK)
-		character.dna.species.inherent_traits += list(TRAIT_RESISTCOLD, TRAIT_RADIMMUNE, TRAIT_GENELESS, TRAIT_NOHUNGER, TRAIT_ALWAYS_CLEAN)
+	if(species_variant == PREF_VARIANT_PHORID) // copies phorid behavior. this is a hack but i'm not competent enough to make something better
+		character.dna.species.inherent_biotypes |= ~MOB_ORGANIC|MOB_MINERAL
+		character.dna.species.species_traits += list(NOBLOOD, NOTRANSSTING, NOHUSK)
+		var/list/phorid_traits = list(TRAIT_RESISTCOLD, TRAIT_RADIMMUNE, TRAIT_GENELESS, TRAIT_NOHUNGER, TRAIT_ALWAYS_CLEAN)
+		character.dna.species.inherent_traits += phorid_traits
+		for(var/trait in phorid_traits)
+			ADD_TRAIT(character, trait, SPECIES_TRAIT)
 		character.dna.species.breathid = "tox"
 		character.dna.species.damage_overlay_type = ""
+
+	if(species_variant == PREF_VARIANT_FBP) // copies some IPC behavior
+		character.dna.species.inherent_biotypes |= ~MOB_ORGANIC|MOB_ROBOTIC
+		character.dna.species.species_traits = list(NOTRANSSTING, NO_DNA_COPY, TRAIT_EASYDISMEMBER, NOZOMBIE, MUTCOLORS, NOHUSK, NO_BONES)
+		var/list/fbp_traits = list(TRAIT_RESISTCOLD, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_GENELESS, TRAIT_LIMBATTACHMENT, TRAIT_METALLIC)
+		character.dna.species.inherent_traits += fbp_traits
+		for(var/trait in fbp_traits)
+			ADD_TRAIT(character, trait, SPECIES_TRAIT)
+		character.dna.species.exotic_bloodtype = "Coolant"
+		character.dna.blood_type = get_blood_type("Coolant")
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)

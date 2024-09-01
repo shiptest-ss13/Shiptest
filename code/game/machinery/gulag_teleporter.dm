@@ -150,7 +150,7 @@ The console is located at computer/gulag_teleporter.dm
 		return
 	strip_occupant()
 	var/mob/living/carbon/human/prisoner = occupant
-	if(!isplasmaman(prisoner) && jumpsuit_type)
+	if(!(prisoner.is_variant == PREF_VARIANT_PHORID) && jumpsuit_type)
 		prisoner.equip_to_appropriate_slot(new jumpsuit_type)
 	if(shoes_type)
 		prisoner.equip_to_appropriate_slot(new shoes_type)

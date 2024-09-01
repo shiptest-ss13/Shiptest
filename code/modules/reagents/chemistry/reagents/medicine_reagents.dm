@@ -2088,11 +2088,11 @@
 
 /datum/reagent/medicine/skeletons_boon/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	ADD_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
-	if(isplasmaman(M))
-		var/mob/living/carbon/human/H = M
-		H.physiology.armor.melee += plasma_armor
-		H.physiology.armor.bullet += plasma_armor
-		added_armor = plasma_armor
+	// if((M.is_variant == PREF_VARIANT_PHORID))
+	// 	var/mob/living/carbon/human/H = M
+	// 	H.physiology.armor.melee += plasma_armor
+	// 	H.physiology.armor.bullet += plasma_armor
+	// 	added_armor = plasma_armor // FIX ME LATER!!!!!!
 	if(isskeleton(M))
 		var/mob/living/carbon/human/H = M
 		H.physiology.armor.melee += skele_armor

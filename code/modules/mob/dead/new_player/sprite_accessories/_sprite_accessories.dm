@@ -63,6 +63,7 @@
 	var/dimension_y = 32
 	var/body_zone = BODY_ZONE_CHEST		//The body zone this accessory affects
 	var/synthetic_icon_state			//The icon_state to use when the bodypart it's attached to is synthetic
+	var/phorid_icon_state				//The icon_state to use when the bodypart it's attached to is a phorid's
 	var/synthetic_color_src				//The color src to use instead of the normal src when synthetic, leave blank to use the normal src
 
 //Squids AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA whyyyy

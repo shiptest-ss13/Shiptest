@@ -1034,6 +1034,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_state_name = S.synthetic_icon_state
 					if(S.synthetic_color_src)
 						used_color_src = S.synthetic_color_src
+			else if(S.phorid_icon_state)
+				var/obj/item/bodypart/attachment_point = H.get_bodypart(S.body_zone)
+				if(attachment_point)
+					icon_state_name = S.phorid_icon_state
 
 			if(S.gender_specific)
 				accessory_overlay.icon_state = "[g]_[bodypart]_[icon_state_name]_[layertext]"

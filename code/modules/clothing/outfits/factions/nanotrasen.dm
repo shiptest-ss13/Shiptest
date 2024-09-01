@@ -43,6 +43,7 @@
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
+	phorid_outfit = /datum/outfit/plasmaman/command
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
@@ -97,6 +98,7 @@
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
+	phorid_outfit = /datum/outfit/plasmaman/hos
 
 	chameleon_extras = list(
 						/obj/item/gun/energy/e_gun,
@@ -130,6 +132,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+	phorid_outfit = /datum/outfit/plasmaman/hos
 	box = /obj/item/storage/box/survival/security
 
 	implants = list(/obj/item/implant/mindshield)
@@ -158,6 +161,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+	phorid_outfit = /datum/outfit/plasmaman/security
 	box = /obj/item/storage/box/survival/security
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
@@ -186,6 +190,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+	phorid_outfit = /datum/outfit/plasmaman/warden
 	box = /obj/item/storage/box/survival/security
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
@@ -212,6 +217,7 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+	phorid_outfit = /datum/outfit/plasmaman/engineering
 
 	box = /obj/item/storage/box/survival/engineer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -240,6 +246,7 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+	phorid_outfit = /datum/outfit/plasmaman/ce
 
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
@@ -261,6 +268,8 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+	phorid_outfit = /datum/outfit/plasmaman/atmospherics
+
 	box = /obj/item/storage/box/survival/engineer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
@@ -278,6 +287,9 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	head = /obj/item/clothing/head/soft/sec/brig_phys
+
+	phorid_outfit = /datum/outfit/plasmaman/secmed
+
 	implants = list(/obj/item/implant/mindshield)
 
 // Supply //
@@ -296,6 +308,8 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+	phorid_outfit = /datum/outfit/plasmaman/cargo
 
 	chameleon_extras = /obj/item/stamp/qm
 
@@ -324,6 +338,7 @@
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	duffelbag = /obj/item/storage/backpack/duffelbag
+	phorid_outfit = /datum/outfit/plasmaman/mining
 	box = /obj/item/storage/box/survival/mining
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
@@ -339,6 +354,9 @@
 	head = /obj/item/clothing/head/nanotrasen/cap/supply
 	uniform = /obj/item/clothing/under/nanotrasen/supply
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+
+	phorid_outfit = /datum/outfit/plasmaman/cargo
+
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 // Medical //
@@ -363,6 +381,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/med
 	box = /obj/item/storage/box/survival/medical
+	phorid_outfit = /datum/outfit/plasmaman/medical
 
 // Paramedic
 /datum/outfit/job/nanotrasen/paramedic
@@ -386,6 +405,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
 	box = /obj/item/storage/box/survival/medical
+	phorid_outfit = /datum/outfit/plasmaman/paramedic
 
 	chameleon_extras = /obj/item/gun/syringe
 
@@ -446,6 +466,7 @@
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
+	phorid_outfit = /datum/outfit/plasmaman/science
 
 // Roboticist
 /datum/outfit/job/nanotrasen/roboticist
@@ -458,6 +479,8 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/nanotrasen
 	ears = /obj/item/radio/headset/nanotrasen
 	glasses = /obj/item/clothing/glasses/welding
+
+	phorid_outfit = /datum/outfit/plasmaman/robotics
 
 	backpack_contents = list(/obj/item/weldingtool/hugetank)
 

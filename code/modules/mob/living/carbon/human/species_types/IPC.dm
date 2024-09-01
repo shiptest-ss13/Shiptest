@@ -223,7 +223,7 @@
 		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
 		if(prob(5))
 			to_chat(H, "<span class='warning'>Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent.</span>")
-			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
+			H.visible_message("<span class='warning'>[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.</span>")
 
 
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)

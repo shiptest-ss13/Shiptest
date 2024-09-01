@@ -1320,8 +1320,8 @@
 /mob/living/carbon/human/species/moth
 	race = /datum/species/moth
 
-/mob/living/carbon/human/species/plasma
-	race = /datum/species/plasmaman
+// /mob/living/carbon/human/species/plasma
+// 	race = /datum/species/plasmaman
 
 /mob/living/carbon/human/species/pod
 	race = /datum/species/pod

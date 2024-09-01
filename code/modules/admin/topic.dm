@@ -1237,7 +1237,7 @@
 		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
 		if(isskeleton(H))
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(isplasmaman(H))
+		else if((H.is_variant == PREF_VARIANT_PHORID))
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar

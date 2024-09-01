@@ -133,8 +133,8 @@
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
-	if(!isplasmaman(loc))
-		new internal_type(src)
+	// if(!(loc.is_variant == PREF_VARIANT_PHORID))
+	// 	new internal_type(src) // FIX ME LATER!!!!!!
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
 
@@ -831,10 +831,10 @@
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
 
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
-		new /obj/item/tank/internals/plasmaman/belt(src)
+	// if(!(loc.is_variant == PREF_VARIANT_PHORID)) // FIX ME LATER!!!!!!
+	new /obj/item/tank/internals/emergency_oxygen(src)
+	// else
+	// 	new /obj/item/tank/internals/plasmaman/belt(src)
 
 /obj/item/storage/box/rubbershot
 	name = "box of rubber shots"

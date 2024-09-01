@@ -89,7 +89,7 @@
 
 /datum/martial_art/plasma_fist/proc/Apotheosis(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	A.say("APOTHEOSIS!!", forced="plasma fist")
-	A.set_species(/datum/species/plasmaman)
+//	A.set_species(/datum/species/plasmaman) // FIX ME LATER!!!!!!
 	A.dna.species.species_traits += TRAIT_BOMBIMMUNE
 	A.unequip_everything()
 	A.underwear = "Nude"

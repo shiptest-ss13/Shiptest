@@ -94,7 +94,7 @@
 					H.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
 				if(3)
 					to_chat(H, "<span class='warning'>Your bones hurt!</span>")
- 		if(chem.overdosed)
+		if(chem.overdosed)
 			if(prob(4)) //big oof
 				var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG) //God help you if the same limb gets picked twice quickly.
 				var/obj/item/bodypart/bp = H.get_bodypart(selected_part) //We're so sorry skeletons, you're so misunderstood

@@ -133,8 +133,8 @@
 						scan_species = /datum/species/lizard
 					if(SCANGATE_FLY)
 						scan_species = /datum/species/fly
-					if(SCANGATE_PLASMAMAN)
-						scan_species = /datum/species/plasmaman
+					// if(SCANGATE_PLASMAMAN)
+					// 	scan_species = /datum/species/plasmaman // FIX ME LATER!!!!!!
 					if(SCANGATE_MOTH)
 						scan_species = /datum/species/moth
 					if(SCANGATE_JELLY)
