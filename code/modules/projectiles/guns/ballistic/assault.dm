@@ -14,23 +14,8 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
-/obj/item/gun/ballistic/automatic/assault/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/assault/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 16
-	var/total_spread = bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 16
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -262,8 +247,8 @@
 	secondary.pre_fire(target, user, message, flag, params, zone_override, bonus_spread)
 
 
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return cell
+/obj/item/gun/ballistic/automatic/assault/e40/get_cell()
+	return secondary.get_cell()
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
