@@ -345,6 +345,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cf" = (
@@ -657,7 +658,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "dJ" = (
-/turf/closed/wall/mineral/titanium/interior,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "dK" = (
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -743,12 +748,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eg" = (
-/obj/machinery/button/door{
-	dir = 1;
-	id = "harrieriaa";
-	name = "window shutter";
-	pixel_y = -22
-	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "ei" = (
@@ -952,6 +952,12 @@
 /obj/structure/table/wood/reinforced,
 /obj/machinery/fax/nanotrasen,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "harrieriaa";
+	name = "window shutter";
+	pixel_y = -22
+	},
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
 "fd" = (
@@ -1817,6 +1823,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/siding,
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "jM" = (
@@ -1853,6 +1860,13 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel,
 /area/ship/crew/law_office)
+"jO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "jT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono,
@@ -2627,13 +2641,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/purple/visible,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
-"py" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "pF" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -4458,7 +4465,7 @@
 /obj/structure/table/wood,
 /obj/item/storage/pill_bottle/dice,
 /obj/effect/turf_decal/siding/wood,
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew)
 "yI" = (
@@ -4821,6 +4828,7 @@
 	dir = 8
 	},
 /obj/machinery/camera,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "AE" = (
@@ -5489,6 +5497,9 @@
 /obj/structure/sign/poster/official/safety_internals{
 	pixel_x = -32
 	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/eva)
 "Ez" = (
@@ -6119,7 +6130,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Im" = (
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "In" = (
@@ -7847,7 +7858,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "QV" = (
@@ -8393,6 +8404,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/eva)
 "TX" = (
@@ -10560,7 +10574,7 @@ Mv
 MZ
 wa
 wO
-py
+jO
 wr
 MQ
 vm
@@ -10749,7 +10763,7 @@ MZ
 MZ
 pP
 qI
-dJ
+qI
 Tv
 kO
 YM
@@ -10786,7 +10800,7 @@ MZ
 MZ
 pP
 qI
-dJ
+qI
 jD
 aC
 aH
@@ -10825,7 +10839,7 @@ MZ
 MZ
 uG
 pZ
-gV
+dJ
 ql
 PH
 Kd
