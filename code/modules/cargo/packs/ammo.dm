@@ -76,6 +76,12 @@
 	cost = 210
 	contains = list(/obj/item/storage/box/techshot)
 
+/datum/supply_pack/ammo/rubbershot
+	name = "Rubbershot Crate"
+	desc = "Contains a box of twenty-five rubbershot shells for use in crowd control or training."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g/rubbershot)
+
 /*
 		.38 ammo
 */
