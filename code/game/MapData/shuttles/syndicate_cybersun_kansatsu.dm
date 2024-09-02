@@ -63,7 +63,7 @@
 	name = "\improper IG-S-290" // Information Gathering - Scouting - Random Number
 	preset_record_text = {"
 	NAME Intelligence Officer Torch-3
-	SAY Agents. Your vessel has been assigned a mission based around scouting.
+	SAY Agents. Your vessel has been assigned a mission to scout your assigned region.
 	DELAY 40
 	SAY You are to locate war-era derelicts in your sector. You must explore them and take note of all the relevant details.
 	DELAY 40
