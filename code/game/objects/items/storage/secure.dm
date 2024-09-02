@@ -212,10 +212,6 @@
 	. = ..()
 	new /obj/item/storage/belt/sabre/suns(src)
 
-/obj/item/storage/secure/safe/suns
-	name = "Captain's Secure Safe"
-	desc = "The most important part of a SUNS vessel is the spare dueling sword."
-
 /obj/item/storage/secure/safe/cybersun
 	name = "Captain's secure safe"
 
