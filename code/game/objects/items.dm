@@ -31,7 +31,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///If set, vox wearing this use this instead of their clothing file
 	var/vox_override_icon
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces green, and three replaces blue in the icon state.
 	var/list/greyscale_colors[3]
 	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
 	var/greyscale_icon_state
@@ -290,10 +290,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return 0
 	else
 		return 1
-
-/obj/item/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
 
 /obj/item/ComponentInitialize()
 	. = ..()
