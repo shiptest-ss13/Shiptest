@@ -680,7 +680,7 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding ammunition. Does not hold magazines"
+	desc = "A bandolier for holding ammunition. Does not hold magazines."
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
@@ -693,6 +693,10 @@
 	STR.set_holdable(list(
 		/obj/item/ammo_casing
 		))
+
+/obj/item/storage/belt/bandolier/examine(mob/user)
+	. = ..()
+	. += span_notice("The bandolier can be directly loaded by clicking on it with an ammo box.")
 
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
