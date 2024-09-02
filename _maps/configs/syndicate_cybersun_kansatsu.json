@@ -16,8 +16,13 @@
 	"map_path": "_maps/shuttles/syndicate/syndicate_cybersun_kansatsu.dmm",
 	"map_id": "cybersun_kansatsu",
 	"job_slots": {
-		"Intelligence Director": {
+		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Intelligence Officer": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
 			"officer": true,
 			"slots": 1
 		},

@@ -343,11 +343,6 @@
 /obj/item/radio/intercom/directional/west{
 	pixel_y = -2
 	},
-/obj/structure/bed/dogbed{
-	anchored = 1;
-	desc = "A comfy-looking snake bed. There's bits of shed scales stuck in the bedding.";
-	name = "snake bed"
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "gj" = (
@@ -466,7 +461,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "iL" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -476,6 +470,9 @@
 	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -506,7 +503,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "iY" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/rack,
 /obj/structure/cable/orange{
@@ -580,7 +579,7 @@
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "cargo_wall";
 	name = "fuel storage";
-	req_access_txt = "11"
+	req_one_access = list(11, 19)
 	},
 /obj/item/stack/sheet/mineral/diamond/five,
 /turf/open/floor/plasteel/dark,
@@ -685,7 +684,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "nu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/isf_small/right{
 	color = "#000000";
 	dir = 4
@@ -775,7 +773,7 @@
 	name = "Agent Wardrobe"
 	},
 /obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel/sec,
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
@@ -846,6 +844,7 @@
 	req_access_txt = "11"
 	},
 /obj/item/storage/backpack/security,
+/obj/item/storage/backpack/messenger/sec,
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
@@ -1384,7 +1383,7 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/secure/science{
-	req_access_txt = "20"
+	req_access_txt = "19"
 	},
 /obj/item/storage/box/syndie_kit/chameleon,
 /obj/item/storage/box/syndie_kit/chameleon,
@@ -1403,22 +1402,26 @@
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "tac";
-	name = "Intelligence Director's Locker";
-	req_access_txt = "20"
+	name = "Command Wardrobe";
+	req_access_txt = "19"
 	},
 /obj/item/storage/backpack/messenger/sec,
+/obj/item/storage/backpack/security,
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -7
+	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
 /obj/item/clothing/under/syndicate/cybersun/officer,
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun,
-/obj/item/clothing/head/HoS/cybersun,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/under/syndicate/cybersun/officer,
+/obj/item/clothing/suit/cybersun_suit,
+/obj/item/clothing/suit/cybersun_suit,
 /obj/item/clothing/gloves/combat,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/gun/ballistic/revolver/syndicate/no_mag,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/head/HoS/cybersun,
+/obj/item/clothing/head/HoS/cybersun,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Ap" = (
@@ -1576,7 +1579,9 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1590,7 +1595,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Bridge";
-	req_access_txt = "20"
+	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1789,7 +1794,7 @@
 	pixel_y = 20;
 	dir = 2;
 	pixel_x = -7;
-	req_access_txt = "48"
+	req_one_access = list(48, 19)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2023,10 +2028,10 @@
 	pixel_x = -20;
 	pixel_y = -10
 	},
-/obj/item/storage/secure/safe{
+/obj/item/storage/secure/safe/cybersun{
 	dir = 8;
 	pixel_x = -31;
-	pixel_y = 5
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
