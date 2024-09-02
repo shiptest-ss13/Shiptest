@@ -472,3 +472,11 @@
 /obj/item/storage/pill_bottle/trophazole/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/trophazole(src)
+
+/obj/item/storage/pill_bottle/cyanide
+	name = "bottle of cyanide pills"
+	desc = "Contains pills used to quickly and quietly kill people. Consume at your own risk."
+
+/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/cyanide(src)

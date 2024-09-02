@@ -7,31 +7,27 @@
 		"NATURAL_AGGRESSIVE"
 	],
 	"map_name": "Kansatsu-class Scout Courier",
-	"description": "The Kansatsu-class is a Cybersun remodel of the old Type-S SolGov Courier, rebuilt for rapid package ferrying and light surveillance operations in the Frontier. While fairly cramped, it excels at its design goals, with rapid surveys, scouting, and espionage flowing from its presence. Syndicate deployments typically include a deployment of 5, with a recommended max of 7. This is broken down into 1 captain, an intelligence officer for coordinating the field agents, an engineer, and 2 field agents. The simplicity of the hull has led to the ship becoming a widespread indicator of Syndicate interest in locations, and some models have found their way into private purchasers' hands.",
+	"description": "This aged poorly. Gotta make a new desc. Now, allow me to reach the minimum amount of symbols. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 	"tags": [
 		"Specialist"
 	],
+	"starting_funds": 4000,
 	"map_short_name": "Kansatsu-class",
 	"map_path": "_maps/shuttles/syndicate/syndicate_cybersun_kansatsu.dmm",
 	"map_id": "cybersun_kansatsu",
 	"job_slots": {
-		"Commander": {
+		"Intelligence Director": {
 			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
 			"officer": true,
-			"slots": 1
-		},
-		"Intelligence Officer": {
-			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
-			"officer": true,
-			"slots": 1
-		},
-		"Engineer": {
-			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
 			"slots": 1
 		},
 		"Field Agent": {
 			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
 			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"slots": 1
 		},
 		"Junior Agent": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
