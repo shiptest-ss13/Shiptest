@@ -21,7 +21,7 @@
 	DELAY 40
 	SAY You must avoid recognition while performing this mission.
 	DELAY 40
-	SAY Your director must prepare an official report on this.
+	SAY Your officers must then prepare an official report on this.
 	DELAY 40
 	SAY This mission will be considered completed with at least three reports. Do not disappoint us.
 	DELAY 40
@@ -37,7 +37,7 @@
 	DELAY 40
 	SAY You must avoid recognition while performing this mission.
 	DELAY 40
-	SAY Your director must then prepare an official report on this.
+	SAY Your officers must then prepare an official report on this.
 	DELAY 40
 	SAY This mission will be considered completed with at least five reports. Do not disappoint us.
 	DELAY 40
@@ -53,7 +53,7 @@
 	DELAY 40
 	SAY You must avoid recognition while performing this mission.
 	DELAY 40
-	SAY Your director must then prepare an official report on this.
+	SAY Your officers must then prepare an official report on this.
 	DELAY 40
 	SAY This mission will be considered completed with at least three reports. Do not disappoint us.
 	DELAY 40
@@ -63,11 +63,11 @@
 	name = "\improper IG-S-290" // Information Gathering - Scouting - Random Number
 	preset_record_text = {"
 	NAME Intelligence Officer Torch-3
-	SAY Agents. Your vessel has been assigned a mission to scout your assigned region.
+	SAY Agents. Your vessel has been assigned a mission to scout your current sector.
 	DELAY 40
-	SAY You are to locate war-era derelicts in your sector. You must explore them and take note of all the relevant details.
+	SAY You are to locate war-era derelicts. You must explore them and take note of all the relevant details.
 	DELAY 40
-	SAY Your director must then prepare an official report on this.
+	SAY Your officers must then prepare an official report on this.
 	DELAY 40
 	SAY This mission will be considered completed with at least five reports. Do not disappoint us.
 	DELAY 40
