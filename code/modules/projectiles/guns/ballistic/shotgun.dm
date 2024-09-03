@@ -722,6 +722,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	base_icon_state = "absolution"
 	icon_state = "absolution"
 	item_state = "absolution"
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	desc = "WIP."
 	sawn_desc = "WIP SAWED OFF."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
@@ -753,6 +754,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	base_icon_state = "conflagration"
 	icon_state = "conflagration"
 	item_state = "conflagration"
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	desc = "WIP."
 	sawn_desc = "WIP SAWED OFF."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
