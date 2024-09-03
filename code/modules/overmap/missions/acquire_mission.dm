@@ -213,7 +213,7 @@ Acquire: Anomaly
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
 /*
-		Acquire: Landmines
+		Acquire: Salvage
 */
 
 /datum/mission/acquire/landmine
@@ -226,6 +226,39 @@ Acquire: Anomaly
 	container_type = /obj/item/storage/toolbox/bounty
 	objective_type = /obj/item/mine/pressure/explosive
 	num_wanted = 2
+
+/datum/mission/acquire/bounty
+	name = "Hunt down Frontiersmen Dogtags"
+	desc = "fuck em fronties lol"
+	weight = 4
+	value = 3000
+	duration = 100 MINUTES
+	dur_mod_range = 0.2
+	container_type =
+	objective_type =
+	num_wanted = 3
+
+/datum/mission/acquire/bounty/ramzi
+	name = "Hunt down Ramzi Clique Dogtags"
+	desc = "fuck em ramzis lol"
+	weight = 2
+	value = 4000
+	duration = 120 MINUTES
+	dur_mod_range = 0.1
+	container_type =
+	objective_type =
+	num_wanted = 3
+
+/datum/mission/acquire/salvage
+	name = "Deliver one Protolathe Board"
+	desc = "I'd rather you have money than powergame RND"
+	weight = 2
+	value = 4000
+	duration = 80 MINUTES
+	dur_mod_range = 0.3
+	container_type =
+	objective_type =
+	num_wanted = 1
 
 /*
 		Acquire: Fishing
