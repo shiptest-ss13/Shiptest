@@ -729,7 +729,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
 		tube.max_ammo = 7
 
-		item_state = "flamingarrow_sawn"
+		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM
 
@@ -757,7 +757,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
 		tube.max_ammo = 4
 
-		item_state = "flamingarrow_sawn"
+		item_state = "beacon_factory_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM
 
