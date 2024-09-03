@@ -114,16 +114,6 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/pistolm9mm
-	name = "large pistol magazine (9mm)"
-	desc = "A long, 15-round double-stack magazine designed for the stechkin APS pistol. These rounds do okay damage, but struggle against armor."
-	icon_state = "stechkin_mag-1"
-	base_icon_state = "stechkin_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 15
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
 /obj/item/ammo_box/magazine/m50
 	name = "handgun magazine (.50 AE)"
 	desc = "An oversized, 7-round handgun magazine for the Desert Eagle handgun. These rounds do significant damage with average performance against armor."

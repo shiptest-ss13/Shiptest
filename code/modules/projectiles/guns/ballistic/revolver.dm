@@ -25,6 +25,9 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	valid_attachments = list()
+	slot_available = list()
 	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5

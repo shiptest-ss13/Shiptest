@@ -7,7 +7,7 @@
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 
-	recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept.
+	//recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept. //UPDATE ive changed my mind on this, however i would
 	recoil_unwielded = 3
 	recoil_backtime_multiplier = 1
 
@@ -33,7 +33,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
@@ -73,7 +73,7 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	manufacturer = MANUFACTURER_NONE
 	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
@@ -109,7 +109,7 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	manufacturer = MANUFACTURER_NANOTRASEN
-	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
@@ -207,7 +207,6 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 
 	weapon_weight = WEAPON_LIGHT
-	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
 	manufacturer = MANUFACTURER_SOLARARMORIES

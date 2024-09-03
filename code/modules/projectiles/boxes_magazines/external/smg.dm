@@ -107,6 +107,7 @@
 	name = "pan magazine (.45)"
 	desc = "A bulky, 50-round pan magazine for the toploading Firestorm submachine gun. These rounds struggle against armor, but with this many you could cut anyone down regardless."
 	icon_state = "firestorm_pan"
+	base_icon_state = "firestorm_pan"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 

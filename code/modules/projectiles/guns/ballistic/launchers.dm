@@ -66,6 +66,9 @@
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	valid_attachments = list()
+	slot_available = list()
+
 /obj/item/gun/ballistic/rocketlauncher/afterattack()
 	. = ..()
 	magazine.get_round(FALSE) //Hack to clear the mag after it's fired

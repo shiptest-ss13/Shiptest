@@ -137,10 +137,6 @@
 	manufacturer = MANUFACTURER_NANOTRASEN
 	semi_auto = TRUE
 
-/obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
-	..()
-	rack()
-
 //im not sure what to do with the combat shotgun, as it's functionally the same as the semi auto shotguns except it automattically racks instead of being semi-auto
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
