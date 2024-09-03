@@ -165,12 +165,6 @@ field_generator power level display
 	if(!anchored)
 		step(src, get_dir(M, src))
 
-/obj/machinery/field/generator/blob_act(obj/structure/blob/B)
-	if(active)
-		return 0
-	else
-		..()
-
 /obj/machinery/field/generator/bullet_act(obj/projectile/Proj)
 	if(Proj.flag != "bullet")
 		power = min(power + Proj.damage, field_generator_max_power)

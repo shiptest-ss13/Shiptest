@@ -284,6 +284,38 @@
 
 		breath.adjust_moles(GAS_FREON, -gas_breathed)
 
+	// Chlorine
+		var/chlorine_pp = PP(breath,GAS_CHLORINE)
+		if (prob(chlorine_pp))
+			to_chat(H, "<span class='alert'>Your lungs feel awful!</span>")
+		if (chlorine_pp >40)
+			H.emote("gasp")
+			H.adjustFireLoss(5)
+			if (prob(chlorine_pp/2))
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				H.silent = max(H.silent, 3)
+		else
+			H.adjustFireLoss(round(chlorine_pp/8))
+		gas_breathed = breath.get_moles(GAS_CHLORINE)
+		if (gas_breathed > gas_stimulation_min)
+			H.reagents.add_reagent(/datum/reagent/chlorine,1)
+
+		breath.adjust_moles(GAS_CHLORINE, -gas_breathed)
+	// Hydrogen Chloride
+		var/hydrogen_chloride_pp = PP(breath,GAS_HYDROGEN_CHLORIDE)
+		if (prob(hydrogen_chloride_pp))
+			to_chat(H, "<span class='alert'>Your lungs feel terrible!")
+		if (hydrogen_chloride_pp >20)
+			H.emote("gasp")
+			H.adjustFireLoss(10)
+			if (prob(hydrogen_chloride_pp/2))
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				H.silent = max(H.silent, 3)
+		else
+			H.adjustFireLoss(round(hydrogen_chloride_pp/4))
+		if (gas_breathed > gas_stimulation_min)
+			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
+
 	// Stimulum
 		gas_breathed = PP(breath,GAS_STIMULUM)
 		if (gas_breathed > gas_stimulation_min)

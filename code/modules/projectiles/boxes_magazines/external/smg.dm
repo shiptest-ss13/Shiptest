@@ -28,19 +28,6 @@
 	base_icon_state = "46x30mmtI"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
 
-/obj/item/ammo_box/magazine/uzim9mm
-	name = "long SMG magazine (9mm)"
-	desc = "A thin, 32-round magazine for the Uzi SMG. These rounds do okay damage, but struggle against armor."
-	icon_state = "uzi9mm-32"
-	base_icon_state = "uzi9mm"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 32
-
-/obj/item/ammo_box/magazine/uzim9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),4)]"
-
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
 	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
@@ -106,7 +93,7 @@
 /obj/item/ammo_box/magazine/c45_firestorm_mag
 	name = "stick magazine (.45)"
 	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
-	icon_state = "firestorm_mag"
+	icon_state = "firestorm_mag-1"
 	base_icon_state = "firestorm_mag"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"

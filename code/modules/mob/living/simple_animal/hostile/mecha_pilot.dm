@@ -19,13 +19,13 @@ Featuring:
 */
 
 /mob/living/simple_animal/hostile/human/syndicate/mecha_pilot
-	name = "Syndicate Mecha Pilot"
+	name = "Syndicate Exosuit Pilot"
 	desc = "Death to Nanotrasen. This variant comes in MECHA DEATH flavour."
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 
-	var/spawn_mecha_type = /obj/mecha/combat/marauder/mauler/loaded
+	var/spawn_mecha_type = /obj/mecha/combat/marauder/touro/loaded
 	var/obj/mecha/mecha //Ref to pilot's mecha instance
 	var/required_mecha_charge = 7500 //If the pilot doesn't have a mecha, what charge does a potential Grand Theft Mecha need? (Defaults to half a battery)
 	var/mecha_charge_evacuate = 50 //Amount of charge at which the pilot tries to abandon the mecha

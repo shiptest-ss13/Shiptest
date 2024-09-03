@@ -35,6 +35,8 @@
 	recoil = 1
 	recoil_unwielded = 4
 
+	gunslinger_recoil_bonus = -1
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -45,15 +47,6 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
-
-/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -275,24 +268,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
 	icon_state = "bulldog_suns"
 	item_state = "bulldog_suns"
-
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
-	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
-	icon_state = "cm15"
-	item_state = "cm15"
-	empty_alarm = FALSE
-	empty_indicator = FALSE
-	unique_mag_sprites_for_variants = FALSE
-	manufacturer = MANUFACTURER_MINUTEMAN
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //

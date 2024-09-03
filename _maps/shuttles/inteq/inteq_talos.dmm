@@ -874,7 +874,6 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -4630,11 +4629,13 @@
 	},
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/regular{
-	pixel_x = 5
+/obj/item/storage/firstaid/brute{
+	pixel_x = -8;
+	pixel_y = 0
 	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5
+/obj/item/storage/firstaid/fire{
+	pixel_x = 9;
+	pixel_y = 0
 	},
 /obj/item/storage/box/bodybags,
 /turf/open/floor/plasteel/patterned/cargo_one,

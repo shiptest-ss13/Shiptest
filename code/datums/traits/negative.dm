@@ -451,15 +451,14 @@
 
 /datum/quirk/social_anxiety/on_process()
 	var/nearby_people = 0
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
 		if(H.client)
 			nearby_people++
 	var/mob/living/carbon/human/H = quirk_holder
 	if(prob(2 + nearby_people))
-		H.stuttering = max(3, H.stuttering)
-	else if(prob(min(3, nearby_people)) && !H.silent)
-		to_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
-		H.silent = max(10, H.silent)
+		H.stuttering = max(4, H.stuttering)
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, "<span class='userdanger'>You think of a dumb thing you said a long time ago and scream internally.</span>")
 		dumb_thing = FALSE //only once per life
@@ -479,6 +478,8 @@
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
 
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	if(prob(75))
 		return
 	var/msg
