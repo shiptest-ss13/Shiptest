@@ -162,7 +162,7 @@
 /////////////////
 
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns
+/obj/item/clothing/suit/armor/vest/suns
 	name = "peacekeeper plating"
 	desc = "A standard issue set of plate assigned to peacekeepers, both durable and stylish."
 	icon_state = "suns_pkarmor"
@@ -171,21 +171,22 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
+/obj/item/clothing/suit/armor/vest/suns/hos
 	name = "gilded peacekeeper plating"
 	desc = "A set of plate assigned to peacekeepers, both durable and stylish. This one has a gold lining to indicate rank."
 	icon_state = "suns_lpkarmor"
 	item_state = "suns_pkarmor"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos //remind me to make this something to buy
+/obj/item/clothing/suit/armor/vest/suns/ehos //remind me to make this something to buy
 	name = "peacekeeper greatcoat"
 	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/toggle/suns/pkcoat
 	name = "peacekeeper coat"
@@ -195,22 +196,22 @@
 	armor = list("melee" = 15, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 25)
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
+/obj/item/clothing/suit/armor/vest/suns/captain
 	name = "decorated academic coat"
 	desc = "An armored coat intended for SUNS captains on the frontier. Go forth, and spread the message of the academy."
 	icon_state = "suns_captaincoat"
 	item_state = "suns_overblack"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
+/obj/item/clothing/suit/armor/vest/suns/xo
 	name = "academic staff coat"
 	desc = "A white coat used by SUNS academic staff. It designates the second in command on the ship."
 	icon_state = "suns_xojacket"
 	item_state = "suns_overwhite"
-
 
 ///////////////
 //Spacesuits//
@@ -343,7 +344,7 @@
 	icon_state = "sunsvisor"
 	item_state = "suns_pkhelmet"
 	tint = 0
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // identical stats to bulletproof helmet, as chest matches bulletproof vest
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // identical stats to vest
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //Why? Because I'm not giving PK's sec masks nor hud sunglasses.
 	icon = 'icons/obj/clothing/faction/suns/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
