@@ -234,8 +234,8 @@ Acquire: Anomaly
 	value = 3000
 	duration = 100 MINUTES
 	dur_mod_range = 0.2
-	container_type =
-	objective_type =
+	container_type = /obj/item/storage/toolbox/bounty/hunt
+	objective_type = /obj/item/clothing/neck/dogtag
 	num_wanted = 3
 
 /datum/mission/acquire/bounty/ramzi
@@ -245,8 +245,8 @@ Acquire: Anomaly
 	value = 4000
 	duration = 120 MINUTES
 	dur_mod_range = 0.1
-	container_type =
-	objective_type =
+	container_type = /obj/item/storage/toolbox/bounty/hunt
+	objective_type = /obj/item/clothing/neck/dogtag/ramzi
 	num_wanted = 3
 
 /datum/mission/acquire/salvage
@@ -256,8 +256,8 @@ Acquire: Anomaly
 	value = 4000
 	duration = 80 MINUTES
 	dur_mod_range = 0.3
-	container_type =
-	objective_type =
+	container_type = /obj/item/storage/toolbox/bounty/salvage
+	objective_type = /obj/item/circuitboard/machine/protolathe
 	num_wanted = 1
 
 /*
