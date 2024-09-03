@@ -310,6 +310,15 @@
 	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
 
+/obj/item/clothing/neck/dogtag
+	name = "frontiersman dogtag"
+	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+	icon_state = "shipkey"
+
+/obj/item/clothing/neck/dogtag/ramzi
+	name = "ramzi clique dogtag"
+	desc = "A dogtag marked with the name and rank of a Ramzi Clique pirate. You could turn this in to an outpost console contract for money."
+
 //////////////
 //DOPE BLING//
 //////////////

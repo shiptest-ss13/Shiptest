@@ -324,6 +324,26 @@
 	STR.max_combined_w_class = 4
 	STR.max_items = 2
 
+/obj/item/storage/toolbox/bounty/hunt
+	name = "dogtag case"
+	desc = "Store pirate dogtags in here."
+
+/obj/item/storage/toolbox/bounty/hunt/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 6
+	STR.max_items = 3
+
+/obj/item/storage/toolbox/bounty/salvage
+	name = "research case"
+	desc = "Store salvaged science equipment in here."
+
+/obj/item/storage/toolbox/bounty/salvage/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 2
+	STR.max_items = 1
+
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots
