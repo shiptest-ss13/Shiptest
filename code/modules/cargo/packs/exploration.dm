@@ -35,7 +35,7 @@
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
 	desc = "Contains two pickaxes, 2 sets of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
-	cost = 750
+	cost = 500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
