@@ -292,7 +292,7 @@
 	name = "ammo box (10mm rubbershot)"
 	desc = "A box of 10mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "10mmbox-rubbershot"
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm armor-piercing)"
