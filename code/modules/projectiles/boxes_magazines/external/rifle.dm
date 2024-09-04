@@ -119,7 +119,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/e40
-	name = "E-40 magazine (.229 Eoehoma caseless)"
+	name = "E-40 magazine (.299 Eoehoma caseless)"
 	icon_state = "e40_mag-1"
 	base_icon_state = "e40_mag"
 	ammo_type = /obj/item/ammo_casing/caseless/c299

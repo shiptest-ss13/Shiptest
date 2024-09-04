@@ -99,10 +99,6 @@
 		log_message("Attack by hulk. Attacker - [user].", LOG_MECHA, color="red")
 		log_combat(user, src, "punched", "hulk powers")
 
-/obj/mecha/blob_act(obj/structure/blob/B)
-	log_message("Attack by blob. Attacker - [B].", LOG_MECHA, color="red")
-	take_damage(30, BRUTE, "melee", 0, get_dir(src, B))
-
 /obj/mecha/attack_tk()
 	return
 
