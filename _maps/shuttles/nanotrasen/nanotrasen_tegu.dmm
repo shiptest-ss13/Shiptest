@@ -43,6 +43,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 2
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "am" = (
@@ -79,8 +82,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "aB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -330,8 +334,11 @@
 	id = "tegus_qmwindow";
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/carpet/orange,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "cE" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -544,6 +551,9 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "dL" = (
@@ -586,7 +596,7 @@
 /obj/structure/sign/poster/official/build{
 	pixel_x = 32
 	},
-/obj/machinery/pdapainter,
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dZ" = (
@@ -596,7 +606,7 @@
 	id = "tegus_qmwindow"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "ek" = (
 /obj/effect/turf_decal/siding/white/end{
 	dir = 4
@@ -806,13 +816,22 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lamp/green{
-	pixel_y = 10;
-	layer = 3.3;
-	pixel_x = 6
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/item/paper{
+	pixel_x = 3
+	},
+/obj/item/book/manual/wiki/command{
+	pixel_y = 3
+	},
+/obj/item/pen/fountain{
+	pixel_y = 2;
+	pixel_x = -4
 	},
 /turf/open/floor/carpet/orange,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "hp" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white/end,
@@ -1130,8 +1149,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "jL" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1386,8 +1408,14 @@
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/holosign_creator/engineering,
 /obj/item/clothing/glasses/meson/prescription,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
+"lR" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/crewtwo)
 "lU" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/structure/cable{
@@ -1648,8 +1676,11 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "oF" = (
 /obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1864,7 +1895,7 @@
 	id = "tegus_cewindow"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "qK" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1920,7 +1951,9 @@
 	dir = 4
 	},
 /obj/item/gun/energy/disabler,
-/obj/machinery/newscaster/directional/south,
+/obj/machinery/newscaster/directional/south{
+	pixel_x = -3
+	},
 /obj/structure/closet/wall/orange/directional/west{
 	secure = 1;
 	locked = 1
@@ -1935,8 +1968,13 @@
 /obj/item/megaphone/cargo,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = -20
+	},
 /turf/open/floor/carpet/orange,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "qW" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0
@@ -1950,6 +1988,8 @@
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/holosign_creator/engineering,
 /obj/item/clothing/glasses/meson/prescription,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "qX" = (
@@ -2232,7 +2272,12 @@
 "tu" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/south,
-/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/computer/monitor/retro{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "tz" = (
@@ -2977,6 +3022,10 @@
 	},
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/suit/space/fragile,
+/obj/item/clothing/suit/space/fragile,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "Ar" = (
@@ -3045,6 +3094,9 @@
 /obj/item/storage/box/PDAs,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
+"Bf" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/crewtwo)
 "Bj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -3431,8 +3483,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/orange,
-/area/ship/bridge)
+/area/ship/crew/crewtwo)
 "Fn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -3696,8 +3749,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "Hi" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/suit_storage_unit/engine,
@@ -3941,6 +3997,9 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "JW" = (
@@ -4092,8 +4151,12 @@
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/wood,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "LF" = (
 /obj/structure/dresser{
 	dir = 1
@@ -4241,6 +4304,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"MO" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/crewthree)
 "MW" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/borderfloor{
@@ -4364,6 +4430,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -4501,9 +4570,8 @@
 /area/ship/external/dark)
 "OQ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
 /obj/machinery/airalarm/directional/south,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "OV" = (
@@ -4554,11 +4622,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Px" = (
-/obj/machinery/computer/telecomms/server{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/white/end{
 	dir = 2
+	},
+/obj/machinery/computer/telecomms/server/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications/room)
@@ -4989,6 +5057,9 @@
 	},
 /obj/effect/turf_decal/siding/yellow,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "TP" = (
@@ -5176,7 +5247,9 @@
 	dir = 4
 	},
 /obj/item/gun/energy/disabler,
-/obj/machinery/newscaster/directional/south,
+/obj/machinery/newscaster/directional/south{
+	pixel_x = -3
+	},
 /obj/structure/closet/wall/orange/directional/west{
 	secure = 1;
 	locked = 1
@@ -5190,8 +5263,14 @@
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/holosign_creator/engineering,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = -20
+	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/wood,
-/area/ship/bridge)
+/area/ship/crew/crewthree)
 "Vr" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -5280,6 +5359,7 @@
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "Wx" = (
@@ -6455,10 +6535,10 @@ uF
 uF
 uF
 uF
-Ya
-Rc
-Rc
-Rc
+lR
+Bf
+Bf
+Bf
 bP
 za
 jh
@@ -6484,7 +6564,7 @@ uF
 dZ
 Fj
 qT
-Rc
+Bf
 ZK
 Ij
 Ij
@@ -6533,10 +6613,10 @@ uF
 uF
 uF
 uF
-Rc
-Rc
-Rc
-Rc
+Bf
+Bf
+Bf
+Bf
 Mv
 bU
 la
@@ -6562,7 +6642,7 @@ uF
 qF
 aA
 Vm
-Rc
+MO
 tz
 qR
 Yk
@@ -6611,10 +6691,10 @@ uF
 uF
 uF
 uF
-Rc
-Rc
-Rc
-Rc
+MO
+MO
+MO
+MO
 Rc
 Rc
 Zm
