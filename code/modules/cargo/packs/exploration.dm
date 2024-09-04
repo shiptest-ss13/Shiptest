@@ -122,7 +122,7 @@
 		/obj/item/pinpointer/mineral
 	)
 
-/datum/supply_pack/exploration/binocular
+/datum/supply_pack/exploration/gps
 	name = "GPS"
 	desc = "Contains a GPS device, useful for finding lost things and not getting lost yourself."
 	cost = 100
