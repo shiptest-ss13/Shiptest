@@ -698,7 +698,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "absolution"
 	item_state = "absolution"
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
-	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially whena bolt action's slower rate of fire would be a liability. Chambered in .357."
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. Chambered in .357."
 	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 
