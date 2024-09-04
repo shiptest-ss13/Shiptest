@@ -179,7 +179,7 @@ Difficulty: Medium
 		var/increment = 360 / spiral_count
 		for(var/j = 1 to spiral_count)
 			var/list/turfs = line_target(j * increment + i * increment / 2, range, src)
-			INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+			INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 		SLEEP_CHECK_DEATH(25)
 	SetRecoveryTime(30)
 
@@ -250,11 +250,11 @@ Difficulty: Medium
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(0, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/line_target(offset, range, atom/at = target)
 	if(!at)
@@ -268,7 +268,7 @@ Difficulty: Medium
 		T = check
 	return (getline(src, T) - get_turf(src))
 
-/mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_line(list/turfs)
+/mob/living/simple_animal/hostile/megafauna/dragon/proc/dragon_fire_line(list/turfs)
 	SLEEP_CHECK_DEATH(0)
 	fire_line(src, turfs)
 

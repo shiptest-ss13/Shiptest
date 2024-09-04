@@ -198,7 +198,7 @@
 			if(D.density)
 				return
 		delayFire += 1.5
-		addtimer(CALLBACK(src, PROC_REF(fire_line), T), delayFire)
+		addtimer(CALLBACK(src, PROC_REF(dragon_fire_line), T), delayFire)
 
 /**
  * What occurs on each tile to actually create the fire.
@@ -209,7 +209,7 @@
  * Arguments:
  * * turf/T - The turf to trigger the effects on.
  */
-/mob/living/simple_animal/hostile/space_dragon/proc/fire_line(turf/T)
+/mob/living/simple_animal/hostile/space_dragon/proc/dragon_fire_line(turf/T)
 	var/list/hit_list = list()
 	hit_list += src
 	new /obj/effect/hotspot(T)
