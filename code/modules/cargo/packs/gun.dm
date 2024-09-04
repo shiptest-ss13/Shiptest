@@ -118,7 +118,7 @@
 
 /datum/supply_pack/gun/conflagration
 	name = "Conflagration Lever Action Shotgun Crate"
-	desc = "Contains a lightweight lever-action shotgun with a 5-round capacity."
+	desc = "For when you need to deal with 6 hooligans and look good doing it. Contains one lever-action shotgun, with a 6 round capacity."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/conflagration)
 	crate_name = "shotguns crate"
@@ -150,7 +150,7 @@
 
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
-	desc = "Constains a single lever action rifle chambered in .357 with an 8 round capacity."
+	desc = "Contains a powerful lever-action rifle for hunting larger wildlife. Chambered in .357."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/absolution)
 	crate_name = "shotguns crate"
