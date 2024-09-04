@@ -731,7 +731,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	item_state = "conflagration"
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	desc = "A lightweight lever-action shotgun with a 5 round ammunition capacity. The lever action allows it to be cycled quickly and acurrately. In theory, you could ever operate it one-handed. Chambered in 12g."
-	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for it's size and, more importantly, can be flipped around stylishly."
+	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
