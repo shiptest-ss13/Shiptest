@@ -162,7 +162,7 @@
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
 	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [target.name]!</span>")
 	playsound(src, projectilesound, 100, TRUE)
-	dragon_fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
+	fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter
