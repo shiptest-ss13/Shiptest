@@ -736,7 +736,6 @@
 		/obj/item/seeds/reishi,
 		/obj/item/seeds/cannabis,
 		/obj/item/seeds/starthistle,
-		/obj/item/seeds/cherry/bomb,
 		/obj/item/seeds/berry/glow,
 		/obj/item/seeds/sunflower/moonflower
 		)

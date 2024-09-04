@@ -1,9 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
-/obj/machinery/door/airlock/external{
+/obj/structure/barricade/wooden/crude{
+	layer = 3.2
+	},
+/obj/machinery/door/airlock/shuttle{
 	welded = 1
 	},
-/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "as" = (
@@ -26,6 +28,9 @@
 /area/ruin/jungle/abandonedgarden/dormitories)
 "aV" = (
 /obj/item/seeds/reishi,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "aZ" = (
@@ -57,6 +62,10 @@
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio{
+	pixel_x = -9;
+	pixel_y = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "co" = (
@@ -73,7 +82,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "cT" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "da" = (
@@ -88,6 +97,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
+"ds" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/plant_analyzer,
+/obj/item/reagent_containers/spray/pestspray,
+/obj/item/hatchet/wooden,
+/obj/item/storage/bag/plants/portaseeder,
+/obj/item/shovel/spade,
+/obj/item/cultivator/rake,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "dV" = (
 /obj/item/seeds/chanter,
 /turf/open/floor/mineral/titanium/blue,
@@ -97,7 +117,6 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "en" = (
-/obj/item/seeds/amanita,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "eI" = (
@@ -116,9 +135,22 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
+"fj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "fB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/kitchen)
+"fQ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "gb" = (
 /obj/structure/railing/wood{
@@ -131,7 +163,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "gy" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
@@ -190,6 +222,7 @@
 "iM" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/spacevine,
+/obj/item/seeds/amanita,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "iV" = (
@@ -233,7 +266,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "le" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -275,7 +308,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "nR" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
 /turf/open/floor/plating,
@@ -296,7 +329,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "qg" = (
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/shuttle{
 	welded = 1
 	},
 /obj/structure/barricade/wooden/crude{
@@ -391,10 +424,11 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "uO" = (
-/obj/structure/lattice{
+/obj/effect/decal/fakelattice,
+/obj/structure/chair/wood{
 	dir = 4
 	},
-/obj/structure/chair/wood{
+/obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -404,19 +438,22 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "vn" = (
-/obj/item/melee/baseball_bat,
-/obj/item/shield/riot/buckler{
-	pixel_x = 8;
-	pixel_y = -6
+/obj/structure/railing/corner{
+	dir = 8
 	},
-/turf/open/floor/wood,
-/area/ruin/jungle/abandonedgarden/dormitories)
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "vN" = (
 /obj/structure/spacevine,
+/obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "vS" = (
 /obj/effect/decal/cleanable/garbage,
+/obj/item/trash/cheesie{
+	pixel_x = 10;
+	pixel_y = 13
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "vX" = (
@@ -440,8 +477,14 @@
 /area/ruin/jungle/abandonedgarden/kitchen)
 "xi" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/toy/plush/moth/ragged{
+	pixel_x = -4;
+	pixel_y = 3;
+	desc = "A ragged, well-worn mothperson plushie. It appears to have been hand-sewn, and is stuffed with raw cotton.";
+	name = "worn-out moth plushie"
+	},
+/obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "xp" = (
@@ -475,6 +518,10 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
+"yx" = (
+/obj/structure/railing,
+/turf/open/floor/plating,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "ze" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -512,7 +559,8 @@
 	},
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Bc" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
+/obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "Bh" = (
@@ -560,7 +608,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "BV" = (
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/shuttle{
 	welded = 1
 	},
 /obj/structure/barricade/wooden/crude{
@@ -586,7 +634,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Cr" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
@@ -603,7 +651,7 @@
 	},
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "DM" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/kitchen)
@@ -627,6 +675,18 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
+"ED" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/can/food/beans{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/trash/raisins{
+	pixel_x = 11;
+	pixel_y = 15
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "EI" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/barricade/wooden/crude{
@@ -639,12 +699,16 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "EW" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle{
 	light_range = 2
 	},
 /area/ruin/jungle/abandonedgarden/hydroponics)
+"Fe" = (
+/obj/structure/sign/painting/library,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "Fj" = (
 /turf/template_noop,
 /area/template_noop)
@@ -690,6 +754,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/abandonedgarden/kitchen)
+"HS" = (
+/obj/item/trash/popcorn{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/trash/chips{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Ix" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/kitchen)
@@ -791,7 +866,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Lb" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Ln" = (
@@ -802,11 +877,12 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "MI" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "MX" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/tower,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "Nb" = (
@@ -821,9 +897,24 @@
 "NL" = (
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/cockpit)
+"Oh" = (
+/obj/structure/railing/corner,
+/turf/open/floor/plating,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "Oi" = (
-/obj/item/seeds/tower,
-/obj/effect/decal/cleanable/cobweb,
+/obj/structure/dresser,
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/trash/candle{
+	pixel_x = -8;
+	pixel_y = 18
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "Or" = (
@@ -848,7 +939,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Pg" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating/grass/jungle{
 	light_range = 2
 	},
@@ -881,34 +972,38 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "QE" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/storage/bag/plants/portaseeder,
-/obj/item/cultivator/rake,
-/obj/item/hatchet/wooden,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/shovel/spade,
-/obj/item/reagent_containers/spray/pestspray,
-/obj/item/plant_analyzer,
+/obj/structure/table/wood,
+/obj/item/pen/charcoal{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/paper/crumpled{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/storage/crayons{
+	pixel_x = 0;
+	pixel_y = 12
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "QX" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "Rl" = (
-/obj/structure/dresser,
-/obj/item/trash/candle{
-	pixel_x = -8;
-	pixel_y = 18
-	},
-/obj/item/storage/fancy/candle_box{
+/obj/structure/closet/cabinet,
+/obj/item/shield/riot/buckler{
 	pixel_x = 8;
-	pixel_y = 6
+	pixel_y = -6
 	},
-/obj/item/lighter/greyscale{
-	pixel_x = -7;
-	pixel_y = 4
-	},
+/obj/item/melee/baseball_bat,
+/obj/item/clothing/under/color/white,
+/obj/item/clothing/under/color/white,
+/obj/item/clothing/under/color/jumpskirt/white,
+/obj/item/clothing/under/color/jumpskirt/white,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/wood,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "Rr" = (
@@ -941,7 +1036,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Tr" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
@@ -970,7 +1065,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Uj" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
@@ -981,7 +1076,7 @@
 	},
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "UQ" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
@@ -1007,7 +1102,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Wg" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Wm" = (
@@ -1063,13 +1158,9 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "XF" = (
-/obj/structure/barricade/wooden/crude{
-	layer = 3.2
-	},
-/obj/machinery/door/airlock/external{
-	welded = 1
-	},
-/turf/open/floor/plating,
+/obj/structure/easel,
+/obj/item/canvas/twentythreeXtwentythree,
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "XU" = (
 /obj/structure/spacevine,
@@ -1102,6 +1193,9 @@
 "ZD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/railing/corner{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "ZG" = (
@@ -1299,8 +1393,8 @@ Fj
 (9,1,1) = {"
 iA
 eI
+af
 XF
-Ix
 GL
 QX
 Ix
@@ -1321,7 +1415,7 @@ Fj
 (10,1,1) = {"
 Kn
 zZ
-Za
+Fe
 ko
 rd
 zg
@@ -1344,9 +1438,9 @@ Ub
 Ub
 db
 Za
-fB
+ds
 wf
-rd
+Oh
 uO
 aV
 Vc
@@ -1368,9 +1462,9 @@ UQ
 WT
 QE
 mC
-rd
+yx
 pu
-Km
+fQ
 KN
 WT
 ql
@@ -1390,8 +1484,8 @@ Ub
 WT
 vX
 Qf
-Ix
-GL
+vn
+fj
 ZD
 nR
 WT
@@ -1543,7 +1637,7 @@ iA
 CY
 as
 Rl
-vn
+bU
 bU
 Zq
 gw
@@ -1609,7 +1703,7 @@ Ub
 eI
 kh
 vS
-db
+ED
 eI
 ii
 RT
@@ -1630,7 +1724,7 @@ Ub
 Yw
 eI
 ii
-eI
+HS
 cp
 eI
 db
