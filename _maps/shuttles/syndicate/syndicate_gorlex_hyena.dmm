@@ -177,8 +177,8 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1028,12 +1028,13 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /obj/item/clothing/under/syndicate/ngr,
 /obj/item/clothing/suit/hazardvest/ngr,
 /obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/gloves/color/red/insulated,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "rM" = (
@@ -1270,8 +1271,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -1332,8 +1333,8 @@
 "wP" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/crate{
-	name = "desert equipment crate";
-	desc = "A rectangular steel crate containing supplies to survive a desert environment more easily."
+	desc = "A rectangular steel crate containing supplies to survive a desert environment more easily.";
+	name = "desert equipment crate"
 	},
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/item/clothing/neck/shemagh/ngr,
@@ -1754,8 +1755,8 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -1854,8 +1855,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1946,9 +1947,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/light_switch{
+	dir = 4;
 	pixel_x = -20;
-	pixel_y = 12;
-	dir = 4
+	pixel_y = 12
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -2854,8 +2855,8 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -3133,8 +3134,8 @@
 	req_access = null
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
