@@ -8,13 +8,13 @@
 
 /datum/supply_pack/exploration/lava
 	name = "Lava Exploration Kit"
-	desc = "Contains two pickaxes, 60 lavaproof rods, and goggles to protect eyes from the heat"
-	cost = 1500
+	desc = "Contains two pickaxes, 60 lavaproof rods, two pocket extinguishers and goggles to protect yourself from the heat."
+	cost = 500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
-		/obj/item/clothing/glasses/heat,
-		/obj/item/clothing/glasses/heat,
+		/obj/item/extinguisher/mini,
+		/obj/item/extinguisher/mini,
 		/obj/item/clothing/glasses/heat,
 		/obj/item/clothing/glasses/heat,
 		/obj/item/stack/rods/lava/thirty,
@@ -22,33 +22,44 @@
 	)
 	crate_name = "Lava Exploration Kit"
 
+/datum/supply_pack/exploration/lavaproof_ords
+	name ="Lavaproof Rods Crate"
+	desc = "Contains 60 lavaproof rods for safely traversing molten pits."
+	cost = 200
+	contains = list(
+		/obj/item/stack/rods/lava/thirty,
+		/obj/item/stack/rods/lava/thirty,
+		)
+	crate_name = "Lavaproof Rod Crate"
+
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
-	desc = "Contains two pickaxes, winter clothes, and goggles to protect eyes from the cold"
-	cost = 1500
+	desc = "Contains two pickaxes, 2 sets of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
+	cost = 750
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/glasses/cold,
-		/obj/item/clothing/glasses/cold,
-		/obj/item/clothing/glasses/cold,
-		/obj/item/clothing/shoes/winterboots,
-		/obj/item/clothing/shoes/winterboots,
-		/obj/item/clothing/shoes/winterboots,
-		/obj/item/clothing/shoes/winterboots,
+		/obj/item/clothing/suit/hooded/wintercoat,
+		/obj/item/clothing/suit/hooded/wintercoat,
+		/obj/item/clothing/shoes/winterboots/ice_boots,
+		/obj/item/clothing/shoes/winterboots/ice_boots,
 	)
 	crate_name = "Ice Exploration Kit"
 
 /datum/supply_pack/exploration/jungle
 	name = "Jungle Exploration Kit"
-	desc = "Contains hatchets, picks, and antivenom, great for dense jungles!"
-	cost = 750
+	desc = "Contains a hatchets, two picks and lanterns, plus antivenom pills, great for dense jungles!"
+	cost = 500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
+		/obj/item/flashlight/lantern,
+		/obj/item/flashlight/lantern,
 		/obj/item/storage/pill_bottle/charcoal,
 		/obj/item/storage/pill_bottle/charcoal,
+		/obj/item/hatchet,
 		/obj/item/hatchet,
 	)
 	crate_name = "Jungle Exploration Kit"
@@ -76,16 +87,45 @@
 	crate_name = "Beach Kit"
 
 /*
-		Heavy Duty Exploration Gear
+		General Exploration Gear
 */
 
 /datum/supply_pack/exploration/capsules
-	name = "Bluespace Shelter Capsules"
-	desc = "A trio of Bluespace Shelter Capsules, for instant shelter in rough situations."
-	cost = 3000
+	name = "Bluespace Shelter Capsule"
+	desc = "Contains a Bluespace Shelter Capsule, for instant shelter in rough situations."
+	cost = 500
 	contains = list(
-		/obj/item/survivalcapsule,
-		/obj/item/survivalcapsule,
-		/obj/item/survivalcapsule,
+		/obj/item/survivalcapsule
 	)
 
+/datum/supply_pack/exploration/binocular
+	name = "Binoculars"
+	desc = "One pair of binoculars for surveying terrain."
+	cost = 200
+	contains = list(
+		/obj/item/binoculars
+	)
+
+/datum/supply_pack/exploration/anom_neutralizer
+	name = "Anomaly Neutralizer"
+	desc = "A single use anomaly neutralizer for stabalizing hazardous anomalies."
+	cost = 250
+	contains = list(
+		/obj/item/anomaly_neutralizer
+	)
+
+/datum/supply_pack/exploration/mineral_scanner
+	name = "Underground Mineral Scanner"
+	desc = "Contains an underground mineral scanner for locating veins of ore beneath the earth. Deep core laser drill for extracting said ores not included."
+	cost = 250
+	contains = list(
+		/obj/item/pinpointer/mineral
+	)
+
+/datum/supply_pack/exploration/binocular
+	name = "GPS"
+	desc = "Contains a GPS device, useful for finding lost things and not getting lost yourself."
+	cost = 100
+	contains = list(
+		/obj/item/gps
+	)
