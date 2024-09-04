@@ -61,7 +61,7 @@
 
 EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
-/obj/item/gun/ballistic/automatic/pistol/syndicate
+/obj/item/gun/ballistic/automatic/pistol/syndicate/indie
 	name = "Ringneck-76"
 	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10mm."
 
@@ -196,6 +196,16 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
+
+/obj/item/gun/ballistic/revolver/viper/indie
+	name = "Viper-23"
+	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
+
+	icon_state = "viper23"
+	item_state = "viper23"
+
+	semi_auto = FALSE //not double action
+	safety_wording = "hammer"
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -379,6 +389,20 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
 EMPTY_GUN_HELPER(automatic/smg/c20r)
 
+/obj/item/gun/ballistic/automatic/smg/c20r/cobra
+	name = "Cobra-20"
+	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
+	icon_state = "cobra20"
+	item_state = "cobra20"
+
+EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
+
+
+/obj/item/gun/ballistic/automatic/smg/c20r/suns
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
+	icon_state = "c20r_suns"
+	item_state = "c20r_suns"
+
 /obj/item/ammo_box/magazine/smgm45
 
 /obj/item/ammo_box/magazine/m45_cobra
@@ -396,21 +420,6 @@ EMPTY_GUN_HELPER(automatic/smg/c20r)
 
 /obj/item/ammo_box/magazine/m45_cobra/empty
 	start_empty = TRUE
-
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra
-	name = "Cobra-20"
-	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
-	icon_state = "cobra20"
-	item_state = "cobra20"
-
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/smg/c20r/suns
-	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
-	icon_state = "c20r_suns"
-	item_state = "c20r_suns"
-
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder
 	name = "CDW-81 \"Sidewinder\""
@@ -535,12 +544,23 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 
 /obj/item/ammo_box/magazine/boomslang
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
-	base_icon_state = "boomslang_mag"
+	desc = "A large 7-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	base_icon_state = "boomslang"
 	icon_state = "boomslang-1"
 	ammo_type = /obj/item/ammo_casing/a65clip
 	caliber = "6.5CLIP"
-	max_ammo = 6
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/boomslang/short
+	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
+	desc = "A large 7-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	base_icon_state = "boomslang_short"
+	icon_state = "boomslang_short-5"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	caliber = "6.5CLIP"
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_PER_BULLET
 
 
 /obj/item/gun/ballistic/automatic/marksman/sniper_rifle
@@ -612,6 +632,10 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	fire_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.18 SECONDS
@@ -653,17 +677,64 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 		if (!magazine.ammo_count())
 			. += "hydra_mag_empty"
 
-/obj/item/ammo_box/magazine/m556
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg
+	name = "SAW-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a support weapon, with heavier components for sustained firing and a large muzzle brake. Chambered in 5.56mm CLIP."
 
-/obj/item/ammo_box/magazine/m556_42_hydra
-	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_mag-30"
-	base_icon_state = "hydra_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
-	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	icon_state = "hydra_lmg"
+	item_state = "hydra_lmg"
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.1 SECONDS
+	spread = 6
+	spread_unwielded = 20
+	wield_slowdown = 0.8 //better than the skm lmg since it doesnt have a bipod, still not ideal
+	wield_delay = 0.85 SECONDS //ditto
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 15,
+		)
+	)
+
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr
+	name = "SBR-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a marksman rifle, with an extended barrel and medium-zoom scope. Its lightweight cartridge is compensated for with a 2-round burst action. Chambered in 5.56mm CLIP."
+
+	icon_state = "hydra_dmr"
+	item_state = "hydra_dmr"
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	spread = 0
+	spread_unwielded = 12
+	wield_slowdown = 0.8 //dmrrrr
+	wield_delay = 0.85 SECONDS //above
+
 
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 	name = "SMR-80 \"Hydra\""
@@ -734,6 +805,48 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/proc/secondary_update_icon()
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+
+
+/obj/item/ammo_box/magazine/m556
+
+/obj/item/ammo_box/magazine/m556_42_hydra
+	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
+	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "hydra_mag-30"
+	base_icon_state = "hydra_mag"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/m556_42_hydra/update_icon_state()
+	. = ..()
+	if(multiple_sprites == AMMO_BOX_FULL_EMPTY)
+		return
+	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
+
+/obj/item/ammo_box/magazine/m556_42_hydra/small
+	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
+	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
+	icon_state = "hydra_small_mag-20"
+	base_icon_state = "hydra_small_mag"
+	max_ammo = 20
+
+/obj/item/ammo_box/magazine/m556_42_hydra/extended
+	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
+	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "hydra_extended_mag-1"
+	base_icon_state = "hydra_extended_mag"
+	max_ammo = 60
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m556_42_hydra/casket
+	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
+	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "hydra_casket_mag-1"
+	base_icon_state = "hydra_casket_mag"
+	max_ammo = 100
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	w_class = WEIGHT_CLASS_NORMAL
 
 //########### MISC ###########//
 // Bulldog shotgun //

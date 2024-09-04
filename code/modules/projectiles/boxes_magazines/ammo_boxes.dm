@@ -2,12 +2,12 @@
 
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
-	icon_state = "speedloader_357-7"
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
+	icon_state = "speedloader_357-6"
 	base_icon_state = "speedloader_357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
 	w_class = WEIGHT_CLASS_TINY
@@ -18,12 +18,12 @@
 
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 match)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	ammo_type = /obj/item/ammo_casing/a357/match
 
 /obj/item/ammo_box/a357/hp
 	name = "speed loader (.357 hollow point)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a357_box
