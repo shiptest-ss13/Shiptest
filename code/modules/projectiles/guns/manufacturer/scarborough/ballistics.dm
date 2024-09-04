@@ -364,6 +364,7 @@ EMPTY_GUN_HELPER(automatic/pistol/syndicate)
 
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
+	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = list(
@@ -442,19 +443,24 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 
 	rack_sound = 'sound/weapons/gun/smg/sidewinder_cocked.ogg'
 
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
+	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
+		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -464,8 +470,20 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 35,
 			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 17,
+			"y" = 18,
 		)
 	)
+
+	spread = 7
+	spread_unwielded = 10
+
+	recoil = 0
+	recoil_unwielded = 4
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/sidewinder)
 
 
 EMPTY_GUN_HELPER(automatic/smg/sidewinder)
@@ -500,6 +518,8 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 	fire_delay = 1 SECONDS
 
 	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
+	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
@@ -590,6 +610,8 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
+	show_ammo_capacity_on_magazine_sprite = TRUE
+
 	spread = -5
 	spread_unwielded = 40
 	recoil = 5
@@ -636,7 +658,7 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
-	burst_size = 3
+	burst_size = 2
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.18 SECONDS
 	spread = 1
@@ -669,13 +691,26 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 		)
 	)
 
-	//we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
+//we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
 /obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
 	. = ..()
 	if (magazine)
 		. += "hydra_mag_[magazine.base_icon_state]"
-		if (!magazine.ammo_count())
-			. += "hydra_mag_empty"
+		var/capacity_number = 0
+		switch(get_ammo() / magazine.max_ammo)
+			if(0.2 to 0.39)
+				capacity_number = 20
+			if(0.4 to 0.59)
+				capacity_number = 40
+			if(0.6 to 0.79)
+				capacity_number = 60
+			if(0.8 to 0.99)
+				capacity_number = 80
+			if(1.0 to 2.0) //to catch the chambered round
+				capacity_number = 100
+		if (capacity_number)
+			. += "hydra_mag_[magazine.base_icon_state]_[capacity_number]"
+
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg
 	name = "SAW-80 \"Hydra\""
@@ -687,12 +722,12 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	burst_delay = 0.1 SECONDS
+	burst_delay = 0.08 SECONDS
 	fire_delay = 0.1 SECONDS
 	spread = 6
 	spread_unwielded = 20
-	wield_slowdown = 0.8 //better than the skm lmg since it doesnt have a bipod, still not ideal
-	wield_delay = 0.85 SECONDS //ditto
+	wield_slowdown = 0.85 //better than the lmgs since it doesnt have a bipod, still not ideal
+	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
@@ -734,6 +769,13 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	spread_unwielded = 12
 	wield_slowdown = 0.8 //dmrrrr
 	wield_delay = 0.85 SECONDS //above
+	spawnwithmagazine = FALSE //so we spawn with the short magaine
+	zoomable = TRUE
+
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/m556_42_hydra/small(src)
+	chamber_round()
 
 
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl

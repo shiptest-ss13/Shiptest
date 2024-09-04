@@ -1,4 +1,6 @@
 /obj/item/gun/ballistic/automatic/smg
+	show_magazine_on_sprite = TRUE
+
 	burst_size = 2
 	actions_types = list()
 	fire_delay = 0.13 SECONDS
@@ -170,7 +172,7 @@
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
 	spread = 7
-	recoil_unwielded = 10
+	spread_unwielded = 10
 
 	recoil = 0
 	recoil_unwielded = 4

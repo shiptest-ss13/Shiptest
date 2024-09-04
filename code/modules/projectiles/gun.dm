@@ -232,6 +232,8 @@
 	var/empty_indicator = FALSE
 	///Whether the sprite has a visible magazine or not
 	var/show_magazine_on_sprite = FALSE
+	///Do we show how much ammo is left on the sprite? In increments of 20.
+	var/show_ammo_capacity_on_magazine_sprite = FALSE
 	///Whether the sprite has a visible ammo display or not
 	var/show_magazine_on_sprite_ammo = FALSE
 	///Whether the gun supports multiple special mag types
