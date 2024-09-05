@@ -208,7 +208,7 @@
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
-				if (!chambered && !(reciever_flags & AMMO_RECIEVER_REQUIRES_UNIQUE_ACTION) && !(reciever_flags & AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE))
+				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
 				new_mag.update_appearance()
 				update_appearance()
