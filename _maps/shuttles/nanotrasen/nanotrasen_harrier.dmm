@@ -1539,6 +1539,7 @@
 /area/ship/crew/law_office)
 "ih" = (
 /obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "ir" = (
@@ -2499,12 +2500,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "ok" = (
-/obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_y = 32
-	},
-/obj/item/toy/plush/moth/firewatch,
-/obj/item/toy/sword,
-/turf/open/floor/plating,
+/turf/closed/wall/mineral/titanium/exterior,
 /area/ship/engineering/engine)
 "ol" = (
 /obj/structure/closet/secure_closet/captains{
@@ -2722,6 +2718,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"qa" = (
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_y = 32
+	},
+/obj/item/toy/plush/moth/firewatch,
+/obj/item/toy/sword,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "qf" = (
 /obj/structure/chair/comfy/blue/corpo/directional/north,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line,
@@ -5541,7 +5545,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "EF" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/incinerator_output{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
 	dir = 4;
 	piping_layer = 5
 	},
@@ -6144,11 +6148,11 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -24
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -7353,6 +7357,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "Oh" = (
@@ -7544,7 +7551,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "Pq" = (
-/turf/closed/wall/mineral/titanium/exterior,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/suit_storage_unit/atmos,
+/turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Pr" = (
 /obj/structure/cable{
@@ -9568,8 +9577,8 @@ MZ
 MZ
 MZ
 MZ
-MZ
-Pq
+ok
+AE
 AE
 AE
 AE
@@ -9577,8 +9586,8 @@ Ci
 AE
 AE
 AE
-Pq
-MZ
+AE
+ok
 MZ
 MZ
 MZ
@@ -9607,17 +9616,17 @@ MZ
 MZ
 MZ
 MZ
-Pq
 AE
+Pq
 Io
 LK
 EF
 tQ
 Uj
 AE
-ok
 AE
-Pq
+qa
+AE
 MZ
 MZ
 MZ
