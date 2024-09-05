@@ -435,8 +435,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-
-
 	icon_state = "cm15"
 	item_state = "cm15"
 
@@ -446,7 +444,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	weapon_weight = WEAPON_MEDIUM
-//	can_suppress = FALSE
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 
 	empty_indicator = FALSE
