@@ -64,39 +64,3 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 	spread = -4
 
 EMPTY_GUN_HELPER(automatic/marksman/ebr)
-
-/obj/item/gun/ballistic/automatic/marksman/gal
-	name = "\improper CM-GAL-S"
-	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War, this particular model is in a carbine configuration, and, as such, is shorter than the standard model. Chambered in .308."
-
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "gal"
-	item_state = "gal"
-	show_magazine_on_sprite = TRUE
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
-	default_ammo_type = /obj/item/ammo_box/magazine/gal
-	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
-	burst_size = 0
-	actions_types = list()
-	manufacturer = MANUFACTURER_MINUTEMAN
-
-	wield_slowdown = 2
-	spread = -4
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
-
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq
-	name = "\improper SsG-04"
-	desc = "A marksman rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
-	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	icon_state = "gal-inteq"
-	item_state = "gal-inteq"

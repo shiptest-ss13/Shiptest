@@ -39,7 +39,7 @@
 	icon_state = "frontiersmanranged_mask"
 	icon_living = "frontiersmanranged_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver,
+				/obj/item/gun/ballistic/revolver/syndicate,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)

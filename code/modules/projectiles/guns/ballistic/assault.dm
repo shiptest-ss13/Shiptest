@@ -97,7 +97,7 @@
 /obj/item/gun/ballistic/automatic/assault/p16/no_mag
 	default_ammo_type = null
 
-/obj/item/gun/ballistic/automatic/assault/p16/minutemen
+/obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"
 	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -141,7 +141,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
+	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .299 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
@@ -246,9 +246,8 @@
 /obj/item/gun/ballistic/automatic/assault/e40/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
 	secondary.pre_fire(target, user, message, flag, params, zone_override, bonus_spread)
 
-
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return installed_cell
+/obj/item/gun/ballistic/automatic/assault/e40/get_cell()
+	return secondary.get_cell()
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()

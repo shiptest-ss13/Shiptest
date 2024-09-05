@@ -22,6 +22,7 @@
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
 		/obj/item/gun/ballistic/automatic/assault/e40,
+		/obj/item/stock_parts/cell/gun
 		))
 
 /obj/machinery/recharger/RefreshParts()
@@ -31,19 +32,22 @@
 /obj/machinery/recharger/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += "<span class='warning'>You're too far away to examine [src]'s contents and display!</span>"
+		. += span_warning("You're too far away to examine [src]'s contents and display!")
 		return
 
 	if(charging)
-		. += {"<span class='notice'>\The [src] contains:</span>
-		<span class='notice'>- \A [charging].</span>"}
+		. += span_notice("\The [src] contains:")
+		. += span_notice("- \A [charging].")
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += "<span class='notice'>The status display reads:</span>"
-		. += "<span class='notice'>- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.</span>"
+		. += span_notice("The status display reads:")
+		. += span_notice("- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.")
 		if(charging)
 			var/obj/item/stock_parts/cell/C = charging.get_cell()
-			. += "<span class='notice'>- \The [charging]'s cell is at <b>[C.percent()]%</b>.</span>"
+			if(istype(charging, /obj/item/stock_parts/cell))
+				. += span_notice("- \The [charging]'s charge is at <b>[C.percent()]%</b>.")
+			else
+				. += span_notice("- \The [charging]'s cell is at <b>[C.percent()]%</b>.")
 
 
 /obj/machinery/recharger/proc/setCharging(new_charging)
@@ -62,11 +66,11 @@
 /obj/machinery/recharger/attackby(obj/item/G, mob/user, params)
 	if(G.tool_behaviour == TOOL_WRENCH)
 		if(charging)
-			to_chat(user, "<span class='notice'>Remove the charging item first!</span>")
+			to_chat(user, span_notice("Remove the charging item first!"))
 			return
 		set_anchored(!anchored)
 		power_change()
-		to_chat(user, "<span class='notice'>You [anchored ? "attached" : "detached"] [src].</span>")
+		to_chat(user, span_notice("You [anchored ? "attached" : "detached"] [src]."))
 		G.play_tool_sound(src)
 		return
 
@@ -80,13 +84,13 @@
 			//Checks to make sure he's not in space doing it, and that the area got proper power.
 			var/area/a = get_area(src)
 			if(!isarea(a) || a.power_equip == 0)
-				to_chat(user, "<span class='notice'>[src] blinks red as you try to insert [G].</span>")
+				to_chat(user, span_notice("[src] blinks red as you try to insert [G]."))
 				return TRUE
 
 			if (istype(G, /obj/item/gun/energy))
 				var/obj/item/gun/energy/E = G
 				if(!E.can_charge)
-					to_chat(user, "<span class='notice'>Your gun has no external power connector.</span>")
+					to_chat(user, span_notice("Your gun has no external power connector."))
 					return TRUE
 
 			if(!user.transferItemToLoc(G, src))
@@ -94,7 +98,7 @@
 			setCharging(G)
 
 		else
-			to_chat(user, "<span class='notice'>[src] isn't connected to anything!</span>")
+			to_chat(user, span_notice("[src] isn't connected to anything!"))
 		return TRUE
 
 	if(anchored && !charging)

@@ -38,3 +38,7 @@
 
 /obj/item/attachment/foldable_stock/inteq
 	icon_state = "skm-inteqsmg-stock"
+
+/obj/item/attachment/foldable_stock/spitter
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	icon_state = "spitter_stock"

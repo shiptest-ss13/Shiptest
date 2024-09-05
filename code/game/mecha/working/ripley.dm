@@ -107,7 +107,7 @@
 	light_range = 7
 	light_power = 1
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
-	step_energy_drain = 0
+	base_step_energy_drain = 0
 	enclosed = TRUE
 	enter_delay = 40
 	silicon_icon_state = null
@@ -171,7 +171,7 @@
 	name = "\improper CLIP APLU Mk-IV \"Rogue\""
 	icon_state = "clipripley"
 	base_icon_state = "clipripley"
-	step_energy_drain = 15 //overdriven servos are less efficient
+	base_step_energy_drain = 20 //overdriven servos are less efficient
 	wreckage = /obj/structure/mecha_wreckage/ripley/clip
 	enclosed = TRUE
 	enter_delay = 20 //slower than a mk. I, faster than the armored Ripleys

@@ -77,34 +77,6 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 /obj/item/gun/ballistic/automatic/smg/wt550/no_mag
 	default_ammo_type = null
 
-/obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "\improper Type U3 Uzi"
-	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
-
-	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
-	icon_state = "uzi"
-
-	default_ammo_type = /obj/item/ammo_box/magazine/uzim9mm
-	bolt_type = BOLT_TYPE_OPEN
-	show_magazine_on_sprite = TRUE
-
-	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
-	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-
-	load_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-
-	spread = 4
-	spread_unwielded = 8
-	wield_slowdown = 0.25
-	wield_delay = 0.2 SECONDS
-	fire_delay = 0.1 SECONDS
-
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
 	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
@@ -232,41 +204,6 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 	. = ..()
 	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
 	chamber_round()
-
-/obj/item/gun/ballistic/automatic/smg/cm5
-	name = "\improper CM-5"
-	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	icon_state = "cm5"
-	item_state = "cm5"
-
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
-	manufacturer = MANUFACTURER_MINUTEMAN
-
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
-
-EMPTY_GUN_HELPER(automatic/smg/cm5)
-
-/obj/item/gun/ballistic/automatic/smg/cm5/compact
-	name = "\improper CM-5c"
-	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excels at close range and is very lightweight. You feel like this gun is mildly unfinished. Chambered in 9mm."
-	w_class = WEIGHT_CLASS_NORMAL
-	spread = 25
-	spread_unwielded = 40
-
-	fire_delay = 0.08 SECONDS
-
-	recoil = 1
-	recoil_unwielded = 2
-	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
