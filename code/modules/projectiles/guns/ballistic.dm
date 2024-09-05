@@ -34,6 +34,8 @@
 		)
 	)
 
+	min_recoil = 0.25
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
