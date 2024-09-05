@@ -93,6 +93,7 @@
 #define AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE (1<<11) //The ammo stay in the magazine until the last moment
 #define AMMO_RECIEVER_AUTO_EJECT_LOCKED (1<<12) //Not allowed to turn automatic unloading off
 #define AMMO_RECIEVER_CELL (1<<13)
+#define AMMO_RECIEVER_SECONDARY_CELL (1<<14)
 
 /////////////////
 // ATTACHMENTS //
