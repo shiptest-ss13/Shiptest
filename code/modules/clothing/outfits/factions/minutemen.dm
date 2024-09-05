@@ -93,6 +93,7 @@
 	head = /obj/item/clothing/head/hardhat/white
 	ears = /obj/item/radio/headset/clip
 	uniform = /obj/item/clothing/under/clip
+	gloves = /obj/item/clothing/gloves/color/yellow
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
