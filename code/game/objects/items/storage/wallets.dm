@@ -19,26 +19,21 @@
 		/obj/item/spacecash/bundle,
 		/obj/item/holochip,
 		/obj/item/card,
-		/obj/item/clothing/mask/cigarette,
 		/obj/item/flashlight/pen,
 		/obj/item/seeds,
-		/obj/item/stack/medical,
 		/obj/item/toy/crayon,
 		/obj/item/coin,
 		/obj/item/dice,
 		/obj/item/disk,
-		/obj/item/implanter,
 		/obj/item/lighter,
+		/obj/item/key/ship,
+		/obj/item/gun/ballistic/derringer,
 		/obj/item/lipstick,
 		/obj/item/match,
 		/obj/item/paper,
 		/obj/item/pen,
 		/obj/item/photo,
-		/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/screwdriver,
-		/obj/item/stamp),
-		list(/obj/item/screwdriver/power))
+		/obj/item/stamp))
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)
 	. = ..()

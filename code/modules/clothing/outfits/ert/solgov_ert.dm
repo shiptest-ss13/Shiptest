@@ -6,7 +6,7 @@
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+	suit = /obj/item/clothing/suit/armor/vest/solgov
 	mask = null
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat

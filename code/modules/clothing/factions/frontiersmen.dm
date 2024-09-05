@@ -73,13 +73,13 @@
 	name = "reinforced fur coat"
 	desc = "A stiff olive-green coat, meant for frigid conditions. Commonly worn by Frontiersmen command."
 	icon_state = "frontier_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|ARMS
 	heat_protection = CHEST|GROIN|ARMS
 	icon_state = "frontier_coat"
 	item_state = "frontier_coat"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 
@@ -87,7 +87,7 @@
 	name = "frontiersmen fireproof coat"
 	desc = "A stiff olive-green coat, used particularly by Frontiersmen flame troopers. It seems to be lined with asbestos, to provide maximum heat and fire deterrence... At the cost of comfort. And mesothelioma."
 	icon_state = "frontier_fireproof_suit"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -144,7 +144,7 @@
 	name = "\improper Frontiersmen officer beret"
 	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
 	icon_state = "frontier_officer_beret"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/frontier
 	name = "frontier surgical cap"
@@ -254,9 +254,14 @@
 		new /obj/item/ammo_box/magazine/skm_762_40(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/security/military/frontiersmen/aps_mp_ammo/PopulateContents() //replace with spitter. remind me.
+/obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/pistolm9mm(src)
+		new /obj/item/ammo_box/magazine/m9mm_mauler(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/spitter_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/spitter_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()
