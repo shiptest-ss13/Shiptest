@@ -410,6 +410,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/item/ammo_box/c22lr_box{
+	pixel_y = 8;
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "gr" = (
@@ -579,6 +584,7 @@
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow,
 /obj/item/gun/ballistic/revolver/shadow,
+/obj/item/gun/ballistic/automatic/smg/pounder,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "jB" = (
@@ -2741,6 +2747,8 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/gun/ballistic/automatic/marksman/vickland,
+/obj/item/ammo_box/vickland_a308/empty,
+/obj/item/ammo_box/vickland_a308/empty,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Oa" = (
