@@ -97,8 +97,8 @@
 			"y" = 23,
 		),
 		ATTACHMENT_SLOT_STOCK = list(
-			"x" = -5,
-			"y" = 18,
+			"x" = 3,
+			"y" = 23,
 		)
 	)
 
@@ -106,8 +106,6 @@
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
-
-
 
 /obj/item/ammo_box/magazine/spitter_9mm
 	name = "spitter pistol magazine (9mm)"

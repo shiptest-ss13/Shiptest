@@ -45,6 +45,8 @@
 		magazine = new default_ammo_type(src)
 	if (!default_ammo_type)
 		get_ammo_list(drop_all = TRUE)
+	if(default_cell_type && reciever_flags & GUN_AMMO_COUNT_BY_PERCENTAGE)
+		installed_cell = new default_cell_type(src)
 	chamber_round()
 	update_appearance()
 

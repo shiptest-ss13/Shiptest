@@ -1,14 +1,6 @@
 /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
-	default_cell_type = /obj/item/stock_parts/cell/gun
-	var/charge_sections = 3
-	var/bullet_energy_cost = 0
-
-/obj/item/gun/ballistic/automatic/powered/fill_gun()
-	. = ..()
-	if(default_cell_type)
-		installed_cell = new default_cell_type(src)
-	update_appearance()
+	reciever_flags = AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_CELL
 
 /obj/item/gun/ballistic/automatic/powered/examine_ammo_count(mob/user)
 	var/list/dat = list()
@@ -41,27 +33,21 @@
 /obj/item/gun/ballistic/automatic/powered/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
 	if(..())
 		return TRUE
-	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
+	if (!internal_cell && istype(new_mag, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/new_cell = new_mag
 		if(installed_cell)
-			to_chat(user, "<span class='warning'>\The [new_mag] already has a cell</span>")
+			to_chat(user, span_warning("\The [new_mag] already has a cell"))
 		insert_cell(user, new_cell)
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
 	if(user.transferItemToLoc(C, src))
 		installed_cell = C
-		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
+		to_chat(user, span_notice("You load the [C] into \the [src]."))
 		playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 		return FALSE
 
 /obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -71,14 +57,14 @@
 	installed_cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_appearance()
-	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	to_chat(user, span_notice("You pull the cell out of \the [src]."))
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
-	if(installed_cell && !internal_magazine)
-		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
+	if(installed_cell && !internal_cell)
+		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
+			to_chat(user, span_notice("You remove the power cell."))
 			eject_cell(user)
 	return ..()
 

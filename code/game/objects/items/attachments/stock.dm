@@ -42,3 +42,6 @@
 /obj/item/attachment/foldable_stock/spitter
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	icon_state = "spitter_stock"
+
+	pixel_shift_x = 24
+	pixel_shift_y = 23

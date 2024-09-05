@@ -43,6 +43,7 @@
 		)
 	)
 
+	reciever_flags = AMMO_RECIEVER_CELL
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_AMMO_COUNT_BY_SHOTS_REMAINING
 
 /obj/item/gun/energy/emp_act(severity)
@@ -285,15 +286,6 @@
 
 /obj/item/gun/energy/get_max_ammo(countchambered = TRUE)
 	return installed_cell.maxcharge
-
-/obj/item/gun/energy/vv_edit_var(var_name, var_value)
-	switch(var_name)
-		if(NAMEOF(src, selfcharge))
-			if(var_value)
-				START_PROCESSING(SSobj, src)
-			else
-				STOP_PROCESSING(SSobj, src)
-	. = ..()
 
 /obj/item/gun/energy/ignition_effect(atom/A, mob/living/user)
 	if(!can_shoot() || !ammo_type[select])

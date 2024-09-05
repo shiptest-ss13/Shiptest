@@ -60,10 +60,7 @@
 	///Default magazine to spawn with.
 	var/default_ammo_type = null
 	///List of allowed specific types. If trying to reload with something in this list it will succeed. This is mainly for use in internal magazine weapons or scenarios where you do not want to inclue a whole subtype.
-	var/list/allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine,
-	)
-	var/default_cell_type = null
+	var/list/allowed_ammo_types = list()
 
 //BALLISTIC
 	///Whether the gun alarms when empty or not.
@@ -317,6 +314,13 @@
 
 	var/gun_features_flags = GUN_AMMO_COUNTER
 	var/reciever_flags = AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_AUTO_EJECT
+
+
+	var/default_cell_type = /obj/item/stock_parts/cell/gun
+	var/list/allowed_cell_types = list()
+	var/charge_sections = 3
+	var/bullet_energy_cost = 0
+	var/internal_cell = TRUE
 
 /obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
@@ -1120,6 +1124,15 @@
 
 /obj/item/gun/proc/get_rounds_per_shot()
 	return 1
+
+/obj/item/gun/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, selfcharge))
+			if(var_value)
+				START_PROCESSING(SSobj, src)
+			else
+				STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,

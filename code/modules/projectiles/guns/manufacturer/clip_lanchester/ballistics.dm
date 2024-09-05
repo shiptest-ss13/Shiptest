@@ -152,7 +152,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 		)
 	)
 
-
 	recoil = 1
 	recoil_unwielded = 2
 	wield_delay = 0.2 SECONDS
@@ -209,7 +208,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 	cut_overlays()
 	update_appearance()
-
 
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/f4
