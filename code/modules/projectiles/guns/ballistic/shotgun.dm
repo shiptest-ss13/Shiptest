@@ -332,7 +332,26 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	reciever_flags = AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_TOGGLES_OPEN_EJECTS|AMMO_RECIEVER_HANDFULS
+/obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
+	if (bolt_locked == FALSE)
+		to_chat(user, "<span class='notice'>You snap open the [bolt_wording] of \the [src].</span>")
+		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+		chambered = null
+		var/num_unloaded = 0
+		for(var/obj/item/ammo_casing/casing_bullet in get_ammo_list(FALSE, TRUE))
+			casing_bullet.forceMove(drop_location())
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			casing_bullet.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_bullet.bounce_sfx_override)
+
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_bullet.name)
+		if (num_unloaded)
+			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			update_appearance()
+		bolt_locked = TRUE
+		update_appearance()
+		return
+	drop_bolt(user)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
