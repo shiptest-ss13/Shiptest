@@ -18,7 +18,7 @@
 	var/throw_stun_chance = 35
 
 	var/obj/item/stock_parts/cell/cell
-	var/preload_mag_type //if not empty the baton starts with this type of cell
+	var/preload_cell_type //if not empty the baton starts with this type of cell
 	var/cell_hit_cost = 1000
 	var/can_remove_cell = TRUE
 
@@ -41,11 +41,11 @@
 
 /obj/item/melee/baton/Initialize()
 	. = ..()
-	if(preload_mag_type)
-		if(!ispath(preload_mag_type,/obj/item/stock_parts/cell))
-			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_mag_type: [preload_mag_type].")
+	if(preload_cell_type)
+		if(!ispath(preload_cell_type,/obj/item/stock_parts/cell))
+			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_cell_type: [preload_cell_type].")
 		else
-			cell = new preload_mag_type(src)
+			cell = new preload_cell_type(src)
 	update_appearance()
 	RegisterSignal(src, COMSIG_PARENT_ATTACKBY, PROC_REF(convert))
 
@@ -83,7 +83,7 @@
 		baton_effect(hit_atom)
 
 /obj/item/melee/baton/loaded //this one starts with a cell pre-installed.
-	preload_mag_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/cell/high
 
 /obj/item/melee/baton/proc/deductcharge(chrgdeductamt)
 	if(cell)
@@ -297,7 +297,7 @@
 	return ..()
 
 /obj/item/melee/baton/cattleprod/loaded
-	preload_mag_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/cell/high
 
 /obj/item/melee/baton/boomerang
 	name = "\improper baton boomerang"
@@ -332,4 +332,4 @@
 		return ..()
 
 /obj/item/melee/baton/boomerang/loaded //Same as above, comes with a cell.
-	preload_mag_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/cell/high
