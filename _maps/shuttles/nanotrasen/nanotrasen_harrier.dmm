@@ -751,6 +751,9 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eg" = (
@@ -769,6 +772,9 @@
 	dir = 4
 	},
 /obj/machinery/camera,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ej" = (
@@ -1450,6 +1456,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"hE" = (
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_y = 32
+	},
+/obj/item/toy/plush/moth/firewatch,
+/obj/item/toy/sword,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "hH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/firedoor/window,
@@ -2718,14 +2732,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"qa" = (
-/obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_y = 32
-	},
-/obj/item/toy/plush/moth/firewatch,
-/obj/item/toy/sword,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "qf" = (
 /obj/structure/chair/comfy/blue/corpo/directional/north,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line,
@@ -9379,6 +9385,9 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
 	},
+/obj/machinery/door/window/westleft{
+	req_access_txt = "2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "YW" = (
@@ -9625,7 +9634,7 @@ tQ
 Uj
 AE
 AE
-qa
+hE
 AE
 MZ
 MZ
