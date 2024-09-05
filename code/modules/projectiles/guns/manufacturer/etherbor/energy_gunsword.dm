@@ -69,7 +69,7 @@
 /obj/item/ammo_casing/energy/kalix/pgf
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
+	rounds_per_shot = 666 //30 shots per cell
 	delay = 1
 
 /obj/item/gun/energy/kalix/pistol //blue

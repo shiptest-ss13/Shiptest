@@ -12,7 +12,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	cell_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
@@ -29,14 +29,14 @@
 	icon_state = "cm50"
 	item_state = "cm50"
 	shaded_charge = TRUE
-	charge_sections = 4
+	ammo_overlay_sections = 4
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50/clip)
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50/clip
 	projectile_type = /obj/projectile/beam/emitter/hitscan/clip
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 6250
+	rounds_per_shot = 6250
 	delay = 0.6 SECONDS
 
 /obj/projectile/beam/emitter/hitscan/clip

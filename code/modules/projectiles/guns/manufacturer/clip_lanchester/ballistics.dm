@@ -11,7 +11,6 @@
 	item_state = "clip_generic"
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/cm23
-//	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/cm23.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -47,7 +46,6 @@
 	icon_state = "cm70"
 	item_state = "clip_generic"
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_cm70
-//	can_suppress = FALSE
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
