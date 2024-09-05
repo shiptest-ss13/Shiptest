@@ -410,17 +410,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/item/ammo_box/magazine/skm_545_39{
-	pixel_x = 12;
-	pixel_y = 12
-	},
-/obj/item/ammo_box/c46x30mm_box{
-	pixel_y = 6;
-	pixel_x = -6
-	},
-/obj/item/ammo_box/magazine/skm_545_39{
-	pixel_x = 12
-	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "gr" = (
@@ -590,7 +579,6 @@
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow,
 /obj/item/gun/ballistic/revolver/shadow,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "jB" = (
@@ -2752,7 +2740,7 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/gun/ballistic/revolver/ashhand,
+/obj/item/gun/ballistic/automatic/marksman/vickland,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Oa" = (
@@ -3075,8 +3063,8 @@
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Tk" = (
 /obj/structure/rack,
-/obj/item/ammo_box/a4570,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/a308/hunterspride,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "To" = (
@@ -3472,44 +3460,47 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "YO" = (
 /obj/structure/table/wood,
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	pixel_x = -6;
-	pixel_y = 10;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	pixel_x = -6;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	pixel_y = 10;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	pixel_x = 6;
-	pixel_y = 10;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a4570{
-	projectile_type = null;
-	pixel_x = 6;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/a308{
+	pixel_y = 11;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a308{
+	pixel_y = 3;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a308{
+	pixel_y = 11;
+	pixel_x = 6;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a308{
+	pixel_y = 11;
+	pixel_x = -6;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a308{
+	pixel_y = 3;
+	pixel_x = -6;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a308{
+	pixel_y = 3;
+	pixel_x = 6;
+	projectile_type = null;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "YU" = (
