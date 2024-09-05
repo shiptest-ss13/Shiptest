@@ -410,7 +410,7 @@
 	if(get_max_ammo(TRUE) > 0)
 		if(gun_features_flags & GUN_AMMO_COUNTER)
 			if(get_max_ammo(TRUE) && gun_features_flags & GUN_AMMO_COUNT_BY_PERCENTAGE)
-				dat += "It has [round((get_ammo_count(TRUE) / get_max_ammo(TRUE)) * 100)] percent remaining."
+				dat += "It has [round((get_ammo_count(TRUE) / get_max_ammo(TRUE)) * 100)]% remaining."
 			else if(get_max_ammo(TRUE) && gun_features_flags & GUN_AMMO_COUNT_BY_SHOTS_REMAINING)
 				dat += "It has [round(get_ammo_count(TRUE) / get_rounds_per_shot())] shots remaining."
 			else
@@ -419,6 +419,11 @@
 			dat += "It's loaded[chambered?" and has a round chambered":""]."
 	else
 		dat += "It's unloaded[chambered?" but has a round chambered":""]."
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		if(installed_cell)
+			dat += "It's secondary cell has [round(installed_cell.charge / installed_cell.maxcharge * 100)]% remaining."
+		else
+			dat += "It doesn't seem to have a secondary cell!"
 	return dat
 
 /obj/item/gun/attackby(obj/item/A, mob/user, params)
@@ -447,11 +452,30 @@
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
+/obj/item/gun/proc/chamber_round(keep_bullet = FALSE)
+	return
+
+/obj/item/gun/proc/rack(mob/user = null, chamber_new_round = TRUE)
+	return
+
+/obj/item/gun/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
+	return
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		if(QDELETED(installed_cell))
+			return FALSE
+		var/obj/item/ammo_casing/caseless/gauss/shot = chambered
+		if(!shot)
+			return FALSE
+		if(installed_cell.charge < shot.energy_cost * burst_size)
+			return FALSE
+
 	if(safety)
 		return FALSE
+	if(!(reciever_flags & AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE))
+		return chambered
 	return TRUE
 
 /obj/item/gun/emp_act(severity)
@@ -489,6 +513,12 @@
 */
 	// Good job, but we have exta checks to do...
 	return pre_fire(target, user, TRUE, flag, params, null)
+
+/obj/item/gun/proc/prefire_empty_checks()
+	return
+
+/obj/item/gun/proc/postfire_empty_checks(last_shot_succeeded)
+	return
 
 /obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
 	add_fingerprint(user)
@@ -671,6 +701,9 @@
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		installed_cell.use(bullet_energy_cost)
+
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
 	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 
@@ -779,6 +812,24 @@
 		else
 			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		if(!automatic_charge_overlays)
+			return
+		var/overlay_icon_state = "[icon_state]_charge"
+		var/charge_ratio = get_charge_ratio()
+		if(installed_cell)
+			. += "[icon_state]_cell"
+		if(charge_ratio == 0)
+			. += "[icon_state]_cellempty"
+		else
+			if(!shaded_charge)
+				var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
+				for(var/i in 1 to charge_ratio)
+					charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+					charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+					. += new /mutable_appearance(charge_overlay)
+			else
+				. += "[icon_state]_charge[charge_ratio]"
 
 #define BRAINS_BLOWN_THROW_RANGE 2
 #define BRAINS_BLOWN_THROW_SPEED 1
@@ -846,7 +897,10 @@
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
-	return
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		var/obj/item/ammo_casing/caseless/gauss/shot = chambered
+		if(shot?.energy_cost)
+			bullet_energy_cost = shot.energy_cost
 
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
@@ -1104,6 +1158,50 @@
 /obj/item/gun/proc/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
 	if(currently_firing_burst)
 		return FALSE
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
+			var/obj/item/stock_parts/cell/new_cell = new_mag
+			if (!installed_cell)
+				insert_mag(user, new_cell)
+			else
+				if (tac_reloads)
+					eject_mag(user, new_cell)
+				else
+					to_chat(user, span_notice("\The [src] already has a cell."))
+	if(reciever_flags & AMMO_RECIEVER_MAGAZINES)
+		if (!internal_magazine && istype(new_mag, /obj/item/ammo_box/magazine))
+			var/obj/item/ammo_box/magazine/AM = new_mag
+			if (!magazine)
+				insert_mag(user, AM)
+			else
+				if (tac_reloads)
+					eject_mag(user, FALSE, AM)
+				else
+					to_chat(user, span_notice("There's already a [magazine_wording] in \the [src]."))
+			return TRUE
+	if(reciever_flags & AMMO_RECIEVER_HANDFULS)
+		if (istype(new_mag, /obj/item/ammo_casing) || istype(new_mag, /obj/item/ammo_box))
+			if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
+				if (chambered && !chambered.BB)
+					chambered.on_eject(shooter = user)
+					chambered = null
+				var/num_loaded = magazine.attackby(new_mag, user, params)
+				if (num_loaded)
+					to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into \the [src]."))
+					playsound(src, load_sound, load_sound_volume, load_sound_vary)
+					if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
+						chamber_round()
+					new_mag.update_appearance()
+					update_appearance()
+				return TRUE
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		if (!internal_cell && istype(new_mag, /obj/item/stock_parts/cell/gun))
+			var/obj/item/stock_parts/cell/gun/new_cell = new_mag
+			if(!(new_cell.type in allowed_cell_types))
+				return
+			if(installed_cell)
+				to_chat(user, span_warning("\The [new_mag] already has a cell"))
+			insert_cell(user, new_cell)
 
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/proc/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
@@ -1112,6 +1210,28 @@
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
 /obj/item/gun/proc/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
 	return
+
+/obj/item/gun/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+	if(user.transferItemToLoc(C, src))
+		installed_cell = C
+		to_chat(user, span_notice("You load the [C] into \the [src]."))
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
+		update_appearance()
+		return TRUE
+	else
+		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+		return FALSE
+
+/obj/item/gun/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
+		installed_cell.forceMove(drop_location())
+		var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
+		installed_cell = null
+		user.put_in_hands(old_cell)
+		old_cell.update_appearance()
+		to_chat(user, span_notice("You pull the cell out of \the [src]."))
+		update_appearance()
 
 /obj/item/gun/proc/adjust_current_rounds(obj/item/mag, new_rounds)
 	return
@@ -1122,8 +1242,17 @@
 /obj/item/gun/proc/get_max_ammo(countchamber = TRUE)
 	return
 
+/obj/item/gun/proc/get_ammo_list(countchambered = TRUE, drop_all = FALSE)
+	return
+
 /obj/item/gun/proc/get_rounds_per_shot()
 	return 1
+
+/obj/item/gun/proc/get_charge_ratio()
+	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+		if(!installed_cell)
+			return FALSE
+		return CEILING(clamp(installed_cell.charge / installed_cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
 
 /obj/item/gun/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -1181,4 +1310,12 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	return installed_cell
 
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
-	return
+	if((reciever_flags & AMMO_RECIEVER_CELL | reciever_flags & AMMO_RECIEVER_SECONDARY_CELL) && installed_cell && !internal_magazine)
+		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
+		if(I.use_tool(src, user, unscrewing_time, volume = 100))
+			to_chat(user, span_notice("You remove the power cell."))
+			if(reciever_flags & AMMO_RECIEVER_CELL)
+				eject_mag(user)
+			else
+				eject_cell(user)
+

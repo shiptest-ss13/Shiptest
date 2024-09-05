@@ -19,8 +19,6 @@
 	var/near_miss_sound = ""
 	var/ricochet_sound = ""
 
-
-
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
 	var/atom/movable/firer = null//Who shot it

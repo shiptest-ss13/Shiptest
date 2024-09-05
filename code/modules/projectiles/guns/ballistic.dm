@@ -94,7 +94,7 @@
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
 ///Used to chamber a new round and eject the old one
-/obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
+/obj/item/gun/ballistic/chamber_round(keep_bullet = FALSE)
 	if (chambered || !magazine)
 		return
 	if (magazine.ammo_count())
@@ -103,7 +103,7 @@
 			chambered.forceMove(src)
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
-/obj/item/gun/ballistic/proc/rack(mob/user = null, chamber_new_round = TRUE)
+/obj/item/gun/ballistic/rack(mob/user = null, chamber_new_round = TRUE)
 	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
 		return
 	if (bolt_type == BOLT_TYPE_OPEN)
@@ -124,7 +124,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 ///Drops the bolt from a locked position
-/obj/item/gun/ballistic/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
+/obj/item/gun/ballistic/drop_bolt(mob/user = null, chamber_new_round = TRUE)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
 		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
@@ -185,125 +185,8 @@
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
-/obj/item/gun/ballistic/can_shoot()
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if(QDELETED(installed_cell))
-			return FALSE
-		var/obj/item/ammo_casing/caseless/gauss/shot = chambered
-		if(!shot)
-			return FALSE
-		if(installed_cell.charge < shot.energy_cost * burst_size)
-			return FALSE
-
-	if(safety)
-		return FALSE
-	return chambered
-
-/obj/item/gun/ballistic/before_firing(atom/target,mob/user)
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		var/obj/item/ammo_casing/caseless/gauss/shot = chambered
-		if(shot?.energy_cost)
-			bullet_energy_cost = shot.energy_cost
-
-/obj/item/gun/ballistic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		installed_cell.use(bullet_energy_cost)
-	return ..()
-
-/obj/item/gun/ballistic/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
-	if (!internal_magazine && istype(new_mag, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = new_mag
-		if (!magazine)
-			insert_mag(user, AM)
-		else
-			if (tac_reloads)
-				eject_mag(user, FALSE, AM)
-			else
-				to_chat(user, span_notice("There's already a [magazine_wording] in \the [src]."))
-		return TRUE
-	if (istype(new_mag, /obj/item/ammo_casing) || istype(new_mag, /obj/item/ammo_box))
-		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
-			if (chambered && !chambered.BB)
-				chambered.on_eject(shooter = user)
-				chambered = null
-			var/num_loaded = magazine.attackby(new_mag, user, params)
-			if (num_loaded)
-				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into \the [src]."))
-				playsound(src, load_sound, load_sound_volume, load_sound_vary)
-				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
-					chamber_round()
-				new_mag.update_appearance()
-				update_appearance()
-			return TRUE
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if (!internal_cell && istype(new_mag, /obj/item/stock_parts/cell/gun))
-			var/obj/item/stock_parts/cell/gun/new_cell = new_mag
-			if(!(new_cell.type in allowed_cell_types))
-				return
-			if(installed_cell)
-				to_chat(user, span_warning("\The [new_mag] already has a cell"))
-			insert_cell(user, new_cell)
-
-/obj/item/gun/ballistic/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(user.transferItemToLoc(C, src))
-		installed_cell = C
-		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		update_appearance()
-		return TRUE
-	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
-		return FALSE
-
-/obj/item/gun/ballistic/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		installed_cell.forceMove(drop_location())
-		var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
-		installed_cell = null
-		user.put_in_hands(old_cell)
-		old_cell.update_appearance()
-		to_chat(user, span_notice("You pull the cell out of \the [src]."))
-		update_appearance()
-
-/obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if(installed_cell && !internal_cell)
-			to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-			if(I.use_tool(src, user, unscrewing_time, volume=100))
-				to_chat(user, span_notice("You remove the power cell."))
-				eject_cell(user)
-	return ..()
-
-/obj/item/gun/ballistic/update_overlays()
-	. = ..()
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if(!automatic_charge_overlays)
-			return
-		var/overlay_icon_state = "[icon_state]_charge"
-		var/charge_ratio = get_charge_ratio()
-		if(installed_cell)
-			. += "[icon_state]_cell"
-		if(charge_ratio == 0)
-			. += "[icon_state]_cellempty"
-		else
-			if(!shaded_charge)
-				var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
-				for(var/i in 1 to charge_ratio)
-					charge_overlay.pixel_x = ammo_x_offset * (i - 1)
-					charge_overlay.pixel_y = ammo_y_offset * (i - 1)
-					. += new /mutable_appearance(charge_overlay)
-			else
-				. += "[icon_state]_charge[charge_ratio]"
-
-/obj/item/gun/ballistic/proc/get_charge_ratio()
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if(!installed_cell)
-			return FALSE
-		return CEILING(clamp(installed_cell.charge / installed_cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
-
 ///Prefire empty checks for the bolt drop
-/obj/item/gun/ballistic/proc/prefire_empty_checks()
+/obj/item/gun/ballistic/prefire_empty_checks()
 	if (!chambered && !get_ammo_count())
 		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
 			bolt_locked = TRUE
@@ -311,7 +194,7 @@
 			update_appearance()
 
 ///postfire empty checks for bolt locking and sound alarms
-/obj/item/gun/ballistic/proc/postfire_empty_checks(last_shot_succeeded)
+/obj/item/gun/ballistic/postfire_empty_checks(last_shot_succeeded)
 	if (!chambered && !get_ammo_count())
 		if (empty_alarm && last_shot_succeeded)
 			playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
@@ -381,15 +264,6 @@
 		. += span_notice("The [bolt_wording] is locked back and needs to be released before firing.")
 	. += span_info("You can [bolt_wording] it by pressing the <b>unique action</b> key. By default, this is <b>Space</b>")
 
-/obj/item/gun/ballistic/automatic/powered/examine_ammo_count(mob/user)
-	var/list/dat = list()
-	if(reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		if(installed_cell)
-			dat += span_notice("[src]'s cell is [round(installed_cell.charge / installed_cell.maxcharge, 0.1) * 100]% full.")
-		else
-			dat += span_notice("[src] doesn't seem to have a cell!")
-	return dat
-
 /*
 /obj/item/gun/ballistic/adjust_current_rounds(obj/item/mag, new_rounds)
 	var/obj/item/ammo_box/magazine/magazine = mag
@@ -413,7 +287,7 @@
 	return rounds
 
 ///gets a list of every bullet in the gun
-/obj/item/gun/ballistic/proc/get_ammo_list(countchambered = TRUE, drop_all = FALSE)
+/obj/item/gun/ballistic/get_ammo_list(countchambered = TRUE, drop_all = FALSE)
 	var/list/rounds = list()
 	if(chambered && countchambered)
 		rounds.Add(chambered)

@@ -113,17 +113,6 @@
 		select_fire(user)
 		update_appearance()
 
-/obj/item/gun/energy/reload(obj/item/new_mag, mob/living/user, params, force = FALSE)
-	if (!internal_magazine && istype(new_mag, /obj/item/stock_parts/cell/gun))
-		var/obj/item/stock_parts/cell/new_cell = new_mag
-		if (!installed_cell)
-			insert_mag(user, new_cell)
-		else
-			if (tac_reloads)
-				eject_mag(user, new_cell)
-			else
-				to_chat(user, span_notice("\The [src] already has a cell."))
-
 /obj/item/gun/energy/insert_mag(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(!(C.type in allowed_ammo_types))
 		to_chat(user, span_warning("[C] cannot fit into [src]!"))
@@ -158,14 +147,6 @@
 
 	user.put_in_hands(old_cell)
 	update_appearance()
-
-/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(installed_cell && !internal_magazine)
-		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-		if(I.use_tool(src, user, unscrewing_time, volume = 100))
-			to_chat(user, span_notice("You remove the power cell."))
-			eject_mag(user)
-	return ..()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
@@ -269,7 +250,7 @@
 				. += "[icon_state]_charge[ratio]"
 
 ///Used by update_icon_state() and update_overlays()
-/obj/item/gun/energy/proc/get_charge_ratio()
+/obj/item/gun/energy/get_charge_ratio()
 	return can_shoot(visuals = TRUE) ? CEILING(clamp(get_ammo_count() / get_max_ammo(), 0, 1) * ammo_overlay_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
 
