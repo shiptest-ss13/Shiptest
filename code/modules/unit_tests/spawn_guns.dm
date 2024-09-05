@@ -6,7 +6,7 @@
 		for(var/attachment_type in gun.default_attachments)
 			var/in_list = FALSE
 			for(var/valid_type in gun.valid_attachments)
-				if(istype(attachment_type, valid_type))
+				if(ispath(attachment_type, valid_type))
 					in_list = TRUE
 			if(!in_list)
 				TEST_FAIL("[gun] has a invalid attachment [attachment_type] that is not present in the valid_attachments.")
