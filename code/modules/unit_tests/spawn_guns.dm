@@ -6,6 +6,9 @@
 		for(var/attachment_type in gun.default_attachments)
 			var/in_list = FALSE
 			for(var/valid_type in gun.valid_attachments)
+				// spawns without mag, skip it
+				if(!istype(valid_type))
+					continue
 				if(istype(attachment_type, valid_type))
 					in_list = TRUE
 			if(!in_list)
