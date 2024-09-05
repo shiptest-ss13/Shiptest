@@ -1303,14 +1303,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 3;
-	pixel_y = 7
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/computer/atmos_control/external{
+	dir = 4;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
+/area/ship/external)
 "jv" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/jackboots,
@@ -1623,6 +1622,12 @@
 /obj/effect/turf_decal/corner/opaque/orange/full,
 /obj/effect/turf_decal/siding/yellow,
 /obj/effect/turf_decal/siding/yellow,
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 3;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "mh" = (
@@ -1875,76 +1880,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "or" = (
-/obj/structure/closet/crate/secure/plasma{
-	name = "Relay Parts Crate"
-	},
-/obj/item/storage/box/stockparts/basic,
-/obj/item/circuitboard/machine/telecomms/relay{
-	pixel_x = -5;
-	pixel_y = 9
-	},
-/obj/item/circuitboard/machine/telecomms/relay{
-	pixel_x = -5;
-	pixel_y = 9
-	},
-/obj/item/circuitboard/machine/telecomms/relay{
-	pixel_x = -5;
-	pixel_y = 9
-	},
-/obj/item/encryptionkey/nanotrasen{
-	pixel_x = -1
-	},
-/obj/item/encryptionkey/nanotrasen{
-	pixel_x = 3
-	},
-/obj/item/encryptionkey/nanotrasen{
-	pixel_x = 7
-	},
-/obj/item/stack/cable_coil/cyan{
-	pixel_x = 6
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/subspace/filter{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/manipulator{
-	pixel_x = 7;
-	pixel_y = 7
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2042,18 +1977,13 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "pp" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 13;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = 24
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
 /obj/structure/window/reinforced/tinted,
+/obj/structure/dresser{
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "ps" = (
@@ -5062,10 +4992,8 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/light/floor,
-/obj/machinery/airalarm/directional/south{
-	pixel_x = 3
-	},
+/obj/machinery/air_sensor/external,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Om" = (
@@ -5414,9 +5342,79 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Sl" = (
-/obj/machinery/light/dim/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/crate/secure/plasma{
+	name = "Relay Parts Crate"
+	},
+/obj/item/storage/box/stockparts/basic,
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/encryptionkey/nanotrasen{
+	pixel_x = -1
+	},
+/obj/item/encryptionkey/nanotrasen{
+	pixel_x = 3
+	},
+/obj/item/encryptionkey/nanotrasen{
+	pixel_x = 7
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = 6
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/structure/crate_shelf,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "So" = (
@@ -5865,7 +5863,7 @@
 "WZ" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 4;
-	icon_state = "computer-right"
+	icon_state = "computer-middle"
 	},
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/mono/dark,
