@@ -304,6 +304,39 @@
 	stock = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/mauler
+	name = "Mauler Machine Pistol"
+	desc = "This gun's got teeth! A Shoal classic, the Mauler 9mm machine pistol is suited to close quarter combat with an insane fire rate beating out even dedicated assault rifles."
+	item = /obj/item/gun/ballistic/automatic/pistol/mauler
+	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
+
+	price_min = 1000
+	price_max = 2000
+	stock = 2
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/spitter
+	name = "Spitter Machine Pistol"
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
+	item = /obj/item/gun/ballistic/automatic/pistol/spitter
+	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
+
+	price_min = 1500
+	price_max = 2250
+	stock = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/pounder
+	name = "Pounder Submachine Gun"
+	desc = "Give your enemies the pounding of their life with this 50 round .22lr Submachine Gun! This baby can blast it's whole load in mere moments!"
+	item = /obj/item/gun/ballistic/automatic/smg/pounder
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
+
+	price_min = 1500
+	price_max = 2000
+	stock = 2
+	availability_prob = 35
+
 /datum/blackmarket_item/weapon/polymer
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
