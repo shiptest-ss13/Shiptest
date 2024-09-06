@@ -312,7 +312,7 @@
 
 	price_min = 1000
 	price_max = 2000
-	stock = 2
+	stock_max = 3
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/spitter
@@ -323,18 +323,19 @@
 
 	price_min = 1500
 	price_max = 2250
-	stock = 2
+	stock_min = 1
+	stock_max = 2
 	availability_prob = 30
 
 /datum/blackmarket_item/weapon/pounder
 	name = "Pounder Submachine Gun"
-	desc = "Give your enemies the pounding of their life with this 50 round .22lr Submachine Gun! This baby can blast it's whole load in mere moments!"
+	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
 	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag,/datum/blackmarket_item/ammo/himehabu_box)
 
 	price_min = 1500
 	price_max = 2000
-	stock = 2
+	stock = 1
 	availability_prob = 35
 
 /datum/blackmarket_item/weapon/polymer
