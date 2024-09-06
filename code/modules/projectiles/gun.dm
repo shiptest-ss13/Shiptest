@@ -210,6 +210,7 @@
 	var/recoil_backtime_multiplier = 2
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
+	///Used if the guns recoil is lower then the min, it clamps the highest recoil
 	var/min_recoil = 0
 	var/gunslinger_recoil_bonus = 0
 
@@ -552,6 +553,8 @@
 	return
 
 /obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
+	prefire_empty_checks()
+
 	add_fingerprint(user)
 
 	// If we have a cooldown, don't do anything, obviously

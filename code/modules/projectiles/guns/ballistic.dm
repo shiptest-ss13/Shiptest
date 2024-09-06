@@ -113,10 +113,6 @@
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_CLIP)
 			update_appearance()
 
-/obj/item/gun/ballistic/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
-	prefire_empty_checks()
-	return ..()
-
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	. = ..() //The gun actually firing
 	postfire_empty_checks(.)
