@@ -981,7 +981,7 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 		)
 	)
 
-EMPTY_GUN_HELPER(/shotgun/automatic/bulldog)
+EMPTY_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
 	name = "shotgun box magazine (12g buckshot)"
