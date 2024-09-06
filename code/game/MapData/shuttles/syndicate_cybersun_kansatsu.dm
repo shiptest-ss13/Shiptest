@@ -1,10 +1,10 @@
-/datum/preset_holoimage/cybersun_intel_officer
+/datum/preset_holoimage/cybersun_intel_director
 	species_type = /datum/species/ipc
-	outfit_type = /datum/outfit/job/syndicate/head_of_personnel/cybersun/hologram
+	outfit_type = /datum/outfit/job/syndicate/captain/cybersun
 
 /obj/item/disk/holodisk/kansatsu/mission
 	desc = "A classified holodisk containing a mission for the Cybersun Industries Intelligence Division."
-	preset_image_type = /datum/preset_holoimage/cybersun_intel_officer
+	preset_image_type = /datum/preset_holoimage/cybersun_intel_director
 
 /obj/item/disk/holodisk/kansatsu/mission/New(obj/L)
 	..()
@@ -14,7 +14,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/safety
 	name = "\improper IG-I-296" // Information Gathering - Infiltration - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents.	Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
 	DELAY 40
 	SAY You must gather information about the safety measures on board. You are to look for any potential flaws and exploits.
@@ -30,7 +30,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/crew
 	name = "\improper IG-I-138" // Information Gathering - Infiltration - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
 	DELAY 40
 	SAY You must profile five members of the crew. Their profile must include credentials, habits and skills. Any further information is optional, but advised.
@@ -46,7 +46,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/valueables
 	name = "\improper IG-I-271" // Information Gathering - Infiltration - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
 	DELAY 40
 	SAY On board, you must locate and catalogue all the objects of value. You may not seize them, unless you are tasked to by another mission.
@@ -62,7 +62,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/ruins
 	name = "\improper IG-S-290" // Information Gathering - Scouting - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to scout your current sector.
 	DELAY 40
 	SAY You are to locate war-era derelicts. You must explore them and take note of all the relevant details.
@@ -76,7 +76,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/documents
 	name = "\improper E-019" // Extraction - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to locate and retrieve an asset belonging to any group of interest that is not friendly to us.
 	DELAY 40
 	SAY To be precise, you are after a bundle of classified documents.
@@ -90,7 +90,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/pet
 	name = "\improper E-271" // Extraction - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to locate and retrieve an asset belonging to any group of interest that is not friendly to us.
 	DELAY 40
 	SAY To be precise, you are after a domesticated animal. The cutest you can possibly find.
@@ -104,7 +104,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/training
 	name = "\improper TO-23" // Training Operation - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to perform a training operation.
 	DELAY 40
 	SAY You are to organize a training mission for the junior agents assigned to your crew.
@@ -118,7 +118,7 @@
 /obj/item/disk/holodisk/kansatsu/mission/anomalies
 	name = "\improper RD-166" // Research Division - Random Number
 	preset_record_text = {"
-	NAME Intelligence Officer Torch-3
+	NAME Intelligence Director Torch-3
 	SAY Agents. Your vessel has been assigned a mission to assist our research department.
 	DELAY 40
 	SAY You are to collect at least four anomaly cores.

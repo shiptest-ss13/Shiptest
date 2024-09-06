@@ -535,11 +535,6 @@
 	r_pocket = /obj/item/kitchen/knife/switchblade
 	glasses = /obj/item/clothing/glasses/sunglasses
 
-/datum/outfit/job/syndicate/head_of_personnel/cybersun/hologram
-	name = "Syndicate - Intelligence Officer (Cybersun, Hologram)" // Used for the holodisks on the Kansatsu.
-
-	mask = /obj/item/clothing/mask/gas/syndicate // Secrecy is Kansatsu's gimmick.
-
 /datum/outfit/job/syndicate/head_of_personnel/suns
 	name = "Syndicate - Academic Staff (SUNS)"
 	id_assignment = "Academic Staff"
