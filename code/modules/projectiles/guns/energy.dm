@@ -92,6 +92,7 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
+///Drops the bolt from a locked position
 /obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)

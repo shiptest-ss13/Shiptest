@@ -40,7 +40,7 @@
 	if (bolt_locked == FALSE)
 		to_chat(user, span_notice("You open the bolt of \the [src]."))
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		process_chamber(FALSE, FALSE, FALSE, shooter = user)
+		process_chamber(user, FALSE, FALSE, FALSE)
 		bolt_locked = TRUE
 		update_appearance()
 		if (magazine && !magazine?.ammo_count() && reciever_flags & AMMO_RECIEVER_AUTO_EJECT && !internal_magazine)
@@ -65,10 +65,6 @@
 		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
 		return
 	return ..()
-
-/obj/item/gun/ballistic/rifle/examine(mob/user)
-	. = ..()
-	. += "The bolt is [bolt_locked ? "open" : "closed"]."
 
 /obj/item/gun/ballistic/rifle/illestren
 	name = "\improper HP Illestren"

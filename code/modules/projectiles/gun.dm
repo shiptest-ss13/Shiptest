@@ -314,7 +314,7 @@
 	var/spawn_empty_mag = FALSE
 
 	var/gun_features_flags = GUN_AMMO_COUNTER
-	var/reciever_flags = AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_AUTO_EJECT
+	var/reciever_flags = AMMO_RECIEVER_MAGAZINES
 
 
 	var/default_cell_type = /obj/item/stock_parts/cell/gun
@@ -426,15 +426,19 @@
 	if(manufacturer)
 		. += "It has <b>[manufacturer]</b> engraved on it."
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. [span_info("<b>Ctrl-Click</b> to toggle the safety.")]"
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. [span_info("<b>Ctrl-click</b> to toggle the safety.")]"
 	if(reciever_flags & AMMO_RECIEVER_CELL)
 		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 		if(installed_cell)
-			. += "\The [name] is on <b>[shot.select_name]</b> mode."
+			. += "It is on <b>[shot.select_name]</b> mode."
 			if(ammo_type.len > 1)
-				. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+				. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>."
 		else
-			. += span_notice("\The [name] doesn't seem to have a cell!")
+			. += "It doesn't seem to have a cell!"
+	else
+		if (bolt_locked)
+			. += "The [bolt_wording] is locked back and needs to be released before firing."
+		. += span_info("You can [bolt_wording] it by pressing the <b>unique action</b> key. By default, this is <b>space</b.>")
 	. += examine_ammo_count(user)
 
 /obj/item/gun/proc/examine_ammo_count(mob/user)
@@ -480,18 +484,59 @@
 	return
 
 //called after the gun has successfully fired its chambered ammo.
-/obj/item/gun/proc/process_chamber(atom/shooter)
+/obj/item/gun/proc/process_chamber(atom/shooter, empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+	if(!semi_auto && from_firing)
+		return
+	var/obj/item/ammo_casing/casing = chambered //Find chambered round
+	if(istype(casing)) //there's a chambered round
+		if(casing_ejector || !from_firing)
+			casing.on_eject(shooter)
+			chambered = null
+		else if(empty_chamber)
+			chambered = null
+	if (chamber_next_round && (magazine?.max_ammo > 1))
+		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
-	return FALSE
 
+///Used to chamber a new round and eject the old one
 /obj/item/gun/proc/chamber_round(keep_bullet = FALSE)
-	return
+	if (chambered || !magazine)
+		return
+	if (magazine.ammo_count())
+		chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
+		if (bolt_type != BOLT_TYPE_OPEN)
+			chambered.forceMove(src)
 
+///updates a bunch of racking related stuff and also handles the sound effects and the like
 /obj/item/gun/proc/rack(mob/user = null, chamber_new_round = TRUE)
-	return
+	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
+		return
+	if (bolt_type == BOLT_TYPE_OPEN)
+		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
+			if (user)
+				to_chat(user, "<span class='notice'>\The [src]'s [bolt_wording] is already cocked!</span>")
+			return
+		bolt_locked = FALSE
+	if (user)
+		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+	process_chamber(user, !chambered, FALSE, chamber_new_round)
+	if ((bolt_type == BOLT_TYPE_LOCKING && !chambered) || bolt_type == BOLT_TYPE_CLIP)
+		bolt_locked = TRUE
+		playsound(src, lock_back_sound, lock_back_sound_volume, lock_back_sound_vary)
+	else
+		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
-	return
+	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
+	if (user)
+		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
+	if(chamber_new_round)
+		chamber_round()
+	bolt_locked = FALSE
+	update_appearance()
+
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
@@ -546,11 +591,29 @@
 	// Good job, but we have exta checks to do...
 	return pre_fire(target, user, TRUE, flag, params, null)
 
+///Prefire empty checks for the bolt drop
 /obj/item/gun/proc/prefire_empty_checks()
-	return
+	if (!chambered && !get_ammo_count())
+		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
+			bolt_locked = TRUE
+			playsound(src, bolt_drop_sound, bolt_drop_sound_volume)
+			update_appearance()
 
+///postfire empty checks for bolt locking and sound alarms
 /obj/item/gun/proc/postfire_empty_checks(last_shot_succeeded)
-	return
+	if (!chambered && !get_ammo_count())
+		if (last_shot_succeeded)
+			if (empty_alarm)
+				playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
+				update_appearance()
+			if (reciever_flags & AMMO_RECIEVER_AUTO_EJECT && !internal_magazine)
+				eject_mag(display_message = FALSE)
+				update_appearance()
+			if (bolt_type == BOLT_TYPE_LOCKING)
+				bolt_locked = TRUE
+				update_appearance()
+			if (bolt_type == BOLT_TYPE_CLIP)
+				update_appearance()
 
 /obj/item/gun/proc/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
 	prefire_empty_checks()
@@ -696,7 +759,7 @@
 	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message) //Making sure whether the target is in vicinity for the pointblank shot
 
 	//process the chamber...
-	process_chamber(shooter = user)
+	process_chamber(user)
 	update_appearance()
 	//get our current firemode...
 	var/current_firemode = gun_firemodes[firemode_index]
@@ -933,7 +996,7 @@
 	if (magazine)
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
-			if (!magazine.ammo_count())
+			if (!get_ammo_count(countchambered = FALSE))
 				. += "[icon_state]_mag_empty"
 		else
 			. += "[icon_state]_mag"
@@ -1241,6 +1304,40 @@
 	else
 		..()
 
+/obj/item/gun/unique_action(mob/living/user)
+	if(bolt_type == BOLT_TYPE_NO_BOLT)
+		chambered = null
+		var/num_unloaded = 0
+		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+			CB.forceMove(drop_location())
+
+			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+			CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
+
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+		if (num_unloaded)
+			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			update_appearance()
+		else
+			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		return
+	if((bolt_type == BOLT_TYPE_LOCKING || bolt_type == BOLT_TYPE_CLIP) && bolt_locked)
+		drop_bolt(user)
+		return
+
+	if (recent_rack > world.time)
+		return
+	recent_rack = world.time + rack_delay
+	if(bolt_type == BOLT_TYPE_CLIP)
+		rack(user, FALSE)
+		update_appearance()
+		return
+	rack(user)
+	update_appearance()
+	return
+
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
@@ -1341,7 +1438,7 @@
 			magazine = inserted_mag
 			if (display_message)
 				to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
-			if (magazine.ammo_count())
+			if (get_ammo_count(countchambered = FALSE))
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 			else
 				playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
@@ -1353,7 +1450,6 @@
 		else
 			to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 			return FALSE
-	return
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
 /obj/item/gun/proc/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
@@ -1380,7 +1476,7 @@
 	else
 		if(bolt_type == BOLT_TYPE_OPEN)
 			chambered = null
-		if (magazine.ammo_count())
+		if (get_ammo_count(countchambered = FALSE))
 			playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 		else
 			playsound(src, eject_empty_sound, eject_sound_volume, eject_sound_vary)

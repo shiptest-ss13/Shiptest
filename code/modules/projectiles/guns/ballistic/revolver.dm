@@ -63,8 +63,7 @@
 	else
 		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
-
-/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
+/obj/item/gun/ballistic/revolver/process_chamber(atom/shooter, empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return ..()
 
