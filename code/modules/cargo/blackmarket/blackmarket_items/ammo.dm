@@ -121,17 +121,6 @@
 	stock_max = 5
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/tec_mag
-	name = "TEC-9 AP Magazine"
-	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
-	item = /obj/item/ammo_box/magazine/tec9
-
-	price_min = 500
-	price_max = 1000
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/polymer_clip
 	name = "7.62 Stripper Clip"
 	desc = "A 5 round stripper clip of 7.62x40mm CLIP."

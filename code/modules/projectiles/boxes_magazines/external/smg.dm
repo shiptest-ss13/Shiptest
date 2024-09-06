@@ -114,11 +114,3 @@
 /obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
 	icon_state = "firestorm_pan"
-
-/obj/item/ammo_box/magazine/tec9
-	name = "machine pistol magazine (9mm AP)"
-	desc = "A sizable 20-round magazine for the TEC-9 machine pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power.."
-	icon_state = "tec_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-	caliber = "9mm"
-	max_ammo = 20

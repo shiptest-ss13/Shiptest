@@ -565,21 +565,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 5
 	limited_stock = 1
 
-/datum/uplink_item/dangerous/tec9
-	name = "TEC9 Machine Pistol"
-	desc = "A powerful machine pistol sporting a high rate of fire and armor-piercing rounds."
-	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	cost = 12
-	surplus = 20
-
-/datum/uplink_item/dangerous/ebr
-	name = "M514 EBR"
-	desc = "A cheap rifle with high stopping power and low capacity."
-	item = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
-	cost = 8
-	surplus = 20
-	include_modes = list(/datum/game_mode/nuclear)
-
 // Stealthy Weapons
 /datum/uplink_item/stealthy_weapons
 	category = "Stealthy Weapons"

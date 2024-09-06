@@ -283,17 +283,6 @@
 	stock = 2
 	availability_prob = 25
 
-/datum/blackmarket_item/weapon/tec
-	name = "TEC-9 Machine Pistol"
-	desc = "Hallelujah! It's raining lead! This 9mm machine pistol is capable of spitting out bullets at rapid pace."
-	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	pair_item = list(/datum/blackmarket_item/ammo/tec_mag)
-
-	price_min = 1500
-	price_max = 2750
-	stock = 2
-	availability_prob = 35
-
 /datum/blackmarket_item/weapon/syringe_gun
 	name = "Dart Pistol"
 	desc = "A compact dart pistol, for clandestine poisoining from a distance."
