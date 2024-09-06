@@ -129,8 +129,6 @@
 #define COMSIG_ATOM_CHECKPARTS "atom_checkparts"
 ///from base of atom/CheckParts(): (atom/movable/new_craft) - The atom has just been used in a crafting recipe and has been moved inside new_craft.
 #define COMSIG_ATOM_USED_IN_CRAFT "atom_used_in_craft"
-///from base of atom/blob_act(): (/obj/structure/blob)
-#define COMSIG_ATOM_BLOB_ACT "atom_blob_act"
 ///from base of atom/acid_act(): (acidpwr, acid_volume)
 #define COMSIG_ATOM_ACID_ACT "atom_acid_act"
 ///from base of atom/emag_act(): (/mob/user)

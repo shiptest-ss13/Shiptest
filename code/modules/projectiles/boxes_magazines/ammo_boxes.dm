@@ -292,7 +292,7 @@
 	name = "ammo box (10mm rubbershot)"
 	desc = "A box of 10mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "10mmbox-rubbershot"
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm armor-piercing)"
@@ -529,3 +529,11 @@
 	icon_state = "a44roum-hp"
 	ammo_type = /obj/item/ammo_casing/a44roum/hp
 	max_ammo = 50
+
+/obj/item/ammo_box/c299
+	name = "ammo box (.299 Eoehoma caseless)"
+	desc = "A box of .299 Eoehoma caseless, for use with the E-40 hybrid assault rifle."
+	icon_state = "299box"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL // This is a lot of ammo

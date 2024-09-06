@@ -90,13 +90,6 @@
 	take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user))
 	return TRUE
 
-/obj/blob_act(obj/structure/blob/B)
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.intact && HAS_TRAIT(src, TRAIT_T_RAY_VISIBLE))
-			return
-	take_damage(400, BRUTE, "melee", 0, get_dir(src, B))
-
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
 	user.do_attack_animation(src)
 	user.changeNext_move(CLICK_CD_MELEE)

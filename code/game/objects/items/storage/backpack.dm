@@ -603,10 +603,10 @@
 	new /obj/item/mecha_ammo/scattershot(src)
 	new /obj/item/storage/belt/utility/syndicate(src)
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
+/obj/item/storage/backpack/duffelbag/syndie/ammo/touro
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/mauler/PopulateContents()
+/obj/item/storage/backpack/duffelbag/syndie/ammo/touro/PopulateContents()
 	new /obj/item/mecha_ammo/lmg(src)
 	new /obj/item/mecha_ammo/lmg(src)
 	new /obj/item/mecha_ammo/lmg(src)

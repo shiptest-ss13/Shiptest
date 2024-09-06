@@ -143,7 +143,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
+	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .299 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
@@ -249,8 +249,8 @@
 	secondary.pre_fire(target, user, message, flag, params, zone_override, bonus_spread)
 
 
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return cell
+/obj/item/gun/ballistic/automatic/assault/e40/get_cell()
+	return secondary.get_cell()
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()

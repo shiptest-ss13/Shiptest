@@ -436,11 +436,6 @@
 	else
 		. = timer_set
 
-/obj/machinery/nuclearbomb/blob_act(obj/structure/blob/B)
-	if(exploding)
-		return
-	qdel(src)
-
 /obj/machinery/nuclearbomb/zap_act(power, zap_flags)
 	..()
 	if(zap_flags & ZAP_MACHINE_EXPLOSIVE)
