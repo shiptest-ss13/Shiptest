@@ -661,6 +661,11 @@
 		forceMove(get_step(src,dir))
 		use_power(phasing_energy_drain)
 		addtimer(VARSET_CALLBACK(src, can_move, TRUE), step_in*3)
+	else if(charging)
+		if(charge_break_walls && iswallturf(obstacle))
+			var/turf/closed/wall/crushed = obstacle
+				crushed.dismantle_wall()
+
 	else
 		if(..()) //mech was thrown
 			return
