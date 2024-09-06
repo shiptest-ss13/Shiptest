@@ -120,6 +120,12 @@
 	new /obj/item/ammo_box/magazine/m10mm/empty(src)
 	new /obj/item/ammo_box/magazine/m10mm/empty(src)
 
+/obj/item/storage/pistolcase/himehabu
+/obj/item/storage/pistolcase/himehabu/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag(src)
+	new /obj/item/ammo_box/magazine/m22lr/empty(src)
+	new /obj/item/ammo_box/magazine/m22lr/empty(src)
+
 /obj/item/storage/pistolcase/candor
 /obj/item/storage/pistolcase/candor/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)

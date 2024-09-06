@@ -382,3 +382,11 @@
 	desc = "Contains a fifty-round box of .44 roumain hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/a44roum/hp)
 	cost = 500
+
+/datum/supply_pack/ammo/c22lr
+	name = ".22lr Ammo Box Crate"
+	desc = "TODO"
+	contains = list(/obj/item/ammo_box/c22lr_box,
+					/obj/item/ammo_box/c22lr_box)
+	crate_name = "ammo crate"
+	cost = 250

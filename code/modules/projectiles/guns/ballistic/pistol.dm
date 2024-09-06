@@ -421,3 +421,5 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	spread_unwielded = 0
 	wield_slowdown = 0
 
+/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag
+	spawnwithmagazine = FALSE
