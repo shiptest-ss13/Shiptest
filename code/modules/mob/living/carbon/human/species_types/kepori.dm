@@ -42,6 +42,7 @@
 	var/skill_mod = 2
 
 	bodytype = BODYTYPE_KEPORI
+	special_step_sounds = FOOTSTEP_MOB_CLAW
 
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori

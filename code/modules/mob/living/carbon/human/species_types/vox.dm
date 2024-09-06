@@ -27,6 +27,7 @@
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
 	bodytype = BODYTYPE_VOX
+	special_step_sounds = FOOTSTEP_MOB_CLAW
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
