@@ -73,18 +73,6 @@
 	max_ammo = 75
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/m556_42_hydra/small
-	name = "battle rifle magazine (.308)"
-	desc = "A small, 10-round steel magazine for the M514 EBR. These rounds do good damage with significant armor penetration."
-	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = ".308"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m556_42_hydra/small/update_icon_state()
-	. = ..()
-	icon_state = "ebr_mag-[!!ammo_count()]"
-
 /obj/item/ammo_box/magazine/f4_308
 	name = "\improper F4 Magazine (.308)"
 	desc = "A standard 10-round magazine for F4 platform DMRs. These rounds do good damage with significant armor penetration."
