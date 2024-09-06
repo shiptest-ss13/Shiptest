@@ -13,6 +13,8 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	min_recoil = 0.1
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
@@ -33,8 +35,6 @@
 			"y" = 18,
 		)
 	)
-
-	min_recoil = 0.25
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
