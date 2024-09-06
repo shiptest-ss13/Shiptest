@@ -41,6 +41,10 @@
 	name = "folder- 'TOP SECRET'"
 	desc = "A folder stamped \"Top Secret - Property of The Syndicate.\""
 
+/obj/item/folder/documents/syndicate/cybersun
+	document = /obj/item/documents/syndicate/cybersun
+	icon_state = "folder_sred"
+
 /obj/item/folder/documents/syndicate/red
 	document = /obj/item/documents/syndicate/red
 	icon_state = "folder_sred"

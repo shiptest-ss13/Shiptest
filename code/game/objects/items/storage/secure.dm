@@ -195,15 +195,6 @@
 		. = ..()
 		new /obj/item/documents/syndicate(src)
 
-/obj/item/storage/secure/safe/intel/stechkin
-	name = "Sensitive Data Safe"
-
-/obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
-		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
-
 /obj/item/storage/secure/safe/suns
 	name = "Captain's Secure Safe"
 	desc = "The most important part of a SUNS vessel is the spare dueling sword."
@@ -220,3 +211,4 @@
 	new /obj/item/ammo_box/a357 (src)
 	new /obj/item/ammo_box/a357 (src)
 	new /obj/item/ammo_box/a357 (src)
+	new /obj/item/folder/documents/syndicate/cybersun (src)

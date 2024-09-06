@@ -32,6 +32,11 @@
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a red wax seal."
 	icon_state = "docs_red"
 
+/obj/item/documents/syndicate/cybersun
+	name = "Cybersun classified documents"
+	desc = "\"Top Secret\" documents detailing sensitive Cybersun operational intelligence. These documents are verified with a red wax seal."
+	icon_state = "docs_red"
+
 /obj/item/documents/syndicate/blue
 	name = "blue secret documents"
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a blue wax seal."
