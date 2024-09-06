@@ -344,7 +344,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define GENETIC_MUTATION "genetic"
 #define MAGIC_TRAIT "magic"
 #define TRAUMA_TRAIT "trauma"
-#define CLOTHING_TRAIT "clothing"
 #define DISEASE_TRAIT "disease"
 #define SPECIES_TRAIT "species"
 #define ORGAN_TRAIT "organ"
