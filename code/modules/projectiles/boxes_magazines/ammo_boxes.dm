@@ -55,7 +55,7 @@
 	desc = "A box of top grade .45-70 ammo. These rounds do significant damage with average performance against armor."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/a4570
-	max_ammo = 12
+	max_ammo = 24
 
 /obj/item/ammo_box/a4570/match
 	name = "ammo box (.45-70 match)"
