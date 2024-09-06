@@ -17,7 +17,7 @@
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
-	item = /obj/item/ammo_box/magazine/m22lr
+	item = /obj/item/ammo_box/magazine/m22lr_himehabu
 
 	price_min = 100
 	price_max = 200
