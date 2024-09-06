@@ -306,7 +306,7 @@
 
 /datum/blackmarket_item/weapon/mauler
 	name = "Mauler Machine Pistol"
-	desc = "This gun's got teeth! A Shoal classic, the Mauler 9mm machine pistol is suited to close quarter combat with an insane fire rate beating out even dedicated assault rifles."
+	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
 	item = /obj/item/gun/ballistic/automatic/pistol/mauler
 	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
 
@@ -316,7 +316,7 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/spitter
-	name = "Spitter Machine Pistol"
+	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
 	item = /obj/item/gun/ballistic/automatic/pistol/spitter
 	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)

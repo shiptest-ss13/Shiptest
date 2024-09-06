@@ -242,7 +242,7 @@
 
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"
-	desc = "A 30 round 9mm magazine for the Spitter Machine Pistol."
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
 	item = /obj/item/ammo_box/magazine/spitter_9mm
 
 	price_min = 250
