@@ -122,12 +122,6 @@
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
 
-/datum/quirk/light_step/on_spawn()
-	var/datum/component/footstep/C = quirk_holder.GetComponent(/datum/component/footstep)
-	if(C)
-		C.volume *= 0.6
-		C.e_range -= 2
-
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."
