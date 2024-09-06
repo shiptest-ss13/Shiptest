@@ -340,7 +340,30 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/item/gun/proc/fill_gun()
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		if(default_ammo_type)
+			installed_cell = new default_ammo_type(src)
+		if(spawn_empty_mag)
+			adjust_current_rounds(installed_cell, get_max_ammo(TRUE))
+		update_ammo_types()
+		recharge_newshot(TRUE)
+		update_appearance()
+	else
+		if (!default_ammo_type && !ispath(default_ammo_type, /obj/item/ammo_box/magazine/internal))
+			bolt_locked = TRUE
+			update_appearance()
+			return
+		if (!magazine)
+			magazine = new default_ammo_type(src)
+		if (!default_ammo_type)
+			get_ammo_list(drop_all = TRUE)
+		if(default_cell_type && reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
+			installed_cell = new default_cell_type(src)
+		chamber_round()
+		update_appearance()
 	return
+
+/obj/item/gun/proc/update_ammo_types()
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -403,6 +426,14 @@
 		. += "It has <b>[manufacturer]</b> engraved on it."
 	if(has_safety)
 		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. [span_info("<b>Ctrl-Click</b> to toggle the safety.")]"
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+		if(installed_cell)
+			. += "\The [name] is on <b>[shot.select_name]</b> mode."
+			if(ammo_type.len > 1)
+				. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+		else
+			. += span_notice("\The [name] doesn't seem to have a cell!")
 	. += examine_ammo_count(user)
 
 /obj/item/gun/proc/examine_ammo_count(mob/user)
@@ -785,6 +816,14 @@
 	update_appearance()
 
 /obj/item/gun/attack_hand(mob/user)
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		if(!internal_magazine && loc == user && user.is_holding(src) && installed_cell && tac_reloads)
+			eject_mag(user)
+			return
+	if(reciever_flags & AMMO_RECIEVER_MAGAZINES)
+		if(!internal_magazine && loc == user && user.is_holding(src) && magazine)
+			eject_mag(user)
+			return
 	. = ..()
 	update_appearance()
 
@@ -801,6 +840,26 @@
 		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
+
+/obj/item/gun/update_icon_state()
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		if(initial(item_state))
+			return ..()
+		var/ratio = get_charge_ratio()
+		var/new_item_state = ""
+		new_item_state = initial(icon_state)
+		if(modifystate)
+			var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+			new_item_state += "[shot.select_name]"
+		new_item_state += "[ratio]"
+		item_state = new_item_state
+		return ..()
+
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
+	return ..()
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -830,6 +889,59 @@
 					. += new /mutable_appearance(charge_overlay)
 			else
 				. += "[icon_state]_charge[charge_ratio]"
+
+	if(reciever_flags & AMMO_RECIEVER_CELL)
+		if(!automatic_charge_overlays || QDELETED(src))
+			return
+		// Every time I see code this "flexible", a kitten fucking dies //it got worse
+		//todo: refactor this a bit to allow showing of charge on a gun's cell
+		var/overlay_icon_state = "[icon_state]_charge"
+		var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
+		var/ratio = get_charge_ratio()
+		if(installed_cell)
+			. += "[icon_state]_cell"
+			if(ratio == 0)
+				. += "[icon_state]_cellempty"
+		if(ratio == 0)
+			if(modifystate)
+				. += "[icon_state]_[shot.select_name]"
+			. += "[icon_state]_empty"
+		else
+			if(!shaded_charge)
+				if(modifystate)
+					. += "[icon_state]_[shot.select_name]"
+					overlay_icon_state += "_[shot.select_name]"
+				var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
+				for(var/i = ratio, i >= 1, i--)
+					charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+					charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+					. += new /mutable_appearance(charge_overlay)
+			else
+				if(modifystate)
+					. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
+				else
+					. += "[icon_state]_charge[ratio]"
+		return
+
+	if (bolt_type == BOLT_TYPE_LOCKING)
+		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
+	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
+		. += "[icon_state]_bolt"
+	if (magazine)
+		if (unique_mag_sprites_for_variants)
+			. += "[icon_state]_mag_[magazine.base_icon_state]"
+			if (!magazine.ammo_count())
+				. += "[icon_state]_mag_empty"
+		else
+			. += "[icon_state]_mag"
+			var/capacity_number = 0
+			capacity_number = ROUND_UP((get_ammo_count() / get_max_ammo()) * ammo_overlay_sections)
+			if (capacity_number)
+				. += "[icon_state]_mag_[capacity_number]"
+	if(!chambered && empty_indicator)
+		. += "[icon_state]_empty"
+	if(chambered && mag_display_ammo)
+		. += "[icon_state]_chambered"
 
 #define BRAINS_BLOWN_THROW_RANGE 2
 #define BRAINS_BLOWN_THROW_SPEED 1
@@ -1205,10 +1317,91 @@
 
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/proc/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
+	if(gun_features_flags & GUN_ENERGY)
+		if(!(C.type in allowed_ammo_types))
+			to_chat(user, span_warning("[C] cannot fit into [src]!"))
+			return FALSE
+		if(user.transferItemToLoc(C, src))
+			installed_cell = C
+			to_chat(user, span_notice("You load the [C] into \the [src]."))
+			playsound(src, load_sound, load_sound_volume, load_sound_vary)
+			update_appearance()
+			return TRUE
+		else
+			to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+			return FALSE
+	else
+		if(!istype(inserted_mag, default_ammo_type))
+			to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
+			return FALSE
+		if(user.transferItemToLoc(inserted_mag, src))
+			magazine = inserted_mag
+			if (display_message)
+				to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
+			if (magazine.ammo_count())
+				playsound(src, load_sound, load_sound_volume, load_sound_vary)
+			else
+				playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
+			if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
+				chamber_round(TRUE)
+			update_appearance()
+			SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+			return TRUE
+		else
+			to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+			return FALSE
 	return
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
 /obj/item/gun/proc/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
+	if(gun_features_flags & GUN_ENERGY)
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
+		installed_cell.forceMove(drop_location())
+		var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
+		old_cell.update_appearance()
+		installed_cell = null
+		to_chat(user, span_notice("You pull the cell out of \the [src]."))
+		update_appearance()
+		if(tac_load && tac_reloads)
+			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+				if(insert_mag(user, tac_load))
+					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+				else
+					to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
+			else
+				to_chat(user, span_warning("Your reload was interupted!"))
+				return
+
+		user.put_in_hands(old_cell)
+		update_appearance()
+	else
+		if(bolt_type == BOLT_TYPE_OPEN)
+			chambered = null
+		if (magazine.ammo_count())
+			playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
+		else
+			playsound(src, eject_empty_sound, eject_sound_volume, eject_sound_vary)
+		magazine.forceMove(drop_location())
+		var/obj/item/ammo_box/magazine/old_mag = magazine
+		old_mag.update_appearance()
+		magazine = null
+		if (display_message)
+			to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
+		update_appearance()
+		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+		if (tac_load)
+			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+				if (insert_mag(user, tac_load, FALSE))
+					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+				else
+					to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
+			else
+				to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
+				return
+		if(user)
+			user.put_in_hands(old_mag)
+		update_appearance()
+		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	return
 
 /obj/item/gun/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)

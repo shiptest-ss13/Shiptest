@@ -74,6 +74,7 @@
 #define GUN_AMMO_COUNTER (1<<0)
 #define GUN_WIELDED_FIRING_ONLY (1<<1)
 #define GUN_WIELDED_STABLE_FIRING_ONLY (1<<2)
+//To be removed
 #define GUN_ENERGY (1<<3)
 #define GUN_AMMO_COUNT_BY_PERCENTAGE (1<<4)
 #define GUN_AMMO_COUNT_BY_SHOTS_REMAINING (1<<5)
@@ -92,6 +93,7 @@
 #define AMMO_RECIEVER_DO_NOT_EMPTY_ROUNDS_AFTER_FIRE (1<<10)
 #define AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE (1<<11) //The ammo stay in the magazine until the last moment
 #define AMMO_RECIEVER_AUTO_EJECT_LOCKED (1<<12) //Not allowed to turn automatic unloading off
+//To be removed
 #define AMMO_RECIEVER_CELL (1<<13)
 #define AMMO_RECIEVER_SECONDARY_CELL (1<<14)
 

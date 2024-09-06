@@ -36,49 +36,6 @@
 		)
 	)
 
-/obj/item/gun/ballistic/fill_gun()
-	if (!default_ammo_type && !ispath(default_ammo_type, /obj/item/ammo_box/magazine/internal))
-		bolt_locked = TRUE
-		update_appearance()
-		return
-	if (!magazine)
-		magazine = new default_ammo_type(src)
-	if (!default_ammo_type)
-		get_ammo_list(drop_all = TRUE)
-	if(default_cell_type && reciever_flags & AMMO_RECIEVER_SECONDARY_CELL)
-		installed_cell = new default_cell_type(src)
-	chamber_round()
-	update_appearance()
-
-/obj/item/gun/ballistic/update_icon_state()
-	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
-	else
-		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
-	return ..()
-
-/obj/item/gun/ballistic/update_overlays()
-	. = ..()
-	if (bolt_type == BOLT_TYPE_LOCKING)
-		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
-	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
-		. += "[icon_state]_bolt"
-	if (magazine)
-		if (unique_mag_sprites_for_variants)
-			. += "[icon_state]_mag_[magazine.base_icon_state]"
-			if (!magazine.ammo_count())
-				. += "[icon_state]_mag_empty"
-		else
-			. += "[icon_state]_mag"
-			var/capacity_number = 0
-			capacity_number = ROUND_UP((get_ammo_count() / get_max_ammo()) * ammo_overlay_sections)
-			if (capacity_number)
-				. += "[icon_state]_mag_[capacity_number]"
-	if(!chambered && empty_indicator)
-		. += "[icon_state]_empty"
-	if(chambered && mag_display_ammo)
-		. += "[icon_state]_chambered"
-
 /obj/item/gun/ballistic/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	if(!semi_auto && from_firing)
 		return
@@ -133,58 +90,6 @@
 	bolt_locked = FALSE
 	update_appearance()
 
-///Handles all the logic needed for magazine insertion
-/obj/item/gun/ballistic/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
-	if(!istype(inserted_mag, default_ammo_type))
-		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(user.transferItemToLoc(inserted_mag, src))
-		magazine = inserted_mag
-		if (display_message)
-			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
-		if (magazine.ammo_count())
-			playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		else
-			playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
-		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
-			chamber_round(TRUE)
-		update_appearance()
-		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-		return TRUE
-	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
-		return FALSE
-
-///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
-/obj/item/gun/ballistic/eject_mag(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
-	if(bolt_type == BOLT_TYPE_OPEN)
-		chambered = null
-	if (magazine.ammo_count())
-		playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
-	else
-		playsound(src, eject_empty_sound, eject_sound_volume, eject_sound_vary)
-	magazine.forceMove(drop_location())
-	var/obj/item/ammo_box/magazine/old_mag = magazine
-	old_mag.update_appearance()
-	magazine = null
-	if (display_message)
-		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
-	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-	if (tac_load)
-		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-			if (insert_mag(user, tac_load, FALSE))
-				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
-			else
-				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
-		else
-			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
-			return
-	if(user)
-		user.put_in_hands(old_mag)
-	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-
 ///Prefire empty checks for the bolt drop
 /obj/item/gun/ballistic/prefire_empty_checks()
 	if (!chambered && !get_ammo_count())
@@ -215,13 +120,6 @@
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	. = ..() //The gun actually firing
 	postfire_empty_checks(.)
-
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/ballistic/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && magazine)
-		eject_mag(user)
-		return
-	return ..()
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
 	if(bolt_type == BOLT_TYPE_NO_BOLT)

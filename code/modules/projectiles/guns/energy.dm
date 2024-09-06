@@ -43,8 +43,8 @@
 		)
 	)
 
-	reciever_flags = AMMO_RECIEVER_CELL
-	gun_features_flags = GUN_AMMO_COUNTER|GUN_AMMO_COUNT_BY_SHOTS_REMAINING
+	reciever_flags = AMMO_RECIEVER_CELL|AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE|AMMO_RECIEVER_DO_NOT_EJECT_HANDFULS
+	gun_features_flags = GUN_ENERGY|GUN_AMMO_COUNTER|GUN_AMMO_COUNT_BY_SHOTS_REMAINING
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -58,16 +58,7 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/gun/energy/fill_gun()
-	if(default_ammo_type)
-		installed_cell = new default_ammo_type(src)
-	if(spawn_empty_mag)
-		adjust_current_rounds(installed_cell, get_max_ammo(TRUE))
-	update_ammo_types()
-	recharge_newshot(TRUE)
-	update_appearance()
-
-/obj/item/gun/energy/proc/update_ammo_types()
+/obj/item/gun/energy/update_ammo_types()
 	var/obj/item/ammo_casing/energy/shot
 	for (var/i = 1, i <= ammo_type.len, i++)
 		var/shottype = ammo_type[i]
@@ -101,52 +92,10 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && installed_cell && tac_reloads)
-		eject_mag(user)
-		return
-	return ..()
-
 /obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_appearance()
-
-/obj/item/gun/energy/insert_mag(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(!(C.type in allowed_ammo_types))
-		to_chat(user, span_warning("[C] cannot fit into [src]!"))
-		return FALSE
-	if(user.transferItemToLoc(C, src))
-		installed_cell = C
-		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		update_appearance()
-		return TRUE
-	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
-		return FALSE
-
-/obj/item/gun/energy/eject_mag(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	playsound(src, load_sound, load_sound_volume, load_sound_vary)
-	installed_cell.forceMove(drop_location())
-	var/obj/item/stock_parts/cell/gun/old_cell = installed_cell
-	old_cell.update_appearance()
-	installed_cell = null
-	to_chat(user, span_notice("You pull the cell out of \the [src]."))
-	update_appearance()
-	if(tac_load && tac_reloads)
-		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-			if(insert_mag(user, tac_load))
-				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
-			else
-				to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
-		else
-			to_chat(user, span_warning("Your reload was interupted!"))
-			return
-
-	user.put_in_hands(old_cell)
-	update_appearance()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
@@ -203,52 +152,6 @@
 	update_appearance()
 	return
 
-/obj/item/gun/energy/update_icon_state()
-	if(initial(item_state))
-		return ..()
-	var/ratio = get_charge_ratio()
-	var/new_item_state = ""
-	new_item_state = initial(icon_state)
-	if(modifystate)
-		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-		new_item_state += "[shot.select_name]"
-	new_item_state += "[ratio]"
-	item_state = new_item_state
-	return ..()
-
-/obj/item/gun/energy/update_overlays()
-	. = ..()
-	if(!automatic_charge_overlays || QDELETED(src))
-		return
-	// Every time I see code this "flexible", a kitten fucking dies //it got worse
-	//todo: refactor this a bit to allow showing of charge on a gun's cell
-	var/overlay_icon_state = "[icon_state]_charge"
-	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
-	var/ratio = get_charge_ratio()
-	if(installed_cell)
-		. += "[icon_state]_cell"
-		if(ratio == 0)
-			. += "[icon_state]_cellempty"
-	if(ratio == 0)
-		if(modifystate)
-			. += "[icon_state]_[shot.select_name]"
-		. += "[icon_state]_empty"
-	else
-		if(!shaded_charge)
-			if(modifystate)
-				. += "[icon_state]_[shot.select_name]"
-				overlay_icon_state += "_[shot.select_name]"
-			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
-			for(var/i = ratio, i >= 1, i--)
-				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
-				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
-				. += new /mutable_appearance(charge_overlay)
-		else
-			if(modifystate)
-				. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
-			else
-				. += "[icon_state]_charge[ratio]"
-
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/get_charge_ratio()
 	return can_shoot(visuals = TRUE) ? CEILING(clamp(get_ammo_count() / get_max_ammo(), 0, 1) * ammo_overlay_sections, 1) : 0
@@ -295,14 +198,3 @@
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			adjust_current_rounds(installed_cell, E.rounds_per_shot)
 			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
-
-/obj/item/gun/energy/examine(mob/user)
-	. = ..()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	if(installed_cell)
-		. += "\The [name] is on <b>[shot.select_name]</b> mode."
-		if(ammo_type.len > 1)
-			. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
-	else
-		. += span_notice("\The [name] doesn't seem to have a cell!")
-
