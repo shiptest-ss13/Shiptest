@@ -330,7 +330,7 @@
 	name = "Pounder Submachine Gun"
 	desc = "Give your enemies the pounding of their life with this 50 round .22lr Submachine Gun! This baby can blast it's whole load in mere moments!"
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
-	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag,/datum/blackmarket_item/ammo/himehabu_box)
 
 	price_min = 1500
 	price_max = 2000
