@@ -708,6 +708,8 @@ EMPTY_GUN_HELPER(automatic/marksman/taipan)
 		)
 	)
 
+EMPTY_GUN_HELPER(automatic/assault/hydra)
+
 //we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
 /obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
 	. = ..()
@@ -804,6 +806,8 @@ EMPTY_GUN_HELPER(automatic/marksman/taipan)
 	wield_delay = 0.85 SECONDS //above
 	spawnwithmagazine = FALSE //so we spawn with the short magaine
 	zoomable = TRUE
+
+EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr/Initialize()
 	. = ..()
