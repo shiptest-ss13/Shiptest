@@ -924,8 +924,6 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 //########### MISC ###########//
 // Bulldog shotgun //
 
-/obj/item/gun/ballistic/shotgun/automatic/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
-
 /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	name = "SG-60r \"Bulldog\""
 	desc = "A bullpup combat shotgun usually seen with a characteristic drum magazine. Wildly popular among Syndicate strike teams during the ICW, although it proved less useful against military-grade equipment. Still popular among former Syndicate factions, especially the Ramzi Clique pirates. Chambered in 12g."
@@ -982,6 +980,8 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 			"y" = 24,
 		)
 	)
+
+EMPTY_GUN_HELPER(/shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
 	name = "shotgun box magazine (12g buckshot)"
