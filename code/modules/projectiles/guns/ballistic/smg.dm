@@ -185,6 +185,10 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 	icon_state = "firestorm"
 	item_state = "firestorm"
 	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c45_firestorm_mag,
+		/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+		)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
@@ -198,12 +202,7 @@ EMPTY_GUN_HELPER(automatic/smg/c20r/cobra)
 	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	default_ammo_type = null
-
-/obj/item/gun/ballistic/automatic/smg/firestorm/pan/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"

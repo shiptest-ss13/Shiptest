@@ -13,7 +13,7 @@
 	has_safety = TRUE
 	safety = TRUE
 
-	min_recoil = 0.25
+	min_recoil = 0.1
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,

@@ -1318,12 +1318,12 @@
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/proc/insert_mag(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
 	if(gun_features_flags & GUN_ENERGY)
-		if(!(C.type in allowed_ammo_types))
-			to_chat(user, span_warning("[C] cannot fit into [src]!"))
+		if(!(inserted_mag.type in allowed_ammo_types))
+			to_chat(user, span_warning("[inserted_mag] cannot fit into [src]!"))
 			return FALSE
-		if(user.transferItemToLoc(C, src))
-			installed_cell = C
-			to_chat(user, span_notice("You load the [C] into \the [src]."))
+		if(user.transferItemToLoc(inserted_mag, src))
+			installed_cell =inserted_mag
+			to_chat(user, span_notice("You load the [inserted_mag] into \the [src]."))
 			playsound(src, load_sound, load_sound_volume, load_sound_vary)
 			update_appearance()
 			return TRUE
