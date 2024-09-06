@@ -79,12 +79,12 @@
 
 	adjustStaminaLoss(1)
 
-/mob/living/carbon/human/fully_heal(heal_flags)
+/mob/living/carbon/human/fully_heal(admin_revive = FALSE)
 	. = ..()
 	adjust_sprint_left(INFINITY)
 
 // Minor stamina regeneration effects, such as stimulants, will replenish sprint capacity
-/mob/living/carbon/human/adjustStaminaLoss(amount, updating_stamina, forced, required_biotype)
+/mob/living/carbon/human/adjustStaminaLoss(amount, updating_health, forced)
 	. = ..()
 	if(amount < 0 && amount >= -20)
 		adjust_sprint_left(amount * 0.25)
