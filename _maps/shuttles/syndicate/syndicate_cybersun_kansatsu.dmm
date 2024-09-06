@@ -1109,7 +1109,7 @@
 	},
 /obj/machinery/camera{
 	dir = 1;
-	c_tag = "Armory"
+	c_tag = "Secure Storage"
 	},
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_y = 10;
@@ -1439,6 +1439,10 @@
 /obj/item/binoculars,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/camera{
+	dir = 10;
+	c_tag = "Observation Deck"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "yw" = (
@@ -1659,6 +1663,10 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/camera{
+	dir = 6;
+	c_tag = "Bridge"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "DU" = (
@@ -1677,6 +1685,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
+"EB" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 8;
+	name = "Engineering"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "EX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2702,19 +2723,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
-"ZH" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/airlock/hatch{
-	dir = 8;
-	name = "Engineering"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering)
 "ZI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
@@ -2843,7 +2851,7 @@ Ap
 ZQ
 sF
 Nu
-ZH
+EB
 yF
 Nu
 tE
