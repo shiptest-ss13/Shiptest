@@ -28,7 +28,6 @@
 	mutanteyes = /obj/item/organ/eyes/lizard
 	sclera_color = "#fffec4"
 	blush_color = COLOR_BLUSH_TEAL
-	special_step_sounds = FOOTSTEP_MOB_CLAW
 
 	species_chest = /obj/item/bodypart/chest/lizard
 	species_head = /obj/item/bodypart/head/lizard

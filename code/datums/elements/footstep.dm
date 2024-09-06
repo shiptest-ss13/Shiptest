@@ -135,6 +135,7 @@
 			TRUE,
 			GLOB.footstep[source_loc.footstep][3] + e_range + range_adjustment, falloff_distance = 1, vary = sound_vary)
 	else
+		//we are barefoot
 		if(source.dna.species.special_step_sounds)
 			playsound(source, pick(source.dna.species.special_step_sounds), 50, TRUE, falloff_distance = 1, vary = sound_vary)
 		else
