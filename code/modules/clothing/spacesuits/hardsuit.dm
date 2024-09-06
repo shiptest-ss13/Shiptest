@@ -420,7 +420,7 @@
 
 //Ramzi Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	name = "rusted-red hardsuit helmet"
+	name = "rust-red hardsuit helmet"
 	desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
 	alt_desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in combat mode. Manufactured by Ramzi Clique."
 	icon_state = "hardsuit1-ramzi"
@@ -429,7 +429,7 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-	name = "rusted-red hardsuit"
+	name = "rust-red hardsuit"
 	desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
 	alt_desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in combat mode. Manufactured by Ramzi Clique."
 	icon_state = "hardsuit1-ramzi"
@@ -439,7 +439,7 @@
 	lightweight = 1
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	slowdown = 1
+	slowdown = 0.7
 	jetpack = null
 
 //Elite Syndie suit
