@@ -641,7 +641,7 @@ EMPTY_GUN_HELPER(automatic/marksman/boomslang/indie)
 	valid_attachments = list()
 	slot_available = list()
 
-EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
+EMPTY_GUN_HELPER(automatic/marksman/taipan)
 
 
 //########### RIFLES ###########//
