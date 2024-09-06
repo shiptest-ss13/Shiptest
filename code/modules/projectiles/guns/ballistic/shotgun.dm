@@ -214,13 +214,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	manufacturer = MANUFACTURER_INTEQ
 
-EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
+EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/suns
-	name = "\improper Bulldog-C Shotgun"
-	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
-	icon_state = "bulldog_suns"
-	item_state = "bulldog_suns"
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //

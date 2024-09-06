@@ -944,6 +944,7 @@ EMPTY_GUN_HELPER(automatic/marksman/sniper_rifle)
 //	empty_indicator = TRUE
 	empty_alarm = TRUE
 	unique_mag_sprites_for_variants = TRUE
+	show_ammo_capacity_on_magazine_sprite = TRUE
 	internal_magazine = FALSE
 	casing_ejector = TRUE
 	tac_reloads = TRUE
