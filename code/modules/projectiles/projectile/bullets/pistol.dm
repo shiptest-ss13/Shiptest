@@ -31,7 +31,7 @@
 	armour_penetration = -40
 	stamina = 30
 
-// 10mm (Stechkin & SkM-44(k))
+// 10mm (Ringneck & SkM-44(k))
 
 /obj/projectile/bullet/c10mm
 	name = "10mm bullet"

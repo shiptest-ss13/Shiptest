@@ -19,7 +19,7 @@
 		// Security Stuff
 		"sec_rshot", "sec_beanbag_slug", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
 		//Handgun Ammo (Security)
-		"commanderammo", "stechkinammo", "candorammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
+		"commanderammo", "ringneckammo", "candorammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
 		// Construction Materials
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
 		// You People Are Animals

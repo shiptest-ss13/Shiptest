@@ -63,7 +63,7 @@
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
-				. += "[icon_state]_mag_empty"
+				. += "[icon_state]_mag_[magazine.base_icon_state]_empty"
 		else
 			. += "[icon_state]_mag"
 		if(show_ammo_capacity_on_magazine_sprite)

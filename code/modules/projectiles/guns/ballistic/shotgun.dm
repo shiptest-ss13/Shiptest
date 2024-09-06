@@ -206,17 +206,17 @@
 		return
 	rack()
 
-/obj/item/gun/ballistic/shotgun/bulldog/inteq
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
-	icon_state = "bulldog-inteq"
-	item_state = "bulldog-inteq"
-	mag_type = /obj/item/ammo_box/magazine/m12g
+	icon_state = "bulldog_inteq"
+	item_state = "bulldog_inteq"
+	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	manufacturer = MANUFACTURER_INTEQ
 
 EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 
-/obj/item/gun/ballistic/shotgun/bulldog/suns
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/suns
 	name = "\improper Bulldog-C Shotgun"
 	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
 	icon_state = "bulldog_suns"

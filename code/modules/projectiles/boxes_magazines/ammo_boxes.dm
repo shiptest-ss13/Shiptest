@@ -499,6 +499,16 @@
 	ammo_type = /obj/item/ammo_casing/a300
 	max_ammo = 20
 
+/obj/item/ammo_box/a65clip_box
+	name = "ammo box (6.5x57mm CLIP)"
+	desc = "A box of standard 6.5x57mm CLIP ammo."
+	icon_state = "65box"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	max_ammo = 20
+
+/obj/item/ammo_box/a65clip_box/syndicate
+	icon_state = "65box_sa"
+
 /obj/item/ammo_box/a44roum
 	name = "ammo box (.44 roumain)"
 	desc = "A box of standard .44 roumain ammo."

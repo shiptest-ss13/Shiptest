@@ -74,7 +74,6 @@
 /obj/item/gun/ballistic/shotgun/toy/crossbow
 	name = "foam force crossbow"
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
-	icon = 'icons/obj/toy.dmi'
 	icon_state = "foamcrossbow"
 	item_state = "crossbow"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/crossbow
@@ -85,9 +84,9 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/smg/c20r/toy
-	name = "donksoft SMG"
-	desc = "A bullpup two-round burst toy SMG, designated 'C-20r'. Ages 8 and up."
+/obj/item/gun/ballistic/automatic/smg/cobra/toy  //likely deleting, leaving this here to remind me, if this is still here in master fucking scream at me
+	name = "should be deleted"
+	desc = "9 instances in the code x3"
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 	fire_sound = 'sound/items/syringeproj.ogg'
@@ -96,16 +95,16 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot
+/obj/item/gun/ballistic/automatic/smg/cobra/toy/riot
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/update_overlays()
+/obj/item/gun/ballistic/automatic/smg/cobra/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy
-	name = "donksoft LMG"
-	desc = "A heavily modified toy light machine gun, designated 'L6 SAW'. Ages 8 and up."
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy //likely deleting, leaving this here to remind me, if this is still here in master fucking scream at me
+	name = "should be deleted"
+	desc = "6 instances in the code :3c"
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/m762
@@ -114,9 +113,9 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/riot
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy/riot
 	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/update_overlays()
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"

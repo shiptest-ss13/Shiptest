@@ -111,8 +111,8 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/ammo_box/magazine/m10mm/ap,
-/obj/item/ammo_box/magazine/m10mm/ap,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/clothing/suit/armor/hos/trenchcoat,
 /obj/machinery/button/door{
 	pixel_x = 9;
@@ -906,9 +906,9 @@
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/belt/security/webbing{
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
@@ -1826,9 +1826,9 @@
 "kH" = (
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/belt/security/webbing{
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
@@ -2766,9 +2766,9 @@
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/belt/security/webbing{
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
@@ -4641,9 +4641,9 @@
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/belt/security/webbing{
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
@@ -4672,7 +4672,7 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/obj/item/gun/ballistic/automatic/marksman/sniper_rifle/no_mag{
+/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag{
 	pixel_x = -3;
 	pixel_y = 6
 	},
@@ -5608,25 +5608,25 @@
 /area/ship/security)
 "Gm" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/ebr{
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
 	pixel_x = 10;
 	pixel_y = -1
 	},
-/obj/item/ammo_box/magazine/ebr{
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
 	pixel_x = 4
 	},
-/obj/item/ammo_box/magazine/ebr{
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
 	pixel_y = -3;
 	pixel_x = 7
 	},
-/obj/item/ammo_box/magazine/ebr{
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/marksman/ebr/no_mag{
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag{
 	pixel_x = -7;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/marksman/ebr/no_mag,
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Gn" = (
@@ -7495,27 +7495,27 @@
 /area/ship/hallway/aft)
 "Rv" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag{
 	pixel_x = -7;
 	pixel_y = 7
 	},
-/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag{
 	pixel_y = -3;
 	pixel_x = 2
 	},
 /obj/machinery/light/directional/north,
-/obj/item/ammo_box/magazine/m12g{
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
 	pixel_x = -8;
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/m12g{
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
 	pixel_y = -7
 	},
-/obj/item/ammo_box/magazine/m12g{
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
 	pixel_y = -9;
 	pixel_x = -10
 	},
-/obj/item/ammo_box/magazine/m12g{
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
 	pixel_y = -12
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -8051,7 +8051,7 @@
 	pixel_x = -1;
 	pixel_y = -10
 	},
-/obj/item/gun/ballistic/rocketlauncher{
+/obj/item/gun/ballistic/rocketlauncher/mako{
 	pixel_y = 6;
 	pixel_x = -3
 	},
@@ -8832,23 +8832,23 @@
 /area/ship/engineering/engine)
 "YO" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
 	pixel_x = 2;
 	pixel_y = 8
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
 	pixel_y = -2;
 	pixel_x = 3
 	},
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "YR" = (

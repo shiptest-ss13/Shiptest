@@ -2000,17 +2000,17 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/toolbox/ammo/c10mm,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "Ammo Locker";
 	req_access_txt = "1"
 	},
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "sY" = (
@@ -2726,8 +2726,8 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "yH" = (
-/obj/item/gun/ballistic/automatic/pistol/syndicate,
-/obj/item/gun/ballistic/automatic/pistol/syndicate{
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/gun/ballistic/automatic/pistol/ringneck{
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/industrial/fire{
@@ -2735,7 +2735,7 @@
 	},
 /obj/structure/guncloset,
 /obj/structure/railing,
-/obj/item/gun/ballistic/automatic/smg/c20r,
+/obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/machinery/light/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
@@ -2876,11 +2876,11 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/syndicate{
+/obj/item/gun/ballistic/automatic/pistol/ringneck{
 	pixel_y = 3
 	},
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/c10mm,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -3125,7 +3125,7 @@
 	},
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
 /obj/item/clothing/glasses/thermal/eyepatch,
-/obj/item/gun/ballistic/revolver/syndicate,
+/obj/item/gun/ballistic/revolver/viper,
 /obj/item/clothing/under/syndicate/sniper,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,

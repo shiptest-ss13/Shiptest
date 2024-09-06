@@ -56,7 +56,7 @@
 
 //BALLISTIC
 	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck //Removes the need for max_ammo and caliber info
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
