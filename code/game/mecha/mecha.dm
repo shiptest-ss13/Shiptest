@@ -41,6 +41,13 @@
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 
+	///Vars for handling bump interactions while the mech is charging
+	var/charging = FALSE
+	var/charge_distance = 5
+	var/charge_break_walls = FALSE
+	var/charge_toss_structures  = FALSE
+	var/charge_toss_mobs = FALSE
+
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
 	var/use_internal_tank = 0

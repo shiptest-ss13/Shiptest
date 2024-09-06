@@ -183,6 +183,14 @@
 		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
 	UpdateButtonIcon()
 
+/datum/action/innate/mecha/mech_charge_mode
+	name = "Charge"
+	button_icon_state = "mech_overload_off"
+
+/datum/action/innate/mecha/mech_charge_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"
 	button_icon_state = "mech_smoke"
