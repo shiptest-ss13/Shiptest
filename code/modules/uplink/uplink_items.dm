@@ -938,7 +938,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/ammo/tec9
 	name = "TEC9 Magazine"
 	desc = "An additional 20 round 9mm magazine for the TEC9."
-	item = /obj/item/ammo_box/magazine/tec9
+	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 3
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
