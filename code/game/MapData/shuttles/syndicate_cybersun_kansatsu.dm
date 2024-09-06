@@ -125,7 +125,7 @@
 	DELAY 40
 	SAY They are scattered around the planetoids in your sector. You are also permitted to retrieve them from other vessels.
 	DELAY 40
-	SAY The anomaly cores must be stored in your cargo bay, in the company-issued secure crate.
+	SAY The anomaly cores must be stored in your armory, in the company-issued secure crate.
 	DELAY 40
 	SAY Do not disappoint us.
 	DELAY 20
