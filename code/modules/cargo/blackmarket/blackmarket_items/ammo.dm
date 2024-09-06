@@ -219,3 +219,13 @@
 	stock_max = 5
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/a4570hp
+	name = ".45-70 Hollow Point Ammo Box"
+	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
+	item = /obj/item/ammo_box/a4570/hp
+
+	price_min = 600
+	price_max = 1000
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 20
