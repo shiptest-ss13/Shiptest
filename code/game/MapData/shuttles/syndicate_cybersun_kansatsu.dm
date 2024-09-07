@@ -188,3 +188,24 @@
 	SAY Good luck.
 	DELAY 20
 	"}
+
+/obj/item/disk/holodisk/kansatsu/gear/pens
+	name = "\improper IR-304" // Introductory Recording - Random Number
+	desc = "A classified holodisk containing an introduction to the modified pens."
+	preset_record_text = {"
+	NAME Researcher Meenus-Seeba
+	SAY You have been issued a set of Cybersun Industries Modified Pen Kit.
+	DELAY 40
+	SAY It contains three advanced pens with utility in espionage.
+	DELAY 40
+	SAY First of the pens doubles as a tiny energy knife. Extremely useful in combat and for utility, while being practically unrecognizable.
+	DELAY 40
+	SAY Second pen is equipped with a hidden chemical injector at the tip. After stabbing a target with it, they will be subdued shortly. Perfect for target extraction.
+	DELAY 40
+	SAY Third pen, and the most visually distinctive one, has a diamond tip that can be used to mine. Not the fastest way to move around, but can certainly prove useful in emergencies.
+	DELAY 40
+	SAY The Cybersun Industries Modified Pen Kit also contains a complimentraty pocket protector to carry the pens in without drawing too much suspicion.
+	DELAY 40
+	SAY Good luck.
+	DELAY 20
+	"}
