@@ -282,8 +282,8 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9mm)"
-	desc = "A long, 15-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
-	icon_state = "rattlesnake_mag-1"
+	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
+	icon_state = "rattlesnake_mag-18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
