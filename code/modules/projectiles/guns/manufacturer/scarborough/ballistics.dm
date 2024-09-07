@@ -527,6 +527,7 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 	fire_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 
 	mag_type = /obj/item/ammo_box/magazine/boomslang
+	w_class = WEIGHT_CLASS_BULKY
 
 	fire_delay = 1 SECONDS
 
