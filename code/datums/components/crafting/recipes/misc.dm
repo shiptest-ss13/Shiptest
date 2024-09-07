@@ -6,6 +6,14 @@
 				/obj/item/stack/rods = 10)
 	category = CAT_MISC
 
+/datum/crafting_recipe/scooter
+	name = "Scooter"
+	result = /obj/vehicle/ridden/scooter
+	time = 65
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/rods = 12)
+	category = CAT_MISC
+
 /datum/crafting_recipe/wheelchair
 	name = "Wheelchair"
 	result = /obj/vehicle/ridden/wheelchair
