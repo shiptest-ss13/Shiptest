@@ -100,7 +100,7 @@
 /datum/blackmarket_item/explosive/rpg
 	name = "PML-9 RPG"
 	desc = "Offically, it's an anti-armor RPG launcher. Technically, it's anti-everything. Most things don't enjoy being hit in the face with high explosives."
-	item = /obj/item/gun/ballistic/rocketlauncher/mako
+	item = /obj/item/gun/ballistic/rocketlauncher
 
 	price_min = 3500
 	price_max = 6500

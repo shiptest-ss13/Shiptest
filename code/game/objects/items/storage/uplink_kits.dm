@@ -306,7 +306,7 @@
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/gun/ballistic/automatic/smg/cobra/toy/riot,
+		/obj/item/gun/ballistic/automatic/toy,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/toy/eightball/haunted

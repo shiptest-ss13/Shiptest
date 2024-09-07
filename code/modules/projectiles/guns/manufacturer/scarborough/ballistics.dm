@@ -283,7 +283,7 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9mm)"
 	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
-	icon_state = "rattlesnake_mag-18"
+	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -743,7 +743,7 @@ EMPTY_GUN_HELPER(automatic/assault/hydra)
 	default_firemode = FIREMODE_FULLAUTO
 
 	burst_delay = 0.08 SECONDS
-	fire_delay = 0.1 SECONDS
+	fire_delay = 0.08 SECONDS
 	spread = 6
 	spread_unwielded = 20
 	wield_slowdown = 0.85 //better than the lmgs since it doesnt have a bipod, still not ideal

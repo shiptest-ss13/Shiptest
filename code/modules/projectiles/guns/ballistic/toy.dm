@@ -83,39 +83,3 @@
 	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
-
-/obj/item/gun/ballistic/automatic/smg/cobra/toy  //likely deleting, leaving this here to remind me, if this is still here in master fucking scream at me
-	name = "should be deleted"
-	desc = "9 instances in the code x3"
-	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
-	fire_sound = 'sound/items/syringeproj.ogg'
-	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
-	recoil = -10 //its a toy...
-	recoil_unwielded = -10
-
-/obj/item/gun/ballistic/automatic/smg/cobra/toy/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
-
-/obj/item/gun/ballistic/automatic/smg/cobra/toy/update_overlays()
-	. = ..()
-	. += "[icon_state]_toy"
-
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy //likely deleting, leaving this here to remind me, if this is still here in master fucking scream at me
-	name = "should be deleted"
-	desc = "6 instances in the code :3c"
-	fire_sound = 'sound/items/syringeproj.ogg'
-	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/m762
-	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
-	recoil = -10 //its a toy...
-	recoil_unwielded = -10
-
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
-
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/toy/update_overlays()
-	. = ..()
-	. += "[icon_state]_toy"
