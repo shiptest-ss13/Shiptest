@@ -877,6 +877,7 @@
 /obj/item/clothing/under/syndicate/cybersun/research,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/head/soft/cybersun,
+/obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/welding,
 /obj/effect/turf_decal/industrial/warning{
@@ -1102,7 +1103,6 @@
 	pixel_x = 20;
 	pixel_y = 10
 	},
-/obj/machinery/firealarm/directional/east,
 /obj/item/clipboard{
 	pixel_x = -5;
 	pixel_y = 3
@@ -1119,6 +1119,15 @@
 /obj/item/stamp/cybersun{
 	pixel_x = 9;
 	pixel_y = 0
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/button/door{
+	id = "kansatsu_secure_storage";
+	name = "Window Access";
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 1;
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
@@ -1164,10 +1173,11 @@
 	},
 /obj/item/clothing/under/syndicate/cybersun/officer,
 /obj/item/clothing/suit/cybersun_suit,
+/obj/item/clothing/gloves/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/HoS/cybersun,
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/pen/edagger,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -2349,11 +2359,12 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/window/brigdoor/westleft{
-	req_access_txt = "19"
-	},
 /obj/structure/window/plasma/reinforced{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "kansatsu_secure_storage";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)

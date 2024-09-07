@@ -210,5 +210,4 @@
 	new /obj/item/gun/ballistic/revolver/syndicate/no_mag(src)
 	new /obj/item/ammo_box/a357 (src)
 	new /obj/item/ammo_box/a357 (src)
-	new /obj/item/ammo_box/a357 (src)
 	new /obj/item/folder/documents/syndicate/cybersun (src)

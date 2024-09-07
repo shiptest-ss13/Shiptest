@@ -532,7 +532,7 @@
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/kitchen/knife/switchblade
+	r_pocket = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
@@ -1200,6 +1200,7 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine
+	belt = null
 
 /datum/outfit/job/syndicate/engineer/suns
 	name = "Syndicate - Ship Engineer (SUNS)"
