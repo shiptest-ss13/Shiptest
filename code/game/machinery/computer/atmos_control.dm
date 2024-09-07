@@ -312,7 +312,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 /obj/machinery/computer/atmos_control/external
 	sensors = list(GAS_MONITOR_SENSOR_EXTERNAL = "External Atmospherics Monitoring")
 	name = "External Atmospherics Monitoring"
-	// tbh I would love it if someone could make this like. Unique like ship camera networks & etc. 
+// tbh I would love it if someone could make this like. Unique like ship camera networks & etc. 
 
 // This hacky madness is the evidence of the fact that a lot of machines were never meant to be constructable, im so sorry you had to see this
 /obj/machinery/computer/atmos_control/tank/proc/reconnect(mob/user)
