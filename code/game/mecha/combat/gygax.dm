@@ -58,6 +58,9 @@
 		return
 	cell = new /obj/item/stock_parts/cell/bluespace(src)
 
+/obj/mecha/combat/gygax/inteq
+	name = "Inteq Gygax"
+	desc = "The funny"
 
 /obj/mecha/combat/gygax/GrantActions(mob/living/user, human_occupant = 0)
 	..()
@@ -67,3 +70,12 @@
 /obj/mecha/combat/gygax/RemoveActions(mob/living/user, human_occupant = 0)
 	..()
 	overload_action.Remove(user)
+
+/obj/mecha/combat/gygax/inteq/GrantActions(mob/living/user, human_occupant = 0)
+	..()
+	overload_action.Remove(user)
+	charge_action.Grant(user,src)
+
+/obj/mecha/combat/gygax/inteq/RemoveActions(mob/living/user, human_occupant)
+	. = ..()
+	charge_action.Remove(user)

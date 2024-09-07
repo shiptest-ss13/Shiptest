@@ -190,6 +190,7 @@
 /datum/action/innate/mecha/mech_charge_mode/Activate()
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
+	chassis.start_charge()
 
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"

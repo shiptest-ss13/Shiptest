@@ -97,6 +97,7 @@
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/mech_defense_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
+	var/datum/action/innate/mecha/mech_charge_mode/charge_action = new
 	var/datum/effect_system/smoke_spread/smoke_system = new //not an action, but trigged by one
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
 	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
@@ -650,6 +651,7 @@
 	step_silent = FALSE
 
 /obj/mecha/Bump(atom/obstacle)
+	var/atom/throw_target = get_edge_target_turf(obstacle, dir)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -664,8 +666,18 @@
 	else if(charging)
 		if(charge_break_walls && iswallturf(obstacle))
 			var/turf/closed/wall/crushed = obstacle
-				crushed.dismantle_wall()
-
+			crushed.dismantle_wall(TRUE)
+			visible_message("<span class='danger'>[src] smashes through [obstacle]!</span>")
+		if(isstructure(obstacle))
+			var/obj/structure/struc = obstacle
+			struc.throw_at(throw_target, 4, 3)
+			visible_message("<span class='danger'>[src] crashes into [obstacle]!</span>")
+			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+		if(ishuman(obstacle))
+			var/mob/living/carbon/human/H = obstacle
+			H.Paralyze(100)
+			H.adjustStaminaLoss(30)
+			H.apply_damage(rand(20,35), BRUTE)
 	else
 		if(..()) //mech was thrown
 			return
@@ -1224,3 +1236,28 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		else
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
+
+
+///////////////////////
+////// Charging /////
+///////////////////////
+
+/obj/mecha/proc/start_charge()
+	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)),1.5 SECONDS, TIMER_STOPPABLE)
+
+/obj/mecha/proc/handle_charge()
+	var/turf/mecha_loc = get_turf(src)
+	var/atom/target = get_edge_target_turf(mecha_loc, dir)
+	charging = TRUE
+	if (throw_at(target, charge_distance, 1, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(charge_end))))
+		playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
+		visible_message("<span class='warning'>[usr] charges forward!</span>")
+	else
+		occupant_message("Oops, something broke")
+		charging = FALSE
+
+/obj/mecha/proc/charge_end()
+	charging = FALSE
