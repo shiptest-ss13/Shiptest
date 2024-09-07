@@ -1984,6 +1984,24 @@
 /obj/structure/dresser{
 	dir = 1
 	},
+/obj/structure/bedsheetbin/empty{
+	pixel_y = 7
+	},
+/obj/item/towel{
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "ps" = (
@@ -2758,8 +2776,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vB" = (
-/obj/machinery/cryopod,
 /obj/machinery/camera/autoname,
+/obj/machinery/cryopod,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "vF" = (
@@ -3133,8 +3151,8 @@
 	dir = 1;
 	color = "#a8b2b6"
 	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/item/bikehorn/rubberducky,
+/turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "yG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3439,17 +3457,20 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "BA" = (
-/obj/machinery/shower{
+/obj/machinery/light/small/directional/east,
+/obj/structure/toilet{
 	dir = 1
 	},
-/obj/item/bikehorn/rubberducky,
-/obj/item/soap/nanotrasen,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/noslip,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1;
+	color = "#a8b2b6"
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "BI" = (
 /obj/machinery/door/airlock/wood{
-	name = "Showers";
+	name = "Toilets";
 	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/showroomfloor,
@@ -4267,6 +4288,10 @@
 /obj/item/radio{
 	pixel_x = -2
 	},
+/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry{
+	pixel_x = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Iz" = (
@@ -4624,16 +4649,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Mc" = (
-/obj/structure/toilet{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1;
 	color = "#a8b2b6"
 	},
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/item/soap/nanotrasen,
+/turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "Md" = (
 /obj/structure/AIcore,
@@ -4828,6 +4853,7 @@
 /obj/item/clothing/shoes/sneakers/black{
 	pixel_y = -10
 	},
+/obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "MR" = (
