@@ -317,6 +317,12 @@
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
 
+/datum/supply_pack/ammo/c57x39mm_boxcrate
+	name = "5.7x39mm Ammo Box Crate"
+	desc = "Contains a fifty-round 5.7x39mm box for PDWs such as the Sidewinder."
+	contains = list(/obj/item/ammo_box/c57x39mm_box)
+	cost = 250
+
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
 	desc = "Contains a fifty-round 4.6x30mm box for PDWs such as the WT-550."

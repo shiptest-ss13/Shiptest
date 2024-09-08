@@ -450,6 +450,14 @@
 /obj/item/ammo_box/a44roum_speedloader/empty
 	start_empty = TRUE
 
+/obj/item/ammo_box/c57x39mm_box
+	name = "ammo box (5.7x39mm)"
+	desc = "A box of standard 5.7x39mm ammo."
+	icon_state = "57x39mmbox"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	max_ammo = 50
+
+
 /obj/item/ammo_box/c46x30mm_box
 	name = "ammo box (4.6x30mm)"
 	desc = "A box of standard 4.6x30mm ammo."

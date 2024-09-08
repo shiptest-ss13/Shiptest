@@ -58,7 +58,7 @@
 
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
-	desc = "Contains a a civillian variant of the Viper revolver, chambered in .44 Roumain."
+	desc = "Contains a a civillian variant of the Viper revolver, chambered in .357 magnum."
 	cost = 2500
 	contains = list(/obj/item/storage/pistolcase/viper)
 
