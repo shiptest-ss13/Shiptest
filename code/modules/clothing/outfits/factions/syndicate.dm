@@ -444,7 +444,7 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
@@ -456,7 +456,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 
 //Chief Medical Officer
