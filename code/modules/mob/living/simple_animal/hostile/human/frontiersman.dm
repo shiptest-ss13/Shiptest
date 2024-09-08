@@ -32,7 +32,7 @@
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
-	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
+	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	casingtype = /obj/item/ammo_casing/a44roum
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
@@ -198,7 +198,8 @@
 	icon_living = "frontiersmanofficer"
 	maxHealth = 65
 	health = 65
-	rapid = 3
+	rapid = 4
+	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/mauler)
