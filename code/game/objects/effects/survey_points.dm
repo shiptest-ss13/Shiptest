@@ -83,6 +83,8 @@ GLOBAL_LIST_INIT(survey_technobabble, list(
 		research.merge(result)
 
 /obj/effect/survey_point/proc/discover()
+	if(invisibility = 0)
+		return TRUE
 	invisibility = 0
 	animate(src, alpha = 255,time = 15)
 
