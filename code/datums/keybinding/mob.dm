@@ -167,8 +167,8 @@
 /datum/keybinding/mob/toggle_move_intent
 	hotkey_keys = list("Alt")
 	name = "toggle_move_intent"
-	full_name = "Hold to toggle sprint"
-	description = "Hold down to enable sprinting. Releasing will return you to walk."
+	full_name = "Hold to toggle running"
+	description = "Hold down to enable running. Releasing will return you to walking."
 	keybind_signal = COMSIG_KB_MOB_TOGGLEMOVEINTENT_DOWN
 
 /datum/keybinding/mob/toggle_move_intent/down(client/user)
@@ -187,8 +187,8 @@
 /datum/keybinding/mob/toggle_move_intent_alternative
 	hotkey_keys = list("Unbound")
 	name = "toggle_move_intent_alt"
-	full_name = "press to cycle move intent"
-	description = "Pressing this cycle to the opposite move intent, does not cycle back"
+	full_name = "Press to toggle running"
+	description = "Press to toggle running, press again to toggle back to walking"
 	keybind_signal = COMSIG_KB_MOB_TOGGLEMOVEINTENTALT_DOWN
 
 /datum/keybinding/mob/toggle_move_intent_alternative/down(client/user)
