@@ -53,6 +53,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/wave_length = 2 MINUTES
 	var/wave_downtime = 30 SECONDS
 
+	//lets see how this works together with survey scanners
+	invisibility = INVISIBILITY_OBSERVER
+	alpha = 50
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
 /obj/structure/vein/Initialize()
@@ -82,6 +85,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/deconstruct(disassembled)
 	destroy_effect()
 	return..()
+
+/obj/structure/vein/proc/discover()
+	playsound(src, 'sound/effects/break_stone.ogg', 100)
+	invisibility = 0
+	animate(src, alpha = 255,time = 15)
 
 /obj/structure/vein/proc/begin_spawning()
 	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)

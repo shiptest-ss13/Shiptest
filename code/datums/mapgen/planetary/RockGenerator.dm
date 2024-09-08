@@ -91,8 +91,8 @@
 		/obj/effect/spawner/lootdrop/anomaly/rock = 10,
 		/obj/structure/vein/classthree = 10,
 		/obj/effect/spawner/minefield = 2,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
-		/obj/effect/survey_point = 4
+		/obj/effect/spawner/lootdrop/anomaly/big = 1, //get out of here stalker
+		/obj/effect/survey_point = 4,
 	)
 
 	flora_spawn_chance = 5

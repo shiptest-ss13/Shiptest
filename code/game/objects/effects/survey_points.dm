@@ -74,13 +74,17 @@ GLOBAL_LIST_INIT(survey_technobabble, list(
 	return
 
 /obj/effect/survey_point/proc/drop_loot(mob/user)
-	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(survey_technobabble))
+	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(GLOB.survey_technobabble))
 	var/obj/item/research_notes/notes = locate() in get_turf(user)
 	if(notes)
 		notes.merge(result)
 	else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 		var/obj/item/research_notes/research = user.get_inactive_held_item()
 		research.merge(result)
+
+/obj/effect/survey_point/proc/discover()
+	invisibility = 0
+	animate(src, alpha = 255,time = 15)
 
 /obj/effect/survey_point/Destroy()
 	. = ..()

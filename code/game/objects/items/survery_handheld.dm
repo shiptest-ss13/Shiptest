@@ -34,7 +34,6 @@
 	survey_delay = 2 SECONDS
 	slowdown = 0.6
 
-
 /obj/item/attachment/survey_scanner
 	name = "survey scanner"
 	desc = "A wired tool designed to work in tandem with a survey pack"
@@ -63,9 +62,11 @@
 		user.visible_message("<span class='notice'>[user] fires a ping off from [src]</span>")
 		playsound(src, 'sound/effects/ping.ogg', 75)
 		for(var/obj/effect/survey_point/revealed in orange(1, user))
-			revealed.invisibility = 0 //could use an effect but I'm lazy
-			animate(revealed, alpha = 255,time = 15)
-			revealed.visible_message("<span class='notice'>A [revealed] has been discovered by the [src.pack]'s sensors!</span>")
+			revealed.discover()
+			visible_message("<span class='notice'>A [src] has been discovered by [src.pack]'s sensors!</span>")
+		for(var/obj/structure/vein/revealed in orange(1, user))
+			revealed.discover()
+			visible_message("<span class='notice'>A [src] has been discovered by [src.pack]'s sensors!</span>")
 		src.pack.deductcharge(usecost / 2)
 		return
 	else

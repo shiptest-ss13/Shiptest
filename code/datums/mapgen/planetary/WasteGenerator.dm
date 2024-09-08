@@ -134,8 +134,8 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/waste = 1
-		/obj/effect/survey_point = 10
+		/obj/effect/spawner/lootdrop/anomaly/waste = 1,
+		/obj/effect/survey_point = 10,
 	)
 
 	mob_spawn_list = list(
@@ -322,8 +322,8 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/waste/cave = 1
-		/obj/effect/survey_point = 10
+		/obj/effect/spawner/lootdrop/anomaly/waste/cave = 1,
+		/obj/effect/survey_point = 10,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/hivebot/strong/rockplanet = 70,

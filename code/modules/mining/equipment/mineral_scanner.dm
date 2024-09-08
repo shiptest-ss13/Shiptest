@@ -208,6 +208,9 @@
 			continue
 		if(located_vein)
 			var/new_dist = get_dist(here, get_turf(I))
+			//yeah lets just hack this in here
+			if(new_dist == 1)
+				I?:discover()
 			if(new_dist < located_dist)
 				located_dist = new_dist
 				located_vein = I

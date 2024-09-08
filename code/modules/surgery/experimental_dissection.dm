@@ -68,7 +68,7 @@
 		if(H?.dna?.species)
 			if(isabductor(H))
 				cost = (BASE_HUMAN_REWARD*3)
-			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
+			else if(iszombie(H) || isshadow(H) || isandroid(H))
 				cost = (BASE_HUMAN_REWARD*4)
 			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
 				cost = (BASE_HUMAN_REWARD*6)
@@ -106,7 +106,7 @@
 	target.apply_damage(80, BRUTE, L)
 	ADD_TRAIT(target, TRAIT_DISSECTED, "[surgery.name]")
 	repeatable = FALSE
-	experience_given = max(points_earned/(MAX_DISSECTION_REWARD/MEDICAL_SKILL_MEDIUM),1)
+	experience_given = max(points_earned/(BASE_HUMAN_REWARD/MEDICAL_SKILL_MEDIUM),1)
 	return ..()
 
 /datum/surgery_step/dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

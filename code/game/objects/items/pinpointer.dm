@@ -188,7 +188,7 @@
 
 //this makes me feel dirty.
 /obj/item/pinpointer/survey_data
-	name = "survey pinpointer"
+	name = "\improper planetary survey pinpointer"
 	desc = "A small electronic handheld tuned to detect planetary irregularities"
 	process_scan = TRUE
 
@@ -207,6 +207,11 @@
 		return
 	for(var/i in GLOB.active_survey_points)
 		var/obj/effect/survey_point/my_target = i
+		if(!trackable(my_target))
+			continue
+		possible_targets += my_target
+	for(var/i in GLOB.ore_veins)
+		var/obj/structure/vein/my_target = i
 		if(!trackable(my_target))
 			continue
 		possible_targets += my_target
@@ -246,7 +251,7 @@
 	if(get_closest_target() == FALSE)
 		target = null
 		toggle_on()
-		to_chat("<span class='notice'>[src] deactivates suddenly, the area must be fully surveyed!</span>")
+		to_chat("<span class='notice'>[src] chirps and begins to power down. Survey complete!</span>")
 	. = ..()
 
 /obj/item/pinpointer/pair
