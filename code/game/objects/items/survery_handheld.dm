@@ -65,7 +65,7 @@
 		for(var/obj/effect/survey_point/revealed in orange(1, user))
 			revealed.invisibility = 0 //could use an effect but I'm lazy
 			animate(revealed, alpha = 255,time = 15)
-			revealed.visible_message("<span class='notice'>[revealed] reveals itself in a short burst of energy!</span>")
+			revealed.visible_message("<span class='notice'>A [revealed] has been discovered by the [src.pack]'s sensors!</span>")
 		src.pack.deductcharge(usecost / 2)
 		return
 	else
