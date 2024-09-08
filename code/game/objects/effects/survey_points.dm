@@ -1,6 +1,30 @@
 GLOBAL_LIST_EMPTY(active_survey_points)
 
-/obj/effect/survey_point //sure effects shouldn't be attackable, sue me.
+GLOBAL_LIST_INIT(survey_technobabble, list(
+		"geographic analysis",
+		"soil composition",
+		"atmospheric deviation",
+		"planetary survey",
+		"background radiation levels",
+		"watertable readings",
+		"biohazard potential",
+		"plasma density",
+		"ore vein potential",
+		"fauna protein analysis",
+		"fern probablity index",
+		"carcinization threshold",
+		"cool rock percentile",
+		"ambient disco levels",
+		"quantum probability matrix",
+		"Illstren bacteria viability table",
+		"mushroom size index",
+		"sarathi comfort potential",
+		"desertifiaction probability",
+		"daily sun exposure",
+		"planetary pH level",
+		))
+
+/obj/effect/survey_point //sure effects shouldn't be attackable, sue me. //please do not actually sue me my finances are in shambles
 	name = "Survey Point"
 	desc = "A location of particular survey value."
 	icon = 'icons/effects/landmarks_static.dmi'
@@ -50,20 +74,7 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 	return
 
 /obj/effect/survey_point/proc/drop_loot(mob/user)
-	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list(
-		"geographic analysis",
-		"soil composition",
-		"atmospheric deviation",
-		"planetary survey",
-		"background radiation levels",
-		"watertable readings",
-		"biohazard potential",
-		"plasma density",
-		"ore vein potential",
-		"fauna protein analysis",
-		"fern probablity index",
-		"carcinization threshold"
-	)))
+	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(survey_technobabble))
 	var/obj/item/research_notes/notes = locate() in get_turf(user)
 	if(notes)
 		notes.merge(result)
