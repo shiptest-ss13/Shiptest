@@ -677,7 +677,7 @@
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		if(ishuman(obstacle))
 			var/mob/living/carbon/human/H = obstacle
-			H.throw_at(throw_target,4,3)
+			H.throw_at(throw_target,7,3)
 			visible_message("<span class='danger'>[src] slams into [obstacle] with a sickening crunch, sending [obstacle] flying!</span>")
 			playsound(H, list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg'), 100, FALSE, -1)
 			H.Paralyze(20)
