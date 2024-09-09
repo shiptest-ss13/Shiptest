@@ -13,7 +13,7 @@ Slimecrossing Weapons
 
 /obj/item/melee/arm_blade/slime/attack(mob/living/L, mob/user)
 	. = ..()
-	if(prob(20))
+	if(prob(20) && !HAS_TRAIT(user, TRAIT_ANALGESIA))
 		user.emote("scream")
 
 //Rainbow knife - Burning Rainbow

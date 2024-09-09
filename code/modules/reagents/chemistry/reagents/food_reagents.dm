@@ -136,7 +136,7 @@
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
 		M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
 		"<span class='userdanger'>You're covered in boiling oil!</span>")
-		if(FryLoss)
+		if(FryLoss && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 			M.emote("scream")
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(M, TRAIT_OIL_FRIED, "cooking_oil_react")
@@ -270,7 +270,7 @@
 		//check for protection
 		//actually handle the pepperspray effects
 		if (!(pepper_proof)) // you need both eye and mouth protection
-			if(prob(5))
+			if(prob(5) && !HAS_TRAIT(victim, TRAIT_ANALGESIA))
 				victim.emote("scream")
 			victim.blur_eyes(5) // 10 seconds
 			victim.blind_eyes(3) // 6 seconds

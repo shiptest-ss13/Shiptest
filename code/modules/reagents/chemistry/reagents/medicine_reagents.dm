@@ -257,10 +257,12 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getFireLoss())
 			M.adjustFireLoss(-reac_volume)
-			if(show_message)
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				M.emote("scream")
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your burns throbbing."))
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/carbon/M)
@@ -311,10 +313,12 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
-			if(show_message)
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				M.emote("scream")
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your bruises throbbing."))
 	..()
 
 
@@ -1749,10 +1753,12 @@
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			M.adjustFireLoss(reac_volume)
-			if(show_message)
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your skin bubble and burn as your flesh knits itself together!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				M.emote("scream")
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your skin shifting around unnaturally."))
 	..()
 
 /datum/reagent/medicine/converbital/on_mob_life(mob/living/carbon/M)
@@ -1784,10 +1790,12 @@
 		else if(M.getBruteLoss())
 			M.adjustFireLoss(-reac_volume)
 			M.adjustBruteLoss(reac_volume)
-			if(show_message)
-				to_chat(M, "<span class='danger'>You feel your flesh tear as your skin rapidly regenerates!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
+				to_chat(M, "<span class='danger'>You feel your skin tear as your flesh rapidly regenerates!</span>")
+				M.emote("scream")
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your skin shifting around unnaturally."))
 	..()
 
 /datum/reagent/medicine/convuri/on_mob_life(mob/living/carbon/M)

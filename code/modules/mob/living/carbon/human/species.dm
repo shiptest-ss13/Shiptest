@@ -1884,7 +1884,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 
 		// 40% for level 3 damage on humans to scream in pain
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4)
+		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4 && !HAS_TRAIT(H, TRAIT_ANALGESIA))
 			H.emote("scream")
 
 		// Apply the damage to all body parts

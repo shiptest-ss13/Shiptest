@@ -252,7 +252,7 @@
 	if(user.dna?.check_mutation(HULK))
 		damage += rand(3,7)
 
-	if(damage >= 5)
+	if(damage >= 5 && !HAS_TRAIT(target, TRAIT_ANALGESIA))
 		target.emote("scream")
 
 	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
