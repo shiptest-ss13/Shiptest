@@ -1217,9 +1217,9 @@
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
 		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
 		if(isskeleton(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start

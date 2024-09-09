@@ -162,7 +162,7 @@
 		handle_reactions()
 		return amount
 
-/// Get the name of the reagent there is the most of in this holder
+/// DEPRICATED use get_master_regent. Get the name of the reagent there is the most of in this holder
 /datum/reagents/proc/get_master_reagent_name()
 	var/list/cached_reagents = reagent_list
 	var/name
@@ -175,7 +175,7 @@
 
 	return name
 
-/// Get the id of the reagent there is the most of in this holder
+/// DEPRICATED use get_master_regent. Get the id of the reagent there is the most of in this holder
 /datum/reagents/proc/get_master_reagent_id()
 	var/list/cached_reagents = reagent_list
 	var/max_type
