@@ -61,6 +61,7 @@
 /obj/mecha/combat/gygax/inteq
 	name = "Inteq Gygax"
 	desc = "The funny"
+	icon_state = "inteqgygax"
 	charge_break_walls = TRUE
 	charge_toss_structures = TRUE
 	charge_toss_mobs = TRUE

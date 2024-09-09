@@ -666,16 +666,21 @@
 	else if(charging)
 		if(charge_break_walls && iswallturf(obstacle))
 			var/turf/closed/wall/crushed = obstacle
-			crushed.dismantle_wall(TRUE)
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			visible_message("<span class='danger'>[src] smashes through [obstacle]!</span>")
-		if(isstructure(obstacle))
-			var/obj/structure/struc = obstacle
-			struc.throw_at(throw_target, 4, 3)
+			crushed.dismantle_wall(TRUE)
+		if(isobj(obstacle))
+			var/obj/object = obstacle
+			if(!(object.resistance_flags & INDESTRUCTIBLE))
+				object.throw_at(throw_target, 4, 3)
 			visible_message("<span class='danger'>[src] crashes into [obstacle]!</span>")
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		if(ishuman(obstacle))
 			var/mob/living/carbon/human/H = obstacle
-			H.Paralyze(100)
+			H.throw_at(throw_target,4,3)
+			visible_message("<span class='danger'>[src] slams into [obstacle] with a sickening crunch, sending [obstacle] flying!</span>")
+			playsound(H, list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg'), 100, FALSE, -1)
+			H.Paralyze(20)
 			H.adjustStaminaLoss(30)
 			H.apply_damage(rand(20,35), BRUTE)
 	else
@@ -1250,14 +1255,14 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 
 /obj/mecha/proc/handle_charge()
 	var/turf/mecha_loc = get_turf(src)
-	var/atom/target = get_edge_target_turf(mecha_loc, dir)
+	//var/atom/target = get_edge_target_turf(mecha_loc, dir)
 	charging = TRUE
-	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,2)
+	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
 	if(!charge_target)
 		charging = FALSE
 		return
 	walk_towards(src, charge_target, 0.7)
-	SLEEP_CHECK_DEATH(get_dist(src, charge_target) * 0.7)
+	sleep(get_dist(src, charge_target) * 0.7)
 	charge_end()
 	// if (throw_at(target, charge_distance, 1, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(charge_end))))
 	// 	playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
@@ -1267,4 +1272,5 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 	// 	charging = FALSE
 
 /obj/mecha/proc/charge_end()
+	walk(src,0)
 	charging = FALSE
