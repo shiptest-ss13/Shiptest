@@ -271,7 +271,7 @@ DEFINE_BITFIELD(knpc_traits, list(
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/turf/avoid
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
-	var/list/turfs_to_avoid = list(/turf/open/acid,/turf/open/lava)
+	var/list/turfs_to_avoid = list(/turf/open/water/acid,/turf/open/lava)
 
 /datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, avoid_mobs)
 	src.caller = caller
@@ -539,7 +539,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/static/list/climbable = typecacheof(list(/obj/structure/table, /obj/structure/railing)) // climbable structures
 	var/pathfind_timeout = 0 //If pathfinding fails, it is püt in timeout for a while to avoid spamming the server with pathfinding calls.
 	var/timeout_stacks = 0 //Consecutive pathfind fails add additional delay stacks to further counteract the effects of knpcs in unreachable locations.
-	var/list/turfs_to_avoid = list(/turf/open/acid,/turf/open/lava)
+	var/list/turfs_to_avoid = list(/turf/open/water/acid,/turf/open/lava)
 
 /mob/living/carbon/human/ai_boarder
 	faction = list("neutral")
