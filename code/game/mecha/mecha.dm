@@ -1252,12 +1252,19 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 	var/turf/mecha_loc = get_turf(src)
 	var/atom/target = get_edge_target_turf(mecha_loc, dir)
 	charging = TRUE
-	if (throw_at(target, charge_distance, 1, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(charge_end))))
-		playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
-		visible_message("<span class='warning'>[usr] charges forward!</span>")
-	else
-		occupant_message("Oops, something broke")
+	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,2)
+	if(!charge_target)
 		charging = FALSE
+		return
+	walk_towards(src, charge_target, 0.7)
+	SLEEP_CHECK_DEATH(get_dist(src, charge_target) * 0.7)
+	charge_end()
+	// if (throw_at(target, charge_distance, 1, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(charge_end))))
+	// 	playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
+	// 	visible_message("<span class='warning'>[usr] charges forward!</span>")
+	// else
+	// 	occupant_message("Oops, something broke")
+	// 	charging = FALSE
 
 /obj/mecha/proc/charge_end()
 	charging = FALSE

@@ -61,6 +61,9 @@
 /obj/mecha/combat/gygax/inteq
 	name = "Inteq Gygax"
 	desc = "The funny"
+	charge_break_walls = TRUE
+	charge_toss_structures = TRUE
+	charge_toss_mobs = TRUE
 
 /obj/mecha/combat/gygax/GrantActions(mob/living/user, human_occupant = 0)
 	..()
