@@ -270,7 +270,7 @@
 	final_string += get_gender()
 
 	if(prefixed)
-		final_string = "\A [final_string]"
+		final_string = "\improper [final_string]"
 
 	if(lowercase)
 		final_string = lowertext(final_string)

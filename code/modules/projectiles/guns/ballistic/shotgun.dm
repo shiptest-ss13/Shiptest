@@ -640,6 +640,70 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		item_state = "flamingbolt_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+	name = "HP Absolution"
+	base_icon_state = "absolution"
+	icon_state = "absolution"
+	item_state = "absolution"
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. Chambered in .357."
+	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 8
+
+		item_state = "illestren_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
+	name = "HP Conflagration"
+	base_icon_state = "conflagration"
+	icon_state = "conflagration"
+	item_state = "conflagration"
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	desc = "A lightweight lever-action shotgun with a 5 round ammunition capacity. The lever action allows it to be cycled quickly and acurrately. In theory, you could ever operate it one-handed. Chambered in 12g."
+	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5
+
+		item_state = "beacon_factory_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
+	spawnwithmagazine = FALSE
+
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "HP Huntsman"

@@ -121,6 +121,13 @@
 	contains = list(/obj/item/storage/guncase/doublebarrel)
 	crate_name = "shotguns crate"
 
+/datum/supply_pack/gun/conflagration
+	name = "Conflagration Lever Action Shotgun Crate"
+	desc = "For when you need to deal with 6 hooligans and look good doing it. Contains one lever-action shotgun, with a 6 round capacity."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/conflagration)
+	crate_name = "shotguns crate"
+
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
 	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
@@ -145,6 +152,13 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/absolution
+	name = "Absolution Lever Action Rifle Crate"
+	desc = "Contains a powerful lever-action rifle for hunting larger wildlife. Chambered in .357."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/absolution)
+	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"

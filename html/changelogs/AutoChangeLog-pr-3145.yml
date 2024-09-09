@@ -1,0 +1,17 @@
+author: Gristlebee
+changes:
+  - {rscadd: Welders/Plasmacutters now deal damage to wall integrity to decon}
+  - {rscadd: Plasmacutters are now engineering tools and fit in toolbelts. They can
+      damage ores into slag if used to mine. They are now researched with plasma technology
+      and advanced plasma technology.}
+  - {rscadd: Plasmacutters to cargo for 1250}
+  - {rscadd: 'Adds plasmacutters to the Mudskipper, Riggs, Talos, Gecko, Heron, Osprey,
+      Ranger, Hyena, Komodo, Shetland and Twinkleshine'}
+  - {rscdel: Plasmacutters extra mining range}
+  - {bugfix: Plasmacutters can repair prosthetic limbs like welders}
+  - {code_imp: Moves damage behavior of concrete walls to closed turfs. Basic walls
+      are now repaired with a welder.}
+  - {code_imp: R-walls d-state tied to their integrity. R-walls can be deconstructed
+      with plasmacutters.}
+  - {code_imp: Crate decon checks for tool behavior rather than a istype check}
+delete-after: true
