@@ -46,14 +46,15 @@
 	cut_overlays()
 
 	if(reagents.reagent_list.len > 0 && possible_states.len)
-		var/main_reagent_id = reagents.get_master_reagent_id()
-		var/datum/main_reagent_ref = get_master_reagent()
-		if(main_reagent in possible_states)
-			icon_state = possible_states[main_reagent]["icon_state"]
-			item_state = possible_states[main_reagent]["item_state"]
-			icon_empty = possible_states[main_reagent]["icon_empty"]
-			name = main_reagent.name
-			desc = main_reagent.desc
+
+		var/datum/reagent/main_reagent_ref = reagents.get_master_reagent()
+		var/main_reagent_id = main_reagent_ref.type
+		if(main_reagent_id in possible_states)
+			icon_state = possible_states[main_reagent_id]["icon_state"]
+			item_state = possible_states[main_reagent_id]["item_state"]
+			icon_empty = possible_states[main_reagent_id]["icon_empty"]
+			name = possible_states[main_reagent_id]["name"]
+			desc = possible_states[main_reagent_id]["desc"]
 			return ..(TRUE) // Don't fill normally
 		else
 			name = "condiment bottle"
@@ -235,6 +236,15 @@
 		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "Hand wipes not included."),
 		)
 
+/obj/item/reagent_containers/condiment/pack/create_reagents(max_vol, flags)
+	. = ..()
+	RegisterSignals(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_REM_REAGENT), PROC_REF(on_reagent_add), TRUE)
+	RegisterSignal(reagents, COMSIG_REAGENTS_DEL_REAGENT, PROC_REF(on_reagent_del), TRUE)
+
+/obj/item/reagent_containers/condiment/pack/update_icon()
+	SHOULD_CALL_PARENT(FALSE)
+	return
+
 /obj/item/reagent_containers/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
 	return
 
@@ -253,20 +263,6 @@
 			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
-
-/obj/item/reagent_containers/condiment/pack/on_reagent_change(changetype)
-	if(reagents.reagent_list.len > 0)
-		var/main_reagent = reagents.get_master_reagent_id()
-		if(main_reagent in possible_states)
-			var/list/temp_list = possible_states[main_reagent]
-			icon_state = temp_list[1]
-			desc = temp_list[3]
-		else
-			icon_state = "condi_mixed"
-			desc = "A small condiment pack. The label says it contains [originalname]"
-	else
-		icon_state = "condi_empty"
-		desc = "A small condiment pack. It is empty."
 
 /// Handles reagents getting added to the condiment pack.
 /obj/item/reagent_containers/condiment/pack/proc/on_reagent_add(datum/reagents/reagents)

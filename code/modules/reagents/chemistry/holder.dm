@@ -611,6 +611,7 @@
 			//Clear from relevant lists
 			addiction_list -= R
 			reagent_list -= R
+			SEND_SIGNAL(src, COMSIG_REAGENTS_DEL_REAGENT, R)
 			qdel(R)
 			update_total()
 			if(my_atom)
@@ -638,6 +639,8 @@
 		del_reagent(R.type)
 	if(my_atom)
 		my_atom.on_reagent_change(CLEAR_REAGENTS)
+
+	SEND_SIGNAL(src, COMSIG_REAGENTS_CLEAR_REAGENTS)
 	return 0
 
 /**
@@ -747,6 +750,8 @@
 			if(my_atom)
 				my_atom.on_reagent_change(ADD_REAGENT)
 			R.on_merge(data, amount)
+
+			SEND_SIGNAL(src, COMSIG_REAGENTS_ADD_REAGENT, cached_reagents, amount, reagtemp, data, no_react)
 			if(!no_react)
 				handle_reactions()
 			return TRUE
@@ -765,6 +770,8 @@
 	update_total()
 	if(my_atom)
 		my_atom.on_reagent_change(ADD_REAGENT)
+
+	SEND_SIGNAL(src, COMSIG_REAGENTS_NEW_REAGENT, reagent, amount, reagtemp, data, no_react)
 	if(!no_react)
 		handle_reactions()
 	return TRUE
@@ -802,6 +809,7 @@
 				handle_reactions()
 			if(my_atom)
 				my_atom.on_reagent_change(REM_REAGENT)
+			SEND_SIGNAL(src, COMSIG_REAGENTS_REM_REAGENT, A, amount)
 			return amount
 
 	return FALSE
