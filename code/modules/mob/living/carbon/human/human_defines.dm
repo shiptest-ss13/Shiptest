@@ -54,7 +54,6 @@
 	var/obj/item/clothing/wear_suit = null
 	var/obj/item/clothing/w_uniform = null
 	var/obj/item/belt = null
-	var/obj/item/wear_id = null
 	var/obj/item/r_store = null
 	var/obj/item/l_store = null
 	var/obj/item/s_store = null
@@ -78,3 +77,7 @@
 
 	/// How many "units of blood" we have on our hands
 	var/blood_in_hands = 0
+	///blood particle effect
+	var/obj/effect/abstract/particle_holder/blood_particle
+
+	COOLDOWN_DECLARE(bloodloss_message)

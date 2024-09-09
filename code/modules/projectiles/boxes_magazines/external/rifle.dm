@@ -55,6 +55,9 @@
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/skm_762_40/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/skm_762_40/extended
 	name = "extended assault rifle magazine (7.62x40mm CLIP)"
 	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
@@ -82,9 +85,9 @@
 	. = ..()
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
-/obj/item/ammo_box/magazine/gal
-	name = "\improper GAL Magazine (.308)"
-	desc = "A standard 10-round magazine for GAL platform DMRs. These rounds do good damage with significant armor penetration."
+/obj/item/ammo_box/magazine/f4_308
+	name = "\improper F4 Magazine (.308)"
+	desc = "A standard 10-round magazine for F4 platform DMRs. These rounds do good damage with significant armor penetration."
 	icon_state = "gal_mag-1"
 	base_icon_state = "gal_mag"
 	ammo_type = /obj/item/ammo_casing/a308
@@ -92,7 +95,7 @@
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/p16
+/obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
 	name = "assault rifle magazine (5.56x45mm)"
 	desc = "A simple, 30-round magazine for 5.56x45mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "p16_mag-1"
@@ -102,6 +105,8 @@
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/p16/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/swiss
 	name = "\improper Swiss Cheese Magazine (5.56x45mm)"
@@ -114,7 +119,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/e40
-	name = "E-40 magazine (.229 Eoehoma caseless)"
+	name = "E-40 magazine (.299 Eoehoma caseless)"
 	icon_state = "e40_mag-1"
 	base_icon_state = "e40_mag"
 	ammo_type = /obj/item/ammo_casing/caseless/c299
@@ -133,3 +138,6 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/illestren_a850r/empty
+	start_empty = TRUE

@@ -65,7 +65,7 @@
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
-	particles = new /particles/lava
+	particles = new /particles/smoke/turf_fire
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL

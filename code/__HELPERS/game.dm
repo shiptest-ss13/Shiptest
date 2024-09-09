@@ -596,3 +596,31 @@ block( \
 				continue
 
 			C.energy_fail(rand(duration_min,duration_max))
+
+///Returns a list of turfs around a center based on RANGE_TURFS()
+/proc/circle_range_turfs(center = usr, radius = 3)
+
+	var/turf/center_turf = get_turf(center)
+	var/list/turfs = new/list()
+	var/rsq = radius * (radius + 0.5)
+
+	for(var/turf/checked_turf as anything in RANGE_TURFS(radius, center_turf))
+		var/dx = checked_turf.x - center_turf.x
+		var/dy = checked_turf.y - center_turf.y
+		if(dx * dx + dy * dy <= rsq)
+			turfs += checked_turf
+	return turfs
+
+///Returns a list of turfs around a center based on view()
+/proc/circle_view_turfs(center=usr,radius=3) //Is there even a diffrence between this proc and circle_range_turfs()?
+
+	var/turf/center_turf = get_turf(center)
+	var/list/turfs = new/list()
+	var/rsq = radius * (radius + 0.5)
+
+	for(var/turf/checked_turf in view(radius, center_turf))
+		var/dx = checked_turf.x - center_turf.x
+		var/dy = checked_turf.y - center_turf.y
+		if(dx * dx + dy * dy <= rsq)
+			turfs += checked_turf
+	return turfs

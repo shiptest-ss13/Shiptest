@@ -73,11 +73,17 @@
 /obj/item/gun/ballistic/rifle/illestren
 	name = "\improper HP Illestren"
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
+	icon_state = "illestren"
+	item_state = "illestren"
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
 	sawn_desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
 	eject_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
-	icon_state = "illestren"
-	item_state = "illestren"
+
 	internal_magazine = FALSE
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 	empty_autoeject = TRUE
@@ -85,12 +91,14 @@
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+/obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
 	. = ..()
 	if(.)
 		spread = 24
 		spread_unwielded = 30
-		can_bayonet = FALSE
 		item_state = "illestren_sawn"
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
@@ -118,7 +126,8 @@
 	item_state = "illestren_sawn"
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
-
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"
@@ -126,6 +135,11 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
 	icon_state = "ssg669c"
 	item_state = "ssg669c"
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
 	can_be_sawn_off = FALSE
 
@@ -144,13 +158,19 @@
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
 	desc = "A powerful bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia, equally suited for taking down big game or two-legged game. Chambered in .300 Magnum."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "scout"
+	item_state = "scout"
+
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	fire_sound = 'sound/weapons/gun/rifle/scout.ogg'
 
 	rack_sound = 'sound/weapons/gun/rifle/scout_bolt_out.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/rifle/scout_bolt_in.ogg'
-	icon_state = "scout"
-	item_state = "scout"
+
 	can_be_sawn_off = FALSE
 
 	zoomable = TRUE
@@ -159,14 +179,17 @@
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+/obj/item/gun/ballistic/rifle/scout/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
-	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in .300 Blackout."
+	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE

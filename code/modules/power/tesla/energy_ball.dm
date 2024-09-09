@@ -280,12 +280,6 @@
 		else if(closest_type >= BLOB)
 			continue
 
-		else if(istype(A, /obj/structure/blob))
-			var/obj/structure/blob/B = A
-			if(!(B.obj_flags & BEING_SHOCKED))
-				closest_type = BLOB
-				closest_atom = A
-
 		else if(closest_type >= STRUCTURE)
 			continue
 

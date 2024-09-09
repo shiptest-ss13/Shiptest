@@ -18,6 +18,9 @@
 	recoil_unwielded = 4
 	wield_slowdown = 3
 
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 20
+
 	///does this have a bipod?
 	var/has_bipod = FALSE
 	///is the bipod deployed?
@@ -41,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
 	. = ..()
-	for(var/datum/action/item_action/deploy_bipod/action as anything in actions_types)
+	for(var/datum/action/item_action/deploy_bipod/action as anything in actions)
 		if(!has_bipod)
 			qdel(action)
 
@@ -116,29 +119,6 @@
 	. = ..()
 	retract_bipod(user=user)
 
-/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(bipod_deployed)
-		total_recoil += deploy_recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 20
-	var/total_spread = bonus_spread
-
-	if(bipod_deployed)
-		total_spread += deploy_spread_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
-
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()
 	. = ..()
 	item_state = "[initial(item_state)][bipod_deployed ? "_deployed" : ""]"
@@ -154,11 +134,15 @@
 /obj/item/gun/ballistic/automatic/hmg/l6_saw
 	name = "\improper L6 SAW"
 	desc = "A heavy machine gun, designated 'L6 SAW'. Chambered in 7.12x82mm."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "l6"
 	item_state = "l6closedmag"
 	base_icon_state = "l6"
+
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	can_suppress = FALSE
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -216,9 +200,14 @@
 /obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
 	name = "\improper Solar"
 	desc = "A TerraGov LMG-169 designed in 169 FS, nicknamed 'Solar.' A inscription reads: 'PROPERTY OF TERRAGOV', with 'TERRAGOV' poorly scribbled out, and replaced by 'SOLAR ARMORIES'. Chambered in 4.73×33mm caseless ammunition."
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	icon_state = "solar"
+
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7
 
@@ -226,8 +215,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	can_suppress = FALSE
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
@@ -236,7 +223,11 @@
 	name = "\improper SKM-24u"
 	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
 
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
 	icon_state = "skm_lmg"
 	item_state = "skm_lmg"
 
