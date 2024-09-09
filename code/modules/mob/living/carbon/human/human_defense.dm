@@ -655,8 +655,7 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				if(!HAS_TRAIT(src, TRAIT_ANALGESIA))
-					emote("scream")
+				force_scream()
 				facial_hairstyle = "Shaved"
 				hairstyle = "Bald"
 				update_hair()

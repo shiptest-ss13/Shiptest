@@ -415,8 +415,8 @@
 	selected_module?.on_deactivation(display_message = TRUE)
 	wearer.apply_damage(10 / severity, BURN, spread_damage=TRUE)
 	to_chat(wearer, span_danger("You feel [src] heat up from the EMP, burning you slightly."))
-	if(wearer.stat < UNCONSCIOUS && prob(10) && !HAS_TRAIT(wearer, TRAIT_ANALGESIA))
-		wearer.emote("scream")
+	if(wearer.stat < UNCONSCIOUS && prob(10))
+		wearer.force_scream()
 
 /*obj/item/mod/control/on_outfit_equip(mob/living/carbon/human/outfit_wearer, visuals_only, item_slot)
 	if(visuals_only)

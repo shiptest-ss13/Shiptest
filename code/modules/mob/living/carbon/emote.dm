@@ -252,8 +252,8 @@
 	if(user.dna?.check_mutation(HULK))
 		damage += rand(3,7)
 
-	if(damage >= 5 && !HAS_TRAIT(target, TRAIT_ANALGESIA))
-		target.emote("scream")
+	if(damage >= 5)
+		target.force_scream()
 
 	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
 	user.adjustStaminaLoss(iteration + 5)

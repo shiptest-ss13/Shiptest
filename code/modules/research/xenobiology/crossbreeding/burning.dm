@@ -228,7 +228,7 @@ Burning extracts:
 		user.visible_message("<span class='warning'>[src] melts onto [user]'s arm, boiling the flesh horribly!</span>")
 	else
 		user.visible_message("<span class='danger'>[src] sublimates the flesh around [user]'s arm, transforming the bone into a gruesome blade!</span>")
-	user.emote("scream")
+	user.force_scream()
 	L.apply_damage(30,BURN,which_hand)
 	..()
 
