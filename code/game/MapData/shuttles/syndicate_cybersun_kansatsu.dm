@@ -41,10 +41,11 @@
 	DELAY 40
 	"}
 
-/obj/item/storage/box/syndie_kit/tracking_beacons
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons
 	name = "box of tracking beacons"
+	illustration = "sparkler"
 
-/obj/item/storage/box/syndie_kit/tracking_beacons/PopulateContents()
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/beacon(src)
 
@@ -199,19 +200,40 @@
 	desc = "A classified holodisk containing an introduction to the Chameleon gear."
 	preset_record_text = {"
 	NAME Researcher Meenus-Seeba
-	SAY You have been issued a Cybersun Industries Chameleon Gear Set.
+	SAY You have been issued a Cybersun Industries Chameleon Gear Kit.
 	DELAY 40
 	SAY It contains three pieces of advanced gear used for espionage.
 	DELAY 40
-	SAY First gadget included is the Chameleon kit - a holographically amplified set of clothing that can swiftly and quitely allow to blend in.
+	SAY The most exciting gadget included is the Chameleon kit - the Chameleon projector. It is a personal cloaking device that is excellent for getting in and out unnoticed.
+	DELAY 40
+	The rest of
 	DELAY 40
 	SAY Second piece of gear is the Chameleon holster. It allows you to smuggle a firearm past any security checkpoint, which will prove vital for self-defense and assassination missions.
-	DELAY 40
-	SAY Third, and most exciting, is the Chameleon projector. It is a personal cloaking device that is excellent for getting in and out unnoticed.
 	DELAY 40
 	SAY Good luck.
 	DELAY 20
 	"}
+
+/obj/item/storage/box/syndie_kit/kansatsu/chameleon
+	name = "chameleon gear kit"
+	illustration = "glasses"
+
+/obj/item/storage/box/syndie_kit/kansatsu/chameleon/PopulateContents() // Same as normal, but instead of stamp and PDA, it gets a holster, a projector and a holodisk.
+	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/clothing/suit/chameleon(src)
+	new /obj/item/clothing/gloves/chameleon(src)
+	new /obj/item/clothing/shoes/chameleon(src)
+	new /obj/item/clothing/glasses/chameleon(src)
+	new /obj/item/clothing/head/chameleon(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/clothing/neck/chameleon(src)
+	new /obj/item/storage/backpack/chameleon(src)
+	new /obj/item/storage/belt/chameleon(src)
+	new /obj/item/radio/headset/chameleon(src)
+	new /obj/item/clothing/accessory/holster/chameleon(src)
+	new /obj/item/chameleon(src)
+	new /obj/item/disk/holodisk/kansatsu/gear/chameleon(src)
+
 
 /obj/item/disk/holodisk/kansatsu/gear/pens
 	name = "\improper IR-304" // Introductory Recording - Random Number
@@ -233,3 +255,14 @@
 	SAY Good luck.
 	DELAY 20
 	"}
+
+/obj/item/storage/box/syndie_kit/kansatsu/pens
+	name = "modified pen kit"
+	illustration = "fpen"
+
+/obj/item/storage/box/syndie_kit/kansatsu/pens/PopulateContents()
+	new /obj/item/pen/edagger(src)
+	new /obj/item/pen/sleepy(src)
+	new /obj/item/pen/survival(src)
+	new /obj/item/clothing/accessory/pocketprotector(src)
+	new /obj/item/disk/holodisk/kansatsu/gear/pens(src)

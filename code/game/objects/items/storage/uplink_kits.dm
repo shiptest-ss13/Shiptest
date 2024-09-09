@@ -591,12 +591,4 @@
 	new /obj/item/sbeacondrop/constructshell(src)
 	new /obj/item/sbeacondrop/constructshell(src)
 
-/obj/item/storage/box/syndie_kit/pens
-	name = "modified pens kit"
-
-/obj/item/storage/box/syndie_kit/pens/PopulateContents()
-	new /obj/item/pen/edagger(src)
-	new /obj/item/pen/sleepy(src)
-	new /obj/item/pen/survival(src)
-	new /obj/item/clothing/accessory/pocketprotector(src)
 

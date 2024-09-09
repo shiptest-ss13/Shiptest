@@ -273,7 +273,7 @@
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_y = 7;
-	pixel_x = -9
+	pixel_x = -6
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/paper_bin{
@@ -281,6 +281,9 @@
 	pixel_x = 6
 	},
 /obj/item/pen/fourcolor,
+/obj/item/stamp/chameleon{
+	pixel_x = -15
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ej" = (
@@ -391,17 +394,11 @@
 	req_access_txt = "19";
 	anchored = 1
 	},
-/obj/item/storage/box/syndie_kit/chameleon,
-/obj/item/storage/box/syndie_kit/chameleon,
-/obj/item/storage/box/syndie_kit/pens,
-/obj/item/storage/box/syndie_kit/pens,
-/obj/item/storage/box/syndie_kit/tracking_beacons,
-/obj/item/clothing/accessory/holster/chameleon,
-/obj/item/clothing/accessory/holster/chameleon,
-/obj/item/chameleon,
-/obj/item/chameleon,
-/obj/item/disk/holodisk/kansatsu/gear/chameleon,
-/obj/item/disk/holodisk/kansatsu/gear/pens,
+/obj/item/storage/box/syndie_kit/kansatsu/chameleon,
+/obj/item/storage/box/syndie_kit/kansatsu/chameleon,
+/obj/item/storage/box/syndie_kit/kansatsu/pens,
+/obj/item/storage/box/syndie_kit/kansatsu/pens,
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -1729,7 +1726,7 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/item/stamp/cybersun{
-	pixel_x = 9
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
