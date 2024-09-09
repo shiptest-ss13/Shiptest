@@ -868,7 +868,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 		r_hand = /obj/item/gun/ballistic/rifle/polymer
 		spare_ammo_count = rand(2,5)
 		for(var/i in 1 to spare_ammo_count)
-			backpack_contents += /obj/item/ammo_box/aac_300blk_stripper
+			backpack_contents += /obj/item/ammo_box/a762_stripper
 
 	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(7) || survivor_type == "commando") //cause fuck you, thats why
@@ -877,6 +877,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			suit =	pickweight(list(
 				/obj/item/clothing/suit/armor/vest/bulletproof = 35,
 				/obj/item/clothing/suit/armor/vest/syndie = 20,
+				/obj/item/clothing/suit/armor/gezena = 20,
 				/obj/item/clothing/suit/armor/vest/marine = 1,
 				/obj/item/clothing/suit/armor/vest/marine/heavy = 1,
 				/obj/item/clothing/suit/armor/vest/marine = 1,
@@ -887,12 +888,16 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 				/obj/item/clothing/head/helmet/swat = 20,
 				/obj/item/clothing/head/helmet/swat/nanotrasen = 20,
+				/obj/item/clothing/head/helmet/gezena = 20,
 
 				/obj/item/clothing/head/helmet/marine = 1,
 				/obj/item/clothing/head/helmet/marine/security = 1,
 			))
 			spare_ammo_count = rand(2,3)
-			r_hand = /obj/item/gun/ballistic/automatic/assault/skm/pirate
+			if(prob(10))
+				r_hand = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //hell
+			else
+				r_hand = /obj/item/gun/ballistic/automatic/assault/skm/pirate
 			for(var/i in 1 to spare_ammo_count)
 				if(prob(5))
 					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40/drum //die.
@@ -903,13 +908,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 		else
 			picked = pickweight(list(
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine = 70,
-				/obj/item/gun/ballistic/automatic/smg/mini_uzi = 20,
+				/obj/item/gun/ballistic/automatic/pistol/spitter = 20,
+				/obj/item/gun/ballistic/automatic/smg/pounder = 4,
 				/obj/item/gun/ballistic/automatic/smg/firestorm = 4,
 				/obj/item/gun/ballistic/automatic/smg/vector = 4,
 				/obj/item/gun/ballistic/automatic/smg/cm5 = 4,
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq = 4,
 				/obj/item/gun/ballistic/automatic/smg/c20r/cobra = 4,
-				/obj/item/gun/ballistic/automatic/smg/proto = 4,
+				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 4,
 				/obj/item/gun/ballistic/automatic/pistol/APS = 4,
 				/obj/item/gun/ballistic/automatic/pistol/mauler = 4,
 				))
@@ -1362,7 +1368,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 			expanded_contents = S.contents + H.contents
 		var/obj/item/ammo_box/target_mag = locate(B.mag_type) in expanded_contents
 		if(istype(B, /obj/item/gun/ballistic/rifle/polymer))
-			target_mag = locate(/obj/item/ammo_box/aac_300blk_stripper) in expanded_contents
+			target_mag = locate(/obj/item/ammo_box/a762_stripper) in expanded_contents
 		if(istype(B, /obj/item/gun/ballistic/rifle))
 			if(!B.bolt_locked)
 				B.rack(H)
