@@ -27,28 +27,6 @@
 	DELAY 40
 	"}
 
-/obj/item/disk/holodisk/kansatsu/mission/bugging
-	name = "\improper IG-I-085" // Information Gathering - Infiltration - Random Number
-	preset_record_text = {"
-	NAME Intelligence Director Torch-3
-	SAY Agents.	Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
-	DELAY 40
-	SAY You are to plant a tracking beacon on board, in a secure location.
-	DELAY 40
-	SAY You must avoid recognition while performing this mission.
-	DELAY 40
-	SAY This mission will be considered completed with at least four beacons planted. Do not disappoint us.
-	DELAY 40
-	"}
-
-/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons
-	name = "box of tracking beacons"
-	illustration = "sparkler"
-
-/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/beacon(src)
-
 /obj/item/disk/holodisk/kansatsu/mission/crew
 	name = "\improper IG-I-138" // Information Gathering - Infiltration - Random Number
 	preset_record_text = {"
@@ -93,6 +71,46 @@
 	DELAY 40
 	SAY This mission will be considered completed with at least five reports. Do not disappoint us.
 	DELAY 40
+	"}
+
+/obj/item/disk/holodisk/kansatsu/mission/bugging
+	name = "\improper SD-I-085" // Special Delivery - Infiltration - Random Number
+	preset_record_text = {"
+	NAME Intelligence Director Torch-3
+	SAY Agents.	Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
+	DELAY 40
+	SAY You are to plant a tracking beacon on board, in a secure location.
+	DELAY 40
+	SAY You must avoid recognition while performing this mission.
+	DELAY 40
+	SAY This mission will be considered completed with at least four beacons planted.
+	DELAY 40
+	SAY Do not disappoint us.
+	DELAY 20
+	"}
+
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons
+	name = "box of tracking beacons"
+	illustration = "sparkler"
+
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/beacon(src)
+
+/obj/item/disk/holodisk/kansatsu/mission/advertisement
+	name = "\improper SD-I-202" // Special Delivery - Infiltration - Random Number
+	preset_record_text = {"
+	NAME Intelligence Director Torch-3
+	SAY Agents.	Your vessel has been assigned a mission to infiltrate vessels belonging to any group of interest.
+	DELAY 40
+	SAY You are to leave a Cybersun Virtual Solutions advertisement in a crew area.
+	DELAY 40
+	SAY You must avoid recognition while performing this mission.
+	DELAY 40
+	SAY This mission will be considered completed with at least four advertisements distributed.
+	DELAY 40
+	SAY Do not disappoint us.
+	DELAY 20
 	"}
 
 /obj/item/disk/holodisk/kansatsu/mission/documents
@@ -168,7 +186,8 @@
 		/obj/item/disk/holodisk/kansatsu/mission/pet = 3,
 		/obj/item/disk/holodisk/kansatsu/mission/gem = 3,
 		/obj/item/disk/holodisk/kansatsu/mission/anomalies = 2, // Lower because it doesn't really use much of the spy gimmick. Still fits though so it stays.
-		/obj/item/disk/holodisk/kansatsu/mission/bugging = 4
+		/obj/item/disk/holodisk/kansatsu/mission/bugging = 4,
+		/obj/item/disk/holodisk/kansatsu/mission/advertisement = 3
 	)
 
 	lootcount = 2
