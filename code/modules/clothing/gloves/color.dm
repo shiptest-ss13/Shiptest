@@ -177,10 +177,10 @@
 	icon_state = "brown"
 
 /obj/item/clothing/gloves/color/captain
-	desc = "Regal white gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
+	desc = "Regal white gloves, with a nice gold trim, an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
 	icon_state = "captain"
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -190,7 +190,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
 /obj/item/clothing/gloves/color/captain/nt
-	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
+	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
 	icon_state = "captainnt"
 
@@ -231,7 +231,7 @@
 	name = "infiltrator gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
 	icon_state = "infiltrator"
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 

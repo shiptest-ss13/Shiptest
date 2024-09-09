@@ -129,10 +129,10 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag, /datum/blackmarket_item/ammo/c299)
 
 	price_min = 7000
-	price_max = 15000
+	price_max = 10000
 	stock_max = 2
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -303,6 +303,40 @@
 	price_max = 1500
 	stock = 2
 	availability_prob = 30
+
+/datum/blackmarket_item/weapon/mauler
+	name = "Mauler Machine Pistol"
+	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
+	item = /obj/item/gun/ballistic/automatic/pistol/mauler
+	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
+
+	price_min = 1000
+	price_max = 2000
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/spitter
+	name = "Spitter Submachine Gun"
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
+	item = /obj/item/gun/ballistic/automatic/pistol/spitter
+	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
+
+	price_min = 1500
+	price_max = 2250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/pounder
+	name = "Pounder Submachine Gun"
+	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
+	item = /obj/item/gun/ballistic/automatic/smg/pounder
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag,/datum/blackmarket_item/ammo/himehabu_box)
+
+	price_min = 1500
+	price_max = 2000
+	stock = 1
+	availability_prob = 35
 
 /datum/blackmarket_item/weapon/polymer
 	name = "Polymer Survivor Rifle"
