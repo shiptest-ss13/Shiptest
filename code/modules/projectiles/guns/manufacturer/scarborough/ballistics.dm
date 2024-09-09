@@ -274,8 +274,8 @@ EMPTY_GUN_HELPER(revolver/viper/indie)
 EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
-	name = "Rattlesnake"
-	desc = "Give to a certain shocking and pawing crew to show off while this decription is a placeholder. Chambered in 9mm."
+	name = "MP-84m Kingsnake"
+	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9mm."
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
