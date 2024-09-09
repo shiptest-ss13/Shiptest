@@ -347,6 +347,7 @@
 // the spawner
 /obj/effect/spawner/bunk_bed
 	name = "bunk bed spawner"
+	icon_state = "bunk_bed_spawner"
 
 /obj/effect/spawner/bunk_bed/Initialize(...)
 	. = ..()
