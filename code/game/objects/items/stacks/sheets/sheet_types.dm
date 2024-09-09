@@ -608,41 +608,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 /obj/item/stack/sheet/paperframes/fifty
 	amount = 50
 
-/obj/item/stack/sheet/meat
-	name = "meat sheets"
-	desc = "Something's bloody meat compressed into a nice solid sheet."
-	singular_name = "meat sheet"
-	icon_state = "sheet-meat"
-	material_flags = MATERIAL_COLOR
-	custom_materials = list(/datum/material/meat = MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/meat
-	material_type = /datum/material/meat
-	material_modifier = 1 //None of that wussy stuff
-
-/obj/item/stack/sheet/meat/fifty
-	amount = 50
-/obj/item/stack/sheet/meat/twenty
-	amount = 20
-/obj/item/stack/sheet/meat/five
-	amount = 5
-
-/obj/item/stack/sheet/pizza
-	name = "pepperoni sheetzzas"
-	desc = "It's a delicious pepperoni sheetzza!"
-	singular_name = "pepperoni sheetzza"
-	icon_state = "sheet-meat" //This needs a pizza sheet but we also i dont think anyone will ever make this.
-	custom_materials = list(/datum/material/pizza = MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/pizza
-	material_type = /datum/material/pizza
-	material_modifier = 1
-
-/obj/item/stack/sheet/pizza/fifty
-	amount = 50
-/obj/item/stack/sheet/pizza/twenty
-	amount = 20
-/obj/item/stack/sheet/pizza/five
-	amount = 5
-
 /obj/item/stack/sheet/sandblock
 	name = "blocks of sand"
 	desc = "You're too old to be playing with sandcastles. Now you build... sandstations."
