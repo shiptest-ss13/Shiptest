@@ -149,6 +149,9 @@
 	grind_results = list(/datum/reagent/cellulose = 2)
 	custom_price = 100
 
+/obj/item/stack/medical/gauze/six
+	amount = 6
+
 /obj/item/stack/medical/gauze/twelve
 	amount = 12
 
@@ -315,6 +318,9 @@
 		playsound(src, 'sound/items/poster_ripped.ogg', 20, TRUE)
 		return
 	. = ..()
+
+/obj/item/stack/medical/mesh/six
+	amount = 6
 
 /obj/item/stack/medical/mesh/advanced
 	name = "advanced regenerative mesh"

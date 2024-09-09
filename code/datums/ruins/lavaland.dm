@@ -48,3 +48,9 @@
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
+
+/datum/map_template/ruin/lavaland/crashed_pinnance
+	name = "Pinnance Crash Site"
+	id = "crashed_pinnance"
+	description = "A small ship and a fairly hard landing, coupled with a less than fortunate encounter with monsters."
+	suffix = "lavaland_surface_crashed_pinnance.dmm"

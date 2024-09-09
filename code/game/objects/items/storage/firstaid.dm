@@ -270,6 +270,46 @@
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 	new /obj/item/clothing/glasses/hud/health/night(src)
 
+/obj/item/storage/firstaid/emergency
+	name = "emergency medical kit"
+	desc = "Known in some circles as an Individual First Aid Kit. Said circles are at risk of being called nerds."
+	icon_state = "ifak"
+	drop_sound = 'sound/items/handling/cloth_drop.ogg'
+	pickup_sound = 'sound/items/handling/surgery2_pickup.ogg'
+	throw_speed = 2
+	slot_flags = ITEM_SLOT_POCKETS
+
+/obj/item/storage/firstaid/emergency/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_TINY //Absolutely doesn't hold much.
+	STR.max_items = 5
+	STR.max_combined_w_class = 5
+	STR.screen_max_columns = 5
+	STR.set_holdable(list(
+		/obj/item/healthanalyzer,
+		/obj/item/dnainjector,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/lighter,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/stack/medical,
+		/obj/item/flashlight/pen,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/clothing/mask/surgical,
+		/obj/item/implant,
+		/obj/item/implanter,
+		))
+	STR.exception_hold = list(/obj/item/storage/pill_bottle,)
+
+/obj/item/storage/firstaid/emergency/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/reagent_containers/hypospray/medipen/painkiller(src)
+	new /obj/item/stack/medical/gauze/six(src)
+	new /obj/item/stack/medical/mesh/six(src)
+
 //medibot assembly
 /obj/item/storage/firstaid/attackby(obj/item/bodypart/S, mob/user, params)
 	if((!istype(S, /obj/item/bodypart/l_arm/robot)) && (!istype(S, /obj/item/bodypart/r_arm/robot)))

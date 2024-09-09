@@ -48,6 +48,13 @@
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/radiation)
 
+/datum/supply_pack/medical/ifak
+	name = "Individual First Aid Kit Single-Pack"
+	desc = "Contains one first aid kit for emergency first aid"
+	cost = 300
+	small_item = TRUE
+	contains = list(/obj/item/storage/firstaid/emergency)
+
 /*
 		Tools
 */

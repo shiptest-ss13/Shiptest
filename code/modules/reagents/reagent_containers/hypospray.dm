@@ -187,11 +187,19 @@
 
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
-	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
+	desc = "A rapid solution to intense pain or a patient who refuses to go under."
 	icon_state = "morphen"
 	base_icon_state = "morphen"
 	item_state = "morphen"
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/painkiller
+	name = "painkiller medipen"
+	desc = "An proprietary blend of painkillers, for keeping you up just long enough to bandage something."
+	icon_state = "painpen"
+	base_icon_state = "painpen"
+	item_state = "painpen"
+	list_reagents = list(/datum/reagent/medicine/mine_salve = 2, /datum/reagent/medicine/morphine = 8)
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
