@@ -44,7 +44,7 @@
 /obj/item/folder/documents/syndicate/cybersun
 	document = /obj/item/documents/syndicate/cybersun
 	icon_state = "folder_sred"
-	desc = "A folder stamped \"Top Secret - Property of The Cybersun.\""
+	desc = "A folder stamped \"Top Secret - Property of Cybersun Industries.\""
 
 /obj/item/folder/documents/syndicate/red
 	document = /obj/item/documents/syndicate/red
