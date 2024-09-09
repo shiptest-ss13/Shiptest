@@ -804,12 +804,12 @@
 			//and zero, to prevent removing more than the holder has stored
 			amount = clamp(amount, 0, R.volume)
 			R.volume -= amount
+			SEND_SIGNAL(src, COMSIG_REAGENTS_REM_REAGENT, A, amount)
 			update_total()
 			if(!safety)//So it does not handle reactions when it need not to
 				handle_reactions()
 			if(my_atom)
 				my_atom.on_reagent_change(REM_REAGENT)
-			SEND_SIGNAL(src, COMSIG_REAGENTS_REM_REAGENT, A, amount)
 			return amount
 
 	return FALSE
