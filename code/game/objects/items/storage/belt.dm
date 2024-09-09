@@ -356,6 +356,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/resonator,
 		/obj/item/mining_scanner,
+		/obj/item/pinpointer/mineral,
 		/obj/item/pickaxe,
 		/obj/item/shovel,
 		/obj/item/stack/sheet/animalhide,
