@@ -46,13 +46,14 @@
 	cut_overlays()
 
 	if(reagents.reagent_list.len > 0 && possible_states.len)
-		var/main_reagent = reagents.get_master_reagent_id()
+		var/main_reagent_id = reagents.get_master_reagent_id()
+		var/datum/main_reagent_ref = get_master_reagent()
 		if(main_reagent in possible_states)
 			icon_state = possible_states[main_reagent]["icon_state"]
 			item_state = possible_states[main_reagent]["item_state"]
 			icon_empty = possible_states[main_reagent]["icon_empty"]
-			name = possible_states[main_reagent]["name"]
-			desc = possible_states[main_reagent]["desc"]
+			name = main_reagent.name
+			desc = main_reagent.desc
 			return ..(TRUE) // Don't fill normally
 		else
 			name = "condiment bottle"
@@ -233,10 +234,6 @@
 		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Astrotame", "The sweetness of a thousand sugars but none of the calories."),
 		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "Hand wipes not included."),
 		)
-
-/obj/item/reagent_containers/food/condiment/pack/update_icon()
-	SHOULD_CALL_PARENT(FALSE)
-	return ..()
 
 /obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
 	return
