@@ -16,7 +16,7 @@
 /obj/projectile/bullet/a8_50rhp
 	name = "8x50mmR bullet"
 	speed = 0.3
-	damage = 55
+	damage = 49
 	armour_penetration = 0
 
 // .300 Magnum (Smile Rifle)
