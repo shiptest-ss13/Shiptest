@@ -30,3 +30,32 @@
   ZephyrTFA:
   - server: CDN fully operational again after noticing an incorrectly absolute relative
       path
+2024-09-10:
+  Apogee-dev:
+  - balance: Made security hardsuits faster and blood-red hardsuits slower
+  - balance: Normalized some weird hardsuit speed outliers
+  - bugfix: NT captain gloves no longer lie about shockproofing
+  - balance: Reduced hollowpoint damage by 5 (and 8mm Hollowpoint by 6)
+  FalloutFalcon, MrMelbert, Coiax:
+  - code_imp: ported alot tg botany code along with gene desc and icons to be used
+      more soon
+  - refactor: moves most plant effects into genetics stuff
+  Gristlebee:
+  - rscadd: Bandolier auto-loading and examine hint
+  - rscadd: Welders/Plasmacutters now deal damage to wall integrity to decon
+  - rscadd: Plasmacutters are now engineering tools and fit in toolbelts. They can
+      damage ores into slag if used to mine. They are now researched with plasma technology
+      and advanced plasma technology.
+  - rscadd: Plasmacutters to cargo for 1250
+  - rscadd: Adds plasmacutters to the Mudskipper, Riggs, Talos, Gecko, Heron, Osprey,
+      Ranger, Hyena, Komodo, Shetland and Twinkleshine
+  - rscdel: Plasmacutters extra mining range
+  - bugfix: Plasmacutters can repair prosthetic limbs like welders
+  - code_imp: Moves damage behavior of concrete walls to closed turfs. Basic walls
+      are now repaired with a welder.
+  - code_imp: R-walls d-state tied to their integrity. R-walls can be deconstructed
+      with plasmacutters.
+  - code_imp: Crate decon checks for tool behavior rather than a istype check
+  - rscadd: Gun safeties can be toggled from 1st level storage slots.
+  zimon9:
+  - rscadd: Adds a rubbershot box to the outpost market
