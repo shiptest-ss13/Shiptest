@@ -24,7 +24,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 
 /datum/planet_type/ice
@@ -38,7 +38,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/jungle
 	name = "jungle planet"
@@ -51,7 +51,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
-	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/planet_type/rock
 	name = "rock planet"
@@ -64,7 +64,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/sand
 	name = "salty sand planet"
@@ -77,7 +77,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/beach
 	name = "ocean planet"
@@ -90,7 +90,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
-	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/planet_type/reebe
 	name = "???"
@@ -117,7 +117,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
-	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/planet_type/spaceruin
 	name = "weak energy signal"
@@ -129,7 +129,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/waste
 	name = "waste disposal planet"
@@ -142,7 +142,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	landing_sound = 'sound/effects/planet_landing_2.ogg'
+	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/gas_giant
 	name = "gas giant"
@@ -157,7 +157,7 @@
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
 	weight = 0
 	preserve_level = TRUE
-	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/planet_type/plasma_giant
 	name = "plasma giant"
@@ -170,37 +170,15 @@
 	weight = 0
 	icon_state = "giant"
 	preserve_level = TRUE
-	landing_sound = 'sound/effects/planet_landing_1.ogg'
-
-/turf/open/floor/white/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_VERY_LIGHT_GRAY
-	baseturfs = /turf/open/floor/white/lit
-
-/datum/map_generator/single_turf/test
-	turf_type = /turf/open/floor/white/lit
-	area_type = /area/overmap_encounter/planetoid
-
-/datum/planet_type/debug
-	name = "TEST PLANET"
-	desc = "Pure white world for testing purposes, report if you see this"
-	planet = DYNAMIC_WORLD_TEST
-	icon_state = "hazard"
-	color = COLOR_WHITE
-	mapgen = /datum/map_generator/single_turf/test
-	default_baseturf = /turf/open/floor/white/lit
-	weather_controller_type = null
-	ruin_type = null
-	weight = 0
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+
 /datum/planet_type/water
 	name = "aqua planet"
 	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
-	weight = 5
+	weight = 0
 
 	ruin_type = RUINTYPE_WATER // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/waterplanet
@@ -213,8 +191,9 @@
 	planet = DYNAMIC_WORLD_DESERT
 	icon_state = "desert"
 	color = "#f3c282"
+	weight = 5
 
-	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
+	//ruin_type = RUINTYPE_DESERT // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/desert
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
@@ -227,7 +206,7 @@
 	color = "#783ca4"
 	weight = 5
 
-	ruin_type = RUINTYPE_SHROUDED
+	//ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
@@ -250,10 +229,52 @@
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
-	weight = 5
+	weight = 0
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
 	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
 	weather_controller_type = /datum/weather_controller/toxic
 
+/datum/planet_type/debug
+	name = "TEST PLANET"
+	desc = "Pure white world for testing purposes, report if you see this"
+	planet = DYNAMIC_WORLD_TEST
+	icon_state = "hazard"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/test
+	default_baseturf = /turf/open/floor/white/lit
+	weather_controller_type = null
+	ruin_type = null
+	weight = 0
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/turf/open/floor/white/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_VERY_LIGHT_GRAY
+	baseturfs = /turf/open/floor/white/lit
+
+/datum/map_generator/single_turf/test
+	turf_type = /turf/open/floor/white/lit
+	area_type = /area/overmap_encounter/planetoid
+
+/datum/planet_type/snowball
+	name = "snowball planet"
+	desc = "A world entirely covered in snow; there is very likely nothing of intrest here."
+	planet = DYNAMIC_WORLD_SNOWBALL
+	icon_state = "misc"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/snowball
+	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit/snowball
+	weather_controller_type = /datum/weather_controller/snow_planet/severe
+	ruin_type = null
+	weight = 1
+	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/datum/map_generator/single_turf/snowball
+	turf_type = /turf/open/floor/plating/asteroid/snow/lit/snowball
+	area_type = /area/overmap_encounter/planetoid/snowball
+
+/turf/open/floor/plating/asteroid/snow/lit/snowball
+	light_color = "#67769e"

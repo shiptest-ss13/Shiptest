@@ -135,11 +135,11 @@
  */
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	if(!probabilities)
-		probabilities = list()
-		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
-			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
-
+		probabilities = current_overmap.dynamic_probabilities
+	if(istype(force_encounter, /datum/planet_type/))
+		planet = force_encounter
+	else
+		planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
 		planet_name = "[gen_planet_name()]"
@@ -295,6 +295,11 @@
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
+
+/area/overmap_encounter/planetoid/snowball
+	name = "\improper Snowball Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
+	ambientsounds = TUNDRA
 
 /area/overmap_encounter/planetoid/ice/explored
 	area_flags = VALID_TERRITORY

@@ -34,6 +34,7 @@
 #define DYNAMIC_WORLD_SHROUDED "shroudedplanet"
 #define DYNAMIC_WORLD_BATTLEFIELD "battlefieldplanet"
 #define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
+#define DYNAMIC_WORLD_SNOWBALL "snowball"
 #define DYNAMIC_WORLD_DUSTBALL "dustball"
 #define DYNAMIC_WORLD_MOON "moon"
 
@@ -45,21 +46,6 @@
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
 #define DYNAMIC_WORLD_TEST "test"
-
-/// Make sure you are adding new planet types to this, in order as seen above preferrably
-#define DYNAMIC_WORLD_LIST_ALL list(\
-	DYNAMIC_WORLD_LAVA,\
-	DYNAMIC_WORLD_ICE,\
-	DYNAMIC_WORLD_SAND,\
-	DYNAMIC_WORLD_JUNGLE,\
-	DYNAMIC_WORLD_ROCKPLANET,\
-	DYNAMIC_WORLD_BEACHPLANET,\
-	DYNAMIC_WORLD_WASTEPLANET,\
-	DYNAMIC_WORLD_REEBE,\
-	DYNAMIC_WORLD_ASTEROID,\
-	DYNAMIC_WORLD_SPACERUIN,\
-	DYNAMIC_WORLD_GAS_GIANT,\
-	DYNAMIC_WORLD_PLASMA_GIANT)
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"

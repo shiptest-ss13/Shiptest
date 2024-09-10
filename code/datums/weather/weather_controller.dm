@@ -87,6 +87,12 @@
 			/datum/weather/hailstorm = 20
 			)
 
+/datum/weather_controller/snow_planet/severe
+		possible_weathers = list(
+			/datum/weather/snow_storm = 50,
+			/datum/weather/hailstorm = 10
+			)
+
 /datum/weather_controller/desert
 	possible_weathers = list(/datum/weather/sandstorm = 100)
 

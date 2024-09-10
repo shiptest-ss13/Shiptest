@@ -108,7 +108,7 @@ const SharedContent = (_props, context) => {
                     icon="circle"
                     disabled={
                       // I hate this so much
-                      isViewer || data.speed > 0 || data.docked || data.docking
+                      isViewer
                     }
                     onClick={() =>
                       act('act_overmap', {

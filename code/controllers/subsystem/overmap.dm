@@ -208,6 +208,7 @@ SUBSYSTEM_DEF(overmap)
 	///List of all events in the star system.
 	var/list/events = list()
 
+
 	///The virtual level that contains the overmap
 	var/datum/virtual_level/overmap_vlevel
 
@@ -220,6 +221,8 @@ SUBSYSTEM_DEF(overmap)
 	var/size
 	///Do we have a outpost in this system?
 	var/has_outpost = TRUE //TODO SET TO FALSE, ITS ONLY SET TO TRUE FOR TESTING
+
+	var/dynamic_probabilities = list()
 
 	//fancy color shit! yayyyyy!
 
@@ -366,6 +369,11 @@ SUBSYSTEM_DEF(overmap)
 	controlled_ships = list()
 	outposts = list()
 	events = list()
+
+	if(!dynamic_probabilities)
+		dynamic_probabilities = list()
+		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
+			dynamic_probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 
 	if(!generator_type)
 		generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -748,10 +756,8 @@ SUBSYSTEM_DEF(overmap)
  * * token_to_edit - The overmap object we're editing [/datum/overmap/event].
  */
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
-/datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
-	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
-		return FALSE
-	return TRUE
+/datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
+	return
 
 /datum/overmap_star_system/ngr
 	name = "Gorlex Controlled - Ecbatana"

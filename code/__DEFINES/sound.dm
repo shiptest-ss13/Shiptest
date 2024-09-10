@@ -130,6 +130,13 @@
 	'sound/ambience/wind/desert4.ogg', \
 	'sound/ambience/wind/desert5.ogg',)
 
+#define TUNDRA list( \
+	'sound/ambience/wind/tundra0.ogg', \
+	'sound/ambience/wind/tundra1.ogg', \
+	'sound/ambience/wind/tundra2.ogg', \
+	'sound/ambience/wind/spooky0.ogg', \
+	'sound/ambience/wind/spooky1.ogg')
+
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30
 #define PICKUP_SOUND_VOLUME 15

@@ -253,16 +253,19 @@
 	if(!possible_interactions)
 		return "There is nothing of interest at [interact_target]."
 
-	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions)
+	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions, timeout = 12 SECONDS)
 
 	switch(choice)
 		if(INTERACTION_OVERMAP_DOCK)
+			if(docked_to || docking)
+				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+
 			var/list/dockables = interact_target.get_dockable_locations(src)
 			if(!dockables.len)
-				return "No open ports on [interact_target]."
+				return "ERROR: No open ports on [interact_target]."
 			choice = tgui_input_list(usr, "Select docking location at [interact_target]?", "Dock at", dockables)
 			if(!choice)
-				return "Interaction aborted."
+				return "WARNING: Interaction aborted."
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
 			return Dock(interact_target)
