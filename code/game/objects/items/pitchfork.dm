@@ -37,6 +37,9 @@
 
 	wielded = FALSE
 
+/obj/item/pitchfork/is_wielded()
+	return wielded
+
 /obj/item/pitchfork/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()

@@ -719,6 +719,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 	wielded = FALSE
 
+/obj/item/vibro_weapon/is_wielded()
+	return wielded
+
 /obj/item/vibro_weapon/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()

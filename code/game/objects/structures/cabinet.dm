@@ -1,5 +1,5 @@
 /obj/structure/cabinet
-	name = "cabinet"
+	name = "\improper cabinet"
 	desc = "There is a small label that reads \"For Emergency use only\". Yeah right."
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "fireaxe"
@@ -11,17 +11,29 @@
 	req_one_access_txt = "0"
 	var/locked = TRUE
 	var/open = FALSE
+	var/empty = FALSE
 	var/obj/item/stored
+	var/our_object
+	var/stored_sprite = "axe"
 
 /obj/structure/cabinet/Initialize()
 	. = ..()
-	stored = new
+	our_object = stored
+	if(!empty)
+		stored = new stored(src)
 	update_appearance()
 
 /obj/structure/cabinet/Destroy()
 	if(stored)
 		QDEL_NULL(stored)
 	return ..()
+
+/obj/structure/cabinet/examine(mob/user)
+	. = ..()
+	if(!open)
+		. += span_notice("Alt-click to [locked ? "unlock" : "lock"] [src]")
+	if(stored)
+		. += span_notice("[stored] is sitting inside, ripe for the taking.")
 
 /obj/structure/cabinet/attackby(obj/item/I, mob/user, params)
 	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
@@ -30,35 +42,34 @@
 		if(obj_integrity < max_integrity)
 			if(!I.tool_start_check(user, amount=2))
 				return
-
 			to_chat(user, span_notice("You begin repairing [src]"))
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
 				obj_integrity = max_integrity
 				update_appearance()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, span_notice("You repair [src]"))
 		else
-			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+			to_chat(user, span_warning("[src] is already in good condition!"))
 		return
 	else if(istype(I, /obj/item/stack/sheet/glass) && broken)
 		var/obj/item/stack/sheet/glass/G = I
 		if(G.get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need two glass sheets to fix [src]!</span>")
+			to_chat(user, span_warning("You need two [G.singular_name] to fix [src]!"))
 			return
-		to_chat(user, "<span class='notice'>You start fixing [src]...</span>")
+		to_chat(user, span_notice("You start fixing [src]..."))
 		if(do_after(user, 20, target = src) && G.use(2))
 			broken = 0
 			obj_integrity = max_integrity
 			update_appearance()
 	else if(open || broken)
-		if(istype(I, stored.type) && !stored)
+		if(istype(I, our_object) && !stored)
 			var/obj/item/storee = I
-			if(storee && F.storee)
-				to_chat(user, "<span class='warning'>Unwield the [storee.name] first.</span>")
+			if(storee && storee.is_wielded())
+				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
-			if(!user.transferItemToLoc(F, src))
+			if(!user.transferItemToLoc(I, src))
 				return
 			stored = storee
-			to_chat(user, "<span class='notice'>You place the [storee.name] back in the [name].</span>")
+			to_chat(user, span_notice("You place the [storee.name] back in the [name]."))
 			update_appearance()
 			return
 		else if(!broken)
@@ -93,9 +104,9 @@
 
 /obj/structure/cabinet/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		if(fireaxe && loc)
-			fireaxe.forceMove(loc)
-			fireaxe = null
+		if(stored && loc)
+			stored.forceMove(loc)
+			stored = null
 		new /obj/item/stack/sheet/metal(loc, 2)
 	qdel(src)
 
@@ -105,14 +116,14 @@
 		return
 	if(open || broken)
 		if(stored)
+			to_chat(user, span_notice("You take [stored] from [name]."))
 			user.put_in_hands(stored)
 			stored = null
-			to_chat(user, span_notice("You take [stored] from [name]."))
 			src.add_fingerprint(user)
 			update_appearance()
 			return
 	if(locked)
-		to_chat(user, "<span class='warning'>The [name] won't budge!</span>")
+		to_chat(user, span_warning("[name] won't budge!"))
 		return
 	else
 		open = !open
@@ -128,7 +139,7 @@
 
 /obj/structure/cabinet/attack_tk(mob/user)
 	if(locked)
-		to_chat(user, "<span class='warning'>The [name] won't budge!</span>")
+		to_chat(user, span_warning("[name] won't budge!"))
 		return
 	else
 		open = !open
@@ -137,8 +148,8 @@
 
 /obj/structure/cabinet/update_overlays()
 	. = ..()
-	if(fireaxe)
-		. += "axe"
+	if(stored)
+		. += "[stored_sprite]"
 	if(open)
 		. += "glass_raised"
 		return
@@ -159,16 +170,23 @@
 	. += locked ? "locked" : "unlocked"
 
 /obj/structure/cabinet/proc/toggle_lock(mob/user)
-
-
-	locked = !locked
-
+	if(!broken)
+		if(allowed(user))
+			if(iscarbon(user))
+				add_fingerprint(user)
+			locked = !locked
+			user.visible_message(
+				span_notice("[user] [locked ? "locks" : "unlocks"][src]."),
+				span_notice("You [locked ? "lock" : "unlock"] [src]."))
+			update_appearance()
+		else
+			to_chat(user, span_warning("Access denied!"))
+	else if(broken)
+		to_chat(user, span_warning("\The [src] is broken!"))
 
 /obj/structure/cabinet/AltClick(mob/user)
 	..()
-	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
-		return
-	if(opened || !locked)
+	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc) || open)
 		return
 	else
 		toggle_lock(user)
@@ -178,7 +196,7 @@
 	playsound(src, 'sound/machines/locktoggle.ogg', 50, TRUE)
 	if(do_after(user, 20, target = src))
 		to_chat(user, span_notice("You [locked ? "disable" : "re-enable"] the locking modules."))
-		toggle_lock()
+		locked = !locked
 		update_appearance()
 
 /obj/structure/cabinet/verb/toggle_open()
@@ -187,7 +205,7 @@
 	set src in oview(1)
 
 	if(locked)
-		to_chat(usr, "<span class='warning'>The [name] won't budge!</span>")
+		to_chat(span_warning("[name] won't budge!"))
 		return
 	else
 		open = !open

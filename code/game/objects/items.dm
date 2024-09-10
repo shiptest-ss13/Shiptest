@@ -1276,4 +1276,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	return discover_after
 
+//is the thing currently wielded?
+/obj/item/proc/is_wielded()
+	return null
+
 #undef MAX_MATS_PER_BITE

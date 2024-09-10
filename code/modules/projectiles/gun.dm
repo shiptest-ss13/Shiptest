@@ -357,7 +357,7 @@
 		wielded_fully = TRUE
 		return TRUE
 
-/obj/item/gun/proc/is_wielded()
+/obj/item/gun/is_wielded()
 	return wielded
 
 /// triggered on unwield of two handed item

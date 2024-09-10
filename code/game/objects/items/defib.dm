@@ -321,6 +321,9 @@
 
 	wielded = FALSE
 
+/obj/item/shockpaddles/is_wielded()
+	return wielded
+
 /obj/item/shockpaddles/Destroy()
 	defib = null
 	return ..()

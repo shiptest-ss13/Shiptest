@@ -64,6 +64,9 @@
 	set_light_on(FALSE)
 
 
+/obj/item/dualsaber/is_wielded()
+	return wielded
+
 /obj/item/dualsaber/update_icon_state()
 	icon_state = wielded ? "dualsaber[saber_color]" : "dualsaber"
 	return ..()

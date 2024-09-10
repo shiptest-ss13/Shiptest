@@ -39,6 +39,9 @@
 
 	wielded = FALSE
 
+/obj/item/singularityhammer/is_wielded()
+	return wielded
+
 /obj/item/singularityhammer/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()
@@ -117,6 +120,9 @@
 /// triggered on unwield of two handed item
 /obj/item/mjollnir/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
+
+/obj/item/mjollnir/is_wielded()
+	return wielded
 
 /obj/item/mjollnir/update_icon_state()
 	icon_state = "[base_icon_state]0"

@@ -45,6 +45,9 @@
 
 	wielded = FALSE
 
+/obj/item/chainsaw/is_wielded()
+	return wielded
+
 /obj/item/chainsaw/attack_self(mob/user)
 	on = !on
 	to_chat(user, "As you pull the starting cord dangling from [src], [on ? "it begins to whirr." : "the chain stops moving."]")

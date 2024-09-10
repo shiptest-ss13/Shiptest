@@ -21,6 +21,7 @@
 	species_exception = list(/datum/species/kepori)
 	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
+	var/wielded = FALSE // track wielded status on item
 
 /obj/item/spear/ComponentInitialize()
 	. = ..()
@@ -42,13 +43,27 @@
 	qdel(tip)
 	..()
 
+/// triggered on wield of two handed item
+/obj/item/spear/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/spear/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	wielded = FALSE
+
+/obj/item/spear/is_wielded()
+	return wielded
+
 /obj/item/spear/explosive
 	name = "explosive lance"
 	icon_state = "spearbomb0"
 	base_icon_state = "spearbomb"
 	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/spear/explosive/Initialize(mapload)
 	. = ..()
@@ -59,18 +74,6 @@
 /obj/item/spear/explosive/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
-
-/// triggered on wield of two handed item
-/obj/item/spear/explosive/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/spear/explosive/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
 
 /obj/item/spear/explosive/proc/set_explosive(obj/item/grenade/G)
 	if(explosive)

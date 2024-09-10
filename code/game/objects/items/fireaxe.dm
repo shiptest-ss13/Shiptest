@@ -43,6 +43,9 @@
 
 	wielded = FALSE
 
+/obj/item/fireaxe/is_wielded()
+	return wielded
+
 /obj/item/fireaxe/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()

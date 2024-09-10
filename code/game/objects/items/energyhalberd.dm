@@ -65,6 +65,8 @@
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
 
+/obj/item/energyhalberd/is_wielded()
+	return wielded
 
 /obj/item/energyhalberd/update_icon_state()
 	if(wielded)

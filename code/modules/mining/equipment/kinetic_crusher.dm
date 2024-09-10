@@ -48,6 +48,9 @@
 /obj/item/kinetic_crusher/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 
+/obj/item/kinetic_crusher/is_wielded()
+	return wielded
+
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
 	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"

@@ -208,6 +208,9 @@
 
 	wielded = FALSE
 
+/obj/item/staff/bostaff/is_wielded()
+	return wielded
+
 /obj/item/staff/bostaff/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()
