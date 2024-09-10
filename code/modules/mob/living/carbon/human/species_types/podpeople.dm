@@ -3,8 +3,11 @@
 	name = "\improper Podperson"
 	id = SPECIES_POD
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,SCLERA) //ya
-	inherent_traits = list(TRAIT_ALWAYS_CLEAN)
+	species_traits = list(MUTCOLORS,EYECOLOR,SCLERA)
+	inherent_traits = list(
+		TRAIT_ALWAYS_CLEAN,
+		TRAIT_PLANT_SAFE,
+	)
 	inherent_factions = list("plants", "vines")
 	//fixed_mut_color = "59CE00" //wtf tg
 	exotic_bloodtype = "E"

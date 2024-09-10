@@ -192,6 +192,8 @@
 	icon_state = null
 	damage = 20
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	flag = "bomb"
 	range = 3
 	log_override = TRUE
@@ -235,8 +237,6 @@
 		for(var/obj/item/borg/upgrade/modkit/M in mods)
 			M.projectile_strike(src, target_turf, target, kinetic_gun)
 	if(ismineralturf(target_turf))
-		var/turf/closed/mineral/M = target_turf
-		M.gets_drilled(firer, TRUE)
 		if(iscarbon(firer))
 			var/mob/living/carbon/C = firer
 			var/skill_modifier = C?.mind.get_skill_modifier(/datum/skill/mining, SKILL_SPEED_MODIFIER)

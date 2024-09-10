@@ -47,12 +47,14 @@
 	desc = "Contains a 5.56mm magazine for the Pistole C, containing twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
 	cost = 750
+	faction = FACTION_SOLGOV
 
 /datum/supply_pack/ammo/fms_mag
 	name = "Ferromagnetic Slug Magazine Crate"
 	desc = "Contains a ferromagnetic slug magazine for the Model H pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/modelh)
 	cost = 750
+	faction = FACTION_SOLGOV
 
 /*
 		Shotgun ammo
@@ -75,6 +77,12 @@
 	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
 	cost = 210
 	contains = list(/obj/item/storage/box/techshot)
+
+/datum/supply_pack/ammo/rubbershot
+	name = "Rubbershot Crate"
+	desc = "Contains a box of twenty-five rubbershot shells for use in crowd control or training."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g/rubbershot)
 
 /*
 		.38 ammo

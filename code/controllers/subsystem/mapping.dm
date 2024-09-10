@@ -215,10 +215,12 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
-			if(istext(data["faction_name"]))
-				S.faction_name = data["faction_name"]
-			else
-				S.faction_name = ship_prefix_to_faction(S.prefix)
+
+		if(istext(data["faction"]))
+			S.faction_path = text2path(data["faction"])
+		if(S.faction_path)
+			S.faction_datum = SSfactions.faction_path_to_datum(S.faction_path)
+			S.faction_name = S.faction_datum.name
 
 		S.category = S.faction_name
 
