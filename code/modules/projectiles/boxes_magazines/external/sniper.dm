@@ -20,3 +20,15 @@
 	desc = "A large, heavy 5-round box magazine designed for the sniper rifle. These penetrator rounds deal incredible damage and will penetrate most structures, though they don't knock down or delimb targets."
 	ammo_type = /obj/item/ammo_casing/p50/penetrator
 	max_ammo = 5
+
+//you have no idea how tempted i was to call this crunch berries
+/obj/item/ammo_box/magazine/crunch_shot
+	name = "anti-armor rifle magazine (14.5x146.7mm)"
+	desc = "A large, heavy box magazine designed for an anti-armor rifle. These rounds deal absurd damage, able to delimb targets, knock them on their feet, and bypass most protective equipment."
+	icon_state = "50bmgsniper_mag-1"
+	base_icon_state = "50bmgsniper_mag"
+	ammo_type = /obj/item/ammo_casing/p50
+	max_ammo = 6
+	caliber = "14.5x146.7mm"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
