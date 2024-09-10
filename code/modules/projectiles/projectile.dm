@@ -156,6 +156,10 @@
 	var/impact_effect_type //what type of impact effect to show when hitting something
 	var/log_override = FALSE //is this type spammed enough to not log? (KAs)
 
+	// if the projectile has the matching flags when hitting a wall, it deals it's override damage instead
+	var/wall_damage_flags = PROJECTILE_BONUS_DAMAGE_NONE
+	var/wall_damage_override = 0
+
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
 	///If TRUE, hit mobs even if they're on the floor and not our target

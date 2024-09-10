@@ -434,7 +434,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/storage/belt/utility/full
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 	glasses = /obj/item/clothing/glasses/welding
 	back = /obj/item/storage/backpack/ert/engineer
 

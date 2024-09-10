@@ -47,12 +47,14 @@
 	desc = "Contains a 5.56mm magazine for the Pistole C, containing twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
 	cost = 750
+	faction = FACTION_SOLGOV
 
 /datum/supply_pack/ammo/fms_mag
 	name = "Ferromagnetic Slug Magazine Crate"
 	desc = "Contains a ferromagnetic slug magazine for the Model H pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/modelh)
 	cost = 750
+	faction = FACTION_SOLGOV
 
 /*
 		Shotgun ammo
@@ -75,6 +77,12 @@
 	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
 	cost = 210
 	contains = list(/obj/item/storage/box/techshot)
+
+/datum/supply_pack/ammo/rubbershot
+	name = "Rubbershot Crate"
+	desc = "Contains a box of twenty-five rubbershot shells for use in crowd control or training."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g/rubbershot)
 
 /*
 		.38 ammo
@@ -134,7 +142,7 @@
 /datum/supply_pack/ammo/gal308_ammo
 	name = "CM-GAL .308 Magazine Crate"
 	desc = "Contains a .308 CM-GAL magazine for the CM-GAL rifle, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/gal)
+	contains = list(/obj/item/ammo_box/magazine/f4_308)
 	cost = 1000
 
 /datum/supply_pack/ammo/gar_ammo
@@ -169,9 +177,15 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains a eighty-round 7.62x40mm CLIP box for the SKM rifles."
+	desc = "Contains a one hundred and twenty-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/ammo_box/a762_40)
 	cost = 500
+
+/datum/supply_pack/ammo/a556_ammo_box
+	name = "5.56x39mm CLIP Ammo Box Crate"
+	desc = "Contains a one hundred and twenty-round 5.56x39mm CLIP box for most newer rifles."
+	contains = list(/obj/item/ammo_box/a556_39)
+	cost = 450
 
 /datum/supply_pack/ammo/a357_ammo_box
 	name = ".357 Ammo Box Crate"

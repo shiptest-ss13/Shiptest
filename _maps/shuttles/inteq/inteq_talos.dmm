@@ -874,7 +874,6 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -929,6 +928,7 @@
 	req_access_txt = "11";
 	req_one_access = null
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "gm" = (
@@ -1349,6 +1349,7 @@
 	req_access_txt = "11";
 	req_one_access = null
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "iM" = (
@@ -1646,6 +1647,7 @@
 	pixel_x = 20;
 	pixel_y = 11
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jZ" = (
@@ -6274,6 +6276,7 @@
 	name = "honorable artificer's toolbelt"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "Oq" = (

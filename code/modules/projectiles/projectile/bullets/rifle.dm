@@ -16,7 +16,7 @@
 /obj/projectile/bullet/a8_50rhp
 	name = "8x50mmR bullet"
 	speed = 0.3
-	damage = 55
+	damage = 49
 	armour_penetration = 0
 
 // .300 Magnum (Smile Rifle)
@@ -69,6 +69,20 @@
 // .299 Eoehoma Caseless (E-40)
 
 /obj/projectile/bullet/c299
-	name = ".229 Eoehoma caseless bullet"
+	name = ".299 Eoehoma caseless bullet"
 	damage = 20
 	armour_penetration = 10
+
+//6.5x57mm CLIP (F90)
+
+/obj/projectile/bullet/a65clip
+	name = "6.5x57mm CLIP bullet"
+	speed = 0.3
+	stamina = 10
+	damage = 40
+	armour_penetration = 50
+
+	icon_state = "redtrac"
+	light_system = MOVABLE_LIGHT
+	light_color = COLOR_SOFT_RED
+	light_range = 2

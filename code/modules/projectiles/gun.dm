@@ -316,6 +316,9 @@
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
 
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
+
 /obj/item/gun/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
@@ -686,8 +689,8 @@
 	. = ..()
 	if(!has_safety)
 		return
-
-	if(src != user.get_active_held_item())
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
 		return
 
 	if(isliving(user) && in_range(src, user))
@@ -802,61 +805,42 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-// We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
-	return recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		recoil_bonus += gunslinger_recoil_bonus
+	return clamp(recoil_bonus, 0 , INFINITY)
 
-// We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
-	///our final spread value
-	var/sprd = 0
-	///our randomized value after checking if we are wielded or not
+	var/final_spread = 0
 	var/randomized_gun_spread = 0
-	///bonus
-	var/randomized_bonus_spread
-	// do we have poor aim
-	var/poor_aim = FALSE
+	var/randomized_bonus_spread = 0
 
-	//do we have bonus_spread ? If so, set sprd to it because it means a subtype's proc messed with it
-	sprd += bonus_spread
+	final_spread += bonus_spread
 
-	//reset bonus_spread for poor aim...
-	bonus_spread = 0
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
 
-	// if we have poor aim, we fuck the shooter over
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
-		bonus_spread += 25
-		poor_aim = TRUE
-	// then we randomize the bonus spread
-	randomized_bonus_spread = rand(poor_aim ? 10 : 0, bonus_spread) //poor aim is no longer just a nusiance
+		randomized_bonus_spread += rand(0, 25)
 
-	//then, we mutiply previous bonus spread as it means dual wielding usually, it also means poor aim is also even more severe
-	randomized_bonus_spread *= DUALWIELD_PENALTY_EXTRA_MULTIPLIER
-
-	// we will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
+	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
 
-	//finally, we put it all together including if sprd has a value
-	sprd += randomized_gun_spread + randomized_bonus_spread
+	final_spread += randomized_gun_spread + randomized_bonus_spread
 
-	//clamp it down to avoid guns with negative spread to have worse recoil...
-	sprd = clamp(sprd, 0, INFINITY)
+	//Clamp it down to avoid guns with negative spread to have worse recoil...
+	final_spread = clamp(final_spread, 0, INFINITY)
 
-	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this - update,i have commented it out, however it appears be dapening spread. weird.
-	//sprd *= (rand() - 0.5)
-
-	//coin flip if we mutiply output by -1 so spread isn't JUST to the right
+	//So spread isn't JUST to the right
 	if(prob(50))
-		sprd *= -1
+		final_spread *= -1
 
-	// then we round it up and send it!
-	sprd = round(sprd)
+	final_spread = round(final_spread)
 
-	return sprd
+	return final_spread
 
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
 	var/total_recoil = calculate_recoil(user, recoil_bonus)
-	total_recoil = clamp(total_recoil, 0 , INFINITY)
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)

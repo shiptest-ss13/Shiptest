@@ -212,10 +212,10 @@
 	},
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child{
-	faction = list("neutral","playerSyndicate");
-	name = "Goliath";
+	desc = "A little guy.";
 	environment_smash = 0;
-	desc = "A little guy."
+	faction = list("neutral","playerSyndicate");
+	name = "Goliath"
 	},
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/tech,
@@ -332,8 +332,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 21;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 21
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/mineral/plastitanium,
@@ -513,9 +513,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = -23;
+	dir = 1;
 	pixel_x = 3;
-	dir = 1
+	pixel_y = -23
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
@@ -1175,6 +1175,8 @@
 	},
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/gun/energy/plasmacutter,
+/obj/item/clothing/gloves/color/red/insulated,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ls" = (
@@ -1390,8 +1392,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
@@ -1418,8 +1420,8 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "komodo_port";
-	pixel_y = 24;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 24
 	},
 /obj/machinery/button/door{
 	id = "Artillery1shutter";
@@ -1699,8 +1701,8 @@
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/syndi_cakes{
-	pixel_y = 6;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 6
 	},
 /obj/item/t_scanner{
 	pixel_x = -2;
@@ -1846,16 +1848,16 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "rN" = (
 /obj/structure/table/reinforced,
 /obj/item/toy/figure/syndie{
-	pixel_y = 5;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 5
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/fax/syndicate,
@@ -2201,8 +2203,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 23
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -8
@@ -3597,8 +3599,8 @@
 	dir = 1;
 	id = "syndiewarship_armorybay";
 	name = "Weapon Hold";
-	req_access_txt = "3";
-	pixel_y = -26
+	pixel_y = -26;
+	req_access_txt = "3"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3655,8 +3657,8 @@
 	pixel_y = 16
 	},
 /obj/structure/mirror{
-	pixel_y = 30;
-	layer = 2.8
+	layer = 2.8;
+	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
@@ -3862,8 +3864,8 @@
 /area/ship/hallway/central)
 "Lj" = (
 /obj/item/scalpel{
-	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 6
 	},
 /obj/structure/table/reinforced,
 /obj/item/hemostat,
@@ -3983,8 +3985,8 @@
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/machinery/vending/boozeomat/syndicate_access{
-	pixel_x = 32;
-	density = 0
+	density = 0;
+	pixel_x = 32
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
@@ -4131,8 +4133,8 @@
 "ND" = (
 /obj/structure/railing,
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2;
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/greenglow,
@@ -4269,7 +4271,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PA" = (
-/obj/structure/mecha_wreckage/mauler,
+/obj/structure/mecha_wreckage/touro,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -5076,8 +5078,8 @@
 	dir = 8;
 	id = "warshipbridge";
 	name = "Bridge Window";
-	pixel_y = -1;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = -6;
@@ -5464,8 +5466,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -21;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -21
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6

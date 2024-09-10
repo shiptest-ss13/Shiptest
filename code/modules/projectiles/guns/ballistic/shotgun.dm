@@ -35,6 +35,8 @@
 	recoil = 1
 	recoil_unwielded = 4
 
+	gunslinger_recoil_bonus = -1
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -45,15 +47,6 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
-
-/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -275,24 +268,6 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
 	icon_state = "bulldog_suns"
 	item_state = "bulldog_suns"
-
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
-	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
-	icon_state = "cm15"
-	item_state = "cm15"
-	empty_alarm = FALSE
-	empty_indicator = FALSE
-	unique_mag_sprites_for_variants = FALSE
-	manufacturer = MANUFACTURER_MINUTEMAN
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -716,6 +691,70 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(.)
 		item_state = "flamingbolt_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+	name = "HP Absolution"
+	base_icon_state = "absolution"
+	icon_state = "absolution"
+	item_state = "absolution"
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. Chambered in .357."
+	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 8
+
+		item_state = "illestren_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
+	name = "HP Conflagration"
+	base_icon_state = "conflagration"
+	icon_state = "conflagration"
+	item_state = "conflagration"
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	desc = "A lightweight lever-action shotgun with a 5 round ammunition capacity. The lever action allows it to be cycled quickly and acurrately. In theory, you could ever operate it one-handed. Chambered in 12g."
+	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5
+
+		item_state = "beacon_factory_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
+	spawnwithmagazine = FALSE
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore

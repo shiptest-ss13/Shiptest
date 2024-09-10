@@ -140,10 +140,10 @@
 
 	icon_state = "clip_trenchcoat"
 	item_state = "trenchcoat_solgov"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
@@ -156,7 +156,7 @@
 
 	icon_state = "clip_captaincoat"
 	item_state = "clip_captaincoat"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
@@ -415,25 +415,30 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/military/clip/p16/PopulateContents()
+/obj/item/storage/belt/military/clip/cm82/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/gal/PopulateContents()
+/obj/item/storage/belt/military/clip/f4/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/gal(src)
+		new /obj/item/ammo_box/magazine/f4_308(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm9mm(src)
+		new /obj/item/ammo_box/magazine/cm5_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm15/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/cm15_mag(src)
+		new /obj/item/ammo_box/magazine/cm15_12g(src)
 	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/e50/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/belt/military/clip/e50/PopulateContents()
 	for(var/i in 1 to 5)

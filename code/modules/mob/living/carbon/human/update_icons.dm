@@ -804,7 +804,7 @@ There are several things that need to be remembered:
 				handled_by_bodytype = TRUE
 
 			if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
-				icon_file = DEFAULT_BACK_PATH
+				icon_file = I.mob_overlay_icon ? I.mob_overlay_icon : DEFAULT_BACK_PATH
 				handled_by_bodytype = TRUE
 
 			var/use_autogen = handled_by_bodytype ? dna.species : null

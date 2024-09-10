@@ -39,8 +39,8 @@
 // 5.56x39mm (M-90gl Carbine & P-16)
 
 /obj/item/ammo_casing/a556_39
-	name = "5.56x39mm bullet casing"
-	desc = "A 5.56x39mm bullet casing."
+	name = "5.56x39mm CLIP bullet casing"
+	desc = "A 5.56x39mm CLIP bullet casing."
 	icon_state = "rifle-brass"
 	caliber = "5.56x45mm"
 	projectile_type = /obj/projectile/bullet/a556_45
@@ -85,9 +85,16 @@
 	bullet_per_box = 20
 
 /obj/item/ammo_casing/caseless/c299
-	name = ".229 Eoehoma caseless bullet casing"
-	desc = "A .229 Eoehoma caseless bullet casing."
+	name = ".299 Eoehoma caseless bullet casing"
+	desc = "A .299 Eoehoma caseless bullet casing."
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
 	bullet_per_box = 100
+
+/obj/item/ammo_casing/a65clip
+	name = "6.5x57mm CLIP bullet casing"
+	desc = "A 6.5x57mm CLIP bullet casing."
+	icon_state = "big-brass"
+	caliber = "6.5CLIP"
+	projectile_type = /obj/projectile/bullet/a65clip
