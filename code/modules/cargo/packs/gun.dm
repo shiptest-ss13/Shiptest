@@ -12,6 +12,7 @@
 	cost = 300
 	contains = list(/obj/item/storage/pistolcase/disposable)
 	crate_name = "disposable gun crate"
+	faction = FACTION_FRONTIER
 
 /datum/supply_pack/gun/derringer
 	name = ".38 Derringer Crate"
@@ -19,42 +20,49 @@
 	cost = 350
 	contains = list(/obj/item/storage/pistolcase/derringer)
 	crate_name = "derringer crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
 	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/storage/pistolcase/commander)
+	faction = FACTION_NT
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
 	desc = "Contains a civillian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
 	contains = list(/obj/item/storage/pistolcase/ringneck)
+	faction = FACTION_SYNDICATE
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
 	cost = 1000
 	contains = list(/obj/item/storage/pistolcase/candor)
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/pepperbox
 	name = "HP Firebrand Pepperbox Revolver Crate"
 	desc = "Contains a concealable pepperbox revolver manufactured by the Saint Roumain Militia, chambered in .357."
 	cost = 1250
 	contains = list(/obj/item/storage/pistolcase/firebrand)
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/detrevolver
 	name = "Hunter's Pride Detective Revolver Crate"
 	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
 	cost = 600
 	contains = list(/obj/item/storage/pistolcase/detective)
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver Crate"
 	desc = "Contains a concealable Shadow revolver, chambered in .44 Roumain."
 	cost = 1000
 	contains = list(/obj/item/storage/pistolcase/shadow)
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
@@ -120,6 +128,7 @@
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/doublebarrel)
 	crate_name = "shotguns crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/conflagration
 	name = "Conflagration Lever Action Shotgun Crate"
@@ -134,6 +143,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/hellfire)
 	crate_name = "shotgun crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/brimstone_shotgun
 	name = "Brimstone Shotgun Crate"
@@ -141,6 +151,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/brimstone)
 	crate_name = "shotgun crate"
+	faction = FACTION_SRM
 
 /*
 		Rifles
@@ -152,6 +163,7 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
@@ -166,6 +178,7 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/illestren)
 	crate_name = "rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/beacon
 	name = "Beacon Break Action Rifle Crate"
@@ -173,6 +186,7 @@
 	cost = 2250
 	contains = list(/obj/item/storage/guncase/beacon)
 	crate_name = "rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/scout
 	name = "Scout Sniper Rifle Crate"
@@ -180,6 +194,7 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/scout)
 	crate_name = "rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/boomslang90
 	name = "Boomslang-90 Rifle Crate"
@@ -194,6 +209,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/cobra)
 	crate_name = "SMG crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
@@ -201,6 +217,7 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "auto rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
@@ -208,6 +225,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/p16)
 	crate_name = "auto rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
@@ -215,6 +233,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
+	faction = FACTION_SRM
 
 /datum/supply_pack/gun/attachment/rail_light
 	name = "Tactical Rail Light Crate"
