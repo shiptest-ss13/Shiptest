@@ -13,7 +13,6 @@
 	)
 	restricted_gases = list(
 		GAS_BZ=10,
-		GAS_PLASMA=0.1,
 		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
@@ -21,13 +20,13 @@
 	minimum_pressure = WARNING_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	// temperature range USED to be 100-140 C. this was bad, because
+	// temperature range USED to be 100-140 C. this was bad, because // removing plasma to see if this works
 	// fires start at 100C; occasionally, there would be a perma-plasmafire, too tiny to notice.
 	// even worse, occasionally there would be a perma-TRITFIRE, if oxygen
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
-	minimum_temp = T20C + 50
-	maximum_temp = T20C + 70
+	minimum_temp = T20C + 100
+	maximum_temp = T20C + 140
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
@@ -52,7 +51,7 @@
 
 	minimum_temp = 180
 	maximum_temp = 180
-
+/*
 /datum/atmosphere/desert
 	id = DESERT_DEFAULT_ATMOS
 	base_gases = list(
@@ -64,7 +63,7 @@
 		GAS_N2=5,
 	)
 	restricted_gases = list(
-		GAS_H2O=1,
+		GAS_H2O=0.01,
 	)
 	restricted_chance = 1
 
@@ -73,6 +72,7 @@
 
 	minimum_temp = T20C + 20
 	maximum_temp = T20C + 80
+*/
 
 /datum/atmosphere/shrouded
 	id = SHROUDED_DEFAULT_ATMOS

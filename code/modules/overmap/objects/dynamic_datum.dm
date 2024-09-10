@@ -23,7 +23,7 @@
 	///Planet's flavor name, if it is a planet.
 	var/planet_name
 	///List of probabilities for each type of planet.
-	var/static/list/probabilities
+	var/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
 	///Ruin types to generate
@@ -134,7 +134,7 @@
  * Chooses a type of level for the dynamic level to use.
  */
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
-	if(!probabilities)
+	if(isnull(probabilities))
 		probabilities = current_overmap.dynamic_probabilities
 	if(istype(force_encounter, /datum/planet_type/))
 		planet = force_encounter

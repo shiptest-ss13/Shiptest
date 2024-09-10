@@ -222,7 +222,8 @@ SUBSYSTEM_DEF(overmap)
 	///Do we have a outpost in this system?
 	var/has_outpost = TRUE //TODO SET TO FALSE, ITS ONLY SET TO TRUE FOR TESTING
 
-	var/dynamic_probabilities = list()
+	///the list of dynamic planets that can spawn in this sector
+	var/list/dynamic_probabilities
 
 	//fancy color shit! yayyyyy!
 
@@ -370,7 +371,7 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	if(!dynamic_probabilities)
+	if(isnull(dynamic_probabilities))
 		dynamic_probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			dynamic_probabilities[initial(planet_type.planet)] = initial(planet_type.weight)

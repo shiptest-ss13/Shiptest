@@ -201,11 +201,9 @@
 
 		objects |= object.contents
 
-		if(!available_dock)
-			continue
-
 		var/list/other_data = list(
 			name = object.name,
+			candock = available_dock,
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
