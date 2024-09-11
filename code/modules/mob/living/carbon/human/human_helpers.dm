@@ -26,9 +26,11 @@
 	var/obj/item/card/id/id = get_idcard(FALSE)
 	if(id)
 		return id.registered_name
+	/*
 	var/obj/item/pda/pda = wear_id
 	if(istype(pda))
 		return pda.owner
+	*/
 	return if_no_id
 
 /mob/living/carbon/human/get_visible_name()
@@ -43,7 +45,7 @@
 	if(head && (head.flags_inv & HIDEFACE))
 		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
-	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name) //disfigured. use id-name if possible
+	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate) > 2 || cloneloss > 50 || !real_name) //disfigured. use id-name if possible
 		return if_no_face
 	return real_name
 

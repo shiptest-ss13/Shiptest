@@ -74,7 +74,7 @@
 			var/obj/item/card/id/scan = M.get_idcard(TRUE)
 			authenticated = scan.registered_name
 			if(authenticated)
-				for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_SECURITY))
+				for(var/datum/data/record/R in SSdatacore.get_records(DATACORE_RECORDS_OUTPOST))
 					if(R.fields[DATACORE_NAME] == authenticated)
 						current = R
 				playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)

@@ -344,11 +344,11 @@
 
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
-		var/linked_datacore = get_datacore_key()
-		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, get_datacore_key())
+		var/linked_datacore = user.get_datacore_key()
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
 		if(target_record)
-			. += "<br><span class='deptradio'>found record for datacore: [linked_datacore] </span>"
-			. += "<span class='deptradio'>Rank:</span> [target_record.fields[DATACORE_RANK]]<span class='deptradio'> Name:</span> [target_record.fields[DATACORE_NAME]]"
+			. += "<br><span class='deptradio'>Found record for datacore: [linked_datacore].</span>"
+			. += "<span class='deptradio'><b>Rank</b>:</span> [target_record.fields[DATACORE_RANK]].<span class='deptradio'> <b>Name</b>:</span> [target_record.fields[DATACORE_NAME]]."
 			. += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
 			if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
 				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[target_record.fields[DATACORE_PHYSICAL_HEALTH]]\]</a>"
@@ -385,7 +385,6 @@
 		var/flavor = print_flavor_text()
 		if(flavor)
 			. += flavor
-	. += "*---------*</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

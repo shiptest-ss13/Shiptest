@@ -281,7 +281,7 @@
 		var/perpname = get_face_name(get_id_name(""))
 		if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 			return
-		var/linked_datacore = get_datacore_key()
+		var/linked_datacore = human_or_ghost_user.get_datacore_key()
 		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
 		if(href_list["photo_front"] || href_list["photo_side"])
 			if(!target_record)
@@ -344,10 +344,11 @@
 					to_chat(usr, "<span class='danger'>Patient has signs of suffocation, emergency treatment may be required!</span>")
 				if(getToxLoss() > 20)
 					to_chat(usr, "<span class='danger'>Gathered data is inconsistent with the analysis, possible cause: poisoning.</span>")
-			if(!human_or_ghost_user.wear_id) //You require access from here on out.
+			var/obj/item/card/id/id_card = human_or_ghost_user.get_idcard()
+			if(!id_card) //You require access from here on out.
 				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access</span>")
 				return
-			var/list/access = human_or_ghost_user.wear_id.GetAccess()
+			var/list/access = id_card.GetAccess()
 			if(!(ACCESS_MEDICAL in access))
 				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access</span>")
 				return
@@ -388,18 +389,24 @@
 				return													  //Non-fluff: This allows sec to set people to arrest as they get disarmed or beaten
 			// Checks the user has security clearence before allowing them to change arrest status via hud, comment out to enable all access
 			var/allowed_access = null
+			var/user_name = null
 			var/obj/item/clothing/glasses/hud/security/sec_hud = human_or_ghost_user.glasses
 			if(istype(sec_hud) && (sec_hud.obj_flags & EMAGGED))
 				allowed_access = "@%&ERROR_%$*"
 			else //Implant and standard glasses check access
-				if(human_or_ghost_user.wear_id)
-					var/list/access = human_or_ghost_user.wear_id.GetAccess()
+				var/obj/item/card/id/id_card = human_or_ghost_user.get_idcard()
+				if(id_card)
+					var/list/access = id_card.GetAccess()
 					if(ACCESS_SEC_DOORS in access)
-						allowed_access = human_or_ghost_user.get_authentification_name()
+						allowed_access = TRUE
+						user_name = human_or_ghost_user.get_authentification_name()
 
 			if(!allowed_access)
 				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid access.</span>")
 				return
+
+			if(!user_name)
+				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Invalid name on ID.</span>")
 
 			if(!perpname)
 				to_chat(human_or_ghost_user, "<span class='warning'>ERROR: Can not identify target.</span>")
@@ -427,7 +434,7 @@
 					return
 				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
-				to_chat(usr, "<b>Name:</b> [target_record.fields[DATACORE_NAME]]	<b>Criminal Status:</b> [target_record.fields[DATACORE_CRIMINAL_STATUS]]")
+				to_chat(usr, "<b>Name:</b> [target_record.fields[DATACORE_NAME]]\n<b>Criminal Status:</b> [target_record.fields[DATACORE_CRIMINAL_STATUS]]")
 				for(var/datum/data/crime/c in target_record.fields[DATACORE_CRIMES])
 					to_chat(usr, "<b>Crime:</b> [c.crimeName]")
 					if (c.crimeDetails)
@@ -448,7 +455,7 @@
 				if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD))
 					return
 
-				var/crime = SSdatacore.new_crime_entry(t1, null, allowed_access, station_time_timestamp())
+				var/crime = SSdatacore.new_crime_entry(t1, null, user_name, station_time_timestamp())
 				target_record.add_crime(crime)
 				investigate_log("New Crime: <strong>[t1]</strong> | Added to [target_record.fields[DATACORE_NAME]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 				to_chat(usr, span_notice("Successfully added a crime."))
