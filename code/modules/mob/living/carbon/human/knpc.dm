@@ -914,9 +914,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 				/obj/item/gun/ballistic/automatic/smg/vector = 4,
 				/obj/item/gun/ballistic/automatic/smg/cm5 = 4,
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq = 4,
-				/obj/item/gun/ballistic/automatic/smg/c20r/cobra = 4,
+				/obj/item/gun/ballistic/automatic/smg/cobra = 4,
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 4,
-				/obj/item/gun/ballistic/automatic/pistol/APS = 4,
+				/obj/item/gun/ballistic/automatic/pistol/rattlesnake = 4,
 				/obj/item/gun/ballistic/automatic/pistol/mauler = 4,
 				))
 			r_hand = picked
