@@ -91,6 +91,14 @@ Medical HUD! Basic mode needs suit sensors on.
 
 //HELPERS
 
+/mob/living/carbon/human/proc/get_datacore_key()
+	var/linked_datacore
+	var/obj/item/clothing/glasses/hud/glass_hud = user.get_item_by_slot(ITEM_SLOT_EYES)
+	if(glass_hud && glass_hud.linked_ship)
+		linked_datacore = glass_hud.linked_ship
+	return linked_datacore
+
+
 //called when a carbon changes virus
 /mob/living/carbon/proc/check_virus()
 	var/threat
@@ -272,7 +280,7 @@ Security HUDs! Basic mode shows only the job.
 	holder.pixel_y = I.Height() - world.icon_size
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname)
-		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
+		var/datum/data/record/R = SSdatacore.get_record_by_name(perpname, get_datacore_key())
 		if(R)
 			switch(R.fields[DATACORE_CRIMINAL_STATUS])
 				if("*Arrest*")

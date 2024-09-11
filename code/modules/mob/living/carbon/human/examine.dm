@@ -344,11 +344,8 @@
 
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
-		var/obj/item/clothing/glasses/hud/glass_hud = user.get_item_by_slot(ITEM_SLOT_EYES)
-		var/linked_datacore = DATACORE_RECORDS_OUTPOST
-		if(glass_hud && glass_hud.linked_ship)
-			linked_datacore = glass_hud.linked_ship
-		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
+		var/linked_datacore = get_datacore_key()
+		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, get_datacore_key())
 		if(target_record)
 			. += "<br><span class='deptradio'>found record for datacore: [linked_datacore] </span>"
 			. += "<span class='deptradio'>Rank:</span> [target_record.fields[DATACORE_RANK]]<span class='deptradio'> Name:</span> [target_record.fields[DATACORE_NAME]]"

@@ -19,6 +19,8 @@
 	. = ..()
 	if(linked_ship)
 		. += "It is currently connected to [linked_ship] records."
+	else
+		. += "They could show additional information if linked to a helm."
 
 /obj/item/clothing/glasses/hud/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()

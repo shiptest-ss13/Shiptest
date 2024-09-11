@@ -281,10 +281,7 @@
 		var/perpname = get_face_name(get_id_name(""))
 		if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 			return
-		var/obj/item/clothing/glasses/hud/glass_hud = human_or_ghost_user.get_item_by_slot(ITEM_SLOT_EYES)
-		var/linked_datacore = DATACORE_RECORDS_OUTPOST
-		if(glass_hud && glass_hud.linked_ship)
-			linked_datacore = glass_hud.linked_ship
+		var/linked_datacore = get_datacore_key()
 		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
 		if(href_list["photo_front"] || href_list["photo_side"])
 			if(!target_record)
@@ -568,19 +565,6 @@
 					threatcount += 4
 			if(weaponcheck.Invoke(belt) || weaponcheck.Invoke(back)) //if a weapon is present in the belt or back slot
 				threatcount += 2 //not enough to trigger look_for_perp() on it's own unless they also have criminal status.
-
-	//Check for arrest warrant
-	if(judgement_criteria & JUDGE_RECORDCHECK)
-		var/perpname = get_face_name(get_id_name())
-		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, DATACORE_RECORDS_SECURITY)
-		if(target_record && target_record.fields[DATACORE_CRIMINAL_STATUS])
-			switch(target_record.fields[DATACORE_CRIMINAL_STATUS])
-				if("*Arrest*")
-					threatcount += 5
-				if("Incarcerated")
-					threatcount += 2
-				if("Paroled")
-					threatcount += 2
 
 	//Check for dresscode violations
 	if(istype(head, /obj/item/clothing/head/wizard) || istype(head, /obj/item/clothing/head/helmet/space/hardsuit/wizard))
