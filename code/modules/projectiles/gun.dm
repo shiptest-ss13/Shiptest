@@ -849,7 +849,7 @@
 		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
 		var/consequences_of_our_actions = (HAS_TRAIT(user, TRAIT_EASYLIMBDISABLE)? 2 : 4)
 		var/recoil_offset = (total_recoil - consequences_of_our_actions) * 5
-		if(total_recoil >= consequences_of_our_actions && prob(50 + (recoil_offset * 5)))
+		if(total_recoil >= consequences_of_our_actions && prob(40 + (recoil_offset * 5)))
 			var/mob/living/carbon/jackass = user
 			if(prob(recoil_offset * 10))
 				var/obj/item/bodypart/consequences = jackass.get_active_hand()

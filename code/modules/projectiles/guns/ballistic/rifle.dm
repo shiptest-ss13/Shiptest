@@ -197,7 +197,7 @@
 
 /obj/item/gun/ballistic/rifle/crunch_gun
 	name = "\improper anti-armor rifle"
-	desc = "A massive rifle chambered in 14.5x146.7mm, affectionately known as a 'crunch gun' by the few people crazy enough to use it." //blowing a fist sized hole through the inteq enforcer
+	desc = "A massive rifle chambered in 14.5mm Heavy, affectionately known as a 'crunch gun' by the few people crazy enough to use it." //blowing a fist sized hole through the inteq enforcer
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -231,7 +231,7 @@
 
 	spread = -5
 	spread_unwielded = 60
-	recoil = 8
+	recoil = 6
 	recoil_unwielded = 25 //not that you should be able to fire it unwielded regardless
 
 	wield_delay = 3 SECONDS
