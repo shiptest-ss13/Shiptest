@@ -847,7 +847,25 @@
 		actual_angle -= 360
 	if(total_recoil > 0)
 		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
+		var/consequences_of_our_actions = (HAS_TRAIT(user, TRAIT_EASYLIMBDISABLE)? 2 : 4)
+		var/recoil_offset = (total_recoil - consequences_of_our_actions) * 5
+		if(total_recoil >= consequences_of_our_actions && prob(50 + (recoil_offset * 5)))
+			var/mob/living/carbon/jackass = user
+			if(prob(recoil_offset * 10))
+				var/obj/item/bodypart/consequences = jackass.get_active_hand()
+				consequences.break_bone()
+			jackass.apply_damage(recoil_offset * 5, BRUTE, jackass.get_active_hand())
+			jackass.visible_message(span_danger("The recoil of [src] forces it out of [user.name]'s hands and onto the ground!"), span_boldwarning("The recoil of [src] sends it flying out of your hands!"))
+			jackass.dropItemToGround(jackass.get_active_held_item())
+			log_attack("[user] experienced a high level of recoil while trying to fire [src]")
+			toss_gun_at(user, recoil_offset)
 		return TRUE
+
+/obj/item/gun/proc/toss_gun_at(mob/living/user, intensity)
+	throw_at(get_edge_target_turf(user, rand(dir)), intensity, intensity*2)
+	pixel_x = rand(-4, 4)
+	pixel_y = rand(-4, 4)
+	SpinAnimation(5, 1)
 
 /obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
 	var/atom/movable/flash_loc = user

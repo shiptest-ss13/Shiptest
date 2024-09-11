@@ -38,6 +38,7 @@
 
 	var/list/bounce_sfx_override // if true, overrides the bouncing sfx from the turf to this one
 
+	///how many will spawn in a generic ammo box containing this ammo
 	var/bullet_per_box
 
 

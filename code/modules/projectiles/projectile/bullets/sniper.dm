@@ -44,3 +44,37 @@
 	icon_state = "gaussstrong"
 	damage = 25
 	range = 16
+
+//crung gun
+/obj/projectile/bullet/p145
+	name = "14.5mm Ball shot"
+	speed = 0.3
+	damage = 75
+	knockdown = 100
+	dismemberment = 25
+	armour_penetration = 30
+	var/obj_damage_mod = 1.5
+	var/breakthings = TRUE
+
+/obj/projectile/bullet/p145/on_hit(atom/target, blocked = 0)
+	if(isobj(target) && (blocked != 100) && breakthings)
+		var/obj/O = target
+		O.take_damage((damage * obj_damage_mod), BRUTE, "bullet", FALSE)
+	return ..()
+
+/obj/projectile/bullet/p145/ds
+	name = "14.5mm Discarding Sabot shot"
+	speed = 0.2
+	damage = 85
+	armour_penetration = 70
+	dismemberment = 5
+	obj_damage_mod = 3
+
+/obj/projectile/bullet/p145/he
+	name = "14.5mm High Explosive shot"
+	damage = 30 // most of the damage should be in the explosion
+	dismemberment = 5
+
+/obj/projectile/bullet/p145/he/on_hit(atom/target, blocked = 0)
+	explosion(target, 0, 1, 1, 1, flame_range = 2)
+	return ..()
