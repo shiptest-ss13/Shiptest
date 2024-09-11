@@ -16,7 +16,7 @@
 /obj/projectile/bullet/a8_50rhp
 	name = "8x50mmR bullet"
 	speed = 0.3
-	damage = 55
+	damage = 49
 	armour_penetration = 0
 
 // .300 Magnum (Smile Rifle)
@@ -69,7 +69,7 @@
 // .299 Eoehoma Caseless (E-40)
 
 /obj/projectile/bullet/c299
-	name = ".229 Eoehoma caseless bullet"
+	name = ".299 Eoehoma caseless bullet"
 	damage = 20
 	armour_penetration = 10
 

@@ -689,8 +689,8 @@
 	. = ..()
 	if(!has_safety)
 		return
-
-	if(src != user.get_active_held_item())
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
 		return
 
 	if(isliving(user) && in_range(src, user))

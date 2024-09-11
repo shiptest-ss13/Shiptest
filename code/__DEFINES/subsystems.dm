@@ -122,6 +122,7 @@
 #define INIT_ORDER_QUIRKS 60
 #define INIT_ORDER_DATACORE 57 // Must come before SSticker so datacore reading things can access it
 #define INIT_ORDER_TICKER 55
+#define INIT_ORDER_FACTION 53
 #define INIT_ORDER_MAPPING 50
 #define INIT_ORDER_TIMETRACK 47
 #define INIT_ORDER_NETWORKS 45

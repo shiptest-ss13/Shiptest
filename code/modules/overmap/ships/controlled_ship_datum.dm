@@ -71,6 +71,7 @@
 	var/list/blacklisted = list()
 
 	var/datum/data_library/ship_record
+	var/datum/faction/faction_datum
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -113,6 +114,7 @@
 			refresh_engines()
 		ship_record = SSdatacore.create_library(src)
 		ship_account = new(name, source_template.starting_funds)
+		faction_datum = source_template.faction_datum
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
