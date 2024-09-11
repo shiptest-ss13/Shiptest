@@ -14,9 +14,6 @@ SUBSYSTEM_DEF(datacore)
 		DATACORE_RECORDS_MEDICAL,
 	)
 
-	var/securityPrintCount = 0
-	var/medicalPrintCount = 0
-
 	/// Set to TRUE when the initial roundstart manifest is complete
 	var/finished_setup = FALSE
 
@@ -29,7 +26,6 @@ SUBSYSTEM_DEF(datacore)
 
 /datum/controller/subsystem/datacore/Recover()
 	library = SSdatacore.library
-	medicalPrintCount = SSdatacore.medicalPrintCount
 	finished_setup = SSdatacore.finished_setup
 
 /datum/controller/subsystem/datacore/proc/create_library(library_key)

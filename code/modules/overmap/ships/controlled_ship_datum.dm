@@ -112,8 +112,8 @@
 				Dock(position, TRUE)
 
 			refresh_engines()
-		ship_record = SSdatacore.create_library(src)
 		ship_account = new(name, source_template.starting_funds)
+		ship_record = SSdatacore.create_library(src)
 		faction_datum = source_template.faction_datum
 
 #ifdef UNIT_TESTS
