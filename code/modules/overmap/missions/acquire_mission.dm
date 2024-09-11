@@ -212,6 +212,14 @@ Acquire: Anomaly
 	weight = 1
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
+/datum/mission/acquire/creature/lavagrub
+	name = "Capture a live lavagrub"
+	desc = "I require a live lavagrub for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub
+
 /*
 		Acquire: Landmines
 */

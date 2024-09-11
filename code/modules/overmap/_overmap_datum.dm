@@ -213,11 +213,12 @@
 	return TRUE
 
 /**
- * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
+ * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects.
  * Setting include_docked to TRUE will include any overmap objects docked to objects at the tile.
+ * empty_if_src_docked - Return empty if the source object is docked
  */
-/datum/overmap/proc/get_nearby_overmap_objects(include_docked = FALSE)
-	if(docked_to)
+/datum/overmap/proc/get_nearby_overmap_objects(include_docked = FALSE, empty_if_src_docked = TRUE)
+	if(docked_to && empty_if_src_docked)
 		return list()
 	. = current_overmap.overmap_container[x][y] - src
 	if(!include_docked)

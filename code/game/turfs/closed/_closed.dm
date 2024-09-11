@@ -192,9 +192,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_integrity(rand(-500, -800))
+			alter_integrity(rand(-300, -500))
 		if(EXPLODE_LIGHT)
-			alter_integrity(rand(-200, -700))
+			alter_integrity(rand(-100, -200))
 
 /turf/closed/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)

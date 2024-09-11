@@ -127,7 +127,7 @@ const SharedContent = (_props, context) => {
                     color={'red'}
                     disabled={
                       // I hate this so much
-                      isViewer || data.speed > 0 || data.docked || data.docking || !data.otherInfo.candock
+                      isViewer || data.speed > 0 || data.docked || data.docking || !ship.candock
                     }
                     onClick={() =>
                       act('quick_dock', {

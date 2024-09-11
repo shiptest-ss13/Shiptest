@@ -54,6 +54,10 @@
 //	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
+/obj/machinery/computer/helm/examine(mob/user)
+	. = ..()
+	ui_interact(usr)
+
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
@@ -179,7 +183,7 @@
 
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
-	var/list/objects = current_ship.get_nearby_overmap_objects()
+	var/list/objects = current_ship.get_nearby_overmap_objects(empty_if_src_docked = FALSE)
 	var/dequeue_pointer = 0
 	while (dequeue_pointer++ < objects.len)
 		var/datum/overmap/ship/controlled/object = objects[dequeue_pointer]
