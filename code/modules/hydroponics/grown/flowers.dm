@@ -144,6 +144,7 @@
 	species = "sunflower"
 	plantname = "Sunflowers"
 	product = /obj/item/grown/sunflower
+	genes = list(/datum/plant_gene/trait/attack/sunflower_attack)
 	endurance = 20
 	production = 2
 	yield = 2
@@ -168,10 +169,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
-
-/obj/item/grown/sunflower/attack(mob/M, mob/user)
-	to_chat(M, "<font color='green'>[user] smacks you with a sunflower!<font color='orange'><b>FLOWER POWER!</b></font></font>")
-	to_chat(user, "<font color='green'>Your sunflower's <font color='orange'><b>FLOWER POWER</b></font> strikes [M]!</font>")
 
 // Moonflower
 /obj/item/seeds/sunflower/moonflower
@@ -211,10 +208,17 @@
 	icon_grow = "novaflower-grow"
 	icon_dead = "sunflower-dead"
 	product = /obj/item/grown/novaflower
+	genes = list(/datum/plant_gene/trait/backfire/novaflower_heat, /datum/plant_gene/trait/attack/novaflower_attack)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.25, /datum/reagent/consumable/capsaicin = 0.3, /datum/reagent/consumable/nutriment = 0)
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
+
+/obj/item/seeds/sunflower/novaflower/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/novaflower_attack, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/novaflower_heat, PLANT_GENE_REMOVABLE)
 
 /obj/item/grown/novaflower
 	seed = /obj/item/seeds/sunflower/novaflower
@@ -232,33 +236,3 @@
 	throw_range = 3
 	attack_verb = list("roasted", "scorched", "burned")
 	grind_results = list(/datum/reagent/consumable/capsaicin = 0, /datum/reagent/consumable/condensedcapsaicin = 0)
-
-/obj/item/grown/novaflower/add_juice()
-	..()
-	force = round((5 + seed.potency / 5), 1)
-
-/obj/item/grown/novaflower/attack(mob/living/carbon/M, mob/user)
-	if(!..())
-		return
-	if(isliving(M))
-		to_chat(M, "<span class='danger'>You are lit on fire from the intense heat of the [name]!</span>")
-		M.adjust_fire_stacks(seed.potency / 20)
-		if(M.IgniteMob())
-			message_admins("[ADMIN_LOOKUPFLW(user)] set [ADMIN_LOOKUPFLW(M)] on fire with [src] at [AREACOORD(user)]")
-			log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
-
-/obj/item/grown/novaflower/afterattack(atom/A as mob|obj, mob/user,proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(force > 0)
-		force -= rand(1, (force / 3) + 1)
-	else
-		to_chat(usr, "<span class='warning'>All the petals have fallen off the [name] from violent whacking!</span>")
-		qdel(src)
-
-/obj/item/grown/novaflower/pickup(mob/living/carbon/human/user)
-	..()
-	if(!user.gloves)
-		to_chat(user, "<span class='danger'>The [name] burns your bare hand!</span>")
-		user.adjustFireLoss(rand(1, 5))
