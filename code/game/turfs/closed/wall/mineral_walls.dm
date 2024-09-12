@@ -23,6 +23,8 @@
 	connector_icon = 'icons/turf/connectors/gold_wall_connector.dmi'
 	connector_icon_state = "gold_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
+	max_integrity = 150
+	brute_mod = 1.5
 
 /turf/closed/wall/mineral/gold/yesdiag
 	icon_state = "gold_wall-255"
@@ -41,6 +43,8 @@
 	connector_icon = 'icons/turf/connectors/silver_wall_connector.dmi'
 	connector_icon_state = "silver_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
+	max_integrity = 150
+	brute_mod = 1.5
 
 /turf/closed/wall/mineral/silver/yesdiag
 	icon_state = "silver_wall-255"
@@ -53,7 +57,7 @@
 	icon_state = "diamond_wall-0"
 	base_icon_state = "diamond_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
-	slicing_duration = 200   //diamond wall takes twice as much time to slice
+	breakdown_duration = 50
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
@@ -63,6 +67,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
+	max_integrity = 800
 
 /turf/closed/wall/mineral/diamond/yesdiag
 	icon_state = "diamond_wall-255"
@@ -84,6 +89,8 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/sandstone, /obj/structure/falsewall/sandstone)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	max_integrity = 150
+	min_dam = 5
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -103,6 +110,7 @@
 	connector_icon = 'icons/turf/connectors/uranium_wall_connector.dmi'
 	connector_icon_state = "uranium_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
+	max_integrity = 600
 
 /turf/closed/wall/mineral/uranium/yesdiag
 	icon_state = "uranium_wall-255"
@@ -170,6 +178,8 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/plasma, /obj/structure/falsewall/plasma)
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
+	max_integrity = 300
+	burn_mod = 3
 
 /turf/closed/wall/mineral/plasma/yesdiag
 	icon_state = "plasma_wall-255"
@@ -221,13 +231,14 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
+	max_integrity = 75
+	burn_mod = 3
+	min_dam = 3
 
 /turf/closed/wall/mineral/wood/yesdiag
 	icon_state = "wood_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS | SMOOTH_CONNECTORS
 
-/turf/closed/wall/mineral/wood/nonmetal/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.get_sharpness() && W.force)
@@ -262,12 +273,11 @@
 	connector_icon_state = "iron_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
 
+	max_integrity = 300
+
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-
-/turf/closed/wall/mineral/iron/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"
@@ -283,7 +293,7 @@
 	no_connector_typecache = list(/turf/closed/wall/mineral/snow)
 	hardness = 80
 	explosion_block = 0
-	slicing_duration = 30
+	breakdown_duration = 30
 	sheet_type = /obj/item/stack/sheet/mineral/snow
 	canSmoothWith = null
 	girder_type = null
@@ -291,6 +301,11 @@
 	bullet_bounce_sound = null
 
 	hitsound_type = PROJECTILE_HITSOUND_SNOW
+
+	max_integrity = 50
+	burn_mod = 3
+	brute_mod = 1.5
+	min_dam = 1
 
 /turf/closed/wall/mineral/snow/yesdiag
 	icon_state = "snow_wall-255"
@@ -303,11 +318,13 @@
 	icon_state = "abductor_wall-0"
 	base_icon_state = "abductor_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/abductor
-	slicing_duration = 200   //alien wall takes twice as much time to slice
+	breakdown_duration = 100   //alien wall takes twice as much time to slice
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS,SMOOTH_GROUP_AIRLOCK)
+
+	max_integrity = 1000
 
 /////////////////////Titanium walls/////////////////////
 
@@ -326,6 +343,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	max_integrity = 450
 
 /turf/closed/wall/mineral/titanium/exterior
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
@@ -404,6 +423,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	max_integrity = 500
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'

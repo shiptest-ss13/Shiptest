@@ -33,6 +33,10 @@
 /// Amount of air to take a from a tile
 #define BREATH_PERCENTAGE (BREATH_VOLUME/CELL_VOLUME)
 
+/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
+#define BODYTEMP_AUTORECOVERY_DIVISOR 28
+/// The natural temperature for a body
+#define BODYTEMP_NORMAL 310.15
 
 //EXCITED GROUPS
 /// number of FULL air controller ticks before an excited group breaks down (averages gas contents across turfs)
@@ -214,8 +218,10 @@
 #define ATMOS_TANK_PLASMA "plasma=70000;TEMP=293.15"
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN "h2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -328,6 +334,9 @@
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
+#define GAS_HYDROGEN "h2"
+#define GAS_CHLORINE "cl2"
+#define GAS_HYDROGEN_CHLORIDE "hcl"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)

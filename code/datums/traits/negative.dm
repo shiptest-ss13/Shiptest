@@ -105,7 +105,7 @@
 			if("Clown")
 				heirloom_type = /obj/item/bikehorn/golden
 			if("Mime")
-				heirloom_type = /obj/item/reagent_containers/food/snacks/baguette
+				heirloom_type = /obj/item/food/baguette
 			if("Janitor")
 				heirloom_type = pick(/obj/item/mop, /obj/item/clothing/suit/caution, /obj/item/reagent_containers/glass/bucket, /obj/item/paper/fluff/stations/soap)
 			if("Cook")
@@ -451,20 +451,19 @@
 
 /datum/quirk/social_anxiety/on_process()
 	var/nearby_people = 0
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
 		if(H.client)
 			nearby_people++
 	var/mob/living/carbon/human/H = quirk_holder
 	if(prob(2 + nearby_people))
-		H.stuttering = max(3, H.stuttering)
-	else if(prob(min(3, nearby_people)) && !H.silent)
-		to_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
-		H.silent = max(10, H.silent)
+		H.stuttering = max(4, H.stuttering)
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, "<span class='userdanger'>You think of a dumb thing you said a long time ago and scream internally.</span>")
 		dumb_thing = FALSE //only once per life
 		if(prob(1))
-			new/obj/item/reagent_containers/food/snacks/spaghetti/pastatomato(get_turf(H)) //now that's what I call spaghetti code
+			new/obj/item/food/spaghetti/pastatomato(get_turf(H)) //now that's what I call spaghetti code
 
 // small chance to make eye contact with inanimate objects/mindless mobs because of nerves
 /datum/quirk/social_anxiety/proc/looks_at_floor(datum/source, atom/A)
@@ -479,6 +478,8 @@
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
 
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	if(prob(75))
 		return
 	var/msg
@@ -584,24 +585,57 @@
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
 
+//I fucking hate prefscode
+
 /datum/quirk/junkie/smoker/on_spawn()
-	drug_container_type = pick(/obj/item/storage/fancy/cigarettes,
-		/obj/item/storage/fancy/cigarettes/cigpack_midori,
-		/obj/item/storage/fancy/cigarettes/cigpack_uplift,
-		/obj/item/storage/fancy/cigarettes/cigpack_robust,
-		/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
-		/obj/item/storage/fancy/cigarettes/cigpack_carp)
+	var/mob/living/carbon/human/H = quirk_holder
+	switch (H.client?.prefs.preferred_smoke_brand)
+		if (PREF_CIG_SPACE)
+			drug_container_type = /obj/item/storage/fancy/cigarettes
+		if (PREF_CIG_DROMEDARY)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/dromedaryco
+		if (PREF_CIG_UPLIFT)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+		if (PREF_CIG_ROBUST)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robust
+		if (PREF_CIG_ROBUSTGOLD)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+		if (PREF_CIG_CARP)
+			drug_container_type= /obj/item/storage/fancy/cigarettes/cigpack_carp
+		if (PREF_CIG_MIDORI)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
+		if (PREF_CIGAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_CIGAR_SOLAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/havana
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_CIGAR_COHIBA)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/cohiba
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_VAPE)
+			drug_container_type = /obj/item/clothing/mask/vape
+			accessory_type = null
+		if (PREF_PIPE)
+			drug_container_type = /obj/item/clothing/mask/cigarette/pipe
+			accessory_type = /obj/item/storage/box/matches
+		else
+			CRASH("Someone had an improper cigarette pref on loading")
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
-	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a lighter [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
-
+	if(accessory_type == null)
+		to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon.</span>")
+		return
+	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
 
 /datum/quirk/junkie/smoker/on_process()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/I = H.get_item_by_slot(ITEM_SLOT_MASK)
 	if (istype(I, /obj/item/clothing/mask/cigarette))
+		if(I == drug_container_type)
+			return
 		var/obj/item/storage/fancy/cigarettes/C = drug_container_type
 		if(istype(I, initial(C.spawn_type)))
 			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")

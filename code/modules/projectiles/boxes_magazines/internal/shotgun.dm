@@ -27,6 +27,9 @@
 	max_ammo = 2
 	instant_load = TRUE
 
+/obj/item/ammo_box/magazine/internal/shot/dual/lethal
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
@@ -48,6 +51,18 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
 	max_ammo = 12
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+	name = "absolution internal magazine"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = ".357"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+	name = "conflagration internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "12ga"
+	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/shot/beacon
 	name = "beacon internal magazine"

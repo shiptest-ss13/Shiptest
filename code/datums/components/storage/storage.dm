@@ -258,7 +258,7 @@
 		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
+	while(do_after(M, 10, parent, TRUE, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(M, "<span class='notice'>You put everything you could [insert_preposition] [parent].</span>")
@@ -316,7 +316,7 @@
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)
-	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
+	while (do_after(M, 1 SECONDS, T, NONE, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -424,7 +424,7 @@
 /datum/component/storage/proc/dump_content_at(atom/dest_object, mob/M)
 	var/atom/A = parent
 	var/atom/dump_destination = dest_object.get_dumping_location()
-	if(A.Adjacent(M) && dump_destination && M.Adjacent(dump_destination))
+	if(M.CanReach(A) && dump_destination && M.CanReach(dump_destination))
 		if(locked)
 			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 			return FALSE
@@ -432,6 +432,12 @@
 			playsound(A, "rustle", 50, TRUE, -5)
 			return TRUE
 	return FALSE
+
+/datum/component/storage/proc/get_dumping_location(atom/dest_object)
+	var/datum/component/storage/storage = dest_object.GetComponent(/datum/component/storage)
+	if(storage)
+		return storage.real_location()
+	return dest_object.get_dumping_location()
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)

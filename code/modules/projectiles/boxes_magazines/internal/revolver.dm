@@ -33,13 +33,13 @@
 	max_ammo = 5
 	instant_load = FALSE
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev45
+/obj/item/ammo_box/magazine/internal/cylinder/rev44
 	name = "cattleman revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/a44roum
+	caliber = ".44 Roumain"
 	max_ammo = 6
 	instant_load = FALSE
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
+/obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 	name = "montagne revolver cylinder"
 	instant_load = TRUE

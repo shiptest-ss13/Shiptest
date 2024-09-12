@@ -123,7 +123,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "ef" = (
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/human/syndicate{
 	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
@@ -180,7 +180,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fS" = (
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/human/syndicate{
 	unsuitable_atmos_damage = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -199,8 +199,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "gf" = (
 /obj/structure/closet/crate/secure/gear,
-/obj/item/storage/box/syndimaid,
-/obj/item/storage/box/syndimaid,
 /obj/item/blackmarket_uplink,
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating,
@@ -533,7 +531,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/syndifort)
 "rg" = (
-/mob/living/simple_animal/hostile/syndicate/space,
+/mob/living/simple_animal/hostile/human/syndicate/space,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1102,7 +1100,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "HR" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/syndicate/ranged{
+/mob/living/simple_animal/hostile/human/syndicate/ranged{
 	unsuitable_atmos_damage = 0
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -1110,7 +1108,7 @@
 "Il" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "Iv" = (
@@ -1222,8 +1220,8 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "My" = (
@@ -1365,7 +1363,7 @@
 /area/ruin/jungle/syndifort)
 "Qs" = (
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/human/syndicate{
 	unsuitable_atmos_damage = 0
 	},
 /obj/machinery/light/directional/north,
@@ -1595,9 +1593,9 @@
 /area/ruin/jungle/syndifort)
 "WG" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/ballistic/automatic/smg/c20r,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
+/obj/item/gun/ballistic/automatic/smg/cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)
 "WT" = (

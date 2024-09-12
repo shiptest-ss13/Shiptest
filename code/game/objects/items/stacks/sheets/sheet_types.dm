@@ -221,9 +221,9 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	force = 0
 	throwforce = 0
 	merge_type = /obj/item/stack/sheet/cotton
-	var/pull_effort = 30
-	var/loom_result = /obj/item/stack/sheet/cotton/cloth
 	grind_results = list(/datum/reagent/cellulose = 20)
+	var/pull_effort = 10
+	var/loom_result = /obj/item/stack/sheet/cotton/cloth
 
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white jumpskirt", /obj/item/clothing/under/color/jumpskirt/white, 3), /*Ladies first*/ \
@@ -339,7 +339,6 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	singular_name = "raw durathread ball"
 	icon_state = "sheet-durathreadraw"
 	merge_type = /obj/item/stack/sheet/cotton/durathread
-	pull_effort = 70
 	loom_result = /obj/item/stack/sheet/durathread
 	grind_results = list()
 
@@ -520,10 +519,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
-	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6), \
-	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
-	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2), \
-	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6)))
+	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2)))
 /obj/item/stack/sheet/bone
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'
@@ -608,41 +604,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 20
 /obj/item/stack/sheet/paperframes/fifty
 	amount = 50
-
-/obj/item/stack/sheet/meat
-	name = "meat sheets"
-	desc = "Something's bloody meat compressed into a nice solid sheet."
-	singular_name = "meat sheet"
-	icon_state = "sheet-meat"
-	material_flags = MATERIAL_COLOR
-	custom_materials = list(/datum/material/meat = MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/meat
-	material_type = /datum/material/meat
-	material_modifier = 1 //None of that wussy stuff
-
-/obj/item/stack/sheet/meat/fifty
-	amount = 50
-/obj/item/stack/sheet/meat/twenty
-	amount = 20
-/obj/item/stack/sheet/meat/five
-	amount = 5
-
-/obj/item/stack/sheet/pizza
-	name = "pepperoni sheetzzas"
-	desc = "It's a delicious pepperoni sheetzza!"
-	singular_name = "pepperoni sheetzza"
-	icon_state = "sheet-meat" //This needs a pizza sheet but we also i dont think anyone will ever make this.
-	custom_materials = list(/datum/material/pizza = MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/pizza
-	material_type = /datum/material/pizza
-	material_modifier = 1
-
-/obj/item/stack/sheet/pizza/fifty
-	amount = 50
-/obj/item/stack/sheet/pizza/twenty
-	amount = 20
-/obj/item/stack/sheet/pizza/five
-	amount = 5
 
 /obj/item/stack/sheet/sandblock
 	name = "blocks of sand"

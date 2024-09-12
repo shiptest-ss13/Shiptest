@@ -350,44 +350,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("stabbed", "ripped", "gored", "impaled")
 	embedding = list("pain_mult" = 8, "embed_chance" = 100, "fall_chance" = 0, "impact_pain_mult" = 15) //55 damage+embed on hit
 
-/obj/item/switchblade
-	name = "switchblade"
-	icon_state = "switchblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	desc = "A sharp, concealable, spring-loaded knife."
-	flags_1 = CONDUCT_1
-	force = 3
-	w_class = WEIGHT_CLASS_SMALL
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 6
-	custom_materials = list(/datum/material/iron=12000)
-	hitsound = 'sound/weapons/genhit.ogg'
-	attack_verb = list("stubbed", "poked")
-	resistance_flags = FIRE_PROOF
-	var/extended = 0
-
-/obj/item/switchblade/attack_self(mob/user)
-	extended = !extended
-	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
-	if(extended)
-		force = 20
-		w_class = WEIGHT_CLASS_NORMAL
-		throwforce = 23
-		icon_state = "switchblade_ext"
-		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-		hitsound = 'sound/weapons/bladeslice.ogg'
-		sharpness = IS_SHARP
-	else
-		force = 3
-		w_class = WEIGHT_CLASS_SMALL
-		throwforce = 5
-		icon_state = "switchblade"
-		attack_verb = list("stubbed", "poked")
-		hitsound = 'sound/weapons/genhit.ogg'
-		sharpness = IS_BLUNT
-
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
@@ -404,7 +366,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/cane
 	name = "cane"
-	desc = "A cane used by a true gentleman. Or a clown."
+	desc = "A cane used by a true gentleman."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "cane"
 	item_state = "stick"
@@ -774,35 +736,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
 				return 1
 	return 0
-
-/obj/item/legion_staff
-	icon_state = "legion_staff"
-	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
-	name = "legionnaire staff"
-	desc = "The remnants of a legionnaire, reconstructed around a pole of bone. The skulls it produces are loyal to the wielder, seeming to recognize them as their host body."
-	icon = 'icons/obj/guns/magic.dmi'
-	block_chance = 20
-	force = 20
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("bit", "gnawed", "chomped")
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	hitsound = 'sound/weapons/bite.ogg'
-	var/next_use_time
-
-/obj/item/legion_staff/attack_self(mob/user)
-	if(next_use_time > world.time)
-		user.visible_message("<span class='warning'>[src] rattles in [user]'s hands, but nothing happens...</span>")
-		to_chat(user, "<span class='warning'><b>You need to wait longer to use this again.</b></span>")
-		return
-	user.visible_message("<span class='warning'>[user] raises the [src] and summons a legion skull!</span>")
-	for(var/i in 1 to 3)
-		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff(user.loc)
-		LegionSkull.faction = user.faction.Copy()
-		LegionSkull.friends += user
-	next_use_time = world.time + 6 SECONDS
 
 /obj/item/claymore/bone
 	name = "Bone Sword"

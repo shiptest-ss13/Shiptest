@@ -1,36 +1,34 @@
 
 /obj/machinery/vending/cola
-	name = "\improper Robust Softdrinks"
-	desc = "A softdrink vendor provided by Robust Industries, LLC."
+	name = "\improper RobustMore Softdrinks"
+	desc = "A softdrink vendor provided by RobustMore DrinkFoods Industries, LLC."
 	icon_state = "Cola_Machine"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	product_slogans = "RobustMore Softdrinks: More robust than a toolbox to the head!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 10 trillion drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks this side of the galaxy."
 	products = list(
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
 		/obj/item/reagent_containers/food/drinks/waterbottle = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/efuel = 5)
-	contraband = list(
-		/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 6,
-		/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 6)
+		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 5,
+		/obj/item/reagent_containers/food/drinks/soda_cans/vimukti = 6,
+		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 6)
 	premium = list(
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola = 1,
 		/obj/item/reagent_containers/food/drinks/soda_cans/air = 1,
-		/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy = 1,
-		/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1)
+		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 1,
+		/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 1)
 	refill_canister = /obj/item/vending_refill/cola
 	default_price = 45
 	extra_price = 200
 
 
 /obj/item/vending_refill/cola
-	machine_name = "Robust Softdrinks"
+	machine_name = "RobustMore Softdrinks"
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/random
@@ -55,9 +53,9 @@
 
 /obj/machinery/vending/cola/red
 	icon_state = "red_cola"
-	name = "\improper Space Cola Vendor"
-	desc = "It vends cola, in space."
-	product_slogans = "Cola in space!"
+	name = "\improper Master Cola Vendor"
+	desc = "This vending machine offers Master Cola. Master Cola - have a drink from the past!"
+	product_slogans = "Master Cola - have a drink from the past!"
 	light_mask = "red_cola-light-mask"
 	light_color = COLOR_DARK_RED
 
@@ -71,9 +69,9 @@
 
 /obj/machinery/vending/cola/starkist
 	icon_state = "starkist"
-	name = "\improper Star-kist Vendor"
-	desc = "The taste of a star in liquid form."
-	product_slogans = "Drink the stars! Star-kist!"
+	name = "\improper Lunapunch Vendor"
+	desc = "What keeps the colonies running - Lunapunch."
+	product_slogans = "The Colonies run on Lunapunch!"
 	light_mask = "starkist-light-mask"
 	light_color = COLOR_LIGHT_ORANGE
 
@@ -84,27 +82,27 @@
 
 /obj/machinery/vending/cola/pwr_game
 	icon_state = "pwr_game"
-	name = "\improper Pwr Game Vendor"
-	desc = "You want it, we got it. Brought to you in partnership with Vlad's Salads."
-	product_slogans = "The POWER that gamers crave! PWR GAME!"
+	name = "\improper PAC-Fuel Vendor"
+	desc = "PAC-Fuel: stay flying straight. Enter the code on every can for a chance to win gamer merch or industrial equipment!"
+	product_slogans = "Keep flying steady with PAC-Fuel!"
 	light_mask = "pwr_game-light-mask"
 	light_color = COLOR_STRONG_VIOLET
 
 /obj/machinery/vending/cola/shamblers
-	name = "\improper Shambler's Vendor"
-	desc = "~Shake me up some of that Shambler's Juice!~"
+	name = "\improper Shoal Punch Vendor"
+	desc = "Every fruit you could want, at your beak! Shoal Punch!"
 	icon_state = "shamblers_juice"
 	products = list(
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel = 10,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda = 10,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-		/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 10)
-	product_slogans = "~Shake me up some of that Shambler's Juice!~"
-	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion souls drank!;Thirsty? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
+		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 10)
+	product_slogans = "Every fruit you could want, at your beak! Shoal Punch!"
+	product_ads = "Every fruit you could want, at your beak!;Don't go flying dry!;Over two trillion served!;Thirsty? Get punched!;Skrikira trikxti skrmikr rakti!;Don't go dry, get Shoal Punch."
 	light_mask = "shamblers-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK

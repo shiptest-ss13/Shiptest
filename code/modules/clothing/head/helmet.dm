@@ -6,7 +6,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -230,10 +230,11 @@
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
 	icon_state = "marine_command"
 	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
+	slowdown = 0.3
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -285,7 +286,7 @@
 	visor_flags_inv = HIDEFACE
 	toggle_cooldown = 0
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
-	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice
@@ -326,7 +327,7 @@
 	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -491,7 +492,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flash_protect = FLASH_PROTECTION_WELDER
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	strip_delay = 80
 
 /obj/item/clothing/head/helmet/swat/inteq
@@ -500,6 +501,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
@@ -508,6 +510,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
@@ -586,9 +589,3 @@
 		"Snow" = "x11helm_snow",
 		"Urban" = "x11helm_urban",
 		)
-
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
-	icon_state = "x11helm_frontier"
-	unique_reskin = null

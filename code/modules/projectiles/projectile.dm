@@ -1,7 +1,3 @@
-
-#define MOVES_HITSCAN -1		//Not actually hitscan but close as we get without actual hitscan.
-#define MUZZLE_EFFECT_PIXEL_INCREMENT 17	//How many pixels to move the muzzle flash up so your character doesn't look like they're shitting out lasers.
-
 /obj/projectile
 	name = "projectile"
 	icon = 'icons/obj/projectiles.dmi'
@@ -159,6 +155,10 @@
 	var/dismemberment = 0 //The higher the number, the greater the bonus to dismembering. 0 will not dismember at all.
 	var/impact_effect_type //what type of impact effect to show when hitting something
 	var/log_override = FALSE //is this type spammed enough to not log? (KAs)
+
+	// if the projectile has the matching flags when hitting a wall, it deals it's override damage instead
+	var/wall_damage_flags = PROJECTILE_BONUS_DAMAGE_NONE
+	var/wall_damage_override = 0
 
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
@@ -494,7 +494,7 @@
 		if(direct_target)
 			return TRUE
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
-		if(L.stat == DEAD || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
+		if(L.stat || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
 			return FALSE
 	return TRUE
 

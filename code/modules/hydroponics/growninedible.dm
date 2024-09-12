@@ -23,8 +23,9 @@
 	pixel_y = base_pixel_y + rand(-5, 5)
 
 	if(seed)
-		for(var/datum/plant_gene/trait/T in seed.genes)
-			T.on_new(src, newloc)
+		// Go through all traits in their genes and call on_new_plant from them.
+		for(var/datum/plant_gene/trait/trait in seed.genes)
+			trait.on_new_plant(src, newloc)
 
 		if(istype(src, seed.product)) // no adding reagents if it is just a trash item
 			seed.prepare_result(src)
@@ -35,11 +36,10 @@
 /obj/item/grown/attackby(obj/item/O, mob/user, params)
 	..()
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>\n"
+		var/msg = "This is \a <span class='name'>[src]</span>\n"
 		if(seed)
 			msg += seed.get_analyzer_text()
-		msg += "</span>"
-		to_chat(usr, msg)
+		to_chat(usr, examine_block(msg))
 		return
 
 /obj/item/grown/proc/add_juice()

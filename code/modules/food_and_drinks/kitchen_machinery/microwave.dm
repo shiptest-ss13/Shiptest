@@ -362,7 +362,7 @@
 	name = "flameless ration heater"
 	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
-	icon_state = "ration_package"
+	icon_state = "ration_heater"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
 	heat = 3800
 	var/obj/item/tocook = null
@@ -384,6 +384,12 @@
 			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
+
+
+/obj/item/ration_heater/get_temperature()
+	if(!uses)
+		return 0
+	. = ..()
 
 /obj/item/ration_heater/proc/clear_cooking(datum/source)
 	SIGNAL_HANDLER

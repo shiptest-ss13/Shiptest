@@ -1084,11 +1084,11 @@
 /area/centcom/control)
 "apm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = -4;
 	pixel_y = -2
 	},
@@ -3043,15 +3043,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel,
 /area/wizard_station)
-"aEX" = (
-/obj/structure/table/wood,
-/obj/item/gun/magic/wand{
-	desc = "Used in emergencies to reignite magma engines.";
-	max_charges = 0;
-	name = "wand of emergency engine ignition"
-	},
-/turf/open/floor/plasteel,
-/area/wizard_station)
 "aEY" = (
 /obj/structure/table/wood,
 /obj/item/bikehorn/golden{
@@ -4184,7 +4175,7 @@
 "aNr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/food/drinks/britcup,
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -4532,7 +4523,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/drinks/britcup,
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
@@ -6995,8 +6986,8 @@
 /area/centcom/evac)
 "cIS" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq{
 	pixel_x = -5;
 	pixel_y = -5
 	},
@@ -11579,8 +11570,8 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-/obj/item/reagent_containers/food/snacks/spaghetti,
-/obj/item/reagent_containers/food/snacks/spaghetti,
+/obj/item/food/spaghetti/raw,
+/obj/item/food/spaghetti/raw,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
@@ -23771,7 +23762,7 @@ auE
 aEc
 auE
 aAx
-aEX
+aEW
 aqZ
 aqZ
 aGr

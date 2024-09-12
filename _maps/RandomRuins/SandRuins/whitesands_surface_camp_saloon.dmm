@@ -243,7 +243,7 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "gC" = (
@@ -328,7 +328,7 @@
 "ih" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	name = "Hermit Bartender"
 	},
 /turf/open/floor/wood{
@@ -445,7 +445,6 @@
 "lI" = (
 /obj/structure/table/wood/poker,
 /obj/effect/spawner/lootdrop/gambling,
-/obj/item/spacecash/bundle/loadsamoney,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "lV" = (
@@ -499,7 +498,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -615,7 +614,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -654,7 +653,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/wood{
@@ -666,7 +665,7 @@
 	dir = 8
 	},
 /obj/item/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -744,7 +743,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	dir = 8
 	},
 /turf/open/floor/wood{
@@ -756,7 +755,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/wood{
@@ -890,6 +889,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	dir = 4
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -981,7 +983,7 @@
 /area/ruin/whitesands/saloon)
 "DT" = (
 /obj/structure/chair/wood,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	name = "Robert";
 	desc = "This fellow seems relatively sane and normal";
 	faction = list("neutral")
@@ -1026,10 +1028,11 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/energy/plasmacutter{
-	icon_state = "pulse";
+	icon_state = "pulse_carbine";
 	name = "pulse rifle";
 	desc = "A supposedly heavy-duty, multifaceted energy rifle. The barrel looks off and the casing seems to be made of plastic";
-	item_state = "pulse"
+	item_state = "pulse";
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -1114,7 +1117,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -1148,7 +1151,7 @@
 	},
 /area/ruin/whitesands/saloon)
 "Ie" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -1389,7 +1392,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -1421,7 +1424,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "QV" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	name = "Hermit Bartender";
 	dir = 4
 	},
@@ -1497,7 +1500,7 @@
 /area/ruin/whitesands/saloon)
 "Ua" = (
 /obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
 	dir = 8
 	},
 /turf/open/floor/wood{
@@ -1525,7 +1528,7 @@
 /obj/structure/sign/poster/official/cohiba_robusto_ad{
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -1641,7 +1644,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -1672,6 +1675,7 @@
 	pixel_y = 6;
 	pixel_x = 3
 	},
+/obj/item/spacecash/bundle/loadsamoney,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "ZG" = (

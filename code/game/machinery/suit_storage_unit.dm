@@ -16,6 +16,7 @@
 	var/obj/item/clothing/suit/space/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
 	var/obj/item/clothing/mask/mask = null
+	var/obj/item/mod/control/mod = null
 	var/obj/item/storage = null
 								// if you add more storage slots, update cook() to clear their radiation too.
 
@@ -27,6 +28,8 @@
 	var/mask_type = null
 	/// What type of additional item the unit starts with when spawned.
 	var/storage_type = null
+	/// What type of MOD the unit starts with when spawned.
+	var/mod_type = null
 
 	state_open = FALSE
 	/// If the SSU's doors are locked closed. Can be toggled manually via the UI, but is also locked automatically when the UV decontamination sequence is running.
@@ -194,6 +197,8 @@
 		helmet = new helmet_type(src)
 	if(mask_type)
 		mask = new mask_type(src)
+	if(mod_type)
+		mod = new mod_type(src)
 	if(storage_type)
 		storage = new storage_type(src)
 	update_appearance()
@@ -215,6 +220,7 @@
 	QDEL_NULL(suit)
 	QDEL_NULL(helmet)
 	QDEL_NULL(mask)
+	QDEL_NULL(mod)
 	QDEL_NULL(storage)
 	return ..()
 
@@ -225,19 +231,19 @@
 		. += "[base_icon_state]_panel"
 	if(state_open)
 		. += "[base_icon_state]_open"
-		if(suit)
+		if(suit || mod)
 			. += "[base_icon_state]_suit"
 		if(helmet)
 			. += "[base_icon_state]_helm"
 		if(storage)
 			. += "[base_icon_state]_storage"
-		if(uv && uv_super)
-			. += "[base_icon_state]_super"
 	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
 		else
 			if(uv)
+				if(uv_super)
+					. += "[base_icon_state]_super"
 				. += "[base_icon_state]_lights_red"
 			else
 				. += "[base_icon_state]_lights_closed"
@@ -247,6 +253,8 @@
 				. += "[base_icon_state]_uvstrong"
 			else
 				. += "[base_icon_state]_uv"
+		else if(locked)
+			. += "[base_icon_state]_locked"
 		else
 			. += "[base_icon_state]_ready"
 
@@ -263,6 +271,7 @@
 	helmet = null
 	suit = null
 	mask = null
+	mod = null
 	storage = null
 	occupant = null
 
@@ -289,6 +298,7 @@
 			"suit" = create_silhouette_of(/obj/item/clothing/suit/space/eva),
 			"helmet" = create_silhouette_of(/obj/item/clothing/head/helmet/space/eva),
 			"mask" = create_silhouette_of(/obj/item/clothing/mask/breath),
+			"mod" = create_silhouette_of(/obj/item/mod/control),
 			"storage" = create_silhouette_of(/obj/item/tank/internals/oxygen),
 		)
 
@@ -340,8 +350,10 @@
 				close_machine()
 		if ("disinfect")
 			if (occupant && safeties)
+				say("Alert: safeties triggered, occupant detected!")
 				return
 			else if (!helmet && !mask && !suit && !storage && !occupant)
+				to_chat(user, span_notice("There's nothing inside [src] to disinfect!"))
 				return
 			else
 				if (occupant)
@@ -351,6 +363,7 @@
 		if ("lock", "unlock")
 			if (!state_open)
 				locked = !locked
+				update_icon()
 		else
 			var/obj/item/item_to_dispense = vars[choice]
 			if (item_to_dispense)
@@ -397,7 +410,7 @@
 	if(!is_operational)
 		to_chat(user, span_warning("The unit is not operational!"))
 		return
-	if(occupant || helmet || suit || storage)
+	if(occupant || helmet || suit || mod || storage)
 		to_chat(user, span_warning("It's too cluttered inside to fit in!"))
 		return
 
@@ -406,8 +419,8 @@
 	else
 		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
-	if(do_mob(user, target, 30))
-		if(occupant || helmet || suit || storage)
+	if(do_after(user, 30, target))
+		if(occupant || helmet || suit || mod || storage)
 			return
 		if(target == user)
 			user.visible_message(span_warning("[user] slips into [src] and closes the door behind [user.p_them()]!"), span_notice("You slip into [src]'s cramped space and shut its door."))
@@ -452,6 +465,8 @@
 			qdel(suit) // Delete everything but the occupant.
 			mask = null
 			qdel(mask)
+			mod = null
+			qdel(mod)
 			storage = null
 			qdel(storage)
 			// The wires get damaged too.
@@ -462,6 +477,12 @@
 			else
 				visible_message(span_warning("[src]'s door slides open, barraging you with the nauseating smell of charred flesh."))
 				mob_occupant.radiation = 0
+				if(iscarbon(mob_occupant))
+					var/mob/living/carbon/bacon = mob_occupant
+					for(var/obj/item/bodypart/grilling as anything in bacon.get_bleeding_parts(TRUE))
+						if(!grilling.can_bandage())
+							continue
+						grilling.apply_bandage(0.005, 600, "cauterization")
 			playsound(src, 'sound/machines/airlocks/standard/close.ogg', 25, TRUE)
 			var/list/things_to_clear = list() //Done this way since using GetAllContents on the SSU itself would include circuitry and such.
 			if(suit)
@@ -473,6 +494,9 @@
 			if(mask)
 				things_to_clear += mask
 				things_to_clear += mask.GetAllContents()
+			if(mod)
+				things_to_clear += mod
+				things_to_clear += mod.GetAllContents()
 			if(storage)
 				things_to_clear += storage
 				things_to_clear += storage.GetAllContents()
@@ -559,6 +583,13 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			mask = I
+		else if(istype(I, /obj/item/mod/control))
+			if(mod)
+				to_chat(user, span_warning("The unit already contains a MOD!"))
+				return
+			if(!user.transferItemToLoc(I, src))
+				return
+			mod = I
 		else
 			if(storage)
 				to_chat(user, span_warning("The auxiliary storage compartment is full!"))
@@ -625,6 +656,9 @@
 		else if(istype(AM, /obj/item/clothing/mask) && !mask)
 			AM.forceMove(src)
 			mask = AM
+		else if(istype(AM, /obj/item/mod/control) && !storage)
+			AM.forceMove(src)
+			mod = AM
 		else if(istype(AM, /obj/item) && !storage)
 			AM.forceMove(src)
 			storage = AM

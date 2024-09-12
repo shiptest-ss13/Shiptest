@@ -5,7 +5,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = BLOBS_ALLOWED | UNIQUE_AREA
+	area_flags = UNIQUE_AREA
 	flags_1 = CAN_BE_DIRTY_1
 
 //Survival Capsule
@@ -314,11 +314,7 @@
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
-						/obj/item/gun/magic/staff/chaos,
-						/obj/item/gun/magic/staff/spellblade,
-						/obj/item/gun/magic/wand/death,
-						/obj/item/gun/magic/wand/fireball,
+						/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery,

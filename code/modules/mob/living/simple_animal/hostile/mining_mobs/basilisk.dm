@@ -1,4 +1,3 @@
-#define LEGIONVIRUS_TYPE /datum/disease/transformation/legionvirus
 #define BULLET_SHELL_DAMAGE 1
 
 //A beast that fire freezing blasts.
@@ -204,7 +203,6 @@
 	projectiletype = /obj/projectile/temp/basilisk/heated
 
 #undef BULLET_SHELL_DAMAGE
-#undef LEGIONVIRUS_TYPE
 
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
@@ -230,7 +228,7 @@
 	movement_type = FLYING
 	robust_searching = 1
 	attack_same = TRUE		// So we'll fight basilisks
-	crusher_loot = /obj/item/crusher_trophy/watcher_wing
+	//mob_trophy = /obj/item/mob_trophy/watcher_wing
 	gold_core_spawnable = NO_SPAWN
 	loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
@@ -294,8 +292,8 @@
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
 	projectiletype = /obj/projectile/temp/basilisk/magmawing
-	crusher_loot = /obj/item/crusher_trophy/magma_wing
-	crusher_drop_mod = 75
+	//mob_trophy = /obj/item/mob_trophy/magma_wing
+	trophy_drop_mod = 75
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
 	name = "icewing watcher"
@@ -309,8 +307,8 @@
 	ranged_cooldown_time = 20
 	projectiletype = /obj/projectile/temp/basilisk/icewing
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
-	crusher_loot = /obj/item/crusher_trophy/ice_wing
-	crusher_drop_mod = 75
+	//mob_trophy = /obj/item/mob_trophy/ice_wing
+	trophy_drop_mod = 75
 
 /obj/projectile/temp/basilisk/magmawing
 	name = "scorching blast"
@@ -340,8 +338,8 @@
 		if(istype(L))
 			L.apply_status_effect(/datum/status_effect/freon/watcher)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/nest
+	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"

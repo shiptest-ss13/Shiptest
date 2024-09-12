@@ -190,11 +190,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				return
 	return ..()
 
-/obj/structure/light_construct/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
-
 /obj/structure/light_construct/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/metal(loc, sheets_refunded)
@@ -857,8 +852,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	if(!..()) //not caught by a mob
 		shatter()
 
-// update the icon state and description of the light
+/obj/item/light/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	shatter()
+	..()
 
+// update the icon state and description of the light
 /obj/item/light/proc/update()
 	switch(status)
 		if(LIGHT_OK)

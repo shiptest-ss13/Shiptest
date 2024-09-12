@@ -804,7 +804,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("adobe");
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
@@ -1003,7 +1003,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "xc" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -1145,7 +1145,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/west,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
@@ -1156,10 +1156,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "Ak" = (
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 9;
-	pixel_y = -3
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/trash/pistachios{
 	pixel_y = 5
 	},
@@ -1744,7 +1741,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	faction = list("saloon")
 	},
 /turf/open/floor/plasteel/dark,
@@ -1777,7 +1774,7 @@
 /obj/effect/turf_decal/ntspaceworks_small/left{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("saloon")
 	},
@@ -1946,7 +1943,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/vomit/old,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
@@ -1969,7 +1966,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("adobe");
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
@@ -2060,7 +2057,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qo" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged,
+/mob/living/simple_animal/hostile/human/hermit/ranged,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qu" = (

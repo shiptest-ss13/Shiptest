@@ -1474,6 +1474,7 @@
 	pixel_y = -11;
 	pixel_x = 9
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "gd" = (
@@ -2003,7 +2004,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -3374,13 +3375,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -3481,7 +3482,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -4557,7 +4558,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -6112,7 +6113,7 @@
 /obj/item/storage/pill_bottle/aranesp,
 /obj/item/taperecorder,
 /obj/item/t_scanner,
-/obj/item/switchblade,
+/obj/item/kitchen/knife/switchblade,
 /obj/item/trash/candy,
 /obj/structure/filingcabinet/double,
 /obj/item/radio/intercom/directional/south,
@@ -7282,7 +7283,7 @@
 "AC" = (
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -10650,6 +10651,7 @@
 	pixel_y = -10;
 	pixel_x = 5
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "NC" = (
@@ -11028,10 +11030,7 @@
 	pixel_x = -5;
 	pixel_y = -12
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 8;
-	pixel_y = -4
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/newspaper{
 	pixel_x = -8;
 	pixel_y = 5
@@ -11536,7 +11535,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Rs" = (
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /turf/open/floor/plasteel/tech,
@@ -11853,7 +11852,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)

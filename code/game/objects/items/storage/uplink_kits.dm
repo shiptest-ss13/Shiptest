@@ -22,7 +22,7 @@
 			new /obj/item/multitool/ai_detect(src) // 1 tc
 			new /obj/item/encryptionkey/syndicate(src) // 2 tc
 			new /obj/item/reagent_containers/syringe/mulligan(src) // 4 tc
-			new /obj/item/switchblade(src) //I'll count this as 2 tc
+			new /obj/item/kitchen/knife/switchblade(src) //I'll count this as 2 tc
 			new /obj/item/storage/fancy/cigarettes/cigpack_syndicate (src) // 2 tc this shit heals
 			new /obj/item/flashlight/emp(src) // 2 tc
 			new /obj/item/chameleon(src) // 7 tc
@@ -38,7 +38,7 @@
 			new /obj/item/jammer(src)
 
 		if("guns")
-			new /obj/item/gun/ballistic/revolver(src)
+			new /obj/item/gun/ballistic/revolver/viper(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/card/emag(src)
@@ -99,7 +99,7 @@
 			new /obj/item/storage/box/syndie_kit/emp(src)
 
 		if("sniper") //This shit is unique so can't really balance it around tc, also no silencer because getting killed without ANY indicator on what killed you sucks
-			new /obj/item/gun/ballistic/automatic/sniper_rifle(src) // 12 tc
+			new /obj/item/gun/ballistic/automatic/marksman/taipan(src) // 12 tc
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
@@ -108,10 +108,10 @@
 
 		if("metaops")
 			new /obj/item/clothing/suit/space/hardsuit/syndi(src) // 8 tc
-			new /obj/item/gun/ballistic/shotgun/bulldog(src) // 8 tc
+			new /obj/item/gun/ballistic/shotgun/automatic/bulldog(src) // 8 tc
 			new /obj/item/implanter/explosive(src) // 2 tc
-			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
-			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
+			new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src) // 2 tc
+			new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src) // 2 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
 			new /obj/item/card/emag(src) // 6 tc
@@ -119,10 +119,10 @@
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
 	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
-			new /obj/item/gun/ballistic/automatic/pistol(src)
-			new /obj/item/suppressor(src)
-			new /obj/item/ammo_box/magazine/m10mm(src)
-			new /obj/item/ammo_box/magazine/m10mm(src)
+			new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
+			new /obj/item/attachment/silencer(src)
+			new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+			new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
@@ -195,7 +195,7 @@
 		if("made_man")
 			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
 			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
-			new /obj/item/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
+			new /obj/item/kitchen/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
@@ -306,7 +306,7 @@
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot,
+		/obj/item/gun/ballistic/automatic/toy,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/toy/eightball/haunted

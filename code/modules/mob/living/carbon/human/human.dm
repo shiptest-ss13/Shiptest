@@ -245,7 +245,7 @@
 		else
 			return
 
-		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator, hidden = TRUE)) //placing an item into the pocket is 4 times faster
+		if(do_after(usr, POCKET_STRIP_DELAY/delay_denominator, src, hidden = TRUE)) //placing an item into the pocket is 4 times faster
 			if(pocket_item)
 				if(pocket_item == (pocket_id == ITEM_SLOT_RPOCKET ? r_store : l_store)) //item still in the pocket we search
 					dropItemToGround(pocket_item)
@@ -263,7 +263,7 @@
 	if(href_list["toggle_uniform"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/clothing/under/U = get_item_by_slot(ITEM_SLOT_ICLOTHING)
 		to_chat(src, "<span class='notice'>[usr.name] is trying to adjust your [U].</span>")
-		if(do_mob(usr, src, U.strip_delay/2))
+		if(do_after(usr, U.strip_delay/2, src))
 			to_chat(src, "<span class='notice'>[usr.name] successfully adjusted your [U].</span>")
 			U.toggle_jumpsuit_adjust()
 			update_inv_w_uniform()
@@ -612,10 +612,13 @@
 /mob/living/carbon/human/proc/do_cpr(mob/living/carbon/target)
 	var/panicking = FALSE
 
+	if(target == src) //Sanity check, in case spacetime crumbles and allows us to perform cpr on ourselves
+		return
+
 	do
 		CHECK_DNA_AND_SPECIES(target)
 
-		if (INTERACTING_WITH(src, target))
+		if (DOING_INTERACTION_WITH_TARGET(src,target))
 			return FALSE
 
 		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
@@ -641,7 +644,7 @@
 		visible_message("<span class='notice'>[src] is trying to perform CPR on [target.name]!</span>", \
 						"<span class='notice'>You try to perform CPR on [target.name]... Hold still!</span>")
 
-		if (!do_mob(src, target, time = panicking ? CPR_PANIC_SPEED : (3 SECONDS)))
+		if (!do_after(src, delay = panicking ? CPR_PANIC_SPEED : (3 SECONDS), target = target))
 			to_chat(src, "<span class='warning'>You fail to perform CPR on [target]!</span>")
 			return FALSE
 
@@ -896,11 +899,6 @@
 			dna.remove_mutation(HM.name)
 	..()
 
-/mob/living/carbon/human/check_weakness(obj/item/weapon, mob/living/attacker)
-	. = ..()
-	if (dna && dna.species)
-		. += dna.species.check_species_weakness(weapon, attacker)
-
 /mob/living/carbon/human/is_literate()
 	return TRUE
 
@@ -1068,7 +1066,7 @@
 		if(!src.is_busy && (src.zone_selected == BODY_ZONE_HEAD || src.zone_selected == BODY_ZONE_PRECISE_GROIN) && get_turf(src) == get_turf(T) && !(T.mobility_flags & MOBILITY_STAND) && src.a_intent != INTENT_HELP) //all the stars align, time to curbstomp
 			src.is_busy = TRUE
 
-			if (!do_mob(src,T,25) || get_turf(src) != get_turf(T) || (T.mobility_flags & MOBILITY_STAND) || src.a_intent == INTENT_HELP || src == T) //wait 30ds and make sure the stars still align (Body zone check removed after PR #958)
+			if (!do_after(src, 2.5 SECONDS, T) || get_turf(src) != get_turf(T) || (T.mobility_flags & MOBILITY_STAND) || src.a_intent == INTENT_HELP || src == T) //wait 30ds and make sure the stars still align (Body zone check removed after PR #958)
 				src.is_busy = FALSE
 				return
 
@@ -1156,7 +1154,7 @@
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
@@ -1179,7 +1177,7 @@
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
 		"<span class='notice'>[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(!incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)

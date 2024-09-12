@@ -314,7 +314,7 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	custom_materials = list(/datum/material/iron = 250)
 	tint = 2
-	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
+	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | SEALS_EYES
 	flags_cover = GLASSESCOVERSEYES
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	supports_variations = VOX_VARIATION
@@ -378,7 +378,7 @@
 		colored_before = TRUE
 
 /obj/item/clothing/glasses/blindfold/white/worn_overlays(isinhands = FALSE, file2use)
-	. = list()
+	. = ..()
 	if(!isinhands && ishuman(loc) && !colored_before)
 		var/mob/living/carbon/human/H = loc
 		var/mutable_appearance/M = mutable_appearance('icons/mob/clothing/eyes.dmi', "blindfoldwhite")
@@ -485,12 +485,14 @@
 	desc = "A pair of goggles meant for low temperatures."
 	icon_state = "cold"
 	item_state = "cold"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/heat
 	name = "heat goggles"
 	desc = "A pair of goggles meant for high temperatures."
 	icon_state = "heat"
 	item_state = "heat"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/orange
 	name = "orange glasses"
@@ -572,7 +574,7 @@
 	desc = "Medical, security and diagnostic hud. Alt click to toggle xray."
 	icon_state = "nvgmeson"
 	item_state = "nvgmeson"
-	flags_cover = GLASSESCOVERSEYES
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 	darkness_view = 8
 	flash_protect = FLASH_PROTECTION_WELDER
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE

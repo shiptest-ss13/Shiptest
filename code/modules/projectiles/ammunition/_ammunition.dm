@@ -32,7 +32,7 @@
 
 	var/pellets = 1								//Pellets for spreadshot
 	var/variance = 0							//Variance for inaccuracy fundamental to the casing
-	var/randomspread = 0						//Randomspread for automatics
+	var/randomspread = FALSE						//Randomspread for automatics
 	var/delay = 0								//Delay for energy weapons
 	var/click_cooldown_override = 0				//Override this to make your gun have a faster fire rate, in tenths of a second. 4 is the default gun cooldown.
 
@@ -109,7 +109,7 @@
 	pixel_y = rand(-4, 4)
 	pixel_z = 8 //bounce time
 	var/angle_of_movement = !isnull(shooter) ? (rand(-3000, 3000) / 100) + dir2angle(turn(shooter.dir, 180)) : rand(-3000, 3000) / 100
-	AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(400, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement)
+	AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(400, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = bounce_sfx_override)
 
 
 /obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3)

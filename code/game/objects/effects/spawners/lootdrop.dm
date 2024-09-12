@@ -50,14 +50,14 @@
 	lootdoubles = FALSE
 
 	loot = list(
-				/obj/item/gun/ballistic/automatic/pistol = 8,
+				/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/gun/ballistic/revolver/mateba
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
-	loot = list(/obj/item/gun/ballistic/automatic/pistol = 5,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/ringneck = 5,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3,
@@ -115,7 +115,6 @@
 /obj/effect/spawner/lootdrop/gambling
 	name = "gambling valuables spawner"
 	loot = list(
-				/obj/item/gun/ballistic/revolver/russian = 5,
 				/obj/item/clothing/head/trapper = 3,
 				/obj/item/storage/box/syndie_kit/throwing_weapons,
 				/obj/item/coin/gold,
@@ -468,12 +467,18 @@
 				/obj/structure/salvageable/destructive_analyzer
 				)
 
+/obj/effect/spawner/lootdrop/ripley
+	name = "25% exosuit 75% wreckage ripley spawner"
+	loot = list(/obj/mecha/working/ripley/mining = 1,
+				/obj/structure/mecha_wreckage/ripley = 5)
+	lootdoubles = FALSE
+
 /obj/effect/spawner/lootdrop/salvage_50
 	name = "50% salvage spawner"
 	loot = list(
 				/obj/effect/spawner/lootdrop/maintenance = 13,
 				/obj/effect/spawner/lootdrop/salvage_machine = 12,
-				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/effect/spawner/lootdrop/ripley = 12,
 				/obj/structure/closet/crate/secure/loot = 13,
 				"" = 50
 				)
@@ -1026,7 +1031,7 @@
 	)
 
 /obj/effect/spawner/lootdrop/waste/mechwreck
-	name = "wasteplanet mech wreckage"
+	name = "wasteplanet exosuit wreckage"
 	loot = list(
 		/obj/structure/mecha_wreckage/ripley = 15,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 9,

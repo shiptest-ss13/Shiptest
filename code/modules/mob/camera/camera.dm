@@ -1,4 +1,4 @@
-// Camera mob, used by AI camera and blob.
+// Camera mob, used by AI camera.
 
 /mob/camera
 	name = "camera mob"

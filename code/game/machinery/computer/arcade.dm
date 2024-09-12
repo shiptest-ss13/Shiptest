@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/toy/prize/honk = 1,
 		/obj/item/toy/prize/marauder = 1,
 		/obj/item/toy/prize/seraph = 1,
-		/obj/item/toy/prize/mauler = 1,
+		/obj/item/toy/prize/touro = 1,
 		/obj/item/toy/prize/odysseus = 1,
 		/obj/item/toy/prize/phazon = 1,
 		/obj/item/toy/prize/reticence = 1,
@@ -867,7 +867,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 							say("WEEWOO! WEEWOO! Spaceport security en route!")
 							playsound(src, 'sound/items/weeoo1.ogg', 100, FALSE)
 							for(var/i, i<=3, i++)
-								var/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion/O = new/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion(get_turf(src))
+								var/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/orion/O = new/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/orion(get_turf(src))
 								O.target = usr
 
 
@@ -1242,7 +1242,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	newgame()
 	obj_flags |= EMAGGED
 
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/orion
 	name = "spaceport security"
 	desc = "Premier corporate security forces for all spaceports found along the Orion Trail."
 	faction = list("orion")

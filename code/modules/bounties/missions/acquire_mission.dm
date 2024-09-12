@@ -14,6 +14,7 @@
 /datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/acquire/Destroy()
 	container = null
@@ -168,6 +169,21 @@ Acquire: Anomaly
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
+
+/*
+		Acquire: Landmines
+*/
+
+/datum/mission/acquire/landmine
+	name = "Defuse landmines"
+	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
+	weight = 6
+	value = 1500
+	duration = 80 MINUTES
+	dur_mod_range = 0.4
+	container_type = /obj/item/storage/toolbox/bounty
+	objective_type = /obj/item/mine/pressure/explosive
+	num_wanted = 2
 
 /*
 		Acquire: Fishing

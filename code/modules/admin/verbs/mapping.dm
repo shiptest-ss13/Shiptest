@@ -19,42 +19,41 @@
 //- Identify how hard it is to break into the area and where the weak points are
 //- Check if the area has too much empty space. If so, make it smaller and replace the rest with maintenance tunnels.
 
-GLOBAL_LIST_INIT(admin_verbs_debug_mapping, list(
+GLOBAL_LIST_INIT(admin_verbs_debug_extra, list(
 	/client/proc/camera_view, 				//-errorage
-	/client/proc/sec_camera_report, 		//-errorage
-	/client/proc/intercom_view, 			//-errorage
-	/client/proc/air_status, //Air things
-	/client/proc/Cell, //More air things
 	/client/proc/check_atmos,
 	/client/proc/check_wiring,
-	/client/proc/count_objects_on_z_level,
-	/client/proc/count_objects_all,
-	/client/proc/cmd_assume_direct_control,	//-errorage
-	/client/proc/cmd_give_direct_control,
-	/client/proc/startSinglo,
-	/client/proc/set_server_fps,	//allows you to set the ticklag.
-	/client/proc/cmd_admin_grantfullaccess,
 	/client/proc/cmd_admin_areatest_all,
 	/client/proc/cmd_admin_areatest_station,
+	/client/proc/cmd_admin_test_atmos_controllers,
+	/client/proc/cmd_show_at_list,
+	/client/proc/cmd_show_at_markers,
+	/client/proc/count_objects_all,
+	/client/proc/count_objects_on_z_level,
+	/client/proc/create_mapping_job_icons,
+	/client/proc/debug_z_levels,
+	/client/proc/disable_communication,
+	/client/proc/export_map,
+	/client/proc/intercom_view, 			//-errorage
+	/client/proc/map_zones_info,
+	/client/proc/sec_camera_report, 		//-errorage
 	#ifdef TESTING
 	/client/proc/see_dirty_varedits,
 	#endif
-	/client/proc/cmd_admin_test_atmos_controllers,
-	/client/proc/cmd_admin_rejuvenate,
-	/datum/admins/proc/show_traitor_panel,
-	/client/proc/disable_communication,
-	/client/proc/cmd_show_at_list,
-	/client/proc/cmd_show_at_markers,
-	/client/proc/manipulate_organs,
+	/client/proc/show_line_profiling,
 	/client/proc/start_line_profiling,
 	/client/proc/stop_line_profiling,
-	/client/proc/show_line_profiling,
-	/client/proc/create_mapping_job_icons,
-	/client/proc/debug_z_levels,
-	/client/proc/map_zones_info,
-	/client/proc/export_map
+	/client/proc/check_timer_sources,
+	/client/proc/air_status, //Air things
+	/client/proc/air_status_loc, //More air things
+	/client/proc/manipulate_organs,
+	/client/proc/set_server_fps,	//allows you to set the ticklag.
+	/client/proc/start_singlo,
+	/client/proc/cmd_admin_grantfullaccess,
+	/client/proc/cmd_assume_direct_control,	//-errorage
+	/client/proc/cmd_give_direct_control,
 ))
-GLOBAL_PROTECT(admin_verbs_debug_mapping)
+GLOBAL_PROTECT(admin_verbs_debug_extra)
 
 /obj/effect/debugging/mapfix_marker
 	name = "map fix marker"
@@ -70,7 +69,7 @@ GLOBAL_PROTECT(admin_verbs_debug_mapping)
 	return 0
 
 /client/proc/camera_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Range Display"
 
 	var/on = FALSE
@@ -93,7 +92,7 @@ GLOBAL_PROTECT(admin_verbs_debug_mapping)
 GLOBAL_LIST_EMPTY(dirty_vars)
 
 /client/proc/see_dirty_varedits()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Dirty Varedits"
 
 	var/list/dat = list()
@@ -107,7 +106,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 #endif
 
 /client/proc/sec_camera_report()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Report"
 
 	if(!Master)
@@ -147,7 +146,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Camera Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/intercom_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Intercom Range Display"
 
 	var/static/intercom_range_display_status = FALSE
@@ -165,7 +164,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Intercom Range") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_show_at_list()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Show roundstart AT list"
 	set desc = "Displays a list of active turfs coordinates at roundstart"
 
@@ -182,7 +181,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Roundstart Active Turfs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_show_at_markers()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Show roundstart AT markers"
 	set desc = "Places a marker on all active-at-roundstart turfs"
 
@@ -207,18 +206,18 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	if(!check_rights(R_DEBUG))
 		return
 	remove_verb(src, /client/proc/enable_debug_verbs)
-	add_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_mapping))
+	add_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_extra))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Enable Debug Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/disable_debug_verbs()
 	set category = "Debug"
 	set name = "Debug verbs - Disable"
-	remove_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_mapping))
+	remove_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_extra))
 	add_verb(src, /client/proc/enable_debug_verbs)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Disable Debug Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/count_objects_on_z_level()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects On Level"
 	var/level = input("Which z-level?","Level?") as text|null
 	if(!level)
@@ -257,7 +256,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Count Objects Zlevel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/count_objects_all()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects All"
 
 	var/type_text = input("Which type path?","") as text|null
@@ -280,7 +279,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 //This proc is intended to detect lag problems relating to communication procs
 GLOBAL_VAR_INIT(say_disabled, FALSE)
 /client/proc/disable_communication()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Disable all communication verbs"
 
 	GLOB.say_disabled = !GLOB.say_disabled
@@ -292,7 +291,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 //This generates the icon states for job starting location landmarks.
 /client/proc/create_mapping_job_icons()
 	set name = "Generate job landmarks icons"
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	var/icon/final = icon()
 	var/mob/living/carbon/human/dummy/D = new(locate(1,1,1)) //spawn on 1,1,1 so we don't have runtimes when items are deleted
 	D.setDir(SOUTH)
@@ -319,7 +318,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 
 /client/proc/debug_z_levels()
 	set name = "Debug Z-Levels"
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 
 	var/list/z_list = SSmapping.z_list
 	var/list/messages = list()
@@ -350,7 +349,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 
 /client/proc/map_zones_info()
 	set name = "Map-Zones Info"
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 
 	var/list/dat = list()
 	for(var/datum/map_zone/map_zone as anything in SSmapping.map_zones)
@@ -405,7 +404,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 #undef MAP_ZONE_INFO
 
 /client/proc/export_map()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Export Map"
 
 	var/z_level = input("Export Which Z-Level?", "Map Exporter", 2) as num

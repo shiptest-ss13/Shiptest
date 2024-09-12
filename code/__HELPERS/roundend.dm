@@ -77,10 +77,6 @@
 				var/pos = length(file_data["[escape_status]"]) + 1
 				file_data["[escape_status]"]["[pos]"] = mob_data
 
-	var/datum/station_state/end_state = new /datum/station_state()
-	end_state.count()
-	var/station_integrity = min(PERCENT(GLOB.start_state.score(end_state)), 100)
-	file_data["additional data"]["station integrity"] = station_integrity
 	WRITE_FILE(json_file, json_encode(file_data))
 
 	SSblackbox.record_feedback("nested tally", "round_end_stats", num_survivors, list("survivors", "total"))
@@ -88,7 +84,6 @@
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len - num_survivors, list("players", "dead"))
 	. = list()
 	.[POPCOUNT_SURVIVORS] = num_survivors
-	.["station_integrity"] = station_integrity
 
 /datum/controller/subsystem/ticker/proc/gather_antag_data()
 	var/team_gid = 1
@@ -280,14 +275,9 @@
 
 	//Medals
 	parts += medal_report()
-	//WS Begin
-	CHECK_TICK
-
-	//Mouse
-	parts += mouse_report()
 
 	CHECK_TICK
-	//WS End
+
 	//Station Goals
 	parts += goal_report()
 
@@ -459,17 +449,7 @@
 			parts += com
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	return ""
-//WS Begin
-/datum/controller/subsystem/ticker/proc/mouse_report()
-	if(GLOB.mouse_food_eaten)
-		var/list/parts = list()
-		parts += "<span class='header'>Mouse stats:</span>"
-		parts += "Mouse Born: [GLOB.mouse_spawned]"
-		parts += "Mouse Killed: [GLOB.mouse_killed]"
-		parts += "Trash Eaten: [GLOB.mouse_food_eaten]"
-		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
-	return ""
-//WS End
+
 /datum/controller/subsystem/ticker/proc/antag_report()
 	var/list/result = list()
 	var/list/all_teams = list()
