@@ -207,7 +207,7 @@
 	name = "Captain's secure safe"
 
 /obj/item/storage/secure/safe/cybersun/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/syndicate/no_mag(src)
-	new /obj/item/ammo_box/a357 (src)
-	new /obj/item/ammo_box/a357 (src)
-	new /obj/item/folder/documents/syndicate/cybersun (src)
+	new /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+	new /obj/item/folder/documents/syndicate/cybersun(src)

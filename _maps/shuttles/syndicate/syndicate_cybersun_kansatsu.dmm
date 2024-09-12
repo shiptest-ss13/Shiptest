@@ -655,6 +655,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/head/HoS/cybersun,
+/obj/item/pen/edagger,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "lP" = (
@@ -1327,7 +1328,11 @@
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
-/turf/open/floor/carpet/nanoweave/red,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/dormtwo)
 "uq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2622,7 +2627,11 @@
 /obj/effect/spawner/lootdrop/plushie{
 	pixel_y = 6
 	},
-/turf/open/floor/carpet/nanoweave/red,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/dormtwo)
 "Xw" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,

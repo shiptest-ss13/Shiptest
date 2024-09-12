@@ -122,17 +122,3 @@
 	caliber = "9mm"
 	max_ammo = 4
 	custom_materials = list(/datum/material/iron = 20000)
-
-/obj/item/ammo_box/magazine/m22lr
-	name = "pistol magazine (.22 LR)"
-	desc = "A single-stack handgun magazine designed to chamber .22 LR. It's rather tiny, all things considered."
-	icon_state = "himehabu_mag-10"
-	base_icon_state = "himehabu_mag"
-	ammo_type = /obj/item/ammo_casing/c22lr
-	caliber = "22lr"
-	max_ammo = 10
-	w_class = WEIGHT_CLASS_TINY
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/m22lr/empty
-	start_empty = TRUE
