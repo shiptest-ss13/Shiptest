@@ -10,8 +10,6 @@
 /obj/machinery/computer/records/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	linked_ship = port.current_ship
-	if(linked_ship)
-		name = "[name] - [linked_ship.name]"
 
 /obj/machinery/computer/records/disconnect_from_shuttle(obj/docking_port/mobile/port)
 	. = ..()
@@ -30,6 +28,7 @@
 
 	var/has_access = (authenticated && isliving(user)) || isAdminGhostAI(user)
 	data["authenticated"] = has_access
+	data["library_name"] = linked_ship.name
 	if(!has_access)
 		return data
 

@@ -345,7 +345,9 @@
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
 		var/linked_datacore = user.get_datacore_key()
-		var/datum/data/record/target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
+		var/datum/data/record/target_record
+		if(linked_datacore)
+			target_record = SSdatacore.get_record_by_name(perpname, linked_datacore)
 		if(target_record)
 			. += "<br><span class='deptradio'>Found record for datacore: [linked_datacore].</span>"
 			. += "<span class='deptradio'><b>Rank</b>:</span> [target_record.fields[DATACORE_RANK]].<span class='deptradio'> <b>Name</b>:</span> [target_record.fields[DATACORE_NAME]]."
@@ -363,6 +365,8 @@
 					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+		else if(!linked_datacore)
+			. += "<br><span class='deptradio'>No linked datacore.</span>"
 		else
 			. += "<br><span class='deptradio'>no linked record in datacore: [linked_datacore]</span>"
 

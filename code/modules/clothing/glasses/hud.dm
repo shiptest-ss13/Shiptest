@@ -5,29 +5,6 @@
 	var/hud_type = null
 	///Used for topic calls. Just because you have a HUD display doesn't mean you should be able to interact with stuff.
 	var/hud_trait = null
-	var/datum/overmap/ship/controlled/linked_ship
-
-/obj/item/clothing/glasses/hud/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	linked_ship = port.current_ship
-
-/obj/item/clothing/glasses/hud/disconnect_from_shuttle(obj/docking_port/mobile/port)
-	. = ..()
-	linked_ship = null
-
-/obj/item/clothing/glasses/hud/examine(mob/user)
-	. = ..()
-	if(linked_ship)
-		. += "It is currently connected to [linked_ship] records."
-	else
-		. += "They could show additional information if linked to a helm."
-
-/obj/item/clothing/glasses/hud/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(istype(target, /obj/machinery/computer/helm))
-		var/obj/machinery/computer/helm/target_helm = target
-		linked_ship = target_helm.current_ship
-		to_chat(user, span_notice("HUDS linked with ship."))
 
 /obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
 	..()

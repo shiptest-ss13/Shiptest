@@ -9,10 +9,12 @@ import { MedicalRecordView } from './RecordView';
 
 export const MedicalRecords = (props, context) => {
   const { data } = useBackend<MedicalRecordData>(context);
-  const { authenticated } = data;
+  const { authenticated, library_name } = data;
+
+  const console_title = library_name + " Medical Records"
 
   return (
-    <Window title="Ship General Records" width={750} height={550}>
+    <Window title={console_title} width={750} height={550}>
       <Window.Content>
         <Stack fill>
           {!authenticated ? <UnauthorizedView /> : <AuthView />}

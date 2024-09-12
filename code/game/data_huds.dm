@@ -96,11 +96,11 @@ Medical HUD! Basic mode needs suit sensors on.
 
 /mob/living/carbon/human/get_datacore_key()
 	var/linked_datacore
-	var/obj/item/clothing/glasses/hud/glass_hud = src.get_item_by_slot(ITEM_SLOT_EYES)
-	if(!istype(glass_hud, /obj/item/clothing/glasses/hud))
+	var/obj/item/card/id/ID = src.get_idcard()
+	if(!istype(ID))
 		return
-	if(glass_hud && glass_hud.linked_ship)
-		linked_datacore = glass_hud.linked_ship
+	if(length(ID.ship_access))
+		linked_datacore = ID.ship_access[1]
 	return linked_datacore
 
 //called when a carbon changes virus

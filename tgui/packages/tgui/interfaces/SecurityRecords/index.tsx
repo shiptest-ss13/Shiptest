@@ -8,10 +8,12 @@ import { SecurityRecordsData } from './types';
 
 export const SecurityRecords = (props, context) => {
   const { data } = useBackend<SecurityRecordsData>(context);
-  const { authenticated } = data;
+  const { authenticated, library_name } = data;
+
+ const console_title = library_name + " Security Records"
 
   return (
-    <Window title="Security Records" width={750} height={550}>
+    <Window title={console_title} width={750} height={550}>
       <Window.Content>
         <Stack fill>{!authenticated ? <RestrictedView /> : <AuthView />}</Stack>
       </Window.Content>
