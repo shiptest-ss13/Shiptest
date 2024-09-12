@@ -146,6 +146,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_normal = HUMAN_BODYTEMP_NORMAL
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
+	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
+	var/max_temp_comfortable = (HUMAN_TEMP_COMFORTABLE + 7)
+	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
+	var/min_temp_comfortable = (HUMAN_TEMP_COMFORTABLE - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -1788,6 +1792,34 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	var/areatemp = H.get_temperature(environment)
+	var/temp_calc
+
+	//tempature is no longer comfy, throw alert
+	if(areatemp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		if(H.bodytemperature > bodytemp_heat_damage_limit)
+			var/burn_damage = calculate_burn_damage(H)
+			if(burn_damage < 2)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+		else
+			if(areatemp > (max_temp_comfortable + 10))
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
+	else if (areatemp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		if(H.bodytemperature < 200)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
+		else if(H.bodytemperature < bodytemp_cold_damage_limit)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+		else if(areatemp < (min_temp_comfortable - 10))
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
+		else
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold)
+	else
+		H.clear_alert("tempfeel")
 
 	if(H.stat != DEAD) // If you are dead your body does not stabilize naturally
 		natural_bodytemperature_stabilization(environment, H)
@@ -1862,23 +1894,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		//Remove any slowdown from the cold.
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 
-		var/burn_damage = 0
-		var/firemodifier = H.fire_stacks / 50
-		if (!H.on_fire) // We are not on fire, reduce the modifier
-			firemodifier = min(firemodifier, 0)
+		var/burn_damage = calculate_burn_damage(H)
 
-		// this can go below 5 at log 2.5
-		burn_damage = max(log(2 - firemodifier, (H.bodytemperature - H.get_body_temp_normal(apply_change=FALSE))) - 5,0)
-
-		// Display alerts based on the amount of fire damage being taken
-		if (burn_damage)
-			switch(burn_damage)
-				if(1 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 1)
-				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
-				else
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 3)
+		// sweats depending on burn damage, not actually a mechanic but a alternative to pinpoint when you are taking damage
+		if(burn_damage)
+			if(H.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
+				switch(burn_damage)
+					if(0 to 2)
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 1)
+					if(2 to 4)
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 2)
+					else
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 3)
+			else
+				switch(burn_damage)
+					if(0 to 2)
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
+					if(2 to 4)
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
+					else
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
@@ -1902,15 +1937,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/bodytemp = H.bodytemperature
 		if(bodytemp < 120)
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 3)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
 
 		else if(bodytemp < 200)
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 2)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
 
 		else
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 1)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
 			H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
 
 	// We are not to hot or cold, remove status and moods
@@ -1919,6 +1954,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+
+/datum/species/proc/calculate_burn_damage(mob/living/carbon/human/current_human)
+	var/burn_damage = 0
+	var/firemodifier = current_human.fire_stacks / 50
+	if (!current_human.on_fire) // We are not on fire, reduce the modifier
+		firemodifier = min(firemodifier, 0)
+
+	// this can go below 5 at log 2.5
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
+	return burn_damage
 
 /// Handle the air pressure of the environment
 /datum/species/proc/handle_environment_pressure(datum/gas_mixture/environment, mob/living/carbon/human/H)
