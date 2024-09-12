@@ -152,6 +152,9 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	var/obj/mecha/combat/durand/chassis ///Our link back to the durand
 	var/switching = FALSE ///To keep track of things during the animation
 
+/obj/durand_shield/clip
+	name = "electric repulsion grid"
+
 
 /obj/durand_shield/Initialize(mapload, _chassis, _layer, _dir)
 	. = ..()
