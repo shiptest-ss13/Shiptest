@@ -1,12 +1,13 @@
 /obj/mecha/combat/durand
-	desc = "An aging combat exosuit utilized by the Nanotrasen corporation. Originally developed to combat hostile alien lifeforms."
+	desc = "An aging and extremely well-armored combat exosuit utilized by the Nanotrasen corporation. Originally developed to combat hostile alien lifeforms."
 	name = "\improper Durand"
 	icon_state = "durand"
 	step_in = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	deflect_chance = 20
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+	max_integrity = 300
+	deflect_chance = 15
+	repair_multiplier = 0.5
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
 	infra_luminosity = 8
 	force = 40
@@ -16,11 +17,12 @@
 
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
+	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Even better protected against melee attacks than the base model, at the cost of projectile armor."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+	deflect_chance = 20
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 
 	//TODO: Custom melee backlash shield with no projectile protection
 
