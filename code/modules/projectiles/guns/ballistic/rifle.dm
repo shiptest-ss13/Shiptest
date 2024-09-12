@@ -197,7 +197,7 @@
 
 /obj/item/gun/ballistic/rifle/crunch_gun
 	name = "\improper anti-armor rifle"
-	desc = "A massive rifle chambered in 14.5mm Heavy, affectionately known as a 'crunch gun' by the few people crazy enough to use it." //blowing a fist sized hole through the inteq enforcer
+	desc = "A massive rifle chambered in 14.5mm Heavy, affectionately known as a 'crunch gun' by the few people crazy enough to use it. It seems to be missing a bipod." //blowing a fist sized hole through the inteq enforcer
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -212,7 +212,7 @@
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 
 	zoomable = TRUE
-	zoom_amt = 20 //Fairly long range.
+	zoom_amt = 16 //Fairly long range.
 	zoom_out_amt = 0
 
 	actions_types = list()

@@ -125,3 +125,15 @@
 	item_state = "plasticx4"
 	directional = TRUE
 	boom_sizes = list(0, 2, 5)
+
+
+// x-com ufo defense high ex charge 1993
+/obj/item/grenade/c4/satchel_charge
+	name = "Satchel Charge"
+	desc = "Used to put craters into places without too much hassle. An engineer's favorite."
+	w_class = WEIGHT_CLASS_NORMAL
+	icon_state = "satchel_charge0"
+	item_state = "satchel_charge"
+	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
+	boom_sizes = list(1, 2, 5)
