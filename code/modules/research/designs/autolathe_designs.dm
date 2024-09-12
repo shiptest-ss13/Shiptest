@@ -796,6 +796,14 @@
 	build_path = /obj/item/ammo_casing/shotgun/beanbag
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/blank_shell
+	name = "Shotgun Blank"
+	id = "blank_shell"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_casing/shotgun/blank
+	category = list("Security", "Ammo")
+
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
