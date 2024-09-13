@@ -125,7 +125,7 @@
 /area/outpost/maintenance/fore)
 "aE" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/cakeslice/birthday{
+/obj/item/food/cakeslice/birthday{
 	pixel_x = -3;
 	pixel_y = -5
 	},
@@ -3689,10 +3689,7 @@
 	pixel_y = -5;
 	pixel_x = -9
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = -7;
-	pixel_y = 10
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
@@ -5588,7 +5585,7 @@
 /turf/open/floor/concrete/reinforced,
 /area/outpost/maintenance/aft)
 "tW" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -9793,7 +9790,7 @@
 	pixel_y = -3
 	},
 /obj/item/reagent_containers/food/snacks/meatbun,
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime{
+/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda{
 	pixel_y = 12;
 	pixel_x = -8
 	},
@@ -12833,7 +12830,7 @@
 /obj/item/reagent_containers/food/snacks/nachos{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game{
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel{
 	pixel_x = 8;
 	pixel_y = 3
 	},

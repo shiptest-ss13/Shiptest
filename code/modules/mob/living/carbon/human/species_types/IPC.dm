@@ -5,7 +5,7 @@
 	species_age_min = 0
 	species_age_max = 300
 	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT, TRAIT_METALLIC)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 	mutanteyes = /obj/item/organ/eyes/robotic
@@ -273,7 +273,11 @@
 
 			if(chassis_of_choice.is_digi)
 				if(istype(BP,/obj/item/bodypart/leg))
-					BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
+					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
+
+			if(chassis_of_choice.has_snout)
+				if(istype(BP,/obj/item/bodypart/head))
+					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
 
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE

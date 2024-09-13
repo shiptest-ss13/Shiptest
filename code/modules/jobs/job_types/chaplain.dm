@@ -15,9 +15,6 @@
 
 	var/obj/item/storage/book/bible/booze/B = new
 
-	if(H.mind)
-		H.mind.holy_role = HOLY_ROLE_HIGHPRIEST
-
 	var/new_religion = DEFAULT_RELIGION
 	if(M.client && M.client.prefs.custom_names["religion"])
 		new_religion = M.client.prefs.custom_names["religion"]

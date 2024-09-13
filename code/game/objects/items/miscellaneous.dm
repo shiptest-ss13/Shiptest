@@ -13,11 +13,10 @@
 	attack_verb = list("warned", "cautioned", "smashed")
 
 /obj/item/choice_beacon
-	name = "choice beacon"
-	desc = "Hey, why are you viewing this?!! Please let CentCom know about this odd occurrence."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "gangtool-blue"
-	item_state = "radio"
+	name = "choice box"
+	desc = "A box containing items to choose."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "deliverypackage3"
 	var/uses = 1
 
 /obj/item/choice_beacon/attack_self(mob/user)
@@ -31,41 +30,31 @@
 	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return TRUE
 	else
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, TRUE)
 		return FALSE
 
 /obj/item/choice_beacon/proc/generate_options(mob/living/M)
 	var/list/display_names = generate_display_names()
 	if(!display_names.len)
 		return
-	var/choice = input(M,"Which item would you like to order?","Select an Item") as null|anything in sortList(display_names)
+	var/choice = input(M,"Which item would you like to pick?","Select an Item") as null|anything in sortList(display_names)
 	if(!choice || !M.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 
 	spawn_option(display_names[choice],M)
 	uses--
 	if(!uses)
+		new /obj/effect/decal/cleanable/wrapping(get_turf(M))
 		qdel(src)
 	else
 		to_chat(M, "<span class='notice'>[uses] use[uses > 1 ? "s" : ""] remaining on the [src].</span>")
 
 /obj/item/choice_beacon/proc/spawn_option(obj/choice,mob/living/M)
-	var/obj/new_item = new choice()
-	var/obj/structure/closet/supplypod/bluespacepod/pod = new()
-	pod.explosionSize = list(0,0,0,0)
-	new_item.forceMove(pod)
-	var/msg = "<span class=danger>After making your selection, you notice a strange target on the ground. It might be best to step back!</span>"
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(istype(H.ears, /obj/item/radio/headset))
-			msg = "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from Central Command.  Message as follows: <span class='bold'>Item request received. Your package is inbound, please stand back from the landing site.</span> Message ends.\""
-	to_chat(M, msg)
-
-	new /obj/effect/pod_landingzone(get_turf(src), pod)
+	new choice(get_turf(M))
+	playsound(src.loc, 'sound/items/poster_ripped.ogg', 50, TRUE)
 
 /obj/item/choice_beacon/hero
-	name = "heroic beacon"
-	desc = "To summon heroes from the past to protect the future."
+	name = "heroic box"
+	desc = "To become heroes from the past to protect the future."
 
 /obj/item/choice_beacon/hero/generate_display_names()
 	var/static/list/hero_item_list
@@ -137,8 +126,8 @@
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 
 /obj/item/choice_beacon/augments
-	name = "augment beacon"
-	desc = "Summons augmentations. Can be used 3 times!"
+	name = "augment box"
+	desc = "Contains augmentations. Can be used 3 times!"
 	uses = 3
 
 /obj/item/choice_beacon/augments/generate_display_names()
@@ -156,10 +145,6 @@
 			var/atom/A = V
 			augment_list[initial(A.name)] = A
 	return augment_list
-
-/obj/item/choice_beacon/augments/spawn_option(obj/choice,mob/living/M)
-	new choice(get_turf(M))
-	to_chat(M, "<span class='hear'>You hear something crackle from the beacon for a moment before a voice speaks. \"Please stand by for a message from S.E.L.F. Message as follows: <b>Item request received. Your package has been transported, use the autosurgeon supplied to apply the upgrade.</b> Message ends.\"</span>")
 
 /obj/item/skub
 	desc = "It's skub."
@@ -216,8 +201,10 @@
 #undef NICKNAME_CAP
 
 /obj/item/choice_beacon/ouija
-	name = "spirit board delivery beacon"
+	name = "spirit board box"
 	desc = "Ghost communication on demand! It is unclear how this thing is still operational."
+	icon_state = "deliverybox"
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/choice_beacon/ouija/generate_display_names()
 	var/static/list/ouija_spaghetti_list

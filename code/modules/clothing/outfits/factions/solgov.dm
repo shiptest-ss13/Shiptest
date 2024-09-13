@@ -47,7 +47,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/solgov/alt/captain
 	uniform =  /obj/item/clothing/under/solgov/formal/captain
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
+	suit = /obj/item/clothing/suit/armor/vest/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/solgov/captain
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
@@ -69,7 +69,7 @@
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+	suit = /obj/item/clothing/suit/armor/vest/solgov
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
@@ -115,7 +115,7 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	head = /obj/item/clothing/head/solgov
 	neck = /obj/item/clothing/neck/cloak/overseer
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer
+	suit = /obj/item/clothing/suit/armor/vest/solgov/overseer
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,\

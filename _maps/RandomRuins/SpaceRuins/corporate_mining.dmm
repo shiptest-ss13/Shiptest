@@ -601,8 +601,8 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "nN" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/ballistic/automatic/pistol/suppressed,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk/qm,
 /obj/item/reagent_containers/food/snacks/donkpocket,
@@ -1577,7 +1577,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "Iv" = (
-/obj/structure/spawner/mining/hivelord,
+/obj/structure/spawner/burrow/asteroid,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "IE" = (
@@ -2033,10 +2033,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
-"TO" = (
-/obj/structure/spawner/mining/goliath,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "TR" = (
@@ -2803,7 +2799,7 @@ Al
 Al
 Al
 VM
-TO
+Iv
 Al
 Al
 Al

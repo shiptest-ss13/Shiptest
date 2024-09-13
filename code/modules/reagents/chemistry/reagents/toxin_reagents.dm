@@ -7,6 +7,7 @@
 	color = "#CF3600" // rgb: 207, 54, 0
 	taste_description = "bitterness"
 	taste_mult = 1.2
+	category = "Toxin"
 	var/toxpwr = 1.5
 	var/silent_toxin = FALSE //won't produce a pain message when processed by liver/life() if there isn't another non-silent toxin present.
 
@@ -254,11 +255,13 @@
 	name = "Mindbreaker Toxin"
 	description = "A powerful hallucinogen. Not a thing to be messed with. For some mental patients. it counteracts their symptoms and anchors them to reality."
 	color = "#B31008" // rgb: 139, 166, 233
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	toxpwr = 0
 	taste_description = "sourness"
 
 /datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
-	M.hallucination += 5
+	if(!M.has_quirk(/datum/quirk/insanity))
+		M.hallucination += 5
 	return ..()
 
 /datum/reagent/toxin/plantbgone
@@ -766,7 +769,8 @@
 /datum/reagent/toxin/heparin/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = min(H.bleed_rate + 2, 8)
+		for(var/obj/item/bodypart/BP in H.get_bleeding_parts())
+			BP.adjust_bleeding(BP.bleeding * 0.1)
 		H.adjustBruteLoss(1, 0) //Brute damage increases with the amount they're bleeding
 		. = 1
 	return ..() || .
@@ -970,18 +974,13 @@
 	taste_description = "bone hurting"
 	overdose_threshold = 50
 
-/datum/reagent/toxin/bonehurtingjuice/on_mob_add(mob/living/carbon/M)
-	M.say("oof ouch my bones", forced = /datum/reagent/toxin/bonehurtingjuice)
-
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(7.5, 0)
 	if(prob(20))
-		switch(rand(1, 3))
+		switch(rand(1, 2))
 			if(1)
-				M.say(pick("oof.", "ouch.", "my bones.", "oof ouch.", "oof ouch my bones."), forced = /datum/reagent/toxin/bonehurtingjuice)
-			if(2)
 				M.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
-			if(3)
+			if(2)
 				to_chat(M, "<span class='warning'>Your bones hurt!</span>")
 	return ..()
 
@@ -996,7 +995,6 @@
 			bp.receive_damage(0, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!
 			to_chat(M, "<span class='warning'>A phantom limb hurts!</span>")
-			M.say("Why are we still here, just to suffer?", forced = /datum/reagent/toxin/bonehurtingjuice)
 	return ..()
 
 /datum/reagent/toxin/bungotoxin

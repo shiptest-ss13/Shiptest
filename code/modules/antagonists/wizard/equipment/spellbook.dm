@@ -106,10 +106,6 @@
 	name = "Fireball"
 	spell_type = /obj/effect/proc_holder/spell/aimed/fireball
 
-/datum/spellbook_entry/spell_cards
-	name = "Spell Cards"
-	spell_type = /obj/effect/proc_holder/spell/aimed/spell_cards
-
 /datum/spellbook_entry/rod_form
 	name = "Rod Form"
 	spell_type = /obj/effect/proc_holder/spell/targeted/rod_form
@@ -223,18 +219,6 @@
 	. = ..()
 	REMOVE_TRAIT(user, TRAIT_TESLA_SHOCKIMMUNE, "lightning_bolt_spell")
 
-/datum/spellbook_entry/infinite_guns
-	name = "Lesser Summon Guns"
-	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
-	cost = 3
-	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-
-/datum/spellbook_entry/arcane_barrage
-	name = "Arcane Barrage"
-	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-	cost = 3
-	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
-
 /datum/spellbook_entry/barnyard
 	name = "Barnyard Curse"
 	spell_type = /obj/effect/proc_holder/spell/pointed/barnyardcurse
@@ -291,42 +275,6 @@
 		dat += "[surplus] left.<br>"
 	return dat
 
-/datum/spellbook_entry/item/staffchange
-	name = "Staff of Change"
-	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself."
-	item_path = /obj/item/gun/magic/staff/change
-
-/datum/spellbook_entry/item/staffanimation
-	name = "Staff of Animation"
-	desc = "An arcane staff capable of shooting bolts of eldritch energy which cause inanimate objects to come to life. This magic doesn't affect machines."
-	item_path = /obj/item/gun/magic/staff/animate
-	category = "Assistance"
-
-/datum/spellbook_entry/item/staffchaos
-	name = "Staff of Chaos"
-	desc = "A caprious tool that can fire all sorts of magic without any rhyme or reason. Using it on people you care about is not recommended."
-	item_path = /obj/item/gun/magic/staff/chaos
-
-/datum/spellbook_entry/item/staffdoor
-	name = "Staff of Door Creation"
-	desc = "A particular staff that can mold solid walls into ornate doors. Useful for getting around in the absence of other transportation. Does not work on glass."
-	item_path = /obj/item/gun/magic/staff/door
-	cost = 1
-	category = "Mobility"
-
-/datum/spellbook_entry/item/staffhealing
-	name = "Staff of Healing"
-	desc = "An altruistic staff that can heal the lame and raise the dead."
-	item_path = /obj/item/gun/magic/staff/healing
-	cost = 1
-	category = "Defensive"
-
-/datum/spellbook_entry/item/lockerstaff
-	name = "Staff of the Locker"
-	desc = "A staff that shoots lockers. It eats anyone it hits on its way, leaving a welded locker with your victims behind."
-	item_path = /obj/item/gun/magic/staff/locker
-	category = "Defensive"
-
 /datum/spellbook_entry/item/scryingorb
 	name = "Scrying Orb"
 	desc = "An incandescent orb of crackling energy. Using it will allow you to release your ghost while alive, allowing you to spy upon others and talk to the deceased. In addition, buying it will permanently grant you X-ray vision."
@@ -350,12 +298,6 @@
 	desc = "A Necromantic stone is able to resurrect three dead individuals as skeletal thralls for you to command."
 	item_path = /obj/item/necromantic_stone
 	category = "Assistance"
-
-/datum/spellbook_entry/item/wands
-	name = "Wand Assortment"
-	desc = "A collection of wands that allow for a wide variety of utility. Wands have a limited number of charges, so be conservative with their use. Comes in a handy belt."
-	item_path = /obj/item/storage/belt/wands/full
-	category = "Defensive"
 
 /datum/spellbook_entry/item/armor
 	name = "Mastercrafted Armor Set"

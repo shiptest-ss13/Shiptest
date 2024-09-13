@@ -14,10 +14,6 @@
 	display_name = "lipstick, red"
 	path = /obj/item/lipstick
 
-/datum/gear/balaclava
-	display_name = "balaclava"
-	path = /obj/item/clothing/mask/balaclava
-
 /datum/gear/vape
 	display_name = "vape"
 	path = /obj/item/clothing/mask/vape
@@ -26,21 +22,13 @@
 	display_name = "e-cigar"
 	path = /obj/item/clothing/mask/vape/cigar
 
-/datum/gear/bandana
-	display_name = "bandana, red"
-	path = /obj/item/clothing/mask/bandana/red
-
-/datum/gear/bible
-	display_name = "bible"
-	path = /obj/item/storage/book/bible
-
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
 
 /datum/gear/mug
 	display_name = "coffee mug"
-	path = /obj/item/reagent_containers/food/drinks/britcup
+	path = /obj/item/reagent_containers/food/drinks/mug
 
 /datum/gear/rilena_mug
 	display_name = "coffee mug, rilena"
@@ -62,16 +50,17 @@
 	display_name = "toy, deck of cards"
 	path = /obj/item/toy/cards/deck
 
+/datum/gear/kotahi
+	display_name = "toy, deck of KOTAHI cards"
+	path = /obj/item/toy/cards/deck/kotahi
+
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
 	path = /obj/item/toy/eightball
 
-/datum/gear/wallet
-	display_name = "wallet"
-	path = /obj/item/storage/wallet
-
 /datum/gear/pai
 	display_name = "personal AI device"
+	description = "A synthetic friend that fits in your pocket."
 	path = /obj/item/paicard
 
 /datum/gear/tablet
@@ -93,6 +82,10 @@
 /datum/gear/colorpen
 	display_name = "pen, four-color"
 	path = /obj/item/pen/fourcolor
+
+/datum/gear/fountainpen
+	display_name = "pen, fountain"
+	path = /obj/item/pen/fountain
 
 /datum/gear/paperbin
 	display_name = "paper bin"
@@ -135,7 +128,6 @@
 	display_name = "toy, rilena tali plushie"
 	path = /obj/item/toy/plush/tali
 
-// Shiptest edit
 /datum/gear/amongus
 	display_name = "toy, suspicious pill plushie"
 	path = /obj/item/toy/plush/among
@@ -150,11 +142,13 @@
 	display_name = "hair dye"
 	path = /obj/item/dyespray
 
+/datum/gear/colorsalve
+	display_name = "Elzuose color salve"
+	path = /obj/item/colorsalve
+
 /datum/gear/tablebell
 	display_name = "table bell, brass"
 	path = /obj/item/table_bell/brass
-
-// End Shiptest
 
 /datum/gear/flashlight
 	display_name = "tool, flashlight"
@@ -164,19 +158,11 @@
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
 
-/datum/gear/balloon
-	display_name = "toy, balloon"
-	path = /obj/item/toy/balloon
-
-/datum/gear/balloon/ian
-	display_name = "toy, ian balloon"
-	path = /obj/item/toy/balloon/corgi
-
-/datum/gear/surgical_mask
-	display_name = "surgical mask"
-	path = /obj/item/clothing/mask/surgical
-
 /datum/gear/rilena_poster
 	display_name = "poster, rilena"
 	path = /obj/item/poster/random_rilena
 	description = "A random poster of the RILENA series."
+
+/datum/gear/camera
+	display_name = "polaroid camera"
+	path = /obj/item/camera

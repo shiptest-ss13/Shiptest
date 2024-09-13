@@ -26,9 +26,16 @@
 	var/locked = FALSE								//when locked nothing can see inside or use it.
 	var/locked_flavor = "locked"					//prevents tochat messages related to locked from sending
 
-	var/max_w_class = WEIGHT_CLASS_SMALL			//max size of objects that will fit.
-	var/max_combined_w_class = 14					//max combined sizes of objects that will fit.
-	var/max_items = 7								//max number of objects that will fit.
+	/// Storage flags, including what kinds of limiters we use for how many items we can hold
+	var/storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
+	/// Max w_class we can hold. Applies to [STORAGE_LIMIT_COMBINED_W_CLASS] and [STORAGE_LIMIT_VOLUME]
+	var/max_w_class = WEIGHT_CLASS_SMALL
+	/// Max combined w_class. Applies to [STORAGE_LIMIT_COMBINED_W_CLASS]
+	var/max_combined_w_class = WEIGHT_CLASS_SMALL * 7
+	/// Max items we can hold. Applies to [STORAGE_LIMIT_MAX_ITEMS]
+	var/max_items = 7
+	/// Max volume we can hold. Applies to [STORAGE_LIMIT_VOLUME]. Auto scaled on New() if unset.
+	var/max_volume
 
 	var/emp_shielded = FALSE
 
@@ -44,8 +51,8 @@
 
 	var/display_numerical_stacking = FALSE			//stack things of the same type and show as a single object with a number.
 
-	var/atom/movable/screen/storage/boxes					//storage display object
-	var/atom/movable/screen/close/closer						//close button object
+	/// Ui objects by person. mob = list(objects)
+	var/list/ui_by_mob = list()
 
 	var/allow_big_nesting = FALSE					//allow storage objects of the same or greater size.
 
@@ -58,19 +65,20 @@
 	var/screen_max_columns = 7							//These two determine maximum screen sizes.
 	var/screen_max_rows = INFINITY
 	var/screen_pixel_x = 16								//These two are pixel values for screen loc of boxes and closer
-	var/screen_pixel_y = 16
+	var/screen_pixel_y = 25
 	var/screen_start_x = 4								//These two are where the storage starts being rendered, screen_loc wise.
 	var/screen_start_y = 2
 	//End
+
+	var/limited_random_access = FALSE					//Quick if statement in accessible_items to determine if we care at all about what people can access at once.
+	var/limited_random_access_stack_position = 0					//If >0, can only access top <x> items
+	var/limited_random_access_stack_bottom_up = FALSE
 
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	if(master)
 		change_master(master)
-	boxes = new(null, src)
-	closer = new(null, src)
-	orient2hud()
 
 	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE, PROC_REF(on_check))
 	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED, PROC_REF(check_locked))
@@ -113,10 +121,15 @@
 
 /datum/component/storage/Destroy()
 	close_all()
-	QDEL_NULL(boxes)
-	QDEL_NULL(closer)
+	wipe_ui_objects()
 	LAZYCLEARLIST(is_using)
 	return ..()
+
+/datum/component/storage/proc/wipe_ui_objects()
+	for(var/i in ui_by_mob)
+		var/list/objects = ui_by_mob[i]
+		QDEL_LIST(objects)
+	ui_by_mob.Cut()
 
 /datum/component/storage/PreTransfer()
 	update_actions()
@@ -171,6 +184,19 @@
 	var/datum/component/storage/concrete/master = master()
 	return master? master.real_location() : null
 
+//What players can access
+//this proc can probably eat a refactor at some point.
+/datum/component/storage/proc/accessible_items(random_access = TRUE)
+	var/list/contents = contents()
+	if(contents)
+		if(limited_random_access && random_access)
+			if(limited_random_access_stack_position && (length(contents) > limited_random_access_stack_position))
+				if(limited_random_access_stack_bottom_up)
+					contents.Cut(1, limited_random_access_stack_position + 1)
+				else
+					contents.Cut(1, length(contents) - limited_random_access_stack_position + 1)
+	return contents
+
 /datum/component/storage/proc/canreach_react(datum/source, list/next)
 	SIGNAL_HANDLER
 
@@ -189,7 +215,7 @@
 	var/atom/A = parent
 	for(var/mob/living/L in can_see_contents())
 		if(!L.CanReach(A))
-			hide_from(L)
+			ui_hide(L)
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
 	SIGNAL_HANDLER
@@ -232,7 +258,7 @@
 		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
+	while(do_after(M, 10, parent, TRUE, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(M, "<span class='notice'>You put everything you could [insert_preposition] [parent].</span>")
@@ -290,7 +316,7 @@
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)
-	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
+	while (do_after(M, 1 SECONDS, T, NONE, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -315,7 +341,7 @@
 	if(!_target)
 		_target = get_turf(parent)
 	if(usr)
-		hide_from(usr)
+		ui_hide(usr)
 	var/list/contents = contents()
 	var/atom/real_location = real_location()
 	for(var/obj/item/I in contents)
@@ -331,109 +357,12 @@
 	if(locked)
 		close_all()
 
-/datum/component/storage/proc/_process_numerical_display()
-	. = list()
-	var/atom/real_location = real_location()
-	for(var/obj/item/I in real_location.contents)
-		if(QDELETED(I))
-			continue
-		if(!.["[I.type]-[I.name]"])
-			.["[I.type]-[I.name]"] = new /datum/numbered_display(I, 1)
-		else
-			var/datum/numbered_display/ND = .["[I.type]-[I.name]"]
-			ND.number++
-
-//This proc determines the size of the inventory to be displayed. Please touch it only if you know what you're doing.
-/datum/component/storage/proc/orient2hud()
-	var/atom/real_location = real_location()
-	var/adjusted_contents = real_location.contents.len
-
-	//Numbered contents display
-	var/list/datum/numbered_display/numbered_contents
-	if(display_numerical_stacking)
-		numbered_contents = _process_numerical_display()
-		adjusted_contents = numbered_contents.len
-
-	var/columns = clamp(max_items, 1, screen_max_columns)
-	var/rows = clamp(CEILING(adjusted_contents / columns, 1), 1, screen_max_rows)
-	standard_orient_objs(rows, columns, numbered_contents)
-
-//This proc draws out the inventory and places the items on it. It uses the standard position.
-/datum/component/storage/proc/standard_orient_objs(rows, cols, list/obj/item/numerical_display_contents)
-	boxes.screen_loc = "[screen_start_x]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y] to [screen_start_x+cols-1]:[screen_pixel_x],[screen_start_y+rows-1]:[screen_pixel_y]"
-	var/cx = screen_start_x
-	var/cy = screen_start_y
-	if(islist(numerical_display_contents))
-		for(var/type in numerical_display_contents)
-			var/datum/numbered_display/ND = numerical_display_contents[type]
-			ND.sample_object.mouse_opacity = MOUSE_OPACITY_OPAQUE
-			ND.sample_object.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
-			ND.sample_object.maptext = "<font color='white'>[(ND.number > 1)? "[ND.number]" : ""]</font>"
-			ND.sample_object.layer = ABOVE_HUD_LAYER
-			ND.sample_object.plane = ABOVE_HUD_PLANE
-			cx++
-			if(cx - screen_start_x >= cols)
-				cx = screen_start_x
-				cy++
-				if(cy - screen_start_y >= rows)
-					break
-	else
-		var/atom/real_location = real_location()
-		for(var/obj/O in real_location)
-			if(QDELETED(O))
-				continue
-			O.mouse_opacity = MOUSE_OPACITY_OPAQUE //This is here so storage items that spawn with contents correctly have the "click around item to equip"
-			O.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
-			O.maptext = ""
-			O.layer = ABOVE_HUD_LAYER
-			O.plane = ABOVE_HUD_PLANE
-			cx++
-			if(cx - screen_start_x >= cols)
-				cx = screen_start_x
-				cy++
-				if(cy - screen_start_y >= rows)
-					break
-	closer.screen_loc = "[screen_start_x + cols]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y]"
-
-/datum/component/storage/proc/show_to(mob/M)
-	if(!M.client)
-		return FALSE
-	var/atom/real_location = real_location()
-	if(M.active_storage != src && (M.stat == CONSCIOUS))
-		for(var/obj/item/I in real_location)
-			if(I.on_found(M))
-				return FALSE
-	if(M.active_storage)
-		M.active_storage.hide_from(M)
-	orient2hud()
-	M.client.screen |= boxes
-	M.client.screen |= closer
-	M.client.screen |= real_location.contents
-	M.set_active_storage(src)
-	LAZYOR(is_using, M)
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(mob_deleted))
-	return TRUE
-
 /datum/component/storage/proc/mob_deleted(datum/source)
 	SIGNAL_HANDLER
-	hide_from(source)
-
-/datum/component/storage/proc/hide_from(mob/M)
-	if(M.active_storage == src)
-		M.set_active_storage(null)
-	LAZYREMOVE(is_using, M)
-
-	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
-	if(!M.client)
-		return TRUE
-	var/atom/real_location = real_location()
-	M.client.screen -= boxes
-	M.client.screen -= closer
-	M.client.screen -= real_location.contents
-	return TRUE
+	ui_hide(source)
 
 /datum/component/storage/proc/close(mob/M)
-	hide_from(M)
+	ui_hide(M)
 
 /datum/component/storage/proc/close_all()
 	SIGNAL_HANDLER
@@ -451,25 +380,6 @@
 	var/datum/component/storage/concrete/master = master()
 	master.emp_act(source, severity)
 
-//This proc draws out the inventory and places the items on it. tx and ty are the upper left tile and mx, my are the bottm right.
-//The numbers are calculated from the bottom-left The bottom-left slot being 1,1.
-/datum/component/storage/proc/orient_objs(tx, ty, mx, my)
-	var/atom/real_location = real_location()
-	var/cx = tx
-	var/cy = ty
-	boxes.screen_loc = "[tx]:,[ty] to [mx],[my]"
-	for(var/obj/O in real_location)
-		if(QDELETED(O))
-			continue
-		O.screen_loc = "[cx],[cy]"
-		O.layer = ABOVE_HUD_LAYER
-		O.plane = ABOVE_HUD_PLANE
-		cx++
-		if(cx > mx)
-			cx = tx
-			cy--
-	closer.screen_loc = "[mx+1],[my]"
-
 //Resets something that is being removed from storage.
 /datum/component/storage/proc/_removal_reset(atom/movable/thing)
 	if(!istype(thing))
@@ -480,9 +390,7 @@
 	return master._removal_reset(thing)
 
 /datum/component/storage/proc/_remove_and_refresh(datum/source, atom/movable/thing)
-	SIGNAL_HANDLER
-
-	_removal_reset(thing)
+	_removal_reset(thing) // THIS NEEDS TO HAPPEN AFTER SO LAYERING DOESN'T BREAK!
 	refresh_mob_views()
 
 //Call this proc to handle the removal of an item from the storage item. The item will be moved to the new_location target, if that is null it's being deleted
@@ -499,7 +407,7 @@
 
 	var/list/seeing = can_see_contents()
 	for(var/i in seeing)
-		show_to(i)
+		ui_show(i)
 	return TRUE
 
 /datum/component/storage/proc/can_see_contents()
@@ -516,7 +424,7 @@
 /datum/component/storage/proc/dump_content_at(atom/dest_object, mob/M)
 	var/atom/A = parent
 	var/atom/dump_destination = dest_object.get_dumping_location()
-	if(A.Adjacent(M) && dump_destination && M.Adjacent(dump_destination))
+	if(M.CanReach(A) && dump_destination && M.CanReach(dump_destination))
 		if(locked)
 			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 			return FALSE
@@ -524,6 +432,12 @@
 			playsound(A, "rustle", 50, TRUE, -5)
 			return TRUE
 	return FALSE
+
+/datum/component/storage/proc/get_dumping_location(atom/dest_object)
+	var/datum/component/storage/storage = dest_object.GetComponent(/datum/component/storage)
+	if(storage)
+		return storage.real_location()
+	return dest_object.get_dumping_location()
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)
@@ -618,7 +532,7 @@
 	if(force || M.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
 			playsound(A, use_sound, 50, TRUE, -5)
-		show_to(M)
+		ui_show(M)
 
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
 	SIGNAL_HANDLER
@@ -647,10 +561,6 @@
 			host.add_fingerprint(M)
 			to_chat(M, "<span class='warning'>[host] seems to be [locked_flavor]!</span>")
 		return FALSE
-	if(real_location.contents.len >= max_items)
-		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[host] is full, make some space!</span>")
-		return FALSE //Storage item is full
 	if(length(can_hold))
 		if(!is_type_in_typecache(I, can_hold))
 			if(!stop_messages)
@@ -660,22 +570,34 @@
 		if(!stop_messages)
 			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 		return FALSE
-	if(I.w_class > max_w_class && !is_type_in_typecache(I, exception_hold))
-		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] is too big for [host]!</span>")
-		return FALSE
-	var/datum/component/storage/biggerfish = real_location.loc.GetComponent(/datum/component/storage)
-	if(biggerfish && biggerfish.max_w_class < max_w_class)//return false if we are inside of another container, and that container has a smaller max_w_class than us (like if we're a bag in a box)
-		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] can't fit in [host] while [real_location.loc] is in the way!</span>")
-		return FALSE
-	var/sum_w_class = I.w_class
-	for(var/obj/item/_I in real_location)
-		sum_w_class += _I.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
-	if(sum_w_class > max_combined_w_class)
-		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] won't fit in [host], make some space!</span>")
-		return FALSE
+	// STORAGE LIMITS
+	if(storage_flags & STORAGE_LIMIT_MAX_ITEMS)
+		if(real_location.contents.len >= max_items)
+			if(!stop_messages)
+				to_chat(M, "<span class='warning'>[host] has too much junk in it, make some space!</span>")
+			return FALSE //Storage item is full
+	if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS)
+		if(I.w_class > max_w_class)
+			if(!stop_messages)
+				to_chat(M, "<span class='warning'>[I] is much too long for [host]!</span>")
+			return FALSE
+	if(storage_flags & STORAGE_LIMIT_COMBINED_W_CLASS)
+		var/sum_w_class = I.w_class
+		for(var/obj/item/_I in real_location)
+			sum_w_class += _I.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
+		if(sum_w_class > max_combined_w_class)
+			if(!stop_messages)
+				to_chat(M, "<span class='warning'>[I] won't fit in [host], make some space!</span>")
+			return FALSE
+	if(storage_flags & STORAGE_LIMIT_VOLUME)
+		var/sum_volume = I.get_w_volume()
+		for(var/obj/item/_I in real_location)
+			sum_volume += _I.get_w_volume()
+		if(sum_volume > get_max_volume())
+			if(!stop_messages)
+				to_chat(M, "<span class='warning'>[I] is too large to fit in [host], make some space!</span>")
+			return FALSE
+	/////////////////
 	if(isitem(host))
 		var/obj/item/IP = host
 		var/datum/component/storage/STR_I = I.GetComponent(/datum/component/storage)
@@ -825,7 +747,7 @@
 		if(locked)
 			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		else
-			show_to(user)
+			ui_show(user)
 			if(use_sound)
 				playsound(A, use_sound, 50, TRUE, -5)
 
@@ -851,7 +773,7 @@
 /datum/component/storage/proc/signal_hide_attempt(datum/source, mob/target)
 	SIGNAL_HANDLER
 
-	return hide_from(target)
+	return ui_hide(target)
 
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
 	SIGNAL_HANDLER
@@ -896,3 +818,7 @@
 			to_chat(user, "<span class='notice'>[parent] now picks up all items in a tile at once.</span>")
 		if(COLLECT_ONE)
 			to_chat(user, "<span class='notice'>[parent] now picks up one item at a time.</span>")
+
+//Gets our max volume
+/datum/component/storage/proc/get_max_volume()
+	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)

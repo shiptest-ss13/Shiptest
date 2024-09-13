@@ -130,7 +130,7 @@
 	desc = "Damn son, where'd you find this?"
 	id = "air_horn"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/bananium = 1000)
+	materials = list(/datum/material/iron = 4000, /datum/material/hellstone = 1000)
 	build_path = /obj/item/bikehorn/airhorn
 	category = list("Equipment")
 

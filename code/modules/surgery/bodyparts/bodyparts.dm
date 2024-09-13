@@ -50,6 +50,16 @@
 	/// Is it fine, broken, splinted, or just straight up fucking gone
 	var/bone_status = BONE_FLAG_NO_BONES
 	var/bone_break_threshold = 30
+	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
+	var/bleed_threshold = 10
+	/// Threshold at which the limb will start bleeding if damaged by blunt items
+	var/bleed_threshold_blunt = 25
+	/// Minimum damage of an incoming attack for it to cause bleeding
+	var/bleed_damage_min = 5
+	/// Minimum damage of an incoming blunt attack for it to cause bleeding
+	var/bleed_damage_min_blunt = 10
+	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
+	var/bleeding = 0
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
@@ -143,11 +153,6 @@
 	if(burn_dam > DAMAGE_PRECISION)
 		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
 
-
-/obj/item/bodypart/blob_act()
-	take_damage(max_damage)
-
-
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -202,11 +207,13 @@
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
 		heal_damage(0, 0, INFINITY, null, FALSE)
 		. |= BODYPART_LIFE_UPDATE_HEALTH
+	if(brute_dam < DAMAGE_PRECISION && bleeding)
+		adjust_bleeding(-0.2) //slowly stop bleeding if there's no damage left
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1)
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1, sharpness = FALSE)
 	var/hit_percent = (100-blocked)/100
 	if((!brute && !burn && !stamina) || hit_percent <= 0)
 		return FALSE
@@ -232,8 +239,12 @@
 			burn *= 2
 
 	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if((brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
 		break_bone()
+
+	// Bleeding is applied here
+	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
+		adjust_bleeding(brute * BLOOD_LOSS_DAMAGE_BASE, BLOOD_LOSS_DAMAGE_MAXIMUM)
 
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
@@ -274,6 +285,7 @@
 
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
+		adjust_bleeding(-BLOOD_LOSS_DAMAGE_MAXIMUM * brute / max_damage)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
@@ -315,6 +327,30 @@
 	. = stamina_dam
 	stamina_dam = new_value
 
+/// Adjusts bodypart bleeding,  value = amount of change, maximum = maximum current bloodloss amount this can modify
+/obj/item/bodypart/proc/adjust_bleeding(value, maximum = BLOOD_LOSS_MAXIMUM)
+	if(bleeding > maximum)
+		return
+	if(owner.dna && (NOBLOOD in owner.dna.species.species_traits))
+		return
+	bleeding = round(clamp(bleeding+value, 0, maximum), 0.001)
+
+/// Checks if the bodypart is viable for bandaging, if it isn't, tells the person trying (if present) what's stopping it
+/obj/item/bodypart/proc/can_bandage(user)
+	. = TRUE
+	if(is_pseudopart)
+		return FALSE
+	if(!bleeding)
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] isn't bleeding!"))
+		return FALSE
+	if(GetComponent(/datum/component/bandage))
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
+		return FALSE
+
+/obj/item/bodypart/proc/apply_bandage(bleed_reduction, lifespan, name)
+	AddComponent(/datum/component/bandage, bleed_reduction, lifespan, name)
 
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)
@@ -736,7 +772,11 @@
 	if (bone_status == BONE_FLAG_NORMAL && body_part & LEGS) // Because arms are not legs
 		owner.set_broken_legs(owner.broken_legs + 1)
 	bone_status = BONE_FLAG_BROKEN
-	addtimer(CALLBACK(owner, TYPE_PROC_REF(/atom, visible_message), "<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>"), 1 SECONDS)
+//	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
+
+///obj/item/bodypart/proc/break_bone_feedback()
+	owner.visible_message("<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>")
+	playsound(owner, list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg'), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()
 	// owner.update_inv_splints() breaks
@@ -745,8 +785,8 @@
 	bone_status = BONE_FLAG_NORMAL
 
 /obj/item/bodypart/proc/on_mob_move()
-	// Dont trigger if it isn't broken or if it has no owner
-	if(bone_status != BONE_FLAG_BROKEN || !owner)
+	// Dont trigger if it isn't broken or if it has no owner or is buckled to a rollerbed
+	if(bone_status != BONE_FLAG_BROKEN || !owner || istype(owner?.buckled, /obj/structure/bed/roller))
 		return
 
 	if(prob(5))

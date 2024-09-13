@@ -435,9 +435,7 @@
 	id = "noderiders";
 	name = "cargo airshield"
 	},
-/obj/machinery/computer/crew{
-	icon_state = "computer-right"
-	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fG" = (
@@ -1570,9 +1568,7 @@
 	pixel_y = 25
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/computer/communications{
-	icon_state = "computer-left"
-	},
+/obj/structure/frame/computer,
 /obj/machinery/light/small/built/directional/north{
 	pixel_x = 16
 	},

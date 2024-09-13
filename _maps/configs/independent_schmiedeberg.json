@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Schmiedeberg-class Pharmacology Ship",
+	"faction": "/datum/faction/independent",
 	"prefix": "IMV",
 	"map_short_name": "Schmiedeberg-class",
 	"description": "Interested in pharmacological science, but tired of sitting in front of a chemistry dispenser and pushing buttons all day? Eager to combine the culinary arts with the narcotic ones? Hoping to combine all of these qualities with the most important activity of all: making fat stacks of dosh? Then the Schmiedeberg-class is for you! Host to a robust ghetto chemistry lab, a high-efficiency botanical set-up and a complete kitchen-and-storefront, the Schmiedeberg is perfect for back-alley chemists and botanists everywhere.",
@@ -14,7 +15,7 @@
 		"SUNS",
 		"GENERAL"
 	],
-	"limit": 2,
+	"limit": 1,
 	"job_slots": {
 		"Chief Pharmacist": {
 			"outfit": "/datum/outfit/job/independent/cmo/pharma",

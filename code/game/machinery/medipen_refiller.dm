@@ -5,7 +5,7 @@
 	icon_state = "medipen_refiller"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/medipen_refiller
-	idle_power_usage = 100
+	idle_power_usage = IDLE_DRAW_LOW
 	/// list of medipen subtypes it can refill
 	var/list/allowed = list(
 		/obj/item/reagent_containers/hypospray/medipen = /datum/reagent/medicine/epinephrine,

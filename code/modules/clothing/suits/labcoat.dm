@@ -4,7 +4,7 @@
 	icon_state = "labcoat"
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|ARMS|GROIN
 	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
@@ -59,20 +59,14 @@
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 50, acid = 50)
 
 /obj/item/clothing/suit/toggle/labcoat/raincoat
-	name = "\improper Cybersun labcoat"
-	desc = {"A translucent, uniquely designed labcoat from Cybersun Solutions. It's made from a special material that actively repels fluids.
+	name = "translucent labcoat"
+	desc = {"A uniquely designed, translucent labcoat. It's made from a special material that actively repels fluids.
 You're pretty sure this is just a raincoat.
 
-<i>Wearing a raincoat inside is like wearing sunglasses at night. A good Cybersun exec does both.</i>
+<i>Wearing a raincoat inside is like wearing sunglasses at night. A good chemist does both.</i>
 "}
 	icon_state = "raincoat"
 	item_state = "raincoat"
-
-/obj/item/clothing/suit/toggle/labcoat/roumain_med
-	name = "saint-roumain medical duster"
-	desc = "A coat made from hard leather and further treated with exotic sterilizing oils and wax. The treatment and its more closed design offers much better protection against biological hazards."
-	icon_state = "rouma_med_coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/longcoat
 	name = "longcoat"

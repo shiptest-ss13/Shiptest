@@ -23,13 +23,10 @@
 	flags_inv = 0
 	dog_fashion = /datum/dog_fashion/head/captain
 
-//Captain: This is no longer space-worthy
 /obj/item/clothing/head/caphat/parade
 	name = "captain's parade cap"
 	desc = "Worn only by Captains with an abundance of class."
 	icon_state = "capcap"
-
-	dog_fashion = null
 
 /obj/item/clothing/head/caphat/cowboy
 	name = "general's hat"
@@ -40,12 +37,12 @@
 	name = "captain's hat"
 	icon_state = "captain_nt"
 
-/obj/item/clothing/head/caphat/frontier
+/obj/item/clothing/head/frontier/peaked
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
 
-/obj/item/clothing/head/caphat/frontier/admiral
+/obj/item/clothing/head/frontier/peaked/admiral
 	name = "\improper Frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
@@ -141,26 +138,6 @@
 	desc = "A robust stetson adorned with a deputy's badge. Its imitation leather is thick and worn."
 	icon_state = "cowboysec"
 
-/obj/item/clothing/head/cowboy/sec/roumain
-	name = "hunter's hat"
-	desc = "A fancy hat with a nice feather. The way it covers your eyes makes you feel like a badass."
-	icon_state = "rouma_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/shadow
-	name = "shadow's hat"
-	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
-	icon_state = "rouma_shadow_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/med
-	name = "medical hunter's hat"
-	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
-	icon_state = "rouma_med_hat"
-
-/obj/item/clothing/head/HoS/cowboy/montagne
-	name = "montagne's hat"
-	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
-	icon_state = "rouma_montagne_hat"
-
 /obj/item/clothing/head/HoS/syndicate
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
@@ -180,6 +157,8 @@
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
 	desc = "It's a special hat issued to the Warden of a security force. A classic symbol of middling authority."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "policehelm"
 	dog_fashion = /datum/dog_fashion/head/warden
 
@@ -274,7 +253,7 @@
 #undef DRILL_YELLING
 #undef DRILL_CANADIAN
 
-/obj/item/clothing/head/witchunter_hat
+/obj/item/clothing/head/witchunter
 	name = "witchunter hat"
 	desc = "This hat saw much use back in the day."
 	icon_state = "witchhunterhat"

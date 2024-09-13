@@ -41,7 +41,8 @@
 			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"")
-			H.bleed_rate += 10
+			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+			BP.adjust_bleeding(10)
 			target.apply_damage(15, BRUTE, "[target_zone]")
 	return ..()
 
@@ -51,7 +52,8 @@
 		display_results(user, target, "<span class='warning'>You screw up, cutting too deeply into the heart!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>")
-		H.bleed_rate += 20
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		BP.adjust_bleeding(20)
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
 		target.apply_damage(15, BRUTE, "[target_zone]")
 
@@ -90,5 +92,6 @@
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>")
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
-		H.bleed_rate += 30
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		BP.adjust_bleeding(30)
 	return FALSE

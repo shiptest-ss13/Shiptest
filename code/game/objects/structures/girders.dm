@@ -38,7 +38,7 @@
 
 	if(istype(W, /obj/item/gun/energy/plasmacutter))
 		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
-		if(W.use_tool(src, user, 40, volume=100))
+		if(W.use_tool(src, user, 10, volume=100))
 			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
 			var/obj/item/stack/sheet/metal/M = new (loc, 2)
 			M.add_fingerprint(user)
@@ -369,19 +369,19 @@
 		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
 		if(W.use_tool(src, user, 40, volume=50))
 			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
-			var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 1)
+			var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 1)
 			transfer_fingerprints_to(R)
 			qdel(src)
 
 	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
 		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 2)
+		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 2)
 		transfer_fingerprints_to(R)
 		W.play_tool_sound(src)
 		qdel(src)
 
-	else if(istype(W, /obj/item/stack/sheet/runed_metal))
-		var/obj/item/stack/sheet/runed_metal/R = W
+	else if(istype(W, /obj/item/stack/sheet/mineral/hidden/hellstone))
+		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = W
 		if(R.get_amount() < 1)
 			to_chat(user, "<span class='warning'>You need at least one sheet of runed metal to construct a runed wall!</span>")
 			return 0
@@ -403,7 +403,7 @@
 
 /obj/structure/girder/cult/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/runed_metal(drop_location(), 1)
+		new /obj/item/stack/sheet/mineral/hidden/hellstone(drop_location(), 1)
 	qdel(src)
 
 /obj/structure/girder/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)

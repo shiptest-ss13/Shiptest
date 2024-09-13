@@ -1,3 +1,25 @@
+/mob/living/carbon/attackby(obj/item/W, mob/user, params)
+	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
+	var/has_painkillers = reagents.has_reagent(/datum/reagent/medicine/morphine, needs_metabolizing = TRUE)
+	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam) //prioritize healing if we're synthetic
+		return ..()
+	if(user.a_intent != INTENT_HELP || !W.get_temperature() || !BP.can_bandage()) //this will also catch low damage synthetic welding
+		return ..()
+	. = TRUE
+	var/heal_time = 2 SECONDS
+	playsound(user, 'sound/surgery/cautery1.ogg', 20)
+	balloon_alert(user, "cauterizing...")
+	if(src == user && !has_painkillers)
+		heal_time *= 2 //oof ouch owie
+	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
+	if(do_after(user, heal_time, target = src))
+		playsound(user, 'sound/surgery/cautery2.ogg', 20)
+		BP.apply_bandage(0.005, W.get_temperature()/BLOOD_CAUTERIZATION_RATIO, "cauterization") //not particularly fast, this is the "I really would prefer not to be bleeding right now" option
+		BP.receive_damage(burn = W.get_temperature()/BLOOD_CAUTERIZATION_DAMAGE_RATIO) //my body is a MACHINE that turns BLEEDING into BURN DAMAGE
+		user.visible_message(span_nicegreen("[user] cauterizes the bleeding on [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)]!"), span_nicegreen("You cauterize the bleeding on [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)]!"))
+	else
+		to_chat(user, span_warning("You were interrupted!"))
+
 /mob/living/carbon/get_eye_protection()
 	. = ..()
 	var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
@@ -330,13 +352,6 @@
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
 		visible_message("<span class='warning'>[name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
 
-/mob/living/carbon/blob_act(obj/structure/blob/B)
-	if (stat == DEAD)
-		return
-	else
-		show_message("<span class='userdanger'>The blob attacks!</span>")
-		adjustBruteLoss(10)
-
 /mob/living/carbon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_CONTENTS)
@@ -554,14 +569,10 @@
 
 			else
 				to_chat(src, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(-500)
 		return 1
 	else if(damage == 0) // just enough protection
 		if(prob(20))
 			to_chat(src, "<span class='notice'>Something bright flashes in the corner of your vision!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(0)
 
 
 /mob/living/carbon/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)
@@ -635,3 +646,20 @@
 			ADD_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
 	else if(getOxyLoss() <= 50)
 		REMOVE_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
+
+/mob/living/carbon/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
+	var/mob/living/carbon/human/current_user = src //is this a good idea? who can say?
+	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
+	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
+	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
+		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = TRUE)
+		if(P.damage-armor >= 15 && P.damage_type == BRUTE && (!armor || prob(40) || P.damage-armor >= 25))
+			spray_blood(get_dir(P.starting,src), (P.damage-armor)/5)
+			var/obj/item/bodypart/targeted_bodypart = null
+			bleed((P.damage-armor)/2)
+
+		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
+		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
+		if(P.dismemberment)
+			check_projectile_dismemberment(P, def_zone)
+	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK

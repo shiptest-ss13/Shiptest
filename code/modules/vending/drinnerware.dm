@@ -1,7 +1,7 @@
 /obj/machinery/vending/dinnerware
 	name = "\improper Plasteel Chef's Dinnerware Vendor"
 	desc = "A kitchen and restaurant equipment vendor."
-	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these..."
+	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils."
 	icon_state = "dinnerware"
 	products = list(
 		/obj/item/storage/bag/tray = 8,
@@ -15,13 +15,10 @@
 		/obj/item/reagent_containers/food/condiment/peppermill = 5,
 		/obj/item/clothing/suit/apron/chef = 2,
 		/obj/item/kitchen/rollingpin = 2,
-		/obj/item/melee/knife/kitcken = 2,
-		/obj/item/melee/knife/pizza_cutter = 2,
-		/obj/item/book/granter/crafting_recipe/cooking_sweets_101 = 2)
-	contraband = list(
-		/obj/item/kitchen/rollingpin = 2,
-		/obj/item/melee/knife/butcher = 2,
-		/obj/item/shovel/spoon = 2) // ST - Only a spoonfull
+		/obj/item/kitchen/knife = 2,
+		/obj/item/kitchen/knife/pizza_cutter = 2,
+		/obj/item/book/granter/crafting_recipe/cooking_sweets_101 = 2,
+		/obj/item/kitchen/knife/butcher = 1)
 	refill_canister = /obj/item/vending_refill/dinnerware
 	default_price = 50
 	extra_price = 250

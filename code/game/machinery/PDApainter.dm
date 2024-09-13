@@ -5,6 +5,8 @@
 	icon_state = "pdapainter"
 	base_icon_state = "pdapainter"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	max_integrity = 200
 	var/obj/item/pda/storedpda = null
 	var/list/colorlist = list()

@@ -30,6 +30,13 @@
 	cost = 2000
 	crate_name = "security barriers crate"
 
+/datum/supply_pack/sec_supply/empty_sandbags
+	name = "Empty Sandbags"
+	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
+	contains = list(/obj/item/storage/box/emptysandbags)
+	cost = 150
+	crate_name = "sandbag crate"
+
 /datum/supply_pack/sec_supply/wall_flash
 	name = "Wall-Mounted Flash Crate"
 	desc = "Contains four wall-mounted flashes."
@@ -56,11 +63,9 @@
 
 /datum/supply_pack/sec_supply/riotshields
 	name = "Riot Shields Crate"
-	desc = "For when the greytide gets really uppity. Contains three riot shields."
-	cost = 2000
-	contains = list(/obj/item/shield/riot,
-					/obj/item/shield/riot,
-					/obj/item/shield/riot)
+	desc = "Contains a riot shield, effective at holding back hostile fauna, xenofauna, or large crowds."
+	cost = 600
+	contains = list(/obj/item/shield/riot)
 	crate_name = "riot shields crate"
 
 /datum/supply_pack/sec_supply/survknives
@@ -98,6 +103,7 @@
 	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_NGR
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)

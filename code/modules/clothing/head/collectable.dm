@@ -46,6 +46,8 @@
 /obj/item/clothing/head/collectable/police
 	name = "collectable police officer's hat"
 	desc = "A collectable police officer's Hat. This hat emphasizes that you are THE LAW."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "policehelm"
 	dog_fashion = /datum/dog_fashion/head/warden
 
@@ -77,6 +79,8 @@
 /obj/item/clothing/head/collectable/pirate
 	name = "collectable pirate hat"
 	desc = "You'd make a great Dread Syndie Roberts!"
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "pirate"
 	dog_fashion = /datum/dog_fashion/head/pirate
 
@@ -121,6 +125,8 @@
 /obj/item/clothing/head/collectable/thunderdome
 	name = "collectable Thunderdome helmet"
 	desc = "Go Red! I mean Green! I mean Red! No Green!"
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "thunderdome"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEHAIR
@@ -128,6 +134,8 @@
 /obj/item/clothing/head/collectable/swat
 	name = "collectable SWAT helmet"
 	desc = "That's not real blood. That's red paint." //Reference to the actual description
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "swat"
 	item_state = "swat"
 	clothing_flags = SNUG_FIT

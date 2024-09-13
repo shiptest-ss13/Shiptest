@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Vaquero-class Light Frigate",
+	"faction": "/datum/faction/inteq",
 	"prefix": "IRMV",
 	"description": "The Vaquero is a flexible and cheap military conversion of a light commercial freighter, widely used by Inteq Risk Management Group for picket, reconnaissance, and light escort duty, or for contracts that don't warrant a larger, more specialized ship. Unlike most Inteq ships, the Vaquero features basic medical, engineering, and military equipment all in one package, and its minimal crew requirements are an excellent fit for Vanguards with a smaller command and for training missions. Like its peers, it features a large cargo bay, which can be reconfigured as needed.",
 	"tags": [
@@ -15,7 +16,7 @@
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/inteq/captain",
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
 			"officer": true,
 			"slots": 1
 		},

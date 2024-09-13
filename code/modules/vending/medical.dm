@@ -27,15 +27,12 @@
 		/obj/item/reagent_containers/medigel/sterilizine = 1,
 		/obj/item/sensor_device = 1,
 		/obj/item/pinpointer/crew = 1)
-	contraband = list(
-		/obj/item/reagent_containers/pill/tox = 2,
-		/obj/item/reagent_containers/pill/morphine = 2,
-		/obj/item/reagent_containers/pill/charcoal = 4,
-		/obj/item/storage/box/hug/medical = 1)
+	contraband = list(/obj/item/reagent_containers/pill/tox = 2)
 	premium = list(
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/clothing/glasses/hud/health/prescription = 1,
-		/obj/item/shears = 1)
+		/obj/item/shears = 1,
+		/obj/item/storage/box/hug/medical = 1)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical

@@ -24,8 +24,8 @@
 	anchored = TRUE
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 30
-	active_power_usage = 200
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_LOW
 	power_channel = AREA_USAGE_EQUIP
 	max_integrity = 300
 	integrity_failure = 0.33

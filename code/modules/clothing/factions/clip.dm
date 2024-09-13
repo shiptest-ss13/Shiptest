@@ -6,6 +6,7 @@
 
 	icon = 'icons/obj/clothing/faction/clip/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/uniforms.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_deck"
 	item_state = "b_suit"
@@ -16,7 +17,7 @@
 	dying_key = DYE_REGISTRY_UNDER //??? // it's for washing machines don't worry about it
 
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION // a new record!
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION // a new record! UPDATE 2 MONTHS LATER: :'(
 
 /obj/item/clothing/under/clip/minutemen
 	name = "clip minutemen fatigues"
@@ -28,7 +29,7 @@
 	strip_delay = 50
 
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/formal
 	name = "formal clip outfit"
@@ -37,7 +38,7 @@
 	icon_state = "clip_formal"
 
 	armor = null
-	supports_variations = null
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/formal/alt
 	name = "formal clip outfit"
@@ -62,12 +63,16 @@
 
 	icon_state = "clip_medic"
 
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+
 /obj/item/clothing/under/clip/officer
 	name = "clip minutemen officer uniform"
 	desc = "A uniform used by higher ranking officers of the CLIP Minutemen."
 	icon_state = "clip_officer"
 	item_state = "g_suit"
 	can_adjust = FALSE
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/officer/alt
 	name = "clip minutemen officer uniform"
@@ -109,6 +114,8 @@
 	icon_state = "clip_general"
 	item_state = "clip_general"
 
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
 /obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
 	name = "CLIP Minutemen admiral trenchcoat"
 	desc = "A very fancy trenchcoat used by admirals of the CLIP Minutemen."
@@ -133,11 +140,12 @@
 
 	icon_state = "clip_trenchcoat"
 	item_state = "trenchcoat_solgov"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 /obj/item/clothing/suit/armor/clip_capcoat
 	name = "\improper CLIP Minutemen captain's coat"
@@ -148,33 +156,52 @@
 
 	icon_state = "clip_captaincoat"
 	item_state = "clip_captaincoat"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+
+/obj/item/clothing/suit/armor/vest/clip_correspondent
+	name = "press armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
+
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+
+	icon_state = "armor_correspondant"
+	item_state = "armor_correspondant"
 
 //spacesuits
-/obj/item/clothing/suit/space/hardsuit/security/independent/clip //TODO: replace
-	name = "\improper CMM Patroller hardsuit"
-	desc = "A hardsuit used by the CLIP Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels. As should be obvious, it's not extremely armored, as it's made for reconnaissance and speed."
+/obj/item/clothing/suit/space/hardsuit/clip_patroller
+	name = "\improper CM-410 'Patroller' EVA Hardsuit"
+	desc = "A CLIP produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 
 	icon_state = "hardsuit-clip-patrol"
 	hardsuit_type = "hardsuit-clip-patrol"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/clip
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_patroller
 
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/clip //TODO: replace
-	name = "\improper CMM Patroller hardsuit helmet"
-	desc = "A hardsuit used by the CLIP Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels. As should be obvious, it's not extremely armored, as it's made for reconnaissance and speed."
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/head/helmet/space/hardsuit/clip_patroller
+	name = "\improper CM-410 'Patroller' EVA Hardsuit helmet"
+	desc = "A CLIP produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 
 	icon_state = "hardsuit0-clip-patrol"
 	hardsuit_type = "clip-patrol"
+
+	supports_variations = SNOUTED_VARIATION
+
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/clip_spotter
 	name = "CM-490 'Spotter' Combat Hardsuit"
@@ -193,6 +220,8 @@
 	resistance_flags = null
 	slowdown = 1
 
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+
 /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
 	name = "CM-490 'Spotter' Combat Hardsuit Helmet"
 	desc = "CLIP's standard EVA combat hardsuit. Due to CLIP's doctrine on range, it doesn't have advanced components that allow swift movement, and thus slows down the user despite the heavy armor."
@@ -206,6 +235,7 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	resistance_flags = null
 
+	supports_variations = SNOUTED_VARIATION
 
 //hats
 /obj/item/clothing/head/clip
@@ -213,10 +243,13 @@
 	desc = "A standard issue soft cap dating back to the original Zohil colonial peroid. While usually given to recruits and volunteers, it's sometimes used by occasionally by some Minutemen."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 //	lefthand_file = 'icons/mob/inhands/faction/clip/gezena_lefthand.dmi'
 //	righthand_file = 'icons/mob/inhands/faction/clip/gezena_righthand.dmi'
 	icon_state = "clip_cap"
 	item_state = "bluecloth"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/corpsman
 	name = "\improper CLIP Minutemen corpsman cap"
@@ -224,25 +257,35 @@
 	icon_state = "clip_mediccap"
 	item_state = "whitecloth"
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/clip/slouch
 	name = "CLIP Minutemen slouch hat"
 	desc = "A commanding slouch hat used by the CLIP Minutemen."
 	icon_state = "clip_slouch_hat"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/slouch/officer
 	name = "CLIP Minutemen officer's slouch hat"
 	desc = "A commanding slouch hat adorned with a officer's badge, used by the CLIP Minutemen."
 	icon_state = "clip_officer_hat"
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/clip/boonie
 	name = "CLIP Minutemen boonie hat"
 	desc = "A wide brimmed cap to keep yourself cool during blistering hot weather."
 	icon_state = "clip_boonie"
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/clip/bicorne
 	name = "general's bicorne"
 	desc = "A fancy bicorne used by generals of the CLIP Minutemen."
 	icon_state = "clip_general_hat"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen X11 Helmet"
@@ -250,10 +293,13 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_x11"
 	allow_post_reskins = FALSE
 	unique_reskin = null
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	name = "\improper Minutemen Vehicle Crewman M10 Helmet"
@@ -261,14 +307,28 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
 	allow_post_reskins = FALSE
 	unique_reskin = null
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
+
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	name = "CLIP War Correspondant M10 Helmet"
+	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
+
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+
+	icon_state = "clip_m10_correspondant"
+	item_state = "clip_m10_correspondant"
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"
@@ -278,6 +338,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "riot_clip"
 
+	supports_variations = SNOUTED_VARIATION
+
 //GOLD
 /obj/item/clothing/head/fedora/det_hat/clip
 	name = "GOLD fedora"
@@ -285,9 +347,12 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_fedora"
 	item_state = "detective"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/flatcap/clip
 	name = "GOLD flatcap"
@@ -295,9 +360,12 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "flatcap_clip"
 	item_state = "detective"
+
+	supports_variations = VOX_VARIATION
 //mask
 
 /obj/item/clothing/mask/gas/clip
@@ -310,6 +378,10 @@
 	icon_state = "clip-gasmask"
 	strip_delay = 60
 
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+
+	supports_variations = SNOUTED_VARIATION
+
 //gloves
 
 /obj/item/clothing/gloves/color/latex/nitrile/clip
@@ -318,9 +390,12 @@
 
 	icon = 'icons/obj/clothing/faction/clip/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hands.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "nitrile_clip"
 	item_state = "nitrile_clip"
+
+	supports_variations = VOX_VARIATION
 
 //boots
 
@@ -331,31 +406,39 @@
 
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clipwebbing"
 	item_state = "clipwebbing"
 
 	unique_reskin = null
 
-/obj/item/storage/belt/military/clip/p16/PopulateContents()
+	supports_variations = VOX_VARIATION
+
+/obj/item/storage/belt/military/clip/cm82/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/gal/PopulateContents()
+/obj/item/storage/belt/military/clip/f4/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/gal(src)
+		new /obj/item/ammo_box/magazine/f4_308(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm9mm(src)
+		new /obj/item/ammo_box/magazine/cm5_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm15/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/cm15_mag(src)
+		new /obj/item/ammo_box/magazine/cm15_12g(src)
 	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/e50/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/belt/military/clip/e50/PopulateContents()
 	for(var/i in 1 to 5)
@@ -383,8 +466,11 @@
 
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip-medwebbing"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
 	new /obj/item/reagent_containers/medigel/styptic(src)
@@ -401,6 +487,8 @@
 	desc = "It's a very blue backpack."
 
 	icon_state = "clippack"
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/sec/clip
 	name = "clip satchel"

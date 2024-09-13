@@ -15,7 +15,6 @@
 add: Added new things
 add: Added more things
 del: Removed old things
-tweak: tweaked a few things
 balance: rebalanced something
 fix: fixed a few things
 soundadd: added a new sound thingy

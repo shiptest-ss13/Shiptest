@@ -114,6 +114,8 @@
 	item_state = "highvis"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
@@ -128,6 +130,8 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
+
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
@@ -192,7 +196,7 @@
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
-	desc = "They suspend the illusion of the mime's play."
+	desc = "The symbol of hard labor and dirty jobs."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders"
 	blood_overlay_type = "armor" //it's the less thing that I can put here
@@ -290,4 +294,4 @@
 	icon_state = "chaplain_witchhunter"
 	item_state = "witchhunter"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/storage/book/bible, /obj/item/melee/sword, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+	allowed = list(/obj/item/storage/book/bible, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

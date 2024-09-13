@@ -181,7 +181,7 @@
 	return 0
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands && current_charges)
 		. += mutable_appearance('icons/effects/cult_effects.dmi', "shield-cult", MOB_LAYER + 0.01)
 
@@ -338,46 +338,6 @@
 	else
 		..()
 		to_chat(user, "<span class='warning'>\The [src] can only transport items!</span>")
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/blood
-	name = "blood bolt barrage"
-	desc = "Blood for blood."
-	color = "#ff0000"
-	guns_left = 24
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage/blood
-	fire_sound = 'sound/magic/wand_teleport.ogg'
-
-
-/obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage/blood
-	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage/blood
-
-/obj/item/ammo_casing/magic/arcane_barrage/blood
-	projectile_type = /obj/projectile/magic/arcane_barrage/blood
-	firing_effect_type = /obj/effect/temp_visual/cult/sparks
-
-/obj/projectile/magic/arcane_barrage/blood
-	name = "blood bolt"
-	icon_state = "mini_leaper"
-	nondirectional_sprite = TRUE
-	damage_type = BRUTE
-	impact_effect_type = /obj/effect/temp_visual/dir_setting/bloodsplatter
-
-/obj/projectile/magic/arcane_barrage/blood/Bump(atom/target)
-	var/turf/T = get_turf(target)
-	playsound(T, 'sound/effects/splat.ogg', 50, TRUE)
-	if(iscultist(target))
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if(H.stat != DEAD)
-				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 4)
-		if(isshade(target) || isconstruct(target))
-			var/mob/living/simple_animal/M = target
-			if(M.health+5 < M.maxHealth)
-				M.adjustHealth(-5)
-		new /obj/effect/temp_visual/cult/sparks(T)
-		qdel(src)
-	else
-		..()
 
 /obj/item/blood_beam
 	name = "\improper magical aura"

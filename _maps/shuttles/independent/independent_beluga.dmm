@@ -1341,10 +1341,7 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = -6;
-	pixel_y = -1
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/phone{
 	pixel_x = 9;
 	pixel_y = -2
@@ -2138,10 +2135,6 @@
 /obj/item/toy/cards/deck{
 	pixel_x = -2;
 	pixel_y = 4
-	},
-/obj/item/paper/pamphlet/ruin/spacehotel{
-	pixel_x = 7;
-	pixel_y = 2
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
@@ -3159,10 +3152,7 @@
 	pixel_x = 4;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = -5;
-	pixel_y = 7
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/effect/turf_decal/siding/wood,
 /obj/item/lipstick{
 	pixel_x = -5;
@@ -4752,7 +4742,7 @@
 /area/ship/crew)
 "UO" = (
 /obj/effect/turf_decal/industrial/traffic/corner,
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
@@ -4835,9 +4825,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 9
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "VK" = (
@@ -4857,7 +4845,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "VV" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{

@@ -2,6 +2,7 @@
 	name = "Drug"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
+	category = "Drug"
 	var/trippy = TRUE //Does this drug make you trip?
 
 /datum/reagent/drug/on_mob_end_metabolize(mob/living/M)
@@ -20,8 +21,6 @@
 		if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED))
 			if(prob(10))
 				step(M, pick(GLOB.cardinals))
-	if(prob(7))
-		M.emote(pick("twitch","drool","moan","giggle"))
 	..()
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
@@ -165,7 +164,7 @@
 
 /datum/reagent/drug/methamphetamine
 	name = "Methamphetamine"
-	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
+	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will become dizzy, lose motor control and eventually suffer heavy toxin damage."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20
@@ -193,8 +192,6 @@
 	M.adjustStaminaLoss(-2, 0)
 	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
-	if(prob(5))
-		M.emote(pick("twitch", "shiver"))
 	..()
 	. = 1
 
@@ -202,8 +199,6 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 4)
 			step(M, pick(GLOB.cardinals))
-	if(prob(20))
-		M.emote("laugh")
 	if(prob(33))
 		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
@@ -214,15 +209,11 @@
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage1(mob/living/M)
 	M.Jitter(5)
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage2(mob/living/M)
 	M.Jitter(10)
 	M.Dizzy(10)
-	if(prob(30))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage3(mob/living/M)
@@ -231,8 +222,6 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(15)
 	M.Dizzy(15)
-	if(prob(40))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage4(mob/living/carbon/human/M)
@@ -242,8 +231,6 @@
 	M.Jitter(20)
 	M.Dizzy(20)
 	M.adjustToxLoss(5, 0)
-	if(prob(50))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
 
@@ -292,8 +279,6 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 8)
 			step(M, pick(GLOB.cardinals))
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
 	if(prob(33))
 		M.drop_all_held_items()
 	..()
@@ -305,8 +290,6 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(5)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage2(mob/living/M)
@@ -317,8 +300,6 @@
 	M.Jitter(10)
 	M.Dizzy(10)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(30))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage3(mob/living/M)
@@ -329,8 +310,6 @@
 	M.Jitter(15)
 	M.Dizzy(15)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(40))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage4(mob/living/carbon/human/M)
@@ -342,8 +321,6 @@
 	M.Dizzy(50)
 	M.adjustToxLoss(5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(50))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
 
@@ -397,13 +374,10 @@
 		var/reaction = rand(1,3)
 		switch(reaction)
 			if(1)
-				M.emote("laugh")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_good_od)
 			if(2)
-				M.emote("sway")
 				M.Dizzy(25)
 			if(3)
-				M.emote("frown")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
 	..()
@@ -413,32 +387,24 @@
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
 	M.Jitter(5)
-	if(prob(20))
-		M.emote(pick("twitch","laugh","frown"))
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage2(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
 	M.Jitter(10)
-	if(prob(30))
-		M.emote(pick("twitch","laugh","frown"))
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage3(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
 	M.Jitter(15)
-	if(prob(40))
-		M.emote(pick("twitch","laugh","frown"))
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage4(mob/living/carbon/human/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(SANITY_INSANE)
 	M.Jitter(20)
-	if(prob(50))
-		M.emote(pick("twitch","laugh","frown"))
 	..()
 	. = 1
 
@@ -476,8 +442,6 @@
 	M.Jitter(5)
 	if(prob(5))
 		M.drop_all_held_items()
-	if(prob(15))
-		M.emote(pick("twitch","drool"))
 	if(prob(20))
 		M.losebreath++
 		M.adjustStaminaLoss(4, 0)

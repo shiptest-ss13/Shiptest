@@ -27,7 +27,7 @@
 	icon = 'icons/obj/machines/scangate.dmi'
 	icon_state = "scangate"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/scanner_gate
 
 	var/scanline_timer
