@@ -1,9 +1,9 @@
 /obj/item/melee/knife
-	icon_state = "knife"
-	item_state = "knife"
-	icon = 'icons/obj/kitchen.dmi'
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	icon_state = "kitchenknife"
+	item_state = "kitchenknife"
+	icon = 'icons/obj/weapon/knife.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	flags_1 = CONDUCT_1
@@ -18,7 +18,8 @@
 	sharpness = IS_SHARP_ACCURATE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
-	var/bayonet = FALSE	//Can this be attached to a gun?
+	tool_behaviour = TOOL_KNIFE
+
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
@@ -30,12 +31,13 @@
 
 /obj/item/melee/knife/kitchen
 	name = "kitchen knife"
+	icon_state = "kitchenknife"
+	item_state = "kitchenknife"
 	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
 
 /obj/item/melee/knife/plastic
 	name = "plastic knife"
 	icon_state = "plastic_knife"
-	item_state = "knife"
 	desc = "A very safe, barely sharp knife made of plastic. Good for cutting food and not much else."
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
@@ -74,8 +76,8 @@
 
 /obj/item/melee/knife/butcher
 	name = "butcher's cleaver"
-	icon_state = "butch"
-	item_state = "butch"
+	icon_state = "cleaver"
+	item_state = "cleaver"
 	desc = "A huge thing used for chopping and chopping up meat."
 	flags_1 = CONDUCT_1
 	force = 15
@@ -96,23 +98,23 @@
 
 /obj/item/melee/knife/combat
 	name = "combat knife"
-	icon_state = "buckknife"
+	icon_state = "combatknife"
+	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	bayonet = TRUE
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
 	icon_state = "survivalknife"
+	item_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	desc = "A hunting grade survival knife."
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	bayonet = TRUE
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"
