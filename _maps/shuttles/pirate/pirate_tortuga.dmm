@@ -753,7 +753,7 @@
 /obj/structure/closet/crate{
 	icon_state = "o2crate"
 	},
-/obj/item/spear/explosive,
+/obj/item/melee/spear/explosive,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -2375,19 +2375,19 @@
 /area/ship/cargo)
 "FB" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat/survival{
+/obj/item/melee/knife/survival{
 	pixel_y = 8;
 	pixel_x = -9
 	},
-/obj/item/kitchen/knife/combat/survival{
+/obj/item/melee/knife/survival{
 	pixel_y = 7;
 	pixel_x = 5
 	},
-/obj/item/kitchen/knife/combat/survival{
+/obj/item/melee/knife/survival{
 	pixel_y = 7;
 	pixel_x = -4
 	},
-/obj/item/kitchen/knife/combat/survival{
+/obj/item/melee/knife/survival{
 	pixel_y = 7;
 	pixel_x = 1
 	},
@@ -3403,7 +3403,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "RV" = (
-/obj/item/kitchen/knife/plastic{
+/obj/item/melee/knife/plastic{
 	pixel_x = 8
 	},
 /obj/item/reagent_containers/food/snacks/grown/potato{
