@@ -45,7 +45,7 @@
 /*
  * Bone Spear
  */
-/obj/item/melee/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
+/obj/item/melee/spear/bone	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
 	icon_state = "bone_spear0"
 	name = "bone spear"
 	base_icon_state = "bone_spear0"
@@ -55,7 +55,7 @@
 	force = 11
 	throwforce = 21
 
-/obj/item/melee/spear/bonespear/ComponentInitialize()
+/obj/item/melee/spear/bone/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
 

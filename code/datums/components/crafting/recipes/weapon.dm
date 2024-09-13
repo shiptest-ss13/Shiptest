@@ -161,7 +161,7 @@
 
 /datum/crafting_recipe/spear
 	name = "Spear"
-	result = /obj/item/spear
+	result = /obj/item/melee/spear
 	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
 				/obj/item/shard = 1,
 				/obj/item/stack/rods = 1)
@@ -261,7 +261,7 @@
 
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
-	result = /obj/item/spear/bonespear
+	result = /obj/item/melee/spear/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)

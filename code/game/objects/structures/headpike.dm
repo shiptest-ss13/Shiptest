@@ -24,9 +24,9 @@
 		victim = new(src)
 		victim.real_name = random_unique_name(prob(50))
 
-	spear = locate(bonespear ? /obj/item/melee/spear/bonespear : /obj/item/melee/spear) in parts_list
+	spear = locate(bonespear ? /obj/item/melee/spear/bone : /obj/item/melee/spear) in parts_list
 	if(!spear)
-		spear = bonespear ? new/obj/item/melee/spear/bonespear(src) : new/obj/item/melee/spear(src)
+		spear = bonespear ? new/obj/item/melee/spear/bone(src) : new/obj/item/melee/spear(src)
 
 	update_appearance()
 	return ..()

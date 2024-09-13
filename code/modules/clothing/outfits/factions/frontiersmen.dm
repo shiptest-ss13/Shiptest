@@ -184,7 +184,7 @@
 	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/frontiersmen
 	glasses = /obj/item/clothing/glasses/hud/health
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	suit = /obj/item/clothing/suit/frontiersmen
 	head = /obj/item/clothing/head/frontier
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen
