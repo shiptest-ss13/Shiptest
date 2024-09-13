@@ -1873,11 +1873,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
-	else if (body_temp < min_temp_comfortable && H.get_cold_protection(areatemp) < 0.8 && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		if(body_temp < 200)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
-		else if(body_temp< bodytemp_cold_damage_limit)
+		else if(body_temp < bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
 		else if(body_temp < (min_temp_comfortable - 10))
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
@@ -1936,11 +1936,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 
-		if(bodytemp < 120)
+		if(body_temp < 120)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
 
-		else if(bodytemp < 200)
+		else if(body_temp < 200)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
 
