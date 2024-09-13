@@ -12,14 +12,14 @@ import {
 } from 'tgui/components';
 
 import { getMedicalRecord } from './helpers';
-import { MedicalNote, MedicalRecordData } from './types';
+import { MedicalNote, MedicalRecordsData } from './types';
 
 /** Small section for adding notes. Passes a ref and note to Byond. */
 export const NoteKeeper = (props, context) => {
   const foundRecord = getMedicalRecord(props, context);
   if (!foundRecord) return <> </>;
 
-  const { act } = useBackend<MedicalRecordData>(context);
+  const { act } = useBackend<MedicalRecordsData>(context);
   const { record_ref } = foundRecord;
 
   const [selectedNote, setSelectedNote] = useLocalState<

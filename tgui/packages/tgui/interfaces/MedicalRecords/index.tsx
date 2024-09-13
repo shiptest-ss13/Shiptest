@@ -2,13 +2,13 @@ import { useBackend } from 'tgui/backend';
 import { Box, Button, Icon, NoticeBox, Stack } from 'tgui/components';
 import { Window } from 'tgui/layouts';
 
-import { MedicalRecordData } from './types';
+import { MedicalRecordsData } from './types';
 
 import { MedicalRecordTabs } from './RecordTabs';
 import { MedicalRecordView } from './RecordView';
 
 export const MedicalRecords = (props, context) => {
-  const { data } = useBackend<MedicalRecordData>(context);
+  const { data } = useBackend<MedicalRecordsData>(context);
   const { authenticated, library_name } = data;
 
   const console_title = library_name + " Medical Records";

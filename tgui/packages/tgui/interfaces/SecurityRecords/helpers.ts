@@ -7,7 +7,7 @@ export const getSecurityRecord = (props, context) => {
   const [selectedRecord, setRecord] = useLocalState<SecurityRecord>(
     context,
     'securityRecord',
-    ''
+    undefined
   );
   if (!selectedRecord) return;
   const { data } = useBackend<SecurityRecordsData>(context);

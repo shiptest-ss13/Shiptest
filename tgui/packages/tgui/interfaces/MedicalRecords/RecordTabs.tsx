@@ -1,11 +1,11 @@
 import { useBackend, useLocalState } from 'tgui/backend';
 import { Box, Button, Section, Stack, Tabs } from 'tgui/components';
 
-import { MedicalRecord, MedicalRecordData } from './types';
+import { MedicalRecord, MedicalRecordsData } from './types';
 
 /** Displays all found records. */
 export const MedicalRecordTabs = (props, context) => {
-  const { act, data } = useBackend<MedicalRecordData>(context);
+  const { act, data } = useBackend<MedicalRecordsData>(context);
   const { records = [] } = data;
 
   return (

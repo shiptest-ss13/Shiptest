@@ -1,6 +1,6 @@
 import { BooleanLike } from 'common/react';
 
-export type MedicalRecordData = {
+export type MedicalRecordsData = {
   assigned_view: string;
   authenticated: BooleanLike;
   library_name: string;

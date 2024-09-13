@@ -1,16 +1,16 @@
 import { useBackend, useLocalState } from 'tgui/backend';
 
-import { MedicalRecord } from './types';
+import { MedicalRecord, MedicalRecordsData } from './types';
 
 /** We need an active reference and this a pain to rewrite */
 export const getMedicalRecord = (props, context) => {
   const [selectedRecord, SetRecord] = useLocalState<MedicalRecord>(
     context,
     'medicalRecord',
-    ''
+    undefined
   );
   if (!selectedRecord) return;
-  const { data } = useBackend<MedicalRecord>(context);
+  const { data } = useBackend<MedicalRecordsData>(context);
   const { records = [] } = data;
   const foundRecord = records.find(
     (record) => record.record_ref === selectedRecord.record_ref

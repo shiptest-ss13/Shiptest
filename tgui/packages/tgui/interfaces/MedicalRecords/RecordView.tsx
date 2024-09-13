@@ -20,14 +20,14 @@ import {
 } from './constants';
 import { getMedicalRecord } from './helpers';
 import { NoteKeeper } from './NoteKeeper';
-import { MedicalRecordData } from './types';
+import { MedicalRecordsData } from './types';
 
 /** Views a selected record. */
 export const MedicalRecordView = (props, context) => {
   const foundRecord = getMedicalRecord(props, context);
   if (!foundRecord) return <NoticeBox>No record selected.</NoticeBox>;
 
-  const { act, data } = useBackend<MedicalRecordData>(context);
+  const { act, data } = useBackend<MedicalRecordsData>(context);
   const { physical_statuses, mental_statuses } = data;
 
   const { min_age, max_age } = data;
