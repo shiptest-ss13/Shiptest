@@ -11,7 +11,7 @@ export const MedicalRecords = (props, context) => {
   const { data } = useBackend<MedicalRecordData>(context);
   const { authenticated, library_name } = data;
 
-  const console_title = library_name + " Medical Records"
+  const console_title = library_name + " Medical Records";
 
   return (
     <Window title={console_title} width={750} height={550}>

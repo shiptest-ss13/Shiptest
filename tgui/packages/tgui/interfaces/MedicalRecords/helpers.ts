@@ -1,6 +1,6 @@
 import { useBackend, useLocalState } from 'tgui/backend';
 
-import { MedicalRecord, MedicalRecordData } from './types';
+import { MedicalRecord } from './types';
 
 /** We need an active reference and this a pain to rewrite */
 export const getMedicalRecord = (props, context) => {

@@ -10,7 +10,7 @@ export const SecurityRecords = (props, context) => {
   const { data } = useBackend<SecurityRecordsData>(context);
   const { authenticated, library_name } = data;
 
- const console_title = library_name + " Security Records"
+ const console_title = library_name + " Security Records";
 
   return (
     <Window title={console_title} width={750} height={550}>
