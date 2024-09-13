@@ -23,32 +23,95 @@
 /obj/machinery/door/window/brigdoor{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 26
+	},
 /turf/open/floor/plating,
 /area/space)
 "cd" = (
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/space)
-"dP" = (
-/obj/structure/cable{
-	icon_state = "2-5"
+"ci" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer2{
+	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"cC" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 24;
+	pixel_y = 2
+	},
+/turf/open/floor/plating,
+/area/space)
+"dO" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"dP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "dU" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/space)
-"eh" = (
 /obj/structure/cable{
-	icon_state = "1-10"
+	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"dX" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "big-steel-empty";
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"eh" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "ek" = (
 /obj/structure/cable{
@@ -57,6 +120,37 @@
 /turf/open/floor/plasteel/stairs/old{
 	dir = 4
 	},
+/area/space)
+"eR" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"eX" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/space)
+"gx" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"gF" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"hd" = (
+/obj/structure/sign/warning/longtermwaste{
+	pixel_y = -30
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "hm" = (
 /obj/machinery/power/deck_relay{
@@ -92,10 +186,49 @@
 /turf/closed/mineral/random/whitesands,
 /area/space)
 "kr" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/techfloor/hole{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"kM" = (
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"kN" = (
+/obj/effect/anomaly/tvstatic,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"lw" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"mh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"mo" = (
+/obj/structure/railing{
+	dir = 10;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "mV" = (
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -104,14 +237,35 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"ni" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
 "nq" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "nL" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor4-old"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "od" = (
 /obj/structure/cable{
@@ -119,26 +273,59 @@
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/space)
+"oh" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "big-steel-empty";
+	pixel_x = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
 "oR" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"oU" = (
+/obj/machinery/camera/cave_base{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "pp" = (
 /turf/open/water/acid/whitesands,
+/area/space)
+"pq" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"py" = (
+/obj/machinery/camera/cave_base{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "pV" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/closed/wall/concrete/reinforced,
+/obj/machinery/porta_turret,
+/obj/effect/turf_decal/box/red,
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "qK" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "qR" = (
 /obj/machinery/telecomms/relay{
@@ -165,20 +352,103 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"qZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plasteel/stairs/old{
+	dir = 1
+	},
 /area/space)
 "rx" = (
-/obj/effect/turf_decal/industrial/warning/corner,
-/turf/open/space/basic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"rK" = (
+/obj/machinery/camera/cave_base{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"rN" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"rQ" = (
+/obj/machinery/camera/cave_base,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"sr" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"sN" = (
+/obj/effect/turf_decal/floordetail/pryhole,
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"sO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"tX" = (
+/obj/item/pickaxe/mini,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "un" = (
-/obj/machinery/porta_turret/ship{
-	pixel_y = 14
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "ux" = (
 /turf/closed/wall/concrete,
+/area/space)
+"vb" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_x = -25;
+	pixel_y = -5
+	},
+/obj/machinery/camera/cave_base,
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "vr" = (
 /obj/structure/cable{
@@ -187,17 +457,27 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals9{
+/obj/item/grenade/c4/satchel_charge/cave_base,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 8;
+	pixel_x = 3
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central6{
 	dir = 8
 	},
-/obj/item/grenade/c4/satchel_charge/cave_base,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"wC" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/whitesands/grass,
 /area/space)
 "wD" = (
-/obj/machinery/computer/security/retro,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/computer/security/retro/cave_base,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "xr" = (
@@ -210,12 +490,52 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = -5;
+	pixel_x = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"xI" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"xL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/cave_base{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "xV" = (
 /obj/structure/table/greyscale,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
+	},
+/obj/item/clipboard{
+	pixel_y = 11;
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 5
+	},
+/obj/item/paper_bin{
+	pixel_y = -1;
+	pixel_x = -5
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"yA" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -238,7 +558,11 @@
 	pixel_y = 11;
 	pixel_x = 11
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -6;
+	pixel_y = 17
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "zs" = (
 /obj/structure/cable{
@@ -247,7 +571,25 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 9
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"zv" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = -10;
+	layer = 2.91
+	},
+/obj/structure/mirror{
+	pixel_y = 30
+	},
+/obj/structure/sink{
+	pixel_y = 18
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ak" = (
 /obj/structure/bed,
@@ -258,6 +600,17 @@
 /area/space)
 "AH" = (
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Bd" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"BZ" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Ca" = (
 /obj/structure/railing{
@@ -279,6 +632,35 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
+"Dv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"Eh" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Em" = (
+/obj/machinery/camera/cave_base{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Ev" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/asteroid/whitesands/grass,
+/area/space)
 "EL" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/dead,
 /area/space)
@@ -286,10 +668,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/floordetail/pryhole,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Ff" = (
 /turf/closed/mineral/random/whitesands,
+/area/space)
+"Fs" = (
+/obj/effect/turf_decal/techfloor/corner,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "FN" = (
 /obj/structure/cable{
@@ -298,10 +685,22 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "FQ" = (
 /turf/open/space/basic,
+/area/space)
+"Gd" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Gk" = (
 /obj/structure/cable{
@@ -315,11 +714,38 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
+"Hs" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"IG" = (
+/obj/machinery/door/airlock/hatch,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"JB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
 "Ka" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Kt" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6;
+	pixel_x = 3
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "KF" = (
 /obj/item/rack_parts{
@@ -342,12 +768,24 @@
 	dir = 8
 	},
 /obj/machinery/fax/ruin,
+/obj/item/desk_flag{
+	pixel_y = 12;
+	pixel_x = 11;
+	layer = 2.8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"LK" = (
-/obj/machinery/porta_turret/ship{
-	pixel_y = -6
+"Lz" = (
+/obj/structure/railing{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"LK" = (
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Me" = (
@@ -357,11 +795,35 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Mi" = (
-/obj/structure/cable{
-	icon_state = "2-9"
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/space/basic,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Mo" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"MP" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"NH" = (
+/obj/machinery/power/smes{
+	input_level = 20000;
+	output_level = 15000
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "OG" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full{
@@ -380,6 +842,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Pf" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Pv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
 "PS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -387,10 +861,48 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Qg" = (
+/obj/machinery/porta_turret,
+/obj/effect/turf_decal/box/red,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/closed/wall/concrete/reinforced,
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"QC" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Rt" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/floordetail/pryhole,
+/obj/effect/decal/cleanable/ash{
+	pixel_y = 12;
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -13;
+	pixel_y = 1
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Sk" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -404,13 +916,65 @@
 	pixel_x = 5;
 	density = 0
 	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -11;
+	pixel_y = 4
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -4;
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"SY" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Ut" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "big-steel-empty";
+	pixel_x = 10;
+	pixel_y = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Va" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Vc" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Wc" = (
+/obj/machinery/camera/cave_base{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Wf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "WR" = (
 /turf/open/floor/plating/asteroid/whitesands,
@@ -420,13 +984,48 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/space/basic,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"Xc" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "Xe" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "XG" = (
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Yy" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"YJ" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Zh" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "Zy" = (
 /obj/machinery/blackbox_recorder,
@@ -440,12 +1039,17 @@
 /area/space)
 "ZB" = (
 /obj/structure/cable{
-	icon_state = "6-9"
+	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	icon_state = "4-9"
+/obj/item/rack_parts{
+	pixel_y = -9;
+	pixel_x = -4
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 10;
+	pixel_x = -9
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "ZJ" = (
 /obj/structure/cable{
@@ -456,7 +1060,13 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 
 (1,1,1) = {"
@@ -593,7 +1203,7 @@ pp
 FQ
 FQ
 FQ
-FQ
+kM
 FQ
 FQ
 FQ
@@ -654,10 +1264,10 @@ pp
 pp
 FQ
 FQ
-FQ
-FQ
-FQ
-FQ
+kM
+kM
+kM
+kM
 FQ
 FQ
 FQ
@@ -717,9 +1327,9 @@ FQ
 FQ
 FQ
 Ff
-Xe
-Xe
-Ff
+kM
+kM
+kM
 FQ
 FQ
 FQ
@@ -779,8 +1389,8 @@ FQ
 FQ
 Ff
 Ff
-Xe
-Xe
+kM
+kM
 Ff
 FQ
 FQ
@@ -919,8 +1529,8 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Ff
+oU
+hw
 Ff
 Ff
 Xe
@@ -962,7 +1572,7 @@ FQ
 FQ
 FQ
 Ff
-Xe
+Hs
 Xe
 Xe
 Ff
@@ -976,7 +1586,7 @@ Ff
 Ff
 Ff
 Xe
-Xe
+Hs
 Xe
 Xe
 Xe
@@ -1053,8 +1663,8 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -1106,6 +1716,7 @@ Ff
 Ff
 Xe
 Xe
+Hs
 Xe
 Xe
 Xe
@@ -1113,13 +1724,12 @@ Xe
 Xe
 Xe
 Xe
+rK
+hw
+Ff
 Xe
 Xe
-Xe
-Xe
-Xe
-Xe
-Xe
+Hs
 Xe
 Xe
 Ff
@@ -1148,7 +1758,7 @@ Ff
 Ff
 Ff
 Xe
-Xe
+tX
 Xe
 Ff
 Ff
@@ -1163,7 +1773,7 @@ Xe
 Xe
 Xe
 Ff
-Xe
+pp
 Ff
 Ff
 Xe
@@ -1177,9 +1787,9 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
+Ff
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -1225,8 +1835,8 @@ Xe
 Xe
 Xe
 Ff
-Xe
-Xe
+pp
+pp
 Ff
 Xe
 Xe
@@ -1240,9 +1850,9 @@ Ff
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
+Ff
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -1271,29 +1881,11 @@ FQ
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
-Ff
-Ff
-Ff
-Ff
-Ff
-Ff
-Ff
-Xe
-Xe
+Hs
 Xe
 Xe
 Ff
 Ff
-Xe
-Xe
-Ff
-Xe
-Xe
-Xe
-Xe
 Ff
 Ff
 Ff
@@ -1303,8 +1895,26 @@ Xe
 Xe
 Xe
 Xe
+Ff
+Ff
+pp
+pp
+Ff
 Xe
 Xe
+Xe
+Xe
+Ff
+Ff
+Ff
+Ff
+Ff
+Xe
+Xe
+Xe
+Xe
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -1346,10 +1956,10 @@ Ff
 Xe
 Xe
 Xe
-Xe
+WR
 Ff
-Xe
-Xe
+pp
+pp
 Ff
 Ff
 Xe
@@ -1403,12 +2013,12 @@ Ff
 Ff
 Ff
 Ff
+Hs
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
+WR
+WR
 Ff
 Ff
 Ff
@@ -1426,7 +2036,7 @@ Ff
 Ff
 Xe
 Xe
-Xe
+Hs
 Xe
 Xe
 Xe
@@ -1470,8 +2080,8 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
+WR
+WR
 Ff
 Ff
 Ff
@@ -1479,7 +2089,7 @@ Xe
 Xe
 Xe
 Xe
-Xe
+Ff
 Ff
 Ff
 Xe
@@ -1532,16 +2142,16 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
-Xe
+WR
+WR
+WR
+WR
 Ff
 Xe
 Xe
 Xe
-Xe
-Xe
+Ff
+Ff
 Ff
 Ff
 Xe
@@ -1579,15 +2189,8 @@ FQ
 FQ
 Ff
 Ff
-Ff
-Xe
-Xe
-Xe
-Ff
-Ff
-Xe
-Xe
-Xe
+hw
+rQ
 Xe
 Xe
 Ff
@@ -1597,26 +2200,33 @@ Xe
 Xe
 Xe
 Xe
+Ff
+Ff
+Hs
+Xe
+Xe
+Xe
+WR
+WR
+Ff
+Xe
+Xe
+Xe
+Ff
+Ff
+Ff
+Ff
+Xe
+Xe
+Ff
+Ff
+Xe
 Xe
 Ff
 Xe
 Xe
 Xe
-Xe
-Xe
-Ff
-Ff
-Xe
-Xe
-Ff
-Ff
-Xe
-Xe
-Ff
-Xe
-Xe
-Xe
-Xe
+Em
 Xe
 Ff
 Xe
@@ -1643,7 +2253,7 @@ Ff
 Ff
 Ff
 Xe
-Xe
+Hs
 Ff
 Ff
 Ff
@@ -1662,23 +2272,23 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
+Hs
 Xe
 Ff
-Ff
-Xe
-Xe
-Ff
-Xe
-Xe
 Ff
 Ff
 Ff
 Xe
 Xe
 Ff
+Xe
+Xe
+Ff
+Ff
+Ff
+Xe
+Xe
+hw
 Xe
 Ff
 Xe
@@ -1692,8 +2302,8 @@ FQ
 FQ
 FQ
 FQ
-FQ
-FQ
+kM
+kM
 FQ
 FQ
 FQ
@@ -1726,8 +2336,8 @@ Ff
 Xe
 Xe
 Xe
-Xe
-Xe
+hw
+Ff
 Ff
 Ff
 Xe
@@ -1754,9 +2364,9 @@ FQ
 FQ
 FQ
 FQ
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 FQ
 FQ
@@ -1788,16 +2398,7 @@ Ff
 Ff
 Xe
 Xe
-Xe
-Xe
-Ff
-Ff
-Ff
-Xe
-Xe
-Xe
-Xe
-Xe
+Wc
 Ff
 Ff
 Ff
@@ -1807,6 +2408,15 @@ Xe
 Xe
 Xe
 Xe
+Ff
+Ff
+Ff
+Ff
+Xe
+Xe
+Xe
+Xe
+Xe
 Xe
 Ff
 Ff
@@ -1817,9 +2427,9 @@ Ff
 Ff
 Ff
 Ff
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 FQ
 "}
@@ -1835,9 +2445,9 @@ Ff
 Xe
 Ff
 Xe
-Xe
-Xe
-Xe
+Fs
+SY
+Mi
 Xe
 pp
 pp
@@ -1851,20 +2461,11 @@ Ff
 Xe
 Xe
 Xe
-Xe
 Ff
 Ff
 Ff
 Ff
-Xe
-Xe
 Ff
-Xe
-Ff
-Ff
-Ff
-Xe
-Xe
 Xe
 Xe
 Ff
@@ -1872,6 +2473,15 @@ Xe
 Ff
 Ff
 Ff
+Xe
+Xe
+Xe
+Xe
+Ff
+Xe
+Ff
+Ff
+Ff
 Ff
 Ff
 Ff
@@ -1879,9 +2489,9 @@ Ff
 Ff
 Ff
 Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 FQ
 "}
@@ -1894,7 +2504,7 @@ Ff
 Ff
 Ff
 Xe
-Xe
+Pf
 Xe
 Xe
 LK
@@ -1942,8 +2552,8 @@ Ff
 Xe
 Xe
 Xe
-FQ
-FQ
+kM
+kM
 FQ
 FQ
 "}
@@ -1955,22 +2565,16 @@ Ff
 Ff
 Xe
 Ff
-Xe
+dO
 Xa
+Xc
 Xe
-Xe
-Xe
-CB
-Xe
+Bd
+JB
+YJ
 Xe
 Xe
 Ff
-Ff
-Ff
-Xe
-Xe
-Xe
-Xe
 Ff
 Ff
 Xe
@@ -1979,6 +2583,12 @@ Xe
 Xe
 Ff
 Ff
+Xe
+Xe
+Xe
+Xe
+Ff
+Ff
 Ff
 Ff
 Ff
@@ -2004,9 +2614,9 @@ Xe
 Xe
 Xe
 Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (26,1,1) = {"
@@ -2066,9 +2676,9 @@ Xe
 Xe
 Xe
 Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (27,1,1) = {"
@@ -2082,7 +2692,7 @@ Gk
 it
 Xe
 Xe
-Xe
+Em
 Xe
 Ff
 Xe
@@ -2128,9 +2738,9 @@ Xe
 Xe
 Xe
 Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (28,1,1) = {"
@@ -2147,7 +2757,7 @@ Ff
 hw
 Ff
 Ff
-Xe
+nL
 Xe
 Xe
 Xe
@@ -2179,6 +2789,7 @@ Xe
 Xe
 Xe
 Xe
+Hs
 Xe
 Xe
 Xe
@@ -2189,10 +2800,9 @@ Xe
 Xe
 Xe
 Xe
-Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (29,1,1) = {"
@@ -2205,6 +2815,13 @@ Xe
 CB
 Ff
 Ff
+hw
+hw
+hw
+hw
+Ff
+Xe
+Xe
 Ff
 Ff
 Ff
@@ -2212,13 +2829,6 @@ Ff
 Ff
 Xe
 Xe
-Ff
-Ff
-Ff
-Ff
-Ff
-Xe
-Xe
 Xe
 Xe
 Ff
@@ -2229,6 +2839,14 @@ Xe
 Xe
 Xe
 Xe
+xI
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
+Hs
 Xe
 Xe
 Xe
@@ -2244,17 +2862,9 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (30,1,1) = {"
@@ -2264,7 +2874,12 @@ Ff
 Ff
 Ff
 Xe
-CB
+xL
+hw
+Ff
+hw
+NH
+ZB
 hw
 Ff
 Ff
@@ -2275,11 +2890,6 @@ Ff
 Ff
 Ff
 Ff
-Ff
-Ff
-Ff
-Ff
-Ff
 Xe
 Xe
 Xe
@@ -2314,9 +2924,9 @@ Xe
 Xe
 Xe
 Ff
-FQ
-FQ
-FQ
+kM
+kM
+kM
 FQ
 "}
 (31,1,1) = {"
@@ -2327,11 +2937,11 @@ Ff
 Ff
 Xe
 CB
-Xe
 Ff
 Ff
-Ff
-Ff
+hw
+cC
+Rt
 hw
 hw
 hw
@@ -2357,27 +2967,27 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Xe
-Xe
-Xe
-Ff
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
+xI
 Xe
 Xe
 Xe
 Ff
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
+Hs
+Xe
+Xe
 Ff
 Ff
-FQ
+Ff
+kM
 FQ
 FQ
 "}
@@ -2390,18 +3000,18 @@ Ff
 Xe
 GH
 Xe
-Ff
 hw
 hw
 hw
+QC
 hw
 OG
 oR
-oR
+yA
 bF
 hw
-XG
-XG
+zv
+sN
 hw
 Ff
 Ff
@@ -2416,7 +3026,7 @@ Xe
 Xe
 Xe
 Xe
-Xe
+Em
 Xe
 Xe
 Xe
@@ -2451,8 +3061,8 @@ Ff
 Ff
 Xe
 Xe
-ZB
-rx
+lw
+Ff
 hw
 qK
 dP
@@ -2478,22 +3088,22 @@ Xe
 Xe
 Xe
 Xe
-Ff
+hw
 Ff
 Ff
 Xe
-Xe
-Ff
-Ff
-Ff
-Ff
 Xe
 Ff
 Ff
 Ff
 Ff
+Xe
 Ff
 Ff
+hw
+rQ
+Xe
+Xe
 Ff
 Ff
 Ff
@@ -2514,8 +3124,8 @@ Ff
 Ff
 Xe
 CB
-Mi
-kr
+Ff
+hw
 eh
 dU
 hw
@@ -2523,7 +3133,7 @@ Sk
 zr
 qY
 Me
-nq
+IG
 XG
 XG
 XG
@@ -2551,8 +3161,8 @@ Ff
 Ff
 Ff
 Ff
-Xe
-Xe
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -2576,10 +3186,10 @@ Ff
 Xe
 Xe
 CB
-nL
+Ff
 hw
-hw
-hw
+eX
+rx
 hw
 KG
 xV
@@ -2587,14 +3197,14 @@ FN
 aO
 hw
 XG
-XG
+Mo
 Ak
 hw
 Ff
-Xe
-Xe
-Xe
-Xe
+pp
+pp
+pp
+pp
 Ff
 Ff
 Xe
@@ -2611,9 +3221,9 @@ Xe
 Xe
 Ff
 Ff
-Xe
-Xe
-Xe
+Ff
+Ff
+Ff
 Xe
 Xe
 Xe
@@ -2638,25 +3248,25 @@ Xe
 Xe
 Xe
 CB
-FQ
 Ff
-Ff
-Ff
+hw
+vb
+Dv
 hw
 hw
 hm
 zj
 ek
 hw
-XG
+hw
 hw
 hw
 hw
 Ff
-Xe
-Xe
-Xe
-Xe
+pp
+pp
+pp
+pp
 Ff
 Xe
 Xe
@@ -2700,23 +3310,23 @@ Xe
 Xe
 Xe
 CB
-Ff
-Ff
-Ff
-Ff
-Ff
+ci
+hw
+Lz
+Yy
+Kt
 od
 hw
 hw
 Va
 hw
-hw
-hw
 Ff
 Ff
 Ff
-Xe
-Xe
+Ff
+Ff
+pp
+pp
 Xe
 Xe
 Xe
@@ -2761,12 +3371,12 @@ Ff
 Ff
 Ff
 Xe
-CB
-Xe
-Xe
-Ff
-Ff
-Ff
+MP
+sO
+Eh
+qZ
+ni
+hd
 hw
 Ca
 KF
@@ -2776,9 +3386,9 @@ Ff
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
+pp
+pp
+pp
 Xe
 Xe
 Xe
@@ -2791,12 +3401,12 @@ Ff
 Ff
 Ff
 Xe
+rN
 Xe
+Ff
+Ff
+Ff
 Xe
-Ff
-Ff
-Ff
-Ff
 Xe
 Xe
 Ff
@@ -2823,12 +3433,12 @@ Xe
 Ff
 Ff
 Ff
-CB
+mh
 Xe
-Xe
-Ff
-Ff
-Ff
+Bd
+mo
+Pv
+Wf
 hw
 wD
 AH
@@ -2837,10 +3447,10 @@ hw
 Ff
 Ff
 Ff
-Xe
-Xe
+pp
+pp
 Ff
-Xe
+pp
 Xe
 Xe
 Xe
@@ -2886,11 +3496,11 @@ Ff
 Ff
 Ff
 CB
+eR
 Xe
-Xe
-Xe
-Ff
-Ff
+BZ
+sr
+Zh
 hw
 qR
 bX
@@ -2899,7 +3509,7 @@ hw
 Ff
 Ff
 Ff
-Xe
+pp
 Ff
 Ff
 Ff
@@ -2914,11 +3524,11 @@ Ff
 Ff
 Ff
 Xe
-Xe
+Hs
 Xe
 Ff
 Ff
-Xe
+Ut
 Xe
 Xe
 Xe
@@ -2949,11 +3559,11 @@ Xe
 Ff
 CB
 Xe
-Xe
-Xe
-Ff
-Ff
-Ff
+eR
+Vc
+hw
+hw
+hw
 hw
 hw
 hw
@@ -3012,8 +3622,9 @@ Ff
 CB
 Xe
 Xe
+eR
 Xe
-Xe
+hw
 Ff
 Ff
 Ff
@@ -3021,30 +3632,29 @@ Ff
 Ff
 Ff
 Ff
-Ff
-Ff
-Ff
-Ff
-Xe
 Ff
 Ff
 Ff
 Xe
-Xe
-Xe
-Xe
+Ff
 Ff
 Ff
 Xe
 Xe
 Xe
 Xe
-Xe
+Ff
 Ff
 Xe
 Xe
 Xe
 Xe
+Xe
+Ff
+Xe
+Xe
+Xe
+dX
 Xe
 Ff
 Xe
@@ -3075,29 +3685,12 @@ CB
 Xe
 Xe
 Xe
-Xe
-Xe
-Ff
-Ff
-Ff
-Ff
-Xe
+eR
 Xe
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
 Ff
-Ff
-Xe
-Xe
-Xe
-Xe
-Xe
-Ff
-Xe
 Xe
 Xe
 Ff
@@ -3106,6 +3699,23 @@ Ff
 Xe
 Xe
 Xe
+Ff
+hw
+py
+Xe
+Xe
+Xe
+Xe
+Ff
+Xe
+Xe
+Xe
+Ff
+Ff
+Ff
+Xe
+Xe
+oh
 Xe
 Xe
 Ff
@@ -3138,28 +3748,28 @@ Xe
 Xe
 Xe
 Xe
-Xe
-Ff
-Ff
-Ff
-Ff
-Xe
-Xe
-Xe
-Ff
-Ff
-Xe
-Xe
+lw
+hw
 Ff
 Ff
 Ff
 Xe
 Xe
 Xe
-Xe
 Ff
 Ff
 Xe
+Xe
+Ff
+Ff
+hw
+Xe
+Xe
+Xe
+Xe
+Ff
+Ff
+rN
 Xe
 Ff
 Ff
@@ -3194,16 +3804,16 @@ Ff
 Ff
 Ff
 Xe
-Xe
-CB
-Xe
-Xe
-Ff
-Xe
-Xe
-Xe
+Fs
+gx
+Mi
 Xe
 Ff
+Xe
+GH
+Xe
+Xe
+hw
 Ff
 Ff
 Xe
@@ -3254,27 +3864,27 @@ FQ
 Ff
 Ff
 Ff
-Ff
-Xe
+hw
+py
 LK
 Qg
 un
 Xe
 Ff
+hw
+py
+eR
+Xe
+Xe
+Ff
+hw
+Xe
+Xe
 Ff
 Xe
 Xe
 Xe
 Xe
-Ff
-Ff
-Xe
-Xe
-Ff
-Xe
-Xe
-Xe
-Xe
 Xe
 Xe
 Xe
@@ -3290,8 +3900,8 @@ Ff
 Ff
 Ff
 Xe
-Xe
-Xe
+EL
+EL
 Ff
 Ff
 Xe
@@ -3318,7 +3928,16 @@ Ff
 Ff
 Ff
 Xe
+Bd
+pq
+YJ
 Xe
+Ff
+Ff
+Xe
+Fs
+Gd
+Mi
 Xe
 Xe
 Xe
@@ -3331,29 +3950,20 @@ Xe
 Xe
 Xe
 Xe
-Ff
-Ff
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
 Xe
 Ff
 Ff
 Ff
 Xe
-Xe
+gF
 Xe
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
-Xe
+EL
+EL
+EL
+EL
 Ff
 Ff
 Ff
@@ -3387,14 +3997,9 @@ Xe
 Ff
 Ff
 Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Ff
-Xe
+LK
+Qg
+un
 Xe
 Xe
 Xe
@@ -3402,10 +4007,8 @@ Ff
 Xe
 Xe
 Xe
-Ff
-Ff
-Ff
 Xe
+Ff
 Xe
 Xe
 Xe
@@ -3416,6 +4019,13 @@ Xe
 Xe
 Xe
 Xe
+Ff
+Ff
+Ff
+EL
+EL
+EL
+EL
 Ff
 Ff
 Ff
@@ -3449,15 +4059,19 @@ Xe
 Ff
 Ff
 Xe
+Bd
+pq
+YJ
 Xe
 Xe
 Xe
 Xe
 Xe
+nL
 Xe
 Xe
-Xe
-Xe
+Ff
+Ff
 Xe
 Xe
 Ff
@@ -3465,19 +4079,15 @@ Ff
 Xe
 Xe
 Xe
-Ff
 Xe
-Xe
-Xe
-Xe
-Xe
+gF
+EL
 Ff
 Ff
-Ff
-Xe
-Xe
-Xe
-Xe
+EL
+cd
+cd
+EL
 Ff
 Ff
 Ff
@@ -3509,37 +4119,37 @@ Ff
 Xe
 Xe
 Ff
-Ff
+hw
 Xe
 Xe
 Xe
 Xe
 Xe
-Ff
-Ff
-Ff
-Xe
-Xe
-Xe
-Ff
+hw
 Ff
 Ff
 Xe
 Xe
 Xe
 Ff
+Ff
+Ff
+Xe
+Ff
+Ff
+Ff
+Xe
+kN
 Xe
 Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
+EL
+EL
+EL
+cd
+cd
+cd
+cd
+cd
 Ff
 Ff
 Ff
@@ -3581,6 +4191,11 @@ Ff
 Ff
 Xe
 Xe
+oU
+hw
+Ff
+Ff
+Xe
 Xe
 Ff
 Ff
@@ -3588,20 +4203,15 @@ Ff
 Xe
 Xe
 Xe
-Xe
-Ff
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
+EL
+EL
+EL
+cd
+Ev
+cd
+wC
+cd
+cd
 Ff
 Ff
 Ff
@@ -3655,15 +4265,15 @@ Ff
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
-Xe
+EL
+EL
+cd
+cd
+cd
+cd
+cd
+cd
+cd
 Ff
 Ff
 Ff
@@ -3718,11 +4328,11 @@ Ff
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
-Xe
-Xe
+cd
+cd
+cd
+cd
+cd
 Ff
 Ff
 Ff
@@ -3780,10 +4390,10 @@ Ff
 Ff
 Ff
 Ff
-Xe
-Xe
-Xe
-Xe
+cd
+cd
+wC
+cd
 Ff
 Ff
 Ff
@@ -3844,7 +4454,7 @@ Ff
 Ff
 Ff
 Ff
-Xe
+cd
 Ff
 Ff
 Ff

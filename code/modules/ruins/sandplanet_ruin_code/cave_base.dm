@@ -13,6 +13,12 @@
 	mode = 1
 	recorded = "Goodbye~"
 
+/obj/machinery/camera/cave_base
+	network = list("ForwardPost")
+
+/obj/machinery/computer/security/retro/cave_base
+	network = list("ForwardPost")
+
 //gut wrenching content
 
 /datum/preset_holoimage/hapless_ipc
