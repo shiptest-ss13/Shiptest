@@ -679,6 +679,69 @@ SUBSYSTEM_DEF(overmap)
 
 	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
+/**
+ * Reserves a square dynamic encounter area then loads a map.
+ * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
+ * * ruin_type - The type of ruin to spawn, or null if none should be placed.
+ */
+/datum/overmap_star_system/proc/spawn_static_encounter(datum/overmap/static_object/static_datum, map)
+	log_shuttle("SSOVERMAP: SPAWNING STATIC ENCOUNTER STARTED")
+	if(!static_datum)
+		CRASH("spawn_static_encounter called without any datum to spawn!")
+	if(!static_datum.default_baseturf)
+		CRASH("spawn_static_encounter called with overmap datum [REF(static_datum)], which lacks a default_baseturf!")
+	if(!map)
+		CRASH("spawn_static_encounter called with overmap datum [REF(static_datum)], which lacks any map_to_load!")
+
+	var/use_mapgen = FALSE
+	if(static_datum.mapgen)
+		use_mapgen = TRUE
+	var/datum/map_template/map_to_load = ispath(map) ? (new map) : map
+
+	// name is random but PROBABLY unique
+	var/encounter_name = static_datum.planet_name || "\improper Uncharted Space [static_datum.x]/[static_datum.y]-[rand(1111, 9999)]"
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+		encounter_name,
+		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
+		mapzone,
+		map_to_load.width,
+		map_to_load.height,
+		ALLOCATION_QUADRANT,
+		static_datum.border_size
+	)
+
+	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+
+	var/datum/map_generator/mapgen
+
+	//if we even use mapgen, do mapgen things, otherwise just load the god damn map
+	if(use_mapgen)
+		mapgen = new static_datum.mapgen
+		// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
+		log_shuttle("SSOVERMAP: START_STATIC_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
+		mapgen.generate_turfs(vlevel.get_unreserved_block())
+
+	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y)
+	map_to_load.load(spawn_turf)
+
+	if(use_mapgen)
+		mapgen.populate_turfs(vlevel.get_unreserved_block())
+
+	if(static_datum.weather_controller_type)
+		new static_datum.weather_controller_type(mapzone)
+
+	var/list/docking_ports = list()
+	var/turf/turf_lower = locate(vlevel.low_x,vlevel.low_y)
+	var/turf/turf_higher = locate(vlevel.high_x,vlevel.high_y)
+	for(var/obj/docking_port/stationary/dock as obj in block(turf_lower,turf_higher))
+		if(!istype(dock))
+			continue
+		docking_ports += dock
+
+	return list(mapzone, docking_ports)
+
+
 /datum/overmap_star_system/proc/overmap_container_view(user = usr) //this is broken rn, idfk know html viewers works
 	if(!overmap_container)
 		return

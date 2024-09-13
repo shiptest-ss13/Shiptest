@@ -36,20 +36,24 @@
 	if(copytext("[map]", -4) != ".dmm")//4 == length(".dmm")
 		to_chat(src, "<span class='warning'>Filename must end in '.dmm': [map]</span>", confidential = TRUE)
 		return
-	var/datum/map_template/M
-	var/template_type = alert(src, "What kind of map is this?", "Map type", "Normal", "Shuttle", "Cancel")
+	var/datum/map_template/new_map
+	var/template_type = input(src, "What kind of map is this?", "Map type", list("Normal", "Norm. & Mark", "Shuttle", "Static Overmap Obj.", "Cancel"))
 	switch(template_type)
 		if("Normal")
-			M = new /datum/map_template(map, "[map]", TRUE)
+			new_map = new /datum/map_template(map, "[map]", TRUE)
+		if("Norm. & Mark")
+			new_map = new /datum/map_template(map, "[map]", TRUE)
+		if("Static Overmap Obj.")
+			new_map = new /datum/map_template(map, "[map]", TRUE)
 		if("Shuttle")
-			M = new /datum/map_template/shuttle(map, "[map]", TRUE)
+			new_map = new /datum/map_template/shuttle(map, "[map]", TRUE)
 		else
 			return
-	if(!M.cached_map)
+	if(!new_map.cached_map)
 		to_chat(src, "<span class='warning'>Map template '[map]' failed to parse properly.</span>", confidential = TRUE)
 		return
 
-	var/datum/map_report/report = M.cached_map.check_for_errors()
+	var/datum/map_report/report = new_map.cached_map.check_for_errors()
 	var/report_link
 	if(report)
 		report.show_to(src)
@@ -63,12 +67,45 @@
 			alert(src, "The map failed validation and cannot be loaded.", "Map Errors", "Oh Darn")
 			return
 
-	SSmapping.map_templates[map] = M
+	SSmapping.map_templates[map] = new_map
 	if(template_type == "Shuttle")
-		var/datum/map_template/shuttle/shuttle_template = M
+		var/datum/map_template/shuttle/shuttle_template = new_map
 		shuttle_template.file_name = "[map]"
 		shuttle_template.category = "uploaded"
 		SSmapping.shuttle_templates["[map]"] = shuttle_template
 		shuttle_template.ui_interact(usr)
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link].</span>")
-	to_chat(src, "<span class='notice'>Map template '[map]' ready to place ([M.width]x[M.height])</span>", confidential = TRUE)
+	message_admins("<span class='adminnotice'>[key_name_admin(src)] has uploaded a map template '[map]' ([new_map.width]x[new_map.height])[report_link].</span>")
+	to_chat(src, "<span class='notice'>Map template '[map]' ready to place ([new_map.width]x[new_map.height])</span>", confidential = TRUE)
+
+	if(template_type == "Norm. & Mark")
+		mark_datum(new_map)
+		to_chat(src, "<span class='notice'>Map template '[map]' ready to place and marked.</span>", confidential = TRUE)
+
+	if(template_type == "Static Overmap Obj.")
+		var/location
+		var/list/choices = list("Random Overmap Square", "Specific Overmap Square")
+		var/choice = input("Select a location for the outpost.", "Outpost Location") as null|anything in choices
+		switch(choice)
+			if(null)
+				return
+			if("Random Overmap Square")
+				location = null
+			if("Specific Overmap Square")
+				var/loc_x = input(usr, "X overmap coordinate:") as num
+				var/loc_y = input(usr, "Y overmap coordinate:") as num
+				location = list("x" = loc_x, "y" = loc_y)
+
+		var/datum/overmap_star_system/selected_system //the star system we are
+		if(length(SSovermap.tracked_star_systems) > 1)
+			selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+		else
+			selected_system = SSovermap.tracked_star_systems[1]
+		if(!selected_system)
+			return //if selected_system didnt get selected, we nope out, this is very bad
+
+		var/datum/overmap/static_object/created = new /datum/overmap/static_object/admin_loaded(location, selected_system)
+		created.map_to_load = map
+
+		message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(created.token)))
+
+		to_chat(src, "<span class='notice'>Map template '[map]' ready to loaded with load_level().</span>", confidential = TRUE)
