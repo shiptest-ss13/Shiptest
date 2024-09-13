@@ -69,9 +69,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "co" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/obj/item/seeds/nettle,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "cp" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -80,6 +80,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/jungle/abandonedgarden/hydroponics)
+"cw" = (
+/obj/effect/decal/cleanable/garbage,
+/obj/item/trash/cheesie{
+	pixel_x = 10;
+	pixel_y = 13
+	},
+/turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "cT" = (
 /obj/effect/decal/fakelattice,
@@ -129,12 +137,8 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "fh" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/barricade/wooden/crude{
-	layer = 3.2
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "fj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
@@ -197,13 +201,10 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "iv" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/barricade/wooden/crude{
-	layer = 3.2
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/obj/effect/decal/fakelattice,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "iA" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -251,9 +252,10 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "jZ" = (
-/obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/abandonedgarden/hydroponics)
+/obj/structure/table_frame,
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/jungle/abandonedgarden/cockpit)
 "kh" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/abandonedgarden/dormitories)
@@ -272,9 +274,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "lH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/wood,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "lM" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
@@ -287,10 +289,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
-"mw" = (
-/obj/item/seeds/glowshroom,
+"mr" = (
+/obj/structure/spacevine/dense,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/area/ruin/jungle/abandonedgarden/hydroponics)
+"mw" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "mC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -329,14 +334,16 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "qg" = (
-/obj/machinery/door/airlock/shuttle{
-	welded = 1
-	},
 /obj/structure/barricade/wooden/crude{
 	layer = 3.2
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/door/airlock/public{
+	dir = 4
+	},
 /turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/area/ruin/jungle/abandonedgarden/kitchen)
 "ql" = (
 /turf/open/floor/plating/grass/jungle{
 	light_range = 2
@@ -367,6 +374,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/cockpit)
+"rZ" = (
+/obj/structure/spacevine/dense,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/jungle/abandonedgarden/cockpit)
 "sv" = (
 /obj/item/seeds/plump,
 /turf/open/floor/plating/rust,
@@ -388,11 +399,10 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/dormitories)
 "th" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
-/turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "ti" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt/jungle,
@@ -402,12 +412,11 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "ua" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/extinguisher_cabinet/directional/west,
-/obj/structure/spacevine,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/obj/machinery/door/airlock/public{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/jungle/abandonedgarden/kitchen)
 "up" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
 /obj/effect/turf_decal/weather/dirt{
@@ -449,13 +458,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "vS" = (
-/obj/effect/decal/cleanable/garbage,
-/obj/item/trash/cheesie{
-	pixel_x = 10;
-	pixel_y = 13
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/dormitories)
+/obj/structure/spacevine,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "vX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase,
@@ -511,13 +516,8 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "yv" = (
-/obj/structure/salvageable/computer{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "yx" = (
 /obj/structure/railing,
 /turf/open/floor/plating,
@@ -533,6 +533,10 @@
 /obj/item/seeds/starthistle,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
+"zh" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "zo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -623,14 +627,9 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Cj" = (
-/obj/structure/barricade/wooden/crude{
-	layer = 3.2
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/door/airlock/public{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/shard,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Cr" = (
@@ -765,6 +764,11 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
+"Ia" = (
+/obj/effect/decal/fakelattice,
+/obj/structure/spacevine,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Ix" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/kitchen)
@@ -772,7 +776,7 @@
 /obj/structure/salvageable/computer{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "IY" = (
@@ -780,18 +784,19 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Jt" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/abandonedgarden/hydroponics)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/seeded,
+/turf/open/floor/plating,
+/area/ruin/jungle/abandonedgarden/cockpit)
 "Jw" = (
 /obj/structure/flora/junglebush,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Jz" = (
-/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "JB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fermenting_barrel,
@@ -872,6 +877,9 @@
 "Ln" = (
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/abandonedgarden/cockpit)
+"Mm" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Mw" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
@@ -895,7 +903,10 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "NL" = (
-/turf/open/floor/mineral/titanium/blue,
+/obj/structure/table_frame,
+/obj/item/seeds/glowshroom,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Oh" = (
 /obj/structure/railing/corner,
@@ -935,6 +946,10 @@
 	light_range = 2
 	},
 /area/ruin/jungle/abandonedgarden/hydroponics)
+"OL" = (
+/obj/structure/flora/junglebush/b,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "OM" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/abandonedgarden/cockpit)
@@ -960,8 +975,10 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "Qs" = (
-/obj/item/seeds/nettle,
-/turf/open/floor/plating/dirt/jungle/lit,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "QB" = (
 /obj/structure/railing/wood{
@@ -992,6 +1009,12 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/kitchen)
+"Rf" = (
+/obj/structure/door_assembly/door_assembly_public{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Rl" = (
 /obj/structure/closet/cabinet,
 /obj/item/shield/riot/buckler{
@@ -1032,8 +1055,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/abandonedgarden/kitchen)
+"Sz" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "To" = (
-/turf/open/floor/plating/rust,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.2
+	},
+/turf/open/space/basic,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Tr" = (
 /obj/effect/decal/fakelattice,
@@ -1065,15 +1097,19 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Uj" = (
-/obj/effect/decal/fakelattice,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/spacevine,
+/turf/open/space/basic,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Ur" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plating/grass/jungle{
 	light_range = 2
 	},
+/area/ruin/jungle/abandonedgarden/hydroponics)
+"UE" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/space/basic,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "UQ" = (
 /obj/effect/decal/fakelattice,
@@ -1125,15 +1161,12 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "WZ" = (
-/obj/structure/flora/grass/jungle/b,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Xe" = (
-/obj/machinery/door/airlock/public{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium/white,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plating,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "Xk" = (
 /obj/item/clothing/shoes/sandal{
@@ -1143,9 +1176,8 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/abandonedgarden/hydroponics)
 "Xq" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/abandonedgarden/cockpit)
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/jungle/abandonedgarden/hydroponics)
 "Xr" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle{
@@ -1204,9 +1236,10 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/abandonedgarden/kitchen)
 "ZS" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/turf/open/floor/plating,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/abandonedgarden/cockpit)
 "ZW" = (
 /obj/item/flashlight/flare/torch,
@@ -1217,15 +1250,15 @@
 (1,1,1) = {"
 Fj
 Fj
-Ub
-TO
-Ub
-VO
-lM
-GH
-Yw
-Eb
-Eb
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
 Fj
 Fj
 Fj
@@ -1238,15 +1271,81 @@ Fj
 "}
 (2,1,1) = {"
 Fj
+Fj
+Fj
+eI
+eI
+eI
+eI
+eI
+eI
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(3,1,1) = {"
+Fj
+Fj
+Ub
+eI
+OM
+ib
+ib
+OM
+Ub
+eI
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(4,1,1) = {"
+Fj
 Ub
 Ub
+TO
+ib
+IE
+IE
+To
+Yw
+Eb
+Eb
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(5,1,1) = {"
+Fj
+Ub
+eI
 Kn
-Ub
-GH
-Jt
-Jt
-WZ
-Ub
+To
+Cj
+ZS
+To
+Eb
+eI
 Ub
 Kn
 Fj
@@ -1258,17 +1357,17 @@ Fj
 Fj
 Fj
 "}
-(3,1,1) = {"
+(6,1,1) = {"
 GH
+Ub
 Ub
 OM
 OM
-fh
-iv
-iv
-iv
+Xe
+gy
 OM
-ib
+OM
+Ub
 Lb
 Ub
 TO
@@ -1280,18 +1379,18 @@ Fj
 Fj
 Fj
 "}
-(4,1,1) = {"
+(7,1,1) = {"
 iA
-OM
-OM
-mw
-Uj
-IE
-yv
-gy
-ua
-lH
-ib
+eI
+eI
+XU
+NL
+Ap
+Ln
+Jt
+XU
+GH
+Ub
 rs
 Ub
 or
@@ -1302,18 +1401,18 @@ Fj
 Fj
 Fj
 "}
-(5,1,1) = {"
+(8,1,1) = {"
 eI
-qg
-Xq
-NL
-Ap
-Ln
-ZS
-To
+GH
+GH
+XU
+rS
 Wg
-Jz
-ib
+Ap
+jZ
+rZ
+iA
+Ub
 Lb
 kV
 cr
@@ -1324,18 +1423,18 @@ Fj
 Fj
 Fj
 "}
-(6,1,1) = {"
+(9,1,1) = {"
 db
+Ub
+Ub
+Za
+WT
+ua
 qg
-rS
-OM
-ib
-Xe
-Cj
-OM
-OM
-th
-lH
+Za
+Za
+Ub
+Ub
 Et
 rs
 IY
@@ -1346,18 +1445,18 @@ Fj
 Fj
 Fj
 "}
-(7,1,1) = {"
+(10,1,1) = {"
 eI
-OM
-OM
-co
+eI
+Za
+Sg
 iM
 Km
 Mw
 Nb
-OM
-OM
-XU
+Za
+Za
+Sz
 Ug
 GH
 Ub
@@ -1368,7 +1467,7 @@ Fj
 Fj
 Fj
 "}
-(8,1,1) = {"
+(11,1,1) = {"
 Zb
 eI
 Za
@@ -1390,7 +1489,7 @@ ju
 Fj
 Fj
 "}
-(9,1,1) = {"
+(12,1,1) = {"
 iA
 eI
 af
@@ -1412,7 +1511,7 @@ Ub
 Ub
 Fj
 "}
-(10,1,1) = {"
+(13,1,1) = {"
 Kn
 zZ
 Fe
@@ -1434,7 +1533,7 @@ gU
 iV
 Ub
 "}
-(11,1,1) = {"
+(14,1,1) = {"
 Ub
 db
 Za
@@ -1456,7 +1555,7 @@ gb
 ya
 ju
 "}
-(12,1,1) = {"
+(15,1,1) = {"
 aZ
 UQ
 WT
@@ -1478,7 +1577,7 @@ dX
 ya
 TO
 "}
-(13,1,1) = {"
+(16,1,1) = {"
 Eb
 Ub
 WT
@@ -1500,7 +1599,7 @@ dX
 ze
 Eb
 "}
-(14,1,1) = {"
+(17,1,1) = {"
 Ub
 Ub
 WT
@@ -1522,7 +1621,7 @@ dX
 ya
 Ub
 "}
-(15,1,1) = {"
+(18,1,1) = {"
 IY
 Jw
 BV
@@ -1544,7 +1643,7 @@ dX
 iK
 Ub
 "}
-(16,1,1) = {"
+(19,1,1) = {"
 TQ
 iA
 Za
@@ -1566,7 +1665,7 @@ db
 ya
 or
 "}
-(17,1,1) = {"
+(20,1,1) = {"
 zZ
 eI
 Za
@@ -1588,7 +1687,7 @@ dX
 gG
 or
 "}
-(18,1,1) = {"
+(21,1,1) = {"
 VO
 iA
 PP
@@ -1610,7 +1709,7 @@ dX
 ya
 Ub
 "}
-(19,1,1) = {"
+(22,1,1) = {"
 zo
 Sc
 kh
@@ -1632,7 +1731,7 @@ Yx
 ya
 Kn
 "}
-(20,1,1) = {"
+(23,1,1) = {"
 iA
 CY
 as
@@ -1654,7 +1753,7 @@ dX
 ya
 Ub
 "}
-(21,1,1) = {"
+(24,1,1) = {"
 iA
 BC
 FT
@@ -1676,7 +1775,7 @@ Gh
 gG
 Ub
 "}
-(22,1,1) = {"
+(25,1,1) = {"
 Ub
 ol
 kh
@@ -1698,17 +1797,17 @@ mg
 RV
 Yw
 "}
-(23,1,1) = {"
+(26,1,1) = {"
 Ub
 eI
-kh
-vS
+mw
+cw
 ED
 eI
-ii
+yv
 RT
 eI
-ii
+yv
 Ub
 eI
 Ub
@@ -1720,10 +1819,10 @@ Pu
 eI
 Ub
 "}
-(24,1,1) = {"
+(27,1,1) = {"
 Yw
 eI
-ii
+yv
 HS
 cp
 eI
@@ -1742,17 +1841,17 @@ Ub
 eI
 Fj
 "}
-(25,1,1) = {"
+(28,1,1) = {"
 Ub
 Ce
 eI
 eI
-Qs
+eI
 eI
 Cr
 eI
 eI
-jZ
+OL
 eI
 Ub
 IY
@@ -1764,17 +1863,17 @@ TO
 Fj
 Fj
 "}
-(26,1,1) = {"
+(29,1,1) = {"
 Ub
 eI
-eI
+iA
 db
-eI
+cT
 eI
 eI
 eI
 cT
-eI
+mw
 ql
 uR
 Kn
@@ -1786,16 +1885,16 @@ Fj
 Fj
 Fj
 "}
-(27,1,1) = {"
+(30,1,1) = {"
 Kn
 Ub
-RT
+vS
+fh
 eI
-Cr
-db
-jZ
-db
 eI
+eI
+eI
+fh
 db
 Ub
 Eb
@@ -1808,17 +1907,17 @@ Fj
 Fj
 Fj
 "}
-(28,1,1) = {"
+(31,1,1) = {"
 Ub
 Kn
-uR
-eI
-db
 eI
 eI
 eI
+WZ
 eI
-Ub
+eI
+Qs
+vS
 Ub
 eI
 Ub
@@ -1830,21 +1929,65 @@ Fj
 Fj
 Fj
 "}
-(29,1,1) = {"
+(32,1,1) = {"
+eI
 Ub
+mw
+fh
+Xq
+mr
+Xq
+lH
+Jz
+Kn
+uR
+eI
 Ub
 Eb
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(33,1,1) = {"
+Ub
 eI
-Yw
-eI
+mw
+Qs
+fh
+mr
 iA
-cT
-Ub
-Kn
-uR
+eI
+fh
 eI
 Ub
-Eb
+Ub
+Ub
+eI
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(34,1,1) = {"
+Ub
+eI
+mw
+fh
+eI
+WZ
+Ia
+fh
+fh
+mw
+Ub
+eI
+Ub
+Ub
 Fj
 Fj
 Fj
@@ -1852,17 +1995,127 @@ Fj
 Fj
 Fj
 "}
-(30,1,1) = {"
-Fj
-Fj
-Fj
-Fj
-Fj
-Fj
+(35,1,1) = {"
+Ub
 eI
+UE
+Jz
+lH
+co
+fh
+fh
+Qs
+UE
+Ub
+Ub
 Fj
 Fj
 Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(36,1,1) = {"
+Ub
+eI
+th
+Jz
+fh
+Xq
+eI
+fh
+Mm
+Uj
+iA
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(37,1,1) = {"
+Ub
+eI
+vS
+Qs
+eI
+fh
+fh
+Xq
+fh
+vS
+GH
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(38,1,1) = {"
+Ub
+GH
+zh
+WZ
+fh
+fh
+iv
+fh
+Jz
+eI
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(39,1,1) = {"
+Ub
+Ub
+iA
+mw
+eI
+eI
+Rf
+eI
+mw
+eI
+Ub
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+Fj
+"}
+(40,1,1) = {"
+eI
+Ub
+Ub
+Ub
+Ub
+Ub
+Ub
+Ub
+Ub
+Ub
 Fj
 Fj
 Fj
