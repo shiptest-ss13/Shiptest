@@ -1792,29 +1792,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	var/areatemp = H.get_temperature(environment)
-	var/temp_calc
-
+	var/body_temp = H.bodytemperature
 	//tempature is no longer comfy, throw alert
-	if(areatemp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		if(H.bodytemperature > bodytemp_heat_damage_limit)
+		if(body_temp > bodytemp_heat_damage_limit)
 			var/burn_damage = calculate_burn_damage(H)
 			if(burn_damage < 2)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
-			if(areatemp > (max_temp_comfortable + 10))
+			if(body_temp > (max_temp_comfortable + 10))
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
-	else if (areatemp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+	else if (body_temp < min_temp_comfortable && H.get_cold_protection(areatemp) < 0.8 && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		if(H.bodytemperature < 200)
+		if(body_temp < 200)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
-		else if(H.bodytemperature < bodytemp_cold_damage_limit)
+		else if(body_temp< bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(areatemp < (min_temp_comfortable - 10))
+		else if(body_temp < (min_temp_comfortable - 10))
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
 		else
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold)
