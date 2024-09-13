@@ -56,7 +56,7 @@
 
 //BALLISTIC
 	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck //Removes the need for max_ammo and caliber info
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -232,6 +232,8 @@
 	var/empty_indicator = FALSE
 	///Whether the sprite has a visible magazine or not
 	var/show_magazine_on_sprite = FALSE
+	///Do we show how much ammo is left on the sprite? In increments of 20.
+	var/show_ammo_capacity_on_magazine_sprite = FALSE
 	///Whether the sprite has a visible ammo display or not
 	var/show_magazine_on_sprite_ammo = FALSE
 	///Whether the gun supports multiple special mag types
