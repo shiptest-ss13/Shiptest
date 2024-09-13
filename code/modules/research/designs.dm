@@ -165,3 +165,34 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk/blanks
 	design_name = "Blank Ammo"
 	starting_blueprints = list(/datum/design/blank_shell)
+
+
+/obj/item/disk/design_disk/ammo_1911
+	design_name = "1911 Magazine"
+	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
+	illustration = "ammo"
+	starting_blueprints = list(/datum/design/colt_1911_magazine)
+
+//KA modkit design discs
+/obj/item/disk/design_disk/modkit_disc
+	design_name = "KA Mod"
+	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
+	illustration = "accel"
+	color = "#6F6F6F"
+	starting_blueprints = list(/datum/design/unique_modkit)
+
+/obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe
+	design_name = "Offensive Mining Explosion Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/offensive_turf_aoe)
+
+/obj/item/disk/design_disk/modkit_disc/rapid_repeater
+	design_name = "Rapid Repeater Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/rapid_repeater)
+
+/obj/item/disk/design_disk/modkit_disc/resonator_blast
+	design_name = "Resonator Blast Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/resonator_blast)
+
+/obj/item/disk/design_disk/modkit_disc/bounty
+	design_name = "Death Syphon Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/bounty)
