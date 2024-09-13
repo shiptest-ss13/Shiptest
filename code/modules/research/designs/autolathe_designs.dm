@@ -356,7 +356,7 @@
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
-	build_path = /obj/item/melee/knife/kitcken
+	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_knife

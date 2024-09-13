@@ -28,7 +28,7 @@
 /obj/item/melee/knife/proc/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force - 10) //bonus chance increases depending on force
 
-/obj/item/melee/knife/kitcken
+/obj/item/melee/knife/kitchen
 	name = "kitchen knife"
 	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
 
@@ -153,3 +153,41 @@
 	icon = 'icons/obj/kitchen.dmi'
 	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
 	custom_materials = null
+
+/obj/item/melee/knife/switchblade
+	name = "switchblade"
+	icon_state = "switchblade"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	desc = "A sharp, concealable, spring-loaded knife."
+	flags_1 = CONDUCT_1
+	force = 3
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 5
+	throw_speed = 3
+	throw_range = 6
+	custom_materials = list(/datum/material/iron=12000)
+	hitsound = 'sound/weapons/genhit.ogg'
+	attack_verb = list("stubbed", "poked")
+	resistance_flags = FIRE_PROOF
+	var/extended = 0
+
+/obj/item/melee/knife/switchblade/attack_self(mob/user)
+	extended = !extended
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	if(extended)
+		force = 20
+		w_class = WEIGHT_CLASS_NORMAL
+		throwforce = 23
+		icon_state = "switchblade_ext"
+		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+		hitsound = 'sound/weapons/bladeslice.ogg'
+		sharpness = IS_SHARP
+	else
+		force = 3
+		w_class = WEIGHT_CLASS_SMALL
+		throwforce = 5
+		icon_state = "switchblade"
+		attack_verb = list("stubbed", "poked")
+		hitsound = 'sound/weapons/genhit.ogg'
+		sharpness = IS_BLUNT
