@@ -48,6 +48,7 @@
 
 /obj/item/ammo_casing/shotgun/blank
 	name = "blank shell"
+	icon_state = "blank"
 	desc = "A shell packed with powder but no projectile."
 	projectile_type = /obj/projectile/bullet/pellet/blank
 	custom_materials = list(/datum/material/iron=250)
