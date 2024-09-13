@@ -1792,33 +1792,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	var/areatemp = H.get_temperature(environment)
-	var/body_temp = H.bodytemperature
-	//tempature is no longer comfy, throw alert
-	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		if(body_temp > bodytemp_heat_damage_limit)
-			var/burn_damage = calculate_burn_damage(H)
-			if(burn_damage < 2)
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
-			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-		else
-			if(body_temp > (max_temp_comfortable + 10))
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
-			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
-	else if (body_temp < min_temp_comfortable && H.get_cold_protection(areatemp) < 0.8 && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		if(body_temp < 200)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
-		else if(body_temp< bodytemp_cold_damage_limit)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(body_temp < (min_temp_comfortable - 10))
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
-		else
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold)
-	else
-		H.clear_alert("tempfeel")
 
 	if(H.stat != DEAD) // If you are dead your body does not stabilize naturally
 		natural_bodytemperature_stabilization(environment, H)
@@ -1884,8 +1857,37 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /// Handle the body temperature status effects for the species
 /// Traits for resitance to heat or cold are handled here.
 /datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
+	var/body_temp = H.bodytemperature
+
+	//tempature is no longer comfy, throw alert
+	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		if(body_temp > bodytemp_heat_damage_limit)
+			var/burn_damage = calculate_burn_damage(H)
+			if(burn_damage < 2)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+		else
+			if(body_temp > (max_temp_comfortable + 10))
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
+	else if (body_temp < min_temp_comfortable && H.get_cold_protection(areatemp) < 0.8 && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		if(body_temp < 200)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
+		else if(body_temp< bodytemp_cold_damage_limit)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+		else if(body_temp < (min_temp_comfortable - 10))
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
+		else
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold)
+	else
+		H.clear_alert("tempfeel")
+
 	// Body temperature is too hot, and we do not have resist traits
-	if(H.bodytemperature > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+	if(body_temp > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
 		// Clear cold mood and apply hot mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
@@ -1925,7 +1927,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
 
 	// Body temperature is too cold, and we do not have resist traits
-	else if(H.bodytemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+	else if(body_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
@@ -1934,7 +1936,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 
-		var/bodytemp = H.bodytemperature
 		if(bodytemp < 120)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
