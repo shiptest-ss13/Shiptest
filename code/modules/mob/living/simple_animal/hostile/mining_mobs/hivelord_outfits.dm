@@ -424,7 +424,7 @@
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/cargo
 	if(prob(25))
-		suit = /obj/item/clothing/suit/armor/vest/scrap_armor
+		suit = /obj/item/clothing/suit/armor/vest/scrap
 		suit_store = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/generic/cargo

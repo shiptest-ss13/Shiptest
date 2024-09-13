@@ -634,7 +634,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
 	suit = /obj/item/clothing/suit/armor/vest/suns/hos
-	belt = /obj/item/melee/sabre/suns/telescopic
+	belt = /obj/item/melee/sword/sabre/suns/telescopic
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos

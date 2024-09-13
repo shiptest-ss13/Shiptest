@@ -131,7 +131,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/soulstone,
 			/obj/item/clothing/suit/wizrobe, /obj/item/clothing/head/wizard, /obj/item/spellbook, /obj/item/staff,
 			/obj/item/clothing/suit/space/hardsuit/shielded/wizard, /obj/item/clothing/suit/space/hardsuit/wizard,
-			/obj/item/nullrod, /obj/item/clothing/under/rank/civilian/chaplain)),
+			/obj/item/clothing/under/rank/civilian/chaplain)),
 
 		"aliens"   = typecacheof(list(
 			/obj/item/clothing/mask/facehugger_item, /obj/item/organ/body_egg/alien_embryo,

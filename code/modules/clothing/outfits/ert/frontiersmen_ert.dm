@@ -125,7 +125,7 @@
 			r_hand = pickweight(list(
 			/obj/item/melee/knife/survival = 15,
 			/obj/item/melee/baseball_bat = 10,
-			/obj/item/melee/roastingstick = 2,
+			/obj/item/roastingstick = 2,
 			/obj/item/kitchen/fork = 1,
 			/obj/item/melee/flyswatter = 1,
 			))
