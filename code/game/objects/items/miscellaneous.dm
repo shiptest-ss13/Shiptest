@@ -502,7 +502,7 @@
 
 /obj/item/cane
 	name = "cane"
-	desc = "A cane used by a true gentleman. Or a clown."
+	desc = "A cane used by a true gentleman."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "cane"
 	item_state = "stick"
