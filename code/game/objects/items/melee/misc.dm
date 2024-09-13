@@ -90,19 +90,6 @@
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 
-/obj/item/melee/knife/letter_opener
-	name = "letter opener"
-	icon = 'icons/obj/items.dmi'
-	icon_state = "letter_opener"
-	desc = "A military combat utility survival knife."
-	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 15
-	throwforce = 15
-	unique_reskin = list("Traditional" = "letter_opener",
-						"Boxcutter" = "letter_opener_b",
-						"Corporate" = "letter_opener_a"
-						)
-
 /obj/item/melee/baseball_bat
 	name = "baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter."
