@@ -1654,14 +1654,16 @@
 /area/ship/hallway/port)
 "mn" = (
 /obj/machinery/light/dim/directional/north,
-/obj/machinery/modular_computer/console/preset/command,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/computer_hardware/ai_slot,
+/obj/item/computer_hardware/card_slot,
+/obj/machinery/modular_computer/console/preset/research{
+	name = "modular console"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "mv" = (
@@ -2046,6 +2048,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/lp/engineer,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "pA" = (

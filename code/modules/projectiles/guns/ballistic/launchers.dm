@@ -44,11 +44,6 @@
 	name = "\improper PML-9"
 	desc = "A reusable rocket-propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
 
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
@@ -65,6 +60,9 @@
 	empty_indicator = TRUE
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	valid_attachments = list()
+	slot_available = list()
 
 /obj/item/gun/ballistic/rocketlauncher/afterattack()
 	. = ..()

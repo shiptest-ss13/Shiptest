@@ -28,18 +28,18 @@
 	icon_state = "frontiersmanranged"
 	icon_living = "frontiersmanranged"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver/syndicate)
+				/obj/item/gun/ballistic/revolver/shadow)
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
-	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
-	casingtype = /obj/item/ammo_casing/a357
+	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
+	casingtype = /obj/item/ammo_casing/a44roum
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
 	icon_living = "frontiersmanranged_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver,
+				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -198,16 +198,17 @@
 	icon_living = "frontiersmanofficer"
 	maxHealth = 65
 	health = 65
-	rapid = 3
+	rapid = 4
+	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
-				/obj/item/gun/ballistic/automatic/pistol/APS)
+				/obj/item/gun/ballistic/automatic/pistol/mauler)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"
 	icon_living = "frontiersmanofficer_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
-				/obj/item/gun/ballistic/automatic/pistol/APS,
+				/obj/item/gun/ballistic/automatic/pistol/mauler,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)

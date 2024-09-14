@@ -542,7 +542,7 @@
 /area/ruin/unpowered/buried_shrine)
 "nq" = (
 /obj/structure/stone_tile/surrounding,
-/obj/structure/spawner/burrow/lava_planet,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "nz" = (
@@ -930,7 +930,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wM" = (
-/obj/structure/stone_tile/slab,
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/center,
 /obj/structure/spawner/burrow/lava_planet,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
@@ -1648,6 +1651,7 @@
 	dir = 1
 	},
 /obj/structure/spawner/burrow/lava_planet,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "QR" = (
@@ -1864,7 +1868,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/spawner/burrow/lava_planet,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/buried_shrine)
 "Xr" = (
@@ -3928,7 +3932,7 @@ LJ
 ta
 NN
 ta
-Xv
+wM
 Ad
 mM
 Ad
@@ -4095,7 +4099,7 @@ ee
 WZ
 WZ
 yz
-wM
+Ad
 tL
 WZ
 Yh
