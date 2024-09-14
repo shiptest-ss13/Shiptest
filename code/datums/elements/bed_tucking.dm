@@ -73,6 +73,5 @@
 	SIGNAL_HANDLER
 
 	tucked.transform = turn(tucked.transform, -rotation_degree)
-	if(target_bed.suggested_tuck_layer != null)
-		tucked.layer = initial(tucked.layer)
+	tucked.layer = initial(tucked.layer)
 	UnregisterSignal(tucked, COMSIG_ITEM_PICKUP)
