@@ -13,11 +13,21 @@
 	mode = 1
 	recorded = "Goodbye~"
 
+
+//pre-netted cams
 /obj/machinery/camera/cave_base
 	network = list("ForwardPost")
 
 /obj/machinery/computer/security/retro/cave_base
 	network = list("ForwardPost")
+
+//turret
+/obj/machinery/porta_turret/cave_base
+	faction = list("turret", "Forward_Ops_Post")
+	stun_projectile = /obj/projectile/beam/laser/heavylaser
+	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser
+	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 
 //gut wrenching content
 

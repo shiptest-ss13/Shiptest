@@ -16,6 +16,12 @@
 	description = "A failed attempt of the Nanotrasen nutrional replacement program"
 	suffix = "whitesands_surface_pubbyslopcrash.dmm"
 
+/datum/map_template/ruin/whitesands/cave_base
+	name = "Abandoned Cave Base"
+	id = "cave_base"
+	description = "The former home of a poor sod on observation duty. Now a cunning trap."
+	suffix = "whitesands_cave_base.dmm"
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/saloon
 	name = "Hermit Saloon"
