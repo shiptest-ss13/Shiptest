@@ -46,8 +46,8 @@
 		belt = pickweight(list(
 			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
 			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
-			/obj/item/gun/ballistic/automatic/pistol/syndicate = 1,
-			/obj/item/gun/ballistic/revolver/syndicate = 1,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 1,
+			/obj/item/gun/ballistic/revolver/viper = 1,
 			/obj/item/gun/ballistic/revolver/firebrand = 1,
 			)
 		)

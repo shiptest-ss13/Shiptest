@@ -1555,7 +1555,6 @@
 				M.losebreath++
 			if(prob(20))
 				to_chat(M, "<span class='userdanger'>You have a sudden fit!</span>")
-				M.emote("moan")
 				M.Paralyze(20) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
 			to_chat(M, "<span class='userdanger'>You feel too exhausted to continue!</span>") // at this point you will eventually die unless you get charcoal
