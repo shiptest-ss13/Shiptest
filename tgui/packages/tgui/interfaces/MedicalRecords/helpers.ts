@@ -4,7 +4,7 @@ import { MedicalRecord, MedicalRecordsData } from './types';
 
 /** We need an active reference and this a pain to rewrite */
 export const getMedicalRecord = (props, context) => {
-  const [selectedRecord, SetRecord] = useLocalState<MedicalRecord>(
+  const [selectedRecord, SetRecord] = useLocalState<MedicalRecord | undefined>(
     context,
     'medicalRecord',
     undefined

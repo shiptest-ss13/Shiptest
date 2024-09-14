@@ -4,7 +4,7 @@ import { SecurityRecord, SecurityRecordsData } from './types';
 
 /** We need an active reference and this a pain to rewrite */
 export const getSecurityRecord = (props, context) => {
-  const [selectedRecord, setRecord] = useLocalState<SecurityRecord>(
+  const [selectedRecord, setRecord] = useLocalState<SecurityRecord | undefined>(
     context,
     'securityRecord',
     undefined
