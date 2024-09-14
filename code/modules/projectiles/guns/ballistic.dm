@@ -59,13 +59,14 @@
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
 		. += "[icon_state]_bolt"
-	if (magazine)
+	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
-				. += "[icon_state]_mag_empty"
+				. += "[icon_state]_mag_[magazine.base_icon_state]_empty"
 		else
 			. += "[icon_state]_mag"
+		if(show_ammo_capacity_on_magazine_sprite)
 			var/capacity_number = 0
 			switch(get_ammo() / magazine.max_ammo)
 				if(0.2 to 0.39)
@@ -76,9 +77,11 @@
 					capacity_number = 60
 				if(0.8 to 0.99)
 					capacity_number = 80
-				if(1.0)
+				if(1.0 to 2.0) //to catch the chambered round
 					capacity_number = 100
-			if (capacity_number)
+			if (capacity_number && unique_mag_sprites_for_variants)
+				. += "[icon_state]_mag_[magazine.base_icon_state]_[capacity_number]"
+			else if (capacity_number)
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)
 		. += "[icon_state]_empty"

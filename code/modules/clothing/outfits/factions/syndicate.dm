@@ -444,7 +444,7 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
@@ -456,7 +456,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 
 //Chief Medical Officer
@@ -583,7 +583,7 @@
 	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
@@ -594,7 +594,7 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 
 /datum/outfit/job/syndicate/hos/twink

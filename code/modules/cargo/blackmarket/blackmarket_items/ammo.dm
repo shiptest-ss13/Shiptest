@@ -17,7 +17,7 @@
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
-	item = /obj/item/ammo_box/magazine/m22lr
+	item = /obj/item/ammo_box/magazine/m22lr_himehabu
 
 	price_min = 100
 	price_max = 200
@@ -55,6 +55,17 @@
 	price_min = 750
 	price_max = 1250
 	stock = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/c299
+	name = "Eoehoma .299 Caseless Ammo Box"
+	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
+	item = /obj/item/ammo_box/c299
+
+	price_min = 300
+	price_max = 700
+	stock_min = 4
+	stock_max = 8
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/saber_mag
@@ -106,17 +117,6 @@
 
 	price_min = 500
 	price_max = 800
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
-
-/datum/blackmarket_item/ammo/tec_mag
-	name = "TEC-9 AP Magazine"
-	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
-	item = /obj/item/ammo_box/magazine/tec9
-
-	price_min = 500
-	price_max = 1000
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 0
@@ -217,5 +217,36 @@
 	price_max = 350
 	stock_min = 3
 	stock_max = 5
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/mauler_mag
+	name = "Mauler Magazine"
+	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
+	item = /obj/item/ammo_box/magazine/m9mm_mauler
+	price_min = 250
+	price_max = 750
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/spitter_mag
+	name = "Spitter Magazine"
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
+	item = /obj/item/ammo_box/magazine/spitter_9mm
+
+	price_min = 250
+	price_max = 750
+	stock_min = 2
+	stock_max = 5
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/pounder_mag
+	name = "Pounder Pan Magazine"
+	desc = "A 50 round pan magazine for the Pounder submachine gun. Heavy enough to double as an emergency melee weapon to beat off your enemies in a pinch."
+	item = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+
+	price_min = 400
+	price_max = 750
+	stock = 2
 	availability_prob = 0
 
