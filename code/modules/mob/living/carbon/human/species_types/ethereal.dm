@@ -31,7 +31,7 @@
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 60
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 100
 
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
