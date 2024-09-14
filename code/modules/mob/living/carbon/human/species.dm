@@ -147,9 +147,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_TEMP_COMFORTABLE + 7)
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7)
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_TEMP_COMFORTABLE - 5)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -1872,7 +1872,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(body_temp > (max_temp_comfortable + 10))
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		if(body_temp < 200)
@@ -1882,7 +1882,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(body_temp < (min_temp_comfortable - 10))
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
 		else
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cool)
 	else
 		H.clear_alert("tempfeel")
 

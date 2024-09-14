@@ -194,9 +194,19 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	desc = "It's quite warm. Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "hot"
 
+/atom/movable/screen/alert/warm
+	name = "Warm"
+	desc = "It's a bit warm, but not unbearably so."
+	icon_state = "hot"
+
 /atom/movable/screen/alert/cold
 	name = "Cold"
 	desc = "It's quite cold. Get somewhere warmer and take off any insulating clothing like a space suit."
+	icon_state = "cold"
+
+/atom/movable/screen/alert/cool
+	name = "Cool"
+	desc = "It's a bit cold, but not unbearably so."
 	icon_state = "cold"
 
 /atom/movable/screen/alert/sweat
