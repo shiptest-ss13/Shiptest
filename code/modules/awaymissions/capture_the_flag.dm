@@ -348,7 +348,7 @@
 
 /obj/machinery/capture_the_flag/proc/start_ctf()
 	ctf_enabled = TRUE
-	START_PROCESSING(SSmachines, CTF)
+	START_PROCESSING(SSmachines, src)
 	for(var/d in dead_barricades)
 		var/obj/effect/ctf/dead_barricade/D = d
 		D.respawn()
@@ -380,7 +380,7 @@
 
 /obj/machinery/capture_the_flag/proc/stop_ctf()
 	ctf_enabled = FALSE
-	STOP_PROCESSING(SSmachines, CTF)
+	STOP_PROCESSING(SSmachines, src)
 	arena_reset = FALSE
 	var/area/A = get_area(src)
 	for(var/i in GLOB.mob_list)
