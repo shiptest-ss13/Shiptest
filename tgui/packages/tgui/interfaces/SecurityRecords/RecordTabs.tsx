@@ -27,7 +27,7 @@ export const SecurityRecordTabs = (props, context) => {
               onClick={() => act('new_record')}
               icon="plus"
               tooltip="New Record."
-            ></Button>
+            />
           </Stack.Item>
           <Stack.Item>
             <Button.Confirm
