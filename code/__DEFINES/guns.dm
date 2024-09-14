@@ -69,6 +69,11 @@
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 
+// Misfire chances if the gun's safety is off
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 100
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 100
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 100
+
 /////////////////
 // ATTACHMENTS //
 /////////////////

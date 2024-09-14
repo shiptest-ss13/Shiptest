@@ -250,21 +250,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"ga" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot{
-	pixel_x = 5;
-	pixel_y = 7
-	},
-/obj/item/ammo_box/foambox/riot{
-	pixel_x = -3;
-	pixel_y = -3
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/powered)
 "gp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1871,6 +1856,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
+"RC" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/gun/ballistic/automatic/toy{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/foambox/riot{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered)
 "RM" = (
 /obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/plating,
@@ -2968,7 +2968,7 @@ RU
 bO
 cv
 oc
-ga
+RC
 Tl
 ko
 kU

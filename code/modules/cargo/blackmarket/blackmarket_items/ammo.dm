@@ -17,7 +17,7 @@
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
-	item = /obj/item/ammo_box/magazine/m22lr
+	item = /obj/item/ammo_box/magazine/m22lr_himehabu
 
 	price_min = 100
 	price_max = 200
@@ -117,17 +117,6 @@
 
 	price_min = 500
 	price_max = 800
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
-
-/datum/blackmarket_item/ammo/tec_mag
-	name = "TEC-9 AP Magazine"
-	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
-	item = /obj/item/ammo_box/magazine/tec9
-
-	price_min = 500
-	price_max = 1000
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 0
