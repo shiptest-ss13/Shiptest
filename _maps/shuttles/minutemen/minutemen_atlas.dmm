@@ -734,12 +734,6 @@
 	name = "first officer's locker";
 	req_access_txt = "19"
 	},
-/obj/item/storage/pistolcase/candor{
-	pixel_y = -16
-	},
-/obj/item/ammo_box/c45{
-	pixel_y = -10
-	},
 /obj/item/clothing/head/clip/slouch/officer{
 	pixel_y = 13
 	},
@@ -754,6 +748,20 @@
 	},
 /obj/item/clothing/suit/toggle/lawyer/clip/fo{
 	pixel_x = -13
+	},
+/obj/item/gun/ballistic/automatic/pistol/cm23{
+	pixel_x = -2;
+	pixel_y = -10;
+	spawnwithmagazine = 0
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = -12
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = -12
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = -12
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/crewtwo)
@@ -2367,6 +2375,23 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 26
 	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = 6;
+	pixel_y = -14
+	},
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = 11;
+	pixel_y = -17
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_x = -8;
+	pixel_y = -9
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_x = -2;
+	pixel_y = -14
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "zl" = (
@@ -3624,6 +3649,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/item/clothing/suit/space/syndicate/blue,
+/obj/item/clothing/head/helmet/space/syndicate/blue,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "PD" = (
@@ -4037,8 +4064,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
-/obj/item/ammo_box/a556_39{
-	pixel_y = 3
+/obj/item/ammo_box/a556_42{
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /obj/item/ammo_box/c9mm{
 	pixel_x = 4;
@@ -4185,18 +4213,19 @@
 "Uh" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = -9;
-	pixel_y = 11
+	pixel_x = -5;
+	pixel_y = 7
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_y = 6
+	pixel_y = 5;
+	pixel_x = 6
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = -9;
-	pixel_y = 3
+	pixel_x = -6
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 4
+	pixel_x = 5;
+	pixel_y = -1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /turf/open/floor/plasteel/dark,
@@ -4345,14 +4374,30 @@
 	pixel_y = 12
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/p16,
-/obj/item/ammo_box/magazine/p16,
-/obj/item/ammo_box/magazine/p16,
-/obj/item/ammo_box/magazine/p16,
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -9
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -9
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -9
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -9
+	},
 /obj/machinery/light/directional/north,
 /obj/structure/window/reinforced{
 	dir = 8
