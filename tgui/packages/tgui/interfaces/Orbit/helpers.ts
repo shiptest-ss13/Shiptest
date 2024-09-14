@@ -85,7 +85,7 @@ export const isJobOrNameMatch = (
 };
 
 export const searchFor = (searchText) =>
-  createSearch(searchText, (thing) => thing.name);
+  createSearch(searchText, (thing: Observable) => thing.full_name);
 
 export const compareString = (a, b) => (a < b ? -1 : a > b);
 
