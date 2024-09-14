@@ -100,7 +100,7 @@
 
 /datum/supply_pack/exploration/binocular
 	name = "Binoculars"
-	desc = "One pair of binoculars for surveying terrain."
+	desc = "Contains one pair of binoculars for surveying terrain."
 	cost = 200
 	contains = list(
 		/obj/item/binoculars
@@ -108,7 +108,7 @@
 
 /datum/supply_pack/exploration/anom_neutralizer
 	name = "Anomaly Neutralizer"
-	desc = "A single use anomaly neutralizer for stabalizing hazardous anomalies."
+	desc = "Contains a single use anomaly neutralizer for stabilizing hazardous anomalies."
 	cost = 250
 	contains = list(
 		/obj/item/anomaly_neutralizer
@@ -124,7 +124,7 @@
 
 /datum/supply_pack/exploration/gps
 	name = "GPS"
-	desc = "Contains a GPS device, useful for finding lost things and not getting lost yourself."
+	desc = "Contains a GPS device, useful for keeping track of yourself and others."
 	cost = 100
 	contains = list(
 		/obj/item/gps

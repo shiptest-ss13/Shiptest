@@ -43,7 +43,7 @@
 
 /datum/supply_pack/canister/nitrous_oxide
 	name = "Nitrous Oxide Canister"
-	desc = "Contains a canister of nitrous oxide. Clowns love it!"
+	desc = "Contains a canister of nitrous oxide. Guaranted to make someone giggle!"
 	cost = 2500
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrous_oxide)
 	crate_name = "nitrous oxide canister crate"
