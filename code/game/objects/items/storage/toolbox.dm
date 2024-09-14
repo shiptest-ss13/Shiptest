@@ -177,7 +177,7 @@
 	new /obj/item/crowbar/syndie(src) //WS Begin - Cool Syndie Tools
 	new /obj/item/wirecutters/syndie(src)
 	new /obj/item/multitool/syndie(src) //WS End
-	new /obj/item/clothing/gloves/combat(src)
+	new /obj/item/clothing/gloves/color/red/insulated(src)
 
 /obj/item/storage/toolbox/syndicate/empty
 
@@ -299,7 +299,7 @@
 		/obj/item/clothing/gloves/color/latex/nitrile/infiltrator,
 		/obj/item/clothing/mask/infiltrator,
 		/obj/item/clothing/shoes/combat/sneakboots,
-		/obj/item/gun/ballistic/automatic/pistol/syndicate,
+		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
 		))
