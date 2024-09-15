@@ -314,7 +314,7 @@
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
+						/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
 						/obj/item/stack/telecrystal/twenty,
 						/obj/item/nuke_core,
 						/obj/item/phylactery,
