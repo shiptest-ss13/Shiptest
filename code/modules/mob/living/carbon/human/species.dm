@@ -1875,9 +1875,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
 			if(body_temp < (bodytemp_heat_damage_limit - 10))
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-				if(total_change > 1)
+				// you are cooling down and exiting the danger zone
+				if(total_change < 0)
 					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+				else
+					H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 			else if(total_change > 1)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 			else
@@ -1889,11 +1891,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(body_temp < bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
 		else if(body_temp < (bodytemp_cold_damage_limit + 10))
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-				if(total_change < -1)
-					H.throw_alert("tempfeel", /atom/movable/screen/alert/cool)
+			// you are warming up and exiting the danger zone
+			if(total_change > 0)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
 		else if(total_change < -1)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cool)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 		else
 			H.clear_alert("tempfeel")
 	else

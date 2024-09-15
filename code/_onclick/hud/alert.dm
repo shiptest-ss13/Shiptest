@@ -204,24 +204,24 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	desc = "It's quite cold. Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "cold"
 
-/atom/movable/screen/alert/cool
-	name = "Cool"
-	desc = "It's a bit cold, but not unbearably so."
+/atom/movable/screen/alert/chilly
+	name = "Chilly"
+	desc = "It's a bit chilly, but not unbearably so."
 	icon_state = "cold"
 
 /atom/movable/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating and are likely overheating! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
 /atom/movable/screen/alert/shiver
 	name = "Shivering"
-	desc = "You're shivering and very likely frezzing. Get somewhere warmer and take off any insulating clothing like a space suit."
+	desc = "You're shivering and the cold is starting to hurt. Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "shiver"
 
 /atom/movable/screen/alert/fans
 	name = "High Fan Speed"
-	desc = "Your fans are spinning quite fast! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "Your fans are spinning quite fast, and your components are reaching a dangerous temperature! Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "fans"
 
 /atom/movable/screen/alert/lowpressure
