@@ -350,4 +350,12 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/fireaxe
+    name = "Fireaxe"
+    desc = "A wooden axe handle with a large red blade, it was a tool made to save lives. You're just going to kill people with it though."
+    item = /obj/item/fireaxe
 
+    price_min = 1000
+    price_max = 2000
+    stock = 1
+    availability_prob = 40
