@@ -203,8 +203,8 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "sniper"
-	item_state = "sniper"
+	icon_state = "taipan"
+	item_state = "taipan"
 	fire_sound = 'sound/weapons/gun/sniper/shot.ogg'
 	fire_sound_volume = 120
 	load_sound = 'sound/weapons/gun/sniper/mag_insert.ogg'
