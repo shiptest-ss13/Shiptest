@@ -134,6 +134,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "satchel_charge0"
 	item_state = "satchel_charge"
+	throw_range = 3
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	boom_sizes = list(1, 2, 5)
