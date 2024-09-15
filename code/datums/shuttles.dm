@@ -416,5 +416,5 @@
 
 /datum/map_template/shuttle/subshuttles/watchman
 	file_name = "deathsquad_watchman"
-	name = "Watchman-class Final Solution"
+	name = "Watchman Devastator"
 	prefix = "SV"
