@@ -443,7 +443,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Game Panel"
 	set category = "Admin.Game"
 	if(holder)
-		holder.Game()
+		holder.open_game_panel()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Game Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/poll_panel()

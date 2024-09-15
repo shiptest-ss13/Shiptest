@@ -25,9 +25,11 @@
   @include meta.load-css('../layouts/Layout.scss');
   @include meta.load-css('../layouts/Window.scss');
 
+/*
   .Layout__content {
     background-image: url('../../assets/bg-admin.svg');
   }
+*/
 
   .candystripe:nth-child(odd) {
     background-color: rgba(12, 49, 71, 0.25);

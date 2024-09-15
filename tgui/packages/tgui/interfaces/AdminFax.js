@@ -10,6 +10,7 @@ import {
   NumberInput,
   Tooltip,
   Knob,
+  Stack,
 } from '../components';
 import { Window } from '../layouts';
 
@@ -94,7 +95,23 @@ export const FaxMainPanel = (props, context) => {
           </Button>
         }
       >
-        <Box fontSize="14px">
+        <Stack>
+          <FactionButton
+            faction="Central Command"
+            color="blue"
+            title="Central Command Report"
+            onFaction={setFromWho}
+            onTitle={setPaperName}
+          />
+          <FactionButton
+            faction="Syndicate"
+            color="red"
+            title="Syndicate Report"
+            onFaction={setFromWho}
+            onTitle={setPaperName}
+          />
+        </Stack>
+        <Box fontSize="14px" mt="5px">
           <Input
             mb="5px"
             placeholder="Paper name..."
@@ -102,22 +119,6 @@ export const FaxMainPanel = (props, context) => {
             width="100%"
             onChange={(_, v) => setPaperName(v)}
           />
-          <Button
-            color="blue"
-            fluid
-            textAlign="center"
-            onClick={() => setPaperName('Central Command Report')}
-          >
-            Central Command Report
-          </Button>
-          <Button
-            color="red"
-            fluid
-            textAlign="center"
-            onClick={() => setPaperName('Syndicate Report')}
-          >
-            Syndicate Report
-          </Button>
         </Box>
         <Divider />
         <Box fontSize="14px" mt="5px">
@@ -130,22 +131,6 @@ export const FaxMainPanel = (props, context) => {
               onChange={(_, v) => setFromWho(v)}
             />
           </Tooltip>
-          <Button
-            color="blue"
-            fluid
-            textAlign="center"
-            onClick={() => setFromWho('Central Command')}
-          >
-            Central Command
-          </Button>
-          <Button
-            color="red"
-            fluid
-            textAlign="center"
-            onClick={() => setFromWho('Syndicate')}
-          >
-            Syndicate
-          </Button>
         </Box>
         <Divider />
         <Box mt="5px">
@@ -259,5 +244,18 @@ export const FaxMainPanel = (props, context) => {
         </Box>
       </Section>
     </>
+  );
+};
+
+const FactionButton = (props, context) => {
+  const { faction, color, title, onFaction, onTitle } = props;
+  const setFaction = () => {
+    onFaction(faction);
+    onTitle(title);
+  };
+  return (
+    <Button color={color} fluid textAlign="center" onClick={() => setFaction()}>
+      {faction}
+    </Button>
   );
 };

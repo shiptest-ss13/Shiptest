@@ -227,7 +227,7 @@ const HelpfulTab = (props, context) => {
             icon="pencil-alt"
             lineHeight={lineHeightNormal}
             fluid
-            content="Rename Station"
+            content="Rename Sector"
             onClick={() => act('set_name')}
           />
         </Flex.Item>
@@ -236,7 +236,7 @@ const HelpfulTab = (props, context) => {
             icon="eraser"
             lineHeight={lineHeightNormal}
             fluid
-            content="Reset Station"
+            content="Reset Sector Name"
             onClick={() => act('reset_name')}
           />
         </Flex.Item>

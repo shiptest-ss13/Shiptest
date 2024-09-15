@@ -123,7 +123,7 @@ export const OvermapTokenManager = (_props: any, context: any) => {
   filteredData.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <Window title="Overmap Token Manager">
+    <Window title="Overmap Token Manager" theme="admin">
       <Window.Content scrollable>
         <Section title="Token Type">
           {Object.values(DatumType).map((type) => (

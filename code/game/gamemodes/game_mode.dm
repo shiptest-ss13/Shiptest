@@ -456,7 +456,6 @@
 /datum/game_mode/proc/admin_panel()
 	return
 
-
 /datum/game_mode/proc/generate_credit_text()
 	. = list()
 
