@@ -74,7 +74,8 @@
 		/obj/item/chisel,
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
-		/obj/item/clothing/head/welding //WS end
+		/obj/item/clothing/head/welding, //WS end
+		/obj/item/gun/energy/plasmacutter
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -287,7 +288,7 @@
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
-		/obj/item/ammo_box/aac_300blk_stripper,
+		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/reagent_containers/food/snacks/donut,
 		/obj/item/kitchen/knife/combat,
@@ -324,7 +325,7 @@
 /obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/m12g(src)
+		new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
@@ -356,6 +357,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/resonator,
 		/obj/item/mining_scanner,
+		/obj/item/pinpointer/mineral,
 		/obj/item/pickaxe,
 		/obj/item/shovel,
 		/obj/item/stack/sheet/animalhide,
@@ -480,12 +482,12 @@
 /obj/item/storage/belt/military/c20r/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm45(src)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
 
 /obj/item/storage/belt/military/assault/m90/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m556(src)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -680,7 +682,7 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding ammunition. Does not hold magazines"
+	desc = "A bandolier for holding ammunition. Does not hold magazines."
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
@@ -693,6 +695,10 @@
 	STR.set_holdable(list(
 		/obj/item/ammo_casing
 		))
+
+/obj/item/storage/belt/bandolier/examine(mob/user)
+	. = ..()
+	. += span_notice("The bandolier can be directly loaded by clicking on it with an ammo box.")
 
 /obj/item/storage/belt/fannypack
 	name = "fannypack"

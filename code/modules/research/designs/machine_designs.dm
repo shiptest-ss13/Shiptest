@@ -604,13 +604,6 @@
 	category = list ("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/board/sheetifier
-	name = "Sheetifier"
-	desc = "This machine turns weird things into sheets."
-	id = "sheetifier"
-	build_path = /obj/item/circuitboard/machine/sheetifier
-	category = list ("Misc. Machinery")
-
 /datum/design/board/shieldwallgen
 	name = "Machine Design (Shield Wall Generator)"
 	desc = "A shield generator commonly used in xenobiology research."

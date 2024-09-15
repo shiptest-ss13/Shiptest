@@ -75,6 +75,15 @@
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
 
+
+/datum/supply_pack/medical/anesthetic
+	name = "Anesthetics Crate"
+	desc = "Contains a standard anesthetics tank, for standard surgical procedures."
+	cost = 500
+	contains = list(/obj/item/clothing/mask/breath/medical,
+					/obj/item/tank/internals/anesthetic)
+	crate_name = "anesthetics crate"
+
 /*
 		Bundles and supplies
 */
@@ -123,6 +132,7 @@
 					/obj/item/reagent_containers/pill/neurine,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical surplus crate"
+	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/surplus/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 7)
@@ -150,6 +160,7 @@
 					/obj/item/reagent_containers/glass/bottle/mutagen)
 	crate_name = "virus crate"
 	crate_type = /obj/structure/closet/crate/medical
+	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"

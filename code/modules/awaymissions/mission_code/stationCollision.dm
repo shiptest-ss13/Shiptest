@@ -46,9 +46,9 @@
 //	projectile_type = "/obj/projectile/practice"
 
 //Syndicate sub-machine guns.
-/obj/item/gun/ballistic/automatic/smg/c20r/sc_c20r
+/obj/item/gun/ballistic/automatic/smg/cobra/sc_c20r
 
-/obj/item/gun/ballistic/automatic/smg/c20r/sc_c20r/Initialize()
+/obj/item/gun/ballistic/automatic/smg/cobra/sc_c20r/Initialize()
 	. = ..()
 	for(var/ammo in magazine.stored_ammo)
 		if(prob(95)) //95% chance
