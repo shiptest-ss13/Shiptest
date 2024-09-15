@@ -20,7 +20,7 @@
 /obj/effect/anomaly/transfusion/proc/blood_music() //by greg bear
 	//this is hacky *because* in an ideal world - it would involve making the core have a reagent container for the blood
 	//however - I am a lazy bitch
-	for( var/mob/living/carbon/victim in range(effectrange, src) )
+	for(var/mob/living/carbon/victim in range(effectrange, src))
 		//if we're not hungry, we're not hungry.
 		if (Core?:get_blood_max() < Core?:get_blood_stored())
 			new /obj/effect/temp_visual/dir_setting/bloodsplatter(src.loc, rand(1, 8))
@@ -50,7 +50,7 @@
 	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
 		return
 	COOLDOWN_START(src, pulse_secondary_cooldown, 10)
-	if( istype(AM, /mob/living/carbon))
+	if(istype(AM, /mob/living/carbon))
 		var/mob/living/carbon/victim = AM
 		visible_message(span_boldwarning("[victim] touches [src], and as they pull away their blood flows away from them!"))
 		var/amount = rand(50, 200)
