@@ -1,4 +1,183 @@
-#warn remove
+
+GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
+
+#warn remove, use /datum/export code
+/proc/gen_outpost_exports()
+	var/ret_list = list()
+
+	for(var/o_b in subtypesof(/datum/export))
+		ret_list += new o_b()
+	return ret_list
+
+#warn remove /obj/machinery/computer/bounty, /obj/machinery/bounty_board, /datum/bounty, /datum/computer_file/program/bounty_board, associated circuits,
+#warn also need to remove the old /datum/export values
+#warn remove old /obj/machinery/selling_pad, /obj/item/circuitboard/machine/selling_pad, etc.
+
+/obj/machinery/outpost_selling_pad
+	name = "bounty redemption pad"
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "lpad-idle-o"
+
+/obj/machinery/outpost_selling_pad/proc/get_other_atoms()
+	. = list()
+	for(var/atom/movable/AM in get_turf(src))
+		if(AM == src)
+			continue
+		. += AM
+
+/obj/machinery/computer/outpost_export_console
+	name = "outpost bounty console"
+	#warn fix
+	desc = " blah blah blah "
+
+	var/obj/machinery/outpost_selling_pad/linked_pad
+
+
+
+/*
+	name = "hydrogen pump"
+	desc = "Lets you use merits to buy hydrogen."
+	icon = 'icons/obj/atmos.dmi'
+	icon_state = "hydrogen_pump"
+
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 50
+	active_power_usage = 1000
+
+	density = TRUE
+	max_integrity = 400
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 30)
+	layer = OBJ_LAYER
+	showpipe = TRUE
+	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
+	var/not_processing_bug = TRUE//remove when fixed
+	var/merit
+*/
+
+
+
+
+#warn probably most similar to the traitor uplink, except there are no "buy" buttons
+/obj/machinery/computer/outpost_export_console/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OutpostExport", name)
+		ui.open()
+
+/obj/machinery/computer/outpost_export_console/ui_data(mob/user)
+	var/list/data = list()
+
+	data["redeemExports"] = list()
+
+	for(var/datum/export/cached_exp as anything in cached_valid_exports)
+		var/list/atom/atoms_list = cached_valid_exports[cached_exp]
+
+		var/list/cached_exp_data = list()
+		cached_exp_data["type"] = cached_exp.type
+		cached_exp_data["name"] = cached_exp.unit_name
+		cached_exp_data["desc"] = cached_exp.desc
+		cached_exp_data["value"] = cached_exp.calc_total_payout(atoms_list)
+
+		cached_exp_data["exportAtoms"] = list()
+		for(var/atom/exp_atom as anything in atoms_list)
+			cached_exp_data["exportAtoms"] += exp_atom.name
+
+		data["redeemExports"] += list(cached_exp_data) // gotta wrap it in a list because byond sucks
+
+/obj/machinery/computer/outpost_export_console/ui_static_data(mob/user)
+	var/list/data = list()
+
+	data["allExports"] = list()
+	for(var/datum/export/exp as anything in GLOB.exports_list)
+		var/list/exp_data = list()
+
+		exp_data["type"] = exp.type
+		exp_data["name"] = exp.unit_name
+		exp_data["value"] = exp.get_payout_text()
+		exp_data["desc"] = exp.desc
+		exp_data["exportAtoms"] = list()
+
+		data["allExports"] += list(exp_data) // need to wrap with an extra list because byond sucks
+
+/obj/machinery/computer/outpost_export_console/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	#warn we need a redeem button per-export and an "eject" button (for all export items, maybe, but easier if it's just one)
+	#warn all other behavior should be handled locally by the tgui instance
+	switch(action)
+		if("redeem")
+			var/datum/export/redeemed_exp = locate(text2path(params["redeem_type"])) in cached_valid_exports
+			if(redeemed_exp == null || len(cached_valid_exports[redeemed_exp]) == 0)
+				#warn there was an error
+			else
+				redeem_export(redeemed_exp)
+			return TRUE
+
+/obj/machinery/computer/outpost_export_console/proc/redeem_export(datum/export/exp)
+	if(!(exp in cached_valid_exports))
+		#warn fuck
+		return FALSE
+	var/total_payout = 0
+	for(var/atom/exp_atom as anything in cached_valid_exports[exp])
+		if(!exp.applies_to(exp_atom))
+			#warn fuck
+			return FALSE
+		total_payout += exp.sell_object(exp_atom, dry_run = FALSE, apply_elastic = TRUE)
+
+		cached_valid_exports[exp] -= exp_atom
+		qdel(exp_atom)
+
+	cached_valid_exports -= exp
+
+	#warn create cash or whatever. it should also make a sound
+	return TRUE
+
+
+
+
+
+
+
+/*
+/obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HydrogenExchange", name)
+		ui.open()
+
+/obj/machinery/computer/hydrogen_exchange/ui_data(mob/user)
+	var/next_merit_rate
+	if(GLOB.total_merits_exchanged)
+		next_merit_rate = round((GLOB.total_merits_exchanged ** MERIT_EXPONENT) / GLOB.total_merits_exchanged * CREDITS_TO_MERITS, 0.01)
+	else
+		next_merit_rate = CREDITS_TO_MERITS
+	var/list/data = list()
+	data["credits"] = credits
+	data["merits"] = merits
+	data["next_merit_rate"] = next_merit_rate
+	data["credits_to_merits"] = CREDITS_TO_MERITS
+	data["credit_tax"] = (1 - meritmultiplier()) * 100
+	return data
+
+/obj/machinery/computer/hydrogen_exchange/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("convert_to_credits")
+			convert_to_credits()
+			. = TRUE
+		if("convert_to_merits")
+			convert_to_merits()
+			. = TRUE
+		if("dispense")
+			dispense_funds()
+			. = TRUE
+*/
+
 /*
 //Pad & Pad Terminal
 /obj/machinery/selling_pad
@@ -185,3 +364,7 @@
 	sell_pad.icon_state = "lpad-idle-o"
 	deltimer(sending_timer)
 */
+
+
+
+

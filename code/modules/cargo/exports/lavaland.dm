@@ -1,3 +1,5 @@
+#warn remove
+/*
 //Tendril chest artifacts and ruin loot. Includes ash drake loot since they drop two sets of armor + random item
 //Consumable or one-use items like the magic D20 and gluttony's blessing are omitted
 //no more 999999 currency after one frost world, sorry
@@ -134,3 +136,4 @@
 	unit_name = "Ichorium Crystal"
 	cost = 13000
 	export_types = list(/obj/item/gem/bloodstone)
+*/

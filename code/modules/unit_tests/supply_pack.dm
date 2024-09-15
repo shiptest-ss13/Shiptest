@@ -1,3 +1,5 @@
+#warn either expand this to an "economy" unit test and check you can't get free money from a lathe, or implement a protection against selling lathed items
+
 /datum/unit_test/supply_pack/Run()
 	for(var/pack_type in subtypesof(/datum/supply_pack))
 		var/datum/supply_pack/pack = new pack_type
