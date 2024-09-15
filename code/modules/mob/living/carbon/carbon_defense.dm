@@ -648,14 +648,12 @@
 		REMOVE_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
 
 /mob/living/carbon/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
-	var/mob/living/carbon/human/current_user = src //is this a good idea? who can say?
 	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = TRUE)
 		if(P.damage-armor >= 15 && P.damage_type == BRUTE && (!armor || prob(40) || P.damage-armor >= 25))
 			spray_blood(get_dir(P.starting,src), (P.damage-armor)/5)
-			var/obj/item/bodypart/targeted_bodypart = null
 			bleed((P.damage-armor)/2)
 
 		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)

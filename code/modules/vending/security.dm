@@ -119,20 +119,20 @@
 		/obj/item/restraints/handcuffs = 3,
 		/obj/item/assembly/flash/handheld = 2,
 		/obj/item/flashlight/seclite = 2,
-		/obj/item/ammo_box/magazine/m10mm = 3,
-		/obj/item/ammo_box/magazine/smgm45 = 3,
+		/obj/item/ammo_box/magazine/m10mm_ringneck = 3,
+		/obj/item/ammo_box/magazine/m45_cobra = 3,
 		/obj/item/ammo_box/magazine/sniper_rounds = 3,
-		/obj/item/ammo_box/magazine/m556 = 2,
-		/obj/item/ammo_box/magazine/m12g = 3,
-		/obj/item/ammo_box/magazine/ebr = 5,
+		/obj/item/ammo_box/magazine/m556_42_hydra = 2,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum = 3,
+		/obj/item/ammo_box/magazine/m556_42_hydra/small = 5,
 		/obj/item/grenade/c4 = 1,
 		/obj/item/grenade/frag = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90,
-		"sniper rifle" = /obj/item/gun/ballistic/automatic/marksman/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r,
-		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog)
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/assault/hydra,
+		"sniper rifle" = /obj/item/gun/ballistic/automatic/marksman/taipan,
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/cobra,
+		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/bulldog)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"
