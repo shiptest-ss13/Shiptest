@@ -50,7 +50,7 @@ const CrewTab = (props: { record: MedicalRecord }, context) => {
     MedicalRecord | undefined
   >(context, 'medicalRecord', undefined);
 
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<MedicalRecordsData>(context);
   const { assigned_view } = data;
   const { record } = props;
   const { record_ref, name } = record;
