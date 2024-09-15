@@ -325,7 +325,7 @@
 /obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/m12g(src)
+		new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
@@ -357,6 +357,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/resonator,
 		/obj/item/mining_scanner,
+		/obj/item/pinpointer/mineral,
 		/obj/item/pickaxe,
 		/obj/item/shovel,
 		/obj/item/stack/sheet/animalhide,
@@ -481,12 +482,12 @@
 /obj/item/storage/belt/military/c20r/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm45(src)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
 
 /obj/item/storage/belt/military/assault/m90/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m556(src)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"

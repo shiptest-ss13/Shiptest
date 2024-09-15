@@ -67,7 +67,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "g" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
 /obj/structure/cable,
 /obj/structure/window/reinforced{
 	dir = 1

@@ -1,3 +1,13 @@
+// 5.7x39mm (Asp and Sidewinder)
+
+/obj/item/ammo_casing/c57x39mm
+	name = "5.7x39mm bullet casing"
+	desc = "A 5.7x39mm bullet casing."
+	icon_state = "rifle-steel"
+	caliber = "5.7x39mm"
+	projectile_type = /obj/projectile/bullet/c57x39mm
+	bullet_per_box = 50
+
 // 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
 
 /obj/item/ammo_casing/c46x30mm
