@@ -309,6 +309,24 @@
 	icon_state = "icemoon_ground_coarse2"
 	},
 /area/overmap_encounter/planetoid/ice)
+"aby" = (
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/ice)
+"abA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
+"abB" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/ice)
 "abC" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -316,6 +334,50 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area)
+"abD" = (
+/obj/item/grown/log/tree{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 5;
+	pixel_y = -1
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 1
+	},
+/obj/item/grown/log/tree{
+	pixel_y = 4
+	},
+/obj/item/grown/log/tree{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/grown/log/tree{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/grown/log/tree{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/structure/flora/stump{
+	name = "pine tree stump"
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice)
 "abE" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -554,6 +616,43 @@
 /turf/open/floor/plating/asteroid/icerock/lit{
 	icon_state = "icemoon_ground_coarse5"
 	},
+/area/overmap_encounter/planetoid/ice)
+"acq" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
+"acr" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/item/ammo_casing/a4570{
+	icon_state = "magnum-brass-empty"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
+"acs" = (
+/obj/item/reagent_containers/food/snacks/meat/slab/bear{
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/medicine/morphine = 5, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cooking_oil = 6);
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/bear{
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/medicine/morphine = 5, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cooking_oil = 6);
+	pixel_x = 1;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/bear{
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/medicine/morphine = 5, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cooking_oil = 6);
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/bone{
+	amount = 2;
+	pixel_y = -4
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice)
 "act" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -809,6 +908,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"acO" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
+"acP" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
 "acQ" = (
 /obj/structure/flora/ausbushes{
 	icon_state = "firstbush_4"
@@ -1143,6 +1254,20 @@
 	icon_state = "icemoon_ground_coarse4"
 	},
 /area/overmap_encounter/planetoid/cave)
+"aev" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aew" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
 "aeR" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4;
@@ -1225,6 +1350,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"afn" = (
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"afo" = (
+/mob/living/simple_animal/hostile/asteroid/wolf/random{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
 "afp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1258,6 +1397,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"afD" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "afE" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/icerock/lit{
@@ -1422,6 +1567,36 @@
 	icon_state = "snow6"
 	},
 /area/overmap_encounter/planetoid/ice)
+"agj" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"agk" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"agl" = (
+/obj/structure/flora/ausbushes{
+	icon_state = "firstbush_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
+"agn" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
 "ago" = (
 /obj/structure/flora/ausbushes/ppflowers{
 	icon_state = "ppflowers_2"
@@ -1473,6 +1648,12 @@
 	icon_state = "snow1"
 	},
 /area/overmap_encounter/planetoid/ice)
+"agD" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
 "agE" = (
 /obj/structure/railing{
 	dir = 1
@@ -1488,6 +1669,20 @@
 /obj/structure/ore_box,
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
+"agI" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
+"agJ" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
 "agK" = (
 /obj/structure/flora/ausbushes,
 /turf/open/floor/plating/asteroid/icerock/lit{
@@ -1632,6 +1827,14 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
+"ahC" = (
+/obj/structure/flora/ausbushes{
+	icon_state = "firstbush_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
 "ahD" = (
 /obj/structure/flora/tree/dead{
 	icon_state = "tree_2"
@@ -1650,6 +1853,12 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/lit{
 	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
+"ahS" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
 	},
 /area/overmap_encounter/planetoid/ice)
 "ahT" = (
@@ -1793,6 +2002,12 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave)
+"ait" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
 "aiu" = (
 /obj/structure/flora/ash/space{
 	icon_state = "l_mushroom4"
@@ -1830,6 +2045,12 @@
 	icon_state = "icemoon_ground_coarse4"
 	},
 /area/overmap_encounter/planetoid/cave)
+"aiN" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aiO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1854,6 +2075,24 @@
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
+"ajg" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse3"
+	},
+/area/overmap_encounter/planetoid/ice)
+"ajh" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
+"aji" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/ice)
 "ajj" = (
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
@@ -1897,6 +2136,12 @@
 "ajn" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"ajy" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
 "ajz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1;
@@ -1914,6 +2159,14 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/lit{
 	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/ice)
+"ajC" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
 	},
 /area/overmap_encounter/planetoid/ice)
 "ajD" = (
@@ -1947,6 +2200,12 @@
 	icon_state = "icemoon_ground_coarse3"
 	},
 /area/overmap_encounter/planetoid/cave)
+"ajO" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
 "ajP" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2000,6 +2259,14 @@
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave)
+"akb" = (
+/obj/structure/flora/ausbushes{
+	icon_state = "firstbush_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
 "akn" = (
 /obj/structure/flora/ausbushes{
 	icon_state = "firstbush_3"
@@ -2083,6 +2350,30 @@
 	icon_state = "icemoon_ground_coarse6"
 	},
 /area/overmap_encounter/planetoid/ice)
+"akE" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"akF" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/ice)
+"akH" = (
+/obj/structure/flora/ausbushes{
+	icon_state = "firstbush_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
 "akI" = (
 /obj/structure/marker_beacon{
 	icon_state = "markerteal-on"
@@ -2111,6 +2402,14 @@
 	icon_state = "icemoon_ground_coarse2"
 	},
 /area/overmap_encounter/planetoid/cave)
+"akL" = (
+/obj/structure/flora/ausbushes{
+	icon_state = "firstbush_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
 "akM" = (
 /obj/structure/flora/grass/both{
 	icon_state = "snowgrassall3"
@@ -2127,6 +2426,12 @@
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice)
+"alh" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow3"
+	},
+/area/overmap_encounter/planetoid/ice)
 "alj" = (
 /obj/item/stack/sheet/mineral/snow{
 	amount = 26;
@@ -2137,6 +2442,14 @@
 	icon_state = "icemoon_ground_coarse2"
 	},
 /area/overmap_encounter/planetoid/cave)
+"all" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
 "alm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1;
@@ -2225,6 +2538,24 @@
 	},
 /turf/open/lava/smooth,
 /area/overmap_encounter/planetoid/cave)
+"amc" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow2"
+	},
+/area/overmap_encounter/planetoid/ice)
+"amd" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow12"
+	},
+/area/overmap_encounter/planetoid/ice)
+"ame" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/ice)
 "amf" = (
 /obj/structure/closet/secure_closet/medicalsrm{
 	dir = 4;
@@ -2325,12 +2656,26 @@
 	},
 /turf/open/lava/smooth,
 /area/overmap_encounter/planetoid/cave)
+"amu" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "amv" = (
 /obj/structure/flora/ash/leaf_shroom{
 	icon_state = "s_mushroom3"
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave)
+"amL" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
 "amM" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/icerock{
@@ -2631,6 +2976,13 @@
 	color = "#55391a"
 	},
 /area)
+"aoe" = (
+/obj/effect/particle_emitter/lava,
+/obj/structure/flora/ash/cap_shroom{
+	icon_state = "r_mushroom4"
+	},
+/turf/open/lava/plasma,
+/area/overmap_encounter/planetoid/cave)
 "aof" = (
 /obj/item/stack/rods{
 	icon_state = "rods-1";
@@ -2853,11 +3205,21 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave)
+"aoA" = (
+/mob/living/simple_animal/hostile/asteroid/wolf{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/overmap_encounter/planetoid/cave)
 "aoB" = (
 /turf/open/floor/plating/asteroid/icerock/lit{
 	icon_state = "icemoon_ground_coarse6"
 	},
 /area/overmap_encounter/planetoid/ice)
+"aoC" = (
+/mob/living/simple_animal/hostile/asteroid/wolf,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/overmap_encounter/planetoid/cave)
 "aoD" = (
 /obj/structure/flora/ausbushes/lavendergrass{
 	icon_state = "lavendergrass_2"
@@ -3164,6 +3526,12 @@
 	icon_state = "whitewolf_dead"
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice)
+"api" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
 /area/overmap_encounter/planetoid/ice)
 "apj" = (
 /obj/effect/decal/cleanable/ash{
@@ -4197,6 +4565,36 @@
 	dir = 8
 	},
 /area/ship)
+"aqW" = (
+/obj/item/ammo_casing/c38{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/c38{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 2;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/c38{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = -1
+	},
+/obj/item/ammo_casing/c38{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/c38{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -2;
+	pixel_y = -8
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aqX" = (
 /obj/item/storage/wallet{
 	pixel_x = 5;
@@ -4512,6 +4910,22 @@
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/wood/mahogany,
 /area)
+"arv" = (
+/mob/living/simple_animal/hostile/asteroid/wolf{
+	dir = 8;
+	icon_state = "whitewolf_dead"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/cave)
+"arw" = (
+/obj/effect/particle_emitter/lava,
+/obj/structure/flora/ash/leaf_shroom{
+	icon_state = "s_mushroom4"
+	},
+/turf/open/lava/plasma,
+/area/overmap_encounter/planetoid/cave)
 "arx" = (
 /obj/structure/bookcase{
 	dir = 8;
@@ -4713,6 +5127,12 @@
 /obj/item/radio,
 /turf/open/floor/wood/mahogany,
 /area)
+"arI" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse3"
+	},
+/area/overmap_encounter/planetoid/ice)
 "arJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
 	icon_state = "scrub_wide";
@@ -5244,6 +5664,12 @@
 /obj/item/clothing/suit/gothcoat,
 /turf/open/floor/wood/mahogany,
 /area)
+"asp" = (
+/mob/living/simple_animal/hostile/asteroid/wolf{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave)
 "ast" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/icerock/lit{
@@ -5645,6 +6071,14 @@
 	color = "#55391a"
 	},
 /area)
+"atb" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_4"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "atc" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -5940,6 +6374,16 @@
 	color = "#55391a"
 	},
 /area)
+"atv" = (
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/ice)
+"atw" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice)
 "atx" = (
 /obj/machinery/hydroponics/soil{
 	dir = 1
@@ -6642,6 +7086,13 @@
 	icon_state = "icemoon_ground_coarse0"
 	},
 /area/overmap_encounter/planetoid/cave)
+"auK" = (
+/obj/effect/particle_emitter/lava,
+/obj/structure/flora/ash/stem_shroom{
+	icon_state = "t_mushroom4"
+	},
+/turf/open/lava/plasma,
+/area/overmap_encounter/planetoid/cave)
 "auL" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -6651,6 +7102,14 @@
 	pixel_x = -2
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice)
+"auM" = (
+/obj/structure/flora/ausbushes/lavendergrass{
+	icon_state = "lavendergrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
 /area/overmap_encounter/planetoid/ice)
 "auN" = (
 /obj/structure/railing{
@@ -9050,6 +9509,12 @@
 	color = "#55391a"
 	},
 /area)
+"axf" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "axg" = (
 /obj/machinery/atmospherics/pipe/simple{
 	color = "#0000ff";
@@ -12728,6 +13193,18 @@
 	icon_state = "iceberg6"
 	},
 /area/overmap_encounter/planetoid/ice)
+"aAS" = (
+/obj/effect/decal/cleanable/blood/drip{
+	color = "#cc0000"
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice)
+"aAT" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow12"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aAU" = (
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/ship)
@@ -13607,6 +14084,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area)
+"aCc" = (
+/obj/structure/flora/ausbushes/ppflowers{
+	icon_state = "ppflowers_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse3"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aCd" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -13704,6 +14189,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area)
+"aCn" = (
+/obj/structure/flora/grass/both{
+	icon_state = "snowgrassall3"
+	},
+/turf/open/floor/plating/asteroid/snow/lit{
+	icon_state = "snow12"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aCo" = (
 /obj/machinery/computer/crew{
 	dir = 4
@@ -14954,6 +15447,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/ice)
+"aEy" = (
+/obj/structure/flora/ash/space{
+	icon_state = "l_mushroom4"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aEA" = (
 /obj/item/stack/ore/iron{
 	amount = 3;
@@ -15470,6 +15971,15 @@
 	},
 /turf/open/floor/plating,
 /area)
+"aFe" = (
+/obj/effect/decal/cleanable/blood/drip{
+	color = "#cc0000";
+	icon_state = "drip3"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse3"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aFf" = (
 /obj/machinery/atmospherics/pipe/simple{
 	color = "#0000ff";
@@ -16759,6 +17269,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area)
+"aFT" = (
+/obj/structure/flora/ash/leaf_shroom{
+	icon_state = "s_mushroom1"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave)
 "aFU" = (
 /obj/structure/marker_beacon{
 	icon_state = "markerteal-on"
@@ -17215,6 +17731,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area)
+"aGu" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aGv" = (
+/obj/structure/flora/ausbushes/ppflowers{
+	icon_state = "ppflowers_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aGw" = (
 /obj/item/reagent_containers/glass/beaker{
 	pixel_x = 1;
@@ -17436,6 +17968,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area)
+"aGK" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aGL" = (
 /obj/structure/flora/ausbushes/ppflowers{
 	icon_state = "ppflowers_2"
@@ -17465,6 +18003,20 @@
 	color = "#55391a"
 	},
 /area)
+"aGN" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aGO" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aGP" = (
 /obj/structure/cable{
 	color = "#00aa00";
@@ -17528,6 +18080,14 @@
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice)
+"aGU" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aGV" = (
 /obj/structure/grille,
 /obj/structure/window/fulltile,
@@ -17547,9 +18107,23 @@
 	icon_state = "snow6"
 	},
 /area/overmap_encounter/planetoid/ice)
+"aGY" = (
+/obj/structure/flora/ausbushes,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aGZ" = (
 /turf/open/floor/plating/asteroid/snow/lit{
 	icon_state = "snow3"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aHa" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
 	},
 /area/overmap_encounter/planetoid/ice)
 "aHb" = (
@@ -17735,6 +18309,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/ice)
+"aHm" = (
+/obj/effect/decal/cleanable/blood/drip{
+	color = "#cc0000"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aHn" = (
 /obj/structure/dresser{
 	dir = 1
@@ -17861,9 +18443,29 @@
 	icon_state = "icemoon_ground_coarse0"
 	},
 /area/overmap_encounter/planetoid/cave)
+"aHx" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aHy" = (
 /turf/open/floor/plating/ice/iceberg/lit{
 	icon_state = "ice7"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aHz" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	icon_state = "sparsegrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aHA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse3"
 	},
 /area/overmap_encounter/planetoid/ice)
 "aHB" = (
@@ -17913,6 +18515,14 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/lit{
 	icon_state = "icemoon_ground_coarse5"
+	},
+/area/overmap_encounter/planetoid/ice)
+"aHI" = (
+/obj/structure/flora/ausbushes/ppflowers{
+	icon_state = "ppflowers_3"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse7"
 	},
 /area/overmap_encounter/planetoid/ice)
 "aHJ" = (
@@ -17965,6 +18575,15 @@
 	icon_state = "icemoon_ground_coarse7"
 	},
 /area/overmap_encounter/planetoid/ice)
+"aHP" = (
+/obj/effect/decal/cleanable/blood/drip{
+	color = "#cc0000";
+	icon_state = "drip3"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse6"
+	},
+/area/overmap_encounter/planetoid/cave)
 "aHQ" = (
 /obj/item/stack/ore/silver{
 	amount = 4;
@@ -18032,6 +18651,14 @@
 	icon_state = "icemoon_ground_coarse7"
 	},
 /area/overmap_encounter/planetoid/cave)
+"aHY" = (
+/obj/structure/flora/ausbushes/fullgrass{
+	icon_state = "fullgrass_2"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/ice)
 "aHZ" = (
 /obj/item/stack/sheet/mineral/snow{
 	amount = 50;
@@ -18295,6 +18922,12 @@
 	},
 /turf/open/floor/plating/ice,
 /area/overmap_encounter/planetoid/cave)
+"hzc" = (
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/cave)
 "inW" = (
 /obj/item/stack/sheet/mineral/snow{
 	amount = 20;
@@ -18312,6 +18945,12 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice)
+"iKI" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse4"
+	},
+/area/overmap_encounter/planetoid/cave)
 "jjf" = (
 /obj/structure/cable{
 	color = "#ffff00";
@@ -18393,6 +19032,14 @@
 /obj/machinery/power/solar,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
+"mbF" = (
+/obj/structure/flora/ash/space{
+	icon_state = "l_mushroom4"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/cave)
 "mdC" = (
 /obj/structure/flora/ash/stem_shroom{
 	icon_state = "t_mushroom4"
@@ -18558,6 +19205,14 @@
 	icon_state = "icemoon_ground_coarse4"
 	},
 /area/overmap_encounter/planetoid/cave)
+"qVx" = (
+/obj/structure/flora/ash/cap_shroom{
+	icon_state = "r_mushroom4"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse2"
+	},
+/area/overmap_encounter/planetoid/cave)
 "rCx" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/lit{
@@ -18652,6 +19307,14 @@
 	icon_state = "icemoon_ground_coarse2"
 	},
 /area/overmap_encounter/planetoid/ice)
+"tCx" = (
+/obj/structure/flora/grass/both{
+	icon_state = "snowgrassall3"
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse0"
+	},
+/area/overmap_encounter/planetoid/cave)
 "tLo" = (
 /obj/structure/flora/ash/garden/frigid,
 /obj/item/reagent_containers/food/snacks/grown/berries/death/stealth{
@@ -18768,6 +19431,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/ice)
+"wAn" = (
+/obj/item/stack/ore/iron{
+	amount = 4;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/asteroid/icerock{
+	icon_state = "icemoon_ground_coarse7"
+	},
+/area/overmap_encounter/planetoid/cave)
+"wEi" = (
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave)
 "xiO" = (
 /obj/structure/flora/grass/both{
 	icon_state = "snowgrassall2"
@@ -34191,122 +34867,122 @@ aHE
 aHE
 aHE
 aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
-aHE
+aab
+aab
+aab
+aab
+aab
+aab
+aoy
+aqa
+aGu
+ask
+aGK
+aoB
+ahD
+aab
+aab
+aas
+aab
+aab
+aab
+aas
+akO
+akb
+apx
+apX
+aaf
+aoy
+aaf
+aaf
+aau
+aah
+aau
+aai
+aav
+aak
+aai
+aav
+aav
+aaE
+aag
+aah
+aaH
+aaH
+aav
+aau
+aag
+aau
+aau
+aaf
+aaf
+aaf
+aaH
+aag
+aaf
+aae
+aae
+aak
+aaH
+aak
+aak
+aag
+aau
+aai
+aai
+aag
+aaf
+aaf
+aax
+aae
+aax
+aae
+akM
+aae
+aae
+aaf
+aaf
+aaf
+aae
+aaE
+aak
+aeo
+aak
+aai
+aai
+aeo
+aaf
+aaf
+aaH
+aaf
+aaf
+aaf
+aag
+aaf
+aai
+aaH
+aaH
+aag
+aau
+aav
+aau
+aav
+aaf
+tCx
+aeo
+aau
+aag
+aaf
+aaf
+aaf
+aaf
+aav
+aau
+aak
+aak
+aag
+aak
+aav
 aHE
 aHE
 aHE
@@ -34315,6 +34991,2610 @@ aHE
 aHE
 aHE
 aHE
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+apX
+aoy
+aqa
+aHS
+apb
+aiN
+aGv
+ajB
+aab
+aas
+aab
+aab
+aab
+alh
+alI
+aab
+aoB
+apw
+apX
+aag
+aag
+aah
+aak
+aah
+aai
+aag
+aah
+aai
+aaE
+aaE
+aag
+aaH
+aaH
+aau
+aai
+aaf
+aaf
+aag
+aah
+aak
+aaE
+aaf
+aaf
+aav
+aag
+aaf
+aau
+aaE
+aaE
+aaE
+asp
+aag
+aav
+aaH
+aau
+aak
+aau
+aaf
+aaf
+aax
+aax
+aax
+aae
+aae
+aae
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aaE
+aaE
+aag
+aak
+aeo
+aah
+aag
+aaf
+aav
+aaf
+aaf
+aag
+aah
+aaf
+aah
+aau
+aau
+aaH
+aaf
+aaf
+aaf
+aaf
+aaf
+aah
+aaE
+wEi
+aaH
+aai
+aaf
+aaf
+aag
+aah
+aau
+aag
+aav
+aau
+aai
+aau
+aHE
+aHE
+aHE
+"}
+(127,1,1) = {"
+aHE
+aHE
+aHE
+aab
+aab
+aab
+aab
+aab
+aab
+agj
+apw
+apX
+aoy
+aGU
+aoy
+ajg
+ajh
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+ajh
+amc
+apb
+apx
+aai
+aaE
+aau
+aav
+aaE
+aah
+aau
+aau
+aaH
+aav
+aai
+aaH
+aah
+aak
+aai
+aaf
+aaf
+aaf
+aaf
+aaE
+aah
+aaE
+aaf
+aaf
+aau
+aqW
+aag
+aak
+aai
+aah
+aav
+aag
+aau
+aau
+aav
+aaE
+aaE
+aaf
+aaf
+aaf
+aae
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aou
+aav
+aah
+aai
+aai
+aeo
+aau
+aaf
+aag
+aaf
+aau
+aak
+aaf
+aaf
+aaf
+aai
+aav
+aaE
+aaf
+aaf
+aaf
+aaf
+aag
+aak
+aeo
+aeo
+aag
+aeo
+aak
+aaf
+aaf
+aaf
+aai
+aau
+aag
+aau
+aak
+aaE
+aHE
+aHE
+aHE
+"}
+(128,1,1) = {"
+aHE
+aHE
+aHE
+aab
+aab
+aHc
+adN
+atv
+aGu
+aoy
+agD
+aoy
+apx
+aHa
+apk
+ajh
+ajy
+aoy
+aab
+aab
+aab
+aab
+aGT
+aab
+aab
+aab
+aab
+aby
+all
+anu
+aaf
+aoy
+aah
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aav
+aai
+aag
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aaf
+aau
+aav
+aaE
+aaf
+aav
+aag
+aaH
+arv
+aaH
+aai
+aaH
+aav
+aag
+aag
+aaH
+aah
+aav
+aaE
+aaH
+aaf
+aax
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aEy
+aeo
+aaE
+aaE
+aaH
+aaH
+aaE
+aav
+aaf
+aak
+aaf
+aaf
+aaf
+aaf
+aaH
+aav
+aaE
+aaf
+aaf
+aaf
+aaf
+aaH
+aav
+aai
+aau
+aav
+aai
+aak
+aau
+aaf
+aaf
+aah
+aag
+aav
+aai
+aav
+aav
+aHE
+aHE
+aHE
+"}
+(129,1,1) = {"
+aHE
+aHE
+aHE
+abx
+aHf
+aoy
+apX
+aoy
+apX
+agk
+apx
+aoy
+aoy
+aGK
+aoB
+aHL
+apw
+aoB
+apx
+akb
+aab
+aGT
+aab
+aab
+aab
+aab
+aab
+apb
+aoB
+ahE
+aoy
+aoy
+aaf
+aav
+aaf
+aaf
+aaf
+aaf
+aak
+aai
+aaf
+aaf
+aaf
+aaf
+aae
+ajL
+aae
+aae
+aae
+aaf
+aah
+aag
+aai
+aaf
+aaH
+aaE
+aav
+aaE
+aag
+aai
+aav
+aaE
+aau
+aai
+aag
+aaf
+aaf
+aau
+aag
+aah
+aax
+aay
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aae
+aaf
+aaf
+aaH
+aak
+aau
+aav
+aav
+aaE
+aai
+aaf
+aaf
+aaf
+aag
+aav
+aaE
+aaf
+aaf
+aaf
+aaf
+aaf
+aah
+aag
+aeo
+aaH
+iKI
+aav
+aaE
+aaH
+aaf
+aaf
+aaH
+aah
+aav
+aaH
+aaH
+aau
+aHE
+aHE
+aHE
+"}
+(130,1,1) = {"
+aHE
+aHE
+aHE
+aoy
+apb
+apk
+apx
+apX
+apX
+aGO
+agI
+aqa
+apb
+aoB
+aoN
+aoB
+aqa
+ahS
+apb
+apx
+apb
+aab
+aHL
+aas
+aab
+aab
+aab
+aas
+aab
+acp
+aqa
+apw
+aau
+aag
+aai
+aah
+aak
+aau
+aaE
+aaf
+aaf
+aaf
+aaf
+aoA
+aae
+aae
+aae
+aae
+aae
+aae
+aaf
+aaE
+aav
+aaf
+aah
+aaE
+aah
+aah
+aaf
+aaf
+aah
+aau
+aai
+aau
+aae
+aae
+aaf
+aaf
+aaf
+aah
+aak
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aak
+aiK
+aaf
+aaf
+aaE
+aai
+aai
+aeo
+aav
+aav
+aaf
+aaE
+aai
+aaE
+aag
+aeo
+aau
+aaf
+aaf
+aaf
+aaf
+aai
+aag
+aak
+aau
+aai
+aai
+aaH
+aaE
+aav
+aag
+aah
+aaH
+aah
+aag
+aaH
+aau
+aaE
+aHE
+aHE
+aHE
+"}
+(131,1,1) = {"
+aHE
+aHE
+aHE
+apX
+acp
+acO
+aGN
+apb
+afn
+apb
+agJ
+aHt
+apw
+aoB
+apw
+aoB
+aoB
+apX
+apX
+aqa
+aks
+aqa
+aqa
+aas
+aGT
+aab
+aab
+aab
+aas
+aab
+aqa
+apw
+aoN
+aag
+aak
+aak
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+ajL
+aae
+aae
+aae
+aae
+aae
+aaf
+aaf
+aau
+aae
+aae
+aae
+aaE
+aau
+aav
+aaH
+aaH
+aah
+aau
+aae
+aae
+aae
+aax
+aaf
+aaf
+aaf
+aau
+aah
+aak
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aaf
+aaf
+aaf
+aaf
+aaE
+aak
+aaf
+aaE
+aaf
+aav
+aag
+aaE
+aag
+aak
+aah
+aaf
+aaf
+aaf
+aaf
+aaf
+aak
+aeo
+aeo
+aaH
+aau
+aai
+aaE
+aau
+aaf
+aah
+aah
+aaH
+aah
+aaM
+aag
+aai
+aau
+aHE
+aHE
+aHE
+"}
+(132,1,1) = {"
+aHE
+aHE
+aHE
+apw
+acq
+apw
+aoB
+apX
+afn
+aoB
+apx
+aGL
+aHA
+abB
+apw
+aji
+aoB
+aoy
+aqa
+aoy
+aoN
+aqa
+aGL
+aoN
+arI
+aas
+aab
+aat
+aGX
+aab
+acp
+apb
+apw
+aah
+aah
+aai
+aaf
+aax
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aaf
+aaf
+aae
+aae
+aae
+aae
+aae
+aag
+aaH
+aag
+aau
+aah
+aae
+aae
+aag
+aae
+aae
+aax
+aax
+aaf
+aaf
+aaf
+aaE
+aaE
+aaE
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aak
+aaf
+aaf
+aaH
+aav
+aeo
+aHP
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aeo
+aag
+aaH
+aai
+aaH
+aaH
+aav
+aaf
+aaf
+aaf
+aau
+aai
+aaE
+aak
+aav
+aav
+aah
+aHE
+aHE
+aHE
+"}
+(133,1,1) = {"
+aHE
+aHE
+aHE
+aHT
+apw
+apw
+aHt
+aoy
+apw
+aoN
+aGz
+aqa
+aHc
+ahS
+apw
+apw
+aoN
+aoN
+ajO
+adO
+api
+apx
+aby
+aab
+aGE
+aab
+aab
+amu
+aab
+aab
+aab
+aab
+aab
+aak
+apb
+aaf
+aaf
+aax
+aaf
+aaf
+aaf
+aae
+aiK
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aag
+aav
+aai
+aaf
+aae
+aae
+aav
+aag
+aaf
+aae
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aau
+aav
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aak
+aaf
+aau
+aaE
+aak
+aag
+aHw
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaH
+aaE
+aag
+aag
+aav
+aak
+aah
+aaH
+aaf
+aaf
+aaf
+aaf
+aau
+aav
+aAa
+aaH
+aau
+aaH
+aHE
+aHE
+aHE
+"}
+(134,1,1) = {"
+aHE
+aHE
+aHE
+aby
+aoN
+apX
+apw
+aoy
+aGE
+agl
+agD
+aqa
+apX
+atv
+apb
+afn
+aoN
+apX
+atw
+aoB
+apw
+aoB
+aqa
+apw
+aev
+apb
+amd
+aab
+aab
+aGT
+aas
+aab
+aCc
+aav
+aaf
+aaf
+aaf
+aaf
+aax
+aax
+aae
+aae
+aae
+aoC
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aak
+aak
+aah
+aah
+aai
+aae
+aae
+aaf
+aav
+aaf
+aax
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aaE
+aaf
+aaf
+aaf
+aag
+aak
+aav
+aak
+aag
+aag
+aak
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaE
+aau
+aaf
+aav
+aak
+aah
+aah
+aau
+aaf
+aaf
+aaf
+aaf
+aag
+aau
+aaE
+aaH
+aav
+aai
+aHE
+aHE
+aHE
+"}
+(135,1,1) = {"
+aHE
+aHE
+aHE
+apb
+apb
+apX
+apx
+aoN
+aHa
+aoN
+apw
+aoy
+apw
+aHA
+aoy
+aoN
+apb
+apw
+aHL
+aoy
+aoB
+akx
+apx
+api
+aqa
+acO
+aab
+aac
+abe
+aab
+abw
+aab
+aab
+aav
+aax
+aax
+aax
+aax
+aay
+aax
+aax
+aae
+aae
+aaf
+aaf
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aaH
+aau
+aav
+aau
+aav
+aae
+aax
+aae
+aae
+aax
+aax
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aka
+aeo
+aaH
+aFT
+aah
+aaH
+aaE
+aag
+aav
+aHx
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aag
+aaH
+aah
+aaf
+aaH
+aav
+aah
+aaf
+aaf
+aaf
+aaf
+aav
+aaH
+aaH
+aau
+aav
+aaE
+aak
+aHE
+aHE
+aHE
+"}
+(136,1,1) = {"
+aHE
+aHE
+aHE
+abA
+aoN
+api
+aoy
+aGv
+apw
+aHA
+apx
+apX
+apX
+aHt
+apx
+aoB
+aoN
+apX
+apx
+aqa
+apb
+apX
+akJ
+aoy
+apx
+ajy
+ame
+aab
+akt
+aab
+aas
+aHf
+aaf
+aaz
+aay
+aax
+aaz
+aax
+aax
+aax
+aax
+aae
+aax
+aaf
+aaf
+aae
+aae
+aka
+aae
+aae
+aaf
+aaf
+aaf
+aae
+aae
+aaf
+aau
+aav
+aaf
+aaf
+aae
+aka
+aax
+aae
+aay
+aay
+auK
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaz
+aax
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aae
+aaE
+aag
+aaH
+aak
+aaE
+aag
+aHm
+aah
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+wAn
+aak
+aaE
+aau
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aak
+aag
+aag
+aag
+aah
+aaH
+aav
+aHE
+aHE
+aHE
+"}
+(137,1,1) = {"
+aHE
+aHE
+aHE
+apx
+aby
+aGU
+aoB
+apb
+afo
+aCc
+aoN
+apx
+apb
+ahT
+aoy
+apX
+aoy
+aoN
+aby
+apw
+aoB
+aqa
+apx
+apb
+aHH
+aHI
+aGO
+aab
+apb
+anw
+aab
+aab
+aab
+aaz
+aaz
+aax
+aax
+aax
+aax
+aax
+aax
+aax
+aax
+aaf
+aaE
+aae
+aae
+aae
+aai
+aaH
+aai
+aah
+aai
+aai
+aae
+aae
+aak
+aae
+aae
+aae
+aae
+aae
+aax
+aax
+aax
+aax
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aax
+aay
+aaz
+aaz
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aaH
+aah
+aav
+aag
+aeo
+aah
+aaE
+aaE
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaH
+aau
+aaE
+aaf
+aaH
+aav
+aaH
+aaf
+aaf
+aaE
+aaE
+aak
+aag
+aaH
+aaE
+aah
+aai
+aag
+aHE
+aHE
+aHE
+"}
+(138,1,1) = {"
+aHE
+aHE
+aHE
+aoB
+atv
+aoB
+apx
+atv
+aGO
+apb
+aGY
+apx
+ahv
+ahV
+apX
+apw
+aoN
+aHK
+aoB
+aqa
+aHL
+aqa
+aqa
+aoB
+apx
+aoN
+apb
+apw
+aGZ
+ajO
+aas
+aab
+aab
+aaz
+aaz
+aaz
+aax
+aaz
+aax
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aaf
+aah
+aaf
+aaf
+aaf
+aaf
+aaf
+aae
+aae
+aae
+aae
+aae
+aae
+aax
+asV
+aax
+aax
+aax
+aay
+aay
+aax
+aaf
+aaf
+aaf
+aaf
+aaz
+ayB
+aaz
+aae
+aaf
+aaf
+aaf
+aaf
+aae
+aau
+aFe
+aaE
+aag
+aav
+aah
+aav
+aaH
+aaf
+aau
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aak
+aai
+aak
+aaf
+aav
+aav
+aag
+aaE
+aak
+aaH
+aai
+aak
+aau
+aah
+aaE
+aai
+aak
+aai
+aHE
+aHE
+aHE
+"}
+(139,1,1) = {"
+aHE
+aHE
+aHE
+apx
+aoN
+acP
+adO
+aoN
+aoy
+aoN
+aoy
+aoN
+apx
+axf
+aHT
+aoB
+afE
+aCc
+apw
+apb
+aHS
+aoy
+apx
+apX
+aHT
+apx
+aGv
+aoN
+arI
+aCc
+abs
+aab
+aaz
+aaz
+aaf
+aaf
+aaz
+aax
+aax
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aax
+aax
+aae
+aaf
+aai
+aak
+aaf
+aaf
+aaf
+aaf
+aaE
+aae
+aae
+aae
+aae
+aax
+aax
+aax
+aax
+aax
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aay
+aaz
+aaf
+aaf
+aaf
+aaf
+aaf
+aab
+aeo
+aeo
+aah
+aah
+aab
+aag
+aab
+aam
+aaf
+aaE
+aaf
+aaf
+aaf
+aaf
+aaf
+aau
+qVx
+aav
+aah
+aau
+aau
+aau
+aaf
+aaE
+aak
+aah
+aaf
+aaf
+aav
+aag
+aak
+aav
+aai
+aaE
+qVx
+jXu
+aag
+aHE
+aHE
+aHE
+"}
+(140,1,1) = {"
+aHE
+aHE
+aHE
+aHS
+apb
+aqa
+aoN
+aev
+aqU
+aoN
+apw
+aoy
+ahC
+aoN
+apX
+aoN
+aoB
+aqa
+aHz
+aoB
+apw
+akE
+akL
+all
+apx
+apX
+acp
+aHT
+amL
+apX
+aoN
+aaz
+aaz
+aaz
+aaf
+aaf
+aai
+aaz
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aay
+aax
+aay
+aax
+aaf
+aaf
+aaE
+aaf
+aaf
+aaf
+aaf
+aav
+aax
+aax
+aay
+aae
+aax
+aay
+aax
+aax
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aab
+aaf
+aab
+aab
+aab
+aae
+acf
+aac
+aGT
+aeo
+aab
+aaf
+aaf
+aam
+aaR
+aaf
+aaf
+aaf
+aaf
+aah
+aak
+aaH
+aak
+aah
+aai
+aag
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaH
+aak
+aav
+aaf
+aaf
+aaf
+aav
+aaH
+aaH
+aHE
+aHE
+aHE
+"}
+(141,1,1) = {"
+aHE
+aHE
+aHE
+abB
+apx
+apb
+aqa
+apw
+apX
+apx
+aoy
+ahd
+apx
+ahZ
+ait
+apb
+aoB
+ajC
+aoB
+atw
+aoN
+aHD
+abB
+apX
+apb
+afn
+aoy
+aoB
+aqa
+aaz
+ait
+aaz
+aaz
+aaz
+aaf
+aaf
+aaz
+aaz
+aay
+aoe
+aax
+aaf
+aag
+aak
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aag
+aah
+aaf
+aaf
+aaH
+aae
+aae
+aax
+aae
+aax
+aay
+aay
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aab
+aab
+aaf
+aab
+aab
+aab
+aaf
+aac
+aab
+aab
+aac
+aab
+aat
+aab
+aab
+aam
+aam
+aEc
+aaK
+aaH
+aai
+aaR
+aai
+aag
+aag
+hzc
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aav
+aaH
+aaE
+aau
+aaH
+aag
+aaH
+aag
+aaE
+aHE
+aHE
+aHE
+"}
+(142,1,1) = {"
+aHE
+aHE
+aHE
+aqa
+acr
+aoB
+atW
+aew
+afD
+agn
+agK
+aoB
+apb
+aoy
+aGY
+apb
+aHS
+aHY
+ajW
+apw
+aoy
+akF
+auM
+apx
+aHH
+apX
+apx
+aoy
+apw
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aax
+aay
+aau
+aag
+aah
+aav
+aau
+aaf
+aaf
+aak
+aax
+arw
+aax
+aax
+aax
+aax
+aaf
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aas
+aab
+aaf
+aab
+aat
+aAS
+aCn
+aab
+abs
+aab
+aat
+aab
+axu
+aab
+aab
+aab
+aab
+aab
+aaR
+aHy
+aam
+aam
+aaf
+aam
+aam
+aai
+aav
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aAa
+aak
+aaf
+aaf
+aaf
+aaf
+aaH
+aak
+aau
+aHE
+aHE
+aHE
+"}
+(143,1,1) = {"
+aHE
+aHE
+aHE
+aIb
+aoB
+acQ
+aoB
+aIb
+afE
+apb
+aoN
+agK
+atb
+aoB
+aoN
+aHI
+apb
+apX
+aqa
+apb
+aoB
+apX
+apb
+aoy
+apx
+apx
+aoN
+apb
+agI
+aaf
+aoy
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aax
+aaz
+aax
+aaf
+aaf
+aax
+aay
+aax
+aag
+aav
+aau
+aaH
+aaH
+aaE
+aai
+aax
+aax
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aab
+aab
+aab
+aab
+apZ
+aab
+aas
+aat
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aaR
+aEc
+aao
+aam
+aaR
+aam
+aFD
+aor
+abc
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaH
+aah
+aak
+aaf
+aaf
+aaf
+mbF
+aai
+aaf
+aaf
+aHE
+aHE
+aHE
+"}
+(144,1,1) = {"
+aHE
+aHE
+aHE
+apX
+aab
+apb
+apb
+aoB
+aoy
+ago
+apX
+apX
+agj
+aGu
+aqa
+aGN
+asl
+apb
+axf
+aoN
+akt
+apX
+apx
+apX
+aqU
+aqa
+apX
+aaf
+aaf
+aaf
+aaf
+aaz
+aaz
+aaz
+aaf
+aaf
+aaz
+aaz
+aaz
+aaz
+aaz
+aaz
+aax
+aax
+aax
+aax
+aax
+aax
+aav
+aah
+aaf
+aaf
+aaf
+aag
+aai
+aax
+aay
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aab
+ach
+aab
+aab
+aab
+aas
+aab
+aat
+aab
+aab
+aac
+aab
+aab
+aab
+aab
+aac
+aab
+apZ
+aab
+aab
+aab
+aab
+aab
+aam
+aam
+aam
+aal
+aao
+aam
+aal
+aaf
+abc
+aaf
+abc
+abc
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaE
+aav
+aau
+aak
+aia
+aau
+aah
+aag
+aah
+aaf
+aaf
+aHE
+aHE
+aHE
+"}
+(145,1,1) = {"
+aHE
+aHE
+aHE
+apb
+apb
+aoy
+aoy
+aoB
+aoB
+aoy
+aqa
+aGN
+aHI
+apx
+atb
+apx
+aqa
+apb
+aqa
+akn
+aoy
+aiN
+aoB
+aqa
+apX
+aqa
+aht
+aoy
+aaf
+aaf
+aaf
+aaz
+aay
+aaf
+aaf
+aaf
+aaf
+aaz
+aaz
+aaz
+aaz
+aaz
+aax
+aax
+aax
+aax
+aax
+aay
+aau
+aaE
+aaf
+aaf
+aaf
+aah
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aat
+abe
+aaY
+aab
+aGZ
+aab
+aat
+aab
+apZ
+aab
+aAT
+aab
+aab
+aab
+aGT
+aab
+aGT
+aat
+aab
+aab
+aab
+aab
+aam
+aaS
+aam
+aao
+aam
+aam
+aam
+aFD
+abc
+abc
+abc
+aaf
+aaf
+aaf
+aaf
+aaf
+aag
+aaf
+aaf
+aau
+aau
+aai
+aaH
+aai
+aak
+aai
+aaE
+aak
+aaf
+aaf
+aHE
+aHE
+aHE
+"}
+(146,1,1) = {"
+aHE
+aHE
+aHE
+abD
+acs
+aoB
+aGE
+aHL
+aGv
+aHc
+apb
+aht
+abx
+aqa
+aqa
+aHc
+aoB
+aoB
+apx
+aoB
+apx
+akH
+apb
+aqa
+aoN
+apx
+apN
+aaf
+apX
+aaf
+aaf
+aaz
+aaz
+aaz
+aaf
+aaz
+aaz
+aaf
+aaf
+aay
+aaz
+aaz
+aaz
+aax
+aax
+aax
+aax
+aax
+aak
+aaE
+aaf
+aaf
+aaf
+aax
+aax
+aax
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+apw
+ahu
+aab
+aab
+aab
+abF
+aab
+aat
+aab
+aGT
+aGT
+axu
+aab
+ach
+aab
+adQ
+aab
+aab
+aaY
+aab
+aab
+aab
+aaR
+aam
+aam
+aam
+aam
+aaK
+aam
+abc
+aam
+abc
+abc
+abc
+abc
+abc
+aaf
+aaf
+aah
+aaH
+aah
+aav
+aai
+aau
+aaE
+aaH
+aah
+aai
+aah
+aav
+aaH
+aag
+aaf
+aHE
+aHE
+aHE
+"}
+(147,1,1) = {"
+aHE
+aHE
+aHE
 aHE
 aHE
 aHE
@@ -34435,7 +37715,131 @@ aHE
 aHE
 aHE
 "}
-(127,1,1) = {"
+(148,1,1) = {"
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+aHE
+"}
+(149,1,1) = {"
 aHE
 aHE
 aHE

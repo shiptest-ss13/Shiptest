@@ -722,7 +722,7 @@ SUBSYSTEM_DEF(overmap)
 		log_shuttle("SSOVERMAP: START_STATIC_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 		mapgen.generate_turfs(vlevel.get_unreserved_block())
 
-	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y)
+	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y,vlevel.z_value)
 	map_to_load.load(spawn_turf)
 
 	if(use_mapgen)
@@ -732,12 +732,12 @@ SUBSYSTEM_DEF(overmap)
 		new static_datum.weather_controller_type(mapzone)
 
 	var/list/docking_ports = list()
-	var/turf/turf_lower = locate(vlevel.low_x,vlevel.low_y)
-	var/turf/turf_higher = locate(vlevel.high_x,vlevel.high_y)
-	for(var/obj/docking_port/stationary/dock as obj in block(turf_lower,turf_higher))
-		if(!istype(dock))
-			continue
-		docking_ports += dock
+//	var/turf/turf_lower = locate(vlevel.low_x,vlevel.low_y)
+//	var/turf/turf_higher = locate(vlevel.high_x,vlevel.high_y)
+
+	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+		if(port.virtual_z() == vlevel.id)
+			docking_ports += port
 
 	return list(mapzone, docking_ports)
 

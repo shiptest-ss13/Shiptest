@@ -55,8 +55,12 @@
 		QDEL_NULL(mapzone)
 
 /datum/overmap/static_object/get_jump_to_turf()
-	if(reserve_docks)
+	if(reserve_docks && reserve_docks.len)
 		return get_turf(pick(reserve_docks))
+	if(mapzone)
+		var/datum/virtual_level/vlevel = pick(mapzone.virtual_levels)
+		var/turf/goto_turf = locate(vlevel.low_x,vlevel.low_y,vlevel.z_value)
+		return goto_turf
 
 /datum/overmap/static_object/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	if(loading)
@@ -138,3 +142,15 @@
 	desc = "Uh oh! Looks like an admin hasn't finished setting up yet! Better not dock until this description disapears!"
 	token_icon_state = "bus"
 	preserve_level = TRUE
+
+
+/datum/overmap/static_object/testmap
+	name = "test"
+	desc = "TESTMAP"
+	token_icon_state = "zeta"
+	preserve_level = TRUE
+	map_to_load = /datum/map_template/test_punchcard
+
+/datum/map_template/test_punchcard
+	name = "test_punchcard"
+	mappath = 'punchcard_test_map.dmm'

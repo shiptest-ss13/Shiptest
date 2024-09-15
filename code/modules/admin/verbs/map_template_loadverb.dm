@@ -7,6 +7,9 @@
 	var/map = input(src, "Choose a Map Template to place at your CURRENT LOCATION","Place Map Template") as null|anything in sortList(SSmapping.map_templates)
 	if(!map)
 		return
+	var/center_map = TRUE
+	if(alert(src,"Align map to the bottom left of your CURRENT LOCATION?","Place Map Template","Yes","No") == "Yes")
+		center_map = FALSE
 	template = SSmapping.map_templates[map]
 
 	var/turf/T = get_turf(mob)
@@ -14,13 +17,13 @@
 		return
 
 	var/list/preview = list()
-	for(var/S in template.get_affected_turfs(T,centered = TRUE))
+	for(var/S in template.get_affected_turfs(T,center_map))
 		var/image/item = image('icons/turf/overlays.dmi',S,"greenOverlay")
 		item.plane = ABOVE_LIGHTING_PLANE
 		preview += item
 	images += preview
 	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
-		if(template.load(T, centered = TRUE))
+		if(template.load(T, center_map))
 			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
 		else
 			to_chat(src, "Failed to place map", confidential = TRUE)
@@ -37,7 +40,7 @@
 		to_chat(src, "<span class='warning'>Filename must end in '.dmm': [map]</span>", confidential = TRUE)
 		return
 	var/datum/map_template/new_map
-	var/template_type = input(src, "What kind of map is this?", "Map type", list("Normal", "Norm. & Mark", "Shuttle", "Static Overmap Obj.", "Cancel"))
+	var/template_type = tgui_input_list(src, "What kind of map is this?", "Map type", list("Normal", "Norm. & Mark", "Shuttle", "Static Overmap Obj.", "Cancel"))
 	switch(template_type)
 		if("Normal")
 			new_map = new /datum/map_template(map, "[map]", TRUE)
@@ -104,7 +107,7 @@
 			return //if selected_system didnt get selected, we nope out, this is very bad
 
 		var/datum/overmap/static_object/created = new /datum/overmap/static_object/admin_loaded(location, selected_system)
-		created.map_to_load = map
+		created.map_to_load = new_map
 
 		message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(created.token)))
 

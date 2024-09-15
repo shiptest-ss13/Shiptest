@@ -142,10 +142,12 @@
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
 		return
-	if(T.x+width > world.maxx)
-		return
-	if(T.y+height > world.maxy)
-		return
+	if(T.x+width-1 > world.maxx)
+		message_admins("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!</span>")
+		CRASH("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!/span>")
+	if(T.y+height-1 > world.maxy)
+		message_admins("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!</span>")
+		CRASH("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!/span>")
 
 	var/list/border = block(locate(max(T.x-1, 1),			max(T.y-1, 1),			 T.z),
 							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))

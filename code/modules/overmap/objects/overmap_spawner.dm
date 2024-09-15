@@ -1,4 +1,4 @@
-/obj/item/overmap_encounter_spawner
+/obj/item/overmap_punchcard_spawner
 	name = "helm console punchcard"
 	desc = "A piece of paper with carfully organized holes through it."
 	gender = NEUTER
@@ -20,11 +20,11 @@
 	/// Do we want to keep the panet after all sentient players have left? If set to false it DESTROYS the planet when every sentient player has left!
 	var/preserve_level = TRUE
 
-/obj/item/overmap_encounter_spawner/examine(mob/user)
+/obj/item/overmap_punchcard_spawner/examine(mob/user)
 	. = ..()
 	. += span_notice("You could probably scan this with a helm console to locate a hidden overmap object.")
 
-/obj/item/overmap_encounter_spawner/proc/create_encounter(datum/overmap_star_system/current_overmap)
+/obj/item/overmap_punchcard_spawner/proc/create_encounter(datum/overmap_star_system/current_overmap)
 	//if no or an invalid overmap is passed onto the proc, nope the hell out
 	if(!istype(current_overmap))
 		CRASH("Invalid Overmap passed to punchcard generation! Aborting!")
@@ -71,10 +71,10 @@
 
 /obj/machinery/computer/helm/attackby(obj/item/key, mob/living/user, params)
 	. = ..()
-	var/obj/item/overmap_encounter_spawner/punchcard
+	var/obj/item/overmap_punchcard_spawner/punchcard
 
 	// Is this thing a punchcard?
-	if(istype(key, /obj/item/overmap_encounter_spawner))
+	if(istype(key, /obj/item/overmap_punchcard_spawner))
 		punchcard = key
 		//flavor
 		say("Scanning punchcard, please wait...")
