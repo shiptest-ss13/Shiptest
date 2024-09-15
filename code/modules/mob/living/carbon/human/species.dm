@@ -164,6 +164,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_cooling_rate_max = HUMAN_BODYTEMP_COOLING_MAX
 	/// The maximum rate at which a species can cool down per tick
 	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
+	/// How much temp is our body stabilizing naturally?
+	var/bodytemp_natural_stabilization = 0
+	/// How much temp is the environment is causing us to charge?
+	var/bodytemp_environment_change = 0
 
 	///Does our species have colors for its' damage overlays?
 	var/use_damage_color = TRUE
@@ -1794,10 +1798,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/areatemp = H.get_temperature(environment)
 
 	if(H.stat != DEAD) // If you are dead your body does not stabilize naturally
-		natural_bodytemperature_stabilization(environment, H)
+		bodytemp_natural_stabilization = natural_bodytemperature_stabilization(environment, H)
 
 	if(!H.on_fire || areatemp > H.bodytemperature) // If we are not on fire or the area is hotter
-		H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
+		bodytemp_environment_change = H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
 
 	if(H.check_for_seal())
 		return
@@ -1858,6 +1862,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /// Traits for resitance to heat or cold are handled here.
 /datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
 	var/body_temp = H.bodytemperature
+	var/total_change = bodytemp_natural_stabilization + bodytemp_environment_change
 
 	//tempature is no longer comfy, throw alert
 	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
@@ -1869,20 +1874,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
-			if(body_temp > (max_temp_comfortable + 10))
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
-			else
+			if(body_temp < (bodytemp_heat_damage_limit - 10))
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+				if(total_change > 1)
+					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+			else if(total_change > 1)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+			else
+				H.clear_alert("tempfeel")
 	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		if(body_temp < 200)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
 		else if(body_temp < bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(body_temp < (min_temp_comfortable - 10))
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
-		else
+		else if(body_temp < (bodytemp_cold_damage_limit + 10))
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+				if(total_change < -1)
+					H.throw_alert("tempfeel", /atom/movable/screen/alert/cool)
+		else if(total_change < -1)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cool)
+		else
+			H.clear_alert("tempfeel")
 	else
 		H.clear_alert("tempfeel")
 
@@ -2062,6 +2075,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	// Apply the natural stabilization changes
 	H.adjust_bodytemperature(natural_change)
+	return natural_change
 
 //////////
 // FIRE //
