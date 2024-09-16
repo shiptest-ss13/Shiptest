@@ -31,7 +31,7 @@
 	. = ..()
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
-	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(prehit))
+	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(bullet_act))
 
 
 /obj/mecha/combat/durand/Destroy()
@@ -79,11 +79,20 @@
 	SEND_SIGNAL(shield, COMSIG_MECHA_ACTION_ACTIVATE, source, signal_args)
 
 //Redirects projectiles to the shield if defense_check decides they should be blocked and returns true.
-/obj/mecha/combat/durand/proc/prehit(obj/projectile/source, list/signal_args)
-	SIGNAL_HANDLER
+// /obj/mecha/combat/durand/proc/prehit(obj/projectile/source, list/signal_args)
+// 	SIGNAL_HANDLER
 
+// 	if(defense_check(source.loc, shield.ranged_pass) && shield)
+// 		signal_args[2] = shield
+
+/obj/mecha/combat/durand/bullet_act(obj/projectile/source, list/signal_args)
+	SIGNAL_HANDLER
+	// if(defense_check(source.loc, shield.ranged_pass) && shield)
+ 	// 	signal_args[2] = shield
 	if(defense_check(source.loc, shield.ranged_pass) && shield)
 		signal_args[2] = shield
+	else
+		. = ..()
 
 /**Checks if defense mode is enabled, and if the attacker is standing in an area covered by the shield.
 Expects a turf. Returns true if the attack should be blocked, false if not. Skip defence will make the proc return false and the attack will go through*/
