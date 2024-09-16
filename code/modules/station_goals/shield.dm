@@ -99,6 +99,7 @@
 			explosion(M, 0,0,1,5,TRUE,FALSE,3,FALSE,TRUE)
 			qdel(M)
 			COOLDOWN_START(src, fire_timer, fire_delay)
+			return
 
 /obj/machinery/meteor_shield/cargo
 	anchored = FALSE
