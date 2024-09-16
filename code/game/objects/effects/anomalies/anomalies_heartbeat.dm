@@ -3,7 +3,7 @@
 	icon_state = "heartbeat"
 	desc = "A throbbing vertex, spreading a cancer to the world around itself."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/heartbeat
+	core = /obj/item/assembly/signaler/anomaly/heartbeat
 	effectrange = 3
 	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5

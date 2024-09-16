@@ -3,7 +3,7 @@
 	icon_state = "veins"
 	desc = "A throbbing field floating mid-air, crimson particulate hovering around it."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/transfusion
+	core = /obj/item/assembly/signaler/anomaly/transfusion
 	effectrange = 3
 	pulse_delay = 5 SECONDS
 
@@ -22,10 +22,10 @@
 	//however - I am a lazy bitch
 	for(var/mob/living/carbon/victim in range(effectrange, src))
 		//if we're not hungry, we're not hungry.
-		if (Core?:get_blood_max() < Core?:get_blood_stored())
+		if (core?:get_blood_max() < core?:get_blood_stored())
 			new /obj/effect/temp_visual/dir_setting/bloodsplatter(src.loc, rand(1, 8))
 			visible_message(span_boldwarning("[src] vomits up blood, seemingly satiated!"))
-			Core?:set_blood_stored(Core?:get_blood_max())
+			core?:set_blood_stored(core?:get_blood_max())
 			return
 		//if there's blood to take, take it
 		if (victim.blood_volume > BLOOD_VOLUME_SAFE)
@@ -34,14 +34,14 @@
 			victim.bleed(bleeder)
 			victim.spray_blood(get_dir(victim, src), splatter_strength = 1) //slurp
 			visible_message(span_boldwarning("Ichor flows out of [victim], and into [src]!"))
-			Core?:set_blood_stored(bleeder)
+			core?:set_blood_stored(bleeder)
 			break
 		//but if there's blood to give, share.
-		if(victim.blood_volume < BLOOD_VOLUME_SAFE && Core?:get_blood_stored() > (Core?:get_blood_max() / 2))
+		if(victim.blood_volume < BLOOD_VOLUME_SAFE && core?:get_blood_stored() > (core?:get_blood_max() / 2))
 			var/present_time
-			present_time = rand((Core?:get_blood_stored() / 10), (Core?:get_blood_stored() / 2))
+			present_time = rand((core?:get_blood_stored() / 10), (core?:get_blood_stored() / 2))
 			visible_message(span_boldwarning("Globules of ichor fly away from [src], and into [victim]!"))
-			Core?:set_blood_stored(-present_time)
+			core?:set_blood_stored(-present_time)
 			victim.blood_volume += present_time
 			break
 	return
@@ -55,7 +55,7 @@
 		visible_message(span_boldwarning("[victim] touches [src], and as they pull away their blood flows away from them!"))
 		var/amount = rand(50, 200)
 		victim.bleed(amount)
-		Core?:set_blood_stored(amount)
+		core?:set_blood_stored(amount)
 
 /obj/effect/anomaly/transfusion/detonate()
 	for(var/mob/living/carbon/victim in range(effectrange, src))

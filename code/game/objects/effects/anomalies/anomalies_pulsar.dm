@@ -3,7 +3,7 @@
 	icon_state = "pulsar"
 	desc = "A near transparent shell hovering, containing a near constant electromagnetic turmoil."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/pulsar
+	core = /obj/item/assembly/signaler/anomaly/pulsar
 	effectrange = 4
 	pulse_delay = 15 SECONDS
 

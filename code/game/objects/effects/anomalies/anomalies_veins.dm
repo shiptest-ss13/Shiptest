@@ -3,7 +3,7 @@
 	icon_state = "veins"
 	desc = "Throbbing purple veins, an exposed artery of the world. It thirsts."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/veins
+	core = /obj/item/assembly/signaler/anomaly/veins
 	effectrange = 3
 	pulse_delay = 4 SECONDS
 

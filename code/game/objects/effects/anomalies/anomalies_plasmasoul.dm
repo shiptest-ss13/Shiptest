@@ -3,7 +3,7 @@
 	icon_state = "plasmasoul"
 	desc = "A plasmatic pool, small crystals growing around it, spreading into the ground."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/plasmasoul
+	core = /obj/item/assembly/signaler/anomaly/plasmasoul
 	effectrange = 3
 	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5

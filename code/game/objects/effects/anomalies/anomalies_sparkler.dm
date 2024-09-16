@@ -3,7 +3,7 @@
 	icon_state = "sparkler"
 	desc = "A series of shimmering sparks flying to and fro. They try to spread, yet fail."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/sparkler
+	core = /obj/item/assembly/signaler/anomaly/sparkler
 	effectrange = 4
 	pulse_delay = 1 SECONDS
 

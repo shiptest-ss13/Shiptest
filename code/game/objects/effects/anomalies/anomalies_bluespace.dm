@@ -4,7 +4,7 @@
 	icon_state = "bluespace"
 	desc = "A hole in the fabric of bluespace, perforating reality around it."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/bluespace
+	core = /obj/item/assembly/signaler/anomaly/bluespace
 	///range from which we can teleport someone
 	effectrange = 3
 	var/reagent_amount = 3

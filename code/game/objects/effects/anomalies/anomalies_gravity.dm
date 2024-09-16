@@ -11,7 +11,7 @@
 	icon_state = "gravity"
 	desc = "A miniature gravity well, constantly pulling the world around it into a 'throngling'."
 	density = FALSE
-	Core = /obj/item/assembly/signaler/anomaly/grav
+	core = /obj/item/assembly/signaler/anomaly/grav
 	effectrange = 4
 	var/boing = 0
 	///Warp effect holder for displacement filter to "pulse" the anomaly

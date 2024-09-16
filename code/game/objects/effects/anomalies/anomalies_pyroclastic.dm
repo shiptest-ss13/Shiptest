@@ -5,7 +5,7 @@
 	desc = "A floating orb of everburning gas, not unlike a sun. It radiates a dangerous amount of heat."
 	effectrange = 4
 	pulse_delay = 10 SECONDS
-	Core = /obj/item/assembly/signaler/anomaly/pyro
+	core = /obj/item/assembly/signaler/anomaly/pyro
 
 /obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)
 	..()

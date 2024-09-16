@@ -3,7 +3,7 @@
 	icon_state = "phantom"
 	desc = "A familiar outline, it calls out for companionship. It screams for you."
 	density = FALSE
-	Core = /obj/item/assembly/signaler/anomaly/phantom
+	core = /obj/item/assembly/signaler/anomaly/phantom
 	effectrange = 3
 	pulse_delay = 2 SECONDS
 

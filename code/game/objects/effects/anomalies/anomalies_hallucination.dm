@@ -3,7 +3,7 @@
 	name = "hallucination anomaly"
 	icon_state = "hallucination"
 	desc = "A shimmering mirage suspended above the ground, never in the same place as it was a second ago."
-	Core = /obj/item/assembly/signaler/anomaly/hallucination
+	core = /obj/item/assembly/signaler/anomaly/hallucination
 	/// Time passed since the last effect, increased by delta_time of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses

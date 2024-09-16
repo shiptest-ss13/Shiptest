@@ -4,7 +4,7 @@
 	desc = "Everburning green flames, eager to lash out at anything that intrudes near."
 	effectrange = 2
 	pulse_delay = 10 SECONDS
-	Core = /obj/item/assembly/signaler/anomaly/melter
+	core = /obj/item/assembly/signaler/anomaly/melter
 
 /obj/effect/anomaly/melter/anomalyEffect(seconds_per_tick)
 	..()

@@ -4,7 +4,7 @@
 	//double-check that these only happen in atmosphere now
 	desc = "A break in the atmosphere, small yet potent lightning arcs flashing off it."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/flux
+	core = /obj/item/assembly/signaler/anomaly/flux
 	pulse_delay = 2 SECONDS
 	effectrange = 0
 	var/canshock = FALSE

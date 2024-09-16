@@ -8,7 +8,7 @@
 	anchored = TRUE
 	light_range = 3
 
-	var/obj/item/assembly/signaler/anomaly/Core = /obj/item/assembly/signaler/anomaly
+	var/obj/item/assembly/signaler/anomaly/core = /obj/item/assembly/signaler/anomaly
 	var/area/impact_area
 
 	var/lifespan = 990
@@ -44,17 +44,17 @@
 	pulse_delay = rand(pulse_delay*0.5, pulse_delay*1.5)
 
 	src.drops_core = drops_core
-	if(Core)
-		Core = new Core(src)
-		Core.code = rand(1,100)
-		Core.code_b = rand(1,100)
-		Core.anomaly_type = type
-		Core.research = research_value
+	if(core)
+		core = new core(src)
+		core.code = rand(1,100)
+		core.code_b = rand(1,100)
+		core.anomaly_type = type
+		core.research = research_value
 
 		var/frequency = rand(MIN_FREE_FREQ, MAX_FREE_FREQ)
 		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
 			frequency++
-		Core.set_frequency(frequency)
+		core.set_frequency(frequency)
 
 	if(lifespan)
 		if(new_lifespan)
@@ -85,7 +85,7 @@
 /obj/effect/anomaly/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(countdown)
-	QDEL_NULL(Core)
+	QDEL_NULL(core)
 	return ..()
 
 /obj/effect/anomaly/proc/anomalyEffect(seconds_per_tick)
@@ -107,21 +107,21 @@
 /obj/effect/anomaly/proc/anomalyNeutralize()
 	new /obj/effect/particle_effect/smoke/bad(loc)
 	if(drops_core)
-		if(isnull(Core))
+		if(isnull(core))
 			stack_trace("An anomaly ([src]) exists that drops a core, yet has no core!")
 		else
-			Core.forceMove(drop_location())
-			Core = null
+			core.forceMove(drop_location())
+			core = null
 	// else, anomaly core gets deleted by qdel(src).
 
 	qdel(src)
 
 
 /obj/effect/anomaly/attackby(obj/item/weapon, mob/user, params)
-	if(weapon.tool_behaviour == TOOL_ANALYZER && Core)
+	if(weapon.tool_behaviour == TOOL_ANALYZER && core)
 		to_chat(user, span_notice("You start analyzing [src]."))
 		if(do_after(user, 20, src, hidden = TRUE))
-			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(Core.frequency)], code [Core.code]."))
+			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(core.frequency)], code [core.code]."))
 
 		return TRUE
 	return ..()
