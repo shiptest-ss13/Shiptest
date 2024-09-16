@@ -9,7 +9,7 @@
 	anchored = TRUE
 	density = TRUE
 	use_power = FALSE
-	processing_flags = START_PROCESSING_ON_INIT
+	processing_flags = START_PROCESSING_MANUALLY
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	idle_power_usage = 100
 	active_power_usage = 1000
@@ -18,7 +18,6 @@
 	var/kill_range = 6
 	var/fire_delay = 7 SECONDS
 	COOLDOWN_DECLARE(fire_timer)
-	var/charging = TRUE
 
 /obj/machinery/meteor_shield/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
@@ -28,21 +27,23 @@
 	if(.)
 		return
 	if (active)
-		user.visible_message("<span class='notice'>[user] deactivated \the [src].</span>", \
-			"<span class='notice'>You deactivate \the [src].</span>", \
-			"<span class='hear'The chirps of [src] fade out as it powers down.</span>")
+		user.visible_message(
+			span_notice("[user] deactivated \the [src]."), \
+			span_notice("You deactivate \the [src]."")", \
+			span_hear("The chirps of [src] fade out as it powers down.")))
 		active = FALSE
-		end_processing()
+		STOP_PROCESSING(SSfastprocess, src)
 	else
 		if(anchored)
-			user.visible_message("<span class='notice'>[user] activated \the [src].</span>", \
-				"<span class='notice'>You activate \the [src].</span>", \
-				"<span class='hear'>You hear heavy droning.</span>")
+			user.visible_message(
+				span_notice("[user] activated \the [src]."), \
+				span_notice("You activate \the [src]."), \
+				span_hear("You hear heavy droning."))
 			active = TRUE
-			begin_processing()
+			START_PROCESSING(SSfastprocess, src)
 
 		else
-			to_chat(user, "<span class='warning'>[src] must first be secured to the floor!</span>")
+			to_chat(user, span_warning("[src] must first be secured to the floor!"))
 	return
 
 /obj/machinery/meteor_shield/attackby(obj/item/W, mob/user, params)
@@ -50,14 +51,14 @@
 		if(!anchored && !isinspace())
 			W.play_tool_sound(src, 100)
 			if (W.use_tool(src, user, 20))
-				to_chat(user, "<span class='notice'>You secure \the [src] to the floor!</span>")
+				to_chat(user, span_notice("You secure \the [src] to the floor!"))
 				set_anchored(TRUE)
 		else if(anchored)
 			W.play_tool_sound(src, 100)
 			if (W.use_tool(src, user, 20))
-				to_chat(user, "<span class='notice'>You unsecure \the [src] from the floor!</span>")
+				to_chat(user, span_notice("You unsecure \the [src] from the floor!"))
 				if(active)
-					to_chat(user, "<span class='notice'>\The [src] shuts off!</span>")
+					to_chat(user, span_notice("\The [src] shuts off!"))
 				set_anchored(FALSE)
 	if(W.tool_behaviour == TOOL_MULTITOOL)
 		var/a = stripped_input(usr, "Please enter desired ID.", name, id, 20)
@@ -69,10 +70,10 @@
 /obj/machinery/meteor_shield/proc/toggle(mob/user)
 	if(!anchored)
 		if(user)
-			to_chat(user, "<span class='warning'>You can only activate [src] while it's secured!.</span>")
+			to_chat(user, span_warning("You can only activate [src] while it's secured!."))
 
 	if(user)
-		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
+		to_chat(user, span_notice("You [active ? "deactivate": "activate"] [src]."))
 	set_anchored(!anchored)
 
 /obj/machinery/meteor_shield/update_icon_state()
@@ -87,20 +88,17 @@
 	if(!active)
 		return
 	if(COOLDOWN_FINISHED(src, fire_timer))
-		if(charging = TRUE)
-			charging = FALSE
-		for(var/obj/effect/meteor/M in GLOB.meteor_list)
-			if(M.virtual_z() != virtual_z())
-				continue
-			if(get_dist(M,src) > kill_range)
-				continue
-			if(!(obj_flags & EMAGGED) && los(M))
-				Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
-				dir = get_dir(src, M)
-				explosion(M, 0,0,1,5,TRUE,FALSE,3,FALSE,TRUE)
-				qdel(M)
-				COOLDOWN_START(src, fire_timer, fire_delay)
-				charging = TRUE
+	for(var/obj/effect/meteor/M in GLOB.meteor_list)
+		if(M.virtual_z() != virtual_z())
+			continue
+		if(get_dist(M,src) > kill_range)
+			continue
+		if(!(obj_flags & EMAGGED) && los(M))
+			Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
+			dir = get_dir(src, M)
+			explosion(M, 0,0,1,5,TRUE,FALSE,3,FALSE,TRUE)
+			qdel(M)
+			COOLDOWN_START(src, fire_timer, fire_delay)
 
 /obj/machinery/meteor_shield/cargo
 	anchored = FALSE
