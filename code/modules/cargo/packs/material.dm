@@ -114,6 +114,6 @@
 /datum/supply_pack/material/concrete_mix
 	name = "Concrete Mix (Jug)"
 	desc = "Feeling lazy? Need a structure and quick? Use concrete! Just add water."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/reagent_containers/glass/chem_jug/concrete_mix)
 	crate_name = "Concrete Mix"
