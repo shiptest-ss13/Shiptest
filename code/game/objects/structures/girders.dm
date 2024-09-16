@@ -143,7 +143,7 @@
 						S.use(1)
 						to_chat(user, "<span class='notice'>You fully reinforce the wall.</span>")
 						var/turf/T = get_turf(src)
-						T.PlaceOnTop(/turf/closed/)
+						T.PlaceOnTop(/turf/closed)
 						transfer_fingerprints_to(T)
 						qdel(src)
 					return
