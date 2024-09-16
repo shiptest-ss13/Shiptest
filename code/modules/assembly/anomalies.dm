@@ -94,7 +94,7 @@
 ///Heartbeat Anomaly
 /obj/item/assembly/signaler/anomaly/heartbeat
 	name = "\improper heartbeat anomaly core"
-	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across it's shell."
+	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across its shell."
 
 /obj/item/assembly/signaler/anomaly/heartbeat/anomaly_core_detonation()
 	visible_message(span_warning("[src] expands and throbs, before shattering into dozens of fragments!"))
