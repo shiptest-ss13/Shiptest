@@ -471,7 +471,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/maintenance = 2,
 		/obj/effect/spawner/lootdrop/maintenance/two = 5,
