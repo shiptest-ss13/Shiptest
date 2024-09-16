@@ -649,7 +649,7 @@
 	mob_traits = list(TRAIT_ANALGESIA)
 	gain_text = "<span class='danger'>You've never really felt pain.</span>"
 	lose_text = "<span class='notice'>...Oh god, you're sore.</span>"
-	medical_record_text = "Patient's is unable to process pain"
+	medical_record_text = "Patient is unable to process pain"
 
 /datum/quirk/congenital_analgesia/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
