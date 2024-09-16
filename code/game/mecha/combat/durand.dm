@@ -74,7 +74,7 @@
 
 	if(!shield) //if the shield somehow got deleted
 		stack_trace("Durand triggered relay without a shield")
-		shield = new /obj/durand_shield(loc, src, layer)
+		shield = new shield_type(loc, src, layer)
 	shield.setDir(dir)
 	SEND_SIGNAL(shield, COMSIG_MECHA_ACTION_ACTIVATE, source, signal_args)
 
