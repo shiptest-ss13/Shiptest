@@ -242,7 +242,6 @@
 		/obj/machinery/meteor_shield/cargo,
 	)
 
-
 /*
 		Power generation machines
 */
