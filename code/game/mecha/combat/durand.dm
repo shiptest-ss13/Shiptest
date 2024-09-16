@@ -25,13 +25,11 @@
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	shield_passive_drain = 0
 	shield_type = /obj/durand_shield/clip
-	//TODO: Custom melee backlash shield with no projectile protection
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
-	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(bullet_act))
 
 
 /obj/mecha/combat/durand/Destroy()
@@ -79,18 +77,9 @@
 	SEND_SIGNAL(shield, COMSIG_MECHA_ACTION_ACTIVATE, source, signal_args)
 
 //Redirects projectiles to the shield if defense_check decides they should be blocked and returns true.
-// /obj/mecha/combat/durand/proc/prehit(obj/projectile/source, list/signal_args)
-// 	SIGNAL_HANDLER
-
-// 	if(defense_check(source.loc, shield.ranged_pass) && shield)
-// 		signal_args[2] = shield
-
-/obj/mecha/combat/durand/bullet_act(obj/projectile/source, list/signal_args)
-	SIGNAL_HANDLER
-	// if(defense_check(source.loc, shield.ranged_pass) && shield)
- 	// 	signal_args[2] = shield
-	if(defense_check(source.loc, shield.ranged_pass) && shield)
-		signal_args[2] = shield
+/obj/mecha/combat/durand/bullet_act(obj/projectile/source)
+	if(defense_check(source.loc, shield.ranged_pass))
+		shield.bullet_act(source)
 	else
 		. = ..()
 
@@ -261,8 +250,11 @@ the shield is disabled by means other than the action button (like running out o
 /obj/durand_shield/clip/proc/apply_shock(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/victim = user
-		electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE)
+		if(electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE))
+			visible_message(span_danger("\The [src] repels \the [victim]'s attack, shocking [victim.p_they()]"))
+
 	else if(isliving(user))
 		var/mob/living/victim = user
 		victim.apply_damage_type(20,BURN)
+		to_chat(victim,span_userdanger("You're shocked by \the [src]!"))
 	do_sparks(5,TRUE,src)
