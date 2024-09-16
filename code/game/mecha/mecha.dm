@@ -683,9 +683,9 @@
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		if(ishuman(obstacle))
 			var/mob/living/carbon/human/H = obstacle
-			H.throw_at(throw_target,7,3)
-			visible_message(span_danger("[src] slams into \the [obstacle] with a sickening crunch, sending \the [obstacle] flying!"))
-			playsound(H, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
+			H.throw_at(throw_target,4,3)
+			visible_message(span_danger("[src] slams into \the [obstacle], sending [obstacle.p_them()] flying!"))
+			playsound(H, 'sound/effects/bang.ogg', 100, FALSE, -1)
 			H.Paralyze(20)
 			H.adjustStaminaLoss(30)
 			H.apply_damage(rand(20,35), BRUTE)
