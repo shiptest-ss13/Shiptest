@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	icon_state = "static"
 	desc = "A hole in the world emitting an endless buzzing. It hides something precious."
 	density = TRUE
-	Core = /obj/item/assembly/signaler/anomaly/tvstatic
+	core = /obj/item/assembly/signaler/anomaly/tvstatic
 	effectrange = 4
 	pulse_delay = 4 SECONDS
 	verb_say = "pleads"
