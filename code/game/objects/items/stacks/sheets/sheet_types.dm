@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	desc = "This sheet is an alloy of iron and carbon."
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-plasteel"
-	custom_materials = list(/datum/material/iron=3960, /datum/material/carbon=40)
+	custom_materials = list(/datum/material/iron=3000, /datum/material/carbon=1000)
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
