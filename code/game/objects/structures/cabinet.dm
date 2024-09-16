@@ -18,9 +18,10 @@
 
 /obj/structure/cabinet/Initialize()
 	. = ..()
-	our_object = stored
-	if(!empty)
-		stored = new stored(src)
+	if(our_object)
+		our_object = stored
+		if(!empty && stored)
+			stored = new stored(src)
 	update_appearance()
 
 /obj/structure/cabinet/Destroy()
