@@ -13,7 +13,7 @@
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	idle_power_usage = 100
 	active_power_usage = 1000
-	var/id
+	var/id = ""
 	var/active = TRUE
 	var/kill_range = 6
 	var/fire_delay = 7 SECONDS
