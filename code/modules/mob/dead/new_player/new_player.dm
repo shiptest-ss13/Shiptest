@@ -44,51 +44,6 @@
 /mob/dead/new_player/prepare_huds()
 	return
 
-/**
- * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
- */
-/mob/dead/new_player/proc/new_player_panel()
-	if(auth_check)
-		return
-
-	if(CONFIG_GET(flag/auth_only))
-		if(client?.holder && CONFIG_GET(flag/auth_admin_testing))
-			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access.</span>")
-		else
-			to_chat(src, "<span class='userdanger'>This server is for authentication only.</span>")
-			auth_check = TRUE
-			return
-
-	if (client?.interviewee)
-		return
-
-	var/datum/asset/asset_datum = get_asset_datum(/datum/asset/simple/lobby)
-	asset_datum.send(client)
-	var/list/output = list("<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>")
-
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>\[ <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p>\[ [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>\[ [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
-	else
-		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
-		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
-
-	if(!IsGuestKey(src.key))
-		output += playerpolls()
-
-	output += "</center>"
-
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 265)
-	popup.set_window_options("can_close=0")
-	popup.set_content(output.Join())
-	popup.open(FALSE)
-
 /mob/dead/new_player/proc/playerpolls()
 	var/list/output = list()
 	if (SSdbcore.Connect())
@@ -190,6 +145,13 @@
 			return
 		LateChoices()
 
+	if(href_list["motd"])
+		var/motd = global.config.motd
+		if(motd)
+			to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
+		else
+			to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
+
 	if(href_list["manifest"])
 		ViewManifest()
 
@@ -210,6 +172,11 @@
 	if(href_list["votepollref"])
 		var/datum/poll_question/poll = locate(href_list["votepollref"]) in GLOB.polls
 		vote_on_poll_handler(poll, href_list)
+
+	if(href_list["player_panel_tgui"])
+		if(!GLOB.new_player_panel_tgui)
+			GLOB.new_player_panel_tgui = new /datum/new_player_panel_tgui_edition(src)
+		GLOB.new_player_panel_tgui.ui_interact(src)
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
@@ -466,13 +433,9 @@
 /mob/dead/new_player/Move()
 	return 0
 
-
 /mob/dead/new_player/proc/close_spawn_windows()
-
 	src << browse(null, "window=playersetup") //closes the player setup window
 	src << browse(null, "window=preferences") //closes job selection
-	src << browse(null, "window=mob_occupation")
-	src << browse(null, "window=latechoices") //closes late job selection
 
 // Used to make sure that a player has a valid job preference setup, used to knock players out of eligibility for anything if their prefs don't make sense.
 // A "valid job preference setup" in this situation means at least having one job set to low, or not having "return to lobby" enabled
