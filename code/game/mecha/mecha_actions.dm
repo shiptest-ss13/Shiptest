@@ -190,7 +190,12 @@
 /datum/action/innate/mecha/mech_charge_mode/Activate()
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
-	chassis.start_charge()
+	if(chassis.charge_ready && !chassis.charging)
+		chassis.start_charge()
+		chassis.charge_ready = FALSE
+		addtimer(VARSET_CALLBACK(chassis, charge_ready, TRUE), chassis.charge_cooldown)
+	else
+		chassis.occupant_message(span_warning("The leg actuators are still recharging!"))
 
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"

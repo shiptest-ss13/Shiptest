@@ -43,15 +43,13 @@
 
 	///Vars for mech charges
 	var/charging = FALSE
+	var/charge_ready = TRUE
+	var/charge_cooldown = 50
 	var/charge_power_consume = 200
 	var/charge_distance = 5
 	var/charge_break_walls = FALSE
 	var/charge_toss_structures  = FALSE
 	var/charge_toss_mobs = FALSE
-
-	// how much momentum a mech has while charging. Determines the damage the mech is able to inflict running into walls, or how far something is thrown.
-	var/momentum_force = 400 // How much momentum the mech has when it starts it's charge
-	var/momentum = 0 // current momentum
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
@@ -676,7 +674,7 @@
 			crushed.dismantle_wall(TRUE)
 		if(isobj(obstacle))
 			var/obj/object = obstacle
-			mech_melee_attack(obstacle)
+			obstacle.mech_melee_attack(src)
 			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
 				object.throw_at(throw_target, 4, 3)
 			visible_message(span_danger("[src] crashes into [obstacle]!"))
@@ -1262,11 +1260,9 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/handle_charge()
 	var/turf/mecha_loc = get_turf(src)
 	charging = TRUE
-	momentum = momentum_force
 	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
 	if(!charge_target)
 		charging = FALSE
-		momentum = 0
 		return
 	cell.use(charge_power_consume)
 	walk_towards(src, charge_target, 0.7)
@@ -1276,4 +1272,3 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
-	momentum = 0

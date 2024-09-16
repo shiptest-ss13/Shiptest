@@ -274,7 +274,7 @@ the shield is disabled by means other than the action button (like running out o
 		if(electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE))
 			did_shock = TRUE
 	else if(isliving(attacker))
-		var/mob/living/victim = user
+		var/mob/living/victim = attacker
 		if(victim.apply_damage_type(20,BURN))
 			to_chat(victim,span_userdanger("You're shocked by \the [src]!"))
 			did_shock = TRUE
