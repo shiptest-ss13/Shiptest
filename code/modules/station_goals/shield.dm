@@ -140,7 +140,6 @@
 		data["satellites"] += list(list(
 			"id" = S.id,
 			"active" = S.active,
-			"Ready To Fire" = COOLDOWN_FINISHED(S, S.fire_timer)
 		))
 	data["notice"] = notice
 
