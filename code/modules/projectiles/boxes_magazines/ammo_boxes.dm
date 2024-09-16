@@ -2,12 +2,12 @@
 
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
-	icon_state = "speedloader_357-7"
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
+	icon_state = "speedloader_357-6"
 	base_icon_state = "speedloader_357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
 	w_class = WEIGHT_CLASS_TINY
@@ -18,12 +18,12 @@
 
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 match)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	ammo_type = /obj/item/ammo_casing/a357/match
 
 /obj/item/ammo_box/a357/hp
 	name = "speed loader (.357 hollow point)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a357_box
@@ -398,10 +398,10 @@
 /obj/item/ammo_box/a762_40/inteq
 	icon_state = "a762_40box_big_inteq"
 
-/obj/item/ammo_box/a556_39
-	name = "ammo box (5.56x39mm CLIP)"
-	icon_state = "a556_39box_big"
-	ammo_type = /obj/item/ammo_casing/a556_39
+/obj/item/ammo_box/a556_42
+	name = "ammo box (5.56x42mm CLIP)"
+	icon_state = "a556_42box_big"
+	ammo_type = /obj/item/ammo_casing/a556_42
 	max_ammo = 120
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -449,6 +449,14 @@
 
 /obj/item/ammo_box/a44roum_speedloader/empty
 	start_empty = TRUE
+
+/obj/item/ammo_box/c57x39mm_box
+	name = "ammo box (5.7x39mm)"
+	desc = "A box of standard 5.7x39mm ammo."
+	icon_state = "57x39mmbox"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	max_ammo = 50
+
 
 /obj/item/ammo_box/c46x30mm_box
 	name = "ammo box (4.6x30mm)"
@@ -498,6 +506,16 @@
 	icon_state = "300box"
 	ammo_type = /obj/item/ammo_casing/a300
 	max_ammo = 20
+
+/obj/item/ammo_box/a65clip_box
+	name = "ammo box (6.5x57mm CLIP)"
+	desc = "A box of standard 6.5x57mm CLIP ammo."
+	icon_state = "65box"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	max_ammo = 20
+
+/obj/item/ammo_box/a65clip_box/syndicate
+	icon_state = "65box_sa"
 
 /obj/item/ammo_box/a44roum
 	name = "ammo box (.44 roumain)"
