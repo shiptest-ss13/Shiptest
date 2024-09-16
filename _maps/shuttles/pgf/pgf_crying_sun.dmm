@@ -425,12 +425,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "du" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 6
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1050,11 +1049,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	mode = 1
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "ih" = (
@@ -2335,16 +2333,6 @@
 /obj/effect/turf_decal/floordetail/tiled,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"tU" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "tY" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 1
@@ -3452,12 +3440,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "CF" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 10;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 10
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -3732,11 +3719,10 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Eu" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
 /obj/structure/cable,
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "EA" = (
@@ -3996,12 +3982,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "FJ" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -4017,12 +4002,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "FO" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 8;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 8
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -4253,12 +4237,11 @@
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Hb" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -7804,7 +7787,7 @@ xz
 xz
 xz
 xz
-tU
+Hb
 xk
 UE
 pW
