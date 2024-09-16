@@ -199,7 +199,7 @@
 	icon_state = "painpen"
 	base_icon_state = "painpen"
 	item_state = "painpen"
-	list_reagents = list(/datum/reagent/medicine/mine_salve = 2, /datum/reagent/medicine/morphine = 8)
+	list_reagents = list(/datum/reagent/medicine/mine_salve = 2, /datum/reagent/medicine/morphine = 5)
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
