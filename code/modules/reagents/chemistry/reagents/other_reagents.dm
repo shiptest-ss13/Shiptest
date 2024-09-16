@@ -2360,7 +2360,7 @@
 
 /datum/reagent/concrete_mix
 	name = "Concrete Mix"
-	desc = "Pre-made concrete mix, ideal for lazy engineers."
+	description = "Pre-made concrete mix, ideal for lazy engineers."
 	color = "#c4c0bc"
 	taste_description = "chalky concrete"
 	harmful = TRUE
