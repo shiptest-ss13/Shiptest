@@ -1262,9 +1262,11 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/handle_charge()
 	var/turf/mecha_loc = get_turf(src)
 	charging = TRUE
+	momentum = momentum_force
 	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
 	if(!charge_target)
 		charging = FALSE
+		momentum = 0
 		return
 	cell.use(charge_power_consume)
 	walk_towards(src, charge_target, 0.7)
@@ -1274,3 +1276,4 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
+	momentum = 0
