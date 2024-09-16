@@ -486,8 +486,5 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/wasteplanet/hivebot/low_threat = 20,
-		/obj/structure/spawner/wasteplanet/hivebot/medium_threat = 10,
-		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
-		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
+		/obj/structure/spawner/hivebot = 35
 	)
