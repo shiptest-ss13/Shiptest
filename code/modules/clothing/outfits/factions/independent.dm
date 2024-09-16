@@ -276,6 +276,13 @@
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
+/datum/outfit/job/independent/security/disarmed //No armor, no pocket handcuffs.
+	name = "Independent - Security Officer (Disarmed)"
+	head = null
+	suit = null
+	l_pocket = null
+
+
 /datum/outfit/job/independent/security/western
 	name = "Independent - Security Officer (Western)"
 
