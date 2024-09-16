@@ -19,8 +19,10 @@
 	name = "metal"
 	desc = "Sheets made out of metal."
 	singular_name = "metal sheet"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-metal"
 	item_state = "sheet-metal"
+
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1

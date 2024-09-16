@@ -375,9 +375,9 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
-	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 6, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/galena = 12, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/rutile = 6,
-		/obj/item/stack/ore/bluespace_crystal = 1)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/galena = 2, /obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/bluespace_crystal = 5, /obj/item/stack/ore/quartzite = 80)
 
 /turf/closed/mineral/random/moon/lit
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit

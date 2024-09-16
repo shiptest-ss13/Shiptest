@@ -36,8 +36,6 @@
 	breath_results = GAS_CO
 
 	flags = GAS_FLAG_DANGEROUS
-	fire_burn_rate = 1
-	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
 
 	fusion_power = 0
 	enthalpy = -110500
