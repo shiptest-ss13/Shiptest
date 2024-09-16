@@ -107,9 +107,9 @@
 	var/datum/radio_frequency/radio_connection
 
 	//anything outright hazardous (flammable, toxic, generally Weird)
-	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO)
 	//anything that isn't o2 or n2.
-	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM)
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM, GAS_CO)
 
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
@@ -129,7 +129,8 @@
 		GAS_FREON 					= new/datum/tlv/dangerous,
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
-		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -151,7 +152,8 @@
 		GAS_FREON					= new/datum/tlv/no_checks,
 		GAS_HYDROGEN				= new/datum/tlv/no_checks,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
-		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous
 	)
 	heating_manage = FALSE
 
@@ -174,7 +176,8 @@
 		GAS_FREON					= new/datum/tlv/dangerous,
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
-		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous
 	)
 	heating_manage = FALSE
 

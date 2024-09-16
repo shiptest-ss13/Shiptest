@@ -323,6 +323,33 @@
 			H.reagents.add_reagent(/datum/reagent/stimulum, max(0, 5 - existing))
 		breath.adjust_moles(GAS_STIMULUM, -gas_breathed)
 
+	// Carbon Monoxide
+		var/carbon_monoxide_pp = PP(breath,GAS_CO)
+		if (carbon_monoxide_pp > gas_stimulation_min)
+			H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			if(!monoxide_reagent)
+				H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
+			switch(carbon_monoxide_pp)
+				if (0 to 100)
+					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation,50)
+				if (100 to 400)
+					monoxide_reagent.accumilation = clamp(monoxide_reagent.accumilation,50, 150)
+				if (400 to 800)
+					monoxide_reagent.accumilation = clamp(monoxide_reagent.accumilation, 150, 250)
+				if (800 to 3200)
+					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 250)
+				if (3200 to INFINITY)
+					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 450)
+		else
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			if(monoxide_reagent)
+				monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 150)
+				monoxide_reagent.volume = min(monoxide_reagent.volume, 20)
+
+
+		breath.adjust_moles(GAS_CO, -gas_breathed)
+
 /obj/item/organ/lungs/proc/handle_too_little_breath(mob/living/carbon/human/H = null, breath_pp = 0, safe_breath_min = 0, true_pp = 0)
 	. = 0
 	if(!H || !safe_breath_min) //the other args are either: Ok being 0 or Specifically handled.

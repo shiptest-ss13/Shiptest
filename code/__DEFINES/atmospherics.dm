@@ -337,6 +337,7 @@
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
+#define GAS_CO "co"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)

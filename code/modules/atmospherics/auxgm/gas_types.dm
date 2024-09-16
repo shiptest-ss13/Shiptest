@@ -29,6 +29,19 @@
 		)
 	)
 
+/datum/gas/carbon_monoxide
+	id = GAS_CO
+	specific_heat = 30
+	name = "Carbon Monoxide"
+	breath_results = GAS_CO
+
+	flags = GAS_FLAG_DANGEROUS
+	fire_burn_rate = 1
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
+
+	fusion_power = 0
+	enthalpy = -110500
+
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = GAS_CO2
 	specific_heat = 30
@@ -161,7 +174,7 @@
 	specific_heat = 10
 	name = "Hydrogen"
 	flags = GAS_FLAG_DANGEROUS
-	moles_visible = MOLES_GAS_VISIBLE
+	//moles_visible = MOLES_GAS_VISIBLE
 	color = "#ffe"
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 1)
