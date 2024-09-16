@@ -288,10 +288,6 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/cave/explored)
-"rt" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/turf/open/space/basic,
-/area/overmap_encounter/planetoid/lava/explored)
 "rV" = (
 /obj/structure/flora/rock/pile/lava,
 /turf/open/floor/plating/grass/lava,
@@ -410,9 +406,6 @@
 "vT" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/cave/explored)
-"wq" = (
-/turf/closed/indestructible/rock,
 /area/overmap_encounter/planetoid/cave/explored)
 "wH" = (
 /obj/structure/girder,
@@ -690,11 +683,6 @@
 "IC" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"IM" = (
-/obj/structure/flora/ash/cacti,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/turf/open/space/basic,
-/area/overmap_encounter/planetoid/lava/explored)
 "Jg" = (
 /obj/structure/flora/rock,
 /obj/structure/railing/wood{
@@ -809,7 +797,7 @@
 	},
 /area/overmap_encounter/planetoid/cave/explored)
 "Ol" = (
-/turf/closed/indestructible/rock,
+/turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/lava/explored)
 "Om" = (
 /obj/effect/decal/cleanable/ash/large,
@@ -904,7 +892,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Sf" = (
 /obj/structure/girder,
-/turf/open/space/basic,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "SD" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1691,7 +1679,7 @@ zp
 ca
 JB
 IC
-wq
+zY
 IC
 IC
 Zo
@@ -1727,8 +1715,8 @@ zp
 Om
 AN
 vr
-wq
-wq
+zY
+zY
 IC
 Zo
 Zo
@@ -1762,7 +1750,7 @@ JS
 VA
 OL
 AN
-wq
+zY
 LG
 IC
 IC
@@ -1798,7 +1786,7 @@ zk
 ca
 tD
 nj
-wq
+zY
 Ol
 IC
 cp
@@ -1834,7 +1822,7 @@ ca
 pA
 xf
 ZX
-wq
+zY
 Ol
 IC
 IC
@@ -1870,7 +1858,7 @@ ca
 ca
 xf
 Sf
-wq
+zY
 Ol
 IC
 IC
@@ -1907,7 +1895,7 @@ Zk
 ca
 Rh
 JB
-IM
+Wz
 cx
 cp
 IC
@@ -1943,7 +1931,7 @@ pA
 ca
 ca
 JB
-rt
+IC
 IC
 IC
 yD
