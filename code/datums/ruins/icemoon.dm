@@ -16,12 +16,6 @@
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
 
-/datum/map_template/ruin/icemoon/brazillian_lab
-	name = "Barricaded Compound"
-	id = "brazillian-lab"
-	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
-	suffix = "icemoon_underground_brazillianlab.dmm"
-
 /datum/map_template/ruin/icemoon/crashed_holemaker
 	name = "Crashed Holemaker"
 	id = "crashed_holemaker"

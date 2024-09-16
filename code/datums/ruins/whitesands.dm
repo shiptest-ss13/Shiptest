@@ -30,3 +30,8 @@
 	suffix = "whitesands_surface_camp_combination.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/brazillian_lab
+	name = "Hermit Weapons-Testing Compound"
+	id = "brazillian-lab"
+	description = "A conspicuous compound in the middle of the sandy wasteland. What goodies are inside?"
+	suffix = "whitesands_brazillianlab.dmm"

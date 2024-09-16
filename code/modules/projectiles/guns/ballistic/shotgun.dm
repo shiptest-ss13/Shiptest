@@ -488,6 +488,8 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	item_state = "shotgun_qb"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15 //blunt edge and really heavy
