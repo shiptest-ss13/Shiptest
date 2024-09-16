@@ -18,7 +18,7 @@
 
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
+	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division. The defence grid has been modified to disperse controlled electric shocks on contact, at the cost of it's ability to block ranged projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
@@ -124,6 +124,18 @@ Expects a turf. Returns true if the attack should be blocked, false if not. Skip
 		shield.hitby(AM, skipcatch, hitpush, blocked, throwingdatum)
 	else
 		. = ..()
+
+// Walking into the Paladin's shield shocks you.
+
+/obj/mecha/combat/durand/clip/Bump(atom/obstacle)
+	. = ..()
+	if(defense_check(obstacle.loc) && isliving(obstacle))
+		shield.contact(obstacle)
+
+/obj/mecha/combat/durand/clip/Bumped(atom/movable/AM)
+	. = ..()
+	if(defense_check(AM.loc) && isliving(AM))
+		shield.contact(AM)
 
 ////////////////////////////
 ///// Shield processing ////
@@ -238,6 +250,10 @@ the shield is disabled by means other than the action button (like running out o
 	play_attack_sound()
 	. = ..()
 
+/// a mob has bumped into the shield
+/obj/durand_shield/proc/contact(mob/living/contactor)
+	return
+
 /// Clippy shield
 /obj/durand_shield/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
 	. = ..()
@@ -247,14 +263,21 @@ the shield is disabled by means other than the action button (like running out o
 	. = ..()
 	apply_shock(user)
 
-/obj/durand_shield/clip/proc/apply_shock(mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/victim = user
-		if(electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE))
-			visible_message(span_danger("\The [src] repels \the [victim]'s attack, shocking [victim.p_they()]"))
+/obj/durand_shield/clip/contact(mob/living/contactor)
+	. = ..()
+	apply_shock(contactor)
 
-	else if(isliving(user))
+/obj/durand_shield/clip/proc/apply_shock(mob/attacker)
+	var/did_shock = FALSE
+	if(iscarbon(attacker))
+		var/mob/living/carbon/victim = attacker
+		if(electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE))
+			did_shock = TRUE
+	else if(isliving(attacker))
 		var/mob/living/victim = user
-		victim.apply_damage_type(20,BURN)
-		to_chat(victim,span_userdanger("You're shocked by \the [src]!"))
-	do_sparks(5,TRUE,src)
+		if(victim.apply_damage_type(20,BURN))
+			to_chat(victim,span_userdanger("You're shocked by \the [src]!"))
+			did_shock = TRUE
+	if(did_shock)
+		visible_message(span_bolddanger("\The [src] repels \the [attacker] on contact, shocking [attacker.p_them()]."))
+		do_sparks(5,TRUE,src)

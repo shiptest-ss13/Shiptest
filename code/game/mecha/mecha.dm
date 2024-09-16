@@ -41,12 +41,17 @@
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 
-	///Vars for handling bump interactions while the mech is charging
+	///Vars for mech charges
 	var/charging = FALSE
+	var/charge_power_consume = 200
 	var/charge_distance = 5
 	var/charge_break_walls = FALSE
 	var/charge_toss_structures  = FALSE
 	var/charge_toss_mobs = FALSE
+
+	// how much momentum a mech has while charging. Determines the damage the mech is able to inflict running into walls, or how far something is thrown.
+	var/momentum_force = 400 // How much momentum the mech has when it starts it's charge
+	var/momentum = 0 // current momentum
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
@@ -667,19 +672,20 @@
 		if(charge_break_walls && iswallturf(obstacle))
 			var/turf/closed/wall/crushed = obstacle
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-			visible_message("<span class='danger'>[src] smashes through [obstacle]!</span>")
+			visible_message(span_danger("[src] smashes through [obstacle]"))
 			crushed.dismantle_wall(TRUE)
 		if(isobj(obstacle))
 			var/obj/object = obstacle
-			if(!(object.resistance_flags & INDESTRUCTIBLE))
+			mech_melee_attack(obstacle)
+			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
 				object.throw_at(throw_target, 4, 3)
-			visible_message("<span class='danger'>[src] crashes into [obstacle]!</span>")
+			visible_message(span_danger("[src] crashes into [obstacle]!"))
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		if(ishuman(obstacle))
 			var/mob/living/carbon/human/H = obstacle
 			H.throw_at(throw_target,7,3)
-			visible_message("<span class='danger'>[src] slams into [obstacle] with a sickening crunch, sending [obstacle] flying!</span>")
-			playsound(H, list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg'), 100, FALSE, -1)
+			visible_message(span_danger("[src] slams into \the [obstacle] with a sickening crunch, sending \the [obstacle] flying!"))
+			playsound(H, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 			H.Paralyze(20)
 			H.adjustStaminaLoss(30)
 			H.apply_damage(rand(20,35), BRUTE)
@@ -1250,26 +1256,20 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/start_charge()
 	Shake(15, 15, 1 SECONDS)
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
-	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
-	addtimer(CALLBACK(src,PROC_REF(handle_charge)),1.5 SECONDS, TIMER_STOPPABLE)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 2)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)),0.5 SECONDS, TIMER_STOPPABLE)
 
 /obj/mecha/proc/handle_charge()
 	var/turf/mecha_loc = get_turf(src)
-	//var/atom/target = get_edge_target_turf(mecha_loc, dir)
 	charging = TRUE
 	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
 	if(!charge_target)
 		charging = FALSE
 		return
+	cell.use(charge_power_consume)
 	walk_towards(src, charge_target, 0.7)
 	sleep(get_dist(src, charge_target) * 0.7)
 	charge_end()
-	// if (throw_at(target, charge_distance, 1, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(charge_end))))
-	// 	playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
-	// 	visible_message("<span class='warning'>[usr] charges forward!</span>")
-	// else
-	// 	occupant_message("Oops, something broke")
-	// 	charging = FALSE
 
 /obj/mecha/proc/charge_end()
 	walk(src,0)

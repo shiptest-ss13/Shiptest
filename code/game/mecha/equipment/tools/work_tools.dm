@@ -577,9 +577,8 @@
 	result_mech = /obj/mecha/combat/durand/clip
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
-	name = "Inteq Gygax Conversion Kit"
-	desc = "Hee hoo placeholders"
-	icon_state = "clipupgrade"
+	name = "IRMG Pyrnese Conversion Kit"
+	desc = "An IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Pyrnese breaching exosuit."
 	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
 	result_mech = /obj/mecha/combat/gygax/inteq
 
