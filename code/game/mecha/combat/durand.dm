@@ -12,7 +12,9 @@
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
+	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 300
+
 
 
 /obj/mecha/combat/durand/clip
@@ -21,12 +23,13 @@
 	icon_state = "clipdurand"
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
-
+	shield_passive_drain = 0
+	shield_type = /obj/durand_shield/clip
 	//TODO: Custom melee backlash shield with no projectile protection
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
-	shield = new /obj/durand_shield(loc, src, layer, dir)
+	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
 	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(prehit))
 
@@ -79,14 +82,13 @@
 /obj/mecha/combat/durand/proc/prehit(obj/projectile/source, list/signal_args)
 	SIGNAL_HANDLER
 
-	if(defense_check(source.loc) && shield)
+	if(defense_check(source.loc, shield.ranged_pass) && shield)
 		signal_args[2] = shield
 
-
 /**Checks if defense mode is enabled, and if the attacker is standing in an area covered by the shield.
-Expects a turf. Returns true if the attack should be blocked, false if not.*/
-/obj/mecha/combat/durand/proc/defense_check(turf/aloc)
-	if (!defense_mode || !shield || shield.switching)
+Expects a turf. Returns true if the attack should be blocked, false if not. Skip defence will make the proc return false and the attack will go through*/
+/obj/mecha/combat/durand/proc/defense_check(turf/aloc, skip_defence = FALSE)
+	if (!defense_mode || !shield || shield.switching || skip_defence)
 		return FALSE
 	. = FALSE
 	switch(dir)
@@ -105,21 +107,21 @@ Expects a turf. Returns true if the attack should be blocked, false if not.*/
 	return
 
 /obj/mecha/combat/durand/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0)
-	if(defense_check(user.loc))
+	if(defense_check(user.loc, shield.melee_pass))
 		log_message("Attack absorbed by defense field. Attacker - [user].", LOG_MECHA, color="orange")
 		shield.attack_generic(user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
 	else
 		. = ..()
 
 /obj/mecha/combat/durand/attackby(obj/item/W as obj, mob/user as mob, params)
-	if(defense_check(user.loc))
+	if(defense_check(user.loc, shield.melee_pass))
 		log_message("Attack absorbed by defense field. Attacker - [user], with [W]", LOG_MECHA, color="orange")
 		shield.attackby(W, user, params)
 	else
 		. = ..()
 
 /obj/mecha/combat/durand/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	if(defense_check(AM.loc))
+	if(defense_check(AM.loc, shield.ranged_pass))
 		log_message("Impact with [AM] absorbed by defense field.", LOG_MECHA, color="orange")
 		shield.hitby(AM, skipcatch, hitpush, blocked, throwingdatum)
 	else
@@ -151,10 +153,14 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	light_on = FALSE
 	var/obj/mecha/combat/durand/chassis ///Our link back to the durand
 	var/switching = FALSE ///To keep track of things during the animation
+	/// if this shield lets melee attacks pass and hit the mech directly
+	var/melee_pass = FALSE
+	///	if this shield lets projectiles pass and hit the mech directly
+	var/ranged_pass = FALSE
 
 /obj/durand_shield/clip
 	name = "electric repulsion grid"
-
+	ranged_pass = TRUE
 
 /obj/durand_shield/Initialize(mapload, _chassis, _layer, _dir)
 	. = ..()
@@ -233,3 +239,21 @@ the shield is disabled by means other than the action button (like running out o
 /obj/durand_shield/bullet_act()
 	play_attack_sound()
 	. = ..()
+
+/// Clippy shield
+/obj/durand_shield/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
+	. = ..()
+	apply_shock(user)
+
+/obj/durand_shield/clip/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	apply_shock(user)
+
+/obj/durand_shield/clip/proc/apply_shock(mob/user)
+	if(iscarbon(user))
+		var/mob/living/carbon/victim = user
+		electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE)
+	else if(isliving(user))
+		var/mob/living/victim = user
+		victim.apply_damage_type(20,BURN)
+	do_sparks(5,TRUE,src)
