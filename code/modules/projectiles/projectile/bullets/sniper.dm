@@ -7,13 +7,12 @@
 	knockdown = 100
 	dismemberment = 50
 	armour_penetration = 60
-	var/obj_damage_mod = 1.1
 	var/breakthings = TRUE
 
 /obj/projectile/bullet/p50/on_hit(atom/target, blocked = 0)
 	if(isobj(target) && (blocked != 100) && breakthings)
 		var/obj/O = target
-		O.take_damage((damage * obj_damage_mod), BRUTE, "bullet", FALSE)
+		O.take_damage(80, BRUTE, "bullet", FALSE)
 	return ..()
 
 /obj/projectile/bullet/p50/soporific
