@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return..()
 
 /obj/structure/vein/proc/discover()
-	if(invisibility = 0)
+	if(invisibility == 0)
 		return TRUE
 	playsound(src, 'sound/effects/break_stone.ogg', 100)
 	invisibility = 0

@@ -212,7 +212,7 @@
 		possible_targets += my_target
 	for(var/i in GLOB.ore_veins)
 		var/obj/structure/vein/my_target = i
-		if(!mytarget.invisibility || (!trackable(my_target)))
+		if(!my_target.invisibility || (!trackable(my_target)))
 			continue
 		possible_targets += my_target
 	if(!possible_targets.len)
