@@ -877,7 +877,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/pgf/light
 	name = "Etherbor Deterrent System"
 	desc = "A light turret manufactured by Etherbor. It offers a lightweight assembly of energy weapons to accost nearby foes."
-	lethal_projectile = /obj/item/ammo_casing/energy/kalix/pgf
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf
 	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 
 /obj/machinery/porta_turret/ship/pgf/heavy
