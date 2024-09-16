@@ -488,3 +488,8 @@
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 		/obj/structure/spawner/hivebot = 35
 	)
+
+	flora_spawn_chance = 30
+	feature_spawn_chance = 8
+	mob_spawn_chance = 5
+
