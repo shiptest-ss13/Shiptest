@@ -18,6 +18,9 @@
 	recoil_unwielded = 4
 	wield_slowdown = 3
 
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 20
+
 	///does this have a bipod?
 	var/has_bipod = FALSE
 	///is the bipod deployed?
@@ -41,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
 	. = ..()
-	for(var/datum/action/item_action/deploy_bipod/action as anything in actions_types)
+	for(var/datum/action/item_action/deploy_bipod/action as anything in actions)
 		if(!has_bipod)
 			qdel(action)
 
@@ -116,29 +119,6 @@
 	. = ..()
 	retract_bipod(user=user)
 
-/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(bipod_deployed)
-		total_recoil += deploy_recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 20
-	var/total_spread = bonus_spread
-
-	if(bipod_deployed)
-		total_spread += deploy_spread_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
-
 /obj/item/gun/ballistic/automatic/hmg/update_icon_state()
 	. = ..()
 	item_state = "[initial(item_state)][bipod_deployed ? "_deployed" : ""]"
@@ -147,76 +127,6 @@
 	. = ..()
 	if(has_bipod)
 		. += "[base_icon_state || initial(icon_state)][bipod_deployed ? "_deployed" : "_undeployed"]"
-
-
-// L6 SAW //
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw
-	name = "\improper L6 SAW"
-	desc = "A heavy machine gun, designated 'L6 SAW'. Chambered in 7.12x82mm."
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "l6"
-	item_state = "l6closedmag"
-	base_icon_state = "l6"
-
-	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	can_suppress = FALSE
-	spread = 7
-
-	fire_delay = 0.1 SECONDS
-
-	bolt_type = BOLT_TYPE_OPEN
-	show_magazine_on_sprite = TRUE
-	show_magazine_on_sprite_ammo = TRUE
-	tac_reloads = FALSE
-	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
-	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-	var/cover_open = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/examine(mob/user)
-	. = ..()
-	. += "<b>alt + click</b> to [cover_open ? "close" : "open"] the dust cover."
-	if(cover_open && magazine)
-		. += "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>"
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/AltClick(mob/user)
-	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
-	playsound(user, 'sound/weapons/gun/l6/l6_door.ogg', 60, TRUE)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/update_overlays()
-	. = ..()
-	. += "l6_door_[cover_open ? "open" : "closed"]"
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
-	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
-		return
-	else
-		. = ..()
-		update_appearance()
-
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/attack_hand(mob/user)
-	if (loc != user)
-		..()
-		return
-	if (!cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! Open it before trying to remove the magazine!</span>")
-		return
-	..()
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/attackby(obj/item/A, mob/user, params)
-	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s dust cover prevents a magazine from being fit.</span>")
-		return
-	..()
 
 /obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
 	name = "\improper Solar"
@@ -236,8 +146,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	can_suppress = FALSE
-	can_bayonet = FALSE
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES

@@ -119,6 +119,24 @@
 	smoothing_groups = list(SMOOTH_GROUP_SANDBAGS)
 	canSmoothWith = list(SMOOTH_GROUP_SANDBAGS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SECURITY_BARRICADE)
 
+/obj/structure/barricade/sandbags/MouseDrop(over_object, src_location, over_location)
+	. = ..()
+	if(over_object == usr && Adjacent(usr))
+		if(src.flags_1 & NODECONSTRUCT_1)
+			return
+		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
+			return
+		usr.visible_message(span_notice("[usr] begins pulling apart \the [src.name]..."), span_notice("You begin pulling apart \the [src.name]..."))
+		if(do_after(usr, 30, usr))
+			deconstruct()
+
+/obj/structure/barricade/sandbags/make_debris()
+	new /obj/item/stack/sheet/mineral/sandbags(get_turf(src), 1)
+
+/obj/structure/barricade/sandbags/examine(mob/user)
+	. = ..()
+	. += span_notice("You could probably <b>pull</b> the [src.name] by dragging it onto yourself.")
+
 /obj/structure/barricade/security
 	name = "security barrier"
 	desc = "A deployable barrier. Provides good cover in fire fights."

@@ -33,6 +33,9 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 
+	/// If some inconsiderate jerk has had their blood spilled on this window, thus making it cleanable
+	var/bloodied = FALSE
+
 /obj/structure/window/examine(mob/user)
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)

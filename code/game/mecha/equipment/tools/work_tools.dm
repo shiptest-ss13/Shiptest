@@ -573,8 +573,8 @@
 
 //Dunno where else to put this so shrug
 /obj/item/mecha_parts/mecha_equipment/conversion_kit
-	name = "Mecha Conversion Kit"
-	desc = "A perfectly generic conversion kit for a perfectly generic mecha. How did you even get this?"
+	name = "Exosuit Conversion Kit"
+	desc = "A perfectly generic conversion kit for a perfectly generic exosuit. How did you even get this?"
 	icon_state = "ripleyupgrade"
 	var/source_mech = list(null) //must be a list due to the mining ripley existing
 	var/result_mech = null

@@ -25,6 +25,9 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	valid_attachments = list()
+	slot_available = list()
 	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5
@@ -39,6 +42,9 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	safety_wording = "hammer"
+
+	gunslinger_recoil_bonus = -1
+	gunslinger_spread_bonus = -8
 
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
@@ -418,7 +424,7 @@
 	fire_delay = src::fire_delay
 	if(fan)
 		rack()
-		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
+		to_chat(user, span_notice("You fan the [bolt_wording] of \the [src]!"))
 		balloon_alert_to_viewers("fans revolver!")
 		fire_delay = 0 SECONDS
 
@@ -436,25 +442,6 @@
 		return
 	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
 
-/obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -8
-	var/total_spread = bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
 	tryflip(user)
@@ -467,15 +454,6 @@
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
-
-/obj/item/gun/ballistic/revolver/syndicate //mystery tool that we can use later
-	name = "\improper syndicate revolver"
-	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
-	icon_state = "revolver"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
@@ -555,6 +533,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/detective/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/revolver/viper/no_mag
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/revolver/no_mag

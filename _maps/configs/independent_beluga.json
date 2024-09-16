@@ -1,8 +1,12 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Beluga-class Transport",
+	"faction": "/datum/faction/independent",
 	"prefix": "SV",
-	"namelists": ["CRUISE", "NATURAL"],
+	"namelists": [
+		"CRUISE",
+		"NATURAL"
+	],
 	"map_short_name": "Beluga-class",
 	"map_path": "_maps/shuttles/independent/independent_beluga.dmm",
 	"description": "The Beluga-Class is a transport vessel for those with especially rich blood. Featuring a modest kitchen, hired Inteq security, and luxurious decoration, the Beluga is a first choice pick for many wealthy spacers trying to get from point A to B. The independent ship features several rooms for its guests and a well furnished meeting room for any corporate occassion.",
@@ -12,7 +16,7 @@
 		"Service"
 	],
 	"starting_funds": 4000,
-	"limit": 2,
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain",

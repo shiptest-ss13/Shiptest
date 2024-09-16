@@ -239,7 +239,7 @@ const GASES = [
     color: 'paleturquoise',
   },
   {
-    id: 'hydrogen',
+    id: 'h2',
     path: '/datum/gas/hydrogen',
     name: 'Hydrogen',
     label: 'H₂',
@@ -293,6 +293,20 @@ const GASES = [
     name: 'Nitrium',
     label: 'Nitrium',
     color: 'brown',
+  },
+  {
+    id: 'cl2',
+    path: '/datum/gas/cl2',
+    name: 'Chlorine',
+    label: 'Cl₂',
+    color: 'yellow',
+  },
+  {
+    id: 'hcl',
+    path: '/datum/gas/hcl',
+    name: 'Hydrogen Chloride',
+    label: 'HCl',
+    color: 'greenyellow',
   },
 ] as const;
 

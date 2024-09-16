@@ -233,7 +233,7 @@
 			new /obj/item/gun/ballistic/shotgun/toy(src)
 			new /obj/item/gun/ballistic/automatic/toy/pistol(src)
 			new /obj/item/gun/ballistic/automatic/toy(src)
-			new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy(src)
+			new /obj/item/gun/ballistic/automatic/toy(src)
 			new /obj/item/ammo_box/foambox(src)
 		if(98)
 			for(var/i in 1 to 3)

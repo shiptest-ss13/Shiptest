@@ -14,6 +14,7 @@
 #define TOOL_DRILL "drill"
 #define TOOL_SCALPEL "scalpel"
 #define TOOL_SAW "saw"
+#define TOOL_KNIFE "knife" //luv me kuh-nyfe
 #define TOOL_DECONSTRUCT "deconstruct"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,

@@ -1560,6 +1560,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-9"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
 "tP" = (
@@ -2047,7 +2050,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "AP" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	icon_state = "computer-right";
 	dir = 8
 	},

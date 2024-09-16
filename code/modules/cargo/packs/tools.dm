@@ -74,6 +74,12 @@
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
 
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
