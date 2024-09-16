@@ -100,7 +100,6 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/p145,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base)
 "dU" = (
@@ -194,6 +193,11 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/item/ammo_box/magazine/sniper_rounds{
+	start_empty = 1;
+	pixel_y = -4;
+	pixel_x = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "gF" = (
@@ -260,6 +264,7 @@
 	pixel_y = -7;
 	pixel_x = 4
 	},
+/obj/item/ammo_casing/p50,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "hG" = (
@@ -451,7 +456,6 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/p145,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
@@ -503,17 +507,14 @@
 	pixel_y = -3;
 	spawnwithmagazine = 0
 	},
-/obj/item/ammo_box/magazine/crunch_shot{
-	pixel_x = -11;
-	pixel_y = -2;
-	start_empty = 1
-	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
+/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag,
+/obj/item/ammo_casing/p50,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
 "qY" = (
@@ -715,7 +716,7 @@
 /obj/item/hand_labeler_refill{
 	pixel_x = 4
 	},
-/obj/item/ammo_casing/p145/ds,
+/obj/item/ammo_casing/p50/penetrator,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "wC" = (
@@ -873,13 +874,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base)
-"Cf" = (
-/obj/item/ammo_box/magazine/crunch_shot{
-	pixel_x = -11;
-	pixel_y = -2
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "CB" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -1024,6 +1018,7 @@
 	pixel_y = 5;
 	pixel_x = 5
 	},
+/obj/item/ammo_casing/p50,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
 "FQ" = (
@@ -1292,7 +1287,6 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
-/obj/item/ammo_casing/p145,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Pf" = (
@@ -3089,7 +3083,7 @@ tX
 mh
 tX
 mh
-Cf
+mh
 mh
 tX
 tX
