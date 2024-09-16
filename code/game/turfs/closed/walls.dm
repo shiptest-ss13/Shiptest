@@ -139,12 +139,11 @@
 	. = ..()
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
-	if (I.use_tool(src, user, decon_time, volume=100))
-		to_chat(user, "<span class='warning'>You cut apart the wall.</span>")
-		dismantle_wall()
-		return TRUE
-
-/turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
+	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	while(I.use_tool(src, user, breakdown_duration, volume=100))
+		if(iswallturf(src))
+			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			alter_integrity(-(I.wall_decon_damage),FALSE,TRUE)
 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)

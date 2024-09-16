@@ -123,6 +123,7 @@
 	heat = 3800
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_DECONSTRUCT
+	wall_decon_damage = 200
 	toolspeed = 0.9 //plasmacutters can be used like angle grinders, and are a bit faster
 	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
@@ -207,6 +208,7 @@
 	icon_state = "adv_plasmacutter"
 	item_state = "adv_plasmacutter"
 	force = 15
+	wall_decon_damage = 300
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 
 /obj/item/gun/energy/wormhole_projector

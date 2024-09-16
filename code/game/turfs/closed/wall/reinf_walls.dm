@@ -18,7 +18,6 @@
 	girder_type = /obj/structure/girder/reinforced
 	explosion_block = 2
 	rad_insulation = RAD_HEAVY_INSULATION
-	decon_time = 10 SECONDS
 	///Dismantled state, related to deconstruction.
 	var/d_state = INTACT
 

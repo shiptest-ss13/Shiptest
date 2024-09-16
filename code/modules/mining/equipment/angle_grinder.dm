@@ -74,6 +74,7 @@
 	SIGNAL_HANDLER
 
 	tool_behaviour = TOOL_DECONSTRUCT
+	wall_decon_damage = 200
 	wielded = TRUE
 	sharpness = IS_SHARP
 	icon_state = "[initial(item_state)]-wield"
