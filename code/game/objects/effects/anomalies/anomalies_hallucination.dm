@@ -19,6 +19,8 @@
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 5)
+	pixel_x = pixel_x + clamp((rand(-5, 5), -16, 16))
+	pixel_y = pixel_y + clamp((rand(-5, 5), -16, 16))
 
 /obj/effect/anomaly/hallucination/detonate()
 	var/turf/open/our_turf = get_turf(src)
