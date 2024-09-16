@@ -140,7 +140,7 @@
 
 /datum/supply_pack/sec_supply/taser
 	name = "Hybrid Taser Crate"
-	desc = "Two disabler-taser hybrid weapons."
+	desc = "Contains two disabler-taser hybrid weapons."
 	cost = 12000
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser)

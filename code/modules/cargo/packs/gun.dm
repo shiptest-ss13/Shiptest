@@ -261,4 +261,4 @@
 	desc = "Contains a single suppressor to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/silencer)
-	crate_name = "silencer crate"
+	crate_name = "suppressor crate"
