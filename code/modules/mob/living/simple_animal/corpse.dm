@@ -251,3 +251,33 @@
 	id_job = "SolGov Sonnensoldner"
 	outfit = /datum/outfit/job/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
+
+//inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq
+	name = "Avery Inteq"
+
+/obj/effect/mob_spawn/human/corpse/inteq/recruit
+	name = "IRMG Recruit"
+	id_job = "Recruit"
+	outfit = /datum/outfit/job/inteq/assistant
+
+/obj/effect/mob_spawn/human/corpse/inteq/medic
+	name = "IRMG Corpsman"
+	id_job = "Corpsman"
+	outfit = /datum/outfit/job/inteq/paramedic
+
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer
+	name = "IRMG Enforcer"
+	id_job = "Enforcer"
+	outfit = /datum/outfit/job/inteq/security
+
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard
+	name = "IRMG Vanguard"
+	id_job = "Vanguard"
+	outfit = /datum/outfit/job/inteq/captain
+
+/obj/effect/mob_spawn/human/corpse/inteq/artificer
+	name = "IRMG Artificer"
+	id_job = "Artificer"
+	outfit = /datum/outfit/job/inteq/engineer
