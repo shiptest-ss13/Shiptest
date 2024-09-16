@@ -2,7 +2,7 @@
 /obj/effect/anomaly/vortex
 	name = "vortex"
 	icon_state = "vortex"
-	desc = "An incredibly compact black orb, it's hunger unquenchable."
+	desc = "An incredibly compact black orb, its hunger unquenchable."
 	core = /obj/item/assembly/signaler/anomaly/vortex
 
 /obj/effect/anomaly/vortex/anomalyEffect()
