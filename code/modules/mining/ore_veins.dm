@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	move_resist = INFINITY
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+	//Whether the mining scanner is able to locate this vein.
+	var/detectable = TRUE
 	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein
 	//Used to determine difficulty & ore amounts
@@ -78,6 +80,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			ore_list.Remove(picked)
 	GLOB.ore_veins += src
 
+/obj/structure/vein/examine(mob/user)
+	. = ..()
+	if(!detectable)
+		. += span_notice("This vein has been marked as a site of no interest, and will not show up on deep core scans.")
+
 /obj/structure/vein/Destroy()
 	GLOB.ore_veins -= src
 	return ..()
@@ -114,6 +121,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/proc/toggle_spawning()
 	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
+
 
 //
 //	Planetary and Class Subtypes

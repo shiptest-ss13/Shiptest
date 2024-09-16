@@ -126,6 +126,7 @@
 /obj/item/pinpointer/mineral/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>It is currently set to [scanmode ? "scan underground" : "scan the surface"].</span>"
+	. += span_notice("You can use the scanner on an vein on harm intent to mark them as sites of no interest, causing them to no longer show up on scans.")
 
 /obj/item/pinpointer/mineral/AltClick(mob/user) //switching modes
 	..()
@@ -204,7 +205,7 @@
 	var/located_dist
 	var/obj/structure/located_vein
 	for(var/obj/structure/vein/I in GLOB.ore_veins)
-		if(I.z == 0 || I.virtual_z() != here.virtual_z())
+		if(I.z == 0 || I.virtual_z() != here.virtual_z() || I.detectable == FALSE)
 			continue
 		if(located_vein)
 			var/new_dist = get_dist(here, get_turf(I))
@@ -226,6 +227,16 @@
 	if(!proximity || !istype(O,/obj/structure/vein))
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
+	if(user.a_intent == INTENT_HARM)
+		if(O.detectable == TRUE)
+			to_chat(user,span_notice("You blacklist the vein from the scanner's telemetry, and will no longer be detected as a site of interest to the scanner."))
+			O.detectable = FALSE
+			return
+		else
+			to_chat(user,span_notice("You mark vein into the scanner's telemetry, allowing it be located by underground scans."))
+			O.detectable = TRUE
+			return
+
 	if(O.vein_contents.len > 0)
 		to_chat(user, "<span class='notice'>Class [O.vein_class] ore vein with [O.mining_charges] possible ore lodes found.</span>")
 		for(var/re in O.vein_contents)
