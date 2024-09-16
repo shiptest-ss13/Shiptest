@@ -212,3 +212,8 @@
 		open = !open
 		update_appearance()
 		return
+
+/obj/structure/cabinet/Destroy()
+	. = ..()
+	if(stored)
+		qdel(stored)
