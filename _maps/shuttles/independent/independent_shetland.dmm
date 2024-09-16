@@ -462,6 +462,7 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "en" = (
@@ -850,6 +851,17 @@
 /obj/machinery/computer/cryopod/retro/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"ht" = (
+/obj/structure/bed,
+/obj/structure/curtain/bounty,
+/obj/item/bedsheet/dorms,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/random{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
 "hv" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1129,6 +1141,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "jC" = (
@@ -1406,9 +1419,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"mq" = (
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "ms" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1762,6 +1772,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/vomit/old,
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "pI" = (
@@ -3668,6 +3679,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"Fe" = (
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "FE" = (
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -4647,6 +4661,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NR" = (
@@ -5630,17 +5645,6 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
-"Wo" = (
-/obj/structure/bed,
-/obj/structure/curtain/bounty,
-/obj/item/bedsheet/dorms,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/random{
-	pixel_x = -32;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew/dorm)
 "Wq" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -6908,7 +6912,7 @@ OU
 ao
 Ok
 uh
-Wo
+ht
 mJ
 mJ
 mJ
@@ -6981,7 +6985,7 @@ gq
 wQ
 MT
 pl
-mq
+Fe
 xZ
 qO
 CH
