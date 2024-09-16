@@ -29,8 +29,8 @@
 	if (active)
 		user.visible_message(
 			span_notice("[user] deactivated \the [src]."), \
-			span_notice("You deactivate \the [src]."")", \
-			span_hear("The chirps of [src] fade out as it powers down.")))
+			span_notice("You deactivate \the [src]."), \
+			span_hear("The chirps of [src] fade out as it powers down."))
 		active = FALSE
 		STOP_PROCESSING(SSfastprocess, src)
 	else
