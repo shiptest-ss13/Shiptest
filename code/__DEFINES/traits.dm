@@ -274,6 +274,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SCOOPABLE "scoopable"
 //your smooches actually deal damage to their target
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
+/// We can handle 'dangerous' plants in botany safely
+#define TRAIT_PLANT_SAFE "plant_safe"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits

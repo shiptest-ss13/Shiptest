@@ -17,8 +17,6 @@
 					/obj/item/clothing/head/syndicatefake = 5) //OPS IN DORMS oh wait it's just an assistant
 	contraband = list(
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,   //Congrats, you unlocked the +18 setting!
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy = 10,
-		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy = 10,
 		/obj/item/ammo_box/foambox/riot = 20,
 		/obj/item/toy/katana = 10,
 		/obj/item/dualsaber/toy = 5,
