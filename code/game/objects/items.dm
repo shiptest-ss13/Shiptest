@@ -1208,8 +1208,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
-		if(!HAS_TRAIT(victim, TRAIT_ANALGESIA))
-			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(victim.force_scream()))
 		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
 							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
 

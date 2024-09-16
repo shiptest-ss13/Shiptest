@@ -655,12 +655,6 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.set_screwyhud(SCREWYHUD_HEALTHY)
 
-/datum/quirk/congenital_analgesia/on_process()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H.hal_screwyhud != SCREWYHUD_HEALTHY)
-		H.set_screwyhud(SCREWYHUD_HEALTHY)
-
 /datum/quirk/congenital_analgesia/remove()
 	if(quirk_holder)
 		var/mob/living/carbon/human/H = quirk_holder
