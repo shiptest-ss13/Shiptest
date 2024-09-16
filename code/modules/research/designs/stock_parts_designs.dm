@@ -28,7 +28,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "basic_capacitor"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
+	materials = list(/datum/material/plastic = 100, /datum/material/glass = 100, /datum/material/silicon = 100)
 	build_path = /obj/item/stock_parts/capacitor
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
@@ -39,7 +39,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "adv_capacitor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
+	materials = list(/datum/material/plastic = 150, /datum/material/glass = 150, /datum/material/silicon = 150)
 	build_path = /obj/item/stock_parts/capacitor/adv
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -50,7 +50,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "super_capacitor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/gold = 100)
+	materials = list(/datum/material/plastic = 200, /datum/material/glass = 200, /datum/material/silicon = 200, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/capacitor/super
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -61,7 +61,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "quadratic_capacitor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/gold = 100, /datum/material/diamond = 100)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/silicon = 200, /datum/material/gold = 100, /datum/material/diamond = 100)
 	build_path = /obj/item/stock_parts/capacitor/quadratic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -73,7 +73,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "basic_scanning"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50, /datum/material/silicon = 100)
 	build_path = /obj/item/stock_parts/scanning_module
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
@@ -84,7 +84,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "adv_scanning"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 150, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 150, /datum/material/glass = 100, /datum/material/silicon = 150)
 	build_path = /obj/item/stock_parts/scanning_module/adv
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -95,7 +95,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "phasic_scanning"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 150, /datum/material/silver = 60)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 150, /datum/material/silicon = 200, /datum/material/silver = 60)
 	build_path = /obj/item/stock_parts/scanning_module/phasic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -106,7 +106,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "triphasic_scanning"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/diamond = 30, /datum/material/bluespace = 30)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/silicon = 200, /datum/material/diamond = 30, /datum/material/bluespace = 30)
 	build_path = /obj/item/stock_parts/scanning_module/triphasic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -118,7 +118,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "micro_mani"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100)
+	materials = list(/datum/material/iron = 100, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/manipulator
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
@@ -129,7 +129,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "nano_mani"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 150)
+	materials = list(/datum/material/iron = 150, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/manipulator/nano
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -140,7 +140,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "pico_mani"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200)
+	materials = list(/datum/material/iron = 200, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/manipulator/pico
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -151,7 +151,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "femto_mani"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/diamond = 30, /datum/material/titanium = 30)
+	materials = list(/datum/material/iron = 200, /datum/material/copper = 50, /datum/material/diamond = 30, /datum/material/titanium = 30)
 	build_path = /obj/item/stock_parts/manipulator/femto
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -163,7 +163,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "basic_micro_laser"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/micro_laser
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
@@ -174,7 +174,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "high_micro_laser"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 150, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 150, /datum/material/glass = 100, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/micro_laser/high
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -185,7 +185,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "ultra_micro_laser"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 150, /datum/material/uranium = 60)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 150, /datum/material/uranium = 60, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/micro_laser/ultra
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -196,7 +196,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "quadultra_micro_laser"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/uranium = 100, /datum/material/diamond = 60)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/uranium = 100, /datum/material/diamond = 60, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/micro_laser/quadultra
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -207,7 +207,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "basic_matter_bin"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100)
+	materials = list(/datum/material/iron = 100, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/matter_bin
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
@@ -218,7 +218,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "adv_matter_bin"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 150)
+	materials = list(/datum/material/iron = 150, /datum/material/silicon = 100, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/matter_bin/adv
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -229,7 +229,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "super_matter_bin"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200)
+	materials = list(/datum/material/iron = 200, /datum/material/silicon = 150, /datum/material/copper = 50)
 	build_path = /obj/item/stock_parts/matter_bin/super
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -240,7 +240,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "bluespace_matter_bin"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 250, /datum/material/diamond = 100, /datum/material/bluespace = 100)
+	materials = list(/datum/material/iron = 250, /datum/material/diamond = 100, /datum/material/silicon = 100, /datum/material/copper = 50, /datum/material/bluespace = 100)
 	build_path = /obj/item/stock_parts/matter_bin/bluespace
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2

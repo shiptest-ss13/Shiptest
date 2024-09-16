@@ -7,7 +7,7 @@
 	desc = "Allows for the construction of circuit boards used to build an outpost communications console."//who?
 	id = "cargoexpress"//the coder reading this
 	build_type = IMPRINTER
-	materials = list(/datum/material/glass = 1000)
+	materials = list(/datum/material/glass = 250, /datum/material/plastic = 250, /datum/material/copper = 300, /datum/material/silicon = 200)
 	build_path = /obj/item/circuitboard/computer/cargo
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO

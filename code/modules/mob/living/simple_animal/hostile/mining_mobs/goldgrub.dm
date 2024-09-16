@@ -34,8 +34,8 @@
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond,
 		/obj/item/stack/ore/gold,
-		/obj/item/stack/ore/silver,
-		/obj/item/stack/ore/uranium)
+		/obj/item/stack/ore/galena,
+		/obj/item/stack/ore/autunite)
 
 	var/chase_time = 100
 	var/will_burrow = TRUE
@@ -47,7 +47,7 @@
 	. = ..()
 	var/i = rand(1,3)
 	while(i)
-		loot += pick(/obj/item/stack/ore/silver, /obj/item/stack/ore/gold, /obj/item/stack/ore/uranium, /obj/item/stack/ore/diamond)
+		loot += pick(/obj/item/stack/ore/galena, /obj/item/stack/ore/gold, /obj/item/stack/ore/autunite, /obj/item/stack/ore/diamond)
 		i--
 	spit = new
 	burrow = new

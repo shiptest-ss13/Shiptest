@@ -41,7 +41,7 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/item/stack/ore/iron{
+/obj/item/stack/ore/hematite{
 	pixel_x = 7;
 	pixel_y = -6
 	},
@@ -187,7 +187,7 @@
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "fv" = (
-/obj/item/stack/ore/titanium{
+/obj/item/stack/ore/rutile{
 	pixel_x = 10;
 	pixel_y = -3
 	},
@@ -570,7 +570,7 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "oJ" = (
-/obj/item/stack/ore/iron{
+/obj/item/stack/ore/hematite{
 	pixel_x = -11;
 	pixel_y = 5
 	},
@@ -704,7 +704,7 @@
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
 "tj" = (
-/obj/item/stack/ore/iron{
+/obj/item/stack/ore/hematite{
 	pixel_x = -9;
 	pixel_y = -8
 	},
@@ -808,7 +808,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "xV" = (
-/obj/item/stack/ore/iron{
+/obj/item/stack/ore/hematite{
 	pixel_x = -3;
 	pixel_y = 7
 	},
@@ -888,6 +888,7 @@
 "zb" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
 	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon);
+	
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1731,7 +1732,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Xd" = (
-/obj/item/stack/ore/iron{
+/obj/item/stack/ore/hematite{
 	pixel_x = -7;
 	pixel_y = 4
 	},

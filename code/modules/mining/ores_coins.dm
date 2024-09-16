@@ -9,7 +9,7 @@
 
 /obj/item/stack/ore
 	name = "rock"
-	icon = 'icons/obj/ores.dmi'
+	icon = 'icons/obj/materials/ores.dmi'
 	icon_state = "ore"
 	item_state = "ore"
 	full_w_class = WEIGHT_CLASS_BULKY
@@ -41,17 +41,6 @@
 	if (stack_overlays)
 		. += stack_overlays
 
-/obj/item/stack/ore/welder_act(mob/living/user, obj/item/I)
-	..()
-	if(!refined_type)
-		return TRUE
-
-	if(I.use_tool(src, user, 0, volume=50, amount=15))
-		new refined_type(drop_location())
-		use(1)
-
-	return TRUE
-
 /obj/item/stack/ore/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	if(isnull(refined_type))
@@ -66,39 +55,222 @@
 			new refined_type(drop_location(),amountrefined)
 			qdel(src)
 
-/obj/item/stack/ore/uranium
-	name = "uranium ore"
-	icon_state = "Uranium ore"
-	item_state = "Uranium ore"
-	singular_name = "uranium ore chunk"
-	points = 30
-	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/uranium
-	mine_experience = 6
-	scan_state = "rock_Uranium"
-	spreadChance = 5
+/obj/item/stack/ore/hematite
+	name = "hematite"
+	icon_state = "hematite"
+	item_state = "hematite"
 
-/obj/item/stack/ore/iron
-	name = "iron ore"
-	icon_state = "Iron ore"
-	item_state = "Iron ore"
-	singular_name = "iron ore chunk"
-	points = 1
-	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/iron=500)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 1
+	scan_state = "hematite"
+	spreadChance = 45
+
+/obj/item/stack/ore/magnetite
+	name = "magnetite"
+	icon_state = "magnetite"
+	item_state = "magnetite"
+
+	custom_materials = list(/datum/material/iron=ORE_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/metal
 	mine_experience = 1
-	scan_state = "rock_Iron"
+	scan_state = "magnetite"
 	spreadChance = 20
 
-/obj/item/stack/ore/glass
-	name = "sand pile"
-	icon_state = "Glass ore"
-	item_state = "Glass ore"
-	singular_name = "sand pile"
-	grind_results = list(/datum/reagent/silicon = 10)
+/obj/item/stack/ore/malachite
+	name = "malachite"
+	icon_state = "malachite"
+	item_state = "malachite"
+	custom_materials = list(/datum/material/copper=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/copper
+	scan_state = "malachite"
+	spreadChance = 30
+
+/obj/item/stack/ore/galena
+	name = "galena"
+	icon_state = "galena"
+	item_state = "galena"
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/lead=9480,/datum/material/sulfur=500,/datum/material/silver=20)
+	refined_type = /obj/item/stack/sheet/mineral/lead
+	scan_state = "galena"
+	spreadChance = 20
+
+/obj/item/stack/ore/proustite
+	name = "proustite"
+	icon_state = "proustite"
+	item_state = "proustite"
+	custom_materials = list(/datum/material/silver=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/silver
+	scan_state = "proustite"
+	spreadChance = 10
+
+/obj/item/stack/ore/autunite
+	name = "autunite"
+	icon_state = "autunite"
+	item_state = "autunite"
+	points = 30
+	//material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/uranium=500)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 6
+	scan_state = "autunite"
+	spreadChance = 10
+
+/obj/item/stack/ore/gold
+	name = "gold ore"
+	icon_state = "goldore"
+	item_state = "goldore"
+	custom_materials = list(/datum/material/gold=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/gold
+	scan_state = "goldore"
+	spreadChance = 10
+
+/obj/item/stack/ore/plasma
+	name = "phoron"
+	icon_state = "phoron"
+	item_state = "phoron"
+
+	points = 15
+	custom_materials = list(/datum/material/plasma=775, /datum/material/sulfur=25, /datum/material/carbon=50, /datum/material/quartz=100)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 5
+	scan_state = "phoron"
+	spreadChance = 15
+
+/obj/item/stack/ore/plasma/attackby(obj/item/W as obj, mob/user as mob, params)
+	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
+		var/turf/T = get_turf(src)
+		message_admins("Plasma ore ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
+		log_game("Plasma ore ignited by [key_name(user)] in [AREACOORD(T)]")
+		fire_act(W.get_temperature())
+	else
+		return ..()
+
+/obj/item/stack/ore/plasma/fire_act(exposed_temperature, exposed_volume)
+	atmos_spawn_air("plasma=[amount*5];TEMP=[exposed_temperature]")
+	qdel(src)
+
+/obj/item/stack/ore/sulfur
+	name = "sulfur dust"
+	icon_state = "sulfur"
+	item_state = "sulfur"
+	grind_results = list(/datum/reagent/sulfur = 10)
 	points = 1
-	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
+	scan_state = "sulfur"
+	custom_materials = list(/datum/material/sulfur=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/ore/slag
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stack/ore/sulfur/pyrite
+	name = "pyrite"
+	icon_state = "pyrite"
+	item_state = "pyrite"
+	grind_results = list(/datum/reagent/sulfur = 5,/datum/reagent/iron = 5)
+	points = 1
+	scan_state = "pyrite"
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/sulfur=495,/datum/material/iron=495,/datum/material/gold=10)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/stack/ore/sulfur/attackby(obj/item/weapon as obj, mob/user as mob, params)
+	if(weapon.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
+		var/turf/current_turf = get_turf(src)
+		message_admins("Sulfur ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(current_turf)]")
+		log_game("Sulfur ignited by [key_name(user)] in [AREACOORD(current_turf)]")
+		fire_act(weapon.get_temperature())
+	else
+		return ..()
+
+/obj/item/stack/ore/sulfur/ex_act(severity, target)
+	. = ..()
+	fire_act()
+
+/obj/item/stack/ore/sulfur/fire_act(exposed_temperature, exposed_volume)
+	var/turf/current_turf = get_turf(src)
+	if(isopenturf(current_turf))
+		current_turf.IgniteTurf(1*amount, "blue")
+	qdel(src)
+
+
+/obj/item/stack/ore/diamond
+	name = "diamond ore"
+	icon_state = "diamondore"
+	item_state = "diamondore"
+
+	points = 50
+	custom_materials = list(/datum/material/diamond=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 10
+	scan_state = "diamondore"
+
+
+/obj/item/stack/ore/rutile
+	name = "rutile"
+	icon_state = "rutile"
+	item_state = "rutile"
+	points = 50
+	custom_materials = list(/datum/material/titanium=900, /datum/material/iron=100)
+	refined_type = /obj/item/stack/sheet/mineral/titanium
+	mine_experience = 3
+	scan_state = "rutile"
+	spreadChance = 10
+
+/obj/item/stack/ore/graphite
+	name = "graphite"
+	icon_state = "graphite"
+	item_state = "graphite"
+
+	custom_materials = list(/datum/material/carbon=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 1
+	scan_state = "graphite"
+	spreadChance = 25
+
+//alt version for jungle planets
+/obj/item/stack/ore/graphite/coal
+	name = "coal"
+
+	custom_materials = list(/datum/material/carbon=200)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 1
+	scan_state = "graphite"
+	spreadChance = 85
+
+/obj/item/stack/ore/graphite/coal/attackby(obj/item/W, mob/user, params)
+	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
+		var/turf/T = get_turf(src)
+		message_admins("Coal ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
+		log_game("Coal ignited by [key_name(user)] in [AREACOORD(T)]")
+		fire_act(W.get_temperature())
+		T.IgniteTurf((W.get_temperature()/20))
+		return TRUE
+	else
+		return ..()
+
+/obj/item/stack/ore/graphite/coal/fire_act(exposed_temperature, exposed_volume)
+	atmos_spawn_air("co2=[amount*10];TEMP=[exposed_temperature]")
+	qdel(src)
+
+/obj/item/stack/ore/quartzite
+	name = "quartzite"
+	icon_state = "quartzite"
+	item_state = "quartzite"
+
+	custom_materials = list(/datum/material/quartz=ORE_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/ore/slag
+	mine_experience = 1
+	scan_state = "quartzite"
+	spreadChance = 45
+
+/obj/item/stack/ore/glass
+	name = "rocky sand"
+	icon_state = "rocky_sand"
+	item_state = "rocky_sand"
+	singular_name = "sand pile"
+	grind_results = list(/datum/reagent/quartz = 10)
+	points = 1
+	custom_materials = list(/datum/material/quartz = 500)
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
@@ -108,35 +280,40 @@
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/quartz = 5)
+	custom_materials = list(/datum/material/quartz = 250, /datum/material/silicon = 50, /datum/material/carbon = 100, /datum/material/sulfur)
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
 	icon_state = "whitesands"
 	item_state = "whitesands"
 	singular_name = "white sand pile"
-	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/quartz = 10)
+	custom_materials = list(/datum/material/quartz = 500)
 
 /obj/item/stack/ore/glass/rockplanet
 	name = "oxidized sand pile"
 	icon_state = "rockplanet_sand"
 	item_state = "rockplanet_sand"
 	singular_name = "iron sand pile"
-	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/iron = 10)
+	grind_results = list(/datum/reagent/quartz = 10, /datum/reagent/iron = 2)
+	custom_materials = list(/datum/material/quartz = 500, /datum/material/quartz = 50)
 
 /obj/item/stack/ore/glass/wasteplanet
 	name = "oily dust"
 	icon_state = "wasteplanet_sand"
 	item_state = "wasteplanet_sand"
 	singular_name = "rocky dust"
-	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/uranium/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
+	grind_results = list(/datum/reagent/quartz = 5, /datum/reagent/lithium = 2, /datum/reagent/uranium/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
+	custom_materials = list(/datum/material/quartz = 250)
 
 /obj/item/stack/ore/glass/beach
 	name = "beige sand pile"
 	icon_state = "beach_sand"
 	item_state = "beach_sand"
 	singular_name = "beige sand pile"
-	grind_results = list(/datum/reagent/silicon = 10)
+	grind_results = list(/datum/reagent/quartz = 10)
+	custom_materials = list(/datum/material/quartz = 500)
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -165,71 +342,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		return
 	qdel(src)
 
-/obj/item/stack/ore/plasma
-	name = "plasma ore"
-	icon_state = "Plasma ore"
-	item_state = "Plasma ore"
-	singular_name = "plasma ore chunk"
-	points = 15
-	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/plasma
-	mine_experience = 5
-	scan_state = "rock_Plasma"
-	spreadChance = 8
-
-/obj/item/stack/ore/plasma/welder_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='warning'>You can't hit a high enough temperature to smelt [src] properly!</span>")
-	return TRUE
-
-
-/obj/item/stack/ore/silver
-	name = "silver ore"
-	icon_state = "Silver ore"
-	item_state = "Silver ore"
-	singular_name = "silver ore chunk"
-	points = 16
-	mine_experience = 3
-	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/silver
-	scan_state = "rock_Silver"
-	spreadChance = 5
-
-/obj/item/stack/ore/gold
-	name = "gold ore"
-	icon_state = "Gold ore"
-	item_state = "Gold ore"
-	singular_name = "gold ore chunk"
-	points = 18
-	mine_experience = 5
-	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/gold
-	scan_state = "rock_Gold"
-	spreadChance = 5
-
-/obj/item/stack/ore/diamond
-	name = "diamond ore"
-	icon_state = "Diamond ore"
-	item_state = "Diamond ore"
-	singular_name = "diamond ore chunk"
-	points = 50
-	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/diamond
-	mine_experience = 10
-	scan_state = "rock_Diamond"
-
-
-/obj/item/stack/ore/titanium
-	name = "titanium ore"
-	icon_state = "Titanium ore"
-	item_state = "Titanium ore"
-	singular_name = "titanium ore chunk"
-	points = 50
-	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/titanium
-	mine_experience = 3
-	scan_state = "rock_Titanium"
-	spreadChance = 5
-
 /obj/item/stack/ore/hellstone
 	name = "hellstone ore"
 	icon_state = "hellstone-ore"
@@ -250,10 +362,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/ice
 	name = "ice crystals"
 	desc = "Used in an electrolyzer to produce hydrogen and oxygen."
-	icon_state = "Ice ore"
-	item_state = "Ice ore"
-	singular_name = "ice chunk"
-	scan_state = "rock_Ice"
+	icon_state = "ice"
+	item_state = "ice"
+	scan_state = "ice"
 	mine_experience = 2
 	grind_results = list(/datum/reagent/consumable/ice = 10)
 	spreadChance = 10
@@ -261,7 +372,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/gibtonite
 	name = "gibtonite ore"
 	desc = "Extremely explosive if struck with mining equipment, Gibtonite is often used by miners to speed up their work by using it as a mining charge. This material is illegal to possess by unauthorized personnel under space law."
-	icon = 'icons/obj/ores.dmi'
+	icon = 'icons/obj/materials/ores.dmi'
 	icon_state = "Gibtonite ore"
 	item_state = "Gibtonite ore"
 	w_class = WEIGHT_CLASS_BULKY

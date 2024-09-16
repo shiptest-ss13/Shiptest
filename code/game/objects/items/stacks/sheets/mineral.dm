@@ -95,6 +95,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/diamond
 	name = "diamond"
+	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "sheet-diamond"
 	item_state = "sheet-diamond"
 	singular_name = "diamond"
@@ -132,6 +133,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/uranium
 	name = "uranium"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-uranium"
 	item_state = "sheet-uranium"
 	singular_name = "uranium sheet"
@@ -171,6 +173,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/plasma
 	name = "solid plasma"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-plasma"
 	item_state = "sheet-plasma"
 	singular_name = "plasma sheet"
@@ -224,6 +227,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/gold
 	name = "gold"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-gold"
 	item_state = "sheet-gold"
 	singular_name = "gold bar"
@@ -282,6 +286,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/silver
 	name = "silver"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-silver"
 	item_state = "sheet-silver"
 	singular_name = "silver bar"
@@ -337,6 +342,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/titanium
 	name = "titanium"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-titanium"
 	item_state = "sheet-titanium"
 	singular_name = "titanium sheet"
@@ -376,6 +382,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/plastitanium
 	name = "plastitanium"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-plastitanium"
 	item_state = "sheet-plastitanium"
 	singular_name = "plastitanium sheet"
@@ -464,30 +471,30 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	. += GLOB.abductor_recipes
 
 /*
- * Coal
+ * Carbon
  */
 
 /obj/item/stack/sheet/mineral/coal
-	name = "coal"
-	desc = "Someone's gotten on the naughty list."
-	icon = 'icons/obj/ores.dmi'
-	icon_state = "slag"
-	singular_name = "coal lump"
+	name = "carbon rod"
+	desc = "A rod of pure carbon."
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-graphite"
+
 	merge_type = /obj/item/stack/sheet/mineral/coal
 	grind_results = list(/datum/reagent/carbon = 20)
-	novariants = TRUE
 
-/obj/item/stack/sheet/mineral/coal/attackby(obj/item/W, mob/user, params)
+/obj/item/stack/ore/graphite/coal/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
 		var/turf/T = get_turf(src)
-		message_admins("Coal ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
-		log_game("Coal ignited by [key_name(user)] in [AREACOORD(T)]")
+		message_admins("Carbon rod ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
+		log_game("Carbon rod ignited by [key_name(user)] in [AREACOORD(T)]")
 		fire_act(W.get_temperature())
+		T.IgniteTurf((W.get_temperature()/20))
 		return TRUE
 	else
 		return ..()
 
-/obj/item/stack/sheet/mineral/coal/fire_act(exposed_temperature, exposed_volume)
+/obj/item/stack/ore/graphite/coal/fire_act(exposed_temperature, exposed_volume)
 	atmos_spawn_air("co2=[amount*10];TEMP=[exposed_temperature]")
 	qdel(src)
 
@@ -506,6 +513,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/hidden/hellstone
 	name = "hellstone"
+	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "sheet-hellstone"
 	item_state = "sheet-hellstone"
 	singular_name = "hellstone bar"
@@ -527,4 +535,116 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	amount = 10
 
 /obj/item/stack/sheet/mineral/hidden/hellstone/five
+	amount = 5
+
+/*
+ * Sulfur
+ */
+/obj/item/stack/sheet/mineral/sulfur
+	name = "sulfur crystal"
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-sulfur"
+	item_state = "ingot-sulfur"
+	custom_materials = list(/datum/material/sulfur=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/sulfur = 20)
+	point_value = 1
+	merge_type = /obj/item/stack/sheet/mineral/sulfur
+	material_type = /datum/material/sulfur
+
+/*
+ * Copper
+ */
+/obj/item/stack/sheet/mineral/copper
+	name = "copper"
+	icon = 'icons/obj/materials/sheets.dmi'
+	icon_state = "sheet-copper"
+	item_state = "sheet-copper"
+	singular_name = "copper bar"
+	sheettype = "copper"
+	custom_materials = list(/datum/material/copper=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/copper = 20)
+	point_value = 3
+	merge_type = /obj/item/stack/sheet/mineral/copper
+
+/* sprites for this look real bad, resprite
+GLOBAL_LIST_INIT(copper_recipes, list ( \
+	new/datum/stack_recipe("Copper Door", /obj/structure/mineral_door/copper, 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("Copper Tile", /obj/item/stack/tile/mineral/copper, 1, 4, 20), \
+	new/datum/stack_recipe("Quartermaster Statue", /obj/structure/statue/copper/dimas, 10, one_per_turf = 1, on_floor = 1), \
+	))
+/obj/item/stack/sheet/mineral/copper/Initialize(mapload, new_amount, merge = TRUE)
+	recipes = GLOB.copper_recipes
+	. = ..()
+*/
+/obj/item/stack/sheet/mineral/copper/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/copper/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/copper/five
+	amount = 5
+
+/obj/item/stack/sheet/mineral/lead
+	name = "lead"
+	desc = "Looks tasty."
+	icon = 'icons/obj/materials/sheets.dmi'
+	icon_state = "sheet-lead"
+	item_state = "sheet-lead"
+	singular_name = "lead bar"
+	sheettype = "lead"
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
+	point_value = 2
+	merge_type = /obj/item/stack/sheet/mineral/lead
+
+/obj/item/stack/sheet/mineral/lead/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/lead/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/lead/five
+	amount = 5
+
+/obj/item/stack/sheet/mineral/silicon
+	name = "silicon crystal"
+	desc = "Looks tasty."
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-silicon"
+	item_state = "ingot-silicon"
+	singular_name = "ingot-silicon"
+	sheettype = "lead"
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
+	point_value = 2
+	merge_type = /obj/item/stack/sheet/mineral/lead
+
+/obj/item/stack/sheet/mineral/silicon/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/silicon/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/silicon/five
+	amount = 5
+
+/obj/item/stack/sheet/mineral/quartz
+	name = "quartz crystal"
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-quartz"
+	item_state = "ingot-quartz"
+	sheettype = "quartz"
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/quartz = 20) //maybe make it a more unique reagent?
+	point_value = 1
+	merge_type = /obj/item/stack/sheet/mineral/quartz
+
+/obj/item/stack/sheet/mineral/quartz/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/quartz/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/quartz/five
 	amount = 5

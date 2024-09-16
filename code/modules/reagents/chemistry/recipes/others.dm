@@ -670,3 +670,7 @@
 	results = list(/datum/reagent/cement/roadmix = 2)
 	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
 	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."
+
+/datum/chemical_reaction/siliconfication
+	results = list(/datum/reagent/lube = 4)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/silicon = 1, /datum/reagent/oxygen = 1)

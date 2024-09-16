@@ -94,6 +94,8 @@
 	var/sheet_left = 0 // How much is left of the sheet
 	var/time_per_sheet = 260
 	var/current_heat = 0
+	var/pollution_multiplier = 3
+	var/pollution_gas = GAS_CO
 
 /obj/machinery/power/port_gen/pacman/Initialize()
 	. = ..()
@@ -170,6 +172,9 @@
 	if (current_heat > 300)
 		overheat()
 		qdel(src)
+
+	var/turf/current_turf = get_turf(src)
+	current_turf.atmos_spawn_air("[pollution_gas]=[power_output*pollution_multiplier];TEMP=[((current_heat-32)/1.8+273.15)]")
 
 /obj/machinery/power/port_gen/pacman/handleInactive()
 	current_heat = max(current_heat - 2, 0)
@@ -291,6 +296,7 @@
 	circuit = /obj/item/circuitboard/machine/pacman/super
 	sheet_path = /obj/item/stack/sheet/mineral/uranium
 	power_gen = 15000
+	pollution_multiplier = 0.2
 
 /obj/machinery/power/port_gen/pacman/super/overheat()
 	. =..()
@@ -303,6 +309,7 @@
 	circuit = /obj/item/circuitboard/machine/pacman/mrs
 	sheet_path = /obj/item/stack/sheet/mineral/diamond
 	power_gen = 40000
+	pollution_multiplier = 0.1
 
 /obj/machinery/power/port_gen/pacman/mrs/overheat()
 	. =..()

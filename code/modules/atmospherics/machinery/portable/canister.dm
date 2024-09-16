@@ -84,6 +84,12 @@
 	icon_state = "black"
 	gas_type = GAS_CO2
 
+/obj/machinery/portable_atmospherics/canister/carbon_monoxide
+	name = "co canister"
+	desc = "Carbon Monoxide. Highly dangerous and flammable"
+	icon_state = "black"
+	gas_type = GAS_CO
+
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
 	desc = "Plasma gas. The reason YOU are here. Highly toxic."

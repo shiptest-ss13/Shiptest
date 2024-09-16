@@ -26,7 +26,7 @@
 	desc = "The latest in Artificial Intelligences."
 	id = "mmi_posi"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 1700, /datum/material/glass = 1350, /datum/material/gold = 500) //Gold, because SWAG.
+	materials = list(/datum/material/iron = 1700, /datum/material/glass = 1350, /datum/material/gold = 500, /datum/material/copper = 1000, , /datum/material/silicon = 10000) //Gold, because SWAG.
 	construction_time = 75
 	build_path = /obj/item/mmi/posibrain
 	category = list("Misc", "Medical Designs")
@@ -115,7 +115,7 @@
 	desc = "Allows tracking of someone's location if their suit sensors are turned to tracking beacon."
 	id = "crewpinpointer"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1500, /datum/material/gold = 500)
+	materials = list(/datum/material/iron = 3000, /datum/material/glass = 750, /datum/material/plastic = 750, /datum/material/gold = 500,  /datum/material/copper = 200, /datum/material/silicon = 1000)
 	build_path = /obj/item/pinpointer/crew
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -136,7 +136,7 @@
 	id = "defibrillator"
 	build_type = PROTOLATHE
 	build_path = /obj/item/defibrillator
-	materials = list(/datum/material/iron = 8000, /datum/material/glass = 4000, /datum/material/silver = 3000, /datum/material/gold = 1500)
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 2000, /datum/material/glass = 4000, /datum/material/silver = 3000, /datum/material/gold = 1500, /datum/material/silicon = 1000)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -155,7 +155,7 @@
 	desc = "An all-in-one mounted frame for holding defibrillators, complete with ID-locked clamps and recharging cables. The PENLITE version also allows for slow recharging of the defib's battery."
 	id = "defibmount"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000, /datum/material/silver = 500)
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000, /datum/material/silver = 500, /datum/material/silicon = 1000, /datum/material/copper = 300)
 	build_path = /obj/item/wallframe/defib_mount/charging
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -167,7 +167,7 @@
 	id = "defibrillator_compact"
 	build_type = PROTOLATHE
 	build_path = /obj/item/defibrillator/compact
-	materials = list(/datum/material/iron = 16000, /datum/material/glass = 8000, /datum/material/silver = 6000, /datum/material/gold = 3000)
+	materials = list(/datum/material/iron = 16000, /datum/material/glass = 4000, /datum/material/plastic = 4000, /datum/material/silver = 6000, /datum/material/gold = 3000, /datum/material/silicon = 2000)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -187,7 +187,7 @@
 	id = "medigel"
 	build_path = /obj/item/reagent_containers/medigel
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 2500, /datum/material/plastic = 500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -197,7 +197,7 @@
 	id = "laserscalpel"
 	build_path = /obj/item/scalpel/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1500, /datum/material/silver = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
+	materials = list(/datum/material/silver = 6000, /datum/material/glass = 750, /datum/material/plastic = 750, /datum/material/silicon = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -207,7 +207,7 @@
 	id = "mechanicalpinches"
 	build_path = /obj/item/retractor/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 12000, /datum/material/glass = 4000, /datum/material/silver = 4000, /datum/material/titanium = 5000)
+	materials = list(/datum/material/silver = 12000, /datum/material/glass = 2000, /datum/material/plastic = 2000, /datum/material/silicon = 4000, /datum/material/titanium = 5000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -217,7 +217,7 @@
 	id = "searingtool"
 	build_path = /obj/item/surgicaldrill/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/plasma = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 3000)
+	materials = list(/datum/material/silver = 4000, /datum/material/glass = 1000, /datum/material/plastic = 1000, /datum/material/copper = 2000, /datum/material/silicon = 3000, /datum/material/titanium = 3000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -271,7 +271,7 @@
 	id = "ci-welding"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 400)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 400, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/eyes/robotic/shield
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -282,7 +282,7 @@
 	id = "ci-gloweyes"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 1000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 1000, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/eyes/robotic/glow
 	category = list("Misc", "Medical Designs")
 
@@ -292,7 +292,7 @@
 	id = "ci-breather"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 35
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 250)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 250, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/cyberimp/mouth/breathing_tube
 	category = list("Misc", "Medical Designs")
 
@@ -301,7 +301,7 @@
 	desc = "A set of surgical tools hidden behind a concealed panel on the user's arm."
 	id = "ci-surgery"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list (/datum/material/iron = 2500, /datum/material/glass = 1500, /datum/material/silver = 1500)
+	materials = list (/datum/material/iron = 2500, /datum/material/glass = 1500, /datum/material/silver = 1500, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/surgery
 	category = list("Misc", "Medical Designs")
@@ -312,7 +312,7 @@
 	desc = "A stripped-down version of engineering cyborg toolset, designed to be installed on subject's arm."
 	id = "ci-toolset"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list (/datum/material/iron = 2500, /datum/material/glass = 1500, /datum/material/silver = 1500)
+	materials = list (/datum/material/iron = 2500, /datum/material/glass = 1500, /datum/material/silver = 1500, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/toolset
 	category = list("Misc", "Medical Designs")
@@ -324,7 +324,7 @@
 	id = "ci-medhud"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 500)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 500, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/medical
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -335,7 +335,7 @@
 	id = "ci-sechud"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 750, /datum/material/gold = 750)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 750, /datum/material/gold = 750, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/security
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -346,7 +346,7 @@
 	id = "ci-diaghud"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/silicon = 1000, /datum/material/copper = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/diagnostic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
@@ -357,7 +357,7 @@
 	id = "ci-xray"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/uranium = 1000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/uranium = 1000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/eyes/robotic/xray
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -368,7 +368,7 @@
 	id = "ci-thermals"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/diamond = 2000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/diamond = 2000, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -379,7 +379,7 @@
 	id = "ci-antidrop"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 400, /datum/material/gold = 400)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 400, /datum/material/gold = 400, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/brain/anti_drop
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -390,7 +390,7 @@
 	id = "ci-antistun"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 1000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 1000, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/brain/anti_stun
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -401,7 +401,7 @@
 	id = "ci-joywire"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/silver = 500)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/silver = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/brain/joywire
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -412,7 +412,7 @@
 	id = "ci-nutriment"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/chest/nutriment
 	category = list("Misc", "Medical Designs")
 
@@ -422,7 +422,7 @@
 	id = "ci-nutrimentplus"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/uranium = 750)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/uranium = 750, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/chest/nutriment/plus
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -433,7 +433,7 @@
 	id = "ci-reviver"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(/datum/material/iron = 800, /datum/material/glass = 800, /datum/material/gold = 300, /datum/material/uranium = 500)
+	materials = list(/datum/material/iron = 800, /datum/material/glass = 800, /datum/material/gold = 300, /datum/material/uranium = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/chest/reviver
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -444,7 +444,7 @@
 	id = "ci-thrusters"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 80
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/silver = 1000, /datum/material/diamond = 1000)
+	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/silver = 1000, /datum/material/diamond = 1000, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/cyberimp/chest/thrusters
 	category = list("Misc", "Medical Designs")
 
@@ -509,7 +509,7 @@
 	id = "cybernetic_liver"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 500, /datum/material/copper = 300)
 	build_path = /obj/item/organ/liver/cybernetic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -518,7 +518,7 @@
 	name = "Cybernetic Liver"
 	desc = "A cybernetic liver."
 	id = "cybernetic_liver_tier2"
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/liver/cybernetic/tier2
 
 /datum/design/cybernetic_liver/tier3
@@ -526,7 +526,7 @@
 	desc = "An upgraded cybernetic liver."
 	id = "cybernetic_liver_tier3"
 	construction_time = 50
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver=500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/liver/cybernetic/tier3
 
 /datum/design/cybernetic_heart
@@ -535,7 +535,7 @@
 	id = "cybernetic_heart"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 500, /datum/material/copper = 300)
 	build_path = /obj/item/organ/heart/cybernetic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -552,7 +552,7 @@
 	desc = "An upgraded cybernetic heart."
 	id = "cybernetic_heart_tier3"
 	construction_time = 50
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver=500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver=500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/heart/cybernetic/tier3
 
 /datum/design/cybernetic_lungs
@@ -561,7 +561,7 @@
 	id = "cybernetic_lungs"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 500, /datum/material/copper = 300)
 	build_path = /obj/item/organ/lungs/cybernetic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -570,7 +570,7 @@
 	name = "Cybernetic Lungs"
 	desc = "A pair of cybernetic lungs."
 	id = "cybernetic_lungs_tier2"
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/lungs/cybernetic/tier2
 
 /datum/design/cybernetic_lungs/tier3
@@ -587,7 +587,7 @@
 	id = "cybernetic_stomach"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 500, /datum/material/copper = 300)
 	build_path = /obj/item/organ/stomach/cybernetic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -596,7 +596,7 @@
 	name = "Cybernetic Stomach"
 	desc = "A cybernetic stomach."
 	id = "cybernetic_stomach_tier2"
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/stomach/cybernetic/tier2
 
 /datum/design/cybernetic_stomach/tier3
@@ -613,7 +613,7 @@
 	id = "cybernetic_ears"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 30
-	materials = list(/datum/material/iron = 250, /datum/material/glass = 400)
+	materials = list(/datum/material/iron = 250, /datum/material/glass = 400, /datum/material/silicon = 500, /datum/material/copper = 300)
 	build_path = /obj/item/organ/ears/cybernetic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -624,7 +624,7 @@
 	id = "cybernetic_ears_u"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 500, /datum/material/silicon = 2000, /datum/material/copper = 1000)
 	build_path = /obj/item/organ/ears/cybernetic/upgraded
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL

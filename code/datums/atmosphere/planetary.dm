@@ -77,12 +77,13 @@
 /datum/atmosphere/shrouded
 	id = SHROUDED_DEFAULT_ATMOS
 	base_gases = list(
-		GAS_N2=80,
+		GAS_N2=60,
 		GAS_O2=20,
 	)
 	normal_gases = list(
 		GAS_BZ=2,
 		GAS_CO2=2,
+		GAS_CO=2,
 	)
 	restricted_gases = list(
 		GAS_H2O=1,

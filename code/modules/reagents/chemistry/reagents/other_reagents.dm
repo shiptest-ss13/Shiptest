@@ -598,7 +598,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -908,6 +908,14 @@
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
 
+/datum/reagent/quartz
+	name = "Quartz"
+	description = "A fine dust of Quartz, a precursor to silicon and glass."
+	reagent_state = SOLID
+	color = "#fcedff"
+	taste_mult = 0
+	material = /datum/material/quartz
+
 /datum/reagent/silicon
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
@@ -1184,6 +1192,67 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumilation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	accumilation += volume
+	switch(accumilation)
+		if(10 to 50)
+			victim.Dizzy(accumilation/20)
+			to_chat(src, "<span class='warning'>You feel dizzy.</span>")
+		if(50 to 150)
+			to_chat(victim, "<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>")
+			victim.Dizzy(accumilation)
+			victim.adjustStaminaLoss(1)
+		if(150 to 250)
+			to_chat(victim, "<span class='warning'>[pick("Your head hurts a lot.", "Your head pounds incessantly.")]</span>")
+			victim.adjustStaminaLoss(3)
+			victim.Dizzy(accumilation/20)
+			victim.confused += (accumilation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
+		if(250 to 450)
+			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
+			victim.adjustStaminaLoss(10)
+			victim.Stun(35)
+
+			victim.Dizzy(accumilation/20)
+			victim.confused += (accumilation/50)
+			victim.drowsyness += (accumilation/50)
+
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
+			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
+
+		if(450 to 3000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumilation/100)
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+		if(3000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+
+			qdel(src)
+			return
+	return ..()
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	if(accumilation <= 150)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+
 
 /datum/reagent/stimulum
 	name = "Stimulum"

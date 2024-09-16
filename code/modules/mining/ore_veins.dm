@@ -21,11 +21,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
 	//As higher class veins will be increasingly harder to mine
 	var/list/ore_list = list(
-		/obj/item/stack/ore/iron = 7,
+		/obj/item/stack/ore/hematite = 7,
 		/obj/item/stack/ore/plasma = 3,
-		/obj/item/stack/ore/silver = 2,
-		/obj/item/stack/ore/uranium = 1,
-		/obj/item/stack/ore/titanium = 2,
+		/obj/item/stack/ore/galena = 2,
+		/obj/item/stack/ore/autunite = 1,
+		/obj/item/stack/ore/rutile = 2,
 		)
 	//The post initialize list of all possible drops from the vein
 	//Meant to be player facing in the form of mining scanners
@@ -122,11 +122,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/hematite = 8,
 		/obj/item/stack/ore/plasma = 3,
-		/obj/item/stack/ore/silver = 4,
-		/obj/item/stack/ore/uranium = 2,
-		/obj/item/stack/ore/titanium = 5,
+		/obj/item/stack/ore/galena = 4,
+		/obj/item/stack/ore/autunite = 2,
+		/obj/item/stack/ore/rutile = 5,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -145,11 +145,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/iron = 9,
+		/obj/item/stack/ore/hematite = 9,
 		/obj/item/stack/ore/plasma = 3,
-		/obj/item/stack/ore/silver = 5,
-		/obj/item/stack/ore/uranium = 2,
-		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/autunite = 2,
+		/obj/item/stack/ore/rutile = 6,
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
@@ -176,12 +176,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
 	//Alongside being a much more reliable source of plasma
 	ore_list = list(
-		/obj/item/stack/ore/iron = 7,
+		/obj/item/stack/ore/hematite = 7,
 		/obj/item/stack/ore/plasma = 7,
-		/obj/item/stack/ore/silver = 3,
-		/obj/item/stack/ore/uranium = 1,
-		/obj/item/stack/ore/titanium = 2,
-		/obj/item/stack/ore/titanium = 2,
+		/obj/item/stack/ore/galena = 3,
+		/obj/item/stack/ore/autunite = 1,
+		/obj/item/stack/ore/rutile = 2,
+		/obj/item/stack/ore/rutile = 2,
 		/obj/item/stack/ore/gold = 1,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/ice = 7,
@@ -191,11 +191,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/hematite = 8,
 		/obj/item/stack/ore/plasma = 9,
-		/obj/item/stack/ore/silver = 5,
-		/obj/item/stack/ore/uranium = 2,
-		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/autunite = 2,
+		/obj/item/stack/ore/rutile = 6,
 		/obj/item/stack/ore/diamond = 2,
 		/obj/item/stack/ore/gold = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -208,11 +208,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/hematite = 8,
 		/obj/item/stack/ore/plasma = 9,
-		/obj/item/stack/ore/silver = 6,
-		/obj/item/stack/ore/uranium = 2,
-		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/galena = 6,
+		/obj/item/stack/ore/autunite = 2,
+		/obj/item/stack/ore/rutile = 6,
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/bluespace_crystal = 4,

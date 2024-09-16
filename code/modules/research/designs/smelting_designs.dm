@@ -1,10 +1,10 @@
 ///////SMELTABLE ALLOYS///////
 
 /datum/design/plasteel_alloy
-	name = "Plasma + Iron alloy"
+	name = "Carbon + Iron alloy"
 	id = "plasteel"
 	build_type = SMELTER | PROTOLATHE
-	materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT, /datum/material/plasma = MINERAL_MATERIAL_AMOUNT)
+	materials = list(/datum/material/iron=3960, /datum/material/carbon=40)
 	build_path = /obj/item/stack/sheet/plasteel
 	category = list("initial", "Stock Parts")
 	maxstack = 50

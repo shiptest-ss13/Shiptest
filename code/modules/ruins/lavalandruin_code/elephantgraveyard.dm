@@ -52,7 +52,7 @@
 
 /turf/closed/mineral/strong/wasteland/drop_ores()
 	if(prob(10))
-		new /obj/item/stack/ore/iron(src, 1)
+		new /obj/item/stack/ore/hematite(src, 1)
 		new /obj/item/stack/ore/glass(src, 1)
 		new /obj/effect/decal/remains/human/grave(src, 1)
 	else

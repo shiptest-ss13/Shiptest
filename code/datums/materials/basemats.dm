@@ -6,7 +6,6 @@
 	color = "#878687"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
-	ore_type = /obj/item/stack/ore/iron
 	value_per_unit = 0.0025
 
 ///Breaks extremely easily but is transparent.
@@ -19,7 +18,6 @@
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	integrity_modifier = 0.1
 	sheet_type = /obj/item/stack/sheet/glass
-	ore_type = /obj/item/stack/ore/glass
 	value_per_unit = 0.0025
 	beauty_modifier = 0.05
 	armor_modifiers = list("melee" = 0.2, "bullet" = 0.2, "laser" = 0, "energy" = 1, "bomb" = 0, "bio" = 0.2, "rad" = 0.2, "fire" = 1, "acid" = 0.2)
@@ -37,7 +35,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#ffffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
-	ore_type = /obj/item/stack/ore/silver
 	value_per_unit = 0.025
 	beauty_modifier = 0.075
 
@@ -50,10 +47,30 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
-	ore_type = /obj/item/stack/ore/gold
 	value_per_unit = 0.0625
 	beauty_modifier = 0.15
 	armor_modifiers = list("melee" = 1.1, "bullet" = 1.1, "laser" = 1.15, "energy" = 1.15, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1.1)
+
+/datum/material/carbon
+	name = "carbon"
+	id = "carbon"
+	desc = "Carbon is an essential component of life, but also used as a primitive source of energy by virutally every sapient species in history."
+	color = "#665b5b"
+	categories = list(MAT_CATEGORY_ORE = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/silicon
+	value_per_unit = 1
+
+/datum/material/carbon/on_applied_obj(obj/source, amount, material_flags)
+	. = ..()
+	if(material_flags & MATERIAL_AFFECT_STATISTICS)
+		var/obj/carbon = source
+		carbon.resistance_flags |= FLAMMABLE
+
+/datum/material/carbon/on_removed_obj(obj/source, material_flags)
+	. = ..()
+	if(material_flags & MATERIAL_AFFECT_STATISTICS)
+		var/obj/carbon = source
+		carbon.resistance_flags &= ~FLAMMABLE
 
 ///Has no special properties
 /datum/material/diamond
@@ -63,7 +80,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#30ffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
-	ore_type = /obj/item/stack/ore/diamond
 	alpha = 132
 	value_per_unit = 0.25
 	beauty_modifier = 0.3
@@ -77,7 +93,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#30ed1a"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
-	ore_type = /obj/item/stack/ore/uranium
 	value_per_unit = 0.05
 	beauty_modifier = 0.3 //It shines so beautiful
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.4, "laser" = 0.5, "energy" = 0.5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 1, "acid" = 1)
@@ -98,7 +113,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	color = "#ff2eff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
-	ore_type = /obj/item/stack/ore/plasma
 	value_per_unit = 0.1
 	beauty_modifier = 0.15
 	armor_modifiers = list("melee" = 1.4, "bullet" = 0.7, "laser" = 0, "energy" = 1.2, "bomb" = 0, "bio" = 1.2, "rad" = 1, "fire" = 0, "acid" = 0.5)
@@ -124,7 +138,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	categories = list(MAT_CATEGORY_ORE = TRUE)
 	beauty_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/bluespace_crystal
-	ore_type = /obj/item/stack/ore/bluespace_crystal
 	value_per_unit = 0.15
 
 
@@ -137,7 +150,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
-	ore_type = /obj/item/stack/ore/titanium
 	value_per_unit = 0.0625
 	beauty_modifier = 0.05
 	armor_modifiers = list("melee" = 1.35, "bullet" = 1.3, "laser" = 1.3, "energy" = 1.25, "bomb" = 1.25, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1)
@@ -154,6 +166,60 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.0125
 	beauty_modifier = -0.01
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.1, "laser" = 0.3, "energy" = 0.5, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 1.1, "acid" = 1)
+
+/datum/material/copper
+	name = "copper"
+	id = "copper"
+	desc = "Copper is a soft, malleable, and ductile metal with very high thermal and electrical conductivity."
+	color = "#c47a3d"
+	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/copper
+	value_per_unit = 0.0025
+
+/datum/material/lead
+	name = "lead"
+	id = "lead"
+	desc = "Lead is a soft, malleable, and heavy metal found in sedimentary and igneous layers of the crust."
+	color = "#60706b"
+	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/lead
+	value_per_unit = 0.0025
+
+/datum/material/sulfur
+	name = "sulfur"
+	id = "sulfur"
+	desc = "Also known as brimstone, Sulfur is a flammable substance, but is also a core component of life."
+	color = "#ede218"
+	categories = list(MAT_CATEGORY_ORE = TRUE)
+	sheet_type = /obj/item/stack/ore/sulfur
+	value_per_unit = 1
+
+/datum/material/sulfur/on_applied(atom/source, amount, material_flags)
+	. = ..()
+	if(ismovable(source))
+		source.AddComponent(/datum/component/explodable, 0, 0, amount / 3000, amount / 1000)
+
+/datum/material/sulfur/on_removed(atom/source, material_flags)
+	. = ..()
+	qdel(source.GetComponent(/datum/component/explodable))
+
+/datum/material/quartz
+	name = "quartz"
+	id = "quartz"
+	desc = "Quartz is a common crytsal created from compacted sandstone, commonly used in glass production."
+	color = "#fcedff"
+	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/quartz
+	value_per_unit = 0.0025
+
+/datum/material/silicon
+	name = "silicon"
+	id = "silicon"
+	desc = "Silicon is a material best known for it's use in electronics."
+	color = "#4d4754"
+	categories = list(MAT_CATEGORY_ORE = TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/silicon
+	value_per_unit = 1
 
 ///Force decrease and mushy sound effect. (Not yet implemented)
 /datum/material/biomass
@@ -197,7 +263,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 1.5
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
-	ore_type = /obj/item/stack/ore/hellstone
 	value_per_unit = 0.25
 	beauty_modifier = 0.4
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.3, "energy" = 1.3, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 2.5, "acid" = 1)

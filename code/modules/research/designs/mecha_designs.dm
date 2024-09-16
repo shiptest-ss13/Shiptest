@@ -105,7 +105,7 @@
 	name = "\"Phazon\" Central Control module"
 	desc = "Allows for the construction of a \"Phazon\" Central Control module."
 	id = "phazon_main"
-	materials = list(/datum/material/glass = 1000, /datum/material/bluespace = 100)
+	materials = list(/datum/material/glass = 500, /datum/material/plastic = 500, /datum/material/bluespace = 100, /datum/material/copper = 300, /datum/material/silicon = 200)
 	build_path = /obj/item/circuitboard/mecha/phazon/main
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
