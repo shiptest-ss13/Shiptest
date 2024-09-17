@@ -73,8 +73,6 @@ Lava = Contains lava or liquid plasma tiles.
 Ghost Role = Contains a ghost role.
 */
 #define RUIN_TAG_MEGAFAUNA "Megafauna"
-#define RUIN_TAG_ANTAG_GEAR "Antag Gear"
-#define RUIN_TAG_NECROPOLIS_LOOT "Necropolis Loot"
 #define RUIN_TAG_LIVEABLE "Liveable"
 #define RUIN_TAG_INHOSPITABLE "Inhospitable"
 #define RUIN_TAG_SHELTER "Shelter"
@@ -83,4 +81,3 @@ Ghost Role = Contains a ghost role.
 #define RUIN_TAG_HAZARDOUS "Hazardous"
 #define RUIN_TAG_UNKNOWN_DETAILS "Unknown Details"
 #define RUIN_TAG_LAVA "Lava"
-#define RUIN_TAG_GHOST_ROLE "Ghost Role"

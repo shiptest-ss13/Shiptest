@@ -9,14 +9,14 @@
 	id = "hydroponicslab"
 	description = "An abandoned hydroponics research facility containing hostile plant fauna."
 	suffix = "icemoon_hydroponics_lab.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_ANTAG_GEAR, RUIN_TAG_SHELTER)
+	ruin_tags = list(RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/icemoon/abandonedvillage
 	name = "Abandoned Village"
 	id = "abandonedvillage"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_ANTAG_GEAR, RUIN_TAG_INHOSPITABLE)
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
 
 /datum/map_template/ruin/icemoon/brazillian_lab
 	name = "Barricaded Compound"

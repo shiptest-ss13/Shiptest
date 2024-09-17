@@ -9,7 +9,7 @@
 	id = "syndicatebunkerjungle"
 	description = "A small bunker owned by the Syndicate."
 	suffix = "jungle_syndicate.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE, RUIN_TAG_ANTAG_GEAR)
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/jungle/interceptor
 	name = "Old Crashed Interceptor"
@@ -51,4 +51,4 @@
 	id = "abandoned-library"
 	description = "A forgotten library, with a few angry monkeys."
 	suffix = "jungle_abandoned_library.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_ANTAG_GEAR, RUIN_TAG_NECROPOLIS_LOOT, RUIN_TAG_LIVEABLE)
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)

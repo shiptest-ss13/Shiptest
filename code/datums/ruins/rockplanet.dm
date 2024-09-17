@@ -10,7 +10,7 @@
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_ANTAG_GEAR, RUIN_TAG_HAZARDOUS)
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
 /datum/map_template/ruin/rockplanet/budgetcuts
 	name = "Budgetcuts"
