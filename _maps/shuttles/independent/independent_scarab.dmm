@@ -4038,12 +4038,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
 "Yw" = (
-/obj/machinery/holopad,
+/obj/machinery/holopad{
+	pixel_x = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/blue,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "YI" = (
 /turf/closed/wall/mineral/plastitanium,
