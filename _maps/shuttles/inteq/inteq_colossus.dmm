@@ -1244,6 +1244,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"ol" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/port)
 "om" = (
 /obj/structure/rack,
 /obj/item/pickaxe/drill/jackhammer/old,
@@ -1426,10 +1433,11 @@
 /area/ship/crew/cryo)
 "qJ" = (
 /obj/machinery/porta_turret/ship/ballistic{
-	dir = 9
+	dir = 9;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/crew/office)
 "qK" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -2131,10 +2139,11 @@
 /area/ship/hallway/central)
 "xh" = (
 /obj/machinery/porta_turret/ship/ballistic{
-	dir = 5
+	dir = 5;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/crew)
 "xr" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
@@ -2369,6 +2378,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"Ax" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "AB" = (
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -3001,10 +3017,11 @@
 /area/ship/engineering)
 "Hu" = (
 /obj/machinery/porta_turret/ship/ballistic{
-	dir = 6
+	dir = 6;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/crew)
 "HD" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable{
@@ -3452,6 +3469,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"MX" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/port)
 "Nf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3484,9 +3508,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/turretid/lethal{
-	pixel_y = 22
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3495,6 +3516,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "colossus_grid"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3816,10 +3841,11 @@
 /area/ship/hallway/central)
 "QZ" = (
 /obj/machinery/porta_turret/ship/ballistic{
-	dir = 10
+	dir = 10;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/security/armory)
 "Rb" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	name = "exhaust injector"
@@ -4583,6 +4609,13 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"ZL" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/starboard)
 "ZR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4752,7 +4785,7 @@ XJ
 (8,1,1) = {"
 XJ
 XJ
-xh
+MX
 bo
 bo
 bo
@@ -4768,7 +4801,7 @@ rl
 rl
 rl
 rl
-Oa
+ZL
 XJ
 "}
 (9,1,1) = {"
@@ -5187,7 +5220,7 @@ XA
 XA
 XA
 XA
-Oa
+Ax
 "}
 (28,1,1) = {"
 Yy
@@ -5213,7 +5246,7 @@ XJ
 "}
 (29,1,1) = {"
 XJ
-Ll
+ol
 hD
 hD
 hD

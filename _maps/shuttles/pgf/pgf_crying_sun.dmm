@@ -425,12 +425,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "du" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 6;
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1050,11 +1051,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/porta_turret/ship/weak{
 	dir = 4;
-	mode = 1
+	mode = 1;
+	id = "crying_sun_grid"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "ih" = (
@@ -2336,12 +2338,13 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "tU" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -3097,9 +3100,10 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/machinery/turretid{
-	pixel_y = 23;
-	pixel_x = -8
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	pixel_x = -7;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -3452,12 +3456,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "CF" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 10;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10;
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -3732,11 +3737,12 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Eu" = (
+/obj/structure/cable,
 /obj/machinery/porta_turret/ship/weak{
 	dir = 5;
-	mode = 1
+	mode = 1;
+	id = "crying_sun_grid"
 	},
-/obj/structure/cable,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "EA" = (
@@ -3998,7 +4004,8 @@
 "FJ" = (
 /obj/machinery/porta_turret/ship/weak{
 	dir = 5;
-	mode = 1
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -4017,12 +4024,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "FO" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 8;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 8;
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -4253,12 +4261,13 @@
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Hb" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	mode = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 4;
+	mode = 1;
+	id = "crying_sun_grid"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -6313,6 +6322,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"Wr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Ww" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -7410,7 +7430,7 @@ xz
 xz
 xz
 Si
-KB
+Wr
 KM
 Te
 EM

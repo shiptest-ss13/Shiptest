@@ -321,6 +321,9 @@
 	///A list of all gravity generators  currently linked to the shuttle.
 	var/list/gravgen_list = list()
 
+	///A list of all turrets currently linked to the shuttle.
+	var/list/turret_list = list()
+
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = TRUE
 

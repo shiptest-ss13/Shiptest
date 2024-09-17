@@ -1219,6 +1219,13 @@
 "ie" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engine)
+"ig" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 6;
+	id = "talos_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/starboard)
 "ii" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -1279,6 +1286,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
+"iv" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 6;
+	id = "talos_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "iy" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -4439,10 +4453,11 @@
 /area/ship/engineering/engine)
 "Bd" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 9
+	dir = 9;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering/communications)
 "Bh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5149,10 +5164,11 @@
 /area/ship/storage)
 "GA" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 5
+	dir = 5;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/port)
 "GG" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/cable{
@@ -5896,9 +5912,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"Me" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/template_noop)
 "Mf" = (
 /obj/structure/chair{
 	dir = 4
@@ -6328,10 +6341,11 @@
 /area/ship/storage/starboard)
 "Pw" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 10
+	dir = 10;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/storage)
 "Py" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6687,12 +6701,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
-"RO" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
 "RT" = (
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
@@ -6704,8 +6712,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "RW" = (
-/obj/machinery/turretid/lethal{
-	pixel_y = 32
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "talos_grid"
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -7477,12 +7486,20 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
-"Xa" = (
+"WW" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 6
+	dir = 5;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering/communications)
+"Xa" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 6;
+	id = "talos_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
 "Xg" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
@@ -7646,6 +7663,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
+"YR" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 5;
+	id = "talos_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/port)
 "YU" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -8218,7 +8242,7 @@ cV
 "}
 (11,1,1) = {"
 sw
-GA
+WW
 vp
 vp
 sW
@@ -8595,7 +8619,7 @@ sw
 sw
 sw
 sw
-Me
+sw
 lC
 Ks
 IT
@@ -8731,7 +8755,7 @@ sw
 sw
 sw
 sw
-Me
+sw
 lC
 qF
 Zj
@@ -8764,8 +8788,8 @@ sw
 sw
 sw
 sw
-Me
-RO
+sw
+sw
 lC
 UP
 gp
@@ -8968,7 +8992,7 @@ sw
 sw
 sw
 sw
-GA
+YR
 yp
 jj
 Gl
@@ -8993,7 +9017,7 @@ as
 QR
 WG
 mK
-Xa
+iv
 sw
 sw
 sw
@@ -9602,7 +9626,7 @@ Gq
 If
 YZ
 fK
-Xa
+ig
 sw
 sw
 sw

@@ -1277,17 +1277,18 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/toilet)
 "vd" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5
-	},
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0;
 	port_direction = 8;
 	preferred_direction = 4
 	},
+/obj/machinery/porta_turret/ship/weak{
+	dir = 5;
+	id = "vaquero_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/medical)
 "vg" = (
 /obj/docking_port/stationary{
 	dir = 8;
@@ -1425,10 +1426,11 @@
 /area/ship/cargo)
 "xX" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 6
+	dir = 6;
+	id = "vaquero_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/crew)
 "xZ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external{
@@ -1583,10 +1585,11 @@
 /area/ship/bridge)
 "zP" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 6
+	dir = 6;
+	id = "vaquero_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/security)
 "zR" = (
 /obj/structure/chair{
 	dir = 1
@@ -2276,8 +2279,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/turretid{
-	pixel_y = 25
+/obj/machinery/turretid/ship{
+	pixel_y = 26;
+	id = "vaquero_grid"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2871,10 +2875,11 @@
 /area/ship/cargo)
 "Td" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 5
+	dir = 5;
+	id = "vaquero_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/crew/office)
 "Ti" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
