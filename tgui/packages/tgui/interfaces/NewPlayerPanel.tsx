@@ -35,13 +35,13 @@ export const NewPlayerPanel = (props, context) => {
               >
                 Ship Select
               </Button>
-              {!data.game_started ? (
-                <Box>Time to start: {data.time_to_start}</Box>
-              ) : null}
             </Stack.Item>
             <Stack.Item>
               <Button onClick={() => act('observe')}>Observe</Button>
             </Stack.Item>
+            {!data.game_started ? (
+              <Box>Time to start: {data.time_to_start}</Box>
+            ) : null}
             {data.player_polls ? (
               <Stack.Item>
                 <Button onClick={() => act('view_polls')}>
@@ -53,8 +53,8 @@ export const NewPlayerPanel = (props, context) => {
           <Section
             scrollable
             height={20}
-            m={3}
-            p={3}
+            m={1}
+            p={1}
             dangerouslySetInnerHTML={{ __html: data.motd }}
           />
         </Flex>
