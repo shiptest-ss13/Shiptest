@@ -8,7 +8,7 @@
 
 /obj/item/disk/holodisk/kansatsu/mission/New(obj/L)
 	..()
-	pixel_x = base_pixel_x + rand(-5, 5)
+	pixel_x = base_pixel_x + rand(-5, 5) // Must still fit on the table.
 	pixel_y = base_pixel_y + rand(-3, 2)
 
 /obj/item/disk/holodisk/kansatsu/mission/safety

@@ -15,6 +15,9 @@
 	id = "kansatsu_lockdown";
 	dir = 4
 	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ah" = (
@@ -35,6 +38,9 @@
 	id = "kansatsu_observation"
 	},
 /obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "aQ" = (
@@ -364,6 +370,9 @@
 	pixel_y = 20;
 	pixel_x = -6;
 	req_access_txt = "19"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1286,6 +1295,21 @@
 	color = "#777777"
 	},
 /area/ship/engineering)
+"tH" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kansatsu_observation"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "tJ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -1318,13 +1342,12 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -10
+	pixel_y = -12
 	},
 /obj/machinery/camera{
 	dir = 4;
 	c_tag = "Command Quarters"
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
@@ -1332,6 +1355,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/under/misc/pj/red,
+/obj/item/clothing/under/misc/pj/red,
+/obj/effect/spawner/lootdrop/plushie,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/dormtwo)
 "uq" = (
@@ -1340,6 +1368,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -1366,6 +1397,9 @@
 /area/ship/crew)
 "vB" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "vK" = (
@@ -1407,12 +1441,21 @@
 	id = "kansatsu_observation"
 	},
 /obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "wz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
 	color = "#555555"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -1598,6 +1641,21 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"BI" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kansatsu_observation"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "BS" = (
 /obj/structure/chair/bench/red/directional/east,
 /turf/open/floor/plasteel/tech,
@@ -1819,6 +1877,21 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"HO" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kansatsu_observation"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Ig" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
@@ -1975,6 +2048,21 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew)
+"LE" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kansatsu_observation"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Mb" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -2267,6 +2355,9 @@
 /area/ship/crew)
 "QO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Rj" = (
@@ -2330,6 +2421,9 @@
 	},
 /area/ship/storage)
 "Rz" = (
+/obj/structure/cable/orange{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "RO" = (
@@ -2437,6 +2531,12 @@
 "ST" = (
 /obj/structure/chair/office/light{
 	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2585,6 +2685,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"WY" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "kansatsu_observation"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Xa" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2614,6 +2727,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Xr" = (
@@ -2624,9 +2740,6 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/newscaster/directional/north,
-/obj/effect/spawner/lootdrop/plushie{
-	pixel_y = 6
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
@@ -3248,7 +3361,7 @@ YQ
 YQ
 YQ
 YQ
-vN
+HO
 ST
 vB
 vN
@@ -3265,10 +3378,10 @@ YQ
 YQ
 YQ
 YQ
-vN
+LE
 Mb
 kd
-vN
+LE
 YQ
 YQ
 YQ
@@ -3282,10 +3395,10 @@ YQ
 YQ
 YQ
 YQ
-vN
+tH
 aj
-aj
-vN
+WY
+BI
 YQ
 YQ
 YQ
