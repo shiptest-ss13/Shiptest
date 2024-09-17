@@ -59,7 +59,7 @@
 	cell = new /obj/item/stock_parts/cell/bluespace(src)
 
 /obj/mecha/combat/gygax/inteq
-	name = "\improper Pyrnese"
+	name = "\improper Basenji"
 	desc = "A lightweight security exosuit, modified to IRMG standards. The leg actuators have been maxed out, allowing for powerful short ranged charges."
 	icon_state = "inteqgygax"
 	charge_break_walls = TRUE
