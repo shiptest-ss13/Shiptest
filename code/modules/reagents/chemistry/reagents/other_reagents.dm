@@ -1202,6 +1202,10 @@
 	var/accumilation
 
 /datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
+		accumilation = accumilation/4
+
 	accumilation += volume
 	switch(accumilation)
 		if(10 to 50)
@@ -1243,8 +1247,22 @@
 			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
 
 			qdel(src)
-			return
+	accumilation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumilation >  0)
+		qdel(src)
 	return ..()
+
+/datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
+	if((!O) || (!reac_volume))
+		return FALSE
+	var/temp = holder ? holder.chem_temp : T20C
+	O.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/carbon_monoxide/expose_turf(turf/open/T, reac_volume)
+	if(istype(T))
+		var/temp = holder ? holder.chem_temp : T20C
+		T.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+	return
 
 /datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
 	var/mob/living/carbon/living_carbon = living_mob
