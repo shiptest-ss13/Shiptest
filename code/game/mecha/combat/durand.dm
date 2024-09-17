@@ -18,7 +18,7 @@
 
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division. The defence grid has been modified to disperse controlled electric shocks on contact, at the cost of it's ability to block ranged projectiles."
+	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division. The defence grid has been modified to disperse controlled electric shocks on contact, at the cost of its ability to block ranged projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
