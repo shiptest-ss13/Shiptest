@@ -916,9 +916,10 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/turretid/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
-	for(var/datum/weakref/turrets in port.turret_list)
-		var/obj/machinery/porta_turret/turret_gun = turrets.resolve()
+	for(var/datum/weakref/ship_guns in port.turret_list)
+		var/obj/machinery/porta_turret/turret_gun = ship_guns.resolve()
 		if(turret_gun.id == id)
+			turrets |= turret_gun
 			turret_gun.cp = src
 
 /obj/machinery/turretid/examine(mob/user)
