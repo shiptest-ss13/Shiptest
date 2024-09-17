@@ -3,7 +3,6 @@
 /datum/outfit/job/clip
 	name = "CLIP - Base Outfit"
 
-	jobtype = /datum/job/assistant
 	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
 
@@ -223,6 +222,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/black
 
+	l_hand = /obj/item/storage/briefcase
+
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 
@@ -232,6 +233,16 @@
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/melee/classic_baton=1)
+
+/datum/outfit/job/clip/investigator/cm5
+	name = "CLIP GOLD - Investigator (CM-5c)"
+
+	backpack_contents = list(/obj/item/storage/box/evidence=1,\
+		/obj/item/detective_scanner=1,\
+		/obj/item/melee/classic_baton=1,\
+		/obj/item/ammo_box/magazine/cm5_9mm = 2, \
+		/obj/item/gun/ballistic/automatic/smg/cm5/compact
+		)
 
 /datum/outfit/job/clip/bureaucrat
 	name = "CLIP GOLD - Bureaucrat"
@@ -552,6 +563,11 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chicken_wings_hot_sauce=1)
 
+/datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
+	name = "CLIP Minutemen - Minuteman (Spotter Hardsuit)"
+	head = null
+	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
 
@@ -647,8 +663,12 @@
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/cm82
-	//replace commander with the cm23 when its impemented, see the cm-f4 above
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/cm23=1)
+
+/datum/outfit/job/clip/minutemen/grunt/lead/armed/hardsuit
+	name = "CLIP Minutemen - Field Sergeant (Spotter Hardsuit)"
+	head = null
+	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
 /datum/outfit/job/clip/minutemen/grunt/commander
 	name = "CLIP Minutemen - Field Commander"

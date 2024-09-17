@@ -121,15 +121,28 @@
 
 EMPTY_GUN_HELPER(automatic/smg/cm5)
 
+/obj/item/gun/ballistic/automatic/smg/cm5/rubber
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/cm5/rubber/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/cm5_9mm/rubber(src)
+	chamber_round()
+
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9mm)"
-	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
+	desc = "A 30-round magazine for the CM-5 submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm5_mag-1"
 	base_icon_state = "cm5_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cm5_9mm/rubber
+	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	caliber = "9mm rubber"
+	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
@@ -193,7 +206,7 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/AltClick(mob/user)
 	if(!current_case)
 		return ..()
-	current_case.forceMove(get_turf(src))
+	user.put_in_hands(current_case)
 	icon = src::icon
 	base_icon_state = src::icon_state
 	item_state = src::item_state
@@ -476,3 +489,11 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
+
+/obj/item/gun/ballistic/shotgun/cm15/incendiary
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/shotgun/cm15/incendiary/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/cm15_12g/incendiary(src)
+	chamber_round()
