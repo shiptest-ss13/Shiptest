@@ -260,3 +260,14 @@
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 20
+
+/datum/blackmarket_item/ammo/a4570explo
+	name = "Single .45-70 Explosive Round"
+	desc = "If you need to fuck someone, hard, we got just the thing. Only one round, though, hope you got good aim."
+	item = /obj/item/ammo_casing/a4570/explosive
+
+	price_min = 400
+	price_max = 800 //still an exorbitantly high price for one round that you might not even hit
+	stock_min = 2
+	stock_max = 10
+	availability_prob = 10
