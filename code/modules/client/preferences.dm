@@ -247,7 +247,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
 #define MAX_MUTANT_ROWS 5
 
-/datum/preferences/proc/ShowChoices(mob/user)
+/datum/preferences/proc/view_choices(mob/user)
 	show_loadout = (current_tab != 1) ? show_loadout : FALSE
 	show_gear = (current_tab != 1)
 	if(!user || !user.client)
@@ -1368,7 +1368,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					alert(user, "Something went wrong, you had somehow had a conflicting quirk that didn't get cleared during conflict checks, please open an issue or otherwise notify coders of such.")
 					all_quirks = list()
 					user << browse(null, "window=mob_occupation")
-					ShowChoices(user)
+					view_choices(user)
 					save_preferences()
 			else
 				if(has_quirk)
@@ -1516,18 +1516,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 	if(href_list["preference"] == "job")
 		SetChoices(user)
-		ShowChoices(user)
+		view_choices(user)
 		return TRUE
 
 	if(href_list["preference"] == "species")
 		switch(href_list["task"])
 			if("random")
 				random_species()
-				ShowChoices(user)
+				view_choices(user)
 				return TRUE
 			if("close")
 				user << browse(null, "window=mob_species")
-				ShowChoices(user)
+				view_choices(user)
 				return TRUE
 			if("setspecies")
 				var/sid = href_list["newspecies"]
@@ -1538,7 +1538,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(text2num(features["mcolor"], 16) == 0  || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
-				ShowChoices(user)
+				view_choices(user)
 				age = rand(pref_species.species_age_min, pref_species.species_age_max)
 				handle_quirk_conflict("species", pref_species)
 				return TRUE
@@ -1552,7 +1552,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		switch(href_list["task"])
 			if("close")
 				user << browse(null, "window=mob_trait")
-				ShowChoices(user)
+				view_choices(user)
 			if("update")
 				var/quirk = href_list["trait"]
 				if(!SSquirks.quirks[quirk])
@@ -1611,7 +1611,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else if(href_list["toggle_loadout"])
 			show_loadout = !show_loadout
 
-		ShowChoices(user)
+		view_choices(user)
 		return
 
 	switch(href_list["task"])
@@ -2183,7 +2183,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/kb_name = href_list["keybinding"]
 					if(!kb_name)
 						user << browse(null, "window=capturekeypress")
-						ShowChoices(user)
+						view_choices(user)
 						return
 
 					var/clear_key = text2num(href_list["clear_key"])
@@ -2197,7 +2197,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						user << browse(null, "window=capturekeypress")
 						user.client.set_macros()
 						save_preferences()
-						ShowChoices(user)
+						view_choices(user)
 						return
 
 					var/new_key = uppertext(href_list["key"])
@@ -2236,7 +2236,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("keybindings_reset")
 					var/choice = tgui_alert(user, "Would you prefer 'hotkey' or 'classic' defaults?", "Setup keybindings", list("Hotkey", "Classic", "Cancel"))
 					if(choice == "Cancel")
-						ShowChoices(user)
+						view_choices(user)
 						return
 					hotkeys = (choice == "Hotkey")
 					key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
@@ -2433,7 +2433,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(current_tab == 2)
 							show_loadout = TRUE
 
-	ShowChoices(user)
+	view_choices(user)
 	return 1
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, character_setup = FALSE, antagonist = FALSE, loadout = FALSE)

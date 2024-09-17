@@ -17,7 +17,7 @@
 	set category = "Preferences"
 	set desc = "Open Game Preferences Window"
 	usr.client.prefs.current_tab = 1
-	usr.client.prefs.ShowChoices(usr)
+	usr.client.prefs.view_choices(usr)
 
 //toggles
 /datum/verbs/menu/Settings/Ghost/chatterbox

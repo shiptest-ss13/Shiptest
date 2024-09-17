@@ -342,9 +342,9 @@
 	src.settings = settings
 
 	..(User, ckey("[User]-[Message]-[Title]-[world.time]-[rand(1,10000)]"), Title, width, height, src, StealFocus, Timeout)
-	set_content(ShowChoices(User))
+	set_content(view_choices(User))
 
-/datum/browser/modal/preflikepicker/proc/ShowChoices(mob/user)
+/datum/browser/modal/preflikepicker/proc/view_choices(mob/user)
 	if (settings["preview_callback"])
 		var/datum/callback/callback = settings["preview_callback"]
 		preview_icon = callback.Invoke(settings)
@@ -410,7 +410,7 @@
 		if (button <= 3 && button >= 1)
 			selectedbutton = button
 	if (selectedbutton != 1)
-		set_content(ShowChoices(user))
+		set_content(view_choices(user))
 		open()
 		return
 	for (var/item in href_list)

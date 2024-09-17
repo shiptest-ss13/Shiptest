@@ -20,6 +20,9 @@
 	/// is this an auth server
 	var/auth_check = FALSE
 
+	var/use_tgui = TRUE
+	var/datum/new_player_panel_tgui_edition/tgui_panel
+
 /mob/dead/new_player/Initialize()
 	if(client && SSticker.state == GAME_STATE_STARTUP)
 		var/atom/movable/screen/splash/S = new(client, TRUE, TRUE)
@@ -102,7 +105,7 @@
 		relevant_cap = max(hpc, epc)
 
 	if(href_list["show_preferences"])
-		client.prefs.ShowChoices(src)
+		client.prefs.view_choices(src)
 		return 1
 
 	if(href_list["ready"])
@@ -120,15 +123,11 @@
 
 	if(href_list["refresh"])
 		src << browse(null, "window=playersetup") //closes the player setup window
-		new_player_panel()
+		new_player_panel(!use_tgui)
 
 	if(href_list["late_join"])
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, "<span class='boldwarning'>The round is either not ready, or has already finished...</span>")
-			return
-
-		if(href_list["late_join"] == "override")
-			LateChoices()
 			return
 
 		if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
@@ -143,7 +142,7 @@
 				SSticker.queued_players += usr
 				to_chat(usr, "<span class='notice'>You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len].</span>")
 			return
-		LateChoices()
+		view_ship_select()
 
 	if(href_list["motd"])
 		var/motd = global.config.motd
@@ -153,13 +152,11 @@
 			to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
 
 	if(href_list["manifest"])
-		ViewManifest()
+		view_manifest()
 
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
-	else if(!href_list["late_join"])
-		new_player_panel()
 
 	if(href_list["showpoll"])
 		handle_player_polling()
@@ -174,9 +171,7 @@
 		vote_on_poll_handler(poll, href_list)
 
 	if(href_list["player_panel_tgui"])
-		if(!GLOB.new_player_panel_tgui)
-			GLOB.new_player_panel_tgui = new /datum/new_player_panel_tgui_edition(src)
-		GLOB.new_player_panel_tgui.ui_interact(src)
+		new_player_panel()
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
@@ -194,8 +189,6 @@
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
-		src << browse(null, "window=playersetup") //closes the player setup window
-		new_player_panel()
 		return FALSE
 
 	var/mob/dead/observer/observer = new()
@@ -322,7 +315,7 @@
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
 
-/mob/dead/new_player/proc/LateChoices()
+/mob/dead/new_player/proc/view_ship_select()
 	if(auth_check)
 		return
 
@@ -418,7 +411,7 @@
 		new_character = null
 		qdel(src)
 
-/mob/dead/new_player/proc/ViewManifest()
+/mob/dead/new_player/proc/view_manifest()
 	if(!client)
 		return
 	if(world.time < client.crew_manifest_delay)

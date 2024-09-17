@@ -268,7 +268,7 @@ SUBSYSTEM_DEF(ticker)
 	CHECK_TICK
 	GLOB.start_landmarks_list = shuffle(GLOB.start_landmarks_list) //Shuffle the order of spawn points so they dont always predictably spawn bottom-up and right-to-left
 	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
-		player.new_player_panel()
+		player.new_player_panel(!(player.use_tgui))
 
 	for(var/I in round_start_events)
 		var/datum/callback/cb = I
@@ -360,7 +360,7 @@ SUBSYSTEM_DEF(ticker)
 		for (var/mob/dead/new_player/NP in queued_players)
 			to_chat(NP, "<span class='userdanger'>The alive players limit has been released!<br><a href='?src=[REF(NP)];late_join=override'>[html_encode(">>Join Game<<")]</a></span>")
 			SEND_SOUND(NP, sound('sound/misc/notice1.ogg'))
-			NP.LateChoices()
+			NP.view_ship_select()
 		queued_players.len = 0
 		queue_delay = 0
 		return
@@ -375,7 +375,7 @@ SUBSYSTEM_DEF(ticker)
 				if(next_in_line && next_in_line.client)
 					to_chat(next_in_line, "<span class='userdanger'>A slot has opened! You have approximately 20 seconds to join. <a href='?src=[REF(next_in_line)];late_join=override'>\>\>Join Game\<\<</a></span>")
 					SEND_SOUND(next_in_line, sound('sound/misc/notice1.ogg'))
-					next_in_line.LateChoices()
+					next_in_line.view_ship_select()
 					return
 				queued_players -= next_in_line //Client disconnected, remove he
 			queue_delay = 0 //No vacancy: restart timer

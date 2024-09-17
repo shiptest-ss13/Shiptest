@@ -23,12 +23,10 @@
 		if("join")
 			var/datum/overmap/ship/controlled/target = locate(params["ship"]) in SSovermap.controlled_ships
 			if(!target)
-				to_chat(spawnee, "<span class='danger'>Unable to locate ship. Please contact admins!</span>")
-				spawnee.new_player_panel()
+				to_chat(spawnee, span_danger("Unable to locate ship. Please contact admins!"))
 				return
 			if(!target.is_join_option())
-				to_chat(spawnee, "<span class='danger'>This ship is not currently accepting new players!</span>")
-				spawnee.new_player_panel()
+				to_chat(spawnee, span_danger("This ship is not currently accepting new players!"))
 				return
 
 			var/did_application = FALSE
@@ -61,12 +59,10 @@
 			// Attempts the spawn itself. This checks for playtime requirements.
 			if(!spawnee.AttemptLateSpawn(selected_job, target))
 				to_chat(spawnee, "<span class='danger'>Unable to spawn on ship!</span>")
-				spawnee.new_player_panel()
 
 		if("buy")
 			if(is_banned_from(spawnee.ckey, "Ship Purchasing"))
 				to_chat(spawnee, "<span class='danger'>You are banned from purchasing ships!</span>")
-				spawnee.new_player_panel()
 				ui.close()
 				return
 
@@ -98,14 +94,12 @@
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template)
 			if(!target?.shuttle_port)
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
-				spawnee.new_player_panel()
 				return
 			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 			// Try to spawn as the first listed job in the job slots (usually captain)
 			// Playtime checks are overridden, to ensure the player gets to join the ship they spawned.
 			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target, FALSE))
 				to_chat(spawnee, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
-				spawnee.new_player_panel()
 
 /datum/ship_select/ui_data(mob/user)
 	. = list()
