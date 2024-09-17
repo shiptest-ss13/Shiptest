@@ -68,6 +68,12 @@ GLOBAL_DATUM(new_player_panel_tgui, /datum/new_player_panel_tgui_edition)
 		ui = new(user, src, "NewPlayerPanel")
 		ui.open()
 
+/datum/new_player_panel_tgui_edition/ui_data(mob/user)
+	var/list/data = list()
+	data["motd"] = global.config.motd
+	data["round_started"] = SSticker?.IsRoundInProgress()
+	return data
+
 /datum/new_player_panel_tgui_edition/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
@@ -89,14 +95,8 @@ GLOBAL_DATUM(new_player_panel_tgui, /datum/new_player_panel_tgui_edition)
 		if("show_preferences")
 			client.prefs.ShowChoices(spawnee)
 		if("join_game")
-			return
+			spawnee.LateChoices()
 		if("manifest")
 			spawnee.ViewManifest()
 		if("observe")
 			spawnee.make_me_an_observer()
-		if("motd")
-			var/motd = global.config.motd
-			if(motd)
-				to_chat(spawnee, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
-			else
-				to_chat(spawnee, "<span class='notice'>The Message of the Day has not been set.</span>")
