@@ -47,7 +47,6 @@
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 
-	output += "<p><a href='byond://?src=[REF(src)];motd=1'>MOTD</a></p>"
 	output += "<p><a href='byond://?src=[REF(src)];player_panel_tgui=1'>Fancy UI</a></p>"
 
 	if(!IsGuestKey(src.key))

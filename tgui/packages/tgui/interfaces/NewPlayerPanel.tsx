@@ -1,16 +1,5 @@
 import { useBackend } from '../backend';
-import {
-  Button,
-  LabeledList,
-  NumberInput,
-  Section,
-  NoticeBox,
-  Input,
-  Table,
-  Box,
-  Stack,
-  Flex,
-} from '../components';
+import { Button, Section, Box, Stack, Flex } from '../components';
 import { Window } from '../layouts';
 
 type PlayerPanelData = {
@@ -26,7 +15,7 @@ export const NewPlayerPanel = (props, context) => {
   return (
     <Window title="New Player Panel" width={500} height={300} canClose={false}>
       <Window.Content>
-        <Flex direction="row">
+        <Flex direction="row" grow>
           <Stack vertical p="8px" textAlign="center">
             <Stack.Item>
               <Flex direction="column">
@@ -35,6 +24,9 @@ export const NewPlayerPanel = (props, context) => {
                 </Button>
                 <Box>{data.character_name ? data.character_name : null}</Box>
               </Flex>
+            </Stack.Item>
+            <Stack.Item>
+              <Button onClick={() => act('manifest')}>View Manifest</Button>
             </Stack.Item>
             <Stack.Item>
               <Button
@@ -48,9 +40,6 @@ export const NewPlayerPanel = (props, context) => {
               ) : null}
             </Stack.Item>
             <Stack.Item>
-              <Button onClick={() => act('manifest')}>View Manifest</Button>
-            </Stack.Item>
-            <Stack.Item>
               <Button onClick={() => act('observe')}>Observe</Button>
             </Stack.Item>
             {data.player_polls ? (
@@ -61,7 +50,13 @@ export const NewPlayerPanel = (props, context) => {
               </Stack.Item>
             ) : null}
           </Stack>
-          <Box dangerouslySetInnerHTML={{ __html: data.motd }} />
+          <Section
+            scrollable
+            height={20}
+            m={3}
+            p={3}
+            dangerouslySetInnerHTML={{ __html: data.motd }}
+          />
         </Flex>
       </Window.Content>
     </Window>

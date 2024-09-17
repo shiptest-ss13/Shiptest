@@ -144,13 +144,6 @@
 			return
 		view_ship_select()
 
-	if(href_list["motd"])
-		var/motd = global.config.motd
-		if(motd)
-			to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
-		else
-			to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
-
 	if(href_list["manifest"])
 		view_manifest()
 
