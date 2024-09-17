@@ -1652,9 +1652,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "tj" = (
-/obj/structure/closet/crate/large,
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/fore)
 "tx" = (
@@ -2174,6 +2174,7 @@
 	icon_state = "2-10"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/fore)
 "zv" = (
@@ -2181,6 +2182,11 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
+"zD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/fore)
 "zE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
@@ -2209,6 +2215,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"Am" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/fore)
 "Ar" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable/green{
@@ -2789,6 +2800,7 @@
 	icon_state = "0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/fore)
 "Ic" = (
@@ -4877,8 +4889,8 @@ wW
 qx
 bP
 bP
-Kt
-Kt
+zD
+Am
 qx
 wW
 wW
