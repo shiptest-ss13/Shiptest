@@ -62,7 +62,7 @@
 		/obj/item/clothing/mask/gas/frontiersmen = 12,
 		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
 		/obj/item/clothing/mask/breath = 7,
-		/obj/item/clothing/mask/whistle = 3))
+		/obj/item/clothing/mask/whistle/trench = 3))
 
 	if(prob(90))
 		back = pickweight(list(
