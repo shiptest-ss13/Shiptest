@@ -97,7 +97,7 @@
 	var/pollution_multiplier = 1
 	var/pollution_gas = GAS_CO
 
-/obj/machinery/power/port_gen/pacman/Initializge()
+/obj/machinery/power/port_gen/pacman/Initialize()
 	. = ..()
 	if(anchored)
 		connect_to_network()
