@@ -885,7 +885,7 @@
 	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
-	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	var/datum/overmap/dynamic/encounter = new(position, selected_system, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
