@@ -110,7 +110,7 @@
 /obj/machinery/atmospherics/components/unary/tank/fuel
 	icon_state = "orange"
 
-/obj/machinery/atmospherics/components/unary/tank/fuel/Initialize(mapload)
+/obj/machinery/atmospherics/components/unary/tank/fuel/New()
 	. = ..()
 	var/datum/gas_mixture/air_contents = airs[1]
 	air_contents.set_moles(GAS_O2, AIR_CONTENTS * 0.3)
