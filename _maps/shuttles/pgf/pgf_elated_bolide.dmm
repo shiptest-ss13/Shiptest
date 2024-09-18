@@ -6,7 +6,7 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/structure/table,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "au" = (
@@ -26,12 +26,10 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "aE" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
 /obj/machinery/shower{
 	pixel_y = 18
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/mono,
 /area/space)
 "bo" = (
@@ -103,7 +101,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/table,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "fg" = (
@@ -149,11 +147,39 @@
 /obj/structure/closet/wall/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"hP" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
 "id" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"ij" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/wallframe/intercom/table{
+	dir = 1;
+	pixel_y = 4;
+	pixel_x = 14
+	},
+/obj/item/wallframe/intercom/table{
+	dir = 1;
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/desk_flag/gezena{
+	pixel_x = -12;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "iq" = (
 /obj/structure/rack,
@@ -242,6 +268,30 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
+"ng" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = -7
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/obj/item/pen{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/pen/fountain{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/item/clipboard{
+	pixel_x = -6;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "ob" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -252,9 +302,11 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
 "ol" = (
-/obj/effect/turf_decal/borderfloor,
 /obj/machinery/shower{
 	pixel_y = 0;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
@@ -270,6 +322,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"po" = (
+/obj/structure/filingcabinet/double/grey,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "qd" = (
 /obj/machinery/porta_turret/ship/syndicate{
@@ -299,6 +355,10 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"rw" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "rP" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
@@ -419,6 +479,25 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"vS" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"wx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax{
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "wD" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -445,6 +524,7 @@
 /area/space)
 "xq" = (
 /obj/structure/railing,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "xs" = (
@@ -570,7 +650,13 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
 "BG" = (
-/obj/structure/rack,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6,
 /turf/open/floor/plasteel/mono,
 /area/space)
 "Cg" = (
@@ -691,6 +777,22 @@
 	},
 /turf/open/floor/engine/air,
 /area/space)
+"FC" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/wallframe/intercom/table{
+	dir = 1;
+	pixel_y = 4;
+	pixel_x = 18
+	},
+/obj/item/wallframe/intercom/table{
+	dir = 1;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
 "FJ" = (
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
@@ -715,6 +817,28 @@
 /area/space)
 "FS" = (
 /turf/open/floor/engine/hull,
+/area/space)
+"Gw" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/borderfloor/full,
+/obj/item/towel{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/towel{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/soap/deluxe,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "GD" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped,
@@ -787,6 +911,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"Je" = (
+/obj/machinery/shower{
+	pixel_y = 0;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
 "Jh" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -797,6 +931,13 @@
 /area/space)
 "Jm" = (
 /turf/open/space/basic,
+/area/space)
+"JJ" = (
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/obj/effect/turf_decal/borderfloor/corner,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "JK" = (
 /obj/structure/sign/warning/securearea{
@@ -824,6 +965,15 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"LS" = (
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
 /area/space)
 "MC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
@@ -866,6 +1016,11 @@
 	dir = 10
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"OA" = (
+/obj/structure/rack,
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "OB" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1043,6 +1198,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "UF" = (
@@ -1136,7 +1292,16 @@
 	pixel_x = 28;
 	pixel_y = -8
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plating,
+/area/space)
+"Xc" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Xd" = (
 /obj/machinery/computer/security,
@@ -1157,6 +1322,20 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Yg" = (
+/obj/machinery/shower{
+	pixel_y = 0;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
+"Yt" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "YM" = (
 /obj/structure/sign/warning/securearea{
@@ -1196,6 +1375,8 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
+/obj/structure/table/reinforced,
+/obj/item/megaphone,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "Zd" = (
@@ -1241,6 +1422,18 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"ZZ" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
 /area/space)
 
 (1,1,1) = {"
@@ -1610,7 +1803,7 @@ Jm
 hd
 HU
 RB
-du
+OA
 KL
 SO
 du
@@ -1704,7 +1897,7 @@ eq
 vo
 eq
 eq
-eq
+rw
 eq
 eq
 gC
@@ -1970,10 +2163,10 @@ tw
 gC
 gC
 gC
+hP
 YZ
-YZ
-YZ
-YZ
+hP
+hP
 gC
 Ud
 Ud
@@ -1999,9 +2192,9 @@ Jm
 Cn
 Kt
 zS
-sb
+ij
 fl
-fl
+Xc
 fl
 fl
 gC
@@ -2029,7 +2222,7 @@ Jm
 BF
 ql
 zS
-sb
+FC
 fl
 fl
 fl
@@ -2059,11 +2252,11 @@ Jm
 NQ
 fg
 zS
-sb
+vS
 fl
 fl
 fl
-fl
+Yt
 IH
 fl
 mZ
@@ -2091,9 +2284,9 @@ gC
 gC
 gC
 gC
-fl
-fl
-fl
+po
+ng
+wx
 gC
 fl
 tc
@@ -2213,10 +2406,10 @@ js
 Eu
 QU
 gC
-Ud
-Ud
-Ud
-Ud
+gC
+sG
+gC
+gC
 Ud
 Ud
 Ud
@@ -2243,9 +2436,9 @@ gC
 gC
 sG
 gC
-gC
-sG
-gC
+JJ
+ZZ
+Yg
 gC
 Ud
 Ud
@@ -2271,10 +2464,10 @@ ym
 hd
 gC
 Tn
-Tn
+mo
 gC
 aE
-PC
+Gw
 ol
 gC
 Ud
@@ -2301,11 +2494,11 @@ ym
 NQ
 gC
 YM
-Tn
+mo
 gC
-aE
+LS
 BG
-ol
+Je
 gC
 Ud
 Ud
