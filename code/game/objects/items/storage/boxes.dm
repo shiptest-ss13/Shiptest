@@ -768,6 +768,17 @@
 	for(var/i in 1 to 7)
 		new /obj/item/clothing/accessory/armband/deputy(src)
 
+/obj/item/storage/box/smokebombs
+	name = "box of smoke grenades"
+	desc = "Used for rapidly laying cover."
+	illustration = "grenade"
+
+/obj/item/storage/box/smokebombs/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/smokebomb(src)
+
+
+
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
 	desc = "To be used to rapidly seal hull breaches."
