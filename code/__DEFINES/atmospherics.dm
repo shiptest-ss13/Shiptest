@@ -174,7 +174,7 @@
 /// Tank spills all contents into atmosphere
 #define TANK_RUPTURE_PRESSURE (20 * ONE_ATMOSPHERE)
 /// Boom 3x3 base explosion
-#define TANK_FRAGMENT_PRESSURE (30.*ONE_ATMOSPHERE)
+#define TANK_FRAGMENT_PRESSURE (25.*ONE_ATMOSPHERE)
 /// +1 for each SCALE kPa aboe threshold
 #define TANK_FRAGMENT_SCALE (6.*ONE_ATMOSPHERE)
 #define TANK_MAX_RELEASE_PRESSURE (ONE_ATMOSPHERE*3)
