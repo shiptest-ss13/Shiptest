@@ -15,7 +15,7 @@
 	)
 
 /obj/item/storage/toolbox/explosives
-	name = "explosives handling kit"
+	name = "\improper explosives handling kit"
 	desc = "Be careful to not jostle it."
 	icon_state = "explosive"
 	item_state = "toolbox_red"
@@ -48,10 +48,10 @@
 	emote_hear = list("yips!","barks!","geckers!")
 	emote_see = list("sits at attention.", "shakes his fur out.", "wags a few times.", "perks up.","sniffs the air.")
 
-
 /obj/item/paper/fluff/ship/bolide
 
 /obj/item/paper/fluff/ship/bolide/one
+	name = "Official Briefing"
 	default_raw_text = {"<html>
 			<head>
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
