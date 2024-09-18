@@ -523,6 +523,11 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/oxygen/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(holder.has_reagent(/datum/reagent/carbon_monoxide)) //100% o2 will  help with monoxide poisioning... since we cant do that, we just do this instead
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume*4)
+
 /datum/reagent/oxygen/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
@@ -1189,7 +1194,7 @@
 	name = "Carbon Monoxide"
 	description = "A highly dangerous gas for sapients."
 	reagent_state = GAS
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	color = "#96898c"
 	var/accumilation
 
@@ -1201,47 +1206,53 @@
 	accumilation += volume
 	switch(accumilation)
 		if(10 to 50)
-			victim.Dizzy(accumilation/20)
 			to_chat(src, "<span class='warning'>You feel dizzy.</span>")
 		if(50 to 150)
 			to_chat(victim, "<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>")
-			victim.Dizzy(accumilation)
+			victim.Dizzy(5)
 			victim.adjustStaminaLoss(1)
 		if(150 to 250)
-			to_chat(victim, "<span class='warning'>[pick("Your head hurts a lot.", "Your head pounds incessantly.")]</span>")
+			to_chat(victim, "<span class='userdanger'>[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]</span>")
 			victim.adjustStaminaLoss(3)
-			victim.Dizzy(accumilation/20)
+			victim.Stun(10)
+			victim.Dizzy(5)
 			victim.confused += (accumilation/50)
 			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
-		if(250 to 450)
+			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
+		if(250 to 350)
 			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
-			victim.adjustStaminaLoss(10)
+			victim.adjustStaminaLoss(5)
 			victim.Stun(35)
 
-			victim.Dizzy(accumilation/20)
+			victim.Dizzy(5)
 			victim.confused += (accumilation/50)
 			victim.drowsyness += (accumilation/50)
 
 			victim.adjustToxLoss(accumilation/100*REM, 0)
 
+			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
+			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
 			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
 			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
 
-		if(450 to 3000)
+		if(350 to 3000)
 			victim.Unconscious(20 SECONDS)
 
 			victim.drowsyness += (accumilation/100)
 			victim.adjustToxLoss(accumilation/100*REM, 0)
 		if(3000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
 			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
 			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
 			victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
 			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
 
 			qdel(src)
+			return TRUE
 	accumilation -= (metabolization_rate * victim.metabolism_efficiency)
-	if(accumilation >  0)
-		qdel(src)
+	if(accumilation <  0)
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
+		return TRUE //to avoid a runtime
 	return ..()
 
 /datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
@@ -1258,10 +1269,11 @@
 
 /datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
 	var/mob/living/carbon/living_carbon = living_mob
-	if(accumilation <= 150)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+	if(accumilation <= 140)
+		victim.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
+		victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+		victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+		victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
 
 
 /datum/reagent/stimulum

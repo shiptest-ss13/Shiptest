@@ -269,7 +269,7 @@
 
 		explosion(epicenter, round(range*0.25), round(range*0.5), round(range), round(range*1.5))
 
-		AddComponent(/datum/component/pellet_cloud, projectile_type=/obj/projectile/bullet/shrapnel/hot, round(range))
+		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
 		if(istype(src.loc, /obj/item/transfer_valve))
 			qdel(src.loc)
 		else

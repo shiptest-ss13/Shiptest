@@ -130,7 +130,7 @@
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
+		GAS_CO						= new/datum/tlv(-1, -1, 0.002, 2)
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -153,7 +153,7 @@
 		GAS_HYDROGEN				= new/datum/tlv/no_checks,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
+		GAS_CO						= new/datum/tlv(-1, -1, 5, 10)
 	)
 	heating_manage = FALSE
 
@@ -177,7 +177,7 @@
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
+		GAS_CO						= new/datum/tlv(-1, -1, 5, 10)
 	)
 	heating_manage = FALSE
 

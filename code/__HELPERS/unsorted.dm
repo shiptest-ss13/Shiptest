@@ -1543,6 +1543,41 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return WEST
 	return 0
 
+/proc/filled_turfs(atom/center, radius = 3, type = "circle", include_edge = TRUE)
+	var/turf/center_turf = get_turf(center)
+	if(radius < 0 || !center)
+		return
+	if(radius == 0)
+		return list(center_turf)
+
+	var/list/directions
+	switch(type)
+		if("square")
+			directions = GLOB.alldirs
+		if("circle")
+			directions = GLOB.cardinals
+
+	var/list/results = list(center_turf)
+	var/list/turfs_to_check = list()
+	turfs_to_check += center_turf
+	for(var/i = radius; i > 0; i--)
+		for(var/X in turfs_to_check)
+			var/turf/T = X
+			for(var/direction in directions)
+				var/turf/AdjT = get_step(T, direction)
+				if(!AdjT)
+					continue
+				if (AdjT in results) // Ignore existing turfs
+					continue
+				if(AdjT.density)
+					if(include_edge)
+						results += AdjT
+					continue
+
+				turfs_to_check += AdjT
+				results += AdjT
+	return results
+
 /proc/flame_radius(turf/epicenter, radius = 1, power = 5, fire_color = "red")
 	if(!isturf(epicenter))
 		CRASH("flame_radius used without a valid turf parameter")
