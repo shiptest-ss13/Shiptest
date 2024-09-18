@@ -15,7 +15,19 @@
 	)
 
 
+/obj/item/storage/toolbox/explosives
+	name = "explosives handling kit"
+	desc = "Be careful to not jostle it."
+	icon_state = "explosive"
+	item_state = "toolbox_red"
+	latches = "double_latch"
 
+/obj/item/storage/toolbox/explosives/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/multitool(src)
+	for(var/i in 1 to 4)
+		new /obj/item/assembly/signaler(src)
 
 /obj/item/folder/pgf/blue/bolide
 	var/to_spawn = list()
