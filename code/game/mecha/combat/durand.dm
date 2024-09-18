@@ -12,6 +12,7 @@
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
+	var/shield_passive_drain = 300
 
 
 /obj/mecha/combat/durand/clip
@@ -46,7 +47,7 @@
 
 /obj/mecha/combat/durand/process()
 	. = ..()
-	if(defense_mode && !use_power(100))
+	if(defense_mode && !use_power(max(0, shield_passive_drain - (scanmod.rating * 10))))
 		defense_action.Activate(forced_state = TRUE)
 
 /obj/mecha/combat/durand/domove(direction)
@@ -107,14 +108,6 @@ Expects a turf. Returns true if the attack should be blocked, false if not.*/
 	if(defense_check(user.loc))
 		log_message("Attack absorbed by defense field. Attacker - [user].", LOG_MECHA, color="orange")
 		shield.attack_generic(user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
-	else
-		. = ..()
-
-/obj/mecha/combat/durand/blob_act(obj/structure/blob/B)
-	if(defense_check(B.loc))
-		log_message("Attack by blob. Attacker - [B].", LOG_MECHA, color="red")
-		log_message("Attack absorbed by defense field.", LOG_MECHA, color="orange")
-		shield.blob_act(B)
 	else
 		. = ..()
 
@@ -226,7 +219,7 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	. = ..()
 	flick("shield_impact", src)
-	if(!chassis.use_power((max_integrity - obj_integrity) * 100))
+	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * (10 - chassis.capacitor.rating))))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
 	obj_integrity = 10000

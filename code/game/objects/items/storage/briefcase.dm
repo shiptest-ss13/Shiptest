@@ -42,7 +42,7 @@
 
 /obj/item/storage/briefcase/sniperbundle/PopulateContents()
 	..() // in case you need any paperwork done after your rampage
-	new /obj/item/gun/ballistic/automatic/marksman/sniper_rifle(src)
+	new /obj/item/gun/ballistic/automatic/marksman/taipan(src)
 	new /obj/item/clothing/neck/tie/red(src)
 	new /obj/item/clothing/under/syndicate/sniper(src)
 	new /obj/item/ammo_box/magazine/sniper_rounds/soporific(src)

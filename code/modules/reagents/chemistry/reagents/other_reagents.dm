@@ -516,12 +516,6 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 
-/datum/reagent/serotrotium/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		if(prob(7))
-			M.emote(pick("twitch","drool","moan","gasp"))
-	..()
-
 /datum/reagent/oxygen
 	name = "Oxygen"
 	description = "A colorless, odorless gas. Grows on trees but is still pretty valuable."
@@ -597,8 +591,6 @@
 /datum/reagent/mercury/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
-	if(prob(5))
-		M.emote(pick("twitch","drool","moan"))
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 	..()
 
@@ -762,8 +754,6 @@
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
-	if(prob(5))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/lithium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
@@ -1036,8 +1026,6 @@
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
 		M.drowsyness = max(M.drowsyness, 3)
-	if(prob(10))
-		M.emote("drool")
 	..()
 
 /datum/reagent/nanomachines

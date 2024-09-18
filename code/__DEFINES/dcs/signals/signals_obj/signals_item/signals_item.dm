@@ -13,7 +13,8 @@
 ///from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"
 ///from base of obj/item/hit_reaction(): (list/args)
-#define COMSIG_ITEM_HIT_REACT "item_hit_react"
+#define COMSIG_ITEM_HIT_REACT "item_hit_react" //from base of obj/item/hit_reaction(): (list/args)
+	#define COMPONENT_HIT_REACTION_BLOCK (1<<0)
 
 #define COMSIG_ITEM_ATTACK "item_attack" //from base of obj/item/attack(): (/mob/living/target, /mob/living/user)
 #define COMSIG_ITEM_ATTACK_SELF "item_attack_self" //from base of obj/item/attack_self(): (/mob)

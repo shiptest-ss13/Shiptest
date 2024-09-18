@@ -387,8 +387,8 @@
 	icon_state = "poster_dday" // human sprite by quin
 
 /obj/structure/sign/poster/contraband/stechkin
-	name = "Stechkin Pistol"
-	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
+	name = "Ringneck Pistol"
+	desc = "A poster advertising the Scarborough Arms Ringneck conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
 	icon_state = "poster_stechkin"
 
 /obj/structure/sign/poster/contraband/energy_swords

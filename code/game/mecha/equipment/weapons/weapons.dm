@@ -300,7 +300,7 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
-	name = "\improper FNX-99 \"Hades\" Carbine"
+	name = "\improper FNX-99 \"Phoenix\" Exosuit Carbine"
 	desc = "A weapon for combat exosuits. Shoots incendiary bullets."
 	icon_state = "mecha_carbine"
 	equip_cooldown = 10
@@ -323,7 +323,7 @@
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
-	name = "\improper LBX AC 10 \"Scattershot\""
+	name = "\improper LBX-10 \"Scattershot\" Heavy Shotgun"
 	desc = "A weapon for combat exosuits. Shoots a spread of pellets."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
@@ -337,7 +337,7 @@
 	ammo_type = "scattershot"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
-	name = "\improper Ultra AC 2"
+	name = "\improper UMG-2 Mounted Machine Gun"
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
@@ -353,7 +353,7 @@
 	ammo_type = "lmg"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
-	name = "\improper mounted HMG"
+	name = "\improper Mounted Heavy Machine Gun"
 	desc = "A heavy calibre machine gun commonly used by motorized forces, famed for it's ability to give people on the recieving end more holes than normal. It is modified to be attached to vehicles"
 	projectile = /obj/projectile/bullet/lmg
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
