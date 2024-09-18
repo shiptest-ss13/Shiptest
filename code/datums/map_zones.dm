@@ -2,7 +2,7 @@
 	var/name = "Map Zone"
 	var/id = 1
 	var/static/next_id = 1
-	var/next_vlevel_id = 0
+	var/next_vlevel_id = 1
 	var/list/traits
 	var/parallax_movedir
 	/// Weather controller for this level
