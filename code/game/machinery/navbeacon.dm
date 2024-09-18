@@ -71,7 +71,8 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
+	if(codes["patrol"])
+		LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src
