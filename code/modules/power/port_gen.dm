@@ -94,7 +94,7 @@
 	var/sheet_left = 0 // How much is left of the sheet
 	var/time_per_sheet = 260
 	var/current_heat = 0
-	var/pollution_multiplier = 2.5
+	var/pollution_multiplier = 2
 	var/pollution_gas = GAS_CO
 
 /obj/machinery/power/port_gen/pacman/Initialize()
