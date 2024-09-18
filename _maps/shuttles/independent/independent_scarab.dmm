@@ -535,9 +535,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "gs" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
-	},
 /obj/machinery/door/airlock/atmos{
 	dir = 4;
 	name = "Atmospherics Bay"
@@ -557,7 +554,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "gP" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -1185,9 +1182,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "nN" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -1208,7 +1202,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "oe" = (
 /obj/structure/cable/green{
@@ -1298,9 +1292,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
-"pz" = (
-/turf/closed/wall/mineral/iron,
-/area/ship/maintenance/port)
 "pB" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2650,8 +2641,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Gx" = (
-/obj/machinery/computer/monitor{
-	icon_state = "computer-left"
+/obj/machinery/computer/apc_control{
+	icon_state = "computer-left";
+	req_one_access = list(11,41);
+	req_access = null
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -3195,11 +3188,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "LJ" = (
 /obj/structure/sign/warning/docking,
@@ -3408,9 +3398,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "OI" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
-	},
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Engineering Bay"
@@ -3430,7 +3417,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "OS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3447,9 +3434,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Pe" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -3460,7 +3444,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "Ps" = (
 /obj/effect/turf_decal/hardline_small/right{
@@ -4592,7 +4576,7 @@ ch
 qh
 QZ
 Zc
-pz
+QZ
 DN
 DN
 DN
@@ -4674,7 +4658,7 @@ QZ
 QZ
 QZ
 pU
-QZ
+uo
 yX
 wW
 wW
