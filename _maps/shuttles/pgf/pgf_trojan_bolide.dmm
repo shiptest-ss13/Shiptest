@@ -25,6 +25,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"aE" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
 "bo" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -48,10 +57,6 @@
 	layer = 2.9
 	},
 /turf/open/floor/engine/hull,
-/area/space)
-"cp" = (
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "cH" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -88,10 +93,6 @@
 "eq" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
-"ew" = (
-/obj/machinery/autolathe,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/space)
 "eC" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
@@ -124,6 +125,12 @@
 "fp" = (
 /obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plating,
+/area/space)
+"fO" = (
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "gC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -212,12 +219,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/space)
-"lS" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/space)
 "mh" = (
 /obj/structure/railing{
 	dir = 5
@@ -235,12 +236,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space)
-"mX" = (
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/space)
 "mZ" = (
 /obj/structure/railing{
 	dir = 6
@@ -251,7 +246,18 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/sign/warning{
+	pixel_y = 24
+	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"ol" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/shower{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
 /area/space)
 "oE" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -264,6 +270,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"qd" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 8
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine/hull/reinforced,
 /area/space)
 "ql" = (
 /obj/effect/turf_decal/box,
@@ -323,7 +336,7 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 28
 	},
-/obj/structure/table/reinforced,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "tw" = (
@@ -332,6 +345,12 @@
 	pixel_x = -8
 	},
 /turf/open/floor/engine/hull,
+/area/space)
+"tB" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "tI" = (
 /obj/machinery/door/airlock{
@@ -362,12 +381,22 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"uD" = (
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "uR" = (
 /obj/structure/railing,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "uW" = (
 /obj/machinery/computer/helm{
@@ -425,17 +454,35 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "xu" = (
 /obj/machinery/door/airlock/security,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"xw" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "xE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume{
 	dir = 1
 	},
 /turf/open/floor/engine/hydrogen_fuel,
+/area/space)
+"xX" = (
+/obj/structure/sign/warning{
+	pixel_y = -22
+	},
+/turf/open/space/basic,
 /area/space)
 "ym" = (
 /obj/structure/grille,
@@ -464,7 +511,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "zS" = (
 /obj/structure/grille,
@@ -518,6 +569,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"BG" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/mono,
+/area/space)
 "Cg" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
@@ -540,7 +595,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Cv" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -661,6 +720,12 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"GT" = (
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
 "Hj" = (
 /obj/machinery/blackbox_recorder,
 /turf/open/floor/plasteel/dark,
@@ -710,6 +775,12 @@
 /obj/machinery/holopad/secure,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
+"II" = (
+/obj/structure/sign/warning{
+	pixel_y = 24
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space)
 "IY" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -733,6 +804,10 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
+"JZ" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/space/basic,
 /area/space)
 "Kt" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -796,19 +871,32 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/sign/warning{
+	pixel_y = 24
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
 "Pb" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Pr" = (
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -24
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
+"PC" = (
+/turf/open/floor/plasteel/mono,
 /area/space)
 "PI" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -862,6 +950,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"Qg" = (
+/obj/machinery/door/airlock{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "QR" = (
 /obj/machinery/computer/atmos_control/ship/bolide{
 	dir = 1
@@ -906,7 +1000,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "SO" = (
 /turf/open/floor/plasteel/tech,
@@ -942,27 +1042,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
-	},
-/obj/structure/closet/bombcloset{
-	populate = 0
-	},
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/neck/shemagh,
-/obj/item/clothing/neck/shemagh,
-/obj/item/clothing/head/bomb_hood{
-	pixel_y = 9
-	},
-/obj/item/clothing/head/bomb_hood{
-	pixel_y = 9
-	},
-/obj/item/clothing/suit/bomb_suit,
-/obj/item/clothing/suit/bomb_suit,
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_y = -5
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
@@ -1099,6 +1178,13 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"YT" = (
+/obj/structure/table/reinforced,
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "cargo_wall"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
 "YV" = (
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
@@ -1111,6 +1197,36 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"Zd" = (
+/obj/structure/closet/bombcloset{
+	populate = 0
+	},
+/obj/item/clothing/under/gezena,
+/obj/item/clothing/under/gezena,
+/obj/item/clothing/neck/shemagh,
+/obj/item/clothing/neck/shemagh,
+/obj/item/clothing/head/bomb_hood{
+	pixel_y = 9
+	},
+/obj/item/clothing/head/bomb_hood{
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/bomb_suit,
+/obj/item/clothing/suit/bomb_suit,
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_y = -6
+	},
+/obj/item/wirerod{
+	name = "mine defusal rod"
+	},
+/obj/item/wirerod{
+	name = "mine defusal rod"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Zf" = (
 /turf/open/floor/plasteel/stairs/old{
@@ -1198,13 +1314,13 @@ fo
 qX
 HU
 HU
-CY
+qd
 HU
 qW
 qW
 qW
 HU
-CY
+qd
 HU
 HU
 XA
@@ -1320,7 +1436,7 @@ GD
 qX
 HU
 HU
-Tn
+uD
 Ws
 mo
 dp
@@ -1361,7 +1477,7 @@ MC
 HU
 SO
 SO
-SO
+du
 HU
 Ea
 Jm
@@ -1391,7 +1507,7 @@ UF
 HU
 SO
 SO
-SO
+du
 HU
 Ea
 Jm
@@ -1421,7 +1537,7 @@ Fm
 HU
 SO
 SO
-SO
+du
 HU
 Ea
 Jm
@@ -1531,8 +1647,8 @@ HU
 HU
 HU
 UK
-SO
-SO
+YT
+du
 mo
 SO
 HU
@@ -1553,7 +1669,7 @@ Jm
 Cn
 Kt
 gC
-eq
+vo
 eq
 Pr
 eq
@@ -1583,16 +1699,16 @@ Jm
 BF
 ql
 gC
-eq
-vo
-vo
 vo
 eq
-sG
-Ud
-Ud
-Ud
-Ud
+vo
+eq
+eq
+eq
+eq
+eq
+gC
+tB
 Ud
 HU
 HU
@@ -1613,16 +1729,16 @@ Jm
 NQ
 fg
 gC
+vo
+eq
+vo
 eq
 eq
 eq
 eq
-eq
+Ws
 sG
-Ud
-Ud
-Ud
-Ud
+xw
 Ud
 gC
 rU
@@ -1643,16 +1759,16 @@ Jm
 mD
 gC
 gC
-eq
-vo
-vo
 vo
 eq
-gC
-gC
-gC
-gC
-Ud
+vo
+eq
+eq
+eq
+eq
+Ws
+sG
+TS
 Ud
 gC
 rU
@@ -1663,7 +1779,7 @@ qq
 qq
 qq
 gC
-CY
+II
 Ea
 ym
 "}
@@ -1678,11 +1794,11 @@ eq
 eq
 eq
 eq
-lS
-ew
+eq
+eq
 eq
 gC
-Ud
+tB
 Ud
 gC
 rU
@@ -1698,22 +1814,22 @@ gC
 gC
 "}
 (20,1,1) = {"
-FS
+Jm
 FS
 ch
 FS
 QZ
 oE
-mX
-cp
-eq
-eq
-lS
-eq
+GT
+GT
+GT
 eq
 gC
-sG
-sG
+gC
+gC
+gC
+gC
+Qg
 gC
 gC
 gC
@@ -1728,19 +1844,19 @@ SO
 gC
 "}
 (21,1,1) = {"
-FS
+Jm
 FS
 ch
 FS
 QZ
 oE
-mX
-cp
+fO
+fO
+fO
 eq
-Ws
-eq
-eq
-eq
+gC
+PC
+PC
 gC
 Ud
 Ud
@@ -1751,26 +1867,26 @@ Ud
 Ud
 Ud
 Ud
-Jm
+Ud
 Xx
 SO
 SO
 gC
 "}
 (22,1,1) = {"
-FS
+Jm
 FS
 ch
 FS
 QZ
 oE
-mX
-cp
+GT
+GT
+GT
 eq
-eq
-lS
-ew
-eq
+gC
+sG
+gC
 gC
 Ud
 Ud
@@ -1781,27 +1897,27 @@ Ud
 Ud
 Ud
 Ud
-Jm
+Ud
 gC
 SO
 SO
 gC
 "}
 (23,1,1) = {"
-FS
+Jm
 FS
 ch
 FS
 QZ
 oE
-eq
-eq
-eq
+fO
+fO
+fO
 eq
 gC
-gC
-gC
-gC
+Ud
+Ud
+Ud
 Ud
 Ud
 Ud
@@ -1844,7 +1960,7 @@ SO
 SO
 QZ
 Jm
-Jm
+JZ
 gC
 "}
 (25,1,1) = {"
@@ -1874,7 +1990,7 @@ SO
 SO
 QZ
 Jm
-Jm
+JZ
 gC
 "}
 (26,1,1) = {"
@@ -1933,7 +2049,7 @@ gC
 gC
 gC
 gC
-CY
+II
 Ea
 ym
 "}
@@ -1969,7 +2085,7 @@ ym
 "}
 (29,1,1) = {"
 Jm
-Jm
+xX
 Jm
 gC
 gC
@@ -2012,7 +2128,7 @@ gC
 gC
 gC
 gC
-sG
+Qg
 gC
 gC
 gC
@@ -2036,11 +2152,11 @@ js
 js
 YQ
 Ae
-Tn
-Jm
-Jm
-Jm
-Jm
+sG
+Ud
+Ud
+Ud
+Ud
 Ud
 Ud
 Ud
@@ -2051,8 +2167,8 @@ Ud
 Ud
 Ud
 gC
-Jm
-Jm
+PC
+PC
 gC
 Jm
 Jm
@@ -2067,10 +2183,10 @@ js
 YQ
 Ae
 gC
-Jm
-Jm
-Jm
-Jm
+Ud
+Ud
+Ud
+Ud
 Ud
 Ud
 Ud
@@ -2081,11 +2197,11 @@ Ud
 Ud
 Ud
 sG
-Jm
-Jm
+PC
+PC
 gC
 Jm
-Jm
+Zd
 "}
 (33,1,1) = {"
 Jm
@@ -2097,10 +2213,6 @@ js
 Eu
 QU
 gC
-Jm
-Jm
-Jm
-Jm
 Ud
 Ud
 Ud
@@ -2109,7 +2221,11 @@ Ud
 Ud
 Ud
 Ud
+gC
+gC
+gC
 Ud
+gC
 gC
 gC
 gC
@@ -2125,17 +2241,17 @@ gC
 gC
 gC
 gC
-Tn
+sG
 gC
 gC
-Jm
+sG
 gC
 gC
 Ud
 Ud
 Ud
 Ud
-Ud
+gC
 Ud
 Ud
 Ud
@@ -2157,15 +2273,15 @@ gC
 Tn
 Tn
 gC
-Jm
-Jm
-Jm
+aE
+PC
+ol
 gC
 Ud
 Ud
 Ud
 Ud
-Ud
+gC
 Ud
 Ud
 Ud
@@ -2187,15 +2303,15 @@ gC
 YM
 Tn
 gC
-Jm
-Jm
-Jm
+aE
+BG
+ol
 gC
 Ud
 Ud
 Ud
 Ud
-Ud
+gC
 Ud
 Ud
 Ud
@@ -2225,7 +2341,7 @@ gC
 Rz
 gC
 gC
-Ud
+gC
 Ud
 Ud
 gC
