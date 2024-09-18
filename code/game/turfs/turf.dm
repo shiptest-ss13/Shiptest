@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/list/atom/movable/opacity_sources
 
 	// ID of the virtual level we're in
-	var/virtual_z
+	var/virtual_z = 0
 
 	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.

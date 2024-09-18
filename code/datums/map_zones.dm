@@ -1,7 +1,7 @@
 /datum/map_zone
 	var/name = "Map Zone"
-	var/id = 0
-	var/static/next_id = 0
+	var/id = 1
+	var/static/next_id = 1
 	var/next_vlevel_id = 1
 	var/list/traits
 	var/parallax_movedir
@@ -85,8 +85,8 @@
 	/// An admin-facing name used to identify the virtual level. May be duplicate, or changed after instancing.
 	var/name = "Sub Map Zone"
 	var/relative_id
-	var/id
-	var/static/next_id
+	var/id = 1
+	var/static/next_id = 1
 	var/datum/map_zone/parent_map_zone
 	/// Z level which contains this virtual level
 	var/datum/space_level/parent_level
@@ -454,7 +454,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
-		turf.virtual_z = 0
+		turf.virtual_z = 1
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
