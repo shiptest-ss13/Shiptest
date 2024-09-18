@@ -86,7 +86,7 @@
 	var/name = "Sub Map Zone"
 	var/relative_id
 	var/id
-	var/static/next_id = 0
+	var/static/next_id = 1 //1 is reserved for turfs without z-level
 	var/datum/map_zone/parent_map_zone
 	/// Z level which contains this virtual level
 	var/datum/space_level/parent_level
