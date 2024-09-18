@@ -1269,11 +1269,10 @@
 
 /datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
 	var/mob/living/carbon/living_carbon = living_mob
-	if(accumilation <= 140)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
-		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
 
 
 /datum/reagent/stimulum
