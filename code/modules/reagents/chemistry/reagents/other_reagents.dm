@@ -1213,7 +1213,7 @@
 			victim.adjustStaminaLoss(1)
 		if(150 to 250)
 			to_chat(victim, "<span class='userdanger'>[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]</span>")
-			victim.adjustStaminaLoss(3)
+			victim.adjustStaminaLoss(1)
 			victim.Stun(10)
 			victim.Dizzy(5)
 			victim.confused += (accumilation/50)
@@ -1221,7 +1221,7 @@
 			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
 		if(250 to 350)
 			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
-			victim.adjustStaminaLoss(5)
+			victim.adjustStaminaLoss(3)
 			victim.Stun(35)
 
 			victim.Dizzy(5)
