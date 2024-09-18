@@ -1,7 +1,7 @@
 /datum/map_zone
 	var/name = "Map Zone"
-	var/id
-	var/static/next_id = 0
+	var/id = 1
+	var/static/next_id = 1
 	var/next_vlevel_id = 0
 	var/list/traits
 	var/parallax_movedir
