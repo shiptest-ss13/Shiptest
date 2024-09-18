@@ -1,10 +1,10 @@
 // Pressure limits.
 /// This determins at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
-#define HAZARD_HIGH_PRESSURE 340
+#define HAZARD_HIGH_PRESSURE 303
 /// This determins when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)
-#define WARNING_HIGH_PRESSURE 238
+#define WARNING_HIGH_PRESSURE 202
 /// This is when the gray low pressure icon is displayed. (it is 2.5 * HAZARD_LOW_PRESSURE)
-#define WARNING_LOW_PRESSURE 70
+#define WARNING_LOW_PRESSURE 60
 /// This is when the black ultra-low pressure icon is displayed. (This one is set as a constant)
 #define HAZARD_LOW_PRESSURE 40
 
