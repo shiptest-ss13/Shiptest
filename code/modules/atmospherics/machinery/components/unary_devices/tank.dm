@@ -49,19 +49,23 @@
 	. = ..()
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/tank_temperature = air_contents.return_temperature()
-	tank_temperature = ((tank_temperature * 4) + exposed_temperature)/5 //equalize with the air - since this means theres an active fire on the canister's tile
+	tank_temperature += exposed_temperature/20 //equalize with the air - since this means theres an active fire on the canister's tile
 	air_contents.set_temperature(tank_temperature)
 	if(exposed_temperature > TANK_MELT_TEMPERATURE)
-		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
-	if(exposed_volume > volume*2) // implosion
-		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
 
 
 /obj/machinery/atmospherics/components/unary/tank/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > TANK_MELT_TEMPERATURE) //dont equalize temperature as this would affect atmos balance, we only want fires to be more dangerous
-		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
-	if(exposed_volume > volume*2) // implosion
-		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
+
+/obj/machinery/atmospherics/components/unary/tank/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
+	. = ..()
+	shake_animation(damage_amount, max(damage_amount/2, 2))
 
 /obj/machinery/atmospherics/components/unary/tank/obj_destruction(damage_flag)
 	var/datum/gas_mixture/air_contents = airs[1]
@@ -76,7 +80,7 @@
 		log_bomber(get_mob_by_key(fingerprintslast), "was last key to touch", src, "which ruptured explosively")
 		investigate_log("was destroyed.", INVESTIGATE_ATMOS)
 
-		explosion(epicenter, round(range*0.25), round(range*0.5), round(range), round(range*1.5))
+		explosion(epicenter, round(range*0.05), round(range*0.5), round(range), round(range*1.5))
 
 		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
 

@@ -840,12 +840,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/turf/test_turf = get_step(location, dir)
 		for(var/obj/to_test as obj in test_turf.contents)
 			if(istype(to_test, /obj/structure/reagent_dispensers/fueltank))
-				visible_message("<span class='userdanger'>A single ember from [src] drops gently onto [to_test]. Uh oh.</span>")
+				location.visible_message("<span class='userdanger'>A single ember from [src] drops gently onto [to_test]. Uh oh.</span>")
 				to_test.fire_act()
 				ruined_round = TRUE
 				break
 			if(istype(to_test, /obj/machinery/atmospherics/components/unary/tank))
-				visible_message("<span class='userdanger'>A flash fire forms around [src]!</span>")
+				location.visible_message("<span class='userdanger'>A flash fire forms around [src]!</span>")
 				location.IgniteTurf(flame_heat/20)
 				new /obj/effect/hotspot(location)
 				ruined_round = TRUE

@@ -227,12 +227,12 @@
 /obj/item/tank/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	var/tank_temperature = air_contents.return_temperature()
-	tank_temperature = ((tank_temperature * 4) + exposed_temperature)/5 //slowly equalize with the air, since this is over an active fire, we heat up faster
+	tank_temperature += exposed_temperature/20 //slowly equalize with the air, since this is over an active fire, we heat up faster
 	air_contents.set_temperature(tank_temperature)
 	if(exposed_temperature > TANK_MELT_TEMPERATURE)
-		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE)/2, 0), BURN, 0)
 	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
-		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
 
 
 /obj/item/tank/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -242,9 +242,13 @@
 	tank_temperature = ((tank_temperature * 6) + exposed_temperature)/7 //slowly equalize  with the air
 	air_contents.set_temperature(tank_temperature)
 	if(exposed_temperature > TANK_MELT_TEMPERATURE)
-		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE)/2, 0), BURN, 0)
 	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
-		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
+
+/obj/item/tank/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
+	. = ..()
+	shake_animation(damage_amount, max(damage_amount/2, 2))
 
 /obj/item/tank/proc/check_status()
 	//Handle exploding, leaking, and rupturing of the tank
@@ -267,7 +271,7 @@
 		var/turf/epicenter = get_turf(loc)
 
 
-		explosion(epicenter, round(range*0.25), round(range*0.5), round(range), round(range*1.5))
+		explosion(epicenter, round(range*0.05), round(range*0.5), round(range), round(range*1.5))
 
 		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
 		if(istype(src.loc, /obj/item/transfer_valve))
