@@ -358,6 +358,8 @@ SUBSYSTEM_DEF(explosions)
 
 		if(flame_dist && prob(40) && !isspaceturf(T) && !T.density)
 			flameturf += T
+		if(flame_range)
+			flame_radius(epicenter, flame_dist, flame_range*2)
 
 		//--- THROW ITEMS AROUND ---
 		var/throw_dir = get_dir(epicenter,T)

@@ -188,7 +188,15 @@
 		var/turf/my_target = particles[W]
 		if(!W)
 			continue
-		step_towards(W,my_target)
+		var/turf/tomove = get_step_towards(W,my_target)
+		var/movedir = get_dir(W, tomove)
+		if(!W.CanPassThrough(tomove, movedir))
+			if(isopenturf(tomove))
+				W.forceMove(tomove)
+				particles -= W
+		else
+			W.Move(tomove)
+
 		if(!W.reagents)
 			continue
 		W.reagents.expose(get_turf(W))

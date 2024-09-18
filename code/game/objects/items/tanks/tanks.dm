@@ -6,6 +6,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/smash.ogg'
+	resistance_flags = FIRE_PROOF // its metal, but the gas inside isnt nessarily fireproof...
 	pressure_resistance = ONE_ATMOSPHERE * 5
 	force = 5
 	throwforce = 10
@@ -16,7 +17,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 30)
 	var/datum/gas_mixture/air_contents = null
 	var/distribute_pressure = ONE_ATMOSPHERE
-	var/integrity = 3
 	var/volume = 70
 
 	supports_variations = VOX_VARIATION
@@ -219,7 +219,32 @@
 /obj/item/tank/process()
 	//Allow for reactions
 	air_contents.react()
+	var/turf/open/current_turf = get_turf(src)
+	if(current_turf)
+		temperature_expose(current_turf.air, current_turf.air.return_temperature(), current_turf.air.return_pressure())
 	check_status()
+
+/obj/item/tank/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	var/tank_temperature = air_contents.return_temperature()
+	tank_temperature = ((tank_temperature * 4) + exposed_temperature)/5 //slowly equalize with the air, since this is over an active fire, we heat up faster
+	air_contents.set_temperature(tank_temperature)
+	if(exposed_temperature > TANK_MELT_TEMPERATURE)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
+
+
+/obj/item/tank/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(!isturf(loc)) //so people dont freeze to death  by cold air during eva
+		return ..()
+	var/tank_temperature = air_contents.return_temperature()
+	tank_temperature = ((tank_temperature * 6) + exposed_temperature)/7 //slowly equalize  with the air
+	air_contents.set_temperature(tank_temperature)
+	if(exposed_temperature > TANK_MELT_TEMPERATURE)
+		take_damage(max((exposed_temperature - TANK_MELT_TEMPERATURE), 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE), 0), BURN, 0)
 
 /obj/item/tank/proc/check_status()
 	//Handle exploding, leaking, and rupturing of the tank
@@ -232,40 +257,33 @@
 
 	if(pressure > TANK_FRAGMENT_PRESSURE)
 		if(!istype(src.loc, /obj/item/transfer_valve))
+			message_admins("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
+			log_admin("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
 			log_bomber(get_mob_by_key(fingerprintslast), "was last key to touch", src, "which ruptured explosively")
 		//Give the gas a chance to build up more pressure through reacting
 		air_contents.react(src)
 		pressure = air_contents.return_pressure()
-		var/range = (pressure-TANK_FRAGMENT_PRESSURE)/TANK_FRAGMENT_SCALE
+		var/range = (pressure-TANK_RUPTURE_PRESSURE)/TANK_FRAGMENT_SCALE
 		var/turf/epicenter = get_turf(loc)
 
 
 		explosion(epicenter, round(range*0.25), round(range*0.5), round(range), round(range*1.5))
+
+		AddComponent(/datum/component/pellet_cloud, projectile_type=/obj/projectile/bullet/shrapnel/hot, round(range))
 		if(istype(src.loc, /obj/item/transfer_valve))
 			qdel(src.loc)
 		else
-			qdel(src)
+			return obj_destruction()
 
 	else if(pressure > TANK_RUPTURE_PRESSURE || temperature > TANK_MELT_TEMPERATURE)
-		if(integrity <= 0)
-			var/turf/T = get_turf(src)
-			if(!T)
-				return
-			T.assume_air(air_contents)
-			playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-			qdel(src)
-		else
-			integrity--
+		take_damage(max((pressure - TANK_RUPTURE_PRESSURE), 0), BRUTE, 0)
+		take_damage(max((temperature - TANK_MELT_TEMPERATURE), 0), BRUTE, 0)
 
-	else if(pressure > TANK_LEAK_PRESSURE)
-		if(integrity <= 0)
-			var/turf/T = get_turf(src)
-			if(!T)
-				return
-			var/datum/gas_mixture/leaked_gas = air_contents.remove_ratio(0.25)
-			T.assume_air(leaked_gas)
-		else
-			integrity--
+/obj/item/tank/obj_destruction(damage_flag)
+	var/turf/T = get_turf(src)
+	if(!T)
+		return ..()
+	T.assume_air(air_contents)
+	playsound(src.loc, 'sound/effects/spray.ogg', 100, TRUE, -3)
+	return ..()
 
-	else if(integrity < 3)
-		integrity++

@@ -168,13 +168,13 @@
 
 //TANKS
 /// temperature in kelvins at which a tank will start to melt
-#define TANK_MELT_TEMPERATURE 1000000
+#define TANK_MELT_TEMPERATURE 800 + T0C
 /// Tank starts leaking
-#define TANK_LEAK_PRESSURE (30.*ONE_ATMOSPHERE)
+#define TANK_LEAK_PRESSURE (10 * ONE_ATMOSPHERE + 5)
 /// Tank spills all contents into atmosphere
-#define TANK_RUPTURE_PRESSURE (35.*ONE_ATMOSPHERE)
+#define TANK_RUPTURE_PRESSURE (11 * ONE_ATMOSPHERE)
 /// Boom 3x3 base explosion
-#define TANK_FRAGMENT_PRESSURE (40.*ONE_ATMOSPHERE)
+#define TANK_FRAGMENT_PRESSURE (12.*ONE_ATMOSPHERE)
 /// +1 for each SCALE kPa aboe threshold
 #define TANK_FRAGMENT_SCALE (6.*ONE_ATMOSPHERE)
 #define TANK_MAX_RELEASE_PRESSURE (ONE_ATMOSPHERE*3)

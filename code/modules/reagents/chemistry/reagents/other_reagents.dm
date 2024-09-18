@@ -908,14 +908,6 @@
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
 
-/datum/reagent/quartz
-	name = "Quartz"
-	description = "A fine dust of Quartz, a precursor to silicon and glass."
-	reagent_state = SOLID
-	color = "#fcedff"
-	taste_mult = 0
-	material = /datum/material/quartz
-
 /datum/reagent/silicon
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
