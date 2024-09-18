@@ -86,7 +86,7 @@
 	var/name = "Sub Map Zone"
 	var/relative_id
 	var/id
-	var/static/next_id = 1 //1 is reserved for turfs without z-level
+	var/static/next_id
 	var/datum/map_zone/parent_map_zone
 	/// Z level which contains this virtual level
 	var/datum/space_level/parent_level
@@ -454,7 +454,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
-		turf.virtual_z = 1
+		turf.virtual_z = 0
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
