@@ -1,7 +1,7 @@
 /datum/map_zone
 	var/name = "Map Zone"
-	var/id = 1
-	var/static/next_id = 1
+	var/id = 0
+	var/static/next_id = 0
 	var/next_vlevel_id = 1
 	var/list/traits
 	var/parallax_movedir
@@ -454,7 +454,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
-		turf.virtual_z = 0
+		turf.virtual_z = 1
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
