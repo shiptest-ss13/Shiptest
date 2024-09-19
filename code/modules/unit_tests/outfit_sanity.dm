@@ -67,7 +67,7 @@
 						if (outfit.random != TRUE)
 							TEST_FAIL("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
 						else
-							log_test("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
+							WARNING("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
 
 
 #undef CHECK_OUTFIT_SLOT

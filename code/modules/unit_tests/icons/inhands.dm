@@ -53,7 +53,7 @@
 				match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
 
 		if(!(skip_left || skip_right) && !lefthand_file && !righthand_file)
-			log_test("Missing both icon files for [item_path].\n\titem_state = \"[item_state]\"[match_message]")
+			WARNING("Missing both icon files for [item_path].\n\titem_state = \"[item_state]\"[match_message]")
 			continue
 
 		var/missing_left
@@ -80,7 +80,7 @@
 			if(!match_message && right_fallback && left_fallback)
 				fallback_log_message += "\n\t[item_path] has invalid value, using fallback icon.\n\titem_state = \"[item_state]\""
 				continue
-			log_test("Missing inhand sprites for [item_path] in both '[lefthand_file]' & '[righthand_file]'.\n\titem_state = \"[item_state]\"[match_message]")
+			WARNING("Missing inhand sprites for [item_path] in both '[lefthand_file]' & '[righthand_file]'.\n\titem_state = \"[item_state]\"[match_message]")
 		else if(missing_left)
 			TEST_FAIL("Missing left inhand sprite for [item_path] in '[lefthand_file]'[left_fallback ? ", using fallback icon" : null].\n\titem_state = \"[item_state]\"[match_message]")
 		else if(missing_right)
@@ -90,5 +90,5 @@
 		TEST_FAIL("Invalid item_state values should be set to null if there isn't a valid icon.[fallback_log_message]")
 
 	if(unset_inhand_var_message)
-		log_test("\tNotice - Possible inhand icon matches found. It is best to be explicit with inhand sprite values.[unset_inhand_var_message]")
+		WARNING("\tNotice - Possible inhand icon matches found. It is best to be explicit with inhand sprite values.[unset_inhand_var_message]")
 
