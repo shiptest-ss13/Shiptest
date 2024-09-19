@@ -14,6 +14,17 @@
 		"bolide_fuel_2" = "Starboard Fuel Chamber",
 	)
 
+//this should go somewhere else
+/obj/structure/closet/crate/rations
+	name = "ration crate"
+	desc = "A rectangular steel crate, filled with marine food."
+	var/ration_count
+
+/obj/structure/closet/crate/freezer/blood/PopulateContents()
+	. = ..()
+	for(var/i in 1 to ration_count)
+		new /obj/effect/spawner/lootdrop/ration(src)
+
 /obj/item/storage/toolbox/explosives
 	name = "\improper explosives handling kit"
 	desc = "Be careful to not jostle it."
