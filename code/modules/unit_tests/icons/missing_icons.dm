@@ -29,6 +29,9 @@
 		var/list/icons_to_find = list()
 		var/search_for_w = FALSE
 		var/search_for_on = FALSE
+
+		if(obj_path == initial(obj_path.bad_type))
+			continue
 		if(ispath(obj_path, /obj/item))
 			var/obj/item/item_path = obj_path
 			if(initial(item_path.item_flags) & ABSTRACT)
@@ -41,16 +44,16 @@
 					search_for_on = TRUE
 				qdel(melee_item)
 
-		icons_to_find += initial(obj_path.icon)
+		icon = initial(obj_path.icon)
+		var/init_icon_path = initial(obj_path.icon_state)
 		if(search_for_w)
-			icons_to_find += "[initial(obj_path.icon)]_w"
+			icons_to_find += "[init_icon_path]_w"
 		if(search_for_on)
-			icons_to_find += "[initial(obj_path.icon)]_on"
+			icons_to_find += "[init_icon_path]_on"
 
-		for(var/icon in icons_to_find)
+		for(var/icon_state in icons_to_find)
 			if(isnull(icon))
 				continue
-			var/icon_state = initial(obj_path.icon_state)
 			if(isnull(icon_state))
 				continue
 
@@ -70,4 +73,3 @@
 				for(var/file_place in possible_icon_states[icon_state])
 					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
 			TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
-

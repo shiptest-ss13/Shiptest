@@ -75,6 +75,9 @@
 	/// Whether a user will face atoms on entering them with a mouse. Despite being a mob variable, it is here for performance
 	var/face_mouse = FALSE
 
+	/// Use path Ex:(bad_type = obj/item). Generally for abstract code objects, atoms with a set bad_type can never be selected by spawner and is ignored in some tests. Examples include parent objects which should only exist within the code.
+	var/bad_type
+
 /atom/movable/Initialize(mapload)
 	. = ..()
 	switch(blocks_emissive)
