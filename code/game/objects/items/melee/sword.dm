@@ -41,7 +41,7 @@
 /obj/item/melee/sword/scrap
 	name = "scrap sword"
 	desc = "A jagged and painful weapon only effective on targets without an armour"
-	icon_state = "machete0"
+	icon_state = "machete"
 	force = 24
 	throwforce = 10
 	armour_penetration = -35
@@ -50,7 +50,7 @@
 /obj/item/melee/sword/mass
 	name = "mass produced machete"
 	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
-	icon_state = "machete0"
+	icon_state = "machete"
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
@@ -75,8 +75,8 @@
 /obj/item/melee/sword/chainsaw
 	name = "sacred chainsaw sword"
 	desc = "Suffer not a heretic to live."
-	icon_state = "chainswordon"
-	item_state = "chainswordon"
+	icon_state = "chainsword_on"
+	item_state = "chainsword_on"
 	force = 15
 	throwforce = 10
 	armour_penetration = 25
@@ -317,7 +317,7 @@
 
 //HF blade
 /obj/item/melee/sword/vibro
-	icon_state = "hfrequency0"
+	icon_state = "hfrequency"
 	base_icon_state = "hfrequency"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'

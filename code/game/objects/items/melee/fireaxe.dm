@@ -23,7 +23,7 @@
 /obj/item/melee/axe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=24, icon_wielded="[base_icon_state]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=24, icon_wielded="[base_icon_state]_w")
 
 /// triggered on wield of two handed item
 /obj/item/melee/axe/proc/on_wield(obj/item/source, mob/user)

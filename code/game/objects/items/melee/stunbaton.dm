@@ -493,7 +493,7 @@
 /obj/item/melee/classic_baton/telescopic
 	name = "telescopic baton"
 	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
-	icon_state = "telebaton_0"
+	icon_state = "telebaton"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
@@ -504,8 +504,8 @@
 	on = FALSE
 	on_sound = 'sound/weapons/batonextend.ogg'
 
-	on_icon_state = "telebaton_1"
-	off_icon_state = "telebaton_0"
+	on_icon_state = "telebaton_on"
+	off_icon_state = "telebaton"
 	on_item_state = "nullrod"
 	active_force = 10
 	force_off = 0
@@ -537,7 +537,7 @@
 /obj/item/melee/classic_baton/telescopic/contractor_baton
 	name = "contractor baton"
 	desc = "A compact, specialised baton assigned to Syndicate contractors. Applies light electrical shocks to targets."
-	icon_state = "contractor_baton_0"
+	icon_state = "contractor_baton"
 	item_state = null
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
@@ -550,8 +550,8 @@
 	on_sound = 'sound/weapons/contractorbatonextend.ogg'
 	on_stun_sound = 'sound/effects/contractorbatonhit.ogg'
 
-	on_icon_state = "contractor_baton_1"
-	off_icon_state = "contractor_baton_0"
+	on_icon_state = "contractor_baton_on"
+	off_icon_state = "contractor_baton"
 	on_item_state = "contractor_baton"
 	active_force = 16
 	force_off = 5

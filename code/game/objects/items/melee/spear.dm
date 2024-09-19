@@ -46,9 +46,9 @@
  * Bone Spear
  */
 /obj/item/melee/spear/bone	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
-	icon_state = "bone_spear0"
+	icon_state = "bone_spear"
 	name = "bone spear"
-	base_icon_state = "bone_spear0"
+	base_icon_state = "bone_spear"
 	icon_prefix = "bone_spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	//this should be a plasma spear or worse.
@@ -61,7 +61,7 @@
 
 /obj/item/melee/spear/explosive
 	name = "explosive lance"
-	icon_state = "spearbomb0"
+	icon_state = "spearbomb"
 	base_icon_state = "spearbomb"
 	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
