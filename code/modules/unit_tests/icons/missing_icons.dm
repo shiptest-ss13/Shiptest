@@ -30,7 +30,7 @@
 		var/search_for_w = FALSE
 		var/search_for_on = FALSE
 
-		if(obj_path == initial(obj_path.bad_type))
+		if(isbadpath(obj_path))
 			continue
 		if(ispath(obj_path, /obj/item))
 			var/obj/item/item_path = obj_path

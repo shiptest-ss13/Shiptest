@@ -10,6 +10,8 @@
 
 #define isgenerator(A) (istype(A, /generator))
 
+#define isbadpath(A) (A == initial(A.bad_path))
+
 //Turfs
 //#define isturf(A) (istype(A, /turf)) This is actually a byond built-in. Added here for completeness sake.
 

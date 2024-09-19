@@ -15,6 +15,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
+	bad_type = /obj/item
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
