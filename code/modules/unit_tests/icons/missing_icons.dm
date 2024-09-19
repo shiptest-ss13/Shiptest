@@ -31,32 +31,33 @@
 		var/search_for_on = FALSE
 
 		if(isbadpath(obj_path))
-			WARNING("[obj_path] is a bad path!")
+			log_world("[obj_path] is a bad path!")
 			continue
 		if(ispath(obj_path, /obj/item))
 			var/obj/item/item_path = obj_path
 			if(initial(item_path.item_flags) & ABSTRACT)
-				WARNING("[obj_path] is abstract!")
+				log_world("[obj_path] is abstract!")
 				continue
 			if(ispath(obj_path, /obj/item/melee))
 				var/obj/item/melee/melee_item = new(item_path)
 				if(melee_item.GetComponent(/datum/component/two_handed))
 					search_for_w = TRUE
-					WARNING("[obj_path] can be twohanded!!!!")
+					log_world("[obj_path] can be twohanded!!!!")
 				if(melee_item.GetComponent(/datum/component/transforming))
-					WARNING("[obj_path] can be transformed!!!!!")
+					log_world("[obj_path] can be transformed!!!!!")
 					search_for_on = TRUE
 				qdel(melee_item)
 
 		var/icon = initial(obj_path.icon)
 		var/init_icon_path = initial(obj_path.icon_state)
+		icons_to_find += init_icon_path
 		if(search_for_w)
 			icons_to_find += "[init_icon_path]_w"
 		if(search_for_on)
 			icons_to_find += "[init_icon_path]_on"
 
 		for(var/icon_state in icons_to_find)
-			WARNING("Searching for [icon_state]!!!!!")
+			log_world("Searching for [icon_state]!!!!!")
 			if(isnull(icon))
 				continue
 			if(isnull(icon_state))
