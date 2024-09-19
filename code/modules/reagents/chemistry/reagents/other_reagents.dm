@@ -1194,7 +1194,7 @@
 	name = "Carbon Monoxide"
 	description = "A highly dangerous gas for sapients."
 	reagent_state = GAS
-	metabolization_rate = 0.1 * REAGENTS_METABOLISM
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM
 	color = "#96898c"
 	var/accumilation
 
