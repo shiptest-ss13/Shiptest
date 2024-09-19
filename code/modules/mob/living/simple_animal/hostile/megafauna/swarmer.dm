@@ -151,9 +151,6 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 	stop_automated_movement = FALSE
 	AIStatus = AI_ON
 
-
-
-
 //RESOURCE SWARMER:
 //Similar to the original Player-Swarmers, these dismantle things to obtain the metal inside
 //They then use this medal to produce more swarmers or traps/barricades

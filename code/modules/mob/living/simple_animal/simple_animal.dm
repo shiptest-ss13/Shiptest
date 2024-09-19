@@ -664,6 +664,8 @@
 	. = ..()
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
+	if(QDELETED(src))
+		return
 	toggle_ai(initial(AIStatus))
 	if(new_virtual_z)
 		check_should_sleep()
