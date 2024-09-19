@@ -88,10 +88,9 @@
 
 /obj/item/melee/cleaving_saw/proc/on_transform(obj/item/source, mob/user, active)
 	SIGNAL_HANDLER
-	if(active)
-		to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc and deal additional damage to fauna.</span>")
-	else
-		to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause fauna to bleed.</span>")
+	user.changeNext_move(CLICK_CD_MELEE * 0.25)
+	if(user)
+		balloon_alert(user, "[active ? "opened" : "closed"] [src]")
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
 	return COMPONENT_NO_DEFAULT_MESSAGE
 

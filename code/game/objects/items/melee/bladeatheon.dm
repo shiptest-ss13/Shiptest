@@ -12,13 +12,15 @@
 /obj/item/melee/sword/pedang
 	name = "pedang"
 	desc = "an electrically-charged fencing sword."
+	icon_state = "suns-tsword"
+
+	force = 0
+	var/active_force = 10
 
 	var/obj/item/stock_parts/cell/cell
 	var/preload_cell_type = /obj/item/stock_parts/cell/pedang //if not empty the sabre starts with this type of cell
 	var/cell_hit_cost = 1000
-	var/can_remove_cell = TRUE
 
-	var/turned_on = FALSE
 	var/activate_sound = "sparks"
 
 /obj/item/stock_parts/cell/pedang
@@ -27,22 +29,29 @@
 /obj/item/melee/sword/pedang/Initialize()
 	. = ..()
 	if(preload_cell_type)
-		if(!ispath(preload_cell_type,/obj/item/stock_parts/cell))
-			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_cell_type: [preload_cell_type].")
-		else
+		if(ispath(preload_cell_type, /obj/item/stock_parts/cell/pedang))
 			cell = new preload_cell_type(src)
-	update_appearance()
+
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = active_force, \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
+/obj/item/melee/sword/pedang/proc/on_transform()
+	SIGNAL_HANDLER
+
+	playsound(src, activate_sound, 75, TRUE, -1)
 
 /obj/item/melee/sword/pedang/Destroy()
 	if(cell)
 		QDEL_NULL(cell)
-	UnregisterSignal(src, COMSIG_PARENT_ATTACKBY)
 	return ..()
 
-/obj/item/melee/baton/examine(mob/user)
+/obj/item/melee/sword/pedang/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_noitce("\The [src] is [round(cell.percent())]% charged.")
+		. += span_notice("\The [src] is [round(cell.percent())]% charged.")
 	else
 		. += span_warning("\The [src] does not have a power source installed.")
 
