@@ -133,7 +133,7 @@
 			var/mob/living/simple_animal/hostile/hostile_target = M
 			var/hostile_ai_status = hostile_target.AIStatus
 			hostile_target.toggle_ai(AI_OFF)
-			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
+			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume) //This needs to be a callback to toggle_ai
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
