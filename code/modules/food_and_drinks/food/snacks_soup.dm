@@ -160,7 +160,7 @@
 	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/soup/miso
-	name = "misosoup"
+	name = "miso soup"
 	desc = "The universes best soup! Yum!!!"
 	icon_state = "misosoup"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
