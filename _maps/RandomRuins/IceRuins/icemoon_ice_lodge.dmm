@@ -249,7 +249,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "dO" = (
-/turf/closed/indestructible/wood,
+/turf/closed/wall/mineral/wood,
 /area/overmap_encounter/planetoid/cave/explored)
 "dT" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -403,7 +403,7 @@
 	pixel_y = -9;
 	paint_colour = "#FF0000"
 	},
-/turf/closed/wall/mineral/wood,
+/turf/closed/indestructible/wood,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "gp" = (
 /obj/structure/table/wood,
@@ -560,9 +560,6 @@
 	},
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/residential)
-"iU" = (
-/turf/closed/indestructible/wood,
-/area/ruin/powered/icemoon/lodge/montagne_office)
 "je" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop,
@@ -838,11 +835,11 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "mP" = (
 /obj/structure/closet/cabinet,
-/obj/item/ammo_box/magazine/pistolm9mm,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/head/frontier/peaked,
 /obj/item/clothing/suit/armor/frontier,
 /obj/item/clothing/under/frontiersmen/officer,
+/obj/item/ammo_box/magazine/m9mm_mauler,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "nc" = (
@@ -944,9 +941,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
-"op" = (
-/turf/closed/indestructible/wood,
-/area/ruin/powered/icemoon/lodge/cellar)
 "ot" = (
 /obj/effect/turf_decal/weather/snow{
 	dir = 9
@@ -1096,9 +1090,6 @@
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
-"qE" = (
-/turf/closed/indestructible/wood,
-/area/ruin/powered/icemoon/lodge/mainhall)
 "qH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -1389,7 +1380,6 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "tr" = (
 /obj/effect/turf_decal/spline/fancy/wood,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "tx" = (
@@ -1745,6 +1735,9 @@
 "xk" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
+	aggro_vision_range = 12
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "xu" = (
@@ -2233,9 +2226,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
-"Gm" = (
-/turf/closed/indestructible/wood,
-/area/ruin/powered/icemoon/lodge/residential)
 "Gn" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine{
@@ -3211,9 +3201,6 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/powered/icemoon/lodge/cellar)
-"VL" = (
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/icemoon/lodge/gear_room)
 "Wa" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
@@ -3267,7 +3254,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/curtain/cloth/fancy,
-/turf/open/floor/wood,
+/turf/open/floor/plating,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Wv" = (
 /obj/effect/turf_decal/siding/wood,
@@ -3881,23 +3868,23 @@ gI
 gI
 gI
 gI
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
 Hl
 Hl
 Hl
@@ -3948,8 +3935,8 @@ PM
 Rl
 dd
 rF
-Gm
-Gm
+No
+No
 Hl
 Hl
 Hl
@@ -4000,7 +3987,7 @@ yo
 AJ
 xN
 QU
-Gm
+No
 Hl
 Hl
 Hl
@@ -4051,7 +4038,7 @@ ds
 lh
 Kn
 cl
-Gm
+No
 Hl
 Hl
 Hl
@@ -4102,7 +4089,7 @@ rm
 fu
 ti
 cl
-Gm
+No
 Hl
 Hl
 Hl
@@ -4153,7 +4140,7 @@ rF
 rm
 rm
 QU
-Gm
+No
 Hl
 Hl
 Hl
@@ -4187,7 +4174,7 @@ Cm
 yQ
 Js
 cy
-VL
+gI
 zN
 Yo
 am
@@ -4204,7 +4191,7 @@ No
 px
 tT
 YB
-Gm
+No
 Hl
 Hl
 Hl
@@ -4255,7 +4242,7 @@ nD
 uy
 Cw
 Py
-Gm
+No
 Hl
 Hl
 Hl
@@ -4306,7 +4293,7 @@ No
 ib
 RV
 qH
-Gm
+No
 Hl
 Hl
 Hl
@@ -4341,11 +4328,11 @@ gI
 gI
 gI
 gI
-Gm
-Gm
-Gm
-Gm
-Gm
+No
+No
+No
+No
+No
 DM
 MP
 TM
@@ -4356,8 +4343,8 @@ UL
 No
 Xd
 HG
-Gm
-Gm
+No
+No
 Hl
 Hl
 Hl
@@ -4396,18 +4383,18 @@ Hl
 Hl
 Hl
 Hl
-Gm
-Gm
-Gm
-Gm
-Gm
-Gm
+No
+No
+No
+No
+No
+No
 NM
 No
-Gm
-Gm
-Gm
-Gm
+No
+No
+No
+No
 Hl
 Hl
 Hl
@@ -4582,12 +4569,12 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
-qE
-qE
-qE
-qE
+yE
+yE
+yE
+yE
+yE
+yE
 Hl
 Hl
 Hl
@@ -4632,20 +4619,20 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 MQ
 mz
 XK
 jM
-qE
-qE
-qE
-qE
-qE
-qE
-qE
-qE
+yE
+yE
+yE
+yE
+yE
+yE
+yE
+yE
 dO
 dO
 dO
@@ -4682,8 +4669,8 @@ Gy
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 ms
 Su
 Eb
@@ -4733,7 +4720,7 @@ Hl
 Hl
 Hl
 Hl
-qE
+yE
 uL
 fg
 ty
@@ -4784,7 +4771,7 @@ Hl
 Hl
 Hl
 Hl
-qE
+yE
 AO
 RE
 sW
@@ -4798,7 +4785,7 @@ yE
 To
 Td
 aV
-qE
+yE
 OR
 sc
 CW
@@ -4835,8 +4822,8 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 yE
 KF
 yE
@@ -4849,8 +4836,8 @@ OH
 OH
 OH
 OH
-iU
-iU
+OH
+OH
 Gv
 aF
 CU
@@ -4886,8 +4873,8 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 Vc
 kl
 tX
@@ -4935,9 +4922,9 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
-qE
+yE
+yE
+yE
 vZ
 cA
 Do
@@ -4986,7 +4973,7 @@ Gy
 Hl
 Hl
 Hl
-qE
+yE
 nS
 Ik
 Mw
@@ -5037,8 +5024,8 @@ Gy
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 ik
 Mw
 kq
@@ -5088,7 +5075,7 @@ Hl
 Hl
 Hl
 Hl
-qE
+yE
 nS
 KH
 jS
@@ -5139,9 +5126,9 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
-qE
+yE
+yE
+yE
 um
 wi
 Do
@@ -5192,8 +5179,8 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 AE
 bC
 vq
@@ -5243,8 +5230,8 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 yE
 jD
 yE
@@ -5258,8 +5245,8 @@ OH
 OH
 OH
 OH
-iU
-op
+OH
+Cu
 DA
 DA
 Zn
@@ -5294,7 +5281,7 @@ Hl
 Hl
 Hl
 Hl
-qE
+yE
 LF
 bK
 Nc
@@ -5310,8 +5297,8 @@ Jj
 aZ
 WZ
 Ay
-op
-op
+Cu
+Cu
 Hl
 Hl
 Hl
@@ -5345,7 +5332,7 @@ Gy
 Hl
 Hl
 Hl
-qE
+yE
 tD
 NH
 mj
@@ -5362,7 +5349,7 @@ KX
 PQ
 qR
 qb
-op
+Cu
 Hl
 Hl
 Hl
@@ -5396,8 +5383,8 @@ Gy
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 mF
 Gb
 ud
@@ -5413,7 +5400,7 @@ WZ
 nd
 gr
 Yj
-op
+Cu
 Hl
 Hl
 Hl
@@ -5448,8 +5435,8 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
+yE
+yE
 pi
 ve
 Yw
@@ -5464,7 +5451,7 @@ jR
 Gn
 Fj
 wF
-op
+Cu
 Hl
 Hl
 Hl
@@ -5500,22 +5487,22 @@ Hl
 Hl
 Hl
 Hl
-qE
-qE
-qE
-qE
-qE
-qE
-op
-op
-op
+yE
+yE
+yE
+yE
+yE
+yE
+Cu
+Cu
+Cu
 wT
 PV
 wc
 zh
 WN
-op
-op
+Cu
+Cu
 Hl
 Hl
 Hl
@@ -5559,13 +5546,13 @@ Hl
 Hl
 Hl
 Hl
-op
-op
-op
+Cu
+Cu
+Cu
 rs
-op
-op
-op
+Cu
+Cu
+Cu
 Hl
 Hl
 Hl
