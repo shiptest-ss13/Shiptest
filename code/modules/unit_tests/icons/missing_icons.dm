@@ -38,6 +38,7 @@
 					search_for_w = TRUE
 				if(melee_item.GetComponent(/datum/component/transforming))
 					search_for_on = TRUE
+				qdel(melee_item)
 
 		var/icon = initial(obj_path.icon)
 		if(isnull(icon))
