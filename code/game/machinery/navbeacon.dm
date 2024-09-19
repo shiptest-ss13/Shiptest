@@ -47,6 +47,8 @@
 
 /obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	..()
+	if(!codes)
+		return
 	if(!codes["patrol"])
 		return
 	if(previous_virtual_z)
@@ -73,6 +75,8 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
+	if(!codes)
+		return
 	if(codes["patrol"])
 		LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
