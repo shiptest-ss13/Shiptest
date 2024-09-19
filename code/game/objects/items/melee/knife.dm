@@ -181,7 +181,7 @@
 		force = 20
 		w_class = WEIGHT_CLASS_NORMAL
 		throwforce = 23
-		icon_state = "switchblade_ext"
+		icon_state = "switchblade_on"
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		sharpness = IS_SHARP

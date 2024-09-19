@@ -99,7 +99,7 @@
 
 /obj/item/melee/baton/update_icon_state()
 	if(turned_on)
-		icon_state = "[initial(icon_state)]_active"
+		icon_state = "[initial(icon_state)]_on"
 		return ..()
 	if(!cell)
 		icon_state = "[initial(icon_state)]_nocell"

@@ -60,7 +60,7 @@
 /obj/item/melee/transforming/energy/axe
 	name = "energy axe"
 	desc = "An energized battle axe."
-	icon_state = "axe0"
+	icon_state = "axe"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 40
@@ -126,7 +126,7 @@
 	force = 18 //About as much as a spear
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	icon = 'icons/obj/surgery.dmi'
-	icon_state = "esaw_0"
+	icon_state = "esaw"
 	sword_color = null //stops icon from breaking when turned on.
 	hitcost = 75 //Costs more than a standard cyborg esword
 	w_class = WEIGHT_CLASS_NORMAL
@@ -248,7 +248,7 @@
 /obj/item/melee/transforming/energy/ctf
 	name = "energy sword"
 	desc = "That cable over there, I'm going to cut it."
-	icon_state = "plasmasword0"
+	icon_state = "plasmasword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	sharpness = IS_SHARP

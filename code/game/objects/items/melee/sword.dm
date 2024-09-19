@@ -148,8 +148,8 @@
 	var/extended = FALSE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
-	var/on_icon_state = "suns-tsword_ext"
-	var/on_item_state = "suns-tsword_ext"
+	var/on_icon_state = "suns-tsword_on"
+	var/on_item_state = "suns-tsword_on"
 	var/off_icon_state = "suns-tsword"
 	var/off_item_state = "suns-tsword"
 
