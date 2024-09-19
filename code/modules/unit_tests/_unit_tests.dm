@@ -65,6 +65,12 @@
 
 #ifdef BASIC_TESTS
 
+#ifndef EXTRA_ICON_TESTS
+#include "icons/missing_icons.dm"
+#include "icons/spritesheets.dm"
+#include "icons/worn_icons.dm"
+#endif //EXTRA_ICON_TESTS
+
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -110,12 +116,12 @@
 
 #endif //BASIC_TESTS
 
-#ifdef ICON_TESTS
-//#include "icons/inhands.dm"
+#ifdef EXTRA_ICON_TESTS
+#include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
-//#include "icons/worn_icons.dm"
-#endif //ICON_TESTS
+#include "icons/worn_icons.dm"
+#endif //EXTRA_ICON_TESTS
 
 #ifdef CREATE_AND_DESTROY_TEST
 #include "create_and_destroy.dm"

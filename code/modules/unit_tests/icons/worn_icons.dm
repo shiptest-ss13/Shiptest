@@ -115,6 +115,7 @@
 		if(fail_reasons)
 			TEST_FAIL(fail_reasons)
 
+#ifdef EXTRA_ICON_TESTS
 	//The exact same test expect this time we warn instead of fail because most items dont really NEED to apear on a player
 	for(var/obj/item/item_path as anything in (subtypesof(/obj/item) - (typesof(/obj/item/clothing) + typesof(/obj/item/mod))))
 		var/cached_slot_flags = initial(item_path.slot_flags)
@@ -207,3 +208,4 @@
 
 		if(fail_reasons)
 			WARNING(fail_reasons)
+#endif //EXTRA_ICON_TESTS
