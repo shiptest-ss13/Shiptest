@@ -361,7 +361,7 @@
 	var/on_icon_state // What is our sprite when turned on
 	var/off_icon_state // What is our sprite when turned off
 	var/on_item_state // What is our in-hand sprite when turned on
-	var/force_on // Damage when on - not stunning
+	var/active_force // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
 
@@ -507,7 +507,7 @@
 	on_icon_state = "telebaton_1"
 	off_icon_state = "telebaton_0"
 	on_item_state = "nullrod"
-	force_on = 10
+	active_force = 10
 	force_off = 0
 	weight_class_on = WEIGHT_CLASS_BULKY
 
@@ -520,7 +520,7 @@
 		icon_state = on_icon_state
 		item_state = on_item_state
 		w_class = weight_class_on
-		force = force_on
+		force = active_force
 		attack_verb = list("smacked", "struck", "cracked", "beaten")
 	else
 		to_chat(user, desc["local_off"])
@@ -553,7 +553,7 @@
 	on_icon_state = "contractor_baton_1"
 	off_icon_state = "contractor_baton_0"
 	on_item_state = "contractor_baton"
-	force_on = 16
+	active_force = 16
 	force_off = 5
 	weight_class_on = WEIGHT_CLASS_NORMAL
 

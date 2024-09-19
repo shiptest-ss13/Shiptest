@@ -44,10 +44,10 @@
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	hitsound = 'sound/weapons/tap.ogg'
-	var/hitsound_on = 'sound/weapons/sear.ogg' //so we can differentiate between cakehat and energyhat
+	var/active_hitsound = 'sound/weapons/sear.ogg' //so we can differentiate between cakehat and energyhat
 	var/hitsound_off = 'sound/weapons/tap.ogg'
-	var/force_on = 15
-	var/throwforce_on = 15
+	var/active_force = 15
+	var/active_throwforce = 15
 	var/damtype_on = BURN
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -69,10 +69,10 @@
 
 /obj/item/clothing/head/hardhat/cakehat/turn_on(mob/living/user)
 	..()
-	force = force_on
-	throwforce = throwforce_on
+	force = active_force
+	throwforce = active_throwforce
 	damtype = damtype_on
-	hitsound = hitsound_on
+	hitsound = active_hitsound
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/hardhat/cakehat/turn_off(mob/living/user)
@@ -92,10 +92,10 @@
 	icon_state = "hardhat_energycake"
 	item_state = "hardhat_energycake"
 	hitsound = 'sound/weapons/tap.ogg'
-	hitsound_on = 'sound/weapons/blade1.ogg'
+	active_hitsound = 'sound/weapons/blade1.ogg'
 	hitsound_off = 'sound/weapons/tap.ogg'
 	damtype_on = BRUTE
-	force_on = 18 //same as epen (but much more obvious)
+	active_force = 18 //same as epen (but much more obvious)
 	light_range = 3 //ditto
 	heat = 0
 

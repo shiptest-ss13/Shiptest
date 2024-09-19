@@ -1106,25 +1106,22 @@
 	name = "cleaving saw"
 	desc = "This saw, effective at drawing the blood of beasts, transforms into a long cleaver that makes use of centrifugal force."
 	force = 12
-	force_on = 20 //force when active
+	active_force = 20 //force when active
 	throwforce = 20
-	throwforce_on = 20
+	active_throwforce = 20
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	icon_state = "cleaving_saw"
-	icon_state_on = "cleaving_saw_open"
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_off = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
 	attack_verb_on = list("cleaved", "swiped", "slashed", "chopped")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	hitsound_on = 'sound/weapons/bladeslice.ogg'
+	active_hitsound = 'sound/weapons/bladeslice.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_SHARP
-	faction_bonus_force = 30
-	nemesis_factions = list("mining", "boss")
 	var/transform_cooldown
 	var/swiping = FALSE
 	var/bleed_stacks_per_hit = 3
@@ -1135,7 +1132,7 @@
 	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
 	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
 
-/obj/item/melee/transforming/cleaving_saw/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/cleaving_saw/on_transform(obj/item/source, mob/user, active)
 	if(transform_cooldown > world.time)
 		return FALSE
 	. = ..()
@@ -1143,38 +1140,20 @@
 		transform_cooldown = world.time + (CLICK_CD_MELEE * 0.5)
 		user.changeNext_move(CLICK_CD_MELEE * 0.25)
 
-/obj/item/melee/transforming/cleaving_saw/transform_messages(mob/living/user, supress_message_text)
-	if(!supress_message_text)
-		if(active)
-			to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc and deal additional damage to fauna.</span>")
-		else
-			to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause fauna to bleed.</span>")
+	if(active)
+		to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc and deal additional damage to fauna.</span>")
+	else
+		to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause fauna to bleed.</span>")
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
-
-/obj/item/melee/transforming/cleaving_saw/clumsy_transform_effect(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
-		user.take_bodypart_damage(10)
 
 /obj/item/melee/transforming/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
 	..()
 	if(!active)
 		user.changeNext_move(CLICK_CD_MELEE * 0.5) //when closed, it attacks very rapidly
 
-/obj/item/melee/transforming/cleaving_saw/nemesis_effects(mob/living/user, mob/living/target)
-	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
-	if(!B)
-		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
-	else
-		B.add_stacks(bleed_stacks_per_hit)
-
 /obj/item/melee/transforming/cleaving_saw/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!active || swiping || !target.density || get_turf(target) == get_turf(user))
-		if(!active)
-			faction_bonus_force = 0
 		..()
-		if(!active)
-			faction_bonus_force = initial(faction_bonus_force)
 	else
 		var/turf/user_turf = get_turf(user)
 		var/dir_to_target = get_dir(user_turf, get_turf(target))

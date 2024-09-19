@@ -153,7 +153,7 @@
 	var/off_icon_state = "suns-tsword"
 	var/off_item_state = "suns-tsword"
 
-	var/force_on = 10
+	var/active_force = 10
 	var/on_throwforce = 10
 	var/on_blockchance = 40
 
@@ -172,7 +172,7 @@
 		item_state = on_item_state
 		slot_flags = 0
 		w_class = weight_class_on
-		force = force_on
+		force = active_force
 		throwforce = on_throwforce
 		block_chance = on_blockchance
 		attack_verb = list("slashed", "cut")

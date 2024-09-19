@@ -24,14 +24,10 @@
 	var/sharpness_on
 	/// Hitsound played when active
 	var/hitsound_on
-	/// List of the original continuous attack verbs the item has.
-	var/list/attack_verb_continuous_off
-	/// List of the original simple attack verbs the item has.
-	var/list/attack_verb_simple_off
-	/// List of continuous attack verbs used when the weapon is enabled
-	var/list/attack_verb_continuous_on
-	/// List of simple attack verbs used when the weapon is enabled
-	var/list/attack_verb_simple_on
+	/// List of the original attack verbs the item has.
+	var/list/attack_verb_off
+	/// List of attack verbs used when the weapon is enabled
+	var/list/attack_verb_on
 	/// If we get sharpened with a whetstone, save the bonus here for later use if we un/redeploy
 	var/sharpened_bonus = 0
 	/// Dictate whether we change inhands or not
@@ -48,8 +44,7 @@
 	sharpness_on = NONE,
 	hitsound_on = 'sound/weapons/blade1.ogg',
 	w_class_on = WEIGHT_CLASS_BULKY,
-	list/attack_verb_continuous_on,
-	list/attack_verb_simple_on,
+	list/attack_verb_on,
 	inhand_icon_change = TRUE,
 )
 
@@ -67,12 +62,9 @@
 	src.w_class_on = w_class_on
 	src.inhand_icon_change = inhand_icon_change
 
-	if(attack_verb_continuous_on)
-		src.attack_verb_continuous_on = attack_verb_continuous_on
-		attack_verb_continuous_off = item_parent.attack_verb_continuous
-	if(attack_verb_simple_on)
-		src.attack_verb_simple_on = attack_verb_simple_on
-		attack_verb_simple_off = item_parent.attack_verb_simple
+	if(attack_verb_on)
+		src.attack_verb_on = attack_verb_on
+		attack_verb_off = item_parent.attack_verb
 
 	if(start_transformed)
 		toggle_active(parent)
@@ -173,17 +165,15 @@
 	if(throw_speed_on)
 		source.throw_speed = throw_speed_on
 
-	if(LAZYLEN(attack_verb_continuous_on))
-		source.attack_verb_continuous = attack_verb_continuous_on
-	if(LAZYLEN(attack_verb_simple_on))
-		source.attack_verb_simple = attack_verb_simple_on
+	if(LAZYLEN(attack_verb_on))
+		source.attack_verb = attack_verb_on
 
 	source.hitsound = hitsound_on
 	source.update_weight_class(w_class_on)
 	source.icon_state = "[source.icon_state]_on"
-	if(inhand_icon_change && source.inhand_icon_state)
-		source.inhand_icon_state = "[source.inhand_icon_state]_on"
-	source.update_inhand_icon()
+	if(inhand_icon_change && source.item_state)
+		source.item_state = "[source.item_state]_on"
+	source.update_appearance()
 
 /*
  * Set our transformed item into its inactive state.
@@ -202,18 +192,16 @@
 	if(throw_speed_on)
 		source.throw_speed = initial(source.throw_speed)
 
-	if(LAZYLEN(attack_verb_continuous_on))
-		source.attack_verb_continuous = attack_verb_continuous_off
-	if(LAZYLEN(attack_verb_simple_off))
-		source.attack_verb_simple = attack_verb_simple_off
+	if(LAZYLEN(attack_verb_off))
+		source.attack_verb = attack_verb_off
 
 	source.hitsound = initial(source.hitsound)
 	source.update_weight_class(initial(source.w_class))
 	source.icon_state = initial(source.icon_state)
-	source.inhand_icon_state = initial(source.inhand_icon_state)
+	source.item_state = initial(source.item_state)
 	if(ismob(source.loc))
 		var/mob/loc_mob = source.loc
-		loc_mob.update_held_items()
+		loc_mob.update_inv_hands()
 
 /*
  * Called on [COMSIG_ITEM_SHARPEN_ACT].

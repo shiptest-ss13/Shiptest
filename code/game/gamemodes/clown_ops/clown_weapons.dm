@@ -59,11 +59,10 @@
 	desc = "An elegant weapon, for a more civilized age."
 	force = 0
 	throwforce = 0
-	force_on = 0
-	throwforce_on = 0
+	active_force = 0
+	active_throwforce = 0
 	hitsound = null
 	attack_verb_on = list("slipped")
-	clumsy_check = FALSE
 	sharpness = IS_BLUNT
 	sword_color = "yellow"
 	heat = 0
@@ -103,7 +102,7 @@
 		return TRUE
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/bananium/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/energy/sword/bananium/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	adjust_slipperiness()
 

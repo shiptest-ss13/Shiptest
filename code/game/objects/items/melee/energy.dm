@@ -1,6 +1,6 @@
 /obj/item/melee/transforming/energy
 	icon = 'icons/obj/weapon/energy.dmi'
-	hitsound_on = 'sound/weapons/blade1.ogg'
+	active_hitsound = 'sound/weapons/blade1.ogg'
 	heat = 3500
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
@@ -29,7 +29,7 @@
 /obj/item/melee/transforming/energy/process()
 	open_flame()
 
-/obj/item/melee/transforming/energy/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/energy/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	if(.)
 		if(active)
@@ -64,17 +64,17 @@
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 40
-	force_on = 150
+	active_force = 150
 	throwforce = 25
-	throwforce_on = 30
+	active_throwforce = 30
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	w_class_on = WEIGHT_CLASS_HUGE
+	active_w_class = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
 	armour_penetration = 100
-	attack_verb_off = list("attacked", "chopped", "cleaved", "torn", "cut")
+	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 
@@ -88,7 +88,7 @@
 	force = 3
 	throwforce = 5
 	hitsound = "swing_hit" //it starts deactivated
-	attack_verb_off = list("tapped", "poked")
+	attack_verb = list("tapped", "poked")
 	throw_speed = 3
 	throw_range = 5
 	sharpness = IS_SHARP
@@ -96,7 +96,7 @@
 	armour_penetration = 35
 	block_chance = 50
 
-/obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/energy/sword/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	if(. && active && sword_color)
 		icon_state = "[base_icon_state][sword_color]"
@@ -122,12 +122,11 @@
 /obj/item/melee/transforming/energy/sword/cyborg/saw //Used by medical Syndicate cyborgs
 	name = "energy saw"
 	desc = "For heavy duty cutting. It has a carbon-fiber blade in addition to a toggleable hard-light edge to dramatically increase sharpness."
-	force_on = 30
+	active_force = 30
 	force = 18 //About as much as a spear
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "esaw_0"
-	icon_state_on = "esaw_1"
 	sword_color = null //stops icon from breaking when turned on.
 	hitcost = 75 //Costs more than a standard cyborg esword
 	w_class = WEIGHT_CLASS_NORMAL
@@ -136,13 +135,8 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.7 //faster as a saw
 
-/obj/item/melee/transforming/energy/sword/cyborg/saw/cyborg_unequip(mob/user)
-	if(!active)
-		return
-	transform_weapon(user, TRUE)
-
 /obj/item/melee/transforming/energy/sword/cyborg/saw/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	return 0
+	return FALSE
 
 /obj/item/melee/transforming/energy/sword/saber
 	var/list/possible_colors = list("red" = COLOR_SOFT_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER, "yellow" = COLOR_YELLOW)
@@ -199,7 +193,6 @@
 	base_icon_state = "cutlass"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon_state_on = "cutlass"
 
 /obj/item/melee/transforming/energy/sword/saber/pirate/red
 	possible_colors = list("red" = COLOR_SOFT_RED)
@@ -243,7 +236,7 @@
 	QDEL_NULL(spark_system)
 	return ..()
 
-/obj/item/melee/transforming/energy/blade/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/energy/blade/on_transform(obj/item/source, mob/user, active)
 	return
 
 /obj/item/melee/transforming/energy/blade/hardlight
@@ -264,20 +257,18 @@
 	force = 0
 	throwforce = 0
 	hitsound = "swing_hit" //it starts deactivated
-	attack_verb_off = list("tapped", "poked")
+	attack_verb = list("tapped", "poked")
 	throw_speed = 3
 	throw_range = 5
-	force_on = 200 //instakill if shields are down
+	active_force = 200 //instakill if shields are down
 
-/obj/item/melee/transforming/energy/ctf/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/energy/ctf/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	if(. && active)
 		icon_state = "plasmasword1"
+	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
+	to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
 
 /obj/item/melee/transforming/energy/ctf/solgov
 	armour_penetration = 40
-	force_on = 34 //desword grade, but 0 blocking
-
-/obj/item/melee/transforming/energy/ctf/transform_messages(mob/living/user, supress_message_text)
-	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
-	to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
+	active_force = 34 //desword grade, but 0 blocking

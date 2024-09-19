@@ -1,88 +1,69 @@
 /obj/item/melee/transforming
 	sharpness = IS_SHARP
-	stealthy_audio = TRUE //Most of these are antag weps so we dont want them to be /too/ overt.
-	var/active = FALSE
-	var/force_on = 30 //force when active
-	var/faction_bonus_force = 0 //Bonus force dealt against certain factions
-	var/throwforce_on = 20
-	var/icon_state_on = "axe1"
-	var/hitsound_on = 'sound/weapons/blade1.ogg'
-	var/list/attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	var/list/attack_verb_off = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_SMALL
-	var/bonus_active = FALSE //If the faction damage bonus is active
-	var/list/nemesis_factions //Any mob with a faction that exists in this list will take bonus damage/effects
-	var/w_class_on = WEIGHT_CLASS_BULKY
-	var/clumsy_check = TRUE
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/melee/transforming/Initialize()
+	var/active = FALSE
+	/// Force while active.
+	var/active_force = 30
+	/// Throwforce while active.
+	var/active_throwforce = 20
+	/// Sharpness while active.
+	var/active_sharpness = IS_SHARP
+	/// Hitsound played attacking while active.
+	var/active_hitsound = 'sound/weapons/blade1.ogg'
+	/// Weight class while active.
+	var/active_w_class = WEIGHT_CLASS_BULKY
+	/// The heat given off when active.
+	var/active_heat = 3500
+
+	var/list/attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+
+/obj/item/melee/transforming/Initialize(mapload)
 	. = ..()
-	if(active)
-		if(attack_verb_on.len)
-			attack_verb = attack_verb_on
-	else
-		if(attack_verb_off.len)
-			attack_verb = attack_verb_off
-		if(embedding)
-			updateEmbedding()
+	make_transformable()
+	AddElement(/datum/element/update_icon_updates_onmob)
 	if(sharpness)
 		AddComponent(/datum/component/butchering, 50, 100, 0, hitsound)
 
-/obj/item/melee/transforming/attack_self(mob/living/carbon/user)
-	if(transform_weapon(user))
-		clumsy_transform_effect(user)
+/obj/item/melee/transforming/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
-/obj/item/melee/transforming/attack(mob/living/target, mob/living/carbon/human/user)
-	var/nemesis_faction = FALSE
-	if(LAZYLEN(nemesis_factions))
-		for(var/F in target.faction)
-			if(F in nemesis_factions)
-				nemesis_faction = TRUE
-				force += faction_bonus_force
-				nemesis_effects(user, target)
-				break
-	. = ..()
-	if(nemesis_faction)
-		force -= faction_bonus_force
+/*
+ * Gives our item the transforming component, passing in our various vars.
+ */
+/obj/item/melee/transforming/proc/make_transformable()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = active_force, \
+		throwforce_on = active_throwforce, \
+		throw_speed_on = 4, \
+		sharpness_on = active_sharpness, \
+		hitsound_on = active_hitsound, \
+		w_class_on = active_w_class, \
+		attack_verb_on = attack_verb_on, \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
-/obj/item/melee/transforming/proc/transform_weapon(mob/living/user, supress_message_text)
-	active = !active
+/obj/item/melee/transforming/process(seconds_per_tick)
+	if(heat)
+		open_flame()
+
+/obj/item/melee/transforming/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
+
 	if(active)
-		force = force_on
-		throwforce = throwforce_on
-		hitsound = hitsound_on
-		throw_speed = 4
-		if(attack_verb_on.len)
-			attack_verb = attack_verb_on
-		icon_state = icon_state_on
-		w_class = w_class_on
-		if(embedding)
-			updateEmbedding()
+		heat = active_heat
+		START_PROCESSING(SSobj, src)
 	else
-		force = initial(force)
-		throwforce = initial(throwforce)
-		hitsound = initial(hitsound)
-		throw_speed = initial(throw_speed)
-		if(attack_verb_off.len)
-			attack_verb = attack_verb_off
-		icon_state = initial(icon_state)
-		w_class = initial(w_class)
-		if(embedding)
-			disableEmbedding()
+		heat = initial(heat)
+		STOP_PROCESSING(SSobj, src)
 
-	transform_messages(user, supress_message_text)
-	add_fingerprint(user)
-	return TRUE
-
-/obj/item/melee/transforming/proc/nemesis_effects(mob/living/user, mob/living/target)
-	return
-
-/obj/item/melee/transforming/proc/transform_messages(mob/living/user, supress_message_text)
-	playsound(user, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)  //changed it from 50% volume to 35% because deafness
-	if(!supress_message_text)
-		to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
-
-/obj/item/melee/transforming/proc/clumsy_transform_effect(mob/living/user)
-	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
-		user.take_bodypart_damage(5,5)
+	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
+	if(user)
+		balloon_alert(user, "[name] [active ? "enabled":"disabled"]")
+	playsound(src, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
+	set_light_on(active)
+	update_appearance(UPDATE_ICON_STATE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
