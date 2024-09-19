@@ -271,7 +271,7 @@
 		var/turf/epicenter = get_turf(loc)
 
 
-		explosion(epicenter, round(range*0.05), round(range*0.5), round(range), round(range*1.5))
+		explosion(epicenter, round(range*0.1), round(range*0.5), round(range), round(range*1.5))
 
 		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
 		if(istype(src.loc, /obj/item/transfer_valve))

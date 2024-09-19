@@ -353,7 +353,7 @@
 		log_bomber(get_mob_by_key(fingerprintslast), "was last key to touch", src, "which ruptured explosively")
 		investigate_log("was destroyed.", INVESTIGATE_ATMOS)
 
-		explosion(epicenter, round(range*0.05), round(range*0.5), round(range), round(range*1.5))
+		explosion(epicenter, round(range*0.2), round(range*0.5), round(range), round(range*1.5))
 
 		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
 
