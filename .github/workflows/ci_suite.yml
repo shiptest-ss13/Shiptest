@@ -112,6 +112,7 @@ jobs:
       matrix:
         arg: [
           "BASIC_TESTS",
+          "ICON_TESTS",
           "CREATE_AND_DESTROY_TEST",
           "PLANET_GEN_TEST",
           "RUIN_PLACEMENT_TEST",
