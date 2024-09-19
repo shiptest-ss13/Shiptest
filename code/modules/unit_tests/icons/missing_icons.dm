@@ -26,6 +26,7 @@
 	//generate_possible_icon_states_list("your/folder/path/")
 	var/list/bad_list = list()
 	for(var/obj/obj_path as anything in subtypesof(/obj))
+		var/icons_to_find = list()
 		var/search_for_w = FALSE
 		var/search_for_on = FALSE
 		if(ispath(obj_path, /obj/item))
@@ -40,32 +41,34 @@
 					search_for_on = TRUE
 				qdel(melee_item)
 
-		var/icon = initial(obj_path.icon)
-		if(isnull(icon))
-			continue
-		var/icon_state = initial(obj_path.icon_state)
-		if(isnull(icon_state))
-			continue
+		var/icons_to_find += initial(obj_path.icon)
 
-		if(length(bad_list) && (icon_state in bad_list[icon]))
-			continue
+		for(var/icon in icons_to_find)
+			if(isnull(icon))
+				continue
+			var/icon_state = initial(obj_path.icon_state)
+			if(isnull(icon_state))
+				continue
 
-		if(icon_exists(icon, icon_state))
-			continue
+			if(length(bad_list) && (icon_state in bad_list[icon]))
+				continue
 
-		if(icon_state == "nothing")
-			continue
+			if(icon_exists(icon, icon_state))
+				continue
 
-		bad_list[icon] += list(icon_state)
+			if(icon_state == "nothing")
+				continue
+	
+			bad_list[icon] += list(icon_state)
 
-		if(search_for_on && icon_exists(icon, "[icon_state]_on"))
-			TEST_FAIL("Missing on icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
-		if(search_for_w && icon_exists(icon, "[icon_state]_on"))
-			TEST_FAIL("Missing wielded icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
+			if(search_for_on && icon_exists(icon, "[icon_state]_on"))
+				TEST_FAIL("Missing on icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
+			if(search_for_w && icon_exists(icon, "[icon_state]_on"))
+				TEST_FAIL("Missing wielded icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
 
-		var/match_message
-		if(icon_state in possible_icon_states)
-			for(var/file_place in possible_icon_states[icon_state])
-				match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-		TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
+			var/match_message
+			if(icon_state in possible_icon_states)
+				for(var/file_place in possible_icon_states[icon_state])
+					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
+			TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
 
