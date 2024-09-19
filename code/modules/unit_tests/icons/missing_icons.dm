@@ -26,10 +26,18 @@
 	//generate_possible_icon_states_list("your/folder/path/")
 	var/list/bad_list = list()
 	for(var/obj/obj_path as anything in subtypesof(/obj))
+		var/search_for_w = FALSE
+		var/search_for_on = FALSE
 		if(ispath(obj_path, /obj/item))
 			var/obj/item/item_path = obj_path
 			if(initial(item_path.item_flags) & ABSTRACT)
 				continue
+			if(ispath(obj_path, /obj/item/melee))
+				var/obj/item/melee/melee_item = new(item_path)
+				if(melee_item.GetComponent(/datum/component/two_handed))
+					search_for_w = TRUE
+				if(melee_item.GetComponent(/datum/component/transforming))
+					search_for_on = TRUE
 
 		var/icon = initial(obj_path.icon)
 		if(isnull(icon))
@@ -48,6 +56,11 @@
 			continue
 
 		bad_list[icon] += list(icon_state)
+
+		if(search_for_on && icon_exists(icon, "[icon_state]_on"))
+			TEST_FAIL("Missing on icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
+		if(search_for_w && icon_exists(icon, "[icon_state]_on"))
+			TEST_FAIL("Missing wielded icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
 
 		var/match_message
 		if(icon_state in possible_icon_states)
