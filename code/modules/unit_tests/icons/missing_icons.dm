@@ -26,7 +26,7 @@
 	//generate_possible_icon_states_list("your/folder/path/")
 	var/list/bad_list = list()
 	for(var/obj/obj_path as anything in subtypesof(/obj))
-		var/icons_to_find = list()
+		var/list/icons_to_find = list()
 		var/search_for_w = FALSE
 		var/search_for_on = FALSE
 		if(ispath(obj_path, /obj/item))
@@ -41,7 +41,11 @@
 					search_for_on = TRUE
 				qdel(melee_item)
 
-		var/icons_to_find += initial(obj_path.icon)
+		icons_to_find += initial(obj_path.icon)
+		if(search_for_w)
+			icons_to_find += "[initial(obj_path.icon)]_w"
+		if(search_for_on)
+			icons_to_find += "[initial(obj_path.icon)]_on"
 
 		for(var/icon in icons_to_find)
 			if(isnull(icon))
@@ -58,13 +62,8 @@
 
 			if(icon_state == "nothing")
 				continue
-	
-			bad_list[icon] += list(icon_state)
 
-			if(search_for_on && icon_exists(icon, "[icon_state]_on"))
-				TEST_FAIL("Missing on icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
-			if(search_for_w && icon_exists(icon, "[icon_state]_on"))
-				TEST_FAIL("Missing wielded icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"")
+			bad_list[icon] += list(icon_state)
 
 			var/match_message
 			if(icon_state in possible_icon_states)
