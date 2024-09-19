@@ -36,28 +36,22 @@
 			var/obj/item/item_path = obj_path
 			if(initial(item_path.item_flags) & ABSTRACT)
 				continue
-
-#ifdef EXTRA_ICON_TESTS
-			if(ispath(obj_path, /obj/item))
+			if(ispath(obj_path, /obj/item/melee))
 				if(obj_path != /obj/item/melee/sword/supermatter)
 					var/obj/item/melee/melee_item = new item_path()
 					if(melee_item.GetComponent(/datum/component/two_handed))
 						search_for_w = TRUE
 					if(melee_item.GetComponent(/datum/component/transforming))
 						search_for_on = TRUE
-#endif
 
 		var/icon = initial(obj_path.icon)
 		var/init_icon_path = initial(obj_path.icon_state)
 		icons_to_find += init_icon_path
-
-#ifdef EXTRA_ICON_TESTS
 		if(!isnull(init_icon_path))
 			if(search_for_w)
 				icons_to_find += "[init_icon_path]_w"
 			if(search_for_on)
 				icons_to_find += "[init_icon_path]_on"
-#endif
 
 		for(var/icon_state in icons_to_find)
 			if(isnull(icon))
