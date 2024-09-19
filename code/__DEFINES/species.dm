@@ -14,13 +14,13 @@
 /// The natural temperature for a body
 #define HUMAN_BODYTEMP_NORMAL 310.15
 /// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
-#define HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR 11
+#define HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR 22
 /// Minimum amount of kelvin moved toward 310K per tick. So long as abs(310.15 - bodytemp) is more than 50.
-#define HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM 12
+#define HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM 6
 ///Similar to the HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to lose bodytemp faster.
-#define HUMAN_BODYTEMP_COLD_DIVISOR 15
+#define HUMAN_BODYTEMP_COLD_DIVISOR 20
 /// Similar to the HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.
-#define HUMAN_BODYTEMP_HEAT_DIVISOR 15
+#define HUMAN_BODYTEMP_HEAT_DIVISOR 10
 /// The maximum number of degrees that your body can cool in 1 tick, due to the environment, when in a cold area.
 #define HUMAN_BODYTEMP_COOLING_MAX -100
 /// The maximum number of degrees that your body can heat up in 1 tick, due to the environment, when in a hot area.
