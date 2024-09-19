@@ -189,8 +189,7 @@
 		if(!W)
 			continue
 		var/turf/tomove = get_step_towards(W,my_target)
-		var/movedir = get_dir(W, tomove)
-		if(!W.CanPassThrough(tomove, movedir))
+		if(!step_towards(W, tomove))
 			if(isopenturf(tomove))
 				W.forceMove(tomove)
 				particles -= W
