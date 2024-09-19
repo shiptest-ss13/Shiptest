@@ -39,7 +39,7 @@
 				log_world("[obj_path] is abstract!")
 				continue
 			if(ispath(obj_path, /obj/item/melee))
-				var/obj/item/melee/melee_item = new(item_path)
+				var/obj/item/melee/melee_item = new item_path()
 				if(melee_item.GetComponent(/datum/component/two_handed))
 					search_for_w = TRUE
 					log_world("[obj_path] can be twohanded!!!!")
