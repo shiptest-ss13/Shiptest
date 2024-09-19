@@ -107,7 +107,7 @@
 				<li>A firesuit must be connected to the Firefighter chassis for heat shielding.</li>
 				<li>Internal armor is plasteel for additional strength.</li>
 				<li>External armor must be installed in 2 parts, totaling 10 sheets.</li>
-				<li>Completed mech is more resiliant against fire, and is a bit more durable overall</li>
+				<li>Completed exosuit is more resiliant against fire, and is a bit more durable overall</li>
 				<li>Nanotrasen is determined to the safety of its <s>investments</s> employees.</li>
 				</ol>
 				</body>
@@ -273,6 +273,10 @@
 			Soon it will drops some apples and you can grind them for the bacteria.<br>
 			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
 
+			<h2> Ratios </h2>
+			A common trend among Trickwines is the ratio of 3:1:1.<br>
+			3 parts being an ethonal, the other 2 parts are often made from flora or fauna.<br>
+
 			<h2> Ashwine </h2>
 			It's kind of our trademark, and it's one of the simplest trickwines to make.<br>
 			These are the most common wines used in ceremonies so we often stock ships with the moonflowers needed to make them.<br>
@@ -303,17 +307,14 @@
 
 			<h2> Forcewine </h2>
 			Two intresting effects from the consumption of Forcewine.<br>
-			First it seems to give you an "anti magic" effect, I only have one exprience with this but it fizzled out ancient rune that we could best trace back to a blood cult.<br>
+			First it seems to give you an "anti magic" effect, I have read about of tales of how it fizzled out some sort of great curse that we could best trace back to a ancient cult.<br>
 			Second is it protects the mind from cohersion and mind control.<br>
 			From my research this seems to act like nanotrasen mindshield implants.<br>
 			Would recomend for any esoteric senarios. We wont see these alot but its always smart to prepare for the worst.<br>
 			You can also use it to entrap Fauna inside of a forcefield like bubble, Gives you time to breath and prepare an attack.<br>
-			3:1:1 Tequila, Space Montain Wind, and I know its one of the most difficult things to come by but hollow water, Its that stuff you can extract from geysers<br>
-
-			<h2> Prismwine </h2>
+			3:1:1. Tequila, Space Montain Wind, and I know its one of the most difficult things to come by but hollow water, Its that stuff you can extract from geysers<br>
 			Gives you a nice shiny layer of armour, fire seems to have alot harder time sticking to me when i tested it.<br>
-			Throwing it seeems to do the reverse acting like a magnifying glass to burns and lasers<br>
-			Made 3:1:1 with good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
+			3:1:1. Good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
 
 			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
 			As a bonus, most of the other factions have no clue how to make these so you can sell them for a fair chunk of cash.<br>

@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	custom_materials = list(/datum/material/iron=75)
 	subspace_transmission = TRUE
 	headset = TRUE
+	listening = TRUE
 	canhear_range = 0 // can't hear headsets from very far away
 
 	slot_flags = ITEM_SLOT_EARS
@@ -115,6 +116,26 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/syndicate/alt/leader
 	name = "team leader headset"
+	command = TRUE
+
+/obj/item/radio/headset/syndicate/suns
+	name = "SUNS headset"
+	icon_state = "suns_headset"
+	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere."
+
+/obj/item/radio/headset/syndicate/suns/command
+	name = "SUNS command headset"
+	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff."
+	command = TRUE
+
+/obj/item/radio/headset/syndicate/alt/suns
+	name = "SUNS bowman headset"
+	icon_state = "suns_headset_alt"
+	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. Protects ears from distractions during exams."
+
+/obj/item/radio/headset/syndicate/alt/suns/command
+	name = "SUNS bowman command headset"
+	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff. Protects ears from distractions during exams."
 	command = TRUE
 
 //nanotrasen

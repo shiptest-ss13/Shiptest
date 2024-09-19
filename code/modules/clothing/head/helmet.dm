@@ -1,10 +1,12 @@
 /obj/item/clothing/head/helmet
 	name = "helmet"
 	desc = "Standard Security gear. Protects the head from impacts."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -16,9 +18,14 @@
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
-	var/can_flashlight = FALSE //if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
+	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
+	var/can_flashlight = FALSE
 	var/obj/item/flashlight/seclite/attached_light
 	var/datum/action/item_action/toggle_helmet_flashlight/action_light
+
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	// should we overlay the items inside our helmet
+	var/content_overlays = FALSE
 
 /obj/item/clothing/head/helmet/Initialize()
 	. = ..()
@@ -171,16 +178,21 @@
 	var/mutable_appearance/flashlightlight_overlay
 	if(isinhands)
 		return
-	if(!attached_light)
-		return
-	if(attached_light.on)
-		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+	if(attached_light)
+		if(attached_light.on)
+			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+		else
+			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
+		. += flashlightlight_overlay
+	if(content_overlays)
+		for(var/obj/item/I in contents)
+			. += I.get_helmet_overlay()
 	else
-		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
-	. += flashlightlight_overlay
+		return
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
 	if(issignaler(I))
@@ -214,13 +226,15 @@
 		"Snow" = "helmetalt_snow",
 		"Urban" = "helmetalt_urban",
 		)
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
 	icon_state = "marine_command"
 	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
+	slowdown = 0.3
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -272,7 +286,7 @@
 	visor_flags_inv = HIDEFACE
 	toggle_cooldown = 0
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
-	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice
@@ -313,7 +327,7 @@
 	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -469,16 +483,6 @@
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
 
-/obj/item/clothing/head/helmet/r_trapper
-	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
-	icon_state = "rus_ushanka"
-	item_state = "rus_ushanka"
-	body_parts_covered = HEAD
-	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 20, "bio" = 50, "rad" = 20, "fire" = -10, "acid" = 50)
-
 /obj/item/clothing/head/helmet/infiltrator
 	name = "infiltrator helmet"
 	desc = "The galaxy isn't big enough for the two of us."
@@ -488,7 +492,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flash_protect = FLASH_PROTECTION_WELDER
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	strip_delay = 80
 
 /obj/item/clothing/head/helmet/swat/inteq
@@ -497,6 +501,8 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
 	name = "inteq helmet"
@@ -504,6 +510,8 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
@@ -545,6 +553,7 @@
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/medical
 	name = "\improper trauma team helmet"
@@ -580,9 +589,3 @@
 		"Snow" = "x11helm_snow",
 		"Urban" = "x11helm_urban",
 		)
-
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
-	icon_state = "x11helm_frontier"
-	unique_reskin = null

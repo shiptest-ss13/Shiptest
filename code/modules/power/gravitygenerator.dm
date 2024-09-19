@@ -32,10 +32,6 @@
 	if(severity == 1) // Very sturdy.
 		set_broken()
 
-/obj/machinery/gravity_generator/blob_act(obj/structure/blob/B)
-	if(prob(20))
-		set_broken()
-
 /obj/machinery/gravity_generator/zap_act(power, zap_flags)
 	..()
 	if(zap_flags & ZAP_MACHINE_EXPLOSIVE)
@@ -115,7 +111,7 @@
 /obj/machinery/gravity_generator/main
 	icon_state = "on_8"
 	idle_power_usage = 0
-	active_power_usage = 3000
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	power_channel = AREA_USAGE_ENVIRON
 	sprite_number = 8
 	use_power = IDLE_POWER_USE
@@ -286,7 +282,10 @@
 /obj/machinery/gravity_generator/main/proc/set_state(new_state)
 	charging_state = POWER_IDLE
 	on = new_state
-	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 	// Sound the alert if gravity was just enabled or disabled.
 	var/alert = FALSE
 	if(SSticker.IsRoundInProgress())

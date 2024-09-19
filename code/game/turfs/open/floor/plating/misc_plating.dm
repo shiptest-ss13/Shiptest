@@ -11,11 +11,6 @@
 	icon_state = "plating"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
-/turf/open/floor/plating/icecropolis
-	icon_state = "plating"
-	baseturfs = /turf/open/indestructible/necropolis/air
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-
 /turf/open/floor/plating/abductor
 	name = "alien floor"
 	icon_state = "alienpod1"

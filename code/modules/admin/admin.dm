@@ -153,7 +153,6 @@
 				body += "<A href='?_src_=holder;[HrefToken()];makerobot=[REF(M)]'>Make Robot</A>"
 				body += "<A href='?_src_=holder;[HrefToken()];makealien=[REF(M)]'>Make Alien</A>"
 				body += "<A href='?_src_=holder;[HrefToken()];makeslime=[REF(M)]'>Make Slime</A>"
-				body += "<A href='?_src_=holder;[HrefToken()];makeblob=[REF(M)]'>Make Blob</A>"
 
 			//Simple Animals
 			if(isanimal(M))
@@ -215,7 +214,7 @@
 
 
 /datum/admins/proc/access_news_network() //MARKER
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Access Newscaster Network"
 	set desc = "Allows you to view, add and edit news feeds."
 
@@ -700,7 +699,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
 /datum/admins/proc/spawn_atom(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn an atom"
 	set name = "Spawn"
 
@@ -729,7 +728,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/podspawn_atom(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn an atom via supply drop"
 	set name = "Podspawn"
 
@@ -753,7 +752,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Podspawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/spawn_cargo(object as text)
-	set category = "Debug"
+	set category = "Event.Spawning"
 	set desc = "(atom path) Spawn a cargo crate"
 	set name = "Spawn Cargo"
 
@@ -1018,3 +1017,14 @@
 	dat += "Disable footsteps: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_FOOTSTEPS]'><b>[SSlag_switch.measures[DISABLE_FOOTSTEPS] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to character</span><br />"
 	dat += "</body></html>"
 	usr << browse(dat.Join(), "window=lag_switch_panel;size=420x480")
+
+/datum/admins/proc/view_manifest()
+	set category = "Admin.Game"
+	set name = "View Manifest"
+	set desc = "Opens the Manifest UI."
+
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
+
+	if(ismob(usr))
+		GLOB.crew_manifest_tgui.ui_interact(usr)

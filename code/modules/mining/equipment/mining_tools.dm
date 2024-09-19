@@ -17,6 +17,7 @@
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -24,6 +25,7 @@
 	attack_verb = list("ineffectively hit")
 	force = 1
 	throwforce = 1
+	wall_decon_damage = 50
 
 /obj/item/pickaxe/mini
 	name = "compact pickaxe"
@@ -53,6 +55,7 @@
 	force = 19
 	custom_price = 1500
 	custom_premium_price = 2000
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill
 	name = "mining drill"
@@ -79,8 +82,9 @@
 	icon_state = "diamonddrill"
 	item_state = "diamonddrill"
 	toolspeed = 0.2
-	desc = "EXOCON's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
+	desc = "EXOCOM's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
 	force = 20
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
 	name = "diamond-tipped integrated mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
@@ -94,7 +98,7 @@
 	toolspeed = 0.1 //the epitome of powertools. extremely fast mining
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
-	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCON. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
+	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCOM. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
 	force = 25
 	attack_verb = list("blasted", "smashed", "slammed", "hammered")
 

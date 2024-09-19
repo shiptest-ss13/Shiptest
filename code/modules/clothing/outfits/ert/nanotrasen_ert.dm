@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1)
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/kitchen/knife/switchblade
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -434,7 +434,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/storage/belt/utility/full
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 	glasses = /obj/item/clothing/glasses/welding
 	back = /obj/item/storage/backpack/ert/engineer
 

@@ -3,11 +3,11 @@
 	desc = "Used to separate chemicals and distribute them in a variety of forms."
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "mixer0"
 	base_icon_state = "mixer"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 20
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_master
 
@@ -85,10 +85,6 @@
 	. = ..()
 	if(machine_stat & BROKEN)
 		. += "waitlight"
-
-/obj/machinery/chem_master/blob_act(obj/structure/blob/B)
-	if (prob(50))
-		qdel(src)
 
 /obj/machinery/chem_master/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "mixer0_nopower", "mixer0", I))

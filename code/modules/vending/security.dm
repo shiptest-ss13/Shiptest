@@ -14,8 +14,7 @@
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/ammo_box/c9mm/rubbershot = 3,
 		/obj/item/ammo_box/c9mm = 1,
-		/obj/item/stock_parts/cell/gun = 3)
-	contraband = list(
+		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
 		/obj/item/storage/belt/security/webbing = 5,
@@ -99,7 +98,7 @@
 
 		/obj/item/storage/box/lethalshot = 6,
 		/obj/item/stock_parts/cell/gun = 5,
-		/obj/item/ammo_box/magazine/uzim9mm = 5,
+		/obj/item/ammo_box/magazine/spitter_9mm = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
@@ -108,8 +107,7 @@
 	premium = list()
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
-		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
-		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/smg/mini_uzi)
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"
@@ -121,20 +119,20 @@
 		/obj/item/restraints/handcuffs = 3,
 		/obj/item/assembly/flash/handheld = 2,
 		/obj/item/flashlight/seclite = 2,
-		/obj/item/ammo_box/magazine/m10mm = 3,
-		/obj/item/ammo_box/magazine/smgm45 = 3,
+		/obj/item/ammo_box/magazine/m10mm_ringneck = 3,
+		/obj/item/ammo_box/magazine/m45_cobra = 3,
 		/obj/item/ammo_box/magazine/sniper_rounds = 3,
-		/obj/item/ammo_box/magazine/m556 = 2,
-		/obj/item/ammo_box/magazine/m12g = 3,
-		/obj/item/ammo_box/magazine/ebr = 5,
+		/obj/item/ammo_box/magazine/m556_42_hydra = 2,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum = 3,
+		/obj/item/ammo_box/magazine/m556_42_hydra/small = 5,
 		/obj/item/grenade/c4 = 1,
 		/obj/item/grenade/frag = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90,
-		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r,
-		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog)
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/assault/hydra,
+		"sniper rifle" = /obj/item/gun/ballistic/automatic/marksman/taipan,
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/cobra,
+		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/bulldog)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"

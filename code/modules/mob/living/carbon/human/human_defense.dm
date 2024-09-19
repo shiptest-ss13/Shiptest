@@ -284,30 +284,30 @@
 			return TRUE
 		apply_damage(damage, BRUTE, affecting, armor_block)
 
-		if(M.a_intent == INTENT_DISARM) //Always drop item in hand on first go.  If no item exists, try to shove them back.  If you share the tile with the target, slam them directly into the ground to stun them and slightly damage them.
-			var/obj/item/I = get_active_held_item()
-			if(I && dropItemToGround(I))
-				playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
-				visible_message("<span class='danger'>[M] disarms [src]!</span>", \
-								"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
-				to_chat(M, "<span class='danger'>You disarm [src]!</span>")
-			else if(get_dist(src, M) != 0)
-				playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
-				var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
-				Knockdown(0.3 SECONDS)
-				throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
-				log_combat(M, src, "shoved")
-				visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
-								"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
-				to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
-			else
-				Paralyze(3 SECONDS)
-				adjustBruteLoss(5)
-				playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
-				visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
-								"<span class='userdanger'>[M] slams you into the ground!</span>", "<span class='hear'>You hear something slam loudly onto the floor!</span>", null, M)
-				to_chat(M, "<span class='danger'>You slam [src] into the floor beneath you!</span>")
-				log_combat(M, src, "slammed into the ground")
+	if(M.a_intent == INTENT_DISARM) //Always drop item in hand on first go.  If no item exists, try to shove them back.  If you share the tile with the target, slam them directly into the ground to stun them and slightly damage them.
+		var/obj/item/I = get_active_held_item()
+		if(I && dropItemToGround(I) && prob(50))
+			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
+			visible_message("<span class='danger'>[M] disarms [src]!</span>", \
+							"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
+			to_chat(M, "<span class='danger'>You disarm [src]!</span>")
+		else if(get_dist(src, M) != 0)
+			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
+			var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
+			Knockdown(0.3 SECONDS)
+			throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
+			log_combat(M, src, "shoved")
+			visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
+							"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
+			to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
+		else
+			Paralyze(1 SECONDS)
+			adjustBruteLoss(5)
+			playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
+			visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
+							"<span class='userdanger'>[M] slams you into the ground!</span>", "<span class='hear'>You hear something slam loudly onto the floor!</span>", null, M)
+			to_chat(M, "<span class='danger'>You slam [src] into the floor beneath you!</span>")
+			log_combat(M, src, "slammed into the ground")
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
 
@@ -473,18 +473,11 @@
 				if(!max_limb_loss)
 					break
 
-
-/mob/living/carbon/human/blob_act(obj/structure/blob/B)
-	if(stat == DEAD)
-		return
-	show_message("<span class='userdanger'>The blob attacks you!</span>")
-	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, "melee"))
-
-
 ///Calculates the siemens coeff based on clothing and species, can also restart hearts.
 /mob/living/carbon/human/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
+	//If it doesnt have physiology its prob still initializing.
+	if(!physiology)
+		return
 	//Calculates the siemens coeff based on clothing. Completely ignores the arguments
 	if(flags & SHOCK_TESLA) //I hate this entire block. This gets the siemens_coeff for tesla shocks
 		if(gloves && gloves.siemens_coefficient <= 0)
@@ -498,6 +491,10 @@
 	else if(!(flags & SHOCK_NOGLOVES)) //This gets the siemens_coeff for all non tesla shocks
 		if(gloves)
 			siemens_coeff *= gloves.siemens_coefficient
+	//If it doesnt have physiology its prob still initializing.
+	if(!physiology)
+		. = ..()
+		return
 	siemens_coeff *= physiology.siemens_coeff
 	siemens_coeff *= dna.species.siemens_coeff
 	. = ..()
@@ -776,10 +773,10 @@
 				combined_msg += "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
 
 	for(var/t in missing)
-		combined_msg += "<span class='boldannounce'>Your [parse_zone(t)] is missing!</span>"
+		combined_msg += span_boldannounce("Your [parse_zone(t)] is missing!</span>")
 
-	if(bleed_rate)
-		combined_msg += "<span class='danger'>You are bleeding!</span>"
+	for(var/obj/item/bodypart/BP in get_bleeding_parts(TRUE))
+		combined_msg += span_danger("Your [parse_zone(BP.body_zone)] is bleeding!</span>")
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)
 			combined_msg += "<span class='info'>You're completely exhausted.</span>"

@@ -50,6 +50,78 @@
 	display_name = "tie, recolorable"
 	path =  /obj/item/clothing/neck/tie
 
+//Gloves
+
+/datum/gear/accessory/gloves
+	subtype_path = /datum/gear/accessory/gloves
+	slot = ITEM_SLOT_GLOVES
+
+/datum/gear/accessory/gloves/black
+	display_name = "gloves, black"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/black
+
+/datum/gear/accessory/gloves/white
+	display_name = "gloves, white"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/white
+
+/datum/gear/accessory/gloves/brown
+	display_name = "gloves, brown"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/brown
+
+/datum/gear/accessory/gloves/fingerless
+	display_name = "gloves, fingerless"
+	description = "Radical hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/fingerless
+
+/datum/gear/accessory/gloves/evening
+	display_name = "gloves, evening"
+	description = "Excessively fancy elbow-length gloves."
+	path = /obj/item/clothing/gloves/color/evening
+
+//Bone
+
+/datum/gear/accessory/fangnecklace
+	display_name = "wolf fang necklace"
+	path = /obj/item/clothing/neck/fangnecklace
+
+/datum/gear/accessory/bonearmlet
+	display_name = "bone armlet"
+	path = /obj/item/clothing/accessory/bonearmlet
+	slot = null
+
+//Masks
+
+/datum/gear/accessory/mask
+	subtype_path = /datum/gear/accessory/mask
+	slot = ITEM_SLOT_MASK
+
+/datum/gear/accessory/mask/bandana/red
+	display_name = "bandana, red"
+	path = /obj/item/clothing/mask/bandana/red
+
+/datum/gear/accessory/mask/bandana/skull
+	display_name = "bandana, skull"
+	path = /obj/item/clothing/mask/bandana/skull
+
+/datum/gear/accessory/mask/bandana/black
+	display_name = "bandana, black"
+	path = /obj/item/clothing/mask/bandana/black
+
+/datum/gear/accessory/mask/bandana/blue
+	display_name = "bandana, blue"
+	path = /obj/item/clothing/mask/bandana/blue
+
+/datum/gear/accessory/mask/surgical
+	display_name = "surgical mask"
+	path = /obj/item/clothing/mask/surgical
+
+/datum/gear/accessory/mask/balaclava
+	display_name = "balaclava"
+	path = /obj/item/clothing/mask/balaclava
+
 //Misc
 
 /datum/gear/accessory/waistcoat
@@ -62,34 +134,11 @@
 	path = /obj/item/clothing/neck/stethoscope
 	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
 
-/datum/gear/accessory/collar
-	display_name = "pet collar"
-	description = "Only the truly insane would wear this around their neck."
-	path = /obj/item/clothing/neck/petcollar
+/datum/gear/accessory/headphones
+	display_name = "headphones"
+	slot = ITEM_SLOT_EARS
+	path = /obj/item/instrument/piano_synth/headphones
 
-/datum/gear/accessory/gloves/black
-	display_name = "black gloves"
-	description = "Standard hand coverings for everyday use."
-	path = /obj/item/clothing/gloves/color/black
-
-/datum/gear/accessory/gloves/white
-	display_name = "white gloves"
-	description = "Standard hand coverings for everyday use."
-	path = /obj/item/clothing/gloves/color/white
-
-/datum/gear/accessory/gloves/evening
-	display_name = "evening gloves"
-	description = "Excessively fancy elbow-length gloves."
-	path = /obj/item/clothing/gloves/color/evening
-	slot = ITEM_SLOT_GLOVES
-
-/datum/gear/accessory/tiki
-	display_name = "tiki mask"
-	description = "A wooden mask, simple, really."
-	path = /obj/item/clothing/mask/gas/tiki_mask
-	slot = ITEM_SLOT_MASK
-
-/datum/gear/accessory/joymask
-	display_name = "face with tears of joy mask"
-	path = /obj/item/clothing/mask/joy
-	slot = ITEM_SLOT_MASK
+/datum/gear/accessory/pocketprotector
+	display_name = "pocket protector"
+	path = /obj/item/clothing/accessory/pocketprotector

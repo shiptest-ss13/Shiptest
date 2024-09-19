@@ -388,11 +388,11 @@
 		return
 
 	to_chat(user, "<span class='warning'>You begin to manually override the local database...</span>")
-	if(!do_after_mob(user, list(src), 2 SECONDS))
+	if(!do_after(user, 2 SECONDS, list(src)))
 		return COMPONENT_BLOCK_TOOL_ATTACK
 
 	priority_announce("Illegal access to local ship database detected.", sender_override="[src.name]", zlevel=virtual_z())
-	if(!do_after_mob(user, list(src), 10 SECONDS))
+	if(!do_after(user, 10 SECONDS, list(src)))
 		return COMPONENT_BLOCK_TOOL_ATTACK
 
 	say("Warning, database corruption present, resetting local database state.")

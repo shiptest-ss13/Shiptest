@@ -1,5 +1,5 @@
 /datum/species/moth
-	name = "\improper Mothperson"
+	name = "\improper Moth"
 	id = SPECIES_MOTH
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
@@ -72,11 +72,6 @@
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	return ..()
-
-/datum/species/moth/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 9 //flyswatters deal 10x damage to moths
-	return 0
 
 /datum/species/space_move(mob/living/carbon/human/H)
 	. = ..()

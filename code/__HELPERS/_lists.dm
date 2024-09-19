@@ -16,7 +16,7 @@
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!length(L)) { L = null; } }
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
 #define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
-#define LAZYFIND(L, V) L ? L.Find(V) : 0
+#define LAZYFIND(L, V) (L ? L.Find(V) : 0)
 #define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= length(L) ? L[I] : null) : L[I]) : null)
 #define LAZYSET(L, K, V) if(!L) { L = list(); } L[K] = V;
 #define LAZYISIN(L, V) (L ? (V in L) : FALSE)
@@ -109,13 +109,25 @@
 
 			return "[output][and_text][input[index]]"
 
-//Checks for specific types in a list
-/proc/is_type_in_list(atom/A, list/L)
-	if(!LAZYLEN(L) || !A)
+/**
+ * Checks for specific types in a list.
+ *
+ * If using zebra mode the list should be an assoc list with truthy/falsey values.
+ * The check short circuits so earlier entries in the input list will take priority.
+ * Ergo, subtypes should come before parent types.
+ * Notice that this is the opposite priority of [/proc/typecacheof].
+ *
+ * Arguments:
+ * - [type_to_check][/datum]: An instance to check.
+ * - [list_to_check][/list]: A list of typepaths to check the type_to_check against.
+ * - zebra: Whether to use the value of the matching type in the list instead of just returning true when a match is found.
+ */
+/proc/is_type_in_list(datum/type_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !type_to_check)
 		return FALSE
-	for(var/type in L)
-		if(istype(A, type))
-			return TRUE
+	for(var/type in list_to_check)
+		if(istype(type_to_check, type))
+			return !zebra || list_to_check[type] // Subtypes must come first in zebra lists.
 	return FALSE
 
 //Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')

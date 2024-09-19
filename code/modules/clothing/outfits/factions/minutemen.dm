@@ -93,6 +93,7 @@
 	head = /obj/item/clothing/head/hardhat/white
 	ears = /obj/item/radio/headset/clip
 	uniform = /obj/item/clothing/under/clip
+	gloves = /obj/item/clothing/gloves/color/yellow
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
@@ -239,6 +240,21 @@
 
 	head = /obj/item/clothing/head/flatcap/clip
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	shoes = /obj/item/clothing/shoes/laceup
+
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+
+	r_pocket = /obj/item/radio
+
+/datum/outfit/job/clip/correspondant
+	name = "CLIP - War Correspondent"
+	job_icon = "curator"
+	jobtype = /datum/job/curator
+
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -537,16 +553,16 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chicken_wings_hot_sauce=1)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
-	name = "CLIP Minutemen - Minuteman (Armed - CM-16)"
+	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/clip/p16
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
+	belt = /obj/item/storage/belt/military/clip/cm82
 
-/datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4 //f4 is rename of GAL, don't wanna repath upon adding the clip guns though, if i forget to remove this during then, fucking yell at me
-	name = "CLIP Minutemen - Minuteman (Armed - CM-GAL)"
+/datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4
+	name = "CLIP Minutemen - Minuteman (Armed - F4)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/gal
-	belt = /obj/item/storage/belt/military/clip/gal
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/f4
+	belt = /obj/item/storage/belt/military/clip/f4
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/cm5
 	name = "CLIP Minutemen - Minuteman (Armed - CM-5)"
@@ -565,9 +581,9 @@
 	belt = /obj/item/storage/belt/military/clip/engi
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/engi/armed
-	name = "CLIP Minutemen - Field Engineer (Armed - CM-16)"
+	name = "CLIP Minutemen - Field Engineer (Armed - CM-82)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
@@ -583,20 +599,25 @@
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/cheese_pizza_slice, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/cheese_pizza_slice, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/cm5_9mm=3)
+
+/obj/item/storage/belt/military/clip/gunner/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/belt/military/clip/gunner/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/skm_762_40/extended(src)
+		new /obj/item/ammo_box/magazine/cm40_762_40_box(src)
 	new /obj/item/grenade/frag(src)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
-	name = "CLIP Minutemen - Field Gunner (Armed - SKM-24u)" //See above, replace with CLIP LMG when added
+	name = "CLIP Minutemen - Field Gunner (Armed - CM-40)"
 	id_assignment = "Machinegunner"
 
 	accessory = /obj/item/clothing/accessory/armband
 	belt = /obj/item/storage/belt/military/clip/gunner
-	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended
+	suit_store = /obj/item/gun/ballistic/automatic/hmg/cm40
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1)
 
@@ -624,8 +645,8 @@
 /datum/outfit/job/clip/minutemen/grunt/lead/armed
 	name = "CLIP Minutemen - Field Sergeant (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/clip/p16
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
+	belt = /obj/item/storage/belt/military/clip/cm82
 	//replace commander with the cm23 when its impemented, see the cm-f4 above
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 

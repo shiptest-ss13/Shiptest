@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	move_resist = INFINITY
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+	//Whether the mining scanner is able to locate this vein.
+	var/detectable = TRUE
 	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein
 	//Used to determine difficulty & ore amounts
@@ -40,8 +42,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		)
 	var/spawn_text = "emerges from"
@@ -75,6 +77,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			ore_list.Remove(picked)
 	GLOB.ore_veins += src
 
+/obj/structure/vein/examine(mob/user)
+	. = ..()
+	if(!detectable)
+		. += span_notice("This vein has been marked as a site of no interest, and will not show up on deep core scans.")
+
 /obj/structure/vein/Destroy()
 	GLOB.ore_veins -= src
 	return ..()
@@ -105,6 +112,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/proc/toggle_spawning()
 	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
 
+
 //
 //	Planetary and Class Subtypes
 //	The current set of subtypes are heavily subject to future balancing and reworking as the balance of them is tested more
@@ -126,11 +134,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6
 	spawn_time = 100
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 5,
 		)
 
 /obj/structure/vein/classthree
@@ -149,18 +157,18 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 80
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril = 10,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
 
 /obj/structure/vein/ice
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 30,
 		/mob/living/simple_animal/hostile/asteroid/polarbear = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 20,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 20,
@@ -176,6 +184,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 2,
 		/obj/item/stack/ore/gold = 1,
 		/obj/item/stack/ore/diamond = 1,
+		/obj/item/stack/ore/ice = 7,
 		)
 
 /obj/structure/vein/ice/classtwo
@@ -190,6 +199,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 2,
 		/obj/item/stack/ore/gold = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 100
@@ -206,6 +216,40 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/bluespace_crystal = 4,
+		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 80
+
+// Asteroid veins are the same as the base planetary ones yield wise, but with the asteroid mobs.
+
+/obj/structure/vein/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		)
+
+/obj/structure/vein/classtwo/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 15,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5
+		)
+
+/obj/structure/vein/classthree/asteroid
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 60,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10
+		)
+

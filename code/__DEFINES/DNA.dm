@@ -24,14 +24,10 @@
 #define MUT_MUTE /datum/mutation/human/mute
 #define STONER /datum/mutation/human/stoner
 #define UNINTELLIGIBLE /datum/mutation/human/unintelligible
-#define SWEDISH /datum/mutation/human/swedish
-#define CHAV /datum/mutation/human/chav
-#define ELVIS /datum/mutation/human/elvis
 #define RADIOACTIVE /datum/mutation/human/radioactive
 #define GLOWY /datum/mutation/human/glow
 #define ANTIGLOWY /datum/mutation/human/glow/anti
 #define TELEPATHY /datum/mutation/human/telepathy
-#define FIREBREATH /datum/mutation/human/firebreath
 #define VOID /datum/mutation/human/void
 #define TONGUESPIKE /datum/mutation/human/tonguespike
 #define TONGUESPIKECHEM /datum/mutation/human/tongue_spike/chem
@@ -156,6 +152,7 @@
 #define ORGAN_SLOT_HEART_AID "heartdrive"
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
+#define ORGAN_SLOT_BRAIN_JOYWIRE "brain_joywire"
 #define ORGAN_SLOT_TAIL "tail"
 #define ORGAN_SLOT_WINGS "wings"
 #define ORGAN_SLOT_PARASITE_EGG "parasite_egg"

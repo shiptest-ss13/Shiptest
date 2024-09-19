@@ -1,5 +1,4 @@
 #define RESOLVE_ICON_STATE(I) (I.mob_overlay_state || I.icon_state)
-#define CHECK_USE_AUTOGEN (handled_by_bodytype ? null : dna.species) //Is this gross overuse of macros? Yes. Fuck you.
 
 	///////////////////////
 	//UPDATE_ICONS SYSTEM//
@@ -111,9 +110,6 @@ There are several things that need to be remembered:
 		if(wear_suit && (wear_suit.flags_inv & HIDEJUMPSUIT))
 			return
 
-		var/target_overlay = U.icon_state
-		if(U.adjusted == ALT_STYLE)
-			target_overlay = "[target_overlay]_d"
 
 
 		var/t_color = U.item_color
@@ -122,27 +118,50 @@ There are several things that need to be remembered:
 		if(U.adjusted == ALT_STYLE)
 			t_color = "[t_color]_d"
 
+		///The final thing we overlay. Set on build_worn_icon.
 		var/mutable_appearance/uniform_overlay
 
-		var/icon_file
-		var/handled_by_bodytype = TRUE
+		///icon file of the clothing
+		var/icon_file = U.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = U.icon_state
+		if(U.adjusted == ALT_STYLE)
+			target_overlay = "[target_overlay]_d"
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
 		if(!uniform_overlay)
 			//Kapu's autistic attempt at digitigrade handling
 			//Hi Kapu
-			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (U.supports_variations & DIGITIGRADE_VARIATION))
+			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((U.supports_variations & DIGITIGRADE_VARIATION) || (U.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
 				icon_file = DIGITIGRADE_PATH
+				if((U.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+					icon_file = U.mob_overlay_icon
+					target_overlay = "[target_overlay]_digi"
 
-			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
-				icon_file = VOX_UNIFORM_PATH
+			else if(dna.species.bodytype & BODYTYPE_VOX)
+				if(U.supports_variations & VOX_VARIATION)
+					icon_file = VOX_UNIFORM_PATH
+					if(U.vox_override_icon)
+						icon_file = U.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
 
-			else if((dna.species.bodytype & BODYTYPE_KEPORI) && (U.supports_variations & KEPORI_VARIATION))
-				icon_file = KEPORI_UNIFORM_PATH
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(U.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_UNIFORM_PATH
+					if(U.kepoi_override_icon)
+						icon_file = U.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
+
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
-				handled_by_bodytype = FALSE
+				handled_by_bodytype = TRUE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = use_autogen)
 
 		if(!uniform_overlay)
 			return
@@ -169,7 +188,8 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
-		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', mob_species = use_autogen)
 
 		if(!id_overlay)
 			return
@@ -199,25 +219,41 @@ There are several things that need to be remembered:
 	//Bloody hands end
 
 
-	var/mutable_appearance/gloves_overlay
+
 	if(gloves)
 		var/obj/item/I = gloves
 		update_hud_gloves(I)
 
-		var/handled_by_bodytype = TRUE
-		var/icon_file
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/gloves_overlay
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_GLOVES_PATH
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
 
-		if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_GLOVES_PATH
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_GLOVES_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
+
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_GLOVES_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_GLOVES_PATH
 
-		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!gloves_overlay)
 			return
@@ -239,18 +275,37 @@ There are several things that need to be remembered:
 		var/obj/item/I = glasses
 		update_hud_glasses(I)
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
+			///The final thing we overlay. Set on build_worn_icon.
 			var/mutable_appearance/glasses_overlay
-			var/handled_by_bodytype = TRUE
-			var/icon_file
 
-			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-				icon_file = VOX_GLASSES_PATH
+			///icon file of the clothing
+			var/icon_file = I.mob_overlay_icon
+
+			/// Does this clothing need to be generated via greyscale?
+			var/handled_by_bodytype = FALSE
+
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_GLASSES_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(I.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_GLASSES_PATH
+					if(I.kepoi_override_icon)
+						icon_file = I.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-				handled_by_bodytype = FALSE
+				handled_by_bodytype = TRUE
 				icon_file = DEFAULT_GLASSES_PATH
 
-			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 			if(!glasses_overlay)
 				return
@@ -270,20 +325,38 @@ There are several things that need to be remembered:
 
 	if(ears)
 		var/obj/item/I = ears
-		var/mutable_appearance/ears_overlay
 		update_hud_ears(I)
 
-		var/handled_by_bodytype = TRUE
-		var/icon_file
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/ears_overlay
 
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_EARS_PATH
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_EARS_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
+
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_EARS_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_EARS_PATH
 
-		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, mob_species = use_autogen)
 
 		if(!ears_overlay)
 			return
@@ -303,27 +376,48 @@ There are several things that need to be remembered:
 
 	if(shoes)
 		var/obj/item/I = shoes
-		var/mutable_appearance/shoes_overlay
-		var/icon_file
 		update_hud_shoes(I)
-		var/handled_by_bodytype = TRUE
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/shoes_overlay
 
-		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (I.supports_variations & DIGITIGRADE_VARIATION))
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
+
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((I.supports_variations & DIGITIGRADE_VARIATION) || (I.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
 			if(leg.bodytype & BODYTYPE_DIGITIGRADE && !leg.plantigrade_forced)
 				icon_file = DIGITIGRADE_SHOES_PATH
+			if((I.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+				icon_file = I.mob_overlay_icon
+				target_overlay = "[target_overlay]_digi"
 
-		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
-			icon_file = VOX_SHOES_PATH
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_SHOES_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
 
-		if((I.supports_variations & KEPORI_VARIATION) && (dna.species.bodytype & BODYTYPE_KEPORI))
-			icon_file = KEPORI_SHOES_PATH
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_SHOES_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_SHOES_PATH
 
-		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!shoes_overlay)
 			return
@@ -341,18 +435,42 @@ There are several things that need to be remembered:
 
 	if(s_store)
 		var/obj/item/I = s_store
-		var/mutable_appearance/s_store_overlay
 		update_hud_s_store(I)
-		var/t_state = I.item_state
-		if(!t_state)
-			t_state = I.icon_state
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/suit_store_overlay
 
-		s_store_overlay = mutable_appearance('icons/mob/clothing/belt_mirror.dmi', t_state, -SUIT_STORE_LAYER)
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
 
-		if(!s_store_overlay)
-			return
-		overlays_standing[SUIT_STORE_LAYER] = s_store_overlay
-	apply_overlay(SUIT_STORE_LAYER)
+		/// Does this clothing need to be generated via greyscale
+		var/handled_by_bodytype = FALSE
+
+		if(!suit_store_overlay)
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_BACK_PATH
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_BACK_PATH
+//				else
+				handled_by_bodytype = TRUE
+
+			if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
+				icon_file = DEFAULT_BACK_PATH
+				handled_by_bodytype = TRUE
+
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			suit_store_overlay = I.build_worn_icon(default_layer = -SUIT_STORE_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
+
+			if(!suit_store_overlay)
+				return
+			overlays_standing[SUIT_STORE_LAYER] = suit_store_overlay
+
+			if(suit_store_overlay)
+				apply_overlay(SUIT_STORE_LAYER)
 
 
 /mob/living/carbon/human/update_inv_head()
@@ -360,25 +478,46 @@ There are several things that need to be remembered:
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_HEAD) + 1]
 		inv.update_appearance()
-
 	if(head)
 		var/obj/item/I = head
-		var/mutable_appearance/head_overlay
 		update_hud_head(I)
-		var/handled_by_bodytype = TRUE
-		var/icon_file
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/head_overlay
 
-		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
-			icon_file = VOX_HEAD_PATH
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
 
-		if((I.supports_variations & KEPORI_VARIATION) && (dna.species.bodytype & BODYTYPE_KEPORI))
-			icon_file = KEPORI_HEAD_PATH
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+		var/obj/item/bodypart/head_bodypart = src.get_bodypart(BODY_ZONE_HEAD)
+		if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
+			target_overlay = "[target_overlay]_snouted"
+
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_HEAD_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
+
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_HEAD_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_HEAD_PATH
 
-		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!head_overlay)
 			return
@@ -396,22 +535,39 @@ There are several things that need to be remembered:
 
 	if(belt)
 		var/obj/item/I = belt
-		var/mutable_appearance/belt_overlay
 		update_hud_belt(I)
-		var/handled_by_bodytype
-		var/icon_file
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/belt_overlay
 
-		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
-			icon_file = VOX_BELT_PATH
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
 
-		//if((I.supports_variations & KEPORI_VARIATION) && (dna.species.bodytype & BODYTYPE_KEPORI))
-			//icon_file = KEPORI_BELT_PATH
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+
+		if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_BELT_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
+
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_BELT_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = DEFAULT_BELT_PATH
 
-		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen)
 
 		if(!belt_overlay)
 			return
@@ -430,26 +586,46 @@ There are several things that need to be remembered:
 
 	if(wear_suit)
 		var/obj/item/I = wear_suit
-		var/mutable_appearance/suit_overlay
 		update_hud_wear_suit(I)
-		var/icon_file
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/suit_overlay
 
-		var/handled_by_bodytype = TRUE
-		if(dna.species.bodytype & BODYTYPE_DIGITIGRADE)
-			if(I.supports_variations & DIGITIGRADE_VARIATION)
-				icon_file = DIGITIGRADE_SUIT_PATH
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
 
-		else if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_SUIT_PATH
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
 
-		else if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-			icon_file = KEPORI_SUIT_PATH
+		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((I.supports_variations & DIGITIGRADE_VARIATION) || (I.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
+			icon_file = DIGITIGRADE_SUIT_PATH
+			if((I.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+				icon_file = I.mob_overlay_icon
+				target_overlay = "[target_overlay]_digi"
+
+		else if(dna.species.bodytype & BODYTYPE_VOX)
+			if(I.supports_variations & VOX_VARIATION)
+				icon_file = VOX_SUIT_PATH
+				if(I.vox_override_icon)
+					icon_file = I.vox_override_icon
+			else
+				handled_by_bodytype = TRUE
+
+		else if(dna.species.bodytype & BODYTYPE_KEPORI)
+			if(I.supports_variations & KEPORI_VARIATION)
+				icon_file = KEPORI_SUIT_PATH
+				if(I.kepoi_override_icon)
+					icon_file = I.kepoi_override_icon
+			else
+				handled_by_bodytype = TRUE
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-			handled_by_bodytype = FALSE
+			handled_by_bodytype = TRUE
 			icon_file = I.mob_overlay_icon
 
-		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		var/use_autogen = handled_by_bodytype ? dna.species : null
+		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!suit_overlay)
 			return
@@ -495,22 +671,44 @@ There are several things that need to be remembered:
 	if(wear_mask)
 		var/obj/item/I = wear_mask
 		update_hud_wear_mask(I)
+		///The final thing we overlay. Set on build_worn_icon.
 		var/mutable_appearance/mask_overlay
-		var/icon_file
-		var/handled_by_bodytype = TRUE
+
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
+
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
 
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
-			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-				icon_file = VOX_MASK_PATH
+			var/obj/item/bodypart/head_bodypart = src.get_bodypart(BODY_ZONE_HEAD)
+			if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
+				target_overlay = "[target_overlay]_snouted"
 
-			if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
-				icon_file = KEPORI_MASK_PATH
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_MASK_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+				if(I.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_MASK_PATH
+					if(I.kepoi_override_icon)
+						icon_file = I.kepoi_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				icon_file = DEFAULT_MASK_PATH
-				handled_by_bodytype = FALSE
+				handled_by_bodytype = TRUE
 
-			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, override_file = icon_file, mob_species = use_autogen, override_state = target_overlay)
 
 		if(!mask_overlay)
 			return
@@ -528,17 +726,48 @@ There are several things that need to be remembered:
 
 	if(wear_neck)
 		var/obj/item/I = wear_neck
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/neck_overlay
+
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
+		///The icon state to overlay
+		var/target_overlay = I.icon_state
+
+		/// Does this clothing need to be generated via greyscale?
+		var/handled_by_bodytype = FALSE
+
+
 		update_hud_neck(I)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
-			var/icon_file
-			var/handled_by_bodytype = TRUE
+
+			if(dna.species.bodytype & BODYTYPE_VOX) // there is no kepori neck path, we just tell it to greyscale no matter what
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_NECK_PATH
+					if(I.vox_override_icon)
+						icon_file = I.vox_override_icon
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_NECK_PATH
+//					if(I.kepoi_override_icon)
+//						icon_file = I.kepoi_override_icon
+//				else
+				handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
-				handled_by_bodytype = FALSE
+				handled_by_bodytype = TRUE
 				icon_file = DEFAULT_NECK_PATH
 
-			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			neck_overlay = I.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, mob_species = use_autogen, override_state = target_overlay)
 
+			if(!neck_overlay)
+				return
+
+		overlays_standing[NECK_LAYER] = neck_overlay
 
 	apply_overlay(NECK_LAYER)
 
@@ -551,23 +780,42 @@ There are several things that need to be remembered:
 
 	if(back)
 		var/obj/item/I = back
-		var/mutable_appearance/back_overlay
 		update_hud_back(I)
-		var/icon_file
-		var/handled_by_bodytype = TRUE
-		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
-			icon_file = VOX_BACK_PATH
+		///The final thing we overlay. Set on build_worn_icon.
+		var/mutable_appearance/back_overlay
 
-		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
-			icon_file = DEFAULT_BACK_PATH
-			handled_by_bodytype = FALSE
+		///icon file of the clothing
+		var/icon_file = I.mob_overlay_icon
 
-		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+		/// Does this clothing need to be generated via greyscale
+		var/handled_by_bodytype = FALSE
 
 		if(!back_overlay)
-			return
-		overlays_standing[BACK_LAYER] = back_overlay
-	apply_overlay(BACK_LAYER)
+			if(dna.species.bodytype & BODYTYPE_VOX)
+				if(I.supports_variations & VOX_VARIATION)
+					icon_file = VOX_BACK_PATH
+				else
+					handled_by_bodytype = TRUE
+
+			else if(dna.species.bodytype & BODYTYPE_KEPORI)
+//				if(I.supports_variations & KEPORI_VARIATION)
+//					icon_file = KEPORI_BACK_PATH
+//				else
+				handled_by_bodytype = TRUE
+
+			if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
+				icon_file = I.mob_overlay_icon ? I.mob_overlay_icon : DEFAULT_BACK_PATH
+				handled_by_bodytype = TRUE
+
+			var/use_autogen = handled_by_bodytype ? dna.species : null
+			back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = use_autogen)
+
+			if(!back_overlay)
+				return
+			overlays_standing[BACK_LAYER] = back_overlay
+
+			if(back_overlay) //This is faster fuck you
+				apply_overlay(BACK_LAYER)
 
 /mob/living/carbon/human/update_inv_legcuffed()
 	remove_overlay(LEGCUFF_LAYER)
@@ -708,6 +956,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 ^this female part sucks and will be fully ripped out ideally
 
 */
+// Note: if handled_by_bodytype is TRUE before calling this, it makes species use greyscale
 /obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
 
 	// WS Edit Start - Worn Icon State

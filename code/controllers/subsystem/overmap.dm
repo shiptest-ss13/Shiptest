@@ -133,7 +133,7 @@ SUBSYSTEM_DEF(overmap)
 		spawn_ruin_levels()
 
 	spawn_outpost()
-	spawn_initial_ships()
+	//spawn_initial_ships()
 
 /**
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
@@ -212,6 +212,7 @@ SUBSYSTEM_DEF(overmap)
 	new found_type(location)
 	return
 
+/*
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
@@ -224,10 +225,11 @@ SUBSYSTEM_DEF(overmap)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 #endif
+*/
 
 /**
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
- * Inteded for ship purchases, etc.
+ * Intended for ship purchases, etc.
  */
 /datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
@@ -289,6 +291,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -300,6 +303,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -374,7 +378,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /**
  * Returns a random, usually empty turf in the overmap
@@ -416,10 +420,10 @@ SUBSYSTEM_DEF(overmap)
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
  * * source - The object you want to get the corresponding parent overmap object for.
  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source, exclude_ship = FALSE)
 	var/turf/T = get_turf(source)
 	var/area/ship/A = get_area(source)
-	while(istype(A) && A.mobile_port)
+	while(istype(A) && A.mobile_port && !exclude_ship)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]

@@ -114,7 +114,7 @@
 	anchored = TRUE
 	locked = TRUE
 	breakout_time = 900
-	cutting_tool = /obj/item/shovel
+	cutting_tool = TOOL_SHOVEL
 	var/lead_tomb = FALSE
 	var/first_open = FALSE
 
@@ -142,7 +142,7 @@
 /obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
 	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
 		if(!opened)
-			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+			if(S.tool_behaviour == cutting_tool)
 				to_chat(user, "<span class='notice'>You start start to dig open \the [src]  with \the [S]...</span>")
 				if (do_after(user,20, target = src))
 					opened = TRUE
@@ -164,7 +164,7 @@
 			return 1
 
 	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
-		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+		if(S.tool_behaviour == cutting_tool)
 			to_chat(user, "<span class='notice'>You start to remove \the [src]  with \the [S].</span>")
 			if (do_after(user,15, target = src))
 				to_chat(user, "<span class='notice'>You remove \the [src]  completely.</span>")
@@ -226,20 +226,9 @@
 /obj/structure/closet/crate/grave/loot/lead_researcher/PopulateContents()  //ADVANCED GRAVEROBBING
 	..()
 	new /obj/effect/decal/cleanable/blood/gibs/old(src)
-	new /obj/item/book/granter/crafting_recipe/boneyard_notes(src)
 
 /obj/effect/decal/remains/human/grave
 	turf_loc_check = FALSE
-
-/obj/item/book/granter/crafting_recipe/boneyard_notes
-	name = "The Complete Works of Lavaland Bone Architecture"
-	desc = "Pried from the lead  Archaeologist's cold, dead hands, this seems to explain how ancient bone architecture was erected long ago."
-	crafting_recipe_types = list(/datum/crafting_recipe/rib, /datum/crafting_recipe/boneshovel, /datum/crafting_recipe/halfskull, /datum/crafting_recipe/skull)
-	icon = 'icons/obj/library.dmi'
-	icon_state = "boneworking_learing"
-	oneuse = FALSE
-	remarks = list("Who knew you could bend bones that far back?", "I guess that was much easier before the planet heated up...", "So that's how they made those ruins survive the ashstorms. Neat!", "The page is just filled with insane ramblings about some 'legion' thing.", "But why would they need vinegar to polish the bones? And rags too?", "You spend a few moments cleaning dirt and blood off of the page, yeesh.")
-
 
 //***Fluff items for lore/intrigue
 /obj/item/paper/crumpled/muddy/fluff/elephant_graveyard

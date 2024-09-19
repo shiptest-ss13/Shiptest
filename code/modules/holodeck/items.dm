@@ -152,8 +152,8 @@
 	var/eventstarted = FALSE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 6
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	power_channel = AREA_USAGE_ENVIRON
 
 /obj/machinery/readybutton/attack_ai(mob/user as mob)

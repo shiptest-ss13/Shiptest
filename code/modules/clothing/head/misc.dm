@@ -70,6 +70,8 @@
 
 /obj/item/clothing/head/syndicatefake
 	name = "black space-helmet replica"
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "syndicate-helm-black-red"
 	item_state = "syndicate-helm-black-red"
 	desc = "A plastic replica of a Syndicate agent's space helmet. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
@@ -129,6 +131,8 @@
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "pirate"
 	item_state = "pirate"
 	dog_fashion = /datum/dog_fashion/head/pirate
@@ -161,6 +165,8 @@
 /obj/item/clothing/head/bandana
 	name = "pirate bandana"
 	desc = "Yarr."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "bandana"
 	item_state = "bandana"
 
@@ -445,13 +451,6 @@
 	desc = "Hee-ho!"
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
-
-/obj/item/clothing/head/ngrcap
-	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
-	icon_state = "ngrcap"
-	item_state = "ngrcap"
-	flags_inv = 0
 
 /obj/item/clothing/head/maidheadband/syndicate
 	name = "tactical maid headband"

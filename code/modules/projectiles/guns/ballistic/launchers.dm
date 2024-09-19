@@ -4,14 +4,15 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	icon_state = "dshotgun_sawn"
-	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	bolt_type = BOLT_TYPE_NO_BOLT
-	fire_delay = 10
+	fire_delay = 1 SECONDS
+	semi_auto = TRUE
+	has_safety = FALSE
+	safety = FALSE
+	gate_offset = 0
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
@@ -35,22 +36,22 @@
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.4 SECONDS
 	actions_types = list()
 	casing_ejector = FALSE
 
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper PML-9"
 	desc = "A reusable rocket-propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
+
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-	can_suppress = FALSE
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.4 SECONDS
 	casing_ejector = FALSE
 	weapon_weight = WEAPON_HEAVY
 	bolt_type = BOLT_TYPE_NO_BOLT
@@ -59,6 +60,9 @@
 	empty_indicator = TRUE
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	valid_attachments = list()
+	slot_available = list()
 
 /obj/item/gun/ballistic/rocketlauncher/afterattack()
 	. = ..()
@@ -70,7 +74,12 @@
 /obj/item/gun/ballistic/rocketlauncher/solgov
 	name = "Panzerfaust XII"
 	desc = "The standard recoiless rifle of the Solarian Confederation. Barely varies from previous models."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
 	manufacturer = MANUFACTURER_SOLARARMORIES

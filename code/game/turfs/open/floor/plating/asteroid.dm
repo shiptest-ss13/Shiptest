@@ -101,7 +101,7 @@
 				to_chat(user, "<span class='warning'>There is already a grave there!</span>")
 				return
 			to_chat(user, "<span class='notice'>You start piling the dirt...</span>")
-			if(do_after(user,30, target = src))
+			if(do_after(user, 30, target = src))
 				if(locate(/obj/structure/closet/crate/grave) in dest_turf)
 					return
 				if(istype(W, /obj/item/stack/sheet/mineral/wood))
@@ -126,3 +126,5 @@
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	turf_type = /turf/open/floor/plating/asteroid/airless
 
+/turf/open/floor/plating/asteroid/ship
+	baseturfs = /turf/open/floor/plating

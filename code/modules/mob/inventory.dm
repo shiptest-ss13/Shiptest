@@ -275,7 +275,7 @@
 */
 /mob/proc/dropItemToGround(obj/item/I, force = FALSE, silent = FALSE)
 	. = doUnEquip(I, force, drop_location(), FALSE, silent = silent)
-	if(. && I) //ensure the item exists and that it was dropped properly.
+	if(. && I && !(I.item_flags & NO_PIXEL_RANDOM_DROP)) //ensure the item exists and that it was dropped properly.
 		I.pixel_x = rand(-6,6)
 		I.pixel_y = rand(-6,6)
 
