@@ -1,4 +1,4 @@
-/obj/item/melee/transforming/cleaving_saw/old
+/obj/item/melee/cleaving_saw/old
 	name = "old cleaving saw"
 	desc = "This saw, old and rusted, is still an effective tool at bleeding beasts and monsters."
 	force = 10

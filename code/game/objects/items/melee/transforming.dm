@@ -3,7 +3,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-	var/active = FALSE
 	/// Force while active.
 	var/active_force = 30
 	/// Throwforce while active.
@@ -14,8 +13,6 @@
 	var/active_hitsound = 'sound/weapons/blade1.ogg'
 	/// Weight class while active.
 	var/active_w_class = WEIGHT_CLASS_BULKY
-	/// The heat given off when active.
-	var/active_heat = 3500
 
 	var/list/attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
@@ -25,10 +22,6 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	if(sharpness)
 		AddComponent(/datum/component/butchering, 50, 100, 0, hitsound)
-
-/obj/item/melee/transforming/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	return ..()
 
 /*
  * Gives our item the transforming component, passing in our various vars.
@@ -46,79 +39,69 @@
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
-/obj/item/melee/transforming/process(seconds_per_tick)
-	if(heat)
-		open_flame()
-
 /obj/item/melee/transforming/proc/on_transform(obj/item/source, mob/user, active)
 	SIGNAL_HANDLER
 
-	if(active)
-		heat = active_heat
-		START_PROCESSING(SSobj, src)
-	else
-		heat = initial(heat)
-		STOP_PROCESSING(SSobj, src)
+	return
 
-	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
-	if(user)
-		balloon_alert(user, "[name] [active ? "enabled":"disabled"]")
-	playsound(src, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
-	set_light_on(active)
-	update_appearance(UPDATE_ICON_STATE)
-	return COMPONENT_NO_DEFAULT_MESSAGE
-
-/obj/item/melee/transforming/cleaving_saw
+/obj/item/melee/cleaving_saw
 	name = "cleaving saw"
 	desc = "This saw, effective at drawing the blood of beasts, transforms into a long cleaver that makes use of centrifugal force."
 	force = 12
-	active_force = 20 //force when active
+	var/active_force = 20 //force when active
 	throwforce = 20
-	active_throwforce = 20
+	var/active_throwforce = 20
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	icon_state = "cleaving_saw"
+	item_state = "cleaving_saw"
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
-	attack_verb_on = list("cleaved", "swiped", "slashed", "chopped")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	active_hitsound = 'sound/weapons/bladeslice.ogg'
-	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_SHARP
+
 	var/transform_cooldown
 	var/swiping = FALSE
 	var/bleed_stacks_per_hit = 3
 
-/obj/item/melee/transforming/cleaving_saw/examine(mob/user)
+/obj/item/melee/cleaving_saw/Initialize(mapload)
 	. = ..()
-	. += "<span class='notice'>It is [active ? "open, will cleave enemies in a wide arc and deal additional damage to fauna":"closed, and can be used for rapid consecutive attacks that cause fauna to bleed"].\n"+\
-	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
-	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
+	AddElement(/datum/element/update_icon_updates_onmob)
+	AddComponent(/datum/component/butchering, 50, 100, 0, hitsound)
+	AddComponent( \
+		/datum/component/transforming, \
+		transform_cooldown_time = (CLICK_CD_MELEE * 0.25), \
+		force_on = active_force, \
+		throwforce_on = active_throwforce, \
+		attack_verb_on = list("cleave", "swipe", "slash", "chop"), \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
-/obj/item/melee/transforming/cleaving_saw/on_transform(obj/item/source, mob/user, active)
-	if(transform_cooldown > world.time)
-		return FALSE
+/obj/item/melee/cleaving_saw/examine(mob/user)
 	. = ..()
-	if(.)
-		transform_cooldown = world.time + (CLICK_CD_MELEE * 0.5)
-		user.changeNext_move(CLICK_CD_MELEE * 0.25)
+	. += span_notice("It is [HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE) ? "open, will cleave enemies in a wide arc and deal additional damage to fauna":"closed, and can be used for rapid consecutive attacks that cause fauna to bleed"].")
+	. += span_notice("Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.")
+	. += span_notice("Transforming it immediately after an attack causes the next attack to come out faster.")
 
+/obj/item/melee/cleaving_saw/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
 	if(active)
 		to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc and deal additional damage to fauna.</span>")
 	else
 		to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause fauna to bleed.</span>")
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
-/obj/item/melee/transforming/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	if(!active)
+/obj/item/melee/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
+	. = ..()
+	if(!HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		user.changeNext_move(CLICK_CD_MELEE * 0.5) //when closed, it attacks very rapidly
 
-/obj/item/melee/transforming/cleaving_saw/attack(mob/living/target, mob/living/carbon/human/user)
-	if(!active || swiping || !target.density || get_turf(target) == get_turf(user))
+/obj/item/melee/cleaving_saw/attack(mob/living/target, mob/living/carbon/human/user)
+	if(!HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE) || swiping || !target.density || get_turf(target) == get_turf(user))
 		..()
 	else
 		var/turf/user_turf = get_turf(user)

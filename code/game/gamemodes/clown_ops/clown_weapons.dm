@@ -77,20 +77,20 @@
  * is active or not.
  */
 /obj/item/melee/transforming/energy/sword/proc/adjust_slipperiness()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	else
 		qdel(GetComponent(/datum/component/slippery))
 
 /obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, M)
 
 /obj/item/melee/transforming/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
 	. = ..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, hit_atom)
 

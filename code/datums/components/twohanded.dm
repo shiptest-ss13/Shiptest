@@ -256,12 +256,9 @@
 
 	if(!wielded)
 		return NONE
-	/*
 	if(!icon_wielded)
 		return NONE
 	source.icon_state = icon_wielded
-	*/
-	source.icon_state = "[icon_wielded]_w"
 	return COMSIG_ATOM_NO_UPDATE_ICON_STATE
 /**
  * on_moved Triggers on item moved

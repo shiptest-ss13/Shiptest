@@ -1,7 +1,7 @@
 /obj/item/melee/transforming/energy
 	icon = 'icons/obj/weapon/energy.dmi'
 	active_hitsound = 'sound/weapons/blade1.ogg'
-	heat = 3500
+	heat = 0
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
@@ -10,10 +10,12 @@
 	light_power = 1
 	light_on = FALSE
 	var/sword_color
+	/// The heat given off when active.
+	var/active_heat = 3500
 
 /obj/item/melee/transforming/energy/Initialize()
 	. = ..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		START_PROCESSING(SSobj, src)
 
 /obj/item/melee/transforming/energy/Destroy()
@@ -24,28 +26,36 @@
 	return FALSE
 
 /obj/item/melee/transforming/energy/get_sharpness()
-	return active * sharpness
+	return sharpness
 
-/obj/item/melee/transforming/energy/process()
-	open_flame()
+/obj/item/melee/transforming/energy/process(seconds_per_tick)
+	if(heat)
+		open_flame()
 
 /obj/item/melee/transforming/energy/on_transform(obj/item/source, mob/user, active)
-	. = ..()
-	if(.)
-		if(active)
-			if(sword_color)
-				icon_state = "[base_icon_state][sword_color]"
-			START_PROCESSING(SSobj, src)
-		else
-			STOP_PROCESSING(SSobj, src)
-		set_light_on(active)
+	if(active)
+		heat = active_heat
+		START_PROCESSING(SSobj, src)
+		if(sword_color)
+			icon_state = "[base_icon_state][sword_color]"
+	else
+		heat = initial(heat)
+		STOP_PROCESSING(SSobj, src)
 
+	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
+	if(user)
+		balloon_alert(user, "[name] [active ? "enabled":"disabled"]")
+	playsound(src, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
+	set_light_on(active)
+	update_appearance(UPDATE_ICON_STATE)
+
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/transforming/energy/get_temperature()
-	return active * heat
+	return heat
 
 /obj/item/melee/transforming/energy/ignition_effect(atom/A, mob/user)
-	if(!active)
+	if(!HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		return ""
 
 	var/in_mouth = ""
@@ -96,13 +106,8 @@
 	armour_penetration = 35
 	block_chance = 50
 
-/obj/item/melee/transforming/energy/sword/on_transform(obj/item/source, mob/user, active)
-	. = ..()
-	if(. && active && sword_color)
-		icon_state = "[base_icon_state][sword_color]"
-
 /obj/item/melee/transforming/energy/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		return ..()
 	return 0
 
@@ -113,7 +118,7 @@
 /obj/item/melee/transforming/energy/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R)
 	if(R.cell)
 		var/obj/item/stock_parts/cell/C = R.cell
-		if(active && !(C.use(hitcost)))
+		if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE) && !(C.use(hitcost)))
 			attack_self(R)
 			to_chat(R, "<span class='notice'>It's out of charge!</span>")
 			return
@@ -177,7 +182,7 @@
 			sword_color = "rainbow"
 			to_chat(user, "<span class='warning'>RNBW_ENGAGE</span>")
 
-			if(active)
+			if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 				icon_state = "[base_icon_state]rainbow"
 				user.update_inv_hands()
 		else
@@ -212,12 +217,12 @@
 /obj/item/melee/transforming/energy/blade
 	name = "energy blade"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
-	icon_state = "blade"
+	icon_state = "lightblade"
+	item_state = "lightblade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 30 //Normal attacks deal esword damage
 	hitsound = 'sound/weapons/blade1.ogg'
-	active = 1
 	throwforce = 1 //Throwing or dropping the item deletes it.
 	throw_speed = 3
 	throw_range = 1
@@ -264,10 +269,11 @@
 
 /obj/item/melee/transforming/energy/ctf/on_transform(obj/item/source, mob/user, active)
 	. = ..()
-	if(. && active)
-		icon_state = "plasmasword1"
+	if(active)
+		icon_state = "plasmasword_on"
 	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
 	to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/transforming/energy/ctf/solgov
 	armour_penetration = 40
