@@ -118,7 +118,7 @@
 	//The exact same test expect this time we warn instead of fail because most items dont really NEED to apear on a player
 	for(var/obj/item/item_path as anything in (subtypesof(/obj/item) - (typesof(/obj/item/clothing) + typesof(/obj/item/mod))))
 		var/cached_slot_flags = initial(item_path.slot_flags)
-		if(!cached_slot_flags || (cached_slot_flags & ITEM_SLOT_LPOCKET) || (cached_slot_flags & ITEM_SLOT_RPOCKET) || initial(item_path.item_flags) & ABSTRACT)
+		if(!cached_slot_flags || (cached_slot_flags & ITEM_SLOT_LPOCKET) || (cached_slot_flags & ITEM_SLOT_RPOCKET) || initial(item_path.item_flags) & ABSTRACT || isbadpath(item_path))
 			continue
 
 		var/mob_overlay_icon = initial(item_path.mob_overlay_icon) //override icon file. where our sprite is contained if set. (ie modularity stuff)
@@ -138,7 +138,7 @@
 
 		if(mob_overlay_icon) //easiest to check since we override everything. this automatically includes downstream support.
 			if(!(icon_state in icon_states(mob_overlay_icon, 1)))
-				TEST_FAIL("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
+				WARNING("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
 			continue
 
 		var/icon_file //checks against all the default icon locations if one isn't defined.
