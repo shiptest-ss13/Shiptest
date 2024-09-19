@@ -44,7 +44,7 @@
 					search_for_on = TRUE
 				qdel(melee_item)
 
-		icon = initial(obj_path.icon)
+		var/icon = initial(obj_path.icon)
 		var/init_icon_path = initial(obj_path.icon_state)
 		if(search_for_w)
 			icons_to_find += "[init_icon_path]_w"
