@@ -139,7 +139,7 @@
 
 		if(mob_overlay_icon) //easiest to check since we override everything. this automatically includes downstream support.
 			if(!(icon_state in icon_states(mob_overlay_icon, 1)))
-				WARNING("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
+				log_world("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
 			continue
 
 		var/icon_file //checks against all the default icon locations if one isn't defined.
@@ -207,5 +207,5 @@
 				spacer = "\n\t"
 
 		if(fail_reasons)
-			WARNING(fail_reasons)
+			log_world(fail_reasons)
 #endif //EXTRA_ICON_TESTS
