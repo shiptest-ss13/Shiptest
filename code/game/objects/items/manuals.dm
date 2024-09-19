@@ -308,12 +308,13 @@
 			<h2> Forcewine </h2>
 			Two intresting effects from the consumption of Forcewine.<br>
 			First it seems to give you an "anti magic" effect, I have read about of tales of how it fizzled out some sort of great curse that we could best trace back to a ancient cult.<br>
-			Second is it protects the mind from cohersion and mind control.<br>
-			From my research this seems to act like nanotrasen mindshield implants.<br>
-			Would recomend for any esoteric senarios. We wont see these alot but its always smart to prepare for the worst.<br>
+			I doubt it does anything in that regards but as magic is not real its difficult to test.<br>
 			You can also use it to entrap Fauna inside of a forcefield like bubble, Gives you time to breath and prepare an attack.<br>
 			3:1:1. Tequila, Space Montain Wind, and I know its one of the most difficult things to come by but hollow water, Its that stuff you can extract from geysers<br>
+
+			<h2> Prismwine </h2>
 			Gives you a nice shiny layer of armour, fire seems to have alot harder time sticking to me when i tested it.<br>
+			Throwing it seeems to do the reverse acting like a magnifying glass to burns and lasers<br>
 			3:1:1. Good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
 
 			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
