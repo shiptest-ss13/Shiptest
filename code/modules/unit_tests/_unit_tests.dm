@@ -65,12 +65,10 @@
 #define EXTRA_ICON_TESTS
 
 #ifdef BASIC_TESTS
+#include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
-#include "icons/worn_icons.dm
-#ifdef EXTRA_ICON_TESTS
-#include "icons/inhands.dm"
-#endif //EXTRA_ICON_TESTS"
+#include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
