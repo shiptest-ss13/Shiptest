@@ -542,28 +542,25 @@
 	job_icon = "quartermaster"
 
 	ears = /obj/item/radio/headset/headset_cargo
-	uniform = /obj/item/clothing/under/rank/cargo/qm
-	head = /obj/item/clothing/head/supply_chief
+	uniform = /obj/item/clothing/under/rank/security/detective
+	head = /obj/item/clothing/head/hardhat/white
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
-	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = /obj/item/clothing/suit/hazardvest
+	shoes = /obj/item/clothing/shoes/workboots
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
 	chameleon_extras = /obj/item/stamp/qm
 
 /datum/outfit/job/independent/quartermaster/western
 	name = "Independent - Quartermaster (Western)"
 
-	uniform = /obj/item/clothing/under/rank/security/detective
-	suit = /obj/item/clothing/suit/hazardvest
-	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/jacket/leather/duster
 	gloves = /obj/item/clothing/gloves/fingerless
-	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
-
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
