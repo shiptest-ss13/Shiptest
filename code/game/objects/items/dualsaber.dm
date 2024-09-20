@@ -60,18 +60,14 @@
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
 
-/obj/item/dualsaber/proc/is_wielded()
-	SIGNAL_HANDLER
-
 /obj/item/dualsaber/update_icon_state()
-	icon_state = is_wielded() ? "dualsaber[saber_color]" : "dualsaber"
+	icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "dualsaber[saber_color]" : "dualsaber"
 	return ..()
 
 /obj/item/dualsaber/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 	if(LAZYLEN(possible_colors))
 		saber_color = pick(possible_colors)
 		switch(saber_color)
@@ -94,14 +90,14 @@
 	if(user.has_dna())
 		if(user.dna.check_mutation(HULK))
 			to_chat(user, "<span class='warning'>You grip the blade too hard and accidentally drop it!</span>")
-			if(is_wielded())
+			if(HAS_TRAIT(src, TRAIT_WIELDED))
 				user.dropItemToGround(src, force=TRUE)
 				return
 	..()
-	if(is_wielded() && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
+	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
 		impale(user)
 		return
-	if(is_wielded() && prob(50))
+	if(HAS_TRAIT(src, TRAIT_WIELDED) && prob(50))
 		INVOKE_ASYNC(src, PROC_REF(jedi_spin), user)
 
 /obj/item/dualsaber/proc/jedi_spin(mob/living/user)
@@ -109,18 +105,18 @@
 
 /obj/item/dualsaber/proc/impale(mob/living/user)
 	to_chat(user, "<span class='warning'>You twirl around a bit before losing your balance and impaling yourself on [src].</span>")
-	if(is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else
 		user.adjustStaminaLoss(25)
 
 /obj/item/dualsaber/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return ..()
 	return 0
 
 /obj/item/dualsaber/process()
-	if(is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		if(hacked)
 			set_light_color(pick(COLOR_SOFT_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER))
 		open_flame()
@@ -128,12 +124,12 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/dualsaber/IsReflect()
-	if(is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return 1
 
 /obj/item/dualsaber/ignition_effect(atom/A, mob/user)
 	// same as /obj/item/melee/transforming/energy, mostly
-	if(!is_wielded())
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return ""
 	var/in_mouth = ""
 	if(iscarbon(user))

@@ -20,12 +20,6 @@
 	resistance_flags = FIRE_PROOF
 	species_exception = list(/datum/species/kepori)
 
-/obj/item/fireaxe/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
-
 /obj/item/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
@@ -39,19 +33,10 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(is_wielded()) //destroys windows and grilles in one hit
+	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.obj_destruction("fireaxe")
-
-/obj/item/fireaxe/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/fireaxe/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/fireaxe/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /*
  * Bone Axe

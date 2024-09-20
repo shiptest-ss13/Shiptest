@@ -699,24 +699,11 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/vibro_weapon/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 20, 105)
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="[base_icon_state]1")
-
-/obj/item/vibro_weapon/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/vibro_weapon/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/vibro_weapon/proc/is_wielded()
-	SIGNAL_HANDLER
-
 
 /obj/item/vibro_weapon/update_icon_state()
 	icon_state = "[base_icon_state]0"

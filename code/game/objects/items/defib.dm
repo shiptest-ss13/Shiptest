@@ -358,9 +358,6 @@
 /obj/item/shockpaddles/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, GENERIC_ITEM_TRAIT) //stops shockpaddles from being inserted in BoH
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 	if(!req_defib)
 		return //If it doesn't need a defib, just say it exists
 	if (!loc || !istype(loc, /obj/item/defibrillator)) //To avoid weird issues from admin spawns
@@ -368,15 +365,6 @@
 	defib = loc
 	busy = FALSE
 	update_appearance()
-
-/obj/item/shockpaddles/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/shockpaddles/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/shockpaddles/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/shockpaddles/update_icon_state()
 	icon_state = "[base_icon_state][wielded]"

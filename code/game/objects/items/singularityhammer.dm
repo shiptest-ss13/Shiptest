@@ -19,23 +19,11 @@
 
 /obj/item/singularityhammer/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/singularityhammer/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="[base_icon_state]1")
-
-/obj/item/singularityhammer/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/singularityhammer/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/singularityhammer/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/singularityhammer/update_icon_state()
 	icon_state = "[base_icon_state]0"
@@ -99,24 +87,10 @@
 	w_class = WEIGHT_CLASS_HUGE
 	var/wielded = FALSE // track wielded status on item
 
-/obj/item/mjollnir/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/mjollnir/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_multiplier=5, icon_wielded="[base_icon_state]1", attacksound="sparks")
-
-/obj/item/mjollnir/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/mjollnir/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/mjollnir/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/mjollnir/update_icon_state()
 	icon_state = "[base_icon_state]0"

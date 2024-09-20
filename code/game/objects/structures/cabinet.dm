@@ -63,7 +63,7 @@
 		if(istype(I, allowed_type) && !stored)
 			var/obj/item/storee = I
 			SIGNAL_HANDLER
-			if(storee && storee.GetComponent(/datum/component/two_handed).is_wielded())
+			if(storee && HAS_TRAIT(storee, TRAIT_WIELDED))
 				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
 			if(!user.transferItemToLoc(I, src))

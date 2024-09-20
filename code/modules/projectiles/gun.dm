@@ -323,7 +323,6 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 	build_firemodes()
@@ -366,7 +365,7 @@
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/proc/is_wielded()
-	SIGNAL_HANDLER
+	return wielded
 
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)

@@ -188,22 +188,10 @@
 
 /obj/item/staff/bostaff/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/staff/bostaff/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=24, icon_wielded="[base_icon_state]1")
-
-/obj/item/staff/bostaff/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/staff/bostaff/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/staff/bostaff/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/staff/bostaff/update_icon_state()
 	icon_state = "[base_icon_state]0"
@@ -229,7 +217,7 @@
 		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
 		return
 	if(user.a_intent == INTENT_DISARM)
-		if(!is_wielded())
+		if(HAS_TRAIT(src, TRAIT_WIELDED))
 			return ..()
 		if(!ishuman(target))
 			return ..()
@@ -256,6 +244,6 @@
 		return ..()
 
 /obj/item/staff/bostaff/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(!is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return ..()
 	return FALSE

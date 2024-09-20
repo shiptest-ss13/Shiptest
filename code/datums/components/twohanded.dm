@@ -4,6 +4,9 @@
  * When applied to an item it will make it two handed
  *
  */
+
+#define TRAIT_WIELDED "wielded"
+
 /datum/component/two_handed
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS 		// Only one of the component can exist on an item
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
@@ -145,6 +148,7 @@
 	if(SEND_SIGNAL(parent, COMSIG_TWOHANDED_WIELD, user) & COMPONENT_TWOHANDED_BLOCK_WIELD)
 		return // blocked wield from item
 	wielded = TRUE
+	ADD_TRAIT(parent, TRAIT_WIELDED, src)
 	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 
 	// update item stats and name
@@ -188,6 +192,7 @@
 
 	// wield update status
 	wielded = FALSE
+	REMOVE_TRAIT(parent, TRAIT_WIELDED, src)
 	UnregisterSignal(user, COMSIG_MOB_SWAP_HANDS)
 	SEND_SIGNAL(parent, COMSIG_TWOHANDED_UNWIELD, user)
 
@@ -303,9 +308,6 @@
 	sharpened_increase = min(amount, (max_amount - wielded_val))
 	return COMPONENT_BLOCK_SHARPEN_APPLIED
 
-/* Is wielded triggers on a request for our wielding status*/
-/datum/component/two_handed/proc/is_wielded()
-	return wielded
 /*
  * The offhand dummy item for two handed items
  *

@@ -24,26 +24,12 @@
 
 /obj/item/spear/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-
 
 /obj/item/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 	AddComponent(/datum/component/jousting)
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
-
-/obj/item/spear/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/spear/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/spear/proc/is_wielded()
-	SIGNAL_HANDLER
-
 
 /obj/item/spear/update_icon_state()
 	icon_state = "[icon_prefix]0"
@@ -114,7 +100,7 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(is_wielded())
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
 		explosive.prime()

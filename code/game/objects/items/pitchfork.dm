@@ -16,24 +16,9 @@
 	resistance_flags = FIRE_PROOF
 	var/wielded = FALSE // track wielded status on item
 
-/obj/item/pitchfork/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
-
 /obj/item/pitchfork/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=15, icon_wielded="[base_icon_state]1")
-
-/obj/item/pitchfork/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/pitchfork/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/pitchfork/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/pitchfork/update_icon_state()
 	icon_state = "[base_icon_state]0"

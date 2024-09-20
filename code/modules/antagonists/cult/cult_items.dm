@@ -599,27 +599,11 @@
 	sharpness = IS_SHARP
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/datum/action/innate/cult/spear/spear_act
-	var/wielded = FALSE // track wielded status on item
-
-/obj/item/cult_spear/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
 	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
-
-/obj/item/cult_spear/proc/on_wield()
-	SIGNAL_HANDLER
-
-/obj/item/cult_spear/proc/on_unwield()
-	SIGNAL_HANDLER
-
-/obj/item/cult_spear/proc/is_wielded()
-	SIGNAL_HANDLER
 
 /obj/item/cult_spear/update_icon_state()
 	icon_state = "[base_icon_state]0"
@@ -659,7 +643,7 @@
 	qdel(src)
 
 /obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		final_block_chance *= 2
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
