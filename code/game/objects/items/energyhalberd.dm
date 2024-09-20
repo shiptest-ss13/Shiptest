@@ -62,7 +62,7 @@
 
 
 /obj/item/energyhalberd/update_icon_state()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		icon_state = "halberd[halberd_color]"
 		return ..()
 	else
@@ -95,28 +95,28 @@
 	if(user.has_dna())
 		if(user.dna.check_mutation(HULK))
 			to_chat(user, "<span class='warning'>You grip the blade too hard and accidentally drop it!</span>")
-			if(HAS_TRAIT(src, TRAIT_WIELDED))
+			if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 				user.dropItemToGround(src, force=TRUE)
 				return
 	..()
-	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
 		impale(user)
 		return
 
 /obj/item/energyhalberd/proc/impale(mob/living/user)
 	to_chat(user, "<span class='warning'>You swing around a bit before losing your balance and impaling yourself on [src].</span>")
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else
 		user.adjustStaminaLoss(25)
 
 /obj/item/energyhalberd/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		return ..()
 	return 0
 
 /obj/item/energyhalberd/process()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		if(hacked)
 			set_light_color(pick(COLOR_SOFT_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER))
 		open_flame()
@@ -124,12 +124,12 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/energyhalberd/IsReflect()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		return 1
 
 /obj/item/energyhalberd/ignition_effect(atom/A, mob/user)
 	// same as /obj/item/melee/transforming/energy, mostly
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+	if(!HAS_TRAIT(REF(src), TRAIT_WIELDED))
 		return ""
 	var/in_mouth = ""
 	if(iscarbon(user))
