@@ -10,9 +10,3 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Check for conflicting PRs
-      uses: eps1lon/actions-label-merge-conflict@releases/2.x
-      with:
-        dirtyLabel: "The label that kills you"
-        repoToken: "${{ secrets.GITHUB_TOKEN }}"
-        commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
