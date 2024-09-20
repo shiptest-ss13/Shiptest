@@ -8,6 +8,7 @@ on:
 permissions:
   actions: write
   contents: write
+  issues: write
 
 jobs:
   rerun_flaky_tests:
