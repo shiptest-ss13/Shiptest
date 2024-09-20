@@ -4,7 +4,6 @@
 	priority = TEST_DEL_WORLD
 
 /datum/unit_test/create_and_destroy/Run()
-	return
 	//We'll spawn everything here
 	var/turf/spawn_at = run_loc_bottom_left
 	var/list/ignore = list(

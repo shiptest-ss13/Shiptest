@@ -1,5 +1,4 @@
 /datum/unit_test/ship_outpost_placement/Run()
-	return
 	// checks all shuttle templates, including those
 	// disabled or intended as subshuttles
 	for(var/name as anything in SSmapping.shuttle_templates)
