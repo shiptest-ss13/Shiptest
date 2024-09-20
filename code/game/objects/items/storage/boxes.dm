@@ -99,6 +99,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
+/obj/item/storage/box/holodisc
+	name = "holodisc box"
+	illustration = "disk_kit"
+
+/obj/item/storage/box/holodisc/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/disk/holodisk(src)
+
 //guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
