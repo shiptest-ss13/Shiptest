@@ -56,3 +56,4 @@
 	id = "crashed_pinnance"
 	description = "A small ship and a fairly hard landing, coupled with a less than fortunate encounter with monsters."
 	suffix = "lavaland_surface_crashed_pinnance.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
