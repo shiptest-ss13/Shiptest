@@ -18,7 +18,7 @@
 /obj/structure/closet/crate/rations
 	name = "ration crate"
 	desc = "A rectangular steel crate, filled with marine food."
-	var/ration_count
+	var/ration_count = 10
 
 /obj/structure/closet/crate/freezer/blood/PopulateContents()
 	. = ..()
