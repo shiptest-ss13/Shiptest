@@ -7,7 +7,7 @@
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 	wield_delay = 0.1 SECONDS
-	var/obj/item/gun/gun_to_spawn = /obj/item/gun/ballistic/automatic/pistol
+	var/weapon_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	var/obj/item/gun/attached_gun
 
 /obj/item/attachment/gun/Initialize()
@@ -15,7 +15,7 @@
 	attached_gun = new gun_to_spawn(src)
 	attached_gun.safety = FALSE
 
-/obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
+/obj/item/attachment/gun/on_afterattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(toggled)
-		attached_gun.pre_attack(user,target,params)
+		attached_gun.process_fire(target,user,TRUE)
 		return COMPONENT_NO_ATTACK
