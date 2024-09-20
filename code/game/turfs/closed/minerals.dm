@@ -30,7 +30,19 @@
 	var/x_offset = -4
 	var/y_offset = -4
 
+	attack_hitsound = 'sound/effects/break_stone.ogg'
+	break_sound = 'sound/effects/break_stone.ogg'
 	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+	min_dam = 5
+	max_integrity = MINERAL_WALL_INTEGRITY
+	brute_mod = 1
+	burn_mod = 1
+
+	mob_smash_flags = ENVIRONMENT_SMASH_MINERALS
+	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+
+	overlay_layer = ON_EDGED_TURF_LAYER
 
 /turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -66,33 +78,38 @@
 		return TRUE
 	return ..()
 
-
-/turf/closed/mineral/attackby(obj/item/I, mob/user, params)
-	if (!user.IsAdvancedToolUser())
-		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return
-
+/turf/closed/mineral/try_decon(obj/item/I, mob/user, turf/T)
 	if(I.tool_behaviour == TOOL_MINING)
-		var/turf/T = user.loc
-		if (!isturf(T))
-			return
+		if(!I.tool_start_check(user, amount=0))
+			return FALSE
 
-		if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
-			return
-		last_act = world.time
-		balloon_alert(user, "digging...")
-
-		if(I.use_tool(src, user, 40, volume=50))
+		to_chat(user, "<span class='notice'>You begin breaking through the rock...</span>")
+		while(I.use_tool(src, user, breakdown_duration, volume=50))
 			if(ismineralturf(src))
-				gets_drilled(user, TRUE)
+				to_chat(user, "<span class='notice'>You break through some of the stone...</span>")
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
-	else
-		return attack_hand(user)
+				alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE)
 
-/turf/closed/mineral/proc/gets_drilled(user, give_exp = FALSE)
+	return FALSE
+
+/turf/closed/mineral/dismantle_wall(devastate = FALSE,mob/user)
+	var/slagged = 0
+	if(devastate == TRUE)
+		slagged = 100
+	if(ismineralturf(src))
+		gets_drilled(user, TRUE, slagged)
+	else
+		return FALSE
+
+/turf/closed/mineral/proc/gets_drilled(user, give_exp = FALSE, slag_chance = 0)
 	if (mineralType && (mineralAmt > 0))
-		new mineralType(src, mineralAmt)
-		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
+		//oops, you ruined the ore
+		if(prob(slag_chance))
+			new /obj/item/stack/ore/slag(src,mineralAmt)
+			visible_message(span_warning("The ore was completely ruined!"))
+		else
+			new mineralType(src, mineralAmt)
+			SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(give_exp)
@@ -106,9 +123,10 @@
 	var/flags = NONE
 	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
 		flags = CHANGETURF_DEFER_CHANGE
+	playsound(src, break_sound, 50, TRUE) //beautiful destruction
 	ScrapeAway(null, flags)
 	addtimer(CALLBACK(src, PROC_REF(AfterChange)), 1, TIMER_UNIQUE)
-	playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE) //beautiful destruction
+
 
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
 	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS))
@@ -128,7 +146,10 @@
 		var/mob/living/carbon/human/H = AM
 		var/obj/item/I = H.is_holding_tool_quality(TOOL_MINING)
 		if(I)
-			attackby(I, H)
+			if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
+				return
+			last_act = world.time
+			try_decon(I, H)
 		return
 	else if(iscyborg(AM))
 		var/mob/living/silicon/robot/R = AM
@@ -268,6 +289,7 @@
 	opacity = FALSE
 	light_range = 2
 	light_power = 1
+	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
 	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon

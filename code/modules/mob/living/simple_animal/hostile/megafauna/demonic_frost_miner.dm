@@ -322,4 +322,3 @@ Difficulty: Extremely Hard
 	var/turf/T = get_turf(target)
 	mineral_scan_pulse(T, world.view + 1)
 	. = ..()
-

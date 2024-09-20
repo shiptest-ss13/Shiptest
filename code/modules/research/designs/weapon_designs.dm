@@ -258,13 +258,13 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/stechkinammo
-	name = "Stechkin magazine (10mm)"
-	desc = "A single stack Stechkin magazine, designed to chamber 10mm and fit into the Syndicate's Stechkin sidearms."
-	id = "stechkinammo"
+/datum/design/ringneckammo
+	name = "Ringneck magazine (10mm)"
+	desc = "A single stack Ringneck magazine, designed to chamber 10mm and fit into Scarborough Arm's Ringneck series of sidearms."
+	id = "ringneckammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/magazine/m10mm
+	build_path = /obj/item/ammo_box/magazine/m10mm_ringneck
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -558,7 +558,7 @@
 	id = "suppressor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
-	build_path = /obj/item/suppressor
+	build_path = /obj/item/attachment/silencer
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

@@ -206,10 +206,10 @@
 	head = /obj/item/clothing/head/helmet/space/syndicate/surplus
 	mask = /obj/item/clothing/mask/breath
 	shoes = /obj/item/clothing/shoes/laceup
-	r_hand = /obj/item/gun/ballistic/automatic/ebr
+	r_hand = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	gloves =  null
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	r_pocket = /obj/item/ammo_box/magazine/ebr
+	r_pocket = /obj/item/ammo_box/magazine/m556_42_hydra/small
 	belt = null
 	back = /obj/item/tank/jetpack/oxygen/harness
 	backpack_contents = null

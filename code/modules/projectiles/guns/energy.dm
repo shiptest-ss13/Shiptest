@@ -1,8 +1,8 @@
 /obj/item/gun/energy
-	icon_state = "energy"
 	name = "energy gun"
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
+	icon_state = "laser"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	muzzle_flash_color = COLOR_SOFT_RED
@@ -10,45 +10,37 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	modifystate = FALSE
+	ammo_x_offset = 2
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_select_icon_state_prefix = "laser_"
 
-	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
-	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/modifystate = 0
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
-	var/select = 1 //The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/can_charge = TRUE //Can it be charged in a recharger?
-	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_appearance()?
-	var/charge_sections = 4
-	ammo_x_offset = 2
-	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
-	var/selfcharge = 0
-	var/charge_tick = 0
-	var/charge_delay = 4
-	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
-	var/dead_cell = FALSE //set to true so the gun is given an empty cell
+	tac_reloads = FALSE
+	tactical_reload_delay = 1.2 SECONDS
 
-	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
-	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
-	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
-
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = FALSE
-	///If we allow tacitcal reloads, how long should it take to reload?
-	var/tactical_reload_delay  = 1.2 SECONDS
-
-	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
-	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
-	var/sound_volume = 40 //Volume of loading/unloading sounds
-	var/load_sound_vary = TRUE //Should the load/unload sounds vary?
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		)
+	)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
+		if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+			discharge("malfunctions from the EMP")
 		cell.use(round(cell.charge / severity))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
@@ -63,8 +55,8 @@
 		cell = new cell_type(src)
 	else
 		cell = new(src)
-	if(!dead_cell)
-		cell.give(cell.maxcharge)
+	if(dead_cell)
+		cell.use(cell.maxcharge)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
@@ -133,16 +125,16 @@
 	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
+	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
 		return FALSE
-	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
+	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
 		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, sound_volume, load_sound_vary)
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
@@ -150,7 +142,7 @@
 		return FALSE
 
 /obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	playsound(src, load_sound, sound_volume, load_sound_vary)
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	old_cell.update_appearance()
@@ -170,17 +162,13 @@
 	user.put_in_hands(old_cell)
 	update_appearance()
 
-/obj/item/gun/energy/get_gun_attachments()
+/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
 	if(cell && !internal_cell)
-		attachment_options += list("Cell" = image(icon = cell.icon, icon_state = cell.icon_state))
-	..()
-
-/obj/item/gun/energy/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
-	if(picked_option == "Cell")
-		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			eject_cell(user, I)
-			return TRUE
-	..()
+		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
+		if(I.use_tool(src, user, unscrewing_time, volume = 100))
+			to_chat(user, span_notice("You remove the power cell."))
+			eject_cell(user)
+	return ..()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
@@ -331,9 +319,13 @@
 	. = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
-		. += "You can switch firemodes by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
+		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 	if(cell)
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
+
+/obj/item/gun/energy/unsafe_shot(target)
+	. = ..()
+	process_chamber()

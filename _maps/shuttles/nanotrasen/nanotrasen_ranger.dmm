@@ -184,15 +184,14 @@
 /obj/item/clothing/suit/armor/vest/security,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/gps,
-/obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/structure/railing{
 	dir = 4
 	},
 /obj/item/ammo_box/c9mm,
 /obj/item/ammo_box/c9mm,
 /obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
 /obj/item/storage/belt/security/webbing,
+/obj/item/storage/pistolcase/commander,
 /turf/open/floor/wood,
 /area/ship/security)
 "bD" = (
@@ -465,7 +464,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "eE" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -1555,6 +1554,7 @@
 /obj/item/clothing/glasses/meson/gar{
 	pixel_y = 8
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "pA" = (
@@ -3115,9 +3115,6 @@
 /area/ship/engineering)
 "Ha" = (
 /obj/structure/closet/secure_closet/lp/lieutenant,
-/obj/item/gun/energy/e_gun{
-	pixel_y = 1
-	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/kitchen/knife/combat/survival,
@@ -3131,12 +3128,12 @@
 	pixel_x = 7;
 	pixel_y = -20
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/ammo_box/c9mm,
 /obj/item/ammo_box/c9mm,
 /obj/item/ammo_box/c9mm/rubbershot,
 /obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
+/obj/item/storage/pistolcase/commander,
+/obj/item/storage/pistolcase/egun,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Hd" = (

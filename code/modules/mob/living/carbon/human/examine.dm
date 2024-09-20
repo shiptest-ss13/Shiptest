@@ -25,7 +25,7 @@
 				//if we have no guestbook, we just KNOW okay?
 				var/known_name = user.mind?.guestbook ? user.mind.guestbook.get_known_name(user, src, face_name) : face_name
 				if(known_name)
-					. += "You know them as <EM>[known_name]</EM>."
+					. += "You know [t_him] as <EM>[known_name]</EM>."
 				else
 					. += "You don't recognize [t_him]. You can <B>Ctrl-Shift click</b> [t_him] to memorize their face."
 			else
@@ -326,7 +326,7 @@
 			if(!key)
 				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'>[t_He] appears to be suffering from SSD - Space Sleep Disorder. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
+				msg += "<span class='warning'>[t_He] [t_has] been suffering from SSD - Space Sleep Disorder - for [trunc(((world.time - lastclienttime) / (1 MINUTES)))] minutes. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
 	if (length(msg))
 		. += "<span class='warning'>[msg.Join("")]</span>"
 

@@ -513,7 +513,7 @@
 				/obj/item/organ/brain/alien = 17,
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
-				/obj/item/gun/ballistic/automatic/smg/c20r = 16,
+				/obj/item/gun/ballistic/automatic/smg/cobra = 16,
 				/obj/item/uplink/old = 2,
 				/obj/item/book/granter/spell/charge = 12,
 				/obj/item/grenade/clusterbuster/spawner_manhacks = 15,
@@ -579,7 +579,7 @@
 	uniform = /obj/item/clothing/under/syndicate/coldres
 	shoes = /obj/item/clothing/shoes/combat/coldres
 	ears = /obj/item/radio/headset/syndicate/alt
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	id = /obj/item/card/id/syndicate
 	implants = list(/obj/item/implant/exile)
 

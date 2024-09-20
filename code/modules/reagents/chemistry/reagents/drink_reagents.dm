@@ -316,17 +316,21 @@
 	description = "Coffee and ice, refreshing and cool."
 	color = "#112a3b" // rgb: 16, 40, 56
 	nutriment_factor = 0
+	overdose_threshold = 80
 	taste_description = "bitter coldness"
 	glass_icon_state = "icedcoffeeglass"
 	glass_name = "iced coffee"
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
+
+/datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
+	M.Jitter(5)
+	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	M.Jitter(5)
 	..()
 	. = 1
 
@@ -335,18 +339,22 @@
 	description = "Coffee with pulsing ice shards"
 	color = "#132043" // rgb: 16, 40, 56
 	nutriment_factor = 0
+	overdose_threshold = 80
 	quality = DRINK_FANTASTIC
 	taste_description = "bitter coldness and a hint of smoke"
 	glass_icon_state = "hoticecoffee"
 	glass_name = "hot ice coffee"
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
+/datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/M)
+	M.Jitter(5)
+	..()
+
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-60)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	M.Jitter(5)
 	M.adjustToxLoss(1*REM, 0)
 	..()
 	. = TRUE
@@ -416,7 +424,7 @@
 	description = "A citrusy drink from the Kepori space installation known as The Ring."
 	color = "#c4ff2d" // rgb: 16, 32, 0
 	taste_description = "sweet citrus soda"
-	glass_icon_state = "Comet_trail_glass"
+	glass_icon_state = "comet_trail_glass"
 	glass_name = "glass of Comet Trail"
 	glass_desc = "A glass of Comet Trail. Taste the stars!"
 
@@ -461,7 +469,7 @@
 	description = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	color = "#5f2010"
 	taste_description = "spiced cola"
-	glass_icon_state = "molten_glass"
+	glass_icon_state = "glass_brown"
 	glass_name = "glass of Molten Bubbles"
 	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
 
@@ -487,6 +495,8 @@
 	description = "Extra refreshing for those long desert days."
 	color = "#af9938"
 	taste_description = "root-beer and asbestos"
+	glass_name = "glass of Sandblast Sarsaparilla"
+	glass_desc = "A glass of Sandblast Sarsaparilla. Perfect for those long desert days."
 
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"
@@ -615,17 +625,21 @@
 	description = "A hot beverage for those who can't handle the lactose."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
+	overdose_threshold = 80
 	taste_description = "creamy coffee"
 	glass_icon_state = "soy_latte"
 	glass_name = "soy latte"
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
+
+/datum/reagent/consumable/soy_latte/overdose_process(mob/living/M)
+	M.Jitter(5)
+	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
-	M.Jitter(5)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -636,17 +650,21 @@
 	description = "A nice, strong and tasty beverage while you are reading."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
+	overdose_threshold = 80
 	taste_description = "bitter cream"
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
+
+/datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
+	M.Jitter(5)
+	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
-	M.Jitter(5)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()

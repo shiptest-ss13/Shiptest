@@ -256,7 +256,7 @@
 /turf/open/floor/plasteel,
 /area/ship/external)
 "bt" = (
-/obj/machinery/computer/cargo/express/retro{
+/obj/machinery/computer/cargo/retro{
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -930,12 +930,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/canteen)
-"fZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "gb" = (
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -1150,9 +1144,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "hK" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
@@ -2078,7 +2069,7 @@
 	pixel_y = 1
 	},
 /obj/item/toy/cards/deck,
-/obj/item/reagent_containers/food/snacks/butterbiscuit{
+/obj/item/food/butterbiscuit{
 	pixel_x = 6;
 	pixel_y = 6
 	},
@@ -2507,12 +2498,6 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
-"qq" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "qu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -3147,7 +3132,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "uV" = (
-/obj/structure/closet/radiation,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5503,6 +5487,11 @@
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 10
 	},
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LB" = (
@@ -5560,12 +5549,6 @@
 /turf/open/floor/light,
 /area/ship/engineering)
 "Me" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/item/weldingtool,
-/obj/item/weldingtool,
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
 	dir = 4;
 	pixel_x = -28;
@@ -5580,6 +5563,9 @@
 	name = "Chamber Window";
 	pixel_x = -28;
 	pixel_y = -8
+	},
+/obj/machinery/computer/atmos_control/incinerator{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5610,13 +5596,11 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Mr" = (
-/obj/machinery/computer/atmos_control/incinerator{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/green/arrow_ccw,
+/obj/structure/closet/radiation,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Mx" = (
@@ -5888,6 +5872,7 @@
 /area/ship/hallway/fore)
 "Pc" = (
 /obj/machinery/air_sensor/atmos/incinerator_tank,
+/obj/machinery/igniter/incinerator_atmos,
 /turf/open/floor/engine,
 /area/ship/engineering)
 "Pe" = (
@@ -7664,7 +7649,7 @@ Pn
 Bz
 Pn
 Nr
-qq
+Pn
 hK
 Pc
 FA
@@ -7705,7 +7690,7 @@ eS
 Vc
 Pn
 VS
-fZ
+Pn
 NB
 cT
 RC

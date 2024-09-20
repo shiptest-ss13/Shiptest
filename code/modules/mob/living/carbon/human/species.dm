@@ -1,5 +1,7 @@
 GLOBAL_LIST_EMPTY(roundstart_races)
 
+#define MINIMUM_MOLS_TO_HARM 1
+
 /**
  * # species datum
  *
@@ -144,6 +146,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_normal = HUMAN_BODYTEMP_NORMAL
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
+	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7)
+	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -158,6 +164,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_cooling_rate_max = HUMAN_BODYTEMP_COOLING_MAX
 	/// The maximum rate at which a species can cool down per tick
 	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
+	/// How much temp is our body stabilizing naturally?
+	var/bodytemp_natural_stabilization = 0
+	/// How much temp is the environment is causing us to charge?
+	var/bodytemp_environment_change = 0
 
 	///Does our species have colors for its' damage overlays?
 	var/use_damage_color = TRUE
@@ -1179,7 +1189,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
-			if(H.wear_id && !swap)
+			if(H.wear_id)
+				if(SEND_SIGNAL(H.wear_id, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE))
+					return TRUE
 				return FALSE
 
 			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
@@ -1786,16 +1798,113 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/areatemp = H.get_temperature(environment)
 
 	if(H.stat != DEAD) // If you are dead your body does not stabilize naturally
-		natural_bodytemperature_stabilization(environment, H)
+		bodytemp_natural_stabilization = natural_bodytemperature_stabilization(environment, H)
 
 	if(!H.on_fire || areatemp > H.bodytemperature) // If we are not on fire or the area is hotter
-		H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
+		bodytemp_environment_change = H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
+
+	if(H.check_for_seal())
+		return
+
+	var/plasma = environment.get_moles(GAS_PLASMA)
+	var/tritium = environment.get_moles(GAS_TRITIUM)
+	var/chlorine = environment.get_moles(GAS_CHLORINE)
+	var/hydrogen_chloride = environment.get_moles(GAS_HYDROGEN_CHLORIDE)
+	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM)
+		return
+
+	var/eyedamage = FALSE
+	var/irritant = FALSE
+	var/burndamage = 0
+	var/lowerthreshold = 0
+	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
+		lowerthreshold = 1
+
+	if(plasma > (MINIMUM_MOLS_TO_HARM * 10))
+		eyedamage = TRUE
+		irritant = TRUE
+	if(tritium)
+		burndamage += max(sqrt(tritium) - 2 + lowerthreshold, 0)
+		if(tritium > MINIMUM_MOLS_TO_HARM)
+			eyedamage = TRUE
+			irritant = TRUE
+	if(chlorine)
+		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		irritant = TRUE
+		if(chlorine > (MINIMUM_MOLS_TO_HARM * 10))
+			eyedamage = TRUE
+	if(hydrogen_chloride)
+		burndamage += max(sqrt(hydrogen_chloride) - 1 + lowerthreshold, 0)
+		eyedamage = TRUE
+		irritant = TRUE
+
+	if(!eyedamage && !burndamage && !irritant)
+		return
+	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
+	if(prob(50) && burndamage)
+		if(lowerthreshold)
+			to_chat(H, "<span class='userdanger'>You're corroding!</span>")
+		else
+			to_chat(H, "<span class='userdanger'>You're melting!</span>")
+		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
+	if(!H.check_for_goggles() && eyedamage)
+		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+		if(prob(50))
+			to_chat(H, "<span class='danger'>Your eyes burn!</span>")
+	if(irritant && prob(50))
+		if(lowerthreshold)
+			to_chat(H, "<span class='danger'>Your outer shell smolders!</span>")
+		else
+			to_chat(H, "<span class='danger'>Your skin itches.</span>")
+
 
 /// Handle the body temperature status effects for the species
 /// Traits for resitance to heat or cold are handled here.
 /datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
+	var/body_temp = H.bodytemperature
+	var/total_change = bodytemp_natural_stabilization + bodytemp_environment_change
+
+	//tempature is no longer comfy, throw alert
+	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		if(body_temp > bodytemp_heat_damage_limit)
+			var/burn_damage = calculate_burn_damage(H)
+			if(burn_damage < 2)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+		else
+			if(body_temp < (bodytemp_heat_damage_limit - 10))
+				// you are cooling down and exiting the danger zone
+				if(total_change < 0)
+					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+				else
+					H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+			else if(total_change > 1)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+			else
+				H.clear_alert("tempfeel")
+	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		if(body_temp < 200)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
+		else if(body_temp < bodytemp_cold_damage_limit)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+		else if(body_temp < (bodytemp_cold_damage_limit + 10))
+			// you are warming up and exiting the danger zone
+			if(total_change > 0)
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+			else
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+		else if(total_change < -1)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+		else
+			H.clear_alert("tempfeel")
+	else
+		H.clear_alert("tempfeel")
+
 	// Body temperature is too hot, and we do not have resist traits
-	if(H.bodytemperature > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
+	if(body_temp > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
 		// Clear cold mood and apply hot mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
@@ -1803,23 +1912,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		//Remove any slowdown from the cold.
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 
-		var/burn_damage = 0
-		var/firemodifier = H.fire_stacks / 50
-		if (!H.on_fire) // We are not on fire, reduce the modifier
-			firemodifier = min(firemodifier, 0)
+		var/burn_damage = calculate_burn_damage(H)
 
-		// this can go below 5 at log 2.5
-		burn_damage = max(log(2 - firemodifier, (H.bodytemperature - H.get_body_temp_normal(apply_change=FALSE))) - 5,0)
-
-		// Display alerts based on the amount of fire damage being taken
-		if (burn_damage)
-			switch(burn_damage)
-				if(1 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 1)
-				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
-				else
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 3)
+		// sweats depending on burn damage, not actually a mechanic but a alternative to pinpoint when you are taking damage
+		if(burn_damage)
+			if(H.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
+				switch(burn_damage)
+					if(0 to 2)
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 1)
+					if(2 to 4)
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 2)
+					else
+						H.throw_alert("temp", /atom/movable/screen/alert/fans, 3)
+			else
+				switch(burn_damage)
+					if(0 to 2)
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
+					if(2 to 4)
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
+					else
+						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
@@ -1832,7 +1944,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
 
 	// Body temperature is too cold, and we do not have resist traits
-	else if(H.bodytemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+	else if(body_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
@@ -1841,17 +1953,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 
-		var/bodytemp = H.bodytemperature
-		if(bodytemp < 120)
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 3)
+		if(body_temp < 120)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
 
-		else if(bodytemp < 200)
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 2)
+		else if(body_temp < 200)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
 
 		else
-			H.throw_alert("temp", /atom/movable/screen/alert/cold, 1)
+			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
 			H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
 
 	// We are not to hot or cold, remove status and moods
@@ -1860,6 +1971,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+
+/datum/species/proc/calculate_burn_damage(mob/living/carbon/human/current_human)
+	var/burn_damage = 0
+	var/firemodifier = current_human.fire_stacks / 50
+	if (!current_human.on_fire) // We are not on fire, reduce the modifier
+		firemodifier = min(firemodifier, 0)
+
+	// this can go below 5 at log 2.5
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
+	return burn_damage
 
 /// Handle the air pressure of the environment
 /datum/species/proc/handle_environment_pressure(datum/gas_mixture/environment, mob/living/carbon/human/H)
@@ -1958,6 +2079,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	// Apply the natural stabilization changes
 	H.adjust_bodytemperature(natural_change)
+	return natural_change
 
 //////////
 // FIRE //
@@ -2262,3 +2384,5 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/get_harm_descriptors()
 	return
+
+#undef MINIMUM_MOLS_TO_HARM

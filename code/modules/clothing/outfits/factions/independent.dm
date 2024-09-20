@@ -6,8 +6,6 @@
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
-	r_pocket = /obj/item/storage/wallet
-
 // Assistant
 
 /datum/outfit/job/independent/assistant
@@ -314,7 +312,6 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/storage/wallet
 	gloves = /obj/item/clothing/gloves/color/yellow
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
@@ -353,7 +350,7 @@
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/kitchen/knife/combat/survival
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 	implants = list(/obj/item/implant/radio)
 
@@ -393,7 +390,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/storage/wallet
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
@@ -544,7 +540,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_hand = /obj/item/clipboard
+	r_pocket = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
@@ -552,11 +548,15 @@
 /datum/outfit/job/independent/quartermaster/western
 	name = "Independent - Quartermaster (Western)"
 
-	uniform = /obj/item/clothing/under/rank/cargo/qm
-	suit = /obj/item/clothing/suit/toggle/hazard
+	uniform = /obj/item/clothing/under/rank/security/detective
+	suit = /obj/item/clothing/suit/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"

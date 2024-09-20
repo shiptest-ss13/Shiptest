@@ -957,7 +957,7 @@
 		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/mech_recharger
-	name = "Mechbay Recharger (Machine Board)"
+	name = "Exosuit Bay Recharger (Machine Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/mech_bay_recharge_port
 	req_components = list(
@@ -1392,16 +1392,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-//Misc
-/obj/item/circuitboard/machine/sheetifier
-	name = "Sheet-meister 2000 (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/sheetifier
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	needs_anchored = FALSE
-
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"
 	icon_state = "abductor_mod"
@@ -1441,6 +1431,15 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/micro_laser = 1)
+
+/obj/item/circuitboard/machine/shuttle/engine/fire
+	name = "Combustion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/fire
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/sheet/plasteel = 2
+	)
 
 /obj/item/circuitboard/machine/shuttle/engine/electric
 	name = "Ion Thruster (Machine Board)"
@@ -1494,6 +1493,26 @@
 		return
 
 /obj/item/circuitboard/machine/shuttle/heater/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+
+/obj/item/circuitboard/machine/shuttle/fire_heater
+	name = "Combustion Engine Heater (Machine Board)"
+	desc = "You can use mulitool to switch pipe layers"
+	var/pipe_layer = PIPING_LAYER_DEFAULT
+	build_path = /obj/machinery/atmospherics/components/unary/shuttle/fire_heater
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/matter_bin = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/fire_heater/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/shuttle/fire_heater/examine()
 	. = ..()
 	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 

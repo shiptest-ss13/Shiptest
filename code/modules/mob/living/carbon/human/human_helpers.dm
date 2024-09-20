@@ -101,6 +101,22 @@
 		if(id_card)
 			return id_card
 
+/mob/living/carbon/human/get_bankcard()
+	//Check hands
+	var/list/items_to_check = list()
+	if(get_active_held_item())
+		items_to_check += get_active_held_item()
+	if(get_inactive_held_item())
+		items_to_check += get_inactive_held_item()
+	if(wear_id)
+		items_to_check += wear_id
+	if(belt)
+		items_to_check += belt
+	for(var/obj/item/i in items_to_check)
+		var/obj/item/card/bank/bank_card = i.GetBankCard()
+		if(bank_card)
+			return bank_card
+
 /mob/living/carbon/human/get_id_in_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(!held_item)
@@ -137,10 +153,10 @@
 		to_chat(src, "<span class='warning'>You can't bring yourself to use a ranged weapon!</span>")
 		return FALSE
 
-/mob/living/carbon/human/proc/get_bank_account()
+/mob/living/carbon/proc/get_bank_account()
 	RETURN_TYPE(/datum/bank_account)
 	var/datum/bank_account/account
-	var/obj/item/card/id/I = get_idcard()
+	var/obj/item/card/bank/I = get_bankcard()
 
 	if(I && I.registered_account)
 		account = I.registered_account
@@ -176,23 +192,65 @@
 /mob/living/carbon/human/proc/get_age()
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src) || isskeleton(src)) // sorry ladies no middle aged robots
 		return FALSE
-	switch(age)
-		if(70 to INFINITY)
-			return "Geriatric"
-		if(60 to 70)
-			return "Elderly"
-		if(50 to 60)
-			return "Old"
-		if(40 to 50)
-			return "Middle-Aged"
-		if(24 to 40)
-			return FALSE //not necessary because this is basically the most common age range
-		if(18 to 24)
-			return "Young"
-		else
-			return "Puzzling"
+	if(islizard(src))
+		switch(age)
+			if(175 to INFINITY)
+				return "Ancient"
+			if(130 to 175)
+				return "Elderly"
+			if(100 to 130)
+				return "Old"
+			if(65 to 100)
+				return "Middle-Aged"
+			if(40 to 65)
+				return FALSE
+			if(18 to 40)
+				return "Young"
+	else if(isvox(src))
+		switch(age)
+			if(280 to INFINITY)
+				return "Ancient"
+			if(200 to 280)
+				return "Elderly"
+			if(160 to 200)
+				return "Old"
+			if(120 to 160)
+				return "Middle-Aged"
+			if(60 to 120)
+				return FALSE
+			if(18 to 60)
+				return "Young"
+	else if(iselzuose(src))
+		switch(age)
+			if(300 to INFINITY)
+				return "Ancient"
+			if(260 to 300)
+				return "Elderly"
+			if(160 to 260)
+				return "Old"
+			if(100 to 160)
+				return "Middle-Aged"
+			if(40 to 100)
+				return FALSE // most common age range
+			if(18 to 40)
+				return "Young"
+	else
+		switch(age)
+			if(70 to INFINITY)
+				return "Ancient"
+			if(60 to 70)
+				return "Elderly"
+			if(50 to 60)
+				return "Old"
+			if(40 to 50)
+				return "Middle-Aged"
+			if(24 to 40)
+				return FALSE // most common age range
+			if(18 to 24)
+				return "Young"
+		return "Puzzling"
 
 /mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
 	var/final_string = ""
@@ -212,7 +270,7 @@
 	final_string += get_gender()
 
 	if(prefixed)
-		final_string = "\A [final_string]"
+		final_string = "\improper [final_string]"
 
 	if(lowercase)
 		final_string = lowertext(final_string)

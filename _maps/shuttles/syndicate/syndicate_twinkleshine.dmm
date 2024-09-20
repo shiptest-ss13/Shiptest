@@ -83,46 +83,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"aD" = (
-/obj/structure/sign/poster/contraband/m90{
-	icon_state = "poster-m90";
-	pixel_x = -32
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "syndicate";
-	name = "lieutenant locker";
-	req_access = list(3,150)
-	},
-/obj/item/clothing/under/syndicate/ngr/officer,
-/obj/item/clothing/suit/armor/ngr/captain,
-/obj/item/clothing/head/ngr/peaked,
-/obj/item/clothing/shoes/combat,
-/obj/item/megaphone/sec{
-	name = "syndicate megaphone"
-	},
-/obj/item/gun/ballistic/automatic/pistol/no_mag,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/radio/headset/syndicate/alt/leader,
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/ammo_box/magazine/m10mm/ap,
-/obj/item/ammo_box/magazine/m10mm/ap,
-/obj/item/clothing/suit/armor/hos/trenchcoat,
-/obj/machinery/button/door{
-	pixel_x = 9;
-	pixel_y = 25;
-	id = "twinkle_armory";
-	name = "Armory Access";
-	req_access = list(3,150)
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "aE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -131,6 +91,33 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"aF" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag{
+	pixel_y = -3;
+	pixel_x = 2
+	},
+/obj/machinery/light/directional/north,
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
+	pixel_y = -9;
+	pixel_x = -10
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog/drum{
+	pixel_y = -12
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "aG" = (
 /obj/structure/closet/secure_closet/wall/directional/east,
 /obj/item/kitchen/knife,
@@ -897,31 +884,6 @@
 "fH" = (
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"fJ" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/radio/headset/syndicate/alt{
-	keyslot = null
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/color/black,
-/obj/machinery/light/directional/east,
-/obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "fK" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
@@ -1194,6 +1156,30 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"hh" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(150,10);
+	populate = 0
+	},
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 10
+	},
+/obj/machinery/light/directional/south,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/pipe_dispenser,
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/head/hardhat/red{
+	name = "hard hat"
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "hr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1217,6 +1203,33 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"hB" = (
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 1
+	},
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(150,10);
+	populate = 0
+	},
+/obj/item/pipe_dispenser,
+/obj/structure/sign/poster/contraband/gec{
+	pixel_y = -32
+	},
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/head/hardhat/red{
+	name = "hard hat"
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "hN" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 5
@@ -1579,7 +1592,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
 	},
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8;
 	icon_state = "computer-left"
 	},
@@ -1792,7 +1805,7 @@
 /obj/item/codespeak_manual{
 	charges = 2
 	},
-/obj/item/gun/ballistic/revolver,
+/obj/item/storage/pistolcase/a357,
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
@@ -1804,9 +1817,33 @@
 /obj/item/clothing/head/HoS/syndicate,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
+"kr" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/radio/headset/syndicate/alt{
+	keyslot = null
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/color/black,
+/obj/machinery/light/directional/west,
+/obj/item/flashlight/seclite,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "ky" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/light/directional/east,
@@ -1823,33 +1860,6 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
-"kH" = (
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/radio/headset/syndicate/alt{
-	keyslot = null
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/color/black,
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/machinery/light/directional/east,
-/obj/item/clothing/head/soft/black,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "kJ" = (
 /obj/item/tank/internals/plasma/full,
 /obj/structure/cable{
@@ -2079,6 +2089,33 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"lZ" = (
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/radio/headset/syndicate/alt{
+	keyslot = null
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/color/black,
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/machinery/light/directional/east,
+/obj/item/clothing/head/soft/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/flashlight/seclite,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "ma" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2758,31 +2795,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
-"pN" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/radio/headset/syndicate/alt{
-	keyslot = null
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/color/black,
-/obj/machinery/light/directional/west,
-/obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "pO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3286,6 +3298,32 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"sU" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/radio/headset/syndicate/alt{
+	keyslot = null
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/color/black,
+/obj/machinery/light/directional/east,
+/obj/item/clothing/head/beret/black,
+/obj/item/flashlight/seclite,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "sW" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -3293,6 +3331,32 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engine)
+"sX" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "explosives locker"
+	},
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/item/gun/ballistic/rocketlauncher/mako{
+	pixel_y = 6;
+	pixel_x = -3
+	},
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_casing/caseless/rocket{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/caseless/rocket{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "sY" = (
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 8
@@ -3509,6 +3573,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"uM" = (
+/obj/structure/rack,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
+/obj/item/ammo_box/magazine/sniper_rounds{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/ammo_box/magazine/sniper_rounds{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "uP" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
 /obj/structure/sign/poster/contraband/atmosia_independence{
@@ -4416,32 +4499,6 @@
 	rad_insulation = 0
 	},
 /area/ship/medical)
-"zZ" = (
-/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
-	dir = 1
-	},
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(150,10);
-	populate = 0
-	},
-/obj/item/pipe_dispenser,
-/obj/structure/sign/poster/contraband/gec{
-	pixel_y = -32
-	},
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/head/hardhat/red{
-	name = "hard hat"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Af" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
 	dir = 8
@@ -4633,51 +4690,6 @@
 	rad_insulation = 0
 	},
 /area/ship/security)
-"Bn" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/gun/ballistic/automatic/pistol/no_mag,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/radio/headset/syndicate/alt{
-	keyslot = null
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/color/black,
-/obj/machinery/light/directional/east,
-/obj/item/clothing/head/beret/black,
-/obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
-"Bq" = (
-/obj/structure/rack,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
-/obj/item/ammo_box/magazine/sniper_rounds{
-	pixel_x = 9;
-	pixel_y = 4
-	},
-/obj/item/ammo_box/magazine/sniper_rounds{
-	pixel_x = 6;
-	pixel_y = 1
-	},
-/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate/no_mag{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "Bs" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5031,6 +5043,29 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"Dj" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_x = 10;
+	pixel_y = -1
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_x = 4
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_y = -3;
+	pixel_x = 7
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_y = -2
+	},
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/no_mag,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "Dk" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 5
@@ -5606,29 +5641,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
-"Gm" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/ebr{
-	pixel_x = 10;
-	pixel_y = -1
-	},
-/obj/item/ammo_box/magazine/ebr{
-	pixel_x = 4
-	},
-/obj/item/ammo_box/magazine/ebr{
-	pixel_y = -3;
-	pixel_x = 7
-	},
-/obj/item/ammo_box/magazine/ebr{
-	pixel_y = -2
-	},
-/obj/item/gun/ballistic/automatic/ebr/no_mag{
-	pixel_x = -7;
-	pixel_y = 4
-	},
-/obj/item/gun/ballistic/automatic/ebr/no_mag,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "Gn" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1;
@@ -7097,6 +7109,31 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
+"Pf" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/radio/headset/syndicate/alt{
+	keyslot = null
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/color/black,
+/obj/machinery/light/directional/east,
+/obj/item/flashlight/seclite,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "Pn" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
@@ -7323,17 +7360,16 @@
 /obj/item/clothing/glasses/hud/security/suns,
 /obj/item/clothing/gloves/tackler/dolphin/suns,
 /obj/item/clothing/suit/toggle/suns/pkcoat,
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/hos,
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos,
+/obj/item/clothing/suit/armor/vest/suns/hos,
+/obj/item/clothing/suit/armor/vest/suns/ehos,
 /obj/item/clothing/head/welding/suns/hos,
 /obj/item/clothing/under/syndicate/suns/pkuniform,
 /obj/item/radio/headset/syndicate/alt{
 	keyslot = null
 	},
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh,
 /obj/item/storage/belt/sabre/solgov,
-/obj/item/ammo_box/magazine/modelh,
-/obj/item/ammo_box/magazine/modelh,
+/obj/item/storage/pistolcase/modelh,
+/obj/item/ammo_box/ferroslugbox,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Qv" = (
@@ -7494,33 +7530,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"Rv" = (
-/obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
-	pixel_x = -7;
-	pixel_y = 7
-	},
-/obj/item/gun/ballistic/shotgun/bulldog/no_mag{
-	pixel_y = -3;
-	pixel_x = 2
-	},
-/obj/machinery/light/directional/north,
-/obj/item/ammo_box/magazine/m12g{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m12g{
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m12g{
-	pixel_y = -9;
-	pixel_x = -10
-	},
-/obj/item/ammo_box/magazine/m12g{
-	pixel_y = -12
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "Ry" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -7569,6 +7578,27 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ship/engineering/communications)
+"RF" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag{
+	pixel_y = -2;
+	pixel_x = 3
+	},
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "RG" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 5
@@ -8042,32 +8072,6 @@
 "Um" = (
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
-"Up" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "explosives locker"
-	},
-/obj/item/storage/backpack/duffelbag/syndie/c4{
-	pixel_x = -1;
-	pixel_y = -10
-	},
-/obj/item/gun/ballistic/rocketlauncher{
-	pixel_y = 6;
-	pixel_x = -3
-	},
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_casing/caseless/rocket{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "Uu" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
 /obj/effect/turf_decal/corner/opaque/orange/full,
@@ -8813,6 +8817,47 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"YI" = (
+/obj/structure/sign/poster/contraband/m90{
+	icon_state = "poster-m90";
+	pixel_x = -32
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "lieutenant locker";
+	req_access = list(3,150)
+	},
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/ngr/captain,
+/obj/item/clothing/head/ngr/peaked,
+/obj/item/clothing/shoes/combat,
+/obj/item/megaphone/sec{
+	name = "syndicate megaphone"
+	},
+/obj/item/storage/pistolcase/ringneck,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/clothing/suit/armor/hos/trenchcoat,
+/obj/machinery/button/door{
+	pixel_x = 9;
+	pixel_y = 25;
+	id = "twinkle_armory";
+	name = "Armory Access";
+	req_access = list(3,150)
+	},
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "YJ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /obj/machinery/iv_drip,
@@ -8831,27 +8876,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"YO" = (
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
-	pixel_x = 2;
-	pixel_y = 8
-	},
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/smg/c20r/no_mag{
-	pixel_y = -2;
-	pixel_x = 3
-	},
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "YR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/eastleft,
@@ -8897,29 +8921,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
-"Zc" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(150,10);
-	populate = 0
-	},
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 10
-	},
-/obj/machinery/light/directional/south,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/pipe_dispenser,
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/head/hardhat/red{
-	name = "hard hat"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Zg" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -9483,7 +9484,7 @@ ZX
 Qd
 bM
 zH
-zZ
+hB
 ZX
 hN
 IT
@@ -9518,7 +9519,7 @@ ZX
 fz
 zK
 qK
-Zc
+hh
 ZX
 RG
 BV
@@ -9675,7 +9676,7 @@ xo
 pc
 TT
 PL
-Gm
+Dj
 Si
 Sg
 PL
@@ -9745,7 +9746,7 @@ oX
 PN
 ec
 PL
-YO
+RF
 ji
 wg
 Uc
@@ -9780,14 +9781,14 @@ ea
 BG
 tY
 PL
-Rv
+aF
 jx
 TC
 on
 ep
 sd
 da
-kH
+lZ
 Bj
 "}
 (22,1,1) = {"
@@ -9815,9 +9816,9 @@ sO
 AK
 Pe
 PL
-Bq
+uM
 Fr
-Up
+sX
 PL
 Tt
 sd
@@ -9857,7 +9858,7 @@ PL
 BL
 EG
 da
-pN
+kr
 Bj
 "}
 (24,1,1) = {"
@@ -9885,7 +9886,7 @@ sO
 QC
 Cq
 Bj
-aD
+YI
 nt
 oc
 Eh
@@ -9962,7 +9963,7 @@ Bj
 Tt
 sd
 da
-fJ
+Pf
 Bj
 "}
 (27,1,1) = {"
@@ -10032,7 +10033,7 @@ Pa
 At
 sd
 da
-pN
+kr
 Bj
 "}
 (29,1,1) = {"
@@ -10137,7 +10138,7 @@ GD
 Nj
 eN
 da
-Bn
+sU
 Bj
 "}
 (32,1,1) = {"
