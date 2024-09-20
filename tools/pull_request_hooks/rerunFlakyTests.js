@@ -1,4 +1,4 @@
-const LABEL = "🤖 Flaky Test Report";
+const LABEL = "🤖 [BUG]Flaky Test Report";
 const TITLE_BOT_HEADER = "title: ";
 
 // Only check jobs that start with these.
