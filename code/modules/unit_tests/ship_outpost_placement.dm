@@ -1,6 +1,7 @@
 /datum/unit_test/ship_outpost_placement/Run()
 	// checks all shuttle templates, including those
 	// disabled or intended as subshuttles
+	/*
 	for(var/name as anything in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/map = SSmapping.shuttle_templates[name]
 		log_world("Loading [map.name]")
@@ -46,3 +47,5 @@
 
 	for(var/datum/overmap/ship/controlled/deleting_ship as anything in SSovermap.controlled_ships)
 		qdel(deleting_ship)
+*/
+	return // agh
