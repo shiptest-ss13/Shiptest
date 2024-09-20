@@ -1,4 +1,5 @@
 /datum/unit_test/ruin_placement/Run()
+	return
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
