@@ -1880,7 +1880,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 				else
 					H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-			else if(total_change > -1)
+			else if(total_change < -1)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 			else
 				H.clear_alert("tempfeel")
