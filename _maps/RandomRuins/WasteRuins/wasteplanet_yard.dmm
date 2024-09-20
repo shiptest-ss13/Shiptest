@@ -1586,8 +1586,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/structure/spawner/wasteplanet/hivebot/high_threat,
 /obj/structure/catwalk/over,
+/obj/structure/spawner/hivebot,
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/canteen)
 "ry" = (
@@ -2193,9 +2193,9 @@
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "zN" = (
-/obj/structure/spawner/wasteplanet/hivebot/low_threat,
-/turf/open/floor/plating/wasteplanet/lit,
-/area/ruin/wasteplanet)
+/obj/structure/spawner/hivebot,
+/turf/open/floor/plasteel/dark/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "zP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -3114,6 +3114,7 @@
 /obj/effect/turf_decal/corner/transparent/lime/bordercorner{
 	dir = 1
 	},
+/obj/structure/spawner/hivebot,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "MB" = (
@@ -3274,16 +3275,9 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/bay)
 "Ow" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spawner/wasteplanet/hivebot/medium_threat,
-/obj/effect/turf_decal/corner/transparent/lime/border{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/lime/border,
-/turf/open/floor/plasteel/dark/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
+/obj/structure/spawner/hivebot,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/ruin/wasteplanet)
 "OB" = (
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
@@ -4770,7 +4764,7 @@ dY
 px
 bA
 pt
-Ow
+eL
 kw
 dP
 px
@@ -5459,8 +5453,8 @@ OM
 jt
 OM
 jt
-zN
 OM
+Ow
 OM
 OM
 OM
@@ -5961,7 +5955,7 @@ yK
 yK
 yK
 um
-Cw
+zN
 JR
 UW
 kH
