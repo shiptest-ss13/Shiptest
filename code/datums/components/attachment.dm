@@ -8,6 +8,7 @@
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
+	var/datum/callback/on_attacked
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
 	///Called on the parents weild
@@ -27,6 +28,7 @@
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
 		datum/callback/on_preattack = null,
+		datum/callback/on_attacked = null,
 		datum/callback/on_wield = null,
 		datum/callback/on_unwield = null,
 		list/signals = null
@@ -42,6 +44,9 @@
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
 	src.on_preattack = on_preattack
+	src.on_attacked = on_attacked
+	src.on_wield = on_wield
+	src.on_unwield = on_unwield
 
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))

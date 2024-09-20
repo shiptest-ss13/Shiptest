@@ -90,6 +90,7 @@
 #define COMSIG_ATTACHMENT_DO_WEILD "attach-weilded"
 #define COMSIG_ATTACHMENT_UNWEILD "attach-unwield"
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
+#define COMSIG_ATTACHMENT_UNIQUE_ACTION "attach-unique-action"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
