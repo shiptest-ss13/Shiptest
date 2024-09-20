@@ -2358,6 +2358,14 @@
 		else
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, gib)), 5 SECONDS)
 
+/datum/reagent/concrete_mix
+	name = "Concrete Mix"
+	description = "Pre-made concrete mix, ideal for lazy engineers."
+	color = "#c4c0bc"
+	taste_description = "chalky concrete"
+	harmful = TRUE
+	reagent_state = SOLID
+
 /datum/reagent/cement
 	name = "Cement"
 	description = "A sophisticated binding agent used to produce concrete."
