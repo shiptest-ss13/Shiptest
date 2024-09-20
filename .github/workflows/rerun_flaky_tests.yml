@@ -5,6 +5,18 @@ on:
     types:
     - completed
 jobs:
+  test_run_on_first:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.run_attempt == 1 }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Rerun flaky tests
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { rerunFlakyTests } = await import('${{ github.workspace }}/tools/pull_request_hooks/rerunFlakyTests.js')
+          await rerunFlakyTests({ github, context })
   rerun_flaky_tests:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.run_attempt == 1 }}

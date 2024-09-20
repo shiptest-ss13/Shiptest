@@ -25,6 +25,7 @@ async function getFailedJobsForRun(github, context, workflowRunId, runAttempt) {
 }
 
 export async function rerunFlakyTests({ github, context }) {
+	console.log("Flakey Test Checker")
 	const failingJobs = await getFailedJobsForRun(
 		github,
 		context,
