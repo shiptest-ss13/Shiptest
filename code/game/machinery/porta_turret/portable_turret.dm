@@ -842,8 +842,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
-/obj/machinery/porta_turret/ship/solgov
-	faction = list("playerSolgov", "turret")
+
+/* Syndicate Turrets */
 
 /obj/machinery/porta_turret/ship/syndicate
 	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
@@ -865,6 +865,39 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/taser.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+
+/* Solcon Turrets */
+
+/obj/machinery/porta_turret/ship/solgov
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+
+/* Pan Gezena Federation Turrets */
+
+/obj/machinery/porta_turret/ship/pgf
+	name = "Etherbor Defensive Mount"
+	desc = "A less portable Etherbor offering, the EDM is a self-directed linkage of energy weapons, designed to keep intruders away from Gezenan vessels."
+	faction = list(FACTION_PLAYER_GEZENA, "Turret")
+	stun_projectile = /obj/projectile/beam/hitscan/disabler
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/assault
+	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+/obj/machinery/porta_turret/ship/pgf/light
+	name = "Etherbor Deterrent System"
+	desc = "A light turret manufactured by Etherbor. It offers a lightweight assembly of energy weapons to accost nearby foes."
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf
+	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+
+/obj/machinery/porta_turret/ship/pgf/heavy
+	name = "Etherbor Point-Defense System"
+	desc = "A high-powered defensive turret manufactured by Etherbor. The EPDS contains heavy energy weapons linked in tandem."
+	scan_range = 10
+	stun_projectile = /obj/projectile/beam/hitscan/disabler/heavy
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
+	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
 ////////////////////////
 //Turret Control Panel//
