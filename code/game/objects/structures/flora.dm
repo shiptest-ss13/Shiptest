@@ -1056,3 +1056,39 @@
 					T.air.adjust_moles(GAS_CO2, -amt)
 					T.atmos_spawn_air("o2=[amt];TEMP=293.15")
 		lastcycle = world.time
+
+/obj/structure/fluff/steam_vent
+	name = "steam vent"
+	desc = "A outlet for steam, usually for water coming in contact with steam pipes."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "steamvent"
+	deconstructible = FALSE
+	layer = GAS_PUMP_LAYER
+
+	var/particle_to_spawn = /particles/smoke/steam/vent
+	var/obj/effect/particle_holder/part_hold
+
+/obj/structure/fluff/steam_vent/Initialize()
+	. = ..()
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+
+/obj/structure/fluff/steam_vent/Destroy()
+	. = ..()
+	QDEL_NULL(part_hold)
+
+/obj/structure/fluff/steam_vent/low
+	particle_to_spawn = /particles/smoke/steam/vent/low
+
+/obj/structure/fluff/steam_vent/high
+	particle_to_spawn = /particles/smoke/steam/vent/high
+
+/obj/effect/particle_holder
+	name = ""
+	anchored = TRUE
+	mouse_opacity = 0
+
+/obj/effect/particle_emitter/Initialize(mapload, time)
+	. = ..()

@@ -56,9 +56,6 @@
 		if(BRUTE)
 			playsound(loc, 'sound/effects/empulse.ogg', 75, TRUE)
 
-/obj/machinery/field/containment/blob_act(obj/structure/blob/B)
-	return FALSE
-
 /obj/machinery/field/containment/ex_act(severity, target)
 	return FALSE
 

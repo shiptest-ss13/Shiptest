@@ -2,12 +2,12 @@
 
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
-	icon_state = "speedloader_357-7"
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
+	icon_state = "speedloader_357-6"
 	base_icon_state = "speedloader_357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
 	w_class = WEIGHT_CLASS_TINY
@@ -18,12 +18,12 @@
 
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 match)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	ammo_type = /obj/item/ammo_casing/a357/match
 
 /obj/item/ammo_box/a357/hp
 	name = "speed loader (.357 hollow point)"
-	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
+	desc = "A 6-round speed loader for quickly reloading .357 revolvers. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a357_box
@@ -136,6 +136,9 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	instant_load = TRUE
 
+/obj/item/ammo_box/a858/empty
+	start_empty = TRUE
+
 // .308 Stripper Clip (Vickland)
 
 /obj/item/ammo_box/vickland_a308
@@ -149,6 +152,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/vickland_a308/empty
+	start_empty = TRUE
 
 // .300 Magnum Stripper Clip (Scout)
 
@@ -164,19 +169,22 @@
 
 /obj/item/ammo_box/a300/empty
 	start_empty = TRUE
-// .300 Blackout Stripper Clip (Polymer Survivor Rifle)
+// 7.62 Stripper Clip (Polymer Survivor Rifle)
 
-/obj/item/ammo_box/aac_300blk_stripper
-	name = "stripper clip (.300 BLK)"
+/obj/item/ammo_box/a762_stripper
+	name = "stripper clip (7.62)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "300m"
-	ammo_type = /obj/item/ammo_casing/aac_300blk
-	caliber = ".300 BLK"
+	icon_state = "stripper_308-5"
+	base_icon_state = "stripper_308"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/a762_stripper/empty
+	start_empty = TRUE
 // Ferromagnetic Pellet Speed Loader (Claris)
 
 /obj/item/ammo_box/amagpellet_claris
@@ -284,7 +292,7 @@
 	name = "ammo box (10mm rubbershot)"
 	desc = "A box of 10mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "10mmbox-rubbershot"
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm armor-piercing)"
@@ -390,6 +398,13 @@
 /obj/item/ammo_box/a762_40/inteq
 	icon_state = "a762_40box_big_inteq"
 
+/obj/item/ammo_box/a556_42
+	name = "ammo box (5.56x42mm CLIP)"
+	icon_state = "a556_42box_big"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL
+
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
 	icon_state = "a308box"
@@ -434,6 +449,14 @@
 
 /obj/item/ammo_box/a44roum_speedloader/empty
 	start_empty = TRUE
+
+/obj/item/ammo_box/c57x39mm_box
+	name = "ammo box (5.7x39mm)"
+	desc = "A box of standard 5.7x39mm ammo."
+	icon_state = "57x39mmbox"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	max_ammo = 50
+
 
 /obj/item/ammo_box/c46x30mm_box
 	name = "ammo box (4.6x30mm)"
@@ -484,6 +507,16 @@
 	ammo_type = /obj/item/ammo_casing/a300
 	max_ammo = 20
 
+/obj/item/ammo_box/a65clip_box
+	name = "ammo box (6.5x57mm CLIP)"
+	desc = "A box of standard 6.5x57mm CLIP ammo."
+	icon_state = "65box"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	max_ammo = 20
+
+/obj/item/ammo_box/a65clip_box/syndicate
+	icon_state = "65box_sa"
+
 /obj/item/ammo_box/a44roum
 	name = "ammo box (.44 roumain)"
 	desc = "A box of standard .44 roumain ammo."
@@ -504,3 +537,11 @@
 	icon_state = "a44roum-hp"
 	ammo_type = /obj/item/ammo_casing/a44roum/hp
 	max_ammo = 50
+
+/obj/item/ammo_box/c299
+	name = "ammo box (.299 Eoehoma caseless)"
+	desc = "A box of .299 Eoehoma caseless, for use with the E-40 hybrid assault rifle."
+	icon_state = "299box"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL // This is a lot of ammo

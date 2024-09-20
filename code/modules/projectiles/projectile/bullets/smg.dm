@@ -1,3 +1,9 @@
+// 5.7x39mm (Asp and Sidewinder)
+
+/obj/projectile/bullet/c57x39mm
+	name = "5.7x39mm bullet"
+	damage = 20
+
 // 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
 
 /obj/projectile/bullet/c46x30mm

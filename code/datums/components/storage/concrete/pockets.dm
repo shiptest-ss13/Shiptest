@@ -91,6 +91,7 @@
 		/obj/item/clothing/glasses/hud/health/night,
 		/obj/item/clothing/glasses/hud/security/night,
 		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+		/obj/item/clothing/glasses/sunglasses/ballistic,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
 	))
@@ -143,7 +144,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol/syndicate,
+		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,

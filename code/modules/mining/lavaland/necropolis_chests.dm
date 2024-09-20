@@ -933,6 +933,8 @@
 	range = 20
 	damage = 30
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "spur_high"
 	var/skip = FALSE //this is the hackiest thing ive ever done but i dont know any other solution other than deparent the spur projectile
@@ -994,9 +996,6 @@
 	spawn(15)
 		target.overlays -= impact
 	playsound(loc, impact_sound, 30)
-	if(istype(target,/turf/closed/mineral))
-		var/turf/closed/mineral/M = target
-		M.gets_drilled()
 	..()
 
 /obj/item/ammo_casing/energy/spur/spur
@@ -1103,7 +1102,7 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 

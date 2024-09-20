@@ -30,6 +30,13 @@
 	cost = 2000
 	crate_name = "security barriers crate"
 
+/datum/supply_pack/sec_supply/empty_sandbags
+	name = "Empty Sandbags"
+	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
+	contains = list(/obj/item/storage/box/emptysandbags)
+	cost = 150
+	crate_name = "sandbag crate"
+
 /datum/supply_pack/sec_supply/wall_flash
 	name = "Wall-Mounted Flash Crate"
 	desc = "Contains four wall-mounted flashes."
@@ -84,6 +91,7 @@
 	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_NGR
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)
