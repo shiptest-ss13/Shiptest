@@ -262,6 +262,8 @@
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
 ///from base of atom/CtrlShiftRightClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
 //from base of atom/MouseDrop(): (/atom/over, /mob/user)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1

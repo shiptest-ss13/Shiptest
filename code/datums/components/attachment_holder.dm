@@ -33,6 +33,7 @@
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
+	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(handle_unique_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
@@ -193,12 +194,19 @@
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_TWOHANDED_WIELD, parent, user, params))
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_WEILD , parent, user, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_item_unwield(obj/item/parent, mob/user, params)
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_TWOHANDED_UNWIELD, parent, user, params))
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWEILD, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_unique_action(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user, params))
 			return TRUE

@@ -9,6 +9,7 @@
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
 	var/datum/callback/on_attacked
+	var/datum/callback/on_unique_action
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
 	///Called on the parents weild
@@ -29,6 +30,7 @@
 		datum/callback/on_toggle = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
+		datum/callback/on_unique_action = null,
 		datum/callback/on_wield = null,
 		datum/callback/on_unwield = null,
 		list/signals = null
@@ -45,6 +47,7 @@
 	src.on_toggle = on_toggle
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
+	src.on_unique_action = on_unique_action
 	src.on_wield = on_wield
 	src.on_unwield = on_unwield
 
@@ -59,6 +62,10 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_WEILD, PROC_REF(try_wield))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_UNWEILD, PROC_REF(try_unwield))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_UNIQUE_ACTION, PROC_REF(relay_unique_action))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -142,6 +149,30 @@
 
 	if(on_preattack)
 		return on_preattack.Invoke(gun, target_atom, user, params)
+
+/datum/component/attachment/proc/relay_attacked(obj/item/parent, obj/item/gun, obj/item, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_attacked)
+		return on_attacked.Invoke(gun, user, item)
+
+/datum/component/attachment/proc/try_wield(obj/item/parent, obj/item/gun, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_wield)
+		return on_wield.Invoke(gun, user, params)
+
+/datum/component/attachment/proc/try_unwield(obj/item/parent, obj/item/gun, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_unwield)
+		return on_unwield.Invoke(gun, user, params)
+
+/datum/component/attachment/proc/relay_unique_action(obj/item/parent, obj/item/gun, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_unique_action)
+		return on_unique_action.Invoke(user, params)
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER
