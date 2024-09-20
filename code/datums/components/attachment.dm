@@ -10,8 +10,10 @@
 	var/datum/callback/on_toggle
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
-	///Called on the parents afterattack
-	var/datum/callback/on_afterattack
+	///Called on the parents weild
+	var/datum/callback/on_wield
+	///Called on the parents unweild
+	var/datum/callback/on_unwield
 	///Unused...Also a little broken..
 	var/list/datum/action/actions
 	///Generated if the attachment can toggle, sends COMSIG_ATTACHMENT_TOGGLE
@@ -25,7 +27,8 @@
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
 		datum/callback/on_preattack = null,
-		datum/callback/on_afterattack = null,
+		datum/callback/on_wield = null,
+		datum/callback/on_unwield = null,
 		list/signals = null
 	)
 
@@ -49,7 +52,6 @@
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 		attachment_toggle_action = new /datum/action/attachment(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
-	RegisterSignal(parent, COMSIG_ATTACHMENT_AFTER_ATTACK, PROC_REF(relay_after_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
 
@@ -135,12 +137,6 @@
 
 	if(on_preattack)
 		return on_preattack.Invoke(gun, target_atom, user, params)
-
-/datum/component/attachment/proc/relay_after_attack(obj/item/parent, obj/item/gun, atom/target_atom, mob/user, params)
-	SIGNAL_HANDLER_DOES_SLEEP
-
-	if(on_afterattack)
-		return on_afterattack.Invoke(gun, target_atom, user, params)
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER

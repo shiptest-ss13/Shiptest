@@ -29,7 +29,8 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
-	RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(handle_item_after_attack))
+	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
+	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
@@ -188,9 +189,16 @@
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
 			return TRUE
 
-/datum/component/attachment_holder/proc/handle_item_after_attack(obj/item/parent, atom/target_atom, mob/user, params)
+/datum/component/attachment_holder/proc/handle_item_wield(obj/item/parent, mob/user, params)
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_AFTER_ATTACK, parent, target_atom, user, params))
+		if(SEND_SIGNAL(attach, COMSIG_TWOHANDED_WIELD, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_item_unwield(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_TWOHANDED_UNWIELD, parent, user, params))
 			return TRUE

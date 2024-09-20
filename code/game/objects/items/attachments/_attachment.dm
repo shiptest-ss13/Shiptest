@@ -47,7 +47,8 @@
 		CALLBACK(src, PROC_REF(remove_attachment)), \
 		CALLBACK(src, PROC_REF(toggle_attachment)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
-		CALLBACK(src, PROC_REF(on_afterattack)), \
+		CALLBACK(src, PROC_REF(on_wield)), \
+		CALLBACK(src, PROC_REF(on_unwield)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -87,7 +88,10 @@
 /obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
 	return FALSE
 
-/obj/item/attachment/proc/on_afterattack(obj/item/gun/gun, atom/target, mob/user, list/params)
+/obj/item/attachment/proc/on_wield(obj/item/gun/gun, mob/user, list/params)
+	return FALSE
+
+/obj/item/attachment/proc/on_unwield(obj/item/gun/gun, mob/user, list/params)
 	return FALSE
 
 ///Handles the modifiers to the parent gun
