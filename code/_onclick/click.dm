@@ -158,7 +158,10 @@
 			UnarmedAttack(A,1)
 	else
 		if(W)
-			W.afterattack(A,src,0,params)
+			if(W.pre_attack(A,src,params))
+
+			else
+				W.afterattack(A,src,0,params)
 		else
 			RangedAttack(A,params)
 
