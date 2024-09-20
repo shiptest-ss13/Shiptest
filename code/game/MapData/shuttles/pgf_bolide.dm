@@ -102,3 +102,71 @@
 					Assistant Director Of the Office Of Navy Deployment</div>
 			</p>
 			"}
+
+/obj/item/paper/fluff/ship/bolide/two
+	name = "Explosive Materials Handling"
+	default_raw_text = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			<hr>
+			<font face="Courier New">
+				<table align=/"center/" width="100%">
+					<tr>
+						<td>logo here (one day)</td>
+						<td style="padding-top:10%">
+							<b>Pan Gezenan Federation Navy<br>Office Of Requisitions</b>
+						</td>
+						<td>XX - XX - 506</td>
+					</tr>
+				</table>
+			</font>
+			<hr>
+			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
+			<strong>SUBJECT: Safe storage of explosive materials</strong>
+			<hr>
+			<br>
+			<p>1. The Office of Requisition has seen fit to deploy your command with a complement of explosive compounds. These compounds include - Composition C-4, Composition X-4.</p>
+			<p>2. Composition C-4 is an dense explosive package composed of; RDX, Plastic binders, plasticizer. Composition C-4 is a stable, malleable explosive meant for demolition usage. It is resistant to detonation from gunshots and jostling. The C-4 charges you have been issued include a detonator in their assembly, and should not be tinkered with by untrained hands.</p>
+			<p>3. Ensure that any usage of Composition C-4 is monitored and controlled. Do not issue Composition c-4 to your vessel without a cause for such.</p>
+			<p>4. Composition X-4 is a high powered explosive package composed of an RDX filling mixed with a teslium based detonator, allowing for a far more focused explosion. Unless the casing has degraded, it is safe to handle in the same manner as Composition C-4.</p>
+			<p>5. Take care in assigning usage of Composition X-4 due to it's increased potency. While focused, an injury resulting from being caught in a blast would likely prove fatal. </p>
+			<p>6. The Office recommends assigning a trained expert to monitor field usage of explosives.</p>
+			<br>
+			<br>
+			</div>
+			"}
+
+/obj/item/paper/fluff/ship/bolide/three
+	name = "Marine Relationships"
+	default_raw_text = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			<hr>
+			<font face="Courier New">
+				<table align=/"center/" width="100%">
+					<tr>
+						<td>logo here (one day)</td>
+						<td style="padding-top:10%">
+							<b>Pan Gezenan Federation Navy<br>Office Of Personnel</b>
+						</td>
+						<td>XX - XX - 506</td>
+					</tr>
+				</table>
+			</font>
+			<hr>
+			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
+			<strong>SUBJECT: Prevention of Inappropriate Relationships.</strong>
+			<hr>
+			<br>
+			<p>The Office of Personnel recommends that the captain of any PGFN vessel keep an active eye out for inappropriate relationships in the ranks.</p>
+			<p>Inappropriate relationships are a relationship that fulfills one of the following criteria; Compromises the integrity of supervisory authority, causes unfairness, involves improper use of rank or position for personal gain, gives the perception that it is exploitive or coercive in nature, can create an adverse effect on good order and discipline or mission accomplishment.  </p>
+			<p>As an officer, behaviors to avoid including enlisted in are; business matters, gambling, dating, sharing living accomodations.</p>
+			<p>Actual or percieved, these activities are prohibited. If it looks wrong, it's probably wrong.</p>
+			<br>
+			<br>
+			</div>
+			"}
