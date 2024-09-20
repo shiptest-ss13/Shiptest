@@ -683,7 +683,7 @@
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
-			/obj/item/gun/ballistic/automatic/pistol/syndicate = 500,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 500,
 			/obj/item/camera_bug = 500,
 			/obj/item/clothing/gloves/combat = 200,
 			/obj/item/clothing/head/chameleon = 200,
