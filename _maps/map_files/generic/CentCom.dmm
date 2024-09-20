@@ -154,7 +154,7 @@
 /turf/open/floor/plating,
 /area/ctf)
 "agI" = (
-/obj/machinery/power/emitter/energycannon{
+/obj/machinery/power/emitter/energycannon/ctf{
 	active = 0
 	},
 /turf/open/floor/plating,
@@ -163,7 +163,7 @@
 /turf/open/floor/plating,
 /area/ctf)
 "aha" = (
-/obj/machinery/power/emitter/energycannon{
+/obj/machinery/power/emitter/energycannon/ctf{
 	active = 0;
 	dir = 1
 	},
@@ -1084,11 +1084,11 @@
 /area/centcom/control)
 "apm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = -4;
 	pixel_y = -2
 	},
@@ -3040,10 +3040,6 @@
 /turf/open/floor/plating/asteroid,
 /area/tdome/tdomeobserve)
 "aEW" = (
-/obj/structure/table/wood,
-/turf/open/floor/plasteel,
-/area/wizard_station)
-"aEX" = (
 /obj/structure/table/wood,
 /turf/open/floor/plasteel,
 /area/wizard_station)
@@ -6990,8 +6986,8 @@
 /area/centcom/evac)
 "cIS" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq{
 	pixel_x = -5;
 	pixel_y = -5
 	},
@@ -11574,8 +11570,8 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-/obj/item/reagent_containers/food/snacks/spaghetti,
-/obj/item/reagent_containers/food/snacks/spaghetti,
+/obj/item/food/spaghetti/raw,
+/obj/item/food/spaghetti/raw,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
@@ -23766,7 +23762,7 @@ auE
 aEc
 auE
 aAx
-aEX
+aEW
 aqZ
 aqZ
 aGr

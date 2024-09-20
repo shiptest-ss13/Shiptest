@@ -29,7 +29,7 @@
 	var/atom/movable/screen/alert/our_alert
 
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedshoe")

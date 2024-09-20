@@ -113,9 +113,9 @@
 
 /datum/reagent/consumable/cooking_oil/expose_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
-		if(isitem(O) && !istype(O, /obj/item/reagent_containers/food/snacks/deepfryholder))
+		if(isitem(O) && !istype(O, /obj/item/food/deepfryholder))
 			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
-			var/obj/item/reagent_containers/food/snacks/deepfryholder/F = new(O.drop_location(), O)
+			var/obj/item/food/deepfryholder/F = new(O.drop_location(), O)
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
@@ -339,20 +339,14 @@
 		if(1 to 5)
 			M.Dizzy(5)
 			M.set_drugginess(30)
-			if(prob(10))
-				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
 			M.Jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
-			if(prob(20))
-				M.emote(pick("twitch","giggle"))
 		if (10 to INFINITY)
 			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
-			if(prob(30))
-				M.emote(pick("twitch","giggle"))
 	..()
 
 /datum/reagent/consumable/garlic //NOTE: having garlic in your blood stops vampires from biting you.
