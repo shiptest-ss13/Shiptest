@@ -605,26 +605,21 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
 	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
 
-/// triggered on wield of two handed item
-/obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
+/obj/item/cult_spear/proc/on_wield()
 	SIGNAL_HANDLER
 
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/cult_spear/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/cult_spear/proc/on_unwield()
 	SIGNAL_HANDLER
 
-	wielded = FALSE
-
-/obj/item/cult_spear/is_wielded()
-	return wielded
+/obj/item/cult_spear/proc/is_wielded()
+	SIGNAL_HANDLER
 
 /obj/item/cult_spear/update_icon_state()
 	icon_state = "[base_icon_state]0"

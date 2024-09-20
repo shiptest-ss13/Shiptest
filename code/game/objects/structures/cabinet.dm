@@ -11,22 +11,20 @@
 	req_one_access_txt = "0"
 	var/locked = TRUE
 	var/open = FALSE
-	var/empty = FALSE
+	var/start_empty = FALSE
 	var/obj/item/stored
-	var/our_object
+	var/allowed_type
 	var/stored_sprite = "axe"
 
 /obj/structure/cabinet/Initialize()
 	. = ..()
-	if(our_object)
-		our_object = stored
-		if(!empty && stored)
-			stored = new stored(src)
+	if(allowed_type && !start_empty)
+		stored = new allowed_type(src)
 	update_appearance()
 
 /obj/structure/cabinet/Destroy()
 	if(stored)
-		QDEL_NULL(stored)
+		qdel(stored)
 	return ..()
 
 /obj/structure/cabinet/examine(mob/user)
@@ -62,9 +60,10 @@
 			obj_integrity = max_integrity
 			update_appearance()
 	else if(open || broken)
-		if(istype(I, our_object) && !stored)
+		if(istype(I, allowed_type) && !stored)
 			var/obj/item/storee = I
-			if(storee && storee.is_wielded())
+			SIGNAL_HANDLER
+			if(storee && storee.GetComponent(/datum/component/two_handed).is_wielded())
 				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
 			if(!user.transferItemToLoc(I, src))
@@ -206,14 +205,9 @@
 	set src in oview(1)
 
 	if(locked)
-		to_chat(span_warning("[name] won't budge!"))
+		visible_message(span_warning("[name] won't budge!"))
 		return
 	else
 		open = !open
 		update_appearance()
 		return
-
-/obj/structure/cabinet/Destroy()
-	. = ..()
-	if(stored)
-		qdel(stored)

@@ -19,6 +19,7 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/pushbroom/ComponentInitialize()
 	. = ..()
@@ -40,6 +41,9 @@
 	SIGNAL_HANDLER
 
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
+
+/obj/item/pushbroom/proc/is_wielded()
+	SIGNAL_HANDLER
 
 /obj/item/pushbroom/afterattack(atom/A, mob/user, proximity)
 	. = ..()

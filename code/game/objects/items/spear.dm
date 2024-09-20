@@ -21,13 +21,29 @@
 	species_exception = list(/datum/species/kepori)
 	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
-	var/wielded = FALSE // track wielded status on item
+
+/obj/item/spear/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
 
 /obj/item/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 	AddComponent(/datum/component/jousting)
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
+
+/obj/item/spear/proc/on_wield()
+	SIGNAL_HANDLER
+
+/obj/item/spear/proc/on_unwield()
+	SIGNAL_HANDLER
+
+/obj/item/spear/proc/is_wielded()
+	SIGNAL_HANDLER
+
 
 /obj/item/spear/update_icon_state()
 	icon_state = "[icon_prefix]0"
@@ -43,21 +59,6 @@
 	qdel(tip)
 	..()
 
-/// triggered on wield of two handed item
-/obj/item/spear/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/spear/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
-
-/obj/item/spear/is_wielded()
-	return wielded
-
 /obj/item/spear/explosive
 	name = "explosive lance"
 	icon_state = "spearbomb0"
@@ -67,8 +68,6 @@
 
 /obj/item/spear/explosive/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	set_explosive(new /obj/item/grenade/iedcasing/spawned()) //For admin-spawned explosive lances
 
 /obj/item/spear/explosive/ComponentInitialize()
@@ -115,7 +114,7 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(wielded)
+	if(is_wielded())
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
 		explosive.prime()

@@ -21,26 +21,21 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/singularityhammer/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="[base_icon_state]1")
 
-/// triggered on wield of two handed item
-/obj/item/singularityhammer/proc/on_wield(obj/item/source, mob/user)
+/obj/item/singularityhammer/proc/on_wield()
 	SIGNAL_HANDLER
 
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/singularityhammer/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/singularityhammer/proc/on_unwield()
 	SIGNAL_HANDLER
 
-	wielded = FALSE
-
-/obj/item/singularityhammer/is_wielded()
-	return wielded
+/obj/item/singularityhammer/proc/is_wielded()
+	SIGNAL_HANDLER
 
 /obj/item/singularityhammer/update_icon_state()
 	icon_state = "[base_icon_state]0"
@@ -108,21 +103,20 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/mjollnir/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_multiplier=5, icon_wielded="[base_icon_state]1", attacksound="sparks")
 
-/// triggered on wield of two handed item
-/obj/item/mjollnir/proc/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
+/obj/item/mjollnir/proc/on_wield()
+	SIGNAL_HANDLER
 
-/// triggered on unwield of two handed item
-/obj/item/mjollnir/proc/on_unwield(obj/item/source, mob/user)
-	wielded = FALSE
+/obj/item/mjollnir/proc/on_unwield()
+	SIGNAL_HANDLER
 
-/obj/item/mjollnir/is_wielded()
-	return wielded
+/obj/item/mjollnir/proc/is_wielded()
+	SIGNAL_HANDLER
 
 /obj/item/mjollnir/update_icon_state()
 	icon_state = "[base_icon_state]0"

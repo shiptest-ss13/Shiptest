@@ -20,25 +20,20 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_CHECK_WIELD, PROC_REF(is_wielded))
 
 /obj/item/pitchfork/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=15, icon_wielded="[base_icon_state]1")
 
-/// triggered on wield of two handed item
-/obj/item/pitchfork/proc/on_wield(obj/item/source, mob/user)
+/obj/item/pitchfork/proc/on_wield()
 	SIGNAL_HANDLER
 
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/pitchfork/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/pitchfork/proc/on_unwield()
 	SIGNAL_HANDLER
 
-	wielded = FALSE
-
-/obj/item/pitchfork/is_wielded()
-	return wielded
+/obj/item/pitchfork/proc/is_wielded()
+	SIGNAL_HANDLER
 
 /obj/item/pitchfork/update_icon_state()
 	icon_state = "[base_icon_state]0"

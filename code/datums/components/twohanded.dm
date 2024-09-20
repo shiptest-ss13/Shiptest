@@ -303,7 +303,10 @@
 	sharpened_increase = min(amount, (max_amount - wielded_val))
 	return COMPONENT_BLOCK_SHARPEN_APPLIED
 
-/**
+/* Is wielded triggers on a request for our wielding status*/
+/datum/component/two_handed/proc/is_wielded()
+	return wielded
+/*
  * The offhand dummy item for two handed items
  *
  */
