@@ -580,8 +580,7 @@
 	can_move_docking_ports = 1;
 	name = "bolide docking port";
 	port_direction = 4;
-	preferred_direction = 8;
-	
+	preferred_direction = 8
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -1150,9 +1149,9 @@
 	id = "elated_bolide_bay";
 	name = "cargobay holofield switch"
 	},
-/obj/machinery/turretid{
+/obj/machinery/turretid/ship{
 	pixel_y = 24;
-	pixel_x = -3
+	id = "bolide_grid"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
