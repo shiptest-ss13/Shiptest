@@ -43,7 +43,26 @@
 	secret_type = /obj/item/storage/fancy/cigarettes/cigpack_mindbreaker
 
 /obj/item/folder/pgf/blue/bolide
-	var/to_spawn = list()
+	var/to_spawn = list(
+		/obj/item/paper/fluff/ship/bolide/one,
+		/obj/item/paper/fluff/ship/bolide/two,
+		/obj/item/paper/fluff/ship/bolide/three,
+		/obj/item/paper/fluff/ship/bolide/four
+	)
+
+/obj/item/folder/pgf/blue/bolide/Initialize()
+	. = ..()
+	for(var/paper in to_spawn)
+		if(istype(paper, /obj/item/paper))
+			new paper(src)
+
+/obj/item/folder/pgf/empty_sheets
+	name = "PGF Fax Templates"
+
+/obj/item/folder/pgf/empty_sheets/Initialize()
+	. = ..()
+	for(var/i in 7)
+		new /obj/item/paper/fluff/ship/bolide(src)
 
 /mob/living/simple_animal/pet/fox/bolide
 	name = "Saperzy"
@@ -60,6 +79,50 @@
 	emote_see = list("sits at attention.", "shakes his fur out.", "wags a few times.", "perks up.","sniffs the air.")
 
 /obj/item/paper/fluff/ship/bolide
+	name = "Blank Federated Navy Paperwork"
+default_raw_text = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			<hr>
+			<font face="Courier New">
+				<table align=/"center/" width="100%">
+					<tr>
+						<td>logo here (one day)</td>
+						<td style="padding-top:10%">
+							<b>Pan Gezenan Federation Navy<br>[_____________________________]</b>
+						</td>
+						<td>XX - XX - 506</td>
+					</tr>
+				</table>
+			</font>
+			<hr>
+			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
+			<strong>SUBJECT: [______________________________________]</strong>
+			<hr>
+			<br>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>[_________________________________________________________________________________________________________________________________]</p>
+			<p>
+			<br>
+			<br>
+			</div>
+			<p>
+				<div align=/"left/" style=/"padding-left:65%/">
+					<font face="Segoe Script">[_________]</font><br>
+					[_____________]<br>
+					PGFN Navy<br>
+					[__________________________]</div>
+			</p>
+			"}
 
 /obj/item/paper/fluff/ship/bolide/one
 	name = "Official Briefing"
@@ -165,8 +228,44 @@
 			<p>The Office of Personnel recommends that the captain of any PGFN vessel keep an active eye out for inappropriate relationships in the ranks.</p>
 			<p>Inappropriate relationships are a relationship that fulfills one of the following criteria; Compromises the integrity of supervisory authority, causes unfairness, involves improper use of rank or position for personal gain, gives the perception that it is exploitive or coercive in nature, can create an adverse effect on good order and discipline or mission accomplishment.  </p>
 			<p>As an officer, behaviors to avoid including enlisted in are; business matters, gambling, dating, sharing living accomodations.</p>
-			<p>Actual or percieved, these activities are prohibited. If it looks wrong, it's probably wrong.</p>
+			<p><strong>Actual or percieved, these activities are prohibited. If it looks wrong, it's probably wrong.</strong></p>
 			<br>
 			<br>
 			</div>
 			"}
+
+/obj/item/paper/fluff/ship/bolide/four
+	name = "Chain Of Command"
+	default_raw_text = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			<hr>
+			<font face="Courier New">
+				<table align=/"center/" width="100%">
+					<tr>
+						<td>logo here (one day)</td>
+						<td style="padding-top:10%">
+							<b>Pan Gezenan Federation Navy<br>Office Of Personnel</b>
+						</td>
+						<td>XX - XX - 506</td>
+					</tr>
+				</table>
+			</font>
+			<hr>
+			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
+			<strong>SUBJECT: Chain of Command aboard vessel.</strong>
+			<hr>
+			<br>
+			<p>The Office of Personnel recommends that the Captain of a PGFN vessel in deployment establish a chain of command that encompasses all crew aboard the vessel.</p>
+			<p>The ranks of all serving members aboard a vessel creates a natural chain of command for the Captain and any other officers to base any further Chain Of Command alterations upon. It should be stressed that a Captain should avoid issuing field promotions to fulfill an artifical chain of command.</p>
+			<p>A Captain should discuss any change in chain of command with any other officers aboard before putting it into action. This allows multiple opinions to be fed into the process, thus creating a stronger product. </p>
+			<p>Aboard a Bolide-Class Lander, the Office of Personnel recommends that the captain designate one 'team leader' per three marines aboard. These team leaders should report directly to the Marine Lieutenant, They should be reported to by the two marines in their team. It is not suggested to work the naval engineers into this program, as they are not expected to deploy in combat.</p>
+			<p>Marines should be made aware that being declared team leader carries no authority unless delegated. In the event of a conflicted chain of command, or contested order, the figure with rank should be obeyed.</p>
+			<p>This Office recommends monitoring marines for behavioral patterns before assigning a team leader. The ideal marine team leader is cool-headed, rational, and able to make tough choices.</p>
+			<br>
+			<br>
+			</div>
+			"}
+

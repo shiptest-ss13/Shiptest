@@ -597,6 +597,7 @@
 	pixel_y = 10;
 	pixel_x = 3
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "fg" = (
@@ -821,6 +822,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "gI" = (
@@ -1437,6 +1439,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "jA" = (
@@ -1863,6 +1866,7 @@
 /obj/effect/turf_decal/corner/transparent/bottlegreen/border{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "mR" = (
@@ -2025,6 +2029,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "nM" = (
@@ -2151,6 +2156,10 @@
 	pixel_x = 3
 	},
 /obj/machinery/newscaster/directional/east,
+/obj/item/folder/pgf/empty_sheets{
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "oD" = (
@@ -2287,6 +2296,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/hallway/central)
 "pI" = (
@@ -3428,6 +3438,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "yi" = (
@@ -3503,6 +3514,9 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "yv" = (
@@ -4007,6 +4021,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Br" = (
@@ -4067,6 +4082,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/warning{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "BA" = (
@@ -4438,6 +4454,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ED" = (
@@ -4841,6 +4858,7 @@
 	pixel_y = 6
 	},
 /obj/item/wirecutters,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "GP" = (
@@ -4917,6 +4935,7 @@
 /area/ship/bridge)
 "Ho" = (
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Hq" = (
@@ -5500,6 +5519,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "KL" = (
@@ -5740,6 +5760,14 @@
 "LQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor,
+/obj/item/paper_bin{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 2;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "LR" = (
@@ -5764,6 +5792,7 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "LY" = (
@@ -6346,6 +6375,10 @@
 /obj/item/pen/fourcolor{
 	pixel_x = -5;
 	pixel_y = 3
+	},
+/obj/item/folder/pgf/blue/bolide{
+	pixel_x = 5;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
@@ -6953,6 +6986,9 @@
 	name = "secure stowage access";
 	id = "bolide_bombs"
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "Ut" = (
@@ -7004,6 +7040,7 @@
 	pixel_x = 10;
 	pixel_y = 3
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "UR" = (
@@ -7048,6 +7085,7 @@
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals9,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Vg" = (
@@ -7240,6 +7278,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "WA" = (
@@ -7386,6 +7425,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/north,
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "XB" = (
@@ -7485,6 +7527,10 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/item/folder/pgf/empty_sheets{
+	pixel_x = 3;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "Yv" = (
