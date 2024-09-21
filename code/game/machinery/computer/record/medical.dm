@@ -81,7 +81,9 @@
 
 			var/datum/medical_note/new_note = new(usr.name, content)
 			while(length(target.fields[DATACORE_NOTES_MEDICAL]) > 5)
-				target.fields[DATACORE_NOTES_MEDICAL].Cut(1, 2)
+				var/list/medical_notes = target.fields[DATACORE_NOTES_MEDICAL]
+				medical_notes.Cut(1, 2)
+				target.fields[DATACORE_NOTES_MEDICAL] = medical_notes
 
 			target.fields[DATACORE_NOTES_MEDICAL] += new_note
 
