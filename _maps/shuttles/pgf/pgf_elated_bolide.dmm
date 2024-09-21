@@ -2976,10 +2976,20 @@
 	dir = 4
 	},
 /obj/structure/sign/flag/gezena{
-	pixel_y = 32
+	pixel_y = 32;
+	pixel_x = 5
 	},
 /obj/item/toy/plush/spider{
 	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	name = "privacy lock";
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = -10;
+	id = "bol_priv3";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -3577,7 +3587,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/ccommons)
+/area/ship/security)
 "xw" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -7847,7 +7857,9 @@
 /area/ship/security)
 "Xx" = (
 /obj/machinery/door/airlock/command{
-	req_access = list(3)
+	req_access = list(3);
+	id_tag = "bol_priv3";
+	name = "Marine Lieutenant's Quarters"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/techfloor/orange,
@@ -8995,7 +9007,7 @@ Uc
 GS
 vL
 mJ
-dg
+cZ
 CA
 Dx
 Np
@@ -9024,7 +9036,7 @@ rZ
 Fs
 tp
 iS
-dg
+cZ
 Yq
 vc
 ge
@@ -9053,7 +9065,7 @@ Ud
 eH
 vU
 Dy
-dg
+cZ
 Xo
 bl
 Kv
@@ -9111,7 +9123,7 @@ uT
 Ds
 fh
 WY
-dg
+cZ
 Ho
 yD
 Xd
