@@ -675,6 +675,9 @@
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "fO" = (
@@ -763,6 +766,9 @@
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = 23
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
@@ -864,6 +870,9 @@
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = -21
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
@@ -1237,6 +1246,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_engine_1";
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1813,6 +1825,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/storage/starboard)
+"mp" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	dwidth = 7;
+	name = "bolide exterior dock"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ms" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2444,6 +2465,12 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "qX" = (
@@ -2520,6 +2547,9 @@
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = -21
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
@@ -2932,6 +2962,9 @@
 /area/ship/crew/office)
 "uq" = (
 /obj/machinery/power/shuttle/engine/fire{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -5706,6 +5739,9 @@
 	pixel_x = -10;
 	pixel_y = 23
 	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "LH" = (
@@ -7229,6 +7265,13 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "liberty docking port";
+	port_direction = 4;
+	preferred_direction = 8;
+	dheight = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/starboard)
 "VY" = (
@@ -7897,18 +7940,6 @@
 	pixel_x = 9;
 	pixel_y = 2
 	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_y = -7;
 	pixel_x = 3
@@ -8548,7 +8579,7 @@ jm
 cZ
 "}
 (21,1,1) = {"
-FS
+mp
 ch
 FS
 Gm

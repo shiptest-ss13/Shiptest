@@ -1,0 +1,56 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/pgf",
+	"prefix": "PGFN",
+	"map_name": "Elated Bolide-Class Assault Lander",
+	"namelists": [
+		"PGF"
+	],
+	"map_short_name": "Bolide-Class",
+	"description": "A light frigate mass produced by the Etherbor PGFN Lihmona Navy Shipyard to carry massive linear mounted warguns while keeping high maneuverability. The weapon mount on this ship has been decommissioned, like so many of its kind when sent out of Kalixcian space. The Crying Sun-class is a dual navy and marine vessel, carrying a shuttle for boarding, excursions, and forward scouting. After decommissioning the primary gun, the engines were swapped out for lower power, while engineering equipment has been generously supplied.",
+	"tags": [
+		"Combat",
+		"Engineering",
+		"RP Focus"
+	],
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/pgf/pgf_elated_bolide.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/gezena/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Marine Lieutenant": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer":true,
+			"slots": 1
+		},
+		"Helmsman": {
+			"outfit": "/datum/outfit/job/gezena/assistant/bridge",
+			"slots": 1
+		},
+		"Navy Engineer": {
+			"outfit": "/datum/outfit/job/gezena/engineer",
+			"slots": 2
+		},
+		"Hospital Corpsman": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
+			"slots": 1
+		},
+		"Marine": {
+			"outfit": "/datum/outfit/job/gezena/security",
+			"slots": 2
+		},
+		"Assault Pioneer":{
+			"outfit": "/datum/outfit/job/gezena/security",
+			"slots":4
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 1
+		}
+	},
+	"enabled":true
+}

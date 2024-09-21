@@ -20,7 +20,7 @@
 	desc = "A rectangular steel crate, filled with marine food."
 	var/ration_count = 10
 
-/obj/structure/closet/crate/freezer/blood/PopulateContents()
+/obj/structure/closet/crate/rations/PopulateContents()
 	. = ..()
 	for(var/i in 1 to ration_count)
 		new /obj/effect/spawner/lootdrop/ration(src)
@@ -80,7 +80,7 @@
 
 /obj/item/paper/fluff/ship/bolide
 	name = "Blank Federated Navy Paperwork"
-default_raw_text = {"<html>
+	default_raw_text = {"<html>
 			<head>
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 			</head>
@@ -91,7 +91,7 @@ default_raw_text = {"<html>
 					<tr>
 						<td>logo here (one day)</td>
 						<td style="padding-top:10%">
-							<b>Pan Gezenan Federation Navy<br>[_____________________________]</b>
+							<b>Pan Gezenan Federation Navy<br> Bolide-Class Lander</b>
 						</td>
 						<td>XX - XX - 506</td>
 					</tr>
@@ -99,29 +99,7 @@ default_raw_text = {"<html>
 			</font>
 			<hr>
 			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
-			<strong>SUBJECT: [______________________________________]</strong>
-			<hr>
-			<br>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>[_________________________________________________________________________________________________________________________________]</p>
-			<p>
-			<br>
-			<br>
-			</div>
-			<p>
-				<div align=/"left/" style=/"padding-left:65%/">
-					<font face="Segoe Script">[_________]</font><br>
-					[_____________]<br>
-					PGFN Navy<br>
-					[__________________________]</div>
-			</p>
+			<strong>SUBJECT: </strong>
 			"}
 
 /obj/item/paper/fluff/ship/bolide/one
