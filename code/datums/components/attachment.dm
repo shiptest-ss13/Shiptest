@@ -10,6 +10,7 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_attacked
 	var/datum/callback/on_unique_action
+	var/datum/callback/on_ctrl_click
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
 	///Called on the parents weild
@@ -31,6 +32,7 @@
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
 		datum/callback/on_unique_action = null,
+		datum/callback/on_ctrl_click = null,
 		datum/callback/on_wield = null,
 		datum/callback/on_unwield = null,
 		list/signals = null
@@ -48,6 +50,7 @@
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
 	src.on_unique_action = on_unique_action
+	src.on_ctrl_click = on_ctrl_click
 	src.on_wield = on_wield
 	src.on_unwield = on_unwield
 
@@ -66,6 +69,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNWEILD, PROC_REF(try_unwield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNIQUE_ACTION, PROC_REF(relay_unique_action))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_CTRL_CLICK, PROC_REF(relay_ctrl_click))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -173,6 +177,12 @@
 
 	if(on_unique_action)
 		return on_unique_action.Invoke(user, params)
+
+/datum/component/attachment/proc/relay_ctrl_click(obj/item/parent, obj/item/gun, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_ctrl_click)
+		return on_ctrl_click.Invoke(user, params)
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER

@@ -32,6 +32,7 @@
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL, PROC_REF(handle_ctrl_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
 	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(handle_unique_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
@@ -84,6 +85,13 @@
 	SIGNAL_HANDLER
 
 	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+
+/datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user))
+			return TRUE
 
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list(TRUE)

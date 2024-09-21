@@ -49,6 +49,7 @@
 		CALLBACK(src, PROC_REF(on_preattack)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
 		CALLBACK(src, PROC_REF(on_unique_action)), \
+		CALLBACK(src, PROC_REF(on_ctrl_click)), \
 		CALLBACK(src, PROC_REF(on_wield)), \
 		CALLBACK(src, PROC_REF(on_unwield)), \
 		signals)
@@ -100,6 +101,9 @@
 	return FALSE
 
 /obj/item/attachment/proc/on_unique_action(obj/item/gun/gun, mob/user, obj/item)
+	return FALSE
+
+/obj/item/attachment/proc/on_ctrl_click(obj/item/gun/gun, mob/user, obj/item)
 	return FALSE
 
 ///Handles the modifiers to the parent gun
