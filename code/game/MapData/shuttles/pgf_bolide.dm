@@ -52,16 +52,17 @@
 
 /obj/item/folder/pgf/blue/bolide/Initialize()
 	. = ..()
-	for(var/paper in to_spawn)
+	for(var/obj/item/paper in to_spawn)
 		if(istype(paper, /obj/item/paper))
 			new paper(src)
+	update_appearance()
 
 /obj/item/folder/pgf/empty_sheets
 	name = "PGF Fax Templates"
 
 /obj/item/folder/pgf/empty_sheets/Initialize()
 	. = ..()
-	for(var/i in 7)
+	for(var/i in 1 to 7)
 		new /obj/item/paper/fluff/ship/bolide(src)
 
 /mob/living/simple_animal/pet/fox/bolide
