@@ -40,6 +40,6 @@ SUBSYSTEM_DEF(mobs)
 			L.Life(seconds, times_fired)
 		else
 			GLOB.mob_living_list.Remove(L)
-			CRASH("[L] no longer exists in mob_living_list")
+			stack_trace("[L] no longer exists in mob_living_list")
 		if (MC_TICK_CHECK)
 			return
