@@ -104,7 +104,10 @@
 	. = ..()
 
 /obj/item/ammo_casing/proc/on_eject(atom/shooter)
-	forceMove(drop_location()) //Eject casing onto ground.
+	var/drop_loc = drop_location()
+	if(isnull(drop_loc) && shooter)
+		drop_loc = shooter.drop_location()
+	forceMove(drop_loc) //Eject casing onto ground.
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)
 	pixel_z = 8 //bounce time

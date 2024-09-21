@@ -272,7 +272,8 @@
 	return ..()
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
-	. = ..()
+	if(..())
+		return
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
 		chambered = null
 		var/num_unloaded = 0
