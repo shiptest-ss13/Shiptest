@@ -117,7 +117,7 @@
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user, bypass_checks)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(!(attachment.type in valid_types))
+	if(!(is_type_in_list(attachment,valid_types)))
 		to_chat(user, span_notice("[attachment] is not a valid attachment for this [parent]!"))
 		return
 	if(!slot_room[slot])
