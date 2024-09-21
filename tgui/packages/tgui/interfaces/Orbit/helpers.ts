@@ -31,7 +31,10 @@ export const getAntagCategories = (antagonists: Antagonist[]): AntagGroup[] => {
 };
 
 /** Returns a disguised name in case the person is wearing someone else's ID */
-export const getDisplayName = (full_name: string, nickname?: string): string => {
+export const getDisplayName = (
+  full_name: string,
+  nickname?: string
+): string => {
   if (!nickname) {
     return full_name;
   }
@@ -40,7 +43,10 @@ export const getDisplayName = (full_name: string, nickname?: string): string => 
 };
 
 /** Displays color for buttons based on the health or orbiter count. */
-export const getDisplayColor = (item: Observable, override?: string): string => {
+export const getDisplayColor = (
+  item: Observable,
+  override?: string
+): string => {
   const { job, health, orbiters } = item;
 
   // Things like blob camera, etc

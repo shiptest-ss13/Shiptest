@@ -24,7 +24,7 @@ export const OrbitSection = (props: Props) => {
   );
 
   if (!filteredSection.length) {
-    return <></>;
+    return null;
   }
 
   return (
