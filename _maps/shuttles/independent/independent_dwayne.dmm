@@ -892,6 +892,7 @@
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = -8
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "mR" = (
@@ -2686,9 +2687,8 @@
 "Oz" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
-/obj/machinery/newscaster/directional/west,
-/obj/item/megaphone/cargo{
-	pixel_y = 5
+/obj/machinery/fax/indie{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2711,6 +2711,7 @@
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
 /obj/item/gun/ballistic/revolver/detective,
+/obj/item/megaphone/cargo,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OP" = (
