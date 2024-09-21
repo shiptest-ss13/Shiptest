@@ -44,6 +44,20 @@
 	icon_state = "hl_hazard"
 	item_state = "whitecloth"
 
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners
+	name = "hardliner winter coat"
+	desc = "A stark-white winter coat used by Marauders of the Hardliner movement, the zipper tab displaying the cracked emblem of the Gorlex Marauders."
+	icon_state = "coathl"
+	item_state = "coathl"
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/hardliners
+
+/obj/item/clothing/head/hooded/winterhood/security/hardliners
+	icon_state = "hood_hl"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+
 //////////////////
 //Armored suits//
 /////////////////
