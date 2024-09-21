@@ -1196,7 +1196,6 @@
 	name = "Syndicate - Engineer (Cybersun)"
 
 	uniform = /obj/item/clothing/under/syndicate/cybersun/research
-	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine
