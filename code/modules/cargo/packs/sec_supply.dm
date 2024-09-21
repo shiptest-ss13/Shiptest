@@ -91,6 +91,7 @@
 	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_NGR
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)

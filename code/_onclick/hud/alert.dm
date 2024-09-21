@@ -190,14 +190,39 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	icon_state = "gross3"
 
 /atom/movable/screen/alert/hot
-	name = "Too Hot"
-	desc = "You're flaming hot! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	name = "Hot"
+	desc = "It's quite warm. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "hot"
+
+/atom/movable/screen/alert/warm
+	name = "Warm"
+	desc = "It's a bit warm, but not unbearably so."
 	icon_state = "hot"
 
 /atom/movable/screen/alert/cold
-	name = "Too Cold"
-	desc = "You're freezing cold! Get somewhere warmer and take off any insulating clothing like a space suit."
+	name = "Cold"
+	desc = "It's quite cold. Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "cold"
+
+/atom/movable/screen/alert/chilly
+	name = "Chilly"
+	desc = "It's a bit chilly, but not unbearably so."
+	icon_state = "cold"
+
+/atom/movable/screen/alert/sweat
+	name = "Sweating"
+	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "sweat"
+
+/atom/movable/screen/alert/shiver
+	name = "Shivering"
+	desc = "You're shivering and the cold is starting to hurt. Get somewhere warmer and take off any insulating clothing like a space suit."
+	icon_state = "shiver"
+
+/atom/movable/screen/alert/fans
+	name = "High Fan Speed"
+	desc = "Your fans are spinning quite fast, and your components are reaching a dangerous temperature! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "fans"
 
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"
@@ -420,14 +445,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	icon_state = "alien_noqueen"
 	alerttooltipstyle = "alien"
 
-//BLOBS
-
-/atom/movable/screen/alert/nofactory
-	name = "No Factory"
-	desc = "You have no factory, and are slowly dying!"
-	icon_state = "blobbernaut_nofactory"
-	alerttooltipstyle = "blob"
-
 // BLOODCULT
 
 /atom/movable/screen/alert/bloodsense
@@ -586,6 +603,29 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 	name = "Blood Overcharge"
 	desc = "Your blood's electric charge is becoming dangerously high, find an outlet for your energy. Use Grab Intent on an APC to channel your energy into it."
 	icon_state = "ethereal_overcharge"
+
+//MODsuit unique
+/atom/movable/screen/alert/nocore
+	name = "Missing Core"
+	desc = "Unit has no core. No modules available until a core is reinstalled. Robotics may provide assistance."
+	icon_state = "no_cell"
+
+/atom/movable/screen/alert/emptycell/plasma
+	name = "Out of Power"
+	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
+		Unit can be refilled through plasma fuel."
+
+/atom/movable/screen/alert/emptycell/plasma/update_desc()
+	. = ..()
+	desc = initial(desc)
+
+/atom/movable/screen/alert/lowcell/plasma
+	name = "Low Charge"
+	desc = "Unit's plasma core is running low. Unit can be refilled through plasma fuel."
+
+/atom/movable/screen/alert/lowcell/plasma/update_desc()
+	. = ..()
+	desc = initial(desc)
 
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
 /atom/movable/screen/alert/hacked

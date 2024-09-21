@@ -90,13 +90,6 @@
 	take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user))
 	return TRUE
 
-/obj/blob_act(obj/structure/blob/B)
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.intact && HAS_TRAIT(src, TRAIT_T_RAY_VISIBLE))
-			return
-	take_damage(400, BRUTE, "melee", 0, get_dir(src, B))
-
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
 	user.do_attack_animation(src)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -210,6 +203,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 		take_damage(clamp(0.02 * exposed_temperature, 0, 20), BURN, "fire", 0)
 	if(!(resistance_flags & ON_FIRE) && (resistance_flags & FLAMMABLE) && !(resistance_flags & FIRE_PROOF))
 		resistance_flags |= ON_FIRE
+		burning_particles = new(src, /particles/smoke/burning)
 		SSfire_burning.processing[src] = src
 		update_appearance()
 		return 1
@@ -226,6 +220,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(resistance_flags & ON_FIRE)
 		resistance_flags &= ~ON_FIRE
 		update_appearance()
+		QDEL_NULL(burning_particles)
 		SSfire_burning.processing -= src
 
 ///Called when the obj is hit by a tesla bolt.

@@ -125,6 +125,26 @@
 			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
 	return num_loaded
 
+/obj/item/ammo_box/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	var/num_loaded = 0
+	var/obj/item/storage/belt/bandolier/to_load
+	if(istype(target,/obj/item/storage/belt/bandolier))
+		to_load = target
+		var/datum/component/storage/storage_to_load = to_load.GetComponent(/datum/component/storage)
+		for(var/obj/item/ammo_casing/casing_to_insert in stored_ammo)
+			if(!((to_load.contents.len >= storage_to_load.get_max_volume()) || do_after(user, 0.5 SECONDS, src)))
+				break
+			if(!storage_to_load.can_be_inserted(casing_to_insert,TRUE,user))
+				break
+			storage_to_load.handle_item_insertion(casing_to_insert,TRUE,user)
+			stored_ammo -= casing_to_insert
+			playsound(get_turf(src), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+			num_loaded++
+			update_ammo_count()
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [to_load]!</span>")
+	return
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)

@@ -232,7 +232,7 @@
 	name = "Plate Gauntlets"
 	icon_state = "crusader"
 	desc = "They're like gloves, but made of metal."
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS

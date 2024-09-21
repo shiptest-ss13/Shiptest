@@ -168,18 +168,6 @@
 	crate_name = "holofield generator crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
-/datum/supply_pack/machinery/blackmarket_telepad
-	name = "Black Market LTSRBT"
-	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
-	cost = 1000
-	contains = list(
-		/obj/item/circuitboard/machine/ltsrbt,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stock_parts/subspace/ansible
-	)
-	crate_type = /obj/structure/closet/crate/science
-
 /datum/supply_pack/machinery/shuttle_in_a_box
 	name = "Shuttle in a Box"
 	desc = "The bare minimum amount of machine and computer boards required to create a working spacecraft."
