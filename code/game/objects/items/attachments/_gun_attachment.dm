@@ -8,6 +8,9 @@
 	pixel_shift_y = 4
 	wield_delay = 0.1 SECONDS
 	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic/combat
+	// so we can call the neccessary procs depending the gun type
+	var/obj/item/gun/ballistic/attached_ballistic_gun
+	var/obj/item/gun/energy/attached_energy_gun
 	var/obj/item/gun/attached_gun
 
 /obj/item/attachment/gun/Initialize()
@@ -33,3 +36,4 @@
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(toggled)
 		attached_gun.unique_action(user)
+		return OVERIDE_UNIQUE_ACTION

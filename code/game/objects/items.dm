@@ -1174,8 +1174,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Intended for interactions with guns, like racking
 /obj/item/proc/unique_action(mob/living/user)
-	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user))
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERIDE_UNIQUE_ACTION)
 		return TRUE
+	return FALSE
 
 /**
  * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
