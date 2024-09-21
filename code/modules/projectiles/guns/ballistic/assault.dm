@@ -1,4 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
+	show_magazine_on_sprite = TRUE
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS

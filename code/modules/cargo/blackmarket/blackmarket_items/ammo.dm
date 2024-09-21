@@ -17,7 +17,7 @@
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
-	item = /obj/item/ammo_box/magazine/m22lr
+	item = /obj/item/ammo_box/magazine/m22lr_himehabu
 
 	price_min = 100
 	price_max = 200
@@ -121,17 +121,6 @@
 	stock_max = 5
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/tec_mag
-	name = "TEC-9 AP Magazine"
-	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
-	item = /obj/item/ammo_box/magazine/tec9
-
-	price_min = 500
-	price_max = 1000
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/polymer_clip
 	name = "7.62 Stripper Clip"
 	desc = "A 5 round stripper clip of 7.62x40mm CLIP."
@@ -230,3 +219,55 @@
 	stock_max = 5
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/mauler_mag
+	name = "Mauler Magazine"
+	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
+	item = /obj/item/ammo_box/magazine/m9mm_mauler
+	price_min = 250
+	price_max = 750
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/spitter_mag
+	name = "Spitter Magazine"
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
+	item = /obj/item/ammo_box/magazine/spitter_9mm
+
+	price_min = 250
+	price_max = 750
+	stock_min = 2
+	stock_max = 5
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/pounder_mag
+	name = "Pounder Pan Magazine"
+	desc = "A 50 round pan magazine for the Pounder submachine gun. Heavy enough to double as an emergency melee weapon to beat off your enemies in a pinch."
+	item = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+
+	price_min = 400
+	price_max = 750
+	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/a4570hp
+	name = ".45-70 Hollow Point Ammo Box"
+	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
+	item = /obj/item/ammo_box/a4570/hp
+
+	price_min = 600
+	price_max = 1000
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 20
+
+/datum/blackmarket_item/ammo/a4570explo
+	name = "Single .45-70 Explosive Round"
+	desc = "If you need to fuck someone, hard, we got just the thing. Only one round, though, hope you got good aim."
+	item = /obj/item/ammo_casing/a4570/explosive
+
+	price_min = 400
+	price_max = 800 //still an exorbitantly high price for one round that you might not even hit
+	stock_min = 2
+	stock_max = 10
+	availability_prob = 10
