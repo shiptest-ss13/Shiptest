@@ -16,6 +16,7 @@
 	var/suffix = null
 
 	var/ruin_type
+	var/ruin_tags = list()
 
 /datum/map_template/ruin/New()
 	if(!name && id)
