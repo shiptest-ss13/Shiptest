@@ -578,10 +578,10 @@
 /obj/structure/grille,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	name = "liberty docking port";
+	name = "bolide docking port";
 	port_direction = 4;
 	preferred_direction = 8;
-	dheight = 3
+	
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -2322,13 +2322,6 @@
 	dir = 2
 	},
 /obj/machinery/door/firedoor/window,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "bolide dock";
-	port_direction = 4;
-	preferred_direction = 8;
-	dheight = 3
-	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "oE" = (
@@ -5253,16 +5246,6 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
-"GZ" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "bolide dock";
-	port_direction = 4;
-	preferred_direction = 8;
-	dheight = 3
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "Hj" = (
 /obj/machinery/blackbox_recorder,
 /obj/effect/turf_decal/techfloor{
@@ -9666,7 +9649,7 @@ Jh
 TB
 VF
 ZC
-GZ
+VF
 ym
 ym
 oY
