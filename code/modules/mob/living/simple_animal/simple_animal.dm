@@ -649,7 +649,7 @@
 	var/players_on_virtual_z = 0
 	if(virt_z)
 		players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, "[virt_z]")
-	if(!length(players_on_virtual_z))
+	if(!length(players_on_virtual_z) && virt_z)
 		toggle_ai(AI_Z_OFF)
 	else if(AIStatus == AI_Z_OFF)
 		toggle_ai(AI_ON)
