@@ -7,7 +7,7 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_SOLGOV)
+	H.faction |= list(FACTION_PLAYER_SOLCON)
 
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
