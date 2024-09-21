@@ -76,14 +76,6 @@
 	item_state = "blueshift"
 	custom_premium_price = 750
 
-/obj/item/clothing/suit/armor/vest/duster
-	name = "black duster"
-	desc = "A long, intimidating black coat. This one is reinforced and ideal for protecting its wearer from rain, sun, dust, and bullets."
-	icon_state = "armor_duster"
-	item_state = "duster_sec"
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
 	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."

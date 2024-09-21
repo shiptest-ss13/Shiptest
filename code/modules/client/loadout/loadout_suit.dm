@@ -23,13 +23,13 @@
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather/overcoat
-	display_name = "leather overcoat"
-	path = /obj/item/clothing/suit/jacket/leather/overcoat
-
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
+
+/datum/gear/suit/jacket/leather/duster/black
+	display_name = "black duster"
+	path = /obj/item/clothing/suit/jacket/leather/duster/black
 
 /datum/gear/suit/jacket/military
 	display_name = "military jacket"

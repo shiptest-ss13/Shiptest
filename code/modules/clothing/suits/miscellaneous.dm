@@ -425,6 +425,12 @@
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/jacket/leather/duster/black
+	name = "black duster"
+	desc = "A long, intimidating black coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster_black"
+	item_state = "duster_black"
+
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
 	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
