@@ -574,6 +574,17 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
+"eI" = (
+/obj/structure/grille,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "liberty docking port";
+	port_direction = 4;
+	preferred_direction = 8;
+	dheight = 3
+	},
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "eM" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
@@ -1697,7 +1708,6 @@
 /area/ship/security/armory)
 "km" = (
 /obj/structure/grille,
-/obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2312,6 +2322,13 @@
 	dir = 2
 	},
 /obj/machinery/door/firedoor/window,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "bolide dock";
+	port_direction = 4;
+	preferred_direction = 8;
+	dheight = 3
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "oE" = (
@@ -5236,6 +5253,16 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
+"GZ" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "bolide dock";
+	port_direction = 4;
+	preferred_direction = 8;
+	dheight = 3
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "Hj" = (
 /obj/machinery/blackbox_recorder,
 /obj/effect/turf_decal/techfloor{
@@ -7660,13 +7687,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "liberty docking port";
-	port_direction = 4;
-	preferred_direction = 8;
-	dheight = 3
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/starboard)
 "VY" = (
@@ -8842,7 +8862,7 @@ xM
 pI
 pI
 ym
-ym
+eI
 "}
 (16,1,1) = {"
 oY
@@ -9646,7 +9666,7 @@ Jh
 TB
 VF
 ZC
-VF
+GZ
 ym
 ym
 oY
