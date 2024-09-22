@@ -8,3 +8,5 @@
 #define COMSIG_TRANSFORMING_ON_TRANSFORM "transforming_on_transform"
 	/// Return COMPONENT_NO_DEFAULT_MESSAGE to prevent the transforming component from displaying the default transform message / sound.
 	#define COMPONENT_NO_DEFAULT_MESSAGE (1<<0)
+
+#define COMSIG_ITEM_FORCE_TRANSFORM "item_force_transform"

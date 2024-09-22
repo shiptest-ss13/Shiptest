@@ -191,7 +191,7 @@
 					user.do_attack_animation(M)
 					return
 			else
-				to_chat(user, span_danger("The baton is still charging!"))
+				to_chat(user, span_danger("The [src] is still charging!"))
 		else
 			M.visible_message(span_warning("[user] prods [M] with [src]. Luckily it was off."), \
 							span_warning("[user] prods you with [src]. Luckily it was off."))

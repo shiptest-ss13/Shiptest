@@ -73,6 +73,7 @@
 	var/obj/item/item_parent = parent
 
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(on_attack_self))
+	RegisterSignal(parent, COMSIG_ITEM_FORCE_TRANSFORM, PROC_REF(force_transform))
 	if(item_parent.sharpness || sharpness_on)
 		RegisterSignal(parent, COMSIG_ITEM_SHARPEN_ACT, PROC_REF(on_sharpen))
 
@@ -222,3 +223,8 @@
 	if(force_on + increment > max)
 		return COMPONENT_BLOCK_SHARPEN_MAXED
 	sharpened_bonus = increment
+
+/datum/component/transforming/proc/force_transform(obj/item/source)
+	if(isnum(transform_cooldown_time))
+		COOLDOWN_START(src, transform_cooldown, transform_cooldown_time)
+	set_inactive(soruce)
