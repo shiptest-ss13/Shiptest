@@ -66,6 +66,20 @@
 	item_state = "redcloth"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr
+	name = "NGR winter coat"
+	desc = "A sleek beige winter coat used by the Second Battlegroup of the New Gorlex Republic, the zipper tab proudly displays the official emblem of the NGR."
+	icon_state = "coatngr"
+	item_state = "coatngr"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/ngr
+
+/obj/item/clothing/head/hooded/winterhood/security/ngr
+	icon_state = "hood_ngr"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+
 //////////////////
 //Armored suits//
 /////////////////

@@ -101,6 +101,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/datum/action/turret_toggle/toggle_action
 	/// Mob that is remotely controlling the turret
 	var/mob/remote_controller
+	/// For connecting to additional turrets
+	var/id = ""
+
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
@@ -121,6 +124,13 @@ DEFINE_BITFIELD(turret_flags, list(
 		underlays += base
 	if(!has_cover)
 		INVOKE_ASYNC(src, PROC_REF(popUp))
+
+/obj/machinery/porta_turret/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	id = "[REF(port)][id]"
+	port.turret_list |= WEAKREF(src)
+
+/obj/machinery/porta_turret/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	port.turret_list -= WEAKREF(src)
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
 	var/current = on
@@ -832,8 +842,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
-/obj/machinery/porta_turret/ship/solgov
-	faction = list("playerSolgov", "turret")
+
+/* Syndicate Turrets */
 
 /obj/machinery/porta_turret/ship/syndicate
 	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
@@ -856,6 +866,39 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 
+/* Solcon Turrets */
+
+/obj/machinery/porta_turret/ship/solgov
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+
+/* Pan Gezena Federation Turrets */
+
+/obj/machinery/porta_turret/ship/pgf
+	name = "Etherbor Defensive Mount"
+	desc = "A less portable Etherbor offering, the EDM is a self-directed linkage of energy weapons, designed to keep intruders away from Gezenan vessels."
+	faction = list(FACTION_PLAYER_GEZENA, "Turret")
+	stun_projectile = /obj/projectile/beam/hitscan/disabler
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/assault
+	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+/obj/machinery/porta_turret/ship/pgf/light
+	name = "Etherbor Deterrent System"
+	desc = "A light turret manufactured by Etherbor. It offers a lightweight assembly of energy weapons to accost nearby foes."
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf
+	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+
+/obj/machinery/porta_turret/ship/pgf/heavy
+	name = "Etherbor Point-Defense System"
+	desc = "A high-powered defensive turret manufactured by Etherbor. The EPDS contains heavy energy weapons linked in tandem."
+	scan_range = 10
+	stun_projectile = /obj/projectile/beam/hitscan/disabler/heavy
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
+	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////
@@ -868,7 +911,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	base_icon_state = "control"
 	density = FALSE
 	req_access = list(ACCESS_AI_UPLOAD)
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	/// Variable dictating if linked turrets are active and will shoot targets
 	var/enabled = TRUE
 	/// Variable dictating if linked turrets will shoot lethal projectiles
@@ -883,6 +926,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/shoot_cyborgs = FALSE
 	/// List of all linked turrets
 	var/list/turrets = list()
+	///id for connecting to additional turrets
+	var/id = ""
 
 /obj/machinery/turretid/Initialize(mapload, ndir = 0, built = 0)
 	. = ..()
@@ -902,17 +947,13 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(!mapload)
 		return
 
-	if(control_area)
-		control_area = get_area_instance_from_text(control_area)
-		if(control_area == null)
-			control_area = get_area(src)
-			stack_trace("Bad control_area path for [src], [src.control_area]")
-	else if(!control_area)
-		control_area = get_area(src)
-
-	for(var/obj/machinery/porta_turret/T in control_area)
-		turrets |= T
-		T.cp = src
+/obj/machinery/turretid/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	id = "[REF(port)][id]"
+	for(var/datum/weakref/ship_guns in port.turret_list)
+		var/obj/machinery/porta_turret/turret_gun = ship_guns.resolve()
+		if(turret_gun.id == id)
+			turrets |= turret_gun
+			turret_gun.cp = src
 
 /obj/machinery/turretid/examine(mob/user)
 	. += ..()
@@ -937,7 +978,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	if (issilicon(user))
 		return attack_hand(user)
 
-	if (get_dist(src, user) == 0)		// trying to unlock the interface
+	// trying to unlock the interface
+	if (in_range(src, user))
 		if (allowed(usr))
 			if(obj_flags & EMAGGED)
 				to_chat(user, "<span class='warning'>The turret control is unresponsive!</span>")
@@ -1036,6 +1078,10 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/turretid/lethal
 	lethal = TRUE
 
+/obj/machinery/turretid/ship
+	req_ship_access = TRUE
+
+
 /obj/item/wallframe/turret_control
 	name = "turret control frame"
 	desc = "Used for building turret control panels."
@@ -1081,3 +1127,4 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/item/gun/energy/e_gun/turret/get_turret_properties()
 	. = ..()
+
