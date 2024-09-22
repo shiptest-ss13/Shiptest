@@ -846,7 +846,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	faction = list(FACTION_PLAYER_MINUTEMAN, "turret")
 
 /obj/machinery/porta_turret/ship/solgov
-	faction = list(FACTION_PLAYER_SOLGOV, "turret")
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
 
 /* Syndicate Turrets */
 
