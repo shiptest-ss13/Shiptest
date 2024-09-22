@@ -365,7 +365,7 @@
 	range = MECHA_MELEE
 	var/coeff = 100
 	var/obj/item/stack/sheet/fuel
-	var/max_fuel = 150000
+	var/max_fuel = 120000
 	var/fuel_per_cycle_idle = 25
 	var/fuel_per_cycle_active = 4000
 	var/power_per_cycle = 400
@@ -457,7 +457,7 @@
 	name = "exonuclear reactor"
 	desc = "An exosuit module that generates power using a miniature fission reactor. Useful for jumpstarting an exosuit, or keeping it running during heavy use. In an effort to keep its already staggering weight down, a substantial amount of shielding is not present. Use with caution."
 	icon_state = "tesla"
-	max_fuel = 50000
+	max_fuel = 20000
 	fuel_per_cycle_idle = 10
 	fuel_per_cycle_active = 600
 	power_per_cycle = 1000
