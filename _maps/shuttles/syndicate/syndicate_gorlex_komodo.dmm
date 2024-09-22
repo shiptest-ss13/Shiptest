@@ -122,6 +122,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"bC" = (
+/turf/template_noop,
+/area/ship/cargo)
 "bM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -312,10 +315,11 @@
 /area/ship/hallway/central)
 "ea" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 6
+	dir = 6;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/starboard)
 "en" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -1126,10 +1130,11 @@
 /area/ship/crew/canteen)
 "kG" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 1
+	dir = 1;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/hallway/central)
 "kI" = (
 /turf/open/floor/engine,
 /area/ship/bridge)
@@ -1315,6 +1320,13 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"mq" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 1;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "my" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1679,10 +1691,11 @@
 /area/ship/engineering)
 "pN" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 9
+	dir = 9;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "qf" = (
 /obj/structure/railing{
 	dir = 8
@@ -1888,10 +1901,11 @@
 /area/ship/bridge)
 "rS" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 5
+	dir = 5;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/port)
 "rX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2910,9 +2924,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bx" = (
-/obj/machinery/porta_turret/ship/syndicate/weak,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10;
+	id = "komodo_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/crew/dorm)
 "BK" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/shower{
@@ -2964,6 +2981,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
+"BU" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 2;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "BY" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -3108,6 +3132,13 @@
 /area/ship/hallway/central)
 "Ep" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
+"Es" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "EB" = (
 /obj/structure/closet/crate{
@@ -3437,6 +3468,13 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Hx" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 2;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/central)
 "HF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3749,6 +3787,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"KJ" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/starboard)
 "KK" = (
 /obj/structure/closet/wall/orange/directional/south{
 	name = "Engineering locker"
@@ -4135,8 +4180,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/turretid{
-	pixel_y = 2
+/obj/machinery/turretid/ship{
+	id = "komodo_grid"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4174,10 +4219,11 @@
 /area/ship/hallway/central)
 "OP" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 10
+	dir = 10;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "OQ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/starboard)
@@ -4551,6 +4597,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"RX" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/port)
 "RZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5722,7 +5775,7 @@ CM
 "}
 (11,1,1) = {"
 CM
-CM
+bC
 Ep
 uJ
 es
@@ -5742,7 +5795,7 @@ Bx
 "}
 (12,1,1) = {"
 CM
-kG
+Es
 Ep
 jA
 jA
@@ -5882,7 +5935,7 @@ tf
 "}
 (19,1,1) = {"
 CM
-kG
+mq
 Ep
 Ep
 We
@@ -5898,7 +5951,7 @@ gE
 wT
 Im
 gE
-Bx
+BU
 "}
 (20,1,1) = {"
 CM
@@ -5957,7 +6010,7 @@ Dd
 Dd
 Dd
 Dd
-Bx
+Hx
 CM
 "}
 (23,1,1) = {"
@@ -6122,7 +6175,7 @@ CM
 "}
 (31,1,1) = {"
 CM
-pN
+RX
 gN
 nU
 iL
@@ -6138,7 +6191,7 @@ Dd
 JJ
 Hc
 OQ
-OP
+KJ
 "}
 (32,1,1) = {"
 CM

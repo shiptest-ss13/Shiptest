@@ -169,6 +169,11 @@
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
 
+/obj/projectile/beam/hitscan/disabler/heavy
+	damage = 30
+	armour_penetration = -10
+
+
 /obj/item/ammo_casing/energy/laser/minigun
 	select_name = "kill"
 	projectile_type = /obj/projectile/beam/weak/penetrator
