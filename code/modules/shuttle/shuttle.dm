@@ -431,6 +431,18 @@
 		for(var/each in place)
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
+	late_linkup(docked, current_ship)
+
+//Called after shuttle is completely loaded and connected
+/obj/docking_port/mobile/proc/late_linkup(obj/docking_port/stationary/dock, datum/overmap/ship/controlled/new_ship)
+	current_ship = new_ship
+	docked = dock
+	for(var/place in shuttle_areas)
+		var/area/area = place
+		area.late_connect_to_shuttle(src, dock)
+		for(var/each in place)
+			var/atom/atom = each
+			atom.late_connect_to_shuttle(src, dock)
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
 /obj/docking_port/mobile/proc/can_move()
