@@ -471,6 +471,15 @@
 		radiation_pulse(get_turf(src), rad_per_cycle)
 
 
+/obj/item/mecha_parts/mecha_equipment/generator/supercharged
+	name = "supercharged exosuit plasma converter"
+	desc = "An exosuit module that generates bulk power using solid plasma as fuel. Utilizes a high-performance engine to produce power, at the cost of massively decreased fuel economy. Useful for generating power in short bursts of time when it's most needed."
+	icon_state = "tesla"
+	max_fuel = 120000
+	fuel_per_cycle_idle = 25
+	fuel_per_cycle_active = 4000
+	power_per_cycle = 400
+
 /////////////////////////////////////////// THRUSTERS /////////////////////////////////////////////
 
 /obj/item/mecha_parts/mecha_equipment/thrusters

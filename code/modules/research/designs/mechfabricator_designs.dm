@@ -652,6 +652,15 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
+/datum/design/mech_generator
+	name = "Exosuit Equipment (Supercharged Plasma Generator)"
+	id = "mech_generator_supercharged"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/generator/supercharged
+	materials = list(/datum/material/iron=10000,/datum/material/glass = 1000,/datum/material/titanium=2000,/datum/material/plasma=5000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
 /datum/design/mech_mousetrap_mortar
 	name = "H.O.N.K Mousetrap Mortar"
 	id = "mech_mousetrap_mortar"

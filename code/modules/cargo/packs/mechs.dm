@@ -141,6 +141,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/generator/nuclear
 	)
 
+/datum/supply_pack/mech/equipment/supercharged_gen
+	name = "Exosuit supercharged generator kit"
+	desc = "Contains a high-performance generator for an exosuit, ideal for burst energy production."
+	cost = 1500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/generator/supercharged
+	)
+
 /datum/supply_pack/mech/equipment/tesla_energy_relay
 	name = "Exosuit tesla relay kit"
 	desc = "Contains an advanced exosuit module which draws power from nearby APCs."
