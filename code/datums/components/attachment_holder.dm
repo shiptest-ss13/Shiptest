@@ -90,7 +90,7 @@
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user))
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_CTRL_CLICK, parent, user))
 			return TRUE
 
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
@@ -105,7 +105,7 @@
 	if(length(attachments))
 		examine_list += span_notice("It has [length(attachments)] attachment\s.")
 	for(var/obj/item/attach as anything in attachments)
-		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
+		examine_list += SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	for(var/key in slot_room)
