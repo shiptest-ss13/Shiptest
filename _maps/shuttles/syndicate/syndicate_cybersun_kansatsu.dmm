@@ -778,13 +778,14 @@
 	dir = 6;
 	pixel_y = 12;
 	pixel_x = -8;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
 /turf/open/floor/plating/airless,
-/area/ship/bridge)
+/area/ship/engineering)
 "oC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -834,14 +835,15 @@
 	dir = 6;
 	pixel_y = 12;
 	pixel_x = -8;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /obj/machinery/camera{
 	dir = 5;
 	c_tag = "Exterior - Starboard"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/bridge)
+/area/ship/crew/dorm)
 "pM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /obj/structure/extinguisher_cabinet/directional/south{
@@ -1377,10 +1379,11 @@
 "uR" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 9;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/engineering)
 "vk" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 1
@@ -1676,10 +1679,11 @@
 "CR" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 10;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/engineering)
 "CU" = (
 /obj/machinery/door/poddoor{
 	dir = 2;
@@ -1742,7 +1746,8 @@
 	dir = 6;
 	pixel_y = 12;
 	pixel_x = -8;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
@@ -1904,7 +1909,8 @@
 	dir = 5;
 	pixel_y = -4;
 	pixel_x = -6;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
@@ -2192,13 +2198,14 @@
 	dir = 5;
 	pixel_y = -4;
 	pixel_x = -6;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
 	},
 /turf/open/floor/plating/airless,
-/area/ship/bridge)
+/area/ship/crew)
 "Oi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -2503,7 +2510,8 @@
 	dir = 5;
 	pixel_y = -4;
 	pixel_x = -6;
-	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent."
+	desc = "Produced by Cybersun Industries, this turret is a low-powered tresspasser repellent.";
+	id = "kansatsu_grid"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
@@ -2513,7 +2521,7 @@
 	c_tag = "Exterior - Port"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/bridge)
+/area/ship/crew)
 "SL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -2590,7 +2598,8 @@
 	},
 /obj/machinery/turretid{
 	pixel_y = -22;
-	pixel_x = -13
+	pixel_x = -13;
+	id = "kansatsu_grid"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
