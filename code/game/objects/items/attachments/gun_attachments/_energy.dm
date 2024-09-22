@@ -19,7 +19,7 @@
 		examine_list += span_notice("- \The [name] has [round(gun_cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode.")
 	else
 		. += span_notice("- \The [name] doesn't seem to have a cell!")
-	return examine_list
+	//return
 
 /obj/item/attachment/gun/energy/get_cell()
 	return attached_gun.cell

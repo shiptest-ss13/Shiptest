@@ -189,7 +189,7 @@
 	SIGNAL_HANDLER_DOES_SLEEP
 
 	if(on_ctrl_click)
-		return on_ctrl_click.Invoke(user, params)
+		return on_ctrl_click.Invoke(gun, user, params)
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER

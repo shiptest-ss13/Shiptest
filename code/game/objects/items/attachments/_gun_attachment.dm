@@ -18,9 +18,6 @@
 	. = ..()
 	attached_gun.safety = gun.safety
 
-/obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
-	attached_gun.safety = gun.safety
-
 /obj/item/attachment/gun/on_wield(obj/item/gun/gun, mob/user, list/params)
 	attached_gun.on_wield(src,user)
 
@@ -41,3 +38,7 @@
 	if(toggled)
 		attached_gun.unique_action(user)
 		return OVERIDE_UNIQUE_ACTION
+
+/obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
+	!attached_gun.safety
+

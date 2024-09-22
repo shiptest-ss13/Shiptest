@@ -105,7 +105,7 @@
 	if(length(attachments))
 		examine_list += span_notice("It has [length(attachments)] attachment\s.")
 	for(var/obj/item/attach as anything in attachments)
-		examine_list += SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
+		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	for(var/key in slot_room)
