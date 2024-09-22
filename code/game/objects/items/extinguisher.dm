@@ -20,7 +20,7 @@
 	var/chem = /datum/reagent/water
 	var/safety = TRUE
 	var/refilling = FALSE
-	var/tanktype = /obj/structure/reagent_dispensers/watertank
+	var/tanktype = /obj/structure/ //A simple tanktype change won't do it
 	var/sprite_name = "fire_extinguisher"
 	var/power = 5 //Maximum distance launched water will travel
 	var/precision = FALSE //By default, turfs picked from a spray are random, set to 1 to make it always have at least one water effect per row
