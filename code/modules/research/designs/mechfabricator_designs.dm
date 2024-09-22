@@ -652,7 +652,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_generator
+/datum/design/mech_generator_supercharged
 	name = "Exosuit Equipment (Supercharged Plasma Generator)"
 	id = "mech_generator_supercharged"
 	build_type = MECHFAB
