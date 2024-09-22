@@ -304,7 +304,7 @@
 	display_name = "Advanced Plasma Research"
 	description = "Research on how to fully exploit the power of plasma."
 	prereq_ids = list("basic_plasma")
-	design_ids = list("mech_plasma_cutter","plasmacutter_adv")
+	design_ids = list("mech_plasma_cutter","plasmacutter_adv, mech_generator_supercharged")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
