@@ -11,6 +11,7 @@
 	var/datum/callback/on_attacked
 	var/datum/callback/on_unique_action
 	var/datum/callback/on_ctrl_click
+	var/datum/callback/on_examine
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
 	///Called on the parents weild
@@ -35,6 +36,7 @@
 		datum/callback/on_ctrl_click = null,
 		datum/callback/on_wield = null,
 		datum/callback/on_unwield = null,
+		datum/callback/on_examine = null,
 		list/signals = null
 	)
 
@@ -53,6 +55,7 @@
 	src.on_ctrl_click = on_ctrl_click
 	src.on_wield = on_wield
 	src.on_unwield = on_unwield
+	src.on_examine = on_examine
 
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
@@ -70,6 +73,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNIQUE_ACTION, PROC_REF(relay_unique_action))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_CTRL_CLICK, PROC_REF(relay_ctrl_click))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE, PROC_REF(handle_examine))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -144,6 +148,9 @@
 
 /datum/component/attachment/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	SIGNAL_HANDLER
+
+	if(on_examine)
+		return on_examine.Invoke(parent, user, examine_list)
 
 /datum/component/attachment/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	SIGNAL_HANDLER

@@ -52,6 +52,7 @@
 		CALLBACK(src, PROC_REF(on_ctrl_click)), \
 		CALLBACK(src, PROC_REF(on_wield)), \
 		CALLBACK(src, PROC_REF(on_unwield)), \
+		CALLBACK(src, PROC_REF(on_examine)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -105,6 +106,9 @@
 
 /obj/item/attachment/proc/on_ctrl_click(obj/item/gun/gun, mob/user, obj/item)
 	return FALSE
+
+/obj/item/attachment/proc/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
+	return examine_list
 
 ///Handles the modifiers to the parent gun
 /obj/item/attachment/proc/apply_modifiers(obj/item/gun/gun, mob/user, attaching)
