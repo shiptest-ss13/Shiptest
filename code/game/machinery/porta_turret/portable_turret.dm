@@ -871,8 +871,8 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/inteq
 	name = "Vanguard Turret"
 	desc = "A turret designed by IRMG engineers for defending ships from hostile flora, fauna, and people (and Elzousa, which count as flora and people)."
-	stun_projectile =/obj/item/ammo_casing/c10mm/rubber
-	stun_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+	stun_projectile = /obj/projectile/bullet/a762_40/rubber
+	stun_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	lethal_projectile = /obj/projectile/bullet/a762_40
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	scan_range = 8
@@ -892,8 +892,8 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/inteq/heavy
 	name = "Vanguard Overwatch Turret"
 	desc = "A turret designed by IRMG engineers to provide long range defensive fire on their installations. Has a habit of leaving big holes."
-	stun_projectile =/obj/item/ammo_casing/c10mm/rubber
-	stun_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+	stun_projectile = /obj/projectile/bullet/a308/rubber
+	stun_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	lethal_projectile = /obj/projectile/bullet/a308
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	scan_range = 12
