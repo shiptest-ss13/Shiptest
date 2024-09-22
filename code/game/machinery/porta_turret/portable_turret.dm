@@ -886,6 +886,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess //turns out if you have a shot delay below what SSmachines fires at you need to use a different subsystem
 	scan_range = 4
 	shot_delay = 5
 
