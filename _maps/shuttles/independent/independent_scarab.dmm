@@ -1645,8 +1645,8 @@
 /area/ship/maintenance/port)
 "sX" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/fragile,
-/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1654,6 +1654,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = -21
 	},
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "te" = (
@@ -1680,6 +1681,16 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
+"ty" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance{
+	dir = 8;
+	req_ship_access = 0
+	},
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
 "tA" = (
 /obj/effect/turf_decal/trimline/opaque/orange/corner,
 /obj/effect/decal/cleanable/dirt,
@@ -3619,7 +3630,6 @@
 /obj/machinery/door/airlock/maintenance{
 	req_ship_access = 0
 	},
-/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/fore)
 "Ry" = (
@@ -4521,7 +4531,7 @@ yX
 uo
 uo
 uo
-pU
+ty
 DN
 TN
 iT
