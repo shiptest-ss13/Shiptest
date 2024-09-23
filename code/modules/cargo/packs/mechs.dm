@@ -220,6 +220,15 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
 	)
 
+/datum/supply_pack/mech/equipment/recharger
+	name = "Exosuit Recharger kit"
+	desc = "Two boards for an exosuit recharger and recharger console. For the stylish exosuit bay."
+	cost = 400
+	contains = list(
+		/obj/item/circuitboard/computer/mech_bay_power_console,
+		/obj/item/circuitboard/machine/mech_recharger
+	)
+
 /*
 weapons
 */
