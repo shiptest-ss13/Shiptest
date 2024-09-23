@@ -728,87 +728,7 @@
 	dir = 10;
 	c_tag = "Airlock - External"
 	},
-<<<<<<< HEAD
 /obj/effect/turf_decal/corner_techfloor_grid{
-=======
-/obj/item/storage/box/rxglasses/spyglasskit,
-/obj/item/melee/knife/letter_opener,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
-"nF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
-	dir = 8
-	},
-/obj/machinery/light_switch{
-	pixel_y = 22
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/hallway/central)
-"nO" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/red,
-/obj/machinery/camera,
-/turf/open/floor/plating,
-/area/ship/external)
-"oN" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock{
-	name = "Cryopod Room"
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/dorm)
-"pa" = (
-/obj/machinery/fax/syndicate,
-/obj/item/toy/figure/detective{
-	name = "Intel Buddy";
-	pixel_x = 5;
-	pixel_y = 10;
-	toysay = "Let's see what Command thinks of this..."
-	},
-/obj/structure/table/glass,
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
-"pM" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/office)
-"qa" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/box,
-/obj/effect/turf_decal/spline/fancy/transparent/grey{
->>>>>>> upstream/master
 	dir = 6
 	},
 /turf/open/floor/plating/airless,
@@ -1299,40 +1219,7 @@
 	pixel_y = 24;
 	pixel_x = -8
 	},
-<<<<<<< HEAD
 /turf/open/floor/plasteel/white,
-=======
-/obj/structure/safe/floor{
-	number_of_tumblers = 3
-	},
-/obj/item/implanter/stealth,
-/obj/item/implanter/stealth,
-/obj/item/modular_computer/laptop/preset/civilian,
-/obj/item/clothing/mask/chameleon,
-/obj/item/melee/knife/combat,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/reagent_containers/pill/cyanide,
-/obj/item/paper/crumpled{
-	default_raw_text = "Hand this stuff out to the field agents. They'll have a blast."
-	},
-/obj/item/clothing/mask/chameleon,
-/obj/item/card/id/syndicate/anyone,
-/obj/item/card/id/syndicate/anyone,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plating,
-/area/ship/crew/office)
-"Vw" = (
-/obj/structure/chair/comfy/grey/directional/south,
-/obj/machinery/light/small/directional/north,
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/dark,
->>>>>>> upstream/master
 /area/ship/crew)
 "tm" = (
 /obj/machinery/firealarm/directional/east{
@@ -2955,28 +2842,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-<<<<<<< HEAD
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-=======
-/obj/effect/turf_decal/box,
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/structure/closet/crate/wooden{
-	name = "survival kit"
-	},
-/obj/item/survivalcapsule,
-/obj/item/survivalcapsule,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
->>>>>>> upstream/master
 "Zv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
