@@ -24,7 +24,6 @@
 /obj/item/attachment/gun/on_unwield(obj/item/gun/gun, mob/user, list/params)
 	attached_gun.on_unwield(src, user)
 
-//todo make this work instead of just like. Slapping
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	if(toggled)
 		attached_gun.attackby(attack_item, user)
@@ -40,5 +39,5 @@
 		return OVERIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
-	!attached_gun.safety
+	attached_gun.toggle_safety(user,TRUE)
 

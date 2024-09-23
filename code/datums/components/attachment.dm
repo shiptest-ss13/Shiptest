@@ -150,7 +150,7 @@
 	SIGNAL_HANDLER
 
 	if(on_examine)
-		return on_examine.Invoke(parent, user, examine_list)
+		on_examine.Invoke(parent, user, examine_list)
 
 /datum/component/attachment/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	SIGNAL_HANDLER
