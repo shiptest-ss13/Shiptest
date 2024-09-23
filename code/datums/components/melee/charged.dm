@@ -101,5 +101,10 @@
 		if(TRUE)
 			set_active(parent)
 
+/datum/component/transforming/charged/set_inactive(datum/source)
+	. = ..()
+	if(!cell)
+		source.icon_state = "[initial(source.icon_state)]_nocell"
+		source.item_state = "[initial(source.icon_state)]_nocell"
 
 
