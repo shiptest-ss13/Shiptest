@@ -13,6 +13,7 @@
 	var/preload_cell_type
 	var/cell_hit_cost
 	var/can_remove_cell
+	var/no_cell_icon
 
 /datum/component/transforming/charged/Initialize(
 	start_transformed = FALSE,
@@ -27,8 +28,9 @@
 	inhand_icon_change = TRUE,
 	_allowed_cells = list(),
 	_preload_cell_type = /obj/item/stock_parts/cell/melee,
-	_cell_hit_cost = 1000
-	_can_remove_cell = FALSE
+	_cell_hit_cost = 1000,
+	_can_remove_cell = FALSE,
+	_no_cell_icon = FALSE
 )
 	. = ..()
 
@@ -36,14 +38,17 @@
 	preload_cell_type = _preload_cell_type
 	cell_hit_cost = _cell_hit_cost
 	can_remove_cell = _can_remove_cell
+	no_cell_icon = _no_cell_icon
 
 	if(preload_cell_type in allowed_cells)
 		cell = new preload_cell_type(parent)
 
 /datum/component/transforming/charged/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATOM_SCREWDRIVER_ACT, proc_ref(on_screwdriver_act))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, proc_ref(on_attackby))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, proc_ref(on_examine))
+	. = ..()
+	RegisterSignal(parent, COMSIG_ATOM_SCREWDRIVER_ACT, PROC_REF(on_screwdriver_act))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_GET_CELL, PROC_REF(on_get_cell))
 
 /datum/component/transforming/charged/on_attack_self(obj/item/source, mob/user)
 	if(cell && cell.charge > cell_hit_cost)
@@ -62,13 +67,13 @@
 		cell = null
 		to_chat(user, span_notice("You remove the cell from [parent]."))
 		set_inactive(source)
-		parent.update_appearance()
+		source.update_appearance()
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 /datum/component/transforming/charged/proc/on_attackby(obj/item/source, obj/item/attacking_item, mob/user, params)
 	SIGNAL_HANDLER
 
-	if(istype(attacking_item, /obj/item/stock_parts/cell))
+	if(attacking_item.type in allowed_cells)
 		var/obj/item/stock_parts/cell/attacking_cell = attacking_item
 		if(cell)
 			to_chat(user, span_notice("[parent] already has a cell!"))
@@ -80,16 +85,19 @@
 				return
 			cell = attacking_item
 			to_chat(user, span_notice("You install a cell in [parent]."))
-			parent.update_appearance()
+			source.update_appearance()
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
-/datum/component/transforming/charged/proc/on_examine(datum/source, mob/user, list/examine_list)
+/datum/component/transforming/charged/proc/on_examine(obj/item/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
 	if(cell)
 		examine_list += span_notice("\The [source] is [round(cell.percent())]% charged.")
 	else
 		examine_list += span_warning("\The [source] does not have a power source installed.")
+
+/datum/component/transforming/charged/proc/on_get_cell(obj/item/source)
+	return cell
 
 /datum/component/transforming/charged/proc/set_active_state(active_state = -1)
 	switch(active_state)
@@ -101,10 +109,9 @@
 		if(TRUE)
 			set_active(parent)
 
-/datum/component/transforming/charged/set_inactive(datum/source)
+/datum/component/transforming/charged/set_inactive(obj/item/source)
 	. = ..()
 	if(!cell)
 		source.icon_state = "[initial(source.icon_state)]_nocell"
 		source.item_state = "[initial(source.icon_state)]_nocell"
-
-
+		source.update_appearance()

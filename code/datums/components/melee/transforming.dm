@@ -174,7 +174,11 @@
 	source.icon_state = "[source.icon_state]_on"
 	if(inhand_icon_change && source.item_state)
 		source.item_state = "[source.item_state]_on"
+
 	source.update_appearance()
+	if(ismob(source.loc))
+		var/mob/loc_mob = source.loc
+		loc_mob.update_inv_hands()
 
 /*
  * Set our transformed item into its inactive state.
@@ -200,6 +204,8 @@
 	source.update_weight_class(initial(source.w_class))
 	source.icon_state = initial(source.icon_state)
 	source.item_state = initial(source.item_state)
+
+	source.update_appearance()
 	if(ismob(source.loc))
 		var/mob/loc_mob = source.loc
 		loc_mob.update_inv_hands()
@@ -227,4 +233,4 @@
 /datum/component/transforming/proc/force_transform(obj/item/source)
 	if(isnum(transform_cooldown_time))
 		COOLDOWN_START(src, transform_cooldown, transform_cooldown_time)
-	set_inactive(soruce)
+	set_inactive(source)
