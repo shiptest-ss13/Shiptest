@@ -20,6 +20,7 @@
 /area/ruin/beach/treasure_cove)
 "ay" = (
 /obj/structure/flora/tree/palm,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "aY" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -204,8 +205,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
-"hS" = (
-/area/ruin/unpowered)
 "ie" = (
 /obj/structure/closet/crate/grave/loot{
 	desc = "Here lies our great brother and infamous pirate"
@@ -292,9 +291,6 @@
 	dir = 10
 	},
 /turf/open/water/beach,
-/area/ruin/unpowered)
-"kl" = (
-/obj/effect/overlay/palmtree_l,
 /area/ruin/unpowered)
 "km" = (
 /mob/living/simple_animal/hostile/cockroach,
@@ -1441,9 +1437,6 @@
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/treasure_cove)
-"WX" = (
-/mob/living/simple_animal/crab,
-/area/ruin/unpowered)
 "Xp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1595,25 +1588,25 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
-hS
-hS
-kl
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
+Jz
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -1641,25 +1634,25 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 "}
@@ -1698,13 +1691,13 @@ UY
 UY
 UY
 jZ
-hS
-hS
-hS
-hS
-kl
-hS
-hS
+eC
+eC
+eC
+eC
+Jz
+eC
+eC
 Iv
 Iv
 "}
@@ -1746,11 +1739,11 @@ TN
 UY
 UY
 jZ
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
 Iv
 "}
 (6,1,1) = {"
@@ -1792,11 +1785,11 @@ TN
 TN
 TN
 jZ
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
 "}
 (7,1,1) = {"
 Iv
@@ -1838,10 +1831,10 @@ TN
 TN
 TN
 jZ
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 "}
 (8,1,1) = {"
 Iv
@@ -1883,10 +1876,10 @@ TN
 TN
 TN
 bN
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 "}
 (9,1,1) = {"
 Iv
@@ -1928,10 +1921,10 @@ TJ
 bB
 TN
 bN
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 "}
 (10,1,1) = {"
 Iv
@@ -1974,9 +1967,9 @@ TN
 TN
 TN
 jZ
-hS
-hS
-hS
+eC
+eC
+eC
 "}
 (11,1,1) = {"
 Iv
@@ -2019,9 +2012,9 @@ TN
 TN
 TN
 bN
-hS
-hS
-hS
+eC
+eC
+eC
 "}
 (12,1,1) = {"
 Iv
@@ -2064,9 +2057,9 @@ TN
 TN
 tH
 bN
-hS
-hS
-hS
+eC
+eC
+eC
 "}
 (13,1,1) = {"
 Iv
@@ -2109,9 +2102,9 @@ TN
 TN
 TN
 bN
-hS
-hS
-hS
+eC
+eC
+eC
 "}
 (14,1,1) = {"
 Iv
@@ -2155,8 +2148,8 @@ TN
 TN
 TN
 jZ
-hS
-hS
+eC
+eC
 "}
 (15,1,1) = {"
 Iv
@@ -2200,8 +2193,8 @@ EE
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (16,1,1) = {"
 Iv
@@ -2245,8 +2238,8 @@ eC
 TJ
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (17,1,1) = {"
 Iv
@@ -2290,8 +2283,8 @@ lt
 lt
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (18,1,1) = {"
 lt
@@ -2335,8 +2328,8 @@ lt
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (19,1,1) = {"
 lt
@@ -2380,8 +2373,8 @@ TN
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (20,1,1) = {"
 lt
@@ -2425,8 +2418,8 @@ TN
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (21,1,1) = {"
 lt
@@ -2470,8 +2463,8 @@ TN
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (22,1,1) = {"
 lt
@@ -2515,8 +2508,8 @@ TN
 TN
 tH
 bN
-hS
-hS
+eC
+eC
 "}
 (23,1,1) = {"
 Iv
@@ -2560,8 +2553,8 @@ lt
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (24,1,1) = {"
 Iv
@@ -2605,8 +2598,8 @@ TN
 TN
 TN
 bN
-hS
-hS
+eC
+eC
 "}
 (25,1,1) = {"
 Iv
@@ -2650,8 +2643,8 @@ TN
 TN
 TN
 CB
-hS
-hS
+eC
+eC
 "}
 (26,1,1) = {"
 Iv
@@ -2694,9 +2687,9 @@ TN
 TN
 TN
 bN
-hS
-hS
-hS
+eC
+eC
+eC
 "}
 (27,1,1) = {"
 Iv
@@ -2739,9 +2732,9 @@ TN
 TN
 TN
 bN
-WX
-hS
-hS
+zE
+eC
+eC
 "}
 (28,1,1) = {"
 Iv
@@ -2784,8 +2777,8 @@ TN
 TN
 TN
 CB
-hS
-hS
+eC
+eC
 Iv
 "}
 (29,1,1) = {"
@@ -2828,9 +2821,9 @@ TN
 TN
 TN
 CB
-hS
-hS
-hS
+eC
+eC
+eC
 Iv
 "}
 (30,1,1) = {"
@@ -2872,10 +2865,10 @@ TN
 TN
 TN
 CB
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 Iv
 "}
 (31,1,1) = {"
@@ -2916,9 +2909,9 @@ TN
 TN
 EE
 CB
-hS
-hS
-hS
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -2959,10 +2952,10 @@ EE
 EE
 EE
 CB
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -2999,14 +2992,14 @@ EE
 EE
 EE
 CB
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -3038,19 +3031,19 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
 ay
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -3081,17 +3074,17 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
