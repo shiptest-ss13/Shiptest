@@ -1375,9 +1375,6 @@
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	return
 
-/atom/proc/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	return
-
 /atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
 	return
 

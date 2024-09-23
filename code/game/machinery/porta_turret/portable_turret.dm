@@ -949,8 +949,14 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/turretid/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
+	RegisterSignal(port, COMSIG_SHIP_DONE_CONNECTING, PROC_REF(late_connect_to_shuttle))
 
-/obj/machinery/turretid/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/turretid/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	UnregisterSignal(port, COMSIG_SHIP_DONE_CONNECTING)
+
+/obj/machinery/turretid/proc/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	SIGNAL_HANDLER
+
 	for(var/datum/weakref/ship_guns in port.turret_list)
 		var/obj/machinery/porta_turret/turret_gun = ship_guns.resolve()
 		if(turret_gun.id == id)
