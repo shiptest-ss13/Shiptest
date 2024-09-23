@@ -804,7 +804,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/attackby(obj/item/W, mob/living/user, params)
 	if(!istype(W) || (W.item_flags & ABSTRACT) || !istype(user))
 		return
-	if(istype(W, /obj/item/melee/roastingstick))
+	if(istype(W, /obj/item/roastingstick))
 		return ..()
 	if(istype(W, /obj/item/clothing/mask/cigarette))
 		var/obj/item/clothing/mask/cigarette/cig = W

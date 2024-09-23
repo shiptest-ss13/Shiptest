@@ -15,7 +15,7 @@
 	name = "Skateboard"
 	description = "Nanotrasen has determined walking to be wasteful. Ship a skateboard to CentCom to speed operations up."
 	reward = 900 // the tony hawk
-	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard, /obj/item/melee/skateboard)
+	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard, /obj/item/skateboard)
 
 /datum/bounty/item/assistant/stunprod
 	name = "Stunprod"
@@ -35,7 +35,7 @@
 	description = "CentCom's security forces are going through budget cuts. You will be paid if you ship a set of spears."
 	reward = 2000
 	required_count = 5
-	wanted_types = list(/obj/item/spear)
+	wanted_types = list(/obj/item/melee/spear)
 
 /datum/bounty/item/assistant/toolbox
 	name = "Toolboxes"

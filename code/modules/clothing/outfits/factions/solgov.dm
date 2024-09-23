@@ -101,7 +101,7 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	backpack_contents = list(
-		/obj/item/kitchen/knife/letter_opener = 1
+		/obj/item/melee/knife/letter_opener = 1
 	)
 
 /datum/outfit/job/solgov/overseer
@@ -159,7 +159,7 @@
 	r_pocket = /obj/item/storage/bag/ore	//causes issues if spawned in backpack
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
-		/obj/item/kitchen/knife/combat/survival=1,\
+		/obj/item/melee/knife/survival=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
