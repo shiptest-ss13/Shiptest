@@ -92,15 +92,16 @@
 	item_state = "sabre"
 	force = 15
 	throwforce = 10
-	block_chance = 60
+	block_chance = 0
 	armour_penetration = 75
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
 
-/obj/item/melee/sword/sabre/Initialize()
+/obj/item/melee/sword/sabre/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
+	AddComponent(/datum/component/parry, _stamina_constant = 5, _stamina_coefficient = 0.5, _parryable_attack_types = NON_PROJECTILE_ATTACKS)
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()

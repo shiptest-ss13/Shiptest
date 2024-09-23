@@ -50,6 +50,11 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(parent, COMSIG_ATOM_GET_CELL, PROC_REF(on_get_cell))
 
+/datum/component/transforming/charged/Destroy(force, silent)
+	if(cell)
+		QDEL_NULL(cell)
+	. = ..()
+
 /datum/component/transforming/charged/on_attack_self(obj/item/source, mob/user)
 	if(cell && cell.charge > cell_hit_cost)
 		return ..()
