@@ -9,6 +9,7 @@
 	base_icon_state = "basalt"
 	floor_variance = 15
 	digResult = /obj/item/stack/ore/glass/basalt
+	light_color = COLOR_LAVAPLANET_LIGHT
 
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit
 	light_range = 2
