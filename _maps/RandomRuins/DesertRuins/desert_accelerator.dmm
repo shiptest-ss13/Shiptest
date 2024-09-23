@@ -71,8 +71,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreymed";
-	dir = 4
+	dir = 4;
+	id = "ospreymed"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -258,7 +258,7 @@
 /turf/open/floor/engine,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "bD" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -295,8 +295,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "bO" = (
 /obj/machinery/shower{
-	pixel_y = 10;
-	dir = 4
+	dir = 4;
+	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
@@ -323,8 +323,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "bU" = (
 /obj/item/paper/crumpled{
-	name = "Steve's Note";
-	default_raw_text = STeVe...SciEnTisTBrAInhUrT...RaT...DiE...PAiNwArM...mELt
+	default_raw_text = STeVe...SciEnTisTBrAInhUrT...RaT...DiE...PAiNwArM...mELt;
+	name = "Steve's Note"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -416,8 +416,8 @@
 /obj/item/storage/firstaid/o2,
 /obj/machinery/door/window{
 	dir = 8;
-	opacity = 1;
-	name = "Tinted Interior Door"
+	name = "Tinted Interior Door";
+	opacity = 1
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -465,8 +465,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "cW" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreymed";
-	dir = 4
+	dir = 4;
+	id = "ospreymed"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -741,9 +741,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/mob_spawn/human/corpse/frontier/ranged,
-/obj/item/gun/ballistic/automatic/assault/ak47{
-	pixel_y = 2;
-	pixel_x = -11
+/obj/item/gun/ballistic/automatic/assault/skm{
+	pixel_x = -11;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
@@ -915,7 +915,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "fy" = (
@@ -1155,7 +1155,7 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "gS" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "gV" = (
@@ -1198,7 +1198,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
@@ -1315,8 +1315,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "id" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreykitchen";
-	dir = 4
+	dir = 4;
+	id = "ospreykitchen"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
@@ -1330,8 +1330,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "io" = (
 /obj/machinery/shower{
-	pixel_y = 10;
-	dir = 8
+	dir = 8;
+	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /mob/living/simple_animal/hostile/netherworld,
@@ -1885,8 +1885,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "me" = (
 /obj/machinery/mineral/processing_unit{
-	output_dir = 4;
-	input_dir = 8
+	input_dir = 8;
+	output_dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -1933,8 +1933,8 @@
 /obj/item/storage/firstaid/brute,
 /obj/machinery/door/window{
 	dir = 8;
-	opacity = 1;
-	name = "Tinted Interior Door"
+	name = "Tinted Interior Door";
+	opacity = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -2074,7 +2074,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "ne" = (
@@ -2312,7 +2312,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "oF" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "oG" = (
@@ -2584,8 +2584,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "qx" = (
 /obj/structure/railing{
-	layer = 3.1;
-	dir = 8
+	dir = 8;
+	layer = 3.1
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2687,8 +2687,8 @@
 	name = "Engine Access"
 	},
 /obj/item/trash/can/food/beans{
-	pixel_y = 2;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2819,8 +2819,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "sh" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "si" = (
@@ -3141,8 +3141,8 @@
 	dir = 4
 	},
 /obj/item/trash/can/food/beans{
-	pixel_y = 2;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 2
 	},
 /obj/structure/light_construct/small/directional/west,
 /turf/open/floor/plasteel/mono/dark,
@@ -3298,7 +3298,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "vK" = (
@@ -3518,8 +3518,8 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 8
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "xh" = (
@@ -3756,8 +3756,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "yF" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 8
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "yI" = (
@@ -3798,8 +3798,8 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "yT" = (
@@ -4072,7 +4072,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Ba" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/engine,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Bb" = (
@@ -4188,8 +4188,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreymed";
-	dir = 4
+	dir = 4;
+	id = "ospreymed"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -4268,9 +4268,9 @@
 "Cd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight{
-	pixel_y = -3;
+	light_on = 1;
 	pixel_x = 15;
-	light_on = 1
+	pixel_y = -3
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4294,7 +4294,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Cm" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Cn" = (
@@ -4421,7 +4421,7 @@
 "CX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/glowshroom/single,
 /turf/open/floor/plasteel/mono/dark,
@@ -4549,7 +4549,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "DY" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Eb" = (
@@ -4612,12 +4612,12 @@
 	dir = 8
 	},
 /obj/structure/radioactive{
-	pixel_y = 11;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 11
 	},
 /obj/structure/radioactive{
-	pixel_y = 2;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -5036,8 +5036,8 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Hc" = (
@@ -5176,7 +5176,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Ie" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Ih" = (
@@ -5692,9 +5692,9 @@
 	name = "gelatinous floor"
 	},
 /obj/effect/mob_spawn/human/corpse/frontier/ranged,
-/obj/item/gun/ballistic/automatic/assault/ak47{
-	pixel_y = -16;
-	pixel_x = 3
+/obj/item/gun/ballistic/automatic/assault/skm{
+	pixel_x = 3;
+	pixel_y = -16
 	},
 /obj/structure/light_construct/small/directional/north,
 /turf/open/floor/plating,
@@ -5800,8 +5800,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/folder/yellow{
-	pixel_y = 1;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
@@ -5825,8 +5825,8 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
-	pixel_y = 2;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
@@ -5927,7 +5927,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "MQ" = (
@@ -5938,8 +5938,8 @@
 /obj/item/storage/firstaid/toxin,
 /obj/machinery/door/window{
 	dir = 8;
-	opacity = 1;
-	name = "Tinted Interior Door"
+	name = "Tinted Interior Door";
+	opacity = 1
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
@@ -6383,12 +6383,12 @@
 "PA" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
-	pixel_y = -11;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -11
 	},
 /obj/item/shard{
-	pixel_y = 4;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
@@ -6481,8 +6481,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Qc" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreykitchen";
-	dir = 4
+	dir = 4;
+	id = "ospreykitchen"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/structure/cable{
@@ -6529,7 +6529,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "QB" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "QD" = (
@@ -7381,8 +7381,8 @@
 	dir = 4
 	},
 /obj/item/gun/ballistic/revolver/shadow{
-	pixel_y = -14;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
@@ -7493,8 +7493,8 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "Xi" = (
@@ -7602,8 +7602,8 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "XH" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "XL" = (
@@ -7881,7 +7881,7 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
 "ZG" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "ZH" = (

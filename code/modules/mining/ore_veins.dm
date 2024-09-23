@@ -64,11 +64,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	if(!LAZYLEN(vein_contents))
 		switch(vein_class)
 			if(1)
-				ore_type_amount = rand(1,3)
+				ore_type_amount = rand(2,6)
 			if(2)
-				ore_type_amount = rand(3,5)
+				ore_type_amount = rand(6,10)
 			if(3)
-				ore_type_amount = rand(4,6)
+				ore_type_amount = rand(8,14)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
@@ -168,9 +168,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 30,
 		/mob/living/simple_animal/hostile/asteroid/polarbear = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 20,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 25,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 20,
 	)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
@@ -251,5 +251,34 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/carp/megacarp = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10
+		)
+
+
+// rockplanet
+
+/obj/structure/vein/rockplanet
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 20,
+		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 30,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 10,
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 10,
+
+		)
+
+/obj/structure/vein/classtwo/rockplanet
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 50,
+		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 30,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 5,
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 5,
+		)
+
+/obj/structure/vein/classthree/rockplanet
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 50,
+		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 40,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 5,
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 5,
+		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 5,
 		)
 

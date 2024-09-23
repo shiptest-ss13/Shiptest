@@ -195,7 +195,7 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -242,7 +242,7 @@
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
-	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 
 /turf/open/floor/plating/ship/water
 	name = "water"

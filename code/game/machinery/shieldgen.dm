@@ -432,14 +432,14 @@
 		visible_message(span_notice("The [src.name] hums as it powers down."), \
 			"If this message is ever seen, something is wrong.", \
 			span_notice("You hear heavy droning fade out."))
-		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = 6120)
+		playsound(src, 'sound/machines/synth_no.ogg', 100, TRUE, frequency = 6120)
 		active = FALSE
 		log_game("[src] was deactivated by wire pulse at [AREACOORD(src)]")
 	else
 		visible_message(span_notice("The [src.name] beeps as it powers up."), \
 			"If this message is ever seen, something is wrong.", \
 			span_notice("You hear heavy droning."))
-		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = 6120)
+		playsound(src, 'sound/machines/synth_yes.ogg', 100, TRUE, frequency = 6120)
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by wire pulse at [AREACOORD(src)]")
 

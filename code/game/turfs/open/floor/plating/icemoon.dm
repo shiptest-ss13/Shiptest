@@ -8,7 +8,9 @@
 	icon_plating = "snow"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.5
-	base_icon_state = "snow"
+	base_icon_state = "snow_"
+	max_icon_states = 3
+	floor_variance = 100
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
