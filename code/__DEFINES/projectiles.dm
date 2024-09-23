@@ -7,3 +7,9 @@
 #define PROJECTILE_PIERCE_PHASE 2
 // Delete self without hitting
 #define PROJECTILE_DELETE_WITHOUT_HITTING 3
+
+#define PROJECTILE_BONUS_DAMAGE_NONE 0
+#define PROJECTILE_BONUS_DAMAGE_MINERALS (1<<0) //minable walls
+#define PROJECTILE_BONUS_DAMAGE_WALLS (1<<1) // walls
+#define PROJECTILE_BONUS_DAMAGE_RWALLS (1<<2) //reinforced walls
+

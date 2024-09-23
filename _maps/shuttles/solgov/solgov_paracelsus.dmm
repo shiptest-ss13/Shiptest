@@ -193,8 +193,8 @@
 /area/ship/hallway/port)
 "cf" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+	color = "#332521";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony,
@@ -248,8 +248,8 @@
 "cy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#E3994E"
+	color = "#E3994E";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -437,9 +437,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/medical{
+	id_tag = "sg_par_surgery_one";
 	name = "Surgery";
-	req_one_access = list(5,69);
-	id_tag = "sg_par_surgery_one"
+	req_one_access = list(5,69)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
@@ -583,8 +583,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#792f27"
+	color = "#792f27";
+	dir = 1
 	},
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
@@ -657,8 +657,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "sg_par_cargo3";
-	dir = 8
+	dir = 8;
+	id = "sg_par_cargo3"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -687,8 +687,8 @@
 "hd" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
-	pixel_y = 8;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
 /obj/effect/turf_decal/borderfloorwhite{
@@ -708,10 +708,10 @@
 	dir = 8;
 	id = "sg_par_surgery_one";
 	name = "bolt control";
+	normaldoorcontrol = 1;
 	pixel_x = 20;
 	pixel_y = -5;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -1015,8 +1015,8 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	preferred_direction = 4;
-	port_direction = 2
+	port_direction = 2;
+	preferred_direction = 4
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
@@ -1043,9 +1043,9 @@
 "kF" = (
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
-	req_one_access = list(20);
+	id_tag = "sg_par_bolt";
 	name = "Captain's Quarters";
-	id_tag = "sg_par_bolt"
+	req_one_access = list(20)
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1150,10 +1150,10 @@
 /area/ship/cargo)
 "lu" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
+	dir = 2;
 	dwidth = 15;
-	dir = 2
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1178,8 +1178,8 @@
 "lJ" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#E3994E"
+	color = "#E3994E";
+	dir = 8
 	},
 /obj/machinery/light/directional/north,
 /obj/item/radio/intercom/table{
@@ -1243,8 +1243,8 @@
 	pixel_y = 7
 	},
 /obj/item/desk_flag/trans{
-	pixel_y = 2;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 2
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
@@ -1333,11 +1333,11 @@
 /area/ship/cargo/office)
 "nG" = (
 /obj/machinery/button/door{
-	pixel_y = -22;
-	pixel_x = 7;
 	dir = 1;
 	id = "sg_par_office";
-	name = "shutter control"
+	name = "shutter control";
+	pixel_x = 7;
+	pixel_y = -22
 	},
 /obj/structure/chair/sofa/brown/left/directional/north,
 /obj/machinery/airalarm/directional/west,
@@ -1358,8 +1358,8 @@
 /area/ship/medical/surgery)
 "op" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+	color = "#332521";
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony,
@@ -1380,8 +1380,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
-	name = "Surgery";
 	id_tag = "sg_par_surgery_two";
+	name = "Surgery";
 	req_one_access = list(5,69)
 	},
 /turf/open/floor/plasteel/dark,
@@ -1397,8 +1397,8 @@
 "ow" = (
 /obj/structure/table,
 /obj/item/defibrillator/loaded{
-	pixel_y = 3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 3
 	},
 /obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel/mono/white,
@@ -1450,8 +1450,8 @@
 /obj/item/bedsheet/solgov,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+	color = "#332521";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
@@ -1601,8 +1601,8 @@
 /area/ship/cargo)
 "qe" = (
 /obj/machinery/door/airlock/medical/glass{
-	name = "Treatment Center";
 	dir = 4;
+	name = "Treatment Center";
 	req_one_access = list(5,45)
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -1692,24 +1692,24 @@
 "qM" = (
 /obj/structure/table/wood,
 /obj/machinery/button/door{
-	pixel_y = 8;
 	id = "sg_par_captain";
 	name = "captain privacy shutters control";
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
-	pixel_y = 8;
 	id = "sg_par_bolt";
 	name = "captain door bolt control";
+	normaldoorcontrol = 1;
 	pixel_x = 6;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	pixel_y = 8;
+	specialfunctions = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = -2;
 	id = "sg_par_captain_window";
 	name = "captain privacy shutters control";
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -2
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew)
@@ -1744,7 +1744,7 @@
 	name = "engineer's locker";
 	req_access = list(11)
 	},
-/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/head/hardhat/solgov,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/storage/toolbox/mechanical,
@@ -1775,9 +1775,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
+	id_tag = "sg_par_chem_bolt";
 	name = "Chemistry";
-	req_one_access = list(5,10,45);
-	id_tag = "sg_par_chem_bolt"
+	req_one_access = list(5,10,45)
 	},
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
@@ -1901,18 +1901,18 @@
 /area/ship/medical/surgery)
 "sC" = (
 /obj/machinery/button/door{
-	pixel_y = -23;
-	pixel_x = -8;
 	dir = 1;
 	id = "sg_par_cargo1";
-	name = "cargo blast door control"
+	name = "cargo blast door control";
+	pixel_x = -8;
+	pixel_y = -23
 	},
 /obj/machinery/button/door{
-	pixel_y = -23;
-	pixel_x = 6;
 	dir = 1;
 	id = "sg_par_cargo2";
-	name = "cargo blast door control"
+	name = "cargo blast door control";
+	pixel_x = 6;
+	pixel_y = -23
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2031,8 +2031,8 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/telecomms/relay{
-	network = "SolNet";
-	autolinkers = list("SolHub")
+	autolinkers = list("SolHub");
+	network = "SolNet"
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
@@ -2222,15 +2222,15 @@
 "wi" = (
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
+	id = "sg_par_holocargo1";
 	pixel_x = -5;
-	pixel_y = -21;
-	id = "sg_par_holocargo1"
+	pixel_y = -21
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
+	id = "sg_par_holocargo2";
 	pixel_x = 5;
-	pixel_y = -21;
-	id = "sg_par_holocargo2"
+	pixel_y = -21
 	},
 /obj/structure/railing/wood{
 	dir = 4
@@ -2245,8 +2245,8 @@
 /area/ship/cargo/office)
 "wk" = (
 /obj/machinery/door/airlock/solgov{
-	name = "Psychologist Office";
-	id_tag = "sg_par_psychlock"
+	id_tag = "sg_par_psychlock";
+	name = "Psychologist Office"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2482,8 +2482,8 @@
 /obj/item/stamp/solgov,
 /obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#792f27"
+	color = "#792f27";
+	dir = 1
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/wood/mahogany,
@@ -2510,8 +2510,8 @@
 "yw" = (
 /obj/structure/table,
 /obj/item/storage/belt/medical{
-	pixel_y = 4;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 4
 	},
 /obj/item/storage/belt/medical{
 	pixel_x = -2
@@ -2601,8 +2601,8 @@
 "zc" = (
 /obj/structure/table/wood,
 /obj/item/desk_flag/solgov{
-	pixel_y = 2;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = -6;
@@ -2685,8 +2685,8 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /obj/machinery/button/door{
 	dir = 1;
@@ -2729,8 +2729,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#792f27"
+	color = "#792f27";
+	dir = 1
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
@@ -2832,8 +2832,8 @@
 "BQ" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_y = 16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 16
 	},
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
@@ -2898,8 +2898,8 @@
 /area/ship/hallway/starboard)
 "Cf" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+	color = "#332521";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2930,8 +2930,8 @@
 /area/ship/cargo/office)
 "Cp" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#E3994E"
+	color = "#E3994E";
+	dir = 1
 	},
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/wood/yew,
@@ -3535,8 +3535,8 @@
 "IO" = (
 /obj/structure/table/wood,
 /obj/machinery/reagentgrinder{
-	pixel_y = 8;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4;
@@ -3895,10 +3895,10 @@
 	dir = 4;
 	id = "sg_par_chem_bolt";
 	name = "bolt control";
+	normaldoorcontrol = 1;
 	pixel_x = -20;
 	pixel_y = -6;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/white,
@@ -3951,16 +3951,16 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
+	id = "sg_par_exterior";
 	name = "external shutters control";
-	id = "sg_par_exterior"
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Mr" = (
 /obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#E3994E"
+	color = "#E3994E";
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4128,8 +4128,8 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -4181,8 +4181,8 @@
 "OS" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_y = 8;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
 /obj/effect/turf_decal/borderfloorwhite{
@@ -4202,10 +4202,10 @@
 	dir = 4;
 	id = "sg_par_surgery_two";
 	name = "bolt control";
+	normaldoorcontrol = 1;
 	pixel_x = -20;
 	pixel_y = -5;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -4267,8 +4267,8 @@
 /area/ship/crew/crewtwo)
 "Pg" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+	color = "#332521";
+	dir = 8
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/ebony,
@@ -4381,8 +4381,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "sg_par_cargo3";
-	dir = 8
+	dir = 8;
+	id = "sg_par_cargo3"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -4506,11 +4506,11 @@
 "Rs" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/button/door{
-	pixel_y = -23;
-	pixel_x = -4;
 	dir = 1;
 	id = "sg_par_engine";
-	name = "Engine Blast Door Control"
+	name = "Engine Blast Door Control";
+	pixel_x = -4;
+	pixel_y = -23
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
@@ -4659,10 +4659,10 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = -4;
 	id = "sg_par_engine";
-	name = "engine blast door control"
+	name = "engine blast door control";
+	pixel_x = -4;
+	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
@@ -4821,8 +4821,8 @@
 /area/ship/crew/toilet)
 "Uc" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+	color = "#332521";
+	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -4898,8 +4898,8 @@
 /area/ship/bridge)
 "UO" = (
 /obj/machinery/smartfridge/bloodbank/preloaded{
-	pixel_y = 32;
-	density = 0
+	density = 0;
+	pixel_y = 32
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line{
 	dir = 1
@@ -4914,18 +4914,18 @@
 "UV" = (
 /obj/structure/curtain/cloth,
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = -6;
 	id = "sg_par_psychlock";
 	name = "psychology office door bolt";
 	normaldoorcontrol = 1;
+	pixel_x = -6;
+	pixel_y = 24;
 	specialfunctions = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 6;
 	id = "sg_par_psych";
-	name = "psychology office privacy shutters"
+	name = "psychology office privacy shutters";
+	pixel_x = 6;
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -5162,12 +5162,12 @@
 	pixel_y = 15
 	},
 /obj/item/cigbutt{
-	pixel_y = 9;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 9
 	},
 /obj/item/clothing/mask/cigarette/robust{
-	pixel_y = 10;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)

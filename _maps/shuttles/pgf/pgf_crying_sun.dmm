@@ -424,16 +424,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"du" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "dv" = (
 /obj/structure/cable/blue{
 	icon_state = "0-4"
@@ -534,6 +524,29 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"ee" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "lib_bridge_shut";
+	name = "Bridge Shutters";
+	pixel_y = 20;
+	pixel_x = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	pixel_x = -7;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "ej" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1046,17 +1059,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"if" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	mode = 1
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "ih" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset,
@@ -1188,6 +1190,17 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
+"jg" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "jh" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -1472,6 +1485,17 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
+/area/ship/external/dark)
+"mf" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 8;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "mk" = (
 /obj/structure/table/wood,
@@ -2335,16 +2359,6 @@
 /obj/effect/turf_decal/floordetail/tiled,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"tU" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "tY" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 1
@@ -3081,28 +3095,6 @@
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
-"Aq" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 4
-	},
-/obj/machinery/button/door{
-	id = "lib_bridge_shut";
-	name = "Bridge Shutters";
-	pixel_y = 20;
-	pixel_x = 8
-	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/machinery/turretid{
-	pixel_y = 23;
-	pixel_x = -8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
 "Ar" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -3172,6 +3164,18 @@
 "At" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
+"Az" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 4;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "AL" = (
 /obj/machinery/vending/toyliberationstation,
 /turf/open/floor/plasteel/tech,
@@ -3451,16 +3455,6 @@
 "CD" = (
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
-"CF" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 10;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "CO" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -3618,6 +3612,17 @@
 /obj/item/clothing/head/helmet/space/gezena,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"DG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "DJ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/sign/flag/gezena{
@@ -3731,14 +3736,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"Eu" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "EA" = (
 /obj/structure/sign/poster/contraband/pgf{
 	pixel_y = 32
@@ -3995,16 +3992,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"FJ" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "FN" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/poddoor{
@@ -4016,16 +4003,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"FO" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 8;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "FU" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4252,16 +4229,6 @@
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /turf/open/floor/vault,
 /area/ship/security/armory)
-"Hb" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	mode = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Hf" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -4269,6 +4236,18 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
+"Hl" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 4;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "Hn" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -5856,6 +5835,17 @@
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"Tp" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 10;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Tw" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6297,6 +6287,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"Wi" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 6;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Wk" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -6366,6 +6367,17 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
+/area/ship/external/dark)
+"WU" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "WV" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
@@ -6686,6 +6698,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"Zr" = (
+/obj/structure/cable,
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 5;
+	mode = 1;
+	id = "crying_sun_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Zw" = (
 /obj/structure/railing{
 	dir = 4
@@ -6859,7 +6880,7 @@ CB
 AM
 UM
 lc
-FO
+mf
 LD
 TV
 bB
@@ -7213,7 +7234,7 @@ xz
 (15,1,1) = {"
 xz
 xz
-FJ
+jg
 ow
 ow
 mG
@@ -7291,7 +7312,7 @@ xK
 zz
 DT
 SB
-CF
+Tp
 xz
 "}
 (18,1,1) = {"
@@ -7410,7 +7431,7 @@ xz
 xz
 xz
 Si
-KB
+DG
 KM
 Te
 EM
@@ -7467,7 +7488,7 @@ xz
 xz
 xz
 eR
-Eu
+Zr
 KP
 BX
 xy
@@ -7599,7 +7620,7 @@ Bq
 oR
 Ne
 SB
-du
+Wi
 xz
 "}
 (29,1,1) = {"
@@ -7804,7 +7825,7 @@ xz
 xz
 xz
 xz
-tU
+WU
 xk
 UE
 pW
@@ -8002,7 +8023,7 @@ xz
 xz
 xz
 MF
-Aq
+ee
 Xs
 jm
 jH
@@ -8085,7 +8106,7 @@ xz
 xz
 xz
 xz
-Hb
+WU
 vr
 dK
 Gb
@@ -8262,11 +8283,11 @@ xz
 xz
 xz
 xz
-if
+Hl
 xz
 xz
 xz
-if
+Az
 xz
 xz
 xz
