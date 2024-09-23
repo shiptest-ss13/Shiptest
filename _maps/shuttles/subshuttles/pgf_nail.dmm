@@ -115,6 +115,11 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
+/obj/machinery/turretid/ship{
+	pixel_y = -30;
+	pixel_x = -2;
+	id = "nail_grid"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "p" = (
@@ -390,9 +395,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/weak{
+/obj/machinery/porta_turret/ship/pgf/light{
 	dir = 8;
-	mode = 1
+	mode = 1;
+	id = "nail_grid"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)
