@@ -478,7 +478,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/hallway/port)
 "cP" = (
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "cR" = (
 /obj/machinery/computer/arcade/battle,
@@ -592,7 +592,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "dN" = (
-/turf/open/floor/plating/beach/water,
+/turf/open/water/ship,
 /area/ship/hallway/central)
 "dP" = (
 /obj/effect/turf_decal/corner/opaque/white/border{
@@ -812,7 +812,7 @@
 /obj/structure/flora/tree/jungle/small{
 	randomize_icon = 0
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "fu" = (
 /obj/structure/cable{
@@ -941,7 +941,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/sand,
 /obj/machinery/light/directional/west,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "gn" = (
 /obj/structure/railing{
@@ -1011,7 +1011,7 @@
 /area/ship/hallway/port)
 "gM" = (
 /obj/structure/chair/comfy/grey/directional/east,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "gR" = (
 /obj/structure/sign/barsign{
@@ -1239,7 +1239,7 @@
 "id" = (
 /obj/effect/turf_decal/weather/sand,
 /obj/machinery/light/directional/east,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "ie" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -1500,7 +1500,7 @@
 /area/ship/crew)
 "jI" = (
 /obj/item/toy/seashell,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "jM" = (
 /obj/machinery/libraryscanner,
@@ -2522,7 +2522,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "qx" = (
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "qA" = (
 /obj/structure/chair{
@@ -2877,7 +2877,9 @@
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "ta" = (
-/turf/open/floor/plating/beach/coastline_t,
+/turf/open/water/ship{
+	icon_state = "sandwater_t"
+	},
 /area/ship/hallway/central)
 "tb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -2964,7 +2966,7 @@
 /obj/structure/chair/pew/right{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "tH" = (
 /obj/structure/cable{
@@ -3027,7 +3029,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/chair/comfy/grey/directional/east,
 /obj/item/radio/intercom/directional/north,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "um" = (
 /obj/structure/cable{
@@ -3427,7 +3429,6 @@
 /area/ship/hallway/fore)
 "wV" = (
 /obj/structure/mineral_door/sandstone,
-/turf/open/floor/plating/beach/sand,
 /area/ship/hallway/central)
 "wX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3514,7 +3515,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "xA" = (
 /obj/structure/cable{
@@ -3793,7 +3794,7 @@
 /area/ship/hallway/fore)
 "zf" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "zs" = (
 /obj/structure/table/reinforced,
@@ -3832,7 +3833,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "zQ" = (
 /obj/structure/table/reinforced,
@@ -3866,7 +3867,7 @@
 /obj/structure/chair/pew/left{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "zX" = (
 /obj/structure/disposalpipe/segment{
@@ -3994,7 +3995,7 @@
 /area/ship/hallway/fore)
 "AI" = (
 /obj/machinery/light/directional/south,
-/turf/open/floor/plating/beach/water,
+/turf/open/water/ship,
 /area/ship/hallway/central)
 "AR" = (
 /obj/structure/railing{
@@ -4124,11 +4125,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "BI" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "BO" = (
 /obj/machinery/door/airlock/public/glass,
@@ -4486,7 +4487,7 @@
 	icon_state = "4-8"
 	},
 /mob/living/simple_animal/chick,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "Ej" = (
 /obj/structure/table/wood/poker,
@@ -4829,7 +4830,7 @@
 "Gw" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "GA" = (
 /obj/structure/disposalpipe/segment{
@@ -5332,7 +5333,7 @@
 /area/ship/crew/janitor)
 "Kd" = (
 /obj/item/toy/beach_ball,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "Kh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -5501,7 +5502,7 @@
 /area/ship/crew/chapel)
 "LD" = (
 /obj/item/reagent_containers/spray/spraytan,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "LF" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
@@ -5537,7 +5538,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "Md" = (
 /obj/machinery/power/generator{
@@ -5606,7 +5607,7 @@
 "Mx" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "My" = (
 /obj/effect/turf_decal/corner/opaque/white/border{
@@ -6421,7 +6422,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "RR" = (
-/turf/open/floor/plating/beach/coastline_b,
+/turf/open/water/ship{
+	icon_state = "sandwater_b"
+	},
 /area/ship/hallway/central)
 "RS" = (
 /obj/structure/window/plasma/reinforced/spawner/west,
@@ -6599,7 +6602,7 @@
 /area/ship/hallway/aft)
 "Tt" = (
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "Tw" = (
 /obj/structure/cable{
@@ -6905,7 +6908,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "Vl" = (
 /obj/structure/cable{
@@ -6957,7 +6960,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "VF" = (
 /obj/machinery/door/airlock/external{
@@ -7167,7 +7170,7 @@
 /area/ship/hallway/fore)
 "WW" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "WX" = (
 /obj/machinery/suit_storage_unit/security,
@@ -7289,7 +7292,7 @@
 /area/ship/crew)
 "XI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "XM" = (
 /obj/machinery/airalarm/directional/north,
@@ -7302,7 +7305,7 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "XV" = (
 /obj/item/kirbyplants/photosynthetic,
@@ -7363,7 +7366,7 @@
 	pixel_x = -13;
 	pixel_y = 23
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/ship,
 /area/ship/hallway/central)
 "Yl" = (
 /obj/structure/cable{
@@ -7499,11 +7502,11 @@
 "Zx" = (
 /obj/structure/flora/tree/palm,
 /obj/effect/overlay/coconut,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "ZA" = (
 /obj/item/clothing/shoes/sandal,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/asteroid/sand/ship,
 /area/ship/hallway/central)
 "ZH" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse{

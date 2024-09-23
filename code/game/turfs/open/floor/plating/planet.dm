@@ -43,3 +43,22 @@
 	light_power = 1
 	light_range = 2
 
+
+//Artifical sand turfs
+/turf/open/floor/plating/asteroid/sand/ship
+	name = "sand"
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "sand"
+	base_icon_state = "sand"
+	baseturfs = /turf/open/floor/plating
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+	digResult = null
+
+//artifical water turfs
+/turf/open/water/ship
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water"
+	base_icon_state = "water"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
