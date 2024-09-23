@@ -20,9 +20,6 @@
 /area/ruin/beach/treasure_cove)
 "ay" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "aY" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -112,6 +109,9 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
+"eC" = (
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/ruin/unpowered)
 "eI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -194,9 +194,7 @@
 /area/ruin/beach/treasure_cove)
 "ht" = (
 /obj/effect/overlay/palmtree_r,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "hJ" = (
 /obj/effect/turf_decal/industrial/traffic,
@@ -207,9 +205,6 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "hS" = (
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "ie" = (
 /obj/structure/closet/crate/grave/loot{
@@ -300,9 +295,6 @@
 /area/ruin/unpowered)
 "kl" = (
 /obj/effect/overlay/palmtree_l,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "km" = (
 /mob/living/simple_animal/hostile/cockroach,
@@ -846,6 +838,10 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/beach/treasure_cove)
+"zE" = (
+/mob/living/simple_animal/crab,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/ruin/unpowered)
 "zW" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_x = -11;
@@ -1043,6 +1039,10 @@
 	dir = 4
 	},
 /turf/open/water/beach,
+/area/ruin/unpowered)
+"Jz" = (
+/obj/effect/overlay/palmtree_l,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "JM" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1443,9 +1443,6 @@
 /area/ruin/beach/treasure_cove)
 "WX" = (
 /mob/living/simple_animal/crab,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "Xp" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1830,10 +1827,10 @@ lt
 lt
 lt
 lt
-hS
-hS
-WX
-hS
+eC
+eC
+zE
+eC
 db
 EE
 TN
@@ -1876,11 +1873,11 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
 db
 TN
 TN
@@ -1921,12 +1918,12 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-kl
-hS
-hS
+eC
+eC
+eC
+Jz
+eC
+eC
 TJ
 bB
 TN
@@ -1966,12 +1963,12 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-WX
-hS
-hS
+eC
+eC
+eC
+zE
+eC
+eC
 TJ
 TN
 TN
@@ -2011,10 +2008,10 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 VF
 UY
 TN
@@ -2057,8 +2054,8 @@ lt
 lt
 lt
 lt
-hS
-hS
+eC
+eC
 VF
 TN
 TN
@@ -2244,7 +2241,7 @@ TN
 TN
 TN
 CB
-hS
+eC
 TJ
 TN
 bN
@@ -2288,7 +2285,7 @@ SD
 xg
 TN
 bN
-hS
+eC
 lt
 lt
 TN
@@ -2525,8 +2522,8 @@ hS
 Iv
 lt
 lt
-hS
-hS
+eC
+eC
 lt
 lt
 lt
@@ -2570,8 +2567,8 @@ hS
 Iv
 lt
 lt
-hS
-hS
+eC
+eC
 lt
 lt
 lt
@@ -2614,9 +2611,9 @@ hS
 (25,1,1) = {"
 Iv
 lt
-hS
-hS
-hS
+eC
+eC
+eC
 lt
 lt
 lt
@@ -2659,10 +2656,10 @@ hS
 (26,1,1) = {"
 Iv
 Iv
-hS
-hS
-hS
-WX
+eC
+eC
+eC
+zE
 lt
 lt
 lt
@@ -2704,8 +2701,8 @@ hS
 (27,1,1) = {"
 Iv
 Iv
-hS
-hS
+eC
+eC
 VF
 UY
 UY
@@ -2749,7 +2746,7 @@ hS
 (28,1,1) = {"
 Iv
 Iv
-hS
+eC
 ht
 TJ
 TN
@@ -2794,14 +2791,14 @@ Iv
 (29,1,1) = {"
 Iv
 Iv
-hS
-hS
+eC
+eC
 TJ
 TN
 TN
 TN
 jZ
-hS
+eC
 lt
 lt
 lt
@@ -2839,15 +2836,15 @@ Iv
 (30,1,1) = {"
 Iv
 Iv
-hS
-hS
+eC
+eC
 db
 TN
 TN
 TN
 bN
-WX
-hS
+zE
+eC
 lt
 lt
 lt
@@ -2884,9 +2881,9 @@ Iv
 (31,1,1) = {"
 Iv
 Iv
-hS
-hS
-hS
+eC
+eC
+eC
 db
 EE
 TN
@@ -2930,10 +2927,10 @@ Iv
 Iv
 Iv
 lt
-hS
-hS
-hS
-WX
+eC
+eC
+eC
+zE
 TJ
 TN
 TN
@@ -2976,9 +2973,9 @@ Iv
 lt
 lt
 lt
-hS
-hS
-hS
+eC
+eC
+eC
 db
 TN
 TN
@@ -3022,9 +3019,9 @@ Iv
 Iv
 Iv
 Iv
-hS
-hS
-hS
+eC
+eC
+eC
 db
 EE
 TN
@@ -3068,15 +3065,15 @@ Iv
 Iv
 lt
 lt
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
 db
 EE
 EE
 CB
-hS
+eC
 lt
 lt
 lt
@@ -3114,16 +3111,16 @@ lt
 lt
 lt
 lt
-hS
-hS
-hS
-kl
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+Jz
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
@@ -3160,13 +3157,13 @@ Iv
 Iv
 Iv
 Iv
-hS
-hS
-hS
-hS
-hS
-hS
-hS
+eC
+eC
+eC
+eC
+eC
+eC
+eC
 Iv
 Iv
 Iv
