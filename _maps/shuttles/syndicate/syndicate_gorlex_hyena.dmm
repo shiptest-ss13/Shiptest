@@ -333,6 +333,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"ge" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm)
 "gg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1619,15 +1626,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BG" = (
-/obj/machinery/porta_turret/ship/ballistic,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
-"BR" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 8;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/storage)
+"BR" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "BZ" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
@@ -2291,9 +2302,12 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "NA" = (
-/obj/machinery/porta_turret/ship/syndicate,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/maintenance/starboard)
 "NF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -2459,10 +2473,11 @@
 /area/ship/cargo)
 "Qz" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 6
+	dir = 6;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/fore)
 "QG" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -2861,8 +2876,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "Up" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 4
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 4;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -2878,10 +2894,11 @@
 /area/ship/crew)
 "UN" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 1;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/hallway/central)
 "UX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3581,7 +3598,7 @@ UX
 GV
 GV
 GV
-NA
+ge
 nn
 Zb
 "}
