@@ -28,6 +28,12 @@
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowobj += A
 
+/obj/item/storage/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		if(at_risk.safety == FALSE && prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+			at_risk.discharge("is hits the ground hard")
+
 /obj/item/storage/canStrip(mob/who)
 	. = ..()
 	if(!. && rummage_if_nodrop)

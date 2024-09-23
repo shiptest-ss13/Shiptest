@@ -170,7 +170,7 @@
 	/// The item linked to the module that will get recalled.
 	var/obj/item/linked_weapon
 	/// The accepted typepath we can link to.
-	var/accepted_type = /obj/item/energy_katana
+	var/accepted_type = /obj/item/melee/sword/energy_katana
 
 /obj/item/mod/module/weapon_recall/on_suit_activation()
 	ADD_TRAIT(mod.wearer, TRAIT_NOGUNS, MOD_TRAIT)

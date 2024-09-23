@@ -64,17 +64,6 @@
 	result = /obj/item/food/bread/creamcheese
 	subcategory = CAT_BREAD
 
-/datum/crafting_recipe/food/mimanabread
-	name = "Mimana bread"
-	reqs = list(
-		/datum/reagent/consumable/soymilk = 5,
-		/obj/item/food/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/tofu = 3,
-		/obj/item/reagent_containers/food/snacks/grown/banana/mime = 1
-	)
-	result = /obj/item/food/bread/mimana
-	subcategory = CAT_BREAD
-
 /datum/crafting_recipe/food/garlicbread
 	name = "Garlic Bread"
 	time = 40
