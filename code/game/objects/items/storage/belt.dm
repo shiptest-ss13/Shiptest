@@ -383,7 +383,6 @@
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
 		/obj/item/claymore/bone,
-		/obj/item/key/lasso
 		))
 
 
