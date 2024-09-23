@@ -1686,7 +1686,7 @@
 /area/centcom/evac)
 "atW" = (
 /obj/structure/rack,
-/obj/item/nullrod/claymore{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -1908,7 +1908,7 @@
 /area/wizard_station)
 "avt" = (
 /obj/structure/rack,
-/obj/item/nullrod/claymore/katana{
+/obj/item/melee/sword/katana{
 	damtype = "stamina";
 	force = 30
 	},
@@ -2467,7 +2467,7 @@
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "azO" = (
-/obj/item/kitchen/knife/ritual,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "azP" = (
@@ -3309,7 +3309,6 @@
 /area/tdome/tdomeobserve)
 "aHq" = (
 /obj/structure/closet/cardboard,
-/obj/item/banhammer,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/wizard_station)
@@ -4051,7 +4050,7 @@
 "aMx" = (
 /obj/machinery/light/directional/east,
 /obj/structure/rack,
-/obj/item/nullrod/claymore/saber/red{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -4979,7 +4978,7 @@
 "aRS" = (
 /obj/machinery/light/directional/west,
 /obj/structure/rack,
-/obj/item/nullrod/claymore/glowing{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -5284,15 +5283,6 @@
 /obj/item/reagent_containers/glass/beaker,
 /turf/open/floor/plasteel,
 /area/centcom/holding)
-"aUh" = (
-/obj/machinery/light/directional/east,
-/obj/structure/rack,
-/obj/item/nullrod/claymore/darkblade{
-	damtype = "stamina";
-	force = 30
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aUj" = (
 /obj/item/coin/antagtoken,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -5493,7 +5483,7 @@
 /area/wizard_station)
 "aVF" = (
 /obj/structure/rack,
-/obj/item/nullrod/scythe/vibro{
+/obj/item/scythe{
 	damtype = "stamina";
 	force = 30
 	},
@@ -5963,15 +5953,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"aYV" = (
-/obj/machinery/light/directional/west,
-/obj/structure/rack,
-/obj/item/nullrod/claymore/saber{
-	damtype = "stamina";
-	force = 30
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aYW" = (
 /obj/effect/landmark/thunderdome/one,
 /obj/effect/turf_decal/industrial/warning{
@@ -10982,7 +10963,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -15510,7 +15491,7 @@
 	pixel_x = 7;
 	pixel_y = -2
 	},
-/obj/item/kitchen/knife{
+/obj/item/melee/knife/kitchen{
 	pixel_y = -5;
 	pixel_x = -5
 	},
@@ -43310,7 +43291,7 @@ aCT
 aCT
 aNT
 avt
-aYV
+aRS
 aOU
 aOU
 aRS
@@ -45883,7 +45864,7 @@ avt
 aMx
 aQg
 aTb
-aUh
+aMx
 atW
 aWO
 aaa

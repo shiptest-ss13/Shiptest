@@ -379,17 +379,6 @@
 /obj/item/shard,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"pM" = (
-/obj/item/stack/ore/salvage/scrapbluespace/five,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/weldingtool/hugetank,
-/obj/structure/table,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
 "qD" = (
 /turf/closed/wall,
 /area/ruin/unpowered)
@@ -620,6 +609,15 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ap" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/obj/item/melee/axe/fire{
+	name = "rusty fire axe"
+	},
+/turf/open/floor/engine/airless,
+/area/ruin/unpowered)
 "At" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -1179,6 +1177,17 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Wb" = (
+/obj/item/stack/ore/salvage/scrapbluespace/five,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/weldingtool/hugetank,
+/obj/structure/table,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered)
 "Wg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/beach/sand{
@@ -1228,15 +1237,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Xi" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/obj/item/fireaxe{
-	name = "rusty fire axe"
-	},
-/turf/open/floor/engine/airless,
-/area/ruin/unpowered)
 "Xx" = (
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/weather/sand,
@@ -2151,7 +2151,7 @@ Ae
 qD
 qD
 hL
-pM
+Wb
 sN
 qD
 qD
@@ -2162,7 +2162,7 @@ Ae
 qZ
 KL
 Ah
-Xi
+Ap
 xA
 GJ
 bh

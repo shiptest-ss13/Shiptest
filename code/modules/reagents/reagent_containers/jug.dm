@@ -147,8 +147,3 @@
 /obj/item/reagent_containers/glass/chem_jug/hexacrete
 	name = "chemical jug (hexacrete)"
 	list_reagents = list(/datum/reagent/concrete/hexacrete = 150)
-
-/obj/item/reagent_containers/glass/chem_jug/concrete_mix
-	name = "chemical jug (concrete mix)"
-	desc = "Just pour out and add water!"
-	list_reagents = list(/datum/reagent/concrete_mix = 150)

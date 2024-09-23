@@ -47,8 +47,7 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 	I.add_fingerprint(M)
 
 /obj/item/a_gift/proc/get_gift_type()
-	var/gift_type_list = list(/obj/item/sord,
-		/obj/item/storage/wallet,
+	var/gift_type_list = list(/obj/item/storage/wallet,
 		/obj/item/storage/photo_album,
 		/obj/item/storage/box/snappops,
 		/obj/item/storage/crayons,
@@ -67,7 +66,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/bikehorn,
 		/obj/item/toy/beach_ball,
 		/obj/item/toy/beach_ball/holoball,
-		/obj/item/banhammer,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
 		/obj/item/paicard,

@@ -796,12 +796,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/jungle/paradise/construction)
-"eY" = (
-/obj/structure/table/reinforced,
-/obj/item/kitchen/knife/butcher,
-/obj/item/clothing/gloves/butchering,
-/turf/open/floor/pod/dark,
-/area/overmap_encounter/planetoid/cave/explored)
 "fh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/sand,
@@ -937,19 +931,6 @@
 /mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
-"fT" = (
-/obj/item/stack/ore/glass{
-	amount = 30;
-	pixel_x = -5;
-	pixel_y = 4
-	},
-/obj/item/stack/ore/hematite{
-	amount = 15;
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/jungle/paradise/construction)
 "fU" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -2546,6 +2527,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
+"pc" = (
+/obj/item/stack/ore/glass{
+	amount = 30;
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/hematite{
+	amount = 15;
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "pd" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -6429,6 +6423,12 @@
 	},
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"OO" = (
+/obj/structure/table/reinforced,
+/obj/item/melee/knife/butcher,
+/obj/item/clothing/gloves/butchering,
+/turf/open/floor/pod/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "OP" = (
 /obj/machinery/mech_bay_recharge_port,
@@ -10769,7 +10769,7 @@ jW
 RG
 wo
 wo
-eY
+OO
 ip
 eV
 jd
@@ -11701,7 +11701,7 @@ aj
 DI
 Iw
 Iw
-fT
+pc
 mt
 HQ
 OT

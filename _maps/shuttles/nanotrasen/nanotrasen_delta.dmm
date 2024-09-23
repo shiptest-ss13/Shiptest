@@ -1215,12 +1215,9 @@
 /area/ship/medical)
 "gv" = (
 /obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 20;
-	height = 30;
-	name = "Delta Port Beam Dock";
-	width = 40
+	dwidth = 15;
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1375,7 +1372,8 @@
 /area/ship/engineering)
 "jH" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 9
+	dir = 9;
+	id = "delta_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -1719,13 +1717,6 @@
 "rC" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	name = "NT Frigate";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "rW" = (
@@ -2067,18 +2058,14 @@
 	pixel_x = -24;
 	pixel_y = -5
 	},
-/obj/machinery/turretid{
-	icon_state = "control_kill";
-	lethal = 1;
-	locked = 0;
-	pixel_y = -28;
-	req_access = null
-	},
 /obj/structure/table,
 /obj/machinery/recharger,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/areaeditor/shuttle,
+/obj/machinery/turretid/ship{
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Aw" = (
@@ -2513,17 +2500,6 @@
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
-"KZ" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 4;
-	dwidth = 21;
-	height = 31;
-	name = "Delta Starboard Bow Dock";
-	width = 41
-	},
-/turf/template_noop,
-/area/template_noop)
 "Lb" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -2916,7 +2892,8 @@
 /area/ship/science/robotics)
 "WG" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 4
+	dir = 4;
+	id = "delta_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -2978,6 +2955,12 @@
 /obj/effect/turf_decal/number/nine{
 	dir = 4
 	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	name = "NT Frigate";
+	preferred_direction = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "XZ" = (
@@ -3036,7 +3019,8 @@
 /area/ship/science/robotics)
 "YZ" = (
 /obj/machinery/porta_turret/ship/weak{
-	dir = 10
+	dir = 10;
+	id = "delta_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -3633,25 +3617,5 @@ tU
 XR
 Vt
 Gw
-aa
-"}
-(29,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-KZ
-aa
-aa
 aa
 "}
