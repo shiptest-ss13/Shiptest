@@ -277,7 +277,7 @@
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "riot_knight_green"
 	item_state = "riot_knight_green"
-	allowed = list(/obj/item/nullrod, /obj/item/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
+	allowed = list(/obj/item/melee/sword/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/riot/knight/yellow
 	icon_state = "riot_knight_yellow"
@@ -399,13 +399,6 @@
 	desc = "A plate carrier vest commonly used by Syndicate forces, regardless of affiliation. Has a few attached pouches."
 	icon_state = "armor_syndie"
 	item_state = "syndiearmor"
-
-/obj/item/clothing/suit/armor/vest/scrap_armor
-	name = "scrap armor"
-	desc = "An 'armor' vest consisting of sheet metal held together with cable. Who thought this was a good idea?"
-	icon_state = "scraparmor"
-	item_state = "scraparmor"
-	armor = list("melee" = 5)
 
 /obj/item/clothing/suit/armor/curator
 	name = "treasure hunter's coat"

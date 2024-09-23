@@ -431,6 +431,7 @@
 		for(var/each in place)
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
+	SEND_SIGNAL(src, COMSIG_SHIP_DONE_CONNECTING, dock)
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
 /obj/docking_port/mobile/proc/can_move()

@@ -190,3 +190,37 @@
 /obj/item/clothing/head/hooded/survivor_hood/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/hooded/scrap
+	name = "scrap suit"
+	desc = "A ragged makeshift suit."
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "survivor"
+	item_state = "survivor_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	max_heat_protection_temperature = (FIRE_SUIT_MAX_TEMP_PROTECT / 2)
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	hoodtype = /obj/item/clothing/head/hooded/scrap
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+	resistance_flags = FIRE_PROOF
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/head/hooded/scrap
+	name = "scrap hood"
+	desc = "A loose-fitting hood. It gets the job done."
+	icon_state = "explorerold"
+	suit = /obj/item/clothing/suit/hooded/scrap
+	body_parts_covered = HEAD
+	flags_inv = HIDEHAIR|HIDEEARS
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
+
+/obj/item/clothing/suit/armor/vest/scrap
+	name = "scrap armor"
+	desc = "An 'armor' vest consisting of sheet metal held together with cable. Who thought this was a good idea?"
+	icon_state = "scraparmor"
+	item_state = "scraparmor"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
