@@ -26,6 +26,9 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
+
 	bodytype = BODYTYPE_VOX
 
 	species_chest = /obj/item/bodypart/chest/vox
