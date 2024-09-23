@@ -14,6 +14,9 @@
 	desc = "an electrically-charged fencing sword."
 	icon_state = "suns-tsword"
 	attack_verb =  list("pierced", "swipe", "slash", "chop")
+	self_stam_const = 5
+	self_stam_coef = 0.5
+	riposte = 0.1 SECONDS
 
 /obj/item/melee/sword/pedang/Initialize()
 	. = ..()

@@ -12,6 +12,8 @@
 	var/parryable_attack_types
 	/// the time between parry attempts
 	var/parry_cooldown
+	/// the cooldown you get when you parry an attack
+	var/riposte
 
 	/// Text to be shown to users who examine the parent. Will list which type of attacks it can parry.
 	var/examine_text
@@ -30,7 +32,7 @@
 	if(ismob(I.loc))
 		UnregisterSignal(I.loc, COMSIG_LIVING_RESIST)
 
-/datum/component/parry/Initialize(_stamina_constant = 0, _stamina_coefficient = 0, _parry_time_out_time = PARRY_DEFAULT_TIMEOUT, _parryable_attack_types = ALL_ATTACK_TYPES, _parry_cooldown = 0.75 SECONDS)
+/datum/component/parry/Initialize(_stamina_constant = 0, _stamina_coefficient = 0, _parry_time_out_time = PARRY_DEFAULT_TIMEOUT, _parryable_attack_types = ALL_ATTACK_TYPES, _parry_cooldown = 0.75 SECONDS, _riposte = PARRY_RIPOST)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -38,6 +40,7 @@
 	stamina_constant = _stamina_constant
 	stamina_coefficient = _stamina_coefficient
 	parry_cooldown = _parry_cooldown
+	ripost = _riposte
 	if(islist(_parryable_attack_types))
 		parryable_attack_types = _parryable_attack_types
 	else
@@ -75,7 +78,7 @@
 		return
 
 	time_parried = world.time
-	//L.do_attack_animation(L, used_item = parent)
+	L.do_attack_animation(L, used_item = parent)
 
 /datum/component/parry/proc/attempt_parry(datum/source, mob/living/carbon/human/owner, atom/movable/hitby, damage = 0, attack_type = MELEE_ATTACK)
 	SIGNAL_HANDLER
@@ -107,6 +110,8 @@
 		sound_to_play = 'sound/weapons/parry.ogg'
 
 	playsound(owner, sound_to_play, clamp(stamina_damage, 40, 120))
+	//Riposte!
+	owner.changeNext_move(PARRY_RIPOST)
 
 	to_chat(owner, "stamina_damage [stamina_damage] time_since_part [time_since_parry] parry_time_out_time [parry_time_out_time] armour_pen [armour_penetration_percentage] damage [damage] stam_const [stamina_constant] stam_coef [stamina_coefficient]")
 	owner.adjustStaminaLoss(stamina_damage)

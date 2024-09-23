@@ -13,6 +13,14 @@
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+	var/self_stam_const = 10
+	var/self_stam_coef = 1
+	var/riposte = PARRY_RIPOST
+
+/obj/item/melee/sword/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
+	AddComponent(/datum/component/parry, _stamina_constant = self_stam_const, _stamina_coefficient = self_stam_coef, _parryable_attack_types = NON_PROJECTILE_ATTACKS, _ripost = ripost)
 
 /obj/item/melee/sword/claymore
 	name = "claymore"
@@ -97,11 +105,9 @@
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
-
-/obj/item/melee/sword/sabre/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
-	AddComponent(/datum/component/parry, _stamina_constant = 5, _stamina_coefficient = 0.5, _parryable_attack_types = NON_PROJECTILE_ATTACKS)
+	self_stam_const = 5
+	self_stam_coef = 0.5
+	riposte = 0.25 SECONDS
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
