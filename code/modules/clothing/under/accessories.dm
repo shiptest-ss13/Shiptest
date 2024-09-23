@@ -393,7 +393,6 @@
 	desc = "A legion skull fitted to a codpiece, intended to protect the important things in life."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 40, "acid" = 40)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/skilt
@@ -402,7 +401,6 @@
 	icon_state = "skilt"
 	above_suit = TRUE
 	minimize_when_attached = FALSE
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/holster
