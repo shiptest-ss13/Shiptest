@@ -200,9 +200,9 @@
 
 /obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
 		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 
 /obj/item/storage/secure/safe/suns
 	name = "Captain's Secure Safe"

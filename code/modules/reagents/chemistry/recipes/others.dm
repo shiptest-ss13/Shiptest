@@ -620,6 +620,10 @@
 	required_temp = 400
 	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
 
+/datum/chemical_reaction/quick_concrete
+	results = list(/datum/reagent/concrete = 5)
+	required_reagents = list(/datum/reagent/concrete_mix = 5, /datum/reagent/water = 5)
+
 /datum/chemical_reaction/hexement
 	results = list(/datum/reagent/cement/hexement = 1)
 	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)

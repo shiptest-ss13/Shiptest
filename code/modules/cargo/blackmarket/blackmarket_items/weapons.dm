@@ -15,7 +15,7 @@
 /datum/blackmarket_item/weapon/bone_spear
 	name = "Bone Spear"
 	desc = "Authentic tribal spear, made from real bones! A steal at any price, especially if you're a caveman."
-	item = /obj/item/spear/bonespear
+	item = /obj/item/melee/spear/bone
 
 	price_min = 200
 	price_max = 300
@@ -25,7 +25,7 @@
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
-	item = /obj/item/kitchen/knife/switchblade
+	item = /obj/item/melee/knife/switchblade
 
 	price_min = 500
 	price_max = 700
@@ -282,17 +282,6 @@
 	price_max = 4000
 	stock = 2
 	availability_prob = 25
-
-/datum/blackmarket_item/weapon/tec
-	name = "TEC-9 Machine Pistol"
-	desc = "Hallelujah! It's raining lead! This 9mm machine pistol is capable of spitting out bullets at rapid pace."
-	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	pair_item = list(/datum/blackmarket_item/ammo/tec_mag)
-
-	price_min = 1500
-	price_max = 2750
-	stock = 2
-	availability_prob = 35
 
 /datum/blackmarket_item/weapon/syringe_gun
 	name = "Dart Pistol"

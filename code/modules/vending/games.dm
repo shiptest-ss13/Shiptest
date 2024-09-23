@@ -15,8 +15,8 @@
 		/obj/item/camera = 3,
 		/obj/item/dyespray = 3)
 	premium = list(
-		/obj/item/melee/skateboard/pro = 3,
-		/obj/item/melee/skateboard/hoverboard = 1)
+		/obj/item/skateboard/pro = 3,
+		/obj/item/skateboard/hoverboard = 1)
 	refill_canister = /obj/item/vending_refill/games
 	default_price = 50
 	extra_price = 250

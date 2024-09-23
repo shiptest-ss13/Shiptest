@@ -50,14 +50,14 @@
 	lootdoubles = FALSE
 
 	loot = list(
-				/obj/item/gun/ballistic/automatic/pistol/syndicate = 8,
+				/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/gun/ballistic/revolver/mateba
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/syndicate = 5,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/ringneck = 5,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3,
@@ -105,9 +105,9 @@
 				/obj/item/paper/fluff/jobs/prisoner/letter = 1,
 				/obj/item/grenade/smokebomb = 1,
 				/obj/item/flashlight/seclite = 1,
-				/obj/item/kitchen/knife/shiv = 4,
-				/obj/item/kitchen/knife/shiv/carrot = 1,
-				/obj/item/kitchen/knife = 1,
+				/obj/item/melee/knife/shiv = 4,
+				/obj/item/melee/knife/shiv/carrot = 1,
+				/obj/item/melee/knife/kitchen = 1,
 				/obj/item/storage/wallet/random = 1,
 				/obj/item/pda = 1
 				)

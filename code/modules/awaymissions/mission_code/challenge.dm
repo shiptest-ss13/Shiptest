@@ -35,3 +35,13 @@
 
 /obj/machinery/power/emitter/energycannon/RefreshParts()
 	return
+
+/obj/machinery/power/emitter/energycannon/ctf
+	processing_flags = START_PROCESSING_MANUALLY
+
+/obj/machinery/power/emitter/energycannon/ctf/proc/toggle_ctf(ctf_enabled)
+	src.active = ctf_enabled
+	if(ctf_enabled)
+		START_PROCESSING(SSmachines, src)
+	else
+		STOP_PROCESSING(SSmachines, src)
