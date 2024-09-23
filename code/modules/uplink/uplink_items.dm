@@ -1892,7 +1892,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/role_restricted/greykingsword
 	name = "Blade of The Grey Tide"
 	desc = "A weapon of legend, forged by the greatest crackheads of our generation."
-	item = /obj/item/melee/greykingsword
+	item = /obj/item/melee/sword/greyking
 	cost = 2
 	restricted_roles = list("Assistant", "Chemist")
 

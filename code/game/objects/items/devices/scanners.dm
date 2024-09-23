@@ -226,12 +226,12 @@ GENE SCANNER
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
-							<td style='width:7em;'><font color='#0000CC'>Damage:</font></td>\
+							<td style='width:7em;'><font color='#0d5cee'>Damage:</font></td>\
 							<td style='width:5em;'><font color='red'><b>Brute</b></font></td>\
 							<td style='width:4em;'><font color='orange'><b>Burn</b></font></td>\
 							<td style='width:4em;'><font color='green'><b>Toxin</b></font></td>\
 							<td style='width:8em;'><font color='purple'><b>Suffocation</b></font></td></tr>\
-							<tr><td><font color='#0000CC'>Overall:</font></td>\
+							<tr><td><font color='#1d63e6'>Overall:</font></td>\
 							<td><font color='red'>[CEILING(brute_loss,1)]</font></td>\
 							<td><font color='orange'>[CEILING(fire_loss,1)]</font></td>\
 							<td><font color='green'>[CEILING(tox_loss,1)]</font></td>\
@@ -239,7 +239,7 @@ GENE SCANNER
 
 			for(var/o in damaged)
 				var/obj/item/bodypart/org = o //head, left arm, right arm, etc.
-				dmgreport += "<tr><td><font color='#0000CC'>[capitalize(parse_zone(org.body_zone))]:</font></td>\
+				dmgreport += "<tr><td><font color='#1d63e6'>[capitalize(parse_zone(org.body_zone))]:</font></td>\
 								<td><font color='red'>[(org.brute_dam > 0) ? "[CEILING(org.brute_dam,1)]" : "0"]</font></td>\
 								<td><font color='orange'>[(org.burn_dam > 0) ? "[CEILING(org.burn_dam,1)]" : "0"]</font></td></tr>"
 			dmgreport += "</font></table>"
