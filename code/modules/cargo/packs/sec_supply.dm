@@ -88,7 +88,6 @@
 					/obj/item/melee/sword/mass)
 	crate_name = "combat knife crate"
 
-
 /datum/supply_pack/sec_supply/fire
 	name = "Incendiary Weapons Crate"
 	desc = "Burn, baby burn. Contains three incendiary grenades and three prebuilt flamethrowers."

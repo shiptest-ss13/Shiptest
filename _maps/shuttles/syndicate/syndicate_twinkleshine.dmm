@@ -263,11 +263,6 @@
 "bQ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
 /obj/machinery/light/directional/north,
-/obj/machinery/turretid{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "150"
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
@@ -1559,6 +1554,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"iX" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 10;
+	id = "twink_grid"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/engineering/atmospherics)
 "iZ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -2178,12 +2182,13 @@
 /area/ship/engineering/engine)
 "ms" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 9
+	dir = 9;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/engineering/atmospherics)
 "mt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 8
@@ -3631,12 +3636,13 @@
 /area/ship/engineering/atmospherics)
 "vd" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 5
+	dir = 5;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/hallway/port)
 "vl" = (
 /obj/machinery/sleeper/syndie{
 	dir = 8
@@ -6691,12 +6697,13 @@
 /area/ship/engineering/engine)
 "Mr" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 6
+	dir = 6;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/hallway/starboard)
 "Mw" = (
 /obj/effect/turf_decal/industrial/caution/red,
 /obj/effect/decal/cleanable/shreds{
@@ -7954,6 +7961,15 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"TH" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 9;
+	id = "twink_grid"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/crew/canteen)
 "TI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -8390,12 +8406,13 @@
 /area/ship/crew/cryo)
 "We" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 10
+	dir = 10;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/security)
 "Wj" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -8568,6 +8585,13 @@
 	dir = 8
 	},
 /obj/machinery/fax/syndicate,
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	pixel_x = -5;
+	id = "twink_grid";
+	req_access = null;
+	req_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Xf" = (
@@ -9118,7 +9142,7 @@ FR
 FR
 LX
 ae
-We
+iX
 mp
 mp
 mp
@@ -9617,7 +9641,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-ms
+TH
 xj
 xj
 xj
