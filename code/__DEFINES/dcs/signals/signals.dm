@@ -187,9 +187,6 @@
 #define COMSIG_ATOM_TOOL_ACT(tooltype) "tool_act_[tooltype]"
 	#define COMPONENT_BLOCK_TOOL_ATTACK (1<<0)
 
-///from base of atom/get_cell(): (atom)
-#define COMSIG_ATOM_GET_CELL "atom_get_cell"
-
 ///called when teleporting into a protected turf: (channel, turf/origin)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"
 	#define COMPONENT_BLOCK_TELEPORT (1<<0)

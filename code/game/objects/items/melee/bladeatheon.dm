@@ -13,6 +13,7 @@
 	name = "pedang"
 	desc = "an electrically-charged fencing sword."
 	icon_state = "suns-tsword"
+	force = 10
 	attack_verb =  list("pierced", "swipe", "slash", "chop")
 	self_stam_const = 5
 	self_stam_coef = 0.5
@@ -26,11 +27,11 @@
 	. = ..()
 	AddComponent( \
 		/datum/component/transforming/charged, \
-		force_on = 15, \
-		throwforce_on = 20, \
+		force_on = 5, \
+		throwforce_on = 10, \
 		_allowed_cells = list(/obj/item/stock_parts/cell/melee/pedang), \
 		_preload_cell_type = /obj/item/stock_parts/cell/melee/pedang, \
-		_cell_hit_cost = 1000, \
+		_cell_hit_cost = 250, \
 		_can_remove_cell = TRUE, \
 	)
 
@@ -39,6 +40,12 @@
 
 	playsound(src, SFX_SPARKS, 75, TRUE, -1)
 	return COMPONENT_NO_DEFAULT_MESSAGE
+
+/obj/item/melee/sword/pedang/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
+		SEND_SIGNAL(src, COMSIG_ITEM_USE_CELL)
+		M.apply_damage(25, STAMINA, BODY_ZONE_CHEST)
 
 /obj/item/stock_parts/cell/melee
 	maxcharge = 5000

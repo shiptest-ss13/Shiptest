@@ -1224,9 +1224,7 @@
 
 //Returns an atom's power cell, if it has one. Overload for individual items.
 /atom/movable/proc/get_cell()
-	var/component_cell = SEND_SIGNAL(src, COMSIG_ATOM_GET_CELL)
-	if(istype(component_cell, /obj/item/stock_parts/cell))
-		return component_cell
+	return null
 
 /atom/movable/proc/can_be_pulled(user, grab_state, force)
 	if(src == user || !isturf(loc))

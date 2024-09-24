@@ -31,6 +31,12 @@
 		_requires_activation = parry_transformed, \
 	)
 
+//cruft
+/obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
+	return ..()
+	
 /obj/item/melee/sword/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"

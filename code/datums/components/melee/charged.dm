@@ -48,7 +48,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_SCREWDRIVER_ACT, PROC_REF(on_screwdriver_act))
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
-	RegisterSignal(parent, COMSIG_ATOM_GET_CELL, PROC_REF(on_get_cell))
+	RegisterSignal(parent, COMSIG_ITEM_USE_CELL, PROC_REF(deduct_charge))
 
 /datum/component/transforming/charged/Destroy(force, silent)
 	if(cell)
@@ -101,8 +101,13 @@
 	else
 		examine_list += span_warning("\The [source] does not have a power source installed.")
 
-/datum/component/transforming/charged/proc/on_get_cell(obj/item/source)
-	return cell
+/datum/component/transforming/charged/proc/deduct_charge(obj/item/source)
+	SIGNAL_HANDLER
+	if(cell)
+		. = cell.use(cell_hit_cost)
+		if(active && cell.charge < cell_hit_cost)
+			playsound(src, SFX_SPARKS, 75, TRUE, -1)
+			set_inactive(source)
 
 /datum/component/transforming/charged/proc/set_active_state(active_state = -1)
 	switch(active_state)
