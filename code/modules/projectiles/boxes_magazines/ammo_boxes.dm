@@ -221,7 +221,7 @@
 
 /obj/item/ammo_box/c38_box/iceblox
 	name = "ammo box (.38 chilled)"
-	desc = "An unorthodox .38 Special cartridge infused with icewine. Chills the target, slowing them down. Unlikely to work on most fauna."
+	desc = "An unorthodox .38 Special cartridge infused with icewine. Chills the target, slowing them down."
 	icon_state = "38iceblox"
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
