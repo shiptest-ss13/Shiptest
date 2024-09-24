@@ -25,6 +25,12 @@
 	var/force_encounter
 	///Ruin types to generate
 	var/ruin_type
+	///Preditermined ruin made when the overmap is first created
+	var/selected_ruin
+	///Fetched before anything is loaded from the ruin datum, used for missions
+	var/mission_pois
+	///The list of mission pois once the planet has acctually loaded the ruin
+	var/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
@@ -150,6 +156,9 @@
 	landing_sound = planet.landing_sound
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
@@ -191,8 +200,6 @@
 	loading = TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
@@ -201,6 +208,7 @@
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
+	spawned_mission_pois = dynamic_encounter_values[5]
 
 	loading = FALSE
 	return TRUE

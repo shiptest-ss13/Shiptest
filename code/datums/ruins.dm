@@ -18,6 +18,8 @@
 	var/ruin_type
 	var/ruin_tags = list()
 
+	var/mission_pois
+
 /datum/map_template/ruin/New()
 	if(!name && id)
 		name = id
