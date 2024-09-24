@@ -4,8 +4,8 @@
 	desc = "Looks cold."
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
-	icon_state = "snow"
-	icon_plating = "snow"
+	icon_state = "snow_0"
+	icon_plating = "snow_0"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.5
 	base_icon_state = "snow_"

@@ -345,7 +345,7 @@
 
 
 /datum/design/silicon
-	name = "Silicon"
+	name = "Refine Quartz into Silicon"
 	id = "silicon"
 	build_type = SMELTER
 	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT, /datum/material/carbon = ORE_MATERIAL_AMOUNT*2)

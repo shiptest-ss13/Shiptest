@@ -81,6 +81,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 /obj/item/stack/sheet/plasteel
 	name = "carbon steel"
 	desc = "This sheet is an alloy of iron and carbon."
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-plasteel"
 	custom_materials = list(/datum/material/iron=3000, /datum/material/carbon=1000)
@@ -89,7 +90,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/plasteel
-	grind_results = list(/datum/reagent/iron = 39, /datum/reagent/carbon = 1)
+	grind_results = list(/datum/reagent/iron = 30, /datum/reagent/carbon = 10)
 	point_value = 23
 	tableVariant = /obj/structure/table/reinforced
 	material_flags = MATERIAL_NO_EFFECTS
