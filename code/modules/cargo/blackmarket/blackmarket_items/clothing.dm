@@ -264,7 +264,7 @@
 
 	price_min = 1500
 	price_max = 2500
-	stock = 3
+	stock_max = 3
 	availability_prob = 30
 
 /datum/blackmarket_item/clothing/frontiersmen_hardsuit
