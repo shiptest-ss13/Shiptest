@@ -15,10 +15,10 @@
 		/obj/item/reagent_containers/food/condiment/peppermill = 5,
 		/obj/item/clothing/suit/apron/chef = 2,
 		/obj/item/kitchen/rollingpin = 2,
-		/obj/item/kitchen/knife = 2,
-		/obj/item/kitchen/knife/pizza_cutter = 2,
+		/obj/item/melee/knife/kitchen = 2,
+		/obj/item/melee/knife/pizza_cutter = 2,
 		/obj/item/book/granter/crafting_recipe/cooking_sweets_101 = 2,
-		/obj/item/kitchen/knife/butcher = 1)
+		/obj/item/melee/knife/butcher = 1)
 	refill_canister = /obj/item/vending_refill/dinnerware
 	default_price = 50
 	extra_price = 250
