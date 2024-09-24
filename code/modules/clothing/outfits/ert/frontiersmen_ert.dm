@@ -204,6 +204,7 @@
 	duffelbag = /obj/item/minigunpack
 
 	backpack_contents = null
+	box = null
 
 /datum/outfit/job/frontiersmen/ert/leader/unarmed
 	name = "ERT - Frontiersman Officer (Unarmed)"
