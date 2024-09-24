@@ -170,7 +170,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/ancient/lp
 	name = "RIG heat suit"
-	desc = "A fully heat resistance suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
+	desc = "A fully heat-resistant suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/lp
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -178,18 +178,6 @@
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 
 //holotapes
-
-/obj/item/disk/holodisk/lp/combat/bloodred
-	name = "Combat Mission Blood Red"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY This mission overlaps with the retrieval missions. The LP is simply to obtain a Blood Red Hardsuit. This may include responding to a hostile syndicate vessel to take it by force.
-	DELAY 25
-	"}
 
 /obj/item/disk/holodisk/lp/retrieval/phazon
 	name = "Retrieval Mission Secret Exosuit"
@@ -236,18 +224,6 @@
 	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
 	DELAY 25
 	SAY Nanotrasen is short on funds and materials. Procure 150 sheets of the following: Diamond, Bluespace Polycrystals, Plastitanium.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/aid/recruits
-	name = "Aid Mission Recruitment Drive"
-	desc = "A holodisk containing an aid mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around an aid objective. The LP will need to provide aid to local vessels not hostile or syndicate.
-	DELAY 25
-	SAY Less providing aid and more networking. The LP will need to convince 4 independent vessels to switch to NTSV flight tags.
 	DELAY 25
 	"}
 
@@ -307,16 +283,6 @@
 
 
 //lootdrop
-/obj/effect/spawner/lootdrop/lpcombat
-	name = "LP Combat Missions"
-	lootdoubles = FALSE
-
-	loot = list(
-		/obj/item/disk/holodisk/lp/combat/bloodred = 5
-	)
-
-	lootcount = 1
-
 /obj/effect/spawner/lootdrop/lpretrieval
 	name = "LP Retrieval Missions"
 	lootdoubles = FALSE
