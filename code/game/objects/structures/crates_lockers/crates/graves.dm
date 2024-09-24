@@ -11,8 +11,6 @@
 	locked = TRUE
 	breakout_time = 900
 	cutting_tool = TOOL_SHOVEL
-	var/lead_tomb = FALSE
-	var/first_open = FALSE
 
 /obj/structure/closet/crate/grave/attackby(obj/item/W, mob/user, params)
 	.=..()
@@ -46,18 +44,14 @@
 					dump_contents()
 					update_appearance()
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
-					if(lead_tomb == TRUE && first_open == TRUE)
-						user.gain_trauma(/datum/brain_trauma/magic/stalker)
-						to_chat(user, "<span class='boldwarning'>Oh no, no no no, THEY'RE EVERYWHERE! EVERY ONE OF THEM IS EVERYWHERE!</span>")
-						first_open = FALSE
-					return 1
-				return 1
+					return TRUE
+				return TRUE
 			else
 				to_chat(user, "<span class='notice'>You can't dig up a grave with \the [S.name].</span>")
-				return 1
+				return TRUE
 		else
 			to_chat(user, "<span class='notice'>The grave has already been dug up.</span>")
-			return 1
+			return TRUE
 
 	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
 		if(S.tool_behaviour == cutting_tool)
@@ -66,7 +60,7 @@
 				to_chat(user, "<span class='notice'>You remove \the [src]  completely.</span>")
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
 				deconstruct(TRUE)
-				return 1
+				return TRUE
 	return
 
 /obj/structure/closet/crate/grave/bust_open()
@@ -91,13 +85,14 @@
 	new /obj/effect/decal/remains/human/grave(src)
 	switch(rand(1,7))
 		if(1)
-			new /obj/item/coin/gold(src)
+			new /obj/item/spacecash/bundle/smallrand(src)
+			new /obj/item/card/id
 			new /obj/item/storage/wallet(src)
 		if(2)
-			new /obj/item/clothing/glasses/meson(src)
+			new /obj/item/clothing/head/papersack/smiley(src)
 		if(3)
-			new /obj/item/coin/silver(src)
-			new /obj/item/shovel/spade(src)
+			new /obj/item/clothing/under/nanotrasen(src)
+			new /obj/item/clothing/head/nanotrasen(src)
 		if(4)
 			new /obj/item/storage/book/bible/booze(src)
 		if(5)
@@ -106,11 +101,12 @@
 			new /obj/item/hemostat(src)
 
 		if(6)
-			new /obj/item/reagent_containers/glass/beaker(src)
-			new /obj/item/clothing/glasses/science(src)
+			new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
+			new /obj/item/clothing/under/frontiersmen(src)
 		if(7)
 			new /obj/item/clothing/glasses/sunglasses(src)
 			new /obj/item/clothing/mask/cigarette/rollie(src)
+			new /obj/item/lighter(src)
 
 /obj/effect/decal/remains/human/grave
 	turf_loc_check = FALSE
