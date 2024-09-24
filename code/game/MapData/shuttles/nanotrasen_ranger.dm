@@ -301,7 +301,6 @@
 	lootdoubles = FALSE
 
 	loot = list(
-		/obj/item/disk/holodisk/lp/aid/recruits = 1,
 		/obj/item/disk/holodisk/lp/aid/repairs = 1,
 		/obj/item/disk/holodisk/lp/aid/rescue = 1,
 		/obj/item/disk/holodisk/lp/aid/guard = 1,
