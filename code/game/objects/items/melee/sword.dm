@@ -8,7 +8,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	block_chance = 25
+	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -16,11 +16,20 @@
 	var/self_stam_const = 10
 	var/self_stam_coef = 1
 	var/riposte = PARRY_RIPOST
+	///	Lock parrying to only work while transformed
+	var/parry_transformed = FALSE
 
 /obj/item/melee/sword/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
-	AddComponent(/datum/component/parry, _stamina_constant = self_stam_const, _stamina_coefficient = self_stam_coef, _parryable_attack_types = NON_PROJECTILE_ATTACKS, _ripost = ripost)
+	AddComponent( \
+		/datum/component/parry, \
+		_stamina_constant = self_stam_const, \
+		_stamina_coefficient = self_stam_coef, \
+		_parryable_attack_types = NON_PROJECTILE_ATTACKS, \
+		 _riposte = riposte, \
+		_requires_activation = parry_transformed, \
+	)
 
 /obj/item/melee/sword/claymore
 	name = "claymore"
@@ -29,7 +38,7 @@
 	item_state = "claymore"
 	force = 30
 	throwforce = 10
-	block_chance = 40
+	block_chance = 20
 	max_integrity = 200
 
 /obj/item/melee/sword/claymore/Initialize()
@@ -151,50 +160,31 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("smacked", "prodded")
 
-	var/extended = FALSE
+	parry_transformed = TRUE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
-	var/on_icon_state = "suns-tsword_on"
-	var/on_item_state = "suns-tsword_on"
-	var/off_icon_state = "suns-tsword"
-	var/off_item_state = "suns-tsword"
+	var/on_block_chance = 40
 
-	var/active_force = 10
-	var/on_throwforce = 10
-	var/on_blockchance = 40
+/obj/item/melee/sword/sabre/suns/telescopic/ComponentInitialize()
+	. = ..()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = 10, \
+		throwforce_on = 10, \
+		attack_verb_on = list("slashed", "cut"), \
+		w_class_on = WEIGHT_CLASS_BULKY, \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
-	var/force_off = 0
-	var/off_throwforce = 0
-	var/off_blockchance = 0
+/obj/item/melee/sword/sabre/suns/telescopic/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
 
-	var/weight_class_on = WEIGHT_CLASS_BULKY
-
-/obj/item/melee/sword/sabre/suns/telescopic/attack_self(mob/user)
-	extended = !extended
-
-	if(extended)
-		to_chat(user, "<span class ='warning'>You extend the [src].</span>")
-		icon_state = on_icon_state
-		item_state = on_item_state
-		slot_flags = 0
-		w_class = weight_class_on
-		force = active_force
-		throwforce = on_throwforce
-		block_chance = on_blockchance
-		attack_verb = list("slashed", "cut")
+	if(active)
+		block_chance = on_block_chance
 	else
-		to_chat(user, "<span class ='notice'>You collapse the [src].</span>")
-		icon_state = off_icon_state
-		item_state = off_item_state
-		slot_flags = ITEM_SLOT_BELT
-		w_class = WEIGHT_CLASS_SMALL
-		force = force_off
-		throwforce = off_throwforce
-		block_chance = off_blockchance
-		attack_verb = list("smacked", "prodded")
-
-	playsound(get_turf(src), extend_sound, 50, TRUE)
-	add_fingerprint(user)
+		block_chance = initial(block_chance)
+	playsound(user, extend_sound, 50, TRUE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/sword/supermatter
 	name = "supermatter sword"
