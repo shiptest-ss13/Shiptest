@@ -17,9 +17,12 @@
 	id = "trick_wine"
 	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
-	var/reac_volume
+	// Try to match normal reagent tick rate based on on_mob_life
+	tick_interval = 20
+	// Used to make icon for status_effect
 	var/flask_icon_state
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
+	// Used for mod outline
 	var/reagent_color = "#FFFFFF"
 	var/message_apply_others = "is affected by a wine!"
 	var/message_apply_self = "You are affected by trickwine!"
@@ -27,6 +30,8 @@
 	var/message_remove_self = "You are no longer affected by trickwine!"
 	var/trickwine_examine_text
 	var/alert_desc
+	// Applied and removes with reagent
+	var/trait
 
 /datum/status_effect/trickwine/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	flask_icon_state = trickwine_reagent.breakaway_flask_icon_state
@@ -43,11 +48,15 @@
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
 	owner.add_filter(id, 2, list("type"="outline", "color"=reagent_color, "size"=1))
+	if(trait)
+		ADD_TRAIT(owner, trait, id)
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
 	owner.visible_message(span_notice("[owner] " + message_remove_others), span_notice(message_remove_self))
 	owner.remove_filter(id)
+	if(trait)
+		REMOVE_TRAIT(owner, trait, id)
 
 //////////
 // BUFF //
@@ -99,7 +108,7 @@
 /datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(debuff_effect)
-			exposed_mob.apply_status_effect(debuff_effect, src, reac_volume SECONDS)
+			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume * ETHANOL_METABOLISM) * 2) //Goal is it have the same duration as when you drink it.
 	return ..()
 
 
@@ -120,7 +129,7 @@
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
-		M.set_drugginess(10)
+		M.adjust_drugginess(5)
 		to_chat(M, "<span class='notice'>[high_message]</span>")
 	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
@@ -137,10 +146,6 @@
 			var/hostile_ai_status = hostile_target.AIStatus
 			hostile_target.toggle_ai(AI_OFF)
 			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
-
-		M.Jitter(3 * reac_volume)
-		M.Dizzy(2 * reac_volume)
-		M.set_drugginess(3 * reac_volume)
 	return ..()
 
 /datum/status_effect/trickwine/buff/ash
@@ -151,6 +156,17 @@
 	id = "ash_wine_debuff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
 
+/datum/status_effect/trickwine/debuff/ash/tick()
+	//	I probally cant do this but im on my laptop
+	pick(owner.Jitter(3), owner.Dizzy(2), owner.adjust_drugginess(3))
+
+	switch(pick(list("jitter", "dizzy", "drug")))
+		if("jitter")
+			owner.Jitter(3)
+		if("dizzy")
+			owner.Dizzy(2)
+		if("drug")
+			owner.adjust_drugginess(3)
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
 	name = "Icewine"
@@ -169,36 +185,29 @@
 	M.adjustFireLoss(-1)
 	return ..()
 
-/datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH)
-
-	return ..()
-
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
-
-/datum/status_effect/trickwine/buff/ice/on_apply()
-	ADD_TRAIT(owner, TRAIT_NOFIRE, id)
-	return ..()
-
-/datum/status_effect/trickwine/buff/ice/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_NOFIRE, id)
-	return ..()
+	trait = TRAIT_NOFIRE
 
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
+	var/icon/cube
 
 /datum/status_effect/trickwine/debuff/ice/on_apply()
-	walk(M, 0) //stops them mid pathing even if they're stunimmunee
+	walk(owner, 0) //stops them mid pathing even if they're stunimmunee
 	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
-	M.Paralyze(duration)
+	owner.Paralyze(duration)
 	to_chat(owner, span_userdanger("You become frozen in a cube!"))
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")
 	var/icon/size_check = icon(owner.icon, owner.icon_state)
 	cube.Scale(size_check.Width(), size_check.Height())
 	owner.add_overlay(cube)
 	return ..()
+
+/datum/status_effect/trickwine/debuff/ice/tick()
+	owner.adjust_bodytemperature((-1 * duration) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	if(owner.bodytemperature >= owner.get_body_temp_normal())
+		qdel(src)
 
 /// Blocks movement from the status effect owner
 /datum/status_effect/trickwine/debuff/ice/proc/owner_moved()
@@ -236,20 +245,22 @@
 	message_remove_others = "has lost their statis energy."
 	message_remove_self = "You feel sluggish."
 	alert_desc = "You feel faster then lightning and cracking with energy! Your immune to shock damage and move faster!"
+	trait = TRAIT_SHOCKIMMUNE
 
 /datum/status_effect/trickwine/buff/shock/on_apply()
-	ADD_TRAIT(owner, TRAIT_SHOCKIMMUNE, id)
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	return ..()
 
 /datum/status_effect/trickwine/buff/shock/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_SHOCKIMMUNE, id)
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	..()
 
 /datum/status_effect/trickwine/debuff/shock
 	id = "shock_wine_debuff"
 
+/datum/status_effect/trickwine/debuff/shock/tick()
+	if(rand(25))
+		do_sparks(5, FALSE, M)
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthwine"
@@ -262,6 +273,7 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
+	trait = TRAIT_RESISTCOLD
 
 //This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
@@ -271,34 +283,28 @@
 		H.heal_bleeding(0.25)
 	return ..()
 
-/datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH)
-		M.fire_act()
-		var/turf/T = get_turf(M)
-		T.IgniteTurf(reac_volume)
-		new /obj/effect/hotspot(T, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
-		var/turf/otherT
-		for(var/direction in GLOB.cardinals)
-			otherT = get_step(T, direction)
-			otherT.IgniteTurf(reac_volume)
-			new /obj/effect/hotspot(otherT, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
-	return ..()
-
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
+
+/datum/status_effect/trickwine/buff/hearth/on_apply()
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
 
+/datum/status_effect/trickwine/debuff/hearth/tick()
+	owner.fire_act()
+	var/turf/owner_turf = get_turf(owner)
+	owner_truf.IgniteTurf(duration)
+	new /obj/effect/hotspot(owner_turf, duration, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + duration * 10)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
-	description = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
+	description = "Creates a barrier on the skin that catches sharpnel and when reversed locks threats down with a barrier"
 	color = "#709AAF"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
-	glass_desc = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
+	glass_desc = "Creates a barrier on the skin that catches sharpnel and when reversed locks threats down with a barrier"
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
@@ -306,16 +312,12 @@
 //Completenly useless rn.
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
-
-/datum/status_effect/trickwine/buff/force/on_apply()
-	//ADD_TRAIT(owner, TRAIT_MINDSHIELD, id)
-	owner.visible_message(span_warning("[owner] glows a dim grey aura"))
-	return ..()
-
-/datum/status_effect/trickwine/buff/force/on_remove()
-	//REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, id)
-	owner.visible_message(span_warning("[owner]'s aura fades away"))
-	..()
+	message_apply_others =  "glows a dim grey aura."
+	message_apply_self = "You feel faster than lightning!"
+	message_remove_others = "'s aura fades away."
+	message_remove_self = "You feel sluggish."
+	// No shrapnel seems useful
+	trait = TRAIT_PIERCEIMMUNE
 
 /datum/status_effect/trickwine/debuff/force
 	id = "force_wine_debuff"
@@ -343,10 +345,9 @@
 
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
+	trait = TRAIT_REFLECTIVE
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
-	ADD_TRAIT(owner, TRAIT_REFLECTIVE, id)
-
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
@@ -354,8 +355,6 @@
 	return ..()
 
 /datum/status_effect/trickwine/buff/prism/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_REFLECTIVE, id)
-	REMOVE_TRAIT(owner, TRAIT_NOFIRE, id)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
