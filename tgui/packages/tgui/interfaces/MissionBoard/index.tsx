@@ -60,20 +60,20 @@ const MissionsList = (props, context) => {
   );
 
   const missionJSX = missionsArray.map((mission: Mission) => (
-    <Section title={mission.name}>
-      <LabeledList.Item>
+    <Stack title={mission.name}>
+      <LabeledList.Item label="Cords">
         {mission.x}
         {','}
         {mission.y}
       </LabeledList.Item>
-      <LabeledList.Item>{mission.author}</LabeledList.Item>
-      <LabeledList.Item>{mission.faction}</LabeledList.Item>
-      <LabeledList.Item>{mission.desc}</LabeledList.Item>
+      <LabeledList.Item label="Author">{mission.author}</LabeledList.Item>
+      <LabeledList.Item label="Faction">{mission.faction}</LabeledList.Item>
+      <LabeledList.Item label="Description">{mission.desc}</LabeledList.Item>
       <LabeledList.Item label="Rewards">
         {missionValues(mission)}
       </LabeledList.Item>
       <LabeledList.Divider />
-    </Section>
+    </Stack>
   ));
 
   return <>{missionJSX}</>;
