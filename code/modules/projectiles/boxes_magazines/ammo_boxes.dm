@@ -213,6 +213,18 @@
 	icon_state = "38box-surplus"
 	ammo_type = /obj/item/ammo_casing/c38/surplus
 
+/obj/item/ammo_box/c38_box/hotshot
+	name = "ammo box (.38 hearth)"
+	desc = "An unorthodox .38 Special cartridge infused with hearthwine. Catches the target on fire."
+	icon_state = "38hotshot"
+	ammo_type = /obj/item/ammo_casing/c38/hotshot
+
+/obj/item/ammo_box/c38_box/iceblox
+	name = "ammo box (.38 chilled)
+	desc = "An unorthodox .38 Special cartridge infused with icewine. Chills the target, slowing them down. Unlikely to work on most fauna."
+	icon_state = "38iceblox"
+	ammo_type = /obj/item/ammo_casing/c38/iceblox
+
 /obj/item/ammo_box/a12g
 	name = "ammo box (12g buckshot)"
 	desc = "A box of 12-gauge buckshot shells, devastating at close range."
