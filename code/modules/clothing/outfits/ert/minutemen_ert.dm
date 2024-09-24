@@ -121,7 +121,7 @@
 	gloves = /obj/item/clothing/gloves/color/white
 
 	l_pocket = /obj/item/flashlight/seclite
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 
 /datum/outfit/job/clip/minutemen/military_police/riot
 	name = "ERT - C-MM Military Police (Riot Control)"

@@ -13,7 +13,7 @@
 	neck = /obj/item/clothing/neck/cloak/gezena
 	suit_store = /obj/item/gun/energy/kalix/pgf
 
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
 
 	backpack_contents = list(/obj/item/gun/energy/kalix/pistol, /obj/item/stock_parts/cell/gun/kalix = 2, /obj/item/grenade/frag=2)
