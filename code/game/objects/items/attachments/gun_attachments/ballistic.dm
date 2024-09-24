@@ -7,6 +7,12 @@
 		if(istype(attack_item,/obj/item/ammo_casing) || istype(attack_item, /obj/item/ammo_box))
 			attached_gun.attackby(attack_item, user)
 
+/obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
+		attached_gun.attackby(I, user)
+	else
+		return ..()
+
 /obj/item/attachment/gun/ballistic/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
 	var/gun_bolt = ballistic_gun.bolt_type
@@ -36,7 +42,7 @@
 
 /obj/item/attachment/gun/ballistic/shotgun/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	. = ..()
-	if(gun.bolt_locked)
-		examine_list += span_notice("\The [name]'s [gun.bolt_wording] is closed.")
+	if(!(attached_gun.bolt_locked))
+		examine_list += span_notice("\The [name]'s [attached_gun.bolt_wording] is closed.")
 	else
-		examine_list += span_notice("\The [name]'s [gun.bolt_wording] is open, and can be loaded.")
+		examine_list += span_notice("\The [name]'s [attached_gun.bolt_wording] is open, and can be loaded.")

@@ -16,6 +16,14 @@
 	. = ..()
 	. += "[grenades.len] / [max_grenades] grenades loaded."
 
+/obj/item/gun/grenadelauncher/unique_action(mob/living/user)
+	if(..())
+		return
+	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
+	grenades -= F
+	F.forceMove(user.loc)
+
+
 /obj/item/gun/grenadelauncher/attackby(obj/item/I, mob/user, params)
 
 	if((istype(I, /obj/item/grenade)))

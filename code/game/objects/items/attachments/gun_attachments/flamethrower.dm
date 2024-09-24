@@ -20,6 +20,12 @@
 		if(istype(attack_item,/obj/item/reagent_containers/glass))
 			attached_flamethrower.attackby(attack_item,user)
 
+/obj/item/attachment/gun/flamethrower/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I,/obj/item/reagent_containers/glass))
+		attached_flamethrower.attackby(I,user)
+	else
+		return ..()
+
 /obj/item/attachment/gun/flamethrower/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(toggled)
 		log_combat(user, target, "flamethrowered", src)

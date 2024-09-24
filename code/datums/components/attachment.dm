@@ -182,7 +182,7 @@
 	SIGNAL_HANDLER_DOES_SLEEP
 
 	if(on_unique_action)
-		return on_unique_action.Invoke(user, params)
+		return on_unique_action.Invoke(gun, user, params)
 
 /datum/component/attachment/proc/relay_ctrl_click(obj/item/parent, obj/item/gun, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
