@@ -602,7 +602,7 @@
 	desc = "Legend says something amazing happens when you collect enough of these."
 	custom_price = 100
 	custom_premium_price = 110
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/gold = 200)
