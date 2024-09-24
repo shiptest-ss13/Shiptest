@@ -658,20 +658,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
 		. += "<span class='warning'>The serial numbers on [src] are incorrect.</span>"
 
-/obj/item/disk/nuclear/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/claymore/highlander) && !fake)
-		var/obj/item/claymore/highlander/H = I
-		if(H.nuke_disk)
-			to_chat(user, "<span class='notice'>Wait... what?</span>")
-			qdel(H.nuke_disk)
-			H.nuke_disk = null
-			return
-		user.visible_message("<span class='warning'>[user] captures [src]!</span>", "<span class='userdanger'>You've got the disk! Defend it with your life!</span>")
-		forceMove(H)
-		H.nuke_disk = src
-		return TRUE
-	return ..()
-
 /obj/item/disk/nuclear/Destroy(force=FALSE)
 	// respawning is handled in /obj/Destroy()
 	if(force)
