@@ -35,19 +35,18 @@
 
 /datum/status_effect/trickwine/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	flask_icon_state = trickwine_reagent.breakaway_flask_icon_state
-	. = ..()
 	if(!trickwine_reagent)
 		CRASH("A trickwine status effect was created without a attached reagent")
 	reagent_color = trickwine_reagent.color
+	. = ..()
 	if(istype(linked_alert, /atom/movable/screen/alert/status_effect/trickwine))
 		var/atom/movable/screen/alert/status_effect/trickwine/trickwine_alert = linked_alert
 		trickwine_alert.setup(trickwine_reagent)
-		if(alert_desc)
-			trickwine_alert.desc = alert_desc
+		trickwine_alert.desc = alert_desc
 
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
-	owner.add_filter(id, 2, list("type"="outline", "color"=reagent_color, "size"=1))
+	owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
 	return ..()
@@ -63,6 +62,7 @@
 //////////
 /datum/status_effect/trickwine/buff
 	id = "trick_wine_buff"
+	alert_desc = "Your empowered a trickwine!"
 
 /datum/status_effect/trickwine/buff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
 	. = ..()
@@ -76,6 +76,7 @@
 ////////////
 /datum/status_effect/trickwine/debuff
 	id = "trick_wine_debuff"
+	alert_desc = "Your weakened a trickwine!"
 
 /datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration = null)
 	if(isnum(set_duration))
@@ -204,11 +205,6 @@
 	owner.add_overlay(cube)
 	return ..()
 
-/datum/status_effect/trickwine/debuff/ice/tick()
-	owner.adjust_bodytemperature((-1 * duration) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
-	if(owner.bodytemperature >= owner.get_body_temp_normal())
-		qdel(src)
-
 /// Blocks movement from the status effect owner
 /datum/status_effect/trickwine/debuff/ice/proc/owner_moved()
 	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
@@ -260,7 +256,7 @@
 
 /datum/status_effect/trickwine/debuff/shock/tick()
 	if(rand(25))
-		do_sparks(5, FALSE, M)
+		do_sparks(5, FALSE, owner)
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthwine"
@@ -273,7 +269,6 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
-	trait = TRAIT_RESISTCOLD
 
 //This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
@@ -285,8 +280,7 @@
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
-
-/datum/status_effect/trickwine/buff/hearth/on_apply()
+	trait = TRAIT_RESISTCOLD
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
@@ -294,7 +288,7 @@
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	owner.fire_act()
 	var/turf/owner_turf = get_turf(owner)
-	owner_truf.IgniteTurf(duration)
+	owner_turf.IgniteTurf(duration)
 	new /obj/effect/hotspot(owner_turf, duration, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + duration * 10)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
@@ -329,7 +323,7 @@
 	for(var/direction in GLOB.cardinals)
 		other_turf = get_step(turf, direction)
 		new /obj/effect/forcefield/resin(other_turf, duration)
-
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
