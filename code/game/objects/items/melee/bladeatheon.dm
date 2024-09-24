@@ -14,6 +14,7 @@
 	desc = "an electrically-charged fencing sword."
 	icon_state = "suns-tsword"
 	force = 10
+	hitsound = 'sound/weapons/rapierhit.ogg'
 	attack_verb =  list("pierced", "swipe", "slash", "chop")
 	self_stam_const = 5
 	self_stam_coef = 0.5
@@ -29,6 +30,7 @@
 		/datum/component/transforming/charged, \
 		force_on = 5, \
 		throwforce_on = 10, \
+		hitsound_on = hitsound, \
 		_allowed_cells = list(/obj/item/stock_parts/cell/melee/pedang), \
 		_preload_cell_type = /obj/item/stock_parts/cell/melee/pedang, \
 		_cell_hit_cost = 250, \
@@ -45,6 +47,7 @@
 	. = ..()
 	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		SEND_SIGNAL(src, COMSIG_ITEM_USE_CELL)
+		playsound(src, 'sound/weapons/egloves.ogg', 75, TRUE)
 		M.apply_damage(25, STAMINA, BODY_ZONE_CHEST)
 
 /obj/item/stock_parts/cell/melee
