@@ -121,13 +121,8 @@
 		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/rifle/illestren/sawn
-	name = "sawn-off Illestren rifle"
 	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
-	item_state = "illestren_sawn"
 	sawn_off = TRUE
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"

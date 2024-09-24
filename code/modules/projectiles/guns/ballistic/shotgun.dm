@@ -424,13 +424,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
-	name = "sawn-off improvised shotgun"
-	desc = "A single-shot shotgun. Better not miss."
-	icon_state = "ishotgun_sawn"
-	item_state = "ishotgun_sawn"
-	w_class = WEIGHT_CLASS_NORMAL
 	sawn_off = TRUE
-	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
