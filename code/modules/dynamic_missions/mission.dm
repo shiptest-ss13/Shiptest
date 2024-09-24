@@ -1,6 +1,8 @@
 /datum/dynamic_mission
 	var/name = "Mission"
+	var/author = ""
 	var/desc = "Do something for me."
+	var/faction = /datum/faction/independent
 	var/value = 1000 /// The mission's payout.
 	var/duration = 45 MINUTES /// The amount of time in which to complete the mission.
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
@@ -39,10 +41,9 @@
 	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
-	return ..()
 
-/datum/dynamic_mission/proc/on_vital_delete()
-	qdel(src)
+	generate_mission_details()
+	return ..()
 
 /datum/dynamic_mission/Destroy()
 	//UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
@@ -58,9 +59,17 @@
 	deltimer(dur_timer)
 	return ..()
 
+/datum/dynamic_mission/proc/on_vital_delete()
+	qdel(src)
+
+/datum/dynamic_mission/proc/generate_mission_details()
+	author = random_species_name()
+	return
+
 /datum/dynamic_mission/proc/start_mission()
 	SSmissions.inactive_missions -= src
 	active = TRUE
+	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
 
 /datum/dynamic_mission/proc/on_planet_load(datum/overmap/dynamic/planet)
@@ -98,7 +107,11 @@
 	return list(
 		"ref" = REF(src),
 		"name" = src.name,
+		"author" = src.author,
 		"desc" = src.desc,
+		"faction" = SSfactions.faction_name(src.faction),
+		"x" = mission_location.x,
+		"y" = mission_location.y,
 		"value" = src.value,
 		"duration" = src.duration,
 		"remaining" = time_remaining,
@@ -175,6 +188,8 @@
 	LAZYREMOVE(bound_atoms, bound)
 
 /obj/effect/landmark/mission_poi
+	icon = 'icons/effects/mission_poi.dmi'
+	icon_state = "main_thingy"
 
 /obj/effect/landmark/mission_poi/Initialize()
 	. = ..()

@@ -5,3 +5,4 @@
 	required_item
 
 /obj/effect/landmark/mission_poi/blackbox
+	icon_state = "main_blackbox"

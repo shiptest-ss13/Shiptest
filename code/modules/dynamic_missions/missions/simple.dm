@@ -8,8 +8,7 @@
 /datum/dynamic_mission/simple/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
 		if(mission_poi.type == setpiece_poi)
-			required_item = new setpiece_item(mission_poi.loc)
-			RegisterSignal(required_item, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
+			required_item =	spawn_bound(setpiece_item, mission_poi.loc, null, TRUE, TRUE)
 			qdel(mission_poi)
 			return
 	CRASH("[src] was unable to find its required landmark")

@@ -118,6 +118,9 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
+	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
+
+/proc/random_species_name()
 	var/person_name
 	if(prob(40))
 		// fun fact: "Hutton" is in last_names
@@ -132,8 +135,7 @@
 				person_name = kepori_name()
 			if(4)
 				person_name = vox_name()
-
-	return "[person_name] [pick(GLOB.station_suffixes)]"
+	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
 	while(LAZYLEN(missions) < max_missions)

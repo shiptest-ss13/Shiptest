@@ -1381,11 +1381,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-/obj/item/circuitboard/machine/bountypad
-	name = "\improper Outpost Bounty Pad (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/bounty_pad
-
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"
 	icon_state = "abductor_mod"
