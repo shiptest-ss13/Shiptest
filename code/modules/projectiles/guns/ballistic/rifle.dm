@@ -94,7 +94,7 @@
 /obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
+/obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		spread = 24
@@ -114,7 +114,7 @@
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
-/obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
+/obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "illestren_factory_sawn"
