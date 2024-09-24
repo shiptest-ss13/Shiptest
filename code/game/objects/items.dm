@@ -13,7 +13,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item
 	name = "item"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	///icon state name for inhand overlays
 	var/item_state = null
@@ -31,7 +31,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///If set, vox wearing this use this instead of their clothing file
 	var/vox_override_icon
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces green, and three replaces blue in the icon state.
 	var/list/greyscale_colors[3]
 	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
 	var/greyscale_icon_state
@@ -162,6 +162,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/tool_behaviour = NONE
 	///How fast does the tool work
 	var/toolspeed = 1
+	/// how much damage does this item do when tearing down walls during deconstruction steps?
+	var/wall_decon_damage = 0
 
 	var/block_chance = 0
 	var/block_cooldown_time = 1 SECONDS
@@ -290,10 +292,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return 0
 	else
 		return 1
-
-/obj/item/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
 
 /obj/item/ComponentInitialize()
 	. = ..()
@@ -1184,6 +1182,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/get_writing_implement_details()
 	return null
+
+/obj/item/proc/can_trigger_gun(mob/living/user)
+	if(!user.can_use_guns(src))
+		return FALSE
+	return TRUE
 
 /// Whether or not this item can be put into a storage item through attackby
 /obj/item/proc/attackby_storage_insert(datum/storage, atom/storage_holder, mob/user)

@@ -17,6 +17,7 @@
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -24,6 +25,7 @@
 	attack_verb = list("ineffectively hit")
 	force = 1
 	throwforce = 1
+	wall_decon_damage = 50
 
 /obj/item/pickaxe/mini
 	name = "compact pickaxe"

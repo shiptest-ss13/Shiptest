@@ -357,16 +357,6 @@
 	if(user)
 		user.visible_message("<span class='warning'>[user.name] emags [src].</span>", "<span class='notice'>You short out the lock.</span>")
 
-/obj/machinery/power/emitter/ctf
-	name = "Energy Cannon"
-	active = TRUE
-	active_power_usage = FALSE
-	idle_power_usage = FALSE
-	locked = TRUE
-	req_access_txt = "100"
-	welded = TRUE
-	use_power = FALSE
-
 /obj/machinery/power/emitter/welded/Initialize()
 	welded = TRUE
 	return ..()

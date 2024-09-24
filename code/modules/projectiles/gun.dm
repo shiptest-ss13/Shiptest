@@ -56,7 +56,7 @@
 
 //BALLISTIC
 	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck //Removes the need for max_ammo and caliber info
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -232,6 +232,8 @@
 	var/empty_indicator = FALSE
 	///Whether the sprite has a visible magazine or not
 	var/show_magazine_on_sprite = FALSE
+	///Do we show how much ammo is left on the sprite? In increments of 20.
+	var/show_ammo_capacity_on_magazine_sprite = FALSE
 	///Whether the sprite has a visible ammo display or not
 	var/show_magazine_on_sprite_ammo = FALSE
 	///Whether the gun supports multiple special mag types
@@ -315,6 +317,9 @@
 	var/currently_firing_burst = FALSE
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
+
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -686,8 +691,8 @@
 	. = ..()
 	if(!has_safety)
 		return
-
-	if(src != user.get_active_held_item())
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
 		return
 
 	if(isliving(user) && in_range(src, user))
@@ -722,6 +727,11 @@
 		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
+
+/obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		discharge("hits the ground hard")
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -802,61 +812,42 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-// We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
-	return recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		recoil_bonus += gunslinger_recoil_bonus
+	return clamp(recoil_bonus, 0 , INFINITY)
 
-// We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
-	///our final spread value
-	var/sprd = 0
-	///our randomized value after checking if we are wielded or not
+	var/final_spread = 0
 	var/randomized_gun_spread = 0
-	///bonus
-	var/randomized_bonus_spread
-	// do we have poor aim
-	var/poor_aim = FALSE
+	var/randomized_bonus_spread = 0
 
-	//do we have bonus_spread ? If so, set sprd to it because it means a subtype's proc messed with it
-	sprd += bonus_spread
+	final_spread += bonus_spread
 
-	//reset bonus_spread for poor aim...
-	bonus_spread = 0
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
 
-	// if we have poor aim, we fuck the shooter over
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
-		bonus_spread += 25
-		poor_aim = TRUE
-	// then we randomize the bonus spread
-	randomized_bonus_spread = rand(poor_aim ? 10 : 0, bonus_spread) //poor aim is no longer just a nusiance
+		randomized_bonus_spread += rand(0, 25)
 
-	//then, we mutiply previous bonus spread as it means dual wielding usually, it also means poor aim is also even more severe
-	randomized_bonus_spread *= DUALWIELD_PENALTY_EXTRA_MULTIPLIER
-
-	// we will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
+	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
 
-	//finally, we put it all together including if sprd has a value
-	sprd += randomized_gun_spread + randomized_bonus_spread
+	final_spread += randomized_gun_spread + randomized_bonus_spread
 
-	//clamp it down to avoid guns with negative spread to have worse recoil...
-	sprd = clamp(sprd, 0, INFINITY)
+	//Clamp it down to avoid guns with negative spread to have worse recoil...
+	final_spread = clamp(final_spread, 0, INFINITY)
 
-	// im not sure what this does, i beleive its meant to make it so  bullet spread goes in the opposite direction? get back to me on this - update,i have commented it out, however it appears be dapening spread. weird.
-	//sprd *= (rand() - 0.5)
-
-	//coin flip if we mutiply output by -1 so spread isn't JUST to the right
+	//So spread isn't JUST to the right
 	if(prob(50))
-		sprd *= -1
+		final_spread *= -1
 
-	// then we round it up and send it!
-	sprd = round(sprd)
+	final_spread = round(final_spread)
 
-	return sprd
+	return final_spread
 
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
 	var/total_recoil = calculate_recoil(user, recoil_bonus)
-	total_recoil = clamp(total_recoil, 0 , INFINITY)
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)
@@ -960,6 +951,48 @@
 	if(!QDELETED(flash_loc))
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
+
+// for guns firing on their own without a user
+/obj/item/gun/proc/discharge(cause, seek_chance = 10)
+	var/target
+	if(!safety)
+		// someone is very unlucky and about to be shot
+		if(prob(seek_chance))
+			for(var/mob/living/target_mob in range(6, get_turf(src)))
+				if(!isInSight(src, target_mob))
+					continue
+				target = target_mob
+				break
+		if(!target)
+			var/fire_dir = pick(GLOB.alldirs)
+			target = get_ranged_target_turf(get_turf(src),fire_dir,6)
+		if(!chambered || !chambered.BB)
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
+			playsound(src, dry_fire_sound, 30, TRUE)
+		else
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safeties on!"))
+			unsafe_shot(target)
+
+/obj/item/gun/proc/unsafe_shot(target)
+	if(chambered)
+		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		playsound(src, fire_sound, 100, TRUE)
+
+/mob/living/proc/trip_with_gun(cause)
+	var/mob/living/carbon/human/human_holder
+	if(ishuman(src))
+		human_holder = src
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		if(human_holder)
+			// gun is less likely to go off in a holster
+			if(at_risk == human_holder.s_store)
+				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+		if(at_risk.safety == FALSE && prob(chance_to_fire))
+			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
+				emote("scream")
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom

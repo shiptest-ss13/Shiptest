@@ -356,7 +356,7 @@
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
-	build_path = /obj/item/kitchen/knife
+	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_knife
@@ -364,7 +364,7 @@
 	id = "plastic_knife"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 100)
-	build_path = /obj/item/kitchen/knife/plastic
+	build_path = /obj/item/melee/knife/plastic
 	category = list("initial", "Tool Designs","Dinnerware")
 
 /datum/design/fork
@@ -865,7 +865,7 @@
 	id = "cleaver"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 18000)
-	build_path = /obj/item/kitchen/knife/butcher
+	build_path = /obj/item/melee/knife/butcher
 	category = list("initial", "Dinnerware")
 
 /datum/design/spraycan

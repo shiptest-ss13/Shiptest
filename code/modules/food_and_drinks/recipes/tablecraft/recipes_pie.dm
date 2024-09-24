@@ -130,18 +130,6 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/grapetart
 	subcategory = CAT_PIE
 
-/datum/crafting_recipe/food/mimetart
-	name = "Mime tart"
-	always_availible = FALSE
-	reqs = list(
-		/datum/reagent/consumable/milk = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-		/datum/reagent/consumable/nothing = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/pie/mimetart
-	subcategory = CAT_PIE
-
 /datum/crafting_recipe/food/berrytart
 	name = "Berry tart"
 	always_availible = FALSE

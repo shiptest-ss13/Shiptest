@@ -115,7 +115,7 @@
 		if(prob(30)) //Not all mafioso have mustaches, some people also find this item annoying.
 			new /obj/item/clothing/mask/fakemoustache/italian(C)
 	if(prob(10)) //A little extra sugar every now and then to shake things up.
-		new	/obj/item/kitchen/knife/switchblade(C)
+		new	/obj/item/melee/knife/switchblade(C)
 
 /datum/supply_pack/costumes_toys/mech_suits
 	name = "Exosuit Pilot's Suit Crate"
@@ -125,17 +125,6 @@
 					/obj/item/clothing/under/costume/mech_suit/white,
 					/obj/item/clothing/under/costume/mech_suit/blue)
 	crate_name = "exosuit pilot's suit crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
-/datum/supply_pack/costumes_toys/wizard
-	name = "Wizard Costume Crate"
-	desc = "Pretend to join the Wizard Federation with this full wizard outfit! As required by interstellar law, the seller reminds potential buyers that the Wizard Federation is not real and cannot hurt you."
-	cost = 2000
-	contains = list(/obj/item/staff,
-					/obj/item/clothing/suit/wizrobe/fake,
-					/obj/item/clothing/shoes/sandal,
-					/obj/item/clothing/head/wizard/fake)
-	crate_name = "wizard costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/costumes_toys/formalwear
@@ -170,6 +159,7 @@
 					/obj/item/lipstick/random)
 	crate_name = "formalwear crate"
 	crate_type = /obj/structure/closet/crate/wooden
+	faction = FACTION_SOLGOV
 
 // this is technically armor but you aren't buying it for that. it's a joke pack so it goes here
 /datum/supply_pack/costumes_toys/justiceinbound
