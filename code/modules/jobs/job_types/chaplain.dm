@@ -15,20 +15,6 @@
 
 	var/obj/item/storage/book/bible/booze/B = new
 
-	if(GLOB.religion)
-		B.deity_name = GLOB.deity
-		B.name = GLOB.bible_name
-		B.icon_state = GLOB.bible_icon_state
-		B.item_state = GLOB.bible_item_state
-		to_chat(H, "<span class='boldnotice'>There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.</span>")
-		H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
-		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
-		var/obj/item/nullrod/N = new nrt(H)
-		H.put_in_hands(N)
-		if(GLOB.religious_sect)
-			GLOB.religious_sect.on_conversion(H)
-		return
-
 	var/new_religion = DEFAULT_RELIGION
 	if(M.client && M.client.prefs.custom_names["religion"])
 		new_religion = M.client.prefs.custom_names["religion"]
