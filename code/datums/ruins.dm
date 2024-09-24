@@ -17,6 +17,8 @@
 
 	var/ruin_type
 
+	var/mission_pois
+
 /datum/map_template/ruin/New()
 	if(!name && id)
 		name = id
