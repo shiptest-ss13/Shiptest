@@ -55,7 +55,7 @@
 		suit = pickweight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
 		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
-		/obj/item/clothing/suit/armor/vest/scrap_armor = 1))
+		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(50))
 		mask = pickweight(list(
@@ -136,9 +136,9 @@
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
-			/obj/item/kitchen/knife/combat/survival = 15,
+			/obj/item/melee/knife/survival = 15,
 			/obj/item/melee/baseball_bat = 10,
-			/obj/item/melee/roastingstick = 2,
+			/obj/item/roastingstick = 2,
 			/obj/item/kitchen/fork = 1,
 			/obj/item/melee/flyswatter = 1,
 			))
@@ -187,7 +187,7 @@
 	suit_store = null
 	belt = /obj/item/gun/ballistic/automatic/pistol/deagle
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/leader/heavy
 	name = "ERT - Frontiersman Officer (Shock Troop)"
@@ -207,7 +207,7 @@
 
 	suit_store = null
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"

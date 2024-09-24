@@ -18,7 +18,7 @@
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
 
 /datum/outfit/job/inteq/ert/eva

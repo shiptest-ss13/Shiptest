@@ -300,7 +300,7 @@
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/reagent_containers/food/snacks/donut,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/knife/combat,
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
@@ -378,7 +378,7 @@
 		/obj/item/storage/fancy/cigarettes,
 		/obj/item/reagent_containers/food/drinks/bottle,
 		/obj/item/stack/medical,
-		/obj/item/kitchen/knife,
+		/obj/item/melee/knife/kitchen,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/gps,
 		/obj/item/storage/bag/ore,
@@ -393,7 +393,7 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/claymore/bone,
+		/obj/item/melee/sword/bone,
 		/obj/item/key/lasso
 		))
 
@@ -827,7 +827,7 @@
 	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre
+		/obj/item/melee/sword/sabre
 		))
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -855,7 +855,7 @@
 	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new /obj/item/melee/sabre(src)
+	new /obj/item/melee/sword/sabre(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/solgov
@@ -874,11 +874,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/solgov
+		/obj/item/melee/sword/sabre/solgov
 		))
 
 /obj/item/storage/belt/sabre/solgov/PopulateContents()
-	new /obj/item/melee/sabre/solgov(src)
+	new /obj/item/melee/sword/sabre/solgov(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/suns
@@ -903,11 +903,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns
+		/obj/item/melee/sword/sabre/suns
 		))
 
 /obj/item/storage/belt/sabre/suns/PopulateContents()
-	new /obj/item/melee/sabre/suns(src)
+	new /obj/item/melee/sword/sabre/suns(src)
 	update_appearance()
 
 
@@ -928,11 +928,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns/captain
+		/obj/item/melee/sword/sabre/suns/captain
 		))
 
 /obj/item/storage/belt/sabre/suns/captain/PopulateContents()
-	new /obj/item/melee/sabre/suns/captain(src)
+	new /obj/item/melee/sword/sabre/suns/captain(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/suns/cmo
@@ -958,11 +958,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns/cmo
+		/obj/item/melee/sword/sabre/suns/cmo
 		))
 
 /obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
-	new /obj/item/melee/sabre/suns/cmo(src)
+	new /obj/item/melee/sword/sabre/suns/cmo(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/webbing/inteq

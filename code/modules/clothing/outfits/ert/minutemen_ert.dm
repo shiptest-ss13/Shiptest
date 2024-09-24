@@ -36,7 +36,7 @@
 	head = /obj/item/clothing/head/helmet/riot/clip
 	belt = /obj/item/storage/belt/military/clip/cm15_inc
 	glasses = /obj/item/clothing/glasses/hud/health/night
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 	l_pocket = /obj/item/extinguisher/mini
 	shoes = /obj/item/clothing/shoes/combat
 

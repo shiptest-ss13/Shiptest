@@ -19,7 +19,7 @@
 	belt = /obj/item/storage/belt/military/hydra
 	glasses = /obj/item/clothing/glasses/hud/security
 
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 	l_pocket = /obj/item/grenade/frag
 
 	implants = list(/obj/item/implant/weapons_auth)
@@ -112,7 +112,7 @@
 	belt = /obj/item/storage/belt/military/assault/sniper
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/taipan
 
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	l_pocket = /obj/item/binoculars
 
 	backpack = /obj/item/storage/backpack/messenger/sec
@@ -226,8 +226,7 @@
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	back = /obj/item/storage/backpack/ert/medical
-
-	l_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/melee/knife/survival
 	r_pocket = /obj/item/pinpointer/crew
 
 	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/radio=1)
