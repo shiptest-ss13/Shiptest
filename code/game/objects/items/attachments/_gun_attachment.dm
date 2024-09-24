@@ -27,8 +27,7 @@
 	attached_gun.on_unwield(src, user)
 
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
-	if(toggled)
-		attached_gun.attackby(attack_item, user)
+	return FALSE
 
 /obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(toggled)

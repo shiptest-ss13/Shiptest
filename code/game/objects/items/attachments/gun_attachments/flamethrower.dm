@@ -1,6 +1,6 @@
 /obj/item/attachment/gun/flamethrower
 	name = "underbarrel flamethrower"
-	desc = "A compact underbarrel flamethrower holding up to 10 units of fuel, enough for a single spray."
+	desc = "A compact underbarrel flamethrower holding up to 20 units of fuel, enough for two sprays."
 	attached_gun = null
 	var/obj/item/flamethrower/underbarrel/attached_flamethrower
 
@@ -35,7 +35,7 @@
 	var/total_volume = 0
 	for(var/datum/reagent/R in attached_flamethrower.beaker.reagents.reagent_list)
 		total_volume += R.volume
-	examine_list += span_notice("-\The [src] has [total_volume] of fuel left.")
+	examine_list += span_notice("-\The [src] has [total_volume] units of fuel left.")
 	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 
 /obj/item/attachment/gun/flamethrower/on_wield(obj/item/gun/gun, mob/user, list/params)
@@ -71,7 +71,7 @@
 			to_chat(user, span_danger("\The [beaker] is full."))
 			return
 		source.reagents.trans_to(beaker, source.amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You transfer [source.amount_per_transfer_from_this] to \the [beaker]"))
+		to_chat(user, span_notice("You transfer [source.amount_per_transfer_from_this] units to \the [beaker]"))
 	else
 		return ..()
 
@@ -81,6 +81,6 @@
 	desc = "An internal fuel tank for a flamethrower. You shouldnt have been able to pull this out."
 	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypovial"
-	volume = 10
+	volume = 20
 
 

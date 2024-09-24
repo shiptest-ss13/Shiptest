@@ -6,6 +6,8 @@
 /obj/item/attachment/gun/energy/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	. = ..()
 	if(toggled)
+		if(istype(attack_item, /obj/item/stock_parts/cell/gun))
+			attached_gun.attackby(attack_item, user)
 		if(attack_item.tool_behaviour == TOOL_SCREWDRIVER)
 			attached_gun.screwdriver_act(user,attack_item)
 

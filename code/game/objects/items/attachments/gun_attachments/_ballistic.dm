@@ -2,6 +2,11 @@
 	name = "ballistic underbarrel gun"
 	desc = "A ballistic underbarrel gun. It shoots bullets. Or something."
 
+/obj/item/attachment/gun/ballistic/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
+	if(toggled)
+		if(istype(attack_item,/obj/item/ammo_casing) || istype(attack_item, /obj/item/ammo_box))
+			attached_gun.attackby(attack_item, user)
+
 /obj/item/attachment/gun/ballistic/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
 	var/gun_bolt = ballistic_gun.bolt_type
@@ -12,7 +17,6 @@
 	if (attached_gun.bolt_locked)
 		examine_list += span_notice("-The [name]'s [ballistic_gun.bolt_wording] is locked back and needs to be released before firing.")
 	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
-	//return
 
 /obj/item/attachment/gun/ballistic/launcher
 	name = "underbarrel 40mm grenade launcher"
@@ -27,5 +31,12 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/underbarrel
 	name = "underbarrel shotgun"
 	desc = "You probably shouldn't be seeing this."
-	magazine = /obj/item/ammo_box/magazine/internal/shot/underbarrel
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
+
+/obj/item/attachment/gun/ballistic/shotgun/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
+	. = ..()
+	if(gun.bolt_locked)
+		examine_list += span_notice("\The [name]'s [gun.bolt_wording] is closed.")
+	else
+		examine_list += span_notice("\The [name]'s [gun.bolt_wording] is open, and can be loaded.")
