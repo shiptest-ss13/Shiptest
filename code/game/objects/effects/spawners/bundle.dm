@@ -174,5 +174,5 @@
 	name = "roundstart mat spawn"
 	items = list(
 		/obj/item/stack/sheet/mineral/coal/ten,
-		/obj/item/stack/sheet/mineral/silicon/ten,
-		/obj/item/stack/sheet/mineral/copper/ten)
+		/obj/item/stack/sheet/mineral/silicon/five,
+		/obj/item/stack/sheet/mineral/copper/five)
