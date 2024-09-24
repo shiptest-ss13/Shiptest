@@ -268,3 +268,23 @@
 	light_color = "#C3E381"
 	light_range = 2
 	light_power = 1
+
+/obj/structure/statue/bone/rib
+	name = "collosal rib"
+	desc = "It's staggering to think that something this big could have lived, let alone died."
+	oreAmount = 4
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "rib"
+
+/obj/structure/statue/bone/skull
+	name = "collosal skull"
+	desc = "The gaping maw of a dead, titanic monster."
+	oreAmount = 12
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "skull"
+
+/obj/structure/statue/bone/skull/half
+	desc = "The gaping maw of a dead, titanic monster. This one is cracked in half."
+	oreAmount = 6
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "skull-half"
