@@ -17,6 +17,7 @@
 	id = "trick_wine"
 	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
+	var/reac_volume
 	var/flask_icon_state
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
 	var/reagent_color = "#FFFFFF"
@@ -130,10 +131,13 @@
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
+
+			// This all needs to be refactored
 			var/mob/living/simple_animal/hostile/hostile_target = M
 			var/hostile_ai_status = hostile_target.AIStatus
 			hostile_target.toggle_ai(AI_OFF)
-			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume) //This needs to be a callback to toggle_ai
+			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
+
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
@@ -167,27 +171,43 @@
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
-		var/paralyze_dur
-		if(!iscarbon(M))
-			reac_volume = reac_volume * 2
-			paralyze_dur = reac_volume
-		else
-			if(reac_volume <= 50)
-				paralyze_dur = reac_volume
-			else
-				paralyze_dur = 50 + ((reac_volume - 50) / 4)
-		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
-		M.Paralyze(paralyze_dur)
-		walk(M, 0) //stops them mid pathing even if they're stunimmunee
-		M.apply_status_effect(/datum/status_effect/ice_block_talisman, paralyze_dur)
+
 	return ..()
 
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
 
+/datum/status_effect/trickwine/buff/ice/on_apply()
+	ADD_TRAIT(owner, TRAIT_NOFIRE, id)
+	return ..()
+
+/datum/status_effect/trickwine/buff/ice/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_NOFIRE, id)
+	return ..()
+
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
 
+/datum/status_effect/trickwine/debuff/ice/on_apply()
+	walk(M, 0) //stops them mid pathing even if they're stunimmunee
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
+	M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	M.Paralyze(duration)
+	to_chat(owner, span_userdanger("You become frozen in a cube!"))
+	cube = icon('icons/effects/freeze.dmi', "ice_cube")
+	var/icon/size_check = icon(owner.icon, owner.icon_state)
+	cube.Scale(size_check.Width(), size_check.Height())
+	owner.add_overlay(cube)
+	return ..()
+
+/// Blocks movement from the status effect owner
+/datum/status_effect/trickwine/debuff/ice/proc/owner_moved()
+	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+
+/datum/status_effect/trickwine/debuff/ice/on_remove()
+	to_chat(owner, span_notice("The cube melts!"))
+	owner.cut_overlay(cube)
+	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Shockwine"
@@ -203,9 +223,6 @@
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
-		//simple mobs are so tanky and i want this to be useful on them
-		if(iscarbon(M))
-			reac_volume = reac_volume / 4
 		M.electrocute_act(reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 		do_sparks(5, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
@@ -246,6 +263,7 @@
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
 
+//This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(ishuman(M))
@@ -255,8 +273,6 @@
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
-		if(!iscarbon(M))
-			reac_volume = reac_volume * 2
 		M.fire_act()
 		var/turf/T = get_turf(M)
 		T.IgniteTurf(reac_volume)
@@ -287,16 +303,17 @@
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
 
+//Completenly useless rn.
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
 
 /datum/status_effect/trickwine/buff/force/on_apply()
-	ADD_TRAIT(owner, TRAIT_MINDSHIELD, id)
+	//ADD_TRAIT(owner, TRAIT_MINDSHIELD, id)
 	owner.visible_message(span_warning("[owner] glows a dim grey aura"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/force/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, id)
+	//REMOVE_TRAIT(owner, TRAIT_MINDSHIELD, id)
 	owner.visible_message(span_warning("[owner]'s aura fades away"))
 	..()
 
@@ -304,14 +321,12 @@
 	id = "force_wine_debuff"
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
-	if(!iscarbon(owner))
-		duration = duration * 2
 	var/turf/turf = get_turf(owner)
 	var/turf/other_turf
-	new /obj/effect/forcefield/resin(turf, duration * 4)
+	new /obj/effect/forcefield/resin(turf, duration)
 	for(var/direction in GLOB.cardinals)
 		other_turf = get_step(turf, direction)
-		new /obj/effect/forcefield/resin(other_turf, duration * 4)
+		new /obj/effect/forcefield/resin(other_turf, duration)
 
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
@@ -331,6 +346,7 @@
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
 	ADD_TRAIT(owner, TRAIT_REFLECTIVE, id)
+
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
@@ -339,6 +355,7 @@
 
 /datum/status_effect/trickwine/buff/prism/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_REFLECTIVE, id)
+	REMOVE_TRAIT(owner, TRAIT_NOFIRE, id)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
