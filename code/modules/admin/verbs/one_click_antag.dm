@@ -226,7 +226,7 @@
 	.["mainsettings"]["spawn_admin"]["value"] = newtemplate.spawn_admin ? "Yes" : "No"
 	.["mainsettings"]["use_custom_shuttle"]["value"] = newtemplate.use_custom_shuttle ? "Yes" : "No"
 	.["mainsettings"]["spawn_at_outpost"]["value"] = newtemplate.spawn_at_outpost ? "Yes" : "No"
-	.["mainsettings"]["outpost_access"]["value"] = newtemplate.spawn_at_outpost ? "Yes" : "No"
+	.["mainsettings"]["outpost_access"]["value"] = newtemplate.outpost_access ? "Yes" : "No"
 
 
 /datum/admins/proc/equipAntagOnDummy(mob/living/carbon/human/dummy/mannequin, datum/antagonist/antag)
