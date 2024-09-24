@@ -113,13 +113,13 @@
 	ammo_type = /obj/item/ammo_casing/c38/dumdum
 
 /obj/item/ammo_box/c38/hotshot
-	name = "speed loader (.38 hot shot)"
-	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These hot shot bullets contain an incendiary payload that set targets alight."
+	name = "speed loader (.38 hearth)"
+	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These hearthwine bullets contain an incendiary payload that set targets alight."
 	ammo_type = /obj/item/ammo_casing/c38/hotshot
 
 /obj/item/ammo_box/c38/iceblox
-	name = "speed loader (.38 iceblox)"
-	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
+	name = "speed loader (.38 chilled)"
+	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These icewine bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
 /obj/item/ammo_box/c38/empty
