@@ -412,8 +412,8 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(isnum(x) && isnum(y))
 		current_overmap.overmap_container[x][y] -= src
-	x = null
-	y = null
+	x = dock_target.x
+	y = dock_target.y
 	dock_target.contents |= src
 	docked_to = dock_target
 	token.abstract_move(dock_target.token)

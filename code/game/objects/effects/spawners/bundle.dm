@@ -168,3 +168,11 @@
 		/obj/item/clothing/head/fedora/beige,
 		/obj/item/clothing/under/suit/beige,
 		/obj/item/clothing/shoes/laceup)
+
+
+/obj/effect/spawner/bundle/test_ship_matspawn
+	name = "roundstart mat spawn"
+	items = list(
+		/obj/item/stack/sheet/mineral/coal/ten,
+		/obj/item/stack/sheet/mineral/silicon/ten,
+		/obj/item/stack/sheet/mineral/copper/ten)

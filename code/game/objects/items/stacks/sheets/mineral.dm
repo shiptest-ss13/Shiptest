@@ -479,6 +479,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-graphite"
 
+	custom_materials = list(/datum/material/carbon=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/coal
 	grind_results = list(/datum/reagent/carbon = 20)
 
