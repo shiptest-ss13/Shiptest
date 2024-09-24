@@ -108,6 +108,7 @@
 	return FALSE
 
 /obj/item/attachment/proc/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
+	return
 
 ///Handles the modifiers to the parent gun
 /obj/item/attachment/proc/apply_modifiers(obj/item/gun/gun, mob/user, attaching)

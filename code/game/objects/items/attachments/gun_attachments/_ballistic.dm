@@ -14,3 +14,18 @@
 	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 	//return
 
+/obj/item/attachment/gun/ballistic/launcher
+	name = "underbarrel 40mm grenade launcher"
+	desc = "A break action, single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
+	weapon_type = /obj/item/gun/ballistic/revolver/grenadelauncher
+
+/obj/item/attachment/gun/ballistic/shotgun
+	name = "underbarrel shotgun"
+	desc = "A single shot underbarrel shotgun for warding off anyone who gets too close for comfort."
+	weapon_type = /obj/item/gun/ballistic/shotgun/doublebarrel/underbarrel
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/underbarrel
+	name = "underbarrel shotgun"
+	desc = "You probably shouldn't be seeing this."
+	magazine = /obj/item/ammo_box/magazine/internal/shot/underbarrel
+	gun_firemodes = list(FIREMODE_SEMIAUTO)

@@ -12,11 +12,13 @@
 
 /obj/item/attachment/gun/Initialize()
 	. = ..()
-	attached_gun = new weapon_type(src)
+	if(weapon_type)
+		attached_gun = new weapon_type(src)
 
 /obj/item/attachment/gun/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
-	attached_gun.safety = gun.safety
+	if(attached_gun)
+		attached_gun.safety = gun.safety
 
 /obj/item/attachment/gun/on_wield(obj/item/gun/gun, mob/user, list/params)
 	attached_gun.on_wield(src,user)

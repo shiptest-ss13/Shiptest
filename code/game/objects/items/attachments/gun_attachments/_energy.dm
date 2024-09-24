@@ -1,7 +1,7 @@
 /obj/item/attachment/gun/energy
-	name = "underbarrel minature energy gun"
-	desc = "A compact energy gun designed to be mounted on the underside of another firearm for quick access."
-	weapon_type = /obj/item/gun/energy/e_gun/mini
+	name = "underbarrel energy gun"
+	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
+	weapon_type = /obj/item/gun/energy/e_gun
 
 /obj/item/attachment/gun/energy/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	. = ..()
@@ -23,3 +23,8 @@
 
 /obj/item/attachment/gun/energy/get_cell()
 	return attached_gun.cell
+
+/obj/item/attachment/gun/energy/mini
+	name = "underbarrel mini energy gun"
+	desc = "A compact energy gun designed to be mounted on the underside of another firearm for quick access."
+	weapon_type = /obj/item/gun/energy/e_gun/mini
