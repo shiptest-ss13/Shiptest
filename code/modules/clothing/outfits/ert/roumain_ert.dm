@@ -61,6 +61,7 @@
 	uniform = /obj/item/clothing/under/suit/roumain
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
+	suit_store = null
 	head = /obj/item/clothing/head/cowboy/sec/roumain/med
 	mask = /obj/item/clothing/mask/gas/plaguedoctor
 	gloves = null
@@ -76,6 +77,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	belt = /obj/item/storage/belt/utility/full/engi
 	suit = /obj/item/clothing/suit/hazardvest/roumain
+	suit_store = null
 	head = /obj/item/clothing/head/cowboy/sec/roumain/machinist
 	glasses = /obj/item/clothing/glasses/welding
 	accessory = /obj/item/clothing/accessory/waistcoat/roumain

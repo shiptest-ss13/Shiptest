@@ -82,7 +82,6 @@
 	jobtype = /datum/job/chief_engineer
 	job_icon = "chiefengineer"
 
-	back = /obj/item/melee/axe/fire
 	suit = /obj/item/clothing/suit/space/hardsuit/engine
 	suit_store = /obj/item/tank/internals/oxygen/red
 	head = null
@@ -90,11 +89,12 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 
 	backpack_contents = null
+	box = null
 
-	backpack = null
-	courierbag = null
-	duffelbag = null
-	satchel = null
+	backpack = /obj/item/melee/axe/fire
+	courierbag = /obj/item/melee/axe/fire
+	duffelbag = /obj/item/melee/axe/fire
+	satchel = /obj/item/melee/axe/fire
 
 /datum/outfit/job/independent/ert/technician
 	name = "ERT - Independent Technician"

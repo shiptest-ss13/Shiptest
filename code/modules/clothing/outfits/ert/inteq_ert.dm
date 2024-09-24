@@ -82,6 +82,7 @@
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
+	suit_store = null
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/job/inteq/ert/leader
@@ -122,9 +123,11 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	ears = /obj/item/radio/headset/inteq/captain
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	l_pocket = /obj/item/gun/energy/taser
 	r_pocket = /obj/item/restraints/handcuffs
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+
+	backpack_contents = list(/obj/item/gun/energy/taser)
+
 
 /datum/outfit/job/inteq/ert/inspector
 	name = "ERT - Inteq Mothership Investigator"
@@ -134,6 +137,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = null
+	suit_store = null
 	belt = /obj/item/clipboard
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
