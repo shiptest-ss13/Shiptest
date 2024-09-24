@@ -27,10 +27,10 @@
 	var/ruin_type
 	///Preditermined ruin made when the overmap is first created
 	var/selected_ruin
-	///Fetched before anything is loaded from the ruin datum, used for missions
-	var/mission_pois
+	///Fetched before anything is loaded from the ruin datum
+	var/dynamic_missions
 	///The list of mission pois once the planet has acctually loaded the ruin
-	var/spawned_mission_pois
+	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
@@ -158,6 +158,10 @@
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+	if(istype(used_ruin))
+		for(var/mission_type in used_ruin.dynamic_mission_types)
+			dynamic_missions += new mission_type(src)
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -210,6 +214,7 @@
 	spawned_ruins = dynamic_encounter_values[4]
 	spawned_mission_pois = dynamic_encounter_values[5]
 
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE
 

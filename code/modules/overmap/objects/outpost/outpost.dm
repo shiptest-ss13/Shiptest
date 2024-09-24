@@ -42,6 +42,8 @@
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
+	var/list/datum/dynamic_mission/dynamic_missions
+
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
 	// init our template vars with the correct singletons

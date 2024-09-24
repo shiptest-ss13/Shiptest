@@ -378,7 +378,16 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
+	var/list/spawned_mission_pois = list()
+	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
+		if(!vlevel.is_in_bounds(mission_poi))
+			continue
+
+		spawned_mission_pois += mission_poi
+		SSmissions.unallocated_pois -= mission_poi
+
+
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates, spawned_mission_pois)
 
 /**
  * Returns a random, usually empty turf in the overmap

@@ -154,7 +154,6 @@
 	. = ..()
 	if(.)
 		return
-	/*
 	switch(action)
 		if("withdrawCash")
 			var/val = text2num(params["value"])

@@ -18,7 +18,7 @@
 	var/ruin_type
 	var/ruin_tags = list()
 
-	var/mission_pois
+	var/dynamic_mission_types
 
 /datum/map_template/ruin/New()
 	if(!name && id)
@@ -26,4 +26,3 @@
 
 	mappath = prefix + suffix
 	..(path = mappath)
-
