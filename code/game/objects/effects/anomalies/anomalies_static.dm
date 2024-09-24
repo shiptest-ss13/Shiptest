@@ -12,7 +12,24 @@
 	verb_whisper = "whimpers"
 	verb_yell = "screams"
 	speech_span = SPAN_ITALICS
+	///The mob we are holding *right* now
 	var/mob/living/carbon/stored_mob = null
+	///The path for the spawner if we want to have a custom guy inside the static.
+	var/stored_mob_spawner = null
+
+/obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
+	if(stored_mob_type)
+		var/obj/effect/mob_spawn/vicspawner = new stored_mob_spawner(src)
+		var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
+		victim.setOrganLoss(ORGAN_SLOT_BRAIN, 200)
+		victim.forceMove(src)
+	if(prob(25) & !stored_mob)
+		var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
+		var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
+		src.stored_mob = victim
+		victim.forceMove(src)
+	. = ..()
+
 
 /obj/effect/anomaly/tvstatic/examine(mob/user)
 	. = ..()
@@ -121,13 +138,22 @@
 	immortal = TRUE
 	immobile = TRUE
 
-/obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
-	if(prob(25) & !stored_mob)
-		var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
-		var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
-		src.stored_mob = victim
-		victim.forceMove(src)
-	. = ..()
+/obj/effect/anomaly/tvstatic/planetary/filled
+	name = "static"
+	icon_state = "static"
+	effectrange = 4
+	pulse_delay = 4 SECONDS
+	verb_say = "pleads"
+	verb_ask = "begs"
+	verb_exclaim = "screams"
+	verb_whisper = "whimpers"
+	verb_yell = "screams"
+	speech_span = SPAN_ITALICS
+	var/mob/living/carbon/stored_mob = null
+	var/mob/living/carbon/filled
+
+
+
 
 /obj/effect/particle_effect/staticball
 	name = "static blob"
