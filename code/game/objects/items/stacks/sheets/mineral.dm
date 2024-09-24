@@ -615,7 +615,7 @@ GLOBAL_LIST_INIT(copper_recipes, list ( \
 	item_state = "ingot-silicon"
 	singular_name = "ingot-silicon"
 	sheettype = "lead"
-	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/silicon=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
 	point_value = 2
 	merge_type = /obj/item/stack/sheet/mineral/lead

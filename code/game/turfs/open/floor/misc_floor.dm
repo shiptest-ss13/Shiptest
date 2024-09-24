@@ -242,7 +242,7 @@
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
-	icon = 'icons/turf/planetary/jungle.dmi'
+	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/open/floor/plating/ship/water
 	name = "water"
