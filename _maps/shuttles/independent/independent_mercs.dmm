@@ -2,6 +2,14 @@
 "a" = (
 /turf/open/space/basic,
 /area/space)
+"c" = (
+/obj/machinery/holopad/secure,
+/turf/open/floor/carpet/blue,
+/area/space)
+"d" = (
+/obj/structure/chair/sofa/brown/corner/directional/east,
+/turf/open/floor/carpet,
+/area/space)
 "e" = (
 /turf/open/floor/carpet/cyan,
 /area/space)
@@ -11,8 +19,16 @@
 "g" = (
 /turf/open/floor/carpet/blue,
 /area/space)
+"h" = (
+/obj/effect/turf_decal/corner/opaque/blue/border,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/space)
 "i" = (
 /turf/open/floor/carpet/nanoweave/beige,
+/area/space)
+"j" = (
+/obj/structure/chair/sofa/brown/left/directional/south,
+/turf/open/floor/carpet,
 /area/space)
 "k" = (
 /turf/open/floor/carpet,
@@ -23,23 +39,214 @@
 "n" = (
 /turf/open/floor/carpet/orange,
 /area/space)
+"o" = (
+/obj/machinery/computer/crew{
+	dir = 8;
+	icon_state = "computer-left"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"p" = (
+/obj/machinery/photocopier,
+/turf/open/floor/carpet/blue,
+/area/space)
+"q" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"r" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/pen/fountain/captain{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/folder/blue{
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/item/folder/red{
+	pixel_x = -7;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/blue,
+/area/space)
+"s" = (
+/obj/machinery/computer/helm{
+	icon_state = "computer-middle";
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"t" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"u" = (
+/obj/structure/chair/sofa/brown/directional/east,
+/turf/open/floor/carpet,
+/area/space)
+"v" = (
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"w" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
+/turf/open/floor/carpet/blue,
+/area/space)
+"x" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"y" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"z" = (
+/obj/effect/turf_decal/corner/opaque/blue/border,
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "A" = (
 /turf/open/floor/plating,
 /area/space)
 "B" = (
 /turf/open/floor/carpet/stellar,
 /area/space)
+"C" = (
+/obj/structure/table,
+/obj/machinery/jukebox/boombox,
+/turf/open/floor/carpet,
+/area/space)
+"D" = (
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "E" = (
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"F" = (
+/obj/effect/turf_decal/corner/opaque/blue/bordercorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "G" = (
 /turf/open/floor/carpet/nanoweave/orange,
 /area/space)
+"H" = (
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"I" = (
+/obj/structure/chair/sofa/brown/right/directional/north,
+/turf/open/floor/carpet,
+/area/space)
+"K" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"L" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
+	dry = 1;
+	pixel_x = -10;
+	pixel_y = 1;
+	name = "dried mushroom leaves"
+	},
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
+	dry = 1;
+	pixel_x = 3;
+	pixel_y = 8;
+	name = "dried mushroom leaves"
+	},
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
+	dry = 1;
+	pixel_x = -7;
+	pixel_y = 8;
+	name = "dried mushroom leaves"
+	},
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
+	dry = 1;
+	pixel_x = -2;
+	pixel_y = 1;
+	name = "dried mushroom leaves"
+	},
+/obj/item/clothing/mask/cigarette/pipe{
+	pixel_x = 5
+	},
+/turf/open/floor/carpet/blue,
+/area/space)
+"M" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/space)
+"N" = (
+/obj/structure/chair/office,
+/turf/open/floor/carpet/blue,
+/area/space)
+"O" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"P" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"Q" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/grimy,
+/area/space)
 "R" = (
 /turf/open/floor/carpet/green,
 /area/space)
+"T" = (
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "solgov_wall"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"U" = (
+/obj/machinery/computer/cargo{
+	icon_state = "computer-right";
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
 "V" = (
 /turf/open/floor/carpet/nanoweave/red,
+/area/space)
+"W" = (
+/obj/structure/chair,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"Y" = (
+/obj/structure/chair/sofa/brown/corner/directional/north,
+/turf/open/floor/carpet,
+/area/space)
+"Z" = (
+/obj/effect/turf_decal/corner/opaque/blue/border,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 
 (1,1,1) = {"
@@ -560,9 +767,9 @@ a
 a
 a
 f
-i
-i
-i
+G
+G
+G
 f
 f
 f
@@ -602,11 +809,11 @@ a
 a
 a
 f
-i
-i
-i
-i
-i
+G
+G
+G
+G
+G
 f
 G
 G
@@ -645,10 +852,10 @@ a
 a
 f
 f
-i
-i
-i
-i
+G
+G
+G
+G
 A
 G
 G
@@ -688,9 +895,9 @@ a
 a
 f
 f
-i
-i
-i
+G
+G
+G
 A
 G
 G
@@ -730,9 +937,9 @@ a
 a
 a
 f
-i
-i
-i
+G
+G
+G
 f
 G
 G
@@ -772,7 +979,7 @@ a
 a
 f
 f
-i
+A
 f
 f
 f
@@ -926,7 +1133,7 @@ f
 "}
 (22,1,1) = {"
 a
-A
+M
 R
 R
 A
@@ -963,12 +1170,12 @@ V
 V
 V
 V
-A
+M
 a
 "}
 (23,1,1) = {"
 a
-A
+M
 R
 R
 f
@@ -1005,13 +1212,13 @@ V
 V
 V
 V
-A
+M
 a
 "}
 (24,1,1) = {"
 a
-A
-A
+M
+M
 R
 f
 R
@@ -1046,14 +1253,14 @@ V
 V
 V
 V
-A
-A
+M
+M
 a
 "}
 (25,1,1) = {"
 a
 a
-A
+M
 f
 f
 f
@@ -1078,9 +1285,9 @@ m
 m
 f
 f
-k
-k
-k
+d
+u
+Y
 f
 f
 A
@@ -1088,7 +1295,7 @@ f
 f
 f
 f
-A
+M
 a
 a
 "}
@@ -1119,13 +1326,13 @@ f
 f
 f
 f
+C
+j
 k
-k
-k
-k
-k
-k
-k
+I
+v
+v
+v
 f
 E
 E
@@ -1160,14 +1367,14 @@ i
 i
 i
 A
-k
-k
-k
-k
-k
-k
-k
-k
+v
+v
+v
+v
+v
+v
+v
+t
 f
 a
 a
@@ -1202,13 +1409,13 @@ i
 i
 i
 f
-k
-k
-k
-k
-k
-k
-k
+q
+v
+v
+H
+v
+K
+P
 f
 f
 a
@@ -1240,17 +1447,17 @@ f
 f
 f
 A
+h
 f
 f
 f
-f
-k
-k
-k
-k
-k
-k
-k
+Q
+v
+v
+v
+W
+K
+P
 f
 a
 a
@@ -1281,13 +1488,13 @@ g
 g
 g
 f
-V
-V
-V
+O
+z
+L
+w
 f
-f
-k
-k
+y
+v
 f
 f
 f
@@ -1323,10 +1530,10 @@ g
 g
 g
 A
-V
-V
-V
-V
+O
+Z
+N
+r
 f
 f
 f
@@ -1365,10 +1572,10 @@ g
 g
 g
 f
-V
-V
-V
-V
+T
+Z
+c
+p
 f
 f
 a
@@ -1402,16 +1609,16 @@ a
 a
 a
 f
-A
+M
 g
 g
 g
 f
-V
-V
-V
-V
-A
+D
+F
+x
+x
+M
 f
 a
 a
@@ -1444,16 +1651,16 @@ a
 a
 a
 a
-A
-A
+M
+M
 g
 f
 f
-V
-V
-V
-A
-A
+o
+s
+U
+M
+M
 a
 a
 a
@@ -1487,14 +1694,14 @@ a
 a
 a
 a
-A
-A
+M
+M
 f
-A
-A
-A
-A
-A
+M
+M
+M
+M
+M
 a
 a
 a
