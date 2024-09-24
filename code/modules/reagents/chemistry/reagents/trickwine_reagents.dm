@@ -109,7 +109,7 @@
 /datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(debuff_effect)
-			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume * ETHANOL_METABOLISM) * 2) //Goal is it have the same duration as when you drink it.
+			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume / ETHANOL_METABOLISM) * 2) //Goal is it have the same duration as when you drink it.
 	return ..()
 
 
@@ -138,17 +138,6 @@
 			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
 	return ..()
 
-/datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH)
-		if(!iscarbon(M))
-
-			// This all needs to be refactored
-			var/mob/living/simple_animal/hostile/hostile_target = M
-			var/hostile_ai_status = hostile_target.AIStatus
-			hostile_target.toggle_ai(AI_OFF)
-			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
-	return ..()
-
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
@@ -158,10 +147,7 @@
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
 
 /datum/status_effect/trickwine/debuff/ash/tick()
-	//	I probally cant do this but im on my laptop
-	pick(owner.Jitter(3), owner.Dizzy(2), owner.adjust_drugginess(3))
-
-	switch(pick(list("jitter", "dizzy", "drug")))
+	switch(pick("jitter", "dizzy", "drug"))
 		if("jitter")
 			owner.Jitter(3)
 		if("dizzy")
@@ -286,10 +272,10 @@
 	id = "hearth_wine_debuff"
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
-	owner.fire_act()
+	//owner.fire_act()
 	var/turf/owner_turf = get_turf(owner)
 	owner_turf.IgniteTurf(duration)
-	new /obj/effect/hotspot(owner_turf, duration, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + duration * 10)
+	//new /obj/effect/hotspot(owner_turf, 1)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
