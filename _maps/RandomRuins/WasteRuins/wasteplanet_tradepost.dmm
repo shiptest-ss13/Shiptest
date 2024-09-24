@@ -1407,10 +1407,16 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "qV" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/secure_closet/engineering_welding{
+	populate = 0
+	},
+/obj/item/clothing/glasses/welding,
+/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/largetank,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost)
 "ra" = (
@@ -3665,10 +3671,15 @@
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qb" = (
-/obj/structure/closet/secure_closet/engineering_welding,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/closet/secure_closet/engineering_electrical{
+	populate = 0
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/multitool,
+/obj/item/stack/tape/industrial/electrical,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost)
 "Qe" = (
@@ -4552,19 +4563,6 @@
 "Zc" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
