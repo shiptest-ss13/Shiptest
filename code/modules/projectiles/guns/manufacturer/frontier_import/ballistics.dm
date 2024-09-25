@@ -227,3 +227,40 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
+
+GLOBAL_LIST_INIT(rpg_scrawlings, list(
+
+
+))
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot
+	name = "\improper Hammer"
+	desc = "A disposable rocket-propelled grenade launcher."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	burst_size = 1
+	fire_delay = 0.4 SECONDS
+	casing_ejector = FALSE
+	weapon_weight = WEAPON_HEAVY
+	bolt_type = BOLT_TYPE_NO_BOLT
+
+	cartridge_wording = "rocket"
+	empty_indicator = FALSE
+	tac_reloads = FALSE
+	internal_magazine = TRUE
+	sealed_magazine = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "\improper Mallet"
+	desc += "[pick(rpg_scrawlings)] is scrawled near the barrel"

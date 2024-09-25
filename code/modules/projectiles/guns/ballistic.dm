@@ -203,6 +203,8 @@
 	. = ..()
 	if (.)
 		return
+	if(sealed_magazine)
+		return
 	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine)
