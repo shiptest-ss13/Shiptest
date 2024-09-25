@@ -1,6 +1,6 @@
 #define EMPTY_GUN_HELPER(gun_type)				\
 	/obj/item/gun/ballistic/##gun_type/no_mag {	\
-		spawnwithmagazine = FALSE;				\
+		default_ammo_type = null;				\
 	}
 
 ///Subtype for any kind of ballistic gun
@@ -36,16 +36,17 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if (!spawnwithmagazine && !ispath(default_ammo_type, /obj/item/ammo_box/magazine/internal))
+	if (!default_ammo_type && !internal_magazine)
 		bolt_locked = TRUE
 		update_appearance()
 		return
 	if (!magazine)
 		magazine = new default_ammo_type(src)
-	if (!spawnwithmagazine)
+	if (!default_ammo_type)
 		get_ammo_list (drop_all = TRUE)
 	chamber_round()
 	update_appearance()
+
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
@@ -144,7 +145,7 @@
 
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
-	if(!istype(inserted_mag, default_ammo_type))
+	if(!(inserted_mag.type in allowed_ammo_types))
 		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(inserted_mag, src))

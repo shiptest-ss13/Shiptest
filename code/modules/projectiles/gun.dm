@@ -289,10 +289,6 @@
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()
 
-//BALLISTIC
-	///Whether the gun will spawn loaded with a magazine
-	var/spawnwithmagazine = TRUE
-
 //ENERGY
 	//set to true so the gun is given an empty cell
 	var/dead_cell = FALSE

@@ -328,5 +328,5 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	)
 
 /obj/item/gun/ballistic/derringer/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = null
 
