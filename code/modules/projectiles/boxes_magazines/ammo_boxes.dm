@@ -250,6 +250,12 @@
 	icon_state = "12gbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 
+/obj/item/ammo_box/a12g/blanks
+	name = "ammo box (12g blanks)"
+	desc = "A box of 12-gauge blank shells, designed for training."
+	icon_state ="12gbox-slug"
+	ammo_type = /obj/item/ammo_casing/shotgun/blank
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	desc = "A box of standard 9mm ammo."
