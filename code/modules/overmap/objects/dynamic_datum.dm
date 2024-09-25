@@ -230,6 +230,32 @@
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
 	token_icon_state = "signal_ship"
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_SETSIGNALSPRITE)
+	var/static/list/available_icon_options = list(\
+		"signal_none",
+		"signal_ship",
+		"signal_strange",
+		"signal_info",
+		"signal_distress",
+		"signal_trade",
+		"signal_wreckage",
+		"signal_health",
+		"signal_gun",
+		"signal_sword",
+		"signal_skull",
+		"signal_love",
+		"signal_diner")
+
+/datum/overmap/dynamic/empty/handle_interaction_on_target(mob/living/user, datum/overmap/interactor, choice)
+	switch(choice)
+		if(INTERACTION_OVERMAP_SETSIGNALSPRITE)
+			choice = tgui_input_list(usr, "What appearance should this space take?", "Select Appearance", available_icon_options)
+			if(!choice)
+				return "WARNING: Interaction aborted."
+			token_icon_state = choice
+			alter_token_appearance()
+			return INTERACTION_OVERMAP_SELECTED
+	return ..()
 
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
@@ -383,11 +409,6 @@
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
 
-/datum/overmap/dynamic/empty
-	name = "Empty Space"
-
-/datum/overmap/dynamic/empty/choose_level_type()
-	return
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY

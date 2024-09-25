@@ -281,7 +281,7 @@
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
 	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/quartz = 5)
-	custom_materials = list(/datum/material/quartz = 250, /datum/material/silicon = 50, /datum/material/carbon = 100, /datum/material/sulfur)
+	custom_materials = list(/datum/material/quartz = 250, /datum/material/silicon = 50, /datum/material/carbon = 100, /datum/material/sulfur = 10)
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"

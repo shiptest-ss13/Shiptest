@@ -2,6 +2,8 @@
 #define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
 #define INTERACTION_OVERMAP_HAIL "Hail"
 #define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
+#define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
+#define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction when it calls the parrent
 
 /**
  * # Overmap objects
@@ -238,12 +240,13 @@
 	return
 
 /**
- * Interacts with another overmap datum.
- * Sets X and Y equal to null. Does not check for distance or nulls.
+ * Shows the interaction menu
+ * Does not check for distance, that should be handled by the procs being called
  *
- * * dock_target - The overmap datum to dock to. Cannot be null.
+ * * user - The person doing the interaction
+ * * interact_target - What are we interacting with
  */
-/datum/overmap/proc/do_interaction_with(mob/living/user, datum/overmap/interact_target)
+/datum/overmap/proc/show_interaction_menu(mob/living/user, datum/overmap/interact_target)
 	if(!user)
 		return
 	if(!istype(interact_target))
@@ -254,9 +257,21 @@
 	if(!possible_interactions)
 		return "There is nothing of interest at [interact_target]."
 
-	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions, timeout = 12 SECONDS)
+	var/choice = tgui_input_list(usr, "What would you like to do at [interact_target]?", "Interact", possible_interactions, timeout = 10 SECONDS)
+	return do_interaction_with(user, interact_target, choice)
 
+/**
+ * This handles the selection of an interaction
+ *
+ * * user - The person doing the interaction
+ * * interact_target - What are we interacting with
+ * * choice - our selection
+ */
+/datum/overmap/proc/do_interaction_with(mob/living/user, datum/overmap/interact_target, choice)
+	choice = interact_target.handle_interaction_on_target(user, src, choice)
 	switch(choice)
+		if(INTERACTION_OVERMAP_SELECTED) // this means a subtype proc handled the selection code, thus we don't do anything
+			return
 		if(INTERACTION_OVERMAP_DOCK)
 			if(docked_to || docking)
 				return "ERROR: Unable to do this currently! Reduce speed or undock!"
@@ -269,11 +284,37 @@
 				return "WARNING: Interaction aborted."
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
+			if(docked_to || docking)
+				return "ERROR: Unable to do this currently! Undock first!"
 			return Dock(interact_target)
 		if(INTERACTION_OVERMAP_HAIL)
 			return do_hail(user, interact_target)
 		if(INTERACTION_OVERMAP_INTERDICTION)
-			return "Not implmented. Aborting"
+			if(docked_to || docking)
+				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+			if(interact_target.docked_to || interact_target.docking)
+				return "ERROR: Unable to do this currently! Target is docked or docking!"
+
+			var/list/dockables = get_dockable_locations(src)
+			if(!dockables.len)
+				return "ERROR: No open ports on [src]."
+			choice = tgui_input_list(usr, "Select where to dock [interact_target]?", "Dock at", dockables)
+			if(!choice)
+				return "WARNING: Interaction aborted."
+			return interact_target.Dock(src, choice)
+	//if nothing returns, return choice?
+	return choice
+
+/**
+ * This handles the interaction on the target, rather than on the interactor.
+ * Useful for special behavior on the target. Otherwise, return choice
+ *
+ * * user - The person doing the interaction
+ * * interactor - The ship interacting with use
+ * * choice - our selection
+ */
+/datum/overmap/proc/handle_interaction_on_target(mob/living/user, datum/overmap/interactor, choice)
+	return choice
 
 /**
  * Gets all the available interaction options.

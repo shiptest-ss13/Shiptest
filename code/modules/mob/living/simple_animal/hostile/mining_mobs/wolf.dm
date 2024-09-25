@@ -14,8 +14,8 @@
 	move_to_delay = 25
 	ranged = 1
 	ranged_cooldown_time = 90
-	maxHealth = 100
-	health = 100
+	maxHealth = 50
+	health = 50
 	obj_damage = 15
 	melee_damage_lower = 7
 	melee_damage_upper = 7

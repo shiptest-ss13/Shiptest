@@ -115,6 +115,7 @@
 		if(user.mind && user.mind.assigned_role == "Clown")
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "clownshoes", /datum/mood_event/clownshoes)
 
+
 /obj/item/clothing/shoes/clown_shoes/dropped(mob/user)
 	. = ..()
 	user.RemoveElement(/datum/element/waddling)
