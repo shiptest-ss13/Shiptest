@@ -1,5 +1,5 @@
 /obj/item/attachment/gun/energy
-	name = "underbarrel energy gun"
+	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	weapon_type = /obj/item/gun/energy/e_gun
 
@@ -27,7 +27,13 @@
 /obj/item/attachment/gun/energy/get_cell()
 	return attached_gun.cell
 
-/obj/item/attachment/gun/energy/mini
-	name = "underbarrel mini energy gun"
-	desc = "A compact energy gun designed to be mounted on the underside of another firearm for quick access."
-	weapon_type = /obj/item/gun/energy/e_gun/mini
+/obj/item/attachment/gun/energy/e_gun
+	name = "underbarrel energy gun"
+	desc = "A compact underbarrel energy gun. The reduction in size makes it less power effiecent than the standard model."
+	weapon_type = /obj/item/gun/energy/e_gun/underbarrel
+
+/obj/item/gun/energy/underbarrel
+	name = "underbarrel energy gun"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
+	dead_cell = TRUE
+
