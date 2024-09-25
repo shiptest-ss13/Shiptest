@@ -40,7 +40,7 @@
 		bolt_locked = TRUE
 		update_appearance()
 		return
-	if (!magazine)
+	if (!magazine && default_ammo_type)
 		magazine = new default_ammo_type(src)
 	if (!default_ammo_type)
 		get_ammo_list (drop_all = TRUE)

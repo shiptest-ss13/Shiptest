@@ -61,8 +61,6 @@
 	. = ..()
 	if(default_ammo_type)
 		cell = new default_ammo_type(src)
-	else
-		cell = new(src)
 	if(dead_cell)
 		cell.use(cell.maxcharge)
 	update_ammo_types()
