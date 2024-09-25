@@ -138,7 +138,7 @@
 	add_scanmod()
 	add_capacitor()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	log_message("[src.name] created.", LOG_MECHA)
 	GLOB.mechas_list += src //global mech list
 	prepare_huds()
@@ -177,7 +177,7 @@
 		AI.gib() //No wreck, no AI to recover
 		AI = null
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	equipment.Cut()
 
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
