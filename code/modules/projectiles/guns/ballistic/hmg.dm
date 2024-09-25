@@ -184,6 +184,8 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/skm_762_40,
+		/obj/item/ammo_box/magazine/skm_762_40/extended
+		/obj/item/ammo_box/magazine/skm_762_40/drum
 	)
 
 	fire_delay = 0.13 SECONDS
@@ -204,17 +206,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/skm_762_40/extended(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/skm_762_40/drum(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum

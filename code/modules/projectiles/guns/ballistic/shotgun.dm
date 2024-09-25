@@ -200,7 +200,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
 	if (!alternate_magazine)
-		alternate_magazine = new mag_type(src)
+		alternate_magazine = new default_ammo_type(src)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/attack_self(mob/living/user)
 	if(!chambered && magazine.contents.len)

@@ -684,6 +684,9 @@ EMPTY_GUN_HELPER(automatic/marksman/taipan)
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
+		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
+		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
+		/obj/item/ammo_box/magazine/m556_42_hydra/small
 	)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
@@ -803,20 +806,11 @@ EMPTY_GUN_HELPER(automatic/assault/hydra)
 	)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
-	spawnwithmagazine = FALSE //so we spawn with the short magaine
+	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/m556_42_hydra/extended(src)
-	chamber_round()
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
-	spawnwithmagazine = FALSE //so we spawn with the short magaine
-
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/m556_42_hydra/casket(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""
@@ -832,16 +826,10 @@ EMPTY_GUN_HELPER(automatic/assault/hydra)
 	spread_unwielded = 12
 	wield_slowdown = 0.8 //dmrrrr
 	wield_delay = 0.85 SECONDS //above
-	spawnwithmagazine = FALSE //so we spawn with the short magaine
 	zoomable = TRUE
+	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
 EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/dmr/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/m556_42_hydra/small(src)
-	chamber_round()
-
 
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 	name = "SMR-80 \"Hydra\""
