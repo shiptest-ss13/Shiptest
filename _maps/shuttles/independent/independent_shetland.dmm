@@ -1492,7 +1492,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "amogusthrusters";
+	id = "shetportthrusters";
 	name = "Thruster Lockdown";
 	pixel_y = -21
 	},
@@ -2297,7 +2297,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "amogusthrusters";
+	id = "shetstarboardengine";
 	name = "Thruster Lockdown";
 	pixel_y = 24
 	},
@@ -2748,10 +2748,13 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "amogusthrusters"
+	id = "shetstarboardengine"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4423,10 +4426,13 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "amogusthrusters"
+	id = "shetportthrusters"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4989,10 +4995,13 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "amogusthrusters"
+	id = "shetportthrusters"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -5157,10 +5166,13 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "amogusthrusters"
+	id = "shetstarboardengine"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
