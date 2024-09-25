@@ -67,7 +67,7 @@
 "aK" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "driller_conveyor"
+	id = "scarab_conveyor"
 	},
 /obj/structure/railing/corner{
 	dir = 1
@@ -324,7 +324,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -414,7 +414,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_bridge"
+	id = "scarab_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -648,7 +648,7 @@
 "io" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id = "driller_conveyor"
+	id = "scarab_conveyor"
 	},
 /obj/structure/railing/corner{
 	dir = 4
@@ -791,7 +791,7 @@
 /area/ship/maintenance/port)
 "jC" = (
 /obj/machinery/conveyor{
-	id = "driller_conveyor"
+	id = "scarab_conveyor"
 	},
 /obj/structure/railing{
 	dir = 8
@@ -805,7 +805,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_engines_port"
+	id = "scarab_engines_port"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -923,7 +923,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_engines_port"
+	id = "scarab_engines_port"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1065,7 +1065,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_engines_starboard"
+	id = "scarab_engines_starboard"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1077,7 +1077,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1444,7 +1444,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1768,7 +1768,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "driller_security"
+	id = "scarab_security"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1824,10 +1824,10 @@
 "vf" = (
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_cargo"
+	id = "scarab_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "driller_holo"
+	id = "scarab_holo"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-10"
@@ -1884,7 +1884,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_bridge"
+	id = "scarab_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1901,7 +1901,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1971,7 +1971,7 @@
 /obj/machinery/button/door{
 	pixel_x = -20;
 	dir = 4;
-	id = "driller_engines_starboard";
+	id = "scarab_engines_starboard";
 	name = "cargo door control"
 	},
 /obj/structure/closet/firecloset/wall/directional/east{
@@ -2045,7 +2045,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "driller_security";
+	id = "scarab_security";
 	name = "cargo door control";
 	pixel_y = -20;
 	pixel_x = 7
@@ -2095,7 +2095,7 @@
 /obj/machinery/button/door{
 	pixel_x = -20;
 	dir = 4;
-	id = "driller_engines_port";
+	id = "scarab_engines_port";
 	name = "cargo door control"
 	},
 /obj/structure/closet/firecloset/wall/directional/east{
@@ -2221,7 +2221,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2327,7 +2327,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_engines_starboard"
+	id = "scarab_engines_starboard"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2389,7 +2389,7 @@
 "Cg" = (
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_cargo"
+	id = "scarab_cargo"
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -2474,7 +2474,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_windows"
+	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2869,7 +2869,7 @@
 /obj/machinery/conveyor_switch/oneway{
 	pixel_y = 1;
 	pixel_x = -8;
-	id = "driller_conveyor"
+	id = "scarab_conveyor"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 8
@@ -2878,14 +2878,14 @@
 	pixel_x = 20;
 	dir = 8;
 	pixel_y = 6;
-	id = "driller_cargo";
+	id = "scarab_cargo";
 	name = "cargo door control"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = -4;
-	id = "driller_holo"
+	id = "scarab_holo"
 	},
 /obj/effect/turf_decal/industrial/traffic/corner{
 	dir = 4
@@ -3021,14 +3021,14 @@
 	pixel_x = 22;
 	dir = 8;
 	pixel_y = 9;
-	id = "driller_bridge";
+	id = "scarab_bridge";
 	name = "bridge blast doors"
 	},
 /obj/machinery/button/door{
 	pixel_x = 22;
 	dir = 8;
 	pixel_y = -2;
-	id = "driller_windows";
+	id = "scarab_windows";
 	name = "window lockdown"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3357,7 +3357,7 @@
 "Nu" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "driller_conveyor"
+	id = "scarab_conveyor"
 	},
 /obj/structure/railing{
 	dir = 4
@@ -3390,7 +3390,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor{
 	dir = 2;
-	id = "driller_bridge"
+	id = "scarab_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3771,10 +3771,10 @@
 "UN" = (
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "driller_cargo"
+	id = "scarab_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "driller_holo";
+	id = "scarab_holo";
 	dir = 1
 	},
 /obj/structure/cable/green{
