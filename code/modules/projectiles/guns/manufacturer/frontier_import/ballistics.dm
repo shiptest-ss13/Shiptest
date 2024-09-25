@@ -264,8 +264,6 @@
 	if(!chambered)
 		. += span_warning("It has been spent, and is now useless.")
 
-
-
 /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
 	name = "oneshot rocket launcher magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
