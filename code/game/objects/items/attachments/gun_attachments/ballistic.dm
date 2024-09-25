@@ -20,25 +20,28 @@
 	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 	return examine_list
 
-/obj/item/attachment/gun/ballistic/launcher
-	name = "underbarrel 40mm grenade launcher"
-	desc = "A break action, single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
-	weapon_type = /obj/item/gun/ballistic/revolver/grenadelauncher
+/obj/item/gun/ballistic/shotgun/underbarrel
+	name = "underbarrel ballistic gun"
+	desc = "You shouldnt be seeing this."
+	semi_auto = TRUE
+	always_chambers = TRUE
+	casing_ejector = TRUE
+	gunslinger_recoil_bonus = 0
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/underbarrel
 
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
 	desc = "A single shot underbarrel shotgun for warding off anyone who gets too close for comfort."
-	weapon_type = /obj/item/gun/ballistic/shotgun/doublebarrel/underbarrel
+	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/underbarrel
-	name = "underbarrel shotgun"
-	desc = "You probably shouldn't be seeing this."
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/underbarrel
-	gun_firemodes = list(FIREMODE_SEMIAUTO)
+/obj/item/attachment/gun/ballistic/launcher
+	name = "underbarrel 40mm grenade launcher"
+	desc = "A break action, single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
+	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 
-/obj/item/attachment/gun/ballistic/shotgun/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
-	. = ..()
-	if(!(attached_gun.bolt_locked))
-		examine_list += span_notice("\The [name]'s [attached_gun.bolt_wording] is closed.")
-	else
-		examine_list += span_notice("\The [name]'s [attached_gun.bolt_wording] is open, and can be loaded.")
+/obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
+	name = "underbarrel grenade launcher"
+	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+
+

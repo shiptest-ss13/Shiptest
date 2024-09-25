@@ -12,6 +12,8 @@
 
 	has_safety = TRUE
 	safety = TRUE
+	// when we load the gun, should it instantly chamber the next round?
+	var/always_chambers = FALSE
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
@@ -216,14 +218,14 @@
 		return
 	if (istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
-			if (chambered && !chambered.BB)
+			if ((chambered && !chambered.BB) || (chambered && always_chambers))
 				chambered.on_eject(shooter = user)
 				chambered = null
 			var/num_loaded = magazine.attackby(A, user, params)
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
-				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
+				if ((chambered == null && bolt_type == BOLT_TYPE_NO_BOLT) || always_chambers)
 					chamber_round()
 				A.update_appearance()
 				update_appearance()
@@ -270,10 +272,6 @@
 		eject_magazine(user)
 		return
 	return ..()
-
-/obj/item/gun/ballistic/pre_attack(atom/A, mob/living/user, params)
-	. = ..()
-
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
