@@ -34,7 +34,7 @@
 		/obj/item/scalpel/augment = 75,
 		/obj/item/scalpel/advanced = 60,
 		TOOL_SCALPEL = 45,
-		/obj/item/kitchen/knife = 30,
+		/obj/item/melee/knife = 30,
 		/obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE
