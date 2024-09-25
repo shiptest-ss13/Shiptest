@@ -22,8 +22,10 @@
 	icon_state = "mini"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
-	cell_type = /obj/item/stock_parts/cell/gun/mini
-	mag_size = MAG_SIZE_SMALL
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
@@ -43,7 +45,7 @@
 	ammo_x_offset = 2
 	charge_sections = 5
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -69,7 +71,7 @@
 /obj/item/gun/energy/e_gun/hos
 	name = "\improper X-01 MultiPhase Energy Gun"
 	desc = "This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time."
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	icon_state = "hoslaser"
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
@@ -184,7 +186,6 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-	mag_size = MAG_SIZE_SMALL
 
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
@@ -193,7 +194,10 @@
 	spread_unwielded = 5
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
-	cell_type = /obj/item/stock_parts/cell/gun/mini
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 
 /obj/item/gun/energy/e_gun/adv_stopping
 	name = "advanced stopping revolver"

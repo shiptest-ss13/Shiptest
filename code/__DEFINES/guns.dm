@@ -157,10 +157,6 @@
 ///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
 #define AMMO_BOX_FULL_EMPTY 2
 
-#define MAG_SIZE_SMALL 1
-#define MAG_SIZE_MEDIUM 2
-#define MAG_SIZE_LARGE 3
-
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)
 #define REFLECT_FAKEPROJECTILE (1<<1)

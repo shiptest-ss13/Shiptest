@@ -7,8 +7,8 @@
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
-	if(cell_type)
-		cell = new cell_type(src)
+	if(default_ammo_type)
+		cell = new default_ammo_type(src)
 	else
 		cell = new(src)
 	update_appearance()
@@ -42,19 +42,13 @@
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
-	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
+	if (!internal_cell && A.type in allowed_ammo_types)
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")

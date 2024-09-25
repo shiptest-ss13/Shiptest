@@ -97,7 +97,6 @@
 //ENERGY
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
@@ -105,8 +104,6 @@
 	var/charge_delay = 4
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
-	///Used for large and small cells
-	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 

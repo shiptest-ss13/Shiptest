@@ -7,7 +7,6 @@
 	ammo_x_offset = 2
 	ammo_y_offset = 2
 	w_class = WEIGHT_CLASS_HUGE
-	mag_size = MAG_SIZE_LARGE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
@@ -59,7 +58,10 @@
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/meteor)
-	cell_type = /obj/item/stock_parts/cell/potato
+	default_ammo_type = /obj/item/stock_parts/cell/potato
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/potato,
+	)
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
@@ -282,7 +284,10 @@
 	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
-	cell_type = /obj/item/stock_parts/cell/secborg
+	default_ammo_type = /obj/item/stock_parts/cell/secborg
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/secborg,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
@@ -340,7 +345,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/temperature/security

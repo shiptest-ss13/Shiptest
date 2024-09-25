@@ -96,8 +96,10 @@
 	icon_state = "lasercannon"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_size = MAG_SIZE_LARGE
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
@@ -203,9 +205,11 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	mag_size = MAG_SIZE_SMALL
 	w_class = WEIGHT_CLASS_NORMAL
-	cell_type = /obj/item/stock_parts/cell/gun/mini
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
@@ -245,8 +249,10 @@
 	icon_state = "e50"
 	item_state = "e50"
 
-	mag_size = MAG_SIZE_LARGE
-	cell_type = /obj/item/stock_parts/cell/gun/large
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY
 	manufacturer = MANUFACTURER_EOEHOMA
