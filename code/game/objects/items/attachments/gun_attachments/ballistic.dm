@@ -18,6 +18,7 @@
 	if (attached_gun.bolt_locked)
 		examine_list += span_notice("-The [name]'s [ballistic_gun.bolt_wording] is locked back and needs to be released before firing.")
 	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	return examine_list
 
 /obj/item/attachment/gun/ballistic/launcher
 	name = "underbarrel 40mm grenade launcher"

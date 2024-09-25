@@ -1,7 +1,7 @@
 /obj/item/attachment/gun/flamethrower
 	name = "underbarrel flamethrower"
 	desc = "A compact underbarrel flamethrower holding up to 20 units of fuel, enough for two sprays."
-	attached_gun = null
+	weapon_type = null
 	var/obj/item/flamethrower/underbarrel/attached_flamethrower
 
 /obj/item/attachment/gun/flamethrower/Initialize()
@@ -32,12 +32,12 @@
 		attached_flamethrower.reagents.clear_reagents()
 
 /obj/item/attachment/gun/flamethrower/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
-	. = ..()
 	var/total_volume = 0
 	for(var/datum/reagent/R in attached_flamethrower.beaker.reagents.reagent_list)
 		total_volume += R.volume
 	examine_list += span_notice("-\The [src] has [total_volume] units of fuel left.")
 	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	return examine_list
 
 /obj/item/attachment/gun/flamethrower/on_wield(obj/item/gun/gun, mob/user, list/params)
 	return FALSE

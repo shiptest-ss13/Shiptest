@@ -110,6 +110,11 @@
 /obj/item/attachment/proc/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	return
 
+/obj/item/attachment/examine(mob/user)
+	. = ..()
+	var/list/examine_info = list()
+	. += on_examine(examine_list = examine_info)
+
 ///Handles the modifiers to the parent gun
 /obj/item/attachment/proc/apply_modifiers(obj/item/gun/gun, mob/user, attaching)
 	if(attaching)

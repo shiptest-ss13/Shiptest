@@ -9,8 +9,9 @@
 	else
 		return ..()
 
-
 /obj/item/attachment/gun/riot/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/grenadelauncher/launcher = attached_gun
 	if(launcher.grenades.len)
 		examine_list += "The [name] is loaded with a grenade."
+	examine_list += span_notice("-You can eject a grenade from the [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	return examine_list

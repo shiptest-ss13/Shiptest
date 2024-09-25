@@ -15,6 +15,7 @@
 /obj/item/gun/grenadelauncher/examine(mob/user)
 	. = ..()
 	. += "[grenades.len] / [max_grenades] grenades loaded."
+	. += span_notice("You can eject a grenade from the [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 
 /obj/item/gun/grenadelauncher/unique_action(mob/living/user)
 	// there are no grenades
