@@ -8,7 +8,10 @@
 	icon_state = "gauss"
 	item_state = "arg"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/gauss
+	default_ammo_type = /obj/item/ammo_box/magazine/gauss
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/gauss,
+	)
 	fire_sound = 'sound/weapons/gun/gauss/magrifle.ogg'
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	burst_size = 1
@@ -33,7 +36,10 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	name = "Model H"
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor."
-	mag_type = /obj/item/ammo_box/magazine/modelh
+	default_ammo_type = /obj/item/ammo_box/magazine/modelh
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/modelh,
+	)
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -60,14 +66,20 @@
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
-	mag_type = /obj/item/ammo_box/magazine/modelh
+	default_ammo_type = /obj/item/ammo_box/magazine/modelh
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/modelh,
+	)
 	icon_state = "model-h_suns"
 	item_state = "model-h_suns"
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
 	name = "Claris"
 	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended."
-	mag_type = /obj/item/ammo_box/magazine/internal/claris
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/claris
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/claris,
+	)
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -93,7 +105,10 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
 	desc = "A Solarian carbine, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
-	mag_type = /obj/item/ammo_box/magazine/gar
+	default_ammo_type = /obj/item/ammo_box/magazine/gar
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/gar,
+	)
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'

@@ -29,7 +29,10 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/m45
+	default_ammo_type = /obj/item/ammo_box/magazine/m45
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m45,
+	)
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -67,7 +70,10 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 	icon_state = "deagle"
 	force = 14
-	mag_type = /obj/item/ammo_box/magazine/m50
+	default_ammo_type = /obj/item/ammo_box/magazine/m50
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m50,
+	)
 	mag_display = TRUE
 	show_magazine_on_sprite = TRUE
 	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
@@ -107,7 +113,10 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/co9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/co9mm,
+	)
 	manufacturer = MANUFACTURER_NANOTRASEN
 	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -144,7 +153,10 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/co9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/co9mm,
+	)
 	var/funnysounds = TRUE
 	var/cooldown = 0
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -207,7 +219,10 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
 
 	weapon_weight = WEAPON_LIGHT
-	mag_type = /obj/item/ammo_box/magazine/pistol556mm
+	default_ammo_type = /obj/item/ammo_box/magazine/pistol556mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/pistol556mm,
+	)
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -231,7 +246,10 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 
 	icon_state = "disposable" //credit to discord user 20nypercent for the sprite
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/disposable
+	default_ammo_type = /obj/item/ammo_box/magazine/disposable
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/disposable,
+	)
 	custom_materials = list(/datum/material/plastic=2000)
 	manufacturer = MANUFACTURER_NONE
 	has_safety = FALSE //thing barely costs anything, why would it have a safety?
@@ -256,7 +274,10 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/derr38
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr38
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/derr38,
+	)
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
 	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
@@ -291,14 +312,20 @@ EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 	icon_state = "derringer_syndie"
-	mag_type = /obj/item/ammo_box/magazine/internal/derr357
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/derr357,
+	)
 	fire_sound_volume = 50 //Tactical stealth firing
 
 /obj/item/gun/ballistic/derringer/gold
 	name = "\improper Golden Derringer"
 	desc = "The golden sheen is somewhat counter-intuitive on a holdout weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
-	mag_type = /obj/item/ammo_box/magazine/internal/derr357
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/derr357,
+	)
 
 /obj/item/gun/ballistic/derringer/no_mag
 	spawnwithmagazine = FALSE

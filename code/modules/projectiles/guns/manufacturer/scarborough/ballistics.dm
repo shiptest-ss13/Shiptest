@@ -10,7 +10,10 @@
 	item_state = "sa_generic"
 
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+	default_ammo_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m10mm_ringneck,
+	)
 
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
@@ -101,7 +104,10 @@ EMPTY_GUN_HELPER(automatic/pistol/ringneck/indie)
 	icon_state = "asp"
 	item_state = "sa_generic"
 
-	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
+	default_ammo_type = /obj/item/ammo_box/magazine/m57_39_asp
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m57_39_asp,
+	)
 
 	fire_sound = 'sound/weapons/gun/pistol/asp.ogg'
 
@@ -222,7 +228,10 @@ EMPTY_GUN_HELPER(revolver/viper/indie)
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
 
-	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m9mm_rattlesnake,
+	)
 
 	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
@@ -308,7 +317,10 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 
 
 	w_class = WEIGHT_CLASS_TINY
-	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m22lr_himehabu,
+	)
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -371,7 +383,10 @@ EMPTY_GUN_HELPER(automatic/pistol/himehabu)
 	icon_state = "cobra"
 	item_state = "cobra"
 
-	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m45_cobra,
+	)
 
 	fire_sound = 'sound/weapons/gun/smg/cobra.ogg'
 
@@ -445,7 +460,10 @@ EMPTY_GUN_HELPER(automatic/smg/cobra/indie)
 	icon_state = "sidewinder"
 	item_state = "sidewinder"
 
-	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
+	default_ammo_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m57_39_sidewinder,
+	)
 
 	fire_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
@@ -526,7 +544,10 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 
 	fire_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 
-	mag_type = /obj/item/ammo_box/magazine/boomslang
+	default_ammo_type = /obj/item/ammo_box/magazine/boomslang
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/boomslang,
+	)
 	w_class = WEIGHT_CLASS_BULKY
 
 	fire_delay = 1 SECONDS
@@ -621,7 +642,10 @@ EMPTY_GUN_HELPER(automatic/marksman/boomslang/indie)
 	rack_sound = 'sound/weapons/gun/sniper/rack.ogg'
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	weapon_weight = WEAPON_HEAVY
-	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
+	default_ammo_type = /obj/item/ammo_box/magazine/sniper_rounds
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/sniper_rounds,
+	)
 	w_class = WEIGHT_CLASS_BULKY
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
@@ -657,7 +681,10 @@ EMPTY_GUN_HELPER(automatic/marksman/taipan)
 	icon_state = "hydra"
 	item_state = "hydra"
 
-	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra
+	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m556_42_hydra,
+	)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
@@ -940,7 +967,10 @@ EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
 	item_state = "bulldog"
 
 	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12g_bulldog,
+	)
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	show_magazine_on_sprite = TRUE
@@ -1044,7 +1074,10 @@ EMPTY_GUN_HELPER(shotgun/bulldog)
 
 	icon_state = "mako"
 	item_state = "mako"
-	mag_type = /obj/item/ammo_box/magazine/internal/mako
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/mako
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/mako,
+	)
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	w_class = WEIGHT_CLASS_BULKY

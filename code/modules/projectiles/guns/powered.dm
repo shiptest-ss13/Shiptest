@@ -1,5 +1,8 @@
 /obj/item/gun/ballistic/automatic/powered
-	mag_type = /obj/item/ammo_box/magazine/gauss
+	default_ammo_type = /obj/item/ammo_box/magazine/gauss
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/gauss,
+	)
 	charge_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()

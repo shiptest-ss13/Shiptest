@@ -33,7 +33,10 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "wt550"
 	item_state = "arg"
-	mag_type = /obj/item/ammo_box/magazine/wt550m9
+	default_ammo_type = /obj/item/ammo_box/magazine/wt550m9
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/wt550m9,
+	)
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
@@ -53,7 +56,10 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "vector"
 	item_state = "vector"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm9mm,
+	) //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
@@ -70,7 +76,10 @@
 
 	icon_state = "firestorm"
 	item_state = "firestorm"
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c45_firestorm_mag,
+	)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
@@ -110,7 +119,10 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/skm_545_39
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_545_39
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_545_39,
+	)
 
 	recoil = 2
 	recoil_unwielded = 6
@@ -161,7 +173,10 @@
 	icon_state = "skm_inteqsmg"
 	item_state = "skm_inteqsmg"
 
-	mag_type = /obj/item/ammo_box/magazine/smgm10mm
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm10mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm10mm,
+	)
 	manufacturer = MANUFACTURER_INTEQ
 
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
@@ -194,7 +209,10 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "saber"
 	item_state = "gun"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm9mm,
+	)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD

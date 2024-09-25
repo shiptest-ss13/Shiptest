@@ -139,7 +139,10 @@
 	icon_state = "solar"
 
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
+	default_ammo_type = /obj/item/ammo_box/magazine/rifle47x33mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/rifle47x33mm,
+	)
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -178,7 +181,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
 
 	fire_delay = 0.13 SECONDS
 
