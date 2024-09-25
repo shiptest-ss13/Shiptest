@@ -252,7 +252,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -313,7 +312,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5,
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -601,7 +599,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
-			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,
