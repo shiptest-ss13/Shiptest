@@ -410,6 +410,8 @@
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
 
+/obj/item/stock_parts/cell/gun/empty
+
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
 	charge = 0
