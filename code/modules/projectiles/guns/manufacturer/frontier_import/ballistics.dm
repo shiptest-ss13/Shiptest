@@ -241,6 +241,7 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "rpg"
 
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
