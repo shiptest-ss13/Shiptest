@@ -16,6 +16,8 @@
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
+	icon = 'icons/obj/clothing/back/backpacks.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back/backpacks.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pickup_sound = "rustle"
@@ -26,7 +28,9 @@
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
-	supports_variations = VOX_VARIATION
+
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -215,7 +219,6 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
-	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
@@ -226,7 +229,6 @@
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -260,12 +262,6 @@
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
 	item_state = "satchel-chem"
-
-/obj/item/storage/backpack/satchel/gen
-	name = "geneticist satchel"
-	desc = "A sterile satchel with geneticist colours."
-	icon_state = "satchel-gen"
-	item_state = "satchel-gen"
 
 /obj/item/storage/backpack/satchel/tox
 	name = "scientist satchel"
@@ -354,8 +350,6 @@
 /obj/item/storage/backpack/messenger
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
-	icon = 'icons/obj/storage.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
 	greyscale_icon_state = "satchel"

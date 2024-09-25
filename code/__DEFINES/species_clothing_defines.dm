@@ -30,6 +30,7 @@
 
 ///KEPORI PATHS
 #define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
+#define KEPORI_BACK_PATH 'icons/mob/species/kepori/onmob_back_kepori.dmi'
 #define KEPORI_SHOES_PATH 'icons/mob/species/kepori/onmob_feet_kepori.dmi'
 #define KEPORI_SUIT_PATH 'icons/mob/species/kepori/onmob_suit_kepori.dmi'
 #define KEPORI_EARS_PATH 'icons/mob/species/kepori/onmob_ears_kepori.dmi'

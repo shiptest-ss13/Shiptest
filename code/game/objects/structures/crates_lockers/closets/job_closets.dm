@@ -249,8 +249,7 @@
 		/obj/item/clothing/under/rank/medical/geneticist = 2,
 		/obj/item/clothing/shoes/sneakers/white = 2,
 		/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
-		/obj/item/storage/backpack/genetics = 2,
-		/obj/item/storage/backpack/satchel/gen = 2)
+		/obj/item/storage/backpack/genetics = 2)
 	generate_items_inside(items_inside,src)
 	return
 
