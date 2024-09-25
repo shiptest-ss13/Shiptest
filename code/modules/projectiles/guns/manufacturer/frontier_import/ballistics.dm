@@ -229,33 +229,27 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 GLOBAL_LIST_INIT(rpg_scrawlings, list(
-
-
+	"\"FRONT TOWARDS ENEMY\""
+	"\"MY WIFE LEFT ME\""
 ))
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
-	desc = "A disposable rocket-propelled grenade launcher."
+	desc = "A disposable rocket-propelled grenade launcher loaded with a HEDP shell."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	burst_size = 1
-	fire_delay = 0.4 SECONDS
-	casing_ejector = FALSE
 	weapon_weight = WEAPON_HEAVY
 	bolt_type = BOLT_TYPE_NO_BOLT
 
 	cartridge_wording = "rocket"
 	empty_indicator = FALSE
-	tac_reloads = FALSE
-	internal_magazine = TRUE
 	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 
@@ -263,4 +257,11 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	. = ..()
 	if(prob(1))
 		name = "\improper Mallet"
-	desc += "[pick(rpg_scrawlings)] is scrawled near the barrel"
+	desc += "[pick(rpg_scrawlings)] is scrawled on the tube"
+
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
+	caliber = "84mm"
+	max_ammo = 1
