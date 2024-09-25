@@ -228,20 +228,18 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
-GLOBAL_LIST_INIT(rpg_scrawlings, list(
-	"\"FRONT TOWARDS ENEMY\""
-	"\"MY WIFE LEFT ME\""
-))
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
 	desc = "A disposable rocket-propelled grenade launcher loaded with a HEDP shell."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	base_icon_state = "rpg"
 	icon_state = "rpg"
+	item_state = "rpg"
 
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
@@ -253,12 +251,19 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	empty_indicator = FALSE
 	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
+	slot_flags = ITEM_SLOT_BACK
+
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
 	. = ..()
 	if(prob(1))
 		name = "\improper Mallet"
-	desc += "[pick(rpg_scrawlings)] is scrawled on the tube"
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/examine(mob/user)
+	. = ..()
+	if(!chambered)
+		. += span_warning("It has been spent, and is now useless.")
+
 
 
 /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot

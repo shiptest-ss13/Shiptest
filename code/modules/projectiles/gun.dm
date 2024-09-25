@@ -70,7 +70,7 @@
 	var/casing_ejector = TRUE
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
-	///Whether the gun can *be* reloaded
+	///Whether the gun *can* be reloaded
 	var/sealed_magazine = FALSE
 
 
