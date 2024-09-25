@@ -42,7 +42,7 @@
 		return
 	if (!magazine && default_ammo_type)
 		magazine = new default_ammo_type(src)
-	if (!default_ammo_type)
+	if (spawn_no_ammo)
 		get_ammo_list (drop_all = TRUE)
 	chamber_round()
 	update_appearance()
@@ -332,7 +332,8 @@
 		rounds.Add(chambered)
 		if(drop_all)
 			chambered = null
-	rounds.Add(magazine.ammo_list(drop_all))
+	if(magazine)
+		rounds.Add(magazine.ammo_list(drop_all))
 	return rounds
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(

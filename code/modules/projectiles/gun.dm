@@ -288,7 +288,7 @@
 
 //ENERGY
 	//set to true so the gun is given an empty cell
-	var/dead_cell = FALSE
+	var/spawn_no_ammo = FALSE
 
 // Need to sort
 	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it

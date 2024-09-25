@@ -46,7 +46,7 @@
 	armour_penetration = -10
 
 /obj/item/gun/energy/kalix/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
@@ -107,7 +107,7 @@
 	delay = 0
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"

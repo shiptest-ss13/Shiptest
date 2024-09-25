@@ -16,7 +16,7 @@
 	return
 
 /obj/item/gun/energy/ionrifle/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"

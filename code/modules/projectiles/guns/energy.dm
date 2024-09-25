@@ -61,7 +61,7 @@
 	. = ..()
 	if(default_ammo_type)
 		cell = new default_ammo_type(src)
-	if(dead_cell)
+	if(spawn_no_ammo)
 		cell.use(cell.maxcharge)
 	update_ammo_types()
 	recharge_newshot(TRUE)
