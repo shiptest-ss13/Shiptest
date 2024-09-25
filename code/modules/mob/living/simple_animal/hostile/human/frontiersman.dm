@@ -9,7 +9,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
-				/obj/item/kitchen/knife/combat/survival)
+				/obj/item/melee/knife/survival)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -57,7 +57,7 @@
 	icon_state = "frontiersmansurgeon"
 	icon_living = "frontiersmansurgeon"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/kitchen/knife/combat/survival,
+				/obj/item/melee/knife/survival,
 				/obj/item/gun/syringe)
 
 	minimum_distance = 1
@@ -75,7 +75,7 @@
 	icon_state = "frontiersmansurgeon_mask"
 	icon_living = "frontiersmansurgeon_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/kitchen/knife/combat/survival,
+				/obj/item/melee/knife/survival,
 				/obj/item/gun/syringe,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
