@@ -110,8 +110,6 @@
 	return ..()
 
 /obj/item/gun/energy/unique_action(mob/living/user)
-	if(..())
-		return
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_appearance()

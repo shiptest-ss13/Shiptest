@@ -15,11 +15,6 @@
 	else if(gun.safety == FALSE && attached_flamethrower.lit == FALSE)
 		attached_flamethrower.toggle_igniter(user)
 
-/obj/item/attachment/gun/flamethrower/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
-	if(toggled)
-		if(istype(attack_item,/obj/item/reagent_containers/glass))
-			attached_flamethrower.attackby(attack_item,user)
-
 /obj/item/attachment/gun/flamethrower/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I,/obj/item/reagent_containers/glass))
 		attached_flamethrower.attackby(I,user)

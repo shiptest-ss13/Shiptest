@@ -17,15 +17,16 @@
 	. += "[grenades.len] / [max_grenades] grenades loaded."
 
 /obj/item/gun/grenadelauncher/unique_action(mob/living/user)
-	if(..())
+	// there are no grenades
+	if(!can_shoot())
 		return
-	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
+	var/obj/item/grenade/F = grenades[1]
 	grenades -= F
-	F.forceMove(user.loc)
+	user.put_in_hands(F)
+	to_chat(user, span_notice("You unload the [F] from the [src]."))
 
 
 /obj/item/gun/grenadelauncher/attackby(obj/item/I, mob/user, params)
-
 	if((istype(I, /obj/item/grenade)))
 		if(grenades.len < max_grenades)
 			if(!user.transferItemToLoc(I, src))

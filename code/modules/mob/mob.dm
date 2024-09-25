@@ -674,6 +674,9 @@
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
+		if(I.pre_unique_action(src))
+			update_inv_hands()
+			return
 		I.unique_action(src)
 		update_inv_hands()
 

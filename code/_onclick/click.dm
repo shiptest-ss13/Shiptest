@@ -159,7 +159,7 @@
 	else
 		if(W)
 			if(W.pre_attack(A,src,params))
-
+				return
 			else
 				W.afterattack(A,src,0,params)
 		else

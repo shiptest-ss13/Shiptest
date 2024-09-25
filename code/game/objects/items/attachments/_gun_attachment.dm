@@ -27,12 +27,16 @@
 	attached_gun.on_unwield(src, user)
 
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
-	return FALSE
+	if(toggled)
+		attackby(attack_item,user)
 
 /obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(toggled)
 		attached_gun.process_fire(target,user,TRUE)
 		return COMPONENT_NO_ATTACK
+
+/obj/item/attachment/gun/unique_action(mob/living/user)
+	attached_gun.unique_action(user)
 
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(toggled)

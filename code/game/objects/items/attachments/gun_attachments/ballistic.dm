@@ -2,11 +2,6 @@
 	name = "ballistic underbarrel gun"
 	desc = "A ballistic underbarrel gun. It shoots bullets. Or something."
 
-/obj/item/attachment/gun/ballistic/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
-	if(toggled)
-		if(istype(attack_item,/obj/item/ammo_casing) || istype(attack_item, /obj/item/ammo_box))
-			attached_gun.attackby(attack_item, user)
-
 /obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
 		attached_gun.attackby(I, user)
