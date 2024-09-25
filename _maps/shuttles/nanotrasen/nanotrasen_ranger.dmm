@@ -4285,13 +4285,12 @@
 	pixel_x = 14;
 	pixel_y = 4
 	},
-/obj/item/kitchen/knife{
-	pixel_x = 2;
-	pixel_y = -13
-	},
 /obj/item/stack/medical/suture{
 	amount = 1;
 	name = "bloody suture"
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
@@ -6260,8 +6259,6 @@
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/storage/pistolcase,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
