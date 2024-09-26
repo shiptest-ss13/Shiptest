@@ -6,5 +6,5 @@
 	anchored = TRUE
 	density = FALSE
 	stored_sprite = "axe"
-	stored = /obj/item/melee/axe/fire
+	allowed_type = /obj/item/melee/axe/fire
 	req_one_access_txt = "24"
