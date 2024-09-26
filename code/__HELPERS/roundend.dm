@@ -116,7 +116,7 @@
 		SSblackbox.record_feedback("associative", "antagonists", 1, antag_info)
 
 /datum/controller/subsystem/ticker/proc/record_nuke_disk_location()
-	var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
+	var/obj/item/disk/nuclear/N = locate() in SSpoints_of_interest.other_points_of_interest
 	if(N)
 		var/list/data = list()
 		var/turf/T = get_turf(N)
