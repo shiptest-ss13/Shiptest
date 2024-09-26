@@ -85,9 +85,10 @@
 	return null
 
 /turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
-	if(try_clean(W, user, loc) || try_wallmount(W, user, loc))
+	if(!iswallturf(src))
 		return
-	..()
+	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
+		return
 
 /turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
 	if((user.a_intent != INTENT_HELP))
@@ -119,19 +120,6 @@
 	else if(istype(W, /obj/item/poster))
 		place_poster(W,user)
 		return TRUE
-
-	return FALSE
-
-/turf/closed/wall/try_decon(obj/item/I, mob/user, turf/T)
-	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
-			return FALSE
-
-		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
-		while(I.use_tool(src, user, breakdown_duration, volume=50))
-			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
-				alter_integrity(-(I.wall_decon_damage),FALSE,TRUE)
 
 	return FALSE
 

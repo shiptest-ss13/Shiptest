@@ -99,7 +99,7 @@
 	name = "phylactery of [mind.name]"
 
 	active_phylacteries++
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	START_PROCESSING(SSobj, src)
 	if(initial(SSticker.mode.round_ends_with_antag_death))
 		SSticker.mode.round_ends_with_antag_death = FALSE
@@ -107,7 +107,7 @@
 /obj/item/phylactery/Destroy(force=FALSE)
 	STOP_PROCESSING(SSobj, src)
 	active_phylacteries--
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	if(!active_phylacteries)
 		SSticker.mode.round_ends_with_antag_death = initial(SSticker.mode.round_ends_with_antag_death)
 	. = ..()

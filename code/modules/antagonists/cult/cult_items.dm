@@ -6,209 +6,6 @@
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/melee/cultblade/dagger
-	name = "ritual dagger"
-	desc = "A strange dagger said to be used by sinister groups for \"preparing\" a corpse before sacrificing it to their dark gods."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	item_state = "cultdagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_x_dimension = 32
-	inhand_y_dimension = 32
-	w_class = WEIGHT_CLASS_SMALL
-	force = 15
-	throwforce = 25
-	armour_penetration = 35
-	actions_types = list(/datum/action/item_action/cult_dagger)
-	var/drawing_rune = FALSE
-
-/obj/item/melee/cultblade/dagger/Initialize()
-	. = ..()
-	var/image/I = image(icon = 'icons/effects/blood.dmi' , icon_state = null, loc = src)
-	I.override = TRUE
-	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_dagger", I)
-
-/obj/item/melee/cultblade
-	name = "eldritch longsword"
-	desc = "A sword humming with unholy energy. It glows with a dim red light."
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	flags_1 = CONDUCT_1
-	sharpness = IS_SHARP
-	w_class = WEIGHT_CLASS_BULKY
-	force = 30
-	throwforce = 10
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
-
-/obj/item/melee/cultblade/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 40, 100)
-
-/obj/item/melee/cultblade/attack(mob/living/target, mob/living/carbon/human/user)
-	if(!iscultist(user))
-		user.Paralyze(100)
-		user.dropItemToGround(src, TRUE)
-		user.visible_message(
-			"<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
-			"<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		else
-			user.adjustBruteLoss(rand(force/2,force))
-		return
-	..()
-
-/obj/item/melee/cultblade/ghost
-	name = "eldritch sword"
-	force = 19 //can't break normal airlocks
-	item_flags = NEEDS_PERMIT | DROPDEL
-	flags_1 = NONE
-
-/obj/item/melee/cultblade/ghost/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
-
-/obj/item/melee/cultblade/pickup(mob/living/user)
-	..()
-	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-
-/obj/item/cult_bastard
-	name = "geometric bastard sword"
-	desc = "An enormous sword, once used by Nar'Sien cultists to rapidly harvest the souls of non-believers. It still yet hungers to taste inpure blood."
-	w_class = WEIGHT_CLASS_HUGE
-	block_chance = 50
-	throwforce = 20
-	force = 30
-	armour_penetration = 45
-	throw_speed = 1
-	throw_range = 3
-	sharpness = IS_SHARP
-	light_system = MOVABLE_LIGHT
-	light_range = 4
-	light_color = COLOR_RED
-	attack_verb = list("cleaved", "bisected", "tore", "brutalized", "smashed", "ripped", "diced", "carved")
-	icon_state = "cultbastard"
-	item_state = "cultbastard"
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	actions_types = list()
-	item_flags = SLOWS_WHILE_IN_HAND
-	var/datum/action/innate/dash/cult/jaunt
-	var/datum/action/innate/cult/spin2win/linked_action
-	var/spinning = FALSE
-	var/spin_cooldown = 250
-	var/dash_toggled = TRUE
-	var/list/nemesis_factions = list("mining", "boss")
-	var/faction_bonus_force = 25
-
-/obj/item/cult_bastard/Initialize()
-	. = ..()
-	jaunt = new(src)
-	linked_action = new(src)
-	AddComponent(/datum/component/butchering, 50, 120)
-	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-
-/obj/item/cult_bastard/attack(mob/living/target, mob/living/carbon/human/user)
-	var/nemesis_faction = FALSE
-	if(LAZYLEN(nemesis_factions))
-		for(var/F in target.faction)
-			if(F in nemesis_factions)
-				nemesis_faction = TRUE
-				force += faction_bonus_force
-				throwforce += faction_bonus_force
-				nemesis_effects(user, target)
-				break
-	. = ..()
-	if(nemesis_faction)
-		force -= faction_bonus_force
-		throwforce -= faction_bonus_force
-
-/obj/item/cult_bastard/proc/nemesis_effects(mob/living/user, mob/living/target)
-	return
-
-/obj/item/cult_bastard/Destroy()
-	QDEL_NULL(jaunt)
-	QDEL_NULL(linked_action)
-	return ..()
-
-/obj/item/cult_bastard/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
-	if(contents.len)
-		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
-	else
-		. += "The sword appears to be quite lifeless."
-
-/obj/item/cult_bastard/can_be_pulled(user)
-	return FALSE
-
-/obj/item/cult_bastard/attack_self(mob/user)
-	dash_toggled = !dash_toggled
-	if(dash_toggled)
-		to_chat(loc, "<span class='notice'>You raise [src] and prepare to jaunt with it.</span>")
-	else
-		to_chat(loc, "<span class='notice'>You lower [src] and prepare to swing it normally.</span>")
-
-/obj/item/cult_bastard/pickup(mob/living/user)
-	. = ..()
-	force = initial(force)
-	jaunt.Grant(user, src)
-	linked_action.Grant(user, src)
-	user.update_icons()
-
-/obj/item/cult_bastard/dropped(mob/user)
-	. = ..()
-	linked_action.Remove(user)
-	jaunt.Remove(user)
-	user.update_icons()
-
-/obj/item/cult_bastard/IsReflect()
-	if(spinning)
-		playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
-		return TRUE
-	else
-		..()
-
-/obj/item/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(prob(final_block_chance))
-		if(attack_type == PROJECTILE_ATTACK)
-			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
-			return TRUE
-		else
-			playsound(src, 'sound/weapons/parry.ogg', 75, TRUE)
-			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
-			return TRUE
-	return FALSE
-
-/obj/item/cult_bastard/afterattack(atom/target, mob/user, proximity, click_parameters)
-	. = ..()
-	if(dash_toggled && !proximity)
-		jaunt.Teleport(user, target)
-		return
-	if(proximity)
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if(H.stat != CONSCIOUS)
-				var/obj/item/soulstone/anybody/SS = new /obj/item/soulstone/anybody(src)
-				SS.attack(H, user)
-				if(!LAZYLEN(SS.contents))
-					qdel(SS)
-		if(istype(target, /obj/structure/constructshell) && contents.len)
-			var/obj/item/soulstone/anybody/SS = contents[1]
-			if(istype(SS))
-				SS.transfer_soul("CONSTRUCT",target,user)
-				qdel(SS)
-
 /datum/action/innate/dash/cult
 	name = "Rend the Veil"
 	desc = "Use the sword to shear open the flimsy fabric of this reality and teleport to your target."
@@ -225,45 +22,6 @@
 		return TRUE
 	else
 		return FALSE
-
-
-
-/datum/action/innate/cult/spin2win
-	name = "Geometer's Fury"
-	desc = "You draw on the power of the sword's ancient runes, spinning it wildly around you as you become immune to most attacks."
-	background_icon_state = "bg_demon"
-	button_icon_state = "sintouch"
-	var/cooldown = 0
-	var/mob/living/carbon/human/holder
-	var/obj/item/cult_bastard/sword
-
-/datum/action/innate/cult/spin2win/Grant(mob/user, obj/bastard)
-	. = ..()
-	sword = bastard
-	holder = user
-
-/datum/action/innate/cult/spin2win/IsAvailable()
-	if(cooldown <= world.time)
-		return TRUE
-	else
-		return FALSE
-
-/datum/action/innate/cult/spin2win/Activate()
-	cooldown = world.time + sword.spin_cooldown
-	holder.changeNext_move(50)
-	holder.apply_status_effect(/datum/status_effect/sword_spin)
-	sword.spinning = TRUE
-	sword.block_chance = 100
-	sword.slowdown += 1.5
-	addtimer(CALLBACK(src, PROC_REF(stop_spinning)), 50)
-	holder.update_action_buttons_icon()
-
-/datum/action/innate/cult/spin2win/proc/stop_spinning()
-	sword.spinning = FALSE
-	sword.block_chance = 50
-	sword.slowdown -= 1.5
-	sleep(sword.spin_cooldown)
-	holder.update_action_buttons_icon()
 
 /obj/item/restraints/legcuffs/bola/cult
 	name = "\improper Nar'Sien bola"
@@ -303,7 +61,7 @@
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank)
+	allowed = list(/obj/item/tome, /obj/item/tank)
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 40,"energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -349,7 +107,7 @@
 	icon_state = "magusred"
 	item_state = "magusred"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
+	allowed = list(/obj/item/tome)
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 50,"energy" = 50, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
@@ -369,7 +127,7 @@
 	item_state = "cult_armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
+	allowed = list(/obj/item/tome, /obj/item/tank/internals/)
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 30,"energy" = 40, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 40, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
 
@@ -430,7 +188,7 @@
 /obj/item/clothing/suit/hooded/cultrobes/berserker
 	name = "flagellant's robes"
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
+	allowed = list(/obj/item/tome)
 	armor = list("melee" = -45, "bullet" = -45, "laser" = -45,"energy" = -55, "bomb" = -45, "bio" = -45, "rad" = -45, "fire" = 0, "acid" = 0)
 	slowdown = -0.6
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/berserkerhood
@@ -581,132 +339,9 @@
 		..()
 		to_chat(user, "<span class='warning'>\The [src] can only transport items!</span>")
 
-
-/obj/item/cult_spear
-	name = "blood halberd"
-	desc = "A sickening spear composed entirely of crystallized blood."
-	icon_state = "bloodspear0"
-	base_icon_state = "occultpoleaxe"
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	slot_flags = 0
-	force = 17
-	throwforce = 40
-	throw_speed = 2
-	armour_penetration = 30
-	block_chance = 30
-	attack_verb = list("attacked", "impaled", "stabbed", "torn", "gored")
-	sharpness = IS_SHARP
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	var/datum/action/innate/cult/spear/spear_act
-	var/wielded = FALSE // track wielded status on item
-
-/obj/item/cult_spear/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-
-/obj/item/cult_spear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 100, 90)
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
-
-/// triggered on wield of two handed item
-/obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/cult_spear/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
-
-/obj/item/cult_spear/update_icon_state()
-	icon_state = "[base_icon_state]0"
-	return ..()
-
-/obj/item/cult_spear/Destroy()
-	if(spear_act)
-		qdel(spear_act)
-	return ..()
-
-/obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/turf/T = get_turf(hit_atom)
-	if(isliving(hit_atom))
-		var/mob/living/L = hit_atom
-		if(iscultist(L))
-			playsound(src, 'sound/weapons/throwtap.ogg', 50)
-			if(L.put_in_active_hand(src))
-				L.visible_message("<span class='warning'>[L] catches [src] out of the air!</span>")
-			else
-				L.visible_message("<span class='warning'>[src] bounces off of [L], as if repelled by an unseen force!</span>")
-		else if(!..())
-			if(!L.anti_magic_check())
-				L.Paralyze(50)
-			break_spear(T)
-	else
-		..()
-
-/obj/item/cult_spear/proc/break_spear(turf/T)
-	if(src)
-		if(!T)
-			T = get_turf(src)
-		if(T)
-			T.visible_message("<span class='warning'>[src] shatters and melts back into blood!</span>")
-			new /obj/effect/temp_visual/cult/sparks(T)
-			new /obj/effect/decal/cleanable/blood/splatter(T)
-			playsound(T, 'sound/effects/glassbr3.ogg', 100)
-	qdel(src)
-
-/obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(wielded)
-		final_block_chance *= 2
-	if(prob(final_block_chance))
-		if(attack_type == PROJECTILE_ATTACK)
-			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
-			return TRUE
-		else
-			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)
-			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
-			return TRUE
-	return FALSE
-
-/datum/action/innate/cult/spear
-	name = "Bloody Bond"
-	desc = "Call the blood spear back to your hand!"
-	background_icon_state = "bg_demon"
-	button_icon_state = "bloodspear"
-	var/obj/item/cult_spear/spear
-	var/cooldown = 0
-
-/datum/action/innate/cult/spear/Grant(mob/user, obj/blood_spear)
-	. = ..()
-	spear = blood_spear
-	button.screen_loc = "6:157,4:-2"
-	button.moved = "6:157,4:-2"
-
-/datum/action/innate/cult/spear/Activate()
-	if(owner == spear.loc || cooldown > world.time)
-		return
-	var/ST = get_turf(spear)
-	var/OT = get_turf(owner)
-	if(get_dist(OT, ST) > 10)
-		to_chat(owner,"<span class='cult'>The spear is too far away!</span>")
-	else
-		cooldown = world.time + 20
-		if(isliving(spear.loc))
-			var/mob/living/L = spear.loc
-			L.dropItemToGround(spear)
-			L.visible_message("<span class='warning'>An unseen force pulls the blood spear from [L]'s hands!</span>")
-		spear.throw_at(owner, 10, 2, owner)
-
 /obj/item/blood_beam
 	name = "\improper magical aura"
 	desc = "Sinister looking aura that distorts the flow of reality around it."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/touchspell_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/touchspell_righthand.dmi'
 	icon_state = "disintegrate"

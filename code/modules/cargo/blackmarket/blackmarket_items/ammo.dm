@@ -250,3 +250,46 @@
 	stock = 2
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/a4570hp
+	name = ".45-70 Hollow Point Ammo Box"
+	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
+	item = /obj/item/ammo_box/a4570/hp
+
+	price_min = 600
+	price_max = 1000
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 20
+
+/datum/blackmarket_item/ammo/a4570explo
+	name = "Single .45-70 Explosive Round"
+	desc = "If you need to fuck someone, hard, we got just the thing. Only one round, though, hope you got good aim."
+	item = /obj/item/ammo_casing/a4570/explosive
+
+	price_min = 400
+	price_max = 800 //still an exorbitantly high price for one round that you might not even hit
+	stock_min = 2
+	stock_max = 10
+	availability_prob = 10
+
+/datum/blackmarket_item/ammo/c38hotshot
+	name = ".38 Hearth Ammo Box"
+	desc = "We got our ship cook to marinade some .38 in some hearthwine we pocketed off some hunters. It'll cook your targets to a nice well done."
+	item = /obj/item/ammo_box/c38/hotshot
+
+	price_min = 300
+	price_max = 500
+	stock_min = 3
+	stock_max = 8
+	availability_prob = 50
+
+/datum/blackmarket_item/ammo/c38iceblox
+	name = ".38 Chilled Ammo Box"
+	desc = "One of our runners accidentally spilled some .38 into a fucking pristine icewine shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
+	item = /obj/item/ammo_box/c38/iceblox
+
+	price_min = 300
+	price_max = 500
+	stock_min = 3
+	stock_max = 8
+	availability_prob = 50

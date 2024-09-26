@@ -190,14 +190,39 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	icon_state = "gross3"
 
 /atom/movable/screen/alert/hot
-	name = "Too Hot"
-	desc = "You're flaming hot! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	name = "Hot"
+	desc = "It's quite warm. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "hot"
+
+/atom/movable/screen/alert/warm
+	name = "Warm"
+	desc = "It's a bit warm, but not unbearably so."
 	icon_state = "hot"
 
 /atom/movable/screen/alert/cold
-	name = "Too Cold"
-	desc = "You're freezing cold! Get somewhere warmer and take off any insulating clothing like a space suit."
+	name = "Cold"
+	desc = "It's quite cold. Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "cold"
+
+/atom/movable/screen/alert/chilly
+	name = "Chilly"
+	desc = "It's a bit chilly, but not unbearably so."
+	icon_state = "cold"
+
+/atom/movable/screen/alert/sweat
+	name = "Sweating"
+	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "sweat"
+
+/atom/movable/screen/alert/shiver
+	name = "Shivering"
+	desc = "You're shivering and the cold is starting to hurt. Get somewhere warmer and take off any insulating clothing like a space suit."
+	icon_state = "shiver"
+
+/atom/movable/screen/alert/fans
+	name = "High Fan Speed"
+	desc = "Your fans are spinning quite fast, and your components are reaching a dangerous temperature! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	icon_state = "fans"
 
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"
