@@ -1958,12 +1958,19 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "rh" = (
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -20
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -1
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "rL" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -2165,6 +2172,11 @@
 	pixel_y = 10
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "sM" = (
@@ -3093,6 +3105,13 @@
 "Bj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/starboard)
+"BB" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20
+	},
+/turf/template_noop,
+/area/template_noop)
 "BC" = (
 /obj/structure/filingcabinet/double,
 /obj/structure/sign/poster/official/help_others{
@@ -3643,6 +3662,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
+"GT" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 4
+	},
+/turf/open/floor/plating,
 /area/ship/hallway/central)
 "Hg" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -5673,7 +5706,7 @@ cu
 Td
 Td
 Td
-rh
+BB
 Nh
 xj
 qG
@@ -6166,7 +6199,7 @@ mB
 ma
 CH
 jk
-lc
+GT
 Sh
 lc
 ht
@@ -6182,7 +6215,7 @@ hj
 id
 lc
 Sh
-lc
+rh
 bR
 XD
 NZ
