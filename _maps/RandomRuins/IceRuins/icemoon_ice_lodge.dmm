@@ -240,6 +240,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "ds" = (
+/obj/item/roastingstick,
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "dA" = (
@@ -275,11 +276,11 @@
 /obj/item/clothing/suit/armor/roumain/shadow,
 /obj/item/clothing/head/cowboy/sec/roumain/shadow,
 /obj/item/clothing/under/suit/roumain,
-/obj/item/kitchen/knife/hunting,
 /obj/item/flashlight/lantern,
 /obj/effect/decal/cleanable/shreds{
 	pixel_y = -14
 	},
+/obj/item/melee/knife/hunting,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "eg" = (
@@ -307,7 +308,6 @@
 /obj/item/clothing/head/bearpelt{
 	pixel_y = 10
 	},
-/obj/item/kitchen/knife/hunting,
 /obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -1172,22 +1172,22 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/item/kitchen/knife/combat/survival{
-	pixel_y = 8;
-	pixel_x = -9
-	},
 /obj/item/storage/belt/security/military/frontiersmen{
 	pixel_y = -2
 	},
-/obj/item/kitchen/knife/combat/survival{
-	pixel_y = 7;
+/obj/effect/decal/cleanable/dirt,
+/obj/item/melee/knife/survival{
+	pixel_y = 10;
 	pixel_x = 3
 	},
-/obj/item/kitchen/knife/combat/survival{
-	pixel_y = 7;
-	pixel_x = -5
+/obj/item/melee/knife/survival{
+	pixel_y = 10;
+	pixel_x = -7
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/item/melee/knife/survival{
+	pixel_y = 10;
+	pixel_x = 13
+	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "rF" = (
@@ -2522,7 +2522,6 @@
 	layer = 2.79;
 	pixel_y = 4
 	},
-/obj/item/melee/roastingstick,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "KO" = (
@@ -3086,6 +3085,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/effect/decal/cleanable/wrapping,
 /obj/item/clothing/glasses/trickblindfold,
+/obj/item/melee/knife/switchblade,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "TM" = (
@@ -3245,7 +3245,6 @@
 	},
 /obj/item/clothing/head/soft/frontiersmen,
 /obj/item/clothing/under/frontiersmen/deckhand,
-/obj/item/kitchen/knife/switchblade,
 /obj/item/clothing/accessory/holster,
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/wood/ebony,
