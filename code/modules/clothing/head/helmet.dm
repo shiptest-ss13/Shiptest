@@ -6,7 +6,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -219,6 +219,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
+	supports_variations = KEPORI_VARIATION
 	unique_reskin = list(
 		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
@@ -327,7 +328,7 @@
 	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -567,6 +568,7 @@
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
+	supports_variations = null
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
@@ -582,6 +584,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
+	supports_variations = null
 	unique_reskin = list(
 		"None" = "x11helm",
 		"Desert" = "x11helm_desert",

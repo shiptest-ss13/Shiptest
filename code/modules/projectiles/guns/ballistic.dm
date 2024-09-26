@@ -13,6 +13,8 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	min_recoil = 0.1
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
@@ -59,13 +61,14 @@
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
 		. += "[icon_state]_bolt"
-	if (magazine)
+	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
-				. += "[icon_state]_mag_empty"
+				. += "[icon_state]_mag_[magazine.base_icon_state]_empty"
 		else
 			. += "[icon_state]_mag"
+		if(show_ammo_capacity_on_magazine_sprite)
 			var/capacity_number = 0
 			switch(get_ammo() / magazine.max_ammo)
 				if(0.2 to 0.39)
@@ -76,12 +79,16 @@
 					capacity_number = 60
 				if(0.8 to 0.99)
 					capacity_number = 80
-				if(1.0)
+				if(1.0 to 2.0) //to catch the chambered round
 					capacity_number = 100
-			if (capacity_number)
+			if (capacity_number && unique_mag_sprites_for_variants)
+				. += "[icon_state]_mag_[magazine.base_icon_state]_[capacity_number]"
+			else if (capacity_number)
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)
 		. += "[icon_state]_empty"
+	if(chambered && mag_display_ammo)
+		. += "[icon_state]_chambered"
 
 /obj/item/gun/ballistic/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	if(!semi_auto && from_firing)
@@ -107,7 +114,7 @@
 			chambered.forceMove(src)
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
-/obj/item/gun/ballistic/proc/rack(mob/user = null)
+/obj/item/gun/ballistic/proc/rack(mob/user = null, chamber_new_round = TRUE)
 	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
 		return
 	if (bolt_type == BOLT_TYPE_OPEN)
@@ -118,21 +125,22 @@
 		bolt_locked = FALSE
 	if (user)
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
-	process_chamber(!chambered, FALSE, shooter = user)
-	if (bolt_type == BOLT_TYPE_LOCKING && !chambered)
+	process_chamber(!chambered, FALSE, chamber_new_round, user)
+	if ((bolt_type == BOLT_TYPE_LOCKING && !chambered) || bolt_type == BOLT_TYPE_CLIP)
 		bolt_locked = TRUE
 		playsound(src, lock_back_sound, lock_back_sound_volume, lock_back_sound_vary)
 	else
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-	update_appearance()
+
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 ///Drops the bolt from a locked position
-/obj/item/gun/ballistic/proc/drop_bolt(mob/user = null)
+/obj/item/gun/ballistic/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
 		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
-	chamber_round()
+	if(chamber_new_round)
+		chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
 
@@ -246,6 +254,8 @@
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_LOCKING)
 			bolt_locked = TRUE
 			update_appearance()
+		if (last_shot_succeeded && bolt_type == BOLT_TYPE_CLIP)
+			update_appearance()
 
 /obj/item/gun/ballistic/pre_fire(atom/target, mob/living/user,  message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0, dual_wielded_gun = FALSE)
 	prefire_empty_checks()
@@ -281,13 +291,19 @@
 		else
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
-	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
+	if((bolt_type == BOLT_TYPE_LOCKING || bolt_type == BOLT_TYPE_CLIP) && bolt_locked)
 		drop_bolt(user)
 		return
+
 	if (recent_rack > world.time)
 		return
 	recent_rack = world.time + rack_delay
+	if(bolt_type == BOLT_TYPE_CLIP)
+		rack(user, FALSE)
+		update_appearance()
+		return
 	rack(user)
+	update_appearance()
 	return
 
 
@@ -362,3 +378,8 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		if(AC.BB)
 			process_fire(user, user, FALSE)
 			. = TRUE
+
+/obj/item/gun/ballistic/unsafe_shot(target, empty_chamber = TRUE)
+	. = ..()
+	process_chamber(empty_chamber,TRUE)
+

@@ -375,8 +375,7 @@
 	icon_state = "chapdrobe"
 	product_ads = "Are you being bothered by cultists or pesky revenants? Then come and dress like the holy man!;Clothes for men of the cloth!"
 	vend_reply = "Thank you for using the ChapDrobe!"
-	products = list(/obj/item/storage/box/holy = 1,
-					/obj/item/storage/backpack/cultpack = 1,
+	products = list(/obj/item/storage/backpack/cultpack = 1,
 					/obj/item/clothing/head/beret/service = 1, //WS edit - berets
 					/obj/item/clothing/accessory/pocketprotector/cosmetology = 1,
 					/obj/item/clothing/under/rank/civilian/chaplain = 1,

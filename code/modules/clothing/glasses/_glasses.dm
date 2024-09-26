@@ -305,6 +305,14 @@
 	throwforce = 12
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
+/obj/item/clothing/glasses/sunglasses/ballistic
+	name = "ballistic goggles"
+	desc = "A pair of flash-proof ballistic goggles."
+	icon_state = "ballistic_goggles"
+	item_state = "ballistic_goggles"
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	glass_colour_type = /datum/client_colour/glass_colour/lightblue
+
 /obj/item/clothing/glasses/welding
 	name = "welding goggles"
 	desc = "Protects the eyes from bright flashes; approved by the mad scientist association."
@@ -378,7 +386,7 @@
 		colored_before = TRUE
 
 /obj/item/clothing/glasses/blindfold/white/worn_overlays(isinhands = FALSE, file2use)
-	. = list()
+	. = ..()
 	if(!isinhands && ishuman(loc) && !colored_before)
 		var/mob/living/carbon/human/H = loc
 		var/mutable_appearance/M = mutable_appearance('icons/mob/clothing/eyes.dmi', "blindfoldwhite")

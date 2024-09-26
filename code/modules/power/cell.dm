@@ -19,7 +19,8 @@
 	var/maxcharge = 1000
 	custom_materials = list(/datum/material/iron=700, /datum/material/glass=50)
 	grind_results = list(/datum/reagent/lithium = 15, /datum/reagent/iron = 5, /datum/reagent/silicon = 5)
-	var/rigged = FALSE	// true if rigged to explode
+	var/rigged = FALSE	// true if rigged to
+	var/show_rigged = TRUE // whether if the cell shows it's fauly on examine.
 	var/chargerate = 100 //how much power is given every tick in a recharger
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
@@ -97,7 +98,7 @@
 
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
-	if(rigged)
+	if(rigged && show_rigged)
 		. += "<span class='danger'>This power cell seems to be faulty!</span>"
 	else
 		. += "The charge meter reads [round(src.percent())]%."
@@ -148,7 +149,6 @@
 				if(prob(25))
 					corrupt()
 
-//WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
 	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
@@ -175,10 +175,6 @@
 			else
 				to_chat(H, "<span class='warning'>You can't receive charge from [src]!</span>")
 		return
-//WS End
-
-/obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
-	SSexplosions.highobj += src
 
 /obj/item/stock_parts/cell/proc/get_electrocute_damage()
 	if(charge >= 1000)

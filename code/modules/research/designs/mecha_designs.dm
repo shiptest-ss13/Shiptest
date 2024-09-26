@@ -133,8 +133,8 @@
 ////////////////////////////////////////
 
 /datum/design/mech_scattershot
-	name = "Exosuit Weapon (LBX AC 10 \"Scattershot\")"
-	desc = "Allows for the construction of LBX AC 10."
+	name = "Exosuit Weapon (LBX-10 \"Scattershot\")"
+	desc = "Allows for the construction of LBX-10."
 	id = "mech_scattershot"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
@@ -143,8 +143,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_scattershot_ammo
-	name = "LBX AC 10 Scattershot Ammunition"
-	desc = "Ammunition for the LBX AC 10 exosuit weapon."
+	name = "LBX-10 Scattershot Ammunition"
+	desc = "Ammunition for the LBX-10 exosuit weapon."
 	id = "mech_scattershot_ammo"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/mecha_ammo/scattershot
@@ -153,7 +153,7 @@
 	category = list("Exosuit Ammunition", "Ammo")
 
 /datum/design/mech_carbine
-	name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
+	name = "Exosuit Weapon (FNX-99 \"Phoenix\" Carbine)"
 	desc = "Allows for the construction of FNX-99 \"Hades\" Carbine."
 	id = "mech_carbine"
 	build_type = MECHFAB
@@ -164,7 +164,7 @@
 
 /datum/design/mech_carbine_ammo
 	name = "FNX-99 Carbine Ammunition"
-	desc = "Ammunition for the FNX-99 \"Hades\" Carbine."
+	desc = "Ammunition for the FNX-99 \"Phoenix\" Carbine."
 	id = "mech_carbine_ammo"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/mecha_ammo/incendiary
@@ -403,7 +403,7 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_lmg
-	name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
+	name = "Exosuit Weapon (\"UMG-2\" LMG)"
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
 	id = "mech_lmg"
 	build_type = MECHFAB
@@ -413,8 +413,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_lmg_ammo
-	name = "Ultra AC 2 Ammunition"
-	desc = "Ammunition for the Ultra AC 2 LMG"
+	name = "UMG-2 Ammunition"
+	desc = "Ammunition for the UMG-2 LMG"
 	id = "mech_lmg_ammo"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/mecha_ammo/lmg

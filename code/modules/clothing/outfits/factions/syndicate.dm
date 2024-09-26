@@ -353,7 +353,7 @@
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/suns/captain
 	gloves = /obj/item/clothing/gloves/suns/captain
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
+	suit = /obj/item/clothing/suit/armor/vest/suns/captain
 	belt = /obj/item/storage/belt/sabre/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
 	neck = /obj/item/clothing/neck/cloak/suns/cap
@@ -444,7 +444,7 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
@@ -456,7 +456,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 
 //Chief Medical Officer
@@ -516,7 +516,7 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	gloves = /obj/item/clothing/gloves/color/white
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	glasses = /obj/item/clothing/glasses/hud/health
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
@@ -532,7 +532,7 @@
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
@@ -540,7 +540,7 @@
 	id_assignment = "Academic Staff"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/xo
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
+	suit = /obj/item/clothing/suit/armor/vest/suns/xo
 	belt = /obj/item/storage/belt/sabre/suns
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/suns
@@ -583,7 +583,7 @@
 	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
@@ -594,7 +594,7 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 
 /datum/outfit/job/syndicate/hos/twink
@@ -633,8 +633,8 @@
 	id_assignment = "Senior Peacekeeper"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
-	belt = /obj/item/melee/sabre/suns/telescopic
+	suit = /obj/item/clothing/suit/armor/vest/suns/hos
+	belt = /obj/item/melee/sword/sabre/suns/telescopic
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
@@ -648,7 +648,7 @@
 
 /datum/outfit/job/syndicate/hos/suns/alt
 	name = "Syndicate - Senior Peacekeeper Alt (SUNS)"
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos
+	suit = /obj/item/clothing/suit/armor/vest/suns/ehos
 	head = /obj/item/clothing/head/HoS/syndicate/suns
 
 /datum/outfit/job/syndicate/hos/suns/twink
@@ -711,7 +711,7 @@
 	head = /obj/item/clothing/head/hardliners
 	suit = /obj/item/clothing/suit/hardliners
 	glasses = /obj/item/clothing/glasses/hud/health
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
@@ -723,7 +723,7 @@
 	head = /obj/item/clothing/head/ngr/surgical
 	suit = /obj/item/clothing/suit/ngr/smock
 	glasses = /obj/item/clothing/glasses/hud/health
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
@@ -897,7 +897,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack
 	suit = /obj/item/clothing/suit/armor/vest
@@ -931,7 +931,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 
-/datum/outfit/job/syndicate/security/gorlex
+/datum/outfit/job/syndicate/security/gorlex/pilot
 	name = "Syndicate - Pilot (Hardliner)"
 	id_assignment = "Pilot"
 	job_icon = "securityofficer"
@@ -992,9 +992,9 @@
 	id_assignment = "Peacekeeper"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns
+	suit = /obj/item/clothing/suit/armor/vest/suns
 	alt_suit = /obj/item/clothing/suit/toggle/suns/pkcoat
-	belt = /obj/item/melee/sabre/suns/telescopic
+	belt = /obj/item/melee/sword/sabre/suns/telescopic
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/jackboots/suns/long
 	head = /obj/item/clothing/head/welding/suns
@@ -1020,7 +1020,7 @@
 	r_pocket = /obj/item/storage/bag/ore
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
-		/obj/item/kitchen/knife/combat/survival=1,\
+		/obj/item/melee/knife/survival=1,\
 		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 

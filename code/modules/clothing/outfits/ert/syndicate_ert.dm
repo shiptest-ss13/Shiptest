@@ -4,7 +4,7 @@
 	job_icon = "securityofficer"
 
 	suit = /obj/item/clothing/suit/armor/vest/syndie
-	suit_store = /obj/item/gun/ballistic/automatic/smg/c20r
+	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate/alt
 	gloves = /obj/item/clothing/gloves/color/black
@@ -14,7 +14,7 @@
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r
 
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 	l_pocket = /obj/item/grenade/frag
 
 	implants = list(/obj/item/implant/weapons_auth)
@@ -27,7 +27,7 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/captain
 
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/syndicate=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/ringneck=1, /obj/item/ammo_box/magazine/m10mm_ringneck=2, /obj/item/radio=1)
 
 // gorlex loyalist/2nd battlegroup
 
@@ -39,12 +39,12 @@
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military/assault/m90
 	back = /obj/item/storage/backpack/security
-	suit_store = /obj/item/gun/ballistic/automatic/smg/m90
+	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra
 
 /datum/outfit/job/syndicate/ert/gorlex/pointman
 	name = "ERT - New Gorlex Republic Pointman"
 
-	suit_store = /obj/item/gun/ballistic/shotgun/bulldog
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	belt = /obj/item/storage/belt/security/webbing/bulldog
 
 /datum/outfit/job/syndicate/ert/gorlex/medic
@@ -58,11 +58,11 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 	l_pocket = /obj/item/radio
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm=2, /obj/item/storage/firstaid/medical=1, /obj/item/defibrillator/compact/combat/loaded=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm_ringneck=2, /obj/item/storage/firstaid/medical=1, /obj/item/defibrillator/compact/combat/loaded=1)
 
 /datum/outfit/job/syndicate/ert/gorlex/sniper
 	name = "ERT - New Gorlex Republic Sniper"
@@ -73,9 +73,9 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	suit = /obj/item/clothing/suit/armor/vest
 	belt = /obj/item/storage/belt/security
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper_rifle
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/taipan
 
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	l_pocket = /obj/item/binoculars
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/sniper_rounds=2, /obj/item/radio=1)
@@ -103,7 +103,7 @@
 	uniform = /obj/item/clothing/under/syndicate/combat
 	belt = /obj/item/storage/belt/military/c20r
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
-	suit_store = /obj/item/gun/ballistic/automatic/smg/c20r
+	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 
@@ -133,7 +133,7 @@
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	back = /obj/item/storage/backpack/ert/medical
-	l_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/melee/knife/survival
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
 

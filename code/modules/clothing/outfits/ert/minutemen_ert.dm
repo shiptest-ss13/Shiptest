@@ -4,12 +4,12 @@
 	job_icon = "clip_cmm2"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
-	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/minutemen
+	suit_store = /obj/item/gun/ballistic/shotgun/cm15
 	mask = /obj/item/clothing/mask/gas/clip
 	head = /obj/item/clothing/head/helmet/riot/clip
 	belt = /obj/item/storage/belt/military/clip/cm15
 	glasses = /obj/item/clothing/glasses/hud/health/night
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 	l_pocket = /obj/item/extinguisher/mini
 
 	backpack_contents = list(
@@ -58,7 +58,7 @@
 	belt = /obj/item/storage/belt/military/clip/e50
 	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/armor/vest/marine
-	suit_store = /obj/item/gun/energy/laser/e50
+	suit_store = /obj/item/gun/energy/laser/e50/clip
 	r_pocket = /obj/item/grenade/c4
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/stimpack
 
