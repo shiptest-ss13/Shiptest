@@ -1016,6 +1016,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
+"xR" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "mudskipper_window"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "xU" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -1051,7 +1059,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mudskipper_window"
 	},
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "yB" = (
@@ -1431,7 +1439,7 @@
 	dir = 4;
 	id = "mudskipper_bridge"
 	},
-/obj/effect/spawner/structure/window,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Gq" = (
@@ -1811,7 +1819,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mudskipper_window"
 	},
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "PU" = (
@@ -1823,10 +1831,10 @@
 "Qt" = (
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	id = "mudskipper_window"
 	},
-/obj/structure/window/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Qu" = (
@@ -2224,7 +2232,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mudskipper_window"
 	},
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "XI" = (
@@ -2278,7 +2286,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mudskipper_window"
 	},
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Yi" = (
@@ -2566,7 +2574,7 @@ cs
 hX
 cs
 cs
-Xm
+xR
 yg
 XK
 Ni
