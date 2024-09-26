@@ -142,6 +142,7 @@
 	var/my_z
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
+	var/legcuff_resist_chance = 5
 
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()
@@ -566,7 +567,7 @@
 	if(legcuffed)
 		visible_message("<span class='warning'>[src] attempts to free [p_them()]self!</span>", \
 			span_notice("YYou attempt to free yourself..."))
-		if(prob(10))
+		if(prob(legcuff_resist_chance))
 			visible_message(span_warning("[src] is able free [p_them()]self!"), \
 				span_notice("You free yourself!"))
 			legcuffed.forceMove(drop_location())
