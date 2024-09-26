@@ -156,7 +156,7 @@
  *something like "mob_209". In order to find the actual atom, we need
  *to search the appropriate list for the REF string. This is dependant
  *on the program (Lifeline uses GLOB.human_list, while Fission360 uses
- *GLOB.poi_list), but the result will be the same; evaluate the string and
+ *SSpoints_of_interest.other_points_of_interest), but the result will be the same; evaluate the string and
  *return an atom reference.
 */
 /datum/computer_file/program/radar/proc/find_atom()
@@ -269,7 +269,7 @@
 	pointercolor = "red"
 
 /datum/computer_file/program/radar/fission360/find_atom()
-	return locate(selected) in GLOB.poi_list
+	return locate(selected) in SSpoints_of_interest.other_points_of_interest
 
 /datum/computer_file/program/radar/fission360/scan()
 	if(world.time < next_scan)
@@ -286,7 +286,7 @@
 			name = nuke.name,
 			)
 		objects += list(nukeinfo)
-	var/obj/item/disk/nuclear/disk = locate() in GLOB.poi_list
+	var/obj/item/disk/nuclear/disk = locate() in SSpoints_of_interest.other_points_of_interest
 	if(trackable(disk))
 		var/list/nukeinfo = list(
 			ref = REF(disk),

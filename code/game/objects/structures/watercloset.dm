@@ -218,7 +218,7 @@
 /obj/item/reagent_containers/food/snacks/urinalcake
 	name = "urinal cake"
 	desc = "The noble urinal cake, protecting the people's pipes from the people's pee. Edibility is suggested to be low."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "urinalcake"
 	w_class = WEIGHT_CLASS_TINY
 	list_reagents = list(/datum/reagent/chlorine = 3, /datum/reagent/ammonia = 1)

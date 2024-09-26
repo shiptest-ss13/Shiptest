@@ -278,7 +278,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/enginseer
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/nullrod, /obj/item/radio, /obj/item/storage/book)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/radio, /obj/item/storage/book)
 
 /obj/item/clothing/head/hooded/enginseer
 	name = "enginseer's hood"

@@ -207,6 +207,12 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
+	///Used if the guns recoil is lower then the min, it clamps the highest recoil
+	var/min_recoil = 0
+
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
+
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
@@ -317,9 +323,6 @@
 	var/currently_firing_burst = FALSE
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
-
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -728,6 +731,11 @@
 	if(zoomed)
 		zoom(user, user.dir)
 
+/obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		discharge("hits the ground hard")
+
 /obj/item/gun/update_overlays()
 	. = ..()
 	if(ismob(loc) && has_safety)
@@ -810,7 +818,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, 0 , INFINITY)
+	return clamp(recoil_bonus, min_recoil , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -946,6 +954,48 @@
 	if(!QDELETED(flash_loc))
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
+
+// for guns firing on their own without a user
+/obj/item/gun/proc/discharge(cause, seek_chance = 10)
+	var/target
+	if(!safety)
+		// someone is very unlucky and about to be shot
+		if(prob(seek_chance))
+			for(var/mob/living/target_mob in range(6, get_turf(src)))
+				if(!isInSight(src, target_mob))
+					continue
+				target = target_mob
+				break
+		if(!target)
+			var/fire_dir = pick(GLOB.alldirs)
+			target = get_ranged_target_turf(get_turf(src),fire_dir,6)
+		if(!chambered || !chambered.BB)
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
+			playsound(src, dry_fire_sound, 30, TRUE)
+		else
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safeties on!"))
+			unsafe_shot(target)
+
+/obj/item/gun/proc/unsafe_shot(target)
+	if(chambered)
+		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		playsound(src, fire_sound, 100, TRUE)
+
+/mob/living/proc/trip_with_gun(cause)
+	var/mob/living/carbon/human/human_holder
+	if(ishuman(src))
+		human_holder = src
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		if(human_holder)
+			// gun is less likely to go off in a holster
+			if(at_risk == human_holder.s_store)
+				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+		if(at_risk.safety == FALSE && prob(chance_to_fire))
+			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
+				emote("scream")
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom

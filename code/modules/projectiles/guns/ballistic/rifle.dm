@@ -127,6 +127,8 @@
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
+	spread = 24
+	spread_unwielded = 30
 	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/rifle/solgov
