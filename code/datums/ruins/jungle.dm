@@ -59,4 +59,3 @@
 	description = "An abandoned makeshift garden home built out of a crashed shuttle."
 	suffix = "jungle_abandoned_garden.dmm"
 	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_LIVEABLE)
-  
