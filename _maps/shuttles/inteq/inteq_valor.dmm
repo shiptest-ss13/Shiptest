@@ -1958,20 +1958,12 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "rh" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20
 	},
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
+/turf/template_noop,
+/area/template_noop)
 "rL" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -5681,14 +5673,14 @@ cu
 Td
 Td
 Td
-Td
+rh
 Nh
 xj
 qG
 yK
 Cb
 Cb
-rh
+Cb
 Cb
 xz
 xj
