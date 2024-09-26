@@ -4,8 +4,12 @@
 	var/desc = "Do something for me."
 	var/faction = /datum/faction/independent
 	var/value = 1000 /// The mission's payout.
-	var/duration = 45 MINUTES /// The amount of time in which to complete the mission.
+	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
+
+	/// The outpost that issued this mission. Passed in New().
+	//var/datum/overmap/outpost/source_outpost
+	var/datum/overmap/mission_location
 
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
@@ -14,9 +18,7 @@
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
-	/// The outpost that issued this mission. Passed in New().
-	//var/datum/overmap/outpost/source_outpost
-	var/datum/overmap/mission_location
+
 
 	var/active = FALSE
 	var/failed = FALSE
@@ -28,12 +30,12 @@
 	var/list/atom/movable/bound_atoms
 
 /datum/dynamic_mission/New(_location)
-	var/old_dur = duration
-	var/val_mod = value * val_mod_range
-	var/dur_mod = duration * dur_mod_range
-	// new duration is between
-	duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
-	value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
+	if(duration)
+		var/old_dur = duration
+		var/val_mod = value * val_mod_range
+		var/dur_mod = duration * dur_mod_range
+		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
+		value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
 
 	//source_outpost = _outpost
 	mission_location = _location
@@ -69,7 +71,8 @@
 /datum/dynamic_mission/proc/start_mission()
 	SSmissions.inactive_missions -= src
 	active = TRUE
-	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
+	if(duration)
+		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
 
 /datum/dynamic_mission/proc/on_planet_load(datum/overmap/dynamic/planet)
@@ -112,7 +115,7 @@
 		"faction" = SSfactions.faction_name(src.faction),
 		"x" = mission_location.x,
 		"y" = mission_location.y,
-		"value" = src.value,
+		"rewards" = src.reward_flavortext(),
 		"duration" = src.duration,
 		"remaining" = time_remaining,
 		"timeStr" = time2text(time_remaining, "mm:ss"),
@@ -186,6 +189,9 @@
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
 	// remove info from our list
 	LAZYREMOVE(bound_atoms, bound)
+
+/datum/dynamic_mission/proc/reward_flavortext()
+	return "[value] cr upon completion"
 
 /obj/effect/landmark/mission_poi
 	icon = 'icons/effects/mission_poi.dmi'

@@ -9,11 +9,11 @@ export type Mission = {
   name: string;
   author: string;
   desc: string;
+  rewards: string;
   faction: string;
   x: number;
   y: number;
   progressStr: string;
-  value: number;
   remaining: number;
   duration: number;
   timeStr: string;

@@ -39,24 +39,14 @@ const MissionsList = (props, context) => {
   const { act } = useBackend(context);
 
   const missionValues = (mission: Mission) => (
-    <Stack vertical>
-      <Stack.Item>
-        <Box inline mx={1}>
-          {`${mission.value} cr`}
-        </Box>
-      </Stack.Item>
-
-      <Stack.Item>
-        <ProgressBar
-          ranges={{
-            good: [0.75, 1],
-            average: [0.25, 0.75],
-            bad: [0, 0.25],
-          }}
-          value={mission.remaining / mission.duration}
-        ></ProgressBar>
-      </Stack.Item>
-    </Stack>
+    <ProgressBar
+      ranges={{
+        good: [0.75, 1],
+        average: [0.25, 0.75],
+        bad: [0, 0.25],
+      }}
+      value={mission.remaining / mission.duration}
+    ></ProgressBar>
   );
 
   const missionJSX = missionsArray.map((mission: Mission) => (
@@ -70,6 +60,7 @@ const MissionsList = (props, context) => {
       <LabeledList.Item label="Faction">{mission.faction}</LabeledList.Item>
       <LabeledList.Item label="Description">{mission.desc}</LabeledList.Item>
       <LabeledList.Item label="Rewards">
+        {mission.rewards}
         {missionValues(mission)}
       </LabeledList.Item>
       <LabeledList.Divider />
