@@ -116,6 +116,19 @@
 			to_chat(user, "<span class='warning'>\The [W] is empty!</span>")
 		safety = safety_save
 		return 1
+	if(istype(target, /obj/structure/sink) && target.Adjacent(user))
+		var/safety_save = safety
+		safety = TRUE
+		if(reagents.total_volume == reagents.maximum_volume)
+			to_chat(user, "<span class='warning'>\The [src] is already full!</span>")
+			safety = safety_save
+			return 1
+		else
+			refill()
+			to_chat(user, "<span class='notice'>\The [src] has been refilled.</span>")
+			playsound(src.loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
+			for(var/datum/reagent/water/R in reagents.reagent_list)
+				R.cooling_temperature = cooling_power
 	else
 		return 0
 
