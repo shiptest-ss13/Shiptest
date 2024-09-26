@@ -1687,7 +1687,7 @@
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/south,
-/obj/item/kitchen/knife/butcher{
+/obj/item/melee/knife/butcher{
 	pixel_x = -6;
 	pixel_y = 7
 	},
@@ -2735,7 +2735,7 @@
 /area/ship/crew/crewtwo)
 "wA" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/cakeslice/lime,
+/obj/item/food/cakeslice/lime,
 /obj/item/kitchen/fork/plastic{
 	pixel_x = -11
 	},
@@ -3515,7 +3515,7 @@
 /area/ship/crew/hydroponics)
 "CH" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/garlicbread,
+/obj/item/food/garlicbread,
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange{
 	pixel_x = -8;
 	pixel_y = 7
@@ -6032,11 +6032,11 @@
 	pixel_x = -11;
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/store/bread/banana{
+/obj/item/food/bread/banana{
 	pixel_x = 14;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/snacks/breadslice/banana,
+/obj/item/food/breadslice/banana,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "Vg" = (
@@ -6539,10 +6539,6 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
-	},
-/obj/item/disk/tech_disk/major{
-	pixel_x = -7;
-	pixel_y = -5
 	},
 /obj/item/disk/tech_disk{
 	pixel_x = -3;

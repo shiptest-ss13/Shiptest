@@ -38,10 +38,7 @@
 
 /obj/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
 	..()
-	if(!isliving(target)) //if the target isn't alive, so is a wall or something
-		explosion(target, 0, 1, 2, 4)
-	else
-		explosion(target, 0, 0, 2, 4)
+	explosion(target, 0, 1, 2, 4)
 	return BULLET_ACT_HIT
 
 /obj/projectile/bullet/a84mm_br

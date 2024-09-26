@@ -440,6 +440,7 @@
 /area/ship/hallway/central)
 "dO" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer4,
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "dS" = (
@@ -1733,7 +1734,7 @@
 	pixel_x = 1;
 	pixel_y = 5
 	},
-/obj/item/kitchen/knife/letter_opener{
+/obj/item/melee/knife/letter_opener{
 	desc = "A military combat utility survival knife, imported from Earth. An expensive paperweight indeed.";
 	pixel_x = 4;
 	pixel_y = 5
@@ -2606,7 +2607,7 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/item/cutting_board,
 /obj/effect/turf_decal/corner/opaque/green/mono,
 /turf/open/floor/plasteel,
@@ -3364,9 +3365,6 @@
 "AG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/item/paper/crumpled{
-	default_raw_text = "66% Oxy (Node 1) to 34% Plasma (Node 2) works great at 500 kPa."
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -4235,7 +4233,7 @@
 "JA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,

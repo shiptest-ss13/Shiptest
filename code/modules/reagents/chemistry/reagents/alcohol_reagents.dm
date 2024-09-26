@@ -125,6 +125,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	description = "A widely known coffee-flavoured liqueur. Still labeled under an old name from Earth, despite the loss of history."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
+	taste_description = "a bitter combination"
 	glass_icon_state = "kahluaglass"
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"
@@ -1373,26 +1374,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(1 to 5)
 			M.Dizzy(10)
 			M.set_drugginess(30)
-			if(prob(10))
-				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
 			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(45)
-			if(prob(20))
-				M.emote(pick("twitch","giggle"))
 		if (10 to 200)
 			M.Jitter(40)
 			M.Dizzy(40)
 			M.set_drugginess(60)
-			if(prob(30))
-				M.emote(pick("twitch","giggle"))
 		if(200 to INFINITY)
 			M.Jitter(60)
 			M.Dizzy(60)
 			M.set_drugginess(75)
-			if(prob(40))
-				M.emote(pick("twitch","giggle"))
 			if(prob(30))
 				M.adjustToxLoss(2, 0)
 				. = 1

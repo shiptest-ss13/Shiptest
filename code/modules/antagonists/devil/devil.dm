@@ -87,9 +87,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	var/form = BASIC_DEVIL
 	var/static/list/devil_spells = typecacheof(list(
 		/obj/effect/proc_holder/spell/aimed/fireball/hellish,
-		/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork,
-		/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/greater,
-		/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/ascended,
 		/obj/effect/proc_holder/spell/targeted/infernal_jaunt,
 		/obj/effect/proc_holder/spell/targeted/sintouch,
 		/obj/effect/proc_holder/spell/targeted/sintouch/ascended,
@@ -322,21 +319,17 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/proc/give_base_spells()
 	owner.AddSpell(new /obj/effect/proc_holder/spell/aimed/fireball/hellish(null))
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork(null))
 
 /datum/antagonist/devil/proc/give_blood_spells()
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/aimed/fireball/hellish(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/infernal_jaunt(null))
 
 /datum/antagonist/devil/proc/give_true_spells()
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/greater(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/aimed/fireball/hellish(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/infernal_jaunt(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/sintouch(null))
 
 /datum/antagonist/devil/proc/give_arch_spells()
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/ascended(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/sintouch/ascended(null))
 
 /datum/antagonist/devil/proc/beginResurrectionCheck(mob/living/body)
@@ -423,42 +416,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	check_regression()
 
 /datum/antagonist/devil/proc/create_new_body()
-	if(GLOB.blobstart.len > 0)
-		var/turf/targetturf = get_turf(pick(GLOB.blobstart))
-		var/mob/currentMob = owner.current
-		if(!currentMob)
-			currentMob = owner.get_ghost()
-			if(!currentMob)
-				message_admins("[key_name_admin(owner)]'s devil resurrection failed due to client logoff.  Aborting.")
-				return -1
-		if(currentMob.mind != owner)
-			message_admins("[key_name_admin(owner)]'s devil resurrection failed due to becoming a new mob.  Aborting.")
-			return -1
-		currentMob.change_mob_type(/mob/living/carbon/human, targetturf, null, 1)
-		var/mob/living/carbon/human/H = owner.current
-		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/civilian/lawyer/black(H), ITEM_SLOT_ICLOTHING)
-		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), ITEM_SLOT_FEET)
-		H.equip_to_slot_or_del(new /obj/item/storage/briefcase(H), ITEM_SLOT_HANDS)
-		H.equip_to_slot_or_del(new /obj/item/pen(H), ITEM_SLOT_LPOCKET)
-		if(SOULVALUE >= BLOOD_THRESHOLD)
-			H.set_species(/datum/species/lizard, 1)
-			H.underwear = "Nude"
-			H.undershirt = "Nude"
-			H.socks = "Nude"
-			H.dna.features["mcolor"] = "511"
-			H.regenerate_icons()
-			if(SOULVALUE >= TRUE_THRESHOLD) //Yes, BOTH this and the above if statement are to run if soulpower is high enough.
-				var/mob/living/carbon/true_devil/A = new /mob/living/carbon/true_devil(targetturf)
-				A.faction |= "hell"
-				H.forceMove(A)
-				A.oldform = H
-				owner.transfer_to(A, TRUE)
-				A.set_devil_name()
-				if(SOULVALUE >= ARCH_THRESHOLD && ascendable)
-					A.convert_to_archdevil()
-	else
-		CRASH("Unable to find a blobstart landmark for hellish resurrection")
-
+	CRASH("Unable to find a blobstart landmark for hellish resurrection")
 
 /datum/antagonist/devil/proc/update_hud()
 	if(iscarbon(owner.current))

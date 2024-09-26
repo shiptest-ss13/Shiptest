@@ -259,7 +259,6 @@
 			M.adjustFireLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 
@@ -313,7 +312,6 @@
 			M.adjustBruteLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 
@@ -1539,7 +1537,6 @@
 				M.losebreath++
 			if(prob(20))
 				to_chat(M, "<span class='userdanger'>You have a sudden fit!</span>")
-				M.emote("moan")
 				M.Paralyze(20) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
 			to_chat(M, "<span class='userdanger'>You feel too exhausted to continue!</span>") // at this point you will eventually die unless you get charcoal
@@ -1751,7 +1748,6 @@
 			M.adjustFireLoss(reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your skin bubble and burn as your flesh knits itself together!</span>")
-			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 
@@ -1786,7 +1782,6 @@
 			M.adjustBruteLoss(reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your flesh tear as your skin rapidly regenerates!</span>")
-			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 
@@ -1961,7 +1956,10 @@
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)
-	M.ForceContractDisease(new /datum/disease/transformation/legionvirus(), FALSE, TRUE)
+	var/mob/living/carbon/C = M
+	if(!istype(C.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull))
+		var/obj/item/organ/legion_skull/spare_ribs = new()
+		spare_ribs.Insert(M)
 	..()
 
 /datum/reagent/medicine/soulus/on_mob_end_metabolize(mob/living/M)

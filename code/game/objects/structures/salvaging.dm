@@ -242,7 +242,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -303,7 +302,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5,
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -591,7 +589,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
-			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,
@@ -673,7 +670,7 @@
 
 /obj/effect/spawner/lootdrop/random_computer_circuit_rare
 	loot = list(
-			/obj/item/circuitboard/computer/cargo/express = 5,
+			/obj/item/circuitboard/computer/cargo = 5,
 			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
 			/obj/item/circuitboard/computer/med_data = 5,
@@ -683,7 +680,7 @@
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
-			/obj/item/gun/ballistic/automatic/pistol/syndicate = 500,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 500,
 			/obj/item/camera_bug = 500,
 			/obj/item/clothing/gloves/combat = 200,
 			/obj/item/clothing/head/chameleon = 200,

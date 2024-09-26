@@ -62,6 +62,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/orbit_menu/orbit_menu
 	var/datum/spawners_menu/spawners_menu
 
+	// The POI we're orbiting (orbit menu)
+	var/orbiting_ref
+
 /mob/dead/observer/Initialize()
 	set_invisibility(GLOB.observer_default_invisibility)
 
@@ -141,6 +144,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		AA.onNewMob(src)
 
 	. = ..()
+
+	SSpoints_of_interest.make_point_of_interest(src)
 
 	grant_all_languages()
 	show_data_huds()
@@ -499,7 +504,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		var/list/dest = list() //List of possible destinations (mobs)
 		var/target = null	   //Chosen target.
 
-		dest += getpois(mobs_only = TRUE) //Fill list, prompt user with list
+		dest += SSpoints_of_interest.get_mob_pois()
 		target = input("Please, select a player!", "Jump to Mob", null, null) as null|anything in dest
 
 		if (!target)//Make sure we actually have a target
@@ -839,20 +844,24 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/reset_perspective(atom/A)
 	if(client)
 		if(ismob(client.eye) && (client.eye != src))
-			var/mob/target = client.eye
-			observetarget = null
-			if(target.observers)
-				LAZYREMOVE(target.observers, src)
+			cleanup_observe()
 	if(..())
 		if(hud_used)
 			client.screen = list()
 			hud_used.show_hud(hud_used.hud_version)
 
+/mob/dead/observer/proc/cleanup_observe()
+	var/mob/target = client.eye
+	observetarget = null
+	client?.perspective = initial(client.perspective)
+	if(target.observers)
+		LAZYREMOVE(target.observers, src)
+
 /mob/dead/observer/verb/observe()
 	set name = "Observe"
 	set category = "Ghost"
 
-	var/list/creatures = getpois()
+	var/list/creatures = SSpoints_of_interest.get_mob_pois()
 
 	reset_perspective(null)
 

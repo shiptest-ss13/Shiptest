@@ -476,15 +476,15 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A = image(image_file,H,"dualsaberred1", layer=ABOVE_MOB_LAYER)
 			if("taser")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"advtaserstun4", layer=ABOVE_MOB_LAYER)
 			if("ebow")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"crossbow", layer=ABOVE_MOB_LAYER)
 			if("baton")
 				if(side == "right")
@@ -1023,11 +1023,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					if(prob(25))
 						target.halitem.icon_state = "plasticx40"
 				if(3) //sword
-					target.halitem.icon = 'icons/obj/transforming_energy.dmi'
+					target.halitem.icon = 'icons/obj/weapon/energy.dmi'
 					target.halitem.icon_state = "sword0"
 					target.halitem.name = "Energy Sword"
 				if(4) //stun baton
-					target.halitem.icon = 'icons/obj/items_and_weapons.dmi'
+					target.halitem.icon = 'icons/obj/items.dmi'
 					target.halitem.icon_state = "stunbaton"
 					target.halitem.name = "Stun Baton"
 				if(5) //emag

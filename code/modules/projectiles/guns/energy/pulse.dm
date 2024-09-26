@@ -39,17 +39,14 @@
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_cell = FALSE
-	big_gun = TRUE //haha gun go brr
+	mag_size = MAG_SIZE_LARGE //haha gun go brr
 	cell_type = /obj/item/stock_parts/cell/gun/large
-	can_flashlight = TRUE
-	flight_x_offset = 18
-	flight_y_offset = 12
 	ammo_x_offset = 2
 	charge_sections = 4
 
 /obj/item/gun/energy/pulse/prize/Initialize()
 	. = ..()
-	GLOB.poi_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 	var/turf/T = get_turf(src)
 
 	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
@@ -58,7 +55,7 @@
 	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
 
 /obj/item/gun/energy/pulse/prize/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/gun/energy/pulse/pistol

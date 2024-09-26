@@ -39,7 +39,7 @@
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"
 	projectiletype = null
-	casingtype = /obj/item/ammo_casing/aac_300blk/recycled
+	casingtype = /obj/item/ammo_casing/a762_40
 	projectilesound = 'sound/weapons/gun/rifle/shot.ogg'
 	ranged = 1
 	rapid_fire_delay = 6
@@ -116,7 +116,7 @@
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat = 5,
+			/obj/item/melee/knife/combat = 5,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 5,
@@ -132,7 +132,7 @@
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 10,
+			/obj/item/melee/knife/survival = 10,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 10
@@ -144,11 +144,11 @@
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 12,
+			/obj/item/melee/knife/survival = 12,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
-			/obj/item/kitchen/knife/combat = 3,
+			/obj/item/melee/knife/combat = 3,
 			/obj/item/reagent_containers/food/snacks/rationpack = 30
 			)
 		)
@@ -244,7 +244,7 @@
 			if(prob(20))
 				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 			else if(prob(60))
-				l_pocket = /obj/item/ammo_box/aac_300blk_stripper
+				l_pocket = /obj/item/ammo_box/a762_stripper
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else

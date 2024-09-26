@@ -30,6 +30,13 @@
 	cost = 2000
 	crate_name = "security barriers crate"
 
+/datum/supply_pack/sec_supply/empty_sandbags
+	name = "Empty Sandbags"
+	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
+	contains = list(/obj/item/storage/box/emptysandbags)
+	cost = 150
+	crate_name = "sandbag crate"
+
 /datum/supply_pack/sec_supply/wall_flash
 	name = "Wall-Mounted Flash Crate"
 	desc = "Contains four wall-mounted flashes."
@@ -65,10 +72,23 @@
 	name = "Survival Knives Crate"
 	desc = "Contains three sharpened survival knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
 	cost = 500
-	contains = list(/obj/item/kitchen/knife/combat/survival,
-					/obj/item/kitchen/knife/combat/survival,
-					/obj/item/kitchen/knife/combat/survival)
+	contains = list(/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival)
 	crate_name = "combat knife crate"
+
+/*
+/datum/supply_pack/sec_supply/machete
+	name = "Stampted Steel Machete Crate"
+	desc = "Contains five mass produced machetes. A perfect choice for crews on a budget."
+	cost = 500
+	contains = list(/obj/item/melee/sword/mass,
+					/obj/item/melee/sword/mass,
+					/obj/item/melee/sword/mass,
+					/obj/item/melee/sword/mass,
+					/obj/item/melee/sword/mass)
+	crate_name = "combat knife crate"
+*/
 
 /datum/supply_pack/sec_supply/fire
 	name = "Incendiary Weapons Crate"
@@ -84,6 +104,7 @@
 	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_NGR
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)

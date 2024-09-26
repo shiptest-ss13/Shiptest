@@ -26,7 +26,7 @@
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeadmin)
 "afh" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -154,7 +154,7 @@
 /turf/open/floor/plating,
 /area/ctf)
 "agI" = (
-/obj/machinery/power/emitter/energycannon{
+/obj/machinery/power/emitter/energycannon/ctf{
 	active = 0
 	},
 /turf/open/floor/plating,
@@ -163,7 +163,7 @@
 /turf/open/floor/plating,
 /area/ctf)
 "aha" = (
-/obj/machinery/power/emitter/energycannon{
+/obj/machinery/power/emitter/energycannon/ctf{
 	active = 0;
 	dir = 1
 	},
@@ -1084,11 +1084,11 @@
 /area/centcom/control)
 "apm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/marksman/gal/inteq{
+/obj/item/gun/ballistic/automatic/marksman/f4/inteq{
 	pixel_x = -4;
 	pixel_y = -2
 	},
@@ -1356,7 +1356,7 @@
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "ara" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer,
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "ard" = (
@@ -1686,7 +1686,7 @@
 /area/centcom/evac)
 "atW" = (
 /obj/structure/rack,
-/obj/item/nullrod/claymore{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -1908,7 +1908,7 @@
 /area/wizard_station)
 "avt" = (
 /obj/structure/rack,
-/obj/item/nullrod/claymore/katana{
+/obj/item/melee/sword/katana{
 	damtype = "stamina";
 	force = 30
 	},
@@ -2467,7 +2467,7 @@
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "azO" = (
-/obj/item/kitchen/knife/ritual,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "azP" = (
@@ -3043,10 +3043,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel,
 /area/wizard_station)
-"aEX" = (
-/obj/structure/table/wood,
-/turf/open/floor/plasteel,
-/area/wizard_station)
 "aEY" = (
 /obj/structure/table/wood,
 /obj/item/bikehorn/golden{
@@ -3313,7 +3309,6 @@
 /area/tdome/tdomeobserve)
 "aHq" = (
 /obj/structure/closet/cardboard,
-/obj/item/banhammer,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/wizard_station)
@@ -3944,7 +3939,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/evac)
 "aLP" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
@@ -4055,7 +4050,7 @@
 "aMx" = (
 /obj/machinery/light/directional/east,
 /obj/structure/rack,
-/obj/item/nullrod/claymore/saber/red{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -4983,7 +4978,7 @@
 "aRS" = (
 /obj/machinery/light/directional/west,
 /obj/structure/rack,
-/obj/item/nullrod/claymore/glowing{
+/obj/item/melee/sword/claymore{
 	damtype = "stamina";
 	force = 30
 	},
@@ -5288,15 +5283,6 @@
 /obj/item/reagent_containers/glass/beaker,
 /turf/open/floor/plasteel,
 /area/centcom/holding)
-"aUh" = (
-/obj/machinery/light/directional/east,
-/obj/structure/rack,
-/obj/item/nullrod/claymore/darkblade{
-	damtype = "stamina";
-	force = 30
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aUj" = (
 /obj/item/coin/antagtoken,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -5497,7 +5483,7 @@
 /area/wizard_station)
 "aVF" = (
 /obj/structure/rack,
-/obj/item/nullrod/scythe/vibro{
+/obj/item/scythe{
 	damtype = "stamina";
 	force = 30
 	},
@@ -5967,15 +5953,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"aYV" = (
-/obj/machinery/light/directional/west,
-/obj/structure/rack,
-/obj/item/nullrod/claymore/saber{
-	damtype = "stamina";
-	force = 30
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aYW" = (
 /obj/effect/landmark/thunderdome/one,
 /obj/effect/turf_decal/industrial/warning{
@@ -6990,8 +6967,8 @@
 /area/centcom/evac)
 "cIS" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq,
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq{
 	pixel_x = -5;
 	pixel_y = -5
 	},
@@ -8850,7 +8827,7 @@
 	},
 /area/centcom)
 "gFU" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
@@ -10986,7 +10963,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -11574,8 +11551,8 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-/obj/item/reagent_containers/food/snacks/spaghetti,
-/obj/item/reagent_containers/food/snacks/spaghetti,
+/obj/item/food/spaghetti/raw,
+/obj/item/food/spaghetti/raw,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet,
@@ -12253,7 +12230,7 @@
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeadmin)
 "nEL" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -15514,7 +15491,7 @@
 	pixel_x = 7;
 	pixel_y = -2
 	},
-/obj/item/kitchen/knife{
+/obj/item/melee/knife/kitchen{
 	pixel_y = -5;
 	pixel_x = -5
 	},
@@ -15801,7 +15778,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "vcL" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer,
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
@@ -23766,7 +23743,7 @@ auE
 aEc
 auE
 aAx
-aEX
+aEW
 aqZ
 aqZ
 aGr
@@ -43314,7 +43291,7 @@ aCT
 aCT
 aNT
 avt
-aYV
+aRS
 aOU
 aOU
 aRS
@@ -45887,7 +45864,7 @@ avt
 aMx
 aQg
 aTb
-aUh
+aMx
 atW
 aWO
 aaa

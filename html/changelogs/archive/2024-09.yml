@@ -1,0 +1,192 @@
+2024-09-04:
+  generalthrax:
+  - balance: E-40 is now slightly less expensive
+2024-09-05:
+  Apogee-dev:
+  - balance: Removed electrical insulation from all gloves except insulated gloves
+  - balance: Removed siemens coefficient from hardsuits, except for engi atmos and
+      CE
+  - balance: Added siemens coefficient to engineer space suits
+  - balance: Replaced combat gloves with insulated gloves for some factions' engineer
+      lockers
+  Zevotech:
+  - bugfix: winter biodome and buried shrine ruins no longer have an egregious amount
+      of creature burrows
+  zimon9:
+  - bugfix: fixed typepath for 10mm rubber rounds
+2024-09-07:
+  Martinpachu:
+  - rscadd: To-do once i get the proper names and all
+  Zevotech:
+  - bugfix: The "pulse carbine" in the sandplanet saloon has a sprite again
+  - tweak: Added some extra mobs to the sandplanet saloon to balance out the money
+      in it
+  meemofcourse:
+  - spellcheck: Human generic names (the ones that show up when you examine someone)
+      will be prefixed consistently
+2024-09-09:
+  Gristlebee:
+  - rscadd: Adds the Mauler, Spitter, and Pounder to the black market
+  ZephyrTFA:
+  - server: CDN fully operational again after noticing an incorrectly absolute relative
+      path
+2024-09-10:
+  Apogee-dev:
+  - balance: Made security hardsuits faster and blood-red hardsuits slower
+  - balance: Normalized some weird hardsuit speed outliers
+  - bugfix: NT captain gloves no longer lie about shockproofing
+  - balance: Reduced hollowpoint damage by 5 (and 8mm Hollowpoint by 6)
+  FalloutFalcon, MrMelbert, Coiax:
+  - code_imp: ported alot tg botany code along with gene desc and icons to be used
+      more soon
+  - refactor: moves most plant effects into genetics stuff
+  Gristlebee:
+  - rscadd: Bandolier auto-loading and examine hint
+  - rscadd: Welders/Plasmacutters now deal damage to wall integrity to decon
+  - rscadd: Plasmacutters are now engineering tools and fit in toolbelts. They can
+      damage ores into slag if used to mine. They are now researched with plasma technology
+      and advanced plasma technology.
+  - rscadd: Plasmacutters to cargo for 1250
+  - rscadd: Adds plasmacutters to the Mudskipper, Riggs, Talos, Gecko, Heron, Osprey,
+      Ranger, Hyena, Komodo, Shetland and Twinkleshine
+  - rscdel: Plasmacutters extra mining range
+  - bugfix: Plasmacutters can repair prosthetic limbs like welders
+  - code_imp: Moves damage behavior of concrete walls to closed turfs. Basic walls
+      are now repaired with a welder.
+  - code_imp: R-walls d-state tied to their integrity. R-walls can be deconstructed
+      with plasmacutters.
+  - code_imp: Crate decon checks for tool behavior rather than a istype check
+  - rscadd: Gun safeties can be toggled from 1st level storage slots.
+  zimon9:
+  - rscadd: Adds a rubbershot box to the outpost market
+2024-09-11:
+  FalloutFalcon:
+  - rscdel: Removed sheetz. Feel free to send me threats for this crime!
+  - rscadd: Added faction datums, this will be cool soon!
+  Sadhorizon:
+  - rscdel: Removed a lot of cruft from the loadout.
+  - rscdel: Removed flamethrower slapcrafting.
+  - rscdel: Removed the Tribal crafting tab (some items were moved to other tabs).
+  - rscdel: Removed bone club, skull helmet and bone armor from the bone construction
+      menu.
+2024-09-13:
+  retlaw34, rye-rice, Apogee-dev, generalthrax, Tamamitsune, Nitha(emotional support):
+  - rscadd: Scarborough Arms for every syndicate faction
+  - rscadd: New sounds for the commander
+  - balance: scout's price has been reduced slightly
+  - rscdel: Donksoft toy guns
+  - bugfix: You can no longer attach shit to revolvers
+2024-09-14:
+  FalloutFalcon:
+  - bugfix: no emergency for floor lights untill someone adds a sprite for them!
+  Gristlebee:
+  - rscadd: Adds  binocs, lavaproof rods, gps, deep core mining scanner, anomaly neutralizer
+      to exploration cargo
+  - rscadd: You can hit veins with a deep core scanner on harm intent to stop it tracking,
+      and hit it again to readd it.
+  - rscadd: Deep core scanner fits in explorer webbing and explorer suits.
+  - balance: Outpost Cargo exploration tab
+  MemeSnorfer:
+  - rscdel: Removed forced emotes from most reagents.
+  ToasterBiome:
+  - bugfix: Centcom Ban DB is now accessible again through PP
+2024-09-15:
+  FalloutFalcon:
+  - rscdel: Removed useless vars
+  Gristlebee:
+  - rscadd: Unsaftied guns can go off on their own.
+  - code_imp: Changes ammo casing firing code so it's able to work without a user.
+  Zevotech:
+  - bugfix: Certain Subshuttle engine prechargers have now been correctly rotated.
+2024-09-16:
+  Gristlebee:
+  - bugfix: Misfires no longer have 100% chance
+2024-09-18:
+  Bjarl:
+  - rscadd: You can now purchase concrete mix at the outpost. For concrete making.
+2024-09-19:
+  FalloutFalcon:
+  - code_imp: ctf machines now only process while ctf is running
+  Rye-Rice, Gristlebee:
+  - rscadd: Comfortable Temperature ranges
+  - imageadd: Temperature HUD alerts
+2024-09-21:
+  Bjarl:
+  - rscadd: The PGF now has it's own turret offerings. They come in light, normal,
+      and heavy flavor.
+  FalloutFalcon:
+  - code_imp: added ruin tags to ruin map templates to be used soon for stuff.
+  Gristlebee:
+  - rscadd: Inteq wintercoats and hoodies in the Talos, Colossus, Vaquero and Valor
+      uniform lockers
+  PositiveEntropy:
+  - rscadd: A new and refurbished Elite Syndicate suit has just been unveiled!
+  Sadhorizon:
+  - rscadd: Added "ballistic goggles" - new indie security clothing item.
+  - imageadd: Added Kepori bulletproof helmet sprites.
+2024-09-22:
+  Bjarl:
+  - code_imp: Ship Turrets can now be attached to control consoles outside the area
+      they are in. please look at ship maps for examples on how.
+  - rscadd: Every single ship with turrets now does the above
+  PositiveEntropy:
+  - rscadd: Gorlex Splinters now have winter coats!
+  Sadhorizon:
+  - bugfix: Panacea-class is no longer an independent ship.
+2024-09-23:
+  Bjarl:
+  - rscadd: You can now buy flares at the outpost
+  - rscadd: Wasteplanets now will generate concrete filled caves.
+2024-09-24:
+  Apogee-dev:
+  - balance: Changed decoration on Miskilamo ships to look similar to each other
+  - balance: reduced Kilo starting funds to 1500
+  - bugfix: fixed wires on Mudskipper
+  Bjarl:
+  - bugfix: turrets will now _actually_ connect to their console. i swear im a real
+      coder.
+  FalloutFalcon:
+  - code_imp: bunch of code organization related to melee
+  - refactor: cleaned up a bunch of melee items to have better inheritance and paths
+  PositiveEntropy:
+  - imageadd: Resprites all balaclavas!
+  Thera-Pissed:
+  - rscdel: unused did_fire var
+  - rscdel: B.E.P.I.S. and related tech nodes.
+  rye, erika:
+  - rscadd: concrete jugs have been replaced by much more appropriate concrete bags,
+      jee, i hope whoever made *that* blunder got fired.
+  thgvr:
+  - balance: Colossus now only has 2 recruit slots instead of a whopping !!5!!
+  - rscadd: A bunch of kepori underwear have sprites now
+  trazodont:
+  - bugfix: miso soup spelling error
+  zimon9:
+  - rscadd: Adds a bit more contrast to the output of health analyzers
+2024-09-25:
+  Jedi-Toothpaste:
+  - bugfix: Added windows to the mudskipper and shetland's engines.
+  - bugfix: Adjusted the blast doors which open on the Shetland's engines.
+  SomeguyManperson:
+  - bugfix: sawn off illestren/improvised shotgun stats are now consistent if they
+      are spawned in
+2024-09-26:
+  FalloutFalcon:
+  - rscadd: Added new blank shells for training drills!
+  - refactor: Minor refactor of design disks to reduce repeated code
+  - rscadd: Ballistics now have a minimum recoil, not enough to mess up your shot!
+  - bugfix: ships now start closed. shiptesters be writing there memos and ship names.
+  - rscadd: You can now see ships in the orbit menu and its alot prettier!
+  - code_imp: ported tg points of interest and a much improved orbit menu
+  Gristlebee:
+  - bugfix: fixes wall deconstruction causing runtimes
+  Jedi-Toothpaste:
+  - bugfix: Fixed the lack of windows for the Kilo's Thrusters, and fixed the broken
+      link for the new blast doors.
+  generalthrax:
+  - balance: Most common accessories now fit on pants
+  - rscadd: Exosuit Recharger machines are now available from cargo
+  - balance: Rust Reds on the blackmarket are now available to a maximum of 3
+  zimon9:
+  - rscadd: Added fruit puree to vegan rations
+  - rscdel: Removed pizza crackers from vegan rations
