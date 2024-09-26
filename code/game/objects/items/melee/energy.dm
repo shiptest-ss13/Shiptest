@@ -1,5 +1,5 @@
 /obj/item/melee/transforming/energy
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	hitsound_on = 'sound/weapons/blade1.ogg'
 	heat = 3500
 	max_integrity = 200
@@ -255,7 +255,6 @@
 /obj/item/melee/transforming/energy/ctf
 	name = "energy sword"
 	desc = "That cable over there, I'm going to cut it."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "plasmasword0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'

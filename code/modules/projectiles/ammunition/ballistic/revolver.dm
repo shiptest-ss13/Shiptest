@@ -88,14 +88,14 @@
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 /obj/item/ammo_casing/c38/hotshot
-	name = ".38 hot shot bullet casing"
-	desc = "A .38 hot shot bullet casing."
+	name = ".38 hearth bullet casing"
+	desc = "A .38 hearth bullet casing."
 	bullet_skin = "incen"
 	projectile_type = /obj/projectile/bullet/c38/hotshot
 
 /obj/item/ammo_casing/c38/iceblox
-	name = ".38 iceblox bullet casing"
-	desc = "A .38 iceblox bullet casing."
+	name = ".38 chilled bullet casing"
+	desc = "A .38 chilled bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
 

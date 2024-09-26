@@ -419,7 +419,7 @@
 /obj/item/seeds/lavaland/puce/attackby(obj/item/item, mob/user, params)
 	. = ..()
 	//anyone intending to add more garnishes using this method should componentize this
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")

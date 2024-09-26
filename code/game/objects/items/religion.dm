@@ -281,15 +281,3 @@
 	new /obj/item/clothing/head/helmet/plate/crusader/red(src)
 	new /obj/item/clothing/gloves/plate/red(src)
 	new /obj/item/clothing/shoes/plate/red(src)
-
-
-/obj/item/claymore/weak
-	desc = "This one is rusted."
-	force = 30
-	armour_penetration = 15
-
-/obj/item/claymore/weak/ceremonial
-	desc = "A rusted claymore, once at the heart of a powerful scottish clan struck down and oppressed by tyrants, it has been passed down the ages as a symbol of defiance."
-	force = 15
-	block_chance = 30
-	armour_penetration = 5
