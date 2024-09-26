@@ -25,6 +25,7 @@
 /obj/structure/cabinet/Destroy()
 	if(istype(stored))
 		qdel(stored)
+		stored = null
 	return ..()
 
 /obj/structure/cabinet/examine(mob/user)
