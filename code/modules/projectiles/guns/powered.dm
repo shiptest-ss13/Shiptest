@@ -3,14 +3,19 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/gauss,
 	)
+	var/default_cell_type = /obj/item/stock_parts/cell/gun
+	var/list/allowed_cell_types = list(
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
 	charge_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
-	if(default_ammo_type)
-		cell = new default_ammo_type(src)
-	else
-		cell = new(src)
+	if(default_cell_type)
+		cell = new default_cell_type(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
@@ -42,7 +47,7 @@
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
-	if (!internal_cell && A.type in allowed_ammo_types)
+	if (!internal_cell && (A.type in allowed_cell_types))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)

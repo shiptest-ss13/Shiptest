@@ -48,8 +48,8 @@
 	item_state = "model-h"
 	fire_sound = 'sound/weapons/gun/gauss/modelh.ogg'
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
-	default_ammo_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_ammo_types = list(
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 	slot_flags = ITEM_SLOT_BELT
@@ -91,8 +91,8 @@
 	item_state = "claris"
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
 	load_sound = 'sound/weapons/gun/gauss/sniper_reload.ogg'
-	default_ammo_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_ammo_types = list(
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 	fire_delay = 0.4 SECONDS
@@ -123,8 +123,8 @@
 	item_state = "gar"
 	fire_sound = 'sound/weapons/gun/gauss/gar.ogg'
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
-	default_ammo_type = /obj/item/stock_parts/cell/gun/solgov
-	allowed_ammo_types = list(
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	default_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 	burst_size = 1
