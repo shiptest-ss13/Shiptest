@@ -20,7 +20,7 @@
 	name = "handcuffs"
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "handcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
@@ -217,7 +217,7 @@
 	name = "leg cuffs"
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "handcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
@@ -426,6 +426,6 @@
 /obj/item/restraints/legcuffs/bola/watcher //tribal bola for tribal lizards
 	name = "watcher Bola"
 	desc = "A Bola made from the stretchy sinew of fallen watchers."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "bola_watcher"
 	breakouttime = 45

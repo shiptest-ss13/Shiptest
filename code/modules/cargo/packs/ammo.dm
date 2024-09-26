@@ -72,6 +72,18 @@
 	cost = 500
 	contains = list(/obj/item/ammo_box/a12g/slug)
 
+/datum/supply_pack/ammo/blank_shells
+	name = "Blank Shell Crate"
+	desc = "Contains a box of blank shells."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g/blanks)
+
+/datum/supply_pack/ammo/blank_ammo_disk
+	name = "Blank Ammo Design Disk Crate"
+	desc = "Run your own training drills!"
+	cost = 1000
+	contains = list(/obj/item/disk/design_disk/blanks)
+
 /datum/supply_pack/ammo/techshells
 	name = "Unloaded Shotgun Technological Shells Crate"
 	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."

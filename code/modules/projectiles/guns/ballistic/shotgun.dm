@@ -432,6 +432,14 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	sawn_off = TRUE
 	slot_flags = ITEM_SLOT_BELT
 
+	wield_slowdown = 0.25
+	wield_delay = 0.3 SECONDS //OP? maybe
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 3 //or not
+	recoil_unwielded = 5
+
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
 	desc = "A compact version of the compact version of the semi automatic combat shotgun. For when you want a gun the same size as your brain."

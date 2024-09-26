@@ -462,7 +462,7 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
-		return 1
+		return TRUE
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)
