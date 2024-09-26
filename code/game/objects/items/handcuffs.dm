@@ -295,7 +295,11 @@
 				snap = FALSE
 
 			var/def_zone = BODY_ZONE_CHEST
-			if(snap && iscarbon(L))
+			if(snap && isanimal(L))
+				var/mob/living/simple_animal/SA = L
+				if(SA.mob_size <= MOB_SIZE_TINY) //don't close the trap if they're as small as a mouse.
+					snap = FALSE
+			if(snap && (iscarbon(L) || isanimal(L)))
 				var/mob/living/carbon/C = L
 				if(C.body_position == STANDING_UP)
 					def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -305,10 +309,6 @@
 						C.update_equipment_speed_mods()
 						C.update_inv_legcuffed()
 						SSblackbox.record_feedback("tally", "handcuffs", 1, type)
-			else if(snap && isanimal(L))
-				var/mob/living/simple_animal/SA = L
-				if(SA.mob_size <= MOB_SIZE_TINY) //don't close the trap if they're as small as a mouse.
-					snap = FALSE
 			if(snap)
 				close_trap()
 				L.visible_message("<span class='danger'>[L] gets caught by \the [src]!</span>", \
@@ -357,7 +357,7 @@
 	playsound(src.loc,'sound/weapons/bolathrow.ogg', 75, TRUE)
 
 /obj/item/restraints/legcuffs/bola/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(..() || !iscarbon(hit_atom))//if it gets caught or the target can't be cuffed,
+	if(..() || !(iscarbon(hit_atom) || isanimal(hit_atom)))//if it gets caught or the target can't be cuffed,
 		return//abort
 	ensnare(hit_atom)
 

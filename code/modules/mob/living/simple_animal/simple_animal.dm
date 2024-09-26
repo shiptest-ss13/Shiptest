@@ -159,7 +159,8 @@
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-
+	if(legcuffed)
+		QDEL_NULL(legcuffed)
 	LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[virtual_z()]", src)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
@@ -538,6 +539,41 @@
 		if(A.update_remote_sight(src)) //returns 1 if we override all other sight updates.
 			return
 	sync_lighting_plane_alpha()
+
+/mob/living/simple_animal/get_item_by_slot(slot_id)
+	switch(slot_id)
+		if(ITEM_SLOT_LEGCUFFED)
+			return legcuffed
+	return null
+
+/mob/living/simple_animal/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == legcuffed)
+		return ITEM_SLOT_LEGCUFFED
+	return ..()
+
+/mob/living/simple_animal/equipped_speed_mods()
+	. = ..()
+	if(legcuffed)
+		var/obj/item/legcuff = legcuffed
+		. += legcuff?.slowdown
+
+/mob/living/simple_animal/update_inv_legcuffed()
+	clear_alert("legcuffed")
+	if(legcuffed)
+		throw_alert("legcuffed", /atom/movable/screen/alert/restrained/legcuffed, new_master = src.legcuffed)
+
+/mob/living/simple_animal/resist_restraints()
+	if(legcuffed)
+		visible_message("<span class='warning'>[src] attempts to free [p_them()]self!</span>", \
+			span_notice("YYou attempt to free yourself..."))
+		if(prob(10))
+			visible_message(span_warning("[src] is able free [p_them()]self!"), \
+				span_notice("You free yourself!"))
+			legcuffed.forceMove(drop_location())
+			legcuffed.dropped(src)
+			legcuffed = null
+			update_inv_legcuffed()
+			return TRUE
 
 /mob/living/simple_animal/get_idcard(hand_first)
 	return access_card
