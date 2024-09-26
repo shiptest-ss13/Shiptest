@@ -5,8 +5,6 @@
  *
  */
 
-#define TRAIT_WIELDED "wielded"
-
 /datum/component/two_handed
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS 		// Only one of the component can exist on an item
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
