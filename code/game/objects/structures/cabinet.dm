@@ -23,7 +23,7 @@
 	update_appearance()
 
 /obj/structure/cabinet/Destroy()
-	if(stored)
+	if(istype(stored))
 		qdel(stored)
 	return ..()
 
