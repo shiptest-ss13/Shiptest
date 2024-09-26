@@ -124,7 +124,7 @@
 	fire_sound = 'sound/weapons/gun/gauss/gar.ogg'
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
-	default_cell_types = list(
+	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 	burst_size = 1
