@@ -851,6 +851,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"hJ" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/medical/surgery)
 "hN" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -1517,6 +1520,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "nz" = (
@@ -3428,6 +3432,7 @@
 /obj/effect/turf_decal/trimline/opaque/brown/line{
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "EJ" = (
@@ -4287,9 +4292,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "Nn" = (
@@ -4315,15 +4317,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
-"Ns" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/medical/surgery)
 "NA" = (
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4612,7 +4605,6 @@
 /obj/effect/turf_decal/trimline/opaque/brown/line{
 	dir = 1
 	},
-/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -4743,6 +4735,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Re" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "Rh" = (
@@ -5219,7 +5215,9 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 4
+	},
 /obj/structure/chair,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -5445,6 +5443,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -5908,10 +5909,10 @@ Mn
 de
 KU
 zI
-Re
-Re
+hJ
+hJ
 xg
-Ns
+Re
 Ui
 gU
 nK
@@ -5942,9 +5943,9 @@ Fa
 MR
 qk
 su
-YL
-YL
 Nk
+Nk
+YL
 ux
 rO
 qR
