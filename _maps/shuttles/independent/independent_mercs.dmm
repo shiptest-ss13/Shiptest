@@ -9,7 +9,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "aq" = (
-/obj/item/radio/intercom/wideband/directional/north,
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "solgov_wall"
+	},
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "av" = (
@@ -17,18 +22,16 @@
 /area/ship/hallway/central)
 "aC" = (
 /obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/structure/cable{
-	icon_state = "1-9"
+	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "aF" = (
 /turf/open/floor/carpet/royalblue,
@@ -45,7 +48,7 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "bA" = (
 /obj/structure/table/wood,
@@ -99,8 +102,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "dC" = (
+/obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/mono,
-/area/ship/crew/dorm/captain)
+/area/ship/hallway/central)
 "dL" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -111,9 +115,19 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
 "eu" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "ev" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "eY" = (
@@ -233,9 +247,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "is" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen)
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "iu" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -413,9 +427,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "nV" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/dorm/captain)
+/obj/machinery/blackbox_recorder,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "og" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -460,7 +474,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "rl" = (
 /turf/open/floor/carpet/red_gold,
@@ -605,25 +619,10 @@
 /obj/item/toy/cards/deck,
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
-"xa" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew/ccommons)
 "xx" = (
 /obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
-"xQ" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-6"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
 "Aj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -651,12 +650,10 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "AX" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
-	icon_state = "0-5"
+	icon_state = "1-2"
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "By" = (
@@ -789,7 +786,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ET" = (
 /obj/effect/turf_decal/box/corners{
@@ -851,15 +852,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
-"Hg" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "Hm" = (
 /obj/structure/guncloset,
 /turf/open/space/basic,
@@ -868,7 +860,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Hu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -890,19 +883,6 @@
 "JD" = (
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"Kg" = (
-/obj/structure/table,
-/obj/structure/closet/wall/white/directional/east,
-/obj/item/storage/cans/sixbeer,
-/obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen)
 "KQ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm/captain)
@@ -954,9 +934,9 @@
 "MA" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
-	icon_state = "0-10"
+	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Nb" = (
 /obj/effect/turf_decal/box/corners{
@@ -976,18 +956,21 @@
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
 "NF" = (
-/obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "solgov_wall"
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering/engines/starboard)
 "NR" = (
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "NW" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/dorm/captain)
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "OK" = (
 /obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1006,18 +989,13 @@
 /area/ship/cargo)
 "OX" = (
 /obj/structure/cable{
-	icon_state = "2-10"
-	},
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	icon_state = "2-5"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "PH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1262,9 +1240,15 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Xh" = (
-/obj/structure/chair,
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew/ccommons)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "Xn" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -1273,14 +1257,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Xu" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-6"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "Xy" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow,
@@ -1316,13 +1295,12 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "Ye" = (
-/obj/structure/chair/stool/bar{
-	dir = 4;
-	pixel_x = 10
+/obj/item/radio/intercom/wideband/directional/north,
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 5
 	},
-/obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/canteen)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "Yz" = (
 /obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet,
@@ -1355,9 +1333,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "YQ" = (
-/obj/machinery/vending/cigarette,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm)
+/obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/table,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/canteen)
 "YS" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/utility/skirt,
@@ -1878,7 +1857,7 @@ XG
 XG
 NR
 NR
-NR
+nV
 Hu
 YG
 YG
@@ -1947,9 +1926,9 @@ ws
 Wn
 lb
 uW
-Xu
 sm
-Hg
+sm
+sm
 Jc
 WK
 iu
@@ -1964,9 +1943,9 @@ Rw
 Rw
 Hu
 YN
-xQ
 jC
-AX
+jC
+jC
 Hu
 Eo
 Eo
@@ -1985,13 +1964,13 @@ Jt
 hb
 Se
 th
-th
+hb
 bm
-th
+hb
 uW
 ev
 OX
-Hq
+Xh
 Hq
 cu
 gN
@@ -2005,10 +1984,10 @@ Mj
 Eb
 Eb
 Gy
-EE
+AX
 EE
 aC
-JD
+NF
 Hu
 Eo
 Db
@@ -2027,9 +2006,9 @@ xx
 hb
 uW
 LG
-th
-th
-th
+hb
+hb
+hb
 uW
 MA
 QY
@@ -2110,7 +2089,7 @@ OV
 ry
 uW
 uW
-YQ
+uW
 Gp
 Gp
 sH
@@ -2197,10 +2176,10 @@ OV
 OV
 Gp
 SL
-Ye
-Ye
-Ye
-Ye
+aQ
+aQ
+aQ
+aQ
 aQ
 aQ
 hU
@@ -2239,10 +2218,10 @@ OV
 OV
 hU
 Gp
-Kg
-is
-is
-is
+aQ
+aQ
+aQ
+aQ
 aQ
 aQ
 aQ
@@ -2261,8 +2240,8 @@ gC
 gC
 RD
 gC
-DG
-xa
+gC
+gC
 oJ
 oJ
 OV
@@ -2282,16 +2261,16 @@ OV
 OV
 hU
 Gp
-aQ
-aQ
-aQ
+YQ
+YQ
+YQ
 aQ
 aQ
 Ma
-lN
-nV
-dC
-NW
+Gp
+VR
+VR
+VR
 Aj
 uw
 jJ
@@ -2302,9 +2281,9 @@ Nw
 gC
 gC
 gC
-Xh
+gC
 DG
-xa
+gC
 hl
 OV
 OV
@@ -2315,6 +2294,48 @@ OV
 OV
 "}
 (23,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+hU
+aQ
+aQ
+aQ
+aQ
+aQ
+Ma
+Gp
+Xu
+dC
+is
+Aj
+eu
+SQ
+Ew
+Lm
+hl
+gC
+gC
+DG
+DG
+gC
+DG
+gC
+oJ
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(24,1,1) = {"
 OV
 OV
 OV
@@ -2336,9 +2357,9 @@ lN
 lN
 Aj
 eu
-SQ
-Ew
-Lm
+iN
+fo
+VI
 Aj
 hl
 rm
@@ -2356,7 +2377,7 @@ OV
 OV
 OV
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 OV
 OV
 OV
@@ -2379,8 +2400,8 @@ wJ
 Cj
 eu
 iN
-fo
-VI
+be
+pt
 Aj
 mb
 mb
@@ -2388,48 +2409,6 @@ hl
 WD
 WD
 oJ
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(25,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-hU
-OV
-lN
-lN
-AQ
-wJ
-wJ
-Aj
-NF
-iN
-be
-pt
-Aj
-Aj
-rm
-oJ
-OV
-OV
-OV
 OV
 OV
 OV
@@ -2453,6 +2432,48 @@ OV
 OV
 OV
 OV
+hU
+OV
+lN
+lN
+AQ
+wJ
+wJ
+Aj
+aq
+GH
+Rk
+Rk
+Aj
+Aj
+rm
+oJ
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(27,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
 OV
 OV
 KQ
@@ -2461,10 +2482,10 @@ AQ
 wJ
 BO
 Aj
-aq
-GH
-Rk
-Rk
+Ye
+NW
+NW
+NW
 jJ
 Zi
 OV
@@ -2482,7 +2503,7 @@ OV
 OV
 OV
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 OV
 OV
 OV
@@ -2524,7 +2545,7 @@ OV
 OV
 OV
 "}
-(28,1,1) = {"
+(29,1,1) = {"
 OV
 OV
 OV
