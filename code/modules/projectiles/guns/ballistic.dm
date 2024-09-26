@@ -13,6 +13,8 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	min_recoil = 0.1
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
@@ -376,3 +378,8 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		if(AC.BB)
 			process_fire(user, user, FALSE)
 			. = TRUE
+
+/obj/item/gun/ballistic/unsafe_shot(target, empty_chamber = TRUE)
+	. = ..()
+	process_chamber(empty_chamber,TRUE)
+
