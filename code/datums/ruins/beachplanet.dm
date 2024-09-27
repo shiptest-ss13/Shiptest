@@ -31,6 +31,7 @@
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	dynamic_mission_types = list(/datum/mission/dynamic/kill/frontiersmen)
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"

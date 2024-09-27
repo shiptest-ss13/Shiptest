@@ -236,7 +236,7 @@
 
 /obj/effect/landmark/mission_poi
 	icon = 'icons/effects/mission_poi.dmi'
-	icon_state = "main_thingy"
+	icon_state = "main_thing"
 	///Assume the item we want is included in the map and we simple have to return it
 	var/already_spawned = FALSE
 	///Only needed if you have multipe missiosn that use the same poi's on the map

@@ -1,12 +1,19 @@
 /obj/effect/landmark/mission_poi/kill
 
 /datum/mission/dynamic/kill
-	name = "Hit target"
-	desc = "We need this guy dead, bring us him or something on him"
+	name = null
+	desc = null
 	setpiece_poi = /obj/effect/landmark/mission_poi/kill
-	var/target_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
+	var/mob/target_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 	var/mob/required_target
+
+/datum/mission/dynamic/kill/generate_mission_details()
+	. = ..()
+	if(!name)
+		name = "[target_type::name] termination"
+	if(!desc)
+		desc = "Bounty for a high ranking [target_type::name] residing on this planet. They should have identifying dog tags"
 
 /datum/mission/dynamic/kill/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
 	required_target = set_bound(mission_poi.use_poi(setpiece_item), mission_poi.loc, null, FALSE, TRUE)

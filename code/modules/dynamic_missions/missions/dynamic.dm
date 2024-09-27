@@ -13,7 +13,7 @@
 			return
 	CRASH("[src] was unable to find its required landmark")
 
-/datum/mission/dynamic/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
+/datum/mission/dynamic/proc/spawn_main_piece(datum/overmap/dynamic/planet, obj/effect/landmark/mission_poi/mission_poi)
 	required_item =	set_bound(mission_poi.use_poi(setpiece_item), mission_poi.loc, null, TRUE, TRUE)
 
 /datum/mission/dynamic/can_turn_in(atom/movable/item_to_check)

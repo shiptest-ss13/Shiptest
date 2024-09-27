@@ -83,7 +83,7 @@
 			inserted_scan_id = null
 	. = TRUE
 
-/obj/machinery/computer/mission/proc/turn_in(datum/dynamic_mission/mission, choice)
+/obj/machinery/computer/mission/proc/turn_in(datum/mission/dynamic/mission, choice)
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
 	for(var/atom/movable/item_on_pad as anything in get_turf(pad))
 		if(item_on_pad == pad)

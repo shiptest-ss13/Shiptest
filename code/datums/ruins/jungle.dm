@@ -46,6 +46,7 @@
 	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
 	suffix = "jungle_cavecrew.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
+	dynamic_mission_types = list(/datum/mission/dynamic/kill/frontiersmen)
 
 /datum/map_template/ruin/jungle/library
 	name = "Abandoned Library"
