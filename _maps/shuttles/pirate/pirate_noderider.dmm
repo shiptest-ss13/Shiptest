@@ -341,10 +341,11 @@
 /area/ship/crew)
 "et" = (
 /obj/machinery/porta_turret/ship{
-	dir = 5
+	dir = 5;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/security/armory)
 "ev" = (
 /obj/machinery/power/rtg,
 /obj/structure/cable{
@@ -578,10 +579,11 @@
 /area/ship/crew)
 "iH" = (
 /obj/machinery/porta_turret/ship{
-	dir = 9
+	dir = 9;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "iJ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -965,6 +967,13 @@
 /obj/item/pickaxe/drill,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"oX" = (
+/obj/machinery/porta_turret/ship{
+	dir = 4;
+	id = "jupiter_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "pi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1596,6 +1605,13 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/central)
+"yH" = (
+/obj/machinery/porta_turret/ship{
+	dir = 4;
+	id = "jupiter_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "yI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1733,7 +1749,8 @@
 /area/ship/engineering)
 "Az" = (
 /obj/machinery/porta_turret/ship{
-	dir = 6
+	dir = 6;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -2578,10 +2595,11 @@
 /area/ship/maintenance/central)
 "MX" = (
 /obj/machinery/porta_turret/ship{
-	dir = 1
+	dir = 1;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/central)
 "MZ" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2862,10 +2880,11 @@
 /area/ship/cargo)
 "RE" = (
 /obj/machinery/porta_turret/ship{
-	dir = 4
+	dir = 4;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/crew)
 "RI" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2889,10 +2908,11 @@
 /area/ship/engineering)
 "Ss" = (
 /obj/machinery/porta_turret/ship{
-	dir = 10
+	dir = 10;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "SP" = (
 /obj/machinery/power/shieldwallgen/anchored,
 /obj/structure/cable,
@@ -2982,9 +3002,12 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "VC" = (
-/obj/machinery/porta_turret/ship,
+/obj/machinery/porta_turret/ship{
+	dir = 2;
+	id = "jupiter_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/central)
 "VF" = (
 /obj/machinery/ai_slipper,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -4102,7 +4125,7 @@ qc
 Th
 Kc
 by
-RE
+oX
 by
 oJ
 Ne
@@ -4192,7 +4215,7 @@ by
 by
 by
 by
-RE
+yH
 by
 by
 by
