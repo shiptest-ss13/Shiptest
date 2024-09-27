@@ -206,12 +206,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by Inteq Risk Management Group's mercenaries."
 	icon_state = "inteq_headset"
 
-/obj/item/radio/headset/inteq/captain
-	name = "vanguard radio headset"
-	desc = "Used by Inteq Risk Management Group's elite vanguards."
-	keyslot2 = new /obj/item/encryptionkey/heads/captain
-	command = TRUE
-
 /obj/item/radio/headset/inteq/basic/alt //An inteq bowman without an inteq encryption key, intended to be used by enforcers
 	name = "inteq bowman headset"
 	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
@@ -221,6 +215,21 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
+
+/obj/item/radio/headset/inteq/captain
+	name = "vanguard radio headset"
+	desc = "Used by Inteq Risk Management Group's elite vanguards."
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+	command = TRUE
+
+/obj/item/radio/headset/inteq/alt //An inteq bowman without an inteq encryption key, intended to be used by enforcers
+	name = "inteq bowman headset"
+	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
+	icon_state = "inteq_headset_alt"
+
+/obj/item/radio/headset/inteq/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
 /obj/item/radio/headset/inteq/alt/captain
 	name = "vanguard bowman headset"
