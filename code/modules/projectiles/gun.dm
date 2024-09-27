@@ -207,6 +207,12 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
+	///Used if the guns recoil is lower then the min, it clamps the highest recoil
+	var/min_recoil = 0
+
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
+
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
@@ -317,9 +323,6 @@
 	var/currently_firing_burst = FALSE
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
-
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -815,7 +818,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, 0 , INFINITY)
+	return clamp(recoil_bonus, min_recoil , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -984,7 +987,6 @@
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
 		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
-		var/did_fire = FALSE
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)

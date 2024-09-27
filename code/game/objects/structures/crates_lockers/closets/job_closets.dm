@@ -98,7 +98,6 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/chaplain_black/PopulateContents()
-	new /obj/item/storage/box/holy(src)
 	new /obj/item/clothing/accessory/pocketprotector/cosmetology(src)
 	new /obj/item/clothing/under/rank/civilian/chaplain(src)
 	new /obj/item/clothing/shoes/sneakers/black(src)
