@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
-/obj/item/radio/headset/inteq/alt //An inteq bowman without an inteq encryption key, intended to be used by enforcers
+/obj/item/radio/headset/inteq/alt
 	name = "inteq bowman headset"
 	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
 	icon_state = "inteq_headset_alt"
