@@ -842,6 +842,44 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
+//high rof, range, faster projectile speed
+/* 'Nanotrasen' turrets */
+
+/obj/machinery/porta_turret/ship/nt
+	name = "Sharplite Defense Turret"
+	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
+	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+	stun_projectile = /obj/projectile/beam/disabler/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 10
+	scan_range = 10
+
+/obj/machinery/porta_turret/ship/nt/light
+	name = "Sharplite LDS"
+	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Nanotrasen vessels."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+
+
+/obj/machinery/porta_turret/ship/nt/heavy
+	name = "Sharplite Defense Cannon"
+	desc = "A heavy laser mounting designed by Sharplite for usage on Nanotrasen vessels."
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
+	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+
+/obj/machinery/porta_turret/ship/nt/pulse
+	name = "Sharplite Pulse Cannon"
+	desc = "A pulse cannon mounting designed by Sharplite. Not sold to any purchasers and exclusively used on Nanotrasen Vessels."
+	lethal_projectile = /obj/projectile/beam/pulse/sharplite_turret
+	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+
+
 
 /* Syndicate Turrets */
 
