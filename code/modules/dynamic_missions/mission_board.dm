@@ -6,7 +6,6 @@
 	light_color = COLOR_BRIGHT_ORANGE
 	var/datum/weakref/pad_ref
 	var/obj/item/card/id/inserted_scan_id
-	var/sending = FALSE
 
 /obj/machinery/computer/mission/LateInitialize()
 	. = ..()
@@ -61,22 +60,6 @@
 		inserted_scan_id = null
 		return TRUE
 
-/// Prepares to sell the items on the pad
-/obj/machinery/computer/mission/proc/start_sending()
-	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
-	if(!pad)
-		pad.audible_message(span_notice("[pad] beeps."))
-		return
-	if(pad?.panel_open)
-		pad.audible_message(span_notice("[pad] beeps."))
-		return
-	if(sending)
-		return
-	sending = TRUE
-	pad.visible_message(span_notice("[pad] starts charging up."))
-	//pad.icon_state = pad.warmup_state
-	//sending_timer = addtimer(CALLBACK(src, PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
-
 /obj/machinery/computer/mission/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
@@ -101,7 +84,13 @@
 	. = TRUE
 
 /obj/machinery/computer/mission/proc/turn_in(datum/dynamic_mission/mission, choice)
-	return
+	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
+	for(var/atom/movable/item_on_pad as anything in get_turf(pad))
+		if(item_on_pad == pad)
+			continue
+		if(mission.can_turn_in(item_on_pad))
+			mission.turn_in(item_on_pad, choice)
+			return TRUE
 
 /// Return all items on pad
 /obj/machinery/computer/mission/proc/recalc()
@@ -129,7 +118,6 @@
 		data["missions"] += list(M.get_tgui_info(items_on_pad))
 	data["pad"] = pad_ref?.resolve() ? TRUE : FALSE
 	data["id_inserted"] = inserted_scan_id ? TRUE : FALSE
-	data["sending"] = sending
 	return data
 
 /obj/machinery/mission_pad

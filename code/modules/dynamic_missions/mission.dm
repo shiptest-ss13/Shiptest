@@ -15,7 +15,7 @@
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
-	var/val_mod_range = 0.1
+	var/val_mod_range = 0.2
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
@@ -29,13 +29,6 @@
 	var/list/atom/movable/bound_atoms
 
 /datum/dynamic_mission/New(_location)
-	if(duration)
-		var/old_dur = duration
-		var/dur_mod = duration * dur_mod_range
-		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
-		var/val_mod = value * val_mod_range
-		value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
-
 	//source_outpost = _outpost
 	mission_location = _location
 	SSmissions.inactive_missions += list(src)
@@ -64,14 +57,23 @@
 	qdel(src)
 
 /datum/dynamic_mission/proc/generate_mission_details()
+	var/val_mod = value * val_mod_range
+	value = rand(value-val_mod, value+val_mod)
+	if(duration)
+		var/old_dur = duration
+		var/dur_mod = duration * dur_mod_range
+		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
+		value = value * (dur_value_scaling ? old_dur / duration : 1)
+	value = round(value, 50)
+
 	author = random_species_name()
 	return
 
 /datum/dynamic_mission/proc/reward_flavortext()
 	return list(
-		"[MISSION_REWARD_CASH]" = "[value * 1.2] cr upon completion",
-		"[MISSION_REWARD_ITEMS]" = "A nice slice of ham AND [value] cr",
-		"[MISSION_REWARD_REP]" = "[value] cr and rep with [SSfactions.faction_name(src.faction)]",
+		MISSION_REWARD_CASH = "[value * 1.2] cr upon completion",
+		MISSION_REWARD_ITEMS = "A nice slice of ham AND [value] cr",
+		MISSION_REWARD_REP = "[value] cr and rep with [SSfactions.faction_name(src.faction)]",
 	)
 
 /datum/dynamic_mission/proc/start_mission()
@@ -100,13 +102,28 @@
 /datum/dynamic_mission/proc/can_turn_in(atom/movable/item_to_check)
 	return
 
-/datum/dynamic_mission/proc/turn_in()
-	qdel(src)
+/datum/dynamic_mission/proc/turn_in(atom/movable/item_to_turn_in, choice)
+	if(can_turn_in(item_to_turn_in))
+		spawn_reward(item_to_turn_in.loc, choice)
+		do_sparks(3, FALSE, get_turf(item_to_turn_in))
+		qdel(item_to_turn_in)
+		qdel(src)
+
+/datum/dynamic_mission/proc/spawn_reward(loc, choice)
+	switch(choice)
+		if(MISSION_REWARD_CASH)
+			new /obj/item/spacecash/bundle(loc, value * 1.2)
+		if(MISSION_REWARD_ITEMS)
+			new /obj/item/spacecash/bundle(loc, value)
+			new /obj/item/reagent_containers/food/snacks/spidereggsham(loc)
+		//Rep probally not coming in this pr i think
+		if(MISSION_REWARD_REP)
+			new /obj/item/spacecash/bundle(loc, value * 1.2)
 
 /datum/dynamic_mission/proc/can_complete()
 	return !failed
 
-/datum/dynamic_mission/proc/get_tgui_info(var/list/items_on_pad)
+/datum/dynamic_mission/proc/get_tgui_info(list/items_on_pad)
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = ""
@@ -161,6 +178,13 @@
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
+	if(sparks)
+		do_sparks(3, FALSE, get_turf(bound))
+	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
+	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
+	return bound
+
+/datum/dynamic_mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
@@ -224,14 +248,22 @@
 	. = ..()
 
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn)
-	if(istype(_type_to_spawn))
+	var/atom/item_of_intrest
+	//Only use the type_to_spawn we have if a type is not passed
+	if(ispath(_type_to_spawn))
 		type_to_spawn = _type_to_spawn
-	if(already_spawned)
+	if(already_spawned) //Search for the item
 		for(var/atom/movable/item_in_poi as anything in get_turf(src))
 			if(istype(item_in_poi, type_to_spawn))
-				return item_in_poi
+				item_of_intrest = item_in_poi
 		stack_trace("[src] is meant to have its item prespawned but could not find it on its tile, resorting to spawning the type instead.")
-	return new type_to_spawn(loc)
+	else //Spawn the item
+		item_of_intrest = new type_to_spawn(loc)
+	// We dont have an item to return
+	if(!istype(item_of_intrest))
+		CRASH("[src] did not return a item_of_intrest")
+	qdel(src)
+	return item_of_intrest
 
 /// Instead of spawning something its used to find a matching item already in the map and returns that. For if you want to use an already exisiting part of the ruin.
 /obj/effect/landmark/mission_poi/pre_loaded

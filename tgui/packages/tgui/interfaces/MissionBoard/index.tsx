@@ -38,13 +38,6 @@ const MissionsContent = (props, context) => {
             onClick={() => act('recalc')}
           />
           <Button
-            icon={sending ? 'times' : 'arrow-up'}
-            tooltip={sending ? 'Stop Sending' : 'Send Goods'}
-            selected={sending}
-            disabled={!pad || !id_inserted}
-            onClick={() => act(sending ? 'stop' : 'send')}
-          />
-          <Button
             icon={'download'}
             content={'Eject ID'}
             disabled={!id_inserted}
@@ -89,10 +82,9 @@ const MissionsList = (props, context) => {
         <LabeledList.Item label="Rewards">
           {rewardKeys.map((rewardKey: string) => (
             <Button
-              icon={sending ? 'times' : 'arrow-up'}
-              tooltip={sending ? 'Sending' : 'Choose Reward'}
-              selected={sending}
-              disabled={!canTurnIn || sending}
+              icon={'arrow-up'}
+              tooltip={'Choose Reward'}
+              disabled={!canTurnIn || !pad || !id_inserted}
               onClick={() =>
                 act('send', { mission: ref, choice: rewardKey })
               }

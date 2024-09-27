@@ -15,6 +15,5 @@
 
 /datum/dynamic_mission/simple/guarded/nt_files/spawn_guard(obj/effect/landmark/mission_poi/guard_poi)
 	guard_type = pick(/mob/living/simple_animal/hostile/human/syndicate/melee, /mob/living/simple_animal/hostile/human/syndicate/ranged)
-	var/guard = new guard_type(guard_poi.loc)
-	qdel(guard_poi)
+	var/guard = guard_poi.use_poi(guard_type)
 	return guard

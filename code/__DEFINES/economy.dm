@@ -15,6 +15,6 @@
 
 #define NO_FREEBIES "commies go home"
 
-#define	MISSION_REWARD_CASH 0
-#define	MISSION_REWARD_ITEMS 1
-#define	MISSION_REWARD_REP 2
+#define	MISSION_REWARD_CASH "cash"
+#define	MISSION_REWARD_ITEMS "items"
+#define	MISSION_REWARD_REP "rep"
