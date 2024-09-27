@@ -7,6 +7,7 @@
 	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
 
+	var/location_specific = TRUE
 	/// The outpost that issued this mission. Passed in New().
 	//var/datum/overmap/outpost/source_outpost
 	var/datum/overmap/mission_location
@@ -17,8 +18,6 @@
 	var/val_mod_range = 0.1
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
-
-
 
 	var/active = FALSE
 	var/failed = FALSE
@@ -32,9 +31,9 @@
 /datum/dynamic_mission/New(_location)
 	if(duration)
 		var/old_dur = duration
-		var/val_mod = value * val_mod_range
 		var/dur_mod = duration * dur_mod_range
 		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
+		var/val_mod = value * val_mod_range
 		value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
 
 	//source_outpost = _outpost
@@ -68,6 +67,13 @@
 	author = random_species_name()
 	return
 
+/datum/dynamic_mission/proc/reward_flavortext()
+	return list(
+		"[MISSION_REWARD_CASH]" = "[value * 1.2] cr upon completion",
+		"[MISSION_REWARD_ITEMS]" = "A nice slice of ham AND [value] cr",
+		"[MISSION_REWARD_REP]" = "[value] cr and rep with [SSfactions.faction_name(src.faction)]",
+	)
+
 /datum/dynamic_mission/proc/start_mission()
 	SSmissions.inactive_missions -= src
 	active = TRUE
@@ -100,27 +106,38 @@
 /datum/dynamic_mission/proc/can_complete()
 	return !failed
 
-/datum/dynamic_mission/proc/get_tgui_info()
+/datum/dynamic_mission/proc/get_tgui_info(var/list/items_on_pad)
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = ""
 	if(can_complete())
 		act_str = "Turn in"
 
+	var/can_turn_in = FALSE
+	var/list/acceptable_items = list()
+	for(var/atom/movable/item_on_pad in items_on_pad)
+		if(can_turn_in(item_on_pad))
+			acceptable_items += list(item_on_pad.name)
+			can_turn_in = TRUE
+			break
+
 	return list(
 		"ref" = REF(src),
 		"name" = src.name,
 		"author" = src.author,
 		"desc" = src.desc,
+		"rewards" = src.reward_flavortext(),
 		"faction" = SSfactions.faction_name(src.faction),
+		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
 		"x" = mission_location.x,
 		"y" = mission_location.y,
-		"rewards" = src.reward_flavortext(),
 		"duration" = src.duration,
 		"remaining" = time_remaining,
 		"timeStr" = time2text(time_remaining, "mm:ss"),
 		"progressStr" = get_progress_string(),
-		"actStr" = act_str
+		"actStr" = act_str,
+		"canTurnIn" = can_turn_in,
+		"validItems" = acceptable_items
 	)
 
 /datum/dynamic_mission/proc/get_progress_string()
@@ -189,9 +206,6 @@
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
 	// remove info from our list
 	LAZYREMOVE(bound_atoms, bound)
-
-/datum/dynamic_mission/proc/reward_flavortext()
-	return "[value] cr upon completion"
 
 /obj/effect/landmark/mission_poi
 	icon = 'icons/effects/mission_poi.dmi'

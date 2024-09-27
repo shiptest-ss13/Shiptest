@@ -3,7 +3,7 @@
 	desc = "Retrive this thing for us and we will pay you"
 	var/setpiece_poi
 	var/setpiece_item
-	var/required_item
+	var/atom/movable/required_item
 
 /datum/dynamic_mission/simple/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
@@ -14,6 +14,8 @@
 	CRASH("[src] was unable to find its required landmark")
 
 /datum/dynamic_mission/simple/can_turn_in(atom/movable/item_to_check)
-	if(item_to_check == required_item)
-		return TRUE
-
+	if(istype(required_item))
+		if(item_to_check == required_item)
+			return TRUE
+		if(istype(item_to_check, required_item.type))
+			return TRUE
