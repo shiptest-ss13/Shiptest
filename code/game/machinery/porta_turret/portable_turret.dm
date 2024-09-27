@@ -80,7 +80,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/obj/machinery/porta_turret_cover/cover = null
 	/// World.time the turret last fired
 	var/last_fired = 0
-	/// Ticks until next shot (1.5 ?)
+	/// Ticks until next shot (1.5 ?) If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 15
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
