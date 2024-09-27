@@ -1680,9 +1680,10 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "jo" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
@@ -2206,9 +2207,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uT" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 4;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen/kitchen)
@@ -2399,9 +2401,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "yF" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 1;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 5
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
@@ -3079,9 +3082,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Lo" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 2;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 6
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
@@ -3480,16 +3484,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "TR" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 2;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 10
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "TV" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 1;
-	id = "meta_grid"
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 9
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
