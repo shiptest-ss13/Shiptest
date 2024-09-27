@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/item/clothing/head/papersack/smiley,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "af" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
@@ -52,7 +56,7 @@
 /area/ship/crew/dorm)
 "bA" = (
 /obj/structure/table/wood,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "bP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -70,12 +74,26 @@
 "cv" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engines/starboard)
+"cC" = (
+/obj/item/ammo_box/magazine/e40,
+/turf/open/space/basic,
+/area/space)
 "cG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"cI" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/item/bedsheet/cosmos{
+	dir = 4
+	},
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/captain)
 "cO" = (
 /obj/item/soap,
 /obj/structure/closet/wall/directional/east,
@@ -165,6 +183,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "fQ" = (
@@ -228,13 +247,10 @@
 /area/ship/security/armory)
 "if" = (
 /obj/structure/table,
-/obj/item/cutting_board,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin{
-	pixel_x = 7;
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
+/obj/machinery/microwave{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "il" = (
@@ -259,10 +275,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
-"iy" = (
-/obj/item/gun/ballistic/automatic/smg/cobra/indie,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "iD" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -330,6 +342,20 @@
 	dir = 8
 	},
 /area/ship/crew/dorm)
+"lA" = (
+/obj/structure/rack,
+/obj/item/attachment/bayonet,
+/obj/item/attachment/bayonet{
+	pixel_x = -5
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = 3
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "lF" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -373,14 +399,15 @@
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/structure/curtain/bounty,
-/turf/open/floor/plasteel/grimy,
+/obj/item/toy/plush/flushed,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "mE" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/structure/curtain/bounty,
 /obj/item/toy/plush/carpplushie,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "mR" = (
 /obj/machinery/power/smes/engineering,
@@ -463,6 +490,10 @@
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
+"pz" = (
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/turf/open/space/basic,
+/area/space)
 "ql" = (
 /obj/machinery/computer/cargo{
 	dir = 1
@@ -521,14 +552,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
-"sK" = (
-/obj/structure/table,
-/obj/machinery/microwave{
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/corner/opaque/yellow/mono,
-/turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "sV" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -609,7 +632,7 @@
 /obj/structure/curtain/bounty,
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "wJ" = (
 /turf/open/floor/wood,
@@ -623,6 +646,28 @@
 /obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
+"xY" = (
+/obj/structure/table/wood,
+/obj/item/ammo_casing/a357/hp{
+	name = ".357 execution round casing";
+	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/ammo_casing/a357/hp{
+	name = ".357 execution round casing";
+	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/obj/item/ammo_casing/a357/hp{
+	name = ".357 execution round casing";
+	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	pixel_x = 11;
+	pixel_y = 5
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/captain)
 "Aj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -645,9 +690,17 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
+"AO" = (
+/obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/chair/stool/bar{
+	dir = 8;
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/canteen)
 "AQ" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
 "AX" = (
 /obj/structure/cable{
@@ -657,7 +710,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "By" = (
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "BB" = (
 /obj/structure/chair{
@@ -712,10 +765,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Db" = (
-/obj/item/gun/ballistic/rocketlauncher/mako,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "Dd" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -782,6 +831,9 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
+"ED" = (
+/turf/open/space/basic,
+/area/ship/crew/dorm/captain)
 "EE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -797,6 +849,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Fc" = (
@@ -814,6 +867,28 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood,
 /area/ship/security)
+"FZ" = (
+/obj/item/clothing/head/helmet/bulletproof/m10{
+	pixel_y = 11;
+	pixel_x = -4
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof{
+	pixel_y = 2;
+	pixel_x = -4
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -7;
+	pixel_x = -2
+	},
+/obj/item/clothing/under/syndicate/camo{
+	pixel_x = 5
+	},
+/obj/item/clothing/glasses/night{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Gp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -854,7 +929,11 @@
 /area/ship/crew/dorm)
 "Hm" = (
 /obj/structure/guncloset,
-/turf/open/space/basic,
+/obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag,
+/obj/item/gun/ballistic/automatic/assault/e40{
+	spawnwithmagazine = 0
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Hq" = (
 /obj/structure/cable{
@@ -866,10 +945,29 @@
 "Hu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/starboard)
+"Ii" = (
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/head/hardhat{
+	pixel_y = 9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "In" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"IC" = (
+/obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/chair/stool/bar{
+	dir = 4;
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/canteen)
 "Jc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -910,11 +1008,20 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "LG" = (
-/obj/structure/dresser,
-/obj/item/toy/plush/moth{
-	pixel_y = 13
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -7;
+	pixel_y = 4
 	},
-/turf/open/floor/plasteel/grimy,
+/obj/item/paper_bin{
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "Ma" = (
 /obj/structure/table,
@@ -938,6 +1045,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"MK" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/yellow/mono,
+/obj/item/cutting_board,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin{
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen)
 "Nb" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -945,6 +1063,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Nw" = (
@@ -971,10 +1090,25 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"Oy" = (
+/obj/item/clothing/under/syndicate/camo{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/armor/hos/trenchcoat,
+/obj/item/clothing/glasses/hud/security{
+	pixel_y = 10;
+	pixel_x = -4
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/captain)
 "OK" = (
 /obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"OL" = (
+/turf/open/floor/carpet,
+/area/ship/crew/ccommons)
 "OQ" = (
 /obj/effect/turf_decal/corner/opaque/brown/border{
 	dir = 8
@@ -1037,6 +1171,18 @@
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"Rq" = (
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_state = "solgov_wall"
+	},
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/attachment/laser_sight,
+/obj/item/gun/ballistic/revolver/viper/indie/no_mag,
+/obj/item/clothing/under/rank/command/captain,
+/obj/item/clothing/head/caphat,
+/turf/open/floor/wood,
+/area/ship/crew/dorm/captain)
 "Rw" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -1050,7 +1196,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
 "RD" = (
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/medical,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/ccommons)
 "Sb" = (
@@ -1117,9 +1263,55 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"TH" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "Uq" = (
 /obj/structure/closet/cabinet,
-/turf/open/floor/plasteel/grimy,
+/obj/item/clothing/head/cowboy{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = 8;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/beret{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/clothing/shoes/cowboy/black{
+	pixel_x = -6;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/flatcap{
+	pixel_y = 9;
+	pixel_x = -4
+	},
+/obj/item/clothing/head/beret/puce{
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/obj/item/clothing/head/soft/red{
+	pixel_x = 3
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -7
+	},
+/obj/item/clothing/shoes/cowboy{
+	pixel_y = -9;
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "UA" = (
 /obj/structure/cable/yellow{
@@ -1209,20 +1401,13 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "Wn" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = 2;
-	pixel_y = 7
+/obj/item/toy/plush/moth{
+	pixel_y = 9
 	},
-/obj/item/flashlight/lamp/green{
-	pixel_x = -7;
-	pixel_y = 4
+/obj/structure/dresser{
+	dir = 8
 	},
-/obj/item/pen/fourcolor{
-	pixel_x = 6;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "WD" = (
 /turf/open/floor/engine/hull/reinforced,
@@ -1301,6 +1486,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"Yt" = (
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "Yz" = (
 /obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet,
@@ -1340,12 +1532,62 @@
 "YS" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/utility/skirt,
-/obj/item/clothing/under/utility/skirt,
-/obj/item/clothing/under/utility/skirt,
-/obj/item/clothing/under/utility,
-/obj/item/clothing/under/utility,
-/obj/item/clothing/under/utility,
-/turf/open/floor/plasteel/grimy,
+/obj/item/clothing/under/utility{
+	pixel_x = 7
+	},
+/obj/item/clothing/under/pants/khaki{
+	pixel_x = 4;
+	pixel_y = -14
+	},
+/obj/item/clothing/under/pants/khaki{
+	pixel_x = 4;
+	pixel_y = -14
+	},
+/obj/item/clothing/under/pants/camo{
+	pixel_x = -5;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/pants/camo{
+	pixel_x = -5;
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = 8;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = 8;
+	pixel_y = 14
+	},
+/obj/item/clothing/head/cowboy{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/obj/item/clothing/head/cowboy{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/pants/jeans{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/pants/jeans{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "YV" = (
 /obj/structure/sign/poster/contraband/gec{
@@ -1357,6 +1599,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
 "Zc" = (
+/obj/structure/closet/cardboard/metal,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Zi" = (
@@ -1368,6 +1611,10 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"ZR" = (
+/obj/item/ammo_box/magazine/m45_cobra,
+/turf/open/space/basic,
+/area/space)
 
 (1,1,1) = {"
 OV
@@ -1689,7 +1936,7 @@ Fc
 XG
 rY
 rY
-rY
+ab
 Cl
 kl
 OV
@@ -1855,7 +2102,7 @@ XG
 XG
 XG
 XG
-NR
+Ii
 NR
 nV
 Hu
@@ -1894,7 +2141,7 @@ VR
 go
 go
 NR
-NR
+TH
 NR
 go
 NR
@@ -1905,11 +2152,11 @@ uH
 uH
 uH
 Hu
+lR
 Eo
-Eo
-Eo
+FZ
 bP
-Hm
+Yt
 By
 bP
 WD
@@ -1947,9 +2194,9 @@ jC
 jC
 jC
 Hu
+lR
 Eo
 Eo
-iy
 bP
 bP
 UY
@@ -1964,9 +2211,9 @@ Jt
 hb
 Se
 th
-hb
-bm
-hb
+th
+th
+th
 uW
 ev
 OX
@@ -1989,8 +2236,8 @@ EE
 aC
 NF
 Hu
+lR
 Eo
-Db
 Eo
 Eo
 Eo
@@ -2006,9 +2253,9 @@ xx
 hb
 uW
 LG
+bm
 hb
-hb
-hb
+th
 uW
 MA
 QY
@@ -2076,7 +2323,7 @@ Hu
 Eo
 Eo
 fN
-Eo
+lA
 Vz
 Eo
 CP
@@ -2156,7 +2403,7 @@ hs
 Yz
 wY
 NE
-gC
+OL
 gC
 gC
 hl
@@ -2206,7 +2453,7 @@ OV
 OV
 OV
 OV
-OV
+ZR
 OV
 "}
 (21,1,1) = {"
@@ -2219,9 +2466,9 @@ OV
 hU
 Gp
 aQ
-aQ
-aQ
-aQ
+IC
+IC
+IC
 aQ
 aQ
 aQ
@@ -2247,8 +2494,8 @@ oJ
 OV
 OV
 OV
-OV
-OV
+cC
+pz
 OV
 "}
 (22,1,1) = {"
@@ -2276,7 +2523,7 @@ uw
 jJ
 jJ
 jJ
-Aj
+hl
 Nw
 gC
 gC
@@ -2303,12 +2550,12 @@ OV
 OV
 OV
 hU
+AO
+AO
+AO
 aQ
 aQ
-aQ
-aQ
-aQ
-Ma
+MK
 Gp
 Xu
 dC
@@ -2349,7 +2596,7 @@ Gp
 Gp
 Gp
 hU
-sK
+Ma
 if
 lN
 lN
@@ -2394,7 +2641,7 @@ Gp
 Gp
 Gp
 lN
-aF
+cI
 aF
 wJ
 Cj
@@ -2437,8 +2684,8 @@ OV
 lN
 lN
 AQ
-wJ
-wJ
+aF
+Rq
 Aj
 aq
 GH
@@ -2478,8 +2725,8 @@ OV
 OV
 KQ
 Gu
-AQ
-wJ
+xY
+Oy
 BO
 Aj
 Ye
@@ -2521,7 +2768,7 @@ OV
 OV
 Gu
 Gu
-wJ
+Gu
 lN
 Aj
 wq
@@ -2562,8 +2809,8 @@ OV
 OV
 OV
 OV
-Gu
-Gu
+ED
+ED
 lN
 jJ
 jJ
