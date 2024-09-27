@@ -210,6 +210,10 @@
 /obj/effect/landmark/mission_poi
 	icon = 'icons/effects/mission_poi.dmi'
 	icon_state = "main_thingy"
+	///Assume the item we want is included in the map and we simple have to return it
+	var/already_spawned = FALSE
+	///Only used if we dont pass a type in the mission.
+	var/type_to_spawn
 
 /obj/effect/landmark/mission_poi/Initialize()
 	. = ..()
@@ -218,4 +222,18 @@
 /obj/effect/landmark/mission_poi/Destroy()
 	SSmissions.unallocated_pois -= src
 	. = ..()
+
+/obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn)
+	if(istype(_type_to_spawn))
+		type_to_spawn = _type_to_spawn
+	if(already_spawned)
+		for(var/atom/movable/item_in_poi as anything in get_turf(src))
+			if(istype(item_in_poi, type_to_spawn))
+				return item_in_poi
+		stack_trace("[src] is meant to have its item prespawned but could not find it on its tile, resorting to spawning the type instead.")
+	return new type_to_spawn(loc)
+
+/// Instead of spawning something its used to find a matching item already in the map and returns that. For if you want to use an already exisiting part of the ruin.
+/obj/effect/landmark/mission_poi/pre_loaded
+	already_spawned = TRUE
 
