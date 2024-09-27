@@ -205,6 +205,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "inteq radio headset"
 	desc = "This is used by Inteq Risk Management Group's mercenaries."
 	icon_state = "inteq_headset"
+	keyslot = null
 
 /obj/item/radio/headset/inteq/basic/alt //An inteq bowman without an inteq encryption key, intended to be used by enforcers
 	name = "inteq bowman headset"
