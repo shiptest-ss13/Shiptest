@@ -73,8 +73,8 @@
 		if("recalc")
 			recalc()
 		if("send")
-			var/datum/dynamic_mission/mission = locate(params["mission"])
-			if(!istype(mission, /datum/dynamic_mission))
+			var/datum/mission/dynamic/mission = locate(params["mission"])
+			if(!istype(mission, /datum/mission/dynamic))
 				return
 			var/option = params["choice"]
 			turn_in(mission, option)
@@ -114,7 +114,7 @@
 	var/list/data = list()
 	data["missions"] = list()
 	var/list/items_on_pad = recalc()
-	for(var/datum/dynamic_mission/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/dynamic/M as anything in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info(items_on_pad))
 	data["pad"] = pad_ref?.resolve() ? TRUE : FALSE
 	data["id_inserted"] = inserted_scan_id ? TRUE : FALSE

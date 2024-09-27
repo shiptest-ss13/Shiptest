@@ -1,13 +1,9 @@
-/datum/dynamic_mission/simple
+/datum/mission/dynamic/simple
 	name = "Item recovery"
 	desc = "Retrive this thing for us and we will pay you"
-	var/setpiece_poi
-	var/setpiece_item
-	///Specific item uses an exact item, if false it will allow type or any subtype
-	var/specific_item = TRUE
 	var/atom/movable/required_item
 
-/datum/dynamic_mission/simple/spawn_mission_setpiece(datum/overmap/dynamic/planet)
+/datum/mission/dynamic/simple/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
 		if(mission_poi.type == setpiece_poi)
 			//Spawns the item or gets it via use_poi then sets it as bound so the mission fails if its deleted
@@ -15,7 +11,7 @@
 			return
 	CRASH("[src] was unable to find its required landmark")
 
-/datum/dynamic_mission/simple/can_turn_in(atom/movable/item_to_check)
+/datum/mission/dynamic/simple/can_turn_in(atom/movable/item_to_check)
 	if(istype(required_item))
 		if(specific_item)
 			if(item_to_check == required_item)

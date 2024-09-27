@@ -32,11 +32,6 @@
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
 
-	/// List of currently-accepted missions.
-	var/list/datum/mission/missions
-	/// The maximum number of currently active missions that a ship may take on.
-	var/max_missions = 2
-
 	/// Manifest list of people on the ship. Indexed by mob REAL NAME. value is JOB INSTANCE
 	var/list/manifest = list()
 
@@ -126,7 +121,6 @@
 	. = ..()
 	SSovermap.controlled_ships -= src
 	helms.Cut()
-	QDEL_LIST(missions)
 	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null

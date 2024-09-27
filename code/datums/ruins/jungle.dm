@@ -10,7 +10,7 @@
 	description = "A small bunker owned by the Syndicate."
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-	dynamic_mission_types = list(/datum/dynamic_mission/simple/guarded/nt_files)
+	dynamic_mission_types = list(/datum/mission/dynamic/simple/guarded/nt_files)
 
 /datum/map_template/ruin/jungle/interceptor
 	name = "Old Crashed Interceptor"

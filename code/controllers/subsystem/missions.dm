@@ -3,8 +3,8 @@ SUBSYSTEM_DEF(missions)
 	flags = SS_NO_INIT
 	priority = FIRE_PRIORITY_MISSIONS
 	var/list/obj/effect/landmark/mission_poi/unallocated_pois = list()
-	var/list/datum/dynamic_mission/inactive_missions = list()
-	var/list/datum/dynamic_mission/active_missions = list()
+	var/list/datum/mission/dynamic/inactive_missions = list()
+	var/list/datum/mission/dynamic/active_missions = list()
 
 	var/max_active_missions = 5
 
@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(missions)
 /datum/controller/subsystem/missions/fire(resumed)
 	if(active_missions.len < max_active_missions)
 		if(inactive_missions.len)
-			var/datum/dynamic_mission/mission_to_start = inactive_missions[inactive_missions.len]
+			var/datum/mission/dynamic/mission_to_start = inactive_missions[inactive_missions.len]
 			mission_to_start.start_mission()
 
 

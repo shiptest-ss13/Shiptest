@@ -1,4 +1,4 @@
-/datum/dynamic_mission
+/datum/mission
 	var/name = "Mission"
 	var/author = ""
 	var/desc = "Do something for me."
@@ -6,6 +6,9 @@
 	var/value = 1000 /// The mission's payout.
 	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
+
+	///Only needed if you have multipe missiosn that use the same poi's on the map
+	var/mission_name
 
 	var/location_specific = TRUE
 	/// The outpost that issued this mission. Passed in New().
@@ -28,7 +31,7 @@
 	/// is a callback to be invoked upon the atom's qdeletion.
 	var/list/atom/movable/bound_atoms
 
-/datum/dynamic_mission/New(_location)
+/datum/mission/New(_location)
 	//source_outpost = _outpost
 	mission_location = _location
 	SSmissions.inactive_missions += list(src)
@@ -39,7 +42,7 @@
 	generate_mission_details()
 	return ..()
 
-/datum/dynamic_mission/Destroy()
+/datum/mission/Destroy()
 	//UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
 	if(active)
@@ -53,10 +56,10 @@
 	deltimer(dur_timer)
 	return ..()
 
-/datum/dynamic_mission/proc/on_vital_delete()
+/datum/mission/proc/on_vital_delete()
 	qdel(src)
 
-/datum/dynamic_mission/proc/generate_mission_details()
+/datum/mission/proc/generate_mission_details()
 	var/val_mod = value * val_mod_range
 	value = rand(value-val_mod, value+val_mod)
 	if(duration)
@@ -69,21 +72,21 @@
 	author = random_species_name()
 	return
 
-/datum/dynamic_mission/proc/reward_flavortext()
+/datum/mission/proc/reward_flavortext()
 	return list(
 		MISSION_REWARD_CASH = "[value * 1.2] cr upon completion",
 		MISSION_REWARD_ITEMS = "A nice slice of ham AND [value] cr",
 		MISSION_REWARD_REP = "[value] cr and rep with [SSfactions.faction_name(src.faction)]",
 	)
 
-/datum/dynamic_mission/proc/start_mission()
+/datum/mission/proc/start_mission()
 	SSmissions.inactive_missions -= src
 	active = TRUE
 	if(duration)
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
 
-/datum/dynamic_mission/proc/on_planet_load(datum/overmap/dynamic/planet)
+/datum/mission/proc/on_planet_load(datum/overmap/dynamic/planet)
 	SIGNAL_HANDLER
 
 	if(!active)
@@ -96,20 +99,20 @@
 
 	spawn_mission_setpiece(planet)
 
-/datum/dynamic_mission/proc/spawn_mission_setpiece(datum/overmap/dynamic/planet)
+/datum/mission/proc/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	return
 
-/datum/dynamic_mission/proc/can_turn_in(atom/movable/item_to_check)
+/datum/mission/proc/can_turn_in(atom/movable/item_to_check)
 	return
 
-/datum/dynamic_mission/proc/turn_in(atom/movable/item_to_turn_in, choice)
+/datum/mission/proc/turn_in(atom/movable/item_to_turn_in, choice)
 	if(can_turn_in(item_to_turn_in))
 		spawn_reward(item_to_turn_in.loc, choice)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
 		qdel(item_to_turn_in)
 		qdel(src)
 
-/datum/dynamic_mission/proc/spawn_reward(loc, choice)
+/datum/mission/proc/spawn_reward(loc, choice)
 	switch(choice)
 		if(MISSION_REWARD_CASH)
 			new /obj/item/spacecash/bundle(loc, value * 1.2)
@@ -120,10 +123,10 @@
 		if(MISSION_REWARD_REP)
 			new /obj/item/spacecash/bundle(loc, value * 1.2)
 
-/datum/dynamic_mission/proc/can_complete()
+/datum/mission/proc/can_complete()
 	return !failed
 
-/datum/dynamic_mission/proc/get_tgui_info(list/items_on_pad)
+/datum/mission/proc/get_tgui_info(list/items_on_pad)
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = ""
@@ -157,7 +160,7 @@
 		"validItems" = acceptable_items
 	)
 
-/datum/dynamic_mission/proc/get_progress_string()
+/datum/mission/proc/get_progress_string()
 	return "null"
 
 /**
@@ -174,7 +177,7 @@
  * * fail_on_delete - Bool; whether the mission should fail when the bound atom is qdeleted. Default TRUE.
  * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
  */
-/datum/dynamic_mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
+/datum/mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
@@ -184,7 +187,7 @@
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
 	return bound
 
-/datum/dynamic_mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
+/datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
@@ -199,14 +202,14 @@
  * * bound - The bound atom to recall.
  * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
  */
-/datum/dynamic_mission/proc/recall_bound(atom/movable/bound, sparks = TRUE)
+/datum/mission/proc/recall_bound(atom/movable/bound, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	remove_bound(bound)
 	qdel(bound)
 
 /// Signal handler for the qdeletion of bound atoms.
-/datum/dynamic_mission/proc/bound_deleted(atom/movable/bound, force)
+/datum/mission/proc/bound_deleted(atom/movable/bound, force)
 	SIGNAL_HANDLER
 	var/list/bound_info = bound_atoms[bound]
 	// first value in bound_info is whether to fail on item destruction
@@ -224,7 +227,7 @@
  * Arguments:
  * * bound - The bound atom to remove.
  */
-/datum/dynamic_mission/proc/remove_bound(atom/movable/bound)
+/datum/mission/proc/remove_bound(atom/movable/bound)
 	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
 	// delete the callback
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
@@ -236,6 +239,8 @@
 	icon_state = "main_thingy"
 	///Assume the item we want is included in the map and we simple have to return it
 	var/already_spawned = FALSE
+	///Only needed if you have multipe missiosn that use the same poi's on the map
+	var/mission_name
 	///Only used if we dont pass a type in the mission.
 	var/type_to_spawn
 

@@ -98,8 +98,6 @@
 		outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(ship)
-	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
-	data["maxMissions"] = ship ? ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
@@ -227,25 +225,6 @@
 				var/datum/supply_order/SO = new(pack, name, rank, usr.ckey, "")
 				new /obj/effect/pod_landingzone(landing_turf, podType, SO)
 				update_appearance() // ??????????????????
-				return TRUE
-
-		if("mission-act")
-			var/datum/mission/mission = locate(params["ref"])
-			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
-			var/datum/overmap/ship/controlled/ship = D.current_ship
-			var/datum/overmap/outpost/outpost = ship.docked_to
-			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
-				return
-			if(!mission.accepted)
-				if(LAZYLEN(ship.missions) >= ship.max_missions)
-					return
-				mission.accept(ship, loc)
-				return TRUE
-			else if(mission.servant == ship)
-				if(mission.can_complete())
-					mission.turn_in()
-				else
-					mission.give_up()
 				return TRUE
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
