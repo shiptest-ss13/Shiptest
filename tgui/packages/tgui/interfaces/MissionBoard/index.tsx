@@ -56,7 +56,7 @@ const MissionsList = (props, context) => {
   const { act, data } = useBackend<Data>(context);
   const { pad, id_inserted, sending } = data;
 
-  const missionValues = (mission: Mission) => (
+  const missionTimer = (mission: Mission) => (
     <ProgressBar
       ranges={{
         good: [0.75, 1],
@@ -68,14 +68,29 @@ const MissionsList = (props, context) => {
   );
 
   const missionJSX = missionsArray.map((mission: Mission) => {
-    const { ref, name, author, desc, rewards = [], faction, location, x, y, duration, remaining, timeStr, progressStr, actStr, canTurnIn, validItems} = mission;
+    const {
+      ref,
+      name,
+      author,
+      desc,
+      rewards = [],
+      faction,
+      location,
+      x,
+      y,
+      duration,
+      remaining,
+      timeStr,
+      progressStr,
+      actStr,
+      canTurnIn,
+      validItems,
+    } = mission;
     const rewardKeys = Object.keys(rewards);
     return (
       <LabeledList>
         <LabeledList.Item label="Title">{name}</LabeledList.Item>
-        <LabeledList.Item label="Cords">
-          {location}
-        </LabeledList.Item>
+        <LabeledList.Item label="Cords">{location}</LabeledList.Item>
         <LabeledList.Item label="Author">{author}</LabeledList.Item>
         <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
         <LabeledList.Item label="Description">{desc}</LabeledList.Item>
@@ -85,15 +100,13 @@ const MissionsList = (props, context) => {
               icon={'arrow-up'}
               tooltip={'Choose Reward'}
               disabled={!canTurnIn || !pad || !id_inserted}
-              onClick={() =>
-                act('send', { mission: ref, choice: rewardKey })
-              }
+              onClick={() => act('send', { mission: ref, choice: rewardKey })}
             >
               {rewards[rewardKey]}
             </Button>
           ))}
           <LabeledList.Divider />
-          {duration ? missionValues(mission) : 'No time limit'}
+          {duration ? missionTimer(mission) : ''}
           <LabeledList.Divider />
           {validItems.map((validItem: string) => (
             <Box>{validItem}</Box>
