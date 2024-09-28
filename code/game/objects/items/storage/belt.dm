@@ -275,6 +275,7 @@
 	STR.set_holdable(list(
 		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
+		/obj/item/melee/knife,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/restraints/handcuffs,
