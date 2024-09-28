@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1)
-	l_pocket = /obj/item/kitchen/knife/switchblade
+	l_pocket = /obj/item/melee/knife/switchblade
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -287,7 +287,7 @@
 )
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	accessory = /obj/item/clothing/accessory/holster/marine
@@ -399,7 +399,7 @@
 
 	box = /obj/item/storage/box/survival/security
 	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 
 	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 

@@ -14,7 +14,7 @@
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r
 
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 	l_pocket = /obj/item/grenade/frag
 
 	implants = list(/obj/item/implant/weapons_auth)
@@ -75,7 +75,7 @@
 	belt = /obj/item/storage/belt/security
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/taipan
 
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	l_pocket = /obj/item/binoculars
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/sniper_rounds=2, /obj/item/radio=1)
@@ -133,7 +133,7 @@
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	back = /obj/item/storage/backpack/ert/medical
-	l_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/melee/knife/survival
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
 
