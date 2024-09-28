@@ -863,6 +863,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
+"gT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "gU" = (
 /turf/open/floor/concrete/pavement/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -1231,7 +1238,8 @@
 /obj/structure/sign/poster/contraband/missing_gloves{
 	pixel_y = 32
 	},
-/turf/open/floor/concrete/whitesands,
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "jI" = (
 /obj/structure/closet/wall/directional/west,
@@ -7593,8 +7601,8 @@ eg
 og
 xY
 Km
-gV
-gV
+FP
+CU
 tN
 Pg
 TP
@@ -7658,8 +7666,8 @@ sT
 xI
 RA
 Km
-Pg
-Pg
+vU
+Sn
 gV
 Pg
 TP
@@ -7723,8 +7731,8 @@ EA
 xq
 Ar
 Km
-Pg
-Pg
+vU
+Sn
 gV
 Pg
 gM
@@ -7789,7 +7797,7 @@ Km
 WM
 Km
 pE
-Pg
+uo
 Pg
 gV
 Pg
@@ -8566,8 +8574,8 @@ PZ
 dX
 di
 SO
-Pg
-Pg
+FP
+CU
 Ze
 Pg
 Pg
@@ -8631,8 +8639,8 @@ PZ
 OF
 et
 di
-Pg
-Pg
+vU
+Sn
 Pg
 gV
 zE
@@ -8697,8 +8705,8 @@ vL
 XM
 di
 jD
-Pg
-Pg
+iL
+CU
 Pg
 gV
 af
@@ -8761,9 +8769,9 @@ vL
 jm
 DG
 di
-Pg
-Pg
-Pg
+vU
+vU
+Sn
 gV
 gV
 vp
@@ -8826,9 +8834,9 @@ vL
 vL
 JP
 di
-Pg
-Pg
-Pg
+vU
+dR
+uo
 Pg
 Pg
 Qq
@@ -8891,8 +8899,8 @@ pS
 vL
 Em
 di
-Pg
-gV
+dR
+gT
 gV
 Pg
 Pg
@@ -8956,7 +8964,7 @@ PR
 vL
 mm
 di
-Pg
+uo
 gV
 Mi
 EZ
