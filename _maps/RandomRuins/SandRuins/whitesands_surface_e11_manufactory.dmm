@@ -22,6 +22,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
+"as" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "av" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -618,6 +629,13 @@
 	light_power = 0.6
 	},
 /area/ruin/whitesands/e11manufactory/security)
+"em" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "et" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -863,13 +881,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
-"gT" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
 "gU" = (
 /turf/open/floor/concrete/pavement/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -1458,6 +1469,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
 	},
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 1
+	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "lh" = (
@@ -2032,6 +2046,15 @@
 /obj/item/pen,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
+"pv" = (
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "pE" = (
 /turf/closed/wall/rust/yesdiag,
 /area/ruin/whitesands/e11manufactory)
@@ -4197,6 +4220,16 @@
 	},
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
+"Hi" = (
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/whitesands,
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "Hp" = (
 /obj/structure/chair{
 	dir = 4
@@ -4759,6 +4792,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"LY" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 1
+	},
+/turf/open/floor/concrete/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "LZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
@@ -6113,8 +6155,13 @@
 	},
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Wk" = (
-/obj/structure/flora/ash/fern,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Wn" = (
 /obj/structure/table/reinforced,
@@ -8900,7 +8947,7 @@ vL
 Em
 di
 dR
-gT
+em
 gV
 Pg
 Pg
@@ -9136,10 +9183,10 @@ mM
 vU
 vU
 ho
-Pg
-Pg
-Pg
-SR
+iu
+FP
+FP
+as
 uS
 UM
 Pg
@@ -9201,11 +9248,11 @@ mM
 Zj
 Gy
 AU
-FP
-NH
-NH
-Pg
-FK
+CI
+vU
+vU
+iL
+Wk
 Pg
 Pg
 oB
@@ -9267,10 +9314,10 @@ vU
 vU
 cc
 Bx
-NH
-Pg
-Wk
-FK
+vU
+Hi
+vU
+LY
 Pg
 Jn
 oB
@@ -9332,9 +9379,9 @@ Bx
 vU
 cc
 vU
-Sn
-Pg
-Pg
+dR
+pv
+Qp
 le
 HV
 ZE
