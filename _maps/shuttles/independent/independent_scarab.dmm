@@ -137,6 +137,8 @@
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bq" = (
@@ -3976,19 +3978,20 @@
 	},
 /obj/structure/rack,
 /obj/item/ammo_box/a12g/rubbershot{
-	pixel_x = -3;
-	pixel_y = 5
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /obj/item/ammo_box/a12g{
-	pixel_y = 2
+	pixel_y = 2;
+	pixel_x = 4
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/ammo_box/c45{
-	pixel_x = 3;
-	pixel_y = -1
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_y = 4
 	},
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Xd" = (
