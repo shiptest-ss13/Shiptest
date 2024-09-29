@@ -129,3 +129,14 @@
 	contains = list(
 		/obj/item/gps
 	)
+
+/datum/supply_pack/exploration/flares
+	name = "Flare Supply Pack"
+	desc = "Contains 4 boxes of flares (28 total)! Great for lighting things up."
+	cost = 100
+	contains = list(
+		/obj/item/storage/box/flares,
+		/obj/item/storage/box/flares,
+		/obj/item/storage/box/flares,
+		/obj/item/storage/box/flares,
+	)

@@ -120,7 +120,7 @@
 	id = /obj/item/card/id/syndicate
 	belt = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
-		/obj/item/kitchen/knife/combat/survival)
+		/obj/item/melee/knife/survival)
 
 	var/tc = 25
 	var/command_radio = FALSE
@@ -169,7 +169,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/tank/jetpack/oxygen/harness=1,\
 		/obj/item/gun/ballistic/automatic/pistol/ringneck=1,\
-		/obj/item/kitchen/knife/combat/survival)
+		/obj/item/melee/knife/survival)
 
 
 /datum/game_mode/nuclear/generate_credit_text()
