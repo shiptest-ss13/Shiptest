@@ -5,7 +5,7 @@
  */
 /obj/item/ammo_box/magazine/ammo_stack
 	name = "ammo stack"
-	desc = "A stack of ammo."
+	desc = "A pile of live rounds."
 	icon = 'icons/obj/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
 	base_icon_state = "pistol-brass"
@@ -19,15 +19,16 @@
 	icon = initial(icon)
 	cut_overlays()
 	return ..()
-// thgvr todo: doesn't support shotshells/different icon files, fix that
+
 /obj/item/ammo_box/magazine/ammo_stack/update_icon_state()
 	. = ..()
 	cut_overlays()
 	icon_state = ""
 	for(var/casing in stored_ammo)
 		var/image/bullet = image(initial(icon), src, "[base_icon_state]")
-		bullet.pixel_x = rand(-6, 6)
-		bullet.pixel_y = rand(-6, 6)
+		bullet.pixel_x = rand(-8, 8)
+		bullet.pixel_y = rand(-8, 8)
+		bullet.transform = bullet.transform.Turn(round(45 * rand(0, 32) / 2))
 		add_overlay(bullet)
 	return UPDATE_ICON_STATE | UPDATE_OVERLAYS
 
@@ -38,7 +39,7 @@
 		var/obj/item/ammo = get_round(FALSE)
 		ammo.forceMove(loc_before_del)
 		ammo.throw_at(loc_before_del)
-	check_for_del()
+	update_ammo_count()
 
 /obj/item/ammo_box/magazine/ammo_stack/update_ammo_count()
 	. = ..()
@@ -46,33 +47,33 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/proc/check_for_del()
 	. = FALSE
-	if((ammo_count(TRUE) <= 0) && !QDELETED(src))
-//		qdel(src) thgvr todo: this needs to exist so there isn't a 
+	if((ammo_count() <= 0) && !QDELETED(src))
+		qdel(src)
 		return
 
-/obj/item/ammo_box/magazine/ammo_stack/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
+/obj/item/ammo_box/magazine/ammo_stack/attackby(obj/item/handful, mob/user, params, silent = FALSE, replace_spent = 0)
 	var/num_loaded = 0
 	if(!can_load(user))
 		return
 
-	if(istype(A, /obj/item/ammo_box))
-		var/obj/item/ammo_box/AM = A
-		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			var/did_load = give_round(AC, replace_spent)
+	if(istype(handful, /obj/item/ammo_box))
+		var/obj/item/ammo_box/ammo_box = handful
+		for(var/obj/item/ammo_casing/casing in ammo_box.stored_ammo)
+			var/did_load = give_round(casing, replace_spent)
 			if(did_load)
-				AM.stored_ammo -= AC
+				ammo_box.stored_ammo -= casing
 				num_loaded++
 			if(!did_load || !multiload)
 				break
 		if(num_loaded)
-			AM.update_ammo_count()
+			ammo_box.update_ammo_count()
 
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/AC = A
-		if(give_round(AC, replace_spent))
-			user.transferItemToLoc(AC, src, TRUE)
+	if(istype(handful, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/casing = handful
+		if(give_round(casing, replace_spent))
+			user.transferItemToLoc(casing, src, TRUE)
 			num_loaded++
-			AC.update_appearance()
+			casing.update_appearance()
 
 	if(num_loaded)
 		if(!silent)

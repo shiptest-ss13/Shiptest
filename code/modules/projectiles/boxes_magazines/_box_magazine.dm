@@ -40,6 +40,7 @@
 	. = ..()
 	if(!base_icon_state)
 		base_icon_state = icon_state
+
 	if(!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
@@ -47,11 +48,31 @@
 
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
-			LAZYSET(bullet_cost, material, material_amount)
+			LAZYSET(bullet_cost, material, material_amount).
+
 	if(!start_empty)
-		for(var/i = 1, i <= max_ammo, i++)
-			stored_ammo += new ammo_type(src)
-	update_ammo_count()
+		top_off(starting = TRUE)
+
+	update_appearance()
+
+/**
+  * top_off is used to refill the magazine to max, in case you want to increase the size of a magazine with VV then refill it at once
+  *
+  * Arguments:
+  * * load_type - if you want to specify a specific ammo casing type to load, enter the path here, otherwise it'll use the basic [/obj/item/ammo_box/var/ammo_type]. Must be a compatible round
+  * * starting - Relevant for revolver cylinders, if FALSE then we mind the nulls that represent the empty cylinders (since those nulls don't exist yet if we haven't initialized when this is TRUE)
+  */
+/obj/item/ammo_box/proc/top_off(load_type, starting=FALSE)
+	if(!load_type) //this check comes first so not defining an argument means we just go with default ammo
+		load_type = ammo_type
+
+	var/obj/item/ammo_casing/round_check = load_type
+	if(!starting && (caliber && initial(round_check.caliber) != caliber) || (!caliber && load_type != ammo_type))
+		stack_trace("Tried loading unsupported ammocasing type [load_type] into ammo box [type].")
+		return
+
+	for(var/i = max(1, stored_ammo.len), i <= max_ammo, i++)
+		stored_ammo += new round_check(src)
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -100,7 +121,7 @@
 	if(istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box)))
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box, timed_action_flags = IGNORE_USER_LOC_CHANGE)))
 				break
 			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)
@@ -136,7 +157,7 @@
 	if(!(user.is_holding(src) || H.l_store == src || H.r_store == src) || !user.put_in_hands(A)) //incase they're using TK
 		A.bounce_away(FALSE, NONE)
 	playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-	to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
+	to_chat(user, span_notice("You remove a round from [src]!"))
 	update_ammo_count()
 
 /// Updates the materials and appearance of this ammo box
