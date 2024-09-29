@@ -43,7 +43,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bombs";
-	dir = 4
+	dir = 4;
+	name = "High Explosives Storage"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/port)
@@ -1559,7 +1560,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_armory";
 	dir = 4;
-	name = "armory"
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1699,7 +1700,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_armory";
 	dir = 4;
-	name = "armory"
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3392,7 +3393,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_engineering";
 	dir = 4;
-	name = "secure storage"
+	name = "Secure Storage"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/starboard)
@@ -3844,7 +3845,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_armory";
 	dir = 4;
-	name = "armory"
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -6069,9 +6070,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "MS" = (
@@ -6581,7 +6579,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bomb_suit";
-	name = "bomb disposal gear"
+	name = "Bomb Disposal Gear"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
