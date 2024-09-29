@@ -12,8 +12,6 @@
 		/obj/item/assembly/flash/handheld = 5,
 		/obj/item/storage/box/evidence = 6,
 		/obj/item/flashlight/seclite = 4,
-		/obj/item/storage/box/ammo/9mm/rubber = 3,
-		/obj/item/storage/box/ammo/9mm = 1,
 		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
