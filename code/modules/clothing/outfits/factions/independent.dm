@@ -244,7 +244,7 @@
 
 /datum/outfit/job/independent/hos/merc
 	name = "Independent - Mercenary XO"
-	id_assignment = "Executive Officer"
+	id_assignment = "Lieutenant"
 
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/syndicate
