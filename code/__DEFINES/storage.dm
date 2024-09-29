@@ -44,9 +44,9 @@
 // PLEASE KEEP ALL VOLUME DEFINES IN THIS FILE, it's going to be hell to keep track of them later.
 #define DEFAULT_VOLUME_TINY 1
 #define DEFAULT_VOLUME_SMALL 2
-#define DEFAULT_VOLUME_NORMAL 6
-#define DEFAULT_VOLUME_BULKY 12
-#define DEFAULT_VOLUME_HUGE 24
+#define DEFAULT_VOLUME_NORMAL 8
+#define DEFAULT_VOLUME_BULKY 14
+#define DEFAULT_VOLUME_HUGE 28
 #define DEFAULT_VOLUME_GIGANTIC 48
 
 GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
@@ -80,9 +80,9 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 #define MAX_WEIGHT_CLASS_DUFFEL WEIGHT_CLASS_BULKY
 
 // max_volume for storages
-#define STORAGE_VOLUME_CONTAINER_S DEFAULT_VOLUME_NORMAL //3 small items
-#define STORAGE_VOLUME_CONTAINER_M (DEFAULT_VOLUME_NORMAL * 2) //6 small items
+#define STORAGE_VOLUME_CONTAINER_S DEFAULT_VOLUME_NORMAL //4 small items
+#define STORAGE_VOLUME_CONTAINER_M (DEFAULT_VOLUME_NORMAL * 2) //8 small items
 #define STORAGE_VOLUME_SATCHEL (DEFAULT_VOLUME_NORMAL * 4) //4 normal items
-#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 6) //6 normal items, or 3 bulky items
+#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 6) //1.5x satchel, 3 bulky items
 #define STORAGE_VOLUME_DUFFLEBAG (DEFAULT_VOLUME_NORMAL * 8) // 2 huge items, or 4 bulky items
 #define STORAGE_VOLUME_BAG_OF_HOLDING (DEFAULT_VOLUME_NORMAL * 9) //1.5X backpack
