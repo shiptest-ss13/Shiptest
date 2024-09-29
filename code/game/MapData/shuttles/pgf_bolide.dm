@@ -43,18 +43,13 @@
 	secret_type = /obj/item/storage/fancy/cigarettes/cigpack_mindbreaker
 
 /obj/item/folder/pgf/blue/bolide
-	var/to_spawn = list(
-		/obj/item/paper/fluff/ship/bolide/one,
-		/obj/item/paper/fluff/ship/bolide/two,
-		/obj/item/paper/fluff/ship/bolide/three,
-		/obj/item/paper/fluff/ship/bolide/four
-	)
 
 /obj/item/folder/pgf/blue/bolide/Initialize()
 	. = ..()
-	for(var/obj/item/paper in to_spawn)
-		if(istype(paper, /obj/item/paper))
-			new paper(src)
+	new /obj/item/paper/fluff/ship/bolide/one(src)
+	new /obj/item/paper/fluff/ship/bolide/two(src)
+	new /obj/item/paper/fluff/ship/bolide/three(src)
+	new /obj/item/paper/fluff/ship/bolide/four(src)
 	update_appearance()
 
 /obj/item/folder/pgf/empty_sheets

@@ -72,8 +72,8 @@
 	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/gezena/security/sapper
-	name = "PGF - Marine Engineer"
-	id_assignment = "Marine Engineer"
+	name = "PGF - Marine Pioneer"
+	id_assignment = "Marine Pioneer"
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
