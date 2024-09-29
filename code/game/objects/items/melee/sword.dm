@@ -13,30 +13,17 @@
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
-	var/self_stam_const = 10
-	var/self_stam_coef = 1
-	var/riposte = PARRY_RIPOST
-	///	Lock parrying to only work while transformed
-	var/parry_transformed = FALSE
 
 /obj/item/melee/sword/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
-	AddComponent( \
-		/datum/component/parry, \
-		_stamina_constant = self_stam_const, \
-		_stamina_coefficient = self_stam_coef, \
-		_parryable_attack_types = NON_PROJECTILE_ATTACKS, \
-		 _riposte = riposte, \
-		_requires_activation = parry_transformed, \
-	)
 
 //cruft
 /obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
 	return ..()
-	
+
 /obj/item/melee/sword/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -44,7 +31,7 @@
 	item_state = "claymore"
 	force = 30
 	throwforce = 10
-	block_chance = 20
+	block_chance = 40
 	max_integrity = 200
 
 /obj/item/melee/sword/claymore/Initialize()
@@ -115,14 +102,11 @@
 	item_state = "sabre"
 	force = 15
 	throwforce = 10
-	block_chance = 0
+	block_chance = 60
 	armour_penetration = 75
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
-	self_stam_const = 5
-	self_stam_coef = 0.5
-	riposte = 0.25 SECONDS
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
