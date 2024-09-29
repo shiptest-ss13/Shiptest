@@ -62,7 +62,6 @@
 	desc = "A .38 surplus bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/surplus
 
-
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"
 	desc = "A .38 \"TRAC\" bullet casing."

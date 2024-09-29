@@ -342,7 +342,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/throwing_star/magspear
 	name = "magnetic spear"
 	desc = "A reusable spear that is typically loaded into kinetic spearguns."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "magspear"
 	throwforce = 25 //kills regular carps in one hit
 	force = 10

@@ -28,6 +28,7 @@
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "beanbag"
+	caliber = "12ga beanbag"
 	custom_materials = list(/datum/material/iron=250)
 	projectile_type = /obj/projectile/bullet/slug/beanbag
 
@@ -35,6 +36,7 @@
 	name = "rubber shot"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "rubber"
+	caliber = "12ga rubber"
 	projectile_type = /obj/projectile/bullet/pellet/rubbershot
 	pellets = 8
 	variance = 25
@@ -44,12 +46,14 @@
 	name = "incendiary slug"
 	desc = "An incendiary-coated shotgun slug."
 	icon_state = "incendiary"
+	caliber = "12ga incendiary"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
 	icon_state = "improvised"
+	caliber = "improvised 12ga"
 	projectile_type = /obj/projectile/bullet/pellet/improvised
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10

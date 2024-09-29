@@ -6,7 +6,7 @@
 /obj/item/ammo_box/magazine/ammo_stack
 	name = "ammo stack"
 	desc = "A pile of live rounds."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
 	base_icon_state = "pistol-brass"
 	item_flags = NO_PIXEL_RANDOM_DROP

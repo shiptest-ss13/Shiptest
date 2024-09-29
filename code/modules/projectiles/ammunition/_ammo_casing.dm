@@ -1,7 +1,7 @@
 /obj/item/ammo_casing
 	name = "bullet casing"
 	desc = "A bullet casing."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -50,7 +50,7 @@
 	///TRUE if the ammo stack is generic and we should give it info based on the casing
 	var/generic_stacking = TRUE
 	///Maximum stack size of ammunition
-	var/stack_size = 20
+	var/stack_size = 12
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
@@ -151,7 +151,7 @@
 	pixel_y = base_pixel_y + rand(-10, 10)
 	item_flags |= NO_PIXEL_RANDOM_DROP
 	if(auto_rotate)
-		transform = transform.Turn(pick(0, 90, 180, 270))
+		transform = transform.Turn(round(45 * rand(0, 32) / 2))
 	update_appearance()
 
 /obj/item/ammo_casing/Destroy()
