@@ -433,7 +433,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "XO's quarters";
+	name = "XO's Quarters";
 	id_tag = "ra_lt";
 	req_access_txt = "3"
 	},
@@ -925,7 +925,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mining{
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1241,7 +1242,7 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	name = "window shutters";
+	name = "Window Shutters";
 	id = "ra_at"
 	},
 /turf/open/floor/plating,
@@ -2123,7 +2124,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "AQ" = (
@@ -2929,6 +2929,12 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"IN" = (
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/electrical)
 "IT" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -3725,10 +3731,6 @@
 	dir = 2;
 	id = "ra_capt"
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 2;
-	id = "ra_capt"
-	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
 "SQ" = (
@@ -4433,7 +4435,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mining{
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -5501,7 +5504,7 @@ kI
 go
 CN
 JO
-go
+IN
 go
 Vd
 ng
