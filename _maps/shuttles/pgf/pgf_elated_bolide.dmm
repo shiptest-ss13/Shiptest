@@ -1499,7 +1499,13 @@
 /obj/item/clothing/mask/whistle{
 	name = "marine whistle"
 	},
-/obj/item/clothing/suit/toggle/gezena,
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 8;
+	pixel_x = -1
+	},
+/obj/item/clothing/head/gezena/flap/marine/lead{
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "jn" = (
@@ -1773,6 +1779,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
+	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster{
+	pixel_y = 10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2149,19 +2158,27 @@
 	},
 /obj/item/melee/knife/survival{
 	pixel_y = 6;
-	pixel_x = 13
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 6;
-	pixel_x = -6
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 6;
 	pixel_x = 1
 	},
 /obj/item/melee/knife/survival{
 	pixel_y = 6;
+	pixel_x = 13
+	},
+/obj/item/melee/sword/mass{
+	pixel_y = 6;
+	pixel_x = -3
+	},
+/obj/item/melee/sword/mass{
+	pixel_y = 6;
+	pixel_x = -9
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 6;
 	pixel_x = 8
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 6;
+	pixel_x = 13
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2787,6 +2804,20 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -17;
+	name = "cargo bay controls";
+	id = "bolide_bay";
+	pixel_x = -15
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = -16;
+	pixel_x = 12;
+	id = "elated_bolide_bay";
+	name = "cargobay holofield switch"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4028,6 +4059,14 @@
 	pixel_y = 1;
 	req_access = list(3)
 	},
+/obj/item/clothing/head/gezena/flap/marine,
+/obj/item/clothing/head/gezena/flap/marine,
+/obj/item/clothing/head/gezena/flap/marine,
+/obj/item/clothing/head/gezena/flap/marine,
+/obj/item/clothing/head/gezena/marine{
+	pixel_x = -6;
+	pixel_y = 9
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "AC" = (
@@ -4184,6 +4223,10 @@
 /obj/structure/noticeboard{
 	pixel_y = 25
 	},
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena/flap,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Ba" = (
@@ -5305,9 +5348,6 @@
 /obj/item/clothing/suit/armor/gezena/marinecoat,
 /obj/item/clothing/suit/armor/gezena/marinecoat,
 /obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/storage/belt/military/gezena,
 /obj/item/storage/belt/military/gezena,
 /obj/item/storage/belt/military/gezena,
 /obj/item/storage/belt/military/gezena,
@@ -5338,6 +5378,9 @@
 	pixel_x = -1
 	},
 /obj/machinery/light/directional/south,
+/obj/item/clothing/suit/armor/gezena/marine,
+/obj/item/clothing/suit/armor/gezena/marine,
+/obj/item/storage/belt/military/gezena,
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "IM" = (
