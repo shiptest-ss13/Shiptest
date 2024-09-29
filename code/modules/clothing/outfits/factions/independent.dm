@@ -309,7 +309,7 @@
 
 /datum/outfit/job/independent/security/merc
 	name = "Independent - Security Officer (Mercenary)"
-	id_assignment = "Mercenary"
+	id_assignment = "Trooper"
 
 	uniform = /obj/item/clothing/under/syndicate/camo
 	gloves = /obj/item/clothing/gloves/color/black

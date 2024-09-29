@@ -150,6 +150,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ci" = (
@@ -502,9 +505,8 @@
 	pixel_y = -5
 	},
 /obj/machinery/newscaster/directional/north,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = 5
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
@@ -525,6 +527,12 @@
 /obj/item/storage/box/cups{
 	pixel_x = -1;
 	pixel_y = 7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
@@ -705,7 +713,6 @@
 	},
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/condiment/hotsauce,
 /obj/effect/decal/cleanable/food/flour,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
@@ -861,6 +868,10 @@
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -5;
 	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/chocolatebar{
+	pixel_y = 11;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
