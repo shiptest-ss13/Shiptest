@@ -16,7 +16,7 @@
 	var/id = ""
 	var/active = TRUE
 	var/kill_range = 6
-	var/fire_delay = 7 SECONDS
+	var/fire_delay = 3 SECONDS
 	COOLDOWN_DECLARE(fire_timer)
 
 /obj/machinery/meteor_shield/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
@@ -80,10 +80,6 @@
 	. = ..()
 	icon_state = active ? "syndie_lethal" : "syndie_off"
 
-/obj/machinery/meteor_shield/proc/los(meteor)
-	for(var/turf/T in getline(src,meteor))
-		return TRUE
-
 /obj/machinery/meteor_shield/process()
 	if(!active)
 		return
@@ -93,7 +89,7 @@
 			continue
 		if(get_dist(M,src) > kill_range)
 			continue
-		if(!(obj_flags & EMAGGED) && los(M))
+		if(!(obj_flags & EMAGGED))
 			Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
 			dir = get_dir(src, M)
 			explosion(M, 0,0,1,5,TRUE,FALSE,3,FALSE,TRUE)
@@ -137,9 +133,10 @@
 
 	data["satellites"] = list()
 	for(var/obj/machinery/meteor_shield/S in GLOB.machines)
-		data["satellites"] += list(list(
-			"id" = S.id,
-			"active" = S.active,
+		if(id == s.id)
+			data["satellites"] += list(list(
+				"id" = S.id,
+				"active" = S.active,
 		))
 	data["notice"] = notice
 
