@@ -69,6 +69,7 @@
 	icon_state = "saperzy"
 	icon_living = "saperzy"
 	icon_dead = "fox_dead"
+	faction = list("neutral", FACTION_PLAYER_GEZENA)
 	speak = list("Ack-Ack","Ack-Ack-Ack-Ackawoooo","Geckers","Awoo","Tchoff","Aweh!")
 	speak_emote = list("geckers!", "barks!", "yips!")
 	emote_hear = list("yips!","barks!","geckers!")
