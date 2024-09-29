@@ -232,11 +232,11 @@
 /obj/item/organ/cyberimp/arm/toolset/emag_act(mob/user)
 	for(var/datum/weakref/created_item in items_list)
 		var/obj/potential_knife = created_item.resolve()
-		if(istype(/obj/item/kitchen/knife/combat/cyborg, potential_knife))
+		if(istype(/obj/item/melee/knife/combat/cyborg, potential_knife))
 			return FALSE
 
 	to_chat(user, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += WEAKREF(new /obj/item/kitchen/knife/combat/cyborg(src))
+	items_list += WEAKREF(new /obj/item/melee/knife/combat/cyborg(src))
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/esword

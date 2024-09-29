@@ -658,6 +658,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
+		return amount
 
 
 /////////
