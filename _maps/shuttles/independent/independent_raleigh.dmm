@@ -502,6 +502,10 @@
 	pixel_y = -5
 	},
 /obj/machinery/newscaster/directional/north,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "hr" = (
@@ -521,14 +525,6 @@
 /obj/item/storage/box/cups{
 	pixel_x = -1;
 	pixel_y = 7
-	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_x = -4;
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = 3;
-	pixel_y = -3
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
@@ -2929,12 +2925,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"IN" = (
-/obj/machinery/door/airlock/mining{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/electrical)
 "IT" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -5504,7 +5494,7 @@ kI
 go
 CN
 JO
-IN
+go
 go
 Vd
 ng
