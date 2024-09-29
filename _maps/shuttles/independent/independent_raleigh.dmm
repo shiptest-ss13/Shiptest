@@ -2174,6 +2174,9 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 26
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "By" = (
@@ -2704,6 +2707,7 @@
 	name = "Starboard Thrusters"
 	},
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "GD" = (
@@ -3156,7 +3160,6 @@
 /area/ship/engineering/electrical)
 "Md" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/machinery/newscaster/directional/west,
 /obj/machinery/light/directional/north,
@@ -3834,10 +3837,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
-"Um" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "Un" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -4084,7 +4083,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "WD" = (
@@ -5002,7 +5003,7 @@ XG
 oz
 uy
 LV
-Um
+XG
 Cl
 iE
 nV
