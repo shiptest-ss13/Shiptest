@@ -62,8 +62,6 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-#define EXTRA_ICON_TESTS
-
 #ifdef BASIC_TESTS
 #include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
