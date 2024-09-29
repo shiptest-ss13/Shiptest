@@ -107,7 +107,8 @@
 	dir = 1
 	},
 /obj/machinery/door/window/eastleft{
-	dir = 1
+	dir = 1;
+	req_access_txt = "3"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -168,7 +169,8 @@
 	dir = 1;
 	name = "privacy lock";
 	id = "ra_gay";
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -432,7 +434,8 @@
 /obj/machinery/door/airlock/security{
 	dir = 4;
 	name = "XO's quarters";
-	id_tag = "ra_lt"
+	id_tag = "ra_lt";
+	req_access_txt = "3"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -620,9 +623,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "iu" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
 	},
@@ -657,11 +657,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -6;
+	name = "window shutter";
+	id = "ra_at"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "iL" = (
 /obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "solgov_wall"
+	icon_state = "solgov_wall";
+	name = "Captain's Locker"
 	},
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
@@ -992,6 +999,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"mq" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "ms" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1123,6 +1139,7 @@
 	pixel_x = -2
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/ship/security)
 "nT" = (
@@ -1221,6 +1238,12 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	name = "window shutters";
+	id = "ra_at"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "oz" = (
@@ -1278,7 +1301,8 @@
 	dir = 1;
 	name = "privacy lock";
 	id = "ra_shower";
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
@@ -1399,6 +1423,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ship/security)
 "rn" = (
@@ -1593,7 +1618,8 @@
 	dir = 2;
 	name = "privacy lock";
 	id = "ra_lt";
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/wood,
 /area/ship/security)
@@ -1663,7 +1689,8 @@
 	},
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	name = "Bridge"
+	name = "Bridge";
+	req_access_txt = "19"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1885,7 +1912,8 @@
 	dir = 4;
 	name = "privacy lock";
 	id = "ra_capt2";
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
@@ -1999,6 +2027,15 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
+"yZ" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "hunter shuttle";
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/atmospherics)
 "zV" = (
 /obj/structure/chair/handrail,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2459,7 +2496,8 @@
 	dir = 2;
 	name = "privacy lock";
 	id = "ra_piss";
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
@@ -2558,9 +2596,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/cryo)
 "FM" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
@@ -2573,10 +2608,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "FO" = (
@@ -2698,9 +2733,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "GO" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
 	},
@@ -2713,10 +2745,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "GP" = (
@@ -2832,7 +2864,8 @@
 	pixel_y = -6
 	},
 /obj/structure/closet/wall/orange/directional/north{
-	name = "Engineer's locker"
+	name = "Engineer's locker";
+	req_access_txt = "11"
 	},
 /obj/item/clothing/head/hardhat{
 	pixel_y = 9
@@ -2882,7 +2915,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Armory"
+	name = "Armory";
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -3434,10 +3468,6 @@
 	icon_state = "computer-middle";
 	dir = 8
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals10,
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "PC" = (
@@ -3461,9 +3491,6 @@
 /obj/effect/turf_decal/box/corners,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3927,7 +3954,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Secure Storage"
+	name = "Secure Storage";
+	req_access_txt = "3"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -4034,7 +4062,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals10,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4302,9 +4329,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "YH" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
@@ -4454,7 +4478,8 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Captain's Quarters";
-	id_tag = "ra_capt2"
+	id_tag = "ra_capt2";
+	req_access_txt = "20"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -4768,7 +4793,7 @@ OV
 OV
 OV
 OV
-Cl
+yZ
 OV
 OV
 OV
@@ -4845,7 +4870,7 @@ OV
 OV
 OV
 OV
-OV
+mq
 OV
 OV
 OV
@@ -4886,8 +4911,8 @@ hN
 XG
 BH
 OV
-OV
-OV
+BH
+BH
 OV
 BH
 Cl
