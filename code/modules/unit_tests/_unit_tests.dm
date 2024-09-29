@@ -63,7 +63,7 @@
 #endif
 
 #ifdef BASIC_TESTS
-#include "icons/inhands.dm"
+//#include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
 #include "icons/worn_icons.dm"

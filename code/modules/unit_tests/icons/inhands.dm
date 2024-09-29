@@ -26,8 +26,8 @@
 	//Add EVEN MORE paths if needed here!
 	//generate_possible_icon_states_list("your/folder/path/inhands/")
 
-	for(var/obj/item/item_path as anything in (subtypesof(/obj/item/melee) + subtypesof(/obj/item/gun)))
-		if(initial(item_path.item_flags) & ABSTRACT || isbadpath(item_path))
+	for(var/obj/item/item_path as anything in (subtypesof(/obj/item)))
+		if(initial(item_path.item_flags) & ABSTRACT)
 			continue
 
 		var/skip_left
