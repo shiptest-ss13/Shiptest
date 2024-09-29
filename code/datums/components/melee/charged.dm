@@ -27,7 +27,7 @@
 	list/attack_verb_on,
 	inhand_icon_change = TRUE,
 	_allowed_cells = list(),
-	_preload_cell_type = /obj/item/stock_parts/cell/melee,
+	_preload_cell_type = /obj/item/stock_parts/cell,
 	_cell_hit_cost = 1000,
 	_can_remove_cell = FALSE,
 	_no_cell_icon = FALSE

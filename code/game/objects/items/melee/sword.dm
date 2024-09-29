@@ -150,7 +150,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("smacked", "prodded")
 
-	parry_transformed = TRUE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
 	var/on_block_chance = 40
