@@ -1571,9 +1571,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "sF" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
 /obj/structure/table,
 /obj/item/paper_bin{
 	pixel_y = 3;
@@ -1595,7 +1592,12 @@
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10;
+	layer = 2.030
+	},
+/obj/structure/railing,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sG" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2626,7 +2628,13 @@
 	pixel_y = 0;
 	dir = 8
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Gj" = (
 /obj/machinery/door/airlock{
@@ -3342,7 +3350,10 @@
 /obj/structure/cable/green{
 	icon_state = "5-10"
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Nu" = (
 /obj/machinery/conveyor{
@@ -3514,7 +3525,10 @@
 	pixel_y = -5;
 	pixel_x = -8
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Qa" = (
 /obj/structure/table/reinforced,
