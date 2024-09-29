@@ -46,7 +46,7 @@
 
 /obj/item/gun/energy/pulse/prize/Initialize()
 	. = ..()
-	GLOB.poi_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 	var/turf/T = get_turf(src)
 
 	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
@@ -55,7 +55,7 @@
 	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
 
 /obj/item/gun/energy/pulse/prize/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/gun/energy/pulse/pistol
