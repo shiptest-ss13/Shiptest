@@ -350,4 +350,12 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of dubious make used by various engineers throughout the years to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
 
+	price_min = 2500
+	price_max = 3500
+	stock = 2
+	availability_prob = 40
