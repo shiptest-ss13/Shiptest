@@ -6,6 +6,7 @@
 /obj/item/ammo_box/magazine/ammo_stack
 	name = "ammo stack"
 	desc = "A stack of ammo."
+	icon = 'icons/obj/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
 	base_icon_state = "pistol-brass"
 	item_flags = NO_PIXEL_RANDOM_DROP
@@ -18,34 +19,25 @@
 	icon = initial(icon)
 	cut_overlays()
 	return ..()
-
+// thgvr todo: doesn't support shotshells/different icon files, fix that
 /obj/item/ammo_box/magazine/ammo_stack/update_icon_state()
 	. = ..()
 	cut_overlays()
 	icon_state = ""
-
 	for(var/casing in stored_ammo)
 		var/image/bullet = image(initial(icon), src, "[base_icon_state]")
-		bullet.pixel_x = rand(-8, 8)
-		bullet.pixel_y = rand(-8, 8)
+		bullet.pixel_x = rand(-6, 6)
+		bullet.pixel_y = rand(-6, 6)
 		add_overlay(bullet)
 	return UPDATE_ICON_STATE | UPDATE_OVERLAYS
 
 /obj/item/ammo_box/magazine/ammo_stack/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-    . = ..()
-    var/loc_before_del = loc
-    while(LAZYLEN(stored_ammo))
-        var/obj/item/ammo = get_round(FALSE)
-        ammo.forceMove(loc_before_del)
-        ammo.throw_at(loc_before_del)
-    check_for_del()
-
-/obj/item/ammo_box/magazine/ammo_stack/handle_atom_del(atom/A)
 	. = ..()
-	check_for_del()
-
-/obj/item/ammo_box/magazine/ammo_stack/empty_magazine()
-	. = ..()
+	var/loc_before_del = loc
+	while(LAZYLEN(stored_ammo))
+		var/obj/item/ammo = get_round(FALSE)
+		ammo.forceMove(loc_before_del)
+		ammo.throw_at(loc_before_del)
 	check_for_del()
 
 /obj/item/ammo_box/magazine/ammo_stack/update_ammo_count()
@@ -55,13 +47,14 @@
 /obj/item/ammo_box/magazine/ammo_stack/proc/check_for_del()
 	. = FALSE
 	if((ammo_count(TRUE) <= 0) && !QDELETED(src))
-		qdel(src)
-		return TRUE
+//		qdel(src) thgvr todo: this needs to exist so there isn't a 
+		return
 
 /obj/item/ammo_box/magazine/ammo_stack/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
 	var/num_loaded = 0
 	if(!can_load(user))
 		return
+
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/AM = A
 		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
@@ -73,6 +66,7 @@
 				break
 		if(num_loaded)
 			AM.update_ammo_count()
+
 	if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))

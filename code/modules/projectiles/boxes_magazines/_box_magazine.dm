@@ -40,7 +40,7 @@
 	. = ..()
 	if(!base_icon_state)
 		base_icon_state = icon_state
-	if (!bullet_cost)
+	if(!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
 			LAZYSET(base_cost, material, (material_amount * 0.10))
@@ -55,7 +55,7 @@
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
-	if (!stored_ammo.len)
+	if(!stored_ammo.len)
 		return null
 	else
 		var/b = stored_ammo[stored_ammo.len]
@@ -70,7 +70,7 @@
 	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return FALSE
 
-	if (stored_ammo.len < max_ammo)
+	if(stored_ammo.len < max_ammo)
 		stored_ammo += R
 		R.forceMove(src)
 		return TRUE
@@ -116,15 +116,14 @@
 		var/obj/item/ammo_casing/casing_to_insert = attacking_obj
 		if(give_round(casing_to_insert, replace_spent))
 			user.transferItemToLoc(casing_to_insert, src, TRUE)
-			if(!silent)
-				playsound(casing_to_insert, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
+			casing_to_insert.update_appearance()
 			update_ammo_count()
-
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
+			to_chat(user, span_notice("You load [num_loaded] cartridge\s into \the [src]!"))
+			playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 	return num_loaded
 
 /obj/item/ammo_box/attack_self(mob/user)
