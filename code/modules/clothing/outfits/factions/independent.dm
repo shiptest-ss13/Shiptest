@@ -319,6 +319,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/camo
 	gloves = /obj/item/clothing/gloves/fingerless
+	head = null
 	suit = null
 	dcoat = null
 
