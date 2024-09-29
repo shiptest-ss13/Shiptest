@@ -209,6 +209,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/inventory_state
 	var/world_state
 
+	var/attack_cooldown = CLICK_CD_MELEE
+
 /obj/item/Initialize()
 
 	if(attack_verb)

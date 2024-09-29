@@ -50,6 +50,9 @@
 #define CLICK_CD_GRABBING 10
 #define CLICK_CD_LOOK_UP 5
 
+#define HEAVY_WEAPON_CD 10
+#define LIGHT_WEAPON_CD 6
+
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
 #define INSTANT_CUFFBREAK 2
