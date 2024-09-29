@@ -110,7 +110,13 @@
 /datum/outfit/job/independent/captain/merc
 	name = "Independent - Captain (Mercenary)"
 
+	uniform = /obj/item/clothing/under/syndicate
+	head = /obj/item/clothing/head/beret
 	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/armor/vest
+
+	accessory = null
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -248,7 +254,7 @@
 
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/syndicate
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
 	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
@@ -312,7 +318,10 @@
 	id_assignment = "Trooper"
 
 	uniform = /obj/item/clothing/under/syndicate/camo
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = /obj/item/clothing/gloves/fingerless
+	suit = null
+	dcoat = null
+
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
