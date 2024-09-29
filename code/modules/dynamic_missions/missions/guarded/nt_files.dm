@@ -11,7 +11,7 @@
 /datum/mission/dynamic/simple/guarded/nt_files/generate_mission_details()
 	name = pick("NT asset recovery", "Asset recovery requested ASAP")
 	author = "Captain [random_species_name()]"
-	desc = pick("Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid")
+	desc = pick("Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid.")
 
 /datum/mission/dynamic/simple/guarded/nt_files/spawn_guard(obj/effect/landmark/mission_poi/guard_poi)
 	guard_type = pick(/mob/living/simple_animal/hostile/human/syndicate/melee, /mob/living/simple_animal/hostile/human/syndicate/ranged)

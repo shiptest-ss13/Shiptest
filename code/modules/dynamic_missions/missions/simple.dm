@@ -1,6 +1,5 @@
 /datum/mission/dynamic/simple
-	name = "Item recovery"
-	desc = "Retrive this thing for us and we will pay you"
+	setpiece_poi = /obj/effect/landmark/mission_poi/recovery
 
 /datum/mission/dynamic/simple/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
