@@ -15,7 +15,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
-	bad_type = /obj/item
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
@@ -508,21 +507,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 // afterattack() and attack() prototypes moved to _onclick/item_attack.dm for consistency
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	//Mostly shields
+	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 		if(!istype(src, /obj/item/shield))
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return TRUE
-
-	//Mostly parrying
-	var/signal_result = (SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, owner, hitby, damage, attack_type)) + prob(final_block_chance)
-	if(!signal_result)
-		return FALSE
-	if(hit_reaction_chance >= 0)
-		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
-	return signal_result
+	return FALSE
 
 /obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
 	return ITALICS | REDUCE_RANGE

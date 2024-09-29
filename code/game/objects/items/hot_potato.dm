@@ -96,9 +96,9 @@
 	. = ..()
 	if(!adjacent || !ismob(target))
 		return
-	active_forceto(target, user)
+	force_onto(target, user)
 
-/obj/item/hot_potato/proc/active_forceto(mob/living/victim, mob/user)
+/obj/item/hot_potato/proc/force_onto(mob/living/victim, mob/user)
 	if(!istype(victim) || user != loc || victim == user)
 		return FALSE
 	if(!victim.client)
