@@ -333,6 +333,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"ge" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm)
 "gg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -880,27 +887,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"pt" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/storage/belt/mining,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/machinery/light/small/directional/north,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
-/obj/machinery/firealarm/directional/east,
-/obj/effect/turf_decal/industrial/outline,
-/obj/item/clothing/under/syndicate/ngr/jumpsuit,
-/obj/item/clothing/suit/hazardvest/ngr,
-/obj/item/clothing/head/hardhat/ngr,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "pu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -1136,25 +1122,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
-"tx" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/storage/belt/mining,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/machinery/airalarm/directional/north,
-/obj/item/clothing/under/syndicate/ngr/jumpsuit,
-/obj/item/clothing/suit/hazardvest/ngr,
-/obj/item/clothing/head/hardhat/ngr,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "tI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1430,6 +1397,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"yH" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/item/gun/energy/plasmacutter{
+	pixel_y = 10
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "yM" = (
 /obj/item/lighter{
 	pixel_x = -8;
@@ -1638,32 +1618,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
-"Bv" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "warden";
-	name = "foreman's locker";
-	req_access = list(56)
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/ngr/officer,
-/obj/item/clothing/gloves/combat,
-/obj/item/storage/belt/utility/chief{
-	name = "\improper Foreman's toolbelt"
-	},
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/wrench/combat,
-/obj/item/clothing/accessory/holster,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/machinery/airalarm/directional/west,
-/obj/item/clothing/suit/ngr,
-/obj/item/clothing/head/hardhat/ngr/foreman,
-/obj/item/tank/jetpack/suit,
-/obj/item/storage/pistolcase/stechkin,
-/turf/open/floor/carpet/red,
-/area/ship/cargo/office)
 "BB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -1672,15 +1626,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BG" = (
-/obj/machinery/porta_turret/ship/ballistic,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
-"BR" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 8;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/storage)
+"BR" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "BZ" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
@@ -1972,6 +1930,26 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
+"GM" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "mining";
+	name = "wrecker's locker";
+	req_access = list(48)
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/storage/belt/mining,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/machinery/airalarm/directional/north,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "GV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -2324,9 +2302,12 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "NA" = (
-/obj/machinery/porta_turret/ship/syndicate,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/maintenance/starboard)
 "NF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -2492,10 +2473,37 @@
 /area/ship/cargo)
 "Qz" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 6
+	dir = 6;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/fore)
+"QG" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "warden";
+	name = "foreman's locker";
+	req_access = list(56)
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/belt/utility/chief{
+	name = "\improper Foreman's toolbelt"
+	},
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/wrench/combat,
+/obj/item/clothing/accessory/holster,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/machinery/airalarm/directional/west,
+/obj/item/clothing/suit/ngr,
+/obj/item/clothing/head/hardhat/ngr/foreman,
+/obj/item/tank/jetpack/suit,
+/obj/item/storage/pistolcase/ringneck,
+/turf/open/floor/carpet/red,
+/area/ship/cargo/office)
 "QW" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -2868,8 +2876,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "Up" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 4
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 4;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -2885,10 +2894,11 @@
 /area/ship/crew)
 "UN" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 1;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/hallway/central)
 "UX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3039,6 +3049,28 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
+"Xv" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/storage/belt/mining,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/machinery/light/small/directional/north,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "mining";
+	name = "wrecker's locker";
+	req_access = list(48)
+	},
+/obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/industrial/outline,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "Xz" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -3153,19 +3185,6 @@
 /obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"Yc" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/rack,
-/obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 10
-	},
-/obj/item/pickaxe/drill/jackhammer/old,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "Yv" = (
 /obj/machinery/nuclearbomb/beer{
 	desc = "An evidently-decommissioned nuclear warhead. Sloppy paint on the casing declares 'VICTORY OVER NANOTRASEN,' followed by a badly-smudged date of 25-something. A drink tap has been drilled directly into the metal.";
@@ -3385,7 +3404,7 @@ iT
 XO
 VX
 iL
-Yc
+yH
 Sm
 Sa
 sE
@@ -3424,7 +3443,7 @@ KH
 Ic
 vG
 iT
-tx
+GM
 dh
 Oy
 KX
@@ -3445,7 +3464,7 @@ uq
 La
 Gw
 iT
-pt
+Xv
 qO
 xx
 rF
@@ -3579,7 +3598,7 @@ UX
 GV
 GV
 GV
-NA
+ge
 nn
 Zb
 "}
@@ -3599,7 +3618,7 @@ bN
 Zn
 fL
 KW
-Bv
+QG
 QW
 nn
 Zb
