@@ -469,7 +469,7 @@
 	shrapnel_magnitude = 4
 
 /obj/item/mine/pressure/explosive/fire/mine_effect(mob/victim)
-	if(victim.is_holding(src))//in case it's been picked up
+	if(victim && victim.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(4,victim))
 			T.IgniteTurf(15)
 			new /obj/effect/hotspot(T)
