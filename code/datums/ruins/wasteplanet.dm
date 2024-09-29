@@ -37,3 +37,4 @@
 	description = "An abandonded shipbreaking yard."
 	id = "wasteplanet_yard"
 	suffix = "wasteplanet_yard.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
