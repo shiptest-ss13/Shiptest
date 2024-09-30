@@ -899,20 +899,25 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/set_force_string()
 	switch(force)
-		if(0 to 4)
+		if(0 to 3)
+			force_string = "pitiful"
+		if(3 to 6)
 			force_string = "very low"
-		if(4 to 7)
+		if(6 to 9)
 			force_string = "low"
-		if(7 to 10)
+		if(10 to 13) //12 is the force of a toolbox
 			force_string = "medium"
-		if(10 to 11)
+		if(13 to 16)
 			force_string = "high"
-		if(11 to 20) //12 is the force of a toolbox
+		if(16 to 20)
 			force_string = "robust"
 		if(20 to 25)
 			force_string = "very robust"
-		else
+		if(25 to 30)
 			force_string = "exceptionally robust"
+		else
+			force_string = "unfair"
+
 	last_force_string_check = force
 
 /obj/item/proc/openTip(location, control, params, user)

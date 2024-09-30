@@ -99,6 +99,7 @@
 
 /obj/item/melee/knife/combat
 	name = "combat knife"
+	icon = 'icons/obj/world/melee.dmi'
 	icon_state = "combatknife"
 	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
@@ -107,8 +108,13 @@
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
+/obj/item/melee/knife/combat/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/weapon/knife.dmi')
+
 /obj/item/melee/knife/survival
 	name = "survival knife"
+	icon = 'icons/obj/world/melee.dmi'
 	icon_state = "survivalknife"
 	item_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
@@ -117,8 +123,13 @@
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
+/obj/item/melee/knife/survival/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/weapon/knife.dmi')
+
 /obj/item/melee/knife/bone
 	name = "bone dagger"
+	icon = 'icons/obj/world/melee.dmi'
 	item_state = "bone_dagger"
 	icon_state = "bone_dagger"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -128,6 +139,10 @@
 	force = 12
 	throwforce = 15
 	custom_materials = null
+
+/obj/item/melee/knife/bone/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/weapon/knife.dmi')
 
 /obj/item/melee/knife/combat/cyborg
 	name = "cyborg knife"
