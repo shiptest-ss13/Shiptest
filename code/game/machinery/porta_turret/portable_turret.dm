@@ -899,6 +899,42 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
+// Frontiersmen Turrets
+/obj/machinery/porta_turret/ship/frontiersmen
+	name =
+	desc =
+	faction = list(FACTION_FRONTIER, "Turret")
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess
+
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+	stun_projectile = /obj/projectile/bullet/c9mm
+	stun_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
+	lethal_projectile = /obj/projectile/bullet/c9mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
+	shot_delay = 1
+	scan_range = 6
+
+/obj/machinery/porta_turret/ship/frontiersmen/light
+	name =
+	desc =
+	stun_projectile = /obj/projectile/bullet/c22lr
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/bullet/c22lr
+	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
+
+/obj/machinery/porta_turret/ship/frontiersmen/heavy
+	name =
+	desc =
+	stun_projectile = /obj/projectile/bullet/c22lr
+	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	lethal_projectile = /obj/projectile/bullet/c22lr
+	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
+	var/pellets
+
+
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////
