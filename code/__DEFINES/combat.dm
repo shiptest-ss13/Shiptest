@@ -40,7 +40,9 @@
 //Actual combat defines
 
 //click cooldowns, in tenths of a second, used for various combat actions
+#define HEAVY_WEAPON_CD 10
 #define CLICK_CD_MELEE 8
+#define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
@@ -49,9 +51,6 @@
 #define CLICK_CD_RESIST 1
 #define CLICK_CD_GRABBING 10
 #define CLICK_CD_LOOK_UP 5
-
-#define HEAVY_WEAPON_CD 10
-#define LIGHT_WEAPON_CD 6
 
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
