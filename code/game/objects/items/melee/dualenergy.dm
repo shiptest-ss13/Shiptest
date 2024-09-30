@@ -19,6 +19,8 @@
 	var/sword_color = "green"
 	var/hacked = FALSE
 	var/list/possible_colors = list("red", "blue", "green", "purple", "yellow")
+	var/impale_flavor_text "twirl"
+	var/hack_flavor_text = ""
 
 /obj/item/melee/duelenergy/Initialize()
 	. = ..()
@@ -69,6 +71,24 @@
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
 
+/obj/item/melee/duelenergy/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_MULTITOOL)
+		if(!hacked)
+			hacked = TRUE
+			to_chat(user, "<span class='warning'>[hack_flavor_text]</span>")
+			sword_color = "rainbow"
+			update_appearance()
+		else
+			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
+	else
+		return ..()
+
+/obj/item/melee/duelenergy/attack(mob/target, mob/living/carbon/human/user)
+	..()
+	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
+		impale(user)
+		return
+
 /obj/item/melee/duelenergy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return ..()
@@ -90,38 +110,7 @@
 	icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "[base_icon_state][sword_color]" : base_icon_state
 	return ..()
 
-/*
- * Double-Bladed Energy Swords - Cheridan
- */
-/obj/item/melee/duelenergy/saber
-	icon_state = "dualsaber"
-	base_icon_state = "dualsaber"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	name = "double-bladed energy sword"
-	desc = "For when simply killing someone isn't enough."
-	w_class = WEIGHT_CLASS_SMALL
-	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
-
-/obj/item/melee/duelenergy/saber/attack(mob/target, mob/living/carbon/human/user)
-	..()
-	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-		impale(user)
-		return
-	if(HAS_TRAIT(src, TRAIT_WIELDED) && prob(50))
-		INVOKE_ASYNC(src, PROC_REF(jedi_spin), user)
-
-/obj/item/melee/duelenergy/saber/proc/jedi_spin(mob/living/user)
-	dance_rotate(user, CALLBACK(user, TYPE_PROC_REF(/mob, dance_flip)))
-
-/obj/item/melee/duelenergy/saber/proc/impale(mob/living/user)
-	to_chat(user, "<span class='warning'>You twirl around a bit before losing your balance and impaling yourself on [src].</span>")
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		user.take_bodypart_damage(20,25,check_armor = TRUE)
-	else
-		user.adjustStaminaLoss(25)
-
-/obj/item/melee/duelenergy/saber/ignition_effect(atom/A, mob/user)
+/obj/item/melee/duelenergy/ignition_effect(atom/A, mob/user)
 	// same as /obj/item/melee/transforming/energy, mostly
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return ""
@@ -133,8 +122,25 @@
 	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
 	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
 	add_fingerprint(user)
-	// Light your candles while spinning around the room
-	INVOKE_ASYNC(src, PROC_REF(jedi_spin), user)
+
+/obj/item/melee/duelenergy/proc/impale(mob/living/user)
+	to_chat(user, "<span class='warning'>You [impale_flavor_text] around a bit before losing your balance and impaling yourself on [src].</span>")
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		user.take_bodypart_damage(20,25,check_armor = TRUE)
+	else
+		user.adjustStaminaLoss(25)
+/*
+ * Double-Bladed Energy Swords - Cheridan
+ */
+/obj/item/melee/duelenergy/saber
+	name = "double-bladed energy sword"
+	desc = "For when simply killing someone isn't enough."
+	icon_state = "dualsaber"
+	base_icon_state = "dualsaber"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
 
 /obj/item/melee/duelenergy/saber/green
 	possible_colors = list("green")
@@ -151,63 +157,20 @@
 /obj/item/melee/duelenergy/saber/yellow
 	possible_colors = list("yellow")
 
-/obj/item/melee/duelenergy/saber/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_MULTITOOL)
-		if(!hacked)
-			hacked = TRUE
-			to_chat(user, "<span class='warning'>2XRNBW_ENGAGE</span>")
-			sword_color = "rainbow"
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
-	else
-		return ..()
-
 /*
  * Energy Halberds - TetraZeta, Imaginos and Zevo.
  */
 /obj/item/melee/duelenergy/halberd
-	icon_state = "halberd"
-	base_icon_state = "halberd"
-	icon = 'icons/obj/weapon/energy.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "energy halberd"
 	desc = "For when a normal halberd just isnt enough."
+	icon_state = "halberd"
+	base_icon_state = "halberd"'
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	light_range = 4
-
-/obj/item/melee/duelenergy/halberd/attack(mob/target, mob/living/carbon/human/user)
-	..()
-	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-		impale(user)
-		return
-
-/obj/item/melee/duelenergy/halberd/proc/impale(mob/living/user)
-	to_chat(user, "<span class='warning'>You swing around a bit before losing your balance and impaling yourself on [src].</span>")
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		user.take_bodypart_damage(20,25,check_armor = TRUE)
-	else
-		user.adjustStaminaLoss(25)
-
-
-/obj/item/melee/duelenergy/halberd/IsReflect()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		return 1
-
-/obj/item/melee/duelenergy/halberd/ignition_effect(atom/A, mob/user)
-	// same as /obj/item/melee/transforming/energy, mostly
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		return ""
-	var/in_mouth = ""
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(C.wear_mask)
-			in_mouth = ", barely missing [user.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
-	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
-	add_fingerprint(user)
-
+	impale_flavor_text = "swing"
+	hack_flavor_text = "HLBRDRNBW_ENGAGE"
 
 /obj/item/melee/duelenergy/halberd/green
 	possible_colors = list("green")
@@ -224,14 +187,3 @@
 /obj/item/melee/duelenergy/halberd/yellow
 	possible_colors = list("yellow")
 
-/obj/item/melee/duelenergy/halberd/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_MULTITOOL)
-		if(!hacked)
-			hacked = TRUE
-			to_chat(user, "<span class='warning'>HLBRDRNBW_ENGAGE</span>")
-			sword_color = "rainbow"
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
-	else
-		return ..()
