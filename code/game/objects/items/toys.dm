@@ -307,7 +307,7 @@
 			var/obj/item/melee/duelenergy/saber/toy/newSaber = new /obj/item/melee/duelenergy/saber/toy(user.loc)
 			if(hacked) // That's right, we'll only check the "original" "sword".
 				newSaber.hacked = TRUE
-				newSaber.saber_color = "rainbow"
+				newSaber.sword_color = "rainbow"
 			qdel(W)
 			qdel(src)
 	else if(W.tool_behaviour == TOOL_MULTITOOL)

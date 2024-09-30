@@ -19,7 +19,7 @@
 	var/sword_color = "green"
 	var/hacked = FALSE
 	var/list/possible_colors = list("red", "blue", "green", "purple", "yellow")
-	var/impale_flavor_text "twirl"
+	var/impale_flavor_text = "twirl"
 	var/hack_flavor_text = ""
 
 /obj/item/melee/duelenergy/Initialize()
@@ -164,7 +164,7 @@
 	name = "energy halberd"
 	desc = "For when a normal halberd just isnt enough."
 	icon_state = "halberd"
-	base_icon_state = "halberd"'
+	base_icon_state = "halberd"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
