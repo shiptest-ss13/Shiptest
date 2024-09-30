@@ -3,7 +3,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	icon = 'icons/obj/weapon/energy.dmi'
-	active_hitsound = 'sound/weapons/blade1.ogg'
 	heat = 0
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
@@ -31,17 +30,6 @@
 
 /obj/item/melee/energy/Initialize(mapload)
 	. = ..()
-	make_transformable()
-	AddElement(/datum/element/update_icon_updates_onmob)
-	if(sharpness)
-		AddComponent(/datum/component/butchering, 50, 100, 0, hitsound)
-	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
-		START_PROCESSING(SSobj, src)
-
-/*
- * Gives our item the transforming component, passing in our various vars.
- */
-/obj/item/melee/energy/proc/make_transformable()
 	AddComponent( \
 		/datum/component/transforming, \
 		force_on = active_force, \
@@ -53,6 +41,11 @@
 		attack_verb_on = attack_verb_on, \
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+	AddElement(/datum/element/update_icon_updates_onmob)
+	if(sharpness)
+		AddComponent(/datum/component/butchering, 50, 100, 0, hitsound)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
+		START_PROCESSING(SSobj, src)
 
 /obj/item/melee/energy/Destroy()
 	STOP_PROCESSING(SSobj, src)
