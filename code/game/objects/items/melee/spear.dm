@@ -65,7 +65,6 @@
 	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/melee/spear/explosive/Initialize(mapload)
 	. = ..()
@@ -111,7 +110,7 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
 		explosive.prime()
