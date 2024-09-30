@@ -65,6 +65,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/bone{
+	pixel_x = 1;
+	pixel_y = -3
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "cC" = (
@@ -1398,6 +1402,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "Fj" = (
