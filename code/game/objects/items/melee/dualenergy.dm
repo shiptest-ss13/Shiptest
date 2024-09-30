@@ -186,4 +186,3 @@
 
 /obj/item/melee/duelenergy/halberd/yellow
 	possible_colors = list("yellow")
-

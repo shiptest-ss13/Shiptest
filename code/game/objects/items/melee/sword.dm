@@ -27,7 +27,7 @@
 		_stamina_constant = self_stam_const, \
 		_stamina_coefficient = self_stam_coef, \
 		_parryable_attack_types = NON_PROJECTILE_ATTACKS, \
-		 _riposte = riposte, \
+		_riposte = riposte, \
 		_requires_activation = parry_transformed, \
 	)
 
@@ -36,7 +36,7 @@
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
 	return ..()
-	
+
 /obj/item/melee/sword/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -80,7 +80,31 @@
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22, icon_wielded="[base_icon_state]1")
+	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 22, icon_wielded = "[base_icon_state]_w")
+
+/obj/item/melee/sword/mass/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if(.)
+		on_block(owner, hitby, attack_text, damage, attack_type)
+
+/obj/item/melee/sword/mass/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	if (obj_integrity <= damage)
+		var/turf/T = get_turf(owner)
+		T.visible_message("<span class='warning'>[hitby] destroys [src]!</span>")
+		qdel(src)
+		return FALSE
+	take_damage(damage)
+
+/obj/item/melee/sword/mass/examine(mob/user)
+	. = ..()
+	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	switch(healthpercent)
+		if(50 to 99)
+			. += "<span class='info'>It looks slightly damaged.</span>"
+		if(25 to 50)
+			. += "<span class='info'>It appears heavily damaged.</span>"
+		if(0 to 25)
+			. += "<span class='warning'>It's falling apart!</span>"
 
 /obj/item/melee/sword/katana
 	name = "katana"
