@@ -1,7 +1,7 @@
 //Jumpsuits
 /obj/item/clothing/under/gezena
-	name = "gezenan navywear"
-	desc = "Made of a slick synthetic material that is both breathable, and resistant to scale and thorn alike."
+	name = "PGFN fatigues"
+	desc = "The navy verion of the PG Army's fatigues."
 	icon = 'icons/obj/clothing/faction/gezena/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/uniforms.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -12,14 +12,14 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/gezena/captain
-	name = "\improper Gezenan captain's navywear"
-	desc = "A refined variation of the basic navywear, sporting sleek silver trim."
+	name = "PGFN captain fatigues"
+	desc = "A refined variation of the basic navy fatigues, exclempifying authority."
 	icon_state = "captain"
 	item_state = "bluejump"
 
 /obj/item/clothing/under/gezena/marine
-	name = "\improper Gezenan marine fatigue"
-	desc = "Rough inside and out, these fatigues have seen their fair share."
+	name = "\improper PGFA fatigues"
+	desc = "Rough inside and out, these fatigues are the standard issue fatigues of the PG Army. Theres a very good chance these belong to marines, being in the frontier and all"
 	icon_state = "marine"
 	item_state = "marinejump"
 
@@ -27,7 +27,7 @@
 
 /obj/item/clothing/suit/toggle/gezena
 	name = "silkenweave jacket"
-	desc = "Refined and sturdy, emblazoned below the neck with the Federation's symbol."
+	desc = "Refined and sturdy, emblazoned on the shoulders with the emblem of the PGF."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
