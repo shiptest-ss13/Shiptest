@@ -76,7 +76,9 @@
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
-	max_integrity = 50
+	max_integrity = 300
+	integrity_failure = 0.50
+	var/broken = FALSE
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
@@ -88,23 +90,35 @@
 		on_block(owner, hitby, attack_text, damage, attack_type)
 
 /obj/item/melee/sword/mass/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if (obj_integrity <= damage)
-		var/turf/T = get_turf(owner)
-		T.visible_message("<span class='warning'>[hitby] destroys [src]!</span>")
-		qdel(src)
-		return FALSE
 	take_damage(damage)
+
+/obj/item/melee/sword/mass/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+		return TRUE
+
+/obj/item/melee/sword/mass/obj_break(damage_flag)
+	. = ..()
+	if(!broken)
+		if(isliving(loc))
+			loc.balloon_alert(loc, "[src] cracks!")
+		name = "broken [src::name]"
+		broken = TRUE
 
 /obj/item/melee/sword/mass/examine(mob/user)
 	. = ..()
 	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
-			. += "<span class='info'>It looks slightly damaged.</span>"
+			. += span_info("It looks slightly damaged.")
 		if(25 to 50)
-			. += "<span class='info'>It appears heavily damaged.</span>"
+			. += span_info("It appears heavily damaged.")
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += span_warning("It's falling apart!")
 
 /obj/item/melee/sword/katana
 	name = "katana"

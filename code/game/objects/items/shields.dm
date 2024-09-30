@@ -1,3 +1,5 @@
+#define BATON_BASH_COOLDOWN (3 SECONDS)
+
 /obj/item/shield
 	name = "shield"
 	icon = 'icons/obj/shields.dmi'
@@ -13,13 +15,33 @@
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("shoved", "bashed")
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
-	var/cooldown = 0 //shield bash cooldown. based on world.time
-	var/transparent = FALSE	// makes beam projectiles pass through the shield
+	/// makes beam projectiles pass through the shield
+	var/transparent = FALSE
+	/// if the shield will break by sustaining damage
+	var/breakable_by_damage = TRUE
+	/// what the shield leaves behind when it breaks
+	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
+	/// sound the shield makes when it breaks
+	var/shield_break_sound = 'sound/effects/bang.ogg'
+	/// baton bash cooldown
+	COOLDOWN_DECLARE(baton_bash)
+	/// is shield bashable?
+	var/is_bashable = TRUE
+	/// sound when a shield is bashed
+	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
 
-/obj/item/shield/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	return TRUE
+/obj/item/shield/examine(mob/user)
+	. = ..()
+	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	switch(healthpercent)
+		if(50 to 99)
+			. += span_info("It looks slightly damaged.")
+		if(25 to 50)
+			. += span_info("It appears heavily damaged.")
+		if(0 to 25)
+			. += span_warning("It's falling apart!")
 
-/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
 		return FALSE
 	if(attack_type == THROWN_PROJECTILE_ATTACK)
@@ -28,7 +50,19 @@
 		final_block_chance = 100
 	. = ..()
 	if(.)
-		on_shield_block(owner, hitby, attack_text, damage, attack_type)
+		on_shield_block(owner, hitby, attack_text, damage, attack_type, damage_type)
+
+/obj/item/shield/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
+	if(!breakable_by_damage || (damage_type != BRUTE && damage_type != BURN))
+		return TRUE
+	take_damage(damage)
+
+/obj/item/shield/obj_destruction(damage_flag)
+	playsound(src, shield_break_sound, 50)
+	new shield_break_leftover(get_turf(src))
+	if(isliving(loc))
+		loc.balloon_alert(loc, "shield broken!")
+	return ..()
 
 /obj/item/shield/riot
 	name = "riot shield"
@@ -38,14 +72,17 @@
 
 	transparent = TRUE
 	max_integrity = 75
-	material_flags = MATERIAL_NO_EFFECT
+	material_flags = MATERIAL_NO_EFFECTS
+
+	shield_break_sound = 'sound/effects/glassbr3.ogg'
+	shield_break_leftover = /obj/item/shard
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
-		if(cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, TRUE)
-			cooldown = world.time
+		if(COOLDOWN_FINISHED(src, baton_bash))
+			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
+			playsound(src, shield_bash_sound, 50, TRUE)
+			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
 	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
 		if (obj_integrity >= max_integrity)
 			to_chat(user, "<span class='warning'>[src] is already in perfect condition.</span>")
@@ -57,31 +94,6 @@
 	else
 		return ..()
 
-/obj/item/shield/riot/examine(mob/user)
-	. = ..()
-	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
-	switch(healthpercent)
-		if(50 to 99)
-			. += "<span class='info'>It looks slightly damaged.</span>"
-		if(25 to 50)
-			. += "<span class='info'>It appears heavily damaged.</span>"
-		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
-
-/obj/item/shield/riot/proc/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
-	new /obj/item/shard((get_turf(src)))
-
-/obj/item/shield/riot/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if (obj_integrity <= damage)
-		var/turf/T = get_turf(owner)
-		T.visible_message("<span class='warning'>[hitby] destroys [src]!</span>")
-		shatter(owner)
-		qdel(src)
-		return FALSE
-	take_damage(damage)
-	return ..()
-
 /obj/item/shield/riot/roman
 	name = "\improper Roman shield"
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>."
@@ -92,16 +104,14 @@
 	transparent = FALSE
 	custom_materials = list(/datum/material/iron=8500)
 	max_integrity = 65
+	shield_break_leftover = /obj/item/stack/sheet/metal
+	shield_break_sound = 'sound/effects/grillehit.ogg'
 
 /obj/item/shield/riot/roman/fake
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
 	block_chance = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 30
-
-/obj/item/shield/riot/roman/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/grillehit.ogg', 100)
-	new /obj/item/stack/sheet/metal(get_turf(src))
 
 /obj/item/shield/riot/buckler
 	name = "wooden buckler"
@@ -116,10 +126,8 @@
 	transparent = FALSE
 	max_integrity = 55
 	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/shield/riot/buckler/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/bang.ogg', 50)
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src))
+	shield_break_leftover = /obj/item/stack/sheet/mineral/wood
+	shield_break_sound = 'sound/effects/bang.ogg'
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
@@ -201,6 +209,7 @@
 	throwforce = 3
 	throw_speed = 3
 	base_icon_state = "eshield" // [base_icon_state]1 for expanded, [base_icon_state]0 for contracted
+	breakable_by_damage = FALSE
 	var/on_force = 10
 	var/on_throwforce = 8
 	var/on_throw_speed = 2
@@ -294,13 +303,12 @@
 	block_chance = 25
 	max_integrity = 70
 	w_class = WEIGHT_CLASS_BULKY
+	shield_break_leftover = /obj/item/stack/sheet/animalhide/goliath_hide
+	shield_break_sound = 'sound/effects/bang.ogg'
 
 /obj/item/shield/riot/goliath/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	if(isliving(hitby)) // If attacker is a simple mob.
 		damage *= 0.5
 	. = ..()
 
-/obj/item/shield/riot/goliath/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/bang.ogg', 50)
-	new /obj/item/stack/sheet/animalhide/goliath_hide(get_turf(src))
-	qdel(src)
+#undef BATON_BASH_COOLDOWN
