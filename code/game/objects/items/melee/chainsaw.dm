@@ -22,29 +22,11 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.5
 	var/on = FALSE
-	var/wielded = FALSE // track wielded status on item
-
-/obj/item/chainsaw/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/chainsaw/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-
-/// triggered on wield of two handed item
-/obj/item/chainsaw/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/chainsaw/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
 
 /obj/item/chainsaw/attack_self(mob/user)
 	on = !on
@@ -67,7 +49,7 @@
 		A.UpdateButtonIcon()
 
 /obj/item/chainsaw/get_dismemberment_chance()
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		. = ..()
 
 /obj/item/chainsaw/doomslayer
