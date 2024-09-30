@@ -19,7 +19,7 @@
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,   //Congrats, you unlocked the +18 setting!
 		/obj/item/ammo_box/foambox/riot = 20,
 		/obj/item/toy/katana = 10,
-		/obj/item/dualsaber/toy = 5,
+		/obj/item/melee/duelenergy/saber/toy = 5,
 		/obj/item/toy/cards/deck/syndicate = 10) //Gambling and it hurts, making it a +18 item
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF

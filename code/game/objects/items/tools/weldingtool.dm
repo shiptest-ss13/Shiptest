@@ -75,7 +75,7 @@
 
 /obj/item/weldingtool/process()
 	switch(welding)
-		if(0)
+		if(FALSE)
 			force = 3
 			damtype = "brute"
 			update_appearance()
@@ -83,7 +83,7 @@
 				STOP_PROCESSING(SSobj, src)
 			return
 	//Welders left on now use up fuel, but lets not have them run out quite that fast
-		if(1)
+		if(TRUE)
 			force = 15
 			damtype = "fire"
 			++burned_fuel_for

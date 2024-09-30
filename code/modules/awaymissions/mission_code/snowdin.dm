@@ -509,7 +509,7 @@
 	name = "dungeon heavy"
 	loot = list(/obj/item/melee/axe/fire = 25,
 				/obj/item/organ/brain/alien = 17,
-				/obj/item/dualsaber = 15,
+				/obj/item/melee/duelenergy/saber = 15,
 				/obj/item/organ/heart/demon = 7,
 				/obj/item/gun/ballistic/automatic/smg/cobra = 16,
 				/obj/item/uplink/old = 2,

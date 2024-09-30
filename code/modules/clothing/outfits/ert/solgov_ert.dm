@@ -15,7 +15,7 @@
 	back = /obj/item/storage/backpack
 
 	box = /obj/item/storage/box/survival
-	l_hand = /obj/item/energyhalberd
+	l_hand = /obj/item/melee/duelenergy/halberd
 
 
 /datum/outfit/job/solgov/ert/inspector
