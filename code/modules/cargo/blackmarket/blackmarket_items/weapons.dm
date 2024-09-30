@@ -15,7 +15,7 @@
 /datum/blackmarket_item/weapon/bone_spear
 	name = "Bone Spear"
 	desc = "Authentic tribal spear, made from real bones! A steal at any price, especially if you're a caveman."
-	item = /obj/item/spear/bonespear
+	item = /obj/item/melee/spear/bone
 
 	price_min = 200
 	price_max = 300
@@ -25,7 +25,7 @@
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
-	item = /obj/item/kitchen/knife/switchblade
+	item = /obj/item/melee/knife/switchblade
 
 	price_min = 500
 	price_max = 700
@@ -350,4 +350,12 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of dubious make used by various engineers throughout the years to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
 
+	price_min = 2500
+	price_max = 3500
+	stock = 2
+	availability_prob = 40
