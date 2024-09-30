@@ -40,7 +40,7 @@
 	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	suit = /obj/item/clothing/suit/hooded/cloak/goliath
 
 
