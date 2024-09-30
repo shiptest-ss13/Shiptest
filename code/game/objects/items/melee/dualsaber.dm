@@ -133,7 +133,7 @@
 		return 1
 
 /obj/item/dualsaber/ignition_effect(atom/A, mob/user)
-	// same as /obj/item/melee/transforming/energy, mostly
+	// same as /obj/item/melee/energy, mostly
 	if(!wielded)
 		return ""
 	var/in_mouth = ""
