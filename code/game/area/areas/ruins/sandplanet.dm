@@ -24,3 +24,5 @@
 /area/ruin/whitesands/cave_base
 	name = "Abandoned Facility"
 	icon_state = "bluenew"
+
+/area/ruin/whitesands/cave_base/engi

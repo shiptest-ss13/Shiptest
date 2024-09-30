@@ -137,4 +137,4 @@
 	throw_range = 3
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
-	boom_sizes = list(1, 2, 5)
+	boom_sizes = list(0, 3, 5)
