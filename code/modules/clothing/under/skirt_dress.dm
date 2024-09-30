@@ -35,26 +35,26 @@
 	icon_state = "red_evening_gown"
 	item_state = "red_evening_gown"
 
-/obj/item/clothing/under/dress/skirt
+/obj/item/clothing/under/dress/skirt/color
 	name = "black skirt"
-	desc = "A black skirt, very fancy!"
+	desc = "A black, casual skirt."
 	icon_state = "blackskirt"
 
-/obj/item/clothing/under/dress/skirt/blue
+/obj/item/clothing/under/dress/skirt/color/blue
 	name = "blue skirt"
 	desc = "A blue, casual skirt."
 	icon_state = "blueskirt"
 	item_state = "b_suit"
 	custom_price = 60
 
-/obj/item/clothing/under/dress/skirt/red
+/obj/item/clothing/under/dress/skirt/color/red
 	name = "red skirt"
 	desc = "A red, casual skirt."
 	icon_state = "redskirt"
 	item_state = "r_suit"
 	custom_price = 60
 
-/obj/item/clothing/under/dress/skirt/purple
+/obj/item/clothing/under/dress/skirt/color/purple
 	name = "purple skirt"
 	desc = "A purple, casual skirt."
 	icon_state = "purpleskirt"
@@ -94,3 +94,9 @@
 	icon_state = "rilena_dress"
 	item_state = "rilena_dress"
 	//supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/under/dress/white_dress
+	name = "white dress"
+	desc = "A breezy white dress."
+	icon_state = "white_dress"
+	item_state = "white_dress"

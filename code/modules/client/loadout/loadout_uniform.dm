@@ -202,20 +202,24 @@
 
 /datum/gear/uniform/dress/purpleskirt
 	display_name = "purple skirt"
-	path = /obj/item/clothing/under/dress/skirt/purple
+	path = /obj/item/clothing/under/dress/skirt/color/purple
 
 /datum/gear/uniform/dress/blueskirt
 	display_name = "blue skirt"
-	path = /obj/item/clothing/under/dress/skirt/blue
+	path = /obj/item/clothing/under/dress/skirt/color/blue
 
 /datum/gear/uniform/dress/redskirt
 	display_name = "red skirt"
-	path = /obj/item/clothing/under/dress/skirt/red
+	path = /obj/item/clothing/under/dress/skirt/color/red
 
 /datum/gear/uniform/dress/blackskirt
 	display_name = "black skirt"
-	path = /obj/item/clothing/under/dress/skirt
-	description = "Actually, it's a black blouse with a salmon skirt. But it's not called that."
+	path = /obj/item/clothing/under/dress/skirt/color
+
+/datum/gear/uniform/dress/whitedress
+
+	display_name = "white dress"
+	path = /obj/item/clothing/under/dress/white_dress
 
 /datum/gear/uniform/dress/sundress
 	display_name = "sundress"

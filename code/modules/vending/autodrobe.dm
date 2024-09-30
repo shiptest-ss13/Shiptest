@@ -90,7 +90,7 @@
 		/obj/item/clothing/under/rank/civilian/janitor/maid = 1,
 		/obj/item/clothing/glasses/cold=1,
 		/obj/item/clothing/glasses/heat=1,
-		/obj/item/clothing/suit/whitedress = 1,
+		/obj/item/clothing/under/dress/white_dress = 1,
 		/obj/item/clothing/head/jester = 1,
 		/obj/item/clothing/suit/hooded/carp_costume = 1,
 		/obj/item/clothing/suit/hooded/ian_costume = 1,

@@ -17,7 +17,7 @@
 		/obj/item/clothing/under/suit/black = 1,
 		/obj/item/clothing/under/dress/sailor = 1,
 		/obj/item/clothing/under/dress/striped = 1,
-		/obj/item/clothing/under/dress/skirt/blue = 1,
+		/obj/item/clothing/under/dress/skirt/color/blue = 1,
 		/obj/item/clothing/under/syndicate/tacticool = 1,
 		)
 	)

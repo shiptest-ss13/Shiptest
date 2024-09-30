@@ -236,14 +236,6 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, SHAMEBRERO_TRAIT)
 
-/obj/item/clothing/suit/whitedress
-	name = "white dress"
-	desc = "A fancy white dress."
-	icon_state = "white_dress"
-	item_state = "w_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	flags_inv = HIDEJUMPSUIT|HIDESHOES
-
 /obj/item/clothing/suit/hooded/carp_costume
 	name = "carp costume"
 	desc = "A costume made from 'synthetic' carp scales, it smells."
