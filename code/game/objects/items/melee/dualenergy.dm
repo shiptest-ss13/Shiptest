@@ -1,21 +1,12 @@
 /obj/item/melee/duelenergy
 	icon = 'icons/obj/weapon/energy.dmi'
-	icon_state = "halberd"
-	icon = 'icons/obj/weapon/energy.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	name = "energy halberd"
-	desc = "For when a normal halberd just isnt enough."
 	force = 3
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	hitsound = "swing_hit"
 	armour_penetration = 35
 	light_system = MOVABLE_LIGHT
-	light_range = 4
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 	light_on = FALSE
 	attack_cooldown = HEAVY_WEAPON_CD
@@ -95,36 +86,22 @@
 	else
 		STOP_PROCESSING(SSobj, src)
 
+/obj/item/melee/duelenergy/update_icon_state()
+	icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "[base_icon_state][sword_color]" : base_icon_state
+	return ..()
+
 /*
  * Double-Bladed Energy Swords - Cheridan
  */
 /obj/item/melee/duelenergy/saber
-	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "dualsaber"
+	base_icon_state = "dualsaber"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "double-bladed energy sword"
 	desc = "For when simply killing someone isn't enough."
-	force = 3
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	hitsound = "swing_hit"
-	armour_penetration = 35
-	light_system = MOVABLE_LIGHT
 	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
-	light_color = LIGHT_COLOR_ELECTRIC_GREEN
-	light_on = FALSE
-	attack_cooldown = HEAVY_WEAPON_CD
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
-	resistance_flags = FIRE_PROOF
-
-/obj/item/melee/duelenergy/saber/update_icon_state()
-	icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "dualsaber[sword_color]" : "dualsaber"
-	return ..()
 
 /obj/item/melee/duelenergy/saber/attack(mob/target, mob/living/carbon/human/user)
 	..()
@@ -190,38 +167,15 @@
  * Energy Halberds - TetraZeta, Imaginos and Zevo.
  */
 /obj/item/melee/duelenergy/halberd
-	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "halberd"
+	base_icon_state = "halberd"
 	icon = 'icons/obj/weapon/energy.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "energy halberd"
 	desc = "For when a normal halberd just isnt enough."
-	force = 3
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 5
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	hitsound = "swing_hit"
-	armour_penetration = 35
-	light_system = MOVABLE_LIGHT
 	light_range = 4
-	light_color = LIGHT_COLOR_ELECTRIC_GREEN
-	light_on = FALSE
-	attack_cooldown = HEAVY_WEAPON_CD
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
-	resistance_flags = FIRE_PROOF
-
-/obj/item/melee/duelenergy/halberd/update_icon_state()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = "halberd[sword_color]"
-		return ..()
-	else
-		icon_state = "halberd"
-		return ..()
 
 /obj/item/melee/duelenergy/halberd/attack(mob/target, mob/living/carbon/human/user)
 	..()
