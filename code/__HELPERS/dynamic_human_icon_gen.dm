@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 		return GLOB.dynamic_human_appearances[arg_string]
 	var/mob/living/carbon/human/dummy/consistent/dummy = new()
 	dummy.set_species(species_path)
-	dummy.stat = DEAD //this is to avoid side effects of mob spawners
+	dummy.stat = CONSCIOUS //He needs to be alive or he has no eyes. Scary
 	dummy.underwear = "Nude"
 	dummy.undershirt = "Nude"
 	dummy.socks = "Nude"
