@@ -556,7 +556,8 @@
 	dir = 1
 	},
 /obj/structure/closet/wall/red/directional/west{
-	name = "specialist tools"
+	name = "specialist tools";
+	req_access_txt = "3"
 	},
 /obj/item/razor{
 	name = "uniform compliance tool"
@@ -1176,7 +1177,8 @@
 "nX" = (
 /obj/structure/table/reinforced,
 /obj/structure/closet/wall/red/directional/north{
-	name = "uniform closet"
+	name = "uniform closet";
+	req_access_txt = "1"
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
@@ -1583,9 +1585,10 @@
 	pixel_y = 4;
 	pixel_x = -2
 	},
-/obj/structure/cabinet{
-	pixel_x = -31;
-	name = "ULTRA MEGA PLACEHOLDER"
+/obj/structure/cabinet/oneshot{
+	pixel_x = -25;
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1730,7 +1733,9 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "uS" = (
-/obj/structure/guncloset,
+/obj/structure/guncloset{
+	anchored = 1
+	},
 /obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag,
 /obj/item/gun/ballistic/automatic/assault/e40{
 	spawnwithmagazine = 0
@@ -4137,7 +4142,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
 "WU" = (
-/obj/structure/guncloset,
+/obj/structure/guncloset{
+	anchored = 1
+	},
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -4168,7 +4175,8 @@
 "Xg" = (
 /obj/structure/table/reinforced,
 /obj/structure/closet/wall/red/directional/north{
-	name = "ammo locker"
+	name = "ammo locker";
+	req_access_txt = "1"
 	},
 /obj/item/ammo_box/magazine/m45_cobra,
 /obj/item/ammo_box/magazine/m45_cobra,
@@ -4298,7 +4306,8 @@
 "YB" = (
 /obj/structure/table/reinforced,
 /obj/structure/closet/wall/red/directional/north{
-	name = "ammo locker"
+	name = "ammo locker";
+	req_access_txt = "1"
 	},
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
