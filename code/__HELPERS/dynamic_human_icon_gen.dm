@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 			outfit.l_hand = l_hand
 		dummy.equipOutfit(outfit, visualsOnly = TRUE)
 	else if(mob_spawn_path)
-		var/obj/effect/mob_spawn/spawner = new mob_spawn_path(null)
+		var/obj/effect/mob_spawn/human/spawner = new mob_spawn_path(null)
 		spawner.outfit_override = list()
 		if(r_hand != NO_REPLACE)
 			spawner.outfit_override["r_hand"] = r_hand
@@ -45,7 +45,8 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 			*/
 		if(bloody_slots & carried_item.slot_flags)
 			carried_item.add_mob_blood(dummy)
-	dummy.update_held_items()
+	//dummy.update_held_items()
+	dummy.regenerate_icons()
 	var/mutable_appearance/output = dummy.appearance
 	GLOB.dynamic_human_appearances[arg_string] = output
 	qdel(dummy)
@@ -59,6 +60,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 /proc/set_dynamic_human_appearance(list/arguments)
 	var/atom/target = arguments[1] //1st argument is the target
 	var/dynamic_appearance = get_dynamic_human_appearance(arglist(arguments.Copy(2))) //the rest of the arguments starting from 2 matter to the proc
-	target.icon = 'icons/blanks/32x32.dmi'
-	target.icon_state = "nothing"
-	target.copy_overlays(dynamic_appearance, cut_old = TRUE)
+	target.icon = 'icons/mob/human.dmi'
+	target.icon_state = ""
+	target.appearance_flags |= KEEP_TOGETHER
+	target.copy_overlays(dynamic_appearance)

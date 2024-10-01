@@ -50,4 +50,4 @@
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
-		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+		apply_dynamic_human_appearance(src, /datum/outfit/frontier, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)

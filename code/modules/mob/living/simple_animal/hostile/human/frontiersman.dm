@@ -14,7 +14,7 @@
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier
-	r_hand = /obj/item/kitchen/knife
+	r_hand = /obj/item/melee/knife/kitchen
 
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
@@ -36,7 +36,7 @@
 	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	casingtype = /obj/item/ammo_casing/a44roum
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged
-	r_hand = /obj/item/gun/ballistic/revolver'
+	r_hand = /obj/item/gun/ballistic/revolver
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
