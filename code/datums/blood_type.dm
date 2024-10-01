@@ -52,10 +52,10 @@
 	color = "#009696"
 	compatible_types = list(/datum/blood_type/lizard)
 
-/datum/blood_type/elzuosa
+/datum/blood_type/elzuose
 	name = "E"
 	color = "#7fff7f"
-	compatible_types = list(/datum/blood_type/elzuosa)
+	compatible_types = list(/datum/blood_type/elzuose)
 
 /datum/blood_type/synthetic //Blood for synthetic/robotic species
 	name = "Coolant"

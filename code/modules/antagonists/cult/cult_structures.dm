@@ -5,7 +5,7 @@
 	light_power = 2
 	var/cooldowntime = 0
 	break_sound = 'sound/hallucinations/veryfar_noise.ogg'
-	debris = list(/obj/item/stack/sheet/runed_metal = 1)
+	debris = list(/obj/item/stack/sheet/mineral/hidden/hellstone = 1)
 
 /obj/structure/destructible/cult/proc/conceal() //for spells that hide cult presence
 	density = FALSE
@@ -64,13 +64,6 @@
 	icon_state = "[initial(icon_state)][anchored ? null : "_off"]"
 	return ..()
 
-/obj/structure/destructible/cult/attackby(obj/I, mob/user, params)
-	if(istype(I, /obj/item/melee/cultblade/dagger) && iscultist(user))
-		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "":"un"]secure \the [src] [anchored ? "to":"from"] the floor.</span>")
-	else
-		return ..()
-
 /obj/structure/destructible/cult/proc/check_menu(mob/user)
 	if(!istype(user))
 		return FALSE
@@ -100,7 +93,7 @@
 	var/list/items = list(
 		"Eldritch Whetstone" = image(icon = 'icons/obj/kitchen.dmi', icon_state = "cult_sharpener"),
 		"Construct Shell" = image(icon = 'icons/obj/wizard.dmi', icon_state = "construct_cult"),
-		"Flask of Unholy Water" = image(icon = 'icons/obj/drinks.dmi', icon_state = "holyflask")
+		"Flask of Unholy Water" = image(icon = 'icons/obj/drinks/drinks.dmi', icon_state = "holyflask")
 		)
 	var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	var/list/pickedtype = list()

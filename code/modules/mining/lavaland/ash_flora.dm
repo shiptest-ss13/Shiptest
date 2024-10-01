@@ -419,7 +419,7 @@
 /obj/item/seeds/lavaland/puce/attackby(obj/item/item, mob/user, params)
 	. = ..()
 	//anyone intending to add more garnishes using this method should componentize this
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
@@ -432,14 +432,6 @@
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
 
-//CRAFTING
-
-/datum/crafting_recipe/mushroom_bowl
-	name = "Mushroom Bowl"
-	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
-	time = 30
-	category = CAT_PRIMAL
 
 /obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
 	desc = "Very ashy."

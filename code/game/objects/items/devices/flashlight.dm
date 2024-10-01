@@ -62,7 +62,7 @@
 			to_chat(user, "<span class='warning'>[M] doesn't have a head!</span>")
 			return
 
-		if(light_power < 1)
+		if(light_power < 0.3)
 			to_chat(user, "<span class='warning'>\The [src] isn't bright enough to see anything!</span> ")
 			return
 
@@ -253,7 +253,7 @@
 	name = "banana lamp"
 	desc = "Only a clown would think to make a ghetto banana-shaped lamp. Even has a goofy pullstring."
 	icon_state = "bananalamp"
-	item_state = "bananalamp"
+	item_state = "lampgreen"
 
 // FLARES
 

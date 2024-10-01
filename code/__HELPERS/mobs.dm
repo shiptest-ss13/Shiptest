@@ -108,6 +108,7 @@
 		"ipc_chassis" = pick(GLOB.ipc_chassis_list),
 		"ipc_screen" = pick(GLOB.ipc_screens_list),
 		"kepori_body_feathers" = pick(GLOB.kepori_body_feathers_list),
+		"kepori_head_feathers" = pick(GLOB.kepori_head_feathers_list),
 		"kepori_feathers" = pick(GLOB.kepori_feathers_list),
 		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
 		"legs" = "Normal Legs",
@@ -171,13 +172,6 @@
 		if(!findname(.))
 			break
 
-/proc/random_unique_moth_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
-
-		if(!findname(.))
-			break
-
 /proc/random_unique_squid_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(squid_name())
@@ -217,6 +211,12 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"african2"
 	)))
 
+/proc/pick_species_adjective(mob/living/carbon/human/H)
+	if(isipc(H))
+		return pick(GLOB.ipc_preference_adjectives)
+	else
+		return pick(GLOB.preference_adjectives)
+
 GLOBAL_LIST_EMPTY(species_list)
 
 /proc/age2agedescription(age)
@@ -242,61 +242,6 @@ GLOBAL_LIST_EMPTY(species_list)
 		else
 			return "unknown"
 
-///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
-	if(!user || !target)
-		return FALSE
-
-	if(target && INTERACTING_WITH(user, target))
-		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
-		return
-
-	var/user_loc = user.loc
-
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
-	var/target_loc = target.loc
-
-	LAZYADD(user.do_afters, target)
-	LAZYADD(target.targeted_by, user)
-	var/holding = user.get_active_held_item()
-	var/datum/progressbar/progbar
-	if (progress)
-		progbar = new(user, time, target)
-
-	var/endtime = world.time+time
-	var/starttime = world.time
-	. = TRUE
-	while (world.time < endtime)
-		stoplag(1)
-		if(!QDELETED(progbar))
-			progbar.update(world.time - starttime)
-		if(QDELETED(user) || QDELETED(target))
-			. = FALSE
-			break
-		if(uninterruptible)
-			continue
-
-		if(drifting && !user.inertia_dir)
-			drifting = FALSE
-			user_loc = user.loc
-
-
-		if(!ignore_loc_change && ((!drifting && user.loc != user_loc) || target.loc != target_loc))
-			. = FALSE
-			break
-
-		if(user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
-			. = FALSE
-			break
-	if(!QDELETED(progbar))
-		progbar.end_progress()
-	if(!QDELETED(target))
-		LAZYREMOVE(user.do_afters, target)
-		LAZYREMOVE(target.targeted_by, user)
-
 //some additional checks as a callback for for do_afters that want to break on losing health or on the mob taking action
 /mob/proc/break_do_after_checks(list/checked_health, check_clicks)
 	if(check_clicks && next_move > world.time)
@@ -311,24 +256,52 @@ GLOBAL_LIST_EMPTY(species_list)
 		checked_health["health"] = health
 	return ..()
 
-///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/**
+ * Used to get the amount of change between two body temperatures
+ *
+ * When passed the difference between two temperatures returns the amount of change to temperature to apply.
+ * The change rate should be kept at a low value tween 0.16 and 0.02 for optimal results.
+ * vars:
+ * * temp_diff (required) The differance between two temperatures
+ * * change_rate (optional)(Default: 0.06) The rate of range multiplyer
+ */
+/proc/get_temp_change_amount(temp_diff, change_rate = 0.06)
+	if(temp_diff < 0)
+		return -(BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 - (temp_diff * change_rate))
+
+/* Timed action involving one mob user. A target can also be specified, but it is optional.
+ *
+ * Checks that `user` does not move, change hands, get stunned, etc. for the
+ * given `delay`. Returns `TRUE` on success or `FALSE` on failure.
+ *
+ * Arguments:
+ * * user - the primary "user" of the do_after.
+ * * delay - how long the do_after takes. Defaults to 3 SECONDS.
+ * * target - the (optional) target mob of the do_after. If they move/cease to exist, the do_after is cancelled.
+ * * timed_action_flags - optional flags to override certain do_after checks (see DEFINES/timed_action.dm).
+ * * progress - if TRUE, a progress bar is displayed.
+ * * extra_checks - a callback that can be used to add extra checks to the do_after. Returning false in this callback will cancel the do_after.
+ */
+/proc/do_after(mob/user, delay = 3 SECONDS, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks, interaction_key, max_interact_count = 1, hidden = FALSE)
 	if(!user)
 		return FALSE
+	if(!isnum(delay))
+		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 
-	if(target && INTERACTING_WITH(user, target))
+	if(target && DOING_INTERACTION_WITH_TARGET(user, target))
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
 		return
 
-	var/atom/Tloc = null
-	if(target && !isturf(target))
-		Tloc = target.loc
+	if(!interaction_key && target)
+		interaction_key = target //Use the direct ref to the target
+	if(interaction_key) //Do we have a interaction_key now?
+		var/current_interaction_count = LAZYACCESS(user.do_afters, interaction_key) || 0
+		if(current_interaction_count >= max_interact_count) //We are at our peak
+			return
+		LAZYSET(user.do_afters, interaction_key, current_interaction_count + 1)
 
-	if(target)
-		LAZYADD(user.do_afters, target)
-		LAZYADD(target.targeted_by, user)
-
-	var/atom/Uloc = user.loc
+	var/atom/user_loc = user.loc
+	var/atom/target_loc = target?.loc
 
 	var/drifting = FALSE
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
@@ -336,131 +309,58 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/holding = user.get_active_held_item()
 
-	var/holdingnull = TRUE //User's hand started out empty, check for an empty hand
-	if(holding)
-		holdingnull = FALSE //Users hand started holding something, check to see if it's still holding that
-
 	delay *= user.do_after_coefficent()
 
 	var/datum/progressbar/progbar
+	var/datum/cogbar/cog
+
 	if(progress)
-		progbar = new(user, delay, target || user)
+		if(user.client)
+			progbar = new(user, delay, target || user)
+
+		if(!hidden && delay >= 1 SECONDS)
+			cog = new(user)
 
 	var/endtime = world.time + delay
 	var/starttime = world.time
 	. = TRUE
 	while (world.time < endtime)
 		stoplag(1)
+
 		if(!QDELETED(progbar))
 			progbar.update(world.time - starttime)
 
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
-			Uloc = user.loc
+			user_loc = user.loc
 
-		if(QDELETED(user) || user.stat || (!drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
+		// Check flags
+		if(QDELETED(user) \
+			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
+			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
+			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && HAS_TRAIT(user, TRAIT_INCAPACITATED)) \
+			|| (extra_checks && !extra_checks.Invoke()))
 			. = FALSE
 			break
 
-		if(isliving(user))
-			var/mob/living/L = user
-			if(L.IsStun() || L.IsParalyzed())
-				. = FALSE
-				break
-
-		if(!QDELETED(Tloc) && (QDELETED(target) || Tloc != target.loc))
-			if((Uloc != Tloc || Tloc != user) && !drifting)
-				. = FALSE
-				break
-
-		if(target && !(target in user.do_afters))
+		// If we have a target, we check for them moving here. We don't care about it if we're drifting or we ignore target loc change
+		if(target && (user != target) && \
+			(QDELETED(target) \
+			|| (!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && target.loc != target_loc)))
 			. = FALSE
 			break
 
-		if(needhand)
-			//This might seem like an odd check, but you can still need a hand even when it's empty
-			//i.e the hand is used to pull some item/tool out of the construction
-			if(!holdingnull)
-				if(!holding)
-					. = FALSE
-					break
-			if(user.get_active_held_item() != holding)
-				. = FALSE
-				break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
 
-	if(!QDELETED(target))
-		LAZYREMOVE(user.do_afters, target)
-		LAZYREMOVE(target.targeted_by, user)
+	cog?.remove()
+
+	if(interaction_key)
+		LAZYREMOVE(user.do_afters, interaction_key)
 
 /mob/proc/do_after_coefficent() // This gets added to the delay on a do_after, default 1
 	. = 1
 	return
-
-///Timed action involving at least one mob user and a list of targets.
-/proc/do_after_mob(mob/user, list/targets, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks)
-	if(!user)
-		return FALSE
-	if(!islist(targets))
-		targets = list(targets)
-	if(!length(targets))
-		return FALSE
-
-	for(var/i in targets)
-		var/mob/living/target = i
-		if(INTERACTING_WITH(user, target))
-			to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
-			return
-
-
-	var/user_loc = user.loc
-
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
-	var/list/originalloc = list()
-	for(var/atom/target in targets)
-		originalloc[target] = target.loc
-		LAZYADD(user.do_afters, target)
-		LAZYADD(target.targeted_by, user)
-
-	var/holding = user.get_active_held_item()
-	var/datum/progressbar/progbar
-	if(progress)
-		progbar = new(user, time, targets[1])
-
-	var/endtime = world.time + time
-	var/starttime = world.time
-	. = TRUE
-	mainloop:
-		while(world.time < endtime)
-			stoplag(1)
-			if(!QDELETED(progbar))
-				progbar.update(world.time - starttime)
-			if(QDELETED(user) || !targets)
-				. = FALSE
-				break
-			if(uninterruptible)
-				continue
-
-			if(drifting && !user.inertia_dir)
-				drifting = FALSE
-				user_loc = user.loc
-
-			for(var/atom/target in targets)
-				if((!drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
-					. = FALSE
-					break mainloop
-	if(!QDELETED(progbar))
-		progbar.end_progress()
-
-	for(var/thing in targets)
-		var/atom/target = thing
-		if(!QDELETED(target))
-			LAZYREMOVE(user.do_afters, target)
-			LAZYREMOVE(target.targeted_by, user)
 
 /proc/is_species(A, species_datum)
 	. = FALSE

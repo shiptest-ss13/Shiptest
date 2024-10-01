@@ -13,7 +13,7 @@
 #define BROKEN_SPARKS_MAX (9 MINUTES)
 
 #define LIGHT_DRAIN_TIME 25                                             //WS Edit -- Ethereal Charge Scaling
-#define LIGHT_POWER_GAIN (1.75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
+#define LIGHT_POWER_GAIN (1.75 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"
@@ -190,11 +190,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				return
 	return ..()
 
-/obj/structure/light_construct/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
-
 /obj/structure/light_construct/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/metal(loc, sheets_refunded)
@@ -217,9 +212,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	desc = "A lighting fixture."
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
-	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 20
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = 0
 	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
@@ -360,6 +355,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
 /obj/machinery/light/Destroy()
+	if(on)
+		removeStaticPower(static_power_used, AREA_USAGE_STATIC_LIGHT)
 	var/area/A = get_area(src)
 	if(A)
 		on = FALSE
@@ -420,22 +417,18 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 				if(trigger)
 					burn_out()
 			else
-				use_power = ACTIVE_POWER_USE
 				set_light(BR, PO, CO)
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
-		use_power = IDLE_POWER_USE
 		emergency_mode = TRUE
 		START_PROCESSING(SSmachines, src)
 	else
-		use_power = IDLE_POWER_USE
 		set_light(0)
 	update_appearance()
 
-	active_power_usage = (brightness * 10)
 	if(on != on_gs)
 		on_gs = on
 		if(on)
-			static_power_used = brightness * 20 //20W per unit luminosity
+			static_power_used = brightness * LIGHT_DRAW //defined in power defines
 			addStaticPower(static_power_used, AREA_USAGE_STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, AREA_USAGE_STATIC_LIGHT)
@@ -690,9 +683,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		var/mob/living/carbon/human/H = user
 
 		if(istype(H))
-			var/datum/species/ethereal/eth_species = H.dna?.species
+			var/datum/species/elzuose/eth_species = H.dna?.species
 			if(istype(eth_species))
-				var/datum/species/ethereal/E = H.dna.species
+				var/datum/species/elzuose/E = H.dna.species
 				if(E.drain_time > world.time)
 					return
 				to_chat(H, "<span class='notice'>You start channeling some power through the [fitting] into your body.</span>")
@@ -859,8 +852,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	if(!..()) //not caught by a mob
 		shatter()
 
-// update the icon state and description of the light
+/obj/item/light/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	shatter()
+	..()
 
+// update the icon state and description of the light
 /obj/item/light/proc/update()
 	switch(status)
 		if(LIGHT_OK)
@@ -941,6 +937,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
+	no_emergency = TRUE
 
 #undef LIGHT_DRAIN_TIME  //WS Edit -- Ethereal Charge Scaling
 #undef LIGHT_POWER_GAIN  //WS Edit -- Ethereal Charge Scaling

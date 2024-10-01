@@ -212,7 +212,22 @@
 	name = "\improper Nanotrasen logo sign"
 	sign_change_name = "Corporate Logo - Nanotrasen"
 	desc = "A sign with the Nanotrasen logo on it. Glory to Nanotrasen!"
+	icon = 'icons/obj/nanotrasen_logos.dmi'
 	icon_state = "nanotrasen"
+	is_editable = TRUE
+
+/obj/structure/sign/nanotrasen/ns
+	name = "\improper N+S Logistics logo sign"
+	sign_change_name = "Corporate Logo - N+S Logistics"
+	desc = "A sign with the N+S Logistics compass rose on it."
+	icon_state = "ns"
+	is_editable = TRUE
+
+/obj/structure/sign/nanotrasen/vigilitas
+	name = "\improper Vigilitas Interstellar logo sign"
+	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
+	desc = "A sign with Vigilitas Interstellar's VI logo on it."
+	icon_state = "vigilitas"
 	is_editable = TRUE
 
 /obj/structure/sign/logo
@@ -237,17 +252,23 @@
 
 // some solgov stuff
 /obj/structure/sign/solgov_seal
-	name = "Seal of the solarian government"
-	desc = "A seal emblazened with a gold trim depicting the star, sol."
+	name = "seal of the solarian government"
+	desc = "A seal emblazened with a gold trim depicting Sol."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovseal"
 	pixel_y = 27
 
 /obj/structure/sign/solgov_flag
 	name = "solgov banner"
-	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
+	desc = "A large flag displaying the logo of solgov, the government of the Sol system."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
+
+// suns seal
+/obj/structure/sign/suns
+	name = "emblem of the Student-Union Association of Naturalistic Sciences"
+	desc = "A large emblem showcasing the icon of SUNS."
+	icon_state = "suns"
 
 // clip seal
 /obj/structure/sign/clip
@@ -260,7 +281,7 @@
 /obj/structure/sign/number
 	name = "zero"
 	desc = "A numeral sign."
-	icon = 'icons/turf/decals.dmi'
+	icon = 'icons/turf/decals/decals.dmi'
 	icon_state = "0"
 
 /obj/structure/sign/number/one

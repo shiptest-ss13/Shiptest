@@ -65,6 +65,7 @@
 	desc = "Suit for a cyborg costume."
 	icon_state = "death"
 	item_state = "death"
+	mob_overlay_state = "cardborg"
 	flags_1 = CONDUCT_1
 	fire_resist = T0C+5200
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
@@ -131,7 +132,7 @@
 	item_state = "imperium_monk"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen)
+	allowed = list(/obj/item/storage/book/bible, /obj/item/melee/sword, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen)
 
 
 /obj/item/clothing/suit/chickensuit
@@ -325,6 +326,8 @@
 /obj/item/clothing/head/hooded/human_head
 	name = "bloated human head"
 	desc = "A horribly bloated and mismatched human head."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "lingspacehelmet"
 	body_parts_covered = HEAD
 	flags_cover = HEADCOVERSEYES
@@ -511,8 +514,9 @@
 
 /obj/item/clothing/suit/caution
 	name = "wet floor sign"
-	desc = "Caution! Wet Floor!"
+	desc = "No running."
 	icon_state = "caution"
+	icon = 'icons/obj/janitor.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	force = 1
@@ -658,16 +662,9 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
 
-/obj/item/clothing/suit/coordinator
-	name = "coordinator jacket"
-	desc = "A jacket for a party ooordinator, stylish!."
-	icon_state = "capformal"
-	item_state = "capspacesuit"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/suit/hawaiian
-	name = "hawaiian overshirt"
-	desc = "A cool shirt for chilling on the beach."
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_blue"
 	item_state = "hawaiian_blue"
 

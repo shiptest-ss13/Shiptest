@@ -151,12 +151,18 @@
 	base_icon_state = "plaque"
 	tiled_dirt = FALSE
 
+/turf/open/floor/plasteel/lightgrey
+	name = "light grey floor"
+	icon_state = "corner_white_full"
+	base_icon_state = "corner_white_full"
+	icon = 'icons/turf/decals/decals.dmi'
+	color = "#a8b2b6"
+
 /turf/open/floor/plasteel/cult/narsie_act()
 	return
 
 /turf/open/floor/plasteel/cult/airless
 	initial_gas_mix = AIRLESS_ATMOS
-
 
 /turf/open/floor/plasteel/stairs //considering removal
 	icon = 'icons/turf/floors.dmi'
@@ -169,7 +175,7 @@
 	icon_state = "stairs-l"
 	base_icon_state = "stairs-l"
 
-/turf/open/floor/plasteel/stairs/medium
+/turf/open/floor/plasteel/stairs/mid
 	icon_state = "stairs-m"
 	base_icon_state = "stairs-m"
 
@@ -182,9 +188,128 @@
 	base_icon_state = "stairs-old"
 
 /turf/open/floor/plasteel/stairs/wood
-	color = "#A47449"
-	barefootstep = "wood"
-	footstep = "wood"
+	color = "#5B3E1D"
+	icon_state = "stairs-wood"
+	base_icon_state = "stairs-wood"
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	footstep = FOOTSTEP_WOOD_CLAW
+
+/turf/open/floor/plasteel/stairs/wood/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/mahogany
+	color = WOOD_COLOR_RICH
+
+/turf/open/floor/plasteel/stairs/wood/mahogany/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/mahogany/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/mahogany/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/maple
+	color = WOOD_COLOR_PALE
+
+/turf/open/floor/plasteel/stairs/wood/maple/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/maple/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/maple/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/ebony
+	color = WOOD_COLOR_BLACK
+
+/turf/open/floor/plasteel/stairs/wood/ebony/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/ebony/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/ebony/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/walnut
+	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/plasteel/stairs/wood/walnut/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/walnut/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/walnut/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/bamboo
+	color = WOOD_COLOR_PALE2
+
+/turf/open/floor/plasteel/stairs/wood/bamboo/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/bamboo/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/bamboo/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/birch
+	color = WOOD_COLOR_PALE3
+
+/turf/open/floor/plasteel/stairs/wood/birch/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/birch/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/birch/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/wood/yew
+	color = WOOD_COLOR_YELLOW
+
+/turf/open/floor/plasteel/stairs/wood/yew/left
+	icon_state = "stairs-wood-l"
+	base_icon_state = "stairs-wood-l"
+
+/turf/open/floor/plasteel/stairs/wood/yew/mid
+	icon_state = "stairs-wood-m"
+	base_icon_state = "stairs-wood-m"
+
+/turf/open/floor/plasteel/stairs/wood/yew/right
+	icon_state = "stairs-wood-r"
+	base_icon_state = "stairs-wood-r"
 
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"
@@ -214,6 +339,3 @@
 	icon_state = "tiled_light"
 	base_icon_state = "tiled_light"
 	color = "#938170"
-
-/turf/open/floor/plasteel/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air

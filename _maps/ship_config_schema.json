@@ -28,16 +28,16 @@
 			"type": "array",
 			"description": "A list of tags describing the ship's niche, converted into searchable strings."
 		},
+		"faction": {
+			"title": "Ship Faction Datum",
+			"type": [ "null", "string" ],
+			"description": "Default faction datum"
+		},
 		"prefix": {
 			"title": "Ship Default Prefix",
 			"type": [ "null", "string" ],
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
-		},
-		"faction_name": {
-			"title": "Faction Name",
-			"type": [ "null", "string" ],
-			"description": "A custom faction name for the ship class. If exluded or left blank, the ship will use the default faction name for the faction that matches the ship's prefix."
 		},
 		"namelists": {
 			"title": "Namelists",
@@ -76,7 +76,8 @@
 					"INSTALLATION",
 					"SOLGOV",
 					"CMM-GOLD",
-					"CMM-BARD"
+					"CMM-BARD",
+					"PGF"
 				]
 			}
 		},
@@ -133,7 +134,7 @@
 			"description": "The amount of ships that can be spawned in by players in a round at once.",
 			"minimum": 0,
 			"maximum": 100,
-			"default": 2
+			"default": 1
 		},
 		"starting_funds":{
 			"title": "Ship Starting Funds",

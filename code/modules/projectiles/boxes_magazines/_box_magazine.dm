@@ -38,6 +38,8 @@
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
 	if (!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
@@ -49,7 +51,7 @@
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
-	update_appearance()
+	update_ammo_count()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -96,7 +98,7 @@
 	if(istype(attacking_obj, /obj/item/ammo_box))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(attacking_box), 1 SECONDS)))
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box)))
 				break
 			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)
@@ -105,8 +107,8 @@
 			if(!silent)
 				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
 			num_loaded++
-			attacking_obj.update_appearance()
-			update_appearance()
+			attacking_box.update_ammo_count()
+			update_ammo_count()
 
 	if(istype(attacking_obj, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/casing_to_insert = attacking_obj
@@ -115,7 +117,7 @@
 			if(!silent)
 				playsound(casing_to_insert, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
-			update_appearance()
+			update_ammo_count()
 
 
 	if(num_loaded)
@@ -123,6 +125,26 @@
 			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
 	return num_loaded
 
+/obj/item/ammo_box/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	var/num_loaded = 0
+	var/obj/item/storage/belt/bandolier/to_load
+	if(istype(target,/obj/item/storage/belt/bandolier))
+		to_load = target
+		var/datum/component/storage/storage_to_load = to_load.GetComponent(/datum/component/storage)
+		for(var/obj/item/ammo_casing/casing_to_insert in stored_ammo)
+			if(!((to_load.contents.len >= storage_to_load.get_max_volume()) || do_after(user, 0.5 SECONDS, src)))
+				break
+			if(!storage_to_load.can_be_inserted(casing_to_insert,TRUE,user))
+				break
+			storage_to_load.handle_item_insertion(casing_to_insert,TRUE,user)
+			stored_ammo -= casing_to_insert
+			playsound(get_turf(src), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+			num_loaded++
+			update_ammo_count()
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [to_load]!</span>")
+	return
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)
@@ -150,9 +172,9 @@
 	var/shells_left = LAZYLEN(stored_ammo)
 	switch(multiple_sprites)
 		if(AMMO_BOX_PER_BULLET)
-			icon_state = "[initial(icon_state)]-[shells_left]"
+			icon_state = "[base_icon_state]-[shells_left]"
 		if(AMMO_BOX_FULL_EMPTY)
-			icon_state = "[initial(icon_state)]-[shells_left ? "[max_ammo]" : "0"]"
+			icon_state = "[base_icon_state]-[shells_left ? "1" : "0"]"
 	return ..()
 
 /// Updates the amount of material in this ammo box according to how many bullets are left in it.

@@ -8,7 +8,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_SARATHI,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ELZUOSE,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightarm
 	name = "Right Arm"
@@ -16,7 +16,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_SARATHI,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ELZUOSE,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/leftleg
 	name = "Left Leg"
@@ -24,7 +24,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/left
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_SARATHI,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ELZUOSE,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightleg
 	name = "Right Leg"
@@ -32,7 +32,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/right
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_SARATHI,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ELZUOSE,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/digitigrade/leftleg
 	name = "Digitigrade Left Leg"
@@ -40,7 +40,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/left/lizard/digitigrade
-	category = list("initial",SPECIES_LIZARD)
+	category = list("initial",SPECIES_SARATHI)
 
 /datum/design/digitigrade/rightleg
 	name = "Digitigrade Right Leg"
@@ -48,7 +48,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/right/lizard/digitigrade
-	category = list("initial",SPECIES_LIZARD)
+	category = list("initial",SPECIES_SARATHI)
 
 //Non-limb limb designs
 
@@ -123,7 +123,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/tail/lizard/fake
-	category = list("initial",SPECIES_LIZARD)
+	category = list("initial",SPECIES_SARATHI)
 
 /datum/design/lizard_tongue
 	name = "Forked Tongue"
@@ -131,7 +131,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
-	category = list("initial",SPECIES_LIZARD)
+	category = list("initial",SPECIES_SARATHI)
 
 //  someday this will get uncommented
 // /datum/design/monkey_tail
@@ -180,7 +180,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
-	category = list("initial",SPECIES_LIZARD)
+	category = list("initial",SPECIES_SARATHI)
 
 /datum/design/plasmaman_lungs
 	name = "Plasma Filter"
@@ -220,7 +220,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/liquidelectricity = 20)
 	build_path = /obj/item/organ/stomach/ethereal
-	category = list("initial",SPECIES_ETHEREAL)
+	category = list("initial",SPECIES_ELZUOSE)
 
 /datum/design/ethereal_tongue
 	name = "Ethereal Tongue"
@@ -228,7 +228,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/liquidelectricity = 10)
 	build_path = /obj/item/organ/tongue/ethereal
-	category = list("initial",SPECIES_ETHEREAL)
+	category = list("initial",SPECIES_ELZUOSE)
 
 /datum/design/moth_eyes
 	name = "Moth Eyes"

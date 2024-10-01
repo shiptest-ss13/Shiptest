@@ -162,7 +162,7 @@
 		handle_reactions()
 		return amount
 
-/// Get the name of the reagent there is the most of in this holder
+/// DEPRICATED use get_master_regent. Get the name of the reagent there is the most of in this holder
 /datum/reagents/proc/get_master_reagent_name()
 	var/list/cached_reagents = reagent_list
 	var/name
@@ -175,7 +175,7 @@
 
 	return name
 
-/// Get the id of the reagent there is the most of in this holder
+/// DEPRICATED use get_master_regent. Get the id of the reagent there is the most of in this holder
 /datum/reagents/proc/get_master_reagent_id()
 	var/list/cached_reagents = reagent_list
 	var/max_type
@@ -389,7 +389,7 @@
 						for(var/addiction in cached_addictions)
 							var/datum/reagent/A = addiction
 							if(istype(R, A))
-								A.addiction_stage = -15 // you're satisfied for a good while.
+								A.addiction_stage = -30 // you're satisfied for a good while.
 				need_mob_update += R.on_mob_life(C)
 
 	if(can_overdose)
@@ -512,7 +512,7 @@
 						matching_container = 1
 
 					else
-						if(cached_my_atom.type == C.required_container)
+						if(cached_my_atom.type in typesof(C.required_container))
 							matching_container = 1
 					if (isliving(cached_my_atom) && !C.mob_react) //Makes it so certain chemical reactions don't occur in mobs
 						return
@@ -611,6 +611,7 @@
 			//Clear from relevant lists
 			addiction_list -= R
 			reagent_list -= R
+			SEND_SIGNAL(src, COMSIG_REAGENTS_DEL_REAGENT, R)
 			qdel(R)
 			update_total()
 			if(my_atom)
@@ -638,6 +639,8 @@
 		del_reagent(R.type)
 	if(my_atom)
 		my_atom.on_reagent_change(CLEAR_REAGENTS)
+
+	SEND_SIGNAL(src, COMSIG_REAGENTS_CLEAR_REAGENTS)
 	return 0
 
 /**
@@ -747,6 +750,8 @@
 			if(my_atom)
 				my_atom.on_reagent_change(ADD_REAGENT)
 			R.on_merge(data, amount)
+
+			SEND_SIGNAL(src, COMSIG_REAGENTS_ADD_REAGENT, cached_reagents, amount, reagtemp, data, no_react)
 			if(!no_react)
 				handle_reactions()
 			return TRUE
@@ -765,6 +770,8 @@
 	update_total()
 	if(my_atom)
 		my_atom.on_reagent_change(ADD_REAGENT)
+
+	SEND_SIGNAL(src, COMSIG_REAGENTS_NEW_REAGENT, reagent, amount, reagtemp, data, no_react)
 	if(!no_react)
 		handle_reactions()
 	return TRUE
@@ -797,6 +804,7 @@
 			//and zero, to prevent removing more than the holder has stored
 			amount = clamp(amount, 0, R.volume)
 			R.volume -= amount
+			SEND_SIGNAL(src, COMSIG_REAGENTS_REM_REAGENT, A, amount)
 			update_total()
 			if(!safety)//So it does not handle reactions when it need not to
 				handle_reactions()

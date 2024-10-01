@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tortuga-class Converted Cargo Freighter",
+	"faction": "/datum/faction/frontier",
+	"prefix": "ISV",
+	"namelists": [
+		"PIRATES",
+		"BRITISH_NAVY"
+	],
+	"map_short_name": "Tortuga-class",
+	"map_path": "_maps/shuttles/pirate/pirate_tortuga.dmm",
+	"description": "Originally a cargo transport vessel, the Tortuga is an improvised combat vessel used by the Frontiersmen fleet. Civilian transports are modified with shuttle handling facilities, and asteroid rubble is belted to the exterior of the hull as a form of cheap improvised armor and concealment. The Tortuga serves a dual purpose as a reconnaissance element and a vessel capable of establishing forward bases within a sector. While the Brawler-class shuttle carried by the Tortuga offers a surprising degree of speed and range to its boarding parties, the Tortuga itself is sluggish and nearly helpless without its shuttle.",
+	"tags": [
+		"Combat",
+		"Subshuttle"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/frontiersmen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Deck Boss": {
+			"outfit": "/datum/outfit/job/frontiersmen/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Surgeon": {
+			"outfit": "/datum/outfit/job/frontiersmen/doctor",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/frontiersmen/engineer",
+			"slots": 1
+		},
+		"Boarder": {
+			"outfit": "/datum/outfit/job/frontiersmen/security",
+			"slots": 2
+		},
+		"Rookie": {
+			"outfit": "/datum/outfit/job/frontiersmen/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}

@@ -30,8 +30,10 @@
 	var/mob_color //Change the mob's color
 	var/assignedrole
 	var/show_flavour = TRUE
-	var/banType = ROLE_LAVALAND
+	var/ban_type = ROLE_LAVALAND
 	var/ghost_usable = TRUE
+	/// Weakref to the mob this spawner created - just if you needed to do something with it.
+	var/datum/weakref/spawned_mob_ref
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -40,7 +42,7 @@
 	if(!uses)
 		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
 		return
-	if(is_banned_from(user.key, banType))
+	if(is_banned_from(user.key, ban_type))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
 	if(!allow_spawn(user))
@@ -59,11 +61,11 @@
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
 		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		LAZYADD(GLOB.mob_spawners[name], src)
 
 /obj/effect/mob_spawn/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	var/list/spawners = GLOB.mob_spawners[name]
 	LAZYREMOVE(spawners, src)
 	if(!LAZYLEN(spawners))
@@ -128,6 +130,7 @@
 		MM.name = M.real_name
 	if(uses > 0)
 		uses--
+	spawned_mob_ref = WEAKREF(M)
 	if(!permanent && !uses)
 		qdel(src)
 	return M
@@ -220,7 +223,8 @@
 			if(istype(C))
 				C.sensor_mode = NO_SENSORS
 
-	var/obj/item/card/id/W = H.wear_id
+
+	var/obj/item/card/id/W = H.get_idcard()
 	if(W)
 		if(H.age)
 			W.registered_age = H.age
@@ -433,7 +437,7 @@
 /datum/outfit/spacebartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/W = H.get_idcard()
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")

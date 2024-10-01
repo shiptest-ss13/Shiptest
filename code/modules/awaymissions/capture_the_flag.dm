@@ -130,7 +130,7 @@
 
 /obj/effect/ctf/flag_reset
 	name = "banner landmark"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/banner.dmi'
 	icon_state = "banner"
 	desc = "This is where a banner with Nanotrasen's logo on it would go."
 	layer = LOW_ITEM_LAYER
@@ -171,6 +171,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "syndbeacon"
 	resistance_flags = INDESTRUCTIBLE
+	processing_flags = START_PROCESSING_MANUALLY
 	var/team = WHITE_TEAM
 	var/team_span = ""
 	//Capture the Flag scoring
@@ -194,10 +195,10 @@
 
 /obj/machinery/capture_the_flag/Initialize()
 	. = ..()
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /obj/machinery/capture_the_flag/Destroy()
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	return ..()
 
 /obj/machinery/capture_the_flag/process()
@@ -347,6 +348,7 @@
 
 /obj/machinery/capture_the_flag/proc/start_ctf()
 	ctf_enabled = TRUE
+	START_PROCESSING(SSmachines, src)
 	for(var/d in dead_barricades)
 		var/obj/effect/ctf/dead_barricade/D = d
 		D.respawn()
@@ -378,6 +380,7 @@
 
 /obj/machinery/capture_the_flag/proc/stop_ctf()
 	ctf_enabled = FALSE
+	STOP_PROCESSING(SSmachines, src)
 	arena_reset = FALSE
 	var/area/A = get_area(src)
 	for(var/i in GLOB.mob_list)

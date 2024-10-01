@@ -263,9 +263,6 @@
 	},
 /area/ship/maintenance/starboard)
 "cv" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
 /obj/machinery/igniter/incinerator_atmos,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -386,6 +383,7 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/glasses/meson,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
 "dC" = (
@@ -426,7 +424,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "dZ" = (
-/obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/ntspaceworks_big/one{
 	dir = 4
 	},
@@ -1064,9 +1061,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "ks" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/firecloset/full,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ku" = (
@@ -1094,6 +1091,9 @@
 "kL" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/station_engineer,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "kM" = (
@@ -1464,9 +1464,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo/port)
 "ph" = (
-/obj/machinery/computer/communications{
-	dir = 8;
-	icon_state = "computer-left"
+/obj/structure/frame/computer{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1931,7 +1930,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor"="Combustion    Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -2282,6 +2281,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wY" = (
@@ -2502,6 +2504,9 @@
 "zl" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2835,16 +2840,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "CF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "CI" = (
 /obj/machinery/computer/helm{
 	dir = 8;
-	icon_state = "computer-middle"
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3385,8 +3387,10 @@
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/gun/energy/laser,
-/obj/item/clothing/under/rank/command/captain/nt,
-/obj/item/clothing/head/caphat/nt,
+/obj/item/clothing/under/nanotrasen/captain/skirt,
+/obj/item/clothing/under/nanotrasen/captain,
+/obj/item/clothing/suit/armor/nanotrasen/captain,
+/obj/item/clothing/head/nanotrasen/captain/peaked,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/turf_decal/borderfloor{
@@ -3567,6 +3571,12 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"JL" = (
+/obj/structure/closet/firecloset/full,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "JV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/fax/nanotrasen,
@@ -4030,6 +4040,12 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"Pp" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Pr" = (
 /obj/structure/sign/warning/fire,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -4097,6 +4113,7 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/glasses/meson,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "Qc" = (
@@ -4268,7 +4285,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "RK" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -4338,9 +4355,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Sv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/machinery/power/generator{
 	dir = 4
 	},
@@ -4884,7 +4898,6 @@
 /area/ship/hallway/fore)
 "WN" = (
 /obj/machinery/atmospherics/components/binary/circulator,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "WR" = (
@@ -5235,9 +5248,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "ZS" = (
-/obj/structure/disposalpipe/trunk,
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = -3
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZX" = (
@@ -5389,7 +5406,7 @@ Bi
 Tb
 st
 Tb
-SQ
+JL
 Ug
 hu
 hu
@@ -5475,7 +5492,7 @@ FZ
 on
 on
 Fq
-on
+Pp
 lW
 Ug
 hu

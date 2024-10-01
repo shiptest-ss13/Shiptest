@@ -50,12 +50,6 @@
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
-/obj/item/clothing/under/rank/command/captain/parade
-	name = "captain's parade uniform"
-	desc = "A captain's luxury-wear, for special occasions."
-	icon_state = "captain_parade"
-	item_state = "b_suit"
-	can_adjust = FALSE
 
 //Head of Personnel
 
@@ -73,16 +67,6 @@
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
-/obj/item/clothing/under/rank/command/head_of_personnel/nt
-	icon_state = "hop_nt"
-
-/obj/item/clothing/under/rank/command/head_of_personnel/nt/skirt
-	name = "head of personnel's jumpskirt"
-	desc = "It's a jumpskirt worn by someone who works in the position of \"Head of Personnel\"."
-	icon_state = "hop_nt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
 /obj/item/clothing/under/rank/command/head_of_personnel/suit
 	name = "head of personnel's suit"
 	desc = "A teal suit and yellow necktie. An authoritative yet tacky ensemble."
@@ -97,16 +81,4 @@
 	item_state = "g_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/under/rank/command/captain/nt
-	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
-	icon_state = "captain_nt"
-	item_state = "b_suit"
-
-/obj/item/clothing/under/rank/command/captain/nt/skirt
-	name = "captain's jumpskirt"
-	desc = "It's a blue jumpskirt with some gold markings denoting the rank of \"Captain\"."
-	icon_state = "captain_nt_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION

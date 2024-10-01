@@ -1,5 +1,5 @@
 /datum/species/plasmaman
-	name = "\improper Plasmaman"
+	name = "\improper Phorid"
 	id = SPECIES_PLASMAMAN
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma

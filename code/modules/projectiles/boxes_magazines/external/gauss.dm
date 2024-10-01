@@ -16,6 +16,9 @@
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/modelh/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/gar
 	name = "GAR tube magazine (ferromagnetic lances)"
 	desc = "A 32-round magazined for the GAR assault rifle. Ferromagnetic lances do good damage with significant armor penetration."

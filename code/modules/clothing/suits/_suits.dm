@@ -1,5 +1,7 @@
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/suits.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/suits_righthand.dmi'
 	name = "suit"
 	var/fire_resist = T0C+100
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
@@ -17,7 +19,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")

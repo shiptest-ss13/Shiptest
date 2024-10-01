@@ -136,11 +136,11 @@
 /area/space/nearstation)
 "ax" = (
 /obj/machinery/vending/snack,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "ay" = (
 /obj/structure/lattice,
-/obj/item/stack/sheet/runed_metal,
+/obj/item/stack/sheet/metal,
 /turf/open/space/basic,
 /area/space/nearstation)
 "az" = (
@@ -259,7 +259,7 @@
 /area/ruin/space/has_grav/onehalf)
 "aT" = (
 /obj/structure/lattice,
-/obj/item/stack/sheet/runed_metal,
+/obj/item/stack/sheet/metal,
 /turf/open/space,
 /area/space/nearstation)
 "aU" = (
@@ -414,7 +414,7 @@
 /area/ruin/space/has_grav/onehalf)
 "bh" = (
 /obj/machinery/vending/coffee,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "bi" = (
 /obj/structure/disposalpipe/broken{
@@ -468,19 +468,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
-"bo" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cult/airless,
-/area/ruin/space/has_grav/onehalf)
-"bp" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
 "br" = (
 /obj/structure/disposalpipe/segment{
@@ -743,8 +730,8 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "cj" = (
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/turf/open/floor/plasteel/cult/airless,
+/mob/living/simple_animal/hostile/hivebot,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "ck" = (
 /obj/structure/disposalpipe/segment{
@@ -816,8 +803,8 @@
 /area/ruin/space/has_grav/onehalf)
 "cr" = (
 /obj/structure/girder/displaced,
-/obj/item/stack/sheet/runed_metal,
-/turf/open/floor/plasteel/cult/airless,
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plasteel/airless,
 /area/space/nearstation)
 "cs" = (
 /obj/effect/turf_decal/siding/wood{
@@ -940,9 +927,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "cJ" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "cL" = (
@@ -1032,7 +1017,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "dd" = (
 /obj/structure/grille,
@@ -1094,7 +1079,7 @@
 	dir = 4
 	},
 /obj/effect/gibspawner,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "dk" = (
 /obj/structure/disposalpipe/segment{
@@ -1106,8 +1091,8 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/turf/open/floor/plasteel/cult/airless,
+/mob/living/simple_animal/hostile/hivebot,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "ej" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1208,7 +1193,7 @@
 "gF" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/mob/living/simple_animal/hostile/hivebot,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
 "ha" = (
@@ -1253,7 +1238,7 @@
 /area/space/nearstation)
 "jR" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "jX" = (
 /obj/structure/disposalpipe/segment{
@@ -1312,8 +1297,11 @@
 /obj/machinery/door/firedoor/border_only/closed{
 	dir = 4
 	},
-/obj/machinery/door/airlock/cult/weak,
-/turf/open/floor/plasteel/cult,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge";
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "nx" = (
 /obj/structure/catwalk,
@@ -1372,7 +1360,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "pC" = (
 /obj/structure/disposalpipe/segment{
@@ -1396,7 +1384,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "pT" = (
 /obj/machinery/power/smes,
@@ -1413,7 +1401,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/mob/living/simple_animal/hostile/hivebot/range,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "qC" = (
@@ -1439,7 +1427,7 @@
 /area/ruin/space/has_grav/onehalf)
 "rV" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "sl" = (
 /obj/machinery/door/window/eastleft,
@@ -1475,7 +1463,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "tB" = (
 /obj/structure/lattice,
@@ -1493,7 +1481,7 @@
 	},
 /obj/effect/gibspawner,
 /obj/item/storage/toolbox/syndicate,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "tX" = (
 /obj/machinery/light/directional/east,
@@ -1508,7 +1496,7 @@
 "un" = (
 /obj/machinery/light/directional/north,
 /obj/structure/chair,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "uZ" = (
 /obj/structure/cable{
@@ -1530,7 +1518,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "vT" = (
 /obj/structure/disposalpipe/segment{
@@ -1549,10 +1537,6 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
-"ws" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/cult/airless,
-/area/ruin/space/has_grav/onehalf)
 "wK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -1622,10 +1606,9 @@
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "zS" = (
-/obj/item/reagent_containers/food/drinks/sillycup,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/turf/open/space/basic,
-/area/space/nearstation)
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf)
 "Af" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
@@ -1644,7 +1627,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "AE" = (
 /obj/structure/cable{
@@ -1676,8 +1659,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "BD" = (
-/obj/item/stack/sheet/runed_metal,
-/turf/open/floor/plasteel/cult/airless,
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "Cl" = (
 /obj/structure/lattice,
@@ -1730,7 +1713,7 @@
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "Dw" = (
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "Ep" = (
 /obj/item/stack/sheet/plasteel,
@@ -1756,7 +1739,7 @@
 /area/ruin/space/has_grav/onehalf)
 "FC" = (
 /obj/structure/girder/reinforced,
-/obj/item/stack/sheet/runed_metal,
+/obj/item/stack/sheet/metal,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
 "Ga" = (
@@ -1783,7 +1766,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "Gv" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -1799,11 +1782,6 @@
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
-"Hv" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/turf/open/space/basic,
-/area/space/nearstation)
 "HA" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -1839,8 +1817,7 @@
 /area/ruin/space/has_grav/onehalf)
 "Id" = (
 /obj/machinery/light/small/directional/south,
-/obj/effect/rune/blood_boil,
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "Ix" = (
 /obj/item/stack/cable_coil/cut/red{
@@ -1879,7 +1856,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "Kk" = (
 /obj/structure/cable{
@@ -1935,7 +1912,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "Mc" = (
-/turf/closed/wall/mineral/cult/artificer,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "Me" = (
 /obj/item/stack/sheet/plasteel{
@@ -1943,15 +1920,6 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
-"MC" = (
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/onehalf)
-"MD" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/onehalf)
 "MG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2000,8 +1968,8 @@
 "OE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/hivebot/range,
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "OW" = (
@@ -2066,12 +2034,6 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
-"Ra" = (
-/obj/structure/frame/computer{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
 "Rv" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/airless{
@@ -2163,8 +2125,8 @@
 /area/space/nearstation)
 "Wc" = (
 /obj/effect/gibspawner,
-/mob/living/simple_animal/hostile/construct/wraith/hostile,
-/turf/open/floor/plasteel/cult,
+/mob/living/simple_animal/hostile/hivebot/strong,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "Wh" = (
 /obj/machinery/light/directional/north,
@@ -2174,15 +2136,6 @@
 /obj/structure/catwalk,
 /turf/open/space,
 /area/space/nearstation)
-"WP" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/cult/airless,
-/area/ruin/space/has_grav/onehalf)
 "WV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2191,7 +2144,7 @@
 /area/ruin/space/has_grav/onehalf)
 "Xk" = (
 /obj/structure/girder/displaced,
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/space/nearstation)
 "Xw" = (
 /obj/effect/turf_decal/siding/wood,
@@ -2222,7 +2175,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "YV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2535,7 +2488,7 @@ ak
 ak
 Mc
 bj
-bo
+bx
 by
 bK
 aa
@@ -2579,7 +2532,7 @@ xF
 cD
 aa
 ci
-zS
+cN
 aa
 aa
 cD
@@ -2602,11 +2555,11 @@ cF
 ak
 mr
 mr
-Mc
+ak
 xG
 wY
 aM
-WP
+bj
 bi
 cL
 Dw
@@ -2638,7 +2591,7 @@ Cw
 ak
 PL
 pT
-Mc
+ak
 Wh
 aC
 ao
@@ -2674,11 +2627,11 @@ ak
 ak
 MG
 ti
-Mc
+ak
 ap
 bN
 hY
-WP
+bj
 bm
 bA
 bS
@@ -2746,7 +2699,7 @@ ak
 ak
 ak
 ak
-Mc
+ak
 wY
 TV
 Xw
@@ -2786,8 +2739,8 @@ ai
 xG
 Du
 OE
-WP
-bo
+bj
+bx
 ax
 FC
 FC
@@ -2797,7 +2750,7 @@ aa
 aa
 aa
 aa
-Hv
+aH
 aa
 aa
 "}
@@ -2823,7 +2776,7 @@ wY
 Af
 aM
 YQ
-bp
+bB
 bO
 Mc
 aa
@@ -2853,13 +2806,13 @@ aW
 ak
 ak
 ak
-Mc
-Mc
+ak
+ak
 un
 wY
 aM
-WP
-bo
+bj
+bx
 bP
 Dw
 aa
@@ -2890,7 +2843,7 @@ ak
 Cm
 cu
 aK
-Mc
+ak
 YV
 rV
 Rv
@@ -2964,10 +2917,10 @@ tX
 fX
 ak
 ap
-cj
+zS
 jR
 bj
-bo
+bx
 Dw
 bW
 cE
@@ -2998,7 +2951,7 @@ ak
 ak
 ak
 ak
-Mc
+ak
 Wh
 PD
 hY
@@ -3007,7 +2960,7 @@ bB
 bT
 hx
 ch
-ws
+bT
 tB
 cL
 BD
@@ -3037,18 +2990,18 @@ sQ
 ak
 cs
 cs
-Mc
+ak
 bn
 bC
-Mc
+bU
 bY
 Vs
 bQ
 nw
-Mc
+bU
 GY
 GY
-Mc
+bU
 aW
 aa
 aa
@@ -3073,7 +3026,7 @@ bk
 aS
 bk
 RL
-Mc
+ak
 af
 JF
 bU
@@ -3109,7 +3062,7 @@ sQ
 ak
 ak
 ak
-Mc
+ak
 Gf
 JF
 bU
@@ -3187,10 +3140,10 @@ qC
 bU
 cb
 cm
-MC
+cn
 cx
 cn
-MD
+cm
 cZ
 de
 xY
@@ -3226,7 +3179,7 @@ cn
 cx
 cH
 Wc
-MC
+cn
 da
 df
 aW
@@ -3261,7 +3214,7 @@ kH
 co
 cn
 cG
-MC
+cn
 cS
 rB
 df
@@ -3294,10 +3247,10 @@ jX
 PY
 bU
 ce
-MC
 cn
 cn
-MC
+cn
+cn
 cn
 rB
 df
@@ -3330,8 +3283,8 @@ bF
 bV
 bU
 cf
-MC
-MC
+cn
+cn
 cJ
 cn
 cT
@@ -3369,7 +3322,7 @@ UM
 cp
 ZX
 Gv
-Ra
+Gv
 cU
 YE
 bU

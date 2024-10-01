@@ -1,6 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -74,9 +76,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
 /obj/machinery/power/terminal,
 /obj/effect/landmark/ert_shuttle_spawn,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -168,14 +168,14 @@
 "co" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -188,10 +188,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
 /obj/item/tank/internals/oxygen,
@@ -216,9 +213,7 @@
 	dir = 4;
 	id = "runner_sub_holo"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "fa" = (
@@ -230,6 +225,15 @@
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"fQ" = (
+/obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gi" = (
 /obj/item/storage/backpack/duffelbag/med/surgery{
@@ -328,14 +332,31 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"mN" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	name = "trauma team shuttle";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "runner_sub_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "runner_sub_holo"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "nP" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -392,13 +413,13 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "DP" = (
@@ -423,23 +444,11 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Or" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	name = "trauma team shuttle";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "runner_sub_door"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "runner_sub_holo"
-	},
 /obj/structure/cable{
-	icon_state = "0-1"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pq" = (
 /turf/template_noop,
@@ -571,29 +580,29 @@ gs
 te
 "}
 (4,1,1) = {"
-Pq
 bz
+fQ
 co
 gA
 SE
 ku
 zS
+Or
 dB
-Pq
 "}
 (5,1,1) = {"
-Pq
 sl
+fQ
 nP
 ZN
 kM
 iR
 zS
 Or
-Pq
+mN
 "}
 (6,1,1) = {"
-Pq
+PD
 PD
 cF
 hJ
@@ -601,7 +610,7 @@ ac
 hB
 bG
 PD
-Pq
+PD
 "}
 (7,1,1) = {"
 Pq

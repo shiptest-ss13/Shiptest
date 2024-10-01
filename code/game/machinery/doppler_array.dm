@@ -6,6 +6,8 @@
 	icon = 'icons/obj/machines/research.dmi'
 	base_icon_state = "tdoppler"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	verb_say = "states coldly"
 	var/cooldown = 10
 	var/next_announce = 0
@@ -233,11 +235,9 @@
 		var/old_tech_largest_bomb_value = linked_techweb.largest_bomb_value //held so we can pull old before we do math
 		linked_techweb.largest_bomb_value = point_gain
 		point_gain -= old_tech_largest_bomb_value
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
-		if(D)
-			D.adjust_money(point_gain)
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
-			say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
+		new /obj/item/spacecash(get_dumping_location(), point_gain)
+		linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
+		say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
 
 	else //you've made smaller bombs
 		say("Data already captured. Aborting.")

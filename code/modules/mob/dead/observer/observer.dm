@@ -62,14 +62,16 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/orbit_menu/orbit_menu
 	var/datum/spawners_menu/spawners_menu
 
+	// The POI we're orbiting (orbit menu)
+	var/orbiting_ref
+
 /mob/dead/observer/Initialize()
 	set_invisibility(GLOB.observer_default_invisibility)
 
 	add_verb(src, list(
 		/mob/dead/observer/proc/dead_tele,
 		/mob/dead/observer/proc/open_spawners_menu,
-		/mob/dead/observer/proc/tray_view,
-		/mob/dead/observer/proc/possess_mouse_verb))
+		/mob/dead/observer/proc/tray_view))
 
 	if(icon_state in GLOB.ghost_forms_with_directions_list)
 		ghostimage_default = image(src.icon,src,src.icon_state + "_nodir")
@@ -142,6 +144,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		AA.onNewMob(src)
 
 	. = ..()
+
+	SSpoints_of_interest.make_point_of_interest(src)
 
 	grant_all_languages()
 	show_data_huds()
@@ -500,7 +504,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		var/list/dest = list() //List of possible destinations (mobs)
 		var/target = null	   //Chosen target.
 
-		dest += getpois(mobs_only = TRUE) //Fill list, prompt user with list
+		dest += SSpoints_of_interest.get_mob_pois()
 		target = input("Please, select a player!", "Jump to Mob", null, null) as null|anything in dest
 
 		if (!target)//Make sure we actually have a target
@@ -840,20 +844,24 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/reset_perspective(atom/A)
 	if(client)
 		if(ismob(client.eye) && (client.eye != src))
-			var/mob/target = client.eye
-			observetarget = null
-			if(target.observers)
-				LAZYREMOVE(target.observers, src)
+			cleanup_observe()
 	if(..())
 		if(hud_used)
 			client.screen = list()
 			hud_used.show_hud(hud_used.hud_version)
 
+/mob/dead/observer/proc/cleanup_observe()
+	var/mob/target = client.eye
+	observetarget = null
+	client?.perspective = initial(client.perspective)
+	if(target.observers)
+		LAZYREMOVE(target.observers, src)
+
 /mob/dead/observer/verb/observe()
 	set name = "Observe"
 	set category = "Ghost"
 
-	var/list/creatures = getpois()
+	var/list/creatures = SSpoints_of_interest.get_mob_pois()
 
 	reset_perspective(null)
 
@@ -962,70 +970,3 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			client.images += t_ray_images
 		else
 			client.images -= stored_t_ray_images
-
-//WS Begin
-/mob/dead/observer/proc/possess_mouse_verb()
-	set category = "Ghost"
-	set name = "Possess a mouse"
-	set desc = "Possess a mouse to haunt the station.... and their food!"
-
-	var/list/possessible = list()
-
-	for(var/mob/living/simple_animal/mouse/M in GLOB.alive_mob_list)
-		if(M.stat != CONSCIOUS)
-			continue
-		if(M.key)
-			continue
-		if(M in GLOB.player_list)
-			continue
-		if(M.mind)
-			continue
-
-		possessible += M
-
-	if(!possessible.len)
-		to_chat(src, "<span class='warning'>There are currently no mice able to be possessed!</span>")
-		return FALSE
-
-	var/mob/living/simple_animal/mouse/M = pick(possessible)
-
-	possess_mouse(M)
-
-
-/mob/dead/observer/proc/possess_mouse(mob/living/simple_animal/mouse/M)
-	if(!M)
-		return FALSE
-
-	if(!SSticker.HasRoundStarted())
-		to_chat(usr, "<span class='warning'>The round hasn't started yet!</span>")
-		return FALSE
-
-	if(is_banned_from(key, ROLE_SENTIENCE))
-		to_chat(src, "<span class='warning'>You are job banned!</span>")
-		return FALSE
-
-	if(alert("Are you sure you want to become a mouse? (Warning, you can no longer be cloned!)",,"Yes","No") != "Yes")
-		return FALSE
-
-	if(M.key || (M.stat != CONSCIOUS) || (M in GLOB.player_list) || M.mind || QDELETED(src) || QDELETED(M))
-		to_chat(src, "<span class='warning'>This mouse is unable to be controlled, please try again!")
-		return FALSE
-
-	log_game("[key_name(src)] has became a mouse")
-
-	M.key = key
-	M.faction = list("neutral")
-	M.chew_probability = 0 //so they cant pull off a big brain play by ghosting somewhere or idk
-	M.layer = BELOW_OPEN_DOOR_LAYER //ENGAGE ADVANCED HIDING BRAIN FUNCTIONS
-	M.language_holder = new /datum/language_holder/mouse(M)
-	M.pass_flags |= PASSDOORHATCH
-	M.sentience_act()
-	M.maxHealth = 15
-	M.health = M.maxHealth
-
-	to_chat(M , "<span class='warning'>You are now possessing a mouse. \
-				You do not remember your previous life. You can eat trash and \
-				food on the floor to gain health and help create new mice. Mouse traps will hurt your fragile body \
-				and so will any kind of weapons. You can control click food and trash items in order to eat them. Get. That. Cheese.")
-	return TRUE
-//WS End

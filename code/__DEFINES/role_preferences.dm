@@ -18,7 +18,6 @@
 #define ROLE_ALIEN "Xenomorph"
 #define ROLE_PAI "pAI"
 #define ROLE_CULTIST "Cultist"
-#define ROLE_BLOB "Blob"
 #define ROLE_NINJA "Space Ninja"
 #define ROLE_MONKEY "Monkey"
 #define ROLE_ABDUCTOR "Abductor"
@@ -39,8 +38,6 @@
 #define ROLE_LAVALAND "Lavaland"
 #define ROLE_INTERNAL_AFFAIRS "Internal Affairs Agent"
 #define ROLE_FAMILIES "Familes Antagonists"
-#define ROLE_SYNDICATE_CYBERSUN "Cybersun Space Syndicate" //Ghost role syndi from Forgottenship ruin
-#define ROLE_SYNDICATE_CYBERSUN_CAPTAIN "Cybersun Space Syndicate Captain" //Forgottenship captain syndie
 #define ROLE_BORER "borer"
 
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
@@ -56,7 +53,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_ALIEN,
 	ROLE_PAI,
 	ROLE_CULTIST = /datum/game_mode/cult,
-	ROLE_BLOB,
 	ROLE_NINJA,
 	ROLE_OBSESSED,
 	ROLE_SPACE_DRAGON,

@@ -50,8 +50,12 @@
 	/// Type path of item to go in the glasses slot
 	var/glasses = null
 
+	var/wallet = null
+
 	/// Type path of item to go in the idcard slot
 	var/id = null
+
+	var/bank_card = null
 
 	/// Type path of item for left pocket slot
 	var/l_pocket = null
@@ -103,6 +107,9 @@
 
 	/// Set to FALSE if your outfit requires runtime parameters
 	var/can_be_admin_equipped = TRUE
+
+	// Used to determine if it should be ignored in unit tests due to being to dynamic to always spawn backpack contents right
+	var/random = FALSE
 
 	/**
 	* extra types for chameleon outfit changes, mostly guns
@@ -177,8 +184,13 @@
 		H.equip_to_slot_or_del(new ears(H),ITEM_SLOT_EARS, TRUE)
 	if(glasses)
 		H.equip_to_slot_or_del(new glasses(H),ITEM_SLOT_EYES, TRUE)
-	if(id)
-		H.equip_to_slot_or_del(new id(H),ITEM_SLOT_ID, TRUE)
+	if(!visualsOnly)
+		if(wallet)
+			H.equip_to_slot_or_del(new wallet(H),ITEM_SLOT_ID, TRUE)
+		if(id)
+			H.equip_to_slot_or_del(new id(H),ITEM_SLOT_ID, TRUE)
+		if(bank_card)
+			H.equip_to_slot_or_del(new bank_card(H),ITEM_SLOT_ID, TRUE)
 	if(suit_store)
 		H.equip_to_slot_or_del(new suit_store(H),ITEM_SLOT_SUITSTORE, TRUE)
 

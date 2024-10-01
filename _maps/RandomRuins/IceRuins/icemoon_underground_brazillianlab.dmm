@@ -55,7 +55,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "ct" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/wood{
@@ -88,7 +88,7 @@
 /area/ruin/unpowered)
 "fB" = (
 /obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -101,7 +101,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered)
 "gH" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
 	faction = list("brazillian")
 	},
 /turf/open/floor/carpet/green{
@@ -117,7 +117,7 @@
 "hp" = (
 /obj/item/stack/cable_coil,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/wood{
@@ -128,7 +128,7 @@
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/overmap_encounter/planetoid/cave/explored)
 "ht" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -177,7 +177,7 @@
 /obj/structure/chair/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -341,7 +341,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "qS" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = "The greatest chef this side of the wastes.";
 	faction = list("brazillian");
 	health = 150;
@@ -362,23 +362,6 @@
 "rP" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
-	},
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"sf" = (
-/obj/structure/table/wood,
-/obj/item/nullrod{
-	block_chance = 50;
-	desc = "This massive chart appears to be the layout of a SolGov outpost. It's covered in marks, scribbles in a language you don't recognize, and several stains. It's unusually sturdy.";
-	icon_state = "blueprints";
-	item_state = "blueprints";
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi';
-	name = "facility blueprints";
-	pixel_y = 10;
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi';
-	w_class = 5
 	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -475,7 +458,7 @@
 /obj/structure/bed,
 /obj/structure/curtain,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -535,7 +518,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "zy" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -545,7 +528,7 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/wood{
@@ -635,7 +618,7 @@
 /area/ruin/unpowered)
 "CI" = (
 /obj/structure/flora/junglebush/c,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/grass/jungle{
@@ -775,7 +758,7 @@
 "JM" = (
 /obj/structure/bed,
 /obj/structure/curtain,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /obj/effect/turf_decal/corner/opaque/green/border,
@@ -827,7 +810,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -895,7 +878,7 @@
 	},
 /area/ruin/unpowered)
 "NR" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -1070,7 +1053,7 @@
 	},
 /area/ruin/unpowered)
 "Ux" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/grass/jungle{
@@ -1205,7 +1188,7 @@
 	},
 /area/ruin/unpowered)
 "Yy" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
@@ -1247,13 +1230,6 @@
 	start_lit = 1
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/ruin/unpowered)
-"Zs" = (
-/obj/structure/table/wood,
-/obj/item/banhammer,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
 /area/ruin/unpowered)
 
 (1,1,1) = {"
@@ -2252,7 +2228,7 @@ Hb
 aW
 WH
 jy
-Zs
+ib
 WH
 WH
 WH
@@ -2284,7 +2260,7 @@ Hb
 aW
 Br
 ib
-sf
+ib
 WH
 WH
 fB

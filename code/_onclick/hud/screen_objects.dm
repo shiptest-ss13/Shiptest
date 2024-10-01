@@ -241,20 +241,20 @@
 		user.swap_hand(held_index)
 	return TRUE
 
-/atom/movable/screen/close
-	name = "close"
-	layer = ABOVE_HUD_LAYER
-	plane = ABOVE_HUD_PLANE
-	icon_state = "backpack_close"
+// /atom/movable/screen/close
+// 	name = "close"
+// 	layer = ABOVE_HUD_LAYER
+// 	plane = ABOVE_HUD_PLANE
+// 	icon_state = "backpack_close"
 
-/atom/movable/screen/close/Initialize(mapload, new_master)
-	. = ..()
-	master = new_master
+// /atom/movable/screen/close/Initialize(mapload, new_master)
+// 	. = ..()
+// 	master = new_master
 
-/atom/movable/screen/close/Click()
-	var/datum/component/storage/S = master
-	S.hide_from(usr)
-	return TRUE
+// /atom/movable/screen/close/Click()
+// 	var/datum/component/storage/S = master
+// 	S.hide_from(usr)
+// 	return TRUE
 
 /atom/movable/screen/drop
 	name = "drop"
@@ -437,30 +437,6 @@
 	icon_state = "[base_icon_state][user.resting ? 0 : null]"
 	return ..()
 
-/atom/movable/screen/storage
-	name = "storage"
-	icon_state = "block"
-	screen_loc = "7,7 to 10,8"
-	layer = HUD_LAYER
-	plane = HUD_PLANE
-
-/atom/movable/screen/storage/Initialize(mapload, new_master)
-	. = ..()
-	master = new_master
-
-/atom/movable/screen/storage/Click(location, control, params)
-	if(world.time <= usr.next_move)
-		return TRUE
-	if(usr.incapacitated())
-		return TRUE
-	if (ismecha(usr.loc)) // stops inventory actions in a mech
-		return TRUE
-	if(master)
-		var/obj/item/I = usr.get_active_held_item()
-		if(I)
-			master.attackby(null, I, usr, params)
-	return TRUE
-
 /atom/movable/screen/throw_catch
 	name = "throw/catch"
 	icon = 'icons/hud/screen_midnight.dmi'
@@ -620,22 +596,6 @@
 /atom/movable/screen/healths/robot
 	icon = 'icons/hud/screen_cyborg.dmi'
 	screen_loc = ui_borg_health
-
-/atom/movable/screen/healths/blob
-	name = "blob health"
-	icon_state = "block"
-	screen_loc = ui_internal
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/blob/naut
-	name = "health"
-	icon = 'icons/mob/blob.dmi'
-	icon_state = "nauthealth"
-
-/atom/movable/screen/healths/blob/naut/core
-	name = "overmind health"
-	icon_state = "corehealth"
-	screen_loc = ui_health
 
 /atom/movable/screen/healths/guardian
 	name = "summoner health"

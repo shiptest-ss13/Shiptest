@@ -35,7 +35,7 @@
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/nanotrasen)
 "aQ" = (
-/mob/living/simple_animal/hostile/nanotrasen,
+/mob/living/simple_animal/hostile/human/nanotrasen,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -47,7 +47,7 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -2;
 	pixel_y = 6
 	},
@@ -183,9 +183,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "cq" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /turf/open/floor/carpet/purple,
 /area/ruin/rockplanet/nanotrasen)
 "cy" = (
@@ -341,7 +339,7 @@
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "ff" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -478,9 +476,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/nanotrasen)
 "hT" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/nanotrasen)
 "hY" = (
@@ -511,7 +507,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/nanotrasen)
 "ix" = (
-/obj/effect/mine/shrapnel/human_only,
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iE" = (
@@ -521,7 +517,7 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -760,10 +756,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
@@ -776,12 +769,12 @@
 "mO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
 	pixel_x = -8;
 	pixel_y = 12
@@ -1354,7 +1347,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
 /obj/machinery/light/small/broken/directional/north,
-/mob/living/simple_animal/hostile/pirate/ranged/space,
+/mob/living/simple_animal/hostile/human/pirate/ranged/space,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/nanotrasen)
 "vz" = (
@@ -1469,7 +1462,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/nanotrasen,
+/mob/living/simple_animal/hostile/human/nanotrasen,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -1683,9 +1676,7 @@
 	},
 /area/ruin/rockplanet/nanotrasen)
 "BZ" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 10
 	},
@@ -1737,7 +1728,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/nanotrasen)
 "CJ" = (
-/mob/living/simple_animal/hostile/pirate/melee/space,
+/mob/living/simple_animal/hostile/human/pirate/melee/space,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -1776,7 +1767,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
 "Dt" = (
-/mob/living/simple_animal/hostile/pirate/ranged/space,
+/mob/living/simple_animal/hostile/human/pirate/ranged/space,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2045,7 +2036,7 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "Hs" = (
@@ -2078,7 +2069,7 @@
 	},
 /area/ruin/rockplanet/nanotrasen)
 "Ie" = (
-/mob/living/simple_animal/hostile/pirate/melee/space,
+/mob/living/simple_animal/hostile/human/pirate/melee/space,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -2598,9 +2589,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/firing_pin{
-	pixel_y = 6
-	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
 "Tl" = (
@@ -2709,7 +2697,7 @@
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/rockplanet/nanotrasen)
 "Vn" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2756,9 +2744,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/nanotrasen)
 "WY" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 1;
-	req_access = null
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2847,7 +2834,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ze" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/corner/transparent/purple/border{
 	dir = 1
 	},
@@ -2920,7 +2907,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "ZZ" = (

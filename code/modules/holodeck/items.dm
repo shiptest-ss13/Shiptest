@@ -13,8 +13,8 @@
 /obj/item/holo/esword
 	name = "holographic energy sword"
 	desc = "May the force be with you. Sorta."
-	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "sword0"
+	icon = 'icons/obj/weapon/energy.dmi'
+	icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 3.0
@@ -69,7 +69,7 @@
 
 /obj/item/toy/beach_ball/holoball
 	name = "basketball"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "basketball"
 	item_state = "basketball"
 	desc = "Here's your chance, do your dance at the Space Jam."
@@ -152,8 +152,8 @@
 	var/eventstarted = FALSE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 6
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	power_channel = AREA_USAGE_ENVIRON
 
 /obj/machinery/readybutton/attack_ai(mob/user as mob)

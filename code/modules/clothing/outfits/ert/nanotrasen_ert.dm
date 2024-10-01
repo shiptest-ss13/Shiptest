@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1)
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/melee/knife/switchblade
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -47,7 +47,7 @@
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1)
+		/obj/item/gun/energy/pulse/pistol=1)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
 /datum/outfit/centcom/ert/security
@@ -77,7 +77,7 @@
 /datum/outfit/centcom/ert/security/alert
 	name = "ERT Security - High Alert"
 
-	suit_store = /obj/item/gun/energy/pulse/carbine/loyalpin
+	suit_store = /obj/item/gun/energy/pulse/carbine
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
@@ -114,7 +114,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
+		/obj/item/gun/energy/pulse/pistol=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1)
 
@@ -150,7 +150,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
+		/obj/item/gun/energy/pulse/pistol=1,\
 		/obj/item/construction/rcd/combat=1)
 
 // official
@@ -282,12 +282,12 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine
 	back = /obj/item/storage/backpack/ert
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1
 )
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	accessory = /obj/item/clothing/accessory/holster/marine
@@ -332,7 +332,7 @@
 	l_pocket = /obj/item/healthanalyzer
 	head = /obj/item/clothing/head/helmet/marine/medic
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1,
 		/obj/item/reagent_containers/hypospray/combat = 1,
 		/obj/item/storage/firstaid/regular = 1,
@@ -359,7 +359,7 @@
 	head = /obj/item/clothing/head/helmet/marine/engineer
 	back = /obj/item/storage/backpack/ert/engineer
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1,
 		/obj/item/rcd_ammo/large = 2,
 		)
@@ -399,7 +399,7 @@
 
 	box = /obj/item/storage/box/survival/security
 	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/melee/knife/combat
 
 	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 
@@ -434,7 +434,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/storage/belt/utility/full
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 	glasses = /obj/item/clothing/glasses/welding
 	back = /obj/item/storage/backpack/ert/engineer
 
@@ -460,6 +460,5 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 
-	box = /obj/item/storage/box/survival/radio
 	l_pocket = /obj/item/megaphone/command
 	r_pocket = /obj/item/binoculars

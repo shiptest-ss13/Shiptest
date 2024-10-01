@@ -114,6 +114,8 @@
 	item_state = "highvis"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
@@ -128,6 +130,8 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
+
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
@@ -192,7 +196,7 @@
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
-	desc = "They suspend the illusion of the mime's play."
+	desc = "The symbol of hard labor and dirty jobs."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders"
 	blood_overlay_type = "armor" //it's the less thing that I can put here
@@ -204,24 +208,6 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
-
-//Robotocist
-
-/obj/item/clothing/suit/hooded/techpriest
-	name = "techpriest robes"
-	desc = "For those who REALLY love their toasters."
-	icon_state = "techpriest"
-	item_state = "techpriest"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/techpriest
-
-/obj/item/clothing/head/hooded/techpriest
-	name = "techpriest's hood"
-	desc = "A hood for those who REALLY love their toasters."
-	icon_state = "techpriesthood"
-	item_state = "techpriesthood"
-	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS
 
 //SolGov suits
 
@@ -292,7 +278,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/enginseer
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/nullrod, /obj/item/radio, /obj/item/storage/book)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/radio, /obj/item/storage/book)
 
 /obj/item/clothing/head/hooded/enginseer
 	name = "enginseer's hood"
@@ -302,3 +288,10 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
+/obj/item/clothing/suit/armor/witchhunter
+	name = "witchunter garb"
+	desc = "This worn outfit saw much use back in the day."
+	icon_state = "chaplain_witchhunter"
+	item_state = "witchhunter"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	allowed = list(/obj/item/storage/book/bible, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

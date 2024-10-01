@@ -102,7 +102,6 @@
 	uniform = /obj/item/clothing/under/color/black/ghost
 	suit = /obj/item/clothing/suit/hooded/cultrobes/alt/ghost
 	shoes = /obj/item/clothing/shoes/cult/alt/ghost
-	r_hand = /obj/item/melee/cultblade/ghost
 
 /datum/outfit/wizard
 	name = "Blue Wizard"
@@ -169,7 +168,7 @@
 	r_pocket = /obj/item/shield/energy
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
 	belt = /obj/item/gun/ballistic/revolver/mateba
-	r_hand = /obj/item/gun/energy/pulse/loyalpin
+	r_hand = /obj/item/gun/energy/pulse
 	id = /obj/item/card/id/ert/deathsquad
 	ears = /obj/item/radio/headset/headset_cent/alt
 
@@ -226,8 +225,6 @@
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
 		/obj/item/storage/part_replacer/bluespace/tier4=1,\
-		/obj/item/gun/magic/wand/resurrection/debug=1,\
-		/obj/item/gun/magic/wand/death/debug=1,\
 		/obj/item/debug/human_spawner=1,\
 		/obj/item/debug/omnitool=1
 		)

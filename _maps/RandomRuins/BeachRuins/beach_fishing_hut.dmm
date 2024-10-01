@@ -1,8 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/beach)
@@ -138,7 +136,7 @@
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/syndicate/energy{
 	active_power_usage = 0;
-	faction = list("beach","pirate");
+	faction = list("Frontiersmen","beach");
 	idle_power_usage = 0;
 	reqpower = 0;
 	name = "Point defense anti-carp turret"
@@ -206,7 +204,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/pneumatic_cannon/speargun,
 /obj/item/storage/backpack/magspear_quiver,
-/obj/item/kitchen/knife/hunting,
+/obj/item/melee/knife/hunting,
 /turf/open/floor/wood,
 /area/ruin/beach)
 "kr" = (
@@ -483,13 +481,10 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sN" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/machinery/light/small/directional/north{
 	light_color = "#694c12"
 	},
-/obj/structure/safe/floor,
-/obj/item/book/granter/martial/carp,
-/obj/item/grenade/clusterbuster/spawner_spesscarp,
 /turf/open/floor/carpet,
 /area/ruin/beach)
 "tj" = (
@@ -534,7 +529,7 @@
 	dir = 6
 	},
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife/butcher,
+/obj/item/melee/knife/butcher,
 /turf/open/floor/plastic,
 /area/ruin/beach)
 "wg" = (
@@ -669,8 +664,8 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Bg" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("beach","pirate")
+/mob/living/simple_animal/hostile/human/frontier{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/plastic,
 /area/ruin/beach)
@@ -728,8 +723,7 @@
 "Ch" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
 /obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_x = -11
+	dir = 4
 	},
 /turf/open/floor/plastic,
 /area/ruin/beach)
@@ -829,23 +823,6 @@
 /area/ruin/beach)
 "Gt" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
-/mob/living/simple_animal/hostile/cat_butcherer{
-	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
-	desc = "A profession carp butcher, gone mad due to carptoxin exposure. There seems to be something in their pocket...";
-	faction = list("beach","pirate");
-	health = 300;
-	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher,/obj/item/guardiancreator/carp);
-	maxHealth = 300;
-	maxbodytemp = 10000;
-	melee_damage_lower = 20;
-	melee_damage_upper = 25;
-	minbodytemp = 0;
-	name = "The Butcher";
-	ranged_cooldown_time = 15;
-	ranged_message = "fires the speargun at";
-	real_name = "The Butcher";
-	unique_name = 1
-	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 1
 	},
@@ -853,10 +830,10 @@
 /turf/open/floor/plastic,
 /area/ruin/beach)
 "GP" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("beach","pirate")
+/mob/living/simple_animal/hostile/human/frontier{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach)
@@ -1047,15 +1024,15 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
-	faction = list("beach","pirate")
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/wood/ebony,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Os" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/obj/item/kitchen/knife{
+/obj/item/melee/knife/kitchen{
 	pixel_y = 12;
 	pixel_x = 9
 	},
@@ -1075,7 +1052,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/pneumatic_cannon/speargun,
 /obj/item/storage/backpack/magspear_quiver,
-/obj/item/kitchen/knife/hunting,
+/obj/item/melee/knife/hunting,
 /obj/machinery/light/small/directional/east{
 	light_color = "#d8b1b1"
 	},
@@ -1121,10 +1098,6 @@
 	dir = 8
 	},
 /obj/structure/table/wood,
-/obj/item/grenade/spawnergrenade/spesscarp{
-	pixel_x = 3;
-	pixel_y = -21
-	},
 /obj/item/stack/medical/bruise_pack/herb{
 	pixel_x = -5;
 	name = "herbal pack"
@@ -1136,9 +1109,9 @@
 /turf/open/floor/wood,
 /area/ruin/beach)
 "Rh" = (
-/obj/structure/chair/sofa/corner,
-/mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("beach","pirate")
+/obj/structure/chair/sofa/brown/corner/directional/south,
+/mob/living/simple_animal/hostile/human/frontier{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach)
@@ -1252,8 +1225,8 @@
 	pixel_x = 4;
 	layer = 2.9
 	},
-/mob/living/simple_animal/hostile/pirate/ranged{
-	faction = list("beach","pirate")
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/wood/ebony,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1271,7 +1244,6 @@
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Vt" = (
-/obj/item/nullrod/carp,
 /obj/structure/bed/dogbed,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
@@ -1335,8 +1307,8 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZJ" = (
-/mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("beach","pirate")
+/mob/living/simple_animal/hostile/human/frontier{
+	faction = list("Frontiersmen","beach")
 	},
 /turf/open/floor/wood,
 /area/ruin/beach)

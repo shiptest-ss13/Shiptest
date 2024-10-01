@@ -49,6 +49,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("knockdown")
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/incapacitating/knockdown/on_remove()
@@ -79,6 +80,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("paralyze")
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
@@ -334,7 +336,8 @@
 
 /datum/status_effect/neck_slice/tick()
 	var/mob/living/carbon/human/H = owner
-	if(H.stat == DEAD || H.bleed_rate <= 8)
+	var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
+	if(H.stat == DEAD || throat_in_question?.bleeding <= 8)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))

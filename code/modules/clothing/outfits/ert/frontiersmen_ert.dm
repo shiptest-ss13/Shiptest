@@ -1,11 +1,10 @@
-/datum/outfit/job/frontiersmen/ert
+/datum/outfit/job/frontiersmen/ert //most basic of grunts
 	name = "ERT - Frontiersman Basic"
 
-	head = /obj/item/clothing/head/beret/sec/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/rifle/illestren
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/pirate/alt
@@ -13,9 +12,10 @@
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
+	box = /obj/item/storage/box/survival/frontier
 	id = null // lol
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/illestren_a850r=5, /obj/item/grenade/frag=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/illestren_a850r=5, /obj/item/grenade/frag=1)
 
 /datum/outfit/job/frontiersmen/ert/random
 	name = "ERT - Frontiersman Randomized"
@@ -44,11 +44,11 @@
 		suit = pickweight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
 		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
-		/obj/item/clothing/suit/armor/vest/scrap_armor = 1))
+		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(30))
 		mask = pickweight(list(
-		/obj/item/clothing/mask/gas = 5,
+		/obj/item/clothing/mask/gas/frontiersmen = 5,
 		/obj/item/clothing/mask/gas/sechailer/balaclava = 5,
 		/obj/item/clothing/mask/breath = 5,
 		/obj/item/clothing/mask/whistle = 3))
@@ -59,8 +59,9 @@
 		/obj/item/storage/backpack/satchel = 20,
 		/obj/item/storage/backpack/messenger = 20,
 		/obj/item/melee/baton/cattleprod/loaded = 5,
-		/obj/item/reagent_containers/food/snacks/baguette = 2, // yes you can put this on your back
+		/obj/item/food/baguette = 2, // yes you can put this on your back
 		/obj/item/deployable_turret_folded = 1,
+		/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended = 1,
 		))
 
 	if(prob(90))
@@ -74,6 +75,8 @@
 		if("Doctor")
 			backpack_contents += list(/obj/item/storage/firstaid/regular = 1)
 			gloves = /obj/item/clothing/gloves/color/latex
+			suit = /obj/item/clothing/suit/frontiersmen
+			head = /obj/item/clothing/head/frontier
 			if(prob(50))
 				belt = /obj/item/storage/belt/medical/surgery
 			if(prob(30))
@@ -83,7 +86,16 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/grenade/full
 		if("Ammo Carrier")
-			backpack_contents += list(/obj/item/ammo_box/a762_40 = 1)
+			var/loops = rand(1,3)
+			for(var/i in 1 to loops)
+				var/ammotype = pick(list(
+					/obj/item/ammo_box/c8x50mm_box,
+					/obj/item/ammo_box/c45,
+					/obj/item/ammo_box/a357_box,
+					/obj/item/ammo_box/c45,
+					/obj/item/ammo_box/a4570,
+					/obj/item/stock_parts/cell/gun/mini))
+				backpack_contents += ammotype
 
 	var/weapon = pick(list("Bolt-Action", "Pistol", "Melee"))
 	switch(weapon)
@@ -96,50 +108,91 @@
 		if("Pistol")
 			r_hand = pick(list(
 			/obj/item/gun/ballistic/automatic/pistol/disposable,
-			/obj/item/gun/ballistic/automatic/pistol,
+			/obj/item/gun/ballistic/automatic/pistol/candor,
 			/obj/item/gun/ballistic/revolver/firebrand,
+			/obj/item/gun/ballistic/revolver/shadow,
+			/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
 			/obj/item/gun/energy/e_gun/mini))
 			if(prob(30))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
-				/obj/item/gun/ballistic/automatic/pistol,
+				/obj/item/gun/ballistic/automatic/pistol/candor,
 				/obj/item/gun/ballistic/revolver/firebrand,
+				/obj/item/gun/ballistic/revolver/shadow,
+				/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
-			/obj/item/kitchen/knife = 15,
+			/obj/item/melee/knife/survival = 15,
 			/obj/item/melee/baseball_bat = 10,
-			/obj/item/melee/cleric_mace = 7,
-			/obj/item/melee/roastingstick = 2,
+			/obj/item/roastingstick = 2,
 			/obj/item/kitchen/fork = 1,
 			/obj/item/melee/flyswatter = 1,
 			))
 
+/datum/outfit/job/frontiersmen/ert/grunt //better armed, use for quick creating pirate ships
+	name = "ERT - Frontiersman Grunt (Unarmed)"
+
+	suit_store = null
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen)
+
+/datum/outfit/job/frontiersmen/ert/grunt/skm
+	name = "ERT - Frontiersman Grunt (SKM-24 AR)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/assault/skm
+	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo
+
+/datum/outfit/job/frontiersmen/ert/grunt/mauler_mp
+	name = "ERT - Frontiersman Grunt (Mauler MP)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
+	belt = /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo
+
+/datum/outfit/job/frontiersmen/ert/grunt/spitter_mp
+	name = "ERT - Frontiersman Grunt (Spitter MP)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/spitter
+	belt = /obj/item/storage/belt/security/military/frontiersmen/spitter_ammo
+
+/datum/outfit/job/frontiersmen/ert/grunt/pounder_smg
+	name = "ERT - Frontiersman Grunt (Pounder SMG)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/smg/pounder
+	belt = null
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen=1, /obj/item/ammo_box/magazine/c22lr_pounder_pan=2)
 
 /datum/outfit/job/frontiersmen/ert/leader
 	name = "ERT - Frontiersman Officer"
 
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
-	suit_store = /obj/item/gun/ballistic/revolver
-	belt = /obj/item/storage/belt/military/assault
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 
-	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
+
+/datum/outfit/job/frontiersmen/ert/leader/unnarmed
+	name = "ERT - Frontiersman Officer (Unnarmed)"
+
+	suit_store = null
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"
 
+	head = /obj/item/clothing/head/frontier
 	back = /obj/item/storage/backpack/medic
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	belt = /obj/item/storage/belt/medical/surgery
-	suit = null
-	suit_store = null
+	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/surgery
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
 
-	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack=3, /obj/item/ammo_box/magazine/m9mm_mauler=2)
 
 
 /datum/outfit/job/frontiersmen/ert/engineer
@@ -147,8 +200,53 @@
 
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/full
-	head = /obj/item/clothing/head/hardhat/weldhat
+	head = /obj/item/clothing/head/hardhat/frontier
+	glasses = /obj/item/clothing/glasses/welding
 	suit_store = null
 
-	backpack_contents = list(/obj/item/grenade/c4=3, /obj/item/crowbar/large=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/grenade/c4=3, /obj/item/crowbar/large=1)
 
+/datum/outfit/job/frontiersmen/ert/flamer
+	name = "ERT - Frontiersman Flame Trooper"
+
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
+	mask = /obj/item/clothing/mask/gas/frontiersmen
+	suit = /obj/item/clothing/suit/armor/frontier/fireproof
+	suit_store = /obj/item/tank/internals/oxygen/red
+	uniform = /obj/item/clothing/under/frontiersmen/fireproof
+	gloves = /obj/item/clothing/gloves/combat
+	back = /obj/item/storage/backpack
+	belt = /obj/item/storage/belt/security/military/frontiersmen/flamer
+
+	l_hand = /obj/item/flamethrower/full/tank
+
+	backpack_contents = list(/obj/item/gun/ballistic/shotgun/doublebarrel/presawn=1,/obj/item/ammo_box/a12g=1,/obj/item/extinguisher=2,/obj/item/radio=1)
+
+
+/datum/outfit/job/frontiersmen/ert/sentry_lmg
+	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
+
+	head = /obj/item/clothing/head/helmet/marine/frontier
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
+	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
+	gloves = /obj/item/clothing/gloves/combat
+
+	belt = /obj/item/gun/ballistic/revolver/mateba
+
+	backpack_contents = list(/obj/item/ammo_box/magazine/skm_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
+
+/datum/outfit/job/frontiersmen/ert/sentry_shredder
+	name = "ERT - Frontiersman Sentry (Shredder LMG)"
+
+	head = /obj/item/clothing/head/helmet/marine/frontier
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
+	gloves = /obj/item/clothing/gloves/combat
+
+	belt = /obj/item/gun/ballistic/revolver/mateba
+
+
+	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
+
+	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)

@@ -1,8 +1,11 @@
 /obj/item/clothing/gloves
 	name = "gloves"
+	lefthand_file = 'icons/mob/inhands/clothing/gloves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/gloves_righthand.dmi'
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/clothing/gloves.dmi'
+	item_state = "bgloves"
 	siemens_coefficient = 0.5
 	body_parts_covered = HANDS
 	slot_flags = ITEM_SLOT_GLOVES
@@ -22,7 +25,7 @@
 		return TRUE
 
 /obj/item/clothing/gloves/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedgloves")

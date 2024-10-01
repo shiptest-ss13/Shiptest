@@ -27,6 +27,8 @@
 	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
+	/// list of ruin templates currently spawned on the planet.
+	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
 
@@ -34,6 +36,9 @@
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
 	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
 	var/turf/default_baseturf = /turf/open/space
+
+	///The default gravity the virtual z will have
+	var/gravity = 0
 
 	///The weather the virtual z will have. If null, the planet will have no weather.
 	var/datum/weather_controller/weather_controller_type
@@ -139,6 +144,7 @@
 	token.color = planet.color
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
+	gravity = planet.gravity
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
@@ -194,6 +200,7 @@
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
+	spawned_ruins = dynamic_encounter_values[4]
 
 	loading = FALSE
 	return TRUE

@@ -242,7 +242,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -303,7 +302,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5,
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -368,6 +366,7 @@
 /obj/item/stack/ore/salvage
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
+	icon_state = "smetal"
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
@@ -376,8 +375,6 @@
 /obj/item/stack/ore/salvage/scrapmetal
 	name = "scrap metal"
 	desc = "A collection of metal parts and pieces."
-	icon_state = "smetal"
-	item_state = "smetal"
 	points = 1
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
@@ -396,7 +393,6 @@
 	name = "scrap titanium"
 	desc = "Lightweight, rust-resistant parts and pieces from high-performance equipment."
 	icon_state = "stitanium"
-	item_state = "stitanium"
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
@@ -409,7 +405,6 @@
 	name = "worn crt"
 	desc = "An old CRT display with the letters 'STANDBY' burnt into the screen."
 	icon_state = "ssilver"
-	item_state = "ssilver"
 	points = 16
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
@@ -422,7 +417,6 @@
 	name = "scrap electronics"
 	desc = "Various bits of electrical components."
 	icon_state = "sgold"
-	item_state = "sgold"
 	points = 18
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
@@ -435,7 +429,6 @@
 	name = "junk plasma cell"
 	desc = "A nonfunctional plasma cell, once used as portable power generation."
 	icon_state = "splasma"
-	item_state = "splasma"
 	points = 15
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
@@ -448,7 +441,6 @@
 	name = "broken detector"
 	desc = "The label on the side warns the reader of radioactive elements."
 	icon_state = "suranium"
-	item_state = "suranium"
 	points = 30
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
@@ -461,7 +453,6 @@
 	name = "damaged bluespace circuit"
 	desc = "It's damaged beyond repair, but the crystal inside its housing looks fine."
 	icon_state = "sbluespace"
-	item_state = "sbluespace"
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
@@ -584,8 +575,8 @@
 		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
-			/obj/item/gun/energy/lasercannon/unrestricted = 1,
-			/obj/item/gun/ballistic/automatic/smg/proto/unrestricted = 1,
+			/obj/item/gun/energy/lasercannon = 1,
+			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
@@ -598,7 +589,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
-			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,
@@ -680,7 +670,7 @@
 
 /obj/effect/spawner/lootdrop/random_computer_circuit_rare
 	loot = list(
-			/obj/item/circuitboard/computer/cargo/express = 5,
+			/obj/item/circuitboard/computer/cargo = 5,
 			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
 			/obj/item/circuitboard/computer/med_data = 5,
@@ -690,7 +680,7 @@
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
-			/obj/item/gun/ballistic/automatic/pistol = 500,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 500,
 			/obj/item/camera_bug = 500,
 			/obj/item/clothing/gloves/combat = 200,
 			/obj/item/clothing/head/chameleon = 200,

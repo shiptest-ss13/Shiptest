@@ -1,4 +1,4 @@
-// 10mm (Stechkin)
+// 10mm (Ringneck)
 
 /obj/item/ammo_casing/c10mm
 	name = "10mm bullet casing"
@@ -6,6 +6,7 @@
 	icon_state = "pistol-steel"
 	caliber = "10mm"
 	projectile_type = /obj/projectile/bullet/c10mm
+	bullet_per_box = 50
 
 /obj/item/ammo_casing/c10mm/surplus
 	name = "10mm surplus bullet casing"
@@ -45,6 +46,7 @@
 	icon_state = "pistol-brass"
 	caliber = "9mm"
 	projectile_type = /obj/projectile/bullet/c9mm
+	bullet_per_box = 50
 
 /obj/item/ammo_casing/c9mm/surplus
 	name = "9mm surplus bullet casing"
@@ -84,6 +86,7 @@
 	icon_state = "pistol-steel"
 	caliber = ".45"
 	projectile_type = /obj/projectile/bullet/c45
+	bullet_per_box = 50
 
 /obj/item/ammo_casing/c45/surplus
 	name = ".45 surplus bullet casing"
@@ -122,6 +125,7 @@
 	desc = "A .50 AE bullet casing."
 	caliber = ".50 AE"
 	projectile_type = /obj/projectile/bullet/a50AE
+	bullet_per_box = 20
 
 /obj/item/ammo_casing/a50AE/hp
 	name = ".50 AE hollow point bullet casing"
@@ -134,4 +138,5 @@
 	desc = "A .22 LR bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
+	bullet_per_box = 75
 

@@ -291,7 +291,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
-		user.alpha = 25
+		user.alpha = 150
 		user.sneaking = TRUE
 		active = TRUE
 		to_chat(user, "<span class='noticealien'>You blend into the shadows...</span>")

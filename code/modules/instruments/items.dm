@@ -75,7 +75,7 @@
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "headphones"
-	item_state = "headphones"
+	item_state = "earmuffs"
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
@@ -271,9 +271,8 @@
 	hitsound = 'sound/items/bikehorn.ogg'
 
 /obj/item/choice_beacon/music
-	name = "instrument delivery beacon"
-	desc = "Summon your tool of art."
-	icon_state = "gangtool-red"
+	name = "instrument box"
+	desc = "Contains your tool of art."
 
 /obj/item/choice_beacon/music/generate_display_names()
 	var/static/list/instruments
@@ -299,9 +298,8 @@
 	return instruments
 
 /obj/item/choice_beacon/rnd
-	name = "C.R.E.W.M.A.T.E type R&D Choice Beacon"
-	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital satellite, delivered via impact pod."
-	icon_state = "gangtool-sus"
+	name = "C.R.E.W.M.A.T.E type R&D box"
+	desc = "This box contains a limited production RND package."
 
 /obj/item/choice_beacon/rnd/generate_display_names()
 	var/static/list/rndboxes

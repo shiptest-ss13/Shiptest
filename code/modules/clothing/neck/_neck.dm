@@ -11,7 +11,7 @@
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)
@@ -22,7 +22,6 @@
 /obj/item/clothing/neck/tie
 	name = "tie"
 	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("red tie" = "redtie",
 						"orange tie" = "orangetie",
 						"green tie" = "greentie",
@@ -168,6 +167,7 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 	cuttable = FALSE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -268,6 +268,7 @@
 	name = "shemagh"
 	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
 	icon_state = "shemagh"
+	supports_variations = VOX_VARIATION
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
@@ -276,21 +277,25 @@
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedsolgovscarf
 	name = "striped solgov scarf"
 	icon_state = "stripedsolgovscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
@@ -312,7 +317,6 @@
 /obj/item/clothing/neck/necklace/dope
 	name = "gold necklace"
 	desc = "Damn, it feels good to be a gangster."
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	cuttable = FALSE
 
@@ -383,7 +387,6 @@
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
 	desc = "A cheap, plastic bead necklace. Show team spirit! Collect them! Throw them away! The posibilites are endless!"
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "beads"
 	color = "#ffffff"
 	custom_price = 10
@@ -436,3 +439,9 @@
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()
+
+/obj/item/clothing/neck/fangnecklace
+	name = "wolf fang necklace"
+	desc = "A necklace made out of a wolf's fang and some sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "fang_necklace"
+	cuttable = FALSE

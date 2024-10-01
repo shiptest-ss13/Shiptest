@@ -28,7 +28,7 @@ LINEN BINS
 
 /obj/item/bedsheet/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/bed_tuckable, 0, 0, 0)
+	AddElement(/datum/element/bed_tuckable, 0, 0, 0, TRUE, TRUE)
 
 /obj/item/bedsheet/attack_self(mob/user)
 	if(!user.CanReach(src))		//No telekenetic grabbing.
@@ -132,7 +132,7 @@ LINEN BINS
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 	icon_state = "sheetrd"
 	item_state = "sheetrd"
-	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+	dream_messages = list("authority", "a silvery ID", "a bomb", "an exosuit", "a facehugger", "maniacal laughter", "the research director")
 
 /obj/item/bedsheet/medical
 	name = "medical blanket"
@@ -234,6 +234,13 @@ LINEN BINS
 	icon_state = "sheetsolgov"
 	item_state = "sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+
+/obj/item/bedsheet/suns
+	name = "\improper SUNS bedsheet"
+	desc = "A gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "sheetsuns"
+	item_state = "sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
 
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"
@@ -346,7 +353,7 @@ LINEN BINS
 	name = "double research director's bedsheet"
 	icon_state = "double_sheetrd"
 	item_state = "sheetrd"
-	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+	dream_messages = list("authority", "a silvery ID", "a bomb", "an exosuit", "a facehugger", "maniacal laughter", "the research director")
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 
 /obj/item/bedsheet/double/solgov
@@ -355,6 +362,13 @@ LINEN BINS
 	item_state = "double_sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
 	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+
+/obj/item/bedsheet/double/suns
+	name = "double SUNS bedsheet"
+	desc = "A large gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "double_sheetsuns"
+	item_state = "double_sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
 
 /obj/item/bedsheet/random/Initialize()
 	..()

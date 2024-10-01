@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(!hallucination)
 		return
 
-	hallucination--
+	hallucination = max(hallucination - 1, 0)
 
 	if(world.time < next_hallucination)
 		return
@@ -476,15 +476,15 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A = image(image_file,H,"dualsaberred1", layer=ABOVE_MOB_LAYER)
 			if("taser")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"advtaserstun4", layer=ABOVE_MOB_LAYER)
 			if("ebow")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"crossbow", layer=ABOVE_MOB_LAYER)
 			if("baton")
 				if(side == "right")
@@ -525,11 +525,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/delusion
 	var/list/image/delusions = list()
 
-/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300,skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
+/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300),skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
 	set waitfor = FALSE
 	. = ..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("nothing","monkey","corgi","carp","skeleton","demon","zombie")
+	var/kind = force_kind ? force_kind : pick("doe","mi-go","carp","hermit","frontiersman","ramzi")
 	feedback_details += "Type: [kind]"
 	var/list/nearby
 	if(skip_nearby)
@@ -540,27 +540,24 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(skip_nearby && (H in nearby))
 			continue
 		switch(kind)
-			if("nothing")
-				A = image('icons/effects/effects.dmi',H,"nothing")
-				A.name = "..."
-			if("monkey")//Monkey
-				A = image('icons/mob/monkey.dmi',H,"monkey1")
-				A.name = "Monkey ([rand(1,999)])"
+			if("doe")//Doe
+				A = image('icons/mob/animal.dmi',H,"deer-doe")
+				A.name = "Doe"
 			if("carp")//Carp
 				A = image('icons/mob/carp.dmi',H,"carp")
 				A.name = "Space Carp"
-			if("corgi")//Corgi
-				A = image('icons/mob/pets.dmi',H,"corgi")
-				A.name = "Corgi"
-			if("skeleton")//Skeletons
-				A = image('icons/mob/human.dmi',H,"skeleton")
-				A.name = "Skeleton"
-			if("zombie")//Zombies
-				A = image('icons/mob/human.dmi',H,"zombie")
-				A.name = "Zombie"
-			if("demon")//Demon
-				A = image('icons/mob/mob.dmi',H,"daemon")
-				A.name = "Demon"
+			if("mi-go")//Mi-go
+				A = image('icons/mob/animal.dmi',H,"mi-go")
+				A.name = "Mi-go"
+			if("hermit")//Hermit
+				A = image('icons/mob/simple_human.dmi',H,"survivor_gunslinger")
+				A.name = "Hermit Soldier"
+			if("frontiersman")//Frontiersman
+				A = image('icons/mob/simple_human.dmi',H,"frontiersmanrangedminigun")
+				A.name = "Frontiersman"
+			if("ramzi")//Ramzi
+				A = image('icons/mob/simple_human.dmi',H,"ramzi_base")
+				A.name = "Ramzi Commando"
 			if("custom")
 				A = image(custom_icon_file, H, custom_icon)
 				A.name = custom_name
@@ -568,8 +565,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(target.client)
 			delusions |= A
 			target.client.images |= A
-	if(duration)
-		QDEL_IN(src, duration)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/delusion/Destroy()
 	for(var/image/I in delusions)
@@ -580,25 +576,28 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/self_delusion
 	var/image/delusion
 
-/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300, custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
+/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300), custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
 	set waitfor = FALSE
 	..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("monkey","corgi","carp","skeleton","demon","zombie","robot")
+	var/kind = force_kind ? force_kind : pick("doe","mi-go","carp","hermit","frontiersman","ramzi","pai","robot")
 	feedback_details += "Type: [kind]"
 	switch(kind)
-		if("monkey")//Monkey
-			A = image('icons/mob/monkey.dmi',target,"monkey1")
+		if("doe")//Doe
+			A = image('icons/mob/animal.dmi',target,"deer-doe")
 		if("carp")//Carp
 			A = image('icons/mob/animal.dmi',target,"carp")
-		if("corgi")//Corgi
-			A = image('icons/mob/pets.dmi',target,"corgi")
-		if("skeleton")//Skeletons
-			A = image('icons/mob/human.dmi',target,"skeleton")
-		if("zombie")//Zombies
-			A = image('icons/mob/human.dmi',target,"zombie")
-		if("demon")//Demon
-			A = image('icons/mob/mob.dmi',target,"daemon")
+		if("mi-go")//Mi-go
+			A = image('icons/mob/animal.dmi',target,"mi-go")
+		if("hermit")//Hermit
+			A = image('icons/mob/simple_human.dmi',target,"survivor_base")
+		if("frontiersman")//Frontiersman
+			A = image('icons/mob/simple_human.dmi',target,"frontiersmanranged")
+		if("ramzi")//Ramzi
+			A = image('icons/mob/simple_human.dmi',target,"ramzi_base")
+		if("pai")//pAI
+			A = image('icons/mob/pai.dmi',target,"repairbot")
+			target.playsound_local(target,'sound/effects/pai_boot.ogg', 75, 1)
 		if("robot")//Cyborg
 			A = image('icons/mob/robots.dmi',target,"robot")
 			target.playsound_local(target,'sound/voice/liveagain.ogg', 75, 1)
@@ -610,7 +609,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			to_chat(target, "<span class='hear'>...you look down and notice... you aren't the same as you used to be...</span>")
 		delusion = A
 		target.client.images |= A
-	QDEL_IN(src, duration)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/self_delusion/Destroy()
 	if(target.client)
@@ -1024,11 +1023,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					if(prob(25))
 						target.halitem.icon_state = "plasticx40"
 				if(3) //sword
-					target.halitem.icon = 'icons/obj/transforming_energy.dmi'
+					target.halitem.icon = 'icons/obj/weapon/energy.dmi'
 					target.halitem.icon_state = "sword0"
 					target.halitem.name = "Energy Sword"
 				if(4) //stun baton
-					target.halitem.icon = 'icons/obj/items_and_weapons.dmi'
+					target.halitem.icon = 'icons/obj/items.dmi'
 					target.halitem.icon_state = "stunbaton"
 					target.halitem.name = "Stun Baton"
 				if(5) //emag

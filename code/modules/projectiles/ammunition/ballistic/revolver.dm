@@ -6,6 +6,7 @@
 	caliber = ".357"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
+	bullet_per_box = 50
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
@@ -28,6 +29,7 @@
 	caliber = ".45-70"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
+	bullet_per_box = 12
 
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"
@@ -53,6 +55,7 @@
 	desc = "A .38 Special bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
+	bullet_per_box = 50
 
 /obj/item/ammo_casing/c38/surplus
 	name = ".38 surplus bullet casing"
@@ -85,13 +88,34 @@
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 /obj/item/ammo_casing/c38/hotshot
-	name = ".38 hot shot bullet casing"
-	desc = "A .38 hot shot bullet casing."
+	name = ".38 hearth bullet casing"
+	desc = "A .38 hearth bullet casing."
 	bullet_skin = "incen"
 	projectile_type = /obj/projectile/bullet/c38/hotshot
 
 /obj/item/ammo_casing/c38/iceblox
-	name = ".38 iceblox bullet casing"
-	desc = "A .38 iceblox bullet casing."
+	name = ".38 chilled bullet casing"
+	desc = "A .38 chilled bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
+
+//44 Roumain (Montagne & Shadow)
+
+/obj/item/ammo_casing/a44roum
+	name = ".44 roumain bullet casing"
+	desc = "A .44 roumain bullet casing."
+	caliber = ".44 Roumain"
+	icon_state = "pistol-steel"
+	projectile_type = /obj/projectile/bullet/a44roum
+
+/obj/item/ammo_casing/a44roum/rubber
+	name = ".44 roumain rubber bullet casing"
+	desc = "A .44 roumain rubber bullet casing."
+	bullet_skin = "rubber"
+	projectile_type = /obj/projectile/bullet/a44roum/rubber
+
+/obj/item/ammo_casing/a44roum/hp
+	name = ".44 roumain hollow point bullet casing"
+	desc = "A .44 roumain holow point bullet casing."
+	bullet_skin = "hollow"
+	projectile_type = /obj/projectile/bullet/a44roum/hp

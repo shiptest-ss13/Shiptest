@@ -52,7 +52,7 @@
 /// How long it takes an elzu to drain or charge APCs. Also used as a spam limiter.
 #define APC_DRAIN_TIME (7.5 SECONDS)
 /// How much power elzu gain/drain from APCs.
-#define APC_POWER_GAIN (10 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define APC_POWER_GAIN (10 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 // Wires & EMPs:
 /// The wire value used to reset the APCs wires after one's EMPed.
@@ -834,10 +834,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 
 	//[REDACTED] Begin -- Ethereal Charge Scaling //Let the hubris remain but the name be forgotten
-	if(isethereal(user))
+	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - APC_POWER_GAIN
+		var/datum/species/elzuose/E = H.dna.species
+		var/charge_limit = ELZUOSE_CHARGE_DANGEROUS - APC_POWER_GAIN
 		if((H.a_intent == INTENT_HARM) && (E.drain_time < world.time))
 			if(cell.charge <= (cell.maxcharge / 20)) // ethereals can't drain APCs under half charge, this is so that they are forced to look to alternative power sources if the station is running low
 				to_chat(H, "<span class='warning'>The APC's syphon safeties prevent you from draining power!</span>")
@@ -1491,9 +1491,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	update_appearance()
 	update()
 	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), 600)
-
-/obj/machinery/power/apc/blob_act(obj/structure/blob/B)
-	set_broken()
 
 /obj/machinery/power/apc/disconnect_terminal()
 	if(terminal)

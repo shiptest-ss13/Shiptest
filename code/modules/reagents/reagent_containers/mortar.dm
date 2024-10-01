@@ -10,14 +10,14 @@ to accommodate additional materials.
 	name = "pestle"
 	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/mortar.dmi'
 	icon_state = "pestle"
 	force = 7
 
 /obj/item/reagent_containers/glass/mortar
 	name = "mortar"
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/mortar.dmi'
 	icon_state = "mortar_wood"
 	fill_icon_state = "mortar"
 	fill_icon_thresholds = list(1, 20, 40, 80, 100)
@@ -136,11 +136,3 @@ to accommodate additional materials.
 /obj/item/reagent_containers/glass/mortar/mushroom
 	icon_state = "mortar_shroom"
 	custom_materials = list(/datum/material/biomass = MINERAL_MATERIAL_AMOUNT)
-
-// Mushroom recipes are all over the place so I'm just putting it here
-/datum/crafting_recipe/mushroom_mortar
-	name = "Mushroom Mortar"
-	result = /obj/item/reagent_containers/glass/mortar/mushroom
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
-	time = 30
-	category = CAT_PRIMAL

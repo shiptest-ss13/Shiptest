@@ -195,10 +195,8 @@
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbycrash)
 "fk" = (
-/obj/structure/closet/wall/blue{
-	dir = 1;
-	name = "Captain's locker";
-	pixel_y = -28
+/obj/structure/closet/wall/blue/directional/south{
+	name = "Captain's locker"
 	},
 /obj/item/clothing/suit/space/hardsuit/mining/heavy,
 /obj/effect/decal/cleanable/dirt,
@@ -503,10 +501,7 @@
 /area/ruin/whitesands/pubbycrash)
 "ln" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/pubbycrash/engine_room)
@@ -660,10 +655,8 @@
 	},
 /area/ruin/whitesands/pubbycrash/split)
 "oo" = (
-/obj/structure/closet/wall/white{
-	dir = 1;
-	name = "Medicine storage";
-	pixel_y = -30
+/obj/structure/closet/wall/white/directional/south{
+	name = "Medicine storage"
 	},
 /obj/item/storage/firstaid/ancient{
 	pixel_x = 6;
@@ -686,7 +679,7 @@
 "oO" = (
 /obj/structure/table/reinforced,
 /obj/item/laser_pointer,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 14
 	},
@@ -811,7 +804,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("adobe");
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
@@ -857,10 +850,9 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_y = 28
+	name = "Mining equipment"
 	},
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
@@ -1011,7 +1003,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "xc" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -1153,7 +1145,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/west,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
@@ -1164,10 +1156,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "Ak" = (
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 9;
-	pixel_y = -3
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/trash/pistachios{
 	pixel_y = 5
 	},
@@ -1752,7 +1741,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	faction = list("saloon")
 	},
 /turf/open/floor/plasteel/dark,
@@ -1785,7 +1774,7 @@
 /obj/effect/turf_decal/ntspaceworks_small/left{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("saloon")
 	},
@@ -1818,10 +1807,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/red{
-	dir = 8;
+/obj/structure/closet/wall/red/directional/east{
 	name = "Firearm Locker";
-	pixel_x = 29;
 	welded = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -1956,7 +1943,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/vomit/old,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
@@ -1979,7 +1966,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("adobe");
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
@@ -1988,10 +1975,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/pubbycrash/split)
 "Pr" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "Pilots locker";
-	pixel_x = -29;
 	welded = 1
 	},
 /obj/item/clothing/under/suit/black,
@@ -2072,7 +2057,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qo" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged,
+/mob/living/simple_animal/hostile/human/hermit/ranged,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "Qu" = (

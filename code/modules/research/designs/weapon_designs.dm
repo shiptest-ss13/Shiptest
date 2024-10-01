@@ -18,7 +18,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_hotshot
-	name = "Speed Loader (.38 Hot Shot)"
+	name = "Speed Loader (.38 Hearth)"
 	desc = "Designed to quickly reload revolvers. Hot Shot bullets contain an incendiary payload."
 	id = "c38_hotshot"
 	build_type = PROTOLATHE
@@ -28,7 +28,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_iceblox
-	name = "Speed Loader (.38 Iceblox)"
+	name = "Speed Loader (.38 Chilled)"
 	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
 	id = "c38_iceblox"
 	build_type = PROTOLATHE
@@ -65,36 +65,6 @@
 	id = "sec_Islug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
-
-/datum/design/pin_testing
-	name = "Test-Range Firing Pin"
-	desc = "This safety firing pin allows firearms to be operated within proximity to a firing range."
-	id = "pin_testing"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 300)
-	build_path = /obj/item/firing_pin/test_range
-	category = list("Firing Pins")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/pin_mindshield
-	name = "Mindshield Firing Pin"
-	desc = "This is a security firing pin which only authorizes users who are mindshield-implanted."
-	id = "pin_loyalty"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/silver = 600, /datum/material/diamond = 600, /datum/material/uranium = 200)
-	build_path = /obj/item/firing_pin/implant/mindshield
-	category = list("Firing Pins")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/pin
-	name = "Standard Firing Pin"
-	desc = "A simple, electronic firing pin which is required in most standardized modern weapons."
-	id = "pin_standard"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/silver = 600, /datum/material/diamond = 600, /datum/material/uranium = 200)
-	build_path = /obj/item/firing_pin
-	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/stunrevolver
@@ -288,13 +258,13 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/stechkinammo
-	name = "Stechkin magazine (10mm)"
-	desc = "A single stack Stechkin magazine, designed to chamber 10mm and fit into the Syndicate's Stechkin sidearms."
-	id = "stechkinammo"
+/datum/design/ringneckammo
+	name = "Ringneck magazine (10mm)"
+	desc = "A single stack Ringneck magazine, designed to chamber 10mm and fit into Scarborough Arm's Ringneck series of sidearms."
+	id = "ringneckammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/magazine/m10mm
+	build_path = /obj/item/ammo_box/magazine/m10mm_ringneck
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -588,7 +558,7 @@
 	id = "suppressor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
-	build_path = /obj/item/suppressor
+	build_path = /obj/item/attachment/silencer
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -611,15 +581,6 @@
 	build_path = /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/cleric_mace
-	name = "Cleric Mace"
-	desc = "A mace fit for a cleric. Useful for bypassing plate armor, but too bulky for much else."
-	id = "cleric_mace"
-	build_type = AUTOLATHE
-	materials = list(MAT_CATEGORY_RIGID = 12000)
-	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported")
 
 /datum/design/stun_boomerang
 	name = "OZtek Boomerang"
@@ -678,14 +639,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 4000)
 	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
-	category = list("Imported")
-
-/datum/design/pizza_disposable_gun
-	name = "Pizza Disposable Gun"
-	id = "disposable_pizza"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/pizza = 4000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
 	category = list("Imported")
 
 //SRM Ballistics

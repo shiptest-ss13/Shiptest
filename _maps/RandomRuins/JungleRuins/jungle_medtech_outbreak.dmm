@@ -22,7 +22,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "aM" = (
@@ -234,7 +234,7 @@
 /area/ship/engineering/electrical)
 "fe" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Geneticist"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -511,7 +511,7 @@
 	dir = 1
 	},
 /obj/effect/gibspawner/human,
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Janitor"
 	},
 /turf/open/floor/plasteel/dark,
@@ -540,11 +540,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "jL" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	name = "Zombiefied Facility Director";
 	zombiejob = "Research Director"
 	},
@@ -1115,7 +1113,7 @@
 /area/ship/medical)
 "rf" = (
 /obj/effect/turf_decal/corner/opaque/orange/full,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "ro" = (
@@ -1283,14 +1281,14 @@
 /turf/open/floor/plating,
 /area/ship/science/storage)
 "uT" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plating,
 /area/ship/medical)
 "ve" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "vf" = (
@@ -1310,7 +1308,7 @@
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "vu" = (
@@ -1681,7 +1679,7 @@
 	pixel_x = -13;
 	pixel_y = -6
 	},
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/human/zombie,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Bh" = (
@@ -1745,7 +1743,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "Cg" = (
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Assistant"
 	},
 /obj/item/rack_parts,
@@ -2210,7 +2208,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "Jx" = (
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Chemist"
 	},
 /turf/open/floor/plasteel/white,
@@ -2413,7 +2411,7 @@
 	pixel_x = 4;
 	pixel_y = -13
 	},
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plasteel/dark,
@@ -3071,7 +3069,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/zombie{
+/mob/living/simple_animal/hostile/human/zombie{
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plasteel/white,
@@ -3175,7 +3173,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/hatchet/wooden,
 /obj/item/ammo_box/a357,
-/obj/item/gun/ballistic/revolver,
+/obj/item/gun/ballistic/revolver/viper,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "VM" = (

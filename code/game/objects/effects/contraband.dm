@@ -72,6 +72,7 @@
 	var/original_name
 	desc = "A large piece of space-resistant printed paper."
 	icon = 'icons/obj/contraband.dmi'
+	icon_state = "poster_ripped"
 	anchored = TRUE
 	var/ruined = FALSE
 	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
@@ -386,8 +387,8 @@
 	icon_state = "poster_dday" // human sprite by quin
 
 /obj/structure/sign/poster/contraband/stechkin
-	name = "Stechkin Pistol"
-	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
+	name = "Ringneck Pistol"
+	desc = "A poster advertising the Scarborough Arms Ringneck conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
 	icon_state = "poster_stechkin"
 
 /obj/structure/sign/poster/contraband/energy_swords
@@ -518,7 +519,7 @@
 /obj/structure/sign/poster/contraband/m90
 	name = "M90 SMG"
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
-	icon_state = "poster-bulldog"
+	icon_state = "poster-m90"
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"
@@ -874,10 +875,10 @@
 	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the Grand Orrery and Neue Waldstätte."
 	icon_state = "poster-solgov-terra"
 
-/obj/structure/sign/poster/solgov/ares
-	name = "Ares"
-	desc = "Ares, fourth planet in the Sol system. While evidence suggests that Aphrodite and Ares may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Ares, listing attractions like skiing resorts and ancient robot exhibits."
-	icon_state = "poster-solgov-ares"
+/obj/structure/sign/poster/solgov/mars
+	name = "Mars"
+	desc = "Mars, fourth planet in the Sol system. While evidence suggests that Venus and Mars may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Mars, listing attractions like skiing resorts and ancient robot exhibits."
+	icon_state = "poster-solgov-mars"
 
 /obj/structure/sign/poster/solgov/luna
 	name = "Luna"
@@ -891,7 +892,7 @@
 
 /obj/structure/sign/poster/solgov/skiing
 	name = "Lo-Fly Skiing Advert"
-	desc = "An advertisement for some low-gravity skiing resort on Ares. \"Popular with SUNS groups!\""
+	desc = "An advertisement for some low-gravity skiing resort on Mars. \"Popular with SUNS groups!\""
 	icon_state = "poster-solgov-loskiing"
 
 /obj/structure/sign/poster/solgov/recyle
@@ -1058,6 +1059,83 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//PGF Mission Accomplished
+/obj/structure/sign/poster/pgf/mission_accomplished_1
+	name = "MISSION ACCOMPLISHED! 1"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-1"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_1
+	name = "Mission Accomplished Poster 1"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_1
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_2
+	name = "MISSION ACCOMPLISHED! 2"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-2"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_2
+	name = "Mission Accomplished Poster 2"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_2
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_3
+	name = "MISSION ACCOMPLISHED! 3"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-3"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_3
+	name = "Mission Accomplished Poster 3"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_3
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_4
+	name = "MISSION ACCOMPLISHED! 4"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-4"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_4
+	name = "Mission Accomplished Poster 4"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_4
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_5
+	name = "MISSION ACCOMPLISHED! 5"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-5"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_5
+	name = "Mission Accomplished Poster 5"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_5
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_6
+	name = "MISSION ACCOMPLISHED! 6"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-6"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_6
+	name = "Mission Accomplished Poster 6"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_6
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_7
+	name = "MISSION ACCOMPLISHED! 7"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-7"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_7
+	name = "Mission Accomplished Poster 7"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
+	icon_state = "rolled_poster"
 
 
 #undef PLACE_SPEED

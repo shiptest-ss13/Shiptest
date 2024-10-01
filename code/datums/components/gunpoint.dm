@@ -40,7 +40,7 @@
 		if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
 			shooter.client.give_award(/datum/award/achievement/misc/rocket_holdup, shooter)
 
-	target.do_alert_animation(target)
+	target.do_alert_animation()
 	target.playsound_local(target.loc, 'sound/machines/chime.ogg', 50, TRUE)
 	SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gunpoint", /datum/mood_event/gunpoint)
 
@@ -126,10 +126,7 @@
 	if(weapon.chambered && weapon.chambered.BB)
 		weapon.chambered.BB.damage *= damage_mult
 
-	if(weapon.check_botched(shooter))
-		return
-
-	weapon.process_fire(target, shooter)
+	weapon.pre_fire(target, shooter)
 	qdel(src)
 
 /datum/component/gunpoint/proc/cancel()

@@ -33,7 +33,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcrab = 2, /obj/item/stack/sheet/bone = 2)
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
-	crusher_loot = /obj/item/crusher_trophy/lobster_claw
+	//mob_trophy = /obj/item/mob_trophy/lobster_claw
 
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach
 	name = "tropical lobstrosity"
@@ -42,15 +42,3 @@
 	icon_living = "lobstrosity"
 	icon_dead = "lobstrosity_dead"
 
-/obj/item/crusher_trophy/lobster_claw
-	name = "lobster claw"
-	icon_state = "lobster_claw"
-	desc = "A lobster claw."
-	denied_type = /obj/item/crusher_trophy/lobster_claw
-	bonus_value = 1
-
-/obj/item/crusher_trophy/lobster_claw/effect_desc()
-	return "mark detonation to briefly stagger the target for [bonus_value] seconds"
-
-/obj/item/crusher_trophy/lobster_claw/on_mark_detonation(mob/living/target, mob/living/user)
-	target.apply_status_effect(/datum/status_effect/stagger, bonus_value SECONDS)

@@ -99,7 +99,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
-
+//guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
@@ -121,9 +121,15 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
-	new mask_type(src)
+	if(!isnull(mask_type))
+		new mask_type(src)
+
+	if(!isnull(radio_type))
+		new radio_type(src)
+
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -131,10 +137,6 @@
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
-
-/obj/item/storage/box/survival/radio/PopulateContents()
-	..() // we want the survival stuff too.
-	new /obj/item/radio/off(src)
 
 // Mining survival box
 /obj/item/storage/box/survival/mining
@@ -148,10 +150,6 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
-/obj/item/storage/box/survival/engineer/radio/PopulateContents()
-	..() // we want the regular items too.
-	new /obj/item/radio/off(src)
-
 // Syndie survival box
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -162,10 +160,6 @@
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
-/obj/item/storage/box/survival/security/radio/PopulateContents()
-	..() // we want the regular stuff too
-	new /obj/item/radio/off(src)
-
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
@@ -173,15 +167,13 @@
 /obj/item/storage/box/survival/clip
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
-/obj/item/storage/box/survival/clip/PopulateContents()
-	. = ..()
-	new /obj/item/radio/off(src)
-
 /obj/item/storage/box/survival/clip/balaclava
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
-
-/obj/item/storage/box/survival/clip/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/frontier
+	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
+	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -463,7 +455,7 @@
 
 /obj/item/storage/box/condimentbottles/PopulateContents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/condiment(src)
+		new /obj/item/reagent_containers/condiment(src)
 
 /obj/item/storage/box/cups
 	name = "box of paper cups"
@@ -619,35 +611,6 @@
 	new /obj/item/cartridge/detective(src)
 	for(var/i in 1 to 6)
 		new /obj/item/cartridge/security(src)
-
-/obj/item/storage/box/firingpins
-	name = "box of standard firing pins"
-	desc = "A box full of standard firing pins, to allow newly-developed firearms to operate."
-	icon_state = "secbox"
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin(src)
-
-/obj/item/storage/box/firingpins/paywall
-	name = "box of paywall firing pins"
-	desc = "A box full of paywall firing pins, to allow newly-developed firearms to operate behind a custom-set paywall."
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/paywall/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin/paywall(src)
-
-/obj/item/storage/box/lasertagpins
-	name = "box of laser tag firing pins"
-	desc = "A box full of laser tag firing pins, to allow newly-developed firearms to require wearing brightly coloured plastic armor before being able to be used."
-	illustration = "firingpin"
-
-/obj/item/storage/box/lasertagpins/PopulateContents()
-	for(var/i in 1 to 3)
-		new /obj/item/firing_pin/tag/red(src)
-		new /obj/item/firing_pin/tag/blue(src)
 
 /obj/item/storage/box/handcuffs
 	name = "box of spare handcuffs"
@@ -892,6 +855,16 @@
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
+
+/obj/item/storage/box/techshot
+	name = "box of unloaded shotgun tech shells"
+	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
+	icon_state = "techshot_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
@@ -1413,10 +1386,10 @@
 		/obj/item/stack/sheet/mineral/uranium=20,\
 		/obj/item/stack/sheet/mineral/diamond=50,\
 		/obj/item/stack/sheet/bluespace_crystal=50,\
-		/obj/item/stack/sheet/mineral/bananium=50,\
+		/obj/item/stack/sheet/mineral/hidden/hellstone=50,\
 		/obj/item/stack/sheet/mineral/wood=50,\
 		/obj/item/stack/sheet/plastic/fifty=1,\
-		/obj/item/stack/sheet/runed_metal/fifty=1
+		/obj/item/stack/sheet/mineral/hidden/hellstone/fifty=1
 		)
 	generate_items_inside(items_inside,src)
 
@@ -1563,53 +1536,3 @@
 		)
 	generate_items_inside(items_inside,src)
 
-/obj/item/storage/box/coffeepack
-	icon_state = "arabica_beans"
-	name = "arabica beans"
-	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Donk! Co."
-	illustration = null
-	icon = 'icons/obj/food/containers.dmi'
-	var/beantype = /obj/item/reagent_containers/food/snacks/grown/coffee
-
-/obj/item/storage/box/cofeepack/Initialize(mapload)
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/grown/coffee))
-
-/obj/item/storage/box/coffeepack/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/reagent_containers/food/snacks/grown/coffee = 5,
-		/obj/item/reagent_containers/food/snacks/grown/coffee/robusta = 5)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/coffeepack/robusta
-	icon_state = "robusta_beans"
-	name = "robusta beans"
-	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Donk! Co."
-	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
-
-
-/*
- * Coffee condiments display -- someone can make this fancy eventually, i cant fucking figure it out for the life of me -- it exists in TG
- */
-
-/obj/item/storage/box/coffee_condi_display
-	name = "coffee condiments display"
-	desc = "A neat small box, holding all your favorite coffee condiments."
-
-/obj/item/storage/box/coffee_condi_display/Initialize(mapload)
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 14
-	STR.set_holdable(list(
-		/obj/item/reagent_containers/food/condiment/pack/sugar,
-		/obj/item/reagent_containers/food/condiment/pack/creamer,
-		/obj/item/reagent_containers/food/condiment/pack/astrotame,
-	))
-
-/obj/item/storage/box/coffee_condi_display/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/food/condiment/pack/sugar(src)
-		new /obj/item/reagent_containers/food/condiment/pack/creamer(src)
-		new /obj/item/reagent_containers/food/condiment/pack/astrotame(src)

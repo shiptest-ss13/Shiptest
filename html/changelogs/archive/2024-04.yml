@@ -1,0 +1,146 @@
+2024-04-01:
+  phoaly, coleminerman, MeeMofCourse, Retlaw34:
+  - rscadd: Added the Crying Sun-class
+  - rscadd: Added PGF comms
+2024-04-02:
+  goober3:
+  - tweak: Blood Cult content has been removed from all maps.
+  - rscdel: Jungle_demon.dmm, jungle_witch.dmm, lavaland_surface_cultaltar.dmm, lavaland_surface_fuckedupandevilclub.dmm,
+      clericden.dmm, and rockplanet_cult.dmm have been removed.
+  - tweak: Onehalf.dmm, rockplanet_crash_cult.dmm & icemoon_underground_abandoned_village.dmm
+      have been reworked slightly, to feature no more magic.
+2024-04-08:
+  Apogee-dev:
+  - tweak: Remapped the Shetland
+  - balance: Removed RnD and ORM from Shetland
+  phoaly:
+  - tweak: tweaks supplies and kills the wall laptop on the Ranger
+2024-04-09:
+  Imaginos16, spookywastaken:
+  - rscadd: Resprites a ton of gun magazines
+  - bugfix: Changes how magainzes with only a empty and loaded state are
+2024-04-12:
+  Gristlebee:
+  - rscadd: Punching bags can be built with 5 cloth.
+  - rscadd: Bench press and chest press can be built with 5 metal.
+  - rscadd: Exercise equipment can be deconstructed.
+  Martinpachu:
+  - bugfix: Fixes MAA on the Colossus not being able to access the bridge.
+  Sadhorizon:
+  - tweak: Random blood packs now can roll Elzu and IPC blood.
+  SomeguyManperson:
+  - bugfix: anesthetic can no longer semi permanently knock people out
+  Yata9ar4su:
+  - rscadd: Fullscreen on F11
+  Zxaber:
+  - tweak: You can now use drop / use inhand hotkey to retract and deploy arm implants
+  meemofcourse:
+  - rscadd: Long-range bluespace technologies in fax machines now allow the faxing
+      of photos. I am not responsible for any consequences that might result from
+      sending your faction's command personnel a photo of your character's ass.
+  phoaly:
+  - rscdel: Removed some old ships
+  - tweak: Aspawned the Lagoon and Junker
+  sapphicoverload, PestoVerde322, PacifistDalek:
+  - rscadd: turbines now provide thrust for ships
+  - tweak: turbines respect conservation of energy instead of moving gas around for
+      free
+  - tweak: turbine control console now shows the internal pressure of the turbine
+  - code_imp: refactored how gas flows through the turbine
+  - bugfix: fixed turbines making free energy from nowhere at low RPM
+  - bugfix: fixed turbines forcing air into the output turf when it's blocked
+  - bugfix: fixed turbines not updating air at the input and output turfs
+  - bugfix: fixed turbines disconnecting when docking and undocking
+  - imageadd: new turbine sprites
+  thgvr:
+  - rscadd: Suicide & Execution with a damaging firearm is now more deadly and gruesome.
+2024-04-13:
+  FalloutFalcon:
+  - tweak: all radios start off
+  - tweak: all survival boxs start with a radio
+  Sun-Soaked:
+  - rscadd: Redesigns landmines as an item that can be picked up, disarmed, deployed.
+      Some logic courtesy of /tg/.
+  - rscadd: Adds a proximity explosive variant of landmines.
+  - bugfix: shrapnel embedding once again respects targeted limb and no longer runtimes
+      on hitting a wall or destroying an object.
+  - bugfix: storage can no longer pick up anchored objects, causing them to get stuck
+      inside
+  - balance: Nerfs the ability of heavy explosions to immediately breach to space
+  - soundadd: adds two mine detonation noises
+  - code_imp: moves weapon manufacturer defines to a DEFINE file
+  generalthrax:
+  - rscadd: Etherbor SG-8 Beam Pistol to cargo for 1000 credits
+  - rscadd: Etherbor BG-12 Beam Rifle to cargo for 3000 credits
+  - rscadd: Etherbor civilian weapon cells for 600 credits, slightly higher capacity
+      than the generic cells
+2024-04-17:
+  Gristlebee:
+  - tweak: Granularizes Outpost Spacesuits and Armor
+  - balance: Reduces the cost of specialized space suits
+  SomeguyManperson:
+  - tweak: ships no longer have intrinsic gravity
+  - rscadd: new gravity generator machine for ships
+  - tweak: planetary gravity is now stored level-wide, a ship landing at a planet
+      will be effected by the planet's gravity
+  meemofcourse:
+  - tweak: Identification Cards are now Access Cards. The only real difference is
+      that your name only shows up on a double examine.
+  - refactor: Anonymous mechanics. Characters no longer instantly recognize each other,
+      and need to properly memorize each other in order. You can recognize an unmasked
+      person by ctrl-shift-clicking them.
+2024-04-18:
+  goober3:
+  - bugfix: Wall lockers should be facing the right way again.
+2024-04-19:
+  FalloutFalcon:
+  - bugfix: epty list
+2024-04-20:
+  Apogee-dev:
+  - balance: removed armor value from Solgov hats
+  - balance: Removed armor from berets, peaked caps, and soft caps
+  FalloutFalcon:
+  - spellcheck: renames some species stuff
+  Gristlebee:
+  - bugfix: The laser gun can be bought at the outpost again.
+  Hardly:
+  - tweak: Kissing volume and range has been reduced. Kissing cannot be heard beyond
+      5 ranges or behind walls.
+  PositiveEntropy:
+  - imageadd: The Pointman Hardsuit that Inteq uses has been cleaned up!
+  Sadhorizon:
+  - soundadd: Sarathi firespit now has a unique sound.
+  SomeguyManperson:
+  - rscdel: tesla coils and rad collectors can no longer print monopoly money
+  Spookypineapple, Imaginos, Thgvr:
+  - rscadd: New sofa and comfy chair variants, both are craftable with metal
+  - imageadd: Sofas, Comfy chairs, and some atmos equipment have a new coat of paint
+  - imageadd: Janitorial equipment has a new coat of paint
+  Sun-Soaked:
+  - bugfix: planetary static anomalies no longer drop a broken spawner.
+  - code_imp: mob spawners now store a weakref on their spawned object
+  cuddleandtea:
+  - admin: faster access to advanced build mode
+  - admin: new relocate subtype for build mode
+  generalthrax:
+  - bugfix: Scarborough + gun typos fixed in cargo
+  - rscadd: Kepori can now *click and *whistle, complete with sounds.
+  - rscadd: Kepori can now *woop, to have a sound later.
+  - rscadd: Vox can now *click and *thump, with sounds as well.
+  jlsnow301, sun-soaked:
+  - rscadd: do_afters and do_mob actions now show nearby players a spinning cog while
+      in progress.
+  - bugfix: the progressbar.dmm file is no longer misspelled "progess"bar
+2024-04-21:
+  FalloutFalcon:
+  - rscdel: Removed firing pins
+  - rscdel: Removed clumsy checks on guns
+  cuddleandtea:
+  - admin: adds color type to variables
+2024-04-25:
+  Gristlebee:
+  - bugfix: Model H and Prototype Gauss Rifle mags are no longer invisible
+2024-04-27:
+  Sadhorizon:
+  - tweak: Replaced standard syndicate outfits with NGR outfits on the Hyena.
+  - rscadd: Added NGR-specific CE and Assistant outfits.

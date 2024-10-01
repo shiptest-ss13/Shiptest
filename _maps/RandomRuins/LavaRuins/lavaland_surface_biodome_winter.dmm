@@ -3,381 +3,2617 @@
 /turf/template_noop,
 /area/template_noop)
 "ac" = (
-/obj/item/stack/medical/ointment,
-/obj/structure/table,
-/obj/item/stack/medical/bruise_pack,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
+/obj/structure/flora/tree/dead,
+/obj/machinery/light/directional/west,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "ad" = (
-/obj/structure/table,
-/obj/item/stack/medical/gauze,
-/obj/item/stack/medical/gauze,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
+/obj/structure/rack,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
+/obj/item/paper/pamphlet/biodomelore,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/entrance)
 "ae" = (
-/obj/machinery/power/smes,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"af" = (
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"ag" = (
-/obj/structure/reagent_dispensers/beerkeg,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"ah" = (
-/obj/item/reagent_containers/food/drinks/mug,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"ai" = (
-/obj/machinery/shower{
-	pixel_y = 12
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/snow_biodome)
-"aj" = (
-/obj/structure/sink{
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/snow_biodome)
-"ak" = (
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"al" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"am" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"an" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/snow_biodome)
-"ao" = (
-/turf/open/floor/plating/ice,
-/area/ruin/powered/snow_biodome)
-"ap" = (
 /obj/structure/flora/rock/icy,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aq" = (
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/snow_biodome)
-"ar" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"as" = (
-/obj/structure/fans,
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/snow_biodome)
-"at" = (
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"au" = (
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"av" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aw" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"ax" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"ay" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/trash/semki,
-/obj/item/trash/candy,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"az" = (
-/obj/structure/flora/tree/pine,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aA" = (
-/obj/structure/chair/comfy/brown{
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"af" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ag" = (
+/obj/machinery/door/airlock/solgov/glass{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aB" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aC" = (
-/obj/structure/flora/tree/dead,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aD" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aE" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/snow_biodome)
-"aF" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/mug/coco,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aG" = (
-/obj/structure/chair/comfy/brown{
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ah" = (
+/obj/structure/railing/corner/wood{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ai" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"aj" = (
+/obj/structure/bookcase/random,
 /turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aH" = (
-/mob/living/simple_animal/hostile/skeleton/eskimo,
+/area/ruin/unpowered/winter_biodome/cabin)
+"ak" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"al" = (
+/obj/structure/railing/wood,
+/turf/open/floor/plating/ice,
+/area/ruin/unpowered/winter_biodome)
+"am" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"an" = (
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aI" = (
-/obj/structure/flora/bush,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aJ" = (
-/obj/vehicle/ridden/atv,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aL" = (
-/obj/structure/displaycase/captain,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aM" = (
-/turf/open/floor/carpet,
-/area/ruin/powered/snow_biodome)
-"aN" = (
-/obj/structure/bed/dogbed,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"aO" = (
-/obj/machinery/door/airlock/glass_large,
-/obj/structure/fans/tiny,
+/area/ruin/unpowered/winter_biodome/cabin)
+"ao" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"aP" = (
-/obj/structure/fans/tiny,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"aQ" = (
-/obj/structure/flora/grass/both,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"aR" = (
-/obj/structure/flora/tree/pine/xmas,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"bl" = (
+/area/ruin/unpowered/winter_biodome/engineering)
+"ap" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"aq" = (
+/obj/structure/railing/corner/wood,
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
+	},
+/area/ruin/unpowered/winter_biodome)
+"ar" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"as" = (
+/obj/structure/railing/wood,
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
+	},
+/area/ruin/unpowered/winter_biodome)
+"at" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"au" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"av" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "o2=22;n2=82;TEMP=180";
 	name = "bridge"
 	},
-/area/ruin/powered/snow_biodome)
-"bv" = (
-/obj/machinery/light/directional/north,
+/area/ruin/unpowered/winter_biodome)
+"aw" = (
 /turf/open/floor/plating/ice,
-/area/ruin/powered/snow_biodome)
-"bw" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
+/area/ruin/unpowered/winter_biodome)
+"ax" = (
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ay" = (
+/obj/machinery/space_heater,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"bx" = (
-/obj/machinery/light/directional/east,
+/area/ruin/unpowered/winter_biodome/cabin)
+"az" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aA" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"by" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"bz" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
-"bB" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"bD" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"bM" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating/asteroid/snow,
-/area/ruin/powered/snow_biodome)
-"bN" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating/ice,
-/area/ruin/powered/snow_biodome)
-"dS" = (
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"eb" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"eg" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"gh" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
+/area/ruin/unpowered/winter_biodome/engineering)
+"aB" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/item/paper_bin/bundlenatural{
+	pixel_y = 7
 	},
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"gz" = (
-/obj/structure/chair/stool,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"hA" = (
-/obj/machinery/light/built/directional/north,
-/turf/open/floor/pod/dark{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aC" = (
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/winter_biodome/engineering)
+"aD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/sign/solgov_seal{
+	pixel_y = 0;
+	pixel_x = 28
 	},
-/area/ruin/powered/snow_biodome)
-"qt" = (
-/obj/machinery/door/airlock/silver{
-	dir = 8
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
-/obj/structure/fans/tiny,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"tl" = (
 /turf/open/floor/pod/light,
-/area/ruin/powered/snow_biodome)
-"xU" = (
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"zT" = (
-/obj/machinery/door/airlock/silver{
+/area/ruin/unpowered/winter_biodome/entrance)
+"aE" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"aF" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"aG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"aH" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/item/clipboard,
+/obj/item/pen/solgov,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aI" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"aL" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"aM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/wood,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"aN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"aP" = (
+/obj/structure/flora/grass/green,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"aQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"aR" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"bb" = (
+/obj/structure/chair/sofa/blue/directional/west,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"bl" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/winter_biodome)
+"bn" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"bs" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 4
+	},
+/obj/structure/filingcabinet/double,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"bv" = (
+/obj/structure/railing/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"bw" = (
+/obj/structure/flora/bush,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"bx" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"by" = (
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"bz" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
 /turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"AM" = (
-/obj/structure/table,
-/obj/item/pen,
-/obj/item/paper,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Dd" = (
-/obj/structure/rack,
-/obj/item/clothing/suit/hooded/wintercoat/science,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/gloves/fingerless,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Ef" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Ez" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/glass_large,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"HP" = (
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"HR" = (
-/obj/structure/closet/secure_closet/freezer/fridge/open,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"JZ" = (
-/obj/structure/table,
-/obj/machinery/microwave,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"KS" = (
-/obj/item/chainsaw,
-/obj/structure/closet,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Mp" = (
-/obj/item/clothing/mask/balaclava,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Oj" = (
-/obj/structure/table,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"PD" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/structure/fans/tiny,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"PK" = (
-/obj/structure/table,
+/area/ruin/unpowered/winter_biodome/engineering)
+"bA" = (
 /obj/item/pen,
 /obj/item/paper_bin,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"QI" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"QK" = (
-/obj/structure/table,
-/obj/item/storage/fancy/cigarettes/cigpack_carp,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"QN" = (
-/obj/effect/spawner/structure/window,
-/turf/open/floor/plating,
-/area/ruin/powered/snow_biodome)
-"Sj" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Ub" = (
-/obj/structure/filingcabinet,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"UH" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/item/pen/solgov,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered/snow_biodome)
-"UM" = (
-/obj/machinery/computer/monitor/secret{
+/area/ruin/unpowered/winter_biodome/engineering)
+"bB" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/desk_flag/solgov{
+	pixel_x = -6
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"bD" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"bM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"Wg" = (
-/turf/closed/wall/r_wall,
-/area/ruin/powered/snow_biodome)
-"Zq" = (
-/obj/machinery/light/small/directional/south,
+/area/ruin/unpowered/winter_biodome/entrance)
+"bN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"bY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"cb" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"cj" = (
+/obj/structure/chair/pew/left{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"cG" = (
+/obj/effect/turf_decal/solgov/wood/top,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"cM" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/cabin)
+"cN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered/snow_biodome)
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"cT" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"cU" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/west,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"cV" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"dd" = (
+/obj/machinery/light/directional/south,
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"dl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"dn" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/closet/emcloset,
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/entrance)
+"dq" = (
+/obj/machinery/door/airlock/solgov/glass,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"dC" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"dE" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 4
+	},
+/obj/structure/fluff/hedge/opaque,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"dJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"dM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"dO" = (
+/obj/structure/railing/wood,
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"dS" = (
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"dU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
+	},
+/area/ruin/unpowered/winter_biodome)
+"eb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"eg" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ek" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gun/ballistic/automatic/pistol/solgov,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"er" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/emcloset,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ex" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"eX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ff" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"fs" = (
+/obj/structure/sign/solgov_seal{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"fE" = (
+/obj/structure/flora/firebush,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"fV" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"gh" = (
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"gt" = (
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"gx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"gz" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"gE" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"gP" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_one_access = list(1,48)
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/engineering)
+"gT" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"gV" = (
+/obj/machinery/door/airlock/wood,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"gZ" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/solgov/wood,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"hw" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"hA" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"hD" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/solgov{
+	outfit = /datum/outfit/job/solgov/assistant
+	},
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"hE" = (
+/obj/machinery/door/airlock/solgov{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/entrance)
+"hI" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"hJ" = (
+/obj/machinery/door/airlock/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/cabin)
+"iv" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"iA" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"iB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"iP" = (
+/obj/machinery/door/airlock/solgov/glass,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"jB" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"jG" = (
+/obj/structure/sign/solgov_seal{
+	pixel_y = 32
+	},
+/obj/structure/flora/ash,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"jH" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"jQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"kb" = (
+/obj/structure/table/wood,
+/obj/item/food/breadslice/plain,
+/obj/item/reagent_containers/food/snacks/grown/cabbage,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"kj" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_one_access = list(1,48)
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"ks" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"kB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/sign/solgov_seal{
+	pixel_y = 0;
+	pixel_x = 28
+	},
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"kQ" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"kT" = (
+/obj/structure/chair/comfy/orange/directional/west,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"kX" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"lq" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"lF" = (
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"lT" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"lX" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"lZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ma" = (
+/obj/structure/table/wood,
+/obj/item/paper/crumpled/bloody/winterbiodome,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"mb" = (
+/obj/machinery/door/airlock/solgov,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"mq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/engineering)
+"mD" = (
+/obj/effect/turf_decal/solgov/wood/center,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"mX" = (
+/obj/structure/flora/tree/dead_pine,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"nf" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"nj" = (
+/obj/structure/displaycase{
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/powered/gauss/claris;
+	req_access = list(103)
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"nv" = (
+/obj/effect/turf_decal/solgov/wood/bottom_center,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"nZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"on" = (
+/obj/structure/flora/tree/dead_pine,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"ou" = (
+/obj/machinery/light/directional/east,
+/obj/structure/flora/grass/green,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"oK" = (
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/emcloset,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"oR" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/food/bread/plain,
+/obj/item/food/bread/plain,
+/obj/item/reagent_containers/food/snacks/grown/cabbage,
+/obj/item/reagent_containers/food/snacks/grown/cabbage,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ph" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/statue/snow/snowlegion,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"pr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"pu" = (
+/obj/structure/table/wood,
+/obj/item/clipboard,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"pD" = (
+/obj/structure/flora/rock/icy,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"pM" = (
+/obj/structure/chair/comfy/orange/old/alt/directional/north,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"pQ" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"pW" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"qj" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/structure/table/wood,
+/obj/item/melee/knife/kitchen,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"qr" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"qt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/engineering)
+"qw" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"qK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"qZ" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ri" = (
+/obj/structure/flora/grass/both,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"rk" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"rm" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/firecloset/wall/directional/north,
+/obj/structure/fluff/paper/stack,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"rt" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"rw" = (
+/obj/structure/railing/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"rC" = (
+/obj/effect/turf_decal/solgov/wood/bottom_left,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"rD" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"rJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
+	},
+/area/ruin/unpowered/winter_biodome)
+"rY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"rZ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/blue,
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"sE" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"sV" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"sX" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"tg" = (
+/obj/machinery/light/directional/north,
+/obj/structure/flora/grass/brown,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"tl" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"ts" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"tC" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"tO" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"up" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"uH" = (
+/obj/machinery/door/airlock/solgov,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"uI" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"uR" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood,
+/obj/item/paper/pamphlet/biodomelore,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"uX" = (
+/obj/structure/flora/tree/pine,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"uY" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/structure/closet/crate/bin,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"vk" = (
+/obj/structure/table/wood,
+/obj/item/spacecash/bundle/smallrand,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"vo" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_one_access = list(1,48)
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/engineering)
+"vr" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"vQ" = (
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"wt" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"wv" = (
+/obj/structure/flora/ausbushes/genericbush/hell,
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"wC" = (
+/obj/structure/sauna_oven,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"wO" = (
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"xp" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/fluff/paper/stack{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"xv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"xK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"xT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"xU" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"yb" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"yf" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/item/papercutter{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"yg" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"yn" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"yY" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/entrance)
+"zf" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"zg" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"zm" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"zG" = (
+/obj/structure/table/wood,
+/obj/item/clipboard,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"zJ" = (
+/obj/structure/flora/firebush,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"zT" = (
+/obj/structure/flora/grass/brown,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Ac" = (
+/obj/structure/flora/grass/both,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Aq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Ar" = (
+/obj/structure/flora/bush,
+/obj/structure/railing/corner/wood,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"AB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"AM" = (
+/obj/structure/flora/ausbushes/fernybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"AU" = (
+/obj/structure/table/wood,
+/obj/item/desk_flag/solgov,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Bk" = (
+/obj/structure/chair/office,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Bq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Bw" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"BA" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/winter_biodome/entrance)
+"BK" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/item/paper/pamphlet/biodomelore,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"BS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"BU" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
+	},
+/area/ruin/unpowered/winter_biodome)
+"BV" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Cj" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"CF" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"CI" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"CJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"CP" = (
+/obj/structure/flora/ash/space,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"Dd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/winter_biodome/engineering)
+"De" = (
+/obj/structure/flora/bush,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Dt" = (
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Dw" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/entrance)
+"DO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"DX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Ef" = (
+/obj/structure/rack,
+/obj/item/towel,
+/obj/item/towel,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"Eh" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin/bundlenatural{
+	pixel_y = 7
+	},
+/obj/item/pen/solgov,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Ez" = (
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"EF" = (
+/obj/structure/railing/wood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"EG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"EN" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Fw" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"FD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"FL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/sign/solgov_seal{
+	pixel_y = 0;
+	pixel_x = 28
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"FY" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Gf" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Gn" = (
+/obj/item/toy/plush/moth/snow{
+	pixel_y = 3
+	},
+/obj/structure/table/wood,
+/obj/item/candle{
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/obj/item/candle{
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Go" = (
+/obj/structure/flora/tree/pine,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Gq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/sign/solgov_flag{
+	pixel_y = 29
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"Gx" = (
+/obj/structure/chair/pew/right{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"GF" = (
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"GK" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/ice,
+/area/ruin/unpowered/winter_biodome)
+"GS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Hd" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/structure/fluff/paper/stack{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Hh" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Hi" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/unpowered/winter_biodome)
+"Hj" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Hq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"HG" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 4
+	},
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"HP" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"HR" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"ID" = (
+/obj/structure/flora/tree/pine/xmas,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"IY" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Jl" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Jm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"JH" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/structure/table/wood,
+/obj/item/cutting_board,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"JK" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"JZ" = (
+/obj/structure/flora/tree/dead/tall/grey,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"Ke" = (
+/obj/structure/flora/tree/dead,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Kj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Kn" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Kq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"KC" = (
+/obj/item/coin/gold,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"KI" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"KS" = (
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"Lf" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Lt" = (
+/obj/effect/turf_decal/solgov/wood/bottom_right,
+/obj/structure/chair/office,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"LM" = (
+/obj/machinery/door/airlock/solgov/glass{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Mf" = (
+/obj/structure/railing/corner/wood,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Ml" = (
+/obj/effect/turf_decal/solgov/wood/top_right,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Mn" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Mp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/solgov/glass{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/engineering)
+"MB" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/structure/closet/emcloset/wall/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"MJ" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ML" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/entrance)
+"MU" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Nc" = (
+/obj/effect/turf_decal/solgov/wood/center_right,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Nk" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Nl" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/chair/sofa/blue/right/directional/west,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Np" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"Nr" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"NF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/west,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Oj" = (
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"Op" = (
+/obj/structure/chair/comfy/orange/old/alt/directional/south,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Os" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/space_heater,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Oz" = (
+/obj/structure/sign/solgov_flag{
+	pixel_y = 29
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"OB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"OL" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"OR" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"OS" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"OU" = (
+/obj/structure/chair/sofa/blue/left/directional/west,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Pa" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 1
+	},
+/obj/structure/sink/kitchen{
+	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Po" = (
+/obj/machinery/computer/monitor/solgov{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Pr" = (
+/obj/machinery/light/small/broken/directional/south,
+/obj/structure/closet/firecloset,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Py" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"PD" = (
+/obj/structure/flora/ash,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"PH" = (
+/obj/structure/flora/tree/dead,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"PK" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/winter_biodome/engineering)
+"PU" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Qa" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Qc" = (
+/obj/structure/flora/grass/brown,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Qh" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Qk" = (
+/obj/machinery/light/directional/west,
+/obj/structure/flora/grass/green,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"QI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"QJ" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/north,
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"QK" = (
+/turf/closed/mineral/random/volcanic,
+/area/overmap_encounter/planetoid/lava/explored)
+"QN" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"QO" = (
+/obj/structure/curtain/cloth,
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"QQ" = (
+/obj/structure/sink/kitchen{
+	dir = 4
+	},
+/obj/item/reagent_containers/glass/bucket/wooden{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"Ra" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/big_legion,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	name = "bridge"
+	},
+/area/ruin/unpowered/winter_biodome)
+"Rh" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Rs" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half,
+/obj/structure/fluff/hedge/opaque,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Rt" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"RE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"RK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"RN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/engineering)
+"RR" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Sj" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"Ss" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"ST" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"SY" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Tf" = (
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"Tj" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Tq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"TH" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"TQ" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"Ub" = (
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"Uo" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Up" = (
+/obj/machinery/airalarm/directional/east,
+/obj/structure/closet/firecloset,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Uv" = (
+/obj/effect/turf_decal/solgov/wood/center_left,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Uz" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"UH" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"UJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/winter_biodome/engineering)
+"UM" = (
+/obj/machinery/door/airlock/solgov{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/entrance)
+"UT" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"UW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Vg" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Vk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Vm" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"VG" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"VK" = (
+/obj/structure/railing/corner/wood,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
+	},
+/area/ruin/unpowered/winter_biodome)
+"VP" = (
+/obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
+/obj/machinery/light/directional/west,
+/obj/item/ammo_box/magazine/pistol556mm{
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"VY" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"Wc" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ruin/unpowered/winter_biodome/entrance)
+"Wg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Wh" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_one_access = list(1,48)
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/unpowered/winter_biodome/engineering)
+"WQ" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"Xq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Xu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"XO" = (
+/obj/machinery/light/directional/south,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_x = 10
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"XZ" = (
+/obj/machinery/door/window/northleft,
+/obj/structure/curtain,
+/obj/machinery/shower{
+	dir = 1;
+	layer = 3
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/sauna)
+"Yi" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/fluff/paper/stack{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"Yv" = (
+/turf/open/floor/carpet/blue,
+/area/ruin/unpowered/winter_biodome/cabin)
+"YH" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"Zc" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"Zo" = (
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"Zq" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/cabin)
+"Zw" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
+"ZA" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/turf/open/floor/plating,
+/area/ruin/unpowered/winter_biodome/engineering)
 
 (1,1,1) = {"
 aa
@@ -390,17 +2626,29 @@ aa
 aa
 aa
 aa
-Wg
-Wg
-Wg
-Wg
-PD
-Wg
-Wg
-Wg
-Wg
-Wg
-Wg
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -418,23 +2666,35 @@ aa
 aa
 aa
 aa
-Wg
-Wg
-Wg
-Wg
-Wg
-Dd
-gh
-HP
-tl
-gh
-HP
-Ub
-Wg
-Wg
-Wg
-Wg
-Wg
+aa
+aa
+aa
+aa
+aa
+aa
+wO
+wO
+wO
+wO
+hA
+by
+by
+by
+Nr
+by
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -448,29 +2708,41 @@ aa
 aa
 aa
 aa
-Wg
-Wg
-Wg
-ak
+aa
+aa
+aa
+aa
+wO
+wO
+wO
+wv
+wO
 by
-ak
-Wg
-Dd
-HP
-HP
-tl
-PK
-gz
-UM
-Wg
-ak
-ak
-ak
-Wg
-Wg
-Wg
-QI
-QI
+by
+by
+by
+by
+by
+JZ
+by
+by
+Cj
+by
+by
+by
+by
+by
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -479,826 +2751,1842 @@ aa
 aa
 aa
 aa
-Wg
-Wg
-ak
-aC
-ak
-ak
-ak
-Wg
-QN
-QN
-QN
-qt
-QN
-QN
-QN
-Wg
-ak
-ak
-ak
-ak
-ak
-Wg
-Wg
-QI
-QI
+aa
+wO
+wO
+wO
+hA
+wO
+wO
+wO
+wO
+hA
+wO
+by
+Nr
+by
+by
+by
+by
+by
+by
+by
+by
+by
+rt
+by
+by
+by
+by
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 "}
 (5,1,1) = {"
 aa
 aa
-Wg
-Wg
-ao
-ao
-ak
-aI
-ak
-ak
+wO
+wO
+wO
+qw
+wO
+wO
+fE
+wO
+qw
+wO
+wO
+aC
+aC
+aC
+aC
+aC
+aC
+gP
+aC
+aC
+aC
+aC
+aC
+aC
 by
-az
-ak
-aB
-ak
-ak
-ak
-aI
+sX
 by
-ak
-ak
-ak
-ak
-ak
-ak
-Wg
-Wg
-QI
-QI
+by
+by
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (6,1,1) = {"
 aa
+wO
+wO
+wO
+wO
+qw
+wO
+wO
+wO
+wO
+wO
+wO
+Ub
+aC
+bz
+Hj
+Kj
+aC
+oK
+qt
+Pr
+aC
+kQ
+lX
+Gf
+aC
+by
+by
+rt
+by
+by
+Tf
+AM
 aa
-Wg
-bv
-ao
-ao
-ao
-ao
-ak
-aI
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-aQ
-ak
-ak
-ak
-az
-ak
-ak
-Wg
-QI
-QI
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (7,1,1) = {"
 aa
-Wg
-Wg
-ap
-ak
-ao
-ao
-ao
-ao
-ak
-ak
-ak
-ak
-ak
-az
-ak
+wO
+wO
+hA
+wO
+wO
+wO
+qw
+wO
+wO
+QK
+Ub
+Ub
 aC
-ak
-ak
-aI
-aI
-ak
-ak
-ak
-ak
-bM
-Wg
-Wg
-QI
+dC
+UW
+dM
+aC
+VY
+qt
+qK
+aC
+OL
+rD
+uI
+aC
+by
+Nr
+Cj
+by
+by
+by
+Tf
+Tf
+Tf
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (8,1,1) = {"
 aa
-Wg
-ak
-ak
-ak
-ak
-ak
+qw
+wO
+wO
+mX
+hA
+wO
+QK
+QK
+QK
+QK
+Ub
+Ub
+aC
+BS
+rY
 ao
-ao
-ao
-ao
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ap
-aI
-ak
-aQ
-ak
-ak
-ak
-az
-ak
-Wg
-QI
-QI
+aC
+kB
+mq
+FL
+aC
+GS
+GF
+jB
+aC
+by
+by
+by
+by
+by
+by
+Tf
+Tf
+Tf
+Tf
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (9,1,1) = {"
 aa
-Wg
-Wg
-Wg
-ak
-az
-ak
-ak
-ao
-ao
-ao
-ao
-ao
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
+wO
+wO
+wO
+wO
+wO
+wO
+QK
+QK
+QK
+QK
+QK
+ZA
+UJ
+DO
+PK
+kj
+PK
+PK
+vo
+PK
+PK
+Wh
+PK
+HR
 aC
-ak
-ak
-ak
-ak
-ak
-Wg
-hA
-QI
+by
+by
+by
+JZ
+by
+Nr
+Tf
+Ez
+Tf
+Tf
+YH
+aa
+aa
+aa
+aa
+aa
 "}
 (10,1,1) = {"
-Wg
-Wg
-af
-Wg
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ao
-ao
-ao
-ao
-ak
-aI
-az
-ak
-ak
-ak
-ak
-ak
-aI
-ak
-ak
-ak
-Wg
-QI
-QI
+aa
+wO
+wO
+wO
+wv
+wO
+QK
+QK
+QK
+QK
+QK
+bl
+bl
+PK
+PK
+PK
+JK
+NF
+dl
+Qh
+qr
+Jl
+Hh
+PK
+PK
+PK
+bl
+bl
+by
+by
+by
+Tf
+Tf
+Tf
+Tf
+Tf
+Tf
+aa
+aa
+aa
+aa
+aa
 "}
 (11,1,1) = {"
-Wg
-ac
-af
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-bD
-ao
-ao
-ao
-ao
-ao
-ak
-ak
+aa
+wO
+qw
+wO
+QK
+QK
+QK
+QK
+QK
 bl
 bl
-ak
-aI
-ak
-ak
-ak
-Wg
-Wg
-Wg
-Wg
-QI
+bl
+zT
+ax
+ax
+PK
+IY
+IY
+fV
+aA
+bA
+Bk
+Po
+PK
+ax
+ax
+ax
+bl
+bl
+bl
+by
+Tf
+Tf
+zJ
+Tf
+Tf
+Tf
+Tf
+aa
+aa
+aa
+aa
 "}
 (12,1,1) = {"
-Wg
-ad
-af
-ar
-bw
-at
-aD
-at
-aL
-aq
-ak
-az
-ak
-ao
-ao
-ao
-ao
-ao
+aa
+aa
+wO
+QK
+QK
+QK
+QK
+QK
 bl
 bl
-ak
-ak
-ak
-az
-bM
-Wg
-Dd
-Dd
-Wg
-QI
+ax
+ac
+ax
+ax
+HP
+PK
+bD
+bD
+PK
+LM
+PK
+bD
+bD
+PK
+ax
+at
+ax
+Qk
+ax
+bl
+bl
+Tf
+YH
+Tf
+YH
+Tf
+Tf
+Tf
+aa
+aa
+aa
+aa
 "}
 (13,1,1) = {"
-Wg
-ae
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+bl
+aw
+aw
+ax
+Ar
+nZ
+Uo
+eg
 af
-aq
-au
-au
-aq
-at
-bz
-aq
-ak
-ak
-ak
-ao
-ao
-ao
-ao
-ao
+ax
+PK
+RN
+Dd
+ax
+bw
+eg
+ax
+ax
+af
+ax
+ax
+ax
 bl
 bl
-ao
-ak
-ak
-ak
-aI
-Wg
-Mp
-dS
-Wg
-QI
+Tf
+Tf
+Tf
+Tf
+Tf
+Tf
+Tf
+aa
+aa
+aa
 "}
 (14,1,1) = {"
-Wg
-af
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+aw
+aw
+aw
+aw
 al
 aq
-aq
-aq
-aE
-at
-at
-aq
-ak
-ak
-aC
-ak
-ao
-ak
-ao
-ao
+De
+af
+ax
+ax
+PK
+Mp
+PK
+ax
+ax
+ax
+yn
+ax
+ax
+ax
+HP
+ax
+ax
 bl
-bl
-ao
-ao
-aI
-ak
-ak
-Wg
-tl
-tl
-Wg
-QI
+AM
+Tf
+Tf
+on
+Tf
+Ez
+Tf
+aa
+aa
+aa
 "}
 (15,1,1) = {"
-Wg
-ae
-af
-aq
-av
-at
-at
-aH
-aM
-aO
-ap
-ak
-ak
-ak
-ak
-ak
-ak
-ao
+aa
+aa
+QK
+QK
+QK
+QK
 bl
 bl
-ao
-ao
-ak
-ak
-ak
-aO
-tl
-tl
-Ez
-QI
+tg
+ax
+aw
+aw
+al
+dO
+aw
+ax
+ax
+HP
+ax
+jQ
+Jm
+Ke
+Qc
+cT
+ax
+ax
+ax
+ax
+ax
+ax
+Uz
+bl
+bl
+Tf
+Tf
+Tf
+Tf
+Tf
+Tf
+aa
+aa
+aa
 "}
 (16,1,1) = {"
-Wg
-ag
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+ax
+ax
+ae
+al
+rw
+aw
+aw
+aw
+ax
+ax
+up
+ax
+ax
+ax
+pD
+bw
+ax
+yn
+af
+ax
+ax
+HP
+ax
+bl
+Tf
+lT
+Tf
+YH
+Tf
+Tf
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+ax
+HP
+ax
 ah
 as
 aw
-aA
-aA
-at
-aM
-aP
-ak
-ak
-aQ
-ak
-ak
-az
-ak
-ak
-bl
-bl
-ak
-ao
-ao
-ak
-ak
-aP
-tl
-tl
-aP
-QI
-"}
-(17,1,1) = {"
-Wg
-ah
-af
-aq
-ax
 aw
-aF
-at
-at
-aq
-ak
-aI
-ak
-ak
-ak
-ak
+aw
+aw
+aw
+xT
+EG
+EG
+EG
+Nk
 ak
 ak
 ak
 ak
-ak
-ao
-ao
-ao
-ak
-Wg
-tl
-tl
-Wg
-QI
+Bq
+ax
+ax
+ax
+bl
+fs
+Sj
+Sj
+Tf
+Tf
+zJ
+aa
+aa
+aa
 "}
 (18,1,1) = {"
-Wg
-Wg
-am
-aq
-av
+aa
+aa
+QK
+QK
+QK
+bl
+bl
 at
-aG
-at
-bz
-aq
-aR
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-aC
-ak
-ak
-ak
-ao
-ao
-ao
-Wg
-HP
-dS
-Wg
-QI
+ax
+ax
+ax
+ax
+aP
+CI
+ax
+ax
+aw
+aw
+aw
+aw
+ax
+bw
+Go
+CF
+nZ
+Uo
+PH
+ax
+aO
+ax
+zT
+ax
+bl
+Sj
+Zo
+Sj
+Sj
+Tf
+Tf
+Tf
+aa
+aa
 "}
 (19,1,1) = {"
-Wg
-ai
-UH
-aq
-av
-bx
-aH
-at
-aN
-aq
-ak
-ak
-ak
-az
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ao
-bN
-Wg
+aa
+aa
 QK
-AM
-Wg
-QI
+QK
+QK
+bl
+ax
+ax
+ax
+xU
+xU
+xU
+xU
+xU
+xU
+zT
+ax
+aw
+aw
+aw
+aw
+ax
+Mf
+dU
+VK
+eX
+ax
+ax
+aO
+ax
+BA
+BA
+BA
+BA
+Sj
+Zo
+Sj
+Tf
+Tf
+Tf
+aa
+aa
 "}
 (20,1,1) = {"
-Wg
-aj
-Zq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-bD
-ak
-ak
-ak
-ak
-aI
-ak
-az
-ak
-ak
-ak
-ak
-az
-ak
-ao
-Wg
-Wg
-Wg
-Wg
-QI
+aa
+QK
+QK
+QK
+QK
+bl
+ax
+HP
+ax
+cM
+vr
+ai
+UH
+dS
+xU
+xU
+zg
+at
+aw
+aw
+aw
+aw
+al
+xK
+bv
+ax
+ax
+ax
+uX
+Uz
+BA
+yY
+ad
+BA
+PD
+jH
+Sj
+Sj
+AM
+Tf
+aa
+aa
 "}
 (21,1,1) = {"
-Wg
-Wg
-an
-Wg
-ay
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-aC
-ak
-ak
-ak
-ak
-ap
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-Wg
-QI
-QI
+aa
+QK
+QK
+QK
+QK
+bl
+tg
+ax
+ax
+xU
+aj
+aj
+Zq
+OB
+dd
+xU
+ax
+ax
+aw
+aw
+aw
+aw
+al
+av
+bv
+aw
+ax
+ax
+aO
+ax
+BA
+vQ
+az
+BA
+Sj
+Sj
+PD
+Sj
+Sj
+Sj
+aa
+aa
 "}
 (22,1,1) = {"
 aa
-Wg
-Wg
-Wg
-ak
-ak
-aI
-ak
-ap
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-aI
-ak
-ak
-aQ
-ak
-ak
-ak
-Wg
-hA
-QI
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+af
+xU
+zG
+an
+an
+RK
+ay
+xU
+ax
+PH
+Lf
+aw
+aw
+aw
+al
+Ra
+EF
+aw
+aw
+bw
+aO
+af
+BA
+Os
+RR
+BA
+Dt
+Dt
+Dt
+Dt
+Zo
+Sj
+aa
+aa
 "}
 (23,1,1) = {"
 aa
-Wg
-ak
-ak
-az
-ak
-aJ
-ak
-ak
-ak
-ak
-ak
-ak
-az
-ak
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+ax
+xU
+kb
+vk
+ma
+RE
+Yv
+cM
+ax
+ax
+ax
+ax
+Hi
+HP
+al
+av
+bv
+aw
+aw
+ax
+aO
+ax
+dq
+DX
+Aq
 aQ
-ak
-aC
-ak
-aI
-ak
-az
-aI
-aI
-ak
-ak
-ak
-Wg
-QI
-QI
+Dt
+ML
+dn
+Dt
+Sj
+Sj
+aa
+aa
 "}
 (24,1,1) = {"
 aa
-Wg
-Wg
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+PH
+xU
+aj
+nj
+kT
+xv
+Np
+hJ
+aJ
+Ac
 ak
 ak
-aB
 ak
-ak
-aC
-ak
-ak
-ak
-ak
-aI
-ak
-ap
-ak
-ak
-ak
-ak
-ak
-ak
-aI
-aI
-ak
-bM
-Wg
-Wg
-QI
+bn
+FY
+rJ
+BU
+eX
+aw
+aw
+Ss
+Rh
+iP
+AB
+bY
+bN
+Dw
+aD
+EN
+Wc
+Sj
+Sj
+aa
 aa
 "}
 (25,1,1) = {"
 aa
-aa
+QK
+QK
+QK
+QK
+bl
+at
+ax
+ax
+xU
+xU
+Gq
+hD
+aG
+WQ
+xU
+Fw
+ax
+ax
+tO
 Wg
-ap
-ak
-ak
-ak
-ak
-ak
-aQ
-ak
-ak
-ak
+bx
+tC
+gx
+gx
+KI
+aw
+aw
+aw
+ae
+BA
+uR
 aI
-ak
-ak
-ak
-ak
-aQ
-ak
-ak
-aB
-ak
-ak
-aC
-ak
-Wg
-QI
-QI
+OS
+Dt
+Dt
+Dt
+Dt
+Sj
+Sj
+aa
 aa
 "}
 (26,1,1) = {"
 aa
-aa
-Wg
-Wg
-ak
-ak
-az
-ak
-ak
-ak
-bB
-ak
-ak
-ak
-ak
-ak
-az
-ak
-bB
-ak
-ak
-az
-ak
-ak
-ak
-Wg
-Wg
-QI
+QK
+QK
+QK
+QK
+bl
+zg
+ax
+ax
+xU
+rZ
+QO
+FD
+ap
+XO
+xU
+ax
+ax
+ax
+pr
+PH
+ax
+ax
+af
+ax
+ax
+ax
+aw
+aw
+aw
+BA
+aB
+ar
+Tj
+MB
+Dt
+cV
+Sj
+aR
+Sj
 aa
 aa
 "}
 (27,1,1) = {"
 aa
-aa
-aa
-Wg
-Wg
-ak
-ak
-ak
-ak
-ak
-Wg
-QN
-QN
-QN
-zT
-QN
-QN
-QN
-Wg
-ak
-ak
-ak
-ak
-ak
-Wg
-Wg
-QI
-QI
+QK
+QK
+QK
+QK
+bl
+ax
+af
+ax
+xU
+xU
+rZ
+xU
+Py
+wt
+xU
+ax
+ax
+HP
+pr
+ax
+ax
+ax
+Uz
+yg
+TQ
+yg
+yg
+aw
+GK
+BA
+aH
+yf
+aN
+bM
+Dt
+PD
+Sj
+Sj
+Sj
 aa
 aa
 "}
 (28,1,1) = {"
 aa
 aa
-aa
-aa
-Wg
-Wg
-Wg
-ak
-bB
-ak
-Wg
-eg
-HP
-tl
-tl
-tl
-Sj
+QK
+QK
+QK
+bl
+ax
+ax
+ax
+MU
 xU
-Wg
-ak
-bB
-ak
-Wg
-Wg
-Wg
-QI
-QI
-aa
+xU
+xU
+xU
+xU
+xU
+zg
+ax
+ax
+pr
+bw
+ax
+ax
+ax
+yg
+QN
+XZ
+yg
+aw
+aw
+BA
+BA
+BA
+UM
+hE
+Dt
+Dt
+Sj
+Sj
+Sj
 aa
 aa
 "}
 (29,1,1) = {"
 aa
 aa
+QK
+QK
+QK
+bl
+bl
+zT
+ax
+ax
+ax
+ax
+eg
+ax
+ax
+ax
+ax
+zT
+ax
+pr
+ax
+ax
+HP
+zT
+yg
+yg
+yg
+yg
+yg
+aw
+aw
+aw
+zf
+Vk
+rk
+QI
+lF
+jG
+jH
+Sj
 aa
 aa
+"}
+(30,1,1) = {"
 aa
 aa
-Wg
-Wg
-Wg
-Wg
-Wg
-HR
-eb
-gz
-Oj
-JZ
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+ax
+ax
+bw
+ax
+ae
+ax
+ID
+ax
+ax
+ax
+pr
+ax
+ax
+yg
+yg
+yg
+QQ
 KS
 Ef
+yg
+ax
+aw
+aw
+zf
+PU
+Xu
+am
+lF
+Sj
+Sj
+Sj
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+ax
+ax
+HP
+af
+ax
+ax
+ax
+ax
+ax
+ax
+ax
+HP
+dJ
+ri
 Wg
-Wg
-Wg
-Wg
-Wg
+aM
+tl
+gV
+ts
+KS
+wC
+yg
+ax
+HP
+aw
+zf
+nf
+TH
+Rs
+lF
+Zo
+Zo
+Sj
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+bl
+zg
+ax
+at
+ax
+ax
+PH
+ax
+ax
+af
+ax
+ax
+ph
+ae
+ax
+yg
+yg
+yg
+ex
+KC
+yg
+yg
+ax
+Uz
+zf
+zf
+xp
+UT
+Rt
+lF
+Sj
+Sj
+Sj
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+ae
+ax
+ax
+ax
+ax
+ax
+yn
+ax
+ax
+ax
+bw
+pr
+ax
+ax
+ax
+yn
+yg
+cj
+Gx
+yg
+ax
+ax
+ax
+zf
+dE
+kX
+aE
+lF
+lF
+Sj
+Sj
+Zo
+QK
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+bl
+bl
+ax
+ax
+HP
+zT
+ax
+ax
+VG
+ax
+ax
+ax
+pr
+ax
+ax
+ax
+VG
+yg
+yg
+yg
+yg
+ax
+PH
+zf
+zf
+QJ
+Xq
+Zw
+lF
+PD
+aR
+Sj
+Sj
+QK
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+bl
+bl
+ax
+VG
+ax
+ax
+HP
+zf
+Mn
+Mn
+Mn
+gE
+Mn
+Mn
+Mn
+zf
+ax
+ax
+ax
+ou
+ax
+zf
+zf
+rm
+ST
+hw
+SY
+lF
+Sj
+Sj
+Sj
+QK
+QK
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+bl
+bl
+bl
+ax
+ax
+ax
+zf
+gt
+gt
+Op
+pu
+pM
+gt
+gt
+zf
+Gn
+af
+ax
+zf
+zf
+zf
+bs
+BV
+pQ
+uY
+lF
+lF
+Sj
+Sj
+cV
+QK
+QK
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+zf
+zf
+zf
+zf
+zf
+Up
+eb
+Vg
+Kq
+yb
+eb
+er
+zf
+zf
+zf
+zf
+zf
+HG
+cU
+hI
+iv
+au
+lF
+lF
+Sj
+jH
+Sj
+Sj
+QK
+QK
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+lF
+oR
+VP
+qZ
+zf
+zf
+zf
+zf
+ag
+zf
+zf
+zf
+zf
+Oz
+gz
+MJ
+gT
+sE
+pW
+Yi
+Qa
+lF
+lF
+Sj
+Sj
+Zo
+Sj
+QK
+QK
+QK
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+lF
+JH
+ek
+aF
+CJ
+Tq
+lZ
+gZ
+Uv
+rC
+Vm
+cb
+uH
+Hq
+cN
+Kn
+ks
+aL
+ff
+lF
+lF
+lF
+Sj
+Zo
+Sj
+Sj
+Sj
+QK
+QK
+aa
+aa
+"}
+(40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+lF
+qj
+sV
+zm
+OR
+AU
+BK
+cG
+mD
+nv
+iB
+Bw
+mb
+QI
+lq
+Hd
+lF
+lF
+lF
+lF
+Sj
+Sj
+aR
+Sj
+Sj
+Sj
+QK
+QK
+QK
+aa
+aa
+"}
+(41,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+lF
+lF
+lF
+Pa
+Nl
+bb
+OU
+Ml
+Nc
+Lt
+Eh
+bB
+lF
+lF
+lF
+lF
+lF
+gh
+gh
+iA
+Sj
+jH
+Sj
+Sj
+PD
+QK
+QK
+QK
+QK
+aa
+aa
+"}
+(42,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+lF
+lF
+lF
+lF
+lF
+lF
+lF
+lF
+lF
+lF
+lF
+gh
+Oj
+gh
+gh
+gh
+gh
+gh
+Sj
+Sj
+cV
+QK
+QK
+QK
+QK
+QK
+aa
+aa
+aa
+"}
+(43,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+CP
+gh
+Oj
+gh
+gh
+gh
+gh
+gh
+gh
+Zc
+gh
+gh
+Oj
+gh
+Sj
+QK
+QK
+QK
+QK
+QK
+QK
+aa
+aa
+aa
+aa
+"}
+(44,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+gh
+Zc
+gh
+gh
+Oj
+gh
+gh
+gh
+gh
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
 aa
 aa
 aa
@@ -1307,7 +4595,7 @@ aa
 aa
 aa
 "}
-(30,1,1) = {"
+(46,1,1) = {"
 aa
 aa
 aa
@@ -1318,15 +4606,27 @@ aa
 aa
 aa
 aa
-Wg
-Wg
-Wg
-Wg
-Wg
-Wg
-Wg
-Wg
-Wg
+aa
+aa
+aa
+aa
+aa
+aa
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
+QK
 aa
 aa
 aa

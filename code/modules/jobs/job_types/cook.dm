@@ -18,7 +18,7 @@
 	belt = /obj/item/pda/cook
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chef
-	alt_uniform = /obj/item/clothing/under/rank/civilian/cookjorts //WS Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/shorts/cookjorts //WS Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat

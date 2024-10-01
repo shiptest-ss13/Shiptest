@@ -151,4 +151,3 @@
 	desc = "It's very colourful on the inside."
 	icon_state = "mime_enviroskirt"
 	item_state = "mime_enviroskirt"
-

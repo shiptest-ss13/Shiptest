@@ -8,6 +8,8 @@
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
+#define isgenerator(A) (istype(A, /generator))
+
 //Turfs
 //#define isturf(A) (istype(A, /turf)) This is actually a byond built-in. Added here for completeness sake.
 
@@ -73,12 +75,13 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define ismoth(A) (is_species(A, /datum/species/moth))
 #define ishumanbasic(A) (is_species(A, /datum/species/human) && !is_species(A, /datum/species/human/krokodil_addict))
-#define isethereal(A) (is_species(A, /datum/species/ethereal))
+#define iselzuose(A) (is_species(A, /datum/species/elzuose))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
 #define iskepori(A) (is_species(A, /datum/species/kepori))
 #define isipc(A) (is_species(A, /datum/species/ipc))
 #define isspiderperson(A) (is_species(A, /datum/species/spider))
+#define isvox(A) (is_species(A, /datum/species/vox))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
@@ -154,8 +157,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isnewplayer(A) (istype(A, /mob/dead/new_player))
 
-#define isovermind(A) (istype(A, /mob/camera/blob))
-
 #define iscameramob(A) (istype(A, /mob/camera))
 
 #define isaicamera(A) (istype(A, /mob/camera/aiEye))
@@ -165,15 +166,19 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isitem(A) (istype(A, /obj/item))
 
+#define isstack(A) (istype(A, /obj/item/stack))
+
 #define isgrenade(A) (istype(A, /obj/item/grenade))
 
-#define islandmine(A) (istype(A, /obj/effect/mine))
+#define islandmine(A) (istype(A, /obj/item/mine))
 
 #define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
 
 #define isammocasing(A) (istype(A, /obj/item/ammo_casing))
 
 #define isidcard(I) (istype(I, /obj/item/card/id))
+
+#define isbankcard(I) (istype(I, /obj/item/card/bank))
 
 #define isstructure(A) (istype(A, /obj/structure))
 
@@ -223,8 +228,6 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define is_glass_sheet(O) (is_type_in_typecache(O, GLOB.glass_sheet_types))
 
 #define iseffect(O) (istype(O, /obj/effect))
-
-#define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
 

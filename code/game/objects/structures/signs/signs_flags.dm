@@ -33,9 +33,15 @@
 
 /obj/structure/sign/flag/gezena
 	name = "\improper Gezenan flag"
-	desc = "lizards"
+	desc = "Gezena, the pride of the Pan-Gezenan Federation. Something about this flag makes you think of lizards."
 	icon_state = "flag_gezena"
 	item_flag = /obj/item/sign/flag/gezena
+
+/obj/structure/sign/flag/suns
+	name = "\improper SUNS flag"
+	desc = "A flag featuring the iconography of the Student-Union Association of Naturalistic Sciences. Something about the flag reminds you of books."
+	icon_state = "flag_suns"
+	item_flag = /obj/item/sign/flag/suns
 
 // ITEM FLAGS - THE THINGS YOU HOLD AND PLACE
 
@@ -48,6 +54,12 @@
 
 /obj/item/sign/flag/gezena
 	name = "folded Gezenan flag"
-	desc = "lizards but folded"
+	desc = "A folded up Gezenan Flag. Something about this flag makes you think of plants."
 	icon_state = "folded_gezena"
 	sign_path = /obj/structure/sign/flag/gezena
+
+/obj/item/sign/flag/suns
+	name = "folded SUNS flag"
+	desc = "A folded up purple Flag. Something about this flag makes you think of chemistry."
+	icon_state = "folded_suns"
+	sign_path = /obj/structure/sign/flag/suns

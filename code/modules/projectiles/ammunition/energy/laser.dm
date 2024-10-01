@@ -31,7 +31,7 @@
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
-	delay = 0.1 SECONDS
+	delay = 0.13 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -168,6 +168,11 @@
 	impact_light_intensity = 6
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
+
+/obj/projectile/beam/hitscan/disabler/heavy
+	damage = 30
+	armour_penetration = -10
+
 
 /obj/item/ammo_casing/energy/laser/minigun
 	select_name = "kill"

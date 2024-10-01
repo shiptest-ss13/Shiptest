@@ -257,9 +257,15 @@
 
 /datum/ert/frontier/assault
 	leader_role = /datum/antagonist/ert/frontier/leader
-	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
+	roles = list(/datum/antagonist/ert/frontier/better, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
 	rename_team = "Assault Frontiersmen Team"
 	polldesc = "a well armed squad of pirates"
+
+/datum/ert/frontier/unarmed //use for finer control of pirate's armaments
+	leader_role = /datum/antagonist/ert/frontier/leader/unnarmed
+	roles = list(/datum/antagonist/ert/frontier/unnarmed)
+	rename_team = "Unnarmed Frontiersmen Team"
+	polldesc = "a custom squad of pirates"
 
 /datum/ert/independent
 	teamsize = 3

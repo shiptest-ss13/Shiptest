@@ -26,8 +26,8 @@
 	var/power_draw_dynamic_kpa_coeff = 0.5
 	var/broken = FALSE
 	var/broken_message = "ERROR"
-	idle_power_usage = 150
-	active_power_usage = 2000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
 
 /obj/machinery/atmospherics/miner/Initialize()
 	. = ..()
@@ -178,3 +178,8 @@
 	name = "\improper Water Vapor Gas Miner"
 	overlay_color = "#99928E"
 	spawn_id = GAS_H2O
+
+/obj/machinery/atmospherics/miner/hydrogen
+	name = "\improper Hydrogen Gas Miner"
+	overlay_color = "#ffffffda"
+	spawn_id = GAS_HYDROGEN

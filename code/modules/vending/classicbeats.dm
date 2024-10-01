@@ -23,7 +23,6 @@
 	refill_canister = /obj/item/vending_refill/classicbeats
 	default_price = 100
 	extra_price = 60
-	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/classicbeats
 	machine_name = "Cuban Pete's Classic Beats"

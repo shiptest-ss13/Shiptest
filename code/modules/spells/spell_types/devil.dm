@@ -1,25 +1,3 @@
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork
-	name = "Summon Pitchfork"
-	desc = "A devil's weapon of choice.  Use this to summon/unsummon your pitchfork."
-	invocation_type = "none"
-	include_user = TRUE
-	range = -1
-	clothes_req = FALSE
-	item_type = /obj/item/pitchfork/demonic
-
-	school = "conjuration"
-	charge_max = 150
-	cooldown_min = 10
-	action_icon = 'icons/mob/actions/actions_minor_antag.dmi'
-	action_icon_state = "pitchfork"
-	action_background_icon_state = "bg_demon"
-
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/greater
-	item_type = /obj/item/pitchfork/demonic/greater
-
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/ascended
-	item_type = /obj/item/pitchfork/demonic/ascended
-
 /obj/effect/proc_holder/spell/targeted/conjure_item/violin
 	item_type = /obj/item/instrument/violin/golden
 	desc = "A devil's instrument of choice.  Use this to summon/unsummon your golden violin."
@@ -84,7 +62,7 @@
 	invocation_type = INVOCATION_SHOUT
 	range = 2
 
-	projectile_type = /obj/projectile/magic/aoe/fireball/infernal
+	projectile_type = /obj/projectile/magic
 
 	action_background_icon_state = "bg_demon"
 
@@ -107,7 +85,7 @@
 		if(istype(user.loc, /obj/effect/dummy/phased_mob/slaughter/))
 			if(valid_location(user))
 				to_chat(user, "<span class='warning'>You are now phasing in.</span>")
-				if(do_mob(user,user,150))
+				if(do_after(user, 1.5 SECONDS, user))
 					if(valid_location(user))
 						user.infernalphasein()
 					else
@@ -121,7 +99,7 @@
 			user.notransform = TRUE
 			user.fakefire()
 			to_chat(src, "<span class='warning'>You begin to phase back into sinful flames.</span>")
-			if(do_mob(user,user,150))
+			if(do_after(user, 1.5 SECONDS, user))
 				user.infernalphaseout()
 			else
 				to_chat(user, "<span class='warning'>You must remain still while exiting.</span>")

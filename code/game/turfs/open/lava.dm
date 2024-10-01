@@ -18,6 +18,8 @@
 	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
+	/// Whether the lava has been dug with hellstone found successfully
+	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
@@ -100,10 +102,10 @@
 
 /turf/open/lava/TakeTemperature(temp)
 
-/turf/open/lava/attackby(obj/item/C, mob/user, params)
+/turf/open/lava/attackby(obj/item/attacking_item, mob/user, params)
 	..()
-	if(istype(C, /obj/item/stack/rods/lava))
-		var/obj/item/stack/rods/lava/R = C
+	if(istype(attacking_item, /obj/item/stack/rods/lava))
+		var/obj/item/stack/rods/lava/R = attacking_item
 		var/obj/structure/lattice/lava/H = locate(/obj/structure/lattice/lava, src)
 		if(H)
 			to_chat(user, "<span class='warning'>There is already a lattice here!</span>")
@@ -115,6 +117,19 @@
 		else
 			to_chat(user, "<span class='warning'>You need one rod to build a heatproof lattice.</span>")
 		return
+	if(attacking_item.tool_behaviour == TOOL_MINING && (attacking_item.custom_materials[SSmaterials.GetMaterialRef(/datum/material/diamond)]))
+		if(is_mined)
+			to_chat(user, span_notice("This has already been cleared out of hellstone..."))
+			return FALSE
+		to_chat(user, span_notice("You start parting away [src]..."))
+		if(attacking_item.use_tool(src, user, 175, volume=30))
+			to_chat(user, span_notice("You part away [src]."))
+			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
+			if (prob(10))
+				new /obj/item/stack/ore/hellstone(src)
+				is_mined = TRUE
+			return TRUE
+	return FALSE
 
 /turf/open/lava/proc/is_safe()
 	//if anything matching this typecache is found in the lava, we don't burn things
@@ -205,19 +220,13 @@
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/particles/lava
-	width = 700
-	height = 700
-	count = 1000
-	spawning = 1
-	lifespan = 3 SECONDS
-	fade = 2 SECONDS
-	position = generator("circle", 16, 24, NORMAL_RAND)
-	drift = generator("vector", list(-0.2, -0.2), list(0.2, 0.2))
-	velocity = generator("circle", -6, 6, NORMAL_RAND)
-	friction = 0.15
-	gradient = list(0,LIGHT_COLOR_FLARE , 0.75, COLOR_ALMOST_BLACK)
-	color_change = 0.125
+/obj/effect/particle_holder
+	name = ""
+	anchored = TRUE
+	mouse_opacity = 0
+
+/obj/effect/particle_emitter/Initialize(mapload, time)
+	. = ..()
 
 /obj/effect/particle_emitter/lava
-	particles = new/particles/lava
+	particles = new/particles/embers/lava

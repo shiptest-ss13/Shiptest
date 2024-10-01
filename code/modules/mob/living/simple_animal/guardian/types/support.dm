@@ -93,7 +93,7 @@
 	name = "bluespace receiving pad"
 	icon = 'icons/turf/floors.dmi'
 	desc = "A receiving zone for bluespace teleportations."
-	icon_state = "light_on-w"
+	icon_state = "light_on_flicker-1"
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	density = FALSE
 	anchored = TRUE
@@ -134,7 +134,7 @@
 	"<span class='userdanger'>You start to faintly glow, and you feel strangely weightless!</span>")
 	do_attack_animation(A)
 
-	if(!do_mob(src, A, 60)) //now start the channel
+	if(!do_after(src, 6 SECONDS, A)) //now start the channel
 		to_chat(src, "<span class='danger'><B>You need to hold still!</span></B>")
 		return
 

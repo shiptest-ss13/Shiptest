@@ -234,6 +234,17 @@
 	light_range = 2
 	},
 /area/hangar)
+"cb" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "ck" = (
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
@@ -279,6 +290,17 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"dn" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "ds" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -290,6 +312,17 @@
 	planetary_atmos = 1;
 	light_color = "#1B1D2E";
 	light_range = 2
+	},
+/area/hangar)
+"dQ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
 	},
 /area/hangar)
 "dT" = (
@@ -319,9 +352,12 @@
 "eZ" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/industrial/warning,
-/obj/structure/filingcabinet/double/grey,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
+/obj/structure/filingcabinet/double/grey{
+	dir = 8;
+	pixel_x = 7
+	},
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
@@ -353,6 +389,18 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"fT" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "gc" = (
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt,
@@ -369,6 +417,38 @@
 	pixel_x = -7
 	},
 /turf/open/floor/plasteel/telecomms_floor,
+/area/hangar)
+"ia" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"iG" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/volume_pump,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "iJ" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -393,6 +473,15 @@
 	light_color = "#1B1D2E";
 	light_range = 2
 	},
+/area/hangar)
+"jF" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 4
+	},
+/obj/item/toy/plush/moth/firewatch{
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "jS" = (
 /obj/effect/turf_decal/borderfloor/corner{
@@ -422,6 +511,19 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"kr" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "kH" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -435,6 +537,15 @@
 	light_range = 2;
 	planetary_atmos = 1
 	},
+/area/hangar)
+"ln" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/plating/asteroid/icerock/temperate,
+/area/hangar)
+"lo" = (
+/obj/machinery/door/airlock/outpost,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "lu" = (
 /obj/effect/decal/fakelattice,
@@ -517,6 +628,23 @@
 	light_range = 2
 	},
 /area/hangar)
+"ne" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "nC" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -535,6 +663,18 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"nZ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "oc" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -544,6 +684,53 @@
 	},
 /obj/structure/railing{
 	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pa" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pi" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white/corner,
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
+"ps" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
@@ -575,6 +762,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"qN" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "qX" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
@@ -600,6 +801,16 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech,
+/area/hangar)
+"sd" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "sw" = (
 /obj/effect/turf_decal/borderfloor{
@@ -635,6 +846,31 @@
 /area/hangar)
 "tj" = (
 /turf/open/floor/plasteel/tech,
+/area/hangar)
+"ts" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"tF" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "tR" = (
 /obj/effect/turf_decal/borderfloor{
@@ -709,6 +945,29 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"vT" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wG" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "wT" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -719,6 +978,18 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
+/area/hangar)
+"wZ" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "yU" = (
 /obj/effect/decal/fakelattice,
@@ -731,6 +1002,32 @@
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"AU" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"AW" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/shutoff,
+/obj/structure/railing{
+	dir = 1;
+	layer = 2.8
+	},
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Be" = (
 /obj/effect/turf_decal/borderfloor{
@@ -877,6 +1174,36 @@
 	light_range = 2
 	},
 /area/hangar)
+"El" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Eu" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Fi" = (
+/obj/structure/flora/grass/both,
+/obj/item/trash/raisins{
+	layer = 2.8
+	},
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Fn" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -889,6 +1216,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
+"Fw" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "FS" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -899,6 +1239,32 @@
 	name = "web"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ht" = (
+/obj/effect/turf_decal/siding/white/end{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light/floor{
+	bulb_power = 0.75
+	},
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
+"HF" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -920,11 +1286,20 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"HY" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "Iz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2;
@@ -983,6 +1358,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2;
@@ -1026,10 +1404,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/chair/comfy/brown{
-	dir = 8;
-	pixel_x = 6
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating{
 	planetary_atmos = 1
@@ -1072,6 +1447,20 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Mk" = (
+/obj/effect/turf_decal/siding/white/end{
+	dir = 8
+	},
+/obj/machinery/computer/hydrogen_exchange{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Mt" = (
 /obj/machinery/computer/secure_data{
 	icon_state = "computer-left";
@@ -1102,6 +1491,39 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Od" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Oj" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/hangar)
+"Or" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/valve/digital,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2;
@@ -1200,6 +1622,24 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"SR" = (
+/obj/structure/railing{
+	dir = 9;
+	layer = 2.8
+	},
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Ts" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -1223,6 +1663,27 @@
 /obj/effect/landmark/outpost/hangar_numbers,
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
+	},
+/area/hangar)
+"UV" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 1;
+	layer = 2.8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "UZ" = (
@@ -1254,6 +1715,69 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"VK" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/light/floor,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/cargo_one{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
+"Wm" = (
+/obj/structure/railing{
+	dir = 5;
+	layer = 2.8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/patterned{
+	planetary_atmos = 1;
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
+"WY" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel/patterned/cargo_one{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
+"Xf" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Xq" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "XG" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp{
@@ -1274,6 +1798,20 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/hangar)
+"XS" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Yb" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -1286,6 +1824,19 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ye" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2;
 	planetary_atmos = 1
@@ -1332,9 +1883,23 @@
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
 	light_range = 2
+	},
+/area/hangar)
+"YW" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
 	},
 /area/hangar)
 "YX" = (
@@ -1342,6 +1907,24 @@
 /turf/open/floor/plating/asteroid/snow/temperatre{
 	light_color = "#1B1D2E";
 	light_range = 2
+	},
+/area/hangar)
+"Zj" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north{
+	pixel_x = -6;
+	bulb_power = 0.25
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
 	},
 /area/hangar)
 "ZE" = (
@@ -2431,8 +3014,8 @@ ao
 aE
 aZ
 aj
-fM
-aK
+YW
+AU
 ck
 ck
 ck
@@ -2473,8 +3056,8 @@ ck
 ck
 ck
 ck
-aN
-Iz
+ts
+XS
 am
 aZ
 aE
@@ -2493,7 +3076,7 @@ aZ
 aE
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -2536,7 +3119,7 @@ ck
 ck
 ck
 aN
-fM
+kr
 tR
 aE
 aE
@@ -2555,7 +3138,7 @@ aE
 aE
 ao
 aj
-aw
+fT
 aK
 ck
 ck
@@ -2598,7 +3181,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aZ
 aE
@@ -2617,7 +3200,7 @@ aE
 aE
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -2660,7 +3243,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 aE
@@ -2679,7 +3262,7 @@ aE
 ao
 aZ
 aj
-aw
+fT
 aK
 aG
 ck
@@ -2722,7 +3305,7 @@ ck
 ck
 aG
 pD
-ad
+dQ
 am
 aE
 aE
@@ -2741,7 +3324,7 @@ aZ
 aE
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -2784,7 +3367,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 ao
@@ -2803,7 +3386,7 @@ aE
 aZ
 aE
 aD
-aw
+fT
 aK
 ck
 ck
@@ -2846,7 +3429,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aZ
 aE
@@ -2865,7 +3448,7 @@ ao
 aE
 aE
 aD
-aw
+fT
 aK
 ck
 ck
@@ -2908,7 +3491,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 aE
@@ -2927,7 +3510,7 @@ aE
 aE
 ao
 aD
-ad
+El
 aK
 ck
 ck
@@ -2970,7 +3553,7 @@ ck
 ck
 ck
 aN
-ad
+dQ
 am
 ai
 aE
@@ -2989,7 +3572,7 @@ ai
 aZ
 aE
 aD
-ad
+El
 aK
 aG
 ck
@@ -3032,7 +3615,7 @@ ck
 ck
 aG
 pD
-fM
+kr
 am
 aE
 aZ
@@ -3051,7 +3634,7 @@ aE
 ao
 aZ
 aD
-ad
+El
 aK
 ck
 ck
@@ -3094,7 +3677,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 aE
@@ -3113,7 +3696,7 @@ aE
 ai
 aE
 aj
-ad
+El
 aK
 ck
 ck
@@ -3156,7 +3739,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aZ
 aE
@@ -3175,7 +3758,7 @@ aZ
 aE
 ao
 aj
-ad
+El
 aK
 ck
 ck
@@ -3218,7 +3801,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 am
 aE
 aE
@@ -3237,7 +3820,7 @@ aE
 aE
 aZ
 aj
-ad
+El
 kd
 ck
 ck
@@ -3280,7 +3863,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 aE
@@ -3299,7 +3882,7 @@ aE
 ao
 aE
 aj
-fM
+Ye
 kd
 ck
 ck
@@ -3342,7 +3925,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 am
 aE
 aE
@@ -3361,7 +3944,7 @@ aE
 ai
 aE
 aj
-fM
+Ye
 sw
 aG
 ck
@@ -3404,7 +3987,7 @@ ck
 ck
 aG
 pD
-fM
+kr
 am
 ai
 aE
@@ -3423,7 +4006,7 @@ aZ
 aE
 ai
 aj
-fM
+Ye
 aK
 ck
 ck
@@ -3485,8 +4068,8 @@ aE
 aE
 aE
 aj
-aw
-aK
+nZ
+AU
 ck
 ck
 ck
@@ -3527,8 +4110,8 @@ ck
 ck
 ck
 ck
-aN
-fM
+ts
+cb
 tR
 aE
 aE
@@ -3547,7 +4130,7 @@ aI
 aE
 ai
 aj
-aw
+fT
 aK
 ck
 ck
@@ -3590,7 +4173,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 aE
@@ -3609,7 +4192,7 @@ au
 ao
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -3652,7 +4235,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 aZ
@@ -3671,7 +4254,7 @@ aI
 aE
 aZ
 aj
-aw
+fT
 aK
 aG
 ck
@@ -3714,7 +4297,7 @@ ck
 ck
 aG
 pD
-ad
+dQ
 am
 aE
 aE
@@ -3733,7 +4316,7 @@ aI
 ai
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -3776,7 +4359,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 aE
@@ -3795,7 +4378,7 @@ aI
 aT
 aE
 aD
-aw
+fT
 aK
 ck
 ck
@@ -3838,7 +4421,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 ao
@@ -3857,7 +4440,7 @@ aI
 aI
 aE
 aD
-aw
+fT
 aK
 ck
 ck
@@ -3900,7 +4483,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 am
 aE
 ai
@@ -3919,7 +4502,7 @@ aI
 aI
 aE
 aD
-ad
+El
 aK
 ck
 ck
@@ -3962,7 +4545,7 @@ ck
 ck
 ck
 aN
-ad
+dQ
 am
 aZ
 aE
@@ -3981,7 +4564,7 @@ aI
 aZ
 aE
 aD
-ad
+El
 aK
 aG
 ck
@@ -4024,7 +4607,7 @@ ck
 ck
 aG
 pD
-fM
+kr
 am
 aE
 aE
@@ -4043,7 +4626,7 @@ aI
 aE
 ai
 aD
-ad
+El
 aK
 ck
 ck
@@ -4086,7 +4669,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 ao
@@ -4105,7 +4688,7 @@ aI
 aE
 ao
 aj
-ad
+El
 aK
 ck
 ck
@@ -4148,7 +4731,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 aE
@@ -4167,7 +4750,7 @@ aI
 aE
 aE
 aj
-ad
+El
 aK
 ck
 ck
@@ -4210,7 +4793,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 am
 aE
 aZ
@@ -4229,7 +4812,7 @@ aI
 aZ
 aE
 aj
-ad
+El
 kd
 ck
 ck
@@ -4272,7 +4855,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 aE
@@ -4291,7 +4874,7 @@ aI
 aE
 aE
 aj
-aw
+fT
 kd
 aG
 ck
@@ -4334,7 +4917,7 @@ ck
 ck
 aG
 pD
-aw
+tF
 tR
 aE
 aE
@@ -4353,7 +4936,7 @@ au
 ai
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -4396,7 +4979,7 @@ ck
 ck
 ck
 Ck
-fM
+kr
 tR
 aE
 aE
@@ -4411,11 +4994,11 @@ aH
 aH
 aH
 aH
+ln
 aE
-aE
-aZ
-pD
-aw
+Mk
+aD
+El
 aK
 ck
 ck
@@ -4458,7 +5041,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 aK
 aE
 aE
@@ -4471,14 +5054,14 @@ aH
 (51,1,1) = {"
 aH
 tj
-tj
+jF
 aH
+aZ
 aE
-ao
-aE
-aj
-aw
-aK
+pi
+ps
+dn
+AU
 ck
 ck
 ck
@@ -4519,8 +5102,8 @@ ck
 ck
 ck
 ck
-pD
-aw
+wZ
+Xf
 tR
 aZ
 aE
@@ -4533,13 +5116,13 @@ aH
 (52,1,1) = {"
 aH
 tj
-tj
+HY
 aH
-aE
-aE
-aE
-aj
-aw
+Mj
+Mj
+Ht
+aD
+fT
 aK
 ck
 ck
@@ -4582,7 +5165,7 @@ ck
 ck
 ck
 pD
-ad
+dQ
 tR
 ao
 aE
@@ -4595,13 +5178,13 @@ aI
 (53,1,1) = {"
 aH
 tj
-tj
-sB
-aE
-aE
-ao
-aD
-ad
+Oj
+lo
+vT
+vT
+SR
+ne
+Ye
 aK
 aG
 ck
@@ -4644,7 +5227,7 @@ ck
 ck
 aG
 pD
-aw
+tF
 tR
 aE
 aE
@@ -4659,11 +5242,11 @@ aH
 tj
 tj
 aH
-aZ
-aE
-aE
-aj
-ad
+Zj
+qN
+AW
+pa
+Od
 aK
 ck
 ck
@@ -4706,7 +5289,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 am
 aE
 aE
@@ -4721,11 +5304,11 @@ aH
 aH
 aH
 aH
-aE
 ai
 aE
-aD
-aw
+UV
+iG
+Fw
 aK
 ck
 ck
@@ -4768,7 +5351,7 @@ ck
 ck
 ck
 aN
-aw
+tF
 tR
 aZ
 aE
@@ -4782,12 +5365,12 @@ aI
 aI
 aI
 aI
-aI
+ln
 aE
-ao
-ai
-aj
-fM
+aE
+AW
+pD
+Ye
 aK
 ck
 ck
@@ -4830,7 +5413,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 ao
@@ -4846,10 +5429,10 @@ aI
 aI
 aI
 aE
-aE
-aE
-aj
-Iz
+Fi
+Wm
+wG
+Ye
 aK
 ck
 ck
@@ -4892,7 +5475,7 @@ ck
 ck
 ck
 pD
-fM
+kr
 tR
 aE
 aE
@@ -4954,7 +5537,7 @@ ck
 ck
 aG
 pD
-fM
+kr
 tR
 aE
 aZ
@@ -4973,7 +5556,7 @@ aE
 aE
 aZ
 aj
-fM
+Ye
 kd
 ck
 ck
@@ -5016,7 +5599,7 @@ ck
 ck
 ck
 pD
-fM
+kr
 tR
 aE
 aI
@@ -5035,7 +5618,7 @@ ao
 aE
 aE
 aj
-fM
+Ye
 kd
 ck
 ck
@@ -5078,7 +5661,7 @@ ck
 ck
 ck
 pD
-fM
+kr
 am
 ai
 aI
@@ -5097,7 +5680,7 @@ aE
 aE
 ao
 aD
-aw
+fT
 kd
 ck
 ck
@@ -5140,7 +5723,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 aO
 aE
 aI
@@ -5159,7 +5742,7 @@ aZ
 aE
 aE
 aj
-aw
+fT
 aK
 ck
 ck
@@ -5202,7 +5785,7 @@ ck
 ck
 ck
 pD
-fM
+kr
 aO
 aZ
 aE
@@ -5221,7 +5804,7 @@ aE
 aE
 aE
 aj
-aw
+fT
 aK
 aG
 ck
@@ -5264,7 +5847,7 @@ ck
 ck
 aG
 aN
-ad
+dQ
 tR
 ao
 aE
@@ -5283,7 +5866,7 @@ aE
 aZ
 aE
 aj
-ad
+El
 aK
 ck
 ck
@@ -5326,7 +5909,7 @@ ck
 ck
 ck
 aN
-aw
+tF
 tR
 aE
 aE
@@ -5345,7 +5928,7 @@ aE
 ao
 aE
 aj
-ad
+El
 aK
 ck
 ck
@@ -5388,7 +5971,7 @@ ck
 ck
 ck
 aN
-aw
+tF
 tR
 aE
 aZ
@@ -5407,7 +5990,7 @@ aE
 ai
 aE
 aj
-ad
+El
 aK
 ck
 ck
@@ -5450,7 +6033,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 ao
@@ -5469,7 +6052,7 @@ aE
 aE
 ao
 aj
-ad
+El
 aK
 ck
 ck
@@ -5512,7 +6095,7 @@ ck
 ck
 ck
 pD
-fM
+kr
 tR
 aE
 aE
@@ -5531,8 +6114,8 @@ aE
 aE
 aE
 aj
-aw
-kd
+nZ
+Or
 aG
 ck
 ck
@@ -5573,8 +6156,8 @@ ck
 ck
 ck
 aG
-pD
-fM
+wZ
+cb
 tR
 aZ
 aT
@@ -5593,7 +6176,7 @@ aE
 aZ
 aE
 aD
-aw
+fT
 kd
 ck
 ck
@@ -5636,7 +6219,7 @@ ck
 ck
 ck
 pD
-aw
+tF
 tR
 aE
 aI
@@ -5655,7 +6238,7 @@ aE
 aE
 aE
 aD
-ad
+El
 kd
 ck
 ck
@@ -5698,7 +6281,7 @@ aG
 ck
 ck
 pD
-ad
+dQ
 tR
 ai
 aI
@@ -5717,7 +6300,7 @@ ao
 aE
 aE
 aj
-ad
+El
 cX
 Mj
 ar
@@ -5730,7 +6313,7 @@ ar
 ar
 ar
 ar
-ar
+ia
 ar
 ar
 ar
@@ -5750,7 +6333,7 @@ ar
 ar
 ar
 ar
-ar
+ia
 ar
 ar
 ar
@@ -5760,7 +6343,7 @@ ar
 ar
 ar
 qX
-ad
+dQ
 tR
 aZ
 aI
@@ -5779,50 +6362,50 @@ aZ
 aE
 aE
 aj
-Cb
-ad
-ad
-ad
-ad
-ad
-aw
-aw
-aw
-aw
-aw
-ad
-ad
-ad
-ad
-aw
-aw
-fM
-aw
-aw
-aw
-aw
-fM
+VK
+Eu
+Eu
+Eu
+Eu
+Eu
+sd
+sd
+sd
+sd
+sd
+Eu
+Eu
+HF
+Eu
+sd
+sd
+Xq
+sd
+sd
+sd
+sd
+Xq
 YA
-aw
-aw
-ad
-fM
-fM
-aw
-aw
-ad
-ad
-ad
-aw
-ad
-ad
-ad
-fM
-fM
-aw
-ad
-ad
-YA
+sd
+sd
+Eu
+Xq
+Xq
+sd
+sd
+Eu
+Eu
+HF
+sd
+Eu
+Eu
+Eu
+Xq
+Xq
+sd
+Eu
+Eu
+WY
 am
 aE
 aE

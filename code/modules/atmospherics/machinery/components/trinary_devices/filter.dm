@@ -5,6 +5,10 @@
 	name = "gas filter"
 	desc = "Very useful for filtering gasses."
 
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = ACTIVE_DRAW_MINIMAL
+
 	can_unwrench = TRUE
 	var/transfer_rate = MAX_TRANSFER_RATE
 	var/filter_type = null
@@ -17,6 +21,10 @@
 /obj/machinery/atmospherics/components/trinary/filter/CtrlClick(mob/user)
 	if(can_interact(user))
 		on = !on
+		if(on)
+			set_active_power()
+		else
+			set_idle_power()
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 		update_appearance()
 	return ..()
@@ -114,6 +122,10 @@
 	switch(action)
 		if("power")
 			on = !on
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("rate")

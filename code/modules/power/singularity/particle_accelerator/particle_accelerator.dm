@@ -23,7 +23,7 @@
 	name = "Particle Accelerator"
 	desc = "Part of a Particle Accelerator."
 	icon = 'icons/obj/machines/particle_accelerator.dmi'
-	icon_state = "none"
+	icon_state = "emitter_center"
 	anchored = FALSE
 	density = TRUE
 	max_integrity = 500

@@ -12,6 +12,8 @@
 	filling_color = "#D2691E"
 	tastes = list("candy" = 1)
 	foodtype = JUNKFOOD | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/candy/bronx
 	name = "South Bronx Paradise bar"
@@ -82,7 +84,9 @@
 	filling_color = "#8B0000"
 	tastes = list("dried raisins" = 1)
 	foodtype = JUNKFOOD | FRUIT | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 	custom_price = 90
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/no_raisin/healthy
 	name = "homemade raisins"
@@ -99,7 +103,9 @@
 	junkiness = 25
 	filling_color = "#FFD700"
 	foodtype = JUNKFOOD | GRAIN | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 	custom_price = 30
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/candy_trash
 	name = "candy cigarette butt"
@@ -136,13 +142,16 @@
 	filling_color = "#F5F5DC"
 	tastes = list("sweetness" = 3, "cake" = 1)
 	foodtype = GRAIN | FRUIT | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/energybar
 	name = "High-power energy bars"
 	icon_state = "energybar"
-	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Ethereal."
+	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Elzuosa."
 	trash = /obj/item/trash/energybar
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 3)
 	filling_color = "#97ee63"
 	tastes = list("pure electricity" = 3, "fitness" = 2)
 	foodtype = TOXIC
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_SMALL

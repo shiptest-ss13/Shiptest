@@ -54,7 +54,7 @@
 /obj/structure/catwalk/examine(mob/user)
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
-		. += "<span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
+		. += "<span class='notice'>The supporting rods look like they could be <b>welded</b>.</span>"
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
 	if(C.tool_behaviour == TOOL_WELDER && !(resistance_flags & INDESTRUCTIBLE))

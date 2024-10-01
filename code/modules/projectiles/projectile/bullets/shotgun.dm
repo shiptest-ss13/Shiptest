@@ -18,7 +18,7 @@
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
-	damage = 5
+	damage = 8
 	armour_penetration = -35
 
 /obj/projectile/bullet/slug/stun
@@ -114,3 +114,9 @@
 	damage = 30
 	armour_penetration = -25
 	tile_dropoff = 3
+
+/obj/projectile/bullet/pellet/blank
+	name = "blank"
+	damage = 30
+	range = 2
+	armour_penetration = -70

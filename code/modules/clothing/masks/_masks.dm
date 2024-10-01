@@ -1,6 +1,8 @@
 /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/masks.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/masks_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/masks_righthand.dmi'
 	body_parts_covered = HEAD
 	slot_flags = ITEM_SLOT_MASK
 	strip_delay = 40
@@ -30,7 +32,7 @@
 /obj/item/clothing/mask/proc/handle_speech()
 
 /obj/item/clothing/mask/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)

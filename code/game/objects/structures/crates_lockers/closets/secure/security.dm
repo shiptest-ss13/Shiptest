@@ -23,8 +23,6 @@
 	new /obj/item/clothing/under/rank/command/captain/skirt(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
-	new /obj/item/clothing/under/rank/command/captain/parade(src)
-	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace/captunic(src)
 	new /obj/item/clothing/head/crown/fancy(src)
@@ -296,7 +294,6 @@
 
 /obj/structure/closet/secure_closet/armory2/PopulateContents()
 	..()
-	new /obj/item/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/rubbershot(src)
 	for(var/i in 1 to 3)
@@ -309,7 +306,6 @@
 
 /obj/structure/closet/secure_closet/armory3/PopulateContents()
 	..()
-	new /obj/item/storage/box/firingpins(src)
 	new /obj/item/gun/energy/ionrifle(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/e_gun(src)

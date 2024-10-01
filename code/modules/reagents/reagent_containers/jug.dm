@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/glass/chem_jug
 	name = "chemical jug"
 	desc = "A large jug used for storing bulk ammounts chemicals. Provided with a tamper seal which ensures that the contents are pure"
-	icon = 'icons/obj/chem_jug.dmi'
+	icon = 'icons/obj/chemical/chem_jug.dmi'
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
 	w_class = WEIGHT_CLASS_BULKY
@@ -143,3 +143,7 @@
 /obj/item/reagent_containers/glass/chem_jug/thermite
 	name = "chemical jug (thermite)"
 	list_reagents = list(/datum/reagent/thermite = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/hexacrete
+	name = "chemical jug (hexacrete)"
+	list_reagents = list(/datum/reagent/concrete/hexacrete = 150)

@@ -5,7 +5,7 @@
 	name = "modular microcomputer"
 	desc = "A small portable microcomputer."
 	icon = 'icons/obj/machines/computer.dmi'
-	icon_state = "laptop-open"
+	icon_state = "laptop"
 	light_on = FALSE
 	integrity_failure = 0.5
 	max_integrity = 100

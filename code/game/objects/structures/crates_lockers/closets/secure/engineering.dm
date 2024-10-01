@@ -5,12 +5,9 @@
 
 /obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
 	..()
-	//WS Begin
 	new /obj/item/clothing/head/beret/ce(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
-	new /obj/item/card/id/departmental_budget/eng(src) //Budger Cards
 	new /obj/item/stack/tape/industrial/pro(src) //Better tape
-	//WS End
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer/skirt(src)
@@ -41,9 +38,7 @@
 /obj/structure/closet/secure_closet/engineering_electrical/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		//WS Begin
 		/obj/item/stack/tape/industrial/electrical = 1, // Better tape
-		//WS End
 		/obj/item/clothing/gloves/color/yellow = 2,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/electronics/apc = 3,

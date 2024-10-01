@@ -1,7 +1,10 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
 	desc = "A top-of-the-line, heavy-duty, multifaceted energy rifle with three firing modes. The gold standard for Nanotrasen's heavier security specialists."
-	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -24,12 +27,26 @@
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
 
-/obj/item/gun/energy/pulse/prize
-	pin = /obj/item/firing_pin
+/obj/item/gun/energy/pulse/carbine
+	name = "pulse carbine"
+	desc = "A next-generation pulse weapon for Nanotrasen's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	icon_state = "pulse_carbine"
+	item_state = null
+	internal_cell = FALSE
+	mag_size = MAG_SIZE_LARGE //haha gun go brr
+	cell_type = /obj/item/stock_parts/cell/gun/large
+	ammo_x_offset = 2
+	charge_sections = 4
 
 /obj/item/gun/energy/pulse/prize/Initialize()
 	. = ..()
-	GLOB.poi_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 	var/turf/T = get_turf(src)
 
 	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
@@ -38,36 +55,16 @@
 	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
 
 /obj/item/gun/energy/pulse/prize/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
-
-/obj/item/gun/energy/pulse/loyalpin
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/energy/pulse/carbine
-	name = "pulse carbine"
-	desc = "A next-generation pulse weapon for Nanotrasen's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
-	icon = 'icons/obj/guns/energy.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	icon_state = "pulse_carbine"
-	item_state = null
-	internal_cell = FALSE
-	big_gun = TRUE //haha gun go brr
-	cell_type = /obj/item/stock_parts/cell/gun/large
-	can_flashlight = TRUE
-	flight_x_offset = 18
-	flight_y_offset = 12
-	ammo_x_offset = 2
-	charge_sections = 4
-
-/obj/item/gun/energy/pulse/carbine/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
 	desc = "A pulse rifle in an easily concealed handgun package with low capacity."
-	icon = 'icons/obj/guns/energy.dmi'
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_pistol"
@@ -75,9 +72,6 @@
 	cell_type = /obj/item/stock_parts/cell/pulse/pistol
 	ammo_x_offset = 2
 	charge_sections = 4
-
-/obj/item/gun/energy/pulse/pistol/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
@@ -87,10 +81,3 @@
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
 	to_chat(user, "<span class='danger'>[src.name] has three settings, and they are all DESTROY.</span>")
-
-/obj/item/gun/energy/pulse/pistol/m1911
-	name = "\improper Candor-P"
-	desc = "A compact pulse core in a classic handgun frame for Nanotrasen officers. It's not the size of the gun, it's the size of the hole it puts through people."
-	icon_state = "m1911"
-	item_state = "gun"
-	cell_type = /obj/item/stock_parts/cell/infinite

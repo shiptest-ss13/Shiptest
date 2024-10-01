@@ -1,0 +1,56 @@
+/turf/open/floor/engine/cult : /turf/open/floor/engine
+/turf/open/floor/engine/cult/airless : /turf/open/floor/engine/airless
+/turf/open/floor/plasteel/cult : /turf/open/floor/plasteel
+/turf/open/floor/plasteel/cult/airless : /turf/open/floor/plasteel/airless
+
+/turf/closed/wall/mineral/cult/artificer : /turf/open/floor/plating
+/turf/closed/wall/mineral/cult : /turf/open/floor/plating
+/obj/structure/girder/cult : /obj/structure/girder
+
+/obj/item/stack/sheet/runed_metal : /obj/item/stack/sheet/metal
+/obj/item/stack/sheet/runed_metal/fifty : /obj/item/stack/sheet/metal/fifty
+/obj/item/stack/sheet/runed_metal/five : /obj/item/stack/sheet/metal/five
+/obj/item/stack/sheet/runed_metal/ten : /obj/item/stack/sheet/metal/ten
+
+/obj/structure/destructible/cult/pylon : @DELETE
+/obj/structure/destructible/cult/forge : @DELETE
+/obj/structure/destructible/cult/talisman : @DELETE
+/obj/structure/destructible/cult/tome : @DELETE
+
+/obj/structure/trap/chill : @DELETE
+/obj/structure/trap/cult : @DELETE
+/obj/structure/trap/damage : @DELETE
+/obj/structure/trap/fire : @DELETE
+/obj/structure/trap/stun : @DELETE
+/obj/structure/trap/ward : @DELETE
+
+/obj/item/clothing/suit/hooded/cultrobes : /obj/item/clothing/suit/hooded/chaplain_hoodie
+/obj/item/clothing/suit/hooded/cultrobes/alt : /obj/item/clothing/suit/hooded/chaplain_hoodie
+/obj/item/clothing/suit/hooded/cultrobes/alt/ghost : /obj/item/clothing/suit/hooded/chaplain_hoodie
+/obj/item/clothing/suit/hooded/cultrobes/berserker : /obj/item/clothing/suit/hooded/chaplain_hoodie
+/obj/item/clothing/suit/hooded/cultrobes/cult_shield : /obj/item/clothing/suit/hooded/chaplain_hoodie
+
+/obj/item/toy/plush/narplush : /obj/item/toy/plush/lizardplushie
+/obj/item/bedsheet/cult : /obj/item/bedsheet/dorms
+/obj/item/melee/cultblade : /obj/item/melee/sword/claymore/weak
+/obj/item/melee/cultblade/dagger : /obj/item/melee/knife/combat
+/obj/item/melee/cultblade/ghost : /obj/item/melee/knife/combat
+/obj/item/toy/toy_dagger : /obj/item/melee/knife/kitcken
+/obj/item/melee/knife/kitcken/bloodletter : /obj/item/melee/knife/combat
+/obj/item/kitchen/ritual : /obj/item/melee/knife/combat
+/obj/item/restraints/legcuffs/bola/cult : /obj/item/restraints/legcuffs/bola
+
+/obj/effect/rune : @DELETE
+/obj/effect/rune/apocalypse : @DELETE
+/obj/effect/rune/blood_boil : @DELETE
+/obj/effect/rune/convert : @DELETE
+/obj/effect/rune/empower : @DELETE
+/obj/effect/rune/malformed : @DELETE
+/obj/effect/rune/manifest : @DELETE
+/obj/effect/rune/narsie : @DELETE
+/obj/effect/rune/raise_dead : @DELETE
+/obj/effect/rune/summon : @DELETE
+/obj/effect/rune/teleport : @DELETE
+/obj/effect/rune/wall : @DELETE
+
+/mob/living/simple_animal/pet/dog/corgi/narsie : /mob/living/simple_animal/pet/dog/corgi

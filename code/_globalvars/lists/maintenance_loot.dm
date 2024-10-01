@@ -138,7 +138,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		) = 1,
 
 	list(//misc
-		/obj/item/radio/off = 1,
+		/obj/item/radio = 1,
 		/obj/item/extinguisher = 1,
 		/obj/item/tank/internals/emergency_oxygen = 1,
 		/obj/item/bodybag = 1,
@@ -164,7 +164,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/roller = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/restraints/handcuffs/cable = 1,
-		/obj/item/spear = 1,
+		/obj/item/melee/spear = 1,
 		/obj/item/shield/riot/buckler = 1,
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			) = 1,
 		list(//drinks
 			/obj/item/reagent_containers/food/drinks/bottle/vodka = 1,
-			/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1,
+			/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 1,
 			) = 1,
 		list(//sprayers
 			/obj/item/reagent_containers/spray = 1,
@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/clothing/shoes/jackboots/fast = 1,
 		/obj/item/clothing/suit/armor/reactive/table = 1,
 		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
-		/obj/item/melee/greykingsword = 1 //WS - Meth Sword
+		/obj/item/melee/sword/greyking = 1 //WS - Meth Sword
 	))
 
 //Maintenance loot spawner pools

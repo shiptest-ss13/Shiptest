@@ -26,16 +26,16 @@
 
 	H.add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)
 
-	var/obj/effect/mine/pickup/bloodbath/B = new(H)
+	var/obj/item/mine/pressure/pickup/bloodbath/B = new(H)
 	B.duration = duration
 
-	INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/effect/mine/pickup/bloodbath, mineEffect), H) //could use moving out from the mine
+	INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pressure/pickup/bloodbath, mine_effect), H) //could use moving out from the mine
 
 	for(var/mob/living/carbon/human/P in GLOB.player_list)
 		if(P == H)
 			continue
 		to_chat(P, "<span class='userdanger'>You have an overwhelming desire to kill [H]. [H.p_theyve(TRUE)] been marked red! Whoever [H.p_they()] [H.p_were()], friend or foe, go kill [H.p_them()]!</span>")
 
-		var/obj/item/I = new /obj/item/kitchen/knife/butcher(get_turf(P))
+		var/obj/item/I = new /obj/item/melee/knife/butcher(get_turf(P))
 		P.put_in_hands(I, del_on_fail=TRUE)
 		QDEL_IN(I, duration)

@@ -374,11 +374,8 @@
 	},
 /obj/item/gun/energy/lasercannon{
 	pixel_y = 5;
-	pin = /obj/item/firing_pin
 	},
-/obj/item/gun/energy/lasercannon{
-	pin = /obj/item/firing_pin
-	},
+/obj/item/gun/energy/lasercannon,
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
@@ -609,7 +606,7 @@
 /area/ruin/beach/complex)
 "kK" = (
 /obj/structure/closet/crate/bin,
-/obj/item/reagent_containers/food/snacks/breadslice/moldy,
+/obj/item/food/breadslice/moldy,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
@@ -1461,7 +1458,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "wV" = (
-/obj/item/kitchen/knife/hunting{
+/obj/item/melee/knife/hunting{
 	name = "machete";
 	pixel_y = 8;
 	desc = "Space vines HATE this one simple trick!"

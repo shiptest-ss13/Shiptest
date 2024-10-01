@@ -175,9 +175,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/oceantown/bar)
 "cy" = (
@@ -266,9 +264,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/oceantown/bar)
 "dF" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/oceantown/hotel)
 "dL" = (
@@ -393,9 +389,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "eN" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/oceantown/hotel)
 "eV" = (
@@ -488,9 +482,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "fJ" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/oceantown/hotel)
 "fL" = (
@@ -708,7 +700,7 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/oceantown/hotel)
 "iv" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/oceantown/hotel)
 "iw" = (
@@ -1024,9 +1016,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "mJ" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/oceantown/hotel)
 "mR" = (
@@ -1395,9 +1385,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sj" = (
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "sp" = (
@@ -1416,9 +1404,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/oceantown)
 "sr" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/oceantown/bar)
 "sy" = (
@@ -1477,7 +1463,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/oceantown)
 "te" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "ti" = (
@@ -1642,7 +1628,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/obj/item/melee/roastingstick,
+/obj/item/roastingstick,
 /obj/item/reagent_containers/food/snacks/sausage,
 /turf/open/floor/plating/dirt{
 	light_range = 2
@@ -1873,15 +1859,8 @@
 	pixel_y = -32;
 	pixel_x = 32
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	desc = "A cup with a strange flag emblazoned on it.";
-	pixel_y = 4;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	desc = "A cup with a strange flag emblazoned on it.";
-	pixel_y = -2
-	},
+/obj/item/reagent_containers/food/drinks/mug,
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_y = 10;
 	pixel_x = -9
@@ -1969,7 +1948,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/oceantown/bar)
 "zk" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "zl" = (
@@ -2325,7 +2304,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/obj/item/melee/roastingstick,
+/obj/item/roastingstick,
 /turf/open/floor/plating/dirt{
 	light_range = 2
 	},
@@ -2903,9 +2882,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/beach/oceantown/bar)
 "IU" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "IX" = (
@@ -3563,7 +3540,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "PE" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "PF" = (
@@ -3729,9 +3706,7 @@
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sv" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/oceantown/bar)
 "Sy" = (
@@ -3769,9 +3744,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "SY" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/oceantown/bar)
 "Tj" = (
@@ -4012,9 +3985,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/oceantown)
 "VZ" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown)
 "Wd" = (
@@ -4274,7 +4245,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/oceantown/hotel)
 "Zr" = (
-/obj/structure/chair/comfy/brown,
+/obj/structure/chair/comfy/orange/directional/south,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/oceantown/bar)
 "Zy" = (

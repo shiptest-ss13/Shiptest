@@ -47,7 +47,7 @@
 	/// Whether or not this facehugger can actually impregnate targets
 	var/sterile = FALSE
 	/// How long it takes for a facehugger to impregnate a target once attached
-	var/pregnation_time = 10 SECONDS
+	var/pregnation_time = 5 SECONDS
 	/// How long it takes between coupling attempts
 	var/couple_retry_time = 15 SECONDS
 	/// The mob's internal mask version, stored within the mob when the facehugger isn't being used as an item.

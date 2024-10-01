@@ -4,7 +4,6 @@
 /obj/item/borg
 	icon = 'icons/mob/robot_items.dmi'
 
-
 /obj/item/borg/stun
 	name = "electrically-charged arm"
 	icon_state = "elecarm"
@@ -177,7 +176,7 @@
 				return
 
 			to_chat(user, "<span class='notice'>You connect to [M]'s power line...</span>")
-			while(do_after(user, 15, target = M, progress = 0))
+			while(do_after(user, 15, target = M, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -211,7 +210,7 @@
 
 			to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-			while(do_after(user, 15, target = target, progress = 0))
+			while(do_after(user, 15, target = target, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -249,7 +248,7 @@
 
 		to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-		while(do_after(user, 15, target = target, progress = 0))
+		while(do_after(user, 15, target = target, progress = TRUE))
 			if(!user || !user.cell || mode != "charge")
 				return
 
@@ -543,7 +542,7 @@
 	name = "\improper Hyperkinetic Dampening projector"
 	desc = "A device that projects a dampening field that weakens kinetic energy above a certain threshold. <span class='boldnotice'>Projects a field that drains power per second while active, that will weaken and slow damaging projectiles inside its field.</span> Still being a prototype, it tends to induce a charge on ungrounded metallic surfaces."
 	icon = 'icons/obj/device.dmi'
-	icon_state = "shield"
+	icon_state = "shield0"
 	var/maxenergy = 1500
 	var/energy = 1500
 	var/energy_recharge = 7.5
@@ -710,7 +709,7 @@
 /obj/item/borg/sight/material
 	name = "\proper material vision"
 	sight_mode = BORGMATERIAL
-	icon_state = "material"
+	icon_state = "meson"
 
 /obj/item/borg/sight/hud
 	name = "hud"
@@ -887,7 +886,7 @@
 	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop the beaker."
 	icon_state = "borg_beaker_apparatus"
 	storable = list(/obj/item/reagent_containers/food/drinks/,
-				/obj/item/reagent_containers/food/condiment)
+				/obj/item/reagent_containers/condiment)
 
 /obj/item/borg/apparatus/beaker/service/Initialize()
 	. = ..()

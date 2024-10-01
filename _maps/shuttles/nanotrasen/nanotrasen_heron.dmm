@@ -352,11 +352,9 @@
 /obj/item/clothing/under/rank/cargo/qm,
 /obj/effect/turf_decal/corner/opaque/yellow/full,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/structure/closet/wall{
-	dir = 4;
+/obj/structure/closet/wall/directional/west{
 	icon_door = "orange_wall";
-	name = "quartermaster's closet";
-	pixel_x = -28
+	name = "quartermaster's closet"
 	},
 /obj/item/clothing/neck/cloak/qm,
 /obj/item/clothing/under/rank/cargo/qm/skirt,
@@ -405,9 +403,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bE" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "bF" = (
@@ -1192,9 +1188,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "eV" = (
-/obj/structure/closet/wall/orange{
-	name = "fuel locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "fuel locker"
 	},
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/effect/decal/cleanable/wrapping{
@@ -1458,9 +1453,8 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "gb" = (
-/obj/structure/closet/wall/orange{
-	name = "Chief Engineer's Locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Chief Engineer's Locker"
 	},
 /obj/item/clothing/under/rank/engineering/chief_engineer,
 /obj/item/clothing/suit/toggle/hazard,
@@ -1480,6 +1474,7 @@
 	pixel_y = -11;
 	pixel_x = 9
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "gd" = (
@@ -2009,7 +2004,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -2496,9 +2491,8 @@
 /turf/open/floor/wood,
 /area/ship/science/robotics)
 "jO" = (
-/obj/structure/chair/comfy/brown{
-	color = "#c45c57";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#c45c57"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave,
@@ -2578,9 +2572,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "ki" = (
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	pixel_x = -28;
+/obj/structure/closet/wall/orange/directional/west{
 	name = "Pilot's Locker"
 	},
 /obj/item/clothing/under/rank/security/officer/military/eng,
@@ -3383,13 +3375,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -3447,9 +3439,7 @@
 /turf/open/floor/grass,
 /area/ship/hallway/aft)
 "mM" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -3492,7 +3482,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Mech Bay"
+	name = "Exosuit Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -3761,9 +3751,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 4
 	},
-/obj/structure/closet/wall/blue{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/blue/directional/north,
 /obj/item/aicard{
 	pixel_x = -5
 	},
@@ -3851,7 +3839,7 @@
 "oa" = (
 /obj/item/multitool,
 /obj/item/clothing/glasses/meson/engine/tray,
-/obj/item/radio/off,
+/obj/item/radio,
 /obj/item/storage/belt/utility/atmostech,
 /obj/item/holosign_creator/atmos,
 /obj/item/analyzer,
@@ -3861,10 +3849,8 @@
 /obj/item/clothing/suit/fire/atmos,
 /obj/item/clothing/mask/gas/atmos,
 /obj/item/clothing/head/hardhat/atmos,
-/obj/structure/closet/wall{
-	name = "Atmospheric locker";
-	dir = 8;
-	pixel_x = 28
+/obj/structure/closet/wall/directional/east{
+	name = "Atmospheric locker"
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -3959,10 +3945,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/item/clothing/under/rank/rnd/roboticist,
 /obj/item/clothing/under/rank/rnd/research_director/turtleneck,
 /obj/item/clothing/under/rank/rnd/roboticist/skirt,
@@ -4151,11 +4134,8 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/science/robotics)
 "pk" = (
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 8;
-	pixel_x = 28
-	},
-/obj/item/clothing/under/rank/civilian/cookjorts,
+/obj/structure/closet/secure_closet/freezer/wall/directional/east,
+/obj/item/clothing/under/shorts/cookjorts,
 /obj/item/clothing/shoes/cookflops,
 /obj/item/clothing/suit/toggle/chef,
 /obj/item/clothing/under/rank/civilian/chef,
@@ -4173,10 +4153,7 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/syringe/contraband/fentanyl{
 	pixel_x = -3;
 	pixel_y = 4
@@ -4581,7 +4558,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -4876,11 +4853,11 @@
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/kitchen/knife/plastic{
+/obj/item/melee/knife/plastic{
 	pixel_x = 2
 	},
-/obj/item/kitchen/knife/plastic,
-/obj/item/kitchen/knife/plastic{
+/obj/item/melee/knife/plastic,
+/obj/item/melee/knife/plastic{
 	pixel_x = 5;
 	pixel_y = 2
 	},
@@ -5019,10 +4996,7 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -5442,9 +5416,8 @@
 	pixel_y = 7;
 	pixel_x = 9
 	},
-/obj/structure/closet/wall{
-	name = "Toy Storage";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "Toy Storage"
 	},
 /obj/item/toy/figure/engineer{
 	pixel_x = 7
@@ -5777,7 +5750,6 @@
 /obj/effect/decal/cleanable/greenglow{
 	pixel_y = -10
 	},
-/obj/machinery/light/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -5802,7 +5774,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/frame/machine,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
 	color = "#808080"
@@ -5825,9 +5796,8 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/science/robotics)
 "vb" = (
-/obj/structure/closet/wall/orange{
-	name = "Pilot's Locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Pilot's Locker"
 	},
 /obj/item/clothing/under/rank/security/officer/military/eng,
 /obj/item/clothing/suit/jacket/leather/duster,
@@ -6143,7 +6113,7 @@
 /obj/item/storage/pill_bottle/aranesp,
 /obj/item/taperecorder,
 /obj/item/t_scanner,
-/obj/item/switchblade,
+/obj/item/melee/knife/switchblade,
 /obj/item/trash/candy,
 /obj/structure/filingcabinet/double,
 /obj/item/radio/intercom/directional/south,
@@ -6366,10 +6336,7 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/turf_decal/techfloor/hole/right{
 	dir = 4
 	},
@@ -6663,7 +6630,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "ym" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
@@ -7087,11 +7054,11 @@
 /area/ship/hallway/fore)
 "zN" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/soysauce{
+/obj/item/reagent_containers/condiment/soysauce{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/condiment/mayonnaise,
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
@@ -7316,7 +7283,7 @@
 "AC" = (
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -7528,10 +7495,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "BJ" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -8059,7 +8023,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "DW" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/ship/security)
@@ -8170,9 +8134,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -8282,7 +8244,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Et" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
@@ -8648,10 +8610,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/closet/wall{
-	name = "Utility Closet";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Utility Closet"
 	},
 /obj/item/flashlight,
 /obj/item/flashlight,
@@ -8660,52 +8620,31 @@
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/flashlight,
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 2
 	},
@@ -9135,10 +9074,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "HG" = (
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/holopad,
 /obj/effect/turf_decal/siding/white{
@@ -9191,9 +9127,8 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormtwo)
 "HI" = (
-/obj/structure/closet/wall/orange{
-	name = "Pilot's Locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Pilot's Locker"
 	},
 /obj/item/clothing/under/rank/security/officer/military/eng,
 /obj/item/clothing/suit/jacket/leather/duster,
@@ -9274,12 +9209,12 @@
 "HT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
 	pixel_x = -8;
 	pixel_y = 12
@@ -9384,11 +9319,11 @@
 "Ip" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -9624,7 +9559,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/structure/sign/poster/official/moth{
 	pixel_y = 32
 	},
@@ -9794,9 +9729,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/build{
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -9808,6 +9740,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -9954,7 +9889,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "KQ" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/toy/plush/moth{
 	pixel_x = 3
@@ -10134,9 +10069,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hangar)
 "LO" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plush/hornet/gay{
 	layer = 2.1;
@@ -10167,7 +10100,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "LS" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/structure/railing{
@@ -10260,11 +10193,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = null;
-	name = "Office Supplies";
-	pixel_y = -28
+	name = "Office Supplies"
 	},
 /obj/item/storage/briefcase,
 /obj/item/storage/secure/briefcase{
@@ -10507,10 +10438,7 @@
 "MM" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/structure/table,
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = 10
 	},
@@ -10590,11 +10518,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "MT" = (
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "red_wall";
-	name = "Roboticists Locker";
-	pixel_x = 28
+	name = "Roboticists Locker"
 	},
 /obj/item/clothing/suit/longcoat/roboblack,
 /obj/item/clothing/suit/longcoat/robowhite,
@@ -10717,15 +10643,15 @@
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/head/beret/eng/hazard,
 /obj/item/clothing/glasses/meson/engine,
-/obj/structure/closet/wall/orange{
-	name = "Engineering locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Engineering locker"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/belt/utility/full/engi{
 	pixel_y = -10;
 	pixel_x = 5
 	},
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "NC" = (
@@ -10904,11 +10830,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Of" = (
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/east{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_x = 29;
-	dir = 8
+	name = "Mining equipment"
 	},
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
@@ -11106,10 +11030,7 @@
 	pixel_x = -5;
 	pixel_y = -12
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
-	pixel_x = 8;
-	pixel_y = -4
-	},
+/obj/item/reagent_containers/food/drinks/mug,
 /obj/item/newspaper{
 	pixel_x = -8;
 	pixel_y = 5
@@ -11157,7 +11078,7 @@
 	},
 /area/ship/crew/office)
 "Pp" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/brown/directional/south,
 /obj/item/toy/plush/spider,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -11597,7 +11518,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -11614,7 +11535,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Rs" = (
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /turf/open/floor/plasteel/tech,
@@ -11786,6 +11707,17 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"Sb" = (
+/obj/structure/sign/poster/official/build{
+	pixel_y = -32
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/power/ship_gravity,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "Sc" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -11920,7 +11852,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
+	name = "Exosuit Bay Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/science/robotics)
@@ -12216,12 +12148,12 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
 	pixel_x = -8;
 	pixel_y = 12
@@ -12739,9 +12671,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Vo" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/machinery/firealarm/directional/west,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/green,
@@ -13038,9 +12968,7 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "WU" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /obj/machinery/newscaster/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
@@ -13090,10 +13018,10 @@
 /obj/item/reagent_containers/food/snacks/dough,
 /obj/item/reagent_containers/food/snacks/dough,
 /obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/butcher{
+/obj/item/melee/knife/butcher{
 	pixel_x = 13
 	},
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -13106,9 +13034,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/closet/wall/red{
-	name = "Ammo locker";
-	pixel_y = 28
+/obj/structure/closet/wall/red/directional/north{
+	name = "Ammo locker"
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -7
@@ -13591,10 +13518,8 @@
 /obj/item/storage/backpack/ert/janitor{
 	pixel_x = 6
 	},
-/obj/structure/closet/wall/blue{
-	dir = 8;
-	name = "Janitorial Closet";
-	pixel_x = 28
+/obj/structure/closet/wall/blue/directional/east{
+	name = "Janitorial Closet"
 	},
 /obj/item/clothing/suit/longcoat/science{
 	name = "janitor longcoat"
@@ -13696,7 +13621,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/structure/fireaxecabinet{
+/obj/structure/cabinet/fireaxe{
 	pixel_y = 27
 	},
 /obj/structure/closet/secure_closet/engineering_electrical,
@@ -14192,7 +14117,7 @@ Fu
 WW
 Mv
 Ko
-hr
+Sb
 hr
 UJ
 UJ
