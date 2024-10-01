@@ -11,7 +11,7 @@
 	clothes_flags_inv_hide = HIDEEYES
 
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = EYECOLOR
+	color_src = COLOR_SRC_EYE_COLOR
 
 /datum/sprite_accessory/mutant_part/ipc_screens/blank
 	name = "Blank Canvas"
@@ -20,7 +20,7 @@
 /datum/sprite_accessory/mutant_part/ipc_screens/blue
 	name = "Blue"
 	icon_state = "blue"
-	color_src = 0
+	color_src = null
 
 /datum/sprite_accessory/mutant_part/ipc_screens/blush
 	name = "Blush"
@@ -29,7 +29,7 @@
 /datum/sprite_accessory/mutant_part/ipc_screens/bsod
 	name = "BSOD"
 	icon_state = "bsod"
-	color_src = 0
+	color_src = null
 
 /datum/sprite_accessory/mutant_part/ipc_screens/buffering
 	name = "Buffering"
@@ -82,7 +82,7 @@
 /datum/sprite_accessory/mutant_part/ipc_screens/heart
 	name = "Heart"
 	icon_state = "heart"
-	color_src = 0
+	color_src = null
 
 /datum/sprite_accessory/mutant_part/ipc_screens/monoeye
 	name = "Mono-eye"
@@ -111,7 +111,7 @@
 /datum/sprite_accessory/mutant_part/ipc_screens/rainbow
 	name = "Rainbow"
 	icon_state = "rainbow"
-	color_src = 0
+	color_src = null
 
 /datum/sprite_accessory/mutant_part/ipc_screens/red
 	name = "Red"
@@ -192,7 +192,7 @@
 	clothes_flags_inv_hide = HIDEEARS
 
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/ipc_antennas/none
 	name = "None"
@@ -279,7 +279,7 @@
 	// not randomized
 
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = MUTCOLORS
+	color_src = COLOR_SRC_MUT_COLOR
 
 /datum/sprite_accessory/mutant_part/ipc_tail/none
 	name = "None"
@@ -318,9 +318,9 @@
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
-	var/color_src = 0
 	var/limbs_id				//The limbs id supplied for full-body replacing features.
 
+	var/use_mutcolors = FALSE
 	var/use_eyes = FALSE //do we use normal robotic eyes? used when we dont want a screen but still want visible eyes
 	var/has_screen = TRUE //do we have a screen to toggle
 	var/has_overlay = FALSE //does this chasis have a overlay icon?
@@ -329,7 +329,7 @@
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"
 	limbs_id = "mcgipc"
-	color_src = MUTCOLORS
+	use_mutcolors = TRUE
 
 /datum/sprite_accessory/ipc_chassis/bishopcyberkinetics
 	name = "Bishop Cyberkinetics"
@@ -375,15 +375,15 @@
 	name = "PGF MECHANICS TYPE-P"
 	limbs_id = "pgfipc-p"
 	has_screen = FALSE
-	color_src = MUTCOLORS
 	has_overlay = TRUE
 	use_eyes = TRUE
+	use_mutcolors = TRUE
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
 	name = "PGF MECHANICS TYPE-D"
 	limbs_id = "pgfipc-p" //the digigrade var makes it so we use digi leg variant instead
+	use_mutcolors = TRUE
 	has_screen = FALSE
-	color_src = MUTCOLORS
 	has_overlay = TRUE
 	use_eyes = TRUE
 	is_digi = TRUE

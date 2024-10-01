@@ -2,7 +2,7 @@
 	create_dna()
 	return //No randomisation
 
-// ! randomization (tbf, this is a wiki thing)
+#warn randomization, remove (tbf, this is a wiki thing... need a seed)
 /mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0, species_list = null)
 	// a 32-character hex string. we read characters off of this for randomization. 2 characters = 1 byte
 	seed = md5(seed)
@@ -11,7 +11,8 @@
 	skin_tone = GLOB.skin_tones[hex2num(copytext(seed, 2, 3)) % length(GLOB.skin_tones) + 1]
 
 	hairstyle = GLOB.hairstyles_list[hex2num(copytext(seed, 3, 6)) % length(GLOB.hairstyles_list) + 1]
-	facial_hairstyle = GLOB.facial_hairstyles_list[hex2num(copytext(seed, 6, 9)) % length(GLOB.facial_hairstyles_list) + 1]
+	if(gender == MALE)
+		facial_hairstyle = GLOB.facial_hairstyles_list[hex2num(copytext(seed, 6, 9)) % length(GLOB.facial_hairstyles_list) + 1]
 
 	// color_from_seed hashes its input, so giving nonoverlapping windows is less important
 	hair_color = color_natural_from_seed(copytext(seed, 9, 15))
@@ -19,10 +20,8 @@
 	facial_hair_color = hair_color
 
 	var/list/feature_list = list(
-		// ! insufficiently bright, for elzu -- also, it's unclear if this is actually WORKS, as it lacks the leading #?
 		FEATURE_MUTANT_COLOR = color_from_seed(copytext(seed, 17, 25)),
 		FEATURE_MUTANT_COLOR2 = color_from_seed(copytext(seed, 19, 27)),
-		FEATURE_ETHEREAL_COLOR = color_from_seed(copytext(seed, 21, 29)),
 
 		// ugh
 		FEATURE_IPC_CHASSIS = GLOB.ipc_chassis_list[hex2num(copytext(seed, 29, 31)) % length(GLOB.ipc_chassis_list) + 1]

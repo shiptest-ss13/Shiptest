@@ -38,11 +38,14 @@
 	var/age = 30		//Player's age
 
 	var/underwear = "Nude"				//Which underwear the player wants
-	var/underwear_color = "000"			//underwear color, what it sounds like
 	var/undershirt = "Nude" 			//Which undershirt the player wants
-	var/undershirt_color = "000"		//undershirt color
 	var/socks = "Nude"					//Which socks the player wants
-	var/socks_color = "000"				//socks color, who could guess
+
+	// Unlike other colors (eyes, hair, gradients), these have the # baked-in.
+	var/underwear_color = "#FFF"			//underwear color, what it sounds like
+	var/undershirt_color = "#FFF"		//undershirt color
+	var/socks_color = "#FFF"				//socks color, who could guess
+
 	var/backpack = DBACKPACK			//Which backpack type the player has chosen.
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/exowear = PREF_EXOWEAR			//exowear

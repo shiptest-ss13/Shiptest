@@ -417,7 +417,7 @@
 	if(ishuman(M))
 		if(method == PATCH || method == VAPOR)
 			var/mob/living/carbon/human/N = M
-			if(N.dna.species.id == SPECIES_HUMAN)
+			if(SKINCOLORS in N.dna.species.species_traits)
 				switch(N.skin_tone)
 					if("african1")
 						N.skin_tone = "african2"
@@ -441,8 +441,7 @@
 						N.skin_tone = "caucasian2"
 					if ("albino")
 						N.skin_tone = "caucasian1"
-
-			if(MUTCOLORS in N.dna.species.species_traits) //take current alien color and darken it slightly
+			else // if you don't have a skintone, we change your mutant color instead. get darkened idiot. also holy shit this code is ridiculous
 				var/newcolor = ""
 				var/string = N.dna.features[FEATURE_MUTANT_COLOR]
 				var/len = length(string)
@@ -490,9 +489,9 @@
 		N.hair_color = "000"
 		if(!(HAIR in N.dna.species.species_traits)) //No hair? No problem!
 			N.dna.species.species_traits += HAIR
-		if(N.dna.species.use_skintones)
+		if(SKINCOLORS in N.dna.species.species_traits)
 			N.skin_tone = "orange"
-		else if(MUTCOLORS in N.dna.species.species_traits) //Aliens with custom colors simply get turned orange
+		else // if you don't have a skintone, we'll assume you use mutant colors for a substantial chunk of your body, and alter that instead
 			N.dna.features[FEATURE_MUTANT_COLOR] = "f80"
 		N.regenerate_icons()
 		if(prob(7))

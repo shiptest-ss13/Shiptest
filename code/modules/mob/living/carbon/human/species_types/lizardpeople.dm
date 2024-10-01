@@ -2,15 +2,14 @@
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
 	id = SPECIES_SARATHI
-	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
+	species_traits = list(EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", FEATURE_LEGS_TYPE)
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
-	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS, FEATURE_BODY_SIZE = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS, FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -111,7 +110,7 @@ Lizard subspecies: ASHWALKERS
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(EYECOLOR, LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 	digitigrade_customization = DIGITIGRADE_FORCED
@@ -122,11 +121,11 @@ Lizard subspecies: ASHWALKERS
 	name = "Kobold"
 	id = SPECIES_KOBOLD
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(EYECOLOR, LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 
-/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..() //call everything from species/on_species_gain()
 	C.dna.add_mutation(DWARFISM)
 //WS Edit End - Kobold

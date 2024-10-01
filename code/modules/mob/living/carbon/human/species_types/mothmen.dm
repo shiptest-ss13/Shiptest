@@ -1,11 +1,10 @@
 /datum/species/moth
 	name = "\improper Mothperson"
 	id = SPECIES_MOTH
-	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", FEATURE_BODY_SIZE = "Normal")
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	mutant_organs = list(/obj/item/organ/moth_wings)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'

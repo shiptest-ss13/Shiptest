@@ -19,7 +19,6 @@
 						/obj/item/clothing/neck/memento_mori,
 						/obj/item/organ/heart/cursed/wizard,
 						/obj/item/clothing/suit/hooded/cloak/drake,
-						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
 						/obj/item/clothing/shoes/clown_shoes/banana_shoes,

@@ -324,6 +324,7 @@
 				changeling.purchasedpowers -= HF
 				changeling.regain_powers()
 
+	#warn another potential instance of using set_species() to copy over non-temporary vars...
 	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
 		O.set_species(O.dna.species)
 	else

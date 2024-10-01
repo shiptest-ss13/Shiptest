@@ -7,7 +7,6 @@
 	icon = 'icons/mob/human_parts_greyscale.dmi'
 	var/husk_icon = 'icons/mob/human_parts.dmi'
 	var/husk_type = "humanoid"
-	var/static_icon = 'icons/mob/human_parts.dmi' //Uncolorable sprites
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
 	var/mob/living/carbon/owner = null
@@ -23,12 +22,20 @@
 	var/limb_id = SPECIES_HUMAN
 	///Defines what sprite the limb should use if it is also sexually dimorphic.
 	var/limb_gender = "m"
-	///Does this limb have a greyscale version?
-	var/uses_mutcolor = TRUE
+
+	///Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
+	var/should_draw_greyscale = TRUE
+	/// The fallback icon file used for when should_draw_greyscale is FALSE (so long as animal_origin is null).
+	var/static_icon = 'icons/mob/human_parts.dmi'
+
+	/// The effective "skin" color of the limb, before being overridden by hulk, as determined by the source mob's skin tone or mutant color.
+	/// Should only be non-null if should_draw_grayscale is TRUE.
+	var/effective_skin_color = null
+	/// A color override which is only set if the mob currently owning this limb is hulked.
+	var/mutation_color = ""
+
 	///Is there a sprite difference between male and female?
 	var/is_dimorphic = FALSE
-	///Greyscale draw color
-	var/draw_color
 
 	/// The icon state of the limb's overlay, colored with a different color
 	var/overlay_icon_state
@@ -78,12 +85,6 @@
 	///Subtracted from burn damage taken
 	var/burn_reduction = 0
 
-	//Coloring and proper item icon update
-	var/skin_tone = ""
-	///Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
-	var/should_draw_greyscale = TRUE
-	var/species_color = ""
-	var/mutation_color = ""
 	/// The colour of damage done to this bodypart
 	var/damage_color = ""
 	/// Should we even use a color?
@@ -534,17 +535,9 @@
 		dmg_overlay_type = initial(dmg_overlay_type)
 		is_husked = FALSE
 
+	mutation_color = null
 	if(!dropping_limb && C.dna?.check_mutation(HULK)) //Please remove hulk from the game. I beg you.
 		mutation_color = "00aa00"
-	else
-		mutation_color = null
-
-	if(mutation_color) //I hate mutations
-		draw_color = mutation_color
-	else if(should_draw_greyscale)
-		draw_color = (species_color) || (skin_tone && skintone2hex(skin_tone))
-	else
-		draw_color = null
 
 	if(no_update)
 		return
@@ -559,34 +552,32 @@
 		species_flags_list = H.dna.species.species_traits //Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
 		limb_gender = (H.gender == MALE) ? "m" : "f"
 
-		if(S.use_skintones)
-			skin_tone = H.skin_tone
-		else
-			skin_tone = ""
-
 		use_damage_color = S.use_damage_color
-		if(((MUTCOLORS in S.species_traits) || (DYNCOLORS in S.species_traits)) && uses_mutcolor) //Ethereal code. Motherfuckers.
-			if(S.fixed_mut_color)
-				species_color = S.fixed_mut_color
+
+		// determine what color should be used for the limb, ignoring the mutation color -- but only if this is a greyscale-compatible limb
+		effective_skin_color = null
+		if(should_draw_greyscale)
+			// start by checking if the species uses a skin color
+			if(SKINCOLORS in S.species_traits)
+				effective_skin_color = skintone2hex(H.skin_tone)
+			// then check if the species has a fixed color
+			else if(S.fixed_mut_color)
+				effective_skin_color = S.fixed_mut_color
+			// and only after that check their mutant color.
 			else
-				species_color = H.dna.features[FEATURE_MUTANT_COLOR]
-		else
-			species_color = null
+				effective_skin_color = H.dna.features[FEATURE_MUTANT_COLOR]
 
 		if(overlay_icon_state)
 			species_secondary_color = H.dna.features[FEATURE_MUTANT_COLOR2]
 
+		// this is icon update code. under absolutely no fucking circumstances should bone break handling be here, but... oh well.
+		// (sorry for getting mad at you mark ilu)
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)
 			bone_status = BONE_FLAG_NO_BONES
 		else
 			bone_status = BONE_FLAG_NORMAL
 			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
-
-
-		draw_color = mutation_color
-		if(should_draw_greyscale) //Should the limb be colored?
-			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
 
 		dmg_overlay_type = S.damage_overlay_type
 
@@ -681,10 +672,7 @@
 				overlay.color = "#[species_secondary_color]"
 				. += overlay
 
-		draw_color = mutation_color
-		if(should_draw_greyscale) //Should the limb be colored outside of a forced color?
-			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
-
+		var/draw_color = mutation_color || effective_skin_color
 		if(draw_color)
 			limb.color = "#[draw_color]"
 			if(aux_zone)

@@ -1,7 +1,8 @@
+#warn this file is unfinished and, right now, unnecessary. either rework it or get the fuck out!!!
+/*
 #warn document everything here -- all vars, procs, types
 #warn maybe there should be a way of removing key-value pairs? hm. alternatively, pruning unnecessary entries can be done after updating, as a final pass for things unrecognized and not updated
 #warn the cacheing shit is also a huge fucking mess... i really should just use /tg/'s json_savefile s
-
 /datum/save_backend
 	var/ckey
 
@@ -144,3 +145,5 @@
 	ckey_save_path = "data/player_saves___/[_ckey[1]]/[_ckey]/preferences.sav"
 	// ckey_save_path = "data/player_saves/[_ckey[1]]/[_ckey]/preferences.sav"
 	. = ..()
+
+*/

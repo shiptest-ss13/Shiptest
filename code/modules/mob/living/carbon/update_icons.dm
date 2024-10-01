@@ -283,6 +283,7 @@
 	. += "-[body_zone]"
 	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
 		. += "-digitigrade"
+	var/draw_color = mutation_color || effective_skin_color
 	if(should_draw_greyscale && draw_color)
 		. += "-[draw_color]"
 

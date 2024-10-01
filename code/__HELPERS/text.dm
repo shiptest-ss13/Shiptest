@@ -362,6 +362,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/random_color()
 	return num2text(rand(0, 16777215), 6, 16)
 
+#warn wait, why doe sthis allow for dark green hair? what the fuck is natural about that?
 /proc/random_color_natural()	//For use in natural haircolors.
 	var/red = num2text(rand(0,255), 2, 16)
 	var/green = num2text(rand(0,128), 2, 16)	//Conversion to hex

@@ -1,8 +1,7 @@
 /datum/species/snail
 	name = "\improper Snailperson"
 	id = SPECIES_SNAIL
-	default_color = "336600" //vomit green
-	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
+	species_traits = list(NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
 	coldmod = 0.5 //snails only come out when its cold and wet
@@ -39,7 +38,7 @@
 		return TRUE
 	return ..()
 
-/datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
 	var/obj/item/storage/backpack/bag = C.get_item_by_slot(ITEM_SLOT_BACK)
 	if(!istype(bag, /obj/item/storage/backpack/snail))

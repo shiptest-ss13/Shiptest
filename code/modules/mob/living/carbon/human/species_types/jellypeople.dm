@@ -2,8 +2,7 @@
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
 	name = "\improper Jellyperson"
 	id = SPECIES_JELLYPERSON
-	default_color = "00FF90"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
+	species_traits = list(EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	hair_color = "mutcolor"
 	hair_alpha = 150
@@ -218,8 +217,7 @@
 /datum/species/jelly/slime
 	name = "Slimeperson"
 	id = SPECIES_SLIMEPERSON
-	default_color = "00FFFF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	hair_color = "mutcolor"
 	hair_alpha = 150
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT

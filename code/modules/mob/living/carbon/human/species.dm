@@ -16,8 +16,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/name
 	//Species flags currently used for species restriction on items
 	var/bodyflag = FLAG_HUMAN
-	// Default color. If mutant colors are disabled, this is the color that will be used by that race.
-	var/default_color = "#FFFFFF"
 
 	var/bodytype = BODYTYPE_HUMANOID
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
@@ -42,16 +40,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Never, Optional, or Forced digi legs?
 	var/digitigrade_customization = DIGITIGRADE_NEVER
 
-	///The gradient style used for the mob's hair.
-	var/grad_style
-	///The gradient color used to color the gradient.
-	var/grad_color
 	///The color used for the "white" of the eye, if the eye has one.
 	var/sclera_color = "#e8e8e8"
 	/// The color used for blush overlay
 	var/blush_color = COLOR_BLUSH_PINK
-	///Does the species use skintones or not? As of now only used by humans.
-	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
 	var/exotic_blood = ""
 	///If your race uses a non standard bloodtype (A+, O-, AB-, etc). For example, lizards have L type blood.
@@ -73,7 +65,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///What languages this species can understand and say. Use a [language holder datum][/datum/language_holder] in this var.
 	var/species_language_holder = /datum/language_holder
 	/// Default mutant bodyparts for this species. Don't forget to set one for every mutant bodypart you allow this species to have.
-	var/list/default_features = list(FEATURE_BODY_SIZE = "Normal")
+	var/list/default_features = list(FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	/// Visible CURRENT bodyparts that are unique to a species. DO NOT USE THIS AS A LIST OF ALL POSSIBLE BODYPARTS AS IT WILL FUCK SHIT UP! Changes to this list for non-species specific bodyparts (ie cat ears and tails) should be assigned at organ level if possible. Layer hiding is handled by [datum/species/handle_mutant_bodyparts()] below.
 	var/list/mutant_bodyparts = list()
 	///Internal organs that are unique to this race, like a tail.
@@ -106,8 +98,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/siemens_coeff = 1
 	///What kind of damage overlays (if any) appear on our species when wounded? If this is "", does not add an overlay.
 	var/damage_overlay_type = "human"
-	///To use MUTCOLOR with a fixed color that's independent of the mcolor feature in DNA.
-	var/fixed_mut_color = ""
+	/// If this is non-null, mutant colors will not appear in character creation,
+	/// and this value will be used as the mob's color instead of the dna's features list's FEATURE_MUTANT_COLOR value.
+	var/fixed_mut_color = null
 	///Special mutation that can be found in the genepool exclusively in this species. Dont leave empty or changing species will be a headache
 	var/inert_mutation 	= DWARFISM
 	///Used to set the mob's deathsound upon species change
@@ -411,9 +404,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	* Arguments:
 	* * C - Carbon, this is whoever became the new species.
 	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
-	* * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
 */
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, robotic = FALSE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -499,9 +491,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * Arguments:
  * * C - Carbon, this is whoever lost this species.
  * * new_species - The new species that the carbon became, used for genetics mutations.
- * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
  */
-/datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+/datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species)
 	if(C.dna.species.exotic_bloodtype)
 		C.dna.blood_type = random_blood_type()
 
@@ -640,11 +631,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						hair_overlay.color = "#" + H.hair_color
 
 					//Gradients
-					grad_style = H.grad_style
-					grad_color = H.grad_color
+					var/grad_style = H.grad_style
+					var/grad_color = H.grad_color
 					if(grad_style)
-						var/datum/sprite_accessory/gradient = GLOB.hair_gradients_list[grad_style]
-						var/icon/temp = icon(gradient.icon, gradient.icon_state)
+						var/datum/sprite_accessory/hair_gradient/grad = GLOB.hair_gradients_list[grad_style]
+						var/icon/temp = icon(grad.icon, grad.icon_state)
 						var/icon/temp_hair = icon(hair_file, hair_state)
 						temp.Blend(temp_hair, ICON_ADD)
 						gradient_overlay.icon = temp
@@ -727,7 +718,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_state += "_d"
 				underwear_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!underwear.use_static)
-					underwear_overlay.color = "#" + H.underwear_color
+					underwear_overlay.color = H.underwear_color
 				standing += underwear_overlay
 
 		if(H.undershirt)
@@ -739,10 +730,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_file = KEPORI_UNDERWEAR_TORSO_PATH
 				undershirt_overlay = mutable_appearance(icon_file, undershirt.icon_state, -BODY_LAYER)
 				if(!undershirt.use_static)
-					undershirt_overlay.color = "#" + H.undershirt_color
+					undershirt_overlay.color = H.undershirt_color
 				standing += undershirt_overlay
 
-		if(H.socks && H.num_legs >= 2 && !(NOSOCKS in species_traits))
+		#warn would be nice if this was rectified away from digitigrade when the current uniform doesn't have a digitigrade alt
+		if(H.socks && H.num_legs >= 2 && !(NO_SOCKS in species_traits))
 			var/datum/sprite_accessory/socks/socks = GLOB.socks_list[H.socks]
 			if(socks)
 				var/mutable_appearance/socks_overlay
@@ -754,7 +746,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_file = KEPORI_UNDERWEAR_SOCKS_PATH
 				socks_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!socks.use_static)
-					socks_overlay.color = "#" + H.socks_color
+					socks_overlay.color = H.socks_color
 				standing += socks_overlay
 
 	if(standing.len)
@@ -890,7 +882,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					layer = -layer,
 					alpha = part_datum.image_alpha
 				)
-				second_accessory_overlay.color = resolve_color_src(H, MUTCOLORS_SECONDARY)
+				second_accessory_overlay.color = resolve_color_src(H, COLOR_SRC_MUT_COLOR_SECONDARY)
 				if(part_datum.center)
 					second_accessory_overlay = center_image(second_accessory_overlay, part_datum.dimension_x, part_datum.dimension_y)
 				H.overlays_standing[layer] += second_accessory_overlay
@@ -904,26 +896,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return "#FFFFFF"
 
 	switch(color_src)
-		if(MUTCOLORS)
+		if(COLOR_SRC_MUT_COLOR)
 			if(fixed_mut_color)
 				return "#[fixed_mut_color]"
 			else
 				return "#[H.dna.features[FEATURE_MUTANT_COLOR]]"
-		if(MUTCOLORS_SECONDARY)
+		if(COLOR_SRC_MUT_COLOR_SECONDARY)
 			return "#[H.dna.features[FEATURE_MUTANT_COLOR2]]"
-		if(SKINCOLORS)
-			return "#[(skintone2hex(H.skin_tone))]"
+		if(COLOR_SRC_SKIN_COLOR)
+			return "#[skintone2hex(H.skin_tone)]"
 
-		if(HAIR)
+		if(COLOR_SRC_HAIR_COLOR)
 			if(hair_color == "mutcolor")
 				return "#[H.dna.features[FEATURE_MUTANT_COLOR]]"
 			else if(hair_color == "fixedmutcolor")
 				return "#[fixed_mut_color]"
 			else
 				return "#[H.hair_color]"
-		if(FACEHAIR)
+		if(COLOR_SRC_FACE_HAIR_COLOR)
 			return "#[H.facial_hair_color]"
-		if(EYECOLOR)
+		if(COLOR_SRC_EYE_COLOR)
 			return "#[H.eye_color]"
 
 //This exists so sprite accessories can still be per-layer without having to include that layer's

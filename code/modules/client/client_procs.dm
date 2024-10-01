@@ -115,6 +115,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if("prefs")
 			if (inprefs)
 				return
+			// prevents multiple concurrent clicks on the prefs menu.
+			// this was originally added by MSO to prevent a prefs menu DOS (lollllllllll)
+			// but it's useful for ensuring correctness as well
 			inprefs = TRUE
 			. = prefs.process_link(usr,href_list)
 			inprefs = FALSE
@@ -268,8 +271,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	else
 		prefs = new /datum/preferences(src)
 		GLOB.preferences_datums[ckey] = prefs
-	prefs.last_ip = address				//these are gonna be used for banning
-	prefs.last_id = computer_id			//these are gonna be used for banning
 	fps = prefs.clientfps == 0 ? 60 : prefs.clientfps //WS Edit - Client FPS Tweak
 
 	if(fexists(roundend_report_file()))

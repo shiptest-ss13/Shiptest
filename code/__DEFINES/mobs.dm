@@ -102,10 +102,6 @@
 #define SPECIES_GOOFZOMBIE "krokodil_zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
-#define DIGITIGRADE_NEVER 0
-#define DIGITIGRADE_OPTIONAL 1
-#define DIGITIGRADE_FORCED 2
-
 //Reagent Metabolization flags, defines the type of reagents that affect this mob
 #define PROCESS_ORGANIC 1 //Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
 #define PROCESS_SYNTHETIC 2 //Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
@@ -335,6 +331,7 @@
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
 
 //MINOR TWEAKS/MISC
+#warn these defines need to be updated / likely removed, due to changed nature of age
 #define AGE_MIN 18 //youngest a character can be
 #define AGE_MAX 85 //oldest a character can be
 #define AGE_MINOR 20 //legal age of space drinking and smoking

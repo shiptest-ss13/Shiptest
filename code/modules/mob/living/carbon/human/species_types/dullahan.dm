@@ -2,11 +2,9 @@
 	name = "\improper Dullahan"
 	id = SPECIES_DULLAHAN
 	max_bodypart_count = 5 //No head
-	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,SKINCOLORS)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
-	default_features = list(FEATURE_MUTANT_COLOR = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", FEATURE_BODY_SIZE = "Normal")
-	use_skintones = TRUE
+	default_features = list(FEATURE_MUTANT_COLOR = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	mutantbrain = /obj/item/organ/brain/dullahan
 	mutanteyes = /obj/item/organ/eyes/dullahan
 	mutanttongue = /obj/item/organ/tongue/dullahan

@@ -4,7 +4,7 @@
 	sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
+	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -18,7 +18,7 @@
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_tail", FEATURE_IPC_CHASSIS, FEATURE_IPC_BRAIN)
-	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_tail" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_tail" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -64,7 +64,7 @@
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species) // Let's make that IPC actually robotic.
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -264,7 +264,11 @@
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
-			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+			var/mutcolor_bodyparts = chassis_of_choice.use_mutcolors ? TRUE : FALSE
+			if(mutcolor_bodyparts)
+				BP.should_draw_greyscale = TRUE
+				BP.effective_skin_color = C.dna?.features[FEATURE_MUTANT_COLOR]
+				BP.species_secondary_color = C.dna?.features[FEATURE_MUTANT_COLOR2]
 
 			if(chassis_of_choice.icon)
 				BP.static_icon = chassis_of_choice.icon
@@ -276,11 +280,6 @@
 			if(chassis_of_choice.is_digi)
 				if(istype(BP,/obj/item/bodypart/leg))
 					BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
-
-			if(BP.uses_mutcolor)
-				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features[FEATURE_MUTANT_COLOR]
-				BP.species_secondary_color = C.dna?.features[FEATURE_MUTANT_COLOR2]
 
 			BP.limb_id = chassis_of_choice.limbs_id
 			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"

@@ -10,7 +10,7 @@
 	body_zone = BODY_ZONE_HEAD
 	clothes_flags_inv_hide = HIDEHAIR
 
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_feathers/none
@@ -71,7 +71,7 @@
 	abstract_type = /datum/sprite_accessory/mutant_part/kepori_body_feathers
 	randomizable = TRUE
 
-	color_src = MUTCOLORS_SECONDARY
+	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_body_feathers/none
@@ -104,7 +104,7 @@
 	abstract_type = /datum/sprite_accessory/mutant_part/kepori_tail_feathers
 	randomizable = TRUE
 
-	color_src = MUTCOLORS_SECONDARY
+	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_tail_feathers/none

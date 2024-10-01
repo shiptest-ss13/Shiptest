@@ -1,7 +1,3 @@
-/proc/random_prosthetic()
-	. = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
-	.[pick(.)] = PROSTHETIC_ROBOTIC
-
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
@@ -21,6 +17,7 @@
 		else
 			return "000000"
 
+#warn remove as these become irrelevant
 /proc/random_underwear(gender)
 	if(!GLOB.underwear_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
@@ -36,19 +33,14 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/socks, GLOB.socks_list)
 	return pick(GLOB.socks_list)
 
-/proc/random_backpack()
-	return pick(GLOB.backpacklist)
-
 #warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
-// ! randomization
+#warn randomization, remove
 /proc/random_features()
 	var/feature_list = list(
 		FEATURE_FLAVOR_TEXT = "",
 
 		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		// ! not a great way of randomizing, due the removal of color_list_ethereal as a necessary requirement for elzu
-		FEATURE_ETHEREAL_COLOR = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
 		FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
 		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
 		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
@@ -69,22 +61,14 @@
 	return feature_list
 
 /proc/random_hairstyle(gender)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.hairstyles_male_list)
-		if(FEMALE)
-			return pick(GLOB.hairstyles_female_list)
-		else
-			return pick(GLOB.hairstyles_list)
+	return pick(GLOB.hairstyles_list)
 
 /proc/random_facial_hairstyle(gender)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.facial_hairstyles_male_list)
-		if(FEMALE)
-			return pick(GLOB.facial_hairstyles_female_list)
-		else
-			return pick(GLOB.facial_hairstyles_list)
+	if(gender == MALE)
+		return pick(GLOB.facial_hairstyles_list)
+	else
+		// indexes into GLOB.facial_hairstyles_list. represents no facial hair
+		return /datum/sprite_accessory/facial_hair/shaved::name
 
 /proc/random_unique_name(gender, attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)

@@ -199,10 +199,6 @@
 	E.processing = TRUE
 	return TRUE
 
-/datum/admins/proc/makeSpaceNinja()
-	new /datum/round_event/ghost_role/ninja()
-	return 1
-
 // DEATH SQUADS
 /datum/admins/proc/makeDeathsquad()
 	return makeEmergencyresponseteam(/datum/ert/deathsquad)

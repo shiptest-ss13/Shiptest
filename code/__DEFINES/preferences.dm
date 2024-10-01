@@ -66,13 +66,6 @@
 #define PARALLAX_DELAY_MED 1
 #define PARALLAX_DELAY_LOW 2
 
-#define SEC_DEPT_NONE "None"
-#define SEC_DEPT_RANDOM "Random"
-#define SEC_DEPT_ENGINEERING "Engineering"
-#define SEC_DEPT_MEDICAL "Medical"
-#define SEC_DEPT_SCIENCE "Science"
-#define SEC_DEPT_SUPPLY "Supply"
-
 // Playtime tracking system, see jobs_exp.dm
 // Due to changes to job experience requirements, many of these are effectively unused.
 #define EXP_TYPE_LIVING "Living"
@@ -101,6 +94,7 @@
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
+#warn remove
 //randomised elements
 #define RANDOM_NAME "random_name"
 #define RANDOM_NAME_ANTAG "random_name_antag"
@@ -135,9 +129,8 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-#define NOT_SYNTHETIC FALSE
-#define IS_SYNTHETIC TRUE
-
+#warn ensure that these defines are universally used (post-update from master)
+#warn file could do with some sorting.
 // Strings used as keys in the "features" list on mobs, signifying various attributes.
 // THESE SHOULD NOT OVERLAP WITH THE mutant_string VARIABLE
 // ON ANY /datum/sprite_accessory/mutant_part SUBTYPE!!
@@ -146,15 +139,174 @@
 #define FEATURE_MUTANT_COLOR2 "mcolor2"
 #define FEATURE_BODY_SIZE "body_size"
 
-#define FEATURE_GRADIENT_STYLE "grad_style"
-#define FEATURE_GRADIENT_COLOR "grad_color"
-
-#define FEATURE_ETHEREAL_COLOR "ethcolor"
 #define FEATURE_FLAVOR_TEXT "flavor_text"
 #define FEATURE_IPC_CHASSIS "ipc_chassis"
 #define FEATURE_IPC_BRAIN "ipc_brain"
-
 #define FEATURE_LEGS_TYPE "legs"
+
+
+//Hairstyles
+GLOBAL_LIST_EMPTY(hairstyles_list)			//stores /datum/sprite_accessory/hair indexed by name
+GLOBAL_LIST_EMPTY(facial_hairstyles_list)	//stores /datum/sprite_accessory/facial_hair indexed by name
+GLOBAL_LIST_EMPTY(hair_gradients_list) //stores /datum/sprite_accessory/hair_gradient indexed by name
+
+//Underwear
+GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear indexed by name
+
+//Undershirts
+GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
+
+//Socks
+GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
+
+// IPC chassises
+GLOBAL_LIST_EMPTY(ipc_chassis_list) // stores /datum/sprite_accessory/ipc_chassis indexed by name
+
+
 // These are the *values* in the features list which are keyed by FEATURE_LEGS_TYPE, used to distinguish normal legs from digitigrade ones.
 #define FEATURE_NORMAL_LEGS "Normal Legs"
 #define FEATURE_DIGITIGRADE_LEGS "Digitigrade Legs"
+GLOBAL_LIST_INIT(legs_list, list(FEATURE_NORMAL_LEGS, FEATURE_DIGITIGRADE_LEGS))
+
+
+// Backpacks
+#define GBACKPACK "Grey Backpack"
+#define GSATCHEL "Grey Satchel"
+#define GDUFFELBAG "Grey Duffel Bag"
+#define GCOURIERBAG "Grey Messenger Bag"
+#define LSATCHEL "Leather Satchel"
+#define DBACKPACK "Department Backpack"
+#define DSATCHEL "Department Satchel"
+#define DDUFFELBAG "Department Duffel Bag"
+#define DCOURIERBAG "Department Messenger Bag"
+GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL))
+
+// Uniforms
+#define PREF_SUIT "Standard Jumpsuit"
+#define PREF_SKIRT "Standard Jumpskirt"
+#define PREF_ALTSUIT "Alternate Jumpsuit"
+#define PREF_GREYSUIT "Grey Jumpsuit"
+GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT))
+
+// Exowear
+#define PREF_NOEXOWEAR "No Exowear"
+#define PREF_EXOWEAR "Standard Exowear"
+#define PREF_ALTEXOWEAR "Alternate Exowear"
+#define PREF_COATEXOWEAR "Departmental Winter Coat"
+GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
+
+// Body sizes
+#define BODY_SIZE_NORMAL "Normal"
+#define BODY_SIZE_SHORT "Short"
+#define BODY_SIZE_TALL "Tall"
+
+#define BODY_SIZE_NORMAL_SCALE 1
+#define BODY_SIZE_SHORT_SCALE 0.93
+#define BODY_SIZE_TALL_SCALE 1.03
+GLOBAL_LIST_INIT(body_sizes, list(BODY_SIZE_NORMAL = BODY_SIZE_NORMAL_SCALE, BODY_SIZE_SHORT = BODY_SIZE_SHORT_SCALE, BODY_SIZE_TALL = BODY_SIZE_TALL_SCALE))
+
+// IPC brains
+GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
+
+
+GLOBAL_LIST_INIT(color_list_ethereal, list(
+	"Red" = "ff4d4d",
+	"Faint Red" = "ffb3b3",
+	"Dark Red" = "9c3030",
+	"Orange" = "ffa64d",
+	"Burnt Orange" = "cc4400",
+	"Bright Yellow" = "ffff99",
+	"Dull Yellow" = "fbdf56",
+	"Faint Green" = "ddff99",
+	"Green" = "97ee63",
+	"Seafoam Green" = "00fa9a",
+	"Dark Green" = "37835b",
+	"Cyan Blue" = "00ffff",
+	"Faint Blue" = "b3d9ff",
+	"Blue" = "3399ff",
+	"Dark Blue" = "6666ff",
+	"Purple" = "ee82ee",
+	"Dark Fuschia" = "cc0066",
+	"Pink" = "ff99cc",
+	"White" = "f2f2f2",))
+
+GLOBAL_LIST_INIT(ghost_forms_with_directions_list, list(
+	"ghost",
+	"ghostian",
+	"ghostian2",
+	"ghostking",
+	"ghost_red",
+	"ghost_black",
+	"ghost_blue",
+	"ghost_yellow",
+	"ghost_green",
+	"ghost_pink",
+	"ghost_cyan",
+	"ghost_dblue",
+	"ghost_dred",
+	"ghost_dgreen",
+	"ghost_dcyan",
+	"ghost_grey",
+	"ghost_dyellow",
+	"ghost_dpink",
+	"skeleghost",
+	"ghost_purpleswirl",
+	"ghost_rainbow",
+	"ghost_fire",
+	"ghost_funkypurp",
+	"ghost_pinksherbert",
+	"ghost_blazeit",
+	"ghost_mellow",
+	"ghost_camo",
+	"catghost")) //stores the ghost forms that support directional sprites
+
+GLOBAL_LIST_INIT(ghost_forms_with_accessories_list, list("ghost")) //stores the ghost forms that support hair and other such things
+
+GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
+	":thinking:",
+	"Alien",
+	"Angel",
+	"Banned",
+	"Bliss",
+	"Blue",
+	"Clown",
+	"Database",
+	"Dorf",
+	"Firewall",
+	"Fuzzy",
+	"Gentoo",
+	"Glitchman",
+	"Gondola",
+	"Goon",
+	"Hades",
+	"HAL 9000",
+	"Heartline",
+	"Helios",
+	"House",
+	"Inverted",
+	"Lamp",
+	"Matrix",
+	"Monochrome",
+	"Murica",
+	"Nanotrasen",
+	"Not Malf",
+	"President",
+	"Random",
+	"Rainbow",
+	"Red",
+	"Red October",
+	"Static",
+	"Syndicat Meow",
+	"Text",
+	"Too Deep",
+	"Triumvirate",
+	"Triumvirate-M",
+	"Weird")))
+
+/proc/resolve_ai_icon(input)
+	if(!input || !(input in GLOB.ai_core_display_screens))
+		return "ai"
+	else
+		if(input == "Random")
+			input = pick(GLOB.ai_core_display_screens - "Random")
+		return "ai-[lowertext(input)]"

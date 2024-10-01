@@ -25,41 +25,32 @@
 	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/tails_animated/human/cat
 	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
-	color_src = HAIR
-
-#warn why... IS this an option????
-/datum/sprite_accessory/mutant_part/tails/human/cat/slime
-	name = "Slimecat"
-	image_alpha = 150
-
-/datum/sprite_accessory/mutant_part/tails_animated/human/cat/slime
-	name = "Slimecat"
-	image_alpha = 150
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/tails/human/fox
 	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox"
 	icon_state = "fox"
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/tails_animated/human/fox
 	icon = 'icons/mob/species/misc/fox.dmi'
 	name = "Fox"
 	icon_state = "fox"
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/tails/human/fox/alt
 	name = "Fox 2"
 	icon_state = "fox2"
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/tails_animated/human/fox/alt
 	name = "Fox 2"
 	icon_state = "fox2"
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR

@@ -36,6 +36,7 @@
 
 		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")
 
+		#warn update to new handling for underwear colors
 		if(!Adjacent(user))
 			return
 		switch(choice)
@@ -44,25 +45,25 @@
 				if(new_undies)
 					H.underwear = new_undies
 			if("Underwear Color")
-				var/new_underwear_color = input(H, "Choose your underwear color", "Underwear Color","#"+H.underwear_color) as color|null
+				var/new_underwear_color = input(H, "Choose your underwear color", "Underwear Color", H.underwear_color) as color|null
 				if(new_underwear_color)
-					H.underwear_color = sanitize_hexcolor(new_underwear_color)
+					H.underwear_color = sanitize_hexcolor(new_underwear_color, include_crunch = TRUE)
 			if("Undershirt")
 				var/new_undershirt = input(user, "Select your undershirt", "Changing") as null|anything in GLOB.undershirt_list
 				if(new_undershirt)
 					H.undershirt = new_undershirt
 			if("Undershirt Color")
-				var/new_undershirt_color = input(H, "Choose your undershirt color", "Undershirt Color","#"+H.undershirt_color) as color|null
+				var/new_undershirt_color = input(H, "Choose your undershirt color", "Undershirt Color", H.undershirt_color) as color|null
 				if(new_undershirt_color)
-					H.undershirt_color = sanitize_hexcolor(new_undershirt_color)
+					H.undershirt_color = sanitize_hexcolor(new_undershirt_color, include_crunch = TRUE)
 			if("Socks")
 				var/new_socks = input(user, "Select your socks", "Changing") as null|anything in GLOB.socks_list
 				if(new_socks)
 					H.socks= new_socks
 			if("Socks Color")
-				var/new_socks_color = input(H, "Choose your socks color", "Socks Color","#"+H.socks_color) as color|null
+				var/new_socks_color = input(H, "Choose your socks color", "Socks Color", H.socks_color) as color|null
 				if(new_socks_color)
-					H.socks_color = sanitize_hexcolor(new_socks_color)
+					H.socks_color = sanitize_hexcolor(new_socks_color, include_crunch = TRUE)
 
 		add_fingerprint(H)
 		H.update_body()

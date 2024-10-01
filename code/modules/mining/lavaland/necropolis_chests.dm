@@ -1262,7 +1262,7 @@
 	name = "dragon chest"
 
 /obj/structure/closet/crate/necropolis/dragon/PopulateContents()
-	var/loot = rand(1,4)
+	var/loot = rand(1,3)
 	switch(loot)
 		if(1)
 			new /obj/item/melee/ghost_sword(src)
@@ -1271,8 +1271,6 @@
 		if(3)
 			new /obj/item/book/granter/spell/sacredflame(src)
 			new /obj/item/gun/magic/wand/fireball(src)
-		if(4)
-			new /obj/item/dragons_blood(src)
 
 /obj/structure/closet/crate/necropolis/dragon/crusher
 	name = "firey dragon chest"
@@ -1365,60 +1363,6 @@
 	final_block_chance += clamp((ghost_counter * 5), 0, 75)
 	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
 	return ..()
-
-//Blood
-
-/obj/item/dragons_blood
-	name = "bottle of dragons blood"
-	desc = "You're not actually going to drink this, are you?"
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "vial"
-
-/obj/item/dragons_blood/attack_self(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
-
-	var/mob/living/carbon/human/H = user
-	var/random = rand(1,4)
-
-	switch(random)
-		if(1)
-			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities.</span>")
-			// ! may be an issue?
-			H.dna.features = list(FEATURE_MUTANT_COLOR = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", FEATURE_LEGS_TYPE = FEATURE_DIGITIGRADE_LEGS)
-			H.eye_color = "fee5a3"
-			H.set_species(/datum/species/lizard)
-		if(2)
-			to_chat(user, "<span class='danger'>Your flesh begins to melt! Miraculously, you seem fine otherwise.</span>")
-			H.set_species(/datum/species/skeleton)
-		if(3)
-			to_chat(user, "<span class='danger'>Power courses through you! You can now shift your form at will.</span>")
-			if(user.mind)
-				var/obj/effect/proc_holder/spell/targeted/shapeshift/dragon/D = new
-				user.mind.AddSpell(D)
-		if(4)
-			to_chat(user, "<span class='danger'>You feel like you could walk straight through lava now.</span>")
-			H.weather_immunities |= "lava"
-
-	playsound(user.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
-	qdel(src)
-
-/datum/disease/transformation/dragon
-	name = "dragon transformation"
-	cure_text = "nothing"
-	cures = list(/datum/reagent/medicine/adminordrazine)
-	agent = "dragon's blood"
-	desc = "What do dragons have to do with Space Station 13?"
-	stage_prob = 20
-	severity = DISEASE_SEVERITY_BIOHAZARD
-	visibility_flags = 0
-	stage1	= list("Your bones ache.")
-	stage2	= list("Your skin feels scaly.")
-	stage3	= list("<span class='danger'>You have an overwhelming urge to terrorize some peasants.</span>", "<span class='danger'>Your teeth feel sharper.</span>")
-	stage4	= list("<span class='danger'>Your blood burns.</span>")
-	stage5	= list("<span class='danger'>You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason.</span>")
-	new_form = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
-
 
 //Lava Staff
 

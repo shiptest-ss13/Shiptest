@@ -10,7 +10,7 @@
 
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=425x475")
 
-// ! randomization
+#warn randomization, remove
 /proc/randomize_human(mob/living/carbon/human/H)
 	H.gender = pick(MALE, FEMALE)
 	H.real_name = random_unique_name(H.gender)
@@ -18,7 +18,7 @@
 	H.underwear = random_underwear(H.gender)
 	H.underwear_color = random_color()
 	H.skin_tone = random_skin_tone()
-	H.hairstyle = random_hairstyle(H.gender)
+	H.hairstyle = random_hairstyle()
 	H.facial_hairstyle = random_facial_hairstyle(H.gender)
 	H.hair_color = random_color_natural()
 	H.facial_hair_color = H.hair_color

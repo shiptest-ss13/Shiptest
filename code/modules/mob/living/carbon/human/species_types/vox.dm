@@ -2,12 +2,11 @@
 /datum/species/vox
 	name = "\improper Vox"
 	id = SPECIES_VOX
-	default_color = "6060FF"
 	species_age_min = 17
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", FEATURE_BODY_SIZE = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
@@ -75,7 +74,7 @@
 
 
 
-/datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
 	C.base_pixel_x -= 9
 	C.pixel_x = C.base_pixel_x
@@ -84,7 +83,7 @@
 	tail_action = new
 	tail_action.Grant(C)
 
-/datum/species/vox/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+/datum/species/vox/on_species_loss(mob/living/carbon/human/C, datum/species/new_species)
 	. = ..()
 	C.base_pixel_x += 9
 	C.pixel_x = C.base_pixel_x

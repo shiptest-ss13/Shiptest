@@ -15,7 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
-	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
+	var/current_body_size = BODY_SIZE_NORMAL_SCALE //This is a size multiplier, it starts at "1".
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -110,11 +110,11 @@
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		if(!GLOB.hairstyles_list.len)
-			init_sprite_accessory_subtypes(/datum/sprite_accessory/hair,GLOB.hairstyles_list, GLOB.hairstyles_male_list, GLOB.hairstyles_female_list)
+			init_sprite_accessory_subtypes(/datum/sprite_accessory/hair,GLOB.hairstyles_list)
 		L[DNA_HAIRSTYLE_BLOCK] = construct_block(GLOB.hairstyles_list.Find(H.hairstyle), GLOB.hairstyles_list.len)
 		L[DNA_HAIR_COLOR_BLOCK] = sanitize_hexcolor(H.hair_color)
 		if(!GLOB.facial_hairstyles_list.len)
-			init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair, GLOB.facial_hairstyles_list, GLOB.facial_hairstyles_male_list, GLOB.facial_hairstyles_female_list)
+			init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair, GLOB.facial_hairstyles_list)
 		L[DNA_FACIAL_HAIRSTYLE_BLOCK] = construct_block(GLOB.facial_hairstyles_list.Find(H.facial_hairstyle), GLOB.facial_hairstyles_list.len)
 		L[DNA_FACIAL_HAIR_COLOR_BLOCK] = sanitize_hexcolor(H.facial_hair_color)
 		L[DNA_SKIN_TONE_BLOCK] = construct_block(GLOB.skin_tones.Find(H.skin_tone), GLOB.skin_tones.len)
@@ -183,7 +183,6 @@
 		. += random_string(DNA_UNIQUE_ENZYMES_LEN, GLOB.hex_characters)
 	return .
 
-// ! so THIS is how this works. wow! it    sucks!
 /datum/dna/proc/update_ui_block(blocknumber)
 	if(!blocknumber || !ishuman(holder))
 		return
@@ -321,7 +320,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -331,10 +330,11 @@
 		else
 			return
 		deathsound = new_race.deathsound
-		dna.species.on_species_loss(src, new_race, pref_load)
+		dna.species.on_species_loss(src, new_race)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
-//Solves quirk conflicts on species change if there's any
+
+		//Solves quirk conflicts on species change if there's any
 		var/list/quirks_to_remove = list()
 		var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
 		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
@@ -346,14 +346,16 @@
 		quirks_to_remove -= quirks_resolved
 		for(var/quirk_type in quirks_to_remove)
 			remove_quirk(quirk_type)
-		dna.species.on_species_gain(src, old_species, pref_load, robotic)
+
+		dna.species.on_species_gain(src, old_species, robotic)
+
 		if(ishuman(src))
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
 		update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
 	robotic ||= fbp
 	..()
 	if(icon_update)
@@ -374,6 +376,7 @@
 		dna.features = newfeatures
 		flavor_text = dna.features[FEATURE_FLAVOR_TEXT] //Update the flavor_text to use new dna text
 
+	#warn this uses the ability to pass an instanced datum into set_species(), which is potentially problematic
 	if(mrace)
 		var/datum/species/newrace = new mrace.type
 		newrace.copy_properties_from(mrace)

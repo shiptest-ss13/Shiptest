@@ -828,7 +828,6 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			lip_overlay.color = lip_color
 			add_overlay(lip_overlay)
 
-		// ! looks like it doesn't respect species_eye_path. this shit fucking sucks man
 		// eyes
 		if(!(NOEYESPRITES in dna.species.species_traits))
 			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)

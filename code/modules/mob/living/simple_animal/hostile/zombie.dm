@@ -28,9 +28,11 @@
 	. = ..()
 	INVOKE_ASYNC(src, PROC_REF(setup_visuals))
 
+#warn this whole proc needs to be rewritten, it's based on shoddy assumptions
 /mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
-	dummy_prefs.pref_species = new /datum/species/zombie
+	// doesn't work anymore
+	// dummy_prefs.pref_species = new /datum/species/zombie
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
 	if(zombiejob)
 		var/datum/job/J = GLOB.name_occupations[zombiejob]

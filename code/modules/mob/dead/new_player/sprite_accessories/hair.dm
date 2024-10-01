@@ -5,6 +5,11 @@
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
 
+// breaks alphabetical sorting, but it's useful given that it's "no hair"
+/datum/sprite_accessory/hair/bald
+	name = "Bald"
+	icon_state = null
+
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
 	icon_state = "hair_afro"
@@ -20,10 +25,6 @@
 /datum/sprite_accessory/hair/antenna
 	name = "Ahoge"
 	icon_state = "hair_antenna"
-
-/datum/sprite_accessory/hair/bald
-	name = "Bald"
-	icon_state = null
 
 /datum/sprite_accessory/hair/balding
 	name = "Balding Hair"

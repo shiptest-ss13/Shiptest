@@ -10,7 +10,7 @@
 	body_zone = BODY_ZONE_CHEST
 
 	icon = 'icons/mob/species/lizard/markings.dmi'
-	color_src = MUTCOLORS_SECONDARY
+	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
 	#warn again, need to check if this works
 	synthetic_icon_state = "none"
 
@@ -128,7 +128,7 @@
 	clothes_flags_inv_hide = HIDEFACE
 
 	icon = 'icons/mob/species/lizard/markings.dmi'
-	color_src = MUTCOLORS_SECONDARY
+	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
 	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/mutant_part/face_markings/none
@@ -166,8 +166,9 @@
 	clothes_flags_inv_hide = HIDEHAIR
 
 	icon = 'icons/mob/species/lizard/horns.dmi'
-	color_src = HAIR
-	synthetic_color_src = MUTCOLORS_SECONDARY
+	color_src = COLOR_SRC_HAIR_COLOR
+	#warn OH, this is just used because haircolor used to require hair in species traits. we should just remove this (and, potentially, the entire variable?)
+	synthetic_color_src = COLOR_SRC_MUT_COLOR_SECONDARY
 
 /datum/sprite_accessory/mutant_part/horns/none
 	name = "None"

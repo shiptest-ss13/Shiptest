@@ -24,6 +24,7 @@
 	to_chat(usr, "Enabled anonymous names. THEME: [SSticker.anonymousnames].")
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has enabled anonymous names. THEME: [SSticker.anonymousnames].</span>")
 
+#warn this is pretty much entirely unnecessary and should be removed
 /**
  * anonymous_name: generates a corporate random name. used in admin event tool anonymous names
  *
@@ -35,7 +36,8 @@
 /proc/anonymous_name(mob/M)
 	switch(SSticker.anonymousnames)
 		if(ANON_RANDOMNAMES)
-			return M.client.prefs.pref_species.random_name(M.gender,1)
+			var/datum/species/chosen_species = M.client.prefs.get_pref_data(/datum/preference/species)
+			return chosen_species.random_name(M.gender,1)
 		if(ANON_EMPLOYEENAMES)
 			var/name = "Employee "
 

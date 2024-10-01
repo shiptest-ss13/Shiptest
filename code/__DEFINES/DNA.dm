@@ -104,8 +104,9 @@
 #define TR_KEEPSTUNS (1<<9)
 #define TR_KEEPREAGENTS (1<<10)
 
+#warn remove commented-out defines, renumber them
 //species traits for mutantraces
-#define MUTCOLORS 1
+// #define MUTCOLORS 1
 #define HAIR 2
 #define FACEHAIR 3
 #define EYECOLOR 4
@@ -115,7 +116,7 @@
 #define NOBLOOD 8
 #define NOTRANSSTING 9
 /// Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
-#define MUTCOLORS_PARTSONLY 10
+// #define MUTCOLORS_PARTSONLY 10
 #define NOZOMBIE 11
 #define NO_UNDERWEAR 12
 #define NOLIVER 13
@@ -123,18 +124,22 @@
 #define NO_DNA_COPY 15
 #define DRINKSBLOOD 16
 #define NOFLASH 17
-#define DYNCOLORS 18 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
+// #define DYNCOLORS 18 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
 #define AGENDER 19
 #define NOEYESPRITES 20 //! Do not draw eyes or eyeless overlay
-#define NOREAGENTS 21 //! DO NOT PROCESS REAGENTS
 #define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23
 // ! overridden by NO_UNDERWEAR if it is set
-#define NOSOCKS 24 // You cannot wear sock
+#define NO_SOCKS 24 // You cannot wear sock
 #define NO_BONES 25 //! You don't have any bones for breaking
-#define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
+// #define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
 #define SKINCOLORS 27 //Human skintones
+
+// Species digitigrade customization settings
+#define DIGITIGRADE_NEVER 0
+#define DIGITIGRADE_OPTIONAL 1
+#define DIGITIGRADE_FORCED 2
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -179,7 +184,10 @@
 #define G_FEMALE 2
 #define G_PLURAL 3
 
-//Body sizes
-#define BODY_SIZE_NORMAL 1
-#define BODY_SIZE_SHORT 0.93
-#define BODY_SIZE_TALL 1.03
+// Defines used for mutant bodypart color_src, for determining which variable on a mob to look at to get color from.
+#define COLOR_SRC_MUT_COLOR "mut_color"
+#define COLOR_SRC_MUT_COLOR_SECONDARY "mut_color_secondary"
+#define COLOR_SRC_SKIN_COLOR "skin_color"
+#define COLOR_SRC_HAIR_COLOR "hair_color"
+#define COLOR_SRC_FACE_HAIR_COLOR "face_hair_color"
+#define COLOR_SRC_EYE_COLOR "eye_color"

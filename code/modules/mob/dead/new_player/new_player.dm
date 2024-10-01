@@ -193,7 +193,7 @@
 	if(href_list["manifest"])
 		ViewManifest()
 
-	// ! why is this here? is this not handled in Client/Topic()?
+	#warn this shouldn't fucking be here???? what??? surely this should be handled in Client/Topic(). need to check if this can be removed.
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
@@ -245,7 +245,7 @@
 	observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)
-		observer.real_name = observer.client.prefs.real_name
+		observer.real_name = observer.client.prefs.get_pref_data(/datum/preference/real_name)
 		observer.name = observer.real_name
 		observer.client.init_verbs()
 	observer.update_appearance()
@@ -293,7 +293,7 @@
 		return
 
 	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
-		var/name = client.prefs.real_name
+		var/name = client.prefs.get_pref_data(/datum/preference/real_name)
 		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
 			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
 			return FALSE
@@ -415,12 +415,14 @@
 		if(QDELETED(src))
 			return
 	if(frn)
+		#warn these commented lines make me miserable. remove
+		var/datum/species/chosen_species = client.prefs.get_pref_data(/datum/preference/species)
 		client.prefs.random_character()
-		client.prefs.real_name = client.prefs.pref_species.random_name(gender,1)
+		// client.prefs.real_name = chosen_species.random_name(gender,1)
 
 	if(admin_anon_names)//overrides random name because it achieves the same effect and is an admin enabled event tool
 		client.prefs.random_character()
-		client.prefs.real_name = anonymous_name(src)
+		// client.prefs.real_name = anonymous_name(src)
 
 	var/is_antag
 	if(mind in GLOB.pre_setup_antags)

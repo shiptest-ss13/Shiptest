@@ -1,7 +1,5 @@
 /datum/sprite_accessory/underwear
 	icon = 'icons/mob/clothing/underwear/underwear_legs.dmi'
-	//freedom
-	gender = NEUTER
 	//Whether the underwear uses a special sprite for digitigrade style (i.e. briefs, not panties). Adds a "_d" suffix to the icon state
 	var/has_digitigrade = FALSE
 

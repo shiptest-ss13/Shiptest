@@ -6,19 +6,11 @@
 */
 
 //Roundstart argument builds a specific list for roundstart parts where some parts may be locked
-/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female, roundstart = FALSE)
+/proc/init_sprite_accessory_subtypes(prototype, list/L)
 	if(!istype(L))
 		L = list()
-	if(!istype(male))
-		male = list()
-	if(!istype(female))
-		female = list()
 
 	for(var/path in subtypesof(prototype))
-		if(roundstart)
-			var/datum/sprite_accessory/P = path
-			if(initial(P.locked))
-				continue
 		var/datum/sprite_accessory/D = new path()
 
 		// results in a null value in the lookup list, which is generally correctly handled
@@ -26,15 +18,6 @@
 			L[D.name] = D
 		else
 			L += D.name
-
-		switch(D.gender)
-			if(MALE)
-				male += D.name
-			if(FEMALE)
-				female += D.name
-			else
-				male += D.name
-				female += D.name
 	return L
 
 /proc/init_mutant_bodypart_lookup_lists()
@@ -56,8 +39,8 @@
 				// add it to the lookup list so that the mutant part rendering code on /datum/species can actually find the instanced singletons
 				GLOB.mut_part_name_datum_lookup[part.abstract_type][part.name] = part
 			else
-				// it will have a null entry when addressed
-				GLOB.mut_part_name_datum_lookup[part.abstract_type] += part.name
+				// it will have a null entry when addressed. this is... weird... but it matches older behavior
+				GLOB.mut_part_name_datum_lookup[part.abstract_type][part.name] = null
 
 /datum/sprite_accessory
 	/// the icon file the accessory is located in
@@ -66,18 +49,12 @@
 	/// /datum/sprite_accessory/mutant_part subtypes with icon_state equal to "none" are NEVER rendered.
 	var/icon_state
 	/// The preview name of the accessory, also used for differentiation between variants of the same accessory, i.e. horn types / etc.
-	/// /datum/sprite_accessory/mutant_part subtypes with name equal to "None" are NEVER rendered.
+	/// /datum/sprite_accessory/mutant_part subtypes with name equal to "None" are NEVER rendered;
+	/// additionally, for mutant parts, the name MUST be wholly unique among the variants.
 	var/name
-
-	/// Determines if the accessory will be skipped or included in random hair generations
-	var/gender = NEUTER
 
 	/// determines if the accessory will be skipped by color preferences; used by underwear/undershirts/socks.
 	var/use_static
-
-	// ! i think this var can probably just be removed. it shouldn't be handled here!
-	// Is this part locked from roundstart selection? Used for parts that apply effects
-	var/locked = FALSE
 
 /datum/sprite_accessory/mutant_part
 	/// A string representing a variety of bodypart, used for lookups to the mutant_bodyparts list (on the species)
@@ -99,8 +76,8 @@
 
 	/// If TRUE, the gender prefix for this part's icon states will change between "m" and "f" depending on the gender of the mob.
 	var/gender_specific
-	/// This is the source that this accessory will get its color from. Default is MUTCOLORS, but can also be SKINCOLORS, HAIR, FACEHAIR, EYECOLOR, MUTCOLORS_SECONDARY, and 0 if none.
-	var/color_src = MUTCOLORS
+	/// This is the source that this accessory will get its color from. Default is COLOR_SRC_MUT_COLOR.
+	var/color_src = COLOR_SRC_MUT_COLOR
 
 	/// The alpha for the accessory to use.
 	var/image_alpha = 255
@@ -147,7 +124,7 @@
 	else
 		return "[gender_prefix]_[state_prefix]_[state_name]"
 
-//Squids AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA whyyyy
+#warn remove these
 /datum/sprite_accessory/mutant_part/squid_face
 	mutant_string = "squid_face"
 	abstract_type = /datum/sprite_accessory/mutant_part/squid_face

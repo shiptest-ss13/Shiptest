@@ -8,7 +8,7 @@
 	randomizable = TRUE
 
 	icon = 'icons/mob/species/rachnid/spider_legs.dmi'
-	color_src = 0
+	color_src = null
 	secondary_color = TRUE
 
 /datum/sprite_accessory/mutant_part/spider_legs/carapace
@@ -23,7 +23,7 @@
 	randomizable = TRUE
 
 	icon = 'icons/mob/species/rachnid/spider_spinneret.dmi'
-	color_src = MUTCOLORS
+	color_src = COLOR_SRC_MUT_COLOR
 	secondary_color = TRUE
 
 /datum/sprite_accessory/mutant_part/spider_spinneret/spikecore

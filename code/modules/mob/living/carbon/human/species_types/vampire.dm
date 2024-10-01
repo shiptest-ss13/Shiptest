@@ -1,14 +1,12 @@
 /datum/species/vampire
 	name = "\improper Vampire"
 	id = SPECIES_VAMPIRE
-	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,DRINKSBLOOD)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,DRINKSBLOOD,SKINCOLORS)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	default_features = list(FEATURE_MUTANT_COLOR = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", FEATURE_BODY_SIZE = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
 	exotic_bloodtype = "U"
-	use_skintones = TRUE
 	mutantheart = /obj/item/organ/heart/vampire
 	mutanttongue = /obj/item/organ/tongue/vampire
 	examine_limb_id = SPECIES_HUMAN

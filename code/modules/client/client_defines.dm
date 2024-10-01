@@ -99,7 +99,7 @@
 	///world.timeofday they connected
 	var/connection_timeofday
 
-	///If the client is currently in player preferences
+	/// If the client is currently handling an interaction with the preferences menu.
 	var/inprefs = FALSE
 	///Used for limiting the rate of topic sends by the client to avoid abuse
 	var/list/topiclimiter

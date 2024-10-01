@@ -214,14 +214,11 @@
 	fire_stacks = 0
 	. = ..()
 
-/mob/living/silicon/ai/proc/set_core_display_icon(input, client/C)
-	if(client && !C)
-		C = client
-	if(!input && !C?.prefs?.preferred_ai_core_display)
+/mob/living/silicon/ai/proc/set_core_display_icon(input)
+	if(!input)
 		icon_state = initial(icon_state)
 	else
-		var/preferred_icon = input ? input : C.prefs.preferred_ai_core_display
-		icon_state = resolve_ai_icon(preferred_icon)
+		icon_state = resolve_ai_icon(input)
 
 /mob/living/silicon/ai/verb/pick_icon()
 	set category = "AI Commands"

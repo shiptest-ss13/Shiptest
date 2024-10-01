@@ -19,13 +19,13 @@
 	name = "Cat"
 	icon_state = "cat"
 	secondary_color = TRUE
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/ears/cat/slime
 	name = "Slimecat"
 	icon_state = "cat"
 	secondary_color = FALSE
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 	image_alpha = 150
 
 /datum/sprite_accessory/mutant_part/ears/fox
@@ -33,10 +33,10 @@
 	name = "Fox"
 	icon_state = "fox"
 	secondary_color = TRUE
-	color_src = HAIR
+	color_src = COLOR_SRC_HAIR_COLOR
 
 /datum/sprite_accessory/mutant_part/ears/elf
 	name = "Elf"
 	icon_state = "elf"
 	secondary_color = FALSE
-	color_src = SKINCOLORS
+	color_src = COLOR_SRC_SKIN_COLOR
