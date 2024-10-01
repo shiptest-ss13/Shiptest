@@ -299,3 +299,31 @@
 	name = "\improper Karl Marx bust"
 	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the sector."
 	icon_state = "marx"
+
+/// bone
+/obj/structure/statue/bone
+	anchored = TRUE
+	max_integrity = 120
+	material_drop_type = /obj/item/stack/sheet/bone
+	impressiveness = 18 // Carved from the bones of a massive creature, it's going to be a specticle to say the least
+	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/structure/statue/bone/rib
+	name = "collosal rib"
+	desc = "It's staggering to think that something this big could have lived, let alone died."
+	oreAmount = 4
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "rib"
+
+/obj/structure/statue/bone/skull
+	name = "collosal skull"
+	desc = "The gaping maw of a dead, titanic monster."
+	oreAmount = 12
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "skull"
+
+/obj/structure/statue/bone/skull/half
+	desc = "The gaping maw of a dead, titanic monster. This one is cracked in half."
+	oreAmount = 6
+	icon = 'icons/obj/statuelarge.dmi'
+	icon_state = "skull-half"
