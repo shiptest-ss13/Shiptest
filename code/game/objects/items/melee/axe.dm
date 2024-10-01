@@ -8,7 +8,8 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = HEAVY_WEAPON_CD
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
+	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
@@ -18,7 +19,7 @@
 
 /obj/item/melee/axe/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
+	AddComponent(/datum/component/butchering, 100, 80, 0 , 'sound/weapons/bladeslice.ogg') //axes are not known for being precision butchering tools
 	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, icon_wielded="[base_icon_state]_w")
 
 /obj/item/melee/axe/update_icon_state()
