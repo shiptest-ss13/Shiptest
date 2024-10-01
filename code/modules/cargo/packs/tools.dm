@@ -146,3 +146,14 @@
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/tools/radfoamtank
+	name = "Radiation Foam Tank Crate"
+	desc = "Contains a tank of anti-radiation foam. Pressurized sprayer included!"
+	cost = 1500
+	contains = list(
+		/obj/item/watertank/anti_rad,
+		/obj/structure/reagent_dispensers/foamtank/antirad
+	)
+	crate_name = "foam tank crate"
+	crate_type = /obj/structure/closet/crate/large

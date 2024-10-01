@@ -23,8 +23,8 @@
 	ranged_cooldown_time = 20
 	vision_range = 10
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
-	loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
-	mob_trophy = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted, /obj/item/upgradescroll)
+	loot = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
+	mob_trophy = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted, /obj/item/upgradescroll)
 	wander = FALSE
 	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -40,7 +40,7 @@
 								/datum/action/innate/megafauna_attack/rapid_fire)
 	move_force = MOVE_FORCE_NORMAL
 	var/turf/starting
-	var/obj/item/claymore/cursed/mob/weapon
+	var/obj/item/melee/sword/claymore/weapon
 	var/charging = FALSE
 	var/dash_cooldown = 6 SECONDS
 	var/runic_blast_cooldown = 14 SECONDS
@@ -49,23 +49,6 @@
 	var/dash_mod = 0.9
 	var/dash_num = 3
 	var/newcolor = rgb(149, 10, 10)
-
-/obj/item/claymore/cursed
-	name = "cursed longsword"
-	desc = "For those who overcame a great challenge. It glows with a dim red light."
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	throwforce = 25
-	block_chance = 65
-	armour_penetration = 50
-	sharpness = IS_SHARP
-
-/obj/item/claymore/cursed/mob
-	block_chance = 0
-	force = 16
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/Initialize()
 	. = ..()
@@ -421,7 +404,7 @@
 /obj/item/clothing/suit/space/hardsuit/cult/enchanted
 	name = "\improper Cursed Nar'Sien hardened armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. This one is cursed, screaming voices into the mind of the wearer."
-	allowed = list(/obj/item/gun, /obj/item/nullrod, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/tank/internals)
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF

@@ -217,7 +217,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
 		setDir(ndir)
-	tdir = dir// to fix Vars bug
+	tdir = dir
 
 	switch(tdir)
 		if(NORTH)
