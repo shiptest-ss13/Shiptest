@@ -13,6 +13,8 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier
+	r_hand = /obj/item/kitchen/knife
 
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
@@ -22,7 +24,6 @@
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
-
 
 /mob/living/simple_animal/hostile/human/frontier/ranged
 	icon_state = "frontiersmanranged"
@@ -34,6 +35,8 @@
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	casingtype = /obj/item/ammo_casing/a44roum
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged
+	r_hand = /obj/item/gun/ballistic/revolver'
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"

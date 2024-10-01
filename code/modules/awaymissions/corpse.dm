@@ -174,6 +174,8 @@
 	var/facial_hairstyle
 	var/skin_tone
 
+	var/list/outfit_override
+
 /obj/effect/mob_spawn/human/Initialize()
 	if(ispath(outfit))
 		outfit = new outfit()

@@ -39,3 +39,15 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
+
+	/// Path of the mob spawner we base the mob's visuals off of.
+	var/mob_spawner
+	/// Path of the right hand held item we give to the mob's visuals.
+	var/r_hand
+	/// Path of the left hand held item we give to the mob's visuals.
+	var/l_hand
+
+/mob/living/simple_animal/hostile/human/Initialize(mapload)
+	. = ..()
+	if(mob_spawner)
+		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)

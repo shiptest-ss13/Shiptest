@@ -442,3 +442,6 @@
 
 //Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
+/// In dynamic human icon gen we don't replace the held item.
+#define NO_REPLACE 0
