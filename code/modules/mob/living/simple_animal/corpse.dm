@@ -134,6 +134,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 
 /datum/outfit/frontier/internals
+	name = "Frontiersman Corpse Internals"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
@@ -158,6 +159,7 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
 /datum/outfit/frontier/trooper/internals
+	name = "Frontiersman Armored Corpse Internals"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
@@ -174,6 +176,7 @@
 	head = /obj/item/clothing/head/frontier/peaked
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
+	name = "Frontiersman Officer Corpse Internals"
 	outfit = /datum/outfit/frontier/officer/internals
 
 /datum/outfit/frontier/officer/internals
@@ -193,6 +196,7 @@
 	outfit = /datum/outfit/frontier/trooper/heavy/internals
 
 /datum/outfit/frontier/trooper/heavy/internals
+	name = "Frontiersman Heavy Corpse Internals"
 	mask = /obj/item/clothing/mask/gas
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
