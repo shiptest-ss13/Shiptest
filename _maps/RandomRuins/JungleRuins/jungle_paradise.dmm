@@ -796,6 +796,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/jungle/paradise/construction)
+"eY" = (
+/obj/structure/table/reinforced,
+/obj/item/melee/knife/butcher,
+/obj/item/clothing/gloves/butchering,
+/turf/open/floor/pod/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "fh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/sand,
@@ -1436,34 +1442,6 @@
 	pixel_y = 9
 	},
 /turf/open/floor/wood/walnut,
-/area/ruin/jungle/paradise/dorms)
-"iV" = (
-/obj/item/reagent_containers/food/snacks/dough{
-	pixel_x = 14;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/snacks/dough{
-	pixel_x = 9
-	},
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = -2
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
-	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
-	pixel_x = -8;
-	pixel_y = 12
-	},
-/turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/dorms)
 "iW" = (
 /obj/structure/flora/ausbushes/reedbush{
@@ -2450,6 +2428,34 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/cargo)
+"oN" = (
+/obj/item/reagent_containers/food/snacks/dough{
+	pixel_x = 14;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/snacks/dough{
+	pixel_x = 9
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/jungle/paradise/dorms)
 "oO" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -2527,19 +2533,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
-"pc" = (
-/obj/item/stack/ore/glass{
-	amount = 30;
-	pixel_x = -5;
-	pixel_y = 4
-	},
-/obj/item/stack/ore/hematite{
-	amount = 15;
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/jungle/paradise/construction)
 "pd" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -5167,19 +5160,6 @@
 /obj/item/reagent_containers/food/snacks/grown/berries/poison,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
-"Gy" = (
-/obj/structure/table,
-/obj/item/defibrillator/loaded,
-/obj/effect/decal/cleanable/cobweb,
-/obj/item/clothing/gloves/color/latex{
-	pixel_x = 7;
-	pixel_y = 6
-	},
-/obj/structure/fireaxecabinet{
-	pixel_y = 28
-	},
-/turf/open/floor/mineral/titanium,
-/area/overmap_encounter/planetoid/cave/explored)
 "GA" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/cable/yellow{
@@ -6424,12 +6404,6 @@
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"OO" = (
-/obj/structure/table/reinforced,
-/obj/item/melee/knife/butcher,
-/obj/item/clothing/gloves/butchering,
-/turf/open/floor/pod/dark,
-/area/overmap_encounter/planetoid/cave/explored)
 "OP" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/plating,
@@ -6886,6 +6860,19 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Sj" = (
+/obj/structure/table,
+/obj/item/defibrillator/loaded,
+/obj/effect/decal/cleanable/cobweb,
+/obj/item/clothing/gloves/color/latex{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/structure/cabinet/fireaxe{
+	pixel_y = 28
+	},
+/turf/open/floor/mineral/titanium,
+/area/overmap_encounter/planetoid/cave/explored)
 "Sn" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/rust,
@@ -7769,6 +7756,19 @@
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"Yc" = (
+/obj/item/stack/ore/glass{
+	amount = 30;
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/hematite{
+	amount = 15;
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "Yh" = (
 /obj/structure/fence{
 	dir = 1
@@ -10123,7 +10123,7 @@ xy
 RM
 uJ
 BG
-Gy
+Sj
 Vp
 Ob
 rO
@@ -10769,7 +10769,7 @@ jW
 RG
 wo
 wo
-OO
+eY
 ip
 eV
 jd
@@ -10965,7 +10965,7 @@ Ik
 ag
 fM
 qH
-iV
+oN
 Ik
 Iw
 ip
@@ -11701,7 +11701,7 @@ aj
 DI
 Iw
 Iw
-pc
+Yc
 mt
 HQ
 OT

@@ -59,6 +59,17 @@
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 
+/turf/open/floor/plasteel/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
+/turf/open/floor/plasteel/dark/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/dark/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
 //cement
 
 /turf/open/floor/concrete/wasteplanet
