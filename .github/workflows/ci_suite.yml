@@ -75,13 +75,14 @@ jobs:
         with:
           outputFile: output-annotations.txt
 
+      - name: Annotate Regex Matches
+        if: always()
+        run: |
+          cat check_regex_output.txt
+
       - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
-
-      - name: Annotate Regex Matches
-        run: |
-          cat check_regex_output.txt
 
   compile_all_maps:
     if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
