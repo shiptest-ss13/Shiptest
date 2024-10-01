@@ -26,11 +26,10 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 		dummy.equipOutfit(outfit, visualsOnly = TRUE)
 	else if(mob_spawn_path)
 		var/obj/effect/mob_spawn/human/spawner = new mob_spawn_path(null)
-		spawner.outfit_override = list()
 		if(r_hand != NO_REPLACE)
-			spawner.outfit_override["r_hand"] = r_hand
+			spawner.r_hand = r_hand
 		if(l_hand != NO_REPLACE)
-			spawner.outfit_override["l_hand"] = l_hand
+			spawner.l_hand = l_hand
 		spawner.special(dummy, dummy)
 		spawner.equip(dummy)
 	for(var/obj/item/carried_item in dummy)

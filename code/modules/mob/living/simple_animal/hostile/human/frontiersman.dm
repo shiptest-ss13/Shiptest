@@ -36,7 +36,7 @@
 	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	casingtype = /obj/item/ammo_casing/a44roum
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged
-	r_hand = /obj/item/gun/ballistic/revolver
+	r_hand = /obj/item/gun/ballistic/revolver/shadow
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
@@ -63,6 +63,7 @@
 				/obj/item/gun/ballistic/rifle/illestren)
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals
 	icon_state = "frontiersmanrangedrifle_mask"
@@ -91,6 +92,8 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/brimstone)
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
+	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
