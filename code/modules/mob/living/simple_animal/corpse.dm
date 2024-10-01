@@ -123,6 +123,9 @@
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 
+/obj/effect/mob_spawn/human/corpse/frontier/internals
+	outfit = /datum/outfit/frontier/internals
+
 /datum/outfit/frontier
 	name = "Frontiersman Corpse"
 	uniform = /obj/item/clothing/under/frontiersmen
@@ -130,11 +133,21 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
 
+/datum/outfit/frontier/internals
+	mask = /obj/item/clothing/mask/gas/sechailer
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
+	outfit = /datum/outfit/frontier/internals
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	outfit = /datum/outfit/frontier/trooper
+
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+	outfit = /datum/outfit/frontier/trooper/internals
 
 /datum/outfit/frontier/trooper
 	name = "Frontiersman Armored Corpse"
@@ -144,6 +157,9 @@
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
+/datum/outfit/frontier/trooper/internals
+	mask = /obj/item/clothing/mask/gas/sechailer
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
 	name = "Frontiersman Officer"
@@ -157,6 +173,13 @@
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/frontier/peaked
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
+	outfit = /datum/outfit/frontier/officer/internals
+
+/datum/outfit/frontier/officer/internals
+	mask = /obj/item/clothing/mask/gas/sechailer
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	outfit = /datum/outfit/frontier/trooper/heavy
 
@@ -165,6 +188,13 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	back = /obj/item/minigunpack
+
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
+	outfit = /datum/outfit/frontier/trooper/heavy/internals
+
+/datum/outfit/frontier/trooper/heavy/internals
+	mask = /obj/item/clothing/mask/gas
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
 	outfit = /datum/outfit/frontier/trooper/heavy/gunless

@@ -40,14 +40,29 @@
 
 	faction = list("hermit")
 
+	/// If we use stuff from dynamic human icon generation for loot
+	var/human_loot = TRUE
 	/// Path of the mob spawner we base the mob's visuals off of.
 	var/mob_spawner
 	/// Path of the right hand held item we give to the mob's visuals.
 	var/r_hand
 	/// Path of the left hand held item we give to the mob's visuals.
 	var/l_hand
+	// If we drop l and r hand loot
+	var/neutered = FALSE
 
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
 		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+
+/mob/living/simple_animal/hostile/human/drop_loot()
+	. = ..()
+	if(!human_loot)
+		return
+	if(mob_spawner)
+		new mob_spawner(loc)
+	if(r_hand && !neutered)
+		new r_hand(loc)
+	if(l_hand && !neutered)
+		new r_hand(loc)
