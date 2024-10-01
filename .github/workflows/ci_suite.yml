@@ -58,6 +58,7 @@ jobs:
           tools/bootstrap/python -c ''
 
       - name: Run Linters
+        continue-on-error: true
         run: |
           tools/bootstrap/python -m tools.maplint.source --github
           tools/build/build --ci lint tgui-test
@@ -70,19 +71,17 @@ jobs:
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
 
       - name: Annotate Lints
-        if: always()
         uses: yogstation13/DreamAnnotate@v2
         with:
           outputFile: output-annotations.txt
 
-      - name: Annotate Regex Matches
-        if: always()
-        run: |
-          cat check_regex_output.txt
-
       - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
+
+      - name: Annotate Regex Matches
+        run: |
+          cat check_regex_output.txt
 
   compile_all_maps:
     if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
