@@ -242,11 +242,7 @@
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "ice1"
-
-/turf/open/floor/plating/ice/iceberg/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	icon_state = "ice[rand(1,8)]"
+	icon_state = "iceberg_ice"
 
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2

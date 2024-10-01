@@ -182,7 +182,7 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
-	floor_variance = 100
+	floor_variance = 0
 	max_icon_states = 7
 	dug = TRUE
 
