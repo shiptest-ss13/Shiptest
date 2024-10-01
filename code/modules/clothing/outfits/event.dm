@@ -5,7 +5,6 @@
 	shoes = /obj/item/clothing/shoes/sneakers/red
 	suit = /obj/item/clothing/suit/space/santa
 	head = /obj/item/clothing/head/santa
-	back = /obj/item/storage/backpack/santabag
 	r_pocket = /obj/item/flashlight
 	gloves = /obj/item/clothing/gloves/color/red
 
