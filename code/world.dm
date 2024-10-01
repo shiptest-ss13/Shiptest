@@ -22,3 +22,8 @@
 #ifdef FIND_REF_NO_CHECK_TICK
 	loop_checks = FALSE
 #endif
+
+/proc/fizzbuzz()
+	var/unused_var = 123123
+	var/obj = new /obj
+	var/bad_access = (obj).x
