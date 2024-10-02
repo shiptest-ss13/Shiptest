@@ -97,18 +97,25 @@ other types of metals and chemistry for reagents).
 	color = "#8b70ff"
 	illustration = "design"
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
+	var/disk_name = "Design Disk"
+	var/design_name
 	var/list/blueprints = list()
-	var/list/starting_blueprints = list()
+	var/starting_blueprints = list()
 	var/max_blueprints = 1
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
-	blueprints = new/list(max_blueprints)
+	if(design_name)
+		name = jointext(list(disk_name, design_name), " - ")
+	if(length(starting_blueprints))
+		for(var/design in starting_blueprints)
+			blueprints += new design()
 
 /obj/item/disk/design_disk/adv
 	name = "Advanced Component Design Disk"
+	disk_name = "Advanced Design Disk"
 	color = "#bed876"
 	desc = "A disk for storing device design data for construction in lathes. This one has a little bit of extra storage space."
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 50)
@@ -116,6 +123,7 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/super
 	name = "Super Component Design Disk"
+	disk_name = "Super Design Disk"
 	color = "#c25454"
 	desc = "A disk for storing device design data for construction in lathes. This one has more extra storage space."
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 50, /datum/material/gold = 50)
@@ -123,6 +131,7 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/elite
 	name = "Elite Component Design Disk"
+	disk_name = "Elite Design Disk"
 	color = "#333333"
 	desc = "A disk for storing device design data for construction in lathes. This one has absurd amounts of extra storage space."
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 100, /datum/material/gold = 100, /datum/material/bluespace = 50)
@@ -130,39 +139,60 @@ other types of metals and chemistry for reagents).
 
 //Disks with content
 /obj/item/disk/design_disk/ammo_c10mm
-	name = "Design Disk - 10mm Ammo"
+	design_name = "10mm Ammo"
 	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
-
-/obj/item/disk/design_disk/ammo_c10mm/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/c10mm()
-
+	starting_blueprints = (/datum/design/c10mm)
 
 /obj/item/disk/design_disk/disposable_gun
-	name = "design disk - disposable gun"
+	design_name = "Disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
 	max_blueprints = 2
-
-/obj/item/disk/design_disk/disposable_gun/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/disposable_gun()
+	starting_blueprints = list(/datum/design/disposable_gun)
 
 /obj/item/disk/design_disk/clip_mechs
-	name = "design disk - CLIP exosuit modifications"
+	design_name = "CLIP exosuit modifications"
 	desc = "A design disk containing specifications for CLIP-custom exosuit conversions."
 	color = "#57b8f0"
 	max_blueprints = 2
-
-/obj/item/disk/design_disk/clip_mechs/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/clip_ripley_upgrade()
-	blueprints[2] = new /datum/design/clip_durand_upgrade()
+	starting_blueprints = list(/datum/design/clip_ripley_upgrade, /datum/design/clip_durand_upgrade)
 
 /obj/item/disk/design_disk/ammo_c9mm
-	name = "Design Disk - 9mm Ammo"
+	design_name = "9mm Ammo"
 	desc = "A design disk containing the pattern for a refill box of standard 9mm ammo, used in Commander pistols."
+	starting_blueprints = list(/datum/design/c9mmautolathe)
 
-/obj/item/disk/design_disk/ammo_c9mm/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/c9mmautolathe()
+/obj/item/disk/design_disk/blanks
+	design_name = "Blank Ammo"
+	starting_blueprints = list(/datum/design/blank_shell)
+
+
+/obj/item/disk/design_disk/ammo_1911
+	design_name = "1911 Magazine"
+	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
+	illustration = "ammo"
+	starting_blueprints = list(/datum/design/colt_1911_magazine)
+
+//KA modkit design discs
+/obj/item/disk/design_disk/modkit_disc
+	design_name = "KA Mod"
+	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
+	illustration = "accel"
+	color = "#6F6F6F"
+	starting_blueprints = list(/datum/design/unique_modkit)
+
+/obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe
+	design_name = "Offensive Mining Explosion Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/offensive_turf_aoe)
+
+/obj/item/disk/design_disk/modkit_disc/rapid_repeater
+	design_name = "Rapid Repeater Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/rapid_repeater)
+
+/obj/item/disk/design_disk/modkit_disc/resonator_blast
+	design_name = "Resonator Blast Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/resonator_blast)
+
+/obj/item/disk/design_disk/modkit_disc/bounty
+	design_name = "Death Syphon Mod"
+	starting_blueprints = list(/datum/design/unique_modkit/bounty)
