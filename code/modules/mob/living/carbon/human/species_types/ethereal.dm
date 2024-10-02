@@ -160,8 +160,8 @@
 /datum/species/elzuose/proc/elzu_move_handling(mob/living/carbon/human/_human)
 	//if your carapace is broken, occasionally suffer damage when moving..
 	if(shattered == TRUE && prob(5))
-		var/limb = pick(_human.bodyparts)
-		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your \improper [limb]!"))
+		var/obj/item/bodypart/limb = pick(_human.bodyparts)
+		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your [limb]!"))
 		_human.apply_damage(5,BRUTE,limb.body_zone)//actually 10 dmg, because shatter
 	//If rooted, you got moved and uprooted, time to suffer the consequences.
 	if(_human.has_status_effect(/datum/status_effect/rooted))
