@@ -721,6 +721,7 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "jd" = (
@@ -1324,6 +1325,7 @@
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
+/obj/item/storage/box/flares,
 /obj/item/radio/weather_monitor,
 /obj/item/radio/weather_monitor,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1596,12 +1598,12 @@
 	pixel_y = 4;
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	},
-/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10;
 	layer = 2.030
 	},
 /obj/structure/railing,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sG" = (
@@ -2104,7 +2106,7 @@
 	name = "cargo door control"
 	},
 /obj/structure/closet/firecloset/wall/directional/east{
-	pixel_y = -6
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
@@ -2461,7 +2463,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "DI" = (
@@ -3539,6 +3540,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Qa" = (
