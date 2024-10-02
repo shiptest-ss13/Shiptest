@@ -604,6 +604,34 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 	desc = "Your blood's electric charge is becoming dangerously high, find an outlet for your energy. Use Grab Intent on an APC to channel your energy into it."
 	icon_state = "ethereal_overcharge"
 
+/atom/movable/screen/alert/elzucarapace
+	name = "Carapace"
+	icon_state = "elzucarapace"
+	desc = "Your carapace is protecting your delicate internal tissues from damage."
+
+/atom/movable/screen/alert/elzucarapace/Initialize()
+	. = ..()
+	START_PROCESSING(SSprocessing, src)
+
+/atom/movable/screen/alert/elzucarapace/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	return ..()
+
+/atom/movable/screen/alert/elzucarapace/process()
+	var/mob/living/carbon/human/elzu = owner
+	var/datum/species/elzuose/elzu_stuff = elzu.dna.species
+
+	switch(elzu_stuff.carapace_state)
+		if(CARAPACE_FINE)
+			desc = "Your carapace is protecting your delicate internal tissues from damage."
+		if(CARAPACE_DAMAGED)
+			desc = "Your carapace is damaged, and won't be as effective at absorbing incoming trauma."
+		if(CARAPACE_BREAKING)
+			desc = "Your carapace is in very bad shape... Don't let it break!"
+		if(CARAPACE_BROKEN)
+			desc = "Your carapace has broken into pieces! Any damage you take now will cause additional injury, and movement may harm you."
+	return
+
 //MODsuit unique
 /atom/movable/screen/alert/nocore
 	name = "Missing Core"

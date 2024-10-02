@@ -4,6 +4,11 @@
 #define ROOT_TIME (3 SECONDS)
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
+#define CARAPACE_REGEN_LOWCHARGE 0.002
+#define CARAPACE_REGEN_MEDCHARGE 0.004
+#define CARAPACE_REGEN_HIGHCHARGE 0.008
+#define CARAPACE_REGEN_OVERLOADING 0.016//finally a reason to risk intentional overload
+
 /datum/species/elzuose
 	name = "\improper Elzuose"
 	id = SPECIES_ELZUOSE
@@ -13,8 +18,6 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
-	siemens_coeff = 0.5 //They thrive on energy
-	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	damage_overlay_type = "" //We are too cool for regular damage overlays
@@ -55,6 +58,17 @@
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
 
+	siemens_coeff = 0.5 //They thrive on energy
+	brutemod = 1.25 //They're weak to punches
+
+	//Elzu carapace. Greatly reduces damage taken until shattered. Takes a long time to recover.
+	var/carapace_hp = 100
+	var/carapace_state = CARAPACE_FINE
+	var/carapace_regen_factor = CARAPACE_REGEN_MEDCHARGE
+	var/shatter_noise_cooldown //no shatter noise spam
+	var/shattered = FALSE //ditto
+
+
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
@@ -72,7 +86,7 @@
 	rooting = new
 	rooting.Grant(_carbon)
 	RegisterSignal(ethereal, COMSIG_DIGOUT, PROC_REF(digout))
-	RegisterSignal(ethereal, COMSIG_MOVABLE_MOVED, PROC_REF(uproot))
+	RegisterSignal(ethereal, COMSIG_MOVABLE_MOVED, PROC_REF(elzu_move_handling))
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	_carbon.dna.features["mcolor"] = _carbon.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
@@ -142,8 +156,14 @@
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 
-/datum/species/elzuose/proc/uproot(mob/living/carbon/human/_human)
-	//You got moved and uprooted, time to suffer the consequences.
+//Handles damage from a broken carapace and the effects of being uprooted
+/datum/species/elzuose/proc/elzu_move_handling(mob/living/carbon/human/_human)
+	//if your carapace is broken, occasionally suffer damage when moving..
+	if(shattered == TRUE && prob(5))
+		var/limb = pick(_human.bodyparts)
+		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your [limb]!"))
+		_human.apply_damage(4,BRUTE,BODY_ZONE_CHEST)
+	//If rooted, you got moved and uprooted, time to suffer the consequences.
 	if(_human.has_status_effect(/datum/status_effect/rooted))
 		_human.visible_message(span_warning("[_human] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
 		_human.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
@@ -237,6 +257,7 @@
 /datum/species/elzuose/spec_life(mob/living/carbon/human/_human)
 	.=..()
 	handle_charge(_human)
+	handle_carapace(_human)
 
 /datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/_human)
 	EMPeffect = FALSE
@@ -244,25 +265,28 @@
 	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
 
 /datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/_human)
-	brutemod = 1.25
 	switch(get_charge(_human))
 		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			if(get_charge(_human) == ELZUOSE_CHARGE_NONE)
 				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 3)
+				carapace_regen_factor = null
 			else
 				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
+				carapace_regen_factor = CARAPACE_REGEN_LOWCHARGE
 			if(_human.health > 10.5)
 				apply_damage(0.2, TOX, null, null, _human)
-			brutemod = 1.75
+
 		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
 			_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
-			brutemod = 1.5
+			carapace_regen_factor = CARAPACE_REGEN_MEDCHARGE
+
 		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
-			brutemod = 1.5
+			carapace_regen_factor = CARAPACE_REGEN_HIGHCHARGE
+
 		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
-			brutemod = 1.75
+			carapace_regen_factor = CARAPACE_REGEN_OVERLOADING
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(_human)
 		else
@@ -284,11 +308,15 @@
 			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
 		to_chat(_human,span_warning("You violently discharge energy!"))
 		_human.visible_message(span_danger("[_human] violently discharges energy!"))
-		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
-			var/datum/disease/D = new /datum/disease/heart_failure
-			_human.ForceContractDisease(D)
-			to_chat(_human, span_userdanger("You're pretty sure you just felt your heart stop for a second there."))
-			_human.playsound_local(_human, 'sound/effects/singlebeat.ogg', 100, 0)
+		if(prob(15)) //May damage the heart. If the heart is damaged enough, triggers heart failure.
+			var/obj/item/organ/heart/heart = _human.getorganslot(ORGAN_SLOT_HEART)
+			to_chat(_human, span_danger("Your chest aches."))
+			heart.damage += 5
+			if(heart.damage >= 50)
+				var/datum/disease/D = new /datum/disease/heart_failure
+				_human.ForceContractDisease(D)
+				to_chat(_human, span_userdanger("You're pretty sure you just felt your heart stop for a second there."))
+				_human.playsound_local(_human, 'sound/effects/singlebeat.ogg', 100, 0)
 		_human.Paralyze(100)
 		return
 
@@ -297,3 +325,90 @@
 	if(istype(stomach))
 		return stomach.crystal_charge
 	return ELZUOSE_CHARGE_NONE
+
+//CARAPACE CODE STUFF//
+
+//handles the life tick involved with carapace behavior
+/datum/species/elzuose/proc/handle_carapace(mob/living/carbon/human/_human)
+	var/examine_string = _human.get_examine_string(_human, thats = TRUE)
+	//passive carapace regeneration
+	adjust_cara_hp(carapace_regen_factor)
+	switch(carapace_hp)
+		if(85.1 to 100)
+			carapace_state = CARAPACE_FINE
+			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 1)
+			examine_string += span_warning("test fine")
+		if(40.1 to 85)
+			carapace_state = CARAPACE_DAMAGED
+			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 2)
+			examine_string += span_warning("test damaged")
+		if(7.1 to 40)
+			carapace_state = CARAPACE_BREAKING
+			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 3)
+			if(shattered == TRUE)
+				toggle_carapace_break(_human)
+		if(0.1 to 7)
+			carapace_state = CARAPACE_BROKEN
+			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 4)
+			shatter_noise_cooldown = world.time + 10 SECONDS
+			if(shattered == FALSE)
+				toggle_carapace_break(_human)
+		else
+			_human.clear_alert("ELZUOSE_CARAPACE")
+
+/datum/species/elzuose/proc/adjust_cara_hp(var/amount)
+	carapace_hp = clamp(carapace_hp + amount, 1, 100)
+	return
+
+/datum/species/elzuose/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
+	if((damagetype == BRUTE || damagetype == BURN) && damage)
+		var/newdam = damage_to_carapace(damage, damagetype)
+		damage = newdam
+
+	. = ..()
+
+//handles the absorption of damage by elzu carapace.
+//Basically, use brute force to smash an elzu- okay maybe don't say it like tha
+/datum/species/elzuose/proc/damage_to_carapace(var/damage, var/damagetype)
+	//reduce damage proportunate to current carapace hp. 75% reduction at full carapace.
+	//one of the math operations of all time
+	var/new_damage = max(damage * ((100 - carapace_hp * 0.75) / 100), 1)
+	//transfers a portion of damage taken to carapace.
+	switch(damagetype)
+		if(BRUTE)
+			adjust_cara_hp((damage * -0.3))//30%
+		if(BURN)
+			adjust_cara_hp((damage * -0.1))//10%
+	return new_damage
+
+/datum/species/elzuose/proc/toggle_carapace_break(mob/living/carbon/human/_human)
+	if(shattered == FALSE)
+		shattered = TRUE
+		_human.do_jitter_animation(4)
+		_human.visible_message(span_warning("[_human] jolts with a terrible cracking noise!"), span_userdanger("You feel a stabbing pain spread under your skin as your carapace shatters!"))
+		//when carapace fully breaks, damage taken greatly increased
+		brutemod = 2
+		burnmod = 1.50
+		playsound(_human.loc, 'sound/effects/woodbreak.ogg', 50, FALSE, 2)
+	else
+		shattered = FALSE
+		brutemod = 1.25
+		burnmod = 1
+
+//CHEM EFFECTS
+
+/datum/species/elzuose/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	//var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
+	//consuming minerals simulates repair of an elzu's carapace.
+	//we don't have actual silicate so silicon is filling in for a "mineral deposit" chemical, as it does in sand
+	if(chem.type == /datum/reagent/silicon || /datum/reagent/iron || /datum/reagent/consumable/sodiumchloride)
+		adjust_cara_hp(CARAPACE_REGEN_HIGHCHARGE)
+		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * 3)//om nom nom (this technically 'nerfs' Iron I guess?)
+		return TRUE
+	//incredibly shitty mineral
+	if(chem.type == /datum/reagent/consumable/sodiumchloride )
+		adjust_cara_hp(CARAPACE_REGEN_LOWCHARGE)
+		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * 3)
+		return TRUE
+	return ..()
+
