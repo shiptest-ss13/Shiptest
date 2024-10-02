@@ -330,18 +330,18 @@
 
 //handles the life tick involved with carapace behavior
 /datum/species/elzuose/proc/handle_carapace(mob/living/carbon/human/_human)
-	var/examine_string = _human.get_examine_string(_human, thats = TRUE)
+	//var/examine_string = _human.get_examine_string(_human, thats = TRUE)
 	//passive carapace regeneration
 	adjust_cara_hp(carapace_regen_factor)
 	switch(carapace_hp)
 		if(85.1 to 100)
 			carapace_state = CARAPACE_FINE
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 1)
-			examine_string += span_warning("test fine")
+			//examine_string += span_warning("test fine")
 		if(40.1 to 85)
 			carapace_state = CARAPACE_DAMAGED
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 2)
-			examine_string += span_warning("test damaged")
+			//examine_string += span_warning("test damaged")
 		if(7.1 to 40)
 			carapace_state = CARAPACE_BREAKING
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 3)
@@ -356,7 +356,7 @@
 		else
 			_human.clear_alert("ELZUOSE_CARAPACE")
 
-/datum/species/elzuose/proc/adjust_cara_hp(var/amount)
+/datum/species/elzuose/proc/adjust_cara_hp(amount)
 	carapace_hp = clamp(carapace_hp + amount, 1, 100)
 	return
 
@@ -369,7 +369,7 @@
 
 //handles the absorption of damage by elzu carapace.
 //Basically, use brute force to smash an elzu- okay maybe don't say it like tha
-/datum/species/elzuose/proc/damage_to_carapace(var/damage, var/damagetype)
+/datum/species/elzuose/proc/damage_to_carapace(damage, damagetype)
 	//reduce damage proportunate to current carapace hp. 75% reduction at full carapace.
 	//one of the math operations of all time
 	var/new_damage = max(damage * ((100 - carapace_hp * 0.75) / 100), 1)
