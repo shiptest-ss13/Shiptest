@@ -44,6 +44,7 @@
 	var/current_tick_amount = 0
 	var/last_tick_amount = 0
 	var/fail_to_receive = 0
+	var/glow_strength
 
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
@@ -190,8 +191,7 @@
 	update_glow()
 
 /mob/living/simple_animal/pet/cat/proc/update_glow()
-	var/glow_strength = 0
-	remove_filter("ray_cat_glow")
+	var/old_glow_strength = glow_strength
 	switch(radiation_count)
 		if(-INFINITY to RAD_LEVEL_NORMAL)
 			glow_strength = 1
@@ -205,7 +205,10 @@
 			glow_strength = 5
 		if(RAD_LEVEL_CRITICAL to INFINITY)
 			glow_strength = 6
-	add_filter("ray_cat_glow", 2, drop_shadow_filter(x = 0, y = -1, size = glow_strength, color = RAD_GLOW_COLOR))
+	if((old_glow_strength != glow_strength) && (glow_strength > 1))
+		src.add_filter("ray_cat_glow", 2, list("type" = "outline", "color" = RAD_GLOW_COLOR, "size" = glow_strength))
+	if(glow_strength <= 1)
+		src.remove_filter("ray_cat_glow")
 
 /mob/living/simple_animal/pet/cat/Life()
 	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
