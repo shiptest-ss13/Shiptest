@@ -992,7 +992,12 @@
 /obj/item/kirbyplants/random{
 	pixel_x = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6
+	},
+/obj/machinery/newscaster/directional/south{
+	pixel_x = -6
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "lm" = (
@@ -1186,7 +1191,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "nK" = (
@@ -2008,6 +2013,7 @@
 /obj/structure/chair/sofa/brown/right/directional/east,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/green,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "wW" = (
@@ -2623,7 +2629,9 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "Gg" = (
-/obj/item/radio/intercom/directional/north,
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -9
+	},
 /obj/structure/chair/office{
 	pixel_y = 0;
 	dir = 8
@@ -2633,6 +2641,9 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/machinery/newscaster/directional/north{
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3730,6 +3741,7 @@
 /obj/item/kirbyplants/random{
 	pixel_x = -7
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "TN" = (
