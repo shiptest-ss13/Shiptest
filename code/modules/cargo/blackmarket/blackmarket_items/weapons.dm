@@ -363,6 +363,8 @@
 /datum/blackmarket_item/weapon/oneshot
 	name = "Hammer Launcher"
 	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
+
 	price_min = 3000
 	price_max = 4500
 	stock_min = 1
