@@ -173,7 +173,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.set_holdable(null, list(/obj/item/storage/secure/briefcase))
-	STR.max_w_class = 8
+	STR.max_w_class = 8						//??
 
 /obj/item/storage/secure/safe/PopulateContents()
 	new /obj/item/paper(src)

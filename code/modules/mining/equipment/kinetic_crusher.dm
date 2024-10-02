@@ -8,7 +8,7 @@
 	name = "proto-magnetic crusher"
 	desc = "A multipurpose disembarkation and self-defense tool designed by EXOCOM using an incomplete Nanotrasen prototype. \
 	Found in the grime-stained hands of wannabee explorers across the frontier, it cuts rock and hews flora using magnetic osscilation and a heavy cleaving edge."
-	force = 0 //You can't hit stuff unless it's wielded
+	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 5
@@ -28,11 +28,25 @@
 	var/charge_time = 15
 	var/detonation_damage = 20
 	var/backstab_bonus = 10
+	var/wielded = FALSE // track wielded status on item
+
+/obj/item/kinetic_crusher/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
 	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=15)
+
+/// triggered on wield of two handed item
+/obj/item/kinetic_crusher/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/kinetic_crusher/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
@@ -40,7 +54,7 @@
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
 
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+	if(!wielded)
 		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
 		user.drop_all_held_items()
 		return
@@ -52,7 +66,7 @@
 
 /obj/item/kinetic_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+	if(!wielded)
 		return
 	if(!proximity_flag && charged)//Mark a target, or mine a tile.
 		var/turf/proj_turf = user.loc
@@ -104,7 +118,7 @@
 
 
 /obj/item/kinetic_crusher/update_icon_state()
-	item_state = "crusher[HAS_TRAIT(src, TRAIT_WIELDED)]" // this is not icon_state and not supported by 2hcomponent
+	item_state = "crusher[wielded]" // this is not icon_state and not supported by 2hcomponent
 	return ..()
 
 /obj/item/kinetic_crusher/update_overlays()
@@ -168,7 +182,7 @@
 	user.changeNext_move(CLICK_CD_MELEE * 2.0)//...slow swinga.
 
 /obj/item/kinetic_crusher/old/update_icon_state()
-	item_state = "crusherold[HAS_TRAIT(src, TRAIT_WIELDED)]" // still not supported by 2hcomponent
+	item_state = "crusherold[wielded]" // still not supported by 2hcomponent
 	return ..()
 
 //100% original syndicate oc, plz do not steal. More effective against human targets then the typical crusher, with a bit of block chance.
@@ -181,7 +195,7 @@
 	name = "magnetic cleaver"
 	desc = "Designed by Syndicate Research and Development for their resource-gathering operations on hostile worlds. Syndicate Legal Ops would like to stress that you've never seen anything like this before. Ever."
 	armour_penetration = 69//nice cut
-	force = 0 //You can't hit stuff unless HAS_TRAIT(src, TRAIT_WIELDED)
+	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 5
@@ -202,13 +216,8 @@
 	charge_time = 15
 	detonation_damage = 35
 	backstab_bonus = 15
+	wielded = FALSE // track wielded status on item
 	actions_types = list()
-
-
-/obj/item/kinetic_crusher/syndie_crusher/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
 	. = ..()
@@ -216,26 +225,26 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=10)
 
 /// triggered on wield of two handed item
-/obj/item/kinetic_crusher/syndie_crusher/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
+/obj/item/kinetic_crusher/syndie_crusher/on_wield(obj/item/source, mob/user)
+	. = ..()
+	wielded = TRUE
 	icon_state = "crushersyndie1"
 	playsound(user, 'sound/weapons/saberon.ogg', 35, TRUE)
-	set_light_on(HAS_TRAIT(src, TRAIT_WIELDED))
+	set_light_on(wielded)
 
 /// triggered on unwield of two handed item
-/obj/item/kinetic_crusher/syndie_crusher/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
+/obj/item/kinetic_crusher/syndie_crusher/on_unwield(obj/item/source, mob/user)
+	. = ..()
+	wielded = FALSE
 	icon_state = "crushersyndie"
 	playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
-	set_light_on(HAS_TRAIT(src, TRAIT_WIELDED))
+	set_light_on(wielded)
 
 /obj/item/kinetic_crusher/syndie_crusher/update_icon_state()
-	item_state = "crushersyndie[HAS_TRAIT(src, TRAIT_WIELDED)]" // this is not icon_state and not supported by 2hcomponent
+	item_state = "crushersyndie[wielded]" // this is not icon_state and not supported by 2hcomponent
 	return ..()
 
 /obj/item/kinetic_crusher/syndie_crusher/update_overlays()
 	. = ..()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
+	if(wielded)
 		. += "[icon_state]_lit"

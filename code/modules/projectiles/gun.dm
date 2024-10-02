@@ -367,15 +367,15 @@
 		wielded_fully = TRUE
 		return TRUE
 
+/obj/item/gun/proc/is_wielded()
+	return wielded
+
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
-
-/obj/item/gun/proc/is_wielded()
-	return wielded
 
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)
