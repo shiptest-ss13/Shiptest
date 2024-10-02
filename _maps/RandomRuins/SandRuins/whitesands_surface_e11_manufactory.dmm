@@ -2298,9 +2298,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
+/obj/effect/turf_decal/weather/whitesands/corner,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "rB" = (
@@ -3163,15 +3161,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory)
-"yu" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 10
-	},
-/turf/open/floor/concrete/whitesands,
-/area/overmap_encounter/planetoid/sand/explored)
 "yA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
@@ -3185,7 +3174,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/obj/effect/turf_decal/weather/whitesands,
+/turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "yK" = (
 /obj/machinery/door/airlock/grunge{
@@ -9687,7 +9677,7 @@ NX
 NX
 NX
 mI
-yu
+yC
 vU
 cc
 Zj
