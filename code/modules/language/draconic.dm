@@ -17,5 +17,23 @@
 		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
 		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
 	)
-	icon_state = "lizard"
+	icon_state = "kalixcian"
 	default_priority = 90
+
+/datum/language/draconic/scramble(input, datum/language_holder/viewer_holder)
+	if(viewer_holder.has_language(/datum/language/draconic/clip))
+		return "(Overly Formal)" + input
+	return ..()
+
+/datum/language/draconic/clip
+	name = "CLIP Kalixcian"
+	desc = "The CLIP dialect of Kalixcian, forming in the CLIP core worlds after around a century of drift."
+	default_priority = 80
+	key = "2"
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	icon_state = "clip_kalixcian"
+
+/datum/language/draconic/clip/scramble(input, datum/language_holder/viewer_holder)
+	if(viewer_holder.has_language(/datum/language/draconic))
+		return "(very rough)" + input
+	return ..()

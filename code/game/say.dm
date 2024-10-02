@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
 	else if(language)
 		var/datum/language/D = GLOB.language_datum_instances[language]
-		raw_message = D.scramble(raw_message)
+		raw_message = D.scramble(raw_message, get_language_holder())
 		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
 	else
 		return "makes a strange sound."
