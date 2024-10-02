@@ -184,7 +184,7 @@
 
 /mob/living/simple_animal/pet/cat/rad_act(amount)
 	. = ..()
-	if(amount <= RAD_BACKGROUND_RADIATION || !scanning)
+	if(amount <= RAD_BACKGROUND_RADIATION)
 		return
 	current_tick_amount += amount
 	update_glow()
@@ -220,6 +220,8 @@
 			radiation_count = 0
 
 	current_tick_amount = 0
+
+	update_glow()
 
 	if(!stat && !buckled && !client)
 		if(prob(1))
