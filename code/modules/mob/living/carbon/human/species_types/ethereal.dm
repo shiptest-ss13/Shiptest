@@ -161,8 +161,8 @@
 	//if your carapace is broken, occasionally suffer damage when moving..
 	if(shattered == TRUE && prob(5))
 		var/limb = pick(_human.bodyparts)
-		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your [limb]!"))
-		_human.apply_damage(5,BRUTE,BODY_ZONE_CHEST)//actually 10 dmg, because shatter
+		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your \improper [limb]!"))
+		_human.apply_damage(5,BRUTE,limb.body_zone)//actually 10 dmg, because shatter
 	//If rooted, you got moved and uprooted, time to suffer the consequences.
 	if(_human.has_status_effect(/datum/status_effect/rooted))
 		_human.visible_message(span_warning("[_human] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
@@ -388,7 +388,7 @@
 		//when carapace fully breaks, damage taken greatly increased
 		brutemod = 2
 		burnmod = 1.50
-		playsound(_human.loc, 'sound/effects/woodbreak.ogg', 50, FALSE, 2)
+		playsound(_human.loc, 'sound/effects/woodbreak.ogg', 25, FALSE, 2)
 	else
 		shattered = FALSE
 		brutemod = 1.25
