@@ -204,6 +204,9 @@
 	. = ..()
 	if (.)
 		return
+	if(sealed_magazine)
+		to_chat(user, span_warning("The magazine on [src] is sealed and cannot be reloaded!"))
+		return
 	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine)
