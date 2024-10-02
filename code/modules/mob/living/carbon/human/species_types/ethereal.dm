@@ -7,7 +7,7 @@
 #define CARAPACE_REGEN_LOWCHARGE 0.002
 #define CARAPACE_REGEN_MEDCHARGE 0.004
 #define CARAPACE_REGEN_HIGHCHARGE 0.008
-#define CARAPACE_REGEN_OVERLOADING 0.016//finally a reason to risk intentional overload
+#define CARAPACE_REGEN_FASTCHARGE 0.032//finally a reason to risk intentional overload
 
 /datum/species/elzuose
 	name = "\improper Elzuose"
@@ -140,6 +140,7 @@
 			stomach.adjust_charge(ROOT_CHARGE_GAIN)
 			_human.adjustBruteLoss(-3)
 			_human.adjustFireLoss(-3)
+			adjust_cara_hp(CARAPACE_REGEN_FASTCHARGE)//should be okay because this is limited by charge
 
 			if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
@@ -286,7 +287,7 @@
 
 		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
-			carapace_regen_factor = CARAPACE_REGEN_OVERLOADING
+			carapace_regen_factor = CARAPACE_REGEN_FASTCHARGE
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(_human)
 		else
@@ -337,7 +338,7 @@
 		if(85.1 to 100)
 			carapace_state = CARAPACE_FINE
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 1)
-			//examine_string += span_warning("test fine")
+			//examine_string += span_warning("test fine") //this doesn't work :(
 		if(40.1 to 85)
 			carapace_state = CARAPACE_DAMAGED
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 2)
@@ -406,7 +407,7 @@
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * 3)//om nom nom (this technically 'nerfs' Iron I guess?)
 		return TRUE
 	//incredibly shitty mineral
-	if(chem.type == /datum/reagent/consumable/sodiumchloride )
+	if(chem.type == /datum/reagent/consumable/sodiumchloride)
 		adjust_cara_hp(CARAPACE_REGEN_LOWCHARGE)
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * 3)
 		return TRUE
