@@ -185,9 +185,8 @@
 
 				P.update()
 				P.setPipingLayer(piping_layer)
-				if(findtext("[queued_p_type]", "/obj/machinery/atmospherics/pipe") && !findtext("[queued_p_type]", "layer_manifold"))
+				if(ispath(path, /obj/machinery/atmospherics/pipe) && !findtext("[queued_p_type]", "layer_manifold"))
 					P.add_atom_colour(GLOB.pipe_paint_colors[paint_color], FIXED_COLOUR_PRIORITY)
-
 
 		if(DISPOSALS_CATEGORY) //Making disposals pipes
 			new /obj/structure/disposalconstruct(loc, queued_p_type, queued_p_dir, queued_p_flipped)
