@@ -65,8 +65,7 @@
 	var/carapace_hp = 100
 	var/carapace_state = CARAPACE_FINE
 	var/carapace_regen_factor = CARAPACE_REGEN_MEDCHARGE
-	var/shatter_noise_cooldown //no shatter noise spam
-	var/shattered = FALSE //ditto
+	var/shattered = FALSE
 
 
 /datum/species/elzuose/Destroy(force)
@@ -140,7 +139,7 @@
 			stomach.adjust_charge(ROOT_CHARGE_GAIN)
 			_human.adjustBruteLoss(-3)
 			_human.adjustFireLoss(-3)
-			adjust_cara_hp(CARAPACE_REGEN_FASTCHARGE)//should be okay because this is limited by charge
+			_elzu.adjust_cara_hp(CARAPACE_REGEN_FASTCHARGE)//should be okay because this is limited by charge
 
 			if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
 				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
@@ -163,7 +162,7 @@
 	if(shattered == TRUE && prob(5))
 		var/limb = pick(_human.bodyparts)
 		to_chat(_human, span_danger("You feel a broken shard of your carapace slice into your [limb]!"))
-		_human.apply_damage(4,BRUTE,BODY_ZONE_CHEST)
+		_human.apply_damage(5,BRUTE,BODY_ZONE_CHEST)//actually 10 dmg, because shatter
 	//If rooted, you got moved and uprooted, time to suffer the consequences.
 	if(_human.has_status_effect(/datum/status_effect/rooted))
 		_human.visible_message(span_warning("[_human] is forcefully uprooted. That looked like it hurt."),span_warning("You're forcefully unrooted! Ouch!"),span_warning("You hear someone scream in pain."))
@@ -335,23 +334,22 @@
 	//passive carapace regeneration
 	adjust_cara_hp(carapace_regen_factor)
 	switch(carapace_hp)
-		if(85.1 to 100)
+		if(85.01 to 100)
 			carapace_state = CARAPACE_FINE
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 1)
 			//examine_string += span_warning("test fine") //this doesn't work :(
-		if(40.1 to 85)
+		if(40.01 to 85)
 			carapace_state = CARAPACE_DAMAGED
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 2)
 			//examine_string += span_warning("test damaged")
-		if(7.1 to 40)
+		if(7.01 to 40)
 			carapace_state = CARAPACE_BREAKING
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 3)
 			if(shattered == TRUE)
 				toggle_carapace_break(_human)
-		if(0.1 to 7)
+		if(1 to 7)
 			carapace_state = CARAPACE_BROKEN
 			_human.throw_alert("ELZUOSE_CARAPACE", /atom/movable/screen/alert/elzucarapace, 4)
-			shatter_noise_cooldown = world.time + 10 SECONDS
 			if(shattered == FALSE)
 				toggle_carapace_break(_human)
 		else
@@ -412,4 +410,3 @@
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * 3)
 		return TRUE
 	return ..()
-
