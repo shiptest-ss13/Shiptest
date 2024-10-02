@@ -1137,7 +1137,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.num_legs < 2)
 				return FALSE
-			if((bodytype & BODYTYPE_DIGITIGRADE) && !(I.supports_variations & DIGITIGRADE_VARIATION))
+			if((bodytype & BODYTYPE_DIGITIGRADE) && !((I.supports_variations & DIGITIGRADE_VARIATION) || (I.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>This footwear isn't compatible with your feet!</span>")
 				return FALSE

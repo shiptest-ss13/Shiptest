@@ -164,12 +164,15 @@
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
 
-/obj/item/storage/box/survival/clip
+/obj/item/storage/box/survival/extended
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
-/obj/item/storage/box/survival/clip/balaclava
+/obj/item/storage/box/survival/extended/balaclava
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/extended/nomask
+	mask_type = null // for gas mask spawn
 
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary

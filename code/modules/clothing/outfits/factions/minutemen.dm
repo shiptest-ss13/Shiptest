@@ -9,7 +9,7 @@
 
 	faction_icon = "bg_clip"
 
-	box = /obj/item/storage/box/survival/clip
+	box = /obj/item/storage/box/survival/extended
 
 // 	var/list/selectable_alt_titles = list()
 
@@ -275,7 +275,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
-	box = /obj/item/storage/box/survival/clip/balaclava
+	box = /obj/item/storage/box/survival/extended/balaclava
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
@@ -512,7 +512,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
-	box = /obj/item/storage/box/survival/clip/balaclava
+	box = /obj/item/storage/box/survival/extended/balaclava
 	shoes = null
 
 	backpack = /obj/item/storage/backpack/security/clip
