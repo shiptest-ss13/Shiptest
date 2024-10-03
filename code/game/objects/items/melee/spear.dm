@@ -66,29 +66,14 @@
 	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/melee/spear/explosive/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	set_explosive(new /obj/item/grenade/iedcasing/spawned()) //For admin-spawned explosive lances
 
 /obj/item/melee/spear/explosive/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
-
-/// triggered on wield of two handed item
-/obj/item/melee/spear/explosive/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/melee/spear/explosive/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
 
 /obj/item/melee/spear/explosive/proc/set_explosive(obj/item/grenade/G)
 	if(explosive)
@@ -130,7 +115,7 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
 		explosive.prime()
