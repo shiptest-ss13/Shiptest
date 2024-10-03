@@ -535,7 +535,6 @@
 
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo/qm
-	head = /obj/item/clothing/head/supply_chief
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
