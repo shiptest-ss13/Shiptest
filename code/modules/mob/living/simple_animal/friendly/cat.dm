@@ -1,6 +1,6 @@
 /mob/living/simple_animal/pet/cat
 	name = "cat"
-	desc = "Most modern cats hail from a solarian experimental geneline."
+	desc = "Most modern cats hail from a solarian experimental geneline. The perfect purrtection from rats and radiation."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
