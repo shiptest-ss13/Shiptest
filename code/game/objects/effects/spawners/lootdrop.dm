@@ -285,7 +285,6 @@
 /obj/effect/spawner/lootdrop/minor/bowler_or_that
 	name = "bowler or top hat spawner"
 	loot = list(
-		/obj/item/clothing/head/bowler = 1,
 		/obj/item/clothing/head/that = 1)
 
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears

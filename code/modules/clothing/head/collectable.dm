@@ -5,17 +5,6 @@
 	name = "collectable hat"
 	desc = "A rare collectable hat."
 
-/obj/item/clothing/head/collectable/petehat
-	name = "ultra rare Pete's hat!"
-	desc = "It smells faintly of plasma."
-	icon_state = "petehat"
-
-/obj/item/clothing/head/collectable/xenom
-	name = "collectable xenomorph helmet!"
-	desc = "Hiss hiss hiss!"
-	clothing_flags = SNUG_FIT
-	icon_state = "xenom"
-
 /obj/item/clothing/head/collectable/chef
 	name = "collectable chef's hat"
 	desc = "A rare chef's hat meant for hat collectors!"
@@ -23,12 +12,6 @@
 	item_state = "chefhat"
 
 	dog_fashion = /datum/dog_fashion/head/chef
-
-/obj/item/clothing/head/collectable/paper
-	name = "collectable paper hat"
-	desc = "What looks like an ordinary paper hat is actually a rare and valuable collector's edition paper hat. Keep away from water, fire, and Curators."
-	icon_state = "paper"
-	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/head/collectable/tophat
 	name = "collectable top hat"
@@ -62,12 +45,6 @@
 	desc = "A collectable welding helmet. Now with 80% less lead! Not for actual welding. Any welding done while wearing this helmet is done so at the owner's own risk!"
 	icon_state = "welding"
 	item_state = "welding"
-	clothing_flags = SNUG_FIT
-
-/obj/item/clothing/head/collectable/slime
-	name = "collectable slime hat"
-	desc = "Just like a real brain slug!"
-	icon_state = "headslime"
 	clothing_flags = SNUG_FIT
 
 /obj/item/clothing/head/collectable/flatcap
@@ -111,16 +88,6 @@
 	icon_state = "hardhat_standard"
 	dog_fashion = /datum/dog_fashion/head
 
-/obj/item/clothing/head/collectable/HoS
-	name = "collectable HoS hat"
-	desc = "Now you too can beat prisoners, set silly sentences, and arrest for no reason!"
-	icon_state = "hoscap"
-
-/obj/item/clothing/head/collectable/HoP
-	name = "collectable HoP hat"
-	desc = "It's your turn to demand excessive paperwork, signatures, stamps, and hire more clowns! Papers, please!"
-	icon_state = "hopcap_nt"
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
 /obj/item/clothing/head/collectable/thunderdome
 	name = "collectable Thunderdome helmet"

@@ -254,7 +254,7 @@
 		to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
 		return
 	var/list/items = list(
-		"Zealot's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold"),
+		"Zealot's Blindfold" = image(icon = 'icons/obj/clothing/eyes/eyes.dmi', icon_state = "blindfold"),
 		"Veil Walker Set" = image(icon = 'icons/obj/cult.dmi', icon_state = "shifter")
 		)
 	var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)

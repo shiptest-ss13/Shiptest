@@ -88,17 +88,10 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/head/snowman,
 					/obj/item/clothing/suit/snowman,
-					/obj/item/clothing/head/chicken,
-					/obj/item/clothing/suit/chickensuit,
 					/obj/item/clothing/mask/gas/monkeymask,
-					/obj/item/clothing/suit/monkeysuit,
 					/obj/item/clothing/head/cardborg,
 					/obj/item/clothing/suit/cardborg,
-					/obj/item/clothing/head/xenos,
-					/obj/item/clothing/suit/xenos,
-					/obj/item/clothing/suit/hooded/ian_costume,
-					/obj/item/clothing/suit/hooded/carp_costume,
-					/obj/item/clothing/suit/hooded/bee_costume)
+					/obj/item/clothing/suit/hooded/carp_costume)
 	crate_name = "original costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
@@ -143,7 +136,6 @@
 					/obj/item/clothing/neck/tie/blue,
 					/obj/item/clothing/neck/tie/red,
 					/obj/item/clothing/neck/tie/black,
-					/obj/item/clothing/head/bowler,
 					/obj/item/clothing/head/fedora,
 					/obj/item/clothing/head/flatcap,
 					/obj/item/clothing/head/beret,
@@ -175,7 +167,6 @@
 	desc = "Flaunt your status with three unique, highly-collectable hats!"
 	cost = 20000
 	contains = list(/obj/item/clothing/head/collectable/chef,
-					/obj/item/clothing/head/collectable/paper,
 					/obj/item/clothing/head/collectable/tophat,
 					/obj/item/clothing/head/collectable/captain,
 					/obj/item/clothing/head/collectable/beret,
@@ -186,15 +177,9 @@
 					/obj/item/clothing/head/collectable/rabbitears,
 					/obj/item/clothing/head/collectable/wizard,
 					/obj/item/clothing/head/collectable/hardhat,
-					/obj/item/clothing/head/collectable/HoS,
-					/obj/item/clothing/head/collectable/HoP,
 					/obj/item/clothing/head/collectable/thunderdome,
 					/obj/item/clothing/head/collectable/swat,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/police,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/xenom,
-					/obj/item/clothing/head/collectable/petehat)
+					/obj/item/clothing/head/collectable/police)
 	crate_name = "collectable hats crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
