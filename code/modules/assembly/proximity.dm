@@ -7,7 +7,9 @@
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 	var/scanning = FALSE
+	///is the assembly arming itself?
 	var/timing = FALSE
+	///seconds until the assembly arms itself
 	var/time = 10
 	var/sensitivity = 1
 	var/hearing_range = 3
@@ -153,3 +155,11 @@
 				value = round(time + value)
 				time = clamp(value, 0, 600)
 				. = TRUE
+
+/obj/item/assembly/prox_sensor/preset
+	sensitivity = 1
+	hearing_range = 3
+
+/obj/item/assembly/prox_sensor/preset/Initialize()
+	. = ..()
+	toggle_scan(!scanning)

@@ -8,20 +8,28 @@
 /obj/item/grenade/c4/satchel_charge/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
-	//replace with a signaller//
+	wires.attach_assembly_init(/obj/item/assembly/signaler/preset/cave_base)
+
+/obj/item/assembly_holder/premade/cave_base
+	a_left = /obj/item/assembly/signaler/preset/cave_base
+	a_right = /obj/item/assembly/prox_sensor/preset/cave_base
+
+/obj/item/grenade/c4/cave_base
+
+/obj/item/grenade/c4/cave_base/Initialize()
+	. = ..()
+	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
 	wires.attach_assembly_init(/obj/item/assembly/voice/preset/cave_base)
 
-	//add prox sensor / signaller assembly because fuck me i guess
-
-	//oh my god jc. a bomb
-
-	//main area needs to have the Big Bomb substituted for a C4.
-
+/obj/item/assembly/signaler/preset/cave_base
+	code = 44
+	frequency = 1451
 
 /obj/item/assembly/voice/preset/cave_base
 	mode = 1
 	recorded = "Goodbye~"
 
+/obj/item/assembly/prox_sensor/preset/cave_base
 
 //pre-netted cams
 /obj/machinery/camera/cave_base

@@ -67,7 +67,12 @@
 
 //assembly stuff
 /obj/item/grenade/c4/receive_signal()
-	addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
+	if(!active)
+		active = TRUE
+		icon_state = "[item_state]2"
+		balloon_alert_to_viewers("[src] begins ticking!")
+		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
+	return
 
 /obj/item/grenade/c4/attack_self(mob/user)
 	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num|null
@@ -141,4 +146,4 @@
 
 /obj/item/grenade/c4/satchel_charge/receive_signal()
 	. = ..()
-	balloon_alert_to_viewers("[src] begins ticking!")
+
