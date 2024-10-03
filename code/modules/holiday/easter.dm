@@ -131,8 +131,7 @@
 	/obj/item/toy/plush/carpplushie,
 	/obj/item/toy/plush/spider,
 	/obj/item/toy/redbutton,
-	/obj/item/toy/windupToolbox,
-	/obj/item/clothing/head/collectable/rabbitears)
+	/obj/item/toy/windupToolbox)
 	new won(where)
 	new/obj/item/reagent_containers/food/snacks/chocolateegg(where)
 

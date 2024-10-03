@@ -19,6 +19,8 @@
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
 	desc = "HOW"
+	icon = 'icons/obj/clothing/head/winterhood.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.

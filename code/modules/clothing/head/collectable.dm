@@ -68,13 +68,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/kitty
 
-/obj/item/clothing/head/collectable/rabbitears
-	name = "collectable rabbit ears"
-	desc = "Not as lucky as the feet!"
-	icon_state = "bunny"
-
-	dog_fashion = /datum/dog_fashion/head/rabbit
-
 /obj/item/clothing/head/collectable/wizard
 	name = "collectable wizard's hat"
 	desc = "NOTE: Any magical powers gained from wearing this hat are purely coincidental."

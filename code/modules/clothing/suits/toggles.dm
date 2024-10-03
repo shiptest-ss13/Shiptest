@@ -74,8 +74,6 @@
 		RemoveHood()
 
 /obj/item/clothing/head/hooded
-	icon = 'icons/obj/clothing/head/winterhood.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	var/obj/item/clothing/suit/hooded/suit
 
 /obj/item/clothing/head/hooded/Destroy()

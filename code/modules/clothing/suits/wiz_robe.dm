@@ -11,13 +11,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
 
-/obj/item/clothing/head/wizard/magus
-	name = "\improper Magus helm"
-	desc = "A mysterious helmet that hums with an unearthly power."
-	icon_state = "magus"
-	item_state = "magus"
-	dog_fashion = null
-
 /obj/item/clothing/head/wizard/santa
 	name = "Santa's hat"
 	desc = "Ho ho ho. Merrry X-mas!"
@@ -41,12 +34,6 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-
-/obj/item/clothing/suit/wizrobe/marisa
-	name = "witch robe"
-	desc = "Magic is all about the spell power, ZE!"
-	icon_state = "marisa"
-	item_state = "marisarobe"
 
 /obj/item/clothing/suit/wizrobe/santa
 	name = "Santa's suit"
