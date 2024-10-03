@@ -62,7 +62,6 @@
 		/obj/item/clothing/mask/rat/tribal = 1,
 		/obj/item/clothing/mask/rat = 1,
 		/obj/item/clothing/suit/apron/overalls = 1,
-		/obj/item/clothing/head/rabbitears = 1,
 		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
 		/obj/item/clothing/gloves/maid = 1,

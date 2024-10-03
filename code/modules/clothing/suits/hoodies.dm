@@ -1,6 +1,7 @@
 /obj/item/clothing/suit/hooded/hoodie
 	name = "hoodie"
 	desc = "HOW"
+	icon_state = null
 	hoodtype = /obj/item/clothing/head/hooded/hood
 	body_parts_covered = CHEST|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
@@ -19,6 +20,7 @@
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
 	desc = "HOW"
+	icon_state = null
 	icon = 'icons/obj/clothing/head/winterhood.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	body_parts_covered = HEAD

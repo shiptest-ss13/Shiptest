@@ -51,13 +51,6 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/rabbitears
-	name = "rabbit ears"
-	desc = "A headband with a pair of faux rabbit ears."
-	icon_state = "bunny"
-
-	dog_fashion = /datum/dog_fashion/head/rabbit
-
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."

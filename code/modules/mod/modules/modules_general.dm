@@ -376,7 +376,6 @@
 			/obj/item/clothing/head/pirate,
 			/obj/item/clothing/head/santa,
 			/obj/item/clothing/head/kitty,
-			/obj/item/clothing/head/rabbitears,
 			/obj/item/clothing/head/festive,
 			/obj/item/clothing/head/that,
 			/obj/item/clothing/head/nursehat,
