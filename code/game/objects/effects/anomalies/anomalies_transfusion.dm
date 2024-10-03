@@ -1,7 +1,7 @@
 /obj/effect/anomaly/transfusion
 	name = "transfusion"
-	icon_state = "veins"
-	desc = "A throbbing field floating mid-air, crimson particulate hovering around it."
+	icon_state = "transfusion"
+	desc = "A throbbing field floating mid-air, crimson particulate hovering within it."
 	density = TRUE
 	core = /obj/item/assembly/signaler/anomaly/transfusion
 	effectrange = 3

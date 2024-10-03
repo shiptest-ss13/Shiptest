@@ -1,6 +1,6 @@
 /obj/effect/anomaly/flux
 	name = "tesla"
-	icon_state = "flux"
+	icon_state = "tesla"
 	//double-check that these only happen in atmosphere now
 	desc = "A break in the atmosphere, small yet potent lightning arcs flashing off it."
 	density = TRUE
