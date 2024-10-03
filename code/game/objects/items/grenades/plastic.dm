@@ -67,7 +67,7 @@
 
 //assembly stuff
 /obj/item/grenade/c4/receive_signal()
-	prime()
+	addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 
 /obj/item/grenade/c4/attack_self(mob/user)
 	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num|null
@@ -129,7 +129,7 @@
 
 // x-com ufo defense high ex charge 1993
 /obj/item/grenade/c4/satchel_charge
-	name = "Satchel Charge"
+	name = "\improper satchel charge"
 	desc = "Used to put craters into places without too much hassle. An engineer's favorite."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "satchel_charge0"
@@ -138,3 +138,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	boom_sizes = list(0, 3, 5)
+
+/obj/item/grenade/c4/satchel_charge/receive_signal()
+	. = ..()
+	balloon_alert_to_viewers("[src] begins ticking!")

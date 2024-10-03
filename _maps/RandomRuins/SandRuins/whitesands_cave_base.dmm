@@ -121,10 +121,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base)
-"dT" = (
-/obj/item/mine/pressure/explosive/rad/live,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
 "dU" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -225,6 +221,10 @@
 /area/ruin/whitesands/cave_base/engi)
 "fi" = (
 /obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
+"fT" = (
+/obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "gx" = (
@@ -621,10 +621,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"pE" = (
-/obj/item/mine/pressure/explosive/rad/live,
-/turf/open/floor/plating/asteroid/whitesands/grass,
-/area/overmap_encounter/planetoid/cave/explored)
 "pV" = (
 /obj/machinery/camera/cave_base{
 	dir = 10
@@ -896,6 +892,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
+"ug" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "uh" = (
 /obj/structure/railing{
 	dir = 6
@@ -1535,9 +1535,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"Hs" = (
-/turf/closed/mineral/random/whitesands,
-/area/ruin/whitesands/cave_base)
 "HF" = (
 /obj/machinery/porta_turret/cave_base{
 	mode = 1
@@ -1831,10 +1828,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
-"NT" = (
-/obj/item/mine/pressure/explosive/rad/live,
-/turf/open/floor/plating/asteroid/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Op" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2081,7 +2074,6 @@
 	pixel_x = -11;
 	pixel_y = 4
 	},
-/obj/item/mine/pressure/explosive/heavy/live,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "!";
 	pixel_x = 12;
@@ -2626,7 +2618,7 @@ mh
 mh
 tX
 tX
-dT
+tX
 tX
 tX
 mh
@@ -2685,7 +2677,7 @@ mh
 mh
 tX
 tX
-tX
+fT
 hN
 tX
 Ev
@@ -2969,7 +2961,7 @@ mh
 mh
 mh
 tX
-tX
+fT
 tX
 mh
 mh
@@ -2989,7 +2981,7 @@ pp
 mh
 zj
 xe
-zj
+ug
 tX
 mh
 mh
@@ -3064,7 +3056,7 @@ Dh
 mh
 mh
 tX
-tX
+fT
 tX
 mh
 mh
@@ -3158,7 +3150,7 @@ mh
 mh
 KG
 tX
-tX
+fT
 WR
 zj
 zj
@@ -3588,7 +3580,7 @@ tX
 tX
 mh
 tX
-dT
+tX
 tX
 mh
 mh
@@ -3769,7 +3761,7 @@ zj
 mh
 tX
 mh
-tX
+fT
 tX
 tX
 tX
@@ -3906,14 +3898,14 @@ zv
 tX
 tX
 tX
-dT
+tX
 tX
 KG
 tX
 tX
 iP
 tX
-tX
+fT
 tX
 tX
 tX
@@ -3946,7 +3938,7 @@ mh
 mh
 zj
 zj
-NT
+ug
 zj
 mh
 mh
@@ -4028,7 +4020,7 @@ tX
 tX
 tX
 tX
-tX
+fT
 tX
 tX
 tX
@@ -4074,7 +4066,7 @@ mh
 mh
 mh
 tX
-dT
+tX
 tX
 tX
 tX
@@ -4091,7 +4083,7 @@ iP
 tX
 tX
 KG
-dT
+tX
 tX
 tX
 KG
@@ -4549,7 +4541,7 @@ pp
 mh
 pp
 tX
-dT
+tX
 tX
 KG
 tX
@@ -4660,7 +4652,7 @@ od
 od
 od
 od
-Hs
+od
 mh
 mh
 mh
@@ -4792,8 +4784,8 @@ mh
 qR
 GH
 tX
+fT
 tX
-dT
 tX
 mh
 tX
@@ -5025,8 +5017,8 @@ tX
 mh
 mh
 tX
+fT
 tX
-dT
 tX
 tX
 hN
@@ -5446,7 +5438,7 @@ mh
 zv
 zv
 qZ
-pE
+zv
 zv
 qZ
 zv

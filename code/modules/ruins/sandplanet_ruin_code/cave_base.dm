@@ -1,13 +1,22 @@
 //the satchel charge that'll explode
 
 /obj/item/grenade/c4/satchel_charge/cave_base
+	det_time = 15
 	desc = "With Love - Kerberos-574"
 
 //i am such a bitch
 /obj/item/grenade/c4/satchel_charge/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
+	//replace with a signaller//
 	wires.attach_assembly_init(/obj/item/assembly/voice/preset/cave_base)
+
+	//add prox sensor / signaller assembly because fuck me i guess
+
+	//oh my god jc. a bomb
+
+	//main area needs to have the Big Bomb substituted for a C4.
+
 
 /obj/item/assembly/voice/preset/cave_base
 	mode = 1
@@ -23,11 +32,13 @@
 
 //turret
 /obj/machinery/porta_turret/cave_base
+	max_integrity = 100
 	faction = list("turret", "Forward_Ops_Post")
 	stun_projectile = /obj/projectile/beam/laser/heavylaser
 	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	turret_flags = TURRET_FLAG_SHOOT_ALL
 
 //gut wrenching content
 
@@ -188,10 +199,10 @@
 	SAY There is no strategic information.
 	DELAY 10
 	SAY There is no essential equipment.
-	DELAY 5
+	DELAY 10
 	SAY Just you and me~
 	SOUND hiss
-	DELAY 5
+	DELAY 10
 	SAY Maybe one day we'll really meet. For now?
 	DELAY 10
 	SAY Goodbye~
