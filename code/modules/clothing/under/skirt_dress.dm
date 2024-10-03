@@ -39,6 +39,7 @@
 	name = "black skirt"
 	desc = "A black, casual skirt."
 	icon_state = "blackskirt"
+	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/skirt/color/blue
 	name = "blue skirt"
