@@ -149,6 +149,9 @@
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bR" = (
@@ -1707,6 +1710,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "pt" = (
@@ -1970,6 +1976,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -2272,10 +2281,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -20
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "tZ" = (
@@ -4280,6 +4285,12 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)

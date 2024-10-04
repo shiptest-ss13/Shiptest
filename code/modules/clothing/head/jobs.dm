@@ -33,10 +33,6 @@
 	desc = "A commanding white stetson adorned with a general's badge. Why this belongs to a captain is anybody's guess."
 	icon_state = "cowboycap"
 
-/obj/item/clothing/head/caphat/nt
-	name = "captain's hat"
-	icon_state = "captain_nt"
-
 /obj/item/clothing/head/frontier/peaked
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
@@ -46,41 +42,6 @@
 	name = "\improper Frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
-
-//Head of Personnel
-/obj/item/clothing/head/hopcap
-	name = "head of personnel's cap"
-	icon_state = "hopcap"
-	desc = "The symbol of true bureaucratic micromanagement."
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
-
-/obj/item/clothing/head/hopcap/nt
-	icon_state = "hopcap_nt"
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
-
-//Cargo
-/obj/item/clothing/head/supply_chief
-	name = "supply chief's cap"
-	desc = "The one thing between you and 40 boxes of orderable pizza is the person wearing this hat."
-	icon_state = "supply_chief_cap"
-
-/obj/item/clothing/head/deliveries_officer
-	name = "deliveries officer's cap"
-	desc = "Whether through fires, the vacuum of space, or hordes of souless husks of grey suited criminals, your crate will always be delivered!"
-	icon_state = "deliveries_officer_cap"
-
-//Chaplain
-/obj/item/clothing/head/nun_hood
-	name = "nun hood"
-	desc = "Maximum piety in this star system."
-	icon_state = "nun_hood"
-	flags_inv = HIDEHAIR
-	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/head/bishopmitre
-	name = "bishop mitre"
-	desc = "An opulent hat that functions as a radio to God. Or as a lightning rod, depending on who you ask."
-	icon_state = "bishopmitre"
 
 //Detective
 /obj/item/clothing/head/fedora/det_hat
@@ -252,12 +213,3 @@
 #undef DRILL_SHOUTING
 #undef DRILL_YELLING
 #undef DRILL_CANADIAN
-
-/obj/item/clothing/head/witchunter
-	name = "witchunter hat"
-	desc = "This hat saw much use back in the day."
-	icon_state = "witchhunterhat"
-	item_state = "witchhunterhat"
-	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEEYES|HIDEHAIR
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)

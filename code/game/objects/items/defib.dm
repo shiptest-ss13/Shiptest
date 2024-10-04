@@ -302,7 +302,6 @@
 	var/obj/item/defibrillator/defib
 	var/req_defib = TRUE
 	var/combat = FALSE //If it penetrates armor and gives additional functionality
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/shockpaddles/ComponentInitialize()
 	. = ..()
@@ -367,10 +366,10 @@
 	update_appearance()
 
 /obj/item/shockpaddles/update_icon_state()
-	icon_state = "[base_icon_state][wielded]"
+	icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]"
 	item_state = icon_state
 	if(cooldown)
-		icon_state = "[base_icon_state][wielded]_cooldown"
+		icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]_cooldown"
 	return ..()
 
 /obj/item/shockpaddles/dropped(mob/user)
@@ -397,7 +396,7 @@
 		user.visible_message("<span class='notice'>[defib] beeps: Unit is unpowered.</span>")
 		playsound(src, 'sound/machines/defib_failed.ogg', 50, FALSE)
 		return
-	if(!wielded)
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		if(iscyborg(user))
 			to_chat(user, "<span class='warning'>You must activate the paddles in your active module before you can use them on someone!</span>")
 		else
