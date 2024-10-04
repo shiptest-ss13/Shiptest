@@ -12,7 +12,7 @@
 #define DEFAULT_HEAD_PATH 'icons/mob/clothing/head.dmi'
 #define DEFAULT_NECK_PATH 'icons/mob/clothing/neck.dmi'
 #define DEFAULT_GLOVES_PATH 'icons/mob/clothing/hands.dmi'
-#define DEFAULT_GLASSES_PATH 'icons/mob/clothing/eyes.dmi'
+#define DEFAULT_GLASSES_PATH 'icons/mob/clothing/eyes/eyes.dmi'
 #define DEFAULT_BELT_PATH 'icons/mob/clothing/belt.dmi'
 
 ///VOX PATHS
