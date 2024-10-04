@@ -12,23 +12,24 @@
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
+	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 300
 
 
+
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
+	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division. The defence grid has been modified to disperse controlled electric shocks on contact, at the cost of its ability to block ranged projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
-
-	//TODO: Custom melee backlash shield with no projectile protection
+	shield_passive_drain = 0
+	shield_type = /obj/durand_shield/clip
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
-	shield = new /obj/durand_shield(loc, src, layer, dir)
+	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
-	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(prehit))
 
 
 /obj/mecha/combat/durand/Destroy()
@@ -71,22 +72,21 @@
 
 	if(!shield) //if the shield somehow got deleted
 		stack_trace("Durand triggered relay without a shield")
-		shield = new /obj/durand_shield(loc, src, layer)
+		shield = new shield_type(loc, src, layer)
 	shield.setDir(dir)
 	SEND_SIGNAL(shield, COMSIG_MECHA_ACTION_ACTIVATE, source, signal_args)
 
 //Redirects projectiles to the shield if defense_check decides they should be blocked and returns true.
-/obj/mecha/combat/durand/proc/prehit(obj/projectile/source, list/signal_args)
-	SIGNAL_HANDLER
-
-	if(defense_check(source.loc) && shield)
-		signal_args[2] = shield
-
+/obj/mecha/combat/durand/bullet_act(obj/projectile/source)
+	if(defense_check(source.loc, shield.ranged_pass))
+		shield.bullet_act(source)
+	else
+		. = ..()
 
 /**Checks if defense mode is enabled, and if the attacker is standing in an area covered by the shield.
-Expects a turf. Returns true if the attack should be blocked, false if not.*/
-/obj/mecha/combat/durand/proc/defense_check(turf/aloc)
-	if (!defense_mode || !shield || shield.switching)
+Expects a turf. Returns true if the attack should be blocked, false if not. Skip defence will make the proc return false and the attack will go through*/
+/obj/mecha/combat/durand/proc/defense_check(turf/aloc, skip_defence = FALSE)
+	if (!defense_mode || !shield || shield.switching || skip_defence)
 		return FALSE
 	. = FALSE
 	switch(dir)
@@ -105,25 +105,37 @@ Expects a turf. Returns true if the attack should be blocked, false if not.*/
 	return
 
 /obj/mecha/combat/durand/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0)
-	if(defense_check(user.loc))
+	if(defense_check(user.loc, shield.melee_pass))
 		log_message("Attack absorbed by defense field. Attacker - [user].", LOG_MECHA, color="orange")
 		shield.attack_generic(user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
 	else
 		. = ..()
 
 /obj/mecha/combat/durand/attackby(obj/item/W as obj, mob/user as mob, params)
-	if(defense_check(user.loc))
+	if(defense_check(user.loc, shield.melee_pass))
 		log_message("Attack absorbed by defense field. Attacker - [user], with [W]", LOG_MECHA, color="orange")
 		shield.attackby(W, user, params)
 	else
 		. = ..()
 
 /obj/mecha/combat/durand/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	if(defense_check(AM.loc))
+	if(defense_check(AM.loc, shield.ranged_pass))
 		log_message("Impact with [AM] absorbed by defense field.", LOG_MECHA, color="orange")
 		shield.hitby(AM, skipcatch, hitpush, blocked, throwingdatum)
 	else
 		. = ..()
+
+// Walking into the Paladin's shield shocks you.
+
+/obj/mecha/combat/durand/clip/Bump(atom/obstacle)
+	. = ..()
+	if(defense_check(obstacle.loc) && isliving(obstacle))
+		shield.contact(obstacle)
+
+/obj/mecha/combat/durand/clip/Bumped(atom/movable/AM)
+	. = ..()
+	if(defense_check(AM.loc) && isliving(AM))
+		shield.contact(AM)
 
 ////////////////////////////
 ///// Shield processing ////
@@ -151,7 +163,14 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	light_on = FALSE
 	var/obj/mecha/combat/durand/chassis ///Our link back to the durand
 	var/switching = FALSE ///To keep track of things during the animation
+	/// if this shield lets melee attacks pass and hit the mech directly
+	var/melee_pass = FALSE
+	///	if this shield lets projectiles pass and hit the mech directly
+	var/ranged_pass = FALSE
 
+/obj/durand_shield/clip
+	name = "electric repulsion grid"
+	ranged_pass = TRUE
 
 /obj/durand_shield/Initialize(mapload, _chassis, _layer, _dir)
 	. = ..()
@@ -230,3 +249,35 @@ the shield is disabled by means other than the action button (like running out o
 /obj/durand_shield/bullet_act()
 	play_attack_sound()
 	. = ..()
+
+/// a mob has bumped into the shield
+/obj/durand_shield/proc/contact(mob/living/contactor)
+	return
+
+/// Clippy shield
+/obj/durand_shield/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
+	. = ..()
+	apply_shock(user)
+
+/obj/durand_shield/clip/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	apply_shock(user)
+
+/obj/durand_shield/clip/contact(mob/living/contactor)
+	. = ..()
+	apply_shock(contactor)
+
+/obj/durand_shield/clip/proc/apply_shock(mob/attacker)
+	var/did_shock = FALSE
+	if(iscarbon(attacker))
+		var/mob/living/carbon/victim = attacker
+		if(electrocute_mob(victim, chassis.cell, src, 1, FALSE, FALSE))
+			did_shock = TRUE
+	else if(isliving(attacker))
+		var/mob/living/victim = attacker
+		if(victim.apply_damage_type(20,BURN))
+			to_chat(victim,span_userdanger("You're shocked by \the [src]!"))
+			did_shock = TRUE
+	if(did_shock)
+		visible_message(span_bolddanger("\The [src] repels \the [attacker] on contact, shocking [attacker.p_them()]."))
+		do_sparks(5,TRUE,src)
