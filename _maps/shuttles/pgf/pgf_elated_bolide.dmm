@@ -1772,9 +1772,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kQ" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/north,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -1782,6 +1779,9 @@
 	},
 /obj/item/paper/guides/jobs/engi/combustion_thruster{
 	pixel_y = 10
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -1957,6 +1957,7 @@
 	icon_state = "computer-left"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "mA" = (
@@ -4757,6 +4758,9 @@
 	pixel_y = 21;
 	pixel_x = -11
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north{
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "ES" = (
@@ -5462,10 +5466,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Jh" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4;
-	name = "grav couch"
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -7032,6 +7032,10 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/item/radio/intercom/wideband/directional/west,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "grav couch"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "TA" = (
@@ -7049,6 +7053,10 @@
 	icon_state = "1-4"
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "grav couch"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "TC" = (
@@ -7913,11 +7921,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YV" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "YY" = (
