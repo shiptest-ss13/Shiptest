@@ -8,8 +8,10 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navy"
 	item_state = "bluejump"
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepoi_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/under/gezena/utility
 	name = "\improper PGFN utlity jumpsuit"
@@ -34,6 +36,7 @@
 	desc = "The ceremonal uniform of the PGFMC, which so happens to be the historical uniform of the PGFA dating back 700 years."
 	icon_state = "marine_formal"
 	item_state = "marinejump"
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | KEPORI_VARIATION //no vox sprite
 
 //Unarmored suit
 
@@ -220,7 +223,6 @@
 			breathmask = !breathmask
 			to_chat(usr, span_notice("You [breathmask ? "put on" : "take off"] the breath mask on the [src]."))
 			playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
-	update_appearance()
 
 	if(visor && breathmask)
 		gas_transfer_coefficient = src::gas_transfer_coefficient
@@ -241,8 +243,9 @@
 	else
 		clothing_flags &= ~ALLOWINTERNALS
 
+	update_appearance()
 	if(istype(current_human))
-		current_human.update_inv_head()
+		current_human.update_hair()
 
 /obj/item/clothing/head/helmet/space/gezena/flightsuit/worn_overlays(isinhands)
 	. = ..()
