@@ -145,6 +145,15 @@
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/space/gezena/flightsuit/marine
+	name = "\improper PGFMC flight suit"
+	desc = "A standard flightsuit, in marine colors. Often used by pilots for protection against vaccum and to prevent g-forces on the pilot."
+	icon_state = "marine_flightsuit"
+	item_state = "spacehelm"
+
+#define HANDLE_HELMTOGGLE_VISOR 1
+#define HANDLE_HELMTOGGLE_MASK 2
+
 /obj/item/clothing/head/helmet/space/gezena/flightsuit
 	name = "\improper PGFN pilot helmet"
 	desc = "A standard pilot helmet, in navy colors. Often used by pilots for protection against vaccum and to prevent g-forces on the pilot. The visor and mask is togglable, if extra comfort is needed."
@@ -155,12 +164,119 @@
 	icon_state = "navy_flighthelm"
 	item_state = "spacehelm"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
+	actions_types = list(/datum/action/item_action/toggle_visor, /datum/action/item_action/toggle_flight_mask)
+	var/visor = FALSE
+	var/breathmask = FALSE
 
-/obj/item/clothing/suit/space/gezena/flightsuit/marine
-	name = "\improper PGFMC flight suit"
-	desc = "A standard flightsuit, in marine colors. Often used by pilots for protection against vaccum and to prevent g-forces on the pilot."
-	icon_state = "marine_flightsuit"
-	item_state = "spacehelm"
+	visor_flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEMASK
+	visor_flags = STOPSPRESSUREDAMAGE
+
+/datum/action/item_action/toggle_visor
+	name = "Toggle Visor"
+	icon_icon = 'icons/obj/clothing/faction/gezena/head.dmi'
+	button_icon_state = "visor_action"
+
+/datum/action/item_action/toggle_visor/UpdateButtonIcon(status_only = FALSE, force)
+	. = ..()
+	var/obj/item/clothing/head/helmet/space/gezena/flightsuit/current_helm = target
+	if(!current_helm)
+		return
+	if(current_helm.visor)
+		button.icon_state = "template_active"
+
+/datum/action/item_action/toggle_flight_mask
+	name = "Toggle Mask"
+	icon_icon = 'icons/obj/clothing/faction/gezena/head.dmi'
+	button_icon_state = "mask_action"
+
+/datum/action/item_action/toggle_flight_mask/UpdateButtonIcon(status_only = FALSE, force)
+	. = ..()
+	var/obj/item/clothing/head/helmet/space/gezena/flightsuit/current_helm = target
+	if(!current_helm)
+		return
+	if(current_helm.breathmask)
+		button.icon_state = "template_active"
+
+/obj/item/clothing/head/helmet/space/gezena/flightsuit/ui_action_click(mob/user, actiontype)
+	if(istype(actiontype, /datum/action/item_action/toggle_visor))
+		handle_toggle(HANDLE_HELMTOGGLE_VISOR)
+	if(istype(actiontype, /datum/action/item_action/toggle_flight_mask))
+		handle_toggle(HANDLE_HELMTOGGLE_MASK)
+	else
+		..()
+
+/obj/item/clothing/head/helmet/space/gezena/flightsuit/Initialize()
+	. = ..()
+	handle_toggle()
+
+/obj/item/clothing/head/helmet/space/gezena/flightsuit/proc/handle_toggle(part_toggled)
+	var/mob/living/carbon/human/current_human = loc
+	switch(part_toggled)
+		if(HANDLE_HELMTOGGLE_VISOR)
+			visor = !visor
+			to_chat(usr, span_notice("You flip [visor ? "down" : "up"] the visor on the [src]."))
+			playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
+		if(HANDLE_HELMTOGGLE_MASK)
+			breathmask = !breathmask
+			to_chat(usr, span_notice("You [breathmask ? "put on" : "take off"] the breath mask on the [src]."))
+			playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
+	update_appearance()
+
+	if(visor && breathmask)
+		gas_transfer_coefficient = src::gas_transfer_coefficient
+		permeability_coefficient = src::permeability_coefficient
+		clothing_flags |= visor_flags
+		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
+		cold_protection |= HEAD
+	else
+		gas_transfer_coefficient = null
+		permeability_coefficient = null
+		clothing_flags &= ~visor_flags
+		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
+		cold_protection &= ~HEAD
+	if(breathmask)
+		clothing_flags |= ALLOWINTERNALS
+	else
+		clothing_flags &= ~ALLOWINTERNALS
+
+	if(istype(current_human))
+		current_human.update_inv_head()
+
+/obj/item/clothing/head/helmet/space/gezena/flightsuit/worn_overlays(isinhands)
+	. = ..()
+	var/mob/living/carbon/human/current_human = loc
+	var/sprite_path = icon_state
+	if(!current_human)
+		return
+	if(isinhands)
+		return
+	var/obj/item/bodypart/head_bodypart = current_human.get_bodypart(BODY_ZONE_HEAD)
+	if(head_bodypart.bodytype & BODYTYPE_SNOUT)
+		sprite_path += "_snouted"
+
+
+	var/mutable_appearance/visor_overlay = mutable_appearance(mob_overlay_icon, "[sprite_path]_visor[visor ? "" : "_up"]")
+	var/mutable_appearance/mask_overlay = mutable_appearance(mob_overlay_icon, "[sprite_path]_mask")
+
+	message_admins(visor_overlay.icon_state)
+	. += visor_overlay
+	if(breathmask)
+		. += mask_overlay
+
+
+/obj/item/clothing/head/helmet/space/gezena/flightsuit/update_overlays()
+	cut_overlays()
+	. = ..()
+	var/sprite_path = icon_state
+
+	var/mutable_appearance/visor_overlay = mutable_appearance(icon, "[sprite_path]_visor[visor ? "" : "_up"]")
+	var/mutable_appearance/mask_overlay = mutable_appearance(icon, "[sprite_path]_mask")
+
+	add_overlay(visor_overlay)
+	if(breathmask)
+		add_overlay(mask_overlay)
 
 /obj/item/clothing/head/helmet/space/gezena/flightsuit/marine
 	name = "\improper PGFMC pilot helmet"
