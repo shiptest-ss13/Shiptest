@@ -49,10 +49,21 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300 = 4)
 	generate_items_inside(items_inside,src)
 
-// 5.56x39mm (M-90gl Carbine & P-16)
+// 5.56x42mm CLIP (CM82, Hydra variants)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_39
-	ammo_type = /obj/item/ammo_casing/a556_39
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42
+	ammo_type = /obj/item/ammo_casing/a556_42
+
+/obj/item/storage/box/ammo/a556_42
+	name = "box of 5.56x42mm CLIP ammo"
+	desc = "A box of standard 5.56x42mm CLIP ammo."
+	icon_state = "a556_42box_big"
+
+/obj/item/storage/box/ammo/a556_42/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42 = 4)
+	generate_items_inside(items_inside,src)
 
 // 5.45x39mm (SKM-24v)
 
@@ -81,14 +92,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40 = 4)
 	generate_items_inside(items_inside,src)
 
-// .300 Blackout (Polymer Survivor Rifle)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/aac_300blk
-	ammo_type = /obj/item/ammo_casing/aac_300blk
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/aac_300blk/recycled
-	ammo_type = /obj/item/ammo_casing/aac_300blk/recycled
-
 //.308 (M514 EBR & CM-GAL-S)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a308
@@ -106,4 +109,38 @@
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308 = 4)
+	generate_items_inside(items_inside,src)
+
+
+//.299 Eoehoma Caseless (E-40)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+
+/obj/item/storage/box/ammo/c299
+	name = "box of .299 Eoehoma caseless ammo"
+	desc = "A box of .299 Eoehoma caseless, for use with the E-40 hybrid assault rifle."
+	icon_state = "299box"
+
+/obj/item/storage/box/ammo/c299/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
+	generate_items_inside(items_inside,src)
+
+
+//6.5x57mm CLIP
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip
+	ammo_type = /obj/item/ammo_casing/a65clip
+
+/obj/item/storage/box/ammo/a65clip
+	name = "box of 6.5x57mm CLIP ammo"
+	desc = "A box of standard 6.5x57mm CLIP ammo."
+	icon_state = "65box"
+
+/obj/item/storage/box/ammo/a65clip/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip = 4)
 	generate_items_inside(items_inside,src)

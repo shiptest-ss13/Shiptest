@@ -93,3 +93,19 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/rubbershot = 4)
 	generate_items_inside(items_inside,src)
+
+// 5.7x39mm (Asp and Sidewinder)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+
+/obj/item/storage/box/ammo/c57x39
+	name = "box of 5.7x39mm ammo"
+	desc = "A box of standard 5.7x39mm ammo."
+	icon_state = "57x39mmbox"
+
+/obj/item/storage/box/ammo/c57x39/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39 = 4)
+	generate_items_inside(items_inside,src)

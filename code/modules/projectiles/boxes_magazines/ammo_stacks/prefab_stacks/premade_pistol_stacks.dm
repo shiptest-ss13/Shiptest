@@ -139,7 +139,7 @@
 /obj/item/storage/box/ammo/c9mm_hp/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm_hp = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/hp = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/incendiary
@@ -427,8 +427,30 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/hotshot
 	ammo_type = /obj/item/ammo_casing/c38/hotshot
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/iceblox
+/obj/item/storage/box/ammo/c38_hotshot
+	name = "box of .38 hearth ammo"
+	desc = "An unorthodox .38 Special cartridge infused with hearthwine. Catches the target on fire."
+	icon_state = "38hotshot"
+
+/obj/item/storage/box/ammo/c38_hotshot/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/hotshot = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/iceblox
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
+
+/obj/item/storage/box/ammo/c38_iceblox
+	name = "box of .38 chilled ammo"
+	desc = "An unorthodox .38 Special cartridge infused with icewine. Chills the target, slowing them down."
+	icon_state = "38iceblox"
+
+/obj/item/storage/box/ammo/c38_iceblox/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/iceblox = 4)
+	generate_items_inside(items_inside,src)
 
 // 44 Roumain
 
@@ -443,7 +465,7 @@
 /obj/item/storage/box/ammo/a44roum/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/a44roum = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/rubber
@@ -457,7 +479,7 @@
 /obj/item/storage/box/ammo/a44roum_rubber/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/a44roum/rubber = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/rubber = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/hp
@@ -471,5 +493,5 @@
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/a44roum/hp = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/hp = 4)
 	generate_items_inside(items_inside,src)

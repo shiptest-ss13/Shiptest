@@ -220,7 +220,11 @@
 
 	l_hand = /obj/item/flamethrower/full/tank
 
-	backpack_contents = list(/obj/item/gun/ballistic/shotgun/doublebarrel/presawn=1,/obj/item/ammo_box/a12g=1,/obj/item/extinguisher=2,/obj/item/radio=1)
+	backpack_contents = list(
+		/obj/item/gun/ballistic/shotgun/doublebarrel/presawn=1, \
+		/obj/item/storage/box/ammo/a12g_slug = 1, \
+		/obj/item/extinguisher = 2, \
+		/obj/item/radio=1)
 
 
 /datum/outfit/job/frontiersmen/ert/sentry_lmg

@@ -58,6 +58,20 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/blank
+	ammo_type = /obj/item/ammo_casing/shotgun/blank
+
+/obj/item/storage/box/ammo/a12g_blank
+	name = "box of 12ga blanks"
+	desc = "A box of 12-gauge blank shells, designed for training."
+	icon_state = "12gbox-slug" //needs icon
+
+/obj/item/storage/box/ammo/a12g_blank/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/blank = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
 
