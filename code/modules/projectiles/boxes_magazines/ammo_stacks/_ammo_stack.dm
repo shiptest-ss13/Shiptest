@@ -28,7 +28,7 @@
 		var/image/bullet = image(initial(icon), src, "[base_icon_state]")
 		bullet.pixel_x = rand(-8, 8)
 		bullet.pixel_y = rand(-8, 8)
-		bullet.transform = bullet.transform.Turn(round(45 * rand(0, 32) / 2))
+		bullet.transform = bullet.transform.Turn(round(45 * rand(0, 32) / 2)) //this is the equation Eris uses on their bullet stacks
 		add_overlay(bullet)
 	return UPDATE_ICON_STATE | UPDATE_OVERLAYS
 

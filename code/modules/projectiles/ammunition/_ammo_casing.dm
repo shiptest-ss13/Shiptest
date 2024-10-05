@@ -47,8 +47,6 @@
 
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
-	///TRUE if the ammo stack is generic and we should give it info based on the casing
-	var/generic_stacking = TRUE
 	///Maximum stack size of ammunition
 	var/stack_size = 12
 
@@ -105,15 +103,15 @@
 		if(user)
 			to_chat(user, span_warning("[src] can't be stacked."))
 		return
-	if(caliber != other_casing.caliber)
+	if(name != other_casing.name) //Has to match exactly
 		if(user)
-			to_chat(user, span_warning("You can't stack different calibers."))
+			to_chat(user, span_warning("You can't stack different types of ammunition."))
 		return
 	if(stack_type != other_casing.stack_type)
 		if(user)
 			to_chat(user, span_warning("You can't stack [other_casing] with [src]."))
 		return
-	if(!BB || !other_casing.BB)
+	if(!BB || !other_casing.BB) //maybe allow empty casing stacking at a later date, when there's a feature to recycle casings
 		if(user)
 			to_chat(user, span_warning("You can't stack empty casings."))
 		return
@@ -129,10 +127,9 @@
 
 /obj/item/ammo_casing/proc/stack_with(obj/item/ammo_casing/other_casing)
 	var/obj/item/ammo_box/magazine/ammo_stack/ammo_stack = new stack_type(drop_location())
-	if(generic_stacking)
-		ammo_stack.name = "handful of [caliber] rounds"
-		ammo_stack.base_icon_state = initial(icon_state)
-		ammo_stack.caliber = caliber
+	ammo_stack.name = "handful of [name]s" //"handful of .9mm bullet casings"
+	ammo_stack.base_icon_state = other_casing.icon_state
+	ammo_stack.caliber = caliber
 	ammo_stack.max_ammo = stack_size
 	ammo_stack.give_round(src)
 	ammo_stack.give_round(other_casing)
