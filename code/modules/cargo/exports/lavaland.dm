@@ -9,7 +9,6 @@
 						/obj/item/book_of_babel,
 						/obj/item/wisp_lantern,
 						/obj/item/reagent_containers/glass/bottle/potion/flight,
-						/obj/item/clothing/glasses/godeye,
 						/obj/item/clothing/suit/space/hardsuit/cult,
 						/obj/item/voodoo,
 						/obj/item/grenade/clusterbuster/inferno,
@@ -19,7 +18,6 @@
 						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
-						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
 						/obj/item/veilrender/vealrender,
 						/obj/item/clothing/suit/armor/ascetic)
 
