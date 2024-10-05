@@ -58,7 +58,7 @@
 	name = "9mm armor-piercing bullet casing"
 	desc = "A 9mm armor-piercing bullet casing."
 	bullet_skin = "ap"
-	projectile_type = /obj/projectile/bullet/c9mm/ap
+	projectile_type =/obj/projectile/bullet/c9mm/ap
 
 /obj/item/ammo_casing/c9mm/hp
 	name = "9mm hollow point bullet casing"
