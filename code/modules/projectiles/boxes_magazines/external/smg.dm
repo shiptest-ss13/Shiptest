@@ -28,19 +28,6 @@
 	base_icon_state = "46x30mmtI"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
 
-/obj/item/ammo_box/magazine/uzim9mm
-	name = "long SMG magazine (9mm)"
-	desc = "A thin, 32-round magazine for the Uzi SMG. These rounds do okay damage, but struggle against armor."
-	icon_state = "uzi9mm-32"
-	base_icon_state = "uzi9mm"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 32
-
-/obj/item/ammo_box/magazine/uzim9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),4)]"
-
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
 	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
@@ -87,7 +74,7 @@
 	desc = "A 24-round magazine for the SkM-44(k). These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
-/obj/item/ammo_box/magazine/smgm45
+/obj/item/ammo_box/magazine/m45_cobra
 	name = "SMG magazine (.45)"
 	desc = "A 24-round magazine for .45 submachine guns. These rounds do moderate damage, but struggle against armor."
 	icon_state = "c20r45-24"
@@ -96,17 +83,17 @@
 	caliber = ".45"
 	max_ammo = 24
 
-/obj/item/ammo_box/magazine/smgm45/update_icon_state() //This is stupid (whenever ammo is spent, it updates the icon path)
+/obj/item/ammo_box/magazine/m45_cobra/update_icon_state() //This is stupid (whenever ammo is spent, it updates the icon path)
 	. = ..()
 	icon_state = "c20r45-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/smgm45/empty
+/obj/item/ammo_box/magazine/m45_cobra/empty
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/c45_firestorm_mag
 	name = "stick magazine (.45)"
 	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
-	icon_state = "firestorm_mag"
+	icon_state = "firestorm_mag-1"
 	base_icon_state = "firestorm_mag"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
@@ -120,17 +107,10 @@
 	name = "pan magazine (.45)"
 	desc = "A bulky, 50-round pan magazine for the toploading Firestorm submachine gun. These rounds struggle against armor, but with this many you could cut anyone down regardless."
 	icon_state = "firestorm_pan"
+	base_icon_state = "firestorm_pan"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
 	icon_state = "firestorm_pan"
-
-/obj/item/ammo_box/magazine/tec9
-	name = "machine pistol magazine (9mm AP)"
-	desc = "A sizable 20-round magazine for the TEC-9 machine pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power.."
-	icon_state = "tec_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-	caliber = "9mm"
-	max_ammo = 20

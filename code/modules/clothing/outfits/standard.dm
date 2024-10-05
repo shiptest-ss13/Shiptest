@@ -102,7 +102,6 @@
 	uniform = /obj/item/clothing/under/color/black/ghost
 	suit = /obj/item/clothing/suit/hooded/cultrobes/alt/ghost
 	shoes = /obj/item/clothing/shoes/cult/alt/ghost
-	r_hand = /obj/item/melee/cultblade/ghost
 
 /datum/outfit/wizard
 	name = "Blue Wizard"
@@ -125,25 +124,6 @@
 	var/obj/item/spellbook/S = locate() in H.held_items
 	if(S)
 		S.owner = H
-
-/datum/outfit/wizard/apprentice
-	name = "Wizard Apprentice"
-	r_hand = null
-	l_hand = null
-	r_pocket = /obj/item/teleportation_scroll/apprentice
-
-/datum/outfit/wizard/red
-	name = "Red Wizard"
-
-	suit = /obj/item/clothing/suit/wizrobe/red
-	head = /obj/item/clothing/head/wizard/red
-
-/datum/outfit/wizard/weeb
-	name = "Marisa Wizard"
-
-	suit = /obj/item/clothing/suit/wizrobe/marisa
-	shoes = /obj/item/clothing/shoes/sandal/marisa
-	head = /obj/item/clothing/head/wizard/marisa
 
 /datum/outfit/plasmaman
 	name = "Plasmaman"

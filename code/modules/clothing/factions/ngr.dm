@@ -14,7 +14,7 @@
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
-	desc = "Beige fatigues used primarily by the ship and mech pilots of the New Gorlex Republic."
+	desc = "Beige fatigues used primarily by the shuttle and exosuit pilots of the New Gorlex Republic."
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
@@ -64,6 +64,21 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "ngr_hazard"
 	item_state = "redcloth"
+	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr
+	name = "NGR winter coat"
+	desc = "A sleek beige winter coat used by the Second Battlegroup of the New Gorlex Republic, the zipper tab proudly displays the official emblem of the NGR."
+	icon_state = "coatngr"
+	item_state = "coatngr"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/ngr
+
+/obj/item/clothing/head/hooded/winterhood/security/ngr
+	icon_state = "hood_ngr"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
 //////////////////
 //Armored suits//
@@ -81,20 +96,20 @@
 /obj/item/clothing/suit/armor/ngr/lieutenant
 	name = "\improper 2nd Battlegroup overcoat"
 	desc = "An armored overcoat worn by the lieutenants of the New Gorlex Republic's 2nd Battlegroup."
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/armor/ngr/captain
 	name = "\improper 2nd Battlegroup coat"
 	desc = "An armored coat worn by captains the New Gorlex Republic's 2nd Battlegroup."
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	icon_state = "ngr_captain"
 	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 ///////////////
 //Spacesuits//
@@ -122,6 +137,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	lightweight = 1
 	jetpack = null
+	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
@@ -141,7 +157,6 @@
 	icon_state = "ngr_garrison"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/ngr/flap
 	name = "beige flap cap"
@@ -230,6 +245,7 @@
 	icon_state = "ngr_shemagh"
 	icon = 'icons/obj/clothing/faction/ngr/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
+	supports_variations = VOX_VARIATION
 
 //////////
 //Belts//

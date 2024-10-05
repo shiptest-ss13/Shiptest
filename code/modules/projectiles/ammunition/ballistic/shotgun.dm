@@ -49,6 +49,13 @@
 	caliber = "12ga incendiary"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun
 
+/obj/item/ammo_casing/shotgun/blank
+	name = "blank shell"
+	desc = "A shell packed with powder but no projectile."
+	icon_state = "blank"
+	projectile_type = /obj/projectile/bullet/pellet/blank
+	custom_materials = list(/datum/material/iron=250)
+
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."

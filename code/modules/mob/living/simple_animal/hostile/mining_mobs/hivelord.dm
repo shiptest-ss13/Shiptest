@@ -208,7 +208,7 @@
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "is shrugged off by"
 	del_on_death = TRUE
-	stat_attack = HARD_CRIT
+	stat_attack = SOFT_CRIT
 	robust_searching = 1
 	var/can_infest_dead = FALSE
 
@@ -222,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(death)), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 5 SECONDS)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
@@ -230,6 +230,8 @@
 	if(stat == DEAD || !isturf(loc))
 		return
 	for(var/mob/living/carbon/human/victim in range(src, 1)) //Only for corpse right next to/on same tile
+		if(istype(victim.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull)) // no double dipping
+			continue
 		switch(victim.stat)
 			if(UNCONSCIOUS, HARD_CRIT)
 				infest(victim)
@@ -239,20 +241,88 @@
 					infest(victim)
 					return //This will qdelete the legion.
 
-
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message("<span class='warning'>[name] burrows into the flesh of [H]!</span>")
-	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
-	if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
-		L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
+	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
+	if(H.stat != DEAD)
+		var/obj/item/organ/legion_skull/throwyouabone = new()
+		throwyouabone.Insert(H)
 	else
-		L = new(H.loc)
-	visible_message("<span class='warning'>[L] staggers to [L.p_their()] feet!</span>")
-	H.death()
-	H.adjustBruteLoss(1000)
-	L.stored_mob = H
-	H.forceMove(L)
+		var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
+		if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
+			L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
+		else
+			L = new(H.loc)
+		visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
+		H.adjustBruteLoss(1000)
+		L.stored_mob = H
+		H.forceMove(L)
 	qdel(src)
+
+/obj/item/organ/legion_skull
+	name = "legion skull"
+	desc = "The skull of a legion, likely torn from a soon-to-be host."
+	icon_state = "legion_skull"
+	zone = BODY_ZONE_CHEST
+	slot = ORGAN_SLOT_REGENERATIVE_CORE
+	grind_results = list(/datum/reagent/medicine/soulus = 2, /datum/reagent/blood = 5)
+	var/datum/disease/transformation/legionvirus/malignance
+	var/malignance_countdown = 5 MINUTES
+	var/malignance_tracker
+
+/obj/item/organ/legion_skull/on_find(mob/living/finder)
+	..()
+	to_chat(finder, span_warning("You found a skull-shaped growth in [owner]'s [zone]!"))
+
+/obj/item/organ/legion_skull/Insert(mob/living/carbon/M, special = 0)
+	..()
+	malignance = new()
+	malignance.infect(M, FALSE) //we handle all the fancy virus stuff in the organ, so we need a reference for it
+	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
+	M.heal_overall_bleeding(12) //stop dying so fast
+
+/obj/item/organ/legion_skull/Remove(mob/living/carbon/M, special = 0)
+	malignance_countdown = initial(malignance_countdown)
+	deltimer(malignance_tracker)
+	malignance_tracker = null
+	malignance.cure()
+	..()
+
+/obj/item/organ/legion_skull/on_life()
+	. = ..()
+	skull_check()
+
+/obj/item/organ/legion_skull/on_death()
+	. = ..()
+	skull_check()
+
+/// track our timers and reagents
+/obj/item/organ/legion_skull/proc/skull_check()
+	if(!owner)
+		return
+	if(!malignance)
+		malignance = new()
+		malignance.infect(owner, FALSE)
+	if(owner.reagents.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
+		if(isnull(timeleft(malignance_tracker))) //ruhehehehehe
+			malignance_countdown = min(malignance_countdown + 1 SECONDS, initial(malignance_countdown)) //slightly improve our resistance to dying so we don't turn the second a treatment runs out
+			return
+		malignance_countdown = timeleft(malignance_tracker) //pause our timer if we have the reagents
+		deltimer(malignance_tracker)
+		malignance_tracker = null //you would think deltimer would do this but it actually doesn't track a direct reference!
+		return
+	if(!malignance_tracker)
+		malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME) //and resume if we run out
+
+/// Updates the stage of our tied disease
+/obj/item/organ/legion_skull/proc/update_stage()
+	malignance.update_stage(min(malignance.stage + 1, malignance.max_stages))
+	if(malignance.stage == 5)
+		malignance.stage_act() //force the transformation here, then delete everything
+		qdel(malignance)
+		qdel(src)
+		return
+	malignance_countdown = initial(malignance_countdown)
+	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
 //Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced

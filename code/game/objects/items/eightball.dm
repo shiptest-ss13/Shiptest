@@ -136,10 +136,10 @@
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	for (var/answer in haunted_answers)
 		votes[answer] = 0
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /obj/item/toy/eightball/haunted/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/toy/eightball/haunted/MakeHaunted()

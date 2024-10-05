@@ -25,7 +25,6 @@
 		/obj/item/clothing/suit/hooded/wintercoat = 1,
 		/obj/item/clothing/suit/jacket = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
-		/obj/item/clothing/suit/jacket/leather/overcoat = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/jacket/puffer = 1,
@@ -46,8 +45,8 @@
 		belt = pickweight(list(
 			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
 			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
-			/obj/item/gun/ballistic/automatic/pistol/syndicate = 1,
-			/obj/item/gun/ballistic/revolver/syndicate = 1,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 1,
+			/obj/item/gun/ballistic/revolver/viper = 1,
 			/obj/item/gun/ballistic/revolver/firebrand = 1,
 			)
 		)
@@ -81,7 +80,6 @@
 			/obj/item/clothing/head/hardhat/orange = 2,
 			/obj/item/clothing/head/hardhat/dblue = 2,
 			/obj/item/clothing/head/pirate = 1,
-			/obj/item/clothing/head/foilhat = 1
 			)
 		)
 	if(prob(50))
@@ -203,14 +201,14 @@
 	if(prob(50))
 		r_pocket = pickweight(list(
 			/obj/item/stack/marker_beacon = 20,
-			/obj/item/spacecash/bundle/mediumrand = 7,
+			/obj/item/spacecash/bundle/smallrand = 7,
 			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
 			/obj/item/borg/upgrade/modkit/damage = 1
 			)
 		)
 	if(prob(25))
 		l_pocket = pickweight(list(
-			/obj/item/spacecash/bundle/mediumrand = 5,
+			/obj/item/spacecash/bundle/smallrand = 5,
 			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
 			/obj/item/borg/upgrade/modkit/cooldown = 1
 			)
@@ -230,7 +228,7 @@
 					/obj/item/stack/marker_beacon/ten = 2,
 					/obj/item/mining_scanner = 2,
 					/obj/item/extinguisher/mini = 2,
-					/obj/item/kitchen/knife/combat/survival = 3,
+					/obj/item/melee/knife/survival = 3,
 					/obj/item/flashlight/seclite = 3,
 					/obj/item/stack/sheet/sinew = 3,
 					/obj/item/stack/sheet/bone = 3
@@ -275,7 +273,7 @@
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
 	if(prob(10))
-		back = /obj/item/fireaxe
+		back = /obj/item/melee/axe/fire
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pickweight(list(
@@ -411,7 +409,7 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pickweight(list(
-				/obj/item/spacecash/bundle/mediumrand = 5,
+				/obj/item/spacecash/bundle/smallrand = 5,
 				/obj/item/ammo_box/magazine/illestren_a850r = 5,
 				/obj/item/ammo_box/magazine/zip_ammo_9mm = 5,
 				/obj/item/modular_computer/tablet/preset/cargo = 3,
@@ -424,7 +422,7 @@
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/cargo
 	if(prob(25))
-		suit = /obj/item/clothing/suit/armor/vest/scrap_armor
+		suit = /obj/item/clothing/suit/armor/vest/scrap
 		suit_store = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/generic/cargo

@@ -957,7 +957,7 @@
 		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/mech_recharger
-	name = "Mechbay Recharger (Machine Board)"
+	name = "Exosuit Bay Recharger (Machine Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/mech_bay_recharge_port
 	req_components = list(
@@ -1110,17 +1110,6 @@
 		/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stack/sheet/glass = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
-
-/obj/item/circuitboard/machine/bepis
-	name = "BEPIS Chamber (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/bepis
-	req_components = list(
-		/obj/item/stack/cable_coil = 5,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/scanning_module = 1)
 
 /obj/item/circuitboard/machine/bluespace_miner
 	name = "Bluespace Miner (Machine Board)"
@@ -1391,16 +1380,6 @@
 		/obj/item/stock_parts/subspace/crystal = 1,
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
-
-//Misc
-/obj/item/circuitboard/machine/sheetifier
-	name = "Sheet-meister 2000 (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/sheetifier
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"

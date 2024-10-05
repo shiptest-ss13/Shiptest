@@ -29,10 +29,6 @@
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
-/datum/gear/eyewear/monocle
-	display_name = "monocle"
-	path = /obj/item/clothing/glasses/monocle
-
 /datum/gear/eyewear/cheapsuns
 	display_name = "cheap sunglasses"
 	path = /obj/item/clothing/glasses/cheapsuns
@@ -46,7 +42,10 @@
 	description = "A blindfold you can still see through."
 	path = /obj/item/clothing/glasses/trickblindfold
 
-
+/datum/gear/eyewear/doubleeyepatch
+	display_name = "double eyepatch"
+	description = "Two eyepatches at once! Effectively a blindfold, though."
+	path = /obj/item/clothing/glasses/blindfold/eyepatch
 
 /datum/gear/eyewear/glasses/cold
 	display_name = "cold goggles"

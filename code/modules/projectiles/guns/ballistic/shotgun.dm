@@ -35,6 +35,8 @@
 	recoil = 1
 	recoil_unwielded = 4
 
+	gunslinger_recoil_bonus = -1
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -45,15 +47,6 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
-
-/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
 
 // BRIMSTONE SHOTGUN //
 
@@ -81,7 +74,7 @@
 	can_be_sawn_off = TRUE
 
 
-/obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/brimstone/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
@@ -115,7 +108,7 @@
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
 
-/obj/item/gun/ballistic/shotgun/hellfire/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -142,10 +135,7 @@
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
 	manufacturer = MANUFACTURER_NANOTRASEN
-
-/obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
-	..()
-	rack()
+	semi_auto = TRUE
 
 //im not sure what to do with the combat shotgun, as it's functionally the same as the semi auto shotguns except it automattically racks instead of being semi-auto
 
@@ -216,83 +206,16 @@
 		return
 	rack()
 
-// Bulldog shotgun //
-
-/obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
-	name = "\improper Bulldog Shotgun"
-	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "bulldog"
-	item_state = "bulldog"
-
-	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12g
-	burst_size = 1
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
-	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	show_magazine_on_sprite = TRUE
-	empty_indicator = TRUE
-	empty_alarm = TRUE
-	unique_mag_sprites_for_variants = TRUE
-	semi_auto = TRUE
-	internal_magazine = FALSE
-	casing_ejector = TRUE
-	tac_reloads = TRUE
-	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
-
-	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-
-	spread = 4
-	spread_unwielded = 16
-	recoil = 1
-	recoil_unwielded = 4
-	wield_slowdown = 0.6
-	wield_delay = 0.65 SECONDS
-
-EMPTY_GUN_HELPER(shotgun/bulldog)
-
-/obj/item/gun/ballistic/shotgun/bulldog/inteq
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
-	icon_state = "bulldog-inteq"
-	item_state = "bulldog-inteq"
-	mag_type = /obj/item/ammo_box/magazine/m12g
+	icon_state = "bulldog_inteq"
+	item_state = "bulldog_inteq"
+	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	manufacturer = MANUFACTURER_INTEQ
 
-EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
+EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 
-/obj/item/gun/ballistic/shotgun/bulldog/suns
-	name = "\improper Bulldog-C Shotgun"
-	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
-	icon_state = "bulldog_suns"
-	item_state = "bulldog_suns"
-
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
-	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
-	mag_type = /obj/item/ammo_box/magazine/cm15_mag
-	icon_state = "cm15"
-	item_state = "cm15"
-	empty_alarm = FALSE
-	empty_indicator = FALSE
-	unique_mag_sprites_for_variants = FALSE
-	manufacturer = MANUFACTURER_MINUTEMAN
-	fire_select_icon_state_prefix = "clip_"
-	adjust_fire_select_icon_state_on_safety = TRUE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -393,7 +316,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY) && (!bolt_locked))
 		reskin_obj(user)
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
@@ -438,7 +361,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	item_state = "dshotgun_srm"
 	unique_reskin = null
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "dshotgun_srm_sawn"
@@ -493,7 +416,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	if(sawn_off)
 		. += "ishotgun_sawn"
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(forced = FALSE)
 	. = ..()
 	if(. && slung) //sawing off the gun removes the sling
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
@@ -501,13 +424,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
-	name = "sawn-off improvised shotgun"
-	desc = "A single-shot shotgun. Better not miss."
-	icon_state = "ishotgun_sawn"
-	item_state = "ishotgun_sawn"
-	w_class = WEIGHT_CLASS_NORMAL
 	sawn_off = TRUE
-	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
@@ -673,7 +590,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 		balloon_alert_to_viewers("quickly racks!")
 		fire_delay = 0 SECONDS
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -698,7 +615,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	base_icon_state = "flamingarrow_factory"
 	item_state = "flamingarrow_factory"
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/factory/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "flamingarrow_factory_sawn"
@@ -711,11 +628,75 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "flamingbolt_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+	name = "HP Absolution"
+	base_icon_state = "absolution"
+	icon_state = "absolution"
+	item_state = "absolution"
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. Chambered in .357."
+	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(forced = FALSE)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 8
+
+		item_state = "illestren_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
+	name = "HP Conflagration"
+	base_icon_state = "conflagration"
+	icon_state = "conflagration"
+	item_state = "conflagration"
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	desc = "A lightweight lever-action shotgun with a 5 round ammunition capacity. The lever action allows it to be cycled quickly and acurrately. In theory, you could ever operate it one-handed. Chambered in 12g."
+	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(forced = FALSE)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5
+
+		item_state = "beacon_factory_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
+	spawnwithmagazine = FALSE
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
@@ -778,7 +759,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "beacon_sawn"
@@ -801,7 +782,7 @@ EMPTY_GUN_HELPER(shotgun/bulldog/inteq)
 	icon_state = "beacon_factory"
 	item_state = "beacon_factory"
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "beacon_factory_sawn"

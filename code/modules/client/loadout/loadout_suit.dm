@@ -23,10 +23,6 @@
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather/overcoat
-	display_name = "leather overcoat"
-	path = /obj/item/clothing/suit/jacket/leather/overcoat
-
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
@@ -54,8 +50,6 @@
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
 	path = /obj/item/clothing/suit/toggle/lawyer/charcoal
-
-/datum/gear/suit/jacket/navy //why is this blank? i dont know
 
 /datum/gear/suit/jacket/hoodie_black
 	display_name = "hoodie, black"
@@ -93,11 +87,20 @@
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
 
-//Misc
-/datum/gear/suit/grponcho
-	display_name = "poncho, green"
-	path = /obj/item/clothing/suit/poncho/green
+//Suspenders
+/datum/gear/suit/suspenders/red
+	display_name = "suspenders, red"
+	path = /obj/item/clothing/suit/toggle/suspenders
 
+/datum/gear/suit/suspenders/blue
+	display_name = "suspenders, blue"
+	path = /obj/item/clothing/suit/toggle/suspenders/blue
+
+/datum/gear/suit/suspenders/gray
+	display_name = "suspenders, gray"
+	path = /obj/item/clothing/suit/toggle/suspenders/gray
+
+//Misc
 /datum/gear/suit/overalls
 	display_name = "overalls"
 	path = /obj/item/clothing/suit/apron/overalls
@@ -119,3 +122,11 @@
 	display_name = "floral shirt"
 	description = "From grills to guns, this shirt's seen it all."
 	path = /obj/item/clothing/suit/hawaiian
+
+/datum/gear/suit/hazardvest
+	display_name = "hazard vest"
+	path = /obj/item/clothing/suit/hazardvest
+
+/datum/gear/suit/longcoat
+	display_name = "longcoat"
+	path = /obj/item/clothing/suit/longcoat

@@ -40,6 +40,45 @@
 			return s_store
 	return null
 
+/mob/living/carbon/human/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == belt)
+		return ITEM_SLOT_BELT
+
+	if(looking_for == wear_id)
+		return ITEM_SLOT_ID
+
+	if(looking_for == ears)
+		return ITEM_SLOT_EARS
+
+	if(looking_for == glasses)
+		return ITEM_SLOT_EYES
+
+	if(looking_for == gloves)
+		return ITEM_SLOT_GLOVES
+
+	if(looking_for == head)
+		return ITEM_SLOT_HEAD
+
+	if(looking_for == shoes)
+		return ITEM_SLOT_FEET
+
+	if(looking_for == wear_suit)
+		return ITEM_SLOT_OCLOTHING
+
+	if(looking_for == w_uniform)
+		return ITEM_SLOT_ICLOTHING
+
+	if(looking_for == r_store)
+		return ITEM_SLOT_RPOCKET
+
+	if(looking_for == l_store)
+		return ITEM_SLOT_LPOCKET
+
+	if(looking_for == s_store)
+		return ITEM_SLOT_SUITSTORE
+
+	return ..()
+
 /mob/living/carbon/human/proc/get_all_slots()
 	. = get_head_slots() | get_body_slots()
 
@@ -334,7 +373,8 @@
 		if(equip_to_slot_if_possible(thing, slot_type))
 			update_inv_hands()
 		return
-	if(!SEND_SIGNAL(equipped_item, COMSIG_CONTAINS_STORAGE)) // not a storage item
+	var/datum/component/storage/storage = equipped_item.GetComponent(/datum/component/storage)
+	if(!storage)
 		if(!thing)
 			equipped_item.attack_hand(src)
 		else
@@ -344,10 +384,11 @@
 		if(!SEND_SIGNAL(equipped_item, COMSIG_TRY_STORAGE_INSERT, thing, src))
 			to_chat(src, "<span class='warning'>You can't fit [thing] into your [equipped_item.name]!</span>")
 		return
-	if(!equipped_item.contents.len) // nothing to take out
+	var/atom/real_location = storage.real_location()
+	if(!real_location.contents.len) // nothing to take out
 		to_chat(src, "<span class='warning'>There's nothing in your [equipped_item.name] to take out!</span>")
 		return
-	var/obj/item/stored = equipped_item.contents[equipped_item.contents.len]
+	var/obj/item/stored = real_location.contents[real_location.contents.len]
 	if(!stored || stored.on_found(src))
 		return
 	stored.attack_hand(src) // take out thing from item in storage slot
