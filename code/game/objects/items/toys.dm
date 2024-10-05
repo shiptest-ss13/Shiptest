@@ -1285,7 +1285,6 @@
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
 	icon_state = "curator"
-	toysay = "One day while..."
 
 /obj/item/toy/figure/md
 	name = "Medical Doctor action figure"
