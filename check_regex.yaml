@@ -31,14 +31,14 @@ standards:
     - exactly: [4, "/mob text paths", '"/mob']
     - exactly: [42, "/obj text paths", '"/obj']
     - exactly: [0, "/turf text paths", '"/turf']
-    - exactly: [117, "text2path uses", "text2path"]
+    - exactly: [115, "text2path uses", "text2path"]
 
     - exactly: [18, "world<< uses", 'world[ \t]*<<']
     - exactly: [0, "world.log<< uses", 'world.log[ \t]*<<']
 
     - exactly:
           [
-              266,
+              262,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]

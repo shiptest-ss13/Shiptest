@@ -1282,6 +1282,8 @@
 			. = welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. = analyzer_act(user, I)
+		if(TOOL_DECONSTRUCT)
+			. |= deconstruct_act(user, I)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1361,6 +1363,10 @@
 ///Analyzer act
 /atom/proc/analyzer_act(mob/living/user, obj/item/I)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
+
+///Deconstruct act
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
 
 ///Generate a tag for this atom
 /atom/proc/GenerateTag()
