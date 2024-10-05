@@ -2,6 +2,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
+GLOBAL_DATUM_INIT(advanced_cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "advanced_cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
 GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
 
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)

@@ -182,6 +182,8 @@
 #define COMSIG_ATOM_CROWBAR_ACT "atom_crowbar_act"
 ///from base of atom/analyser_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_ANALYSER_ACT "atom_analyser_act"
+///from base of atom/deconstruct_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_DECONSTRUCT_ACT "atom_deconstruct_act"
 
 ///for any tool behaviors: (mob/living/user, obj/item/I, list/recipes)
 #define COMSIG_ATOM_TOOL_ACT(tooltype) "tool_act_[tooltype]"
