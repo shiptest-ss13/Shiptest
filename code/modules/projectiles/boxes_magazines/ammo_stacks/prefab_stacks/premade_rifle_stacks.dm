@@ -3,8 +3,30 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r
 	ammo_type = /obj/item/ammo_casing/a8_50r
 
+/obj/item/storage/box/ammo/a8_50r
+	name = "box of 8x50mm ammo"
+	desc = "A box of standard 8x50mm ammo."
+	icon_state = "8x50mmbox"
+
+/obj/item/storage/box/ammo/a8_50r/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/hp
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
+
+/obj/item/storage/box/ammo/a8_50r_hp
+	name = "box of HP 8x50mm ammo"
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
+	icon_state = "8x50mmbox-hp"
+
+/obj/item/storage/box/ammo/a8_50r_hp/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/hp = 4)
+	generate_items_inside(items_inside,src)
 
 // 8x58mm Caseless (SSG-669C)
 
@@ -15,6 +37,17 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a300
 	ammo_type = /obj/item/ammo_casing/a300
+
+/obj/item/storage/box/ammo/a300
+	name = "box of .300 magnum ammo"
+	desc = "A box of standard .300 Magnum ammo."
+	icon_state = "300box"
+
+/obj/item/storage/box/ammo/a300/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300 = 4)
+	generate_items_inside(items_inside,src)
 
 // 5.56x39mm (M-90gl Carbine & P-16)
 
@@ -34,6 +67,20 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40
 	ammo_type = /obj/item/ammo_casing/a762_40
 
+/obj/item/storage/box/ammo/a762_40
+	name = "box of 7.62x40mm CLIP ammo"
+	desc = "A box of standard 7.62x40mm CLIP ammo."
+	icon_state = "a762_40box_big"
+
+/obj/item/storage/box/ammo/a762_40/inteq
+	icon_state = "a762_40box_big_inteq"
+
+/obj/item/storage/box/ammo/a762_40/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40 = 4)
+	generate_items_inside(items_inside,src)
+
 // .300 Blackout (Polymer Survivor Rifle)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/aac_300blk
@@ -47,5 +94,16 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a308
 	ammo_type = /obj/item/ammo_casing/a308
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/caseless/c299
-	ammo_type = /obj/item/ammo_casing/caseless/c299
+/obj/item/storage/box/ammo/a308
+	name = "box of .308 ammo"
+	desc = "A box of standard .308 ammo."
+	icon_state = "a308box"
+
+/obj/item/storage/box/ammo/a308/hunterspride
+	icon_state = "a308box-HP"
+
+/obj/item/storage/box/ammo/a308/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308 = 4)
+	generate_items_inside(items_inside,src)

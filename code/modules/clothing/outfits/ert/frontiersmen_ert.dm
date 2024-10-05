@@ -89,11 +89,11 @@
 			var/loops = rand(1,3)
 			for(var/i in 1 to loops)
 				var/ammotype = pick(list(
-					/obj/item/ammo_box/c8x50mm_box,
-					/obj/item/ammo_box/c45,
-					/obj/item/ammo_box/a357_box,
-					/obj/item/ammo_box/c45,
-					/obj/item/ammo_box/a4570,
+					/obj/item/storage/box/ammo/a8_50r,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a357,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a4570,
 					/obj/item/stock_parts/cell/gun/mini))
 				backpack_contents += ammotype
 

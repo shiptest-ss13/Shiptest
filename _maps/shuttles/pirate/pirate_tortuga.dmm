@@ -667,10 +667,7 @@
 /area/ship/security/armory)
 "hU" = (
 /obj/structure/rack,
-/obj/item/ammo_box/c45{
-	pixel_x = -9;
-	pixel_y = 8
-	},
+/obj/item/storage/box/ammo/c45,
 /obj/item/storage/toolbox/ammo/a762_40{
 	pixel_x = 5;
 	pixel_y = 6
@@ -3141,7 +3138,7 @@
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -13
 	},
-/obj/item/ammo_box/c38_box/surplus,
+/obj/item/storage/box/ammo/c38_surplus,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
