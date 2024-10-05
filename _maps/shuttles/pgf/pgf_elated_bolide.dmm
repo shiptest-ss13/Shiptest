@@ -440,6 +440,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor/orange,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 9;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "dp" = (
@@ -1026,10 +1030,6 @@
 	pixel_y = -7;
 	pixel_x = 3
 	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 6;
-	pixel_x = 8
-	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -10;
 	pixel_y = -1
@@ -1045,6 +1045,10 @@
 /obj/item/radio/headset/pgf/alt,
 /obj/machinery/light/small/directional/east,
 /obj/item/gps,
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "hO" = (
@@ -2061,7 +2065,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/chair,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2589,6 +2592,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
+	},
+/obj/structure/chair{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -3773,10 +3779,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "zd" = (
-/obj/structure/closet/crate{
-	name = "janitorial supplies";
-	desc = "It'd probably be best if you didn't piss the LT off."
-	},
 /obj/item/mop,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
@@ -3794,6 +3796,7 @@
 	pixel_x = 10;
 	pixel_y = -3
 	},
+/obj/structure/closet/crate/trashcart,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "zi" = (
@@ -4068,6 +4071,21 @@
 	pixel_x = -6;
 	pixel_y = 9
 	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "AC" = (
@@ -5437,7 +5455,7 @@
 /area/ship/engineering)
 "Jd" = (
 /obj/machinery/door/airlock{
-	name = "Dormatories"
+	name = "Dormitories"
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
@@ -5785,6 +5803,10 @@
 /obj/item/shovel{
 	pixel_x = 6;
 	pixel_y = -5
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 5;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
@@ -6610,7 +6632,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	dir = 2;
-	name = "Engineering Storage";
+	name = "Armory";
 	req_one_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -6934,10 +6956,6 @@
 	pixel_y = -7;
 	pixel_x = 3
 	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 6;
-	pixel_x = 8
-	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -8;
 	pixel_y = -1
@@ -6953,6 +6971,10 @@
 /obj/item/radio/headset/pgf/alt,
 /obj/item/gps,
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/under/gezena/marine{
+	pixel_x = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "SO" = (
@@ -7257,13 +7279,15 @@
 	dir = 1;
 	pixel_x = -10;
 	pixel_y = -20;
-	name = "secure stowage access";
+	name = "secure storage access";
 	id = "bolide_bombs";
 	req_access = list(3)
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 5
 	},
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "Ut" = (
@@ -7348,6 +7372,11 @@
 /obj/structure/closet/wall/white/directional/south,
 /obj/item/storage/ration/crayons,
 /obj/structure/table/reinforced,
+/obj/machinery/door/airlock/security{
+	dir = 2;
+	name = "Engineering Storage";
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Ve" = (
