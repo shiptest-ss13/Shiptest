@@ -451,8 +451,6 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	new/datum/stack_recipe("pinion airlock assembly", /obj/structure/door_assembly/door_assembly_bronze, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bronze pinion airlock assembly", /obj/structure/door_assembly/door_assembly_bronze/seethru, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bronze hat", /obj/item/clothing/head/bronze), \
-	new/datum/stack_recipe("bronze suit", /obj/item/clothing/suit/bronze), \
-	new/datum/stack_recipe("bronze boots", /obj/item/clothing/shoes/bronze), \
 	null,
 	new/datum/stack_recipe("bronze chair", /obj/structure/chair/comfy/shuttle/bronze, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("Marx Bust", /obj/structure/statue/bronze/marx, 15, one_per_turf = 1, on_floor = 1), \
@@ -519,7 +517,8 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
-	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2)))
+	new /datum/stack_recipe("bone dagger", /obj/item/melee/knife/bone, 2)))
+
 /obj/item/stack/sheet/bone
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'

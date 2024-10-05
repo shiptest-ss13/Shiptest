@@ -1200,16 +1200,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/codespeak_manual/unlimited
 	cost = 3
 
-/datum/uplink_item/stealthy_tools/combatbananashoes
-	name = "Combat Banana Shoes"
-	desc = "While making the wearer immune to most slipping attacks like regular combat clown shoes, these shoes \
-		can generate a large number of synthetic banana peels as the wearer walks, slipping up would-be pursuers. They also \
-		squeak significantly louder."
-	item = /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat
-	cost = 6
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-
 /datum/uplink_item/stealthy_tools/emplight
 	name = "EMP Flashlight"
 	desc = "A small, self-recharging, short-ranged EMP device disguised as a working flashlight. \
@@ -1873,15 +1863,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 12
 	restricted_roles = list("Chemist", "Chief Medical Officer")
 
-/datum/uplink_item/role_restricted/reverse_bear_trap
-	name = "Reverse Bear Trap"
-	desc = "An ingenious execution device worn on (or forced onto) the head. Arming it starts a 1-minute kitchen timer mounted on the bear trap. When it goes off, the trap's jaws will \
-	violently open, instantly killing anyone wearing it by tearing their jaws in half. To arm, attack someone with it while they're not wearing headgear, and you will force it onto their \
-	head after three seconds uninterrupted."
-	cost = 5
-	item = /obj/item/reverse_bear_trap
-	restricted_roles = list("Clown")
-
 /datum/uplink_item/role_restricted/laser_arm
 	name = "Laser Arm Implant"
 	desc = "An implant that grants you a recharging laser gun inside your arm. Weak to EMPs. Comes with a syndicate autosurgeon for immediate self-application."
@@ -1892,7 +1873,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/role_restricted/greykingsword
 	name = "Blade of The Grey Tide"
 	desc = "A weapon of legend, forged by the greatest crackheads of our generation."
-	item = /obj/item/melee/greykingsword
+	item = /obj/item/melee/sword/greyking
 	cost = 2
 	restricted_roles = list("Assistant", "Chemist")
 

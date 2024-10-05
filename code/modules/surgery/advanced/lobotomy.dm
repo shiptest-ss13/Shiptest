@@ -26,7 +26,7 @@
 	implements = list(
 		TOOL_SCALPEL = 85, // there is no way this should be reasonable to do basically at all without a real surgery. ghetto lobotomy, for real?
 		/obj/item/melee/transforming/energy/sword = 25,
-		/obj/item/kitchen/knife = 15,
+		/obj/item/melee/knife = 15,
 		/obj/item/shard = 10,
 		/obj/item = 5)
 	time = 10 SECONDS

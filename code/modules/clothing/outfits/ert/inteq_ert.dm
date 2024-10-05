@@ -15,7 +15,7 @@
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 	back = /obj/item/storage/backpack/fireproof
 
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
 
 	backpack_contents = list(/obj/item/radio=1)

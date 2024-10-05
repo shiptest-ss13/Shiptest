@@ -1236,9 +1236,9 @@
 		return
 
 	if(!operating)
-		if(istype(I, /obj/item/fireaxe)) //being fireaxe'd
-			var/obj/item/fireaxe/axe = I
-			if(axe && !axe.wielded)
+		if(istype(I, /obj/item/melee/axe/fire)) //being fireaxe'd
+			var/obj/item/melee/axe/fire/axe = I
+			if(axe && !HAS_TRAIT(axe, TRAIT_WIELDED))
 				to_chat(user, "<span class='warning'>You need to be wielding \the [axe] to do that!</span>")
 				return
 		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close)), 2)
