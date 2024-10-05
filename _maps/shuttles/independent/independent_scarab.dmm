@@ -124,12 +124,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "bj" = (
-/obj/structure/filingcabinet/double,
+/obj/structure/filingcabinet/double{
+	name = "storage cabinets"
+	},
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal{
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
-/obj/item/folder/red,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
@@ -284,8 +285,7 @@
 /area/ship/cargo)
 "dC" = (
 /obj/machinery/blackbox_recorder,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "dG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -932,7 +932,6 @@
 /area/ship/engineering)
 "kB" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/airalarm/directional/east,
 /obj/item/kirbyplants/random{
 	pixel_x = 8
 	},
@@ -955,7 +954,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "kM" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/green{
 	icon_state = "4-10"
 	},
@@ -969,7 +967,7 @@
 	dir = 8
 	},
 /obj/item/cigbutt,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/maintenance/starboard)
 "lf" = (
 /obj/structure/chair{
@@ -1054,6 +1052,27 @@
 	},
 /obj/effect/spawner/lootdrop/glowstick{
 	pixel_y = -3
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_x = -6
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_y = -3
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_y = 2
+	},
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_y = -3;
+	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
@@ -1200,6 +1219,7 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/item/trash/chips,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "nN" = (
@@ -1424,6 +1444,10 @@
 	pixel_x = 12;
 	pixel_y = 6
 	},
+/obj/item/folder/red{
+	pixel_x = 8;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qH" = (
@@ -1478,13 +1502,14 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "rz" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "rC" = (
 /obj/machinery/mineral/processing_unit_console{
@@ -2251,7 +2276,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/fore)
 "Ar" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/green{
 	icon_state = "5-8"
 	},
@@ -2264,7 +2288,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/maintenance/starboard)
 "AD" = (
 /obj/item/kirbyplants/random{
@@ -2342,18 +2366,16 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
 "Bu" = (
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -19;
-	pixel_y = -12
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 20;
+	pixel_x = 11
+	},
+/turf/open/floor/plasteel,
 /area/ship/maintenance/starboard)
 "Bw" = (
 /obj/machinery/computer/atmos_alert{
@@ -2649,8 +2671,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Gj" = (
-/obj/machinery/door/airlock{
-	dir = 4;
+/obj/machinery/door/airlock/glass{
+	dir = 8;
 	name = "Crew Quarters"
 	},
 /obj/structure/cable/green{
@@ -2768,6 +2790,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/effect/turf_decal/box,
 /obj/item/ammo_box/c38_box,
+/obj/item/megaphone/cargo,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "HC" = (
@@ -2863,7 +2886,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "IG" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -2874,7 +2896,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "IL" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -3100,7 +3122,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Kc" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -3111,8 +3132,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "Ks" = (
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -3308,14 +3332,16 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Mw" = (
-/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/plating,
+/obj/item/kirbyplants/random{
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel,
 /area/ship/maintenance/starboard)
 "MD" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -3627,6 +3653,7 @@
 	icon_state = "0-10"
 	},
 /obj/item/clothing/accessory/holster,
+/obj/item/megaphone/cargo,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rh" = (
@@ -4696,7 +4723,7 @@ bq
 Yu
 Yu
 Yu
-UB
+Iy
 Gj
 UB
 wW
