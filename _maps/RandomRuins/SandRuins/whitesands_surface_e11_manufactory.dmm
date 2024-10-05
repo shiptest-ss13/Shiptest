@@ -804,9 +804,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "gc" = (
-/obj/structure/mecha_wreckage/ripley{
-	icon_state = "hauler-broken"
-	},
+/obj/structure/mecha_wreckage/ripley,
 /turf/open/floor/concrete/pavement/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "gi" = (
@@ -1229,9 +1227,9 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/security)
 "jm" = (
-/obj/item/mecha_parts/mecha_equipment/extinguisher{
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
 	pixel_y = -9;
-	pixel_x = 4
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
@@ -4296,9 +4294,7 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/barracks)
 "Ie" = (
-/obj/structure/mecha_wreckage/ripley{
-	icon_state = "hauler-broken"
-	},
+/obj/structure/mecha_wreckage/ripley,
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ii" = (
@@ -4500,9 +4496,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "JP" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/cargo{
-	name = "\improper APLU 'Forklift'"
-	},
+/obj/mecha/working/ripley,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
