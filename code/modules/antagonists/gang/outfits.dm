@@ -23,7 +23,6 @@
 	glasses = /obj/item/clothing/glasses/hud/spacecop
 	ears = /obj/item/radio/headset/headset_sec
 	mask = null
-	head = /obj/item/clothing/head/spacepolice
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/restraints/handcuffs
