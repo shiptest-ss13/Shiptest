@@ -147,9 +147,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7)
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 2)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -1869,34 +1869,34 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		if(body_temp > bodytemp_heat_damage_limit)
 			var/burn_damage = calculate_burn_damage(H)
-			if(burn_damage < 2)
+			if(burn_damage > 2)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
-			if(body_temp < (bodytemp_heat_damage_limit - 10))
+			if(body_temp < (bodytemp_heat_damage_limit - 5))
 				// you are cooling down and exiting the danger zone
 				if(total_change < 0)
 					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 				else
 					H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-			else if(total_change < -1)
+			else if(total_change < 0.5)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 			else
 				H.clear_alert("tempfeel")
 	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		if(body_temp < 200)
+		if(body_temp < 220)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
 		else if(body_temp < bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(body_temp < (bodytemp_cold_damage_limit + 10))
+		else if(body_temp < (bodytemp_cold_damage_limit + 5))
 			// you are warming up and exiting the danger zone
 			if(total_change > 0)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(total_change > -1)
+		else if(total_change > -0.5)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 		else
 			H.clear_alert("tempfeel")
@@ -1953,11 +1953,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 
-		if(body_temp < 120)
+		if(body_temp < 200)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
 
-		else if(body_temp < 200)
+		else if(body_temp < 220)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
 
@@ -1979,7 +1979,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment
