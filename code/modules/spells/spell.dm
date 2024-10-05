@@ -210,10 +210,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				to_chat(H, "<span class='warning'>You don't feel strong enough without your hat!</span>")
 				return FALSE
 		if(cult_req) //CULT_REQ CLOTHES CHECK
-			if(!istype(H.wear_suit, /obj/item/clothing/suit/magusred) && !istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit/cult))
+			if(!istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit/cult))
 				to_chat(H, "<span class='warning'>You don't feel strong enough without your armor.</span>")
 				return FALSE
-			if(!istype(H.head, /obj/item/clothing/head/magus) && !istype(H.head, /obj/item/clothing/head/helmet/space/hardsuit/cult))
+			if(!istype(H.head, /obj/item/clothing/head/helmet/space/hardsuit/cult))
 				to_chat(H, "<span class='warning'>You don't feel strong enough without your helmet.</span>")
 				return FALSE
 	else

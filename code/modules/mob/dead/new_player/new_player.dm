@@ -35,6 +35,7 @@
 	. = ..()
 
 	GLOB.new_player_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /mob/dead/new_player/Destroy()
 	GLOB.new_player_list -= src

@@ -227,3 +227,45 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
+
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot
+	name = "\improper Hammer"
+	desc = "A disposable rocket-propelled grenade launcher loaded with a HEDP shell."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	base_icon_state = "rpg"
+	icon_state = "rpg"
+	item_state = "rpg"
+
+	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
+	weapon_weight = WEAPON_HEAVY
+	bolt_type = BOLT_TYPE_NO_BOLT
+
+	cartridge_wording = "rocket"
+	empty_indicator = FALSE
+	sealed_magazine = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+	slot_flags = ITEM_SLOT_BACK
+
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "\improper Mallet"
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/examine(mob/user)
+	. = ..()
+	if(!chambered)
+		. += span_warning("It has been spent, and is now useless.")
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
+	caliber = "84mm"
+	max_ammo = 1
