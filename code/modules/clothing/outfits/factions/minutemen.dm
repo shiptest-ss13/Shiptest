@@ -520,6 +520,8 @@
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 	duffelbag = /obj/item/storage/backpack/security/clip //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice //done
 
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
+
 /datum/outfit/job/clip/minutemen/grunt/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(H.ckey == "meemofcourse")
