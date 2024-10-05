@@ -216,8 +216,7 @@ Chilling extracts:
 	effect_desc = "Creates a pair of Prism Glasses, which allow the wearer to place colored light crystals."
 
 /obj/item/slimecross/chilling/pyrite/do_effect(mob/user)
-	user.visible_message("<span class='notice'>[src] crystallizes into a pair of spectacles!</span>")
-	new /obj/item/clothing/glasses/prism_glasses(get_turf(user))
+	user.visible_message("<span class='notice'>[src] does nothing sorry lol!</span>")
 	..()
 
 /obj/item/slimecross/chilling/red

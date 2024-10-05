@@ -230,7 +230,7 @@
 	icon_state = "armor"
 	item_state = "blackcloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 30, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/slim
@@ -241,8 +241,8 @@
 	name = "security director's overcoat"
 	desc = "A tailored black overcoat, made from cutting-edge ballistic fabrics and composites. Vigilitas's 'VI' logo is embossed on every button. Intimidating and profoundly stylish."
 	icon_state = "command_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 
 /obj/item/clothing/suit/armor/nanotrasen/captain
 	name = "captain's jacket"
@@ -250,7 +250,7 @@
 	icon_state = "armor_captain"
 	item_state = "bluecloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 60, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/captain/parade
@@ -258,7 +258,7 @@
 	desc = "An exquisitely-decorated fine blue jacket, suitable for especially formal situations, or for a commanding officer who wants to flaunt their status even more than usual. Richly decorated with gold thread and embroidered Nanotrasen logos."
 	icon_state = "captain_formal"
 	item_state = "bluecloth"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 
 // Hats //
@@ -337,7 +337,7 @@
 	icon_state = "officer_peaked"
 	item_state = "bluecloth"
 
-/obj/item/clothing/head/nanotrasen/officer
+/obj/item/clothing/head/nanotrasen/officer/fedora
 	name = "officer's fedora"
 	desc = "A fedora in a violent shade of Nanotrasen Blue, with a red silk band."
 	icon_state = "officer_fedora"

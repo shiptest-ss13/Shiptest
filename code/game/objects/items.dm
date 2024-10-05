@@ -2,6 +2,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
+GLOBAL_DATUM_INIT(advanced_cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "advanced_cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
 GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
 
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
@@ -13,7 +17,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item
 	name = "item"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	///icon state name for inhand overlays
 	var/item_state = null
@@ -31,7 +35,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///If set, vox wearing this use this instead of their clothing file
 	var/vox_override_icon
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces green, and three replaces blue in the icon state.
 	var/list/greyscale_colors[3]
 	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
 	var/greyscale_icon_state
@@ -162,6 +166,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/tool_behaviour = NONE
 	///How fast does the tool work
 	var/toolspeed = 1
+	/// how much damage does this item do when tearing down walls during deconstruction steps?
+	var/wall_decon_damage = 0
 
 	var/block_chance = 0
 	var/block_cooldown_time = 1 SECONDS
@@ -955,6 +961,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
+	// we have no target, why are we even doing this?
+	if(isnull(target))
+		return
 	// No delay means there is no start message, and no reason to call tool_start_check before use_tool.
 	// Run the start check here so we wouldn't have to call it manually.
 	if(!delay && !tool_start_check(user, amount))
@@ -1180,6 +1189,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/get_writing_implement_details()
 	return null
+
+/obj/item/proc/can_trigger_gun(mob/living/user)
+	if(!user.can_use_guns(src))
+		return FALSE
+	return TRUE
 
 /// Whether or not this item can be put into a storage item through attackby
 /obj/item/proc/attackby_storage_insert(datum/storage, atom/storage_holder, mob/user)

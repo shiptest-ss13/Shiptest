@@ -29,15 +29,6 @@
 	result = /obj/item/food/spaghetti/meatballspaghetti
 	subcategory = CAT_SPAGHETTI
 
-/datum/crafting_recipe/food/spesslaw
-	name = "Spesslaw"
-	reqs = list(
-		/obj/item/food/spaghetti/boiledspaghetti = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 4
-	)
-	result = /obj/item/food/spaghetti/spesslaw
-	subcategory = CAT_SPAGHETTI
-
 /datum/crafting_recipe/food/beefnoodle
 	name = "Beef noodle"
 	reqs = list(

@@ -158,7 +158,7 @@
 	icon_state = "hardsuit0-ert_medical"
 	item_state = "hardsuit0-ert_medical"
 	hardsuit_type = "ert_medical"
-	clothing_flags = SCAN_REAGENTS
+	clothing_flags = SCAN_REAGENTS | STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 
 /obj/item/clothing/head/helmet/space/hardsuit/lp
 	name = "RIG heatsuit helmet"
@@ -170,7 +170,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/ancient/lp
 	name = "RIG heat suit"
-	desc = "A fully heat resistance suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
+	desc = "A fully heat-resistant suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/lp
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -178,114 +178,6 @@
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 
 //holotapes
-
-/obj/item/disk/holodisk/lp/combat/syndicate1
-	name = "Combat Mission Eliminate Force"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY The LP is to respond to a hostile threat from a Syndicate vessel. In such action they are to kill or otherwise subdue the primary fighting force.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/syndicate2
-	name = "Combat Mission Capture"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY The LP is to respond to a hostile threat from a Syndicate vessel. In such action they are to subdue and capture one of the armed members of the crew. They should be stripped of gear, interrogated, and converted to NT if possible. If not possible, release them to whatever ship they belonged to or will accept them.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/syndicate3
-	name = "Combat Mission Capture Commander"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY The LP is to respond to a hostile threat from a Syndicate vessel. In such action they are to eliminate whatever leader or captain of such vession and bring their body back in a bodybag. The Medical Specialist has been given a box of them for such an occasion.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/syndicate4
-	name = "Combat Mission Secret Documents"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY The LP is to respond to a hostile threat from a Syndicate vessel. In such action they are to retrieve a set of secret documents from the syndicate vessel. This will likely require a boarding operation. Good luck.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/megafauna
-	name = "Combat Mission Megafauna"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY This mission is very simple. The LP is to seek out a megafauna specimen and slay it.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/bdm
-	name = "Combat Mission Blood Drunk"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY This mission is straightforward. The LP team is to seek out two blood drunk mines and termninate them. Bring back whatever weapons they wield and recover the bodies for the vault.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/tumor
-	name = "Combat Mission Tumor"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY This mission is rather straightforward. Seak out 2 pulsing tumors and elimate the threat they produce. Return the body of the threat to the vault.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/combat/bloodred
-	name = "Combat Mission Blood Red"
-	desc = "A holodisk containing a combat mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a combat objective. The LP will have to get their hands dirty for this one.
-	DELAY 25
-	SAY This mission overlaps with the retrieval missions. The LP is simply to obtain a Blood Red Hardsuit. This may include responding to a hostile syndicate vessel to take it by force.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/retrieval/supersuit
-	name = "Retrieval Mission Lost Hardsuit"
-	desc = "A holodisk containing a retrieval mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
-	DELAY 25
-	SAY This one is a bit difficult but completing it is extremely rewarding. Our sources show that two of our experimental hardsuits have been lost to the necropolis. Retrieve a Champion's Hardsuit or an Inquisitor's Hardsuit. These are often found in necropolis chests or held by certain megafauna.
-	DELAY 25
-	"}
 
 /obj/item/disk/holodisk/lp/retrieval/phazon
 	name = "Retrieval Mission Secret Exosuit"
@@ -323,18 +215,6 @@
 	DELAY 25
 	"}
 
-/obj/item/disk/holodisk/lp/retrieval/artifact
-	name = "Retrieval Mission Artifact"
-	desc = "A holodisk containing a retrieval mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
-	DELAY 25
-	SAY For this mission the LP is to find three artifacts. These include but are not limited to, anything stored in a necropolis chest, most megafauna loot, anything befitting someone magical or otherwise special.
-	DELAY 25
-	"}
-
 /obj/item/disk/holodisk/lp/retrieval/materials
 	name = "Retrieval Mission Materials"
 	desc = "A holodisk containing a retrieval mission for the LP."
@@ -344,18 +224,6 @@
 	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
 	DELAY 25
 	SAY Nanotrasen is short on funds and materials. Procure 150 sheets of the following: Diamond, Bluespace Polycrystals, Plastitanium.
-	DELAY 25
-	"}
-
-/obj/item/disk/holodisk/lp/aid/recruits
-	name = "Aid Mission Recruitment Drive"
-	desc = "A holodisk containing an aid mission for the LP."
-	preset_image_type = /datum/preset_holoimage/commissioner
-	preset_record_text = {"
-	NAME Commissioner Gorre Donn
-	SAY This mission, should you choose to accept it, revolves around an aid objective. The LP will need to provide aid to local vessels not hostile or syndicate.
-	DELAY 25
-	SAY Less providing aid and more networking. The LP will need to convince 4 independent vessels to switch to NTSV flight tags.
 	DELAY 25
 	"}
 
@@ -372,7 +240,7 @@
 	"}
 
 /obj/item/disk/holodisk/lp/aid/rescue
-	name = "Aid Mission Rescure"
+	name = "Aid Mission Rescue"
 	desc = "A holodisk containing an aid mission for the LP."
 	preset_image_type = /datum/preset_holoimage/commissioner
 	preset_record_text = {"
@@ -415,33 +283,14 @@
 
 
 //lootdrop
-/obj/effect/spawner/lootdrop/lpcombat
-	name = "LP Combat Missions"
-	lootdoubles = FALSE
-
-	loot = list(
-		/obj/item/disk/holodisk/lp/combat/syndicate1 = 1,
-		/obj/item/disk/holodisk/lp/combat/syndicate2 = 1,
-		/obj/item/disk/holodisk/lp/combat/syndicate3 = 1,
-		/obj/item/disk/holodisk/lp/combat/syndicate4 = 1,
-		/obj/item/disk/holodisk/lp/combat/megafauna = 5,
-		/obj/item/disk/holodisk/lp/combat/bdm = 5,
-		/obj/item/disk/holodisk/lp/combat/tumor = 5,
-		/obj/item/disk/holodisk/lp/combat/bloodred = 5
-	)
-
-	lootcount = 2
-
 /obj/effect/spawner/lootdrop/lpretrieval
 	name = "LP Retrieval Missions"
 	lootdoubles = FALSE
 
 	loot = list(
-		/obj/item/disk/holodisk/lp/retrieval/supersuit = 1,
 		/obj/item/disk/holodisk/lp/retrieval/phazon = 1,
 		/obj/item/disk/holodisk/lp/retrieval/durand = 1,
 		/obj/item/disk/holodisk/lp/retrieval/gunstock = 1,
-		/obj/item/disk/holodisk/lp/retrieval/artifact = 1,
 		/obj/item/disk/holodisk/lp/retrieval/materials = 1
 	)
 
@@ -452,11 +301,10 @@
 	lootdoubles = FALSE
 
 	loot = list(
-		/obj/item/disk/holodisk/lp/aid/recruits = 1,
 		/obj/item/disk/holodisk/lp/aid/repairs = 1,
 		/obj/item/disk/holodisk/lp/aid/rescue = 1,
 		/obj/item/disk/holodisk/lp/aid/guard = 1,
 	)
 
-	lootcount = 2
+	lootcount = 4
 

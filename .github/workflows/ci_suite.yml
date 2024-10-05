@@ -11,7 +11,7 @@ on:
       - master
 jobs:
   run_linters:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Run Linters
     runs-on: ubuntu-22.04
     steps:
@@ -70,6 +70,7 @@ jobs:
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
 
       - name: Annotate Lints
+        if: always()
         uses: yogstation13/DreamAnnotate@v2
         with:
           outputFile: output-annotations.txt
@@ -83,7 +84,7 @@ jobs:
           cat check_regex_output.txt
 
   compile_all_maps:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Compile Maps
     runs-on: ubuntu-latest
     steps:
@@ -105,7 +106,7 @@ jobs:
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Integration Tests
     strategy:
       fail-fast: false
@@ -135,7 +136,7 @@ jobs:
 #      minor: ${{ matrix.minor }}
 
   test_windows:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Windows Build
     runs-on: windows-latest
     steps:

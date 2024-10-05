@@ -367,23 +367,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"sf" = (
-/obj/structure/table/wood,
-/obj/item/nullrod{
-	block_chance = 50;
-	desc = "This massive chart appears to be the layout of a SolGov outpost. It's covered in marks, scribbles in a language you don't recognize, and several stains. It's unusually sturdy.";
-	icon_state = "blueprints";
-	item_state = "blueprints";
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi';
-	name = "facility blueprints";
-	pixel_y = 10;
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi';
-	w_class = 5
-	},
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "si" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
@@ -1247,13 +1230,6 @@
 	start_lit = 1
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/ruin/unpowered)
-"Zs" = (
-/obj/structure/table/wood,
-/obj/item/banhammer,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
 /area/ruin/unpowered)
 
 (1,1,1) = {"
@@ -2252,7 +2228,7 @@ Hb
 aW
 WH
 jy
-Zs
+ib
 WH
 WH
 WH
@@ -2284,7 +2260,7 @@ Hb
 aW
 Br
 ib
-sf
+ib
 WH
 WH
 fB

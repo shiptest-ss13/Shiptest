@@ -220,6 +220,15 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
 	)
 
+/datum/supply_pack/mech/equipment/recharger
+	name = "Exosuit Recharger kit"
+	desc = "Two boards for an exosuit recharger and recharger console. For the stylish exosuit bay."
+	cost = 400
+	contains = list(
+		/obj/item/circuitboard/computer/mech_bay_power_console,
+		/obj/item/circuitboard/machine/mech_recharger
+	)
+
 /*
 weapons
 */
@@ -262,7 +271,7 @@ weapons
 	)
 
 /datum/supply_pack/mech/weapon/scattershot
-	name = "LBX AC 10 kit"
+	name = "LBX-10 kit"
 	desc = "Contains a \"Scattershot\" gun to mount on combat exosuits."
 	cost = 1750
 	contains = list(
@@ -270,7 +279,7 @@ weapons
 	)
 
 /datum/supply_pack/mech/weapon/lmg
-	name = "Ultra AC 2 kit"
+	name = "UMG-2 kit"
 	desc = "Contains a mounted gun which fires in three round bursts."
 	cost = 2250
 	contains = list(
@@ -295,16 +304,16 @@ ammo
 	crate_name = "exosuit ammo crate"
 
 /datum/supply_pack/mech/ammo/scattershot_ammo
-	name = "LBX AC 10 ammo box"
-	desc = "Contains a fourty-round box of upscaled buckshot, to be loaded directly in a mounted LBX AC 10."
+	name = "LBX-10 ammo box"
+	desc = "Contains a fourty-round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
 	)
 
 /datum/supply_pack/mech/ammo/lmg_ammo
-	name = "Ultra AC 2 ammo box"
-	desc = "Contains a three hundred-round box of heavy ammunition for the Ultra AC 2."
+	name = "UMG-2 ammo box"
+	desc = "Contains a three hundred-round box of heavy ammunition for the UMG-2."
 	cost = 750
 	contains = list(
 		/obj/item/mecha_ammo/lmg

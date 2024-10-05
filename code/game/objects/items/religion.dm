@@ -232,7 +232,7 @@
 	name = "Plate Gauntlets"
 	icon_state = "crusader"
 	desc = "They're like gloves, but made of metal."
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -244,52 +244,6 @@
 /obj/item/clothing/gloves/plate/blue
 	icon_state = "crusader-blue"
 
-/obj/item/clothing/shoes/plate
-	name = "Plate Boots"
-	desc = "Metal boots, they look heavy."
-	icon_state = "crusader"
-	w_class = WEIGHT_CLASS_NORMAL
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //does this even do anything on boots?
-	clothing_flags = NOSLIP
-	cold_protection = FEET
-	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-	heat_protection = FEET
-	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
-
-
-/obj/item/clothing/shoes/plate/red
-	icon_state = "crusader-red"
-
-/obj/item/clothing/shoes/plate/blue
-	icon_state = "crusader-blue"
-
-
 /obj/item/storage/box/itemset/crusader
 	name = "Crusader's Armour Set" //i can't into ck2 references
 	desc = "This armour is said to be based on the armor of kings on another world thousands of years ago, who tended to assassinate, conspire, and plot against everyone who tried to do the same to them.  Some things never change."
-
-
-/obj/item/storage/box/itemset/crusader/blue/PopulateContents()
-	new /obj/item/clothing/suit/armor/plate/crusader/blue(src)
-	new /obj/item/clothing/head/helmet/plate/crusader/blue(src)
-	new /obj/item/clothing/gloves/plate/blue(src)
-	new /obj/item/clothing/shoes/plate/blue(src)
-
-
-/obj/item/storage/box/itemset/crusader/red/PopulateContents()
-	new /obj/item/clothing/suit/armor/plate/crusader/red(src)
-	new /obj/item/clothing/head/helmet/plate/crusader/red(src)
-	new /obj/item/clothing/gloves/plate/red(src)
-	new /obj/item/clothing/shoes/plate/red(src)
-
-
-/obj/item/claymore/weak
-	desc = "This one is rusted."
-	force = 30
-	armour_penetration = 15
-
-/obj/item/claymore/weak/ceremonial
-	desc = "A rusted claymore, once at the heart of a powerful scottish clan struck down and oppressed by tyrants, it has been passed down the ages as a symbol of defiance."
-	force = 15
-	block_chance = 30
-	armour_penetration = 5

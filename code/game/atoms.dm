@@ -75,9 +75,6 @@
 	///Economy cost of item in premium vendor
 	var/custom_premium_price
 
-	//List of datums orbiting this atom
-	var/datum/component/orbiter/orbiters
-
 	/// Radiation insulation types
 	var/rad_insulation = RAD_NO_INSULATION
 
@@ -154,8 +151,6 @@
 	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
 	var/connector_overlay
 
-	///Reference to atom being orbited
-	var/atom/orbit_target
 	///Default X pixel offset
 	var/base_pixel_x
 	///Default Y pixel offset
@@ -1287,6 +1282,8 @@
 			. = welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. = analyzer_act(user, I)
+		if(TOOL_DECONSTRUCT)
+			. |= deconstruct_act(user, I)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1366,6 +1363,10 @@
 ///Analyzer act
 /atom/proc/analyzer_act(mob/living/user, obj/item/I)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
+
+///Deconstruct act
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
 
 ///Generate a tag for this atom
 /atom/proc/GenerateTag()
@@ -1732,7 +1733,20 @@
 
 /// Returns the atom name that should be used on screentip
 /atom/proc/get_screentip_name(client/hovering_client)
-	return name
+	if(ishuman(src))
+		var/mob/living/carbon/human/guy = src
+		var/mob/client_mob = hovering_client.mob
+		var/datum/guestbook/guestbook = client_mob.mind?.guestbook
+		if(guestbook)
+			var/known_name = guestbook.get_known_name(client_mob, guy)
+			if(known_name)
+				return known_name
+			else
+				return guy.get_visible_name()
+		else
+			return guy.real_name
+	else
+		return name
 
 ///Called whenever a player is spawned on the same turf as this atom.
 /atom/proc/join_player_here(mob/M)

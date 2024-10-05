@@ -75,7 +75,7 @@
 	jobtype = /datum/job/chief_engineer
 	job_icon = "chiefengineer"
 
-	back = /obj/item/fireaxe
+	back = /obj/item/melee/axe/fire
 	suit = /obj/item/clothing/suit/space/hardsuit/engine
 	suit_store = /obj/item/tank/internals/oxygen/red
 	head = null

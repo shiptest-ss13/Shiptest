@@ -182,34 +182,6 @@
 	magic_path = "/obj/item/melee/blood_magic/construction"
 	health_cost = 12
 
-/datum/action/innate/cult/blood_spell/equipment
-	name = "Summon Equipment"
-	desc = "Allows you to summon a ritual dagger, or empowers your hand to summon combat gear onto a cultist you touch, including cult armor, a cult bola, and a cult sword."
-	button_icon_state = "equip"
-	magic_path = "/obj/item/melee/blood_magic/armor"
-
-/datum/action/innate/cult/blood_spell/equipment/Activate()
-	var/choice = alert(owner,"Choose your equipment type",,"Combat Equipment","Ritual Dagger","Cancel")
-	if(choice == "Ritual Dagger")
-		var/turf/T = get_turf(owner)
-		owner.visible_message("<span class='warning'>[owner]'s hand glows red for a moment.</span>", \
-			"<span class='cultitalic'>Red light begins to shimmer and take form within your hand!</span>")
-		var/obj/O = new /obj/item/melee/cultblade/dagger(T)
-		if(owner.put_in_hands(O))
-			to_chat(owner, "<span class='warning'>A ritual dagger appears in your hand!</span>")
-		else
-			owner.visible_message(
-				"<span class='warning'>A ritual dagger appears at [owner]'s feet!</span>", \
-				"<span class='cultitalic'>A ritual dagger materializes at your feet.</span>")
-		SEND_SOUND(owner, sound('sound/effects/magic.ogg',0,1,25))
-		charges--
-		desc = base_desc
-		desc += "<br><b><u>Has [charges] use\s remaining</u></b>."
-		if(charges<=0)
-			qdel(src)
-	else if(choice == "Combat Equipment")
-		..()
-
 /datum/action/innate/cult/blood_spell/horror
 	name = "Hallucinations"
 	desc = "Gives hallucinations to a target at range. A silent and invisible spell."
@@ -339,7 +311,7 @@
 /obj/item/melee/blood_magic
 	name = "\improper magical aura"
 	desc = "A sinister looking aura that distorts the flow of reality around it."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/touchspell_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/touchspell_righthand.dmi'
 	icon_state = "disintegrate"
@@ -695,7 +667,6 @@
 		C.equip_to_slot_or_del(new /obj/item/storage/backpack/cultpack(user), ITEM_SLOT_BACK)
 		if(C == user)
 			qdel(src) //Clears the hands
-		C.put_in_hands(new /obj/item/melee/cultblade(user))
 		C.put_in_hands(new /obj/item/restraints/legcuffs/bola/cult(user))
 		..()
 
@@ -812,29 +783,12 @@
 
 /obj/item/melee/blood_magic/manipulator/attack_self(mob/living/user)
 	if(iscultist(user))
-		var/list/options = list("Blood Spear (150)", "Blood Beam (500)")
+		var/list/options = list("Blood Beam (500)")
 		var/choice = input(user, "Choose a greater blood rite...", "Greater Blood Rites") as null|anything in options
 		if(!choice)
 			to_chat(user, "<span class='cultitalic'>You decide against conducting a greater blood rite.</span>")
 			return
 		switch(choice)
-			if("Blood Spear (150)")
-				if(uses < BLOOD_SPEAR_COST)
-					to_chat(user, "<span class='cultitalic'>You need [BLOOD_SPEAR_COST] charges to perform this rite.</span>")
-				else
-					uses -= BLOOD_SPEAR_COST
-					var/turf/T = get_turf(user)
-					qdel(src)
-					var/datum/action/innate/cult/spear/S = new(user)
-					var/obj/item/cult_spear/rite = new(T)
-					S.Grant(user, rite)
-					rite.spear_act = S
-					if(user.put_in_hands(rite))
-						to_chat(user, "<span class='cultitalic'>A [rite.name] appears in your hand!</span>")
-					else
-						user.visible_message(
-							"<span class='warning'>A [rite.name] appears at [user]'s feet!</span>", \
-							"<span class='cultitalic'>A [rite.name] materializes at your feet.</span>")
 			if("Blood Beam (500)")
 				if(uses < BLOOD_BEAM_COST)
 					to_chat(user, "<span class='cultitalic'>You need [BLOOD_BEAM_COST] charges to perform this rite.</span>")
