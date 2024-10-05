@@ -38,7 +38,6 @@
 /obj/item/storage/guncase/absolution/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
 
-
 /obj/item/storage/guncase/skm
 /obj/item/storage/guncase/skm/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/assault/skm/no_mag(src)
@@ -215,3 +214,9 @@
 /obj/item/storage/pistolcase/iongun/PopulateContents()
 	new /obj/item/gun/energy/ionrifle/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun(src)
+
+/obj/item/storage/pistolcase/cm23/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)
