@@ -3,7 +3,7 @@
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
-	icon_state = "speedloader_357-7"
+	icon_state = "speedloader_357-6"
 	base_icon_state = "speedloader_357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
