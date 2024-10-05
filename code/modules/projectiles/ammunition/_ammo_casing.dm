@@ -167,7 +167,7 @@
 	desc = "[initial(desc)][BB ? null : " This one is spent."]"
 	return ..()
 
-//proc to magically refill a casing with a new projectile
+///Proc to magically refill a casing with a new projectile
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).
 	if(!BB)
 		BB = new projectile_type(src, src)
