@@ -46,6 +46,7 @@
 	pixel_x = 12
 	},
 /obj/structure/chair/handrail,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "bu" = (
@@ -1190,9 +1191,15 @@
 "wr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/firealarm/directional/west,
+/obj/structure/closet/wall/directional/west,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 8
+	},
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/soap/syndie{
+	cleanspeed = 20
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
@@ -2522,9 +2529,6 @@
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/door/window/survival_pod{
 	dir = 8
-	},
-/obj/item/soap/syndie{
-	cleanspeed = 20
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/machinery/shower{
