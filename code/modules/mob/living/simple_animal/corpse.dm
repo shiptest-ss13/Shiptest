@@ -180,6 +180,7 @@
 	outfit = /datum/outfit/frontier/officer/internals
 
 /datum/outfit/frontier/officer/internals
+	name = "Frontiersman Officer Corpse Internals"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 

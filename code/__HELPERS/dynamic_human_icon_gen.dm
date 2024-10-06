@@ -63,4 +63,4 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 	target.icon = 'icons/mob/human.dmi'
 	target.icon_state = ""
 	target.appearance_flags |= KEEP_TOGETHER
-	target.copy_overlays(dynamic_appearance)
+	target.copy_overlays(dynamic_appearance, TRUE)
