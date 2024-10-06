@@ -121,6 +121,7 @@
 		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
 		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
+		"stamp-biodynamics" = 'icons/stamp_icons/large_stamp-biodynamics.png',
 		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png'
 	)
 
