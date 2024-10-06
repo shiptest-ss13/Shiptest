@@ -34,6 +34,16 @@
 		qdel(src)
 	return TRUE
 
+/obj/structure/salvageable/deconstruct_act(mob/living/user, obj/item/tool)
+	. = ..()
+	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
+					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
+	if(tool.use_tool(src, user, 6 SECONDS))
+		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
+						"<span class='notice'>You salvage [src].</span>")
+		dismantle(user)
+		qdel(src)
+	return TRUE
 
 //Types themself, use them, but not the parent object
 

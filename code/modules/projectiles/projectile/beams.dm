@@ -37,6 +37,15 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/projectile/beam/laser/sharplite
+	speed = 0.4
+
+/obj/projectile/beam/laser/light
+	damage = 15
+
+/obj/projectile/beam/laser/light/sharplite
+	speed = 0.4
+
 /obj/projectile/beam/laser/eoehoma
 	damage = 25
 	armour_penetration = -10
@@ -53,6 +62,9 @@
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+/obj/projectile/beam/laser/heavylaser/sharplite
+	speed = 0.4
 
 /obj/projectile/beam/laser/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -119,8 +131,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
 
+/obj/projectile/beam/disabler/sharplite
+	speed = 0.4
+
 /obj/projectile/beam/disabler/weak
 	damage = 15
+
+/obj/projectile/beam/disabler/weak/sharplite
+	speed = 0.4
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
@@ -147,6 +165,11 @@
 	if(!isopenturf(targets_turf))
 		return
 	targets_turf.IgniteTurf(rand(8,22), "blue")
+
+/obj/projectile/beam/pulse/sharplite_turret
+	wall_damage_flags = null
+	wall_damage_override = 0
+	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40

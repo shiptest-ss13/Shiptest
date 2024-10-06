@@ -18,10 +18,6 @@
 
 /datum/antagonist/santa/proc/give_equipment()
 	var/mob/living/carbon/human/H = owner.current
-	if(istype(H))
-		H.equipOutfit(/datum/outfit/santa)
-		H.dna.update_dna_identity()
-
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/area_teleport/teleport/santa)
 
 /datum/antagonist/santa/proc/give_objective()
