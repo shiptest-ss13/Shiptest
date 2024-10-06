@@ -18,7 +18,6 @@
 						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
-						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
 						/obj/item/veilrender/vealrender,
 						/obj/item/clothing/suit/armor/ascetic)
 

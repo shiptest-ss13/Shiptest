@@ -1218,11 +1218,26 @@
 	if(!operating)
 		if(istype(I, /obj/item/melee/axe/fire)) //being fireaxe'd
 			var/obj/item/melee/axe/fire/axe = I
-			if(axe && !axe.wielded)
+			if(axe && !HAS_TRAIT(axe, TRAIT_WIELDED))
 				to_chat(user, "<span class='warning'>You need to be wielding \the [axe] to do that!</span>")
 				return
 		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close)), 2)
 
+/obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	var/decon_time = 5 SECONDS
+	if(welded)
+		decon_time += 5 SECONDS
+	if(locked)
+		decon_time += 5 SECONDS
+	if(seal)
+		decon_time += 15 SECONDS
+	if (I.use_tool(src, user, decon_time, volume=100))
+		to_chat(user, "<span class='warning'>You cut open the [src].</span>")
+		deconstruct(FALSE, user)
+		return TRUE
 
 /obj/machinery/door/airlock/open(forced=0)
 	if(operating || welded || locked || seal || !wires)

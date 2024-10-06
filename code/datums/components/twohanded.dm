@@ -4,12 +4,13 @@
  * When applied to an item it will make it two handed
  *
  */
+
 /datum/component/two_handed
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS 		// Only one of the component can exist on an item
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
 	var/force_multiplier = 0						/// The multiplier applied to force when wielded, does not work with force_wielded, and force_unwielded
-	var/force_wielded = 0	 						/// The force of the item when weilded
-	var/force_unwielded = 0		 					/// The force of the item when unweilded
+	var/force_wielded = 0	 						/// The force of the item when wielded
+	var/force_unwielded = 0		 					/// The force of the item when unwielded
 	var/wieldsound = FALSE 							/// Play sound when wielded
 	var/unwieldsound = FALSE 						/// Play sound when unwielded
 	var/attacksound = FALSE							/// Play sound on attack when wielded
@@ -145,6 +146,7 @@
 	if(SEND_SIGNAL(parent, COMSIG_TWOHANDED_WIELD, user) & COMPONENT_TWOHANDED_BLOCK_WIELD)
 		return // blocked wield from item
 	wielded = TRUE
+	ADD_TRAIT(parent, TRAIT_WIELDED, REF(src))
 	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 
 	// update item stats and name
@@ -188,6 +190,7 @@
 
 	// wield update status
 	wielded = FALSE
+	REMOVE_TRAIT(parent, TRAIT_WIELDED, REF(src))
 	UnregisterSignal(user, COMSIG_MOB_SWAP_HANDS)
 	SEND_SIGNAL(parent, COMSIG_TWOHANDED_UNWIELD, user)
 
@@ -303,7 +306,7 @@
 	sharpened_increase = min(amount, (max_amount - wielded_val))
 	return COMPONENT_BLOCK_SHARPEN_APPLIED
 
-/**
+/*
  * The offhand dummy item for two handed items
  *
  */
