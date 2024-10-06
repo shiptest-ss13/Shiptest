@@ -1,10 +1,26 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ak" = (
-/obj/machinery/conveyor{
-	dir = 9;
-	id = "rock_mine"
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"am" = (
+/obj/structure/railing{
+	dir = 10
 	},
-/turf/open/floor/plating/rust/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/space)
+"aK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
+"bg" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/conveyor{
+	dir = 5;
+	id = "rock_mine_int"
+	},
+/turf/open/floor/plating,
 /area/space)
 "bs" = (
 /obj/machinery/conveyor{
@@ -14,12 +30,56 @@
 	},
 /turf/open/floor/plating/rust/rockplanet,
 /area/space)
+"bK" = (
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 4
+	},
+/area/space)
+"ct" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/space/basic,
+/area/space)
+"cG" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
 "dc" = (
 /obj/machinery/conveyor{
 	dir = 1;
 	id = "rock_mine"
 	},
 /turf/open/floor/plating/rockplanet,
+/area/space)
+"de" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space)
+"dC" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
+"dM" = (
+/obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
+"dZ" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plasteel/rockplanet,
 /area/space)
 "ek" = (
 /obj/structure/railing{
@@ -30,8 +90,31 @@
 "ez" = (
 /turf/open/floor/pod/rockplanet,
 /area/space)
+"fk" = (
+/obj/effect/turf_decal/dept/security,
+/turf/open/space/basic,
+/area/space)
+"fr" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing,
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 8
+	},
+/area/space)
 "fA" = (
 /turf/open/floor/plasteel/rockplanet,
+/area/space)
+"fD" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/rockplanet,
 /area/space)
 "fH" = (
 /obj/machinery/conveyor{
@@ -47,8 +130,21 @@
 "gW" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/space)
+"hu" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
 "iJ" = (
 /turf/closed/wall/concrete/reinforced,
+/area/space)
+"iM" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/space)
 "jq" = (
 /turf/open/floor/plasteel/patterned/ridged/rockplanet,
@@ -79,6 +175,9 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"mm" = (
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
 "mH" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -86,12 +185,60 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/space)
+"mX" = (
+/obj/structure/railing,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/space)
+"nS" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"oO" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/rockplanet,
+/area/space)
+"oP" = (
+/obj/machinery/conveyor{
+	dir = 9;
+	id = "rock_mine"
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
+"pi" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/space/basic,
+/area/space)
 "pE" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/railing{
 	dir = 9
 	},
 /turf/open/floor/engine/hull/rockplanet,
+/area/space)
+"qr" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "rock_mine_swap"
+	},
+/turf/open/floor/plating,
+/area/space)
+"qE" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "rock_mine_int"
+	},
+/turf/open/floor/plating,
 /area/space)
 "ra" = (
 /turf/open/floor/plasteel/patterned/rockplanet,
@@ -113,6 +260,22 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"rY" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
+"sr" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/space)
 "tm" = (
 /obj/machinery/conveyor{
 	dir = 2;
@@ -124,9 +287,23 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/space)
+"tp" = (
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
 "tB" = (
 /obj/machinery/porta_turret/ai,
 /turf/open/floor/pod/rockplanet,
+/area/space)
+"tP" = (
+/obj/machinery/mineral/processing_unit,
+/turf/open/floor/plating,
+/area/space)
+"ub" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/space)
 "uj" = (
 /obj/structure/barricade/sandbags,
@@ -135,12 +312,51 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"uB" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_y = 24;
+	machinedir = 2
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/space)
+"uX" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
+"wb" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
+"wz" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plating,
+/area/space)
 "xc" = (
-/obj/machinery/conveyor/inverted{
-	dir = 6;
+/obj/machinery/conveyor{
+	dir = 1;
 	id = "rock_mine"
 	},
-/turf/open/floor/plating/rockplanet,
+/turf/open/floor/plating,
+/area/space)
+"xn" = (
+/obj/structure/railing,
+/turf/open/space/basic,
+/area/space)
+"xL" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/space)
+"xO" = (
+/obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/plasteel/patterned/rockplanet,
 /area/space)
 "xV" = (
 /turf/open/floor/engine/hull/rockplanet,
@@ -157,12 +373,53 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/space)
+"zg" = (
+/obj/machinery/conveyor{
+	dir = 9;
+	id = "rock_mine"
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/rust/rockplanet,
+/area/space)
+"zL" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
+"AE" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"AY" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/space)
+"Bj" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
 "Bw" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "rock_mine"
 	},
 /turf/open/floor/plating/rust/rockplanet,
+/area/space)
+"BO" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine_int"
+	},
+/turf/open/floor/plating,
 /area/space)
 "Ce" = (
 /turf/open/space/basic,
@@ -174,12 +431,28 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"Cy" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
 "Do" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/railing{
 	dir = 1
 	},
 /turf/open/floor/engine/hull/rockplanet,
+/area/space)
+"DA" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/space)
 "DI" = (
 /obj/structure/railing,
@@ -190,21 +463,89 @@
 /obj/structure/railing/corner,
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"Fj" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
+"FD" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/space)
+"FP" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
 "Ge" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/stairs/rockplanet{
 	dir = 8
 	},
 /area/space)
+"GD" = (
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
+"GE" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/space)
 "GH" = (
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/space)
 "He" = (
-/obj/machinery/conveyor{
-	dir = 9;
-	id = "rock_mine"
+/obj/machinery/conveyor_switch{
+	name = "furnace switch";
+	pixel_y = 2;
+	pixel_x = 4;
+	id = "rock_mine_swap"
 	},
-/turf/open/floor/plating/rockplanet,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_x = -13;
+	pixel_y = 1;
+	id = "rock_mine_int"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"Hf" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/space/basic,
+/area/space)
+"Ht" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/space)
+"HC" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
+"It" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/space)
 "Jj" = (
 /turf/closed/mineral/random/rockplanet,
@@ -224,6 +565,72 @@
 "Ka" = (
 /turf/open/floor/plasteel/stairs/rockplanet,
 /area/space)
+"Kj" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
+"Kn" = (
+/obj/machinery/conveyor/inverted{
+	dir = 6;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
+"Mi" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
+"Mk" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/space/basic,
+/area/space)
+"MQ" = (
+/obj/machinery/mineral/processing_unit,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"MU" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
+"Ny" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
+"NA" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/space)
+"NY" = (
+/obj/machinery/conveyor/inverted{
+	dir = 6;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
 "Oi" = (
 /obj/machinery/conveyor{
 	dir = 2;
@@ -231,6 +638,22 @@
 	pixel_y = -1
 	},
 /turf/open/floor/plating/rockplanet,
+/area/space)
+"Oj" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/rockplanet,
+/area/space)
+"OJ" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/space)
 "OL" = (
 /obj/structure/vein/classthree{
@@ -251,6 +674,15 @@
 	},
 /turf/open/floor/plating/rust/rockplanet,
 /area/space)
+"Qd" = (
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/space)
+"Qk" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/space)
 "QA" = (
 /obj/machinery/power/floodlight,
 /turf/open/floor/pod/rockplanet,
@@ -262,12 +694,31 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"RX" = (
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
 "SA" = (
 /obj/structure/vein/classtwo,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/space)
+"SH" = (
+/turf/open/floor/plating,
+/area/space)
 "TI" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/space)
+"TJ" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/space/basic,
+/area/space)
+"UV" = (
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/space)
+"Vh" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/patterned,
 /area/space)
 "Vi" = (
 /obj/structure/railing{
@@ -275,11 +726,78 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/space)
+"Vp" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"VH" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/rust/rockplanet,
+/area/space)
+"VK" = (
+/obj/machinery/conveyor/inverted{
+	dir = 10;
+	id = "rock_mine_int"
+	},
+/turf/open/floor/plating,
+/area/space)
+"Wq" = (
+/obj/effect/turf_decal/dept/mining,
+/turf/open/floor/plating,
+/area/space)
 "Wr" = (
 /obj/structure/railing{
 	dir = 6
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
+"Ww" = (
+/obj/structure/railing,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/space)
+"Xm" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/space)
+"Xr" = (
+/obj/effect/turf_decal/dept/hop,
+/turf/open/space/basic,
+/area/space)
+"XA" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/space)
+"XE" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"Yd" = (
+/turf/open/floor/plasteel/stairs/old{
+	dir = 4
+	},
+/area/space)
+"Yl" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/space/basic,
 /area/space)
 "YY" = (
 /turf/open/floor/plasteel/stairs/rockplanet{
@@ -292,30 +810,56 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/space)
+"ZT" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/space)
 
 (1,1,1) = {"
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Jj
 Jj
-gW
-gW
-Ce
-Ka
-Ce
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
 Ce
 Ce
 Ce
@@ -346,32 +890,52 @@ Ce
 Ce
 "}
 (2,1,1) = {"
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Jj
 Jj
-TI
-TI
-Ce
-ra
-fA
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -398,31 +962,51 @@ Ce
 Ce
 "}
 (3,1,1) = {"
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Jj
 Jj
-GH
-GH
-Ce
-jq
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -455,7 +1039,31 @@ Ce
 Ce
 Ce
 Ce
-xV
+Ce
+YY
+Ce
+Ce
+Ce
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -466,16 +1074,9 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
@@ -487,6 +1088,9 @@ Ce
 Ce
 Ce
 Ce
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -506,9 +1110,37 @@ Ce
 Ce
 Ce
 Ce
+iJ
+iJ
 Ce
-rm
-ez
+iJ
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -519,7 +1151,7 @@ Jj
 Jj
 Jj
 Jj
-Ce
+Jj
 Ce
 Ce
 Ce
@@ -533,14 +1165,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -558,6 +1182,34 @@ Ce
 Ce
 Ce
 Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -572,7 +1224,7 @@ Jj
 Jj
 Jj
 Jj
-Ce
+Jj
 Ce
 Ce
 Ce
@@ -586,14 +1238,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -609,6 +1253,19 @@ Ce
 Ce
 Ce
 Ce
+iJ
+iJ
+iJ
+Ce
+iJ
+iJ
+iJ
+Ce
+Ce
+Ce
+Ce
+RX
+RX
 Ce
 Ce
 Ce
@@ -619,13 +1276,32 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+Jj
+Jj
+Jj
 Ce
 Jj
 Jj
 Jj
 Jj
-Ce
-Ce
 Jj
 Jj
 Jj
@@ -635,18 +1311,6 @@ Jj
 Jj
 Jj
 Jj
-Jj
-Jj
-Jj
-Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -660,6 +1324,20 @@ Ce
 (8,1,1) = {"
 Ce
 Ce
+iJ
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+RX
+RX
 Ce
 Ce
 Ce
@@ -673,11 +1351,25 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+iJ
+iJ
 Jj
 Jj
-Jj
-Ce
-Ce
 Jj
 Jj
 Jj
@@ -693,14 +1385,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -712,6 +1396,28 @@ Ce
 (9,1,1) = {"
 Ce
 Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
 Ce
 Ce
 Ce
@@ -721,13 +1427,19 @@ Ce
 Ce
 Ce
 Ce
+RX
+RX
+RX
+RX
+RX
+Ce
+iJ
 Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
+Ce
+iJ
 Jj
 Jj
 Jj
@@ -737,7 +1449,7 @@ GH
 GH
 GH
 GH
-GH
+TI
 GH
 GH
 GH
@@ -747,14 +1459,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -764,23 +1468,51 @@ Ce
 (10,1,1) = {"
 Ce
 Ce
+iJ
 Ce
 Ce
 Ce
 Ce
 Ce
 Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+iJ
 Ce
 Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Jj
-Jj
-Jj
-Jj
+iJ
+iJ
 Jj
 Jj
 Jj
@@ -788,8 +1520,8 @@ Jj
 GH
 GH
 GH
-GH
-GH
+TI
+TI
 GH
 GH
 GH
@@ -800,14 +1532,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -816,6 +1540,14 @@ Ce
 (11,1,1) = {"
 Ce
 Ce
+iJ
+iJ
+SH
+SH
+SH
+SH
+iJ
+iJ
 Ce
 Ce
 Ce
@@ -825,41 +1557,53 @@ Ce
 Ce
 Ce
 Ce
+RX
+RX
+ct
+de
+de
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+de
+de
+TJ
+RX
+tp
+Ce
+iJ
+iJ
+iJ
+iJ
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
+iJ
+Jj
+Jj
+GH
+GH
+GH
+GH
+GH
+TI
+GH
+GH
+TI
+TI
+TI
+GH
+GH
+GH
 Jj
 Jj
 Jj
-Jj
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-Jj
-Jj
-Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -883,36 +1627,56 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+RX
+RX
+Hf
+Ce
+Ce
+de
+de
+Mk
+bK
+bK
+ct
+de
+de
+de
+Ce
+Ce
+xn
+FP
+tp
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Jj
+Jj
+GH
+GH
+GH
+GH
+TI
+TI
+TI
+TI
+TI
+GH
+GH
+GH
+GH
+GH
 Jj
 Jj
 Jj
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
 Jj
-Jj
-Jj
-Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -922,19 +1686,49 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Hf
 Ce
 Ce
 Ce
 Ce
 Ce
 Ce
+bK
 Ce
 Ce
 Ce
 Ce
 Ce
 Ce
+xn
+FP
+RX
+Jr
 Ce
+Ce
+Ce
+Ce
+Ce
+fk
+Ce
+iJ
 Jj
 Jj
 GH
@@ -951,20 +1745,10 @@ GH
 GH
 GH
 GH
-GH
-GH
 Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -974,6 +1758,24 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Hf
 Ce
 Ce
 Ce
@@ -986,11 +1788,21 @@ Ce
 Ce
 Ce
 Ce
+Ce
+xn
+FP
+tp
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
 Jj
 Jj
-Jj
-GH
-GH
 GH
 GH
 EL
@@ -1012,20 +1824,30 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (15,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Hf
 Ce
 Ce
 Ce
@@ -1038,11 +1860,21 @@ Ce
 Ce
 Ce
 Ce
+Ce
+xn
+FP
+tp
+Hf
+iJ
+iJ
+iJ
+iJ
+Ce
+Ce
+iJ
+iJ
 Jj
 Jj
-Jj
-GH
-GH
 GH
 GH
 jy
@@ -1057,19 +1889,11 @@ Do
 GH
 GH
 GH
+TI
 GH
-GH
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 "}
@@ -1078,6 +1902,27 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Hf
+Ce
+iJ
+iJ
 Ce
 Ce
 Ce
@@ -1087,15 +1932,22 @@ Ce
 Ce
 Ce
 Ce
+UV
+mX
+FP
+tp
+Hf
+iJ
 Ce
 Ce
+iJ
 Ce
+iJ
+iJ
 Jj
 Jj
 GH
-GH
-GH
-GH
+TI
 GH
 jy
 ez
@@ -1109,20 +1961,12 @@ Do
 GH
 GH
 GH
+TI
 GH
-GH
 Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 "}
 (17,1,1) = {"
@@ -1130,24 +1974,52 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
 Ce
+RX
+RX
+Hf
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+UV
+Ww
+FP
+tp
+Hf
+iJ
 Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
+iJ
 Jj
 Jj
-GH
-GH
-GH
-GH
+TI
+TI
+TI
 GH
 jy
 ez
@@ -1160,21 +2032,13 @@ ez
 Do
 GH
 GH
-GH
-GH
+TI
+TI
 Jj
 Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 "}
 (18,1,1) = {"
@@ -1182,23 +2046,51 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+dM
+RX
+RX
+Ny
+mm
+SH
+SH
+SH
+SH
+SH
+SH
+SH
+iJ
+Ce
+Ce
+iJ
+xL
+AY
+FP
+tp
+Hf
+iJ
 Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+iJ
 Jj
-Jj
 GH
-GH
-GH
+TI
+TI
 GH
 GH
 jy
@@ -1211,21 +2103,13 @@ ra
 QA
 Do
 GH
+TI
+TI
 GH
-GH
-GH
 Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 "}
@@ -1234,22 +2118,50 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+dM
+RX
+RX
+Ny
+mm
+SH
+SH
+SH
+SH
+SH
+SH
+SH
+Ce
+SH
+SH
+ak
+MU
+MU
+Mi
+tp
+Hf
+iJ
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Jj
+iJ
+iJ
 Jj
 GH
-GH
+TI
 GH
 GH
 GH
@@ -1270,14 +2182,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 "}
@@ -1286,18 +2190,46 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+dM
+RX
+RX
+Ny
+mm
+SH
+SH
+SH
+SH
+SH
+SH
+SH
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+SH
+SH
+ak
+Kj
+Kj
+OJ
+tp
+Hf
+iJ
+iJ
+iJ
+iJ
+iJ
 Jj
 Jj
 GH
@@ -1308,9 +2240,9 @@ GH
 jy
 ez
 ra
-ra
+xO
 mH
-ra
+HC
 ra
 ez
 Do
@@ -1324,27 +2256,47 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (21,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+dM
+RX
+RX
+Ny
+mm
+SH
+SH
+SH
+SH
+SH
+Yd
+Yd
+iJ
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+iJ
+ub
+am
+FP
+tp
+Hf
 Ce
 Ce
 Ce
@@ -1376,27 +2328,47 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (22,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
 Ce
+RX
+RX
 Ce
 Ce
+iJ
+iJ
+Ce
+SH
+Wq
+AE
+ak
+iJ
+iJ
+iJ
+iJ
+Qd
+mX
+FP
+tp
+Hf
 Ce
 Ce
 Ce
@@ -1428,27 +2400,47 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (23,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
+RX
+RX
+RX
 Ce
 Ce
+iJ
+iJ
 Ce
+SH
+SH
+AE
+ak
+ak
+ak
+ak
+iJ
+iJ
+Ww
+FP
+tp
+Hf
 Ce
 Ce
 Ce
@@ -1478,14 +2470,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 "}
@@ -1494,15 +2478,43 @@ Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
+RX
+RX
+RX
+Ce
+Ce
+Ce
+iJ
+Ce
+SH
+SH
+AE
+ak
+ak
+ak
+ak
+iJ
+iJ
+iJ
 YY
 YY
-Ce
-Ce
-Ce
+pi
+Yl
+Yl
 Ce
 Ce
 Jj
@@ -1532,24 +2544,44 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (25,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+SH
+SH
+AE
+ak
+ak
+ak
+ak
+Vh
+ak
+aK
 ra
 ra
 ra
@@ -1584,35 +2616,55 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (26,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
-dc
-dc
-kV
+RX
+RX
+Ka
+Ce
+Ce
+Ce
+iJ
+Ce
+SH
+SH
+AE
 ak
+ak
+ak
+Vp
+bg
+BO
+Cy
+fD
+dC
+VH
+zg
 ra
 Jj
 Jj
-fA
-fA
-fA
-fA
+TI
+TI
+TI
+TI
 Jj
 Jj
 Jj
@@ -1636,36 +2688,56 @@ Jj
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (27,1,1) = {"
 Ce
 Ce
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 Ce
 Ce
 Ce
+RX
+RX
+Ka
 Ce
 Ce
 Ce
-rD
+iJ
+Ce
+SH
+SH
+AE
+ak
+ak
+ak
+Vp
+qE
+iJ
+iJ
+TI
+fr
+TI
+Oj
 ra
 ra
-fA
-fA
-fA
-fA
-fA
-fA
+cG
+zL
+zL
+zL
+zL
+zL
 Jj
 Jj
 Jj
@@ -1688,14 +2760,6 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (28,1,1) = {"
 Ce
@@ -1709,15 +2773,43 @@ Ce
 Ce
 Ce
 Ce
-xc
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+iJ
+uB
+SH
+wz
+XE
+MQ
+XE
+sr
 He
+qE
+iJ
+TI
+GE
+fA
+dZ
+NY
+oP
 Zf
 Zf
 Zf
 Zf
 Zf
-ra
-ra
+Fj
+Fj
 Zf
 Zf
 Zf
@@ -1740,14 +2832,6 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (29,1,1) = {"
 Ce
@@ -1762,7 +2846,35 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+Ce
+Ce
+Ce
+iJ
+FD
+SH
+SH
+nS
+nS
+Ht
+qr
 xc
+VK
+iJ
+TI
+Qk
+fA
+oO
+TI
+Kn
 kV
 dc
 dc
@@ -1792,14 +2904,6 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (30,1,1) = {"
 Ce
@@ -1814,16 +2918,44 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+RX
+Ce
+Ce
+Ce
+iJ
+uB
+SH
+wz
+xc
+tP
+xc
+xc
+hu
+iJ
+iJ
+TI
+Qk
+fA
+oO
+GH
 Jj
 Jj
 Jj
 xZ
 xZ
 xZ
-ra
-ra
+Bj
+Bj
 xZ
-ra
+XA
 rD
 Vi
 ek
@@ -1844,14 +2976,6 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (31,1,1) = {"
 Ce
@@ -1862,6 +2986,34 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+iJ
+FD
+FD
+FD
+It
+It
+It
+It
+uX
+iJ
+Jj
+TI
 Jj
 Jj
 Jj
@@ -1870,12 +3022,12 @@ Jj
 Jj
 Jj
 Jj
-fA
-fA
-fA
-fA
-fA
-ra
+NA
+NA
+NA
+ZT
+rY
+DI
 rD
 Jj
 Jj
@@ -1886,20 +3038,12 @@ Jj
 Jj
 GH
 GH
-GH
+TI
 GH
 GH
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -1913,6 +3057,33 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
 Jj
 Jj
 Jj
@@ -1923,11 +3094,12 @@ Jj
 Jj
 Jj
 Jj
-fA
-fA
-fA
-fA
-ra
+Jj
+TI
+TI
+TI
+GD
+DI
 Bw
 Jj
 Jj
@@ -1938,20 +3110,12 @@ Jj
 GH
 GH
 GH
-GH
+TI
 GH
 GH
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -1964,6 +3128,34 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Jj
 Jj
 Jj
@@ -1976,10 +3168,10 @@ Jj
 Jj
 Jj
 Jj
-fA
-fA
-fA
-ra
+TI
+TI
+GD
+DI
 rD
 Jj
 Jj
@@ -1990,19 +3182,11 @@ Jj
 Jj
 GH
 GH
-GH
+TI
 GH
 GH
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2011,6 +3195,34 @@ Ce
 "}
 (34,1,1) = {"
 Ce
+Jr
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -2022,16 +3234,16 @@ Jj
 GH
 GH
 GH
+TI
 GH
+Jj
+Jj
+Jj
+Jj
+Jj
 GH
-Jj
-Jj
-Jj
-Jj
-Jj
-fA
-fA
-ra
+GD
+DI
 Bw
 Jj
 Jj
@@ -2052,17 +3264,37 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (35,1,1) = {"
 Ce
+Jr
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
 Ce
 Ce
 Ce
@@ -2073,9 +3305,9 @@ Jj
 GH
 GH
 GH
+TI
 GH
-GH
-GH
+TI
 GH
 GH
 GH
@@ -2083,7 +3315,7 @@ Jj
 Jj
 Jj
 Jj
-ra
+DI
 rD
 yG
 GH
@@ -2099,14 +3331,6 @@ GH
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2116,6 +3340,34 @@ Ce
 (36,1,1) = {"
 Ce
 Ce
+bK
+bK
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
 Ce
 Jj
 Jj
@@ -2124,9 +3376,9 @@ Jj
 GH
 GH
 GH
-GH
-GH
-GH
+TI
+TI
+TI
 GH
 GH
 GH
@@ -2135,30 +3387,22 @@ Jj
 Jj
 Jj
 Jj
-ra
+DI
 rD
-yG
+DA
+wb
+TI
+GH
+GH
+Jj
 GH
 GH
 GH
 GH
 Jj
-GH
-GH
-GH
-GH
 Jj
 Jj
 Jj
-Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2169,58 +3413,106 @@ Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
-Jj
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+Ce
+Ce
+iJ
+iJ
+iJ
+Ce
+RX
+RX
 Jr
-ra
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GH
+GD
+Jr
+xO
 rD
+HC
 Ka
+Xm
+GH
+Jj
+GH
+GH
+GH
 GH
 GH
 GH
 Jj
 GH
-GH
-GH
-GH
-GH
-GH
-Jj
-GH
 Jj
 Jj
 Ce
 Ce
 GH
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 "}
 (38,1,1) = {"
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+iJ
+iJ
+Ce
 Jj
 Jj
 Jj
@@ -2237,21 +3529,13 @@ GH
 GH
 GH
 GH
-GH
+GD
 Jr
-ra
+xO
 Bw
+HC
 Ka
-GH
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-GH
-GH
-GH
+iM
 GH
 Jj
 Jj
@@ -2260,18 +3544,46 @@ Jj
 GH
 GH
 GH
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+GH
+Jj
+Jj
+Jj
+Jj
+GH
+GH
+GH
 "}
 (39,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+RX
+Ce
+iJ
+iJ
+iJ
+iJ
+Ce
+Ce
+Ce
+iJ
 Jj
 Jj
 Jj
@@ -2291,9 +3603,10 @@ iJ
 iJ
 iJ
 iJ
-ra
+DI
 Bw
-yG
+Vi
+ek
 GH
 Jj
 Jj
@@ -2301,7 +3614,6 @@ Jj
 Jj
 Jj
 Jj
-Jj
 GH
 Jj
 Jj
@@ -2312,18 +3624,38 @@ GH
 GH
 GH
 GH
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (40,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+Ce
+Ce
+Ce
+iJ
+iJ
+Ce
+Ce
+iJ
+iJ
+iJ
+Ce
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
 Jj
 Jj
 GH
@@ -2343,7 +3675,7 @@ iJ
 fA
 fA
 fA
-ra
+DI
 Bw
 yG
 GH
@@ -2356,30 +3688,50 @@ Jj
 GH
 GH
 GH
+TI
 GH
 GH
 GH
 GH
 GH
 GH
-GH
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 "}
 (41,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
 Jj
 Jj
 GH
-GH
+TI
 GH
 GH
 OR
@@ -2395,7 +3747,7 @@ fA
 fA
 fA
 fA
-ra
+DI
 rD
 yG
 Jj
@@ -2405,9 +3757,9 @@ GH
 GH
 GH
 GH
-GH
-GH
-GH
+TI
+TI
+TI
 GH
 GH
 GH
@@ -2415,24 +3767,44 @@ GH
 GH
 GH
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 "}
 (42,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+Ce
+RX
+RX
+Ce
+iJ
+iJ
+Ce
+iJ
+Xr
+Ce
+Ce
+iJ
 Jj
 Jj
 GH
-GH
-GH
+TI
+TI
 GH
 OR
 ez
@@ -2440,14 +3812,14 @@ ra
 TI
 TI
 TI
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
+Fj
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
+Wr
 rD
 Jj
 Jj
@@ -2468,23 +3840,43 @@ GH
 Jj
 Jj
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (43,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
 Jj
 Jj
 GH
 GH
-GH
+TI
 GH
 OR
 QA
@@ -2520,23 +3912,43 @@ Jj
 Jj
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (44,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Xr
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+iJ
+Ce
+Ce
+iJ
+Ce
+iJ
+iJ
+iJ
 Jj
 Jj
 Jj
 GH
-GH
+TI
 GH
 OR
 ez
@@ -2544,7 +3956,7 @@ ra
 TI
 TI
 TI
-ra
+Bj
 ez
 Jj
 Jj
@@ -2569,14 +3981,6 @@ Jj
 GH
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2584,6 +3988,34 @@ Ce
 (45,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+Jj
+Jj
 Jj
 Jj
 Jj
@@ -2620,14 +4052,6 @@ Jj
 GH
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2636,6 +4060,34 @@ Ce
 (46,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
@@ -2676,18 +4128,38 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 "}
 (47,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
@@ -2722,14 +4194,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2740,6 +4204,34 @@ Ce
 (48,1,1) = {"
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+Ce
+iJ
+iJ
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
@@ -2773,14 +4265,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2793,19 +4277,47 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
 GH
 GH
+TI
+TI
+TI
+TI
 GH
 GH
 GH
-GH
-GH
-GH
-GH
-GH
+TI
 GH
 Jj
 Jj
@@ -2823,14 +4335,6 @@ Ce
 Ce
 Ce
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -2845,25 +4349,6 @@ Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
-Jj
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-Jj
-Jj
-Jj
-Jj
-Jj
 Ce
 Ce
 Ce
@@ -2872,6 +4357,45 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+iJ
+Ce
+Ce
+Ce
+iJ
+Ce
+RX
+RX
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+GH
+GH
+GH
+GH
+TI
+TI
+GH
+GH
+GH
+GH
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -2898,23 +4422,6 @@ Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
-Jj
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-Jj
-Jj
-Jj
-Jj
-Jj
 Ce
 Ce
 Ce
@@ -2923,6 +4430,43 @@ Ce
 Ce
 Ce
 Ce
+Ce
+iJ
+iJ
+Ce
+iJ
+iJ
+Ce
+RX
+RX
+Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+GH
+GH
+GH
+TI
+GH
+GH
+GH
+GH
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -2951,12 +4495,40 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+RX
+RX
+Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Jj
 Jj
 Jj
 Jj
 GH
-GH
+TI
 GH
 GH
 GH
@@ -2966,14 +4538,6 @@ Jj
 Jj
 Jj
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -3004,27 +4568,47 @@ Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
 Ce
 Ce
 Ce
+Jr
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
 Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -3057,24 +4641,44 @@ Ce
 Ce
 Ce
 Ce
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
-Jj
+Ce
+Ce
+Jr
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+RX
+Ce
 Jj
 Jj
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -3102,6 +4706,34 @@ Ce
 Ce
 "}
 (55,1,1) = {"
+Jj
+Jj
+gW
+gW
+Ce
+Ka
+Ce
+Ce
+Ce
+Ce
+bK
+bK
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -3118,14 +4750,6 @@ Jj
 Jj
 Ce
 Jj
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
 Ce
 Ce
 Ce
@@ -3154,7 +4778,13 @@ Ce
 Ce
 "}
 (56,1,1) = {"
+Jj
+Jj
+TI
+TI
 Ce
+ra
+fA
 Ce
 Ce
 Ce
@@ -3175,6 +4805,20 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -3206,6 +4850,26 @@ Ce
 Ce
 "}
 (57,1,1) = {"
+Jj
+Jj
+GH
+GH
+Ce
+jq
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -3263,6 +4927,26 @@ Ce
 Ce
 Ce
 Ce
+xV
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -3315,6 +4999,26 @@ Ce
 Ce
 Ce
 Ce
+rm
+ez
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Jj
+Jj
+Jj
+Jj
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -3362,6 +5066,26 @@ Ce
 Ce
 "}
 (60,1,1) = {"
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
