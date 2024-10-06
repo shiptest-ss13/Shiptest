@@ -34,7 +34,6 @@
 	unsuitable_atmos_damage = 15
 	minbodytemp = 180
 	status_flags = CANPUSH
-	del_on_death = TRUE
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
