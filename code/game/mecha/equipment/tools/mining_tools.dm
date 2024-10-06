@@ -65,17 +65,20 @@
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	while(drill.do_after_mecha(src, 15 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
-		alter_integrity(-drill.wall_decon_damage)
 		drill.occupant_message("<span class='notice'>You drill through some of the outer plating...</span>")
 		playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+		if(!alter_integrity(-drill.wall_decon_damage))
+			return TRUE
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
 		while(drill.do_after_mecha(src, 20 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
-			alter_integrity(-drill.wall_decon_damage)
 			drill.occupant_message("<span class='notice'>You drill through some of the outer plating...</span>")
 			playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+			if(!alter_integrity(-drill.wall_decon_damage))
+				return TRUE
+
 	else
 		drill.occupant_message("<span class='danger'>[src] is too durable to drill through.</span>")
 
