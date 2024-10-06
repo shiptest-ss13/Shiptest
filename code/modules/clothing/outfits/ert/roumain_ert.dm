@@ -2,7 +2,7 @@
 	name = "ERT - Saint-Roumain Hunter" // flaming arrow and shadow
 	id_assignment = "Hunter"
 	jobtype = /datum/job/officer
-	job_icon = "hsrm_hunter"
+	job_icon = "srm_hunter"
 
 	wallet = null
 
