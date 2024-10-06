@@ -99,7 +99,7 @@
 	name = "pistol case"
 	desc = "A large box designed for holding pistols and magazines safely."
 	icon = 'icons/obj/guncase.dmi'
-	icon_state = "pistolcase"
+	icon_state = "guncase"
 	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
