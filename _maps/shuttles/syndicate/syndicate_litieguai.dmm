@@ -126,10 +126,10 @@
 /obj/machinery/stasis{
 	dir = 8
 	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cd" = (
@@ -596,7 +596,6 @@
 	},
 /obj/machinery/photocopier,
 /obj/machinery/firealarm/directional/east,
-/obj/effect/turf_decal/spline/fancy/opaque/cybersunteal,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
 	},
@@ -605,6 +604,7 @@
 	pixel_x = 19;
 	pixel_y = -12
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/cybersunteal,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
 "mu" = (
@@ -1030,10 +1030,10 @@
 /obj/item/clothing/shoes/sandal/slippers,
 /obj/item/clothing/shoes/sandal/slippers,
 /obj/item/clothing/shoes/sandal/slippers,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uc" = (
@@ -3055,18 +3055,18 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 8
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
 	color = "#FFFFFF"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
