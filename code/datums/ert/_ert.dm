@@ -14,7 +14,7 @@
 	var/mission = "Make effective use of your tools."
 	// determines the size of the team. make sure there's enough size for all the special roles you may add
 	var/teamsize = 5
-	// this will be shown to ghosts as "Would you be interested in [polldesc]?"
+	// this will be shown to ghosts as "Would you like to be considered for [polldesc]?"
 	var/polldesc = "an emergency response team"
 	/// If TRUE, gives the team members "[role] [random last name]" style names
 	var/random_names = FALSE

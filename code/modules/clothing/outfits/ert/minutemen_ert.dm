@@ -1,6 +1,7 @@
 /datum/outfit/job/clip/minutemen/bard
 	name = "ERT - C-MM BARD Field Agent"
 	id_assignment = "Biohazard Assessment Field Agent"
+	jobtype = /datum/job/virologist
 	job_icon = "virologist" // can someone resprite the biosuits already
 
 	wallet = null

@@ -320,7 +320,7 @@
 		ertemplate.teamsize = prefs["teamsize"]["value"]
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
-		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 8 are effectively toggles
+		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 9 are effectively toggles
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes"
 		ertemplate.leader_experience = prefs["leader_experience"]["value"] == "Yes"
 		ertemplate.random_names = prefs["random_names"]["value"] == "Yes"
@@ -328,6 +328,7 @@
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		ertemplate.use_custom_shuttle = prefs["use_custom_shuttle"]["value"] == "Yes"
 		ertemplate.spawn_at_outpost = prefs["spawn_at_outpost"]["value"] == "Yes"
+		ertemplate.outpost_access = prefs["outpost_access"]["value"] == "Yes"
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
