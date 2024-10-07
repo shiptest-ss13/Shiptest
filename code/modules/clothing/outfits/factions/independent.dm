@@ -53,7 +53,7 @@
 	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/melee/knife/survival
 	gloves = /obj/item/clothing/gloves/combat
 	implants = list(/obj/item/implant/radio)
 
@@ -145,7 +145,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 	implants = list(/obj/item/implant/radio)
 	accessory = null
 
@@ -173,7 +173,6 @@
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	head = /obj/item/clothing/head/hopcap
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
@@ -298,7 +297,7 @@
 	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/knife/combat
 
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
@@ -349,7 +348,7 @@
 	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/melee/knife/survival
 	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 	implants = list(/obj/item/implant/radio)
@@ -536,7 +535,6 @@
 
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo/qm
-	head = /obj/item/clothing/head/supply_chief
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -572,7 +570,7 @@
 	l_pocket = /obj/item/storage/bag/ore
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
-		/obj/item/kitchen/knife/combat/survival=1,\
+		/obj/item/melee/knife/survival=1,\
 		/obj/item/stack/marker_beacon/ten=1,\
 		/obj/item/radio/weather_monitor=1)
 

@@ -56,7 +56,7 @@
 	var/owner_check_timer_id
 
 	/// The ship's join mode. Controls whether players can join freely, have to apply, or can't join at all.
-	var/join_mode = SHIP_JOIN_MODE_OPEN
+	var/join_mode = SHIP_JOIN_MODE_CLOSED
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
 

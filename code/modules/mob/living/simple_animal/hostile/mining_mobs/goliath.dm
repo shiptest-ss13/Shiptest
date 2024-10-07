@@ -226,7 +226,6 @@
 			D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
 			D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 			D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
-			D.keytype = /obj/item/key/lasso
 			D.drive_verb = "ride"
 		else
 			user.visible_message("<span class='warning'>[src] is rocking around! You can't put the saddle on!</span>")

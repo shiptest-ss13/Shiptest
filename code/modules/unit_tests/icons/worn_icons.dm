@@ -78,7 +78,7 @@
 				spacer = "\n\t"
 
 		if(cached_slot_flags & ITEM_SLOT_EYES)
-			icon_file = 'icons/mob/clothing/eyes.dmi'
+			icon_file = 'icons/mob/clothing/eyes/eyes.dmi'
 			if(!(icon_state in icon_states(icon_file, 1)))
 				already_warned_icons += icon_state
 				fail_reasons += "[spacer][item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"

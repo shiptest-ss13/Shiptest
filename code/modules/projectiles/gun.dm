@@ -70,6 +70,9 @@
 	var/casing_ejector = TRUE
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
+	///Whether the gun *can* be reloaded
+	var/sealed_magazine = FALSE
+
 
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
@@ -207,6 +210,12 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
+	///Used if the guns recoil is lower then the min, it clamps the highest recoil
+	var/min_recoil = 0
+
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
+
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
@@ -318,9 +327,6 @@
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
 
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
-
 /obj/item/gun/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
@@ -328,6 +334,8 @@
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 	build_firemodes()
+	if(sawn_off)
+		sawoff(forced = TRUE)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -359,15 +367,15 @@
 		wielded_fully = TRUE
 		return TRUE
 
-/obj/item/gun/proc/is_wielded()
-	return wielded
-
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+
+/obj/item/gun/proc/is_wielded()
+	return wielded
 
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)
@@ -728,6 +736,11 @@
 	if(zoomed)
 		zoom(user, user.dir)
 
+/obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		discharge("hits the ground hard")
+
 /obj/item/gun/update_overlays()
 	. = ..()
 	if(ismob(loc) && has_safety)
@@ -810,7 +823,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, 0 , INFINITY)
+	return clamp(recoil_bonus, min_recoil , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -947,6 +960,48 @@
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
 
+// for guns firing on their own without a user
+/obj/item/gun/proc/discharge(cause, seek_chance = 10)
+	var/target
+	if(!safety)
+		// someone is very unlucky and about to be shot
+		if(prob(seek_chance))
+			for(var/mob/living/target_mob in range(6, get_turf(src)))
+				if(!isInSight(src, target_mob))
+					continue
+				target = target_mob
+				break
+		if(!target)
+			var/fire_dir = pick(GLOB.alldirs)
+			target = get_ranged_target_turf(get_turf(src),fire_dir,6)
+		if(!chambered || !chambered.BB)
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
+			playsound(src, dry_fire_sound, 30, TRUE)
+		else
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safeties on!"))
+			unsafe_shot(target)
+
+/obj/item/gun/proc/unsafe_shot(target)
+	if(chambered)
+		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		playsound(src, fire_sound, 100, TRUE)
+
+/mob/living/proc/trip_with_gun(cause)
+	var/mob/living/carbon/human/human_holder
+	if(ishuman(src))
+		human_holder = src
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		if(human_holder)
+			// gun is less likely to go off in a holster
+			if(at_risk == human_holder.s_store)
+				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+		if(at_risk.safety == FALSE && prob(chance_to_fire))
+			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
+				emote("scream")
+
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
 	name = "Toggle Scope"
@@ -1059,3 +1114,46 @@
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
+
+GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
+	/obj/item/gun/energy/plasmacutter,
+	/obj/item/melee/transforming/energy,
+	)))
+
+///Handles all the logic of sawing off guns,
+/obj/item/gun/proc/try_sawoff(mob/user, obj/item/saw)
+	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
+		return
+	if(sawn_off)
+		to_chat(user, span_warning("\The [src] is already shortened!"))
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.visible_message(span_notice("[user] begins to shorten \the [src]."), span_notice("You begin to shorten \the [src]..."))
+
+	//if there's any live ammo inside the gun, makes it go off
+	if(blow_up(user))
+		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
+		return
+
+	if(do_after(user, 30, target = src))
+		user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
+		sawoff(user, saw)
+
+///Used on init or try_sawoff
+/obj/item/gun/proc/sawoff(forced = FALSE)
+	if(sawn_off && !forced)
+		return
+	name = "sawn-off [src.name]"
+	desc = sawn_desc
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "gun"
+	slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
+	slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+	recoil = SAWN_OFF_RECOIL
+	sawn_off = TRUE
+	update_appearance()
+	return TRUE
+
+///used for sawing guns, causes the gun to fire without the input of the user
+/obj/item/gun/proc/blow_up(mob/user)
+	return

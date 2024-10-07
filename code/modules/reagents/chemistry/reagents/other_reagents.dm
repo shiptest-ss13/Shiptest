@@ -243,49 +243,10 @@
 	REMOVE_TRAIT(L, TRAIT_HOLY, type)
 	..()
 
-/datum/reagent/water/holywater/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscultist(M))
-		to_chat(M, "<span class='userdanger'>A vile holiness begins to spread its shining tendrils through your mind, purging the Geometer of Blood's influence!</span>")
-	..()
-
-/datum/reagent/water/holywater/on_mob_life(mob/living/carbon/M)
-	if(!data)
-		data = list("misc" = 1)
-	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
-	if(iscultist(M))
-		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
-			to_chat(M, "<span class='cultlarge'>Your blood rites falter as holy water scours your body!</span>")
-			for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
-				qdel(BS)
-	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
-		if(!M.stuttering)
-			M.stuttering = 1
-		M.stuttering = min(M.stuttering+4, 10)
-		M.Dizzy(5)
-		if(iscultist(M) && prob(20))
-			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
-			if(prob(10))
-				M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
-				M.Unconscious(120)
-				to_chat(M, "<span class='cultlarge'>[pick("Your blood is your bond - you are nothing without it", "Do not forget your place", \
-				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour your meager life!")].</span>")
-	if(data["misc"] >= 60)	// 30 units, 135 seconds
-		if(iscultist(M))
-			SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
-		M.jitteriness = 0
-		M.stuttering = 0
-		holder.remove_reagent(type, volume)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
-		return
-	holder.remove_reagent(type, 0.4)	//fixed consumption to prevent balancing going out of whack
-
 /datum/reagent/water/holywater/expose_turf(turf/T, reac_volume)
 	..()
 	if(!istype(T))
 		return
-	if(reac_volume>=10)
-		for(var/obj/effect/rune/R in T)
-			qdel(R)
 	T.Bless()
 
 // Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
@@ -346,22 +307,12 @@
 	return ..()
 
 /datum/reagent/fuel/unholywater/on_mob_life(mob/living/carbon/M)
-	if(iscultist(M))
-		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustAllImmobility(-40)
-		M.adjustStaminaLoss(-10, 0)
-		M.adjustToxLoss(-2, 0)
-		M.adjustOxyLoss(-2, 0)
-		M.adjustBruteLoss(-2, 0)
-		M.adjustFireLoss(-2, 0)
-		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume += 3
-	else  // Will deal about 90 damage when 50 units are thrown
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, 0)
-		M.adjustFireLoss(2, 0)
-		M.adjustOxyLoss(2, 0)
-		M.adjustBruteLoss(2, 0)
+	// Will deal about 90 damage when 50 units are thrown
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
+	M.adjustToxLoss(2, 0)
+	M.adjustFireLoss(2, 0)
+	M.adjustOxyLoss(2, 0)
+	M.adjustBruteLoss(2, 0)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -1792,12 +1743,6 @@
 	if(istype(T))
 		T.MakeDry(ALL, TRUE, reac_volume * 5 SECONDS)		//50 deciseconds per unit
 
-/datum/reagent/drying_agent/expose_obj(obj/O, reac_volume)
-	if(O.type == /obj/item/clothing/shoes/galoshes)
-		var/t_loc = get_turf(O)
-		qdel(O)
-		new /obj/item/clothing/shoes/galoshes/dry(t_loc)
-
 // Virology virus food chems.
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood
@@ -2358,6 +2303,14 @@
 		else
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, gib)), 5 SECONDS)
 
+/datum/reagent/concrete_mix
+	name = "Concrete Mix"
+	description = "Pre-made concrete mix, ideal for lazy engineers."
+	color = "#c4c0bc"
+	taste_description = "chalky concrete"
+	harmful = TRUE
+	reagent_state = SOLID
+
 /datum/reagent/cement
 	name = "Cement"
 	description = "A sophisticated binding agent used to produce concrete."
@@ -2518,3 +2471,38 @@
 	description = "Bacteria native to the Saint-Roumain Militia home planet."
 	color = "#5a4f42"
 	taste_description = "sour"
+
+//anti rad foam
+/datum/reagent/anti_radiation_foam
+	name = "Anti-Radiation Foam"
+	description = "A tried and tested foam, used for decontaminating nuclear disasters."
+	reagent_state = LIQUID
+	color = "#A6FAFF55"
+	taste_description = "bitter, foamy awfulness."
+
+/datum/reagent/anti_radiation_foam/expose_turf(turf/open/T, reac_volume)
+	if (!istype(T))
+		return
+
+	if(reac_volume >= 1)
+		var/obj/effect/particle_effect/foam/antirad/F = (locate(/obj/effect/particle_effect/foam/antirad) in T)
+		if(!F)
+			F = new(T)
+		else if(istype(F))
+			F.lifetime = initial(F.lifetime) //the foam is what does the cleaning here
+
+/datum/reagent/anti_radiation_foam/expose_obj(obj/O, reac_volume)
+	O.wash(CLEAN_RAD)
+
+/datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if(method in list(TOUCH, VAPOR))
+		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.ExtinguishMob()
+	..()
+
+
+/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(0.5, 200)
+	M.adjust_disgust(4)
+	..()
+	. = 1

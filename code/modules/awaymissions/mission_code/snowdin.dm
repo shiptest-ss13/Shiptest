@@ -129,12 +129,6 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
 	requires_power = TRUE
 
-/area/shuttle/snowdin/elevator1
-	name = "Excavation Elevator"
-
-/area/shuttle/snowdin/elevator2
-	name = "Mining Elevator"
-
 //liquid plasma!!!!!!//
 
 /turf/open/floor/plasteel/dark/snowdin
@@ -507,9 +501,7 @@
 
 /obj/effect/spawner/lootdrop/snowdin/dungeonheavy
 	name = "dungeon heavy"
-	loot = list(/obj/item/singularityhammer = 25,
-				/obj/item/mjollnir = 10,
-				/obj/item/fireaxe = 25,
+	loot = list(/obj/item/melee/axe/fire = 25,
 				/obj/item/organ/brain/alien = 17,
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
@@ -530,7 +522,7 @@
 	loot = list(/obj/item/stack/sheet/mineral/snow{amount = 25} = 10,
 				/obj/item/toy/snowball = 15,
 				/obj/item/shovel = 10,
-				/obj/item/spear = 8,
+				/obj/item/melee/spear = 8,
 				)
 
 //special items//--
