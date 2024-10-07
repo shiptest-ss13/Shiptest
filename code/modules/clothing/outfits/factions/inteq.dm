@@ -24,7 +24,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	ears = /obj/item/radio/headset/
+	ears = /obj/item/radio/headset
 	r_pocket = /obj/item/radio
 
 ///captains
