@@ -59,7 +59,13 @@
 		T.AddElement(/datum/element/decal, icon, detail_overlay, dir, FALSE, detail_color, null, null, alpha, appearance_flags)
 	return INITIALIZE_HINT_QDEL
 
+
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
 	moveToNullspace()
+#ifdef UNIT_TESTS
+	if(GLOB.running_create_and_destroy)
+		var/turf/T = loc
+		T.RemoveElement(/datum/element/decal, icon, icon_state, dir, null, null, alpha, color, null, FALSE, null)
+#endif
 	return QDEL_HINT_QUEUE
