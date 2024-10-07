@@ -104,7 +104,7 @@
 /datum/supply_pack/sec_supply/incendiary_grenade
 	name = "incendiary Grenade Crate"
 	desc = "Contains one incendiary grenade. Better not let it go off in your hands."
-	cost = 500
+	cost = 750
 	contains = list(
 		/obj/item/grenade/chem_grenade/incendiary
 	)
