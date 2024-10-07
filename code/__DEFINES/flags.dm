@@ -21,8 +21,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define CONDUCT_1 (1<<5)
 /// For machines and structures that should not break into parts, eg, holodeck stuff
 #define NODECONSTRUCT_1 (1<<7)
-/// atom queued to SSoverlay
-#define OVERLAY_QUEUED_1 (1<<8)
+// NEED TO REMOVE THIS FULLY AND UPDATE THE NUMBERS
+//#define OVERLAY_QUEUED_1 (1<<8)
 /// item has priority to check when entering or leaving
 #define ON_BORDER_1 (1<<9)
 //Whether or not this atom shows screentips when hovered over

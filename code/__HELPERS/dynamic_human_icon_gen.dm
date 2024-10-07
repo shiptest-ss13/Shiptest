@@ -46,7 +46,6 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 			carried_item.add_mob_blood(dummy)
 	//dummy.update_held_items()
 	dummy.regenerate_icons()
-	COMPILE_OVERLAYS(dummy)
 	var/mutable_appearance/output = dummy.appearance
 	GLOB.dynamic_human_appearances[arg_string] = output
 	qdel(dummy)

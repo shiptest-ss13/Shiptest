@@ -86,7 +86,3 @@
 #define RUIN_PLACEMENT_TEST
 #define SHIP_PLACEMENT_TEST
 #endif
-
-// A reasonable number of maximum overlays an object needs
-// If you think you need more, rethink it
-#define MAX_ATOM_OVERLAYS 100
