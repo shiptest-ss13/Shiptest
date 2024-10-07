@@ -86,7 +86,6 @@
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"
-#include "outfit_names.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"

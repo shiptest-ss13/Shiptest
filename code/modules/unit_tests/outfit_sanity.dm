@@ -26,6 +26,7 @@
 	var/prototype_name = initial(prototype_outfit.name)
 	var/mob/living/carbon/human/H = allocate(/mob/living/carbon/human)
 
+	var/list/outfit_names = list()
 	for (var/outfit_type in subtypesof(/datum/outfit))
 		// Only make one human and keep undressing it because it's much faster
 		for (var/obj/item/I in H.get_equipped_items(include_pockets = TRUE))
@@ -33,8 +34,12 @@
 
 		var/datum/outfit/outfit = new outfit_type
 
-		if(outfit.name == prototype_name)
+		var/outfit_name = outfit.name
+		if(outfit_name == prototype_name)
 			TEST_FAIL("[outfit.type]'s name is invalid! Uses default outfit name!")
+		if(outfit_name in outfit_names)
+			TEST_FAIL("Outfit name [outfit_name] is not unique: [outfit_type], [outfit_names[outfit_name]]")
+		outfit_names[outfit_name] = outfit_type
 		outfit.pre_equip(H, TRUE)
 
 		CHECK_OUTFIT_SLOT(uniform, ITEM_SLOT_ICLOTHING)
