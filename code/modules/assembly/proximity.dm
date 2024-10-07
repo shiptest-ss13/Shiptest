@@ -166,7 +166,7 @@
 				. = TRUE
 
 /obj/item/assembly/prox_sensor/preset
-	sensitivity = 1
+	sensitivity = 2
 	hearing_range = 3
 
 /obj/item/assembly/prox_sensor/preset/Initialize()
