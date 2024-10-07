@@ -223,7 +223,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "f4"
 	item_state = "f4"
 	show_magazine_on_sprite = TRUE
