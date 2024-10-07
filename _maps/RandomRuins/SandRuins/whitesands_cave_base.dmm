@@ -19,16 +19,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
-"bk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/disk/holodisk/ruin/cave_base/two{
-	pixel_y = 8;
-	pixel_x = -2
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
 "bF" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -82,10 +72,6 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
-/obj/item/disk/holodisk/ruin/cave_base/six{
-	pixel_y = -6;
-	pixel_x = 6
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base)
 "du" = (
@@ -146,6 +132,10 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 7;
 	pixel_x = 2
+	},
+/obj/item/disk/holodisk/ruin/cave_base/six{
+	pixel_y = 2;
+	pixel_x = -7
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/whitesands/cave_base)
@@ -517,7 +507,6 @@
 "nL" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
@@ -703,7 +692,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag,
 /obj/item/ammo_casing/p50,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
@@ -868,6 +856,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/disk/holodisk/ruin/cave_base/two{
+	pixel_y = -4;
+	pixel_x = -8
+	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "tB" = (
@@ -1008,6 +1000,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
+/obj/item/disk/holodisk/ruin/cave_base/five{
+	pixel_y = -2;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "xe" = (
@@ -1084,7 +1080,6 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
-/obj/item/grenade/c4/satchel_charge/cave_base,
 /obj/effect/decal/cleanable/ash/large{
 	pixel_y = 8;
 	pixel_x = 3
@@ -1103,6 +1098,7 @@
 	pixel_x = 4;
 	pixel_y = -9
 	},
+/obj/item/grenade/c4/cave_base,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base)
 "yD" = (
@@ -1392,10 +1388,13 @@
 "EX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/item/disk/holodisk/ruin/cave_base/five{
-	pixel_y = 12;
-	pixel_x = 9
+/obj/item/grenade/c4/satchel_charge/cave_base,
+/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag{
+	pixel_x = -14;
+	pixel_y = -10
+	},
+/obj/item/assembly_holder/premade/cave_base{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
@@ -2042,6 +2041,9 @@
 	dir = 9
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/structure/flippedtable{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
 "Vc" = (
@@ -2082,6 +2084,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "#"
 	},
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Vr" = (
@@ -4702,7 +4705,7 @@ tX
 tX
 tX
 mh
-bk
+vb
 py
 Vc
 mP

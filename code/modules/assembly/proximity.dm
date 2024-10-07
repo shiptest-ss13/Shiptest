@@ -18,7 +18,7 @@
 
 /obj/item/assembly/prox_sensor/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 0)
+	proximity_monitor = new(src, 0, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/assembly/prox_sensor/Destroy()
@@ -38,6 +38,15 @@
 		scanning = FALSE
 	update_appearance()
 	return TRUE
+
+/obj/item/assembly/prox_sensor/on_attach()
+	.  = ..()
+	// Pick the first valid object in this list:
+	// Wiring datum's owner
+	// assembly holder's attached object
+	// assembly holder itself
+	// us
+	proximity_monitor.set_host(connected?.holder || holder?.master || holder || src, src)
 
 /obj/item/assembly/prox_sensor/on_detach()
 	. = ..()
