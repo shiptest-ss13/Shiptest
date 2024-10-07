@@ -383,8 +383,7 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone,
-		/obj/item/key/lasso
+		/obj/item/melee/sword/bone
 		))
 
 
