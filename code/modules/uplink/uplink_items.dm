@@ -1791,13 +1791,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted_roles = list("Curator")
 	limited_stock = 1 //please don't spam deadchat
 
-/datum/uplink_item/role_restricted/cultconstructkit
-	name = "Cult Construct Kit"
-	desc = "Recovered from an abandoned Nar'sie cult lair two construct shells and a stash of empty soulstones was found. These were purified to prevent occult contamination and have been put in a belt so they may be used as an accessible source of disposable minions. The construct shells have been packaged into two beacons for rapid and portable deployment."
-	item = /obj/item/storage/box/syndie_kit/cultconstructkit
-	cost = 20
-	restricted_roles = list("Chaplain")
-
 /datum/uplink_item/role_restricted/lawnmower
 	name = "Gas powered lawn mower"
 	desc = "A lawn mower is a machine utilizing one or more revolving blades to cut a grass surface to an even height, or bodies if that's your thing"
