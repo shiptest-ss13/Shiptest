@@ -64,8 +64,6 @@
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "nanotrasen_ert"
 	icon_living = "nanotrasen_ert"
-	maxHealth = 100
-	health = 100
 	melee_damage_lower = 13
 	melee_damage_upper = 18
 	ranged = TRUE
