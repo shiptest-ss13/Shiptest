@@ -108,6 +108,9 @@ GLOBAL_VAR(test_log)
 	var/list/log_entry = list()
 	var/list/fail_reasons = test.fail_reasons
 
+	var/test_output_desc = "[test_path]"
+	var/message = ""
+
 	log_world("::group::[test_path]")
 	for(var/reasonID in 1 to LAZYLEN(fail_reasons))
 		var/text = fail_reasons[reasonID][1]
@@ -129,7 +132,7 @@ GLOBAL_VAR(test_log)
 
 	log_world("::endgroup::")
 
-	if (!test.succeeded && !skip_test)
+	if (!test.succeeded)
 		log_world("::error::[TEST_OUTPUT_RED("FAIL")] [test_output_desc]")
 
 	var/final_status = test.succeeded ? UNIT_TEST_PASSED : UNIT_TEST_FAILED
