@@ -16,7 +16,7 @@
 	attack_verb_simple = "slash at"
 	attack_sound = 'sound/weapons/circsawhit.ogg'
 	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher, /obj/item/circular_saw, /obj/item/gun/syringe)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list("hostile")
 	check_friendly_fire = TRUE
 	var/impatience = 0

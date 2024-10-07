@@ -10,7 +10,7 @@
 	melee_damage_upper = 15
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/melee/knife/survival)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -20,7 +20,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 
@@ -42,7 +42,7 @@
 				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered
@@ -68,7 +68,7 @@
 				/obj/item/gun/ballistic/rifle/illestren,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered
@@ -96,7 +96,7 @@
 				/obj/item/gun/ballistic/shotgun/brimstone,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
@@ -124,7 +124,7 @@
 				/obj/item/gun/ballistic/automatic/assault/skm,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
@@ -151,7 +151,7 @@
 				/obj/item/gun/ballistic/rifle/illestren,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered
@@ -180,7 +180,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 
@@ -211,7 +211,7 @@
 				/obj/item/gun/ballistic/automatic/pistol/mauler,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals/neutered
