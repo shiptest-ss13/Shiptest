@@ -8,3 +8,6 @@
 	human.Life()
 
 	TEST_ASSERT(human.reagents.has_reagent(/datum/reagent/iron), "Human doesn't have iron after taking pill")
+
+	TEST_NOTICE(src, "The pillbox sucks")
+	log_test("The pillbox is epic")
