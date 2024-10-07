@@ -3,7 +3,6 @@
 	//You absolutely must run last
 	priority = TEST_DEL_WORLD
 
-GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 /datum/unit_test/create_and_destroy/Run()
 	//We'll spawn everything here
 	var/turf/spawn_at = run_loc_bottom_left

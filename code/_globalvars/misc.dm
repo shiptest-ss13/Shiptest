@@ -29,3 +29,5 @@ GLOBAL_LIST_EMPTY(poll_options)
 GLOBAL_PROTECT(poll_options)
 
 GLOBAL_VAR_INIT(internal_tick_usage, 0.2 * world.tick_lag) //This var is updated every tick by a DLL if present, used to reduce lag
+
+GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
