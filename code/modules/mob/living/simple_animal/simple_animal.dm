@@ -143,7 +143,15 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
+	var/datum/armor/armor
+
 /mob/living/simple_animal/Initialize(mapload)
+	if (islist(armor))
+		armor = getArmor(arglist(armor))
+	else if (!armor)
+		armor = getArmor()
+	else if (!istype(armor, /datum/armor))
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
 	if(gender == PLURAL)
@@ -187,6 +195,11 @@
 			tamed(user)
 		else
 			tame_chance += bonus_tame_chance
+
+/mob/living/simple_animal/getarmor(def_zone, type)
+	if(armor)
+		return armor.getRating(type)
+	return FALSE
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(whomst)
