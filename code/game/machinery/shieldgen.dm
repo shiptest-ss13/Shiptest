@@ -255,6 +255,7 @@
 		else
 			if(!crashing)
 				balloon_alert_to_viewers("[src] blares an alarm!")
+				playsound(src, 'sound/machines/cryo_warning.ogg', 100)
 				crashing = TRUE
 				addtimer(CALLBACK(src, PROC_REF(kill_shield)), 6 SECONDS)
 
