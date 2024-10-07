@@ -82,8 +82,9 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper
 	icon_state = "frontiersmanrangedelite"
 	icon_living = "frontiersmanrangedelite"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
@@ -166,8 +167,9 @@
 	icon_state = "frontiersmanrangedminigun"
 	icon_living = "frontiersmanrangedminigun"
 	projectilesound = 'sound/weapons/laser4.ogg'
-	maxHealth = 260
-	health = 260
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
 	rapid = 6
 	rapid_fire_delay = 1.5
 	casingtype = null
@@ -196,13 +198,15 @@
 	name = "Frontiersman Officer"
 	icon_state = "frontiersmanofficer"
 	icon_living = "frontiersmanofficer"
-	maxHealth = 65
-	health = 65
-	rapid = 4
+	maxHealth = 100
+	health = 100
+	rapid = 7
+	rapid_fire_delay = 1
 	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/mauler)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"

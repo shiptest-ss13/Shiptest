@@ -20,6 +20,7 @@
 	check_friendly_fire = TRUE
 	dodging = TRUE
 	rapid_melee = 2
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 ///////////////Melee////////////
 
@@ -27,12 +28,13 @@
 	icon_state = "syndicate_space"
 	icon_living = "syndicate_space"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
 	. = ..()
@@ -43,8 +45,9 @@
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
 	name = "Ramzi Clique Assault Trooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 /mob/living/simple_animal/hostile/human/syndicate/melee //dude with a knife and no shields
 	melee_damage_lower = 15
@@ -62,13 +65,14 @@
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
 	. = ..()
@@ -79,9 +83,10 @@
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
 	projectile_deflect_chance = 50
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
 	melee_damage_lower = 30
@@ -115,13 +120,14 @@
 	icon_state = "syndicate_space_sword"
 	icon_living = "syndicate_space_sword"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
 	. = ..()
@@ -137,9 +143,10 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
 	projectile_deflect_chance = 50
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 ///////////////Guns////////////
 
@@ -163,12 +170,13 @@
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
 	. = ..()
@@ -179,8 +187,9 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg
 	rapid = 2
@@ -193,12 +202,13 @@
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
 	. = ..()
@@ -209,8 +219,9 @@
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun
 	rapid = 2
@@ -224,12 +235,13 @@
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
+	maxHealth = 100
+	health = 100
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/Initialize()
 	. = ..()
@@ -240,8 +252,9 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	maxHealth = 100
+	health = 100
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 
 ///////////////Misc////////////
 
