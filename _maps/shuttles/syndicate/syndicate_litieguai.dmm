@@ -170,14 +170,42 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/paper_bin,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/item/folder/white,
-/obj/item/pen,
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "lobbydoors";
+	name = "Lobby Door Bolts Control";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = 8;
+	specialfunctions = 4
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "lobbydoors";
+	name = "Lobby Door Control";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "traumalobby";
+	name = "Lobby Shutter Control";
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "traumashield";
+	name = "Lobby Holoshield";
+	pixel_x = -5;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
@@ -422,7 +450,7 @@
 	pixel_y = 4;
 	pixel_x = -4
 	},
-/obj/structure/sign/poster/contraband/stechkin{
+/obj/structure/sign/poster/contraband/cybersun_borg{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
@@ -866,7 +894,9 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
-/obj/structure/curtain,
+/obj/structure/curtain/cloth{
+	color = "#4C9C9C"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "rT" = (
@@ -1105,19 +1135,10 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "sec_wall";
+	icon_state = "solgov_wall";
 	name = "firearms locker";
 	req_access_txt = "5"
 	},
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake,
-/obj/item/gun/ballistic/automatic/pistol/ringneck,
-/obj/item/gun/ballistic/automatic/pistol/ringneck,
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 1
@@ -1128,6 +1149,13 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/item/storage/pistolcase/ringneck/military,
+/obj/item/storage/pistolcase/ringneck/military,
+/obj/item/storage/pistolcase/rattlesnake,
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c10mm,
+/obj/item/ammo_box/c10mm,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -1271,6 +1299,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -1459,9 +1490,13 @@
 	name = "snake bed"
 	},
 /mob/living/simple_animal/hostile/retaliate/poison/snake{
-	desc = "The CMO's pet snake. The question of what species it actually belongs to is a mystery for the ages.";
+	desc = "A red, slithery snake. The question of what species it actually belongs to is a mystery for the ages.";
 	dir = 8;
-	name = "\proper Deuce"
+	name = "\proper Deuce";
+	icon = 'icons/mob/pets.dmi';
+	icon_dead = "bookworm_dead";
+	icon_living = "bookworm";
+	icon_state = "bookworm"
 	},
 /obj/item/kirbyplants/fullysynthetic{
 	pixel_x = 8;
@@ -1549,7 +1584,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "sec_wall";
+	icon_state = "solgov_wall";
 	name = "armor locker";
 	req_access_txt = "5"
 	},
@@ -1564,9 +1599,6 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal{
 	dir = 6
 	},
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -1658,9 +1690,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "BU" = (
@@ -1720,7 +1749,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "sec_wall";
+	icon_state = "solgov_wall";
 	name = "clothing locker";
 	req_access_txt = "5"
 	},
@@ -2085,41 +2114,15 @@
 "HI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westleft,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "lobbydoors";
-	name = "Lobby Door Control";
-	normaldoorcontrol = 1;
-	pixel_x = 6;
-	pixel_y = -4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	id = "traumashield";
-	name = "Lobby Holoshield";
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "lobbydoors";
-	name = "Lobby Door Bolts Control";
-	normaldoorcontrol = 1;
-	pixel_x = 6;
-	pixel_y = 8;
-	specialfunctions = 4
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "traumalobby";
-	name = "Lobby Shutter Control";
-	pixel_x = -6;
-	pixel_y = -4
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal/corner,
+/obj/item/paper_bin{
+	pixel_y = 15;
+	pixel_x = -2
+	},
+/obj/item/pen,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "HR" = (
@@ -2295,6 +2298,18 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/structure/closet/crate/freezer{
+	name = "fridge";
+	anchored = 1
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "KB" = (
@@ -2321,7 +2336,7 @@
 /obj/effect/spawner/lootdrop/plushie/moth{
 	pixel_y = 11
 	},
-/obj/structure/sign/poster/contraband/cybersun_borg{
+/obj/structure/sign/poster/contraband/stechkin{
 	pixel_x = 32
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -2413,9 +2428,9 @@
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/stamp/cybersun{
-	pixel_x = -10;
-	pixel_y = 10
+/obj/item/stamp/cybersun/biodynamics{
+	pixel_y = 12;
+	pixel_x = -10
 	},
 /obj/item/folder/syndicate{
 	pixel_x = 9;
@@ -2520,7 +2535,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "Nz" = (
-/obj/structure/curtain,
+/obj/structure/curtain/cloth{
+	color = "#4C9C9C"
+	},
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/door/window/survival_pod{
 	dir = 8
@@ -2658,7 +2675,7 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "sec_wall";
+	icon_state = "solgov_wall";
 	name = "equipment locker";
 	req_access_txt = "5"
 	},
@@ -2675,6 +2692,9 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 1
 	},
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -2979,6 +2999,8 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
 	},
+/obj/item/folder/white,
+/obj/item/folder/white,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
 "Uc" = (
@@ -3078,7 +3100,7 @@
 	pixel_y = 13
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "solgov_wall";
+	icon_state = "sec_wall";
 	name = "medical director's closet";
 	req_access_txt = "40"
 	},
@@ -3128,17 +3150,6 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/machinery/light/small/directional/east,
-/obj/structure/closet/crate/freezer{
-	name = "fridge"
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -3228,9 +3239,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/item/storage/secure/safe{
+/obj/item/storage/secure/safe/cybersun/biodynamics{
 	dir = 8;
-	pixel_x = -31;
+	pixel_x = -30;
 	pixel_y = -10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{

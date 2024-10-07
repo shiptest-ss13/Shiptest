@@ -294,6 +294,9 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
 
+/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty
+	start_empty = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "PC-81 \"Himehabu\""
 	desc = "An astonishingly compact machine pistol firing ultra-light projectiles, designed to be as small and concealable as possible while remaining a credible threat at very close range. Armor penetration is practically non-existent. Chambered in .22."
