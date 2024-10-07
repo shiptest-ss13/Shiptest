@@ -1,4 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ai" = (
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/space)
 "ak" = (
 /turf/open/floor/plasteel/patterned,
 /area/space)
@@ -50,6 +56,12 @@
 /obj/effect/turf_decal/borderfloor/corner,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/space)
+"ck" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 5
+	},
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
 "cl" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -93,6 +105,21 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/space)
+"dK" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	populate = 0
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/grey,
+/turf/open/floor/plasteel/mono,
+/area/space)
+"dL" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 10;
+	pixel_x = 24
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/space)
 "dM" = (
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/plating/rockplanet/lit,
@@ -108,6 +135,10 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/rockplanet,
+/area/space)
+"ee" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "ef" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -166,6 +197,17 @@
 	},
 /turf/open/floor/plating/rust/rockplanet,
 /area/space)
+"ga" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 9
+	},
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
+"gc" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/spline/fancy/opaque/grey,
+/turf/open/floor/plasteel/mono,
+/area/space)
 "gj" = (
 /obj/structure/railing,
 /turf/open/floor/pod/rockplanet,
@@ -203,6 +245,10 @@
 /obj/structure/railing,
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"jF" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/mono,
+/area/space)
 "jS" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -211,6 +257,10 @@
 	dir = 4
 	},
 /turf/open/floor/plating/rockplanet/lit,
+/area/space)
+"jZ" = (
+/obj/machinery/power/terminal,
+/turf/open/floor/plating,
 /area/space)
 "kV" = (
 /obj/machinery/conveyor{
@@ -240,6 +290,21 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"lF" = (
+/obj/effect/turf_decal/weather/rock/corner,
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 4
+	},
+/area/space)
+"lZ" = (
+/obj/structure/closet/radiation{
+	populate = 0
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 6
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
 "mm" = (
 /turf/open/floor/plating/rockplanet/lit,
 /area/space)
@@ -250,9 +315,21 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/space)
+"mT" = (
+/turf/open/floor/plasteel/mono,
+/area/space)
 "mX" = (
 /obj/structure/railing,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/space)
+"nC" = (
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"nQ" = (
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "nS" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -286,7 +363,7 @@
 /area/space)
 "pc" = (
 /obj/machinery/power/rtg,
-/turf/open/space/basic,
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "pi" = (
 /obj/structure/railing{
@@ -314,6 +391,12 @@
 	id = "rock_mine_int"
 	},
 /turf/open/floor/plating,
+/area/space)
+"qH" = (
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 9
+	},
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "ra" = (
 /turf/open/floor/plasteel/patterned/rockplanet,
@@ -365,6 +448,9 @@
 "tp" = (
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/space)
+"tr" = (
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "tB" = (
 /obj/machinery/porta_turret/ai,
@@ -445,6 +531,10 @@
 /obj/structure/railing,
 /obj/structure/railing,
 /turf/open/space/basic,
+/area/space)
+"we" = (
+/obj/effect/radiation,
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "wz" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -579,6 +669,14 @@
 	dir = 1
 	},
 /turf/open/floor/plating/rockplanet,
+/area/space)
+"Db" = (
+/obj/effect/turf_decal/weather/rock/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 4
+	},
 /area/space)
 "De" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -721,6 +819,14 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/space)
+"If" = (
+/obj/effect/turf_decal/weather/rock/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 1
+	},
+/area/space)
 "It" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
@@ -742,6 +848,10 @@
 	id = "rock_mine"
 	},
 /turf/open/floor/plating/rockplanet,
+/area/space)
+"JH" = (
+/obj/machinery/power/smes/engineering,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "Ka" = (
 /turf/open/floor/plasteel/stairs/rockplanet,
@@ -873,7 +983,7 @@
 /obj/structure/sign/warning/radiation/rad_area{
 	pixel_y = 32
 	},
-/turf/open/space/basic,
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "Qd" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -895,6 +1005,10 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/engine/hull/rockplanet,
 /area/space)
+"RG" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/mono,
+/area/space)
 "RX" = (
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/space)
@@ -910,6 +1024,18 @@
 /area/space)
 "SH" = (
 /turf/open/floor/plating,
+/area/space)
+"SM" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	populate = 0
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
+"Tf" = (
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 5
+	},
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "TI" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
@@ -979,6 +1105,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/space)
+"Xx" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 6
+	},
+/turf/open/floor/plating/rockplanet/lit,
+/area/space)
 "XA" = (
 /obj/structure/railing{
 	dir = 10
@@ -995,10 +1127,24 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"XM" = (
+/obj/effect/turf_decal/weather/rock/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/rockplanet{
+	dir = 1
+	},
+/area/space)
 "Yd" = (
 /turf/open/floor/plasteel/stairs/old{
 	dir = 4
 	},
+/area/space)
+"Yj" = (
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_4,
 /area/space)
 "Yl" = (
 /obj/structure/railing{
@@ -1075,12 +1221,12 @@ iJ
 iJ
 iJ
 iJ
+iJ
+Jj
+Jj
+Jj
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+Jj
 Ce
 Ce
 Ce
@@ -1141,20 +1287,20 @@ Ce
 Ce
 iJ
 iJ
-Vl
-Ce
-Ce
-Ce
-Ce
+FD
+FD
+FD
+FD
+nC
+RG
 iJ
 iJ
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+iJ
+iJ
+iJ
+Jj
+Jj
+Jj
 Ce
 Ce
 Ce
@@ -1212,22 +1358,22 @@ iJ
 iJ
 iJ
 iJ
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+dK
+FD
+jZ
+JH
+FD
+nC
+jF
 iJ
+SH
+SH
+SH
 iJ
-iJ
-Ce
 Jj
 Jj
 Jj
-Ce
-Ce
+Jj
 Ce
 Jj
 Ce
@@ -1279,23 +1425,23 @@ Yl
 Fn
 iJ
 iJ
-Ce
+nQ
 pc
-Ce
-pc
-iJ
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+nQ
 iJ
 iJ
-Ce
+gc
+FD
+mT
+ee
+FD
+nC
+SM
 iJ
+SH
+SH
+SH
 iJ
-Jj
 Jj
 Jj
 Jj
@@ -1351,22 +1497,22 @@ dP
 Hf
 iJ
 pc
-Ce
-Ce
-Ce
-Ce
+tr
+tr
+we
+qH
+iJ
+lZ
+FD
+jZ
+JH
+FD
+ai
 iJ
 iJ
-iJ
 Ce
 Ce
 Ce
-Ce
-iJ
-Ce
-Ce
-Ce
-iJ
 iJ
 Jj
 Jj
@@ -1422,22 +1568,22 @@ RX
 tp
 Hf
 iJ
-Ce
-Ce
+nQ
+tr
 iJ
 Pi
-Ce
+Yj
 Ci
-Ah
-Ci
-Ce
-Ce
-Ce
-Ce
+dL
+FD
+FD
+FD
+FD
+FD
 xW
-Ce
-Ce
-Ce
+FD
+FD
+FD
 Ce
 iJ
 Jj
@@ -1495,10 +1641,10 @@ tp
 Hf
 iJ
 pc
-Ce
-Ce
-Ce
-Ce
+we
+tr
+tr
+Tf
 iJ
 iJ
 iJ
@@ -1567,10 +1713,10 @@ tp
 Hf
 iJ
 iJ
-Ce
+nQ
 pc
-Ce
-pc
+nQ
+iJ
 iJ
 Ce
 iJ
@@ -1643,7 +1789,7 @@ iJ
 iJ
 iJ
 iJ
-iJ
+Ce
 Ce
 iJ
 tK
@@ -2055,16 +2201,16 @@ Ce
 Ce
 Ce
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -2127,16 +2273,16 @@ Ce
 Ce
 Ce
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -2198,17 +2344,17 @@ Ce
 (17,1,1) = {"
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
 Ce
 Ce
 Ce
@@ -2270,17 +2416,17 @@ Ce
 (18,1,1) = {"
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
 Ce
 Ce
 Ce
@@ -2342,17 +2488,17 @@ Ce
 (19,1,1) = {"
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
 Ce
 Ce
 Ce
@@ -2414,7 +2560,6 @@ Ce
 (20,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2425,7 +2570,8 @@ mm
 mm
 mm
 mm
-Ce
+mm
+mm
 mm
 mm
 mm
@@ -2486,7 +2632,6 @@ Ce
 (21,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2497,7 +2642,8 @@ mm
 mm
 mm
 mm
-Ce
+mm
+mm
 mm
 mm
 mm
@@ -2558,7 +2704,6 @@ Ce
 (22,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2569,7 +2714,8 @@ mm
 mm
 mm
 mm
-Ce
+mm
+mm
 mm
 mm
 mm
@@ -2630,7 +2776,6 @@ Ce
 (23,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2641,7 +2786,8 @@ mm
 mm
 mm
 mm
-Ce
+mm
+mm
 mm
 mm
 mm
@@ -2702,17 +2848,17 @@ Ce
 (24,1,1) = {"
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
-mm
 Ce
 Ce
 Ce
@@ -2774,7 +2920,6 @@ Ce
 (25,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2786,6 +2931,7 @@ mm
 mm
 mm
 Ce
+iJ
 iJ
 iJ
 iJ
@@ -2846,7 +2992,6 @@ Ce
 (26,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2859,6 +3004,7 @@ mm
 mm
 Ce
 iJ
+Ce
 Ce
 Ce
 iJ
@@ -2918,7 +3064,6 @@ Ce
 (27,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -2931,6 +3076,7 @@ mm
 mm
 Ce
 iJ
+Ce
 Ce
 Ce
 iJ
@@ -2990,7 +3136,6 @@ Ce
 (28,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -3003,6 +3148,7 @@ mm
 mm
 Ce
 iJ
+Ce
 Ce
 bT
 Ce
@@ -3062,7 +3208,6 @@ Ce
 (29,1,1) = {"
 Ce
 Ce
-Ce
 mm
 mm
 mm
@@ -3075,6 +3220,7 @@ mm
 mm
 Ce
 iJ
+Ce
 Ce
 Ce
 Ce
@@ -3134,19 +3280,19 @@ Ce
 (30,1,1) = {"
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
 iJ
+Ce
 Ce
 Ce
 Ce
@@ -3206,18 +3352,18 @@ Ce
 (31,1,1) = {"
 Ce
 Ce
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
+iJ
 iJ
 iJ
 Ce
@@ -3564,8 +3710,8 @@ Ce
 Ce
 "}
 (36,1,1) = {"
-Ce
-Jr
+ga
+XM
 eH
 MU
 Mi
@@ -3636,8 +3782,8 @@ Ce
 Ce
 "}
 (37,1,1) = {"
-Ce
-Jr
+ck
+If
 RX
 Fd
 Kj
@@ -3710,8 +3856,8 @@ Ce
 (38,1,1) = {"
 Ce
 TJ
-bK
-bK
+Db
+lF
 ct
 de
 uv
@@ -3782,8 +3928,8 @@ Ce
 (39,1,1) = {"
 Ce
 Ce
-Ce
-Ce
+ck
+Xx
 Ce
 Ce
 Ce
@@ -4649,7 +4795,7 @@ Jj
 gW
 gW
 Ce
-Ka
+Ce
 Ce
 Ce
 Ce
@@ -4721,8 +4867,8 @@ Jj
 TI
 TI
 Ce
-ra
-fA
+Ce
+Ce
 Ce
 Ce
 Ce
@@ -4793,7 +4939,7 @@ Jj
 GH
 GH
 Ce
-jq
+Ce
 Ce
 Ce
 Ce
@@ -4865,7 +5011,7 @@ Ce
 Ce
 Ce
 Ce
-xV
+Ce
 Ce
 Ce
 Ce
@@ -4932,16 +5078,16 @@ Ce
 Ce
 "}
 (55,1,1) = {"
+Ka
 Ce
 Ce
 Ce
 Ce
 Ce
-rm
-ez
 Ce
 Ce
-Jr
+ga
+XM
 eH
 MU
 MU
@@ -5004,16 +5150,16 @@ Ce
 Ce
 "}
 (56,1,1) = {"
+ra
+fA
 Ce
 Ce
 Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Jr
+ck
+If
 RX
 Fd
 Kj
@@ -5076,7 +5222,7 @@ Ce
 Ce
 "}
 (57,1,1) = {"
-Ce
+jq
 Ce
 Ce
 Ce
@@ -5086,8 +5232,8 @@ Ce
 Ce
 Ce
 TJ
-bK
-bK
+Db
+lF
 ct
 de
 de
@@ -5148,6 +5294,7 @@ Ce
 Ce
 "}
 (58,1,1) = {"
+xV
 Ce
 Ce
 Ce
@@ -5157,9 +5304,8 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
+ck
+Xx
 Ce
 Ce
 Ce
@@ -5220,8 +5366,8 @@ Ce
 Ce
 "}
 (59,1,1) = {"
-Ce
-Ce
+rm
+ez
 Ce
 Ce
 Ce
