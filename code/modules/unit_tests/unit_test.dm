@@ -111,7 +111,7 @@ GLOBAL_VAR(test_log)
 		log_world("::error file=[file],line=[line],title=[test_path]::[text]")
 
 		// Normal log message
-		log_entry += "\tREASON #[reasonID]: [text] at [file]:[line]"
+		log_entry += "\tFAILURE #[reasonID]: [text] at [file]:[line]"
 
 	var/message = log_entry.Join("\n")
 	log_test(message)

@@ -111,6 +111,13 @@
 	crate_name = "tank transfer valve crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
+/datum/supply_pack/tools/anglegrinder
+	name = "Angle Grinder"
+	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
+	cost = 2000
+	contains = list(/obj/item/gear_pack/anglegrinder)
+	crate_name = "Angle Grinder"
+
 /*
 		Liquid tanks
 */
