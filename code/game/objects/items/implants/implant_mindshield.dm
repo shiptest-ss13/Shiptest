@@ -28,10 +28,7 @@
 			deconverted = TRUE
 
 		if(!silent)
-			if(target.mind in SSticker.mode.cult)
-				to_chat(target, "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
-			else
-				to_chat(target, "<span class='notice'>You feel a sense of peace and security. You are now protected from brainwashing.</span>")
+			to_chat(target, "<span class='notice'>You feel a sense of peace and security. You are now protected from brainwashing.</span>")
 		ADD_TRAIT(target, TRAIT_MINDSHIELD, "implant")
 		target.sec_hud_set_implants()
 		if(deconverted)
