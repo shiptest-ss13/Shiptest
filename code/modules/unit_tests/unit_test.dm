@@ -99,6 +99,7 @@ GLOBAL_VAR(test_log)
 	GLOB.current_test = test
 	var/duration = REALTIMEOFDAY
 
+	log_world("::group::[test_path]")
 	test.Run()
 
 	duration = REALTIMEOFDAY - duration
@@ -111,7 +112,6 @@ GLOBAL_VAR(test_log)
 	var/test_output_desc = "[test_path]"
 	var/message = ""
 
-	log_world("::group::[test_path]")
 	for(var/reasonID in 1 to LAZYLEN(fail_reasons))
 		var/text = fail_reasons[reasonID][1]
 		var/file = fail_reasons[reasonID][2]
