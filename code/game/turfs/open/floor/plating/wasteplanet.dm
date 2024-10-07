@@ -33,15 +33,15 @@
 	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/plasteel/wasteplanet
-  baseturfs = /turf/open/floor/plating/wasteplanet
+	baseturfs = /turf/open/floor/plating/wasteplanet
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-  light_color = COLOR_WASTEPLANET_LIGHT
+	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/plasteel/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
 /turf/open/floor/plasteel/dark/wasteplanet
-  baseturfs = /turf/open/floor/plating/wasteplanet
+	baseturfs = /turf/open/floor/plating/wasteplanet
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	light_color = COLOR_WASTEPLANET_LIGHT
 
