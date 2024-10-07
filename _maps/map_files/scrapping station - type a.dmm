@@ -4,6 +4,13 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"aU" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/structure/curtain,
+/turf/open/floor/plastic,
+/area/space)
 "cu" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -43,12 +50,6 @@
 "gV" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
-/area/space)
-"hj" = (
-/obj/structure/railing{
-	dir = 5
-	},
-/turf/open/floor/plasteel/sepia,
 /area/space)
 "hl" = (
 /obj/machinery/power/terminal{
@@ -223,12 +224,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"By" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/plasteel/sepia,
-/area/space)
 "BS" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -277,13 +272,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"JU" = (
-/obj/structure/toilet{
-	dir = 4
-	},
-/obj/structure/curtain,
-/turf/open/floor/plastic,
 /area/space)
 "Ki" = (
 /obj/machinery/power/terminal{
@@ -336,12 +324,6 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"PF" = (
-/obj/structure/railing{
-	dir = 6
-	},
-/turf/open/floor/plasteel/sepia,
 /area/space)
 "PX" = (
 /obj/machinery/shower{
@@ -1456,16 +1438,16 @@ Sc
 jS
 Sc
 Sc
-JU
-JU
+aU
+aU
 Sc
 PX
 PX
 Sc
 Sc
 Sc
-Sc
-Sc
+Eb
+Eb
 Eb
 Eb
 Eb
@@ -1544,11 +1526,11 @@ gv
 gv
 gv
 Sc
-KD
-KD
-KD
-Sc
-Sc
+WD
+Eb
+Eb
+Eb
+Eb
 Eb
 Eb
 Eb
@@ -1626,13 +1608,13 @@ XX
 Sc
 Sc
 Sc
-KD
-KD
-KD
-Sc
-Sc
-Eb
 WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Eb
 Sc
 Qd
@@ -1707,15 +1689,15 @@ XX
 XX
 XX
 Sc
-KD
-KD
-KD
-KD
 WD
+WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Sc
-Sc
-WD
-WD
 Sc
 Qd
 jS
@@ -1789,16 +1771,16 @@ XX
 XX
 XX
 Sc
-hj
-By
-By
-PF
-Va
-Sc
-Sc
 WD
 WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Sc
+Qd
 Qd
 jS
 jS
@@ -1873,13 +1855,13 @@ XX
 Sc
 WD
 WD
-WD
-WD
-WD
-WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Sc
-WD
-WD
 Sc
 Qd
 jS
@@ -1955,13 +1937,13 @@ XX
 Sc
 WD
 WD
-WD
-WD
-WD
-WD
-Sc
-WD
-WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Sc
 Qd
 jS
@@ -2037,15 +2019,15 @@ XX
 Sc
 WD
 WD
-WD
-WD
-WD
-WD
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
 Sc
-WD
-WD
 Sc
-Qd
 jS
 jS
 jS
@@ -2119,15 +2101,15 @@ XX
 Sc
 WD
 WD
-WD
-WD
-WD
-WD
 Sc
-WD
-WD
 Sc
-Qd
+Eb
+Eb
+Eb
+Eb
+Eb
+Eb
+Sc
 jS
 jS
 jS
@@ -2199,16 +2181,16 @@ XX
 XX
 XX
 Sc
-Sc
-Sc
+WD
+WD
+WD
 Sc
 Sc
 Eb
 Eb
-Sc
-WD
-WD
-Sc
+Eb
+Eb
+Eb
 Sc
 jS
 jS
@@ -2443,11 +2425,11 @@ XX
 XX
 XX
 XX
-XX
+Sc
 Sc
 WD
 WD
-Sc
+WD
 Sc
 Sc
 Sc
@@ -2525,11 +2507,11 @@ XX
 XX
 XX
 XX
-XX
 Sc
 WD
 WD
 WD
+Sc
 Sc
 Eb
 Eb
@@ -2607,12 +2589,12 @@ Sc
 XX
 XX
 XX
-XX
 Sc
 WD
 WD
 WD
 Sc
+Eb
 Eb
 Eb
 Eb
@@ -2689,12 +2671,12 @@ Sc
 XX
 XX
 XX
-XX
 Sc
 WD
 WD
 WD
 Sc
+Eb
 Eb
 Eb
 Eb
