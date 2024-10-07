@@ -86,14 +86,12 @@ GLOBAL_VAR(test_log)
 	return instance
 
 /// Logs a test message. Will use GitHub action syntax found at https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
-/datum/unit_test/proc/log_for_test(text, priority, file, line)
-	var/map_name = SSmapping.current_map.map_name
-
+/datum/unit_test/proc/log_for_test(text, priority, file, line, test_path)
 	// Need to escape the text to properly support newlines.
 	var/annotation_text = replacetext(text, "%", "%25")
 	annotation_text = replacetext(annotation_text, "\n", "%0A")
 
-	log_world("::[priority] file=[file],line=[line],title=[map_name]: [type]::[annotation_text]")
+	log_world("::[priority] file=[file],line=[line],title=[test_path]: [type]::[annotation_text]")
 
 /proc/RunUnitTest(test_path, list/test_results)
 	var/datum/unit_test/test = new test_path
@@ -116,7 +114,7 @@ GLOBAL_VAR(test_log)
 		var/file = fail_reasons[reasonID][2]
 		var/line = fail_reasons[reasonID][3]
 
-		test.log_for_test(text, "error", file, line)
+		test.log_for_test(text, "error", file, line, test_path)
 
 		// Normal log message
 		log_entry += "\tFAILURE #[reasonID]: [text] at [file]:[line]"
