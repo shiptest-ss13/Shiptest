@@ -36,26 +36,7 @@
 			playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 	add_fingerprint(user)
 
-	if(istype(W, /obj/item/gun/energy/plasmacutter))
-		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
-		if(W.use_tool(src, user, 10, volume=100))
-			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
-			var/obj/item/stack/sheet/metal/M = new (loc, 2)
-			M.add_fingerprint(user)
-			qdel(src)
-
-			return
-
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
-		new /obj/item/stack/sheet/metal(get_turf(src))
-		W.play_tool_sound(src)
-		qdel(src)
-
-		return
-
-
-	else if(istype(W, /obj/item/stack))
+	if(istype(W, /obj/item/stack))
 		if(iswallturf(loc))
 			to_chat(user, "<span class='warning'>There is already a wall present!</span>")
 			return
@@ -231,6 +212,15 @@
 	else
 		return ..()
 
+/obj/structure/girder/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if(I.use_tool(src, user, 3 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart \the [src].</span>", "<span class='notice'>You cut apart \the [src].</span>")
+		deconstruct()
+		return TRUE
+
 // Screwdriver behavior for girders
 /obj/structure/girder/screwdriver_act(mob/user, obj/item/tool)
 	if(..())
@@ -324,10 +314,6 @@
 		new remains(loc)
 	qdel(src)
 
-/obj/structure/girder/narsie_act()
-	new /obj/structure/girder/cult(loc)
-	qdel(src)
-
 /obj/structure/girder/displaced
 	name = "displaced girder"
 	icon_state = "displaced"
@@ -347,63 +333,6 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
 		new remains(loc, 2)
-	qdel(src)
-
-
-
-//////////////////////////////////////////// cult girder //////////////////////////////////////////////
-
-/obj/structure/girder/cult
-	name = "runed girder"
-	desc = "Framework made of a strange and shockingly cold metal. It doesn't seem to have any bolts."
-	icon = 'icons/obj/cult.dmi'
-	icon_state= "cultgirder"
-	can_displace = FALSE
-
-/obj/structure/girder/cult/attackby(obj/item/W, mob/user, params)
-	add_fingerprint(user)
-	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0))
-			return
-
-		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
-		if(W.use_tool(src, user, 40, volume=50))
-			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
-			var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 1)
-			transfer_fingerprints_to(R)
-			qdel(src)
-
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 2)
-		transfer_fingerprints_to(R)
-		W.play_tool_sound(src)
-		qdel(src)
-
-	else if(istype(W, /obj/item/stack/sheet/mineral/hidden/hellstone))
-		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = W
-		if(R.get_amount() < 1)
-			to_chat(user, "<span class='warning'>You need at least one sheet of runed metal to construct a runed wall!</span>")
-			return 0
-		user.visible_message("<span class='notice'>[user] begins laying runed metal on [src]...</span>", "<span class='notice'>You begin constructing a runed wall...</span>")
-		if(do_after(user, 50, target = src))
-			if(R.get_amount() < 1)
-				return
-			user.visible_message("<span class='notice'>[user] plates [src] with runed metal.</span>", "<span class='notice'>You construct a runed wall.</span>")
-			R.use(1)
-			var/turf/T = get_turf(src)
-			T.PlaceOnTop(/turf/closed/wall/mineral/cult)
-			qdel(src)
-
-	else
-		return ..()
-
-/obj/structure/girder/cult/narsie_act()
-	return
-
-/obj/structure/girder/cult/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/mineral/hidden/hellstone(drop_location(), 1)
 	qdel(src)
 
 /obj/structure/girder/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
@@ -446,13 +375,6 @@
 			var/obj/item/stack/tile/bronze/B = new(drop_location(), 2)
 			transfer_fingerprints_to(B)
 			qdel(src)
-
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/tile/bronze/B = new(drop_location(), 2)
-		transfer_fingerprints_to(B)
-		W.play_tool_sound(src)
-		qdel(src)
 
 	else if(istype(W, /obj/item/stack/tile/bronze))
 		var/obj/item/stack/tile/bronze/B = W

@@ -1,8 +1,8 @@
 /obj/item/storage/guncase
 	name = "gun case"
 	desc = "A large box designed for holding firearms and magazines safely."
-	icon = 'icons/obj/guncase_48x32.dmi'
-	icon_state = "riflecase"
+	icon = 'icons/obj/guncase.dmi'
+	icon_state = "guncase"
 	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
@@ -13,7 +13,6 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
-
 
 /obj/item/storage/guncase/ComponentInitialize()
 	. = ..()
@@ -37,7 +36,6 @@
 /obj/item/storage/guncase/absolution
 /obj/item/storage/guncase/absolution/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
-
 
 /obj/item/storage/guncase/skm
 /obj/item/storage/guncase/skm/PopulateContents()
@@ -101,7 +99,7 @@
 	name = "pistol case"
 	desc = "A large box designed for holding pistols and magazines safely."
 	icon = 'icons/obj/guncase.dmi'
-	icon_state = "pistolcase"
+	icon_state = "guncase"
 	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12

@@ -8,23 +8,11 @@
 	canSmoothWith = null
 	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
 	sheet_amount = 1
-	girder_type = /obj/structure/girder/cult
-
 	max_integrity = 600
 
 /turf/closed/wall/mineral/cult/Initialize(mapload, inherited_virtual_z)
 	new /obj/effect/temp_visual/cult/turf(src)
 	. = ..()
-
-/turf/closed/wall/mineral/cult/Exited(atom/movable/AM, atom/newloc)
-	. = ..()
-	if(istype(AM, /mob/living/simple_animal/hostile/construct/harvester)) //harvesters can go through cult walls, dragging something with
-		var/mob/living/simple_animal/hostile/construct/harvester/H = AM
-		var/atom/movable/stored_pulling = H.pulling
-		if(stored_pulling)
-			stored_pulling.setDir(get_dir(stored_pulling.loc, newloc))
-			stored_pulling.forceMove(src)
-			H.start_pulling(stored_pulling, supress_message = TRUE)
 
 /turf/closed/wall/mineral/cult/artificer
 	name = "runed stone wall"

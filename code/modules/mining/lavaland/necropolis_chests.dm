@@ -15,14 +15,12 @@
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
 	var/loot = rand(1,29)
 	switch(loot)
-		if(1)
+		if(1,2)
 			new /obj/item/shared_storage/red(src)
-		if(2)
-			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
 			new /obj/item/necromantic_stone/lava(src)
 		if(5)
-			new /obj/item/clothing/glasses/godeye(src)
+			new /obj/item/pickaxe/diamond(src)
 		if(6)
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
@@ -93,7 +91,7 @@
 			if(3)
 				new /obj/item/necromantic_stone/lava(src)
 			if(5)
-				new /obj/item/clothing/glasses/godeye(src)
+				new /obj/item/pickaxe/diamond(src)
 			if(6)
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
@@ -149,34 +147,6 @@
 				new /obj/item/gun/energy/spur(src)
 			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-
-//KA modkit design discs
-/obj/item/disk/design_disk/modkit_disc
-	name = "KA Mod Disk"
-	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
-	illustration = "accel"
-	color = "#6F6F6F"
-	var/modkit_design = /datum/design/unique_modkit
-
-/obj/item/disk/design_disk/modkit_disc/Initialize()
-	. = ..()
-	blueprints[1] = new modkit_design
-
-/obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe
-	name = "Offensive Mining Explosion Mod Disk"
-	modkit_design = /datum/design/unique_modkit/offensive_turf_aoe
-
-/obj/item/disk/design_disk/modkit_disc/rapid_repeater
-	name = "Rapid Repeater Mod Disk"
-	modkit_design = /datum/design/unique_modkit/rapid_repeater
-
-/obj/item/disk/design_disk/modkit_disc/resonator_blast
-	name = "Resonator Blast Mod Disk"
-	modkit_design = /datum/design/unique_modkit/resonator_blast
-
-/obj/item/disk/design_disk/modkit_disc/bounty
-	name = "Death Syphon Mod Disk"
-	modkit_design = /datum/design/unique_modkit/bounty
 
 /datum/design/unique_modkit
 	category = list("Mining Designs", "Cyborg Upgrade Modules") //can't be normally obtained
@@ -728,7 +698,6 @@
 	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
 	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
 	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
 	H.put_in_hands(new /obj/item/melee/sword/claymore(H), TRUE)
 	H.equip_to_slot_or_del(new /obj/item/melee/spear(H), ITEM_SLOT_BACK)
@@ -1673,11 +1642,9 @@
 	name = "puzzling chest"
 
 /obj/structure/closet/crate/necropolis/puzzle/PopulateContents()
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
-			new /obj/item/soulstone/anybody(src)
-		if(2)
 			new /obj/item/wisp_lantern(src)
-		if(3)
+		if(2)
 			new /obj/item/prisoncube(src)

@@ -15,6 +15,7 @@
 	light_on = FALSE
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
+	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
@@ -40,6 +41,16 @@
 	var/lights = FALSE
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
+
+	///Vars for mech charges
+	var/charging = FALSE
+	var/charge_ready = TRUE
+	var/charge_cooldown = 50
+	var/charge_power_consume = 200
+	var/charge_distance = 5
+	var/charge_break_walls = FALSE
+	var/charge_toss_structures  = FALSE
+	var/charge_toss_mobs = FALSE
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
@@ -90,6 +101,7 @@
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/mech_defense_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
+	var/datum/action/innate/mecha/mech_charge_mode/charge_action = new
 	var/datum/effect_system/smoke_spread/smoke_system = new //not an action, but trigged by one
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
 	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
@@ -137,7 +149,7 @@
 	add_scanmod()
 	add_capacitor()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	log_message("[src.name] created.", LOG_MECHA)
 	GLOB.mechas_list += src //global mech list
 	prepare_huds()
@@ -176,7 +188,7 @@
 		AI.gib() //No wreck, no AI to recover
 		AI = null
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	equipment.Cut()
 
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
@@ -585,6 +597,8 @@
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
 		return 0
+	if(stopped)
+		return 0
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
@@ -643,6 +657,7 @@
 	step_silent = FALSE
 
 /obj/mecha/Bump(atom/obstacle)
+	var/atom/throw_target = get_edge_target_turf(obstacle, dir)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -654,6 +669,27 @@
 		forceMove(get_step(src,dir))
 		use_power(phasing_energy_drain)
 		addtimer(VARSET_CALLBACK(src, can_move, TRUE), step_in*3)
+	else if(charging)
+		if(charge_break_walls && iswallturf(obstacle))
+			var/turf/closed/wall/crushed = obstacle
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+			visible_message(span_danger("[src] smashes through [obstacle]"))
+			crushed.dismantle_wall(TRUE)
+		if(isobj(obstacle))
+			var/obj/object = obstacle
+			obstacle.mech_melee_attack(src)
+			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
+				object.throw_at(throw_target, 4, 3)
+			visible_message(span_danger("[src] crashes into [obstacle]!"))
+			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+		if(ishuman(obstacle))
+			var/mob/living/carbon/human/H = obstacle
+			H.throw_at(throw_target,4,3)
+			visible_message(span_danger("[src] slams into \the [obstacle], sending [obstacle.p_them()] flying!"))
+			playsound(H, 'sound/effects/bang.ogg', 100, FALSE, -1)
+			H.Paralyze(20)
+			H.adjustStaminaLoss(30)
+			H.apply_damage(rand(20,35), BRUTE)
 	else
 		if(..()) //mech was thrown
 			return
@@ -1212,3 +1248,30 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		else
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
+
+
+///////////////////////
+////// Charging /////
+///////////////////////
+
+/obj/mecha/proc/start_charge()
+	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 2)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)),0.5 SECONDS, TIMER_STOPPABLE)
+
+/obj/mecha/proc/handle_charge()
+	var/turf/mecha_loc = get_turf(src)
+	charging = TRUE
+	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
+	if(!charge_target)
+		charging = FALSE
+		return
+	cell.use(charge_power_consume)
+	walk_towards(src, charge_target, 0.7)
+	sleep(get_dist(src, charge_target) * 0.7)
+	charge_end()
+
+/obj/mecha/proc/charge_end()
+	walk(src,0)
+	charging = FALSE

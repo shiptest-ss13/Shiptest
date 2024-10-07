@@ -46,6 +46,10 @@
 	icon_state = "folder_sred"
 	desc = "A folder stamped \"Top Secret - Property of Cybersun Industries.\""
 
+/obj/item/folder/documents/syndicate/cybersun/biodynamics
+	document = /obj/item/documents/syndicate/cybersun/biodynamics
+	icon_state = "folder_sblue"
+
 /obj/item/folder/documents/syndicate/red
 	document = /obj/item/documents/syndicate/red
 	icon_state = "folder_sred"

@@ -305,7 +305,7 @@
 				if(!window_structure.fulltile)
 					continue
 			if(object.density)
-				to_chat(usr, "<span class='warning'>There is \a [object.name] here. You cant make \a [recipe.title] here!</span>")
+				to_chat(usr, "<span class='warning'>There is \a [object.name] here. You can't make \a [recipe.title] here!</span>")
 				return FALSE
 	if(recipe.placement_checks)
 		switch(recipe.placement_checks)
