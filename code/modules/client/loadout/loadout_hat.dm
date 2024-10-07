@@ -131,10 +131,6 @@
 	path = /obj/item/clothing/head/beanie/orange
 //Misc
 
-/datum/gear/hat/bowler
-	display_name = "bowler hat"
-	path = /obj/item/clothing/head/bowler
-
 /datum/gear/hat/that
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
