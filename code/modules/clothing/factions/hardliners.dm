@@ -215,3 +215,9 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+
+/obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)

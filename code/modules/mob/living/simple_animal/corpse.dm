@@ -55,15 +55,15 @@
 
 /datum/outfit/syndicateramzicorpse
 	name = "Ramzi Clique Commando Corpse"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset
 	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
-	id = /obj/item/card/id/syndicate
+	id = /obj/item/card/id/syndicate_command/crew_id
 
 
 /obj/effect/mob_spawn/human/corpse/syndicatestormtrooper

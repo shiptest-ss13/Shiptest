@@ -549,7 +549,7 @@
 	icon_state = "solgov_envirohelm"
 	item_state = "solgov_envirohelm"
 
-/obj/item/clothing/head/helmet/operator
+/obj/item/clothing/head/helmet/syndie
 	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"

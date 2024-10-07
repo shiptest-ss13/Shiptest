@@ -204,7 +204,7 @@
 
 // DEATH SQUADS
 /datum/admins/proc/makeDeathsquad()
-	return makeEmergencyresponseteam(/datum/ert/deathsquad)
+	return makeEmergencyresponseteam(/datum/ert/independent/deathsquad)
 
 // CENTCOM RESPONSE TEAM
 
@@ -226,6 +226,7 @@
 	.["mainsettings"]["spawn_admin"]["value"] = newtemplate.spawn_admin ? "Yes" : "No"
 	.["mainsettings"]["use_custom_shuttle"]["value"] = newtemplate.use_custom_shuttle ? "Yes" : "No"
 	.["mainsettings"]["spawn_at_outpost"]["value"] = newtemplate.spawn_at_outpost ? "Yes" : "No"
+	.["mainsettings"]["outpost_access"]["value"] = newtemplate.outpost_access ? "Yes" : "No"
 
 
 /datum/admins/proc/equipAntagOnDummy(mob/living/carbon/human/dummy/mannequin, datum/antagonist/antag)
@@ -280,7 +281,7 @@
 	if (ertemplate)
 		ertemplate = new ertemplate
 	else
-		ertemplate = new /datum/ert/centcom_official
+		ertemplate = new /datum/ert/independent
 
 	var/list/settings = list(
 		"preview_callback" = CALLBACK(src, PROC_REF(makeERTPreviewIcon)),
@@ -297,6 +298,7 @@
 		"spawn_admin" = list("desc" = "Spawn yourself as briefing officer", "type" = "boolean", "value" = "[(ertemplate.spawn_admin ? "Yes" : "No")]"),
 		"use_custom_shuttle" = list("desc" = "Use the ERT's custom shuttle (if it has one)", "type" = "boolean", "value" = "[(ertemplate.use_custom_shuttle ? "Yes" : "No")]"),
 		"spawn_at_outpost" = list("desc" = "Spawn the ERT/Dock the ERT at the Outpost", "type" = "boolean", "value" = "[(ertemplate.spawn_at_outpost ? "Yes" : "No")]"),
+		"outpost_access" = list("desc" = "Give ERT members outpost access", "type" = "boolean", "value" = "[(ertemplate.outpost_access ? "Yes" : "No")]")
 		)
 	)
 
@@ -318,7 +320,7 @@
 		ertemplate.teamsize = prefs["teamsize"]["value"]
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
-		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 8 are effectively toggles
+		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 9 are effectively toggles
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes"
 		ertemplate.leader_experience = prefs["leader_experience"]["value"] == "Yes"
 		ertemplate.random_names = prefs["random_names"]["value"] == "Yes"
@@ -326,6 +328,7 @@
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		ertemplate.use_custom_shuttle = prefs["use_custom_shuttle"]["value"] == "Yes"
 		ertemplate.spawn_at_outpost = prefs["spawn_at_outpost"]["value"] == "Yes"
+		ertemplate.outpost_access = prefs["outpost_access"]["value"] == "Yes"
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
@@ -494,13 +497,16 @@
 		if(teamSpawned)
 			// guestbook
 			for(var/datum/mind/member in ert_team.members)
-				var/member_mob = member.current
+				var/mob/living/carbon/human/member_mob = member.current
 				for(var/datum/mind/other_member in ert_team.members)
 					// skip yourself
 					if(other_member.name == member.name)
 						continue
 					var/mob/living/carbon/human/other_member_mob = other_member.current
 					member.guestbook.add_guest(member_mob, other_member_mob, other_member_mob.real_name, other_member_mob.real_name, TRUE)
+				if(ertemplate.outpost_access && istype(member_mob.wear_id, /obj/item/card/id))
+					var/obj/item/card/id/id = member_mob.wear_id
+					id.access += list(ACCESS_CENT_GENERAL)
 
 			message_admins("[ertemplate.rename_team] has spawned with the mission: [ertemplate.mission]")
 

@@ -84,7 +84,7 @@
 	name = "Saint-Roumain Militia - Hunter"
 	id_assignment = "Hunter"
 	jobtype = /datum/job/officer
-	job_icon = "hsrm_hunter"
+	job_icon = "srm_hunter"
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
