@@ -13,7 +13,6 @@
 	speak_chance = 0
 	stat_attack = HARD_CRIT
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
-	atmos_requirements = NORMAL_ATMOS_REQS
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
 	faction = list(FACTION_ANTAG_SYNDICATE)

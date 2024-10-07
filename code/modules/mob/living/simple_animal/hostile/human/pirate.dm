@@ -5,7 +5,6 @@
 	icon_living = "piratemelee"
 	icon_dead = "pirate_dead"
 	speak_chance = 0
-	atmos_requirements = NORMAL_ATMOS_REQS
 	speak_emote = list("yarrs")
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate,
 			/obj/item/melee/transforming/energy/sword/saber/pirate)

@@ -30,7 +30,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
 
-	atmos_requirements = NORMAL_ATMOS_REQS
 	unsuitable_atmos_damage = 15
 	minbodytemp = 180
 	status_flags = CANPUSH

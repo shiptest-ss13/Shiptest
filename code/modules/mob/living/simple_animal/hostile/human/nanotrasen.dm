@@ -7,7 +7,6 @@
 	stat_attack = HARD_CRIT
 	melee_damage_upper = 15
 	loot = list(/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
-	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(ROLE_DEATHSQUAD)
 	check_friendly_fire = TRUE
 	dodging = TRUE

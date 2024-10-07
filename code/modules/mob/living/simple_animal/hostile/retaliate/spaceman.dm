@@ -51,7 +51,6 @@
 	faction = list("nanotrasenprivate")
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
-	atmos_requirements = NORMAL_ATMOS_REQS
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
 	search_objects = 1

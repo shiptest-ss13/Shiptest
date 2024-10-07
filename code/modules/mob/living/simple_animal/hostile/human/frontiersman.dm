@@ -10,7 +10,6 @@
 	melee_damage_upper = 15
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/melee/knife/survival)
-	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
 

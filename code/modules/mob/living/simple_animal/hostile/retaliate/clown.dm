@@ -29,7 +29,6 @@
 	del_on_death = 1
 	loot = list(/obj/effect/mob_spawn/human/clown/corpse)
 
-	atmos_requirements = NORMAL_ATMOS_REQS
 	minbodytemp = 270
 	maxbodytemp = 370
 	unsuitable_atmos_damage = 10
