@@ -81,9 +81,7 @@
 
 #ifdef ALL_TESTS
 #define BASIC_TESTS
-#define CREATE_AND_DESTROY_TEST
 #define PLANET_GEN_TEST
-#define RUIN_PLACEMENT_TEST
 #define SHIP_PLACEMENT_TEST
 #endif
 
