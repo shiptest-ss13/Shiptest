@@ -2,14 +2,17 @@ name: Checks
 on:
   push:
     branches:
-      - master
-      - 'gh-readonly-queue/master/**'
+    - master
+    - 'project/**'
+    - 'gh-readonly-queue/master/**'
+    - 'gh-readonly-queue/project/**'
   pull_request:
     branches:
-      - master
+    - master
+    - 'project/**'
   merge_group:
     branches:
-      - master
+    - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -99,10 +102,11 @@ jobs:
           cat check_regex_output.txt
 
   compile_all_maps:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Compile Maps
-    needs: run_linters
+    needs: start_gate
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
 
@@ -122,9 +126,9 @@ jobs:
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Integration Tests
-    needs: run_linters
+    needs: start_gate
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -153,8 +157,8 @@ jobs:
 #      minor: ${{ matrix.minor }}
 
   test_windows:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Windows Build
+    needs: start_gate
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -189,7 +193,7 @@ jobs:
   completion_gate: # Serves as a non-moving target for branch rulesets
     if: always() && !cancelled()
     name: Completion Gate
-    needs: [ test_windows, compile_all_maps, run_linters ]
+    needs: [ test_windows, compile_all_maps, run_linters, run_all_tests]
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether the needed jobs succeeded or failed
