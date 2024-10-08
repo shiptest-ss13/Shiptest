@@ -265,7 +265,7 @@
 	update_appearance()
 
 /obj/machinery/power/shieldwallgen/proc/kill_shield()
-	visible_message(span_danger("The [src.name] shuts down due to lack of power!"), "If this message is ever seen, something is wrong.",span_hear("You hear heavy droning fade out.</"))
+	visible_message(span_danger("The [src.name] shuts down due to lack of power!"), "If this message is ever seen, something is wrong.",span_hear("You hear heavy droning fade out."))
 	log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
 	active = FALSE
 	crashing = FALSE
