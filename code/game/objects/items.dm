@@ -30,8 +30,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/supports_variations = null
 
 	///If set, kepori wearing this use this instead of their clothing file
-	var/kepoi_override_icon
-
+	var/kepori_override_icon
 	///If set, vox wearing this use this instead of their clothing file
 	var/vox_override_icon
 
