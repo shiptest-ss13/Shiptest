@@ -1,6 +1,7 @@
 /datum/supply_pack/ammo
 	group = "Ammunition"
 	crate_type = /obj/structure/closet/crate/secure/gear
+	crate_name = "ammo crate"
 
 /*
 		Pistol ammo
@@ -420,3 +421,9 @@
 	desc = "Contains a fifty-round box of .44 roumain hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/a44roum_hp)
 	cost = 500
+
+/datum/supply_pack/ammo/c22lr
+	name = ".22 LR Ammo Box Crate"
+	desc = "Contains a fifty-round ammo box for refilling .22 LR weapons."
+	contains = list(/obj/item/storage/box/ammo/c22lr)
+	cost = 250
