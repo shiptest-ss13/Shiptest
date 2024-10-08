@@ -121,6 +121,7 @@
 		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
 		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
+		"stamp-biodynamics" = 'icons/stamp_icons/large_stamp-biodynamics.png',
 		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png'
 	)
 
@@ -241,7 +242,6 @@
 		"hierophant" = 'icons/UI_Icons/Achievements/Boss/hierophant.png',
 		"legion" = 'icons/UI_Icons/Achievements/Boss/legion.png',
 		"miner" = 'icons/UI_Icons/Achievements/Boss/miner.png',
-		"swarmer" = 'icons/UI_Icons/Achievements/Boss/swarmer.png',
 		"tendril" = 'icons/UI_Icons/Achievements/Boss/tendril.png',
 		"featofstrength" = 'icons/UI_Icons/Achievements/Misc/featofstrength.png',
 		"helbital" = 'icons/UI_Icons/Achievements/Misc/helbital.png',

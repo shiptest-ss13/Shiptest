@@ -124,6 +124,10 @@
 			qdel(src)
 		..()
 
+// No busting open (used to disallow angle grinder cheesing
+/obj/structure/closet/crate/secure/loot/bust_open()
+	boom()
+
 /obj/structure/closet/crate/secure/loot/proc/spawn_loot()
 	var/loot = rand(1,100) //100 different crates with varying chances of spawning
 	switch(loot)

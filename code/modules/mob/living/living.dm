@@ -1133,24 +1133,6 @@
 /mob/living/carbon/alien/update_stamina()
 	return
 
-/mob/living/proc/owns_soul()
-	if(mind)
-		return mind.soulOwner == mind
-	return TRUE
-
-/mob/living/proc/return_soul()
-	hellbound = 0
-	if(mind)
-		var/datum/antagonist/devil/devilInfo = mind.soulOwner.has_antag_datum(/datum/antagonist/devil)
-		if(devilInfo)//Not sure how this could be null, but let's just try anyway.
-			devilInfo.remove_soul(mind)
-		mind.soulOwner = mind
-
-/mob/living/proc/check_acedia()
-	if(mind && mind.has_objective(/datum/objective/sintouched/acedia))
-		return TRUE
-	return FALSE
-
 /mob/living/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	stop_pulling()
 	. = ..()
