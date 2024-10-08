@@ -421,3 +421,9 @@
 	desc = "Contains a fifty-round box of .44 roumain hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/a44roum/hp)
 	cost = 500
+
+/datum/supply_pack/ammo/c299
+	name = ".299 Eoehoma Caseless Ammo Box Crate"
+	desc = "Contains a 120-round box of .299 Caseless ammo from the defunct Eoehoma. Used for the E-40 Hybrid Rifle."
+	contains = list(/obj/item/ammo_box/c299)
+	cost = 250
