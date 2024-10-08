@@ -9,7 +9,6 @@
 						/obj/item/book_of_babel,
 						/obj/item/wisp_lantern,
 						/obj/item/reagent_containers/glass/bottle/potion/flight,
-						/obj/item/clothing/suit/space/hardsuit/cult,
 						/obj/item/voodoo,
 						/obj/item/grenade/clusterbuster/inferno,
 						/obj/item/clothing/neck/memento_mori,

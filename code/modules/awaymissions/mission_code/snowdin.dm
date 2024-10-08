@@ -129,12 +129,6 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
 	requires_power = TRUE
 
-/area/shuttle/snowdin/elevator1
-	name = "Excavation Elevator"
-
-/area/shuttle/snowdin/elevator2
-	name = "Mining Elevator"
-
 //liquid plasma!!!!!!//
 
 /turf/open/floor/plasteel/dark/snowdin
