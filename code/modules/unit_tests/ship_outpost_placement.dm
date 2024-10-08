@@ -2,6 +2,9 @@
 	// checks all shuttle templates, including those
 	// disabled or intended as subshuttles
 	for(var/name as anything in SSmapping.shuttle_templates)
+		if(!SSmapping.shuttle_templates[name]::enabled)
+			log_world("Skipping [SSmapping.shuttle_templates[name]] because its admin spawn")
+			continue
 		var/datum/map_template/shuttle/map = SSmapping.shuttle_templates[name]
 		log_world("Loading [map.name]")
 		try
