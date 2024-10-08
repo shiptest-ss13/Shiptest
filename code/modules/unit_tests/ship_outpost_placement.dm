@@ -6,7 +6,7 @@
 		if(!map.enabled)
 			log_world("Skipping [map.name] because its admin spawn")
 			continue
-		log_world("Loading [map.name]")
+		log_test("Loading [map.name]")
 		try
 			// they'll spawn in empty space, and won't be docked
 			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
@@ -16,10 +16,10 @@
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
 		var/datum/overmap/outpost/test_outpost = new outpost_type()
 
-		log_world("Testing [test_outpost.type]")
+		log_test("Testing [test_outpost.type]")
 
 		for(var/datum/overmap/ship/controlled/cur_ship as anything in SSovermap.controlled_ships)
-			log_world(" - Docking [cur_ship.source_template.name]")
+			log_test(" - Docking [cur_ship.source_template.name]")
 
 			// already-docked ships are ignored.
 			// this was added to stop runtimes when subshuttles, which were docked to their parent ship, attempted to dock to the outpost as part of this test.
