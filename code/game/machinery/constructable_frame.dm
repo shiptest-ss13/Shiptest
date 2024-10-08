@@ -13,14 +13,22 @@
 		. += "It has \a [circuit] installed."
 
 
-/obj/structure/frame/deconstruct(disassembled = TRUE)
+/obj/structure/frame/deconstruct(disassembled = TRUE, scrapped = FALSE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/metal(loc, 5)
-		if(circuit)
+		if(circuit && !scrapped)
 			circuit.forceMove(loc)
 			circuit = null
 	qdel(src)
 
+/obj/structure/frame/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if(I.use_tool(src, user, 3 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart \the [src].</span>", "<span class='notice'>You cut apart \the [src].</span>")
+		deconstruct()
+		return TRUE
 
 /obj/structure/frame/machine
 	name = "machine frame"
