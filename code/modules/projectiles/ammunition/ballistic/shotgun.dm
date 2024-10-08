@@ -7,8 +7,7 @@
 	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/slug
-	stack_size = 8 //Not too big of a handful, not too small
-	bullet_per_box = 25
+	stack_size = 8 //Make sure this matches max_ammo variable on prefilled stacks (magazine/ammo_stack/prefilled)
 
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 

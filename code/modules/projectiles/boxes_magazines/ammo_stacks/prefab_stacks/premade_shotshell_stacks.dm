@@ -1,6 +1,6 @@
 // Shotshells
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun
-	max_ammo = 8 //make sure these values are consistent across the board with stack_size variable.
+	max_ammo = 8 //make sure these values are consistent across the board with stack_size variable on respective ammo_casing
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
