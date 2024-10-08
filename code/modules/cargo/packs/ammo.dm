@@ -426,6 +426,7 @@
 	name = ".299 Eoehoma Caseless Ammo Box Crate"
 	desc = "Contains a 120-round box of .299 Caseless ammo from the defunct Eoehoma. Used for the E-40 Hybrid Rifle."
 	contains = list(/obj/item/ammo_box/c299)
+	cost = 250
 
 /datum/supply_pack/ammo/c22lr
 	name = ".22 LR Ammo Box Crate"
