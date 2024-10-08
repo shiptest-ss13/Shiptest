@@ -1,11 +1,34 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"av" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "aA" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"aF" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"bB" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "cu" = (
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"cE" = (
+/obj/machinery/door/airlock/engineering,
+/turf/open/floor/plating,
 /area/space)
 "dL" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -30,6 +53,21 @@
 	},
 /turf/open/floor/plastic,
 /area/space)
+"fG" = (
+/obj/structure/table,
+/obj/structure/table,
+/obj/item/storage/bag/tray/cafeteria,
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 2
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 4
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "gf" = (
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/sepia,
@@ -48,6 +86,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "hl" = (
@@ -62,6 +101,17 @@
 "hJ" = (
 /turf/open/floor/plasteel/mono,
 /area/space)
+"hQ" = (
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"jz" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "jS" = (
 /turf/open/space/basic,
 /area/space)
@@ -73,6 +123,17 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"lb" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/white,
+/area/space)
+"mb" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "md" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border,
@@ -91,14 +152,34 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/space)
+"ns" = (
+/obj/structure/table,
+/obj/structure/reagent_dispensers/servingdish{
+	name = "expired slurry";
+	desc = "A dish full of food slop for your bowl. Still just as appetizing as the day it was served."
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "oc" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"of" = (
+/obj/structure/filingcabinet/double,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "om" = (
 /turf/closed/wall/mineral/plastitanium,
+/area/space)
+"op" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"or" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/space)
 "oR" = (
 /obj/structure/rack,
@@ -106,6 +187,15 @@
 	dir = 4
 	},
 /turf/open/floor/vault,
+/area/space)
+"oY" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"pd" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/secure_data/laptop,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "pZ" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -120,6 +210,16 @@
 	id = "lib_engine_blast"
 	},
 /turf/open/floor/plating,
+/area/space)
+"qM" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/turf/open/floor/plastic,
 /area/space)
 "sc" = (
 /obj/machinery/door/window/southleft{
@@ -154,6 +254,12 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"uv" = (
+/obj/structure/windoor_assembly{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "uF" = (
 /obj/structure/table/reinforced,
 /obj/item/desk_flag/gezena{
@@ -162,13 +268,28 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"uS" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/rack,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "vi" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space)
+"vk" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "vA" = (
 /obj/structure/closet/secure_closet/freezer/kitchen/wall/directional/north,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"vX" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "wb" = (
 /obj/structure/chair/office/dark{
@@ -182,6 +303,12 @@
 "wp" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/space/basic,
+/area/space)
+"wy" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "wz" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -199,12 +326,40 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"xZ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/space)
+"yv" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "yS" = (
 /obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "zu" = (
 /obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"zF" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Av" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -227,6 +382,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "BS" = (
@@ -234,9 +390,22 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/space)
+"BV" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Cm" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Cx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = -8;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -246,6 +415,10 @@
 /area/space)
 "Eb" = (
 /turf/open/floor/plating,
+/area/space)
+"Ec" = (
+/obj/machinery/power/smes,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "FT" = (
 /obj/structure/sink{
@@ -265,9 +438,24 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/space/basic,
 /area/space)
+"GI" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ha" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Hd" = (
+/obj/structure/closet/wall/red/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Hi" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/flag/gezena{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "HI" = (
 /turf/open/floor/pod,
@@ -278,11 +466,28 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Iy" = (
+/obj/machinery/door/window/southleft,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Js" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"JM" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "JU" = (
 /obj/structure/toilet{
 	dir = 4
 	},
 /obj/structure/curtain,
+/obj/structure/window/reinforced/tinted,
 /turf/open/floor/plastic,
 /area/space)
 "Ki" = (
@@ -290,6 +495,12 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/space)
+"Kn" = (
+/obj/machinery/cryopod{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "KD" = (
 /turf/open/floor/plasteel/sepia,
@@ -337,10 +548,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"PE" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/white,
+/area/space)
 "PF" = (
 /obj/structure/railing{
 	dir = 6
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "PX" = (
@@ -355,6 +571,11 @@
 "Qd" = (
 /turf/open/floor/engine/hull,
 /area/space)
+"QD" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/terminal,
+/turf/open/floor/plating,
+/area/space)
 "QI" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner{
 	dir = 1
@@ -364,6 +585,22 @@
 /area/space)
 "Ra" = (
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Ru" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/space)
+"RA" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"RW" = (
+/obj/machinery/power/ship_gravity,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/space)
 "Sc" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -379,6 +616,10 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"SY" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "TT" = (
 /obj/structure/chair{
 	dir = 4
@@ -392,6 +633,10 @@
 "Uj" = (
 /obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating,
+/area/space)
+"UQ" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Va" = (
 /turf/open/floor/plasteel/stairs{
@@ -410,6 +655,17 @@
 "Vs" = (
 /obj/structure/closet/secure_closet/captains,
 /turf/open/floor/plasteel/sepia,
+/area/space)
+"VM" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/obj/structure/sink/kitchen{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Wk" = (
+/obj/structure/closet/wall/orange/directional/north,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Ws" = (
 /obj/structure/grille,
@@ -967,13 +1223,13 @@ jS
 jS
 go
 go
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+go
+Uj
+Uj
+Uj
+Uj
+Uj
+go
 go
 go
 jS
@@ -1049,13 +1305,13 @@ jS
 go
 go
 go
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+go
+en
+en
+en
+en
+en
+go
 go
 go
 go
@@ -1129,17 +1385,17 @@ jS
 jS
 go
 go
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+Bc
+Bc
+Bc
+Ru
+Ru
+Ru
+Ru
+Ru
+Sc
+hQ
+hQ
 go
 go
 jS
@@ -1210,19 +1466,19 @@ jS
 jS
 jS
 go
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+xZ
+Sc
+Ra
+QD
+Ec
 go
 jS
 jS
@@ -1292,19 +1548,19 @@ jS
 jS
 go
 go
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+Bc
+xZ
+Sc
+Ra
+QD
+Ec
 go
 go
 Qd
@@ -1367,10 +1623,10 @@ jS
 jS
 jS
 jS
-Sc
-Sc
-Sc
-Sc
+jS
+jS
+jS
+jS
 jS
 go
 Sc
@@ -1380,13 +1636,13 @@ Sc
 Sc
 Sc
 Sc
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+xZ
+xZ
+xZ
+cE
+or
+or
+or
 Sc
 go
 Qd
@@ -1449,27 +1705,27 @@ jS
 jS
 jS
 jS
-Sc
-Nq
-gv
-Sc
+jS
+jS
+jS
+jS
 jS
 Sc
 Sc
 JU
-JU
+qM
 Sc
 PX
 PX
 Sc
+RW
+vX
+vX
 Sc
-Sc
-Sc
-Sc
-Eb
-Eb
-Eb
-Eb
+Wk
+or
+Ra
+RA
 Sc
 Qd
 jS
@@ -1531,10 +1787,10 @@ jS
 jS
 jS
 jS
-Sc
-Nq
-gv
-Sc
+jS
+jS
+jS
+jS
 jS
 Sc
 FT
@@ -1544,14 +1800,14 @@ gv
 gv
 gv
 Sc
-KD
-KD
-KD
 Sc
 Sc
-Eb
-Eb
-Eb
+Sc
+Sc
+Wk
+or
+or
+Ra
 Sc
 Qd
 jS
@@ -1613,11 +1869,11 @@ jS
 jS
 jS
 jS
-Sc
-Sc
-FT
-Bc
 jS
+jS
+jS
+jS
+Sc
 Sc
 Sc
 Sc
@@ -1628,12 +1884,12 @@ Sc
 Sc
 KD
 KD
-KD
 Sc
 Sc
-Eb
-WD
-Eb
+Sc
+op
+or
+Ra
 Sc
 Qd
 jS
@@ -1695,27 +1951,27 @@ jS
 jS
 jS
 jS
-Sc
-eD
-gv
-Sc
+jS
+jS
+jS
 jS
 Sc
 XX
 XX
 XX
+Sc
 XX
-XX
+Kn
 Sc
 KD
 KD
 KD
 KD
-WD
+Bc
 Sc
 Sc
-WD
-WD
+mb
+mb
 Sc
 Qd
 jS
@@ -1777,12 +2033,12 @@ jS
 jS
 jS
 jS
-Sc
-WJ
-gv
-Sc
+jS
+jS
+jS
 jS
 Sc
+XX
 XX
 XX
 XX
@@ -1859,17 +2115,17 @@ jS
 jS
 jS
 jS
-Sc
-Sc
-Sc
-Sc
+jS
+jS
+jS
 jS
 Sc
 XX
 XX
 XX
+Sc
 XX
-XX
+Kn
 Sc
 WD
 WD
@@ -1947,16 +2203,16 @@ jS
 jS
 Sc
 Sc
-XX
-XX
-XX
-XX
+Sc
+Sc
+Sc
 XX
 Sc
-WD
-WD
-WD
-WD
+Sc
+bB
+bB
+bB
+bB
 WD
 WD
 Sc
@@ -2029,16 +2285,16 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
+aF
+aF
+JM
 XX
 XX
 Sc
-WD
-WD
-WD
-WD
+bB
+bB
+bB
+bB
 WD
 WD
 Sc
@@ -2111,9 +2367,9 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
+BV
+BV
+JM
 XX
 XX
 Sc
@@ -2128,7 +2384,7 @@ WD
 WD
 Sc
 Qd
-jS
+Qd
 jS
 jS
 jS
@@ -2193,9 +2449,9 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
+jz
+jz
+JM
 XX
 XX
 Sc
@@ -2210,7 +2466,7 @@ WD
 WD
 Sc
 Sc
-jS
+Qd
 jS
 jS
 jS
@@ -2275,9 +2531,9 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
+yv
+yv
+zF
 XX
 XX
 WD
@@ -2292,7 +2548,7 @@ WD
 WD
 WD
 Sc
-jS
+Qd
 jS
 jS
 jS
@@ -2357,12 +2613,12 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
-XX
-XX
-WD
+aF
+aF
+JM
+UQ
+wy
+Sc
 WD
 WD
 WD
@@ -2439,11 +2695,11 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
-XX
-XX
+BV
+BV
+JM
+GI
+PE
 Sc
 WD
 WD
@@ -2452,11 +2708,11 @@ Sc
 Sc
 Sc
 Sc
-Eb
-Eb
+Sc
+XX
+XX
 Sc
 Sc
-Qd
 jS
 jS
 jS
@@ -2521,24 +2777,24 @@ jS
 jS
 jS
 AR
-XX
-XX
-XX
-XX
-XX
+jz
+jz
+JM
+GI
+ns
 Sc
 WD
 WD
-WD
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+pd
+XX
+XX
+XX
+Cx
+XX
+XX
+Js
 Sc
-Qd
 jS
 jS
 jS
@@ -2604,23 +2860,23 @@ jS
 Sc
 Sc
 Sc
-XX
-XX
-XX
-XX
+Av
+av
+GI
+fG
 Sc
 WD
 WD
-WD
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+Hi
+XX
+XX
+SY
+Sv
+XX
+XX
+Js
 Sc
-Qd
 jS
 jS
 jS
@@ -2688,21 +2944,21 @@ Qd
 Sc
 XX
 XX
+VM
+lb
+Sc
+WD
+WD
+Sc
+of
 XX
 XX
+XX
+Iy
+XX
+XX
+Js
 Sc
-WD
-WD
-WD
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Sc
-Qd
 jS
 jS
 jS
@@ -2777,14 +3033,14 @@ WD
 WD
 Sc
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+uS
+uv
+uS
 Sc
-jS
+XX
+XX
+Js
+Sc
 jS
 jS
 jS
@@ -2851,22 +3107,22 @@ Eb
 Eb
 Eb
 Eb
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
 Eb
 Sc
+hJ
+hJ
+hJ
+hJ
+hJ
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
 Sc
-jS
+Hd
+vk
+Sc
+oY
+Sv
+Sc
+Sc
 jS
 jS
 jS
@@ -2933,21 +3189,21 @@ Eb
 Eb
 Eb
 Eb
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
 Eb
 Sc
-Sc
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
 Sc
 Sc
 Sc
 Sc
-go
+Sc
+Sc
+Sc
 jS
 jS
 jS
@@ -3015,17 +3271,17 @@ Eb
 Eb
 Eb
 Eb
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
 Eb
 Sc
-Eb
-Eb
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
+Sc
+XX
+XX
 Eb
 Eb
 go
@@ -3097,17 +3353,17 @@ Eb
 Eb
 Eb
 Eb
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
 Eb
 Sc
-Eb
-Eb
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
+Sc
+XX
+XX
 Eb
 Eb
 go
@@ -3179,17 +3435,17 @@ Eb
 Eb
 Eb
 Eb
+Eb
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
+XX
+XX
+XX
 Eb
 Eb
 go
@@ -3261,17 +3517,17 @@ Eb
 Eb
 Eb
 Eb
+Eb
 Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
+XX
+XX
+XX
 Eb
 Eb
 go
@@ -3343,17 +3599,17 @@ BS
 Eb
 Eb
 Eb
-Sc
-Eb
-Eb
-Eb
-Eb
-Eb
-Eb
 Eb
 Sc
-Eb
-Eb
+hJ
+hJ
+hJ
+hJ
+hJ
+hJ
+Sc
+XX
+XX
 Eb
 Eb
 go
