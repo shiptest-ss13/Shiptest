@@ -354,66 +354,6 @@
 	return !density
 
 /**
- * Is this atom currently located on centcom
- *
- * Specifically, is it on the z level and within the centcom areas
- *
- * You can also be in a shuttleshuttle during endgame transit
- *
- * Used in gamemode to identify mobs who have escaped and for some other areas of the code
- * who don't want atoms where they shouldn't be
- */
-/atom/proc/onCentCom()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(is_reserved_level(T))
-		for(var/A in SSshuttle.mobile)
-			var/obj/docking_port/mobile/M = A
-			if(M.launch_status == ENDGAME_TRANSIT)
-				for(var/place in M.shuttle_areas)
-					var/area/shuttle/shuttle_area = place
-					if(T in shuttle_area)
-						return TRUE
-
-	if(!is_centcom_level(T))//if not, don't bother
-		return FALSE
-
-	//Check for centcom itself
-	if(istype(T.loc, /area/centcom))
-		return TRUE
-
-	//Check for centcom shuttles
-	for(var/A in SSshuttle.mobile)
-		var/obj/docking_port/mobile/M = A
-		if(M.launch_status == ENDGAME_LAUNCHED)
-			for(var/place in M.shuttle_areas)
-				var/area/shuttle/shuttle_area = place
-				if(T in shuttle_area)
-					return TRUE
-
-/**
- * Is the atom in any of the centcom syndicate areas
- *
- * Either in the syndie base on centcom, or any of their shuttles
- *
- * Also used in gamemode code for win conditions
- */
-/atom/proc/onSyndieBase()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(!is_centcom_level(T))//if not, don't bother
-		return FALSE
-
-	if(istype(T.loc, /area/shuttle/syndicate) || istype(T.loc, /area/syndicate_mothership))
-		return TRUE
-
-	return FALSE
-
-/**
  * Is the atom in an away mission
  *
  * Must be in the away mission z-level to return TRUE
@@ -1286,6 +1226,8 @@
 			. = welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. = analyzer_act(user, I)
+		if(TOOL_DECONSTRUCT)
+			. |= deconstruct_act(user, I)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1365,6 +1307,10 @@
 ///Analyzer act
 /atom/proc/analyzer_act(mob/living/user, obj/item/I)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
+
+///Deconstruct act
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
 
 ///Generate a tag for this atom
 /atom/proc/GenerateTag()
