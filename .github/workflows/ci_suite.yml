@@ -130,6 +130,18 @@ jobs:
       matrix:
         arg: [
           "BASIC_TESTS",
+        ]
+    uses: ./.github/workflows/run_integration_tests.yml
+    with:
+      arg: ${{ matrix.arg }}
+
+  run_extra_tests:
+    name: Extra Tests
+    needs: start_gate
+    strategy:
+      fail-fast: false
+      matrix:
+        arg: [
           "CREATE_AND_DESTROY_TEST",
           "PLANET_GEN_TEST",
           "RUIN_PLACEMENT_TEST",
@@ -138,19 +150,6 @@ jobs:
     uses: ./.github/workflows/run_integration_tests.yml
     with:
       arg: ${{ matrix.arg }}
-
-#  run_alternate_tests:
-#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-#    name: Alternate Tests
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#        major: [515]
-#        minor: [1614]
-#    uses: ./.github/workflows/run_integration_tests.yml
-#    with:
-#      major: ${{ matrix.major }}
-#      minor: ${{ matrix.minor }}
 
   test_windows:
     name: Windows Build
