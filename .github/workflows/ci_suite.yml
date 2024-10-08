@@ -189,7 +189,6 @@ jobs:
           name: deploy
           path: deploy
 
-
   completion_gate: # Serves as a non-moving target for branch rulesets
     if: always() && !cancelled()
     name: Completion Gate
