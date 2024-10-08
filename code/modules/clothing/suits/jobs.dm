@@ -270,24 +270,6 @@
 	icon_state = "coat_terragov"
 	item_state = "coat_terragov"
 
-/obj/item/clothing/suit/hooded/enginseer
-	name = "enginseer regalia"
-	desc = "You hold the secrets of the Machine."
-	icon_state = "enginseer"
-	item_state = "enginseer"
-	hoodtype = /obj/item/clothing/head/hooded/enginseer
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/radio, /obj/item/storage/book)
-
-/obj/item/clothing/head/hooded/enginseer
-	name = "enginseer's hood"
-	desc = "You are honored that they require your skills."
-	icon_state = "enginseerhood"
-	item_state = "enginseerhood"
-	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
-
 /obj/item/clothing/suit/armor/witchhunter
 	name = "witchunter garb"
 	desc = "This worn outfit saw much use back in the day."
