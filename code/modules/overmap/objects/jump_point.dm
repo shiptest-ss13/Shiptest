@@ -1,48 +1,38 @@
 /**
- * # Static Overmap Encounters
+ * # Jump points
  *
- * These overmap objects can be docked with and will load a premapped "planet". Think of these like gateways.
- * When undocked with, it checks if there's anyone left on the planet, and if not, will delete themseles.
+ * These overmap objects can be interacted with and will send you to another sector.
+ * These will then dump you onto another jump point post jump. Useful for events!s
  */
-/datum/overmap/static_object
-	name = "energy signature"
-	char_rep = "!"
+/datum/overmap/jump_point
+	name = "jump point"
+	char_rep = "~"
+	token_icon_state = "jump_point"
 
 
 	///if you dont want ships docking where they please, remove INTERACTION_OVERMAP_DOCK and leave the quick dock feature
-	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
+	interaction_options = null
 
-	///The active turf reservation, if there is one
-	var/datum/map_zone/mapzone
-	///The border size to use. It's reccomended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
-	var/border_size = QUADRANT_SIZE_BORDER
-	///The preset map to load
-	var/datum/map_template/map_to_load
-	///The docking port in the reserve
-	var/list/obj/docking_port/stationary/reserve_docks
-	///If the level should be preserved. Useful for if you want to build a colony or something.
-	var/preserve_level = FALSE
-	///If we set this, we ditch the baseturfs to generate a planet first, the overlay the map on top of the planetgen. not reccomnended, but you have the option to
-	var/datum/planet_type/mapgen
-	///Object's flavor name, given on landing.
-	var/planet_name
-	/// Whether or not the level is currently loading.
-	var/loading = FALSE
+	///The currently linked jump point
+	var/datum/overmap/jump_point/destination
 
-	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
-	var/turf/default_baseturf = /turf/open/space
+/datum/overmap/jump_point/Initialize(position, _other_wormhole, ...)
+	. = ..()
+	alter_token_appearance()
 
-	///The default gravity the virtual z will have
-	var/gravity = 0
+/datum/overmap/jump_point/alter_token_appearance()
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = secondary_structure_color
+	current_overmap.post_edit_token_state(src)
 
-	///The weather the virtual z will have. If null, the planet will have no weather.
-	var/datum/weather_controller/weather_controller_type
+/datum/overmap/event/wormhole/proc/handle_jump(datum/overmap/ship/controlled/jumper)
+	if(!destination)
+		qdel(src)
+		return
 
-	///If true, we will load a new z level instead of using reserve mapzone. DO THIS IF YOUR MAP IS OVER 255x255 LARGE
-	var/load_seperate_z
-
-	//controls what kind of sound we play when we land and the maptext comes up
-	var/landing_sound
+	jumper.move_overmaps(destination.current_system, destination.x, destination.y)
+	jumper.overmap_step(S.get_heading())
 
 /datum/overmap/static_object/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)

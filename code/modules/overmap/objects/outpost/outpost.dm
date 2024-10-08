@@ -48,6 +48,8 @@
 	var/list/supply_packs = list()
 	/// our 'Order number'
 	var/ordernum = 1
+	/// Our faction of the outpost
+	var/faction
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()

@@ -221,6 +221,8 @@ SUBSYSTEM_DEF(overmap)
 	var/size
 	///Do we have a outpost in this system?
 	var/has_outpost = TRUE //TODO SET TO FALSE, ITS ONLY SET TO TRUE FOR TESTING
+	/// Our faction of the outpost
+	var/faction
 
 	///the list of dynamic planets that can spawn in this sector
 	var/list/dynamic_probabilities
