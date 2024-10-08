@@ -4,7 +4,7 @@
 	desc = "Autogenerates nutritious fish feed based on sample inside."
 	icon = 'icons/obj/aquarium.dmi'
 	icon_state = "fish_feed"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/fish_feed/Initialize(mapload)
 	. = ..()
@@ -32,12 +32,11 @@
 	desc = "Everything you need to build your own aquarium. Raw materials sold separately."
 	icon = 'icons/obj/aquarium.dmi'
 	icon_state = "construction_kit"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/aquarium_kit/attack_self(mob/user)
 	. = ..()
 	to_chat(user,span_notice("There's instruction and tools necessary to build aquarium inside. All you need is to start crafting."))
-
 
 /obj/item/aquarium_prop
 	name = "generic aquarium prop"

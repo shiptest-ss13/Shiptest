@@ -247,7 +247,7 @@
 	desc = "Make sure to recyle the box in an autolathe when it gets empty."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "357OLD-7"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
 	var/amount_left = 7
 

@@ -5,15 +5,15 @@
 	amount = 6
 	max_amount = 6
 	w_class = WEIGHT_CLASS_TINY
-	full_w_class = WEIGHT_CLASS_TINY
+	full_w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
 	novariants = FALSE
 	item_flags = NOBLUDGEON
-	var/splint_fracture = FALSE //WS Edit- Splints
-	var/failure_chance //WS Edit - Failure chance
+	var/splint_fracture = FALSE
+	var/failure_chance
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE

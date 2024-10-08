@@ -16,34 +16,54 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
-	custom_materials = list(/datum/material/iron=75, /datum/material/glass=25)
+	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+	slot_flags = ITEM_SLOT_NECK //Allows to be worn on neck so it's not eating pocket slots.
 	obj_flags = USES_TGUI
 
 	var/on = TRUE
 	var/frequency = FREQ_COMMON
-	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
-	var/emped = 0  // Tracks the number of EMPs currently stacked.
-	var/headset = FALSE // It can be used for hotkeys
-	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
+	///The range around the radio in which mobs can hear what it receives.
+	var/canhear_range = 3
+	///Tracks the number of EMPs currently stacked.
+	var/emped = 0
+	///It can be used for hotkeys
+	var/headset = FALSE
+	///The time since we last played a radio chatter sound.
+	var/last_chatter_time
 
-	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = FALSE  // Whether the radio is currently receiving.
-	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
-	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
-	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
-	var/subspace_transmission = FALSE  // If true, the radio transmits and receives on subspace exclusively.
-	var/subspace_switchable = FALSE  // If true, subspace_transmission can be toggled at will.
-	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
-	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
-	var/command = FALSE  // If true, use_command can be toggled at will.
-	var/log = FALSE // If true, the UI will display the voice log for the frequency
-	var/list/loglist = list() //the voice log
+	///Whether the radio will transmit dialogue it hears nearby.
+	var/broadcasting = FALSE
+	///Whether the radio is currently receiving.
+	var/listening = FALSE
+	///If true, the transmit wire starts cut.
+	var/prison_radio = FALSE
+	///Whether wires are accessible. Toggleable by screwdrivering.
+	var/unscrewed = FALSE
+	///If true, the radio has access to the full spectrum.
+	var/freerange = FALSE
+	///If true, the radio transmits and receives on subspace exclusively.
+	var/subspace_transmission = FALSE 
+	///If true, subspace_transmission can be toggled at will.
+	var/subspace_switchable = FALSE 
+	///Frequency lock to stop the user from untuning specialist radios.
+	var/freqlock = FALSE 
+	///If true, broadcasts will be large and BOLD.
+	var/use_command = FALSE 
+	///If true, use_command can be toggled at will.
+	var/command = FALSE 
+	///If true, the UI will display the voice log for the frequency
+	var/log = FALSE
+	///the voice log
+	var/list/loglist = list() 
 
-	// Encryption key handling
+	///Encryption key handling
 	var/obj/item/encryptionkey/keyslot
-	var/translate_binary = FALSE  // If true, can hear the special binary channel.
-	var/independent = FALSE  // If true, can say/hear on the special CentCom channel.
-	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	///If true, can hear the special binary channel.
+	var/translate_binary = FALSE
+	///If true, can say/hear on the special CentCom channel.
+	var/independent = FALSE
+	///Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	var/list/channels = list()
 	var/list/secure_radio_connections
 
 	var/const/FREQ_LISTENING = 1

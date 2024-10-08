@@ -18,7 +18,7 @@
 
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
-	desc = "The DeForest Medical Corporation hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypo"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -102,15 +102,6 @@
 /obj/item/reagent_containers/hypospray/combat/nanites/update_icon_state()
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
 	return ..()
-
-/obj/item/reagent_containers/hypospray/combat/heresypurge
-	name = "holy water piercing injector"
-	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with 5 doses of a holy water and pacifier mixture. Not for use on your teammates."
-	item_state = "holy_hypo"
-	icon_state = "holy_hypo"
-	volume = 250
-	list_reagents = list(/datum/reagent/water/holywater = 150, /datum/reagent/peaceborg/tire = 50, /datum/reagent/peaceborg/confuse = 50)
-	amount_per_transfer_from_this = 50
 
 //MediPens
 
