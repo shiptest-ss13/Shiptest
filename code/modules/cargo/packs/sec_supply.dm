@@ -94,20 +94,16 @@
 	name = "Flamethrower Crate"
 	desc = "Contains one flamethrower. Point the nozzle away from anything important."
 	cost = 1250
-	contains = list(
-		/obj/item/flamethrower/full
-	)
+	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction = FACTION_NGR
 
 /datum/supply_pack/sec_supply/incendiary_grenade
-	name = "incendiary Grenade Crate"
+	name = "Incendiary Grenade Crate"
 	desc = "Contains one incendiary grenade. Better not let it go off in your hands."
 	cost = 750
-	contains = list(
-		/obj/item/grenade/chem_grenade/incendiary
-	)
+	contains = list(/obj/item/grenade/chem_grenade/incendiary)
 	crate_name = "incendiary grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = FACTION_NGR
