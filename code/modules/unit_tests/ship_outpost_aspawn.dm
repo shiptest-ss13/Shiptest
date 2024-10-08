@@ -3,7 +3,7 @@
 	// disabled or intended as subshuttles
 	for(var/name as anything in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/map = SSmapping.shuttle_templates[name]
-		if(!map.enabled)
+		if(map.enabled)
 			continue
 		log_world("Loading [map.name]")
 		try

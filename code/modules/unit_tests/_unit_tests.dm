@@ -130,6 +130,10 @@
 #include "ship_outpost_placement.dm"
 #endif //SHIP_PLACEMENT_TEST
 
+#ifdef EXTRA_SHIP_TEST
+#include "ship_outpost_aspawn.dm"
+#endif
+
 #include "unit_test.dm"
 
 #undef TEST_ASSERT
