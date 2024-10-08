@@ -3,17 +3,32 @@ on:
   push:
     branches:
       - master
+      - 'gh-readonly-queue/master/**'
   pull_request:
     branches:
       - master
   merge_group:
     branches:
       - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  start_gate:
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
+    name: Start Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mandatory Empty Step
+        run: exit 0
+
   run_linters:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Run Linters
+    needs: start_gate
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
         with:
@@ -86,6 +101,7 @@ jobs:
   compile_all_maps:
     if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Compile Maps
+    needs: run_linters
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -108,6 +124,7 @@ jobs:
   run_all_tests:
     if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Integration Tests
+    needs: run_linters
     strategy:
       fail-fast: false
       matrix:
@@ -167,3 +184,15 @@ jobs:
         with:
           name: deploy
           path: deploy
+
+
+  completion_gate: # Serves as a non-moving target for branch rulesets
+    if: always() && !cancelled()
+    name: Completion Gate
+    needs: [ test_windows, compile_all_maps, run_linters ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
