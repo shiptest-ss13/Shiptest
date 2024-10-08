@@ -26,9 +26,9 @@
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/machinery/portable_atmospherics/canister/toxins = 3,
 		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
-		/obj/structure/radioactive = 6,
-		/obj/structure/radioactive/stack = 6,
-		/obj/structure/radioactive/waste = 6,
+		/obj/structure/hazard/radioactive = 6,
+		/obj/structure/hazard/radioactive/stack = 6,
+		/obj/structure/hazard/radioactive/waste = 6,
 		/obj/structure/flora/ash/garden/waste = 15,
 		/obj/structure/flora/ash/glowshroom = 90,
 
