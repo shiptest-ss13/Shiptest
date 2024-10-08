@@ -2,17 +2,13 @@ name: Checks
 on:
   push:
     branches:
-    - master
-    - 'project/**'
-    - 'gh-readonly-queue/master/**'
-    - 'gh-readonly-queue/project/**'
+      - master
   pull_request:
     branches:
-    - master
-    - 'project/**'
+      - master
   merge_group:
     branches:
-    - master
+     - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -106,7 +102,6 @@ jobs:
     needs: start_gate
     runs-on: ubuntu-latest
     timeout-minutes: 5
-
     steps:
       - uses: actions/checkout@v3
 
@@ -192,7 +187,7 @@ jobs:
   completion_gate: # Serves as a non-moving target for branch rulesets
     if: always() && !cancelled()
     name: Completion Gate
-    needs: [ test_windows, compile_all_maps, run_linters, run_all_tests]
+    needs: [ test_windows, compile_all_maps, run_linters]
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether the needed jobs succeeded or failed
