@@ -80,3 +80,5 @@
 	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
+
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
