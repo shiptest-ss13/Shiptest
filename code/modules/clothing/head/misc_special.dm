@@ -34,82 +34,6 @@
 	weldingvisortoggle(user)
 
 /*
- * Cakehat
- */
-/obj/item/clothing/head/hardhat/cakehat
-	name = "cakehat"
-	desc = "You put the cake on your head. Brilliant."
-	icon_state = "hardhat_cakehat"
-	item_state = "hardhat_cakehat"
-	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	hitsound = 'sound/weapons/tap.ogg'
-	var/hitsound_on = 'sound/weapons/sear.ogg' //so we can differentiate between cakehat and energyhat
-	var/hitsound_off = 'sound/weapons/tap.ogg'
-	var/force_on = 15
-	var/throwforce_on = 15
-	var/damtype_on = BURN
-	flags_inv = HIDEEARS|HIDEHAIR
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	light_range = 2 //luminosity when on
-	flags_cover = HEADCOVERSEYES
-	heat = 999
-
-	dog_fashion = /datum/dog_fashion/head
-
-/obj/item/clothing/head/hardhat/cakehat/process()
-	var/turf/location = src.loc
-	if(ishuman(location))
-		var/mob/living/carbon/human/M = location
-		if(M.is_holding(src) || M.head == src)
-			location = M.loc
-
-	if(isturf(location))
-		location.hotspot_expose(700, 1)
-
-/obj/item/clothing/head/hardhat/cakehat/turn_on(mob/living/user)
-	..()
-	force = force_on
-	throwforce = throwforce_on
-	damtype = damtype_on
-	hitsound = hitsound_on
-	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/head/hardhat/cakehat/turn_off(mob/living/user)
-	..()
-	force = 0
-	throwforce = 0
-	damtype = BRUTE
-	hitsound = hitsound_off
-	STOP_PROCESSING(SSobj, src)
-
-/obj/item/clothing/head/hardhat/cakehat/get_temperature()
-	return on * heat
-
-/obj/item/clothing/head/hardhat/cakehat/energycake
-	name = "energy cake"
-	desc = "You put the energy sword on your cake. Brilliant."
-	icon_state = "hardhat_energycake"
-	item_state = "hardhat_energycake"
-	hitsound = 'sound/weapons/tap.ogg'
-	hitsound_on = 'sound/weapons/blade1.ogg'
-	hitsound_off = 'sound/weapons/tap.ogg'
-	damtype_on = BRUTE
-	force_on = 18 //same as epen (but much more obvious)
-	light_range = 3 //ditto
-	heat = 0
-
-/obj/item/clothing/head/hardhat/cakehat/energycake/turn_on(mob/living/user)
-	playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
-	to_chat(user, "<span class='warning'>You turn on \the [src].</span>")
-	..()
-
-/obj/item/clothing/head/hardhat/cakehat/energycake/turn_off(mob/living/user)
-	playsound(user, 'sound/weapons/saberoff.ogg', 5, TRUE)
-	to_chat(user, "<span class='warning'>You turn off \the [src].</span>")
-	..()
-
-/*
  * Trapper Hat
  */
 /obj/item/clothing/head/trapper
@@ -180,17 +104,6 @@
 	. = ..()
 	if(ishuman(user))
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
-
-/obj/item/clothing/head/hardhat/reindeer
-	name = "novelty reindeer hat"
-	desc = "Some fake antlers and a very fake red nose."
-	icon_state = "hardhat_reindeer"
-	item_state = "hardhat_reindeer"
-	flags_inv = 0
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	light_range = 1 //luminosity when on
-
-	dog_fashion = /datum/dog_fashion/head/reindeer
 
 /obj/item/clothing/head/cardborg
 	name = "cardborg helmet"
@@ -303,69 +216,6 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 5, "bullet" = 0, "laser" = -5, "energy" = -15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
-
-/obj/item/clothing/head/foilhat
-	name = "tinfoil hat"
-	desc = "Thought control rays, psychotronic scanning. Don't mind that, I'm protected cause I made this hat."
-	icon_state = "foilhat"
-	item_state = "foilhat"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = -5,"energy" = -15, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
-	equip_delay_other = 140
-	clothing_flags = ANTI_TINFOIL_MANEUVER
-	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
-	var/warped = FALSE
-
-/obj/item/clothing/head/foilhat/equipped(mob/living/carbon/human/user, slot)
-	. = ..()
-	if(slot != ITEM_SLOT_HEAD || warped)
-		return
-	if(paranoia)
-		QDEL_NULL(paranoia)
-	paranoia = new()
-
-	user.gain_trauma(paranoia, TRAUMA_RESILIENCE_MAGIC)
-	to_chat(user, "<span class='warning'>As you don the foiled hat, an entire world of conspiracy theories and seemingly insane ideas suddenly rush into your mind. What you once thought unbelievable suddenly seems.. undeniable. Everything is connected and nothing happens just by accident. You know too much and now they're out to get you. </span>")
-
-/obj/item/clothing/head/foilhat/MouseDrop(atom/over_object)
-	//God Im sorry
-	if(!warped && iscarbon(usr))
-		var/mob/living/carbon/C = usr
-		if(src == C.head)
-			to_chat(C, "<span class='userdanger'>Why would you want to take this off? Do you want them to get into your mind?!</span>")
-			return
-	return ..()
-
-/obj/item/clothing/head/foilhat/dropped(mob/user)
-	. = ..()
-	if(paranoia)
-		QDEL_NULL(paranoia)
-
-/obj/item/clothing/head/foilhat/proc/warp_up()
-	name = "scorched tinfoil hat"
-	desc = "A badly warped up hat. Quite unprobable this will still work against any of fictional and contemporary dangers it used to."
-	warped = TRUE
-	clothing_flags &= ~ANTI_TINFOIL_MANEUVER
-	if(!isliving(loc) || !paranoia)
-		return
-	var/mob/living/target = loc
-	if(target.get_item_by_slot(ITEM_SLOT_HEAD) != src)
-		return
-	QDEL_NULL(paranoia)
-	if(target.stat < UNCONSCIOUS)
-		to_chat(target, "<span class='warning'>Your zealous conspirationism rapidly dissipates as the donned hat warps up into a ruined mess. All those theories starting to sound like nothing but a ridicolous fanfare.</span>")
-
-/obj/item/clothing/head/foilhat/attack_hand(mob/user)
-	if(!warped && iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(src == C.head)
-			to_chat(user, "<span class='userdanger'>Why would you want to take this off? Do you want them to get into your mind?!</span>")
-			return
-	return ..()
-
-/obj/item/clothing/head/foilhat/microwave_act(obj/machinery/microwave/M)
-	. = ..()
-	if(!warped)
-		warp_up()
 
 /obj/item/clothing/head/plastic_flower
 	name = "plastic flower"
