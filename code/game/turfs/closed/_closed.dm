@@ -227,6 +227,8 @@
 	return ..()
 
 /turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc)
+	if(!isclosedturf(src))
+		return
 	//the istype cascade has been spread among various procs for easy overriding or if we want to call something specific
 	if(try_decon(W, user, loc) || try_destroy(W, user, loc))
 		return
@@ -252,15 +254,33 @@
 	return TRUE
 
 /turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
+	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
-
 		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
-		while(I.use_tool(src, user, breakdown_duration, volume=50))
+		while(I.use_tool(src, user, act_duration, volume=50))
 			if(iswallturf(src))
 				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
-				alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE)
+				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+					return TRUE
+			else
+				break
+
+	return FALSE
+
+/turf/closed/deconstruct_act(mob/living/user, obj/item/I)
+	var/act_duration = breakdown_duration
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	while(I.use_tool(src, user, act_duration, volume=100))
+		if(iswallturf(src))
+			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+				return TRUE
+		else
+			break
 
 	return FALSE
 

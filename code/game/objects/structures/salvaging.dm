@@ -34,6 +34,16 @@
 		qdel(src)
 	return TRUE
 
+/obj/structure/salvageable/deconstruct_act(mob/living/user, obj/item/tool)
+	. = ..()
+	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
+					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
+	if(tool.use_tool(src, user, 6 SECONDS))
+		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
+						"<span class='notice'>You salvage [src].</span>")
+		dismantle(user)
+		qdel(src)
+	return TRUE
 
 //Types themself, use them, but not the parent object
 
@@ -242,7 +252,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -303,7 +312,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5,
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -591,7 +599,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
-			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,

@@ -124,6 +124,10 @@
 			qdel(src)
 		..()
 
+// No busting open (used to disallow angle grinder cheesing
+/obj/structure/closet/crate/secure/loot/bust_open()
+	boom()
+
 /obj/structure/closet/crate/secure/loot/proc/spawn_loot()
 	var/loot = rand(1,100) //100 different crates with varying chances of spawning
 	switch(loot)
@@ -136,7 +140,7 @@
 			for(var/i in 1 to 3)
 				new /obj/item/clothing/mask/cigarette/rollie(src)
 		if(6 to 10)
-			new /obj/item/melee/skateboard/pro(src)
+			new /obj/item/skateboard/pro(src)
 		if(11 to 15)
 			new /mob/living/simple_animal/bot/honkbot(src)
 		if(16 to 20)
@@ -178,7 +182,6 @@
 			new /obj/item/clothing/shoes/kindleKicks(src)
 		if(65 to 66)
 			new /obj/item/clothing/suit/ianshirt(src)
-			new /obj/item/clothing/suit/hooded/ian_costume(src)
 		if(67 to 68)
 			new /obj/item/toy/plush/awakenedplushie(src)
 		if(69 to 70)
@@ -211,7 +214,7 @@
 			for(var/i in 1 to 30)
 				new /mob/living/simple_animal/hostile/cockroach(src)
 		if(92)
-			new /obj/item/katana(src)
+			new /obj/item/melee/sword/katana(src)
 		if(93)
 			new /obj/item/dnainjector/xraymut(src)
 		if(94)
@@ -220,7 +223,6 @@
 		if(95)
 			new /obj/item/toy/plush/nukeplushie(src)
 		if(96)
-			new /obj/item/banhammer(src)
 			for(var/i in 1 to 3)
 				new /obj/item/mine/pressure/sound(src)
 		if(97)
@@ -237,5 +239,5 @@
 		if(99)
 			new /obj/item/implanter/sad_trombone(src)
 		if(100)
-			new /obj/item/melee/skateboard/hoverboard(src)
+			new /obj/item/skateboard/hoverboard(src)
 	spawned_loot = TRUE

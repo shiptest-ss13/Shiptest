@@ -98,3 +98,123 @@
   - code_imp: Changes ammo casing firing code so it's able to work without a user.
   Zevotech:
   - bugfix: Certain Subshuttle engine prechargers have now been correctly rotated.
+2024-09-16:
+  Gristlebee:
+  - bugfix: Misfires no longer have 100% chance
+2024-09-18:
+  Bjarl:
+  - rscadd: You can now purchase concrete mix at the outpost. For concrete making.
+2024-09-19:
+  FalloutFalcon:
+  - code_imp: ctf machines now only process while ctf is running
+  Rye-Rice, Gristlebee:
+  - rscadd: Comfortable Temperature ranges
+  - imageadd: Temperature HUD alerts
+2024-09-21:
+  Bjarl:
+  - rscadd: The PGF now has it's own turret offerings. They come in light, normal,
+      and heavy flavor.
+  FalloutFalcon:
+  - code_imp: added ruin tags to ruin map templates to be used soon for stuff.
+  Gristlebee:
+  - rscadd: Inteq wintercoats and hoodies in the Talos, Colossus, Vaquero and Valor
+      uniform lockers
+  PositiveEntropy:
+  - rscadd: A new and refurbished Elite Syndicate suit has just been unveiled!
+  Sadhorizon:
+  - rscadd: Added "ballistic goggles" - new indie security clothing item.
+  - imageadd: Added Kepori bulletproof helmet sprites.
+2024-09-22:
+  Bjarl:
+  - code_imp: Ship Turrets can now be attached to control consoles outside the area
+      they are in. please look at ship maps for examples on how.
+  - rscadd: Every single ship with turrets now does the above
+  PositiveEntropy:
+  - rscadd: Gorlex Splinters now have winter coats!
+  Sadhorizon:
+  - bugfix: Panacea-class is no longer an independent ship.
+2024-09-23:
+  Bjarl:
+  - rscadd: You can now buy flares at the outpost
+  - rscadd: Wasteplanets now will generate concrete filled caves.
+2024-09-24:
+  Apogee-dev:
+  - balance: Changed decoration on Miskilamo ships to look similar to each other
+  - balance: reduced Kilo starting funds to 1500
+  - bugfix: fixed wires on Mudskipper
+  Bjarl:
+  - bugfix: turrets will now _actually_ connect to their console. i swear im a real
+      coder.
+  FalloutFalcon:
+  - code_imp: bunch of code organization related to melee
+  - refactor: cleaned up a bunch of melee items to have better inheritance and paths
+  PositiveEntropy:
+  - imageadd: Resprites all balaclavas!
+  Thera-Pissed:
+  - rscdel: unused did_fire var
+  - rscdel: B.E.P.I.S. and related tech nodes.
+  rye, erika:
+  - rscadd: concrete jugs have been replaced by much more appropriate concrete bags,
+      jee, i hope whoever made *that* blunder got fired.
+  thgvr:
+  - balance: Colossus now only has 2 recruit slots instead of a whopping !!5!!
+  - rscadd: A bunch of kepori underwear have sprites now
+  trazodont:
+  - bugfix: miso soup spelling error
+  zimon9:
+  - rscadd: Adds a bit more contrast to the output of health analyzers
+2024-09-25:
+  Jedi-Toothpaste:
+  - bugfix: Added windows to the mudskipper and shetland's engines.
+  - bugfix: Adjusted the blast doors which open on the Shetland's engines.
+  SomeguyManperson:
+  - bugfix: sawn off illestren/improvised shotgun stats are now consistent if they
+      are spawned in
+2024-09-26:
+  FalloutFalcon:
+  - rscadd: Added new blank shells for training drills!
+  - refactor: Minor refactor of design disks to reduce repeated code
+  - rscadd: Ballistics now have a minimum recoil, not enough to mess up your shot!
+  - bugfix: ships now start closed. shiptesters be writing there memos and ship names.
+  - rscadd: You can now see ships in the orbit menu and its alot prettier!
+  - code_imp: ported tg points of interest and a much improved orbit menu
+  Gristlebee:
+  - bugfix: fixes wall deconstruction causing runtimes
+  Jedi-Toothpaste:
+  - bugfix: Fixed the lack of windows for the Kilo's Thrusters, and fixed the broken
+      link for the new blast doors.
+  generalthrax:
+  - balance: Most common accessories now fit on pants
+  - rscadd: Exosuit Recharger machines are now available from cargo
+  - balance: Rust Reds on the blackmarket are now available to a maximum of 3
+  zimon9:
+  - rscadd: Added fruit puree to vegan rations
+  - rscdel: Removed pizza crackers from vegan rations
+2024-09-27:
+  Jedi-Toothpaste:
+  - rscadd: Firelocks to the Valor-Class' Doors
+  - rscadd: Lighting to dark areas on the Valor-Class' Doors
+  - rscadd: New areas on the Valor-Class to seperate rooms
+  - rscadd: Added APC for the Surgical Area
+  PositiveEntropy:
+  - imageadd: Adjusts the inner part of the normal rabbit ears.
+2024-09-28:
+  Sadhorizon:
+  - rscadd: Added a fax machine to the Dwayne-class.
+  SomeguyManperson:
+  - bugfix: legion skulls will no longer check if they should rise up and consume
+      their owner if they are ownerless
+2024-09-29:
+  fighterslam:
+  - balance: Modernizes and slightly buffs the Ranger.
+2024-09-30:
+  Bjarl:
+  - rscdel: The Elephant Graveyard ruin has been taken out back
+  - bugfix: m90 posters are real again
+  FalloutFalcon:
+  - bugfix: sawnoff weapons made from init now function correctly
+  - bugfix: condiment packs are no longer invisible and missing names
+  MassiveMen:
+  - rscadd: Added the fire axe to the black market uplink
+  Thera-Pissed:
+  - rscadd: New wasteplanet ruin, the abandoned Miskilamo shipbreaking yard!
