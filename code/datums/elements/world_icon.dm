@@ -103,7 +103,7 @@
 	SIGNAL_HANDLER
 
 	if(!world_icon_state)
-		source.icon_state = source.icon_state
+		source.icon_state = source.item_state
 		return
 
 	INVOKE_ASYNC(src, PROC_REF(check_world_icon_state), source)
@@ -117,5 +117,5 @@
 /datum/element/world_icon/proc/check_world_icon_state(obj/item/source)
 	SIGNAL_HANDLER
 
-	world_icon_state = source.item_state
+	world_icon_state = source.world_state
 	source.icon_state = world_icon_state

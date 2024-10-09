@@ -29,9 +29,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///If set it will add a world icon using item_state
 	var/world_file
 
-	///Should be handled by world_icon element
+	///Handled by world_icon element
 	var/world_state
-	///Should be handled by world_icon element
+	///Handled by world_icon element
 	var/inventory_state
 
 	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
