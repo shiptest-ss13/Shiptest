@@ -26,6 +26,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	///If set it will add a world icon using item_state
+	var/world_file
+
+	///Should be handled by world_icon element
+	var/world_state
+	///Should be handled by world_icon element
+	var/inventory_state
+
 	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
 	var/supports_variations = null
 
@@ -207,8 +215,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-	var/world_icon
-
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -307,8 +313,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	updateEmbedding()
 
-	if(world_icon)
-		AddElement(/datum/element/world_icon, src, null, world_icon, icon, item_state)
+	if(world_file)
+		AddElement(/datum/element/world_icon, null, world_file, icon)
 
 	if(GLOB.rpg_loot_items)
 		AddComponent(/datum/component/fantasy)

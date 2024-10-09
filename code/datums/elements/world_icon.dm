@@ -117,5 +117,5 @@
 /datum/element/world_icon/proc/check_world_icon_state(obj/item/source)
 	SIGNAL_HANDLER
 
-	world_icon_state = source.world_state
+	world_icon_state = source.item_state
 	source.icon_state = world_icon_state
