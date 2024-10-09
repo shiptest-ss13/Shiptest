@@ -1,5 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
 	show_magazine_on_sprite = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -40,7 +41,6 @@
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
@@ -82,7 +82,6 @@
 	icon_state = "p16"
 	item_state = "p16"
 	show_magazine_on_sprite = TRUE
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/p16
 	spread = 2
@@ -131,7 +130,6 @@
 
 	fire_select_icon_state_prefix = "swisschesse_"
 
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/swiss
 	manufacturer = MANUFACTURER_SOLARARMORIES
@@ -162,7 +160,6 @@
 	default_firemode = FIREMODE_OTHER
 
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
 	show_magazine_on_sprite = TRUE
@@ -308,7 +305,6 @@
 	icon_state = "vickland"
 	item_state = "vickland"
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
 	mag_type = /obj/item/ammo_box/magazine/internal/vickland
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'

@@ -4,7 +4,7 @@
 	icon = 'icons/obj/stack_objects.dmi'
 	amount = 6
 	max_amount = 6
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	full_w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7

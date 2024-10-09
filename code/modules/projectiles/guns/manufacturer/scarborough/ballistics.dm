@@ -307,7 +307,7 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
 
@@ -355,7 +355,7 @@ EMPTY_GUN_HELPER(automatic/pistol/himehabu)
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 //########### SMGS ###########//

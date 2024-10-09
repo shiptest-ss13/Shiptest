@@ -105,7 +105,6 @@
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
 	modifystate = FALSE
