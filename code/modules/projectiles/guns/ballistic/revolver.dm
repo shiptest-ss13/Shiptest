@@ -652,7 +652,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 		"Shadow" = "shadow",
 		"Cattleman" = "shadow_cattleman",
 		"General" = "shadow_general",
-		"Sherrif" = "shadow_sherrif",
+		"Sheriff" = "shadow_sheriff",
 		"Cobra" = "shadow_cobra",
 		"Hired Gun" = "shadow_hiredgun",
 		"Buntline" = "shadow_buntline",
