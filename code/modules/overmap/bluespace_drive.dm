@@ -31,11 +31,11 @@
 /datum/config_entry/number/bluespace_jump_wait
 	default = 5 MINUTES
 
-/obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
+/obj/machinery/bluespace_drive/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 
-/obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
+/obj/machinery/bluespace_drive/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
@@ -57,18 +57,18 @@
 	calibrating = TRUE
 	return TRUE
 
-/obj/machinery/computer/helm/Destroy()
+/obj/machinery/bluespace_drive/Destroy()
 	. = ..()
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
 
-/obj/machinery/computer/helm/proc/cancel_jump()
+/obj/machinery/bluespace_drive/proc/cancel_jump()
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
-/obj/machinery/computer/helm/proc/jump_sequence()
+/obj/machinery/bluespace_drive/proc/jump_sequence()
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
@@ -86,7 +86,7 @@
 			return
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
-/obj/machinery/computer/helm/proc/do_jump()
+/obj/machinery/bluespace_drive/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	if(!jump_destination)
 		qdel(current_ship)
@@ -96,13 +96,17 @@
 	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 
-/obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/bluespace_drive/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
-	current_ship.helms |= src
+	current_ship.ship_modules |= src[SHIPMODULE_BSDRIVE]
 
-/obj/machinery/computer/helm/proc/handle_interact()
+/obj/machinery/bluespace_drive/Destroy()
+	. = ..()
+
+
+/obj/machinery/bluespace_drive/proc/handle_interact()
 	if(calibrating)
 		cancel_jump()
 		return
