@@ -184,7 +184,7 @@
 				modify_max_integrity(max_integrity * AIRLOCK_SEAL_MULTIPLIER)
 			if(51 to 60)
 				new previous_airlock(loc)
-				QDEL(src)
+				qdel(src)
 			if(69)
 				new /obj/effect/decal/cleanable/oil/slippery(loc)
 
