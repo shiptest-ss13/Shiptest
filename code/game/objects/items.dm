@@ -207,9 +207,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-	//for setting world icons on the go
-	var/inventory_state
-	var/world_state
+	var/world_icon
 
 /obj/item/Initialize()
 
@@ -308,6 +306,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			name = "sticky [name]"
 
 	updateEmbedding()
+
+	if(world_icon)
+		AddElement(/datum/element/world_icon, src, null, world_icon, icon, item_state)
 
 	if(GLOB.rpg_loot_items)
 		AddComponent(/datum/component/fantasy)
