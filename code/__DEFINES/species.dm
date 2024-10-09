@@ -1,12 +1,12 @@
 // Pressure limits.
 /// This determins at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
-#define HAZARD_HIGH_PRESSURE 303
+#define HAZARD_HIGH_PRESSURE 550
 /// This determins when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)
-#define WARNING_HIGH_PRESSURE 202
+#define WARNING_HIGH_PRESSURE 325
 /// This is when the gray low pressure icon is displayed. (it is 2.5 * HAZARD_LOW_PRESSURE)
-#define WARNING_LOW_PRESSURE 60
+#define WARNING_LOW_PRESSURE 50
 /// This is when the black ultra-low pressure icon is displayed. (This one is set as a constant)
-#define HAZARD_LOW_PRESSURE 40
+#define HAZARD_LOW_PRESSURE 20
 
 /// This is used in handle_temperature_damage() for humans, and in reagents that affect body temperature. Temperature damage is multiplied by this amount.
 #define TEMPERATURE_DAMAGE_COEFFICIENT 1.5
@@ -28,11 +28,11 @@
 /// The body temperature limit the human body can take before it starts taking damage from heat.
 /// This also affects how fast the body normalises it's temperature when hot.
 /// 340k is about 66c, and rather high for a human.
-#define HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL + 20)
+#define HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL + 30)
 /// The body temperature limit the human body can take before it starts taking damage from cold.
 /// This also affects how fast the body normalises it's temperature when cold.
 /// 270k is about -3c, that is below freezing and would hurt over time.
-#define HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL - 30)
+#define HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL - 40)
 
 
 //VOX DEFINES
