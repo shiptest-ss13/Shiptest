@@ -167,23 +167,14 @@
 	if(abandoned)
 		var/outcome = rand(1,100)
 		switch(outcome)
-			if(1 to 9)
-				var/turf/here = get_turf(src)
-				for(var/turf/closed/T in range(2, src))
-					here.PlaceOnTop(T.type)
-					qdel(src)
-					return
-				here.PlaceOnTop(/turf/closed/wall)
-				qdel(src)
-				return
-			if(9 to 11)
+			if(1 to 5)
 				lights = FALSE
 				locked = TRUE
-			if(12 to 15)
+			if(6 to 11)
 				locked = TRUE
-			if(16 to 23)
+			if(12 to 21)
 				welded = TRUE
-			if(24 to 30)
+			if(22 to 30)
 				panel_open = TRUE
 	update_appearance()
 
