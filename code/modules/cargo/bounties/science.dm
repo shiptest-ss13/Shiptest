@@ -28,13 +28,6 @@
 	reward = 10000
 	wanted_types = list(/obj/item/clothing/glasses/night, /obj/item/clothing/glasses/meson/night, /obj/item/clothing/glasses/hud/health/night, /obj/item/clothing/glasses/hud/security/night, /obj/item/clothing/glasses/hud/diagnostic/night)
 
-/datum/bounty/item/science/experimental_welding_tool
-	name = "Experimental Welding Tool"
-	description = "A recent accident has left most of CentCom's welding tools exploded. Ship replacements to be rewarded."
-	reward = 10000
-	required_count = 3
-	wanted_types = list(/obj/item/weldingtool/experimental)
-
 /datum/bounty/item/science/cryostasis_beaker
 	name = "Cryostasis Beaker"
 	description = "Chemists at Central Command have discovered a new chemical that can only be held in cryostasis beakers. The only problem is they don't have any! Rectify this to receive payment."

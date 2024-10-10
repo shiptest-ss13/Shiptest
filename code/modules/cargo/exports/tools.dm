@@ -96,10 +96,6 @@
 	exclude_types = list(/obj/item/radio/mech)
 
 //Advanced/Power Tools.
-/datum/export/weldingtool/experimental
-	cost = 90
-	unit_name = "experimental welding tool"
-	export_types = list(/obj/item/weldingtool/experimental)
 
 /datum/export/jawsoflife
 	cost = 100
