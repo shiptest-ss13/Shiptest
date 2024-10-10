@@ -271,7 +271,7 @@
  * and D would have a 0% chance of being picked.
  * You should only pass integers in.
  */
-/proc/pickweight(list/list_to_pick)
+/proc/pick_weight(list/list_to_pick)
 	if(length(list_to_pick) == 0)
 		return null
 
@@ -311,7 +311,26 @@
 		result = pick_weight(fill_with_ones(result))
 	return result
 
-/proc/pickweightAllowZero(list/L) //The original pickweight proc will sometimes pick entries with zero weight.  I'm not sure if changing the original will break anything, so I left it be.
+/**
+ * Given a list, return a copy where values without defined weights are given weight 1.
+ * For example, fill_with_ones(list(A, B=2, C)) = list(A=1, B=2, C=1)
+ * Useful for weighted random choices (loot tables, syllables in languages, etc.)
+ */
+/proc/fill_with_ones(list/list_to_pad)
+	if (!islist(list_to_pad))
+		return list_to_pad
+
+	var/list/final_list = list()
+
+	for (var/key in list_to_pad)
+		if (list_to_pad[key])
+			final_list[key] = list_to_pad[key]
+		else
+			final_list[key] = 1
+
+	return final_list
+
+/proc/pickweightAllowZero(list/L) //The original pick_weight proc will sometimes pick entries with zero weight.  I'm not sure if changing the original will break anything, so I left it be.
 	var/total = 0
 	var/item
 	for (item in L)
