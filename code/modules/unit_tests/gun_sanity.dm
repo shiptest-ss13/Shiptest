@@ -1,7 +1,6 @@
 /datum/unit_test/gun_sanity/Run()
 	for(var/gun_path in subtypesof(/obj/item/gun))
-		var/obj/item/gun/target_gun = gun_path
-		target_gun = new()
+		var/obj/item/gun/target_gun = new gun_path()
 		log_test("Testing [target_gun.type]")
 		if(target_gun.default_ammo_type)
 			TEST_ASSERT(ispath(target_gun.default_ammo_type), "The default ammo in [target_gun.type] is not a type")
