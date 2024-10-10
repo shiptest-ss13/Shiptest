@@ -1049,10 +1049,6 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
 
-
-NO_MAG_GUN_HELPER(shotgun/bulldog)
-
-
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""
 	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."

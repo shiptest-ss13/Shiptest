@@ -186,9 +186,6 @@
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-/obj/item/gun/ballistic/rifle/scout/no_mag
-	default_ammo_type = FALSE
-
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
 	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."

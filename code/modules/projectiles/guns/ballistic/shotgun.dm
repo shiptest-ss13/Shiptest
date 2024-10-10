@@ -709,9 +709,6 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		recoil = 0
 		recoil_unwielded = 3
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag
-	default_ammo_type = FALSE
-
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 	name = "HP Conflagration"
 	base_icon_state = "conflagration"
