@@ -826,7 +826,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>[src] reports its integrity is currently [round(obj_integrity / max_integrity) * 100] percent.</span>"
+			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100 )] percent.</span>"
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -982,10 +982,12 @@ DEFINE_BITFIELD(turret_flags, list(
 
 // Frontiersmen Turrets
 /obj/machinery/porta_turret/ship/frontiersmen
-	name =
-	desc =
+	name = "Spitter Turret"
+	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
 	faction = list(FACTION_FRONTIER, "Turret")
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
+	integrity_failure = 0.6
+	max_integrity = 180
 
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
@@ -994,27 +996,27 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	lethal_projectile = /obj/projectile/bullet/c9mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
-	shot_delay = 1
+	shot_delay = 2
 	scan_range = 6
 
 /obj/machinery/porta_turret/ship/frontiersmen/light
-	name =
-	desc =
+	name = "Pounder Turret"
+	desc = "A low caliber SMG with an atrociously high cycle rate, frankensteined together with a targetting assembly."
 	stun_projectile = /obj/projectile/bullet/c22lr
-	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c22lr
 	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
+	shot_delay = 1
 
 /obj/machinery/porta_turret/ship/frontiersmen/heavy
-	name =
-	desc =
-	stun_projectile = /obj/projectile/bullet/c22lr
-	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
-	lethal_projectile = /obj/projectile/bullet/c22lr
-	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
-	var/pellets
-
-
+	name = "Mulcher Turret"
+	desc = "An abombination made out of the components of a Shredder and an automatic targetting system. Careful now."
+	stun_projectile = /obj/projectile/bullet/slug/beanbag
+	stun_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
+	lethal_projectile = /obj/projectile/bullet/slug
+	lethal_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
+	shot_delay = 3
+	scan_range = 8
 
 ////////////////////////
 //Turret Control Panel//
