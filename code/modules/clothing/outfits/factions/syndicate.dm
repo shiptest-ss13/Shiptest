@@ -532,7 +532,7 @@
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/melee/knife/survival
+	r_pocket = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
@@ -874,6 +874,17 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
 
+
+/datum/outfit/job/syndicate/science/cybersun
+	name = "Syndicate - Researcher (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun/research
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/science
+	accessory = /obj/item/clothing/accessory/armband/science
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+
 /datum/outfit/job/syndicate/science/suns
 	name = "Syndicate - Scientist (SUNS)"
 //more futureproofing than anything, the Aegis currently uses /datum/outfit/job/syndicate/botanist/suns for a similar role
@@ -1081,8 +1092,14 @@
 	ears = /obj/item/radio/headset
 	uniform = /obj/item/clothing/under/syndicate/cybersun
 	accessory = /obj/item/clothing/accessory/armband/cargo
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/soft/cybersun
+	l_pocket = null
 	r_pocket = /obj/item/radio
+
+	box = /obj/item/storage/box/survival/security
+	backpack_contents = null
 
 /datum/outfit/job/syndicate/miner/gec
 	name = "Syndicate - Shaft Miner (GEC)"
@@ -1179,10 +1196,10 @@
 	name = "Syndicate - Engineer (Cybersun)"
 
 	uniform = /obj/item/clothing/under/syndicate/cybersun/research
-	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine
+	belt = null
 
 /datum/outfit/job/syndicate/engineer/suns
 	name = "Syndicate - Ship Engineer (SUNS)"
