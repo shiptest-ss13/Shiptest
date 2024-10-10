@@ -7,7 +7,9 @@
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 	var/scanning = FALSE
+	///is the assembly arming itself?
 	var/timing = FALSE
+	///seconds until the assembly arms itself
 	var/time = 10
 	var/sensitivity = 1
 	var/hearing_range = 3
@@ -16,7 +18,7 @@
 
 /obj/item/assembly/prox_sensor/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 0)
+	proximity_monitor = new(src, 0, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/assembly/prox_sensor/Destroy()
@@ -36,6 +38,15 @@
 		scanning = FALSE
 	update_appearance()
 	return TRUE
+
+/obj/item/assembly/prox_sensor/on_attach()
+	.  = ..()
+	// Pick the first valid object in this list:
+	// Wiring datum's owner
+	// assembly holder's attached object
+	// assembly holder itself
+	// us
+	proximity_monitor.set_host(connected?.holder || holder?.master || holder || src, src)
 
 /obj/item/assembly/prox_sensor/on_detach()
 	. = ..()
@@ -153,3 +164,11 @@
 				value = round(time + value)
 				time = clamp(value, 0, 600)
 				. = TRUE
+
+/obj/item/assembly/prox_sensor/preset
+	sensitivity = 2
+	hearing_range = 3
+
+/obj/item/assembly/prox_sensor/preset/Initialize()
+	. = ..()
+	toggle_scan(!scanning)
