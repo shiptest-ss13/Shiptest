@@ -70,6 +70,8 @@
 	armour_penetration = -35
 	dismemberment = 10
 	shrapnel_type = /obj/item/shrapnel/hot
+	ricochets_max = 10
+	ricochet_incidence_leeway = 0
 	damage_type = BURN
 
 /obj/projectile/bullet/shrapnel/hot/on_hit(atom/target, blocked = FALSE)
