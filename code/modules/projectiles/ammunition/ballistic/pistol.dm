@@ -45,6 +45,7 @@
 	icon_state = "pistol-brass"
 	caliber = "9mm"
 	projectile_type = /obj/projectile/bullet/c9mm
+	stack_size = 15
 
 /obj/item/ammo_casing/c9mm/surplus
 	name = "9mm surplus bullet casing"

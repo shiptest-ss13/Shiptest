@@ -88,6 +88,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm
 	ammo_type = /obj/item/ammo_casing/c9mm
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c9mm
 	name = "box of 9mm ammo"
@@ -288,7 +289,7 @@
 /obj/item/storage/box/ammo/a357
 	name = "box of .357 ammo"
 	desc = "A box of standard .357 ammo."
-	icon_state = "22lrbox"
+	icon_state = "357box"
 
 /obj/item/storage/box/ammo/a357/PopulateContents()
 	..()

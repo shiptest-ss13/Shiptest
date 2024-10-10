@@ -15,6 +15,7 @@
 	icon_state = "rifle-brass"
 	caliber = "4.6x30mm"
 	projectile_type = /obj/projectile/bullet/c46x30mm
+	stack_size = 15
 
 /obj/item/ammo_casing/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet casing"
