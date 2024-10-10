@@ -75,7 +75,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	name = "empty sandbag"
 	desc = "A bag to be filled with sand."
 	icon_state = "sandbag"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/emptysandbag/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/ore/glass))

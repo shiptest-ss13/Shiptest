@@ -4,7 +4,7 @@
 	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "bottle19"
 	desc = "Inject certain types of monster organs with this stabilizer to preserve their healing powers indefinitely."
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 400
 
 /obj/item/hivelordstabilizer/afterattack(obj/item/organ/M, mob/user, proximity)
