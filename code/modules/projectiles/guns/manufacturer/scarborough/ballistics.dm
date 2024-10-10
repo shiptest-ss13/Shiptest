@@ -198,7 +198,8 @@ EMPTY_GUN_HELPER(automatic/pistol/asp)
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
 
-EMPTY_GUN_HELPER(revolver/viper)
+/obj/item/gun/ballistic/revolver/viper/no_mag
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/ballistic/revolver/viper/indie
 	name = "Viper-23"
@@ -214,7 +215,8 @@ EMPTY_GUN_HELPER(revolver/viper)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-EMPTY_GUN_HELPER(revolver/viper/indie)
+/obj/item/gun/ballistic/revolver/viper/indie/no_mag
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
