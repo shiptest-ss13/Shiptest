@@ -166,6 +166,7 @@
 	if(num_loaded)
 		to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [to_load]!</span>")
 	return
+
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)
