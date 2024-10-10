@@ -1,5 +1,6 @@
 #comment This replaces the effect/spawner paths to the new refactored paths https://github.com/tgstation/tgstation/pull/60522
 
+/obj/effect/spawner/lootdrop/donut : /obj/effect/spawner/random/food_or_drink/donut
 /obj/effect/loot_site_spawner : /obj/effect/spawner/random/structure/crate
 /obj/effect/spawner/lootdrop/costume : /obj/effect/spawner/random/clothing/costume
 /obj/effect/spawner/lootdrop/mafia_outfit : /obj/effect/spawner/random/clothing/mafia_outfit
@@ -8,8 +9,6 @@
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears : /obj/effect/spawner/random/clothing/kittyears_or_rabbitears
 /obj/effect/spawner/lootdrop/minor/bowler_or_that : /obj/effect/spawner/random/clothing/bowler_or_that
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears : /obj/effect/spawner/random/clothing/beret_or_rabbitears
-/obj/effect/spawner/bundle/hobo_squat : /obj/effect/spawner/random/trash/decal/hobo_squat
-/obj/effect/spawner/bundle/moisture_trap : /obj/effect/spawner/random/trash/decal/moisture_trap
 /obj/effect/spawner/lootdrop/maint_drugs : /obj/effect/spawner/random/entertainment/drugs
 /obj/effect/spawner/lootdrop/grille_or_trash : /obj/effect/spawner/random/trash/grille_or_waste
 /obj/effect/spawner/lootdrop/botanical_waste : /obj/effect/spawner/random/trash/decal/botanical_waste
@@ -27,8 +26,8 @@
 /obj/effect/spawner/lootdrop/space/rareseed : /obj/effect/spawner/random/food_or_drink/seed_rare
 /obj/effect/spawner/lootdrop/space/cashmoney : /obj/effect/spawner/random/entertainment/money_large
 /obj/effect/spawner/lootdrop/space/fancytool/raremedicalonly : /obj/effect/spawner/random/medical/surgery_tool_alien
-/obj/effect/spawner/lootdrop/space/fancytool/advmedicalonly : /obj/effect/spawner/random/medical/surgery_tool_advanced
-/obj/effect/spawner/lootdrop/space/fancytool/engineonly : /obj/effect/spawner/random/engineering/tool_advanced
+/obj/effect/spawner/lootdrop/space/fancytool/advmedicalonly : /obj/effect/spawner/random/medical/surgery_tool/advanced
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly : /obj/effect/spawner/random/engineering/tool/advanced
 /obj/effect/spawner/lootdrop/space/material : /obj/effect/spawner/random/engineering/material_rare
 /obj/effect/spawner/lootdrop/decorative_material : /obj/effect/spawner/random/decoration/material
 /obj/effect/spawner/lootdrop/maintenance_carpet : /obj/effect/spawner/random/decoration/carpet
@@ -57,8 +56,8 @@
 /obj/effect/spawner/lootdrop/space/syndiecosmetic : /obj/effect/spawner/random/exotic/syndie
 /obj/effect/spawner/lootdrop/space/fancytool : /obj/effect/spawner/random/exotic/tool
 /obj/effect/spawner/randomarcade : /obj/effect/spawner/random/entertainment/arcade
-/obj/effect/spawner/randomsnackvend : /obj/effect/spawner/random/vending/snackvend
-/obj/effect/spawner/randomcolavend : /obj/effect/spawner/random/vending/colavend
+/obj/machinery/vending/snack/random : /obj/effect/spawner/random/vending/snack
+/obj/machinery/vending/cola/random : /obj/effect/spawner/random/vending/cola
 /obj/effect/spawner/lootdrop/arcade_boards : /obj/effect/spawner/random/techstorage/arcade_boards
 /obj/effect/spawner/lootdrop/crate_spawner : /obj/effect/spawner/random/structure/crate_abandoned
 /obj/effect/spawner/lootdrop/maintenance : /obj/effect/spawner/random/maintenance
@@ -79,3 +78,6 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc : /obj/effect/spawner/random/exotic/snow_gear
 /obj/effect/spawner/lootdrop/seed_vault : /obj/effect/spawner/random/food_or_drink/seed_vault
 /obj/effect/spawner/lootdrop/whiteship_cere_ripley : /obj/effect/spawner/random/exotic/ripley
+/obj/effect/spawner/lootdrop/garden/seaweed : /obj/effect/spawner/random/food_or_drink/garden/seaweed
+/obj/effect/spawner/lootdrop/waste/trash : /obj/effect/spawner/random/trash/decal
+/obj/effect/spawner/lootdrop/ration : /obj/effect/spawner/random/food_or_drink/ration

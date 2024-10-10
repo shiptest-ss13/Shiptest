@@ -2,7 +2,7 @@
 	name = "machinery spawner"
 	desc = "Randomized electronics for extra fun."
 
-/obj/effect/spawner/random/vending/snackvend
+/obj/effect/spawner/random/vending/snack
 	name = "spawn random snack vending machine"
 	desc = "Automagically transforms into a random snack vendor. If you see this while in a shift, please create a bug report."
 	icon_state = "snack"
