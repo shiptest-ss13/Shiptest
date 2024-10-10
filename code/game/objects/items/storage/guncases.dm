@@ -20,13 +20,20 @@
 	var/mag_count = 2
 	var/ammoless = TRUE
 	var/grab_loc = FALSE
+	var/holdable_items = list(
+		/obj/item/gun,
+		/obj/item/ammo_box,
+		/obj/item/stock_parts/cell/gun
+	)
 
 /obj/item/storage/guncase/Initialize(mapload)
 	. = ..()
 	if(mapload && grab_loc)
 		var/items_eaten = 0
 		for(var/obj/item/I in loc)
-			if(I.w_class <= max_w_class)
+			if(I.w_class > max_w_class)
+				continue
+			if(is_type_in_list(I, holdable_items))
 				I.forceMove(src)
 				items_eaten++
 			if(items_eaten >= mag_count + 1)
@@ -37,11 +44,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = max_items
 	STR.max_w_class = max_w_class
-	STR.set_holdable(list(
-		/obj/item/gun,
-		/obj/item/ammo_box,
-		/obj/item/stock_parts/cell/gun
-		))
+	STR.set_holdable(holdable_items)
 
 /obj/item/storage/guncase/PopulateContents()
 	if(grab_loc)
