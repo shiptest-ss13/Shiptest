@@ -8,7 +8,7 @@
 			if(!(target_gun.default_ammo_type in target_gun.allowed_ammo_types))
 				TEST_FAIL("The default ammo ([target_gun.default_ammo_type]) in [gun_path] in not in its allowed ammo types")
 
-			if(istype(gun_path, /obj/item/gun/ballistic))
+			if(ispath(gun_path, /obj/item/gun/ballistic))
 				if(!(target_gun.magazine?.type == target_gun.default_ammo_type))
 					TEST_FAIL("[gun_path]'s mag ([target_gun.magazine?.type]) does not equal its default_ammo_type")
 		else
