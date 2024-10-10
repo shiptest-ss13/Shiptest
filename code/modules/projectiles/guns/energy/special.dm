@@ -127,7 +127,7 @@
 	tool_behaviour = TOOL_DECONSTRUCT
 	wall_decon_damage = 200
 	toolspeed = 0.9 //plasmacutters can be used like angle grinders, and are a bit faster
-	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
+	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
 	var/adv = FALSE
 

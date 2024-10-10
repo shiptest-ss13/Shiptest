@@ -13,7 +13,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
-	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
+	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
 	default_ammo_type = /obj/item/stock_parts/cell/pulse
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/pulse,
@@ -41,7 +41,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "pulse_carbine"
 	item_state = null
-	internal_cell = FALSE
+	internal_magazine = FALSE
 	default_ammo_type = /obj/item/stock_parts/cell/gun/large
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/large,

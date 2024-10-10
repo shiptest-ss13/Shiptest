@@ -28,7 +28,7 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/beam_rifle/hitscan)
-	internal_cell = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
+	internal_magazine = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
 	default_ammo_type = /obj/item/stock_parts/cell/gun/large
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/large,

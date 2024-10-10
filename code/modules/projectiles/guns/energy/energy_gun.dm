@@ -127,7 +127,7 @@
 	item_state = "nucgun"
 	charge_delay = 5
 	can_charge = FALSE
-	internal_cell = TRUE
+	internal_magazine = TRUE
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/disabler)
 	selfcharge = 1
