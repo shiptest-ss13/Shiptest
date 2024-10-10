@@ -23,8 +23,7 @@
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms
 	cost = 10000
 	unit_name = "lava planet artifact"
-	export_types = list(/obj/item/guardiancreator,
-						/obj/item/rod_of_asclepius,
+	export_types = list(/obj/item/rod_of_asclepius,
 						/obj/item/clothing/suit/space/hardsuit/ert/paranormal,
 						/obj/item/prisoncube,
 						/obj/item/staff/storm,
@@ -45,7 +44,6 @@
 						/obj/machinery/anomalous_crystal,
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
-						/obj/item/guardiancreator/miner/choose//this is basically the most valulable mining loot so good luck getting a miner to part ways
 						)
 /*
 /datum/export/lavaland/trophycommon

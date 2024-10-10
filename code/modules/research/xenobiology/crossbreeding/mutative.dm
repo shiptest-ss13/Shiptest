@@ -25,8 +25,3 @@
 /obj/item/slimecross/mutative/rainbow
 	colour = "rainbow"
 	effect_desc = "Hardens into a shard of slimy crystal. Prick yourself with it to bring forth a Slime Guardian."
-
-/obj/item/slimecross/mutative/rainbow/do_effect(mob/user)
-	user.visible_message("<span class='notice'>[src] collapses in a chromatic flash, transforming into jagged crystal!</span>")
-	new /obj/item/guardiancreator/slime(get_turf(user))
-	..()
