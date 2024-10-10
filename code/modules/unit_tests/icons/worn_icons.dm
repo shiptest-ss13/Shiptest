@@ -5,6 +5,7 @@
 	/// Make sure this location is also present in tools/deploy.sh
 	/// If you need additional paths ontop of this second one, you can add another generate_possible_icon_states_list("your/folder/path/") below the if(additional_icon_location) block in Run(), and make sure to add that path to tools/deploy.sh as well.
 	var/additional_icon_location = null
+	var/required_test = TRUE
 
 /datum/unit_test/mob_overlay_icons/proc/generate_possible_icon_states_list(directory_path)
 	if(!directory_path)
@@ -16,6 +17,9 @@
 		else
 			possible_icon_states += generate_possible_icon_states_list("[directory_path][file_path]")
 
+/datum/unit_test/mob_overlay_icons/proc/types_to_search()
+	return subtypesof(/obj/item/clothing)
+
 /datum/unit_test/mob_overlay_icons/Run()
 	generate_possible_icon_states_list()
 	if(additional_icon_location)
@@ -23,7 +27,7 @@
 
 	var/list/already_warned_icons = list()
 
-	for(var/obj/item/item_path as anything in (subtypesof(/obj/item/clothing)))
+	for(var/obj/item/item_path as anything in types_to_search())
 		var/cached_slot_flags = initial(item_path.slot_flags)
 		if(!cached_slot_flags || (cached_slot_flags & ITEM_SLOT_LPOCKET) || (cached_slot_flags & ITEM_SLOT_RPOCKET) || initial(item_path.item_flags) & ABSTRACT)
 			continue
@@ -45,7 +49,10 @@
 
 		if(mob_overlay_icon) //easiest to check since we override everything. this automatically includes downstream support.
 			if(!(icon_state in icon_states(mob_overlay_icon, 1)))
-				TEST_FAIL("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
+				if(required_test)
+					TEST_FAIL("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
+				else
+					TEST_NOTICE(src, "[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
 			continue
 
 		var/icon_file //checks against all the default icon locations if one isn't defined.
@@ -60,15 +67,6 @@
 				already_warned_icons += icon_state
 				fail_reasons += "[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"
 				spacer = "\n\t"
-
-		/*
-		if(cached_slot_flags & ITEM_SLOT_ID)
-			icon_file = 'icons/mob/clothing/id.dmi'
-			if(!(icon_state in icon_states(icon_file, 1)))
-				already_warned_icons += icon_state
-				fail_reasons += "[spacer][item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"
-				spacer = "\n\t"
-		*/
 
 		if(cached_slot_flags & ITEM_SLOT_GLOVES)
 			icon_file = 'icons/mob/clothing/hands.dmi'
@@ -113,4 +111,13 @@
 				spacer = "\n\t"
 
 		if(fail_reasons)
-			TEST_FAIL(fail_reasons)
+			if(required_test)
+				TEST_FAIL(fail_reasons)
+			else
+				TEST_NOTICE(src, fail_reasons)
+
+/datum/unit_test/mob_overlay_icons/not_clothing
+	required_test = FALSE
+
+/datum/unit_test/mob_overlay_icons/not_clothing/types_to_search()
+	return (subtypesof(/obj/item) - subtypesof(/obj/item/clothing))

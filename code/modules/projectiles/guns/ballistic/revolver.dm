@@ -460,6 +460,7 @@
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
+	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -572,6 +573,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "montagne"
+	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 15
 	recoil = 0
@@ -594,6 +596,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "ashhand"
+	item_state = "hp_generic"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE

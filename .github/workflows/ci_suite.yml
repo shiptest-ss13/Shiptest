@@ -1,4 +1,4 @@
-name: Checks
+name: CI Suite
 on:
   push:
     branches:
@@ -9,11 +9,26 @@ on:
   merge_group:
     branches:
       - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  start_gate:
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
+    name: Start Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mandatory Empty Step
+        run: exit 0
+
   run_linters:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Run Linters
+    needs: start_gate
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -84,9 +99,11 @@ jobs:
           cat check_regex_output.txt
 
   compile_all_maps:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Compile Maps
+    needs: start_gate
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
 
@@ -106,8 +123,8 @@ jobs:
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Integration Tests
+    needs: start_gate
     strategy:
       fail-fast: false
       matrix:
@@ -122,22 +139,22 @@ jobs:
     with:
       arg: ${{ matrix.arg }}
 
-#  run_alternate_tests:
-#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-#    name: Alternate Tests
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#        major: [515]
-#        minor: [1614]
-#    uses: ./.github/workflows/run_integration_tests.yml
-#    with:
-#      major: ${{ matrix.major }}
-#      minor: ${{ matrix.minor }}
+  run_extra_tests:
+    name: Extra Tests
+    needs: start_gate
+    strategy:
+      fail-fast: false
+      matrix:
+        arg: [
+          "EXTRA_SHIP_TEST"
+        ]
+    uses: ./.github/workflows/run_integration_tests.yml
+    with:
+      arg: ${{ matrix.arg }}
 
   test_windows:
-    if: ${{ ! contains(github.event.head_commit.message, '[ci skip]') }}
     name: Windows Build
+    needs: start_gate
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -163,7 +180,18 @@ jobs:
           bash tools/deploy.sh ./deploy
 
       - name: Deploy artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deploy
           path: deploy
+
+  completion_gate: # Serves as a non-moving target for branch rulesets
+    if: always() && !cancelled()
+    name: Completion Gate
+    needs: [ test_windows, compile_all_maps, run_linters, run_all_tests ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
