@@ -630,30 +630,29 @@
 	GLOB.simple_animals[togglestatus] += list(src)
 	AIStatus = togglestatus
 
-	var/virt_z = "[virtual_z()]"
+	var/virt_z = virtual_z()
 	if(!virt_z)
 		return
 
 	switch(togglestatus)
 		if(AI_Z_OFF)
-			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
-
+			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, "[virt_z]", src)
 		else
-			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[virt_z]", src)
 
 /mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 		return
 
-	var/virt_z = "[virtual_z()]"
-	if(!virt_z)
-		return
-	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
-	if(!length(players_on_virtual_z))
-		toggle_ai(AI_Z_OFF)
-	else if(AIStatus == AI_Z_OFF)
-		toggle_ai(AI_ON)
+	var/virt_z = virtual_z()
+	var/players_on_virtual_z = 0
+	if(virt_z)
+		players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, "[virt_z]")
+		if(!length(players_on_virtual_z))
+			toggle_ai(AI_Z_OFF)
+		else if(AIStatus == AI_Z_OFF)
+			toggle_ai(AI_ON)
 
 /mob/living/simple_animal/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -665,6 +664,7 @@
 	. = ..()
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
-	toggle_ai(initial(AIStatus))
+	if(QDELETED(src))
+		return
 	if(new_virtual_z)
 		check_should_sleep()
