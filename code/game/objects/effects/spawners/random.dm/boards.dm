@@ -105,9 +105,9 @@
 	)
 
 //random RND imprinter/protolathe board spawners. Do not use on maps without a good reason
-/obj/effect/spawner/random/circut/protolathe
+/obj/effect/spawner/random/circuit/protolathe
 	name = "random departmental protolathe"
-	icon_state = "circut"
+	icon_state = "circuit"
 	loot = list(
 		/obj/item/circuitboard/machine/protolathe/department/cargo,
 		/obj/item/circuitboard/machine/protolathe/department/engineering,
@@ -117,9 +117,9 @@
 		/obj/item/circuitboard/machine/protolathe/department/security
 	)
 
-/obj/effect/spawner/random/circut/imprinter
+/obj/effect/spawner/random/circuit/imprinter
 	name = "random departmental circuit imprinter"
-	icon_state = "circut"
+	icon_state = "circuit"
 	loot = list(
 		/obj/item/circuitboard/machine/circuit_imprinter/department/cargo,
 		/obj/item/circuitboard/machine/circuit_imprinter/department/engi,
@@ -129,9 +129,9 @@
 		/obj/item/circuitboard/machine/circuit_imprinter/department/sec
 	)
 
-/obj/effect/spawner/random/circut/techfab
+/obj/effect/spawner/random/circuit/techfab
 	name = "random departmental techfab"
-	icon_state = "circut"
+	icon_state = "circuit"
 	loot = list(
 		/obj/item/circuitboard/machine/techfab/department/service,
 		/obj/item/circuitboard/machine/techfab/department/cargo,
@@ -144,7 +144,7 @@
 
 /obj/effect/spawner/random/rnd
 	name = "random RND spawner"
-	icon_state = "circut"
+	icon_state = "circuit"
 	loot = list(
 		/obj/item/storage/box/rndmining,
 		/obj/item/storage/box/rndengi,
@@ -183,6 +183,9 @@
 			/obj/item/circuitboard/machine/selling_pad = 5,
 			/obj/item/circuitboard/machine/emitter = 5,
 		)
+
+/obj/effect/spawner/random/circuit
+	icon_state = "circuit"
 
 /obj/effect/spawner/random/circuit/machine/rare
 	loot = list(
