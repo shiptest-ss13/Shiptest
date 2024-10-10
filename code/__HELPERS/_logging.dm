@@ -13,16 +13,24 @@
 
 #define GITHUB_ACTION_FORMATING(MSG, ERROR_TYPE)
 
-//print a warning message to world.log
-#define WARNING(MSG) warning("file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#ifdef UNIT_TESTS
+#define WARNING(MSG) warning("::warning file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#else
+#define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [UNLINT(src)] usr: [usr].")
+#endif
+/// Print a warning message to world.log
 /proc/warning(msg)
-	msg = "::warning [msg]"
+	msg = "## WARNING: [msg]"
 	log_world(msg)
 
-//not an error or a warning, but worth to mention on the world log, just in case.
-#define NOTICE(MSG) notice("file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#ifdef UNIT_TESTS
+#define NOTICE(MSG) notice("::notice file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#else
+#define NOTICE(MSG) notice(MSG)
+#endif
+///not an error or a warning, but worth to mention on the world log, just in case.
 /proc/notice(msg)
-	msg = "::notice [msg]"
+	msg = "## NOTICE: [msg]"
 	log_world(msg)
 
 //print a testing-mode debug message to world.log and world
