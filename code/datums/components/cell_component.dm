@@ -64,10 +64,10 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 
 /datum/component/cell/RegisterWithParent()
 	//Component to Parent signal registries
-	RegisterSignal(parent, COMSIG_ITEM_POWER_USE, .proc/simple_power_use)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/insert_cell)
-	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT , .proc/remove_cell)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine_cell)
+	RegisterSignal(parent, COMSIG_ITEM_POWER_USE, PROC_REF(simple_power_use))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(insert_cell))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT , PROC_REF(remove_cell))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine_cell))
 
 /datum/component/cell/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ITEM_POWER_USE)
