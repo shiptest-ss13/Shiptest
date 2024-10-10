@@ -107,24 +107,6 @@
 		/obj/effect/decal/cleanable/ash/large = 30,
 	)
 
-/obj/effect/spawner/random/grille_or_trash
-	name = "maint grille or trash spawner"
-	icon_state = "grille"
-	loot = list(
-		/obj/structure/grille = 5,
-		/obj/item/cigbutt = 1,
-		/obj/item/trash/cheesie = 1,
-		/obj/item/trash/candy = 1,
-		/obj/item/trash/chips = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
-		/obj/item/trash/pistachios = 1,
-		/obj/item/trash/plate = 1,
-		/obj/item/trash/popcorn = 1,
-		/obj/item/trash/raisins = 1,
-		/obj/item/trash/sosjerky = 1,
-		/obj/item/trash/syndi_cakes = 1
-	)
-
 /obj/effect/spawner/random/trash/mess
 	name = "gross decal spawner"
 	icon_state = "vomit"
