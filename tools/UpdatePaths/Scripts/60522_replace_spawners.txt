@@ -8,14 +8,14 @@
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears : /obj/effect/spawner/random/clothing/kittyears_or_rabbitears
 /obj/effect/spawner/lootdrop/minor/bowler_or_that : /obj/effect/spawner/random/clothing/bowler_or_that
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears : /obj/effect/spawner/random/clothing/beret_or_rabbitears
-/obj/effect/spawner/bundle/hobo_squat : /obj/effect/spawner/random/trash/hobo_squat
-/obj/effect/spawner/bundle/moisture_trap : /obj/effect/spawner/random/trash/moisture_trap
+/obj/effect/spawner/bundle/hobo_squat : /obj/effect/spawner/random/trash/decal/hobo_squat
+/obj/effect/spawner/bundle/moisture_trap : /obj/effect/spawner/random/trash/decal/moisture_trap
 /obj/effect/spawner/lootdrop/maint_drugs : /obj/effect/spawner/random/entertainment/drugs
-/obj/effect/spawner/lootdrop/grille_or_trash : /obj/effect/spawner/random/trash/grille_or_waste
-/obj/effect/spawner/lootdrop/botanical_waste : /obj/effect/spawner/random/trash/botanical_waste
-/obj/effect/spawner/lootdrop/food_packaging : /obj/effect/spawner/random/trash/food_packaging
-/obj/effect/spawner/lootdrop/cigbutt : /obj/effect/spawner/random/trash/cigbutt
-/obj/effect/spawner/lootdrop/garbage_spawner : /obj/effect/spawner/random/trash/garbage
+/obj/effect/spawner/lootdrop/grille_or_trash : /obj/effect/spawner/random/trash/decal/grille_or_waste
+/obj/effect/spawner/lootdrop/botanical_waste : /obj/effect/spawner/random/trash/decal/botanical_waste
+/obj/effect/spawner/lootdrop/food_packaging : /obj/effect/spawner/random/trash/decal/food_packaging
+/obj/effect/spawner/lootdrop/cigbutt : /obj/effect/spawner/random/trash/decal/cigbutt
+/obj/effect/spawner/lootdrop/garbage_spawner : /obj/effect/spawner/random/trash/decal/garbage
 /obj/effect/spawner/lootdrop/gambling : /obj/effect/spawner/random/entertainment/gambling
 /obj/effect/spawner/lootdrop/wallet_loot : /obj/effect/spawner/random/entertainment/wallet_storage
 /obj/effect/spawner/lootdrop/organ_spawner : /obj/effect/spawner/random/medical/organs
@@ -49,9 +49,9 @@
 /obj/effect/spawner/lootdrop/armory_contraband : /obj/effect/spawner/random/contraband/armory
 /obj/effect/spawner/lootdrop/armory_contraband/metastation : /obj/effect/spawner/random/contraband/armory
 /obj/effect/spawner/lootdrop/armory_contraband/donutstation : /obj/effect/spawner/random/contraband/armory
-/obj/effect/spawner/lootdrop/gross_decal_spawner : /obj/effect/spawner/random/trash/mess
-/obj/effect/spawner/scatter/grime : /obj/effect/spawner/random/trash/grime
-/obj/effect/spawner/scatter/moisture : /obj/effect/spawner/random/trash/moisture
+/obj/effect/spawner/lootdrop/gross_decal_spawner : /obj/effect/spawner/random/trash/decal/mess
+/obj/effect/spawner/scatter/grime : /obj/effect/spawner/random/trash/decal/grime
+/obj/effect/spawner/scatter/moisture : /obj/effect/spawner/random/trash/decal/moisture
 /obj/effect/spawner/lootdrop/space/fancytech : /obj/effect/spawner/random/exotic/technology
 /obj/effect/spawner/lootdrop/space/languagebook : /obj/effect/spawner/random/exotic/languagebook
 /obj/effect/spawner/lootdrop/space/syndiecosmetic : /obj/effect/spawner/random/exotic/syndie
@@ -79,5 +79,3 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc : /obj/effect/spawner/random/exotic/snow_gear
 /obj/effect/spawner/lootdrop/seed_vault : /obj/effect/spawner/random/food_or_drink/seed_vault
 /obj/effect/spawner/lootdrop/whiteship_cere_ripley : /obj/effect/spawner/random/exotic/ripley
-
-

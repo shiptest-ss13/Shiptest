@@ -199,7 +199,7 @@
 	id = "rngplant"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 2000)
-	build_path = /obj/effect/spawner/random/seeded
+	build_path = /obj/effect/spawner/random/food_or_drink/seed
 	category = list("initial","LIFESEED_2.0")
 
 /datum/design/genesis

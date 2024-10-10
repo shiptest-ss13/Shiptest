@@ -100,7 +100,7 @@
 		/obj/effect/spawner/random/waste/mechwreck/rare = 20,
 
 		//decals and fluff structures
-		/obj/effect/spawner/random/waste/trash = 1800,
+		/obj/effect/spawner/random/trash/decal = 1800,
 		/obj/effect/spawner/random/waste/radiation = 80,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 10,
 
@@ -160,7 +160,7 @@
 	)
 
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/trash = 180,
+		/obj/effect/spawner/random/trash/decal = 180,
 		/obj/effect/spawner/random/waste/radiation = 16,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 2,
 		/obj/effect/spawner/random/waste/atmos_can = 36,
@@ -172,7 +172,7 @@
 /datum/biome/waste/crater/rad
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/glowshroom = 180,
-		/obj/effect/spawner/random/waste/trash = 90,
+		/obj/effect/spawner/random/trash/decal = 90,
 		/obj/effect/spawner/random/waste/radiation = 25,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 7,
 		/obj/effect/spawner/random/waste/atmos_can = 7,
@@ -186,7 +186,7 @@
 /datum/biome/waste/clearing/mushroom
 	flora_spawn_list = list(
 		/obj/effect/spawner/random/waste/mechwreck = 100,
-		/obj/effect/spawner/random/waste/trash = 900,
+		/obj/effect/spawner/random/trash/decal = 900,
 		/obj/effect/spawner/random/waste/radiation = 300,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 120,
 		/obj/effect/spawner/random/waste/girder = 600,
@@ -231,7 +231,7 @@
 	flora_spawn_list = list( //there are no plants here
 		/obj/effect/spawner/random/waste/mechwreck = 200,
 		/obj/effect/spawner/random/waste/mechwreck/rare = 50,
-		/obj/effect/spawner/random/waste/trash = 900,
+		/obj/effect/spawner/random/trash/decal = 900,
 		/obj/effect/spawner/random/waste/radiation = 80,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 20,
 		/obj/effect/spawner/random/waste/girder = 600,
@@ -293,7 +293,7 @@
 	flora_spawn_list = list(
 		/obj/effect/spawner/random/waste/mechwreck = 100,
 		/obj/effect/spawner/random/waste/mechwreck/rare = 20,
-		/obj/effect/spawner/random/waste/trash = 1800,
+		/obj/effect/spawner/random/trash/decal = 1800,
 		/obj/effect/spawner/random/waste/radiation = 80,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 10,
 		/obj/effect/spawner/random/waste/girder = 600,
@@ -352,7 +352,7 @@
 
 /datum/biome/cave/waste/rad
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/trash = 900,
+		/obj/effect/spawner/random/trash/decal = 900,
 		/obj/effect/spawner/random/waste/radiation = 250,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 70,
 		/obj/effect/spawner/random/waste/atmos_can = 50,
@@ -389,7 +389,7 @@
 	flora_spawn_list = list(
 		/obj/effect/spawner/random/waste/mechwreck = 40,
 		/obj/effect/spawner/random/waste/mechwreck/rare = 10,
-		/obj/effect/spawner/random/waste/trash = 180,
+		/obj/effect/spawner/random/trash/decal = 180,
 		/obj/effect/spawner/random/waste/radiation = 32,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 4,
 		/obj/effect/spawner/random/waste/girder = 120,
@@ -423,7 +423,7 @@
 
 /datum/biome/cave/waste/metal/hivebot
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/trash = 90,
+		/obj/effect/spawner/random/trash/decal = 90,
 		/obj/effect/spawner/random/waste/radiation = 16,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 2,
 		/obj/effect/spawner/random/waste/girder = 60,
@@ -464,7 +464,7 @@
 
 	flora_spawn_list = list(
 		/obj/effect/spawner/random/waste/mechwreck = 20,
-		/obj/effect/spawner/random/waste/trash = 90,
+		/obj/effect/spawner/random/trash/decal = 90,
 		/obj/effect/spawner/random/waste/radiation = 16,
 		/obj/structure/reagent_dispensers/fueltank = 10,
 		/obj/structure/reagent_dispensers/watertank = 20,

@@ -372,7 +372,7 @@ Good:
 Bad:
 
 ```dm
-/obj/effect/spawner/random/crate_spawner
+/obj/effect/spawner/lootdrop/crate_spawner
 	name = "lootcrate spawner"
 	loot = list(
 		"" = 80
@@ -405,7 +405,7 @@ Good:
 Bad:
 
 ```dm
-/obj/effect/spawner/random/armory_contraband
+/obj/effect/spawner/lootdrop/armory_contraband
 	loot = list(
 		/obj/item/gun/ballistic/automatic/pistol = 8,
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
@@ -413,7 +413,7 @@ Bad:
 		/obj/item/gun/ballistic/revolver/mateba
 	)
 
-/obj/effect/spawner/random/armory_contraband/metastation
+/obj/effect/spawner/lootdrop/armory_contraband/metastation
 	loot = list(
 		/obj/item/gun/ballistic/automatic/pistol = 8,
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
