@@ -483,7 +483,6 @@
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
 	item_state = "duffel-syndieammo"
-	slowdown = 0
 	resistance_flags = FIRE_PROOF
 
 /obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
