@@ -46,7 +46,8 @@
 		magazine = new default_ammo_type(src)
 	if (spawn_no_ammo)
 		get_ammo_list(drop_all = TRUE)
-	chamber_round()
+	else
+		chamber_round()
 	update_appearance()
 
 /obj/item/gun/ballistic/update_icon_state()
