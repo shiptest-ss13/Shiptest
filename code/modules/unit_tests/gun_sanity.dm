@@ -1,5 +1,6 @@
 /datum/unit_test/gun_sanity/Run()
-	for(var/obj/item/gun/target_gun as anything in subtypesof(/obj/item/gun))
+	for(var/gun_path in subtypesof(/obj/item/gun))
+		var/obj/item/gun/target_gun = gun_path
 		target_gun = new()
 		log_test("Testing [target_gun.type]")
 		if(target_gun.default_ammo_type)
