@@ -235,7 +235,7 @@
 	)
 	manufacturer = MANUFACTURER_INTEQ
 
-EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
+NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 
 
 /////////////////////////////

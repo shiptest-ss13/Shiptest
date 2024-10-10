@@ -128,7 +128,7 @@
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-EMPTY_GUN_HELPER(automatic/smg/cm5)
+NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9mm)"

@@ -43,13 +43,13 @@
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 
-EMPTY_GUN_HELPER(automatic/pistol/candor)
+NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
 
-EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
+NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
 	. = ..()
@@ -128,7 +128,7 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
-EMPTY_GUN_HELPER(automatic/pistol/commander)
+NO_MAG_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "\improper Commissioner"
@@ -141,7 +141,7 @@ EMPTY_GUN_HELPER(automatic/pistol/commander)
 	item_state = "commander-inteq"
 	manufacturer = MANUFACTURER_INTEQ
 
-EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
+NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"

@@ -488,7 +488,7 @@
 	recoil = 0 //weaker than normal revolver, no recoil
 	fire_delay = 0.2 SECONDS
 
-EMPTY_GUN_HELPER(revolver/detective)
+NO_MAG_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
 	. = ..()

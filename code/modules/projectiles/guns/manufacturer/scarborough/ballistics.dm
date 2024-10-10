@@ -62,7 +62,7 @@
 	spread_unwielded = 9
 	recoil_unwielded = 2
 
-EMPTY_GUN_HELPER(automatic/pistol/ringneck)
+NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	name = "Ringneck-76"
@@ -77,7 +77,7 @@ EMPTY_GUN_HELPER(automatic/pistol/ringneck)
 	spread_unwielded = 7
 	recoil_unwielded = 3
 
-EMPTY_GUN_HELPER(automatic/pistol/ringneck/indie)
+NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
@@ -149,7 +149,7 @@ EMPTY_GUN_HELPER(automatic/pistol/ringneck/indie)
 		)
 	)
 
-EMPTY_GUN_HELPER(automatic/pistol/asp)
+NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 /obj/item/ammo_box/magazine/m57_39_asp
 	name = "Asp magazine (5.7x39mm)"
@@ -282,7 +282,7 @@ EMPTY_GUN_HELPER(automatic/pistol/asp)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
-EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
+NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	name = "MP-84m Kingsnake"
@@ -359,7 +359,7 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 	spread_unwielded = 0
 	wield_slowdown = 0
 
-EMPTY_GUN_HELPER(automatic/pistol/himehabu)
+NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/ammo_box/magazine/m22lr_himehabu
 	name = "pistol magazine (.22 LR)"
@@ -423,7 +423,7 @@ EMPTY_GUN_HELPER(automatic/pistol/himehabu)
 		)
 	)
 
-EMPTY_GUN_HELPER(automatic/smg/cobra)
+NO_MAG_GUN_HELPER(automatic/smg/cobra)
 
 /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	name = "Cobra-20"
@@ -431,7 +431,7 @@ EMPTY_GUN_HELPER(automatic/smg/cobra)
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
-EMPTY_GUN_HELPER(automatic/smg/cobra/indie)
+NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
 
 /obj/item/ammo_box/magazine/m45_cobra
@@ -519,7 +519,7 @@ EMPTY_GUN_HELPER(automatic/smg/cobra/indie)
 	default_attachments = list(/obj/item/attachment/foldable_stock/sidewinder)
 
 
-EMPTY_GUN_HELPER(automatic/smg/sidewinder)
+NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 
 /obj/item/ammo_box/magazine/m57_39_sidewinder
 	name = "Sidewinder magazine (5.7x39mm)"
@@ -589,7 +589,7 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 		)
 	)
 
-EMPTY_GUN_HELPER(automatic/marksman/boomslang)
+NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 
 /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	name = "Boomslang-90"
@@ -601,7 +601,7 @@ EMPTY_GUN_HELPER(automatic/marksman/boomslang)
 	zoom_amt = 3 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 0
 
-EMPTY_GUN_HELPER(automatic/marksman/boomslang/indie)
+NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
 /obj/item/ammo_box/magazine/boomslang
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
@@ -668,7 +668,7 @@ EMPTY_GUN_HELPER(automatic/marksman/boomslang/indie)
 	valid_attachments = list()
 	slot_available = list()
 
-EMPTY_GUN_HELPER(automatic/marksman/taipan)
+NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 
 
 //########### RIFLES ###########//
@@ -741,7 +741,7 @@ EMPTY_GUN_HELPER(automatic/marksman/taipan)
 		)
 	)
 
-EMPTY_GUN_HELPER(automatic/assault/hydra)
+NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 //we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
 /obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
@@ -831,7 +831,7 @@ EMPTY_GUN_HELPER(automatic/assault/hydra)
 	zoomable = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
-EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
+NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 	name = "SMR-80 \"Hydra\""
@@ -1006,7 +1006,7 @@ EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
 		)
 	)
 
-EMPTY_GUN_HELPER(shotgun/automatic/bulldog)
+NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
 	name = "shotgun box magazine (12g buckshot)"
@@ -1050,7 +1050,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog)
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
 
 
-EMPTY_GUN_HELPER(shotgun/bulldog)
+NO_MAG_GUN_HELPER(shotgun/bulldog)
 
 
 /obj/item/gun/ballistic/rocketlauncher/mako
