@@ -1,6 +1,6 @@
 #define EMPTY_GUN_HELPER(gun_type)				\
 	/obj/item/gun/ballistic/##gun_type/no_mag {	\
-		default_ammo_type = null;				\
+		default_ammo_type = FALSE;				\
 	}
 
 ///Subtype for any kind of ballistic gun
@@ -42,7 +42,7 @@
 		bolt_locked = TRUE
 		update_appearance()
 		return
-	if (!magazine && ispath(default_ammo_type))
+	if (ispath(default_ammo_type))
 		magazine = new default_ammo_type(src)
 	if (spawn_no_ammo)
 		get_ammo_list(drop_all = TRUE)

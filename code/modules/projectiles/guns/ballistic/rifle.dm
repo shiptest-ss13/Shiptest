@@ -98,7 +98,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
@@ -187,7 +187,7 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/rifle/scout/no_mag
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"

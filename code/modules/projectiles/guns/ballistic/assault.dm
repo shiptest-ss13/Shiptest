@@ -54,7 +54,7 @@
 	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/assault/skm/no_mag
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
 	name = "\improper Chopper"
@@ -103,7 +103,7 @@
 	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/assault/p16/no_mag
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"

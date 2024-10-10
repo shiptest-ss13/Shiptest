@@ -45,7 +45,7 @@
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/wt550/no_mag
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"

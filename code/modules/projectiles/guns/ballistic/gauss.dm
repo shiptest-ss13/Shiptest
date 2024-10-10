@@ -65,7 +65,7 @@
 	fire_select_icon_state_prefix = "slug_"
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
-	default_ammo_type = null
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
