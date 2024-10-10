@@ -34,7 +34,7 @@
 	icon_state = "rifle-steel"
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
-	stack_size = 5
+	stack_size = 15
 
 // 5.56x42mm CLIP (CM82, Hydra variants)
 
@@ -91,7 +91,7 @@
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
-	stack_size = 10
+	stack_size = 5
 
 /obj/item/ammo_casing/a65clip
 	name = "6.5x57mm CLIP bullet casing"
