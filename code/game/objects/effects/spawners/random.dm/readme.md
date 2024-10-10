@@ -170,7 +170,7 @@ Sort from top to bottom.  The rarest items for your spawner should be at the bot
 Good:
 
 ```dm
-/obj/effect/spawner/random/contraband/armory
+/obj/effect/spawner/random/exotic/armory
 	name = "armory loot spawner"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/pistol = 8,
@@ -186,7 +186,7 @@ Good:
 Bad:
 
 ```dm
-/obj/effect/spawner/random/contraband/armory
+/obj/effect/spawner/random/exotic/armory
 	name = "armory loot spawner"
 	loot = list(
 		/obj/item/storage/box/syndie_kit/throwing_weapons = 3,
@@ -387,7 +387,7 @@ We don't want copy-cat spawners that are almost identical.  Instead merge spawne
 Good:
 
 ```dm
-/obj/effect/spawner/random/contraband/armory
+/obj/effect/spawner/random/exotic/armory
 	name = "armory loot spawner"
 	icon_state = "pistol"
 	loot = list(

@@ -51,3 +51,17 @@
 		/obj/item/storage/wallet/random = 1,
 		/obj/item/pda = 1
 	)
+
+/obj/effect/spawner/random/exotic/armory
+	name = "generic armory spawner"
+	spawn_loot_split = TRUE
+	spawn_loot_count = 3
+	spawn_loot_split_pixel_offsets = 4
+
+	loot = list(
+		/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
+		/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
+		/obj/item/gun/ballistic/automatic/pistol/deagle,
+		/obj/item/gun/ballistic/revolver/mateba
+	)
+
