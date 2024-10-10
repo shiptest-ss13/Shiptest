@@ -2000,7 +2000,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "pF" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3064,7 +3064,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "La" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3701,11 +3701,11 @@
 "Zf" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration{
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 7
 	},
-/obj/effect/spawner/random/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = -8
 	},
 /obj/machinery/button/door{

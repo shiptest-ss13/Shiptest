@@ -2484,8 +2484,8 @@
 	name = "fridge"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/radio/intercom/directional/north,
@@ -3043,7 +3043,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/camera/autoname,
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
@@ -4547,7 +4547,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Cp" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/structure/sign/poster/contraband/inteq{
 	pixel_x = 32
 	},
@@ -6899,7 +6899,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "SS" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -7116,11 +7116,11 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,

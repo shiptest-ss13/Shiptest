@@ -239,8 +239,8 @@
 	populate = 0
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/radio/intercom/directional/north,
@@ -1102,7 +1102,7 @@
 "nU" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "od" = (
@@ -3791,13 +3791,13 @@
 	dir = 1
 	},
 /obj/structure/crate_shelf,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 1;
 	pixel_y = -3

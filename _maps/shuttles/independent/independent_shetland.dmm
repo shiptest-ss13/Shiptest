@@ -735,7 +735,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/janitor)
 "gd" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 4
 	},
@@ -3100,7 +3100,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "zr" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 8
 	},
@@ -5423,9 +5423,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 1;

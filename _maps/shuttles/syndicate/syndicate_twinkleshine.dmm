@@ -272,7 +272,7 @@
 "bR" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters,
 /obj/machinery/light/directional/south,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -6329,7 +6329,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
@@ -8597,9 +8597,9 @@
 "Xf" = (
 /obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "Xg" = (

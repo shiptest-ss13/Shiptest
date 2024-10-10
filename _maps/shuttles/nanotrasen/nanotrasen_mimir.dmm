@@ -876,7 +876,7 @@
 /area/ship/engineering)
 "fd" = (
 /obj/structure/table/wood/reinforced,
-/obj/effect/spawner/random/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -908,7 +908,7 @@
 	pixel_x = -5;
 	pixel_y = -7
 	},
-/obj/effect/spawner/random/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 6;
 	pixel_y = 11
 	},
@@ -2750,7 +2750,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pY" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
@@ -4851,7 +4851,7 @@
 /area/ship/crew/canteen)
 "Dh" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "Dj" = (
@@ -7102,7 +7102,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "PC" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/colavend,
 /obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
@@ -8536,7 +8536,7 @@
 /area/ship/engineering/atmospherics)
 "XY" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)

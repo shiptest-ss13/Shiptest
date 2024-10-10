@@ -186,7 +186,7 @@
 /datum/blackmarket_item/consumable/ration
 	name = "Ration Pack"
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
-	item = /obj/effect/spawner/random/ration
+	item = /obj/effect/spawner/random/food_or_drink/ration
 
 	price_min = 150
 	price_max = 300
