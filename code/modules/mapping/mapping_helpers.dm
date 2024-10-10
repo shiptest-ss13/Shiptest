@@ -253,7 +253,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/ianbirthday
 	name = "Ian's Bday Helper"
 	late = TRUE
-	icon_state = "iansbdayhelper"
 	var/balloon_clusters = 2
 
 /obj/effect/mapping_helpers/ianbirthday/LateInitialize()
@@ -312,7 +311,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 
 /obj/effect/mapping_helpers/ianbirthday/admin//so admins may birthday any room
 	name = "generic birthday setup"
-	icon_state = "bdayhelper"
 
 /obj/effect/mapping_helpers/ianbirthday/admin/LateInitialize()
 	birthday()
@@ -322,7 +320,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/iannewyear
 	name = "Ian's New Years Helper"
 	late = TRUE
-	icon_state = "iansnewyrshelper"
 
 /obj/effect/mapping_helpers/iannewyear/LateInitialize()
 	if(SSevents.holidays && SSevents.holidays[NEW_YEAR])
