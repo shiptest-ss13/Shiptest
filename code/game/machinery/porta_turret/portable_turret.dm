@@ -826,7 +826,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100 )] percent.</span>"
+			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.</span>"
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -980,7 +980,10 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
-// Frontiersmen Turrets
+/// Frontiersmen Turrets
+
+// fast and spitty
+
 /obj/machinery/porta_turret/ship/frontiersmen
 	name = "Spitter Turret"
 	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
