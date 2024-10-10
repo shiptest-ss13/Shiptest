@@ -120,7 +120,7 @@
 		/obj/structure/flora/ash/cap_shroom = 4,
 		/obj/structure/flora/ash/stem_shroom = 4,
 		/obj/effect/decal/remains/human = 4,
-		/obj/effect/spawner/lootdrop/maintenance = 40,
+		/obj/effect/spawner/random/maintenance = 40,
 	)
 
 /datum/biome/sand/grass

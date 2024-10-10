@@ -124,7 +124,7 @@
 		return scatter_locations
 
 	for(var/turf/turf_in_view in view(radius, get_turf(src)))
-		if(isclosedturf(turf_in_view) || (isgroundlessturf(turf_in_view) && !GET_TURF_BELOW(turf_in_view)))
+		if(isclosedturf(turf_in_view))
 			continue
 		if(!has_unblocked_line(turf_in_view))
 			continue
@@ -142,7 +142,7 @@
 
 //finds the probabilities of items spawning from a loot spawner's loot pool
 /obj/item/loot_table_maker
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "random_loot"
 	var/spawner_to_test = /obj/effect/spawner/random/maintenance //what lootdrop spawner to use the loot pool of
 	var/loot_count = 180 //180 is about how much maint loot spawns per map as of 11/14/2019

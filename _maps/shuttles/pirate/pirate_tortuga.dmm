@@ -921,7 +921,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "kp" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -980,7 +980,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "li" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -1301,7 +1301,7 @@
 /area/ship/crew/canteen)
 "oK" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -1451,7 +1451,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -2202,7 +2202,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -2823,9 +2823,9 @@
 /area/ship/crew/canteen)
 "Lb" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
 /obj/effect/turf_decal/siding/wideplating{
 	dir = 5
 	},
@@ -3312,7 +3312,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "QM" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/cardboard,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -4047,7 +4047,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "YU" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"

@@ -56,7 +56,7 @@
 
 	loot = list(
 		/mob/living/simple_animal/borer/sterile = 0.35,
-		/obj/effect/spawner/lootdrop/maintenance = 0.65,
+		/obj/effect/spawner/random/maintenance = 0.65,
 	)
 
 /obj/effect/spawner/lootdrop/chicken

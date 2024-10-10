@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 			) = 1,
 		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
-		/obj/effect/spawner/lootdrop/ration = 1,
+		/obj/effect/spawner/random/ration = 1,
 		) = 8,
 
 	list(//fakeout items, keep this list at low relative weight

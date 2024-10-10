@@ -1461,7 +1461,7 @@
 	dir = 9
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/turf_decal/box,
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -2013,7 +2013,7 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "sV" = (
@@ -2064,7 +2064,7 @@
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/costume,
 /obj/item/storage/box/emptysandbags,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/button/door{
 	dir = 4;
 	id = "syndie_mechbay";
@@ -3155,22 +3155,22 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration{
 	pixel_x = -6
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration{
 	pixel_x = -6
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration{
 	pixel_x = -6
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration{
 	pixel_x = -6
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
@@ -5460,7 +5460,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "Artillery2shutter";

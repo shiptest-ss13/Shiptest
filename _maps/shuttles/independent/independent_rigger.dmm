@@ -62,7 +62,7 @@
 "bc" = (
 /obj/structure/closet/cardboard,
 /obj/item/paicard,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "bi" = (
@@ -239,8 +239,8 @@
 	populate = 0
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/radio/intercom/directional/north,
@@ -283,7 +283,7 @@
 "eu" = (
 /obj/structure/closet/crate,
 /obj/machinery/airalarm/directional/north,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "eF" = (
@@ -1160,7 +1160,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "oX" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ph" = (
@@ -2463,7 +2463,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "DG" = (
@@ -2616,7 +2616,7 @@
 	},
 /obj/structure/closet/crate,
 /obj/machinery/firealarm/directional/west,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Fu" = (
@@ -3552,7 +3552,7 @@
 /area/ship/maintenance/central)
 "Qv" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ship/construction)
 "QB" = (
@@ -3791,13 +3791,13 @@
 	dir = 1
 	},
 /obj/structure/crate_shelf,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 1;
 	pixel_y = -3
@@ -3903,7 +3903,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ug" = (

@@ -240,7 +240,7 @@
 	icon_state = "crateopen";
 	opened = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/gloves,
 /turf/open/floor/plasteel/dark,
@@ -576,7 +576,7 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/glowstick,
 /turf/open/floor/plasteel/dark,
@@ -2173,7 +2173,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/tool_surgery_common,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uk" = (
@@ -2520,7 +2520,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/spawner/lootdrop/random_prosthetic,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2683,7 +2683,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/east,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2846,7 +2846,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/plasteel/dark,
@@ -3701,11 +3701,11 @@
 "Zf" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration,
+/obj/effect/spawner/random/ration{
 	pixel_x = 7
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/ration{
 	pixel_x = -8
 	},
 /obj/machinery/button/door{
