@@ -96,7 +96,7 @@
 		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
 		/obj/structure/vein/classthree = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand = 1,
+		/obj/effect/spawner/random/anomaly/sand = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -199,7 +199,7 @@
 		/obj/structure/geyser/random = 4,
 		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
-		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 1
+		/obj/effect/spawner/random/anomaly/sand/cave = 1
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(

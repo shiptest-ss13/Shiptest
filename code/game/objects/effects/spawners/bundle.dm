@@ -44,7 +44,7 @@
 	name = "maid costume spawner"
 	items = list(
 		/obj/item/clothing/under/dress/skirt,
-		/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
+		/obj/effect/spawner/random/minor/beret_or_rabbitears,
 		/obj/item/clothing/glasses/blindfold)
 
 
@@ -65,7 +65,7 @@
 	name = "prig costume spawner"
 	items = list(
 		/obj/item/clothing/accessory/waistcoat,
-		/obj/effect/spawner/lootdrop/minor/bowler_or_that,
+		/obj/effect/spawner/random/minor/bowler_or_that,
 		/obj/item/clothing/shoes/sneakers/black,
 		/obj/item/cane,
 		/obj/item/clothing/under/suit/sl,
@@ -88,7 +88,7 @@
 	name = "waiter costume spawner"
 	items = list(
 		/obj/item/clothing/under/suit/waiter,
-		/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
+		/obj/effect/spawner/random/minor/kittyears_or_rabbitears,
 		/obj/item/clothing/suit/apron)
 
 /obj/effect/spawner/bundle/costume/pirate
@@ -96,7 +96,7 @@
 	items = list(
 		/obj/item/clothing/under/costume/pirate,
 		/obj/item/clothing/suit/pirate,
-		/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
+		/obj/effect/spawner/random/minor/pirate_or_bandana,
 		/obj/item/clothing/glasses/eyepatch)
 
 /obj/effect/spawner/bundle/costume/cutewitch

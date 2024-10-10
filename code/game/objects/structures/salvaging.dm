@@ -56,16 +56,16 @@
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/lootdrop/salvage_capacitor = 50,
-		/obj/effect/spawner/lootdrop/salvage_capacitor = 50,
-		/obj/effect/spawner/lootdrop/salvage_scanning = 50,
-		/obj/effect/spawner/lootdrop/salvage_scanning = 50,
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 40,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 40,
-		/obj/effect/spawner/lootdrop/salvage_laser = 40,
-		/obj/effect/spawner/lootdrop/salvage_laser = 40,
+		/obj/effect/spawner/random/salvage_capacitor = 50,
+		/obj/effect/spawner/random/salvage_capacitor = 50,
+		/obj/effect/spawner/random/salvage_scanning = 50,
+		/obj/effect/spawner/random/salvage_scanning = 50,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_manipulator = 40,
+		/obj/effect/spawner/random/salvage_manipulator = 40,
+		/obj/effect/spawner/random/salvage_laser = 40,
+		/obj/effect/spawner/random/salvage_laser = 40,
 	)
 
 /obj/structure/salvageable/computer
@@ -79,7 +79,7 @@
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/lootdrop/salvage_capacitor = 60,
+		/obj/effect/spawner/random/salvage_capacitor = 60,
 
 		/obj/item/computer_hardware/battery = 40,
 		/obj/item/computer_hardware/battery = 40,
@@ -91,8 +91,8 @@
 		/obj/item/computer_hardware/card_slot = 40,
 		/obj/item/computer_hardware/network_card/advanced = 20,
 
-		/obj/effect/spawner/lootdrop/random_computer_circuit_common = 50,
-		/obj/effect/spawner/lootdrop/random_computer_circuit_rare = 5,
+		/obj/effect/spawner/random/random_computer_circuit_common = 50,
+		/obj/effect/spawner/random/random_computer_circuit_rare = 5,
 
 		/obj/item/research_notes/loot/tiny = 10,
 	)
@@ -107,10 +107,10 @@
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
 
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_manipulator = 30,
 
 		/obj/item/circuitboard/machine/autolathe = 35,
 
@@ -134,17 +134,17 @@
 		/obj/item/stack/ore/salvage/scrapplasma/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage_manipulator = 30,
 
-		/obj/effect/spawner/lootdrop/tool_engie_proto = 45,
-		/obj/effect/spawner/lootdrop/tool_surgery_proto = 55,
-		/obj/effect/spawner/lootdrop/beaker_loot_spawner = 45,
-		/obj/effect/spawner/lootdrop/random_prosthetic = 25,
-		/obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop = 5, //:flushed:
-		/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop = 5,
+		/obj/effect/spawner/random/tool_engie_proto = 45,
+		/obj/effect/spawner/random/tool_surgery_proto = 55,
+		/obj/effect/spawner/random/beaker_loot_spawner = 45,
+		/obj/effect/spawner/random/random_prosthetic = 25,
+		/obj/effect/spawner/random/random_gun_protolathe_lootdrop = 5, //:flushed:
+		/obj/effect/spawner/random/random_ammo_protolathe_lootdrop = 5,
 
 		/obj/item/storage/part_replacer = 20,
 		/obj/item/storage/part_replacer/bluespace = 1,
@@ -172,13 +172,13 @@
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
 
-		/obj/effect/spawner/lootdrop/salvage_matter_bin = 40,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage_matter_bin = 40,
+		/obj/effect/spawner/random/salvage_manipulator = 30,
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
-		/obj/effect/spawner/lootdrop/random_machine_circuit_mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
-		/obj/effect/spawner/lootdrop/random_machine_circuit_common = 50, //well.... "common"
-		/obj/effect/spawner/lootdrop/random_machine_circuit_rare = 5,
+		/obj/effect/spawner/random/random_machine_circuit_mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
+		/obj/effect/spawner/random/random_machine_circuit_common = 50, //well.... "common"
+		/obj/effect/spawner/random/random_machine_circuit_rare = 5,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -199,12 +199,12 @@
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapplasma = 60,
 
-		/obj/effect/spawner/lootdrop/salvage_scanning = 40,
-		/obj/effect/spawner/lootdrop/salvage_laser = 30,
-		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage_scanning = 40,
+		/obj/effect/spawner/random/salvage_laser = 30,
+		/obj/effect/spawner/random/salvage_manipulator = 30,
 
 		/obj/item/storage/toolbox/syndicate/empty = 80,
-		/obj/effect/spawner/lootdrop/destructive_anal_loot = 65,
+		/obj/effect/spawner/random/destructive_anal_loot = 65,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -342,11 +342,11 @@
 	color = "#808080"
 
 	salvageable_parts = list(
-		/obj/effect/spawner/lootdrop/seeded = 80,
-		/obj/effect/spawner/lootdrop/seeded = 80,
-		/obj/effect/spawner/lootdrop/seeded = 80,
-		/obj/effect/spawner/lootdrop/seeded = 80,
-		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/random/seeded = 80,
+		/obj/effect/spawner/random/seeded = 80,
+		/obj/effect/spawner/random/seeded = 80,
+		/obj/effect/spawner/random/seeded = 80,
+		/obj/effect/spawner/random/seeded = 80,
 		/obj/item/seeds/random = 80,
 		/obj/item/seeds/random = 40,
 		/obj/item/seeds/random = 40,

@@ -508,7 +508,7 @@
 	icon_state = "garden"
 	harvested_name = "lush garden"
 	harvested_desc = "In the soil and shade, something softly grew. It seems some industrious scavenger already passed by."
-	harvest = /obj/effect/spawner/lootdrop/garden
+	harvest = /obj/effect/spawner/random/garden
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You discover something nestled away in the growing bough."
@@ -527,7 +527,7 @@
 	icon_state = "gardenarid"
 	harvested_name = "sandy garden"
 	harvested_desc = "Beneath a bluff of soft silicate, a sheltered grove slumbered. Some desert wanderer seems to have picked it clean."
-	harvest = /obj/effect/spawner/lootdrop/garden/arid
+	harvest = /obj/effect/spawner/random/garden/arid
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You brush sand away from a verdant prize, nestled in the leaves."
@@ -540,7 +540,7 @@
 	icon_state = "gardencold"
 	harvested_name = "chilly garden"
 	harvested_desc = "A delicate layer of frost covers hardy brush. Someone came with the blizzard, and left with any prize this might contain."
-	harvest = /obj/effect/spawner/lootdrop/garden/cold
+	harvest = /obj/effect/spawner/random/garden/cold
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You unearth a snow-covered treat."
@@ -553,7 +553,7 @@
 	icon_state = "gardensick"
 	harvested_name = "sickly garden"
 	harvested_desc = "Polluted water wells up from the cracked earth, where it once fed a patch of something curious. Now only wilted leaves remain."
-	harvest = /obj/effect/spawner/lootdrop/garden/sick
+	harvest = /obj/effect/spawner/random/garden/sick
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You pry something odd from the poisoned soil."
@@ -567,16 +567,16 @@
 	icon_state = "seaweed"
 	harvested_name = "seaweed patch"
 	harvested_desc = "A patch of seaweed, floating on the surface of the water. It seems someone has already searched through this"
-	harvest = /obj/effect/spawner/lootdrop/garden/seaweed
+	harvest = /obj/effect/spawner/random/garden/seaweed
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You discover some edible weeds within the patch."
 	harvest_message_med = "You discover some edible weeds within the patch."
 	harvest_message_high = "You discover some edible weeds within the patch."
 
-/obj/effect/spawner/lootdrop/garden
+/obj/effect/spawner/random/garden
 	name = "lush garden seeder"
-	lootcount = 3
+	spawn_loot_count = 3
 	var/list/plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
 			/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth = 2,
@@ -620,11 +620,11 @@
 			/obj/item/reagent_containers/food/snacks/grown/onion = 4,
 			/obj/item/reagent_containers/food/snacks/grown/carrot = 4)
 
-/obj/effect/spawner/lootdrop/garden/Initialize(mapload)
+/obj/effect/spawner/random/garden/Initialize(mapload)
 	loot = plant
 	. = ..()
 
-/obj/effect/spawner/lootdrop/garden/arid
+/obj/effect/spawner/random/garden/arid
 	name = "arid garden seeder"
 	plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 1,
@@ -643,7 +643,7 @@
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 4,
 			/obj/item/reagent_containers/food/snacks/grown/corn = 4)
 
-/obj/effect/spawner/lootdrop/garden/cold
+/obj/effect/spawner/random/garden/cold
 	name = "frigid garden seeder"
 	plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/bluecherries = 1,
@@ -661,7 +661,7 @@
 			/obj/item/reagent_containers/food/snacks/grown/harebell = 5,
 			/obj/item/seeds/starthistle = 5)
 
-/obj/effect/spawner/lootdrop/garden/sick
+/obj/effect/spawner/random/garden/sick
 	name = "sickly garden seeder"
 	plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow = 1,
@@ -679,7 +679,7 @@
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/reishi = 4,
 			/obj/item/reagent_containers/food/snacks/grown/berries/glow = 4)
 
-/obj/effect/spawner/lootdrop/garden/seaweed
+/obj/effect/spawner/random/garden/seaweed
 	name = "seaweed patch seeder"
 	plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/seaweed = 1

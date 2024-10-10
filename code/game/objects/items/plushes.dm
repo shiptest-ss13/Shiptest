@@ -864,7 +864,7 @@
 	base_overlay_among.appearance_flags = RESET_COLOR
 	add_overlay(base_overlay_among)
 
-/obj/effect/spawner/lootdrop/plushie
+/obj/effect/spawner/random/plushie
 	icon_state = "plushie"
 	loot = list (
 	/obj/item/toy/plush/beeplushie,
@@ -882,10 +882,10 @@
 	/obj/item/toy/plush/spider,
 	/obj/item/toy/plush/tali,
 	/obj/item/toy/plush/xader,
-	/obj/effect/spawner/lootdrop/plushie/moth // fair chances
+	/obj/effect/spawner/random/plushie/moth // fair chances
 	)
 
-/obj/effect/spawner/lootdrop/plushie/moth
+/obj/effect/spawner/random/plushie/moth
 	loot = list (
 	/obj/item/toy/plush/moth,
 	/obj/item/toy/plush/moth/monarch,

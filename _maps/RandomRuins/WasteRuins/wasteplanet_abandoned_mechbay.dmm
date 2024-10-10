@@ -1085,7 +1085,7 @@
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/spawner/random/maintenance/two,
-/obj/effect/spawner/lootdrop/costume,
+/obj/effect/spawner/random/clothing/costume,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
@@ -2360,13 +2360,13 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "BF" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/food/salt,
@@ -2411,7 +2411,7 @@
 "Cp" = (
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech/grid,
@@ -3424,7 +3424,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Oj" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
+/obj/effect/spawner/random/clothing/pirate_or_bandana,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "Om" = (

@@ -1,33 +1,33 @@
 //GENERIC
-/obj/effect/spawner/lootdrop/salvage_capacitor
+/obj/effect/spawner/random/salvage_capacitor
 	loot = list(
 			/obj/item/stock_parts/capacitor = 120,
 			/obj/item/stock_parts/capacitor/adv = 20,
 			/obj/item/stock_parts/capacitor/super = 5,
 		)
 
-/obj/effect/spawner/lootdrop/salvage_scanning
+/obj/effect/spawner/random/salvage_scanning
 	loot = list(
 			/obj/item/stock_parts/scanning_module = 120,
 			/obj/item/stock_parts/scanning_module/adv = 20,
 			/obj/item/stock_parts/scanning_module/phasic = 5,
 		)
 
-/obj/effect/spawner/lootdrop/salvage_manipulator
+/obj/effect/spawner/random/salvage_manipulator
 	loot = list(
 			/obj/item/stock_parts/manipulator = 120,
 			/obj/item/stock_parts/manipulator/nano = 20,
 			/obj/item/stock_parts/manipulator/pico = 5,
 		)
 
-/obj/effect/spawner/lootdrop/salvage_matter_bin
+/obj/effect/spawner/random/salvage_matter_bin
 	loot = list(
 			/obj/item/stock_parts/matter_bin = 120,
 			/obj/item/stock_parts/matter_bin/adv = 20,
 			/obj/item/stock_parts/matter_bin/super = 5,
 		)
 
-/obj/effect/spawner/lootdrop/salvage_laser
+/obj/effect/spawner/random/salvage_laser
 	loot = list(
 			/obj/item/stock_parts/micro_laser = 120,
 			/obj/item/stock_parts/micro_laser/high = 20,
@@ -35,14 +35,14 @@
 		)
 
 //PROTOLATHE
-/obj/effect/spawner/lootdrop/tool_engie_proto
+/obj/effect/spawner/random/tool_engie_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_engie_common = 120,
-			/obj/effect/spawner/lootdrop/tool_engie_sydnie = 20,
-			/obj/effect/spawner/lootdrop/tool_engie_adv = 5,
+			/obj/effect/spawner/random/tool_engie_common = 120,
+			/obj/effect/spawner/random/tool_engie_sydnie = 20,
+			/obj/effect/spawner/random/tool_engie_adv = 5,
 		)
 
-/obj/effect/spawner/lootdrop/tool_engie_common
+/obj/effect/spawner/random/tool_engie_common
 	loot = list(
 			/obj/item/wrench/crescent = 1,
 			/obj/item/screwdriver = 1,
@@ -52,7 +52,7 @@
 			/obj/item/multitool = 1,
 		)
 
-/obj/effect/spawner/lootdrop/tool_engie_sydnie
+/obj/effect/spawner/random/tool_engie_sydnie
 	loot = list(
 			/obj/item/wrench/syndie = 1,
 			/obj/item/screwdriver/nuke = 1,
@@ -62,20 +62,20 @@
 			/obj/item/multitool/syndie = 1,
 		)
 
-/obj/effect/spawner/lootdrop/tool_engie_adv
+/obj/effect/spawner/random/tool_engie_adv
 	loot = list(
 			/obj/item/screwdriver/power = 1,
 			/obj/item/weldingtool/experimental = 1,
 			/obj/item/crowbar/power = 1,
 		)
 
-/obj/effect/spawner/lootdrop/tool_surgery_proto
+/obj/effect/spawner/random/tool_surgery_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_surgery_common = 120,
-			/obj/effect/spawner/lootdrop/tool_surgery_adv = 10,
+			/obj/effect/spawner/random/tool_surgery_common = 120,
+			/obj/effect/spawner/random/tool_surgery_adv = 10,
 		)
 
-/obj/effect/spawner/lootdrop/tool_surgery_common
+/obj/effect/spawner/random/tool_surgery_common
 	loot = list(
 			/obj/item/scalpel = 1,
 			/obj/item/hemostat = 1,
@@ -85,14 +85,14 @@
 			/obj/item/surgicaldrill = 1,
 		)
 
-/obj/effect/spawner/lootdrop/tool_surgery_adv
+/obj/effect/spawner/random/tool_surgery_adv
 	loot = list(
 			/obj/item/scalpel/advanced = 1,
 			/obj/item/retractor/advanced = 1,
 			/obj/item/surgicaldrill/advanced = 1,
 		)
 
-/obj/effect/spawner/lootdrop/beaker_loot_spawner
+/obj/effect/spawner/random/beaker_loot_spawner
 	loot = list(
 			/obj/item/reagent_containers/glass/beaker = 300,
 			/obj/item/reagent_containers/glass/beaker/large = 200,
@@ -101,27 +101,27 @@
 			/obj/item/reagent_containers/glass/beaker/noreact = 5,
 			/obj/item/reagent_containers/glass/beaker/bluespace = 1,
 		)
-/obj/effect/spawner/lootdrop/random_prosthetic
+/obj/effect/spawner/random/random_prosthetic
 	loot = list(
 			/obj/item/bodypart/l_arm/robot/surplus = 1,
 			/obj/item/bodypart/r_arm/robot/surplus = 1,
 			/obj/item/bodypart/leg/left/robot/surplus = 1,
 			/obj/item/bodypart/leg/right/robot/surplus = 1,
 		)
-/obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
+/obj/effect/spawner/random/random_gun_protolathe_lootdrop
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
 			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
-/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
+/obj/effect/spawner/random/random_ammo_protolathe_lootdrop
 	loot = list(
 			/obj/item/stock_parts/cell/gun/upgraded = 5,
 			/obj/item/ammo_box/magazine/smgm9mm = 7,
 		)
 
 //CIRCUIT IMPRINTER
-/obj/effect/spawner/lootdrop/random_machine_circuit_common
+/obj/effect/spawner/random/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
@@ -152,7 +152,7 @@
 			/obj/item/circuitboard/machine/emitter = 5,
 		)
 
-/obj/effect/spawner/lootdrop/random_machine_circuit_rare
+/obj/effect/spawner/random/random_machine_circuit_rare
 	loot = list(
 			/obj/item/circuitboard/aicore = 5,
 			/obj/item/circuitboard/machine/chem_dispenser = 5,
@@ -163,7 +163,7 @@
 			/obj/item/circuitboard/machine/launchpad = 5,
 		)
 
-/obj/effect/spawner/lootdrop/random_machine_circuit_mech
+/obj/effect/spawner/random/random_machine_circuit_mech
 	loot = list(
 			/obj/item/circuitboard/mecha/ripley/main = 100,
 			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
@@ -180,7 +180,7 @@
 		)
 
 //COMPUTER
-/obj/effect/spawner/lootdrop/random_computer_circuit_common
+/obj/effect/spawner/random/random_computer_circuit_common
 	loot = list(
 			/obj/item/circuitboard/computer/aifixer = 5,
 			/obj/item/circuitboard/computer/arcade/amputation = 5,
@@ -203,7 +203,7 @@
 			/obj/item/circuitboard/computer/scan_consolenew = 5,
 		)
 
-/obj/effect/spawner/lootdrop/random_computer_circuit_rare
+/obj/effect/spawner/random/random_computer_circuit_rare
 	loot = list(
 			/obj/item/circuitboard/computer/cargo = 5,
 			/obj/item/circuitboard/computer/communications = 5,
@@ -212,7 +212,7 @@
 		)
 
 //DESTRUCTIVE ANAL //i'm killing you
-/obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
+/obj/effect/spawner/random/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
 			/obj/item/gun/ballistic/automatic/pistol/ringneck = 500,

@@ -1137,7 +1137,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/east,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/waste/trash,
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4272,7 +4272,7 @@
 	id = "Ranger_Port_maint_shut";
 	req_ship_access = 1
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/waste/trash,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ih" = (
@@ -5558,11 +5558,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/effect/spawner/lootdrop/lpaid{
+/obj/effect/spawner/random/lpaid{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/effect/spawner/lootdrop/lpretrieval{
+/obj/effect/spawner/random/lpretrieval{
 	pixel_x = -10;
 	pixel_y = 10
 	},

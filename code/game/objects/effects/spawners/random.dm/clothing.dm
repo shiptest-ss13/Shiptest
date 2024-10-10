@@ -1,4 +1,4 @@
-/obj/effect/spawner/lootdrop/gloves
+/obj/effect/spawner/random/clothing/gloves
 	name = "random gloves"
 	desc = "These gloves are supposed to be a random color..."
 	icon = 'icons/obj/clothing/gloves.dmi'

@@ -2617,28 +2617,13 @@
 /area/ship/storage/eva)
 "NT" = (
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/glowstick,
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = 2
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3;
-	pixel_x = 7
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -4;
-	pixel_y = -4
-	},
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "NW" = (
@@ -2751,11 +2736,11 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /obj/structure/closet/crate/large,
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
+/obj/effect/spawner/random/plushie,
+/obj/effect/spawner/random/plushie,
+/obj/effect/spawner/random/plushie,
+/obj/effect/spawner/random/plushie,
+/obj/effect/spawner/random/plushie,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
