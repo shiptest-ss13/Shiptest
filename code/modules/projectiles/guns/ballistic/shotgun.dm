@@ -80,7 +80,7 @@
 	can_be_sawn_off = TRUE
 
 
-/obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/brimstone/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
@@ -117,7 +117,7 @@
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
 
-/obj/item/gun/ballistic/shotgun/hellfire/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -340,7 +340,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY) && (!bolt_locked))
 		reskin_obj(user)
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
@@ -388,7 +388,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	item_state = "dshotgun_srm"
 	unique_reskin = null
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "dshotgun_srm_sawn"
@@ -446,7 +446,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	if(sawn_off)
 		. += "ishotgun_sawn"
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(forced = FALSE)
 	. = ..()
 	if(. && slung) //sawing off the gun removes the sling
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
@@ -454,21 +454,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
-	name = "sawn-off improvised shotgun"
-	desc = "A single-shot shotgun. Better not miss."
-	icon_state = "ishotgun_sawn"
-	item_state = "ishotgun_sawn"
-	w_class = WEIGHT_CLASS_NORMAL
 	sawn_off = TRUE
-	slot_flags = ITEM_SLOT_BELT
-
-	wield_slowdown = 0.25
-	wield_delay = 0.3 SECONDS //OP? maybe
-
-	spread = 8
-	spread_unwielded = 15
-	recoil = 3 //or not
-	recoil_unwielded = 5
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
@@ -649,7 +635,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		balloon_alert_to_viewers("quickly racks!")
 		fire_delay = 0 SECONDS
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -674,7 +660,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	base_icon_state = "flamingarrow_factory"
 	item_state = "flamingarrow_factory"
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/factory/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "flamingarrow_factory_sawn"
@@ -687,7 +673,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "flamingbolt_sawn"
@@ -706,7 +692,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		/obj/item/ammo_box/magazine/internal/shot/winchester/absolution,
 	)
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -741,7 +727,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
 	)
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
@@ -830,7 +816,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "beacon_sawn"
@@ -853,7 +839,7 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	icon_state = "beacon_factory"
 	item_state = "beacon_factory"
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "beacon_factory_sawn"

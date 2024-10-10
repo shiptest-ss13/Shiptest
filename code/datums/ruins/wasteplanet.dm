@@ -31,3 +31,10 @@
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/wasteplanet/yard
+	name = "Abandoned Miskilamo salvage yard"
+	description = "An abandonded shipbreaking yard."
+	id = "wasteplanet_yard"
+	suffix = "wasteplanet_yard.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)

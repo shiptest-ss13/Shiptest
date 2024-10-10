@@ -22,6 +22,9 @@
 	dir = 4;
 	id = "kilothrusters"
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "av" = (
@@ -1581,6 +1584,9 @@
 	dir = 4;
 	id = "kilothrusters"
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "MY" = (
@@ -1890,7 +1896,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "amogusthrusters";
+	id = "kilothrusters";
 	name = "Thruster Lockdown";
 	pixel_x = 21
 	},
