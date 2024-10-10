@@ -1,10 +1,10 @@
 /obj/effect/anomaly/melter
 	name = "melter"
 	icon_state = "melter"
-	desc = "A mysterious anomaly. Everburning green flames with a horrid sizzle, melting what's near"
+	desc = "Everburning green flames, eager to lash out at anything that intrudes near."
 	effectrange = 2
 	pulse_delay = 10 SECONDS
-	aSignal = /obj/item/assembly/signaler/anomaly/melter
+	core = /obj/item/assembly/signaler/anomaly/melter
 
 /obj/effect/anomaly/melter/anomalyEffect(seconds_per_tick)
 	..()
@@ -20,7 +20,7 @@
 			I.acid_act(20, 20)
 			I.update_appearance()
 	for (var/obj/item/melt in range(effectrange, src))
-
+		//don't melt yourself
 		if(istype(melt, /obj/item/assembly/signaler/anomaly))
 			return
 		else

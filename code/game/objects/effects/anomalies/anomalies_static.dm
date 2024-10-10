@@ -1,9 +1,25 @@
+GLOBAL_LIST_INIT(tvstatic_sayings, list(
+	"... Help me...",
+	"... I need to get out ...",
+	"...No hope....",
+	"...Let me loose...",
+	"...stay with me...",
+	"...Not like this...",
+	"...please don't go...",
+	"...don't forget me...",
+	"...Are you there...?",
+	"...it hurts...",
+	"...the eyes...",
+	"...need to run...",
+	"...is anyone there..."
+))
+
 /obj/effect/anomaly/tvstatic
 	name = "static"
 	icon_state = "static"
-	desc = "A mysterious anomaly. A hole in the world, endless buzzing emitting from it."
+	desc = "A hole in the world emitting an endless buzzing. It hides something precious."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/tvstatic
+	core = /obj/item/assembly/signaler/anomaly/tvstatic
 	effectrange = 4
 	pulse_delay = 4 SECONDS
 	verb_say = "pleads"
@@ -48,7 +64,7 @@
 				var/mob/living/carbon/victim = looking
 				var/obj/effect/anomaly/tvstatic/planetary/expansion
 				expansion = new(get_turf(victim))
-				visible_message(span_warning("The static overtakes [victim], [expansion] taking their place!"))
+				visible_message(span_warning("[src] overtakes [victim], [expansion] taking their place!"))
 				victim.death()
 				expansion.stored_mob = victim
 				victim.forceMove(expansion)
@@ -58,44 +74,18 @@
 	anomalyEffect()
 
 /obj/effect/anomaly/tvstatic/proc/say_fucky_things()
-	switch(rand(1, 13))
-		if(1)
-			say("... Help me...")
-		if(2)
-			say("... I need to get out ...")
-		if(3)
-			say("...No hope....")
-		if(4)
-			say("....Let me loose...")
-		if(5)
-			say("...stay with me...")
-		if(6)
-			say("...I hope I live...")
-		if(7)
-			say("...please don't go...")
-		if(8)
-			say("...don't forget me...")
-		if(9)
-			say("...Are you there...?")
-		if(10)
-			say("...it hurts...")
-		if(11)
-			say("...the eyes...")
-		if(12)
-			say("...need to run...")
-		if(13)
-			say("...don't become like me...")
+	say(pick(GLOB.tvstatic_sayings))
 	return
 
 /obj/effect/anomaly/tvstatic/detonate()
 	for(var/mob/living/carbon/human/looking in range(effectrange, src))
-		visible_message(span_boldwarning(" The static lashes out, agony filling your mind as its tendrils scrape your thoughts!"))
+		visible_message(span_boldwarning("[src] lashes out, agony filling your mind as its tendrils scrape your thoughts!"))
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
 		if(stored_mob)
 			mangle_corpse()
-			visible_message(span_warning("The static sputters out [stored_mob], their body coming out in a burst of blood and gore!"))
+			visible_message(span_warning("[src] sputters out [stored_mob], their body coming out in a burst of blood and gore!"))
 			new /obj/effect/gibspawner/human(loc)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
@@ -111,7 +101,7 @@
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
-			visible_message(span_warning("The static spits out [stored_mob], their body coming out in a burst!"))
+			visible_message(span_warning("[src] spits out [stored_mob], their body coming out in a burst!"))
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
 	. = ..()
