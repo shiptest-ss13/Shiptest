@@ -38,7 +38,7 @@
 	core = new /obj/item/nuke_core(src)
 	STOP_PROCESSING(SSobj, core)
 	update_appearance()
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	previous_level = get_security_level()
 
 /obj/machinery/nuclearbomb/Destroy()
@@ -46,7 +46,7 @@
 	if(!exploding)
 		// If we're not exploding, set the alert level back to normal
 		set_safety()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	GLOB.nuke_list -= src
 	QDEL_NULL(countdown)
 	QDEL_NULL(core)
@@ -473,8 +473,6 @@
 			off_station = NUKE_NEAR_MISS
 		if((bomb_location.x < (128-NUKERANGE)) || (bomb_location.x > (128+NUKERANGE)) || (bomb_location.y < (128-NUKERANGE)) || (bomb_location.y > (128+NUKERANGE)))
 			off_station = NUKE_NEAR_MISS
-	else if(bomb_location.onSyndieBase())
-		off_station = NUKE_SYNDICATE_BASE
 	else
 		off_station = NUKE_MISS_STATION
 
@@ -608,10 +606,10 @@ This is here to make the tiles around the station mininuke change when it's arme
 
 /obj/item/disk/nuclear/Initialize()
 	. = ..()
-	AddElement(/datum/element/bed_tuckable, 6, -6, 0)
+	AddElement(/datum/element/bed_tuckable, 6, -6, 0, FALSE, FALSE)
 
 	if(!fake)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		last_disk_move = world.time
 		START_PROCESSING(SSobj, src)
 
@@ -658,24 +656,10 @@ This is here to make the tiles around the station mininuke change when it's arme
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
 		. += "<span class='warning'>The serial numbers on [src] are incorrect.</span>"
 
-/obj/item/disk/nuclear/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/claymore/highlander) && !fake)
-		var/obj/item/claymore/highlander/H = I
-		if(H.nuke_disk)
-			to_chat(user, "<span class='notice'>Wait... what?</span>")
-			qdel(H.nuke_disk)
-			H.nuke_disk = null
-			return
-		user.visible_message("<span class='warning'>[user] captures [src]!</span>", "<span class='userdanger'>You've got the disk! Defend it with your life!</span>")
-		forceMove(H)
-		H.nuke_disk = src
-		return TRUE
-	return ..()
-
 /obj/item/disk/nuclear/Destroy(force=FALSE)
 	// respawning is handled in /obj/Destroy()
 	if(force)
-		GLOB.poi_list -= src
+		SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/disk/nuclear/fake

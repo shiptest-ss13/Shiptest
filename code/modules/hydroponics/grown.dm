@@ -44,8 +44,8 @@
 		dried_type = src.type
 
 	if(seed)
-		for(var/datum/plant_gene/trait/T in seed.genes)
-			T.on_new(src, loc)
+		for(var/datum/plant_gene/trait/trait in seed.genes)
+			trait.on_new_plant(src, loc)
 		seed.prepare_result(src)
 		transform *= TRANSFORM_USING_VARIABLE(seed.potency, 100) + 0.5 //Makes the resulting produce's sprite larger or smaller based on potency!
 		add_juice()
@@ -110,15 +110,13 @@
 			user.visible_message("<span class='notice'>[user] starts splitting \the [src].</span>", "<span class='notice'>You dig into \the [src] and start to split it...</span>", "<span class='hear'>You hear the sound of a sharp object digging into some plant matter.</span>")
 			if(do_after(user, 20, target = src))
 				to_chat(user, "<span class='notice'>You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!</span>")
-				seedify(src, 1, TRUE, FALSE, src, user)
-				squash(user)
+				seedify(src, 1, TRUE, TRUE, src, user)
 		if(TOOL_WRENCH)
 			playsound(loc, 'sound/misc/splort.ogg', 50, TRUE, -1)
 			user.visible_message("<span class='notice'>[user] starts whacking \the [src].</span>", "<span class='notice'>You start whacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being whacked violently.</span>")
 			if(do_after(user, 17, target = src))
 				to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
-				seedify(src, 1, TRUE, FALSE, src, user)
-				squash(user)
+				seedify(src, 1, TRUE, TRUE, src, user)
 	if(!slice_path)
 		if(O.get_sharpness())
 			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
@@ -127,44 +125,11 @@
 				to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 
-// Various gene procs
-/obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user)
-	if(seed && seed.get_gene(/datum/plant_gene/trait/squash))
-		squash(user)
-	..()
-
 /obj/item/reagent_containers/food/snacks/grown/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(!..()) //was it caught by a mob?
 		if(seed)
 			for(var/datum/plant_gene/trait/T in seed.genes)
 				T.on_throw_impact(src, hit_atom)
-			if(seed.get_gene(/datum/plant_gene/trait/squash))
-				squash(hit_atom)
-
-/obj/item/reagent_containers/food/snacks/grown/proc/squash(atom/target)
-	var/turf/T = get_turf(target)
-	forceMove(T)
-	if(ispath(splat_type, /obj/effect/decal/cleanable/food/plant_smudge))
-		if(filling_color)
-			var/obj/O = new splat_type(T)
-			O.color = filling_color
-			O.name = "[name] smudge"
-	else if(splat_type)
-		new splat_type(T)
-
-	if(trash)
-		generate_trash(T)
-
-	visible_message("<span class='warning'>[src] is squashed.</span>","<span class='hear'>You hear a smack.</span>")
-	if(seed)
-		for(var/datum/plant_gene/trait/trait in seed.genes)
-			trait.on_squash(src, target)
-
-	reagents.expose(T)
-	for(var/A in T)
-		reagents.expose(A)
-
-	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/On_Consume()
 	if(iscarbon(usr))

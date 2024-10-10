@@ -479,7 +479,13 @@
 			break
 	if(firestarter && active)
 		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
+		var/turf/T = get_turf(hit_atom)
+		T.IgniteTurf(30)
+		var/turf/otherT
+		for(var/direction in GLOB.cardinals)
+			otherT = get_step(T, direction)
+			otherT.IgniteTurf(30)
+			new /obj/effect/hotspot(otherT)
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
@@ -602,7 +608,7 @@
 	desc = "Legend says something amazing happens when you collect enough of these."
 	custom_price = 100
 	custom_premium_price = 110
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/gold = 200)

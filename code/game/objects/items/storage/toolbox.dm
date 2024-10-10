@@ -177,7 +177,7 @@
 	new /obj/item/crowbar/syndie(src) //WS Begin - Cool Syndie Tools
 	new /obj/item/wirecutters/syndie(src)
 	new /obj/item/multitool/syndie(src) //WS End
-	new /obj/item/clothing/gloves/color/red/insulated(src)
+	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/syndicate/empty
 
@@ -298,8 +298,7 @@
 		/obj/item/clothing/under/syndicate/bloodred,
 		/obj/item/clothing/gloves/color/latex/nitrile/infiltrator,
 		/obj/item/clothing/mask/infiltrator,
-		/obj/item/clothing/shoes/combat/sneakboots,
-		/obj/item/gun/ballistic/automatic/pistol/syndicate,
+		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
 		))
@@ -310,7 +309,6 @@
 	new /obj/item/clothing/under/syndicate/bloodred(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile/infiltrator(src)
 	new /obj/item/clothing/mask/infiltrator(src)
-	new /obj/item/clothing/shoes/combat/sneakboots(src)
 
 /obj/item/storage/toolbox/bounty
 	name = "defused explosives case"

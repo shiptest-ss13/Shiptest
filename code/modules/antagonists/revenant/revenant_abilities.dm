@@ -248,7 +248,7 @@
 		qdel(B)
 		new /obj/effect/temp_visual/revenant(T)
 
-	if(!isplatingturf(T) && !istype(T, /turf/open/floor/engine/cult) && isfloorturf(T) && prob(15))
+	if(!isplatingturf(T) && isfloorturf(T) && prob(15))
 		var/turf/open/floor/floor = T
 		if(floor.intact && floor.floor_tile)
 			new floor.floor_tile(floor)

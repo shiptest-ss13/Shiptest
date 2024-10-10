@@ -228,7 +228,7 @@ Burning extracts:
 		user.visible_message("<span class='warning'>[src] melts onto [user]'s arm, boiling the flesh horribly!</span>")
 	else
 		user.visible_message("<span class='danger'>[src] sublimates the flesh around [user]'s arm, transforming the bone into a gruesome blade!</span>")
-	user.emote("scream")
+	user.force_scream()
 	L.apply_damage(30,BURN,which_hand)
 	..()
 
@@ -305,11 +305,3 @@ Burning extracts:
 	new /obj/item/shield/adamantineshield(get_turf(user))
 	..()
 
-/obj/item/slimecross/burning/rainbow
-	colour = "rainbow"
-	effect_desc = "Creates the Rainbow Knife, a kitchen knife that deals random types of damage."
-
-/obj/item/slimecross/burning/rainbow/do_effect(mob/user)
-	user.visible_message("<span class='notice'>[src] flattens into a glowing rainbow blade.</span>")
-	new /obj/item/kitchen/knife/rainbowknife(get_turf(user))
-	..()

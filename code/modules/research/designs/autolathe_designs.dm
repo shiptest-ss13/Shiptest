@@ -356,7 +356,7 @@
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
-	build_path = /obj/item/kitchen/knife
+	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_knife
@@ -364,7 +364,7 @@
 	id = "plastic_knife"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 100)
-	build_path = /obj/item/kitchen/knife/plastic
+	build_path = /obj/item/melee/knife/plastic
 	category = list("initial", "Tool Designs","Dinnerware")
 
 /datum/design/fork
@@ -796,6 +796,14 @@
 	build_path = /obj/item/ammo_casing/shotgun/beanbag
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/blank_shell
+	name = "Shotgun Blank"
+	id = "blank_shell"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_casing/shotgun/blank
+	category = list("Security", "Ammo")
+
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
@@ -865,7 +873,7 @@
 	id = "cleaver"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 18000)
-	build_path = /obj/item/kitchen/knife/butcher
+	build_path = /obj/item/melee/knife/butcher
 	category = list("initial", "Dinnerware")
 
 /datum/design/spraycan

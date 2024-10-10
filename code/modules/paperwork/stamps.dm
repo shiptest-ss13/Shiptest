@@ -97,9 +97,14 @@
 	dye_color = DYE_SYNDICATE
 
 /obj/item/stamp/cybersun
-	name = "Cybersun rubber stamp"
+	name = "Cybersun Virtual Solutions rubber stamp"
 	icon_state = "stamp-cybersun"
 	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun/biodynamics
+	name = "Cybersun Biodynamics rubber stamp"
+	icon_state = "stamp-biodynamics"
+	dye_color = DYE_CMO
 
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"

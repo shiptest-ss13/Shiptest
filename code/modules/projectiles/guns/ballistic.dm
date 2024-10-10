@@ -13,6 +13,8 @@
 	has_safety = TRUE
 	safety = TRUE
 
+	min_recoil = 0.1
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
@@ -59,13 +61,14 @@
 		. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 	if (bolt_type == BOLT_TYPE_OPEN && bolt_locked)
 		. += "[icon_state]_bolt"
-	if (magazine)
+	if (show_magazine_on_sprite && magazine)
 		if (unique_mag_sprites_for_variants)
 			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
-				. += "[icon_state]_mag_empty"
+				. += "[icon_state]_mag_[magazine.base_icon_state]_empty"
 		else
 			. += "[icon_state]_mag"
+		if(show_ammo_capacity_on_magazine_sprite)
 			var/capacity_number = 0
 			switch(get_ammo() / magazine.max_ammo)
 				if(0.2 to 0.39)
@@ -76,9 +79,11 @@
 					capacity_number = 60
 				if(0.8 to 0.99)
 					capacity_number = 80
-				if(1.0)
+				if(1.0 to 2.0) //to catch the chambered round
 					capacity_number = 100
-			if (capacity_number)
+			if (capacity_number && unique_mag_sprites_for_variants)
+				. += "[icon_state]_mag_[magazine.base_icon_state]_[capacity_number]"
+			else if (capacity_number)
 				. += "[icon_state]_mag_[capacity_number]"
 	if(!chambered && empty_indicator)
 		. += "[icon_state]_empty"
@@ -200,6 +205,9 @@
 	. = ..()
 	if (.)
 		return
+	if(sealed_magazine)
+		to_chat(user, span_warning("The magazine on [src] is sealed and cannot be reloaded!"))
+		return
 	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine)
@@ -225,7 +233,7 @@
 				update_appearance()
 			return
 	if (can_be_sawn_off)
-		if (sawoff(user, A))
+		if (try_sawoff(user, A))
 			return
 	return FALSE
 
@@ -331,45 +339,14 @@
 	rounds.Add(magazine.ammo_list(drop_all))
 	return rounds
 
-GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
-	/obj/item/melee/transforming/energy,
-	)))
-
-///Handles all the logic of sawing off guns,
-/obj/item/gun/ballistic/proc/sawoff(mob/user, obj/item/saw)
-	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
-		return
-	if(sawn_off)
-		to_chat(user, "<span class='warning'>\The [src] is already shortened!</span>")
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>[user] begins to shorten \the [src].</span>", "<span class='notice'>You begin to shorten \the [src]...</span>")
-
-	//if there's any live ammo inside the gun, makes it go off
-	if(blow_up(user))
-		user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
-		return
-
-	if(do_after(user, 30, target = src))
-		if(sawn_off)
-			return
-		user.visible_message("<span class='notice'>[user] shortens \the [src]!</span>", "<span class='notice'>You shorten \the [src].</span>")
-		name = "sawn-off [src.name]"
-		desc = sawn_desc
-		w_class = WEIGHT_CLASS_NORMAL
-		item_state = "gun"
-		slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
-		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil = SAWN_OFF_RECOIL
-		sawn_off = TRUE
-		update_appearance()
-		return TRUE
-
-///used for sawing guns, causes the gun to fire without the input of the user
-/obj/item/gun/ballistic/proc/blow_up(mob/user)
+/obj/item/gun/ballistic/blow_up(mob/user)
 	. = FALSE
 	for(var/obj/item/ammo_casing/AC in magazine.stored_ammo)
 		if(AC.BB)
 			process_fire(user, user, FALSE)
 			. = TRUE
+
+/obj/item/gun/ballistic/unsafe_shot(target, empty_chamber = TRUE)
+	. = ..()
+	process_chamber(empty_chamber,TRUE)
+

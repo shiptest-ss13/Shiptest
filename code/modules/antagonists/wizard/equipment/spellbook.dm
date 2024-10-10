@@ -281,18 +281,6 @@
 	item_path = /obj/item/scrying
 	category = "Defensive"
 
-/datum/spellbook_entry/item/soulstones
-	name = "Six Soul Stone Shards and the spell Artificer"
-	desc = "Soul Stone Shards are ancient tools capable of capturing and harnessing the spirits of the dead and dying. The spell Artificer allows you to create arcane machines for the captured souls to pilot."
-	item_path = /obj/item/storage/belt/soulstone/full
-	category = "Assistance"
-
-/datum/spellbook_entry/item/soulstones/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
-	. =..()
-	if(.)
-		user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/construct(null))
-	return .
-
 /datum/spellbook_entry/item/necrostone
 	name = "A Necromantic Stone"
 	desc = "A Necromantic stone is able to resurrect three dead individuals as skeletal thralls for you to command."
@@ -350,16 +338,6 @@
 	cost = 1 //non-destructive; it's just a jape, sibling!
 	limit = 3
 	category = "Assistance"
-
-/datum/spellbook_entry/item/mjolnir
-	name = "Mjolnir"
-	desc = "A mighty hammer on loan from Thor, God of Thunder. It crackles with barely contained power."
-	item_path = /obj/item/mjollnir
-
-/datum/spellbook_entry/item/singularity_hammer
-	name = "Singularity Hammer"
-	desc = "A hammer that creates an intensely powerful field of gravity where it strikes, pulling everything nearby to the point of impact."
-	item_path = /obj/item/singularityhammer
 
 /datum/spellbook_entry/item/battlemage
 	name = "Battlemage Armour"
