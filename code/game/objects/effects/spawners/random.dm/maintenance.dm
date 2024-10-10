@@ -21,10 +21,12 @@
 		lootcount_override = spawn_loot_count
 	. = ..()
 
+	/* Fucks everything. Investigate further
 	// In addition, closets that are closed will have the maintenance loot inserted inside.
 	for(var/obj/structure/closet/closet in get_turf(src))
 		if(!closet.opened)
 			closet.take_contents()
+	*/
 
 /obj/effect/spawner/random/maintenance/two
 	name = "2 x maintenance loot spawner"
