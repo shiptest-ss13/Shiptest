@@ -31,7 +31,6 @@
 	minbodytemp = 0
 
 	faction = list("faithless")
-	gold_core_spawnable = HOSTILE_SPAWN
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 

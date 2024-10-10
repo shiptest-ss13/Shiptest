@@ -120,7 +120,6 @@
 	maxHealth = 60
 	ranged = TRUE
 	rapid = 3
-	gold_core_spawnable = HOSTILE_SPAWN
 	var/datum/action/innate/hivebot/foamwall/foam
 
 /mob/living/simple_animal/hostile/hivebot/mechanic/Initialize(mapload)

@@ -200,7 +200,7 @@
 /// the default air mix that open turfs spawn
 #define OPENTURF_DEFAULT_ATMOS "o2=22;n2=82;TEMP=293.15"
 #define OPENTURF_LOW_PRESSURE "o2=14;n2=30;TEMP=293.15"
-/// -193,15°C telecommunications. also used for xenobiology slime killrooms
+/// -193,15°C telecommunications. good fluff for comms areas
 #define TCOMMS_ATMOS "n2=100;TEMP=80"
 /// space
 #define AIRLESS_ATMOS "TEMP=2.7"

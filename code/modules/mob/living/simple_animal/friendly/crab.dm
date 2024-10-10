@@ -23,7 +23,6 @@
 	ventcrawler = VENTCRAWLER_ALWAYS
 	var/obj/item/inventory_head
 	var/obj/item/inventory_mask
-	gold_core_spawnable = FRIENDLY_SPAWN
 
 /mob/living/simple_animal/crab/Life()
 	..()
@@ -44,7 +43,6 @@
 	real_name = "Coffee"
 	desc = "It's Coffee, the other pet!"
 	gender = FEMALE
-	gold_core_spawnable = NO_SPAWN
 
 /mob/living/simple_animal/crab/evil
 	name = "Evil Crab"
@@ -53,7 +51,6 @@
 	icon_state = "evilcrab"
 	icon_living = "evilcrab"
 	icon_dead = "evilcrab_dead"
-	gold_core_spawnable = FRIENDLY_SPAWN
 
 /mob/living/simple_animal/crab/kreb
 	name = "Kreb"
@@ -62,7 +59,6 @@
 	icon_state = "kreb"
 	icon_living = "kreb"
 	icon_dead = "kreb_dead"
-	gold_core_spawnable = NO_SPAWN
 
 /mob/living/simple_animal/crab/evil/kreb
 	name = "Evil Kreb"
@@ -70,4 +66,3 @@
 	icon_state = "evilkreb"
 	icon_living = "evilkreb"
 	icon_dead = "evilkreb_dead"
-	gold_core_spawnable = NO_SPAWN
