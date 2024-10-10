@@ -18,7 +18,19 @@
 	var/gun_type
 	var/mag_type
 	var/mag_count = 2
-	var/spawn_empty = TRUE
+	var/ammoless = TRUE
+	var/grab_loc = FALSE
+
+/obj/item/storage/guncase/Initialize(mapload)
+	. = ..()
+	if(mapload && grab_loc)
+		var/items_eaten = 0
+		for(var/obj/item/I in loc)
+			if(I.w_class <= max_w_class)
+				I.forceMove(src)
+				items_eaten++
+			if(items_eaten >= mag_count + 1)
+				break
 
 /obj/item/storage/guncase/ComponentInitialize()
 	. = ..()
@@ -32,12 +44,18 @@
 		))
 
 /obj/item/storage/guncase/PopulateContents()
+	if(grab_loc)
+		return
 	if(gun_type)
-		new gun_type(src, spawn_empty)
+		new gun_type(src, ammoless)
 	if(mag_type)
 		for(var/i in 1 to mag_count)
 			if(ispath(mag_type, /obj/item/ammo_box) | ispath(mag_type, /obj/item/stock_parts/cell))
-				new mag_type(src, spawn_empty)
+				new mag_type(src, ammoless)
+
+/// Eats the items on its tile
+/obj/item/storage/guncase/mapper
+	grab_loc = TRUE
 
 /obj/item/storage/guncase/winchester
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
@@ -93,6 +111,10 @@
 	desc = "A large box designed for holding pistols and magazines safely."
 	max_items = 8
 	max_w_class = WEIGHT_CLASS_NORMAL
+
+/// Eats the items on its tile
+/obj/item/storage/guncase/pistol/mapper
+	grab_loc = TRUE
 
 /obj/item/storage/guncase/pistol/modelh
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
