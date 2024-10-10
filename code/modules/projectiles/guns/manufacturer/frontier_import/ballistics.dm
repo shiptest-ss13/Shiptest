@@ -253,7 +253,10 @@
 	icon_state = "rpg"
 	item_state = "rpg"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot,
+	)
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	weapon_weight = WEAPON_HEAVY
