@@ -16,9 +16,6 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
-"bp" = (
-/turf/open/floor/plating/beach/sand,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "bv" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -41,9 +38,7 @@
 /mob/living/simple_animal/crab{
 	name = "\improper Crab"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cj" = (
 /obj/structure/cable{
@@ -158,9 +153,7 @@
 /mob/living/simple_animal/hostile/abandoned_minebot{
 	name = "\improper Abandoned Tony"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hA" = (
 /obj/structure/grille,
@@ -231,9 +224,7 @@
 /area/ruin/unpowered)
 "kH" = (
 /obj/item/book/manual/wiki/construction,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "kK" = (
 /obj/structure/cable{
@@ -246,9 +237,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "kP" = (
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "kR" = (
 /obj/effect/turf_decal/weather/sand{
@@ -258,9 +247,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lk" = (
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lR" = (
 /obj/machinery/power/floodlight,
@@ -397,9 +384,7 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "qK" = (
 /obj/machinery/power/terminal,
@@ -410,9 +395,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 10
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "rt" = (
 /obj/effect/turf_decal/weather/sand{
@@ -433,15 +416,11 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sv" = (
 /obj/machinery/atmospherics/components/binary/valve,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sA" = (
 /obj/structure/cable{
@@ -454,9 +433,7 @@
 /area/ruin/unpowered)
 "sB" = (
 /obj/item/book/manual/wiki/engineering,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sN" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -475,9 +452,7 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ty" = (
 /obj/effect/turf_decal/weather/sand{
@@ -501,21 +476,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "uw" = (
 /obj/structure/girder,
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
-"vO" = (
-/turf/open/floor/plating/beach/sand{
-	icon_state = "sand_dug";
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "wu" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -539,9 +506,7 @@
 "xV" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "yc" = (
 /obj/effect/turf_decal/atmos/plasma,
@@ -559,14 +524,6 @@
 "ys" = (
 /turf/template_noop,
 /area/template_noop)
-"yv" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "yA" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -602,9 +559,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ae" = (
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ah" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
@@ -616,17 +571,13 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "At" = (
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "AT" = (
 /obj/structure/cable{
@@ -685,9 +636,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "CW" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -696,9 +645,7 @@
 /area/ruin/unpowered)
 "DB" = (
 /obj/item/stack/cable_coil/red,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "DC" = (
 /turf/open/water/beach/deep,
@@ -707,15 +654,11 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "DO" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "DU" = (
 /obj/structure/cable{
@@ -767,9 +710,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Gj" = (
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Gl" = (
 /turf/closed/wall/rust,
@@ -796,9 +737,11 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"HH" = (
+/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "HK" = (
 /obj/structure/closet/secure_closet/engineering_welding,
@@ -817,10 +760,7 @@
 "Ir" = (
 /obj/item/shovel,
 /obj/item/stack/ore/glass/beach,
-/turf/open/floor/plating/beach/sand{
-	icon_state = "sand_dug";
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "IZ" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -905,9 +845,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "LI" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ms" = (
 /obj/effect/turf_decal/weather/sand{
@@ -920,9 +858,7 @@
 /area/ruin/unpowered)
 "Na" = (
 /obj/item/pickaxe/improvised,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nh" = (
 /obj/structure/cable{
@@ -950,9 +886,7 @@
 /area/ruin/unpowered)
 "Ot" = (
 /obj/item/geiger_counter,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "OI" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1014,9 +948,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "QQ" = (
 /obj/structure/cable{
@@ -1055,11 +987,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
+"RD" = (
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sl" = (
 /obj/structure/radioactive/stack,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sx" = (
 /obj/structure/cable{
@@ -1072,9 +1005,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "SE" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "SF" = (
 /obj/structure/cable{
@@ -1101,9 +1032,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tf" = (
 /obj/structure/cable{
@@ -1122,9 +1051,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "TB" = (
 /obj/effect/spawner/structure/window/hollow/directional{
@@ -1135,9 +1062,7 @@
 "TI" = (
 /obj/structure/radioactive/waste,
 /obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Uk" = (
 /turf/open/floor/plating/grass/beach/lit,
@@ -1181,9 +1106,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Wg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Wn" = (
 /obj/machinery/computer/arcade/orion_trail{
@@ -1246,9 +1169,7 @@
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Yh" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1277,9 +1198,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZW" = (
 /obj/machinery/pipedispenser,
@@ -1597,7 +1516,7 @@ ys
 Ae
 Ae
 Ae
-yv
+Ae
 Uz
 WH
 WH
@@ -1791,7 +1710,7 @@ Ae
 Ae
 Ae
 Ae
-bp
+Ae
 ys
 ys
 ys
@@ -1825,7 +1744,7 @@ Ae
 Ae
 Ae
 Ae
-bp
+Ae
 Ae
 ys
 ys
@@ -1893,7 +1812,7 @@ Ae
 Ae
 Ae
 Ae
-bp
+Ae
 Ae
 Ae
 ys
@@ -1910,7 +1829,7 @@ ug
 cj
 Ae
 Ae
-vO
+Ae
 Ae
 Ae
 SF
@@ -1927,7 +1846,7 @@ Ae
 Hp
 Ae
 Ae
-bp
+Ae
 Ae
 Ae
 Ae
@@ -1961,7 +1880,7 @@ DO
 Ae
 qH
 Ae
-bp
+Ae
 Ae
 Ae
 Ae
@@ -1969,8 +1888,8 @@ Ae
 (21,1,1) = {"
 ys
 ys
-Ae
-Ae
+RD
+RD
 iZ
 fT
 Kp
@@ -1995,7 +1914,7 @@ Ae
 Ae
 Ae
 qH
-bp
+Ae
 Ae
 sB
 Ae
@@ -2004,14 +1923,14 @@ Ae
 ys
 ys
 Ae
-vO
+RD
 ij
 tX
 PR
 dG
 tB
-Ae
-Ae
+RD
+RD
 qD
 qD
 Om
@@ -2038,14 +1957,14 @@ Ae
 ys
 ys
 Ae
-Ae
-Ae
+RD
+RD
 SZ
 Wn
 Qw
 tB
-Ae
-Ae
+RD
+RD
 qD
 ni
 Qw
@@ -2072,14 +1991,14 @@ Ae
 ys
 ys
 ys
-Ae
-Ae
+RD
+RD
 Gj
 rt
 kR
-Ae
-Ae
-Ae
+RD
+RD
+RD
 qD
 Rj
 JW
@@ -2106,12 +2025,12 @@ Ae
 ys
 ys
 ys
-Ae
-Ae
-Ae
-Ae
+RD
+RD
+RD
+RD
 xV
-Ae
+RD
 Wg
 Ae
 qD
@@ -2141,10 +2060,10 @@ ys
 ys
 ys
 ys
-Ae
-lk
-Ae
-Ae
+RD
+HH
+RD
+RD
 Ae
 Ae
 Ae
