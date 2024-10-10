@@ -53,6 +53,7 @@
 			if(ispath(mag_type, /obj/item/ammo_box) | ispath(mag_type, /obj/item/stock_parts/cell))
 				new mag_type(src, ammoless)
 
+/// Need to double check this in a seperate pr that adds this to a few ships
 /// Eats the items on its tile
 /obj/item/storage/guncase/mapper
 	grab_loc = TRUE
@@ -112,6 +113,7 @@
 	max_items = 8
 	max_w_class = WEIGHT_CLASS_NORMAL
 
+/// Need to double check this in a seperate pr that adds this to a few ships
 /// Eats the items on its tile
 /obj/item/storage/guncase/pistol/mapper
 	grab_loc = TRUE
