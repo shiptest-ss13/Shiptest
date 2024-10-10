@@ -259,8 +259,8 @@
 
 			if(num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into [src].</span>")
-				attacking_box.update_ammo_count()
-				update_ammo_count()
+				attacking_box.update_appearance()
+				update_appearance()
 			return TRUE
 	else
 		return ..()
