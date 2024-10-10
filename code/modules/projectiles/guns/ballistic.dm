@@ -2,9 +2,10 @@
 	/obj/item/gun/ballistic/##gun_type/no_mag {	\
 		default_ammo_type = FALSE;				\
 	}
+
 #define EMPTY_GUN_HELPER(gun_type)				\
-	/obj/item/gun/ballistic/##gun_type/no_mag {	\
-		spawn_no_ammo = TRUE;				\
+	/obj/item/gun/ballistic/##gun_type/empty {	\
+		spawn_no_ammo = TRUE;					\
 	}
 
 ///Subtype for any kind of ballistic gun
