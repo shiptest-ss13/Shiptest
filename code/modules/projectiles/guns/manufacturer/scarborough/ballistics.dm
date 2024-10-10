@@ -549,6 +549,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	default_ammo_type = /obj/item/ammo_box/magazine/boomslang
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/boomslang,
+		/obj/item/ammo_box/magazine/boomslang/short,
 	)
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -622,9 +623,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	caliber = "6.5CLIP"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/boomslang/short/empty
-	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
@@ -960,6 +958,12 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum/stun,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum/slug,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor,
 	)
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
