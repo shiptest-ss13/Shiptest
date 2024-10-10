@@ -171,16 +171,7 @@ other types of metals and chemistry for reagents).
 	desc = "A design disk containing blueprints for specialized telecommunications parts."
 	color = "#64A8D9"
 	max_blueprints = 7
-
-/obj/item/disk/design_disk/telecomms/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/subspace_ansible()
-	blueprints[2] = new /datum/design/hyperwave_filter()
-	blueprints[3] = new /datum/design/subspace_amplifier()
-	blueprints[4] = new /datum/design/subspace_treatment()
-	blueprints[5] = new /datum/design/subspace_analyzer()
-	blueprints[6] = new /datum/design/subspace_crystal()
-	blueprints[7] = new /datum/design/subspace_transmitter()
+	starting_blueprints = list(/datum/design/subspace_ansible, /datum/design/hyperwave_filter, /datum/design/subspace_amplifier, /datum/design/subspace_treatment, /datum/design/subspace_analyzer, /datum/design/subspace_crystal, /datum/design/subspace_transmitter)
 
 /obj/item/disk/design_disk/blanks
 	design_name = "Blank Ammo"
