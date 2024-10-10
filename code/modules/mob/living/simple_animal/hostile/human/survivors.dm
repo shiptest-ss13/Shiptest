@@ -4,6 +4,7 @@
 	icon_state = "survivor_base"
 	icon_living = "survivor_base"
 	atmos_requirements = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	)
