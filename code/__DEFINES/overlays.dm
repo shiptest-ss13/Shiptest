@@ -6,7 +6,7 @@
 #define VALIDATE_OVERLAY_LIMIT(changed_on) \
 	if(length(changed_on.overlays) >= MAX_ATOM_OVERLAYS) { \
 		var/text_lays = overlays2text(changed_on.overlays); \
-		stack_trace("Too many overlays on [changed_on.type] - [length(changed_on.overlays)], refusing to update and cutting.\
+		WARNING("Too many overlays on [changed_on.type] - [length(changed_on.overlays)], refusing to update and cutting.\
 			\n What follows is a printout of all existing overlays at the time of the overflow \n[text_lays]"); \
 		changed_on.overlays.Cut(); \
 	} \
