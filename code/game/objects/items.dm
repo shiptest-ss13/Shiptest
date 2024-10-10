@@ -146,6 +146,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/strip_delay = 40
 	///How long it takes to resist out of the item (cuffs and such)
 	var/breakouttime = 0
+	///How much power would this item use?
+	var/power_use_amount = POWER_CELL_USE_NORMAL
 
 	/// Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/list/attack_verb
@@ -964,6 +966,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/remove_outline()
 	remove_filter(HOVER_OUTLINE_FILTER)
+
+/// Use the power of an attached component that posesses power handling, will return the signal bitflag.
+/obj/item/proc/item_use_power(use_amount, mob/user, check_only)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ITEM_POWER_USE, use_amount, user, check_only)
 
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)

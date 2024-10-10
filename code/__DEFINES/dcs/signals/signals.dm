@@ -744,3 +744,11 @@
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
+
+// Power signals
+/// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
+#define COMSIG_ITEM_POWER_USE "item_use_power"
+	#define NO_COMPONENT NONE
+	#define COMPONENT_POWER_SUCCESS (1<<0)
+	#define COMPONENT_NO_CELL  (1<<1)
+	#define COMPONENT_NO_CHARGE (1<<2)
