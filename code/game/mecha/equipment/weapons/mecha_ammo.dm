@@ -83,7 +83,7 @@
 /obj/item/mecha_ammo/tank_shell
 	name = "anti-armor missile"
 	desc = "A large missle, intended to be loaded into a Type 207."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "srm-8"
 	rounds = 1
 	throw_range = 0

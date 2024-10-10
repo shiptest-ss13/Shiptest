@@ -6,7 +6,6 @@
 	caliber = ".357"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
-	bullet_per_box = 50
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
@@ -29,7 +28,7 @@
 	caliber = ".45-70"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
-	bullet_per_box = 12
+	stack_size = 5
 
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"
@@ -55,13 +54,11 @@
 	desc = "A .38 Special bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
-	bullet_per_box = 50
 
 /obj/item/ammo_casing/c38/surplus
 	name = ".38 surplus bullet casing"
 	desc = "A .38 surplus bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/surplus
-
 
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"

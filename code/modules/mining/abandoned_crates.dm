@@ -232,7 +232,7 @@
 			new /obj/item/gun/ballistic/automatic/toy/pistol(src)
 			new /obj/item/gun/ballistic/automatic/toy(src)
 			new /obj/item/gun/ballistic/automatic/toy(src)
-			new /obj/item/ammo_box/foambox(src)
+			new /obj/item/storage/box/ammo/foam_darts(src)
 		if(98)
 			for(var/i in 1 to 3)
 				new /mob/living/simple_animal/hostile/poison/bees/toxin(src)

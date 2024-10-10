@@ -285,7 +285,6 @@
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
-		/obj/item/ammo_box/a4570, //but not today
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
@@ -299,7 +298,8 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()

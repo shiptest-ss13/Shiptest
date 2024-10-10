@@ -575,7 +575,7 @@ RLD
 /obj/item/rcd_ammo
 	name = "compressed matter cartridge"
 	desc = "Highly compressed matter for the RCD."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/obj/ammunition/ammo.dmi'
 	icon_state = "rcd"
 	item_state = "rcdammo"
 	w_class = WEIGHT_CLASS_TINY
