@@ -14,7 +14,7 @@
 
 /obj/item/storage/box/ammo //base type, don't use this!
 	name = "box of default ammo"
-	desc = "How peculiar."
+	desc = "A box of ammunition. Not for consumption."
 	icon = 'icons/obj/ammunition/ammo_boxes.dmi'
 	icon_state = "9mmbox"
 	illustration = null

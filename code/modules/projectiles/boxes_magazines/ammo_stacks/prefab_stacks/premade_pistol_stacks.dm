@@ -329,6 +329,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a4570
 	ammo_type = /obj/item/ammo_casing/a4570
+	max_ammo = 5
 
 /obj/item/storage/box/ammo/a4570
 	name = "box of .45-70 ammo"

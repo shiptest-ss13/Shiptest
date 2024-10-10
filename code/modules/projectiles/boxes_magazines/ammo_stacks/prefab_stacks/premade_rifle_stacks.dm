@@ -2,6 +2,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r
 	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 10
 
 /obj/item/storage/box/ammo/a8_50r
 	name = "box of 8x50mm ammo"
@@ -37,6 +38,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a300
 	ammo_type = /obj/item/ammo_casing/a300
+	max_ammo = 5
 
 /obj/item/storage/box/ammo/a300
 	name = "box of .300 magnum ammo"
@@ -53,6 +55,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42
 	ammo_type = /obj/item/ammo_casing/a556_42
+	max_ammo = 5
 
 /obj/item/storage/box/ammo/a556_42
 	name = "box of 5.56x42mm CLIP ammo"
@@ -69,6 +72,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a545_39
 	ammo_type = /obj/item/ammo_casing/a545_39
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a545_39/recycled
 	ammo_type = /obj/item/ammo_casing/a545_39/recycled
@@ -77,6 +81,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40
 	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40
 	name = "box of 7.62x40mm CLIP ammo"
@@ -96,6 +101,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a308
 	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 10
 
 /obj/item/storage/box/ammo/a308
 	name = "box of .308 ammo"
@@ -111,11 +117,11 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308 = 4)
 	generate_items_inside(items_inside,src)
 
-
 //.299 Eoehoma Caseless (E-40)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c299
 	ammo_type = /obj/item/ammo_casing/caseless/c299
+	max_ammo = 10
 
 /obj/item/storage/box/ammo/c299
 	name = "box of .299 Eoehoma caseless ammo"
@@ -128,11 +134,11 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
 	generate_items_inside(items_inside,src)
 
-
 //6.5x57mm CLIP
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip
 	ammo_type = /obj/item/ammo_casing/a65clip
+	max_ammo = 5
 
 /obj/item/storage/box/ammo/a65clip
 	name = "box of 6.5x57mm CLIP ammo"

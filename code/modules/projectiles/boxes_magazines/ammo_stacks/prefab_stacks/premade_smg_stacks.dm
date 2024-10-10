@@ -27,6 +27,7 @@
 // 5.56mm HITP caseless (Pistole C)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c556mm
 	name = "box of 5.56mm HITP caseless ammo"
