@@ -149,7 +149,7 @@
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
 			/obj/item/melee/knife/combat = 3,
-			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			/obj/effect/spawner/lootdrop/ration = 30
 			)
 		)
 	if (prob(15)) //mayhaps a medkit
