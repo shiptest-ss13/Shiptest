@@ -1,7 +1,7 @@
 /obj/effect/spawner/random/clothing
 	name = "clothing loot spawner"
 	desc = "Time to look pretty."
-	icon_state = "hat"
+	icon_state = "suit"
 
 /obj/effect/spawner/random/clothing/gloves
 	name = "random gloves"

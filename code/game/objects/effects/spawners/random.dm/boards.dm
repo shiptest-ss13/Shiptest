@@ -2,7 +2,7 @@
 
 /obj/effect/spawner/random/techstorage
 	name = "generic circuit board spawner"
-	icon_state = "circut"
+	icon_state = "circuit"
 	spawn_loot_split = TRUE
 	spawn_all_loot = TRUE
 

@@ -9,7 +9,7 @@
 	loot_type_path = /obj/machinery/vending/snack
 	loot = list()
 
-/obj/effect/spawner/random/vending/colavend
+/obj/effect/spawner/random/vending/cola
 	name = "spawn random cola vending machine"
 	desc = "Automagically transforms into a random cola vendor. If you see this while in a shift, please create a bug report."
 	icon_state = "cola"

@@ -1,5 +1,6 @@
 //GENERIC
 /obj/effect/spawner/random/salvage_capacitor
+	icon_state = "matter_bin"
 	loot = list(
 			/obj/item/stock_parts/capacitor = 120,
 			/obj/item/stock_parts/capacitor/adv = 20,
@@ -7,6 +8,7 @@
 		)
 
 /obj/effect/spawner/random/salvage_scanning
+	icon_state = "matter_bin"
 	loot = list(
 			/obj/item/stock_parts/scanning_module = 120,
 			/obj/item/stock_parts/scanning_module/adv = 20,
@@ -14,6 +16,7 @@
 		)
 
 /obj/effect/spawner/random/salvage_manipulator
+	icon_state = "matter_bin"
 	loot = list(
 			/obj/item/stock_parts/manipulator = 120,
 			/obj/item/stock_parts/manipulator/nano = 20,
@@ -21,6 +24,7 @@
 		)
 
 /obj/effect/spawner/random/salvage_matter_bin
+	icon_state = "matter_bin"
 	loot = list(
 			/obj/item/stock_parts/matter_bin = 120,
 			/obj/item/stock_parts/matter_bin/adv = 20,
@@ -28,6 +32,7 @@
 		)
 
 /obj/effect/spawner/random/salvage_laser
+	icon_state = "matter_bin"
 	loot = list(
 			/obj/item/stock_parts/micro_laser = 120,
 			/obj/item/stock_parts/micro_laser/high = 20,
@@ -37,6 +42,7 @@
 //PROTOLATHE
 
 /obj/effect/spawner/random/random_gun_protolathe_lootdrop
+	icon_state = "laser_gun"
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
 			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
@@ -44,6 +50,7 @@
 		)
 
 /obj/effect/spawner/random/random_ammo_protolathe_lootdrop
+	icon_state = "rubbershot"
 	loot = list(
 			/obj/item/stock_parts/cell/gun/upgraded = 5,
 			/obj/item/ammo_box/magazine/smgm9mm = 7,
@@ -74,6 +81,7 @@
 
 /obj/effect/spawner/random/salvage_machine
 	name = "salvageable machine spawner"
+	icon_state = "arcade"
 	loot = list(
 		/obj/structure/salvageable/protolathe,
 		/obj/structure/salvageable/circuit_imprinter,
@@ -84,19 +92,9 @@
 		/obj/structure/salvageable/destructive_analyzer
 	)
 
-/obj/effect/spawner/random/salvage_50
-	name = "50% salvage spawner"
-	spawn_loot_chance = 50
-	loot = list(
-		/obj/effect/spawner/random/maintenance ,
-		/obj/effect/spawner/random/salvage_machine,
-		/obj/effect/spawner/random/exotic/ripley,
-		/obj/structure/closet/crate/secure/loot,
-	)
-
 /obj/effect/spawner/random/salvage
 	name = "salvage mats spawner"
-	icon_state = "metal"
+	icon_state = "rods"
 	loot = list(
 		/obj/item/stack/ore/salvage/scrapmetal,
 		/obj/item/stack/ore/salvage/scrapgold,
@@ -105,6 +103,16 @@
 		/obj/item/stack/ore/salvage/scraptitanium,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapuranium
+	)
+
+/obj/effect/spawner/random/salvage/half
+	name = "50% salvage spawner"
+	spawn_loot_chance = 50
+	loot = list(
+		/obj/effect/spawner/random/maintenance,
+		/obj/effect/spawner/random/salvage_machine,
+		/obj/effect/spawner/random/exotic/ripley,
+		/obj/structure/closet/crate/secure/loot,
 	)
 
 /obj/effect/spawner/random/salvage/metal

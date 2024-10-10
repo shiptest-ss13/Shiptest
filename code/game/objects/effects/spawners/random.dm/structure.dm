@@ -2,6 +2,7 @@
 /obj/effect/spawner/random/structure
 	name = "structure spawner"
 	desc = "Now you see me, now you don't..."
+	icon_state = "girder"
 
 /obj/effect/spawner/random/structure/crate_abandoned
 	name = "locked crate spawner"

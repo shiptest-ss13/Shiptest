@@ -54,6 +54,7 @@
 
 /obj/effect/spawner/random/trash/food_packaging
 	name = "empty food packaging spawner"
+	icon_state = "chips"
 	loot = list(
 		/obj/item/trash/raisins = 2,
 		/obj/item/trash/cheesie = 2,
@@ -91,7 +92,7 @@
 	)
 
 /obj/effect/spawner/random/trash/decal
-	icon_state = "trash"
+	icon_state = "vomit"
 	loot = list(
 		/obj/effect/decal/cleanable/greenglow/filled = 30,
 		/obj/effect/decal/cleanable/greenglow/ecto = 1,
