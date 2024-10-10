@@ -20,7 +20,7 @@
 		/obj/item/clothing/gloves/color/rainbow
 	)
 
-/obj/effect/spawner/random/costume
+/obj/effect/spawner/random/clothing/costume
 	name = "random costume spawner"
 	icon_state = "costume"
 	loot_subtype_path = /obj/effect/spawner/costume

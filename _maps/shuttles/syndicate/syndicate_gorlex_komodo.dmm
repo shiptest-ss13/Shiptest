@@ -3155,18 +3155,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
@@ -3889,10 +3881,10 @@
 /obj/structure/table/reinforced,
 /obj/item/hemostat,
 /obj/machinery/light/directional/west,
-/obj/effect/spawner/random/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = 6
 	},
-/obj/effect/spawner/random/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = -6
 	},
 /turf/open/floor/pod/dark,
