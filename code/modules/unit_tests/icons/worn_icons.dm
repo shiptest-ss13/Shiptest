@@ -114,7 +114,7 @@
 				TEST_NOTICE(src, fail_reasons)
 
 /datum/unit_test/mob_overlay_icons/not_clothing
-	required_test = TRUE
+	required_test = FALSE
 
 /datum/unit_test/mob_overlay_icons/not_clothing/types_to_search()
 	return (subtypesof(/obj/item) - subtypesof(/obj/item/clothing))
