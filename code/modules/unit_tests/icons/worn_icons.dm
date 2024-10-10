@@ -52,7 +52,7 @@
 				if(required_test)
 					TEST_FAIL("[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
 				else
-					TEST_NOITCE(src, "[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
+					TEST_NOTICE(src, "[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[mob_overlay_icon]'[match_message]")
 			continue
 
 		var/icon_file //checks against all the default icon locations if one isn't defined.
