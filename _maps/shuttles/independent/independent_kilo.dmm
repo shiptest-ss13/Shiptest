@@ -905,7 +905,7 @@
 /area/ship/cargo)
 "mz" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light_switch{
 	pixel_x = 7;
 	pixel_y = 20
@@ -1789,7 +1789,7 @@
 /obj/structure/cable/pink{
 	icon_state = "1-6"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)

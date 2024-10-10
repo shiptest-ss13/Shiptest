@@ -206,7 +206,6 @@
 		/obj/structure/holosign/barrier/wetsign = 2,
 	)
 
-
 /obj/effect/spawner/random/trash/bucket
 	name = "bucket spawner"
 	icon_state = "caution"

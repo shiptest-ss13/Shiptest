@@ -6,8 +6,6 @@
 /obj/effect/spawner/random/food_or_drink/donkpockets
 	name = "donk pocket box spawner"
 	icon_state = "donkpocket"
-	spawn_loot_double = FALSE
-
 	loot = list(
 			/obj/item/storage/box/donkpockets/donkpocketspicy = 1,
 			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
@@ -17,6 +15,7 @@
 		)
 
 /obj/effect/spawner/random/food_or_drink/ration
+	name = "ration spawner"
 	icon_state = "pizzabox"
 	loot = list (
 		/obj/item/storage/ration/vegan_chili = 5,
@@ -45,7 +44,6 @@
 /obj/effect/spawner/random/food_or_drink/donut
 	name = "random donut" //donut :)
 	icon_state = "pizzabox"
-	spawn_loot_count = 1
 	loot = list(
 				/obj/item/reagent_containers/food/snacks/donut/apple = 1,
 				/obj/item/reagent_containers/food/snacks/donut/berry = 1,
@@ -63,7 +61,6 @@
 
 /obj/effect/spawner/random/food_or_drink/donut/jelly
 	name = "random jelly donut"
-	spawn_loot_count = 1
 	loot = list(
 				/obj/item/reagent_containers/food/snacks/donut/jelly/berry = 1,
 				/obj/item/reagent_containers/food/snacks/donut/jelly/apple = 1,
@@ -79,7 +76,6 @@
 
 /obj/effect/spawner/random/food_or_drink/donut/slimejelly
 	name = "random slimejelly donut"
-	spawn_loot_count = 1
 	loot = list(
 				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple = 1,
 				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry = 1,

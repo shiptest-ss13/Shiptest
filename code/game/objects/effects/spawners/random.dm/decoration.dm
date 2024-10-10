@@ -9,7 +9,6 @@
 	loot = list(
 		/obj/item/stack/sheet/sandblock{amount = 30} = 25,
 		/obj/item/stack/sheet/mineral/wood{amount = 30} = 25,
-		/obj/item/stack/sheet/bronze/thirty = 20,
 		/obj/item/stack/tile/noslip{amount = 20} = 10,
 		/obj/item/stack/sheet/plastic{amount = 30} = 10,
 		/obj/item/stack/tile/pod{amount = 20} = 4,
@@ -23,9 +22,6 @@
 	loot = list(
 		/obj/item/stack/tile/carpet{amount = 30} = 35,
 		/obj/item/stack/tile/carpet/black{amount = 30} = 20,
-		/obj/item/stack/tile/carpet/donk/thirty = 15,
-		/obj/item/stack/tile/carpet/stellar/thirty = 15,
-		/obj/item/stack/tile/carpet/executive/thirty = 15,
 	)
 
 /obj/effect/spawner/random/decoration/ornament
@@ -35,8 +31,6 @@
 		/obj/item/flashlight/lamp = 35,
 		/obj/item/flashlight/lamp/green = 35,
 		/obj/item/flashlight/lantern = 10,
-		/obj/item/phone = 10,
-		/obj/item/flashlight/lantern/jade = 5,
 		/obj/item/flashlight/lamp/bananalamp = 5,
 	)
 /obj/effect/spawner/random/decoration/glowstick
@@ -55,6 +49,21 @@
 	var/obj/item/flashlight/glowstick = .
 
 	glowstick.set_light_on(TRUE)
+
+/obj/effect/spawner/random/decoration/paint
+	name = "paint spawner"
+	icon_state = "paint"
+	loot_subtype_path = /obj/item/paint
+	loot = list()
+
+/obj/effect/spawner/random/decoration/flower
+	name = "random grown flower spawner"
+	icon_state = "flower"
+	loot = list(
+		/obj/item/reagent_containers/food/snacks/grown/poppy,
+		/obj/item/reagent_containers/food/snacks/grown/harebell,
+		/obj/item/reagent_containers/food/snacks/grown/trumpet,
+	)
 
 /obj/effect/spawner/random/flora
 	name = "random flora spawner"
@@ -97,6 +106,7 @@
 
 /obj/effect/spawner/random/flower
 	name = "random flower spawner"
+	icon_state = "flower"
 	loot = list(
 		/obj/structure/flora/ausbushes/brflowers,
 		/obj/structure/flora/ausbushes/ywflowers,
@@ -106,19 +116,3 @@
 		)
 	spawn_loot_count = 1
 
-/obj/effect/spawner/random/decoration/paint
-	name = "paint spawner"
-	icon_state = "paint"
-	loot_subtype_path = /obj/item/paint
-	loot = list()
-
-/obj/effect/spawner/random/decoration/flower
-	name = "random flower spawner"
-	icon_state = "flower"
-	loot = list(
-		/obj/item/reagent_containers/food/snacks/grown/poppy,
-		/obj/item/reagent_containers/food/snacks/grown/harebell,
-		/obj/item/reagent_containers/food/snacks/grown/trumpet,
-		/obj/item/reagent_containers/food/snacks/grown/sunflower,
-		/obj/item/reagent_containers/food/snacks/grown/rose,
-	)

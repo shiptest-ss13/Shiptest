@@ -214,7 +214,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "db" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -1565,7 +1565,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "Ap" = (
@@ -1713,7 +1713,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Cx" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -2507,7 +2507,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "Rm" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/rockplanet/nanotrasen)
@@ -2746,6 +2746,7 @@
 "WY" = (
 /obj/structure/frame/computer{
 	dir = 1;
+	
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
