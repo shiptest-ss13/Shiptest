@@ -133,6 +133,18 @@
 	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
 	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
 
+/obj/item/storage/pistolcase/ringneck/military
+/obj/item/storage/pistolcase/ringneck/military/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
+
+/obj/item/storage/pistolcase/rattlesnake
+/obj/item/storage/pistolcase/rattlesnake/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake/no_mag(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake/empty(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake/empty(src)
+
 /obj/item/storage/pistolcase/candor
 /obj/item/storage/pistolcase/candor/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)
