@@ -4,4 +4,5 @@
 		if(target_gun.default_ammo_type)
 			TEST_ASSERT(istype(target_gun.default_ammo_type), "The default ammo in [target_gun.type] is not a type")
 			TEST_ASSERT(target_gun.default_ammo_type in target_gun.allowed_ammo_types, "The default ammo in [target_gun.type] in not in its allowed ammo types")
+			TEST_ASSERT_EQUAL(target_gun.magazine?.type, target_gun.default_ammo_type, "[target_gun.type]'s mag does not equal its default_ammo_type")
 		qdel(target_gun)
