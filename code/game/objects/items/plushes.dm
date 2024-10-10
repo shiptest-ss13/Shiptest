@@ -865,6 +865,7 @@
 	add_overlay(base_overlay_among)
 
 /obj/effect/spawner/lootdrop/plushie
+	icon_state = "plushie"
 	loot = list (
 	/obj/item/toy/plush/beeplushie,
 	/obj/item/toy/plush/blahaj,

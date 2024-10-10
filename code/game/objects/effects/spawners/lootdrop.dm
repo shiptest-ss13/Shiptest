@@ -1,5 +1,5 @@
 /obj/effect/spawner/lootdrop
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/random_spawners.dmi'
 	icon_state = "random_loot"
 	layer = OBJ_LAYER
 	var/lootcount = 1		//how many items will be spawned
@@ -34,6 +34,7 @@
 
 /obj/effect/spawner/lootdrop/donkpockets
 	name = "donk pocket box spawner"
+	icon_state = "donkpocket"
 	lootdoubles = FALSE
 
 	loot = list(
@@ -47,6 +48,7 @@
 
 /obj/effect/spawner/lootdrop/armory_contraband
 	name = "armory contraband gun spawner"
+	icon_state = "pistol"
 	lootdoubles = FALSE
 
 	loot = list(
@@ -123,6 +125,7 @@
 
 /obj/effect/spawner/lootdrop/grille_or_trash
 	name = "maint grille or trash spawner"
+	icon_state = "grille"
 	loot = list(/obj/structure/grille = 5,
 			/obj/item/cigbutt = 1,
 			/obj/item/trash/cheesie = 1,
@@ -167,6 +170,7 @@
 
 /obj/effect/spawner/lootdrop/maintenance
 	name = "maintenance loot spawner"
+	icon_state = "trash"
 	// see code/_globalvars/lists/maintenance_loot.dm for loot table
 
 /obj/effect/spawner/lootdrop/maintenance/Initialize(mapload)
@@ -480,48 +484,6 @@
 				"" = 50
 				)
 
-//finds the probabilities of items spawning from a loot spawner's loot pool
-/obj/item/loot_table_maker
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "random_loot"
-	var/spawner_to_test = /obj/effect/spawner/lootdrop/maintenance //what lootdrop spawner to use the loot pool of
-	var/loot_count = 180 //180 is about how much maint loot spawns per map as of 11/14/2019
-	//result outputs
-	var/list/spawned_table //list of all items "spawned" and how many
-	var/list/stat_table //list of all items "spawned" and their occurrance probability
-
-/obj/item/loot_table_maker/Initialize()
-	. = ..()
-	make_table()
-
-/obj/item/loot_table_maker/attack_self(mob/user)
-	to_chat(user, "Loot pool re-rolled.")
-	make_table()
-
-/obj/item/loot_table_maker/proc/make_table()
-	spawned_table = list()
-	stat_table = list()
-	var/obj/effect/spawner/lootdrop/spawner_to_table = new spawner_to_test
-	var/lootpool = spawner_to_table.loot
-	qdel(spawner_to_table)
-	for(var/i in 1 to loot_count)
-		var/loot_spawn = pick_loot(lootpool)
-		if(!loot_spawn) // WS edit - Support spawn weights of 0 in loot tables and ruins
-			continue
-		if(!(loot_spawn in spawned_table))
-			spawned_table[loot_spawn] = 1
-		else
-			spawned_table[loot_spawn] += 1
-	stat_table += spawned_table
-	for(var/item in stat_table)
-		stat_table[item] /= loot_count
-
-/obj/item/loot_table_maker/proc/pick_loot(lootpool) //selects path from loot table and returns it
-	var/lootspawn = pickweight_float(lootpool) // WS edit - Fix various startup runtimes
-	while(islist(lootspawn))
-		lootspawn = pickweight_float(lootspawn) // WS edit - Fix various startup runtimes
-	return lootspawn
-
 /obj/effect/spawner/lootdrop/stockparts
 	name = "random good stock parts"
 	lootcount = 6
@@ -634,6 +596,7 @@
 
 /obj/effect/spawner/lootdrop/donut
 	name = "random donut" //donut :)
+	icon_state = "pizzabox"
 	lootcount = 1
 	loot = list(
 				/obj/item/reagent_containers/food/snacks/donut/apple = 1,
@@ -1010,6 +973,7 @@
 //wasteplanet things
 
 /obj/effect/spawner/lootdrop/waste/grille_or_trash
+	icon_state = "grille"
 	name = "wasteplanet loot spawner"
 	loot = list(
 		/obj/structure/grille/broken = 5,
@@ -1028,6 +992,7 @@
 	)
 
 /obj/effect/spawner/lootdrop/waste/mechwreck
+	icon_state = "ripley"
 	name = "wasteplanet exosuit wreckage"
 	loot = list(
 		/obj/structure/mecha_wreckage/ripley = 15,
@@ -1036,7 +1001,7 @@
 		/obj/structure/mecha_wreckage/ripley/clip = 9
 		)
 
-/obj/effect/spawner/lootdrop/waste/mechwreck/rare
+/obj/effect/spawner/lootddrop/waste/mechwreck/rare
 	loot = list(
 		/obj/structure/mecha_wreckage/durand = 12.5,
 		/obj/structure/mecha_wreckage/durand/clip = 12.5,
@@ -1045,6 +1010,7 @@
 		)
 
 /obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
+	icon_state = "trash"
 	loot = list(
 		/obj/effect/decal/cleanable/greenglow/filled = 30,
 		/obj/effect/decal/cleanable/greenglow/ecto = 1,
@@ -1127,6 +1093,7 @@
 
 /obj/effect/spawner/lootdrop/salvage
 	name = "salvage mats spawner"
+	icon_state = "metal"
 	loot = list(
 		/obj/item/stack/ore/salvage/scrapmetal,
 		/obj/item/stack/ore/salvage/scrapgold,
@@ -1269,6 +1236,7 @@
 	)
 
 /obj/effect/spawner/lootdrop/ration
+	icon_state = "pizzabox"
 	loot = list (
 	/obj/item/storage/ration/vegan_chili = 5,
 	/obj/item/storage/ration/shredded_beef = 5,
