@@ -53,18 +53,22 @@
 	var/gas_stimulation_min = 0.002 //Nitryl, Stimulum and Freon
 
 	var/cold_message = "your face freezing and an icicle forming"
-	var/cold_level_1_threshold = 260
-	var/cold_level_2_threshold = 200
-	var/cold_level_3_threshold = 120
+	var/chilly_message = "chilly air"
+	var/chlly_threshold = T20C-7
+	var/cold_level_1_threshold = 240
+	var/cold_level_2_threshold = 220
+	var/cold_level_3_threshold = 200
 	var/cold_level_1_damage = COLD_GAS_DAMAGE_LEVEL_1 //Keep in mind with gas damage levels, you can set these to be negative, if you want someone to heal, instead.
 	var/cold_level_2_damage = COLD_GAS_DAMAGE_LEVEL_2
 	var/cold_level_3_damage = COLD_GAS_DAMAGE_LEVEL_3
 	var/cold_damage_type = BURN
 
 	var/hot_message = "your face burning and a searing heat"
-	var/heat_level_1_threshold = 360
-	var/heat_level_2_threshold = 400
-	var/heat_level_3_threshold = 1000
+	var/warm_message = "warm air"
+	var/warm_threshold = T20C+10
+	var/heat_level_1_threshold = 313
+	var/heat_level_2_threshold = 320
+	var/heat_level_3_threshold = 343
 	var/heat_level_1_damage = HEAT_GAS_DAMAGE_LEVEL_1
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
@@ -85,7 +89,7 @@
 		damage_type = safe_damage_type
 	)
 
-/obj/item/organ/lungs/proc/check_breath(datum/gas_mixture/breath, mob/living/carbon/human/H)
+/obj/item/organ/lungs/proc/check_breath	(datum/gas_mixture/breath, mob/living/carbon/human/H)
 //TODO: add lung damage = less oxygen gains
 	var/breathModifier = (5-(5*(damage/maxHealth)/2)) //range 2.5 - 5
 	if(H.status_flags & GODMODE)
@@ -340,35 +344,117 @@
 		H.failed_last_breath = TRUE
 
 
-/obj/item/organ/lungs/proc/handle_breath_temperature(datum/gas_mixture/breath, mob/living/carbon/human/H) // called by human/life, handles temperatures
+/obj/item/organ/lungs/proc/handle_breath_temperature(datum/gas_mixture/breath, mob/living/carbon/human/breather) // called by human/life, handles temperatures
+	if(!breath)
+		return
 	var/breath_temperature = breath.return_temperature()
 
-	if(!HAS_TRAIT(H, TRAIT_RESISTCOLD)) // COLD DAMAGE
-		var/cold_modifier = H.dna.species.coldmod
+	if(!HAS_TRAIT(breather, TRAIT_RESISTCOLD)) // COLD DAMAGE
+		var/cold_modifier = breather.dna.species.coldmod
+		var/breath_effect_prob = 0
+		var/part_count = 0
 		if(breath_temperature < cold_level_3_threshold)
-			H.apply_damage_type(cold_level_3_damage*cold_modifier, cold_damage_type)
+			breather.apply_damage(cold_level_3_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 100
+			part_count = 20
 		if(breath_temperature > cold_level_3_threshold && breath_temperature < cold_level_2_threshold)
-			H.apply_damage_type(cold_level_2_damage*cold_modifier, cold_damage_type)
+			breather.apply_damage(cold_level_2_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 75
+			part_count = 10
 		if(breath_temperature > cold_level_2_threshold && breath_temperature < cold_level_1_threshold)
-			H.apply_damage_type(cold_level_1_damage*cold_modifier, cold_damage_type)
-		if(breath_temperature < cold_level_1_threshold)
-			if(prob(20))
-				to_chat(H, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+			breather.apply_damage(cold_level_1_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 50
+			part_count = 5
+		if(breath_temperature > cold_level_1_threshold)
+			breath_effect_prob = 25
+			part_count = 3
 
-	if(!HAS_TRAIT(H, TRAIT_RESISTHEAT)) // HEAT DAMAGE
-		var/heat_modifier = H.dna.species.heatmod
+		if(breath_temperature < cold_level_1_threshold)
+			if(prob(sqrt(breath_effect_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+				if(prob(50))
+					breather.emote("shiver")
+		else if(breath_temperature < chlly_threshold)
+			if(!breath_effect_prob)
+				breath_effect_prob = 20
+				part_count = 2
+			if(prob(sqrt(breath_effect_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
+		if(breath_temperature < chlly_threshold)
+			if(breath_effect_prob)
+				// Breathing into your mask, no particle. We can add fogged up glasses later
+				if(breather.is_mouth_covered())
+					return
+				// Even though breathing via internals TECHNICALLY exhales into the environment, we'll still block it
+				if(breather.internal)
+					return
+				emit_breath_particle(breather, /particles/fog/breath, part_count)
+
+	if(!HAS_TRAIT(breather, TRAIT_RESISTHEAT)) // HEAT DAMAGE
+		var/heat_modifier = breather.dna.species.heatmod
+		var/heat_message_prob = 0
 		if(breath_temperature > heat_level_1_threshold && breath_temperature < heat_level_2_threshold)
-			H.apply_damage_type(heat_level_1_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_1_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 100
 		if(breath_temperature > heat_level_2_threshold && breath_temperature < heat_level_3_threshold)
-			H.apply_damage_type(heat_level_2_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_2_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 75
 		if(breath_temperature > heat_level_3_threshold)
-			H.apply_damage_type(heat_level_3_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_3_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 50
 		if(breath_temperature > heat_level_1_threshold)
-			if(prob(20))
-				to_chat(H, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+			heat_message_prob = 25
+
+		if(breath_temperature > heat_level_1_threshold)
+			if(prob(sqrt(heat_message_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+		else if(breath_temperature > warm_threshold)
+			if(!heat_message_prob)
+				heat_message_prob = 20
+			if(prob(sqrt(heat_message_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [warm_message] in your [name].</span>")
+
+
 
 	// The air you breathe out should match your body temperature
-	breath.set_temperature(H.bodytemperature)
+	breath.set_temperature(breather.bodytemperature)
+
+/// Creates a particle effect off the mouth of the passed mob.
+/obj/item/organ/lungs/proc/emit_breath_particle(mob/living/carbon/human/breather, particle_type, part_count)
+	ASSERT(ispath(particle_type, /particles))
+
+	var/obj/effect/abstract/particle_holder/holder = new(breather, particle_type)
+	var/particles/breath_particle = holder.particles
+	var/breath_dir = breather.dir
+
+	var/list/particle_grav = list(0, 0.1, 0)
+	var/list/particle_pos = list(0, 10, 0)
+	if(breath_dir & NORTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Layer it behind the mob since we're facing away from the camera
+		holder.pixel_w -= 4
+		holder.pixel_y += 4
+	if(breath_dir & WEST)
+		particle_grav[1] = -0.2
+		particle_pos[1] = -5
+		breath_particle.rotation = -45
+	if(breath_dir & EAST)
+		particle_grav[1] = 0.2
+		particle_pos[1] = 5
+		breath_particle.rotation = 45
+	if(breath_dir & SOUTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Shouldn't be necessary but just for parity
+		holder.pixel_w += 4
+		holder.pixel_y -= 4
+
+	breath_particle.gravity = particle_grav
+	breath_particle.position = particle_pos
+	breath_particle.count = part_count
+
+	QDEL_IN(holder, breath_particle.lifespan)
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
