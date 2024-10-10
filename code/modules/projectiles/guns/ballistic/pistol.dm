@@ -327,6 +327,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
 
-/obj/item/gun/ballistic/derringer/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(ballistic/derringer)
+
 

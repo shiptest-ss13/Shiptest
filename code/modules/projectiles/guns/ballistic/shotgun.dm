@@ -94,8 +94,8 @@
 		item_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
 		mob_overlay_state = item_state
 
-/obj/item/gun/ballistic/shotgun/brimstone/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/brimstone)
+
 // HELLFIRE SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/hellfire
@@ -134,8 +134,8 @@
 		item_state = "dshotgun_sawn" // ditto
 		mob_overlay_state = item_state
 
-/obj/item/gun/ballistic/shotgun/hellfire/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/hellfire)
+
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
 	spread = 4
@@ -354,8 +354,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		item_state = "dshotgun_sawn"
 		mob_overlay_state = item_state
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
@@ -606,8 +605,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	recoil = 0
 	recoil_unwielded = 2
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
@@ -746,8 +744,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		recoil = 0
 		recoil_unwielded = 3
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
@@ -829,8 +826,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		recoil = 2
 		recoil_unwielded = 4
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag
-	default_ammo_type = FALSE
+EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."

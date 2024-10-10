@@ -57,8 +57,14 @@
 /obj/item/gun/energy/get_cell()
 	return cell
 
-/obj/item/gun/energy/Initialize()
+/obj/item/gun/energy/Initialize(mapload, spawn_empty)
 	. = ..()
+	if(spawn_empty)
+		if(internal_magazine)
+			spawn_no_ammo = TRUE
+		else
+			default_ammo_type = FALSE
+	
 	if(default_ammo_type)
 		cell = new default_ammo_type(src)
 	if(spawn_no_ammo)

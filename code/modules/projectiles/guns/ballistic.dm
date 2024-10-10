@@ -41,8 +41,14 @@
 		)
 	)
 
-/obj/item/gun/ballistic/Initialize()
+/obj/item/gun/ballistic/Initialize(mapload, spawn_empty)
 	. = ..()
+	if(spawn_empty)
+		if(internal_magazine)
+			spawn_no_ammo = TRUE
+		else
+			default_ammo_type = FALSE
+
 	if (!default_ammo_type && !internal_magazine)
 		bolt_locked = TRUE
 		update_appearance()
