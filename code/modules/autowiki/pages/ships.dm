@@ -80,7 +80,6 @@
 	wiki_dummy.wipe_state()
 
 	to_equip.equip(wiki_dummy, TRUE, FALSE)
-	COMPILE_OVERLAYS(wiki_dummy)
 	var/icon/wiki_icon = icon(getFlatIcon(wiki_dummy), frame = 1)
 
 	//Make all icons 32x32 for wiki sizing consistency
