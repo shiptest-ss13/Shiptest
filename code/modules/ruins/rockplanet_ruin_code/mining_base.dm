@@ -17,6 +17,13 @@
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner
 	outfit = /datum/outfit/job/nanotrasen/miner
 
+/obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored
+	outfit = /datum/outfit/job/nanotrasen/miner/armored
+
+/datum/outfit/job/nanotrasen/miner
+	suit = /obj/item/clothing/suit/hooded/explorer
+	mask = /obj/item/clothing/mask/gas/explorer
+
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/Initialize()
 	. = ..()
 	mob_species = pickweight(list(
