@@ -130,7 +130,9 @@ jobs:
       matrix:
         arg: [
           "BASIC_TESTS",
+          "CREATE_AND_DESTROY_TEST",
           "PLANET_GEN_TEST",
+          "RUIN_PLACEMENT_TEST",
           "SHIP_PLACEMENT_TEST"
         ]
     uses: ./.github/workflows/run_integration_tests.yml

@@ -112,18 +112,23 @@
 #include "teleporters.dm"
 #include "timer_sanity.dm"
 
-#include "create_and_destroy.dm"
-
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
 #endif
 
 #endif //BASIC_TESTS
 
+#ifdef CREATE_AND_DESTROY_TEST
+#include "create_and_destroy.dm"
+#endif //CREATE_AND_DESTROY_TEST
+
 #ifdef PLANET_GEN_TEST
 #include "planet_gen.dm"
-#include "ruin_placement.dm"
 #endif //PLANET_GEN
+
+#ifdef RUIN_PLACEMENT_TEST
+#include "ruin_placement.dm"
+#endif //RUIN_PLACEMENT_TEST
 
 #ifdef SHIP_PLACEMENT_TEST
 #include "ship_outpost_placement.dm"
