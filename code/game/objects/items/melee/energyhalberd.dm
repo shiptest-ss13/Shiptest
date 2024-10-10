@@ -26,7 +26,7 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
-	var/w_class_on = WEIGHT_CLASS_BULKY
+	var/active_w_class = WEIGHT_CLASS_BULKY
 	var/halberd_color = "green"
 	var/two_hand_force = 34
 	var/hacked = FALSE
@@ -46,7 +46,7 @@
 			to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
 			return COMPONENT_TWOHANDED_BLOCK_WIELD
 	sharpness = IS_SHARP
-	w_class = w_class_on
+	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
 	set_light_on(TRUE)
@@ -129,7 +129,7 @@
 		return 1
 
 /obj/item/energyhalberd/ignition_effect(atom/A, mob/user)
-	// same as /obj/item/melee/transforming/energy, mostly
+	// same as /obj/item/melee/energy, mostly
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return ""
 	var/in_mouth = ""

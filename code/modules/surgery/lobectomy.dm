@@ -22,7 +22,7 @@
 	name = "excise damaged lung node"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 33,
+		/obj/item/melee/energy/sword = 33,
 		/obj/item/melee/knife = 40,
 		/obj/item/shard = 25)
 	time = 4.2 SECONDS
