@@ -531,6 +531,8 @@ EMPTY_GUN_HELPER(automatic/smg/sidewinder)
 
 	fire_delay = 1 SECONDS
 
+	slot_flags = ITEM_SLOT_BACK
+
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	show_ammo_capacity_on_magazine_sprite = TRUE
