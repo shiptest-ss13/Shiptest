@@ -708,7 +708,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "cO" = (
 /obj/effect/turf_decal/box,
-/obj/effect/spawner/lootdrop/salvage_machine,
+/obj/effect/spawner/random/salvage_machine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "cP" = (
@@ -1296,9 +1296,9 @@
 "eS" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "eU" = (
@@ -1306,7 +1306,7 @@
 	pixel_y = -30
 	},
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
 "eV" = (
@@ -1323,7 +1323,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "eX" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -1391,7 +1391,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/cable_coil/random/five,
-/obj/effect/spawner/lootdrop/techstorage/engineering,
+/obj/effect/spawner/random/techstorage/engineering,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "fi" = (
@@ -1399,8 +1399,8 @@
 	dir = 2
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "fl" = (
@@ -1655,7 +1655,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "gu" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -2516,9 +2516,9 @@
 "jD" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/costume,
-/obj/effect/spawner/lootdrop/costume,
-/obj/effect/spawner/lootdrop/costume,
+/obj/effect/spawner/random/clothing/costume,
+/obj/effect/spawner/random/clothing/costume,
+/obj/effect/spawner/random/clothing/costume,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "jE" = (
@@ -3111,7 +3111,7 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "lR" = (
@@ -3255,7 +3255,7 @@
 "mJ" = (
 /obj/structure/rack,
 /obj/machinery/light/small/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "mK" = (
@@ -3638,7 +3638,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "ob" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "od" = (
@@ -4048,7 +4048,7 @@
 /area/ruin/space/has_grav/spacemall)
 "pB" = (
 /obj/effect/decal/cleanable/ash,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/closet/crate,
 /obj/structure/railing,
@@ -5749,7 +5749,7 @@
 "vp" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "vs" = (
@@ -5866,7 +5866,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "vS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/obj/effect/spawner/random/medical/beaker,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/shop2)
@@ -6451,8 +6451,8 @@
 /obj/structure/closet/crate/secure,
 /obj/effect/turf_decal/box,
 /obj/structure/railing,
-/obj/effect/spawner/lootdrop/prison_contraband,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/exotic/prison_contraband,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "yk" = (
@@ -6524,7 +6524,7 @@
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/popcorn,
 /obj/item/trash/candy,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "yF" = (
@@ -6666,7 +6666,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "yZ" = (
@@ -6964,9 +6964,9 @@
 "Ag" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/circuit/computer/common,
 /obj/item/research_notes/loot,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -7269,9 +7269,9 @@
 "Bq" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "Bu" = (
@@ -7469,7 +7469,7 @@
 	dir = 10
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "Cv" = (
@@ -7631,7 +7631,7 @@
 /area/ruin/space/has_grav/spacemall)
 "CR" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/blood,
 /obj/item/reagent_containers/food/snacks/spiderling{
 	pixel_y = 5;
@@ -8230,9 +8230,9 @@
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
 "EI" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "EJ" = (
@@ -9438,7 +9438,7 @@
 /area/ruin/space/has_grav/spacemall)
 "JE" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
 "JF" = (
@@ -9569,7 +9569,7 @@
 "Kl" = (
 /obj/effect/decal/cleanable/robot_debris/old,
 /obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "Kn" = (
@@ -9999,9 +9999,9 @@
 "LS" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/circuit/computer/common,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -10056,9 +10056,9 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Mb" = (
 /obj/effect/decal/cleanable/greenglow,
-/obj/effect/spawner/lootdrop/random_prosthetic,
-/obj/effect/spawner/lootdrop/memeorgans,
-/obj/effect/spawner/lootdrop/memeorgans,
+/obj/effect/spawner/random/medical/prosthetic,
+/obj/effect/spawner/random/medical/memeorgans,
+/obj/effect/spawner/random/medical/memeorgans,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -11266,7 +11266,7 @@
 /area/ruin/space/has_grav/spacemall)
 "Qf" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/tool_engie_common,
+/obj/effect/spawner/random/engineering/tool/common,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -11297,7 +11297,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Qn" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -11311,7 +11311,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "Qu" = (
@@ -11865,7 +11865,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "SD" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/item/toy/plush/slimeplushie{
 	pixel_y = -4;
 	pixel_x = 4
@@ -12218,7 +12218,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/machinery/light/directional/east,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "TZ" = (
@@ -12290,10 +12290,10 @@
 "Ul" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate/engineering/electrical,
-/obj/effect/spawner/lootdrop/techstorage,
-/obj/effect/spawner/lootdrop/techstorage,
-/obj/effect/spawner/lootdrop/stockparts,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/techstorage,
+/obj/effect/spawner/random/techstorage,
+/obj/effect/spawner/random/stockparts,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "Um" = (
@@ -12606,7 +12606,7 @@
 	},
 /obj/structure/closet/crate,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Vr" = (
@@ -12655,8 +12655,8 @@
 "VA" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/spawner,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/spawner/random/medical/beaker,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/white,
@@ -13459,7 +13459,7 @@
 	dir = 2
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)

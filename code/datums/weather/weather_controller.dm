@@ -60,7 +60,7 @@
 	if(!possible_weathers)
 		return
 	next_weather = world.time + rand(wait_interval_low, wait_interval_high)
-	next_weather_type = pickweight(possible_weathers)
+	next_weather_type = pick_weight(possible_weathers)
 
 /datum/weather_controller/proc/run_weather(datum/weather/weather_datum_type, telegraph = TRUE)
 	if(!ispath(weather_datum_type, /datum/weather))

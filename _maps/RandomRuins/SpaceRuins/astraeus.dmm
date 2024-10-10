@@ -101,7 +101,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "dx" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "dA" = (
@@ -326,7 +326,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "jd" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "je" = (
@@ -349,7 +349,7 @@
 /obj/machinery/conveyor{
 	dir = 6
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "jT" = (
@@ -556,7 +556,7 @@
 /area/ruin/space/has_grav/astraeus/bridge)
 "pT" = (
 /obj/item/stack/conveyor,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "pU" = (
@@ -621,7 +621,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "rk" = (
@@ -675,7 +675,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "sL" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "sR" = (
@@ -731,8 +731,8 @@
 "uH" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 2;
+/obj/effect/spawner/random/maintenance{
+	spawn_loot_count = 2;
 	name = "2maintenance loot spawner"
 	},
 /turf/open/floor/plasteel/airless,
@@ -800,7 +800,7 @@
 /obj/machinery/conveyor{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "wl" = (
@@ -1374,7 +1374,7 @@
 /obj/machinery/conveyor/inverted{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "KD" = (
@@ -1560,7 +1560,7 @@
 /obj/machinery/power/apc/auto_name/directional/east{
 	start_charge = 0
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "Pd" = (
@@ -1734,7 +1734,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
 "UK" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "UU" = (
