@@ -58,7 +58,7 @@
 
 /// Need to double check this in a seperate pr that adds this to a few ships
 /// Eats the items on its tile
-/obj/item/storage/guncase/mapper
+/obj/item/storage/guncase/inherit
 	grab_loc = TRUE
 
 /obj/item/storage/guncase/winchester
@@ -118,7 +118,7 @@
 
 /// Need to double check this in a seperate pr that adds this to a few ships
 /// Eats the items on its tile
-/obj/item/storage/guncase/pistol/mapper
+/obj/item/storage/guncase/pistol/inherit
 	grab_loc = TRUE
 
 /obj/item/storage/guncase/pistol/modelh
