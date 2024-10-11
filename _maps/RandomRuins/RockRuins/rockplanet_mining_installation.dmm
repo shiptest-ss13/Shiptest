@@ -420,6 +420,9 @@
 	},
 /obj/machinery/deepfryer,
 /obj/item/radio/intercom/directional/east,
+/obj/structure/sign/poster/official/pda_ad{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "ch" = (
@@ -577,6 +580,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "de" = (
@@ -1644,7 +1648,7 @@
 	},
 /obj/mecha/working/ripley/cargo{
 	pixel_y = 0;
-	name = "\improper APLU \"Cherry Devil\""
+	name = "APLU 'Cherry Devil'"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1822,6 +1826,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/item/paper/crumpled{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "kt" = (
@@ -1902,6 +1910,10 @@
 	},
 /obj/item/pen{
 	pixel_y = 7
+	},
+/obj/item/paper/crumpled{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -2550,6 +2562,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "oo" = (
@@ -3006,6 +3019,9 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/sign/poster/official/fruit_bowl{
+	pixel_x = 30
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
 "qV" = (
@@ -3640,6 +3656,9 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/focus{
+	pixel_y = 30
+	},
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/mining_base/office)
 "uR" = (
@@ -3767,6 +3786,8 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "vI" = (
@@ -3865,6 +3886,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "wy" = (
@@ -4070,6 +4092,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/mining_base/refinery)
 "xv" = (
@@ -4281,6 +4304,9 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/armory)
 "yF" = (
@@ -4469,6 +4495,7 @@
 	},
 /obj/item/gun/energy/laser/empty_cell,
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zG" = (
@@ -5096,6 +5123,9 @@
 	pixel_y = -30
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/fax/ruin{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "Cy" = (
@@ -5712,6 +5742,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "FH" = (
@@ -5931,6 +5962,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "GW" = (
@@ -6561,6 +6593,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "KY" = (
@@ -6770,6 +6803,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Mi" = (
@@ -6903,6 +6937,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "Ng" = (
@@ -7750,6 +7785,7 @@
 "Sd" = (
 /obj/effect/turf_decal/nanotrasen/ns/center,
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper,
+/obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "Se" = (
@@ -7794,6 +7830,9 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/structure/sign/poster/official/obey{
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/crew)
@@ -8084,6 +8123,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "Tx" = (
@@ -8153,6 +8193,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "TV" = (
@@ -8272,6 +8313,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/innards,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "UM" = (
@@ -8281,6 +8323,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "UV" = (
@@ -8348,6 +8391,7 @@
 	pixel_x = -20;
 	id = "mining_base_two"
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "Vi" = (
@@ -8360,6 +8404,9 @@
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/sign/poster/official/miners{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
 "Vm" = (
@@ -8475,6 +8522,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/item/paper/crumpled{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "VJ" = (
@@ -9047,12 +9099,16 @@
 "YA" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner,
 /obj/structure/railing/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "YG" = (
-/obj/structure/table,
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
+/obj/structure/filingcabinet/double/grey{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "YH" = (
@@ -9241,6 +9297,13 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/item/paper/crumpled{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/ash,
+/obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "Zr" = (
