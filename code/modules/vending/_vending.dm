@@ -194,6 +194,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
+	if(istype(get_area(src.loc), /area/outpost))
+		all_items_free = FALSE
 
 /obj/machinery/vending/Destroy()
 	QDEL_NULL(wires)
