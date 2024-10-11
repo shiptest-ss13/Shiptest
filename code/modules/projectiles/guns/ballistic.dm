@@ -274,7 +274,7 @@
 		if(sealed_magazine)
 			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
 			return
-		if(bolt_type == BOLT_TYPE_NO_BOLT && chambered)
+		if(bolt_type == BOLT_TYPE_NO_BOLT && (chambered || internal_magazine))
 			chambered = null
 			var/num_unloaded = 0
 			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
