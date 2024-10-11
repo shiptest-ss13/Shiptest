@@ -148,15 +148,16 @@
 /obj/item/grenade/attack_paw(mob/user)
 	return attack_hand(user)
 //I should add a check to see if the projectile hits the active_hand_index -- hand_bodyparts [1] = left arm, [2] = right arm -- held_items[2] == type(obj/item/grenade) -- hitby.def_zone = "r_arm"
+//oooor. Since the proc already checks for it, just see if a hand isn't empty.
 /obj/item/grenade/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/projectile/P = hitby
 	var/list/valid_hands = list(FALSE, FALSE)
-	//if (owner.held_items[1] == typesof(obj/item/grenade))
-	valid_hands[1] = TRUE
-	owner.visible_message("<span class='danger'>[owner.held_items[1]]</span>")
-	//if (owner.held_items[2] == typesof(obj/item/grenade))
-	valid_hands[2] = TRUE
-	owner.visible_message("<span class='danger'>[owner.held_items[2]]</span>")
+	if (istype(owner.held_items[1], (/obj/item/grenade)))
+		valid_hands[1] = TRUE
+		message_admins("<span class='danger'>[owner.held_items[1]]</span>")
+	if (istype(owner.held_items[2], (/obj/item/grenade)))
+		valid_hands[2] = TRUE
+		message_admins("<span class='danger'>[owner.held_items[2]]</span>")
 
 	if(damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(2)) //2% chance to go off
 		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
