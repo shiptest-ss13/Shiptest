@@ -36,3 +36,9 @@
 	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
 	id = "rockplanet_distillery"
 	suffix = "rockplanet_distillery.dmm"
+
+/datum/map_template/ruin/rockplanet/mining_base
+	name = "N+S Mining Installation"
+	description = "A N+S mining installation recently fallen prey to a band of Ramzi pirates."
+	id = "rockplanet_mining_base"
+	suffix = "rockplanet_mining_installation.dmm"
