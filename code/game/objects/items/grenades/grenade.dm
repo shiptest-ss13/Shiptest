@@ -151,10 +151,12 @@
 /obj/item/grenade/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/projectile/P = hitby
 	var/list/valid_hands = list(FALSE, FALSE)
-	if (owner.held_items[1] != null)
-		valid_hands[1] = TRUE
-	if (owner.held_items[2] != null)
-		valid_hands[2] = TRUE
+	//if (owner.held_items[1] == typesof(obj/item/grenade))
+	valid_hands[1] = TRUE
+	owner.visible_message("<span class='danger'>[owner.held_items[1]]</span>")
+	//if (owner.held_items[2] == typesof(obj/item/grenade))
+	valid_hands[2] = TRUE
+	owner.visible_message("<span class='danger'>[owner.held_items[2]]</span>")
 
 	if(damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(2)) //2% chance to go off
 		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
