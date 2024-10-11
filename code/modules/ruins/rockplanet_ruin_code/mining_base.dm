@@ -5,10 +5,11 @@
 
 /obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
 	. = ..()
-	take_damage(rand(40, 60),BRUTE)
+	take_damage(rand(120, 150),BRUTE)
 
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_manager
 	mob_name = "gruff sarathi man"
+	mob_gender = MALE
 	mob_species = /datum/species/lizard
 	icon_state = "corpsehuman"
 	outfit = /datum/outfit/job/nanotrasen/quartermaster
