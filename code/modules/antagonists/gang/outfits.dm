@@ -42,8 +42,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
-	/obj/item/storage/box/lethalshot = 2)
+	/obj/item/shield/riot/tele = 1)
 
 /datum/outfit/families_police/beatcop/swat
 	name = "Families: SWAT Beat Cop"
@@ -53,8 +52,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
-	/obj/item/storage/box/lethalshot = 2)
+	/obj/item/shield/riot/tele = 1)
 
 /datum/outfit/families_police/beatcop/fbi
 	name = "Families: Space FBI Officer"

@@ -464,16 +464,16 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		switch(item)
 			if("esword")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+					image_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 				else
-					image_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+					image_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
 				target.playsound_local(H, 'sound/weapons/saberon.ogg',35,1)
 				A = image(image_file,H,"swordred", layer=ABOVE_MOB_LAYER)
 			if("dual_esword")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+					image_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 				else
-					image_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+					image_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
 				target.playsound_local(H, 'sound/weapons/saberon.ogg',35,1)
 				A = image(image_file,H,"dualsaberred1", layer=ABOVE_MOB_LAYER)
 			if("taser")

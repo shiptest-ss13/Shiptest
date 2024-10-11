@@ -268,8 +268,8 @@
 	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
 	item_state = "sword"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	var/active = 0
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "struck", "hit")
@@ -410,8 +410,8 @@
 	icon = 'icons/obj/weapon/sword.dmi'
 	icon_state = "katana"
 	item_state = "katana"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 5
@@ -1073,8 +1073,8 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	item_state = "cultdagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 
 /*

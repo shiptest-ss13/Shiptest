@@ -4,8 +4,8 @@
 /obj/item/dualsaber
 	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "dualsaber"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	name = "double-bladed energy sword"
 	desc = "For when simply killing someone isn't enough."
 	force = 3

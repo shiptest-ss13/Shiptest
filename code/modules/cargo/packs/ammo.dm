@@ -84,12 +84,6 @@
 	cost = 1000
 	contains = list(/obj/item/disk/design_disk/blanks)
 
-/datum/supply_pack/ammo/techshells
-	name = "Unloaded Shotgun Technological Shells Crate"
-	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
-	cost = 210
-	contains = list(/obj/item/storage/box/techshot)
-
 /datum/supply_pack/ammo/rubbershot
 	name = "Rubbershot Crate"
 	desc = "Contains a box of twenty-five rubbershot shells for use in crowd control or training."

@@ -2,8 +2,9 @@
 	icon_state = "kitchenknife"
 	item_state = "kitchenknife"
 	icon = 'icons/obj/weapon/knife.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
+	world_file = 'icons/obj/weapon/knife_world.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/knives_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/knives_righthand.dmi'
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	flags_1 = CONDUCT_1
@@ -19,7 +20,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
-
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
@@ -54,7 +54,6 @@
 	if(prob(break_chance))
 		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
 		qdel(src)
-
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
@@ -105,7 +104,6 @@
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
@@ -116,20 +114,18 @@
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"
 	item_state = "bone_dagger"
 	icon_state = "bone_dagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	desc = "A sharpened bone. The bare minimum in survival."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 15
 	throwforce = 15
 	custom_materials = null
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/combat/cyborg
 	name = "cyborg knife"
@@ -142,8 +138,8 @@
 	icon = 'icons/obj/shards.dmi'
 	icon_state = "shiv"
 	item_state = "shiv"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	desc = "A makeshift glass shiv."
 	force = 8
 	throwforce = 12
@@ -162,8 +158,8 @@
 /obj/item/melee/knife/switchblade
 	name = "switchblade"
 	icon_state = "switchblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	desc = "A sharp, concealable, spring-loaded knife."
 	flags_1 = CONDUCT_1
 	force = 3

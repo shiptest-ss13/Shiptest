@@ -28,7 +28,7 @@
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt
 
-	backpack_contents = list(/obj/item/storage/box/lethalshot=2, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/radio=1)
 
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"

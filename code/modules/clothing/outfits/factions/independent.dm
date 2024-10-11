@@ -637,7 +637,6 @@
 	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
 	accessory = /obj/item/clothing/accessory/waistcoat
 

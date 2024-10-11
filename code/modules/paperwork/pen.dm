@@ -232,8 +232,8 @@
 /obj/item/pen/edagger/update_icon_state()
 	if(on)
 		icon_state = item_state = "edagger"
-		lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-		righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+		lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+		righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	else
 		icon_state = initial(icon_state) //looks like a normal pen when off.
 		item_state = initial(item_state)

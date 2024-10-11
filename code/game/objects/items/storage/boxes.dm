@@ -262,7 +262,7 @@
 
 /obj/item/storage/box/hypospray
 	name = "hypospray mk. II kit"
-	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "medbriefcase"
 	illustration = null
 
@@ -618,15 +618,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/restraints/handcuffs/cable/zipties(src)
 
-/obj/item/storage/box/alienhandcuffs
-	name = "box of spare handcuffs"
-	desc = "A box full of handcuffs."
-	icon_state = "alienbox"
-	illustration = "handcuff"
-
-/obj/item/storage/box/alienhandcuffs/PopulateContents()
-	for(var/i in 1 to 7)
-		new	/obj/item/restraints/handcuffs/alien(src)
 
 /obj/item/storage/box/fakesyndiesuit
 	name = "boxed space suit and helmet"
@@ -686,7 +677,7 @@
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	illustration = "light"
 	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
 	item_state = "syringe_kit"
@@ -810,57 +801,6 @@
 		new /obj/item/tank/internals/emergency_oxygen(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
-
-/obj/item/storage/box/rubbershot
-	name = "box of rubber shots"
-	desc = "A box full of rubber shots, designed for riot shotguns."
-	icon_state = "rubbershot_box"
-	illustration = null
-
-/obj/item/storage/box/rubbershot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/rubbershot(src)
-
-/obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
-	icon_state = "lethalshot_box"
-	illustration = null
-
-/obj/item/storage/box/lethalshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/buckshot(src)
-
-/obj/item/storage/box/techshot
-	name = "box of unloaded shotgun tech shells"
-	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
-	icon_state = "techshot_box"
-	illustration = null
-
-/obj/item/storage/box/techshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/techshell(src)
-
-/obj/item/storage/box/beanbag
-	name = "box of beanbags"
-	desc = "A box full of beanbag shells."
-	icon_state = "beanbag_box"
-	illustration = null
-
-/obj/item/storage/box/beanbag/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_casing/shotgun/beanbag(src)
-
-/obj/item/storage/box/slugshot
-	name = "box of 12-gauge slug shotgun shells"
-	desc = "a box full of slug shots, designed for riot shotguns"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "slugshot_box"
-	illustration = null
-
-/obj/item/storage/box/slugshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"
