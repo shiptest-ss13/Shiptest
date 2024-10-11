@@ -22,6 +22,7 @@
 	outfit = /datum/outfit/job/nanotrasen/miner/armored
 
 /datum/outfit/job/nanotrasen/miner/armored
+	name = "Nanotrasen - Armored Miner"
 	suit = /obj/item/clothing/suit/hooded/explorer
 	mask = /obj/item/clothing/mask/gas/explorer
 
