@@ -193,7 +193,7 @@
 		C.adjustCloneLoss(rand(2,4))
 		C.adjustToxLoss(rand(1,2))
 
-		if(prob(10) && C.client)
+		if(prob(10) && C.client && !HAS_TRAIT(C, TRAIT_ANALGESIA))
 			to_chat(C, "<span class='userdanger'>[pick("You can feel your body becoming weak!", \
 			"You feel like you're about to die!", \
 			"You feel every part of your body screaming in agony!", \
