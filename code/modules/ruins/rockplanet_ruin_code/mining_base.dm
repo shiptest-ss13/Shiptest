@@ -5,7 +5,7 @@
 
 /obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
 	. = ..()
-	obj_integrity = rand(40, 60)
+	take_damage(rand(40, 60),BRUTE)
 
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_manager
 	mob_name = "gruff sarathi man"

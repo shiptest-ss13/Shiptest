@@ -256,6 +256,7 @@
 	var/ruined = 0
 
 	/obj/item/tape/Initialize()
+	. = ..()
 	if(ruined)
 		add_overlay("ribbonoverlay")
 
