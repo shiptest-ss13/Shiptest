@@ -154,11 +154,12 @@
 	var/list/valid_hands = list(FALSE, FALSE)
 	if (istype(owner.held_items[1], (/obj/item/grenade)))
 		valid_hands[1] = TRUE
-		message_admins("<span class='danger'>[owner.held_items[1]]</span>")
+		message_admins("<span class='danger'>Left arm</span>")
 	if (istype(owner.held_items[2], (/obj/item/grenade)))
 		valid_hands[2] = TRUE
-		message_admins("<span class='danger'>[owner.held_items[2]]</span>")
+		message_admins("<span class='danger'>Right arm</span>")
 
+	// P.def_zone = "r_arm" and P.def_zone = "l_arm" are the way to go
 	if(damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(2)) //2% chance to go off
 		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
 		var/turf/T = get_turf(src)
