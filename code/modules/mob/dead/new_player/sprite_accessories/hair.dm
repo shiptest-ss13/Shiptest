@@ -703,6 +703,10 @@
 	name = "Ruby"
 	icon_state = "hair_ruby"
 
+/datum/sprite_accessory/hair/rubylong
+	name = "Ruby (Long)"
+	icon_state = "hair_rubylong"
+
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
 	icon_state = "hair_undercut"
