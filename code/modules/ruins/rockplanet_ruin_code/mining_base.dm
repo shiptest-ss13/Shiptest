@@ -20,7 +20,7 @@
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored
 	outfit = /datum/outfit/job/nanotrasen/miner/armored
 
-/datum/outfit/job/nanotrasen/miner
+/datum/outfit/job/nanotrasen/miner/armored
 	suit = /obj/item/clothing/suit/hooded/explorer
 	mask = /obj/item/clothing/mask/gas/explorer
 
