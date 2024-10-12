@@ -101,3 +101,7 @@
 		cam_background.icon_state = "clear"
 		cam_background.fill_rect(1, 1, size_x, size_y)
 		return TRUE
+
+/obj/overmap/examine(mob/user)
+	. = ..()
+	parent.ui_interact(user)

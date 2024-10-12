@@ -10,7 +10,7 @@
 
 /datum/mission/dynamic/guarded/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
-		if(mission_name && (mission_name != mission_poi.mission_name))
+		if(!isnull(mission_poi.mission_index) && (mission_index != mission_poi.mission_index))
 			continue
 		if((!required_item) && mission_poi.type == setpiece_poi)
 			//Spawns the item or gets it via use_poi then sets it as bound so the mission fails if its deleted

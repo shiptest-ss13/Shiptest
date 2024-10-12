@@ -414,3 +414,30 @@
 	dock_to_adjust.forceMove(locate(new_dock_location[1], new_dock_location[2], dock_to_adjust.z))
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
+
+/obj/overmap/ui_status(mob/user, datum/ui_state/state)
+	return (ismob(user)) ? UI_INTERACTIVE : UI_CLOSE
+
+/obj/overmap/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "OvermapExamine")
+		ui.open()
+
+/obj/overmap/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+/datum/overmap/ui_data(mob/user)
+	var/list/data = list()
+	data["ref"] = REF(src)
+	data["name"] = name
+	data["ascii"] = char_rep
+	data["dockedTo"] = docked_to
+	data["docked"] = list()
+	for(var/datum/overmap/docked in contents)
+		var/list/this = list()
+		this["ref"] = REF(src)
+		this["name"] = name
+	return data
