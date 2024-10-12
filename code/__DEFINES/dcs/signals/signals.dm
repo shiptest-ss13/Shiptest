@@ -695,6 +695,10 @@
 // Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
+// Drill signals
+// Called when a mission drill finishes sampling
+#define COMSIG_DRILL_SAMPLES_DONE "spawner_toggle"
+
 ///Beam Signals
 /// Called before beam is redrawn
 #define COMSIG_BEAM_BEFORE_DRAW "beam_before_draw"

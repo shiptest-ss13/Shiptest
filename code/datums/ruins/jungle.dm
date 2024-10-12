@@ -21,10 +21,10 @@
 	target_type = /mob/living/simple_animal/hostile/human/syndicate
 	setpiece_item = list(
 		/obj/item/toy/plush/rilena,
-		/obj/item/toy/plush/tali
-		/obj/item/toy/plush/sharai
-		/obj/item/toy/plush/xader
-		/obj/item/toy/plush/mora
+		/obj/item/toy/plush/tali,
+		/obj/item/toy/plush/sharai,
+		/obj/item/toy/plush/xader,
+		/obj/item/toy/plush/mora,
 		/obj/item/toy/plush/kari
 	)
 
