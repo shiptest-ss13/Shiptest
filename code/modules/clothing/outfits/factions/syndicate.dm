@@ -521,6 +521,9 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
+/datum/outfit/job/syndicate/head_of_personnel/ngr //TEMP, finish this before merging the Kali Andhi - apogee
+	name = "Syndicate - Bridge Officer (NGR)"
+
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
 	name = "Syndicate - Intelligence Officer (Cybersun)"
 	id_assignment = "Intelligence Officer"
