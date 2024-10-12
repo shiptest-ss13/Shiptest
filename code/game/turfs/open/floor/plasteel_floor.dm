@@ -151,6 +151,13 @@
 	base_icon_state = "plaque"
 	tiled_dirt = FALSE
 
+/turf/open/floor/plasteel/lightgrey
+	name = "light grey floor"
+	icon_state = "corner_white_full"
+	base_icon_state = "corner_white_full"
+	icon = 'icons/turf/decals/decals.dmi'
+	color = "#a8b2b6"
+
 /turf/open/floor/plasteel/cult/narsie_act()
 	return
 

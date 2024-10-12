@@ -28,7 +28,7 @@ LINEN BINS
 
 /obj/item/bedsheet/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/bed_tuckable, 0, 0, 0)
+	AddElement(/datum/element/bed_tuckable, 0, 0, 0, TRUE, TRUE)
 
 /obj/item/bedsheet/attack_self(mob/user)
 	if(!user.CanReach(src))		//No telekenetic grabbing.
@@ -209,7 +209,7 @@ LINEN BINS
 
 /obj/item/bedsheet/cult
 	name = "cultist's bedsheet"
-	desc = "You might dream of Nar'Sie if you sleep with this. It seems rather tattered and glows of an eldritch presence."
+	desc = "You might dream of elder gods if you sleep with this. It seems rather tattered."
 	icon_state = "sheetcult"
 	item_state = "sheetcult"
 	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")

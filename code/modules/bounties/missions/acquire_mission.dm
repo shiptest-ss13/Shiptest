@@ -158,12 +158,6 @@ Acquire: Anomaly
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	creature_name = "ice whelp"
 
-/datum/mission/acquire/creature/ice_demon
-	value = 1500
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
-	creature_name = "ice demon"
-
 /datum/mission/acquire/creature/migo
 	value = 1050
 	weight = 2

@@ -2,6 +2,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
+GLOBAL_DATUM_INIT(advanced_cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "advanced_cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
 GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
 
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
@@ -22,12 +26,19 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	///If set it will add a world icon using item_state
+	var/world_file
+
+	///Handled by world_icon element
+	var/world_state
+	///Handled by world_icon element
+	var/inventory_state
+
 	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
 	var/supports_variations = null
 
 	///If set, kepori wearing this use this instead of their clothing file
-	var/kepoi_override_icon
-
+	var/kepori_override_icon
 	///If set, vox wearing this use this instead of their clothing file
 	var/vox_override_icon
 
@@ -204,10 +215,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-	//for setting world icons on the go
-	var/inventory_state
-	var/world_state
-
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -305,6 +312,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			name = "sticky [name]"
 
 	updateEmbedding()
+
+	if(world_file)
+		AddElement(/datum/element/world_icon, null, world_file, icon)
 
 	if(GLOB.rpg_loot_items)
 		AddComponent(/datum/component/fantasy)
@@ -957,6 +967,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
+	// we have no target, why are we even doing this?
+	if(isnull(target))
+		return
 	// No delay means there is no start message, and no reason to call tool_start_check before use_tool.
 	// Run the start check here so we wouldn't have to call it manually.
 	if(!delay && !tool_start_check(user, amount))
@@ -1213,7 +1226,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
-		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
 		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
 							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
 
