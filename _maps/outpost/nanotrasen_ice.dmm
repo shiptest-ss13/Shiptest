@@ -898,13 +898,14 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/structure/table/reinforced,
 /obj/machinery/newscaster/directional/south,
-/obj/item/newspaper,
 /obj/machinery/camera{
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/computer/mission{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "gG" = (
@@ -3048,9 +3049,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/structure/chair{
-	dir = 1
-	},
+/obj/machinery/mission_pad,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "us" = (
@@ -7418,9 +7417,6 @@
 "Xz" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
-	},
-/obj/structure/chair{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
