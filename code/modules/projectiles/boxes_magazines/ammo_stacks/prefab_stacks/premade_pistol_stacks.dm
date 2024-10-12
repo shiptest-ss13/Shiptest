@@ -265,7 +265,7 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a50AE/hp
 	ammo_type = /obj/item/ammo_casing/a50AE/hp
 
-// .22 LR (Himehabu)
+// .22 LR (Himehabu, Pounder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr
 	ammo_type = /obj/item/ammo_casing/c22lr

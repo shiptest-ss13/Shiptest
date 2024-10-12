@@ -130,9 +130,11 @@
 	desc = "A .50 AE hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/a50AE/hp
 
-// .22 LR (Himehabu)
+// .22 LR (Himehabu, Pounder)
+
 /obj/item/ammo_casing/c22lr
 	name = ".22 LR bullet casing"
 	desc = "A .22 LR bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
+	stack_size = 15
