@@ -331,7 +331,7 @@
 	item_state = "clip_m10_correspondant"
 
 	supports_variations = VOX_VARIATION
-	
+
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"
 	desc = "Designed to protect against close range attacks. Mainly used by the CMM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
