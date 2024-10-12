@@ -337,7 +337,7 @@
 	icon_state = "officer_peaked"
 	item_state = "bluecloth"
 
-/obj/item/clothing/head/nanotrasen/officer
+/obj/item/clothing/head/nanotrasen/officer/fedora
 	name = "officer's fedora"
 	desc = "A fedora in a violent shade of Nanotrasen Blue, with a red silk band."
 	icon_state = "officer_fedora"

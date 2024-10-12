@@ -269,6 +269,21 @@
 
 	return FALSE
 
+/turf/closed/deconstruct_act(mob/living/user, obj/item/I)
+	var/act_duration = breakdown_duration
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	while(I.use_tool(src, user, act_duration, volume=100))
+		if(iswallturf(src))
+			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+				return TRUE
+		else
+			break
+
+	return FALSE
+
 /turf/closed/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)

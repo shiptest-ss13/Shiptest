@@ -27,6 +27,15 @@
 /obj/item/documents/syndicate
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
 
+/obj/item/documents/syndicate/cybersun
+	name = "classified Cybersun documents"
+	desc = "\"Top Secret\" documents detailing sensitive Cybersun Virtual Solutions operational intelligence. These documents are verified with a red wax seal."
+	icon_state = "docs_red"
+
+/obj/item/documents/syndicate/cybersun/biodynamics
+	desc = "\"Top Secret\" Cybersun Biodynamics documents, filled with patient lists and unfinished designs. These documents are verified with a teal wax seal."
+	icon_state = "docs_teal"
+
 /obj/item/documents/syndicate/red
 	name = "red secret documents"
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a red wax seal."

@@ -386,7 +386,7 @@
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	if(lying)
-		return -6
+		return PIXEL_Y_OFFSET_LYING
 	else
 		return initial(pixel_y)
 
