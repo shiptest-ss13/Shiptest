@@ -243,7 +243,6 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 ))
 
 GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
-		/obj/effect/rune/teleport = 1,
 		/obj/item/clothing/gloves/color/yellow = 1,
 		/obj/item/clothing/head/helmet/abductor = 1,
 		/obj/item/clothing/head/helmet/justice =1,

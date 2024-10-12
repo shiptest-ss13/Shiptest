@@ -275,6 +275,7 @@
 	STR.set_holdable(list(
 		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
+		/obj/item/melee/knife,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/restraints/handcuffs,
@@ -284,7 +285,6 @@
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
-		/obj/item/ammo_box/a4570, //but not today
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
@@ -298,7 +298,8 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -367,7 +368,7 @@
 		/obj/item/storage/fancy/cigarettes,
 		/obj/item/reagent_containers/food/drinks/bottle,
 		/obj/item/stack/medical,
-		/obj/item/melee/knife/kitchen,
+		/obj/item/melee/knife,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/gps,
 		/obj/item/storage/bag/ore,
@@ -382,8 +383,7 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone,
-		/obj/item/key/lasso
+		/obj/item/melee/sword/bone
 		))
 
 
@@ -404,32 +404,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
-
-/obj/item/storage/belt/soulstone
-	name = "soul stone belt"
-	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."
-	icon_state = "soulstone"
-	item_state = "soulstone"
-
-/obj/item/storage/belt/soulstone/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.set_holdable(list(
-		/obj/item/soulstone
-		))
-
-/obj/item/storage/belt/soulstone/full/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/soulstone(src)
-
-/obj/item/storage/belt/soulstone/full/chappy/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/soulstone/anybody/chaplain(src)
-
-/obj/item/storage/belt/soulstone/full/purified/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/soulstone/anybody/purified(src)
 
 /obj/item/storage/belt/champion
 	name = "championship belt"

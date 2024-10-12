@@ -102,8 +102,9 @@
 		visible_message("<span class='danger'>\The [src] hits [H] in the eye[eyes ? "" : " socket"]!</span>")
 		H.adjust_blurriness(6)
 		eyes?.applyOrganDamage(rand(6,8))
-		H.Paralyze(40)
-		H.emote("scream")
+		H.force_scream()
+		if(!HAS_TRAIT(H, TRAIT_ANALGESIA))
+			H.Paralyze(40)
 
 /obj/item/paper/examine(mob/user)
 	. = ..()
