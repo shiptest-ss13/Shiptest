@@ -151,16 +151,7 @@
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
-		addtimer(CALLBACK(src, PROC_REF(divine_explosion), round(created_volume/48,1),get_turf(holder.my_atom)), 2 SECONDS)
 	..()
-
-/datum/chemical_reaction/reagent_explosion/potassium_explosion/holyboom/proc/divine_explosion(size, turf/T)
-	for(var/mob/living/carbon/C in get_hearers_in_view(size,T))
-		if(iscultist(C))
-			to_chat(C, "<span class='userdanger'>The divine explosion sears you!</span>")
-			C.Paralyze(40)
-			C.adjust_fire_stacks(5)
-			C.IgniteMob()
 
 /datum/chemical_reaction/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
@@ -172,7 +163,6 @@
 	strengthdiv = 6
 	modifier = 1
 	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
-
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	addtimer(CALLBACK(src, PROC_REF(explode), holder, created_volume), rand(5,10) SECONDS)
