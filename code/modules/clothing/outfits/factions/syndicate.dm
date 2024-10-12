@@ -521,8 +521,18 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-/datum/outfit/job/syndicate/head_of_personnel/ngr //TEMP, finish this before merging the Kali Andhi - apogee
+/datum/outfit/job/syndicate/head_of_personnel/ngr
 	name = "Syndicate - Bridge Officer (NGR)"
+
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	glasses = NULL
+	gloves = /obj/item/clothing/gloves/color/black
+
 
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
 	name = "Syndicate - Intelligence Officer (Cybersun)"
