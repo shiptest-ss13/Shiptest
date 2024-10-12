@@ -39,6 +39,7 @@
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_treasure_cove.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	dynamic_mission_types = list(/datum/mission/dynamic/kill/frontiersmen)
 
 /datum/map_template/ruin/beachplanet/crashedengie
 	name = "Crashed Engineer Ship"

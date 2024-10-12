@@ -10,7 +10,24 @@
 	description = "A small bunker owned by the Syndicate."
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-	dynamic_mission_types = list(/datum/mission/dynamic/simple/guarded/nt_files)
+	dynamic_mission_types = list(
+		/datum/mission/dynamic/guarded/nt_files,
+		/datum/mission/dynamic/kill/jerry
+	)
+
+/datum/mission/dynamic/kill/jerry
+	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE"
+	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY"
+	target_type = /mob/living/simple_animal/hostile/human/syndicate
+	setpiece_item = list(
+		/obj/item/toy/plush/rilena,
+		/obj/item/toy/plush/tali
+		/obj/item/toy/plush/sharai
+		/obj/item/toy/plush/xader
+		/obj/item/toy/plush/mora
+		/obj/item/toy/plush/kari
+	)
+
 
 /datum/map_template/ruin/jungle/interceptor
 	name = "Old Crashed Interceptor"

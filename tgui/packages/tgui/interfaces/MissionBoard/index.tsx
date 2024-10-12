@@ -73,20 +73,15 @@ const MissionsList = (props, context) => {
       name,
       author,
       desc,
-      rewards = [],
+      reward,
       faction,
       location,
       x,
       y,
       duration,
-      remaining,
-      timeStr,
-      progressStr,
-      actStr,
       canTurnIn,
       validItems,
     } = mission;
-    const rewardKeys = Object.keys(rewards);
     return (
       <LabeledList>
         <LabeledList.Item label="Title">{name}</LabeledList.Item>
@@ -95,16 +90,14 @@ const MissionsList = (props, context) => {
         <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
         <LabeledList.Item label="Description">{desc}</LabeledList.Item>
         <LabeledList.Item label="Rewards">
-          {rewardKeys.map((rewardKey: string) => (
-            <Button
-              icon={'arrow-up'}
-              tooltip={'Choose Reward'}
-              disabled={!canTurnIn || !pad || !id_inserted}
-              onClick={() => act('send', { mission: ref, choice: rewardKey })}
-            >
-              {rewards[rewardKey]}
-            </Button>
-          ))}
+          <Button
+            icon={'arrow-up'}
+            tooltip={'Choose Reward'}
+            disabled={!canTurnIn || !pad || !id_inserted}
+            onClick={() => act('send', { mission: ref })}
+          >
+            {reward}
+          </Button>
           <LabeledList.Divider />
           {duration ? missionTimer(mission) : ''}
           <LabeledList.Divider />

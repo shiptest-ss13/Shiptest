@@ -56,7 +56,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/landmark/mission_poi/nt_files,
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "bS" = (
@@ -128,6 +128,9 @@
 	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)

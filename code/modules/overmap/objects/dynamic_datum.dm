@@ -28,7 +28,7 @@
 	///Preditermined ruin made when the overmap is first created
 	var/selected_ruin
 	///Fetched before anything is loaded from the ruin datum
-	var/dynamic_missions
+	var/dynamic_missions = list()
 	///The list of mission pois once the planet has acctually loaded the ruin
 	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
@@ -59,13 +59,14 @@
 
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
-
+	SSovermap.dynamic_encounters += src
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
 	if(load_now)
 		choose_level_type(load_now)
 
 /datum/overmap/dynamic/Destroy()
+	SSovermap.dynamic_encounters -= src
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
 		qdel(dock)
@@ -112,19 +113,12 @@
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
 		return //Dont fuck over stranded people
 
-	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = SSovermap.get_unused_overmap_square()
-	overmap_move(results["x"], results["y"])
+	for(var/datum/mission/dynamic/dynamic_mission in dynamic_missions)
+		if(dynamic_mission.active)
+			return //Dont fuck over people trying to complete a mission.
 
-	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-		reserve_docks -= dock
-		qdel(dock)
-	reserve_docks = null
-	if(mapzone)
-		mapzone.clear_reservation()
-		QDEL_NULL(mapzone)
 
-	choose_level_type()
+	qdel(src)
 
 /**
  * Chooses a type of level for the dynamic level to use.
@@ -136,14 +130,13 @@
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-
-	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
-		planet_name = "[gen_planet_name()]"
-		Rename(planet_name)
-		token.name = "[planet_name]" + " ([planet.name])"
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)
 		token.name = "[planet.name]"
+	else //these aren't real planets
+		planet_name = "[gen_planet_name()]"
+		Rename(planet_name)
+		token.name = "[planet_name]" + " ([planet.name])"
 
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc

@@ -17,6 +17,8 @@ SUBSYSTEM_DEF(overmap)
 
 	///List of all events
 	var/list/events
+	///List of dynamic encounters, just planets rn.
+	var/list/dynamic_encounters
 
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_positions
@@ -49,6 +51,7 @@ SUBSYSTEM_DEF(overmap)
 	controlled_ships = list()
 	outposts = list()
 	events = list()
+	dynamic_encounters = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	size = CONFIG_GET(number/overmap_size)
@@ -79,6 +82,8 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
+	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
+		spawn_ruin_level()
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
@@ -127,10 +132,10 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
 	else
 		spawn_events()
-		spawn_ruin_levels()
+
+	spawn_ruin_levels()
 
 	spawn_outpost()
 	//spawn_initial_ships()
@@ -250,11 +255,10 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
+		spawn_ruin_level()
 
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
+/datum/controller/subsystem/overmap/proc/spawn_ruin_level()
+	new /datum/overmap/dynamic()
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
@@ -503,6 +507,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = SSovermap.overmap_objects
 	controlled_ships = SSovermap.controlled_ships
 	events = SSovermap.events
+	dynamic_encounters = SSovermap.dynamic_encounters
 	outposts = SSovermap.outposts
 	radius_positions = SSovermap.radius_positions
 	overmap_vlevel = SSovermap.overmap_vlevel

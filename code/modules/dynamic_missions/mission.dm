@@ -73,11 +73,7 @@
 	return
 
 /datum/mission/proc/reward_flavortext()
-	return list(
-		MISSION_REWARD_CASH = "[value * 1.2] cr upon completion",
-		MISSION_REWARD_ITEMS = "A nice slice of ham AND [value] cr",
-		MISSION_REWARD_REP = "[value] cr and rep with [SSfactions.faction_name(src.faction)]",
-	)
+	return "[value * 1.2] cr upon completion"
 
 /datum/mission/proc/start_mission()
 	SSmissions.inactive_missions -= src
@@ -89,6 +85,8 @@
 /datum/mission/proc/on_planet_load(datum/overmap/dynamic/planet)
 	SIGNAL_HANDLER
 
+	// Status of mission is handled by items spawned in mission after this
+	UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING)
 	if(!active)
 		qdel(src)
 		return
@@ -105,23 +103,15 @@
 /datum/mission/proc/can_turn_in(atom/movable/item_to_check)
 	return
 
-/datum/mission/proc/turn_in(atom/movable/item_to_turn_in, choice)
+/datum/mission/proc/turn_in(atom/movable/item_to_turn_in)
 	if(can_turn_in(item_to_turn_in))
-		spawn_reward(item_to_turn_in.loc, choice)
+		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
 		qdel(item_to_turn_in)
 		qdel(src)
 
-/datum/mission/proc/spawn_reward(loc, choice)
-	switch(choice)
-		if(MISSION_REWARD_CASH)
-			new /obj/item/spacecash/bundle(loc, value * 1.2)
-		if(MISSION_REWARD_ITEMS)
-			new /obj/item/spacecash/bundle(loc, value)
-			new /obj/item/reagent_containers/food/snacks/spidereggsham(loc)
-		//Rep probally not coming in this pr i think
-		if(MISSION_REWARD_REP)
-			new /obj/item/spacecash/bundle(loc, value * 1.2)
+/datum/mission/proc/spawn_reward(loc)
+	new /obj/item/spacecash/bundle(loc, value * 1.2)
 
 /datum/mission/proc/can_complete()
 	return !failed
@@ -235,8 +225,9 @@
 	LAZYREMOVE(bound_atoms, bound)
 
 /obj/effect/landmark/mission_poi
+	name = "mission poi"
 	icon = 'icons/effects/mission_poi.dmi'
-	icon_state = "main_thing"
+	icon_state = "side_thing"
 	///Assume the item we want is included in the map and we simple have to return it
 	var/already_spawned = FALSE
 	///Only needed if you have multipe missiosn that use the same poi's on the map
@@ -269,6 +260,10 @@
 		CRASH("[src] did not return a item_of_intrest")
 	qdel(src)
 	return item_of_intrest
+
+/obj/effect/landmark/mission_poi/main
+	name = "mission focus"
+	icon_state = "main_thing"
 
 /// Instead of spawning something its used to find a matching item already in the map and returns that. For if you want to use an already exisiting part of the ruin.
 /obj/effect/landmark/mission_poi/pre_loaded

@@ -11,7 +11,7 @@ export type Mission = {
   name: string;
   author: string;
   desc: string;
-  rewards: Reward[];
+  reward: string;
   faction: string;
   location: string;
   x: number;
@@ -24,7 +24,3 @@ export type Mission = {
   validItems: Array<string>;
 };
 
-export type Reward = {
-  key: string;
-  text: string;
-};

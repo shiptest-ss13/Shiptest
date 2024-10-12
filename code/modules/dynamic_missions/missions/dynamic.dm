@@ -1,9 +1,13 @@
 /datum/mission/dynamic
-	var/setpiece_poi
+	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	var/setpiece_item
 	///Specific item uses an exact item, if false it will allow type or any subtype
 	var/specific_item = TRUE
 	var/atom/movable/required_item
+
+/datum/mission/dynamic/generate_mission_details()
+	. = ..()
+	setpiece_item = pick(setpiece_item)
 
 /datum/mission/dynamic/spawn_mission_setpiece(datum/overmap/dynamic/planet)
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
@@ -24,3 +28,17 @@
 		else
 			if(istype(item_to_check, required_item.type))
 				return TRUE
+
+/datum/mission/dynamic/data_reterival
+	name = "data recovery"
+	///Assumes its a list
+	setpiece_item = list(
+		/obj/item/blackbox,
+		/obj/item/research_notes/loot
+	)
+
+/datum/mission/dynamic/data_reterival/generate_mission_details()
+	. = ..()
+	if(ispath(setpiece_item, /obj/item))
+		var/obj/item/mission_item = setpiece_item
+		desc = "We are looking for a [mission_item::name]"

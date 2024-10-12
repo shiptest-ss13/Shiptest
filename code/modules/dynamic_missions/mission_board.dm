@@ -76,20 +76,19 @@
 			var/datum/mission/dynamic/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/dynamic))
 				return
-			var/option = params["choice"]
-			turn_in(mission, option)
+			turn_in(mission)
 		if("eject")
 			id_eject(usr, inserted_scan_id)
 			inserted_scan_id = null
 	. = TRUE
 
-/obj/machinery/computer/mission/proc/turn_in(datum/mission/dynamic/mission, choice)
+/obj/machinery/computer/mission/proc/turn_in(datum/mission/dynamic/mission)
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
 	for(var/atom/movable/item_on_pad as anything in get_turf(pad))
 		if(item_on_pad == pad)
 			continue
 		if(mission.can_turn_in(item_on_pad))
-			mission.turn_in(item_on_pad, choice)
+			mission.turn_in(item_on_pad)
 			return TRUE
 
 /// Return all items on pad

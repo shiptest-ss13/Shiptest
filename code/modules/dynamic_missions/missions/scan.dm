@@ -1,0 +1,1 @@
+/datum/mission/dynamic/scan
