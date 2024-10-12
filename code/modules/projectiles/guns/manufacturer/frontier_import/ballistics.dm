@@ -253,6 +253,7 @@
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK
 	has_safety = FALSE
+	safety = FALSE
 
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
