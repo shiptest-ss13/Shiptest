@@ -410,11 +410,15 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/item/ammo_box/c22lr_box{
-	pixel_y = 8;
-	pixel_x = -5
-	},
 /obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/storage/box/ammo/c22lr{
+	pixel_y = 12;
+	pixel_x = -6
+	},
+/obj/item/storage/box/ammo/c22lr{
+	pixel_y = 12;
+	pixel_x = 14
+	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "gr" = (
@@ -1076,9 +1080,6 @@
 /area/ruin/powered/icemoon/lodge/gear_room)
 "qg" = (
 /obj/structure/table/greyscale,
-/obj/item/ammo_box/c8x50mm_box{
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1719,16 +1720,16 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/ammo_box/a44roum{
+/obj/item/storage/box/ammo/a44roum{
 	pixel_x = 5
 	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -10;
-	pixel_y = -3
+/obj/item/storage/box/ammo/c38{
+	pixel_y = 0;
+	pixel_x = -11
 	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -10;
-	pixel_y = 6
+/obj/item/storage/box/ammo/c38{
+	pixel_y = 9;
+	pixel_x = -12
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
@@ -3061,7 +3062,7 @@
 "Tk" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/a308/hunterspride,
+/obj/item/storage/box/ammo/a308/hunterspride,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "To" = (
