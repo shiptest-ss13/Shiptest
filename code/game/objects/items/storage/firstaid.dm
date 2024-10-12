@@ -12,8 +12,9 @@
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
+	icon = 'icons/obj/storage/medkits.dmi'
+	world_file = 'icons/obj/storage/medkits_world.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
@@ -119,7 +120,7 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 

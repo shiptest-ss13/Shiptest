@@ -15,8 +15,8 @@
 	desc = "May the force be with you. Sorta."
 	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	force = 3.0
 	throw_speed = 2
 	throw_range = 5

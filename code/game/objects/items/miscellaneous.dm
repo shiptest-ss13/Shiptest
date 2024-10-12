@@ -15,7 +15,7 @@
 /obj/item/choice_beacon
 	name = "choice box"
 	desc = "A box containing items to choose."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "deliverypackage3"
 	var/uses = 1
 

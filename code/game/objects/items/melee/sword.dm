@@ -1,7 +1,7 @@
 /obj/item/melee/sword
 	icon = 'icons/obj/weapon/sword.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	pickup_sound =  'sound/items/unsheath.ogg'
 	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -319,8 +319,8 @@
 /obj/item/melee/sword/vibro
 	icon_state = "hfrequency0"
 	base_icon_state = "hfrequency"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/melee/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee/swords_righthand.dmi'
 	name = "vibro sword"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	armour_penetration = 100

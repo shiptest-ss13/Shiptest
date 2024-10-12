@@ -185,22 +185,3 @@
 	if(prob(60/severity))
 		to_chat(owner, "<span class='warning'>Your breathing tube suddenly closes!</span>")
 		owner.losebreath += 2
-
-//BOX O' IMPLANTS
-
-/obj/item/storage/box/cyber_implants
-	name = "boxed cybernetic implants"
-	desc = "A sleek, sturdy box."
-	icon_state = "cyber_implants"
-	var/list/boxed = list(
-		/obj/item/autosurgeon/syndicate/thermal_eyes,
-		/obj/item/autosurgeon/syndicate/xray_eyes,
-		/obj/item/autosurgeon/syndicate/anti_stun,
-		/obj/item/autosurgeon/syndicate/reviver)
-	var/amount = 5
-
-/obj/item/storage/box/cyber_implants/PopulateContents()
-	var/implant
-	while(contents.len <= amount)
-		implant = pick(boxed)
-		new implant(src)

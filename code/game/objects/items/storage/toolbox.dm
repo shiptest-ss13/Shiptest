@@ -1,6 +1,7 @@
 /obj/item/storage/toolbox
 	name = "toolbox"
 	desc = "Danger. Very robust."
+	icon = 'icons/obj/storage/toolbox.dmi'
 	icon_state = "toolbox_default"
 	item_state = "toolbox_default"
 	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
@@ -58,12 +59,6 @@
 			new /obj/item/flashlight/flare(src)
 	new /obj/item/radio(src)
 
-/obj/item/storage/toolbox/emergency/old
-	name = "rusty red toolbox"
-	icon_state = "toolbox_red_old"
-	has_latches = FALSE
-	material_flags = NONE
-
 /obj/item/storage/toolbox/mechanical
 	name = "mechanical toolbox"
 	icon_state = "blue"
@@ -71,7 +66,6 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
-	//WS Edit - Better Tool sprites
 	if(prob(50))
 		new /obj/item/wrench(src)
 	else
@@ -82,61 +76,6 @@
 	new /obj/item/crowbar(src)
 	new /obj/item/analyzer(src)
 	new /obj/item/wirecutters(src)
-
-/obj/item/storage/toolbox/mechanical/old
-	name = "rusty blue toolbox"
-	icon_state = "toolbox_blue_old"
-	has_latches = FALSE
-	material_flags = NONE
-
-/obj/item/storage/toolbox/mechanical/old/PopulateContents()
-	new /obj/item/screwdriver/old(src)
-	new /obj/item/wrench/old(src)
-	new /obj/item/weldingtool/old(src)
-	new /obj/item/crowbar/old(src)
-	new /obj/item/wirecutters/old(src)
-
-/obj/item/storage/toolbox/mechanical/old/heirloom
-	name = "toolbox" //this will be named "X family toolbox"
-	desc = "It's seen better days."
-	force = 5
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/storage/toolbox/mechanical/old/heirloom/PopulateContents()
-	return
-
-/obj/item/storage/toolbox/mechanical/old/clean
-	name = "toolbox"
-	desc = "A old, blue toolbox, it looks robust."
-	icon_state = "oldtoolboxclean"
-	item_state = "toolbox_blue"
-	has_latches = FALSE
-	force = 19
-	throwforce = 22
-
-/obj/item/storage/toolbox/mechanical/old/clean/proc/calc_damage()
-	var/power = 0
-	for (var/obj/item/stack/telecrystal/TC in GetAllContents())
-		power += TC.amount
-	force = 19 + power
-	throwforce = 22 + power
-
-/obj/item/storage/toolbox/mechanical/old/clean/attack(mob/target, mob/living/user)
-	calc_damage()
-	..()
-
-/obj/item/storage/toolbox/mechanical/old/clean/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	calc_damage()
-	..()
-
-/obj/item/storage/toolbox/mechanical/old/clean/PopulateContents()
-	new /obj/item/screwdriver/old(src)
-	new /obj/item/wrench/old(src)
-	new /obj/item/weldingtool/old(src)
-	new /obj/item/crowbar/old(src)
-	new /obj/item/wirecutters/old(src)
-	new /obj/item/multitool/old(src)
-	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/electrical
 	name = "electrical toolbox"

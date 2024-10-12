@@ -96,7 +96,6 @@
 		/obj/item/assembly/flash/handheld = 10,
 		/obj/item/flashlight/seclite = 10,
 
-		/obj/item/storage/box/lethalshot = 6,
 		/obj/item/stock_parts/cell/gun = 5,
 		/obj/item/ammo_box/magazine/spitter_9mm = 5,
 
