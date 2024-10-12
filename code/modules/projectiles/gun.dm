@@ -70,6 +70,9 @@
 	var/casing_ejector = TRUE
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
+	///Whether the gun *can* be reloaded
+	var/sealed_magazine = FALSE
+
 
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
@@ -364,15 +367,15 @@
 		wielded_fully = TRUE
 		return TRUE
 
-/obj/item/gun/proc/is_wielded()
-	return wielded
-
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+
+/obj/item/gun/proc/is_wielded()
+	return wielded
 
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)

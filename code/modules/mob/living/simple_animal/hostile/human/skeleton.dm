@@ -48,7 +48,6 @@
 	deathmessage = "collapses into a pile of bones, its gear clanging as it hits the ground!"
 	loot = list(/obj/effect/decal/remains/human,
 				/obj/item/clothing/suit/armor/witchhunter,
-				/obj/item/clothing/head/witchunter,
 				/obj/item/melee/sword/claymore{name = "holy sword"})
 
 /mob/living/simple_animal/hostile/human/skeleton/ice

@@ -189,6 +189,17 @@
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
+/datum/supply_pack/food/sugar
+	name = "Sugar Crate"
+	desc = "A crate with a few bags of sugar. Good for cake shops and amateur chemists."
+	cost = 500
+	contains = list(/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/condiment/sugar
+	)
+	crate_name = "sugar crate"
+	crate_type = /obj/structure/closet/crate
+
 /*
 		Cooking
 */
@@ -235,6 +246,19 @@
 					/obj/item/clothing/gloves/botanic_leather,
 					/obj/item/clothing/suit/apron,
 					/obj/item/storage/box/disks_plantgene)
+	crate_name = "gardening crate"
+	crate_type = /obj/structure/closet/crate/hydroponics
+
+/datum/supply_pack/food/ethanol
+	name = "Ethanol Crate"
+	desc = "Five small bottles of ethanol for the aspiring botanist or amateur chemist."
+	cost = 750
+	contains = list(/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol
+					)
 	crate_name = "gardening crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 

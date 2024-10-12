@@ -25,7 +25,6 @@
 		/obj/item/clothing/suit/hooded/wintercoat = 1,
 		/obj/item/clothing/suit/jacket = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
-		/obj/item/clothing/suit/jacket/leather/overcoat = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/jacket/puffer = 1,
@@ -81,7 +80,6 @@
 			/obj/item/clothing/head/hardhat/orange = 2,
 			/obj/item/clothing/head/hardhat/dblue = 2,
 			/obj/item/clothing/head/pirate = 1,
-			/obj/item/clothing/head/foilhat = 1
 			)
 		)
 	if(prob(50))
