@@ -135,7 +135,7 @@
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
 #define BODYTYPE_SNOUT (1<<3) //Snouts
-#define BODYTYPE_SNOUT_SMALL (1>>4) //Elzuose snouts
+#define BODYTYPE_SNOUT_SMALL (1<<4) //Elzuose snouts
 #define BODYTYPE_BOXHEAD (1<<5) //TV Head
 #define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
 #define BODYTYPE_KEPORI (1<<7) //Just Kepori
