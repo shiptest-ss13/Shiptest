@@ -328,10 +328,10 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - begin - better safe than sorry
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - end
+		new /obj/item/ammo_box/magazine/co9mm(src)
+		new /obj/item/ammo_box/magazine/co9mm(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"
