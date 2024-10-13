@@ -257,7 +257,7 @@ SUBSYSTEM_DEF(overmap)
 	generator_type = OVERMAP_GENERATOR_RANDOM
 
 /datum/overmap_star_system/outposted
-	name = "Ligmata Teagarden Memorial sector"
+	name = "Lymantria Teagarden Memorial sector"
 	has_outpost = TRUE
 
 	//main colors, used for dockable terrestrials, and background
@@ -274,6 +274,12 @@ SUBSYSTEM_DEF(overmap)
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
+
+	dynamic_probabilities = list(\
+		DYNAMIC_WORLD_BEACHPLANET = 10,
+		DYNAMIC_WORLD_SPACERUIN = 5,
+		DYNAMIC_WORLD_ASTEROID = 20,
+		)
 
 /datum/overmap_star_system/zx_spectrum_pallete
 	//main colors, used for dockable terrestrials, and background

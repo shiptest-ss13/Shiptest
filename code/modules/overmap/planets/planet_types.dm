@@ -174,11 +174,11 @@
 
 /datum/planet_type/water
 	name = "aqua planet"
-	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
+	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets. (VERY UNFINISHED, YOU HAVE BEEN WARNED)"
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
-	weight = 0
+	weight = 5
 
 	ruin_type = RUINTYPE_WATER // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/waterplanet
@@ -193,7 +193,7 @@
 	color = "#f3c282"
 	weight = 5
 
-	//ruin_type = RUINTYPE_DESERT // minor planets have no ruins
+	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/desert
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
@@ -225,11 +225,11 @@
 
 /datum/planet_type/battlefield
 	name = "battlefield planet"
-	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask!"
+	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask! (VERY UNFINISHED, YOU HAVE BEEN WARNED)"
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
-	weight = 0
+	weight = 2
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
