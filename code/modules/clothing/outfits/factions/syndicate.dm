@@ -522,7 +522,7 @@
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/syndicate/head_of_personnel/ngr
-	name = "Syndicate - Bridge Officer (NGR)"
+	name = "Syndicate - Ensign (NGR)"
 
 	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
