@@ -524,6 +524,7 @@
 /datum/outfit/job/syndicate/head_of_personnel/ngr
 	name = "Syndicate - Bridge Officer (NGR)"
 
+	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
@@ -531,7 +532,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	glasses = NULL
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = NULL
 
 
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
@@ -608,6 +609,7 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	gloves = /obj/item/clothing/gloves/color/black
 
 
 /datum/outfit/job/syndicate/hos/twink
