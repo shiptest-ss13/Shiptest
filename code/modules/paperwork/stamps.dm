@@ -112,17 +112,17 @@
 	dye_color = DYE_REDCOAT
 
 /obj/item/stamp/ngr/captain
-	name = "Captain rubber stamp"
+	name = "Captain's rubber stamp"
 	icon_state = "stamp-ngr_cap"
 	dye_color = DYE_QM
 
 /obj/item/stamp/ngr/foreman
-	name = "Foreman rubber stamp"
+	name = "Foreman's rubber stamp"
 	icon_state = "stamp-ngr_fore"
 	dye_color = DYE_QM
 
 /obj/item/stamp/ngr/lieutenant
-	name = "Lieutenant rubber stamp"
+	name = "Lieutenant's rubber stamp"
 	icon_state = "stamp-ngr_lieu"
 	dye_color = DYE_QM
 
