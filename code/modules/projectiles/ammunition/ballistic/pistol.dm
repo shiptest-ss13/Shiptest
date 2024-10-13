@@ -6,7 +6,6 @@
 	icon_state = "pistol-steel"
 	caliber = "10mm"
 	projectile_type = /obj/projectile/bullet/c10mm
-	bullet_per_box = 50
 
 /obj/item/ammo_casing/c10mm/surplus
 	name = "10mm surplus bullet casing"
@@ -46,7 +45,7 @@
 	icon_state = "pistol-brass"
 	caliber = "9mm"
 	projectile_type = /obj/projectile/bullet/c9mm
-	bullet_per_box = 50
+	stack_size = 15
 
 /obj/item/ammo_casing/c9mm/surplus
 	name = "9mm surplus bullet casing"
@@ -58,7 +57,7 @@
 	name = "9mm armor-piercing bullet casing"
 	desc = "A 9mm armor-piercing bullet casing."
 	bullet_skin = "ap"
-	projectile_type =/obj/projectile/bullet/c9mm/ap
+	projectile_type = /obj/projectile/bullet/c9mm/ap
 
 /obj/item/ammo_casing/c9mm/hp
 	name = "9mm hollow point bullet casing"
@@ -86,7 +85,7 @@
 	icon_state = "pistol-steel"
 	caliber = ".45"
 	projectile_type = /obj/projectile/bullet/c45
-	bullet_per_box = 50
+	stack_size = 12
 
 /obj/item/ammo_casing/c45/surplus
 	name = ".45 surplus bullet casing"
@@ -125,18 +124,17 @@
 	desc = "A .50 AE bullet casing."
 	caliber = ".50 AE"
 	projectile_type = /obj/projectile/bullet/a50AE
-	bullet_per_box = 20
 
 /obj/item/ammo_casing/a50AE/hp
 	name = ".50 AE hollow point bullet casing"
 	desc = "A .50 AE hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/a50AE/hp
 
-// .22 LR (Himehabu)
+// .22 LR (Himehabu, Pounder)
+
 /obj/item/ammo_casing/c22lr
 	name = ".22 LR bullet casing"
 	desc = "A .22 LR bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
-	bullet_per_box = 75
-
+	stack_size = 15
