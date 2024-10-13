@@ -12,7 +12,7 @@
 	name = "Corporate Mining Module"
 	description = "An old and rusty mining facility, with big ore potential."
 	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
-	dynamic_mission_types = list(/datum/mission/dynamic/drill)
+	dynamic_mission_types = list(/datum/mission/dynamic/signaled/drill)
 
 /datum/map_template/ruin/space/bigderelict1
 	id = "bigderelict1"

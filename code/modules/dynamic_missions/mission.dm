@@ -4,6 +4,7 @@
 	var/desc = "Do something for me."
 	var/faction = /datum/faction/independent
 	var/value = 1000 /// The mission's payout.
+	var/atom/movable/mission_reward
 	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
 
@@ -113,6 +114,8 @@
 
 /datum/mission/proc/spawn_reward(loc)
 	new /obj/item/spacecash/bundle(loc, value * 1.2)
+	if(ispath(mission_reward))
+		new mission_reward(loc)
 
 /datum/mission/proc/can_complete()
 	return !failed
