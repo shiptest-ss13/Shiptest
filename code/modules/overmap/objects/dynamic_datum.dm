@@ -136,7 +136,7 @@
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	if(isnull(probabilities))
 		probabilities = current_overmap.dynamic_probabilities
-	if(istype(force_encounter, /datum/planet_type/))
+	if(!isnull(force_encounter))
 		planet = force_encounter
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
