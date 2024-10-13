@@ -39,7 +39,15 @@
 #define SPACE_LAYER 1.8
 //#define TURF_LAYER 2 //For easy recordkeeping; this is a byond define
 #define MID_TURF_LAYER 2.02
+
+#define WATER_TURF_LAYER 2.025 //water
+#define SAND_TURF_LAYER 2.026 //sand
+#define STONE_TURF_LAYER 2.027 //stone
+#define GRASS_TURF_LAYER 2.028 //grass
+#define SNOW_TURF_LAYER 2.029 //snow
+
 #define HIGH_TURF_LAYER 2.03
+
 #define TURF_PLATING_DECAL_LAYER 2.031
 #define TURF_DECAL_LAYER 2.039 //Makes turf decals appear in DM how they will look inworld.
 #define ABOVE_OPEN_TURF_LAYER 2.04

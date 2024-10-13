@@ -38,16 +38,16 @@
 	. = ..()
 	for(var/Ddir in GLOB.cardinals)
 		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["entered-shrouded-[Ddir]"]
 			if(!print)
 				print = image('icons/effects/footprints.dmi', "shrouded1", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["entered-conc-[Ddir]"] = print
+				GLOB.bloody_footprints_cache["entered-shrouded-[Ddir]"] = print
 			. += print
 		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["exited-shrouded-[Ddir]"]
 			if(!print)
 				print = image('icons/effects/footprints.dmi', "shrouded2", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["exited-conc-[Ddir]"] = print
+				GLOB.bloody_footprints_cache["exited-shrouded-[Ddir]"] = print
 			. += print
 
 // pretty much ripped wholesale from footprints' version of this proc

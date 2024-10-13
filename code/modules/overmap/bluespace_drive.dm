@@ -72,7 +72,8 @@
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
-			SStgui.close_uis(src)
+			for(var/obj/machinery/computer/helm/currenthelm as anything in current_ship.helms)
+				SStgui.close_uis(currenthelm)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
 			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
@@ -84,10 +85,14 @@
 			priority_announce("Bluespace Pylon launched.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightning_chargeup.ogg', zlevel = virtual_z())
 			addtimer(CALLBACK(src, PROC_REF(do_jump)), 10 SECONDS)
 			return
+	if((machine_stat & NOPOWER))
+		return cancel_jump()
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/bluespace_drive/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	for(var/obj/machinery/computer/helm/currenthelm as anything in current_ship.helms)
+		SStgui.close_uis(currenthelm)
 	if(!jump_destination)
 		qdel(current_ship)
 		return
@@ -134,6 +139,14 @@
 						return
 					calibrate_jump()
 					return
+
+/obj/machinery/proc/power_change(area/A)
+	. = ..()
+	if((machine_stat & NOPOWER))
+		if(calibrating)
+			cancel_jump()
+
+
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING

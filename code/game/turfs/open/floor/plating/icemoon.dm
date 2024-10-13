@@ -2,26 +2,42 @@
 	gender = PLURAL
 	name = "snow"
 	desc = "Looks cold."
-	icon = 'icons/turf/snow.dmi'
+	icon = 'icons/turf/planetary/icemoon.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	icon_state = "snow_0"
-	icon_plating = "snow_0"
+	icon_plating = null
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.5
-	base_icon_state = "snow_"
+	base_icon_state = "snow"
 	max_icon_states = 3
-	floor_variance = 100
+	floor_variance = 75
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
 	barefootstep = FOOTSTEP_SNOW
 	clawfootstep = FOOTSTEP_SNOW
+	layer = SNOW_TURF_LAYER
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
 	digResult = /obj/item/stack/sheet/mineral/snow
 	// footprint vars
 	var/entered_dirs
 	var/exited_dirs
+	var/list/smooth_icons =  list('icons/turf/floors/snow.dmi', 'icons/turf/floors/snow_2.dmi')
+
+/turf/open/floor/plating/asteroid/snow/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = pick(smooth_icons)
+		icon_plating = null
+	if(prob(floor_variance))
+		add_overlay("snowalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/snow/Entered(atom/movable/AM)
 	. = ..()
@@ -44,16 +60,16 @@
 	. = ..()
 	for(var/Ddir in GLOB.cardinals)
 		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["entered-snow-[Ddir]"]
 			if(!print)
-				print = image('icons/effects/footprints.dmi', "ice1", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["entered-conc-[Ddir]"] = print
+				print = image('icons/effects/footprints.dmi', "ice1", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = 19, pixel_y = 19)
+				GLOB.bloody_footprints_cache["entered-snow-[Ddir]"] = print
 			. += print
 		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["exited-snow-[Ddir]"]
 			if(!print)
-				print = image('icons/effects/footprints.dmi', "ice2", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["exited-conc-[Ddir]"] = print
+				print = image('icons/effects/footprints.dmi', "ice2", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = 19, pixel_y = 19)
+				GLOB.bloody_footprints_cache["exited-snow-[Ddir]"] = print
 			. += print
 
 // pretty much ripped wholesale from footprints' version of this proc
@@ -166,12 +182,12 @@
 	gender = PLURAL
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It seems too cracked to be slippery anymore."
-	icon = 'icons/turf/snow.dmi'
+	icon = 'icons/turf/planetary/icemoon.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/iceberg
 	icon_state = "iceberg"
 	icon_plating = "iceberg"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	base_icon_state = "iceberg"
+	base_icon_state = "iceberg_"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
 	barefootstep = FOOTSTEP_ICE
@@ -182,8 +198,8 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
-	floor_variance = 0
-	max_icon_states = 7
+	floor_variance = 100
+	max_icon_states = 3
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/iceberg/lit

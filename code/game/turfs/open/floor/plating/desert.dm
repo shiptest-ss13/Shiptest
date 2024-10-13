@@ -41,16 +41,16 @@
 	. = ..()
 	for(var/Ddir in GLOB.cardinals)
 		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["entered-desert-[Ddir]"]
 			if(!print)
 				print = image('icons/effects/footprints.dmi', "desert1", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["entered-conc-[Ddir]"] = print
+				GLOB.bloody_footprints_cache["entered-desert-[Ddir]"] = print
 			. += print
 		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-conc-[Ddir]"]
+			var/image/print = GLOB.bloody_footprints_cache["exited-desert-[Ddir]"]
 			if(!print)
 				print = image('icons/effects/footprints.dmi', "desert2", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["exited-conc-[Ddir]"] = print
+				GLOB.bloody_footprints_cache["exited-desert-[Ddir]"] = print
 			. += print
 
 // pretty much ripped wholesale from footprints' version of this proc

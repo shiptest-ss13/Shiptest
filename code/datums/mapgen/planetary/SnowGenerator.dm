@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 0.40
+	mountain_height = 0.45
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -196,8 +196,7 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 6,
-		/turf/open/floor/plating/ice/iceberg/lit = 1,
+		/turf/open/floor/plating/asteroid/iceberg/lit = 7,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2

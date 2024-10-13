@@ -34,6 +34,7 @@
 
 	if(prob(floor_variance))
 		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
+		icon_plating = icon_state
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)

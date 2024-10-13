@@ -193,8 +193,8 @@
 /turf/open/floor/plating/ice
 	name = "ice sheet"
 	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/snow.dmi'
-	icon_state = "ice"
+	icon = 'icons/turf/planetary/icemoon.dmi'
+	icon_state = "dark_ice"
 	initial_gas_mix = FROZEN_ATMOS
 	initial_temperature = 180
 	planetary_atmos = TRUE
@@ -242,7 +242,6 @@
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "iceberg_ice"
 
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2
@@ -301,7 +300,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	layer = HIGH_TURF_LAYER
+	layer = GRASS_TURF_LAYER
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
