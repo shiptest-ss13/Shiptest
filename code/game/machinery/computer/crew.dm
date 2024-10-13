@@ -45,7 +45,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		ui.open()
 
 /obj/machinery/computer/crew/examine_more(mob/user)
-	interact(user)
+	interact(user) //crew monitors use the interact method instead of ui_interact, for some reason. Not very consistent.
 
 /datum/crewmonitor/ui_close(mob/user)
 	ui_sources -= user
