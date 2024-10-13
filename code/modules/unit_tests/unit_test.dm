@@ -85,38 +85,58 @@ GLOBAL_VAR(test_log)
 	allocated += instance
 	return instance
 
+/// Logs a test message. Will use GitHub action syntax found at https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+/datum/unit_test/proc/log_for_test(text, priority, file, line, test_path)
+	// Need to escape the text to properly support newlines.
+	var/annotation_text = replacetext(text, "%", "%25")
+	annotation_text = replacetext(annotation_text, "\n", "%0A")
+
+	log_world("::[priority] file=[file],line=[line],title=[test_path]: [type]::[annotation_text]")
+
 /proc/RunUnitTest(test_path, list/test_results)
 	var/datum/unit_test/test = new test_path
 
 	GLOB.current_test = test
 	var/duration = REALTIMEOFDAY
 
+	log_world("::group::[test_path]")
 	test.Run()
 
 	duration = REALTIMEOFDAY - duration
 	GLOB.current_test = null
 	GLOB.failed_any_test |= !test.succeeded
 
-	var/list/log_entry = list(
-		"[test.succeeded ? TEST_OUTPUT_GREEN("PASS") : TEST_OUTPUT_RED("FAIL")]: [test_path] [duration / 10]s",
-	)
+	var/list/log_entry = list()
 	var/list/fail_reasons = test.fail_reasons
+
+	var/test_output_desc = "[test_path]"
+	var/message = ""
 
 	for(var/reasonID in 1 to LAZYLEN(fail_reasons))
 		var/text = fail_reasons[reasonID][1]
 		var/file = fail_reasons[reasonID][2]
 		var/line = fail_reasons[reasonID][3]
 
-		/// Github action annotation.
-		log_world("::error file=[file],line=[line],title=[test_path]::[text]")
+		test.log_for_test(text, "error", file, line, test_path)
 
 		// Normal log message
-		log_entry += "\tREASON #[reasonID]: [text] at [file]:[line]"
+		log_entry += "\tFAILURE #[reasonID]: [text] at [file]:[line]"
 
-	var/message = log_entry.Join("\n")
-	log_test(message)
+	if(length(log_entry))
+		message = log_entry.Join("\n")
+		log_test(message)
 
-	test_results[test_path] = list("status" = test.succeeded ? UNIT_TEST_PASSED : UNIT_TEST_FAILED, "message" = message, "name" = test_path)
+	test_output_desc += " [duration / 10]s"
+	if (test.succeeded)
+		log_world("[TEST_OUTPUT_GREEN("PASS")] [test_output_desc]")
+
+	log_world("::endgroup::")
+
+	if (!test.succeeded)
+		log_world("::error::[TEST_OUTPUT_RED("FAIL")] [test_output_desc]")
+
+	var/final_status = test.succeeded ? UNIT_TEST_PASSED : UNIT_TEST_FAILED
+	test_results[test_path] = list("status" = final_status, "message" = message, "name" = test_path)
 
 	qdel(test)
 
@@ -140,6 +160,10 @@ GLOBAL_VAR(test_log)
 	for(var/unit_path in tests_to_run)
 		CHECK_TICK //We check tick first because the unit test we run last may be so expensive that checking tick will lock up this loop forever
 		RunUnitTest(unit_path, test_results)
+
+	var/file_name = "data/unit_tests.json"
+	fdel(file_name)
+	file(file_name) << json_encode(test_results)
 
 	SSticker.force_ending = TRUE
 	//We have to call this manually because del_text can preceed us, and SSticker doesn't fire in the post game

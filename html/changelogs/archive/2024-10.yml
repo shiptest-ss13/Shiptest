@@ -49,3 +49,107 @@
   - balance: Replace red insuls with yellow insuls in syndicate toolboxes
   zimon9:
   - bugfix: fixed the waste and scrubber gas reclamation filters on the colossus
+2024-10-06:
+  Apogee-dev:
+  - balance: removed one recruit slot from the vaquero
+  - rscadd: Added Nanotrasen Harrier-class cruiser
+  - rscdel: Removed Osprey-class cruiser
+  - rscdel: Removed Skipper-class cruiser
+  - balance: increased mudskipper limit to 2
+  - balance: cut a deckhand slot from kilo
+  Bjarl:
+  - rscadd: IRMG engineers have rolled new turrets out into the frontier. Please report
+      back on their effectiveness. Unless you have been shot. Then you should be dead.
+  - rscadd: Sharplite has produced a line of turrets for Nanotrasen, which is now
+      mounting them on relevant vessels.
+  Sadhorizon:
+  - bugfix: Komodo Bridge Officer is now actually an officer.
+  SomeguyManperson:
+  - rscdel: missions will no longer request capturing ice demons
+  Thera-Pissed:
+  - rscadd: angle grinders for salvage
+  - rscadd: reworks plasma cutters for salvage
+2024-10-07:
+  Aquidu:
+  - code_imp: Changes flameless ration heaters to "small" items
+  - code_imp: Adds flameless ration heaters to the ration pack item whitelist.
+  thgvr:
+  - imageadd: Some backpack sprites for Kepori
+  - imageadd: Shrunk down the sprite of guncases
+2024-10-08:
+  Anticept:
+  - rscadd: Added more purchasable chemicals to outpost.
+  - rscadd: Added missing elemental chems to chem starter kit
+  - rscdel: removed sulfuric acid from chem starter set. You have to make it.
+  - imageadd: tweaked and added more elemental chemical jugs.
+  Bjarl:
+  - code_imp: A large amount of cruft has been deleted.
+  DrCrawler:
+  - rscadd: Gives IPCs a little more adjectives to work with.
+  - rscdel: Removed some duplicate adjectives from the raw file.
+  FalloutFalcon:
+  - code_imp: tweaks to the syntax of unit test logs to be more readable by humans
+      and flaky tests
+  FalloutFalcon, Mothblocks, Cyberboss:
+  - rscadd: retry failed unit tests.
+  PositiveEntropy:
+  - imageadd: We now have improved visuals for circuit boards!
+  Sadhorizon:
+  - rscadd: Cybersun Biodynamics stamp.
+  - rscadd: Cybersun secret documents.
+  - rscadd: Cybersun captain's safe.
+  SomeguyManperson:
+  - balance: you no longer need a lasso to ride a goliath
+  - rscdel: no more lasso
+  rye-rice, Imaginos16:
+  - rscadd: Resprites Wisp
+  thgvr:
+  - bugfix: fixed digitigrade combat/jackboots
+2024-10-09:
+  PositiveEntropy:
+  - imageadd: Dog Beds Now Look Fancier!
+  - imageadd: Tank Dispensers have been repaletted!
+  - imageadd: Nuclear Waste Barrels Look A Lot Better!
+  Sun-Soaked:
+  - rscadd: Boxes are now volumetric. Some special boxes have been adjusted.
+  - balance: small objects in volumetric storage are now slightly smaller
+  zimon9:
+  - rscadd: Added flamethrower crate
+  - rscadd: Added incendiary grenade crate
+  - rscdel: Removed incendiary supply crate
+2024-10-10:
+  Bjarl:
+  - bugfix: Turrets should now actually fire at their defined fire rates.
+  - balance: Factional turrets now have new damage thresholds
+  - balance: ship turrets now have 100 less integrity by default
+  FalloutFalcon:
+  - rscadd: Cats have been genetically engineered to detect radiation
+  Gristlebee:
+  - rscadd: PGF Rakalla space suits can hold a gun in their suit storage.
+  PositiveEntropy:
+  - imageadd: Long (And Short) Braid hairstyles have been redone!
+  zimon9:
+  - rscadd: Adds bowmans to Artificer and Enforcer loadouts, and regular headsets
+      to Recruit loadouts
+2024-10-11:
+  Bjarl:
+  - rscadd: Reports of people inflicted with congenital analgesia travelling to the
+      Frontier have reached this newscaster.
+  - rscadd: Painkillers may circumvent pain in some cases now.
+  - rscadd: Please remember to ensure your soul is filled with spite before kicking
+      a rack.
+  - code_imp: abandoned airlocks now have more effects
+  FalloutFalcon:
+  - rscadd: Readdes world icons for a few knives. Expect more soon!
+2024-10-13:
+  FalloutFalcon:
+  - rscadd: update path txt for ammo boxes, thgvr will be FIRED for forgeting this.
+  Imaginos16, rye-rice:
+  - rscadd: A few hairstyles have been resprited!
+  - rscdel: the Braided and Braid line of hairs.
+  thgvr:
+  - rscadd: Added bullet stacks, they allow you to stack ammo of the same type into
+      a group.
+  - balance: Changed old ammo boxes into storage items containing stacks of bullets
+  zimon9:
+  - bugfix: fixed halved throw range

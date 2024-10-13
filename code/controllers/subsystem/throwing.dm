@@ -160,8 +160,6 @@ SUBSYSTEM_DEF(throwing)
 				finalize()
 			return
 
-		dist_travelled++
-
 		if(actual_target && !(actual_target.pass_flags_self & LETPASSTHROW) && actual_target.loc == AM.loc) // we crossed a movable with no density (e.g. a mouse or APC) we intend to hit anyway.
 			finalize(TRUE, actual_target)
 			return

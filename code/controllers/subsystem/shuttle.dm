@@ -165,7 +165,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	mapzone.parallax_movedir = travel_dir
 
-	var/area/shuttle/transit/transit_area = new()
+	var/area/hyperspace/transit_area = new()
 
 	vlevel.fill_in(transit_path, transit_area)
 

@@ -780,7 +780,7 @@
 	id = "foam_dart"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
-	build_path = /obj/item/ammo_box/foambox
+	build_path = /obj/item/storage/box/ammo/foam_darts
 	category = list("initial", "Misc")
 
 /datum/design/handcuffs
@@ -804,7 +804,7 @@
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
-	build_path = /obj/item/ammo_box/c38_box/surplus
+	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -836,7 +836,7 @@
 	id = "riot_darts"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50000) //Comes with 40 darts
-	build_path = /obj/item/ammo_box/foambox/riot
+	build_path = /obj/item/storage/box/ammo/foam_darts/riot
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
@@ -844,7 +844,7 @@
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
-	build_path = /obj/item/ammo_box/c10mm/surplus
+	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c45_surplus
@@ -852,7 +852,7 @@
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
-	build_path = /obj/item/ammo_box/c45/surplus
+	build_path = /obj/item/storage/box/ammo/c45_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm_surplus
@@ -860,7 +860,7 @@
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
-	build_path = /obj/item/ammo_box/c9mm/surplus
+	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c556mmHITP_surplus
@@ -868,15 +868,7 @@
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
-	build_path = /obj/item/ammo_box/c556mmHITP/surplus
-	category = list("initial", "Security", "Ammo")
-
-/datum/design/generic_ammo_box
-	name = "Generic Ammo Box"
-	id = "ammo-generic"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 1500)
-	build_path = /obj/item/ammo_box/generic
+	build_path = /obj/item/storage/box/ammo/c556mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/ammo_can
