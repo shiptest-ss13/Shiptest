@@ -13,9 +13,14 @@
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating/dirt
 
+/turf/open/floor/plating/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //not much to slip on
+	return
+
+
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
 	baseturfs = /turf/open/floor/plating/dirt/dark
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/dirt/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -34,6 +39,7 @@
 /turf/open/floor/plating/dirt/jungle/dark
 	icon_state = "greenerdirt"
 	baseturfs = /turf/open/floor/plating/dirt/jungle/dark
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/dirt/jungle/dark/lit
 	light_range = 2
@@ -46,6 +52,7 @@
 	icon_state = "wasteland"
 	slowdown = 1
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	var/floor_variance = 15
 
 /turf/open/floor/plating/dirt/jungle/wasteland/lit
@@ -73,6 +80,10 @@
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 	baseturfs = /turf/open/floor/plating/grass/jungle
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/grass/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //not much to slip on
+	return
 
 /turf/open/floor/plating/grass/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit

@@ -72,7 +72,7 @@
 /particles/fog/breath
 	count = 1
 	spawning = 1
-	lifespan = 2 SECONDS
+	lifespan = 1 SECONDS
 	fade = 0.5 SECONDS
 	grow = 0.05
 	spin = 2

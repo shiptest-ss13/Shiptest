@@ -211,7 +211,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 /atom/movable/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating and the heat is starting to hurt. Stay hydrated, get somewhere cooler, and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
 /atom/movable/screen/alert/shiver

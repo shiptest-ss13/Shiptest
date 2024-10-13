@@ -1862,7 +1862,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /// Traits for resitance to heat or cold are handled here.
 /datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
 	var/body_temp = H.bodytemperature
-	var/total_change = bodytemp_natural_stabilization + bodytemp_environment_change
 
 	//tempature is no longer comfy, throw alert
 	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
@@ -1874,7 +1873,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
-			if(body_temp < (bodytemp_heat_damage_limit - 6))
+			if(body_temp < (bodytemp_heat_damage_limit - 3))
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
@@ -1906,26 +1905,30 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(burn_damage)
 			if(H.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
 				switch(burn_damage)
-					if(0 to 2)
+					if(0 to 1)
 						H.throw_alert("temp", /atom/movable/screen/alert/fans, 1)
-					if(2 to 4)
+					if(2 to 3)
 						H.throw_alert("temp", /atom/movable/screen/alert/fans, 2)
 					else
 						H.throw_alert("temp", /atom/movable/screen/alert/fans, 3)
 			else
 				switch(burn_damage)
-					if(0 to 2)
+					if(0 to 1)
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
-					if(2 to 4)
+					if(2 to 3)
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
 					else
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
+
+		//Stay hydrated.
+		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water))
+			burn_damage -= clamp(H.reagents.get_reagent_amount(/datum/reagent/water) /10, 0, 1.5)
 
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 
 		// 40% for level 3 damage on humans to scream in pain
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4)
+		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4 && burn_damage > 1.5)
 			H.emote("scream")
 
 		// Apply the damage to all body parts
@@ -2029,16 +2032,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/body_temp = H.bodytemperature // Get current body temperature
 	var/body_temperature_difference = H.get_body_temp_normal() - body_temp
 	var/natural_change = 0
+	var/recovery_temp = bodytemp_autorecovery_min
+	//if in crit, we struggle to regulate temperture. this will make extreme tempertures more dangerous to injured
+	if (H.stat > SOFT_CRIT)
+		recovery_temp =  recovery_temp / 2
 
 	// we are cold, reduce the minimum increment and do not jump over the difference
 	if(body_temp > bodytemp_cold_damage_limit && body_temp < H.get_body_temp_normal())
 		natural_change = max(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
-			min(body_temperature_difference, bodytemp_autorecovery_min / 4))
+			min(body_temperature_difference, recovery_temp / 4))
 
 	// We are hot, reduce the minimum increment and do not jump below the difference
 	else if(body_temp > H.get_body_temp_normal() && body_temp <= bodytemp_heat_damage_limit)
 		natural_change = min(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
-			max(body_temperature_difference, -(bodytemp_autorecovery_min / 4)))
+			max(body_temperature_difference, -(recovery_temp / 4)))
 
 
 	var/thermal_protection = H.get_insulation_protection(body_temp + natural_change)

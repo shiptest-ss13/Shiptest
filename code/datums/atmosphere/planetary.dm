@@ -116,11 +116,11 @@
 		GAS_O2=15,
 		GAS_N2=60,
 		GAS_CO2=1,
+		GAS_H2O=1,
 	)
 	normal_gases = list(
 		GAS_O2=1,
 		GAS_N2=4,
-		GAS_H2O=2,
 	)
 	restricted_gases = list(
 		GAS_CO2=0.1,
