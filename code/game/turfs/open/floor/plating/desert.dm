@@ -13,8 +13,8 @@
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
 	slowdown = 1.5
 
-	floor_variance = 10
-	max_icon_states = 4
+	floor_variance = 0
+	max_icon_states = 0
 
 	// footprint vars
 	var/entered_dirs
