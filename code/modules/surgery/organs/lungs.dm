@@ -288,7 +288,7 @@
 		var/chlorine_pp = PP(breath,GAS_CHLORINE)
 		if (prob(chlorine_pp))
 			to_chat(H, "<span class='alert'>Your lungs feel awful!</span>")
-		if (chlorine_pp >40)
+		if (chlorine_pp >50)
 			H.emote("gasp")
 			H.adjustFireLoss(5)
 			if (prob(chlorine_pp/2))
