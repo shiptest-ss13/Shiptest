@@ -40,17 +40,12 @@
 	alt_uniform = null
 
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = NULL
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/radio
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
 
 	box = /obj/item/storage/box/survival
 
