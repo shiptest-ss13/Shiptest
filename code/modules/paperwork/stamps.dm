@@ -126,6 +126,11 @@
 	icon_state = "stamp-ngr_lieu"
 	dye_color = DYE_QM
 
+/obj/item/stamp/ngr/ensign
+	name = "Ensign's rubber stamp"
+	icon_state = "stamp-ngr_ensign"
+	dye_color = DYE_QM
+
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"

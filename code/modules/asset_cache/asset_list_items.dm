@@ -126,7 +126,8 @@
 		"stamp-ngr" = 'icons/stamp_icons/large_stamp-ngr.png',
 		"stamp-ngr_cap" = 'icons/stamp_icons/large_stamp-ngr_captain.png',
 		"stamp-ngr_fore" = 'icons/stamp_icons/large_stamp-ngr_foreman.png',
-		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png'
+		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png',
+		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png'
 	)
 
 /datum/asset/simple/fuckywucky
