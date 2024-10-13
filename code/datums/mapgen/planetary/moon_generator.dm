@@ -180,7 +180,7 @@
 
 /datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/shuttle, /area/ship, /area/overmap_encounter/planetoid/cave, /area/ruin)
+	banned_areas = typecacheof(/area/ship, /area/overmap_encounter/planetoid/cave, /area/ruin)
 	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
