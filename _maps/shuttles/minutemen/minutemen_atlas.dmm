@@ -414,6 +414,15 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
+"fJ" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "fL" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -541,7 +550,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
 	layer = 2.456
 	},
 /turf/open/floor/plating,
@@ -607,6 +615,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"hP" = (
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "hQ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1520,19 +1532,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
-"rv" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	layer = 2.456;
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
 "ry" = (
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1642,6 +1641,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"sc" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	layer = 2.456
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "sh" = (
 /obj/structure/railing{
 	dir = 8
@@ -1658,7 +1670,10 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 1
+	},
 /area/ship/engineering)
 "si" = (
 /obj/structure/closet/emcloset/anchored,
@@ -2100,7 +2115,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "wd" = (
 /obj/structure/sign/warning/nosmoking/circle{
@@ -2370,6 +2385,38 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/crate,
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = -1;
+	pixel_y = 9
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 6;
+	pixel_y = 11
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 12;
+	pixel_y = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -6
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "zc" = (
@@ -2498,6 +2545,14 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
+"zO" = (
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "zQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2590,6 +2645,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"Bb" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Bm" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/window/reinforced{
@@ -2668,18 +2732,6 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
-"BR" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	layer = 2.456
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
 "BW" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 1
@@ -3114,10 +3166,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"HG" = (
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "HW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -4190,6 +4238,19 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ship/crew/crewtwo)
+"Tc" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "Ti" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/engine/hull/interior,
@@ -4544,7 +4605,7 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/stairs{
-	dir = 1
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering)
 "VR" = (
@@ -4722,6 +4783,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Xj" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Xl" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4741,14 +4809,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Xs" = (
-/obj/machinery/firealarm/directional/west,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "XT" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -5031,13 +5091,13 @@ eW
 My
 bK
 PU
-af
-af
+Xj
+Xj
 PU
 Qu
 PU
-af
-af
+Xj
+Xj
 PU
 bK
 JR
@@ -5057,12 +5117,12 @@ Yu
 fM
 vo
 wc
-bK
+fJ
 Hh
 Qg
 wd
-bK
-JR
+fJ
+Bb
 Eo
 Rv
 Mu
@@ -5380,7 +5440,7 @@ gT
 gT
 Zd
 sL
-HG
+hP
 sL
 IY
 jI
@@ -5680,7 +5740,7 @@ xi
 HX
 HX
 EJ
-Xs
+zO
 uY
 is
 Xg
@@ -5705,15 +5765,15 @@ FN
 FN
 Cn
 lc
-BR
-QG
 gH
+QG
+sc
 fi
 jL
 AP
-BR
+gH
 QG
-rv
+Tc
 RQ
 OW
 da
