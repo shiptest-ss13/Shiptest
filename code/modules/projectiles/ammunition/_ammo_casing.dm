@@ -49,7 +49,20 @@
 	var/stack_size = 12
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
+	if(istype(attacking_item, /obj/item/pen))
+		if(!user.is_literate())
+			to_chat(user, "<span class='notice'>You scribble illegibly on the [src]!</span>")
+			return
+		var/inputvalue = stripped_input(user, "What would you like to label the round?", "Bullet Labelling", "", MAX_NAME_LEN)
+
+		if(!inputvalue)
+			return
+
+		if(user.canUseTopic(src, BE_CLOSE))
+			name = "[initial(src.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+			if(BB)
+				BB.name = "[initial(BB.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+	else if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
 		add_fingerprint(user)
 		var/obj/item/ammo_box/ammo_box = attacking_item
 		var/obj/item/ammo_casing/other_casing = ammo_box.get_round(TRUE)
@@ -89,6 +102,10 @@
 		return
 
 	return ..()
+
+/obj/item/ammo_casing/examine(mob/user)
+	. = ..()
+	span_notice("You could add a message on the [src] by writing on it with a pen.")
 
 /obj/item/ammo_casing/proc/try_stacking(obj/item/ammo_casing/other_casing, mob/living/user)
 	if(user)
