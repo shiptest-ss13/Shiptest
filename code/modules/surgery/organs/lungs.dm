@@ -356,28 +356,26 @@
 		if(breath_temperature < cold_level_3_threshold)
 			breather.apply_damage(cold_level_3_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 100
-			part_count = 20
+			part_count = 8
 		if(breath_temperature > cold_level_3_threshold && breath_temperature < cold_level_2_threshold)
 			breather.apply_damage(cold_level_2_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 75
-			part_count = 10
+			part_count = 5
 		if(breath_temperature > cold_level_2_threshold && breath_temperature < cold_level_1_threshold)
 			breather.apply_damage(cold_level_1_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 50
-			part_count = 5
+			part_count = 3
 		if(breath_temperature > cold_level_1_threshold)
 			breath_effect_prob = 25
-			part_count = 3
+			part_count = 2
 
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(sqrt(breath_effect_prob) * 6))
 				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
-				if(prob(50))
-					breather.emote("shiver")
 		else if(breath_temperature < chlly_threshold)
 			if(!breath_effect_prob)
 				breath_effect_prob = 20
-				part_count = 2
+				part_count = 1
 			if(prob(sqrt(breath_effect_prob) * 6))
 				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
 		if(breath_temperature < chlly_threshold)

@@ -16,7 +16,7 @@
 /// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
 #define HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR 22
 /// Minimum amount of kelvin moved toward 310K per tick. So long as abs(310.15 - bodytemp) is more than 50.
-#define HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM 6
+#define HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM 12
 ///Similar to the HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to lose bodytemp faster.
 #define HUMAN_BODYTEMP_COLD_DIVISOR 20
 /// Similar to the HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.

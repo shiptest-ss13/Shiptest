@@ -147,9 +147,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 1) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 2)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 1)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -1874,32 +1874,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
 		else
-			if(body_temp < (bodytemp_heat_damage_limit - 5))
-				// you are cooling down and exiting the danger zone
-				if(total_change < 0)
-					H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
-				else
-					H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-			else if(total_change < 0.5)
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+			if(body_temp < (bodytemp_heat_damage_limit - 6))
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
-				H.clear_alert("tempfeel")
+				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		if(body_temp < 220)
+		if(body_temp < bodytemp_cold_damage_limit -7)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
 		else if(body_temp < bodytemp_cold_damage_limit)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
 		else if(body_temp < (bodytemp_cold_damage_limit + 5))
-			// you are warming up and exiting the danger zone
-			if(total_change > 0)
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
-			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(total_change > -0.5)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
 		else
-			H.clear_alert("tempfeel")
+			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 	else
 		H.clear_alert("tempfeel")
 
@@ -1953,17 +1941,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 
-		if(body_temp < 200)
+		if(body_temp < bodytemp_cold_damage_limit - 15)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
+			H.emote("shiver")
 
-		else if(body_temp < 220)
+		else if(body_temp < bodytemp_cold_damage_limit - 7)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
+			if(prob(50))
+				H.emote("shiver")
 
 		else
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
 			H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
+			if(prob(20))
+				H.emote("shiver")
 
 	// We are not to hot or cold, remove status and moods
 	else
@@ -2037,13 +2030,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/body_temperature_difference = H.get_body_temp_normal() - body_temp
 	var/natural_change = 0
 
-	// We are very cold, increate body temperature
-	if(body_temp <= bodytemp_cold_damage_limit)
-		natural_change = max((body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor), \
-			bodytemp_autorecovery_min)
-
 	// we are cold, reduce the minimum increment and do not jump over the difference
-	else if(body_temp > bodytemp_cold_damage_limit && body_temp < H.get_body_temp_normal())
+	if(body_temp > bodytemp_cold_damage_limit && body_temp < H.get_body_temp_normal())
 		natural_change = max(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
 			min(body_temperature_difference, bodytemp_autorecovery_min / 4))
 
@@ -2052,9 +2040,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		natural_change = min(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
 			max(body_temperature_difference, -(bodytemp_autorecovery_min / 4)))
 
-	// We are very hot, reduce the body temperature
-	else if(body_temp >= bodytemp_heat_damage_limit)
-		natural_change = min((body_temperature_difference / bodytemp_autorecovery_divisor), -bodytemp_autorecovery_min)
 
 	var/thermal_protection = H.get_insulation_protection(body_temp + natural_change)
 	if(areatemp > body_temp) // It is hot here
