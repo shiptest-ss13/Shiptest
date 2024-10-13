@@ -46,6 +46,7 @@
 		/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner,
 		/mob/living/simple_animal/hostile/megafauna/claw,
 	)
+	. = ..()
 
 /datum/mission/dynamic/kill/elite
 
@@ -54,5 +55,6 @@
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother,
 		/mob/living/simple_animal/hostile/asteroid/elite/herald,
 		/mob/living/simple_animal/hostile/asteroid/elite/legionnaire,
-		/mob/living/simple_animal/hostile/asteroid/elite/pandora
+		/mob/living/simple_animal/hostile/asteroid/elite/pandora,
 	)
+	. = ..()

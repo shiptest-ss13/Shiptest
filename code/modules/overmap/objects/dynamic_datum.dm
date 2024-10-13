@@ -154,7 +154,7 @@
 	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
 	if(istype(used_ruin))
 		for(var/mission_type in used_ruin.dynamic_mission_types)
-			dynamic_missions += new mission_type(src)
+			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"

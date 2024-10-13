@@ -36,6 +36,7 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	dynamic_mission_types = list(/datum/mission/dynamic/data_reterival)
 
 /datum/map_template/ruin/space/astraeus
 	id = "astraeus"

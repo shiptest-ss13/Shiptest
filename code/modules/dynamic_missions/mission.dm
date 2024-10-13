@@ -7,7 +7,7 @@
 	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
 
-	///Only needed if you have multipe missiosn that use the same poi's on the map
+	///Only needed if you have multipe missiosn that use the same poi's on the map. Set at new.
 	var/mission_index
 
 	var/location_specific = TRUE
@@ -31,9 +31,10 @@
 	/// is a callback to be invoked upon the atom's qdeletion.
 	var/list/atom/movable/bound_atoms
 
-/datum/mission/New(_location)
+/datum/mission/New(location, mission_index)
 	//source_outpost = _outpost
-	mission_location = _location
+	src.mission_location = location
+	src.mission_index = mission_index
 	SSmissions.inactive_missions += list(src)
 	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))

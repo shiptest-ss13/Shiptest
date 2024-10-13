@@ -49,6 +49,7 @@
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
+	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"

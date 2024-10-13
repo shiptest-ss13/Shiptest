@@ -41,3 +41,4 @@
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
+	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
