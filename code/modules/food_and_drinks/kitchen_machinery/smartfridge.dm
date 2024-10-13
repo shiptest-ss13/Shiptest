@@ -53,10 +53,8 @@
 			icon_state = "[initial(icon_state)]"
 		if(1 to 25)
 			icon_state = "[initial(icon_state)]1"
-		if(26 to 75)
+		if(26 to INFINITY)
 			icon_state = "[initial(icon_state)]2"
-		if(76 to INFINITY)
-			icon_state = "[initial(icon_state)]3"
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
