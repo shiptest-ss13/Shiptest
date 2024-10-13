@@ -415,31 +415,72 @@
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
 
-/datum/overmap/ui_status(mob/user, datum/ui_state/state)
+/datum/overmap/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	if(user.client)
+		var/datum/overmap_inspect/overmap_inspect = new(src, user)
+		overmap_inspect.ui_interact(user)
+
+/datum/overmap/ui_data(mob/user)
+	. = list()
+	. += basic_ui_data()
+	.["ascii"] = char_rep
+	.["desc"] = (isobj(token)) ? token.desc : ""
+	.["x"] = x || docked_to.x
+	.["y"] = y || docked_to.y
+
+	.["dockedTo"] = list()
+	if(docked_to)
+		.["dockedTo"] += docked_to.basic_ui_data()
+
+	.["docked"] = list()
+	for(var/datum/overmap/docked in contents)
+		.["docked"] += list(docked.basic_ui_data())
+
+/datum/overmap/proc/basic_ui_data()
+	return list(
+		"ref" = REF(src),
+		"name" = name
+	)
+
+/datum/overmap_inspect
+	var/datum/overmap/focus
+	var/mob/inspector
+
+/datum/overmap_inspect/New(datum/overmap/focus, mob/inspector)
+	. = ..()
+	src.focus = focus
+	src.inspector = inspector
+	RegisterSignal(src.focus, COMSIG_PARENT_QDELETING, PROC_REF(qdel))
+	RegisterSignal(src.inspector, COMSIG_PARENT_QDELETING, PROC_REF(qdel))
+
+/datum/overmap_inspect/Destroy()
+	UnregisterSignal(focus, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(inspector, COMSIG_PARENT_QDELETING)
+	focus = null
+	inspector = null
+	. = ..()
+
+/datum/overmap_inspect/ui_status(mob/user, datum/ui_state/state)
+	if(!isdatum(focus))
+		return UI_CLOSE
 	return (ismob(user)) ? UI_INTERACTIVE : UI_CLOSE
 
-/datum/overmap/ui_interact(mob/user, datum/tgui/ui)
+/datum/overmap_inspect/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "OvermapExamine")
 		ui.open()
 
-/datum/overmap/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+/datum/overmap_inspect/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
+	switch(action)
+		if("inspect")
+			var/datum/overmap/token = locate(params["ref"])
+			if(isdatum(token))
+				focus = token
 
-/datum/overmap/ui_data(mob/user)
-	. = list()
-	.["ref"] = REF(src)
-	.["name"] = name
-	.["ascii"] = char_rep
-	.["x"] = x || docked_to.x
-	.["y"] = y || docked_to.y
-	.["dockedTo"] = docked_to
-	.["docked"] = list()
-	for(var/datum/overmap/docked in contents)
-		var/list/docked_list = list()
-		docked_list["ref"] = REF(src)
-		docked_list["name"] = name
-		.["docked"] = docked_list
+/datum/overmap_inspect/ui_data(mob/user)
+	return focus.ui_data(user)

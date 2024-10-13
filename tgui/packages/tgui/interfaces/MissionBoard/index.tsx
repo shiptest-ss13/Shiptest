@@ -9,7 +9,7 @@ import {
 } from '../../components';
 import { Window } from '../../layouts';
 
-import { Mission, Data, Reward } from './types';
+import { Mission, Data } from './types';
 
 export const MissionBoard = (props, context) => {
   const { act, data } = useBackend<Data>(context);
