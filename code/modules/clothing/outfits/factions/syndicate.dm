@@ -40,7 +40,7 @@
 	alt_uniform = null
 
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = NULL
+	gloves = null
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack
 
@@ -526,8 +526,8 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
-	glasses = NULL
-	gloves = NULL
+	glasses = null
+	gloves = null
 
 
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
@@ -686,7 +686,6 @@
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	shoes = /obj/item/clothing/shoes/sneakers/white
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
 	box = /obj/item/storage/box/survival/medical
@@ -725,6 +724,7 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/doctor/ngr
 	name = "Syndicate - Medical Doctor (New Gorlex Republic)"
@@ -737,6 +737,7 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+	shoes = /obj/item/clothing/shoes/combat
 
 //paramedics
 
