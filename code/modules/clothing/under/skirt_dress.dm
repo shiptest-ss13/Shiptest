@@ -25,7 +25,7 @@
 
 /obj/item/clothing/under/dress/sailor
 	name = "sailor dress"
-	desc = "Formal wear for a leading lady."
+	desc = "A traditional dress with roots in Far Eastern Cantonal culture, later popularized by the Solarian Confederacy's Naval Forces. However, due to its roots as a formal uniform, it would later be used by civilians in occasions outside of its naval context. The crisp cloth evokes feelings of order and discipline."
 	icon_state = "sailor_dress"
 	item_state = "sailor_dress"
 
