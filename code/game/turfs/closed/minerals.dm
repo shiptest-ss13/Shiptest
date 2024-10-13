@@ -746,6 +746,13 @@
 	defer_change = TRUE
 	has_borders = TRUE
 
+/turf/closed/mineral/random/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
+
 /turf/closed/mineral/random/high_chance
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	icon_state = "smoothrocks-0"

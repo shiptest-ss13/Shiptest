@@ -9,6 +9,7 @@
 	slowdown = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
+	layer = WATER_TURF_LAYER
 
 	footstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
@@ -100,3 +101,63 @@
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"
+
+
+/turf/open/water/whitesands
+
+	name = "sulfuric acid pool"
+	desc = "Shallow sulfuric acid. It isn't the best ideas to step in this, but you are able to without many short term consequnces."
+	icon = 'icons/turf/planetary/whitesands.dmi'
+	icon_state = "water"
+	baseturfs = /turf/open/water/whitesands
+	planetary_atmos = TRUE
+	color = "#57ffd5"
+
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+	reagent_to_extract = /datum/reagent/toxin/acid
+	extracted_reagent_visible_name = "acid"
+	initial_gas_mix = WHITESANDS_ATMOS
+
+	var/particle_to_spawn = /particles/smoke/steam/vent/high
+	var/obj/effect/particle_holder/part_hold
+
+/turf/open/water/whitesands/Initialize()
+	. = ..()
+	if(prob(5))
+		part_hold = new(get_turf(src))
+		part_hold.layer = EDGED_TURF_LAYER
+		part_hold.particles = new particle_to_spawn()
+		underlays.Cut()
+
+/turf/open/water/whitesands/Destroy()
+	. = ..()
+	QDEL_NULL(part_hold)
+
+/turf/open/water/oasis
+	name = "freshwater"
+	desc = "Nice and warm freshwater. Drinkable and bathable, it is highly valuable in scarce locations"
+	icon = 'icons/turf/planetary/whitesands.dmi'
+	icon_state = "water"
+	baseturfs = /turf/open/water/oasis
+	planetary_atmos = TRUE
+	color = "#8ac7e6"
+	light_range = 2
+	light_power = 0.80
+	light_color = "#9cdeff"
+
+	var/particle_to_spawn = /particles/smoke/steam/vent/low
+	var/obj/effect/particle_holder/part_hold
+
+/turf/open/water/oasis/Initialize()
+	. = ..()
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+
+/turf/open/water/oasis/Destroy()
+	. = ..()
+	QDEL_NULL(part_hold)
