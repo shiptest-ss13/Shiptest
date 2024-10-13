@@ -132,12 +132,6 @@
 	sound1 = 'sound/magic/blink.ogg'
 	sound2 = 'sound/magic/blink.ogg'
 
-/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/cult
-	name = "quickstep"
-
-	charge_max = 100
-	clothes_req = TRUE
-
 /obj/effect/proc_holder/spell/targeted/area_teleport/teleport
 	name = "Teleport"
 	desc = "This spell teleports you to an area of your selection."
@@ -194,20 +188,6 @@
 	summon_type = list(/mob/living/simple_animal/hostile/carp)
 	cast_sound = 'sound/magic/summon_karp.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/construct
-	name = "Artificer"
-	desc = "This spell conjures a construct which may be controlled by Shades."
-	school = "conjuration"
-	charge_max = 600
-	clothes_req = FALSE
-	invocation = "none"
-	invocation_type = "none"
-	range = 0
-	summon_type = list(/obj/structure/constructshell)
-	action_icon = 'icons/mob/actions/actions_cult.dmi'
-	action_icon_state = "artificer"
-	cast_sound = 'sound/magic/summonitems_generic.ogg'
-
 /obj/effect/proc_holder/spell/aoe_turf/conjure/creature
 	name = "Summon Creature Swarm"
 	desc = "This spell tears the fabric of reality, allowing horrific daemons to spill forth."
@@ -222,12 +202,6 @@
 
 	summon_type = list(/mob/living/simple_animal/hostile/netherworld)
 	cast_sound = 'sound/magic/summonitems_generic.ogg'
-
-/obj/effect/proc_holder/spell/aoe_turf/conjure/creature/cult
-	name = "Summon Creatures (DANGEROUS)"
-	clothes_req = TRUE
-	charge_max = 5000
-	summon_amt = 2
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse
 	name = "Repulse"
