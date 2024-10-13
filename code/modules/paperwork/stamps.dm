@@ -117,22 +117,23 @@
 
 /obj/item/stamp/inteq/vanguard
 	name = "Vanguard's rubber stamp"
-	icon_state = "stamp-vanguard"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_vanguard"
 
 /obj/item/stamp/inteq/maa
 	name = "Master at Arms' rubber stamp"
-	icon_state = "stamp-maa"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_maa"
 
 /obj/item/stamp/inteq/artificer
-	name = "Class II Artificer's rubber stamp"
-	icon_state = "stamp-artificer"
-	dye_color = DYE_QM
+	name = "Honorable Artificer's rubber stamp"
+	icon_state = "stamp-inteq_artificer"
+
+/obj/item/stamp/inteq/corpsman
+	name = "Honorable Corpsman's rubber stamp"
+	icon_state = "stamp-inteq_corpsman"
 
 /obj/item/stamp/clip
 	name = "CLIP Minutemen rubber stamp"
-	icon_state = "stamp-cmm"
+	icon_state = "stamp-inteq_cmm"
 	dye_color = DYE_FO
 
 /obj/item/stamp/clip/gold
