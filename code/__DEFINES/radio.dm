@@ -22,7 +22,6 @@
 #define RADIO_KEY_CENTCOM "e"
 #define RADIO_TOKEN_CENTCOM ":e"
 
-//WS Begin - SGR, Overmaps
 #define RADIO_CHANNEL_SOLGOV "SolGov"
 #define RADIO_KEY_SOLGOV "s"
 #define RADIO_TOKEN_SOLGOV ":s"
@@ -48,11 +47,6 @@
 #define RADIO_TOKEN_PIRATE ":y"
 
 #define RADIO_CHANNEL_WIDEBAND "Wideband"
-//WS End
-
-#define RADIO_CHANNEL_CTF_RED "Red Team"
-#define RADIO_CHANNEL_CTF_BLUE "Blue Team"
-
 
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
