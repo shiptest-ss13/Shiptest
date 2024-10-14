@@ -97,6 +97,19 @@
 	max_icon_states = 0
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	var/smooth_icon = 'icons/turf/floors/drydesert.dmi'
+
+/turf/open/floor/plating/asteroid/dry_seafloor/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
+		icon_plating = null
 
 /turf/open/floor/plating/asteroid/dry_seafloor/lit
 	light_range = 2

@@ -144,22 +144,33 @@
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	icon_state = "icemoon_ground_coarse1"
-	icon_plating = "icemoon_ground_coarse1"
+	icon_plating = null
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	base_icon_state = "icemoon_ground_coarse"
+	base_icon_state = "icemoon_ground"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
+	layer = STONE_TURF_LAYER
 	planetary_atmos = TRUE
-	broken_states = list("icemoon_ground_cracked")
-	burnt_states = list("icemoon_ground_smooth")
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
-	floor_variance = 100
-	max_icon_states = 7
+	floor_variance = 0
+	max_icon_states = 0
 	dug = TRUE
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	var/smooth_icon = 'icons/turf/floors/icerock.dmi'
+
+/turf/open/floor/plating/asteroid/icerock/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
 
 /turf/open/floor/plating/asteroid/icerock/lit
 	light_range = 2
@@ -169,11 +180,15 @@
 	floor_variance = 0
 	icon_state = "icemoon_ground_cracked"
 	base_icon_state = "icemoon_ground_cracked"
+	smoothing_flags = null
+	layer = MID_TURF_LAYER
 
 /turf/open/floor/plating/asteroid/icerock/smooth
 	floor_variance = 0
 	icon_state = "icemoon_ground_smooth"
 	base_icon_state = "icemoon_ground_smooth"
+	smoothing_flags = null
+	layer = MID_TURF_LAYER
 
 /turf/open/floor/plating/asteroid/icerock/temperate
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"

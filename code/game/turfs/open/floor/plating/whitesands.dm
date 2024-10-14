@@ -10,10 +10,24 @@
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
+	layer = SAND_TURF_LAYER
 	digResult = /obj/item/stack/ore/glass/whitesands
 	max_icon_states = 0
 	floor_variance = 0
 	slowdown = 1.5
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	var/smooth_icon = 'icons/turf/floors/whitesand.dmi'
+
+/turf/open/floor/plating/asteroid/whitesands/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
+		icon_plating = null
 
 /turf/open/floor/plating/asteroid/whitesands/lit
 	light_range = 2
@@ -29,21 +43,15 @@
 	icon_plating = null
 	base_icon_state = WHITESANDS_DRIED_ENV
 	layer = STONE_TURF_LAYER
+	footstep = FOOTSTEP_FLOOR
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	digResult = /obj/item/stack/ore/glass/whitesands
 	slowdown = 0
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
-	var/smooth_icon = 'icons/turf/floors/whitesands_rock.dmi'
-
-/turf/open/floor/plating/asteroid/whitesands/dried/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(smoothing_flags)
-		var/matrix/translation = new
-		translation.Translate(-19, -19)
-		transform = translation
-		icon = smooth_icon
-		icon_plating = null
+	smooth_icon = 'icons/turf/floors/whitesands_rock.dmi'
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 
 /turf/open/floor/plating/asteroid/whitesands/remove_air(amount)
 	return return_air()
@@ -88,14 +96,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	layer = GRASS_TURF_LAYER
 	slowdown = 0
-
-/turf/open/floor/plating/asteroid/whitesands/grass/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(smoothing_flags)
-		var/matrix/translation = new
-		translation.Translate(-19, -19)
-		transform = translation
-		icon_plating = null
+	smooth_icon = 'icons/turf/floors/whitesands_grass.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN //moth woman did not do this, it was imaginos
 
 /turf/open/floor/plating/asteroid/whitesands/grass/lit
 	light_power = 1
