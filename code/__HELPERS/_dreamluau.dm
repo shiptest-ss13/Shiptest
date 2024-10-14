@@ -298,5 +298,3 @@
  * @return null on success
  */
 #define DREAMLUAU_CLEAR_REF_USERDATA(object) DREAMLUAU_CALL(clear_ref_userdata)((object))
-
-var/harddel_deets_dumped = FALSE

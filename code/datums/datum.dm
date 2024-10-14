@@ -233,6 +233,9 @@
 /datum/proc/dump_harddel_info()
 	return
 
+/image
+	var/harddel_deets_dumped = FALSE
+
 ///images are pretty generic, this should help a bit with tracking harddels related to them
 /image/dump_harddel_info()
 	if(harddel_deets_dumped)
