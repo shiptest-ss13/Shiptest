@@ -119,8 +119,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
@@ -422,13 +422,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "dD" = (
-/obj/structure/bed/dogbed,
-/mob/living/simple_animal/hostile/carp/cayenne{
-	desc = "Originally the failed results of an ICW-era biological warfare program, this breed of docile space carp have become popular as pets on New Gorlex..";
-	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
-	name = "Sirocco"
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -437,6 +430,15 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/book/manual/wiki/piloting{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dE" = (
@@ -518,11 +520,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/holopad/secure,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
 	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
@@ -811,18 +814,26 @@
 /area/ship/medical)
 "gT" = (
 /obj/structure/table,
-/obj/item/flashlight/lamp{
-	pixel_x = -6;
-	pixel_y = 2
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /obj/structure/sign/poster/rilena/random{
 	pixel_x = -32
 	},
+/obj/item/stamp/ngr{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/stamp/ngr/ensign{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/flashlight/lamp{
+	pixel_x = -7;
+	pixel_y = 10
+	},
 /obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_x = 9;
+	pixel_x = -4;
 	pixel_y = 3
 	},
 /turf/open/floor/carpet/black,
@@ -1170,9 +1181,7 @@
 /area/ship/crew/cryo)
 "jm" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "jL" = (
@@ -1575,16 +1584,24 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
-/obj/item/pen/fountain/captain{
-	pixel_x = -4;
-	pixel_y = -1
+/obj/machinery/newscaster/directional/west,
+/obj/machinery/light/small/directional/south,
+/obj/item/stamp/ngr/captain{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/stamp/ngr{
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/machinery/newscaster/directional/west,
-/obj/machinery/light/small/directional/south,
+/obj/item/pen/fountain/captain{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "mv" = (
@@ -2013,6 +2030,9 @@
 /area/ship/crew/canteen)
 "op" = (
 /obj/structure/tank_dispenser,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "oD" = (
@@ -2118,6 +2138,14 @@
 	pixel_y = 17
 	},
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/item/stamp/denied{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/obj/item/stamp{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "pp" = (
@@ -2478,10 +2506,6 @@
 	pixel_x = 32
 	},
 /obj/structure/table,
-/obj/item/instrument/guitar{
-	pixel_x = -1;
-	pixel_y = 9
-	},
 /obj/item/lighter/greyscale{
 	pixel_x = 10;
 	pixel_y = 5
@@ -2495,6 +2519,14 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/half,
 /obj/machinery/light/dim/directional/north,
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = -9;
+	pixel_y = 15
+	},
+/obj/item/instrument/guitar{
+	pixel_x = -1;
+	pixel_y = 9
+	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "rA" = (
@@ -3749,9 +3781,6 @@
 /obj/item/paper_bin{
 	pixel_y = 6
 	},
-/obj/item/folder/syndicate{
-	pixel_y = 6
-	},
 /obj/item/pen/blue{
 	pixel_x = -1;
 	pixel_y = 8
@@ -3769,6 +3798,14 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/item/stamp/denied{
+	pixel_x = -13;
+	pixel_y = 8
+	},
+/obj/item/stamp{
+	pixel_x = -13;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "An" = (
@@ -3927,11 +3964,10 @@
 	pixel_y = 14
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate{
-	pixel_x = -3;
-	pixel_y = 6
+	pixel_y = 8
 	},
 /obj/item/lighter{
-	pixel_x = 1;
+	pixel_x = 7;
 	pixel_y = -2
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -3941,6 +3977,13 @@
 	pixel_x = 32
 	},
 /obj/machinery/newscaster/directional/south,
+/obj/item/stamp/ngr{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/stamp/ngr/lieutenant{
+	pixel_x = -6
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "Bi" = (
@@ -3950,7 +3993,8 @@
 "Bk" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
-	name = "Morgue"
+	name = "Morgue";
+	req_access_txt = "5"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4959,9 +5003,7 @@
 /area/ship/external/dark)
 "Im" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "Iu" = (
@@ -5160,7 +5202,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/soap,
+/obj/item/soap/syndie,
 /turf/open/floor/pod,
 /area/ship/hallway/aft)
 "Kk" = (
@@ -5685,14 +5727,11 @@
 /area/ship/crew/canteen)
 "NL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/piloting{
-	pixel_x = 2
+/obj/structure/filingcabinet/chestdrawer{
+	dir = 4;
+	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_x = -8;
-	pixel_y = 10
-	},
+/obj/item/folder/documents/syndicate/ngr,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "NM" = (
@@ -5770,6 +5809,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "Oq" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Ot" = (
@@ -6088,9 +6130,12 @@
 /area/ship/engineering/engines/port)
 "Ra" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/filingcabinet/chestdrawer{
-	dir = 4;
-	pixel_x = -6
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/carp/cayenne{
+	desc = "Originally the failed results of an ICW-era biological warfare program, this breed of docile space carp have become popular as pets on New Gorlex..";
+	environment_smash = 0;
+	faction = list("neutral","playerSyndicate");
+	name = "Sirocco"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -6332,6 +6377,9 @@
 "Tn" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /obj/machinery/holopad/secure,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "To" = (
@@ -7000,7 +7048,6 @@
 	dir = 6;
 	layer = 4.1
 	},
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/tan/full,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -7017,6 +7064,7 @@
 	pixel_x = 3;
 	pixel_y = 1
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Xw" = (
