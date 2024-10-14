@@ -13,10 +13,11 @@
 	item_state = "space_suit_syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
 	w_class = WEIGHT_CLASS_NORMAL
-	/obj/item/clothing/suit/space/syndicate/Initialize()
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/syndicate/Initialize()
 		. = ..()
 		allowed = GLOB.security_hardsuit_allowed
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
 
 //Green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green
