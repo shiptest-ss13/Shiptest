@@ -8,18 +8,63 @@
 "e" = (
 /turf/open/floor/carpet/blue,
 /area/space)
+"h" = (
+/turf/open/floor/plasteel/patterned/ridged,
+/area/space)
+"j" = (
+/obj/machinery/cryopod{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/pod/dark,
+/area/space)
 "n" = (
 /turf/open/floor/carpet/nanoweave/blue,
+/area/space)
+"o" = (
+/turf/open/floor/plasteel/tech,
+/area/space)
+"r" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"u" = (
+/obj/machinery/cryopod,
+/turf/open/floor/pod/dark,
 /area/space)
 "x" = (
 /turf/open/floor/plating,
 /area/space)
 "y" = (
 /obj/effect/turf_decal/atmos/air,
-/turf/open/space/basic,
+/turf/open/floor/engine/air,
+/area/space)
+"C" = (
+/turf/open/floor/engine/air,
+/area/space)
+"H" = (
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 4
+	},
 /area/space)
 "I" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/space)
+"J" = (
+/turf/open/floor/plasteel/dark,
+/area/space)
+"O" = (
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"Q" = (
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
+"R" = (
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "S" = (
 /obj/structure/grille,
@@ -105,7 +150,7 @@ a
 (4,1,1) = {"
 a
 a
-a
+o
 a
 a
 a
@@ -241,7 +286,7 @@ a
 a
 a
 I
-a
+C
 x
 a
 a
@@ -289,7 +334,7 @@ V
 V
 I
 I
-a
+J
 I
 I
 I
@@ -314,9 +359,9 @@ I
 a
 a
 I
-a
-a
-a
+u
+H
+j
 I
 a
 a
@@ -336,9 +381,9 @@ I
 a
 a
 I
-a
-a
-a
+r
+J
+O
 I
 a
 a
@@ -359,7 +404,7 @@ a
 a
 I
 I
-a
+J
 I
 I
 a
@@ -373,7 +418,7 @@ a
 I
 I
 I
-a
+J
 I
 I
 a
@@ -397,7 +442,7 @@ W
 W
 W
 W
-a
+J
 a
 a
 a
@@ -422,15 +467,15 @@ W
 I
 I
 I
-a
+J
 I
 I
 I
 I
 a
 a
-a
-a
+Q
+Q
 "}
 (19,1,1) = {"
 a
@@ -451,8 +496,8 @@ a
 I
 a
 a
-a
-a
+R
+R
 "}
 (20,1,1) = {"
 a
@@ -473,8 +518,8 @@ a
 a
 a
 a
-a
-a
+h
+h
 "}
 (21,1,1) = {"
 a
@@ -528,7 +573,7 @@ I
 I
 I
 I
-a
+J
 I
 I
 I
@@ -577,7 +622,7 @@ a
 a
 I
 I
-a
+J
 I
 I
 I
@@ -598,10 +643,10 @@ a
 a
 a
 I
-W
-W
-W
-W
+a
+a
+a
+a
 I
 I
 a
@@ -620,9 +665,9 @@ a
 a
 c
 I
-W
-W
-W
+a
+a
+a
 a
 a
 I
@@ -642,9 +687,9 @@ a
 c
 c
 I
-W
-W
-W
+a
+a
+a
 a
 a
 I
@@ -664,9 +709,9 @@ a
 a
 c
 I
-W
-W
-W
+a
+a
+a
 a
 a
 I
@@ -686,9 +731,9 @@ a
 c
 c
 I
-W
-W
-W
+a
+a
+a
 a
 a
 I
@@ -708,9 +753,9 @@ a
 a
 c
 I
-W
-W
-W
+a
+a
+a
 I
 I
 I
@@ -730,8 +775,8 @@ a
 a
 c
 I
-W
-W
+a
+a
 I
 I
 n
@@ -752,8 +797,8 @@ c
 a
 c
 I
-W
-W
+a
+a
 I
 n
 n
@@ -775,7 +820,7 @@ a
 c
 I
 I
-x
+J
 I
 I
 n
@@ -800,7 +845,7 @@ e
 e
 e
 I
-a
+J
 I
 I
 a
