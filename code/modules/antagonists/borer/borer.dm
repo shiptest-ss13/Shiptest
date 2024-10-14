@@ -683,10 +683,6 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(docile)
 		to_chat(src, "<span class='warning'>You are feeling far too docile to do that.</span>")
 		return
-	if(iscultist(victim) || HAS_TRAIT(victim, TRAIT_MINDSHIELD))
-		to_chat(src, "<span class='warning'>[victim]'s mind seems to be blocked by some unknown force!</span>")
-		return
-
 	else
 
 		log_game("[src]/([src.ckey]) assumed control of [victim]/([victim.ckey] with borer powers.")

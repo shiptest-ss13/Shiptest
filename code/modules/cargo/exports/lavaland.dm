@@ -9,10 +9,6 @@
 						/obj/item/book_of_babel,
 						/obj/item/wisp_lantern,
 						/obj/item/reagent_containers/glass/bottle/potion/flight,
-						/obj/item/katana/cursed,
-						/obj/item/clothing/glasses/godeye,
-						/obj/item/melee/ghost_sword,
-						/obj/item/clothing/suit/space/hardsuit/cult,
 						/obj/item/voodoo,
 						/obj/item/grenade/clusterbuster/inferno,
 						/obj/item/clothing/neck/memento_mori,
@@ -21,10 +17,7 @@
 						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
-						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
-						/obj/item/kitchen/knife/envy,
 						/obj/item/veilrender/vealrender,
-						/obj/item/nullrod/scythe/talking/necro,
 						/obj/item/clothing/suit/armor/ascetic)
 
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms

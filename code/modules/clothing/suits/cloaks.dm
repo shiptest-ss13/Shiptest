@@ -76,7 +76,7 @@
 	name = "goliath cloak"
 	icon_state = "goliath_cloak"
 	desc = "A staunch, practical cape made out of numerous monster materials, it is coveted amongst exiles & hermits."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/melee/knife/bone, /obj/item/melee/knife/survival)
 	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -94,7 +94,7 @@
 	name = "drake armour"
 	icon_state = "dragon"
 	desc = "A suit of armour fashioned from the remains of an ash drake."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/melee/spear)
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 40, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/drake
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -180,19 +180,3 @@
 	resistance_flags = NONE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/suit/hooded/cloak/goliath/polar
-	name = "polar cloak"
-	icon_state = "polarcloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	desc = "A tribal hood made from a polar bears pelt. Keeps it's wearer warm and looks badass while doing it."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	name = "polar cloak"
-	icon_state = "hoodie_gray"
-	mob_overlay_state = "polhood"
-	desc = "Wear bear on head show little man you big man, kill bear for cloak."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = HEAD

@@ -102,6 +102,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/gezena/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper Rakalla-helm"
 	desc = "Featuring rubberized grommets fitting for any length of horn, and an internal monitor for life support."
@@ -217,7 +221,7 @@
 	name = "\improper PGFN Captain's Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 
 //Boots
 

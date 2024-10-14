@@ -180,14 +180,6 @@ Acquire: Anomaly
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 
-/datum/mission/acquire/creature/ice_demon
-	name = "Capture an ice demon"
-	desc = "I require a live ice demon for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1500
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
-
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"
 	desc = "I require a live mi-go for research purposes. Trap one within the given \

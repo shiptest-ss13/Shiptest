@@ -1371,7 +1371,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "jH" = (
-/obj/machinery/porta_turret/ship/weak{
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "delta_grid";
 	dir = 9
 	},
 /turf/closed/wall/mineral/titanium,
@@ -2057,18 +2058,14 @@
 	pixel_x = -24;
 	pixel_y = -5
 	},
-/obj/machinery/turretid{
-	icon_state = "control_kill";
-	lethal = 1;
-	locked = 0;
-	pixel_y = -28;
-	req_access = null
-	},
 /obj/structure/table,
 /obj/machinery/recharger,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/areaeditor/shuttle,
+/obj/machinery/turretid/ship{
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Aw" = (
@@ -2894,7 +2891,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
 "WG" = (
-/obj/machinery/porta_turret/ship/weak{
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "delta_grid";
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
@@ -3020,7 +3018,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
 "YZ" = (
-/obj/machinery/porta_turret/ship/weak{
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "delta_grid";
 	dir = 10
 	},
 /turf/closed/wall/mineral/titanium,

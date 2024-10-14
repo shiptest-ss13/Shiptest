@@ -5,18 +5,6 @@
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 
-/obj/item/clothing/head/beret/vintage
-	name = "vintage beret"
-	desc = "A well-worn beret."
-	icon_state = "vintageberet"
-	dog_fashion = null
-
-/obj/item/clothing/head/beret/archaic
-	name = "archaic beret"
-	desc = "An absolutely ancient beret."
-	icon_state = "archaicberet"
-	dog_fashion = null
-
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A black beret."

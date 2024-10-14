@@ -29,6 +29,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/independent)
 	crate_name = "mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_INDEPENDENT
 
 /datum/supply_pack/spacesuit_armor/med_hardsuit
 	name = "Medical Hardsuit Crate"
@@ -37,6 +38,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
+	faction = FACTION_NT
 
 /datum/supply_pack/spacesuit_armor/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
@@ -46,6 +48,7 @@
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = FACTION_NT
 
 /datum/supply_pack/spacesuit_armor/sec_hardsuit_bundle
 	name = "Security Hardsuit Crate"
@@ -54,6 +57,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = FACTION_NT
 
 /datum/supply_pack/spacesuit_armor/sci_hardsuit
 	name = "Science Hardsuit Crate"
@@ -62,6 +66,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/rd)
 	crate_name = "science hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
+	faction = FACTION_NT
 
 /datum/supply_pack/spacesuit_armor/engi_spacesuit_bundle
 	name = "Engineering Space Suit Crate"
@@ -79,6 +84,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
 	crate_name = "atmospherics hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
+	faction = FACTION_NT
 
 /datum/supply_pack/spacesuit_armor/swat
 	name = "SWAT Crate"
@@ -117,7 +123,8 @@
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 1750
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/head/helmet/bulletproof)
+					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
