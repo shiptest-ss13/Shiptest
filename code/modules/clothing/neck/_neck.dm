@@ -313,6 +313,7 @@
 /obj/item/clothing/neck/dogtag
 	name = "frontiersman dogtag"
 	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+	icon = "shipkey"
 	icon_state = "shipkey"
 	resistance_flags = FIRE_PROOF
 
