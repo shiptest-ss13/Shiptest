@@ -167,6 +167,8 @@ EMPTY_GUN_HELPER(automatic/pistol/asp)
 	else
 		icon_state = "[base_icon_state]-0"
 
+/obj/item/ammo_box/magazine/m57_39_asp/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
