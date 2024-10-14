@@ -273,6 +273,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		ui = new(user, src, "AirAlarm", name)
 		ui.open()
 
+/obj/machinery/airalarm/examine_more(mob/user)
+	ui_interact(user)
+
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(
 		"locked" = locked,
