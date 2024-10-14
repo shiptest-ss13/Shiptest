@@ -72,6 +72,7 @@
 	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
 	icon_state = "soapsyndie"
 	cleanspeed = 27 // ever so slightly better than NT
+	uses = 300
 
 /obj/item/soap/omega
 	name = "omega soap"
