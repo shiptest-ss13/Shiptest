@@ -861,9 +861,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office/lobby)
 "rJ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -2124,9 +2121,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "HR" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
@@ -2263,9 +2258,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/maintenance/port)
 "Kp" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -2504,9 +2496,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "Mb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
@@ -2519,6 +2508,9 @@
 	color = "#555555"
 	},
 /obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -3576,7 +3568,7 @@ ZC
 XL
 Yw
 bz
-fp
+ZC
 UG
 vx
 an
@@ -3588,7 +3580,7 @@ zq
 an
 ke
 UG
-Ti
+UO
 VN
 zT
 kh
