@@ -345,6 +345,9 @@
 		O.use(1)
 		return
 
+	if(istype(O, /obj/item/extinguisher))
+		return ..()
+
 	if(!istype(O))
 		return
 	if(O.item_flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
