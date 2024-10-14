@@ -431,3 +431,6 @@
 	max_val = 255
 	config_entry_value = 127
 	min_val = 127
+
+/datum/config_entry/number/max_dynamic_missions
+	config_entry_value = 6

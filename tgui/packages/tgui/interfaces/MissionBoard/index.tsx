@@ -90,13 +90,14 @@ const MissionsList = (props, context) => {
         <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
         <LabeledList.Item label="Description">{desc}</LabeledList.Item>
         <LabeledList.Item label="Rewards">
+          {reward}
           <Button
             icon={'arrow-up'}
-            tooltip={'Choose Reward'}
+            tooltip={'Turn in mission'}
             disabled={!canTurnIn || !pad || !id_inserted}
             onClick={() => act('send', { mission: ref })}
           >
-            {reward}
+            Turn in
           </Button>
           <LabeledList.Divider />
           {duration ? missionTimer(mission) : ''}

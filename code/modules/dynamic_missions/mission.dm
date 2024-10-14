@@ -59,6 +59,7 @@
 	return ..()
 
 /datum/mission/proc/on_vital_delete()
+	SSblackbox.record_feedback("tally", "mission_vital_delete", 1, src.type)
 	qdel(src)
 
 /datum/mission/proc/generate_mission_details()
@@ -76,9 +77,13 @@
 	return
 
 /datum/mission/proc/reward_flavortext()
-	return "[value * 1.2] cr upon completion"
+	var/reward_string = "[value] cr upon completion"
+	if(ispath(mission_reward))
+		reward_string += "along with [mission_reward::name]"
+	return reward_string
 
 /datum/mission/proc/start_mission()
+	SSblackbox.record_feedback("tally", "mission_started", 1, src.type)
 	SSmissions.inactive_missions -= src
 	active = TRUE
 	if(duration)
@@ -108,6 +113,7 @@
 
 /datum/mission/proc/turn_in(atom/movable/item_to_turn_in)
 	if(can_turn_in(item_to_turn_in))
+		SSblackbox.record_feedback("tally", "mission_turned_in", 1, src.type)
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
 		qdel(item_to_turn_in)
@@ -141,7 +147,7 @@
 		"name" = src.name,
 		"author" = src.author,
 		"desc" = src.desc,
-		"rewards" = src.reward_flavortext(),
+		"reward" = src.reward_flavortext(),
 		"faction" = SSfactions.faction_name(src.faction),
 		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
 		"x" = mission_location.x,

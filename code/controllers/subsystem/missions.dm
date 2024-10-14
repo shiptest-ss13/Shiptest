@@ -6,8 +6,6 @@ SUBSYSTEM_DEF(missions)
 	var/list/datum/mission/dynamic/inactive_missions = list()
 	var/list/datum/mission/dynamic/active_missions = list()
 
-	var/max_active_missions = 5
-
 /datum/controller/subsystem/missions/stat_entry(msg)
 	var/unallocated = unallocated_pois.len
 	var/inactive_count = inactive_missions.len
@@ -16,7 +14,7 @@ SUBSYSTEM_DEF(missions)
 	return ..()
 
 /datum/controller/subsystem/missions/fire(resumed)
-	if(active_missions.len < max_active_missions)
+	if(active_missions.len < CONFIG_GET(number/max_dynamic_missions))
 		if(inactive_missions.len)
 			var/datum/mission/dynamic/mission_to_start = inactive_missions[inactive_missions.len]
 			mission_to_start.start_mission()
