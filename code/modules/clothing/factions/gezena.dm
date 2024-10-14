@@ -102,6 +102,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/gezena/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper Rakalla-helm"
 	desc = "Featuring rubberized grommets fitting for any length of horn, and an internal monitor for life support."

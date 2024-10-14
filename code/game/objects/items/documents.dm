@@ -54,6 +54,11 @@
 /obj/item/documents/syndicate/mining
 	desc = "\"Top Secret\" documents detailing Syndicate plasma mining operations."
 
+/obj/item/documents/syndicate/ngr
+	name = "Second Battlegroup secret documents"
+	desc = "\"Top Secret\" documents belonging to the Second Battlegroup of New Gorlex Republic. They are filled with sensitive operational intelligence. These documents are verified with a red wax seal."
+	icon_state = "docs_red"
+
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
 	var/forgedseal = 0

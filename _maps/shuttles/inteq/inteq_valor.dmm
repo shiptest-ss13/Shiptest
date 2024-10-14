@@ -4430,6 +4430,7 @@
 /obj/item/storage/lockbox/medal/sec,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/head/inteq_peaked,
+/obj/item/stamp/inteq/vanguard,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Od" = (
@@ -4805,6 +4806,7 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/storage/box/hypospray/CMO,
 /obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/stamp/inteq/corpsman,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "RT" = (
@@ -5074,14 +5076,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/rack,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/ammo_box/c9mm/rubbershot{
-	pixel_x = 5;
-	pixel_y = 10
-	},
-/obj/item/ammo_box/c9mm{
-	pixel_x = -2;
-	pixel_y = 2
-	},
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/item/storage/box/ammo/c9mm,
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/poster/official/safety_report{
 	pixel_x = 32
