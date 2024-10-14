@@ -26,7 +26,7 @@
 	// even worse, occasionally there would be a perma-TRITFIRE, if oxygen
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
-	minimum_temp = T20C + 50
+	minimum_temp = T20C + 40
 	maximum_temp = T20C + 70
 
 /datum/atmosphere/icemoon
@@ -104,8 +104,8 @@
 	minimum_pressure = HAZARD_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = 120
-	maximum_temp = 210 //No longer always 180
+	minimum_temp = 213
+	maximum_temp = 253 //No longer always 180
 
 //Jungleplanet
 
@@ -131,7 +131,7 @@
 	maximum_pressure = 135.7 //Nonsense values
 
 	minimum_temp = T20C + 10
-	maximum_temp = T20C + 40
+	maximum_temp = T20C + 30
 
 //welcome to the beach
 
@@ -178,8 +178,8 @@
 	minimum_pressure = 101.3
 	maximum_pressure = 135.7
 
-	minimum_temp = 200
-	maximum_temp = 230
+	minimum_temp = T0C - 20
+	maximum_temp = T0C
 
 // gas giants
 /datum/atmosphere/gas_giant
