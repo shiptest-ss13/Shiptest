@@ -197,7 +197,7 @@ Acquire: Anomaly
 
 /datum/mission/acquire/bounty
 	name = "Hunt down Frontiersmen Dogtags"
-	desc = "fuck em fronties lol"
+	desc = "CLIP has assigned us to offer out bounties to hunt down Frontiersman cells and turn in their dogtags. We'll reward you well."
 	weight = 4
 	value = 3000
 	duration = 100 MINUTES
@@ -208,8 +208,8 @@ Acquire: Anomaly
 
 /datum/mission/acquire/bounty/ramzi
 	name = "Hunt down Ramzi Clique Dogtags"
-	desc = "fuck em ramzis lol"
-	weight = 2
+	desc = "Gezena has assigned us to offer out bounties to hunt down Ramzi Clique outfits and turn in their dogtags. We'll reward you well."
+	weight = 3
 	value = 4000
 	duration = 120 MINUTES
 	dur_mod_range = 0.1
@@ -218,14 +218,25 @@ Acquire: Anomaly
 	num_wanted = 3
 
 /datum/mission/acquire/salvage
-	name = "Deliver one Protolathe Board"
-	desc = "I'd rather you have money than powergame RND"
+	name = "Deliver Protolathe"
+	desc = "The Nanotrasen Corporation is contracting out to have scientific equipment returned. Looking for a rare circuitboard (R&D Console, Protolathe, Circuit Imprinter) of any type."
 	weight = 2
 	value = 4000
-	duration = 80 MINUTES
+	duration = 120 MINUTES
 	dur_mod_range = 0.3
 	container_type = /obj/item/storage/toolbox/bounty/salvage
 	objective_type = /obj/item/circuitboard/machine/protolathe
+	num_wanted = 1
+
+/datum/mission/acquire/salvage/console
+	name = "Deliver R&D Console"
+	desc = "The Nanotrasen Corporation is contracting out to have scientific equipment returned. Looking for a rare circuitboard (R&D Console, Protolathe, Circuit Imprinter) of any type."
+	weight = 3
+	value = 2500
+	duration = 120 MINUTES
+	dur_mod_range = 0.3
+	container_type = /obj/item/storage/toolbox/bounty/salvage
+	objective_type = /obj/item/circuitboard/computer/rdconsole
 	num_wanted = 1
 
 /*
