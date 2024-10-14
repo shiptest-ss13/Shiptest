@@ -683,8 +683,12 @@
 	muzzle_ignore = TRUE
 
 /datum/emote/living/snap/get_sound(mob/living/user)
-	return pick('sound/misc/fingersnap1.ogg',
-				'sound/misc/fingersnap2.ogg')
+	if(ishuman(user))
+		if(!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
+			return
+		else
+			return pick('sound/misc/fingersnap1.ogg',
+							'sound/misc/fingersnap2.ogg')
 
 /datum/emote/living/snap2
 	key = "snap2"
