@@ -12,8 +12,6 @@ import { Window } from '../../layouts';
 import { Mission, Data } from './types';
 
 export const MissionBoard = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
-  const {} = data;
   return (
     <Window width={600} height={700} resizable>
       <Window.Content scrollable>
