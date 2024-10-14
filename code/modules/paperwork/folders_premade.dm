@@ -61,6 +61,10 @@
 /obj/item/folder/documents/syndicate/mining
 	document = /obj/item/documents/syndicate/mining
 
+/obj/item/folder/documents/syndicate/ngr
+	document = /obj/item/documents/syndicate/ngr
+	icon_state = "folder_ngr"
+
 /obj/item/folder/documents/solgov
 	document = /obj/item/documents/solgov
 	desc = "A blue folder with a SolGov seal."

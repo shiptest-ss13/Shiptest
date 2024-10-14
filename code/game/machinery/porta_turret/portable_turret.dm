@@ -41,6 +41,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	integrity_failure = 0.5
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	base_icon_state = "standard"
+	subsystem_type = /datum/controller/subsystem/turrets
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
 	/// For turrets inside other objects
@@ -77,7 +78,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/has_cover = TRUE
 	/// The cover that is covering this turret
 	var/obj/machinery/porta_turret_cover/cover = null
-	/// Ticks until next shot (1.5 ?)
+	/// Ticks until next shot (1.5 ?) If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 15
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS

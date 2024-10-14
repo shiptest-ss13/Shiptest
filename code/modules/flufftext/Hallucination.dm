@@ -40,6 +40,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	next_hallucination = world.time + rand(100, 600)
 
 /mob/living/carbon/proc/set_screwyhud(hud_type)
+	if(HAS_TRAIT(src, TRAIT_ANALGESIA))
+		hud_type = SCREWYHUD_HEALTHY
 	hal_screwyhud = hud_type
 	update_health_hud()
 
