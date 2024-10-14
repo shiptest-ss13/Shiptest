@@ -603,7 +603,7 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/asp
 	gloves = /obj/item/clothing/gloves/color/black
 
 
