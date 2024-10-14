@@ -139,6 +139,12 @@
 	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
 	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
 
+/obj/item/storage/pistolcase/asp
+/obj/item/storage/pistolcase/asp/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/asp/no_mag(src)
+	new/obj/item/ammo_box/magazine/m57_39_asp/empty(src)
+	new/obj/item/ammo_box/magazine/m57_39_asp/empty(src)
+
 /obj/item/storage/pistolcase/candor
 /obj/item/storage/pistolcase/candor/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)
