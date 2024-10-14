@@ -528,7 +528,7 @@
 	key = "twitch_s"
 	message = "twitches."
 
-/datum/emote/living/twitch/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/twitch_s/run_emote(mob/living/user, params, type_override, intentional)
 	. = ..()
 	if(!.)
 		return FALSE
