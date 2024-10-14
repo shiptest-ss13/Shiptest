@@ -279,20 +279,17 @@
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears
 	name = "beret or rabbit ears spawner"
 	loot = list(
-		/obj/item/clothing/head/beret = 1,
-		/obj/item/clothing/head/rabbitears = 1)
+		/obj/item/clothing/head/beret = 1)
 
 /obj/effect/spawner/lootdrop/minor/bowler_or_that
 	name = "bowler or top hat spawner"
 	loot = list(
-		/obj/item/clothing/head/bowler = 1,
 		/obj/item/clothing/head/that = 1)
 
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears
 	name = "kitty ears or rabbit ears spawner"
 	loot = list(
-		/obj/item/clothing/head/kitty = 1,
-		/obj/item/clothing/head/rabbitears = 1)
+		/obj/item/clothing/head/kitty = 1)
 
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana
 	name = "pirate hat or bandana spawner"
@@ -808,6 +805,7 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/safe
@@ -818,6 +816,7 @@
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/dangerous
@@ -1002,8 +1001,8 @@
 
 /obj/effect/spawner/lootdrop/anomaly/storm
 	loot = list(
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/flux/storm,
+		/obj/effect/anomaly/pyro/storm,
 		/obj/effect/anomaly/sparkler,
 		/obj/effect/anomaly/veins,
 		/obj/effect/anomaly/phantom,

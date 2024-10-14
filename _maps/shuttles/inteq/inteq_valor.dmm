@@ -149,6 +149,9 @@
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bR" = (
@@ -1707,6 +1710,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "pt" = (
@@ -1970,6 +1976,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -2272,10 +2281,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -20
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "tZ" = (
@@ -4281,6 +4286,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Nh" = (
@@ -4419,6 +4430,7 @@
 /obj/item/storage/lockbox/medal/sec,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/head/inteq_peaked,
+/obj/item/stamp/inteq/vanguard,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Od" = (
@@ -4794,6 +4806,7 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/storage/box/hypospray/CMO,
 /obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/stamp/inteq/corpsman,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "RT" = (
@@ -5063,14 +5076,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/rack,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/ammo_box/c9mm/rubbershot{
-	pixel_x = 5;
-	pixel_y = 10
-	},
-/obj/item/ammo_box/c9mm{
-	pixel_x = -2;
-	pixel_y = 2
-	},
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/item/storage/box/ammo/c9mm,
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/poster/official/safety_report{
 	pixel_x = 32
