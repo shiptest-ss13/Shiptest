@@ -700,7 +700,7 @@
 
 // Drill signals
 // Called when a mission drill finishes sampling
-#define COMSIG_DRILL_SAMPLES_DONE "spawner_toggle"
+#define COMSIG_DRILL_SAMPLES_DONE "drill_done"
 
 ///Beam Signals
 /// Called before beam is redrawn

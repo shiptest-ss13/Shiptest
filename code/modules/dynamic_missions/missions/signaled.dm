@@ -16,11 +16,18 @@
 	UnregisterSignal(registered_item, mission_main_signal)
 	remove_bound(registered_item)
 
-/obj/effect/landmark/mission_poi/drill
+/obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/dynamic/signaled/drill
 	name = "drill mission"
 	desc = "get this drill back up and running and send us proof"
+	faction = list(
+		/datum/faction/nt,
+		/datum/faction/nt/ns_logi,
+		/datum/faction/nt/vigilitas,
+		/datum/faction/frontier,
+		/datum/faction/independent
+	)
 	registered_type = /obj/machinery/drill/mission/ruin
 	setpiece_item = /obj/item/drill_readout
 	mission_main_signal = COMSIG_DRILL_SAMPLES_DONE

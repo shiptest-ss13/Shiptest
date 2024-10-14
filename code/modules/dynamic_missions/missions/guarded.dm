@@ -24,7 +24,6 @@
 	name = "NT asset recovery"
 	faction = /datum/faction/nt
 	setpiece_item = /obj/item/documents/nanotrasen
-	guard_type = /mob/living/simple_animal/hostile/human/syndicate/melee
 
 /datum/mission/dynamic/guarded/nt_files/generate_mission_details()
 	. = ..()

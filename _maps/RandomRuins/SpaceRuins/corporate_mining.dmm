@@ -179,6 +179,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/bridge)
+"fd" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/landmark/mission_poi/guard{
+	mission_index = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/asteroid/hivelord
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "fi" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -1093,6 +1101,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/corporatemine)
+"zQ" = (
+/obj/effect/landmark/mission_poi/guard{
+	mission_index = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/asteroid/hivelord
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
+"Aa" = (
+/obj/effect/landmark/mission_poi{
+	mission_index = 1;
+	type_to_spawn = /obj/structure/spawner/burrow/asteroid
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "Ac" = (
 /obj/structure/railing,
 /obj/structure/cable{
@@ -2105,7 +2127,7 @@
 	vein_class = 4;
 	mining_charges = 30
 	},
-/obj/effect/landmark/mission_poi/drill,
+/obj/effect/landmark/mission_poi/main/drill,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "Vr" = (
@@ -3729,7 +3751,7 @@ VM
 VM
 Vj
 VM
-kp
+fd
 bl
 VM
 Pn
@@ -3830,7 +3852,7 @@ Al
 Al
 Iv
 VM
-VM
+zQ
 VM
 rG
 Bp
@@ -3937,7 +3959,7 @@ VM
 VM
 bl
 VM
-VM
+Aa
 VM
 VM
 VM

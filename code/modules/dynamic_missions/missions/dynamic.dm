@@ -48,7 +48,6 @@
 /datum/mission/dynamic/data_reterival
 	name = "data recovery"
 	setpiece_item = list(
-		/obj/item/blackbox,
 		/obj/item/research_notes/loot,
 		/obj/item/documents
 	)

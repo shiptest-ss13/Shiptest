@@ -18,7 +18,10 @@
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
-	dynamic_mission_types = list(/datum/mission/dynamic/data_reterival)
+	dynamic_mission_types = list(
+		/datum/mission/dynamic/data_reterival,
+		/datum/mission/dynamic/signaled/drill
+	)
 
 /datum/map_template/ruin/icemoon/brazillian_lab
 	name = "Barricaded Compound"

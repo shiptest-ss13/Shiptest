@@ -79,6 +79,14 @@
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"hY" = (
+/obj/structure/vein/ice/classthree{
+	vein_class = 4;
+	mining_charges = 30
+	},
+/obj/effect/landmark/mission_poi/main/drill,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "iz" = (
 /obj/structure/fence/door/opened{
 	dir = 8
@@ -477,6 +485,13 @@
 /obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"OI" = (
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals;
+	mission_index = 1
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pp" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/holofloor/wood,
@@ -982,7 +997,7 @@ Og
 Og
 Og
 zT
-Og
+OI
 Og
 zT
 Og
@@ -1071,9 +1086,9 @@ Vn
 Og
 zT
 Og
-Og
-Og
 Bq
+Og
+hY
 Og
 Og
 Og

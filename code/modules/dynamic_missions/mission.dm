@@ -71,6 +71,7 @@
 		value = value * (dur_value_scaling ? old_dur / duration : 1)
 	value = round(value, 50)
 
+	faction = pick(faction)
 	author = random_species_name()
 	return
 

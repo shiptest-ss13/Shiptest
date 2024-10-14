@@ -54,7 +54,7 @@
 	var/forgedseal = 0
 	var/copy_type = null
 
-/obj/item/documents/photocopy/New(loc, obj/item/documents/copy=null)
+/obj/item/documents/photocopy/New(loc, obj/item/documents/copy = null)
 	..()
 	if(copy)
 		copy_type = copy.type
