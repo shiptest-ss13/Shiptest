@@ -915,10 +915,10 @@ DEFINE_BITFIELD(turret_flags, list(
 	name = "Oasis Turret"
 	desc = "A turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the nation!"
 	stun_projectile = /obj/projectile/bullet/c45/rubber
-	stun_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	lethal_projectile = /obj/projectile/bullet/c45
-	lethal_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
-	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret") //player_syndicate is just to be safe
+	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYND	ICATE, "turret") //player_syndicate is just to be safe
 
 /obj/machinery/porta_turret/ship/ngr/light
 	name = "Sonoran Turret"
@@ -934,9 +934,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	name = "Cliff Turret"
 	desc = "A heavy turret manufactured by the New Gorlex Republic for its ships and installations. Has a reputation of being extremely dangerous."
 	stun_projectile = /obj/projectile/bullet/a65clip/rubber
-	stun_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	lethal_projectile = /obj/projectile/bullet/a65clip
-	lethal_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 14
 	shot_delay = 30
 
