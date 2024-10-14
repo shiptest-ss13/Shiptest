@@ -1454,6 +1454,23 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
+"lR" = (
+/obj/machinery/shower{
+	pixel_y = 19
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/curtain,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 9
+	},
+/obj/item/soap{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/toilet)
 "lW" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
@@ -2284,6 +2301,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
+/obj/item/soap/deluxe,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/bridge)
 "qG" = (
@@ -5142,6 +5160,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/soap,
 /turf/open/floor/pod,
 /area/ship/hallway/aft)
 "Kk" = (
@@ -7934,7 +7953,7 @@ Ym
 dG
 wj
 PG
-rY
+lR
 Vd
 OR
 PG
