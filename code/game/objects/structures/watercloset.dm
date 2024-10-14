@@ -346,7 +346,17 @@
 		return
 
 	if(istype(O, /obj/item/extinguisher))
-		return ..()
+		var/obj/item/extinguisher/EX = O
+		var/safety_save = EX.safety
+		EX.safety = TRUE
+		if(!(EX.reagents.total_volume == EX.reagents.maximum_volume))
+			EX.refill()
+			to_chat(user, "<span class='notice'>\The [EX] has been refilled.</span>")
+			playsound(EX.loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
+			EX.safety = safety_save
+			return 1
+		else
+			return ..()
 
 	if(!istype(O))
 		return
