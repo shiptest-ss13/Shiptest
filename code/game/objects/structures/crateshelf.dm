@@ -73,7 +73,7 @@
 	if(istype(item, /obj/item/stack/sheet/metal) && capacity < 4)
 		var/obj/item/stack/sheet/metal/our_sheet = item
 		if(our_sheet.get_amount() >= 2)
-			balloon_alert(user, "Adding additional shelf to rack")
+			balloon_alert(user, "adding additional shelf to rack")
 			if(do_after(user, 3 SECONDS, target = src))
 				add_shelf(1)
 				our_sheet.add(-2)
