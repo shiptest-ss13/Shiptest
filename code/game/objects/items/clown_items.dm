@@ -71,7 +71,7 @@
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
 	icon_state = "soapsyndie"
-	cleanspeed = 5 //faster than mop so it is useful for traitors who want to clean crime scenes
+	cleanspeed = 27 // ever so slightly better than NT
 
 /obj/item/soap/omega
 	name = "omega soap"
