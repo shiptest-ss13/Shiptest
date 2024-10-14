@@ -58,8 +58,6 @@
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
 #define FREQ_SYNDICATE 1213 // Nuke op comms frequency, dark brown
-#define FREQ_CTF_RED 1215 // CTF red team comms frequency, red
-#define FREQ_CTF_BLUE 1217 // CTF blue team comms frequency, blue
 #define FREQ_CENTCOM 1337 // CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
@@ -91,7 +89,7 @@
 
 #define MAX_FREQ 1489 // ------------------------------------------------------
 
-#define FREQ_WIDEBAND 1501 // Subspace/shuttle comms frequency, dark blue WS ADDITION
+#define FREQ_WIDEBAND 1501 // sector wide communication
 
 #define MAX_FREE_FREQ 1599 // -------------------------------------------------
 
