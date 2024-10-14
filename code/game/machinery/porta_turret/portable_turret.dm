@@ -918,7 +918,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	lethal_projectile = /obj/projectile/bullet/c45
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	faction = list(FACTION_NGR, FACTION_PLAYER_SYND	ICATE, "turret") //player_syndicate is just to be safe
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret") //player_syndicate is just to be safe
 
 /obj/machinery/porta_turret/ship/ngr/light
 	name = "Sonoran Turret"
