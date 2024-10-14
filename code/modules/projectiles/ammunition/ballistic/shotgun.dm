@@ -3,12 +3,11 @@
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
 	desc = "A 12-gauge lead slug."
-	icon = 'icons/obj/ammo_shotshells.dmi'
 	icon_state = "slug"
 	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/slug
-	bullet_per_box = 25
+	stack_size = 8 //Make sure this matches max_ammo variable on prefilled stacks (magazine/ammo_stack/prefilled)
 
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 
@@ -28,6 +27,7 @@
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "beanbag"
+	caliber = "12ga beanbag"
 	custom_materials = list(/datum/material/iron=250)
 	projectile_type = /obj/projectile/bullet/slug/beanbag
 
@@ -35,6 +35,7 @@
 	name = "rubber shot"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "rubber"
+	caliber = "12ga rubber"
 	projectile_type = /obj/projectile/bullet/pellet/rubbershot
 	pellets = 8
 	variance = 25
@@ -44,12 +45,21 @@
 	name = "incendiary slug"
 	desc = "An incendiary-coated shotgun slug."
 	icon_state = "incendiary"
+	caliber = "12ga incendiary"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun
+
+/obj/item/ammo_casing/shotgun/blank
+	name = "blank shell"
+	desc = "A shell packed with powder but no projectile."
+	icon_state = "blank"
+	projectile_type = /obj/projectile/bullet/pellet/blank
+	custom_materials = list(/datum/material/iron=250)
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
 	icon_state = "improvised"
+	caliber = "improvised 12ga"
 	projectile_type = /obj/projectile/bullet/pellet/improvised
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10

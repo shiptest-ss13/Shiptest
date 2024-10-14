@@ -1,7 +1,10 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/nt",
 	"prefix": "NTSV",
-	"namelists": ["WEAPONS"],
+	"namelists": [
+		"WEAPONS"
+	],
 	"map_name": "Heron-Class Dreadnaught",
 	"map_short_name": "Heron-class",
 	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_heron.dmm",
@@ -33,15 +36,15 @@
 			"outfit": "/datum/outfit/job/nanotrasen/security",
 			"slots": 1
 		},
-		"ERT Officer":{
+		"ERT Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/security/ert",
 			"slots": 4
 		},
-		"ERT Medical Officer":{
+		"ERT Medical Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/security/ert/med",
 			"slots": 1
 		},
-		"ERT Engineering Officer":{
+		"ERT Engineering Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/security/ert/engi",
 			"slots": 1
 		},
@@ -53,20 +56,19 @@
 			"outfit": "/datum/outfit/job/nanotrasen/engineer",
 			"slots": 1
 		},
-		"Chief Engineer":{
+		"Chief Engineer": {
 			"outfit": "/datum/outfit/job/nanotrasen/ce",
 			"officer": true,
 			"slots": 1
 		},
 		"Roboticist": {
-			"outfit":"/datum/outfit/job/nanotrasen/roboticist",
+			"outfit": "/datum/outfit/job/nanotrasen/roboticist",
 			"slots": 1
 		},
-		"Medical Doctor":{
+		"Medical Doctor": {
 			"outfit": "/datum/outfit/job/nanotrasen/doctor",
 			"slots": 1
 		},
-
 		"Atmospheric Technician": 1,
 		"Quartermaster": 1,
 		"Cargo Technician": 1,

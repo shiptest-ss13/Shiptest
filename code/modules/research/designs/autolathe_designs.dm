@@ -356,7 +356,7 @@
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
-	build_path = /obj/item/kitchen/knife
+	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_knife
@@ -364,7 +364,7 @@
 	id = "plastic_knife"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 100)
-	build_path = /obj/item/kitchen/knife/plastic
+	build_path = /obj/item/melee/knife/plastic
 	category = list("initial", "Tool Designs","Dinnerware")
 
 /datum/design/fork
@@ -761,7 +761,7 @@
 	id = "foam_dart"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
-	build_path = /obj/item/ammo_box/foambox
+	build_path = /obj/item/storage/box/ammo/foam_darts
 	category = list("initial", "Misc")
 
 /datum/design/handcuffs
@@ -785,7 +785,7 @@
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c38_box/surplus
+	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -795,6 +795,14 @@
 	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/ammo_casing/shotgun/beanbag
 	category = list("initial", "Security", "Ammo")
+
+/datum/design/blank_shell
+	name = "Shotgun Blank"
+	id = "blank_shell"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_casing/shotgun/blank
+	category = list("Security", "Ammo")
 
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
@@ -809,7 +817,7 @@
 	id = "riot_darts"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50000) //Comes with 40 darts
-	build_path = /obj/item/ammo_box/foambox/riot
+	build_path = /obj/item/storage/box/ammo/foam_darts/riot
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
@@ -817,7 +825,7 @@
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c10mm/surplus
+	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c45_surplus
@@ -825,7 +833,7 @@
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c45/surplus
+	build_path = /obj/item/storage/box/ammo/c45_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm_surplus
@@ -833,7 +841,7 @@
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c9mm/surplus
+	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c556mmHITP_surplus
@@ -841,15 +849,7 @@
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c556mmHITP/surplus
-	category = list("initial", "Security", "Ammo")
-
-/datum/design/generic_ammo_box
-	name = "Generic Ammo Box"
-	id = "ammo-generic"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 1500)
-	build_path = /obj/item/ammo_box/generic
+	build_path = /obj/item/storage/box/ammo/c556mm_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/ammo_can
@@ -865,7 +865,7 @@
 	id = "cleaver"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 18000)
-	build_path = /obj/item/kitchen/knife/butcher
+	build_path = /obj/item/melee/knife/butcher
 	category = list("initial", "Dinnerware")
 
 /datum/design/spraycan

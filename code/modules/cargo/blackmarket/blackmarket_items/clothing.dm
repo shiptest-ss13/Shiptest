@@ -32,16 +32,6 @@
 	stock_max = 10
 	availability_prob = 80
 
-/datum/blackmarket_item/clothing/crown
-	name = "Crown"
-	desc = "A beautiful golden crown, rich with history and pedigree. Better worn than left to collect dust in a museum, right?"
-	item = /obj/item/clothing/head/crown/fancy
-
-	price_min = 1000
-	price_max = 2000
-	stock = 1
-	availability_prob = 20
-
 /datum/blackmarket_item/clothing/galaxy_blue
 	name = "Blue Galaxy Suit"
 	desc = "A handsome silk suit, treated with a finish of bluespace dust for an out of this world sheen."
@@ -264,7 +254,7 @@
 
 	price_min = 1500
 	price_max = 2500
-	stock = 1
+	stock_max = 3
 	availability_prob = 30
 
 /datum/blackmarket_item/clothing/frontiersmen_hardsuit

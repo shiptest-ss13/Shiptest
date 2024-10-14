@@ -69,11 +69,17 @@
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"
-	desc = "Contains a jackhammer, ideal for breaking rocks and breaking hull."
+	desc = "Contains a jackhammer, ideal for breaking rocks."
 	cost = 1750
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
 
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
@@ -104,6 +110,13 @@
 	contains = list(/obj/item/transfer_valve)
 	crate_name = "tank transfer valve crate"
 	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/tools/anglegrinder
+	name = "Angle Grinder"
+	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
+	cost = 2000
+	contains = list(/obj/item/gear_pack/anglegrinder)
+	crate_name = "Angle Grinder"
 
 /*
 		Liquid tanks
@@ -138,5 +151,16 @@
 	desc = "Contains a tank of firefighting foam. Also known as \"Phorid's Bane\"."
 	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
+	crate_name = "foam tank crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/tools/radfoamtank
+	name = "Radiation Foam Tank Crate"
+	desc = "Contains a tank of anti-radiation foam. Pressurized sprayer included!"
+	cost = 1500
+	contains = list(
+		/obj/item/watertank/anti_rad,
+		/obj/structure/reagent_dispensers/foamtank/antirad
+	)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large

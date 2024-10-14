@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(!hallucination)
 		return
 
-	hallucination--
+	hallucination = max(hallucination - 1, 0)
 
 	if(world.time < next_hallucination)
 		return
@@ -40,6 +40,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	next_hallucination = world.time + rand(100, 600)
 
 /mob/living/carbon/proc/set_screwyhud(hud_type)
+	if(HAS_TRAIT(src, TRAIT_ANALGESIA))
+		hud_type = SCREWYHUD_HEALTHY
 	hal_screwyhud = hud_type
 	update_health_hud()
 
@@ -1023,11 +1025,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					if(prob(25))
 						target.halitem.icon_state = "plasticx40"
 				if(3) //sword
-					target.halitem.icon = 'icons/obj/transforming_energy.dmi'
+					target.halitem.icon = 'icons/obj/weapon/energy.dmi'
 					target.halitem.icon_state = "sword0"
 					target.halitem.name = "Energy Sword"
 				if(4) //stun baton
-					target.halitem.icon = 'icons/obj/items_and_weapons.dmi'
+					target.halitem.icon = 'icons/obj/items.dmi'
 					target.halitem.icon_state = "stunbaton"
 					target.halitem.name = "Stun Baton"
 				if(5) //emag

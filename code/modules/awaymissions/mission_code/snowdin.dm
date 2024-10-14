@@ -129,12 +129,6 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
 	requires_power = TRUE
 
-/area/shuttle/snowdin/elevator1
-	name = "Excavation Elevator"
-
-/area/shuttle/snowdin/elevator2
-	name = "Mining Elevator"
-
 //liquid plasma!!!!!!//
 
 /turf/open/floor/plasteel/dark/snowdin
@@ -224,14 +218,19 @@
 						PP.adjustFireLoss(25)
 						if(plasma_parts.len)
 							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
-							PP.emote("scream")
 							NB.limb_id = "plasmaman" //change the species_id of the limb to that of a plasmaman
 							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
-							PP.visible_message(
-								"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
-								"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+							PP.force_scream()
+							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
+								PP.visible_message(
+									"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
+									"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+							else
+								PP.visible_message(
+									"<span class='warning'>[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!</span>",
+									"<span class='userdanger'>You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
@@ -507,13 +506,11 @@
 
 /obj/effect/spawner/lootdrop/snowdin/dungeonheavy
 	name = "dungeon heavy"
-	loot = list(/obj/item/singularityhammer = 25,
-				/obj/item/mjollnir = 10,
-				/obj/item/fireaxe = 25,
+	loot = list(/obj/item/melee/axe/fire = 25,
 				/obj/item/organ/brain/alien = 17,
 				/obj/item/dualsaber = 15,
 				/obj/item/organ/heart/demon = 7,
-				/obj/item/gun/ballistic/automatic/smg/c20r = 16,
+				/obj/item/gun/ballistic/automatic/smg/cobra = 16,
 				/obj/item/uplink/old = 2,
 				/obj/item/book/granter/spell/charge = 12,
 				/obj/item/grenade/clusterbuster/spawner_manhacks = 15,
@@ -530,7 +527,7 @@
 	loot = list(/obj/item/stack/sheet/mineral/snow{amount = 25} = 10,
 				/obj/item/toy/snowball = 15,
 				/obj/item/shovel = 10,
-				/obj/item/spear = 8,
+				/obj/item/melee/spear = 8,
 				)
 
 //special items//--
@@ -579,7 +576,7 @@
 	uniform = /obj/item/clothing/under/syndicate/coldres
 	shoes = /obj/item/clothing/shoes/combat/coldres
 	ears = /obj/item/radio/headset/syndicate/alt
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/syndicate
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	id = /obj/item/card/id/syndicate
 	implants = list(/obj/item/implant/exile)
 
