@@ -596,11 +596,13 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "ashhand"
+	item_state = "ashhand"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570,
 	)
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	rack_sound = 'sound/weapons/gun/revolver/viper_prime.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
@@ -647,7 +649,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	icon_state = "shadow"
-	item_state = "hp_generic"
+	item_state = "shadow"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	allowed_ammo_types = list(
@@ -656,14 +658,16 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
-	unique_reskin = list("Shadow" = "shadow",
-		"Army" = "shadow_army",
+	unique_reskin = list(\
+		"Shadow" = "shadow",
+		"Cattleman" = "shadow_cattleman",
 		"General" = "shadow_general",
-		"Frontier Scout" = "shadow_frontier",
-		"Nanotrasen Special" = "shadow_nanotrasen",
+		"Sheriff" = "shadow_sheriff",
+		"Cobra" = "shadow_cobra",
 		"Hired Gun" = "shadow_hiredgun",
 		"Buntline" = "shadow_buntline",
-		"Cavalry Special" = "shadow_cavalry"
+		"Cavalry" = "shadow_cavalry",
+		"Lanchester Special" = "shadow_lanchester"
 		)
 
 	recoil = 0 //weaker than normal revolver, no recoil
@@ -672,5 +676,10 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
+
+/obj/item/gun/ballistic/revolver/shadow/reskin_obj(mob/M)
+	. = ..()
+	if(current_skin)
+		item_state = unique_reskin[current_skin]
 
 EMPTY_GUN_HELPER(revolver/shadow)

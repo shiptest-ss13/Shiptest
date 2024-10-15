@@ -42,6 +42,7 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	show_magazine_on_sprite = TRUE
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
