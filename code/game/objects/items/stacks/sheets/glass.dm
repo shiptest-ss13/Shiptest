@@ -381,7 +381,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/plastitanium
-	name = "metallic-brown shard"
+	name = "brown metallic shard"
 	desc = "A nasty looking shard of plastitanium glass."
 	force = 6
 	throwforce = 11
