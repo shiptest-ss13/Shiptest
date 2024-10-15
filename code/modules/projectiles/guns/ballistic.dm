@@ -202,12 +202,14 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	. = ..()
-	if (.)
+
+	if(.)
 		return
+
 	if(sealed_magazine)
 		to_chat(user, span_warning("The magazine on [src] is sealed and cannot be reloaded!"))
 		return
-	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
+	if(!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine)
 			insert_magazine(user, AM)
@@ -217,7 +219,8 @@
 			else
 				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
 		return
-	if (istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
+
+	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box/magazine/ammo_stack))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
 			if (chambered && !chambered.BB)
 				chambered.on_eject(shooter = user)
@@ -234,6 +237,7 @@
 	if (can_be_sawn_off)
 		if (try_sawoff(user, A))
 			return
+
 	return FALSE
 
 ///Prefire empty checks for the bolt drop

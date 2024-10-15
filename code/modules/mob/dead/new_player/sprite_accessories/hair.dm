@@ -90,29 +90,21 @@
 	name = "Bowlcut 2"
 	icon_state = "hair_bowlcut2"
 
-/datum/sprite_accessory/hair/braid
-	name = "Braid (Floorlength)"
-	icon_state = "hair_braid"
-
-/datum/sprite_accessory/hair/braided
-	name = "Braided"
-	icon_state = "hair_braided"
-
-/datum/sprite_accessory/hair/front_braid
-	name = "Braided Front"
-	icon_state = "hair_braidfront"
-
-/datum/sprite_accessory/hair/not_floorlength_braid
-	name = "Braid (High)"
+/datum/sprite_accessory/hair/ponytail_braided
+	name = "Ponytail (Braided)"
 	icon_state = "hair_braid2"
 
-/datum/sprite_accessory/hair/lowbraid
-	name = "Braid (Low)"
-	icon_state = "hair_hbraid"
+/datum/sprite_accessory/hair/ponytail_braided_short
+	name = "Ponytail (Braided Short)"
+	icon_state = "hair_braid"
 
-/datum/sprite_accessory/hair/shortbraid
-	name = "Braid (Short)"
-	icon_state = "hair_shortbraid"
+/datum/sprite_accessory/hair/ponytail_straight
+	name = "Ponytail (Straight)"
+	icon_state = "hair_longstraightponytail"
+
+/datum/sprite_accessory/hair/ponytail_straight_short
+	name = "Ponytail (Straight Short)"
+	icon_state = "hair_highponytail"
 
 /datum/sprite_accessory/hair/braidtail
 	name = "Braided Tail"
@@ -503,12 +495,8 @@
 	icon_state = "hair_ponytail"
 
 /datum/sprite_accessory/hair/ponytail2
-	name = "Ponytail 2"
-	icon_state = "hair_ponytail2"
-
-/datum/sprite_accessory/hair/ponytail3
-	name = "Ponytail 3"
-	icon_state = "hair_ponytail3"
+	name = "Ponytail (Grace)"
+	icon_state = "hair_ponytailgrace"
 
 /datum/sprite_accessory/hair/ponytail4
 	name = "Ponytail 4"
@@ -526,21 +514,14 @@
 	name = "Ponytail 7"
 	icon_state = "hair_ponytail7"
 
-/datum/sprite_accessory/hair/highponytail
-	name = "Ponytail (High)"
-	icon_state = "hair_highponytail"
 
 /datum/sprite_accessory/hair/stail
 	name = "Ponytail (Short)"
 	icon_state = "hair_stail"
 
-/datum/sprite_accessory/hair/longponytail
-	name = "Ponytail (Long)"
-	icon_state = "hair_longstraightponytail"
-
 /datum/sprite_accessory/hair/countryponytail
 	name = "Ponytail (Country)"
-	icon_state = "hair_country"
+	icon_state = "hair_ponytailcountry"
 
 /datum/sprite_accessory/hair/fringetail
 	name = "Ponytail (Fringe)"
@@ -721,6 +702,10 @@
 /datum/sprite_accessory/hair/ruby
 	name = "Ruby"
 	icon_state = "hair_ruby"
+
+/datum/sprite_accessory/hair/rubylong
+	name = "Ruby (Long)"
+	icon_state = "hair_rubylong"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
