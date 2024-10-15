@@ -55,7 +55,6 @@
 		/obj/item/clothing/under/dress/skirt/plaid/blue = 2,
 		/obj/item/clothing/under/dress/skirt/plaid/green = 2,
 		/obj/item/clothing/under/dress/skirt/plaid/purple = 2,
-		/obj/item/clothing/under/dress/skirt = 2,
 		/obj/item/clothing/under/dress/skirt/color = 2,
 		/obj/item/clothing/under/dress/skirt/color/blue = 2,
 		/obj/item/clothing/under/dress/skirt/color/red = 2,
