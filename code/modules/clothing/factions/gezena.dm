@@ -229,7 +229,7 @@
 	name = "\improper PGF Uhro-sez Boots"
 	desc = "The word “uhro-sez” translates to “steel-foot”, in reference to the steel toe protection provided by these boots. Standard issue to all members of all branches of the PGF military."
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
-	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi'
 	icon_state = "pgfboots"
 	item_state = "jackboots"
 
