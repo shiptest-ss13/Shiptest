@@ -132,7 +132,7 @@
 	item_state = "phoron"
 
 	points = 15
-	custom_materials = list(/datum/material/plasma=775, /datum/material/sulfur=25, /datum/material/carbon=50, /datum/material/quartz=100)
+	custom_materials = list(/datum/material/plasma=1650, /datum/material/sulfur=50, /datum/material/carbon=100, /datum/material/quartz=200)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 5
 	scan_state = "phoron"
