@@ -344,7 +344,7 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
-	if(!active)
+	if(active)
 		mining.toggle_spawning() //turns mob spawning off after a malfunction
 	switch(malfunction_type)
 		if(MALF_LASER)
