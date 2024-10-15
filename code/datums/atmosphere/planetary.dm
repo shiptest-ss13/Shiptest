@@ -51,8 +51,8 @@
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
 
-	minimum_temp = 80 //fucking cold to
-	maximum_temp = 200 //still cold
+	minimum_temp = 200 //fucking cold to
+	maximum_temp = 240 //still cold
 
 
 //wasteplanet
