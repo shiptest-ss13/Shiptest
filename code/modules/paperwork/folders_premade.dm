@@ -41,6 +41,15 @@
 	name = "folder- 'TOP SECRET'"
 	desc = "A folder stamped \"Top Secret - Property of The Syndicate.\""
 
+/obj/item/folder/documents/syndicate/cybersun
+	document = /obj/item/documents/syndicate/cybersun
+	icon_state = "folder_sred"
+	desc = "A folder stamped \"Top Secret - Property of Cybersun Industries.\""
+
+/obj/item/folder/documents/syndicate/cybersun/biodynamics
+	document = /obj/item/documents/syndicate/cybersun/biodynamics
+	icon_state = "folder_sblue"
+
 /obj/item/folder/documents/syndicate/red
 	document = /obj/item/documents/syndicate/red
 	icon_state = "folder_sred"
@@ -51,6 +60,10 @@
 
 /obj/item/folder/documents/syndicate/mining
 	document = /obj/item/documents/syndicate/mining
+
+/obj/item/folder/documents/syndicate/ngr
+	document = /obj/item/documents/syndicate/ngr
+	icon_state = "folder_ngr"
 
 /obj/item/folder/documents/solgov
 	document = /obj/item/documents/solgov

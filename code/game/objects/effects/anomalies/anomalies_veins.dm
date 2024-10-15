@@ -1,9 +1,9 @@
 /obj/effect/anomaly/veins
 	name = "veins"
 	icon_state = "veins"
-	desc = "A mysterious anomaly, throbbing purple veins, suspended midair."
+	desc = "Throbbing purple veins, an exposed artery of the world. It thirsts."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/veins
+	core = /obj/item/assembly/signaler/anomaly/veins
 	effectrange = 3
 	pulse_delay = 4 SECONDS
 

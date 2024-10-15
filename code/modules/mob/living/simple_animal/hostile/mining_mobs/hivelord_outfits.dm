@@ -25,7 +25,6 @@
 		/obj/item/clothing/suit/hooded/wintercoat = 1,
 		/obj/item/clothing/suit/jacket = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
-		/obj/item/clothing/suit/jacket/leather/overcoat = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/jacket/puffer = 1,
@@ -81,7 +80,6 @@
 			/obj/item/clothing/head/hardhat/orange = 2,
 			/obj/item/clothing/head/hardhat/dblue = 2,
 			/obj/item/clothing/head/pirate = 1,
-			/obj/item/clothing/head/foilhat = 1
 			)
 		)
 	if(prob(50))
@@ -463,8 +461,8 @@
 			/obj/item/assembly/flash/handheld = 5,
 			/obj/item/storage/box/evidence = 6,
 			/obj/item/flashlight/seclite = 4,
-			/obj/item/ammo_box/c9mm/rubbershot = 3,
-			/obj/item/ammo_box/c9mm = 1,
+			/obj/item/storage/box/ammo/c9mm_rubber = 3,
+			/obj/item/storage/box/ammo/c9mm = 1,
 			/obj/item/stock_parts/cell/gun = 3,
 			/obj/item/coin/antagtoken = 1,
 			/obj/item/grenade/stingbang = 1

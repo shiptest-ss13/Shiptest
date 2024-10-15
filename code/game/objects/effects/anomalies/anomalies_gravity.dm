@@ -9,10 +9,9 @@
 /obj/effect/anomaly/grav
 	name = "throngler"
 	icon_state = "gravity"
-	desc = "A mysterious anomaly that sucks things towards it with a gravitational field, ending in what has been termed a 'throngling'."
+	desc = "A miniature gravity well, constantly pulling the world around it into a 'throngling'."
 	density = FALSE
-	aSignal = /obj/item/assembly/signaler/anomaly/grav
-	bSignal = null
+	core = /obj/item/assembly/signaler/anomaly/grav
 	effectrange = 4
 	var/boing = 0
 	///Warp effect holder for displacement filter to "pulse" the anomaly

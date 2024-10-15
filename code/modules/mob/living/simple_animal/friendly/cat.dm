@@ -1,7 +1,6 @@
-//Cat
 /mob/living/simple_animal/pet/cat
 	name = "cat"
-	desc = "Kitty!!"
+	desc = "Most modern cats hail from a solarian experimental geneline. The perfect purrtection from rats and radiation."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
@@ -39,6 +38,13 @@
 	held_state = "cat2"
 
 	footstep_type = FOOTSTEP_MOB_CLAW
+
+	var/grace = RAD_GRACE_PERIOD
+	var/radiation_count = 0
+	var/current_tick_amount = 0
+	var/last_tick_amount = 0
+	var/fail_to_receive = 0
+	var/glow_strength
 
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
@@ -177,8 +183,49 @@
 		collar_type = "[initial(collar_type)]"
 	regenerate_icons()
 
+/mob/living/simple_animal/pet/cat/rad_act(amount)
+	. = ..()
+	if(amount <= RAD_BACKGROUND_RADIATION)
+		return
+	current_tick_amount += amount
+	update_glow()
+
+/mob/living/simple_animal/pet/cat/proc/update_glow()
+	var/old_glow_strength = glow_strength
+	switch(radiation_count)
+		if(-INFINITY to RAD_LEVEL_NORMAL)
+			glow_strength = 1
+		if(RAD_LEVEL_NORMAL to RAD_LEVEL_MODERATE)
+			glow_strength = 2
+		if(RAD_LEVEL_MODERATE to RAD_LEVEL_HIGH)
+			glow_strength = 3
+		if(RAD_LEVEL_HIGH to RAD_LEVEL_VERY_HIGH)
+			glow_strength = 4
+		if(RAD_LEVEL_VERY_HIGH to RAD_LEVEL_CRITICAL)
+			glow_strength = 5
+		if(RAD_LEVEL_CRITICAL to INFINITY)
+			glow_strength = 6
+	if((old_glow_strength != glow_strength) && (glow_strength > 1))
+		src.add_filter("ray_cat_glow", 2, list("type" = "outline", "color" = RAD_GLOW_COLOR, "size" = glow_strength))
+	if(glow_strength <= 1)
+		src.remove_filter("ray_cat_glow")
 
 /mob/living/simple_animal/pet/cat/Life()
+	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
+	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
+
+	if(current_tick_amount)
+		grace = RAD_GRACE_PERIOD
+		last_tick_amount = current_tick_amount
+	else
+		grace--
+		if(grace <= 0)
+			radiation_count = 0
+
+	current_tick_amount = 0
+
+	update_glow()
+
 	if(!stat && !buckled && !client)
 		if(prob(1))
 			manual_emote(pick("stretches out for a belly rub.", "wags its tail.", "lies down."))

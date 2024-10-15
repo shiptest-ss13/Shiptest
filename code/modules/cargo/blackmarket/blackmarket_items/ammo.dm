@@ -28,7 +28,7 @@
 /datum/blackmarket_item/ammo/himehabu_box
 	name = ".22 LR Ammo Box"
 	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
-	item = /obj/item/ammo_box/c22lr_box
+	item = /obj/item/storage/box/ammo/c22lr
 
 	price_min = 100
 	price_max = 300
@@ -39,7 +39,7 @@
 /datum/blackmarket_item/ammo/a357_box
 	name = ".357 Ammo Box"
 	desc = "A 50 round ammo box of .357."
-	item = /obj/item/ammo_box/a357_box
+	item = /obj/item/storage/box/ammo/a357
 
 	price_min = 150
 	price_max = 500
@@ -60,7 +60,7 @@
 /datum/blackmarket_item/ammo/c299
 	name = "Eoehoma .299 Caseless Ammo Box"
 	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
-	item = /obj/item/ammo_box/c299
+	item = /obj/item/storage/box/ammo/c299
 
 	price_min = 300
 	price_max = 700
@@ -253,7 +253,7 @@
 /datum/blackmarket_item/ammo/a4570hp
 	name = ".45-70 Hollow Point Ammo Box"
 	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
-	item = /obj/item/ammo_box/a4570/hp
+	item = /obj/item/storage/box/ammo/a4570_hp
 
 	price_min = 600
 	price_max = 1000
