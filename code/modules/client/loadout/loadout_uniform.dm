@@ -200,6 +200,11 @@
 	display_name = "dress, black tango"
 	path = /obj/item/clothing/under/dress/blacktango
 
+/datum/gear/uniform/dress/one_shoulder_dress
+
+	display_name = "dress, one shoulder"
+	path = /obj/item/clothing/under/dress/one_shoulder
+
 /datum/gear/uniform/dress/whitedress
 
 	display_name = "dress, white"

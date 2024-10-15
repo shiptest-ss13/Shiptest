@@ -35,6 +35,13 @@
 	icon_state = "red_evening_gown"
 	item_state = "red_evening_gown"
 
+/obj/item/clothing/under/dress/one_shoulder
+
+	name = "one shoulder dress"
+	desc = "A modern black dress with only one shoulder strap. Comes with a matching pair of arm warmers."
+	icon_state = "one_shoulder_dress"
+	can_adjust = TRUE
+
 /obj/item/clothing/under/dress/skirt/color
 	name = "black skirt"
 	desc = "A black, casual skirt."
