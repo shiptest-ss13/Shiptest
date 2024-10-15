@@ -25,17 +25,6 @@
 	stock_max = 10
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/himehabu_box
-	name = ".22 LR Ammo Box"
-	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
-	item = /obj/item/storage/box/ammo/c22lr
-
-	price_min = 100
-	price_max = 300
-	stock_min = 6
-	stock_max = 10
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/a357_box
 	name = ".357 Ammo Box"
 	desc = "A 50 round ammo box of .357."
