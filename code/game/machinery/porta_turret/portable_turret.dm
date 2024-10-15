@@ -908,6 +908,39 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	max_integrity = 300
 
+/* New Gorlex Republic Turrets */
+// Midline ballistic turrets
+
+/obj/machinery/porta_turret/ship/ngr
+	name = "Oasis Turret"
+	desc = "A turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the nation!"
+	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret") //player_syndicate is just to be safe
+
+/obj/machinery/porta_turret/ship/ngr/light
+	name = "Sonoran Turret"
+	desc = "A light turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the Nation, using locally produced munitions!"
+	stun_projectile = /obj/projectile/bullet/c57x39mm/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	lethal_projectile = /obj/projectile/bullet/c57x39mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	scan_range = 7
+	shot_delay = 10
+
+/obj/machinery/porta_turret/ship/ngr/heavy
+	name = "Cliff Turret"
+	desc = "A heavy turret manufactured by the New Gorlex Republic for its ships and installations. Has a reputation of being extremely dangerous."
+	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	scan_range = 14
+	shot_delay = 30
+
+
 /* Inteq Turrets */
 //slower rof, higher damage + range
 
