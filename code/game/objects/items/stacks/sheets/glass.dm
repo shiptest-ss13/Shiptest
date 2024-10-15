@@ -379,3 +379,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "plasma"
 	weld_material = /obj/item/stack/sheet/plasmaglass
+
+/obj/item/shard/plastitanium
+	name = "metallic-brown shard"
+	desc = "A nasty looking shard of plastitanium glass."
+	force = 6
+	throwforce = 11
+	icon_state = "plastitaniumlarge"
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
+	icon_prefix = "plastitanium"
+	weld_material = /obj/item/stack/sheet/plastitaniumglass
