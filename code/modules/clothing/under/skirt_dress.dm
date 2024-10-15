@@ -62,6 +62,51 @@
 	item_state = "p_suit"
 	custom_price = 60
 
+/obj/item/clothing/under/dress/skirt/color/white
+
+	name = "white skirt"
+	desc = "A white, casual skirt."
+	icon_state = "whiteskirt"
+	custom_price = 60
+
+/obj/item/clothing/under/dress/skirt/pinafore
+
+	name = "black pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is black."
+	icon_state = "black_pinafore"
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/dress/skirt/pinafore/maroon
+
+	name = "maroon pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is maroon."
+	icon_state = "maroon_pinafore"
+
+/obj/item/clothing/under/dress/skirt/pinafore/cerulean
+
+	name = "cerulean pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is cerulean."
+	icon_state = "cerulean_pinafore"
+
+/obj/item/clothing/under/dress/skirt/pinafore/plaid
+
+	name = "red plaid pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is in red plaid."
+	icon_state = "red_plaid_pinafore"
+
+/obj/item/clothing/under/dress/skirt/pinafore/plaid/green
+
+	name = "green plaid pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is in green plaid."
+	icon_state = "green_plaid_pinafore"
+
+/obj/item/clothing/under/dress/skirt/pinafore/plaid/brown
+
+	name = "brown plaid pinafore"
+	desc = "It's really just an apron that one wears over a shirt or dress. This one is in brown plaid."
+	icon_state = "brown_plaid_pinafore"
+
 /obj/item/clothing/under/dress/skirt/plaid
 	name = "red plaid skirt"
 	desc = "A preppy red skirt with a white blouse."
