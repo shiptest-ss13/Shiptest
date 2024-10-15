@@ -18,7 +18,11 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
-	var/smooth_icon = 'icons/turf/floors/whitesand.dmi'
+
+	has_footsteps = TRUE
+	footstep_icon_state = "whitesand"
+
+	smooth_icon = 'icons/turf/floors/whitesand.dmi'
 
 /turf/open/floor/plating/asteroid/whitesands/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -83,7 +87,7 @@
 	icon = 'icons/turf/floors/whitesands_grass.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN //moth woman did not do this, it was imaginos
 	icon_state = "ws_grass"
 	base_icon_state = "ws_grass"
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/grass/dead
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
 	initial_gas_mix = WHITESANDS_ATMOS
 	planetary_atmos = TRUE
@@ -98,7 +102,21 @@
 	slowdown = 0
 	smooth_icon = 'icons/turf/floors/whitesands_grass.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN //moth woman did not do this, it was imaginos
 
+/turf/open/floor/plating/asteroid/whitesands/grass/getDug()
+	. = ..()
+	ScrapeAway()
+
+/turf/open/floor/plating/asteroid/whitesands/grass/burn_tile()
+	ScrapeAway()
+	return TRUE
+
+/turf/open/floor/plating/asteroid/whitesands/grass/ex_act(severity, target)
+	. = ..()
+	ScrapeAway()
+
 /turf/open/floor/plating/asteroid/whitesands/grass/lit
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
 	light_power = 1
 	light_range = 2
 
@@ -106,7 +124,13 @@
 	name = "dead grass"
 	desc = "The few known flora on Whitesands also don't tend to live for very long, especially after the war."
 	color = "#ddffb3" //the green makes a grey color, dead as hell
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass/dead
+	dug = TRUE
 
 /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
 	light_power = 1
 	light_range = 2
+

@@ -247,74 +247,33 @@
 	icon = 'icons/turf/planetary/moon.dmi'
 	icon_state = "moonsand"
 	base_icon_state = "moonsand"
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_ASTEROID
-	clawfootstep = FOOTSTEP_HARD_CLAW
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	layer = SAND_TURF_LAYER
 	planetary_atmos = TRUE
 	initial_gas_mix = AIRLESS_ATMOS
 	slowdown = 1.1 //hardsuits will slow enough
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
 	floor_variance = 0
 	max_icon_states = 0
 
-	// footprint vars
-	var/entered_dirs
-	var/exited_dirs
+	has_footsteps = TRUE
+	footstep_icon_state = "moon"
 
-/turf/open/floor/plating/asteroid/moon/Entered(atom/movable/AM)
+	smooth_icon = 'icons/turf/floors/moonsand.dmi'
+
+/turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(entered_dirs & AM.dir))
-		entered_dirs |= AM.dir
-		update_icon()
-
-/turf/open/floor/plating/asteroid/moon/Exited(atom/movable/AM)
-	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(exited_dirs & AM.dir))
-		exited_dirs |= AM.dir
-		update_icon()
-
-// adapted version of footprints' update_icon code
-/turf/open/floor/plating/asteroid/moon/update_overlays()
-	. = ..()
-	for(var/Ddir in GLOB.cardinals)
-		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-moon-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "moon1", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["entered-moon-[Ddir]"] = print
-			. += print
-		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-moon-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "moon2", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["exited-moon-[Ddir]"] = print
-			. += print
-
-// pretty much ripped wholesale from footprints' version of this proc
-/turf/open/floor/plating/asteroid/moon/setDir(newdir)
-	if(dir == newdir)
-		return ..()
-
-	var/ang_change = dir2angle(newdir) - dir2angle(dir)
-	var/old_entered_dirs = entered_dirs
-	var/old_exited_dirs = exited_dirs
-	entered_dirs = 0
-	exited_dirs = 0
-
-	for(var/Ddir in GLOB.cardinals)
-		var/NDir = angle2dir_cardinal(dir2angle(Ddir) + ang_change)
-		if(old_entered_dirs & Ddir)
-			entered_dirs |= NDir
-		if(old_exited_dirs & Ddir)
-			exited_dirs |= NDir
-
-/turf/open/floor/plating/asteroid/moon/getDug()
-	. = ..()
-	cut_overlays()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
+		icon_plating = null
 
 /turf/open/floor/plating/asteroid/moon/lit
 	light_range = 2

@@ -12,68 +12,25 @@
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
 	slowdown = 1.5
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
 	floor_variance = 0
 	max_icon_states = 0
 
-	// footprint vars
-	var/entered_dirs
-	var/exited_dirs
+	has_footsteps = TRUE
+	footstep_icon_state = "desert"
+	smooth_icon = 'icons/turf/floors/moonsand.dmi'
 
-/turf/open/floor/plating/asteroid/desert/Entered(atom/movable/AM)
+/turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(entered_dirs & AM.dir))
-		entered_dirs |= AM.dir
-		update_icon()
-
-/turf/open/floor/plating/asteroid/desert/Exited(atom/movable/AM)
-	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(exited_dirs & AM.dir))
-		exited_dirs |= AM.dir
-		update_icon()
-
-// adapted version of footprints' update_icon code
-/turf/open/floor/plating/asteroid/desert/update_overlays()
-	. = ..()
-	for(var/Ddir in GLOB.cardinals)
-		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-desert-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "desert1", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["entered-desert-[Ddir]"] = print
-			. += print
-		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-desert-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "desert2", layer = TURF_DECAL_LAYER, dir = Ddir)
-				GLOB.bloody_footprints_cache["exited-desert-[Ddir]"] = print
-			. += print
-
-// pretty much ripped wholesale from footprints' version of this proc
-/turf/open/floor/plating/asteroid/desert/setDir(newdir)
-	if(dir == newdir)
-		return ..()
-
-	var/ang_change = dir2angle(newdir) - dir2angle(dir)
-	var/old_entered_dirs = entered_dirs
-	var/old_exited_dirs = exited_dirs
-	entered_dirs = 0
-	exited_dirs = 0
-
-	for(var/Ddir in GLOB.cardinals)
-		var/NDir = angle2dir_cardinal(dir2angle(Ddir) + ang_change)
-		if(old_entered_dirs & Ddir)
-			entered_dirs |= NDir
-		if(old_exited_dirs & Ddir)
-			exited_dirs |= NDir
-
-/turf/open/floor/plating/asteroid/desert/getDug()
-	. = ..()
-	cut_overlays()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
+		icon_plating = null
 
 /turf/open/floor/plating/asteroid/desert/lit
 	light_range = 2
@@ -93,6 +50,7 @@
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	layer = STONE_TURF_LAYER
 	floor_variance = 0
 	max_icon_states = 0
 	planetary_atmos = TRUE
@@ -100,7 +58,9 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
-	var/smooth_icon = 'icons/turf/floors/drydesert.dmi'
+	smooth_icon = 'icons/turf/floors/drydesert.dmi'
+
+	has_footsteps = FALSE
 
 /turf/open/floor/plating/asteroid/dry_seafloor/Initialize(mapload, inherited_virtual_z)
 	. = ..()

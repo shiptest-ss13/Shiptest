@@ -23,9 +23,10 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
 	digResult = /obj/item/stack/sheet/mineral/snow
-	// footprint vars
-	var/entered_dirs
-	var/exited_dirs
+
+	has_footsteps = TRUE
+	footstep_icon_state = "ice"
+
 	var/list/smooth_icons =  list('icons/turf/floors/snow.dmi', 'icons/turf/floors/snow_2.dmi')
 
 /turf/open/floor/plating/asteroid/snow/Initialize(mapload, inherited_virtual_z)
@@ -38,60 +39,6 @@
 		icon_plating = null
 	if(prob(floor_variance))
 		add_overlay("snowalt_[rand(1,max_icon_states)]")
-
-/turf/open/floor/plating/asteroid/snow/Entered(atom/movable/AM)
-	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(entered_dirs & AM.dir))
-		entered_dirs |= AM.dir
-		update_appearance()
-
-/turf/open/floor/plating/asteroid/snow/Exited(atom/movable/AM)
-	. = ..()
-	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
-		return
-	if(!(exited_dirs & AM.dir))
-		exited_dirs |= AM.dir
-		update_appearance()
-
-// adapted version of footprints' update_icon code
-/turf/open/floor/plating/asteroid/snow/update_overlays()
-	. = ..()
-	for(var/Ddir in GLOB.cardinals)
-		if(entered_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["entered-snow-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "ice1", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = 19, pixel_y = 19)
-				GLOB.bloody_footprints_cache["entered-snow-[Ddir]"] = print
-			. += print
-		if(exited_dirs & Ddir)
-			var/image/print = GLOB.bloody_footprints_cache["exited-snow-[Ddir]"]
-			if(!print)
-				print = image('icons/effects/footprints.dmi', "ice2", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = 19, pixel_y = 19)
-				GLOB.bloody_footprints_cache["exited-snow-[Ddir]"] = print
-			. += print
-
-// pretty much ripped wholesale from footprints' version of this proc
-/turf/open/floor/plating/asteroid/snow/setDir(newdir)
-	if(dir == newdir)
-		return ..()
-
-	var/ang_change = dir2angle(newdir) - dir2angle(dir)
-	var/old_entered_dirs = entered_dirs
-	var/old_exited_dirs = exited_dirs
-	entered_dirs = 0
-	exited_dirs = 0
-
-	for(var/Ddir in GLOB.cardinals)
-		var/NDir = angle2dir_cardinal(dir2angle(Ddir) + ang_change)
-		if(old_entered_dirs & Ddir)
-			entered_dirs |= NDir
-		if(old_exited_dirs & Ddir)
-			exited_dirs |= NDir
-
-	update_appearance()
-	return ..()
 
 /turf/open/floor/plating/asteroid/snow/getDug()
 	. = ..()
@@ -162,7 +109,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
-	var/smooth_icon = 'icons/turf/floors/icerock.dmi'
+	smooth_icon = 'icons/turf/floors/icerock.dmi'
 
 /turf/open/floor/plating/asteroid/icerock/Initialize(mapload, inherited_virtual_z)
 	. = ..()

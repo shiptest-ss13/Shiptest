@@ -3,7 +3,7 @@
 	name = "water"
 	desc = "Shallow water."
 	icon = 'icons/turf/floors.dmi'
-	icon_state = "riverwater_motion"
+	icon_state = "water"
 	baseturfs = /turf/open/water
 	planetary_atmos = TRUE
 	slowdown = 1
@@ -107,8 +107,6 @@
 
 	name = "sulfuric acid pool"
 	desc = "Shallow sulfuric acid. It isn't the best ideas to step in this, but you are able to without many short term consequnces."
-	icon = 'icons/turf/planetary/whitesands.dmi'
-	icon_state = "water"
 	baseturfs = /turf/open/water/whitesands
 	planetary_atmos = TRUE
 	color = "#57ffd5"
@@ -139,8 +137,6 @@
 /turf/open/water/oasis
 	name = "freshwater"
 	desc = "Nice and warm freshwater. Drinkable and bathable, it is highly valuable in scarce locations"
-	icon = 'icons/turf/planetary/whitesands.dmi'
-	icon_state = "water"
 	baseturfs = /turf/open/water/oasis
 	planetary_atmos = TRUE
 	color = "#8ac7e6"

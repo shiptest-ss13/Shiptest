@@ -7,7 +7,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroid"
-	icon_plating = "asteroid"
 	postdig_icon_change = TRUE
 	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
@@ -26,6 +25,16 @@
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	/// Whether the turf has been dug or not
 	var/dug
+	///do we even use footsteps?
+	var/has_footsteps = FALSE
+	/// footprint var
+	var/entered_dirs
+	/// footprint var num 2
+	var/exited_dirs
+	/// icon_name used for footsteps
+	var/footstep_icon_state
+	/// smoothed icon in case we use it
+	var/smooth_icon
 
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
@@ -34,7 +43,13 @@
 
 	if(prob(floor_variance))
 		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
-		icon_plating = icon_state
+
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-19, -19)
+		transform = translation
+		icon = smooth_icon
+		icon_plating = null
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
@@ -47,9 +62,15 @@
 
 	new digResult(src, 5)
 	if(postdig_icon_change)
-		if(!postdig_icon)
+		if(!postdig_icon || smoothing_flags)
 			icon_plating = "[base_icon_state]_dug"
 			icon_state = "[base_icon_state]_dug"
+	if(has_footsteps)
+		cut_overlays()
+		has_footsteps = FALSE
+
+	if(smoothing_flags)
+		add_overlay("[base_icon_state]_dug")
 	dug = TRUE
 
 /// If the user can dig the turf
@@ -123,6 +144,71 @@
 /turf/open/floor/plating/asteroid/ex_act(severity, target)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
 	contents_explosion(severity, target)
+
+//footstep handling
+/turf/open/floor/plating/asteroid/Entered(atom/movable/AM)
+	. = ..()
+	if(!has_footsteps || !footstep_icon_state)
+		return
+	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
+		return
+	if(!(entered_dirs & AM.dir))
+		entered_dirs |= AM.dir
+		update_icon()
+
+/turf/open/floor/plating/asteroid/Exited(atom/movable/AM)
+	. = ..()
+	if(!has_footsteps || !footstep_icon_state)
+		return
+	if(!iscarbon(AM) || (AM.movement_type & (FLYING|VENTCRAWLING|FLOATING|PHASING)))
+		return
+	if(!(exited_dirs & AM.dir))
+		exited_dirs |= AM.dir
+		update_icon()
+// adapted version of footprints' update_icon code
+/turf/open/floor/plating/asteroid/update_overlays()
+	. = ..()
+	if(!has_footsteps || !footstep_icon_state)
+		return
+
+	var/offset = 0
+	if(smoothing_flags)
+		offset = 19
+
+	for(var/Ddir in GLOB.cardinals)
+		if(entered_dirs & Ddir)
+			var/image/print = GLOB.bloody_footprints_cache["entered-[footstep_icon_state]-[Ddir]"]
+			if(!print)
+				print = image('icons/effects/footprints.dmi', "[footstep_icon_state]1", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = offset, pixel_y = offset)
+				GLOB.bloody_footprints_cache["entered-desert-[Ddir]"] = print
+			. += print
+		if(exited_dirs & Ddir)
+			var/image/print = GLOB.bloody_footprints_cache["exited-[footstep_icon_state]-[Ddir]"]
+			if(!print)
+				print = image('icons/effects/footprints.dmi', "[footstep_icon_state]2", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = offset, pixel_y = offset)
+				GLOB.bloody_footprints_cache["exited-[footstep_icon_state]-[Ddir]"] = print
+			. += print
+
+// pretty much ripped wholesale from footprints' version of this proc
+/turf/open/floor/plating/asteroid/setDir(newdir)
+	if(!has_footsteps || !footstep_icon_state)
+		return
+	if(dir == newdir)
+		return ..()
+
+	var/ang_change = dir2angle(newdir) - dir2angle(dir)
+	var/old_entered_dirs = entered_dirs
+	var/old_exited_dirs = exited_dirs
+	entered_dirs = 0
+	exited_dirs = 0
+
+	for(var/Ddir in GLOB.cardinals)
+		var/NDir = angle2dir_cardinal(dir2angle(Ddir) + ang_change)
+		if(old_entered_dirs & Ddir)
+			entered_dirs |= NDir
+		if(old_exited_dirs & Ddir)
+			exited_dirs |= NDir
+
 
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
