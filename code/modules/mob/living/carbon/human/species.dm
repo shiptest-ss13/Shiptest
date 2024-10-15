@@ -1975,7 +1975,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2.5,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2.3,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment
