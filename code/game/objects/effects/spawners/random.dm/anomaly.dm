@@ -16,6 +16,7 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/random/anomaly/safe
@@ -26,6 +27,7 @@
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/random/anomaly/dangerous
@@ -211,8 +213,8 @@
 
 /obj/effect/spawner/random/anomaly/storm
 	loot = list(
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/flux/storm,
+		/obj/effect/anomaly/pyro/storm,
 		/obj/effect/anomaly/sparkler,
 		/obj/effect/anomaly/veins,
 		/obj/effect/anomaly/phantom,
