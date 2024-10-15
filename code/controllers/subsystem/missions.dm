@@ -18,5 +18,3 @@ SUBSYSTEM_DEF(missions)
 		if(inactive_missions.len)
 			var/datum/mission/dynamic/mission_to_start = inactive_missions[inactive_missions.len]
 			mission_to_start.start_mission()
-
-

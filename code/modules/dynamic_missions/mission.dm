@@ -127,7 +127,7 @@
 /datum/mission/proc/can_complete()
 	return !failed
 
-/datum/mission/proc/get_tgui_info(list/items_on_pad)
+/datum/mission/proc/get_tgui_info(list/items_on_pad = list())
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = ""

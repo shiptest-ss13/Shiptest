@@ -21,7 +21,7 @@ export const MissionBoard = (props, context) => {
   );
 };
 
-const MissionsContent = (props, context) => {
+export const MissionsContent = (props, context) => {
   const { act, data } = useBackend<Data>(context);
   const { missions, pad, id_inserted, sending } = data;
   return (
@@ -97,9 +97,8 @@ const MissionsList = (props, context) => {
           >
             Turn in
           </Button>
-          <LabeledList.Divider />
           {duration ? missionTimer(mission) : ''}
-          <LabeledList.Divider />
+
           {validItems.map((validItem: string) => (
             <Box>{validItem}</Box>
           ))}

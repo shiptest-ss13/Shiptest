@@ -59,8 +59,6 @@
 		desc = "We are looking for a [mission_item::name]"
 
 /obj/effect/landmark/mission_poi/main/blackbox
-	name = "blackbox recovery"
-	desc = "Recover some lost logs from this ruin's blackbox recorder."
 	icon_state = "main_blackbox"
 	already_spawned = TRUE
 
@@ -71,4 +69,6 @@
 			return recorder.stored
 
 /datum/mission/dynamic/blackbox
+	name = "blackbox recovery"
+	desc = "Recover some lost logs from this ruin's blackbox recorder."
 	setpiece_item = /obj/machinery/blackbox_recorder
