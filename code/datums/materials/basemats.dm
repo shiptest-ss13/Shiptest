@@ -57,7 +57,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "Carbon is an essential component of life, but also used as a primitive source of energy by virutally every sapient species in history."
 	color = "#665b5b"
 	categories = list(MAT_CATEGORY_ORE = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/silicon
+	sheet_type = /obj/item/stack/sheet/mineral/coal
 	value_per_unit = 1
 
 /datum/material/carbon/on_applied_obj(obj/source, amount, material_flags)
