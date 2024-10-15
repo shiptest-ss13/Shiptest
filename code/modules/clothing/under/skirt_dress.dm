@@ -13,13 +13,13 @@
 
 /obj/item/clothing/under/dress/blacktango
 	name = "black tango dress"
-	desc = "Filled with Latin fire."
+	desc = "A silky black satin dress, traditionally made for dancing. It's light and easy to move in."
 	icon_state = "black_tango"
 	item_state = "wcoat"
 
 /obj/item/clothing/under/dress/striped
 	name = "striped dress"
-	desc = "Fashion in space."
+	desc = "A simple blue striped dress."
 	icon_state = "striped_dress"
 	item_state = "striped_dress"
 
