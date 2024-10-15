@@ -105,6 +105,7 @@
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
@@ -115,6 +116,7 @@
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"
@@ -127,6 +129,7 @@
 	force = 15
 	throwforce = 15
 	custom_materials = null
+	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/combat/cyborg
 	name = "cyborg knife"

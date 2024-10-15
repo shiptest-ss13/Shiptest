@@ -124,6 +124,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/space/gezena/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper PGFN normal suit helmet"
 	desc = "A normal suit's helmet used by the PGFN. While it's not particularly great nor high quality, these traits make it possible to fit an entire vessel's crew with at least one, with a few to spare."

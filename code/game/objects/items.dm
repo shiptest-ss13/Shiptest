@@ -26,6 +26,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	///If set it will add a world icon using item_state
+	var/world_file
+
+	///Handled by world_icon element
+	var/world_state
+	///Handled by world_icon element
+	var/inventory_state
+
 	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
 	var/supports_variations = null
 
@@ -207,10 +215,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-	//for setting world icons on the go
-	var/inventory_state
-	var/world_state
-
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -308,6 +312,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			name = "sticky [name]"
 
 	updateEmbedding()
+
+	if(world_file)
+		AddElement(/datum/element/world_icon, null, world_file, icon)
 
 	if(GLOB.rpg_loot_items)
 		AddComponent(/datum/component/fantasy)
@@ -1219,7 +1226,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
-		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
 		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
 							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
 
