@@ -7,6 +7,7 @@
 
 	default_value = DBACKPACK
 	// you could argue it should depend on species, since some sprites not be implemented, but... shrug.
+	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
 
 /datum/preference/choiced_string/default_backpack/get_options_list()
 	return GLOB.backpacklist
@@ -67,6 +68,7 @@
 	external_key = "default_jumpsuit"
 
 	default_value = PREF_SUIT
+	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
 
 /datum/preference/choiced_string/default_jumpsuit/get_options_list()
 	return GLOB.jumpsuitlist
@@ -135,6 +137,7 @@
 	external_key = "default_exowear"
 
 	default_value = PREF_EXOWEAR
+	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
 
 /datum/preference/choiced_string/default_exowear/get_options_list()
 	return GLOB.exowearlist

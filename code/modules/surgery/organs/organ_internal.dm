@@ -26,21 +26,24 @@
 	var/high_threshold_cleared
 	var/low_threshold_cleared
 
-	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	var/vital = 0
-	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
-	var/external = FALSE
+	///When you take a bite you cant jam it in for surgery anymore.
+	var/useable = TRUE
+
 	//whether to call Remove() when qdeling the organ.
 	var/remove_on_qdel = TRUE
-	var/synthetic = FALSE // To distinguish between organic and synthetic organs
+
+	#warn document
+	// Variables used for "feature-linked" organ behavior: think lizard / human / elzu tails, or cat ears.
+	var/list/linked_features
+	var/variable_feature_data = FALSE
+	var/auto_color_src
 
 /obj/item/organ/Initialize()
 	. = ..()
 	if(organ_flags & ORGAN_EDIBLE)
 		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GORE, null, 10, null, null, null, CALLBACK(src, PROC_REF(OnEatFrom)))
 
-	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	if(!iscarbon(M) || owner == M)
 		return
@@ -63,9 +66,29 @@
 	M.internal_organs |= src
 	M.internal_organs_slot[slot] = src
 	moveToNullspace()
+
+	// handle linked features if necessary, but only on humans
+	if(islist(linked_features) && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		for(var/part_key in linked_features)
+			// if our feature data is variable (i.e., a tail that has multiple variants which use the same organ), then
+			// when inserting the organ, if the character already has a value for the appearance of that bodypart, copy it into the organ.
+			if(variable_feature_data && (part_key in H.dna.features))
+				linked_features[part_key] = H.dna.features[part_key]
+			else
+				// otherwise, copy our version of the organ onto the character
+				H.dna.features[part_key] = linked_features[part_key]
+		if(auto_color_src)
+			color = H.dna.species.resolve_color_src(H, auto_color_src)
+		// copy over the linked features into the mutant_bodyparts list, which is what gets them to actually render
+		H.dna.species.mutant_bodyparts |= linked_features
+		// full body re-render!!! yay!!!
+		H.update_body()
+
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.Grant(M)
+
 	STOP_PROCESSING(SSobj, src)
 
 //Special is for instant replacement like autosurgeons
@@ -81,10 +104,18 @@
 		var/datum/action/A = X
 		A.Remove(M)
 
+	// handle linked features if necessary, but only on humans
+	if(islist(linked_features) && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		// remove linked features from the mob's visible bodyparts
+		H.dna.species.mutant_bodyparts -= linked_features
+		// copy over values from the mob, but only if we're storing values instead of assuming them
+		// everyone's favorite full body re-render
+		H.update_body()
+
 	SEND_SIGNAL(M, COMSIG_CARBON_LOSE_ORGAN, src)
 
 	START_PROCESSING(SSobj, src)
-
 
 /obj/item/organ/proc/on_find(mob/living/finder)
 	return

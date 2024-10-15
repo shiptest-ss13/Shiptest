@@ -67,12 +67,6 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 
 	to_chat(src, "<span class='warning'>You have died. Barring complete bodyloss, you can in most cases be revived by other players. If you do not wish to be brought back, use the \"Do Not Resuscitate\" verb in the ghost tab.</span>")
 
-/mob/living/carbon/human/proc/makeSkeleton()
-	ADD_TRAIT(src, TRAIT_DISFIGURED, TRAIT_GENERIC)
-	set_species(/datum/species/skeleton)
-	return TRUE
-
-
 /mob/living/carbon/proc/Drain()
 	become_husk(CHANGELING_DRAIN)
 	ADD_TRAIT(src, TRAIT_BADDNA, CHANGELING_DRAIN)

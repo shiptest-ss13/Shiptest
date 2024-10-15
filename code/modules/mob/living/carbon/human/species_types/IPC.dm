@@ -1,7 +1,6 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
-	sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
 	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
@@ -17,7 +16,7 @@
 	mutantlungs = null //no more collecting change for you
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
-	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_tail", FEATURE_IPC_CHASSIS, FEATURE_IPC_BRAIN)
+	mutant_bodyparts = list("ipc_screen", "ipc_tail")
 	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_tail" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
@@ -64,7 +63,7 @@
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species) // Let's make that IPC actually robotic.
+/datum/species/ipc/on_species_gain(mob/living/carbon/C) // Let's make that IPC actually robotic.
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -85,7 +84,7 @@
 		change_screen.Remove(C)
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
-// ! direct string modifications... ugh.
+#warn direct string modifications... ugh.
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
 	if(!has_screen)
 		return

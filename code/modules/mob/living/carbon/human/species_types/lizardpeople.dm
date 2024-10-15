@@ -4,7 +4,7 @@
 	id = SPECIES_SARATHI
 	species_traits = list(EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", FEATURE_LEGS_TYPE)
+	mutant_bodyparts = list("frills", "horns", "spines")
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
@@ -57,7 +57,7 @@
 		internal_lighter.Remove(C)
 	..()
 
-/datum/species/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/lizard/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		internal_lighter = new
@@ -125,7 +125,7 @@ Lizard subspecies: ASHWALKERS
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 
-/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C)
 	. = ..() //call everything from species/on_species_gain()
 	C.dna.add_mutation(DWARFISM)
 //WS Edit End - Kobold

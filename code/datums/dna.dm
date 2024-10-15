@@ -309,18 +309,43 @@
 	holder.transform = holder.transform.Translate(0, translate)
 	current_body_size = desired_size
 
-/mob/proc/set_species(datum/species/mrace, icon_update = 1)
-	return
+#warn redocument, including procs on_species_loss and on_species_gain -- note that they're used for clearing and finalizing the new species, simplifying bodyplan logic.
+#warn both procs could arguably just be pushed down...
+/mob/living/carbon/human/proc/set_species_prelim(datum/species/spec_type)
+	if(!spec_type || !has_dna())
+		return
+	if(!ispath(spec_type, /datum/species))
+		return
+	var/datum/species/new_race = new spec_type
+	dna.species.on_species_loss(src, new_race)
+	dna.species = new_race
 
-/mob/living/brain/set_species(datum/species/mrace, icon_update = 1)
-	if(mrace)
-		if(ispath(mrace))
-			stored_dna.species = new mrace()
-		else
-			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
+	#warn needs to go somewhere
+		// //Solves quirk conflicts on species change if there's any
+		// var/list/quirks_to_remove = list()
+		// var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
+		// for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
+		// 	quirks_to_remove += quirk_instance.type
+		// for(var/quirk_name in quirks_resolved)
+		// 	var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		// 	quirks_resolved += quirk_type
+		// 	quirks_resolved -= quirk_name
+		// quirks_to_remove -= quirks_resolved
+		// for(var/quirk_type in quirks_to_remove)
+		// 	remove_quirk(quirk_type)
+
+/mob/living/carbon/human/proc/finalize_species(icon_update = TRUE)
+	var/is_robotic = fbp
+
+	dna.species.on_species_gain(src, is_robotic)
+
+	if(icon_update)
+		update_hair()
+		update_mutations_overlay()
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
+/// This proc is responsible for all the species-datum-based bookkeeping that must be done when changing a mob's species datum.
+/mob/living/carbon/proc/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -329,7 +354,6 @@
 			new_race = mrace
 		else
 			return
-		deathsound = new_race.deathsound
 		dna.species.on_species_loss(src, new_race)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race

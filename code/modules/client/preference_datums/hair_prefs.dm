@@ -8,6 +8,8 @@
 	default_value = /datum/sprite_accessory/hair/bald::name
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/choiced_string/hairstyle/get_options_list()
 	return GLOB.hairstyles_list
 
@@ -39,7 +41,6 @@
 				dat += "<a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
 				dat += "<a href='?_src_=prefs;preference=previous_hairstyle;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hairstyle;task=input'>&gt;</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIRSTYLE]'>[(randomise[RANDOM_HAIRSTYLE]) ? "Lock" : "Unlock"]</A>"
-
 */
 
 // UI INTERACTION
@@ -125,7 +126,9 @@
 
 	default_value = /datum/sprite_accessory/facial_hair/shaved::name
 	dependencies = list(/datum/preference/species)
+
 	rand_dependencies = list(/datum/preference/choiced_string/gender)
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/choiced_string/facial_hairstyle/get_options_list()
 	return GLOB.facial_hairstyles_list
@@ -238,7 +241,9 @@ datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data,
 	external_key = "hair_gradient_style"
 
 	default_value = /datum/sprite_accessory/hair_gradient/none::name
-	dependencies = list(/datum/preference/hairstyle)
+	dependencies = list(/datum/preference/choiced_string/hairstyle)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/choiced_string/hair_gradient_style/get_options_list()
 	return GLOB.hair_gradients_list
@@ -317,15 +322,16 @@ datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data,
 	external_key = "hair_color"
 
 	default_value = "202020"
-
 	// turns out it controls horns color too, and kepori feathers, and IPC antennae, and certain types of human tails / ears.
 	// accordingly, we can just depend on those to determine if we're available instead of duplicating all of their availability checks.
 	dependencies = list(
 		/datum/preference/choiced_string/hairstyle,
-		/datum/preference/mutant_bodypart/kepori_feathers,
-		/datum/preference/mutant_bodypart/ipc_antenna
+		/datum/preference/choiced_string/mutant_bodypart/kepori_feathers,
+		/datum/preference/choiced_string/mutant_bodypart/ipc_antenna
 	)
 	#warn add human tails / human ears / horns to the above
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/hair_color/_is_available(list/dependency_data)
 	// always available if at least one of our dependencies is.
@@ -334,7 +340,7 @@ datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data,
 /datum/preference/color/hair_color/apply_to_human(mob/living/carbon/human/target, data)
 	target.hair_color = data
 
-/datum/preference/hair_color/randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/color/hair_color/randomize(list/dependency_data, list/rand_dependency_data)
 	// if you have actual hair, and you're not one of the hallowed 5%, you have a "natural" hair color.
 	if(/datum/preference/choiced_string/hairstyle in dependency_data && prob(95))
 		return random_color_natural() // this one already doesn't come with a leading # sign
@@ -408,6 +414,7 @@ datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data,
 	dependencies = list(/datum/preference/choiced_string/facial_hairstyle)
 
 	rand_dependencies = list(/datum/preference/color/hair_color)
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/facial_hair_color/_is_available(list/dependency_data)
 	// just need for facial hair to be available
@@ -485,8 +492,9 @@ datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data,
 
 	// gradients are already anime bullshit. and what's more "anime bullshit" than hair with snow-white tips?
 	default_value = "FFFFFF"
-
 	dependencies = list(/datum/preference/choiced_string/hair_gradient_style)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/hair_gradient_color/_is_available(list/dependency_data)
 	return TRUE

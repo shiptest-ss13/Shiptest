@@ -2,7 +2,6 @@
 	// 2spooky
 	name = "\improper Spooky Scary Skeleton"
 	id = SPECIES_SKELETON
-	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton
 	species_traits = list(NOBLOOD, NOHUSK) //WHY THE FUCK DOES BONE MAN NOT HAVE BONES?!!
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,\

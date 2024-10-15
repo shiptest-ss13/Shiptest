@@ -39,7 +39,7 @@
 		humanoid_customization.Remove(C)
 	..()
 
-/datum/species/jelly/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		regenerate_limbs = new
@@ -89,24 +89,6 @@
 	if(H)
 		stop_wagging_tail(H)
 	. = ..()
-
-/datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
-	return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
-
-/datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts)
-
-/datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
-	if("tail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_human"
-		mutant_bodyparts |= "waggingtail_human"
-	H.update_body()
-
-/datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H)
-	if("waggingtail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_human"
-		mutant_bodyparts |= "tail_human"
-	H.update_body()
 
 /datum/action/innate/regenerate_limbs
 	name = "Regenerate Limbs"
@@ -194,7 +176,7 @@
 						H.update_body()
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "ears"
-						H.dna.features["ears"] = "Slimecat"
+						H.dna.features["ears"] = "Cat"
 						H.update_body()
 				//Tails
 		if("Tail")
@@ -207,7 +189,7 @@
 						H.update_body()
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "tail_human"
-						H.dna.features["tail_human"] = "Slimecat"
+						H.dna.features["tail_human"] = "Cat"
 						H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
@@ -243,7 +225,7 @@
 	C.blood_volume = min(C.blood_volume, BLOOD_VOLUME_NORMAL)
 	..()
 
-/datum/species/jelly/slime/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/slime/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		slime_split = new
@@ -543,7 +525,7 @@
 	QDEL_NULL(extract_major)
 	QDEL_NULL(extract_minor)
 
-/datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C)
 	..()
 	glow = new(C)
 	update_glow(C)
@@ -722,7 +704,7 @@
 	for(var/mob/living/link_to_clear as anything in linked_mobs)
 		unlink_mob(link_to_clear)
 
-/datum/species/jelly/stargazer/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/stargazer/on_species_gain(mob/living/carbon/C)
 	..()
 	project_thought = new(src)
 	project_thought.Grant(C)

@@ -8,6 +8,8 @@
 	default_value = /datum/sprite_accessory/underwear/nude::name
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/choiced_string/underwear_bottom/get_options_list()
 	return GLOB.underwear_list
 
@@ -70,10 +72,12 @@
 	default_value = /datum/sprite_accessory/undershirt/nude::name
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/choiced_string/undershirt/get_options_list()
 	return GLOB.undershirt_list
 
-/datum/preference/choiced_string/undershirt(list/dependency_data)
+/datum/preference/choiced_string/undershirt/_is_available(list/dependency_data)
 	var/datum/species/dep_species = dependency_data[/datum/preference/species]
 	if(NO_UNDERWEAR in dep_species.species_traits)
 		return FALSE
@@ -136,6 +140,8 @@
 
 	default_value = /datum/sprite_accessory/socks/nude::name
 	dependencies = list(/datum/preference/species)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/choiced_string/socks/get_options_list()
 	return GLOB.socks_list
@@ -203,10 +209,11 @@
 	external_key = "underwear_bottom_color"
 
 	default_value = "#FFFFFF"
-	dependencies = list(/datum/preference/species)
-
 	include_hash = TRUE
 	min_hsv_value = 10
+	dependencies = list(/datum/preference/species)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/underwear_bottom_color/_is_available(list/dependency_data)
 	var/datum/species/dep_species = dependency_data[/datum/preference/species]
@@ -268,10 +275,11 @@
 	external_key = "underwear_undershirt_color"
 
 	default_value = "#FFFFFF"
-	dependencies = list(/datum/preference/species)
-
 	include_hash = TRUE
 	min_hsv_value = 10
+	dependencies = list(/datum/preference/species)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/undershirt_color/_is_available(list/dependency_data)
 	var/datum/species/dep_species = dependency_data[/datum/preference/species]
@@ -334,11 +342,11 @@
 	external_key = "underwear_socks_color"
 
 	default_value = "#FFFFFF"
-	dependencies = list(/datum/preference/species)
-	min_hsv_value = 10
-
 	include_hash = TRUE
 	min_hsv_value = 10
+	dependencies = list(/datum/preference/species)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/socks_color/_is_available(list/dependency_data)
 	var/datum/species/dep_species = dependency_data[/datum/preference/species]

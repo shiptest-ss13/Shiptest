@@ -1,5 +1,6 @@
 #warn this file is just a temporary staging ground for all the preferences i've written a small part of. it also helps me remember what the old variable corresponding to a pref was. aint nothing more than that
 #warn prefs with no dependencies don't actually need an availability check.
+#warn clear out all the damn commented blocks in every file
 
 // CORRESPONDING VARIABLE NAME:
 // pref_species
@@ -8,11 +9,14 @@
 	name = "Species"
 	external_key = "species"
 
-	// it has to happen early
-	application_priority = 10
+	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_PRELIMINARY
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE | PREF_RAND_FLAG_IDENTITY
 
 /datum/preference/species/New(...)
 	. = ..()
+	if(application_priority <= PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE)
+		CRASH("[type] has application_priority [application_priority], which is not less than the bodyplan-finalization priority of [PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE]! This breaks preference application really bad!")
+
 	// we need a default value
 	default_value = new /datum/species/human()
 
@@ -25,23 +29,13 @@
 	var/datum/species/chosen_species = data
 	#warn roundstart_races isn't populated at The Beginning Of Everything but instead at the end of SSticker init. unsure if that happens before clients connect or not. test
 	#warn also the name "roundstart_races" and "roundstart_no_hard_check" doesn't quite make sense since we don't have roundstart........
-	if(!(chosen_species.id in GLOB.roundstart_races) || !(chosen_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
+	if(!(chosen_species.id in GLOB.roundstart_races) && !(chosen_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
 		return "[chosen_species] not a valid join species."
 	return FALSE
 
 /datum/preference/species/apply_to_human(mob/living/carbon/human/target, data)
-	#warn ughhghghghghghghh. set_species calls code (quirk handling and stack-based hand stuff) that has a chance to sleep
-	#warn read below
-	// ! so, the issue here is set_species, which does a total regeneration of bodyparts and organs.
-	// ! first of all, that might end up being sort of unnecessary depending on how we handle prosthetics / organ features.
-
-	// ! cat ears / tails / etc. for humans are handled by the human species adding the ears to its mutant organ vars in on_species_gain().
-	// ! that's... sort of in conflict with the way we want to do things prefwise, where the only necessary step to adding cat ears to a species is to make their pref available for that species.
-	// ! this cuts at the heart of a problem with the whole prefs model that i haven't quite fully ironed out.
-	// ! do we want a character creation-parochial view, or a less specialized (and, ultimately, more boilerplatey) one?
-	#warn need to add fbp compat. fuck
 	var/datum/species/chosen_species = data
-	target.set_species(chosen_species.type, icon_update = FALSE, robotic = FALSE)
+	target.set_species_prelim(chosen_species.type)
 
 /datum/preference/species/_serialize(data)
 	var/datum/species/chosen_species = data
@@ -52,10 +46,13 @@
 	return new spec_type()
 
 /datum/preference/species/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
-	var/new_id = input(user, "Choose your character's species:", "Character Preference", old_data) as null|anything in GLOB.roundstart_races
-	if(new_id && new_id != old_data)
+	var/datum/species/old_spec = old_data
+
+	var/new_id = input(user, "Choose your character's species:", "Character Preference", old_spec.id) as null|anything in GLOB.roundstart_races
+	if(new_id && new_id != old_spec.id)
 		// no need to create a new species datum if the old one is still valid
-		return new GLOB.species_list[new_id]
+		var/new_spec_type = GLOB.species_list[new_id]
+		return new new_spec_type()
 	return old_data
 
 /datum/preference/species/randomize(list/dependency_data, list/rand_dependency_data)
@@ -176,13 +173,13 @@
 	// name =
 
 	// external_key =
-	// application_priority = 0
+	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
 
 	// default_value =
 
 	// dependencies = list()
 
-	// can_be_randomized = TRUE
+	// randomization_flags = NONE
 	// rand_dependencies = list()
 
 /datum/preference//_is_available(list/dependency_data)

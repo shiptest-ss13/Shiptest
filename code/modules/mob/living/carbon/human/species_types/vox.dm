@@ -5,7 +5,7 @@
 	species_age_min = 17
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
-	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
+	mutant_bodyparts = list()
 	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
@@ -74,7 +74,7 @@
 
 
 
-/datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/vox/on_species_gain(mob/living/carbon/C)
 	. = ..()
 	C.base_pixel_x -= 9
 	C.pixel_x = C.base_pixel_x

@@ -89,28 +89,6 @@
 		ears.minimumDeafTicks(value)
 
 
-/obj/item/organ/ears/cat
-	name = "cat ears"
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "kitty"
-	damage_multiplier = 2
-
-/obj/item/organ/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.species.mutant_bodyparts |= "ears"
-		ear_owner.dna.features["ears"] = "Cat"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/cat/Remove(mob/living/carbon/human/ear_owner,  special = 0)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.features["ears"] = "None"
-		ear_owner.dna.species.mutant_bodyparts -= "ears"
-		ear_owner.update_body()
-
 /obj/item/organ/ears/penguin
 	name = "penguin ears"
 	desc = "The source of a penguin's happy feet."
@@ -127,64 +105,6 @@
 		to_chat(ear_owner, "<span class='notice'>Your sense of balance comes back to you.</span>")
 		ear_owner.RemoveElement(/datum/element/waddling)
 
-/obj/item/organ/ears/cat/slime //Not adding insert code since only slimepeople should ever get this through change_form()
-	name = "slimy cat ears"
-	desc = "Some slimy cat-shaped ears."
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "kitty"
-	alpha = 150
-
-/obj/item/organ/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.species.mutant_bodyparts |= "ears"
-		ear_owner.dna.features["ears"] = "Cat"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/cat/Remove(mob/living/carbon/human/ear_owner,  special = 0)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.features["ears"] = "None"
-		ear_owner.dna.species.mutant_bodyparts -= "ears"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/fox/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.species.mutant_bodyparts |= "ears"
-		ear_owner.dna.features["ears"] = "Fox"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/fox/Remove(mob/living/carbon/human/ear_owner,  special = 0)
-	..()
-	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		ear_owner.dna.features["ears"] = "None"
-		ear_owner.dna.species.mutant_bodyparts -= "ears"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/elf
-	name = "elf ears"
-	damage_multiplier = 1.5
-
-/obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
-	..()
-	if(istype(ear_owner))
-		color = skintone2hex(ear_owner.skin_tone)
-		ear_owner.dna.species.mutant_bodyparts |= "ears"
-		ear_owner.dna.features["ears"] = "Elf"
-		ear_owner.update_body()
-
-/obj/item/organ/ears/elf/Remove(mob/living/carbon/human/ear_owner,  special = 0)
-	..()
-	if(istype(ear_owner))
-		color = skintone2hex(ear_owner.skin_tone)
-		ear_owner.dna.features["ears"] = "None"
-		ear_owner.dna.species.mutant_bodyparts -= "ears"
-		ear_owner.update_body()
 
 /obj/item/organ/ears/cybernetic
 	name = "cybernetic ears"
@@ -229,3 +149,38 @@
 			owner.Dizzy(15)
 			owner.Knockdown(100)
 			to_chat(owner, "<span class='warning'>Your robotic ears buzz.</span>")
+
+/*
+	Mutant human ears
+	:3
+*/
+
+/obj/item/organ/ears/cat
+	name = "cat ears"
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "kitty"
+	damage_multiplier = 2
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/cat::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR
+
+/obj/item/organ/ears/fox
+	name = "fox ears"
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "kitty"
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/fox::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR
+
+/obj/item/organ/ears/elf
+	name = "elf ears"
+	damage_multiplier = 1.5
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/elf::name
+	)
+

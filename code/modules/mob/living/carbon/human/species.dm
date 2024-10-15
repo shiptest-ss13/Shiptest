@@ -18,8 +18,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodyflag = FLAG_HUMAN
 
 	var/bodytype = BODYTYPE_HUMANOID
-	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
-	var/sexes = TRUE
 	///Minimum species_age
 	var/species_age_min = 17
 	///Maximum species age
@@ -180,24 +178,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//why does it work this way? because traits also disable the downsides of not having an organ, removing organs but not having the trait will make your species die
 	//shut up you're not my mother
 
-	///Replaces default brain with a different organ
-	var/obj/item/organ/brain/mutantbrain = /obj/item/organ/brain
-	///Replaces default heart with a different organ
-	var/obj/item/organ/heart/mutantheart = /obj/item/organ/heart
-	///Replaces default lungs with a different organ
-	var/obj/item/organ/lungs/mutantlungs = /obj/item/organ/lungs
-	///Replaces default eyes with a different organ
-	var/obj/item/organ/eyes/mutanteyes = /obj/item/organ/eyes
-	///Replaces default ears with a different organ
-	var/obj/item/organ/ears/mutantears = /obj/item/organ/ears
-	///Replaces default tongue with a different organ
-	var/obj/item/organ/tongue/mutanttongue = /obj/item/organ/tongue
-	///Replaces default liver with a different organ
-	var/obj/item/organ/liver/mutantliver = /obj/item/organ/liver
-	///Replaces default stomach with a different organ
-	var/obj/item/organ/stomach/mutantstomach = /obj/item/organ/stomach
-	///Replaces default appendix with a different organ.
-	var/obj/item/organ/appendix/mutantappendix = /obj/item/organ/appendix
 	///Forces an item into this species' hands. Only an honorary mutantthing because this is not an organ and not loaded in the same way, you've been warned to do your research.
 	var/obj/item/mutanthands
 	///Allows the species to not give a single F about gravity. Used by wings.
@@ -207,7 +187,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
 
-	//K-Limbs. If a species doesn't have their own limb types. Do not override this, use the K-Limbs overrides at the top of the species datum.
+	///For custom overrides for species ass images
+	var/icon/ass_image
+
+	#warn document, simplify
+
 	var/obj/item/bodypart/species_chest = /obj/item/bodypart/chest
 	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
 	var/obj/item/bodypart/species_l_arm = /obj/item/bodypart/l_arm
@@ -237,8 +221,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/stomach/robotic_stomach = /obj/item/organ/stomach/cybernetic
 	var/obj/item/organ/appendix/robotic_appendix = null
 
-	///For custom overrides for species ass images
-	var/icon/ass_image
+	/// The organ used as the default for the species brain
+	var/obj/item/organ/brain/mutantbrain = /obj/item/organ/brain
+	/// The organ used as the default for the species heart
+	var/obj/item/organ/heart/mutantheart = /obj/item/organ/heart
+	/// The organ used as the default for the species lungs
+	var/obj/item/organ/lungs/mutantlungs = /obj/item/organ/lungs
+	/// The organ used as the default for the species eyes
+	var/obj/item/organ/eyes/mutanteyes = /obj/item/organ/eyes
+	/// The organ used as the default for the species ears
+	var/obj/item/organ/ears/mutantears = /obj/item/organ/ears
+	/// The organ used as the default for the species tongue
+	var/obj/item/organ/tongue/mutanttongue = /obj/item/organ/tongue
+	/// The organ used as the default for the species liver
+	var/obj/item/organ/liver/mutantliver = /obj/item/organ/liver
+	/// The organ used as the default for the species stomach
+	var/obj/item/organ/stomach/mutantstomach = /obj/item/organ/stomach
+	/// The organ used as the default for the species appendix
+	var/obj/item/organ/appendix/mutantappendix = /obj/item/organ/appendix
+
+
 
 ///////////
 // PROCS //
@@ -312,6 +314,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/copy_properties_from(datum/species/old_species)
 	return
 
+#warn redocument
 /** regenerate_organs
  * Corrects organs in a carbon, removing ones it doesn't need and adding ones it does
  *
@@ -319,11 +322,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * can use replace_current to refresh all organs, creating an entirely new set.
  * Arguments:
  * * C - carbon, the owner of the species datum AKA whoever we're regenerating organs in
- * * old_species - datum, used when regenerate organs is called in a switching species to remove old mutant organs.
- * * replace_current - boolean, forces all old organs to get deleted whether or not they pass the species' ability to keep that organ
  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
  */
-/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
+/datum/species/proc/regenerate_organs(mob/living/carbon/C, list/excluded_zones, robotic = FALSE)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
 	var/list/slot_mutantorgans = list( \
 		ORGAN_SLOT_BRAIN = mutantbrain, \
@@ -348,9 +349,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/used_neworgan = FALSE
 		neworgan = new neworgan()
+		#warn semi-redundant, given the vars on /datum/species that already exist? hm.
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)
 
-		if(oldorgan && (!should_have || replace_current) && !(oldorgan.zone in excluded_zones))
+		if(oldorgan && !(oldorgan.zone in excluded_zones))
 			neworgan.damage = oldorgan.damage //apply the damage of the old organ to the new organ
 			if(slot == ORGAN_SLOT_BRAIN)
 				var/obj/item/organ/brain/brain = oldorgan
@@ -366,13 +368,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(!used_neworgan)
 			qdel(neworgan)
-
-	if(old_species)
-		for(var/mutantorgan in old_species.mutant_organs)
-			var/obj/item/organ/I = C.getorgan(mutantorgan)
-			if(I)
-				I.Remove(C)
-				QDEL_NULL(I)
 
 	for(var/path in mutant_organs)
 		var/obj/item/organ/I = new path()
@@ -403,9 +398,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	* Produces a [COMSIG_SPECIES_GAIN] signal.
 	* Arguments:
 	* * C - Carbon, this is whoever became the new species.
-	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
 */
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, robotic = FALSE)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, robotic = FALSE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -427,15 +421,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.mob_biotypes = inherent_biotypes
 
-	regenerate_organs(C, old_species, robotic = robotic)
+	regenerate_organs(C, robotic = robotic)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
 		C.dna.blood_type = get_blood_type(exotic_bloodtype)
-
-	if(old_species.mutanthands)
-		for(var/obj/item/I in C.held_items)
-			if(istype(I, old_species.mutanthands))
-				qdel(I)
 
 	if(mutanthands)
 		// Drop items in hands
@@ -479,9 +468,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		fly = new
 		fly.Grant(C)
 
+	// set the deathsound
+	C.deathsound = deathsound
+	// movespeed
 	C.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/species, multiplicative_slowdown=speedmod)
+	// reset the mob's language holder
+	qdel(C.language_holder)
+	C.language_holder = new species_language_holder(C)
 
-	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
+	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src)
 
 /**
  * Proc called when a carbon is no longer this species.
@@ -516,6 +511,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(inherent_factions)
 		for(var/i in inherent_factions)
 			C.faction -= i
+
+	// remove the extra organs added by the species. this ensures that the body is a "blank slate" for when organs are regenerated later
+	for(var/mutantorgan in mutant_organs)
+		var/obj/item/organ/I = C.getorgan(mutantorgan)
+		if(I)
+			I.Remove(C)
+			QDEL_NULL(I)
+
+	// remove the mutanthands items
+	if(mutanthands)
+		for(var/obj/item/I in C.held_items)
+			if(istype(I, mutanthands))
+				qdel(I)
 
 	if(flying_species)
 		fly.Remove(C)
@@ -1945,6 +1953,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////////////
 // from here on out it's all direct string modification, which fucking blows. sorry.
 
+#warn aurugh. this sucksssss
 /datum/species/proc/can_wag_tail(mob/living/carbon/human/H)
 	return (locate(/obj/item/organ/tail) in H.internal_organs)
 

@@ -1,4 +1,4 @@
-
+#warn fuck me
 /mob/living/carbon/human/dummy
 	real_name = "Test Dummy"
 	status_flags = GODMODE|CANPUSH

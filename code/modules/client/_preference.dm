@@ -15,9 +15,12 @@
 	var/external_key
 	/// Controls the order with which the preference is applied to characters; higher priority datums are applied first.
 	/// The order in which preferences with the same application priority are applied is undefined.
-	var/application_priority = 0
+	/// After all preferences with priority PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE are applied, finalize_species()
+	/// is called on the character to initialize their limbs and organs from the variables set on their species.
+	/// (This assumes that set_species_prelim() has been called previously -- this is done by the species preference.)
+	var/application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE // default value is JUST before finalize_species()
 
-	// ! comment - make clear that this should ALWAYS be valid. should absolutely be implemented
+	// ! comment - make clear that this should ALWAYS be valid. unit tests should absolutely be implemented
 	var/default_value
 
 	var/list/dependencies = list()
@@ -27,7 +30,8 @@
 	var/list/rand_dependencies = list()
 	var/list/datum/preference/rand_children = list()
 
-	var/can_be_randomized = TRUE
+	#warn needs to be rethought for the randomization and human-initialization era.
+	var/randomization_flags = NONE
 
 	/// The index of this pref in the global list that is a topological order of all preference datums.
 	var/topo_index
@@ -42,6 +46,8 @@
 
 	if(abstract_type == type)
 		CRASH("Attempted to instance an abstract preference! Don't do this!")
+	else if(!external_key || !istext(external_key))
+		CRASH("Non-abstract preference datum [type] lacks a valid external_key!")
 
 	var/list/overlapping_deps = dependencies & rand_dependencies
 	if(length(overlapping_deps) != 0)
@@ -68,6 +74,9 @@
 			stack_trace("Abstract preference [dep_pref_type] found in dependencies of [type]!")
 			dependencies -= dep_pref_type
 
+		if(randomization_flags & ~(initial(dep_pref_type.randomization_flags)))
+			stack_trace("Preference [type] has randomization flags which its dependency [dep_pref_type] lacks, allowing for invalid randomization!")
+
 	for(var/datum/preference/rand_pref_type as anything in rand_dependencies)
 		if(rand_pref_type in checked_rand)
 			stack_trace("Preference [rand_pref_type] appears in [type]'s dependencies multiple times!")
@@ -81,6 +90,9 @@
 		else if(initial(rand_pref_type.abstract_type) == rand_pref_type)
 			stack_trace("Abstract preference [rand_pref_type] found in randomization dependencies of [type]!")
 			rand_dependencies -= rand_pref_type
+
+		if(randomization_flags & ~(initial(rand_pref_type.randomization_flags)))
+			stack_trace("Preference [type] has randomization flags which its randomization dependency [rand_pref_type] lacks, allowing for invalid randomization!")
 
 	// ! better error messages?
 	if(external_key in GLOB.pref_ext_key_lookup)
@@ -139,7 +151,6 @@
 
 
 /datum/preference/proc/apply_to_human(mob/living/carbon/human/target, data)
-	SHOULD_NOT_SLEEP(TRUE) // really, none of these fucking procs should sleep, but here is where it's actually likely
 	SHOULD_CALL_PARENT(FALSE)
 	return
 

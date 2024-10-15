@@ -1,11 +1,34 @@
+#warn revive this, merge it with the below definition. important!!!!!!!
+// /mob/living/carbon/human/Initialize(mapload, prefs_opts)
+// 	. = ..()
+// 	var/skip_pref_randomize_set = FALSE
+// 	if(isnull(prefs_opts))
+// 		// generally this is the expected default value for datum/preference/species
+// 		prefs_opts = list(/datum/preference/species = new /datum/species/human())
+// 	else if(prefs_opts == WHATEVER_SENTINEL_VALUE)
+// 		skip_pref_randomize_set = TRUE
+// 	else if(!islist(prefs_opts))
+// 		stack_trace("Unrecognized prefs_opts arg [prefs_opts] passed to /mob/living/carbon/human/Initialize()!")
+
+// 	// generally, we expect to be passed a list associating preference types to preference data, representing a preset
+// 	if(!skip_pref_randomize_set)
+// 		// handles most body-based behavior, incl. species
+// 		fill_out_prefs_and_apply(src, prefs_opts)
+
+
+
 /mob/living/carbon/human/Initialize()
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/toggle_resting)
 
+	physiology = new()
+
 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
 
-	//initialize limbs first
+	//initialize limbs first. kind of dumb, since this is going to be overwritten by set_species(), but it's necessary
 	create_bodyparts()
+
+	// we don't call create_internal_organs because they would be overwritten by species anyway
 
 	setup_human_dna()
 
@@ -14,10 +37,6 @@
 
 	if(dna.species)
 		INVOKE_ASYNC(src, PROC_REF(set_species), dna.species.type) //This generates new limbs based on the species, beware.
-
-	//initialise organs
-	create_internal_organs() //most of it is done in set_species now, this is only for parent call
-	physiology = new()
 
 	. = ..()
 

@@ -48,6 +48,7 @@
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
 	var/list/icon_render_keys = list()
+	#warn this is dumb, but also necessary because replace_body() works only off the bodyparts which already exist
 	var/list/bodyparts = list(
 		/obj/item/bodypart/chest,
 		/obj/item/bodypart/head,

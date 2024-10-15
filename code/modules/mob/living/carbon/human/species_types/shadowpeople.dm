@@ -5,7 +5,6 @@
 	// Humans cursed to stay in the darkness, lest their life forces drain. They regain health in shadow and die in light.
 	name = "???"
 	id = SPECIES_SHADOW
-	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
 	species_traits = list(NOBLOOD,NOEYESPRITES)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
@@ -46,7 +45,7 @@
 	var/info_text = "You are a <span class='danger'>Nightmare</span>. The ability <span class='warning'>shadow walk</span> allows unlimited, unrestricted movement in the dark while activated. \
 					Your <span class='warning'>light eater</span> will destroy any light producing objects you attack, as well as destroy any lights a living creature may be holding. You will automatically dodge gunfire and melee attacks when on a dark tile. If killed, you will eventually revive if left in darkness."
 
-/datum/species/shadow/nightmare/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/shadow/nightmare/on_species_gain(mob/living/carbon/C)
 	. = ..()
 	to_chat(C, "[info_text]")
 

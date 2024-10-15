@@ -48,7 +48,7 @@
 	/// the icon_state of the accessory, or the "base" around which the full icon state is built.
 	/// /datum/sprite_accessory/mutant_part subtypes with icon_state equal to "none" are NEVER rendered.
 	var/icon_state
-	/// The preview name of the accessory, also used for differentiation between variants of the same accessory, i.e. horn types / etc.
+	/// The preview name of the accessory, also used for differentiation between variants of the same accessory, i.e. horn types / etc..
 	/// /datum/sprite_accessory/mutant_part subtypes with name equal to "None" are NEVER rendered;
 	/// additionally, for mutant parts, the name MUST be wholly unique among the variants.
 	var/name

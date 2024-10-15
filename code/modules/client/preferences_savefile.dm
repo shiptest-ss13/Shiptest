@@ -357,6 +357,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["whois_visible"], whois_visible)
 	return TRUE
 
+#warn make an announcement on the discord a few days before prefs is merged, warning people so they can screenshot all their slots
 /datum/preferences/proc/load_character(slot)
 	if(!path)
 		return FALSE
@@ -395,6 +396,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pref_values = list()
 	pref_cache = list()
 
+	#warn need to verify with ABSOLUTE CERTAINTY that this creates a valid preferences list
 	// ! currently unused. oops
 	var/list/errors = list()
 	for(var/datum/preference/pref as anything in GLOB.pref_topo_order)
@@ -409,6 +411,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 		var/pref_str_data = null
 		READ_FILE(S[pref.external_key], pref_str_data)
+		if(isnull(pref_str_data)) // no data, so just move on. not using !pref_str_data here since the empty string is falsey
+			continue
 
 		var/pref_deserial_data = pref.deserialize(pref_str_data)
 		var/change_invalid = pref.is_invalid(pref_deserial_data, dep_values)
@@ -450,14 +454,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// READ_FILE(S["feature_mcolor"], features[FEATURE_MUTANT_COLOR])
 	// READ_FILE(S["feature_mcolor2"], features[FEATURE_MUTANT_COLOR2])
 	// READ_FILE(S["feature_ethcolor"], features[FEATURE_ETHEREAL_COLOR])
-	READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
+	// READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
 	// READ_FILE(S["feature_lizard_face_markings"], features["face_markings"])
-	READ_FILE(S["feature_lizard_horns"], features["horns"])
-	READ_FILE(S["feature_lizard_frills"], features["frills"])
-	READ_FILE(S["feature_lizard_spines"], features["spines"])
+	// READ_FILE(S["feature_lizard_horns"], features["horns"])
+	// READ_FILE(S["feature_lizard_frills"], features["frills"])
+	// READ_FILE(S["feature_lizard_spines"], features["spines"])
 	// READ_FILE(S["feature_lizard_body_markings"], features["body_markings"])
 	// READ_FILE(S["feature_lizard_legs"], features[FEATURE_LEGS_TYPE])
-	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
+	// READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	// READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
 	// READ_FILE(S["jumpsuit_style"], jumpsuit_style)
@@ -467,9 +471,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// READ_FILE(S["feature_spider_spinneret"], features["spider_spinneret"])
 	// READ_FILE(S["feature_spider_mandibles"], features["spider_mandibles"])
 	// READ_FILE(S["feature_squid_face"], features["squid_face"])
-	READ_FILE(S["feature_ipc_screen"], features["ipc_screen"])
+	// READ_FILE(S["feature_ipc_screen"], features["ipc_screen"])
 	// READ_FILE(S["feature_ipc_antenna"], features["ipc_antenna"])
-	READ_FILE(S["feature_ipc_tail"], features["ipc_tail"])
+	// READ_FILE(S["feature_ipc_tail"], features["ipc_tail"])
 	READ_FILE(S["feature_ipc_chassis"], features[FEATURE_IPC_CHASSIS])
 	READ_FILE(S["feature_ipc_brain"], features[FEATURE_IPC_BRAIN])
 	// READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
@@ -478,7 +482,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	// READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	// READ_FILE(S["feature_elzu_horns"], features["elzu_horns"])
-	READ_FILE(S["feature_tail_elzu"], features["tail_elzu"])
+	// READ_FILE(S["feature_tail_elzu"], features["tail_elzu"])
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
@@ -487,8 +491,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			equipped_gear = list()
 			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
 
-	READ_FILE(S["feature_human_tail"], features["tail_human"])
-	READ_FILE(S["feature_human_ears"], features["ears"])
+	// READ_FILE(S["feature_human_tail"], features["tail_human"])
+	// READ_FILE(S["feature_human_ears"], features["ears"])
 
 	// READ_FILE(S["fbp"], fbp)
 
@@ -560,25 +564,25 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// features["mcolor"]					= sanitize_hexcolor(features["mcolor"])
 	// features["mcolor2"]					= sanitize_hexcolor(features["mcolor2"])
 	// features[FEATURE_ETHEREAL_COLOR]				= copytext_char(features[FEATURE_ETHEREAL_COLOR], 1, 7)
-	features["tail_lizard"]				= sanitize_inlist(features["tail_lizard"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/lizard])
-	features["tail_human"]				= sanitize_inlist(features["tail_human"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/human], "None")
+	// features["tail_lizard"]				= sanitize_inlist(features["tail_lizard"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/lizard])
+	// features["tail_human"]				= sanitize_inlist(features["tail_human"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/human], "None")
 	// features["face_markings"]		= sanitize_inlist(features["face_markings"], GLOB.face_markings_list)
-	features["horns"]					= sanitize_inlist(features["horns"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/horns])
-	features["ears"]					= sanitize_inlist(features["ears"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ears], "None")
-	features["frills"]					= sanitize_inlist(features["frills"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/frills])
-	features["spines"]					= sanitize_inlist(features["spines"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/spines])
+	// features["horns"]					= sanitize_inlist(features["horns"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/horns])
+	// features["ears"]					= sanitize_inlist(features["ears"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ears], "None")
+	// features["frills"]					= sanitize_inlist(features["frills"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/frills])
+	// features["spines"]					= sanitize_inlist(features["spines"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/spines])
 	// features["body_markings"]		= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	// features["feature_lizard_legs"]		= sanitize_inlist(features["legs"], GLOB.legs_list, FEATURE_NORMAL_LEGS)
-	features["moth_wings"]				= sanitize_inlist(features["moth_wings"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/moth_wings], "Plain")
+	// features["moth_wings"]				= sanitize_inlist(features["moth_wings"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/moth_wings], "Plain")
 	// features["moth_fluff"]			= sanitize_inlist(features["moth_fluff"], GLOB.moth_fluff_list, "Plain")
 	// features["spider_legs"]			= sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
 	// features["spider_spinneret"]		= sanitize_inlist(features["spider_spinneret"], GLOB.spider_spinneret_list, "Plain")
 	// features["spider_mandibles"]		= sanitize_inlist(features["spider_mandibles"], GLOB.spider_mandibles_list, "Plain")
 	// features["moth_markings"]		= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 	// features["squid_face"]			= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
-	features["ipc_screen"]				= sanitize_inlist(features["ipc_screen"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens])
+	// features["ipc_screen"]				= sanitize_inlist(features["ipc_screen"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens])
 	// features["ipc_antenna"]			= sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
-	features["ipc_tail"]				= sanitize_inlist(features["ipc_tail"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_tail])
+	// features["ipc_tail"]				= sanitize_inlist(features["ipc_tail"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_tail])
 	features["ipc_chassis"]				= sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["ipc_brain"]				= sanitize_inlist(features["ipc_brain"], GLOB.ipc_brain_list)
 	// features["kepori_feathers"]		= sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
@@ -587,7 +591,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// features["vox_head_quills"]		= sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	// features["vox_neck_quills"]		= sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	// features["elzu_horns"]			= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
-	features["tail_elzu"]				= sanitize_inlist(features["tail_elzu"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/elzu])
+	// features["tail_elzu"]				= sanitize_inlist(features["tail_elzu"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/tails/elzu])
 	// features["flavor_text"]				= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
@@ -635,16 +639,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// WRITE_FILE(S["feature_mcolor"]				, features["mcolor"])
 	// WRITE_FILE(S["feature_mcolor2"]				, features["mcolor2"])
 	// WRITE_FILE(S["feature_ethcolor"]			, features[FEATURE_ETHEREAL_COLOR])
-	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
-	WRITE_FILE(S["feature_human_tail"]			, features["tail_human"])
+	// WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
+	// WRITE_FILE(S["feature_human_tail"]			, features["tail_human"])
 	// WRITE_FILE(S["feature_lizard_face_markings"], features["face_markings"])
-	WRITE_FILE(S["feature_lizard_horns"]		, features["horns"])
-	WRITE_FILE(S["feature_human_ears"]			, features["ears"])
-	WRITE_FILE(S["feature_lizard_frills"]		, features["frills"])
-	WRITE_FILE(S["feature_lizard_spines"]		, features["spines"])
+	// WRITE_FILE(S["feature_lizard_horns"]		, features["horns"])
+	// WRITE_FILE(S["feature_human_ears"]			, features["ears"])
+	// WRITE_FILE(S["feature_lizard_frills"]		, features["frills"])
+	// WRITE_FILE(S["feature_lizard_spines"]		, features["spines"])
 	// WRITE_FILE(S["feature_lizard_body_markings"], features["body_markings"])
 	// WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
-	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
+	// WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	// WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 	// WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)
 	// WRITE_FILE(S["exowear"]						, exowear)
@@ -654,9 +658,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// WRITE_FILE(S["feature_spider_spinneret"]	, features["spider_spinneret"])
 	// WRITE_FILE(S["feature_spider_mandibles"]	, features["spider_mandibles"])
 	// WRITE_FILE(S["feature_squid_face"]			, features["squid_face"])
-	WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
+	// WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
 	// WRITE_FILE(S["feature_ipc_antenna"]			, features["ipc_antenna"])
-	WRITE_FILE(S["feature_ipc_tail"] 			, features["ipc_tail"])
+	// WRITE_FILE(S["feature_ipc_tail"] 			, features["ipc_tail"])
 	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
 	WRITE_FILE(S["feature_ipc_brain"]			, features["ipc_brain"])
 	// WRITE_FILE(S["feature_kepori_feathers"]		, features["kepori_feathers"])
@@ -665,7 +669,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// WRITE_FILE(S["feature_vox_head_quills"]		, features["vox_head_quills"])
 	// WRITE_FILE(S["feature_vox_neck_quills"]		, features["vox_neck_quills"])
 	// WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
-	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
+	// WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
 	// WRITE_FILE(S["fbp"]							, fbp)
 
 	//Flavor text
@@ -683,7 +687,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// Step one: the pref_cache contains edited values. In theory, we could simply just serialize and save those, and then overwrite pref_values.
 	// However, for conservatism's sake as part of this prototype, I'm going to do the write-over first, then serialize, then save.
 
-	// ! could maybe use an | for this. in the future, this should be "abortable" if there are file-writing errors (not that i'm sure what  would cause those)
+	// ! could maybe use an | for this. in the future, this should be "abortable" if there are file-writing errors (not that i'm sure what would cause those)
 	for(var/p_t in pref_cache)
 		pref_values[p_t] = pref_cache[p_t]
 	// now that the pref cache has been saved into pref values, we should clear it so there aren't any "unsaved" changes.

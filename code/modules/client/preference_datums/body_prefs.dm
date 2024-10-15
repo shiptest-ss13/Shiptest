@@ -11,6 +11,8 @@
 	default_value = "caucasian1"
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/choiced_string/skin_tone/get_options_list()
 	return GLOB.skin_tones
 
@@ -79,6 +81,7 @@
 */
 
 
+#warn needs to show up for IPC screens as well, actually... ooogh ! oooootough!
 // CORRESPONDING VARIABLE NAME:
 // eye_color
 // default value: "000"
@@ -89,13 +92,17 @@
 	default_value = "000000"
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/color/eye_color/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
-	if(EYECOLOR in chosen_species.species_traits && !(NOEYESPRITES in chosen_species.species_traits))
+	if((EYECOLOR in chosen_species.species_traits) && !(NOEYESPRITES in chosen_species.species_traits))
 		return TRUE
 	return FALSE
 
 #warn should figure out where this sits in the application hierarchy, since this might well not penetrate to the organ level if it's set after species, as organ_eyes.eye_color is set unreliably.
+#warn currently, eye color doesn't appear until you change tabs, and changing your gender to or from male will hide your eye color until a different preference is changed.
+#warn quite strange !!!!
 /datum/preference/color/eye_color/apply_to_human(mob/living/carbon/human/target, data)
 	target.eye_color = data
 	var/obj/item/organ/eyes/organ_eyes = target.getorgan(/obj/item/organ/eyes)
@@ -118,15 +125,6 @@
 
 				dat += "<br></td>"
 
-			if("ipc_screen" in current_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Screen Style</h3>"
-
-				dat += "<a href='?_src_=prefs;preference=ipc_screen;task=input'>[features["ipc_screen"]]</a><BR>"
-
-				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a><BR>"
 
 */
 
@@ -181,9 +179,13 @@
 	name = "Prosthetic Limbs"
 	external_key = "prosthetic_limbs"
 
-	default_value = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	// needs to happen after finalization so we can lop the limbs off correctly
+	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE - 1
 
+	default_value = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	dependencies = list(/datum/preference/bool/fbp)
+
+	randomization_flags = NONE
 
 /datum/preference/prosthetic_limbs/_is_available(list/dependency_data)
 	if(dependency_data[/datum/preference/bool/fbp])
@@ -205,7 +207,7 @@
 /datum/preference/prosthetic_limbs/apply_to_human(mob/living/carbon/human/target, data)
 	var/list/data_list = data
 	if(data == default_value)
-		continue
+		return
 
 	for(var/pros_limb in data_list)
 		var/obj/item/bodypart/old_part = target.get_bodypart(pros_limb)
@@ -239,7 +241,7 @@
 		user,
 		"You are modifying your [parse_zone(selected_zone)], what should it be changed to?",
 		"Character Preference", old_list[selected_zone]
-	) as null|anything in list(PROSTHETIC_NORMAL,PROSTHETIC_ROBOTIC,PROSTHETIC_AMPUTATED)
+	) as null|anything in list(PROSTHETIC_NORMAL, PROSTHETIC_ROBOTIC, PROSTHETIC_AMPUTATED)
 	if(!selected_option || selected_option == old_list[selected_zone])
 		return old_data
 
@@ -336,11 +338,10 @@
 	name = "Full-Body Positronic"
 	external_key = "is_fbp"
 
-	// absolutely has to come before /datum/preference/species, because we smuggle the fbp variable into set_species through the human themselves
-	application_priority = 12
-
 	default_value = FALSE
 	dependencies = list(/datum/preference/species)
+
+	randomization_flags = NONE // not for now.
 
 /datum/preference/bool/fbp/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
@@ -350,12 +351,10 @@
 	return TRUE
 
 /datum/preference/bool/fbp/apply_to_human(mob/living/carbon/human/target, data)
-	// this is the most evil fucking thing in the world because of how it interacts with /datum/preference/species
-	// need to figure out a better solution eventually
+	// kind of an evil way of doing it, but oh well!
 	target.fbp = data
 
 /datum/preference/bool/fbp/randomize(list/dependency_data, list/rand_dependency_data)
-	// this also doesn't get randomized. sorry! FBPs are too   jank !
 	return FALSE
 
 // UI CREATION
@@ -401,9 +400,10 @@
 	external_key = "mutant_color"
 
 	default_value = "FFFFFF"
+	min_hsv_value = 9
 	dependencies = list(/datum/preference/species)
 
-	min_hsv_value = 9
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/color/mutant_color/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
@@ -490,6 +490,8 @@
 	default_value = "FFFFFF"
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/color/mutant_color_2/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
 	// see the primary mutant color pref for info on elzu
@@ -556,7 +558,7 @@
 	external_key = "flavor_text"
 
 	default_value = ""
-	can_be_randomized = FALSE
+	randomization_flags = NONE // doesn't really make sense to randomize this ever
 
 /datum/preference/flavor_text/_is_available(list/dependency_data)
 	return TRUE
@@ -676,13 +678,16 @@
 	default_value = BODY_SIZE_NORMAL
 	dependencies = list(/datum/preference/species)
 
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
+
 /datum/preference/choiced_string/body_size/get_options_list()
 	return GLOB.body_sizes
 
 /datum/preference/choiced_string/body_size/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
-	#warn ohhhh this suck.s this sucks bad!
 	if(FEATURE_BODY_SIZE in chosen_species.default_features)
+		return TRUE
+	return FALSE
 
 /datum/preference/choiced_string/body_size/apply_to_human(mob/living/carbon/human/target, data)
 	target.dna.features[FEATURE_BODY_SIZE] = data
@@ -756,11 +761,10 @@
 	name = "Digitigrade"
 	external_key = "digitigrade"
 
-	// needs to happen before species, as the feature (once added to dna) only really affects the default leg type grabbed when choosing the player's limbs
-	// if this happened after species, we'd need to regenerate their legs. there wouldn't be much point in that
-	application_priority = 11
 	default_value = FALSE
 	dependencies = list(/datum/preference/species)
+
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
 /datum/preference/bool/digitigrade/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
@@ -841,7 +845,7 @@
 	// name =
 
 	// external_key =
-	// application_priority = 0
+	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
 
 	// default_value =
 

@@ -160,7 +160,66 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 	return reverseRange(reverse_topo_order)
 
 
-#warn these might need to be... i don't know, reorganized or unified or something
+
+#warn due to the way list indexing works, ALL preference lists should have UNAVAILABLE for every entry by default. hmmghrghrgh.. need to ensure that's the case!!!
+#warn also, consider alternate forms of "valid" given use of prefs for non-roundstart randomization. other species!!!!
+
+
+/proc/apply_prefs_list_to_human(mob/living/carbon/human/H, list/prefs_data_list)
+	#warn this is a stupid fucking way of doing this but whatever
+	var/finalized_bodyplan = FALSE
+
+	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
+		if(pref.application_priority < PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE && !finalized_bodyplan)
+			H.finalize_species()
+			finalized_bodyplan = TRUE
+
+		var/pref_data = prefs_data_list[pref.type]
+		if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
+			continue
+
+		#warn deapplication code goes here!!!
+
+		pref.apply_to_human(H, pref_data)
+
+	if(!finalized_bodyplan)
+		H.finalize_species()
+
+
+#warn should be rewritten, using the code for reverification from /datum/preferences
+#warn comment. note that errors here are runtimes! randomize() should always return a valid result.
+/proc/get_randomized_pref_list(list/preset_list, rand_hints)
+	var/output_list = list()
+
+	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
+		if(!(pref.randomization_flags & rand_hints))
+			continue
+		var/list/pref_deps = assemble_pref_dep_list(pref)
+		var/is_avail = pref.is_available(pref_deps)
+		// unavailable; mark it as such and continue
+		if(!is_avail)
+			if(pref.type in preset_list && preset_list[pref.type] != PREFERENCE_ENTRY_UNAVAILABLE)
+				stack_trace("Preference randomization was given preset data [pref.type] = [preset_list[pref.type]], but it was unavailable when it was reached!")
+			output_list[pref.type] = PREFERENCE_ENTRY_UNAVAILABLE
+			continue
+
+		var/rand_data
+		if(pref.type in preset_list)
+			rand_data = preset_list[pref.type]
+		else
+			var/list/pref_rand_deps = assemble_pref_rand_dep_list(pref)
+			rand_data = pref.randomize(pref_deps, pref_rand_deps)
+
+		var/invalid_check = pref.is_invalid(rand_data, pref_deps)
+		if(invalid_check)
+			stack_trace("Preference [pref.type] was randomized to value [rand_data], but this value is invalid: [invalid_check]")
+			output_list[pref.type] = pref.default_value
+		else
+			output_list[pref.type] = rand_data
+
+	return output_list
+
+#warn these might need to be... i don't know, reorganized or unified with each other or something. once again, i need to be clear about the nature of their input and output data
 /proc/assemble_pref_dep_list(datum/preference/pref, list/pref_data_list)
 	if(!pref.dependencies || !length(pref.dependencies))
 		return null
@@ -188,50 +247,7 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 	return dep_list
 
 
-
-#warn comment. note that errors here are runtimes! randomize() should always return a valid result.
-/proc/get_randomized_pref_list(list/preset_list)
-	var/output_list = list()
-
-	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
-		#warn maybe convert to a global list
-		if(!pref.can_be_randomized)
-			continue
-		var/list/pref_deps = assemble_pref_dep_list(pref)
-		var/is_avail = pref.is_available(pref_deps)
-		// unavailable; mark it as such and continue
-		if(!is_avail)
-			if(pref.type in preset_list && preset_list[pref.type] != PREFERENCE_ENTRY_UNAVAILABLE)
-				stack_trace("Preference randomization was given preset data [pref.type] = [preset_list[pref.type]], but it was unavailable when it was reached!")
-			output_list[pref.type] = PREFERENCE_ENTRY_UNAVAILABLE
-			continue
-
-		var/rand_data
-		if(pref.type in preset_list)
-			rand_data = preset_list[pref.type]
-		else
-			var/list/pref_rand_deps = assemble_pref_rand_dep_list(pref)
-			rand_data = pref.randomize(pref_deps, pref_rand_deps)
-
-		var/invalid_check = pref.is_invalid(rand_data, pref_deps)
-		if(invalid_check)
-			stack_trace("Preference [pref.type] was randomized to value [rand_data], but this value is invalid: [invalid_check]")
-			output_list[pref.type] = pref.default_value
-		else
-			output_list[pref.type] = rand_data
-
-	return output_list
-
-
-/proc/apply_prefs_list_to_human(mob/living/carbon/human/H, list/prefs_data_list)
-	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
-		var/pref_data = prefs_data_list[pref]
-		if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
-			continue
-		pref.apply_to_human(H, pref_data)
-
-
-#warn remgove
+#warn remgove, incl. from /datum/preferences
 // #warn note that this cannot "fail": if it does not return PREFERENCE_ENTRY_UNAVAILABLE, then the pref is assumed to be available and the entry is assumed to be valid
 // /datum/preferences/proc/get_pref_data(pref_type)
 // 	// ! not super efficient

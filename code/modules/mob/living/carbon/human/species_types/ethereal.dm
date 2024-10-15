@@ -18,7 +18,6 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
-	sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
@@ -27,7 +26,7 @@
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
-	mutant_bodyparts = list("elzu_horns", "tail_elzu")
+	mutant_bodyparts = list("tail_elzu")
 	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 	mutant_organs = list(/obj/item/organ/tail/elzu)
@@ -58,7 +57,7 @@
 		QDEL_NULL(ethereal_light)
 	return ..()
 
-/datum/species/elzuose/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/elzuose/on_species_gain(mob/living/carbon/C)
 	. = ..()
 	if(!ishuman(C))
 		return

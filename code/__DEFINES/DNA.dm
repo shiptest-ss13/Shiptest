@@ -130,8 +130,7 @@
 #define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23
-// ! overridden by NO_UNDERWEAR if it is set
-#define NO_SOCKS 24 // You cannot wear sock
+#define NO_SOCKS 24 // You cannot wear socks. Really a subset of NO_UNDERWEAR.
 #define NO_BONES 25 //! You don't have any bones for breaking
 // #define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
 #define SKINCOLORS 27 //Human skintones

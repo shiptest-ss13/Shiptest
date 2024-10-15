@@ -3,7 +3,7 @@
 	id = SPECIES_KEPORI
 	species_traits = list(EYECOLOR)
 	inherent_traits = list(TRAIT_SCOOPABLE)
-	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
+	mutant_bodyparts = list()
 	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
@@ -84,7 +84,7 @@
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 
-/datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/kepori/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		keptackle = new

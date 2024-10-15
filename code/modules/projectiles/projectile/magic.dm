@@ -258,6 +258,7 @@
 
 		if("humanoid")
 			new_mob = new /mob/living/carbon/human(M.loc)
+			var/mob/living/carbon/human/H = new_mob
 
 			if(prob(50))
 				var/list/chooseable_races = list()
@@ -267,12 +268,12 @@
 						chooseable_races += speciestype
 
 				if(chooseable_races.len)
-					new_mob.set_species(pick(chooseable_races))
+					H.set_species(pick(chooseable_races))
 
+			#warn oh hell. oh hell. we need to look at mentions of copy_to, i think.
 			var/datum/preferences/A = new()	//Randomize appearance for the human
-			A.copy_to(new_mob, icon_updates=0)
+			A.copy_to(H, icon_updates=0)
 
-			var/mob/living/carbon/human/H = new_mob
 			H.update_hair()
 			H.update_body_parts(TRUE)
 			H.dna.update_dna_identity()

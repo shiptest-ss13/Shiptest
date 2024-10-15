@@ -61,9 +61,9 @@
 
 		to_chat(M, "<span class='userdanger'>With a hideous feeling of emptiness you watch in horrified fascination as skin sloughs off bone! Blood boils, nerves disintegrate, eyes boil in their sockets! As your organs crumble to dust in your fleshless chest you come to terms with your choice. You're a lich!</span>")
 		M.mind.hasSoul = FALSE
-		M.set_species(/datum/species/skeleton)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
+			H.set_species(/datum/species/skeleton)
 			H.dropItemToGround(H.w_uniform)
 			H.dropItemToGround(H.wear_suit)
 			H.dropItemToGround(H.head)

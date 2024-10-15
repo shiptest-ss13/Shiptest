@@ -11,6 +11,7 @@
 	dependencies = list(/datum/preference/species)
 
 	rand_dependencies = list(/datum/preference/choiced_string/gender)
+	randomization_flags = PREF_RAND_FLAG_IDENTITY
 
 /datum/preference/real_name/_is_available(list/dependency_data)
 	return TRUE
@@ -142,6 +143,7 @@
 	default_value = MALE
 
 	dependencies = list(/datum/preference/species)
+	randomization_flags = PREF_RAND_FLAG_IDENTITY
 
 /datum/preference/choiced_string/gender/get_options_list()
 	// not sure if there's a global list for this..?
@@ -152,7 +154,7 @@
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
 	// AGENDER in species_traits automatically sets character gender to PLURAL (i.e. they/them) when the species is set,
 	// so this option doesn't need to be visible 24/7
-	if(!(AGENDER in chosen_species.species_traits))
+	if(AGENDER in chosen_species.species_traits)
 		return FALSE
 	return TRUE
 
@@ -245,6 +247,7 @@
 	default_value = 30 // sure
 
 	dependencies = list(/datum/preference/species)
+	randomization_flags = PREF_RAND_FLAG_APPEARANCE // a little odd, but means that age can be used for hair color, which i want to do evne if i haven't coded it
 
 /datum/preference/age/_is_available(list/dependency_data)
 	return TRUE
@@ -334,6 +337,7 @@
 	default_value = "Unremarkable"
 
 	dependencies = list(/datum/preference/species)
+	randomization_flags = PREF_RAND_FLAG_IDENTITY
 
 /datum/preference/generic_adjective/_is_available(list/dependency_data)
 	return TRUE

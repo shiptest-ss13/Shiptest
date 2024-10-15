@@ -15,7 +15,7 @@
 
 	var/obj/item/dullahan_relay/myhead
 
-/datum/species/dullahan/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
+/datum/species/dullahan/on_species_gain(mob/living/carbon/human/H)
 	. = ..()
 	H.lose_hearing_sensitivity(ORGAN_TRAIT)
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)

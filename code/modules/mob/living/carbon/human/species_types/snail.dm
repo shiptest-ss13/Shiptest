@@ -10,7 +10,6 @@
 	punchdamagehigh = 0.5 //snails are soft and squishy
 	siemens_coeff = 2 //snails are mostly water
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP
-	sexes = FALSE //snails are hermaphrodites
 	var/shell_type = /obj/item/storage/backpack/snail
 
 	mutanteyes = /obj/item/organ/eyes/snail
@@ -38,7 +37,7 @@
 		return TRUE
 	return ..()
 
-/datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/snail/on_species_gain(mob/living/carbon/C)
 	. = ..()
 	var/obj/item/storage/backpack/bag = C.get_item_by_slot(ITEM_SLOT_BACK)
 	if(!istype(bag, /obj/item/storage/backpack/snail))

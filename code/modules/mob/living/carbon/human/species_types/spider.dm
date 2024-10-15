@@ -41,10 +41,9 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 /datum/species/spider
 	name = "Rachnid"
 	id = SPECIES_RACHNID
-	sexes = 0
 	species_traits = list(LIPS, NOEYESPRITES)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("spider_legs", "spider_spinneret")
+	mutant_bodyparts = list()
 	default_features = list("spider_legs" = "Plain", "spider_spinneret" = "Plain", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -104,7 +103,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 /mob/living/carbon/human/species/spider
 	race = /datum/species/spider
 
-/datum/species/spider/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
+/datum/species/spider/on_species_gain(mob/living/carbon/human/H)
 	. = ..()
 	var/datum/action/innate/spin_web/SW = new
 	var/datum/action/innate/spin_cocoon/SC = new

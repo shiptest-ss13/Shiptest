@@ -4,7 +4,6 @@
 	// 1spooky
 	name = "\improper High-Functioning Zombie"
 	id = SPECIES_ZOMBIE
-	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	species_traits = list(NOBLOOD,NOZOMBIE,NOTRANSSTING)
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NOBREATH,TRAIT_NODEATH,TRAIT_FAKEDEATH,TRAIT_NOCLONELOSS)
@@ -74,7 +73,7 @@
 	if(infection)
 		qdel(infection)
 
-/datum/species/zombie/infectious/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/zombie/infectious/on_species_gain(mob/living/carbon/C)
 	. = ..()
 
 	// Deal with the source of this zombie corruption
@@ -91,7 +90,6 @@
 	name = "\improper Human"
 	id = SPECIES_GOOFZOMBIE
 	examine_limb_id = SPECIES_HUMAN
-	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
