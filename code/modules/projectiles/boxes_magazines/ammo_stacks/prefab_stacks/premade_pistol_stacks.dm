@@ -247,7 +247,7 @@
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 /obj/item/storage/box/ammo/c45_rubber
-	name = "box of incendiary .45 ammo"
+	name = "box of rubbershot .45 ammo"
 	desc = "A box of .45 rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "45box-rubbershot"
 
@@ -490,7 +490,7 @@
 /obj/item/storage/box/ammo/a44roum_hp
 	name = "box of HP .44 roumain ammo"
 	desc = "A box of .44 roumain rubbershot ammo, designed to disable targets without causing serious damage."
-	icon_state = "a44roum-rubber"
+	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()
 	..()

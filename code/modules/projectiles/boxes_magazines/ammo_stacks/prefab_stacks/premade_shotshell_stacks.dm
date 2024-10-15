@@ -52,7 +52,7 @@
 	desc = "A box of 12-gauge rubbershot shells, designed for riot control."
 	icon_state = "12gbox-rubbershot"
 
-/obj/item/storage/box/ammo/a12g_beanbag/PopulateContents()
+/obj/item/storage/box/ammo/a12g_rubbershot/PopulateContents()
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber = 4)
