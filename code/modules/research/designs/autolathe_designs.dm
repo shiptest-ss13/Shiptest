@@ -857,7 +857,7 @@
 	id = "ammo-can"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 500)
-	build_path = /obj/item/storage/toolbox/ammo
+	build_path = /obj/item/storage/ammo_can
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/cleaver
