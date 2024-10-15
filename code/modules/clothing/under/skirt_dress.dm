@@ -42,6 +42,12 @@
 	icon_state = "one_shoulder_dress"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/dress/iko_ikssoal
+
+	name = "iko_ikssoal"
+	desc = "The “iko-ikssoal”, translating to “long-dress”, is a traditional Kalixcian garment for formal gatherings."
+	icon_state = "iko_ikssoal"
+
 /obj/item/clothing/under/dress/skirt/color
 	name = "black skirt"
 	desc = "A black, casual skirt."

@@ -205,6 +205,11 @@
 	display_name = "dress, one shoulder"
 	path = /obj/item/clothing/under/dress/one_shoulder
 
+/datum/gear/uniform/dress/iko_ikssoal
+
+	display_name = "dress, iko-ikssoal"
+	path = /obj/item/clothing/under/dress/iko_ikssoal
+
 /datum/gear/uniform/dress/whitedress
 
 	display_name = "dress, white"
