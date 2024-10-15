@@ -311,11 +311,15 @@
 	name = "[initial(name)] - [tagname]"
 
 /obj/item/clothing/neck/dogtag
-	name = "frontiersman dogtag"
-	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+	name = "dogtag"
+	desc = "lo"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "shipkey"
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/dogtag/frontier
+	name = "frontiersman dogtag"
+	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
 
 /obj/item/clothing/neck/dogtag/ramzi
 	name = "ramzi clique dogtag"

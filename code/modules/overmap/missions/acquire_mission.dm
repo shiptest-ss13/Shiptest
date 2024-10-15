@@ -203,7 +203,7 @@ Acquire: Anomaly
 	duration = 100 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/toolbox/bounty/hunt
-	objective_type = /obj/item/clothing/neck/dogtag
+	objective_type = /obj/item/clothing/neck/dogtag/frontier
 	num_wanted = 3
 
 /datum/mission/acquire/bounty/ramzi
