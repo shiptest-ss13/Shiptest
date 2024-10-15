@@ -570,6 +570,7 @@
 	var/static/list/fridges_name_paths = list(/obj/machinery/smartfridge = "plant produce",
 		/obj/machinery/smartfridge/food = "food",
 		/obj/machinery/smartfridge/drinks = "drinks",
+		/obj/machinery/smartfridge/bloodbank = "blood",
 		/obj/machinery/smartfridge/organ = "organs",
 		/obj/machinery/smartfridge/chemistry = "chems",
 		/obj/machinery/smartfridge/chemistry/virology = "viruses",
