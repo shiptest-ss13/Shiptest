@@ -23,7 +23,7 @@
 /turf/open/floor/plating/dirt/jungle
 	slowdown = 0.5
 	baseturfs = /turf/open/floor/plating/dirt/jungle
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit

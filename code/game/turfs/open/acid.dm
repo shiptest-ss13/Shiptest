@@ -145,4 +145,4 @@
 
 /turf/open/water/acid/whitesands
 	planetary_atmos = TRUE
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
