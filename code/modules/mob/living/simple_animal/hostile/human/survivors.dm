@@ -202,7 +202,6 @@
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 				/obj/item/clothing/under/rank/prisoner = 10,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-				/obj/item/clothing/under/color/khaki/buster = 5,
 				/obj/item/clothing/under/rank/cargo/miner = 5
 				)
 			)
