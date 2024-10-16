@@ -4496,7 +4496,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "JP" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley,
+/obj/mecha/working/ripley{
+	name = "APLU MK-I 'Forklift'"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
@@ -5911,9 +5913,7 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ub" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
-	faction = list("eoehoma")
-	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Ug" = (
@@ -6036,7 +6036,9 @@
 /turf/open/floor/concrete/reinforced/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Vd" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
+	faction = list("eoehoma")
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
