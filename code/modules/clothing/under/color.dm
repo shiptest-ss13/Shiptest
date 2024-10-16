@@ -186,15 +186,6 @@
 	icon_state = "lightbrown_skirt"
 	item_state = "lb_suit"
 
-/obj/item/clothing/under/color/khaki
-	name = "khaki jumpsuit"
-	icon_state = "khakij"
-	item_state = "lb_suit"
-
-/obj/item/clothing/under/color/khaki/buster
-	name = "buster jumpsuit"
-	desc = "There seems to be a large stain in the left pocket. Someone must have squashed a really big twinkie."
-
 /obj/item/clothing/under/color/brown
 	name = "brown jumpsuit"
 	icon_state = "brown"
@@ -214,17 +205,3 @@
 	name = "maroon jumpskirt"
 	icon_state = "maroon_skirt"
 	item_state = "r_suit"
-
-/obj/item/clothing/under/color/rainbow
-	name = "rainbow jumpsuit"
-	desc = "A multi-colored jumpsuit!"
-	icon_state = "rainbow"
-	item_state = "rainbow"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/color/jumpskirt/rainbow
-	name = "rainbow jumpskirt"
-	desc = "A multi-colored jumpskirt!"
-	icon_state = "rainbow_skirt"
-	item_state = "rainbow"
-	can_adjust = FALSE
