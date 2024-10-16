@@ -30,16 +30,6 @@
 /obj/effect/turf_decal/atmos/air,
 /turf/open/floor/engine/air,
 /area/space)
-"bS" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "ch" = (
 /turf/open/floor/plating,
 /area/space)
@@ -97,25 +87,11 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
-"eT" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "fa" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/area/space)
-"fn" = (
-/obj/effect/turf_decal/trimline/opaque/green/line,
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "fu" = (
 /obj/effect/turf_decal/siding/wood{
@@ -138,15 +114,6 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
-"fP" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "gm" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
@@ -167,17 +134,19 @@
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "ho" = (
-/obj/effect/turf_decal/trimline/opaque/green/corner{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
-"hp" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 1
+"hQ" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
 	},
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/turf/open/floor/plasteel/mono/dark,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
 "hY" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -186,19 +155,19 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "hZ" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "iL" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 5
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -217,15 +186,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/space)
-"jO" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "ki" = (
 /turf/open/floor/engine/hull/reinforced,
@@ -255,12 +215,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
-"lU" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "lZ" = (
 /obj/effect/turf_decal/techfloor{
@@ -297,16 +251,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "nT" = (
-/obj/structure/bed/pod{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 9
-	},
 /obj/structure/curtain/bounty,
 /obj/structure/window/reinforced/survival_pod/spawner{
 	dir = 8
 	},
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "ok" = (
@@ -345,15 +294,6 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/space)
-"pX" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "qm" = (
 /obj/effect/turf_decal/techfloor{
@@ -441,13 +381,6 @@
 "uM" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
-"uO" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "vp" = (
 /obj/machinery/porta_turret/ship/pgf{
 	dir = 5
@@ -459,16 +392,6 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/sepia,
-/area/space)
-"vy" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "vD" = (
 /obj/item/clothing/neck/cloak/gezena/engi,
@@ -556,7 +479,10 @@
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "yB" = (
-/obj/effect/turf_decal/trimline/opaque/green/corner{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -610,17 +536,10 @@
 /turf/open/floor/plating,
 /area/space)
 "Cm" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"CY" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Dz" = (
@@ -628,29 +547,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "DG" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"DJ" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"DN" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
@@ -666,18 +567,19 @@
 	dir = 8
 	},
 /obj/structure/chair{
-	dir = 1
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Eb" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
+/obj/structure/railing,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
 	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
 	},
-/obj/structure/railing,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Fm" = (
@@ -705,10 +607,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "GM" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 4
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -762,21 +664,8 @@
 /obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating,
 /area/space)
-"Iq" = (
-/obj/structure/dresser{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "Is" = (
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"IJ" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/opaque/green/corner,
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Jb" = (
 /obj/effect/turf_decal/techfloor{
@@ -794,13 +683,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
-"JM" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/line,
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "JT" = (
 /obj/machinery/washing_machine,
@@ -837,13 +719,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
 "Ls" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
 	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
-/obj/machinery/vending/snack,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "No" = (
@@ -856,11 +734,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/space)
 "NF" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 9
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/green/corner,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -901,16 +778,6 @@
 "Qd" = (
 /obj/item/clothing/gloves/gezena/captain,
 /turf/open/space/basic,
-/area/space)
-"QI" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/line,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "QP" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -964,16 +831,6 @@
 /obj/item/clothing/suit/armor/gezena/captain,
 /turf/open/space/basic,
 /area/space)
-"US" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "Vs" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -981,27 +838,18 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/sepia,
 /area/space)
-"VM" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 5
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "Wh" = (
 /obj/structure/chair/sofa/grey/corpo/directional/north,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "Wk" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
-	},
 /obj/machinery/vending/coffee,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "WO" = (
@@ -1055,22 +903,24 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/space)
 "Yz" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
+/obj/structure/railing,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
 	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
-/obj/structure/railing,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "YK" = (
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod/spawner{
 	dir = 8
+	},
+/obj/structure/dresser{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
@@ -1081,36 +931,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "YZ" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 1
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Zj" = (
 /obj/structure/table/optable,
 /turf/open/floor/mineral/titanium/tiled,
-/area/space)
-"Zo" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"ZN" = (
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "ZT" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
@@ -1119,13 +947,6 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"ZZ" = (
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/green/warning,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 
@@ -1384,7 +1205,7 @@ wf
 uM
 DG
 Cm
-uM
+hQ
 yp
 Al
 Xy
@@ -1404,8 +1225,8 @@ ZT
 ci
 qA
 uM
-CY
-fn
+DG
+Cm
 uM
 Xd
 Xv
@@ -1426,8 +1247,8 @@ ZT
 DO
 uM
 uM
-CY
-fn
+DG
+Cm
 uM
 uM
 Xv
@@ -1447,11 +1268,11 @@ uM
 Is
 uM
 uM
-eT
+hZ
 yB
 ho
-DJ
-DJ
+hZ
+hZ
 hZ
 uM
 uM
@@ -1466,12 +1287,12 @@ Ua
 uM
 nT
 WO
-IJ
-fP
+gm
+gm
 Is
-Zo
 GM
-lU
+GM
+GM
 GM
 GM
 Wk
@@ -1488,8 +1309,8 @@ Ua
 uM
 Ar
 Rm
-hp
-Iq
+gm
+gm
 uM
 uM
 uM
@@ -1536,7 +1357,7 @@ YZ
 Vs
 Wh
 uM
-bS
+DG
 HH
 ok
 hY
@@ -1558,7 +1379,7 @@ YZ
 Vs
 Wh
 uM
-QI
+DG
 pl
 cQ
 jo
@@ -1574,13 +1395,13 @@ Ua
 Ua
 Ua
 uM
-jO
-DN
-vy
+gm
+gm
+YZ
 hj
 xf
 uM
-bS
+DG
 SG
 nQ
 yY
@@ -1598,11 +1419,11 @@ Ua
 uM
 Is
 uM
-pX
-jO
+gm
+Ls
 Ls
 uM
-QI
+DG
 zI
 Of
 GC
@@ -1624,7 +1445,7 @@ uM
 xK
 uM
 uM
-bS
+DG
 eL
 Gg
 rA
@@ -1691,7 +1512,7 @@ Fm
 yx
 Zj
 uM
-US
+Ua
 my
 uM
 vR
@@ -1713,7 +1534,7 @@ dv
 yx
 Np
 uM
-US
+Ua
 zz
 uM
 ku
@@ -1735,7 +1556,7 @@ Is
 Np
 Np
 uM
-US
+Ua
 lI
 uM
 Is
@@ -1757,9 +1578,9 @@ Ax
 Ax
 Np
 uM
-ZN
-hZ
-uO
+Ua
+Ua
+Ua
 sm
 zz
 uM
@@ -1779,9 +1600,9 @@ Is
 Np
 Np
 uM
-VM
-lU
-ZZ
+Ua
+Ua
+Ua
 sm
 JT
 uM
@@ -1803,7 +1624,7 @@ Np
 uM
 Sp
 NJ
-JM
+Ua
 uM
 uM
 uM
@@ -1825,7 +1646,7 @@ Np
 uM
 Sp
 NJ
-JM
+Ua
 uM
 sm
 sm
@@ -1847,7 +1668,7 @@ Np
 uM
 Sp
 Sp
-hp
+Ua
 uM
 vq
 fu
