@@ -299,9 +299,9 @@
 	name = "IRMG Artificer"
 	id_job = "Artificer"
 	outfit = /datum/outfit/job/inteq/engineer
-  
-/* SRM */  
-  
+
+/* SRM */
+
 /obj/effect/mob_spawn/human/corpse/srm/hunter
 	name = "SRM Hunter"
 	id_job = "Hunter"
