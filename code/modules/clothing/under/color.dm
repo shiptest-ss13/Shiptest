@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
-	mob_overlay_state = "rainbow" // if you somehow equip it like that
+	mob_overlay_state = "white" // if you somehow equip it like that
 
 /obj/item/clothing/under/color/random/Initialize()
 	..()
