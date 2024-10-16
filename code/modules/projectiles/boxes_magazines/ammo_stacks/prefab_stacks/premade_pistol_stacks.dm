@@ -388,6 +388,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c38
 	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c38
 	name = "box of .38 ammo"
