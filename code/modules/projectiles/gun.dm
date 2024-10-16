@@ -262,8 +262,6 @@
 */
 	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
 	var/list/valid_attachments = list()
-	///Reference to our attachment holder to prevent subtypes having to call GetComponent
-	var/datum/component/attachment_holder/attachment_holder
 	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
@@ -339,7 +337,7 @@
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	attachment_holder = AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
+	AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
@@ -384,6 +382,8 @@
 		QDEL_NULL(azoom)
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
+	if(magazine)
+		QDEL_NULL(magazine)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -1008,18 +1008,21 @@
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	var/obj/item/gun/gun = null
 
 /datum/action/toggle_scope_zoom/Trigger()
+	if(!istype(target, /obj/item/gun) || !..())
+		return
+
+	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
 
-/datum/action/toggle_scope_zoom/IsAvailable()
-	. = ..()
-	if(!. && gun)
-		gun.zoom(owner, owner.dir, FALSE)
+/datum/action/toggle_scope_zoom/Remove(mob/user)
+	if(!istype(target, /obj/item/gun))
+		return ..()
 
-/datum/action/toggle_scope_zoom/Remove(mob/living/L)
-	gun.zoom(L, L.dir, FALSE)
+	var/obj/item/gun/gun = target
+	gun.zoom(user, user.dir, FALSE)
+
 	..()
 
 /obj/item/gun/proc/rotate(atom/thing, old_dir, new_dir)
@@ -1056,8 +1059,7 @@
 		return
 
 	if(zoomable)
-		azoom = new()
-		azoom.gun = src
+		azoom = new(src)
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
