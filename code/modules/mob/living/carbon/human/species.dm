@@ -1921,8 +1921,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
 		//Stay hydrated.
-		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water))
+		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water) && H.stat != DEAD)
 			burn_damage -= clamp(H.reagents.get_reagent_amount(/datum/reagent/water) /10, 0, 2)
+		// if youre dead, no need to sweat?
+		if(H.stat != DEAD)
+			burn_damage -= (max(burn_damage - 2.5, 0))
 
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
@@ -1946,20 +1949,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(body_temp < bodytemp_cold_damage_limit - 15)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
-			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
+			if(H.stat != DEAD) // probably can store them in cold storage like this
+				H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
 			H.emote("shiver")
 
 		else if(body_temp < bodytemp_cold_damage_limit - 7)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
-			H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
-			if(prob(50))
+			if(H.stat != DEAD) // when you think about it, being cold wouldnt do skin damaage if there nothing even alive?
+				H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
+			if(prob(30))
 				H.emote("shiver")
 
 		else
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
 			if(H.stat != DEAD) // to prevent a bug where bodies at room tempertue actually take damage from their body being cold
 				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
-			if(prob(20))
+			if(prob(10))
 				H.emote("shiver")
 
 	// We are not to hot or cold, remove status and moods

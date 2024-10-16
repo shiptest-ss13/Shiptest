@@ -30,6 +30,9 @@
 	species_l_leg = /obj/item/bodypart/leg/left/moth
 	species_r_leg = /obj/item/bodypart/leg/right/moth
 
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 2
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 2
+
 /datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()
 	if(ishuman(C))

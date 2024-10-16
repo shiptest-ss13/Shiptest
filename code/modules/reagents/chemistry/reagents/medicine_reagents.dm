@@ -22,9 +22,9 @@
 
 /datum/reagent/medicine/leporazine/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(-4 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
 	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(40 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(4 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
 	..()
 
 /datum/reagent/medicine/adminordrazine //An OP chemical for admins
@@ -1833,7 +1833,7 @@
 
 /datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-2*REM, 0.)
-	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 
@@ -1850,7 +1850,7 @@
 
 /datum/reagent/medicine/rhigoxane/overdose_process(mob/living/carbon/M)
 	M.adjustFireLoss(3*REM, 0.)
-	M.adjust_bodytemperature(-35 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 	..()
 
 
