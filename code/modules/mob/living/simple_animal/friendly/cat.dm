@@ -78,7 +78,7 @@
 
 /mob/living/simple_animal/pet/cat/raycat
 	name = "\improper raycat"
-	desc = "A member of a feline lineage lineage said to trace back to the Night Of Fire. A raycat is an adoring pet for the radiation adverse spacer."
+	desc = "A member of a feline lineage said to trace back to the Night Of Fire. A raycat is an adoring pet for the radiation adverse spacer."
 	icon_state = "original"
 	icon_living = "original"
 	icon_dead = "original_dead"
