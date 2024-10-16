@@ -100,3 +100,8 @@
 	light_system = MOVABLE_LIGHT
 	light_color = COLOR_SOFT_RED
 	light_range = 2
+
+/obj/projectile/bullet/a65clip/rubber //"rubber"
+	name = "6.5x57mm CLIP rubber bullet"
+	damage = 10
+	stamina = 40
