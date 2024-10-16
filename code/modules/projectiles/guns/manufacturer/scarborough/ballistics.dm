@@ -422,7 +422,7 @@ EMPTY_GUN_HELPER(automatic/smg/cobra/indie)
 /obj/item/ammo_box/magazine/m45_cobra
 	name = "Cobra magazine (.45)"
 	desc = "A 24-round magazine for the Cobra submachine gun. These rounds do moderate damage, but struggle against armor."
-	icon_state = "cobra_mag-28"
+	icon_state = "cobra_mag-24"
 	base_icon_state = "cobra_mag"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
