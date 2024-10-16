@@ -65,7 +65,10 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "bx" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/southleft{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "bB" = (
@@ -230,8 +233,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "kv" = (
-/obj/machinery/door/airlock/engineering{
-	dir = 4
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -287,7 +291,11 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "lI" = (
-/obj/effect/turf_decal/techfloor,
+/obj/machinery/power/smes/engineering,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"ma" = (
+/obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "mb" = (
@@ -447,14 +455,9 @@
 /turf/open/floor/plating,
 /area/space)
 "sF" = (
-/obj/effect/decal/cleanable/vomit/old,
-/obj/structure/toilet/secret{
-	dir = 8;
-	pixel_x = 8;
-	secret_type = /obj/item/pen/edagger
-	},
-/obj/effect/decal/cleanable/wrapping{
-	name = "mess"
+/obj/item/paper{
+	pixel_y = -5;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/freezer,
 /area/space)
@@ -566,7 +569,15 @@
 /turf/open/floor/plasteel/freezer,
 /area/space)
 "xB" = (
-/obj/machinery/door/airlock/atmos,
+/obj/structure/sign/poster/contraband/gec{
+	pixel_x = -33
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "x";
+	layer = 3.5;
+	paint_colour = "#FF0000";
+	pixel_x = -31
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xC" = (
@@ -675,7 +686,8 @@
 /area/space)
 "Dd" = (
 /obj/effect/decal/cleanable/crayon{
-	icon_state = "splatter"
+	icon_state = "splatter";
+	paint_colour = "#FF0000"
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/space)
@@ -730,7 +742,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Gs" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "GD" = (
@@ -1039,11 +1053,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "RH" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "x";
-	layer = 3.5
-	},
-/turf/closed/wall/r_wall/syndicate,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "RW" = (
 /obj/machinery/power/ship_gravity,
@@ -1142,8 +1155,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Wr" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 10
+/obj/machinery/door/airlock/mining/glass{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -1152,10 +1165,16 @@
 /turf/open/space/basic,
 /area/space)
 "WB" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 9
+/obj/effect/decal/cleanable/vomit/old,
+/obj/effect/decal/cleanable/wrapping{
+	name = "mess"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/toilet/secret{
+	dir = 8;
+	pixel_x = 8;
+	secret_type = /obj/item/pen/edagger
+	},
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "WD" = (
 /turf/open/floor/plasteel/mono/dark,
@@ -1249,9 +1268,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/space)
 "YR" = (
-/obj/structure/sign/poster/contraband/gec{
-	pixel_x = -33
-	},
+/obj/structure/chair/bench/beige/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "YY" = (
@@ -2304,7 +2321,7 @@ jW
 jW
 jW
 jW
-jW
+Nq
 Nq
 Nq
 Nq
@@ -2375,9 +2392,9 @@ jW
 jW
 jW
 jW
+jW
 Nq
-Nq
-Nq
+ma
 XX
 XX
 Sd
@@ -2448,8 +2465,8 @@ jW
 Nq
 Nq
 Nq
-Sv
-ui
+Nq
+Az
 XX
 XX
 Sd
@@ -3024,11 +3041,11 @@ Nq
 KJ
 Nq
 Nq
+Sv
+ui
 Nq
 Nq
 Nq
-mn
-mn
 Nq
 Nq
 Nq
@@ -3096,11 +3113,11 @@ Nq
 JL
 tX
 Nq
-jW
-jW
 Nq
-XX
-XX
+Nq
+Nq
+jW
+jW
 Nq
 pC
 Nq
@@ -3170,9 +3187,9 @@ Tg
 Nq
 jW
 jW
-Nq
-XX
-XX
+jW
+jW
+jW
 Dd
 uC
 xm
@@ -3242,13 +3259,13 @@ xm
 Nq
 jW
 jW
-Nq
-XX
-XX
+jW
+jW
+jW
 YY
 Of
 pJ
-xm
+sF
 pJ
 xm
 pJ
@@ -3314,13 +3331,13 @@ XM
 Nq
 jW
 jW
-Nq
-XX
-XX
-Nq
-TE
+jW
+jW
+jW
 Nq
 Rx
+Nq
+TE
 Nq
 Rx
 Nq
@@ -3386,13 +3403,13 @@ Nq
 Nq
 jW
 jW
-Nq
-XX
-XX
-Nq
-sF
+jW
+jW
+jW
 Nq
 pK
+Nq
+WB
 Nq
 pK
 Nq
@@ -3458,25 +3475,25 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
 Nq
 XX
 XX
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
+XX
 Nq
 XX
 XX
-Nq
-WB
-bk
-bk
-Wr
+XX
 Nq
 XX
 XX
@@ -3530,25 +3547,25 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 XX
 XX
-Nq
-jW
-jW
-jW
-jW
-jW
-jW
-jW
-Nq
-XX
 XX
 Nq
-hj
 XX
 XX
-lI
+XX
 Nq
 XX
 XX
@@ -3602,25 +3619,25 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+Nq
 Nq
 XX
 XX
 Nq
-jW
-jW
-jW
-jW
-jW
-jW
-jW
-Nq
 XX
 XX
-Nq
-Oz
-hF
-hF
-hc
+XX
 Nq
 XX
 XX
@@ -3674,21 +3691,21 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 XX
 XX
-Nq
-jW
-jW
-jW
-jW
-jW
-jW
-jW
-Nq
-XX
-XX
-Nq
 Nq
 CG
 CG
@@ -3746,27 +3763,27 @@ jW
 jW
 jW
 jW
-XX
-XX
-XX
-Nq
-jW
-jW
 jW
 jW
 jW
 jW
 jW
 Nq
-XX
-XX
 Nq
 Nq
-RH
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+Wr
+Nq
 Nq
 Nq
 Nq
 Pu
+XX
 XX
 XX
 Nq
@@ -3818,24 +3835,24 @@ jW
 jW
 jW
 jW
-XX
-XX
-XX
-Nq
-jW
-jW
 jW
 jW
 jW
 jW
 jW
 Nq
-XX
-XX
-Nq
+lI
+lI
+gU
 QC
-YR
+xB
 XX
+XX
+Nq
+XX
+YR
+YR
+YR
 Nq
 Om
 XX
@@ -3890,26 +3907,26 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-Nq
-jW
-jW
 jW
 jW
 jW
 jW
 jW
 Nq
-XX
-XX
-Nq
+Gs
+Gs
+gU
 OF
 lv
 XX
+XX
 Nq
-vk
+XX
+XX
+XX
+XX
+Nq
+XX
 XX
 XX
 nf
@@ -3962,22 +3979,22 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-Nq
 jW
 jW
-Nq
-Nq
-Nq
-Nq
+jW
+jW
 jW
 Nq
 XX
 XX
-Nq
+RH
 cv
+XX
+XX
+XX
+Nq
+XX
+XX
 XX
 XX
 ft
@@ -4034,21 +4051,21 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-Nq
 jW
 jW
+jW
+jW
+jW
+Nq
+XX
+Nq
 Nq
 XX
 XX
-Nq
-Nq
-Nq
 XX
 XX
 ft
+XX
 XX
 XX
 XX
@@ -4111,16 +4128,16 @@ jW
 jW
 jW
 jW
-jW
 Nq
 XX
 XX
 XX
-xB
 XX
 XX
 XX
-Nq
+XX
+ft
+XX
 XX
 XX
 XX
@@ -4183,17 +4200,17 @@ jW
 jW
 jW
 jW
-jW
 Nq
-bx
-XX
-XX
-xB
-XX
-XX
 XX
 Nq
-Gs
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+XX
+XX
 XX
 XX
 Nq
@@ -4256,16 +4273,16 @@ jW
 jW
 jW
 jW
-Nq
-Nq
-Nq
-Nq
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 kv
-kv
-Nq
-Nq
-Nq
+bx
 Nq
 LD
 oO
@@ -4328,16 +4345,16 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
-XX
-XX
-XX
-XX
-XX
-XX
-Nq
-zc
-zc
+hJ
+hJ
 XX
 XX
 GL
@@ -4400,16 +4417,16 @@ jW
 jW
 jW
 jW
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 XX
 XX
-XX
-XX
-XX
-XX
-Nq
-zc
-zc
 XX
 XX
 EG
@@ -4472,13 +4489,13 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-XX
-XX
-XX
-XX
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 XX
 XX
@@ -4544,13 +4561,13 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-XX
-XX
-XX
-XX
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 XX
 XX
@@ -4616,13 +4633,13 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-XX
-XX
-XX
-XX
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 zc
 zc
@@ -4688,13 +4705,13 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-XX
-XX
-XX
-XX
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 zc
 zc
@@ -4760,13 +4777,13 @@ jW
 jW
 jW
 jW
-Nq
-XX
-XX
-XX
-XX
-XX
-Nq
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 Nq
 Nq
 Nq
@@ -4832,13 +4849,13 @@ jW
 jW
 jW
 jW
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
+jW
+jW
+jW
+jW
+jW
+jW
+jW
 jW
 jS
 Nq
