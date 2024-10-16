@@ -1957,7 +1957,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		else
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
-			H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
+			if(H.stat != DEAD) // to prevent a bug where bodies at room tempertue actually take damage from their body being cold
+				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
 			if(prob(20))
 				H.emote("shiver")
 
@@ -2134,9 +2135,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT && !no_protection)
 			return
 		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT && !no_protection)
-			H.adjust_bodytemperature(11)
+			H.adjust_bodytemperature(3)
 		else
-			H.adjust_bodytemperature(bodytemp_heating_rate_max + (H.fire_stacks * 12))
+			H.adjust_bodytemperature(bodytemp_heating_rate_max + (H.fire_stacks * 5))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)

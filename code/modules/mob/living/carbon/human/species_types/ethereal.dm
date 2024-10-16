@@ -27,11 +27,12 @@
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
-	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_SPREAD // about 150C
+	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_NORMAL + 65)
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
-	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
+	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_NORMAL + 40)
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 100
+	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 45)
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
 
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
