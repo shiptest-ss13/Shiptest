@@ -25,7 +25,7 @@
 
 /obj/item/clothing/under/color/jumpskirt/random
 	icon_state = "random_jumpsuit"		//Skirt variant needed
-	mob_overlay_state = "rainbow"
+	mob_overlay_state = "white"
 
 /obj/item/clothing/under/color/jumpskirt/random/Initialize()
 	..()
