@@ -56,6 +56,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "bS" = (
@@ -128,6 +129,9 @@
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
 	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)
 "es" = (
@@ -154,6 +158,7 @@
 /area/ruin/jungle/syndifort)
 "eU" = (
 /obj/structure/chair/plastic,
+/obj/effect/landmark/mission_poi/guard,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "eW" = (
@@ -762,6 +767,7 @@
 /obj/structure/sign/poster/contraband/peacemaker{
 	pixel_x = 32
 	},
+/obj/effect/landmark/mission_poi/guard,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "xm" = (
@@ -941,6 +947,7 @@
 "BC" = (
 /obj/structure/chair/plastic,
 /obj/machinery/light/small/directional/north,
+/obj/effect/landmark/mission_poi/guard,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "BH" = (

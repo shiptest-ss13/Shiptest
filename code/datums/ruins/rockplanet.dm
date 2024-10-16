@@ -36,3 +36,4 @@
 	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
 	id = "rockplanet_distillery"
 	suffix = "rockplanet_distillery.dmm"
+	dynamic_mission_types = list(/datum/mission/dynamic/kill/frontiersmen)
