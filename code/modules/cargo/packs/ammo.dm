@@ -426,6 +426,6 @@
 
 /datum/supply_pack/ammo/c22lr
 	name = ".22 LR Ammo Box Crate"
-	desc = "Contains a 60-round ammo box for refilling .22 LR weapons."
+	desc = "Contains a 100-round ammo box for refilling .22 LR weapons."
 	contains = list(/obj/item/storage/box/ammo/c22lr)
 	cost = 250
