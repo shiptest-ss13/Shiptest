@@ -14,7 +14,7 @@ Slimecrossing Weapons
 /obj/item/melee/arm_blade/slime/attack(mob/living/L, mob/user)
 	. = ..()
 	if(prob(20))
-		user.emote("scream")
+		user.force_scream()
 
 //Adamantine shield - Chilling Adamantine
 /obj/item/shield/adamantineshield

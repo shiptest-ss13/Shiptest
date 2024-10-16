@@ -22,8 +22,7 @@
 	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/clown
-	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green //WS Edit - Alt Uniforms
-	shoes = /obj/item/clothing/shoes/clown_shoes
+	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	backpack_contents = list(
@@ -35,8 +34,6 @@
 
 	implants = list(/obj/item/implant/sad_trombone)
 
-	backpack = /obj/item/storage/backpack/clown
-	satchel = /obj/item/storage/backpack/clown
 	duffelbag = /obj/item/storage/backpack/duffelbag/clown //strangely has a duffel
 
 	box = /obj/item/storage/box/hug/survival

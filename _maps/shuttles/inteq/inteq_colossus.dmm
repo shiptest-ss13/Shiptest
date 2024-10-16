@@ -653,9 +653,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "gH" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 6;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -1138,9 +1138,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "mb" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq/light{
+	id = "colossus_grid";
+	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/port)
@@ -1734,9 +1734,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "sT" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq/light{
+	id = "colossus_grid";
+	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
@@ -2068,9 +2068,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "vJ" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
@@ -2224,9 +2224,7 @@
 	name = "folder"
 	},
 /obj/item/pen/fourcolor,
-/obj/item/stamp/hos{
-	name = "vanguard's rubber stamp"
-	},
+/obj/item/stamp/inteq/vanguard,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_y = 20
 	},
@@ -2442,9 +2440,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Bi" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 9;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
@@ -3032,9 +3030,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
-	dir = 1
-	},
 /obj/machinery/power/terminal{
 	dir = 4
 	},
@@ -3045,6 +3040,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "HD" = (
@@ -3320,8 +3318,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
 "Ll" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -3557,7 +3556,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Oa" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/inteq/light{
+	id = "colossus_grid";
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -3630,9 +3630,9 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/maintenance/starboard)
 "OI" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 6;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/starboard)
@@ -3790,9 +3790,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Qw" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 10;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq{
+	id = "colossus_grid";
+	dir = 10
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -3944,9 +3944,9 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "RZ" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 6;
-	id = "colossus_grid"
+/obj/machinery/porta_turret/ship/inteq/light{
+	id = "talos_grid";
+	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
@@ -3975,13 +3975,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Sg" = (
@@ -4210,9 +4210,7 @@
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
 	name = "folder"
 	},
-/obj/item/stamp/law{
-	name = "master at arms' rubber stamp"
-	},
+/obj/item/stamp/inteq/maa,
 /obj/item/table_bell{
 	pixel_y = 13
 	},

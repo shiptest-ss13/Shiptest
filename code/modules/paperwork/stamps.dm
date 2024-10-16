@@ -97,9 +97,39 @@
 	dye_color = DYE_SYNDICATE
 
 /obj/item/stamp/cybersun
-	name = "Cybersun rubber stamp"
+	name = "Cybersun Virtual Solutions rubber stamp"
 	icon_state = "stamp-cybersun"
 	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun/biodynamics
+	name = "Cybersun Biodynamics rubber stamp"
+	icon_state = "stamp-biodynamics"
+	dye_color = DYE_CMO
+
+/obj/item/stamp/ngr
+	name = "New Gorlex Republic rubber stamp"
+	icon_state = "stamp-ngr"
+	dye_color = DYE_REDCOAT
+
+/obj/item/stamp/ngr/captain
+	name = "Captain's rubber stamp"
+	icon_state = "stamp-ngr_cap"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/foreman
+	name = "Foreman's rubber stamp"
+	icon_state = "stamp-ngr_fore"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/lieutenant
+	name = "Lieutenant's rubber stamp"
+	icon_state = "stamp-ngr_lieu"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/ensign
+	name = "Ensign's rubber stamp"
+	icon_state = "stamp-ngr_ensign"
+	dye_color = DYE_QM
 
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
@@ -110,32 +140,33 @@
 	icon_state = "stamp-inteq"
 	dye_color = DYE_QM
 
-/obj/item/stamp/vanguard
+/obj/item/stamp/inteq/vanguard
 	name = "Vanguard's rubber stamp"
-	icon_state = "stamp-vanguard"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_vanguard"
 
-/obj/item/stamp/maa
+/obj/item/stamp/inteq/maa
 	name = "Master at Arms' rubber stamp"
-	icon_state = "stamp-maa"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_maa"
 
-/obj/item/stamp/artificer
-	name = "Class II Artificer's rubber stamp"
-	icon_state = "stamp-artificer"
-	dye_color = DYE_QM
+/obj/item/stamp/inteq/artificer
+	name = "Honorable Artificer's rubber stamp"
+	icon_state = "stamp-inteq_artificer"
+
+/obj/item/stamp/inteq/corpsman
+	name = "Honorable Corpsman's rubber stamp"
+	icon_state = "stamp-inteq_corpsman"
 
 /obj/item/stamp/clip
 	name = "CLIP Minutemen rubber stamp"
 	icon_state = "stamp-cmm"
 	dye_color = DYE_FO
 
-/obj/item/stamp/gold
+/obj/item/stamp/clip/gold
 	name = "GOLD rubber stamp"
 	icon_state = "stamp-gold"
 	dye_color = DYE_FO
 
-/obj/item/stamp/bard
+/obj/item/stamp/clip/bard
 	name = "BARD rubber stamp"
 	icon_state = "stamp-bard"
 	dye_color = DYE_FO
