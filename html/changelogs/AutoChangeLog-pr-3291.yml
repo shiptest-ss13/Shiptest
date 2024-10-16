@@ -1,0 +1,14 @@
+author: Gristlebee
+changes:
+  - {rscadd: Ice Lodge Ruin Map and areas}
+  - {rscadd: Simple Mob Frontiersmen Flametrooper and Surgeon}
+  - {rscadd: shoot_point_blank option for simple mobs}
+  - {rscadd: dragon_fire_line supports igniting tiles}
+  - {rscadd: 'broken display case, gunpowder barrel, SRM corpse spawners, chemical
+      jug spawners'}
+  - {rscdel: Cat Butcher}
+  - {bugfix: Frontiersmen simplemob pathing}
+  - {bugfix: Fence doors spawning open when they should be closed and vice versa}
+  - {code_imp: 'scattering can be disabled with auto_scatter var for bullets, grown
+      items and nutrient bottles'}
+delete-after: true
