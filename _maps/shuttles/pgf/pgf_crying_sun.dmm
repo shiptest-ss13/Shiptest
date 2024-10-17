@@ -2380,9 +2380,16 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
 	},
+/obj/item/storage/box/flashbangs{
+	pixel_y = 6
+	},
 /obj/item/grenade/frag{
 	pixel_x = -10;
 	pixel_y = -1
+	},
+/obj/item/grenade/frag{
+	pixel_x = -5;
+	pixel_y = -6
 	},
 /obj/item/grenade/smokebomb{
 	pixel_y = 2;
@@ -2395,13 +2402,6 @@
 /obj/item/grenade/smokebomb{
 	pixel_x = 11;
 	pixel_y = -5
-	},
-/obj/item/grenade/frag{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/item/storage/box/flashbangs{
-	pixel_y = 6
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
