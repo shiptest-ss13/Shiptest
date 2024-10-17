@@ -98,7 +98,7 @@
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/ammo/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag)
 
 	price_min = 100
 	price_max = 600
@@ -320,7 +320,7 @@
 	name = "Pounder Submachine Gun"
 	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
-	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag,/datum/blackmarket_item/ammo/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
 
 	price_min = 1500
 	price_max = 2000
