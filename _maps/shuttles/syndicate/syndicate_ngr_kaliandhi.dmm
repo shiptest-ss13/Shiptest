@@ -787,7 +787,8 @@
 "fV" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
-	name = "Restroom"
+	name = "Restroom";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
