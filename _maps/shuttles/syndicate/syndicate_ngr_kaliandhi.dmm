@@ -31,7 +31,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
 "av" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 9;
 	id = "kali_grid"
 	},
@@ -139,6 +139,13 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external/dark)
+"bq" = (
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 8;
+	id = "kali_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/external/dark)
 "bt" = (
 /obj/machinery/cryopod{
 	dir = 1
@@ -170,7 +177,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
 "bz" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 10;
 	id = "kali_grid"
 	},
@@ -388,6 +395,12 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external/dark)
+"dj" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "dr" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -405,7 +418,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dt" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 10;
 	id = "kali_grid"
 	},
@@ -711,6 +724,10 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "fH" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 9;
+	id = "kali_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/central)
 "fV" = (
@@ -1221,12 +1238,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "ka" = (
-/obj/machinery/porta_turret/ship/syndicate{
-	dir = 9;
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 5;
 	id = "kali_grid"
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/central)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "kf" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2165,6 +2182,12 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
+"pu" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "pv" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 8;
@@ -3672,7 +3695,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "zl" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 5;
 	id = "kali_grid"
 	},
@@ -4118,6 +4141,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
+"BW" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/central)
 "Ca" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
@@ -4186,6 +4212,13 @@
 /obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"CC" = (
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 6;
+	id = "kali_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/canteen)
 "CF" = (
 /obj/structure/filingcabinet{
 	density = 0;
@@ -4838,6 +4871,13 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
+"Hl" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 5;
+	id = "kali_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "Hm" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -6134,7 +6174,7 @@
 /mob/living/simple_animal/hostile/carp/cayenne{
 	desc = "Originally the failed results of an ICW-era biological warfare program, this breed of docile space carp have become popular as pets on New Gorlex..";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE);
 	name = "Sirocco"
 	},
 /turf/open/floor/plasteel/dark,
@@ -6289,7 +6329,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "Sq" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 6;
 	id = "kali_grid"
 	},
@@ -7090,7 +7130,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/ccommons)
 "Xx" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 6;
 	id = "kali_grid"
 	},
@@ -7738,7 +7778,7 @@ Pg
 WK
 Pg
 Pg
-Pg
+CC
 Kz
 "}
 (15,1,1) = {"
@@ -8151,7 +8191,7 @@ Kz
 Kz
 Kz
 Kz
-Kz
+BW
 dG
 iI
 nm
@@ -8177,8 +8217,8 @@ Kz
 Kz
 Kz
 Kz
-Kz
 fH
+dG
 dG
 ui
 WC
@@ -8204,7 +8244,7 @@ Kz
 Kz
 Kz
 Kz
-ka
+dG
 dG
 dG
 dG
@@ -8285,7 +8325,7 @@ Kz
 Kz
 Kz
 Kz
-Ty
+ka
 Ty
 Ty
 Ty
@@ -8595,7 +8635,7 @@ Kz
 Kz
 Kz
 Kz
-Zj
+Hl
 Zj
 Zj
 Zj
@@ -8759,6 +8799,33 @@ Kz
 Kz
 Kz
 Ij
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+"}
+(53,1,1) = {"
+Kz
+Kz
+Kz
+Kz
+Kz
+dj
+bq
+pu
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
+Kz
 Kz
 Kz
 Kz
