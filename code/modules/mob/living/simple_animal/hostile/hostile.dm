@@ -712,7 +712,7 @@
 		if(ignite_turfs)
 			T.IgniteTurf(power,flame_color)
 		for(var/mob/living/L in T.contents)
-			if((L in hit_list )|| L == source)
+			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
