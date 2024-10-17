@@ -4639,6 +4639,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mob_spawn/human/corpse/indie/engineer,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "WK" = (
@@ -4667,6 +4668,11 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/concrete/pavement/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"WL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/human/corpse/indie/engineer,
+/turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "WO" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -6278,7 +6284,7 @@ VT
 QB
 LD
 bY
-yF
+WL
 yF
 PZ
 DQ
