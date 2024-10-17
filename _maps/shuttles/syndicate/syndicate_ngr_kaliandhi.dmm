@@ -9,6 +9,9 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/corner/opaque/beige/half,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "ah" = (
@@ -66,6 +69,15 @@
 /area/ship/bridge)
 "aP" = (
 /obj/effect/turf_decal/corner/opaque/tan/full,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /obj/machinery/computer/communications{
 	icon_state = "computer-left"
 	},
@@ -77,15 +89,27 @@
 	name = "Helm"
 	},
 /obj/effect/landmark/start/captain,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aS" = (
 /obj/effect/turf_decal/corner/opaque/tan/full,
-/obj/machinery/computer/monitor{
-	icon_state = "computer-right"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/computer/monitor{
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -96,6 +120,9 @@
 "bj" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/tan/full,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "bl" = (
@@ -221,6 +248,9 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -564,6 +594,9 @@
 	pixel_x = -2;
 	pixel_y = 3
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eS" = (
@@ -581,6 +614,15 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eT" = (
@@ -590,6 +632,15 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -653,6 +704,9 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "kali_bridge_shut"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -724,7 +778,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "fH" = (
-/obj/machinery/porta_turret/ship/ngr/light{
+/obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 9;
 	id = "kali_grid"
 	},
@@ -1238,7 +1292,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "ka" = (
-/obj/machinery/porta_turret/ship/ngr/heavy{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 5;
 	id = "kali_grid"
 	},
@@ -2318,6 +2372,22 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
+"qa" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "kali_bridge_shut"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "qe" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 9
@@ -3403,6 +3473,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5555,6 +5628,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "MN" = (
@@ -6259,6 +6335,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "RM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "RP" = (
@@ -7141,6 +7220,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "kali_bridge_shut"
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "XP" = (
@@ -7945,7 +8027,7 @@ Kz
 "}
 (21,1,1) = {"
 XN
-XN
+qa
 eT
 bX
 dD
