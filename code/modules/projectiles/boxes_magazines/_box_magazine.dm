@@ -36,8 +36,10 @@
 	///cost of the materials in the magazine/box itself
 	var/list/base_cost
 
-/obj/item/ammo_box/Initialize()
+/obj/item/ammo_box/Initialize(mapload, spawn_empty)
 	. = ..()
+	if(spawn_empty)
+		start_empty = TRUE
 	if(!base_icon_state)
 		base_icon_state = icon_state
 
