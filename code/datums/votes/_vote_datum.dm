@@ -156,7 +156,7 @@
 
 /// Gets the winner of the vote, selecting a random choice from all choices based on their vote count.
 /datum/vote/proc/get_random_winner()
-	var/winner = pickweight(choices)
+	var/winner = pick_weight(choices)
 	return winner ? list(winner) : list()
 
 /**

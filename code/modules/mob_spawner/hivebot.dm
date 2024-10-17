@@ -42,7 +42,7 @@
 	smoke.set_up(2, loc)
 	smoke.start()
 	new /obj/effect/particle_effect/sparks(loc)
-	new /obj/effect/spawner/lootdrop/waste/hivebot/beacon(loc)
+	new /obj/effect/spawner/random/waste/hivebot/beacon(loc)
 
 /obj/effect/light_emitter/hivespawner
 	set_luminosity = 4

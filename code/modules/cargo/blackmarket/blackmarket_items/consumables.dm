@@ -4,7 +4,7 @@
 /datum/blackmarket_item/consumable/donk_pocket_box
 	name = "Box of Donk Pockets"
 	desc = "A well packaged box containing the favourite snack of every spacefarer."
-	item = /obj/effect/spawner/lootdrop/donkpockets
+	item = /obj/effect/spawner/random/food_or_drink/donkpockets
 
 	stock_min = 2
 	stock_max = 5
@@ -186,7 +186,7 @@
 /datum/blackmarket_item/consumable/ration
 	name = "Ration Pack"
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
-	item = /obj/effect/spawner/lootdrop/ration
+	item = /obj/effect/spawner/random/food_or_drink/ration
 
 	price_min = 150
 	price_max = 300

@@ -842,8 +842,8 @@
 /area/ship/crew)
 "AL" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/radio/intercom/directional/north,
 /obj/item/lighter{
@@ -876,8 +876,8 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Bw" = (
-/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
-/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
+/obj/effect/spawner/random/clothing/pirate_or_bandana,
+/obj/effect/spawner/random/clothing/pirate_or_bandana,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/jackboots,
@@ -1569,12 +1569,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},

@@ -685,7 +685,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "ei" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "el" = (
@@ -989,7 +989,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	color = "#A47449";
@@ -1446,7 +1446,7 @@
 	dir = 4;
 	layer = 3.9
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/cable/yellow{
 	icon_state = "1-9"
 	},
@@ -3204,7 +3204,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
@@ -4344,11 +4344,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "AT" = (
@@ -5764,9 +5764,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
@@ -7185,7 +7185,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
 "UC" = (
@@ -7411,7 +7411,7 @@
 	},
 /area/overmap_encounter/planetoid/cave/explored)
 "VV" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "VW" = (

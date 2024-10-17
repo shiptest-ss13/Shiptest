@@ -383,7 +383,7 @@ LINEN BINS
 
 /obj/item/bedsheet/dorms/Initialize()
 	..()
-	var/type = pickweight(list("Colors" = 80, "Special" = 20))
+	var/type = pick_weight(list("Colors" = 80, "Special" = 20))
 	switch(type)
 		if("Colors")
 			type = pick(list(/obj/item/bedsheet,
@@ -408,7 +408,7 @@ LINEN BINS
 
 /obj/item/bedsheet/dorms/double/Initialize()
 	..()
-	var/type = pickweight(list("Colors" = 80, "Special" = 20))
+	var/type = pick_weight(list("Colors" = 80, "Special" = 20))
 	switch(type)
 		if("Colors")
 			type = pick(list(/obj/item/bedsheet/double,
