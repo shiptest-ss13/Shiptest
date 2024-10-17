@@ -8,7 +8,6 @@
 
 	icon_state = "mauler"
 	item_state = "hp_generic"
-	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
 	fire_delay = 0.06 SECONDS
 
@@ -130,6 +129,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	w_class = WEIGHT_CLASS_BULKY //this gun is visually larger, so I believe this is good
 
 	icon_state = "pounder"
 	item_state = "pounder"

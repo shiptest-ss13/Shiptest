@@ -170,6 +170,7 @@
 	icon_state = "penlight"
 	item_state = ""
 	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_TINY
 	light_range = 2
 	light_color = "#FFDDCC"
 	light_power = 0.3
