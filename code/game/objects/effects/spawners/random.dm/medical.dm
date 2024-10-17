@@ -127,3 +127,19 @@
 		/obj/item/bodypart/leg/left/robot/surplus = 1,
 		/obj/item/bodypart/leg/right/robot/surplus = 1,
 	)
+
+/obj/effect/spawner/random/medical/chem_jug
+	loot = list(
+		/obj/item/reagent_containers/glass/chem_jug/carbon,
+		/obj/item/reagent_containers/glass/chem_jug/oxygen,
+		/obj/item/reagent_containers/glass/chem_jug/nitrogen,
+		/obj/item/reagent_containers/glass/chem_jug/hydrogen,
+		/obj/item/reagent_containers/glass/chem_jug/radium,
+		/obj/item/reagent_containers/glass/chem_jug/aluminium,
+		/obj/item/reagent_containers/glass/chem_jug/chlorine,
+		/obj/item/reagent_containers/glass/chem_jug/copper,
+		/obj/item/reagent_containers/glass/chem_jug/bromine,
+		/obj/item/reagent_containers/glass/chem_jug/iodine,
+		/obj/item/reagent_containers/glass/chem_jug/potassium,
+		/obj/item/reagent_containers/glass/chem_jug/sulfur
+	)

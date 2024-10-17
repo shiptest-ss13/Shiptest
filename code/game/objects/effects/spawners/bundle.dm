@@ -47,11 +47,10 @@
 /obj/effect/spawner/costume/maid
 	name = "maid costume spawner"
 	items = list(
-		/obj/item/clothing/under/dress/skirt,
+		/obj/item/clothing/under/dress/skirt/color,
 		/obj/effect/spawner/random/clothing/beret_or_rabbitears,
 		/obj/item/clothing/glasses/blindfold
 	)
-
 
 /obj/effect/spawner/costume/butler
 	name = "butler costume spawner"
