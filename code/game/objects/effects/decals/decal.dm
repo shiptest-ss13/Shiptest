@@ -61,5 +61,15 @@
 
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
-	moveToNullspace()
+//#ifdef CREATE_AND_DESTROY_TEST
+// If we don't do this, turf decals will end up stacking up on a tile, and break the overlay limit
+// I hate it too bestie
+	if(GLOB.running_create_and_destroy)
+		var/turf/T = loc
+		T.RemoveElement(/datum/element/decal, icon, icon_state, dir, null, layer, alpha, color, null, FALSE, null)
+//#endif
+	// Intentionally used over moveToNullspace(), which calls doMove(), which fires
+	// off an enormous amount of procs, signals, etc, that this temporary effect object
+	// never needs or affects.
+	loc = null
 	return QDEL_HINT_QUEUE
