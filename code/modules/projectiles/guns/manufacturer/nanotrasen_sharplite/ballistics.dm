@@ -1,4 +1,3 @@
-
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "VI Commander"
 	desc = "A service pistol produced as Vigilitas Interstellar's standard sidearm. Has a reputation for being easy to use, due to its light recoil and high magazine capacity. Chambered in 9mm."
