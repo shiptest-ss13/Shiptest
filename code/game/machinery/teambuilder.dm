@@ -43,11 +43,9 @@
 	desc = "A machine that, when passed, colors you based on the color of your team. Go red team!"
 	color = "#ff0000"
 	team_color = "#ff0000"
-	team_radio = FREQ_CTF_RED
 
 /obj/machinery/teambuilder/blue
 	name = "Teambuilding Machine (Blue)"
 	desc = "A machine that, when passed, colors you based on the color of your team. Go blue team!"
 	color = "#0000ff"
 	team_color = "#0000ff"
-	team_radio = FREQ_CTF_BLUE
