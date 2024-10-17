@@ -47,7 +47,6 @@
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
 	movement_type = FLYING
-	gold_core_spawnable = FRIENDLY_SPAWN
 	search_objects = 1 //have to find those plant trays!
 
 	//Spaceborn beings don't get hurt by space

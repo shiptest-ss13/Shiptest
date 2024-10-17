@@ -282,7 +282,6 @@
 		/obj/item/storage/firstaid/tactical,
 		/obj/item/encryptionkey/syndicate,
 		/obj/item/clothing/glasses/thermal/syndi,
-		/obj/item/slimepotion/slime/sentience/nuclear,
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,

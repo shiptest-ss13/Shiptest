@@ -410,14 +410,6 @@
 	for(var/obj/item/reagent_containers/glass/G in beakers)
 		reactants += G.reagents
 
-	for(var/obj/item/slime_extract/S in beakers)
-		if(S.Uses)
-			for(var/obj/item/reagent_containers/glass/G in beakers)
-				G.reagents.trans_to(S, G.reagents.total_volume)
-
-			if(S && S.reagents && S.reagents.total_volume)
-				reactants += S.reagents
-
 	if(!chem_splash(get_turf(src), spread_range, reactants, temp_boost))
 		playsound(loc, 'sound/items/screwdriver2.ogg', 50, TRUE)
 		return // The Explosion didn't do anything. No need to log, or disappear.
@@ -460,16 +452,9 @@
 	for(var/obj/item/grenade/chem_grenade/G in src)
 
 		if(istype(G, /obj/item/grenade/chem_grenade/large))
-			var/obj/item/grenade/chem_grenade/large/LG = G
 			max_beakers += 1 // Adding two large grenades only allows for a maximum of 7 beakers.
 			spread_range += 2 // Extra range, reduced density.
 			temp_boost += 50 // maximum of +150K blast using only large beakers. Not enough to self ignite.
-			for(var/obj/item/slime_extract/S in LG.beakers) // And slime cores.
-				if(beakers.len < max_beakers)
-					beakers += S
-					S.forceMove(src)
-				else
-					S.forceMove(drop_location())
 
 		if(istype(G, /obj/item/grenade/chem_grenade/cryo))
 			spread_range -= 1 // Reduced range, but increased density.

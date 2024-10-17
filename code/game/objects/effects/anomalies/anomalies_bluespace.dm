@@ -63,7 +63,7 @@
 		if(istype(A, /obj/item/beacon))
 			continue // don't teleport beacons because that's just insanely stupid
 		if(iscameramob(A))
-			continue // Don't mess with AI eye, xenobio or advanced cameras
+			continue // Don't mess with AI eye, or advanced cameras
 		if(A.anchored)
 			continue
 

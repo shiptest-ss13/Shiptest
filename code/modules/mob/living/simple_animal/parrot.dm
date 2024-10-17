@@ -64,7 +64,6 @@
 	friendly_verb_simple = "groom"
 	mob_size = MOB_SIZE_SMALL
 	movement_type = FLYING
-	gold_core_spawnable = FRIENDLY_SPAWN
 
 	var/parrot_damage_upper = 10
 	var/parrot_state = PARROT_WANDER //Hunt for a perch when created
@@ -904,7 +903,6 @@
 	name = "Polly"
 	desc = "Polly the Parrot. An expert on quantum cracker theory."
 	speak = list("Polly wanna cracker!", ":e Check the crystal, you chucklefucks!",":e Wire the solars, you lazy bums!",":e WHO TOOK THE DAMN HARDSUITS?",":e OH GOD ITS ABOUT TO DELAMINATE CALL THE SHUTTLE")
-	gold_core_spawnable = NO_SPAWN
 	speak_chance = 3
 	var/memory_saved = FALSE
 	var/rounds_survived = 0
