@@ -1498,7 +1498,8 @@
 "lI" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Canteen"
+	name = "Canteen";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5759,7 +5760,8 @@
 /area/ship/hallway/aft)
 "Nr" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Crew Quarters"
+	name = "Crew Quarters";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6352,7 +6354,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/hatch{
-	name = "Cargo Bay"
+	name = "Cargo Bay";
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/fore)
@@ -6575,7 +6578,8 @@
 /area/ship/engineering/atmospherics)
 "TL" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Canteen"
+	name = "Canteen";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7189,7 +7193,8 @@
 "Xw" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Rec Room"
+	name = "Rec Room";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7343,7 +7348,8 @@
 "Zb" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Cargo Bay"
+	name = "Cargo Bay";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
