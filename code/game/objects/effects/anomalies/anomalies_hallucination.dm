@@ -2,7 +2,8 @@
 /obj/effect/anomaly/hallucination
 	name = "hallucination anomaly"
 	icon_state = "hallucination"
-	aSignal = /obj/item/assembly/signaler/anomaly/hallucination
+	desc = "A shimmering mirage suspended above the ground, never in the same place as it was a second ago."
+	core = /obj/item/assembly/signaler/anomaly/hallucination
 	/// Time passed since the last effect, increased by delta_time of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
@@ -18,6 +19,8 @@
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 5)
+	pixel_x = pixel_x + clamp(rand(-5, 5), -16, 16)
+	pixel_y = pixel_y + clamp(rand(-5, 5), -16, 16)
 
 /obj/effect/anomaly/hallucination/detonate()
 	var/turf/open/our_turf = get_turf(src)

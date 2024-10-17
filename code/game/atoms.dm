@@ -1071,6 +1071,7 @@
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EXPLOSION, "Explosion")
 	VV_DROPDOWN_OPTION(VV_HK_RADIATE, "Radiate")
 	VV_DROPDOWN_OPTION(VV_HK_EDIT_FILTERS, "Edit Filters")
+	VV_DROPDOWN_OPTION(VV_HK_SELL, "Export Item")
 
 /atom/vv_do_topic(list/href_list)
 	. = ..()
@@ -1141,6 +1142,9 @@
 	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
+
+	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
+		export_item_and_contents(src, allowed_categories = ALL, apply_elastic = FALSE)
 
 /atom/vv_get_header()
 	. = ..()

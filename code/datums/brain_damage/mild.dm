@@ -110,6 +110,7 @@
 
 /datum/brain_trauma/mild/healthy/on_gain()
 	owner.set_screwyhud(SCREWYHUD_HEALTHY)
+	ADD_TRAIT(owner, TRAIT_ANALGESIA, type)
 	..()
 
 /datum/brain_trauma/mild/healthy/on_life()
@@ -119,6 +120,7 @@
 
 /datum/brain_trauma/mild/healthy/on_lose()
 	owner.set_screwyhud(SCREWYHUD_NONE)
+	REMOVE_TRAIT(owner, TRAIT_ANALGESIA, type)
 	..()
 
 /datum/brain_trauma/mild/muscle_weakness
