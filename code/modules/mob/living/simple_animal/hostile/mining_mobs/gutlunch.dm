@@ -42,12 +42,16 @@
 	animal_species = /mob/living/simple_animal/hostile/asteroid/gutlunch
 	childtype = list(/mob/living/simple_animal/hostile/asteroid/gutlunch/grublunch = 100)
 
+	var/mutable_appearance/gutlunch_full_overlay
+
 	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab)
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/Initialize()
 	. = ..()
-	if(wanted_objects.len)
-		AddComponent(/datum/component/udder, /obj/item/udder/gutlunch, CALLBACK(src, PROC_REF(regenerate_icons)), CALLBACK(src, PROC_REF(regenerate_icons)))
+	if(!length(wanted_objects))
+		return
+	AddComponent(/datum/component/udder, /obj/item/udder/gutlunch, CALLBACK(src, TYPE_PROC_REF(/atom/movable, update_overlays)), CALLBACK(src, TYPE_PROC_REF(/atom/movable, update_overlays)))
+	gutlunch_full_overlay = mutable_appearance(icon, "gl_full")
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/CanAttack(atom/the_target) // Gutlunch-specific version of CanAttack to handle stupid stat_exclusive = true crap so we don't have to do it for literally every single simple_animal/hostile except the two that spawn in lavaland
 	if(isturf(the_target) || !the_target || the_target.type == /atom/movable/lighting_object) // bail out on invalids
@@ -71,14 +75,12 @@
 
 	return FALSE
 
-/mob/living/simple_animal/hostile/asteroid/gutlunch/regenerate_icons(new_udder_volume, max_udder_volume)
-	cut_overlays()
-	var/static/gutlunch_full_overlay
-	if(isnull(gutlunch_full_overlay))
-		gutlunch_full_overlay = iconstate2appearance(icon, "gl_full")
-	if(new_udder_volume == max_udder_volume)
-		add_overlay(gutlunch_full_overlay)
-	..()
+/mob/living/simple_animal/hostile/asteroid/gutlunch/update_overlays(new_udder_volume, max_udder_volume)
+	. = ..()
+	if(new_udder_volume != max_udder_volume)
+		return
+
+	. += gutlunch_full_overlay
 
 //Male gutlunch. They're smaller and more colorful!
 /mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck
