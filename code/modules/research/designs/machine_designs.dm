@@ -85,7 +85,8 @@
 	desc = "The circuit board for a space heater."
 	id = "space_heater"
 	build_path = /obj/item/circuitboard/machine/space_heater
-	category = list ("Engineering Machinery")
+	build_type = AUTOLATHE | IMPRINTER
+	category = list ("Engineering Machinery", "initial", "Equipment")
 	departmental_flags = ALL
 
 /datum/design/board/teleport_station
