@@ -135,7 +135,7 @@
 	icon_state = "fairygrass[rand(0,3)]"
 
 /turf/open/floor/grass/fairy/beach
-	baseturfs = /turf/open/floor/plating/beach/sand
+	baseturfs = /turf/open/floor/plating/asteroid/sand
 	planetary_atmos = TRUE
 
 /turf/open/floor/grass/snow
