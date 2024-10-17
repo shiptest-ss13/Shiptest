@@ -337,7 +337,7 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "fe" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
@@ -1659,7 +1659,7 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wD" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -1771,7 +1771,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "yi" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -1968,9 +1968,9 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/wood/mahogany{
 	icon_state = "wood-broken6"
 	},
@@ -2677,7 +2677,7 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/residential)
 "Nq" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed{
