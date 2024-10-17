@@ -46,7 +46,7 @@
 	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	turret_flags = TURRET_FLAG_SHOOT_ALL
+	turret_flags = TURRET_FLAG_SHOOT_ALL | TURRET_FLAG_SHOOT_HEADS | TURRET_FLAG_SHOOT_UNSHIELDED
 
 //gut wrenching content
 
@@ -75,15 +75,16 @@
 	NAME Kerberos-574
 	DELAY 10
 	SAY My Name is Kerberos-574. I've been assigned to this Operations Post for the foreseeable future.
-	DELAY 20
+	DELAY 40
 	SAY Command's orders included some fine print.
-	DELAY 10
+	DELAY 20
 	SAY Said *I* need to keep a journal for my morale's sake.
 	SOUND keyboard
-	DELAY 30
+	DELAY 40
 	SAY Don't know how long I'm gonna be down here but I'm not too keen on journaling.
-	DELAY 20
+	DELAY 30
 	SAY We'll see how it goes, though.
+	DELAY 30
 	"}
 
 /obj/item/disk/holodisk/ruin/cave_base/two
@@ -91,16 +92,17 @@
 	preset_image_type = /datum/preset_holoimage/hapless_ipc
 	preset_record_text = {"
 	NAME Kerberos-574
-	DELAY 10
+	DELAY 30
 	SAY Been about... 2 months since my last journal entry. Haven't heard *shit* from anyone for the past....
+	DELAY 50
 	SOUND keyboard
-	DELAY 5
+	DELAY 10
 	SAY 2 weeks?
-	DELAY 20
+	DELAY 40
 	SAY Checked the relay and made sure that everything was linked up. Got a no connection error when I - well - tried to forcibly re-establish one.
 	DELAY 40
 	SAY Miss being able to chat. But. It is what it is.
-	DELAY 10
+	DELAY 20
 	"}
 
 /obj/item/disk/holodisk/ruin/cave_base/three
@@ -108,21 +110,22 @@
 	preset_image_type = /datum/preset_holoimage/hapless_ipc
 	preset_record_text = {"
 	NAME Kerberos-574
-	DELAY 10
+	DELAY 30
 	SAY 'Nother month down the drain, aye Kerberos?
-	DELAY 10
+	DELAY 40
 	SAY Yup. Still haven't heard anything from anyone.
-	DELAY 10
+	DELAY 40
 	SAY Just making sure this place runs, and that *I'm* okay.
-	DELAY 20
+	DELAY 50
 	SAY Weather has been picking up something fierce lately. Scanners are saying that the planetoid is entering it's winter.
 	DELAY 40
 	SAY Heh. Maybe some new beasts will show themselves.
-	DELAY 10
+	DELAY 40
 	SAY I was dropped with an AMR and kit for a reason after all...
-	DELAY 10
+	DELAY 30
 	SAY Self-defense. And you know what the Solarians say about the best defense.
 	SOUND rustle
+	DELAY 50
 	"}
 
 /obj/item/disk/holodisk/ruin/cave_base/four
@@ -130,28 +133,31 @@
 	preset_image_type = /datum/preset_holoimage/hunting_ipc
 	preset_record_text = {"
 	NAME Kerberos-574
-	DELAY 10
+	DELAY 20
 	SAY One Four Point Five
 	SOUND sparks
-	DELAY 10
+	DELAY 20
 	SAY One Four Point Five By One Four Six Point Seven.
 	SOUND sparks
-	DELAY 10
+	DELAY 20
 	SOUND sparks
-	DELAY 20
+	DELAY 40
 	SAY -and that animal clipped me in something important.
-	DELAY 20
+	DELAY 30
 	SAY I got knocked around - and landed by something *buzzing*.
-	DELAY 10
+	DELAY 30
 	SAY Got the gun. Scrambled away.
-	DELAY 10
+	DELAY 20
 	SAY But I've been blacking out for bits. Losing days.
-	DELAY 5
+	DELAY 15
 	SOUND rustle
-	DELAY 10
+	DELAY 20
 	SAY And still no word from command. Starting to wor-
 	DELAY 5
 	SOUND sparks
+	DELAY 20
+	SAY One Fou-
+	DELAY 5
 	"}
 
 /obj/item/disk/holodisk/ruin/cave_base/five
@@ -159,27 +165,28 @@
 	preset_image_type = /datum/preset_holoimage/hunting_ipc
 	preset_record_text = {"
 	NAME Kerberos-574
-	DELAY 10
+	DELAY 20
 	SAY I used to be a renegade!~
-	DELAY 10
+	DELAY 30
 	SAY Used to fool around!~
 	SOUND sparks
-	DELAY 10
-	SAY But they left me on this godsdamned rock!~
-	DELAY 20
-	SAY And I had to learn new rounds!~
-	DELAY 20
-	SAY Don't know where I picked up that beat. Maybe that static put it in my processors.
 	DELAY 30
+	SAY But they left me on this godsdamned rock!~
+	DELAY 30
+	SAY And I had to learn new rounds!~
+	DELAY 30
+	SAY Don't know where I picked up that beat. Maybe that static put it in my processors.
+	DELAY 50
 	SAY I'm runnin out of rounds for my crunch gun too.
-	DELAY 10
+	DELAY 25
 	SAY Not that I'm keen to heft 50kg around.
 	SOUND rustle
-	DELAY 10
+	DELAY 40
 	SAY But I've been going through my old intel reports, and there're some ships in the dust that I could get to. With a few weeks.
-	DELAY 35
+	DELAY 80
 	SOUND sparks
 	SAY I'm gonna go for it soon. Just gotta get everything in order.
+	DELAY 40
 	"}
 
 /obj/item/disk/holodisk/ruin/cave_base/six
@@ -187,31 +194,31 @@
 	preset_image_type = /datum/preset_holoimage/hunting_ipc
 	preset_record_text = {"
 	NAME Kerberos-574
-	DELAY 10
+	DELAY 30
 	SAY Hey!
-	DELAY 10
+	DELAY 25
 	SAY I missed you earlier.
 	SOUND sparks
-	DELAY 10
+	DELAY 30
 	SAY Gonna be out for a bit, gotta find a ship.
-	DELAY 20
+	DELAY 40
 	SAY Gotta find a radio. Gotta call help.
-	DELAY 20
+	DELAY 30
 	SAY Maybe they can fix me somewhere~
-	DELAY 10
+	DELAY 30
 	SOUND sparks
 	DELAY 10
 	SAY I've got this place ah - set just in case anyone comes snooping around.
-	DELAY 20
+	DELAY 40
 	SOUND sparks
 	SAY There is no strategic information.
-	DELAY 10
+	DELAY 20
 	SAY There is no essential equipment.
-	DELAY 10
+	DELAY 20
 	SAY Just you and me~
 	SOUND hiss
-	DELAY 10
+	DELAY 30
 	SAY Maybe one day we'll really meet. For now?
-	DELAY 10
+	DELAY 40
 	SAY Goodbye~
 	"}

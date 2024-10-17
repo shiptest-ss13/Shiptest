@@ -13,10 +13,6 @@
 	icon_state = "1-10"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/item/disk/holodisk/ruin/cave_base/three{
-	pixel_y = 5;
-	pixel_x = 5
-	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
 "bF" = (
@@ -247,6 +243,10 @@
 /obj/item/melee/knife/survival{
 	pixel_x = 8;
 	pixel_y = 4
+	},
+/obj/item/disk/holodisk/ruin/cave_base/three{
+	pixel_y = 5;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -765,6 +765,10 @@
 	pixel_x = 3
 	},
 /obj/machinery/light/directional/south,
+/obj/item/disk/holodisk/ruin/cave_base/two{
+	pixel_y = -4;
+	pixel_x = -8
+	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "rN" = (
@@ -856,10 +860,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/disk/holodisk/ruin/cave_base/two{
-	pixel_y = -4;
-	pixel_x = -8
-	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "tB" = (
@@ -1109,7 +1109,7 @@
 /obj/effect/turf_decal/box/red,
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/whitesands/cave_base)
 "zb" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/box/corners,
@@ -1544,7 +1544,7 @@
 /obj/effect/turf_decal/box/red,
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/whitesands/cave_base)
 "If" = (
 /obj/structure/cable{
 	icon_state = "2-4"
