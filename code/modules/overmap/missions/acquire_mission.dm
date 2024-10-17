@@ -104,7 +104,7 @@
 
 /datum/mission/acquire/true_love/strange_crystal
 	name = "Strange crystal needed (urgent!!!)"
-	value = 1000
+	value = 4000
 	weight = 1
 	objective_type = /obj/item/strange_crystal
 
@@ -172,40 +172,16 @@ Acquire: Anomaly
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 
-/datum/mission/acquire/creature/ice_whelp
-	name = "Capture an ice whelp"
-	desc = "I require a live ice whelp for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1700
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
-
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"
 	desc = "I require a live mi-go for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1050
+	value = 1300
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 
-/datum/mission/acquire/creature/floorbot
-	name = "Detain a malfunctioning floorbot"
-	desc = "I require a functional abandoned floorbot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/floorbot/rockplanet
-
-/datum/mission/acquire/creature/firebot
-	name = "Detain a malfunctioning firebot"
-	desc = "I require a functional abandoned firebot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
-
 /*
-		Acquire: Landmines
+		Acquire: Salvage
 */
 
 /datum/mission/acquire/landmine
@@ -219,83 +195,49 @@ Acquire: Anomaly
 	objective_type = /obj/item/mine/pressure/explosive
 	num_wanted = 2
 
-/*
-		Acquire: Fishing
-*/
-
-/datum/mission/acquire/aquarium
-	name = "Fish needed for my aquarium"
-	weight = 6
-	value = 750
-	duration = 60 MINUTES
-	val_mod_range = 0.2
-	container_type = /obj/item/storage/fish_case/mission
-
-/datum/mission/acquire/aquarium/New(...)
-	objective_type = pick(/obj/item/fish/clownfish,
-						/obj/item/fish/pufferfish,
-						/obj/item/fish/cardinal,
-						/obj/item/fish/greenchromis,
-						/obj/item/fish/trout,
-						/obj/item/fish/salmon,
-						/obj/item/fish/dwarf_moonfish,
-						/obj/item/fish/gunner_jellyfish,
-						/obj/item/fish/plasmatetra,
-						/obj/item/fish/catfish,
-						/obj/item/fish/bass,
-						/obj/item/fish/armorfish,
-						/obj/item/fish/needlefish)
-	desc = "My aquarium is sorely lacking in [initial(objective_type.name)], can you please bring one to me? \
-			Don't worry about if it's alive or dead, I have methods."
-	. = ..()
-
-/datum/mission/acquire/aquarium/rare
-	name = "Rare fish needed for my aquarium!"
-	weight = 1
-	value = 1500
-	val_mod_range = 0.3
-
-/datum/mission/acquire/aquarium/rare/New(...)
-	. = ..()
-	objective_type = pick(/obj/item/fish/lanternfish,
-						/obj/item/fish/firefish,
-						/obj/item/fish/donkfish)
-	desc = "I seek to make my beloved aquarium truly spectacular, and to do this I need only the finest fish! \
-			Bring me a [initial(objective_type.name)] and I will reward you handsomely."
-
-/datum/mission/acquire/aquarium/sabatoge
-	name = "That bastard has had it good for too long!"
-	weight = 1
+/datum/mission/acquire/bounty
+	name = "Hunt down Frontiersmen Dogtags"
+	desc = "CLIP has assigned us to offer out bounties to hunt down Frontiersman cells and turn in their dogtags. We'll reward you well."
+	weight = 4
 	value = 3000
 	duration = 100 MINUTES
+	dur_mod_range = 0.2
+	container_type = /obj/item/storage/toolbox/bounty/hunt
+	objective_type = /obj/item/clothing/neck/dogtag/frontier
+	num_wanted = 3
 
-/datum/mission/acquire/aquarium/sabatoge/New(...)
-	. = ..()
-	desc = "My arch-nemesis [pick("Rutherford","Baldwin","Anderson","Percival")] thinks his aquarium is so much better than mine, I'll show him! \
-			Bring me an emulsijack, and make sure it's alive!"
-	objective_type = pick(/obj/item/fish/emulsijack)
-
-/datum/mission/acquire/fish_cook
-	name = "Fish needed for my meal"
+/datum/mission/acquire/bounty/ramzi
+	name = "Hunt down Ramzi Clique Dogtags"
+	desc = "Gezena has assigned us to offer out bounties to hunt down Ramzi Clique outfits and turn in their dogtags. We'll reward you well."
 	weight = 3
-	duration = 40 MINUTES
-	val_mod_range = 0.2
-	objective_type = /obj/item/fish
-	container_type = /obj/item/storage/fish_case/mission/big
+	value = 4000
+	duration = 120 MINUTES
+	dur_mod_range = 0.1
+	container_type = /obj/item/storage/toolbox/bounty/hunt
+	objective_type = /obj/item/clothing/neck/dogtag/ramzi
+	num_wanted = 3
 
-/datum/mission/acquire/fish_cook/New(...)
-	num_wanted = rand(1,3)
-	desc = "I am a chef in need of [num_wanted] fish for my latest dish. Any fish will do, just make sure they're not filleted!"
-	value = (250*num_wanted)
-	. = ..()
+/datum/mission/acquire/salvage
+	name = "Deliver Protolathe"
+	desc = "The Nanotrasen Corporation is contracting out to have scientific equipment returned. Looking for a rare circuitboard (R&D Console, Protolathe, Circuit Imprinter) of any type."
+	weight = 2
+	value = 4000
+	duration = 120 MINUTES
+	dur_mod_range = 0.3
+	container_type = /obj/item/storage/toolbox/bounty/salvage
+	objective_type = /obj/item/circuitboard/machine/protolathe
+	num_wanted = 1
 
-/datum/mission/acquire/fish/alive/atom_effective_count(atom/movable/target)
-	. = ..()
-	if(!.)
-		return
-	var/mob/creature = target
-	if(creature.stat == DEAD)
-		return 0
+/datum/mission/acquire/salvage/console
+	name = "Deliver R&D Console"
+	desc = "The Nanotrasen Corporation is contracting out to have scientific equipment returned. Looking for a rare circuitboard (R&D Console, Protolathe, Circuit Imprinter) of any type."
+	weight = 3
+	value = 2500
+	duration = 120 MINUTES
+	dur_mod_range = 0.3
+	container_type = /obj/item/storage/toolbox/bounty/salvage
+	objective_type = /obj/item/circuitboard/computer/rdconsole
+	num_wanted = 1
 
 /*
 		Acquiry mission containers
