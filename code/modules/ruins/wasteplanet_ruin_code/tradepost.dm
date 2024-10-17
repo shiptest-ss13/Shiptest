@@ -49,9 +49,11 @@
 
 
 /datum/outfit/job/inteq/paramedic/tradepost
+	name = "Trade Post Corpsman"
 	belt = /obj/item/storage/belt/medical/webbing
 
 /datum/outfit/job/inteq/captain/tradepost
+	name = "Trade Post Vanguard"
 
 	r_pocket = null
 	l_pocket = null
