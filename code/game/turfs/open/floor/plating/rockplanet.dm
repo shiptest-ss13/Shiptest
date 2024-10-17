@@ -61,6 +61,8 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "pond"
 
+///plating
+
 /turf/open/floor/plating/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior plating"
@@ -70,52 +72,62 @@
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
 
-/turf/open/floor/plasteel/stairs/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	name = "exterior stairs"
-
-/turf/open/floor/engine/hull/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	name = "exterior floor"
-
-/turf/open/floor/plasteel/patterned/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-	name = "exterior floor"
-
-/turf/open/floor/plasteel/patterned/brushed/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/brushed/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-	name = "exterior floor"
-
-/turf/open/floor/plasteel/patterned/ridged/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/ridged/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-	name = "exterior floor"
-
 /turf/open/floor/plating/rust/rockplanet
+	name = "exterior plating"
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/rust/rockplanet/lit
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
-	name = "exterior plating"
+
+
+///floor tiles
+
+/turf/open/floor/plasteel/stairs/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+	name = "exterior stairs"
+
+/turf/open/floor/plasteel/stairs/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plasteel/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+	name = "exterior floor"
+
+/turf/open/floor/plasteel/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plasteel/patterned/rockplanet
+	name = "exterior floor"
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plasteel/patterned/brushed/rockplanet
+	name = "exterior floor"
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/brushed/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plasteel/patterned/ridged/rockplanet
+	name = "exterior floor"
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/ridged/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/wood/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
@@ -123,5 +135,42 @@
 /turf/open/floor/pod/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 
+///reinforced floors
+
+/turf/open/floor/engine/hull/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
 /turf/open/floor/engine/hull/reinforced/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/// concrete
+
+/turf/open/floor/concrete/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+///titanium
+
+/turf/open/floor/mineral/titanium/tiled/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/mineral/titanium/tiled/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
