@@ -53,6 +53,9 @@
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
+	if(smoothing_flags)
+		add_overlay("[base_icon_state]_dug")
+
 	if(no_dirt)
 		if(!postdig_icon)
 			icon_plating = "[base_icon_state]_dug"
@@ -69,8 +72,6 @@
 		cut_overlays()
 		has_footsteps = FALSE
 
-	if(smoothing_flags)
-		add_overlay("[base_icon_state]_dug")
 	dug = TRUE
 
 /// If the user can dig the turf

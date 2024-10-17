@@ -281,13 +281,9 @@
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
 
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters
-	floor_variance = 10
-	max_icon_states = 0
-
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(icon_state == "[base_icon_state]0")
+	if(prob(8.3)) //calculator tells me this is 1 in 12
 		getDug(TRUE)
 
 /turf/open/floor/plating/asteroid/moon_coarse
