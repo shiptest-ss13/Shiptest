@@ -119,11 +119,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "bT" = (
-/obj/machinery/smartfridge/bloodbank/preloaded{
-	density = 0;
-	pixel_y = 0;
-	pixel_x = 32
-	},
 /obj/machinery/stasis{
 	dir = 8
 	},
@@ -799,6 +794,12 @@
 	icon_door = "chemical_wall";
 	name = "Medical Supplies Locker"
 	},
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "qA" = (
@@ -1155,10 +1156,6 @@
 	},
 /area/ship/crew)
 "vn" = (
-/obj/machinery/smartfridge/organ{
-	density = 0;
-	pixel_x = 32
-	},
 /obj/structure/table/glass,
 /obj/machinery/cell_charger,
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
@@ -1827,15 +1824,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "DX" = (
-/obj/structure/closet/crate/medical{
-	anchored = 1
-	},
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/clothing/mask/breath/medical,
+/obj/structure/closet/crate/freezer/blood,
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/tech,
