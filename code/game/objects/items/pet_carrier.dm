@@ -31,13 +31,13 @@
 
 /obj/item/pet_carrier/Exited(atom/movable/occupant)
 	. = ..()
-	if(occupant in occupants && isliving(occupant))
+	if((occupant in occupants) && isliving(occupant))
 		var/mob/living/L = occupant
 		occupants -= occupant
 		occupant_weight -= L.mob_size
 
 /obj/item/pet_carrier/handle_atom_del(atom/A)
-	if(A in occupants && isliving(A))
+	if((A in occupants) && isliving(A))
 		var/mob/living/L = A
 		occupants -= L
 		occupant_weight -= L.mob_size
@@ -178,7 +178,7 @@
 	add_occupant(target)
 
 /obj/item/pet_carrier/proc/add_occupant(mob/living/occupant)
-	if(occupant in occupants || !istype(occupant))
+	if((occupant in occupants) || !istype(occupant))
 		return
 	occupant.forceMove(src)
 	occupants += occupant

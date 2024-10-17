@@ -228,7 +228,6 @@
 						dat += "<A href='?src=[REF(src)];choice=New Record (Security)'>New Security Record</A><br><br>"
 					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Delete Record (ALL)</A><br><A href='?src=[REF(src)];choice=Print Record'>Print Record</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Print Wanted Poster</A><BR><A href='?src=[REF(src)];choice=Print Missing'>Print Missing Persons Poster</A><BR><A href='?src=[REF(src)];choice=Return'>Back</A><BR><BR>"
 					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Log Out}</A>"
-				else
 		else
 			dat += "<A href='?src=[REF(src)];choice=Log In'>{Log In}</A>"
 	var/datum/browser/popup = new(user, "secure_rec", "Security Records Console", 600, 400)

@@ -119,7 +119,7 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, method = SMOKE, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return
 	var/boiling = FALSE
