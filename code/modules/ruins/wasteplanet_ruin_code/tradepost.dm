@@ -45,7 +45,7 @@
 /obj/effect/mob_spawn/human/corpse/indie/manager
 	outfit = /datum/outfit/job/independent/captain/manager
 	mob_species = /datum/species/elzuose
-	backpack_contents = NULL
+	backpack_contents = null
 
 
 /datum/outfit/job/inteq/paramedic/tradepost
