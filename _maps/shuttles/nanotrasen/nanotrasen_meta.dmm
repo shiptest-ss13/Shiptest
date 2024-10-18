@@ -1041,8 +1041,7 @@
 "dg" = (
 /obj/structure/table/wood,
 /obj/item/papercutter{
-	pixel_y = 3
-2198f7b68a2c75b29e2f204709a3f
+	pixel_y = 32198f7b68a2c75b29e2f204709a3f
 	},
 /obj/item/paper/paperslip/corporate{
 	pixel_x = 13;
@@ -1773,15 +1772,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "jk" = (
-/obj/machinery/computer/cargo/express/retro{
-	dir = 4;
-	pixel_x = -3
-	},
 /obj/machinery/camera{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 8
+	},
+/obj/machinery/computer/cargo{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2425,6 +2423,10 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/item/melee/knife{
+	pixel_x = 15;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "qs" = (
@@ -4425,9 +4427,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/bin,
-/obj/item/kitchen/knife/switchblade{
-	pixel_x = -2
-	},
+/obj/item/melee/knife/switchblade,
 /obj/item/trash/energybar,
 /obj/item/trash/can/food/beans{
 	pixel_x = 3
@@ -5195,11 +5195,11 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/obj/machinery/computer/cargo/express{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/cargo{
 	dir = 8;
 	icon_state = "computer-right"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "WM" = (
@@ -5304,8 +5304,8 @@
 /obj/structure/closet/crate/secure/weapon{
 	req_one_access = list(20)
 	},
+/obj/item/ammo_box/magazine/m22lr_himehabu,
 /obj/item/gun/ballistic/automatic/pistol/himehabu,
-/obj/item/ammo_box/magazine/m22lr,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "XR" = (
