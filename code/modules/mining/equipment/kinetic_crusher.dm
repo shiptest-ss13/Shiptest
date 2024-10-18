@@ -28,11 +28,13 @@
 	var/charge_time = 15
 	var/detonation_damage = 20
 	var/backstab_bonus = 10
+	var/unwielded_force = 0
+	var/wielded_force = 25
 
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=25)
+	AddComponent(/datum/component/two_handed, unwielded_force, wielded_force)
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
@@ -153,15 +155,12 @@
 	detonation_damage = 10
 	slowdown = 0.5//hevy
 	attack_verb = list("mashed", "flattened", "bisected", "eradicated","destroyed")
+	unwielded_force = 0
+	wielded_force = 30
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...</span>"
-
-/obj/item/kinetic_crusher/old/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 60, 110)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=30)//big choppa!
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -203,17 +202,13 @@
 	detonation_damage = 35
 	backstab_bonus = 15
 	actions_types = list()
-
+	unwielded_force = 0
+	wielded_force = 22
 
 /obj/item/kinetic_crusher/syndie_crusher/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-
-/obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 60, 150)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=20)
 
 /// triggered on wield of two handed item
 /obj/item/kinetic_crusher/syndie_crusher/proc/on_wield(obj/item/source, mob/user)
