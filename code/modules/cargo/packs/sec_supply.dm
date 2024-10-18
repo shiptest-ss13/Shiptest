@@ -82,9 +82,6 @@
 	desc = "Contains five mass produced machetes. A perfect choice for crews on a budget."
 	cost = 500
 	contains = list(/obj/item/melee/sword/mass,
-					/obj/item/melee/sword/mass,
-					/obj/item/melee/sword/mass,
-					/obj/item/melee/sword/mass,
 					/obj/item/melee/sword/mass)
 	crate_name = "combat knife crate"
 
