@@ -7,6 +7,8 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	gear_handle_type = /obj/item/gear_handle/anglegrinder
+	slowdown = 0.3
+	drag_slowdown = 0.3
 
 /obj/item/gear_handle/anglegrinder
 	name = "angle grinder"
@@ -26,7 +28,7 @@
 	usesound = 'sound/weapons/anglegrinder.ogg'
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once wielded
 	toolspeed = 1
-	wall_decon_damage = 200
+	wall_decon_damage = 250
 	usecost = 5
 	pack = /obj/item/gear_pack/anglegrinder
 	var/startsound = 'sound/weapons/chainsawhit.ogg'
@@ -68,7 +70,7 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, startsound, TRUE)
 	AddComponent(/datum/component/two_handed, force_unwielded=force, force_wielded=two_hand_force, wieldsound=startsound)
-	AddElement(/datum/element/tool_bang, 2)
+	AddElement(/datum/element/tool_bang, 1)
 
 /// triggered on wield of two handed item
 /obj/item/gear_handle/anglegrinder/proc/on_wield(obj/item/source, mob/user)
