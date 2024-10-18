@@ -12,6 +12,7 @@
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/smartfridge
+	integrity_failure = 0.4
 
 	var/max_n_of_items = 1500
 	var/allow_ai_retrieve = FALSE
@@ -40,7 +41,10 @@
 		. += "<span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
 
 /obj/machinery/smartfridge/update_icon_state()
-	if(machine_stat)
+	if(machine_stat & BROKEN)
+		icon_state = "[initial(icon_state)]-broken"
+		return ..()
+	else if(!powered())
 		icon_state = "[initial(icon_state)]-off"
 		return ..()
 
@@ -53,10 +57,8 @@
 			icon_state = "[initial(icon_state)]"
 		if(1 to 25)
 			icon_state = "[initial(icon_state)]1"
-		if(26 to 75)
+		if(26 to INFINITY)
 			icon_state = "[initial(icon_state)]2"
-		if(76 to INFINITY)
-			icon_state = "[initial(icon_state)]3"
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
@@ -379,23 +381,6 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/))
 		return TRUE
 	return FALSE
-
-// -------------------------------------
-// Xenobiology Slime-Extract Smartfridge
-// -------------------------------------
-/obj/machinery/smartfridge/extract
-	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
-
-/obj/machinery/smartfridge/extract/accept_check(obj/item/O)
-	if(istype(O, /obj/item/slime_extract))
-		return TRUE
-	if(istype(O, /obj/item/slime_scanner))
-		return TRUE
-	return FALSE
-
-/obj/machinery/smartfridge/extract/preloaded
-	initial_contents = list(/obj/item/slime_scanner = 2)
 
 // -------------------------
 // Organ Surgery Smartfridge

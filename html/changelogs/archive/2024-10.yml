@@ -76,3 +76,180 @@
   thgvr:
   - imageadd: Some backpack sprites for Kepori
   - imageadd: Shrunk down the sprite of guncases
+2024-10-08:
+  Anticept:
+  - rscadd: Added more purchasable chemicals to outpost.
+  - rscadd: Added missing elemental chems to chem starter kit
+  - rscdel: removed sulfuric acid from chem starter set. You have to make it.
+  - imageadd: tweaked and added more elemental chemical jugs.
+  Bjarl:
+  - code_imp: A large amount of cruft has been deleted.
+  DrCrawler:
+  - rscadd: Gives IPCs a little more adjectives to work with.
+  - rscdel: Removed some duplicate adjectives from the raw file.
+  FalloutFalcon:
+  - code_imp: tweaks to the syntax of unit test logs to be more readable by humans
+      and flaky tests
+  FalloutFalcon, Mothblocks, Cyberboss:
+  - rscadd: retry failed unit tests.
+  PositiveEntropy:
+  - imageadd: We now have improved visuals for circuit boards!
+  Sadhorizon:
+  - rscadd: Cybersun Biodynamics stamp.
+  - rscadd: Cybersun secret documents.
+  - rscadd: Cybersun captain's safe.
+  SomeguyManperson:
+  - balance: you no longer need a lasso to ride a goliath
+  - rscdel: no more lasso
+  rye-rice, Imaginos16:
+  - rscadd: Resprites Wisp
+  thgvr:
+  - bugfix: fixed digitigrade combat/jackboots
+2024-10-09:
+  PositiveEntropy:
+  - imageadd: Dog Beds Now Look Fancier!
+  - imageadd: Tank Dispensers have been repaletted!
+  - imageadd: Nuclear Waste Barrels Look A Lot Better!
+  Sun-Soaked:
+  - rscadd: Boxes are now volumetric. Some special boxes have been adjusted.
+  - balance: small objects in volumetric storage are now slightly smaller
+  zimon9:
+  - rscadd: Added flamethrower crate
+  - rscadd: Added incendiary grenade crate
+  - rscdel: Removed incendiary supply crate
+2024-10-10:
+  Bjarl:
+  - bugfix: Turrets should now actually fire at their defined fire rates.
+  - balance: Factional turrets now have new damage thresholds
+  - balance: ship turrets now have 100 less integrity by default
+  FalloutFalcon:
+  - rscadd: Cats have been genetically engineered to detect radiation
+  Gristlebee:
+  - rscadd: PGF Rakalla space suits can hold a gun in their suit storage.
+  PositiveEntropy:
+  - imageadd: Long (And Short) Braid hairstyles have been redone!
+  zimon9:
+  - rscadd: Adds bowmans to Artificer and Enforcer loadouts, and regular headsets
+      to Recruit loadouts
+2024-10-11:
+  Bjarl:
+  - rscadd: Reports of people inflicted with congenital analgesia travelling to the
+      Frontier have reached this newscaster.
+  - rscadd: Painkillers may circumvent pain in some cases now.
+  - rscadd: Please remember to ensure your soul is filled with spite before kicking
+      a rack.
+  - code_imp: abandoned airlocks now have more effects
+  FalloutFalcon:
+  - rscadd: Readdes world icons for a few knives. Expect more soon!
+2024-10-13:
+  FalloutFalcon:
+  - rscadd: update path txt for ammo boxes, thgvr will be FIRED for forgeting this.
+  Imaginos16, rye-rice:
+  - rscadd: A few hairstyles have been resprited!
+  - rscdel: the Braided and Braid line of hairs.
+  thgvr:
+  - rscadd: Added bullet stacks, they allow you to stack ammo of the same type into
+      a group.
+  - balance: Changed old ammo boxes into storage items containing stacks of bullets
+  zimon9:
+  - bugfix: fixed halved throw range
+2024-10-14:
+  Spooky, PositiveEntropy:
+  - imageadd: Smartfridges and Booze-O-Mats have been resprited!
+2024-10-15:
+  Erika Fox:
+  - rscadd: Transfusion anomaly; yum! Blood!
+  - rscadd: Anomaly cores now have an effect when detonated out of the anomaly
+  - rscadd: new anomaly description fluff
+  Gristlebee:
+  - bugfix: Abandoned Miskilamo Shipbreaking Yard ruin has the correct revolver subtype.
+  - bugfix: Shipping dock ruin correctly has a rattlesnake instead of a ringneck case
+  Sadhorizon:
+  - rscadd: Added stamps for New Gorlex Republic.
+  - rscadd: Added secret documents for New Gorlex Republic.
+  - rscadd: Added a honorable corpsman stamp and tweaked honorable arti one.
+  - rscadd: Inteq ships now use inteq stamps.
+  - code_imp: Repathed IRMG and CLIP stamps.
+  firebudgy:
+  - bugfix: War Correspondent helmet has a proper sprite for Vox.
+  rye-rice:
+  - rscadd: Various sprite improvemnts
+  - bugfix: Boomslang no longer fits on the belt
+2024-10-16:
+  Anticept:
+  - bugfix: blood smart-fridge selectable on smartfridge boards now when screwdrivering
+      them.
+  Apogee-dev:
+  - balance: Valor and Vaquero have combat hardsuits for their enforcers now
+  Bjarl:
+  - rscadd: NGR turrets
+  - rscadd: Flipped tables actually let you throw things over them now.
+  - rscadd: Holofans now have a small window before shutting down if they are deactivated
+      by lack of power
+  - balance: Syndicate smokes are now laced with stimulants instead of omnizine.
+  - rscdel: Holoparasites
+  - rscadd: The Frontiersmen have duct taped some turrets of their own together
+  FalloutFalcon:
+  - bugfix: ghosts cannot duplicate themselves across multiple z levels.
+  Gristlebee:
+  - bugfix: Fixes walls and an enemy spawn in the Wrecked Factory
+  Sadhorizon:
+  - bugfix: Pubby ruin can no longer randomly have acid in airlocks.
+  - tweak: Syndicate soap is now in-line with NT soap.
+  - rscdel: Syndicate tools are no longer faster. They are just reskinned normal tools
+      now.
+  - rscdel: Syndicate toolbox lost it's damage buff.
+  - rscdel: Removed Karl Marx from the game.
+  - rscdel: Removed all the job statues.
+  - rscdel: Cardborg suit, human, gondola and monkey skinsuits are no longer craftable.
+  firebudgy:
+  - bugfix: Mudskipper windows are correctly reinforced, like other ships by the same
+      manufacturer.
+  - rscadd: Active smoking pipe sprites for Vox.
+  zimon9:
+  - balance: increased amount of plasma in plasma internals cargo crate
+  - balance: rebalanced the probability of a grenade going off in one's hands
+  - bugfix: fixed fauna spawning after drill malfunctions
+2024-10-17:
+  Bjarl:
+  - rscdel: South Bronx Paradise Bar
+  Gristlebee:
+  - rscadd: Ice Lodge Ruin Map and areas
+  - rscadd: Simple Mob Frontiersmen Flametrooper and Surgeon
+  - rscadd: shoot_point_blank option for simple mobs
+  - rscadd: dragon_fire_line supports igniting tiles
+  - rscadd: broken display case, gunpowder barrel, SRM corpse spawners, chemical jug
+      spawners
+  - rscdel: Cat Butcher
+  - bugfix: Frontiersmen simplemob pathing
+  - bugfix: Fence doors spawning open when they should be closed and vice versa
+  - code_imp: scattering can be disabled with auto_scatter var for bullets, grown
+      items and nutrient bottles
+  - bugfix: Shotgun calibers and shotguns being unable to load certain rounds
+  MemeSnorfer:
+  - imageadd: Resprites colored skirts, black tango, red evening gown, sailors dress,
+      sundress, white dress, and some suitskirts.
+  - rscadd: Six pinafore variants, white colored skirt, one shoulder dress, and iko-ikssoal
+      dress.
+  PositiveEntropy:
+  - imageadd: All colored jumpsuits have been resprited!
+  - rscdel: Rainbow and khaki jumpsuits (including the buster subtype) have been removed.
+  generalthrax:
+  - bugfix: Gezena has shoes again
+  - rscdel: Gezenan captain gloves no longer have partial insulation in parity with
+      other captain gloves.
+2024-10-18:
+  DIB-DOG:
+  - rscdel: Removed extra turret that wasn't supposed to be on the ship
+  - bugfix: Moved armory flashbangs to a more secure location
+  Erikafox:
+  - rscdel: Wasteplanets no longer spawn welding fuel tanks.
+  SomeguyManperson:
+  - balance: being thrown over lava by tackling, jump boots, or with assistance now
+      fully clears the lava instead of burning you horribly and setting you on fire
+  generalthrax:
+  - bugfix: Fixed a typo in the Frontiersman softcap that made the sprite go invisible
+  meemofcourse:
+  - rscadd: Atlas-class Light Armored Crusier
+  rye-rice:
+  - rscadd: Resprites the commander and Commissioner

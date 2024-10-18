@@ -167,16 +167,7 @@
 	if(abandoned)
 		var/outcome = rand(1,100)
 		switch(outcome)
-			if(1 to 9)
-				var/turf/here = get_turf(src)
-				for(var/turf/closed/T in range(2, src))
-					here.PlaceOnTop(T.type)
-					qdel(src)
-					return
-				here.PlaceOnTop(/turf/closed/wall)
-				qdel(src)
-				return
-			if(9 to 11)
+			if(1 to 11)
 				lights = FALSE
 				locked = TRUE
 			if(12 to 15)
@@ -185,6 +176,19 @@
 				welded = TRUE
 			if(24 to 30)
 				panel_open = TRUE
+			if(31 to 40)
+				panel_open = TRUE
+				set_electrified(MACHINE_ELECTRIFIED_PERMANENT)
+			if(41 to 50)
+				seal = new /obj/item/door_seal(src)
+				modify_max_integrity(max_integrity * AIRLOCK_SEAL_MULTIPLIER)
+			if(51 to 60)
+				new previous_airlock(loc)
+				qdel(src)
+			if(69)
+				new /obj/effect/decal/cleanable/oil/slippery(loc)
+
+
 	update_appearance()
 
 /obj/machinery/door/airlock/ComponentInitialize()
