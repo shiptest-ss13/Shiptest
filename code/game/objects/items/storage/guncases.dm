@@ -225,3 +225,9 @@
 /obj/item/storage/pistolcase/iongun/PopulateContents()
 	new /obj/item/gun/energy/ionrifle/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun(src)
+
+/obj/item/storage/pistolcase/cm23/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)
