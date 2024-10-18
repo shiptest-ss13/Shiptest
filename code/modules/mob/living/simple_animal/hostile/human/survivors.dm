@@ -7,6 +7,7 @@
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	)
+	armor_base = /obj/item/clothing/suit/hooded/survivor
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT

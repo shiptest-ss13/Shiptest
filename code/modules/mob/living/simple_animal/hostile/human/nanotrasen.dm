@@ -11,6 +11,7 @@
 	faction = list(ROLE_DEATHSQUAD)
 	check_friendly_fire = TRUE
 	dodging = TRUE
+	armor_base = /obj/item/clothing/suit/armor/vest
 
 /mob/living/simple_animal/hostile/human/nanotrasen/screaming
 	icon_state = "nanotrasen"
@@ -62,8 +63,6 @@
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "nanotrasen_ert"
 	icon_living = "nanotrasen_ert"
-	maxHealth = 150
-	health = 150
 	melee_damage_lower = 13
 	melee_damage_upper = 18
 	ranged = TRUE
@@ -78,3 +77,4 @@
 	projectilesound = 'sound/weapons/laser.ogg'
 	loot = list(/obj/effect/gibspawner/human)
 	faction = list(ROLE_DEATHSQUAD)
+	armor_base = /obj/item/clothing/suit/space/hardsuit/ert/sec

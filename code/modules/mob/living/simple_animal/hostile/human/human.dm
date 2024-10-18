@@ -39,3 +39,20 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
+	///Steals the armor datum from this type of armor upon init
+	var/obj/item/clothing/armor_base
+	///Stored reference to the armor_base's armor datum, or null
+	var/datum/armor/armor
+
+/mob/living/simple_animal/hostile/human/Initialize()
+	. = ..()
+	if(ispath(armor_base, /obj/item/clothing))
+		//sigh. if only we could get the initial() value of list vars
+		var/obj/item/clothing/instance = new armor_base()
+		armor = instance.armor
+		qdel(instance)
+
+/mob/living/simple_animal/hostile/human/getarmor(def_zone, type) //WE CLOWN IN THIS fake carbon/human. GET YOUR INTRINSIC ARMOR BACK TO /mob/living/simple_animal
+	if(armor)
+		return armor.getRating(type)
+	return FALSE
