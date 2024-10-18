@@ -20,11 +20,9 @@
 				/obj/item/reagent_containers/pill,
 				/obj/item/storage/pill_bottle,
 				/obj/item/paper,
-				/obj/item/melee/classic_baton/telescopic,
 				/obj/item/soap,
 				/obj/item/sensor_device,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman)
+				)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
 

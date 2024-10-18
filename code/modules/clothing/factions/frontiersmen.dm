@@ -41,7 +41,7 @@
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/frontiersmen
+/obj/item/clothing/suit/frontiersmen //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "frontiersmen smock"
 	desc = "A basic white surgical apron worn by the Frontiersmen. It seems it could stain very easily..."
 	icon_state = "frontier_surgery"
@@ -63,11 +63,14 @@
 				/obj/item/storage/pill_bottle,
 				/obj/item/paper,
 				/obj/item/melee/classic_baton/telescopic,
-				/obj/item/toy,
 				/obj/item/storage/fancy/cigarettes,
 				/obj/item/lighter,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
+				/obj/item/scalpel,
+				/obj/item/cautery,
+				/obj/item/hemostat,
+				/obj/item/retractor,
+				/obj/item/surgicaldrill,
+				/obj/item/circular_saw,
 				)
 
 //////////////////

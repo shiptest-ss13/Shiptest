@@ -211,9 +211,9 @@
 				/obj/item/scalpel,
 				/obj/item/cautery,
 				/obj/item/hemostat,
-				/obj/item/retractor
-				/obj/item/surgicaldrill
-				/obj/item/circular_saw
+				/obj/item/retractor,
+				/obj/item/surgicaldrill,
+				/obj/item/circular_saw,
 				/obj/item/analyzer,
 				/obj/item/sensor_device,
 				/obj/item/stack/medical,
@@ -228,8 +228,9 @@
 				/obj/item/reagent_containers/pill,
 				/obj/item/storage/pill_bottle,
 				/obj/item/paper,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
+				/obj/item/toy,
+				/obj/item/storage/fancy/cigarettes,
+				/obj/item/lighter,
 				)
 
 //SolGov suits
