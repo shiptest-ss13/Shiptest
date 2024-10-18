@@ -15,6 +15,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "aH" = (
@@ -34,7 +35,7 @@
 /area/ruin/unpowered/server_array/crew)
 "aO" = (
 /obj/structure/fence,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "aS" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -59,10 +60,6 @@
 "by" = (
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array/crew)
-"bP" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "bQ" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8;
@@ -119,6 +116,7 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
+/obj/item/organ/cyberimp/arm/power_cord,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
 "cB" = (
@@ -157,7 +155,7 @@
 /obj/structure/fence{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "dL" = (
 /obj/machinery/portable_atmospherics/canister/bz{
@@ -168,6 +166,8 @@
 /area/ruin/unpowered/server_array)
 "ee" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/eggcluster,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "eu" = (
@@ -181,11 +181,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
+"eY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/server_array)
 "fm" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "fB" = (
 /turf/closed/wall/r_wall,
@@ -195,6 +200,13 @@
 /area/ruin/unpowered/server_array)
 "fR" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/server_array)
+"fY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/eggcluster,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array)
 "gd" = (
@@ -258,7 +270,7 @@
 "hq" = (
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/laborer,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "hB" = (
 /obj/machinery/door/airlock/maintenance{
@@ -350,7 +362,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "kp" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "kz" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -381,9 +393,14 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/server_array/crew)
+"lo" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/server_array)
 "lw" = (
 /obj/structure/fence/door,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "lD" = (
 /obj/structure/cable{
@@ -408,8 +425,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
 "lT" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/rock/pile/icy{
+	icon_state = "icemoonrock1"
+	},
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "mA" = (
 /obj/structure/cable{
@@ -421,8 +440,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/server_array/crew)
 "mH" = (
-/obj/structure/flora/grass/green,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "mT" = (
 /obj/machinery/power/smes,
@@ -449,10 +467,10 @@
 /obj/machinery/door/airlock/security{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
@@ -531,7 +549,8 @@
 /area/ruin/unpowered/server_array/crew)
 "qp" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "qA" = (
 /obj/structure/window/reinforced{
@@ -541,6 +560,10 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
+"rm" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "sh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -573,8 +596,10 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
 	},
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/rock/pile/icy{
+	icon_state = "icemoonrock1"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "uf" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -593,7 +618,7 @@
 /obj/structure/sign/poster/official/nanotrasen_logo{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "wE" = (
 /obj/structure/marker_beacon,
@@ -687,7 +712,7 @@
 /area/ruin/unpowered/server_array/crew)
 "Bw" = (
 /obj/structure/fluff/fokoff_sign,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "BD" = (
 /obj/machinery/power/smes,
@@ -775,7 +800,7 @@
 /area/ruin/unpowered/server_array/crew)
 "EX" = (
 /obj/structure/fence/corner,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "EZ" = (
 /obj/machinery/door/window/brigdoor/eastright,
@@ -829,10 +854,6 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array/crew)
-"Ha" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/server_array)
 "Hr" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -891,6 +912,10 @@
 /obj/machinery/door/window/brigdoor/eastright,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/server_array)
+"KY" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "KZ" = (
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -899,6 +924,7 @@
 "Lu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array)
 "LI" = (
@@ -907,6 +933,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
+"Mv" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ng" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -974,6 +1004,7 @@
 /obj/structure/toilet{
 	dir = 4
 	},
+/obj/structure/spider/spiderling/viper,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/server_array/crew)
 "OM" = (
@@ -983,12 +1014,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
 "OQ" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/rock/pile/icy{
+	icon_state = "icemoonrock2"
+	},
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "Pa" = (
-/obj/structure/flora/grass/brown,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "PS" = (
 /obj/machinery/door/airlock{
@@ -1037,6 +1070,7 @@
 "QM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mob_spawn/human/skeleton,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "Ro" = (
@@ -1088,8 +1122,8 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/server_array/crew)
 "Ss" = (
-/obj/structure/flora/stump,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "UJ" = (
 /obj/machinery/door/airlock/external{
@@ -1112,12 +1146,17 @@
 "Vh" = (
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/skeleton,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
+"VX" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/server_array)
 "Wm" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/unpowered/server_array)
 "Xo" = (
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array)
 "Xt" = (
@@ -1170,6 +1209,7 @@
 /area/ruin/unpowered/server_array)
 "Yy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "YJ" = (
@@ -1220,14 +1260,14 @@ Qa
 Qa
 kp
 kp
+rm
 kp
-kp
 Qa
 tq
 tq
 tq
-Qa
-Qa
+tq
+tq
 Qa
 Qa
 Qa
@@ -1249,7 +1289,11 @@ kp
 kp
 kp
 kp
-kp
+lT
+tq
+tq
+tq
+tq
 tq
 tq
 tq
@@ -1258,14 +1302,10 @@ Qa
 Qa
 Qa
 Qa
-Qa
-Qa
-Qa
-Qa
-Qa
-Qa
-Qa
-Qa
+tq
+tq
+tq
+tq
 Qa
 Qa
 "}
@@ -1275,7 +1315,7 @@ kp
 kp
 kp
 kp
-Pa
+kp
 tq
 tq
 tq
@@ -1284,17 +1324,17 @@ tq
 tq
 tq
 tq
-Qa
-Qa
-Qa
-Qa
-Qa
 tq
 tq
 tq
-Qa
-Qa
-Qa
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 "}
 (4,1,1) = {"
 Qa
@@ -1319,16 +1359,16 @@ tq
 tq
 tq
 tq
-Qa
-Qa
-Qa
+tq
+tq
+tq
 "}
 (5,1,1) = {"
 Qa
 kp
-Ss
 kp
-mH
+kp
+kp
 tq
 tq
 tq
@@ -1347,13 +1387,13 @@ tq
 tq
 tq
 tq
-Qa
-Qa
+tq
+tq
 "}
 (6,1,1) = {"
 Qa
 kp
-Pa
+kp
 OQ
 tq
 tq
@@ -1368,14 +1408,14 @@ Zx
 tq
 tq
 tq
-lT
+mH
 mH
 kp
-kp
+OQ
 tq
 tq
-Qa
-Qa
+tq
+tq
 "}
 (7,1,1) = {"
 Qa
@@ -1396,13 +1436,13 @@ Zx
 Zx
 Zx
 Zx
+mH
+mH
 kp
-Ss
 kp
-Pa
 tq
-Qa
-Qa
+tq
+tq
 "}
 (8,1,1) = {"
 Qa
@@ -1423,13 +1463,13 @@ pw
 Zx
 Zx
 Zx
-kp
-kp
+mH
+mH
 kp
 kp
 tq
-kp
-Qa
+tq
+tq
 "}
 (9,1,1) = {"
 Qa
@@ -1451,17 +1491,17 @@ Zx
 wE
 IK
 ub
-kp
+mH
 kp
 kp
 dJ
-kp
+mH
 kp
 "}
 (10,1,1) = {"
 Qa
 Qa
-Pa
+kp
 tq
 tq
 tq
@@ -1478,17 +1518,17 @@ sO
 IK
 IK
 tq
-kp
-kp
+mH
+mH
 kp
 lw
-kp
+mH
 kp
 "}
 (11,1,1) = {"
 Qa
 Qa
-kp
+lT
 tq
 tq
 tq
@@ -1506,19 +1546,19 @@ qi
 IK
 tq
 tq
-Pa
-kp
+mH
+mH
 dJ
-kp
+mH
 kp
 "}
 (12,1,1) = {"
 Qa
 Qa
-Qa
 tq
 tq
-kp
+tq
+mH
 pS
 PT
 by
@@ -1536,7 +1576,7 @@ Wm
 hR
 aO
 EX
-kp
+mH
 kp
 "}
 (13,1,1) = {"
@@ -1545,7 +1585,7 @@ Qa
 tq
 tq
 tq
-kp
+mH
 pS
 wG
 GV
@@ -1572,7 +1612,7 @@ Qa
 tq
 tq
 tq
-kp
+mH
 pS
 pS
 IK
@@ -1594,8 +1634,8 @@ kp
 kp
 "}
 (15,1,1) = {"
-Qa
-Qa
+tq
+tq
 tq
 tq
 tq
@@ -1617,11 +1657,11 @@ xN
 fB
 tq
 tq
-Ss
+kp
 Qa
 "}
 (16,1,1) = {"
-Qa
+tq
 tq
 tq
 tq
@@ -1648,7 +1688,7 @@ tq
 Qa
 "}
 (17,1,1) = {"
-Qa
+tq
 tq
 tq
 tq
@@ -1672,7 +1712,7 @@ Wm
 tq
 tq
 tq
-Qa
+tq
 "}
 (18,1,1) = {"
 tq
@@ -1699,7 +1739,7 @@ Wm
 tq
 tq
 tq
-Qa
+tq
 "}
 (19,1,1) = {"
 tq
@@ -1723,17 +1763,17 @@ tv
 fB
 Xo
 Wm
-kp
+mH
 tq
 tq
-Qa
+tq
 "}
 (20,1,1) = {"
 tq
 tq
 tq
 tq
-kp
+mH
 Wm
 cm
 Rv
@@ -1748,10 +1788,10 @@ gZ
 JV
 qA
 fB
-Ey
+VX
 Wm
-kp
-kp
+mH
+mH
 tq
 tq
 "}
@@ -1760,7 +1800,7 @@ tq
 tq
 tq
 tq
-kp
+mH
 Wm
 Wm
 Wm
@@ -1777,7 +1817,7 @@ jX
 fB
 Ey
 fB
-kp
+mH
 tq
 tq
 tq
@@ -1788,11 +1828,11 @@ tq
 tq
 tq
 tq
-kp
-bP
+mH
+KY
 kp
 ah
-ee
+eY
 fB
 PW
 kz
@@ -1802,22 +1842,22 @@ Jc
 Ce
 IJ
 fB
-Ey
+VX
 fB
-kp
+mH
 tq
 tq
 tq
 "}
 (23,1,1) = {"
-Qa
+tq
 tq
 tq
 tq
 tq
 Vh
 kp
-lT
+Pa
 Wm
 fR
 fB
@@ -1831,13 +1871,13 @@ fB
 fB
 Xo
 Wm
-kp
+mH
 tq
 tq
 tq
 "}
 (24,1,1) = {"
-Qa
+tq
 tq
 tq
 tq
@@ -1854,17 +1894,17 @@ fB
 fB
 al
 Dc
-Ey
+VX
 Xo
-Ey
+VX
 Wm
-kp
+mH
 tq
 tq
-Qa
+tq
 "}
 (25,1,1) = {"
-Qa
+tq
 tq
 tq
 tq
@@ -1882,17 +1922,17 @@ KZ
 Do
 fB
 jn
-Ha
+lo
 Xo
 Wm
 tq
 tq
 tq
-Qa
+tq
 "}
 (26,1,1) = {"
 Qa
-Qa
+tq
 tq
 tq
 tq
@@ -1901,8 +1941,8 @@ tq
 tq
 Wm
 dL
-fR
-Ey
+fY
+VX
 aE
 ee
 fB
@@ -1914,12 +1954,12 @@ Wm
 Wm
 tq
 tq
-Qa
+tq
 Qa
 "}
 (27,1,1) = {"
 Qa
-Qa
+tq
 tq
 tq
 tq
@@ -1933,21 +1973,21 @@ Wm
 FR
 Wm
 fB
-kp
-kp
-kp
+mH
+mH
+mH
 tq
 tq
 tq
 tq
 tq
-Qa
+tq
 Qa
 "}
 (28,1,1) = {"
 Qa
 Qa
-Qa
+tq
 tq
 tq
 tq
@@ -1958,16 +1998,16 @@ tq
 tq
 qp
 fm
-lT
 kp
 kp
+Mv
 tq
 tq
 tq
 tq
 tq
 tq
-Qa
+tq
 Qa
 Qa
 "}
@@ -1984,8 +2024,8 @@ tq
 tq
 tq
 tq
+Ss
 kp
-kp
 tq
 tq
 tq
@@ -1993,7 +2033,7 @@ tq
 tq
 tq
 tq
-Qa
+tq
 Qa
 Qa
 Qa
@@ -2002,9 +2042,9 @@ Qa
 Qa
 Qa
 Qa
-Qa
-Qa
-Qa
+tq
+tq
+tq
 tq
 tq
 tq
@@ -2015,11 +2055,11 @@ kp
 tq
 tq
 tq
-Qa
 tq
 tq
 tq
-Qa
+tq
+tq
 Qa
 Qa
 Qa
