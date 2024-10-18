@@ -94,7 +94,7 @@
 /obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
+/obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		spread = 24
@@ -114,20 +114,15 @@
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
-/obj/item/gun/ballistic/rifle/illestren/sawoff(mob/user)
+/obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		item_state = "illestren_factory_sawn"
 		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/rifle/illestren/sawn
-	name = "sawn-off Illestren rifle"
 	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
-	item_state = "illestren_sawn"
 	sawn_off = TRUE
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"
