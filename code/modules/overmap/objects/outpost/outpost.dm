@@ -36,12 +36,6 @@
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
 
-	/// The maximum number of missions that may be offered by the outpost at one time.
-	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 15
-	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
-	var/list/datum/mission/missions
-
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
 	// init our template vars with the correct singletons
@@ -62,9 +56,6 @@
 
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
 	Rename(gen_outpost_name())
-
-	fill_missions()
-	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
@@ -116,6 +107,9 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
+	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
+
+/proc/random_species_name()
 	var/person_name
 	if(prob(40))
 		// fun fact: "Hutton" is in last_names
@@ -130,14 +124,7 @@
 				person_name = kepori_name()
 			if(4)
 				person_name = vox_name()
-
-	return "[person_name] [pick(GLOB.station_suffixes)]"
-
-/datum/overmap/outpost/proc/fill_missions()
-	while(LAZYLEN(missions) < max_missions)
-		var/mission_type = get_weighted_mission_type()
-		var/datum/mission/M = new mission_type(src)
-		LAZYADD(missions, M)
+	return person_name
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)

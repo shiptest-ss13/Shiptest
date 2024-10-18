@@ -1,6 +1,6 @@
 /obj/item/export_scanner
 	name = "export scanner"
-	desc = "A device used to check objects against Nanotrasen exports and bounty database."
+	desc = "A device used to check objects against exports and bounty database."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "export_scanner"
 	item_state = "radio"
@@ -27,5 +27,3 @@
 		to_chat(user, "<span class='notice'>Scanned [O], value: <b>[price]</b> credits[O.contents.len ? " (contents included)" : ""].</span>")
 	else
 		to_chat(user, "<span class='warning'>Scanned [O], no export value.</span>")
-	if(bounty_ship_item_and_contents(O, dry_run=TRUE))
-		to_chat(user, "<span class='notice'>Scanned item is eligible for one or more bounties.</span>")

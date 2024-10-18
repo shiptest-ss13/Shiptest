@@ -67,27 +67,3 @@
 	class_wanted = 3
 	num_wanted = 8
 
-/*
-		Core sampling drill
-*/
-
-/obj/machinery/drill/mission
-	name = "core sampling research drill"
-	desc = "A specialized laser drill designed to extract geological samples."
-
-	var/num_current = 0
-	var/mission_class
-	var/num_wanted
-
-/obj/machinery/drill/mission/examine()
-	. = ..()
-	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
-
-/obj/machinery/drill/mission/start_mining()
-	if(mining.vein_class < mission_class && mining)
-		say("Error: A vein class of [mission_class] or greater is required for operation.")
-		return
-	. = ..()
-
-/obj/machinery/drill/mission/mine_success()
-	num_current++
