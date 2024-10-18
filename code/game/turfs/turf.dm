@@ -582,8 +582,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/proc/acid_melt()
 	return
 
-/turf/handle_fall(mob/faller)
-	if(has_gravity(src))
+/turf/handle_fall(mob/faller, fall_sound_played)
+	if(has_gravity(src) && !fall_sound_played)
 		playsound(src, "bodyfall", 50, TRUE)
 	faller.drop_all_held_items()
 
