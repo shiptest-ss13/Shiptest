@@ -1795,7 +1795,6 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
 
 
-var/fall_sound_played = FALSE
 /// Changes the value of the [living/body_position] variable.
 /mob/living/proc/set_body_position(new_value, fall_sound_played)
 	if(body_position == new_value)
