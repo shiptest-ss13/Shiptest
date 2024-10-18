@@ -40,17 +40,12 @@
 	alt_uniform = null
 
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = null
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/radio
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
 
 	box = /obj/item/storage/box/survival
 
@@ -521,6 +516,19 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
+/datum/outfit/job/syndicate/head_of_personnel/ngr
+	name = "Syndicate - Ensign (NGR)"
+
+	ears = /obj/item/radio/headset/syndicate
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = null
+	gloves = null
+
+
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
 	name = "Syndicate - Intelligence Officer (Cybersun)"
 	id_assignment = "Intelligence Officer"
@@ -594,7 +602,8 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	suit_store = null
+	gloves = /obj/item/clothing/gloves/color/black
 
 
 /datum/outfit/job/syndicate/hos/twink
@@ -676,7 +685,6 @@
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	shoes = /obj/item/clothing/shoes/sneakers/white
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
 	box = /obj/item/storage/box/survival/medical
@@ -715,6 +723,7 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/doctor/ngr
 	name = "Syndicate - Medical Doctor (New Gorlex Republic)"
@@ -727,6 +736,7 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+	shoes = /obj/item/clothing/shoes/combat
 
 //paramedics
 
@@ -1116,6 +1126,11 @@
 	belt = /obj/item/storage/belt/utility/full/engi
 	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/t_scanner
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET

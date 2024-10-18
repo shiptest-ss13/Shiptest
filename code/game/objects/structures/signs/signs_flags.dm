@@ -43,6 +43,12 @@
 	icon_state = "flag_suns"
 	item_flag = /obj/item/sign/flag/suns
 
+/obj/structure/sign/flag/ngr
+	name = "\improper New Gorlexian flag"
+	desc = "The New Gorlex Republic's colors: Red for the martyrs of Old Gorlex, Black for the endless Frontier, and tan for the sands of New Gorlex."
+	icon_state = "flag_ngr"
+	item_flag = /obj/item/sign/flag/ngr
+
 // ITEM FLAGS - THE THINGS YOU HOLD AND PLACE
 
 /obj/item/sign/flag
@@ -63,3 +69,9 @@
 	desc = "A folded up purple Flag. Something about this flag makes you think of chemistry."
 	icon_state = "folded_suns"
 	sign_path = /obj/structure/sign/flag/suns
+
+/obj/item/sign/flag/ngr
+	name = "folded New Gorlexian flag"
+	desc = "A folded up NGR flag. Something about this flag makes you think of explosives."
+	icon_state = "folded_ngr"
+	sign_path = /obj/structure/sign/flag/ngr
