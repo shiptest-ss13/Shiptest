@@ -461,10 +461,10 @@
 		else
 			dam = 0
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
-			if (affecting.uses_integrity)
-				if (affecting.get_curable_damage(integrity_loss) <= 0 )
+			if(affecting.uses_integrity)
+				if(affecting.get_curable_damage(integrity_loss) <= 0)
 					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_threshold
-					if (limb_hp_loss+integrity_loss >= affecting.max_damage)
+					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
 						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs surgery to work again.</span>")
 					else
 						to_chat(user, "<span class='warning'>[affecting] needs surgery to improve any further.</span>")
