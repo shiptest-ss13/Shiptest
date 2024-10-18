@@ -24,7 +24,7 @@
 		/datum/surgery_step/mechanic_close
 	)
 	lying_required = FALSE
-	self_operable = TRUE
+	self_operable = FALSE
 
 /datum/surgery_step/heal/mechanic
 	name = "repair components"
