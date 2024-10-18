@@ -1,7 +1,7 @@
 /* I do want this however this currently only fails on decals specificly in create and destroy.
-   Updating the overlays in genral was already pretty unatomic.area
-   I've added porting some updated decal code from tg to resolve this to my list.
-   	WARNING("Too many overlays on [changed_on.type] - [length(changed_on.overlays)], refusing to update and cutting.\
+	Updating the overlays in genral was already pretty unatomic.area
+	I've added porting some updated decal code from tg to resolve this to my list.
+		WARNING("Too many overlays on [changed_on.type] - [length(changed_on.overlays)], refusing to update and cutting.\
 		\n What follows is a printout of all existing overlays at the time of the overflow \n[text_lays]"); \
 */
 
