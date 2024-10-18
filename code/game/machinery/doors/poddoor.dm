@@ -67,8 +67,6 @@
 		if (W.use_tool(src, user, 15 SECONDS, volume = 75))
 			deconstruct(TRUE)
 
-
-
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()
 	. += span_notice("The maintenance panel is [panel_open ? "opened" : "closed"].")
