@@ -99,7 +99,7 @@
 /obj/item/gear_handle/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(adv)
 		target.add_overlay(GLOB.advanced_cutting_effect)
-		. = .	.()
+		. = ..()
 		target.cut_overlay(GLOB.advanced_cutting_effect)
 	else
 		target.add_overlay(GLOB.cutting_effect)
