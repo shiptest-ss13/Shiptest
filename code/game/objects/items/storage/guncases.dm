@@ -161,6 +161,10 @@
 	gun_type = /obj/item/gun/ballistic/revolver/montagne
 	mag_type = /obj/item/ammo_box/a44roum_speedloader
 
+/obj/item/storage/guncase/pistol/cm23
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm23
+	mag_type = /obj/item/ammo_box/magazine/cm23
+
 /obj/item/storage/guncase/pistol/disposable
 /obj/item/storage/guncase/pistol/disposable/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)

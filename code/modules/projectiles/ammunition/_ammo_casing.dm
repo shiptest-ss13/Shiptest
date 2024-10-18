@@ -29,6 +29,8 @@
 	/// If true, the casing's sprite will automatically be transformed in Initialize().
 	/// Disable for things like rockets or other heavy ammunition that should only appear right-side up.
 	var/auto_rotate = TRUE
+	/// If you dont want to bullets to randomly change position on spawn. For mapping.
+	var/auto_scatter = TRUE
 
 	///Pellets for spreadshot
 	var/pellets = 1
@@ -142,8 +144,9 @@
 	. = ..()
 	if(projectile_type)
 		BB = new projectile_type(src)
-	pixel_x = base_pixel_x + rand(-10, 10)
-	pixel_y = base_pixel_y + rand(-10, 10)
+	if(auto_scatter)
+		pixel_x = base_pixel_x + rand(-10, 10)
+		pixel_y = base_pixel_y + rand(-10, 10)
 	item_flags |= NO_PIXEL_RANDOM_DROP
 	if(auto_rotate)
 		transform = transform.Turn(round(45 * rand(0, 32) / 2))

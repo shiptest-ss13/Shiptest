@@ -75,6 +75,10 @@
 	for(var/i = max(1, stored_ammo.len), i <= max_ammo, i++)
 		stored_ammo += new round_check(src)
 
+/obj/item/ammo_box/Destroy()
+	stored_ammo.Cut()
+	return ..()
+
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
 	if(!stored_ammo.len)

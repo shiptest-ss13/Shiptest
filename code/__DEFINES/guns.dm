@@ -61,6 +61,7 @@
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
 #define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
 #define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_VIGILITAS "the Vigilitas Interstellar logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
