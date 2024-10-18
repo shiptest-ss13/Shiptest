@@ -258,7 +258,7 @@
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
 		/obj/item/borg/cyborghug)
-	emag_modules = list(/obj/item/melee/transforming/energy/sword/cyborg)
+	emag_modules = list(/obj/item/melee/energy/sword/cyborg)
 	cyborg_base_icon = "robot"
 	moduleselect_icon = "standard"
 	hat_offset = -3
@@ -976,7 +976,7 @@
 	name = "Syndicate Assault"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
-		/obj/item/melee/transforming/energy/sword/cyborg,
+		/obj/item/melee/energy/sword/cyborg,
 		/obj/item/gun/energy/printer,
 		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
 		/obj/item/card/emag/borg,
@@ -1041,7 +1041,7 @@
 		/obj/item/cautery,
 		/obj/item/surgicaldrill,
 		/obj/item/scalpel,
-		/obj/item/melee/transforming/energy/sword/cyborg/saw,
+		/obj/item/melee/energy/sword/cyborg/saw,
 		/obj/item/roller/robo,
 		/obj/item/card/emag/borg,
 		/obj/item/crowbar/cyborg,

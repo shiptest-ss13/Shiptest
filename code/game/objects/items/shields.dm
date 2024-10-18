@@ -35,7 +35,7 @@
 		final_block_chance += 30
 	if(attack_type == LEAP_ATTACK)
 		final_block_chance = 100
-	. = ..()
+	. = .()
 	if(.)
 		on_shield_block(owner, hitby, attack_text, damage, attack_type)
 
