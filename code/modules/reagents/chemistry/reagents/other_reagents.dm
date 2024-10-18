@@ -549,7 +549,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -1135,6 +1135,89 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumilation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
+		accumilation = accumilation/4
+
+	accumilation += volume
+	switch(accumilation)
+		if(10 to 50)
+			to_chat(src, "<span class='warning'>You feel dizzy.</span>")
+		if(50 to 150)
+			to_chat(victim, "<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>")
+			victim.Dizzy(5)
+		if(150 to 250)
+			to_chat(victim, "<span class='userdanger'>[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]</span>")
+			victim.Stun(10)
+			victim.Dizzy(5)
+			victim.confused = (accumilation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
+			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
+
+		if(250 to 350)
+			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
+			victim.adjustStaminaLoss(3)
+			victim.Stun(35)
+
+			victim.Dizzy(5)
+			victim.confused = (accumilation/50)
+			victim.drowsyness = (accumilation/50)
+
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
+			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
+			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
+			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
+
+		if(350 to 3000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumilation/100)
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+		if(3000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+
+			qdel(src)
+			return TRUE
+	accumilation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumilation <  0)
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
+		return TRUE //to avoid a runtime
+	return ..()
+
+/datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
+	if((!O) || (!reac_volume))
+		return FALSE
+	var/temp = holder ? holder.chem_temp : T20C
+	O.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/carbon_monoxide/expose_turf(turf/open/T, reac_volume)
+	if(istype(T))
+		var/temp = holder ? holder.chem_temp : T20C
+		T.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+	return
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
 
 /datum/reagent/stimulum
 	name = "Stimulum"

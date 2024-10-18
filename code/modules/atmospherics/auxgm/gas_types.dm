@@ -28,6 +28,13 @@
 			alert_type = /atom/movable/screen/alert/too_much_nitro
 		)
 	)
+/datum/gas/carbon_monoxide
+	id = GAS_CO
+	specific_heat = 30
+	name = "Carbon Monoxide"
+	breath_results = GAS_CO
+
+	flags = GAS_FLAG_DANGEROUS
 
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = GAS_CO2
@@ -80,13 +87,6 @@
 	enthalpy = -241800 // FIRE_HYDROGEN_ENERGY_RELEASED is actually what this was supposed to be
 	breath_reagent = /datum/reagent/water
 
-/datum/gas/hypernoblium
-	id = GAS_HYPERNOB
-	specific_heat = 2000
-	name = "Hyper-noblium"
-	gas_overlay = "freon"
-	moles_visible = MOLES_GAS_VISIBLE
-
 /datum/gas/nitrous_oxide
 	id = GAS_NITROUS
 	specific_heat = 40
@@ -125,7 +125,7 @@
 	fire_radiation_released = 50 // arbitrary number, basically 60 moles of trit burning will just barely start to harm you
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
 
-/datum/gas/bz
+/datum/gas/bz //remove from atmospheres // https://en.wikipedia.org/wiki/3-Quinuclidinyl_benzilate not sure why we have this
 	id = GAS_BZ
 	specific_heat = 20
 	name = "BZ"
@@ -139,7 +139,7 @@
 	name = "Stimulum"
 	fusion_power = 7
 
-/datum/gas/pluoxium
+/datum/gas/pluoxium //argon
 	id = GAS_PLUOXIUM
 	specific_heat = 80
 	name = "Pluoxium"
@@ -147,6 +147,13 @@
 	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST * 1000 // it is VERY stable
 	oxidation_rate = 8 // when it can oxidize, it can oxidize a LOT
 	enthalpy = -50000 // but it reduces the heat output a bit
+
+/datum/gas/hypernoblium //xenon
+	id = GAS_HYPERNOB
+	specific_heat = 2000
+	name = "Hyper-noblium"
+	gas_overlay = "freon"
+	moles_visible = MOLES_GAS_VISIBLE
 
 /datum/gas/freon
 	id = GAS_FREON
@@ -161,7 +168,7 @@
 	specific_heat = 10
 	name = "Hydrogen"
 	flags = GAS_FLAG_DANGEROUS
-	moles_visible = MOLES_GAS_VISIBLE
+	//moles_visible = MOLES_GAS_VISIBLE
 	color = "#ffe"
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 1)
