@@ -124,6 +124,7 @@
 /obj/effect/spawner/lootdrop/grille_or_trash
 	name = "maint grille or trash spawner"
 	loot = list(/obj/structure/grille = 5,
+			/obj/item/flashlight/flare/burnt = 1,
 			/obj/item/cigbutt = 1,
 			/obj/item/trash/cheesie = 1,
 			/obj/item/trash/candy = 1,
@@ -1016,6 +1017,7 @@
 	loot = list(
 		/obj/structure/grille/broken = 5,
 		/obj/structure/grille = 5,
+		/obj/item/flashlight/flare/burnt = 1,
 		/obj/item/cigbutt = 1,
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/candy = 1,
@@ -1048,6 +1050,7 @@
 
 /obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
 	loot = list(
+		/obj/item/flashlight/flare/burnt = 30,
 		/obj/effect/decal/cleanable/greenglow/filled = 30,
 		/obj/effect/decal/cleanable/greenglow/ecto = 1,
 		/obj/effect/decal/cleanable/glass = 30,
