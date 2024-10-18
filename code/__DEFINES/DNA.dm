@@ -130,7 +130,7 @@
 #define NO_BONES 25 //! You don't have any bones for breaking
 #define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
 #define SKINCOLORS 27 //Human skintones
-
+#define LIMB_INTEGRITY 28 //! Limbs can lose integrity, reducing how much they can heal.
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
 #define ORGAN_SLOT_APPENDIX "appendix"
