@@ -61,5 +61,9 @@
 
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
-	moveToNullspace()
+
+	// Intentionally used over moveToNullspace(), which calls doMove(), which fires
+	// off an enormous amount of procs, signals, etc, that this temporary effect object
+	// never needs or affects.
+	loc = null
 	return QDEL_HINT_QUEUE
