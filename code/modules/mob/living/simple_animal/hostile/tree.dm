@@ -40,7 +40,6 @@
 
 	deathmessage = "is hacked into pieces!"
 	loot = list(/obj/item/stack/sheet/mineral/wood)
-	gold_core_spawnable = HOSTILE_SPAWN
 	del_on_death = 1
 
 	var/is_tree = TRUE

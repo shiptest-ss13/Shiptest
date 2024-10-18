@@ -30,7 +30,6 @@
 	maxbodytemp = 1500
 	movement_type = FLYING
 	pressure_resistance = 300
-	gold_core_spawnable = NO_SPAWN //too spooky for science
 	light_system = MOVABLE_LIGHT
 	light_range = 1 // same glowing as visible player ghosts
 	light_power = 2

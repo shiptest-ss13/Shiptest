@@ -29,7 +29,6 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
-	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("spooky")
 	del_on_death = 1
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
