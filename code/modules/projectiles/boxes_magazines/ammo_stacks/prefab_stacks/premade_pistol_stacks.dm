@@ -269,6 +269,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr
 	ammo_type = /obj/item/ammo_casing/c22lr
+	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr
 	name = "box of .22 LR ammo"
