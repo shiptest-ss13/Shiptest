@@ -290,7 +290,7 @@
 // Removes integrity from the limb, if it uses integrity.
 /obj/item/bodypart/proc/take_integrity_damage(loss)
 	if (uses_integrity)
-		integrity_loss = clamp(integrity_loss + loss, 0, max_damage)
+		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_threshold)
 
 
 // Heals integrity for the limb, if it uses integrity.
@@ -308,7 +308,8 @@
 
 	if (uses_integrity && (burn > 0 || brute > 0))
 		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_threshold))
-		var/heal_mult = min(1,max_heal/(burn+brute))
+		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
+		var/heal_mult = min(1,max_heal/total_heal)
 		brute *= heal_mult
 		burn *= heal_mult
 	if(brute)
@@ -832,3 +833,4 @@
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
+

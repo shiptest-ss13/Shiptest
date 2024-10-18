@@ -166,9 +166,9 @@
 			disabled += BP
 		missing -= BP.body_zone
 		if(BP.uses_integrity && BP.integrity_loss > 0)
-			if (BP.integrity_loss > BP.max_damage*0.66)
+			if ((BP.integrity_loss-BP.integrity_threshold) > BP.max_damage*0.66)
 				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
-			if (BP.integrity_loss > BP.max_damage*0.33)
+			else if (BP.integrity_loss-BP.integrity_threshold > BP.max_damage*0.33)
 				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
 			else
 				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"

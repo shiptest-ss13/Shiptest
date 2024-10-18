@@ -153,7 +153,7 @@
 		return FALSE
 	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", "<span class='notice'>You successfully restore integrity to [target]'s [parse_zone(target_zone)].</span>")
 	//restore all integrity-induced damage, so that they don't just weld themselves into a mess again
-	var/integ_heal = surgery.operated_bodypart.integrity_loss
+	var/integ_heal = surgery.operated_bodypart.integrity_loss //ignore integrity_threshold as a little surgery bonus
 	var/brute_heal = min(surgery.operated_bodypart.brute_dam,integ_heal)
 	var/burn_heal = max(0,integ_heal-brute_heal)
 	surgery.operated_bodypart.integrity_loss = 0

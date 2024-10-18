@@ -462,7 +462,11 @@
 			dam = 0
 		if (affecting.uses_integrity)
 			if (affecting.get_curable_damage(integrity_loss) <= 0 )
-				to_chat(user, "<span class='warning'>[affecting] is as repaired as it'll get like this!</span>")
+				var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_threshold
+				if (limb_hp_loss+integrity_loss >= affecting.max_damage)
+					to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs surgery to work again.</span>")
+				else
+					to_chat(user, "<span class='warning'>[affecting] needs surgery to improve any further.</span>")
 				return
 			affecting.take_integrity_damage(integrity_loss)
 
