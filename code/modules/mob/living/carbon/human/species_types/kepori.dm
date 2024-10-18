@@ -17,7 +17,7 @@
 	species_clothing_path = 'icons/mob/clothing/species/kepori.dmi'
 	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
-	// coldmod = 1.5
+	coldmod = 1.5
 	// brutemod = 1.5
 	// burnmod = 1.5
 	speedmod = -0.10
