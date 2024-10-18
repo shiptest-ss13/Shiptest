@@ -74,12 +74,6 @@
 	if(prob(1))
 		mezzer()
 
-
-/obj/item/clothing/glasses/meson/truesight
-	name = "The Lens of Truesight"
-	desc = "I can see forever!"
-	icon_state = "monocle"
-
 /obj/structure/academy_wizard_spawner
 	name = "Academy Defensive System"
 	desc = "Made by Abjuration, Inc."
@@ -151,14 +145,6 @@
 		visible_message("<span class='warning'>[src] breaks down!</span>")
 		icon_state = "forge_off"
 		STOP_PROCESSING(SSobj, src)
-
-/datum/outfit/wizard/academy
-	name = "Academy Wizard"
-	r_pocket = null
-	r_hand = null
-	suit = /obj/item/clothing/suit/wizrobe/red
-	head = /obj/item/clothing/head/wizard/red
-	backpack_contents = list(/obj/item/storage/box/survival = 1)
 
 /obj/item/dice/d20/fate
 	name = "\improper Die of Fate"
@@ -348,8 +334,6 @@
 			new /obj/item/clothing/suit/wizrobe(drop_location())
 			new /obj/item/clothing/head/wizard(drop_location())
 			new /obj/item/clothing/gloves/combat/wizard(drop_location())
-			new /obj/item/clothing/suit/wizrobe/magusblue(drop_location())
-			new /obj/item/clothing/head/wizard/magus(drop_location())
 			new /obj/item/staff(drop_location())
 			new /obj/structure/mirror/magic(drop_location())
 
@@ -357,8 +341,6 @@
 	name = "Butler"
 	uniform = /obj/item/clothing/under/suit/black_really
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/bowler
-	glasses = /obj/item/clothing/glasses/monocle
 	gloves = /obj/item/clothing/gloves/color/white
 
 /obj/effect/proc_holder/spell/targeted/summonmob

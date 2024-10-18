@@ -67,6 +67,11 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"eB" = (
+/obj/item/storage/box/ammo/c38,
+/obj/structure/closet/crate/wooden,
+/turf/open/floor/wood,
+/area/ruin/beach)
 "eJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -200,13 +205,6 @@
 /obj/structure/railing/corner,
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"kj" = (
-/obj/structure/closet/cabinet,
-/obj/item/pneumatic_cannon/speargun,
-/obj/item/storage/backpack/magspear_quiver,
-/obj/item/melee/knife/hunting,
-/turf/open/floor/wood,
-/area/ruin/beach)
 "kr" = (
 /obj/effect/turf_decal/weather/sand/corner{
 	dir = 1
@@ -281,11 +279,6 @@
 	},
 /turf/open/floor/plating/asteroid/sand,
 /area/overmap_encounter/planetoid/cave/explored)
-"mq" = (
-/obj/item/ammo_box/c38_box,
-/obj/structure/closet/crate/wooden,
-/turf/open/floor/wood,
-/area/ruin/beach)
 "my" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -746,11 +739,26 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"CJ" = (
+/obj/structure/closet/cabinet,
+/obj/item/pneumatic_cannon/speargun,
+/obj/item/melee/knife/hunting,
+/obj/machinery/light/small/directional/east{
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/wood,
+/area/ruin/beach)
 "CV" = (
 /obj/machinery/grill,
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plastic,
+/area/ruin/beach)
+"DG" = (
+/obj/structure/closet/cabinet,
+/obj/item/pneumatic_cannon/speargun,
+/obj/item/melee/knife/hunting,
+/turf/open/floor/wood,
 /area/ruin/beach)
 "DL" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1048,16 +1056,6 @@
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"PB" = (
-/obj/structure/closet/cabinet,
-/obj/item/pneumatic_cannon/speargun,
-/obj/item/storage/backpack/magspear_quiver,
-/obj/item/melee/knife/hunting,
-/obj/machinery/light/small/directional/east{
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/wood,
-/area/ruin/beach)
 "PC" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
@@ -2188,9 +2186,9 @@ sz
 ut
 Ty
 oS
-mq
-kj
-PB
+eB
+DG
+CJ
 ut
 BW
 BN

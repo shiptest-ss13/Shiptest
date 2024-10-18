@@ -141,20 +141,6 @@
 	airlock_type = /obj/machinery/door/airlock/shuttle
 	glass_type = /obj/machinery/door/airlock/shuttle/glass
 
-/obj/structure/door_assembly/door_assembly_cult
-	name = "cult airlock assembly"
-	icon = 'icons/obj/doors/airlocks/cult/runed/cult.dmi'
-	base_name = "cult airlock"
-	overlays_file = 'icons/obj/doors/airlocks/cult/runed/overlays.dmi'
-	airlock_type = /obj/machinery/door/airlock/cult
-	glass_type = /obj/machinery/door/airlock/cult/glass
-
-/obj/structure/door_assembly/door_assembly_cult/unruned
-	icon = 'icons/obj/doors/airlocks/cult/unruned/cult.dmi'
-	overlays_file = 'icons/obj/doors/airlocks/cult/unruned/overlays.dmi'
-	airlock_type = /obj/machinery/door/airlock/cult/unruned
-	glass_type = /obj/machinery/door/airlock/cult/unruned/glass
-
 /obj/structure/door_assembly/door_assembly_viro
 	name = "virology airlock assembly"
 	icon = 'icons/obj/doors/airlocks/station/virology.dmi'

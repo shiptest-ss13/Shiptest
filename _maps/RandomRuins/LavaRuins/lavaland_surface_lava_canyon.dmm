@@ -150,10 +150,6 @@
 	pixel_x = -5;
 	pixel_y = 12
 	},
-/obj/item/clothing/head/witchunter{
-	pixel_y = 13;
-	pixel_x = -5
-	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -887,7 +883,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "zb" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon);
+	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
