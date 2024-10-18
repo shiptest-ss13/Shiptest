@@ -19,7 +19,7 @@
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
-	var/val_mod_range = 0.2
+	var/val_mod_range = 0.3
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
@@ -34,19 +34,22 @@
 
 /datum/mission/New(location, mission_index)
 	//source_outpost = _outpost
-	src.mission_location = location
+	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	src.mission_index = mission_index
 	SSmissions.inactive_missions += list(src)
-	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
-	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
-	RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
+
+	if(location_specific)
+		src.mission_location = location
+		RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
+		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
 
 	generate_mission_details()
 	return ..()
 
 /datum/mission/Destroy()
 	//UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
+	if(location_specific)
+		UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
 	if(active)
 		SSmissions.active_missions -= src
 	else
