@@ -132,6 +132,13 @@
 	icon_state = "suns-swordstick"
 	item_state = "suns-swordstick"
 
+/obj/item/melee/sword/sabre/pgf
+	name = "\improper boarding cutlass"
+	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
+	icon_state = "pgf-sabre"
+	block_chance = 30
+	force = 22
+
 /obj/item/melee/sword/sabre/suns/telescopic
 	name = "telescopic sabre"
 	desc = "A telescopic and retractable blade given to SUNS peacekeepers for easy concealment and carry. It's design makes it slightly less effective than normal sabres sadly, however it is still excelent at piercing armor."
