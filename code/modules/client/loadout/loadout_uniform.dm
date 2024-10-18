@@ -53,10 +53,6 @@
 	display_name = "jumpsuit, random"
 	path = /obj/item/clothing/under/color/random //literally useless if grey assistants is off
 
-/datum/gear/uniform/color/rainbow
-	display_name = "jumpsuit, rainbow"
-	path = /obj/item/clothing/under/color/rainbow
-
 //Shorts
 
 /datum/gear/uniform/athshortsred
