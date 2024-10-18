@@ -44,4 +44,4 @@
 	id = "server_array"
 	description = "A long abandoned server array, using the icemoons atmosphere to cool down the large amount of heat produced by the machinery."
 	suffix = "icemoon_underground_server_array.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_SHELTER)
+	ruin_tags = list(RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_SHELTER)
