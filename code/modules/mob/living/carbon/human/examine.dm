@@ -172,7 +172,6 @@
 				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
 			else
 				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"
-
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
 				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"

@@ -706,7 +706,7 @@
 	cure_blind()
 	cure_husk()
 	hallucination = 0
-	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity...
+	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
 	ExtinguishMob()
 	fire_stacks = 0

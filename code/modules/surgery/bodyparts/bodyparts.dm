@@ -651,11 +651,6 @@
 			bone_status = BONE_FLAG_NORMAL
 			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 
-		if(LIMB_INTEGRITY in S.species_traits)
-			uses_integrity = TRUE
-		else
-			uses_integrity = FALSE
-
 		draw_color = mutation_color
 		if(should_draw_greyscale) //Should the limb be colored?
 			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))

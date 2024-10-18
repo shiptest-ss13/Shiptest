@@ -218,11 +218,9 @@
 ///Fix integrity in MANY bodyparts, in random order
 /mob/living/carbon/heal_overall_integrity(amount = 0, required_status, updating_health = TRUE)
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(required_status, FALSE)
-
 	var/update = NONE
 	while(parts.len && (amount > 0))
 		var/obj/item/bodypart/picked = pick(parts)
-
 		var/integrity_was = picked.integrity_loss
 		update |= picked.heal_integrity(amount, required_status, FALSE)
 		amount -= round(amount - (integrity_was - picked.integrity_loss), DAMAGE_PRECISION)
