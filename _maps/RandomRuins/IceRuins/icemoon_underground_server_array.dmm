@@ -29,6 +29,7 @@
 	icon_state = "6-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
 "aO" = (
@@ -114,7 +115,6 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
 "cB" = (
@@ -179,6 +179,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"fw" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/server_array)
 "fB" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/server_array)
@@ -241,6 +245,7 @@
 /area/ruin/unpowered/server_array)
 "he" = (
 /obj/machinery/door/airlock/grunge,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/server_array)
 "hq" = (
@@ -305,7 +310,6 @@
 "jn" = (
 /obj/structure/closet/firecloset/empty,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "jw" = (
@@ -524,7 +528,6 @@
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /obj/structure/table,
-/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
 "sh" = (
@@ -567,7 +570,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/large,
+/mob/living/simple_animal/pet/mothroach,
+/obj/item/reagent_containers/food/snacks/meat/slab/mothroach,
+/obj/structure/closet/crate/critter,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/server_array/crew)
 "vj" = (
@@ -658,6 +663,10 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/server_array/crew)
+"Aw" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Bc" = (
 /obj/structure/table,
 /obj/item/weldingtool,
@@ -750,7 +759,6 @@
 "EP" = (
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/mission_poi,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
 "EX" = (
@@ -1041,6 +1049,7 @@
 	pixel_y = 4;
 	pixel_x = -1
 	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array)
 "RQ" = (
@@ -1086,7 +1095,6 @@
 /area/ruin/unpowered/server_array/crew)
 "Vh" = (
 /obj/structure/closet/body_bag,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
 /obj/effect/mob_spawn/human/skeleton,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1104,13 +1112,12 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet,
-/obj/item/ammo_box/a44roum/hp,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier{
 	brute_damage = 200
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/obj/item/storage/box/ammo/a44roum_hp,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
 "Xw" = (
@@ -1766,7 +1773,7 @@ tq
 tq
 tq
 kp
-kp
+Aw
 kp
 ah
 ee
@@ -1859,7 +1866,7 @@ KZ
 Do
 fB
 jn
-Xo
+fw
 Xo
 Wm
 tq
