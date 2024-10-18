@@ -30,6 +30,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/list/oxidation_temperatures = list()
 	var/list/oxidation_rates = list()
 	var/list/fire_temperatures = list()
+	var/list/flammability_mols_list = list()
 	var/list/enthalpies = list()
 	var/list/fire_products = list()
 	var/list/fire_burn_rates = list()
@@ -38,25 +39,42 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 
 /datum/gas
 	var/id = ""
+	/// VERY likely heat capacity; only explanation on what this var is
 	var/specific_heat = 0
 	var/name = ""
 	var/gas_overlay = "generic" //icon_state in icons/effects/atmospherics.dmi
 	var/color = "#ffff" // Tints the overlay by this color. Use instead of gas_overlay, usually (but not necessarily).
 	var/moles_visible = null
-	var/flags = NONE //currently used by canisters
-	var/group = null // groups for scrubber/filter listing
-	var/fusion_power = 0 // How much the gas destabilizes a fusion reaction
-	var/breath_results = GAS_CO2 // what breathing this breathes out
-	var/datum/reagent/breath_reagent = null // what breathing this adds to your reagents
-	var/datum/reagent/breath_reagent_dangerous = null // what breathing this adds to your reagents IF it's above a danger threshold
-	var/list/breath_alert_info = null // list for alerts that pop up when you have too much/not enough of something
-	var/oxidation_temperature = null // temperature above which this gas is an oxidizer; null for none
-	var/oxidation_rate = 1 // how many moles of this can oxidize how many moles of material
-	var/fire_temperature = null // temperature above which gas may catch fire; null for none
-	var/list/fire_products = null // what results when this gas is burned (oxidizer or fuel); null for none
-	var/enthalpy = 0 // Standard enthalpy of formation in joules, used for fires
-	var/fire_burn_rate = 1 // how many moles are burned per product released
-	var/fire_radiation_released = 0 // How much radiation is released when this gas burns
+	///currently used by canisters
+	var/flags = NONE
+	/// groups for scrubber/filter listing
+	var/group = null
+	/// How much the gas destabilizes a fusion reaction
+	var/fusion_power = 0
+	/// what breathing this breathes out
+	var/breath_results = GAS_CO2
+	/// what breathing this adds to your reagents
+	var/datum/reagent/breath_reagent = null
+	/// what breathing this adds to your reagents IF it's above a danger threshold
+	var/datum/reagent/breath_reagent_dangerous = null
+	/// list for alerts that pop up when you have too much/not enough of something
+	var/list/breath_alert_info = null
+	/// temperature above which this gas is an oxidizer; null for none
+	var/oxidation_temperature = null
+	/// how many moles of this can oxidize how many moles of material
+	var/oxidation_rate = 1
+	/// temperature above which gas may catch fire; null for none
+	var/fire_temperature = null
+	/// what results when this gas is burned (oxidizer or fuel); null for none
+	var/list/fire_products = null
+	///the lowest mols this gas mixed with oxidizer required for this gas to ignite - higher oxidizng powers will lower the requirement - since fires are handled by auxmos, we just stop the fire reaction from happening at all, crappy work around, but works(?)
+	var/lowest_flammability_mols = 4.12 // this means on a ship's atmosphere, the LFL is about 4%, generically
+	/// Standard enthalpy of formation in joules, used for fires
+	var/enthalpy = 0
+	/// how many moles are burned per product released
+	var/fire_burn_rate = 1
+	/// How much radiation is released when this gas burns
+	var/fire_radiation_released = 0
 
 /datum/gas/proc/breath(partial_pressure, light_threshold, heavy_threshold, moles, mob/living/carbon/C, obj/item/organ/lungs/lungs)
 	// This is only called on gases with the GAS_FLAG_BREATH_PROC flag. When possible, do NOT use this--
@@ -104,6 +122,8 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 			if(gas.fire_products)
 				fire_products[g] = gas.fire_products
 			enthalpies[g] = gas.enthalpy
+		if(gas.lowest_flammability_mols)
+			flammability_mols_list[g] = gas.lowest_flammability_mols
 		_auxtools_register_gas(gas)
 
 /datum/auxgm/New()

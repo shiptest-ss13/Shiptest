@@ -45,15 +45,15 @@
 /datum/gas_reaction/proc/test()
 	return list("success" = TRUE)
 
-/datum/gas_reaction/nobliumsupression
+/datum/gas_reaction/argon
 	priority = INFINITY
-	name = "Hyper-Noblium Reaction Suppression"
+	name = "Noble-Gas Reaction Suppression"
 	id = "nobstop"
 
-/datum/gas_reaction/nobliumsupression/init_reqs()
-	min_requirements = list(GAS_HYPERNOB = REACTION_OPPRESSION_THRESHOLD)
+/datum/gas_reaction/argon/init_reqs()
+	min_requirements = list(GAS_ARGON = REACTION_OPPRESSION_THRESHOLD)
 
-/datum/gas_reaction/nobliumsupression/react()
+/datum/gas_reaction/argon/react()
 	return STOP_REACTIONS
 
 //water vapor: puts out fires?
@@ -348,9 +348,14 @@
 	var/list/oxidation_temperatures = GLOB.gas_data.oxidation_temperatures
 	for(var/gas in oxidation_temperatures)
 		lowest_oxi_temp = min(lowest_oxi_temp, oxidation_temperatures[gas])
+	var/lowest_flammability_mols = INFINITY
+	var/list/flammability_mols_list = GLOB.gas_data.flammability_mols_list
+	for(var/gas in flammability_mols_list)
+		lowest_flammability_mols = min(lowest_flammability_mols, lowest_flammability_mols[gas])
+
 	min_requirements = list(
 		"TEMP" = max(lowest_oxi_temp, lowest_fire_temp),
-		"FIRE_REAGENTS" = MINIMUM_MOLE_COUNT
+		"FIRE_REAGENTS" = lowest_flammability_mols
 	)
 
 // no requirements, always runs
