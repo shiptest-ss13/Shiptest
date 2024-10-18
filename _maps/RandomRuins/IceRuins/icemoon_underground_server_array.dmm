@@ -59,6 +59,10 @@
 "by" = (
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array/crew)
+"bP" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "bQ" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8;
@@ -124,6 +128,10 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "server_lockdown";
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/server_array)
 "cH" = (
@@ -179,10 +187,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"fw" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/server_array)
 "fB" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/server_array)
@@ -208,6 +212,9 @@
 /area/ruin/unpowered/server_array/crew)
 "gz" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
+/obj/machinery/door/poddoor/shutters{
+	id = "server_lockdown"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array/crew)
 "gB" = (
@@ -334,6 +341,10 @@
 /area/ruin/unpowered/server_array)
 "jY" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "server_lockdown";
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -656,6 +667,11 @@
 /obj/structure/sign/poster/official{
 	pixel_y = 32
 	},
+/obj/machinery/button/door{
+	pixel_y = 25;
+	name = "lockdown control";
+	id = "server_lockdown"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/server_array/crew)
 "Av" = (
@@ -663,10 +679,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/server_array/crew)
-"Aw" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "Bc" = (
 /obj/structure/table,
 /obj/item/weldingtool,
@@ -817,6 +829,10 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/server_array/crew)
+"Ha" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/server_array)
 "Hr" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -1773,7 +1789,7 @@ tq
 tq
 tq
 kp
-Aw
+bP
 kp
 ah
 ee
@@ -1866,7 +1882,7 @@ KZ
 Do
 fB
 jn
-fw
+Ha
 Xo
 Wm
 tq
