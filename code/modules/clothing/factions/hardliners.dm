@@ -59,6 +59,8 @@
 				/obj/item/retractor,
 				/obj/item/surgicaldrill,
 				/obj/item/circular_saw,
+				/obj/item/tank/internals/emergency_oxygen,
+				/obj/item/tank/internals/plasmaman,
 				)
 
 /obj/item/clothing/suit/hazardvest/hardliners
