@@ -129,7 +129,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = list(/datum/blackmarket_item/ammo/e40_mag, /datum/blackmarket_item/ammo/c299)
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
 	price_max = 10000
