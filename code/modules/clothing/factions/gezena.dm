@@ -221,7 +221,6 @@
 	name = "\improper PGFN Captain's Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
-	siemens_coefficient = 0.5
 
 //Boots
 
@@ -229,7 +228,7 @@
 	name = "\improper PGF Uhro-sez Boots"
 	desc = "The word “uhro-sez” translates to “steel-foot”, in reference to the steel toe protection provided by these boots. Standard issue to all members of all branches of the PGF military."
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
-	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi'
 	icon_state = "pgfboots"
 	item_state = "jackboots"
 
