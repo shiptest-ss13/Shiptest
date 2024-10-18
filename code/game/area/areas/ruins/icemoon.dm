@@ -46,3 +46,12 @@
 /area/ruin/powered/icemoon/lodge/gear_room
 	name = "Gear Room"
 	icon_state = "security"
+
+// Server Array
+/area/ruin/unpowered/server_array
+	name = "Server Array"
+	icon_state = "away4"
+
+/area/ruin/unpowered/server_array/crew
+	name = "Crew Quarters"
+	icon_state = "away2"

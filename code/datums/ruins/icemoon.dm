@@ -39,3 +39,9 @@
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
+/datum/map_template/ruin/icemoon/server_array
+	name = "Server Array"
+	id = "server_array"
+	description = "A long abandoned server array, using the icemoons atmosphere to cool down the large amount of heat produced by the machinery."
+	suffix = "icemoon_underground_server_array.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_SHELTER)

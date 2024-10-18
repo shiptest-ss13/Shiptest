@@ -187,6 +187,15 @@
 	poison_type = /datum/reagent/toxin/venom //all in venom, glass cannon. you bite 5 times and they are DEFINITELY dead, but 40 health and you are extremely obvious. Ambush, maybe?
 	speed = 1
 
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper/ice //spiders dont usually like tempatures of 140 kelvin who knew
+	name = "ice viper"
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	maxbodytemp = 1500
+	poison_per_bite = 8
+	poison_type = /datum/reagent/toxin/mindbreaker // not deadly, but leads to interesting scenarios! Might need to modify the poison per bite though...
+	color = rgb(114,228,250)
+
 //tarantulas are really tanky, regenerating (maybe), hulky monster but are also extremely slow, so.
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula
 	name = "tarantula"
