@@ -9,7 +9,7 @@
 
 	belt = /obj/item/storage/belt/utility/full
 	ears = /obj/item/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/color/khaki
+	uniform = /obj/item/clothing/under/nanotrasen
 	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
