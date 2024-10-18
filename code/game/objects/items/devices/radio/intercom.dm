@@ -177,6 +177,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	set_frequency(FREQ_WIDEBAND)
 	freqlock = TRUE
 
+/obj/item/radio/intercom/wideband/examine_more(mob/user)
+	interact(user)
+
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
 
