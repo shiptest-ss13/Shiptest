@@ -28,6 +28,30 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ar" = (
+/obj/structure/closet/syndicate/personal{
+	name = "operative's closet";
+	populate = 0
+	},
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/item/storage/backpack,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/mask/gas/sechailer/balaclava/ngr,
+/obj/item/clothing/mask/gas/syndicate/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/machinery/camera/autoname,
+/obj/structure/sign/poster/contraband/stechkin{
+	pixel_x = -32
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security)
 "au" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
@@ -109,9 +133,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/computer/monitor{
 	icon_state = "computer-right"
 	},
@@ -124,8 +145,8 @@
 "bj" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/tan/full,
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/structure/sign/flag/ngr{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -295,10 +316,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "cj" = (
@@ -377,8 +396,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cL" = (
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/tan/mono,
+/obj/structure/sign/flag/ngr{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "cX" = (
@@ -532,7 +553,8 @@
 /obj/item/pen{
 	pixel_y = 4
 	},
-/obj/structure/sign/poster/syndicate/random{
+/obj/structure/sign/flag/ngr{
+	dir = 1;
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/red,
@@ -1373,6 +1395,10 @@
 	pixel_y = 6
 	},
 /obj/item/laser_pointer/red,
+/obj/item/desk_flag/ngr{
+	pixel_x = 11;
+	pixel_y = 15
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kG" = (
@@ -2798,6 +2824,9 @@
 "sO" = (
 /obj/structure/bookcase/random/fiction,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/sign/poster/syndicate/random{
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "sV" = (
@@ -3362,11 +3391,12 @@
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/item/clothing/mask/gas/syndicate/ngr,
 /obj/item/clothing/mask/gas/sechailer/balaclava/ngr,
-/obj/structure/sign/poster/syndicate/random{
-	pixel_y = -32
-	},
 /obj/item/storage/pistolcase/a357{
 	pixel_y = -4
+	},
+/obj/structure/sign/flag/ngr{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
@@ -3510,14 +3540,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
 /obj/item/reagent_containers/food/drinks/waterbottle{
 	list_reagents = null;
 	pixel_x = 5;
 	pixel_y = 1
+	},
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -3606,7 +3636,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "yC" = (
-/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3615,6 +3644,10 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/sign/flag/ngr{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "yG" = (
@@ -3635,6 +3668,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "yL" = (
@@ -6201,12 +6239,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Ql" = (
-/obj/machinery/light_switch{
-	pixel_x = 7;
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "Qq" = (
@@ -7906,7 +7941,7 @@ Pg
 Kz
 "}
 (16,1,1) = {"
-XN
+VA
 bj
 LK
 bg
@@ -8450,7 +8485,7 @@ Kz
 Kz
 Kz
 Ty
-eX
+ar
 eX
 uH
 nC
