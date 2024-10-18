@@ -121,7 +121,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c299
 	ammo_type = /obj/item/ammo_casing/caseless/c299
-	max_ammo = 5
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c299
 	name = "box of .299 Eoehoma caseless ammo"
