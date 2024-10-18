@@ -194,6 +194,7 @@
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
+	AddComponent(bound, MISSION_IMPORTANCE_CRITICAL, src)
 	return bound
 
 /datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
@@ -201,6 +202,7 @@
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
+	AddComponent(bound, MISSION_IMPORTANCE_CRITICAL, src)
 	return bound
 
 /**
@@ -276,8 +278,8 @@
 	// We dont have an item to return
 	if(!istype(item_of_intrest))
 		CRASH("[src] did not return a item_of_intrest")
+	. = item_of_intrest
 	qdel(src)
-	return item_of_intrest
 
 /obj/effect/landmark/mission_poi/main
 	name = "mission focus"
@@ -287,3 +289,31 @@
 /obj/effect/landmark/mission_poi/pre_loaded
 	already_spawned = TRUE
 
+/// Shows examine hints on how it relates to a mission
+/datum/component/mission_important
+	dupe_mode = COMPONENT_DUPE_UNIQUE
+	var/importance_level
+	var/datum/weakref/mission_ref
+
+/datum/component/mission_important/Initialize(_importance_level = MISSION_IMPORTANCE_RELEVENT, _mission)
+	if(_importance_level)
+		importance_level = _importance_level
+	if(isdatum(_mission))
+		mission_ref = WEAKREF(_mission)
+	if(isatom(parent))
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_atom_examine))
+
+/datum/component/mission_important/proc/on_atom_examine(datum/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
+	if(!isdatum(mission_ref.resolve()))
+		examine_list += span_notice("[src] was useful to a mission")
+		return
+
+	switch(importance_level)
+		if(MISSION_IMPORTANCE_CRITICAL)
+			examine_list += span_notice("[src] is critical to a mission")
+		if(MISSION_IMPORTANCE_IMPORTANT)
+			examine_list += span_notice("[src] is important to a mission")
+		if(MISSION_IMPORTANCE_RELEVENT)
+			examine_list += span_notice("[src] is relevent to a mission")

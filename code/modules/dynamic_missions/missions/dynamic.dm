@@ -11,26 +11,36 @@
 	setpiece_item = pick(setpiece_item)
 
 /datum/mission/dynamic/spawn_mission_setpiece(datum/overmap/dynamic/planet)
+	if(isnull(mission_index))
+		stack_trace("[src] does not have a mission index")
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
 		if(!isnull(mission_poi.mission_index) && (mission_index != mission_poi.mission_index))
 			continue
+		if(!istype(mission_poi, /obj/effect/landmark/mission_poi/main))
+			continue
+
 		if(istype(mission_poi, setpiece_poi))
 			//Spawns the item or gets it via use_poi then sets it as bound so the mission fails if its deleted
-			spawn_main_piece(planet, mission_poi)
+			spawn_main_piece(mission_poi, planet)
 			break
 
 	spawn_custom_pois(planet)
 
 	// Reiterate through the loop and attemp to spawn any mission that matches our index but dont pass any type so it will need its own
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
-		if(isnull(mission_poi.mission_index) || (mission_index != mission_poi.mission_index))
+		if(isnull(mission_poi.mission_index) || isnull(mission_index))
+			continue
+		if((mission_index != mission_poi.mission_index))
+			continue
+		if(istype(mission_poi, /obj/effect/landmark/mission_poi/main))
 			continue
 		mission_poi.use_poi()
 
 	if(!isatom(setpiece_item))
-		CRASH("[src] was unable to find its required landmark")
+		stack_trace("[src] was unable to find its required landmark")
+		qdel(src)
 
-/datum/mission/dynamic/proc/spawn_main_piece(datum/overmap/dynamic/planet, obj/effect/landmark/mission_poi/mission_poi)
+/datum/mission/dynamic/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	required_item =	set_bound(mission_poi.use_poi(setpiece_item), mission_poi.loc, null, TRUE, TRUE)
 
 /// For handling logic outside of main piece thats too complex for the basic reiteration or you want to not require indexs to match.
