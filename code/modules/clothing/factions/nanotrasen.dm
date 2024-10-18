@@ -163,6 +163,28 @@
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
 	icon_state = "med_smock"
 	item_state = "bluecloth"
+	allowed = list(
+				/obj/item/analyzer,
+				/obj/item/sensor_device,
+				/obj/item/stack/medical,
+				/obj/item/dnainjector,
+				/obj/item/reagent_containers/dropper,
+				/obj/item/reagent_containers/syringe,
+				/obj/item/reagent_containers/hypospray,
+				/obj/item/healthanalyzer,
+				/obj/item/flashlight/pen,
+				/obj/item/reagent_containers/glass/bottle,
+				/obj/item/reagent_containers/glass/beaker,
+				/obj/item/reagent_containers/pill,
+				/obj/item/storage/pill_bottle,
+				/obj/item/paper,
+				/obj/item/melee/classic_baton/telescopic,
+				/obj/item/toy,
+				/obj/item/storage/fancy/cigarettes,
+				/obj/item/lighter,
+				/obj/item/tank/internals/emergency_oxygen,
+				/obj/item/tank/internals/plasmaman,
+				)
 
 /obj/item/clothing/suit/nanotrasen/suitjacket
 	name = "fancy black suit jacket"

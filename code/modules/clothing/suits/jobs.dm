@@ -207,7 +207,30 @@
 	name = "surgical apron"
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
-	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
+	allowed = list(
+				/obj/item/scalpel,
+				/obj/item/cautery,
+				/obj/item/hemostat,
+				/obj/item/retractor
+				/obj/item/surgicaldrill
+				/obj/item/circular_saw
+				/obj/item/analyzer,
+				/obj/item/sensor_device,
+				/obj/item/stack/medical,
+				/obj/item/dnainjector,
+				/obj/item/reagent_containers/dropper,
+				/obj/item/reagent_containers/syringe,
+				/obj/item/reagent_containers/hypospray,
+				/obj/item/healthanalyzer,
+				/obj/item/flashlight/pen,
+				/obj/item/reagent_containers/glass/bottle,
+				/obj/item/reagent_containers/glass/beaker,
+				/obj/item/reagent_containers/pill,
+				/obj/item/storage/pill_bottle,
+				/obj/item/paper,
+				/obj/item/tank/internals/emergency_oxygen,
+				/obj/item/tank/internals/plasmaman,
+				)
 
 //SolGov suits
 
