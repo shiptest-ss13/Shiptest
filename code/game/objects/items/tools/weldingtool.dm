@@ -124,7 +124,7 @@
 			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 7.5)
 	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
