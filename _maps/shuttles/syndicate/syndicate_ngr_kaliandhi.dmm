@@ -59,12 +59,16 @@
 /area/ship/engineering/engines/port)
 "aL" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/syndicate,
 /obj/effect/turf_decal/corner/opaque/tan/full,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/west,
+/obj/item/desk_flag/ngr{
+	pixel_x = 11;
+	pixel_y = 15
+	},
+/obj/machinery/fax/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aP" = (
@@ -1725,6 +1729,12 @@
 	pixel_x = -6;
 	pixel_y = 16
 	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/small/directional/south,
+/obj/item/desk_flag/ngr{
+	pixel_x = 8;
+	pixel_y = 15
+	},
 /obj/item/reagent_containers/food/drinks/modglass{
 	icon_state = "mglass-6-";
 	pixel_x = 7;
@@ -1734,8 +1744,6 @@
 	icon_state = "mglass-6-";
 	pixel_x = -3
 	},
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "mK" = (
