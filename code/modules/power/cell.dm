@@ -29,13 +29,15 @@
 /obj/item/stock_parts/cell/get_cell()
 	return src
 
-/obj/item/stock_parts/cell/Initialize(mapload, override_maxcharge)
+/obj/item/stock_parts/cell/Initialize(mapload, spawn_empty, override_maxcharge)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	create_reagents(5, INJECTABLE | DRAINABLE)
 	if (override_maxcharge)
 		maxcharge = override_maxcharge
 	charge = maxcharge
+	if(spawn_empty)
+		charge = 0
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_appearance()
@@ -397,6 +399,8 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
+
+/obj/item/stock_parts/cell/gun/empty
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
