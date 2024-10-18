@@ -39,7 +39,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
-	/// Creates an armor item to compare 
+	///Creates an armor item to compare against incoming attacks
 	var/obj/item/clothing/armor_base = null
 
 /mob/living/simple_animal/hostile/human/Initialize()
