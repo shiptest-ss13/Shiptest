@@ -12,7 +12,7 @@
 	icon_living = "syndicate"
 	speak_chance = 0
 	stat_attack = HARD_CRIT
-	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
+	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier, /obj/item/clothing/neck/dogtag/ramzi)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
@@ -33,6 +33,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	loot = list(/obj/item/clothing/neck/dogtag/ramzi)
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
 	. = ..()
@@ -51,7 +52,7 @@
 	melee_damage_upper = 15
 	icon_state = "syndicate_knife"
 	icon_living = "syndicate_knife"
-	loot = list(/obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human, /obj/item/clothing/neck/dogtag/ramzi)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -68,7 +69,6 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
 	. = ..()
@@ -81,7 +81,6 @@
 	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
-	projectile_deflect_chance = 50
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
 	melee_damage_lower = 30
@@ -95,7 +94,7 @@
 	light_color = COLOR_SOFT_RED
 	status_flags = 0
 	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/Initialize()
 	. = ..()
@@ -121,7 +120,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
 	. = ..()
@@ -139,7 +138,7 @@
 	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 
 ///////////////Guns////////////
 
@@ -151,13 +150,13 @@
 	icon_living = "syndicate_pistol"
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
-	loot = list(/obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human, /obj/item/clothing/neck/dogtag/ramzi)
 	dodging = FALSE
 	rapid_melee = 1
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/infiltrator //shuttle loan event
 	projectilesound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
-	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
+	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier, /obj/item/clothing/neck/dogtag/ramzi)
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space
 	icon_state = "syndicate_space_pistol"
