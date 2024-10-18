@@ -54,6 +54,10 @@
 	desc = "\"Top Secret\" documents belonging to the Second Battlegroup of New Gorlex Republic. They are filled with sensitive operational intelligence. These documents are verified with a red wax seal."
 	icon_state = "docs_red"
 
+/obj/item/documents/eoehoma // For use in Eoehoma-related ruins.
+	desc = "\"Top Secret\" Eoehoma Firearms documents. Filled with weapon blueprints and eviction notices."
+	icon_state = "docs_blue"
+
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
 	var/forgedseal = 0
