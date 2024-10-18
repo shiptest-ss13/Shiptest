@@ -27,7 +27,7 @@
 	recoil_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/cm23
 	name = "CM-23 pistol magazine (10mm)"
