@@ -20,6 +20,7 @@
 	check_friendly_fire = TRUE
 	dodging = TRUE
 	rapid_melee = 2
+	armor_base = /obj/item/clothing/suit/armor/vest
 
 ///////////////Melee////////////
 
@@ -27,12 +28,11 @@
 	icon_state = "syndicate_space"
 	icon_living = "syndicate_space"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
 	. = ..()
@@ -43,8 +43,7 @@
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
 	name = "Ramzi Clique Assault Trooper"
-	maxHealth = 250
-	health = 250
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 /mob/living/simple_animal/hostile/human/syndicate/melee //dude with a knife and no shields
 	melee_damage_lower = 15
@@ -62,13 +61,12 @@
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
 	. = ..()
@@ -79,9 +77,8 @@
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
 	projectile_deflect_chance = 50
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
 	melee_damage_lower = 30
@@ -115,13 +112,12 @@
 	icon_state = "syndicate_space_sword"
 	icon_living = "syndicate_space_sword"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
 	. = ..()
@@ -137,9 +133,8 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
 	projectile_deflect_chance = 50
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 ///////////////Guns////////////
 
@@ -163,12 +158,11 @@
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
 	. = ..()
@@ -179,8 +173,7 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg
 	rapid = 2
@@ -193,12 +186,11 @@
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
 	. = ..()
@@ -209,8 +201,7 @@
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun
 	rapid = 2
@@ -224,12 +215,11 @@
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
-	maxHealth = 170
-	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/Initialize()
 	. = ..()
@@ -240,8 +230,7 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	name = "Ramzi Clique Stormtrooper"
-	maxHealth = 250
-	health = 250
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 ///////////////Misc////////////
 
