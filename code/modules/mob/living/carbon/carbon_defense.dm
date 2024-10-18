@@ -431,7 +431,7 @@
 
 	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
 		nosound = TRUE
-		playsound(src, 'sound/effects/Nose_boop.ogg', 50, 0)
+		playsound(src, 'sound/effects/boop.ogg', 50, 0)
 		if (HAS_TRAIT(M, TRAIT_FRIENDLY))
 			M.visible_message(span_notice("[M] playfully boops your nose."), span_notice("You playfully boop [src]'s nose."))
 			if (hugger_mood.sanity >= SANITY_GREAT)
