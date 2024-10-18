@@ -540,7 +540,7 @@
 /obj/effect/spawner/lootdrop/tool_engie_adv
 	loot = list(
 			/obj/item/screwdriver/power = 1,
-			/obj/item/weldingtool/experimental = 1,
+			/obj/item/weldingtool/electric = 1,
 			/obj/item/crowbar/power = 1,
 		)
 
