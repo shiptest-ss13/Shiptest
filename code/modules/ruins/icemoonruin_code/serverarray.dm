@@ -1,7 +1,7 @@
 ///////////	things made for the server array icemoon ruin
 
 /obj/item/paper/crumpled/bloody/fluff/ruins/serverarray
-	default_raw_text = "my last words<BR><BR>ive killed<BR>i didnt sign up to kill<BR>im so sorry i have one bullet left<BR>i hope its enough"
+	default_raw_text = "my last words<BR><BR>ive killed<BR>i can still hear them even without tongues<BR>im so sorry,,, i have one bullet left<BR>they wont have my body too"
 	name = "bloody note"
 
 /datum/outfit/laborer
