@@ -32,7 +32,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=15)
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=25)
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
@@ -161,7 +161,7 @@
 /obj/item/kinetic_crusher/old/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=25)//big choppa!
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=30)//big choppa!
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -213,7 +213,7 @@
 /obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 150)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=10)
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=20)
 
 /// triggered on wield of two handed item
 /obj/item/kinetic_crusher/syndie_crusher/proc/on_wield(obj/item/source, mob/user)
