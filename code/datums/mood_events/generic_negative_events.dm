@@ -313,11 +313,6 @@
 	mood_change = -5
 	timeout = 30 SECONDS
 
-/datum/mood_event/bad_tailpull
-	description = "<span class='warning'>Someone pulled my tail... How dare they?</span>\n"
-	mood_change = -3
-	timeout = 4 MINUTES
-
 /datum/mood_event/bad_boop
 	description = "<span class='warning'>Someone booped my nose... ACK!</span>\n"
 	mood_change = -3
