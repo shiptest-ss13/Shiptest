@@ -84,6 +84,8 @@
 				/obj/item/toy,
 				/obj/item/storage/fancy/cigarettes,
 				/obj/item/lighter,
+				/obj/item/tank/internals/emergency_oxygen,
+				/obj/item/tank/internals/plasmaman,
 				)
 
 /obj/item/clothing/head/hooded/winterhood/medical
