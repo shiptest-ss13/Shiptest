@@ -36,8 +36,8 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical
-	default_price = 250
-	extra_price = 500
+	default_price = 150
+	extra_price = 400
 	light_mask = "med-light-mask"
 
 /obj/item/vending_refill/medical

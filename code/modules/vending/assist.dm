@@ -22,7 +22,7 @@
 		/obj/item/circuitboard/machine/vendor = 3)
 	refill_canister = /obj/item/vending_refill/assist
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
-	default_price = 125
+	default_price = 50
 	extra_price = 100
 	light_mask = "generic-light-mask"
 
