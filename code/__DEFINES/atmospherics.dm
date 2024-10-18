@@ -345,6 +345,8 @@
 #define GAS_SO2 "so2"
 #define GAS_ARGON "ar"
 #define GAS_METHANE "methane"
+#define GAS_AMMONIA "ammonia"
+#define GAS_ACETYLENE "acetylene"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)

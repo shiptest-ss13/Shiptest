@@ -47,7 +47,7 @@
 
 /datum/gas_reaction/argon
 	priority = INFINITY
-	name = "Noble-Gas Reaction Suppression"
+	name = "Noble Gas Reaction Suppression"
 	id = "nobstop"
 
 /datum/gas_reaction/argon/init_reqs()
