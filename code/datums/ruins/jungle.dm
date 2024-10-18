@@ -16,8 +16,10 @@
 	)
 
 /datum/mission/dynamic/kill/jerry
-	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE"
-	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY"
+	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
+	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
+	author = "I FUCKING WANT HIM HUNG."
+	mission_reward = /obj/item/poster/random_rilena
 	target_type = /mob/living/simple_animal/hostile/human/syndicate
 	setpiece_item = list(
 		/obj/item/toy/plush/rilena,

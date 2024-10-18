@@ -77,15 +77,33 @@
 	return ..()
 
 /obj/structure/fermenting_barrel/gunpowder
-	name = "Gunpowder Barrel"
+	name = "gunpowder barrel"
 	desc = "A wooden barrel packed with gunpowder. You should probably keep this away from sparks or open fires."
 
 /obj/structure/fermenting_barrel/gunpowder/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/gunpowder, 200)
 
+/obj/structure/fermenting_barrel/trickwine
+	name = "barrel of trickwine"
+	desc = "finely crafted trickwine."
+
+/obj/structure/fermenting_barrel/trickwine/Initialize()
+	. = ..()
+	var/datum/reagent/trickwine_type
+	trickwine_type = pick(list(
+		/datum/reagent/consumable/ethanol/trickwine/ash_wine,
+		/datum/reagent/consumable/ethanol/trickwine/ice_wine,
+		/datum/reagent/consumable/ethanol/trickwine/shock_wine,
+		/datum/reagent/consumable/ethanol/trickwine/hearth_wine,
+		/datum/reagent/consumable/ethanol/trickwine/force_wine,
+		/datum/reagent/consumable/ethanol/trickwine/prism_wine
+	))
+	reagents.add_reagent(trickwine_type, 200)
+	name = "barrel of [trickwine_type::name]"
+
 /obj/structure/fermenting_barrel/distiller
-	name = "Distiller"
+	name = "distiller"
 	icon_state = "distiller"
 	closed_state = "distiller"
 	desc = "A repurposed barrel and keg host to a special culture of bacteria native to Illestren"

@@ -1,4 +1,5 @@
 /datum/mission/dynamic
+	value = 2000
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	var/setpiece_item
 	///Specific item uses an exact item, if false it will allow type or any subtype

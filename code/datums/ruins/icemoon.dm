@@ -45,4 +45,11 @@
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	dynamic_mission_types = list(/datum/mission/dynamic/fallen_montagne)
 
+/datum/mission/dynamic/fallen_montagne
+	name = "dark signal investigation"
+	desc = "We've lost contact with one of our lodges but there signal has gone dark. We suspect they may have been assulted by a hostile faction. If they are KIA please retrive the Montagne's body."
+	mission_reward = /obj/structure/fermenting_barrel/trickwine
+	faction = /datum/faction/srm
+	setpiece_item = /mob/living/carbon/human

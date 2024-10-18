@@ -23,10 +23,10 @@ export const MissionBoard = (props, context) => {
 
 export const MissionsContent = (props, context) => {
   const { act, data } = useBackend<Data>(context);
-  const { missions, pad, id_inserted, sending } = data;
+  const { missions, pad, id_inserted } = data;
   return (
     <Section
-      title={'Available Missions '}
+      title={'Available Missions'}
       buttons={
         <>
           <Button
@@ -52,7 +52,7 @@ export const MissionsContent = (props, context) => {
 const MissionsList = (props, context) => {
   const missionsArray = props.missions as Array<Mission>;
   const { act, data } = useBackend<Data>(context);
-  const { pad, id_inserted, sending } = data;
+  const { pad, id_inserted } = data;
 
   const missionTimer = (mission: Mission) => (
     <ProgressBar
@@ -74,36 +74,43 @@ const MissionsList = (props, context) => {
       reward,
       faction,
       location,
-      x,
-      y,
+      timeIssued,
       duration,
       canTurnIn,
       validItems,
     } = mission;
     return (
       <LabeledList>
+        <LabeledList.Divider />
         <LabeledList.Item label="Title">{name}</LabeledList.Item>
         <LabeledList.Item label="Cords">{location}</LabeledList.Item>
         <LabeledList.Item label="Author">{author}</LabeledList.Item>
         <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
         <LabeledList.Item label="Description">{desc}</LabeledList.Item>
+        <LabeledList.Item label="Time">
+          <Box>Issued: {timeIssued}</Box>
+          {duration && <Box>Duration Left: {missionTimer(mission)}</Box>}
+        </LabeledList.Item>
         <LabeledList.Item label="Rewards">
           {reward}
-          <Button
-            icon={'arrow-up'}
-            tooltip={'Turn in mission'}
-            disabled={!canTurnIn || !pad || !id_inserted}
-            onClick={() => act('send', { mission: ref })}
-          >
-            Turn in
-          </Button>
-          {duration ? missionTimer(mission) : ''}
-
-          {validItems.map((validItem: string) => (
-            <Box>{validItem}</Box>
-          ))}
+          <LabeledList.Divider />
+          {pad ? (
+            <LabeledList.Item label="Valid Items">
+              <Button
+                icon={'arrow-up'}
+                tooltip={'Turn in mission'}
+                disabled={!canTurnIn || !pad || !id_inserted}
+                onClick={() => act('send', { mission: ref })}
+              >
+                Turn in
+              </Button>
+              <LabeledList.Divider />
+              {validItems.map((validItem: string) => (
+                <Box>{validItem}</Box>
+              ))}
+            </LabeledList.Item>
+          ) : null}
         </LabeledList.Item>
-        <LabeledList.Divider />
       </LabeledList>
     );
   });

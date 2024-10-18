@@ -17,6 +17,7 @@ export type Mission = {
   x: number;
   y: number;
   progressStr: string;
+  timeIssued: string;
   remaining: number;
   duration: number;
   timeStr: string;

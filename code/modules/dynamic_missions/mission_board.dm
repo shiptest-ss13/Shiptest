@@ -1,6 +1,6 @@
 /obj/machinery/computer/mission
 	name = "\improper Outpost mission board"
-	desc = "Used to check and claim missions offered by the outpost"
+	desc = "Used to check and claim missions offered by the outpost."
 	icon_screen = "bounty"
 	circuit = /obj/item/circuitboard/computer/mission
 	light_color = COLOR_BRIGHT_ORANGE
@@ -9,8 +9,10 @@
 
 /obj/machinery/computer/mission/LateInitialize()
 	. = ..()
-	var/obj/machinery/mission_pad/pad = locate() in range(4,src)
-	pad_ref = WEAKREF(pad)
+	if(istype(get_area(src.loc), /area/outpost))
+		var/obj/machinery/mission_pad/pad = locate() in range(4,src)
+		pad_ref = WEAKREF(pad)
+	desc += "This one is not linked to any outpost."
 
 /obj/machinery/computer/mission/attackby(obj/item/I, mob/living/user, params)
 	if(isidcard(I))

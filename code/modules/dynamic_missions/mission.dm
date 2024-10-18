@@ -4,7 +4,7 @@
 	var/desc = "Do something for me."
 	var/faction = /datum/faction/independent
 	var/value = 1000 /// The mission's payout.
-	var/atom/movable/mission_reward
+	var/mission_reward
 	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
 
@@ -23,6 +23,7 @@
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
+	var/time_issued
 	var/active = FALSE
 	var/failed = FALSE
 	var/dur_timer
@@ -77,18 +78,21 @@
 
 	faction = pick(faction)
 	author = random_species_name()
+	mission_reward = pick(mission_reward)
 	return
 
 /datum/mission/proc/reward_flavortext()
 	var/reward_string = "[value] cr upon completion"
 	if(ispath(mission_reward))
-		reward_string += "along with [mission_reward::name]"
+		var/atom/reward = mission_reward
+		reward_string += " along with [reward::name]"
 	return reward_string
 
 /datum/mission/proc/start_mission()
 	SSblackbox.record_feedback("tally", "mission_started", 1, src.type)
 	SSmissions.inactive_missions -= src
 	active = TRUE
+	time_issued = station_time_timestamp()
 	if(duration)
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
@@ -155,6 +159,7 @@
 		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
 		"x" = mission_location.x,
 		"y" = mission_location.y,
+		"timeIssued" = time_issued,
 		"duration" = src.duration,
 		"remaining" = time_remaining,
 		"timeStr" = time2text(time_remaining, "mm:ss"),

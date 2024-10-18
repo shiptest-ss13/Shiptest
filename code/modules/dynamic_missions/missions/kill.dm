@@ -17,7 +17,7 @@
 	if(!name)
 		name = "[target_type::name] termination"
 	if(!desc)
-		desc = "Bounty for a high ranking [target_type::name] residing on this planet. They should have identifying items"
+		desc = "Bounty for a high ranking [target_type::name] residing on this planet. They should have identifying items."
 
 /datum/mission/dynamic/kill/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
 	required_target = set_bound(mission_poi.use_poi(target_type), null, FALSE, TRUE)
@@ -33,9 +33,12 @@
 	required_target = null
 
 /datum/mission/dynamic/kill/frontiersmen
+	value = 2500
+	mission_reward = /obj/item/gun/ballistic/automatic/pistol/mauler
 	target_type = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 
 /datum/mission/dynamic/kill/syndi_docs
+	value = 3000
 	target_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 

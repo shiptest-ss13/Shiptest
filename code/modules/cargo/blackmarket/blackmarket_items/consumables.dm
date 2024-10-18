@@ -76,12 +76,14 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/trickwine/spawn_item(loc)
-	var/trickwine = pick(list(/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine))
+	var/trickwine = pick(list(
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
+	))
 	return new trickwine(loc)
 
 /datum/blackmarket_item/consumable/stimpack

@@ -21,6 +21,7 @@
 /datum/mission/dynamic/signaled/drill
 	name = "drill mission"
 	desc = "get this drill back up and running and send us proof"
+	value = 3000
 	faction = list(
 		/datum/faction/nt,
 		/datum/faction/nt/ns_logi,
@@ -58,9 +59,11 @@
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
 
+//I want this to be a 3x3 machine in future
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, this one is designed for mining outposts."
+	anchored = TRUE
 	mission_class = 4
 	num_wanted = 15
 
