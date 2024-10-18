@@ -325,6 +325,8 @@
 // Gas defines because i hate typepaths
 #define GAS_O2 "o2"
 #define GAS_N2 "n2"
+#define GAS_CO "co"
+#define GAS_O3 "ozone"
 #define GAS_CO2 "co2"
 #define GAS_PLASMA "plasma"
 #define GAS_H2O "water_vapor"
@@ -339,6 +341,10 @@
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
+
+#define GAS_SO2 "so2"
+#define GAS_ARGON "ar"
+#define GAS_METHANE "methane"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)

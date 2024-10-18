@@ -45,15 +45,15 @@
 /datum/gas_reaction/proc/test()
 	return list("success" = TRUE)
 
-/datum/gas_reaction/nobliumsupression
+/datum/gas_reaction/argon
 	priority = INFINITY
-	name = "Hyper-Noblium Reaction Suppression"
+	name = "Noble-Gas Reaction Suppression"
 	id = "nobstop"
 
-/datum/gas_reaction/nobliumsupression/init_reqs()
-	min_requirements = list(GAS_HYPERNOB = REACTION_OPPRESSION_THRESHOLD)
+/datum/gas_reaction/argon/init_reqs()
+	min_requirements = list(GAS_ARGON = REACTION_OPPRESSION_THRESHOLD)
 
-/datum/gas_reaction/nobliumsupression/react()
+/datum/gas_reaction/argon/react()
 	return STOP_REACTIONS
 
 //water vapor: puts out fires?
@@ -223,7 +223,7 @@
 	else
 		temperature_scale = (temperature-PLASMA_MINIMUM_BURN_TEMPERATURE)/(PLASMA_UPPER_TEMPERATURE-PLASMA_MINIMUM_BURN_TEMPERATURE)
 	if(temperature_scale > 0)
-		oxygen_burn_rate = OXYGEN_BURN_RATE_BASE - temperature_scale
+		oxygen_burn_rate = PLASMA_BURN_RATE_BASE - temperature_scale
 		if(air.get_moles(GAS_O2) / air.get_moles(GAS_PLASMA) > SUPER_SATURATION_THRESHOLD) //supersaturation. Form Tritium.
 			super_saturation = TRUE
 		if(air.get_moles(GAS_O2) > air.get_moles(GAS_PLASMA)*PLASMA_OXYGEN_FULLBURN)
@@ -312,7 +312,7 @@
 	else
 		temperature_scale = (FREON_MAXIMUM_BURN_TEMPERATURE - temperature)/(FREON_MAXIMUM_BURN_TEMPERATURE - FREON_LOWER_TEMPERATURE) //calculate the scale based on the temperature
 	if(temperature_scale >= 0)
-		oxygen_burn_rate = OXYGEN_BURN_RATE_BASE - temperature_scale
+		oxygen_burn_rate = PLASMA_BURN_RATE_BASE - temperature_scale
 		if(air.get_moles(GAS_O2) > air.get_moles(GAS_FREON)*FREON_OXYGEN_FULLBURN)
 			freon_burn_rate = (air.get_moles(GAS_FREON)*temperature_scale)/FREON_BURN_RATE_DELTA
 		else

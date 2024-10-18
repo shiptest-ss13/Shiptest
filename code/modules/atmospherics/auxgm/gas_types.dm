@@ -1,6 +1,6 @@
 /datum/gas/oxygen
 	id = GAS_O2
-	specific_heat = 20
+	specific_heat = 30
 	name = "Oxygen"
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
 	breath_alert_info = list(
@@ -16,7 +16,7 @@
 
 /datum/gas/nitrogen
 	id = GAS_N2
-	specific_heat = 20
+	specific_heat = 30
 	name = "Nitrogen"
 	breath_alert_info = list(
 		not_enough_alert = list(
@@ -71,20 +71,20 @@
 			alert_type = /atom/movable/screen/alert/too_much_tox
 		)
 	)
-	fire_burn_rate = OXYGEN_BURN_RATE_BASE // named when plasma fires were the only fires, surely
+	fire_burn_rate = PLASMA_BURN_RATE_BASE // named when plasma fires were the only fires, surely
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
 	fire_products = FIRE_PRODUCT_PLASMA
 	enthalpy = FIRE_PLASMA_ENERGY_RELEASED // 3000000, 3 megajoules, 3000 kj
 
 /datum/gas/water_vapor
 	id = GAS_H2O
-	specific_heat = 40
+	specific_heat = 75
 	name = "Water Vapor"
 	gas_overlay = "water_vapor"
 	moles_visible = MOLES_GAS_VISIBLE
 	flags = GAS_FLAG_DANGEROUS
 	fusion_power = 8
-	enthalpy = -241800 // FIRE_HYDROGEN_ENERGY_RELEASED is actually what this was supposed to be
+	enthalpy = -285800 // FIRE_HYDROGEN_ENERGY_RELEASED is actually what this was supposed to be
 	breath_reagent = /datum/reagent/water
 
 /datum/gas/nitrous_oxide
@@ -139,16 +139,33 @@
 	name = "Stimulum"
 	fusion_power = 7
 
+/datum/gas/ozone
+	id = GAS_O3
+	specific_heat = 30
+	name = "Ozone"
+	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
+	oxidation_rate = 2
+	enthalpy = 142000
+
+/datum/gas/argon
+	id = GAS_ARGON
+	specific_heat = 20
+	name = "Argon"
+	gas_overlay = "water_vapor"
+	oxidation_rate = -1
+	//moles_visible = MOLES_GAS_VISIBLE
+
+
 /datum/gas/pluoxium //argon
 	id = GAS_PLUOXIUM
 	specific_heat = 80
 	name = "Pluoxium"
 	fusion_power = 10
-	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST * 1000 // it is VERY stable
-	oxidation_rate = 8 // when it can oxidize, it can oxidize a LOT
-	enthalpy = -50000 // but it reduces the heat output a bit
+	oxidation_temperature = T0C - 100
+	oxidation_rate = 3 // when it can oxidize, it can oxidize a LOT
+	enthalpy = 142 // but it reduces the heat output a bit
 
-/datum/gas/hypernoblium //xenon
+/datum/gas/hypernoblium
 	id = GAS_HYPERNOB
 	specific_heat = 2000
 	name = "Hyper-noblium"
@@ -178,10 +195,12 @@
 
 /datum/gas/chlorine
 	id = GAS_CHLORINE
-	specific_heat = 20
+	specific_heat = 30
 	name = "Chlorine"
 	flags = GAS_FLAG_DANGEROUS
 	moles_visible = MOLES_GAS_VISIBLE * 5
+	oxidation_temperature = T0C - 100
+	oxidation_rate = 0.5
 	gas_overlay = "nitrous_oxide"
 	color = "#FFFB89"
 	fusion_power = 0
@@ -199,3 +218,26 @@
 	enthalpy = 63000
 	fire_burn_rate = 1
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+
+/datum/gas/sulfur_dioxide
+	id = GAS_SO2
+	specific_heat = 22
+	name = "Sulfur Dioxide"
+	flags = GAS_FLAG_DANGEROUS
+	moles_visible = MOLES_GAS_VISIBLE * 10
+	gas_overlay = "generic"
+	color = "#d4cb28"
+	enthalpy = -296800
+
+/datum/gas/methane
+	id = GAS_METHANE
+	specific_heat = 35
+	name = "Methane"
+	flags = GAS_FLAG_DANGEROUS
+	//moles_visible = MOLES_GAS_VISIBLE
+	color = "#ffe"
+	fusion_power = 0
+	fire_products = list(GAS_H2O = 0.5, GAS_HYDROGEN = 1)
+	enthalpy = -74600
+	fire_burn_rate = 2
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
