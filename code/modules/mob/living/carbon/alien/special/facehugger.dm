@@ -35,7 +35,6 @@
 	initial_language_holder = /datum/language_holder/alien
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	footstep_type = FOOTSTEP_MOB_CLAW
-	gold_core_spawnable = NO_SPAWN
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	environment_smash = ENVIRONMENT_SMASH_NONE

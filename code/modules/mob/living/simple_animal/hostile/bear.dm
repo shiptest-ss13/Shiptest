@@ -98,7 +98,6 @@
 	health = 120
 	maxHealth = 120
 	armored = TRUE
-	gold_core_spawnable = HOSTILE_SPAWN
 
 /mob/living/simple_animal/hostile/bear/cave
 	name = "brown bear"
