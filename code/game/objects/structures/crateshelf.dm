@@ -1,4 +1,5 @@
 #define DEFAULT_SHELF_CAPACITY 2 // Default capacity of the shelf
+#define DEFAULT_SHELF_MAX_CAPACITY 4
 #define DEFAULT_SHELF_USE_DELAY 1 SECONDS // Default interaction delay of the shelf
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
 
@@ -12,6 +13,7 @@
 	max_integrity = 50 // Not hard to break
 
 	var/capacity = DEFAULT_SHELF_CAPACITY
+	var/max_capacity = DEFAULT_SHELF_MAX_CAPACITY
 	var/use_delay = DEFAULT_SHELF_USE_DELAY
 	var/list/shelf_contents
 
@@ -51,6 +53,8 @@
 			. += "	[icon2html(crate, user)] [crate]"
 
 /obj/structure/crate_shelf/proc/add_shelf(num)
+	if(capacity + num > max_capacity)
+		return FALSE
 	var/stack_layer // This is used to generate the sprite layering of the shelf pieces.
 	var/stack_offset // This is used to generate the vertical offset of the shelf pieces.
 	var/prev_capacity = capacity
@@ -67,18 +71,21 @@
 /obj/structure/crate_shelf/attackby(obj/item/item, mob/living/user, params)
 	if (item.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
 		item.play_tool_sound(src)
-		if(do_after(user, 3 SECONDS, target = src))
+		if(do_after(user, 3 SECONDS, src))
 			deconstruct(TRUE)
 			return TRUE
-	if(istype(item, /obj/item/stack/sheet/metal) && capacity < 4)
-		var/obj/item/stack/sheet/metal/our_sheet = item
-		if(our_sheet.get_amount() >= 2)
-			balloon_alert(user, "adding additional shelf to rack")
-			if(do_after(user, 3 SECONDS, target = src))
-				add_shelf(1)
-				our_sheet.add(-2)
-				return TRUE
-
+	if(istype(item, /obj/item/stack/sheet/metal))
+		if(capacity < max_capacity)
+			var/obj/item/stack/sheet/metal/our_sheet = item
+			if(our_sheet.get_amount() >= 2)
+				balloon_alert(user, "adding additional shelf to rack")
+				if(do_after(user, 3 SECONDS, src))
+					add_shelf(1)
+					our_sheet.add(-2)
+					return TRUE
+				to_chat(user, span_notice("Adding a shelf to [src] requires more metal."))
+				return FALSE
+		to_chat(user, span_notice("[src] cannot be built any higher!"))
 	return ..()
 
 /obj/structure/crate_shelf/relay_container_resist_act(mob/living/user, obj/structure/closet/crate)
