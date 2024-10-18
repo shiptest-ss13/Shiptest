@@ -452,7 +452,7 @@
 /**
  * Heal a robotic body part on a mob
  */
-/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
+/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal, integrity_loss=0)
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
 		var/dam //changes repair text based on how much brute/burn was supplied
@@ -460,6 +460,12 @@
 			dam = 1
 		else
 			dam = 0
+		if (affecting.uses_integrity)
+			if (affecting.get_curable_damage(integrity_loss) <= 0 )
+				to_chat(user, "<span class='warning'>[affecting] is as repaired as it'll get like this!</span>")
+				return
+			affecting.take_integrity_damage(integrity_loss)
+
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
 				H.update_damage_overlays()
