@@ -12,10 +12,10 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	dynamic_mission_types = list(
 		/datum/mission/dynamic/guarded/nt_files,
-		/datum/mission/dynamic/kill/jerry
+		/datum/mission/dynamic/signaled/kill/jerry
 	)
 
-/datum/mission/dynamic/kill/jerry
+/datum/mission/dynamic/signaled/kill/jerry
 	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
 	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
 	author = "I FUCKING WANT HIM HUNG."
@@ -67,7 +67,7 @@
 	suffix = "jungle_cavecrew.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
 	dynamic_mission_types = list(
-		/datum/mission/dynamic/kill/frontiersmen,
+		/datum/mission/dynamic/signaled/kill/frontiersmen,
 		/datum/mission/dynamic/data_reterival
 	)
 

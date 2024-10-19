@@ -106,7 +106,7 @@
 		qdel(src)
 		return
 	if(!planet.spawned_mission_pois.len)
-		stack_trace("[src] failed to start because it had no points of intrest to use for its mission")
+		stack_trace("[src] failed to start because it had no points of interest to use for its mission")
 		qdel(src)
 		return
 
@@ -190,11 +190,7 @@
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
-	if(sparks)
-		do_sparks(3, FALSE, get_turf(bound))
-	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
-	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
-	AddComponent(bound, MISSION_IMPORTANCE_CRITICAL, src)
+	set_bound(bound, destroy_cb, fail_on_delete, sparks)
 	return bound
 
 /datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
@@ -202,7 +198,7 @@
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
-	AddComponent(bound, MISSION_IMPORTANCE_CRITICAL, src)
+	bound.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_CRITICAL, src)
 	return bound
 
 /**
@@ -265,29 +261,26 @@
 	. = ..()
 
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn)
-	var/atom/item_of_intrest
+	var/atom/item_of_interest
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(already_spawned) //Search for the item
 		for(var/atom/movable/item_in_poi as anything in get_turf(src))
 			if(istype(item_in_poi, type_to_spawn))
-				item_of_intrest = item_in_poi
-		stack_trace("[src] is meant to have its item prespawned but could not find it on its tile, resorting to spawning the type instead.")
+				item_of_interest = item_in_poi
+		if(item_of_interest)
+			stack_trace("[src] is meant to have its item prespawned but could not find it on its tile.")
 	else //Spawn the item
-		item_of_intrest = new type_to_spawn(loc)
+		item_of_interest = new type_to_spawn(loc)
 	// We dont have an item to return
-	if(!istype(item_of_intrest))
-		CRASH("[src] did not return a item_of_intrest")
-	. = item_of_intrest
-	qdel(src)
+	if(!istype(item_of_interest))
+		stack_trace("[src] did not return a item_of_interest")
+	QDEL_IN(src, 0)
+	return item_of_interest
 
 /obj/effect/landmark/mission_poi/main
 	name = "mission focus"
 	icon_state = "main_thing"
-
-/// Instead of spawning something its used to find a matching item already in the map and returns that. For if you want to use an already exisiting part of the ruin.
-/obj/effect/landmark/mission_poi/pre_loaded
-	already_spawned = TRUE
 
 /// Shows examine hints on how it relates to a mission
 /datum/component/mission_important
@@ -307,13 +300,13 @@
 	SIGNAL_HANDLER
 
 	if(!isdatum(mission_ref.resolve()))
-		examine_list += span_notice("[src] was useful to a mission")
+		examine_list += span_notice("[parent] was useful to a mission")
 		return
 
 	switch(importance_level)
 		if(MISSION_IMPORTANCE_CRITICAL)
-			examine_list += span_notice("[src] is critical to a mission")
+			examine_list += span_notice("[parent] is critical to a mission")
 		if(MISSION_IMPORTANCE_IMPORTANT)
-			examine_list += span_notice("[src] is important to a mission")
+			examine_list += span_notice("[parent] is important to a mission")
 		if(MISSION_IMPORTANCE_RELEVENT)
-			examine_list += span_notice("[src] is relevent to a mission")
+			examine_list += span_notice("[parent] is relevent to a mission")

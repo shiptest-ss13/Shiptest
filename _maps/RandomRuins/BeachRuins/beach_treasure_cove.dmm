@@ -1298,7 +1298,9 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
 /obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured;
+	mission_index = 1
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
