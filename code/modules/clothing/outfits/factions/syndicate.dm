@@ -518,6 +518,7 @@
 
 /datum/outfit/job/syndicate/head_of_personnel/ngr
 	name = "Syndicate - Ensign (NGR)"
+	id_assignment = "Ensign"
 
 	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
@@ -686,8 +687,11 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	alt_suit = /obj/item/clothing/suit/apron/surgical
-	l_hand = /obj/item/storage/firstaid/medical
 	box = /obj/item/storage/box/survival/medical
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/med
+	courierbag = /obj/item/storage/backpack/messenger/med
 
 /datum/outfit/job/syndicate/doctor/suns
 	name = "Syndicate - Medical Doctor (SUNS)"
@@ -720,7 +724,6 @@
 	suit = /obj/item/clothing/suit/hardliners
 	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/melee/knife/survival
-	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 	shoes = /obj/item/clothing/shoes/combat
@@ -733,9 +736,7 @@
 	suit = /obj/item/clothing/suit/ngr/smock
 	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/melee/knife/survival
-	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 	shoes = /obj/item/clothing/shoes/combat
 
 //paramedics
@@ -920,10 +921,6 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 
-	backpack_contents = list(
-		/obj/item/melee/baton/loaded=1,
-	)
-
 	box = /obj/item/storage/box/survival/security
 
 
@@ -1026,14 +1023,13 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
-	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival
 	r_pocket = /obj/item/storage/bag/ore
 	backpack_contents = list(
-		/obj/item/flashlight/seclite=1,\
-		/obj/item/melee/knife/survival=1,\
-		/obj/item/mining_voucher=1,\
-		/obj/item/stack/marker_beacon/ten=1)
-
+						/obj/item/flashlight/seclite=1,
+						/obj/item/melee/knife/survival=1,
+						/obj/item/stack/marker_beacon/ten=1,
+						/obj/item/radio/weather_monitor=1,
+						)
 	box = /obj/item/storage/box/survival/mining
 
 /datum/outfit/job/syndicate/miner/gorlex

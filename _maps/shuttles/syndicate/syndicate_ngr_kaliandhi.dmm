@@ -106,7 +106,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/computer/communications{
+/obj/machinery/computer/cargo{
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/dark,
@@ -505,10 +505,6 @@
 	pixel_x = -6;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_x = 5;
-	pixel_y = 11
-	},
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -613,15 +609,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/radio/intercom/table{
-	dir = 1;
-	frequency = 1213;
-	name = "NGR shortwave intercom";
-	pixel_x = -2;
-	pixel_y = 3
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -629,12 +623,7 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 1;
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/item/radio/intercom/table{
-	dir = 1;
-	pixel_x = -15;
+	pixel_x = -6;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/techfloor{
@@ -648,6 +637,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 9;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5948,6 +5941,7 @@
 "NL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/filingcabinet/chestdrawer{
+	density = 0;
 	dir = 4;
 	pixel_x = -6
 	},
@@ -6508,7 +6502,7 @@
 /area/ship/engineering/atmospherics)
 "Sc" = (
 /obj/structure/closet/syndicate/personal{
-	name = "bridge officer's closet";
+	name = "ensign's closet";
 	populate = 0
 	},
 /obj/item/storage/backpack,
