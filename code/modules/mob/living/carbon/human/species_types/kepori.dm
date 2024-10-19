@@ -27,7 +27,6 @@
 	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 40
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
 	mutanttongue = /obj/item/organ/tongue/kepori
-	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
 	/// # Inherit tackling variables #
 	/// See: [/datum/component/tackler/var/stamina_cost]
