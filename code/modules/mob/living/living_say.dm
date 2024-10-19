@@ -424,7 +424,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	. = ..()
 	if(. && mind)
 		var/datum/language_holder/langauge_holder = get_language_holder()
-		if(langauge_holder.spoken_languages.len >= 4 )
+		if(langauge_holder.spoken_languages.len >= 4)
 			message_admins("[ADMIN_LOOKUPFLW(src)] knows [langauge_holder.spoken_languages.len] langauges!")
 
 /mob/living/proc/dying_breath(message)
