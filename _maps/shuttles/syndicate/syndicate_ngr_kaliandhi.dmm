@@ -2813,12 +2813,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "sF" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "kali_port_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -4879,12 +4879,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Gn" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "kali_starboard_engine_blast"
+	},
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
