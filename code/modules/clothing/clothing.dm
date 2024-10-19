@@ -29,7 +29,7 @@
 
 	var/can_be_bloody = TRUE
 
-	//set on equipping the clothing item, removed when taking off.
+	//set during equip_to_slot, removed when taking off.
 	//here lies some of the most batshit insane reference code I've ever seen. Look it up in the commit history
 	var/datum/weakref/wearer
 
