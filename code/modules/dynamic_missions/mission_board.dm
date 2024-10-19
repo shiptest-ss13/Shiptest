@@ -124,7 +124,7 @@
 /obj/machinery/mission_pad
 	name = "\improper Outpost mission turn-in pad"
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "lpad-idle-o"
+	icon_state = "pad-idle"
 
 /obj/machinery/bounty_viewer
 	name = "bounty viewer"
@@ -140,21 +140,20 @@
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -32 : 32)
 		pixel_y = (dir & 3)? (dir ==1 ? -32 : 32) : 0
 
-/obj/machinery/bounty_viewer/attackby(obj/item/I, mob/living/user, params)
+/obj/machinery/bounty_viewer/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(I.tool_behaviour == TOOL_WRENCH)
-		to_chat(user, "<span class='notice'>You start [anchored ? "un" : ""]securing [name]...</span>")
-		I.play_tool_sound(src)
-		if(I.use_tool(src, user, 30))
-			playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
-			if(machine_stat & BROKEN)
-				to_chat(user, "<span class='warning'>The broken remains of [src] fall on the ground.</span>")
-				new /obj/item/stack/sheet/metal(loc, 3)
-				new /obj/item/shard(loc)
-			else
-				to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [name].</span>")
-				new /obj/item/wallframe/bounty_viewer(loc)
-			qdel(src)
+	to_chat(user, span_notice("You start [anchored ? "un" : ""]securing [name]..."))
+	I.play_tool_sound(src)
+	if(I.use_tool(src, user, 30))
+		playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
+		if(machine_stat & BROKEN)
+			to_chat(user, span_warning("The broken remains of [src] fall on the ground."))
+			new /obj/item/stack/sheet/metal(loc, 3)
+			new /obj/item/shard(loc)
+		else
+			to_chat(user, span_notice("You [anchored ? "un" : ""]secure [name]."))
+			new /obj/item/wallframe/bounty_viewer(loc)
+		qdel(src)
 
 /obj/machinery/bounty_viewer/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

@@ -29,12 +29,19 @@
 	id = "wreck_factory"
 	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
+	dynamic_mission_types = list(/datum/mission/dynamic/nanotrasen_docs)
+
+/datum/mission/dynamic/nanotrasen_docs
+	name = "Recover some nanotrasen files."
+	value = 2500
+	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/map_template/ruin/lavaland/fallenstar
 	name = "Crashed Starwalker"
 	id = "crashed_star"
 	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
 	suffix = "lavaland_crashed_starwalker.dmm"
+	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
 
 /datum/map_template/ruin/lavaland/abandonedlisteningpost
 	name = "Abandoned Listening Post"

@@ -8,6 +8,7 @@
 	name = null
 	desc = null
 	setpiece_poi = /obj/effect/landmark/mission_poi/main/kill
+	setpiece_item = /obj/item/dog_tags
 	mission_main_signal = COMSIG_MOB_DEATH
 
 /datum/mission/dynamic/signaled/kill/generate_mission_details()
@@ -18,7 +19,7 @@
 		if(!name)
 			name = "[mission_mob::name] termination"
 		if(!desc)
-			desc = "Bounty for a high ranking [mission_mob::name] residing on this planet. They should have identifying items."
+			desc = "Bounty for a high ranking [mission_mob::name] residing on this planet. They should have identifying dogtags."
 
 /datum/mission/dynamic/signaled/kill/frontiersmen
 	value = 2500
