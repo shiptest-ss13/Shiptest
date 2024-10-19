@@ -23,9 +23,12 @@
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	recoil_unwielded = 3
 
+/obj/item/gun/ballistic/automatic/pistol/cm23/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/ammo_box/magazine/cm23
 	name = "CM-23 pistol magazine (10mm)"
-	desc = "An 10-round magazine magazine designed for the CM-70 pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 10-round magazine magazine designed for the CM-23 pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -35,6 +38,9 @@
 /obj/item/ammo_box/magazine/cm23/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/cm23/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
@@ -223,7 +229,6 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "f4"
 	item_state = "f4"
 	show_magazine_on_sprite = TRUE

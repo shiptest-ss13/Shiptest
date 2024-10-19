@@ -1672,9 +1672,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pJ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1775,9 +1773,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "qF" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3305,7 +3301,6 @@
 	icon_state = "0-8"
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 8;
 	launch_status = 0;
 	preferred_direction = 4
@@ -4042,9 +4037,7 @@
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "MV" = (
@@ -4285,9 +4278,7 @@
 	id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PA" = (
@@ -5252,9 +5243,7 @@
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
 "Yb" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5267,9 +5256,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Yn" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Yp" = (
@@ -5387,7 +5374,7 @@
 	},
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/c10mm,
+/obj/item/storage/box/ammo/c10mm,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";

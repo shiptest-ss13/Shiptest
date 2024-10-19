@@ -15,10 +15,8 @@
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
 	var/loot = rand(1,29)
 	switch(loot)
-		if(1)
+		if(1,2)
 			new /obj/item/shared_storage/red(src)
-		if(2)
-			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
 			new /obj/item/necromantic_stone/lava(src)
 		if(5)
@@ -49,10 +47,7 @@
 		if(15)
 			new /obj/item/book_of_babel(src)
 		if(16)
-			if(prob(75))
-				new /obj/item/guardiancreator/miner(src)
-			else
-				new /obj/item/guardiancreator/miner/choose (src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -120,10 +115,7 @@
 			if(15)
 				new /obj/item/book_of_babel(src)
 			if(16)
-				if(prob(75))
-					new /obj/item/guardiancreator/miner(src)
-				else
-					new /obj/item/guardiancreator/miner/choose (src)
+				new /obj/item/ship_in_a_bottle(src)
 			if(17)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -623,7 +615,7 @@
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		C.force_scream()
 	..()
 
 //nerfed necrostone
@@ -1644,11 +1636,9 @@
 	name = "puzzling chest"
 
 /obj/structure/closet/crate/necropolis/puzzle/PopulateContents()
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
-			new /obj/item/soulstone/anybody(src)
-		if(2)
 			new /obj/item/wisp_lantern(src)
-		if(3)
+		if(2)
 			new /obj/item/prisoncube(src)

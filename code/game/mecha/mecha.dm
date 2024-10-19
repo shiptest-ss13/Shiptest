@@ -15,6 +15,7 @@
 	light_on = FALSE
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
+	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
@@ -595,6 +596,8 @@
 
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
+		return 0
+	if(stopped)
 		return 0
 	if(!Process_Spacemove(direction))
 		return 0

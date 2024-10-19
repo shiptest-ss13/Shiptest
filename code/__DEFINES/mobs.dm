@@ -76,7 +76,6 @@
 #define MONKEY_BODYPART "monkey"
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
-#define DEVIL_BODYPART "devil"
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
@@ -397,10 +396,8 @@
 #define RACE_SWAP (1<<3)
 //ERT spawn template (avoid races that don't function without correct gear)
 #define ERT_SPAWN (1<<4)
-//xenobio black crossbreed
-#define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
-#define WABBAJACK (1<<6)
+#define WABBAJACK (1<<5)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
 
@@ -415,9 +412,6 @@
 #define EYE_CONTACT_RANGE 5
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
-
-///Swarmer flags
-#define SWARMER_LIGHT_ON (1<<0)
 
 /// Returns whether or not the given mob can succumb
 #define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION) && !HAS_TRAIT(target, TRAIT_NODEATH))
