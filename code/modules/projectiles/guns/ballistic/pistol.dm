@@ -98,43 +98,6 @@ EMPTY_GUN_HELPER(automatic/pistol/candor/factory)
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
 
-/obj/item/gun/ballistic/automatic/pistol/commander
-	name = "\improper Commander"
-	desc = "A classic handgun in a tasteful black and stainless steel color scheme. An enamel Nanotrasen logo is set into the grips. Chambered in 9mm."
-	icon_state = "commander"
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-
-	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/co9mm
-	manufacturer = MANUFACTURER_NANOTRASEN
-	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
-
-EMPTY_GUN_HELPER(automatic/pistol/commander)
-
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq
-	name = "\improper Commissioner"
-	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards. A yellow IRMG shield is set into the grips. Chambered in 9mm."
-	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
-	icon_state = "commander-inteq"
-	item_state = "commander-inteq"
-	manufacturer = MANUFACTURER_INTEQ
-
-EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
-
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
 	desc = "A Nanotrasen-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
