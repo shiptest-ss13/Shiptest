@@ -22,7 +22,7 @@
 			new /obj/item/multitool/ai_detect(src) // 1 tc
 			new /obj/item/encryptionkey/syndicate(src) // 2 tc
 			new /obj/item/reagent_containers/syringe/mulligan(src) // 4 tc
-			new /obj/item/kitchen/knife/switchblade(src) //I'll count this as 2 tc
+			new /obj/item/melee/knife/switchblade(src) //I'll count this as 2 tc
 			new /obj/item/storage/fancy/cigarettes/cigpack_syndicate (src) // 2 tc this shit heals
 			new /obj/item/flashlight/emp(src) // 2 tc
 			new /obj/item/chameleon(src) // 7 tc
@@ -38,7 +38,7 @@
 			new /obj/item/jammer(src)
 
 		if("guns")
-			new /obj/item/gun/ballistic/revolver/syndicate(src)
+			new /obj/item/gun/ballistic/revolver/viper(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/card/emag(src)
@@ -99,7 +99,7 @@
 			new /obj/item/storage/box/syndie_kit/emp(src)
 
 		if("sniper") //This shit is unique so can't really balance it around tc, also no silencer because getting killed without ANY indicator on what killed you sucks
-			new /obj/item/gun/ballistic/automatic/marksman/sniper_rifle(src) // 12 tc
+			new /obj/item/gun/ballistic/automatic/marksman/taipan(src) // 12 tc
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
@@ -108,28 +108,28 @@
 
 		if("metaops")
 			new /obj/item/clothing/suit/space/hardsuit/syndi(src) // 8 tc
-			new /obj/item/gun/ballistic/shotgun/bulldog(src) // 8 tc
+			new /obj/item/gun/ballistic/shotgun/automatic/bulldog(src) // 8 tc
 			new /obj/item/implanter/explosive(src) // 2 tc
-			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
-			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
+			new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src) // 2 tc
+			new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src) // 2 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
 			new /obj/item/card/emag(src) // 6 tc
 
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
-	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2, "made_man"= 1)))
+	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
-			new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
+			new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
 			new /obj/item/attachment/silencer(src)
-			new /obj/item/ammo_box/magazine/m10mm(src)
-			new /obj/item/ammo_box/magazine/m10mm(src)
+			new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+			new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
 			new /obj/item/reagent_containers/glass/rag(src)
 
 		if("ninja")
-			new /obj/item/katana(src) // Unique , hard to tell how much tc this is worth. 8 tc?
+			new /obj/item/melee/sword/katana(src)
 			new /obj/item/implanter/adrenalin(src) // 8 tc
 			for(var/i in 1 to 6)
 				new /obj/item/throwing_star(src) // ~5 tc for all 6
@@ -140,14 +140,12 @@
 		if("darklord")
 			new /obj/item/dualsaber(src)
 			new /obj/item/dnainjector/telemut/darkbundle(src)
-			new /obj/item/clothing/suit/hooded/chaplain_hoodie(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/clothing/shoes/chameleon/noslip(src) //because slipping while being a dark lord sucks
 			new /obj/item/book/granter/spell/summonitem(src)
 
 		if("white_whale_holy_grail") //Unique items that don't appear anywhere else
 			new /obj/item/pneumatic_cannon/speargun(src)
-			new /obj/item/storage/backpack/magspear_quiver(src)
 			new /obj/item/clothing/suit/space/hardsuit/carp(src)
 			new /obj/item/clothing/mask/gas/carp(src)
 			new /obj/item/grenade/spawnergrenade/spesscarp(src)
@@ -167,16 +165,6 @@
 			new /obj/item/pen/edagger(src)
 			new /obj/item/gun/energy/decloner(src)
 
-		if("bee")
-			new /obj/item/paper/fluff/bee_objectives(src) // 0 tc (motivation)
-			new /obj/item/clothing/suit/hooded/bee_costume(src) // 0 tc
-			new /obj/item/clothing/mask/rat/bee(src) // 0 tc
-			new /obj/item/storage/belt/fannypack/yellow(src) // 0 tc
-			new /obj/item/grenade/spawnergrenade/buzzkill(src)
-			new /obj/item/grenade/spawnergrenade/buzzkill(src)
-			new /obj/item/reagent_containers/glass/bottle/beesease(src) // 10 tc?
-			new /obj/item/melee/beesword(src) //priceless
-
 		if("mr_freeze")
 			new /obj/item/clothing/glasses/cold(src)
 			new /obj/item/clothing/gloves/color/black(src)
@@ -195,7 +183,7 @@
 		if("made_man")
 			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
 			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
-			new /obj/item/kitchen/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
+			new /obj/item/melee/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
@@ -208,14 +196,6 @@
 			new /obj/item/card/id/syndicate (src) // 2 TC, Gotta be named the part, boss.
 			new /obj/item/reagent_containers/food/drinks/flask (src) // 1 TC, I can't believe I forgot about the booze flask AAAAAAA
 			new /obj/item/storage/secure/briefcase/syndie (src) // 1TC, for bribing the bartender to let you set up shop... amongst other actions.
-
-
-/obj/item/paper/fluff/bee_objectives
-	name = "Objectives of a Bee Liberation Front Operative"
-	default_raw_text = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
-
-
-
 
 /obj/item/storage/box/syndicate/contract_kit
 	name = "Contract Kit"
@@ -302,11 +282,10 @@
 		/obj/item/storage/firstaid/tactical,
 		/obj/item/encryptionkey/syndicate,
 		/obj/item/clothing/glasses/thermal/syndi,
-		/obj/item/slimepotion/slime/sentience/nuclear,
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot,
+		/obj/item/gun/ballistic/automatic/toy,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/toy/eightball/haunted
@@ -581,12 +560,3 @@
 /obj/item/storage/box/syndie_kit/signaler/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/assembly/signaler(src)
-
-/obj/item/storage/box/syndie_kit/cultconstructkit
-	name = "cult construct kit"
-	desc = "A sleek, sturdy box with an ominous, dark energy inside. Yikes."
-
-/obj/item/storage/box/syndie_kit/cultconstructkit/PopulateContents()
-	new /obj/item/storage/belt/soulstone/full/purified(src)
-	new /obj/item/sbeacondrop/constructshell(src)
-	new /obj/item/sbeacondrop/constructshell(src)

@@ -1,4 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
+	show_magazine_on_sprite = TRUE
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
@@ -152,7 +154,7 @@
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
-	fire_delay = 0.18 SECONDS
+	fire_delay = 0.1 SECONDS
 	recoil_unwielded = 3
 
 	gun_firenames = list(FIREMODE_FULLAUTO = "full auto ballistic", FIREMODE_OTHER = "full auto laser")

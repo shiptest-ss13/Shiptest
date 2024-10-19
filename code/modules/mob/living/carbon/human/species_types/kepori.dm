@@ -9,7 +9,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. They tend to woop when excited, scared, or for any other reason at all."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -24,6 +24,8 @@
 	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 40
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle

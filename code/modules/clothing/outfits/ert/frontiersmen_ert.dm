@@ -44,7 +44,7 @@
 		suit = pickweight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
 		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
-		/obj/item/clothing/suit/armor/vest/scrap_armor = 1))
+		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(30))
 		mask = pickweight(list(
@@ -89,11 +89,11 @@
 			var/loops = rand(1,3)
 			for(var/i in 1 to loops)
 				var/ammotype = pick(list(
-					/obj/item/ammo_box/c8x50mm_box,
-					/obj/item/ammo_box/c45,
-					/obj/item/ammo_box/a357_box,
-					/obj/item/ammo_box/c45,
-					/obj/item/ammo_box/a4570,
+					/obj/item/storage/box/ammo/a8_50r,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a357,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a4570,
 					/obj/item/stock_parts/cell/gun/mini))
 				backpack_contents += ammotype
 
@@ -123,9 +123,9 @@
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
-			/obj/item/kitchen/knife/combat/survival = 15,
+			/obj/item/melee/knife/survival = 15,
 			/obj/item/melee/baseball_bat = 10,
-			/obj/item/melee/roastingstick = 2,
+			/obj/item/roastingstick = 2,
 			/obj/item/kitchen/fork = 1,
 			/obj/item/melee/flyswatter = 1,
 			))
@@ -173,14 +173,14 @@
 	suit = /obj/item/clothing/suit/armor/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/leader/unnarmed
 	name = "ERT - Frontiersman Officer (Unnarmed)"
 
 	suit_store = null
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"
@@ -220,7 +220,11 @@
 
 	l_hand = /obj/item/flamethrower/full/tank
 
-	backpack_contents = list(/obj/item/gun/ballistic/shotgun/doublebarrel/presawn=1,/obj/item/ammo_box/a12g=1,/obj/item/extinguisher=2,/obj/item/radio=1)
+	backpack_contents = list(
+		/obj/item/gun/ballistic/shotgun/doublebarrel/presawn=1, \
+		/obj/item/storage/box/ammo/a12g_slug = 1, \
+		/obj/item/extinguisher = 2, \
+		/obj/item/radio=1)
 
 
 /datum/outfit/job/frontiersmen/ert/sentry_lmg

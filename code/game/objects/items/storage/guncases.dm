@@ -1,8 +1,8 @@
 /obj/item/storage/guncase
 	name = "gun case"
 	desc = "A large box designed for holding firearms and magazines safely."
-	icon = 'icons/obj/guncase_48x32.dmi'
-	icon_state = "riflecase"
+	icon = 'icons/obj/guncase.dmi'
+	icon_state = "guncase"
 	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
@@ -13,7 +13,6 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
-
 
 /obj/item/storage/guncase/ComponentInitialize()
 	. = ..()
@@ -38,7 +37,6 @@
 /obj/item/storage/guncase/absolution/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
 
-
 /obj/item/storage/guncase/skm
 /obj/item/storage/guncase/skm/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/assault/skm/no_mag(src)
@@ -61,11 +59,17 @@
 	new /obj/item/ammo_box/a300/empty(src)
 	new /obj/item/ammo_box/a300/empty(src)
 
+/obj/item/storage/guncase/boomslang
+/obj/item/storage/guncase/boomslang/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/marksman/boomslang/indie/no_mag(src)
+	new /obj/item/ammo_box/magazine/boomslang/short/empty(src)
+	new /obj/item/ammo_box/magazine/boomslang/short/empty(src)
+
 /obj/item/storage/guncase/cobra
 /obj/item/storage/guncase/cobra/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/c20r/cobra/no_mag(src)
-	new /obj/item/ammo_box/magazine/smgm45/empty(src)
-	new /obj/item/ammo_box/magazine/smgm45/empty(src)
+	new /obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag(src)
+	new /obj/item/ammo_box/magazine/m45_cobra/empty(src)
+	new /obj/item/ammo_box/magazine/m45_cobra/empty(src)
 
 /obj/item/storage/guncase/hellfire
 /obj/item/storage/guncase/hellfire/PopulateContents()
@@ -95,7 +99,7 @@
 	name = "pistol case"
 	desc = "A large box designed for holding pistols and magazines safely."
 	icon = 'icons/obj/guncase.dmi'
-	icon_state = "pistolcase"
+	icon_state = "guncase"
 	item_state = "infiltrator_case"
 	force = 12
 	throwforce = 12
@@ -123,11 +127,11 @@
 	new /obj/item/ammo_box/magazine/modelh/empty(src)
 	new /obj/item/ammo_box/magazine/modelh/empty(src)
 
-/obj/item/storage/pistolcase/stechkin
-/obj/item/storage/pistolcase/stechkin/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/syndicate/no_mag(src)
-	new /obj/item/ammo_box/magazine/m10mm/empty(src)
-	new /obj/item/ammo_box/magazine/m10mm/empty(src)
+/obj/item/storage/pistolcase/ringneck
+/obj/item/storage/pistolcase/ringneck/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
 
 /obj/item/storage/pistolcase/candor
 /obj/item/storage/pistolcase/candor/PopulateContents()
@@ -145,6 +149,10 @@
 /obj/item/storage/pistolcase/shadow/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/shadow/no_mag(src)
 
+/obj/item/storage/pistolcase/viper
+/obj/item/storage/pistolcase/viper/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/viper/indie/no_mag(src)
+
 /obj/item/storage/pistolcase/commander
 /obj/item/storage/pistolcase/commander/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src)
@@ -161,7 +169,7 @@
 
 /obj/item/storage/pistolcase/a357
 /obj/item/storage/pistolcase/a357/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/syndicate/no_mag(src)
+	new /obj/item/gun/ballistic/revolver/viper/no_mag(src)
 	new /obj/item/ammo_box/a357/empty(src)
 	new /obj/item/ammo_box/a357/empty(src)
 
@@ -205,3 +213,9 @@
 /obj/item/storage/pistolcase/iongun/PopulateContents()
 	new /obj/item/gun/energy/ionrifle/empty_cell(src)
 	new /obj/item/stock_parts/cell/gun(src)
+
+/obj/item/storage/pistolcase/cm23/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)
+	new /obj/item/ammo_box/magazine/cm23/empty(src)

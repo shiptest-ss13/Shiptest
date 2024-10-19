@@ -50,14 +50,14 @@
 	lootdoubles = FALSE
 
 	loot = list(
-				/obj/item/gun/ballistic/automatic/pistol/syndicate = 8,
+				/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/gun/ballistic/revolver/mateba
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/syndicate = 5,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/ringneck = 5,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3,
@@ -105,9 +105,9 @@
 				/obj/item/paper/fluff/jobs/prisoner/letter = 1,
 				/obj/item/grenade/smokebomb = 1,
 				/obj/item/flashlight/seclite = 1,
-				/obj/item/kitchen/knife/shiv = 4,
-				/obj/item/kitchen/knife/shiv/carrot = 1,
-				/obj/item/kitchen/knife = 1,
+				/obj/item/melee/knife/shiv = 4,
+				/obj/item/melee/knife/shiv/carrot = 1,
+				/obj/item/melee/knife/kitchen = 1,
 				/obj/item/storage/wallet/random = 1,
 				/obj/item/pda = 1
 				)
@@ -279,20 +279,17 @@
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears
 	name = "beret or rabbit ears spawner"
 	loot = list(
-		/obj/item/clothing/head/beret = 1,
-		/obj/item/clothing/head/rabbitears = 1)
+		/obj/item/clothing/head/beret = 1)
 
 /obj/effect/spawner/lootdrop/minor/bowler_or_that
 	name = "bowler or top hat spawner"
 	loot = list(
-		/obj/item/clothing/head/bowler = 1,
 		/obj/item/clothing/head/that = 1)
 
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears
 	name = "kitty ears or rabbit ears spawner"
 	loot = list(
-		/obj/item/clothing/head/kitty = 1,
-		/obj/item/clothing/head/rabbitears = 1)
+		/obj/item/clothing/head/kitty = 1)
 
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana
 	name = "pirate hat or bandana spawner"
@@ -808,6 +805,7 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/safe
@@ -818,6 +816,7 @@
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/dangerous
@@ -1002,8 +1001,8 @@
 
 /obj/effect/spawner/lootdrop/anomaly/storm
 	loot = list(
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/flux/storm,
+		/obj/effect/anomaly/pyro/storm,
 		/obj/effect/anomaly/sparkler,
 		/obj/effect/anomaly/veins,
 		/obj/effect/anomaly/phantom,
@@ -1295,3 +1294,18 @@
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
 	/obj/item/storage/ration/crayons = 2 // :)
 	)
+
+/obj/effect/spawner/lootdrop/chem_jug
+	loot = list(
+	/obj/item/reagent_containers/glass/chem_jug/carbon,
+	/obj/item/reagent_containers/glass/chem_jug/oxygen,
+	/obj/item/reagent_containers/glass/chem_jug/nitrogen,
+	/obj/item/reagent_containers/glass/chem_jug/hydrogen,
+	/obj/item/reagent_containers/glass/chem_jug/radium,
+	/obj/item/reagent_containers/glass/chem_jug/aluminium,
+	/obj/item/reagent_containers/glass/chem_jug/chlorine,
+	/obj/item/reagent_containers/glass/chem_jug/copper,
+	/obj/item/reagent_containers/glass/chem_jug/bromine,
+	/obj/item/reagent_containers/glass/chem_jug/iodine,
+	/obj/item/reagent_containers/glass/chem_jug/potassium,
+	/obj/item/reagent_containers/glass/chem_jug/sulfur)

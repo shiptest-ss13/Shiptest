@@ -116,7 +116,7 @@
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat = 5,
+			/obj/item/melee/knife/combat = 5,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 5,
@@ -132,7 +132,7 @@
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 10,
+			/obj/item/melee/knife/survival = 10,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 10
@@ -144,12 +144,12 @@
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 12,
+			/obj/item/melee/knife/survival = 12,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
-			/obj/item/kitchen/knife/combat = 3,
-			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			/obj/item/melee/knife/combat = 3,
+			/obj/item/storage/ration/shredded_beef = 30
 			)
 		)
 	if (prob(15)) //mayhaps a medkit
@@ -202,7 +202,6 @@
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 				/obj/item/clothing/under/rank/prisoner = 10,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-				/obj/item/clothing/under/color/khaki/buster = 5,
 				/obj/item/clothing/under/rank/cargo/miner = 5
 				)
 			)

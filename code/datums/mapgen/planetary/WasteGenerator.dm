@@ -66,9 +66,9 @@
 		BIOME_COLD_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/waste,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/waste/rad,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/waste,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/waste/rad,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/waste
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/waste/conc,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/waste/conc,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/waste/conc
 		),
 		BIOME_WARM_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/waste,
@@ -106,7 +106,6 @@
 
 		//stuff you can actually use
 		/obj/effect/spawner/lootdrop/waste/girder = 600,
-		/obj/structure/reagent_dispensers/fueltank = 100,
 		/obj/structure/reagent_dispensers/watertank = 200,
 		/obj/item/stack/cable_coil/cut = 500,
 		/obj/structure/closet/crate/secure/loot = 30,
@@ -190,7 +189,6 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 300,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 120,
 		/obj/effect/spawner/lootdrop/waste/girder = 600,
-		/obj/structure/reagent_dispensers/fueltank = 100,
 		/obj/structure/reagent_dispensers/watertank = 200,
 		/obj/item/stack/cable_coil/cut = 500,
 		/obj/structure/closet/crate/secure/loot = 30,
@@ -235,7 +233,6 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 80,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 20,
 		/obj/effect/spawner/lootdrop/waste/girder = 600,
-		/obj/structure/reagent_dispensers/fueltank = 100,
 		/obj/structure/reagent_dispensers/watertank = 200,
 		/obj/item/stack/cable_coil/cut = 500,
 		/obj/structure/closet/crate/secure/loot = 30,
@@ -284,10 +281,10 @@
 
 	closed_turf_types =  list(
 		/turf/closed/mineral/random/wasteplanet = 40,
-		/turf/closed/wall/r_wall = 1,
-		/turf/closed/wall/r_wall/rust = 3,
-		/turf/closed/wall = 2,
-		/turf/closed/wall/rust = 6
+		/turf/closed/wall/r_wall/wasteplanet = 1,
+		/turf/closed/wall/r_wall/rust/wasteplanet = 3,
+		/turf/closed/wall/wasteplanet = 2,
+		/turf/closed/wall/rust/wasteplanet = 6
 	)
 
 	flora_spawn_list = list(
@@ -297,7 +294,6 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 80,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 10,
 		/obj/effect/spawner/lootdrop/waste/girder = 600,
-		/obj/structure/reagent_dispensers/fueltank = 100,
 		/obj/structure/reagent_dispensers/watertank = 200,
 		/obj/item/stack/cable_coil/cut = 500,
 		/obj/structure/closet/crate/secure/loot = 30,
@@ -359,7 +355,6 @@
 		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 5,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 150,
 		/obj/effect/spawner/lootdrop/waste/girder = 200,
-		/obj/structure/reagent_dispensers/fueltank = 10,
 		/obj/structure/reagent_dispensers/watertank = 10,
 		/obj/item/stack/cable_coil/cut = 500,
 		/obj/structure/closet/crate/secure/loot = 30,
@@ -381,10 +376,10 @@
 		/turf/open/floor/plating/wasteplanet = 4
 	)
 	closed_turf_types = list(
-		/turf/closed/wall/r_wall = 1,
-		/turf/closed/wall/r_wall/rust = 1,
-		/turf/closed/wall = 5,
-		/turf/closed/wall/rust = 10
+		/turf/closed/wall/r_wall/wasteplanet = 1,
+		/turf/closed/wall/r_wall/rust/wasteplanet = 1,
+		/turf/closed/wall/wasteplanet = 5,
+		/turf/closed/wall/rust/wasteplanet = 10
 	)
 	flora_spawn_list = list(
 		/obj/effect/spawner/lootdrop/waste/mechwreck = 40,
@@ -393,7 +388,6 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 32,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 4,
 		/obj/effect/spawner/lootdrop/waste/girder = 120,
-		/obj/structure/reagent_dispensers/fueltank = 20,
 		/obj/structure/reagent_dispensers/watertank = 40,
 		/obj/item/stack/cable_coil/cut = 100,
 		/obj/structure/closet/crate/secure/loot = 6,
@@ -427,7 +421,6 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 16,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
 		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
 		/obj/structure/reagent_dispensers/watertank = 20,
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
@@ -450,3 +443,45 @@
 		/obj/effect/spawner/minefield/manhack = 2
 		)
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles
+
+/datum/biome/cave/waste/conc //da concrete jungle baybee
+	open_turf_types = list(
+		/turf/open/floor/concrete/wasteplanet = 10,
+		/turf/open/floor/concrete/reinforced/wasteplanet = 4,
+		/turf/open/floor/concrete/pavement/wasteplanet = 4
+	)
+	closed_turf_types = list(
+		/turf/closed/wall/concrete/wasteplanet = 15,
+		/turf/closed/wall/concrete/reinforced/wasteplanet = 3
+	)
+
+	flora_spawn_list = list(
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 20,
+		/obj/effect/spawner/lootdrop/waste/trash = 90,
+		/obj/effect/spawner/lootdrop/waste/radiation = 16,
+		/obj/structure/reagent_dispensers/watertank = 20,
+		/obj/item/stack/cable_coil/cut = 50,
+		/obj/structure/closet/crate/secure/loot = 3,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
+		/obj/effect/spawner/lootdrop/maintenance = 2,
+		/obj/effect/spawner/lootdrop/maintenance/two = 5,
+		/obj/effect/spawner/lootdrop/maintenance/three = 10,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
+	)
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 50,
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid = 50,
+		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
+		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
+		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/obj/structure/spawner/hivebot = 35
+	)
+
+	flora_spawn_chance = 30
+	feature_spawn_chance = 8
+	mob_spawn_chance = 5
+

@@ -17,7 +17,7 @@
 		/obj/item/clothing/under/suit/black = 1,
 		/obj/item/clothing/under/dress/sailor = 1,
 		/obj/item/clothing/under/dress/striped = 1,
-		/obj/item/clothing/under/dress/skirt/blue = 1,
+		/obj/item/clothing/under/dress/skirt/color/blue = 1,
 		/obj/item/clothing/under/syndicate/tacticool = 1,
 		)
 	)
@@ -25,7 +25,6 @@
 		/obj/item/clothing/suit/hooded/wintercoat = 1,
 		/obj/item/clothing/suit/jacket = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
-		/obj/item/clothing/suit/jacket/leather/overcoat = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/jacket/puffer = 1,
@@ -46,8 +45,8 @@
 		belt = pickweight(list(
 			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
 			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
-			/obj/item/gun/ballistic/automatic/pistol/syndicate = 1,
-			/obj/item/gun/ballistic/revolver/syndicate = 1,
+			/obj/item/gun/ballistic/automatic/pistol/ringneck = 1,
+			/obj/item/gun/ballistic/revolver/viper = 1,
 			/obj/item/gun/ballistic/revolver/firebrand = 1,
 			)
 		)
@@ -81,7 +80,6 @@
 			/obj/item/clothing/head/hardhat/orange = 2,
 			/obj/item/clothing/head/hardhat/dblue = 2,
 			/obj/item/clothing/head/pirate = 1,
-			/obj/item/clothing/head/foilhat = 1
 			)
 		)
 	if(prob(50))
@@ -230,7 +228,7 @@
 					/obj/item/stack/marker_beacon/ten = 2,
 					/obj/item/mining_scanner = 2,
 					/obj/item/extinguisher/mini = 2,
-					/obj/item/kitchen/knife/combat/survival = 3,
+					/obj/item/melee/knife/survival = 3,
 					/obj/item/flashlight/seclite = 3,
 					/obj/item/stack/sheet/sinew = 3,
 					/obj/item/stack/sheet/bone = 3
@@ -275,7 +273,7 @@
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
 	if(prob(10))
-		back = /obj/item/fireaxe
+		back = /obj/item/melee/axe/fire
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pickweight(list(
@@ -424,7 +422,7 @@
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/cargo
 	if(prob(25))
-		suit = /obj/item/clothing/suit/armor/vest/scrap_armor
+		suit = /obj/item/clothing/suit/armor/vest/scrap
 		suit_store = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/generic/cargo
@@ -463,8 +461,8 @@
 			/obj/item/assembly/flash/handheld = 5,
 			/obj/item/storage/box/evidence = 6,
 			/obj/item/flashlight/seclite = 4,
-			/obj/item/ammo_box/c9mm/rubbershot = 3,
-			/obj/item/ammo_box/c9mm = 1,
+			/obj/item/storage/box/ammo/c9mm_rubber = 3,
+			/obj/item/storage/box/ammo/c9mm = 1,
 			/obj/item/stock_parts/cell/gun = 3,
 			/obj/item/coin/antagtoken = 1,
 			/obj/item/grenade/stingbang = 1

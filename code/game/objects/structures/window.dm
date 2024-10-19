@@ -27,6 +27,7 @@
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
+	var/decon_time = 5 SECONDS
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.4
 
@@ -289,6 +290,15 @@
 	qdel(src)
 	update_nearby_icons()
 
+/obj/structure/window/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, decon_time, volume=100))
+		to_chat(user, span_warning("You shatter [src] with the [I]."))
+		deconstruct(FALSE)
+		return TRUE
+
 /obj/structure/window/proc/spawnDebris(location)
 	. = list()
 	. += new /obj/item/shard(location)
@@ -399,6 +409,7 @@
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
 	ricochet_chance_mod = 0.8
+	decon_time = 20 SECONDS
 
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
 //If you find this like 4 years later and construction still hasn't been refactored, I'm so sorry for this
@@ -408,7 +419,7 @@
 
 	switch(state)
 		if(RWINDOW_SECURE)
-			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
+			if((I.tool_behaviour == TOOL_WELDER) && user.a_intent == INTENT_HARM)
 				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
 										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
 				if(I.use_tool(src, user, 150, volume = 100))
@@ -531,6 +542,7 @@
 	damage_deflection = 11		//WS Edit - Weakens R-Windows
 	explosion_block = 2
 	glass_type = /obj/item/stack/sheet/plasmarglass
+	decon_time = 25 SECONDS
 
 //entirely copypasted code
 //take this out when construction is made a component or otherwise modularized in some way
@@ -746,6 +758,7 @@
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
 	glass_amount = 2
 	rad_insulation = RAD_HEAVY_INSULATION
+	decon_time = 30 SECONDS
 
 /obj/structure/window/plasma/reinforced/plastitanium/unanchored
 	anchored = FALSE
