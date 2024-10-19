@@ -328,8 +328,10 @@
 		if (carbon_monoxide_pp > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 1)
 			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
-			if(!monoxide_reagent)
-				H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
+			if(monoxide_reagent.volume > 10)
+				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)
+			else
+				monoxide_reagent.metabolization_rate = monoxide_reagent::metabolization_rate
 			switch(carbon_monoxide_pp)
 				if (0 to 20)
 					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation,50)
@@ -349,6 +351,7 @@
 			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent)
 				monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 150)
+				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 
 
 		breath.adjust_moles(GAS_CO, -gas_breathed)
