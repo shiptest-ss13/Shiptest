@@ -11,7 +11,7 @@
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	dynamic_mission_types = list(
-		/datum/mission/dynamic/guarded/nt_files,
+		/datum/mission/dynamic/nt_files,
 		/datum/mission/dynamic/signaled/kill/jerry
 	)
 
@@ -20,7 +20,7 @@
 	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
 	author = "I FUCKING WANT HIM HUNG."
 	mission_reward = /obj/item/poster/random_rilena
-	target_type = /mob/living/simple_animal/hostile/human/syndicate
+	registered_type = /mob/living/simple_animal/hostile/human/syndicate
 	setpiece_item = list(
 		/obj/item/toy/plush/rilena,
 		/obj/item/toy/plush/tali,

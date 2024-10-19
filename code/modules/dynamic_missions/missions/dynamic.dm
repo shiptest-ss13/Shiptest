@@ -28,12 +28,11 @@
 
 	// Reiterate through the loop and attemp to spawn any mission that matches our index but dont pass any type so it will need its own
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
-		if(isnull(mission_poi.mission_index))
+		if(isnull(mission_poi.mission_index) || (mission_index != mission_poi.mission_index))
 			continue
-		if((mission_index != mission_poi.mission_index))
+		if(istype(mission_poi, /obj/effect/landmark/mission_poi/main) || !ispath(mission_poi.type_to_spawn))
 			continue
-		if(istype(mission_poi, /obj/effect/landmark/mission_poi/main))
-			continue
+
 		mission_poi.use_poi()
 
 /datum/mission/dynamic/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)

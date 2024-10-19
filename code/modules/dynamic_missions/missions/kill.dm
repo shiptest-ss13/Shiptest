@@ -13,11 +13,12 @@
 /datum/mission/dynamic/signaled/kill/generate_mission_details()
 	. = ..()
 	registered_type = pick(registered_type)
-	if(ispath(registered_type))
+	if(ispath(registered_type, /mob))
+		var/mob/mission_mob = registered_type
 		if(!name)
-			name = "[registered_type::name] termination"
+			name = "[mission_mob::name] termination"
 		if(!desc)
-			desc = "Bounty for a high ranking [registered_type::name] residing on this planet. They should have identifying items."
+			desc = "Bounty for a high ranking [mission_mob::name] residing on this planet. They should have identifying items."
 
 /datum/mission/dynamic/signaled/kill/frontiersmen
 	value = 2500

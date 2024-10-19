@@ -264,6 +264,8 @@
 	var/atom/item_of_interest
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
+	if(!ispath(type_to_spawn))
+		stack_track("[src] didnt get passed a type.")
 	if(already_spawned) //Search for the item
 		for(var/atom/movable/item_in_poi as anything in get_turf(src))
 			if(istype(item_in_poi, type_to_spawn))
