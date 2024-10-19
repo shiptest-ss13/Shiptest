@@ -40,7 +40,7 @@
 
 	faction = list("hermit")
 
-	///Steals the armor datum from this type of armor upon init
+	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
 
 /mob/living/simple_animal/hostile/human/Initialize()
@@ -51,27 +51,14 @@
 		armor = instance.armor
 		qdel(instance)
 
-/mob/living/simple_animal/hostile/human/getarmor(def_zone, type) //WE CLOWN IN THIS fake carbon/human. GET YOUR INTRINSIC ARMOR BACK TO /mob/living/simple_animal
-	if(armor)
-		return armor.getRating(type)
-	return FALSE
-
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
 	switch(var_name)
 		if (NAMEOF(src, armor_base))
 			if(ispath(var_value, /obj/item/clothing))
 				var/obj/item/clothing/temp = new var_value
-				armor = temp.armor.getList()
+				armor = temp.armor
 				qdel(temp)
 				datum_flags |= DF_VAR_EDITED
 				return TRUE
-			else if(istype(var_value, /obj/item/clothing))
-				var/obj/item/clothing/temp = var_value
-				armor_base = temp.type //keep track of what we're currently using so as to not confuse the admins
-				armor = temp.armor.getList()
-				qdel(temp)
-				datum_flags |= DF_VAR_EDITED
-				return TRUE
-			else
-				return FALSE
+			return FALSE
 	. = ..()
