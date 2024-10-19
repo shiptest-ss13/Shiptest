@@ -511,8 +511,8 @@
 /obj/item/clothing/proc/setup_blood_overlay()
 	var/overlay_file = 'icons/effects/blood.dmi'
 
-	var/mob/living/carbon/human/wearing = wearer?.resolve()
 	if(wearer?.resolve())
+		var/mob/living/carbon/human/wearing = wearer?.resolve()
 		var/custom_overlay_icon = wearing.dna.species.custom_overlay_icon
 		if(custom_overlay_icon)
 			overlay_file = custom_overlay_icon
