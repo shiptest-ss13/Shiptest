@@ -420,6 +420,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return mind.get_language_holder()
 	. = ..()
 
+/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+	. = ..()
+	if(. && mind)
+		var/datum/language_holder/langauge_holder = get_language_holder()
+		if(langauge_holder.spoken_languages.len >= 4 )
+			message_admins("[ADMIN_LOOKUPFLW(src)] knows [langauge_holder.spoken_languages.len] langauges!")
+
 /mob/living/proc/dying_breath(message)
 	for(var/mob/M in get_hearers_in_view(7, src))
 		if(M.can_hear())
