@@ -39,15 +39,37 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
-	/// Creates an armor item to compare 
+	/// use this to match our armor values with the suit armor it is set to
 	var/obj/item/clothing/armor_base = null
 
 /mob/living/simple_animal/hostile/human/Initialize()
 	. = ..()
 	if(ispath(armor_base, /obj/item/clothing))
-		armor_base = new armor_base()
+		var/obj/item/clothing/temp = new armor_base()
+		armor = temp.armor.getList()
+		qdel(temp)
 
 /mob/living/simple_animal/hostile/human/getarmor(def_zone, type) //WE CLOWN IN THIS fake carbon/human. GET YOUR INTRINSIC ARMOR BACK TO /mob/living/simple_animal
 	if(istype(armor_base))
 		return armor_base.armor.getRating(type)
 	return FALSE
+
+/mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if (NAMEOF(src, armor_base))
+			if(ispath(var_value, /obj/item/clothing))
+				var/obj/item/clothing/temp = new var_value
+				armor = temp.armor.getList()
+				qdel(temp)
+				datum_flags |= DF_VAR_EDITED
+				return TRUE
+			else if(istype(var_value, /obj/item/clothing))
+				var/obj/item/clothing/temp = var_value
+				armor_base = temp.type //keep track of what we're currently using so as to not confuse the admins
+				armor = temp.armor.getList()
+				qdel(temp)
+				datum_flags |= DF_VAR_EDITED
+				return TRUE
+			else
+				return FALSE
+	. = ..()
