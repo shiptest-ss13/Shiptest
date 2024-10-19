@@ -107,7 +107,7 @@
 
 /obj/item/ammo_casing/examine(mob/user)
 	. = ..()
-	span_notice("You could write a message on \the [src] by writing on it with a pen.")
+	. += span_notice("You could write a message on \the [src] by writing on it with a pen.")
 
 /obj/item/ammo_casing/proc/try_stacking(obj/item/ammo_casing/other_casing, mob/living/user)
 	if(user)
