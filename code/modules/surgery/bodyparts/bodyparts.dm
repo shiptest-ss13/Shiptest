@@ -596,7 +596,7 @@
 	if(no_update)
 		return
 
-	if(!is_creating || !owner)
+	if(!is_creating)// || !owner)
 		return
 
 	if(!animal_origin && ishuman(C))
