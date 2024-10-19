@@ -832,7 +832,7 @@
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
-	set category = "Event.Spawning"
+	set category = "Event.Overmap"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
