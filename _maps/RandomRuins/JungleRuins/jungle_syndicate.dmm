@@ -162,7 +162,8 @@
 "eU" = (
 /obj/structure/chair/plastic,
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1
+	mission_index = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/syndicate/ranged
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
@@ -773,7 +774,8 @@
 	pixel_x = 32
 	},
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1
+	mission_index = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/syndicate
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
@@ -955,7 +957,8 @@
 /obj/structure/chair/plastic,
 /obj/machinery/light/small/directional/north,
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1
+	mission_index = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/syndicate
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)

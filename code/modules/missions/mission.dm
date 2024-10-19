@@ -194,6 +194,8 @@
 	return bound
 
 /datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
+	if(!istype(bound, /atom/movable))
+		CRASH("[src] bad type! [bound]")
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))

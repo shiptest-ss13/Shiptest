@@ -17,6 +17,7 @@
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
+	dynamic_mission_types = list(/datum/mission/dynamic/signaled/kill/elite)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
@@ -29,12 +30,31 @@
 	id = "wreck_factory"
 	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
-	dynamic_mission_types = list(/datum/mission/dynamic/nanotrasen_docs)
+	dynamic_mission_types = list(
+		/datum/mission/dynamic/nanotrasen_docs,
+		/datum/mission/dynamic/captain_medal,
+		/datum/mission/dynamic/brainchip
+	)
 
 /datum/mission/dynamic/nanotrasen_docs
-	name = "Recover some nanotrasen files."
+	name = "recover some nanotrasen files."
 	value = 2500
 	setpiece_item = /obj/item/documents/nanotrasen
+
+/datum/mission/dynamic/captain_medal
+	name = "recover my lost medal."
+	value = 1250
+	setpiece_item = /obj/item/documents/nanotrasen
+
+/datum/mission/dynamic/brainchip
+	name = "one of our cargo techs died with some important tech in his head. get it back"
+	setpiece_item = /mob/living/carbon/human
+
+/obj/effect/landmark/mission_poi/main/implanted/use_poi(_type_to_spawn)
+	var/mob/living/carbon/human/implanted = ..()
+	if(istype(implanted, /mob/living/carbon/human))
+		var/obj/item/organ/implant = new /obj/item/organ/cyberimp/brain/datachip()
+		implant.Insert(implanted)
 
 /datum/map_template/ruin/lavaland/fallenstar
 	name = "Crashed Starwalker"
