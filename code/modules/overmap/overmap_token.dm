@@ -114,12 +114,12 @@
 
 	var/picked = show_radial_menu(user, src, choices, radius = 42, require_near = FALSE)
 	var/obj/overmap/picked_token = choices_to_options[picked]
-	if(!isobj(picked_token))
-		return src
 	return picked_token
 
 /obj/overmap/Click(location, control, params)
 	var/obj/overmap/token = choose_token(usr)
+	if(!isobj(token))
+		return
 	if(token.flags_1 & INITIALIZED_1)
 		SEND_SIGNAL(token, COMSIG_CLICK, location, control, params, usr)
 

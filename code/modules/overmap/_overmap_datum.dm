@@ -415,3 +415,5 @@
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
 
+/datum/overmap/proc/admin_load()
+	return

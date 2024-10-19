@@ -2,6 +2,9 @@
 	name = "mission poi"
 	icon = 'icons/effects/mission_poi.dmi'
 	icon_state = "side_thing"
+	layer = LOW_LANDMARK_LAYER
+	invisibility = INVISIBILITY_ABSTRACT
+	var/use_count = 1
 	///Assume the item we want is included in the map and we simple have to return it
 	var/already_spawned = FALSE
 	///Only needed if you have multipe missiosn that would otherwise use the same poi's
@@ -19,6 +22,7 @@
 
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn)
 	var/atom/item_of_interest
+	use_count--
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(!ispath(type_to_spawn))
@@ -34,7 +38,8 @@
 	// We dont have an item to return
 	if(!istype(item_of_interest))
 		stack_trace("[src] did not return a item_of_interest")
-	QDEL_IN(src, 0)
+	if(use_count <= 0)
+		qdel(src)
 	return item_of_interest
 
 /obj/effect/landmark/mission_poi/main

@@ -190,7 +190,7 @@
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
-	set_bound(bound, destroy_cb, fail_on_delete, sparks)
+	set_bound(bound, destroy_c, fail_on_delete, sparks)
 	return bound
 
 /datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)

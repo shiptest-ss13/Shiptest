@@ -22,20 +22,15 @@ export type OvermapData = {
   desc: string;
   x: number;
   y: number;
-  dockedTo: TokenData;
-  docked: TokenData[];
-  active_missions: MissionData[] | null;
-  inactive_missions: MissionData[] | null;
+  dockedTo: NameAndRef;
+  docked: NameAndRef[];
+  active_missions: NameAndRef[] | null;
+  inactive_missions: NameAndRef[] | null;
 };
 
-export type TokenData = {
-  ref: string;
+type NameAndRef = {
   name: string;
-};
-
-export type MissionData = {
   ref: string;
-  name: string;
 };
 
 export const OvermapExamine = (props, context) => {
@@ -43,9 +38,12 @@ export const OvermapExamine = (props, context) => {
   const { name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (
-    <Window title={ascii + '  ' + name} width={400} height={600}>
+    <Window title={'Overmap Viewer: ' + ascii + '  ' + name} width={400} height={600}>
       <Window.Content scrollable>
-        <Section title={name}>
+        <Section
+          title={name}
+          buttons={<Button onClick={() => act('load')}>Load</Button>}
+        >
           <LabeledList>
             <LabeledList.Item label="Position">
               X

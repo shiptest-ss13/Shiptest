@@ -10,6 +10,8 @@
 
 /datum/overmap/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
+	if(!check_rights(R_DEBUG))
+		return
 	if(user.client)
 		var/datum/overmap_inspect/overmap_inspect = new(src, user)
 		overmap_inspect.ui_interact(user)
@@ -72,8 +74,13 @@
 	switch(action)
 		if("inspect")
 			var/datum/overmap/token = locate(params["ref"])
-			if(isdatum(token))
+			if(istype(token, /datum/overmap))
 				focus = token
+		if("load")
+			if(!check_rights(R_DEBUG))
+				return
+			if(istype(focus, /datum/overmap))
+				focus.admin_load()
 
 /datum/overmap_inspect/ui_data(mob/user)
 	return focus.ui_data(user)

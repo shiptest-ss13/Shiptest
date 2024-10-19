@@ -211,6 +211,17 @@
 	loading = FALSE
 	return TRUE
 
+/datum/overmap/dynamic/admin_load()
+	preserve_level = TRUE
+	message_admins("Generating [src], this may take some time!")
+	load_level()
+
+	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(token)))
+	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(reserve_docks[1])))
+	for(var/ruin in ruin_turfs)
+		var/turf/ruin_turf = ruin_turfs[ruin]
+		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+
 /datum/overmap/dynamic/ui_data(mob/user)
 	. = ..()
 	.["active_missions"] = list()
