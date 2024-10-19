@@ -303,6 +303,12 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/server_array)
+"ie" = (
+/obj/structure/sign/warning/securearea{
+	pixel_x = -24
+	},
+/turf/open/floor/plating/ice/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "iK" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -613,7 +619,7 @@
 /area/ruin/unpowered/server_array)
 "ub" = (
 /obj/structure/sign/warning/securearea{
-	pixel_y = 32
+	pixel_y = 24
 	},
 /obj/structure/flora/rock/pile/icy{
 	icon_state = "icemoonrock1"
@@ -1879,7 +1885,7 @@ tq
 kp
 kp
 ow
-kp
+ie
 ah
 ee
 fB
