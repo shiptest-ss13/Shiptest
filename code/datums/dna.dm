@@ -358,7 +358,7 @@
 	if(icon_update)
 		update_hair()
 		update_mutations_overlay()// no lizard with human hulk overlay please.
-
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/proc/has_dna()
 	return
