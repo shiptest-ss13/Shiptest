@@ -407,7 +407,7 @@
 		))
 
 /*
- *  Biowaste bag (mostly for xenobiologists)
+ *  Biowaste bag
  */
 
 /obj/item/storage/bag/bio
@@ -424,7 +424,6 @@
 	STR.max_items = 20
 	STR.insert_preposition = "in"
 	STR.set_holdable(list(
-		/obj/item/slime_extract,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/reagent_containers/glass/beaker,
