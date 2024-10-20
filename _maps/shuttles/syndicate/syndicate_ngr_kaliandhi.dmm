@@ -58,7 +58,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
 "av" = (
-/obj/machinery/porta_turret/ship/ngr{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 9;
 	id = "kali_grid"
 	},
@@ -192,11 +192,10 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "bq" = (
-/obj/machinery/porta_turret/ship/ngr/heavy{
-	dir = 8;
-	id = "kali_grid"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "bt" = (
 /obj/machinery/cryopod{
@@ -454,10 +453,11 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "dj" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 4;
+	id = "kali_grid"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
 "dr" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -476,7 +476,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dt" = (
-/obj/machinery/porta_turret/ship/ngr{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 10;
 	id = "kali_grid"
 	},
@@ -797,7 +797,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "fH" = (
-/obj/machinery/porta_turret/ship/ngr/heavy{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 9;
 	id = "kali_grid"
 	},
@@ -3864,7 +3864,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "zl" = (
-/obj/machinery/porta_turret/ship/ngr{
+/obj/machinery/porta_turret/ship/ngr/light{
 	dir = 5;
 	id = "kali_grid"
 	},
@@ -4380,7 +4380,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "CC" = (
-/obj/machinery/porta_turret/ship/ngr/heavy{
+/obj/machinery/porta_turret/ship/ngr{
 	dir = 6;
 	id = "kali_grid"
 	},
@@ -5687,6 +5687,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Mq" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 6;
+	id = "kali_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
 "Mt" = (
@@ -7333,10 +7337,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/ccommons)
 "Xx" = (
-/obj/machinery/porta_turret/ship/ngr{
-	dir = 6;
-	id = "kali_grid"
-	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "XN" = (
@@ -8673,9 +8673,9 @@ Tn
 Bi
 OC
 Ty
-Kz
-Kz
-Kz
+bq
+dj
+pu
 Kz
 Kz
 Kz
@@ -9020,9 +9020,9 @@ Kz
 Kz
 Kz
 Kz
-dj
-bq
-pu
+Kz
+Kz
+Kz
 Kz
 Kz
 Kz
