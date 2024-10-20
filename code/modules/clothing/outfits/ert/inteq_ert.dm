@@ -25,7 +25,7 @@
 	name = "ERT - Inteq Shotgunner"
 	id_assignment = "Enforcer"
 
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/m11
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt
 
 	backpack_contents = list(/obj/item/storage/box/lethalshot=2, /obj/item/radio=1)
