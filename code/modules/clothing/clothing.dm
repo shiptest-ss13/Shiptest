@@ -511,11 +511,10 @@
 /obj/item/clothing/proc/setup_blood_overlay()
 	var/overlay_file = 'icons/effects/blood.dmi'
 
-	if(wearer?.resolve())
-		var/mob/living/carbon/human/wearing = wearer?.resolve()
-		var/custom_overlay_icon = wearing.dna.species.custom_overlay_icon
-		if(custom_overlay_icon)
-			overlay_file = custom_overlay_icon
+	var/mob/living/carbon/human/wearing = wearer?.resolve()
+	var/custom_overlay_icon = wearing?.dna.species.custom_overlay_icon
+	if(custom_overlay_icon)
+		overlay_file = custom_overlay_icon
 
 	var/mutable_appearance/bloody_clothing = mutable_appearance(overlay_file, "[blood_overlay_type]blood")
 	bloody_clothing.color = get_blood_dna_color(return_blood_DNA())
