@@ -330,16 +330,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/light_switch{
-	pixel_x = -7;
-	pixel_y = 22
-	},
-/obj/machinery/button/door{
-	id = "kali_dorms_shut";
-	name = "Crew Quarters Shutters";
-	pixel_x = 3;
-	pixel_y = 23
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "ck" = (
@@ -865,6 +855,19 @@
 /obj/structure/sign/warning/gasmask,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
+"gw" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "gx" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/tech/grid,
@@ -1477,6 +1480,10 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
+"lz" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "lC" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -4090,6 +4097,7 @@
 	pixel_y = 8
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "AV" = (
@@ -5254,10 +5262,6 @@
 	pixel_x = 19;
 	pixel_y = 7
 	},
-/obj/structure/sign/directions/supply{
-	dir = 4;
-	pixel_y = -20
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "IP" = (
@@ -5358,6 +5362,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"JN" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "JV" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -5532,6 +5540,40 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"KU" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/structure/closet/wardrobe/black{
+	name = "wardrobe";
+	populate = 0
+	},
+/obj/item/storage/backpack,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/radio/headset,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/machinery/light_switch{
+	pixel_x = -7;
+	pixel_y = 22
+	},
+/obj/machinery/button/door{
+	id = "kali_dorms_shut";
+	name = "Crew Quarters Shutters";
+	pixel_x = 3;
+	pixel_y = 23
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "KX" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light_switch{
@@ -5931,6 +5973,9 @@
 	color = "#c59973"
 	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /obj/machinery/light_switch{
 	pixel_x = 7;
 	pixel_y = 22
@@ -5940,9 +5985,6 @@
 	name = "Canteen Shutters";
 	pixel_x = -3;
 	pixel_y = 23
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -7593,7 +7635,6 @@
 "ZO" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
-/obj/machinery/light/directional/north,
 /obj/item/melee/knife,
 /obj/item/cutting_board{
 	pixel_y = 3
@@ -8112,7 +8153,7 @@ wh
 fj
 Pl
 Fz
-Pg
+JN
 ZO
 Uk
 ja
@@ -8353,7 +8394,7 @@ Kk
 ZE
 hg
 Ym
-nw
+gw
 Bu
 dG
 UY
@@ -8410,7 +8451,7 @@ Ce
 Ew
 qQ
 dG
-Wg
+KU
 pb
 Wg
 tr
@@ -8463,7 +8504,7 @@ yM
 Rk
 EC
 ID
-dG
+lz
 cj
 oa
 Zh
