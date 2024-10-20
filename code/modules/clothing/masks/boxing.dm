@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/balaclava
 	name = "balaclava"
-	desc = "LOADSAMONEY"
+	desc = "A stretchy fabric hood with eye holes meant for keeping the face warm in cold weather. Also useful for concealing one's identity."
 	icon_state = "balaclava"
 	item_state = "balaclava"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR

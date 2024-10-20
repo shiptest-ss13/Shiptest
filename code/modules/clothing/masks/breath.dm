@@ -36,3 +36,15 @@
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
 
+/obj/item/clothing/mask/breath/balaclava
+	name = "combat balaclava"
+	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice, it has a miniature rebreather for internals. Comfy to boot!"
+	icon_state = "combat_balaclava"
+	item_state = "combat_balaclava"
+	alternate_worn_layer = BODY_LAYER
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/mask/breath/balaclava/inteq
+	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice, it has a miniature rebreather for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
+	icon_state = "inteq_balaclava"
+	item_state = "inteq_balaclava"

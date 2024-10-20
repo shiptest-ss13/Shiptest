@@ -49,7 +49,7 @@
 	if(prob(30))
 		mask = pickweight(list(
 		/obj/item/clothing/mask/gas/frontiersmen = 5,
-		/obj/item/clothing/mask/gas/sechailer/balaclava = 5,
+		/obj/item/clothing/mask/breath/balaclava = 5,
 		/obj/item/clothing/mask/breath = 5,
 		/obj/item/clothing/mask/whistle = 3))
 
@@ -231,7 +231,7 @@
 	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
 	head = /obj/item/clothing/head/helmet/marine/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/breath/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
 	gloves = /obj/item/clothing/gloves/combat
@@ -244,7 +244,7 @@
 	name = "ERT - Frontiersman Sentry (Shredder LMG)"
 
 	head = /obj/item/clothing/head/helmet/marine/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/breath/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	gloves = /obj/item/clothing/gloves/combat
 

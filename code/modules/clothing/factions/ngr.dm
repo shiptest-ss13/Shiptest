@@ -219,7 +219,7 @@
 //Masks//
 /////////
 
-/obj/item/clothing/mask/gas/sechailer/balaclava/ngr
+/obj/item/clothing/mask/breath/balaclava/ngr
 	name = "NGR combat balaclava"
 	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot! This version is commonly used by the soldiers of the New Gorlex Republic to protect against sandstorms."
 	icon_state = "ngr_balaclava"
@@ -227,7 +227,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
 
-/obj/item/clothing/mask/gas/syndicate/ngr
+/obj/item/clothing/mask/breath/ngr
 	name = "NGR face mask"
 	desc = "A face mask that covers the nose, mouth and neck of those who wear it. Favored by field medics over the balaclava due to lessened heat while wearing."
 	icon_state = "ngr_facemask"
