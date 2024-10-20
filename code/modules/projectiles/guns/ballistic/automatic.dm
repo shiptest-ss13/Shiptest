@@ -21,21 +21,6 @@
 	recoil_unwielded = 4
 	wield_slowdown = 0.35
 
-// Old Semi-Auto Rifle //
-
-/obj/item/gun/ballistic/automatic/surplus //TODO: NEEDS TO BE REPLACED WITH PISTOL CARBINES OR LOWCAL SEMI-AUTO RIFLES
-	name = "surplus rifle"
-	desc = "One of countless cheap, obsolete rifles found throughout the Frontier. Its lack of lethality renders it mostly a deterrent. Chambered in 10mm."
-	icon_state = "surplus"
-	item_state = "moistnugget"
-	weapon_weight = WEAPON_HEAVY
-	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck/rifle
-	fire_delay = 0.5 SECONDS
-	burst_size = 1
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK
-	show_magazine_on_sprite = TRUE
-
 // Laser rifle (rechargeable magazine) //
 
 /obj/item/gun/ballistic/automatic/laser //TODO: REMOVE

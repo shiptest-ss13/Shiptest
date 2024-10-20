@@ -22,6 +22,14 @@
 	crate_name = "derringer crate"
 	faction = FACTION_SRM
 
+/datum/supply_pack/gun/m17
+	name = "M17 pistol Crate"
+	desc = "An cheap target shooting pistol manufactured by Serene Interstellar. Chambered in .22lr"
+	cost = 350
+	contains = list(/obj/item/storage/pistolcase/m17)
+	crate_name = "derringer crate"
+	faction = FACTION_SRM
+
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
 	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
@@ -153,9 +161,30 @@
 	crate_name = "shotgun crate"
 	faction = FACTION_SRM
 
+/datum/supply_pack/gun/buckmaster
+	name = "Buckmaster Shotgun Crate"
+	desc = "For when you need to deal with 8 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with an 8 round tube."
+	contains = list(/obj/item/storage/guncase/buckmaster)
+	cost = 3000
+	crate_name = "shotgun crate"
+
 /*
 		Rifles
 */
+
+/datum/supply_pack/gun/m12
+	name = "Sporter Rifle Crate"
+	desc = "Contains a recently manufactured Model 12 \"Sporter\", Serene Outdoor's premier small game rifle."
+	contains = list(/obj/item/storage/guncase/m12)
+	cost = 500
+	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/m15
+	name = "Super Sporter Rifle Crate"
+	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoor's premier big game rifle."
+	contains = list(/obj/item/storage/guncase/m15)
+	cost = 2500
+	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/winchester
 	name = "Flaming Arrow Lever Action Rifle Crate"
@@ -234,6 +263,8 @@
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
 	faction = FACTION_SRM
+
+/* Attachments */
 
 /datum/supply_pack/gun/attachment/rail_light
 	name = "Tactical Rail Light Crate"
