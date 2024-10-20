@@ -74,7 +74,7 @@
 
 /obj/item/gun/energy/laser/scatter
 	name = "scatter laser gun"
-	desc = "A laser gun equipped with a refraction kit that spreads bolts. Also has a trigger to fire laser 'slugs'."
+	desc = "A laser gun mimicking the function of a shotgun, manufactured with an adjustable lens capable of projecting scattershot or slugs."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	manufacturer = MANUFACTURER_NONE
 
