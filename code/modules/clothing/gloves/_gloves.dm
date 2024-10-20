@@ -31,9 +31,8 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedgloves")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_hands = setup_blood_overlay()
-			bloody_hands.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_hands
+			. += setup_blood_overlay()
+
 
 /obj/item/clothing/gloves/update_clothes_damaged_state(damaging = TRUE)
 	..()

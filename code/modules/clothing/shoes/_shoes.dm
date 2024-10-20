@@ -35,9 +35,7 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedshoe")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_shoes = setup_blood_overlay()
-			bloody_shoes.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_shoes
+			. += setup_blood_overlay()
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()

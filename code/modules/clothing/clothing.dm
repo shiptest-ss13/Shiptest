@@ -518,5 +518,6 @@
 			overlay_file = custom_overlay_icon
 
 	var/mutable_appearance/bloody_clothing = mutable_appearance(overlay_file, "[blood_overlay_type]blood")
+	bloody_clothing.color = get_blood_dna_color(return_blood_DNA())
 
 	return bloody_clothing
