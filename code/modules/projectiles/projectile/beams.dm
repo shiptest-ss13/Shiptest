@@ -84,6 +84,11 @@
 	damage = 0
 	nodamage = TRUE
 
+/obj/projectile/beam/laser/slug
+	name = "laser slug"
+	icon_state = "heavylaser"
+	damage = 30
+
 /obj/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "scatterlaser"
