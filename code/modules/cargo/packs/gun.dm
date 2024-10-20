@@ -25,10 +25,9 @@
 /datum/supply_pack/gun/m17
 	name = "M17 pistol Crate"
 	desc = "An cheap target shooting pistol manufactured by Serene Interstellar. Chambered in .22lr"
-	cost = 350
+	cost = 200
 	contains = list(/obj/item/storage/pistolcase/m17)
-	crate_name = "derringer crate"
-	faction = FACTION_SRM
+	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
