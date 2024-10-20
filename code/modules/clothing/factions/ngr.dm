@@ -56,33 +56,7 @@
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
 	icon_state = "ngr_apron"
 	item_state = "redcloth"
-	allowed = list(
-				/obj/item/analyzer,
-				/obj/item/sensor_device,
-				/obj/item/stack/medical,
-				/obj/item/dnainjector,
-				/obj/item/reagent_containers/dropper,
-				/obj/item/reagent_containers/syringe,
-				/obj/item/reagent_containers/hypospray,
-				/obj/item/healthanalyzer,
-				/obj/item/flashlight/pen,
-				/obj/item/reagent_containers/glass/bottle,
-				/obj/item/reagent_containers/glass/beaker,
-				/obj/item/reagent_containers/pill,
-				/obj/item/storage/pill_bottle,
-				/obj/item/paper,
-				/obj/item/melee/classic_baton/telescopic,
-				/obj/item/storage/fancy/cigarettes,
-				/obj/item/lighter,
-				/obj/item/scalpel,
-				/obj/item/cautery,
-				/obj/item/hemostat,
-				/obj/item/retractor,
-				/obj/item/surgicaldrill,
-				/obj/item/circular_saw,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
-				)
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/ngr
 	name = "blood-red hazard vest"
