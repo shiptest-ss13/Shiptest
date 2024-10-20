@@ -31,7 +31,7 @@
 	/// List of types which should always be allowed to be faxed
 	var/static/list/allowed_types = list(
 		/obj/item/paper,
-		/obj/item/photo
+		/obj/item/photo,
 		/obj/item/holochip,
 	)
 	/// List of types which should be allowed to be faxed if hacked
