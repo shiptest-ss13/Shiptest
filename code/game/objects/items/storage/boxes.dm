@@ -171,7 +171,7 @@
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
 /obj/item/storage/box/survival/clip/balaclava
-	mask_type = /obj/item/clothing/mask/breath/balaclava
+	mask_type = /obj/item/clothing/mask/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/survival/frontier

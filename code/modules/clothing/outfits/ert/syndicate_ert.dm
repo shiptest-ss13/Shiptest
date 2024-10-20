@@ -9,7 +9,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	gloves = /obj/item/clothing/gloves/color/black
 	id = /obj/item/card/id/syndicate_command/crew_id
-	mask = /obj/item/clothing/mask/breath/balaclava
+	mask = /obj/item/clothing/mask/balaclava
 	head = /obj/item/clothing/head/helmet/operator
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r

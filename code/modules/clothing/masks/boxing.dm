@@ -3,10 +3,18 @@
 	desc = "A stretchy fabric hood with eye holes meant for keeping the face warm in cold weather. Also useful for concealing one's identity."
 	icon_state = "balaclava"
 	item_state = "balaclava"
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	clothing_flags = ALLOWINTERNALS
+	visor_flags = ALLOWINTERNALS
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 	visor_flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
+	gas_transfer_coefficient = 0.1
+	permeability_coefficient = 0.5
 	actions_types = list(/datum/action/item_action/adjust)
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_cover = MASKCOVERSMOUTH
+	resistance_flags = NONE
+	alternate_worn_layer = BODY_LAYER
 
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)

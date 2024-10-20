@@ -219,7 +219,7 @@
 //Masks//
 /////////
 
-/obj/item/clothing/mask/breath/balaclava/ngr
+/obj/item/clothing/mask/balaclava/ngr
 	name = "NGR combat balaclava"
 	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This version is commonly used by the soldiers of the New Gorlex Republic to protect against sandstorms."
 	icon_state = "ngr_balaclava"
