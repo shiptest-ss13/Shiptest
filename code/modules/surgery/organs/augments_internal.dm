@@ -167,6 +167,14 @@
 	if(owner || !(organ_flags & ORGAN_FAILING))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "mindscrew", /datum/mood_event/mindscrew)
 
+/obj/item/organ/cyberimp/brain/datachip
+	name = "Nanotrasen brain datachip"
+	desc = "Covered in serial codes and warnings. That data must be important."
+
+/obj/item/organ/cyberimp/brain/datachip/Insert()
+	. = ..()
+	to_chat(owner, span_notice("you feel well versed in the sales of donkpockets and other Donk Co. products"))
+
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth
 	zone = BODY_ZONE_PRECISE_MOUTH

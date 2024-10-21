@@ -1,5 +1,5 @@
 /datum/admins/proc/open_shuttlepanel()
-	set category = "Event"
+	set category = "Event.Overmap"
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 

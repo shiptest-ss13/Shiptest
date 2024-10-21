@@ -12,6 +12,7 @@
 	name = "Corporate Mining Module"
 	description = "An old and rusty mining facility, with big ore potential."
 	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
+	dynamic_mission_types = list(/datum/mission/dynamic/signaled/drill)
 
 /datum/map_template/ruin/space/bigderelict1
 	id = "bigderelict1"
@@ -35,6 +36,7 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	dynamic_mission_types = list(/datum/mission/dynamic/data_reterival)
 
 /datum/map_template/ruin/space/astraeus
 	id = "astraeus"

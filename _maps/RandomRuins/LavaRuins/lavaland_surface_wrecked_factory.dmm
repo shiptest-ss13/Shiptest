@@ -77,6 +77,19 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
+/obj/effect/landmark/mission_poi/main{
+	mission_index = 1;
+	already_spawned = 1;
+	type_to_spawn = /obj/item/documents/nanotrasen
+	},
+/obj/effect/landmark/mission_poi/remover{
+	type_to_spawn = /obj/item/spacecash/bundle/c1000;
+	mission_index = 1
+	},
+/obj/effect/landmark/mission_poi/remover{
+	type_to_spawn = /obj/item/spacecash/bundle/c1000;
+	mission_index = 1
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -228,6 +241,11 @@
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "bubblegumfoot"
+	},
+/obj/effect/landmark/mission_poi/main/implanted{
+	mission_index = 3;
+	type_to_spawn = /mob/living/carbon/human;
+	already_spawned = 1
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -4834,8 +4852,7 @@
 	icon_state = "gibmid2"
 	},
 /obj/effect/decal/cleanable/blood{
-	icon_state = "trails_2";
-	dir = 2
+	icon_state = "trails_2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -5104,6 +5121,11 @@
 	},
 /obj/structure/sign/poster/official/enlist{
 	pixel_y = 32
+	},
+/obj/effect/landmark/mission_poi/main{
+	mission_index = 2;
+	type_to_spawn = /obj/item/clothing/accessory/medal/gold/captain;
+	already_spawned = 1
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)

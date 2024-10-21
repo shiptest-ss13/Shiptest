@@ -10,6 +10,26 @@
 	description = "A small bunker owned by the Syndicate."
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	dynamic_mission_types = list(
+		/datum/mission/dynamic/nt_files,
+		/datum/mission/dynamic/signaled/kill/jerry
+	)
+
+/datum/mission/dynamic/signaled/kill/jerry
+	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
+	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
+	author = "I FUCKING WANT HIM HUNG."
+	mission_reward = /obj/item/poster/random_rilena
+	registered_type = /mob/living/simple_animal/hostile/human/syndicate
+	setpiece_item = list(
+		/obj/item/toy/plush/rilena,
+		/obj/item/toy/plush/tali,
+		/obj/item/toy/plush/sharai,
+		/obj/item/toy/plush/xader,
+		/obj/item/toy/plush/mora,
+		/obj/item/toy/plush/kari
+	)
+
 
 /datum/map_template/ruin/jungle/interceptor
 	name = "Old Crashed Interceptor"
@@ -31,6 +51,7 @@
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
+	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
@@ -45,6 +66,10 @@
 	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
 	suffix = "jungle_cavecrew.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
+	dynamic_mission_types = list(
+		/datum/mission/dynamic/signaled/kill/frontiersmen,
+		/datum/mission/dynamic/data_reterival
+	)
 
 /datum/map_template/ruin/jungle/library
 	name = "Abandoned Library"
