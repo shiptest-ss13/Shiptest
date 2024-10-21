@@ -43,9 +43,6 @@
 
 	safety_wording = "hammer"
 
-	gunslinger_recoil_bonus = -1
-	gunslinger_spread_bonus = -8
-
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
 	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
@@ -316,9 +313,6 @@
 	var/image/editing_image = chamber_options[gate_load_direction]
 	editing_image.icon_state = "radial_revolver_auto_[gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING ? "right":"left"]_on"
 
-	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //only gunslingers are allowed to flip
-		chamber_options -= REVOLVER_FLIP
-
 	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
 		chamber_options -= REVOLVER_AUTO_ROTATE_RIGHT_LOADING
@@ -415,19 +409,6 @@
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
 
-/obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	var/fan = FALSE
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
-		fan = TRUE
-		fire_delay = 0 SECONDS
-	. = ..()
-	fire_delay = src::fire_delay
-	if(fan)
-		rack()
-		to_chat(user, span_notice("You fan the [bolt_wording] of \the [src]!"))
-		balloon_alert_to_viewers("fans revolver!")
-		fire_delay = 0 SECONDS
-
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
 	if(!semi_auto)
@@ -444,16 +425,14 @@
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
-	tryflip(user)
 
 /obj/item/gun/ballistic/revolver/proc/tryflip(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		if(COOLDOWN_FINISHED(src, flip_cooldown))
-			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
-			SpinAnimation(5,1)
-			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
-			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
-			return
+	if(COOLDOWN_FINISHED(src, flip_cooldown))
+		COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
+		SpinAnimation(5,1)
+		user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
+		playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
+		return
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"

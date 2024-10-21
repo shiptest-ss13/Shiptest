@@ -18,9 +18,6 @@
 	recoil_unwielded = 4
 	wield_slowdown = 3
 
-	gunslinger_recoil_bonus = 2
-	gunslinger_spread_bonus = 20
-
 	///does this have a bipod?
 	var/has_bipod = FALSE
 	///is the bipod deployed?

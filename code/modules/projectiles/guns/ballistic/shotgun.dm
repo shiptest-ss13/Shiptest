@@ -35,8 +35,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 
-	gunslinger_recoil_bonus = -1
-
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -576,19 +574,6 @@ EMPTY_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	. = ..()
 	if(!wielded)
 		SpinAnimation(7,1)
-
-/obj/item/gun/ballistic/shotgun/flamingarrow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	var/fan = FALSE
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && wielded_fully && loc == user && !safety)
-		fan = TRUE
-		fire_delay = 0.35 SECONDS
-	. = ..()
-	fire_delay = src::fire_delay
-	if(fan)
-		rack()
-		to_chat(user, "<span class='notice'>You quickly rack the [bolt_wording] of \the [src]!</span>")
-		balloon_alert_to_viewers("quickly racks!")
-		fire_delay = 0 SECONDS
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(forced = FALSE)
 	. = ..()

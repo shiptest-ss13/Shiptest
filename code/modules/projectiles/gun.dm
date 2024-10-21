@@ -213,9 +213,6 @@
 	///Used if the guns recoil is lower then the min, it clamps the highest recoil
 	var/min_recoil = 0
 
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
-
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
@@ -821,8 +818,6 @@
 	return
 
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		recoil_bonus += gunslinger_recoil_bonus
 	return clamp(recoil_bonus, min_recoil , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
@@ -831,9 +826,6 @@
 	var/randomized_bonus_spread = 0
 
 	final_spread += bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)

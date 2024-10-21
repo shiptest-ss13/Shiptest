@@ -16,9 +16,6 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
-	gunslinger_recoil_bonus = 2
-	gunslinger_spread_bonus = 16
-
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."

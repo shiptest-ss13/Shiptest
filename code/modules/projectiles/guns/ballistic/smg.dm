@@ -21,9 +21,6 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
-	gunslinger_recoil_bonus = 2
-	gunslinger_spread_bonus = 16
-
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
 	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
