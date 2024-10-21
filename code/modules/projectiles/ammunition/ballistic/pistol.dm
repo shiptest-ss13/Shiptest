@@ -137,4 +137,4 @@
 	desc = "A .22 LR bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
-	stack_size = 15
+	stack_size = 25
