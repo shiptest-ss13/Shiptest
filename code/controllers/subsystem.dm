@@ -75,6 +75,9 @@
 	/// Tracks the amount of completed runs for the subsystem
 	var/times_fired = 0
 
+	/// How many fires have we been requested to postpone
+	var/postponed_fires = 0
+
 	/// Time the subsystem entered the queue, (for timing and priority reasons)
 	var/queued_time = 0
 
@@ -131,6 +134,26 @@
 	if (Master)
 		Master.subsystems -= src
 	return ..()
+
+/datum/controller/subsystem/proc/update_nextfire(reset_time = FALSE)
+	var/queue_node_flags = flags
+
+	if (reset_time)
+		postponed_fires = 0
+		if (queue_node_flags & SS_TICKER)
+			next_fire = world.time + (world.tick_lag * wait)
+		else
+			next_fire = world.time + wait
+		return
+
+	if (queue_node_flags & SS_TICKER)
+		next_fire = world.time + (world.tick_lag * wait)
+	else if (queue_node_flags & SS_POST_FIRE_TIMING)
+		next_fire = world.time + wait + (world.tick_lag * (tick_overrun/100))
+	else if (queue_node_flags & SS_KEEP_TIMING)
+		next_fire += wait
+	else
+		next_fire = queued_time + wait + (world.tick_lag * (tick_overrun/100))
 
 //Queue it to run.
 //	(we loop thru a linked list until we get to the end or find the right point)
@@ -251,8 +274,8 @@
 //could be used to postpone a costly subsystem for (default one) var/cycles, cycles
 //for instance, during cpu intensive operations like explosions
 /datum/controller/subsystem/proc/postpone(cycles = 1)
-	if(next_fire - world.time < wait)
-		next_fire += (wait*cycles)
+	if (can_fire && cycles >= 1)
+		postponed_fires += cycles
 
 //usually called via datum/controller/subsystem/New() when replacing a subsystem (i.e. due to a recurring crash)
 //should attempt to salvage what it can from the old instance of subsystem
