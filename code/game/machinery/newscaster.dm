@@ -822,7 +822,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 				scanned_user ="[ID.registered_name])"
 			else if(istype(human_user.wear_id, /obj/item/storage/wallet))
 				var/obj/item/storage/wallet/our_wallet = human_user.wear_id
-				scanned_user = "[our_wallet.GetID().registered_name]"
+				if(our_wallet.front_id)
+					var/obj/item/card/id/ID = our_wallet.GetID()
+					scanned_user = "[ID.registered_name]"
 			else
 				scanned_user ="Unknown"
 		else
