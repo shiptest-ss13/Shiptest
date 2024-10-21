@@ -119,7 +119,7 @@
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip/fo
 	alt_suit = null
 
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/clip/slouch/officer
 
 	backpack = /obj/item/storage/backpack/captain
@@ -284,7 +284,7 @@
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
+	courierbag = /obj/item/storage/backpack/satchel/sec/clip
 
 	box = /obj/item/storage/box/survival/clip/balaclava
 
@@ -309,16 +309,11 @@
 	ears = /obj/item/radio/headset/clip/alt/captain
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/armor/clip_capcoat
 	alt_suit = null
+	suit = /obj/item/clothing/suit/armor/clip_capcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/clip/slouch/officer
-
-	backpack = /obj/item/storage/backpack/captain
-	satchel = /obj/item/storage/backpack/satchel/cap
-	duffelbag = /obj/item/storage/backpack/duffelbag/captain
-	courierbag = /obj/item/storage/backpack/messenger/com
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,
 		/obj/item/melee/classic_baton/telescopic=1,
@@ -376,14 +371,9 @@
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
-	shoes = /obj/item/clothing/shoes/combat
-
-	backpack = /obj/item/storage/backpack/captain
-	satchel = /obj/item/storage/backpack/satchel/cap
-	duffelbag = /obj/item/storage/backpack/duffelbag/captain
-	courierbag = /obj/item/storage/backpack/messenger/com
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	shoes = /obj/item/clothing/shoes/jackboots
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
 
@@ -393,17 +383,9 @@
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
 
-	l_hand = /obj/item/storage/firstaid/medical
-
-	backpack = /obj/item/storage/backpack/security/clip
-	satchel = /obj/item/storage/backpack/satchel/sec/clip
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-
 	uniform = /obj/item/clothing/under/clip/medic
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/clip/corpsman
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit = null
 	suit_store = null
 
@@ -524,7 +506,7 @@
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
 	box = /obj/item/storage/box/survival/clip/balaclava
-	shoes = null
+	shoes = /obj/item/clothing/shoes/combat // shoos
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
@@ -635,7 +617,7 @@
 	belt = /obj/item/storage/belt/military/clip/gunner
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/cm40
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/shredded_beef=1)
 
 ///lead, i guess you could reuse this for "Brig Officer"
 
@@ -651,7 +633,7 @@
 	head = /obj/item/clothing/head/clip/slouch
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military/clip
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -663,12 +645,8 @@
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/cm82
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/cm23=1)
-
-/datum/outfit/job/clip/minutemen/grunt/lead/armed/hardsuit
-	name = "CLIP Minutemen - Field Sergeant (Spotter Hardsuit)"
-	head = null
-	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+	//replace commander with the cm23 when its impemented, see the cm-f4 above
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/shredded_beef=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 
 /datum/outfit/job/clip/minutemen/grunt/commander
 	name = "CLIP Minutemen - Field Commander"
@@ -682,7 +660,7 @@
 	head = /obj/item/clothing/head/clip/slouch/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/clip/minutemen/grunt/major
@@ -697,6 +675,6 @@
 	head = /obj/item/clothing/head/clip/slouch/officer
 	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
 
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 
 	glasses = /obj/item/clothing/glasses/sunglasses

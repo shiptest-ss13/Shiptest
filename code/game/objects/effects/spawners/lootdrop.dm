@@ -805,6 +805,7 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/safe
@@ -815,6 +816,7 @@
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/dangerous
@@ -999,8 +1001,8 @@
 
 /obj/effect/spawner/lootdrop/anomaly/storm
 	loot = list(
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/flux/storm,
+		/obj/effect/anomaly/pyro/storm,
 		/obj/effect/anomaly/sparkler,
 		/obj/effect/anomaly/veins,
 		/obj/effect/anomaly/phantom,
@@ -1292,3 +1294,18 @@
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
 	/obj/item/storage/ration/crayons = 2 // :)
 	)
+
+/obj/effect/spawner/lootdrop/chem_jug
+	loot = list(
+	/obj/item/reagent_containers/glass/chem_jug/carbon,
+	/obj/item/reagent_containers/glass/chem_jug/oxygen,
+	/obj/item/reagent_containers/glass/chem_jug/nitrogen,
+	/obj/item/reagent_containers/glass/chem_jug/hydrogen,
+	/obj/item/reagent_containers/glass/chem_jug/radium,
+	/obj/item/reagent_containers/glass/chem_jug/aluminium,
+	/obj/item/reagent_containers/glass/chem_jug/chlorine,
+	/obj/item/reagent_containers/glass/chem_jug/copper,
+	/obj/item/reagent_containers/glass/chem_jug/bromine,
+	/obj/item/reagent_containers/glass/chem_jug/iodine,
+	/obj/item/reagent_containers/glass/chem_jug/potassium,
+	/obj/item/reagent_containers/glass/chem_jug/sulfur)

@@ -182,6 +182,13 @@
 	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
 	mask_type = /obj/item/clothing/mask/breath
 
+/obj/machinery/suit_storage_unit/minutemen
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_patroller
+	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/minutemen/spotter
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+
 //End shiptest suits
 
 /obj/machinery/suit_storage_unit/open
@@ -450,7 +457,7 @@
 				mob_occupant.adjustFireLoss(rand(20, 36))
 			else
 				mob_occupant.adjustFireLoss(rand(10, 16))
-			mob_occupant.emote("scream")
+			mob_occupant.force_scream()
 		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
 		uv_cycles = (BASE_UV_CYCLES - lasers_bonus)
