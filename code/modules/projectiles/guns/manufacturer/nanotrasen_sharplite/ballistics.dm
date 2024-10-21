@@ -9,7 +9,10 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/co9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/co9mm,
+	)
 	manufacturer = MANUFACTURER_VIGILITAS
 	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -21,7 +24,7 @@
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
-EMPTY_GUN_HELPER(automatic/pistol/commander)
+NO_MAG_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/ammo_box/magazine/co9mm
 	name = "commander pistol magazine (9mm)"
@@ -49,4 +52,4 @@ EMPTY_GUN_HELPER(automatic/pistol/commander)
 	item_state = "inteq_generic"
 	manufacturer = MANUFACTURER_INTEQ
 
-EMPTY_GUN_HELPER(automatic/pistol/commander/inteq)
+NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
