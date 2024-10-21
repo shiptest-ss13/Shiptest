@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Raleigh-class Corvette",
+	"faction": "/datum/faction/independent",
+	"prefix": "ISV",
+	"namelists": [
+		"SPACE",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Raleigh-class",
+	"description": "The Raleigh-class is a Kasagi-Fischer Partnership design created in the late 390s for a then growing 'exploratory' market. While it's original designation was 'Safari Ship' or in some cases, 'Yacht'. Recently manufactured ones are proudly labelled as corvettes, and sold off to PDFs looking to stay fiscally sound, mercenaries, and the odd Rich, Bored, Solarian buyer. In the frontier, you're most likely to see a Raleigh serving as the command vessel for a small group of mercenaries.",
+	"tags": [
+		"Combat",
+		"RP Focus"
+	],
+	"map_path": "_maps/shuttles/independent/independent_raleigh.dmm",
+	"limit": 1,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/merc",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/independent/hos/merc",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Mercenary": {
+			"outfit": "/datum/outfit/job/independent/security/merc",
+			"slots": 3
+		},
+		"Recruit": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
