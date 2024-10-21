@@ -238,6 +238,11 @@ EMPTY_GUN_HELPER(automatic/m15)
 		)
 	)
 
+/obj/item/gun/ballistic/shotgun/automatic/m11/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "Model 11 \"Cuckmaster\""
+
 /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	name = "Buckmaster internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
