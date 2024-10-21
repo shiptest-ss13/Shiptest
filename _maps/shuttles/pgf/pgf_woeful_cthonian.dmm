@@ -1073,6 +1073,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/item/clothing/suit/space/gezena,
+/obj/item/storage/pill_bottle/stimulant,
 /turf/open/floor/engine/hull/interior,
 /area/space)
 "un" = (
@@ -1561,8 +1562,14 @@
 /obj/item/binoculars,
 /obj/item/taperecorder,
 /obj/item/taperecorder,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -9;
+	pixel_x = -4
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_y = -8;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/space)
 "DJ" = (
@@ -1628,6 +1635,14 @@
 /obj/machinery/chem_press{
 	pixel_y = 5;
 	pixel_x = 1
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = 10;
+	pixel_y = -1
+	},
+/obj/item/storage/pill_bottle/charcoal{
+	pixel_x = -12;
+	pixel_y = 12
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/space)
@@ -1823,6 +1838,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -1871,6 +1889,7 @@
 	dir = 10
 	},
 /obj/structure/table/wood,
+/obj/item/clothing/mask/whistle/trench,
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "Ki" = (
@@ -2037,6 +2056,12 @@
 /obj/item/reagent_containers/hypospray/medipen/anti_rad,
 /obj/item/reagent_containers/hypospray/medipen/anti_rad,
 /obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "No" = (
@@ -2211,6 +2236,14 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/mono/white,
 /area/space)
+"Td" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/space)
 "Tm" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/gezena,
@@ -2246,6 +2279,10 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 17;
 	pixel_x = 2
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 11;
+	pixel_y = 2
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/space)
@@ -3055,7 +3092,7 @@ Ua
 uM
 dE
 uM
-QP
+Td
 Jb
 uM
 uM
