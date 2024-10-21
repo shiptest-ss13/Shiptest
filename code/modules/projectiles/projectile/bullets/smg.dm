@@ -4,6 +4,11 @@
 	name = "5.7x39mm bullet"
 	damage = 20
 
+/obj/projectile/bullet/c57x39mm/rubber
+	name = "5.7x39mm rubber bullet"
+	damage = 5
+	stamina = 20
+
 // 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
 
 /obj/projectile/bullet/c46x30mm
