@@ -19,6 +19,17 @@
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)
 
+/obj/item/clothing/mask/balaclava/AltClick(mob/user)
+	..()
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	else
+		adjustmask(user)
+
+/obj/item/clothing/mask/balaclava/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click [src] to adjust it.</span>"
+
 /obj/item/clothing/mask/infiltrator
 	name = "infiltrator balaclava"
 	desc = "It makes you feel safe in your anonymity, but for a stealth outfit you sure do look obvious that you're up to no good. It seems to have a built in heads-up display."
