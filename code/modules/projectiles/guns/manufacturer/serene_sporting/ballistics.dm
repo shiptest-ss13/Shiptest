@@ -47,7 +47,7 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 
 /obj/item/ammo_box/magazine/m17
 	name = "Model 17 magazine (.22lr)"
-	desc = "A 10-round, magazine for the Model 17 \"Micro Target\". These rounds do okay damage with awful performance against armor."
+	desc = "A 10-round magazine for the Model 17 \"Micro Target\". These rounds do okay damage with awful performance against armor."
 	icon_state = "m17_mag-1"
 	base_icon_state = "m17_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
@@ -110,7 +110,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 
 /obj/item/ammo_box/magazine/m12_sporter
 	name = "Model 12 magazine (.22lr)"
-	desc = "A 25-round, magazine for the Model 12 \"Sporter\". These rounds do okay damage with awful performance against armor."
+	desc = "A 25-round magazine for the Model 12 \"Sporter\". These rounds do okay damage with awful performance against armor."
 	icon_state = "m12_mag-1"
 	base_icon_state = "m12_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
@@ -183,7 +183,7 @@ EMPTY_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"
-	desc = "A 20-round, magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
+	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
 	ammo_type = /obj/item/ammo_casing/a556_42

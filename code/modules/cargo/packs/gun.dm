@@ -24,7 +24,7 @@
 
 /datum/supply_pack/gun/m17
 	name = "M17 pistol Crate"
-	desc = "An cheap target shooting pistol manufactured by Serene Interstellar. Chambered in .22lr"
+	desc = "A cheap target shooting pistol manufactured by Serene Interstellar. Chambered in .22lr"
 	cost = 200
 	contains = list(/obj/item/storage/pistolcase/m17)
 	crate_name = "pistol crate"
@@ -173,14 +173,14 @@
 
 /datum/supply_pack/gun/m12
 	name = "Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 12 \"Sporter\", Serene Outdoor's premier small game rifle."
+	desc = "Contains a recently manufactured Model 12 \"Sporter\", Serene Outdoors' premier small game rifle."
 	contains = list(/obj/item/storage/guncase/m12)
 	cost = 500
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/m15
 	name = "Super Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoor's premier big game rifle."
+	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle."
 	contains = list(/obj/item/storage/guncase/m15)
 	cost = 2500
 	crate_name = "rifle crate"
