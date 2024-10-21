@@ -28,7 +28,7 @@
 	if(gas_type)
 		air_contents.set_moles(gas_type, ((6 * ONE_ATMOSPHERE) * volume / (R_IDEAL_GAS_EQUATION * T20C)))
 
-/obj/item/tank/jetpack/ui_action_click(mob/user, action)
+/obj/item/tank/jetpack/ui_action_click(mob/living/user, action)
 	if(istype(action, /datum/action/item_action/toggle_jetpack))
 		cycle(user)
 	else if(istype(action, /datum/action/item_action/jetpack_stabilization))
@@ -39,7 +39,7 @@
 		toggle_internals(user)
 
 
-/obj/item/tank/jetpack/proc/cycle(mob/user)
+/obj/item/tank/jetpack/proc/cycle(mob/living/user)
 	if(user.incapacitated())
 		return
 
@@ -54,7 +54,7 @@
 		A.UpdateButtonIcon()
 
 
-/obj/item/tank/jetpack/proc/turn_on(mob/user)
+/obj/item/tank/jetpack/proc/turn_on(mob/living/user)
 	if(!allow_thrust(0.01, user))
 		return
 	on = TRUE
@@ -63,18 +63,18 @@
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 	if(full_speed)
-		user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+		user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
-/obj/item/tank/jetpack/proc/turn_off(mob/user)
+/obj/item/tank/jetpack/proc/turn_off(mob/living/user)
 	on = FALSE
 	stabilizers = FALSE
 	icon_state = initial(icon_state)
 	ion_trail.stop()
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
-	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
-/obj/item/tank/jetpack/proc/move_react(mob/user)
+/obj/item/tank/jetpack/proc/move_react(mob/living/user)
 	if(!on)//If jet dont work, it dont work
 		return
 	if(!user)//Don't allow jet self using
@@ -90,7 +90,7 @@
 	if(length(user.client.keys_held & user.client.movement_keys))//You use jet when press keys. yes.
 		allow_thrust(0.01, user)
 
-/obj/item/tank/jetpack/proc/pre_move_react(mob/user)
+/obj/item/tank/jetpack/proc/pre_move_react(mob/living/user)
 	ion_trail.oldposition = get_turf(src)
 
 /obj/item/tank/jetpack/proc/allow_thrust(num, mob/living/user)
