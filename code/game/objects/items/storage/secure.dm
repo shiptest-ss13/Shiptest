@@ -195,15 +195,6 @@
 		. = ..()
 		new /obj/item/documents/syndicate(src)
 
-/obj/item/storage/secure/safe/intel/stechkin
-	name = "Sensitive Data Safe"
-
-/obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
-		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
-		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
-		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
-
 /obj/item/storage/secure/safe/suns
 	name = "Captain's Secure Safe"
 	desc = "The most important part of a SUNS vessel is the spare dueling sword."
