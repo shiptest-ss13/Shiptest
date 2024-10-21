@@ -35,7 +35,7 @@
 	name = "flying shrapnel shard"
 	damage = 10
 	range = 10
-	armour_penetration = -20
+	armour_penetration = -5
 	dismemberment = 25
 	ricochets_max = 2
 	ricochet_chance = 40
@@ -49,7 +49,7 @@
 
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 8
-	armour_penetration = -35
+	armour_penetration = -10
 	dismemberment = 15
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
@@ -115,3 +115,42 @@
 
 /obj/projectile/bullet/pellet/stingball/on_ricochet(atom/A)
 	hit_stunned_targets = TRUE // ducking will save you from the first wave, but not the rebounds
+
+
+//claymore shrapnel stuff//
+//2 small bursts- one that harasses people passing by a bit aways, one that brutalizes point-blank targets.
+/obj/item/ammo_casing/caseless/shrapnel
+	name = "directional shrapnel burst :D"
+	desc = "I May Have Overreacted"
+	pellets = 4
+	variance = 70
+	projectile_type = /obj/projectile/bullet/shrapnel/claymore
+	randomspread = TRUE
+
+/obj/item/ammo_casing/caseless/shrapnel/shred
+	name = "point blank directional shrapnel burst"
+	desc = "Claymores are lethal to armored infantry at point blank range."
+	pellets = 3
+	variance = 50
+	projectile_type = /obj/projectile/bullet/shrapnel/claymore/pointbl
+	randomspread = TRUE
+
+/obj/projectile/bullet/shrapnel/claymore
+	name = "ceramic splinter"
+	range = 4
+	armour_penetration = 0
+
+/obj/projectile/bullet/shrapnel/claymore/pointbl
+	name = "large ceramic shard"
+	range = 2
+	damage = 18
+	dismemberment = 30
+	armour_penetration = 10
+
+/obj/item/ammo_casing/caseless/shrapnel/plasma
+	name = "directional plasma burst"
+	projectile_type = /obj/projectile/energy/plasmabolt
+
+/obj/item/ammo_casing/caseless/shrapnel/shred/plasma
+	name = "point blank directional plasma burst"
+	projectile_type = /obj/projectile/energy/plasmabolt/shred
