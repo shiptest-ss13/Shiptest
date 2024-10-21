@@ -11,7 +11,7 @@
 	var/gas_type = GAS_O2
 	var/on = FALSE
 	var/stabilizers = FALSE
-	var/full_speed = TRUE // If the jetpack will have a speedboost in space/nograv or not
+	var/full_speed = TRUE // Whether damage slowdown will affect the jetpack
 	var/datum/effect_system/trail_follow/ion/ion_trail
 
 /obj/item/tank/jetpack/Initialize()
@@ -63,7 +63,7 @@
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 	if(full_speed)
-		user.add_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
+		user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 
 /obj/item/tank/jetpack/proc/turn_off(mob/user)
 	on = FALSE
@@ -72,7 +72,7 @@
 	ion_trail.stop()
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
-	user.remove_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
+	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 
 /obj/item/tank/jetpack/proc/move_react(mob/user)
 	if(!on)//If jet dont work, it dont work
