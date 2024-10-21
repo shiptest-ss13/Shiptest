@@ -141,8 +141,18 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
+	/// Base armor value on this mob for running armor checks
+	var/datum/armor/armor
+
+
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()
+	if (islist(armor))
+		armor = getArmor(arglist(armor))
+	else if (!armor)
+		armor = getArmor()
+	else if (!istype(armor, /datum/armor))
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")
 	GLOB.simple_animals[AIStatus] += src
 	if(gender == PLURAL)
 		gender = pick(MALE,FEMALE)
@@ -170,6 +180,11 @@
 		QDEL_NULL(access_card)
 
 	return ..()
+
+/mob/living/simple_animal/getarmor(def_zone, type)
+	if(armor)
+		return armor.getRating(type)
+	return FALSE
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
 	if(!is_type_in_list(O, food_type))
