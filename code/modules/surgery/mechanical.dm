@@ -24,7 +24,7 @@
 		/datum/surgery_step/mechanic_close
 	)
 	lying_required = FALSE
-	self_operable = TRUE
+	self_operable = FALSE
 
 /datum/surgery_step/heal/mechanic
 	name = "repair components"
@@ -126,3 +126,52 @@
 	var/mob/living/carbon/C = target
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 		return TRUE
+
+/datum/surgery_step/repair_structure
+	name = "replace structural rods"
+	time = 6.4 SECONDS
+	implements = list(
+		/obj/item/stack/rods = 100
+		)
+	preop_sound = 'sound/items/ratchet.ogg'
+	success_sound = 'sound/items/taperecorder_close.ogg'
+
+/datum/surgery_step/repair_structure/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/obj/item/stack/rods = tool
+	if(!tool || rods.get_amount() < 2)
+		to_chat(user, "<span class='warning'>You need at least two rods to do this!</span>")
+		return -1
+	if(target_zone == BODY_ZONE_HEAD)
+		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", "<span class='notice'>You begin to reinforce [target]'s skull with [tool]...</span>")
+	else
+		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", "<span class='notice'>You begin replacing the rods in [target]'s [parse_zone(target_zone)]...</span>")
+
+/datum/surgery_step/repair_structure/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/obj/item/stack/rods = tool
+	if(!tool || rods.get_amount() < 2)
+		to_chat(user, "<span class='warning'>You need at least two rods to do this!</span>")
+		return FALSE
+	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", "<span class='notice'>You successfully restore integrity to [target]'s [parse_zone(target_zone)].</span>")
+	//restore all integrity-induced damage, so that they don't just weld themselves into a mess again
+	var/integ_heal = surgery.operated_bodypart.integrity_loss //ignore integrity_threshold as a little surgery bonus
+	var/brute_heal = min(surgery.operated_bodypart.brute_dam,integ_heal)
+	var/burn_heal = max(0,integ_heal-brute_heal)
+	surgery.operated_bodypart.integrity_loss = 0
+	surgery.operated_bodypart.heal_damage(brute_heal,burn_heal,0,null,BODYTYPE_ROBOTIC)
+	tool.use(2)
+	return TRUE
+
+
+/datum/surgery/integrity
+	name = "Replace structure"
+	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_CHEST)
+	requires_bodypart_type = BODYTYPE_ROBOTIC
+	steps = list(
+		/datum/surgery_step/mechanic_open,
+		/datum/surgery_step/mechanic_wrench,
+		/datum/surgery_step/repair_structure,
+		/datum/surgery_step/mechanic_close
+	)
+	requires_bodypart = TRUE
+	lying_required = TRUE
+	self_operable = FALSE
