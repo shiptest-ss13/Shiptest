@@ -61,6 +61,9 @@
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
 
+	//I'm not emotionally prepared to spend ten more hours splicing overlays together
+	damage_overlay_type = ""
+
 /datum/species/kepori/New()
 	. = ..()
 	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
