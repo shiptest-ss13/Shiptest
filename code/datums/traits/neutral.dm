@@ -234,3 +234,105 @@
 	lose_text = "<span class='notice'>...Who the hell would use such antiquated weapons in this year?</span>"
 	medical_record_text = "Patient always has their hand around their holster."
 	mob_traits = list(TRAIT_GUNSLINGER)
+
+
+/datum/quirk/lang_kalixcian
+	name = "(Langauge) Kalixcian Common"
+	desc = "You know Kalixcian well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know Kalixcian.</span>"
+	lose_text = "<span class='notice'>You forget Kalixcian.</span>"
+
+/datum/quirk/lang_kalixcian/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/draconic, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_kalixcian/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/draconic, source = LANGUAGE_MIND)
+
+
+/datum/quirk/lang_kalixcian_clip
+	name = "(Langauge) CLIP Kalixcian"
+	desc = "You know CLIP Kalixcian well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know CLIP Kalixcian.</span>"
+	lose_text = "<span class='notice'>You forget CLIP Kalixcian.</span>"
+
+/datum/quirk/lang_kalixcian_clip/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/clip_kalixcian, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_kalixcian_clip/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/clip_kalixcian, source = LANGUAGE_MIND)
+
+
+/datum/quirk/lang_tuc
+	name = "(Langauge) Teceti Unified Standard"
+	desc = "You know Teceti Unified Standard well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know TUC.</span>"
+	lose_text = "<span class='notice'>You forget TUC.</span>"
+
+/datum/quirk/lang_tuc/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/teceti_unified, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_tuc/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/teceti_unified, source = LANGUAGE_MIND)
+
+
+/datum/quirk/lang_vox
+	name = "(Langauge) Vox-Pidgin"
+	desc = "You know Vox-Pidgin well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know Pidgin.</span>"
+	lose_text = "<span class='notice'>You forget Pidgin.</span>"
+
+/datum/quirk/lang_vox/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/vox_pidgin, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_vox/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/vox_pidgin, source = LANGUAGE_MIND)
+
+
+/datum/quirk/lang_moth
+	name = "(Langauge) Proto-Moth Pidgin"
+	desc = "You know Proto-Moth Pidgin well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know Moth Pidgin.</span>"
+	lose_text = "<span class='notice'>You forget Moth Pidgin.</span>"
+
+/datum/quirk/lang_moth/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/moffic, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_moth/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/moffic, source = LANGUAGE_MIND)
+
+
+/datum/quirk/lang_rachnid
+	name = "(Langauge) Rachnidian"
+	desc = "You know Rachnidian well enough to understand and speak it."
+	value = 0
+	gain_text = "<span class='notice'>You know Rachnidian.</span>"
+	lose_text = "<span class='notice'>You forget Rachnidian.</span>"
+
+/datum/quirk/lang_rachnid/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/spider, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_rachnid/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/spider, source = LANGUAGE_MIND)

@@ -23,7 +23,6 @@
 	liked_food = GORE | MEAT
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
-	species_language_holder = /datum/language_holder/lizard
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	mutanteyes = /obj/item/organ/eyes/lizard
 	sclera_color = "#fffec4"
