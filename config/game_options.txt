@@ -593,3 +593,8 @@ BLUESPACE_JUMP_WAIT 12000
 
 ## If admins are allowed to use the authentication server as a regular server for testing
 AUTH_ADMIN_TESTING
+
+# A config that skews with the random spawners weights
+# If the value is lower than 1, it'll tend to even out the odds
+# If higher than 1, it'll lean toward common spawns even more.
+RANDOM_LOOT_WEIGHT_MODIFIER 1

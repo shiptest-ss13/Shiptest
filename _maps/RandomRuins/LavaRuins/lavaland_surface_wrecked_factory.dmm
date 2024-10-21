@@ -164,8 +164,8 @@
 /area/ruin/lavaland/factory/manager_office)
 "bE" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /obj/item/storage/bag/trash,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
@@ -216,7 +216,7 @@
 "cm" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "co" = (
@@ -341,7 +341,7 @@
 /area/ruin/lavaland/factory/warehouse)
 "dc" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -641,7 +641,7 @@
 	},
 /obj/item/modular_computer/laptop,
 /obj/item/stack/arcadeticket,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "go" = (
@@ -1506,7 +1506,7 @@
 	},
 /obj/item/storage/wallet/random,
 /obj/item/instrument/guitar,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "oh" = (
@@ -1887,7 +1887,7 @@
 /obj/item/poster/random_contraband,
 /obj/item/toy/eightball,
 /obj/item/toy/cards/deck/tarot,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "rh" = (
@@ -2287,7 +2287,7 @@
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /obj/item/lighter/greyscale,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "ve" = (
@@ -2985,7 +2985,7 @@
 /obj/machinery/light/directional/west,
 /obj/item/melee/knife/hunting,
 /obj/item/clothing/suit/hooded/cloak/goliath,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "CW" = (
@@ -3149,18 +3149,18 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "EP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -4062,11 +4062,11 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Or" = (
 /obj/structure/closet/crate/freezer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -4945,9 +4945,9 @@
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/directional/west,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/factory/dorms)
 "Xn" = (
@@ -5078,7 +5078,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "YJ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{

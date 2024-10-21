@@ -47,12 +47,12 @@
 	name = "Ration Crate"
 	desc = "6 standerd issue rations."
 	cost = 500
-	contains = list(/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration)
+	contains = list(/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 

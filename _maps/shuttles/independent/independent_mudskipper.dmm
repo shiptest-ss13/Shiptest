@@ -1412,7 +1412,7 @@
 /area/ship/hallway/aft)
 "Ft" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -1727,10 +1727,10 @@
 /obj/structure/closet/crate{
 	name = "ration crate"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/item/reagent_containers/food/snacks/canned/beans,
@@ -1990,7 +1990,7 @@
 /area/ship/crew/toilet)
 "ST" = (
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
 	name = "fridge"
@@ -2140,7 +2140,7 @@
 /area/ship/engineering/engine)
 "Vy" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,
