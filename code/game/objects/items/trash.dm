@@ -8,11 +8,8 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/trash/Initialize(mapload)
-	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
-	return ..()
-
-/obj/item/trash/Destroy()
-	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
+	if(!mapload)
+		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 	return ..()
 
 /obj/item/trash/raisins
