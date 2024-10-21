@@ -14,7 +14,6 @@
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
-	alternate_worn_layer = BODY_LAYER
 
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)
