@@ -84,6 +84,12 @@
 	icon_state = "black"
 	gas_type = GAS_CO2
 
+/obj/machinery/portable_atmospherics/canister/carbon_monoxide
+	name = "co canister"
+	desc = "Carbon Monoxide. Highly dangerous and flammable"
+	icon_state = "black"
+	gas_type = GAS_CO
+
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
 	desc = "Plasma gas. The reason YOU are here. Highly toxic."
@@ -280,11 +286,26 @@
 	if(pressure > 100)
 		. += "can-o" + num2text(pressure_display)
 
+/obj/machinery/portable_atmospherics/canister/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	var/can_temperature = air_contents.return_temperature()
+	can_temperature += exposed_temperature/20 //equalize with the air - since this means theres an active fire on the canister's tile
+	air_contents.set_temperature(can_temperature)
+	if(exposed_temperature > temperature_resistance)
+		take_damage(max((exposed_temperature - temperature_resistance)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
+
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if(exposed_temperature > temperature_resistance)
-		take_damage(5, BURN, 0)
+	if(exposed_temperature > temperature_resistance) //dont equalize temperature as this would affect atmos balance, we only want fires to be more dangerous
+		take_damage(max((exposed_temperature - temperature_resistance)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
 
+/obj/machinery/portable_atmospherics/canister/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
+	. = ..()
+	shake_animation(damage_amount, max(damage_amount/2, 2))
 
 /obj/machinery/portable_atmospherics/canister/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -320,6 +341,22 @@
 
 /obj/machinery/portable_atmospherics/canister/proc/canister_break()
 	disconnect()
+
+	//Give the gas a chance to build up more pressure through reacting
+	air_contents.react(src)
+	var/pressure = air_contents.return_pressure()
+	var/range = (pressure-TANK_RUPTURE_PRESSURE)/TANK_FRAGMENT_SCALE
+	var/turf/epicenter = get_turf(loc)
+	if(range > 2)
+		message_admins("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
+		log_admin("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
+		log_bomber(get_mob_by_key(fingerprintslast), "was last key to touch", src, "which ruptured explosively")
+		investigate_log("was destroyed.", INVESTIGATE_ATMOS)
+
+		explosion(epicenter, round(range*0.2), round(range*0.5), round(range), round(range*1.5))
+
+		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
+
 	var/turf/T = get_turf(src)
 	T.assume_air(air_contents)
 	air_update_turf()
@@ -327,7 +364,6 @@
 	obj_break()
 	density = FALSE
 	playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	investigate_log("was destroyed.", INVESTIGATE_ATMOS)
 
 	if(holding)
 		holding.forceMove(T)
@@ -350,6 +386,16 @@
 	if(timing && valve_timer < world.time)
 		valve_open = !valve_open
 		timing = FALSE
+
+	//handle melting
+	var/current_temp = air_contents.return_temperature()
+	if(current_temp > temperature_resistance)
+		take_damage(max((current_temp - temperature_resistance), 0), BRUTE, 0)
+
+	//handle external melting
+	var/turf/open/current_turf = get_turf(src)
+	if(current_turf)
+		temperature_expose(current_turf.air, current_turf.air.return_temperature(), current_turf.air.return_pressure())
 
 	// Handle gas transfer.
 	if(valve_open)

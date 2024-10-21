@@ -38,6 +38,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 
 /datum/gas
 	var/id = ""
+	/// heat capacity? thats the only explanation on what this var is
 	var/specific_heat = 0
 	var/name = ""
 	var/gas_overlay = "generic" //icon_state in icons/effects/atmospherics.dmi
