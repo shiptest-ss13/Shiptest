@@ -56,6 +56,7 @@
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
 	icon_state = "ngr_apron"
 	item_state = "redcloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/ngr
 	name = "blood-red hazard vest"

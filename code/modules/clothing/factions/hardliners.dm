@@ -28,13 +28,14 @@
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/hardliners
+/obj/item/clothing/suit/hardliners //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "white smock"
 	desc = "A plain-white surgical smock typically worn by both Hardliners and Cybersun staff. Even mercenaries need medical attention!"
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_apron"
 	item_state = "whitecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
