@@ -34,3 +34,9 @@
 	allow_duplicates = FALSE
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE, RUIN_TAG_HAZARDOUS)
 
+/datum/map_template/ruin/whitesands/brazillian_lab
+	name = "Hermit Weapons-Testing Compound"
+	id = "brazillian-lab"
+	description = "A conspicuous compound in the middle of the sandy wasteland. What goodies are inside?"
+	suffix = "whitesands_brazillianlab.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_INHOSPITABLE)
