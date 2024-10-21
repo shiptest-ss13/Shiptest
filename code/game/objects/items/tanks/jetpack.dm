@@ -110,7 +110,7 @@
 	item_state = "jetpack-sec"
 	volume = 20 //normal jetpacks have 70 volume
 	gas_type = null //it starts empty
-	full_speed = FALSE //moves at hardsuit jetpack speeds
+	full_speed = FALSE // affected by damage slowdown
 
 /obj/item/tank/jetpack/improvised/allow_thrust(num, mob/living/user)
 	if(rand(0,250) == 0)
@@ -181,7 +181,6 @@
 	volume = 1
 	slot_flags = null
 	gas_type = null
-	full_speed = FALSE
 	custom_price = 2000
 	var/datum/gas_mixture/temp_air_contents
 	var/obj/item/tank/internals/tank = null
