@@ -192,7 +192,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "bU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/statue/sandstone/assistant,
+/obj/item/kirbyplants{
+	icon_state = "plant-10"
+	},
 /obj/machinery/light_switch{
 	pixel_y = 21;
 	pixel_x = -10
@@ -1026,15 +1028,11 @@
 	pixel_y = 32
 	},
 /obj/structure/closet/secure_closet/freezer/wall/directional/west,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -8;
 	pixel_y = 5
 	},
@@ -1509,10 +1507,6 @@
 	},
 /area/ruin/jungle/cavecrew/dormitories)
 "sJ" = (
-/obj/item/clothing/head/crown/fancy{
-	pixel_y = 9;
-	pixel_x = 6
-	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},

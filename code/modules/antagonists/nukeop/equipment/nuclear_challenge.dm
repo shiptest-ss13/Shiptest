@@ -99,9 +99,6 @@
 	if(GLOB.player_list.len < CHALLENGE_MIN_PLAYERS)
 		to_chat(user, "<span class='boldwarning'>The enemy crew is too small to be worth declaring war on.</span>")
 		return FALSE
-	if(!user.onSyndieBase())
-		to_chat(user, "<span class='boldwarning'>You have to be at your base to use this.</span>")
-		return FALSE
 	if(world.time-SSticker.round_start_time > CHALLENGE_TIME_LIMIT)
 		to_chat(user, "<span class='boldwarning'>It's too late to declare hostilities. Your benefactors are already busy with other schemes. You'll have to make do with what you have on hand.</span>")
 		return FALSE

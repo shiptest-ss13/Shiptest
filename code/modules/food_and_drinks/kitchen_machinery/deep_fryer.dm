@@ -44,7 +44,7 @@
 		/obj/item/weldingtool,
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/food/condiment,
+		/obj/item/reagent_containers/condiment,
 		/obj/item/storage,
 		/obj/item/smallDelivery,
 		)

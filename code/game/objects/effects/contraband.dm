@@ -519,7 +519,7 @@
 /obj/structure/sign/poster/contraband/m90
 	name = "M90 SMG"
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
-	icon_state = "poster-bulldog"
+	icon_state = "poster-m90"
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"

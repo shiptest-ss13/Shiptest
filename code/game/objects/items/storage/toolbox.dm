@@ -158,11 +158,9 @@
 		new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 
 /obj/item/storage/toolbox/syndicate
-	name = "suspicious looking toolbox"
+	name = "black and red toolbox"
 	icon_state = "syndicate"
 	item_state = "toolbox_syndi"
-	force = 15
-	throwforce = 18
 	material_flags = NONE
 
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
@@ -172,12 +170,12 @@
 
 /obj/item/storage/toolbox/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
-	new /obj/item/wrench/syndie(src) //WS Edit - Cool Syndie Tools
+	new /obj/item/wrench/syndie(src)
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/syndie(src) //WS Begin - Cool Syndie Tools
+	new /obj/item/crowbar/syndie(src)
 	new /obj/item/wirecutters/syndie(src)
-	new /obj/item/multitool/syndie(src) //WS End
-	new /obj/item/clothing/gloves/color/red/insulated(src)
+	new /obj/item/multitool/syndie(src)
+	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/syndicate/empty
 
@@ -225,58 +223,6 @@
 	new /obj/item/stack/cable_coil/cyan(src)
 	new /obj/item/stack/cable_coil/white(src)
 
-/obj/item/storage/toolbox/ammo
-	name = "ammo can"
-	desc = "A metal container for storing multiple boxes of ammunition or grenades."
-	icon_state = "ammobox"
-	item_state = "ammobox"
-	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
-	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
-	material_flags = NONE
-	has_latches = FALSE
-
-/obj/item/storage/toolbox/ammo/a850r/PopulateContents()
-	name = "ammo can (8x50mmR)"
-	icon_state = "ammobox_850"
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/c8x50mm_box(src)
-
-/obj/item/storage/toolbox/ammo/a762_40/PopulateContents()
-	name = "ammo can (7.62x40mm CLIP)"
-	icon_state = "ammobox_762"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a762_40(src)
-
-/obj/item/storage/toolbox/ammo/a308/PopulateContents()
-	name = "ammo can (.308)"
-	icon_state = "ammobox_308"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a308(src)
-
-/obj/item/storage/toolbox/ammo/c45/PopulateContents()
-	name = "ammo can (.45)"
-	icon_state = "ammobox_45"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/c45(src)
-
-/obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
-	name = "ammo can (9mm)"
-	icon_state = "ammobox_9mm"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/c9mm(src)
-
-/obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
-	name = "ammo can (10mm)"
-	icon_state = "ammobox_10mm"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/c10mm(src)
-
-/obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
-	name = "ammo can (12ga)"
-	icon_state = "ammobox_12ga"
-	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a12g(src)
-
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"
 	desc = "Bearing the emblem of the Syndicate, this case contains a full infiltrator stealth suit, and has enough room to fit weaponry if necessary."
@@ -298,7 +244,6 @@
 		/obj/item/clothing/under/syndicate/bloodred,
 		/obj/item/clothing/gloves/color/latex/nitrile/infiltrator,
 		/obj/item/clothing/mask/infiltrator,
-		/obj/item/clothing/shoes/combat/sneakboots,
 		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
@@ -310,7 +255,6 @@
 	new /obj/item/clothing/under/syndicate/bloodred(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile/infiltrator(src)
 	new /obj/item/clothing/mask/infiltrator(src)
-	new /obj/item/clothing/shoes/combat/sneakboots(src)
 
 /obj/item/storage/toolbox/bounty
 	name = "defused explosives case"

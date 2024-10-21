@@ -180,11 +180,6 @@
 		else if(prob(50))
 			ReplaceWithLattice()
 
-/turf/open/floor/narsie_act(force, ignore_mobs, probability = 20)
-	. = ..()
-	if(.)
-		ChangeTurf(/turf/open/floor/engine/cult, flags = CHANGETURF_INHERIT_AIR)
-
 /turf/open/floor/acid_melt()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
