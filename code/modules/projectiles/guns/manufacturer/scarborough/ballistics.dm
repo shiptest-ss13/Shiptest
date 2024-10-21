@@ -401,8 +401,8 @@ EMPTY_GUN_HELPER(automatic/pistol/himehabu)
 			"y" = 23,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 38,
-			"y" = 18,
+			"x" = 28,
+			"y" = 16,
 		)
 	)
 
@@ -972,10 +972,14 @@ EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1
+		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -985,6 +989,10 @@ EMPTY_GUN_HELPER(automatic/assault/hydra/dmr)
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 25,
 			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 18,
 		)
 	)
 
