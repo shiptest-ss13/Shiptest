@@ -174,6 +174,10 @@
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
+/obj/item/storage/box/survival/inteq
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
 	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
