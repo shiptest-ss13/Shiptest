@@ -552,7 +552,7 @@
 		CRASH("The towed shuttles of [src] is cyclic, a shuttle is ontop of itself!")
 
 //this is to check if this shuttle can physically dock at dock S
-/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S)
+/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S, intention_to_dock = TRUE)
 	//coordinate of combined shuttle bounds in our dock's vector space (positive Y towards shuttle direction, positive determinant, our dock at (0,0))
 	var/list/bounds = return_union_bounds(get_all_towed_shuttles())
 	var/tow_dwidth = bounds[1]
@@ -577,7 +577,7 @@
 		// attempt to move us where we currently are, it will get weird.
 			return SHUTTLE_ALREADY_DOCKED
 
-	if(S.adjust_dock_for_landing)
+	if(S.adjust_dock_for_landing && intention_to_dock)
 		S.adjust_dock_to_shuttle(src)
 
 	if(istype(S, /obj/docking_port/stationary/transit))
@@ -595,13 +595,15 @@
 	if(tow_rheight > S.height-S.dheight)
 		return SHUTTLE_HEIGHT_TOO_LARGE
 
-
-
+	for(var/turf/closed/indestructible/edgeturf as anything in S.return_turfs())
+		if(!istype(edgeturf))
+			continue
+		return SHUTTLE_TOUCHES_EDGE
 
 	return SHUTTLE_CAN_DOCK
 
-/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE)
-	var/status = canDock(S)
+/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE, intention_to_dock = TRUE)
+	var/status = canDock(S, intention_to_dock)
 	if(status == SHUTTLE_CAN_DOCK)
 		return TRUE
 	else
