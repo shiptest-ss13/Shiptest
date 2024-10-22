@@ -1,0 +1,11 @@
+author: Sun-Soaked
+changes:
+  - {rscadd: 'Directional Mines, implemented as Claymores.'}
+  - {rscadd: Mines now have World Icons}
+  - {balance: explosions now only strip to space when a tile is already damaged}
+  - {bugfix: Prox mines explode from slightly further away & no longer activate through
+      walls.}
+  - {bugfix: Multiple mines can no longer be stacked on a tile}
+  - {code_imp: 'fire_casing() can now be called by non-mobs, allowing objects to shoot
+      casings.'}
+delete-after: true
