@@ -2631,7 +2631,7 @@
 
 /datum/reagent/sulfur_dioxide
 	name = "Sulfur Dioxide"
-	description = "An invisible gas. Produced natrually by volcanos, it's quite bad for your lungs"
+	description = "A transparent gas produced by geological activity and burning certain fuels."
 	reagent_state = GAS
 	color = "#f0e518"
 	taste_mult = 0 // tasteless
