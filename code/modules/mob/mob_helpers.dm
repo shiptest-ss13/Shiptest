@@ -147,7 +147,7 @@
 			if(20)
 				newletter += "[newletter][newletter]"
 			else
-				pass()
+				EMPTY_BLOCK_GUARD
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -192,7 +192,7 @@
 			if(5)
 				newletter = "glor"
 			else
-				pass()
+				EMPTY_BLOCK_GUARD
 		. += newletter
 	return sanitize(.)
 
