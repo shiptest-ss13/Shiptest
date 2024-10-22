@@ -308,7 +308,6 @@
 	name = "red bandana"
 	desc = "A fine red bandana with nanotech lining."
 	icon_state = "bandred"
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 /obj/item/clothing/mask/bandana/blue
 	name = "blue bandana"
