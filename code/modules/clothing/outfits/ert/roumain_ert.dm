@@ -13,7 +13,7 @@
 	belt = /obj/item/gun/ballistic/revolver/shadow
 	suit_store = /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 
-	l_pocket = /obj/item/storage/box/ammo/c38
+	l_pocket = /obj/item/ammo_box/a44roum_speedloader
 	r_pocket = /obj/item/flashlight/lantern
 
 	duffelbag = /obj/item/storage/backpack/satchel/leather
@@ -22,7 +22,7 @@
 	satchel = /obj/item/storage/backpack/satchel/leather
 	box = null
 
-	backpack_contents = list(/obj/item/ammo_box/a44roum_speedloader = 3)
+	backpack_contents = list(/obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/c38)
 
 /datum/outfit/job/roumain/ert/firestorm
 	name = "ERT - Saint-Roumain Hunter (Firestorm)" // firestorm and shadow
@@ -30,9 +30,9 @@
 	belt = /obj/item/gun/ballistic/revolver/shadow
 	suit_store = /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 
-	l_pocket = /obj/item/storage/box/ammo/a44roum
+	l_pocket = /obj/item/ammo_box/a44roum_speedloader
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 3, /obj/item/ammo_box/a44roum_speedloader = 3)
+	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 3, /obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/a44roum)
 
 /datum/outfit/job/roumain/ert/vickland
 	name = "ERT - Saint-Roumain Hunter (Vickland)" // vickland and candor
@@ -40,9 +40,9 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/vickland
 
-	l_pocket = /obj/item/storage/box/ammo/a308
+	l_pocket = /obj/item/ammo_box/magazine/m45
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/ammo_box/magazine/m45 = 3)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/storage/box/ammo/a308, /obj/item/ammo_box/magazine/m45 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special
@@ -109,7 +109,7 @@
 
 	suit_store = /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 
-	l_pocket = /obj/item/storage/box/ammo/a44roum
+	l_pocket = /obj/item/ammo_box/a357
 
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/buckshot/twobore = 8)
 
@@ -128,6 +128,4 @@
 	belt = /obj/item/gun/ballistic/revolver/ashhand
 	id = /obj/item/card/id/silver
 
-	l_pocket = /obj/item/storage/box/ammo/a4570
-
-	backpack_contents = list(/obj/item/storage/box/ammo/a12g_buckshot)
+	backpack_contents = list(/obj/item/storage/box/ammo/a12g_buckshot, /obj/item/storage/box/ammo/a4570)

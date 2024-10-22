@@ -104,6 +104,7 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cm5_9mm,
+		/obj/item/ammo_box/magazine/cm5_9mm/rubber,
 	)
 	bolt_type = BOLT_TYPE_CLIP
 	weapon_weight = WEAPON_LIGHT
@@ -486,6 +487,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cm15_12g,
+		/obj/item/ammo_box/magazine/cm15_12g/incendiary
 	)
 
 	empty_indicator = FALSE
