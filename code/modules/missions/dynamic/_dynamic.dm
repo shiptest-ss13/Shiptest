@@ -14,6 +14,8 @@
 	if(isnull(mission_index))
 		stack_trace("[src] does not have a mission index")
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
+		if(mission_poi.use_count <= 0)
+			qdel(mission_poi)
 		if(!isnull(mission_poi.mission_index) && (mission_index != mission_poi.mission_index))
 			continue
 		if(!istype(mission_poi, /obj/effect/landmark/mission_poi/main))
@@ -28,6 +30,8 @@
 
 	// Reiterate through the loop and attemp to spawn any mission that matches our index but dont pass any type so it will need its own
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
+		if(mission_poi.use_count <= 0)
+			qdel(mission_poi)
 		if(isnull(mission_poi.mission_index) || (mission_index != mission_poi.mission_index))
 			continue
 		if(istype(mission_poi, /obj/effect/landmark/mission_poi/main) || !ispath(mission_poi.type_to_spawn))

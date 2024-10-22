@@ -81,6 +81,12 @@
 				return
 			if(istype(focus, /datum/overmap))
 				focus.admin_load()
+		if("inspect_mission")
+			var/datum/mission/dynamic/mission = locate(params["ref"])
+		if("load_mission")
+			var/datum/mission/dynamic/mission = locate(params["ref"])
+			if(istype(mission, /datum/mission))
+				mission.start_mission()
 
 /datum/overmap_inspect/ui_data(mob/user)
 	return focus.ui_data(user)

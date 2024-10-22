@@ -88,12 +88,12 @@ export const OvermapExamine = (props, context) => {
             )}
             <LabeledList.Item label="Active Missions">
               {data.active_missions?.map((mission) => (
-                <Box>{mission.name}</Box>
+                <Box>{mission.name} <Button icon="info "onClick={() => act('inspect_mission', { ref: mission.ref })}></Button></Box>
               ))}
             </LabeledList.Item>
             <LabeledList.Item label="Inactive Missions">
               {data.inactive_missions?.map((mission) => (
-                <Box>{mission.name}</Box>
+                <Box>{mission.name} <Button icon="plus" onClick={() => act('load_mission', { ref: mission.ref })}></Button></Box>
               ))}
             </LabeledList.Item>
           </LabeledList>

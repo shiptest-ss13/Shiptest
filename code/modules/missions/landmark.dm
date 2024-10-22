@@ -38,8 +38,6 @@
 	// We dont have an item to return
 	if(!istype(item_of_interest))
 		stack_trace("[src] did not return a item_of_interest")
-	if(use_count <= 0)
-		qdel(src)
 	return item_of_interest
 
 /obj/effect/landmark/mission_poi/main
