@@ -49,7 +49,7 @@
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
 
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE)
-	dragon_fire_line(src, burn_turfs)
+	fire_line(src, burn_turfs)
 
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/death(gibbed)

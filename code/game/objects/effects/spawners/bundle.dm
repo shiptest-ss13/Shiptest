@@ -43,7 +43,7 @@
 /obj/effect/spawner/bundle/costume/maid
 	name = "maid costume spawner"
 	items = list(
-		/obj/item/clothing/under/dress/skirt,
+		/obj/item/clothing/under/dress/skirt/color,
 		/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
 		/obj/item/clothing/glasses/blindfold)
 

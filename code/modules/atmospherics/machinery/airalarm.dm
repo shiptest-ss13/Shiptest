@@ -242,8 +242,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	var/area/ourarea = get_area(src)
 	ourarea.atmosalert(FALSE, src)
 	return ..()
