@@ -272,7 +272,6 @@
 	fire_products = list(GAS_N2 = 0.2, GAS_H2O = 0.8)
 	enthalpy = -46000
 	fire_burn_rate = 0.2
-	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100
 
 	odor = GAS_ODOR_CHEMICAL
 	odor_emotes = TRUE

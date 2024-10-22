@@ -107,9 +107,9 @@
 	var/datum/radio_frequency/radio_connection
 
 	//anything outright hazardous (flammable, toxic, generally Weird)
-	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
 	//anything that isn't o2 or n2.
-	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM, GAS_CO)
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM, GAS_CO, GAS_ARGON, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
 
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
@@ -131,6 +131,11 @@
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
 		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA,				= new/datum/tlv/dangerous,
+		GAS_METHANE,				= new/datum/tlv/dangerous,
+		GAS_SO2,					= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -154,6 +159,11 @@
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
 		GAS_CO						= new/datum/tlv/dangerous
+		GAS_ARGON					= new/datum/tlv/no_checks
+		GAS_AMMONIA,				= new/datum/tlv/no_checks,
+		GAS_METHANE,				= new/datum/tlv/no_checks,
+		GAS_SO2,					= new/datum/tlv/no_checks,
+		GAS_O3						= new/datum/tlv/no_checks,
 	)
 	heating_manage = FALSE
 
@@ -178,6 +188,11 @@
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
 		GAS_CO						= new/datum/tlv/dangerous
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA,				= new/datum/tlv/dangerous,
+		GAS_METHANE,				= new/datum/tlv/dangerous,
+		GAS_SO2,					= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 	heating_manage = FALSE
 
@@ -242,8 +257,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	var/area/ourarea = get_area(src)
 	ourarea.atmosalert(FALSE, src)
 	return ..()
