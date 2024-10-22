@@ -4136,7 +4136,6 @@
 "pk" = (
 /obj/structure/closet/secure_closet/freezer/wall/directional/east,
 /obj/item/clothing/under/shorts/cookjorts,
-/obj/item/clothing/shoes/cookflops,
 /obj/item/clothing/suit/toggle/chef,
 /obj/item/clothing/under/rank/civilian/chef,
 /obj/item/clothing/under/rank/civilian/chef/skirt,
@@ -13073,22 +13072,10 @@
 	pixel_x = 5;
 	pixel_y = 4
 	},
-/obj/item/ammo_box/c9mm{
-	pixel_x = 4;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/c9mm{
-	pixel_x = 4;
-	pixel_y = 1
-	},
-/obj/item/ammo_box/c9mm{
-	pixel_x = 4;
-	pixel_y = 9
-	},
-/obj/item/ammo_box/c9mm/ap{
-	pixel_y = 17;
-	pixel_x = 4
-	},
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm/ap,
 /obj/item/stock_parts/cell/gun{
 	pixel_x = -3;
 	pixel_y = -5
@@ -13621,7 +13608,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/structure/fireaxecabinet{
+/obj/structure/cabinet/fireaxe{
 	pixel_y = 27
 	},
 /obj/structure/closet/secure_closet/engineering_electrical,

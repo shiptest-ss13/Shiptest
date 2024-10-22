@@ -22,7 +22,7 @@
 	bubble_icon = "alien"
 	a_intent = INTENT_HARM
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	unsuitable_atmos_damage = 15
 	faction = list(ROLE_ALIEN)
 	status_flags = CANPUSH
@@ -30,7 +30,6 @@
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	unique_name = 1
-	gold_core_spawnable = HOSTILE_SPAWN
 	deathsound = 'sound/voice/hiss6.ogg'
 	deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw..."
 
@@ -143,7 +142,6 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
 							/obj/item/stack/sheet/animalhide/xeno = 2)
 	mob_size = MOB_SIZE_LARGE
-	gold_core_spawnable = NO_SPAWN
 
 /obj/projectile/neurotox
 	name = "neurotoxin"
@@ -169,7 +167,6 @@
 	friendly_verb_simple = "caress"
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	gold_core_spawnable = HOSTILE_SPAWN
 	icon_state = "maid"
 	icon_living = "maid"
 	icon_dead = "maid_dead"

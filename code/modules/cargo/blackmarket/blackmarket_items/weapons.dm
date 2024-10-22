@@ -129,7 +129,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = list(/datum/blackmarket_item/ammo/e40_mag, /datum/blackmarket_item/ammo/c299)
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
 	price_max = 10000
@@ -350,4 +350,23 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of dubious make used by various engineers throughout the years to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
 
+	price_min = 2500
+	price_max = 3500
+	stock = 2
+	availability_prob = 40
+
+/datum/blackmarket_item/weapon/oneshot
+	name = "Hammer Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
+
+	price_min = 3000
+	price_max = 4500
+	stock_min = 1
+	stock_max = 5
+	availability_prob = 25
