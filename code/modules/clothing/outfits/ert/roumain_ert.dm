@@ -13,7 +13,7 @@
 	belt = /obj/item/gun/ballistic/revolver/shadow
 	suit_store = /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 
-	l_pocket = /obj/item/ammo_box/c38_box
+	l_pocket = /obj/item/storage/box/ammo/c38
 	r_pocket = /obj/item/flashlight/lantern
 
 	duffelbag = /obj/item/storage/backpack/satchel/leather
@@ -30,7 +30,7 @@
 	belt = /obj/item/gun/ballistic/revolver/shadow
 	suit_store = /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 
-	l_pocket = /obj/item/ammo_box/a44roum
+	l_pocket = /obj/item/storage/box/ammo/a44roum
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 3, /obj/item/ammo_box/a44roum_speedloader = 3)
 
@@ -40,7 +40,7 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/vickland
 
-	l_pocket = /obj/item/ammo_box/a308
+	l_pocket = /obj/item/storage/box/ammo/a308
 
 	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/ammo_box/magazine/m45 = 3)
 
@@ -109,7 +109,7 @@
 
 	suit_store = /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 
-	l_pocket = /obj/item/ammo_box/a44roum
+	l_pocket = /obj/item/storage/box/ammo/a44roum
 
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/buckshot/twobore = 8)
 
@@ -128,6 +128,6 @@
 	belt = /obj/item/gun/ballistic/revolver/ashhand
 	id = /obj/item/card/id/silver
 
-	l_pocket = /obj/item/ammo_box/a4570
+	l_pocket = /obj/item/storage/box/ammo/a4570
 
-	backpack_contents = list(/obj/item/ammo_box/a12g)
+	backpack_contents = list(/obj/item/storage/box/ammo/a12g_buckshot)

@@ -137,12 +137,7 @@
 NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/smg/cm5/rubber/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/cm5_9mm/rubber(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9mm)"
@@ -520,9 +515,4 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/shotgun/cm15/incendiary/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/cm15_12g/incendiary(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary

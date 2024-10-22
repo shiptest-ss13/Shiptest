@@ -57,13 +57,6 @@
 		W.registered_name = H.real_name
 		W.update_label()
 
-/datum/outfit/ghost_cultist
-	name = "Cultist Ghost"
-
-	uniform = /obj/item/clothing/under/color/black/ghost
-	suit = /obj/item/clothing/suit/hooded/cultrobes/alt/ghost
-	shoes = /obj/item/clothing/shoes/cult/alt/ghost
-
 /datum/outfit/wizard
 	name = "Blue Wizard"
 

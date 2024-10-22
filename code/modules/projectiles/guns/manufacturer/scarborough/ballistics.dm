@@ -1013,12 +1013,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/drum/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/m12g_bulldog/drum
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
