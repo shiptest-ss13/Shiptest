@@ -11,6 +11,7 @@
 	icon_state = "mine"
 	item_state = "assembly"//when we get custom sprites replace this. please
 	base_icon_state = "mine"
+	light_color = "#FF0000"
 
 	/// Is our mine live?
 	var/armed = FALSE
@@ -58,6 +59,8 @@
 /obj/item/mine/proc/disarm()
 	if(triggered) //no turning back now
 		return
+	light_power = 0
+	light_range = 0
 	anchored = FALSE
 	armed = FALSE
 	update_appearance(UPDATE_ICON_STATE)
@@ -94,23 +97,20 @@
 /obj/item/mine/proc/now_armed()
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
+	light_power = 1
+	light_range = 1
 	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 /// Can this mine trigger on the passed movable?
 /obj/item/mine/proc/can_trigger(atom/movable/on_who)
-	//var/badtype = typecacheof(list(/obj/effect, /obj/item/mine))
 	if(triggered || !isturf(loc) || !armed || iseffect(on_who) || istype(on_who, /obj/item/mine))
 		return FALSE
-	//if(on_who == badtype)//no recursive self triggering. Bad landmine
-	//	return FALSE
 	return TRUE
 
 /// When something sets off a mine
 /obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
-	if(obj_integrity <= 0)
-		return
-	if(triggered) //too busy detonating to detonate again
+	if(obj_integrity <= 0 || triggered)//too busy detonating to detonate again
 		return
 	if(triggerer)
 		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
@@ -122,7 +122,6 @@
 		playsound(src, 'sound/items/mine_activate.ogg', 70, FALSE)
 	else
 		playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
-	light_color = "#FF0000"
 	light_power = 5
 	light_range = 3
 	if(!blast_delay)//addtimer gets mad if the delay is 0
@@ -144,7 +143,7 @@
 	if(triggered)//setting triggered to false in mine_effect() creates a reusable mine
 		qdel(src)
 
-///trying to pick up a live mine is probably up there when it comes to terrible ideas
+//trying to pick up a live mine is probably up there when it comes to terrible ideas
 /obj/item/mine/attack_hand(mob/user)
 	if(armed)
 		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
@@ -161,7 +160,7 @@
 			user.visible_message(span_notice("[user] withdraws their hand from \the [src]."), span_notice("You decide against picking up \the [src]."))
 	. =..()
 
-///just don't.
+//just don't.
 /obj/item/mine/attackby(obj/item/I, mob/user)
 	if(!armed)
 		to_chat(user, span_notice("You smack \the [src] with [I]. Thankfully, nothing happens."))
@@ -174,8 +173,8 @@
 			trigger_mine(user)
 
 //
-//PRESSURE BASED MINE:
-//Mine that explodes when stepped on.
+///PRESSURE BASED MINE:
+///Mine that explodes when stepped on.
 /obj/item/mine/pressure
 	name = "dummy landmine"
 	/// When true, mines trigger instantly on being stepped upon
@@ -215,7 +214,7 @@
 		else if(!isnull(unlucky_sod))
 			. += span_danger("The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now.")
 
-///step 1: the mistake
+//step 1: the mistake
 /obj/item/mine/pressure/proc/on_entered(datum/source, atom/movable/arrived)
 	SIGNAL_HANDLER
 	if(!can_trigger(arrived))
@@ -243,7 +242,7 @@
 			trigger_mine(arrived)
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
-///step 2: the consequences
+//step 2: the consequences
 /obj/item/mine/pressure/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
 	if(hair_trigger)
@@ -280,7 +279,7 @@
 		. = ..()
 
 
-///PROXIMITY MINES
+//PROXIMITY MINES
 ///Mines that explode when someone moves nearby. Simpler, because I don't have to worry about saving step info or disarming logic
 /obj/item/mine/proximity
 	name = "dummy proximity mine"
@@ -304,9 +303,6 @@
 /obj/item/mine/proximity/now_armed()
 	. = ..()
 	proximity_monitor = new(src, proximity_range)
-	light_color = "#FF0000"
-	light_power = 1
-	light_range = 1
 
 /obj/item/mine/proximity/disarm()
 	QDEL_NULL(proximity_monitor)
@@ -331,7 +327,7 @@
 	QDEL_NULL(proximity_monitor)
 	return
 
-///DIRECTIONAL MINES
+//DIRECTIONAL MINES
 ///Once deployed, keeps an eye on a line of turfs in the faced direction. If something moves in them, explode.
 /obj/item/mine/directional
 	name = "directional mine"
@@ -344,7 +340,7 @@
 	var/trigger_range = 4
 
 	///projectile casing to fire in the selected direction when the mine is triggered.
-	///null prevents a projectile from being fired.
+	//null prevents a projectile from being fired.
 	var/obj/item/ammo_casing/casingtype = null
 
 	///cache of turfs for detection area
@@ -395,7 +391,7 @@
 	INVOKE_ASYNC(src, PROC_REF(trigger_mine), arrived)
 
 
-///pew pew
+//pew pew
 /obj/item/mine/directional/mine_effect(mob/victim)
 	if(casingtype && target_turf && victim ?(src.loc != victim.loc) : victim == null)
 		var/obj/item/ammo_casing/casing = new casingtype(src)
@@ -417,7 +413,6 @@
 
 //
 //LANDMINE TYPES
-//Rylie please help me make these more immersive
 //
 
 /obj/item/mine/pressure/explosive
@@ -617,9 +612,9 @@
 
 
 
-///Claymores
-///shrapnel based dir explosive, extreme short range
-///FRONT TOWARDS ENEMY
+//Claymores
+//shrapnel based dir explosive, extreme short range
+//FRONT TOWARDS ENEMY
 /obj/item/mine/directional/claymore
 	name = "C-10 Claymore"
 	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
