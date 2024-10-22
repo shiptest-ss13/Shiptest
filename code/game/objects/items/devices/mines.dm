@@ -203,6 +203,11 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	wires = new /datum/wires/mine(src)
 
+/obj/item/mine/pressure/Destroy()
+	if(wires)
+		QDEL_NULL(wires)
+	. = ..()
+
 /obj/item/mine/pressure/examine(mob/user)
 	. = ..()
 	if(hair_trigger)
