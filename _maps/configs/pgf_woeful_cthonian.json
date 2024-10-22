@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/pgf",
+	"prefix": "PGFN",
+	"map_name": "Woeful Cthonian-class Patrol Cutter",
+	"namelists": [
+		"PGF"
+	],
+	"map_short_name": "Cthonian-class",
+	"description": "",
+	"tags": [
+
+	],
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/pgf/pgf_crying_sun.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/gezena/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Navy Engineer": {
+			"outfit": "/datum/outfit/job/gezena/engineer",
+			"slots": 2
+		},
+		"Navy Doctor": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 2
+		}
+	},
+	"enabled":true
+}

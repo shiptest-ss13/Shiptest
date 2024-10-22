@@ -1,3 +1,9 @@
+/obj/item/storage/backpack/satchel/flat/cthonian/PopulateContents()
+	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/rum(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/absinthe(src)
+
 /obj/item/paper/fluff/ship/cthonian
 	name = "Blank Federated Navy Paperwork"
 	default_raw_text = {"<html>
