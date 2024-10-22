@@ -848,6 +848,7 @@
 	base_icon_state = "sheath-pgf"
 	icon_state = "sheath-pgf"
 	item_state = "sheath-pgf"
+	sabre_type = /obj/item/melee/sword/sabre/pgf
 
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
