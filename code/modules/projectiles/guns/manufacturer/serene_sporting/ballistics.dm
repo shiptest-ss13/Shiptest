@@ -14,7 +14,10 @@
 	icon_state = "m17"
 	item_state = "so_generic"
 
-	mag_type = /obj/item/ammo_box/magazine/m17
+	default_ammo_type = /obj/item/ammo_box/magazine/m17
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m17,
+	)
 
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
 
@@ -72,7 +75,11 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	item_state = "m12"
 
 	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12_sporter
+	default_ammo_type = /obj/item/ammo_box/magazine/m12_sporter
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12_sporter,
+	)
+
 	fire_delay =  0.4 SECONDS
 	burst_size = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -148,7 +155,10 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	icon_state = "m15"
 	item_state = "m15"
 
-	mag_type = /obj/item/ammo_box/magazine/m15
+	default_ammo_type = /obj/item/ammo_box/magazine/m15
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m15,
+	)
 
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 
@@ -180,7 +190,6 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 EMPTY_GUN_HELPER(automatic/m15)
 
-
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"
 	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
@@ -208,7 +217,10 @@ EMPTY_GUN_HELPER(automatic/m15)
 	item_state = "buckmaster"
 
 	fire_delay = 0.5 SECONDS
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/buckmaster,
+	)
 	w_class = WEIGHT_CLASS_BULKY
 
 	bolt_type = BOLT_TYPE_LOCKING
