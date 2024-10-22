@@ -10,7 +10,10 @@
 	icon_state = "cm23"
 	item_state = "clip_generic"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/cm23
+	default_ammo_type = /obj/item/ammo_box/magazine/cm23
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/cm23,
+	)
 //	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/cm23.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -24,7 +27,7 @@
 	recoil_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/cm23
 	name = "CM-23 pistol magazine (10mm)"
@@ -52,7 +55,10 @@
 
 	icon_state = "cm70"
 	item_state = "clip_generic"
-	mag_type = /obj/item/ammo_box/magazine/m9mm_cm70
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_cm70
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m9mm_cm70,
+	)
 //	can_suppress = FALSE
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
@@ -95,7 +101,10 @@
 	icon_state = "cm5"
 	item_state = "cm5"
 
-	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/cm5_9mm,
+	)
 	bolt_type = BOLT_TYPE_CLIP
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
@@ -125,7 +134,7 @@
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-EMPTY_GUN_HELPER(automatic/smg/cm5)
+NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9mm)"
@@ -235,7 +244,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	bolt_type = BOLT_TYPE_CLIP
-	mag_type = /obj/item/ammo_box/magazine/f4_308
+	default_ammo_type = /obj/item/ammo_box/magazine/f4_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f4_308,
+	)
 	fire_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	burst_size = 0
 	actions_types = list()
@@ -290,7 +302,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 	fire_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 
-	mag_type = /obj/item/ammo_box/magazine/f90
+	default_ammo_type = /obj/item/ammo_box/magazine/f90
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/f90,
+	)
 	bolt_type = BOLT_TYPE_CLIP
 
 	fire_delay = 1 SECONDS
@@ -335,7 +350,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	bolt_type = BOLT_TYPE_CLIP
-	mag_type = /obj/item/ammo_box/magazine/p16
+	default_ammo_type = /obj/item/ammo_box/magazine/p16
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/p16,
+	)
 	spread = 2
 	wield_delay = 0.5 SECONDS
 
@@ -398,7 +416,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_MINUTEMAN
-	mag_type = /obj/item/ammo_box/magazine/cm40_762_40_box
+	default_ammo_type = /obj/item/ammo_box/magazine/cm40_762_40_box
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/cm40_762_40_box,
+	)
 
 	spread = 10
 	spread_unwielded = 35
@@ -454,7 +475,10 @@ EMPTY_GUN_HELPER(automatic/smg/cm5)
 
 	weapon_weight = WEAPON_MEDIUM
 //	can_suppress = FALSE
-	mag_type = /obj/item/ammo_box/magazine/cm15_12g
+	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/cm15_12g,
+	)
 
 	empty_indicator = FALSE
 	unique_mag_sprites_for_variants = FALSE

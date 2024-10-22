@@ -666,7 +666,7 @@
 		else if(istype(AM, /obj/item/mod/control) && !storage)
 			AM.forceMove(src)
 			mod = AM
-		else if(istype(AM, /obj/item) && !storage)
+		else if(istype(AM, /obj/item) && !AM.anchored && !storage)
 			AM.forceMove(src)
 			storage = AM
 	update_appearance()
