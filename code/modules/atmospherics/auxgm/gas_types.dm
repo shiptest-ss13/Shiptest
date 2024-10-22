@@ -28,6 +28,7 @@
 			alert_type = /atom/movable/screen/alert/too_much_nitro
 		)
 	)
+
 /datum/gas/carbon_monoxide
 	id = GAS_CO
 	specific_heat = 30
@@ -76,6 +77,10 @@
 	fire_products = FIRE_PRODUCT_PLASMA
 	enthalpy = FIRE_PLASMA_ENERGY_RELEASED // 3000000, 3 megajoules, 3000 kj
 
+	odor = GAS_ODOR_SMOG
+	odor_emotes = TRUE
+	odor_power = 10 //extremely toxic
+
 /datum/gas/water_vapor
 	id = GAS_H2O
 	specific_heat = 75
@@ -99,7 +104,7 @@
 	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100
 	enthalpy = 81600
 
-/datum/gas/nitryl
+/datum/gas/nitryl //marked for removal
 	id = GAS_NITRYL
 	specific_heat = 20
 	name = "Nitryl"
@@ -133,7 +138,7 @@
 	fusion_power = 8
 	enthalpy = FIRE_CARBON_ENERGY_RELEASED // it is a mystery
 
-/datum/gas/stimulum
+/datum/gas/stimulum //marked for removal
 	id = GAS_STIMULUM
 	specific_heat = 5
 	name = "Stimulum"
@@ -143,9 +148,17 @@
 	id = GAS_O3
 	specific_heat = 30
 	name = "Ozone"
+	gas_overlay = "water_vapor"
+	moles_visible = MOLES_GAS_VISIBLE
+	color = "#a1a1e6"
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
-	oxidation_rate = 2
+	oxidation_rate = 3
 	enthalpy = 142000
+
+	odor = GAS_ODOR_CHEMICAL
+	odor_emotes = TRUE
+	odor_power = 1
+
 
 /datum/gas/argon
 	id = GAS_ARGON
@@ -156,7 +169,7 @@
 	//moles_visible = MOLES_GAS_VISIBLE
 
 
-/datum/gas/pluoxium //argon
+/datum/gas/pluoxium //marked for removal
 	id = GAS_PLUOXIUM
 	specific_heat = 80
 	name = "Pluoxium"
@@ -165,7 +178,7 @@
 	oxidation_rate = 3 // when it can oxidize, it can oxidize a LOT
 	enthalpy = 142 // but it reduces the heat output a bit
 
-/datum/gas/hypernoblium
+/datum/gas/hypernoblium //marked for removal
 	id = GAS_HYPERNOB
 	specific_heat = 2000
 	name = "Hyper-noblium"
@@ -224,10 +237,14 @@
 	specific_heat = 22
 	name = "Sulfur Dioxide"
 	flags = GAS_FLAG_DANGEROUS
-	moles_visible = MOLES_GAS_VISIBLE * 10
+	moles_visible = MOLES_GAS_VISIBLE * 40
 	gas_overlay = "generic"
 	color = "#d4cb28"
 	enthalpy = -296800
+
+	odor = GAS_ODOR_SULFUR
+	odor_emotes = TRUE
+	odor_power = 1
 
 /datum/gas/methane
 	id = GAS_METHANE
@@ -241,3 +258,22 @@
 	enthalpy = -74600
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
+
+/datum/gas/ammonia
+	id = GAS_AMMONIA
+
+	specific_heat = 100 //used as a coolant
+	name = "Ammonia"
+	flags = GAS_FLAG_DANGEROUS
+	moles_visible = MOLES_GAS_VISIBLE
+	color = "#ffe"
+	gas_overlay = "nitrous_oxide"
+	fusion_power = 0
+	fire_products = list(GAS_N2 = 0.2, GAS_H2O = 0.8)
+	enthalpy = -46000
+	fire_burn_rate = 0.2
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100
+
+	odor = GAS_ODOR_CHEMICAL
+	odor_emotes = TRUE
+	odor_power = 3

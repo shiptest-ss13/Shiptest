@@ -346,10 +346,14 @@
 #define GAS_ARGON "ar"
 #define GAS_METHANE "methane"
 #define GAS_AMMONIA "ammonia"
-#define GAS_ACETYLENE "acetylene"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// odors
+#define GAS_ODOR_CHEMICAL list(span_notice("It smells fainly like space cleaner."), span_danger("It smells like chemicals."), span_danger("There's a strong smell in the air, like chlorine."), span_userdanger("The smell burns the inside of your nose! It's unbearable!"))
+#define GAS_ODOR_SULFUR list(span_notice("Somebody passed gas in here."), span_danger("It smells like rotten eggs."), span_danger("There's a strong smell in the air, like something died here."), span_userdanger("The smell of chemical rot overwhelms you! It's unbearable!"))
+#define GAS_ODOR_SMOG list(null, span_notice("Theres a charred smell in the air."), span_danger("There's a strong smell in the air, like something's burning."), span_userdanger("The acidic smell overwhelms you! It's unbearable!"))
 
 // Flag for update_air_ref()
 #define AIR_REF_CLOSED_TURF -1

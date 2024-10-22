@@ -74,6 +74,12 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/fire_burn_rate = 1
 	/// How much radiation is released when this gas burns
 	var/fire_radiation_released = 0
+	///a list of odor texts this gas gives, if null or odor_power is 0 this gas is smellless
+	var/list/odor
+	///if the odor gives negative signs such as coughing on a high concentratation. if your gas doesn't have a bad smell, set this to false
+	var/odor_emotes = TRUE
+	///the multiplier per of this gas's odor, if higher its easily detected in lower conentrations and much more unbearable at lower conentrations as well
+	var/odor_power = 0
 
 /datum/gas/proc/breath(partial_pressure, light_threshold, heavy_threshold, moles, mob/living/carbon/C, obj/item/organ/lungs/lungs)
 	// This is only called on gases with the GAS_FLAG_BREATH_PROC flag. When possible, do NOT use this--

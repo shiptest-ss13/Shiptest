@@ -78,6 +78,12 @@
 	icon_state = "blue"
 	gas_type = GAS_O2
 
+/obj/machinery/portable_atmospherics/canister/ozone
+	name = "ozone (o3) canister"
+	desc = "Ozone. Sometimes used as 'clean air', this is not good for your lungs nor heart."
+	icon_state = "darkblue"
+	gas_type = GAS_O3
+
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide
 	name = "co2 canister"
 	desc = "Carbon dioxide. What the fuck is carbon dioxide?"
@@ -125,6 +131,12 @@
 	icon_state = "nob"
 	gas_type = GAS_HYPERNOB
 
+/obj/machinery/portable_atmospherics/canister/argon
+	name = "argon canister"
+	desc = "Hyper-Noblium. More noble than all other gases."
+	icon_state = "purple"
+	gas_type = GAS_ARGON
+
 /obj/machinery/portable_atmospherics/canister/nitryl
 	name = "nitryl canister"
 	desc = "Nitryl gas. Feels great 'til the acid eats your lungs."
@@ -162,6 +174,24 @@
 	desc = "Hydrogen. Used in thruster fuel."
 	icon_state = "orangews"
 	gas_type = GAS_HYDROGEN
+
+/obj/machinery/portable_atmospherics/canister/methane
+	name = "methane canister"
+	desc = "Methane. Used in thruster fuel along with kitchen stoves."
+	icon_state = "methane"
+	gas_type = GAS_METHANE
+
+/obj/machinery/portable_atmospherics/canister/ammonia
+	name = "ammonia canister"
+	desc = "Ammonia. Used in industrila processes and is also very poor for your eyes and lungs."
+	icon_state = "brown"
+	gas_type = GAS_AMMONIA
+
+/obj/machinery/portable_atmospherics/canister/sulfur_dioxide
+	name = "sulfur dioxide canister"
+	desc = "Sulfur Dioxide. Highly dangerous and harms the lungs. Produced naturally by volcanos."
+	icon_state = "sulfurdioxide"
+	gas_type = GAS_SO2
 
 /obj/machinery/portable_atmospherics/canister/fuel
 	name = "fuel canister"
