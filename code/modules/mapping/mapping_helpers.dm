@@ -144,6 +144,25 @@
 	else
 		airlock.locked = TRUE
 
+/obj/effect/mapping_helpers/airlock/welded
+	name = "airlock welder"
+
+/obj/effect/mapping_helpers/airlock/welded/payload(obj/machinery/door/airlock/airlock)
+	if(airlock.welded)
+		log_mapping("[src] at [AREACOORD(src)] tried to weld [airlock] but it's already locked!")
+	else
+		airlock.welded = TRUE
+
+/obj/effect/mapping_helpers/airlock/sealed
+	name = "airlock sealer"
+
+/obj/effect/mapping_helpers/airlock/sealed/payload(obj/machinery/door/airlock/airlock)
+	if(airlock.seal)
+		log_mapping("[src] at [AREACOORD(src)] tried to seal [airlock] but it's already already got a seal? What the hell!")
+	else
+		airlock.seal = new /obj/item/door_seal(src)
+
+
 
 /obj/effect/mapping_helpers/airlock/unres
 	name = "airlock unresctricted side helper"

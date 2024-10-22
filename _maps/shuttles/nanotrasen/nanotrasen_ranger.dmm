@@ -243,7 +243,7 @@
 /obj/item/gps,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/storage/belt/security/webbing,
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/structure/window/reinforced/tinted{
 	dir = 4
@@ -1750,11 +1750,11 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/item/ammo_box/c9mm,
-/obj/item/ammo_box/c9mm,
-/obj/item/ammo_box/c9mm/rubbershot,
-/obj/item/ammo_box/c9mm,
-/obj/item/ammo_box/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
@@ -4187,7 +4187,7 @@
 	pixel_x = 7;
 	pixel_y = -20
 	},
-/obj/item/storage/pistolcase/egun,
+/obj/item/storage/guncase/energy/egun,
 /obj/item/megaphone/command,
 /obj/structure/closet/secure_closet/lp/lieutenant,
 /obj/effect/turf_decal/techfloor{
@@ -6250,14 +6250,14 @@
 	name = "Armory";
 	req_ship_access = 1
 	},
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
-/obj/item/storage/pistolcase,
+/obj/item/storage/guncase/pistol,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 5
 	},

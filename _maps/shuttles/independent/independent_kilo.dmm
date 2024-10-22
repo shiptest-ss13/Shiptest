@@ -661,9 +661,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/ammo_box/a12g/rubbershot,
+/obj/item/storage/box/ammo/a12g_rubbershot,
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn{
-	spawnwithmagazine = 0
+	default_ammo_type = 0
 	},
 /obj/structure/cable/pink{
 	icon_state = "4-10"
@@ -1875,8 +1875,8 @@
 	icon_state = "9-10"
 	},
 /obj/effect/decal/cleanable/oil,
-/obj/item/ammo_box/a12g,
-/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/gun/ballistic/shotgun/doublebarrel/empty,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Vd" = (

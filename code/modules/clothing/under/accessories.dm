@@ -444,6 +444,10 @@
 	chameleon_action.chameleon_name = "Accessory"
 	chameleon_action.initialize_disguises()
 
+/obj/item/clothing/accessory/holster/chameleon/Destroy()
+	QDEL_NULL(chameleon_action)
+	return ..()
+
 /obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)

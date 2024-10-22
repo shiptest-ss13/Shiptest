@@ -285,7 +285,6 @@
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
-		/obj/item/ammo_box/a4570, //but not today
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
@@ -299,7 +298,8 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -751,6 +751,7 @@
 	item_state = "sheath"
 	base_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
+	var/sabre_type = /obj/item/melee/sword/sabre
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
 	. = ..()
@@ -760,7 +761,7 @@
 	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre
+		sabre_type
 		))
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -788,7 +789,7 @@
 	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new /obj/item/melee/sword/sabre(src)
+	new sabre_type(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/solgov
@@ -798,21 +799,7 @@
 	icon_state = "sheath-solgov"
 	item_state = "sheath-solgov"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/solgov/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/solgov
-		))
-
-/obj/item/storage/belt/sabre/solgov/PopulateContents()
-	new /obj/item/melee/sword/sabre/solgov(src)
-	update_appearance()
+	sabre_type = /obj/item/melee/sword/sabre/solgov
 
 /obj/item/storage/belt/sabre/suns
 	name = "SUNS sabre sheath"
@@ -827,22 +814,7 @@
 	icon_state = "suns-sheath"
 	item_state = "suns-sheath"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/suns/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns
-		))
-
-/obj/item/storage/belt/sabre/suns/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns(src)
-	update_appearance()
-
+	sabre_type = /obj/item/melee/sword/sabre/suns
 
 /obj/item/storage/belt/sabre/suns/captain
 	name = "SUNS captain's sabre sheath"
@@ -852,21 +824,7 @@
 	icon_state = "suns-capsheath"
 	item_state = "suns-capsheath"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/suns/captain/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns/captain
-		))
-
-/obj/item/storage/belt/sabre/suns/captain/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns/captain(src)
-	update_appearance()
+	sabre_type = /obj/item/melee/sword/sabre/suns/captain
 
 /obj/item/storage/belt/sabre/suns/cmo
 	name = "SUNS cane sheath"
@@ -882,21 +840,15 @@
 	icon_state = "suns-cane"
 	item_state = "suns-cane"
 	w_class = WEIGHT_CLASS_BULKY
+	sabre_type = /obj/item/melee/sword/sabre/suns/cmo
 
-/obj/item/storage/belt/sabre/suns/cmo/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns/cmo
-		))
-
-/obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns/cmo(src)
-	update_appearance()
+/obj/item/storage/belt/sabre/pgf
+	name = "cutlass sheath"
+	desc = "A mass produced thermoplastic-leather sheath made to hold a boarding cutlass."
+	base_icon_state = "sheath-pgf"
+	icon_state = "sheath-pgf"
+	item_state = "sheath-pgf"
+	sabre_type = /obj/item/melee/sword/sabre/pgf
 
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
