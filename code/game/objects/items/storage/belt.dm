@@ -259,6 +259,15 @@
 	new /obj/item/hypospray/mkii(src)
 	update_appearance()
 
+/obj/item/storage/belt/medical/webbing/combat/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)
+
 /obj/item/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
@@ -323,10 +332,12 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
-/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+/obj/item/storage/belt/security/webbing/bulldog_mixed/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror(src) // you only get ONE this one is nasty
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
@@ -453,15 +464,29 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/c20r/PopulateContents()
+/obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m45_cobra(src)
 
-/obj/item/storage/belt/military/assault/m90/PopulateContents()
+/obj/item/storage/belt/military/hydra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/boomslang/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+
+/obj/item/storage/belt/military/mako/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -545,6 +570,22 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
+
+/obj/item/storage/belt/military/assault/hydra/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/assault/sniper/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
+
+/obj/item/storage/belt/military/assault/commander/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/co9mm(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -862,8 +903,18 @@
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/skm_762_40(src)
 
+/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm10mm(src)
+
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"
 	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
 	icon_state = "inteq_droppouch"
 	item_state = "inteq_droppouch"
+
+/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
