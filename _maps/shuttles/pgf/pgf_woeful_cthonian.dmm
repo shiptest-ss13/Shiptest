@@ -624,6 +624,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "jo" = (
@@ -636,6 +642,12 @@
 	},
 /obj/structure/curtain/bounty,
 /obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/steeldecal/steel_decals9{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals9{
+	dir = 4
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/space)
 "jO" = (
@@ -1921,8 +1933,16 @@
 /area/space)
 "Ga" = (
 /obj/structure/rack,
-/obj/item/melee/sword/sabre,
 /obj/machinery/light/small/directional/west,
+/obj/item/storage/belt/sabre/pgf,
+/obj/item/storage/belt/sabre/pgf{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_y = 8;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/space)
 "Gg" = (
@@ -2312,6 +2332,9 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "MY" = (
@@ -2398,6 +2421,9 @@
 	dir = 9
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "NV" = (
@@ -2858,6 +2884,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals6,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Yl" = (
@@ -3025,6 +3052,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
