@@ -196,7 +196,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	wires = new /datum/wires/mine(src)
 
-/obj/item/mine/proximity/Destroy()
+/obj/item/mine/pressure/Destroy()
 	if(wires)
 		QDEL_NULL(wires)
 	. = ..()
