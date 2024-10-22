@@ -13,209 +13,187 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
+	var/max_items = 10
+	var/max_w_class = WEIGHT_CLASS_BULKY
+	var/gun_type
+	var/mag_type
+	var/mag_count = 2
+	var/ammoless = TRUE
+	var/grab_loc = FALSE
+	var/holdable_items = list(
+		/obj/item/gun,
+		/obj/item/ammo_box,
+		/obj/item/stock_parts/cell/gun
+	)
+
+/obj/item/storage/guncase/Initialize(mapload)
+	. = ..()
+	if(mapload && grab_loc)
+		var/items_eaten = 0
+		for(var/obj/item/I in loc)
+			if(I.w_class > max_w_class)
+				continue
+			if(is_type_in_list(I, holdable_items))
+				I.forceMove(src)
+				items_eaten++
+			if(items_eaten >= mag_count + 1)
+				break
 
 /obj/item/storage/guncase/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/gun,
-		/obj/item/ammo_box,
-		/obj/item/stock_parts/cell/gun
-		))
+	STR.max_items = max_items
+	STR.max_w_class = max_w_class
+	STR.set_holdable(holdable_items)
+
+/obj/item/storage/guncase/PopulateContents()
+	if(grab_loc)
+		return
+	if(gun_type)
+		new gun_type(src, ammoless)
+	if(mag_type)
+		for(var/i in 1 to mag_count)
+			if(ispath(mag_type, /obj/item/ammo_box) | ispath(mag_type, /obj/item/stock_parts/cell))
+				new mag_type(src, ammoless)
+
+/// Need to double check this in a seperate pr that adds this to a few ships
+/// Eats the items on its tile
+/obj/item/storage/guncase/inherit
+	grab_loc = TRUE
 
 /obj/item/storage/guncase/winchester
-/obj/item/storage/guncase/winchester/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/flamingarrow/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
 /obj/item/storage/guncase/conflagration
-/obj/item/storage/guncase/conflagration/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
 /obj/item/storage/guncase/absolution
-/obj/item/storage/guncase/absolution/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
 /obj/item/storage/guncase/skm
-/obj/item/storage/guncase/skm/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/assault/skm/no_mag(src)
-	new /obj/item/ammo_box/magazine/skm_762_40/empty(src)
-	new /obj/item/ammo_box/magazine/skm_762_40/empty(src)
+	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40
 
 /obj/item/storage/guncase/p16
-/obj/item/storage/guncase/p16/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/assault/p16/no_mag(src)
-	new /obj/item/ammo_box/magazine/p16/empty(src)
-	new /obj/item/ammo_box/magazine/p16/empty(src)
+	gun_type = /obj/item/gun/ballistic/automatic/assault/p16
+	mag_type = /obj/item/ammo_box/magazine/p16
 
 /obj/item/storage/guncase/beacon
-/obj/item/storage/guncase/beacon/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 
 /obj/item/storage/guncase/scout
-/obj/item/storage/guncase/scout/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/scout/no_mag(src)
-	new /obj/item/ammo_box/a300/empty(src)
-	new /obj/item/ammo_box/a300/empty(src)
+	gun_type = /obj/item/gun/ballistic/rifle/scout
+	mag_type = /obj/item/ammo_box/a300
 
 /obj/item/storage/guncase/boomslang
-/obj/item/storage/guncase/boomslang/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/marksman/boomslang/indie/no_mag(src)
-	new /obj/item/ammo_box/magazine/boomslang/short/empty(src)
-	new /obj/item/ammo_box/magazine/boomslang/short/empty(src)
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
+	mag_type = /obj/item/ammo_box/magazine/boomslang/short
 
 /obj/item/storage/guncase/cobra
-/obj/item/storage/guncase/cobra/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag(src)
-	new /obj/item/ammo_box/magazine/m45_cobra/empty(src)
-	new /obj/item/ammo_box/magazine/m45_cobra/empty(src)
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
+	mag_type = /obj/item/ammo_box/magazine/m45_cobra
 
 /obj/item/storage/guncase/hellfire
-/obj/item/storage/guncase/hellfire/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/hellfire/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/hellfire
 
 /obj/item/storage/guncase/doublebarrel
-/obj/item/storage/guncase/doublebarrel/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/doublebarrel/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel
 
 /obj/item/storage/guncase/brimstone
-/obj/item/storage/guncase/brimstone/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/brimstone/no_mag(src)
+	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
 
 /obj/item/storage/guncase/illestren
-/obj/item/storage/guncase/illestren/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/illestren/empty(src)
-	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
-	new /obj/item/ammo_box/magazine/illestren_a850r/empty(src)
+	gun_type = /obj/item/gun/ballistic/rifle/illestren
+	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 
 /obj/item/storage/guncase/wt550
-/obj/item/storage/guncase/wt550/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/wt550/no_mag(src)
-	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
-	new /obj/item/ammo_box/magazine/wt550m9/empty(src)
+	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
+	mag_type = /obj/item/ammo_box/magazine/wt550m9
 
-/obj/item/storage/pistolcase
+/obj/item/storage/guncase/pistol
 	name = "pistol case"
 	desc = "A large box designed for holding pistols and magazines safely."
-	icon = 'icons/obj/guncase.dmi'
-	icon_state = "guncase"
-	item_state = "infiltrator_case"
-	force = 12
-	throwforce = 12
-	throw_speed = 2
-	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("robusted")
-	hitsound = 'sound/weapons/smash.ogg'
-	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
-	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
+	max_items = 8
+	max_w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/storage/pistolcase/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 8
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.set_holdable(list(
-		/obj/item/gun,
-		/obj/item/ammo_box/,
-		/obj/item/stock_parts/cell/gun
-		))
+/// Need to double check this in a seperate pr that adds this to a few ships
+/// Eats the items on its tile
+/obj/item/storage/guncase/pistol/inherit
+	grab_loc = TRUE
 
-/obj/item/storage/pistolcase/modelh
-/obj/item/storage/pistolcase/modelh/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag(src)
-	new /obj/item/ammo_box/magazine/modelh/empty(src)
-	new /obj/item/ammo_box/magazine/modelh/empty(src)
+/obj/item/storage/guncase/pistol/modelh
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	mag_type = /obj/item/ammo_box/magazine/modelh
 
-/obj/item/storage/pistolcase/ringneck
-/obj/item/storage/pistolcase/ringneck/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag(src)
-	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
-	new /obj/item/ammo_box/magazine/m10mm_ringneck/empty(src)
+/obj/item/storage/guncase/pistol/ringneck
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
+	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
-/obj/item/storage/pistolcase/himehabu
-/obj/item/storage/pistolcase/himehabu/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag(src)
-	new /obj/item/ammo_box/magazine/m22lr_himehabu/empty(src)
-	new /obj/item/ammo_box/magazine/m22lr_himehabu/empty(src)
+/obj/item/storage/guncase/pistol/himehabu
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 
-/obj/item/storage/pistolcase/candor
-/obj/item/storage/pistolcase/candor/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/candor/no_mag(src)
-	new /obj/item/ammo_box/magazine/m45/empty(src)
-	new /obj/item/ammo_box/magazine/m45/empty(src)
+/obj/item/storage/guncase/pistol/candor
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
+	mag_type = /obj/item/ammo_box/magazine/m45
 
-/obj/item/storage/pistolcase/detective
-/obj/item/storage/pistolcase/detective/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/detective/no_mag(src)
-	new /obj/item/ammo_box/c38/empty(src)
-	new /obj/item/ammo_box/c38/empty(src)
+/obj/item/storage/guncase/pistol/detective
+	gun_type = /obj/item/gun/ballistic/revolver/detective
+	mag_type = /obj/item/ammo_box/c38
 
-/obj/item/storage/pistolcase/shadow
-/obj/item/storage/pistolcase/shadow/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/shadow/no_mag(src)
+/obj/item/storage/guncase/pistol/shadow
+	gun_type = /obj/item/gun/ballistic/revolver/shadow
 
-/obj/item/storage/pistolcase/viper
-/obj/item/storage/pistolcase/viper/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/viper/indie/no_mag(src)
+/obj/item/storage/guncase/pistol/viper
+	gun_type = /obj/item/gun/ballistic/revolver/viper/indie
 
-/obj/item/storage/pistolcase/commander
-/obj/item/storage/pistolcase/commander/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src)
-	new /obj/item/ammo_box/magazine/co9mm/empty(src)
-	new /obj/item/ammo_box/magazine/co9mm/empty(src)
+/obj/item/storage/guncase/pistol/commander
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander
+	mag_type = /obj/item/ammo_box/magazine/co9mm
 
-/obj/item/storage/pistolcase/firebrand
-/obj/item/storage/pistolcase/firebrand/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/firebrand/no_mag(src)
+/obj/item/storage/guncase/pistol/firebrand
+	gun_type = /obj/item/gun/ballistic/revolver/firebrand
 
-/obj/item/storage/pistolcase/derringer
-/obj/item/storage/pistolcase/derringer/PopulateContents()
-	new /obj/item/gun/ballistic/derringer/no_mag(src)
+/obj/item/storage/guncase/pistol/derringer
+	gun_type = /obj/item/gun/ballistic/derringer
 
-/obj/item/storage/pistolcase/a357
-/obj/item/storage/pistolcase/a357/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/viper/no_mag(src)
-	new /obj/item/ammo_box/a357/empty(src)
-	new /obj/item/ammo_box/a357/empty(src)
+/obj/item/storage/guncase/pistol/a357
+	gun_type = /obj/item/gun/ballistic/revolver/viper
+	mag_type = /obj/item/ammo_box/a357/empty
 
-/obj/item/storage/pistolcase/montagne
-/obj/item/storage/pistolcase/montagne/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/montagne/no_mag(src)
-	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
-	new /obj/item/ammo_box/a44roum_speedloader/empty(src)
+/obj/item/storage/guncase/pistol/montagne
+	gun_type = /obj/item/gun/ballistic/revolver/montagne
+	mag_type = /obj/item/ammo_box/a44roum_speedloader
 
-/obj/item/storage/pistolcase/disposable
-/obj/item/storage/pistolcase/disposable/PopulateContents()
+/obj/item/storage/guncase/pistol/cm23
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm23
+	mag_type = /obj/item/ammo_box/magazine/cm23
+
+/obj/item/storage/guncase/pistol/disposable
+/obj/item/storage/guncase/pistol/disposable/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 
-/obj/item/storage/pistolcase/laser
-/obj/item/storage/pistolcase/laser/PopulateContents()
-	new /obj/item/gun/energy/laser/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+/obj/item/storage/guncase/pistol/kalixpistol
+	gun_type = /obj/item/gun/energy/kalix/pistol
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
-/obj/item/storage/pistolcase/egun
-/obj/item/storage/pistolcase/egun/PopulateContents()
-	new /obj/item/gun/energy/e_gun/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+/obj/item/storage/guncase/pistol/miniegun
+	gun_type = /obj/item/gun/energy/e_gun/mini
+	mag_type = /obj/item/stock_parts/cell/gun/mini
 
-/obj/item/storage/pistolcase/kalixpistol
-/obj/item/storage/pistolcase/kalixpistol/PopulateContents()
-	new /obj/item/gun/energy/kalix/pistol/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun/kalix(src)
+/obj/item/storage/guncase/energy
+	mag_type = /obj/item/stock_parts/cell/gun
 
-/obj/item/storage/guncase/kalixrifle
-/obj/item/storage/guncase/kalixrifle/PopulateContents()
-	new /obj/item/gun/energy/kalix/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun/kalix(src)
+/obj/item/storage/guncase/energy/laser
+	gun_type = /obj/item/gun/energy/laser
 
-/obj/item/storage/pistolcase/miniegun
-/obj/item/storage/pistolcase/miniegun/PopulateContents()
-	new /obj/item/gun/energy/e_gun/mini/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun/mini(src)
+/obj/item/storage/guncase/energy/egun
+	gun_type = /obj/item/gun/energy/e_gun
 
-/obj/item/storage/pistolcase/iongun
-/obj/item/storage/pistolcase/iongun/PopulateContents()
-	new /obj/item/gun/energy/ionrifle/empty_cell(src)
-	new /obj/item/stock_parts/cell/gun(src)
+/obj/item/storage/guncase/energy/kalixrifle
+	gun_type = /obj/item/gun/energy/kalix
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
+/obj/item/storage/guncase/energy/iongun
+	gun_type = /obj/item/gun/energy/ionrifle
