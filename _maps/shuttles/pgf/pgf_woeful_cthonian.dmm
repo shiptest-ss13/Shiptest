@@ -350,14 +350,6 @@
 	pixel_y = 12;
 	pixel_x = 10
 	},
-/obj/structure/large_mortar{
-	pixel_y = -2;
-	pixel_x = -1
-	},
-/obj/item/pestle{
-	pixel_x = 2;
-	pixel_y = 5
-	},
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 11;
 	pixel_y = 6
@@ -985,6 +977,7 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "lm" = (
@@ -1015,6 +1008,9 @@
 "lI" = (
 /obj/structure/chair{
 	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -1200,6 +1196,7 @@
 /obj/structure/crate_shelf{
 	capacity = 2
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ok" = (
@@ -1523,6 +1520,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "tJ" = (
@@ -1845,6 +1843,23 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 5
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_y = 7;
+	pixel_x = 4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "xf" = (
@@ -1928,6 +1943,7 @@
 	pixel_x = -8;
 	pixel_y = -7
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "xS" = (
@@ -2018,6 +2034,21 @@
 /area/ship/engineering)
 "yY" = (
 /obj/effect/turf_decal/etherbor/center,
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zz" = (
@@ -2077,6 +2108,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "zM" = (
@@ -2687,6 +2719,9 @@
 /area/ship/bridge)
 "Js" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "JD" = (
@@ -2818,6 +2853,11 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner,
 /obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
+	pixel_y = 5;
+	pixel_x = -1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3079,10 +3119,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "NV" = (
@@ -3260,6 +3300,7 @@
 	pixel_x = 7
 	},
 /obj/effect/turf_decal/corner/opaque/green/bordercorner,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "SG" = (
@@ -3572,6 +3613,7 @@
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/vending/cola/starkist,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "WO" = (
@@ -3832,6 +3874,9 @@
 "Zj" = (
 /obj/machinery/light/directional/east,
 /obj/structure/bed/roller,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -2
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "Zo" = (
