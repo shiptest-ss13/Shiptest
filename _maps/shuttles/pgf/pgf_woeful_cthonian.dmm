@@ -714,7 +714,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Ships Locker"
+	name = "Ships Locker";
+	req_access_txt = "1"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2135,7 +2136,8 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Captain's Quarters";
-	id_tag = "cth_cappie"
+	id_tag = "cth_cappie";
+	req_access_txt = "20"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3335,7 +3337,8 @@
 	},
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	name = "Bridge"
+	name = "Bridge";
+	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
