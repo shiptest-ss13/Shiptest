@@ -169,6 +169,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 	bolt_type = BOLT_TYPE_LOCKING
 
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+
 	spread = 0
 	spread_unwielded = 40
 	recoil = 1
