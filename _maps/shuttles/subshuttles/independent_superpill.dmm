@@ -80,7 +80,8 @@
 	name = "environmental storytelling"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","pluox","stim")
+	filter_types = list("co2","n2","co2","bz","water_vapor","miasma","freon","tritium","n20");
+	
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2o=28, n2=72;TEMP=7"

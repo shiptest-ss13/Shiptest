@@ -1569,7 +1569,7 @@
 "sm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4;
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -2496,7 +2496,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1;
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
 /turf/open/floor/wood{
@@ -4195,7 +4195,7 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
 /obj/machinery/light/small/broken/directional/east,
