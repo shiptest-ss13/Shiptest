@@ -292,3 +292,33 @@
       to the Frontier. Expect cool doohickeys on your friendly neighborhood PGF Vessel
   - imageadd: 'Imaginos: PGF sord sprites'
   - code_imp: sabres now take up less space in code
+2024-10-23:
+  Erikafox:
+  - bugfix: Hallucination Anomalies will stay on their tile now.
+  - rscadd: You can now fax credit holochips
+  - bugfix: Analgesia can no longer be taken with self-aware
+  - bugfix: Few edge cases for analgesiacs getting pain
+  FalloutFalcon:
+  - bugfix: ammo
+  - refactor: refactored ammo types to not be snowflaked when handling spawning subtyped
+      guns
+  FeenieRU:
+  - code_imp: Changing qdel() and SSgarbage procs
+  - code_imp: rewrite /Destroy(force, silent) to /Destroy(force)
+  Sun-Soaked:
+  - rscadd: Directional Mines, implemented as Claymores.
+  - rscadd: Mines now have World Icons
+  - balance: explosions now only strip to space when a tile is already damaged
+  - bugfix: Prox mines explode from slightly further away & no longer activate through
+      walls.
+  - bugfix: Multiple mines can no longer be stacked on a tile
+  - code_imp: fire_casing() can now be called by non-mobs, allowing objects to shoot
+      casings.
+  - bugfix: cleans up mine wire datums on mine deletion
+  generalthrax:
+  - rscadd: Added Stamped Steel Machetes, 5 for 500
+  meemofcourse:
+  - rscadd: A lot of ERTs and ERT remasters, including Fronties, Ramzi, PGF, NGR,
+      Indies and whatnot
+  - rscdel: Most Nanotrasen ERTs have been shelved pending assets
+  - rscdel: Smokebomb randomized descriptions
