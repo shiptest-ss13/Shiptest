@@ -26,7 +26,7 @@
 	name = "M17 pistol Crate"
 	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22lr"
 	cost = 200
-	contains = list(/obj/item/storage/pistolcase/m17)
+	contains = list(/obj/item/storage/guncase/pistol/m17)
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
