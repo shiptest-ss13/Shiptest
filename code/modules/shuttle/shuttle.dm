@@ -595,6 +595,15 @@
 	if(tow_rheight > S.height-S.dheight)
 		return SHUTTLE_HEIGHT_TOO_LARGE
 
+	for(var/obj/docking_port/stationary/current_port as anything in docking_points)
+		//if any of our docks has disable_on_owner_ship_dock set, has something docked to us, and we aren't going to a transit zone or an adjustable dock(usually planetary), don't land
+		if(current_port.disable_on_owner_ship_dock && current_port.docked && (!istype(S, /obj/docking_port/stationary/transit) || !S.adjust_dock_for_landing))
+			return SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING
+
+	//if the docking port has disable_on_owner_ship_dock set and the target ship is docked to something, don't land. very much don't land.
+	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
+		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
+
 	for(var/turf/closed/indestructible/edgeturf as anything in S.return_turfs())
 		if(!istype(edgeturf))
 			continue

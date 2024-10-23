@@ -305,6 +305,13 @@
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
+		if("act_overmap")
+			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
+				return
+			var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE, empty_if_src_docked = FALSE)
+			say(current_ship.show_interaction_menu(usr, to_act))
+			return
 
 	if(jump_state != JUMP_STATE_OFF)
 		say("Bluespace Jump in progress. Controls suspended.")
@@ -312,13 +319,6 @@
 
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
-			if("act_overmap")
-				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
-					return
-				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
-				say(current_ship.show_interaction_menu(usr, to_act))
-				return
 			if("quick_dock")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
