@@ -172,7 +172,6 @@
 	antag_hud_name = "apprentice"
 	var/datum/mind/master
 	var/school = APPRENTICE_DESTRUCTION
-	outfit_type = /datum/outfit/wizard/apprentice
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
@@ -252,7 +251,6 @@
 
 /datum/antagonist/wizard/academy
 	name = "Academy Teacher"
-	outfit_type = /datum/outfit/wizard/academy
 	move_to_lair = FALSE
 
 /datum/antagonist/wizard/academy/equip_wizard()

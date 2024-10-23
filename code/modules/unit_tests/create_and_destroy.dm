@@ -13,8 +13,6 @@
 		/turf/template_noop,
 		//Never meant to be created, errors out the ass for mobcode reasons
 		/mob/living/carbon,
-		//And another
-		/obj/item/slimecross/recurring,
 		//This should be obvious
 		/obj/machinery/doomsday_device,
 		//Template type
@@ -35,8 +33,6 @@
 		/obj/machinery/power/shuttle/engine/liquid,
 		//needs a template
 		/obj/effect/landmark/subship,
-		//needs a friend :(
-		/obj/effect/mob_spawn/human/demonic_friend,
 		//needs a derg
 		/obj/structure/carp_rift,
 		//doesn't have icons
@@ -202,6 +198,9 @@
 			TEST_FAIL("[item.name] failed to respect force deletion [item.no_respect_force] times out of a total del count of [item.qdels]")
 		if(item.no_hint)
 			TEST_FAIL("[item.name] failed to return a qdel hint [item.no_hint] times out of a total del count of [item.qdels]")
+		if(LAZYLEN(item.extra_details))
+			var/details = item.extra_details.Join("\n")
+			TEST_FAIL("[item.name] failed with extra info: \n[details]")
 
 	cache_for_sonic_speed = SSatoms.BadInitializeCalls
 	for(var/path in cache_for_sonic_speed)

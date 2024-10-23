@@ -79,16 +79,20 @@
 	return ..()
 
 /turf/closed/mineral/try_decon(obj/item/I, mob/user, turf/T)
+	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_MINING)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin breaking through the rock...</span>")
-		while(I.use_tool(src, user, breakdown_duration, volume=50))
+		while(I.use_tool(src, user, act_duration, volume=50))
 			if(ismineralturf(src))
 				to_chat(user, "<span class='notice'>You break through some of the stone...</span>")
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
-				alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE)
+				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+					return TRUE
+			else
+				break
 
 	return FALSE
 
@@ -163,7 +167,6 @@
 	ScrapeAway()
 
 /turf/closed/mineral/ex_act(severity, target)
-	..()
 	switch(severity)
 		if(3)
 			if (prob(75))
@@ -173,7 +176,7 @@
 				gets_drilled(null, FALSE)
 		if(1)
 			gets_drilled(null, FALSE)
-	return
+	return ..()
 
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,

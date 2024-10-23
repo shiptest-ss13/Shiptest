@@ -52,7 +52,7 @@
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
 
-/datum/component/attachment/Destroy(force, silent)
+/datum/component/attachment/Destroy(force)
 	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	if(actions && length(actions))
 		var/obj/item/gun/parent = src.parent

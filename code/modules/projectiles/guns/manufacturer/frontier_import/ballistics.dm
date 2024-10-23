@@ -9,7 +9,10 @@
 	icon_state = "mauler"
 	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m9mm_mauler,
+	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
@@ -58,7 +61,10 @@
 
 	icon_state = "spitter"
 	item_state = "spitter"
-	mag_type = /obj/item/ammo_box/magazine/spitter_9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/spitter_9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/spitter_9mm,
+	)
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
 	show_magazine_on_sprite = TRUE
@@ -133,7 +139,10 @@
 
 	icon_state = "pounder"
 	item_state = "pounder"
-	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	default_ammo_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+	)
 	burst_size = 1
 	fire_delay = 0.05 SECONDS
 	spread = 25
@@ -180,7 +189,10 @@
 
 	icon_state = "shredder"
 	item_state = "shredder"
-	mag_type = /obj/item/ammo_box/magazine/m12_shredder
+	default_ammo_type = /obj/item/ammo_box/magazine/m12_shredder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12_shredder,
+	)
 	spread = 15
 	recoil = 2
 	recoil_unwielded = 7
@@ -227,3 +239,48 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
+
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot
+	name = "\improper Hammer"
+	desc = "A disposable rocket-propelled grenade launcher loaded with a HEDP shell."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	base_icon_state = "rpg"
+	icon_state = "rpg"
+	item_state = "rpg"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot,
+	)
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
+	weapon_weight = WEAPON_HEAVY
+	bolt_type = BOLT_TYPE_NO_BOLT
+
+	cartridge_wording = "rocket"
+	empty_indicator = FALSE
+	sealed_magazine = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+	slot_flags = ITEM_SLOT_BACK
+
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "\improper Mallet"
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/examine(mob/user)
+	. = ..()
+	if(!chambered)
+		. += span_warning("It has been spent, and is now useless.")
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
+	caliber = "84mm"
+	max_ammo = 1

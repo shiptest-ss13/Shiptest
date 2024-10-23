@@ -34,6 +34,16 @@
 		qdel(src)
 	return TRUE
 
+/obj/structure/salvageable/deconstruct_act(mob/living/user, obj/item/tool)
+	. = ..()
+	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
+					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
+	if(tool.use_tool(src, user, 6 SECONDS))
+		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
+						"<span class='notice'>You salvage [src].</span>")
+		dismantle(user)
+		qdel(src)
+	return TRUE
 
 //Types themself, use them, but not the parent object
 
@@ -607,7 +617,6 @@
 			/obj/item/circuitboard/machine/medical_kiosk = 5,
 			/obj/item/circuitboard/machine/medipen_refiller = 5,
 			/obj/item/circuitboard/machine/microwave = 5,
-			/obj/item/circuitboard/machine/monkey_recycler = 5,
 			/obj/item/circuitboard/machine/ore_redemption = 5,
 			/obj/item/circuitboard/machine/ore_silo = 5,
 			/obj/item/circuitboard/machine/reagentgrinder = 5,
@@ -661,7 +670,6 @@
 			/obj/item/circuitboard/computer/powermonitor/secret = 5,
 			/obj/item/circuitboard/computer/prototype_cloning = 5,
 			/obj/item/circuitboard/computer/stationalert = 5,
-			/obj/item/circuitboard/computer/xenobiology = 5,
 			/obj/item/circuitboard/computer/teleporter = 5,
 			/obj/item/circuitboard/computer/operating = 5,
 			/obj/item/circuitboard/computer/crew = 5,

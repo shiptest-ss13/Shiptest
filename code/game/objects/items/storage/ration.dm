@@ -28,7 +28,9 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/reagent_containers/food))
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food,
+		/obj/item/ration_heater))
 	STR.locked = TRUE
 	STR.locked_flavor = "sealed closed"
 
@@ -54,7 +56,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/cornbread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers = 1,
+		/obj/item/reagent_containers/food/snacks/ration/snack/fruit_puree = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage = 1,
 		/obj/item/ration_heater = 1

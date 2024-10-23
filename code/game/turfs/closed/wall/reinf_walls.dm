@@ -78,7 +78,8 @@
 		to_chat(user, "<span class='notice'>You begin slicing through the [src].</span>")
 		while(W.use_tool(src,user,30,volume = 100))
 			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
-			alter_integrity(-(W.wall_decon_damage))
+			if(!alter_integrity(-(W.wall_decon_damage)))
+				return TRUE
 		return 1
 
 	switch(d_state)

@@ -597,12 +597,6 @@
 	icon = 'icons/hud/screen_cyborg.dmi'
 	screen_loc = ui_borg_health
 
-/atom/movable/screen/healths/guardian
-	name = "summoner health"
-	icon = 'icons/mob/guardian.dmi'
-	icon_state = "base"
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
 /atom/movable/screen/healths/revenant
 	name = "essence"
 	icon = 'icons/mob/actions/backgrounds.dmi'
