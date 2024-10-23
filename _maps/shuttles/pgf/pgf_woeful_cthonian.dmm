@@ -159,6 +159,9 @@
 	id = "cth_engi";
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "cH" = (
@@ -201,6 +204,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_engi";
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
@@ -623,8 +629,8 @@
 	},
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/plasma/twenty{
-	pixel_y = -4;
-	pixel_x = -4
+	pixel_y = 1;
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/firealarm/directional/east{
@@ -633,6 +639,10 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 22;
 	pixel_y = -5
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -5;
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -850,16 +860,11 @@
 /area/ship/bridge)
 "jo" = (
 /obj/effect/turf_decal/etherbor/left,
-/obj/structure/closet/crate{
-	name = "CLIP lend-lease"
-	},
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jp" = (
@@ -1220,6 +1225,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "oD" = (
@@ -1242,18 +1250,6 @@
 	pixel_x = -7
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 2;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 2;
-	pixel_y = 5
-	},
 /obj/structure/sign/departments/chemistry/pharmacy{
 	pixel_y = 30;
 	pixel_x = -3
@@ -1265,6 +1261,14 @@
 /obj/item/reagent_containers/glass/beaker{
 	pixel_x = 2;
 	pixel_y = 11
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
@@ -1885,6 +1889,9 @@
 	id = "cth_engi";
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "xK" = (
@@ -1993,9 +2000,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/structure/closet/wall/white/directional/south{
-	name = "janitorial closet"
-	},
+/obj/structure/closet/wall/white/directional/south,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "yz" = (
@@ -2151,6 +2156,9 @@
 	id = "cth_engi";
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "Bz" = (
@@ -2275,9 +2283,6 @@
 	pixel_y = 6;
 	pixel_x = -7
 	},
-/obj/item/melee/knife/hunting,
-/obj/item/melee/knife/hunting,
-/obj/item/melee/knife/hunting,
 /obj/item/gps,
 /obj/item/gps,
 /obj/item/gps,
@@ -2594,6 +2599,9 @@
 /area/ship/cargo)
 "Ig" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "Is" = (
@@ -2950,6 +2958,9 @@
 /obj/item/paper/fluff/ship/cthonian,
 /obj/item/paper/fluff/ship/cthonian,
 /obj/item/paper/fluff/ship/cthonian,
+/obj/item/taperecorder,
+/obj/item/tape/random,
+/obj/item/tape/random,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Mq" = (
@@ -3369,10 +3380,6 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "UM" = (
-/obj/structure/closet/secure_closet/bar{
-	name = "captain's locker";
-	populate = 0
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
@@ -3383,7 +3390,6 @@
 	pixel_y = -8;
 	pixel_x = 5
 	},
-/obj/item/gun/energy/kalix/pistol,
 /obj/machinery/light/small/directional/west,
 /obj/item/storage/backpack/satchel/cap{
 	pixel_y = -11;
@@ -3398,6 +3404,10 @@
 /obj/item/storage/lockbox/medal,
 /obj/item/radio/headset/pgf/captain,
 /obj/item/storage/belt/sabre,
+/obj/item/storage/pistolcase/kalixpistol,
+/obj/structure/closet/secure_closet/captains{
+	populate = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "US" = (
@@ -3692,6 +3702,7 @@
 	pixel_x = 20;
 	pixel_y = 11
 	},
+/obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Yl" = (
