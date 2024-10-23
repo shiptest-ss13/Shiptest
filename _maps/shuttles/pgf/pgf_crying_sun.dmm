@@ -2662,6 +2662,11 @@
 "wu" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/machinery/telecomms/relay/preset/pgf,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	req_one_access = list(20, 57, 58)
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "ww" = (
@@ -3016,6 +3021,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "zz" = (
@@ -3427,6 +3435,9 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "Cz" = (
@@ -4756,7 +4767,12 @@
 /area/ship/bridge)
 "Mu" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
-/obj/machinery/vending/modularpc,
+/obj/machinery/blackbox_recorder,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	req_one_access = list(20, 57, 58)
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Mw" = (
@@ -4992,11 +5008,11 @@
 /obj/machinery/autolathe,
 /obj/machinery/light/directional/east,
 /obj/item/radio/intercom/directional/south,
-/obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty{
 	pixel_x = 6;
 	pixel_y = 2
 	},
+/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Nz" = (
@@ -5632,9 +5648,11 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "RN" = (
-/obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/machinery/light/directional/north,
+/obj/machinery/vending/modularpc{
+	pixel_x = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "RP" = (
