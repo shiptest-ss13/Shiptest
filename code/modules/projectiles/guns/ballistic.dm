@@ -286,11 +286,11 @@
 				num_unloaded++
 				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
 			if (num_unloaded)
-				to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+				to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src]."))
 				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 				update_appearance()
 			else
-				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+				to_chat(user, span_warning("[src] is empty!"))
 			return
 		if(!internal_magazine && magazine)
 			eject_magazine(user)
