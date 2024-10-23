@@ -230,7 +230,7 @@
 	name = "ERT - Frontiersman Medic (Shock Troop)"
 
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	mask = /obj/item/clothing/mask/gas/syndicate/ngr
+	mask = /obj/item/clothing/mask/breath/ngr
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
