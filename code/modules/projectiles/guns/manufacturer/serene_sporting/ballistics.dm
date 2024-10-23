@@ -25,6 +25,8 @@
 	show_magazine_on_sprite = TRUE
 	bolt_type = BOLT_TYPE_LOCKING
 
+	w_class = WEIGHT_CLASS_SMALL
+
 	spread = 25
 	spread_unwielded = 45
 	recoil = -2
@@ -233,6 +235,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 	recoil_unwielded = 4
 	wield_slowdown = 0.4
 	wield_delay = 0.65 SECONDS
+
+	casing_ejector = TRUE
 
 	manufacturer = MANUFACTURER_SERENE
 

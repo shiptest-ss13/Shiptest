@@ -5,6 +5,6 @@
 
 	slot = ATTACHMENT_SLOT_MUZZLE
 	spread_mod = -40
-	size_mod = 1
+	size_mod = 2
 	pixel_shift_x = 1
 	pixel_shift_y = 1
