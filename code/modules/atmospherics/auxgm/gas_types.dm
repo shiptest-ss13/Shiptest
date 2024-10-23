@@ -104,18 +104,6 @@
 	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100
 	enthalpy = 81600
 
-/datum/gas/nitryl //marked for removal
-	id = GAS_NITRYL
-	specific_heat = 20
-	name = "Nitryl"
-	color = "#963"
-	moles_visible = MOLES_GAS_VISIBLE
-	flags = GAS_FLAG_DANGEROUS
-	fusion_power = 15
-	fire_products = list(GAS_N2 = 0.5)
-	enthalpy = 33200
-	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
-
 /datum/gas/tritium
 	id = GAS_TRITIUM
 	specific_heat = 10
@@ -137,12 +125,6 @@
 	flags = GAS_FLAG_DANGEROUS
 	fusion_power = 8
 	enthalpy = FIRE_CARBON_ENERGY_RELEASED // it is a mystery
-
-/datum/gas/stimulum //marked for removal
-	id = GAS_STIMULUM
-	specific_heat = 5
-	name = "Stimulum"
-	fusion_power = 7
 
 /datum/gas/ozone
 	id = GAS_O3
@@ -167,23 +149,6 @@
 	gas_overlay = "water_vapor"
 	oxidation_rate = -1
 	//moles_visible = MOLES_GAS_VISIBLE
-
-
-/datum/gas/pluoxium //marked for removal
-	id = GAS_PLUOXIUM
-	specific_heat = 80
-	name = "Pluoxium"
-	fusion_power = 10
-	oxidation_temperature = T0C - 100
-	oxidation_rate = 3 // when it can oxidize, it can oxidize a LOT
-	enthalpy = 142 // but it reduces the heat output a bit
-
-/datum/gas/hypernoblium //marked for removal
-	id = GAS_HYPERNOB
-	specific_heat = 2000
-	name = "Hyper-noblium"
-	gas_overlay = "freon"
-	moles_visible = MOLES_GAS_VISIBLE
 
 /datum/gas/freon
 	id = GAS_FREON

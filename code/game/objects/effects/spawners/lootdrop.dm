@@ -1078,7 +1078,7 @@
 
 /obj/effect/spawner/lootdrop/waste/atmos_can
 	loot = list(
-		/obj/machinery/portable_atmospherics/canister/toxins = 3,
+		/obj/machinery/portable_atmospherics/canister/ammonia = 3,
 		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
 		/obj/machinery/portable_atmospherics/canister/nitrogen = 3,
 		/obj/machinery/portable_atmospherics/canister/oxygen = 3,
@@ -1089,7 +1089,7 @@
 /obj/effect/spawner/lootdrop/waste/atmos_can/rare
 	loot = list(
 		/obj/machinery/portable_atmospherics/canister/tritium = 3,
-		/obj/machinery/portable_atmospherics/canister/pluoxium = 3
+		/obj/machinery/portable_atmospherics/canister/ozone = 3
 	)
 
 /obj/effect/spawner/lootdrop/waste/salvageable

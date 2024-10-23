@@ -107,9 +107,9 @@
 	var/datum/radio_frequency/radio_connection
 
 	//anything outright hazardous (flammable, toxic, generally Weird)
-	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
 	//anything that isn't o2 or n2.
-	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_NITRYL, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_HYPERNOB, GAS_STIMULUM, GAS_PLUOXIUM, GAS_CO, GAS_ARGON, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_CO, GAS_ARGON, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
 
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
@@ -120,21 +120,17 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON 					= new/datum/tlv/dangerous,
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
 		GAS_CO						= new/datum/tlv/dangerous,
 		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
-		GAS_AMMONIA,				= new/datum/tlv/dangerous,
-		GAS_METHANE,				= new/datum/tlv/dangerous,
-		GAS_SO2,					= new/datum/tlv/dangerous,
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
 		GAS_O3						= new/datum/tlv/dangerous,
 	)
 
@@ -148,21 +144,17 @@
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
-		GAS_HYPERNOB				= new/datum/tlv/no_checks,
 		GAS_H2O						= new/datum/tlv/no_checks,
 		GAS_TRITIUM					= new/datum/tlv/no_checks,
-		GAS_STIMULUM				= new/datum/tlv/no_checks,
-		GAS_NITRYL					= new/datum/tlv/no_checks,
-		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
 		GAS_FREON					= new/datum/tlv/no_checks,
 		GAS_HYDROGEN				= new/datum/tlv/no_checks,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
-		GAS_ARGON					= new/datum/tlv/no_checks
-		GAS_AMMONIA,				= new/datum/tlv/no_checks,
-		GAS_METHANE,				= new/datum/tlv/no_checks,
-		GAS_SO2,					= new/datum/tlv/no_checks,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv/no_checks,
+		GAS_AMMONIA					= new/datum/tlv/no_checks,
+		GAS_METHANE					= new/datum/tlv/no_checks,
+		GAS_SO2						= new/datum/tlv/no_checks,
 		GAS_O3						= new/datum/tlv/no_checks,
 	)
 	heating_manage = FALSE
@@ -177,21 +169,17 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON					= new/datum/tlv/dangerous,
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
+		GAS_CO						= new/datum/tlv/dangerous,
 		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
-		GAS_AMMONIA,				= new/datum/tlv/dangerous,
-		GAS_METHANE,				= new/datum/tlv/dangerous,
-		GAS_SO2,					= new/datum/tlv/dangerous,
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
 		GAS_O3						= new/datum/tlv/dangerous,
 	)
 	heating_manage = FALSE

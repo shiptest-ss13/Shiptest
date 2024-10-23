@@ -1181,50 +1181,50 @@
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM
 	color = "#96898c"
-	var/accumilation
+	var/accumulation
 
 /datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
 	if(holder.has_reagent(/datum/reagent/oxygen))
 		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
-		accumilation = accumilation/4
+		accumulation = accumulation/4
 
-	accumilation += volume
-	switch(accumilation)
+	accumulation += volume
+	switch(accumulation)
 		if(10 to 50)
-			to_chat(src, "<span class='warning'>You feel dizzy.</span>")
+			to_chat(src, span_warning("You feel dizzy."))
 		if(50 to 150)
-			to_chat(victim, "<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>")
+			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
 			victim.Dizzy(5)
 		if(150 to 250)
-			to_chat(victim, "<span class='userdanger'>[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]</span>")
+			to_chat(victim, span_userdanger(">[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
 			victim.Stun(10)
 			victim.Dizzy(5)
-			victim.confused = (accumilation/50)
+			victim.confused = (accumulation/50)
 			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
 			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
 
 		if(250 to 350)
-			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
+			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
 			victim.adjustStaminaLoss(3)
 			victim.Stun(35)
 
 			victim.Dizzy(5)
-			victim.confused = (accumilation/50)
-			victim.drowsyness = (accumilation/50)
+			victim.confused = (accumulation/50)
+			victim.drowsyness = (accumulation/50)
 
-			victim.adjustToxLoss(accumilation/100*REM, 0)
+			victim.adjustToxLoss(accumulation/100*REM, 0)
 
 			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
 			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
 			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
 			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
 
-		if(350 to 3000)
+		if(350 to 1000)
 			victim.Unconscious(20 SECONDS)
 
-			victim.drowsyness += (accumilation/100)
-			victim.adjustToxLoss(accumilation/100*REM, 0)
-		if(3000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.drowsyness += (accumulation/100)
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+		if(1000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
 			victim.death()
 			victim.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
 			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
@@ -1233,8 +1233,8 @@
 
 			qdel(src)
 			return TRUE
-	accumilation -= (metabolization_rate * victim.metabolism_efficiency)
-	if(accumilation <  0)
+	accumulation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumulation <  0)
 		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
 		return TRUE //to avoid a runtime
 	return ..()

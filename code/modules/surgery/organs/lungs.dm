@@ -248,27 +248,9 @@
 			H.hallucination += 5
 			H.reagents.add_reagent(/datum/reagent/bz_metabolites,1)
 
-	// Nitryl
-		var/nitryl_pp = PP(breath,GAS_NITRYL)
-		if (prob(nitryl_pp))
-			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
-		if (nitryl_pp >40)
-			H.emote("gasp")
-			H.adjustOxyLoss(10)
-			if (prob(nitryl_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
-				H.silent = max(H.silent, 3)
-		else
-			H.adjustOxyLoss(nitryl_pp/4)
-		gas_breathed = breath.get_moles(GAS_NITRYL)
-		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/nitryl,1)
-
-		breath.adjust_moles(GAS_NITRYL, -gas_breathed)
-
 	// Freon
 		var/freon_pp = PP(breath,GAS_FREON)
-		if (prob(nitryl_pp))
+		if (prob(freon_pp))
 			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
 		if (freon_pp >40)
 			H.emote("gasp")
@@ -287,12 +269,12 @@
 	// Chlorine
 		var/chlorine_pp = PP(breath,GAS_CHLORINE)
 		if (prob(chlorine_pp))
-			to_chat(H, "<span class='alert'>Your lungs feel awful!</span>")
+			to_chat(H, span_alert("Your lungs feel awful!"))
 		if (chlorine_pp >20)
 			H.emote("gasp")
 			H.adjustOxyLoss(5)
 			if (prob(chlorine_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(round(chlorine_pp/8))
@@ -304,24 +286,17 @@
 	// Hydrogen Chloride
 		var/hydrogen_chloride_pp = PP(breath,GAS_HYDROGEN_CHLORIDE)
 		if (prob(hydrogen_chloride_pp))
-			to_chat(H, "<span class='alert'>Your lungs feel terrible!")
+			to_chat(H, span_alert("Your lungs feel terrible!"))
 		if (hydrogen_chloride_pp >20)
 			H.emote("gasp")
 			H.adjustOxyLoss(10)
 			if (prob(hydrogen_chloride_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(round(hydrogen_chloride_pp/4))
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
-
-	// Stimulum
-		gas_breathed = PP(breath,GAS_STIMULUM)
-		if (gas_breathed > gas_stimulation_min)
-			var/existing = H.reagents.get_reagent_amount(/datum/reagent/stimulum)
-			H.reagents.add_reagent(/datum/reagent/stimulum, max(0, 5 - existing))
-		breath.adjust_moles(GAS_STIMULUM, -gas_breathed)
 
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
@@ -334,35 +309,35 @@
 				monoxide_reagent.metabolization_rate = monoxide_reagent::metabolization_rate
 			switch(carbon_monoxide_pp)
 				if (0 to 20)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation,50)
+					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation,50)
 				if (20 to 100)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 150)
+					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
 				if (100 to 200)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 250)
+					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 250)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,4)
 				if (200 to 400)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 250)
+					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 250)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,8)
 				if (400 to INFINITY)
-					monoxide_reagent.accumilation = max(monoxide_reagent.accumilation, 450)
+					monoxide_reagent.accumulation = max(monoxide_reagent.accumulation, 450)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,16)
 		else
 			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent)
-				monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 150)
+				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 
 	//if you can read this, please tell me a good way to reduce repeating this piece of code
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
-		if (prob(sulfur_dioxide_pp))
-			to_chat(H, "<span class='alert'>It hurts to breath.</span>")
+		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))
+			to_chat(H, span_alert("It hurts to breath."))
 		if (sulfur_dioxide_pp >40)
 			H.emote("gasp")
 			H.adjustOxyLoss(5)
 			if (prob(sulfur_dioxide_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(round(sulfur_dioxide_pp/8))
@@ -373,12 +348,12 @@
 	// Ozone
 		var/ozone_pp = PP(breath,GAS_O3)
 		if (prob(ozone_pp))
-			to_chat(H, "<span class='alert'>Your heart feels funny.</span>")
+			to_chat(H, span_alert("Your heart feels funny."))
 		if (ozone_pp >40)
 			H.emote("gasp")
 			H.adjustOxyLoss(5)
 			if (prob(ozone_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		gas_breathed = breath.get_moles(GAS_O3)
 		if (gas_breathed > gas_stimulation_min)
@@ -387,14 +362,14 @@
 	// Ammonia
 		var/ammonia_pp = PP(breath,GAS_AMMONIA)
 		if (prob(ammonia_pp)*2)
-			to_chat(H, "<span class='alert'>Your lungs feel terrible!</span>")
+			to_chat(H, span_alert("Your lungs feel terrible!"))
 
 		if (ammonia_pp > 10)
 			H.emote("gasp")
 			H.adjustOxyLoss(5)
 			H.adjustOxyLoss(round(ammonia_pp/8))
 			if (prob(ammonia_pp/2))
-				to_chat(H, "<span class='alert'>Your throat burns!</span>")
+				to_chat(H, span_alert("Your throat burns!</span>"))
 				H.silent = max(H.silent, 2)
 		else
 			H.adjustOxyLoss(round(ammonia_pp/8))

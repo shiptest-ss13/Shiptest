@@ -1,5 +1,5 @@
 GLOBAL_LIST_INIT(hardcoded_gases, list(GAS_O2, GAS_N2, GAS_CO2, GAS_PLASMA)) //the main four gases, which were at one time hardcoded
-GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GAS_PLUOXIUM, GAS_STIMULUM, GAS_NITRYL, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE))) //unable to react amongst themselves
+GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE))) //unable to react amongst themselves
 
 // Auxgm
 // It's a send-up of XGM, like what baystation got.
@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/list/breath_alert_info = null
 	/// temperature above which this gas is an oxidizer; null for none
 	var/oxidation_temperature = null
-	/// how many moles of this can oxidize how many moles of material
+	/// how much a single mole of this gas can oxidize another mole(s) of gas
 	var/oxidation_rate = 1
 	/// temperature above which gas may catch fire; null for none
 	var/fire_temperature = null
@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/fire_radiation_released = 0
 	///a list of odor texts this gas gives, if null or odor_power is 0 this gas is smellless
 	var/list/odor
-	///if the odor gives negative signs such as coughing on a high concentratation. if your gas doesn't have a bad smell, set this to false
+	///if the odor gives negative signs such as coughing on a high concentratation. if your gas doesn't have a noticeable scent, set this to false
 	var/odor_emotes = TRUE
 	///the multiplier per of this gas's odor, if higher its easily detected in lower conentrations and much more unbearable at lower conentrations as well
 	var/odor_power = 0

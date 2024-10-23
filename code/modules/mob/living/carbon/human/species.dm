@@ -1818,9 +1818,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/eyedamage = FALSE
 	var/irritant = FALSE
 	var/burndamage = 0
-	var/lowerthreshold = 0
+	var/lowerthreshold = FALSE
+
+	var/feels_pain = TRUE
 	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
-		lowerthreshold = 1
+		lowerthreshold = TRUE
+
+	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+		feels_pain = FALSE
 
 	if(plasma > MINIMUM_MOLS_TO_HARM)
 		burndamage += max(sqrt(ammonia) - 1 + lowerthreshold, 0)
@@ -1855,18 +1860,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return
 	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
 	if(prob(50) && burndamage)
-		if(lowerthreshold)
+		if(lowerthreshold && feels_pain)
 			to_chat(H, "<span class='userdanger'>You're corroding!</span>")
-		else
+		else if(feels_pain)
 			to_chat(H, "<span class='userdanger'>You're melting!</span>")
 		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
 	if(!H.check_for_goggles() && eyedamage)
 		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
-		if(prob(50))
+		if(prob(50) && feels_pain)
 			to_chat(H, "<span class='danger'>Your eyes burn!</span>")
 			H.emote("cry")
-			H.set_blurriness(10)
-	if(irritant && prob(50))
+		H.set_blurriness(10)
+	if(irritant && prob(50) && feels_pain)
 		if(lowerthreshold)
 			to_chat(H, "<span class='danger'>Your outer shell smolders!</span>")
 		else
