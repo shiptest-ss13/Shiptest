@@ -267,7 +267,7 @@
 
 /datum/brain_trauma/mild/monoxide_poisoning_stage1
 	name = "Stage 1 Carbon Monoxide Poisoning"
-	desc = "Due to over exposure to carbon monoxide, patient's judgment and speech thinking capabilities."
+	desc = "Due to overexposure to carbon monoxide, patient's mental facilities are degrading.."
 	scan_desc = "carbon monoxide poisoning"
 	gain_text = "<span class='warning'>You get a headache.</span>"
 	lose_text = "<span class='notice'>Your headache disapears and you find it easier to focus.</span>"
