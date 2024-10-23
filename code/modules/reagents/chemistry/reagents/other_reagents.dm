@@ -1200,13 +1200,11 @@
 			victim.Stun(10)
 			victim.Dizzy(5)
 			victim.confused = (accumulation/50)
-			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
-			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
 
 		if(250 to 350)
 			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
 			victim.adjustStaminaLoss(3)
-			victim.Stun(35)
 
 			victim.Dizzy(5)
 			victim.confused = (accumulation/50)
@@ -1214,10 +1212,7 @@
 
 			victim.adjustToxLoss(accumulation/100*REM, 0)
 
-			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
-			victim.gain_trauma(/datum/brain_trauma/mild/muscle_weakness)
-			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
-			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 		if(350 to 1000)
 			victim.Unconscious(20 SECONDS)
@@ -1226,10 +1221,8 @@
 			victim.adjustToxLoss(accumulation/100*REM, 0)
 		if(1000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
 			victim.death()
-			victim.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
-			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
-			victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
-			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 			qdel(src)
 			return TRUE
@@ -1253,10 +1246,8 @@
 
 /datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
 	var/mob/living/carbon/living_carbon = living_mob
-	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/muscle_weakness)
-	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
-	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
-	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 /datum/reagent/stimulum
 	name = "Stimulum"
