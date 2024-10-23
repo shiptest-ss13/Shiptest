@@ -278,6 +278,7 @@
 	pixel_y = 3
 	},
 /obj/item/pinpointer/crew/prox,
+/obj/item/flashlight/pen,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "dE" = (
@@ -423,6 +424,14 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 22;
+	pixel_y = 4
+	},
+/obj/structure/sign/warning/fire{
+	pixel_x = 22;
+	pixel_y = 16
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "fr" = (
@@ -462,8 +471,11 @@
 /obj/item/bedsheet/blue{
 	dir = 1
 	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 30
+/obj/structure/sign/poster/rilena/ri{
+	pixel_x = -28
+	},
+/obj/structure/sign/flag/gezena{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -513,6 +525,7 @@
 	pixel_y = -12;
 	pixel_x = 20
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "gg" = (
@@ -614,7 +627,13 @@
 	pixel_x = -4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = 22;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "hp" = (
@@ -625,6 +644,9 @@
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/corner/opaque/green/bordercorner{
 	dir = 8
+	},
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
@@ -828,11 +850,16 @@
 /area/ship/bridge)
 "jo" = (
 /obj/effect/turf_decal/etherbor/left,
-/obj/structure/closet/crate,
+/obj/structure/closet/crate{
+	name = "CLIP lend-lease"
+	},
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/cans/sixsoda,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jp" = (
@@ -846,6 +873,9 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals9{
 	dir = 4
+	},
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
@@ -1317,8 +1347,12 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_y = 1;
-	pixel_x = 7
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/item/desk_flag/gezena{
+	pixel_y = 0;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1572,6 +1606,10 @@
 /obj/item/pen{
 	pixel_y = 5;
 	pixel_x = -2
+	},
+/obj/item/flashlight/lamp{
+	pixel_x = 9;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1830,6 +1868,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "xp" = (
@@ -2049,6 +2090,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/sign/departments/engineering{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Aj" = (
@@ -2090,6 +2134,9 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/item/radio/intercom/directional/east,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = -22
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/medical)
 "Bb" = (
@@ -2172,6 +2219,14 @@
 /obj/item/gun/energy/kalix/pistol,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
+"Dt" = (
+/obj/effect/turf_decal/arrows,
+/obj/structure/sign/warning{
+	pixel_y = 24;
+	pixel_x = -23
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Dz" = (
 /obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -2185,7 +2240,8 @@
 "DG" = (
 /obj/structure/closet/secure_closet/armory1{
 	name = "gear locker";
-	populate = 0
+	populate = 0;
+	req_access = list(1)
 	},
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -2407,6 +2463,14 @@
 "GN" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
+"GX" = (
+/obj/effect/turf_decal/arrows,
+/obj/structure/sign/warning{
+	pixel_y = 24;
+	pixel_x = 23
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Hu" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/cabinet,
@@ -2625,6 +2689,27 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
+"JE" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/ccommons)
 "JL" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -2836,7 +2921,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north{
+	pixel_y = 26
+	},
 /obj/machinery/light_switch{
 	pixel_y = 23;
 	pixel_x = 12
@@ -3046,7 +3133,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light/directional/north,
 /obj/machinery/button/door{
 	dir = 2;
 	pixel_y = 20;
@@ -3264,10 +3350,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 17;
-	pixel_x = 2
-	},
 /obj/item/storage/box/syringes{
 	pixel_x = 11;
 	pixel_y = 2
@@ -3281,6 +3363,10 @@
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = -12
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 17;
+	pixel_x = 2
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
@@ -3435,6 +3521,9 @@
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_y = 12;
 	pixel_x = -4
+	},
+/obj/item/radio/old{
+	pixel_x = 6
 	},
 /obj/item/desk_flag/gezena{
 	pixel_y = -3;
@@ -4175,7 +4264,7 @@ RH
 Is
 gg
 ZT
-LF
+Dt
 Ua
 "}
 (20,1,1) = {"
@@ -4243,7 +4332,7 @@ fa
 uw
 iL
 gZ
-LF
+GX
 Ua
 "}
 (24,1,1) = {"
@@ -4323,7 +4412,7 @@ Xv
 cH
 cH
 YS
-NV
+JE
 lI
 YS
 eT
