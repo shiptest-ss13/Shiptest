@@ -296,6 +296,15 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/newscaster/directional/south,
+/obj/machinery/button/door{
+	pixel_y = -19;
+	pixel_x = -11;
+	specialfunctions = 4;
+	name = "door bolt control";
+	id = "cth_b1";
+	normaldoorcontrol = 1;
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
 "dP" = (
@@ -382,7 +391,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Head"
+	name = "Head";
+	id_tag = "cth_b2"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1288,7 +1298,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "cth_b1"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2231,6 +2242,14 @@
 	},
 /obj/structure/sink{
 	pixel_y = 14
+	},
+/obj/machinery/button/door{
+	pixel_y = 23;
+	pixel_x = 12;
+	specialfunctions = 4;
+	name = "door bolt control";
+	id = "cth_b2";
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
