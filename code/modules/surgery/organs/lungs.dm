@@ -328,7 +328,6 @@
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 
-	//if you can read this, please tell me a good way to reduce repeating this piece of code
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
 		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))
