@@ -1210,7 +1210,7 @@
 				var/time_to_open = 50
 				playsound(src, pry_sound, 100, TRUE, mono_adj = TRUE) //is it aliens or just the CE being a dick?
 				prying_so_hard = TRUE
-				if(do_after(user, time_to_open, src))
+				if(do_after(user, time_to_open*I.toolspeed, src))
 					open(2)
 					if(density && !open(2))
 						to_chat(user, "<span class='warning'>Despite your attempts, [src] refuses to open.</span>")

@@ -13,7 +13,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=50)
 	drop_sound = 'sound/items/handling/crowbar_drop.ogg'
-	pickup_sound =  'sound/items/handling/crowbar_pickup.ogg'
+	pickup_sound = 'sound/items/handling/crowbar_pickup.ogg'
 
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_CROWBAR
@@ -38,13 +38,36 @@
 	name = "crowbar"
 	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big."
 	force = 12
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	throw_speed = 3
 	throw_range = 3
 	custom_materials = list(/datum/material/iron=70)
 	icon_state = "crowbar_large"
 	item_state = "crowbar"
-	toolspeed = 0.7
+	toolspeed = 3
+
+/obj/item/crowbar/large/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
+/obj/item/crowbar/large/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, wieldsound='sound/items/handling/metal_drop.ogg')
+
+/// triggered on wield of two handed item
+/obj/item/crowbar/large/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	toolspeed = 2
+	force_opens = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/crowbar/large/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	toolspeed = 3
+	force_opens = FALSE
 
 /obj/item/crowbar/power
 	name = "jaws of life"
