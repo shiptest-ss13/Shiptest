@@ -23,7 +23,7 @@
 /datum/breathing_class/oxygen
 	gases = list(
 		GAS_O2 = 1,
-		GAS_O3 = 2,
+		GAS_O3 = -0.7,
 		GAS_CO2 = -0.7, // CO2 isn't actually toxic, just an asphyxiant
 	)
 	products = list(

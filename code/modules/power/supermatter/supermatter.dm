@@ -29,7 +29,7 @@
 #define PLASMA_TRANSMIT_MODIFIER 4
 #define BZ_TRANSMIT_MODIFIER -2
 #define TRITIUM_TRANSMIT_MODIFIER 30 //We divide by 10, so this works out to 3
-#define PLUOXIUM_TRANSMIT_MODIFIER -5 //Should halve the power output
+#define OZONE_TRANSMIT_MODIFIER -5 //Should halve the power output
 #define H2O_TRANSMIT_MODIFIER -9
 
 #define BZ_RADIOACTIVITY_MODIFIER 5 //Improves the effect of transmit modifiers
@@ -177,7 +177,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_O2 = OXYGEN_TRANSMIT_MODIFIER,
 		GAS_H2O = H2O_TRANSMIT_MODIFIER,
 		GAS_PLASMA = PLASMA_TRANSMIT_MODIFIER,
-		GAS_O3 = PLUOXIUM_TRANSMIT_MODIFIER,
+		GAS_O3 = OZONE_TRANSMIT_MODIFIER,
 		GAS_TRITIUM = TRITIUM_TRANSMIT_MODIFIER,
 		GAS_BZ = BZ_TRANSMIT_MODIFIER,
 	)

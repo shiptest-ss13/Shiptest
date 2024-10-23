@@ -75,7 +75,7 @@
 	gas_type = GAS_O2
 
 /obj/machinery/portable_atmospherics/canister/ozone
-	name = "ozone (o3) canister"
+	name = "ozone canister"
 	desc = "Ozone. Sometimes called as 'pure air', this is far from the truth; ozone is not good for your lungs nor heart."
 	icon_state = "darkblue"
 	gas_type = GAS_O3
