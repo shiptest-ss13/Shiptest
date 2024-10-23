@@ -173,14 +173,14 @@
 
 /datum/supply_pack/gun/m12
 	name = "Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 12 \"Sporter\", Serene Outdoors' premier small game rifle."
+	desc = "Contains a recently manufactured Model 12 \"Sporter\", Serene Outdoors' premier small game rifle. Chambered in .22lr"
 	contains = list(/obj/item/storage/guncase/m12)
 	cost = 500
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/m15
 	name = "Super Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle."
+	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle. Chambered in 5.56 CLIP"
 	contains = list(/obj/item/storage/guncase/m15)
 	cost = 2500
 	crate_name = "rifle crate"
