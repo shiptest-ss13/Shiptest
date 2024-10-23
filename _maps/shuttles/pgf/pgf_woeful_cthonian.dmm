@@ -114,7 +114,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech,
+/obj/item/multitool{
+	pixel_y = -2;
+	pixel_x = 6
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "ci" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner{
@@ -2203,6 +2208,8 @@
 /obj/item/gps,
 /obj/item/gps,
 /obj/item/gps,
+/obj/item/crowbar/large,
+/obj/item/crowbar/large,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "DJ" = (
@@ -2347,6 +2354,7 @@
 /area/ship/cargo)
 "GC" = (
 /obj/effect/turf_decal/etherbor/right,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "GM" = (
