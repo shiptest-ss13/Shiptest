@@ -179,7 +179,7 @@ Difficulty: Medium
 		var/increment = 360 / spiral_count
 		for(var/j = 1 to spiral_count)
 			var/list/turfs = line_target(j * increment + i * increment / 2, range, src)
-			INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+			INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 		SLEEP_CHECK_DEATH(25)
 	SetRecoveryTime(30)
 
@@ -250,11 +250,11 @@ Difficulty: Medium
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(0, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/line_target(offset, range, atom/at = target)
 	if(!at)
@@ -268,32 +268,9 @@ Difficulty: Medium
 		T = check
 	return (getline(src, T) - get_turf(src))
 
-/mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_line(list/turfs)
+/mob/living/simple_animal/hostile/megafauna/dragon/proc/dragon_fire_line(list/turfs)
 	SLEEP_CHECK_DEATH(0)
-	dragon_fire_line(src, turfs)
-
-//fire line keeps going even if dragon is deleted
-/proc/dragon_fire_line(source, list/turfs)
-	var/list/hit_list = list()
-	for(var/turf/T in turfs)
-		if(istype(T, /turf/closed))
-			break
-		new /obj/effect/hotspot(T)
-		T.hotspot_expose(700,50,1)
-		for(var/mob/living/L in T.contents)
-			if(L in hit_list || L == source)
-				continue
-			hit_list += L
-			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s fire breath!</span>")
-
-		// deals damage to mechs
-		for(var/obj/mecha/M in T.contents)
-			if(M in hit_list)
-				continue
-			hit_list += M
-			M.take_damage(45, BRUTE, "melee", 1)
-		sleep(1.5)
+	fire_line(src, turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/swoop_attack(lava_arena = FALSE, atom/movable/manual_target, swoop_cooldown = 30)
 	if(stat || swooping)

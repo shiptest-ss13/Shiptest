@@ -207,16 +207,6 @@
 	icon_state = "blspell"
 	duration = 5
 
-/obj/effect/temp_visual/guardian
-	randomdir = 0
-
-/obj/effect/temp_visual/guardian/phase
-	duration = 5
-	icon_state = "phasein"
-
-/obj/effect/temp_visual/guardian/phase/out
-	icon_state = "phaseout"
-
 /obj/effect/temp_visual/decoy
 	desc = "It's a decoy!"
 	duration = 15
