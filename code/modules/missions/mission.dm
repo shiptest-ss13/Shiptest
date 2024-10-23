@@ -3,17 +3,20 @@
 	var/author = ""
 	var/desc = "Do something for me."
 	var/faction = /datum/faction/independent
-	var/value = 1000 /// The mission's payout.
+	/// The mission's payout.
+	var/value = 1000
+	/// Optional var to give an item upon completion along with value
 	var/mission_reward
-	var/duration /// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
+	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
+	var/duration
+	/// The relative probability of this mission being selected. 0-weight missions are never selected.
+	var/weight = 0
 
-	///Only needed if you have multipe missiosn that use the same poi's on the map. Set at new.
+	/// Only needed if you have multipe missiosn that use the same poi's on the map. Set at new.
 	var/mission_index
 
 	var/location_specific = TRUE
-	/// The outpost that issued this mission. Passed in New().
-	//var/datum/overmap/outpost/source_outpost
+	/// The location the mission is relient on, often pulling varibles from it or will delete itself if the mission_location is deleted. Passed in New().
 	var/datum/overmap/mission_location
 
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
@@ -23,6 +26,7 @@
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
+	/// Timestamp for when the mission was activated
 	var/time_issued
 	var/active = FALSE
 	var/failed = FALSE

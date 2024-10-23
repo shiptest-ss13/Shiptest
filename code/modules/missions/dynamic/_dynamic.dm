@@ -1,9 +1,12 @@
 /datum/mission/dynamic
 	value = 2000
+	/// Which landmark we will search for in spawned_mission_pois of the planet
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
+	/// Item that will be spawned at the setpiece_poi
 	var/setpiece_item
-	///Specific item uses an exact item, if false it will allow type or any subtype
+	/// Specific item uses an exact item, if false it will allow type or any subtype
 	var/specific_item = TRUE
+	/// The item that you can turn in to complete the mission. If specific_item is false it uses the type of the item.
 	var/atom/movable/required_item
 
 /datum/mission/dynamic/generate_mission_details()

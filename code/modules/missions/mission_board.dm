@@ -10,7 +10,7 @@
 /obj/machinery/computer/mission/LateInitialize()
 	. = ..()
 	if(istype(get_area(src.loc), /area/outpost))
-		var/obj/machinery/mission_pad/pad = locate() in range(4,src)
+		var/obj/machinery/mission_pad/pad = locate() in range(2,src)
 		pad_ref = WEAKREF(pad)
 	desc += "This one is not linked to any outpost."
 
@@ -69,8 +69,6 @@
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
 	if(!pad)
 		return
-	//if(!usr.can_perform_action(src) || (machine_stat & (NOPOWER|BROKEN)))
-	//	return
 	switch(action)
 		if("recalc")
 			recalc()
