@@ -1,3 +1,9 @@
+/datum/supply_pack/magazine
+	group = "Magazines"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	crate_name = "magazine crate"
+
+
 /* VI */
 
 /datum/supply_pack/magazine/co9mm_mag
@@ -44,16 +50,40 @@
 
 /* Scarbie */
 
+/datum/supply_pack/magazine/himehabu_mag
+	name = "Himehabu Magazine Crate"
+	desc = "Contains a .22lr magazine for the himehabu pistol, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu)
+	cost = 200
+
+/datum/supply_pack/magazine/himehabu_mag
+	name = "Asp Magazine Crate"
+	desc = "Contains a 5.7x39mm magazine for the himehabu pistol, containing 12 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m57_39_asp)
+	cost = 400
+
 /datum/supply_pack/magazine/m10mm_mag
 	name = "10mm Ringneck Magazine Crate"
 	desc = "Contains a 10mm magazine for the ringneck pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m10mm_ringneck)
 	cost = 500
 
+/datum/supply_pack/magazine/m9mm_rattlesnake
+	name = "Rattlesnake Magazine Crate"
+	desc = "Contains a 9mm magazine for the rattlesnake machine pistol, contains 18 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m9mm_rattlesnake)
+	cost = 500
+
 /datum/supply_pack/magazine/a357_mag
 	name = ".357 Speedloader Crate"
-	desc = "Contains a .357 speedloader for revolvers,  containing seven rounds."
+	desc = "Contains a .357 speedloader for revolvers, containing seven rounds."
 	contains = list(/obj/item/ammo_box/a357)
+	cost = 750
+
+/datum/supply_pack/magazine/sidewinder_mag
+	name = "Sidewinder Crate"
+	desc = "Contains a 30 round magazine for the Sidewinder SMG."
+	contains = list(/obj/item/ammo_box/magazine/m57_39_sidewinder)
 	cost = 750
 
 /datum/supply_pack/magazine/c45_cobra_mag
@@ -62,37 +92,39 @@
 	cost = 750
 	contains = list(/obj/item/ammo_box/magazine/m45_cobra)
 
-/datum/supply_pack/ammo/ebr_ammo
+/datum/supply_pack/magazine/hydra_mag
 	name = "SMR-80 Magazine Crate"
 	desc = "Contains a .308 magazine for the M514 EBR rifle, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/small)
 	cost = 1000
 
+/datum/supply_pack/magazine/boomslang_mag
+	name = "Boomslang-90 Magazine Crate"
+	desc = "Contains a 6.5 CLIP magazine for the Boomslang-90 rifle, containing five rounds."
+	contains = list(/obj/item/ammo_box/magazine/boomslang/short)
+	cost = 1000
+
 /* CM Lancaster */
 
-/datum/supply_pack/ammo/cm82_mag
+/datum/supply_pack/magazine/cm82_mag
 	name = "CM-82 Magazine Crate"
 	desc = "Contains a 5.56mm magazine for the P-16 rifle, containing thirty rounds. Notably, these are also compatable with the P-16 rifle."
 	contains = list(/obj/item/ammo_box/magazine/p16)
 	cost = 1000
 
-/datum/supply_pack/ammo/skm_ammo
+/datum/supply_pack/magazine/skm_ammo
 	name = "SKM Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, containing twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40)
 	cost = 1000
 
-/datum/supply_pack/ammo/f4_mag
+/datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
 	desc = "Contains a .308 magazine for F4 platform rifles, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/f4_308)
 	cost = 1000
 
-/datum/supply_pack/ammo/boomslang_mag
-	name = "Boomslang-90 Magazine Crate"
-	desc = "Contains a 6.5 CLIP magazine for the Boomslang-90 rifle, containing five rounds."
-	contains = list(/obj/item/ammo_box/magazine/boomslang/short)
-	cost = 1000
+
 
 /* NT */
 
@@ -130,13 +162,13 @@
 	cost = 750
 	faction = FACTION_SOLGOV
 
-/datum/supply_pack/ammo/gar_ammo
+/datum/supply_pack/magazine/gar_ammo
 	name = "GAR Ferromagnetic Lance Magazine Crate"
 	desc = "Contains a ferromagnetic lance magazine for the GAR rifle, containing thirty two rounds."
 	contains = list(/obj/item/ammo_box/magazine/gar)
 	cost = 1000
 
-/datum/supply_pack/ammo/claris_ammo
+/datum/supply_pack/magazine/claris_ammo
 	name = "Claris Ferromagnetic Pellet Speedloader Crate"
 	desc = "Contains a ferromagnetic pellet speedloader for the Claris rifle, containing twenty two rounds."
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
@@ -144,7 +176,7 @@
 
 /* energy weapons */
 
-/datum/supply_pack/ammo/guncell
+/datum/supply_pack/magazine/guncell
 	name = "Weapon Cell Crate"
 	desc = "Contains a weapon cell, compatible with laser guns."
 	contains = list(/obj/item/stock_parts/cell/gun)
@@ -152,7 +184,7 @@
 
 /* etherbor */
 
-/datum/supply_pack/ammo/guncell/kalix
+/datum/supply_pack/magazine/guncell/kalix
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
