@@ -81,10 +81,10 @@ export const isJobOrNameMatch = (
 ): boolean => {
   if (!searchQuery) return true;
 
-  const { full_name, job } = observable;
+  const { name, job } = observable;
 
   return (
-    full_name?.toLowerCase().includes(searchQuery?.toLowerCase()) ||
+    name?.toLowerCase().includes(searchQuery?.toLowerCase()) ||
     job?.toLowerCase().includes(searchQuery?.toLowerCase()) ||
     false
   );
@@ -96,8 +96,8 @@ export const searchFor = (searchText) =>
 export const compareString = (a, b) => (a < b ? -1 : a > b);
 
 export const compareNumberedText = (a, b) => {
-  const aName = a.name;
-  const bName = b.name;
+  const aName = a.real_name;
+  const bName = b.real_name;
 
   // Check if aName and bName are the same except for a number at the end
   // e.g. Medibot (2) and Medibot (3)
