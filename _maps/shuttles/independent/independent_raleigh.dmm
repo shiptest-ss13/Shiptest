@@ -714,16 +714,12 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /obj/structure/closet/wall/white/directional/east,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration{
-	pixel_y = 1
-	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/decal/cleanable/food/flour,
-/obj/effect/spawner/lootdrop/ration{
-	pixel_y = 1
-	},
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "jc" = (
@@ -1036,7 +1032,7 @@
 /area/ship/crew/ccommons)
 "my" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/item/toy/plush/flushed,
 /turf/open/floor/carpet/green,
@@ -1055,7 +1051,7 @@
 /area/ship/hallway/central)
 "mE" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/item/toy/plush/carpplushie,
 /turf/open/floor/carpet/green,
@@ -1625,7 +1621,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "tg" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
@@ -1851,7 +1847,7 @@
 "ws" = (
 /obj/structure/curtain/bounty,
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "wS" = (
@@ -4082,7 +4078,7 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Wm" = (
@@ -4531,7 +4527,7 @@
 "ZE" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
