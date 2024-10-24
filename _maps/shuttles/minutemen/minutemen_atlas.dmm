@@ -278,7 +278,7 @@
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/storage/pistolcase/cm23,
+/obj/item/storage/guncase/pistol/cm23,
 /obj/item/clothing/suit/armor/clip_capcoat{
 	pixel_x = -14
 	},
@@ -746,7 +746,7 @@
 	name = "first officer's locker";
 	req_access_txt = "19"
 	},
-/obj/item/storage/pistolcase/cm23{
+/obj/item/storage/guncase/pistol/cm23{
 	pixel_y = -4
 	},
 /obj/item/clothing/head/clip/slouch/officer{
@@ -1165,7 +1165,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/assault/cm82{
-	spawnwithmagazine = 0;
+	default_ammo_type = 0;
 	pixel_x = -4;
 	pixel_y = 8
 	},

@@ -5309,12 +5309,21 @@
 /obj/structure/sign/poster/retro/lasergun_new{
 	pixel_x = -32
 	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag{
-	pixel_x = -8;
-	pixel_y = 8
+/obj/item/storage/guncase/inherit{
+	pixel_x = 2;
+	pixel_y = -2
 	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag{
-	pixel_x = -12
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/storage/guncase/inherit{
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -6534,25 +6543,9 @@
 /obj/structure/sign/poster/official/ion_carbine{
 	pixel_x = -32
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
+/obj/item/toy/plush/moth/deadhead{
+	pixel_x = 3;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -7415,9 +7408,10 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
-	},
+/obj/item/storage/guncase/pistol/inherit,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Wr" = (

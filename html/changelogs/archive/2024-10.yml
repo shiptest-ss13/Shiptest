@@ -253,3 +253,83 @@
   - rscadd: Atlas-class Light Armored Crusier
   rye-rice:
   - rscadd: Resprites the commander and Commissioner
+2024-10-19:
+  Apogee-dev:
+  - balance: Reduced Cobra-20 magazine size to 24 rounds
+  - bugfix: removed a typo from Scarborough cargo catalog entries
+  Erikafox:
+  - rscdel: Xenobiology (minus slimes)
+  - code_imp: pre-weld and pre-sealed airlock helpers for maps.
+  FalloutFalcon:
+  - rscadd: Autolathes can now print space heater boards.
+  - bugfix: examine on ammo casings now properly hint that you can write on them
+  Gristlebee:
+  - rscadd: Bullets can have a message written on them.
+  NithaIsTired:
+  - rscadd: Adds a ton of audible emotes and visible emotes like snapping your fingers
+      or twitching
+  - rscadd: You can boop people on the nose by clicking on their mouth with help intent
+  - rscadd: Sound variation with a few emotes like snapping and clapping
+  - rscadd: Laying down now plays a sound if you aren't on walk intent
+  Orchidthederg:
+  - bugfix: fallback sprite for dust storms was set to the carp sprite for some reason.
+  - imageadd: fancy new carp, meteor, and electrical storm
+  - imagedel: old carp, meteor, and electrical storm sprites
+  Spookywastaken:
+  - imageadd: Handrails have been resprited!
+  generalthrax:
+  - balance: E40 hybrid rifle ballistic mode now shoots faster
+2024-10-20:
+  FalloutFalcon:
+  - balance: blind people can examine twice as fast
+  - code_imp: makes defines for the two primary atoms requirement lists
+2024-10-21:
+  Apogee-dev:
+  - balance: Made Komodo aspawn
+2024-10-22:
+  Imaginos, Erika:
+  - rscadd: The Pan Gezenan Federation has sent out shipments of boarding cutlasses
+      to the Frontier. Expect cool doohickeys on your friendly neighborhood PGF Vessel
+  - imageadd: 'Imaginos: PGF sord sprites'
+  - code_imp: sabres now take up less space in code
+2024-10-23:
+  Erikafox:
+  - bugfix: Hallucination Anomalies will stay on their tile now.
+  - rscadd: You can now fax credit holochips
+  - bugfix: Analgesia can no longer be taken with self-aware
+  - bugfix: Few edge cases for analgesiacs getting pain
+  FalloutFalcon:
+  - bugfix: ammo
+  - refactor: refactored ammo types to not be snowflaked when handling spawning subtyped
+      guns
+  FeenieRU:
+  - code_imp: Changing qdel() and SSgarbage procs
+  - code_imp: rewrite /Destroy(force, silent) to /Destroy(force)
+  Sun-Soaked:
+  - rscadd: Directional Mines, implemented as Claymores.
+  - rscadd: Mines now have World Icons
+  - balance: explosions now only strip to space when a tile is already damaged
+  - bugfix: Prox mines explode from slightly further away & no longer activate through
+      walls.
+  - bugfix: Multiple mines can no longer be stacked on a tile
+  - code_imp: fire_casing() can now be called by non-mobs, allowing objects to shoot
+      casings.
+  - bugfix: cleans up mine wire datums on mine deletion
+  generalthrax:
+  - rscadd: Added Stamped Steel Machetes, 5 for 500
+  meemofcourse:
+  - rscadd: A lot of ERTs and ERT remasters, including Fronties, Ramzi, PGF, NGR,
+      Indies and whatnot
+  - rscdel: Most Nanotrasen ERTs have been shelved pending assets
+  - rscdel: Smokebomb randomized descriptions
+2024-10-24:
+  Erika Fox:
+  - rscadd: An abandoned tradepost has been located in the system. Investigate nearby
+      waste worlds for more information.
+  - rscadd: preburnt flares
+  Erikafox:
+  - rscadd: Kasagi-Fischer has begun a new production run of the venerable Raleigh-class
+      Corvette. See your purchaser's manual for more information!
+  - balance: Fireaxes on the black market now cost less. Thanks Kiirv-Waha!
+  FalloutFalcon:
+  - code_imp: better pr labeling for ships and ruins
