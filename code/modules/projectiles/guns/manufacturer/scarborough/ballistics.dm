@@ -608,7 +608,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
 /obj/item/ammo_box/magazine/boomslang
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
-	desc = "A large 10-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A large 10-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	base_icon_state = "boomslang"
 	icon_state = "boomslang-10"
 	ammo_type = /obj/item/ammo_casing/a65clip
@@ -618,7 +618,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
 /obj/item/ammo_box/magazine/boomslang/short
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
-	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	base_icon_state = "boomslang_short"
 	icon_state = "boomslang_short-5"
 	ammo_type = /obj/item/ammo_casing/a65clip
@@ -1012,6 +1012,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		)
 	)
 
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
+
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
@@ -1095,7 +1098,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_casing/caseless/rocket/a70mm
 	name = "\improper M-KO-9HE"
-	desc = "An 70mm High Explosive rocket. Fire at mech and pray."
+	desc = "A 70mm High Explosive rocket. Fire at mech and pray."
 	icon_state = "srm-8"
 	caliber = "70mm"
 	projectile_type = /obj/projectile/bullet/a84mm_he
@@ -1103,7 +1106,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_casing/caseless/rocket/a70mm/hedp
 	name = "\improper M-KO-9HEDP"
-	desc = "An 84mm High Explosive Dual Purpose rocket. Pointy end toward armor."
+	desc = "A 70mm High Explosive Dual Purpose rocket. Pointy end toward armor."
 	caliber = "70mm"
 	icon_state = "84mm-hedp"
 	projectile_type = /obj/projectile/bullet/a84mm

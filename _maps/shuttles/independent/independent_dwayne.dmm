@@ -257,7 +257,7 @@
 /obj/structure/closet/crate,
 /obj/machinery/firealarm/directional/north,
 /obj/item/circuitboard/machine/pipedispenser,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "dh" = (
@@ -1442,7 +1442,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "vj" = (
@@ -1584,7 +1584,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "yu" = (
@@ -1889,7 +1889,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Ds" = (
@@ -2083,7 +2083,7 @@
 /area/ship/external/dark)
 "Gl" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/airalarm/directional/east,
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet,
@@ -2213,7 +2213,7 @@
 "Is" = (
 /obj/structure/closet/crate/science,
 /obj/item/paicard,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "IF" = (
@@ -2301,7 +2301,7 @@
 /area/ship/storage/eva)
 "JH" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
 	},
@@ -2433,10 +2433,10 @@
 /obj/structure/closet/secure_closet/freezer/wall/directional/south{
 	name = "kitchen cabinet"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -2617,28 +2617,13 @@
 /area/ship/storage/eva)
 "NT" = (
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/glowstick,
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = 2
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3;
-	pixel_x = 7
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -4;
-	pixel_y = -4
-	},
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "NW" = (
@@ -2751,11 +2736,11 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /obj/structure/closet/crate/large,
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -3405,7 +3390,7 @@
 /obj/item/trash/candy,
 /obj/item/trash/sosjerky,
 /obj/item/trash/can/food/beans,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/structure/cable/cyan{
 	icon_state = "2-5"
 	},
@@ -3473,7 +3458,7 @@
 /area/ship/engineering)
 "ZQ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "ZR" = (

@@ -386,6 +386,6 @@
 			if(initial(fish.available_in_random_cases) || !case_fish_only)
 				chance_table[fish] = initial(fish.random_case_rarity)
 		probability_table[argkey] = chance_table
-	return pickweight(probability_table[argkey])
+	return pick_weight(probability_table[argkey])
 
 
