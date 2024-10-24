@@ -190,8 +190,10 @@ SUBSYSTEM_DEF(garbage)
 
 		var/datum/D = L[GC_QUEUE_ITEM_REF]
 
+		var/remaining_refs = refcount(D) - REFS_WE_EXPECT
+
 		// If that's all we've got, send er off
-		if (refcount(D) == REFS_WE_EXPECT)
+		if (!remaining_refs)
 			++gcedlasttick
 			++totalgcs
 			pass_counts[level]++
@@ -212,9 +214,8 @@ SUBSYSTEM_DEF(garbage)
 		switch (level)
 			if (GC_QUEUE_CHECK)
 				#ifdef REFERENCE_TRACKING
-				// Decides how many refs to look for (potentially)
+				// Decides how many refs to look for (potentially) with remaining_refs
 				// Based off the remaining and the ones we can account for
-				var/remaining_refs = refcount(D) - REFS_WE_EXPECT
 				if(reference_find_on_fail[text_ref(D)])
 					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references), remaining_refs)
 					ref_searching = TRUE
