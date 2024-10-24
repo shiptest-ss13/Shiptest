@@ -98,10 +98,16 @@
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
 	desc = "For when you need to go fast in space."
-	cost = 2000
+	cost = 750
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "jetpack crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/tools/jetpack/harness
+	name = "Jetpack Harness Crate"
+	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
+	cost = 1500
+	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
 /datum/supply_pack/tools/transfer_valve
 	name = "Tank Transfer Valves Crate"
