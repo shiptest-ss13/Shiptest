@@ -285,6 +285,7 @@
 	},
 /obj/item/pinpointer/crew/prox,
 /obj/item/flashlight/pen,
+/obj/item/sensor_device,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "dE" = (
@@ -1620,6 +1621,10 @@
 	pixel_x = 9;
 	pixel_y = -2
 	},
+/obj/item/clipboard{
+	pixel_x = -11;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "uK" = (
@@ -1951,6 +1956,7 @@
 	pixel_y = -7
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "xS" = (
@@ -2326,6 +2332,14 @@
 /obj/item/gps,
 /obj/item/crowbar/large,
 /obj/item/crowbar/large,
+/obj/item/clipboard{
+	pixel_x = -11;
+	pixel_y = -4
+	},
+/obj/item/clipboard{
+	pixel_x = -11;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "DJ" = (
@@ -3019,6 +3033,14 @@
 /obj/item/taperecorder,
 /obj/item/tape/random,
 /obj/item/tape/random,
+/obj/item/clipboard{
+	pixel_x = -11;
+	pixel_y = -4
+	},
+/obj/item/clipboard{
+	pixel_x = -11;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Mq" = (
@@ -3467,6 +3489,7 @@
 	populate = 0
 	},
 /obj/item/storage/guncase/pistol/kalixpistol,
+/obj/item/megaphone/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "US" = (
