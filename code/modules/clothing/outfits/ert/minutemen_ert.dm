@@ -128,7 +128,7 @@
 	name = "ERT - C-MM Military Police (Riot Control)"
 
 	suit = /obj/item/clothing/suit/armor/riot/clip
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava/combat
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/helmet/riot/clip
@@ -159,7 +159,7 @@
 	name = "ERT - C-MM Chief Military Police (Riot Control)"
 
 	suit = /obj/item/clothing/suit/armor/riot/clip
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava/combat
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	head = /obj/item/clothing/head/helmet/riot/clip

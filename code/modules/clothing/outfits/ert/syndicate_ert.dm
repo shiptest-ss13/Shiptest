@@ -14,7 +14,7 @@
 	ears = /obj/item/radio/headset/headset_sec/alt
 	gloves = /obj/item/clothing/gloves/color/black
 	id = /obj/item/card/id/syndicate_command/crew_id
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava
 	head = /obj/item/clothing/head/helmet/syndie
 	belt = /obj/item/storage/belt/military/hydra
 	glasses = /obj/item/clothing/glasses/hud/security
@@ -30,7 +30,7 @@
 	job_icon = "lieutenant"
 
 	head = /obj/item/clothing/head/HoS/beret/syndicate
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava/combat
 	ears = /obj/item/radio/headset/syndicate/alt/leader
 
 // inspector
@@ -69,7 +69,7 @@
 	id_assignment = "Serviceman"
 
 	head = /obj/item/clothing/head/helmet/ngr
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/ngr
+	mask = /obj/item/clothing/mask/balaclava/ngr
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
@@ -92,7 +92,7 @@
 	id_assignment = "Field Medic"
 
 	head = /obj/item/clothing/head/ngr/surgical
-	mask = /obj/item/clothing/mask/gas/syndicate/ngr
+	mask = /obj/item/clothing/mask/breath/ngr
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
@@ -255,7 +255,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	belt = /obj/item/storage/belt/security/webbing/hardliners/sidewinder
 	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava/combat
 	head = /obj/item/clothing/head/helmet/hardliners
 
 /datum/outfit/job/syndicate/ert/hardliner/engineer
