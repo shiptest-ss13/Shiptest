@@ -23,7 +23,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Ageusia","Vegetarian","Deviant Tastes"), \
 							list("Ananas Affinity","Ananas Aversion"), \
 							list("Alcohol Tolerance","Light Drinker"), \
-							list("Bad Touch", "Friendly"))
+							list("Bad Touch", "Friendly"), \
+							list("Self-Aware", "Congenital Analgesia")
+							)
 
 	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
 
