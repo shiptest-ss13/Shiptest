@@ -6,6 +6,9 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+/obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
+	spread = 80
+
 /obj/item/ammo_casing/energy/laser/assault
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
