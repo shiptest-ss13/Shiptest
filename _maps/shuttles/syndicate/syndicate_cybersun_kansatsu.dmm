@@ -407,6 +407,7 @@
 /obj/item/storage/box/syndie_kit/kansatsu/chameleon,
 /obj/item/storage/box/syndie_kit/kansatsu/pens,
 /obj/item/storage/box/syndie_kit/kansatsu/pens,
+/obj/item/storage/box/syndie_kit/kansatsu/tracking_beacons,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -2349,12 +2350,11 @@
 /area/ship/crew/dorm/dormtwo)
 "QN" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/kansatsu_missions{
+	pixel_y = 6
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
-	},
-/obj/item/folder/red{
-	pixel_x = -5;
-	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew)
