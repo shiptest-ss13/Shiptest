@@ -96,8 +96,8 @@ export const searchFor = (searchText) =>
 export const compareString = (a, b) => (a < b ? -1 : a > b);
 
 export const compareNumberedText = (a, b) => {
-  const aName = a.real_name;
-  const bName = b.real_name;
+  const aName = a.name;
+  const bName = b.name;
 
   // Check if aName and bName are the same except for a number at the end
   // e.g. Medibot (2) and Medibot (3)
