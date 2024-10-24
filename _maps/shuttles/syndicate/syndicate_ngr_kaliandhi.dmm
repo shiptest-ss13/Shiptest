@@ -327,9 +327,6 @@
 	dir = 1
 	},
 /obj/structure/chair/handrail,
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 22
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "cj" = (
@@ -544,6 +541,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = 22
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
@@ -2349,6 +2349,9 @@
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = -20
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
@@ -5025,11 +5028,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/storage/fancy/cigarettes/cigpack_robust,
-/obj/item/lighter/greyscale{
-	pixel_x = 10;
-	pixel_y = 5
-	},
+/obj/item/storage/box/gum/nicotine,
 /turf/open/floor/pod,
 /area/ship/hallway/fore)
 "GO" = (
@@ -5999,9 +5998,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
-	},
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
