@@ -278,7 +278,7 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_probabilities = list(\
 		DYNAMIC_WORLD_BEACHPLANET = 10,
 		DYNAMIC_WORLD_SPACERUIN = 5,
-		DYNAMIC_WORLD_ASTEROID = 20,
+		DYNAMIC_WORLD_MOON = 20,
 		)
 
 /datum/overmap_star_system/zx_spectrum_pallete
@@ -589,6 +589,8 @@ SUBSYSTEM_DEF(overmap)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
+	mapgen.pre_generation(dynamic_datum)
+
 	// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
 	log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
@@ -726,7 +728,7 @@ SUBSYSTEM_DEF(overmap)
 	//if we even use mapgen, do mapgen things, otherwise just load the god damn map
 	if(use_mapgen)
 		mapgen = new static_datum.mapgen
-		// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
+		mapgen.pre_generation(static_datum)
 		log_shuttle("SSOVERMAP: START_STATIC_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 		mapgen.generate_turfs(vlevel.get_unreserved_block())
 

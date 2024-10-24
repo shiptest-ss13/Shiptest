@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/asteroid
-	mountain_height = 0.65
+	mountain_height = 0.7
 	perlin_zoom = 20
 
 	initial_closed_chance = 45
@@ -84,6 +84,18 @@
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/asteroid/carp_den
 		)
 	)
+
+/datum/map_generator/planet_generator/asteroid/pre_generation(datum/overmap/our_planet)
+	var/datum/overmap/dynamic/dynamic_planet = our_planet
+	var/datum/overmap/event/nearby_event
+	if(!istype(dynamic_planet))
+		return
+	nearby_event = locate(/datum/overmap/event) in dynamic_planet.get_nearby_overmap_objects()
+	if(!nearby_event || !nearby_event.mountain_height_override)
+		return
+
+	mountain_height = nearby_event.mountain_height_override
+	return TRUE
 
 /datum/biome/asteroid
 	open_turf_types = list(

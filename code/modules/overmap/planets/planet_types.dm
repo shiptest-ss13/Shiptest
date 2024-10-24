@@ -106,7 +106,7 @@
 	ruin_type = RUINTYPE_YELLOW
 
 /datum/planet_type/asteroid
-	name = "asteroid field"
+	name = "legacy asteroid field"
 	desc = "A field of asteroids with significant traces of minerals."
 	planet = DYNAMIC_WORLD_ASTEROID
 	icon_state = "asteroid"
@@ -117,6 +117,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
+	weight = 0
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/planet_type/spaceruin

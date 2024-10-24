@@ -258,7 +258,10 @@
 	return ..()
 
 /datum/overmap/dynamic/empty/choose_level_type()
-	return
+	var/datum/overmap/event/current_event = locate(/datum/overmap/event) in get_nearby_overmap_objects()
+	if(!current_event)
+		return
+	current_event.modify_emptyspace_mapgen(src)
 
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))

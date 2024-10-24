@@ -15,6 +15,10 @@
 	var/spread_chance = 0
 	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
 	var/chain_rate = 0
+	///The mapgen we set ourself to when a ship docks to empty space over us
+	var/datum/map_generator/empty_space_mapgen
+	/// override the mountain value to this value
+	var/mountain_height_override
 
 
 /datum/overmap/event/Initialize(position, ...)
@@ -46,6 +50,13 @@
 /datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/Ship)
 	return
 
+/**
+ * The proc called to modify the empty space generation when it is spawned.
+ */
+/datum/overmap/event/proc/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
+	if(!empty_space_mapgen)
+		return
+	our_planet.mapgen = empty_space_mapgen
 
 ///METEOR STORMS - explodes your ship if you go too fast
 /datum/overmap/event/meteor
@@ -56,6 +67,9 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
+
+	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+
 	var/safe_speed = 3
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
@@ -85,6 +99,9 @@
 	name = "asteroid field (minor)"
 	base_icon_state = "meteor_light_"
 	chain_rate = 3
+
+	mountain_height_override = 0.85
+
 	meteor_types = list(
 		/obj/effect/meteor/dust=12,
 		/obj/effect/meteor/medium=4,
@@ -96,6 +113,9 @@
 	base_icon_state = "meteor_major_"
 	spread_chance = 25
 	chain_rate = 6
+
+	mountain_height_override = 0.5
+
 	meteor_types = list(
 		/obj/effect/meteor/medium=50,
 		/obj/effect/meteor/big=25,
@@ -130,6 +150,10 @@
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
+
+/datum/overmap/event/emp/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
+	our_planet.weather_controller_type = /datum/weather_controller/shrouded
+	return ..()
 
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
@@ -170,6 +194,11 @@
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
+
+
+/datum/overmap/event/electric/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
+	our_planet.weather_controller_type = /datum/weather_controller/shrouded
+	return ..()
 
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
