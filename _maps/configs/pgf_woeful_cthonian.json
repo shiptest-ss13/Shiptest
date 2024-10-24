@@ -1,0 +1,38 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/pgf",
+	"prefix": "PGFN",
+	"map_name": "Woeful Cthonian-class Patrol Cutter",
+	"namelists": [
+		"PGF"
+	],
+	"map_short_name": "Cthonian-class",
+	"description": "A new design of patrol ship designed by Etherbor's Lihmona Navy Shipyards and manufactured by Axilai Orbital Works, the Woeful Cthonian is a small ship with average maneuverability and firepower designed for sustained operations in contested space. While it is not able to hold its own in a firefight with proper warships, lacks specialization into any particular field, and carries no proper marine complement. Despite what some would consider shortcomings, it still finds solid usage as a generalist vessel for the Gezenan navy.",
+	"tags": [
+		"RP Focus",
+		"Medical"
+	],
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/pgf/pgf_woeful_cthonian.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/gezena/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Navy Engineer": {
+			"outfit": "/datum/outfit/job/gezena/engineer",
+			"slots": 1
+		},
+		"Navy Doctor": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 3
+		}
+	},
+	"enabled":true
+}
