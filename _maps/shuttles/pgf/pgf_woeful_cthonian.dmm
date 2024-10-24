@@ -738,8 +738,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Ships Locker";
-	req_access_txt = "1"
+	name = "Ships Locker"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1491,6 +1490,14 @@
 "sW" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
+"sY" = (
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Ships Locker";
+	req_access_txt = "1"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "tl" = (
 /obj/structure/railing{
 	dir = 8
@@ -2280,8 +2287,7 @@
 "DG" = (
 /obj/structure/closet/secure_closet/armory1{
 	name = "gear locker";
-	populate = 0;
-	req_access = list(1)
+	populate = 0
 	},
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -4413,7 +4419,7 @@ oQ
 Yl
 iE
 dv
-tt
+sY
 tt
 JL
 tt
