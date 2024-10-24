@@ -169,4 +169,4 @@
 	tiled_dirt = FALSE
 
 /turf/open/floor/holofloor/snow/cold
-	initial_gas_mix = "nob=7500;TEMP=2.7"
+	initial_gas_mix = "ammonia=7500;TEMP=2.7"

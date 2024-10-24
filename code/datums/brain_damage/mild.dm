@@ -264,3 +264,103 @@
 			speak_dejavu += speech_args[SPEECH_MESSAGE]
 	else
 		speak_dejavu += speech_args[SPEECH_MESSAGE]
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage1
+	name = "Stage 1 Carbon Monoxide Poisoning"
+	desc = "Due to overexposure to carbon monoxide, patient's mental facilities are degrading.."
+	scan_desc = "carbon monoxide poisoning"
+	gain_text = "<span class='warning'>You get a headache.</span>"
+	lose_text = "<span class='notice'>Your headache disapears and you find it easier to focus.</span>"
+
+	var/static/list/common_words = world.file2list("strings/1000_most_common.txt")
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage1/on_life()
+	var/fall_chance = 1
+	if(owner.m_intent == MOVE_INTENT_RUN)
+		fall_chance += 2
+	if(prob(fall_chance) && owner.body_position == STANDING_UP)
+		to_chat(owner, "<span class='warning'>Your leg gives out!</span>")
+		owner.Paralyze(35)
+
+	else if(owner.get_active_held_item())
+		var/drop_chance = 1
+		var/obj/item/I = owner.get_active_held_item()
+		drop_chance += I.w_class
+		if(prob(drop_chance) && owner.dropItemToGround(I))
+			to_chat(owner, "<span class='warning'>You drop [I]!</span>")
+
+	else if(prob(3))
+		to_chat(owner, "<span class='warning'>You feel a sudden weakness in your muscles!</span>")
+		owner.adjustStaminaLoss(50)
+	..()
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage1/handle_speech(datum/source, list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message)
+		var/list/message_split = splittext(message, " ")
+		var/list/new_message = list()
+
+		for(var/word in message_split)
+			var/suffix = ""
+			var/suffix_foundon = 0
+			for(var/potential_suffix in list("." , "," , ";" , "!" , ":" , "?"))
+				suffix_foundon = findtext(word, potential_suffix, -length(potential_suffix))
+				if(suffix_foundon)
+					suffix = potential_suffix
+					break
+
+			if(suffix_foundon)
+				word = copytext(word, 1, suffix_foundon)
+			word = html_decode(word)
+
+			if(lowertext(word) in common_words)
+				new_message += word + suffix
+			else
+				if(prob(30) && message_split.len > 2)
+					new_message += pick("uh","erm")
+					break
+				else
+					var/list/charlist = text2charlist(word)
+					charlist.len = round(charlist.len * 0.5, 1)
+					shuffle_inplace(charlist)
+					new_message += jointext(charlist, "") + suffix
+
+		message = jointext(new_message, " ")
+
+	speech_args[SPEECH_MESSAGE] = trim(message)
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage2
+	name = "Stage 2 Carbon Monoxide Poisoning"
+	desc = "Due to extreme exposure to carbon monoxide, patient's higher brain functions are severely impacted."
+	scan_desc = "critical carbon monoxide poisoning"
+	gain_text = "<span class='warning'>You bad get forget you headache don't!</span>"
+	lose_text = "<span class='notice'>Your headache gets better.</span>"
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage2/on_gain()
+	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage2/on_lose()
+	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/mild/monoxide_poisoning_stage2/on_life()
+	if(prob(5))
+		switch(rand(1,11))
+			if(1)
+				owner.vomit()
+			if(2,3)
+				owner.dizziness += 10
+			if(4,5)
+				owner.confused += 10
+				owner.blur_eyes(10)
+			if(6 to 9)
+				owner.slurring += 30
+			if(10)
+				to_chat(owner, "<span class='notice'>You forget what you were doing.</span>")
+				owner.Stun(20)
+			if(11)
+				to_chat(owner, "<span class='warning'>You faint.</span>")
+				owner.Unconscious(80)
+
+	..()
