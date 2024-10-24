@@ -224,7 +224,7 @@
 	custom_materials = null
 	flags_1 = 0
 	icon_state = "frame-empty"
-	result_path = /obj/structure/sign/painting
+	result_path = /obj/structure/sign/painting/library
 
 /obj/structure/sign/painting
 	name = "Painting"
