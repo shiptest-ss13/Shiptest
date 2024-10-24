@@ -327,6 +327,9 @@
 	dir = 1
 	},
 /obj/structure/chair/handrail,
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "cj" = (
@@ -1251,7 +1254,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/newscaster/directional/west,
-/obj/structure/chair/bench/orange/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ja" = (
@@ -2213,6 +2215,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "oD" = (
@@ -2716,14 +2721,6 @@
 	pixel_x = 32
 	},
 /obj/structure/table,
-/obj/item/lighter/greyscale{
-	pixel_x = 10;
-	pixel_y = 5
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_robust{
-	pixel_x = 6;
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -3419,6 +3416,16 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"wR" = (
+/obj/effect/turf_decal/corner/opaque/tan/full,
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/structure/sign/poster/syndicate/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "wY" = (
 /obj/effect/turf_decal/corner/opaque/white/full{
 	color = "#c59973"
@@ -5139,8 +5146,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/sign/poster/syndicate/random{
-	pixel_y = -32
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = -20
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -5992,6 +5999,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -7420,17 +7430,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/item/storage/fancy/cigarettes/cigpack_robustgold{
-	pixel_x = -3;
-	pixel_y = 1
-	},
 /obj/item/reagent_containers/food/drinks/waterbottle{
 	pixel_x = 5;
 	pixel_y = 11
-	},
-/obj/item/lighter{
-	pixel_x = 3;
-	pixel_y = 1
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
@@ -7710,7 +7712,7 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/vending/cigarette,
+/obj/structure/chair/bench/orange/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ZO" = (
@@ -8295,7 +8297,7 @@ PG
 PG
 Fp
 qG
-ok
+wR
 Pg
 Kz
 "}
