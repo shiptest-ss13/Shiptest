@@ -129,6 +129,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/himehabu
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+
 /obj/item/storage/guncase/pistol/candor
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
 	mag_type = /obj/item/ammo_box/magazine/m45

@@ -372,6 +372,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	w_class = WEIGHT_CLASS_TINY
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/magazine/m22lr_himehabu/empty
+	start_empty = TRUE
+
 //########### SMGS ###########//
 
 
