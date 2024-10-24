@@ -128,7 +128,7 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
+	planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)

@@ -474,9 +474,7 @@
 /obj/structure/bed/double{
 	dir = 1
 	},
-/obj/item/bedsheet/dorms/double{
-	dir = 1
-	},
+/obj/effect/spawner/random/bedsheet/double,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
 "iN" = (
@@ -675,7 +673,7 @@
 /area/ruin/unpowered/crashed_holemaker)
 "lt" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "lu" = (
@@ -744,7 +742,7 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
@@ -1442,7 +1440,7 @@
 /turf/open/floor/carpet,
 /area/ruin/unpowered/crashed_holemaker)
 "ze" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "zh" = (
@@ -2390,7 +2388,7 @@
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "RL" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/spline/fancy/transparent/neutral/corner{
 	dir = 4
 	},

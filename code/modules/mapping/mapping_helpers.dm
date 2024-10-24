@@ -4,7 +4,7 @@
 
 /obj/effect/baseturf_helper //Set the baseturfs of every turf in the /area/ it is placed.
 	name = "baseturf editor"
-	icon = 'icons/effects/mapping_helpers.dmi'
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = ""
 
 	var/list/baseturf_to_replace
@@ -89,8 +89,9 @@
 
 
 /obj/effect/mapping_helpers
-	icon = 'icons/effects/mapping_helpers.dmi'
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = ""
+	invisibility = INVISIBILITY_OBSERVER
 	var/late = FALSE
 
 /obj/effect/mapping_helpers/Initialize()
@@ -151,6 +152,25 @@
 		log_mapping("[src] at [AREACOORD(src)] tried to bolt [airlock] but it's already locked!")
 	else
 		airlock.locked = TRUE
+
+/obj/effect/mapping_helpers/airlock/welded
+	name = "airlock welder"
+
+/obj/effect/mapping_helpers/airlock/welded/payload(obj/machinery/door/airlock/airlock)
+	if(airlock.welded)
+		log_mapping("[src] at [AREACOORD(src)] tried to weld [airlock] but it's already locked!")
+	else
+		airlock.welded = TRUE
+
+/obj/effect/mapping_helpers/airlock/sealed
+	name = "airlock sealer"
+
+/obj/effect/mapping_helpers/airlock/sealed/payload(obj/machinery/door/airlock/airlock)
+	if(airlock.seal)
+		log_mapping("[src] at [AREACOORD(src)] tried to seal [airlock] but it's already already got a seal? What the hell!")
+	else
+		airlock.seal = new /obj/item/door_seal(src)
+
 
 
 /obj/effect/mapping_helpers/airlock/unres
@@ -253,7 +273,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/ianbirthday
 	name = "Ian's Bday Helper"
 	late = TRUE
-	icon_state = "iansbdayhelper"
 	var/balloon_clusters = 2
 
 /obj/effect/mapping_helpers/ianbirthday/LateInitialize()
@@ -312,7 +331,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 
 /obj/effect/mapping_helpers/ianbirthday/admin//so admins may birthday any room
 	name = "generic birthday setup"
-	icon_state = "bdayhelper"
 
 /obj/effect/mapping_helpers/ianbirthday/admin/LateInitialize()
 	birthday()
@@ -322,7 +340,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/iannewyear
 	name = "Ian's New Years Helper"
 	late = TRUE
-	icon_state = "iansnewyrshelper"
 
 /obj/effect/mapping_helpers/iannewyear/LateInitialize()
 	if(SSevents.holidays && SSevents.holidays[NEW_YEAR])

@@ -159,7 +159,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)

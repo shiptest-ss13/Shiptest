@@ -335,7 +335,7 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "fe" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
@@ -1064,7 +1064,7 @@
 	projectile_type = null
 	},
 /obj/item/gun/ballistic/automatic/smg/firestorm{
-	spawnwithmagazine = 0
+	default_ammo_type = 0
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -1254,10 +1254,10 @@
 /obj/item/clothing/head/frontier,
 /obj/item/clothing/gloves/color/latex,
 /obj/item/clothing/mask/surgical,
-/obj/effect/spawner/lootdrop/chem_jug,
-/obj/effect/spawner/lootdrop/chem_jug,
-/obj/effect/spawner/lootdrop/chem_jug,
-/obj/effect/spawner/lootdrop/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/neutral{
 	dir = 4
@@ -1657,7 +1657,7 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wD" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -1768,7 +1768,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "yi" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -1965,9 +1965,9 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/wood/mahogany{
 	icon_state = "wood-broken6"
 	},
@@ -2673,7 +2673,7 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/residential)
 "Nq" = (
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed{
