@@ -1282,6 +1282,7 @@
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /obj/item/radio/weather_monitor,
 /obj/item/radio/weather_monitor,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1299,23 +1300,7 @@
 /area/ship/hallway/central)
 "pQ" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = 2
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3;
-	pixel_x = 7
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_y = -3
-	},
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = -8;
-	pixel_y = -3
-	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pU" = (
