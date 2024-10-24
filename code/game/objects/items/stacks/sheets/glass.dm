@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/obj/item/stack/sheet/weld_material = /obj/item/stack/sheet/glass
 	embedding = list("embed_chance" = 65)
 
-/obj/item/shard/Initialize()
+/obj/item/shard/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/caltrop, force)
 	AddComponent(/datum/component/butchering, 150, 65)
@@ -300,16 +300,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if (icon_prefix)
 		icon_state = "[icon_prefix][icon_state]"
 
-	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
+	if(!mapload)
+		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/item/shard/Destroy()
-	. = ..()
-	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/shard/afterattack(atom/A as mob|obj, mob/user, proximity)
 	. = ..()

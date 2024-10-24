@@ -590,7 +590,6 @@
 /datum/outfit/ctf/red/post_equip(mob/living/carbon/human/H)
 	..()
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CTF_RED)
 	R.freqlock = TRUE
 	R.independent = TRUE
 	H.dna.species.stunmod = 0
@@ -598,7 +597,6 @@
 /datum/outfit/ctf/blue/post_equip(mob/living/carbon/human/H)
 	..()
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CTF_BLUE)
 	R.freqlock = TRUE
 	R.independent = TRUE
 	H.dna.species.stunmod = 0
