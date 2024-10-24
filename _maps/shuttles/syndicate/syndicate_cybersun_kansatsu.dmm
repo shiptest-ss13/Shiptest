@@ -1226,8 +1226,7 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
 	},
-/obj/structure/bed,
-/obj/item/bedsheet/black,
+/obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/nanoweave,
@@ -1351,16 +1350,12 @@
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/closet/wall/red/directional/north,
 /obj/item/clothing/under/misc/pj/red,
 /obj/item/clothing/under/misc/pj/red,
 /obj/effect/spawner/lootdrop/plushie,
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm/dormtwo)
 "uq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2639,11 +2634,8 @@
 	pixel_x = -32
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/item/bedsheet/black{
-	dir = 4
-	},
 /obj/structure/curtain/cloth/grey,
-/obj/structure/bed{
+/obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -2747,11 +2739,7 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/newscaster/directional/north,
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm/dormtwo)
 "Xw" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
