@@ -11,6 +11,7 @@
 	var/mask_adjusted = 0
 	var/adjusted_flags = null
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	blood_overlay_type = "mask"
 
 /obj/item/clothing/mask/attack_self(mob/user)
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
@@ -38,9 +39,7 @@
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
 			if(HAS_BLOOD_DNA(src))
-				var/mutable_appearance/bloody_mask = mutable_appearance('icons/effects/blood.dmi', "maskblood")
-				bloody_mask.color = get_blood_dna_color(return_blood_DNA())
-				. += bloody_mask
+				. += setup_blood_overlay()
 
 /obj/item/clothing/mask/update_clothes_damaged_state(damaging = TRUE)
 	..()

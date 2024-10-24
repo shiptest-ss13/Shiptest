@@ -94,6 +94,7 @@
 	apply_overlay(FIRE_LAYER)
 
 /mob/living/carbon/update_damage_overlays()
+
 	remove_overlay(DAMAGE_LAYER)
 
 	var/mutable_appearance/damage_overlay = mutable_appearance('icons/mob/dam_mob.dmi', "blank", -DAMAGE_LAYER)
@@ -102,12 +103,13 @@
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.dmg_overlay_type)
 			if(BP.brutestate)
-				var/image/brute_overlay = image('icons/mob/dam_mob.dmi', "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")
+				var/image/brute_overlay = image(BP.dmg_overlay_icon, "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")
 				if(BP.use_damage_color)
 					brute_overlay.color = BP.damage_color
 				damage_overlay.add_overlay(brute_overlay)
 			if(BP.burnstate)
-				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_0[BP.burnstate]")
+				var/image/burn_overlay = image(BP.dmg_overlay_icon, "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.burnstate]0")
+				damage_overlay.add_overlay(burn_overlay)
 
 	apply_overlay(DAMAGE_LAYER)
 

@@ -9,7 +9,7 @@
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	var/blood_overlay_type = "suit"
+	blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo //WS Edit - Exowear Pockets
@@ -24,9 +24,8 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_armor = mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
-			bloody_armor.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_armor
+			. += setup_blood_overlay()
+
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform
