@@ -56,9 +56,6 @@
 			/obj/item/ammo_box/magazine/smgm9mm = 7,
 		)
 
-//CIRCUIT IMPRINTER
-
-
 //DESTRUCTIVE ANAL //i'm killing you
 /obj/effect/spawner/random/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
@@ -69,7 +66,6 @@
 			/obj/item/clothing/head/chameleon = 200,
 			/obj/item/pen/sleepy = 200,
 			/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 100,
-
 			/obj/item/grenade/c4 = 100,
 
 			/obj/item/wrench/syndie = 30,
