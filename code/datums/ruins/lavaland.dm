@@ -50,11 +50,15 @@
 	name = "one of our cargo techs died with some important tech in his head. get it back"
 	setpiece_item = /mob/living/carbon/human
 
+/obj/effect/landmark/mission_poi/main/implanted
+	var/implant_type = /obj/item/organ/cyberimp/brain/datachip
+
 /obj/effect/landmark/mission_poi/main/implanted/use_poi(_type_to_spawn)
 	var/mob/living/carbon/human/implanted = ..()
 	if(istype(implanted, /mob/living/carbon/human))
-		var/obj/item/organ/implant = new /obj/item/organ/cyberimp/brain/datachip()
+		var/obj/item/organ/implant = new implant_type()
 		implant.Insert(implanted)
+		return implant
 
 /datum/map_template/ruin/lavaland/fallenstar
 	name = "Crashed Starwalker"

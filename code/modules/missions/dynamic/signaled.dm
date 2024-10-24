@@ -5,8 +5,8 @@
 	var/mission_main_signal
 
 /datum/mission/dynamic/signaled/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
-	registered_item = mission_poi.use_poi(registered_type)
-	if(isatom(required_item))
+	registered_item = mission_poi.use_poi(registered_type, src)
+	if(isatom(registered_item))
 		registered_item = set_bound(registered_item, null, FALSE, TRUE)
 		RegisterSignal(registered_item, mission_main_signal, PROC_REF(on_signaled))
 	else

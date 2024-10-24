@@ -38,7 +38,7 @@ export const OvermapExamine = (props, context) => {
   const { name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (
-    <Window title={'Overmap Viewer: ' + ascii + '  ' + name} width={400} height={600}>
+    <Window title={'Overmap Inspect: ' + ascii + '  ' + name} width={400} height={600}>
       <Window.Content scrollable>
         <Section
           title={name}

@@ -7,18 +7,18 @@
 	var/value = 1000
 	/// Optional var to give an item upon completion along with value
 	var/mission_reward
-	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/duration
 	/// The relative probability of this mission being selected. 0-weight missions are never selected.
 	var/weight = 0
 
-	/// Only needed if you have multipe missiosn that use the same poi's on the map. Set at new.
+	/// Only needed if you have multipe missions that use the same poi's on the map. Set at new.
 	var/mission_index
 
 	var/location_specific = TRUE
 	/// The location the mission is relient on, often pulling varibles from it or will delete itself if the mission_location is deleted. Passed in New().
 	var/datum/overmap/mission_location
 
+	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
+	var/duration
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
@@ -114,9 +114,9 @@
 		qdel(src)
 		return
 
-	spawn_mission_setpiece(planet)
+	spawn_mission_details(planet)
 
-/datum/mission/proc/spawn_mission_setpiece(datum/overmap/dynamic/planet)
+/datum/mission/proc/spawn_mission_details(datum/overmap/dynamic/planet)
 	return
 
 /datum/mission/proc/can_turn_in(atom/movable/item_to_check)
@@ -249,13 +249,11 @@
 
 /// Shows examine hints on how it relates to a mission
 /datum/component/mission_important
-	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/importance_level
 	var/datum/weakref/mission_ref
 
 /datum/component/mission_important/Initialize(_importance_level = MISSION_IMPORTANCE_RELEVENT, _mission)
-	if(_importance_level)
-		importance_level = _importance_level
+	importance_level = _importance_level
 	if(isdatum(_mission))
 		mission_ref = WEAKREF(_mission)
 	if(isatom(parent))
@@ -265,13 +263,13 @@
 	SIGNAL_HANDLER
 
 	if(!isdatum(mission_ref.resolve()))
-		examine_list += span_notice("[parent] was useful to a mission")
+		examine_list += span_notice("[parent] was useful to a mission.")
 		return
 
 	switch(importance_level)
 		if(MISSION_IMPORTANCE_CRITICAL)
-			examine_list += span_notice("[parent] is critical to a mission")
+			examine_list += span_notice("[parent] is critical to a mission.")
 		if(MISSION_IMPORTANCE_IMPORTANT)
-			examine_list += span_notice("[parent] is important to a mission")
+			examine_list += span_notice("[parent] is important to a mission.")
 		if(MISSION_IMPORTANCE_RELEVENT)
-			examine_list += span_notice("[parent] is relevent to a mission")
+			examine_list += span_notice("[parent] is relevent to a mission.")

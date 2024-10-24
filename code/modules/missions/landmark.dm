@@ -14,13 +14,18 @@
 	///Prefered over the passed one, used for varediting primarly.
 	var/type_to_spawn
 
-/obj/effect/landmark/mission_poi/Initialize()
+/obj/effect/landmark/mission_poi/Initialize(mapload)
 	. = ..()
+	if(mapload && isnull(mission_index))
+		CRASH("[src] didnt have a mission index")
 	SSmissions.unallocated_pois += list(src)
+	if(already_spawned && type_to_spawn)
+		var/atom/item_of_interest = search_poi()
+		prespawned_weakref = WEAKREF(item_of_interest)
 
 /obj/effect/landmark/mission_poi/LateInitialize()
 	. = ..()
-	if(already_spawned && type_to_spawn)
+	if(!prespawned_weakref && already_spawned && type_to_spawn)
 		var/atom/item_of_interest = search_poi()
 		prespawned_weakref = WEAKREF(item_of_interest)
 
@@ -28,7 +33,7 @@
 	SSmissions.unallocated_pois -= src
 	. = ..()
 
-/obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn)
+/obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn, datum/mission/mission)
 	var/atom/item_of_interest
 	use_count--
 	if(!ispath(type_to_spawn))
@@ -44,6 +49,7 @@
 	// We dont have an item to return
 	if(!istype(item_of_interest))
 		CRASH("[src] did not return a item_of_interest")
+	item_of_interest.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, mission)
 	return item_of_interest
 
 /obj/effect/landmark/mission_poi/proc/search_poi()

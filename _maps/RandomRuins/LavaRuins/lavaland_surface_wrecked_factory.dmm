@@ -71,7 +71,6 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "aM" = (
-/obj/item/documents/nanotrasen,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
@@ -79,16 +78,7 @@
 /obj/structure/safe,
 /obj/effect/landmark/mission_poi/main{
 	mission_index = 1;
-	already_spawned = 1;
 	type_to_spawn = /obj/item/documents/nanotrasen
-	},
-/obj/effect/landmark/mission_poi/remover{
-	type_to_spawn = /obj/item/spacecash/bundle/c1000;
-	mission_index = 1
-	},
-/obj/effect/landmark/mission_poi/remover{
-	type_to_spawn = /obj/item/spacecash/bundle/c1000;
-	mission_index = 1
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
