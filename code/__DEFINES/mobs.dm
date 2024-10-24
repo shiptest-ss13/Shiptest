@@ -250,8 +250,7 @@
 //Used as an upper limit for species that continuously gain nutriment
 #define NUTRITION_LEVEL_ALMOST_FULL 535
 
-//Charge levels for Ethereals
-//WS Begin -- Ethereal Charge Scaling
+//Charge levels for Elzu
 #define ELZUOSE_CHARGE_SCALING_MULTIPLIER 20
 #define ELZUOSE_CHARGE_NONE (0 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 #define ELZUOSE_CHARGE_LOWPOWER (20 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
@@ -260,7 +259,12 @@
 #define ELZUOSE_CHARGE_FULL (100 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 #define ELZUOSE_CHARGE_OVERLOAD (125 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 #define ELZUOSE_CHARGE_DANGEROUS (150 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
-//WS End
+
+//Carapace conditions for Elzuose
+#define CARAPACE_BROKEN "carapace_broken"
+#define CARAPACE_BREAKING "carapace_breaking"
+#define CARAPACE_DAMAGED "carapace_damaged"
+#define CARAPACE_FINE "carapace_fine"
 
 //Slime evolution threshold. Controls how fast slimes can split/grow
 #define SLIME_EVOLUTION_THRESHOLD 10
