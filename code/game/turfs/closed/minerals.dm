@@ -842,7 +842,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/proustite = 5,
 		/obj/item/stack/ore/galena = 30, /obj/item/stack/ore/sulfur = 45, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/malachite = 20, /obj/item/stack/ore/plasma = 35,
-		/obj/item/stack/ore/graphite = 10, /obj/item/stack/ore/graphite= 10)
+		/obj/item/stack/ore/graphite = 10)
 
 	mineralChance = 20
 

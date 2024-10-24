@@ -1,17 +1,32 @@
 /datum/planet_type
+	///The name we show on examine
 	var/name = "planet"
+	///The description we show on examine
 	var/desc = "A planet."
+	///The ID tag this planet uses. Depreciated
 	var/planet = null
+	///The ID  tag for the set of ruins this planet uses
 	var/ruin_type = null
+	///The mapgen we set when we are used
 	var/mapgen = null
+	///The fallback turf if mapgen fails.
 	var/default_baseturf = null
+	///The gravity we set. If higher than 1, slowdown effects will be applied
 	var/gravity = 0
+	///The weather we set when we are used
 	var/weather_controller_type = null
+	///The icon state on the token
 	var/icon_state = "globe"
+	///The color we set the token to, note this is overridden by fancy overmaps
 	var/color = "#ffffff"
+	///Our weight when picking a new overmap object
 	var/weight = 20
+	///Do we not self destruct when a ship undocks with no players left behind?
 	var/preserve_level = FALSE
+	///The sound we play when we are landed on. Not reccomended outside of stingers.
 	var/landing_sound
+	///We read from this list to let players know the most common ores on this planet, otherwise does nothing.
+	var/list/primary_ores
 
 /datum/planet_type/lava
 	name = "lava planet"
@@ -25,6 +40,13 @@
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
 	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/sulfur,
+		/obj/item/stack/ore/galena,
+		/obj/item/stack/ore/sulfur/pyrite,
+		/obj/item/stack/ore/magnetite,
+		/obj/item/stack/ore/plasma,
+		)
 
 
 /datum/planet_type/ice
@@ -39,6 +61,11 @@
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
 	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/quartzite,
+		/obj/item/stack/ore/hematite,
+		)
 
 /datum/planet_type/jungle
 	name = "jungle planet"
@@ -52,6 +79,13 @@
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/graphite/coal,
+		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/sulfur,
+		/obj/item/stack/ore/gold,
+		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
+		)
 
 /datum/planet_type/rock
 	name = "rock planet"
@@ -65,6 +99,10 @@
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
 	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/sulfur,
+		)
 
 /datum/planet_type/sand
 	name = "salty sand planet"
@@ -78,6 +116,12 @@
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
 	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/quartzite,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/rutile,
+		)
+
 
 /datum/planet_type/beach
 	name = "ocean planet"
@@ -91,6 +135,11 @@
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/plasma,
+		)
 
 /datum/planet_type/reebe
 	name = "???"
@@ -144,6 +193,15 @@
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
 	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/sulfur,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/autunite,
+		/obj/item/stack/ore/galena,
+		/obj/item/stack/ore/plasma,
+		)
+
 
 /datum/planet_type/gas_giant
 	name = "gas giant"
@@ -198,6 +256,12 @@
 	mapgen = /datum/map_generator/planet_generator/desert
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
+	primary_ores = list(\
+		/obj/item/stack/ore/graphite/coal,
+		/obj/item/stack/ore/sulfur,
+		/obj/item/stack/ore/quartzite,
+		/obj/item/stack/ore/gold,
+		)
 
 /datum/planet_type/shrouded
 	name = "shrouded planet"
@@ -212,6 +276,12 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
 
+	primary_ores = list(\
+		/obj/item/stack/ore/autunite,
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/magnetite,
+		)
+
 /datum/planet_type/moon
 	name = "planetoid moon"
 	desc = "A terrestrial satellite orbiting a nearby planet."
@@ -223,6 +293,12 @@
 	mapgen = /datum/map_generator/planet_generator/moon
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
+
+	primary_ores = list(\
+		/obj/item/stack/ore/quartzite,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/rutile,
+		)
 
 /datum/planet_type/battlefield
 	name = "battlefield planet"
