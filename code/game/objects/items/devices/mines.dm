@@ -841,10 +841,10 @@ LIVE_MINE_HELPER(pressure/sound)
 // spawners (random mines, minefields, non-guaranteed mine)
 //
 
-/obj/effect/spawner/lootdrop/mine
+/obj/effect/spawner/random/mine
 	name = "live mine spawner (random)"
-	lootcount = 1
-	fan_out_items = TRUE
+	spawn_loot_count = 1
+	spawn_loot_split = TRUE
 	loot = list(
 		/obj/item/mine/pressure/explosive/live = 10,
 		/obj/item/mine/pressure/explosive/shrapnel/live = 3,
@@ -864,7 +864,7 @@ LIVE_MINE_HELPER(pressure/sound)
 
 /obj/effect/spawner/minefield/random
 	name = "random minefield spawner"
-	minetype = /obj/effect/spawner/lootdrop/mine
+	minetype = /obj/effect/spawner/random/mine
 
 /obj/effect/spawner/minefield/manhack
 	name = "manhack field spawner"
