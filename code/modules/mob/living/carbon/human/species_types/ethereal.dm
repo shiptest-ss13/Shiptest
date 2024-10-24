@@ -29,9 +29,9 @@
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
 	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_NORMAL + 65)
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
-	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_NORMAL + 40)
+	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_NORMAL - 20)
 
-	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 45)
+	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 10)
 	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
 
 	hair_color = "fixedmutcolor"
