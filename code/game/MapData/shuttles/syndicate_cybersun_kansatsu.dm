@@ -176,7 +176,7 @@
 
 /obj/effect/spawner/random/kansatsu_missions
 	name = "Kansatsu Missions"
-	lootdoubles = FALSE
+	spawn_loot_double = FALSE
 	loot = list(
 		/obj/item/disk/holodisk/kansatsu/mission/safety = 3,
 		/obj/item/disk/holodisk/kansatsu/mission/crew = 5,
