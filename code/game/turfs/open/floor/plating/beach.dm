@@ -4,7 +4,7 @@
 	icon_state = "sand"
 	base_icon_state = "sand"
 	baseturfs = /turf/open/floor/plating/asteroid/sand
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
 	digResult = /obj/item/stack/ore/glass
 	planetary_atmos = TRUE
 	digResult = /obj/item/stack/ore/glass/beach

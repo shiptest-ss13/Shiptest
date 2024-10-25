@@ -46,11 +46,11 @@
 	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
 
 	// Lizards are coldblooded and can stand a greater temperature range than humans
-	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 25
-	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'

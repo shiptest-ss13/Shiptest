@@ -26,8 +26,11 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 1
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
+
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 10
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 20
 
 	bodytype = BODYTYPE_VOX
 

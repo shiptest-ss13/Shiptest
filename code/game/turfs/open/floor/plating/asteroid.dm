@@ -27,6 +27,10 @@
 	/// Whether the turf has been dug or not
 	var/dug
 
+
+/turf/open/floor/plating/asteroid/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //not much to slip on
+	return
+
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()
