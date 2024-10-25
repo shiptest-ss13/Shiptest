@@ -17,7 +17,6 @@
 	health = 25
 	maxHealth = 25
 	speed = 1.25
-	gold_core_spawnable = FRIENDLY_SPAWN
 	verb_say = "flutters"
 	verb_ask = "flutters inquisitively"
 	verb_exclaim = "flutters loudly"
