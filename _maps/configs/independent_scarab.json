@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Scarab-class Heavy Mining Ship",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Scarab-class",
+	"map_path": "_maps/shuttles/independent/independent_scarab.dmm",
+	"description": "The Scarab-class is a recently-introduced heavy drilling ship built by Hardline Salvage and Mining. Inspired by Hardline's earlier work on the Talos-class refits, the Scarab comes with heavy drilling equipment and facilities for a number of technicians and hired guards instead of the hand-mining equipment typically found on smaller ships. Extra space for storage or potential remodeling lends the Scarab a degree of flexibility few of its peers can afford.",
+	"tags": [
+		"Mining",
+		"Engineering",
+		"Combat"
+	],
+	"starting_funds": 2500,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/independent/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"slots": 2
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
