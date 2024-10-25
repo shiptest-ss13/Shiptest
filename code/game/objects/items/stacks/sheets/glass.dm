@@ -371,7 +371,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			playsound(src, 'sound/effects/glass_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 30 : 50, TRUE)
 
 /obj/item/shard/plasma
-	name = "purple shard"
+	name = "plasmaglass shard"
 	desc = "A nasty looking shard of plasma glass."
 	force = 6
 	throwforce = 11
@@ -381,7 +381,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/plastitanium
-	name = "beige shard"
+	name = "plastitanium glass shard"
 	desc = "A nasty looking shard of plastitanium glass."
 	force = 6
 	throwforce = 11
