@@ -301,7 +301,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "fX" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/structure/sign/poster/contraband/cybersun{
 	pixel_y = 32
 	},
@@ -645,7 +645,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
 "na" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
 	dir = 1
 	},
@@ -2271,11 +2271,11 @@
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "KB" = (
@@ -2299,7 +2299,7 @@
 /obj/structure/dresser{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/plushie/moth{
+/obj/effect/spawner/random/entertainment/plushie/moth{
 	pixel_y = 11
 	},
 /obj/structure/sign/poster/contraband/stechkin{
@@ -2950,7 +2950,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/cybersunteal{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/reagent_containers/syringe/contraband,
 /obj/item/reagent_containers/syringe/contraband,
 /turf/open/floor/plasteel/white,
