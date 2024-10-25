@@ -63,13 +63,13 @@
 		to_chat(user, span_notice("You insert [item] into [src]."))
 		playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 		update_appearance()
-	if(item.tool_behaviour == TOOL_SCREWDRIVER)
-		to_chat(usr, span_notice("You [open_panel ? "close" : "open"] [src]s panel."))
-		open_panel = !open_panel
 	if(open_panel)
 		if(is_wire_tool(item))
 			wires.interact(user)
 
+/obj/item/taperecorder/screwdriver_act(mob/living/user, obj/item/screwdriver)
+	to_chat(usr, span_notice("You [open_panel ? "close" : "open"] [src]s panel."))
+	open_panel = !open_panel
 
 /obj/item/taperecorder/proc/eject(mob/user)
 	if(mytape)
