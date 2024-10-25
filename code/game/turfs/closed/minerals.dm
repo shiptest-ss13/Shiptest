@@ -113,7 +113,8 @@
 			visible_message(span_warning("The ore was completely ruined!"))
 		else
 			new mineralType(src, mineralAmt)
-			SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
+			if(ishuman(user))
+				SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(give_exp)
