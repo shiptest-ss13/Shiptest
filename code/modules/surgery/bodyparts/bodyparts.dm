@@ -61,6 +61,13 @@
 	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
 	var/bleeding = 0
 
+	/// Whether this limb can decay, limiting its' ability to heal
+	var/uses_integrity = FALSE
+	/// How much has this limb decayed?
+	var/integrity_loss = 0
+	/// How much can this limb's integrity drop before damage can't be healed?
+	var/integrity_threshold = 15
+
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
 	///If disabled, limb is as good as missing.
@@ -120,6 +127,10 @@
 	var/light_burn_msg = "numb"
 	var/medium_burn_msg = "blistered"
 	var/heavy_burn_msg = "peeling away"
+
+	var/light_integrity_msg = "misaligned"
+	var/medium_integrity_msg = "twisted"
+	var/heavy_integrity_msg = "falling apart"
 
 /obj/item/bodypart/Initialize()
 	. = ..()
@@ -275,6 +286,18 @@
 				. = TRUE
 	return update_bodypart_damage_state() || .
 
+
+// Removes integrity from the limb, if it uses integrity.
+/obj/item/bodypart/proc/take_integrity_damage(loss)
+	if (uses_integrity)
+		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_threshold)
+
+
+// Heals integrity for the limb, if it uses integrity.
+/obj/item/bodypart/proc/heal_integrity(amount)
+	if (uses_integrity)
+		integrity_loss = clamp(integrity_loss - amount, 0, max_damage)
+
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
@@ -283,6 +306,12 @@
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 
+	if (uses_integrity && (burn > 0 || brute > 0))
+		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_threshold))
+		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
+		var/heal_mult = min(1,max_heal/total_heal)
+		brute *= heal_mult
+		burn *= heal_mult
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
 		adjust_bleeding(-BLOOD_LOSS_DAMAGE_MAXIMUM * brute / max_damage)
@@ -290,7 +319,6 @@
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
 		set_stamina_dam(round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION))
-
 	if(owner)
 		if(can_be_disabled)
 			update_disabled()
@@ -359,6 +387,10 @@
 		total = max(total, stamina_dam)
 	return total
 
+///Returns damage that can be healed, optionally accounting for if integrity_loss is lost
+/obj/item/bodypart/proc/get_curable_damage(integrity_cost=0)
+	var/total = brute_dam + burn_dam - max(0,(integrity_loss+integrity_cost)-integrity_threshold)
+	return total
 
 //Checks disabled status thresholds
 /obj/item/bodypart/proc/update_disabled()
@@ -619,7 +651,6 @@
 			bone_status = BONE_FLAG_NORMAL
 			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 
-
 		draw_color = mutation_color
 		if(should_draw_greyscale) //Should the limb be colored?
 			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
@@ -797,3 +828,4 @@
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
+
