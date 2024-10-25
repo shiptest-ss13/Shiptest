@@ -29,7 +29,7 @@
 	install_component(new /obj/item/computer_hardware/network_card)
 	install_component(new /obj/item/computer_hardware/printer/mini)
 	hard_drive.store_file(new /datum/computer_file/program/shipping)
-	\hard_drive.store_file(new /datum/computer_file/program/bounty_board)
+	hard_drive.store_file(new /datum/computer_file/program/bounty_board)
 
 /// Given by the syndicate as part of the contract uplink bundle - loads in the Contractor Uplink.
 /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink/Initialize()

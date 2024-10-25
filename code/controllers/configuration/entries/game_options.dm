@@ -432,8 +432,13 @@
 	config_entry_value = 127
 	min_val = 127
 
+/datum/config_entry/number/max_simple_missions
+	config_entry_value = 6
+	min_val = 0
+
 /datum/config_entry/number/max_dynamic_missions
 	config_entry_value = 6
+	min_val = 0
 
 /**
  * A config that skews with the random spawners weights
@@ -442,5 +447,5 @@
  */
 /datum/config_entry/number/random_loot_weight_modifier
 	integer = FALSE
-	default = 1
+	config_entry_value = 1
 	min_val = 0.05
