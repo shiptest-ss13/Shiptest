@@ -403,8 +403,6 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	icon_state = "cm40"
 	item_state = "cm40"
 
-	fire_delay = 0
-
 	fire_sound = 'sound/weapons/gun/hmg/cm40.ogg'
 	rack_sound = 'sound/weapons/gun/hmg/cm40_cocked.ogg'
 

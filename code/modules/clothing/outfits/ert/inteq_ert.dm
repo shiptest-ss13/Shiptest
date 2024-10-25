@@ -42,7 +42,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
-
 /datum/outfit/job/inteq/ert/engineer
 	name = "ERT - Inteq Artificer"
 	id_assignment = "Artificer"

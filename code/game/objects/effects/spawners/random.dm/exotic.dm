@@ -62,7 +62,7 @@
 
 	loot = list(
 		/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
-		/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
+		/obj/item/gun/ballistic/shotgun/automatic/m11 = 5,
 		/obj/item/gun/ballistic/automatic/pistol/deagle,
 		/obj/item/gun/ballistic/revolver/mateba
 	)
