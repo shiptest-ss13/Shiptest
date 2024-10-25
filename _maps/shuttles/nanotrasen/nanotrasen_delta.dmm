@@ -1039,13 +1039,26 @@
 /area/ship/crew)
 "dI" = (
 /obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/folder/yellow,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/folder/yellow{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /obj/item/pen/fountain/captain,
-/obj/item/stamp/qm,
 /obj/effect/turf_decal/corner/opaque/nsorange,
 /obj/effect/turf_decal/corner/opaque/nsorange{
 	dir = 4
+	},
+/obj/item/stamp/nanotrasen/ns{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/stamp/nanotrasen/ns/captain{
+	pixel_x = -7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

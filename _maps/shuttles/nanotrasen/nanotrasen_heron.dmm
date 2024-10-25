@@ -3061,7 +3061,7 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/stamp/qm{
+/obj/item/stamp/nanotrasen/ns{
 	pixel_x = 8;
 	pixel_y = 9
 	},
@@ -8902,7 +8902,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/item/stamp/hos{
+/obj/item/stamp/nanotrasen/vigilitas/security{
 	pixel_y = 9;
 	pixel_x = -6
 	},
@@ -8916,6 +8916,10 @@
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
+	},
+/obj/item/stamp/nanotrasen/vigilitas{
+	pixel_x = 5;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -9159,11 +9163,11 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/stamp/head_of_personnel{
+/obj/item/stamp/nanotrasen/officer{
 	pixel_x = -6;
 	pixel_y = 10
 	},
-/obj/item/stamp/captain{
+/obj/item/stamp/nanotrasen/captain{
 	pixel_x = -7;
 	pixel_y = 4
 	},
@@ -9188,6 +9192,13 @@
 	pixel_x = -5
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/stamp/nanotrasen{
+	pixel_x = 1
+	},
+/obj/item/stamp/nanotrasen/central{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "HP" = (
@@ -12435,7 +12446,7 @@
 /obj/item/pen{
 	pixel_x = -6
 	},
-/obj/item/stamp/qm{
+/obj/item/stamp/nanotrasen/ns{
 	pixel_x = 6;
 	pixel_y = 9
 	},

@@ -598,11 +598,15 @@
 /obj/item/paper_bin{
 	pixel_x = -6
 	},
-/obj/item/stamp/captain{
-	pixel_x = 6
-	},
 /obj/item/pen/fountain/captain{
 	pixel_x = -6
+	},
+/obj/item/stamp/nanotrasen{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/stamp/nanotrasen/captain{
+	pixel_x = 6
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
@@ -3297,9 +3301,6 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/folder/yellow,
-/obj/item/stamp/denied{
-	pixel_x = 4
-	},
 /obj/item/stamp{
 	pixel_x = -5;
 	pixel_y = 9
@@ -3320,6 +3321,13 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 8
+	},
+/obj/item/stamp/nanotrasen/ns{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/item/stamp/denied{
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -5865,6 +5873,7 @@
 	populate = 0
 	},
 /obj/item/stack/tape,
+/obj/item/stamp/nanotrasen/ns/supply,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Gy" = (
@@ -8867,7 +8876,10 @@
 /area/ship/bridge)
 "VY" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/paper_bin,
+/obj/item/paper_bin{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /obj/item/pen/fountain,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -8877,7 +8889,14 @@
 /obj/machinery/camera{
 	dir = 10
 	},
-/obj/item/stamp/centcom,
+/obj/item/stamp/nanotrasen{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/stamp/nanotrasen/central{
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "VZ" = (
@@ -8885,12 +8904,15 @@
 /obj/item/paper_bin{
 	pixel_x = -6
 	},
-/obj/item/stamp/head_of_personnel{
-	name = "first officer's rubber stamp";
-	pixel_x = 6
-	},
 /obj/item/pen/fourcolor{
 	pixel_x = -6
+	},
+/obj/item/stamp/nanotrasen{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/stamp/nanotrasen/officer{
+	pixel_x = 6
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
