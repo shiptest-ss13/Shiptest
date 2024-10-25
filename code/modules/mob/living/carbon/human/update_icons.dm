@@ -687,6 +687,9 @@ There are several things that need to be remembered:
 			if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 				target_overlay = "[target_overlay]_snouted"
 
+			if((head_bodypart.bodytype & BODYTYPE_SNOUT_SMALL) && (I.supports_variations & SNOUTED_SMALL_VARIATION))
+				target_overlay = "[target_overlay]_snouted_small"
+
 			if(dna.species.bodytype & BODYTYPE_VOX)
 				if(I.supports_variations & VOX_VARIATION)
 					icon_file = VOX_MASK_PATH
