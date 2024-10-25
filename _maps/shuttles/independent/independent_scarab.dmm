@@ -27,7 +27,7 @@
 /area/ship/maintenance/port)
 "as" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "aH" = (
@@ -189,7 +189,7 @@
 /area/ship/cargo)
 "ch" = (
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/spawner/lootdrop/plushie,
 /obj/effect/spawner/lootdrop/plushie,
 /obj/structure/sign/poster/random{
@@ -274,7 +274,7 @@
 /obj/item/trash/chips,
 /obj/item/trash/can,
 /obj/item/trash/sosjerky,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "dP" = (
@@ -983,7 +983,7 @@
 	icon_state = "1-8"
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -1009,7 +1009,7 @@
 /area/ship/cargo)
 "lz" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1153,7 +1153,7 @@
 "nK" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/trash/chips,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
@@ -1247,7 +1247,7 @@
 /obj/structure/bed{
 	dir = 2
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "pf" = (
@@ -1300,7 +1300,7 @@
 /area/ship/hallway/central)
 "pQ" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pU" = (
@@ -1329,7 +1329,7 @@
 /area/ship/cargo)
 "qh" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -1405,7 +1405,7 @@
 "rn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/structure/sign/poster/random{
 	pixel_x = 32
 	},
@@ -2069,7 +2069,7 @@
 /area/ship/engineering)
 "yx" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -2163,7 +2163,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "zv" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2388,9 +2388,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
-/obj/item/bedsheet/dorms{
-	dir = 1
-	},
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Dt" = (
@@ -2557,7 +2555,7 @@
 "FP" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/boritos,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "FU" = (
@@ -3234,7 +3232,7 @@
 /area/ship/maintenance/port)
 "Md" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Me" = (
@@ -3286,10 +3284,10 @@
 /obj/structure/closet/secure_closet/wall/directional/north{
 	name = "Fridge"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -3359,7 +3357,7 @@
 	pixel_y = 32
 	},
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Om" = (
