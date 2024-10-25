@@ -2667,7 +2667,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner{
 	dir = 8
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2935,7 +2935,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 1
 	},
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zc" = (
@@ -6330,10 +6330,10 @@
 /obj/item/storage/ration/vegan_chili,
 /obj/item/storage/ration/beef_strips,
 /obj/item/storage/ration/beef_strips,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)

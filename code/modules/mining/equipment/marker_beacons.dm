@@ -32,6 +32,12 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 /obj/item/stack/marker_beacon/thirty //and they're bought in stacks of 1, 10, or 30
 	amount = 30
 
+/obj/item/stack/marker_beacon/ten
+	amount = 10
+
+/obj/item/stack/marker_beacon/thirty
+	amount = 30
+
 /obj/item/stack/marker_beacon/Initialize(mapload)
 	. = ..()
 	update_appearance()
