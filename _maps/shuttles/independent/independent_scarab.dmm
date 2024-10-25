@@ -190,8 +190,8 @@
 "ch" = (
 /obj/structure/closet/cardboard,
 /obj/effect/spawner/random/maintenance,
-/obj/effect/spawner/lootdrop/plushie,
-/obj/effect/spawner/lootdrop/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
 /obj/structure/sign/poster/random{
 	pixel_x = 32
 	},
@@ -376,7 +376,7 @@
 "eB" = (
 /obj/structure/dresser,
 /obj/machinery/light/small/directional/west,
-/obj/effect/spawner/lootdrop/plushie/moth{
+/obj/effect/spawner/random/entertainment/plushie/moth{
 	pixel_y = 11;
 	pixel_x = -5
 	},
@@ -1049,7 +1049,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ma" = (
-/obj/effect/spawner/lootdrop/salvage_machine,
+/obj/effect/spawner/random/salvage_machine,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "mr" = (
@@ -2241,7 +2241,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "AT" = (
-/obj/effect/spawner/lootdrop/salvage_machine,
+/obj/effect/spawner/random/salvage_machine,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "space";
 	pixel_y = 29;
@@ -3246,7 +3246,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-5"
 	},
-/obj/effect/spawner/lootdrop/salvage_machine,
+/obj/effect/spawner/random/salvage_machine,
 /obj/structure/railing{
 	dir = 4
 	},
