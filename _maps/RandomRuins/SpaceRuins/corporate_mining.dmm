@@ -462,7 +462,7 @@
 /area/ruin/space/has_grav/corporatemine/bridge)
 "kZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 4
 	},
@@ -812,7 +812,7 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "sb" = (
@@ -1590,8 +1590,8 @@
 "IF" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "IS" = (
@@ -1774,7 +1774,7 @@
 "NH" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "NO" = (
@@ -2293,7 +2293,7 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ZU" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},

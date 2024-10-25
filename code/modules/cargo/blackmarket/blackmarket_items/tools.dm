@@ -11,17 +11,6 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/tool/syndi_toolbox
-	name = "Syndicate Toolbox"
-	desc = "A set of specialized tools, built to precision perfection and certified by the GEC."
-	item = /obj/item/storage/toolbox/syndicate
-
-	price_min = 500
-	price_max = 2000
-	stock_min = 1
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Advanced Surgical Kit"
 	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."

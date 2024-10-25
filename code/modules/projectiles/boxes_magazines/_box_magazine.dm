@@ -36,8 +36,10 @@
 	///cost of the materials in the magazine/box itself
 	var/list/base_cost
 
-/obj/item/ammo_box/Initialize()
+/obj/item/ammo_box/Initialize(mapload, spawn_empty)
 	. = ..()
+	if(spawn_empty)
+		start_empty = TRUE
 	if(!base_icon_state)
 		base_icon_state = icon_state
 
@@ -72,6 +74,10 @@
 
 	for(var/i = max(1, stored_ammo.len), i <= max_ammo, i++)
 		stored_ammo += new round_check(src)
+
+/obj/item/ammo_box/Destroy()
+	stored_ammo.Cut()
+	return ..()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
