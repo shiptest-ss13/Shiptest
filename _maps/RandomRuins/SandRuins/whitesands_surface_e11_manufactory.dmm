@@ -250,7 +250,7 @@
 /area/ruin/whitesands/e11manufactory/warehouse)
 "by" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
 "bz" = (
@@ -292,7 +292,7 @@
 "bM" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -853,7 +853,7 @@
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "gG" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
@@ -1978,7 +1978,7 @@
 /area/ruin/whitesands/e11manufactory/barracks)
 "oL" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
 "oN" = (
@@ -2677,7 +2677,7 @@
 "uu" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -2757,7 +2757,7 @@
 /area/ruin/whitesands/e11manufactory/barracks)
 "va" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -3007,7 +3007,7 @@
 "xj" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "xn" = (
@@ -3039,12 +3039,12 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -3108,7 +3108,7 @@
 "xW" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 1
@@ -3302,7 +3302,7 @@
 	anchored = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "Ai" = (
@@ -4196,7 +4196,7 @@
 /turf/open/floor/concrete/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Hd" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Hf" = (
@@ -4229,7 +4229,7 @@
 "Hs" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -4436,7 +4436,7 @@
 /area/ruin/whitesands/e11manufactory/office)
 "Jg" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/purple,
@@ -5073,7 +5073,7 @@
 "Of" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -5499,7 +5499,7 @@
 "Rb" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -5963,7 +5963,7 @@
 /area/ruin/whitesands/e11manufactory/office)
 "Ut" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/whitesands/e11manufactory/barracks)
 "Uw" = (
@@ -6113,7 +6113,7 @@
 "VL" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
