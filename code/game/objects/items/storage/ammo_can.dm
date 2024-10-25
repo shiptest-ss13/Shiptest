@@ -7,6 +7,7 @@
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
 	material_flags = NONE
+	has_latches = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/toolbox/ammo/ComponentInitialize()
