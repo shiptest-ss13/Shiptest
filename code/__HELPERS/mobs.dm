@@ -257,7 +257,19 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 /**
- * Timed action involving one mob user. A target can also be specified, but it is optional.
+ * Used to get the amount of change between two body temperatures
+ *
+ * When passed the difference between two temperatures returns the amount of change to temperature to apply.
+ * The change rate should be kept at a low value tween 0.16 and 0.02 for optimal results.
+ * vars:
+ * * temp_diff (required) The differance between two temperatures
+ * * change_rate (optional)(Default: 0.06) The rate of range multiplyer
+ */
+/proc/get_temp_change_amount(temp_diff, change_rate = 0.06)
+	if(temp_diff < 0)
+		return -(BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 - (temp_diff * change_rate))
+
+/* Timed action involving one mob user. A target can also be specified, but it is optional.
  *
  * Checks that `user` does not move, change hands, get stunned, etc. for the
  * given `delay`. Returns `TRUE` on success or `FALSE` on failure.
@@ -469,28 +481,6 @@ GLOBAL_LIST_EMPTY(species_list)
 			to_chat(M, rendered_message)
 		else
 			to_chat(M, message)
-
-//Used in chemical_mob_spawn. Generates a random mob based on a given gold_core_spawnable value.
-/proc/create_random_mob(spawn_location, mob_class = HOSTILE_SPAWN)
-	var/static/list/mob_spawn_meancritters = list() // list of possible hostile mobs
-	var/static/list/mob_spawn_nicecritters = list() // and possible friendly mobs
-
-	if(mob_spawn_meancritters.len <= 0 || mob_spawn_nicecritters.len <= 0)
-		for(var/T in typesof(/mob/living/simple_animal))
-			var/mob/living/simple_animal/SA = T
-			switch(initial(SA.gold_core_spawnable))
-				if(HOSTILE_SPAWN)
-					mob_spawn_meancritters += T
-				if(FRIENDLY_SPAWN)
-					mob_spawn_nicecritters += T
-
-	var/chosen
-	if(mob_class == FRIENDLY_SPAWN)
-		chosen = pick(mob_spawn_nicecritters)
-	else
-		chosen = pick(mob_spawn_meancritters)
-	var/mob/living/simple_animal/C = new chosen(spawn_location)
-	return C
 
 /proc/passtable_on(target, source)
 	var/mob/living/L = target

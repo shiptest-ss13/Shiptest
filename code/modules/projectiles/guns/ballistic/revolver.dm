@@ -10,7 +10,10 @@
 	name = "i demand"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	icon_state = "revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder,
+	)
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	rack_sound = 'sound/weapons/gun/revolver/revolver_prime.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
@@ -25,6 +28,9 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	valid_attachments = list()
+	slot_available = list()
 	fire_delay = 0.4 SECONDS
 	spread_unwielded = 15
 	recoil = 0.5
@@ -39,6 +45,9 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	safety_wording = "hammer"
+
+	gunslinger_recoil_bonus = -1
+	gunslinger_spread_bonus = -8
 
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
@@ -418,7 +427,7 @@
 	fire_delay = src::fire_delay
 	if(fan)
 		rack()
-		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
+		to_chat(user, span_notice("You fan the [bolt_wording] of \the [src]!"))
 		balloon_alert_to_viewers("fans revolver!")
 		fire_delay = 0 SECONDS
 
@@ -436,25 +445,6 @@
 		return
 	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
 
-/obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = -1
-	var/total_recoil = recoil_bonus
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_recoil += gunslinger_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = -8
-	var/total_spread = bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
-
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
 	tryflip(user)
@@ -468,15 +458,6 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-/obj/item/gun/ballistic/revolver/syndicate //mystery tool that we can use later
-	name = "\improper syndicate revolver"
-	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
-	icon_state = "revolver"
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
@@ -487,7 +468,10 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev38,
+	)
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -554,14 +538,8 @@ EMPTY_GUN_HELPER(revolver/detective)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
-/obj/item/gun/ballistic/revolver/detective/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/revolver/syndicate/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/revolver/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver)
+EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -598,14 +576,16 @@ EMPTY_GUN_HELPER(revolver/detective)
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne,
+	)
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-/obj/item/gun/ballistic/revolver/montagne/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver/montagne)
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
@@ -616,8 +596,13 @@ EMPTY_GUN_HELPER(revolver/detective)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "ashhand"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	item_state = "ashhand"
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev4570,
+	)
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	rack_sound = 'sound/weapons/gun/revolver/viper_prime.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
@@ -641,7 +626,10 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/pepperbox,
+	)
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
@@ -650,8 +638,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	semi_auto = TRUE
 	safety_wording = "safety"
 
-/obj/item/gun/ballistic/revolver/firebrand/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver/firebrand)
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
@@ -662,20 +649,25 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 	icon_state = "shadow"
-	item_state = "hp_generic"
+	item_state = "shadow"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44,
+	)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
-	unique_reskin = list("Shadow" = "shadow",
-		"Army" = "shadow_army",
+	unique_reskin = list(\
+		"Shadow" = "shadow",
+		"Cattleman" = "shadow_cattleman",
 		"General" = "shadow_general",
-		"Frontier Scout" = "shadow_frontier",
-		"Nanotrasen Special" = "shadow_nanotrasen",
+		"Sheriff" = "shadow_sheriff",
+		"Cobra" = "shadow_cobra",
 		"Hired Gun" = "shadow_hiredgun",
 		"Buntline" = "shadow_buntline",
-		"Cavalry Special" = "shadow_cavalry"
+		"Cavalry" = "shadow_cavalry",
+		"Lanchester Special" = "shadow_lanchester"
 		)
 
 	recoil = 0 //weaker than normal revolver, no recoil
@@ -685,5 +677,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-/obj/item/gun/ballistic/revolver/shadow/no_mag
-	spawnwithmagazine = FALSE
+/obj/item/gun/ballistic/revolver/shadow/reskin_obj(mob/M)
+	. = ..()
+	if(current_skin)
+		item_state = unique_reskin[current_skin]
+
+EMPTY_GUN_HELPER(revolver/shadow)

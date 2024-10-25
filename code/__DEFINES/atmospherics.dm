@@ -33,6 +33,10 @@
 /// Amount of air to take a from a tile
 #define BREATH_PERCENTAGE (BREATH_VOLUME/CELL_VOLUME)
 
+/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
+#define BODYTEMP_AUTORECOVERY_DIVISOR 28
+/// The natural temperature for a body
+#define BODYTEMP_NORMAL 310.15
 
 //EXCITED GROUPS
 /// number of FULL air controller ticks before an excited group breaks down (averages gas contents across turfs)
@@ -196,7 +200,7 @@
 /// the default air mix that open turfs spawn
 #define OPENTURF_DEFAULT_ATMOS "o2=22;n2=82;TEMP=293.15"
 #define OPENTURF_LOW_PRESSURE "o2=14;n2=30;TEMP=293.15"
-/// -193,15°C telecommunications. also used for xenobiology slime killrooms
+/// -193,15°C telecommunications. good fluff for comms areas
 #define TCOMMS_ATMOS "n2=100;TEMP=80"
 /// space
 #define AIRLESS_ATMOS "TEMP=2.7"
@@ -277,6 +281,8 @@
 #define ATMOS_GAS_MONITOR_WASTE_ENGINE "engine-waste_out"
 #define ATMOS_GAS_MONITOR_WASTE_ATMOS "atmos-waste_out"
 
+#define GAS_MONITOR_SENSOR_EXTERNAL "GAS_MONITOR_SENSOR_EXTERNAL"
+
 //AIRLOCK CONTROLLER TAGS
 
 //RnD toxins burn chamber
@@ -331,6 +337,8 @@
 #define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
 #define GAS_HYDROGEN "h2"
+#define GAS_CHLORINE "cl2"
+#define GAS_HYDROGEN_CHLORIDE "hcl"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
@@ -378,3 +386,5 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
+#define IMMUNE_ATMOS_REQS list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+#define NORMAL_ATMOS_REQS list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)

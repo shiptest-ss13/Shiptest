@@ -96,7 +96,7 @@
 		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
 		/obj/structure/vein/classthree = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand = 1,
+		/obj/effect/spawner/random/anomaly/sand = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -120,7 +120,7 @@
 		/obj/structure/flora/ash/cap_shroom = 4,
 		/obj/structure/flora/ash/stem_shroom = 4,
 		/obj/effect/decal/remains/human = 4,
-		/obj/effect/spawner/lootdrop/maintenance = 40,
+		/obj/effect/spawner/random/maintenance = 40,
 	)
 
 /datum/biome/sand/grass
@@ -173,10 +173,10 @@
 	)
 
 /datum/biome/sand/acid //plains
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/water/acid/whitesands = 1)
 
 /datum/biome/sand/acid/total
-	open_turf_types = list(/turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/water/acid/whitesands = 1)
 	flora_spawn_chance = 0
 	feature_spawn_chance = 0
 	mob_spawn_chance = 0
@@ -199,7 +199,7 @@
 		/obj/structure/geyser/random = 4,
 		/obj/structure/vein/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
-		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 1
+		/obj/effect/spawner/random/anomaly/sand/cave = 1
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -228,4 +228,4 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 7, /turf/open/lava = 1)
 
 /datum/biome/cave/sand/volcanic/acidic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/water/acid/whitesands = 1)

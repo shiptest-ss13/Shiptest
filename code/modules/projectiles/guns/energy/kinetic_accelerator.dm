@@ -4,12 +4,15 @@
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)
-	cell_type = /obj/item/stock_parts/cell/emproof
+	default_ammo_type = /obj/item/stock_parts/cell/emproof
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/emproof,
+	)
 	item_flags = NONE
 	obj_flags = UNIQUE_RENAME
 	weapon_weight = WEAPON_LIGHT
 	automatic_charge_overlays = FALSE
-	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
+	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -192,6 +195,8 @@
 	icon_state = null
 	damage = 20
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	flag = "bomb"
 	range = 3
 	log_override = TRUE
@@ -235,8 +240,6 @@
 		for(var/obj/item/borg/upgrade/modkit/M in mods)
 			M.projectile_strike(src, target_turf, target, kinetic_gun)
 	if(ismineralturf(target_turf))
-		var/turf/closed/mineral/M = target_turf
-		M.gets_drilled(firer, TRUE)
 		if(iscarbon(firer))
 			var/mob/living/carbon/C = firer
 			var/skill_modifier = C?.mind.get_skill_modifier(/datum/skill/mining, SKILL_SPEED_MODIFIER)

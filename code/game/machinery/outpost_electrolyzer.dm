@@ -38,16 +38,6 @@
 
 	var/obj/machinery/mineral/electrolyzer/linked_electrolyzer
 
-/obj/machinery/computer/electrolyzer_console/Initialize()
-	. = ..()
-	find_electrolyzer()
-
-/obj/machinery/computer/electrolyzer_console/proc/find_electrolyzer()
-	for(var/obj/machinery/mineral/electrolyzer/potential in oview(3,src))
-		if(linked_electrolyzer == null)
-			linked_electrolyzer = potential
-			potential.linked_console = src
-
 /obj/machinery/computer/electrolyzer_console/proc/electrolyze_item(obj/item/I)
 	var/obj/item/stack/ore/ice/S = I
 	var/meritval = round(S.get_amount() * MERITS_PER_ICE * OUTPOST_HYDROGEN_CUT,1) // causes a bit of surplus in the "outpost" supply, even if they use all of these merits for hydrogen.
@@ -61,6 +51,7 @@
 		var/obj/item/multitool/multi = item
 		if(istype(multi.buffer, /obj/machinery/mineral/electrolyzer))
 			linked_electrolyzer = multi.buffer
+			linked_electrolyzer.linked_console = src
 			visible_message("Linked to [linked_electrolyzer]!")
 		return
 	return ..()
@@ -88,7 +79,17 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/machinery/computer/electrolyzer_console/attackby(item,mob/user)
+/obj/machinery/mineral/electrolyzer/proc/find_electrolyzer()
+	if(linked_console)
+		return TRUE
+	for(var/obj/machinery/computer/electrolyzer_console/potential in oview(3,src))
+		if(linked_console == null)
+			linked_console = potential
+			potential.linked_electrolyzer = src
+			return TRUE
+	return FALSE
+
+/obj/machinery/mineral/electrolyzer/attackby(item,mob/user)
 	if(istype(item, /obj/item/multitool))
 		var/obj/item/multitool/multi = item
 		multi.buffer = src
@@ -108,6 +109,10 @@
 	INVOKE_ASYNC(src, PROC_REF(electrolyze), AM)
 
 /obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/electrolyze_target, sound=TRUE)
+	if(!find_electrolyzer())
+		visible_message("<span class='danger'>[src] doesn't have a linked console!</span>")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1)
+		return
 	if(istype(electrolyze_target, /obj/effect) || !linked_console || !isturf(electrolyze_target.loc) || (machine_stat & (BROKEN|NOPOWER)))
 		return
 	if(!istype(electrolyze_target, /obj/item/stack/ore/ice))
@@ -131,7 +136,7 @@
 		playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
 	if(iscarbon(L) && L.stat == CONSCIOUS)
-		L.emote("scream")
+		L.force_scream()
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
@@ -448,13 +453,13 @@
 	return ..()
 
 /obj/item/merit/bundle/attack_self(mob/user)
+	if(!Adjacent(user))
+		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		return
+
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
-		return
-
-	if(!Adjacent(user))
-		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
 	value -= cashamount
@@ -464,16 +469,18 @@
 
 	var/obj/item/merit/bundle/bundle = new (user.loc)
 	bundle.value = cashamount
+	bundle.update_appearance()
+	user.put_in_hands(bundle)
 	update_appearance()
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
+	if(!Adjacent(user))
+		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		return
+
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
-		return
-
-	else if(!Adjacent(user))
-		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
 	value -= cashamount

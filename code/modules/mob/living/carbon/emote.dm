@@ -39,25 +39,6 @@
 	key = "blink_r"
 	message = "blinks rapidly."
 
-/datum/emote/living/carbon/clap
-	key = "clap"
-	key_third_person = "claps"
-	message = "claps."
-	muzzle_ignore = TRUE
-	hands_use_check = TRUE
-	emote_type = EMOTE_AUDIBLE
-	vary = TRUE
-
-/datum/emote/living/carbon/clap/get_sound(mob/living/user)
-	if(ishuman(user))
-		if(!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
-			return
-		else
-			return pick('sound/misc/clap1.ogg',
-							'sound/misc/clap2.ogg',
-							'sound/misc/clap3.ogg',
-							'sound/misc/clap4.ogg')
-
 /datum/emote/living/carbon/crack
 	key = "crack"
 	key_third_person = "cracks"
@@ -253,7 +234,7 @@
 		damage += rand(3,7)
 
 	if(damage >= 5)
-		target.emote("scream")
+		target.force_scream()
 
 	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
 	user.adjustStaminaLoss(iteration + 5)

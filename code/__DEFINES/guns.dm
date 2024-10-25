@@ -24,6 +24,9 @@
 ///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
 /// Example: Pistols with a slide lock, some SMGs
 #define BOLT_TYPE_LOCKING 4
+///Gun has an HK-style locking charging handle, so you can slap it. Only use this for flavor, otherwise modern-style automatics should use BOLT_TYPE_LOCKING.
+/// Example: everything made by lanchester
+#define BOLT_TYPE_CLIP 5
 //Sawn off nerfs
 ///accuracy penalty of sawn off guns
 #define SAWN_OFF_ACC_PENALTY 25
@@ -58,12 +61,19 @@
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
 #define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
 #define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_VIGILITAS "the Vigilitas Interstellar logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
+#define MANUFACTURER_MINUTEMAN_LASER "the Clover Photonics logo"
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
+
+// Misfire chances if the gun's safety is off
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 10
+#define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 15
 
 /////////////////
 // ATTACHMENTS //
@@ -147,10 +157,6 @@
 #define AMMO_BOX_PER_BULLET 1
 ///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
 #define AMMO_BOX_FULL_EMPTY 2
-
-#define MAG_SIZE_SMALL 1
-#define MAG_SIZE_MEDIUM 2
-#define MAG_SIZE_LARGE 3
 
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)

@@ -154,7 +154,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
@@ -291,6 +291,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -302,6 +303,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -376,7 +378,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /**
  * Returns a random, usually empty turf in the overmap
@@ -418,10 +420,10 @@ SUBSYSTEM_DEF(overmap)
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
  * * source - The object you want to get the corresponding parent overmap object for.
  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source, exclude_ship = FALSE)
 	var/turf/T = get_turf(source)
 	var/area/ship/A = get_area(source)
-	while(istype(A) && A.mobile_port)
+	while(istype(A) && A.mobile_port && !exclude_ship)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]

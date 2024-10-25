@@ -9,10 +9,6 @@
 						/obj/item/book_of_babel,
 						/obj/item/wisp_lantern,
 						/obj/item/reagent_containers/glass/bottle/potion/flight,
-						/obj/item/katana/cursed,
-						/obj/item/clothing/glasses/godeye,
-						/obj/item/melee/ghost_sword,
-						/obj/item/clothing/suit/space/hardsuit/cult,
 						/obj/item/voodoo,
 						/obj/item/grenade/clusterbuster/inferno,
 						/obj/item/clothing/neck/memento_mori,
@@ -21,17 +17,13 @@
 						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
-						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
-						/obj/item/kitchen/knife/envy,
 						/obj/item/veilrender/vealrender,
-						/obj/item/nullrod/scythe/talking/necro,
 						/obj/item/clothing/suit/armor/ascetic)
 
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms
 	cost = 10000
 	unit_name = "lava planet artifact"
-	export_types = list(/obj/item/guardiancreator,
-						/obj/item/rod_of_asclepius,
+	export_types = list(/obj/item/rod_of_asclepius,
 						/obj/item/clothing/suit/space/hardsuit/ert/paranormal,
 						/obj/item/prisoncube,
 						/obj/item/staff/storm,
@@ -52,7 +44,6 @@
 						/obj/machinery/anomalous_crystal,
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
-						/obj/item/guardiancreator/miner/choose//this is basically the most valulable mining loot so good luck getting a miner to part ways
 						)
 /*
 /datum/export/lavaland/trophycommon

@@ -25,7 +25,7 @@
 				//if we have no guestbook, we just KNOW okay?
 				var/known_name = user.mind?.guestbook ? user.mind.guestbook.get_known_name(user, src, face_name) : face_name
 				if(known_name)
-					. += "You know them as <EM>[known_name]</EM>."
+					. += "You know [t_him] as <EM>[known_name]</EM>."
 				else
 					. += "You don't recognize [t_him]. You can <B>Ctrl-Shift click</b> [t_him] to memorize their face."
 			else
@@ -99,8 +99,6 @@
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
-		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))

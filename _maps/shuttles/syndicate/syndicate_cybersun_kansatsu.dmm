@@ -549,7 +549,7 @@
 	dir = 4
 	},
 /obj/item/storage/box/rxglasses/spyglasskit,
-/obj/item/kitchen/knife/letter_opener,
+/obj/item/melee/knife/letter_opener,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "nF" = (
@@ -849,9 +849,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/five,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/maintenance/five,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/stack/marker_beacon/thirty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -887,13 +887,6 @@
 /obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"tV" = (
-/obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 4;
-	pixel_x = 8
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "uq" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 10
@@ -902,10 +895,11 @@
 /area/ship/bridge)
 "uR" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 9
+	dir = 9;
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "vk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1132,10 +1126,11 @@
 /area/ship/cargo)
 "Ah" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 6
+	dir = 6;
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "AM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1191,10 +1186,11 @@
 /area/ship/crew/dorm)
 "CR" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 10
+	dir = 10;
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "CU" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -1310,7 +1306,7 @@
 /obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 4;
 	pixel_x = 8;
-	pixel_y = 4
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -1414,10 +1410,11 @@
 /area/ship/bridge)
 "KA" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 5
+	dir = 5;
+	id = "kansatsu_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "KP" = (
 /obj/structure/closet/wall/directional/north{
 	name = "emergency rum cabinet"
@@ -1454,10 +1451,11 @@
 	dir = 4;
 	name = "Captain's Chair"
 	},
-/obj/machinery/turretid{
-	pixel_y = 28
-	},
 /obj/effect/turf_decal/trimline/opaque/bar,
+/obj/machinery/turretid/ship{
+	pixel_y = 26;
+	id = "kansatsu_grid"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "MH" = (
@@ -1841,7 +1839,7 @@
 /obj/item/implanter/stealth,
 /obj/item/modular_computer/laptop/preset/civilian,
 /obj/item/clothing/mask/chameleon,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
@@ -1945,10 +1943,10 @@
 	layer = 2.91
 	},
 /obj/effect/turf_decal/box,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
@@ -2297,7 +2295,7 @@ YQ
 YQ
 YQ
 YQ
-tV
+GV
 bO
 bO
 dA

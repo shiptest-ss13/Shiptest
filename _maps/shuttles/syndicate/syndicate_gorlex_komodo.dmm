@@ -122,6 +122,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"bC" = (
+/turf/template_noop,
+/area/ship/cargo)
 "bM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -212,10 +215,10 @@
 	},
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child{
-	faction = list("neutral","playerSyndicate");
-	name = "Goliath";
+	desc = "A little guy.";
 	environment_smash = 0;
-	desc = "A little guy."
+	faction = list("neutral","playerSyndicate");
+	name = "Goliath"
 	},
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/tech,
@@ -312,10 +315,11 @@
 /area/ship/hallway/central)
 "ea" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 6
+	dir = 6;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/starboard)
 "en" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -332,8 +336,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 21;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 21
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/mineral/plastitanium,
@@ -513,9 +517,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = -23;
+	dir = 1;
 	pixel_x = 3;
-	dir = 1
+	pixel_y = -23
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
@@ -960,11 +964,30 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/aft)
+"jy" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/toolbox/ammo/c10mm,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "Ammo Locker";
+	req_access_txt = "1"
+	},
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/security/armory)
 "jA" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "syndie_mechbay";
-	name = "Mechbay"
+	name = "Exosuit Bay"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -975,7 +998,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "jD" = (
-/obj/effect/spawner/lootdrop/salvage_capacitor,
+/obj/effect/spawner/random/salvage_capacitor,
 /obj/effect/decal/cleanable/shreds,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1082,15 +1105,36 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/circuit/green/off,
 /area/ship/maintenance/starboard)
+"kw" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "hos";
+	name = "captain's locker";
+	req_access_txt = "20"
+	},
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/glasses/thermal/eyepatch,
+/obj/item/gun/ballistic/revolver/viper,
+/obj/item/clothing/under/syndicate/sniper,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/hardliners/officer,
+/obj/item/clothing/suit/toggle/armor/vest/hardliners,
+/obj/item/clothing/head/hardliners/peaked,
+/turf/open/floor/carpet/black,
+/area/ship/bridge)
 "kD" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "kG" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 1
+	dir = 1;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/hallway/central)
 "kI" = (
 /turf/open/floor/engine,
 /area/ship/bridge)
@@ -1153,30 +1197,6 @@
 	},
 /turf/open/floor/circuit/green/off,
 /area/ship/maintenance/starboard)
-"lr" = (
-/obj/structure/closet/wall/orange/directional/south{
-	name = "Engineering locker"
-	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/head/hardhat/red,
-/obj/item/clothing/head/hardhat/weldhat/orange{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/storage/belt/utility/full/engi,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/suit/hazardvest/hardliners,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "ls" = (
 /obj/structure/railing/corner,
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
@@ -1300,6 +1320,13 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"mq" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 1;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "my" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1390,8 +1417,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
@@ -1418,8 +1445,8 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "komodo_port";
-	pixel_y = 24;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 24
 	},
 /obj/machinery/button/door{
 	id = "Artillery1shutter";
@@ -1434,7 +1461,7 @@
 	dir = 9
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/turf_decal/box,
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -1645,9 +1672,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pJ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1666,10 +1691,11 @@
 /area/ship/engineering)
 "pN" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 9
+	dir = 9;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "qf" = (
 /obj/structure/railing{
 	dir = 8
@@ -1699,8 +1725,8 @@
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/syndi_cakes{
-	pixel_y = 6;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 6
 	},
 /obj/item/t_scanner{
 	pixel_x = -2;
@@ -1747,9 +1773,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "qF" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1773,6 +1797,20 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"qP" = (
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/gun/ballistic/automatic/pistol/ringneck{
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/industrial/fire{
+	dir = 8
+	},
+/obj/structure/guncloset,
+/obj/structure/railing,
+/obj/item/gun/ballistic/automatic/smg/cobra,
+/obj/machinery/light/directional/east,
+/turf/open/floor/pod/dark,
+/area/ship/security/armory)
 "qZ" = (
 /obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1846,16 +1884,16 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "rN" = (
 /obj/structure/table/reinforced,
 /obj/item/toy/figure/syndie{
-	pixel_y = 5;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 5
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/fax/syndicate,
@@ -1863,10 +1901,11 @@
 /area/ship/bridge)
 "rS" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 5
+	dir = 5;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/port)
 "rX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1970,7 +2009,7 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "sV" = (
@@ -1994,25 +2033,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
-"sX" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/storage/toolbox/ammo/c10mm,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "Ammo Locker";
-	req_access_txt = "1"
-	},
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/security/armory)
 "sY" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -2024,7 +2044,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/fireaxecabinet{
+/obj/structure/cabinet/fireaxe{
 	dir = 8;
 	pixel_x = 27
 	},
@@ -2038,13 +2058,13 @@
 	dir = 10
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/costume,
+/obj/effect/spawner/random/clothing/costume,
 /obj/item/storage/box/emptysandbags,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/button/door{
 	dir = 4;
 	id = "syndie_mechbay";
-	name = "mechbay door";
+	name = "Exosuit Bay Door";
 	pixel_x = -24
 	},
 /obj/item/radio/intercom/directional/south,
@@ -2099,7 +2119,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "syndie_mechbay";
-	name = "mechbay door";
+	name = "Exosuit Bay Door";
 	pixel_x = 24
 	},
 /obj/effect/turf_decal/techfloor{
@@ -2201,8 +2221,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 23
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -8
@@ -2475,6 +2495,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 1
 	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wJ" = (
@@ -2724,20 +2745,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"yH" = (
-/obj/item/gun/ballistic/automatic/pistol/syndicate,
-/obj/item/gun/ballistic/automatic/pistol/syndicate{
-	pixel_y = 3
-	},
-/obj/effect/turf_decal/industrial/fire{
-	dir = 8
-	},
-/obj/structure/guncloset,
-/obj/structure/railing,
-/obj/item/gun/ballistic/automatic/smg/c20r,
-/obj/machinery/light/directional/east,
-/turf/open/floor/pod/dark,
-/area/ship/security/armory)
 "yJ" = (
 /obj/structure/frame/machine,
 /obj/structure/grille/broken,
@@ -2871,32 +2878,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"AL" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/item/gun/ballistic/automatic/pistol/syndicate{
-	pixel_y = 3
-	},
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/c10mm,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "Sergeant's Locker";
-	req_access_txt = "58"
-	},
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/clothing/suit/armor/vest/blueshirt,
-/obj/item/clothing/accessory/holster,
-/obj/item/clothing/shoes/combat,
-/obj/item/radio/headset/syndicate,
-/obj/item/clothing/under/syndicate/hardliners/officer,
-/obj/item/clothing/suit/armor/hardliners/sergeant,
-/obj/item/clothing/head/hardliners/peaked,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "AS" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -2943,9 +2924,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bx" = (
-/obj/machinery/porta_turret/ship/syndicate/weak,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10;
+	id = "komodo_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/crew/dorm)
 "BK" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/shower{
@@ -2997,6 +2981,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
+"BU" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 2;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "BY" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -3115,26 +3106,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Ek" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "hos";
-	name = "captain's locker";
-	req_access_txt = "20"
-	},
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/glasses/thermal/eyepatch,
-/obj/item/gun/ballistic/revolver/syndicate,
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/radio/headset/syndicate/alt/leader,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/hardliners/officer,
-/obj/item/clothing/suit/toggle/armor/vest/hardliners,
-/obj/item/clothing/head/hardliners/peaked,
-/turf/open/floor/carpet/black,
-/area/ship/bridge)
 "El" = (
 /obj/structure/filingcabinet,
 /obj/item/folder/documents/syndicate/red,
@@ -3162,6 +3133,13 @@
 "Ep" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"Es" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "EB" = (
 /obj/structure/closet/crate{
 	name = "food crate"
@@ -3173,22 +3151,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
@@ -3279,7 +3249,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "FV" = (
-/obj/effect/spawner/lootdrop/salvage_scanning,
+/obj/effect/spawner/random/salvage_scanning,
 /obj/effect/decal/cleanable/shreds{
 	pixel_y = 14
 	},
@@ -3323,7 +3293,6 @@
 	icon_state = "0-8"
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 8;
 	launch_status = 0;
 	preferred_direction = 4
@@ -3491,6 +3460,13 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Hx" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 2;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/central)
 "HF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3596,8 +3572,8 @@
 	dir = 1;
 	id = "syndiewarship_armorybay";
 	name = "Weapon Hold";
-	req_access_txt = "3";
-	pixel_y = -26
+	pixel_y = -26;
+	req_access_txt = "3"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3654,8 +3630,8 @@
 	pixel_y = 16
 	},
 /obj/structure/mirror{
-	pixel_y = 30;
-	layer = 2.8
+	layer = 2.8;
+	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
@@ -3803,6 +3779,39 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"KJ" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/starboard)
+"KK" = (
+/obj/structure/closet/wall/orange/directional/south{
+	name = "Engineering locker"
+	},
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/head/welding,
+/obj/item/clothing/head/hardhat/red,
+/obj/item/clothing/head/hardhat/weldhat/orange{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/storage/belt/utility/full/engi,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/gun/energy/plasmacutter,
+/obj/item/clothing/gloves/color/red/insulated,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "KL" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -3861,16 +3870,16 @@
 /area/ship/hallway/central)
 "Lj" = (
 /obj/item/scalpel{
-	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 6
 	},
 /obj/structure/table/reinforced,
 /obj/item/hemostat,
 /obj/machinery/light/directional/west,
-/obj/effect/spawner/lootdrop/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = 6
 	},
-/obj/effect/spawner/lootdrop/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = -6
 	},
 /turf/open/floor/pod/dark,
@@ -3982,8 +3991,8 @@
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/machinery/vending/boozeomat/syndicate_access{
-	pixel_x = 32;
-	density = 0
+	density = 0;
+	pixel_x = 32
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
@@ -4020,9 +4029,7 @@
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "MV" = (
@@ -4130,8 +4137,8 @@
 "ND" = (
 /obj/structure/railing,
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2;
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/greenglow,
@@ -4165,8 +4172,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/turretid{
-	pixel_y = 2
+/obj/machinery/turretid/ship{
+	id = "komodo_grid"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4204,10 +4211,11 @@
 /area/ship/hallway/central)
 "OP" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 10
+	dir = 10;
+	id = "komodo_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "OQ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/starboard)
@@ -4262,13 +4270,11 @@
 	id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PA" = (
-/obj/structure/mecha_wreckage/mauler,
+/obj/structure/mecha_wreckage/touro,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -4446,7 +4452,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/salvage_manipulator,
+/obj/effect/spawner/random/salvage_manipulator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4583,6 +4589,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"RX" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9;
+	id = "komodo_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/port)
 "RZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5075,8 +5088,8 @@
 	dir = 8;
 	id = "warshipbridge";
 	name = "Bridge Window";
-	pixel_y = -1;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = -6;
@@ -5222,9 +5235,7 @@
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
 "Yb" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5237,9 +5248,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Yn" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Yp" = (
@@ -5331,7 +5340,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YT" = (
-/obj/effect/spawner/lootdrop/salvage_manipulator,
+/obj/effect/spawner/random/salvage_manipulator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5346,6 +5355,32 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"YY" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/pistol/ringneck{
+	pixel_y = 3
+	},
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/box/ammo/c10mm,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "Sergeant's Locker";
+	req_access_txt = "58"
+	},
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/clothing/suit/armor/vest/blueshirt,
+/obj/item/clothing/accessory/holster,
+/obj/item/clothing/shoes/combat,
+/obj/item/radio/headset/syndicate,
+/obj/item/clothing/under/syndicate/hardliners/officer,
+/obj/item/clothing/suit/armor/hardliners/sergeant,
+/obj/item/clothing/head/hardliners/peaked,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Zb" = (
@@ -5388,7 +5423,7 @@
 	},
 /area/ship/cargo)
 "Zf" = (
-/obj/effect/spawner/lootdrop/salvage_matter_bin,
+/obj/effect/spawner/random/salvage_matter_bin,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
@@ -5404,7 +5439,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "Artillery2shutter";
@@ -5463,8 +5498,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -21;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -21
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
@@ -5627,7 +5662,7 @@ wG
 yb
 YR
 nA
-lr
+KK
 hY
 "}
 (6,1,1) = {"
@@ -5732,7 +5767,7 @@ CM
 "}
 (11,1,1) = {"
 CM
-CM
+bC
 Ep
 uJ
 es
@@ -5752,7 +5787,7 @@ Bx
 "}
 (12,1,1) = {"
 CM
-kG
+Es
 Ep
 jA
 jA
@@ -5825,7 +5860,7 @@ kh
 gE
 ue
 vp
-sX
+jy
 Ni
 km
 tf
@@ -5864,7 +5899,7 @@ jv
 VR
 gE
 gE
-yH
+qP
 VU
 MV
 eY
@@ -5892,7 +5927,7 @@ tf
 "}
 (19,1,1) = {"
 CM
-kG
+mq
 Ep
 Ep
 We
@@ -5908,7 +5943,7 @@ gE
 wT
 Im
 gE
-Bx
+BU
 "}
 (20,1,1) = {"
 CM
@@ -5967,7 +6002,7 @@ Dd
 Dd
 Dd
 Dd
-Bx
+Hx
 CM
 "}
 (23,1,1) = {"
@@ -6132,7 +6167,7 @@ CM
 "}
 (31,1,1) = {"
 CM
-pN
+RX
 gN
 nU
 iL
@@ -6148,7 +6183,7 @@ Dd
 JJ
 Hc
 OQ
-OP
+KJ
 "}
 (32,1,1) = {"
 CM
@@ -6182,7 +6217,7 @@ wR
 ae
 GS
 tC
-Ek
+kw
 RK
 tC
 yd
@@ -6262,7 +6297,7 @@ It
 dG
 WR
 ub
-AL
+YY
 jn
 tC
 dc

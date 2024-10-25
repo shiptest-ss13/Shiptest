@@ -105,11 +105,11 @@
 			if("Clown")
 				heirloom_type = /obj/item/bikehorn/golden
 			if("Mime")
-				heirloom_type = /obj/item/reagent_containers/food/snacks/baguette
+				heirloom_type = /obj/item/food/baguette
 			if("Janitor")
 				heirloom_type = pick(/obj/item/mop, /obj/item/clothing/suit/caution, /obj/item/reagent_containers/glass/bucket, /obj/item/paper/fluff/stations/soap)
 			if("Cook")
-				heirloom_type = pick(/obj/item/reagent_containers/food/condiment/saltshaker, /obj/item/kitchen/rollingpin, /obj/item/clothing/head/chefhat)
+				heirloom_type = pick(/obj/item/reagent_containers/condiment/saltshaker, /obj/item/kitchen/rollingpin, /obj/item/clothing/head/chefhat)
 			if("Botanist")
 				heirloom_type = pick(/obj/item/cultivator, /obj/item/reagent_containers/glass/bucket, /obj/item/toy/plush/beeplushie)
 			if("Bartender")
@@ -451,20 +451,19 @@
 
 /datum/quirk/social_anxiety/on_process()
 	var/nearby_people = 0
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
 		if(H.client)
 			nearby_people++
 	var/mob/living/carbon/human/H = quirk_holder
 	if(prob(2 + nearby_people))
-		H.stuttering = max(3, H.stuttering)
-	else if(prob(min(3, nearby_people)) && !H.silent)
-		to_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
-		H.silent = max(10, H.silent)
+		H.stuttering = max(4, H.stuttering)
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, "<span class='userdanger'>You think of a dumb thing you said a long time ago and scream internally.</span>")
 		dumb_thing = FALSE //only once per life
 		if(prob(1))
-			new/obj/item/reagent_containers/food/snacks/spaghetti/pastatomato(get_turf(H)) //now that's what I call spaghetti code
+			new/obj/item/food/spaghetti/pastatomato(get_turf(H)) //now that's what I call spaghetti code
 
 // small chance to make eye contact with inanimate objects/mindless mobs because of nerves
 /datum/quirk/social_anxiety/proc/looks_at_floor(datum/source, atom/A)
@@ -479,6 +478,8 @@
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
 
+	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
+		return
 	if(prob(75))
 		return
 	var/msg
@@ -640,6 +641,25 @@
 			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")
 			return
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)
+
+/datum/quirk/congenital_analgesia
+	name = "Congenital Analgesia"
+	desc = "Due to a rare condition, you have never felt pain. Physical pain, at least. That breakup still hurt."
+	value = -1
+	mob_traits = list(TRAIT_ANALGESIA)
+	gain_text = "<span class='danger'>You've never really felt pain.</span>"
+	lose_text = "<span class='notice'>...Oh god, you're sore.</span>"
+	medical_record_text = "Patient is unable to process pain"
+
+/datum/quirk/congenital_analgesia/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+
+/datum/quirk/congenital_analgesia/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		H.set_screwyhud(SCREWYHUD_NONE)
+
 
 /datum/quirk/unstable
 	name = "Unstable"

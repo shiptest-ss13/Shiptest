@@ -61,8 +61,6 @@
 		return FALSE
 	var/turf/T = get_turf(src)
 	var/area/A = get_area(src)
-	if(!(A.area_flags & BLOBS_ALLOWED))
-		return FALSE
 	if(!A.power_equip)
 		return FALSE
 	if(!T.virtual_level_trait(ZTRAIT_STATION))
@@ -222,7 +220,6 @@
 					to_chat(user, "<span class='notice'>You connect the monitor.</span>")
 					if(brain)
 						var/mob/living/brain/B = brain.brainmob
-						SSticker.mode.remove_antag_for_borging(B.mind)
 
 						var/mob/living/silicon/ai/A = null
 

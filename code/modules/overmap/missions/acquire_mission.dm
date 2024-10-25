@@ -14,6 +14,7 @@
 /datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/acquire/Destroy()
 	container = null
@@ -178,14 +179,6 @@ Acquire: Anomaly
 	value = 1700
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
-
-/datum/mission/acquire/creature/ice_demon
-	name = "Capture an ice demon"
-	desc = "I require a live ice demon for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1500
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
 
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"

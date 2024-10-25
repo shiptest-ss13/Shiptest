@@ -245,7 +245,7 @@
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
 	desc = "Make sure to recyle the box in an autolathe when it gets empty."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/obj/ammunition/ammo.dmi'
 	icon_state = "357OLD-7"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
@@ -265,7 +265,7 @@
 /obj/item/toy/sword
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
 	item_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -348,7 +348,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
 	var/active = FALSE
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_verb = list("robusted")
 
@@ -407,7 +407,7 @@
 /obj/item/toy/katana
 	name = "replica katana"
 	desc = "Woefully underpowered in D20."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapon/sword.dmi'
 	icon_state = "katana"
 	item_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -541,31 +541,6 @@
 
 /obj/item/toy/talking/AI/generate_messages()
 	return list(generate_ion_law())
-
-/obj/item/toy/talking/codex_gigas
-	name = "Toy Codex Gigas"
-	desc = "A tool to help you write fictional devils!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "demonomicon"
-	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	recharge_time = 60
-
-/obj/item/toy/talking/codex_gigas/activation_message(mob/user)
-	user.visible_message(
-		"<span class='notice'>[user] presses the button on \the [src].</span>",
-		"<span class='notice'>You press the button on \the [src].</span>",
-		"<span class='notice'>You hear a soft click.</span>")
-
-/obj/item/toy/talking/codex_gigas/generate_messages()
-	var/datum/fakeDevil/devil = new
-	var/list/messages = list()
-	messages += "Some fun facts about: [devil.truename]"
-	messages += "[GLOB.lawlorify[LORE][devil.obligation]]"
-	messages += "[GLOB.lawlorify[LORE][devil.ban]]"
-	messages += "[GLOB.lawlorify[LORE][devil.banish]]"
-	return messages
 
 /obj/item/toy/talking/owl
 	name = "owl action figure"
@@ -1285,7 +1260,6 @@
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
 	icon_state = "curator"
-	toysay = "One day while..."
 
 /obj/item/toy/figure/md
 	name = "Medical Doctor action figure"
@@ -1418,7 +1392,7 @@
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
 	icon_state = "shell[rand(1,3)]"
-	color = pickweight(possible_colors)
+	color = pick_weight(possible_colors)
 	setDir(pick(GLOB.cardinals))
 
 /obj/item/toy/brokenradio

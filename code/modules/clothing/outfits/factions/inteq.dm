@@ -24,6 +24,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
+	ears = /obj/item/radio/headset
 	r_pocket = /obj/item/radio
 
 ///captains
@@ -91,7 +92,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 	belt = /obj/item/storage/belt/utility/full
 
 	id = /obj/item/card/id/silver
@@ -135,6 +136,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
+	ears = /obj/item/radio/headset/alt
 	head = /obj/item/clothing/head/helmet/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
@@ -181,6 +183,7 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
+	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat

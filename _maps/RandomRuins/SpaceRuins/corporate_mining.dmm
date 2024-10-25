@@ -462,7 +462,7 @@
 /area/ruin/space/has_grav/corporatemine/bridge)
 "kZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 4
 	},
@@ -601,8 +601,8 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "nN" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/ballistic/automatic/pistol/syndicate,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk/qm,
 /obj/item/reagent_containers/food/snacks/donkpocket,
@@ -812,7 +812,7 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "sb" = (
@@ -1590,8 +1590,8 @@
 "IF" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "IS" = (
@@ -1774,7 +1774,7 @@
 "NH" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "NO" = (
@@ -2035,10 +2035,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
-"TO" = (
-/obj/structure/spawner/burrow/asteroid,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
 "TR" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -2297,7 +2293,7 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ZU" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},
@@ -2803,7 +2799,7 @@ Al
 Al
 Al
 VM
-TO
+Iv
 Al
 Al
 Al

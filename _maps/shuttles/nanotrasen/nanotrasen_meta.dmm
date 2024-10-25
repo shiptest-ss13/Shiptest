@@ -240,9 +240,9 @@
 	icon_state = "crateopen";
 	opened = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/gloves,
+/obj/effect/spawner/random/clothing/gloves,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "aF" = (
@@ -543,11 +543,11 @@
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/item/reagent_containers/food/condiment/ketchup{
+/obj/item/reagent_containers/condiment/ketchup{
 	pixel_y = 14;
 	pixel_x = 9
 	},
-/obj/item/reagent_containers/food/condiment/mayonnaise{
+/obj/item/reagent_containers/condiment/mayonnaise{
 	pixel_y = 14
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/cola{
@@ -576,9 +576,9 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bX" = (
@@ -1679,6 +1679,14 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"jo" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "jw" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1801,10 +1809,10 @@
 /area/ship/engineering)
 "lH" = (
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat{
 	pixel_x = -3;
 	pixel_y = 3
@@ -1820,10 +1828,10 @@
 	name = "fridge";
 	anchored = 1
 	},
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "lK" = (
@@ -1992,7 +2000,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "pF" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2164,8 +2172,8 @@
 /obj/effect/turf_decal/ntspaceworks_big/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/tool_surgery_common,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/medical/surgery_tool/common,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uk" = (
@@ -2198,6 +2206,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"uT" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/canteen/kitchen)
 "ve" = (
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/light/broken/directional/south,
@@ -2379,11 +2395,19 @@
 /obj/structure/table,
 /obj/item/cutting_board,
 /obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
+"yF" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 5
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering)
 "yS" = (
 /obj/structure/table,
 /obj/item/storage/box/lights/mixed{
@@ -2496,8 +2520,8 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/effect/spawner/lootdrop/random_prosthetic,
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/medical/prosthetic,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ai" = (
@@ -2659,7 +2683,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/east,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2737,11 +2761,11 @@
 /area/ship/cargo)
 "EX" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -8;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -8;
 	pixel_y = 4
 	},
@@ -2822,7 +2846,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/plasteel/dark,
@@ -2848,11 +2872,11 @@
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -8;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -8;
 	pixel_y = 4
 	},
@@ -2910,10 +2934,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/turretid{
+/obj/machinery/turretid/ship{
 	pixel_y = -24;
-	req_access = null;
-	locked = 0
+	id = "meta_grid"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3041,7 +3064,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "La" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3059,11 +3082,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Lo" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 1
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 6
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "Lq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3458,6 +3483,22 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"TR" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 10
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/canteen)
+"TV" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	id = "meta_grid";
+	pixel_y = 0;
+	dir = 9
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "Uk" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3660,11 +3701,11 @@
 "Zf" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 7
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = -8
 	},
 /obj/machinery/button/door{
@@ -3861,7 +3902,7 @@ aa
 "}
 (6,1,1) = {"
 aa
-Lo
+yF
 ac
 ri
 Pr
@@ -4186,7 +4227,7 @@ aa
 "}
 (19,1,1) = {"
 aa
-Lo
+TV
 ai
 ai
 MU
@@ -4206,7 +4247,7 @@ sA
 Uk
 an
 bD
-Lo
+TR
 aa
 "}
 (20,1,1) = {"
@@ -4412,12 +4453,12 @@ aa
 (28,1,1) = {"
 aa
 aa
-Lo
+jo
 ai
 ai
 ai
 ai
-Lo
+jo
 aa
 aa
 aa
@@ -4425,12 +4466,12 @@ aa
 aa
 aa
 aa
-Lo
+uT
 cO
 cO
 cO
 cO
-Lo
+uT
 aa
 aa
 "}

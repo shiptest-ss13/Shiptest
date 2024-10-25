@@ -2,7 +2,7 @@
 	name = "The UCWLWM"
 	desc = "It's looks old and worn out."
 	icon_state = "book3"
-	author = "Welds-the-Steel"
+	author = "Senior Engineer Wihlz-Saai"
 	title = "The Universal Colossal Warship Linear Weapon Mount"
 	dat = {"<html>
 			<head>

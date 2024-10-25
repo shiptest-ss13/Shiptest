@@ -78,13 +78,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create changelings.")
-			if("cult")
-				if(src.makeCult())
-					message_admins("[key_name(usr)] started a cult.")
-					log_admin("[key_name(usr)] started a cult.")
-				else
-					message_admins("[key_name_admin(usr)] tried to start a cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a cult.")
 			if("wizard")
 				message_admins("[key_name(usr)] is creating a wizard...")
 				if(src.makeWizard())
@@ -117,13 +110,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create a death squad. Unfortunately, there were not enough candidates available.")
 					log_admin("[key_name(usr)] failed to create a death squad.")
-			if("blob")
-				var/strength = input("Set Blob Resource Gain Rate","Set Resource Rate",1) as num|null
-				if(!strength)
-					return
-				message_admins("[key_name(usr)] spawned a blob with base resource gain [strength].")
-				log_admin("[key_name(usr)] spawned a blob with base resource gain [strength].")
-				new/datum/round_event/ghost_role/blob(TRUE, strength)
 			if("centcom")
 				message_admins("[key_name(usr)] is creating a response team...")
 				if(src.makeEmergencyresponseteam())
@@ -357,14 +343,6 @@
 				M.change_mob_type(/mob/living/simple_animal/parrot , null, null, delmob)
 			if("polyparrot")
 				M.change_mob_type(/mob/living/simple_animal/parrot/Polly , null, null, delmob)
-			if("constructjuggernaut")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob)
-			if("constructartificer")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/artificer , null, null, delmob)
-			if("constructwraith")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/wraith , null, null, delmob)
-			if("shade")
-				M.change_mob_type(/mob/living/simple_animal/shade , null, null, delmob)
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
@@ -1077,18 +1055,6 @@
 
 		usr.client.cmd_admin_slimeize(H)
 
-	else if(href_list["makeblob"])
-		if(!check_rights(R_SPAWN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["makeblob"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
-			return
-
-		usr.client.cmd_admin_blobize(H)
-
-
 	else if(href_list["makerobot"])
 		if(!check_rights(R_SPAWN))
 			return
@@ -1158,12 +1124,6 @@
 		if(!check_rights(R_ADMIN))
 			return
 		output_ai_laws()
-
-	else if(href_list["admincheckdevilinfo"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/mob/M = locate(href_list["admincheckdevilinfo"])
-		output_devil_info(M)
 
 	else if(href_list["adminmoreinfo"])
 		var/mob/M = locate(href_list["adminmoreinfo"]) in GLOB.mob_list
@@ -1236,9 +1196,9 @@
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
 		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
 		if(isskeleton(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
@@ -1992,7 +1952,7 @@
 			if(response.body == "[]")
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
-				bans = json_decode(response["body"])
+				bans = json_decode(response.body)
 
 				//Ignore bans from non-whitelisted sources, if a whitelist exists
 				var/list/valid_sources

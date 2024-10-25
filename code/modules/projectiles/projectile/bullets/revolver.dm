@@ -6,7 +6,7 @@
 
 /obj/projectile/bullet/a50AE/hp
 	name = ".50 AE hollow point bullet"
-	damage = 60
+	damage = 55
 	armour_penetration = -50
 
 // .38 (Colt Detective Special & Winchester)
@@ -69,7 +69,7 @@
 		imp.implant(M)
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
-	name = ".38 hot shot bullet"
+	name = ".38 hearth bullet"
 	ricochets_max = 0
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
@@ -80,7 +80,7 @@
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
-	name = ".38 iceblox bullet"
+	name = ".38 chilled bullet"
 	var/temperature = 100
 	ricochets_max = 0
 
@@ -110,7 +110,7 @@
 
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
-	damage = 50
+	damage = 45
 	armour_penetration = -50
 	ricochet_chance = 0 //mushroom on impact, no bounces
 
@@ -133,7 +133,7 @@
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
-	damage = 60 //it's the pre-nerf .357 with less armor pen
+	damage = 55 //it's ALMOST the pre-nerf .357 with less armor pen
 	armour_penetration = -50
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
@@ -167,5 +167,5 @@
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain bullet"
-	damage =  45
+	damage =  40
 	armour_penetration = -20
