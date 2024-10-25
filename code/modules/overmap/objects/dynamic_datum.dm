@@ -150,7 +150,7 @@
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
 	if(istype(used_ruin))
 		for(var/mission_type in used_ruin.dynamic_mission_types)
