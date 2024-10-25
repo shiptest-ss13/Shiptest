@@ -244,7 +244,7 @@ function createBody({ title, failures }, runUrl) {
 
 function createComment({ failures }, runUrl) {
 	return `
-	Flaky tests were detected again in[this test run](${runUrl}).
+	Flaky tests were detected again in [this test run](${runUrl}).
 
 	Failures:
 	\`\`\`
