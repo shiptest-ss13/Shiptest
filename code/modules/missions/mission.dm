@@ -18,7 +18,7 @@
 	var/datum/overmap/mission_location
 
 	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/duration
+	var/duration = 30 MINUTES
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
@@ -31,6 +31,11 @@
 	var/active = FALSE
 	var/failed = FALSE
 	var/dur_timer
+
+	// If the mission has been accepted by a ship.
+	var/accepted = FALSE
+	/// The ship that accepted this mission. Passed in accept().
+	var/datum/overmap/ship/controlled/servant
 
 	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
 	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second

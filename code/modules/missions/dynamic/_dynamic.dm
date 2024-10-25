@@ -1,5 +1,6 @@
 /datum/mission/dynamic
 	value = 2000
+	duration = null
 	/// Which landmark we will search for in spawned_mission_pois of the planet
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	/// Item that will be spawned at the setpiece_poi

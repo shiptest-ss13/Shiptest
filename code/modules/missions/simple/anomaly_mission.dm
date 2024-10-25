@@ -1,4 +1,4 @@
-/datum/mission/acquire/anomaly
+/datum/mission/simple/anomaly
 	name = "Anomaly core requested"
 	weight = 8
 	value = 3000
@@ -9,8 +9,8 @@
 	num_wanted = 1
 	var/researcher_name
 
-/datum/mission/acquire/anomaly/New(...)
-	researcher_name = get_researcher_name()
+/datum/mission/simple/anomaly/New(...)
+	researcher_name = SSmissions.get_researcher_name()
 	desc = "[researcher_name] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
 	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
 	They've offered to pay well, so we're relaying this mission to you"

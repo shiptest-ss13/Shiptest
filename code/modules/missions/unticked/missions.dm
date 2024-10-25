@@ -1,17 +1,4 @@
 /datum/mission
-	var/name = "Mission"
-	var/desc = "Do something for me."
-	var/value = 1000 /// The mission's payout.
-	var/duration = 30 MINUTES /// The amount of time in which to complete the mission.
-	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
-
-	/// Should mission value scale proportionally to the deviation from the mission's base duration?
-	var/dur_value_scaling = TRUE
-	/// The maximum deviation of the mission's true value from the base value, as a proportion.
-	var/val_mod_range = 0.1
-	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
-	var/dur_mod_range = 0.1
-
 	/// The outpost that issued this mission. Passed in New().
 	var/datum/overmap/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().
@@ -20,11 +7,6 @@
 	var/accepted = FALSE
 	var/failed = FALSE
 	var/dur_timer
-
-	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
-	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
-	/// is a callback to be invoked upon the atom's qdeletion.
-	var/list/atom/movable/bound_atoms
 
 /datum/mission/New(_outpost)
 	var/old_dur = duration
@@ -159,27 +141,3 @@
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
 	// remove info from our list
 	LAZYREMOVE(bound_atoms, bound)
-
-// should probably come up with a better solution for this
-// hierarchical weighting? would need to distinguish between "real" and "fake" missions
-/proc/get_weighted_mission_type()
-	var/static/list/weighted_missions
-	if(!weighted_missions)
-		weighted_missions = list()
-		var/list/mission_types = subtypesof(/datum/mission)
-		for(var/datum/mission/mis_type as anything in mission_types)
-			if(initial(mis_type.weight) > 0)
-				weighted_missions[mis_type] = initial(mis_type.weight)
-	return pickweight_float(weighted_missions)
-
-/datum/mission/proc/get_researcher_name()
-	var/group = pick(list(
-		"Cybersun Industries",
-		"CMM-GOLD",
-		"Nanotrasen Anomalous Studies Division",
-		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
-		"The Central Solarian Anomaly Research Agency",
-		"DeForest Medical R&D",
-		"A strange sarathi on the outpost"
-	))
-	return group

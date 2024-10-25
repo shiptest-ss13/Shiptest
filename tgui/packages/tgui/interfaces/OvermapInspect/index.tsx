@@ -33,12 +33,16 @@ type NameAndRef = {
   ref: string;
 };
 
-export const OvermapExamine = (props, context) => {
+export const OvermapInspect = (props, context) => {
   const { act, data } = useBackend<OvermapData>(context);
   const { name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (
-    <Window title={'Overmap Inspect: ' + ascii + '  ' + name} width={400} height={600}>
+    <Window
+      title={'Overmap Inspect: ' + ascii + '  ' + name}
+      width={400}
+      height={600}
+    >
       <Window.Content scrollable>
         <Section
           title={name}
@@ -88,12 +92,24 @@ export const OvermapExamine = (props, context) => {
             )}
             <LabeledList.Item label="Active Missions">
               {data.active_missions?.map((mission) => (
-                <Box>{mission.name} <Button icon="info "onClick={() => act('inspect_mission', { ref: mission.ref })}></Button></Box>
+                <Box>
+                  {mission.name}{' '}
+                  <Button
+                    icon="info "
+                    onClick={() => act('inspect_mission', { ref: mission.ref })}
+                  ></Button>
+                </Box>
               ))}
             </LabeledList.Item>
             <LabeledList.Item label="Inactive Missions">
               {data.inactive_missions?.map((mission) => (
-                <Box>{mission.name} <Button icon="plus" onClick={() => act('load_mission', { ref: mission.ref })}></Button></Box>
+                <Box>
+                  {mission.name}{' '}
+                  <Button
+                    icon="plus"
+                    onClick={() => act('load_mission', { ref: mission.ref })}
+                  ></Button>
+                </Box>
               ))}
             </LabeledList.Item>
           </LabeledList>
