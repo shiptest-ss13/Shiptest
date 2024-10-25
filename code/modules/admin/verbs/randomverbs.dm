@@ -70,9 +70,9 @@
 			return
 		switch(sender)
 			if (RADIO_CHANNEL_SYNDICATE)
-				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("CLIP Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -854,7 +854,7 @@
 
 		switch(ruin_force)
 			if("Random")
-				//Can't use pickweight as it might be from "everything"
+				//Can't use pick_weight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)

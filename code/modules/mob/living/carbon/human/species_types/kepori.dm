@@ -18,9 +18,9 @@
 	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
 	coldmod = 1.5
-	brutemod = 1.5
-	burnmod = 1.5
-	speedmod = -0.25
+	// brutemod = 1.5
+	// burnmod = 1.5
+	speedmod = -0.10
 	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
