@@ -255,4 +255,4 @@
 	manufacturer = MANUFACTURER_EOEHOMA
 
 /obj/item/gun/energy/e_gun/e11/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
