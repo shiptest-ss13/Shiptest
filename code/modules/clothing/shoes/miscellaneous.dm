@@ -217,6 +217,9 @@
 		var/mob/living/simple_animal/hostile/retaliate/poison/snake/bootsnake = new/mob/living/simple_animal/hostile/retaliate/poison/snake(src)
 		occupants += bootsnake
 
+/obj/item/clothing/shoes/cowboy/Destroy()
+	QDEL_LIST(occupants)
+	. = ..()
 
 /obj/item/clothing/shoes/cowboy/equipped(mob/living/carbon/user, slot)
 	. = ..()
