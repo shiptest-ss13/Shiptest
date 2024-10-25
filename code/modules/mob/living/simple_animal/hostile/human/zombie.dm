@@ -7,8 +7,6 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	stat_attack = HARD_CRIT //braains
-	maxHealth = 100
-	health = 100
 	harm_intent_damage = 5
 	melee_damage_lower = 21
 	melee_damage_upper = 21
@@ -41,6 +39,7 @@
 			//They have claws now.
 			O.r_hand = null
 			O.l_hand = null
+			armor_base = O.suit
 
 		var/icon/P = get_flat_human_icon("zombie_[zombiejob]", J , dummy_prefs, "zombie", outfit_override = O)
 		icon = P

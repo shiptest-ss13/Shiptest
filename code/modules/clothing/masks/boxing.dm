@@ -7,6 +7,7 @@
 	visor_flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	actions_types = list(/datum/action/item_action/adjust)
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)
