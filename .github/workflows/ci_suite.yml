@@ -29,7 +29,7 @@ jobs:
     name: Run Linters
     needs: start_gate
     runs-on: ubuntu-22.04
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
