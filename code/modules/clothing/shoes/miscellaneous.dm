@@ -219,7 +219,7 @@
 
 /obj/item/clothing/shoes/cowboy/Destroy()
 	QDEL_LIST(occupants)
-	. = ..()
+	return ..()
 
 /obj/item/clothing/shoes/cowboy/equipped(mob/living/carbon/user, slot)
 	. = ..()
