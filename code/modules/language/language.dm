@@ -72,7 +72,7 @@
 	if(scramble_cache.len > SCRAMBLE_CACHE_LEN)
 		scramble_cache.Cut(1, scramble_cache.len-SCRAMBLE_CACHE_LEN-1)
 
-/datum/language/proc/scramble(input)
+/datum/language/proc/scramble(input, datum/language_holder/viewer_holder)
 
 	if(!syllables || !syllables.len)
 		return stars(input)

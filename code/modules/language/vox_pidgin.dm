@@ -13,5 +13,5 @@
 		"SKRE", "AHK", "EHK", "RAWK", "KRA", "AAA", "EEE", "KI", "II", "KRI", "KA"
 	)
 
-	icon_state = "bird"
+	icon_state = "pidgin"
 	default_priority = 90
