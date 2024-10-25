@@ -294,13 +294,13 @@
 				visible_message(span_warning("The gunslinger's weapon shatters as they impact the ground!"))
 
 		if("e11")
-			uniform = pickweight(list(
+			uniform = pick_weight(list(
 				/obj/item/clothing/under/rank/cargo/miner = 65,
 				/obj/item/clothing/under/color/random = 25,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 10,
 				)
 			)
-			belt = pickweight(list(
+			belt = pick_weight(list(
 				/obj/item/storage/belt/utility = 25,
 				/obj/item/storage/belt/mining = 15,
 				/obj/item/storage/belt/fannypack = 15,
