@@ -338,6 +338,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#e2feff"
 	lighting_colour_bulb = "#d5fcff"
 
+/area/ship/engineering/communications/room
+	name = "Communications Room"
+
 /area/ship/engineering/engine
 	name = "Engine Room"
 	icon_state = "engine_sm"
