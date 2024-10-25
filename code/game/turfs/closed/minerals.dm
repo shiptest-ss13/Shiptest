@@ -167,7 +167,6 @@
 	ScrapeAway()
 
 /turf/closed/mineral/ex_act(severity, target)
-	..()
 	switch(severity)
 		if(3)
 			if (prob(75))
@@ -177,7 +176,7 @@
 				gets_drilled(null, FALSE)
 		if(1)
 			gets_drilled(null, FALSE)
-	return
+	return ..()
 
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
@@ -197,7 +196,7 @@
 
 	. = ..()
 	if (prob(mineralChance))
-		var/path = pickweight(mineralSpawnChanceList)
+		var/path = pick_weight(mineralSpawnChanceList)
 		if(ispath(path, /turf))
 			var/turf/T = ChangeTurf(path,null,CHANGETURF_IGNORE_AIR)
 

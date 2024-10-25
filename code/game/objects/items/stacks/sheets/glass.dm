@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("directional reinforced window", /obj/structure/window/reinforced/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile reinforced window", /obj/structure/window/reinforced/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe(" reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20), \
+	new/datum/stack_recipe("reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20), \
 	new/datum/stack_recipe("glass shard", /obj/item/shard, 1) \
 ))
 
@@ -379,3 +379,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "plasma"
 	weld_material = /obj/item/stack/sheet/plasmaglass
+
+/obj/item/shard/plastitanium
+	name = "beige shard"
+	desc = "A nasty looking shard of plastitanium glass."
+	force = 6
+	throwforce = 11
+	icon_state = "plastitaniumlarge"
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
+	icon_prefix = "plastitanium"
+	weld_material = /obj/item/stack/sheet/plastitaniumglass

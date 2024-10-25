@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(preset_fish_sources,init_fishing_configurations())
 
 /// In case you want more complex rules for specific spots
 /datum/fish_source/proc/roll_reward(obj/item/fishing_rod/rod, mob/fisherman)
-	return pickweight(get_modified_fish_table(rod,fisherman))
+	return pick_weight(get_modified_fish_table(rod,fisherman))
 
 /// Gives out the reward if possible
 /datum/fish_source/proc/dispense_reward(reward_path, mob/fisherman)
