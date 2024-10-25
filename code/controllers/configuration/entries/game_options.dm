@@ -439,5 +439,5 @@
  */
 /datum/config_entry/number/random_loot_weight_modifier
 	integer = FALSE
-	default = 1
+	config_entry_value = 1
 	min_val = 0.05

@@ -270,7 +270,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/effect/spawner/random/salvage/metal,
+/obj/effect/spawner/random/salvage/ore/metal,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/central)
 "bL" = (
@@ -1127,7 +1127,7 @@
 "hK" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/salvage_laser,
-/obj/effect/spawner/random/salvage_capacitor,
+/obj/effect/spawner/random/salvage/part/capacitor,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "hM" = (
@@ -4912,7 +4912,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
 	},
-/obj/effect/spawner/random/salvage/metal,
+/obj/effect/spawner/random/salvage/ore/metal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
@@ -6531,7 +6531,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-/obj/effect/spawner/random/salvage_capacitor,
+/obj/effect/spawner/random/salvage/part/capacitor,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "NV" = (

@@ -84,13 +84,13 @@
 	)
 /obj/effect/spawner/random/waste/hivebot
 	loot = list(
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/gold,
-		/obj/effect/spawner/random/salvage/plasma,
-		/obj/effect/spawner/random/salvage/silver,
-		/obj/effect/spawner/random/salvage/titanium,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/gold,
+		/obj/effect/spawner/random/salvage/ore/plasma,
+		/obj/effect/spawner/random/salvage/ore/silver,
+		/obj/effect/spawner/random/salvage/ore/titanium,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapuranium

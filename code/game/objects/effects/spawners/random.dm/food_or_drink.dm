@@ -11,7 +11,6 @@
 			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
 			/obj/item/storage/box/donkpockets/donkpocketpizza = 1,
 			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
-			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 		)
 
 /obj/effect/spawner/random/food_or_drink/ration
@@ -38,55 +37,55 @@
 		/obj/item/storage/ration/blackened_calamari = 5,
 		/obj/item/storage/ration/elbow_macaroni = 5,
 		/obj/item/storage/ration/cheese_pizza_slice = 5,
-		/obj/item/storage/ration/crayons = 2 // :)
+		/obj/item/storage/ration/crayons = 1 // :)
 	)
 
 /obj/effect/spawner/random/food_or_drink/donut
 	name = "random donut" //donut :)
-	icon_state = "pizzabox"
+	icon_state = "donut"
 	loot = list(
-				/obj/item/reagent_containers/food/snacks/donut/apple = 1,
-				/obj/item/reagent_containers/food/snacks/donut/berry = 1,
-				/obj/item/reagent_containers/food/snacks/donut/caramel = 1,
-				/obj/item/reagent_containers/food/snacks/donut/choco = 1,
-				/obj/item/reagent_containers/food/snacks/donut/laugh = 1,
-				/obj/item/reagent_containers/food/snacks/donut/matcha = 1,
-				/obj/item/reagent_containers/food/snacks/donut/meat = 1,
-				/obj/item/reagent_containers/food/snacks/donut/plain = 1,
-				/obj/item/reagent_containers/food/snacks/donut/trumpet = 1,
-				/obj/item/reagent_containers/food/snacks/donut/blumpkin = 1,
-				/obj/item/reagent_containers/food/snacks/donut/bungo = 1,
-				/obj/item/reagent_containers/food/snacks/donut/chaos = 1,
+		/obj/item/reagent_containers/food/snacks/donut/apple = 1,
+		/obj/item/reagent_containers/food/snacks/donut/berry = 1,
+		/obj/item/reagent_containers/food/snacks/donut/caramel = 1,
+		/obj/item/reagent_containers/food/snacks/donut/choco = 1,
+		/obj/item/reagent_containers/food/snacks/donut/laugh = 1,
+		/obj/item/reagent_containers/food/snacks/donut/matcha = 1,
+		/obj/item/reagent_containers/food/snacks/donut/meat = 1,
+		/obj/item/reagent_containers/food/snacks/donut/plain = 1,
+		/obj/item/reagent_containers/food/snacks/donut/trumpet = 1,
+		/obj/item/reagent_containers/food/snacks/donut/blumpkin = 1,
+		/obj/item/reagent_containers/food/snacks/donut/bungo = 1,
+		/obj/item/reagent_containers/food/snacks/donut/chaos = 1,
 	)
 
 /obj/effect/spawner/random/food_or_drink/donut/jelly
 	name = "random jelly donut"
 	loot = list(
-				/obj/item/reagent_containers/food/snacks/donut/jelly/berry = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/apple = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/bungo = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/caramel = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/choco = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/laugh = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/matcha = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/berry = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/apple = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/bungo = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/caramel = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/choco = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/laugh = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/matcha = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet = 1,
 	)
 
 /obj/effect/spawner/random/food_or_drink/donut/slimejelly
 	name = "random slimejelly donut"
 	loot = list(
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/blumpkin = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/bungo = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/caramel = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/choco = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/laugh = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/matcha = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/plain = 1,
-				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/trumpet = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/blumpkin = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/bungo = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/caramel = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/choco = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/laugh = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/matcha = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/plain = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/trumpet = 1,
 	)
 
 /obj/effect/spawner/random/food_or_drink/three_course_meal
@@ -120,6 +119,7 @@
 
 /obj/effect/spawner/random/food_or_drink/garden
 	name = "lush garden seeder"
+	icon_state = "flower"
 	spawn_loot_count = 3
 	loot = list(
 			/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
