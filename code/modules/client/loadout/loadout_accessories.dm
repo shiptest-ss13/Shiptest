@@ -98,6 +98,9 @@
 	subtype_path = /datum/gear/accessory/mask
 	slot = ITEM_SLOT_MASK
 
+/datum/gear/accessory/mask/bandana
+	subtype_path = /datum/gear/accessory/mask/bandana
+
 /datum/gear/accessory/mask/bandana/red
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
