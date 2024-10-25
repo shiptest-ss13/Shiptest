@@ -151,7 +151,7 @@
 /datum/supply_pack/magazine/mag_556mm
 	name = "5.56 Pistole C Magazine Crate"
 	desc = "Contains a 5.56mm magazine for the Pistole C, containing twelve rounds."
-	contains = list(/obj/item/storage/box/ammo/c556mm)
+	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
 	cost = 750
 	faction = FACTION_SOLGOV
 
