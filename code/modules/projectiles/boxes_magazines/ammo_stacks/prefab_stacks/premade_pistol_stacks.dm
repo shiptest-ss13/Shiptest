@@ -491,7 +491,7 @@
 
 /obj/item/storage/box/ammo/a44roum_hp
 	name = "box of HP .44 roumain ammo"
-	desc = "A box of .44 roumain rubbershot ammo, designed to disable targets without causing serious damage."
+	desc = "A box of .44 roumain hollowpoint ammo, designed to disable targets without causing serious damage."
 	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()
