@@ -234,6 +234,7 @@
 	item_state = "ngr_facemask"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 //////////
 //Neck//
@@ -258,3 +259,14 @@
 	item_state = "ngr_webbing"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+
+/obj/item/storage/belt/security/webbing/ngr/cobra/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
+
+/obj/item/storage/belt/security/webbing/ngr/hydra_grenadier/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+	new /obj/item/ammo_casing/a40mm(src)
+	new /obj/item/ammo_casing/a40mm(src)

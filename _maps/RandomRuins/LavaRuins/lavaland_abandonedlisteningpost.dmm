@@ -77,7 +77,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
 	dir = 4
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "cm" = (
@@ -1116,7 +1116,7 @@
 /area/ruin/unpowered/listening_post)
 "te" = (
 /obj/item/gun/ballistic/automatic/smg/cobra{
-	spawnwithmagazine = 0
+	default_ammo_type = 0
 	},
 /obj/item/ammo_box/magazine/m45_cobra{
 	start_empty = 1
@@ -2039,7 +2039,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "MZ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/structure/sign/poster/official/high_class_martini{
 	pixel_y = 32
 	},
@@ -2124,8 +2124,8 @@
 /area/ruin/unpowered/listening_post/commons)
 "Om" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "On" = (
@@ -2246,7 +2246,7 @@
 	icon_state = "trimline";
 	dir = 8
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
