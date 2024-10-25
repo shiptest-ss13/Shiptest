@@ -3,6 +3,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "laser"
+	item_state = "spur"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	muzzle_flash_color = COLOR_SOFT_RED

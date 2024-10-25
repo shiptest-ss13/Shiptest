@@ -153,6 +153,8 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	desc = "A semi-automatic shotgun with tactical furniture and six-shell capacity underneath."
 	icon_state = "cshotgun"
 	item_state = "shotgun_combat"
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_delay = 0.5 SECONDS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/com
 	allowed_ammo_types = list(
@@ -398,8 +400,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon = 'icons/obj/guns/projectile.dmi'
-	lefthand_file = GUN_LEFTHAND_ICON
-	righthand_file = GUN_RIGHTHAND_ICON
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	mob_overlay_icon = null
 
 	base_icon_state = "ishotgun"

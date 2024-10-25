@@ -886,7 +886,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/do_wield(mob/user)
 	. = ..()

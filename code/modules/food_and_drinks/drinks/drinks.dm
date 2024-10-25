@@ -593,6 +593,7 @@
 			broh.losebreath++
 			switch(broh.losebreath)
 				if(-INFINITY to 0)
+					EMPTY_BLOCK_GUARD
 				if(1 to 2)
 					if(prob(30))
 						user.visible_message("<b>[broh]</b>'s eyes water as [broh.p_they()] chug the can of [src]!")

@@ -230,17 +230,10 @@
 		return secondary.screwdriver_act(user, attack_obj,)
 	return ..()
 
-
-/obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/gun/ballistic/automatic/assault/e40/do_wield(mob/user)
 	. = ..()
