@@ -373,8 +373,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon = 'icons/obj/guns/projectile.dmi'
-	lefthand_file = GUN_LEFTHAND_ICON
-	righthand_file = GUN_RIGHTHAND_ICON
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	mob_overlay_icon = null
 
 	base_icon_state = "ishotgun"
