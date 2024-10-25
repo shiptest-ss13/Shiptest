@@ -727,7 +727,7 @@
 	id = "bountyboard_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/bounty_board
+	build_path = /obj/item/wallframe/bounty_viewer
 	category = list("initial", "Construction")
 
 /datum/design/syringe

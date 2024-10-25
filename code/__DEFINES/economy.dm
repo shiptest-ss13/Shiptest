@@ -14,3 +14,7 @@
 #define ACCOUNT_SEC_NAME "Defense Budget"
 
 #define NO_FREEBIES "commies go home"
+
+#define	MISSION_REWARD_CASH "cash"
+#define	MISSION_REWARD_ITEMS "items"
+#define	MISSION_REWARD_REP "rep"

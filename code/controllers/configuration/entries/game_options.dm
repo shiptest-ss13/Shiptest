@@ -432,6 +432,9 @@
 	config_entry_value = 127
 	min_val = 127
 
+/datum/config_entry/number/max_dynamic_missions
+	config_entry_value = 6
+
 /**
  * A config that skews with the random spawners weights
  * If the value is lower than 1, it'll tend to even out the odds
