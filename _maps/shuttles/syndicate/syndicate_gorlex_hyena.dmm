@@ -64,7 +64,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/ammo_box/a357/match,
 /obj/item/pen/edagger,
-/obj/item/storage/pistolcase/a357,
+/obj/item/storage/guncase/pistol/a357,
 /obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -222,12 +222,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1284,8 +1284,8 @@
 /area/ship/security/armory)
 "wO" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
@@ -2504,7 +2504,7 @@
 /obj/item/clothing/suit/ngr,
 /obj/item/clothing/head/hardhat/ngr/foreman,
 /obj/item/tank/jetpack/suit,
-/obj/item/storage/pistolcase/ringneck,
+/obj/item/storage/guncase/pistol/ringneck,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "QW" = (

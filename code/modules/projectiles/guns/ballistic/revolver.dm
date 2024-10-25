@@ -10,7 +10,10 @@
 	name = "i demand"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	icon_state = "revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder,
+	)
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	rack_sound = 'sound/weapons/gun/revolver/revolver_prime.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
@@ -460,12 +463,16 @@
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
+	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev38,
+	)
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -532,14 +539,8 @@ EMPTY_GUN_HELPER(revolver/detective)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
-/obj/item/gun/ballistic/revolver/detective/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/revolver/viper/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/revolver/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver)
+EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -572,18 +573,21 @@ EMPTY_GUN_HELPER(revolver/detective)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
 	icon_state = "montagne"
+	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne,
+	)
 
 /obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-/obj/item/gun/ballistic/revolver/montagne/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver/montagne)
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
@@ -595,7 +599,10 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 	icon_state = "ashhand"
 	item_state = "ashhand"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev4570,
+	)
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	rack_sound = 'sound/weapons/gun/revolver/viper_prime.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -621,7 +628,10 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/pepperbox,
+	)
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
@@ -630,8 +640,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	semi_auto = TRUE
 	safety_wording = "safety"
 
-/obj/item/gun/ballistic/revolver/firebrand/no_mag
-	spawnwithmagazine = FALSE
+EMPTY_GUN_HELPER(revolver/firebrand)
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
@@ -644,7 +653,10 @@ EMPTY_GUN_HELPER(revolver/detective)
 	icon_state = "shadow"
 	item_state = "shadow"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44,
+	)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
@@ -667,10 +679,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-/obj/item/gun/ballistic/revolver/shadow/no_mag
-	spawnwithmagazine = FALSE
-
 /obj/item/gun/ballistic/revolver/shadow/reskin_obj(mob/M)
 	. = ..()
 	if(current_skin)
 		item_state = unique_reskin[current_skin]
+
+EMPTY_GUN_HELPER(revolver/shadow)
