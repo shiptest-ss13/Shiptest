@@ -345,6 +345,7 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
+	SSblackbox.record_feedback("tally", "player_joined_faction", 1, ship.get_faction())
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
@@ -432,7 +433,7 @@
 		mind.active = FALSE //we wish to transfer the key manually
 		mind.original_character_slot_index = client.prefs.default_slot
 		mind.transfer_to(H) //won't transfer key since the mind is not active
-		mind.set_original_character(H)
+		H.mind.set_original_character(H)
 
 	H.name = real_name
 	client.init_verbs()

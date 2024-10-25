@@ -447,3 +447,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define ROUND_END_NOT_DELAYED 0
 #define ROUND_END_DELAYED 1
 #define ROUND_END_TGS 2
+
+/// A null statement to guard against EmptyBlock lint without necessitating the use of pass()
+/// Used to avoid proc-call overhead. But use sparingly. Probably pointless in most places.
+#define EMPTY_BLOCK_GUARD ;

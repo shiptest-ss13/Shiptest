@@ -138,6 +138,7 @@
 		L.apply_status_effect(STATUS_EFFECT_CRUSHERMARK, hammer_synced)
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
+		SSblackbox.record_feedback("tally", "pick_used_mining", 1, src.type)
 		var/turf/closed/mineral/M = target_turf
 		new /obj/effect/temp_visual/kinetic_blast(M)
 	..()
