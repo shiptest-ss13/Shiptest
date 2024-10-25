@@ -174,7 +174,7 @@
 	"}
 
 
-/obj/effect/spawner/lootdrop/kansatsu_missions
+/obj/effect/spawner/random/kansatsu_missions
 	name = "Kansatsu Missions"
 	lootdoubles = FALSE
 	loot = list(
@@ -189,8 +189,7 @@
 		/obj/item/disk/holodisk/kansatsu/mission/bugging = 4,
 		/obj/item/disk/holodisk/kansatsu/mission/advertisement = 3
 	)
-
-	lootcount = 2
+	spawn_loot_count = 2
 
 /datum/preset_holoimage/cybersun_researcher
 	outfit_type = /datum/outfit/job/syndicate/science/cybersun

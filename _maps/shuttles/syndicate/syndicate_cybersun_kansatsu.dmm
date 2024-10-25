@@ -820,7 +820,7 @@
 /obj/structure/dresser{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/plushie/moth{
+/obj/effect/spawner/random/entertainment/plushie/moth{
 	pixel_y = 11
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -1354,7 +1354,7 @@
 /obj/structure/closet/wall/red/directional/north,
 /obj/item/clothing/under/misc/pj/red,
 /obj/item/clothing/under/misc/pj/red,
-/obj/effect/spawner/lootdrop/plushie,
+/obj/effect/spawner/random/entertainment/plushie,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm/dormtwo)
 "uq" = (
@@ -1575,11 +1575,11 @@
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe,
 /obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/dry_ramen,
 /obj/item/reagent_containers/food/drinks/dry_ramen,
 /obj/item/reagent_containers/food/drinks/dry_ramen,
@@ -2345,7 +2345,7 @@
 /area/ship/crew/dorm/dormtwo)
 "QN" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/kansatsu_missions{
+/obj/effect/spawner/random/kansatsu_missions{
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
