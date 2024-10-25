@@ -1547,6 +1547,10 @@
 	pixel_y = -1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/item/stamp/nanotrasen{
+	pixel_y = 11;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "gz" = (
@@ -3061,9 +3065,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/stamp/nanotrasen/ns{
-	pixel_x = 8;
-	pixel_y = 9
+/obj/item/stamp/nanotrasen{
+	pixel_y = 9;
+	pixel_x = 8
 	},
 /obj/item/stamp{
 	pixel_x = 8;
@@ -8917,10 +8921,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
-/obj/item/stamp/nanotrasen/vigilitas{
-	pixel_x = 5;
-	pixel_y = 7
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "GF" = (
@@ -9192,9 +9192,6 @@
 	pixel_x = -5
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/item/stamp/nanotrasen{
-	pixel_x = 1
-	},
 /obj/item/stamp/nanotrasen/central{
 	pixel_x = 6;
 	pixel_y = 10

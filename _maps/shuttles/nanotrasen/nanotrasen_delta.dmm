@@ -1052,13 +1052,9 @@
 /obj/effect/turf_decal/corner/opaque/nsorange{
 	dir = 4
 	},
-/obj/item/stamp/nanotrasen/ns{
-	pixel_x = -7;
-	pixel_y = 8
-	},
 /obj/item/stamp/nanotrasen/ns/captain{
 	pixel_x = -7;
-	pixel_y = 2
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1337,6 +1333,7 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning,
+/obj/item/stamp/nanotrasen/ns,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jr" = (
@@ -1426,6 +1423,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/item/stamp/nanotrasen,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "lp" = (
