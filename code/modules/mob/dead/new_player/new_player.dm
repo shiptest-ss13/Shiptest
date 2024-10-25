@@ -345,6 +345,7 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
+	SSblackbox.record_feedback("tally", "player_joined_faction", 1, ship.get_faction())
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
