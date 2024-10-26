@@ -65,6 +65,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/himehabu
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
@@ -72,10 +76,6 @@
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
-
-/obj/item/storage/guncase/pistol/himehabu
-	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 
 /* Etherbor */
 
