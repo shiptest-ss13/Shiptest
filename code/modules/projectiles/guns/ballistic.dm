@@ -221,7 +221,7 @@
 		return
 
 	if(sealed_magazine)
-		to_chat(user, span_warning("The magazine on [src] is sealed and cannot be reloaded!"))
+		to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be reloaded!"))
 		return
 	if(!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
@@ -287,30 +287,35 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && magazine)
-		eject_magazine(user)
-		return
+	if(user.is_holding(src) && loc == user)
+		if(sealed_magazine)
+			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
+			return
+		if(bolt_type == BOLT_TYPE_NO_BOLT && (chambered || internal_magazine))
+			chambered = null
+			var/num_unloaded = 0
+			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+				CB.forceMove(drop_location())
+
+				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+				CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
+
+				num_unloaded++
+				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+			if (num_unloaded)
+				to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src]."))
+				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+				update_appearance()
+			else
+				to_chat(user, span_warning("[src] is empty!"))
+			return
+		if(!internal_magazine && magazine)
+			eject_magazine(user)
+			return
+		return ..()
 	return ..()
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
-	if(bolt_type == BOLT_TYPE_NO_BOLT)
-		chambered = null
-		var/num_unloaded = 0
-		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
-			CB.forceMove(drop_location())
-
-			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
-
-			num_unloaded++
-			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
-		if (num_unloaded)
-			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
-			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		return
 	if((bolt_type == BOLT_TYPE_LOCKING || bolt_type == BOLT_TYPE_CLIP) && bolt_locked)
 		drop_bolt(user)
 		return
@@ -335,7 +340,8 @@
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+	if(bolt_type != BOLT_TYPE_NO_BOLT)
+		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)

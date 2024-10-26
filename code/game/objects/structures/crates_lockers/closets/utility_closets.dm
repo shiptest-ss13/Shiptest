@@ -50,7 +50,7 @@
 			new /obj/item/clothing/mask/breath(src)
 
 		if ("nothing")
-			// doot
+			EMPTY_BLOCK_GUARD
 
 		// teehee
 		if ("delete")
