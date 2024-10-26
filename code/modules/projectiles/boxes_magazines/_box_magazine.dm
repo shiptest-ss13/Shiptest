@@ -123,7 +123,7 @@
 	if(!can_load(user))
 		return
 
-	if(istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack))
+	if(istype(attacking_obj, /obj/item/ammo_box))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
 			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box, timed_action_flags = IGNORE_USER_LOC_CHANGE)))
