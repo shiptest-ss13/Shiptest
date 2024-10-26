@@ -2,6 +2,8 @@
 	group = "Exploration"
 	crate_type = /obj/structure/closet/crate/wooden
 
+/* Exploration Gear */
+
 /datum/supply_pack/exploration/lava
 	name = "Lava Exploration Kit"
 	desc = "Contains 60 lavaproof rods, two pocket extinguishers and goggles to protect yourself from the heat."
@@ -15,16 +17,6 @@
 		/obj/item/stack/rods/lava/thirty,
 	)
 	crate_name = "Lava Exploration Kit"
-
-/datum/supply_pack/exploration/lavaproof_ords
-	name ="Lavaproof Rods Crate"
-	desc = "Contains 60 lavaproof rods for safely traversing molten pits."
-	cost = 200
-	contains = list(
-		/obj/item/stack/rods/lava/thirty,
-		/obj/item/stack/rods/lava/thirty,
-		)
-	crate_name = "Lavaproof Rod Crate"
 
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
@@ -44,6 +36,16 @@
 /*
 		General Exploration Gear
 */
+
+/datum/supply_pack/exploration/lavaproof_ords
+	name ="Lavaproof Rods Crate"
+	desc = "Contains 60 lavaproof rods for safely traversing molten pits."
+	cost = 200
+	contains = list(
+		/obj/item/stack/rods/lava/thirty,
+		/obj/item/stack/rods/lava/thirty,
+		)
+	crate_name = "Lavaproof Rod Crate"
 
 /datum/supply_pack/exploration/capsules
 	name = "Bluespace Shelter Capsule"
