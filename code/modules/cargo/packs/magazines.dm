@@ -129,7 +129,7 @@
 
 /datum/supply_pack/magazine/cm82_mag
 	name = "CM-82 Magazine Crate"
-	desc = "Contains a 5.56mm magazine for the P-16 rifle, containing thirty rounds. Notably, these are also compatable with the P-16 rifle."
+	desc = "Contains a 5.56mm magazine for the CM-82 rifle, containing thirty rounds. Notably, these are also compatable with the P-16 rifle."
 	contains = list(/obj/item/ammo_box/magazine/p16)
 	cost = 1000
 
