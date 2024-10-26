@@ -62,9 +62,8 @@
 	contains = list(/obj/item/ammo_box/magazine/m12_sporter)
 	cost = 200
 
-
 /datum/supply_pack/magazine/m15_mag
-	name = "Sporter Magazine Crate"
+	name = "Super Sporter Magazine Crate"
 	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, containing 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15)
 	cost = 300
@@ -73,25 +72,25 @@
 
 /datum/supply_pack/magazine/himehabu_mag
 	name = "Himehabu Magazine Crate"
-	desc = "Contains a .22lr magazine for the himehabu pistol, containing ten rounds."
+	desc = "Contains a .22lr magazine for the Himehabu pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu)
 	cost = 200
 
 /datum/supply_pack/magazine/himehabu_mag
 	name = "Asp Magazine Crate"
-	desc = "Contains a 5.7x39mm magazine for the himehabu pistol, containing 12 rounds."
+	desc = "Contains a 5.7x39mm magazine for the Asp pistol, containing 12 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m57_39_asp)
 	cost = 400
 
 /datum/supply_pack/magazine/m10mm_mag
-	name = "10mm Ringneck Magazine Crate"
-	desc = "Contains a 10mm magazine for the ringneck pistol, containing ten rounds."
+	name = "Ringneck Magazine Crate"
+	desc = "Contains a 10mm magazine for the Ringneck pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m10mm_ringneck)
 	cost = 500
 
 /datum/supply_pack/magazine/m9mm_rattlesnake
 	name = "Rattlesnake Magazine Crate"
-	desc = "Contains a 9mm magazine for the rattlesnake machine pistol, contains 18 rounds."
+	desc = "Contains a 9mm magazine for the Rattlesnake machine pistol, contains 18 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_rattlesnake)
 	cost = 500
 
@@ -102,7 +101,7 @@
 	cost = 750
 
 /datum/supply_pack/magazine/sidewinder_mag
-	name = "Sidewinder Crate"
+	name = "Sidewinder Magazine Crate"
 	desc = "Contains a 30 round magazine for the Sidewinder SMG."
 	contains = list(/obj/item/ammo_box/magazine/m57_39_sidewinder)
 	cost = 750
@@ -115,7 +114,7 @@
 
 /datum/supply_pack/magazine/hydra_mag
 	name = "SMR-80 Magazine Crate"
-	desc = "Contains a .308 magazine for the M514 EBR rifle, containing ten rounds."
+	desc = "Contains a 5.56x42mm CLIP for the SMR-80 rifle, containing 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/small)
 	cost = 1000
 
