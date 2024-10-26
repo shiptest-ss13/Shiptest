@@ -426,7 +426,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
 // Chief Engineer
 
