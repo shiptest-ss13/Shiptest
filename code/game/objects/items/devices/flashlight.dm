@@ -259,13 +259,13 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	desc = "A generic red flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
 	light_range = 7 // Pretty bright.
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	var/fuel = 0
+	var/fuel = 900
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
@@ -275,9 +275,14 @@
 	light_color = "#FA421A" //Cit lighting
 	light_power = 0.8 //Cit lighting
 
+/obj/item/flashlight/flare/burnt
+	desc = "A burnt out red flare."
+	icon_state = "flare-empty"
+	fuel = 0
+	grind_results = list(/datum/reagent/sulfur = 2)
+
 /obj/item/flashlight/flare/Initialize()
 	. = ..()
-	fuel = rand(800, 1000) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.
 
 /obj/item/flashlight/flare/process()
 	open_flame(heat)
@@ -558,15 +563,6 @@
 /obj/item/flashlight/glowstick/pink
 	name = "pink glowstick"
 	color = LIGHT_COLOR_PINK
-
-/obj/effect/spawner/lootdrop/glowstick
-	name = "random colored glowstick"
-	icon = 'icons/obj/lighting.dmi'
-	icon_state = "random_glowstick"
-
-/obj/effect/spawner/lootdrop/glowstick/Initialize()
-	loot = typesof(/obj/item/flashlight/glowstick)
-	. = ..()
 
 /obj/item/flashlight/spotlight //invisible lighting source
 	name = "disco light"

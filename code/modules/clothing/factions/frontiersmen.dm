@@ -231,24 +231,11 @@
 
 	unique_reskin = null
 
-/obj/item/storage/belt/medical/webbing/frontiersmen
-	name = "leather medical bandolier"
-	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
-	icon_state = "frontiermedicalwebbing"
-	item_state = "frontiermedicalwebbing"
-	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
-
-/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
-	new /obj/item/scalpel(src)
-	new /obj/item/circular_saw(src)
-	new /obj/item/surgicaldrill(src)
-	new /obj/item/retractor(src)
-	new /obj/item/cautery(src)
-	new /obj/item/hemostat(src)
-	new /obj/item/hypospray/mkii(src)
-	update_appearance()
-
+/obj/item/storage/belt/security/military/frontiersmen/illestren/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/illestren_a850r(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
 	for(var/i in 1 to 4)
@@ -269,3 +256,30 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
 	new /obj/item/grenade/frag(src)
+
+
+/obj/item/storage/belt/medical/webbing/frontiersmen
+	name = "leather medical bandolier"
+	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
+	icon_state = "frontiermedicalwebbing"
+	item_state = "frontiermedicalwebbing"
+	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)

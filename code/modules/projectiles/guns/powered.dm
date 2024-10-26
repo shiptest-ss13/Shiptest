@@ -1,13 +1,21 @@
 /obj/item/gun/ballistic/automatic/powered
-	mag_type = /obj/item/ammo_box/magazine/gauss
+	default_ammo_type = /obj/item/ammo_box/magazine/gauss
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/gauss,
+	)
+	var/default_cell_type = /obj/item/stock_parts/cell/gun
+	var/list/allowed_cell_types = list(
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
 	charge_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
-	if(cell_type)
-		cell = new cell_type(src)
-	else
-		cell = new(src)
+	if(default_cell_type)
+		cell = new default_cell_type(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
@@ -39,19 +47,13 @@
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
-	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
+	if (!internal_cell && (A.type in allowed_cell_types))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
