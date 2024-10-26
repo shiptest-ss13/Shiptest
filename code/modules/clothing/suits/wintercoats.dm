@@ -65,7 +65,7 @@
 	icon_state = "coatmedical"
 	item_state = "coatmedical"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical
-	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+	allowed = GLOB.medical_suit_allowed
 
 /obj/item/clothing/head/hooded/winterhood/medical
 	icon_state = "hood_medical"

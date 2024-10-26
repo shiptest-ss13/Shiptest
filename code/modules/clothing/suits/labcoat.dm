@@ -5,7 +5,7 @@
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS|GROIN
-	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+	allowed = GLOB.medical_suit_allowed
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
 
