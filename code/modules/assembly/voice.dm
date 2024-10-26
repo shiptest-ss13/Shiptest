@@ -105,7 +105,7 @@
 
 /obj/item/assembly/voice/preset
 	mode = 1
-	recorded = "jorkin it"
+	recorded = "example phrase"
 
 #undef INCLUSIVE_MODE
 #undef EXCLUSIVE_MODE
