@@ -73,6 +73,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
 
+/obj/item/storage/guncase/pistol/himehabu
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+
 /* Etherbor */
 
 /obj/item/storage/guncase/pistol/kalixpistol
