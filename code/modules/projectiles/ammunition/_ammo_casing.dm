@@ -48,7 +48,7 @@
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
 	///Maximum stack size of ammunition
-	var/stack_size = 12
+	var/stack_size = 15
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
@@ -171,11 +171,8 @@
 
 /obj/item/ammo_casing/Destroy()
 	. = ..()
-
 	if(BB)
 		QDEL_NULL(BB)
-	else
-		SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/ammo_casing/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? (bullet_skin ? "-[bullet_skin]" : "") : "-empty"]"
