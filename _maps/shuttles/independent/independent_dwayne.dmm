@@ -474,7 +474,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "hd" = (
 /obj/machinery/door/poddoor/preopen{
@@ -1616,7 +1616,7 @@
 	pixel_x = -1;
 	pixel_y = -2
 	},
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "yJ" = (
 /turf/open/floor/plasteel/tech,
@@ -1964,7 +1964,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ex" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -2201,7 +2201,7 @@
 	pixel_y = 13;
 	pixel_x = -10
 	},
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ia" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2857,10 +2857,8 @@
 /obj/machinery/door/window/northleft{
 	name = "Shower Door"
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 5
-	},
-/turf/open/floor/plasteel/freezer,
+/obj/structure/catwalk/over/plated_catwalk/white,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "Qg" = (
 /obj/machinery/power/ship_gravity,
@@ -3074,7 +3072,7 @@
 "Tl" = (
 /obj/machinery/washing_machine,
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Tz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
