@@ -33,6 +33,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/melee/space/Initialize()
 	. = ..()
@@ -73,6 +74,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/ranged/space/Initialize()
 	. = ..()
