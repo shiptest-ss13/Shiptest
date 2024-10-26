@@ -42,6 +42,8 @@
 	QDEL_NULL(physiology)
 	QDEL_LIST(bioware)
 	GLOB.human_list -= src
+	if(blood_particle)
+		QDEL_NULL(blood_particle)
 	return ..()
 
 

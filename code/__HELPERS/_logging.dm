@@ -10,14 +10,22 @@
 #define WRITE_LOG(log, text) rustg_log_write(log, text, "true")
 #define WRITE_LOG_NO_FORMAT(log, text) rustg_log_write(log, text, "false")
 
-//print a warning message to world.log
+#ifdef UNIT_TESTS
+#define WARNING(MSG) log_world("::warning file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#else
 #define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [UNLINT(src)] usr: [usr].")
+#endif
+/// Print a warning message to world.log
 /proc/warning(msg)
 	msg = "## WARNING: [msg]"
 	log_world(msg)
 
-//not an error or a warning, but worth to mention on the world log, just in case.
+#ifdef UNIT_TESTS
+#define NOTICE(MSG) log_world("::notice file=[__FILE__],line=[__LINE__]::[MSG] src: [UNLINT(src)] usr: [usr].")
+#else
 #define NOTICE(MSG) notice(MSG)
+#endif
+///not an error or a warning, but worth to mention on the world log, just in case.
 /proc/notice(msg)
 	msg = "## NOTICE: [msg]"
 	log_world(msg)
