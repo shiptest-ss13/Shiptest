@@ -65,6 +65,14 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/pc76
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+
+/obj/item/storage/guncase/pistol/asp
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/asp
+	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
+
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
