@@ -143,7 +143,3 @@
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	boom_sizes = list(0, 3, 5)
-
-/obj/item/grenade/c4/satchel_charge/receive_signal()
-	. = ..()
-
