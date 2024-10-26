@@ -35,7 +35,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_apron"
 	item_state = "whitecloth"
-	allowed = GLOB.medical_suit_allowed
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
