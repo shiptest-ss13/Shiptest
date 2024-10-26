@@ -306,6 +306,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "ai_chamber"
 	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
 
+/area/ship/science/workshop
+	name = "Workshop"
+	icon_state = "medresearch"
+
 /// Engineering ///
 /area/ship/engineering
 	name = "Engineering"
