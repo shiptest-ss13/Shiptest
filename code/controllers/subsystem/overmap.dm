@@ -270,6 +270,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
+	SSblackbox.record_feedback("tally", "encounter_spawned", 1, dynamic_datum.planet.name)
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
