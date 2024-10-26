@@ -1137,7 +1137,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/east,
-/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/lootdrop/waste/trash,
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -3923,7 +3923,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "EP" = (
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "Ff" = (
@@ -4272,7 +4272,7 @@
 	id = "Ranger_Port_maint_shut";
 	req_ship_access = 1
 	},
-/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/lootdrop/waste/trash,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ih" = (
@@ -5558,11 +5558,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/effect/spawner/random/lpaid{
+/obj/effect/spawner/lootdrop/lpaid{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/effect/spawner/random/lpretrieval{
+/obj/effect/spawner/lootdrop/lpretrieval{
 	pixel_x = -10;
 	pixel_y = 10
 	},

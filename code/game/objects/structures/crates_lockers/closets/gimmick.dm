@@ -14,6 +14,7 @@
 	desc = "It looks alien!"
 	icon_state = "alien"
 
+
 /obj/structure/closet/gimmick
 	name = "administrative supply closet"
 	desc = "It's a storage unit for things that have no right being here."

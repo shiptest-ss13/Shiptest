@@ -77,7 +77,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
 	dir = 4
 	},
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "cm" = (
@@ -2039,7 +2039,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "MZ" = (
 /obj/structure/rack,
-/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/structure/sign/poster/official/high_class_martini{
 	pixel_y = 32
 	},
@@ -2124,8 +2124,8 @@
 /area/ruin/unpowered/listening_post/commons)
 "Om" = (
 /obj/structure/rack,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "On" = (
@@ -2246,7 +2246,7 @@
 	icon_state = "trimline";
 	dir = 8
 	},
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},

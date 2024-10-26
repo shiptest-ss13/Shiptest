@@ -1070,7 +1070,10 @@
 /area/hangar)
 "NE" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/lootdrop/glowstick{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
@@ -1330,7 +1333,7 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/stack/cable_coil/cut/yellow,
 /obj/structure/rack,
-/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	planetary_atmos = 1

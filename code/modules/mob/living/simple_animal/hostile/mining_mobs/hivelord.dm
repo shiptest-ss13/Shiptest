@@ -463,7 +463,7 @@
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize() //in an ideal world, these would generate, the legion would overlay over the corpse, and we'd get cool sprites
-	mob_species = pick_weight(list(
+	mob_species = pickweight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
 			/datum/species/ipc = 10,
@@ -472,7 +472,7 @@
 			/datum/species/spider = 5
 		)
 	)
-	var/type = pick_weight(list(
+	var/type = pickweight(list(
 		"Miner" = 40,
 		"Assistant" = 10,
 		"Engineer" = 5,

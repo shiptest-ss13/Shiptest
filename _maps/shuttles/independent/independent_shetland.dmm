@@ -735,7 +735,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/janitor)
 "gd" = (
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 4
 	},
@@ -3100,7 +3100,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "zr" = (
-/obj/effect/spawner/random/vending/cola,
+/obj/machinery/vending/cola/random,
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 8
 	},
@@ -4361,7 +4361,7 @@
 "Li" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/effect/spawner/random/bedsheet,
+/obj/item/bedsheet/dorms,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
 	pixel_x = -32;
@@ -4647,7 +4647,7 @@
 "MS" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/effect/spawner/random/bedsheet,
+/obj/item/bedsheet/dorms,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "MT" = (
@@ -4676,7 +4676,7 @@
 "Ni" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/effect/spawner/random/bedsheet,
+/obj/item/bedsheet/dorms,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
@@ -4768,7 +4768,7 @@
 "Ok" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/effect/spawner/random/bedsheet,
+/obj/item/bedsheet/dorms,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -5423,9 +5423,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 1;

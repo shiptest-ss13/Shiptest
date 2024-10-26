@@ -283,9 +283,9 @@
 
 
 //lootdrop
-/obj/effect/spawner/random/lpretrieval
+/obj/effect/spawner/lootdrop/lpretrieval
 	name = "LP Retrieval Missions"
-	spawn_loot_double = FALSE
+	lootdoubles = FALSE
 
 	loot = list(
 		/obj/item/disk/holodisk/lp/retrieval/phazon = 1,
@@ -294,11 +294,11 @@
 		/obj/item/disk/holodisk/lp/retrieval/materials = 1
 	)
 
-	spawn_loot_count = 2
+	lootcount = 2
 
-/obj/effect/spawner/random/lpaid
+/obj/effect/spawner/lootdrop/lpaid
 	name = "LP Aid Missions"
-	spawn_loot_double = FALSE
+	lootdoubles = FALSE
 
 	loot = list(
 		/obj/item/disk/holodisk/lp/aid/repairs = 1,
@@ -306,5 +306,5 @@
 		/obj/item/disk/holodisk/lp/aid/guard = 1,
 	)
 
-	spawn_loot_count = 4
+	lootcount = 4
 

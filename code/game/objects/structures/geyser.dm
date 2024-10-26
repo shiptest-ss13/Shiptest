@@ -45,7 +45,7 @@
 
 /obj/structure/geyser/random/Initialize()
 	. = ..()
-	reagent_id = pick_weight(options)
+	reagent_id = pickweight(options)
 
 /obj/item/plunger
 	name = "plunger"

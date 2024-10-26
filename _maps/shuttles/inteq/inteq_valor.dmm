@@ -92,7 +92,7 @@
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/structure/rack,
-/obj/effect/spawner/random/maintenance/five,
+/obj/effect/spawner/lootdrop/maintenance/five,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "bv" = (
@@ -586,9 +586,9 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/item/storage/ration/crayons,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -1491,7 +1491,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 5
 	},
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/vending/snack/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -2691,8 +2691,8 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/food/snacks/hotdog,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "yu" = (
@@ -4647,7 +4647,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/lootdrop/donut,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Qn" = (
@@ -5393,7 +5393,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
 	},
-/obj/effect/spawner/random/vending/cola,
+/obj/machinery/vending/cola/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/grid,

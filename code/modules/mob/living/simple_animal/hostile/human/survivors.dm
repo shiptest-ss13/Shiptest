@@ -80,7 +80,7 @@
 	var/survivor_type //room for alternatives inside the fuckoff grade init.
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
-	mob_species = pick_weight(list(
+	mob_species = pickweight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
 			/datum/species/ipc = 10,
@@ -92,7 +92,7 @@
 	//to-do: learn how to make mobsprites for other survivors
 
 	//gloves are a tossup
-	gloves = pick_weight(list(
+	gloves = pickweight(list(
 			/obj/item/clothing/gloves/color/black = 60,
 			/obj/item/clothing/gloves/explorer = 30,
 			/obj/item/clothing/gloves/explorer/old = 10
@@ -100,7 +100,7 @@
 		)
 
 	//bags are semi-random.
-	back = pick_weight(list(
+	back = pickweight(list(
 			/obj/item/storage/backpack = 20,
 			/obj/item/storage/backpack/explorer = 20,
 			/obj/item/storage/backpack/satchel = 20,
@@ -112,7 +112,7 @@
 	//as are bag contents
 	backpack_contents = list()
 	if(prob(70))
-		backpack_contents += pick_weight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
+		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
@@ -128,7 +128,7 @@
 			)
 		)
 	if(prob(70))
-		backpack_contents += pick_weight(list(
+		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
@@ -140,7 +140,7 @@
 			)
 		)
 	if(prob(70))
-		backpack_contents += pick_weight(list(
+		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
@@ -154,7 +154,7 @@
 			)
 		)
 	if (prob(15)) //mayhaps a medkit
-		backpack_contents += pick_weight(list(
+		backpack_contents += pickweight(list(
 			/obj/item/storage/firstaid/regular = 50,
 			/obj/item/storage/firstaid/brute = 15,
 			/obj/item/storage/firstaid/medical = 15,
@@ -167,7 +167,7 @@
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 
 	//masks
-	mask = pick_weight(list(
+	mask = pickweight(list(
 		/obj/item/clothing/mask/gas = 40,
 		/obj/item/clothing/mask/gas/explorer = 20,
 		/obj/item/clothing/mask/gas/explorer/old = 20,
@@ -177,7 +177,7 @@
 
 	//the eyes are the window into the soul.
 	if(prob(70))
-		glasses = pick_weight(list(
+		glasses = pickweight(list(
 			/obj/item/clothing/glasses/heat = 20,
 			/obj/item/clothing/glasses/cold = 20,
 			/obj/item/clothing/glasses/meson = 40,
@@ -189,7 +189,7 @@
 	if(prob(1)) //oh my god they can't hear the sandstorm coming they've got airpods in
 		ears = /obj/item/instrument/piano_synth/headphones/spacepods
 	else
-		ears = pick_weight(list(
+		ears = pickweight(list(
 			/obj/item/radio/headset = 50,
 			/obj/item/radio/headset/alt = 50
 			)
@@ -198,7 +198,7 @@
 	switch(survivor_type)
 		if("survivor")
 			//uniforms are random to show varied backgrounds, but similar goal
-			uniform = pick_weight(list(
+			uniform = pickweight(list(
 				/obj/item/clothing/under/color/random = 65,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 				/obj/item/clothing/under/rank/prisoner = 10,
@@ -207,7 +207,7 @@
 				)
 			)
 			//storage is semi-randomized, giving some variety
-			belt = 	pick_weight(list(
+			belt = 	pickweight(list(
 				/obj/item/storage/belt/fannypack = 40,
 				/obj/item/storage/belt/mining = 20,
 				/obj/item/storage/belt/mining/alt = 15,
@@ -223,7 +223,7 @@
 				r_pocket = /obj/item/spacecash/bundle/smallrand
 
 		if("hunter")
-			uniform = pick_weight(list(
+			uniform = pickweight(list(
 				/obj/item/clothing/under/color/random = 50,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 25,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
@@ -231,7 +231,7 @@
 				/obj/item/clothing/under/utility = 5
 				)
 			)
-			belt = 	pick_weight(list(
+			belt = 	pickweight(list(
 				/obj/item/storage/belt/mining = 30,
 				/obj/item/storage/belt/fannypack = 20,
 				/obj/item/storage/belt/mining/alt = 15,
@@ -251,7 +251,7 @@
 				visible_message(span_warning("The hunter's weapon shatters as they impact the ground!"))
 
 		if("gunslinger")
-			uniform = pick_weight(list(
+			uniform = pickweight(list(
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
 				/obj/item/clothing/under/color/random = 25,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
@@ -260,7 +260,7 @@
 				/obj/item/clothing/under/syndicate/combat = 5
 				)
 			)
-			belt = pick_weight(list(
+			belt = pickweight(list(
 				/obj/item/storage/belt/mining = 30,
 				/obj/item/storage/belt/bandolier = 30,
 				/obj/item/storage/belt/military = 20,

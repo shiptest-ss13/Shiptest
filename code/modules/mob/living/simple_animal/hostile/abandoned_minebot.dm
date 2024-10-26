@@ -35,14 +35,14 @@
 	minimum_distance = 1
 	icon_state = "mining_drone_offense"
 	faction = list("mining", "turret")
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/random/minebot)
+	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/lootdrop/minebot)
 	projectiletype = /obj/projectile/kinetic/miner/weak
 
 
 /obj/projectile/kinetic/miner/weak
 	damage = 15
 
-/obj/effect/spawner/random/minebot
+/obj/effect/spawner/lootdrop/minebot
 	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 15,
 				/obj/item/borg/upgrade/modkit/chassis_mod = 15,
 				/obj/item/borg/upgrade/modkit/tracer = 15,
