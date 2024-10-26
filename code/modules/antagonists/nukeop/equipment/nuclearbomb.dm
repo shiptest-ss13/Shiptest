@@ -523,6 +523,10 @@
 		return TRUE
 	return ..()
 
+/obj/machinery/nuclearbomb/beer/empty/Initialize()
+	. = ..()
+	keg.reagent_id = null
+
 /obj/machinery/nuclearbomb/beer/actually_explode()
 	//Unblock roundend, we're not actually exploding.
 	SSticker.roundend_check_paused = FALSE
