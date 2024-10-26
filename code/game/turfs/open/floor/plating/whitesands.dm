@@ -91,3 +91,15 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 	initial_gas_mix = WHITESANDS_ATMOS
+
+/turf/open/floor/concrete/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_1/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/plating/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
