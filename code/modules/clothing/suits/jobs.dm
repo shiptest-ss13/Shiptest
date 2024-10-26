@@ -207,7 +207,7 @@
 	name = "surgical apron"
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
-	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+	allowed = GLOB.medical_suit_allowed
 
 //SolGov suits
 

@@ -47,7 +47,7 @@
 	icon_state = "frontier_surgery"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
-	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+	allowed = MGLOB.medical_suit_allowed
 
 //////////////////
 //Armored suits//
