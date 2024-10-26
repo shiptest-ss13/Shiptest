@@ -1196,7 +1196,7 @@
 			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
 			victim.Dizzy(5)
 		if(150 to 250)
-			to_chat(victim, span_userdanger(">[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
+			to_chat(victim, span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
 			victim.Stun(10)
 			victim.Dizzy(5)
 			victim.confused = (accumulation/50)
