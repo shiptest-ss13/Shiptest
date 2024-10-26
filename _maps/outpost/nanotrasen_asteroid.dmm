@@ -63,7 +63,7 @@
 /area/outpost/hallway/starboard)
 "aw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/aft)
@@ -951,7 +951,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/central)
 "dF" = (
@@ -1678,7 +1678,7 @@
 	dir = 8
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/paper/crumpled,
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/central)
@@ -1911,7 +1911,7 @@
 /turf/closed/mineral/random/snow,
 /area/outpost/crew/cryo)
 "hd" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/outpost/maintenance/aft)
 "he" = (
@@ -2178,7 +2178,7 @@
 /area/outpost/crew/bar)
 "im" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/structure/grille/broken,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
@@ -2337,7 +2337,7 @@
 /area/outpost/vacant_rooms)
 "iW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32;
 	pixel_y = -32
@@ -5481,7 +5481,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "tD" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -6814,7 +6814,7 @@
 "xV" = (
 /obj/machinery/light/dim/directional/south,
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "xW" = (
@@ -6990,7 +6990,7 @@
 	},
 /area/outpost/maintenance/fore)
 "yE" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -7386,7 +7386,7 @@
 /area/outpost/engineering/atmospherics)
 "zY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/aft)
 "zZ" = (
@@ -7614,7 +7614,7 @@
 	icon_state = "box_corners";
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/central)
@@ -7899,7 +7899,7 @@
 "BI" = (
 /obj/machinery/door/window/brigdoor/southright,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/concrete/tiles,
 /area/outpost/hallway/central)
 "BJ" = (
@@ -10357,7 +10357,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/central)
 "Kj" = (
@@ -10560,7 +10560,7 @@
 /area/outpost/hallway/starboard)
 "KW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/outpost/maintenance/aft)
 "KX" = (
@@ -11767,7 +11767,7 @@
 "Pb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/item/stack/sheet/mineral/wood{
 	pixel_x = -6
 	},
@@ -12080,7 +12080,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/paperplane,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/firealarm/directional/south,
@@ -12344,7 +12344,7 @@
 "Ra" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Rc" = (
@@ -12447,7 +12447,7 @@
 /area/outpost/maintenance/aft)
 "Ru" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -12633,7 +12633,7 @@
 "RZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/stack/rods/ten{
 	pixel_x = 9
 	},
@@ -12648,7 +12648,7 @@
 /area/outpost/crew/canteen)
 "Sd" = (
 /obj/structure/grille/broken,
-/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
+/obj/effect/spawner/random/clothing/pirate_or_bandana,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Se" = (
@@ -12868,8 +12868,8 @@
 "Tc" = (
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/clothing/kittyears_or_rabbitears,
 /obj/structure/grille/broken,
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/plating{
@@ -13743,7 +13743,7 @@
 /area/outpost/hallway/central)
 "Wj" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/central)
 "Wn" = (
@@ -14038,7 +14038,7 @@
 /obj/structure/railing{
 	layer = 3.1
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/item/trash/can{
 	pixel_x = -8;
 	pixel_y = -6
