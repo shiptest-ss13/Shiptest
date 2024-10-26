@@ -733,6 +733,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/flashlight/flare(src)
 
+/obj/item/storage/box/glowsticks
+	name = "box of glowsticks"
+	illustration = "sparkler"
+
+/obj/item/storage/box/glowsticks/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/effect/spawner/random/decoration/glowstick(src)
+
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
 	desc = "To be issued to those authorized to act as deputy of security."
