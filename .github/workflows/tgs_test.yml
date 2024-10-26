@@ -3,7 +3,9 @@ on:
   push:
     branches:
     - master
+    - 'project/**'
     - 'gh-readonly-queue/master/**'
+    - 'gh-readonly-queue/project/**'
     paths:
     - '.tgs.yml'
     - '.github/workflows/tgs_test.yml'
@@ -12,11 +14,13 @@ on:
     - 'code/__DEFINES/tgs.dm'
     - 'code/game/world.dm'
     - 'code/modules/tgs/**'
+    - 'tools/bootstrap/**'
     - 'tools/tgs_scripts/**'
     - 'tools/tgs_test/**'
   pull_request:
     branches:
     - master
+    - 'project/**'
     paths:
     - '.tgs.yml'
     - '.github/workflows/tgs_test.yml'
@@ -25,6 +29,7 @@ on:
     - 'code/__DEFINES/tgs.dm'
     - 'code/game/world.dm'
     - 'code/modules/tgs/**'
+    - 'tools/bootstrap/**'
     - 'tools/tgs_scripts/**'
     - 'tools/tgs_test/**'
   merge_group:
@@ -54,12 +59,12 @@ jobs:
           - 5000:5000 #Can't use env here for some reason
     steps:
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Test TGS Integration
         run: dotnet run -c Release --project tools/tgs_test ${{ github.repository }} /tgs_instances/tgstation ${{ env.TGS_API_PORT }} ${{ github.event.pull_request.head.sha || github.sha }} ${{ secrets.GITHUB_TOKEN }} ${{ env.PR_NUMBER }}

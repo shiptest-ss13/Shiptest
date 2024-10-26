@@ -94,38 +94,37 @@ SUBSYSTEM_DEF(garbage)
 
 /datum/controller/subsystem/garbage/Shutdown()
 	//Adds the del() log to the qdel log file
-	var/list/del_log = list()
+	var/list/dellog = list()
 
 	//sort by how long it's wasted hard deleting
 	sortTim(items, cmp=/proc/cmp_qdel_item_time, associative = TRUE)
 	for(var/path in items)
 		var/datum/qdel_item/I = items[path]
-		var/list/entry = list()
-		del_log[path] = entry
-
+		dellog += "Path: [path]"
 		if (I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
-			entry["SUSPENDED FOR LAG"] = TRUE
+			dellog += "\tSUSPENDED FOR LAG"
 		if (I.failures)
-			entry["Failures"] = I.failures
-		entry["qdel() Count"] = I.qdels
-		entry["Destroy() Cost (ms)"] = I.destroy_time
-
+			dellog += "\tFailures: [I.failures]"
+		dellog += "\tqdel() Count: [I.qdels]"
+		dellog += "\tDestroy() Cost: [I.destroy_time]ms"
 		if (I.hard_deletes)
-			entry["Total Hard Deletes"] = I.hard_deletes
-			entry["Time Spend Hard Deleting (ms)"] = I.hard_delete_time
-			entry["Highest Time Spend Hard Deleting (ms)"] = I.hard_delete_max
+			dellog += "\tTotal Hard Deletes: [I.hard_deletes]"
+			dellog += "\tTime Spent Hard Deleting: [I.hard_delete_time]ms"
+			dellog += "\tHighest Time Spent Hard Deleting: [I.hard_delete_max]ms"
 			if (I.hard_deletes_over_threshold)
-				entry["Hard Deletes Over Threshold"] = I.hard_deletes_over_threshold
+				dellog += "\tHard Deletes Over Threshold: [I.hard_deletes_over_threshold]"
 		if (I.slept_destroy)
-			entry["Total Sleeps"] = I.slept_destroy
+			dellog += "\tSleeps: [I.slept_destroy]"
 		if (I.no_respect_force)
-			entry["Total Ignored Force"] = I.no_respect_force
+			dellog += "\tIgnored force: [I.no_respect_force] times"
 		if (I.no_hint)
-			entry["Total No Hint"] = I.no_hint
-		if(LAZYLEN(I.extra_details))
-			entry["Deleted Metadata"] = I.extra_details
-
-	log_qdel("", del_log)
+			dellog += "\tNo hint: [I.no_hint] times"
+		if (LAZYLEN(I.extra_details))
+			dellog += "\tDeleted Metadata:"
+			dellog += I.extra_details.Join("\n\t")
+		if (I.most_refs)
+			dellog += "\tMost Refs After qdel(): [I.most_refs]"
+	log_qdel(dellog.Join("\n"))
 
 /datum/controller/subsystem/garbage/fire()
 	//the fact that this resets its processing each fire (rather then resume where it left off) is intentional.
@@ -191,8 +190,10 @@ SUBSYSTEM_DEF(garbage)
 
 		var/datum/D = L[GC_QUEUE_ITEM_REF]
 
+		var/remaining_refs = refcount(D) - REFS_WE_EXPECT
+
 		// If that's all we've got, send er off
-		if (refcount(D) == REFS_WE_EXPECT)
+		if (!remaining_refs)
 			++gcedlasttick
 			++totalgcs
 			pass_counts[level]++
@@ -213,9 +214,8 @@ SUBSYSTEM_DEF(garbage)
 		switch (level)
 			if (GC_QUEUE_CHECK)
 				#ifdef REFERENCE_TRACKING
-				// Decides how many refs to look for (potentially)
+				// Decides how many refs to look for (potentially) with remaining_refs
 				// Based off the remaining and the ones we can account for
-				var/remaining_refs = refcount(D) - REFS_WE_EXPECT
 				if(reference_find_on_fail[text_ref(D)])
 					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references), remaining_refs)
 					ref_searching = TRUE
@@ -230,8 +230,9 @@ SUBSYSTEM_DEF(garbage)
 				var/datum/qdel_item/I = items[type]
 
 				var/message = "## TESTING: GC: -- [text_ref(D)] | [type] was unable to be GC'd --"
-				message = "[message] (ref count of [refcount(D)])"
+				message = "[message] (ref count of [remaining_refs])"
 				log_world(message)
+				I.most_refs = max(I.most_refs, remaining_refs)
 
 				var/detail = D.dump_harddel_info()
 				if(detail)
@@ -341,6 +342,7 @@ SUBSYSTEM_DEF(garbage)
 	var/hard_delete_time = 0 //!Total amount of milliseconds spent hard deleting this type.
 	var/hard_delete_max = 0 //!Highest time spent hard_deleting this in ms.
 	var/hard_deletes_over_threshold = 0 //!Number of times hard deletes took longer than the configured threshold
+	var/most_refs = 0 //!The highest amount of refs its had after failing to qdel
 	var/no_respect_force = 0 //!Number of times it's not respected force=TRUE
 	var/no_hint = 0 //!Number of times it's not even bother to give a qdel hint
 	var/slept_destroy = 0 //!Number of times it's slept in its destroy
