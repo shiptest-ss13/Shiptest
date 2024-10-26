@@ -11,6 +11,7 @@
 	icon_state = "mine"
 	item_state = "assembly"//when we get custom sprites replace this. please
 	base_icon_state = "mine"
+	light_color = "#FF0000"
 
 	/// Is our mine live?
 	var/armed = FALSE
@@ -24,12 +25,10 @@
 
 	var/manufacturer = MANUFACTURER_NONE
 
-
 /obj/item/mine/Initialize(mapload)
 	. = ..()
 	if(armed)
 		now_armed()
-
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -45,33 +44,39 @@
 	. = ..()
 	icon_state = "[base_icon_state][triggered ? "_exploding" : null][!armed && anchored ? "_arming" : null][armed && anchored && !triggered ? "_armed" : null]"
 
-//mines have a small chance to be triggered by damage, but they take longer to explode
+/// mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
 	if(prob(35) & obj_integrity > 0)
 		blast_delay = blast_delay * 2
 		trigger_mine()
 
-//insert your horrible fate here
+/// insert your horrible fate here
 /obj/item/mine/proc/mine_effect(mob/victim)
 	return
 
-//handles controlled deactivation
+/// handles controlled deactivation
 /obj/item/mine/proc/disarm()
 	if(triggered) //no turning back now
 		return
+	light_power = 0
+	light_range = 0
 	anchored = FALSE
 	armed = FALSE
 	update_appearance(UPDATE_ICON_STATE)
 	return
 
-//using an unarmed mine inhand deploys it.
+/// using an unarmed mine inhand deploys it.
 /obj/item/mine/attack_self(mob/user)
 	if(!armed)
+		if(!loccheck(user))
+			to_chat(user, span_warning("There's already a mine at this position!"))
+			return
 		user.visible_message(span_danger("[user] deploys the [src]."), span_notice("You deploy the [src]."))
 
 		user.dropItemToGround(src)
 		anchored = TRUE
+		dir = user.dir
 		playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 
 		if(arm_delay)
@@ -82,27 +87,30 @@
 			armed = TRUE
 		message_admins("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
 
-//let them know the mine's done cooking
+/obj/item/mine/proc/loccheck(mob/user)
+	for(var/obj/item/mine/alreadymined in user.loc)
+		if(alreadymined.anchored)
+			return FALSE
+	return TRUE
+
+/// let them know the mine's done cooking
 /obj/item/mine/proc/now_armed()
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
+	light_power = 1
+	light_range = 1
 	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 /// Can this mine trigger on the passed movable?
 /obj/item/mine/proc/can_trigger(atom/movable/on_who)
-	//var/badtype = typecacheof(list(/obj/effect, /obj/item/mine))
 	if(triggered || !isturf(loc) || !armed || iseffect(on_who) || istype(on_who, /obj/item/mine))
 		return FALSE
-	//if(on_who == badtype)//no recursive self triggering. Bad landmine
-	//	return FALSE
 	return TRUE
 
 /// When something sets off a mine
 /obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
-	if(obj_integrity <= 0)
-		return
-	if(triggered) //too busy detonating to detonate again
+	if(obj_integrity <= 0 || triggered)//too busy detonating to detonate again
 		return
 	if(triggerer)
 		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
@@ -114,7 +122,6 @@
 		playsound(src, 'sound/items/mine_activate.ogg', 70, FALSE)
 	else
 		playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
-	light_color = "#FF0000"
 	light_power = 5
 	light_range = 3
 	if(!blast_delay)//addtimer gets mad if the delay is 0
@@ -122,7 +129,7 @@
 	else
 		addtimer(CALLBACK(src, PROC_REF(blast_now), triggerer), blast_delay)
 
-//NOW we actually blow up
+///NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
 	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
 	sporks.set_up(3, 1, src)
@@ -142,7 +149,7 @@
 		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
 		if(do_after(user, 5 SECONDS, target = src))//SO SO generous. You can still step back from the edge.
 			if(prob(10))
-				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
+				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't go off!"), span_notice("You pick up \the [src], which miraculously doesn't go off!"))
 				disarm()
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
@@ -166,8 +173,8 @@
 			trigger_mine(user)
 
 //
-//PRESSURE BASED MINE:
-//Mine that explodes when stepped on.
+///PRESSURE BASED MINE:
+///Mine that explodes when stepped on.
 /obj/item/mine/pressure
 	name = "dummy landmine"
 	/// When true, mines trigger instantly on being stepped upon
@@ -195,6 +202,11 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 	wires = new /datum/wires/mine(src)
+
+/obj/item/mine/pressure/Destroy()
+	if(wires)
+		QDEL_NULL(wires)
+	. = ..()
 
 /obj/item/mine/pressure/examine(mob/user)
 	. = ..()
@@ -254,11 +266,7 @@
 	clicked = FALSE
 	. = ..()
 
-/obj/item/mine/pressure/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	trigger_mine(AM)
-	..()
-
-//handles disarming(and failing to disarm)
+///handles disarming(and failing to disarm)
 /obj/item/mine/pressure/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(sealed)
@@ -275,18 +283,16 @@
 	else
 		. = ..()
 
-//
-//PROXIMITY MINES
-//Mines that explode when someone moves nearby. Simpler, because I don't have to worry about saving step info or disarming logic
-//
 
+//PROXIMITY MINES
+///Mines that explode when someone moves nearby. Simpler, because I don't have to worry about saving step info or disarming logic
 /obj/item/mine/proximity
 	name = "dummy proximity mine"
 	blast_delay = 15 DECISECONDS
 	arm_delay = 10 SECONDS//clear the area
 	///needed for the proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
-	var/proximity_range = 2
+	var/proximity_range = 3
 
 /obj/item/mine/proximity/Initialize(mapload)
 	. = ..()
@@ -302,12 +308,8 @@
 /obj/item/mine/proximity/now_armed()
 	. = ..()
 	proximity_monitor = new(src, proximity_range)
-	light_color = "#FF0000"
-	light_power = 1
-	light_range = 1
 
 /obj/item/mine/proximity/disarm()
-	. = ..()
 	QDEL_NULL(proximity_monitor)
 
 /obj/item/mine/proximity/Destroy()
@@ -316,7 +318,11 @@
 	. = ..()
 
 /obj/item/mine/proximity/HasProximity(atom/movable/triggerer)
-	if(!iscarbon(triggerer))//let's keep these on player movements for now.
+	//let's keep these on player movements for now.
+	if(!iscarbon(triggerer))
+		return
+	//Quick and dirty solution for preventing activations behind walls.
+	if(!(triggerer in view(proximity_range, src)))
 		return
 	if(!can_trigger(triggerer))
 		return
@@ -326,9 +332,92 @@
 	QDEL_NULL(proximity_monitor)
 	return
 
+//DIRECTIONAL MINES
+///Once deployed, keeps an eye on a line of turfs in the faced direction. If something moves in them, explode.
+/obj/item/mine/directional
+	name = "directional mine"
+	desc = "An anti-personnel device that activates when an object moves in front of it. This one does nothing and is for testing purposes only."
+
+	blast_delay = 1 DECISECONDS
+	arm_delay = 5 SECONDS
+
+	///range of tripwire
+	var/trigger_range = 4
+
+	///projectile casing to fire in the selected direction when the mine is triggered.
+	//null prevents a projectile from being fired.
+	var/obj/item/ammo_casing/casingtype = null
+
+	///cache of turfs for detection area
+	var/list/tripwire_turfs
+
+	///for aiming the resulting projectiles
+	var/turf/target_turf
+
+///kills any existing tripwires
+/obj/item/mine/directional/proc/remove_tripwires()
+	if(tripwire_turfs)
+		for(var/turf/affected_turf in tripwire_turfs)
+			UnregisterSignal(affected_turf, COMSIG_ATOM_ENTERED)
+		tripwire_turfs = null
+	if(target_turf)
+		target_turf = null
+	return
+
+///sets up tripwires(or recreates them, if already present)
+/obj/item/mine/directional/proc/draw_tripwires()
+	if(tripwire_turfs)
+		remove_tripwires()
+	//we'll also use this to set up the pew
+	target_turf = get_ranged_target_turf(src, dir, trigger_range)
+	var/turf/starting_turf = get_turf(src)
+	tripwire_turfs = get_line(starting_turf, target_turf)
+
+	for(var/turf/affected_turf in tripwire_turfs)
+		RegisterSignal(affected_turf,  COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
+
+/obj/item/mine/directional/claymore/now_armed()
+	draw_tripwires()
+	. = ..()
+
+/obj/item/mine/directional/proc/on_entered(datum/source, atom/movable/arrived)
+	SIGNAL_HANDLER
+	if(!(arrived in view(trigger_range, src)))
+		return
+	if(!can_trigger(arrived))
+		return
+
+	if(ismob(arrived))
+		var/mob/living/fool = arrived
+		fool.do_alert_animation(fool)
+
+	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
+	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+	INVOKE_ASYNC(src, PROC_REF(trigger_mine), arrived)
+
+
+//pew pew
+/obj/item/mine/directional/mine_effect(mob/victim)
+	if(casingtype && target_turf && victim ?(src.loc != victim.loc) : victim == null)
+		var/obj/item/ammo_casing/casing = new casingtype(src)
+		casing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 60, src)
+	. = ..()
+
+/obj/item/mine/directional/disarm()
+	remove_tripwires()
+	visible_message(span_danger("With a soft clunk, the [src]'s securing bolts retract."))
+	. = ..()
+
+///handles weird cases like ship movement or teleporting
+/obj/item/mine/directional/Moved()
+	. = ..()
+	if(!loc)
+		return
+	if(armed & !triggered)
+		draw_tripwires()
+
 //
 //LANDMINE TYPES
-//Rylie please help me make these more immersive
 //
 
 /obj/item/mine/pressure/explosive
@@ -380,7 +469,7 @@
 	shrapnel_magnitude = 4
 
 /obj/item/mine/pressure/explosive/fire/mine_effect(mob/victim)
-	if(victim.is_holding(src))//in case it's been picked up
+	if(victim?.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(4,victim))
 			T.IgniteTurf(15)
 			new /obj/effect/hotspot(T)
@@ -473,7 +562,7 @@
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
 
-//like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
+///like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
 /obj/item/mine/proximity/explosive/sting
 	name = "\improper'Stinger' Crowd Management Device"
 	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
@@ -525,6 +614,76 @@
 	name = "\improper P-83 Lacerator"
 	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
 	spawn_type = /mob/living/simple_animal/hostile/viscerator
+
+
+
+//Claymores
+//shrapnel based dir explosive, extreme short range
+//FRONT TOWARDS ENEMY
+/obj/item/mine/directional/claymore
+	name = "C-10 Claymore"
+	desc = "A compact anti-personnel device with a directional trigger that responds to movement. A faded sticker on the back reads \"FRONT TOWARDS ENEMY\"."
+	icon = 'icons/obj/world/landmine.dmi'
+	icon_state = "mine_claymore"
+	base_icon_state = "mine_claymore"
+
+	trigger_range = 2
+
+	//customize explosive power
+	var/range_devastation = -1
+	var/range_heavy = 1
+	var/range_light = 2
+	var/range_flame = 0
+
+	//using this to indicate pb
+	var/range_flash = 1
+
+	//a second run of shrapnel, intended for maiming especially pb targets
+	var/obj/item/ammo_casing/shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred
+	casingtype = /obj/item/ammo_casing/caseless/shrapnel
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+//this will return to basic mines when we relegate them to specifically being on certain ruins & battlefields. For now, it's way too dangerous
+/obj/item/mine/directional/claymore/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/landmine.dmi')
+
+/obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
+	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
+		to_chat(user, "<span class='notice'>You begin unscrewing \the [src]'s arming pin...</span>")
+		I.play_tool_sound(src, 50)
+		if(do_after(user, 10 SECONDS, target = src))
+			to_chat(user, "<span class='notice'>You unscrew \the [src]'s arming pin, disarming it.</span>")
+			disarm()
+	else
+		. = ..()
+
+/obj/item/mine/directional/claymore/mine_effect(mob/victim)
+	. = ..()
+	//if you somehow explode it while on the same tile, you win bonus shrapnel
+	//also spews stuff everywhere if it's triggered while not set up
+	if(!target_turf || victim ? (victim.loc == src.loc) : victim == null)
+		explosion(src, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		var/casingammo = casingtype.projectile_type
+		var/shredammo = shredtype.projectile_type
+		if(casingtype)
+			AddComponent(/datum/component/pellet_cloud, projectile_type = casingammo, magnitude = 1)
+		if(shredtype)
+			AddComponent(/datum/component/pellet_cloud, projectile_type = shredammo, magnitude = 2)
+	else
+		var/blastloc = get_step_towards(src, target_turf)
+		explosion(blastloc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		if(shredtype)
+			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
+			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)
+
+/obj/item/mine/directional/claymore/plasma
+	name = "\improper Etherbor EC-1"
+	desc = "A proximity explosive designed by the PGF for ambushing advancing infantry & defending corridors. Cooks armored targets to well-done."
+	shredtype = /obj/item/ammo_casing/caseless/shrapnel/shred/plasma
+	casingtype = /obj/item/ammo_casing/caseless/shrapnel/plasma
+	manufacturer = MANUFACTURER_PGF
 
 //
 //GIMMICK MINES//
@@ -671,6 +830,9 @@ LIVE_MINE_HELPER(proximity/explosive/sting)
 LIVE_MINE_HELPER(proximity/spawner/manhack)
 LIVE_MINE_HELPER(proximity/explosive/plasma)
 
+LIVE_MINE_HELPER(directional/claymore)
+LIVE_MINE_HELPER(directional/claymore/plasma)
+
 LIVE_MINE_HELPER(pressure/gas)
 LIVE_MINE_HELPER(pressure/kickmine)
 LIVE_MINE_HELPER(pressure/sound)
@@ -679,10 +841,10 @@ LIVE_MINE_HELPER(pressure/sound)
 // spawners (random mines, minefields, non-guaranteed mine)
 //
 
-/obj/effect/spawner/lootdrop/mine
+/obj/effect/spawner/random/mine
 	name = "live mine spawner (random)"
-	lootcount = 1
-	fan_out_items = TRUE
+	spawn_loot_count = 1
+	spawn_loot_split = TRUE
 	loot = list(
 		/obj/item/mine/pressure/explosive/live = 10,
 		/obj/item/mine/pressure/explosive/shrapnel/live = 3,
@@ -702,7 +864,7 @@ LIVE_MINE_HELPER(pressure/sound)
 
 /obj/effect/spawner/minefield/random
 	name = "random minefield spawner"
-	minetype = /obj/effect/spawner/lootdrop/mine
+	minetype = /obj/effect/spawner/random/mine
 
 /obj/effect/spawner/minefield/manhack
 	name = "manhack field spawner"

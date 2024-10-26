@@ -120,7 +120,7 @@
 /area/ship/security/armory)
 "aG" = (
 /obj/structure/closet/secure_closet/wall/directional/east,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/item/cutting_board,
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/item/clothing/suit/hazardvest/donk,
@@ -263,11 +263,6 @@
 "bQ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
 /obj/machinery/light/directional/north,
-/obj/machinery/turretid{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "150"
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
@@ -277,7 +272,7 @@
 "bR" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters,
 /obj/machinery/light/directional/south,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -363,7 +358,7 @@
 /area/ship/medical)
 "cp" = (
 /obj/structure/closet/emcloset,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -820,7 +815,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eQ" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "eR" = (
@@ -1559,6 +1554,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"iX" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 10;
+	id = "twink_grid"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/engineering/atmospherics)
 "iZ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -1805,7 +1809,7 @@
 /obj/item/codespeak_manual{
 	charges = 2
 	},
-/obj/item/storage/pistolcase/a357,
+/obj/item/storage/guncase/pistol/a357,
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
@@ -1826,7 +1830,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -1841,7 +1845,7 @@
 /obj/item/clothing/gloves/color/black,
 /obj/machinery/light/directional/west,
 /obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "ky" = (
@@ -2091,7 +2095,7 @@
 /area/ship/crew/canteen)
 "lZ" = (
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -2113,7 +2117,7 @@
 /obj/item/clothing/head/soft/black,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "ma" = (
@@ -2178,12 +2182,13 @@
 /area/ship/engineering/engine)
 "ms" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 9
+	dir = 9;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/engineering/atmospherics)
 "mt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 8
@@ -2988,20 +2993,20 @@
 "qP" = (
 /obj/machinery/light/directional/north,
 /obj/item/kitchen/rollingpin,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /obj/item/storage/box/ingredients/carnivore,
 /obj/item/storage/box/ingredients/vegetarian,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "qQ" = (
@@ -3305,7 +3310,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -3321,7 +3326,7 @@
 /obj/machinery/light/directional/east,
 /obj/item/clothing/head/beret/black,
 /obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "sW" = (
@@ -3495,7 +3500,7 @@
 	pixel_y = 4
 	},
 /obj/item/storage/toolbox/electrical,
-/obj/structure/fireaxecabinet{
+/obj/structure/cabinet/fireaxe{
 	pixel_y = -32;
 	dir = 1
 	},
@@ -3631,12 +3636,13 @@
 /area/ship/engineering/atmospherics)
 "vd" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 5
+	dir = 5;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/hallway/port)
 "vl" = (
 /obj/machinery/sleeper/syndie{
 	dir = 8
@@ -5814,7 +5820,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/effect/spawner/random/maintenance/eight,
 /obj/item/circuitboard/machine/autolathe,
 /obj/item/stock_parts/manipulator,
 /obj/item/stock_parts/matter_bin,
@@ -6323,7 +6329,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
@@ -6691,12 +6697,13 @@
 /area/ship/engineering/engine)
 "Mr" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 6
+	dir = 6;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/hallway/starboard)
 "Mw" = (
 /obj/effect/turf_decal/industrial/caution/red,
 /obj/effect/decal/cleanable/shreds{
@@ -7116,7 +7123,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -7131,7 +7138,7 @@
 /obj/item/clothing/gloves/color/black,
 /obj/machinery/light/directional/east,
 /obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "Pn" = (
@@ -7368,8 +7375,8 @@
 	keyslot = null
 	},
 /obj/item/storage/belt/sabre/solgov,
-/obj/item/storage/pistolcase/modelh,
-/obj/item/ammo_box/ferroslugbox,
+/obj/item/storage/guncase/pistol/modelh,
+/obj/item/storage/box/ammo/ferroslug,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Qv" = (
@@ -7480,7 +7487,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/closet/emcloset,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/item/reagent_containers/food/snacks/burger/red{
 	name = "suspicious red burger";
 	desc = "A suspicious looking burger.";
@@ -7954,6 +7961,15 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"TH" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 9;
+	id = "twink_grid"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/crew/canteen)
 "TI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -8390,12 +8406,13 @@
 /area/ship/crew/cryo)
 "We" = (
 /obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 10
+	dir = 10;
+	id = "twink_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
 	},
-/area/ship/bridge)
+/area/ship/security)
 "Wj" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -8568,14 +8585,21 @@
 	dir = 8
 	},
 /obj/machinery/fax/syndicate,
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	pixel_x = -5;
+	id = "twink_grid";
+	req_access = null;
+	req_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Xf" = (
 /obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "Xg" = (
@@ -8841,7 +8865,7 @@
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
-/obj/item/storage/pistolcase/ringneck,
+/obj/item/storage/guncase/pistol/ringneck,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
@@ -8855,7 +8879,7 @@
 	name = "Armory Access";
 	req_access = list(3,150)
 	},
-/obj/item/ammo_box/c10mm,
+/obj/item/storage/box/ammo/c10mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "YJ" = (
@@ -9118,7 +9142,7 @@ FR
 FR
 LX
 ae
-We
+iX
 mp
 mp
 mp
@@ -9617,7 +9641,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-ms
+TH
 xj
 xj
 xj

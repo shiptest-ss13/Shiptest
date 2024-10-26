@@ -72,24 +72,34 @@
 	name = "Survival Knives Crate"
 	desc = "Contains three sharpened survival knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
 	cost = 500
-	contains = list(/obj/item/kitchen/knife/combat/survival,
-					/obj/item/kitchen/knife/combat/survival,
-					/obj/item/kitchen/knife/combat/survival)
+	contains = list(/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival)
 	crate_name = "combat knife crate"
 
-/datum/supply_pack/sec_supply/fire
-	name = "Incendiary Weapons Crate"
-	desc = "Burn, baby burn. Contains three incendiary grenades and three prebuilt flamethrowers."
-	cost = 5000
-	contains = list(
-		/obj/item/flamethrower/full,
-		/obj/item/flamethrower/full,
-		/obj/item/flamethrower/full,
-		/obj/item/grenade/chem_grenade/incendiary,
-		/obj/item/grenade/chem_grenade/incendiary,
-		/obj/item/grenade/chem_grenade/incendiary,
-	)
-	crate_name = "incendiary weapons crate"
+/datum/supply_pack/sec_supply/machete
+	name = "Stampted Steel Machete Crate"
+	desc = "Contains five mass produced machetes. A perfect choice for crews on a budget."
+	cost = 500
+	contains = list(/obj/item/melee/sword/mass,
+					/obj/item/melee/sword/mass)
+	crate_name = "combat knife crate"
+
+/datum/supply_pack/sec_supply/flamethrower
+	name = "Flamethrower Crate"
+	desc = "Contains one flamethrower. Point the nozzle away from anything important."
+	cost = 1250
+	contains = list(/obj/item/flamethrower/full)
+	crate_name = "flamethrower crate"
+	crate_type = /obj/structure/closet/crate/secure/weapon
+	faction = FACTION_NGR
+
+/datum/supply_pack/sec_supply/incendiary_grenade
+	name = "Incendiary Grenade Crate"
+	desc = "Contains one incendiary grenade. Better not let it go off in your hands."
+	cost = 750
+	contains = list(/obj/item/grenade/chem_grenade/incendiary)
+	crate_name = "incendiary grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = FACTION_NGR
 
@@ -145,3 +155,28 @@
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser)
 	crate_name = "hybrid taser crate"
+
+/datum/supply_pack/sec_supply/claymore
+	name = "C-10 Claymore Crate"
+	desc = "Four motion-activated directional mines, perfect for ambushing enemy infantry. Still debatably legal to sell!"
+	cost = 3000
+	contains = list(/obj/item/paper/fluff/claymore,
+					/obj/item/mine/directional/claymore,
+					/obj/item/mine/directional/claymore,
+					/obj/item/mine/directional/claymore,
+					/obj/item/mine/directional/claymore)
+	crate_name = "C-10 Claymore crate"
+
+/obj/item/paper/fluff/claymore
+	name = "PRODUCT USAGE GUIDE"
+	desc = "A dusty memo stamped with the Scarborough Arms logo."
+	default_raw_text = "<b>ASSEMBLY:</b><br><br>\
+	-Deploy mounting legs and emplace device. Front should be placed in direction of enemy egress, no more then three meters from intended target area.<br><br> \
+	-<b>INFORM ALLIES OF PLACEMENT LOCATION.</b><br><br> \
+	-Wait for arming sequence to complete.<br><br> \
+	-Enjoy hands-free area denial, courtesy of Scarborough Arms.<br><br><br> \
+	<b>DISASSEMBLY & STORAGE:</b><br><br>\
+	-Insert screwdriver into arming pin access and turn 180 degrees. There will be considerable resistance. <b>DO NOT Step onto or in front of device.</b><br><br> \
+	-When pressure releases, reach below device and lift via underside in one clean motion. Mounting legs will automatically retract. <br><br> \
+	-The device is now safe to handle. <br><br> \
+	-Safely stow device in secure, moisture-free location, away from fire and blunt force. "

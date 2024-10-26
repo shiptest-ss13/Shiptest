@@ -64,8 +64,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/ammo_box/a357/match,
 /obj/item/pen/edagger,
-/obj/item/storage/pistolcase/a357,
-/obj/item/ammo_box/a357_box,
+/obj/item/storage/guncase/pistol/a357,
+/obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "bJ" = (
@@ -222,12 +222,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -301,8 +301,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/ammo_box/a12g,
-/obj/item/ammo_box/c10mm,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/c10mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "fC" = (
@@ -333,6 +333,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"ge" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm)
 "gg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -755,9 +762,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/stamp/qm{
-	name = "foreman's rubber stamp"
-	},
+/obj/item/stamp/ngr/foreman,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
 	id = "hyena_cargo";
@@ -788,10 +793,12 @@
 /area/ship/bridge)
 "oF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/documents/syndicate/mining,
-/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	dir = 1
+	},
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/item/folder/documents/syndicate/ngr,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "oJ" = (
@@ -1277,8 +1284,8 @@
 /area/ship/security/armory)
 "wO" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
@@ -1619,15 +1626,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BG" = (
-/obj/machinery/porta_turret/ship/ballistic,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
-"BR" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 8;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/storage)
+"BR" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "BZ" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
@@ -1859,13 +1870,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper_bin/carbon,
-/obj/item/folder/documents/syndicate/red,
 /obj/item/pen/fountain/captain,
-/obj/item/stamp/hos{
-	name = "captain's rubber stamp"
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/item/stamp/ngr{
+	pixel_x = 13;
+	pixel_y = 7
+	},
+/obj/item/stamp/ngr/captain{
+	pixel_x = 13
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2291,9 +2305,12 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "NA" = (
-/obj/machinery/porta_turret/ship/syndicate,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/maintenance/starboard)
 "NF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -2459,10 +2476,11 @@
 /area/ship/cargo)
 "Qz" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 6
+	dir = 6;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/fore)
 "QG" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -2486,7 +2504,7 @@
 /obj/item/clothing/suit/ngr,
 /obj/item/clothing/head/hardhat/ngr/foreman,
 /obj/item/tank/jetpack/suit,
-/obj/item/storage/pistolcase/ringneck,
+/obj/item/storage/guncase/pistol/ringneck,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "QW" = (
@@ -2861,8 +2879,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "Up" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 4
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 4;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -2878,10 +2897,11 @@
 /area/ship/crew)
 "UN" = (
 /obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
+	dir = 1;
+	id = "hyena_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/hallway/central)
 "UX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3581,7 +3601,7 @@ UX
 GV
 GV
 GV
-NA
+ge
 nn
 Zb
 "}

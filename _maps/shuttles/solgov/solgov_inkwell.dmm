@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/canteen/kitchen)
 "af" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -62,6 +69,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"aB" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 5
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/security/armory)
 "aO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1045,6 +1059,13 @@
 /obj/item/tank/jetpack/oxygen,
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/dormtwo)
+"hk" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/toilet)
 "hl" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 1
@@ -1088,9 +1109,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "hE" = (
-/obj/machinery/porta_turret/ship/solgov,
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 6
+	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
+/area/ship/storage)
 "hF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -1620,6 +1644,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
+"kE" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 9
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/starboard)
 "kK" = (
 /obj/machinery/door/window/brigdoor/westleft,
 /obj/structure/rack,
@@ -1729,9 +1760,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/turretid/lethal{
+/obj/machinery/turretid/ship{
 	pixel_x = -26;
-	pixel_y = 0
+	id = "inkwell_grid"
 	},
 /turf/open/floor/plasteel/stairs/wood/left{
 	dir = 1
@@ -2138,6 +2169,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"nN" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 10
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/starboard)
 "nO" = (
 /obj/machinery/computer/cargo/solgov,
 /turf/open/floor/wood/maple,
@@ -2498,7 +2536,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "qw" = (
@@ -2533,7 +2571,7 @@
 /area/ship/crew/canteen)
 "qE" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/letter_opener{
+/obj/item/melee/knife/letter_opener{
 	icon_state = "letter_opener_b";
 	name = "boxcutter";
 	pixel_x = -13;
@@ -2548,6 +2586,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"qF" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 10
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/port)
 "qG" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2600,7 +2645,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "rm" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
@@ -2666,7 +2711,7 @@
 	dir = 4
 	},
 /obj/item/clothing/glasses/meson/prescription,
-/obj/item/kitchen/knife/letter_opener,
+/obj/item/melee/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
 /obj/machinery/light/directional/north,
 /obj/item/storage/bag/ore,
@@ -2817,7 +2862,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "sn" = (
@@ -3012,7 +3057,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/kitchen/knife/letter_opener,
+/obj/item/melee/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 32
@@ -3297,11 +3342,11 @@
 "uS" = (
 /obj/structure/table/wood,
 /obj/item/cutting_board,
-/obj/item/kitchen/knife,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -17
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -10;
 	pixel_y = 6
 	},
@@ -3572,6 +3617,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormthree)
+"wn" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 5
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/toilet)
 "wo" = (
 /obj/item/clothing/gloves/combat,
 /obj/item/folder/solgov,
@@ -3582,7 +3634,7 @@
 /obj/item/stamp/solgov,
 /obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/item/storage/backpack/satchel,
-/obj/item/kitchen/knife/letter_opener,
+/obj/item/melee/knife/letter_opener,
 /obj/structure/closet/secure_closet/quartermaster{
 	anchored = 1;
 	name = "\proper logistics deck officer's locker";
@@ -3898,17 +3950,17 @@
 /area/ship/crew/dorm/dormtwo)
 "yE" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/soymilk,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "yG" = (
@@ -4346,6 +4398,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
+"BN" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 9
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/port)
 "BO" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -4565,6 +4624,13 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"CY" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 5
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/canteen/kitchen)
 "Dc" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/full,
 /obj/structure/cable{
@@ -5142,7 +5208,7 @@
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "GN" = (
@@ -5201,6 +5267,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"Hl" = (
+/obj/machinery/porta_turret/ship/solgov{
+	id = "inkwell_grid";
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "Ho" = (
 /obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -5377,7 +5450,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "IC" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
@@ -5388,13 +5461,13 @@
 	},
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/item/kitchen/knife/letter_opener{
+/obj/item/melee/knife/letter_opener{
 	pixel_x = -2
 	},
-/obj/item/kitchen/knife/letter_opener{
+/obj/item/melee/knife/letter_opener{
 	pixel_x = 1
 	},
-/obj/item/kitchen/knife/letter_opener{
+/obj/item/melee/knife/letter_opener{
 	pixel_x = 4
 	},
 /obj/effect/turf_decal/corner/opaque/solgovblue{
@@ -5540,7 +5613,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "JN" = (
@@ -5860,8 +5933,8 @@
 /obj/item/fish_feed,
 /obj/item/pen/fountain/solgov,
 /obj/item/clothing/neck/cloak/solgovcap,
-/obj/item/storage/pistolcase/modelh,
-/obj/item/ammo_box/ferroslugbox,
+/obj/item/storage/guncase/pistol/modelh,
+/obj/item/storage/box/ammo/ferroslug,
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/dormtwo)
 "LJ" = (
@@ -6055,7 +6128,7 @@
 /area/ship/crew/canteen/kitchen)
 "Nj" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Np" = (
@@ -6703,7 +6776,7 @@
 /area/ship/bridge)
 "RS" = (
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "RX" = (
@@ -6886,7 +6959,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/clothing/glasses/meson/prescription,
-/obj/item/kitchen/knife/letter_opener,
+/obj/item/melee/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
 /obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/white,
@@ -7293,10 +7366,10 @@
 /obj/item/reagent_containers/food/snacks/grown/cabbage,
 /obj/item/reagent_containers/food/snacks/grown/cabbage,
 /obj/item/reagent_containers/food/snacks/grown/cabbage,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /obj/structure/closet/crate/secure/gear{
 	desc = "For emergency use only";
 	name = "emergency sauerkraut supplies";
@@ -7844,12 +7917,12 @@
 
 (1,1,1) = {"
 iG
-hE
+BN
 UJ
 Hp
 Hp
 zI
-hE
+qF
 iG
 iG
 iG
@@ -7867,12 +7940,12 @@ iG
 iG
 iG
 iG
-hE
+kE
 ni
 dv
 dv
 vY
-hE
+nN
 iG
 iG
 "}
@@ -8047,7 +8120,7 @@ DH
 iG
 "}
 (7,1,1) = {"
-hE
+Hl
 XY
 DE
 Cq
@@ -8077,7 +8150,7 @@ Np
 ts
 qx
 ts
-hE
+ts
 iG
 "}
 (8,1,1) = {"
@@ -8489,7 +8562,7 @@ sJ
 iG
 "}
 (20,1,1) = {"
-hE
+aB
 SI
 kK
 LJ
@@ -9000,7 +9073,7 @@ iG
 "}
 (35,1,1) = {"
 iG
-hE
+wn
 ea
 pc
 cH
@@ -9028,7 +9101,7 @@ FE
 nA
 yE
 AA
-hE
+aa
 iG
 iG
 "}
@@ -9038,7 +9111,7 @@ iG
 DS
 DS
 DS
-hE
+hk
 iG
 iG
 iG
@@ -9058,7 +9131,7 @@ iG
 iG
 iG
 iG
-hE
+CY
 qc
 qc
 FE

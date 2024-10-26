@@ -164,8 +164,8 @@
 /area/ruin/lavaland/factory/manager_office)
 "bE" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /obj/item/storage/bag/trash,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
@@ -216,7 +216,7 @@
 "cm" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "co" = (
@@ -341,7 +341,7 @@
 /area/ruin/lavaland/factory/warehouse)
 "dc" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -641,7 +641,7 @@
 	},
 /obj/item/modular_computer/laptop,
 /obj/item/stack/arcadeticket,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "go" = (
@@ -705,11 +705,11 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/rice,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/milk,
 /obj/item/storage/box/ingredients/vegetarian,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
@@ -1098,7 +1098,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "drip1"
 	},
-/obj/item/spear,
+/obj/item/melee/spear,
 /obj/item/bodypart/l_arm,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -1506,7 +1506,7 @@
 	},
 /obj/item/storage/wallet/random,
 /obj/item/instrument/guitar,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "oh" = (
@@ -1578,11 +1578,11 @@
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/machinery/light/directional/east,
 /obj/item/storage/box/ingredients/vegetarian,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/rice,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
@@ -1887,7 +1887,7 @@
 /obj/item/poster/random_contraband,
 /obj/item/toy/eightball,
 /obj/item/toy/cards/deck/tarot,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "rh" = (
@@ -2155,6 +2155,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/stormtrooper,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "tN" = (
@@ -2286,7 +2287,7 @@
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /obj/item/lighter/greyscale,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "ve" = (
@@ -2691,8 +2692,8 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "zl" = (
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
 /obj/structure/closet/crate/secure/gear,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
@@ -2982,9 +2983,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/west,
-/obj/item/kitchen/knife/hunting,
+/obj/item/melee/knife/hunting,
 /obj/item/clothing/suit/hooded/cloak/goliath,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "CW" = (
@@ -3148,18 +3149,18 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "EP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -3828,7 +3829,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/kitchen/knife/shiv,
+/obj/item/melee/knife/shiv,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "LX" = (
@@ -4061,11 +4062,11 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Or" = (
 /obj/structure/closet/crate/freezer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -4302,7 +4303,7 @@
 "QM" = (
 /obj/structure/table/wood,
 /obj/item/cutting_board,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "QR" = (
@@ -4944,9 +4945,9 @@
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/directional/west,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/factory/dorms)
 "Xn" = (
@@ -5077,7 +5078,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "YJ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -6370,7 +6371,7 @@ LP
 vE
 DB
 Cc
-KX
+yQ
 Gn
 hv
 JO
@@ -6424,7 +6425,7 @@ vE
 EU
 Vw
 Id
-KX
+yQ
 PR
 KX
 PR
@@ -6478,7 +6479,7 @@ ab
 vQ
 LL
 Kg
-KX
+yQ
 Gw
 KX
 Gw
@@ -6532,7 +6533,7 @@ yQ
 yQ
 yQ
 yQ
-KX
+yQ
 KX
 KX
 KX

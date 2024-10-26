@@ -337,18 +337,12 @@
 	pixel_y = 14;
 	pixel_x = 5
 	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -6;
-	pixel_y = 7
-	},
+/obj/item/storage/box/ammo/c38,
 /obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -6;
-	pixel_y = 1
-	},
+/obj/item/storage/box/ammo/c38,
 /obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 8
 	},
@@ -1533,7 +1527,7 @@
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/combat,
-/obj/item/kitchen/knife/hunting,
+/obj/item/melee/knife/hunting,
 /obj/item/gps{
 	pixel_x = -7
 	},
@@ -2017,7 +2011,7 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -2025,8 +2019,8 @@
 	pixel_x = -7
 	},
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/ammo_box/a44roum,
-/obj/item/storage/pistolcase/montagne,
+/obj/item/storage/box/ammo/a44roum,
+/obj/item/storage/guncase/pistol/montagne,
 /obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
@@ -2462,15 +2456,15 @@
 /area/ship/roumain)
 "Eh" = (
 /obj/structure/table/wood,
-/obj/item/spear/bonespear{
+/obj/item/melee/spear/bone{
 	pixel_y = -3;
 	pixel_x = 2
 	},
-/obj/item/spear/bonespear{
+/obj/item/melee/spear/bone{
 	pixel_y = 1;
 	pixel_x = 2
 	},
-/obj/item/spear/bonespear{
+/obj/item/melee/spear/bone{
 	pixel_y = 5;
 	pixel_x = 2
 	},
@@ -2643,7 +2637,7 @@
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/combat,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
 /obj/item/gps{
 	pixel_x = -7
 	},
@@ -2687,7 +2681,7 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/knife/combat,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -2698,7 +2692,7 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
-/obj/item/ammo_box/c38_box,
+/obj/item/storage/box/ammo/c38,
 /obj/item/clothing/head/cowboy/sec/roumain/colligne,
 /obj/item/clothing/suit/armor/roumain/colligne,
 /obj/structure/closet/secure_closet/collignes,
@@ -3656,7 +3650,7 @@
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/combat,
-/obj/item/kitchen/knife/hunting,
+/obj/item/melee/knife/hunting,
 /obj/item/gps{
 	pixel_x = -7
 	},

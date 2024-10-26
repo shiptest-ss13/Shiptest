@@ -22,6 +22,8 @@
 
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
+	if(resistance_flags & INDESTRUCTIBLE)
+		return FALSE
 	if((resistance_flags & INDESTRUCTIBLE) && W.tool_behaviour == TOOL_SCREWDRIVER) // This makes it so ERT members cannot cheese by opening their blast doors.
 		to_chat(user, span_warning("You can't find the panel!"))
 		return
@@ -55,6 +57,15 @@
 				close()
 			else if(W.use_tool(src, user, 10 SECONDS, volume=50))
 				deconstruct(TRUE)
+
+	if(W.tool_behaviour == TOOL_DECONSTRUCT)
+		if(!(machine_stat & NOPOWER))
+			do_sparks(5, TRUE, src)
+			electrocute_mob(user, get_area(src), src, 1, TRUE) //zorp
+			close()
+		to_chat(user, span_notice("You start to cut [src] apart"))
+		if (W.use_tool(src, user, 15 SECONDS, volume = 75))
+			deconstruct(TRUE)
 
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()

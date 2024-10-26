@@ -49,7 +49,7 @@
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_y = 13;
 	pixel_x = -2;
 	layer = 2.8
@@ -65,7 +65,7 @@
 	pixel_y = 6;
 	layer = 2.8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 10;
 	pixel_x = 10
 	},
@@ -296,8 +296,8 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/reagent_containers/food/snacks/grown/corn,
 /obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/food/snacks/grown/corn{
 	pixel_y = 3
 	},
@@ -401,7 +401,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "dZ" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
@@ -859,7 +859,7 @@
 	dir = 8;
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/crew)
 "kn" = (
@@ -1250,33 +1250,33 @@
 "om" = (
 /obj/structure/catwalk/over,
 /obj/structure/closet/crate/hydroponics,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8;
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8;
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = 8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = 8
 	},
 /turf/open/floor/plating/rockplanet/lit,
@@ -1613,12 +1613,12 @@
 "sQ" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/closet/crate/freezer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "tc" = (
@@ -2140,12 +2140,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/rack,
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_y = 13;
 	pixel_x = -2;
 	layer = 2.8
 	},
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_y = 7;
 	pixel_x = -2;
 	layer = 2.8
@@ -2187,7 +2187,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/pod,
 /area/ruin/rockplanet/distillery/office)
 "yO" = (
@@ -2897,10 +2897,10 @@
 /obj/item/seeds/corn,
 /obj/item/seeds/corn,
 /obj/item/seeds/corn,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/item/reagent_containers/food/snacks/grown/corn{
 	pixel_y = 4
 	},
@@ -3032,10 +3032,10 @@
 "Iz" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/effect/spawner/lootdrop/random_machine_circuit_common,
-/obj/effect/spawner/lootdrop/random_machine_circuit_common,
+/obj/effect/spawner/random/circuit/computer/common,
+/obj/effect/spawner/random/maintenance/four,
+/obj/effect/spawner/random/circuit/machine/common,
+/obj/effect/spawner/random/circuit/machine/common,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "IA" = (
@@ -3086,7 +3086,7 @@
 	pixel_x = -3
 	},
 /obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/c9mm/ap,
+/obj/item/storage/box/ammo/c9mm/ap,
 /obj/item/ammo_box/magazine/illestren_a850r,
 /obj/item/ammo_box/magazine/co9mm{
 	start_empty = 1
@@ -3419,7 +3419,7 @@
 	icon_state = "1-5"
 	},
 /obj/machinery/light/small/directional/west,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
 	},
@@ -3582,9 +3582,7 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Os" = (
-/obj/machinery/vending/snack/random{
-	tilted = 1
-	},
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
@@ -4185,7 +4183,7 @@
 /obj/structure/fluff/glowshroom,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/crew)
 "Vg" = (
@@ -4199,7 +4197,7 @@
 	widenet = 1
 	},
 /obj/machinery/light/small/broken/directional/east,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
 "Vj" = (

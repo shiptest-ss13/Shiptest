@@ -20,6 +20,13 @@
 	var/move_delay = FALSE
 	var/egged = 0
 
+/obj/structure/closet/cardboard/try_deconstruct(obj/item/W, mob/user)
+	if(W.tool_behaviour == cutting_tool)
+		user.visible_message(span_notice("[user] cut apart \the [src]."), \
+							span_notice("You cut \the [src] apart with \the [W]."))
+		deconstruct(TRUE)
+		return TRUE
+
 /obj/structure/closet/cardboard/relaymove(mob/living/user, direction)
 	if(opened || move_delay || user.incapacitated() || !isturf(loc) || !has_gravity(loc))
 		return
