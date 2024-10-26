@@ -1,3 +1,6 @@
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet)
+#define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
+
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
@@ -31,17 +34,8 @@
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	show_magazine_on_sprite = TRUE
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
@@ -123,17 +117,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	show_magazine_on_sprite = TRUE
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 32,
@@ -252,17 +237,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	show_magazine_on_sprite = TRUE
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 40,
@@ -404,12 +380,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -420,8 +391,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 			"y" = 23,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 38,
-			"y" = 18,
+			"x" = 28,
+			"y" = 16,
 		)
 	)
 
@@ -573,12 +544,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -717,17 +683,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	spread_unwielded = 8
 	wield_slowdown = 0.4
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 42,
@@ -783,17 +740,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	wield_slowdown = 0.85 //better than the lmgs since it doesnt have a bipod, still not ideal
 	wield_delay = 0.9 SECONDS //ditto
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
@@ -996,13 +944,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1
-	)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 44,
@@ -1011,6 +954,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 25,
 			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 18,
 		)
 	)
 
@@ -1112,3 +1059,6 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	caliber = "70mm"
 	icon_state = "84mm-hedp"
 	projectile_type = /obj/projectile/bullet/a84mm
+
+#undef SCARBOROUGH_ATTACHMENTS
+#undef SCARBOROUGH_ATTACH_SLOTS
