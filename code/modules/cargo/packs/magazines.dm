@@ -48,6 +48,27 @@
 	contains = list(/obj/item/ammo_box/a44roum_speedloader)
 	cost = 400
 
+/* Serene Sporting */
+
+/datum/supply_pack/magazine/m17_mag
+	name = "Micro Target Magazine Crate"
+	desc = "Contains a .22lr magazine for the Micro Target pistol, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m17)
+	cost = 100
+
+/datum/supply_pack/magazine/m12_mag
+	name = "Sporter Magazine Crate"
+	desc = "Contains a .22lr magazine for the Sporter Rifle, containing 25 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m12_sporter)
+	cost = 200
+
+
+/datum/supply_pack/magazine/m15_mag
+	name = "Sporter Magazine Crate"
+	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, containing 20 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m15)
+	cost = 300
+
 /* Scarbie */
 
 /datum/supply_pack/magazine/himehabu_mag
@@ -123,8 +144,6 @@
 	desc = "Contains a .308 magazine for F4 platform rifles, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/f4_308)
 	cost = 1000
-
-
 
 /* NT */
 
