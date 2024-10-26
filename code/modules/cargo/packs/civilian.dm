@@ -41,14 +41,6 @@
 	crate_name = "janitorial cart crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/civilian/lawnmower
-	name = "Lawnmower"
-	desc = "Removing plants from your backyard has been made easy with the brand new John J. Jimbler Ultra-Mega-Mower."
-	cost = 800
-	contains = list(/obj/vehicle/ridden/lawnmower)
-	crate_name = "John J. Jimbler Lawn Mower Essentials Kit"
-	crate_type = /obj/structure/closet/crate/large
-
 /*
 		Bundles
 */
@@ -98,7 +90,7 @@
 
 /datum/supply_pack/civilian/paper
 	name = "Bureaucracy Crate"
-	desc = "High stacks of papers on your desk Are a big problem - make it Pea-sized with these bureaucratic supplies! Contains six pens, some camera film, hand labeler supplies, a paper bin, a carbon paper bin, three folders, a laser pointer, two clipboards and two stamps."//that was too forced
+	desc = "High stacks of papers on your desk are a big problem - make it Pea-sized with these bureaucratic supplies! Contains six pens, some camera film, hand labeler supplies, a paper bin, a carbon paper bin, three folders, a laser pointer, two clipboards and two stamps."//that was too forced
 	cost = 1000
 	contains = list(/obj/structure/filingcabinet/chestdrawer/wheeled,
 					/obj/item/camera_film,
