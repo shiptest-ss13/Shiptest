@@ -38,7 +38,7 @@
 #define MOTH_EATING_CLOTHING_DAMAGE 15
 */
 //Whitelist for the suit storage slot on medical suits
-GLOBAL_LIST_INIT(medical_suit_allowed, typecacheof(list(
+#define LABCOAT_ALLOWED_ITEMS list( \
     /obj/item/scalpel, \
     /obj/item/cautery, \
     /obj/item/hemostat, \
