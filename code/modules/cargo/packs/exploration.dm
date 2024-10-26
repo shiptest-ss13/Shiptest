@@ -37,7 +37,7 @@
 		General Exploration Gear
 */
 
-/datum/supply_pack/exploration/lavaproof_ords
+/datum/supply_pack/exploration/lavaproof_rods
 	name ="Lavaproof Rods Crate"
 	desc = "Contains 60 lavaproof rods for safely traversing molten pits."
 	cost = 200
