@@ -1370,11 +1370,11 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned,
@@ -5012,7 +5012,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BO" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -7448,7 +7448,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "OD" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line,
 /turf/open/floor/plasteel,

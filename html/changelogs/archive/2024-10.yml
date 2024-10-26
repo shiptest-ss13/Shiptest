@@ -292,3 +292,71 @@
       to the Frontier. Expect cool doohickeys on your friendly neighborhood PGF Vessel
   - imageadd: 'Imaginos: PGF sord sprites'
   - code_imp: sabres now take up less space in code
+2024-10-23:
+  Erikafox:
+  - bugfix: Hallucination Anomalies will stay on their tile now.
+  - rscadd: You can now fax credit holochips
+  - bugfix: Analgesia can no longer be taken with self-aware
+  - bugfix: Few edge cases for analgesiacs getting pain
+  FalloutFalcon:
+  - bugfix: ammo
+  - refactor: refactored ammo types to not be snowflaked when handling spawning subtyped
+      guns
+  FeenieRU:
+  - code_imp: Changing qdel() and SSgarbage procs
+  - code_imp: rewrite /Destroy(force, silent) to /Destroy(force)
+  Sun-Soaked:
+  - rscadd: Directional Mines, implemented as Claymores.
+  - rscadd: Mines now have World Icons
+  - balance: explosions now only strip to space when a tile is already damaged
+  - bugfix: Prox mines explode from slightly further away & no longer activate through
+      walls.
+  - bugfix: Multiple mines can no longer be stacked on a tile
+  - code_imp: fire_casing() can now be called by non-mobs, allowing objects to shoot
+      casings.
+  - bugfix: cleans up mine wire datums on mine deletion
+  generalthrax:
+  - rscadd: Added Stamped Steel Machetes, 5 for 500
+  meemofcourse:
+  - rscadd: A lot of ERTs and ERT remasters, including Fronties, Ramzi, PGF, NGR,
+      Indies and whatnot
+  - rscdel: Most Nanotrasen ERTs have been shelved pending assets
+  - rscdel: Smokebomb randomized descriptions
+2024-10-24:
+  Erika Fox:
+  - rscadd: An abandoned tradepost has been located in the system. Investigate nearby
+      waste worlds for more information.
+  - rscadd: preburnt flares
+  Erikafox:
+  - rscadd: Kasagi-Fischer has begun a new production run of the venerable Raleigh-class
+      Corvette. See your purchaser's manual for more information!
+  - balance: Fireaxes on the black market now cost less. Thanks Kiirv-Waha!
+  FalloutFalcon:
+  - code_imp: better pr labeling for ships and ruins
+2024-10-25:
+  Erikafox:
+  - bugfix: Newscasters can now read IDs through a wallet.
+  FalloutFalcon:
+  - refactor: refactored some mapping stuff including random spawners!
+  Gristlebee:
+  - rscadd: Vote sound changed to announce_dig.ogg
+  MemeSnorfer and Moffball:
+  - imageadd: Snouted balaclava sprites for both Sarathi and Elzuose
+  - code_imp: Elzuose snout type, for use with mask sprites
+  Sadhorizon:
+  - tweak: Medical stacks now work on corpses.
+  SomeguyManperson:
+  - balance: simple humans now have as much health as normal humans! This makes them
+      weaker!
+  - balance: simple humans now also benefit from their armor as much as normal humans!
+      This makes them stronger!
+  generalthrax:
+  - bugfix: Design disks work again
+  thgvr:
+  - balance: Removed Kepori damage modifiers.
+  - balance: Decreased Kepori move speed modifier. (They are still a bit faster than
+      average)
+  zimon9:
+  - bugfix: fixed the orbit menu search function so that names work again
+  - rscadd: Added plastitanium shards
+  - bugfix: fixed some artifacts in the plasma glass shard sprites
