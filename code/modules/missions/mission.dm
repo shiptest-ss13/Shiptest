@@ -18,7 +18,7 @@
 	var/datum/overmap/mission_location
 
 	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/duration = 30 MINUTES
+	var/duration = 1.5 HOURS
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
@@ -54,6 +54,7 @@
 		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
 
 	generate_mission_details()
+	regex_mission_text()
 	return ..()
 
 /datum/mission/Destroy()
@@ -90,6 +91,17 @@
 	mission_reward = pick(mission_reward)
 	return
 
+/datum/mission/proc/regex_mission_text()
+	name = mission_regexs(name)
+	desc = mission_regexs(desc)
+
+/datum/mission/proc/mission_regexs(mission_string)
+	mission_string = replacetext(mission_string, "%MISSION_AUTHOR", "[author]")
+	if(ispath(mission_reward))
+		var/atom/reward = mission_reward
+		mission_string = replacetext(mission_string, "%MISSION_REWARD", "[reward::name]")
+	return mission_string
+
 /datum/mission/proc/reward_flavortext()
 	var/reward_string = "[value] cr upon completion"
 	if(ispath(mission_reward))
@@ -122,6 +134,9 @@
 	spawn_mission_details(planet)
 
 /datum/mission/proc/spawn_mission_details(datum/overmap/dynamic/planet)
+	return
+
+/datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	return
 
 /datum/mission/proc/can_turn_in(atom/movable/item_to_check)

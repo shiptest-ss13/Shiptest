@@ -1,5 +1,7 @@
 /datum/mission/simple/anomaly
 	name = "Anomaly core requested"
+	desc = "%MISSION_AUTHOR has requested that a ship locate an anomaly core for research. \
+			They've offered to pay well, so we're relaying this mission to you."
 	weight = 8
 	value = 3000
 	duration = 80 MINUTES
@@ -7,11 +9,7 @@
 	container_type = /obj/item/storage/box/anomaly
 	objective_type = /obj/item/assembly/signaler/anomaly
 	num_wanted = 1
-	var/researcher_name
 
-/datum/mission/simple/anomaly/New(...)
-	researcher_name = SSmissions.get_researcher_name()
-	desc = "[researcher_name] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
-	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
-	They've offered to pay well, so we're relaying this mission to you"
+/datum/mission/simple/anomaly/generate_mission_details()
 	. = ..()
+	researcher_name = SSmissions.get_researcher_name()

@@ -5,8 +5,8 @@
 /obj/effect/landmark/mission_poi/main/kill
 
 /datum/mission/dynamic/signaled/kill
-	name = null
-	desc = null
+	name = "%MISSION_TARGET termination"
+	desc = "Bounty for a high ranking %MISSION_TARGET residing on this planet. They should have identifying dogtags."
 	setpiece_poi = /obj/effect/landmark/mission_poi/main/kill
 	setpiece_item = /obj/item/dog_tags
 	mission_main_signal = COMSIG_MOB_DEATH
@@ -14,12 +14,13 @@
 /datum/mission/dynamic/signaled/kill/generate_mission_details()
 	. = ..()
 	registered_type = pick(registered_type)
-	if(ispath(registered_type, /mob))
-		var/mob/mission_mob = registered_type
-		if(!name)
-			name = "[mission_mob::name] termination"
-		if(!desc)
-			desc = "Bounty for a high ranking [mission_mob::name] residing on this planet. They should have identifying dogtags."
+
+/datum/mission/dynamic/signaled/kill/mission_regexs(mission_string)
+	mission_string = ..()
+	if(ispath(registered_type))
+		var/atom/target = registered_type
+		mission_string = replacetext(mission_string, "%MISSION_TARGET", "[target::name]")
+	return mission_string
 
 /datum/mission/dynamic/signaled/kill/frontiersmen
 	value = 2500

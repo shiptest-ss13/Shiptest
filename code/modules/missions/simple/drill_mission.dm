@@ -11,10 +11,10 @@
 	var/num_wanted = 4
 	var/class_wanted = 1
 
-/datum/mission/drill/New(...)
+/datum/mission/drill/generate_mission_details()
+	. = ..()
 	num_wanted = rand(num_wanted-2,num_wanted+2)
 	value += num_wanted*100
-	return ..()
 
 /datum/mission/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
