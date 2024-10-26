@@ -65,6 +65,7 @@
 
 /datum/mission/proc/turn_in()
 	SSblackbox.record_feedback("tally", "mission_succeeded", 1, name)
+	SSblackbox.record_feedback("tally", "mission_payout", value, name)
 	servant.ship_account.adjust_money(value, CREDIT_LOG_MISSION)
 	qdel(src)
 
