@@ -56,8 +56,7 @@
 	if(loot_subtype_path)
 		loot += subtypesof(loot_subtype_path)
 
-	if(RANDOM_LOOT_WEIGHT_MODIFIER != 1)
-		skew_loot_weights(loot, RANDOM_LOOT_WEIGHT_MODIFIER)
+	skew_loot_weights(loot, RANDOM_LOOT_WEIGHT_MODIFIER)
 
 	if(loot?.len)
 		var/loot_spawned = 0
