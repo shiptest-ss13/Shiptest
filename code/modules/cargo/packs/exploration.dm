@@ -2,17 +2,11 @@
 	group = "Exploration"
 	crate_type = /obj/structure/closet/crate/wooden
 
-/*
-		Basic survival kits for worlds.
-*/
-
 /datum/supply_pack/exploration/lava
 	name = "Lava Exploration Kit"
-	desc = "Contains two pickaxes, 60 lavaproof rods, two pocket extinguishers and goggles to protect yourself from the heat."
+	desc = "Contains 60 lavaproof rods, two pocket extinguishers and goggles to protect yourself from the heat."
 	cost = 500
 	contains = list(
-		/obj/item/pickaxe/mini,
-		/obj/item/pickaxe/mini,
 		/obj/item/extinguisher/mini,
 		/obj/item/extinguisher/mini,
 		/obj/item/clothing/glasses/heat,
@@ -34,11 +28,9 @@
 
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
-	desc = "Contains two pickaxes, 2 sets of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
+	desc = "Contains 2 sets of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
 	cost = 500
 	contains = list(
-		/obj/item/pickaxe/mini,
-		/obj/item/pickaxe/mini,
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/suit/hooded/wintercoat,
@@ -48,43 +40,6 @@
 	)
 	crate_name = "Ice Exploration Kit"
 
-/datum/supply_pack/exploration/jungle
-	name = "Jungle Exploration Kit"
-	desc = "Contains a hatchets, two picks and lanterns, plus antivenom pills, great for dense jungles!"
-	cost = 500
-	contains = list(
-		/obj/item/pickaxe/mini,
-		/obj/item/pickaxe/mini,
-		/obj/item/flashlight/lantern,
-		/obj/item/flashlight/lantern,
-		/obj/item/storage/pill_bottle/charcoal,
-		/obj/item/storage/pill_bottle/charcoal,
-		/obj/item/hatchet,
-		/obj/item/hatchet,
-	)
-	crate_name = "Jungle Exploration Kit"
-
-/datum/supply_pack/exploration/beach
-	name = "Beach Kit"
-	desc = "Shorts, picks, and (low quality) sunglasses, perfect for the beach!"
-	cost = 500
-	contains = list(
-		/obj/item/pickaxe/mini,
-		/obj/item/pickaxe/mini,
-		/obj/item/clothing/under/shorts/black,
-		/obj/item/clothing/under/shorts/blue,
-		/obj/item/clothing/under/shorts/green,
-		/obj/item/clothing/under/shorts/grey,
-		/obj/item/clothing/under/shorts/purple,
-		/obj/item/clothing/under/shorts/red,
-		/obj/item/clothing/glasses/cheapsuns,
-		/obj/item/clothing/glasses/cheapsuns,
-		/obj/item/clothing/glasses/cheapsuns,
-		/obj/item/clothing/glasses/cheapsuns,
-		/obj/item/clothing/glasses/cheapsuns,
-		/obj/item/clothing/glasses/cheapsuns,
-	)
-	crate_name = "Beach Kit"
 
 /*
 		General Exploration Gear
