@@ -888,12 +888,12 @@
 /area/ship/maintenance/starboard)
 "fN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "fU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "fX" = (
@@ -948,7 +948,7 @@
 "gm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
 "go" = (
@@ -1262,7 +1262,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/cigbutt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
 "im" = (
@@ -1640,7 +1640,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "kD" = (
@@ -2132,7 +2132,7 @@
 /area/ship/storage)
 "nF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "nH" = (
@@ -2345,7 +2345,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "oR" = (
@@ -2484,8 +2484,8 @@
 	name = "fridge"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/radio/intercom/directional/north,
@@ -2529,9 +2529,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/item/stamp/hos{
-	name = "vanguard's rubber stamp"
-	},
+/obj/item/stamp/inteq/vanguard,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2638,7 +2636,7 @@
 "qp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "qr" = (
@@ -2881,7 +2879,7 @@
 /area/ship/security)
 "rN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "rP" = (
@@ -3030,7 +3028,7 @@
 /area/ship/maintenance/port)
 "sD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -3043,7 +3041,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/camera/autoname,
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
@@ -4083,7 +4081,7 @@
 /area/ship/maintenance/port)
 "zg" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "zh" = (
@@ -4161,7 +4159,7 @@
 "zB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "zE" = (
@@ -4239,7 +4237,7 @@
 "Aa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "Ag" = (
@@ -4501,7 +4499,7 @@
 /area/ship/crew/canteen)
 "BN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
 "BP" = (
@@ -4547,7 +4545,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Cp" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/structure/sign/poster/contraband/inteq{
 	pixel_x = 32
 	},
@@ -5214,7 +5212,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "GR" = (
@@ -5288,7 +5286,7 @@
 "Ho" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
 "Hp" = (
@@ -5311,12 +5309,21 @@
 /obj/structure/sign/poster/retro/lasergun_new{
 	pixel_x = -32
 	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag{
-	pixel_x = -8;
-	pixel_y = 8
+/obj/item/storage/guncase/inherit{
+	pixel_x = 2;
+	pixel_y = -2
 	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag{
-	pixel_x = -12
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/storage/guncase/inherit{
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -5515,7 +5522,7 @@
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "Jk" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "Jo" = (
@@ -5797,9 +5804,7 @@
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
 	name = "folder"
 	},
-/obj/item/stamp/law{
-	name = "master at arms' rubber stamp"
-	},
+/obj/item/stamp/inteq/maa,
 /obj/item/table_bell{
 	pixel_x = -15
 	},
@@ -6156,7 +6161,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "NK" = (
@@ -6303,7 +6308,7 @@
 "OP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "Pf" = (
@@ -6355,7 +6360,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/crate,
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
@@ -6538,25 +6543,9 @@
 /obj/structure/sign/poster/official/ion_carbine{
 	pixel_x = -32
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
+/obj/item/toy/plush/moth/deadhead{
+	pixel_x = 3;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -6646,7 +6635,7 @@
 /area/ship/hallway/central)
 "Ri" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "Rp" = (
@@ -6728,7 +6717,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/plasma,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "RY" = (
@@ -6899,7 +6888,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "SS" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -7116,11 +7105,11 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -7157,7 +7146,7 @@
 /area/ship/storage/starboard)
 "Uy" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "UD" = (
@@ -7419,9 +7408,10 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
-	},
+/obj/item/storage/guncase/pistol/inherit,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Wr" = (
@@ -7694,7 +7684,7 @@
 /area/ship/maintenance/starboard)
 "YZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "Zb" = (
@@ -7830,9 +7820,7 @@
 /obj/item/megaphone/cargo{
 	name = "engineering megaphone"
 	},
-/obj/item/stamp/ce{
-	name = "honorable artificer's rubber stamp"
-	},
+/obj/item/stamp/inteq/artificer,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/welding,
 /obj/item/pipe_dispenser,
@@ -7895,7 +7883,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating/airless,
 /area/ship/storage/port)
 "ZY" = (

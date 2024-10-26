@@ -522,8 +522,8 @@
 	var/informed = FALSE
 	for(var/obj/item/bodypart/L as anything in bodyparts)
 		if(!IS_ORGANIC_LIMB(L))
-			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+			if(!informed && !HAS_TRAIT(src, TRAIT_ANALGESIA))
+				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
 			switch(severity)
 				if(1)
@@ -655,7 +655,7 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				emote("scream")
+				force_scream()
 				facial_hairstyle = "Shaved"
 				hairstyle = "Bald"
 				update_hair()

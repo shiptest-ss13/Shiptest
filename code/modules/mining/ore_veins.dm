@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
-			var/picked = pickweight(ore_list)
+			var/picked = pick_weight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
 	GLOB.ore_veins += src

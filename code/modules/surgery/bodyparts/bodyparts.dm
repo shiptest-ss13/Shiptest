@@ -373,7 +373,7 @@
 
 	if(total_damage >= max_damage * disable_threshold) //Easy limb disable disables the limb at 40% health instead of 0%
 		if(!last_maxed)
-			if(owner.stat < UNCONSCIOUS)
+			if(owner.stat < UNCONSCIOUS && !HAS_TRAIT(owner, TRAIT_ANALGESIA))
 				INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob, emote), "scream")
 			last_maxed = TRUE
 		set_disabled(TRUE)
@@ -776,7 +776,7 @@
 
 ///obj/item/bodypart/proc/break_bone_feedback()
 	owner.visible_message("<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>")
-	playsound(owner, list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg'), 100, FALSE, -1)
+	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()
 	// owner.update_inv_splints() breaks
@@ -790,7 +790,10 @@
 		return
 
 	if(prob(5))
-		to_chat(owner, "<span class='danger'>[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]</span>")
+		if(HAS_TRAIT(owner, TRAIT_ANALGESIA))
+			to_chat(owner, span_notice("[pick("You feel something shifting inside your [name].", "There is something moving inside [name].", "Something inside your [name] slips.")]"))
+		else
+			to_chat(owner, "<span class='danger'>[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]</span>")
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit

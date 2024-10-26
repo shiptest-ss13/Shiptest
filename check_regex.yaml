@@ -27,11 +27,11 @@ standards:
 
     - exactly: [1, "/atom text paths", '"/atom']
     - exactly: [1, "/area text paths", '"/area']
-    - exactly: [17, "/datum text paths", '"/datum']
+    - exactly: [16, "/datum text paths", '"/datum']
     - exactly: [4, "/mob text paths", '"/mob']
-    - exactly: [42, "/obj text paths", '"/obj']
+    - exactly: [33, "/obj text paths", '"/obj']
     - exactly: [0, "/turf text paths", '"/turf']
-    - exactly: [115, "text2path uses", "text2path"]
+    - exactly: [114, "text2path uses", "text2path"]
 
     - exactly: [18, "world<< uses", 'world[ \t]*<<']
     - exactly: [0, "world.log<< uses", 'world.log[ \t]*<<']
@@ -57,7 +57,7 @@ standards:
 
     - no_more:
           [
-              34,
+              32,
               "indentions inside defines",
               '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))',
           ]

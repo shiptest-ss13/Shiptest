@@ -45,11 +45,6 @@
 	input = /obj/item/reagent_containers/food/snacks/grown/parsnip
 	output = /obj/item/reagent_containers/food/snacks/roastparsnip
 
-/datum/food_processor_process/mob/slime
-	input = /mob/living/simple_animal/slime
-	output = null
-	required_machine = /obj/machinery/processor/slime
-
 /datum/food_processor_process/towercap
 	input = /obj/item/grown/log
 	output = /obj/item/popsicle_stick

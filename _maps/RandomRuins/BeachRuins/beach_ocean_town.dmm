@@ -113,7 +113,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "bs" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "bu" = (
@@ -412,9 +412,9 @@
 /area/ruin/beach/oceantown)
 "fn" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "fp" = (
@@ -711,8 +711,8 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ix" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
-/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "iz" = (
@@ -1560,11 +1560,11 @@
 /area/ruin/beach/oceantown/bar)
 "un" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "ur" = (
@@ -1698,10 +1698,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/oceantown/shop)
-"ww" = (
-/obj/structure/statue/sandstone/assistant,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "wF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -3371,8 +3367,8 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "NX" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "Oe" = (
@@ -3545,7 +3541,7 @@
 /area/ruin/beach/oceantown)
 "PF" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "PH" = (
@@ -3573,7 +3569,7 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Qf" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "Qm" = (
@@ -3737,10 +3733,10 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "SS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "SY" = (
@@ -3910,7 +3906,7 @@
 /area/ruin/beach/oceantown/bar)
 "Vr" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ruin/beach/oceantown)
 "VI" = (
@@ -3949,9 +3945,9 @@
 /area/ruin/beach/oceantown/shop)
 "VQ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "VS" = (
@@ -4116,11 +4112,11 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "XQ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
-/obj/effect/spawner/lootdrop/donut/slimejelly,
-/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/slimejelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
 "XS" = (
@@ -7687,7 +7683,7 @@ sa
 sa
 Ud
 sa
-ww
+sa
 sa
 Ud
 sa

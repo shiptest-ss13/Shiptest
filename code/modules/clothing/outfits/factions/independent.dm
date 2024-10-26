@@ -107,6 +107,22 @@
 	gloves = /obj/item/clothing/gloves/color/white //poverty gloves
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
+/datum/outfit/job/independent/captain/merc
+	name = "Independent - Captain (Mercenary)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	head = /obj/item/clothing/head/beret
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/armor/vest
+
+	accessory = null
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
 	head = /obj/item/clothing/head/caphat/cowboy
@@ -231,6 +247,20 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
 
+/datum/outfit/job/independent/hos/merc
+	name = "Independent - Mercenary XO"
+	id_assignment = "Lieutenant"
+
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/armor/vest
+	alt_suit = null
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/beret
+	glasses = null
+	l_pocket = null
+
 // Roboticist
 
 /datum/outfit/job/independent/roboticist
@@ -281,6 +311,17 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/cowboy/sec
+
+/datum/outfit/job/independent/security/merc
+	name = "Independent - Security Officer (Mercenary)"
+	id_assignment = "Trooper"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	gloves = /obj/item/clothing/gloves/fingerless
+	head = null
+	suit = null
+	dcoat = null
+
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
@@ -441,7 +482,7 @@
 	job_icon = "cargotechnician"
 
 	ears = /obj/item/radio/headset/headset_cargo
-	uniform = /obj/item/clothing/under/color/khaki
+	uniform = /obj/item/clothing/under/color/lightbrown
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 

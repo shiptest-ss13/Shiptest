@@ -27,6 +27,15 @@
 /obj/item/documents/syndicate
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
 
+/obj/item/documents/syndicate/cybersun
+	name = "classified Cybersun documents"
+	desc = "\"Top Secret\" documents detailing sensitive Cybersun Virtual Solutions operational intelligence. These documents are verified with a red wax seal."
+	icon_state = "docs_red"
+
+/obj/item/documents/syndicate/cybersun/biodynamics
+	desc = "\"Top Secret\" Cybersun Biodynamics documents, filled with patient lists and unfinished designs. These documents are verified with a teal wax seal."
+	icon_state = "docs_teal"
+
 /obj/item/documents/syndicate/red
 	name = "red secret documents"
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a red wax seal."
@@ -39,6 +48,11 @@
 
 /obj/item/documents/syndicate/mining
 	desc = "\"Top Secret\" documents detailing Syndicate plasma mining operations."
+
+/obj/item/documents/syndicate/ngr
+	name = "Second Battlegroup secret documents"
+	desc = "\"Top Secret\" documents belonging to the Second Battlegroup of New Gorlex Republic. They are filled with sensitive operational intelligence. These documents are verified with a red wax seal."
+	icon_state = "docs_red"
 
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"

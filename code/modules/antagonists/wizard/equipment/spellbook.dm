@@ -281,18 +281,6 @@
 	item_path = /obj/item/scrying
 	category = "Defensive"
 
-/datum/spellbook_entry/item/soulstones
-	name = "Six Soul Stone Shards and the spell Artificer"
-	desc = "Soul Stone Shards are ancient tools capable of capturing and harnessing the spirits of the dead and dying. The spell Artificer allows you to create arcane machines for the captured souls to pilot."
-	item_path = /obj/item/storage/belt/soulstone/full
-	category = "Assistance"
-
-/datum/spellbook_entry/item/soulstones/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
-	. =..()
-	if(.)
-		user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/construct(null))
-	return .
-
 /datum/spellbook_entry/item/necrostone
 	name = "A Necromantic Stone"
 	desc = "A Necromantic stone is able to resurrect three dead individuals as skeletal thralls for you to command."
@@ -317,18 +305,6 @@
 	desc = "A magical contract binding an apprentice wizard to your service, using it will summon them to your side."
 	item_path = /obj/item/antag_spawner/contract
 	category = "Assistance"
-
-/datum/spellbook_entry/item/guardian
-	name = "Guardian Deck"
-	desc = "A deck of guardian tarot cards, capable of binding a personal guardian to your body. There are multiple types of guardian available, but all of them will transfer some amount of damage to you. \
-	It would be wise to avoid buying these with anything capable of causing you to swap bodies with others."
-	item_path = /obj/item/guardiancreator/choose/wizard
-	category = "Assistance"
-
-/datum/spellbook_entry/item/guardian/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
-	. = ..()
-	if(.)
-		new /obj/item/paper/guides/antag/guardian/wizard(get_turf(user))
 
 /datum/spellbook_entry/item/bloodbottle
 	name = "Bottle of Blood"
