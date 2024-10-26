@@ -47,10 +47,7 @@
 		if(15)
 			new /obj/item/book_of_babel(src)
 		if(16)
-			if(prob(75))
-				new /obj/item/guardiancreator/miner(src)
-			else
-				new /obj/item/guardiancreator/miner/choose (src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -118,10 +115,7 @@
 			if(15)
 				new /obj/item/book_of_babel(src)
 			if(16)
-				if(prob(75))
-					new /obj/item/guardiancreator/miner(src)
-				else
-					new /obj/item/guardiancreator/miner/choose (src)
+				new /obj/item/ship_in_a_bottle(src)
 			if(17)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -621,7 +615,7 @@
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		C.force_scream()
 	..()
 
 //nerfed necrostone
@@ -839,7 +833,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 0.1 SECONDS
 	recoil = 1
-	cell_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
 	supports_variations = VOX_VARIATION
 	var/chargesound
