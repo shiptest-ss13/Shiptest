@@ -178,7 +178,7 @@
 /*Planetary color defines*/
 
 #define COLOR_BEACHPLANET_LIGHT "#faeacb"
-#define COLOR_ICEPLANET_LIGHT "#b6e4e4"
+#define COLOR_ICEPLANET_LIGHT "#e1d1e6"
 #define COLOR_LAVAPLANET_LIGHT "#f5b85d"
 #define COLOR_JUNGLEPLANET_LIGHT "#b39981"
 #define COLOR_ROCKPLANET_LIGHT "#db9e9f"
