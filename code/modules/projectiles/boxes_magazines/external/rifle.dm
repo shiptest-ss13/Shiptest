@@ -1,16 +1,3 @@
-/obj/item/ammo_box/magazine/m10mm_ringneck/rifle
-	name = "rifle magazine (10mm)"
-	desc = "A well-worn, 10-round magazine for the surplus rifle. These rounds do moderate damage, but struggle against armor."
-	icon_state = "75-8"
-	base_icon_state = "75"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m10mm_ringneck/rifle/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
-
 /obj/item/ammo_box/magazine/m556_42_hydra
 	name = "toploader magazine (5.56x42mm)"
 	desc = "An advanced, 30-round toploading magazine for the M-90gl Carbine. These rounds do moderate damage with good armor penetration."

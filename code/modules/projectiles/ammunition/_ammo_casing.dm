@@ -48,7 +48,7 @@
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
 	///Maximum stack size of ammunition
-	var/stack_size = 12
+	var/stack_size = 15
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
