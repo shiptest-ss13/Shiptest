@@ -44,7 +44,7 @@
 	icon_state = "rifle-brass"
 	caliber = "5.56x42mm"
 	projectile_type = /obj/projectile/bullet/a556_42
-	stack_size = 5
+	stack_size = 15
 
 // 5.45x39mm (SKM-24v)
 
@@ -91,7 +91,7 @@
 	icon_state = "caseless"
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
-	stack_size = 5
+	stack_size = 15
 
 /obj/item/ammo_casing/a65clip
 	name = "6.5x57mm CLIP bullet casing"

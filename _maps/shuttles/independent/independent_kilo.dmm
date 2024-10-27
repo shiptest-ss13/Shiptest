@@ -123,7 +123,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "bm" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "bn" = (
@@ -663,7 +663,7 @@
 	},
 /obj/item/storage/box/ammo/a12g_rubbershot,
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn{
-	spawnwithmagazine = 0
+	default_ammo_type = 0
 	},
 /obj/structure/cable/pink{
 	icon_state = "4-10"
@@ -905,7 +905,7 @@
 /area/ship/cargo)
 "mz" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light_switch{
 	pixel_x = 7;
 	pixel_y = 20
@@ -1212,9 +1212,9 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -1789,7 +1789,7 @@
 /obj/structure/cable/pink{
 	icon_state = "1-6"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -1876,7 +1876,7 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/gun/ballistic/shotgun/doublebarrel/no_mag,
+/obj/item/gun/ballistic/shotgun/doublebarrel/empty,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Vd" = (

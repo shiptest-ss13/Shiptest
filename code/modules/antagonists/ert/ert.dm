@@ -7,7 +7,7 @@
 	name = "Emergency Response Officer"
 	var/datum/team/ert/ert_team
 	var/leader = FALSE
-	var/datum/outfit/outfit = /datum/outfit/centcom/ert/security
+	var/datum/outfit/outfit = /datum/outfit/job/independent/ert
 	var/role = "Security Officer"
 	var/list/name_source
 	var/random_names = TRUE
@@ -60,9 +60,9 @@
 
 	var/missiondesc = "Your team is being sent to [station_name()].<BR>"
 	if(leader) //If Squad Leader
-		missiondesc += " Lead your team to ensure the completion of your objectives."
+		missiondesc += "Lead your team to ensure the completion of your objectives."
 	else
-		missiondesc += " Follow orders given to you by your squad leader."
+		missiondesc += "Follow orders given to you by your squad leader."
 	if(deathsquad)
 		missiondesc += "Leave no witnesses."
 
