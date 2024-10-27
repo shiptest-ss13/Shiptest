@@ -93,14 +93,6 @@
 "aO" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/cryo)
-"aU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "bb" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/machinery/shower{
@@ -1767,6 +1759,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"uo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "ut" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3694,7 +3694,6 @@
 /obj/machinery/door/airlock/maintenance{
 	req_ship_access = 0
 	},
-/obj/effect/mapping_helpers/airlock/abandoned,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
@@ -4826,7 +4825,7 @@ wW
 (23,1,1) = {"
 jt
 gj
-aU
+uo
 UZ
 Rs
 yl
