@@ -5953,10 +5953,6 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/item/clothing/glasses/welding{
-	pixel_y = 5;
-	pixel_x = 1
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "KM" = (
@@ -6380,11 +6376,9 @@
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/gun/energy/plasmacutter{
-	pixel_x = 4
-	},
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/techfloor,
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Ny" = (
@@ -6470,13 +6464,19 @@
 "OA" = (
 /obj/structure/rack,
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/item/gun/energy/plasmacutter,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
 /obj/item/clothing/head/welding{
 	pixel_x = -8;
 	pixel_y = 8
+	},
+/obj/item/gear_pack/anglegrinder{
+	pixel_x = 3
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 9;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
