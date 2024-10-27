@@ -9,7 +9,7 @@
 	var/heal_time = 2 SECONDS
 	playsound(user, 'sound/surgery/cautery1.ogg', 20)
 	balloon_alert(user, "cauterizing...")
-	if(src == user && !feels_pain)
+	if(src == user && !painless)
 		heal_time *= 2 //oof ouch owie
 	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
 	if(do_after(user, heal_time, target = src))
