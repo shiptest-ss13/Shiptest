@@ -424,8 +424,15 @@
 	contains = list(/obj/item/storage/box/ammo/a44roum_hp)
 	cost = 500
 
+/datum/supply_pack/ammo/c299
+	name = ".299 Eoehoma Caseless Ammo Box Crate"
+	desc = "Contains two 60-round boxes of .299 Caseless ammo from the defunct Eoehoma. Used for the E-40 Hybrid Rifle."
+	contains = list(/obj/item/storage/box/ammo/c299,
+					/obj/item/storage/box/ammo/c299)
+	cost = 400
+
 /datum/supply_pack/ammo/c22lr
 	name = ".22 LR Ammo Box Crate"
-	desc = "Contains a 60-round ammo box for refilling .22 LR weapons."
+	desc = "Contains one 100-round ammo box for refilling .22 LR weapons."
 	contains = list(/obj/item/storage/box/ammo/c22lr)
 	cost = 250

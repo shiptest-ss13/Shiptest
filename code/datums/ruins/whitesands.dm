@@ -18,6 +18,13 @@
 	suffix = "whitesands_surface_pubbyslopcrash.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
 
+/datum/map_template/ruin/whitesands/cave_base
+	name = "Abandoned Cave Base"
+	id = "cave_base"
+	description = "The former home of a poor sod on observation duty. Now a cunning trap."
+	suffix = "whitesands_cave_base.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/saloon
 	name = "Hermit Saloon"

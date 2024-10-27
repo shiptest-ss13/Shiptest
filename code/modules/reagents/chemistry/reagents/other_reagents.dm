@@ -1517,9 +1517,9 @@
 		var/turf/open/floor/F = T
 		playsound(T, 'sound/effects/bubbles.ogg', 50)
 		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/lootdrop/flower(T)
+		new /obj/effect/spawner/random/flower(T)
 		if(prob(75))
-			new /obj/effect/spawner/lootdrop/flora(T)
+			new /obj/effect/spawner/random/flora(T)
 	..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)

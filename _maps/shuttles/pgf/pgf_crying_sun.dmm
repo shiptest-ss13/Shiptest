@@ -225,16 +225,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bT" = (
-/obj/item/storage/box/flashbangs{
-	pixel_x = -7;
-	pixel_y = 7
-	},
 /obj/item/storage/box/zipties{
 	pixel_y = 7;
-	pixel_x = 8
+	pixel_x = 4
 	},
 /obj/item/storage/box/flashes{
-	pixel_y = -1
+	pixel_y = -1;
+	pixel_x = -7
 	},
 /obj/item/screwdriver{
 	pixel_x = -5;
@@ -2373,35 +2370,38 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "uo" = (
-/obj/item/grenade/frag{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/grenade/frag{
-	pixel_x = -3;
-	pixel_y = -8
-	},
-/obj/item/grenade/smokebomb{
-	pixel_y = 3;
-	pixel_x = 13
-	},
-/obj/item/grenade/smokebomb{
-	pixel_y = 1;
-	pixel_x = 7
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 11;
-	pixel_y = -5
-	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	name = "equipment locker"
+	name = "ordnance locker"
 	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_y = 6
+	},
+/obj/item/grenade/frag{
+	pixel_x = -10;
+	pixel_y = -1
+	},
+/obj/item/grenade/frag{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = 2;
+	pixel_x = 13
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 11;
+	pixel_y = -5
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2667,7 +2667,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner{
 	dir = 8
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2935,7 +2935,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 1
 	},
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zc" = (
@@ -3612,17 +3612,6 @@
 /obj/item/clothing/head/helmet/space/gezena,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"DG" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/porta_turret/ship/pgf/light{
-	dir = 5;
-	mode = 1;
-	id = "crying_sun_grid"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "DJ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/sign/flag/gezena{
@@ -6341,10 +6330,10 @@
 /obj/item/storage/ration/vegan_chili,
 /obj/item/storage/ration/beef_strips,
 /obj/item/storage/ration/beef_strips,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -7431,7 +7420,7 @@ xz
 xz
 xz
 Si
-DG
+KB
 KM
 Te
 EM

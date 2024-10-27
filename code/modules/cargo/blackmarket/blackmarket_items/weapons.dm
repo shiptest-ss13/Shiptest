@@ -98,7 +98,7 @@
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/ammo/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag)
 
 	price_min = 100
 	price_max = 600
@@ -129,7 +129,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = list(/datum/blackmarket_item/ammo/e40_mag, /datum/blackmarket_item/ammo/c299)
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
 	price_max = 10000
@@ -180,6 +180,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/larker
+	name = "Model 13 \"Larker\""
+	desc = "Gotta deal for you broski. We got this mod of those shoddy Sporter Rifles an' you can buy one, or two, orreven three if yer int' that."
+	item = /obj/item/storage/guncase/m13
+
+	price_min = 500
+	price_max = 1200
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/sawn_illestren
 	name = "Sawn off Illestren Rifle"
 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
@@ -190,16 +201,6 @@
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 60
-
-/datum/blackmarket_item/weapon/combat_shotgun
-	name = "Combat Shotgun"
-	desc = "Are your arms tired from pumping Hunter's Pride shotguns? This semi-automatic combat shotgun will make killing a breeze."
-	item = /obj/item/gun/ballistic/shotgun/automatic/combat
-
-	price_min = 1750
-	price_max = 3500
-	stock_max = 3
-	availability_prob = 40
 
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
@@ -320,7 +321,7 @@
 	name = "Pounder Submachine Gun"
 	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
-	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag,/datum/blackmarket_item/ammo/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
 
 	price_min = 1500
 	price_max = 2000
@@ -352,12 +353,12 @@
 
 /datum/blackmarket_item/weapon/fireaxe
 	name = "Fire Axe"
-	desc = "An incredibly sharp axe of dubious make used by various engineers throughout the years to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
 	item = /obj/item/melee/axe/fire
 
-	price_min = 2500
-	price_max = 3500
-	stock = 2
+	price_min = 1200
+	price_max = 2300
+	stock_max = 3
 	availability_prob = 40
 
 /datum/blackmarket_item/weapon/oneshot

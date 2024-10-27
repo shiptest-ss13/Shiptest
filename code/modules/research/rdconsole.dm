@@ -123,29 +123,6 @@ Nothing else in the console has ID requirements.
 	return ..()
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
-	if(istype(D, /obj/item/slime_extract))
-		var/obj/item/slime_extract/E = D
-		if(!slime_already_researched[E.type])
-			if(!E.research)
-				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[src] buzzes and displays a message: Invalid extract! (You shouldn't be seeing this. If you are, tell someone.)</span>")
-				return
-			if(E.Uses <= 0)
-				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[src] buzzes and displays a message: Extract consumed - no research available.</span>")
-				return
-			else
-				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
-				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
-				slime_already_researched[E.type] = TRUE
-				qdel(D)
-				return
-		else
-			visible_message("<span class='notice'>[src] buzzes and displays a message: Slime extract already researched!</span>")
-			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-			return
-
 	if(istype(D, /obj/item/seeds))
 		var/obj/item/seeds/E = D
 		if(!plant_already_researched[E.type])
@@ -656,10 +633,10 @@ Nothing else in the console has ID requirements.
 	RDSCREEN_UI_DDISK_CHECK
 	var/list/l = list()
 	l += "Disk Operations: <A href='?src=[REF(src)];clear_design=0'>Clear Disk</A><A href='?src=[REF(src)];updt_design=0'>Upload All</A><A href='?src=[REF(src)];eject_design=1'>Eject Disk</A>"
-	for(var/i in 1 to d_disk.max_blueprints)
+	for(var/i in d_disk.blueprints)
 		l += "<div class='statusDisplay'>"
-		if(d_disk.blueprints[i])
-			var/datum/design/D = d_disk.blueprints[i]
+		if(istype(i, /datum/design))
+			var/datum/design/D = i
 			l += "[D.icon_html(usr)] <A href='?src=[REF(src)];view_design=[D.id]'>[D.name]</A>"
 			l += "Operations: <A href='?src=[REF(src)];updt_design=[i]'>Upload to database</A> <A href='?src=[REF(src)];clear_design=[i]'>Clear Slot</A>"
 		else

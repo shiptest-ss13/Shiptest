@@ -25,17 +25,6 @@
 	stock_max = 10
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/himehabu_box
-	name = ".22 LR Ammo Box"
-	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
-	item = /obj/item/storage/box/ammo/c22lr
-
-	price_min = 100
-	price_max = 300
-	stock_min = 6
-	stock_max = 10
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/a357_box
 	name = ".357 Ammo Box"
 	desc = "A 50 round ammo box of .357."
@@ -55,17 +44,6 @@
 	price_min = 750
 	price_max = 1250
 	stock = 6
-	availability_prob = 0
-
-/datum/blackmarket_item/ammo/c299
-	name = "Eoehoma .299 Caseless Ammo Box"
-	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
-	item = /obj/item/storage/box/ammo/c299
-
-	price_min = 300
-	price_max = 700
-	stock_min = 4
-	stock_max = 8
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/saber_mag

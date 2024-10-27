@@ -3,7 +3,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "ae" = (
@@ -365,9 +365,9 @@
 /area/ruin/space/has_grav/powerpuzzle)
 "br" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
+/obj/effect/spawner/random/clothing/kittyears_or_rabbitears,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
@@ -695,14 +695,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle)
 "cB" = (
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
 /obj/structure/closet/crate/secure,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "cD" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -797,7 +797,7 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/stack/ore/salvage/scrapuranium,
 /obj/item/bodypart/l_arm/robot,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/assembly/prox_sensor,
 /obj/item/stack/ore/salvage/scrapuranium{
 	pixel_x = -4;
@@ -1116,7 +1116,7 @@
 /area/ruin/space/has_grav/powerpuzzle)
 "gM" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
-/obj/effect/spawner/lootdrop/maintenance/six,
+/obj/effect/spawner/random/maintenance/six,
 /obj/structure/closet/crate/secure,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -1478,7 +1478,7 @@
 	pixel_x = 2;
 	pixel_y = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/light/broken/directional/south,
 /obj/item/poster/random_official,
 /obj/item/poster/random_official,
@@ -1677,7 +1677,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle)
 "rI" = (
@@ -1838,7 +1838,7 @@
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
 /obj/item/stack/ore/salvage/scrapuranium/five,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/structure/closet/crate/engineering,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
@@ -1850,8 +1850,8 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/empty,
 /obj/item/reagent_containers/food/drinks/waterbottle/empty,
 /obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/snacks/sosjerky,
 /obj/item/reagent_containers/food/snacks/sosjerky,
 /obj/item/stack/medical/gauze/improvised,
@@ -2446,7 +2446,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
@@ -3273,7 +3273,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
@@ -3546,7 +3546,7 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "VV" = (
@@ -3589,7 +3589,7 @@
 	dir = 6
 	},
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/structure/noticeboard{
 	pixel_x = -15;
 	pixel_y = 32
@@ -3647,7 +3647,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle/engineering)
 "Xj" = (
@@ -3692,7 +3692,7 @@
 	dir = 5
 	},
 /obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "Yr" = (
