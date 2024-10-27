@@ -60,7 +60,7 @@
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	speed = 10
-	rapid = 4
+	rapid = 3
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
 	loot = list(
