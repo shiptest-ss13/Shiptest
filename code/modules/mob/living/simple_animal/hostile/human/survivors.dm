@@ -62,7 +62,7 @@
 	speed = 10
 	rapid = 4
 	rapid_fire_delay = 3
-	casingtype = /obj/projectile/bullet/c46x30mm/recycled
+	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
 	)
@@ -247,7 +247,7 @@
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else
-				visible_message(span_warning("[src]s' weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermits' weapon shatters as they impact the ground!"))
 
 		if("gunslinger")
 			uniform = pick_weight(list(
@@ -275,7 +275,7 @@
 			if(prob(20))
 				new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
 			else
-				visible_message(span_warning("[src]s' weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermits' weapon shatters as they impact the ground!"))
 
 	. = ..()
 
