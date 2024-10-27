@@ -23,7 +23,7 @@
 /obj/structure/closet/crate/rations/PopulateContents()
 	. = ..()
 	for(var/i in 1 to ration_count)
-		new /obj/effect/spawner/lootdrop/ration(src)
+		new /obj/effect/spawner/random/food_or_drink/ration(src)
 
 /obj/item/storage/toolbox/explosives
 	name = "\improper explosives handling kit"
@@ -64,7 +64,6 @@
 	name = "Saperzy"
 	desc = "A lovable rogue that scampered aboard during a readiness drill. Now an honorary marine."
 	gender = MALE
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	icon_state = "saperzy"
 	icon_living = "saperzy"
