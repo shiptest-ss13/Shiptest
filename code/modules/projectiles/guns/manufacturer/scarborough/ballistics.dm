@@ -974,6 +974,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m12g_bulldog/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m12g_bulldog/drum
 	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
@@ -984,6 +987,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 12
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/stun
 	name = "shotgun drum magazine (12g taser slugs)"
