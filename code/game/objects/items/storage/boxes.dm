@@ -760,8 +760,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/grenade/smokebomb(src)
 
-
-
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
 	desc = "To be used to rapidly seal hull breaches."
