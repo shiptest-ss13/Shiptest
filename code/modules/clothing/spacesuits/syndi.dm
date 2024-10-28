@@ -16,8 +16,8 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/syndicate/Initialize()
-		. = ..()
-		allowed = GLOB.security_hardsuit_allowed
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
 
 //Green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green
