@@ -1019,7 +1019,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/ship/clip
 	name = "Clover Mintaka"
-	desc = "Clover Photonic's offering for the Colonial League's 476FS \"Defense System\" competition, the Mintaka (and its sister systems, the Alnitak and Ori) handily beat out the Lunatex \"Vigil\" line during the final round of testing, and earned a prestigous contract."
+	desc = "Clover Photonic's offering for the Confederated League's 476FS \"Defense System\" competition, the Mintaka (and its sister systems, the Alnitak and Ori) handily beat out the Lunatex \"Vigil\" line during the final round of testing, and earned a prestigous contract."
 	faction = list(FACTION_PLAYER_MINUTEMAN, "Turret")
 	stun_projectile = /obj/projectile/beam/disabler
 	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
@@ -1048,7 +1048,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/ship/clip/heavy
 	name = "Clover Ori"
-	desc = "Clover Photonic's heaviest entry in the Colonial League's 476FS \"Defense System\" competition, the Ori's results demolished the handily beat out the Lunatex \"Vigil Sword\" during testing, earning better marks on durability, effectiveness, and reaction rate."
+	desc = "Clover Photonic's heaviest entry in the Confederated League's 476FS \"Defense System\" competition, the Ori's results demolished the handily beat out the Lunatex \"Vigil Sword\" during testing, earning better marks on durability, effectiveness, and reaction rate."
 	stun_projectile = /obj/projectile/beam/disabler
 	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/assault
