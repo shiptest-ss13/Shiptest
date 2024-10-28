@@ -128,7 +128,6 @@
 	force = 15
 	throwforce = 15
 	custom_materials = null
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/combat/cyborg
 	name = "cyborg knife"
