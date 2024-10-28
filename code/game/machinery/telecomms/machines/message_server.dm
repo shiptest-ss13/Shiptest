@@ -16,10 +16,13 @@
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	var/obj/item/stored
+	var/empty = FALSE
 
 /obj/machinery/blackbox_recorder/Initialize()
 	. = ..()
-	stored = new /obj/item/blackbox(src)
+	if(!empty)
+		stored = new /obj/item/blackbox(src)
+	update_appearance()
 
 /obj/machinery/blackbox_recorder/attack_hand(mob/living/user)
 	. = ..()
