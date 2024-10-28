@@ -62,6 +62,10 @@
 	icon_state = "hardhat_orange"
 	dog_fashion = null
 
+/obj/item/clothing/head/hardhat/purple
+	icon_state = "hardhat_purple"
+	dog_fashion = null
+
 /obj/item/clothing/head/hardhat/red
 	name = "firefighter helmet"
 	icon_state = "hardhat_red"
