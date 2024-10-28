@@ -90,7 +90,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
-	desc = "CLIP's special issue pistol. 7 rounds of .357 ammunition ensure that if the user has reliable aim - the target'll go down. Its weight and recoil has made it unpopular for common usage, but the power ensures that it'll always have its fans. Chambered in .357."
+	desc = "A semi-automatic magnum handgun designed specifically for BARD's megafauna removal unit, as standard handguns had proven useless as backup weapons. Its heft and power have also made it popular among the few CLIP officers able to requisition one. Chambered in .357."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
