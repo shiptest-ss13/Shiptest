@@ -449,12 +449,12 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/nocell
 	name = "Missing Power Cell"
-	desc = "Unit has no power cell. No modules available until a power cell is reinstalled."
+	desc = "Unit has no power cell. No modules are available until a power cell is reinstalled."
 	icon_state = "nocell"
 
 /atom/movable/screen/alert/emptycell
 	name = "Out of Power"
-	desc = "Unit's power cell has no charge remaining. No modules available until power cell is recharged."
+	desc = "Unit's power cell has no charge remaining. No modules are available until power cell is recharged."
 	icon_state = "emptycell"
 
 /atom/movable/screen/alert/lowcell
