@@ -171,7 +171,7 @@
 
 /datum/blackmarket_item/weapon/cm23
 	name = "CM-23 pistol"
-	desc = "The service pistol of the Colonial League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm23
 	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
@@ -182,7 +182,7 @@
 
 /datum/blackmarket_item/weapon/cm70
 	name = "CM-70 Machine Pistol"
-	desc = "One slick piece from the Colonial League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm70
 	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
