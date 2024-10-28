@@ -634,17 +634,10 @@
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/machinery/button/door{
 	pixel_x = 12;
-	pixel_y = -4;
+	pixel_y = 4;
 	dir = 8;
 	name = "Supply Quarters Windows";
 	id = "Ranger_Supply_Specialist_Quarters"
-	},
-/obj/machinery/button/door{
-	pixel_x = 12;
-	pixel_y = 7;
-	dir = 8;
-	name = "Cargo Privacy Shutters";
-	id = "Ranger_Cargo_Privacy"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -705,6 +698,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner{
 	dir = 1
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "fU" = (
@@ -1671,10 +1665,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "lU" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 1;
-	name = "Cargo Bay";
-	id = "Ranger_Cargo_Door"
+/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2173,18 +2165,10 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "pD" = (
-/obj/machinery/door/poddoor/shutters{
-	name = "Cargo Bay";
-	id = "Ranger_Cargo_Door";
+/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
 	dir = 1
 	},
-/obj/machinery/button/door{
-	name = "Cargo Bay Shutters";
-	id = "Ranger_Cargo_Door";
-	req_ship_access = 1;
-	pixel_x = 23;
-	dir = 8
-	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pG" = (
@@ -3876,17 +3860,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "Cn" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 1;
-	name = "Cargo Bay";
-	id = "Ranger_Cargo_Door"
+/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
+	dir = 1
+	},
+/obj/structure/crate_shelf,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = -21
 	},
 /obj/machinery/button/door{
-	name = "Cargo Bay Shutters";
-	id = "Ranger_Cargo_Door";
-	req_ship_access = 1;
 	pixel_x = -22;
-	dir = 4
+	dir = 4;
+	name = "Cargo Privacy Shutters";
+	id = "Ranger_Cargo_Privacy";
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4246,7 +4234,6 @@
 /obj/item/storage/ration/beef_strips,
 /obj/item/storage/ration/fried_fish,
 /obj/item/seeds/sunflower,
-/obj/structure/crate_shelf,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4965,10 +4952,6 @@
 	},
 /obj/structure/sign/nanotrasen/ns{
 	pixel_y = 32
-	},
-/obj/machinery/light_switch{
-	pixel_x = -13;
-	pixel_y = 20
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -6699,6 +6682,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning{
 	dir = 4
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Yw" = (
