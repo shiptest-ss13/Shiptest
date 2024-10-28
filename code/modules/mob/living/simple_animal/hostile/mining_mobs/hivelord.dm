@@ -365,7 +365,7 @@
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
 	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	move_to_delay = 7
@@ -463,7 +463,7 @@
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize() //in an ideal world, these would generate, the legion would overlay over the corpse, and we'd get cool sprites
-	mob_species = pickweight(list(
+	mob_species = pick_weight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
 			/datum/species/ipc = 10,
@@ -472,7 +472,7 @@
 			/datum/species/spider = 5
 		)
 	)
-	var/type = pickweight(list(
+	var/type = pick_weight(list(
 		"Miner" = 40,
 		"Assistant" = 10,
 		"Engineer" = 5,

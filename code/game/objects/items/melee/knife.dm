@@ -1,7 +1,8 @@
 /obj/item/melee/knife
 	icon_state = "kitchenknife"
 	item_state = "kitchenknife"
-	icon = 'icons/obj/weapon/knife.dmi'
+	icon = 'icons/obj/weapon/knives/knife.dmi'
+	world_file = 'icons/obj/weapon/knives/knife_world.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
@@ -104,7 +105,6 @@
 	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/survival
 	name = "survival knife"
@@ -115,7 +115,6 @@
 	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/bone
 	name = "bone dagger"
@@ -128,7 +127,6 @@
 	force = 15
 	throwforce = 15
 	custom_materials = null
-	world_file = 'icons/obj/world/melee.dmi'
 
 /obj/item/melee/knife/combat/cyborg
 	name = "cyborg knife"

@@ -43,7 +43,7 @@ jobs:
         sudo apt update || true
         sudo apt install -o APT::Immediate-configure=false libssl-dev:i386
         bash tools/ci/install_rust_g.sh
-        
+
     - name: Cache dependencies
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       uses: actions/cache@v3
