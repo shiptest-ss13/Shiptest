@@ -131,12 +131,12 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/megaphone/sec(src) //WS edit - Small QoL Brig additions
+	new /obj/item/megaphone/sec(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
-	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
+	new /obj/item/gun/ballistic/shotgun/automatic/m11(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src)
+	new /obj/item/gun_voucher
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -328,10 +328,10 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - begin - better safe than sorry
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - end
+		new /obj/item/ammo_box/magazine/co9mm(src)
+		new /obj/item/ammo_box/magazine/co9mm(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

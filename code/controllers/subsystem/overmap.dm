@@ -154,7 +154,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
@@ -270,6 +270,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
+	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"

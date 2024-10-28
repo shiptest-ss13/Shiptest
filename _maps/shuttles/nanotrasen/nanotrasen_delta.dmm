@@ -252,11 +252,11 @@
 	},
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "bd" = (
@@ -497,7 +497,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cm" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1089,8 +1089,8 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1874,9 +1874,6 @@
 /obj/structure/rack,
 /obj/item/weldingtool/hugetank/empty,
 /obj/item/clothing/mask/gas/welding,
-/obj/item/slimepotion/slime/sentience/mining,
-/obj/item/slimepotion/slime/sentience/mining,
-/obj/item/slimepotion/slime/sentience/mining,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/button/door{
 	dir = 4;

@@ -40,7 +40,7 @@
 		/obj/structure/salvageable/destructive_analyzer = 8,
 		/obj/structure/salvageable/server = 8,
 		/obj/item/mine/pressure/explosive/rusty/live = 30,
-		/obj/effect/spawner/lootdrop/mine = 8
+		/obj/effect/spawner/random/mine = 8
 	)
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,

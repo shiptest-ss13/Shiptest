@@ -333,11 +333,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	reagents?.add_reagent(/datum/reagent/toxin/carpotoxin , 3) // They lied
 
 /obj/item/clothing/mask/cigarette/syndicate
-	desc = "An unknown brand cigarette."
+	desc = "An obscure brand of cigarette."
 	chem_volume = 60
 	smoketime = 60
 	smoke_all = TRUE
-	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/medicine/omnizine = 15)
+	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/drug/aranesp = 5, /datum/reagent/medicine/synaptizine = 5)
 
 /obj/item/clothing/mask/cigarette/xeno
 	desc = "A Xeno Filtered brand cigarette."

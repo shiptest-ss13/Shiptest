@@ -9,7 +9,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. They tend to woop when excited, scared, or for any other reason at all."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -18,9 +18,9 @@
 	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
 	coldmod = 1.5
-	brutemod = 1.5
-	burnmod = 1.5
-	speedmod = -0.25
+	// brutemod = 1.5
+	// burnmod = 1.5
+	speedmod = -0.10
 	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
@@ -60,6 +60,9 @@
 	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
+
+	//I'm not emotionally prepared to spend ten more hours splicing overlays together
+	damage_overlay_type = ""
 
 /datum/species/kepori/New()
 	. = ..()

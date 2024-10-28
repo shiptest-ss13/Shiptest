@@ -12,7 +12,7 @@
 		/obj/item/gun/ballistic/automatic/toy/pistol = 10,
 		/obj/item/gun/ballistic/shotgun/toy = 10,
 		/obj/item/toy/sword = 10,
-		/obj/item/ammo_box/foambox = 20,
+		/obj/item/storage/box/ammo/foam_darts = 20,
 		/obj/item/toy/foamblade = 10,
 		/obj/item/toy/balloon/syndicate = 10,
 		/obj/item/clothing/suit/syndicatefake = 5,

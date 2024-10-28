@@ -2,7 +2,7 @@
 /obj/item/storage/box/syndicate
 
 /obj/item/storage/box/syndicate/bundle_A/PopulateContents()
-	switch (pickweight(list("recon" = 2, "bloodyspai" = 3, "stealth" = 2, "screwed" = 2, "sabotage" = 3, "guns" = 2, "murder" = 2, "implant" = 1, "hacker" = 3, "sniper" = 1, "metaops" = 1)))
+	switch (pick_weight(list("recon" = 2, "bloodyspai" = 3, "stealth" = 2, "screwed" = 2, "sabotage" = 3, "guns" = 2, "murder" = 2, "implant" = 1, "hacker" = 3, "sniper" = 1, "metaops" = 1)))
 		if("recon")
 			new /obj/item/clothing/glasses/thermal/xray(src) // ~8 tc?
 			new /obj/item/storage/briefcase/launchpad(src) //6 tc
@@ -56,7 +56,7 @@
 			new /obj/item/encryptionkey/syndicate(src)
 
 		if("murder")
-			new /obj/item/melee/transforming/energy/sword/saber(src)
+			new /obj/item/melee/energy/sword/saber(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/clothing/shoes/chameleon/noslip(src)
@@ -117,7 +117,7 @@
 			new /obj/item/card/emag(src) // 6 tc
 
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
-	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "mr_freeze" = 2, "made_man"= 1)))
+	switch (pick_weight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
 			new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
 			new /obj/item/attachment/silencer(src)
@@ -178,10 +178,10 @@
 			new /obj/item/dnainjector/geladikinesis(src)
 			new /obj/item/dnainjector/cryokinesis(src)
 			new /obj/item/gun/energy/temperature/security(src)
-			new /obj/item/melee/transforming/energy/sword/saber/blue(src) //see see it fits the theme bc its blue and ice is blue
+			new /obj/item/melee/energy/sword/saber/blue(src) //see see it fits the theme bc its blue and ice is blue
 
 		if("made_man")
-			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
+			new /obj/effect/spawner/random/clothing/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
 			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
 			new /obj/item/melee/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
@@ -282,7 +282,6 @@
 		/obj/item/storage/firstaid/tactical,
 		/obj/item/encryptionkey/syndicate,
 		/obj/item/clothing/glasses/thermal/syndi,
-		/obj/item/slimepotion/slime/sentience/nuclear,
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,

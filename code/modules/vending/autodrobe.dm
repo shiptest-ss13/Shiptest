@@ -19,7 +19,7 @@
 		/obj/item/clothing/under/costume/schoolgirl/green = 1,
 		/obj/item/clothing/under/costume/schoolgirl/orange = 1,
 		/obj/item/clothing/head/kitty = 1,
-		/obj/item/clothing/under/dress/skirt = 1,
+		/obj/item/clothing/under/dress/skirt/color = 1,
 		/obj/item/clothing/head/beret = 1,
 		/obj/item/clothing/head/cowboy = 1, //WS - Yee Haw
 		/obj/item/clothing/accessory/waistcoat = 1,
