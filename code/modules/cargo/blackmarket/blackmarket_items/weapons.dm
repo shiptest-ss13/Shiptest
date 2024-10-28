@@ -193,7 +193,7 @@
 
 /datum/blackmarket_item/weapon/cm5
 	name = "CM-5 SMG"
-	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the palette of these missing."
+	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
 
 	item = /obj/item/gun/ballistic/automatic/smg/cm5
 	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
@@ -201,7 +201,6 @@
 	price_max = 3500
 	stock_max = 2
 	availability_prob = 30
-
 
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
