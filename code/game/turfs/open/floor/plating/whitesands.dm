@@ -96,6 +96,26 @@
 	initial_gas_mix = WHITESANDS_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
+/turf/open/floor/concrete/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+
+/turf/open/floor/concrete/reinforced/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/reinforced/whitesands
+	light_range = 2
+	light_power = 0.6
+
+/turf/open/floor/concrete/pavement/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/pavement/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+
 /turf/open/floor/concrete/slab_1/whitesands
 	initial_gas_mix = WHITESANDS_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
