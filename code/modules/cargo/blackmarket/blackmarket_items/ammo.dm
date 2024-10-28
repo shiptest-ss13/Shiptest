@@ -70,7 +70,7 @@
 
 /datum/blackmarket_item/ammo/cm5_mag
 	name = "CM-5 Magazines"
-	desc = "30 round 9mm magazines for use in the CM-70 pistol."
+	desc = "30 round 9mm magazines for use in the CM-5 SMG."
 	item = /obj/item/ammo_box/magazine/cm5_9mm
 
 	price_min = 300
