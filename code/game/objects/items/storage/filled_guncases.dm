@@ -146,6 +146,14 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm23
 	mag_type = /obj/item/ammo_box/magazine/cm23
 
+/obj/item/storage/guncase/pistol/cm70
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm70
+	mag_type = /obj/item/ammo_box/magazine/m9mm_cm70
+
+/obj/item/storage/guncase/pistol/cm357
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
+	mag_type = /obj/item/ammo_box/magazine/cm357
+
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable
