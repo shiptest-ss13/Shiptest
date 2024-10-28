@@ -477,12 +477,12 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 //MODsuit unique
 /atom/movable/screen/alert/nocore
 	name = "Missing Core"
-	desc = "Unit has no core. No modules available until a core is reinstalled."
+	desc = "Unit has no core. No modules are available until a core is reinstalled."
 	icon_state = "no_cell"
 
 /atom/movable/screen/alert/emptycell/plasma
 	name = "Out of Power"
-	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
+	desc = "Unit's plasma core has no charge remaining. No modules are available until plasma core is recharged. \
 		Unit can be refilled through plasma fuel."
 
 /atom/movable/screen/alert/emptycell/plasma/update_desc()
