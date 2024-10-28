@@ -998,7 +998,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "jD" = (
-/obj/effect/spawner/lootdrop/salvage_capacitor,
+/obj/effect/spawner/random/salvage_capacitor,
 /obj/effect/decal/cleanable/shreds,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1461,7 +1461,7 @@
 	dir = 9
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/turf_decal/box,
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -2009,7 +2009,7 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "sV" = (
@@ -2058,9 +2058,9 @@
 	dir = 10
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/costume,
+/obj/effect/spawner/random/clothing/costume,
 /obj/item/storage/box/emptysandbags,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/button/door{
 	dir = 4;
 	id = "syndie_mechbay";
@@ -3151,22 +3151,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
@@ -3257,7 +3249,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "FV" = (
-/obj/effect/spawner/lootdrop/salvage_scanning,
+/obj/effect/spawner/random/salvage_scanning,
 /obj/effect/decal/cleanable/shreds{
 	pixel_y = 14
 	},
@@ -3816,8 +3808,9 @@
 	},
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/suit/hazardvest/hardliners,
-/obj/item/gun/energy/plasmacutter,
 /obj/item/clothing/gloves/color/red/insulated,
+/obj/item/gear_pack/anglegrinder,
+/obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "KL" = (
@@ -3884,10 +3877,10 @@
 /obj/structure/table/reinforced,
 /obj/item/hemostat,
 /obj/machinery/light/directional/west,
-/obj/effect/spawner/lootdrop/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = 6
 	},
-/obj/effect/spawner/lootdrop/random_prosthetic{
+/obj/effect/spawner/random/medical/prosthetic{
 	pixel_x = -6
 	},
 /turf/open/floor/pod/dark,
@@ -4460,7 +4453,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/salvage_manipulator,
+/obj/effect/spawner/random/salvage_manipulator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5348,7 +5341,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YT" = (
-/obj/effect/spawner/lootdrop/salvage_manipulator,
+/obj/effect/spawner/random/salvage_manipulator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5431,7 +5424,7 @@
 	},
 /area/ship/cargo)
 "Zf" = (
-/obj/effect/spawner/lootdrop/salvage_matter_bin,
+/obj/effect/spawner/random/salvage_matter_bin,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
@@ -5447,7 +5440,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "Artillery2shutter";

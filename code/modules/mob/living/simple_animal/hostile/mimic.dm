@@ -23,7 +23,7 @@
 	speak_emote = list("creaks")
 	taunt_chance = 30
 
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 	faction = list("mimic")
@@ -224,7 +224,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		TrueGun = G
 		if(istype(G, /obj/item/gun/ballistic))
 			Pewgun = G
-			var/obj/item/ammo_box/magazine/M = Pewgun.mag_type
+			var/obj/item/ammo_box/magazine/M = Pewgun.default_ammo_type
 			casingtype = initial(M.ammo_type)
 		if(istype(G, /obj/item/gun/energy))
 			Zapgun = G

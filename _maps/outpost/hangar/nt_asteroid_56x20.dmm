@@ -106,7 +106,7 @@
 /area/hangar)
 "cz" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
@@ -1024,8 +1024,8 @@
 /area/hangar)
 "MI" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
@@ -1254,10 +1254,7 @@
 /area/hangar)
 "Wp" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = 5;
-	pixel_y = 9
-	},
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	planetary_atmos = 1
