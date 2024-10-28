@@ -1,9 +1,12 @@
 /obj/item/clothing/under/dress
 	can_adjust = FALSE
 	body_parts_covered = CHEST|GROIN
-	icon = 'icons/obj/clothing/under/dress.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/dress.dmi'
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION //Doesn't require a new icon.
+	icon = 'icons/obj/clothing/under/dresses/dress.dmi'
+
+	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress_kepori.dmi'
+	kepori_override_icon = 
+
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/sundress
 	name = "sundress"
@@ -36,14 +39,12 @@
 	item_state = "red_evening_gown"
 
 /obj/item/clothing/under/dress/one_shoulder
-
 	name = "one shoulder dress"
 	desc = "A modern black dress with only one shoulder strap. Comes with a matching pair of arm warmers."
 	icon_state = "one_shoulder_dress"
 	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/iko_ikssoal
-
 	name = "iko_ikssoal"
 	desc = "The “iko-ikssoal”, translating to “long-dress”, is a traditional Kalixcian garment for formal gatherings."
 	icon_state = "iko_ikssoal"
@@ -59,31 +60,25 @@
 	desc = "A blue, casual skirt."
 	icon_state = "blueskirt"
 	item_state = "b_suit"
-	custom_price = 60
 
 /obj/item/clothing/under/dress/skirt/color/red
 	name = "red skirt"
 	desc = "A red, casual skirt."
 	icon_state = "redskirt"
 	item_state = "r_suit"
-	custom_price = 60
 
 /obj/item/clothing/under/dress/skirt/color/purple
 	name = "purple skirt"
 	desc = "A purple, casual skirt."
 	icon_state = "purpleskirt"
 	item_state = "p_suit"
-	custom_price = 60
 
 /obj/item/clothing/under/dress/skirt/color/white
-
 	name = "white skirt"
 	desc = "A white, casual skirt."
 	icon_state = "whiteskirt"
-	custom_price = 60
 
 /obj/item/clothing/under/dress/skirt/pinafore
-
 	name = "black pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is black."
 	icon_state = "black_pinafore"
@@ -91,68 +86,35 @@
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/dress/skirt/pinafore/maroon
-
 	name = "maroon pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is maroon."
 	icon_state = "maroon_pinafore"
 
 /obj/item/clothing/under/dress/skirt/pinafore/cerulean
-
 	name = "cerulean pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is cerulean."
 	icon_state = "cerulean_pinafore"
 
 /obj/item/clothing/under/dress/skirt/pinafore/plaid
-
 	name = "red plaid pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is in red plaid."
 	icon_state = "red_plaid_pinafore"
 
 /obj/item/clothing/under/dress/skirt/pinafore/plaid/green
-
 	name = "green plaid pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is in green plaid."
 	icon_state = "green_plaid_pinafore"
 
 /obj/item/clothing/under/dress/skirt/pinafore/plaid/brown
-
 	name = "brown plaid pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is in brown plaid."
 	icon_state = "brown_plaid_pinafore"
-
-/obj/item/clothing/under/dress/skirt/plaid
-	name = "red plaid skirt"
-	desc = "A preppy red skirt with a white blouse."
-	icon_state = "plaid_red"
-	item_state = "plaid_red"
-	can_adjust = TRUE
-	alt_covers_chest = TRUE
-	custom_price = 60
-
-/obj/item/clothing/under/dress/skirt/plaid/blue
-	name = "blue plaid skirt"
-	desc = "A preppy blue skirt with a white blouse."
-	icon_state = "plaid_blue"
-	item_state = "plaid_blue"
-
-/obj/item/clothing/under/dress/skirt/plaid/purple
-	name = "purple plaid skirt"
-	desc = "A preppy purple skirt with a white blouse."
-	icon_state = "plaid_purple"
-	item_state = "plaid_purple"
-
-/obj/item/clothing/under/dress/skirt/plaid/green
-	name = "green plaid skirt"
-	desc = "A preppy green skirt with a white blouse."
-	icon_state = "plaid_green"
-	item_state = "plaid_green"
 
 /obj/item/clothing/under/dress/rilena
 	name = "RILENA: LMR Ri cosplay"
 	desc = "A pretty red dress with big pink ribbons attached. Intended to be worn by Kepori cosplayers, but also fits other species."
 	icon_state = "rilena_dress"
 	item_state = "rilena_dress"
-	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/white_dress
 	name = "white dress"
